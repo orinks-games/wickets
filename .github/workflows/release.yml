@@ -5,7 +5,8 @@ on:
   # publishes them as that tag's GitHub release. The tag names the update
   # channel: v1.3.0 is stable, v1.3.0-beta.1 is beta, v1.3.0-alpha.1 is
   # alpha (see docs/releasing.md). Running the workflow by hand builds the
-  # same packages as run artifacts, with no release. Pull requests never
+  # same packages with no release; as a dry run (the default) it only
+  # reports their sizes, otherwise it keeps them as run artifacts. Pull requests never
   # build packages.
   push:
     tags: ["v*"]
@@ -16,6 +17,10 @@ on:
         type: choice
         options: [stable, beta, alpha]
         default: stable
+      dry_run:
+        description: Build and sign only, keep no packages (the default)
+        type: boolean
+        default: true
 
 # A tag's build always runs to the end.
 concurrency:
@@ -274,7 +279,7 @@ jobs:
       # player-facing notes in docs/release-notes/<tag>.md (never GitHub's
       # generated list of pull requests, which names hidden content).
       - name: Attach to the release
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: startsWith(github.ref, 'refs/tags/v') && github.event_name == 'push'
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.WICKETS_RELEASE_TOKEN || github.token }}
@@ -310,9 +315,18 @@ jobs:
           fi
           # The manifest last, for this release's channel only.
           gh release upload "$GITHUB_REF_NAME" "$MANIFEST" --clobber
-      # A hand run keeps its package as a short-lived run artifact.
+      # A dry run keeps nothing: run artifacts on this public repository
+      # can be downloaded by anyone. It reports what it built.
+      - name: Report the dry run's packages
+        if: github.event_name == 'workflow_dispatch' && inputs.dry_run
+        shell: bash
+        run: |
+          ls -l dist
+          du -h dist/*
+      # A hand run that is not a dry run keeps its package as a short-lived
+      # run artifact.
       - uses: actions/upload-artifact@v4
-        if: github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'workflow_dispatch' && !inputs.dry_run
         with:
           name: ${{ matrix.name }}
           path: |
