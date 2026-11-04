@@ -1,0 +1,26 @@
+[package]
+name = "parlor-core"
+description = "What every Wicket's game shares: the game type, the controls, saved records, paged text and a small random source"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+authors.workspace = true
+license.workspace = true
+publish = false
+build = "build.rs"
+
+[lib]
+# No doc examples to run.
+doctest = false
+
+[dependencies]
+# `update`: a released copy updates itself from this repository's GitHub
+# releases (see `updates` in lib.rs).
+hearken = { workspace = true, features = ["update"] }
+serde.workspace = true
+serde_json.workspace = true
+log.workspace = true
+
+[build-dependencies]
+wickets-content = { path = "../wickets-content" }

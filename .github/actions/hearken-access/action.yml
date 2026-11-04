@@ -1,0 +1,24 @@
+name: Hearken access
+description: Lets Cargo fetch the private Hearken engine with a read-only access token.
+inputs:
+  token:
+    description: Optional. A fine-grained token with Contents read-only on orinks-games/hearken (secret HEARKEN_TOKEN). Hearken is public, so without one Cargo fetches it anonymously.
+    required: false
+    default: ''
+runs:
+  using: composite
+  steps:
+    # Cargo.toml names Hearken by its https URL, and .cargo/config.toml has
+    # Cargo fetch git dependencies with the git CLI. Rewrite only that one
+    # URL to carry the token, so it is used for Hearken and nothing else.
+    - shell: bash
+      env:
+        HEARKEN_TOKEN: ${{ inputs.token }}
+      run: |
+        if [ -z "$HEARKEN_TOKEN" ]; then
+          echo "No HEARKEN_TOKEN; Hearken is public, so Cargo fetches it without one."
+          exit 0
+        fi
+        authed="https://x-access-token:${HEARKEN_TOKEN}@github.com/orinks-games/hearken"
+        git config --global url."$authed".insteadOf "https://github.com/orinks-games/hearken"
+        git config --global --add url."$authed".insteadOf "https://github.com/orinks-games/Hearken"

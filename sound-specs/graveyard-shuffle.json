@@ -1,0 +1,3176 @@
+{
+ "genny": "blal1",
+ "_about": "Graveyard Shuffle sounds, on blal1's genny. The songs are 60s novelty monster rock: upright bass, combo organ on the off-beat, a twangy spring-reverb guitar lead, and drums, in minor keys, two parts of four bars for each of the twelve songs. Each song is a public-domain tune moved into a minor key. Each monster has a short call that fits inside one beat, and a move sound. The title is a medley of public-domain classics.",
+ "sounds": [
+  {
+   "out": "song/warm-up/a.wav",
+   "_about": "London Bridge Is Falling Down, part A, as 60s monster rock.",
+   "bpm": 88,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "E2:0.5 B2:0.5 E3:0.5 B2:0.5 E2:0.5 B2:0.5 E3:0.5 B2:0.5 B2:0.5 F#3:0.5 B3:0.5 F#3:0.5 E2:0.5 B2:0.5 E3:0.5 B2:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [B4,D#5,F#5]:0.5 -:0.5 [B4,D#5,F#5]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "B5:.75 C6:.25 B5:.5 A5:.5 G5:.5 A5:.5 B5:1 F#5:.5 G5:.5 A5:1 G5:.5 A5:.5 B5:1",
+     "gain": 0.38,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/warm-up/b.wav",
+   "_about": "London Bridge Is Falling Down, part B, as 60s monster rock.",
+   "bpm": 88,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "E2:0.5 B2:0.5 E3:0.5 B2:0.5 E2:0.5 B2:0.5 E3:0.5 B2:0.5 B2:0.5 F#3:0.5 B3:0.5 F#3:0.5 E2:0.5 B2:0.5 E3:0.5 B2:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [B4,D#5,F#5]:0.5 -:0.5 [B4,D#5,F#5]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "B5:.75 C6:.25 B5:.5 A5:.5 G5:.5 A5:.5 B5:1 F#5:1 B5:1 G5:.5 E5:1.5",
+     "gain": 0.42,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    },
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "steps": "-x-x-x-x",
+     "step": 0.5,
+     "gain": 0.18
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/boneyard/a.wav",
+   "_about": "Dem Bones, part A, as 60s monster rock.",
+   "bpm": 92,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "A2:0.5 E3:0.5 A3:0.5 E3:0.5 A2:0.5 E3:0.5 A3:0.5 E3:0.5 E3:0.5 B3:0.5 E4:0.5 B3:0.5 E3:0.5 B3:0.5 E4:0.5 B3:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [A4,C5,E5]:0.5 -:0.5 [A4,C5,E5]:0.5 -:0.5 [A4,C5,E5]:0.5 -:0.5 [A4,C5,E5]:0.5 -:0.5 [E5,G#5,B5]:0.5 -:0.5 [E5,G#5,B5]:0.5 -:0.5 [E5,G#5,B5]:0.5 -:0.5 [E5,G#5,B5]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "A4:.5 A4:.5 C5:.5 C5:.5 E5:.5 C5:.5 A4:1 B4:.5 B4:.5 D5:.5 D5:.5 F5:.5 D5:.5 B4:1",
+     "gain": 0.38,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/boneyard/b.wav",
+   "_about": "Dem Bones, part B, as 60s monster rock.",
+   "bpm": 92,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "C3:0.5 G3:0.5 C4:0.5 G3:0.5 C3:0.5 G3:0.5 C4:0.5 G3:0.5 E3:0.5 B3:0.5 E4:0.5 B3:0.5 A2:0.5 E3:0.5 A3:0.5 E3:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [C5,E5,G5]:0.5 -:0.5 [C5,E5,G5]:0.5 -:0.5 [C5,E5,G5]:0.5 -:0.5 [C5,E5,G5]:0.5 -:0.5 [E5,G#5,B5]:0.5 -:0.5 [E5,G#5,B5]:0.5 -:0.5 [A4,C5,E5]:0.5 -:0.5 [A4,C5,E5]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "C5:.5 C5:.5 E5:.5 E5:.5 G5:.5 E5:.5 C5:1 E5:.5 E5:.5 D5:.5 C5:.5 B4:1 A4:1",
+     "gain": 0.42,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    },
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "steps": "-x-x-x-x",
+     "step": 0.5,
+     "gain": 0.18
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/shallow-grave/a.wav",
+   "_about": "Ring Around the Rosie, part A, as 60s monster rock.",
+   "bpm": 96,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "D2:0.5 A2:0.5 D3:0.5 A2:0.5 A#2:0.5 F3:0.5 A#3:0.5 F3:0.5 G2:0.5 D3:0.5 G3:0.5 D3:0.5 D2:0.5 A2:0.5 D3:0.5 A2:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [A#4,D5,F5]:0.5 -:0.5 [A#4,D5,F5]:0.5 -:0.5 [G4,A#4,D5]:0.5 -:0.5 [G4,A#4,D5]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "A5:1 A5:.5 F5:.5 A#5:1 A5:.5 F5:.5 G5:.5 A5:.5 A5:.5 F5:.5 A#5:.5 A5:.5 F5:1",
+     "gain": 0.38,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/shallow-grave/b.wav",
+   "_about": "Ring Around the Rosie, part B, as 60s monster rock.",
+   "bpm": 96,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "D2:0.5 A2:0.5 D3:0.5 A2:0.5 D2:0.5 A2:0.5 D3:0.5 A2:0.5 A2:0.5 E3:0.5 A3:0.5 E3:0.5 D2:0.5 A2:0.5 D3:0.5 A2:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [A4,C#5,E5]:0.5 -:0.5 [A4,C#5,E5]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "A5:1 F5:1 A5:1 F5:1 A5:1 A5:1 D5:2",
+     "gain": 0.42,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    },
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "steps": "-x-x-x-x",
+     "step": 0.5,
+     "gain": 0.18
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/cobweb/a.wav",
+   "_about": "The Itsy Bitsy Spider, part A, as 60s monster rock.",
+   "bpm": 98,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "G2:0.5 D3:0.5 G3:0.5 D3:0.5 G2:0.5 D3:0.5 G3:0.5 D3:0.5 D3:0.5 A3:0.5 D4:0.5 A3:0.5 G2:0.5 D3:0.5 G3:0.5 D3:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [G4,A#4,D5]:0.5 -:0.5 [G4,A#4,D5]:0.5 -:0.5 [G4,A#4,D5]:0.5 -:0.5 [G4,A#4,D5]:0.5 -:0.5 [D5,F#5,A5]:0.5 -:0.5 [D5,F#5,A5]:0.5 -:0.5 [G4,A#4,D5]:0.5 -:0.5 [G4,A#4,D5]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "D4:.5 G4:.5 G4:.5 G4:.5 A4:.5 A#4:.5 A#4:1 A#4:.5 A4:.5 G4:.5 A4:.5 A#4:.5 G4:1.5",
+     "gain": 0.38,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/cobweb/b.wav",
+   "_about": "The Itsy Bitsy Spider, part B, as 60s monster rock.",
+   "bpm": 98,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "A#2:0.5 F3:0.5 A#3:0.5 F3:0.5 A#2:0.5 F3:0.5 A#3:0.5 F3:0.5 D3:0.5 A3:0.5 D4:0.5 A3:0.5 G2:0.5 D3:0.5 G3:0.5 D3:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [A#4,D5,F5]:0.5 -:0.5 [A#4,D5,F5]:0.5 -:0.5 [A#4,D5,F5]:0.5 -:0.5 [A#4,D5,F5]:0.5 -:0.5 [D5,F#5,A5]:0.5 -:0.5 [D5,F#5,A5]:0.5 -:0.5 [G4,A#4,D5]:0.5 -:0.5 [G4,A#4,D5]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "A#4:1 A#4:.5 C5:.5 D5:2 D5:.5 C5:.5 A#4:.5 C5:.5 D5:.5 A#4:1.5",
+     "gain": 0.42,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    },
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "steps": "-x-x-x-x",
+     "step": 0.5,
+     "gain": 0.18
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/coffin-lid/a.wav",
+   "_about": "Chopin's Funeral March, part A, as 60s monster rock.",
+   "bpm": 100,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "C2:0.5 G2:0.5 C3:0.5 G2:0.5 C2:0.5 G2:0.5 C3:0.5 G2:0.5 G#2:0.5 D#3:0.5 G#3:0.5 D#3:0.5 G2:0.5 D3:0.5 G3:0.5 D3:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [C4,D#4,G4]:0.5 -:0.5 [C4,D#4,G4]:0.5 -:0.5 [C4,D#4,G4]:0.5 -:0.5 [C4,D#4,G4]:0.5 -:0.5 [G#4,C5,D#5]:0.5 -:0.5 [G#4,C5,D#5]:0.5 -:0.5 [G4,B4,D5]:0.5 -:0.5 [G4,B4,D5]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "C5:1 C5:.75 C5:.25 C5:2 D#5:1 D5:.75 D5:.25 C5:.75 C5:.25 B4:.75 C5:.25",
+     "gain": 0.38,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/coffin-lid/b.wav",
+   "_about": "Chopin's Funeral March, part B, as 60s monster rock.",
+   "bpm": 100,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "C2:0.5 G2:0.5 C3:0.5 G2:0.5 C2:0.5 G2:0.5 C3:0.5 G2:0.5 G#2:0.5 D#3:0.5 G#3:0.5 D#3:0.5 C2:0.5 G2:0.5 C3:0.5 G2:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [C4,D#4,G4]:0.5 -:0.5 [C4,D#4,G4]:0.5 -:0.5 [C4,D#4,G4]:0.5 -:0.5 [C4,D#4,G4]:0.5 -:0.5 [G#4,C5,D#5]:0.5 -:0.5 [G#4,C5,D#5]:0.5 -:0.5 [C4,D#4,G4]:0.5 -:0.5 [C4,D#4,G4]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "C5:1 C5:.75 C5:.25 C5:2 D#5:1 D5:.75 D5:.25 C5:.5 B4:.5 C5:1",
+     "gain": 0.42,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    },
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "steps": "-x-x-x-x",
+     "step": 0.5,
+     "gain": 0.18
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/drip/a.wav",
+   "_about": "Row, Row, Row Your Boat, part A, as 60s monster rock.",
+   "bpm": 104,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "B2:0.5 F#3:0.5 B3:0.5 F#3:0.5 B2:0.5 F#3:0.5 B3:0.5 F#3:0.5 B2:0.5 F#3:0.5 B3:0.5 F#3:0.5 F#3:0.5 C#4:0.5 F#4:0.5 C#4:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [B4,D5,F#5]:0.5 -:0.5 [B4,D5,F#5]:0.5 -:0.5 [B4,D5,F#5]:0.5 -:0.5 [B4,D5,F#5]:0.5 -:0.5 [B4,D5,F#5]:0.5 -:0.5 [B4,D5,F#5]:0.5 -:0.5 [F#5,A#5,C#6]:0.5 -:0.5 [F#5,A#5,C#6]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "B4:1 B4:1 B4:.667 C#5:.333 D5:1 D5:.667 C#5:.333 D5:.667 E5:.333 F#5:2",
+     "gain": 0.38,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/drip/b.wav",
+   "_about": "Row, Row, Row Your Boat, part B, as 60s monster rock.",
+   "bpm": 104,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "B2:0.5 F#3:0.5 B3:0.5 F#3:0.5 B2:0.5 F#3:0.5 B3:0.5 F#3:0.5 F#3:0.5 C#4:0.5 F#4:0.5 C#4:0.5 B2:0.5 F#3:0.5 B3:0.5 F#3:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [B4,D5,F#5]:0.5 -:0.5 [B4,D5,F#5]:0.5 -:0.5 [B4,D5,F#5]:0.5 -:0.5 [B4,D5,F#5]:0.5 -:0.5 [F#5,A#5,C#6]:0.5 -:0.5 [F#5,A#5,C#6]:0.5 -:0.5 [B4,D5,F#5]:0.5 -:0.5 [B4,D5,F#5]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "B5:.333 B5:.333 B5:.334 F#5:.333 F#5:.333 F#5:.334 D5:.333 D5:.333 D5:.334 B4:.333 B4:.333 B4:.334 F#5:.667 E5:.333 D5:.667 C#5:.333 B4:2",
+     "gain": 0.42,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    },
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "steps": "-x-x-x-x",
+     "step": 0.5,
+     "gain": 0.18
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/bat-wing/a.wav",
+   "_about": "Twinkle, Twinkle, Little Bat, part A, as 60s monster rock.",
+   "bpm": 106,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "E2:0.5 B2:0.5 E3:0.5 B2:0.5 C3:0.5 G3:0.5 C4:0.5 G3:0.5 A2:0.5 E3:0.5 A3:0.5 E3:0.5 E2:0.5 B2:0.5 E3:0.5 B2:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [C5,E5,G5]:0.5 -:0.5 [C5,E5,G5]:0.5 -:0.5 [A4,C5,E5]:0.5 -:0.5 [A4,C5,E5]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "E5:.5 E5:.5 B5:.5 B5:.5 C6:.5 C6:.5 B5:1 A5:.5 A5:.5 G5:.5 G5:.5 F#5:.5 F#5:.5 E5:1",
+     "gain": 0.38,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/bat-wing/b.wav",
+   "_about": "Twinkle, Twinkle, Little Bat, part B, as 60s monster rock.",
+   "bpm": 106,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "E2:0.5 B2:0.5 E3:0.5 B2:0.5 A2:0.5 E3:0.5 A3:0.5 E3:0.5 E2:0.5 B2:0.5 E3:0.5 B2:0.5 B2:0.5 F#3:0.5 B3:0.5 F#3:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [A4,C5,E5]:0.5 -:0.5 [A4,C5,E5]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [B4,D#5,F#5]:0.5 -:0.5 [B4,D#5,F#5]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "B5:.5 B5:.5 A5:.5 A5:.5 G5:.5 G5:.5 F#5:1 B5:.5 B5:.5 A5:.5 A5:.5 G5:.5 G5:.5 F#5:1",
+     "gain": 0.42,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    },
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "steps": "-x-x-x-x",
+     "step": 0.5,
+     "gain": 0.18
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/full-moon/a.wav",
+   "_about": "Au Clair de la Lune, by the light of the moon, part A, as 60s monster rock.",
+   "bpm": 108,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "A2:0.5 E3:0.5 A3:0.5 E3:0.5 A2:0.5 E3:0.5 A3:0.5 E3:0.5 E3:0.5 B3:0.5 E4:0.5 B3:0.5 A2:0.5 E3:0.5 A3:0.5 E3:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [A4,C5,E5]:0.5 -:0.5 [A4,C5,E5]:0.5 -:0.5 [A4,C5,E5]:0.5 -:0.5 [A4,C5,E5]:0.5 -:0.5 [E5,G#5,B5]:0.5 -:0.5 [E5,G#5,B5]:0.5 -:0.5 [A4,C5,E5]:0.5 -:0.5 [A4,C5,E5]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "A4:.5 A4:.5 A4:.5 B4:.5 C5:1 B4:1 A4:.5 C5:.5 B4:.5 B4:.5 A4:2",
+     "gain": 0.38,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/full-moon/b.wav",
+   "_about": "Au Clair de la Lune, by the light of the moon, part B, as 60s monster rock.",
+   "bpm": 108,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "E3:0.5 B3:0.5 E4:0.5 B3:0.5 D3:0.5 A3:0.5 D4:0.5 A3:0.5 E3:0.5 B3:0.5 E4:0.5 B3:0.5 E3:0.5 B3:0.5 E4:0.5 B3:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [E5,G#5,B5]:0.5 -:0.5 [E5,G#5,B5]:0.5 -:0.5 [D5,F5,A5]:0.5 -:0.5 [D5,F5,A5]:0.5 -:0.5 [E5,G#5,B5]:0.5 -:0.5 [E5,G#5,B5]:0.5 -:0.5 [E5,G#5,B5]:0.5 -:0.5 [E5,G#5,B5]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "B4:.5 B4:.5 B4:.5 B4:.5 F4:1 F4:1 B4:.5 A4:.5 G#4:.5 F4:.5 E4:2",
+     "gain": 0.42,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    },
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "steps": "-x-x-x-x",
+     "step": 0.5,
+     "gain": 0.18
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/bell-tower/a.wav",
+   "_about": "Are You Sleeping, Brother John, in a minor key, part A, as 60s monster rock.",
+   "bpm": 112,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "D2:0.5 A2:0.5 D3:0.5 A2:0.5 D2:0.5 A2:0.5 D3:0.5 A2:0.5 D2:0.5 A2:0.5 D3:0.5 A2:0.5 D2:0.5 A2:0.5 D3:0.5 A2:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "D5:.5 E5:.5 F5:.5 D5:.5 D5:.5 E5:.5 F5:.5 D5:.5 F5:.5 G5:.5 A5:1 F5:.5 G5:.5 A5:1",
+     "gain": 0.38,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    },
+    {
+     "type": "seq",
+     "inst": "tubular_bell",
+     "steps": "D3:2 D3:2 D3:2 D3:2",
+     "gain": 0.22
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/bell-tower/b.wav",
+   "_about": "Are You Sleeping, Brother John, in a minor key, part B, as 60s monster rock.",
+   "bpm": 112,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "D2:0.5 A2:0.5 D3:0.5 A2:0.5 D2:0.5 A2:0.5 D3:0.5 A2:0.5 D2:0.5 A2:0.5 D3:0.5 A2:0.5 D2:0.5 A2:0.5 D3:0.5 A2:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5 -:0.5 [D4,F4,A4]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "A5:.25 A#5:.25 A5:.25 G5:.25 F5:.5 D5:.5 A5:.25 A#5:.25 A5:.25 G5:.25 F5:.5 D5:.5 D5:.5 A4:.5 D5:1 D5:.5 A4:.5 D5:1",
+     "gain": 0.42,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    },
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "steps": "-x-x-x-x",
+     "step": 0.5,
+     "gain": 0.18
+    },
+    {
+     "type": "seq",
+     "inst": "tubular_bell",
+     "steps": "D3:2 D3:2 D3:2 D3:2",
+     "gain": 0.22
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/lightning-rod/a.wav",
+   "_about": "Wagner's Ride of the Valkyries, part A, as 60s monster rock.",
+   "bpm": 114,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "F#2:0.5 C#3:0.5 F#3:0.5 C#3:0.5 F#2:0.5 C#3:0.5 F#3:0.5 C#3:0.5 F#2:0.5 C#3:0.5 F#3:0.5 C#3:0.5 F#2:0.5 C#3:0.5 F#3:0.5 C#3:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [F#4,A4,C#5]:0.5 -:0.5 [F#4,A4,C#5]:0.5 -:0.5 [F#4,A4,C#5]:0.5 -:0.5 [F#4,A4,C#5]:0.5 -:0.5 [F#4,A4,C#5]:0.5 -:0.5 [F#4,A4,C#5]:0.5 -:0.5 [F#4,A4,C#5]:0.5 -:0.5 [F#4,A4,C#5]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "C#5:.25 F#5:.5 C#5:.25 F#5:.25 A5:.75 F#5:.5 A5:1.5 F#5:.25 A5:.5 F#5:.25 A5:.25 C#6:.75 A5:.5 C#6:1.5",
+     "gain": 0.38,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/lightning-rod/b.wav",
+   "_about": "Wagner's Ride of the Valkyries, part B, as 60s monster rock.",
+   "bpm": 114,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "A2:0.5 E3:0.5 A3:0.5 E3:0.5 A2:0.5 E3:0.5 A3:0.5 E3:0.5 F#2:0.5 C#3:0.5 F#3:0.5 C#3:0.5 F#2:0.5 C#3:0.5 F#3:0.5 C#3:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [A4,C#5,E5]:0.5 -:0.5 [A4,C#5,E5]:0.5 -:0.5 [A4,C#5,E5]:0.5 -:0.5 [A4,C#5,E5]:0.5 -:0.5 [F#4,A4,C#5]:0.5 -:0.5 [F#4,A4,C#5]:0.5 -:0.5 [F#4,A4,C#5]:0.5 -:0.5 [F#4,A4,C#5]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "A5:.25 C#6:.5 A5:.25 C#6:.25 E6:.75 C#6:.5 E6:1.5 C#6:.25 F#6:.75 C#6:.25 A5:.25 F#5:1 C#5:.5 F#5:1",
+     "gain": 0.42,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    },
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "steps": "-x-x-x-x",
+     "step": 0.5,
+     "gain": 0.18
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/slab/a.wav",
+   "_about": "Grieg's In the Hall of the Mountain King, part A, as 60s monster rock.",
+   "bpm": 118,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "G2:0.5 D3:0.5 G3:0.5 D3:0.5 G2:0.5 D3:0.5 G3:0.5 D3:0.5 F#3:0.5 C#4:0.5 F#4:0.5 C#4:0.5 F3:0.5 C4:0.5 F4:0.5 C4:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [G4,A#4,D5]:0.5 -:0.5 [G4,A#4,D5]:0.5 -:0.5 [G4,A#4,D5]:0.5 -:0.5 [G4,A#4,D5]:0.5 -:0.5 [F#5,A#5,C#6]:0.5 -:0.5 [F#5,A#5,C#6]:0.5 -:0.5 [F5,A5,C6]:0.5 -:0.5 [F5,A5,C6]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "G4:.5 A4:.5 A#4:.5 C5:.5 D5:.5 A#4:.5 D5:1 C#5:.5 A4:.5 C#5:1 C5:.5 G#4:.5 C5:1",
+     "gain": 0.38,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/slab/b.wav",
+   "_about": "Grieg's In the Hall of the Mountain King, part B, as 60s monster rock.",
+   "bpm": 118,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "G2:0.5 D3:0.5 G3:0.5 D3:0.5 G2:0.5 D3:0.5 G3:0.5 D3:0.5 A#2:0.5 F3:0.5 A#3:0.5 F3:0.5 A#2:0.5 F3:0.5 A#3:0.5 F3:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [G4,A#4,D5]:0.5 -:0.5 [G4,A#4,D5]:0.5 -:0.5 [G4,A#4,D5]:0.5 -:0.5 [G4,A#4,D5]:0.5 -:0.5 [A#4,D5,F5]:0.5 -:0.5 [A#4,D5,F5]:0.5 -:0.5 [A#4,D5,F5]:0.5 -:0.5 [A#4,D5,F5]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "G4:.5 A4:.5 A#4:.5 C5:.5 D5:.5 A#4:.5 D5:.5 G5:.5 F5:.5 D5:.5 A#4:.5 D5:.5 F5:2",
+     "gain": 0.42,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    },
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "steps": "-x-x-x-x",
+     "step": 0.5,
+     "gain": 0.18
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/big-shuffle/a.wav",
+   "_about": "When the Saints Go Marching In, part A, as 60s monster rock.",
+   "bpm": 124,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "E2:0.5 B2:0.5 E3:0.5 B2:0.5 E2:0.5 B2:0.5 E3:0.5 B2:0.5 E2:0.5 B2:0.5 E3:0.5 B2:0.5 E2:0.5 B2:0.5 E3:0.5 B2:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "E5:.5 G5:.5 A5:.5 B5:2.5 E5:.5 G5:.5 A5:.5 B5:2.5",
+     "gain": 0.38,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "song/big-shuffle/b.wav",
+   "_about": "When the Saints Go Marching In, part B, as 60s monster rock.",
+   "bpm": 124,
+   "beats": 8,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "E2:0.5 B2:0.5 E3:0.5 B2:0.5 E2:0.5 B2:0.5 E3:0.5 B2:0.5 E2:0.5 B2:0.5 E3:0.5 B2:0.5 B2:0.5 F#3:0.5 B3:0.5 F#3:0.5",
+     "gain": 0.6,
+     "legato": 0.8
+    },
+    {
+     "type": "seq",
+     "inst": "organ",
+     "steps": "-:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [E4,G4,B4]:0.5 -:0.5 [B4,D#5,F#5]:0.5 -:0.5 [B4,D#5,F#5]:0.5",
+     "gain": 0.28,
+     "legato": 0.7
+    },
+    {
+     "type": "seq",
+     "inst": "electric_guitar",
+     "steps": "E5:.5 G5:.5 A5:.5 B5:1 G5:1 E5:1 G5:.5 F#5:3",
+     "gain": 0.42,
+     "legato": 0.85,
+     "fx": [
+      {
+       "type": "spring_reverb",
+       "mix": 0.35
+      },
+      {
+       "type": "tremolo",
+       "rate": 6,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "pattern",
+     "kind": "kick",
+     "steps": "x-x-x-x-",
+     "step": 0.5,
+     "gain": 0.5
+    },
+    {
+     "type": "pattern",
+     "kind": "snare",
+     "steps": "--x---x-",
+     "step": 0.5,
+     "gain": 0.32
+    },
+    {
+     "type": "pattern",
+     "kind": "hihat",
+     "steps": "xxxxxxxx",
+     "step": 0.5,
+     "gain": 0.16
+    },
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "steps": "-x-x-x-x",
+     "step": 0.5,
+     "gain": 0.18
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "music/title.wav",
+   "_about": "Title theme: a creepy medley of public-domain classics. Bach's Toccata in D minor on church organ, the twelve strokes of midnight and the tuned-down violin of Saint-Saens' Danse Macabre, Grieg's In the Hall of the Mountain King on a chiptune pulse, and Chopin's Funeral March.",
+   "duration": 90.0,
+   "loop": "fold",
+   "layers": [
+    {
+     "type": "group",
+     "at": 0.0,
+     "layers": [
+      {
+       "type": "seq",
+       "inst": "church_organ",
+       "steps": "A5:0.15 G5:0.15 A5:1.3 -:0.3 G5:0.18 F5:0.18 E5:0.18 D5:0.18 C#5:0.7 D5:1.6 -:0.4",
+       "gain": 0.5,
+       "params": {
+        "mixture": 0.4,
+        "sub": 0.3
+       },
+       "bpm": 60
+      },
+      {
+       "type": "synth",
+       "inst": "church_organ",
+       "notes": [
+        "D2",
+        "A2",
+        "D3"
+       ],
+       "dur": 2.5,
+       "at": 3.2,
+       "gain": 0.35,
+       "bpm": 60
+      },
+      {
+       "type": "seq",
+       "inst": "church_organ",
+       "steps": "A4:0.15 G4:0.15 A4:1.3 -:0.3 G4:0.18 F4:0.18 E4:0.18 D4:0.18 C#4:0.7 D4:1.6 -:0.4",
+       "at": 5.0,
+       "gain": 0.5,
+       "params": {
+        "mixture": 0.4,
+        "sub": 0.3
+       },
+       "bpm": 60
+      },
+      {
+       "type": "synth",
+       "inst": "church_organ",
+       "notes": [
+        "D2",
+        "A2"
+       ],
+       "dur": 2.5,
+       "at": 8.2,
+       "gain": 0.35,
+       "bpm": 60
+      },
+      {
+       "type": "seq",
+       "inst": "church_organ",
+       "steps": "A3:0.15 G3:0.15 A3:1.3 -:0.3 G3:0.18 F3:0.18 E3:0.18 D3:0.18 C#3:0.7 D3:1.6 -:0.4",
+       "at": 10.0,
+       "gain": 0.5,
+       "params": {
+        "mixture": 0.4,
+        "sub": 0.5
+       },
+       "bpm": 60
+      },
+      {
+       "type": "seq",
+       "inst": "church_organ",
+       "steps": "C#4:0.25 E4:0.25 G4:0.25 A#4:0.25 C#5:0.25 E5:0.25 G5:0.5",
+       "at": 15.0,
+       "gain": 0.4,
+       "params": {
+        "mixture": 0.4,
+        "sub": 0.3
+       },
+       "bpm": 60
+      },
+      {
+       "type": "synth",
+       "inst": "church_organ",
+       "notes": [
+        "D2",
+        "A2",
+        "D3",
+        "F3",
+        "A3",
+        "D4"
+       ],
+       "dur": 3.5,
+       "at": 17.0,
+       "gain": 0.4,
+       "bpm": 60
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "at": 21.0,
+     "layers": [
+      {
+       "type": "seq",
+       "inst": "harp",
+       "steps": "D4:0.45 D4:0.45 D4:0.45 D4:0.45 D4:0.45 D4:0.45 D4:0.45 D4:0.45 D4:0.45 D4:0.45 D4:0.45 D4:0.45",
+       "gain": 0.45,
+       "bpm": 60
+      },
+      {
+       "type": "seq",
+       "inst": "violin",
+       "steps": "[A4,D#5]:0.6 -:0.3 [A4,D#5]:0.6 -:0.3 [A4,D#5]:0.9 -:0.3",
+       "at": 5.6,
+       "gain": 0.45,
+       "bpm": 60
+      },
+      {
+       "type": "seq",
+       "inst": "harp",
+       "steps": "G2:0.4 [D3,A#3]:0.4 [D3,A#3]:0.4 G2:0.4 [D3,A#3]:0.4 [D3,A#3]:0.4 G2:0.4 [D3,A#3]:0.4 [D3,A#3]:0.4 G2:0.4 [D3,A#3]:0.4 [D3,A#3]:0.4 G2:0.4 [D3,A#3]:0.4 [D3,A#3]:0.4 G2:0.4 [D3,A#3]:0.4 [D3,A#3]:0.4 D2:0.4 [D3,F#3]:0.4 [D3,F#3]:0.4 D2:0.4 [D3,F#3]:0.4 [D3,F#3]:0.4",
+       "at": 8.8,
+       "gain": 0.4,
+       "bpm": 60
+      },
+      {
+       "type": "seq",
+       "inst": "xylophone",
+       "steps": "G5:0.4 G5:0.4 G5:0.4 A5:0.4 A#5:0.8 A5:0.4 G5:0.4 F#5:0.4 G5:0.8 -:0.4 D5:0.4 G5:0.4 A#5:0.4 D6:0.8 C6:0.4 A#5:0.4 A5:0.4 G5:1.2 -:0.4 D5:0.4 D5:0.4 D5:1.2",
+       "at": 8.8,
+       "gain": 0.35,
+       "bpm": 60
+      },
+      {
+       "type": "seq",
+       "inst": "violin",
+       "steps": "[A4,D#5]:0.6 -:0.3 [G4,C#5]:0.6 -:0.3 [A4,D#5]:1.2",
+       "at": 18.4,
+       "gain": 0.45,
+       "bpm": 60
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "at": 42.0,
+     "layers": [
+      {
+       "type": "seq",
+       "inst": "nes_pulse",
+       "steps": "B3:0.5 C#4:0.5 D4:0.5 E4:0.5 F#4:0.5 D4:0.5 F#4:1 F4:0.5 C#4:0.5 F4:1 E4:0.5 C4:0.5 E4:1 B3:0.5 C#4:0.5 D4:0.5 E4:0.5 F#4:0.5 D4:0.5 F#4:0.5 B4:0.5 A4:0.5 F#4:0.5 D4:0.5 F#4:0.5 A4:2",
+       "gain": 0.35,
+       "bpm": 120
+      },
+      {
+       "type": "seq",
+       "inst": "organ",
+       "steps": "[B2,F#3]:2 [B2,F#3]:2 [A#2,F3]:2 [A2,E3]:2 [B2,F#3]:2 [B2,F#3]:2 [D3,A3]:2 [D3,A3]:2",
+       "gain": 0.25,
+       "bpm": 120
+      },
+      {
+       "type": "pattern",
+       "kind": "tom",
+       "steps": "x-x-x-x-x-x-x-x-",
+       "step": 1,
+       "gain": 0.25,
+       "bpm": 120
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "at": 50.0,
+     "layers": [
+      {
+       "type": "seq",
+       "inst": "nes_pulse",
+       "steps": "B3:0.5 C#4:0.5 D4:0.5 E4:0.5 F#4:0.5 D4:0.5 F#4:1 F4:0.5 C#4:0.5 F4:1 E4:0.5 C4:0.5 E4:1 B3:0.5 C#4:0.5 D4:0.5 E4:0.5 F#4:0.5 D4:0.5 F#4:0.5 B4:0.5 A4:0.5 F#4:0.5 D4:0.5 F#4:0.5 A4:2",
+       "gain": 0.4,
+       "bpm": 144
+      },
+      {
+       "type": "seq",
+       "inst": "organ",
+       "steps": "[B2,F#3]:2 [B2,F#3]:2 [A#2,F3]:2 [A2,E3]:2 [B2,F#3]:2 [B2,F#3]:2 [D3,A3]:2 [D3,A3]:2",
+       "gain": 0.25,
+       "bpm": 144
+      },
+      {
+       "type": "pattern",
+       "kind": "tom",
+       "steps": "x-x-x-x-x-x-x-x-",
+       "step": 1,
+       "gain": 0.25,
+       "bpm": 144
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "at": 56.7,
+     "layers": [
+      {
+       "type": "seq",
+       "inst": "nes_pulse",
+       "steps": "B3:0.5 C#4:0.5 D4:0.5 E4:0.5 F#4:0.5 D4:0.5 F#4:1 F4:0.5 C#4:0.5 F4:1 E4:0.5 C4:0.5 E4:1 B3:0.5 C#4:0.5 D4:0.5 E4:0.5 F#4:0.5 D4:0.5 F#4:0.5 B4:0.5 A4:0.5 F#4:0.5 D4:0.5 F#4:0.5 A4:2",
+       "gain": 0.45,
+       "bpm": 176
+      },
+      {
+       "type": "seq",
+       "inst": "organ",
+       "steps": "[B2,F#3]:2 [B2,F#3]:2 [A#2,F3]:2 [A2,E3]:2 [B2,F#3]:2 [B2,F#3]:2 [D3,A3]:2 [D3,A3]:2",
+       "gain": 0.25,
+       "bpm": 176
+      },
+      {
+       "type": "pattern",
+       "kind": "tom",
+       "steps": "x-x-x-x-x-x-x-x-",
+       "step": 1,
+       "gain": 0.25,
+       "bpm": 176
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "at": 63.0,
+     "layers": [
+      {
+       "type": "seq",
+       "inst": "church_organ",
+       "steps": "A#3:1.5 A#3:1 A#3:0.5 A#3:1.5 C#4:1 C4:0.5 C4:1 A#3:0.5 A#3:1 A3:0.5 A#3:3",
+       "gain": 0.45,
+       "params": {
+        "mixture": 0.3,
+        "sub": 0.4
+       },
+       "bpm": 54
+      },
+      {
+       "type": "seq",
+       "inst": "church_organ",
+       "steps": "[A#2,C#3,F3]:2 [A#2,C#3,F3]:2 [A#2,C#3,F3]:2 [F2,C3,D#3]:2 [A#2,C#3,F3]:4",
+       "gain": 0.3,
+       "bpm": 54
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "at": 76.5,
+     "layers": [
+      {
+       "type": "seq",
+       "inst": "church_organ",
+       "steps": "A#3:1.5 A#3:1 A#3:0.5 A#3:1.5 C#4:1 C4:0.5 C4:1 A#3:0.5 A#3:1 A3:0.5 A#3:3",
+       "gain": 0.45,
+       "params": {
+        "mixture": 0.3,
+        "sub": 0.4
+       },
+       "bpm": 54
+      },
+      {
+       "type": "seq",
+       "inst": "church_organ",
+       "steps": "[A#2,C#3,F3]:2 [A#2,C#3,F3]:2 [A#2,C#3,F3]:2 [F2,C3,D#3]:2 [A#2,C#3,F3]:4",
+       "gain": 0.3,
+       "bpm": 54
+      },
+      {
+       "type": "seq",
+       "inst": "tubular_bell",
+       "steps": "A#2:4 A#2:4 A#2:4",
+       "gain": 0.25,
+       "bpm": 54
+      }
+     ]
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.35,
+     "size": 0.9
+    }
+   ],
+   "normalize": -14
+  },
+  {
+   "out": "music/pause.wav",
+   "_about": "Pause music: a slow organ drone with the funeral march in the bass.",
+   "bpm": 50,
+   "beats": 16,
+   "loop": "fold",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "church_organ",
+     "step": 1,
+     "steps": "[D3,A3]:4 | [A#2,F3]:4 | [G2,D3]:4 | [A2,E3]:4",
+     "gain": 0.22,
+     "vel": 0.4,
+     "params": {
+      "sub": 0.2,
+      "mixture": 0.1
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.45,
+     "size": 0.9
+    }
+   ],
+   "normalize": -18
+  },
+  {
+   "out": "call/zombie.wav",
+   "_about": "Zombie: a low groan.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "monster",
+     "params": {
+      "size": 3.2,
+      "aggression": 0.25,
+      "pitch": 150,
+      "dur": 0.45,
+      "seed": 1
+     },
+     "gain": 1.0,
+     "at": 0.0
+    }
+   ],
+   "normalize": -8,
+   "fx": [
+    {
+     "type": "fade",
+     "out": 0.08
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "call/skeleton.wav",
+   "_about": "Skeleton: a rattle of dry bones.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "shake",
+     "params": {
+      "preset": "bamboo_chimes",
+      "energy": 0.8,
+      "rate": 0,
+      "dur": 0.35,
+      "size": 0.6,
+      "seed": 2
+     },
+     "gain": 1.0,
+     "at": 0.0
+    },
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "hits": [
+      0,
+      0.07,
+      0.13,
+      0.22
+     ],
+     "gain": 0.5
+    }
+   ],
+   "normalize": -8,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "call/mummy.wav",
+   "_about": "Mummy: a dusty moan.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "monster",
+     "params": {
+      "size": 1.6,
+      "aggression": 0.05,
+      "pitch": 200,
+      "dur": 0.45,
+      "seed": 3
+     },
+     "gain": 1.0,
+     "at": 0.0
+    },
+    {
+     "type": "sfx",
+     "kind": "breath",
+     "params": {
+      "kind": "sigh",
+      "effort": 0.3,
+      "dur": 0.45,
+      "seed": 3
+     },
+     "gain": 0.5,
+     "at": 0.0
+    }
+   ],
+   "normalize": -8,
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 2500
+    },
+    {
+     "type": "fade",
+     "out": 0.08
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "call/vampire.wav",
+   "_about": "Vampire: a cape swish and a hiss.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "cloth",
+     "params": {
+      "kind": "flap",
+      "dur": 0.25,
+      "rate": 8,
+      "weight": 0.7,
+      "seed": 4
+     },
+     "gain": 1.0,
+     "at": 0.0
+    },
+    {
+     "type": "sfx",
+     "kind": "hiss",
+     "params": {
+      "kind": "cat",
+      "size": 1.2,
+      "dur": 0.25,
+      "seed": 4
+     },
+     "gain": 0.6,
+     "at": 0.18
+    }
+   ],
+   "normalize": -8,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "call/werewolf.wav",
+   "_about": "Werewolf: a short howl.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "howl",
+     "params": {
+      "size": 1.0,
+      "pitch": 480,
+      "dur": 0.45,
+      "seed": 5
+     },
+     "gain": 1.0,
+     "at": 0.0
+    }
+   ],
+   "normalize": -8,
+   "fx": [
+    {
+     "type": "fade",
+     "out": 0.08
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "call/ghost.wav",
+   "_about": "Ghost: a high wavering whoo on a theremin.",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "theremin",
+     "steps": "G5:0.18 E5:0.25",
+     "gain": 0.8,
+     "legato": 1.0
+    }
+   ],
+   "fx": [
+    {
+     "type": "vibrato",
+     "rate": 7,
+     "depth": 0.4
+    },
+    {
+     "type": "reverb",
+     "mix": 0.2
+    },
+    {
+     "type": "fade",
+     "out": 0.1
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "duration": 0.45,
+   "normalize": -9
+  },
+  {
+   "out": "move/zombie.wav",
+   "_about": "Zombie's drag: a foot dragged through the dirt.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "scrape",
+     "params": {
+      "dur": 0.3,
+      "speed": 0.2,
+      "force": 0.8,
+      "roughness": 0.8,
+      "texture": "gritty",
+      "material": "stone",
+      "seed": 6
+     },
+     "gain": 1.0,
+     "at": 0.0
+    }
+   ],
+   "normalize": -10,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "move/skeleton.wav",
+   "_about": "Skeleton's rattle: bones clacking together.",
+   "layers": [
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "hits": [
+      0,
+      0.08
+     ],
+     "gain": 0.8
+    },
+    {
+     "type": "pattern",
+     "kind": "clave",
+     "hits": [
+      0.04
+     ],
+     "gain": 0.5
+    }
+   ],
+   "normalize": -10,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "move/mummy.wav",
+   "_about": "Mummy's unwrap: cloth tearing.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "cloth",
+     "params": {
+      "kind": "tear",
+      "dur": 0.3,
+      "weight": 0.6,
+      "seed": 7
+     },
+     "gain": 1.0,
+     "at": 0.0
+    }
+   ],
+   "normalize": -10,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "move/vampire.wav",
+   "_about": "Vampire's swoop: a cape whooshing past.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "whoosh",
+     "params": {
+      "dur": 0.3,
+      "low": 250,
+      "high": 3000,
+      "direction": "down"
+     },
+     "gain": 1.0,
+     "at": 0.0
+    }
+   ],
+   "normalize": -10,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "move/werewolf.wav",
+   "_about": "Werewolf's howl move: claws scraping.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "scrape",
+     "params": {
+      "dur": 0.25,
+      "speed": 0.8,
+      "force": 0.6,
+      "roughness": 0.6,
+      "material": "wood",
+      "bright": 0.8,
+      "seed": 8
+     },
+     "gain": 1.0,
+     "at": 0.0
+    }
+   ],
+   "normalize": -10,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "move/ghost.wav",
+   "_about": "Ghost's float: a light chain clinking.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "chain",
+     "params": {
+      "dur": 0.4,
+      "pushes": 1,
+      "weight": 0.2,
+      "density": 30,
+      "seed": 9
+     },
+     "gain": 1.0,
+     "at": 0.0
+    }
+   ],
+   "normalize": -10,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "judge/spot-on.wav",
+   "_about": "Spot on: a small spooky chime.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "ui_chime",
+     "params": {
+      "kind": "discovery",
+      "pitch": 1.6,
+      "seed": 10
+     },
+     "gain": 1.0,
+     "at": 0.0
+    }
+   ],
+   "normalize": -14,
+   "fx": [
+    {
+     "type": "fade",
+     "out": 0.2
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "duration": 0.5
+  },
+  {
+   "out": "judge/close.wav",
+   "_about": "Close: a soft dull tick.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "ui_tick",
+     "params": {
+      "kind": "focus",
+      "seed": 11
+     },
+     "gain": 1.0,
+     "at": 0.0
+    }
+   ],
+   "normalize": -16,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "judge/stumble.wav",
+   "_about": "Stumble: a thud and a clatter of bones.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "thud",
+     "params": {
+      "body": "sack",
+      "contact_ms": 30,
+      "size": 1.2,
+      "force": 0.7,
+      "seed": 12
+     },
+     "gain": 1.0,
+     "at": 0.0
+    },
+    {
+     "type": "sfx",
+     "kind": "shake",
+     "params": {
+      "preset": "bamboo_chimes",
+      "energy": 0.5,
+      "rate": 0,
+      "dur": 0.3,
+      "seed": 12
+     },
+     "gain": 0.5,
+     "at": 0.05
+    }
+   ],
+   "normalize": -10,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "count.wav",
+   "_about": "Count: a knock on a coffin lid.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "knock",
+     "params": {
+      "count": 1,
+      "material": "hollow",
+      "size": 1.4,
+      "force": 0.8,
+      "seed": 13
+     },
+     "gain": 1.0,
+     "at": 0.0
+    }
+   ],
+   "normalize": -8,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "clap.wav",
+   "_about": "Bony claps: three claps with a clack of bones.",
+   "layers": [
+    {
+     "type": "pattern",
+     "kind": "woodblock",
+     "hits": [
+      0,
+      0.22,
+      0.44
+     ],
+     "gain": 0.6
+    },
+    {
+     "type": "sfx",
+     "kind": "handclap",
+     "params": {
+      "cup": 0.6,
+      "seed": 14
+     },
+     "gain": 0.5,
+     "at": 0.0
+    },
+    {
+     "type": "sfx",
+     "kind": "handclap",
+     "params": {
+      "cup": 0.6,
+      "seed": 15
+     },
+     "gain": 0.5,
+     "at": 0.22
+    },
+    {
+     "type": "sfx",
+     "kind": "handclap",
+     "params": {
+      "cup": 0.6,
+      "seed": 16
+     },
+     "gain": 0.5,
+     "at": 0.44
+    }
+   ],
+   "normalize": -10,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "applause.wav",
+   "_about": "Applause with howls and rattling bones.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "applause",
+     "params": {
+      "crowd": 20,
+      "enthusiasm": 0.8,
+      "dur": 2.5,
+      "seed": 17
+     },
+     "gain": 1.0,
+     "at": 0.0
+    },
+    {
+     "type": "sfx",
+     "kind": "howl",
+     "params": {
+      "size": 1.3,
+      "pitch": 420,
+      "dur": 1.5,
+      "seed": 17
+     },
+     "gain": 0.3,
+     "at": 0.4
+    },
+    {
+     "type": "sfx",
+     "kind": "shake",
+     "params": {
+      "preset": "bamboo_chimes",
+      "energy": 0.7,
+      "rate": 6,
+      "dur": 1.5,
+      "seed": 17
+     },
+     "gain": 0.4,
+     "at": 0.2
+    }
+   ],
+   "normalize": -10,
+   "fx": [
+    {
+     "type": "fade",
+     "out": 0.6
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "bed/gate.wav",
+   "_about": "The graveyard gate: wind in the leaves and an owl.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "gust",
+     "params": {
+      "through": "leaves",
+      "dur": 10.5,
+      "strength": 0.35,
+      "seed": 18
+     },
+     "gain": 0.7,
+     "at": 0.0
+    },
+    {
+     "type": "sfx",
+     "kind": "bird_call",
+     "params": {
+      "freq": 380,
+      "freq_end": 300,
+      "species": "oil_bird",
+      "dur": 0.6
+     },
+     "gain": 0.15,
+     "at": 3.0
+    },
+    {
+     "type": "sfx",
+     "kind": "bird_call",
+     "params": {
+      "freq": 360,
+      "freq_end": 280,
+      "species": "oil_bird",
+      "dur": 0.8
+     },
+     "gain": 0.12,
+     "at": 3.8
+    }
+   ],
+   "normalize": -24,
+   "fx": [
+    {
+     "type": "loop",
+     "crossfade": 1.0
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "duration": 10.0
+  },
+  {
+   "out": "bed/crypt.wav",
+   "_about": "The crypt: water dripping in the dark.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "cave_drips",
+     "params": {
+      "dur": 10.5,
+      "sources": 4,
+      "wet": 0.6,
+      "seed": 19
+     },
+     "gain": 1.0,
+     "at": 0.0
+    },
+    {
+     "type": "sfx",
+     "kind": "noise_bed",
+     "params": {
+      "kind": "rumble",
+      "dur": 10.5,
+      "level": -26,
+      "seed": 19
+     },
+     "gain": 0.4,
+     "at": 0.0
+    }
+   ],
+   "normalize": -24,
+   "fx": [
+    {
+     "type": "loop",
+     "crossfade": 1.0
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "duration": 10.0
+  },
+  {
+   "out": "bed/church.wav",
+   "_about": "The old church: wind in the rafters and bats.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "gust",
+     "params": {
+      "through": "doorway",
+      "dur": 10.5,
+      "strength": 0.4,
+      "seed": 20
+     },
+     "gain": 0.6,
+     "at": 0.0
+    },
+    {
+     "type": "sfx",
+     "kind": "wings",
+     "params": {
+      "kind": "bat",
+      "dur": 1.2,
+      "seed": 20
+     },
+     "gain": 0.3,
+     "at": 2.0
+    },
+    {
+     "type": "sfx",
+     "kind": "wings",
+     "params": {
+      "kind": "bat",
+      "dur": 1.0,
+      "seed": 21
+     },
+     "gain": 0.25,
+     "at": 6.5
+    }
+   ],
+   "normalize": -24,
+   "fx": [
+    {
+     "type": "loop",
+     "crossfade": 1.0
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "duration": 10.0
+  },
+  {
+   "out": "bed/lab.wav",
+   "_about": "The laboratory: humming machines and crackling sparks.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "mains_hum",
+     "params": {
+      "dur": 10.5,
+      "mains": 60,
+      "harmonics": 0.4,
+      "seed": 22
+     },
+     "gain": 0.6,
+     "at": 0.0
+    },
+    {
+     "type": "sfx",
+     "kind": "tesla",
+     "params": {
+      "dur": 0.6,
+      "rate": 90,
+      "seed": 22
+     },
+     "gain": 0.25,
+     "at": 2.5
+    },
+    {
+     "type": "sfx",
+     "kind": "spark",
+     "params": {
+      "size": 0.5,
+      "seed": 23
+     },
+     "gain": 0.4,
+     "at": 6.0
+    },
+    {
+     "type": "sfx",
+     "kind": "spark",
+     "params": {
+      "size": 0.3,
+      "seed": 24
+     },
+     "gain": 0.3,
+     "at": 8.2
+    }
+   ],
+   "normalize": -24,
+   "fx": [
+    {
+     "type": "loop",
+     "crossfade": 1.0
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "duration": 10.0
+  },
+  {
+   "out": "menu/move.wav",
+   "_about": "Menu move: a small knock on old wood.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "knock",
+     "params": {
+      "count": 1,
+      "material": "wood",
+      "size": 0.6,
+      "force": 0.4,
+      "seed": 30
+     },
+     "gain": 1.0,
+     "at": 0.0
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -9,
+   "max_loudness": -28
+  },
+  {
+   "out": "menu/select.wav",
+   "_about": "Menu select: a coffin lid creak and an organ note.",
+   "duration": 0.5,
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "creak",
+     "params": {
+      "material": "door",
+      "force": "pull",
+      "level": 0.6,
+      "dur": 0.3,
+      "seed": 31
+     },
+     "gain": 0.6,
+     "at": 0.0
+    },
+    {
+     "type": "synth",
+     "inst": "church_organ",
+     "notes": "D4",
+     "dur": 0.25,
+     "at": 0.05,
+     "gain": 0.4
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "fade",
+     "out": 0.1
+    }
+   ],
+   "normalize": -6,
+   "max_loudness": -22
+  },
+  {
+   "out": "menu/back.wav",
+   "_about": "Menu back: a soft thud of earth.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "thud",
+     "params": {
+      "body": "sack",
+      "contact_ms": 25,
+      "size": 0.8,
+      "force": 0.5,
+      "seed": 32
+     },
+     "gain": 1.0,
+     "at": 0.0
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -9,
+   "max_loudness": -26
+  }
+ ]
+}

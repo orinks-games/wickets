@@ -1,0 +1,29 @@
+[package]
+name = "winter-wonderland"
+description = "Winter Wonderland, a Wicket's game"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+authors.workspace = true
+license.workspace = true
+publish = false
+build = "build.rs"
+# The test files are modules of tests/all.rs, one binary (see that file).
+autotests = false
+
+[lib]
+# No doc examples to run.
+doctest = false
+
+[[test]]
+name = "all"
+path = "tests/all.rs"
+
+[dependencies]
+hearken.workspace = true
+parlor-core.workspace = true
+serde.workspace = true
+
+[build-dependencies]
+wickets-content = { path = "../../crates/wickets-content" }

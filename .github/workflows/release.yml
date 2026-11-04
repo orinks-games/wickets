@@ -1,0 +1,324 @@
+name: Release
+
+on:
+  # Pushing a tag like v0.2.0 builds Windows, macOS and Linux packages and
+  # publishes them as that tag's GitHub release. The tag names the update
+  # channel: v1.3.0 is stable, v1.3.0-beta.1 is beta, v1.3.0-alpha.1 is
+  # alpha (see docs/releasing.md). Running the workflow by hand builds the
+  # same packages as run artifacts, with no release. Pull requests never
+  # build packages.
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: Update channel the packages are built for
+        type: choice
+        options: [stable, beta, alpha]
+        default: stable
+
+# A tag's build always runs to the end.
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  CARGO_TERM_COLOR: always
+  CMAKE_POLICY_VERSION_MINIMUM: "3.5"
+  RUSTC_WRAPPER: sccache
+  SCCACHE_GHA_ENABLED: "true"
+
+jobs:
+  build:
+    name: build (${{ matrix.name }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: windows-x64
+            os: windows-2025
+          - name: linux-x64
+            os: ubuntu-24.04
+          # Apple Silicon Macs only (GitHub's macos-15 runners are M1).
+          - name: macos-arm64
+            os: macos-15
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: write
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      # The private content (story, calendar, private games, their sounds)
+      # comes from wickets-secrets through a read-only deploy key. A release
+      # always builds full: WICKETS_MODE=full fails the build if the overlay
+      # is missing, so a stub build can never ship.
+      - name: Check out the private overlay
+        uses: actions/checkout@v4
+        with:
+          repository: orinks-games/wickets-secrets
+          path: secrets
+          ssh-key: ${{ secrets.WICKETS_SECRETS_DEPLOY_KEY }}
+          persist-credentials: false
+      - name: Install the overlay and check the public tree
+        shell: bash
+        run: |
+          test -f secrets/WICKETS_SECRETS
+          python3 tools/overlay.py
+          python3 tools/check_spoilers.py --require
+          python3 tools/check_drift.py --require
+          echo "WICKETS_MODE=full" >> "$GITHUB_ENV"
+      # The tag names the version and the channel. A stable tag is the
+      # workspace version in Cargo.toml (v1.3.0). A beta or alpha tag is
+      # that version with -beta.N or -alpha.N: the build of the stable
+      # release still to come, so it sorts before it. Cargo.toml keeps the
+      # plain version; this step stamps the tag's into the build, so About
+      # and the update manifest say 1.3.0 beta 1.
+      - name: Name the version and channel
+        id: version
+        shell: bash
+        env:
+          HAND_CHANNEL: ${{ inputs.channel }}
+        run: |
+          crate=$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -n1)
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            tag="${GITHUB_REF_NAME#v}"
+            if [ "$tag" = "$crate" ]; then
+              channel=stable
+            elif [[ "$tag" =~ ^"$crate"-(alpha|beta)\.[1-9][0-9]*$ ]]; then
+              channel="${BASH_REMATCH[1]}"
+            else
+              echo "::error::Tag v$tag is not v$crate, v$crate-beta.N or v$crate-alpha.N (the workspace version in Cargo.toml is $crate)."
+              exit 1
+            fi
+            version="$tag"
+          else
+            channel="${HAND_CHANNEL:-stable}"
+            version="$crate"
+          fi
+          # Each release publishes the manifest for its own channel only:
+          # alpha players get alpha releases, beta players beta releases.
+          # A beta or stable package leaves out alpha-only games, so
+          # offering it to alpha (as 1.4.0-beta.3 and 1.3.2 did) hides them.
+          {
+            echo "crate=$crate"
+            echo "version=$version"
+            echo "channel=$channel"
+          } >> "$GITHUB_OUTPUT"
+      - uses: ./.github/actions/rust-setup
+        with:
+          token: ${{ secrets.HEARKEN_TOKEN }}
+          cache-key: release
+      - run: cargo install --locked --git https://github.com/orinks-games/hearken hearken-cli
+      # A beta or alpha build carries its tag's version (see above): only
+      # the workspace's own entries in Cargo.lock change with it.
+      - name: Stamp a beta or alpha version
+        if: steps.version.outputs.version != steps.version.outputs.crate
+        shell: bash
+        env:
+          CRATE: ${{ steps.version.outputs.crate }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          # The first version line is the workspace's.
+          perl -0pi -e 's/^version = "\Q$ENV{CRATE}\E"/version = "$ENV{VERSION}"/m' Cargo.toml
+          cargo update --workspace
+          grep -m1 '^version = ' Cargo.toml
+      # hearken-app's build script copies Hearken's vendored SDL2.dll into
+      # target/release. A restored cache can skip the script and leave the
+      # DLL out, so make it run again in the build hearken release does.
+      - name: Rebuild SDL2.dll if the cache left it out
+        if: runner.os == 'Windows'
+        shell: bash
+        run: |
+          if [ -z "$(find target/release -maxdepth 1 -name SDL2.dll -print -quit)" ]; then
+            cargo clean --release -p hearken-app
+          fi
+      # The Mac package is signed as "Developer ID Application: Joshua
+      # Tubbs" and notarized by Apple, so Gatekeeper opens the game without
+      # the Open Anyway step. The certificate goes into a throwaway
+      # keychain and the App Store Connect key into RUNNER_TEMP, never the
+      # checkout or the package. hearken release reads the MACOS_* variables
+      # this step sets.
+      - name: Import the Developer ID signing credentials
+        if: runner.os == 'macOS'
+        shell: bash
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          MACOS_CERT_P12_BASE64: ${{ secrets.MACOS_CERT_P12_BASE64 }}
+          MACOS_CERT_PASSWORD: ${{ secrets.MACOS_CERT_PASSWORD }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8_BASE64: ${{ secrets.ASC_KEY_P8_BASE64 }}
+        run: |
+          if [ -z "$MACOS_CERT_P12_BASE64" ] || [ -z "$ASC_KEY_P8_BASE64" ]; then
+            if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+              echo "::error::A release must be Developer ID signed and notarized; the signing secrets are missing."
+              exit 1
+            fi
+            echo "::warning::The signing secrets are missing; this Mac package is not signed or notarized."
+            exit 0
+          fi
+          keychain="$RUNNER_TEMP/wickets-signing.keychain-db"
+          keychain_password="$(uuidgen)"
+          security create-keychain -p "$keychain_password" "$keychain"
+          security set-keychain-settings -lut 21600 "$keychain"
+          security unlock-keychain -p "$keychain_password" "$keychain"
+          echo "$MACOS_CERT_P12_BASE64" | base64 --decode > "$RUNNER_TEMP/developer_id.p12"
+          security import "$RUNNER_TEMP/developer_id.p12" -k "$keychain" \
+            -P "$MACOS_CERT_PASSWORD" -T /usr/bin/codesign
+          rm -f "$RUNNER_TEMP/developer_id.p12"
+          # The G2 intermediate is not in macOS's system keychain; without it
+          # the identity is untrusted and codesign finds nothing to sign with.
+          curl -fsSL https://www.apple.com/certificateauthority/DeveloperIDG2CA.cer \
+            -o "$RUNNER_TEMP/DeveloperIDG2CA.cer"
+          security import "$RUNNER_TEMP/DeveloperIDG2CA.cer" -k "$keychain"
+          security set-key-partition-list -S apple-tool:,apple: -s \
+            -k "$keychain_password" "$keychain" >/dev/null
+          security list-keychains -d user -s "$keychain" $(security list-keychains -d user | tr -d '"')
+          identity="Developer ID Application: Joshua Tubbs ($APPLE_TEAM_ID)"
+          security find-identity -v -p codesigning "$keychain" | grep -F "$identity"
+          key_path="$RUNNER_TEMP/AuthKey_$ASC_KEY_ID.p8"
+          echo "$ASC_KEY_P8_BASE64" | base64 --decode > "$key_path"
+          chmod 600 "$key_path"
+          {
+            echo "MACOS_SIGN_IDENTITY=$identity"
+            echo "MACOS_SIGN_KEYCHAIN=$keychain"
+            echo "MACOS_NOTARY_KEY_PATH=$key_path"
+            echo "MACOS_NOTARY_KEY_ID=$ASC_KEY_ID"
+            echo "MACOS_NOTARY_ISSUER_ID=$ASC_ISSUER_ID"
+          } >> "$GITHUB_ENV"
+      # hearken release builds the player's package from the
+      # [package.metadata.hearken] table in crates/wickets/Cargo.toml:
+      # no agent server, the sounds packed into an encrypted sounds.pak,
+      # SDL2 and the Visual C++ runtime on Windows, portable.txt so
+      # saves stay beside the game, and the records sealed with the game's
+      # seal key. The key is the repository secret HEARKEN_SEAL_SECRET,
+      # given to this step only; hearken release refuses to package
+      # without it, or with a key that does not match seal-id. With
+      # update = true it also writes this platform's signed update
+      # manifest, update-<channel>-<platform>.json, signed with the game's
+      # update key, the repository secret HEARKEN_UPDATE_SECRET; it refuses
+      # without it, or with a key that does not match update-key. A tag's
+      # notes go into the manifest, for the game's What's new. The build is
+      # for the tag's channel, so its copies follow that channel and show
+      # what is ready for it (parlor_core::channel).
+      - name: Package
+        id: package
+        shell: bash
+        env:
+          HEARKEN_SEAL_SECRET: ${{ secrets.HEARKEN_SEAL_SECRET }}
+          HEARKEN_UPDATE_SECRET: ${{ secrets.HEARKEN_UPDATE_SECRET }}
+          CHANNEL: ${{ steps.version.outputs.channel }}
+        run: |
+          notes="docs/release-notes/$GITHUB_REF_NAME.md"
+          if [[ "$GITHUB_REF" == refs/tags/v* ]] && [ -f "$notes" ]; then
+            hearken release --channel="$CHANNEL" --notes="$notes"
+          else
+            hearken release --channel="$CHANNEL"
+          fi
+          # Only one of the two patterns matches on each platform.
+          file=
+          for f in dist/wickets-*.zip dist/wickets-*.tar.gz; do
+            [ -e "$f" ] && file=$f
+          done
+          if [ -z "$file" ]; then
+            echo "::error::hearken release left no package in dist/."
+            exit 1
+          fi
+          echo "file=$file" >> "$GITHUB_OUTPUT"
+          manifest=
+          for f in dist/update-"$CHANNEL"-*.json; do
+            [ -e "$f" ] && manifest=$f
+          done
+          if [ -z "$manifest" ]; then
+            echo "::error::hearken release left no update manifest in dist/."
+            exit 1
+          fi
+          echo "manifest=$manifest" >> "$GITHUB_OUTPUT"
+          # A zip also gets a signed file index, so a player's copy can
+          # download only the files that changed. A tar.gz has none.
+          index=
+          for f in dist/*.index.json; do
+            [ -e "$f" ] && index=$f
+          done
+          echo "index=$index" >> "$GITHUB_OUTPUT"
+          # What the package holds, for the log: on a Mac, Wicket's.app.
+          if [ "$RUNNER_OS" = macOS ]; then
+            unzip -l "$file" | grep -v '/sounds/' | head -n 40
+          fi
+      # Fail before anything is published if dist/ holds a manifest for
+      # any channel but this release's own.
+      - name: Check the release's manifests
+        shell: bash
+        env:
+          CHANNEL: ${{ steps.version.outputs.channel }}
+        run: |
+          if python3 -c '' 2>/dev/null; then py=python3; else py=python; fi
+          "$py" tools/check_channel_manifests.py --channel="$CHANNEL" dist
+      - name: Remove the signing credentials
+        if: always() && runner.os == 'macOS'
+        shell: bash
+        run: |
+          if [ -n "${MACOS_SIGN_KEYCHAIN:-}" ]; then
+            security delete-keychain "$MACOS_SIGN_KEYCHAIN" || true
+          fi
+          rm -f "${MACOS_NOTARY_KEY_PATH:-/nonexistent}"
+      # A tag attaches its package and its update manifest straight to
+      # that tag's release in the public release repository,
+      # orinks-games/wickets (players' copies find the manifest there). Run
+      # in that repository, the workflow's own github.token (this job's
+      # contents: write) is enough. Run from the private source repository,
+      # github.token cannot write there, so the optional
+      # WICKETS_RELEASE_TOKEN (fine-grained, Contents read and write on
+      # orinks-games/wickets only) is used when it is set. Nothing is kept as a stored
+      # artifact, so a full artifact quota can't stop a release. The first job to finish makes the release, with the
+      # player-facing notes in docs/release-notes/<tag>.md (never GitHub's
+      # generated list of pull requests, which names hidden content).
+      - name: Attach to the release
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.WICKETS_RELEASE_TOKEN || github.token }}
+          GH_REPO: orinks-games/wickets
+          HAS_RELEASE_TOKEN: ${{ secrets.WICKETS_RELEASE_TOKEN != '' }}
+          FILE: ${{ steps.package.outputs.file }}
+          MANIFEST: ${{ steps.package.outputs.manifest }}
+          INDEX: ${{ steps.package.outputs.index }}
+          CHANNEL: ${{ steps.version.outputs.channel }}
+        run: |
+          if [ "$GITHUB_REPOSITORY" != "$GH_REPO" ] && [ "$HAS_RELEASE_TOKEN" != true ]; then
+            echo "::error::Run outside $GH_REPO, this needs WICKETS_RELEASE_TOKEN to publish there."; exit 1
+          fi
+          notes="docs/release-notes/$GITHUB_REF_NAME.md"
+          [ -f "$notes" ] || { echo "No $notes; the release gets empty notes."; notes=/dev/null; }
+          # The tag exists only here, in the source repository, so gh would
+          # refuse to make the release; --target makes the tag in the release
+          # repository instead, on its default branch.
+          target=$(gh api "repos/$GH_REPO" --jq .default_branch)
+          # A beta or alpha release is a prerelease, so the downloads page
+          # and GitHub's latest release stay on stable.
+          pre=
+          [ "$CHANNEL" = stable ] || pre=--prerelease
+          gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 ||
+            gh release create "$GITHUB_REF_NAME" --target "$target" --title "Wicket's ${GITHUB_REF_NAME#v}" --notes-file "$notes" $pre ||
+            gh release view "$GITHUB_REF_NAME" >/dev/null
+          # The package first: a player's copy that finds the manifest
+          # fetches what it names straight away.
+          gh release upload "$GITHUB_REF_NAME" "$FILE" --clobber
+          # The index before the manifest, which names it.
+          if [ -n "$INDEX" ]; then
+            gh release upload "$GITHUB_REF_NAME" "$INDEX" --clobber
+          fi
+          # The manifest last, for this release's channel only.
+          gh release upload "$GITHUB_REF_NAME" "$MANIFEST" --clobber
+      # A hand run keeps its package as a short-lived run artifact.
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'workflow_dispatch'
+        with:
+          name: ${{ matrix.name }}
+          path: |
+            ${{ steps.package.outputs.file }}
+            ${{ steps.package.outputs.manifest }}
+            ${{ steps.package.outputs.index }}
+          # Already compressed.
+          compression-level: 0
+          retention-days: 2

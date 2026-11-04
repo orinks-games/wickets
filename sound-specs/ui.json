@@ -1,0 +1,12 @@
+{
+  "_about": "The menu earcons Hearken plays in every screen of the parlor, keyed ui/<name>. A soft plucked-string set so menus sound like one room: move is a soft, low single pluck (it plays on every arrow press, so it sits under the rest), select a rising pair, back a falling pair, open a soft low pair that sits under select (both play when Enter opens a screen), tick a tiny click, error a low muted double knock, notify a bright two-note pluck. A game may ship its own move, select, back and open under sounds/<id>/menu/.",
+  "sounds": [
+    {"out": "menu_move.wav", "layers": [{"type": "synth", "inst": "pluck", "notes": "D5", "dur": 0.14, "vel": 0.45, "params": {"damping": 0.7, "decay": 0.25}}], "fx": [{"type": "fade", "in": 0.006}, {"type": "lowpass", "cutoff": 2200, "order": 2}, {"type": "reverb", "mix": 0.1, "size": 0.3}], "normalize": -18},
+    {"out": "menu_select.wav", "layers": [{"type": "seq", "inst": "pluck", "steps": "C5:0.07 G5:0.2"}], "normalize": -12},
+    {"out": "menu_back.wav", "layers": [{"type": "seq", "inst": "pluck", "steps": "G5:0.07 C5:0.2"}], "normalize": -13},
+    {"out": "menu_open.wav", "layers": [{"type": "seq", "inst": "pluck", "steps": "G4:0.05 D5:0.12", "vel": 0.5, "params": {"decay": 0.22}}], "fx": [{"type": "fade", "in": 0.006}, {"type": "lowpass", "cutoff": 2400, "order": 2}, {"type": "reverb", "mix": 0.1, "size": 0.3}], "normalize": -16},
+    {"out": "tick.wav", "layers": [{"type": "sfx", "kind": "click", "params": {"tone": 2400}}], "fx": [{"type": "lowpass", "cutoff": 5000, "order": 2}], "normalize": -18},
+    {"out": "error.wav", "layers": [{"type": "drum", "kind": "woodblock", "params": {"tune": 300}}, {"type": "drum", "kind": "woodblock", "at": 0.12, "params": {"tune": 260}}], "fx": [{"type": "lowpass", "cutoff": 1800, "order": 2}], "normalize": -12},
+    {"out": "notify.wav", "layers": [{"type": "seq", "inst": "pluck", "steps": "E6:0.1 B6:0.4"}], "fx": [{"type": "reverb", "mix": 0.2}], "normalize": -14}
+  ]
+}

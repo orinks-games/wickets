@@ -1,0 +1,29 @@
+name: Rust build setup
+description: Hearken access, the platform's build dependencies, the pinned toolchain and the compile caches.
+inputs:
+  token:
+    description: The HEARKEN_TOKEN secret, if set. Optional, since Hearken is public.
+    required: false
+    default: ''
+  cache-key:
+    description: Keeps this job's build cache apart from jobs that build differently (clippy, tests, release).
+    required: true
+runs:
+  using: composite
+  steps:
+    - uses: ./.github/actions/hearken-access
+      with:
+        token: ${{ inputs.token }}
+    - uses: ./.github/actions/linux-deps
+      if: runner.os == 'Linux'
+    - uses: ./.github/actions/windows-deps
+      if: runner.os == 'Windows'
+    - shell: bash
+      run: rustup show
+    # sccache caches compiled crates by content; rust-cache keeps the target
+    # directory, which also holds the C builds (SDL, Prism) sccache cannot.
+    - uses: mozilla-actions/sccache-action@v0.0.9
+    - uses: Swatinem/rust-cache@v2
+      with:
+        key: ${{ inputs.cache-key }}
+        cache-on-failure: true

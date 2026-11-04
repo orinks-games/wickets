@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "wickets": {
+      "command": "target/debug/wickets.exe",
+      "args": ["--agent-server"]
+    }
+  }
+}

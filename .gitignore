@@ -1,0 +1,9 @@
+/target/
+/build/
+__pycache__/
+*.py[cod]
+/.claude/worktrees/
+
+# Local tester packages
+/dist/
+/secrets/

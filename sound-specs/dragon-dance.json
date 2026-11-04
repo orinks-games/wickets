@@ -1,0 +1,2969 @@
+{
+ "_about": "Dragon Dance: drums lead the dance, the gong asks for a rear, the pearl shimmers ahead; D major pentatonic music.",
+ "sounds": [
+  {
+   "out": "drum/beat.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "taiko",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "tune": 72,
+      "decay": 0.5
+     }
+    }
+   ],
+   "normalize": -6,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "drum/down.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "taiko",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "tune": 66,
+      "decay": 0.6
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "crash",
+     "at": 0,
+     "gain": 0.22,
+     "params": {
+      "decay": 0.6
+     }
+    }
+   ],
+   "normalize": -5,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "drum/count.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "woodblock",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "tune": 900
+     }
+    }
+   ],
+   "normalize": -9,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "drum/lion.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0,
+     "gain": 0.7,
+     "params": {
+      "tune": 180,
+      "decay": 0.15
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.12,
+     "gain": 0.6,
+     "params": {
+      "tune": 200,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "crash",
+     "at": 0.0,
+     "gain": 0.18,
+     "params": {
+      "decay": 0.25
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "crash",
+     "at": 0.18,
+     "gain": 0.15,
+     "params": {
+      "decay": 0.2
+     }
+    }
+   ],
+   "normalize": -10,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "drum/roll.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.0,
+     "gain": 0.25,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.045,
+     "gain": 0.2772727272727273,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.09,
+     "gain": 0.30454545454545456,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.135,
+     "gain": 0.3318181818181818,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.18,
+     "gain": 0.35909090909090907,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.22499999999999998,
+     "gain": 0.38636363636363635,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.27,
+     "gain": 0.4136363636363636,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.315,
+     "gain": 0.4409090909090909,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.36,
+     "gain": 0.46818181818181814,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.40499999999999997,
+     "gain": 0.4954545454545454,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.44999999999999996,
+     "gain": 0.5227272727272727,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.495,
+     "gain": 0.55,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.54,
+     "gain": 0.5772727272727272,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.585,
+     "gain": 0.6045454545454545,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.63,
+     "gain": 0.6318181818181818,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.6749999999999999,
+     "gain": 0.6590909090909092,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.72,
+     "gain": 0.6863636363636363,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.765,
+     "gain": 0.7136363636363636,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.8099999999999999,
+     "gain": 0.7409090909090909,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.855,
+     "gain": 0.7681818181818182,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.8999999999999999,
+     "gain": 0.7954545454545454,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.945,
+     "gain": 0.8227272727272728,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.99,
+     "gain": 0.85,
+     "params": {
+      "tune": 150,
+      "decay": 0.12
+     }
+    }
+   ],
+   "normalize": -6,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "gong/strike.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "gong",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "tune": 110,
+      "decay": 2.2
+     }
+    }
+   ],
+   "normalize": -4,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "gong/great.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "gong",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "tune": 70,
+      "decay": 4.0
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "taiko",
+     "at": 0,
+     "gain": 0.8,
+     "params": {
+      "tune": 50,
+      "decay": 1.2
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "crash",
+     "at": 0,
+     "gain": 0.35,
+     "params": {
+      "decay": 2.0
+     }
+    }
+   ],
+   "normalize": -2,
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.25,
+     "size": 0.8
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "gong/missed.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "woodblock",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "tune": 320
+     }
+    }
+   ],
+   "normalize": -12,
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 900
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "rear/perfect.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "whoosh",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "dur": 0.35,
+      "low": 300,
+      "high": 3000,
+      "direction": "up"
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "crash",
+     "at": 0.2,
+     "gain": 0.3,
+     "params": {
+      "decay": 0.7
+     }
+    },
+    {
+     "type": "synth",
+     "inst": "glockenspiel",
+     "notes": "G6",
+     "dur": 0.4,
+     "at": 0.22,
+     "gain": 0.4,
+     "vel": 0.5
+    }
+   ],
+   "normalize": -5,
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 4500
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "rear/good.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "whoosh",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "dur": 0.35,
+      "low": 300,
+      "high": 2500,
+      "direction": "up"
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "crash",
+     "at": 0.2,
+     "gain": 0.2,
+     "params": {
+      "decay": 0.4
+     }
+    }
+   ],
+   "normalize": -7,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "rear/stray.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "tune": 80,
+      "decay": 0.2
+     }
+    }
+   ],
+   "normalize": -12,
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 600
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "pearl/loop.wav",
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "glass_pad",
+     "notes": "E5 B5",
+     "dur": 4.4,
+     "at": 0,
+     "gain": 0.8,
+     "vel": 0.5,
+     "params": {
+      "attack": 0.4,
+      "release": 0.5
+     },
+     "fx": [
+      {
+       "type": "tremolo",
+       "rate": 3,
+       "depth": 0.35
+      }
+     ]
+    },
+    {
+     "type": "synth",
+     "inst": "celesta",
+     "notes": "E6",
+     "dur": 0.6,
+     "at": 0.5,
+     "gain": 0.18,
+     "vel": 0.4
+    },
+    {
+     "type": "synth",
+     "inst": "celesta",
+     "notes": "B5",
+     "dur": 0.6,
+     "at": 2.5,
+     "gain": 0.18,
+     "vel": 0.4
+    }
+   ],
+   "normalize": -16,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "duration": 4.0,
+   "loop": 0.3
+  },
+  {
+   "out": "pearl/move.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "glockenspiel",
+     "steps": "E6:0.09 G6:0.09 B6:0.25",
+     "at": 0,
+     "gain": 1.0,
+     "vel": 0.55
+    }
+   ],
+   "normalize": -7,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "pearl/here.wav",
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "glass",
+     "notes": "B6",
+     "dur": 0.25,
+     "at": 0,
+     "gain": 1.0,
+     "vel": 0.4
+    }
+   ],
+   "normalize": -14,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "pearl/lost.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "sweep_down",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "start": 900,
+      "end": 380,
+      "dur": 0.35,
+      "wave": "sine"
+     }
+    }
+   ],
+   "normalize": -14,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "move/step.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "brush",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "swish": 0.3,
+      "dur": 0.12
+     }
+    }
+   ],
+   "normalize": -12,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "move/edge.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "woodblock",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "tune": 420
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0,
+     "gain": 0.5,
+     "params": {
+      "tune": 90,
+      "decay": 0.15
+     }
+    }
+   ],
+   "normalize": -9,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "envelope/loop.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "noise",
+     "at": 0,
+     "gain": 0.5,
+     "params": {
+      "dur": 2.2,
+      "color": "pink",
+      "attack": 0.05
+     },
+     "fx": [
+      {
+       "type": "bandpass",
+       "center": 3500,
+       "q": 0.8
+      },
+      {
+       "type": "tremolo",
+       "rate": 9,
+       "depth": 0.8
+      }
+     ]
+    },
+    {
+     "type": "drum",
+     "kind": "triangle",
+     "at": 0.1,
+     "gain": 0.35,
+     "params": {
+      "open": 0.4,
+      "tune": 2600
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "triangle",
+     "at": 0.6,
+     "gain": 0.3,
+     "params": {
+      "open": 0.4,
+      "tune": 3100
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "triangle",
+     "at": 1.1,
+     "gain": 0.35,
+     "params": {
+      "open": 0.4,
+      "tune": 2600
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "triangle",
+     "at": 1.6,
+     "gain": 0.3,
+     "params": {
+      "open": 0.4,
+      "tune": 3100
+     }
+    }
+   ],
+   "normalize": -11,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "duration": 2.0,
+   "loop": 0.2
+  },
+  {
+   "out": "envelope/get.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "coin",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "freq": "E6",
+      "up": 7,
+      "wave": "triangle"
+     }
+    },
+    {
+     "type": "synth",
+     "inst": "glockenspiel",
+     "notes": "B6",
+     "dur": 0.5,
+     "at": 0.1,
+     "gain": 0.4,
+     "vel": 0.5
+    },
+    {
+     "type": "drum",
+     "kind": "tambourine",
+     "at": 0.05,
+     "gain": 0.3,
+     "params": {
+      "decay": 0.2
+     }
+    }
+   ],
+   "normalize": -5,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "envelope/miss.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "whoosh",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "dur": 0.4,
+      "low": 1500,
+      "high": 5000,
+      "direction": "down"
+     }
+    }
+   ],
+   "normalize": -16,
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 3500
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "lantern/loop.wav",
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "warm_pad",
+     "notes": "G3 D4",
+     "dur": 4.4,
+     "at": 0,
+     "gain": 0.6,
+     "vel": 0.5,
+     "params": {
+      "attack": 0.5,
+      "release": 0.5
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "celesta",
+     "steps": "G5:0.5 -:0.5 D5:0.5 -:0.5 E5:0.5 -:1.5",
+     "at": 0,
+     "gain": 0.35,
+     "vel": 0.45,
+     "step": 0.5
+    }
+   ],
+   "normalize": -13,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "duration": 4.0,
+   "loop": 0.3
+  },
+  {
+   "out": "lantern/get.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "D5:0.06 E5:0.06 G5:0.06 A5:0.06 D6:0.4",
+     "at": 0,
+     "gain": 1.0,
+     "vel": 0.6
+    }
+   ],
+   "normalize": -6,
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.5
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "firecracker/loop.wav",
+   "layers": [
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "x-xx-x-xxx-xx-x-x--xx-x-xxx-x-xx",
+     "at": 0,
+     "gain": 0.8,
+     "bars": 2,
+     "step": 0.03125
+    },
+    {
+     "type": "pattern",
+     "kind": "rim",
+     "steps": "-x--x-x---x--x-x-x---x-x--x---x-",
+     "at": 0,
+     "gain": 0.5,
+     "bars": 2,
+     "step": 0.03125
+    },
+    {
+     "type": "sfx",
+     "kind": "static",
+     "at": 0,
+     "gain": 0.12,
+     "params": {
+      "dur": 2.1,
+      "color": "white"
+     }
+    }
+   ],
+   "normalize": -8,
+   "fx": [
+    {
+     "type": "highpass",
+     "cutoff": 500
+    },
+    {
+     "type": "lowpass",
+     "cutoff": 6000
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "duration": 2.0,
+   "loop": 0.1
+  },
+  {
+   "out": "firecracker/burst.wav",
+   "layers": [
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "xx-xxx-x-xx",
+     "at": 0,
+     "gain": 0.8,
+     "bars": 1,
+     "step": 0.03
+    },
+    {
+     "type": "pattern",
+     "kind": "rim",
+     "steps": "-x-x-xx-x",
+     "at": 0,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.035
+    }
+   ],
+   "normalize": -12,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "firecracker/stumble.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "explosion",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "dur": 0.5,
+      "boom": 0.4
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "xxxxx-xxxx-xx",
+     "at": 0,
+     "gain": 0.8,
+     "bars": 1,
+     "step": 0.03
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.35,
+     "gain": 0.7,
+     "params": {
+      "tune": 110,
+      "decay": 0.2
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.5,
+     "gain": 0.6,
+     "params": {
+      "tune": 95,
+      "decay": 0.2
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "woodblock",
+     "at": 0.62,
+     "gain": 0.5,
+     "params": {
+      "tune": 500
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "at": 0.7,
+     "gain": 0.5,
+     "params": {
+      "tune": 85,
+      "decay": 0.25
+     }
+    }
+   ],
+   "normalize": -4,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "crowd/cheer.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "noise",
+     "at": 0,
+     "gain": 0.5,
+     "params": {
+      "dur": 1.4,
+      "color": "pink",
+      "attack": 0.15
+     },
+     "fx": [
+      {
+       "type": "bandpass",
+       "center": 1200,
+       "q": 0.6
+      },
+      {
+       "type": "fade",
+       "out": 0.6
+      }
+     ]
+    },
+    {
+     "type": "speech",
+     "text": "hooray",
+     "at": 0.569,
+     "gain": 0.35,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 1,
+      "pitch": 300
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yay",
+     "at": 0.043,
+     "gain": 0.35,
+     "params": {
+      "voice": "child",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 2,
+      "pitch": 110
+     }
+    },
+    {
+     "type": "speech",
+     "text": "hooray",
+     "at": 0.35,
+     "gain": 0.35,
+     "params": {
+      "voice": "child",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 3,
+      "pitch": 140
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yay",
+     "at": 0.052,
+     "gain": 0.35,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 4,
+      "pitch": 110
+     }
+    },
+    {
+     "type": "speech",
+     "text": "hey",
+     "at": 0.054,
+     "gain": 0.35,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 5,
+      "pitch": 110
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yeah",
+     "at": 0.074,
+     "gain": 0.35,
+     "params": {
+      "voice": "female",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 6,
+      "pitch": 300
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yeah",
+     "at": 0.569,
+     "gain": 0.35,
+     "params": {
+      "voice": "child",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 7,
+      "pitch": 260
+     }
+    },
+    {
+     "type": "speech",
+     "text": "woo",
+     "at": 0.03,
+     "gain": 0.35,
+     "params": {
+      "voice": "female",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 8,
+      "pitch": 110
+     }
+    }
+   ],
+   "normalize": -8,
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 3500
+    },
+    {
+     "type": "reverb",
+     "mix": 0.3,
+     "size": 0.6
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "crowd/clap.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "clap",
+     "at": 0.028,
+     "gain": 0.45326992657664206,
+     "params": {
+      "decay": 0.15
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "clap",
+     "at": 0.131,
+     "gain": 0.616274354212857,
+     "params": {
+      "decay": 0.15
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "clap",
+     "at": 0.249,
+     "gain": 0.6241029108051251,
+     "params": {
+      "decay": 0.15
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "clap",
+     "at": 0.364,
+     "gain": 0.44122228497743654,
+     "params": {
+      "decay": 0.15
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "clap",
+     "at": 0.469,
+     "gain": 0.4751484107148574,
+     "params": {
+      "decay": 0.15
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "clap",
+     "at": 0.555,
+     "gain": 0.6848443062984615,
+     "params": {
+      "decay": 0.15
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "clap",
+     "at": 0.688,
+     "gain": 0.6476038372694216,
+     "params": {
+      "decay": 0.15
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "clap",
+     "at": 0.795,
+     "gain": 0.6126880986320743,
+     "params": {
+      "decay": 0.15
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "clap",
+     "at": 0.919,
+     "gain": 0.5862407463358696,
+     "params": {
+      "decay": 0.15
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "clap",
+     "at": 1.036,
+     "gain": 0.5446329423778266,
+     "params": {
+      "decay": 0.15
+     }
+    }
+   ],
+   "normalize": -11,
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 5000
+    },
+    {
+     "type": "reverb",
+     "mix": 0.25,
+     "size": 0.5
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "crowd/combo.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "noise",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "dur": 1.8,
+      "color": "pink",
+      "attack": 0.1
+     },
+     "fx": [
+      {
+       "type": "bandpass",
+       "center": 1300,
+       "q": 0.6
+      },
+      {
+       "type": "fade",
+       "out": 0.8
+      }
+     ]
+    },
+    {
+     "type": "drum",
+     "kind": "crash",
+     "at": 0,
+     "gain": 0.5,
+     "params": {
+      "decay": 1.2
+     }
+    },
+    {
+     "type": "speech",
+     "text": "hey",
+     "at": 0.636,
+     "gain": 0.35,
+     "params": {
+      "voice": "child",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 1,
+      "pitch": 140
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yay",
+     "at": 0.46,
+     "gain": 0.35,
+     "params": {
+      "voice": "child",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 2,
+      "pitch": 220
+     }
+    },
+    {
+     "type": "speech",
+     "text": "hooray",
+     "at": 0.584,
+     "gain": 0.35,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 3,
+      "pitch": 260
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yay",
+     "at": 0.094,
+     "gain": 0.35,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 4,
+      "pitch": 140
+     }
+    },
+    {
+     "type": "speech",
+     "text": "hooray",
+     "at": 0.122,
+     "gain": 0.35,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 5,
+      "pitch": 220
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yay",
+     "at": 0.77,
+     "gain": 0.35,
+     "params": {
+      "voice": "female",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 6,
+      "pitch": 260
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yeah",
+     "at": 0.631,
+     "gain": 0.35,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 7,
+      "pitch": 190
+     }
+    },
+    {
+     "type": "speech",
+     "text": "hooray",
+     "at": 0.475,
+     "gain": 0.35,
+     "params": {
+      "voice": "child",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 8,
+      "pitch": 220
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yay",
+     "at": 0.672,
+     "gain": 0.35,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 9,
+      "pitch": 220
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yay",
+     "at": 0.049,
+     "gain": 0.35,
+     "params": {
+      "voice": "child",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 10,
+      "pitch": 190
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yeah",
+     "at": 0.794,
+     "gain": 0.35,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 11,
+      "pitch": 190
+     }
+    },
+    {
+     "type": "speech",
+     "text": "woo",
+     "at": 0.71,
+     "gain": 0.35,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 12,
+      "pitch": 110
+     }
+    }
+   ],
+   "normalize": -7,
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 3800
+    },
+    {
+     "type": "reverb",
+     "mix": 0.3,
+     "size": 0.7
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "crowd/lanterns.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "celesta",
+     "steps": "A5:0.08 E6:0.3",
+     "at": 0,
+     "gain": 1.0,
+     "vel": 0.45
+    }
+   ],
+   "normalize": -15,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "countdown/tick.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "woodblock",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "tune": 1500
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "taiko",
+     "at": 0,
+     "gain": 0.5,
+     "params": {
+      "tune": 80,
+      "decay": 0.3
+     }
+    }
+   ],
+   "normalize": -6,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "festival/greeting.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "gong",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "tune": 95,
+      "decay": 2.5
+     }
+    },
+    {
+     "type": "synth",
+     "inst": "tubular_bell",
+     "notes": "D5",
+     "dur": 2.0,
+     "at": 0.3,
+     "gain": 0.4,
+     "vel": 0.5
+    },
+    {
+     "type": "synth",
+     "inst": "tubular_bell",
+     "notes": "A4",
+     "dur": 2.0,
+     "at": 0.6,
+     "gain": 0.35,
+     "vel": 0.5
+    }
+   ],
+   "normalize": -6,
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.25,
+     "size": 0.7
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "festival/keepsake.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "music_box",
+     "steps": "D6:0.12 E6:0.12 G6:0.12 A6:0.12 D7:0.6",
+     "at": 0,
+     "gain": 1.0,
+     "vel": 0.55
+    }
+   ],
+   "normalize": -8,
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.5
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "cue/nope.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "woodblock",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "tune": 260
+     }
+    }
+   ],
+   "normalize": -12,
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 700
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "ambience/crowd.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "noise",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "dur": 8.6,
+      "color": "pink",
+      "attack": 0.5
+     },
+     "fx": [
+      {
+       "type": "bandpass",
+       "center": 600,
+       "q": 0.5
+      },
+      {
+       "type": "tremolo",
+       "rate": 0.3,
+       "depth": 0.4
+      }
+     ]
+    },
+    {
+     "type": "sfx",
+     "kind": "noise",
+     "at": 0,
+     "gain": 0.4,
+     "params": {
+      "dur": 8.6,
+      "color": "brown",
+      "attack": 0.5
+     },
+     "fx": [
+      {
+       "type": "lowpass",
+       "cutoff": 400
+      }
+     ]
+    }
+   ],
+   "normalize": -22,
+   "duration": 8.0,
+   "loop": 0.5,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "ambience/night.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "wind",
+     "at": 0,
+     "gain": 0.5,
+     "params": {
+      "dur": 8.6
+     },
+     "fx": [
+      {
+       "type": "lowpass",
+       "cutoff": 900
+      }
+     ]
+    },
+    {
+     "type": "sfx",
+     "kind": "chirp",
+     "at": 0.3,
+     "gain": 0.15,
+     "params": {
+      "start": 4200,
+      "end": 4600,
+      "dur": 0.05,
+      "wave": "sine",
+      "warble": 40,
+      "depth": 1.0
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "chirp",
+     "at": 0.38,
+     "gain": 0.15,
+     "params": {
+      "start": 4200,
+      "end": 4600,
+      "dur": 0.05,
+      "wave": "sine",
+      "warble": 40,
+      "depth": 1.0
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "chirp",
+     "at": 0.46,
+     "gain": 0.15,
+     "params": {
+      "start": 4200,
+      "end": 4600,
+      "dur": 0.05,
+      "wave": "sine",
+      "warble": 40,
+      "depth": 1.0
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "chirp",
+     "at": 2.6,
+     "gain": 0.15,
+     "params": {
+      "start": 4200,
+      "end": 4600,
+      "dur": 0.05,
+      "wave": "sine",
+      "warble": 40,
+      "depth": 1.0
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "chirp",
+     "at": 2.68,
+     "gain": 0.15,
+     "params": {
+      "start": 4200,
+      "end": 4600,
+      "dur": 0.05,
+      "wave": "sine",
+      "warble": 40,
+      "depth": 1.0
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "chirp",
+     "at": 2.76,
+     "gain": 0.15,
+     "params": {
+      "start": 4200,
+      "end": 4600,
+      "dur": 0.05,
+      "wave": "sine",
+      "warble": 40,
+      "depth": 1.0
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "chirp",
+     "at": 5.1,
+     "gain": 0.15,
+     "params": {
+      "start": 4200,
+      "end": 4600,
+      "dur": 0.05,
+      "wave": "sine",
+      "warble": 40,
+      "depth": 1.0
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "chirp",
+     "at": 5.18,
+     "gain": 0.15,
+     "params": {
+      "start": 4200,
+      "end": 4600,
+      "dur": 0.05,
+      "wave": "sine",
+      "warble": 40,
+      "depth": 1.0
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "chirp",
+     "at": 5.26,
+     "gain": 0.15,
+     "params": {
+      "start": 4200,
+      "end": 4600,
+      "dur": 0.05,
+      "wave": "sine",
+      "warble": 40,
+      "depth": 1.0
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "chirp",
+     "at": 6.9,
+     "gain": 0.15,
+     "params": {
+      "start": 4200,
+      "end": 4600,
+      "dur": 0.05,
+      "wave": "sine",
+      "warble": 40,
+      "depth": 1.0
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "chirp",
+     "at": 6.98,
+     "gain": 0.15,
+     "params": {
+      "start": 4200,
+      "end": 4600,
+      "dur": 0.05,
+      "wave": "sine",
+      "warble": 40,
+      "depth": 1.0
+     }
+    }
+   ],
+   "normalize": -22,
+   "duration": 8.0,
+   "loop": 0.5,
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "music/title.wav",
+   "layers": [
+    {
+     "type": "group",
+     "_section": "A",
+     "at": 0,
+     "layers": [
+      {
+       "type": "seq",
+       "inst": "koto",
+       "steps": "D5:.5 E5:.5 F#5:1 A5:1 F#5:1 | E5:.5 D5:.5 E5:1 B4:2 | A4:.5 B4:.5 D5:1 E5:1 F#5:1 | E5:1 D5:1 D5:2",
+       "at": 0,
+       "gain": 0.45,
+       "vel": 0.65,
+       "step": 1
+      },
+      {
+       "type": "seq",
+       "inst": "upright_bass",
+       "steps": "D2:2 A1:2 | B1:2 F#1:2 | G1:2 A1:2 | D2:2 A1:2",
+       "at": 0,
+       "gain": 0.7,
+       "vel": 0.7,
+       "step": 1
+      },
+      {
+       "type": "seq",
+       "inst": "warm_pad",
+       "steps": "[D3,A3,F#4]:4 | [B2,F#3,D4]:4 | [G2,D3,B3]:4 | [A2,E3,C#4]:2 [D3,A3,F#4]:2",
+       "at": 0,
+       "gain": 0.3,
+       "vel": 0.5,
+       "step": 1
+      },
+      {
+       "type": "pattern",
+       "kind": "taiko",
+       "steps": "x-------x---x---",
+       "at": 0,
+       "gain": 0.45,
+       "bars": 4,
+       "params": {
+        "tune": 70,
+        "decay": 0.5
+       }
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "_section": "B",
+     "at": 16,
+     "layers": [
+      {
+       "type": "seq",
+       "inst": "koto",
+       "steps": "D5:.5 E5:.5 F#5:1 A5:1 F#5:1 | E5:.5 D5:.5 E5:1 B4:2 | A4:.5 B4:.5 D5:1 E5:1 F#5:1 | E5:1 D5:1 D5:2",
+       "at": 0,
+       "gain": 0.45,
+       "vel": 0.65,
+       "step": 1
+      },
+      {
+       "type": "seq",
+       "inst": "upright_bass",
+       "steps": "D2:2 A1:2 | B1:2 F#1:2 | G1:2 A1:2 | D2:2 A1:2",
+       "at": 0,
+       "gain": 0.7,
+       "vel": 0.7,
+       "step": 1
+      },
+      {
+       "type": "seq",
+       "inst": "warm_pad",
+       "steps": "[D3,A3,F#4]:4 | [B2,F#3,D4]:4 | [G2,D3,B3]:4 | [A2,E3,C#4]:2 [D3,A3,F#4]:2",
+       "at": 0,
+       "gain": 0.3,
+       "vel": 0.5,
+       "step": 1
+      },
+      {
+       "type": "pattern",
+       "kind": "taiko",
+       "steps": "x-------x---x---",
+       "at": 0,
+       "gain": 0.45,
+       "bars": 4,
+       "params": {
+        "tune": 70,
+        "decay": 0.5
+       }
+      },
+      {
+       "type": "seq",
+       "inst": "pan_flute",
+       "steps": "F#5:2 A5:1 B5:1 | A5:2 F#5:2 | E5:1 F#5:1 A5:1 B5:1 | A5:2 D6:2",
+       "at": 0,
+       "gain": 0.45,
+       "vel": 0.6,
+       "step": 1
+      }
+     ]
+    }
+   ],
+   "bpm": 100,
+   "beats": 32,
+   "loop": "fold",
+   "normalize": -4,
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.6
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    }
+   ]
+  },
+  {
+   "out": "music/festive.wav",
+   "layers": [
+    {
+     "type": "group",
+     "_section": "A",
+     "at": 0,
+     "layers": [
+      {
+       "type": "seq",
+       "inst": "koto",
+       "steps": "D5:.5 E5:.5 F#5:1 A5:1 F#5:1 | E5:.5 D5:.5 E5:1 B4:2 | A4:.5 B4:.5 D5:1 E5:1 F#5:1 | E5:1 D5:1 D5:2",
+       "at": 0,
+       "gain": 0.45,
+       "vel": 0.65,
+       "step": 1
+      },
+      {
+       "type": "seq",
+       "inst": "upright_bass",
+       "steps": "D2:2 A1:2 | B1:2 F#1:2 | G1:2 A1:2 | D2:2 A1:2",
+       "at": 0,
+       "gain": 0.7,
+       "vel": 0.7,
+       "step": 1
+      },
+      {
+       "type": "seq",
+       "inst": "warm_pad",
+       "steps": "[D3,A3,F#4]:4 | [B2,F#3,D4]:4 | [G2,D3,B3]:4 | [A2,E3,C#4]:2 [D3,A3,F#4]:2",
+       "at": 0,
+       "gain": 0.3,
+       "vel": 0.5,
+       "step": 1
+      },
+      {
+       "type": "pattern",
+       "kind": "taiko",
+       "steps": "x-------x---x---",
+       "at": 0,
+       "gain": 0.45,
+       "bars": 4,
+       "params": {
+        "tune": 70,
+        "decay": 0.5
+       }
+      },
+      {
+       "type": "pattern",
+       "kind": "tom",
+       "steps": "--x-x-xx--x-x-xx",
+       "at": 0,
+       "gain": 0.3,
+       "bars": 4,
+       "params": {
+        "tune": 190,
+        "decay": 0.12
+       }
+      },
+      {
+       "type": "pattern",
+       "kind": "crash",
+       "steps": "x---x---x---x---",
+       "at": 0,
+       "gain": 0.12,
+       "bars": 4,
+       "params": {
+        "decay": 0.4
+       }
+      },
+      {
+       "type": "pattern",
+       "kind": "cowbell",
+       "steps": "--x---x---x---x-",
+       "at": 0,
+       "gain": 0.12,
+       "bars": 4,
+       "params": {
+        "decay": 0.2
+       }
+      }
+     ]
+    },
+    {
+     "type": "group",
+     "_section": "B",
+     "at": 16,
+     "layers": [
+      {
+       "type": "seq",
+       "inst": "koto",
+       "steps": "D5:.5 E5:.5 F#5:1 A5:1 F#5:1 | E5:.5 D5:.5 E5:1 B4:2 | A4:.5 B4:.5 D5:1 E5:1 F#5:1 | E5:1 D5:1 D5:2",
+       "at": 0,
+       "gain": 0.45,
+       "vel": 0.65,
+       "step": 1
+      },
+      {
+       "type": "seq",
+       "inst": "upright_bass",
+       "steps": "D2:2 A1:2 | B1:2 F#1:2 | G1:2 A1:2 | D2:2 A1:2",
+       "at": 0,
+       "gain": 0.7,
+       "vel": 0.7,
+       "step": 1
+      },
+      {
+       "type": "seq",
+       "inst": "warm_pad",
+       "steps": "[D3,A3,F#4]:4 | [B2,F#3,D4]:4 | [G2,D3,B3]:4 | [A2,E3,C#4]:2 [D3,A3,F#4]:2",
+       "at": 0,
+       "gain": 0.3,
+       "vel": 0.5,
+       "step": 1
+      },
+      {
+       "type": "pattern",
+       "kind": "taiko",
+       "steps": "x-------x---x---",
+       "at": 0,
+       "gain": 0.45,
+       "bars": 4,
+       "params": {
+        "tune": 70,
+        "decay": 0.5
+       }
+      },
+      {
+       "type": "seq",
+       "inst": "pan_flute",
+       "steps": "F#5:2 A5:1 B5:1 | A5:2 F#5:2 | E5:1 F#5:1 A5:1 B5:1 | A5:2 D6:2",
+       "at": 0,
+       "gain": 0.45,
+       "vel": 0.6,
+       "step": 1
+      },
+      {
+       "type": "pattern",
+       "kind": "tom",
+       "steps": "--x-x-xx--x-x-xx",
+       "at": 0,
+       "gain": 0.3,
+       "bars": 4,
+       "params": {
+        "tune": 190,
+        "decay": 0.12
+       }
+      },
+      {
+       "type": "pattern",
+       "kind": "crash",
+       "steps": "x---x---x---x---",
+       "at": 0,
+       "gain": 0.12,
+       "bars": 4,
+       "params": {
+        "decay": 0.4
+       }
+      },
+      {
+       "type": "pattern",
+       "kind": "cowbell",
+       "steps": "--x---x---x---x-",
+       "at": 0,
+       "gain": 0.12,
+       "bars": 4,
+       "params": {
+        "decay": 0.2
+       }
+      }
+     ]
+    }
+   ],
+   "bpm": 108,
+   "beats": 32,
+   "loop": "fold",
+   "normalize": -4,
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.6
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    }
+   ]
+  },
+  {
+   "out": "music/street.wav",
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "warm_pad",
+     "notes": "D3 A3",
+     "dur": 24.5,
+     "at": 0,
+     "gain": 0.5,
+     "vel": 0.45,
+     "params": {
+      "attack": 2.0,
+      "release": 2.0,
+      "cutoff": 700
+     }
+    },
+    {
+     "type": "synth",
+     "inst": "warm_pad",
+     "notes": "F#4",
+     "dur": 12.0,
+     "at": 0.0,
+     "gain": 0.2,
+     "vel": 0.4,
+     "params": {
+      "attack": 3.0,
+      "release": 3.0,
+      "cutoff": 900
+     }
+    },
+    {
+     "type": "synth",
+     "inst": "warm_pad",
+     "notes": "E4",
+     "dur": 12.0,
+     "at": 12.0,
+     "gain": 0.2,
+     "vel": 0.4,
+     "params": {
+      "attack": 3.0,
+      "release": 3.0,
+      "cutoff": 900
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "koto",
+     "steps": "A5:3 -:5 F#5:3 -:6 E5:3 -:4",
+     "at": 1.0,
+     "gain": 0.15,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "normalize": -16,
+   "duration": 24.0,
+   "loop": 1.0,
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.35,
+     "size": 0.8
+    }
+   ]
+  },
+  {
+   "out": "music/lantern_walk.wav",
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "glass_pad",
+     "notes": "D4 A4",
+     "dur": 24.5,
+     "at": 0,
+     "gain": 0.45,
+     "vel": 0.45,
+     "params": {
+      "attack": 2.0,
+      "release": 2.0
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "celesta",
+     "steps": "F#5:2 -:2 A5:2 -:4 E5:2 -:2 D5:4 -:6",
+     "at": 0.5,
+     "gain": 0.25,
+     "vel": 0.4,
+     "step": 1
+    },
+    {
+     "type": "seq",
+     "inst": "pan_flute",
+     "steps": "-:8 A4:3 B4:1 A4:2 F#4:4 -:6",
+     "at": 0,
+     "gain": 0.2,
+     "vel": 0.4,
+     "step": 1
+    }
+   ],
+   "normalize": -14,
+   "duration": 24.0,
+   "loop": 1.0,
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.4,
+     "size": 0.85
+    }
+   ]
+  },
+  {
+   "out": "music/clear.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "koto",
+     "steps": "D5:.25 E5:.25 F#5:.25 A5:.25 D6:2",
+     "at": 0,
+     "gain": 0.7,
+     "vel": 0.7
+    },
+    {
+     "type": "drum",
+     "kind": "gong",
+     "at": 1.0,
+     "gain": 0.5,
+     "params": {
+      "tune": 120,
+      "decay": 2.0
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "crash",
+     "at": 1.0,
+     "gain": 0.3,
+     "params": {
+      "decay": 1.2
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "taiko",
+     "at": 1.0,
+     "gain": 0.6,
+     "params": {
+      "tune": 60,
+      "decay": 0.8
+     }
+    }
+   ],
+   "bpm": 110,
+   "normalize": -4,
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.25,
+     "size": 0.6
+    }
+   ]
+  },
+  {
+   "out": "music/finish.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "pan_flute",
+     "steps": "A4:1 F#4:1 E4:1 D4:2",
+     "at": 0,
+     "gain": 0.6,
+     "vel": 0.55
+    },
+    {
+     "type": "synth",
+     "inst": "warm_pad",
+     "notes": "D3 A3",
+     "dur": 3.0,
+     "at": 0,
+     "gain": 0.3,
+     "vel": 0.7
+    }
+   ],
+   "bpm": 96,
+   "normalize": -7,
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.3,
+     "size": 0.7
+    }
+   ]
+  },
+  {
+   "out": "music/midnight.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "gong",
+     "at": 0,
+     "gain": 0.7,
+     "params": {
+      "tune": 65,
+      "decay": 4.0
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "xx-xxxxxx-xxxxxx",
+     "at": 0.341,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.025
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "-xxx-x-xx-xxxxxx",
+     "at": 0.587,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.025
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "xxx-xxxxxx-x--xx",
+     "at": 0.875,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.025
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "-----xx--xxxxxx-",
+     "at": 1.264,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.025
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "xxxxxxx-xxx-x-xx",
+     "at": 1.54,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.025
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "xx-xx-xx-xxxxxxx",
+     "at": 1.892,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.025
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "xxx-x-xx-x-xx-xx",
+     "at": 2.193,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.025
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "x-x-x-x-xxxx---x",
+     "at": 2.544,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.025
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "-xxx-xx-xx-xxxxx",
+     "at": 2.855,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.025
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "-xx-xxxxxxxxxxx-",
+     "at": 3.109,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.025
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "-xx-x-x-xx-xxxx-",
+     "at": 3.548,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.025
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "-xxx-x-xxxxx-x-x",
+     "at": 3.77,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.025
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "-x-xx--xxx--x--x",
+     "at": 4.132,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.025
+    },
+    {
+     "type": "pattern",
+     "kind": "snap",
+     "steps": "xxxxxx-x-xx-xxx-",
+     "at": 4.425,
+     "gain": 0.5,
+     "bars": 1,
+     "step": 0.025
+    },
+    {
+     "type": "sfx",
+     "kind": "explosion",
+     "at": 0.4,
+     "gain": 0.35,
+     "params": {
+      "dur": 0.6,
+      "boom": 0.6
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "explosion",
+     "at": 1.3,
+     "gain": 0.35,
+     "params": {
+      "dur": 0.6,
+      "boom": 0.6
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "explosion",
+     "at": 2.1,
+     "gain": 0.35,
+     "params": {
+      "dur": 0.6,
+      "boom": 0.6
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "explosion",
+     "at": 3.0,
+     "gain": 0.35,
+     "params": {
+      "dur": 0.6,
+      "boom": 0.6
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "explosion",
+     "at": 3.7,
+     "gain": 0.35,
+     "params": {
+      "dur": 0.6,
+      "boom": 0.6
+     }
+    },
+    {
+     "type": "speech",
+     "text": "hooray",
+     "at": 3.942,
+     "gain": 0.25,
+     "params": {
+      "voice": "child",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 1,
+      "pitch": 260
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yeah",
+     "at": 2.272,
+     "gain": 0.25,
+     "params": {
+      "voice": "child",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 2,
+      "pitch": 140
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yeah",
+     "at": 1.331,
+     "gain": 0.25,
+     "params": {
+      "voice": "child",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 3,
+      "pitch": 110
+     }
+    },
+    {
+     "type": "speech",
+     "text": "woo",
+     "at": 3.518,
+     "gain": 0.25,
+     "params": {
+      "voice": "child",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 4,
+      "pitch": 110
+     }
+    },
+    {
+     "type": "speech",
+     "text": "hey",
+     "at": 1.403,
+     "gain": 0.25,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 5,
+      "pitch": 260
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yay",
+     "at": 2.748,
+     "gain": 0.25,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 6,
+      "pitch": 300
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yeah",
+     "at": 2.658,
+     "gain": 0.25,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 7,
+      "pitch": 110
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yeah",
+     "at": 0.999,
+     "gain": 0.25,
+     "params": {
+      "voice": "female",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 8,
+      "pitch": 190
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yay",
+     "at": 3.503,
+     "gain": 0.25,
+     "params": {
+      "voice": "child",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 9,
+      "pitch": 220
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yeah",
+     "at": 0.898,
+     "gain": 0.25,
+     "params": {
+      "voice": "female",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 10,
+      "pitch": 220
+     }
+    },
+    {
+     "type": "speech",
+     "text": "hooray",
+     "at": 2.944,
+     "gain": 0.25,
+     "params": {
+      "voice": "child",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 11,
+      "pitch": 260
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yeah",
+     "at": 1.498,
+     "gain": 0.25,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 12,
+      "pitch": 220
+     }
+    },
+    {
+     "type": "speech",
+     "text": "yeah",
+     "at": 2.666,
+     "gain": 0.25,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 13,
+      "pitch": 260
+     }
+    },
+    {
+     "type": "speech",
+     "text": "hey",
+     "at": 3.247,
+     "gain": 0.25,
+     "params": {
+      "voice": "male",
+      "rate": 1.1,
+      "intonation": "exclaim",
+      "seed": 14,
+      "pitch": 260
+     }
+    }
+   ],
+   "normalize": -3,
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.3,
+     "size": 0.8
+    }
+   ]
+  },
+  {
+   "out": "menu/move.wav",
+   "_about": "Menu move: a small drum tap.",
+   "duration": 0.16,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "tom",
+     "gain": 0.35,
+     "at": 0.0,
+     "params": {
+      "decay": 0.04
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 3000
+    },
+    {
+     "type": "mono"
+    },
+    {
+     "type": "fade",
+     "out": 0.04
+    }
+   ],
+   "normalize": -9,
+   "max_loudness": -28
+  },
+  {
+   "out": "menu/select.wav",
+   "_about": "Menu select: a drum and a bright cymbal touch.",
+   "duration": 0.42,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "taiko",
+     "gain": 0.5,
+     "at": 0.0,
+     "params": {
+      "decay": 0.15
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "crash",
+     "gain": 0.15,
+     "at": 0.03,
+     "params": {
+      "decay": 0.12
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 4500
+    },
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.3
+    },
+    {
+     "type": "mono"
+    },
+    {
+     "type": "fade",
+     "out": 0.04
+    }
+   ],
+   "normalize": -6,
+   "max_loudness": -22
+  },
+  {
+   "out": "menu/back.wav",
+   "_about": "Menu back: a soft low gong.",
+   "duration": 0.32,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "gong",
+     "gain": 0.35,
+     "at": 0.0,
+     "params": {
+      "decay": 0.25
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 1500
+    },
+    {
+     "type": "mono"
+    },
+    {
+     "type": "fade",
+     "out": 0.04
+    }
+   ],
+   "normalize": -9,
+   "max_loudness": -26
+  },
+  {
+   "out": "music/pause.wav",
+   "_about": "Pause music: koto and bamboo flute, the parade resting.",
+   "bpm": 70,
+   "beats": 32,
+   "loop": "fold",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "warm_pad",
+     "step": 1,
+     "steps": "[D3,F#3,A3]:4 | [B2,D3,F#3]:4 | [G2,B2,D3]:4 | [A2,C#3,E3]:4 | [D3,F#3,A3]:4 | [B2,D3,F#3]:4 | [G2,B2,D3]:4 | [A2,C#3,E3]:4",
+     "gain": 0.25,
+     "vel": 0.55,
+     "at": 0,
+     "params": {
+      "attack": 1.2,
+      "release": 2.0,
+      "cutoff": 800
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "koto",
+     "step": 1,
+     "steps": "D4:1 A4:1 D5:1 A4:1 | B3:1 F#4:1 B4:1 F#4:1 | G3:1 D4:1 G4:1 D4:1 | A3:1 E4:1 A4:1 E4:1 | D4:1 A4:1 D5:1 A4:1 | B3:1 F#4:1 B4:1 F#4:1 | G3:1 D4:1 G4:1 D4:1 | A3:1 E4:1 A4:1 E4:1",
+     "gain": 0.3,
+     "vel": 0.4,
+     "at": 0
+    },
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "step": 1,
+     "steps": "D2:4 | B1:4 | G1:4 | A1:4 | D2:4 | B1:4 | G1:4 | A1:4",
+     "gain": 0.35,
+     "vel": 0.4,
+     "at": 0
+    },
+    {
+     "type": "seq",
+     "inst": "pan_flute",
+     "step": 1,
+     "steps": "-:4 | -:4 | -:4 | -:4 | A4:1.5 B4:.5 A4:1 F#4:1 | D5:2 B4:2 | E4:1 F#4:1 A4:2 | E4:3 -:1",
+     "gain": 0.3,
+     "vel": 0.4,
+     "at": 0,
+     "params": {
+      "breath": 0.35
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.25,
+     "size": 0.7
+    },
+    {
+     "type": "lowpass",
+     "cutoff": 5000
+    }
+   ],
+   "normalize": -15
+  }
+ ]
+}

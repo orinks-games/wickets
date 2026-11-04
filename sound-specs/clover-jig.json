@@ -1,0 +1,3681 @@
+{
+ "_about": "Clover Jig. Each tune is two four-bar parts, A and B, in 6/8 (jig) or 4/4 (reel), with the fiddle, tin whistle and bodhran; the four ceili tunes add harp, accordion and upright bass. The bpm of each part is in eighth notes, two dance beats a bar. The game plays A A B B twice, starting each part on its beat, and plays the caller's word one beat before each step. Written by a small seeded composer; render with python3 tools/render_sounds.py clover-jig.",
+ "sounds": [
+  {
+   "out": "tune/kettle/a.wav",
+   "bpm": 264,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D5:1 F#5:1 C#5:1 D5:1 E5:1 D5:1 | D5:2 D5:1 D5:1 E5:1 F#5:1 | A5:1 B5:1 A5:1 A5:1 B5:1 A5:1 | A5:2 F#5:1 D5:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/kettle/b.wav",
+   "bpm": 264,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D5:1 B4:1 F#4:1 D4:1 F#4:1 E4:1 | D4:1 G4:1 B4:1 B4:1 G4:1 D4:1 | D4:1 E4:1 F#4:1 F#4:1 G4:1 A4:1 | A4:1 B4:1 C#5:1 D5:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "D6:1 B5:1 F#5:1 D5:1 F#5:1 E5:1 | D5:1 G5:1 B5:1 B5:1 G5:1 D5:1 | D5:1 E5:1 F#5:1 F#5:1 G5:1 A5:1 | A5:1 B5:1 C#6:1 D6:3",
+     "step": 1,
+     "gain": 0.33
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/turf-fire/a.wav",
+   "bpm": 368,
+   "beats": 32,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "B5:1 G5:1 A5:1 G5:1 G5:1 D5:1 A5:1 B5:1 | G5:2 E5:1 D5:1 E5:2 D5:1 C5:1 | A4:1 D5:1 F#5:1 A5:1 A5:2 D5:1 A4:1 | A4:1 B4:1 A4:1 G4:1 G4:4",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-x-X-x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x-x-x-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/turf-fire/b.wav",
+   "bpm": 368,
+   "beats": 32,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "G5:1 A5:1 G5:1 F#5:1 G5:1 A5:1 G5:1 F#5:1 | G5:1 D5:1 B4:1 G4:1 G4:2 B4:1 C5:1 | G5:1 A5:1 G5:1 F#5:1 G5:1 A5:1 G5:1 F#5:1 | F#5:1 G5:1 F#5:1 E5:1 G5:4",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "G6:1 A6:1 G6:1 F#6:1 G6:1 A6:1 G6:1 F#6:1 | G6:1 D6:1 B5:1 G5:1 G5:2 B5:1 C6:1 | G6:1 A6:1 G6:1 F#6:1 G6:1 A6:1 G6:1 F#6:1 | F#6:1 G6:1 F#6:1 E6:1 G6:4",
+     "step": 1,
+     "gain": 0.33
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-x-X-x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x-x-x-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/rocking-chair/a.wav",
+   "bpm": 288,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "G4:1 B4:1 D5:1 D5:1 E5:1 F#5:1 | F#5:2 G5:1 F#5:1 G5:1 F#5:1 | G4:1 B4:1 D5:1 D5:1 E5:1 F#5:1 | F#5:2 G5:1 G5:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/rocking-chair/b.wav",
+   "bpm": 288,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "G5:2 A5:1 G5:2 E5:1 | E5:1 G5:1 D5:1 C5:1 D5:1 C5:1 | D5:1 E5:1 D5:1 D5:1 B4:1 E5:1 | F#5:2 F#5:1 G5:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "G6:2 A6:1 G6:2 E6:1 | E6:1 G6:1 D6:1 C6:1 D6:1 C6:1 | D6:1 E6:1 D6:1 D6:1 B5:1 E6:1 | F#6:2 F#6:1 G6:3",
+     "step": 1,
+     "gain": 0.33
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/crossroads/a.wav",
+   "bpm": 294,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D4:2 D4:1 D4:1 F#4:1 E4:1 | D4:1 G4:1 B4:1 B4:1 D5:1 A4:1 | D4:2 D4:1 D4:1 F#4:1 E4:1 | E4:2 C#5:1 D5:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/crossroads/b.wav",
+   "bpm": 294,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D4:1 F#4:1 B4:1 B4:1 C#5:1 D5:1 | D5:1 E5:1 D5:1 D5:1 B4:1 G4:1 | F#4:1 A4:1 D5:1 D5:2 B4:1 | C#5:1 D5:1 E5:1 D5:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "D5:1 F#5:1 B5:1 B5:1 C#6:1 D6:1 | D6:1 E6:1 D6:1 D6:1 B5:1 G5:1 | F#5:1 A5:1 D6:1 D6:2 B5:1 | C#6:1 D6:1 E6:1 D6:3",
+     "step": 1,
+     "gain": 0.33
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/mill-road/a.wav",
+   "bpm": 400,
+   "beats": 32,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D5:1 E5:1 F#5:1 G5:1 F#5:1 D5:1 A4:1 F#4:1 | F#4:1 A4:1 D5:1 F#5:1 F#5:1 G5:1 F#5:1 E5:1 | G5:2 A5:1 B5:1 B5:1 A5:1 G5:1 F#5:1 | E5:1 F#5:1 G5:1 A5:1 D5:4",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-x-X-x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x-x-x-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/mill-road/b.wav",
+   "bpm": 400,
+   "beats": 32,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D4:1 E4:1 F#4:1 G4:1 G4:1 B4:1 D5:1 G5:1 | F#5:1 G5:1 F#5:1 E5:1 D5:1 F#5:1 A5:1 F#5:1 | D4:1 E4:1 F#4:1 G4:1 G4:1 B4:1 D5:1 G5:1 | A5:2 C#5:1 A4:1 D5:4",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "D5:1 E5:1 F#5:1 G5:1 G5:1 B5:1 D6:1 G6:1 | F#6:1 G6:1 F#6:1 E6:1 D6:1 F#6:1 A6:1 F#6:1 | D5:1 E5:1 F#5:1 G5:1 G5:1 B5:1 D6:1 G6:1 | A6:2 C#6:1 A5:1 D6:4",
+     "step": 1,
+     "gain": 0.33
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-x-X-x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x-x-x-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/hazel-gate/a.wav",
+   "bpm": 312,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "E4:2 G4:1 G4:1 B4:1 F#4:1 | F#4:1 B4:1 D5:1 D5:2 C#5:1 | E4:2 G4:1 G4:1 B4:1 F#4:1 | F#4:2 D5:1 E5:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/hazel-gate/b.wav",
+   "bpm": 312,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "E5:1 G5:1 D5:1 E5:1 F#5:1 G5:1 | G5:1 F#5:1 E5:1 E5:1 G5:1 E5:1 | E5:2 E5:1 E5:1 A5:1 E5:1 | F#5:1 G5:1 F#5:1 E5:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "E6:1 G6:1 D6:1 E6:1 F#6:1 G6:1 | G6:1 F#6:1 E6:1 E6:1 G6:1 E6:1 | E6:2 E6:1 E6:1 A6:1 E6:1 | F#6:1 G6:1 F#6:1 E6:3",
+     "step": 1,
+     "gain": 0.33
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/market-cart/a.wav",
+   "bpm": 424,
+   "beats": 32,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "G4:2 F#4:1 E4:1 D4:1 E4:1 D4:1 D4:1 | E4:1 G4:1 C5:1 E5:1 E5:2 G5:1 A5:1 | G4:2 F#4:1 E4:1 D4:1 E4:1 D4:1 D4:1 | D4:1 E4:1 D4:1 D4:1 G4:4",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-x-X-x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x-x-x-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/market-cart/b.wav",
+   "bpm": 424,
+   "beats": 32,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "G4:1 A4:1 G4:1 F#4:1 G4:1 A4:1 G4:1 F#4:1 | G4:1 A4:1 B4:1 C5:1 B4:2 D5:1 E5:1 | E5:2 C5:1 B4:1 C5:2 B4:1 A4:1 | F#4:1 G4:1 F#4:1 E4:1 G4:4",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "G5:1 A5:1 G5:1 F#5:1 G5:1 A5:1 G5:1 F#5:1 | G5:1 A5:1 B5:1 C6:1 B5:2 D6:1 E6:1 | E6:2 C6:1 B5:1 C6:2 B5:1 A5:1 | F#5:1 G5:1 F#5:1 E5:1 G5:4",
+     "step": 1,
+     "gain": 0.33
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-x-X-x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x-x-x-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/tinkers-purse/a.wav",
+   "bpm": 324,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D4:1 F#4:1 E4:1 D4:1 F#4:1 E4:1 | D4:1 F#4:1 A4:1 A4:1 D5:1 G4:1 | G4:1 A4:1 B4:1 B4:1 A4:1 G4:1 | E4:1 A4:1 D4:1 D4:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/tinkers-purse/b.wav",
+   "bpm": 324,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D5:1 G5:1 C#5:1 D5:1 B4:1 G4:1 | F#4:2 E4:1 D4:1 F#4:1 E4:1 | D5:1 G5:1 C#5:1 D5:1 B4:1 G4:1 | A4:1 C#5:1 E5:1 D5:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "D6:1 G6:1 C#6:1 D6:1 B5:1 G5:1 | F#5:2 E5:1 D5:1 F#5:1 E5:1 | D6:1 G6:1 C#6:1 D6:1 B5:1 G5:1 | A5:1 C#6:1 E6:1 D6:3",
+     "step": 1,
+     "gain": 0.33
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/fair-day/a.wav",
+   "bpm": 448,
+   "beats": 32,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D5:1 A4:1 F#4:1 D4:1 D4:1 E4:1 D4:1 D4:1 | D4:1 E4:1 F#4:1 G4:1 G4:1 B4:1 F#4:1 E4:1 | E4:1 A4:1 C#5:1 E5:1 E5:1 D5:1 C#5:1 B4:1 | C#5:2 E5:1 F#5:1 D5:4",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-x-X-x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x-x-x-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/fair-day/b.wav",
+   "bpm": 448,
+   "beats": 32,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D5:1 E5:1 F#5:1 G5:1 F#5:1 D5:1 G5:1 A5:1 | G5:1 D5:1 B4:1 G4:1 G4:1 B4:1 F#4:1 E4:1 | D4:1 E4:1 D4:1 D4:1 D4:1 F#4:1 E4:1 F#4:1 | E4:1 F#4:1 G4:1 A4:1 D5:4",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "D6:1 E6:1 F#6:1 G6:1 F#6:1 D6:1 G6:1 A6:1 | G6:1 D6:1 B5:1 G5:1 G5:1 B5:1 F#5:1 E5:1 | D5:1 E5:1 D5:1 D5:1 D5:1 F#5:1 E5:1 F#5:1 | E5:1 F#5:1 G5:1 A5:1 D6:4",
+     "step": 1,
+     "gain": 0.33
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-x-X-x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x-x-x-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/harbour-lights/a.wav",
+   "bpm": 342,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "G4:2 G4:1 G4:1 A4:1 G4:1 | G4:1 A4:1 G4:1 G4:2 E5:1 | G4:2 G4:1 G4:1 A4:1 G4:1 | F#4:1 G4:1 A4:1 G4:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/harbour-lights/b.wav",
+   "bpm": 342,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "G4:1 B4:1 E5:1 E5:2 G4:1 | G4:2 B4:1 G4:2 G4:1 | G4:2 D5:1 D5:1 B4:1 E5:1 | F#5:2 F#5:1 G5:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "G5:1 B5:1 E6:1 E6:2 G5:1 | G5:2 B5:1 G5:2 G5:1 | G5:2 D6:1 D6:1 B5:1 E6:1 | F#6:2 F#6:1 G6:3",
+     "step": 1,
+     "gain": 0.33
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/fishermans-lilt/a.wav",
+   "bpm": 472,
+   "beats": 32,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "G5:1 E5:1 B4:1 G4:1 E4:1 F#4:1 E4:1 D4:1 | E4:1 G4:1 B4:1 E5:1 E5:1 F#5:1 G5:1 A5:1 | A5:1 B5:1 A5:1 G5:1 A5:1 G5:1 F#5:1 E5:1 | D5:1 E5:1 F#5:1 G5:1 E5:4",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-x-X-x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x-x-x-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/fishermans-lilt/b.wav",
+   "bpm": 472,
+   "beats": 32,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "E4:2 D4:1 E4:1 E4:1 F#4:1 G4:1 A4:1 | G4:2 E5:1 G5:1 G5:2 G5:1 F#5:1 | E5:2 A4:1 E4:1 E4:1 A4:1 D4:1 E4:1 | F#4:1 G4:1 A4:1 B4:1 E5:4",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "E5:2 D5:1 E5:1 E5:1 F#5:1 G5:1 A5:1 | G5:2 E6:1 G6:1 G6:2 G6:1 F#6:1 | E6:2 A5:1 E5:1 E5:1 A5:1 D5:1 E5:1 | F#5:1 G5:1 A5:1 B5:1 E6:4",
+     "step": 1,
+     "gain": 0.33
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-x-X-x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x-x-x-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/salt-spray/a.wav",
+   "bpm": 372,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D5:1 E5:1 F#5:1 F#5:1 G5:1 F#5:1 | G5:2 B4:1 B4:2 C#5:1 | D5:1 E5:1 F#5:1 F#5:1 G5:1 F#5:1 | C#5:1 E5:1 A5:1 D5:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "tune/salt-spray/b.wav",
+   "bpm": 372,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D5:2 E5:1 D5:1 A4:1 E5:1 | F#5:1 G5:1 F#5:1 F#5:1 D5:1 B4:1 | D5:2 G4:1 G4:2 G4:1 | E4:2 E4:1 D4:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "D6:2 E6:1 D6:1 A5:1 E6:1 | F#6:1 G6:1 F#6:1 F#6:1 D6:1 B5:1 | D6:2 G5:1 G5:2 G5:1 | E5:2 E5:1 D5:3",
+     "step": 1,
+     "gain": 0.33
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -7
+  },
+  {
+   "out": "ceili/green-ribbon/a.wav",
+   "bpm": 312,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D5:1 F#5:1 C#5:1 A4:1 D5:1 G4:1 | A4:1 B4:1 C#5:1 C#5:1 A4:1 E4:1 | D5:1 F#5:1 C#5:1 A4:1 D5:1 G4:1 | E4:1 F#4:1 G4:1 D4:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "D6:1 F#6:1 C#6:1 A5:1 D6:1 G5:1 | A5:1 B5:1 C#6:1 C#6:1 A5:1 E5:1 | D6:1 F#6:1 C#6:1 A5:1 D6:1 G5:1 | E5:1 F#5:1 G5:1 D5:3",
+     "step": 1,
+     "gain": 0.3
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "[D3,A3,F#4]:3 [D3,A3,F#4]:3 | [A3,E4,C#5]:3 [A3,E4,C#5]:3 | [D3,A3,F#4]:3 [D3,A3,F#4]:3 | [A3,E4,C#5]:3 [D3,A3,F#4]:3",
+     "step": 1,
+     "gain": 0.42,
+     "strum": 0.02
+    },
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "D2:3 D2:3 | A2:3 A2:3 | D2:3 D2:3 | A2:3 D2:3",
+     "step": 1,
+     "gain": 0.75
+    },
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "D4:1 F#4:1 C#4:1 A3:1 D4:1 G3:1 | A3:1 B3:1 C#4:1 C#4:1 A3:1 E3:1 | D4:1 F#4:1 C#4:1 A3:1 D4:1 G3:1 | E3:1 F#3:1 G3:1 D3:3",
+     "step": 1,
+     "gain": 0.28,
+     "legato": 0.8,
+     "params": {
+      "musette": 6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -6
+  },
+  {
+   "out": "ceili/green-ribbon/b.wav",
+   "bpm": 312,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D4:2 B4:1 B4:1 F#4:1 D4:1 | D4:2 E4:1 G4:2 D5:1 | D5:2 E5:1 F#5:1 G5:1 F#5:1 | A5:1 G5:1 F#5:1 D5:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "D5:2 B5:1 B5:1 F#5:1 D5:1 | D5:2 E5:1 G5:2 D6:1 | D6:2 E6:1 F#6:1 G6:1 F#6:1 | A6:1 G6:1 F#6:1 D6:3",
+     "step": 1,
+     "gain": 0.3
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "[B3,F#4,D5]:3 [B3,F#4,D5]:3 | [G3,D4,B4]:3 [G3,D4,B4]:3 | [D3,A3,F#4]:3 [D3,A3,F#4]:3 | [A3,E4,C#5]:3 [D3,A3,F#4]:3",
+     "step": 1,
+     "gain": 0.42,
+     "strum": 0.02
+    },
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "B2:3 B2:3 | G2:3 G2:3 | D2:3 D2:3 | A2:3 D2:3",
+     "step": 1,
+     "gain": 0.75
+    },
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "D3:2 B3:1 B3:1 F#3:1 D3:1 | D3:2 E3:1 G3:2 D4:1 | D4:2 E4:1 F#4:1 G4:1 F#4:1 | A4:1 G4:1 F#4:1 D4:3",
+     "step": 1,
+     "gain": 0.28,
+     "legato": 0.8,
+     "params": {
+      "musette": 6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -6
+  },
+  {
+   "out": "ceili/lucky-penny/a.wav",
+   "bpm": 400,
+   "beats": 32,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "G4:1 B4:1 F#4:1 E4:1 G4:1 A4:1 G4:1 F#4:1 | G4:1 A4:1 B4:1 C5:1 C5:1 D5:1 C5:1 B4:1 | G4:1 B4:1 F#4:1 E4:1 G4:1 A4:1 G4:1 F#4:1 | F#4:1 G4:1 A4:1 B4:1 G4:4",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "G5:1 B5:1 F#5:1 E5:1 G5:1 A5:1 G5:1 F#5:1 | G5:1 A5:1 B5:1 C6:1 C6:1 D6:1 C6:1 B5:1 | G5:1 B5:1 F#5:1 E5:1 G5:1 A5:1 G5:1 F#5:1 | F#5:1 G5:1 A5:1 B5:1 G5:4",
+     "step": 1,
+     "gain": 0.3
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-x-X-x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x-x-x-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "[G3,D4,B4]:4 [G3,D4,B4]:4 | [C4,G4,E5]:4 [C4,G4,E5]:4 | [G3,D4,B4]:4 [G3,D4,B4]:4 | [D4,A4,F#5]:4 [G3,D4,B4]:4",
+     "step": 1,
+     "gain": 0.42,
+     "strum": 0.02
+    },
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "G2:4 G2:4 | C3:4 C3:4 | G2:4 G2:4 | D3:4 G2:4",
+     "step": 1,
+     "gain": 0.75
+    },
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "G3:1 B3:1 F#3:1 E3:1 G3:1 A3:1 G3:1 F#3:1 | G3:1 A3:1 B3:1 C4:1 C4:1 D4:1 C4:1 B3:1 | G3:1 B3:1 F#3:1 E3:1 G3:1 A3:1 G3:1 F#3:1 | F#3:1 G3:1 A3:1 B3:1 G3:4",
+     "step": 1,
+     "gain": 0.28,
+     "legato": 0.8,
+     "params": {
+      "musette": 6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -6
+  },
+  {
+   "out": "ceili/lucky-penny/b.wav",
+   "bpm": 400,
+   "beats": 32,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "G4:1 A4:1 B4:1 C5:1 C5:1 E5:1 B4:1 A4:1 | G4:1 A4:1 B4:1 C5:1 B4:1 G4:1 D4:1 G4:1 | A4:1 C5:1 E5:1 A5:1 A5:1 B5:1 A5:1 G5:1 | A5:1 G5:1 F#5:1 E5:1 G5:4",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "G5:1 A5:1 B5:1 C6:1 C6:1 E6:1 B5:1 A5:1 | G5:1 A5:1 B5:1 C6:1 B5:1 G5:1 D5:1 G5:1 | A5:1 C6:1 E6:1 A6:1 A6:1 B6:1 A6:1 G6:1 | A6:1 G6:1 F#6:1 E6:1 G6:4",
+     "step": 1,
+     "gain": 0.3
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-x-X-x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x-x-x-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "[C4,G4,E5]:4 [C4,G4,E5]:4 | [G3,D4,B4]:4 [G3,D4,B4]:4 | [A3,E4,C5]:4 [A3,E4,C5]:4 | [D4,A4,F#5]:4 [G3,D4,B4]:4",
+     "step": 1,
+     "gain": 0.42,
+     "strum": 0.02
+    },
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "C3:4 C3:4 | G2:4 G2:4 | A2:4 A2:4 | D3:4 G2:4",
+     "step": 1,
+     "gain": 0.75
+    },
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "G3:1 A3:1 B3:1 C4:1 C4:1 E4:1 B3:1 A3:1 | G3:1 A3:1 B3:1 C4:1 B3:1 G3:1 D3:1 G3:1 | A3:1 C4:1 E4:1 A4:1 A4:1 B4:1 A4:1 G4:1 | A4:1 G4:1 F#4:1 E4:1 G4:4",
+     "step": 1,
+     "gain": 0.28,
+     "legato": 0.8,
+     "params": {
+      "musette": 6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -6
+  },
+  {
+   "out": "ceili/clover-field/a.wav",
+   "bpm": 330,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D5:1 C#5:1 B4:1 A4:1 B4:1 A4:1 | B4:2 D4:1 D4:2 B4:1 | A4:2 G4:1 A4:2 A4:1 | A4:1 B4:1 C#5:1 D5:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "D6:1 C#6:1 B5:1 A5:1 B5:1 A5:1 | B5:2 D5:1 D5:2 B5:1 | A5:2 G5:1 A5:2 A5:1 | A5:1 B5:1 C#6:1 D6:3",
+     "step": 1,
+     "gain": 0.3
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "[D3,A3,F#4]:3 [D3,A3,F#4]:3 | [G3,D4,B4]:3 [G3,D4,B4]:3 | [A3,E4,C#5]:3 [A3,E4,C#5]:3 | [A3,E4,C#5]:3 [D3,A3,F#4]:3",
+     "step": 1,
+     "gain": 0.42,
+     "strum": 0.02
+    },
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "D2:3 D2:3 | G2:3 G2:3 | A2:3 A2:3 | A2:3 D2:3",
+     "step": 1,
+     "gain": 0.75
+    },
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "D4:1 C#4:1 B3:1 A3:1 B3:1 A3:1 | B3:2 D3:1 D3:2 B3:1 | A3:2 G3:1 A3:2 A3:1 | A3:1 B3:1 C#4:1 D4:3",
+     "step": 1,
+     "gain": 0.28,
+     "legato": 0.8,
+     "params": {
+      "musette": 6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -6
+  },
+  {
+   "out": "ceili/clover-field/b.wav",
+   "bpm": 330,
+   "beats": 24,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "B4:1 G4:1 C#5:1 D5:1 B4:1 G4:1 | F#4:2 F#4:1 F#4:1 G4:1 F#4:1 | G4:1 A4:1 B4:1 B4:1 E5:1 G5:1 | E5:2 D5:1 D5:3",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "B5:1 G5:1 C#6:1 D6:1 B5:1 G5:1 | F#5:2 F#5:1 F#5:1 G5:1 F#5:1 | G5:1 A5:1 B5:1 B5:1 E6:1 G6:1 | E6:2 D6:1 D6:3",
+     "step": 1,
+     "gain": 0.3
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "[G3,D4,B4]:3 [G3,D4,B4]:3 | [D3,A3,F#4]:3 [D3,A3,F#4]:3 | [E3,B3,G4]:3 [E3,B3,G4]:3 | [A3,E4,C#5]:3 [D3,A3,F#4]:3",
+     "step": 1,
+     "gain": 0.42,
+     "strum": 0.02
+    },
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "G2:3 G2:3 | D2:3 D2:3 | E2:3 E2:3 | A2:3 D2:3",
+     "step": 1,
+     "gain": 0.75
+    },
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "B3:1 G3:1 C#4:1 D4:1 B3:1 G3:1 | F#3:2 F#3:1 F#3:1 G3:1 F#3:1 | G3:1 A3:1 B3:1 B3:1 E4:1 G4:1 | E4:2 D4:1 D4:3",
+     "step": 1,
+     "gain": 0.28,
+     "legato": 0.8,
+     "params": {
+      "musette": 6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -6
+  },
+  {
+   "out": "ceili/saints-day/a.wav",
+   "bpm": 432,
+   "beats": 32,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D4:1 F#4:1 A4:1 D5:1 D5:1 E5:1 F#5:1 G5:1 | G5:2 E5:1 D5:1 D5:1 C#5:1 B4:1 A4:1 | A4:1 C#5:1 G4:1 F#4:1 A4:1 C#5:1 G4:1 F#4:1 | A4:2 A4:1 G4:1 D4:4",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "D5:1 F#5:1 A5:1 D6:1 D6:1 E6:1 F#6:1 G6:1 | G6:2 E6:1 D6:1 D6:1 C#6:1 B5:1 A5:1 | A5:1 C#6:1 G5:1 F#5:1 A5:1 C#6:1 G5:1 F#5:1 | A5:2 A5:1 G5:1 D5:4",
+     "step": 1,
+     "gain": 0.3
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-x-X-x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x-x-x-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "[D3,A3,F#4]:4 [D3,A3,F#4]:4 | [G3,D4,B4]:4 [G3,D4,B4]:4 | [A3,E4,C#5]:4 [A3,E4,C#5]:4 | [A3,E4,C#5]:4 [D3,A3,F#4]:4",
+     "step": 1,
+     "gain": 0.42,
+     "strum": 0.02
+    },
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "D2:4 D2:4 | G2:4 G2:4 | A2:4 A2:4 | A2:4 D2:4",
+     "step": 1,
+     "gain": 0.75
+    },
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "D3:1 F#3:1 A3:1 D4:1 D4:1 E4:1 F#4:1 G4:1 | G4:2 E4:1 D4:1 D4:1 C#4:1 B3:1 A3:1 | A3:1 C#4:1 G3:1 F#3:1 A3:1 C#4:1 G3:1 F#3:1 | A3:2 A3:1 G3:1 D3:4",
+     "step": 1,
+     "gain": 0.28,
+     "legato": 0.8,
+     "params": {
+      "musette": 6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -6
+  },
+  {
+   "out": "ceili/saints-day/b.wav",
+   "bpm": 432,
+   "beats": 32,
+   "tail": 0.6,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D4:1 F#4:1 A4:1 D5:1 D5:1 E5:1 F#5:1 G5:1 | F#5:2 B4:1 F#4:1 F#4:2 A4:1 B4:1 | B4:2 G5:1 B5:1 B5:1 G5:1 A5:1 G5:1 | A5:1 E5:1 C#5:1 A4:1 D5:4",
+     "step": 1,
+     "gain": 0.75,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.025,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "D5:1 F#5:1 A5:1 D6:1 D6:1 E6:1 F#6:1 G6:1 | F#6:2 B5:1 F#5:1 F#5:2 A5:1 B5:1 | B5:2 G6:1 B6:1 B6:1 G6:1 A6:1 G6:1 | A6:1 E6:1 C#6:1 A5:1 D6:4",
+     "step": 1,
+     "gain": 0.3
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-x-X-x-",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.42,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x-x-x-x",
+     "bars": 4,
+     "step": 1,
+     "gain": 0.231,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "[D3,A3,F#4]:4 [D3,A3,F#4]:4 | [B3,F#4,D5]:4 [B3,F#4,D5]:4 | [G3,D4,B4]:4 [G3,D4,B4]:4 | [A3,E4,C#5]:4 [D3,A3,F#4]:4",
+     "step": 1,
+     "gain": 0.42,
+     "strum": 0.02
+    },
+    {
+     "type": "seq",
+     "inst": "upright_bass",
+     "steps": "D2:4 D2:4 | B2:4 B2:4 | G2:4 G2:4 | A2:4 D2:4",
+     "step": 1,
+     "gain": 0.75
+    },
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "D3:1 F#3:1 A3:1 D4:1 D4:1 E4:1 F#4:1 G4:1 | F#4:2 B3:1 F#3:1 F#3:2 A3:1 B3:1 | B3:2 G4:1 B4:1 B4:1 G4:1 A4:1 G4:1 | A4:1 E4:1 C#4:1 A3:1 D4:4",
+     "step": 1,
+     "gain": 0.28,
+     "legato": 0.8,
+     "params": {
+      "musette": 6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.16,
+     "size": 0.5,
+     "damp": 0.5
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -6
+  },
+  {
+   "out": "music/title.wav",
+   "bpm": 312,
+   "beats": 48,
+   "loop": "fold",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D5:1 E5:1 D5:1 D5:1 A4:1 E5:1 | D5:1 G5:1 C#5:1 D5:2 D5:1 | D5:1 E5:1 D5:1 D5:1 A4:1 E5:1 | E5:2 D5:1 D5:3 | D5:1 B4:1 G4:1 G4:1 B4:1 D5:1 | D5:2 E5:1 F#5:1 D5:1 A4:1 | D5:1 B4:1 G4:1 G4:1 B4:1 D5:1 | C#5:1 B4:1 A4:1 D5:3",
+     "step": 1,
+     "gain": 0.6,
+     "legato": 0.9,
+     "params": {
+      "attack": 0.03,
+      "vibrato": 0.3
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "steps": "-:24 | D6:1 B5:1 G5:1 G5:1 B5:1 D6:1 | D6:2 E6:1 F#6:1 D6:1 A5:1 | D6:1 B5:1 G5:1 G5:1 B5:1 D6:1 | C#6:1 B5:1 A5:1 D6:3",
+     "step": 1,
+     "gain": 0.25
+    },
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "[D3,A3,F#4]:3 [D3,A3,F#4]:3 | [G3,D4,B4]:3 [G3,D4,B4]:3 | [D3,A3,F#4]:3 [D3,A3,F#4]:3 | [A3,E4,C#5]:3 [D3,A3,F#4]:3 | [G3,D4,B4]:3 [G3,D4,B4]:3 | [D3,A3,F#4]:3 [D3,A3,F#4]:3 | [G3,D4,B4]:3 [G3,D4,B4]:3 | [A3,E4,C#5]:3 [D3,A3,F#4]:3",
+     "step": 1,
+     "gain": 0.45,
+     "strum": 0.03
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "X-xx-x",
+     "bars": 8,
+     "step": 1,
+     "gain": 0.3,
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "djembe",
+     "steps": "-x--x-",
+     "bars": 8,
+     "step": 1,
+     "gain": 0.165,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.6
+    },
+    {
+     "type": "compressor",
+     "threshold": -16,
+     "ratio": 2.5
+    }
+   ],
+   "normalize": -9
+  },
+  {
+   "out": "call/left.wav",
+   "layers": [
+    {
+     "type": "speech",
+     "text": "left",
+     "params": {
+      "voice": "male",
+      "rate": 1.45,
+      "pitch": 132,
+      "seed": 2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "highpass",
+     "cutoff": 120
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.3
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -2
+  },
+  {
+   "out": "call/right.wav",
+   "layers": [
+    {
+     "type": "speech",
+     "text": "right",
+     "params": {
+      "voice": "male",
+      "rate": 1.45,
+      "pitch": 132,
+      "seed": 2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "highpass",
+     "cutoff": 120
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.3
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -2
+  },
+  {
+   "out": "call/hop.wav",
+   "layers": [
+    {
+     "type": "speech",
+     "text": "hop",
+     "params": {
+      "voice": "male",
+      "rate": 1.5,
+      "pitch": 132,
+      "seed": 2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "highpass",
+     "cutoff": 120
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.3
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -2
+  },
+  {
+   "out": "call/turn.wav",
+   "layers": [
+    {
+     "type": "speech",
+     "text": "turn",
+     "params": {
+      "voice": "male",
+      "rate": 1.5,
+      "pitch": 132,
+      "seed": 2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "highpass",
+     "cutoff": 120
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.3
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -2
+  },
+  {
+   "out": "call/forward.wav",
+   "layers": [
+    {
+     "type": "speech",
+     "text": "forward",
+     "params": {
+      "voice": "male",
+      "rate": 1.85,
+      "pitch": 132,
+      "seed": 2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "highpass",
+     "cutoff": 120
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.3
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -2
+  },
+  {
+   "out": "call/back.wav",
+   "layers": [
+    {
+     "type": "speech",
+     "text": "back",
+     "params": {
+      "voice": "male",
+      "rate": 1.5,
+      "pitch": 132,
+      "seed": 2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "highpass",
+     "cutoff": 120
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.3
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -2
+  },
+  {
+   "out": "step/left.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "steel_ball",
+     "at": 0.0,
+     "gain": 1.0,
+     "params": {
+      "surface": "wood",
+      "force": 0.65,
+      "seed": 3
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "brush",
+     "gain": 0.3,
+     "params": {
+      "swish": 0.0
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -4
+  },
+  {
+   "out": "step/right.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "steel_ball",
+     "at": 0.0,
+     "gain": 1.0,
+     "params": {
+      "surface": "wood",
+      "force": 0.7,
+      "seed": 5
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "brush",
+     "gain": 0.3,
+     "params": {
+      "swish": 0.0
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -4
+  },
+  {
+   "out": "step/hop.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "steel_ball",
+     "at": 0.0,
+     "gain": 0.8,
+     "params": {
+      "surface": "wood",
+      "force": 0.55,
+      "seed": 4
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "steel_ball",
+     "at": 0.07,
+     "gain": 1.0,
+     "params": {
+      "surface": "wood",
+      "force": 0.8,
+      "seed": 6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -4
+  },
+  {
+   "out": "step/turn.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "brush",
+     "gain": 0.8,
+     "params": {
+      "swish": 1.0,
+      "dur": 0.3
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "steel_ball",
+     "at": 0.26,
+     "gain": 0.9,
+     "params": {
+      "surface": "wood",
+      "force": 0.6,
+      "seed": 7
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -4
+  },
+  {
+   "out": "step/forward.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "kick",
+     "gain": 0.6,
+     "params": {
+      "tune": 70,
+      "decay": 0.2,
+      "punch": 0.3
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "steel_ball",
+     "at": 0.0,
+     "gain": 1.0,
+     "params": {
+      "surface": "wood",
+      "force": 0.85,
+      "seed": 8
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -4
+  },
+  {
+   "out": "step/back.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "brush",
+     "gain": 0.7,
+     "params": {
+      "swish": 0.4,
+      "dur": 0.12
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "brush",
+     "at": 0.11,
+     "gain": 0.7,
+     "params": {
+      "swish": 0.4,
+      "dur": 0.12
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "steel_ball",
+     "at": 0.2,
+     "gain": 0.7,
+     "params": {
+      "surface": "wood",
+      "force": 0.5,
+      "seed": 9
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -4
+  },
+  {
+   "out": "judge/spot-on.wav",
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "glockenspiel",
+     "notes": "A6",
+     "dur": 0.25,
+     "vel": 0.45
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.15,
+     "size": 0.3
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -16
+  },
+  {
+   "out": "judge/close.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "click",
+     "params": {
+      "tone": 900
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 1500
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -14
+  },
+  {
+   "out": "judge/stumble.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "brush",
+     "gain": 0.9,
+     "params": {
+      "swish": 0.7,
+      "dur": 0.25
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "steel_ball",
+     "at": 0.12,
+     "gain": 0.8,
+     "params": {
+      "surface": "rubber",
+      "force": 0.6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 2500
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -8
+  },
+  {
+   "out": "count.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "djembe",
+     "params": {
+      "stroke": "bass",
+      "tune": 420
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "djembe",
+     "gain": 0.4,
+     "params": {
+      "stroke": "tone",
+      "tune": 260
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.3
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -5
+  },
+  {
+   "out": "shamrock.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "glockenspiel",
+     "steps": "A6:0.07 D7:0.25",
+     "vel": 0.5
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -9
+  },
+  {
+   "out": "lucky.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "music_box",
+     "steps": "D6:0.06 F#6:0.06 A6:0.06 D7:0.3",
+     "vel": 0.6
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -8
+  },
+  {
+   "out": "clover.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "D5:0.05 E5:0.05 F#5:0.05 A5:0.05 B5:0.05 D6:0.05 E6:0.05 F#6:0.5"
+    },
+    {
+     "type": "sfx",
+     "kind": "magic",
+     "at": 0.3,
+     "gain": 0.6,
+     "params": {
+      "dur": 1.0,
+      "density": 10,
+      "freq": "D6"
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.25,
+     "size": 0.6
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -6
+  },
+  {
+   "out": "clover-call.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "celesta",
+     "steps": "D6:0.08 A6:0.08 D7:0.3",
+     "vel": 0.55
+    },
+    {
+     "type": "seq",
+     "inst": "glockenspiel",
+     "at": 0.05,
+     "steps": "F#6:0.08 D7:0.3",
+     "vel": 0.4,
+     "gain": 0.6
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.25,
+     "size": 0.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -8
+  },
+  {
+   "out": "clap.wav",
+   "layers": [
+    {
+     "type": "pattern",
+     "kind": "clap",
+     "hits": [
+      0,
+      0.25,
+      0.5
+     ],
+     "gain": 0.9
+    },
+    {
+     "type": "pattern",
+     "kind": "clap",
+     "hits": [
+      0.02,
+      0.27,
+      0.53
+     ],
+     "gain": 0.6,
+     "params": {
+      "decay": 0.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.5
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -9
+  },
+  {
+   "out": "applause.wav",
+   "layers": [
+    {
+     "type": "pattern",
+     "kind": "clap",
+     "hits": [
+      0.08249044857236675,
+      0.127597634504355,
+      0.15368193186416168,
+      0.15935983066859408,
+      0.19956862935650313,
+      0.3318681826339043,
+      0.7124320826329573,
+      0.8045156172076883,
+      0.9339422161135308,
+      0.954020504057249,
+      1.1163586130167247,
+      1.1789404094747162,
+      1.4320558406876784,
+      1.8190746742784838
+     ],
+     "gain": 0.2685702941724468,
+     "params": {
+      "decay": 0.17232389646070145
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "clap",
+     "hits": [
+      0.09689197568493306,
+      0.2450078552030062,
+      0.3000505733834701,
+      0.37591087024179,
+      0.6023873155698867,
+      0.6416421941320235,
+      0.8250953872736227,
+      1.2003741331243973,
+      1.2097283404179298,
+      1.3050611026036258,
+      1.6975428269696653,
+      1.7856143948212535,
+      1.9712346003105718,
+      2.030610619633274
+     ],
+     "gain": 0.3458370203389276,
+     "params": {
+      "decay": 0.1872397542725731
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "clap",
+     "hits": [
+      0.11681829313381602,
+      0.12306639094771336,
+      0.4036790771258801,
+      0.4784291610154197,
+      0.5875433138528174,
+      0.6157284539385114,
+      0.8380809191120298,
+      0.8882413776867197,
+      1.0735791527907335,
+      1.1258704721069952,
+      1.147701252474972,
+      1.3335839474363005,
+      1.3700290901099599,
+      1.5569837837840828
+     ],
+     "gain": 0.3287794755717177,
+     "params": {
+      "decay": 0.2375137495573429
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "clap",
+     "hits": [
+      0.07214135296728531,
+      0.21724103198913033,
+      0.2796515437753288,
+      0.5298054873979433,
+      0.5772954236404981,
+      0.7693459920848181,
+      0.8996921048754825,
+      1.0543677301103866,
+      1.2295171760232873,
+      1.3421793325681606,
+      1.3931393104000591,
+      1.4068103938315764,
+      1.6108791737688346,
+      1.8035217193863513
+     ],
+     "gain": 0.3542943049410489,
+     "params": {
+      "decay": 0.20943698771050184
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "clap",
+     "hits": [
+      0.10435141546721792,
+      0.4895043152019367,
+      0.6635612810083427,
+      0.7846731698384305,
+      0.8154491403617886,
+      0.9974197513658867,
+      1.1130616297875904,
+      1.1423417934164402,
+      1.1500826713208039,
+      1.2065662766436092,
+      1.41371063296871,
+      1.4447445824815714,
+      1.6248514835856525,
+      1.708125015882611
+     ],
+     "gain": 0.2533844392083383,
+     "params": {
+      "decay": 0.19616952862997658
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "clap",
+     "hits": [
+      0.09432707093009665,
+      0.1289300819202218,
+      0.18735327117077105,
+      0.20694435522989477,
+      0.2688774062504713,
+      0.3961837339150629,
+      0.6255195250131633,
+      0.7186998415189296,
+      0.8791038546304599,
+      1.2291727815560334,
+      1.3108477405371861,
+      1.3823751515176244,
+      1.3942751586020792,
+      1.41341412230642
+     ],
+     "gain": 0.29176315967708455,
+     "params": {
+      "decay": 0.19152965172116987
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "clap",
+     "hits": [
+      0.006058533009894612,
+      0.22336294057084127,
+      0.2608022381657481,
+      0.343296162892913,
+      0.3453374038476745,
+      0.3888649965618362,
+      0.5309813246908047,
+      0.5464952878841937,
+      0.6200408216654855,
+      0.7177448409052078,
+      0.8381850110854602,
+      0.8719027855237385,
+      1.3086053842533614,
+      1.4174421818667073
+     ],
+     "gain": 0.3929646888287643,
+     "params": {
+      "decay": 0.2190493657135978
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "clap",
+     "hits": [
+      0.07343033478435468,
+      0.08465703740141513,
+      0.0915927575465138,
+      0.14081044744604104,
+      0.5336353133721254,
+      0.5426112119555714,
+      0.7010683489762588,
+      0.8399261391964138,
+      0.8626338093325645,
+      0.9196321121313221,
+      1.0607585073602592,
+      1.0851074448273301,
+      1.1893379304228884,
+      1.2233648936788153
+     ],
+     "gain": 0.28131447781692465,
+     "params": {
+      "decay": 0.16623031877720973
+     }
+    },
+    {
+     "type": "pattern",
+     "kind": "clap",
+     "hits": [
+      0.00028926955768222135,
+      0.031621099466020666,
+      0.06519374882393102,
+      0.1258158163480197,
+      0.1523243661451217,
+      0.1842026018103054,
+      0.1875685160264907,
+      0.3127996181307759,
+      0.4216665287681059,
+      0.43076303710659,
+      0.4508763033228681,
+      0.4515626650150703,
+      0.7614455448577138,
+      1.0841721479435364
+     ],
+     "gain": 0.37734053897269226,
+     "params": {
+      "decay": 0.2493102721704714
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "fade",
+     "in": 0.05,
+     "out": 0.8
+    },
+    {
+     "type": "reverb",
+     "mix": 0.25,
+     "size": 0.6
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -8
+  },
+  {
+   "out": "bed/kitchen.wav",
+   "duration": 8,
+   "loop": 1.0,
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "vinyl",
+     "gain": 0.7,
+     "params": {
+      "dur": 9,
+      "crackle": 6,
+      "hiss": 0.15,
+      "seed": 4
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "wind",
+     "gain": 0.25,
+     "params": {
+      "dur": 9
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 2500
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -20
+  },
+  {
+   "out": "bed/outdoors.wav",
+   "duration": 8,
+   "loop": 1.0,
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "wind",
+     "gain": 0.6,
+     "params": {
+      "dur": 9
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "at": 6.04,
+     "steps": "B6:0.05 E6:0.05 B6:0.07",
+     "vel": 0.35,
+     "gain": 0.12
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "at": 3.7,
+     "steps": "B6:0.05 F#6:0.05 B6:0.07",
+     "vel": 0.35,
+     "gain": 0.12
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "at": 5.69,
+     "steps": "G6:0.05 D6:0.05 G6:0.07",
+     "vel": 0.35,
+     "gain": 0.12
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "at": 4.41,
+     "steps": "B6:0.05 E6:0.05 B6:0.07",
+     "vel": 0.35,
+     "gain": 0.12
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 4000
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -20
+  },
+  {
+   "out": "bed/square.wav",
+   "duration": 8,
+   "loop": 1.0,
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "noise",
+     "gain": 0.6,
+     "params": {
+      "dur": 9,
+      "color": "pink",
+      "attack": 0.5
+     },
+     "fx": [
+      {
+       "type": "bandpass",
+       "center": 500,
+       "q": 0.8
+      },
+      {
+       "type": "tremolo",
+       "rate": 0.7,
+       "depth": 0.3
+      }
+     ]
+    },
+    {
+     "type": "synth",
+     "inst": "glass",
+     "notes": "E6",
+     "dur": 0.2,
+     "vel": 0.25,
+     "at": 2.1,
+     "gain": 0.15
+    },
+    {
+     "type": "synth",
+     "inst": "glass",
+     "notes": "G6",
+     "dur": 0.2,
+     "vel": 0.25,
+     "at": 5.6,
+     "gain": 0.12
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "at": 3.29,
+     "steps": "G6:0.05 D6:0.05 G6:0.07",
+     "vel": 0.35,
+     "gain": 0.12
+    },
+    {
+     "type": "seq",
+     "inst": "whistle",
+     "at": 3.91,
+     "steps": "G6:0.05 D6:0.05 G6:0.07",
+     "vel": 0.35,
+     "gain": 0.12
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -21
+  },
+  {
+   "out": "bed/harbour.wav",
+   "duration": 8,
+   "loop": 1.0,
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "noise",
+     "gain": 0.7,
+     "params": {
+      "dur": 9,
+      "color": "brown",
+      "attack": 1.0
+     },
+     "fx": [
+      {
+       "type": "lowpass",
+       "cutoff": 700
+      },
+      {
+       "type": "tremolo",
+       "rate": 0.18,
+       "depth": 0.6
+      }
+     ]
+    },
+    {
+     "type": "sfx",
+     "kind": "wind",
+     "gain": 0.3,
+     "params": {
+      "dur": 9
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -20
+  },
+  {
+   "out": "bed/hall.wav",
+   "duration": 8,
+   "loop": 1.0,
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "noise",
+     "gain": 0.7,
+     "params": {
+      "dur": 9,
+      "color": "pink",
+      "attack": 0.5
+     },
+     "fx": [
+      {
+       "type": "bandpass",
+       "center": 420,
+       "q": 0.9
+      },
+      {
+       "type": "tremolo",
+       "rate": 1.3,
+       "depth": 0.35
+      }
+     ]
+    },
+    {
+     "type": "synth",
+     "inst": "glass",
+     "notes": "D6",
+     "dur": 0.2,
+     "vel": 0.25,
+     "at": 1.4,
+     "gain": 0.15
+    },
+    {
+     "type": "synth",
+     "inst": "glass",
+     "notes": "A6",
+     "dur": 0.2,
+     "vel": 0.25,
+     "at": 4.2,
+     "gain": 0.12
+    },
+    {
+     "type": "synth",
+     "inst": "glass",
+     "notes": "F#6",
+     "dur": 0.2,
+     "vel": 0.25,
+     "at": 6.3,
+     "gain": 0.12
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.7
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19
+  },
+  {
+   "out": "menu/move.wav",
+   "_about": "Menu move: a light heel tap.",
+   "duration": 0.16,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "woodblock",
+     "gain": 0.35,
+     "at": 0.0,
+     "params": {}
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 3500
+    },
+    {
+     "type": "mono"
+    },
+    {
+     "type": "fade",
+     "out": 0.04
+    }
+   ],
+   "normalize": -9,
+   "max_loudness": -28
+  },
+  {
+   "out": "menu/select.wav",
+   "_about": "Menu select: a bodhran beat and a whistle note.",
+   "duration": 0.42,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "tom",
+     "gain": 0.45,
+     "at": 0.0,
+     "params": {
+      "decay": 0.12
+     }
+    },
+    {
+     "type": "synth",
+     "inst": "flute",
+     "notes": "D6",
+     "dur": 0.2,
+     "gain": 0.35,
+     "at": 0.04,
+     "vel": 0.4
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 4500
+    },
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.3
+    },
+    {
+     "type": "mono"
+    },
+    {
+     "type": "fade",
+     "out": 0.04
+    }
+   ],
+   "normalize": -6,
+   "max_loudness": -22
+  },
+  {
+   "out": "menu/back.wav",
+   "_about": "Menu back: a soft fiddle drop.",
+   "duration": 0.32,
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "pizzicato",
+     "notes": "D3",
+     "dur": 0.2,
+     "gain": 0.45,
+     "at": 0.0,
+     "vel": 0.35
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 1500
+    },
+    {
+     "type": "mono"
+    },
+    {
+     "type": "fade",
+     "out": 0.04
+    }
+   ],
+   "normalize": -9,
+   "max_loudness": -26
+  },
+  {
+   "out": "music/pause.wav",
+   "_about": "Pause music: a slow air on fiddle over harp, the dancers sitting out.",
+   "bpm": 84,
+   "beats": 24,
+   "loop": "fold",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "warm_pad",
+     "step": 1,
+     "steps": "[D3,F#3,A3]:3 | [G3,B3,D4]:3 | [D3,F#3,A3]:3 | [A2,C#3,E3]:3 | [B2,D3,F#3]:3 | [G2,B2,D3]:3 | [A2,C#3,E3]:3 | [D3,F#3,A3]:3",
+     "gain": 0.22,
+     "vel": 0.55,
+     "at": 0,
+     "params": {
+      "attack": 1.2,
+      "release": 2.0,
+      "cutoff": 800
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "harp",
+     "step": 1,
+     "steps": "D4:1 F#4:1 A4:1 | G4:1 B4:1 D5:1 | D4:1 F#4:1 A4:1 | A3:1 C#4:1 E4:1 | B3:1 D4:1 F#4:1 | G3:1 B3:1 D4:1 | A3:1 C#4:1 E4:1 | D4:1 F#4:1 A4:1",
+     "gain": 0.3,
+     "vel": 0.45,
+     "at": 0
+    },
+    {
+     "type": "seq",
+     "inst": "violin",
+     "step": 1,
+     "steps": "A4:2 F#4:1 | G4:2 B4:1 | A4:2 F#4:1 | E4:3 | F#4:2 D4:1 | G4:2 E4:1 | E4:1 F#4:1 E4:1 | D4:3",
+     "gain": 0.28,
+     "vel": 0.4,
+     "at": 0,
+     "params": {
+      "attack": 0.2,
+      "vibrato": 0.8
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.25,
+     "size": 0.7
+    },
+    {
+     "type": "lowpass",
+     "cutoff": 5000
+    }
+   ],
+   "normalize": -15
+  }
+ ]
+}

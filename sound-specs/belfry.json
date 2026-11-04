@@ -1,0 +1,520 @@
+{
+ "_about": "Belfry prototype sounds. Eight tuned tubular bells a major scale apart, C6 down to C5: the village rings bells 1 to 6, the cathedral all 8. The answer is a firm low woodblock knock for a bell in place and a soft high click tap for a misplaced one, so the two never blur. A rope pull starts a rung row. A solved peal rings the bells down and back three times; an empty tower one low bell. The tower bed is quiet wind and room tone; the title is a slow organ with bells.",
+ "normalize": -6,
+ "sounds": [
+  {
+   "out": "bell/1.wav",
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "tubular_bell",
+     "notes": "C6",
+     "dur": 1.6,
+     "vel": 0.7,
+     "params": {
+      "decay": 2.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.7
+    }
+   ],
+   "normalize": -9
+  },
+  {
+   "out": "bell/2.wav",
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "tubular_bell",
+     "notes": "B5",
+     "dur": 1.6,
+     "vel": 0.7,
+     "params": {
+      "decay": 2.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.7
+    }
+   ],
+   "normalize": -9
+  },
+  {
+   "out": "bell/3.wav",
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "tubular_bell",
+     "notes": "A5",
+     "dur": 1.6,
+     "vel": 0.7,
+     "params": {
+      "decay": 2.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.7
+    }
+   ],
+   "normalize": -9
+  },
+  {
+   "out": "bell/4.wav",
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "tubular_bell",
+     "notes": "G5",
+     "dur": 1.6,
+     "vel": 0.7,
+     "params": {
+      "decay": 2.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.7
+    }
+   ],
+   "normalize": -9
+  },
+  {
+   "out": "bell/5.wav",
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "tubular_bell",
+     "notes": "F5",
+     "dur": 1.6,
+     "vel": 0.7,
+     "params": {
+      "decay": 2.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.7
+    }
+   ],
+   "normalize": -9
+  },
+  {
+   "out": "bell/6.wav",
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "tubular_bell",
+     "notes": "E5",
+     "dur": 1.6,
+     "vel": 0.7,
+     "params": {
+      "decay": 2.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.7
+    }
+   ],
+   "normalize": -9
+  },
+  {
+   "out": "bell/7.wav",
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "tubular_bell",
+     "notes": "D5",
+     "dur": 1.6,
+     "vel": 0.7,
+     "params": {
+      "decay": 2.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.7
+    }
+   ],
+   "normalize": -9
+  },
+  {
+   "out": "bell/8.wav",
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "tubular_bell",
+     "notes": "C5",
+     "dur": 1.6,
+     "vel": 0.7,
+     "params": {
+      "decay": 2.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.7
+    }
+   ],
+   "normalize": -9
+  },
+  {
+   "out": "answer/knock.wav",
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "woodblock",
+     "params": {
+      "tune": 420
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "kick",
+     "params": {
+      "tune": 70
+     },
+     "gain": 0.5
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 3500
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -8
+  },
+  {
+   "out": "answer/tap.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "click",
+     "params": {
+      "tone": 1800
+     }
+    },
+    {
+     "type": "drum",
+     "kind": "woodblock",
+     "params": {
+      "tune": 1500
+     },
+     "gain": 0.25
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 5000
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -15
+  },
+  {
+   "out": "row/rope.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "whoosh",
+     "params": {
+      "dur": 0.35,
+      "direction": "down"
+     },
+     "gain": 0.5
+    },
+    {
+     "type": "drum",
+     "kind": "tom",
+     "params": {
+      "tune": 110,
+      "decay": 0.12
+     },
+     "gain": 0.3,
+     "at": 0.3
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 2500
+    }
+   ],
+   "normalize": -16
+  },
+  {
+   "out": "peal/solved.wav",
+   "bpm": 150,
+   "normalize": -6,
+   "tail": 2.0,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "tubular_bell",
+     "step": 1,
+     "vel": 0.65,
+     "steps": "C6:0.5 B5:0.5 A5:0.5 G5:0.5 F5:0.5 E5:0.5 | B5:0.5 C6:0.5 G5:0.5 A5:0.5 E5:0.5 F5:0.5 | C6:0.5 B5:0.5 A5:0.5 G5:0.5 F5:0.5 E5:1.5"
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.3,
+     "size": 0.8
+    }
+   ]
+  },
+  {
+   "out": "peal/lost.wav",
+   "normalize": -8,
+   "tail": 2.0,
+   "layers": [
+    {
+     "type": "synth",
+     "inst": "tubular_bell",
+     "notes": "C4",
+     "dur": 2.5,
+     "vel": 0.5,
+     "params": {
+      "decay": 3.0
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 2000
+    },
+    {
+     "type": "reverb",
+     "mix": 0.35,
+     "size": 0.9
+    }
+   ]
+  },
+  {
+   "out": "peal/next.wav",
+   "bpm": 160,
+   "normalize": -9,
+   "tail": 1.0,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "celesta",
+     "step": 1,
+     "vel": 0.6,
+     "steps": "C5:0.5 E5:0.5 G5:0.5 C6:1"
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.2,
+     "size": 0.6
+    }
+   ]
+  },
+  {
+   "out": "cue/hint.wav",
+   "normalize": -12,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "glockenspiel",
+     "steps": "G5:0.12 D6:0.4",
+     "vel": 0.5
+    }
+   ]
+  },
+  {
+   "out": "cue/nope.wav",
+   "normalize": -15,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "tom",
+     "params": {
+      "tune": 95,
+      "decay": 0.15
+     },
+     "gain": 0.5
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 1500
+    },
+    {
+     "type": "mono"
+    }
+   ]
+  },
+  {
+   "out": "ambience/tower.wav",
+   "duration": 8.0,
+   "loop": 0.5,
+   "normalize": -28,
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "wind",
+     "params": {
+      "dur": 8.5
+     },
+     "gain": 0.5,
+     "fx": [
+      {
+       "type": "lowpass",
+       "cutoff": 900
+      }
+     ]
+    },
+    {
+     "type": "sfx",
+     "kind": "noise",
+     "params": {
+      "dur": 8.5,
+      "color": "brown"
+     },
+     "gain": 0.3,
+     "fx": [
+      {
+       "type": "lowpass",
+       "cutoff": 300
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "out": "music/title.wav",
+   "bpm": 72,
+   "beats": 32,
+   "loop": "fold",
+   "normalize": -14,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "church_organ",
+     "step": 1,
+     "gain": 0.4,
+     "vel": 0.5,
+     "steps": "[C3,G3,E4]:4 | [A2,E3,C4]:4 | [F2,C3,A3]:4 | [G2,D3,B3]:4 | [C3,G3,E4]:4 | [F2,C3,A3]:4 | [G2,D3,B3]:4 | [C3,G3,C4]:4"
+    },
+    {
+     "type": "seq",
+     "inst": "tubular_bell",
+     "step": 1,
+     "gain": 0.3,
+     "vel": 0.45,
+     "steps": "C6:1 B5:1 A5:1 G5:1 | -:4 | F5:1 E5:1 D5:1 C5:1 | -:4 | C6:1 A5:1 B5:1 G5:1 | -:4 | E5:1 F5:1 D5:1 C5:1 | -:4"
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.35,
+     "size": 0.9
+    }
+   ]
+  },
+  {
+   "out": "peal/new-year.wav",
+   "bpm": 150,
+   "normalize": -7.8,
+   "tail": 2.5,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "tubular_bell",
+     "step": 1,
+     "vel": 0.65,
+     "steps": "C6:0.5 B5:0.5 A5:0.5 G5:0.5 F5:0.5 E5:1.5 | E5:0.4 E5:0.4 E5:0.4 E5:0.4 E5:0.4 E5:0.4 E5:0.4 E5:0.4 E5:0.4 E5:0.4 E5:0.4 E5:0.4"
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.3,
+     "size": 0.8
+    }
+   ]
+  },
+  {
+   "out": "moon/shimmer.wav",
+   "normalize": -22,
+   "duration": 0.45,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "glass",
+     "steps": "E6:0.05 B6:0.05 E7:0.15",
+     "vel": 0.35
+    },
+    {
+     "type": "sfx",
+     "kind": "noise",
+     "params": {
+      "dur": 0.25,
+      "color": "white",
+      "attack": 0.05
+     },
+     "gain": 0.05,
+     "fx": [
+      {
+       "type": "highpass",
+       "cutoff": 6000
+      }
+     ]
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.4,
+     "size": 0.7
+    }
+   ]
+  },
+  {"out": "menu/move.wav", "_about": "Menu move: a rope creak.", "duration": 0.16, "layers": [{"type": "drum", "kind": "woodblock", "gain": 0.5, "at": 0, "vel": 0.25, "params": {"tune": 480}}], "fx": [{"type": "lowpass", "cutoff": 1600}, {"type": "mono"}, {"type": "fade", "out": 0.04}], "normalize": -9, "max_loudness": -28},
+  {"out": "menu/select.wav", "_about": "Menu select: a small handbell tap.", "duration": 0.42, "layers": [{"type": "synth", "inst": "bell", "notes": "G5", "dur": 0.35, "gain": 0.5, "at": 0, "vel": 0.45, "params": {"decay": 0.4, "ratio": 2.0, "bright": 0.6}}], "fx": [{"type": "lowpass", "cutoff": 3500}, {"type": "reverb", "mix": 0.15, "size": 0.3}, {"type": "mono"}, {"type": "fade", "out": 0.04}], "normalize": -6, "max_loudness": -22},
+  {"out": "menu/back.wav", "_about": "Menu back: a lower, quieter bell.", "duration": 0.32, "layers": [{"type": "synth", "inst": "bell", "notes": "C5", "dur": 0.25, "gain": 0.5, "at": 0, "vel": 0.35, "params": {"decay": 0.3, "ratio": 2.0, "bright": 0.5}}], "fx": [{"type": "lowpass", "cutoff": 2500}, {"type": "mono"}, {"type": "fade", "out": 0.04}], "normalize": -9, "max_loudness": -26},
+  {"out": "music/pause.wav", "_about": "Pause music: a quiet organ with a slow chime, the tower at rest.", "bpm": 56, "beats": 32, "loop": "fold", "layers": [{"type": "seq", "inst": "church_organ", "step": 1, "steps": "[D3,F#3,A3]:4 | [B2,D3,F#3]:4 | [G2,B2,D3]:4 | [A2,C#3,E3]:4 | [D3,F#3,A3]:4 | [B2,D3,F#3]:4 | [G2,B2,D3]:4 | [A2,C#3,E3]:4", "gain": 0.18, "vel": 0.4, "at": 0, "params": {"sub": 0.2, "mixture": 0.15}}, {"type": "seq", "inst": "harp", "step": 1, "steps": "D4:1 F#4:1 A4:1 D5:1 | B3:1 D4:1 F#4:1 B4:1 | G3:1 B3:1 D4:1 G4:1 | A3:1 C#4:1 E4:1 A4:1 | D4:1 F#4:1 A4:1 D5:1 | B3:1 D4:1 F#4:1 B4:1 | G3:1 B3:1 D4:1 G4:1 | A3:1 C#4:1 E4:1 A4:1", "gain": 0.25, "vel": 0.4, "at": 0}, {"type": "seq", "inst": "tubular_bell", "step": 1, "steps": "-:4 | -:4 | -:4 | -:4 | D5:4 | B4:4 | G4:2 A4:2 | A4:4", "gain": 0.15, "vel": 0.35, "at": 0, "params": {"decay": 2.5}}], "fx": [{"type": "reverb", "mix": 0.35, "size": 0.85}, {"type": "lowpass", "cutoff": 4500}], "normalize": -15}
+ ]
+}

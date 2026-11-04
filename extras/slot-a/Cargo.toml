@@ -1,0 +1,28 @@
+[package]
+name = "wickets-slot-a"
+description = "Private content slot"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+authors.workspace = true
+license.workspace = true
+publish = false
+build = "build.rs"
+autotests = false
+
+[lib]
+test = false
+doctest = false
+
+[[test]]
+name = "all"
+path = "tests/all.rs"
+
+[dependencies]
+hearken.workspace = true
+parlor-core.workspace = true
+serde.workspace = true
+
+[build-dependencies]
+wickets-content = { path = "../../crates/wickets-content" }

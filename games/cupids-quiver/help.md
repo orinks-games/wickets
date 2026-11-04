@@ -1,0 +1,79 @@
+# Cupid's Quiver
+
+## About the game
+
+You stand on a rooftop at dusk with a bow and a quiver of arrows. Paper hearts drift across the sky, each humming a soft note from where it is. Turn the bow toward a heart by ear, draw, and let go to shoot. A round ends when the quiver is empty. On the rooftops, each round needs enough hearts to go on to the next roof, and the evening ends when a round falls short. Score as many points as you can.
+
+## Aiming by ear
+
+Left and Right turn the bow 5 degrees a press, up to 70 degrees either way. The sky turns with you, so a heart straight in front of the bow sounds straight ahead, in the middle, and a heart off to one side sounds from that side. Quieter hearts are farther off. Up faces straight ahead again. Each step of the bow ticks and says your aim, such as "15 degrees right", unless aim call-outs are off. At the end of its turn the bow knocks.
+
+## Drawing and shooting
+
+Hold Space to draw the string. It creaks, rising in pitch as it comes back, and clicks at a full draw after nearly a second. Let go after the click and the arrow flies with a twang. Let go before it and the string flops: the arrow stays in your hand and nothing is lost. Down eases the string without shooting.
+
+## Leading a heart
+
+Hearts keep drifting while the arrow flies. A near heart is reached in a quarter of a second, a far one in nearly three quarters, so far hearts need the most lead. Aim a little ahead of a heart, in the way it is drifting. When a shot let go now would meet a target, a small glassy ping sounds from it. H names the best target and the angle to meet it at.
+
+## Sweetheart pairs
+
+Hearts come in pairs: two hearts of one colour, red, pink, peach, violet or white, that hum the same note. The second heart of a pair drifts in a moment after the first, from either side. Hit both, one after the other, for a sweetheart pair: 50 bonus points and rising chimes that end in a chord. A miss, or another target hit in between, breaks the pair. S, Tab and H always name the colours, so you never need to tell the notes apart by ear.
+
+## Scoring
+
+A near heart scores 10, a middle one 20 and a far one 30. Each hit in a row adds 5 more, up to 25 more. A sweetheart pair adds 50. A rose adds 25 to its distance points. A golden heart scores 100, and a love note 40.
+
+## The rooftops and moonlight
+
+The main game is six rooftops, from the bakery to the cathedral. Each round has a quiver of arrows and a number of hearts to hit to go on. Later roofs have more arrows, more hearts at once, faster drifting, more far hearts and a narrower aim. Clear all six in one evening to open moonlight: endless rounds under the moon, faster with each one, until a round falls short.
+
+## Love notes
+
+Now and then a folded love note drifts slowly over the rooftops, with a flutter of paper. Hit it and the note is read out and kept, even if you leave the evening early. There are 24 to find. Love notes on the title reads every note you have kept, a page at a time.
+
+## Valentine's Day
+
+The game follows the real calendar. In the 7 days before the 14th of February, roses drift among the hearts, each a soft music box tune worth 25 more, and the music changes. On Valentine's Day itself, from the day before to the day after so every time zone is covered, two more modes open. Valentine's night is four rooftops under a full moon, with golden hearts that shimmer like tiny bells, drift fast and score 100. For two is the same night for two players, who take turns with one bow, one arrow each, and share the score. Either one leaves a keepsake for that year in the keepsake box on the title. The rest of the year these rows are locked, and their help says how many days are left.
+
+## The practice field
+
+The practice field has one slow heart at a time, never far, and endless arrows. Nothing is saved. Practise turning, drawing and leading a heart. Escape pauses.
+
+## Challenges
+
+Every player gets the same challenges. The daily is today's sky: one long round of 15 arrows with a twist, such as a breeze that speeds the hearts, a far sky, a crowded sky, or sweetheart pairs worth double. The weekly is three rooftops, each busier than the last, new each Monday. The monthly is five rounds under the full moon, with roses. Every round is played and the points are added. Your result counts when the last round ends. Leave the challenge, on the pause menu, does not count, so you can try again later.
+
+## Spoken call-outs
+
+Two rows in Settings turn spoken call-outs on and off, from the title or from the pause menu during a run. The Spoken aim setting says your aim each time the bow turns, such as "15 degrees right". With Spoken aim off, each step only ticks, and S still gives your aim. The Spoken targets setting names each target as it drifts in, such as "Pink heart, from the left." With Spoken targets off, you hear only the hums, and Tab still lists the sky. The first time you meet each kind of target or cue, it is explained in words, once. The tutorial explains the bow and the glassy ping, so after it play does not explain them again.
+
+## Sounds
+
+A paper heart is a soft hum: red is the lowest note, then pink, peach, violet, and white the highest. A rose is a music box tune with a rustle of petals. A golden heart is a shimmer of tiny bells. A love note is a slow flutter of paper. The string creaks as it draws and clicks at full draw. A hit pops, then chimes on the heart's note. A miss taps far off on roof tiles. A bell starts each round, and three falling notes end it. The sound check on the title plays each one with its name.
+
+## Controls
+
+Left and Right: turn the bow 5 degrees.
+
+Up: face straight ahead.
+
+Down: ease the string without shooting, or count your arrows.
+
+Space: hold to draw, and let go after the click to shoot. Between rooftops, climb to the next one.
+
+Enter: between rooftops, climb to the next one.
+
+Tab: list everything in the sky, left to right.
+
+S: status. Whose turn in the game for two, your aim, how far the bow is drawn, arrows left, and hearts hit and needed. Press S again straight away for the round, points and how many targets are in the sky.
+
+R: repeat the last announcement.
+
+H: a hint, naming the best target and how far to turn for it.
+
+F1: help for what you are doing right now. F2 stops speech.
+
+Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
+
+These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.

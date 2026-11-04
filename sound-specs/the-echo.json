@@ -1,0 +1,390 @@
+{
+  "genny": "blal1",
+  "_about": "The Echo sounds, on blal1's genny. The Echo is a listening machine in the cellar with ranks of pipes. The pipe tone is one held organ principal on G4, looped, which the game plays twice: once at the note the pipe should hold and once at the pipe's own pitch, so a pipe out of tune wobbles against its true note and goes still when it is in tune. The short note is the same principal, struck once, for the Echo playing a tuned rank back as a tune. Adjusting the pipe is a small brass slide tick. Setting a pipe in tune is a bell; setting it too soon is a dull thud. The hint is a felt knock. A finished rank is a rising chime. The cellar ambience is a low hum and the faint rumble of the building, quiet under the pipes. The title music is slow church organ and strings.",
+  "normalize": -6,
+  "sounds": [
+    {
+      "out": "pipe.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "params": {
+            "freq": 392,
+            "dur": 30.01,
+            "wave": "sine"
+          },
+          "gain": 0.7
+        },
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "params": {
+            "freq": 784,
+            "dur": 30.01,
+            "wave": "sine"
+          },
+          "gain": 0.3
+        },
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "params": {
+            "freq": 1176,
+            "dur": 30.01,
+            "wave": "sine"
+          },
+          "gain": 0.12
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 0.01
+        }
+      ],
+      "normalize": -12,
+      "_about": "The pipe: a steady flue tone on G4, a sine with its second and third harmonics. It is 30 seconds of whole cycles, so its one seam, a few milliseconds long, comes round rarely."
+    },
+    {
+      "out": "note.wav",
+      "layers": [
+        {
+          "type": "synth",
+          "inst": "church_organ",
+          "notes": "G4",
+          "dur": 0.7,
+          "gain": 0.8,
+          "params": {
+            "sub": 0.0,
+            "mixture": 0.3
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.8
+        },
+        {
+          "type": "mono"
+        },
+        {
+          "type": "fade",
+          "out": 0.3
+        }
+      ],
+      "normalize": -9
+    },
+    {
+      "out": "slide.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "ui_tick",
+          "params": {
+            "kind": "toggle",
+            "seed": 3
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "highpass",
+          "cutoff": 600
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -18
+    },
+    {
+      "out": "in-tune.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "ui_chime",
+          "params": {
+            "kind": "discovery",
+            "pitch": 1.0,
+            "seed": 4
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.25,
+          "size": 0.7
+        }
+      ],
+      "normalize": -8
+    },
+    {
+      "out": "not-yet.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "ui_tick",
+          "params": {
+            "kind": "refuse",
+            "seed": 5
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -10
+    },
+    {
+      "out": "hint.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "ui_tick",
+          "params": {
+            "kind": "hint",
+            "seed": 6
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -12
+    },
+    {
+      "out": "rank-tuned.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "tubular_bell",
+          "steps": "G4:0.18 B4:0.18 D5:0.18 G5:1.0",
+          "gain": 0.6
+        },
+        {
+          "type": "synth",
+          "inst": "church_organ",
+          "notes": "G3:maj",
+          "dur": 1.8,
+          "at": 0.5,
+          "gain": 0.35,
+          "params": {
+            "sub": 0.2,
+            "mixture": 0.3
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.35,
+          "size": 0.85
+        }
+      ],
+      "normalize": -6
+    },
+    {
+      "out": "cellar-ambience.wav",
+      "duration": 10.0,
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "noise_bed",
+          "params": {
+            "kind": "hum",
+            "dur": 10.5,
+            "level": -24,
+            "freq": 50,
+            "bright": 0.15,
+            "seed": 7
+          },
+          "gain": 0.6
+        },
+        {
+          "type": "sfx",
+          "kind": "noise_bed",
+          "params": {
+            "kind": "rumble",
+            "dur": 10.5,
+            "level": -24,
+            "seed": 8
+          },
+          "gain": 0.5
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 900
+        },
+        {
+          "type": "loop",
+          "crossfade": 1.0
+        }
+      ],
+      "normalize": -22
+    },
+    {
+      "out": "music/title.wav",
+      "_about": "Title music: slow church organ chords with strings over them, in G.",
+      "bpm": 60,
+      "beats": 32,
+      "loop": "fold",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "church_organ",
+          "step": 1,
+          "steps": "[G3,B3,D4]:4 | [E3,G3,B3]:4 | [C3,E3,G3]:4 | [D3,F#3,A3]:4 | [G3,B3,D4]:4 | [E3,G3,B3]:4 | [C3,E3,A3]:4 | [D3,G3,B3]:4",
+          "gain": 0.3,
+          "vel": 0.45,
+          "params": {
+            "sub": 0.3,
+            "mixture": 0.2
+          }
+        },
+        {
+          "type": "seq",
+          "inst": "strings",
+          "step": 1,
+          "steps": "D5:4 | B4:4 | E5:2 D5:2 | A4:4 | D5:2 G5:2 | F#5:2 E5:2 | E5:3 D5:1 | D5:4",
+          "gain": 0.25,
+          "vel": 0.35
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.4,
+          "size": 0.9
+        },
+        {
+          "type": "lowpass",
+          "cutoff": 5000
+        }
+      ],
+      "normalize": -15
+    },
+    {
+      "out": "music/pause.wav",
+      "_about": "Pause music: one organ chord at a time, the cellar quiet.",
+      "bpm": 50,
+      "beats": 16,
+      "loop": "fold",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "church_organ",
+          "step": 1,
+          "steps": "[G3,D4]:4 | [E3,B3]:4 | [C3,G3]:4 | [D3,A3]:4",
+          "gain": 0.22,
+          "vel": 0.4,
+          "params": {
+            "sub": 0.2,
+            "mixture": 0.1
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.45,
+          "size": 0.9
+        }
+      ],
+      "normalize": -18
+    },
+    {
+      "out": "menu/move.wav",
+      "_about": "Menu move: a small brass tick.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "ui_tick",
+          "params": {
+            "kind": "focus",
+            "seed": 20
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -9,
+      "max_loudness": -28
+    },
+    {
+      "out": "menu/select.wav",
+      "_about": "Menu select: an iron click and a short organ note.",
+      "duration": 0.5,
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "ui_tick",
+          "params": {
+            "kind": "activate",
+            "seed": 21
+          },
+          "gain": 0.6
+        },
+        {
+          "type": "synth",
+          "inst": "church_organ",
+          "notes": "D5",
+          "dur": 0.25,
+          "at": 0.03,
+          "gain": 0.4,
+          "params": {
+            "sub": 0.0,
+            "mixture": 0.2
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "fade",
+          "out": 0.1
+        }
+      ],
+      "normalize": -6,
+      "max_loudness": -22
+    },
+    {
+      "out": "menu/back.wav",
+      "_about": "Menu back: a soft double tick.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "ui_tick",
+          "params": {
+            "kind": "back",
+            "seed": 23
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -9,
+      "max_loudness": -26
+    }
+  ]
+}

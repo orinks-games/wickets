@@ -1,0 +1,37 @@
+[package]
+name = "neon-rail"
+description = "Neon Rail: Black Sky Run, a Wicket's game"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+authors.workspace = true
+license.workspace = true
+publish = false
+build = "build.rs"
+# The test files are modules of tests/all.rs, one binary (see that file).
+autotests = false
+
+[lib]
+# No unit tests or doc examples here (tools/check_test_targets.py keeps
+# this honest); the integration tests live in tests/all.rs.
+test = false
+doctest = false
+
+[[test]]
+name = "all"
+path = "tests/all.rs"
+
+# The progression simulator (ignored; run with --ignored) as its own
+# binary, so a sweep need not link the whole suite.
+[[test]]
+name = "progression_sim"
+path = "tests/sim/main.rs"
+
+[dependencies]
+hearken.workspace = true
+parlor-core.workspace = true
+serde.workspace = true
+
+[build-dependencies]
+wickets-content = { path = "../../crates/wickets-content" }

@@ -1,0 +1,3680 @@
+{
+  "_about": "Haunted Hallways prototype sounds. Every gameplay cue is distinct: wood and stone footsteps, a deep low thud for walls, a rattling handle for a locked exit, a heavy slam for the shut entry door, a sliding bolt for unlocking, a cold wind draught from an open exit, a ghost whisper from a sealed one. The nine items are mono for play_at and each has its own timbre: woodblock tick-tock clock, glassy hum crystal, water-drop potion, music-box tune, FM bell, crackling candle, croaking raven, jangling keys, low heartbeat. Ghost loops are mono for positioning: theremin wail (widow), chains and cello groan (butler), whispers and a giggle (child). The freeze stab is a dissonant string and timpani hit unlike anything else. Beds and the title theme are quiet under speech. Added for the hundred floors: a panting, growling hound loop and its howl (keep walking, unlike the freeze stab), a slow breathing drone for the shadow, a groaning board, a crashing fall, a warped mimic shriek, a rising harp landing, a celesta unlock flourish, and two beds: ticking gears for the clock tower and dripping water for the flooded cellars. Added for the deep floors, rendered on blal1's genny: a soft glass chime for charms, a harp pluck for taking one, a hiss of salt, the pendulum's swish, a splash and a lapping for deep water, trickling dust and a falling stone, a deep rumble for the shifting house, and the founder's heavy boot, rising wind-up scrape, ringing strike note, iron hit, wooden block and crumbling fall.",
+  "normalize": -4,
+  "sounds": [
+    {
+      "out": "steps/wood_a.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "footstep",
+          "params": {
+            "tone": 110
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "at": 0.02,
+          "gain": 0.15,
+          "params": {
+            "dur": 0.12,
+            "color": "pink"
+          },
+          "fx": [
+            {
+              "type": "bandpass",
+              "center": 700,
+              "q": 2
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 2500
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.4
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -8
+    },
+    {
+      "out": "steps/wood_b.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "footstep",
+          "params": {
+            "tone": 125
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "sweep_down",
+          "at": 0.05,
+          "gain": 0.12,
+          "params": {
+            "start": 520,
+            "end": 380,
+            "dur": 0.22,
+            "wave": "saw"
+          },
+          "fx": [
+            {
+              "type": "tremolo",
+              "rate": 38,
+              "depth": 0.9,
+              "shape": "square"
+            },
+            {
+              "type": "bandpass",
+              "center": 600,
+              "q": 2
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 2500
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.4
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -8
+    },
+    {
+      "out": "steps/stone.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "footstep",
+          "params": {
+            "tone": 190
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "gain": 0.2,
+          "params": {
+            "dur": 0.06,
+            "color": "white"
+          },
+          "fx": [
+            {
+              "type": "highpass",
+              "cutoff": 2500
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.8
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -8
+    },
+    {
+      "out": "move/bump.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "kick",
+          "params": {
+            "tune": 48,
+            "decay": 0.3,
+            "punch": 0.6
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "punch",
+          "gain": 0.6,
+          "params": {
+            "dur": 0.18
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 450
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -3
+    },
+    {
+      "out": "door/open.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "sweep_up",
+          "gain": 0.6,
+          "params": {
+            "start": 260,
+            "end": 520,
+            "dur": 0.8,
+            "wave": "saw"
+          },
+          "fx": [
+            {
+              "type": "tremolo",
+              "rate": 26,
+              "depth": 0.85,
+              "shape": "square"
+            },
+            {
+              "type": "bandpass",
+              "center": 800,
+              "q": 1.5
+            }
+          ]
+        },
+        {
+          "type": "sfx",
+          "kind": "door",
+          "at": 0.8,
+          "gain": 0.6
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.25,
+          "size": 0.6
+        }
+      ],
+      "normalize": -5
+    },
+    {
+      "out": "door/locked.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "click",
+          "repeat": 7,
+          "every": 0.055,
+          "params": {
+            "tone": 1300
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "solenoid",
+          "gain": 0.6,
+          "params": {
+            "size": 0.3,
+            "metal": 0.7,
+            "thump": 0.6,
+            "bounce": 0.8
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "solenoid",
+          "at": 0.22,
+          "gain": 0.5,
+          "params": {
+            "size": 0.3,
+            "metal": 0.7,
+            "thump": 0.6,
+            "bounce": 0.8
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.15,
+          "size": 0.4
+        }
+      ],
+      "normalize": -2
+    },
+    {
+      "out": "door/shut.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "door"
+        },
+        {
+          "type": "drum",
+          "kind": "kick808",
+          "gain": 0.8,
+          "params": {
+            "tune": 40,
+            "decay": 0.9
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.35,
+          "size": 0.9
+        }
+      ],
+      "normalize": -4
+    },
+    {
+      "out": "door/unlock.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "gain": 0.3,
+          "params": {
+            "dur": 0.25,
+            "low": 400,
+            "high": 1600,
+            "direction": "up"
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "solenoid",
+          "at": 0.22,
+          "params": {
+            "size": 0.9,
+            "metal": 0.9,
+            "thump": 0.8,
+            "bounce": 0.3
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "click",
+          "at": 0.4,
+          "gain": 0.6,
+          "params": {
+            "tone": 2200
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.25,
+          "size": 0.6
+        }
+      ],
+      "normalize": -4
+    },
+    {
+      "out": "door/draft.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "wind",
+          "params": {
+            "dur": 1.3
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "highpass",
+          "cutoff": 300
+        },
+        {
+          "type": "fade",
+          "in": 0.2,
+          "out": 0.4
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -6
+    },
+    {
+      "out": "door/spirit.wav",
+      "layers": [
+        {
+          "type": "speech",
+          "text": "give it",
+          "params": {
+            "voice": "ghost",
+            "rate": 0.7
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.7
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -5
+    },
+    {
+      "out": "door/stairs.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "footstep",
+          "at": 0.0,
+          "params": {
+            "tone": 100
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "footstep",
+          "at": 0.3,
+          "params": {
+            "tone": 120
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "footstep",
+          "at": 0.6,
+          "params": {
+            "tone": 140
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "footstep",
+          "at": 0.9,
+          "params": {
+            "tone": 160
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "sweep_up",
+          "at": 0.3,
+          "gain": 0.15,
+          "params": {
+            "start": 300,
+            "end": 450,
+            "dur": 0.5,
+            "wave": "saw"
+          },
+          "fx": [
+            {
+              "type": "tremolo",
+              "rate": 30,
+              "depth": 0.9,
+              "shape": "square"
+            },
+            {
+              "type": "bandpass",
+              "center": 700,
+              "q": 2
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.7
+        }
+      ],
+      "normalize": -5
+    },
+    {
+      "out": "items/clock.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 1700
+          }
+        },
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "at": 0.45,
+          "params": {
+            "tune": 1250
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -4,
+      "duration": 0.85
+    },
+    {
+      "out": "items/crystal.wav",
+      "layers": [
+        {
+          "type": "synth",
+          "inst": "glass",
+          "notes": "E5",
+          "dur": 0.9,
+          "vel": 0.6
+        },
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "gain": 0.4,
+          "params": {
+            "freq": 165,
+            "dur": 0.9,
+            "wave": "sine"
+          },
+          "fx": [
+            {
+              "type": "tremolo",
+              "rate": 7,
+              "depth": 0.4
+            },
+            {
+              "type": "fade",
+              "in": 0.1,
+              "out": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -5,
+      "duration": 1.0
+    },
+    {
+      "out": "items/potion.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "bubble",
+          "params": {
+            "freq": 800
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "bubble",
+          "at": 0.38,
+          "gain": 0.8,
+          "params": {
+            "freq": 950
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.4
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -4,
+      "duration": 0.8
+    },
+    {
+      "out": "items/musicbox.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "E6:0.14 G6:0.14 B6:0.14 A6:0.3",
+          "vel": 0.6
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.2,
+          "size": 0.4
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -6
+    },
+    {
+      "out": "items/bell.wav",
+      "layers": [
+        {
+          "type": "synth",
+          "inst": "bell",
+          "notes": "A5",
+          "dur": 0.7,
+          "vel": 0.7,
+          "params": {
+            "ratio": 3.5,
+            "bright": 0.8
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -6,
+      "duration": 1.0
+    },
+    {
+      "out": "items/candle.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "gain": 0.4,
+          "params": {
+            "dur": 0.7,
+            "color": "pink",
+            "attack": 0.05
+          },
+          "fx": [
+            {
+              "type": "bandpass",
+              "center": 1000,
+              "q": 0.8
+            },
+            {
+              "type": "fade",
+              "out": 0.3
+            }
+          ]
+        },
+        {
+          "type": "sfx",
+          "kind": "click",
+          "gain": 0.7,
+          "at": 0.05,
+          "params": {
+            "tone": 1600
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "click",
+          "gain": 0.5,
+          "at": 0.19,
+          "params": {
+            "tone": 2100
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "click",
+          "gain": 0.8,
+          "at": 0.31,
+          "params": {
+            "tone": 1400
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "click",
+          "gain": 0.4,
+          "at": 0.52,
+          "params": {
+            "tone": 1900
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -2,
+      "duration": 0.8
+    },
+    {
+      "out": "items/raven.wav",
+      "layers": [
+        {
+          "type": "speech",
+          "phonemes": "K R AA1 AA0",
+          "params": {
+            "voice": "male",
+            "pitch": 330,
+            "rate": 0.8,
+            "intonation": "flat"
+          },
+          "fx": [
+            {
+              "type": "distortion",
+              "drive": 5,
+              "mix": 0.6
+            },
+            {
+              "type": "bandpass",
+              "center": 1300,
+              "q": 1.2
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -5
+    },
+    {
+      "out": "items/keys.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "tambourine",
+          "params": {
+            "decay": 0.25
+          }
+        },
+        {
+          "type": "drum",
+          "kind": "tambourine",
+          "at": 0.12,
+          "gain": 0.6,
+          "params": {
+            "decay": 0.2
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 4000
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -5
+    },
+    {
+      "out": "items/heart.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "heartbeat",
+          "params": {
+            "rate": 1.4,
+            "dur": 0.8
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 500
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -3,
+      "duration": 0.8
+    },
+    {
+      "out": "cue/pickup.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "brush",
+          "gain": 0.5,
+          "params": {
+            "swish": 0.3,
+            "dur": 0.12
+          }
+        },
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "at": 0.05,
+          "steps": "C5:0.08 G5:0.2"
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.15,
+          "size": 0.3
+        }
+      ],
+      "normalize": -5
+    },
+    {
+      "out": "cue/wrong.wav",
+      "layers": [
+        {
+          "type": "speech",
+          "text": "ha ha ha",
+          "params": {
+            "voice": "ghost",
+            "rate": 0.9
+          }
+        },
+        {
+          "type": "synth",
+          "inst": "church_organ",
+          "notes": "C3 F#3",
+          "dur": 0.6,
+          "gain": 0.3
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.7
+        }
+      ],
+      "normalize": -4
+    },
+    {
+      "out": "cue/solved.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "A4:0.1 C5:0.1 E5:0.1 A5:0.4",
+          "vel": 0.7
+        },
+        {
+          "type": "synth",
+          "inst": "glass_pad",
+          "notes": "A3 E4",
+          "dur": 0.6,
+          "gain": 0.3,
+          "at": 0.3
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.6
+        }
+      ],
+      "normalize": -5
+    },
+    {
+      "out": "cue/nothing.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "params": {
+            "dur": 0.25,
+            "color": "pink",
+            "attack": 0.02
+          },
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 1200
+            },
+            {
+              "type": "fade",
+              "out": 0.15
+            }
+          ]
+        }
+      ],
+      "normalize": -12
+    },
+    {
+      "out": "cue/hint.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "glass",
+          "steps": "B5:0.12 E6:0.3",
+          "vel": 0.5
+        },
+        {
+          "type": "speech",
+          "text": "psst",
+          "params": {
+            "voice": "whisper"
+          },
+          "gain": 0.4
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.5
+        }
+      ],
+      "normalize": -7
+    },
+    {
+      "out": "cue/select.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "brush",
+          "params": {
+            "swish": 1.0,
+            "dur": 0.22
+          }
+        }
+      ],
+      "normalize": -9
+    },
+    {
+      "out": "cue/offer_ok.wav",
+      "layers": [
+        {
+          "type": "synth",
+          "inst": "choir",
+          "notes": "D4 F4 A4",
+          "dur": 1.0,
+          "vel": 0.6
+        },
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "gain": 0.3,
+          "params": {
+            "dur": 0.9,
+            "direction": "down"
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.35,
+          "size": 0.8
+        }
+      ],
+      "normalize": -5
+    },
+    {
+      "out": "cue/offer_bad.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "sweep_up",
+          "params": {
+            "start": 700,
+            "end": 2000,
+            "dur": 0.45,
+            "wave": "saw"
+          },
+          "fx": [
+            {
+              "type": "vibrato",
+              "rate": 11,
+              "depth": 0.6
+            },
+            {
+              "type": "lowpass",
+              "cutoff": 3000
+            }
+          ]
+        },
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "gain": 0.3,
+          "params": {
+            "dur": 0.5,
+            "color": "pink"
+          },
+          "fx": [
+            {
+              "type": "bandpass",
+              "center": 1800,
+              "q": 1
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.7
+        }
+      ],
+      "normalize": -6
+    },
+    {
+      "out": "cue/phonograph.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "vinyl",
+          "params": {
+            "dur": 0.9,
+            "crackle": 18,
+            "hiss": 0.4
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "telephone"
+        },
+        {
+          "type": "fade",
+          "in": 0.05,
+          "out": 0.3
+        }
+      ],
+      "normalize": -10
+    },
+    {
+      "out": "cue/toll.wav",
+      "layers": [
+        {
+          "type": "synth",
+          "inst": "tubular_bell",
+          "notes": "D4",
+          "dur": 2.5,
+          "params": {
+            "decay": 3.0
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.8
+        }
+      ],
+      "normalize": -4
+    },
+    {
+      "out": "ghost/widow.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "theremin",
+          "steps": "A4:1.2 F4:1.0 D4:1.0",
+          "params": {
+            "vibrato": 0.4
+          },
+          "gain": 0.7
+        },
+        {
+          "type": "sfx",
+          "kind": "wind",
+          "gain": 0.4,
+          "params": {
+            "dur": 3.4
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.7
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -8,
+      "duration": 3.2,
+      "loop": 0.3
+    },
+    {
+      "out": "ghost/butler.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "tambourine",
+          "repeat": 5,
+          "every": 0.31,
+          "gain": 0.6,
+          "params": {
+            "decay": 0.35
+          }
+        },
+        {
+          "type": "drum",
+          "kind": "tambourine",
+          "at": 0.15,
+          "repeat": 4,
+          "every": 0.47,
+          "gain": 0.5,
+          "params": {
+            "decay": 0.3
+          }
+        },
+        {
+          "type": "drum",
+          "kind": "guiro",
+          "at": 1.7,
+          "gain": 0.6,
+          "params": {
+            "dur": 0.5,
+            "ridges": 20
+          }
+        },
+        {
+          "type": "synth",
+          "inst": "cello",
+          "notes": "E2",
+          "dur": 2.6,
+          "gain": 0.6,
+          "params": {
+            "vibrato": 1.5
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 4500
+        },
+        {
+          "type": "reverb",
+          "mix": 0.25,
+          "size": 0.6
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -8,
+      "duration": 3.0,
+      "loop": 0.3
+    },
+    {
+      "out": "ghost/child.wav",
+      "layers": [
+        {
+          "type": "speech",
+          "text": "come and play",
+          "params": {
+            "voice": "whisper",
+            "rate": 0.8
+          }
+        },
+        {
+          "type": "speech",
+          "text": "hee hee",
+          "at": 1.6,
+          "gain": 0.7,
+          "params": {
+            "voice": "child",
+            "pitch": 380,
+            "intonation": "exclaim"
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.35,
+          "size": 0.6
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -5,
+      "duration": 3.0,
+      "loop": 0.3
+    },
+    {
+      "out": "ghost/freeze.wav",
+      "layers": [
+        {
+          "type": "synth",
+          "inst": "strings",
+          "notes": "C4 C#4 G4",
+          "dur": 0.35,
+          "params": {
+            "attack": 0.005,
+            "release": 0.3
+          }
+        },
+        {
+          "type": "synth",
+          "inst": "timpani",
+          "notes": "C2",
+          "dur": 0.5,
+          "gain": 0.8
+        },
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "gain": 0.3,
+          "params": {
+            "dur": 0.08,
+            "color": "white"
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.25,
+          "size": 0.7
+        }
+      ],
+      "normalize": -2
+    },
+    {
+      "out": "ghost/passed.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "params": {
+            "dur": 1.2,
+            "color": "pink",
+            "attack": 0.2
+          },
+          "fx": [
+            {
+              "type": "sweep",
+              "kind": "lowpass",
+              "start": 2500,
+              "end": 300
+            },
+            {
+              "type": "fade",
+              "out": 0.5
+            }
+          ]
+        },
+        {
+          "type": "synth",
+          "inst": "warm_pad",
+          "notes": "F3 A3 C4",
+          "dur": 1.0,
+          "gain": 0.35
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.6
+        }
+      ],
+      "normalize": -6
+    },
+    {
+      "out": "ghost/caught.wav",
+      "layers": [
+        {
+          "type": "speech",
+          "phonemes": "AA1",
+          "params": {
+            "voice": "female",
+            "pitch": 620,
+            "rate": 0.5,
+            "intonation": "exclaim"
+          },
+          "fx": [
+            {
+              "type": "distortion",
+              "drive": 3,
+              "mix": 0.4
+            }
+          ]
+        },
+        {
+          "type": "drum",
+          "kind": "crash",
+          "gain": 0.4
+        },
+        {
+          "type": "drum",
+          "kind": "taiko",
+          "gain": 0.8,
+          "params": {
+            "tune": 50
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.35,
+          "size": 0.8
+        }
+      ],
+      "normalize": -3
+    },
+    {
+      "out": "atmos/thunder.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "thunder",
+          "params": {
+            "dur": 3.0
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 1500
+        }
+      ],
+      "normalize": -8
+    },
+    {
+      "out": "atmos/scream.wav",
+      "layers": [
+        {
+          "type": "speech",
+          "phonemes": "AA1 AA0",
+          "params": {
+            "voice": "female",
+            "pitch": 700,
+            "rate": 0.5,
+            "intonation": "question"
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "muffle",
+          "amount": 0.7
+        },
+        {
+          "type": "reverb",
+          "mix": 0.5,
+          "size": 0.9
+        }
+      ],
+      "normalize": -12
+    },
+    {
+      "out": "ambience/house.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "wind",
+          "params": {
+            "dur": 6.5
+          },
+          "gain": 0.7
+        },
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "gain": 0.4,
+          "params": {
+            "dur": 6.5,
+            "color": "brown"
+          },
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 300
+            }
+          ]
+        }
+      ],
+      "normalize": -24,
+      "duration": 6.0,
+      "loop": 0.5
+    },
+    {
+      "out": "ambience/attic.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "wind",
+          "params": {
+            "dur": 6.5
+          },
+          "gain": 0.8
+        },
+        {
+          "type": "sfx",
+          "kind": "sweep_down",
+          "at": 2.0,
+          "gain": 0.15,
+          "params": {
+            "start": 420,
+            "end": 330,
+            "dur": 0.6,
+            "wave": "saw"
+          },
+          "fx": [
+            {
+              "type": "tremolo",
+              "rate": 22,
+              "depth": 0.9,
+              "shape": "square"
+            },
+            {
+              "type": "bandpass",
+              "center": 500,
+              "q": 2
+            }
+          ]
+        },
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "gain": 0.4,
+          "params": {
+            "dur": 6.5,
+            "color": "brown"
+          },
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 250
+            }
+          ]
+        }
+      ],
+      "normalize": -23,
+      "duration": 6.0,
+      "loop": 0.5
+    },
+    {
+      "out": "ambience/crypt.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "gain": 0.6,
+          "params": {
+            "freq": 55,
+            "dur": 6.5,
+            "wave": "sine"
+          }
+        },
+        {
+          "type": "synth",
+          "inst": "warm_pad",
+          "notes": "D2 A2",
+          "dur": 6.0,
+          "gain": 0.3
+        },
+        {
+          "type": "sfx",
+          "kind": "bubble",
+          "at": 1.3,
+          "gain": 0.2,
+          "params": {
+            "freq": 600
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "bubble",
+          "at": 4.1,
+          "gain": 0.15,
+          "params": {
+            "freq": 700
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.4,
+          "size": 0.9
+        }
+      ],
+      "normalize": -22,
+      "duration": 6.0,
+      "loop": 0.5
+    },
+    {
+      "out": "music/title.wav",
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "church_organ",
+              "step": 1,
+              "gain": 0.4,
+              "steps": "[D3,F3,A3]:4 [C#3,E3,G3,Bb3]:4 [D3,F3,A3]:4 [Bb2,D3,F3]:2 [A2,C#3,E3]:2"
+            },
+            {
+              "type": "seq",
+              "inst": "celesta",
+              "step": 0.5,
+              "gain": 0.3,
+              "vel": 0.6,
+              "steps": "D5 F5 A5 F5 D5 F5 A5 F5 | C#5 E5 G5 E5 C#5 E5 Bb5 E5 | D5 F5 A5 F5 D5 F5 A5 F5 | Bb4 D5 F5 D5 A4 C#5 E5 C#5"
+            },
+            {
+              "type": "seq",
+              "inst": "theremin",
+              "step": 1,
+              "gain": 0.35,
+              "steps": "-:2 A4:2 | Bb4:3 A4:1 | -:2 F4:1 E4:1 | D4:2 C#4:2"
+            },
+            {
+              "type": "seq",
+              "inst": "timpani",
+              "step": 1,
+              "gain": 0.45,
+              "steps": "D2:1 -:7 A1:1 -:7"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 16,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "church_organ",
+              "step": 1,
+              "gain": 0.4,
+              "steps": "[D3,F3,A3]:4 [C#3,E3,G3,Bb3]:4 [D3,F3,A3]:4 [Bb2,D3,F3]:2 [A2,C#3,E3]:2"
+            },
+            {
+              "type": "seq",
+              "inst": "celesta",
+              "step": 0.5,
+              "gain": 0.3,
+              "vel": 0.6,
+              "steps": "D5 F5 A5 F5 D5 F5 A5 F5 | C#5 E5 G5 E5 C#5 E5 Bb5 E5 | D5 F5 A5 F5 D5 F5 A5 F5 | Bb4 D5 F5 D5 A4 C#5 E5 C#5"
+            },
+            {
+              "type": "seq",
+              "inst": "theremin",
+              "step": 1,
+              "gain": 0.35,
+              "steps": "-:2 A4:2 | Bb4:3 A4:1 | -:2 F4:1 E4:1 | D4:2 C#4:2"
+            },
+            {
+              "type": "seq",
+              "inst": "timpani",
+              "step": 1,
+              "gain": 0.45,
+              "steps": "D2:1 -:7 A1:1 -:7"
+            },
+            {
+              "type": "seq",
+              "inst": "choir",
+              "step": 1,
+              "steps": "[D4,A4]:4 [C#4,G4]:4 [D4,A4]:4 [D4,F4]:2 [C#4,E4]:2",
+              "gain": 0.22
+            },
+            {
+              "type": "seq",
+              "inst": "tubular_bell",
+              "step": 1,
+              "steps": "D4:8 A3:8",
+              "gain": 0.25,
+              "vel": 0.6
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "church_organ",
+              "step": 1,
+              "steps": "[G2,Bb2,D3]:4 [Eb3,G3,Bb3]:4 [G2,Bb2,D3]:4 [A2,C#3,E3]:4",
+              "gain": 0.4
+            },
+            {
+              "type": "seq",
+              "inst": "celesta",
+              "step": 0.5,
+              "gain": 0.3,
+              "vel": 0.6,
+              "steps": "G4 Bb4 D5 Bb4 G4 Bb4 D5 Bb4 | Eb5 G5 Bb4 G5 Eb5 G5 Bb4 G5 | G4 Bb4 D5 Bb4 G4 Bb4 D5 Bb4 | A4 C#5 E5 C#5 A4 C#5 E5 G5"
+            },
+            {
+              "type": "seq",
+              "inst": "theremin",
+              "step": 1,
+              "steps": "D5:3 C5:1 | Bb4:2 G4:2 | D5:2 Eb5:1 D5:1 | C#5:4",
+              "gain": 0.35
+            },
+            {
+              "type": "seq",
+              "inst": "timpani",
+              "step": 1,
+              "steps": "G1:1 -:7 A1:1 -:4 A1:.5 A1:.5 A1:1 -:1",
+              "gain": 0.45
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "music box",
+          "at": 48,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "church_organ",
+              "step": 1,
+              "gain": 0.3,
+              "steps": "[D3,F3,A3]:4 [C#3,E3,G3,Bb3]:4 [D3,F3,A3]:4 [Bb2,D3,F3]:2 [A2,C#3,E3]:2"
+            },
+            {
+              "type": "seq",
+              "inst": "celesta",
+              "step": 0.5,
+              "gain": 0.3,
+              "vel": 0.6,
+              "steps": "D5 F5 A5 F5 D5 F5 A5 F5 | C#5 E5 G5 E5 C#5 E5 Bb5 E5 | D5 F5 A5 F5 D5 F5 A5 F5 | Bb4 D5 F5 D5 A4 C#5 E5 C#5"
+            },
+            {
+              "type": "seq",
+              "inst": "timpani",
+              "step": 1,
+              "steps": "-:12 A1:.25 A1:.25 A1:.25 A1:.25 A1:.25 A1:.25 A1:.25 A1:.25 A1:2",
+              "gain": 0.35
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.8
+        },
+        {
+          "type": "compressor",
+          "threshold": -16,
+          "ratio": 2.5
+        }
+      ],
+      "bpm": 84,
+      "beats": 64,
+      "loop": "fold",
+      "normalize": -14.5,
+      "_arrangement": "64 beats: A; A2 with a choir under the organ and tolling bells; B in G minor; a music-box breakdown with a timpani roll back in."
+    },
+    {
+      "out": "music/win.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "step": 1,
+          "steps": "D5:.5 F#5:.5 A5:.5 D6:2",
+          "gain": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "church_organ",
+          "step": 1,
+          "at": 1.5,
+          "steps": "[D3,F#3,A3,D4]:2.5",
+          "gain": 0.45
+        },
+        {
+          "type": "drum",
+          "kind": "gong",
+          "at": 1.5,
+          "gain": 0.3,
+          "params": {
+            "tune": 110,
+            "decay": 3
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.8
+        }
+      ],
+      "bpm": 110,
+      "normalize": -6
+    },
+    {
+      "out": "music/lose.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "church_organ",
+          "step": 1,
+          "steps": "A3:.75 G3:.75 F3:.75 [D3,F3,A3]:3",
+          "gain": 0.6
+        },
+        {
+          "type": "drum",
+          "kind": "gong",
+          "at": 2.25,
+          "gain": 0.5,
+          "params": {
+            "tune": 70,
+            "decay": 4
+          }
+        },
+        {
+          "type": "synth",
+          "inst": "timpani",
+          "notes": "D2",
+          "at": 2.25,
+          "dur": 1.5,
+          "gain": 0.6
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 2500
+        },
+        {
+          "type": "reverb",
+          "mix": 0.35,
+          "size": 0.9
+        }
+      ],
+      "bpm": 80,
+      "normalize": -6
+    },
+    {
+      "out": "music/floor.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "step": 1,
+          "steps": "A4:.5 C5:.5 E5:.5 A5:1.5",
+          "gain": 0.6,
+          "vel": 0.7
+        },
+        {
+          "type": "seq",
+          "inst": "church_organ",
+          "step": 1,
+          "at": 1.5,
+          "steps": "[A2,E3,A3,C4]:2",
+          "gain": 0.4
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.7
+        }
+      ],
+      "bpm": 100,
+      "normalize": -7
+    },
+    {
+      "out": "cue/seance.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "gong",
+          "params": {
+            "tune": 75,
+            "decay": 1.2
+          },
+          "gain": 0.7
+        },
+        {
+          "type": "synth",
+          "inst": "choir",
+          "notes": "D3 A3",
+          "dur": 0.8,
+          "gain": 0.35,
+          "at": 0.05
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.35,
+          "size": 0.8
+        },
+        {
+          "type": "fade",
+          "out": 0.3
+        }
+      ],
+      "duration": 0.9,
+      "normalize": -6
+    },
+    {
+      "out": "cue/seance_step.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "singing_bowl",
+          "steps": "E4:0.2 B4:0.5",
+          "gain": 0.8
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.6
+        },
+        {
+          "type": "fade",
+          "out": 0.4
+        }
+      ],
+      "normalize": -7,
+      "duration": 1.2
+    },
+    {
+      "out": "ambience/ball.wav",
+      "bpm": 96,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "pizzicato",
+          "step": 1,
+          "steps": "D2:1 -:2 | A1:1 -:2 | Bb1:1 -:2 | A1:1 -:2",
+          "gain": 0.5
+        },
+        {
+          "type": "seq",
+          "inst": "harpsichord",
+          "step": 1,
+          "steps": "-:1 [F3,A3]:1 [F3,A3]:1 | -:1 [E3,A3]:1 [E3,G3]:1 | -:1 [F3,Bb3]:1 [D3,F3]:1 | -:1 [C#3,E3]:1 [C#3,G3]:1",
+          "gain": 0.35
+        },
+        {
+          "type": "seq",
+          "inst": "glass",
+          "step": 1,
+          "steps": "A4:3 | C#5:3 | D5:3 | E5:3",
+          "gain": 0.15
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 2500
+        },
+        {
+          "type": "reverb",
+          "mix": 0.5,
+          "size": 0.9
+        }
+      ],
+      "duration": 7.5,
+      "loop": 0.5,
+      "normalize": -16
+    },
+    {
+      "out": "score/base.wav",
+      "bpm": 84,
+      "beats": 64,
+      "loop": "fold",
+      "normalize": null,
+      "max_loudness": null,
+      "gain": 0.11,
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "church_organ",
+              "step": 1,
+              "steps": "[D3,F3,A3]:4 [C#3,E3,G3,Bb3]:4 [D3,F3,A3]:4 [Bb2,D3,F3]:2 [A2,C#3,E3]:2",
+              "gain": 0.3,
+              "vel": 0.5
+            },
+            {
+              "type": "seq",
+              "inst": "sine",
+              "step": 1,
+              "steps": "D2:4 C#2:4 D2:4 Bb1:2 A1:2",
+              "gain": 0.3
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 16,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "church_organ",
+              "step": 1,
+              "steps": "[G2,Bb2,D3]:4 [Eb3,G3,Bb3]:4 [G2,Bb2,D3]:4 [A2,C#3,E3]:4",
+              "gain": 0.3,
+              "vel": 0.5
+            },
+            {
+              "type": "seq",
+              "inst": "sine",
+              "step": 1,
+              "steps": "G1:4 Eb2:4 G1:4 A1:4",
+              "gain": 0.3
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "church_organ",
+              "step": 1,
+              "steps": "[D3,F3,A3]:4 [C#3,E3,G3,Bb3]:4 [D3,F3,A3]:4 [Bb2,D3,F3]:2 [A2,C#3,E3]:2",
+              "gain": 0.3,
+              "vel": 0.5
+            },
+            {
+              "type": "seq",
+              "inst": "sine",
+              "step": 1,
+              "steps": "D2:4 C#2:4 D2:4 Bb1:2 A1:2",
+              "gain": 0.3
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B2",
+          "at": 48,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "church_organ",
+              "step": 1,
+              "steps": "[G2,Bb2,D3]:4 [Eb3,G3,Bb3]:4 [G2,Bb2,D3]:4 [A2,C#3,E3]:4",
+              "gain": 0.3,
+              "vel": 0.5
+            },
+            {
+              "type": "seq",
+              "inst": "sine",
+              "step": 1,
+              "steps": "G1:4 Eb2:4 G1:4 A1:4",
+              "gain": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.8
+        },
+        {
+          "type": "compressor",
+          "threshold": -16,
+          "ratio": 2.5
+        }
+      ]
+    },
+    {
+      "out": "score/pulse.wav",
+      "bpm": 84,
+      "beats": 64,
+      "loop": "fold",
+      "normalize": null,
+      "max_loudness": null,
+      "gain": 0.11,
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "timpani",
+              "step": 1,
+              "steps": "D2:1 -:3 | C#2:1 -:3 | D2:1 -:3 | Bb1:1 -:3",
+              "gain": 0.3
+            },
+            {
+              "type": "pattern",
+              "kind": "kick",
+              "steps": "x--x------------",
+              "bars": 4,
+              "gain": 0.25,
+              "params": {
+                "tune": 45,
+                "decay": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 16,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "timpani",
+              "step": 1,
+              "steps": "G2:1 -:3 | D#2:1 -:3 | G2:1 -:3 | A2:1 -:3",
+              "gain": 0.3
+            },
+            {
+              "type": "pattern",
+              "kind": "kick",
+              "steps": "x--x------------",
+              "bars": 4,
+              "gain": 0.25,
+              "params": {
+                "tune": 45,
+                "decay": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "timpani",
+              "step": 1,
+              "steps": "D2:1 -:3 | C#2:1 -:3 | D2:1 -:3 | Bb1:1 -:3",
+              "gain": 0.3
+            },
+            {
+              "type": "pattern",
+              "kind": "kick",
+              "steps": "x--x------------",
+              "bars": 4,
+              "gain": 0.25,
+              "params": {
+                "tune": 45,
+                "decay": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B2",
+          "at": 48,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "timpani",
+              "step": 1,
+              "steps": "G2:1 -:3 | D#2:1 -:3 | G2:1 -:3 | A2:1 -:3",
+              "gain": 0.3
+            },
+            {
+              "type": "pattern",
+              "kind": "kick",
+              "steps": "x--x------------",
+              "bars": 4,
+              "gain": 0.25,
+              "params": {
+                "tune": 45,
+                "decay": 0.5
+              }
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.8
+        },
+        {
+          "type": "compressor",
+          "threshold": -16,
+          "ratio": 2.5
+        }
+      ]
+    },
+    {
+      "out": "score/melody.wav",
+      "bpm": 84,
+      "beats": 64,
+      "loop": "fold",
+      "normalize": null,
+      "max_loudness": null,
+      "gain": 0.11,
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "celesta",
+              "step": 0.5,
+              "gain": 0.25,
+              "vel": 0.55,
+              "steps": "D5 F5 A5 F5 D5 F5 A5 F5 | C#5 E5 G5 E5 C#5 E5 Bb5 E5 | D5 F5 A5 F5 D5 F5 A5 F5 | Bb4 D5 F5 D5 A4 C#5 E5 C#5"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 16,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "celesta",
+              "step": 0.5,
+              "gain": 0.25,
+              "vel": 0.55,
+              "steps": "G4 Bb4 D5 Bb4 G4 Bb4 D5 Bb4 | Eb5 G5 Bb4 G5 Eb5 G5 Bb4 G5 | G4 Bb4 D5 Bb4 G4 Bb4 D5 Bb4 | A4 C#5 E5 C#5 A4 C#5 E5 G5"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "celesta",
+              "step": 0.5,
+              "gain": 0.2,
+              "vel": 0.5,
+              "steps": "D5 - A5 - D5 - A5 - | C#5 E5 G5 E5 C#5 E5 Bb5 E5 | D5 - A5 - D5 - A5 - | Bb4 D5 F5 D5 A4 C#5 E5 C#5"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B2",
+          "at": 48,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "celesta",
+              "step": 0.5,
+              "gain": 0.25,
+              "vel": 0.55,
+              "steps": "G4 Bb4 D5 Bb4 G4 Bb4 D5 Bb4 | Eb5 G5 Bb4 G5 Eb5 G5 Bb4 G5 | G4 Bb4 D5 Bb4 G4 Bb4 D5 Bb4 | A4 C#5 E5 C#5 A4 C#5 E5 G5"
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.8
+        },
+        {
+          "type": "compressor",
+          "threshold": -16,
+          "ratio": 2.5
+        }
+      ]
+    },
+    {
+      "out": "score/lift.wav",
+      "bpm": 84,
+      "beats": 64,
+      "loop": "fold",
+      "normalize": null,
+      "max_loudness": null,
+      "gain": 0.11,
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "theremin",
+              "step": 1,
+              "steps": "-:2 A4:2 | Bb4:3 A4:1 | -:2 F4:1 E4:1 | D4:2 C#4:2",
+              "gain": 0.3
+            },
+            {
+              "type": "seq",
+              "inst": "tubular_bell",
+              "step": 1,
+              "steps": "D4:8 A3:8",
+              "gain": 0.2,
+              "vel": 0.5
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 16,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "theremin",
+              "step": 1,
+              "steps": "D5:3 C5:1 | Bb4:2 G4:2 | D5:2 Eb5:1 D5:1 | C#5:4",
+              "gain": 0.3
+            },
+            {
+              "type": "seq",
+              "inst": "tubular_bell",
+              "step": 1,
+              "steps": "G3:8 A3:8",
+              "gain": 0.2,
+              "vel": 0.5
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "theremin",
+              "step": 1,
+              "steps": "-:2 A4:2 | Bb4:3 A4:1 | -:2 F4:1 E4:1 | D4:2 C#4:2",
+              "gain": 0.3
+            },
+            {
+              "type": "seq",
+              "inst": "tubular_bell",
+              "step": 1,
+              "steps": "D4:8 A3:8",
+              "gain": 0.2,
+              "vel": 0.5
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B2",
+          "at": 48,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "theremin",
+              "step": 1,
+              "steps": "D5:3 C5:1 | Bb4:2 G4:2 | D5:2 Eb5:1 D5:1 | C#5:4",
+              "gain": 0.3
+            },
+            {
+              "type": "seq",
+              "inst": "tubular_bell",
+              "step": 1,
+              "steps": "G3:8 A3:8",
+              "gain": 0.2,
+              "vel": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.8
+        },
+        {
+          "type": "compressor",
+          "threshold": -16,
+          "ratio": 2.5
+        }
+      ]
+    },
+    {
+      "out": "score/hurry.wav",
+      "bpm": 84,
+      "beats": 64,
+      "loop": "fold",
+      "normalize": null,
+      "max_loudness": null,
+      "gain": 0.11,
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "pizzicato",
+              "step": 0.5,
+              "gain": 0.3,
+              "vel": 0.6,
+              "steps": "D3 D3 D3 D3 D3 D3 D3 D3 | C#3 C#3 C#3 C#3 C#3 C#3 C#3 C#3 | D3 D3 D3 D3 D3 D3 D3 D3 | Bb2 Bb2 Bb2 Bb2 Bb2 Bb2 Bb2 Bb2"
+            },
+            {
+              "type": "pattern",
+              "kind": "hihat",
+              "steps": "x-x-x-x-x-x-x-x-",
+              "bars": 4,
+              "gain": 0.08,
+              "params": {
+                "tone": 4000
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 16,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "pizzicato",
+              "step": 0.5,
+              "gain": 0.3,
+              "vel": 0.6,
+              "steps": "G3 G3 G3 G3 G3 G3 G3 G3 | D#3 D#3 D#3 D#3 D#3 D#3 D#3 D#3 | G3 G3 G3 G3 G3 G3 G3 G3 | A3 A3 A3 A3 A3 A3 A3 A3"
+            },
+            {
+              "type": "pattern",
+              "kind": "hihat",
+              "steps": "x-x-x-x-x-x-x-x-",
+              "bars": 4,
+              "gain": 0.08,
+              "params": {
+                "tone": 4000
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "pizzicato",
+              "step": 0.5,
+              "gain": 0.3,
+              "vel": 0.6,
+              "steps": "D3 D3 D3 D3 D3 D3 D3 D3 | C#3 C#3 C#3 C#3 C#3 C#3 C#3 C#3 | D3 D3 D3 D3 D3 D3 D3 D3 | Bb2 Bb2 Bb2 Bb2 Bb2 Bb2 Bb2 Bb2"
+            },
+            {
+              "type": "pattern",
+              "kind": "hihat",
+              "steps": "x-x-x-x-x-x-x-x-",
+              "bars": 4,
+              "gain": 0.08,
+              "params": {
+                "tone": 4000
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B2",
+          "at": 48,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "pizzicato",
+              "step": 0.5,
+              "gain": 0.3,
+              "vel": 0.6,
+              "steps": "G3 G3 G3 G3 G3 G3 G3 G3 | D#3 D#3 D#3 D#3 D#3 D#3 D#3 D#3 | G3 G3 G3 G3 G3 G3 G3 G3 | A3 A3 A3 A3 A3 A3 A3 A3"
+            },
+            {
+              "type": "pattern",
+              "kind": "hihat",
+              "steps": "x-x-x-x-x-x-x-x-",
+              "bars": 4,
+              "gain": 0.08,
+              "params": {
+                "tone": 4000
+              }
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.8
+        },
+        {
+          "type": "compressor",
+          "threshold": -16,
+          "ratio": 2.5
+        }
+      ]
+    },
+    {
+      "out": "score/danger.wav",
+      "bpm": 84,
+      "beats": 64,
+      "loop": "fold",
+      "normalize": null,
+      "max_loudness": null,
+      "gain": 0.11,
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "strings",
+              "step": 1,
+              "steps": "[D2,A2]:4 | [C#2,G#2]:4 | [D2,A2]:4 | [Bb2,F3]:4",
+              "gain": 0.3,
+              "fx": [
+                {
+                  "type": "tremolo",
+                  "rate": 9,
+                  "depth": 0.6
+                },
+                {
+                  "type": "lowpass",
+                  "cutoff": 1200
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "choir",
+              "step": 1,
+              "steps": "[D3,D4]:4 | [C#3,C#4]:4 | [D3,D4]:4 | [Bb3,Bb4]:4",
+              "gain": 0.15
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 16,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "strings",
+              "step": 1,
+              "steps": "[G2,D3]:4 | [D#2,A#2]:4 | [G2,D3]:4 | [A2,E3]:4",
+              "gain": 0.3,
+              "fx": [
+                {
+                  "type": "tremolo",
+                  "rate": 9,
+                  "depth": 0.6
+                },
+                {
+                  "type": "lowpass",
+                  "cutoff": 1200
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "choir",
+              "step": 1,
+              "steps": "[G3,G4]:4 | [D#3,D#4]:4 | [G3,G4]:4 | [A3,A4]:4",
+              "gain": 0.15
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "strings",
+              "step": 1,
+              "steps": "[D2,A2]:4 | [C#2,G#2]:4 | [D2,A2]:4 | [Bb2,F3]:4",
+              "gain": 0.3,
+              "fx": [
+                {
+                  "type": "tremolo",
+                  "rate": 9,
+                  "depth": 0.6
+                },
+                {
+                  "type": "lowpass",
+                  "cutoff": 1200
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "choir",
+              "step": 1,
+              "steps": "[D3,D4]:4 | [C#3,C#4]:4 | [D3,D4]:4 | [Bb3,Bb4]:4",
+              "gain": 0.15
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B2",
+          "at": 48,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "strings",
+              "step": 1,
+              "steps": "[G2,D3]:4 | [D#2,A#2]:4 | [G2,D3]:4 | [A2,E3]:4",
+              "gain": 0.3,
+              "fx": [
+                {
+                  "type": "tremolo",
+                  "rate": 9,
+                  "depth": 0.6
+                },
+                {
+                  "type": "lowpass",
+                  "cutoff": 1200
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "choir",
+              "step": 1,
+              "steps": "[G3,G4]:4 | [D#3,D#4]:4 | [G3,G4]:4 | [A3,A4]:4",
+              "gain": 0.15
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.8
+        },
+        {
+          "type": "compressor",
+          "threshold": -16,
+          "ratio": 2.5
+        }
+      ]
+    },
+    {
+      "out": "ghost/hound.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "repeat": 10,
+          "every": 0.28,
+          "gain": 0.7,
+          "params": {
+            "dur": 0.14,
+            "color": "pink",
+            "attack": 0.03
+          },
+          "fx": [
+            {
+              "type": "bandpass",
+              "center": 900,
+              "q": 1.5
+            }
+          ]
+        },
+        {
+          "type": "synth",
+          "inst": "synth",
+          "notes": "E1",
+          "dur": 2.8,
+          "gain": 0.5,
+          "params": {
+            "wave": "saw",
+            "cutoff": 300,
+            "attack": 0.3,
+            "release": 0.3
+          },
+          "fx": [
+            {
+              "type": "tremolo",
+              "rate": 11,
+              "depth": 0.6
+            },
+            {
+              "type": "distortion"
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 3500
+        },
+        {
+          "type": "reverb",
+          "mix": 0.2,
+          "size": 0.5
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -8,
+      "duration": 3.0,
+      "loop": 0.3
+    },
+    {
+      "out": "ghost/howl.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "sweep_up",
+          "params": {
+            "start": 320,
+            "end": 760,
+            "dur": 0.35,
+            "wave": "saw"
+          },
+          "fx": [
+            {
+              "type": "vibrato",
+              "rate": 6
+            },
+            {
+              "type": "lowpass",
+              "cutoff": 2200
+            }
+          ]
+        },
+        {
+          "type": "sfx",
+          "kind": "sweep_down",
+          "at": 0.33,
+          "params": {
+            "start": 760,
+            "end": 420,
+            "dur": 0.6,
+            "wave": "saw"
+          },
+          "fx": [
+            {
+              "type": "vibrato",
+              "rate": 6
+            },
+            {
+              "type": "lowpass",
+              "cutoff": 2200
+            }
+          ]
+        },
+        {
+          "type": "sfx",
+          "kind": "hit",
+          "gain": 0.6,
+          "params": {
+            "dur": 0.15,
+            "tone": 160
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.7
+        }
+      ],
+      "normalize": -3
+    },
+    {
+      "out": "ghost/shadow.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "params": {
+            "dur": 4.5,
+            "color": "brown"
+          },
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 700
+            },
+            {
+              "type": "tremolo",
+              "rate": 0.5,
+              "depth": 0.85
+            }
+          ]
+        },
+        {
+          "type": "synth",
+          "inst": "pad",
+          "notes": "C2 C#2",
+          "dur": 4.3,
+          "gain": 0.45,
+          "params": {
+            "attack": 0.8,
+            "release": 0.5,
+            "cutoff": 600
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -9,
+      "duration": 4.0,
+      "loop": 0.5
+    },
+    {
+      "out": "hazard/groan.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "sweep_down",
+          "params": {
+            "start": 300,
+            "end": 170,
+            "dur": 0.75,
+            "wave": "saw"
+          },
+          "fx": [
+            {
+              "type": "tremolo",
+              "rate": 28,
+              "depth": 0.9,
+              "shape": "square"
+            },
+            {
+              "type": "bandpass",
+              "center": 380,
+              "q": 2
+            }
+          ]
+        },
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "gain": 0.25,
+          "params": {
+            "dur": 0.6,
+            "color": "brown"
+          },
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 400
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.15,
+          "size": 0.4
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -6
+    },
+    {
+      "out": "hazard/fall.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "hit",
+          "params": {
+            "dur": 0.3,
+            "tone": 140,
+            "crunch": 0.9
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "explosion",
+          "at": 0.05,
+          "gain": 0.6,
+          "params": {
+            "dur": 0.6,
+            "boom": 0.6
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "at": 0.1,
+          "gain": 0.5,
+          "params": {
+            "dur": 0.5,
+            "direction": "down"
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "door",
+          "at": 0.65,
+          "gain": 0.8
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.25,
+          "size": 0.6
+        }
+      ],
+      "normalize": -3
+    },
+    {
+      "out": "cue/mimic.wav",
+      "layers": [
+        {
+          "type": "speech",
+          "text": "hee hee",
+          "params": {
+            "voice": "ghost",
+            "rate": 1.3
+          }
+        },
+        {
+          "type": "synth",
+          "inst": "glass",
+          "notes": "C5 C#5",
+          "dur": 0.5,
+          "gain": 0.35
+        }
+      ],
+      "fx": [
+        {
+          "type": "ringmod",
+          "freq": 90
+        },
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.6
+        }
+      ],
+      "normalize": -4
+    },
+    {
+      "out": "cue/landing.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "harp",
+          "steps": "C4:0.12 E4:0.12 G4:0.12 C5:0.6"
+        },
+        {
+          "type": "synth",
+          "inst": "strings",
+          "notes": "C3 G3 E4",
+          "dur": 0.9,
+          "gain": 0.4,
+          "at": 0.3
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.7
+        }
+      ],
+      "normalize": -5
+    },
+    {
+      "out": "cue/unlock.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "G5:0.08 B5:0.08 D6:0.08 G6:0.5"
+        },
+        {
+          "type": "sfx",
+          "kind": "magic",
+          "at": 0.2,
+          "gain": 0.4,
+          "params": {
+            "dur": 0.6
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.6
+        }
+      ],
+      "normalize": -5
+    },
+    {
+      "out": "ambience/tower.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "repeat": 6,
+          "every": 1.0,
+          "gain": 0.5
+        },
+        {
+          "type": "drum",
+          "kind": "clave",
+          "at": 0.5,
+          "repeat": 6,
+          "every": 1.0,
+          "gain": 0.3
+        },
+        {
+          "type": "sfx",
+          "kind": "wind",
+          "gain": 0.5,
+          "params": {
+            "dur": 6.5
+          }
+        },
+        {
+          "type": "synth",
+          "inst": "tubular_bell",
+          "notes": "C4",
+          "dur": 3.0,
+          "gain": 0.25,
+          "at": 2.5
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 2500
+        },
+        {
+          "type": "reverb",
+          "mix": 0.35,
+          "size": 0.8
+        }
+      ],
+      "normalize": -23,
+      "duration": 6.0,
+      "loop": 0.5
+    },
+    {
+      "out": "ambience/cellar.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "bubble",
+          "repeat": 4,
+          "every": 1.37,
+          "gain": 0.6,
+          "params": {
+            "freq": 700
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "bubble",
+          "at": 0.6,
+          "repeat": 3,
+          "every": 1.9,
+          "gain": 0.5,
+          "params": {
+            "freq": 520
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "gain": 0.5,
+          "params": {
+            "dur": 6.5,
+            "color": "brown"
+          },
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 300
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.45,
+          "size": 0.9
+        }
+      ],
+      "normalize": -23,
+      "duration": 6.0,
+      "loop": 0.5
+    },
+    {
+      "out": "menu/move.wav",
+      "_about": "Menu move: a creak of old wood.",
+      "duration": 0.16,
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "gain": 0.5,
+          "at": 0,
+          "vel": 0.3,
+          "params": {
+            "tune": 380
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 1500
+        },
+        {
+          "type": "mono"
+        },
+        {
+          "type": "fade",
+          "out": 0.04
+        }
+      ],
+      "normalize": -9,
+      "max_loudness": -28
+    },
+    {
+      "out": "menu/select.wav",
+      "_about": "Menu select: a music-box ping over a latch.",
+      "duration": 0.42,
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "steel_ball",
+          "gain": 0.5,
+          "at": 0,
+          "params": {
+            "surface": "wood",
+            "force": 0.3,
+            "seed": 2
+          }
+        },
+        {
+          "type": "synth",
+          "inst": "music_box",
+          "notes": "E6",
+          "dur": 0.25,
+          "gain": 0.4,
+          "at": 0.04,
+          "vel": 0.4
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 4000
+        },
+        {
+          "type": "reverb",
+          "mix": 0.18,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        },
+        {
+          "type": "fade",
+          "out": 0.04
+        }
+      ],
+      "normalize": -6,
+      "max_loudness": -22
+    },
+    {
+      "out": "menu/back.wav",
+      "_about": "Menu back: a low knock.",
+      "duration": 0.32,
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "gain": 0.5,
+          "at": 0,
+          "vel": 0.3,
+          "params": {
+            "tune": 230
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 1200
+        },
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        },
+        {
+          "type": "fade",
+          "out": 0.04
+        }
+      ],
+      "normalize": -9,
+      "max_loudness": -26
+    },
+    {
+      "out": "music/pause.wav",
+      "_about": "Pause music: a celesta and a hushed organ, the house holding its breath.",
+      "bpm": 66,
+      "beats": 32,
+      "loop": "fold",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "church_organ",
+          "step": 1,
+          "steps": "[D3,F3,A3]:4 | [Bb2,D3,F3]:4 | [G2,Bb2,D3]:4 | [A2,C#3,E3]:4 | [D3,F3,A3]:4 | [Bb2,D3,F3]:4 | [G2,Bb2,D3]:4 | [A2,C#3,E3]:4",
+          "gain": 0.15,
+          "vel": 0.35,
+          "at": 0,
+          "params": {
+            "sub": 0.2,
+            "mixture": 0.1
+          }
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "step": 1,
+          "steps": "D4:1 F4:1 A4:1 F4:1 | Bb3:1 D4:1 F4:1 D4:1 | G3:1 Bb3:1 D4:1 Bb3:1 | A3:1 C#4:1 E4:1 C#4:1 | D4:1 F4:1 A4:1 F4:1 | Bb3:1 D4:1 F4:1 D4:1 | G3:1 Bb3:1 D4:1 Bb3:1 | A3:1 C#4:1 E4:1 C#4:1",
+          "gain": 0.25,
+          "vel": 0.4,
+          "at": 0
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "step": 1,
+          "steps": "-:4 | -:4 | -:4 | -:4 | A5:2 F5:2 | D5:2 Bb4:2 | G4:1 Bb4:1 D5:2 | C#5:4",
+          "gain": 0.25,
+          "vel": 0.4,
+          "at": 0
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.35,
+          "size": 0.85
+        },
+        {
+          "type": "lowpass",
+          "cutoff": 4500
+        }
+      ],
+      "normalize": -15
+    },
+    {
+      "out": "charm/call.wav",
+      "_about": "A charm lying in a room: a soft, high glass chime, quieter than the puzzle things.",
+      "layers": [
+        {
+          "type": "synth",
+          "inst": "glass",
+          "notes": "E6",
+          "dur": 0.35,
+          "gain": 0.6
+        },
+        {
+          "type": "synth",
+          "inst": "glass",
+          "notes": "B6",
+          "dur": 0.25,
+          "gain": 0.25,
+          "at": 0.06
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.4
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -12,
+      "genny": "blal1"
+    },
+    {
+      "out": "charm/take.wav",
+      "_about": "You took a charm: a bright two-note harp pluck.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "harp",
+          "steps": "G5:0.12 D6:0.25",
+          "bpm": 120,
+          "gain": 0.7
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -7,
+      "genny": "blal1"
+    },
+    {
+      "out": "charm/salt.wav",
+      "_about": "Salt wards something off: a sharp hiss of salt on a spirit, with a glassy ring.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "sizzle",
+          "params": {
+            "dur": 0.7,
+            "intensity": 0.6,
+            "spit": 10
+          }
+        },
+        {
+          "type": "synth",
+          "inst": "glass_harmonica",
+          "notes": "A5",
+          "dur": 0.6,
+          "gain": 0.35
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.15,
+          "size": 0.5
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -6,
+      "genny": "blal1"
+    },
+    {
+      "out": "hazard/swing.wav",
+      "_about": "The pendulum's blade passing: a heavy blade swishing through the air.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "sword",
+          "params": {
+            "blade": "sword2",
+            "speed": 0.8,
+            "thickness": 1.6
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.4
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -9,
+      "genny": "blal1"
+    },
+    {
+      "out": "hazard/splash.wav",
+      "_about": "A step into deep water: a heavy splash.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "splash",
+          "params": {
+            "size": 0.6,
+            "dur": 0.9,
+            "droplets": 5
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.15,
+          "size": 0.6
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -7,
+      "genny": "blal1"
+    },
+    {
+      "out": "hazard/lap.wav",
+      "_about": "Deep water next to you: a small, low lap of water.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "splash",
+          "params": {
+            "size": 0.2,
+            "dur": 0.5,
+            "droplets": 1
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 1800
+        },
+        {
+          "type": "reverb",
+          "mix": 0.15,
+          "size": 0.6
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -11,
+      "genny": "blal1"
+    },
+    {
+      "out": "hazard/dust.wav",
+      "_about": "Dust trickling from the ceiling above you: a dry, gritty patter.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "crumple",
+          "params": {
+            "kind": "paper",
+            "energy": 0.2,
+            "density": 0.9,
+            "size": 0.4,
+            "dur": 0.9,
+            "bright": 0.7
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "gain": 0.25,
+          "params": {
+            "dur": 0.9,
+            "color": "pink"
+          },
+          "fx": [
+            {
+              "type": "highpass",
+              "cutoff": 3000
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -6,
+      "genny": "blal1"
+    },
+    {
+      "out": "hazard/stone.wav",
+      "_about": "A stone hitting the floor: a heavy crack of stone and scattering grit.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "smash",
+          "params": {
+            "material": "stone",
+            "size": 0.4,
+            "energy": 1.4,
+            "fragments": 6,
+            "dur": 1.0,
+            "bright": 0.3
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.2,
+          "size": 0.7
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -5,
+      "genny": "blal1"
+    },
+    {
+      "out": "hazard/shift.wav",
+      "_about": "The house shifting: a deep rumble and a long creak of the walls.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "rumble",
+          "params": {
+            "dur": 1.8,
+            "fmin": 30,
+            "fmax": 80
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "creak",
+          "gain": 0.5,
+          "at": 0.3
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.2,
+          "size": 0.8
+        }
+      ],
+      "normalize": -5,
+      "genny": "blal1"
+    },
+    {
+      "out": "founder/step.wav",
+      "_about": "The founder: one heavy booted footstep on stone.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "footsteps",
+          "params": {
+            "ground": "stone",
+            "gait": "walk",
+            "steps": 1,
+            "weight": 2.6,
+            "shoe": "boot"
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "trim"
+        },
+        {
+          "type": "reverb",
+          "mix": 0.2,
+          "size": 0.7
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -6,
+      "genny": "blal1"
+    },
+    {
+      "out": "founder/windup.wav",
+      "_about": "The founder winds up a blow: a rising scrape of stone on iron, under half a second.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 0.5,
+            "speed": [
+              0.1,
+              0.6
+            ],
+            "force": [
+              0.4,
+              1.0
+            ],
+            "material": "metal",
+            "texture": "gritty"
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "sweep_up",
+          "gain": 0.3,
+          "params": {
+            "start": 180,
+            "end": 520,
+            "dur": 0.5,
+            "wave": "saw"
+          },
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 1500
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.4
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -6,
+      "genny": "blal1"
+    },
+    {
+      "out": "founder/opening.wav",
+      "_about": "The founder's blow at its height: a clear, ringing high note. Strike now.",
+      "layers": [
+        {
+          "type": "synth",
+          "inst": "handbell",
+          "notes": "A5",
+          "dur": 0.35,
+          "gain": 0.8
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.3
+        },
+        {
+          "type": "fade",
+          "out": 0.25
+        }
+      ],
+      "normalize": -5,
+      "genny": "blal1",
+      "duration": 0.6
+    },
+    {
+      "out": "founder/hit.wav",
+      "_about": "Your candlestick hits the founder: a heavy iron clang.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "clang",
+          "params": {
+            "object": "sword2",
+            "size": 1.2,
+            "force": 1.0,
+            "damping": 4,
+            "dur": 0.8
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "thud",
+          "gain": 0.6,
+          "params": {
+            "body": "box",
+            "size": 1.4,
+            "force": 1.0
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -4,
+      "genny": "blal1"
+    },
+    {
+      "out": "founder/parry.wav",
+      "_about": "You struck too soon and he blocked: a dull wooden knock.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "shield_bash",
+          "params": {
+            "material": "wood",
+            "force": 0.5,
+            "size": 0.8
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.3
+        }
+      ],
+      "normalize": -7,
+      "genny": "blal1"
+    },
+    {
+      "out": "founder/crumble.wav",
+      "_about": "The founder falls to dust: crumbling stone and a long falling breath.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "avalanche",
+          "params": {
+            "dur": 1.8,
+            "fmin": 80,
+            "fmax": 140,
+            "fade": 0.8
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "breath",
+          "gain": 0.5,
+          "at": 0.2
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.2,
+          "size": 0.7
+        }
+      ],
+      "normalize": -5,
+      "genny": "blal1"
+    }
+  ],
+  "_score": "The mansion's score, kept low under every cue: organ and a low hum always; a slow heartbeat of timpani as you cross more of the floor, the celesta and then the theremin and bells deeper in; quick pizzicato when the haunt clock runs low, and a tremolo chord while a ghost drifts near."
+}

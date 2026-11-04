@@ -1,0 +1,10 @@
+[net]
+# Fetch git dependencies with the git CLI, so a private one is fetched with
+# the credentials git already has.
+git-fetch-with-cli = true
+
+[env]
+# The bundled SDL2 source declares a CMake minimum older than CMake 4
+# accepts (Homebrew's CMake is 4). This is CMake's own setting for exactly
+# that; a value already set in the environment wins.
+CMAKE_POLICY_VERSION_MINIMUM = { value = "3.5", force = false }

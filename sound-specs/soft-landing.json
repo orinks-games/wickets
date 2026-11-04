@@ -1,0 +1,125 @@
+{
+  "_about": "Soft Landing prototype sounds. Pending: genny is not installed in the build container, so this spec waits here until someone renders it with python tools/render_sounds.py soft-landing after moving it up to sound-specs/. The engine is a low rocket roar, a filtered noise rumble with a slow throb, looped while the engine key is held. The descent tone is a plain triangle tone at A3 with a soft fifth above, looped; the game sets its pitch from the falling speed, so it must stay a clean, steady pitch. The pad beacon is a short, soft bell ping, mono, played faster near the pad. The fuel alarm is two soft square beeps, gentle so it never masks speech. Touchdown is a padded thud with a spring creak of the legs. A crash is a heavy crunch with a short boom. The radio click is a quick squelch before each call-out. The space ambience is a very quiet low cabin hum. The title music is a slow, sparse pad and celesta loop, kept well under speech.",
+  "normalize": -6,
+  "sounds": [
+    {
+      "out": "engine.wav",
+      "layers": [
+        {"type": "sfx", "kind": "noise", "params": {"dur": 4.5, "color": "brown", "attack": 0.05}, "gain": 1.0,
+         "fx": [{"type": "lowpass", "cutoff": 520}, {"type": "tremolo", "rate": 7, "depth": 0.25}]},
+        {"type": "sfx", "kind": "engine", "params": {"rpm": 30, "dur": 4.5}, "gain": 0.5,
+         "fx": [{"type": "lowpass", "cutoff": 300}]}
+      ],
+      "fx": [{"type": "mono"}],
+      "normalize": -8,
+      "duration": 4.0,
+      "loop": 0.25
+    },
+    {
+      "out": "descent-tone.wav",
+      "layers": [
+        {"type": "synth", "inst": "synth", "notes": "A3", "dur": 3.2, "gain": 0.6, "at": 0, "vel": 0.8,
+         "params": {"wave": "triangle", "cutoff": 1200, "attack": 0.05, "release": 0.1, "sustain": 1.0}},
+        {"type": "synth", "inst": "sine", "notes": "E4", "dur": 3.2, "gain": 0.12, "at": 0, "vel": 0.8}
+      ],
+      "fx": [{"type": "mono"}],
+      "normalize": -8,
+      "duration": 3.0,
+      "loop": 0.25
+    },
+    {
+      "out": "pad-beacon.wav",
+      "layers": [
+        {"type": "synth", "inst": "tubular_bell", "notes": "E6", "dur": 0.35, "gain": 1.0, "at": 0, "vel": 0.4}
+      ],
+      "fx": [{"type": "reverb", "mix": 0.2, "size": 0.4}, {"type": "mono"}],
+      "normalize": -10
+    },
+    {
+      "out": "fuel-low.wav",
+      "layers": [
+        {"type": "sfx", "kind": "beep", "at": 0.0, "gain": 0.7, "params": {"freq": 660, "dur": 0.12, "wave": "square"}},
+        {"type": "sfx", "kind": "beep", "at": 0.22, "gain": 0.7, "params": {"freq": 520, "dur": 0.16, "wave": "square"}}
+      ],
+      "fx": [{"type": "lowpass", "cutoff": 2400}, {"type": "mono"}],
+      "normalize": -10
+    },
+    {
+      "out": "touchdown.wav",
+      "layers": [
+        {"type": "sfx", "kind": "punch", "at": 0.0, "gain": 0.8, "params": {}},
+        {"type": "sfx", "kind": "spring", "at": 0.05, "gain": 0.7, "params": {"action": "pull", "tension": 0.3, "seed": 5}}
+      ],
+      "fx": [{"type": "lowpass", "cutoff": 3000}, {"type": "mono"}],
+      "normalize": -5
+    },
+    {
+      "out": "crash.wav",
+      "layers": [
+        {"type": "sfx", "kind": "hit", "at": 0, "gain": 0.8, "params": {"dur": 0.3, "tone": 0.3, "crunch": 0.9}},
+        {"type": "sfx", "kind": "explosion", "at": 0.04, "gain": 0.6, "params": {"dur": 0.9, "boom": 0.7}}
+      ],
+      "fx": [{"type": "mono"}],
+      "normalize": -4
+    },
+    {
+      "out": "radio-click.wav",
+      "layers": [
+        {"type": "sfx", "kind": "click", "params": {"tone": 2200}, "gain": 0.6},
+        {"type": "sfx", "kind": "noise", "at": 0.01, "gain": 0.35, "params": {"dur": 0.08, "color": "white", "attack": 0.005},
+         "fx": [{"type": "bandpass", "center": 1800, "q": 1.5}]}
+      ],
+      "fx": [{"type": "mono"}],
+      "normalize": -10
+    },
+    {
+      "out": "space-ambience.wav",
+      "layers": [
+        {"type": "sfx", "kind": "noise", "at": 0, "gain": 0.6, "params": {"dur": 6.5, "color": "brown", "attack": 0.5},
+         "fx": [{"type": "lowpass", "cutoff": 220}, {"type": "tremolo", "rate": 0.15, "depth": 0.3}]},
+        {"type": "sfx", "kind": "tone", "at": 0, "gain": 0.15, "params": {"freq": 60, "dur": 6.5, "wave": "sine"}}
+      ],
+      "fx": [{"type": "mono"}],
+      "normalize": -16,
+      "duration": 6.0,
+      "loop": 0.5
+    },
+    {
+      "out": "music/title.wav",
+      "layers": [
+        {"type": "synth", "inst": "warm_pad", "notes": "D3 A3 E4", "dur": 8.0, "gain": 0.35, "at": 0, "vel": 0.7},
+        {"type": "synth", "inst": "warm_pad", "notes": "B2 F#3 D4", "dur": 8.0, "gain": 0.35, "at": 8, "vel": 0.7},
+        {"type": "seq", "inst": "celesta", "steps": "A5:1 E5:1 F#5:2 D5:4 B4:1 D5:1 E5:2 A4:4", "gain": 0.4, "at": 0, "vel": 0.5}
+      ],
+      "fx": [{"type": "reverb", "mix": 0.35, "size": 0.8}],
+      "normalize": -14,
+      "bpm": 60,
+      "loop": 0.5
+    },
+    {
+      "out": "event/crickets.wav",
+      "_about": "Crickets on mission control's end of the radio, under the full moon: a short chirping burst played with the radio click, quieter than it.",
+      "layers": [
+        {"type": "sfx", "kind": "proximity", "gain": 0.5, "params": {"freq": 4200, "rate": 18, "dur": 0.7, "width": 0.5},
+         "fx": [{"type": "tremolo", "rate": 6, "depth": 0.8, "shape": "square"}]},
+        {"type": "sfx", "kind": "proximity", "gain": 0.3, "at": 0.12, "params": {"freq": 3900, "rate": 16, "dur": 0.55, "width": 0.5},
+         "fx": [{"type": "tremolo", "rate": 5, "depth": 0.9, "shape": "square"}]}
+      ],
+      "fx": [{"type": "bandpass", "center": 3000, "q": 0.8}, {"type": "mono"}],
+      "normalize": -16
+    },
+    {
+      "out": "event/quindar.wav",
+      "_about": "The Quindar tone of the Apollo radio: one short, clean high beep, the length of the radio click and no louder.",
+      "layers": [
+        {"type": "sfx", "kind": "tone", "at": 0, "gain": 0.6, "params": {"freq": 2525, "dur": 0.2, "wave": "sine"}}
+      ],
+      "fx": [{"type": "mono"}],
+      "normalize": -26
+    },
+    {"out": "menu/move.wav", "_about": "Menu move: a soft radio click.", "duration": 0.16, "layers": [{"type": "sfx", "kind": "click", "gain": 0.5, "at": 0, "params": {"tone": 1600}}], "fx": [{"type": "lowpass", "cutoff": 2500}, {"type": "mono"}, {"type": "fade", "out": 0.04}], "normalize": -9, "max_loudness": -28},
+    {"out": "menu/select.wav", "_about": "Menu select: a two-beep radio answer.", "duration": 0.42, "layers": [{"type": "synth", "inst": "sine", "notes": "E5", "dur": 0.06, "gain": 0.45, "at": 0, "vel": 0.5}, {"type": "synth", "inst": "sine", "notes": "A5", "dur": 0.12, "gain": 0.45, "at": 0.09, "vel": 0.5}], "fx": [{"type": "highpass", "cutoff": 300}, {"type": "lowpass", "cutoff": 3000}, {"type": "mono"}, {"type": "fade", "out": 0.04}], "normalize": -6, "max_loudness": -22},
+    {"out": "menu/back.wav", "_about": "Menu back: a low radio click.", "duration": 0.32, "layers": [{"type": "sfx", "kind": "click", "gain": 0.5, "at": 0, "params": {"tone": 900}}, {"type": "sfx", "kind": "static", "gain": 0.08, "at": 0, "params": {"dur": 0.05}}], "fx": [{"type": "lowpass", "cutoff": 2000}, {"type": "mono"}, {"type": "fade", "out": 0.04}], "normalize": -9, "max_loudness": -26},
+    {"out": "music/pause.wav", "_about": "Pause music: slow pads and celesta, drifting in orbit.", "bpm": 56, "beats": 32, "loop": "fold", "layers": [{"type": "seq", "inst": "warm_pad", "step": 1, "steps": "[D3,F#3,A3,C#4]:4 | [B2,D3,F#3,A3]:4 | [G2,B2,D3,F#3]:4 | [A2,C#3,E3,G3]:4 | [D3,F#3,A3,C#4]:4 | [B2,D3,F#3,A3]:4 | [G2,B2,D3,F#3]:4 | [A2,C#3,E3,G3]:4", "gain": 0.3, "vel": 0.55, "at": 0, "params": {"attack": 1.2, "release": 2.0, "cutoff": 800}}, {"type": "seq", "inst": "glass_pad", "step": 1, "steps": "[F#4,A4]:4 | [D4,F#4]:4 | [B3,D4]:4 | [C#4,E4]:4 | [F#4,A4]:4 | [D4,F#4]:4 | [B3,D4]:4 | [C#4,E4]:4", "gain": 0.15, "vel": 0.45, "at": 0}, {"type": "seq", "inst": "celesta", "step": 1, "steps": "D5:1 A5:1 F#5:1 C#6:1 | B4:1 F#5:1 D5:1 A5:1 | G4:1 D5:1 B4:1 F#5:1 | A4:1 E5:1 C#5:1 G5:1 | D5:1 A5:1 F#5:1 C#6:1 | B4:1 F#5:1 D5:1 A5:1 | G4:1 D5:1 B4:1 F#5:1 | A4:1 E5:1 C#5:1 G5:1", "gain": 0.22, "vel": 0.4, "at": 0}, {"type": "seq", "inst": "celesta", "step": 1, "steps": "-:4 | -:4 | -:4 | -:4 | F#5:4 | D5:4 | B4:2 D5:2 | C#5:4", "gain": 0.22, "vel": 0.4, "at": 0}], "fx": [{"type": "reverb", "mix": 0.35, "size": 0.85}, {"type": "lowpass", "cutoff": 4500}], "normalize": -15}
+  ]
+}

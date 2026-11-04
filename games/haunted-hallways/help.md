@@ -1,0 +1,162 @@
+# Nevermore Manor
+
+## About the game
+
+The doors of Nevermore Manor have locked behind you. The stairs go on for a hundred floors in ten wings: the ground floor, the portrait gallery, the bedchambers, the servants' quarters, the attic, the clock tower, the flooded cellars, the catacombs, the crypt and, at the bottom, the heart of the house. Every floor is a chain of rooms. Every room has one sound puzzle, and solving it unlocks the room's exit. Find your way by ear, freeze when a ghost drifts by, and watch your step.
+
+Each floor is built from its number, so floor 40 is the same floor for every player, every time you play it.
+
+## Rooms and walls
+
+A room is a grid of floorboards, five cells across on the first floors and up to nine at the bottom of the house. Each step creaks; in the cellars and below, your steps ring on stone. Walking into a wall makes a dull thud and you stay where you are. Status says how many steps away the exit door is. Press S twice and it also gives your column, counted from the west wall, and your row, counted from the south wall.
+
+The door you came in by slams shut behind you: walking into it gives a heavy slam and you cannot go back. The exit is on another wall. While the room is unsolved its handle only rattles. When you solve the room a bolt slides back and a cold draught starts to blow from the open door. Follow the draught, stand in the cell next to it, and walk through the wall there. The last room of a floor opens onto the stairs.
+
+## Listening for things
+
+Things lie about the rooms and call out from where they are: a ticking clock, a humming crystal, a dripping potion, a music box, a silver bell, a crackling candle, a caged raven, a ring of keys and a beating heart. Each has its own sound. You hear it from its direction: to your left is west, to your right east, ahead is north, and sounds behind you, to the south, are a little duller. The nearer you are, the louder it is and the more often it calls. When you step onto a thing, its name is spoken.
+
+Sound check on the title plays each sound you need in the manor by name, including a demonstration of left, right, near and far.
+
+## Charms
+
+From floor 3, some rooms hold a charm. It calls out with a soft glass chime, quieter than the puzzle's things, and touching it costs nothing. Walk onto it to take it.
+
+- A pinch of salt wards off one catch by a ghost, the shadow or the founder: a hiss of salt, and you stay where you are. You can carry up to 3 pinches, and they last the whole run.
+- A candle stub adds 20 seconds to the haunt clock.
+
+Status, pressed twice, says how much salt you carry.
+
+## The puzzles
+
+- Find: you are told the thing's name and what it sounds like. Find it, stand on it and press Space.
+- Match: a phonograph crackles and then plays a sound, but does not say what makes it. Find the thing in the room that makes the same sound.
+- Riddle: a voice asks a riddle that describes the thing. Work out which it is, then find it by its sound.
+- Offering, from floor 2: a spirit has sealed the exit door. It whispers from the door, then plays the sound of something it wants. That thing is one you picked up in an earlier room of this floor. Choose it with Tab, stand at the door and press Space to offer it.
+- Missing, from floor 6: the phonograph plays every sound in the room but one. Find the thing it leaves out.
+- Séance, from floor 12: a medium's gong sounds and she calls up sounds one after another without naming them, two at first, three from floor 40 and four from floor 75. Pick up their things in that order. A soft rising hum tells you each one was right.
+
+Rooms also hold other things besides the answer, more of them the deeper you go. Touching the wrong thing, or offering the wrong thing, costs ten seconds of the haunt clock, fifteen from floor 30 and twenty from floor 70. R plays a room's clue again whenever you like.
+
+## Ghosts
+
+Ghosts walk the halls, each with its own voice. The weeping widow wails and drifts slowly. The chained butler drags his chains and groans, and moves fast; he walks from floor 5. The whispering child whispers and giggles, and is quiet until close; she walks from floor 10. You hear a ghost coming from far off, in its direction, growing louder.
+
+When it is right beside you, a sharp, harsh stab sounds. Freeze: do not take a single step until you hear a long breath out as it drifts away. Picking things up, choosing what you hold and asking for status are all quiet enough; only footsteps give you away.
+
+If you move while a ghost passes, it catches you. You lose one of your three courage and flee back to the door you came in by. Lose all three on a floor and you run screaming from the house. Every ghost you let pass scores points.
+
+From floor 25 the blind hound hunts too: it pants and growls. It is the one ghost you must not freeze for. It finds you by your stillness, so when its stab sounds, keep walking until it has passed. A howl and the words "Keep walking!" warn you.
+
+On the first four floors a voice also calls "Freeze!" when the stab sounds. After that, only the stab warns you. Status always says whether a ghost is coming or passing.
+
+## The deeper dangers
+
+Each of these arrives on its own floor, and the game explains it in full the first time you meet it. The first room of every floor is always free of them.
+
+- Rotten boards, from floor 8: when you stand next to one it groans from its side. Step on it and you fall through, losing one courage and starting the room again from its door. The board leaves a hole you cannot walk into.
+- Twists, from floor 11: a floor may carry one of the twists listed under Challenges. Deeper floors carry more, up to two by floor 71.
+- Dark rooms, from floor 15: things call out only when you are three steps away or nearer. Sweep the room row by row.
+- The shadow, from floor 20: a low breathing drone that walks a room one cell at a time. While it hears your footsteps it comes toward you; stand still and it wanders. Let it reach you, or walk into it, and it catches you. Status says where it is, in steps.
+- Mimics, from floor 35: copies of the answer that sound just the same but hop to a new place every few seconds. The real thing never moves. Touching a mimic costs time like a wrong thing.
+- Mirrored rooms, from floor 45: every sound comes from the other side, east from your left and west from your right. North and south are true.
+- The pendulum, from floor 51: a blade swings along one row of the room, one column at a time, back and forth. Its swish tells you where it is. If it reaches your cell, it cuts you and costs one courage. Cross its row just after it passes. Status says which row it swings in.
+- Deep water, from floor 61: part of the room is flooded. A low lapping means deep water next to you. A step into it splashes, and you wade for a moment before you can step again. Every splash brings the next ghost sooner.
+- Falling stones, from floor 71: dust trickles over the cell you stand on, and 2 seconds later a stone falls there. Step off when you hear the dust. Stones never start while a ghost is passing.
+- The founder, from floor 81: see The founder.
+- The shifting house, from floor 91: now and then a deep rumble moves the exit door to another wall. The game says which wall, and status says how far.
+
+## The founder
+
+From floor 81 the founder walks: the first Nevermore, risen from his grave in the crypt. About 15 seconds after you enter a room he comes through the door behind you, in heavy boots, and walks toward you one step at a time. Freezing does not stop him. He follows you into every room of the floor.
+
+You carry an iron candlestick. When he reaches you he stops and winds up a blow, a rising scrape from his side. Halfway through comes a ringing note: press Space then, and you hit him, and he staggers 2 steps back. Press Space before the ringing note and he blocks with a dull knock, so step away before the blow lands. If you are still beside him when it lands, you lose one courage and flee to the door you came in by.
+
+He takes 3 hits from floor 81, 4 from floor 91, and 5 in the endless dark. Bring him down and he crumbles to dust for the rest of the floor, for 200 points times the floor number. Status says where he is and whether he is winding up a blow.
+
+## The haunt clock
+
+Every floor has a haunt clock: nearly four minutes on floor 1, longer on floors with more rooms and longer séances, and tighter the deeper you go. A tower bell tolls when one minute, thirty seconds and ten seconds are left. If the clock runs out the house keeps you. Thunder and distant screams are only atmosphere and mean nothing.
+
+H gives a hint that points the way. It costs five seconds of the clock, ten from floor 20 and fifteen from floor 60.
+
+## Modes
+
+- Play: climbs from your highest open floor, floor after floor, until the house stops you or you clear floor 100. Each floor starts with a fresh clock and full courage, and your pockets empty as you climb. Every floor you clear stays cleared, so leaving from the pause menu between floors loses nothing.
+- Floor select: choose a wing, then any open floor in it, to play it on its own and better its time. Clearing a floor opens the next.
+- Nightmare: opens when you clear floor 25. The whole house from floor 1 with a quarter less time, faster and more frequent ghosts, at least three kinds from the start, and no voice to call freeze. Your courage lasts the run: one comes back on every tenth landing, on floors 11, 21 and so on.
+- Endless night: opens when you clear floor 100. The floors below the heart of the house, from floor 101 without end, each harder than the last, with up to three twists. Courage lasts the run, with one back every five floors.
+
+## Halloween
+
+The house follows the real calendar. For two weeks before Halloween, from 17 October, the house stirs. Lantern Jack walks the halls blowing out candles, and a row on the title named The house stirs plays one haunted floor with restless ghosts. Each floor you clear lights one of 13 candles, and the row then names the next candle's floor. You can light more than one candle a day, so starting late still leaves time for all 13. Once all 13 are lit, the row says so.
+
+From 30 October to 1 November the Lantern Night opens on the title. It is 13 floors in a row from floor 1, with the lights out and restless ghosts. Your courage lasts the whole night, with a landing every five floors. Each candle you lit adds 10 seconds to every haunt clock. Clear all 13 floors to keep Lantern Jack's ember for the year. Leaving partway ends the night, and the next one starts again at floor 1. Before 30 October its row is locked and says how long is left. The rest of the year both rows stay on the title, locked, and say when they open. Records lists your candles and embers under Halloween.
+
+## Scoring and records
+
+Each solved room scores 100 points times the floor number, and each ghost evaded 25 times the floor number. In the masquerade, rooms score as on floor 6. Clearing a floor adds 5 points for every second left on its clock and 100 for each courage you kept.
+
+The game keeps your best time on every floor, the deepest floor you have cleared in Nightmare and Endless night, and your best scores in each mode. Records on the title reads them all, wing by wing, with your challenge results.
+
+## Unlocks and curses
+
+Unlocks on the title lists everything you can earn, in groups, with how many you have of each. Enter on an earned entry uses it; on a locked one, Enter and F1 say how to earn it.
+
+- Modes: Nightmare and Endless night.
+- Curses: a curse is a twist you switch on yourself. You earn each one by clearing a floor that carries that twist. Enter switches a curse on or off. Each curse on adds a quarter to your score in Play, Floor select, Nightmare and Endless night. Curses never touch challenges.
+- Diary pages: a page of the housekeeper's diary for every five floors cleared, twenty in all. Together they tell the story of the house. Enter reads a page.
+- Bestiary: every ghost and danger you have met. Enter plays its sound and says how to deal with it.
+- Music: the house's music, earned as you go deeper. Enter plays it.
+- Feats: harder goals, such as clearing a floor of five rooms without being caught.
+
+When you earn something, the game says so with a rising chime at the end of the floor.
+
+## Results
+
+When a run ends, its pages read how it went: the outcome, your score and record, the ghosts evaded and the floor times. Then the results menu offers Play again, or Try again after a loss, then Hear the results again and Back to the title. After a floor cleared on its own, Next floor comes first and plays the next floor. After a challenge, the menu offers the challenge again and ends with Back to the challenges. Escape does what the last row does.
+
+## Challenges
+
+Challenges on the title are the same house for every player in the world: everyone who plays today's daily walks the same rooms, with the same things in the same places. Each row names the challenge and what it is, then your best, whether you have played it and your streak. Before you start, a briefing names the challenge's rule or twist and says how long until the next one. Enter on its last page starts the run, and Escape goes back without starting. When the run ends, by escaping, by the clock running out or by losing your courage, your score, your best and your streak are read out. Leave the challenge, on the pause menu, does not count it. Challenges do not change your best times or open floors, but they can earn unlocks.
+
+- Daily, Tonight's haunting: one floor from floors 3 to 30, with a twist. A new one every day.
+- Weekly, The long night: three floors in a row, starting between floors 10 and 40, with a twist, and your three courage must last the whole night: it does not refill between floors. A new one every Monday.
+- Monthly, The midnight masquerade: a hidden ballroom that opens only for this event, five rooms with every ghost abroad and a longer clock. Most of its rooms are séances. A new one every month.
+
+The twists:
+
+- Restless dead: ghosts come twice as often, and at least three kinds walk.
+- Lights out: things call out more softly and less often.
+- Witching hour: the haunt clock is two fifths shorter.
+- Cursed hands: touching or offering the wrong thing costs double.
+- Silent spirits: no hints.
+- Pitch dark, on floors 15 and deeper: every room is dark.
+- Hall of mirrors, on floors 45 and deeper: every room is mirrored.
+
+Challenges use the first five. The twists are spoken as each floor begins, and F1 repeats them. Your streak counts the days, weeks or months in a row you finished that challenge.
+
+## Tips
+
+- Stand still and listen before you move. Turn the sound into a direction, then walk until it is straight ahead or right on top of you.
+- If two things sound alike, walk to each: their names are spoken when you stand on them. If one of them has moved since, it was a mimic.
+- Before you step, listen for a groan. A groan from ahead means go around.
+- When the shadow is near, stand still and let it wander off, unless the hound is passing.
+- When a ghost comes, finish your step and wait for the stab, then keep still until the long breath out. For the hound, do the opposite.
+- Against the founder, wait for the ringing note. A strike too early is wasted, and leaves you beside him.
+- Pick up every charm you hear. Salt is worth most in the deep floors.
+
+## Controls
+
+These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+
+- Up, Down, Left and Right arrows: walk one step north, south, west or east. You always face north.
+- Space: the main action. Pick up the thing you stand on, offer what you hold at a sealed door, or check the door. With the founder beside you, strike him.
+- Tab: choose the next thing you carry. Its name is spoken and its sound plays.
+- I: list everything you carry. This key belongs to this game alone, and Settings cannot change it.
+- S: status, short. Any ghost, the founder, falling dust, the blade in your row, the shadow or a rotten board next to you, then the haunt clock, your courage, and how many steps to the exit door and whether it is open.
+- S twice: the rest. The floor and room, whether it is dark or mirrored, the room's other dangers, the puzzle, your column and row, what you hold, your salt and your score.
+- R: repeat the room's instructions, and play its clue sound again.
+- H: a hint pointing the way to what you need, for a few seconds of the haunt clock.
+- F1: help for what you are doing right now.
+- Escape: pause. Resume, change settings, read this guide, go back to the title, or leave the challenge.

@@ -1,0 +1,994 @@
+{
+  "_about": "Midnight Lanes prototype sounds. Pending: genny is not installed in the build container, so this spec waits here until someone renders it with python tools/render_sounds.py midnight-lanes after moving it up to sound-specs/. Cues are mono so the game pans them by board. The step is a soft shoe scuff. The aim tone is a soft high sine blip, kept short so it does not mask speech. The swing tone is a steady loop the game pitches up to the top of the swing and down after it. The release is a dull thump of the ball meeting the lane. The ball roll is a low rumbling loop the game moves and fades in. The gutter is a hollow wooden rattle. The light and heavy pin hits are wooden clatters, a few pins against a whole rack. The pinsetter is a mechanical sweep and clunk. The ball return is a short rumble ending in a knock. The strike sting is a short jukebox organ and vibraphone flourish; the spare bell a single bright bell. The ambience is a quiet jukebox bass line under a light hum, low under speech. The title music is a slow lounge loop of upright bass, vibraphone and brushes.",
+  "normalize": -6,
+  "sounds": [
+    {
+      "out": "step.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "footstep",
+          "params": {
+            "tone": 110
+          },
+          "gain": 0.8
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 3000
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -14
+    },
+    {
+      "out": "aim-tone.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "params": {
+            "freq": 1320,
+            "dur": 0.12,
+            "wave": "sine"
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "params": {
+            "freq": 1980,
+            "dur": 0.08,
+            "wave": "sine"
+          },
+          "gain": 0.2
+        }
+      ],
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.06
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -16
+    },
+    {
+      "out": "swing-rise.wav",
+      "duration": 1.0,
+      "loop": 0.05,
+      "layers": [
+        {
+          "type": "synth",
+          "inst": "synth",
+          "notes": "A3",
+          "dur": 1.1,
+          "gain": 0.6,
+          "vel": 0.7,
+          "params": {
+            "wave": "triangle",
+            "attack": 0.02,
+            "sustain": 1.0
+          }
+        },
+        {
+          "type": "synth",
+          "inst": "sine",
+          "notes": "A4",
+          "dur": 1.1,
+          "gain": 0.25,
+          "vel": 0.7
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 2400
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -14
+    },
+    {
+      "out": "release.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "kick",
+          "params": {
+            "tune": 60,
+            "decay": 0.25,
+            "punch": 0.4
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "hit",
+          "params": {
+            "tone": 180,
+            "crunch": 0.1,
+            "dur": 0.15
+          },
+          "gain": 0.4
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 1500
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -10
+    },
+    {
+      "out": "ball-roll.wav",
+      "duration": 2.0,
+      "loop": 0.1,
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "ball_roll",
+          "params": {
+            "speed": 0.5,
+            "dur": 2.2,
+            "seed": 3
+          },
+          "gain": 0.8
+        },
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "params": {
+            "dur": 2.2,
+            "color": "brown",
+            "attack": 0.05
+          },
+          "gain": 0.5,
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 300
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 1200
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -10
+    },
+    {
+      "out": "gutter.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "ball_roll",
+          "params": {
+            "speed": 0.7,
+            "dur": 0.6,
+            "seed": 5
+          },
+          "gain": 0.7
+        },
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 420
+          },
+          "gain": 0.6
+        },
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 380
+          },
+          "at": 0.12,
+          "gain": 0.5
+        },
+        {
+          "type": "drum",
+          "kind": "cajon",
+          "at": 0.25,
+          "gain": 0.5
+        }
+      ],
+      "fx": [
+        {
+          "type": "bandpass",
+          "center": 700,
+          "q": 0.9
+        },
+        {
+          "type": "reverb",
+          "mix": 0.2,
+          "size": 0.4
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -10
+    },
+    {
+      "out": "pin-hit-light.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 900
+          },
+          "at": 0.0,
+          "gain": 0.7
+        },
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 997
+          },
+          "at": 0.045,
+          "gain": 0.665
+        },
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 1094
+          },
+          "at": 0.09,
+          "gain": 0.63
+        },
+        {
+          "type": "drum",
+          "kind": "clave",
+          "at": 0.0,
+          "gain": 0.3
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.2,
+          "size": 0.5
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -9
+    },
+    {
+      "out": "pin-hit-heavy.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 900
+          },
+          "at": 0.0,
+          "gain": 0.8
+        },
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 997
+          },
+          "at": 0.045,
+          "gain": 0.76
+        },
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 1094
+          },
+          "at": 0.09,
+          "gain": 0.72
+        },
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 1191
+          },
+          "at": 0.105,
+          "gain": 0.68
+        },
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 1288
+          },
+          "at": 0.15,
+          "gain": 0.64
+        },
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 1385
+          },
+          "at": 0.195,
+          "gain": 0.6
+        },
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 1482
+          },
+          "at": 0.21,
+          "gain": 0.56
+        },
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 1579
+          },
+          "at": 0.255,
+          "gain": 0.52
+        },
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 1676
+          },
+          "at": 0.3,
+          "gain": 0.48
+        },
+        {
+          "type": "drum",
+          "kind": "woodblock",
+          "params": {
+            "tune": 1773
+          },
+          "at": 0.315,
+          "gain": 0.44
+        },
+        {
+          "type": "drum",
+          "kind": "clave",
+          "at": 0.0,
+          "gain": 0.3
+        },
+        {
+          "type": "drum",
+          "kind": "clave",
+          "at": 0.05,
+          "gain": 0.3
+        },
+        {
+          "type": "drum",
+          "kind": "clave",
+          "at": 0.1,
+          "gain": 0.3
+        },
+        {
+          "type": "drum",
+          "kind": "kick",
+          "params": {
+            "tune": 70,
+            "decay": 0.2,
+            "punch": 0.6
+          },
+          "gain": 0.6
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.25,
+          "size": 0.6
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -7
+    },
+    {
+      "out": "pinsetter.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "params": {
+            "dur": 0.7,
+            "low": 120,
+            "high": 900,
+            "direction": "down"
+          },
+          "gain": 0.5
+        },
+        {
+          "type": "sfx",
+          "kind": "solenoid",
+          "params": {
+            "size": 0.8,
+            "metal": 0.5,
+            "thump": 0.7,
+            "bounce": 0.1,
+            "seed": 2
+          },
+          "at": 0.7,
+          "gain": 0.7
+        },
+        {
+          "type": "sfx",
+          "kind": "solenoid",
+          "params": {
+            "size": 0.6,
+            "metal": 0.5,
+            "thump": 0.5,
+            "bounce": 0.1,
+            "seed": 3
+          },
+          "at": 0.95,
+          "gain": 0.6
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 2500
+        }
+      ],
+      "normalize": -14
+    },
+    {
+      "out": "ball-return.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "ball_roll",
+          "params": {
+            "speed": 0.4,
+            "dur": 0.8,
+            "seed": 7
+          },
+          "gain": 0.7
+        },
+        {
+          "type": "sfx",
+          "kind": "knocker",
+          "params": {
+            "size": 0.8,
+            "rattle": 0.2
+          },
+          "at": 0.8,
+          "gain": 0.7
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 1800
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -12
+    },
+    {
+      "out": "strike-sting.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "church_organ",
+          "steps": "C5:0.1 E5:0.1 G5:0.1 C6:0.45",
+          "vel": 0.6,
+          "gain": 0.5
+        },
+        {
+          "type": "seq",
+          "inst": "vibraphone",
+          "steps": "C5:0.1 E5:0.1 G5:0.1 [C6,E6]:0.5",
+          "vel": 0.7,
+          "gain": 0.6
+        },
+        {
+          "type": "drum",
+          "kind": "crash",
+          "at": 0.3,
+          "gain": 0.2
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.25,
+          "size": 0.5
+        }
+      ],
+      "normalize": -9
+    },
+    {
+      "out": "spare-bell.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "bell",
+          "steps": "E6:0.6",
+          "vel": 0.7
+        },
+        {
+          "type": "drum",
+          "kind": "triangle",
+          "params": {
+            "tune": 2637,
+            "open": 0.4
+          },
+          "gain": 0.2
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.25,
+          "size": 0.5
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -10
+    },
+    {
+      "out": "alley-ambience.wav",
+      "bpm": 76,
+      "duration": 12.63,
+      "loop": 1.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "F1:1 A1:1 C2:1 D2:1 | Bb1:1 D2:1 F2:1 G2:1 | F1:1 A1:1 C2:1 D2:1 | C2:1 E2:1 G2:1 Bb1:1",
+          "gain": 0.5
+        },
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "params": {
+            "freq": 60,
+            "dur": 12.7,
+            "wave": "sine"
+          },
+          "gain": 0.05
+        },
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "params": {
+            "dur": 12.7,
+            "color": "pink",
+            "attack": 0.5
+          },
+          "gain": 0.08,
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 900
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "muffle"
+        },
+        {
+          "type": "lowpass",
+          "cutoff": 1400
+        }
+      ],
+      "normalize": -26
+    },
+    {
+      "out": "title-music.wav",
+      "bpm": 80,
+      "duration": 12.0,
+      "loop": 0.5,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "F2:2 C2:2 | Bb1:2 F1:2 | G1:2 C2:2 | F2:2 F2:2",
+          "gain": 0.7
+        },
+        {
+          "type": "seq",
+          "inst": "vibraphone",
+          "step": 1,
+          "steps": "-:1 [A3,C4,E4]:3 | -:1 [Bb3,D4,F4]:3 | -:1 [Bb3,C4,E4]:3 | -:1 [A3,C4,F4]:3",
+          "gain": 0.3
+        },
+        {
+          "type": "pattern",
+          "kind": "brush",
+          "steps": "x---x---x---x---",
+          "bars": 4,
+          "gain": 0.12
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.35,
+          "size": 0.8
+        }
+      ],
+      "normalize": -16
+    },
+    {"out": "menu/move.wav", "_about": "Menu move: a shoe scuff.", "duration": 0.16, "layers": [{"type": "drum", "kind": "brush", "gain": 0.4, "at": 0, "params": {"swish": 0.0, "dur": 0.06}}], "fx": [{"type": "lowpass", "cutoff": 3000}, {"type": "mono"}, {"type": "fade", "out": 0.04}], "normalize": -9, "max_loudness": -28},
+    {"out": "menu/select.wav", "_about": "Menu select: one pin knocked.", "duration": 0.42, "layers": [{"type": "sfx", "kind": "steel_ball", "gain": 0.5, "at": 0, "params": {"surface": "wood", "force": 0.35, "seed": 9}}, {"type": "drum", "kind": "woodblock", "gain": 0.35, "at": 0.03, "vel": 0.3, "params": {"tune": 420}}], "fx": [{"type": "lowpass", "cutoff": 3000}, {"type": "reverb", "mix": 0.15, "size": 0.3}, {"type": "mono"}, {"type": "fade", "out": 0.04}], "normalize": -6, "max_loudness": -22},
+    {"out": "menu/back.wav", "_about": "Menu back: a soft ball thud.", "duration": 0.32, "layers": [{"type": "drum", "kind": "tom", "gain": 0.5, "at": 0, "params": {"tune": 150, "decay": 0.18}}], "fx": [{"type": "highpass", "cutoff": 140}, {"type": "lowpass", "cutoff": 1200}, {"type": "mono"}, {"type": "fade", "out": 0.04}], "normalize": -9, "max_loudness": -26},
+    {
+      "out": "pumpkin-hit-light.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "conga",
+          "params": {
+            "tune": 150
+          },
+          "at": 0.0,
+          "gain": 0.7
+        },
+        {
+          "type": "drum",
+          "kind": "brush",
+          "params": {
+            "swish": 0.3,
+            "dur": 0.12
+          },
+          "at": 0.01,
+          "gain": 0.25
+        },
+        {
+          "type": "drum",
+          "kind": "conga",
+          "params": {
+            "tune": 167
+          },
+          "at": 0.045,
+          "gain": 0.67
+        },
+        {
+          "type": "drum",
+          "kind": "brush",
+          "params": {
+            "swish": 0.3,
+            "dur": 0.12
+          },
+          "at": 0.055,
+          "gain": 0.25
+        },
+        {
+          "type": "drum",
+          "kind": "conga",
+          "params": {
+            "tune": 184
+          },
+          "at": 0.09,
+          "gain": 0.64
+        },
+        {
+          "type": "drum",
+          "kind": "brush",
+          "params": {
+            "swish": 0.3,
+            "dur": 0.12
+          },
+          "at": 0.1,
+          "gain": 0.25
+        },
+        {
+          "type": "drum",
+          "kind": "cajon",
+          "params": {
+            "stroke": "bass"
+          },
+          "at": 0.0,
+          "gain": 0.5
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.2,
+          "size": 0.5
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -9
+    },
+    {
+      "out": "pumpkin-hit-heavy.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "conga",
+          "params": {
+            "tune": 150
+          },
+          "at": 0.0,
+          "gain": 0.8
+        },
+        {
+          "type": "drum",
+          "kind": "brush",
+          "params": {
+            "swish": 0.3,
+            "dur": 0.12
+          },
+          "at": 0.01,
+          "gain": 0.25
+        },
+        {
+          "type": "drum",
+          "kind": "conga",
+          "params": {
+            "tune": 167
+          },
+          "at": 0.04,
+          "gain": 0.77
+        },
+        {
+          "type": "drum",
+          "kind": "brush",
+          "params": {
+            "swish": 0.3,
+            "dur": 0.12
+          },
+          "at": 0.05,
+          "gain": 0.25
+        },
+        {
+          "type": "drum",
+          "kind": "conga",
+          "params": {
+            "tune": 184
+          },
+          "at": 0.08,
+          "gain": 0.74
+        },
+        {
+          "type": "drum",
+          "kind": "brush",
+          "params": {
+            "swish": 0.3,
+            "dur": 0.12
+          },
+          "at": 0.09,
+          "gain": 0.25
+        },
+        {
+          "type": "drum",
+          "kind": "conga",
+          "params": {
+            "tune": 201
+          },
+          "at": 0.12,
+          "gain": 0.71
+        },
+        {
+          "type": "drum",
+          "kind": "brush",
+          "params": {
+            "swish": 0.3,
+            "dur": 0.12
+          },
+          "at": 0.13,
+          "gain": 0.25
+        },
+        {
+          "type": "drum",
+          "kind": "conga",
+          "params": {
+            "tune": 158
+          },
+          "at": 0.16,
+          "gain": 0.68
+        },
+        {
+          "type": "drum",
+          "kind": "brush",
+          "params": {
+            "swish": 0.3,
+            "dur": 0.12
+          },
+          "at": 0.17,
+          "gain": 0.25
+        },
+        {
+          "type": "drum",
+          "kind": "conga",
+          "params": {
+            "tune": 175
+          },
+          "at": 0.2,
+          "gain": 0.65
+        },
+        {
+          "type": "drum",
+          "kind": "brush",
+          "params": {
+            "swish": 0.3,
+            "dur": 0.12
+          },
+          "at": 0.21,
+          "gain": 0.25
+        },
+        {
+          "type": "drum",
+          "kind": "conga",
+          "params": {
+            "tune": 192
+          },
+          "at": 0.24,
+          "gain": 0.62
+        },
+        {
+          "type": "drum",
+          "kind": "brush",
+          "params": {
+            "swish": 0.3,
+            "dur": 0.12
+          },
+          "at": 0.25,
+          "gain": 0.25
+        },
+        {
+          "type": "drum",
+          "kind": "conga",
+          "params": {
+            "tune": 209
+          },
+          "at": 0.28,
+          "gain": 0.59
+        },
+        {
+          "type": "drum",
+          "kind": "brush",
+          "params": {
+            "swish": 0.3,
+            "dur": 0.12
+          },
+          "at": 0.29,
+          "gain": 0.25
+        },
+        {
+          "type": "drum",
+          "kind": "conga",
+          "params": {
+            "tune": 166
+          },
+          "at": 0.32,
+          "gain": 0.56
+        },
+        {
+          "type": "drum",
+          "kind": "brush",
+          "params": {
+            "swish": 0.3,
+            "dur": 0.12
+          },
+          "at": 0.33,
+          "gain": 0.25
+        },
+        {
+          "type": "drum",
+          "kind": "cajon",
+          "params": {
+            "stroke": "bass"
+          },
+          "at": 0.0,
+          "gain": 0.5
+        },
+        {
+          "type": "drum",
+          "kind": "kick",
+          "params": {
+            "tune": 60,
+            "decay": 0.25,
+            "punch": 0.4
+          },
+          "gain": 0.5
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.25,
+          "size": 0.6
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -7
+    },
+    {
+      "out": "grin-carved.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "guiro",
+          "params": {
+            "dur": 0.35,
+            "ridges": 40
+          },
+          "at": 0.0,
+          "gain": 0.6
+        },
+        {
+          "type": "drum",
+          "kind": "guiro",
+          "params": {
+            "dur": 0.2,
+            "ridges": 22
+          },
+          "at": 0.4,
+          "gain": 0.5
+        },
+        {
+          "type": "seq",
+          "inst": "church_organ",
+          "steps": "A4:0.12 C5:0.12 E5:0.12 A5:0.4",
+          "vel": 0.5,
+          "gain": 0.35,
+          "at": 0.25
+        },
+        {
+          "type": "drum",
+          "kind": "djembe",
+          "params": {
+            "tune": 200,
+            "stroke": "bass"
+          },
+          "at": 0.65,
+          "gain": 0.5
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.3,
+          "size": 0.6
+        }
+      ],
+      "normalize": -9
+    },
+    {"out": "music/pause.wav", "_about": "Pause music: late-night electric piano and brushes, the lanes empty.", "bpm": 76, "beats": 32, "loop": "fold", "layers": [{"type": "seq", "inst": "epiano", "step": 1, "steps": "[D3,F3,A3,C4]:4 | [G3,B3,D4,F4]:4 | [C3,E3,G3,B3]:4 | [A3,C4,E4,G4]:4 | [D3,F3,A3,C4]:4 | [G3,B3,D4,F4]:4 | [C3,E3,G3,B3]:4 | [A3,C4,E4,G4]:4", "gain": 0.3, "vel": 0.35, "at": 0, "params": {"tremolo": 0.3, "decay": 3.0}}, {"type": "seq", "inst": "upright_bass", "step": 1, "steps": "D2:2 A2:2 | G2:2 D3:2 | C2:2 G2:2 | A2:2 E3:2 | D2:2 A2:2 | G2:2 D3:2 | C2:2 G2:2 | A2:2 E3:2", "gain": 0.4, "vel": 0.4, "at": 0}, {"type": "pattern", "kind": "brush", "steps": "x---x---x---x---", "bars": 8, "gain": 0.12, "swing": 0.15}, {"type": "seq", "inst": "felt_piano", "step": 1, "steps": "-:4 | -:4 | -:4 | -:4 | F5:1.5 E5:.5 D5:2 | B4:2 G4:2 | E5:1 G5:1 B4:2 | C5:1 A4:3", "gain": 0.3, "vel": 0.4, "at": 0}], "fx": [{"type": "reverb", "mix": 0.2, "size": 0.6}, {"type": "lowpass", "cutoff": 4000}], "normalize": -15}
+  ]
+}

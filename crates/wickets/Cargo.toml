@@ -1,0 +1,108 @@
+[package]
+name = "wickets"
+description = "Wicket's: a collection of audio-first, screen-reader-first games on the Hearken engine"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+authors.workspace = true
+license.workspace = true
+publish = false
+build = "build.rs"
+# The test files are modules of tests/all.rs, one binary (see that file).
+autotests = false
+
+# `hearken release` packs a player's zip from this: portable, so the zip
+# keeps its settings and saves in a saves folder beside the game, and
+# packed, so the sounds ship as an encrypted sounds.pak that players cannot
+# browse (the holiday specials' secrets stay secret); and sealed, so the
+# records (records.json, through ctx.vault) are encrypted and authenticated
+# and a player cannot edit, swap, restore or delete them unnoticed. The
+# first `hearken release` makes the seal key outside the repo and prints a
+# seal-id line to add here; back that key up, or players' records stop
+# loading in the next release. And it updates itself (`update`): each
+# release signs an update manifest with the game's update key, kept outside
+# the repo like the seal key; the update-key line is its public half.
+[package.metadata.hearken]
+portable = true
+pack = true
+seal = true
+seal-id = "k1:0c0891ea1dc4e4ca"
+include = ["sounds", "README.md", "LICENSE"]
+app-name = "Wicket's"
+bundle-id = "net.orinks.wickets"
+update = true
+update-key = "ed25519:a03d280b19505838690fd8d43347bba108a74c73f35cbdc90df0a8f93adca438"
+
+[lib]
+# No unit tests or doc examples here (tools/check_test_targets.py keeps
+# this honest); the integration tests live in tests/all.rs.
+test = false
+doctest = false
+
+[[test]]
+name = "all"
+path = "tests/all.rs"
+
+[[bin]]
+name = "wickets"
+path = "src/main.rs"
+# main.rs only starts the launcher; its tests are in tests/all.rs.
+test = false
+
+[features]
+# `--agent-server`: Hearken's MCP server, so an agent can play the real
+# game by ear while someone listens (see .mcp.json). Debug builds only:
+# Hearken never starts it in a release build, and `hearken release` leaves
+# the feature out of the zip testers get.
+default = ["agent-server"]
+agent-server = ["hearken/agent-server"]
+
+[dependencies]
+# Where the old-named data folder was, to move it (see main.rs).
+dirs = "6"
+serde.workspace = true
+# Hearken must be a direct dependency: build.rs reads Prism's link arguments
+# from it. `discord`: the "Playing Wicket's" status (see
+# parlor-core's presence module).
+hearken = { workspace = true, features = ["discord"] }
+parlor-core.workspace = true
+# GAMES-BEGIN (one line per game; the launcher lists them in src/games.rs)
+liberty-lights = { path = "../../games/liberty-lights" }
+neon-rail = { path = "../../games/neon-rail" }
+haunted-hallways = { path = "../../games/haunted-hallways" }
+harvest-feast = { path = "../../games/harvest-feast" }
+winter-wonderland = { path = "../../games/winter-wonderland" }
+basket-run = { path = "../../games/basket-run" }
+safecracker = { path = "../../games/safecracker" }
+belfry = { path = "../../games/belfry" }
+sonar-dive = { path = "../../games/sonar-dive" }
+tightrope = { path = "../../games/tightrope" }
+signal-box = { path = "../../games/signal-box" }
+midnight-lanes = { path = "../../games/midnight-lanes" }
+soft-landing = { path = "../../games/soft-landing" }
+pantry-mouse = { path = "../../games/pantry-mouse" }
+freewheel = { path = "../../games/freewheel" }
+wickets-slot-b = { path = "../../extras/slot-b" }
+lantern-lake = { path = "../../games/lantern-lake" }
+tide-pools = { path = "../../games/tide-pools" }
+rooftop-garden = { path = "../../games/rooftop-garden" }
+riverboat-dice = { path = "../../games/riverboat-dice" }
+fireside-patience = { path = "../../games/fireside-patience" }
+cupids-quiver = { path = "../../games/cupids-quiver" }
+clover-jig = { path = "../../games/clover-jig" }
+dragon-dance = { path = "../../games/dragon-dance" }
+firefly-meadow = { path = "../../games/firefly-meadow" }
+stargazer = { path = "../../games/stargazer" }
+slow-kettle = { path = "../../games/slow-kettle" }
+birdsong-trail = { path = "../../games/birdsong-trail" }
+lamplighter = { path = "../../games/lamplighter" }
+the-echo = { path = "../../games/the-echo" }
+graveyard-shuffle = { path = "../../games/graveyard-shuffle" }
+wickets-slot-a = { path = "../../extras/slot-a" }
+wickets-slot-c = { path = "../../extras/slot-c" }
+wickets-slot-d = { path = "../../extras/slot-d" }
+
+[build-dependencies]
+wickets-content = { path = "../wickets-content" }
+# GAMES-END

@@ -1,0 +1,3 @@
+# Exceptions to tools/check_text.py, as `path | rule | text`. `text` is part
+# of the flagged line, or * for every finding of that rule in the file. Each
+# entry sits under a comment that says why it is allowed and when it goes.

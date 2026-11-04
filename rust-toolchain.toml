@@ -1,0 +1,6 @@
+[toolchain]
+# Keep CI and local builds on the same compiler; bump deliberately.
+channel = "1.98.0"
+# A user's complete profile requests components stable Windows lacks.
+profile = "minimal"
+components = ["rustfmt", "clippy"]

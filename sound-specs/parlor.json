@@ -1,0 +1,2108 @@
+{
+  "_about": "Sounds every game shares, and the launcher music.",
+  "sounds": [
+    {
+      "out": "page.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "pluck",
+          "steps": "A4:0.06 E5:0.12",
+          "vel": 0.5,
+          "params": {
+            "decay": 0.22
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "fade",
+          "in": 0.006
+        },
+        {
+          "type": "lowpass",
+          "cutoff": 2400,
+          "order": 2
+        },
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.3
+        }
+      ],
+      "normalize": -12
+    },
+    {
+      "out": "music/lobby_lounge.wav",
+      "bpm": 80,
+      "beats": 64,
+      "loop": "fold",
+      "normalize": -10,
+      "_arrangement": "64 beats: A on electric piano and upright bass; A2 with a felt piano tune; B on vibraphone over B flat major 7 to C7; a drumless breakdown.",
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "epiano",
+              "step": 1,
+              "steps": "[A3,C4,E4]:1.5 [A3,C4,E4]:2.5 | [G3,B3,D4]:2 [G3,C#4,E4]:2 | [F3,A3,C4]:1.5 [F3,A3,C4]:2.5 | [F3,Bb3,D4]:2 [E3,Bb3,D4]:2",
+              "gain": 0.45,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "F2:1.5 C2:.5 F2:2 | E2:2 A1:2 | D2:1.5 A1:.5 D2:2 | G1:2 C2:2",
+              "gain": 0.8
+            },
+            {
+              "type": "pattern",
+              "kind": "kick",
+              "steps": "x-----x---x-----",
+              "bars": 4,
+              "gain": 0.5,
+              "params": {
+                "tune": 50,
+                "decay": 0.4
+              }
+            },
+            {
+              "type": "pattern",
+              "kind": "snap",
+              "steps": "----x-------x---",
+              "bars": 4,
+              "gain": 0.35
+            },
+            {
+              "type": "pattern",
+              "kind": "hihat",
+              "steps": "x-x-x-x-x-x-x-x-",
+              "bars": 4,
+              "gain": 0.12,
+              "swing": 0.18,
+              "params": {
+                "tone": 5000
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 16,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "epiano",
+              "step": 1,
+              "steps": "[A3,C4,E4]:1.5 [A3,C4,E4]:2.5 | [G3,B3,D4]:2 [G3,C#4,E4]:2 | [F3,A3,C4]:1.5 [F3,A3,C4]:2.5 | [F3,Bb3,D4]:2 [E3,Bb3,D4]:2",
+              "gain": 0.45,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "F2:1.5 C2:.5 F2:2 | E2:2 A1:2 | D2:1.5 A1:.5 D2:2 | G1:2 C2:2",
+              "gain": 0.8
+            },
+            {
+              "type": "pattern",
+              "kind": "kick",
+              "steps": "x-----x---x-----",
+              "bars": 4,
+              "gain": 0.5,
+              "params": {
+                "tune": 50,
+                "decay": 0.4
+              }
+            },
+            {
+              "type": "pattern",
+              "kind": "snap",
+              "steps": "----x-------x---",
+              "bars": 4,
+              "gain": 0.35
+            },
+            {
+              "type": "pattern",
+              "kind": "hihat",
+              "steps": "x-x-x-x-x-x-x-x-",
+              "bars": 4,
+              "gain": 0.12,
+              "swing": 0.18,
+              "params": {
+                "tone": 5000
+              }
+            },
+            {
+              "type": "seq",
+              "inst": "felt_piano",
+              "step": 1,
+              "steps": "C5:1 A4:.5 C5:.5 E5:2 | D5:1 B4:1 C#5:2 | A4:1 F4:.5 A4:.5 C5:2 | Bb4:1 D5:1 C5:2",
+              "gain": 0.5,
+              "vel": 0.55
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "epiano",
+              "step": 1,
+              "steps": "[A3,D4,F4]:1.5 [A3,D4,F4]:2.5 | [G3,C4,E4]:1.5 [G3,C4,E4]:2.5 | [F3,Bb3,D4]:1.5 [F3,Bb3,D4]:2.5 | [E3,Bb3,D4]:2 [E3,G3,Bb3]:2",
+              "gain": 0.45,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "Bb1:2 F2:2 | A1:2 E2:2 | G1:2 D2:2 | C2:2 G1:2",
+              "gain": 0.8
+            },
+            {
+              "type": "seq",
+              "inst": "vibraphone",
+              "step": 1,
+              "steps": "D5:1.5 C5:.5 A4:2 | G4:1 C5:1 E5:2 | D5:1.5 Bb4:.5 F4:2 | G4:1 Bb4:1 E5:2",
+              "gain": 0.4,
+              "vel": 0.55
+            },
+            {
+              "type": "pattern",
+              "kind": "kick",
+              "steps": "x-----x---x-----",
+              "bars": 4,
+              "gain": 0.5,
+              "params": {
+                "tune": 50,
+                "decay": 0.4
+              }
+            },
+            {
+              "type": "pattern",
+              "kind": "snap",
+              "steps": "----x-------x---",
+              "bars": 4,
+              "gain": 0.35
+            },
+            {
+              "type": "pattern",
+              "kind": "hihat",
+              "steps": "x-x-x-x-x-x-x-x-",
+              "bars": 4,
+              "gain": 0.12,
+              "swing": 0.18,
+              "params": {
+                "tone": 5000
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "breakdown",
+          "at": 48,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "epiano",
+              "step": 1,
+              "steps": "[A3,C4,E4]:1.5 [A3,C4,E4]:2.5 | [G3,B3,D4]:2 [G3,C#4,E4]:2 | [F3,A3,C4]:1.5 [F3,A3,C4]:2.5 | [F3,Bb3,D4]:2 [E3,Bb3,D4]:2",
+              "gain": 0.4,
+              "vel": 0.5
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "F2:1.5 C2:.5 F2:2 | E2:2 A1:2 | D2:1.5 A1:.5 D2:2 | G1:2 C2:2",
+              "gain": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "felt_piano",
+              "step": 1,
+              "steps": "-:2 E5:2 | -:2 C#5:2 | -:2 C5:2 | -:2 C5:2",
+              "gain": 0.4,
+              "vel": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 5000
+        },
+        {
+          "type": "reverb",
+          "mix": 0.2,
+          "size": 0.55
+        },
+        {
+          "type": "compressor",
+          "threshold": -16,
+          "ratio": 2.5
+        }
+      ]
+    },
+    {
+      "out": "music/lobby_bossa.wav",
+      "bpm": 120,
+      "beats": 64,
+      "loop": "fold",
+      "normalize": -10,
+      "_arrangement": "64 beats: A, guitar, bass and light percussion; A2 with a flute tune; B over F major 7 and F minor 6; A3 with the tune on vibraphone.",
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "guitar",
+              "step": 1,
+              "steps": "[C3,E3,G3,B3]:.75 [C3,E3,G3,B3]:.75 [C3,E3,G3,B3]:1 -:.5 [C3,E3,G3,B3]:.5 [C3,E3,G3,B3]:.5 | [A2,E3,G3,C#4]:.75 [A2,E3,G3,C#4]:.75 [A2,E3,G3,C#4]:1 -:.5 [A2,E3,G3,C#4]:.5 [A2,E3,G3,C#4]:.5 | [D3,F3,A3,C4]:.75 [D3,F3,A3,C4]:.75 [D3,F3,A3,C4]:1 -:.5 [D3,F3,A3,C4]:.5 [D3,F3,A3,C4]:.5 | [G2,F3,B3,D4]:.75 [G2,F3,B3,D4]:.75 [G2,F3,B3,D4]:1 -:.5 [G2,F3,B3,D4]:.5 [G2,F3,B3,D4]:.5",
+              "gain": 0.45,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "C2:1.5 G1:.5 C2:1.5 G1:.5 | A1:1.5 E2:.5 A1:1.5 E2:.5 | D2:1.5 A1:.5 D2:1.5 A1:.5 | G1:1.5 D2:.5 G1:1.5 D2:.5",
+              "gain": 0.75
+            },
+            {
+              "type": "pattern",
+              "kind": "rim",
+              "steps": "x--x--x---x--x--",
+              "bars": 4,
+              "gain": 0.28
+            },
+            {
+              "type": "pattern",
+              "kind": "shaker",
+              "steps": "xoxoxoxoxoxoxoxo",
+              "bars": 4,
+              "gain": 0.12
+            },
+            {
+              "type": "pattern",
+              "kind": "kick",
+              "steps": "x-----x-x-----x-",
+              "bars": 4,
+              "gain": 0.4,
+              "params": {
+                "tune": 50,
+                "decay": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 16,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "guitar",
+              "step": 1,
+              "steps": "[C3,E3,G3,B3]:.75 [C3,E3,G3,B3]:.75 [C3,E3,G3,B3]:1 -:.5 [C3,E3,G3,B3]:.5 [C3,E3,G3,B3]:.5 | [A2,E3,G3,C#4]:.75 [A2,E3,G3,C#4]:.75 [A2,E3,G3,C#4]:1 -:.5 [A2,E3,G3,C#4]:.5 [A2,E3,G3,C#4]:.5 | [D3,F3,A3,C4]:.75 [D3,F3,A3,C4]:.75 [D3,F3,A3,C4]:1 -:.5 [D3,F3,A3,C4]:.5 [D3,F3,A3,C4]:.5 | [G2,F3,B3,D4]:.75 [G2,F3,B3,D4]:.75 [G2,F3,B3,D4]:1 -:.5 [G2,F3,B3,D4]:.5 [G2,F3,B3,D4]:.5",
+              "gain": 0.45,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "C2:1.5 G1:.5 C2:1.5 G1:.5 | A1:1.5 E2:.5 A1:1.5 E2:.5 | D2:1.5 A1:.5 D2:1.5 A1:.5 | G1:1.5 D2:.5 G1:1.5 D2:.5",
+              "gain": 0.75
+            },
+            {
+              "type": "pattern",
+              "kind": "rim",
+              "steps": "x--x--x---x--x--",
+              "bars": 4,
+              "gain": 0.28
+            },
+            {
+              "type": "pattern",
+              "kind": "shaker",
+              "steps": "xoxoxoxoxoxoxoxo",
+              "bars": 4,
+              "gain": 0.12
+            },
+            {
+              "type": "pattern",
+              "kind": "kick",
+              "steps": "x-----x-x-----x-",
+              "bars": 4,
+              "gain": 0.4,
+              "params": {
+                "tune": 50,
+                "decay": 0.3
+              }
+            },
+            {
+              "type": "seq",
+              "inst": "flute",
+              "step": 1,
+              "steps": "E5:1.5 D5:.5 C5:1 B4:1 | C#5:1.5 E5:.5 G5:2 | F5:1.5 E5:.5 D5:1 A4:1 | B4:2 G4:1 D5:1",
+              "gain": 0.4,
+              "vel": 0.5,
+              "params": {
+                "breath": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "guitar",
+              "step": 1,
+              "steps": "[F3,A3,C4,E4]:.75 [F3,A3,C4,E4]:.75 [F3,A3,C4,E4]:1 -:.5 [F3,A3,C4,E4]:.5 [F3,A3,C4,E4]:.5 | [F3,Ab3,C4,D4]:.75 [F3,Ab3,C4,D4]:.75 [F3,Ab3,C4,D4]:1 -:.5 [F3,Ab3,C4,D4]:.5 [F3,Ab3,C4,D4]:.5 | [E3,G3,B3,D4]:.75 [E3,G3,B3,D4]:.75 [E3,G3,C#4]:1 -:.5 [E3,G3,C#4]:.5 [E3,G3,C#4]:.5 | [D3,F3,A3,C4]:.75 [D3,F3,A3,C4]:.75 [F3,B3,D4]:1 -:.5 [F3,B3,D4]:.5 [F3,B3,D4]:.5",
+              "gain": 0.45,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "F1:1.5 C2:.5 F1:2 | F1:1.5 C2:.5 F1:2 | E2:1.5 B1:.5 A1:1.5 E2:.5 | D2:1.5 A1:.5 G1:1.5 D2:.5",
+              "gain": 0.75
+            },
+            {
+              "type": "seq",
+              "inst": "flute",
+              "step": 1,
+              "steps": "A4:1.5 C5:.5 E5:2 | Ab4:1.5 C5:.5 D5:2 | G4:1 B4:1 C#5:1 E5:1 | F5:1 D5:1 B4:1 G4:1",
+              "gain": 0.4,
+              "vel": 0.5,
+              "params": {
+                "breath": 0.3
+              }
+            },
+            {
+              "type": "pattern",
+              "kind": "rim",
+              "steps": "x--x--x---x--x--",
+              "bars": 4,
+              "gain": 0.28
+            },
+            {
+              "type": "pattern",
+              "kind": "shaker",
+              "steps": "xoxoxoxoxoxoxoxo",
+              "bars": 4,
+              "gain": 0.12
+            },
+            {
+              "type": "pattern",
+              "kind": "kick",
+              "steps": "x-----x-x-----x-",
+              "bars": 4,
+              "gain": 0.4,
+              "params": {
+                "tune": 50,
+                "decay": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A3",
+          "at": 48,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "guitar",
+              "step": 1,
+              "steps": "[C3,E3,G3,B3]:.75 [C3,E3,G3,B3]:.75 [C3,E3,G3,B3]:1 -:.5 [C3,E3,G3,B3]:.5 [C3,E3,G3,B3]:.5 | [A2,E3,G3,C#4]:.75 [A2,E3,G3,C#4]:.75 [A2,E3,G3,C#4]:1 -:.5 [A2,E3,G3,C#4]:.5 [A2,E3,G3,C#4]:.5 | [D3,F3,A3,C4]:.75 [D3,F3,A3,C4]:.75 [D3,F3,A3,C4]:1 -:.5 [D3,F3,A3,C4]:.5 [D3,F3,A3,C4]:.5 | [G2,F3,B3,D4]:.75 [G2,F3,B3,D4]:.75 [G2,F3,B3,D4]:1 -:.5 [G2,F3,B3,D4]:.5 [G2,F3,B3,D4]:.5",
+              "gain": 0.45,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "C2:1.5 G1:.5 C2:1.5 G1:.5 | A1:1.5 E2:.5 A1:1.5 E2:.5 | D2:1.5 A1:.5 D2:1.5 A1:.5 | G1:1.5 D2:.5 G1:1.5 D2:.5",
+              "gain": 0.75
+            },
+            {
+              "type": "pattern",
+              "kind": "rim",
+              "steps": "x--x--x---x--x--",
+              "bars": 4,
+              "gain": 0.28
+            },
+            {
+              "type": "pattern",
+              "kind": "shaker",
+              "steps": "xoxoxoxoxoxoxoxo",
+              "bars": 4,
+              "gain": 0.12
+            },
+            {
+              "type": "pattern",
+              "kind": "kick",
+              "steps": "x-----x-x-----x-",
+              "bars": 4,
+              "gain": 0.4,
+              "params": {
+                "tune": 50,
+                "decay": 0.3
+              }
+            },
+            {
+              "type": "seq",
+              "inst": "vibraphone",
+              "step": 1,
+              "steps": "E5:1.5 D5:.5 C5:1 B4:1 | C#5:1.5 E5:.5 G5:2 | F5:1.5 E5:.5 D5:1 A4:1 | B4:2 G4:1 D5:1",
+              "gain": 0.4,
+              "vel": 0.55
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.2,
+          "size": 0.55
+        },
+        {
+          "type": "compressor",
+          "threshold": -16,
+          "ratio": 2.5
+        }
+      ]
+    },
+    {
+      "out": "music/lobby_rag.wav",
+      "bpm": 96,
+      "beats": 64,
+      "loop": "fold",
+      "normalize": -15.5,
+      "_arrangement": "64 beats: an 8-bar strain in C, then a trio in F that turns on G7 back to the top. Piano only, stride left hand.",
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "piano",
+              "step": 1,
+              "steps": "C2:1 [E3,G3,C4]:1 G1:1 [E3,G3,C4]:1 | C2:1 [E3,G3,C4]:1 G1:1 [E3,G3,C4]:1 | G1:1 [F3,B3,D4]:1 D2:1 [F3,B3,D4]:1 | C2:1 [E3,G3,C4]:1 G1:1 [E3,G3,C4]:1 | C2:1 [E3,G3,C4]:1 G1:1 [E3,G3,C4]:1 | F1:1 [F3,A3,C4]:1 C2:1 [F3,A3,C4]:1 | C2:1 [E3,G3,C4]:1 G1:1 [F3,B3,D4]:1 | C2:1 [E3,G3,C4]:1 G1:1 [E3,G3,C4]:1",
+              "gain": 0.45,
+              "vel": 0.55
+            },
+            {
+              "type": "seq",
+              "inst": "piano",
+              "step": 1,
+              "steps": "E5:.5 C5:.25 G5:.5 E5:.25 C6:.5 G5:.5 E5:.5 G5:1 | A5:.5 G5:.25 E5:.5 C5:.25 D5:.5 E5:1 -:1 | F5:.5 D5:.25 B4:.5 G4:.25 B4:.5 D5:.5 F5:.5 A5:1 | G5:.75 E5:.75 C5:.5 -:2 | E5:.5 C5:.25 G5:.5 E5:.25 C6:.5 G5:.5 E5:.5 G5:1 | A5:.5 F5:.25 C5:.5 A4:.25 C5:.5 F5:1 -:1 | E5:.5 G5:.5 C6:1 B5:.5 G5:.5 F5:1 | E5:1 C5:1 -:2",
+              "gain": 0.5,
+              "vel": 0.6
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "trio",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "piano",
+              "step": 1,
+              "steps": "F1:1 [F3,A3,C4]:1 C2:1 [F3,A3,C4]:1 | Bb1:1 [F3,Bb3,D4]:1 F1:1 [F3,Bb3,D4]:1 | C2:1 [E3,G3,Bb3]:1 G1:1 [E3,G3,Bb3]:1 | F1:1 [F3,A3,C4]:1 C2:1 [F3,A3,C4]:1 | F1:1 [F3,A3,C4]:1 C2:1 [F3,A3,C4]:1 | Bb1:1 [F3,Bb3,D4]:1 F1:1 [F3,Bb3,D4]:1 | F1:1 [F3,A3,C4]:1 C2:1 [F3,A3,C4]:1 | G1:1 [F3,B3,D4]:1 D2:1 [F3,B3,D4]:1",
+              "gain": 0.45,
+              "vel": 0.55
+            },
+            {
+              "type": "seq",
+              "inst": "piano",
+              "step": 1,
+              "steps": "A5:.5 C6:.25 A5:.5 F5:.25 C5:1 F5:1 -:.5 | Bb5:.5 D6:.25 Bb5:.5 F5:.25 D5:1 F5:1 -:.5 | G5:.5 E5:.25 C5:.5 Bb4:.25 C5:.5 E5:.5 G5:.5 Bb5:1 | A5:1.5 F5:.5 -:2 | A5:.5 C6:.25 A5:.5 F5:.25 C5:1 F5:1 -:.5 | Bb5:.5 D6:.25 Bb5:.5 F5:.25 D5:1 F5:1 -:.5 | A5:.5 G5:.25 F5:.5 C5:.25 A4:.5 C5:.5 F5:1 -:.5 | G5:.5 F5:.25 D5:.5 B4:.25 G4:.5 B4:.5 D5:.5 F5:1",
+              "gain": 0.5,
+              "vel": 0.6
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.16,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -16,
+          "ratio": 2.5
+        }
+      ]
+    },
+    {
+      "out": "music/lobby_morning.wav",
+      "genny": "blal1",
+      "bpm": 104,
+      "beats": 128,
+      "loop": "fold",
+      "normalize": -13.4,
+      "_arrangement": "128 beats in D: A on fingerpicked guitar and bass with the tune on marimba; A2 the tune on flute with a shaker; B on chiptune pulse over G, A, F sharp minor and B minor; A3 the flute again.",
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "guitar",
+              "step": 1,
+              "steps": "D3:.5 D4:.5 F#4:.5 D4:.5 A3:.5 D4:.5 F#4:.5 D4:.5 | G2:.5 G3:.5 B3:.5 G3:.5 D3:.5 G3:.5 B3:.5 G3:.5 | B2:.5 B3:.5 D4:.5 B3:.5 F#3:.5 B3:.5 D4:.5 B3:.5 | A2:.5 A3:.5 C#4:.5 A3:.5 E3:.5 A3:.5 C#4:.5 A3:.5 | D3:.5 D4:.5 F#4:.5 D4:.5 A3:.5 D4:.5 F#4:.5 D4:.5 | G2:.5 G3:.5 B3:.5 G3:.5 D3:.5 G3:.5 B3:.5 G3:.5 | E2:.5 E3:.5 G3:.5 E3:.5 B2:.5 E3:.5 G3:.5 E3:.5 | A2:.5 A3:.5 C#4:.5 A3:.5 E3:.5 A3:.5 C#4:.5 A3:.5",
+              "gain": 0.42,
+              "vel": 0.5,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.35
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "D3:2 A3:2 | G2:2 D3:2 | B2:2 F#3:2 | A2:2 E3:2 | D3:2 A3:2 | G2:2 D3:2 | E2:2 B2:2 | A2:2 E3:2",
+              "gain": 0.5,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "marimba",
+              "step": 1,
+              "steps": "A4:1 D5:1 F#5:1.5 E5:.5 | D5:1 B4:1 G4:2 | F#4:1 B4:1 D5:1.5 C#5:.5 | E5:2 C#5:1 A4:1 | A4:1 D5:1 F#5:1 A5:1 | B5:1.5 A5:.5 G5:1 D5:1 | E5:1 G5:1 F#5:1 E5:1 | E5:3 -:1",
+              "gain": 0.3,
+              "vel": 0.5,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "guitar",
+              "step": 1,
+              "steps": "D3:.5 D4:.5 F#4:.5 D4:.5 A3:.5 D4:.5 F#4:.5 D4:.5 | G2:.5 G3:.5 B3:.5 G3:.5 D3:.5 G3:.5 B3:.5 G3:.5 | B2:.5 B3:.5 D4:.5 B3:.5 F#3:.5 B3:.5 D4:.5 B3:.5 | A2:.5 A3:.5 C#4:.5 A3:.5 E3:.5 A3:.5 C#4:.5 A3:.5 | D3:.5 D4:.5 F#4:.5 D4:.5 A3:.5 D4:.5 F#4:.5 D4:.5 | G2:.5 G3:.5 B3:.5 G3:.5 D3:.5 G3:.5 B3:.5 G3:.5 | E2:.5 E3:.5 G3:.5 E3:.5 B2:.5 E3:.5 G3:.5 E3:.5 | A2:.5 A3:.5 C#4:.5 A3:.5 E3:.5 A3:.5 C#4:.5 A3:.5",
+              "gain": 0.38,
+              "vel": 0.5,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.35
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "D3:2 A3:2 | G2:2 D3:2 | B2:2 F#3:2 | A2:2 E3:2 | D3:2 A3:2 | G2:2 D3:2 | E2:2 B2:2 | A2:2 E3:2",
+              "gain": 0.5,
+              "vel": 0.6
+            },
+            {
+              "type": "pattern",
+              "kind": "shaker",
+              "steps": "x-x-x-x-x-x-x-x-",
+              "bars": 8,
+              "gain": 0.07,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "flute",
+              "step": 1,
+              "steps": "A4:1 D5:1 F#5:1.5 E5:.5 | D5:1 B4:1 G4:2 | F#4:1 B4:1 D5:1.5 C#5:.5 | E5:2 C#5:1 A4:1 | A4:1 D5:1 F#5:1 A5:1 | B5:1.5 A5:.5 G5:1 D5:1 | E5:1 G5:1 F#5:1 E5:1 | E5:3 -:1",
+              "gain": 0.26,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 64,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "guitar",
+              "step": 1,
+              "steps": "G2:.5 G3:.5 B3:.5 G3:.5 D3:.5 G3:.5 B3:.5 G3:.5 | A2:.5 A3:.5 C#4:.5 A3:.5 E3:.5 A3:.5 C#4:.5 A3:.5 | F#2:.5 F#3:.5 A3:.5 F#3:.5 C#3:.5 F#3:.5 A3:.5 F#3:.5 | B2:.5 B3:.5 D4:.5 B3:.5 F#3:.5 B3:.5 D4:.5 B3:.5 | G2:.5 G3:.5 B3:.5 G3:.5 D3:.5 G3:.5 B3:.5 G3:.5 | A2:.5 A3:.5 C#4:.5 A3:.5 E3:.5 A3:.5 C#4:.5 A3:.5 | D3:.5 D4:.5 F#4:.5 D4:.5 A3:.5 D4:.5 F#4:.5 D4:.5 | A2:.5 A3:.5 C#4:.5 A3:.5 E3:.5 A3:.5 C#4:.5 A3:.5",
+              "gain": 0.38,
+              "vel": 0.5,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.35
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "G2:2 D3:2 | A2:2 E3:2 | F#2:2 C#3:2 | B2:2 F#3:2 | G2:2 D3:2 | A2:2 E3:2 | D3:2 A3:2 | A2:2 E3:2",
+              "gain": 0.5,
+              "vel": 0.6
+            },
+            {
+              "type": "pattern",
+              "kind": "shaker",
+              "steps": "x-x-x-x-x-x-x-x-",
+              "bars": 8,
+              "gain": 0.07,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "chip",
+              "step": 1,
+              "steps": "B4:1.5 D5:.5 G5:2 | A5:1 G5:1 E5:2 | F#5:1.5 E5:.5 C#5:2 | D5:3 -:1 | B4:1 D5:1 G5:1 B5:1 | A5:1.5 G5:.5 E5:1 C#5:1 | D5:1 F#5:1 A5:2 | G5:1 F#5:1 E5:2",
+              "gain": 0.2,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A3",
+          "at": 96,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "guitar",
+              "step": 1,
+              "steps": "D3:.5 D4:.5 F#4:.5 D4:.5 A3:.5 D4:.5 F#4:.5 D4:.5 | G2:.5 G3:.5 B3:.5 G3:.5 D3:.5 G3:.5 B3:.5 G3:.5 | B2:.5 B3:.5 D4:.5 B3:.5 F#3:.5 B3:.5 D4:.5 B3:.5 | A2:.5 A3:.5 C#4:.5 A3:.5 E3:.5 A3:.5 C#4:.5 A3:.5 | D3:.5 D4:.5 F#4:.5 D4:.5 A3:.5 D4:.5 F#4:.5 D4:.5 | G2:.5 G3:.5 B3:.5 G3:.5 D3:.5 G3:.5 B3:.5 G3:.5 | E2:.5 E3:.5 G3:.5 E3:.5 B2:.5 E3:.5 G3:.5 E3:.5 | A2:.5 A3:.5 C#4:.5 A3:.5 E3:.5 A3:.5 C#4:.5 A3:.5",
+              "gain": 0.38,
+              "vel": 0.5,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.35
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "D3:2 A3:2 | G2:2 D3:2 | B2:2 F#3:2 | A2:2 E3:2 | D3:2 A3:2 | G2:2 D3:2 | E2:2 B2:2 | A2:2 E3:2",
+              "gain": 0.5,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "flute",
+              "step": 1,
+              "steps": "A4:1 D5:1 F#5:1.5 E5:.5 | D5:1 B4:1 G4:2 | F#4:1 B4:1 D5:1.5 C#5:.5 | E5:2 C#5:1 A4:1 | A4:1 D5:1 F#5:1 A5:1 | B5:1.5 A5:.5 G5:1 D5:1 | E5:1 G5:1 F#5:1 E5:1 | E5:3 -:1",
+              "gain": 0.26,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.35
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "marimba",
+              "step": 1,
+              "steps": "A4:1 D5:1 F#5:1.5 E5:.5 | D5:1 B4:1 G4:2 | F#4:1 B4:1 D5:1.5 C#5:.5 | E5:2 C#5:1 A4:1 | A4:1 D5:1 F#5:1 A5:1 | B5:1.5 A5:.5 G5:1 D5:1 | E5:1 G5:1 F#5:1 E5:1 | E5:3 -:1",
+              "gain": 0.14,
+              "vel": 0.4,
+              "transpose": -12,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ]
+    },
+    {
+      "out": "music/lobby_afternoon.wav",
+      "genny": "blal1",
+      "bpm": 100,
+      "beats": 128,
+      "loop": "fold",
+      "normalize": -14.6,
+      "_arrangement": "128 beats in G, a tea-room two-step: A on pizzicato and bass with the tune on harp; A2 the tune on oboe over soft strings; B on chiptune pulse through C, D, B minor and E minor; A3 the oboe over rising harp.",
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "G2:1 -:1 G2:1 -:1 | E2:1 -:1 E2:1 -:1 | A2:1 -:1 A2:1 -:1 | D2:1 -:1 D2:1 -:1 | G2:1 -:1 G2:1 -:1 | E2:1 -:1 E2:1 -:1 | A2:1 -:1 D2:1 -:1 | G2:1 -:1 G2:1 -:1",
+              "gain": 0.5,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "pizzicato",
+              "step": 1,
+              "steps": "-:1 [B3,D4,G4]:1 -:1 [B3,D4,G4]:1 | -:1 [B3,E4,G4]:1 -:1 [B3,E4,G4]:1 | -:1 [A3,C4,E4]:1 -:1 [A3,C4,E4]:1 | -:1 [A3,C4,F#4]:1 -:1 [A3,C4,F#4]:1 | -:1 [B3,D4,G4]:1 -:1 [B3,D4,G4]:1 | -:1 [B3,E4,G4]:1 -:1 [B3,E4,G4]:1 | -:1 [A3,C4,E4]:1 -:1 [A3,C4,F#4]:1 | -:1 [B3,D4,G4]:1 -:1 [B3,D4,G4]:1",
+              "gain": 0.32,
+              "vel": 0.5,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.3
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "harp",
+              "step": 1,
+              "steps": "D5:1 B4:1 G4:1 B4:1 | E5:2 D5:1 B4:1 | C5:1 E5:1 A5:1 G5:1 | F#5:2 D5:2 | D5:1 B4:1 G5:1.5 F#5:.5 | E5:1 G5:1 B4:2 | C5:1 E5:1 D5:1 C5:1 | B4:3 -:1",
+              "gain": 0.34,
+              "vel": 0.5,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "G2:1 -:1 G2:1 -:1 | E2:1 -:1 E2:1 -:1 | A2:1 -:1 A2:1 -:1 | D2:1 -:1 D2:1 -:1 | G2:1 -:1 G2:1 -:1 | E2:1 -:1 E2:1 -:1 | A2:1 -:1 D2:1 -:1 | G2:1 -:1 G2:1 -:1",
+              "gain": 0.5,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "pizzicato",
+              "step": 1,
+              "steps": "-:1 [B3,D4,G4]:1 -:1 [B3,D4,G4]:1 | -:1 [B3,E4,G4]:1 -:1 [B3,E4,G4]:1 | -:1 [A3,C4,E4]:1 -:1 [A3,C4,E4]:1 | -:1 [A3,C4,F#4]:1 -:1 [A3,C4,F#4]:1 | -:1 [B3,D4,G4]:1 -:1 [B3,D4,G4]:1 | -:1 [B3,E4,G4]:1 -:1 [B3,E4,G4]:1 | -:1 [A3,C4,E4]:1 -:1 [A3,C4,F#4]:1 | -:1 [B3,D4,G4]:1 -:1 [B3,D4,G4]:1",
+              "gain": 0.3,
+              "vel": 0.5,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.3
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "strings",
+              "step": 1,
+              "steps": "[B3,D4,G4]:4 | [B3,E4,G4]:4 | [A3,C4,E4]:4 | [A3,C4,F#4]:4 | [B3,D4,G4]:4 | [B3,E4,G4]:4 | [A3,C4,E4]:4 | [B3,D4,G4]:4",
+              "gain": 0.12,
+              "vel": 0.35
+            },
+            {
+              "type": "seq",
+              "inst": "oboe",
+              "step": 1,
+              "steps": "D5:1 B4:1 G4:1 B4:1 | E5:2 D5:1 B4:1 | C5:1 E5:1 A5:1 G5:1 | F#5:2 D5:2 | D5:1 B4:1 G5:1.5 F#5:.5 | E5:1 G5:1 B4:2 | C5:1 E5:1 D5:1 C5:1 | B4:3 -:1",
+              "gain": 0.24,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 64,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "C3:1 -:1 C3:1 -:1 | D2:1 -:1 D2:1 -:1 | B2:1 -:1 B2:1 -:1 | E2:1 -:1 E2:1 -:1 | A2:1 -:1 A2:1 -:1 | D2:1 -:1 D2:1 -:1 | G2:1 -:1 G2:1 -:1 | D2:1 -:1 D2:1 -:1",
+              "gain": 0.5,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "pizzicato",
+              "step": 1,
+              "steps": "-:1 [G3,C4,E4]:1 -:1 [G3,C4,E4]:1 | -:1 [A3,D4,F#4]:1 -:1 [A3,D4,F#4]:1 | -:1 [B3,D4,F#4]:1 -:1 [B3,D4,F#4]:1 | -:1 [B3,E4,G4]:1 -:1 [B3,E4,G4]:1 | -:1 [A3,C4,E4]:1 -:1 [A3,C4,E4]:1 | -:1 [A3,D4,F#4]:1 -:1 [A3,D4,F#4]:1 | -:1 [B3,D4,G4]:1 -:1 [B3,D4,G4]:1 | -:1 [A3,C4,F#4]:1 -:1 [A3,C4,F#4]:1",
+              "gain": 0.3,
+              "vel": 0.5,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.3
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "chip",
+              "step": 1,
+              "steps": "E5:1.5 D5:.5 C5:1 G4:1 | A4:1 D5:1 F#5:2 | F#5:1 D5:1 B4:2 | G5:1.5 F#5:.5 E5:2 | C5:1 E5:1 A5:1.5 G5:.5 | F#5:1 A5:1 D5:2 | B4:1 D5:1 G5:2 | F#5:1 E5:1 D5:1 C5:1",
+              "gain": 0.2,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A3",
+          "at": 96,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "G2:1 -:1 G2:1 -:1 | E2:1 -:1 E2:1 -:1 | A2:1 -:1 A2:1 -:1 | D2:1 -:1 D2:1 -:1 | G2:1 -:1 G2:1 -:1 | E2:1 -:1 E2:1 -:1 | A2:1 -:1 D2:1 -:1 | G2:1 -:1 G2:1 -:1",
+              "gain": 0.5,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "harp",
+              "step": 1,
+              "steps": "G2:.5 B3:.5 D4:.5 G4:.5 G2:.5 B3:.5 D4:.5 G4:.5 | E2:.5 B3:.5 E4:.5 G4:.5 E2:.5 B3:.5 E4:.5 G4:.5 | A2:.5 A3:.5 C4:.5 E4:.5 A2:.5 A3:.5 C4:.5 E4:.5 | D2:.5 A3:.5 C4:.5 F#4:.5 D2:.5 A3:.5 C4:.5 F#4:.5 | G2:.5 B3:.5 D4:.5 G4:.5 G2:.5 B3:.5 D4:.5 G4:.5 | E2:.5 B3:.5 E4:.5 G4:.5 E2:.5 B3:.5 E4:.5 G4:.5 | A2:.5 A3:.5 C4:.5 E4:.5 A2:.5 A3:.5 C4:.5 E4:.5 | G2:.5 B3:.5 D4:.5 G4:.5 G2:.5 B3:.5 D4:.5 G4:.5",
+              "gain": 0.26,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.35
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "oboe",
+              "step": 1,
+              "steps": "D5:1 B4:1 G4:1 B4:1 | E5:2 D5:1 B4:1 | C5:1 E5:1 A5:1 G5:1 | F#5:2 D5:2 | D5:1 B4:1 G5:1.5 F#5:.5 | E5:1 G5:1 B4:2 | C5:1 E5:1 D5:1 C5:1 | B4:3 -:1",
+              "gain": 0.24,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ]
+    },
+    {
+      "out": "music/lobby_evening.wav",
+      "genny": "blal1",
+      "bpm": 70,
+      "beats": 128,
+      "loop": "fold",
+      "normalize": -13.5,
+      "_arrangement": "128 beats in E flat, a slow ballad: A on felt piano, bass and brushes with the tune in the piano's right hand; A2 the tune on sax; B through A flat, D flat 7 and C7 with soft strings; A3 the sax again.",
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "felt_piano",
+              "step": 1,
+              "steps": "[G3,Bb3,D4]:1.5 [G3,Bb3,D4]:2.5 | [G3,Bb3,Eb4]:1.5 [G3,Bb3,Eb4]:2.5 | [Ab3,C4,Eb4]:1.5 [Ab3,C4,Eb4]:2.5 | [Ab3,D4,F4]:1.5 [Ab3,D4,F4]:2.5 | [F3,Bb3,D4]:1.5 [F3,Bb3,D4]:2.5 | [E3,Bb3,D4]:1.5 [E3,Bb3,D4]:2.5 | [Ab3,C4,Eb4]:2 [Ab3,D4,F4]:2 | [G3,Bb3,D4]:1.5 [G3,Bb3,D4]:2.5",
+              "gain": 0.4,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.2
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "Eb2:2 Bb1:2 | C2:2 G2:2 | F2:2 C2:2 | Bb1:2 F2:2 | G2:2 D2:2 | C2:2 G2:2 | F2:2 Bb1:2 | Eb2:2 Bb1:2",
+              "gain": 0.55,
+              "vel": 0.6
+            },
+            {
+              "type": "pattern",
+              "kind": "brush",
+              "steps": "x---x---x---x---",
+              "bars": 8,
+              "gain": 0.16,
+              "swing": 0.2,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.2
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "felt_piano",
+              "step": 1,
+              "steps": "G4:1 Bb4:1 D5:2 | C5:1.5 Bb4:.5 G4:2 | Ab4:1 C5:1 Eb5:1.5 D5:.5 | D5:1.5 C5:.5 Ab4:2 | Bb4:1 D5:1 F5:2 | E5:1.5 D5:.5 Bb4:2 | C5:1 Ab4:1 D5:1 F4:1 | Eb5:3 -:1",
+              "gain": 0.32,
+              "vel": 0.5,
+              "transpose": 12,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.25
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "felt_piano",
+              "step": 1,
+              "steps": "[G3,Bb3,D4]:1.5 [G3,Bb3,D4]:2.5 | [G3,Bb3,Eb4]:1.5 [G3,Bb3,Eb4]:2.5 | [Ab3,C4,Eb4]:1.5 [Ab3,C4,Eb4]:2.5 | [Ab3,D4,F4]:1.5 [Ab3,D4,F4]:2.5 | [F3,Bb3,D4]:1.5 [F3,Bb3,D4]:2.5 | [E3,Bb3,D4]:1.5 [E3,Bb3,D4]:2.5 | [Ab3,C4,Eb4]:2 [Ab3,D4,F4]:2 | [G3,Bb3,D4]:1.5 [G3,Bb3,D4]:2.5",
+              "gain": 0.36,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.2
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "Eb2:2 Bb1:2 | C2:2 G2:2 | F2:2 C2:2 | Bb1:2 F2:2 | G2:2 D2:2 | C2:2 G2:2 | F2:2 Bb1:2 | Eb2:2 Bb1:2",
+              "gain": 0.55,
+              "vel": 0.6
+            },
+            {
+              "type": "pattern",
+              "kind": "brush",
+              "steps": "x---x---x---x---",
+              "bars": 8,
+              "gain": 0.16,
+              "swing": 0.2,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.2
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "sax",
+              "step": 1,
+              "steps": "G4:1 Bb4:1 D5:2 | C5:1.5 Bb4:.5 G4:2 | Ab4:1 C5:1 Eb5:1.5 D5:.5 | D5:1.5 C5:.5 Ab4:2 | Bb4:1 D5:1 F5:2 | E5:1.5 D5:.5 Bb4:2 | C5:1 Ab4:1 D5:1 F4:1 | Eb5:3 -:1",
+              "gain": 0.24,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 64,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "felt_piano",
+              "step": 1,
+              "steps": "[G3,C4,Eb4]:1.5 [G3,C4,Eb4]:2.5 | [F3,B3,Eb4]:1.5 [F3,B3,Eb4]:2.5 | [G3,Bb3,D4]:1.5 [G3,Bb3,D4]:2.5 | [E3,Bb3,D4]:1.5 [E3,Bb3,D4]:2.5 | [Ab3,C4,Eb4]:1.5 [Ab3,C4,Eb4]:2.5 | [Ab3,D4,F4]:1.5 [Ab3,D4,F4]:2.5 | [G3,Bb3,D4]:1.5 [G3,Bb3,D4]:2.5 | [Ab3,D4,F4]:1.5 [Ab3,D4,F4]:2.5",
+              "gain": 0.36,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.2
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "Ab1:2 Eb2:2 | Db2:2 Ab1:2 | G2:2 D2:2 | C2:2 G2:2 | F2:2 C2:2 | Bb1:2 F2:2 | Eb2:2 Bb1:2 | Bb1:2 F2:2",
+              "gain": 0.55,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "strings",
+              "step": 1,
+              "steps": "[G3,C4,Eb4]:4 | [F3,B3,Eb4]:4 | [G3,Bb3,D4]:4 | [E3,Bb3,D4]:4 | [Ab3,C4,Eb4]:4 | [Ab3,D4,F4]:4 | [G3,Bb3,D4]:4 | [Ab3,D4,F4]:4",
+              "gain": 0.12,
+              "vel": 0.35
+            },
+            {
+              "type": "pattern",
+              "kind": "brush",
+              "steps": "x---x---x---x---",
+              "bars": 8,
+              "gain": 0.16,
+              "swing": 0.2,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.2
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "sax",
+              "step": 1,
+              "steps": "Eb4:1 G4:1 C5:2 | B4:1.5 Ab4:.5 F4:2 | Bb4:1 G4:1 D5:2 | E5:1.5 D5:.5 Bb4:1 G4:1 | Ab4:1 C5:1 F5:2 | D5:1 C5:1 Ab4:1 F4:1 | G4:1 Bb4:1 D5:2 | Ab4:2 F4:2",
+              "gain": 0.24,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A3",
+          "at": 96,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "felt_piano",
+              "step": 1,
+              "steps": "[G3,Bb3,D4]:1.5 [G3,Bb3,D4]:2.5 | [G3,Bb3,Eb4]:1.5 [G3,Bb3,Eb4]:2.5 | [Ab3,C4,Eb4]:1.5 [Ab3,C4,Eb4]:2.5 | [Ab3,D4,F4]:1.5 [Ab3,D4,F4]:2.5 | [F3,Bb3,D4]:1.5 [F3,Bb3,D4]:2.5 | [E3,Bb3,D4]:1.5 [E3,Bb3,D4]:2.5 | [Ab3,C4,Eb4]:2 [Ab3,D4,F4]:2 | [G3,Bb3,D4]:1.5 [G3,Bb3,D4]:2.5",
+              "gain": 0.36,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.2
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "Eb2:2 Bb1:2 | C2:2 G2:2 | F2:2 C2:2 | Bb1:2 F2:2 | G2:2 D2:2 | C2:2 G2:2 | F2:2 Bb1:2 | Eb2:2 Bb1:2",
+              "gain": 0.55,
+              "vel": 0.6
+            },
+            {
+              "type": "pattern",
+              "kind": "brush",
+              "steps": "x---x---x---x---",
+              "bars": 8,
+              "gain": 0.16,
+              "swing": 0.2,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.2
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "sax",
+              "step": 1,
+              "steps": "G4:1 Bb4:1 D5:2 | C5:1.5 Bb4:.5 G4:2 | Ab4:1 C5:1 Eb5:1.5 D5:.5 | D5:1.5 C5:.5 Ab4:2 | Bb4:1 D5:1 F5:2 | E5:1.5 D5:.5 Bb4:2 | C5:1 Ab4:1 D5:1 F4:1 | Eb5:3 -:1",
+              "gain": 0.24,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ]
+    },
+    {
+      "out": "music/lobby_small_hours.wav",
+      "genny": "blal1",
+      "bpm": 60,
+      "beats": 64,
+      "loop": "fold",
+      "normalize": -17.5,
+      "_arrangement": "64 beats in A minor, for 1 to 5 in the morning: rolled felt piano chords with a sparse tune high in the piano; then the tune an octave down on cello over soft strings.",
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "felt_piano",
+              "step": 1,
+              "steps": "A2:1 E3:1 B3:1 C4:1 | F2:1 C3:1 E3:1 A3:1 | C3:1 G3:1 D4:1 E4:1 | G2:1 D3:1 A3:1 B3:1 | A2:1 E3:1 B3:1 C4:1 | F2:1 C3:1 E3:1 A3:1 | D3:1 A3:1 C4:1 F4:1 | E2:1 B2:1 E3:1 G#3:1",
+              "gain": 0.4,
+              "vel": 0.4,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.2
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "felt_piano",
+              "step": 1,
+              "steps": "-:1 E5:2 D5:1 | C5:3 -:1 | -:1 G5:2 E5:1 | D5:3 -:1 | -:1 C5:1 E5:1 A5:1 | G5:2 E5:2 | F5:1.5 E5:.5 D5:1 C5:1 | B4:3 -:1",
+              "gain": 0.28,
+              "vel": 0.4,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.25
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "felt_piano",
+              "step": 1,
+              "steps": "A2:1 E3:1 B3:1 C4:1 | F2:1 C3:1 E3:1 A3:1 | C3:1 G3:1 D4:1 E4:1 | G2:1 D3:1 A3:1 B3:1 | A2:1 E3:1 B3:1 C4:1 | F2:1 C3:1 E3:1 A3:1 | D3:1 A3:1 C4:1 F4:1 | E2:1 B2:1 E3:1 G#3:1",
+              "gain": 0.36,
+              "vel": 0.4,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.2
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "strings",
+              "step": 1,
+              "steps": "[E3,B3]:4 | [C3,E3]:4 | [G3,D4]:4 | [D3,A3]:4 | [E3,B3]:4 | [C3,E3]:4 | [A3,C4]:4 | [B2,E3]:4",
+              "gain": 0.1,
+              "vel": 0.3
+            },
+            {
+              "type": "seq",
+              "inst": "cello",
+              "step": 1,
+              "steps": "-:1 E5:2 D5:1 | C5:3 -:1 | -:1 G5:2 E5:1 | D5:3 -:1 | -:1 C5:1 E5:1 A5:1 | G5:2 E5:2 | F5:1.5 E5:.5 D5:1 C5:1 | B4:3 -:1",
+              "gain": 0.3,
+              "vel": 0.45,
+              "transpose": -12,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.15
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.6
+        },
+        {
+          "type": "lowpass",
+          "cutoff": 6000
+        }
+      ]
+    },
+    {
+      "out": "music/lobby_swing.wav",
+      "genny": "blal1",
+      "bpm": 132,
+      "beats": 128,
+      "loop": "fold",
+      "normalize": -8.6,
+      "_arrangement": "128 beats in F, a light swing: A on rhythm guitar, walking bass and brushes with a chiptune tune; A2 the tune on piano; B through A7, D7, G7 and C7 on vibraphone; A3 the chiptune again.",
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "muted_guitar",
+              "step": 1,
+              "steps": "[A3,C4,D4]:1 [A3,C4,D4]:1 [A3,C4,D4]:1 [A3,C4,D4]:1 | [F#3,A3,C4]:1 [F#3,A3,C4]:1 [F#3,A3,C4]:1 [F#3,A3,C4]:1 | [F3,Bb3,D4]:1 [F3,Bb3,D4]:1 [F3,Bb3,D4]:1 [F3,Bb3,D4]:1 | [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 | [G3,C4,E4]:1 [G3,C4,E4]:1 [F#3,A3,C4]:1 [F#3,A3,C4]:1 | [F3,Bb3,D4]:1 [F3,Bb3,D4]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 | [A3,C4,F4]:1 [A3,C4,F4]:1 [A3,C4,F4]:1 [A3,C4,F4]:1 | [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1",
+              "gain": 0.36,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.35
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "F2:1 G2:1 A2:1 C3:1 | D3:1 C3:1 A2:1 F#2:1 | G2:1 A2:1 Bb2:1 B2:1 | C3:1 Bb2:1 G2:1 E2:1 | A2:1 C3:1 D3:1 F#2:1 | G2:1 Bb2:1 C3:1 E2:1 | F2:1 A2:1 C3:1 A2:1 | C3:1 Bb2:1 G2:1 E2:1",
+              "gain": 0.55,
+              "vel": 0.6
+            },
+            {
+              "type": "pattern",
+              "kind": "brush",
+              "steps": "x---x---x---x---",
+              "bars": 8,
+              "gain": 0.18,
+              "swing": 0.3,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.2
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "chip",
+              "step": 1,
+              "steps": "A4:1 C5:1 D5:1.5 C5:.5 | D5:.667 F#5:.333 A5:1 F#5:1 D5:1 | G5:1 F5:1 D5:1 Bb4:1 | C5:.667 E5:.333 G5:1 E5:2 | A4:1 C5:1 F#5:1 D5:1 | G4:1 Bb4:1 E5:1 C5:1 | A5:1 F5:1 C5:2 | -:1 G4:.667 A4:.333 Bb4:.667 B4:.333 C5:1",
+              "gain": 0.2,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "muted_guitar",
+              "step": 1,
+              "steps": "[A3,C4,D4]:1 [A3,C4,D4]:1 [A3,C4,D4]:1 [A3,C4,D4]:1 | [F#3,A3,C4]:1 [F#3,A3,C4]:1 [F#3,A3,C4]:1 [F#3,A3,C4]:1 | [F3,Bb3,D4]:1 [F3,Bb3,D4]:1 [F3,Bb3,D4]:1 [F3,Bb3,D4]:1 | [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 | [G3,C4,E4]:1 [G3,C4,E4]:1 [F#3,A3,C4]:1 [F#3,A3,C4]:1 | [F3,Bb3,D4]:1 [F3,Bb3,D4]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 | [A3,C4,F4]:1 [A3,C4,F4]:1 [A3,C4,F4]:1 [A3,C4,F4]:1 | [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1",
+              "gain": 0.34,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.35
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "F2:1 G2:1 A2:1 C3:1 | D3:1 C3:1 A2:1 F#2:1 | G2:1 A2:1 Bb2:1 B2:1 | C3:1 Bb2:1 G2:1 E2:1 | A2:1 C3:1 D3:1 F#2:1 | G2:1 Bb2:1 C3:1 E2:1 | F2:1 A2:1 C3:1 A2:1 | C3:1 Bb2:1 G2:1 E2:1",
+              "gain": 0.55,
+              "vel": 0.6
+            },
+            {
+              "type": "pattern",
+              "kind": "brush",
+              "steps": "x---x---x---x---",
+              "bars": 8,
+              "gain": 0.18,
+              "swing": 0.3,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.2
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "piano",
+              "step": 1,
+              "steps": "A4:1 C5:1 D5:1.5 C5:.5 | D5:.667 F#5:.333 A5:1 F#5:1 D5:1 | G5:1 F5:1 D5:1 Bb4:1 | C5:.667 E5:.333 G5:1 E5:2 | A4:1 C5:1 F#5:1 D5:1 | G4:1 Bb4:1 E5:1 C5:1 | A5:1 F5:1 C5:2 | -:1 G4:.667 A4:.333 Bb4:.667 B4:.333 C5:1",
+              "gain": 0.3,
+              "vel": 0.5,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.25
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 64,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "muted_guitar",
+              "step": 1,
+              "steps": "[G3,C#4,E4]:1 [G3,C#4,E4]:1 [G3,C#4,E4]:1 [G3,C#4,E4]:1 | [G3,C#4,E4]:1 [G3,C#4,E4]:1 [G3,C#4,E4]:1 [G3,C#4,E4]:1 | [F#3,A3,C4]:1 [F#3,A3,C4]:1 [F#3,A3,C4]:1 [F#3,A3,C4]:1 | [F#3,A3,C4]:1 [F#3,A3,C4]:1 [F#3,A3,C4]:1 [F#3,A3,C4]:1 | [F3,B3,D4]:1 [F3,B3,D4]:1 [F3,B3,D4]:1 [F3,B3,D4]:1 | [F3,B3,D4]:1 [F3,B3,D4]:1 [F3,B3,D4]:1 [F3,B3,D4]:1 | [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 | [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1",
+              "gain": 0.34,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.35
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "A2:1 C#3:1 E3:1 C#3:1 | A2:1 G2:1 E2:1 C#2:1 | D2:1 F#2:1 A2:1 F#2:1 | D2:1 E2:1 F#2:1 A2:1 | G2:1 B2:1 D3:1 B2:1 | G2:1 F2:1 D2:1 B1:1 | C2:1 E2:1 G2:1 E2:1 | C2:1 D2:1 E2:1 G2:1",
+              "gain": 0.55,
+              "vel": 0.6
+            },
+            {
+              "type": "pattern",
+              "kind": "brush",
+              "steps": "x---x---x---x---",
+              "bars": 8,
+              "gain": 0.18,
+              "swing": 0.3,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.2
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "vibraphone",
+              "step": 1,
+              "steps": "E5:1.5 C#5:.5 A4:2 | -:1 G4:.667 A4:.333 C#5:.667 E5:.333 G5:1 | F#5:1.5 D5:.5 A4:2 | -:1 F#4:.667 A4:.333 C5:.667 D5:.333 F#5:1 | D5:1.5 B4:.5 G4:2 | -:1 F4:.667 G4:.333 B4:.667 D5:.333 F5:1 | E5:1.5 C5:.5 G4:2 | Bb4:1 G4:1 E4:1 -:1",
+              "gain": 0.3,
+              "vel": 0.5,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A3",
+          "at": 96,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "muted_guitar",
+              "step": 1,
+              "steps": "[A3,C4,D4]:1 [A3,C4,D4]:1 [A3,C4,D4]:1 [A3,C4,D4]:1 | [F#3,A3,C4]:1 [F#3,A3,C4]:1 [F#3,A3,C4]:1 [F#3,A3,C4]:1 | [F3,Bb3,D4]:1 [F3,Bb3,D4]:1 [F3,Bb3,D4]:1 [F3,Bb3,D4]:1 | [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 | [G3,C4,E4]:1 [G3,C4,E4]:1 [F#3,A3,C4]:1 [F#3,A3,C4]:1 | [F3,Bb3,D4]:1 [F3,Bb3,D4]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 | [A3,C4,F4]:1 [A3,C4,F4]:1 [A3,C4,F4]:1 [A3,C4,F4]:1 | [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1 [E3,G3,Bb3]:1",
+              "gain": 0.34,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.35
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "F2:1 G2:1 A2:1 C3:1 | D3:1 C3:1 A2:1 F#2:1 | G2:1 A2:1 Bb2:1 B2:1 | C3:1 Bb2:1 G2:1 E2:1 | A2:1 C3:1 D3:1 F#2:1 | G2:1 Bb2:1 C3:1 E2:1 | F2:1 A2:1 C3:1 A2:1 | C3:1 Bb2:1 G2:1 E2:1",
+              "gain": 0.55,
+              "vel": 0.6
+            },
+            {
+              "type": "pattern",
+              "kind": "brush",
+              "steps": "x---x---x---x---",
+              "bars": 8,
+              "gain": 0.18,
+              "swing": 0.3,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.2
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "chip",
+              "step": 1,
+              "steps": "A4:1 C5:1 D5:1.5 C5:.5 | D5:.667 F#5:.333 A5:1 F#5:1 D5:1 | G5:1 F5:1 D5:1 Bb4:1 | C5:.667 E5:.333 G5:1 E5:2 | A4:1 C5:1 F#5:1 D5:1 | G4:1 Bb4:1 E5:1 C5:1 | A5:1 F5:1 C5:2 | -:1 G4:.667 A4:.333 Bb4:.667 B4:.333 C5:1",
+              "gain": 0.2,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ]
+    },
+    {
+      "out": "music/lobby_waltz.wav",
+      "genny": "blal1",
+      "bpm": 150,
+      "beats": 96,
+      "loop": "fold",
+      "normalize": -11.3,
+      "_arrangement": "96 beats of 3/4 in A minor, a musette: A the tune on mandolin over guitar and bass; A2 on accordion; B in C major on accordion; A3 accordion and mandolin together.",
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "guitar",
+              "step": 1,
+              "steps": "-:1 [A3,C4,E4]:1 [A3,C4,E4]:1 | -:1 [G#3,B3,D4]:1 [G#3,B3,D4]:1 | -:1 [A3,C4,E4]:1 [A3,C4,E4]:1 | -:1 [G3,C#4,E4]:1 [G3,C#4,E4]:1 | -:1 [A3,D4,F4]:1 [A3,D4,F4]:1 | -:1 [A3,C4,E4]:1 [A3,C4,E4]:1 | -:1 [G#3,B3,D4]:1 [G#3,B3,D4]:1 | -:1 [A3,C4,E4]:1 [A3,C4,E4]:1",
+              "gain": 0.34,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.35
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "A2:1 -:2 | E2:1 -:2 | A2:1 -:2 | A2:1 -:2 | D2:1 -:2 | A2:1 -:2 | E2:1 -:2 | A2:1 -:2",
+              "gain": 0.55,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "mandolin",
+              "step": 1,
+              "steps": "A4:1 C5:1 E5:1 | D5:1.5 C5:.5 B4:1 | C5:1 E5:1 A5:1 | G5:2 E5:1 | F5:1 E5:1 D5:1 | C5:1 E5:1 A4:1 | B4:1 D5:1 G#4:1 | A4:3",
+              "gain": 0.3,
+              "vel": 0.5,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 24,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "guitar",
+              "step": 1,
+              "steps": "-:1 [A3,C4,E4]:1 [A3,C4,E4]:1 | -:1 [G#3,B3,D4]:1 [G#3,B3,D4]:1 | -:1 [A3,C4,E4]:1 [A3,C4,E4]:1 | -:1 [G3,C#4,E4]:1 [G3,C#4,E4]:1 | -:1 [A3,D4,F4]:1 [A3,D4,F4]:1 | -:1 [A3,C4,E4]:1 [A3,C4,E4]:1 | -:1 [G#3,B3,D4]:1 [G#3,B3,D4]:1 | -:1 [A3,C4,E4]:1 [A3,C4,E4]:1",
+              "gain": 0.32,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.35
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "A2:1 -:2 | E2:1 -:2 | A2:1 -:2 | A2:1 -:2 | D2:1 -:2 | A2:1 -:2 | E2:1 -:2 | A2:1 -:2",
+              "gain": 0.55,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "accordion",
+              "step": 1,
+              "steps": "A4:1 C5:1 E5:1 | D5:1.5 C5:.5 B4:1 | C5:1 E5:1 A5:1 | G5:2 E5:1 | F5:1 E5:1 D5:1 | C5:1 E5:1 A4:1 | B4:1 D5:1 G#4:1 | A4:3",
+              "gain": 0.22,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 48,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "guitar",
+              "step": 1,
+              "steps": "-:1 [G3,C4,E4]:1 [G3,C4,E4]:1 | -:1 [B3,D4,F4]:1 [B3,D4,F4]:1 | -:1 [B3,D4,F4]:1 [B3,D4,F4]:1 | -:1 [G3,C4,E4]:1 [G3,C4,E4]:1 | -:1 [A3,C4,F4]:1 [A3,C4,F4]:1 | -:1 [G3,C4,E4]:1 [G3,C4,E4]:1 | -:1 [B3,D4,F4]:1 [B3,D4,F4]:1 | -:1 [G#3,B3,D4]:1 [G#3,B3,D4]:1",
+              "gain": 0.32,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.35
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "C3:1 -:2 | G2:1 -:2 | G2:1 -:2 | C3:1 -:2 | F2:1 -:2 | C3:1 -:2 | G2:1 -:2 | E2:1 -:2",
+              "gain": 0.55,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "accordion",
+              "step": 1,
+              "steps": "G4:1 C5:1 E5:1 | F5:1.5 E5:.5 D5:1 | B4:1 D5:1 G5:1 | E5:3 | A4:1 C5:1 F5:1 | E5:1.5 D5:.5 C5:1 | D5:1 F5:1 B4:1 | G#4:2 B4:1",
+              "gain": 0.22,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A3",
+          "at": 72,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "guitar",
+              "step": 1,
+              "steps": "-:1 [A3,C4,E4]:1 [A3,C4,E4]:1 | -:1 [G#3,B3,D4]:1 [G#3,B3,D4]:1 | -:1 [A3,C4,E4]:1 [A3,C4,E4]:1 | -:1 [G3,C#4,E4]:1 [G3,C#4,E4]:1 | -:1 [A3,D4,F4]:1 [A3,D4,F4]:1 | -:1 [A3,C4,E4]:1 [A3,C4,E4]:1 | -:1 [G#3,B3,D4]:1 [G#3,B3,D4]:1 | -:1 [A3,C4,E4]:1 [A3,C4,E4]:1",
+              "gain": 0.32,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.35
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "A2:1 -:2 | E2:1 -:2 | A2:1 -:2 | A2:1 -:2 | D2:1 -:2 | A2:1 -:2 | E2:1 -:2 | A2:1 -:2",
+              "gain": 0.55,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "accordion",
+              "step": 1,
+              "steps": "A4:1 C5:1 E5:1 | D5:1.5 C5:.5 B4:1 | C5:1 E5:1 A5:1 | G5:2 E5:1 | F5:1 E5:1 D5:1 | C5:1 E5:1 A4:1 | B4:1 D5:1 G#4:1 | A4:3",
+              "gain": 0.2,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "mandolin",
+              "step": 1,
+              "steps": "A4:1 C5:1 E5:1 | D5:1.5 C5:.5 B4:1 | C5:1 E5:1 A5:1 | G5:2 E5:1 | F5:1 E5:1 D5:1 | C5:1 E5:1 A4:1 | B4:1 D5:1 G#4:1 | A4:3",
+              "gain": 0.2,
+              "vel": 0.45,
+              "transpose": 12,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ]
+    },
+    {
+      "out": "music/challenges.wav",
+      "bpm": 108,
+      "beats": 64,
+      "loop": "fold",
+      "normalize": -12,
+      "_arrangement": "64 beats: A, bass, clav and drums in E dorian; A2 with a lead tune and brass stabs; B over C major 7, D, E minor and B7; a breakdown without kick and clap and a snare roll back in.",
+      "layers": [
+        {
+          "type": "group",
+          "_section": "A",
+          "at": 0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "finger_bass",
+              "step": 1,
+              "steps": "E2:.5 -:.25 E2:.25 -:.5 G2:.5 A2:.5 -:.5 B2:.25 -:.25 D3:.5 | A1:.5 -:.25 A1:.25 -:.5 C#2:.5 E2:.5 -:.5 G2:.25 -:.25 A2:.5 | E2:.5 -:.25 E2:.25 -:.5 G2:.5 A2:.5 -:.5 B2:.25 -:.25 D3:.5 | A1:.5 -:.25 A1:.25 -:.5 C#2:.5 E2:.5 -:.5 G2:.25 -:.25 A2:.5",
+              "gain": 0.8
+            },
+            {
+              "type": "seq",
+              "inst": "clav",
+              "step": 1,
+              "steps": "-:.5 [G3,B3,D4]:.25 -:.75 [G3,B3,D4]:.25 -:.25 [G3,B3,D4]:.5 -:1.5 | -:.5 [G3,C#4,E4]:.25 -:.75 [G3,C#4,E4]:.25 -:.25 [G3,C#4,E4]:.5 -:1.5 | -:.5 [G3,B3,D4]:.25 -:.75 [G3,B3,D4]:.25 -:.25 [G3,B3,D4]:.5 -:1.5 | -:.5 [G3,C#4,E4]:.25 -:.75 [G3,C#4,E4]:.25 -:.25 [G3,C#4,E4]:.5 -:1.5",
+              "gain": 0.35
+            },
+            {
+              "type": "pattern",
+              "kind": "kick",
+              "steps": "x-----x---x-----",
+              "bars": 4,
+              "gain": 0.75
+            },
+            {
+              "type": "pattern",
+              "kind": "clap",
+              "steps": "----x-------x---",
+              "bars": 4,
+              "gain": 0.45
+            },
+            {
+              "type": "pattern",
+              "kind": "hihat",
+              "steps": "x-x-x-x-x-x-x-x-",
+              "bars": 4,
+              "gain": 0.18
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "A2",
+          "at": 16,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "finger_bass",
+              "step": 1,
+              "steps": "E2:.5 -:.25 E2:.25 -:.5 G2:.5 A2:.5 -:.5 B2:.25 -:.25 D3:.5 | A1:.5 -:.25 A1:.25 -:.5 C#2:.5 E2:.5 -:.5 G2:.25 -:.25 A2:.5 | E2:.5 -:.25 E2:.25 -:.5 G2:.5 A2:.5 -:.5 B2:.25 -:.25 D3:.5 | A1:.5 -:.25 A1:.25 -:.5 C#2:.5 E2:.5 -:.5 G2:.25 -:.25 A2:.5",
+              "gain": 0.8
+            },
+            {
+              "type": "seq",
+              "inst": "clav",
+              "step": 1,
+              "steps": "-:.5 [G3,B3,D4]:.25 -:.75 [G3,B3,D4]:.25 -:.25 [G3,B3,D4]:.5 -:1.5 | -:.5 [G3,C#4,E4]:.25 -:.75 [G3,C#4,E4]:.25 -:.25 [G3,C#4,E4]:.5 -:1.5 | -:.5 [G3,B3,D4]:.25 -:.75 [G3,B3,D4]:.25 -:.25 [G3,B3,D4]:.5 -:1.5 | -:.5 [G3,C#4,E4]:.25 -:.75 [G3,C#4,E4]:.25 -:.25 [G3,C#4,E4]:.5 -:1.5",
+              "gain": 0.35
+            },
+            {
+              "type": "pattern",
+              "kind": "kick",
+              "steps": "x-----x---x-----",
+              "bars": 4,
+              "gain": 0.75
+            },
+            {
+              "type": "pattern",
+              "kind": "clap",
+              "steps": "----x-------x---",
+              "bars": 4,
+              "gain": 0.45
+            },
+            {
+              "type": "pattern",
+              "kind": "hihat",
+              "steps": "x-x-x-x-x-x-x-x-",
+              "bars": 4,
+              "gain": 0.18
+            },
+            {
+              "type": "seq",
+              "inst": "soft_lead",
+              "step": 1,
+              "steps": "B4:.5 D5:.5 E5:1 D5:.5 B4:.5 G4:1 | A4:.5 C#5:.5 E5:1 G5:1 E5:1 | B4:.5 D5:.5 E5:1 G5:.5 F#5:.5 E5:1 | E5:.5 C#5:.5 A4:2 -:1",
+              "gain": 0.4,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "brass",
+              "step": 1,
+              "steps": "-:3.5 [E4,G4,B4]:.5 | -:3.5 [E4,G4,C#5]:.5 | -:3.5 [E4,G4,B4]:.5 | -:3.5 [E4,G4,C#5]:.5",
+              "gain": 0.3,
+              "vel": 0.6
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "B",
+          "at": 32,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "finger_bass",
+              "step": 1,
+              "steps": "C2:1 C2:.5 G2:.5 C3:1 B2:1 | D2:1 D2:.5 A2:.5 D3:1 C3:1 | E2:1 E2:.5 B2:.5 E3:1 D3:1 | B1:1 B1:.5 F#2:.5 B2:1 A2:1",
+              "gain": 0.8
+            },
+            {
+              "type": "seq",
+              "inst": "clav",
+              "step": 1,
+              "steps": "-:.5 [E3,G3,B3]:.25 -:.75 [E3,G3,B3]:.25 -:.25 [E3,G3,B3]:.5 -:1.5 | -:.5 [F#3,A3,D4]:.25 -:.75 [F#3,A3,D4]:.25 -:.25 [F#3,A3,D4]:.5 -:1.5 | -:.5 [G3,B3,D4]:.25 -:.75 [G3,B3,D4]:.25 -:.25 [G3,B3,D4]:.5 -:1.5 | -:.5 [F#3,A3,D#4]:.25 -:.75 [F#3,A3,D#4]:.25 -:.25 [F#3,A3,D#4]:.5 -:1.5",
+              "gain": 0.35
+            },
+            {
+              "type": "seq",
+              "inst": "brass",
+              "step": 1,
+              "steps": "[E4,G4,B4]:4 | [F#4,A4,D5]:4 | [G4,B4,D5]:4 | [F#4,A4,D#5]:4",
+              "gain": 0.25,
+              "vel": 0.5
+            },
+            {
+              "type": "seq",
+              "inst": "soft_lead",
+              "step": 1,
+              "steps": "G4:1.5 E4:.5 B4:2 | A4:1.5 F#4:.5 D5:2 | B4:1 D5:1 E5:1 G5:1 | F#5:2 D#5:2",
+              "gain": 0.4,
+              "vel": 0.6
+            },
+            {
+              "type": "pattern",
+              "kind": "kick",
+              "steps": "x-----x---x-----",
+              "bars": 4,
+              "gain": 0.75
+            },
+            {
+              "type": "pattern",
+              "kind": "clap",
+              "steps": "----x-------x---",
+              "bars": 4,
+              "gain": 0.45
+            },
+            {
+              "type": "pattern",
+              "kind": "hihat",
+              "steps": "x-x-x-x-x-x-x-x-",
+              "bars": 4,
+              "gain": 0.18
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "breakdown",
+          "at": 48,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "finger_bass",
+              "step": 1,
+              "steps": "E2:.5 -:.25 E2:.25 -:.5 G2:.5 A2:.5 -:.5 B2:.25 -:.25 D3:.5 | A1:.5 -:.25 A1:.25 -:.5 C#2:.5 E2:.5 -:.5 G2:.25 -:.25 A2:.5 | E2:.5 -:.25 E2:.25 -:.5 G2:.5 A2:.5 -:.5 B2:.25 -:.25 D3:.5 | A1:.5 -:.25 A1:.25 -:.5 C#2:.5 E2:.5 -:.5 G2:.25 -:.25 A2:.5",
+              "gain": 0.8
+            },
+            {
+              "type": "seq",
+              "inst": "clav",
+              "step": 1,
+              "steps": "-:.5 [G3,B3,D4]:.25 -:.75 [G3,B3,D4]:.25 -:.25 [G3,B3,D4]:.5 -:1.5 | -:.5 [G3,C#4,E4]:.25 -:.75 [G3,C#4,E4]:.25 -:.25 [G3,C#4,E4]:.5 -:1.5 | -:.5 [G3,B3,D4]:.25 -:.75 [G3,B3,D4]:.25 -:.25 [G3,B3,D4]:.5 -:1.5 | -:.5 [G3,C#4,E4]:.25 -:.75 [G3,C#4,E4]:.25 -:.25 [G3,C#4,E4]:.5 -:1.5",
+              "gain": 0.35
+            },
+            {
+              "type": "pattern",
+              "kind": "hihat",
+              "steps": "x-x-x-x-x-x-x-x-",
+              "bars": 4,
+              "gain": 0.18
+            },
+            {
+              "type": "pattern",
+              "kind": "snare",
+              "steps": "x-x-x-x-xxxxxxxx",
+              "bars": 1,
+              "gain": 0.25,
+              "at": 12
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.2,
+          "size": 0.55
+        },
+        {
+          "type": "compressor",
+          "threshold": -16,
+          "ratio": 2.5
+        }
+      ]
+    },
+    {
+      "out": "music/pause.wav",
+      "_about": "Pause music: felt piano and a soft pad, for any game without its own.",
+      "bpm": 64,
+      "beats": 32,
+      "loop": "fold",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[C4,E4,G4]:4 | [A3,C4,E4]:4 | [F3,A3,C4]:4 | [G3,B3,D4]:4 | [C4,E4,G4]:4 | [A3,C4,E4]:4 | [F3,A3,C4]:4 | [G3,B3,D4]:4",
+          "gain": 0.3,
+          "vel": 0.55,
+          "at": 0,
+          "params": {
+            "attack": 1.2,
+            "release": 2.0,
+            "cutoff": 800
+          }
+        },
+        {
+          "type": "seq",
+          "inst": "felt_piano",
+          "step": 1,
+          "steps": "C4:1 E4:1 G4:1 E4:1 | A3:1 C4:1 E4:1 C4:1 | F3:1 A3:1 C4:1 A3:1 | G3:1 B3:1 D4:1 B3:1 | C4:1 E4:1 G4:1 E4:1 | A3:1 C4:1 E4:1 C4:1 | F3:1 A3:1 C4:1 A3:1 | G3:1 B3:1 D4:1 B3:1",
+          "gain": 0.35,
+          "vel": 0.4,
+          "at": 0
+        },
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "C3:4 | A2:4 | F2:4 | G2:4 | C3:4 | A2:4 | F2:4 | G2:4",
+          "gain": 0.4,
+          "vel": 0.4,
+          "at": 0
+        },
+        {
+          "type": "seq",
+          "inst": "felt_piano",
+          "step": 1,
+          "steps": "-:4 | -:4 | -:4 | -:4 | E5:2 D5:1 C5:1 | C5:3 -:1 | A4:1.5 C5:.5 F5:2 | E5:2 D5:2",
+          "gain": 0.35,
+          "vel": 0.4,
+          "at": 0
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.25,
+          "size": 0.7
+        },
+        {
+          "type": "lowpass",
+          "cutoff": 5000
+        }
+      ],
+      "normalize": -15
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "_about": "Signal Box prototype sounds. Pending: genny is not installed in the build container, so this spec waits here until someone renders it with python tools/render_sounds.py signal-box after moving it up to sound-specs/. Each call has its own earcon, and the five are kept apart by kind as well as by place: the points are a heavy iron clank, mono so the game pans them, with points right a tone higher than points left; the signal arm is a ratchet, rising for up and falling for down; ring back is a two-stroke block bell. The tick is a dry, quiet woodblock under the speech. A passing train is a stereo rush with a rail clatter, left to right. Derailing is a long brake screech ending in a heavy crash. The streak chime is a bright rising celesta run. The box ambience is night wind with a low distant rail hum, quiet under speech. The title music is a slow, sparse loop of upright bass and vibraphone.",
+  "normalize": -6,
+  "sounds": [
+    {
+      "out": "call/points-left.wav",
+      "layers": [
+        {"type": "sfx", "kind": "solenoid", "params": {"size": 1.0, "metal": 0.8, "thump": 0.9, "bounce": 0.2, "seed": 3}},
+        {"type": "drum", "kind": "kick", "params": {"tune": 55, "decay": 0.2, "punch": 0.5}, "gain": 0.6},
+        {"type": "sfx", "kind": "steel_ball", "params": {"surface": "metal", "force": 0.7, "seed": 1}, "at": 0.06, "gain": 0.5}
+      ],
+      "fx": [{"type": "lowpass", "cutoff": 2200}, {"type": "reverb", "mix": 0.15, "size": 0.4}, {"type": "mono"}],
+      "normalize": -6
+    },
+    {
+      "out": "call/points-right.wav",
+      "layers": [
+        {"type": "sfx", "kind": "solenoid", "params": {"size": 0.85, "metal": 0.8, "thump": 0.9, "bounce": 0.2, "seed": 4}},
+        {"type": "drum", "kind": "kick", "params": {"tune": 70, "decay": 0.2, "punch": 0.5}, "gain": 0.6},
+        {"type": "sfx", "kind": "steel_ball", "params": {"surface": "metal", "force": 0.7, "seed": 2}, "at": 0.06, "gain": 0.5}
+      ],
+      "fx": [{"type": "lowpass", "cutoff": 2600}, {"type": "reverb", "mix": 0.15, "size": 0.4}, {"type": "mono"}],
+      "normalize": -6
+    },
+    {
+      "out": "call/signal-up.wav",
+      "layers": [
+        {"type": "sfx", "kind": "click", "params": {"tone": 1400}, "repeat": 6, "every": 0.05},
+        {"type": "drum", "kind": "guiro", "params": {"dur": 0.3, "ridges": 6}, "gain": 0.5},
+        {"type": "sfx", "kind": "sweep_up", "params": {"start": 300, "end": 900, "dur": 0.32, "wave": "triangle"}, "gain": 0.35},
+        {"type": "sfx", "kind": "solenoid", "params": {"size": 0.3, "metal": 0.6, "thump": 0.3, "bounce": 0.0}, "at": 0.32, "gain": 0.6}
+      ],
+      "fx": [{"type": "lowpass", "cutoff": 4000}, {"type": "mono"}],
+      "normalize": -7
+    },
+    {
+      "out": "call/signal-down.wav",
+      "layers": [
+        {"type": "sfx", "kind": "click", "params": {"tone": 1100}, "repeat": 6, "every": 0.05},
+        {"type": "drum", "kind": "guiro", "params": {"dur": 0.3, "ridges": 6}, "gain": 0.5},
+        {"type": "sfx", "kind": "sweep_down", "params": {"start": 900, "end": 300, "dur": 0.32, "wave": "triangle"}, "gain": 0.35},
+        {"type": "sfx", "kind": "solenoid", "params": {"size": 0.4, "metal": 0.5, "thump": 0.5, "bounce": 0.0}, "at": 0.32, "gain": 0.6}
+      ],
+      "fx": [{"type": "lowpass", "cutoff": 4000}, {"type": "mono"}],
+      "normalize": -7
+    },
+    {
+      "out": "call/ring-back.wav",
+      "layers": [
+        {"type": "seq", "inst": "bell", "steps": "A5:0.18 A5:0.6", "vel": 0.8},
+        {"type": "drum", "kind": "triangle", "params": {"tune": 1760, "open": 0.3}, "gain": 0.2}
+      ],
+      "fx": [{"type": "reverb", "mix": 0.2, "size": 0.5}, {"type": "mono"}],
+      "normalize": -7
+    },
+    {
+      "out": "tick.wav",
+      "layers": [
+        {"type": "drum", "kind": "woodblock", "params": {"tune": 1900}},
+        {"type": "sfx", "kind": "click", "params": {"tone": 2600}, "gain": 0.3}
+      ],
+      "fx": [{"type": "lowpass", "cutoff": 3500}, {"type": "mono"}],
+      "normalize": -20
+    },
+    {
+      "out": "train-pass.wav",
+      "layers": [
+        {"type": "sfx", "kind": "whoosh", "params": {"dur": 1.0, "low": 150, "high": 2500, "direction": "down"}},
+        {"type": "sfx", "kind": "noise", "params": {"dur": 0.9, "color": "brown", "attack": 0.15}, "gain": 0.6, "fx": [{"type": "lowpass", "cutoff": 500}, {"type": "fade", "out": 0.4}]},
+        {"type": "sfx", "kind": "click", "params": {"tone": 900}, "repeat": 8, "every": 0.09, "at": 0.1, "gain": 0.4}
+      ],
+      "fx": [{"type": "reverb", "mix": 0.15, "size": 0.6}],
+      "normalize": -8
+    },
+    {
+      "out": "brake-screech.wav",
+      "layers": [
+        {"type": "sfx", "kind": "sweep_down", "params": {"start": 3400, "end": 2200, "dur": 1.6, "wave": "saw"}, "gain": 0.5, "fx": [{"type": "bandpass", "center": 2800, "q": 2}, {"type": "vibrato", "rate": 9, "depth": 0.3}]},
+        {"type": "sfx", "kind": "noise", "params": {"dur": 1.6, "color": "white", "attack": 0.05}, "gain": 0.3, "fx": [{"type": "bandpass", "center": 3000, "q": 1.5}]},
+        {"type": "sfx", "kind": "explosion", "params": {"boom": 0.8, "dur": 1.0}, "at": 1.5, "gain": 0.7},
+        {"type": "sfx", "kind": "hit", "params": {"dur": 0.4, "tone": 120, "crunch": 0.8}, "at": 1.52, "gain": 0.8}
+      ],
+      "fx": [{"type": "reverb", "mix": 0.2, "size": 0.7}],
+      "normalize": -6
+    },
+    {
+      "out": "streak-chime.wav",
+      "layers": [
+        {"type": "seq", "inst": "celesta", "steps": "C6:0.08 E6:0.08 G6:0.08 C7:0.4", "vel": 0.6}
+      ],
+      "fx": [{"type": "reverb", "mix": 0.25, "size": 0.5}, {"type": "mono"}],
+      "normalize": -9
+    },
+    {
+      "out": "box-ambience.wav",
+      "duration": 8.0,
+      "loop": 1.0,
+      "layers": [
+        {"type": "sfx", "kind": "wind", "params": {"dur": 8.5}, "gain": 0.6},
+        {"type": "sfx", "kind": "noise", "params": {"dur": 8.5, "color": "brown", "attack": 0.5}, "gain": 0.4, "fx": [{"type": "lowpass", "cutoff": 250}]},
+        {"type": "sfx", "kind": "tone", "params": {"freq": 50, "dur": 8.5, "wave": "sine"}, "gain": 0.08}
+      ],
+      "fx": [{"type": "lowpass", "cutoff": 1800}],
+      "normalize": -24
+    },
+    {
+      "out": "music/title.wav",
+      "bpm": 72,
+      "duration": 13.3,
+      "loop": 0.5,
+      "layers": [
+        {"type": "seq", "inst": "upright_bass", "step": 1, "steps": "D2:2 A1:2 | Bb1:2 F1:2 | G1:2 D2:2 | A1:2 A1:2", "gain": 0.7},
+        {"type": "seq", "inst": "vibraphone", "step": 1, "steps": "-:1 [F3,A3]:3 | -:1 [F3,Bb3]:3 | -:1 [G3,Bb3]:3 | -:1 [E3,G3,C#4]:3", "gain": 0.3},
+        {"type": "pattern", "kind": "brush", "steps": "x---x---x---x---", "bars": 4, "gain": 0.12}
+      ],
+      "fx": [{"type": "reverb", "mix": 0.35, "size": 0.8}],
+      "normalize": -16
+    },
+    {
+      "out": "event/ghost-train.wav",
+      "duration": 1.2,
+      "layers": [
+        {"type": "sfx", "kind": "whoosh", "params": {"dur": 1.0, "low": 150, "high": 2500, "direction": "down"}, "gain": 0.6},
+        {"type": "seq", "inst": "theremin", "steps": "A5:0.25 F5:0.75", "vel": 0.5, "gain": 0.5}
+      ],
+      "fx": [{"type": "reverb", "mix": 0.4, "size": 0.8}, {"type": "fade", "out": 0.4}],
+      "normalize": -8
+    },
+    {
+      "out": "event/moonlight-special.wav",
+      "layers": [
+        {"type": "sfx", "kind": "whoosh", "params": {"dur": 1.0, "low": 150, "high": 2500, "direction": "down"}, "gain": 0.5},
+        {"type": "sfx", "kind": "noise", "params": {"dur": 0.08, "color": "white", "attack": 0.005}, "repeat": 6, "every": 0.16, "gain": 0.35, "fx": [{"type": "highpass", "cutoff": 1500}]},
+        {"type": "seq", "inst": "whistle", "steps": "[A5,C#6]:0.5", "vel": 0.6, "gain": 0.4, "at": 0.15}
+      ],
+      "fx": [{"type": "reverb", "mix": 0.2, "size": 0.6}, {"type": "fade", "out": 0.2}],
+      "normalize": -8
+    },
+    {"out": "menu/move.wav", "_about": "Menu move: a lever click.", "duration": 0.16, "layers": [{"type": "sfx", "kind": "click", "gain": 0.5, "at": 0, "params": {"tone": 1100}}], "fx": [{"type": "lowpass", "cutoff": 2000}, {"type": "mono"}, {"type": "fade", "out": 0.04}], "normalize": -9, "max_loudness": -28},
+    {"out": "menu/select.wav", "_about": "Menu select: a signal-bell ting over the lever.", "duration": 0.42, "layers": [{"type": "sfx", "kind": "click", "gain": 0.5, "at": 0, "params": {"tone": 900}}, {"type": "drum", "kind": "triangle", "gain": 0.45, "at": 0.04, "params": {"open": 0.3, "tune": 1500}}], "fx": [{"type": "lowpass", "cutoff": 5000}, {"type": "mono"}, {"type": "fade", "out": 0.04}], "normalize": -6, "max_loudness": -22},
+    {"out": "menu/back.wav", "_about": "Menu back: a soft iron clank.", "duration": 0.32, "layers": [{"type": "sfx", "kind": "steel_ball", "gain": 0.5, "at": 0, "params": {"surface": "metal", "force": 0.15, "seed": 7}}], "fx": [{"type": "lowpass", "cutoff": 1500}, {"type": "mono"}, {"type": "fade", "out": 0.04}], "normalize": -9, "max_loudness": -26},
+    {"out": "music/pause.wav", "_about": "Pause music: vibraphone and bass, the line quiet.", "bpm": 70, "beats": 32, "loop": "fold", "layers": [{"type": "seq", "inst": "warm_pad", "step": 1, "steps": "[A3,C#4,E4,G#4]:4 | [F#3,A3,C#4,E4]:4 | [D3,F#3,A3,C#4]:4 | [E3,G#3,B3,D4]:4 | [A3,C#4,E4,G#4]:4 | [F#3,A3,C#4,E4]:4 | [D3,F#3,A3,C#4]:4 | [E3,G#3,B3,D4]:4", "gain": 0.2, "vel": 0.55, "at": 0, "params": {"attack": 1.2, "release": 2.0, "cutoff": 800}}, {"type": "seq", "inst": "vibraphone", "step": 1, "steps": "A3:1 C#4:1 E4:1 Ab4:1 | F#3:1 A3:1 C#4:1 E4:1 | D3:1 F#3:1 A3:1 C#4:1 | E3:1 Ab3:1 B3:1 D4:1 | A3:1 C#4:1 E4:1 Ab4:1 | F#3:1 A3:1 C#4:1 E4:1 | D3:1 F#3:1 A3:1 C#4:1 | E3:1 Ab3:1 B3:1 D4:1", "gain": 0.28, "vel": 0.35, "at": 0, "params": {"motor": 3.0}}, {"type": "seq", "inst": "upright_bass", "step": 1, "steps": "A2:4 | F#2:4 | D2:4 | E2:4 | A2:4 | F#2:4 | D2:4 | E2:4", "gain": 0.4, "vel": 0.4, "at": 0}, {"type": "seq", "inst": "felt_piano", "step": 1, "steps": "-:4 | -:4 | -:4 | -:4 | C#5:2 E5:2 | A4:3 -:1 | F#4:1 A4:1 C#5:2 | B4:4", "gain": 0.3, "vel": 0.4, "at": 0}], "fx": [{"type": "reverb", "mix": 0.25, "size": 0.7}, {"type": "lowpass", "cutoff": 5000}], "normalize": -15}
+  ]
+}
