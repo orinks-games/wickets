@@ -1,0 +1,35 @@
+name: Hearken CLI
+description: Installs hearken-cli from Hearken's git source, cached by the Hearken commit it builds from.
+runs:
+  using: composite
+  steps:
+    # Resolve the commit `cargo install --git` would build (the default
+    # branch head), then build exactly that commit. The cache key carries
+    # the commit, OS and arch, so a new Hearken commit always rebuilds.
+    - id: rev
+      shell: bash
+      run: |
+        rev="$(git ls-remote https://github.com/orinks-games/hearken HEAD | cut -f1)"
+        if [ -z "$rev" ]; then
+          echo "::error::Could not resolve Hearken's head commit."
+          exit 1
+        fi
+        echo "rev=$rev" >> "$GITHUB_OUTPUT"
+        echo "root=$RUNNER_TOOL_CACHE/hearken-cli" >> "$GITHUB_OUTPUT"
+    - id: cache
+      uses: actions/cache@v4
+      with:
+        path: ${{ steps.rev.outputs.root }}
+        key: hearken-cli-${{ runner.os }}-${{ runner.arch }}-${{ steps.rev.outputs.rev }}
+    - if: steps.cache.outputs.cache-hit != 'true'
+      shell: bash
+      env:
+        REV: ${{ steps.rev.outputs.rev }}
+        ROOT: ${{ steps.rev.outputs.root }}
+      run: cargo install --locked --git https://github.com/orinks-games/hearken --rev "$REV" --root "$ROOT" hearken-cli
+    - shell: bash
+      env:
+        ROOT: ${{ steps.rev.outputs.root }}
+      run: |
+        echo "$ROOT/bin" >> "$GITHUB_PATH"
+        "$ROOT/bin/hearken" --version || ls "$ROOT/bin"

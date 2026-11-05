@@ -52,13 +52,13 @@ jobs:
       contents: write
     timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       # The private content (story, calendar, private games, their sounds)
       # comes from wickets-secrets through a read-only deploy key. A release
       # always builds full: WICKETS_MODE=full fails the build if the overlay
       # is missing, so a stub build can never ship.
       - name: Check out the private overlay
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: orinks-games/wickets-secrets
           path: secrets
@@ -113,7 +113,7 @@ jobs:
         with:
           token: ${{ secrets.HEARKEN_TOKEN }}
           cache-key: release
-      - run: cargo install --locked --git https://github.com/orinks-games/hearken hearken-cli
+      - uses: ./.github/actions/hearken-cli
       # A beta or alpha build carries its tag's version (see above): only
       # the workspace's own entries in Cargo.lock change with it.
       - name: Stamp a beta or alpha version
@@ -325,7 +325,7 @@ jobs:
           du -h dist/*
       # A hand run that is not a dry run keeps its package as a short-lived
       # run artifact.
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: github.event_name == 'workflow_dispatch' && !inputs.dry_run
         with:
           name: ${{ matrix.name }}
