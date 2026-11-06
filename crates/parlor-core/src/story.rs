@@ -672,6 +672,12 @@ mod tests {
                 None,
             ),
             (
+                "larkfield",
+                Cozy,
+                t(&[Morning], &[Spring, Autumn]),
+                None,
+            ),
+            (
                 "little-rapids",
                 Cozy,
                 t(&[Afternoon], &[Spring, Summer]),

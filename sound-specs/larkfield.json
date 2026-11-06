@@ -1,0 +1,3932 @@
+{
+ "genny": "blal1",
+ "_about": "Larkfield. Written by tools/larkfield_music.py: edit that, not this file.",
+ "sounds": [
+  {
+   "genny": "blal1",
+   "out": "music/title.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "guitar",
+     "steps": "G3:.5 B3:.5 D4:.5 B3:.5 G3:.5 B3:.5 D4:.5 B3:.5 | C3:.5 E3:.5 G3:.5 E3:.5 C3:.5 E3:.5 G3:.5 E3:.5 | E3:.5 G3:.5 B3:.5 G3:.5 E3:.5 G3:.5 B3:.5 G3:.5 | D3:.5 F#3:.5 A3:.5 F#3:.5 D3:.5 F#3:.5 A3:.5 F#3:.5 | G3:.5 B3:.5 D4:.5 B3:.5 G3:.5 B3:.5 D4:.5 B3:.5 | C3:.5 E3:.5 G3:.5 E3:.5 C3:.5 E3:.5 G3:.5 E3:.5 | E3:.5 G3:.5 B3:.5 G3:.5 E3:.5 G3:.5 B3:.5 G3:.5 | D3:.5 F#3:.5 A3:.5 F#3:.5 D3:.5 F#3:.5 A3:.5 F#3:.5 | C3:.5 E3:.5 G3:.5 E3:.5 C3:.5 E3:.5 G3:.5 E3:.5 | G3:.5 B3:.5 D4:.5 B3:.5 G3:.5 B3:.5 D4:.5 B3:.5 | A3:.5 C4:.5 E4:.5 C4:.5 A3:.5 C4:.5 E4:.5 C4:.5 | D3:.5 F#3:.5 A3:.5 F#3:.5 D3:.5 F#3:.5 A3:.5 F#3:.5 | G3:.5 B3:.5 D4:.5 B3:.5 G3:.5 B3:.5 D4:.5 B3:.5 | C3:.5 E3:.5 G3:.5 E3:.5 C3:.5 E3:.5 G3:.5 E3:.5 | E3:.5 G3:.5 B3:.5 G3:.5 E3:.5 G3:.5 B3:.5 G3:.5 | D3:.5 F#3:.5 A3:.5 F#3:.5 D3:.5 F#3:.5 A3:.5 F#3:.5",
+     "gain": 0.4,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    },
+    {
+     "type": "seq",
+     "inst": "cello",
+     "steps": "G2:2 D2:2 | C2:2 G2:2 | E2:2 B1:2 | D2:2 A2:2 | G2:2 D2:2 | C2:2 G2:2 | E2:2 B1:2 | D2:2 A2:2 | C2:2 G2:2 | G2:2 D2:2 | A2:2 E2:2 | D2:2 A2:2 | G2:2 D2:2 | C2:2 G2:2 | E2:2 B1:2 | D2:2 A2:2",
+     "gain": 0.35,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    },
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "-:4 | -:4 | -:4 | -:4 | B4:1.5 A4:.5 G4:2 | E5:1 D5:1 C5:2 | B4:1 G4:1 E4:2 | F#4:2 A4:2 | E5:1.5 D5:.5 C5:2 | D5:1 B4:1 G4:2 | A4:1 C5:1 E5:2 | D5:3 -:1 | B4:1.5 A4:.5 G4:2 | E5:1 D5:1 C5:2 | B4:1 G4:1 E4:2 | F#4:2 A4:2",
+     "gain": 0.3,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1,
+     "params": {
+      "vibrato": 0.6
+     },
+     "fx": [
+      {
+       "type": "pan",
+       "pos": -0.3
+      }
+     ]
+    },
+    {
+     "type": "seq",
+     "inst": "flute",
+     "steps": "-:4 | -:4 | -:4 | -:4 | -:4 | -:4 | -:4 | -:4 | -:4 | G5:2 E5:2 | -:4 | A5:2 F#5:2 | -:4 | G5:2 E5:2 | -:4 | A5:2 F#5:2",
+     "gain": 0.25,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1,
+     "params": {
+      "breath": 0.2
+     },
+     "fx": [
+      {
+       "type": "pan",
+       "pos": 0.35
+      }
+     ]
+    },
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "-:4 | -:4 | -:4 | -:4 | -:1 [G3,B3,D4]:1 -:1 [G3,B3,D4]:1 | -:1 [C3,E3,G3]:1 -:1 [C3,E3,G3]:1 | -:1 [E3,G3,B3]:1 -:1 [E3,G3,B3]:1 | -:1 [D3,F#3,A3]:1 -:1 [D3,F#3,A3]:1 | -:1 [C3,E3,G3]:1 -:1 [C3,E3,G3]:1 | -:1 [G3,B3,D4]:1 -:1 [G3,B3,D4]:1 | -:1 [A3,C4,E4]:1 -:1 [A3,C4,E4]:1 | -:1 [D3,F#3,A3]:1 -:1 [D3,F#3,A3]:1 | -:1 [G3,B3,D4]:1 -:1 [G3,B3,D4]:1 | -:1 [C3,E3,G3]:1 -:1 [C3,E3,G3]:1 | -:1 [E3,G3,B3]:1 -:1 [E3,G3,B3]:1 | -:1 [D3,F#3,A3]:1 -:1 [D3,F#3,A3]:1",
+     "gain": 0.18,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1,
+     "fx": [
+      {
+       "type": "pan",
+       "pos": 0.2
+      }
+     ]
+    },
+    {
+     "type": "sfx",
+     "kind": "dawn_chorus",
+     "at": 0,
+     "gain": 0.08,
+     "params": {
+      "birds": 4,
+      "dur": 45.0,
+      "seed": 3
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    },
+    {
+     "type": "lowpass",
+     "cutoff": 7000
+    }
+   ],
+   "normalize": -16,
+   "bpm": 84,
+   "beats": 64,
+   "loop": "fold"
+  },
+  {
+   "genny": "blal1",
+   "out": "music/supper.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "G3:.5 B3:.5 D4:.5 G4:.5 D4:.5 B3:.5 D4:.5 B3:.5 | C3:.5 E3:.5 G3:.5 C4:.5 G3:.5 E3:.5 G3:.5 E3:.5 | E3:.5 G3:.5 B3:.5 E4:.5 B3:.5 G3:.5 B3:.5 G3:.5 | D3:.5 F#3:.5 A3:.5 D4:.5 A3:.5 F#3:.5 A3:.5 F#3:.5 | G3:.5 B3:.5 D4:.5 G4:.5 D4:.5 B3:.5 D4:.5 B3:.5 | C3:.5 E3:.5 G3:.5 C4:.5 G3:.5 E3:.5 G3:.5 E3:.5 | E3:.5 G3:.5 B3:.5 E4:.5 B3:.5 G3:.5 B3:.5 G3:.5 | D3:.5 F#3:.5 A3:.5 D4:.5 A3:.5 F#3:.5 A3:.5 F#3:.5",
+     "gain": 0.35,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1,
+     "fx": [
+      {
+       "type": "pan",
+       "pos": -0.3
+      }
+     ]
+    },
+    {
+     "type": "seq",
+     "inst": "clarinet",
+     "steps": "D4:2 B3:2 | E4:2 G4:2 | G4:1 F#4:1 E4:2 | F#4:3 -:1 | B4:2 G4:2 | C5:2 G4:2 | B4:1 A4:1 G4:2 | A4:2 F#4:2",
+     "gain": 0.3,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1,
+     "fx": [
+      {
+       "type": "pan",
+       "pos": 0.3
+      }
+     ]
+    },
+    {
+     "type": "seq",
+     "inst": "cello",
+     "steps": "G2:4 | C2:4 | E2:4 | D2:4 | G2:4 | C2:4 | E2:4 | D2:4",
+     "gain": 0.3,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1
+    },
+    {
+     "type": "sfx",
+     "kind": "fire",
+     "at": 0,
+     "gain": 0.08,
+     "params": {
+      "dur": 26.0,
+      "size": 0.3,
+      "crackle": 6.0,
+      "seed": 4
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -17,
+   "bpm": 76,
+   "beats": 32,
+   "loop": "fold"
+  },
+  {
+   "genny": "blal1",
+   "out": "music/pause.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "[G3,B3,D4]:4 | [C3,E3,G3]:4 | [E3,G3,B3]:4 | [D3,F#3,A3]:4 | [G3,B3,D4]:4 | [C3,E3,G3]:4 | [E3,G3,B3]:4 | [D3,F#3,A3]:4",
+     "gain": 0.15,
+     "at": 0,
+     "vel": 0.35,
+     "step": 1,
+     "fx": [
+      {
+       "type": "width",
+       "amount": 0.4
+      }
+     ]
+    },
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "D5:1 B4:1 G4:2 | E5:1 C5:1 G4:2 | B4:1 G4:1 E4:2 | A4:1 F#4:1 D4:2 | D5:1 G5:1 B4:2 | C5:1 E5:1 G5:2 | B4:1 E5:1 G5:2 | F#5:2 A4:2",
+     "gain": 0.35,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1,
+     "fx": [
+      {
+       "type": "pan",
+       "pos": -0.25
+      }
+     ]
+    },
+    {
+     "type": "seq",
+     "inst": "cello",
+     "steps": "G2:4 | C2:4 | E2:4 | D2:4 | G2:4 | C2:4 | E2:4 | D2:4",
+     "gain": 0.3,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -18,
+   "bpm": 80,
+   "beats": 32,
+   "loop": "fold"
+  },
+  {
+   "genny": "blal1",
+   "out": "ambience/day.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "dawn_chorus",
+     "at": 0,
+     "gain": 0.5,
+     "params": {
+      "birds": 5,
+      "dur": 12.0,
+      "seed": 2
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "wind",
+     "at": 0,
+     "gain": 0.2,
+     "params": {
+      "dur": 12.0,
+      "scale": 0.4,
+      "seed": 3
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "width",
+     "amount": 0.5
+    }
+   ],
+   "normalize": -26,
+   "duration": 12.0,
+   "loop": 0.8
+  },
+  {
+   "genny": "blal1",
+   "out": "ambience/rain.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "rain",
+     "at": 0,
+     "gain": 0.7,
+     "params": {
+      "dur": 12.0,
+      "intensity": 0.6,
+      "seed": 4
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "wind",
+     "at": 0,
+     "gain": 0.2,
+     "params": {
+      "dur": 12.0,
+      "scale": 0.6,
+      "seed": 5
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "width",
+     "amount": 0.5
+    }
+   ],
+   "normalize": -25,
+   "duration": 12.0,
+   "loop": 0.8
+  },
+  {
+   "genny": "blal1",
+   "out": "ambience/winter.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "wind",
+     "at": 0,
+     "gain": 0.5,
+     "params": {
+      "dur": 12.0,
+      "scale": 1.2,
+      "seed": 6
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "gust",
+     "at": 3.0,
+     "gain": 0.2,
+     "params": {
+      "dur": 6.0,
+      "through": "gap",
+      "strength": 0.3,
+      "seed": 7
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "width",
+     "amount": 0.5
+    }
+   ],
+   "normalize": -27,
+   "duration": 12.0,
+   "loop": 0.8
+  },
+  {
+   "genny": "blal1",
+   "out": "loop/river.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "stream",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "dur": 8.0,
+      "seed": 8
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "babble",
+     "at": 0,
+     "gain": 0.3,
+     "params": {
+      "dur": 8.0,
+      "flow": 0.5,
+      "size": 1.2,
+      "turbulence": 0.3,
+      "seed": 9
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -20,
+   "duration": 8.0,
+   "loop": 0.6
+  },
+  {
+   "genny": "blal1",
+   "out": "move/lane.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "footsteps",
+     "at": 0,
+     "gain": 0.8,
+     "params": {
+      "ground": "gravel",
+      "steps": 1,
+      "weight": 0.8,
+      "seed": 1
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18
+  },
+  {
+   "genny": "blal1",
+   "out": "move/inside.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "footsteps",
+     "at": 0,
+     "gain": 0.8,
+     "params": {
+      "ground": "grass",
+      "steps": 1,
+      "weight": 0.8,
+      "seed": 2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18
+  },
+  {
+   "genny": "blal1",
+   "out": "move/field.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "footsteps",
+     "at": 0,
+     "gain": 0.8,
+     "params": {
+      "ground": "mud",
+      "steps": 1,
+      "weight": 0.8,
+      "seed": 3
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18
+  },
+  {
+   "genny": "blal1",
+   "out": "move/edge.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "thud",
+     "at": 0,
+     "gain": 0.7,
+     "params": {
+      "body": "box",
+      "size": 0.4,
+      "force": 0.4,
+      "seed": 21
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "creak",
+     "at": 0.03,
+     "gain": 0.2,
+     "params": {
+      "material": "wood",
+      "force": "ramp",
+      "dur": 0.2,
+      "size": 0.5,
+      "seed": 22
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19
+  },
+  {
+   "genny": "blal1",
+   "out": "work/water.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "pour",
+     "at": 0,
+     "gain": 0.8,
+     "params": {
+      "dur": 0.9,
+      "flow": 0.7,
+      "material": "metal",
+      "seed": 1
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -17
+  },
+  {
+   "genny": "blal1",
+   "out": "work/dig.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "thud",
+     "at": 0,
+     "gain": 0.7,
+     "params": {
+      "body": "box",
+      "size": 0.5,
+      "force": 0.6,
+      "seed": 2
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "shake",
+     "at": 0.05,
+     "gain": 0.6,
+     "params": {
+      "preset": "gravel",
+      "energy": 0.4,
+      "dur": 0.4,
+      "seed": 3
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -16
+  },
+  {
+   "genny": "blal1",
+   "out": "work/sow.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "shake",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "preset": "sandpaper",
+      "energy": 0.3,
+      "dur": 0.5,
+      "seed": 4
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18
+  },
+  {
+   "genny": "blal1",
+   "out": "work/weed.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "cloth",
+     "at": 0,
+     "gain": 0.7,
+     "params": {
+      "kind": "rustle",
+      "dur": 0.5,
+      "weight": 0.3,
+      "seed": 5
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "crumple",
+     "at": 0,
+     "gain": 0.4,
+     "params": {
+      "kind": "paper",
+      "energy": 0.2,
+      "density": 0.5,
+      "size": 0.3,
+      "dur": 0.3,
+      "seed": 6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -17
+  },
+  {
+   "genny": "blal1",
+   "out": "work/harvest.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "cloth",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "kind": "rustle",
+      "dur": 0.4,
+      "weight": 0.5,
+      "seed": 7
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "thud",
+     "at": 0.3,
+     "gain": 0.6,
+     "params": {
+      "body": "box",
+      "size": 0.3,
+      "force": 0.4,
+      "seed": 8
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "G5:.25 B5:.5",
+     "gain": 0.25,
+     "at": 0.35,
+     "vel": 0.4,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -16,
+   "bpm": 84
+  },
+  {
+   "genny": "blal1",
+   "out": "work/cook.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "sizzle",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "dur": 1.0,
+      "intensity": 0.5,
+      "seed": 9
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "clink",
+     "at": 0,
+     "gain": 0.4,
+     "params": {
+      "object": "bottle",
+      "size": 0.8,
+      "force": 0.4,
+      "seed": 10
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18
+  },
+  {
+   "genny": "blal1",
+   "out": "work/hammer.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "hammering",
+     "at": 0,
+     "gain": 0.8,
+     "params": {
+      "strikes": 3,
+      "pace": 3.0,
+      "seed": 11
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -16
+  },
+  {
+   "genny": "blal1",
+   "out": "work/chop.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "impact",
+     "at": 0,
+     "gain": 0.8,
+     "params": {
+      "material": "wood",
+      "shape": "bar",
+      "size": 0.6,
+      "hardness": 0.9,
+      "velocity": 3.0,
+      "seed": 12
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "creak",
+     "at": 0.05,
+     "gain": 0.3,
+     "params": {
+      "material": "wood",
+      "force": "ramp",
+      "dur": 0.3,
+      "size": 0.8,
+      "seed": 13
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -15
+  },
+  {
+   "genny": "blal1",
+   "out": "work/pick.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "clang",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "object": "sword",
+      "size": 0.6,
+      "force": 0.9,
+      "damping": 4.0,
+      "dur": 0.5,
+      "seed": 14
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "shake",
+     "at": 0.05,
+     "gain": 0.5,
+     "params": {
+      "preset": "gravel",
+      "energy": 0.5,
+      "dur": 0.4,
+      "seed": 15
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -16
+  },
+  {
+   "genny": "blal1",
+   "out": "work/hens.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "animal",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "size": 0.35,
+      "pitch": 520.0,
+      "contour": "fall",
+      "excursion": 0.3,
+      "roughness": 0.6,
+      "vowels": "ae-E",
+      "dur": 0.14,
+      "seed": 16
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "animal",
+     "at": 0.22,
+     "gain": 1.0,
+     "params": {
+      "size": 0.35,
+      "pitch": 560.0,
+      "contour": "fall",
+      "excursion": 0.3,
+      "roughness": 0.6,
+      "vowels": "ae-E",
+      "dur": 0.12,
+      "seed": 17
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "animal",
+     "at": 0.42,
+     "gain": 1.0,
+     "params": {
+      "size": 0.35,
+      "pitch": 500.0,
+      "contour": "arch",
+      "excursion": 0.4,
+      "roughness": 0.6,
+      "vowels": "E-ae",
+      "dur": 0.3,
+      "seed": 18
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -15
+  },
+  {
+   "genny": "blal1",
+   "out": "work/goat.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "animal",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "size": 0.8,
+      "pitch": 330.0,
+      "contour": "arch",
+      "excursion": 0.25,
+      "roughness": 0.9,
+      "vowels": "E-ae",
+      "dur": 0.6,
+      "seed": 19
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -15
+  },
+  {
+   "genny": "blal1",
+   "out": "work/feed.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "shake",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "preset": "gravel",
+      "energy": 0.3,
+      "dur": 0.6,
+      "seed": 20
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18
+  },
+  {
+   "genny": "blal1",
+   "out": "work/cast.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "whoosh",
+     "at": 0,
+     "gain": 0.5,
+     "params": {
+      "dur": 0.4,
+      "low": 500,
+      "high": 2500,
+      "direction": "up"
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "splash",
+     "at": 0.45,
+     "gain": 0.6,
+     "params": {
+      "size": 0.15,
+      "dur": 0.4,
+      "droplets": 2,
+      "seed": 21
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -17
+  },
+  {
+   "genny": "blal1",
+   "out": "work/splash.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "splash",
+     "at": 0,
+     "gain": 0.7,
+     "params": {
+      "size": 0.3,
+      "dur": 0.5,
+      "droplets": 4,
+      "seed": 22
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -17
+  },
+  {
+   "genny": "blal1",
+   "out": "work/reel.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "ratchet",
+     "at": 0,
+     "gain": 0.5,
+     "params": {
+      "clicks": 12,
+      "rate": 24.0,
+      "size": 0.6,
+      "seed": 23
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "splash",
+     "at": 0.4,
+     "gain": 0.7,
+     "params": {
+      "size": 0.35,
+      "dur": 0.6,
+      "droplets": 5,
+      "seed": 24
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -16
+  },
+  {
+   "genny": "blal1",
+   "out": "work/forage.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "cloth",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "kind": "rustle",
+      "dur": 0.6,
+      "weight": 0.4,
+      "seed": 25
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "gust",
+     "at": 0,
+     "gain": 0.4,
+     "params": {
+      "dur": 0.6,
+      "through": "leaves",
+      "strength": 0.3,
+      "seed": 26
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18
+  },
+  {
+   "genny": "blal1",
+   "out": "work/talk.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "cloth",
+     "at": 0,
+     "gain": 0.4,
+     "params": {
+      "kind": "rustle",
+      "dur": 0.3,
+      "weight": 0.3,
+      "seed": 27
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -24
+  },
+  {
+   "genny": "blal1",
+   "out": "work/fire.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "fire",
+     "at": 0,
+     "gain": 0.7,
+     "params": {
+      "dur": 1.4,
+      "size": 0.6,
+      "crackle": 9.0,
+      "seed": 31
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "handbell",
+     "steps": "A5:.25 A5:.25 A5:.25 A5:.25",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.6,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -14,
+   "bpm": 84,
+   "tail": 0.5
+  },
+  {
+   "genny": "blal1",
+   "out": "work/fox.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "animal",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "size": 0.45,
+      "pitch": 760.0,
+      "contour": "arch",
+      "excursion": 0.5,
+      "roughness": 0.8,
+      "vowels": "A-E",
+      "dur": 0.16,
+      "seed": 32
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "animal",
+     "at": 0.3,
+     "gain": 1.0,
+     "params": {
+      "size": 0.45,
+      "pitch": 820.0,
+      "contour": "arch",
+      "excursion": 0.5,
+      "roughness": 0.8,
+      "vowels": "A-E",
+      "dur": 0.2,
+      "seed": 33
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -15
+  },
+  {
+   "genny": "blal1",
+   "out": "fish/bite.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "splash",
+     "at": 0,
+     "gain": 0.7,
+     "params": {
+      "size": 0.2,
+      "dur": 0.3,
+      "droplets": 3,
+      "seed": 28
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "handbell",
+     "steps": "E6:.5",
+     "gain": 0.5,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -13,
+   "bpm": 84,
+   "tail": 0.4
+  },
+  {
+   "genny": "blal1",
+   "out": "day/morning.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "birdsong",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "species": "rooster",
+      "seed": 29
+     },
+     "fx": [
+      {
+       "type": "pan",
+       "pos": -0.4
+      }
+     ]
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -20
+  },
+  {
+   "genny": "blal1",
+   "out": "day/supper_bell.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "handbell",
+     "steps": "G5:.5 D5:.5 G5:1.5",
+     "gain": 0.5,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1,
+     "params": {
+      "decay": 2.0
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -15,
+   "bpm": 84,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "day/built.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "G4:.25 B4:.25 D5:.25 G5:1",
+     "gain": 0.4,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    },
+    {
+     "type": "sfx",
+     "kind": "hammering",
+     "at": 0,
+     "gain": 0.4,
+     "params": {
+      "strikes": 2,
+      "pace": 3.0,
+      "seed": 30
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -16,
+   "bpm": 84,
+   "tail": 0.8
+  },
+  {
+   "genny": "blal1",
+   "out": "day/arrived.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "knock",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "count": 2,
+      "pace": 4.0,
+      "material": "wood",
+      "size": 1.0,
+      "force": 0.6,
+      "seed": 31
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "celesta",
+     "steps": "D5:.5 G5:1",
+     "gain": 0.35,
+     "at": 0.5,
+     "vel": 0.4,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "tail": 0.8
+  },
+  {
+   "genny": "blal1",
+   "out": "day/keepsake.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "music_box",
+     "steps": "G6:.5 B6:.5 D7:1 B6:.5 A6:.5 G6:1.5",
+     "gain": 0.5,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -17,
+   "bpm": 96,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "day/goal.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "celesta",
+     "steps": "G5:.25 B5:.25 D6:.25 G6:1",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1,
+     "fx": [
+      {
+       "type": "pan",
+       "pos": -0.2
+      }
+     ]
+    },
+    {
+     "type": "seq",
+     "inst": "handbell",
+     "steps": "-:.75 G6:1",
+     "gain": 0.3,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1,
+     "fx": [
+      {
+       "type": "pan",
+       "pos": 0.2
+      }
+     ]
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -16,
+   "bpm": 84,
+   "tail": 0.8
+  },
+  {
+   "genny": "blal1",
+   "out": "menu/move.wav",
+   "_about": "Menu move: one soft step on grass.",
+   "duration": 0.2,
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "footsteps",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "ground": "grass",
+      "steps": 1,
+      "weight": 0.5,
+      "seed": 41
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 3000
+    },
+    {
+     "type": "mono"
+    },
+    {
+     "type": "fade",
+     "out": 0.04
+    }
+   ],
+   "normalize": -9,
+   "max_loudness": -28
+  },
+  {
+   "genny": "blal1",
+   "out": "menu/select.wav",
+   "_about": "Menu select: a guitar note.",
+   "duration": 0.45,
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "guitar",
+     "steps": "G4:1",
+     "gain": 0.6,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.3
+    },
+    {
+     "type": "mono"
+    },
+    {
+     "type": "fade",
+     "out": 0.04
+    }
+   ],
+   "bpm": 160,
+   "normalize": -6,
+   "max_loudness": -22
+  },
+  {
+   "genny": "blal1",
+   "out": "menu/back.wav",
+   "_about": "Menu back: a soft rustle.",
+   "duration": 0.3,
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "cloth",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "kind": "rustle",
+      "dur": 0.25,
+      "weight": 0.4,
+      "seed": 42
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "highpass",
+     "cutoff": 200
+    },
+    {
+     "type": "lowpass",
+     "cutoff": 3000
+    },
+    {
+     "type": "mono"
+    },
+    {
+     "type": "fade",
+     "out": 0.04
+    }
+   ],
+   "normalize": -9,
+   "max_loudness": -26
+  },
+  {
+   "genny": "blal1",
+   "out": "band/guitar/g_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "guitar",
+     "steps": "G3:0.5 D4:0.5 G4:0.5 D4:0.5 B3:0.5 D4:0.5 G4:0.5 D4:0.5",
+     "gain": 0.6,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "width",
+     "amount": 0.3
+    },
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/guitar/g_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "guitar",
+     "steps": "G3:1 D4:0.5 G4:0.5 B3:1 D4:0.5 G4:0.5",
+     "gain": 0.6,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "width",
+     "amount": 0.3
+    },
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/fiddle/g_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D5:0.5 F#5:0.5 D5:1 B4:2",
+     "gain": 0.5,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1,
+     "params": {
+      "vibrato": 0.6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/flute/g_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "flute",
+     "steps": "B5:3 C6:1",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1,
+     "params": {
+      "breath": 0.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/accordion/g_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "-:1 [B3,D4,G4]:1 -:1 [B3,D4,G4]:1",
+     "gain": 0.35,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/harp/g_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "G3:0.5 B3:0.5 D4:0.5 G4:0.5 B4:0.5 G4:0.5 D4:0.5 B3:0.5",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/cello/g_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "cello",
+     "steps": "G2:2 D3:2",
+     "gain": 0.55,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/clarinet/g_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "clarinet",
+     "steps": "B3:1 G3:1 G3:2",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/fiddle/g_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "B4:1.5 A4:0.5 B4:2",
+     "gain": 0.5,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1,
+     "params": {
+      "vibrato": 0.6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/flute/g_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "flute",
+     "steps": "G5:2 G5:2",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1,
+     "params": {
+      "breath": 0.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/accordion/g_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "-:.5 [B3,D4,G4]:.5 -:.5 [B3,D4,G4]:.5 -:1 [B3,D4,G4]:1",
+     "gain": 0.35,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/harp/g_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "G3:0.25 B3:0.25 D4:0.5 G4:1 D4:0.5 B4:0.5 G4:1",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/cello/g_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "cello",
+     "steps": "G2:1 B2:1 D3:1.5 B2:0.5",
+     "gain": 0.55,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/clarinet/g_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "clarinet",
+     "steps": "B3:2 G3:1 A3:1",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/guitar/c_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "guitar",
+     "steps": "C4:0.5 G4:0.5 C5:0.5 G4:0.5 E4:0.5 G4:0.5 C5:0.5 G4:0.5",
+     "gain": 0.6,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "width",
+     "amount": 0.3
+    },
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/guitar/c_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "guitar",
+     "steps": "C4:1 G4:0.5 C5:0.5 E4:1 G4:0.5 C5:0.5",
+     "gain": 0.6,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "width",
+     "amount": 0.3
+    },
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/fiddle/c_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "E5:1 D5:1 E5:1 C5:1",
+     "gain": 0.5,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1,
+     "params": {
+      "vibrato": 0.6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/flute/c_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "flute",
+     "steps": "C6:2 C6:2",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1,
+     "params": {
+      "breath": 0.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/accordion/c_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "-:1 [C4,E4,G4]:1 -:1 [C4,E4,G4]:1",
+     "gain": 0.35,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/harp/c_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "C4:0.5 E4:0.5 G4:0.5 C5:0.5 E5:0.5 C5:0.5 G4:0.5 E4:0.5",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/cello/c_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "cello",
+     "steps": "C2:2 G2:2",
+     "gain": 0.55,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/clarinet/c_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "clarinet",
+     "steps": "E4:1 C4:1 E4:2",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/fiddle/c_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "C5:0.5 E5:0.5 D5:1 C5:2",
+     "gain": 0.5,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1,
+     "params": {
+      "vibrato": 0.6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/flute/c_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "flute",
+     "steps": "G5:3 E5:1",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1,
+     "params": {
+      "breath": 0.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/accordion/c_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "-:.5 [C4,E4,G4]:.5 -:.5 [C4,E4,G4]:.5 -:1 [C4,E4,G4]:1",
+     "gain": 0.35,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/harp/c_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "C4:0.25 E4:0.25 G4:0.5 C5:1 G4:0.5 E5:0.5 C5:1",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/cello/c_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "cello",
+     "steps": "C2:1 E2:1 G2:1.5 E2:0.5",
+     "gain": 0.55,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/clarinet/c_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "clarinet",
+     "steps": "E4:1 G4:0.5 E4:0.5 G4:2",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/guitar/d_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "guitar",
+     "steps": "D4:0.5 A4:0.5 D5:0.5 A4:0.5 F#4:0.5 A4:0.5 D5:0.5 A4:0.5",
+     "gain": 0.6,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "width",
+     "amount": 0.3
+    },
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/guitar/d_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "guitar",
+     "steps": "D4:1 A4:0.5 D5:0.5 F#4:1 A4:0.5 D5:0.5",
+     "gain": 0.6,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "width",
+     "amount": 0.3
+    },
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/fiddle/d_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D5:0.5 C5:0.5 B4:1 A4:2",
+     "gain": 0.5,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1,
+     "params": {
+      "vibrato": 0.6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/flute/d_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "flute",
+     "steps": "F#5:4",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1,
+     "params": {
+      "breath": 0.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/accordion/d_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "-:1 [D4,F#4,A4]:1 -:1 [D4,F#4,A4]:1",
+     "gain": 0.35,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/harp/d_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "D4:0.5 F#4:0.5 A4:0.5 D5:0.5 F#5:0.5 D5:0.5 A4:0.5 F#4:0.5",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/cello/d_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "cello",
+     "steps": "D2:2 A2:2",
+     "gain": 0.55,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/clarinet/d_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "clarinet",
+     "steps": "A3:1.5 B3:0.5 D4:2",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/fiddle/d_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "D5:2 D5:1 F#5:1",
+     "gain": 0.5,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1,
+     "params": {
+      "vibrato": 0.6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/flute/d_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "flute",
+     "steps": "F#5:2 A5:2",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1,
+     "params": {
+      "breath": 0.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/accordion/d_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "-:.5 [D4,F#4,A4]:.5 -:.5 [D4,F#4,A4]:.5 -:1 [D4,F#4,A4]:1",
+     "gain": 0.35,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/harp/d_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "D4:0.25 F#4:0.25 A4:0.5 D5:1 A4:0.5 F#5:0.5 D5:1",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/cello/d_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "cello",
+     "steps": "D2:1 F#2:1 A2:1.5 F#2:0.5",
+     "gain": 0.55,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/clarinet/d_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "clarinet",
+     "steps": "A3:2 A3:1 G3:1",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/guitar/em_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "guitar",
+     "steps": "E3:0.5 B3:0.5 E4:0.5 B3:0.5 G3:0.5 B3:0.5 E4:0.5 B3:0.5",
+     "gain": 0.6,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "width",
+     "amount": 0.3
+    },
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/guitar/em_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "guitar",
+     "steps": "E3:1 B3:0.5 E4:0.5 G3:1 B3:0.5 E4:0.5",
+     "gain": 0.6,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "width",
+     "amount": 0.3
+    },
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/fiddle/em_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "E5:1 D5:1 B4:2",
+     "gain": 0.5,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1,
+     "params": {
+      "vibrato": 0.6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/flute/em_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "flute",
+     "steps": "B5:4",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1,
+     "params": {
+      "breath": 0.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/accordion/em_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "-:1 [B3,E4,G4]:1 -:1 [B3,E4,G4]:1",
+     "gain": 0.35,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/harp/em_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "E4:0.5 G4:0.5 B4:0.5 E5:0.5 G5:0.5 E5:0.5 B4:0.5 G4:0.5",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/cello/em_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "cello",
+     "steps": "E2:2 B2:2",
+     "gain": 0.55,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/clarinet/em_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "clarinet",
+     "steps": "E4:1 D4:0.5 E4:0.5 E4:2",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/fiddle/em_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "E5:1 C5:0.5 A4:0.5 G4:2",
+     "gain": 0.5,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1,
+     "params": {
+      "vibrato": 0.6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/flute/em_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "flute",
+     "steps": "B5:1 C6:1 B5:2",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1,
+     "params": {
+      "breath": 0.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/accordion/em_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "-:.5 [B3,E4,G4]:.5 -:.5 [B3,E4,G4]:.5 -:1 [B3,E4,G4]:1",
+     "gain": 0.35,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/harp/em_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "E4:0.25 G4:0.25 B4:0.5 E5:1 B4:0.5 G5:0.5 E5:1",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/cello/em_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "cello",
+     "steps": "E2:1 G2:1 B2:1.5 G2:0.5",
+     "gain": 0.55,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/clarinet/em_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "clarinet",
+     "steps": "B3:0.5 D4:0.5 F#4:1 G4:2",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/guitar/am_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "guitar",
+     "steps": "A3:0.5 E4:0.5 A4:0.5 E4:0.5 C4:0.5 E4:0.5 A4:0.5 E4:0.5",
+     "gain": 0.6,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "width",
+     "amount": 0.3
+    },
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/guitar/am_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "guitar",
+     "steps": "A3:1 E4:0.5 A4:0.5 C4:1 E4:0.5 A4:0.5",
+     "gain": 0.6,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "width",
+     "amount": 0.3
+    },
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.5
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/fiddle/am_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "C5:1 A4:1 A4:2",
+     "gain": 0.5,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1,
+     "params": {
+      "vibrato": 0.6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/flute/am_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "flute",
+     "steps": "A5:3 B5:1",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1,
+     "params": {
+      "breath": 0.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/accordion/am_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "-:1 [C4,E4,A4]:1 -:1 [C4,E4,A4]:1",
+     "gain": 0.35,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/harp/am_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "A3:0.5 C4:0.5 E4:0.5 A4:0.5 C5:0.5 A4:0.5 E4:0.5 C4:0.5",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/cello/am_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "cello",
+     "steps": "A2:2 E3:2",
+     "gain": 0.55,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/clarinet/am_0.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "clarinet",
+     "steps": "C4:1 A3:1 C4:1 A3:1",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/fiddle/am_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "violin",
+     "steps": "C5:2 A4:1 C5:1",
+     "gain": 0.5,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1,
+     "params": {
+      "vibrato": 0.6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/flute/am_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "flute",
+     "steps": "A5:4",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1,
+     "params": {
+      "breath": 0.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/accordion/am_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "accordion",
+     "steps": "-:.5 [C4,E4,A4]:.5 -:.5 [C4,E4,A4]:.5 -:1 [C4,E4,A4]:1",
+     "gain": 0.35,
+     "at": 0,
+     "vel": 0.4,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/harp/am_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "A3:0.25 C4:0.25 E4:0.5 A4:1 E4:0.5 C5:0.5 A4:1",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -18,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/cello/am_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "cello",
+     "steps": "A2:1 C3:1 E3:1.5 C3:0.5",
+     "gain": 0.55,
+     "at": 0,
+     "vel": 0.5,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -17,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  },
+  {
+   "genny": "blal1",
+   "out": "band/clarinet/am_1.wav",
+   "layers": [
+    {
+     "type": "seq",
+     "inst": "clarinet",
+     "steps": "C4:1 A3:1 A3:1 C4:1",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19,
+   "bpm": 84,
+   "beats": 4,
+   "tail": 1.2
+  }
+ ]
+}
