@@ -69,7 +69,7 @@ Counts are targets, not limits.
 | Tide Pools | Aquarium, Shells, Journal | The aquarium is already a collection, so it becomes a group. Rare creatures are earned on later tides. About 40. |
 | Rooftop Garden | Plants, Layers, Journal | Plants: new species earned by growing others to full. Each adds a new layer of music. Layers: finished garden songs to replay. About 30. |
 
-The relaxing games (Lantern Lake, Tide Pools, Rooftop Garden) get no
+The cozy games (Lantern Lake, Tide Pools, Rooftop Garden) get no
 modifiers and no feats that need speed. Their unlocks are collections and
 songs, earned by playing at any pace.
 

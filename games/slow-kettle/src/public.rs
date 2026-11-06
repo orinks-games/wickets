@@ -54,7 +54,7 @@ pub const TITLE_NAME: &str = "slow_kettle";
 pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Slow Kettle",
-    category: Category::Relaxing,
+    category: Category::Cozy,
     blurb: "Keep a small tea house at your own pace, brewing each guest's cup by ear.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),

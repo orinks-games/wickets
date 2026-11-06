@@ -53,7 +53,7 @@ pub const JOURNAL_ROW: &str = "Star journal";
 pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
-    category: Category::Relaxing,
+    category: Category::Cozy,
     blurb:
         "Lie on a dark hilltop and trace the constellations by ear, under the real season's sky.",
     open: |ctx| ctx.push(title()),

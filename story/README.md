@@ -49,7 +49,7 @@ Wicket: Oh. A person. Mabel said a new keeper was coming, but she's asleep.
 | --- | --- | --- |
 | `main.md` | `id` | Saved once heard. Never change or reuse one. |
 | `main.md` | `lamps` | Lamps lit before it plays: a number, `all but one` or `all`. |
-| `main.md` | `wing` | Also waits for a lit game in this category: `seasonal`, `action`, `puzzle`, `relaxing` or `table`. |
+| `main.md` | `wing` | Also waits for a lit game in this category: `seasonal`, `action`, `puzzle`, `relaxing` (Cozy games) or `table`. |
 | `regulars/*.md` | `id` | `side/<who>/<number>`, in order. |
 | `doors.md` | `id`, `game` | `door/<game id>`, and the game's id. |
 | `visits/*.md` | `holiday`, `game`, `after` | Before the first scene: the holiday, the visitor's game, and the main plot scene a player must hear first. |

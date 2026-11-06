@@ -40,7 +40,7 @@ pub const HELP: &str = include_str!("../help.md");
 pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Rooftop Garden",
-    category: Category::Relaxing,
+    category: Category::Cozy,
     blurb: "Tend a rooftop garden by ear, and hear each plant grow into a layer of music.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),

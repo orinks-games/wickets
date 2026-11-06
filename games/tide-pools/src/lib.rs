@@ -43,7 +43,7 @@ pub const TITLE_NAME: &str = "tide_pools";
 pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Tide Pools",
-    category: Category::Relaxing,
+    category: Category::Cozy,
     blurb: "Wander the beach at low tide, gather shells and creatures by sound, and stock your own aquarium.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
