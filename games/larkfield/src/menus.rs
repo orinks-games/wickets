@@ -65,10 +65,18 @@ impl Menu for SeedMenu {
                 } else {
                     format!("a {} crop, slow now", c.season.name())
                 };
-                let again = if c.again.is_some() { ", crops again" } else { "" };
+                let again = if c.again.is_some() {
+                    ", crops again"
+                } else {
+                    ""
+                };
                 let id = c.id;
                 MenuItem::new(
-                    format!("{}, {n} {}, {when}{again}", sentence_case(c.name), if n == 1 { "seed" } else { "seeds" }),
+                    format!(
+                        "{}, {n} {}, {when}{again}",
+                        sentence_case(c.name),
+                        if n == 1 { "seed" } else { "seeds" }
+                    ),
                     move |s: &mut SeedMenu, ctx: &mut Ctx<Parlor>| {
                         s.h.borrow_mut().sow(id);
                         ctx.pop();
@@ -144,7 +152,10 @@ impl Menu for BuildMenu {
         };
         vec![
             first,
-            MenuItem::new("Leave it for now", |_s: &mut BuildMenu, ctx: &mut Ctx<Parlor>| ctx.pop()),
+            MenuItem::new(
+                "Leave it for now",
+                |_s: &mut BuildMenu, ctx: &mut Ctx<Parlor>| ctx.pop(),
+            ),
         ]
     }
 }
@@ -161,8 +172,9 @@ impl BargeMenu {
     pub fn new(h: Shared) -> BargeMenu {
         let coins = h.borrow().coins;
         BargeMenu {
-            menu: MenuCore::new(format!("The barge. You have {coins} coins."))
-                .with_intro_help("Up and Down choose, Enter buys or opens, Escape leaves the barge."),
+            menu: MenuCore::new(format!("The barge. You have {coins} coins.")).with_intro_help(
+                "Up and Down choose, Enter buys or opens, Escape leaves the barge.",
+            ),
             h,
         }
     }
@@ -174,7 +186,11 @@ impl Menu for BargeMenu {
 
     fn build_items(&mut self, _ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
         let h = self.h.borrow();
-        let fair = if h.fair_day { ", a coin more today" } else { "" };
+        let fair = if h.fair_day {
+            ", a coin more today"
+        } else {
+            ""
+        };
         let mut rows = vec![MenuItem::new(
             format!("Sell from the larder{fair}"),
             |s: &mut BargeMenu, ctx: &mut Ctx<Parlor>| ctx.push(SellMenu::new(s.h.clone())),
@@ -183,7 +199,10 @@ impl Menu for BargeMenu {
         for (id, what, price) in h.barge_stock() {
             rows.push(
                 MenuItem::new(
-                    format!("Buy {what}, {price} {}", if price == 1 { "coin" } else { "coins" }),
+                    format!(
+                        "Buy {what}, {price} {}",
+                        if price == 1 { "coin" } else { "coins" }
+                    ),
                     move |s: &mut BargeMenu, ctx: &mut Ctx<Parlor>| {
                         let line = match s.h.borrow_mut().buy(&id) {
                             Ok(line) | Err(line) => line,
@@ -195,7 +214,10 @@ impl Menu for BargeMenu {
                 .select_sound(None),
             );
         }
-        rows.push(MenuItem::new("Done", |_s: &mut BargeMenu, ctx: &mut Ctx<Parlor>| ctx.pop()));
+        rows.push(MenuItem::new(
+            "Done",
+            |_s: &mut BargeMenu, ctx: &mut Ctx<Parlor>| ctx.pop(),
+        ));
         rows
     }
 
@@ -300,11 +322,16 @@ impl Menu for ArrivalMenu {
         };
         let mouths = self.h.borrow().mouths() + 1;
         vec![
-            MenuItem::new(format!("Welcome {name}"), |s: &mut ArrivalMenu, ctx: &mut Ctx<Parlor>| {
-                s.h.borrow_mut().answer_arrival(true);
-                ctx.pop();
-            })
-            .help(format!("{name} moves into a cottage. That makes {mouths} to feed at supper.")),
+            MenuItem::new(
+                format!("Welcome {name}"),
+                |s: &mut ArrivalMenu, ctx: &mut Ctx<Parlor>| {
+                    s.h.borrow_mut().answer_arrival(true);
+                    ctx.pop();
+                },
+            )
+            .help(format!(
+                "{name} moves into a cottage. That makes {mouths} to feed at supper."
+            )),
             MenuItem::new("Not now", |s: &mut ArrivalMenu, ctx: &mut Ctx<Parlor>| {
                 s.h.borrow_mut().answer_arrival(false);
                 ctx.pop();
@@ -421,7 +448,10 @@ impl SupperMenu {
         let title = {
             let h = h.borrow();
             if h.festival_today() {
-                format!("{}. Supper is a feast. Who do you sit with?", h.season().festival())
+                format!(
+                    "{}. Supper is a feast. Who do you sit with?",
+                    h.season().festival()
+                )
             } else {
                 "Supper. Who do you sit with?".to_string()
             }
@@ -461,7 +491,10 @@ impl Menu for SupperMenu {
                 )
             })
             .collect();
-        rows.push(MenuItem::new("Anywhere", |s: &mut SupperMenu, ctx: &mut Ctx<Parlor>| s.eat(ctx, None)));
+        rows.push(MenuItem::new(
+            "Anywhere",
+            |s: &mut SupperMenu, ctx: &mut Ctx<Parlor>| s.eat(ctx, None),
+        ));
         rows
     }
 
@@ -481,9 +514,8 @@ pub struct SoundCheck {
 impl SoundCheck {
     pub fn new() -> SoundCheck {
         SoundCheck {
-            menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down choose a sound, Enter plays it, Escape goes back.",
-            ),
+            menu: MenuCore::new("Sound check")
+                .with_intro_help("Up and Down choose a sound, Enter plays it, Escape goes back."),
         }
     }
 }

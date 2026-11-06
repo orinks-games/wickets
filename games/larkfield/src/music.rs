@@ -139,19 +139,26 @@ impl Band {
     fn play_bar(&mut self, ctx: &mut Ctx<Parlor>, season: Season, players: &[Player]) {
         let pats = progressions(season);
         let in_pattern = (self.bar % 4) as usize;
-        if in_pattern == 0 && (season != self.season || self.bar > 0 && self.bar.is_multiple_of(8)) {
+        if in_pattern == 0 && (season != self.season || self.bar > 0 && self.bar.is_multiple_of(8))
+        {
             self.season = season;
             self.progression = self.rng.below(pats.len() as u32) as usize;
         }
         let chord = pats[self.progression % pats.len()][in_pattern];
-        let bed = ctx.audio.play(&bed_key(chord, self.rng.below(VARIANTS)), Bus::MUSIC);
+        let bed = ctx
+            .audio
+            .play(&bed_key(chord, self.rng.below(VARIANTS)), Bus::MUSIC);
         ctx.audio.set_volume(bed, 0.55);
         self.playing.clear();
         for p in players {
             if p.sparse && self.bar % 2 == 1 {
                 continue;
             }
-            let n = if p.same_song { 0 } else { self.rng.below(VARIANTS) };
+            let n = if p.same_song {
+                0
+            } else {
+                self.rng.below(VARIANTS)
+            };
             let key = part_key(p.instrument, chord, n);
             let s = ctx.audio.play_at(&key, p.at, Bus::MUSIC);
             ctx.audio.set_volume(s, p.volume);

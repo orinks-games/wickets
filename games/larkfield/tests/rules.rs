@@ -1,7 +1,7 @@
 //! The hamlet's rules, without a screen.
 
 use larkfield::buildings::Building;
-use larkfield::rules::{Caller, Event, Hamlet, Phase, Plot, At, Place, MAX_SETTLERS};
+use larkfield::rules::{At, Caller, Event, Hamlet, Phase, Place, Plot, MAX_SETTLERS};
 
 /// Plays one day the way a steady player would: sows dug plots, starts
 /// any building it can afford, takes everyone in, and eats supper.
@@ -43,7 +43,8 @@ pub fn play_day(h: &mut Hamlet) -> Vec<String> {
         }
         let stock = h.barge_stock();
         for (id, _, price) in stock {
-            if id.starts_with("seed:") && h.coins > price + 30 && h.seeds.values().sum::<u32>() < 6 {
+            if id.starts_with("seed:") && h.coins > price + 30 && h.seeds.values().sum::<u32>() < 6
+            {
                 let _ = h.buy(&id);
             }
         }
@@ -78,7 +79,11 @@ fn a_steady_year_grows_the_hamlet() {
             println!("  {}", pages.join(" | "));
         }
     }
-    assert!(h.settlers.len() >= 3, "only {} settlers after a year", h.settlers.len());
+    assert!(
+        h.settlers.len() >= 3,
+        "only {} settlers after a year",
+        h.settlers.len()
+    );
     assert!(h.settlers.len() <= MAX_SETTLERS);
     assert!(h.built.len() >= 3, "only {:?} built after a year", h.built);
     assert_eq!(h.festivals, 4, "a year holds four festivals");
@@ -122,7 +127,10 @@ fn a_filled_market_order_is_said_at_once() {
             _ => None,
         })
         .collect();
-    assert!(said.iter().any(|t| t.contains("order is filled")), "{said:?}");
+    assert!(
+        said.iter().any(|t| t.contains("order is filled")),
+        "{said:?}"
+    );
     assert!(h.goal_met);
     // The score line adds up to the score.
     let line = h.score_line();

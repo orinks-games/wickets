@@ -111,7 +111,11 @@ pub fn shelf_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
             STORIES.len()
         )];
     }
-    let mut pages = vec![format!("The keepsake shelf: {} of {}.", kept.len(), STORIES.len())];
+    let mut pages = vec![format!(
+        "The keepsake shelf: {} of {}.",
+        kept.len(),
+        STORIES.len()
+    )];
     for k in kept {
         pages.push(end_sentence(&rules::sentence_case(&k)));
     }
@@ -123,7 +127,13 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let p = Progress::load(ctx);
     let hamlet = match &p.hamlet {
         Some(h) => {
-            let n = |k: usize, one: &str, many: &str| if k == 1 { format!("1 {one}") } else { format!("{k} {many}") };
+            let n = |k: usize, one: &str, many: &str| {
+                if k == 1 {
+                    format!("1 {one}")
+                } else {
+                    format!("{k} {many}")
+                }
+            };
             format!(
                 "Your hamlet: day {} of {}, year {}. {}, {} of 8 buildings, {}, {}.",
                 h.day_of_season(),
@@ -187,7 +197,12 @@ impl TitleGame for Larkfield {
                 "Starts your hamlet with one settler, four dug plots and a few seeds. It is kept between visits.".to_string(),
             ),
         };
-        vec![MenuItem::new(label, |s: &mut Title, ctx: &mut Ctx<Parlor>| play(ctx, s.game.seed)).help(help)]
+        vec![
+            MenuItem::new(label, |s: &mut Title, ctx: &mut Ctx<Parlor>| {
+                play(ctx, s.game.seed)
+            })
+            .help(help),
+        ]
     }
 
     fn lesson(&mut self, ctx: &mut Ctx<Parlor>) -> parlor_core::Lesson {

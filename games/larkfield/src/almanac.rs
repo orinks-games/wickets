@@ -107,9 +107,18 @@ impl Trouble {
 
     pub fn hint(&self, keys: &crate::rules::Keys) -> String {
         match self {
-            Trouble::Crows => format!("{} in the fields scares them off. Until then, nothing grows.", keys.second),
-            Trouble::Fence => format!("{} at the goat pen, by the cottages, puts it back up.", keys.main),
-            Trouble::Leak(_) => format!("{} at the building mends it. Until then, it makes nothing.", keys.main),
+            Trouble::Crows => format!(
+                "{} in the fields scares them off. Until then, nothing grows.",
+                keys.second
+            ),
+            Trouble::Fence => format!(
+                "{} at the goat pen, by the cottages, puts it back up.",
+                keys.main
+            ),
+            Trouble::Leak(_) => format!(
+                "{} at the building mends it. Until then, it makes nothing.",
+                keys.main
+            ),
         }
     }
 }
@@ -175,7 +184,9 @@ pub fn visit(h: &mut Hamlet, v: Visitor) -> String {
                     s.think("a letter from home", lift, 3);
                     format!("A letter for {}, from home. They read it twice.", s.name)
                 }
-                None => "A letter for you, from an old friend. They hope Larkfield grows.".to_string(),
+                None => {
+                    "A letter for you, from an old friend. They hope Larkfield grows.".to_string()
+                }
             }
         }
         Visitor::Walker => {
@@ -203,7 +214,10 @@ pub fn visit(h: &mut Hamlet, v: Visitor) -> String {
             let id = *rng.pick(&crops);
             h.add_seeds(id, 2);
             let name = crate::crops::crop(id).map_or("seed", |c| c.name);
-            format!("The seed seller gives you 2 {name} seeds for {}.", next.name())
+            format!(
+                "The seed seller gives you 2 {name} seeds for {}.",
+                next.name()
+            )
         }
         Visitor::Busker => {
             for s in h.settlers.iter_mut() {
@@ -240,7 +254,10 @@ pub fn morning(h: &mut Hamlet) {
         let arrive_chance = 0.2 * often.min(1.2);
         if room && (first_guest || after_festival || fed && h.day > 2 && h.chance(arrive_chance)) {
             let s = h.make_settler(None);
-            h.news.push(format!("Someone is at the gate: {}, asking to stay.", s.name));
+            h.news.push(format!(
+                "Someone is at the gate: {}, asking to stay.",
+                s.name
+            ));
             h.caller = Some(Caller::Stranger(s));
         } else if h.day > 1 {
             let visit_chance = if h.is_built(Building::Inn) { 0.35 } else { 0.2 } * often;
@@ -274,13 +291,17 @@ pub fn morning(h: &mut Hamlet) {
     }
 
     // A cold in the cool seasons.
-    if matches!(season, Season::Autumn | Season::Winter) && h.settlers.len() > 1 && h.chance(0.05 * often) {
+    if matches!(season, Season::Autumn | Season::Winter)
+        && h.settlers.len() > 1
+        && h.chance(0.05 * often)
+    {
         let mut rng = h.rng();
         let i = rng.below(h.settlers.len() as u32) as usize;
         let s = &mut h.settlers[i];
         if s.ill_days == 0 && !s.away() {
             s.ill_days = 2;
-            h.news.push(format!("{} has a cold, and stays in bed.", s.name));
+            h.news
+                .push(format!("{} has a cold, and stays in bed.", s.name));
         }
     }
 
@@ -304,11 +325,23 @@ pub fn morning(h: &mut Hamlet) {
         if h.pace == Pace::Gentle {
             s.think("an easy life", 0.1, 1);
         }
-        if s.wobble.is_none() && s.ill_days == 0 && s.mood() == Mood::Glum && s.low_days >= wobble_after {
-            let w = *rng.pick(&[Wobble::Bridge, Wobble::Scones, Wobble::SameSong, Wobble::WalkedOff]);
+        if s.wobble.is_none()
+            && s.ill_days == 0
+            && s.mood() == Mood::Glum
+            && s.low_days >= wobble_after
+        {
+            let w = *rng.pick(&[
+                Wobble::Bridge,
+                Wobble::Scones,
+                Wobble::SameSong,
+                Wobble::WalkedOff,
+            ]);
             s.wobble = Some(w);
             lines.push(match w {
-                Wobble::WalkedOff => format!("{} has gone to the next village for the night, to be cheered up there.", s.name),
+                Wobble::WalkedOff => format!(
+                    "{} has gone to the next village for the night, to be cheered up there.",
+                    s.name
+                ),
                 _ => format!("{} is {}, {}.", s.name, w.doing(), w.place().where_at()),
             });
         }

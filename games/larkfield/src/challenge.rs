@@ -125,7 +125,11 @@ pub fn challenge_rule(ch: &Challenge) -> String {
 /// The pages read before a challenge, which then start it.
 pub fn briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
     let ch = Challenge::current(ctx, ID, period);
-    let pages = vec![format!("{}: {}", challenge_name(period), challenge_rule(&ch))];
+    let pages = vec![format!(
+        "{}: {}",
+        challenge_name(period),
+        challenge_rule(&ch)
+    )];
     Pages::briefing(pages).then(move |ctx| {
         let h = hamlet(ch.period, ch.seed);
         ctx.replace(HamletScreen::new(h, Some(ch.clone())))
@@ -179,7 +183,10 @@ pub struct ChallengeHost {
 
 impl ChallengeHost {
     pub fn new(period: Period) -> ChallengeHost {
-        ChallengeHost { period, opened: false }
+        ChallengeHost {
+            period,
+            opened: false,
+        }
     }
 }
 

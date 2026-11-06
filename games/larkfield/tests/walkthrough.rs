@@ -97,11 +97,19 @@ fn a_first_day_sows_a_plot_and_eats_supper() {
     let p = Progress::peek(&h.app.ctx);
     let saved = p.hamlet.expect("the hamlet is kept");
     assert_eq!(saved.day, 2);
-    assert_eq!(saved.phase, Phase::Morning, "kept at bedtime, before the next morning");
-    assert!(saved
-        .plots
-        .iter()
-        .any(|p| matches!(p, Plot::Sown { growth: 1.., .. })), "{:?}", saved.plots);
+    assert_eq!(
+        saved.phase,
+        Phase::Morning,
+        "kept at bedtime, before the next morning"
+    );
+    assert!(
+        saved
+            .plots
+            .iter()
+            .any(|p| matches!(p, Plot::Sown { growth: 1.., .. })),
+        "{:?}",
+        saved.plots
+    );
 }
 
 #[test]
@@ -110,14 +118,29 @@ fn every_key_answers_in_the_hamlet() {
     select(&mut h, "Play");
     h.press(Key::Return);
     read_pages(&mut h);
-    for key in [Key::Left, Key::Right, Key::Up, Key::Down, Key::Space, Key::Tab, Key::S, Key::H, Key::R, Key::Return, Key::L] {
+    for key in [
+        Key::Left,
+        Key::Right,
+        Key::Up,
+        Key::Down,
+        Key::Space,
+        Key::Tab,
+        Key::S,
+        Key::H,
+        Key::R,
+        Key::Return,
+        Key::L,
+    ] {
         h.clear();
         h.press(key);
         if h.app.top_name() != "larkfield_hamlet" {
             h.press(Key::Escape);
             continue;
         }
-        assert!(!h.spoken().is_empty() || !h.played().is_empty(), "{key:?} said nothing");
+        assert!(
+            !h.spoken().is_empty() || !h.played().is_empty(),
+            "{key:?} said nothing"
+        );
     }
     h.clear();
     h.press(Key::J);

@@ -23,7 +23,13 @@ impl HamletScreen {
                 Mood::Glum => RED,
                 _ => GOLD,
             };
-            marker(&mut s, across(st.place()), 360. + (i % 3) as f32 * 40., &st.name, color);
+            marker(
+                &mut s,
+                across(st.place()),
+                360. + (i % 3) as f32 * 40.,
+                &st.name,
+                color,
+            );
         }
         player(&mut s, across(h.at.place()), 315.);
         s

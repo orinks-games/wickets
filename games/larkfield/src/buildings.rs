@@ -125,32 +125,162 @@ pub struct Good {
 }
 
 pub static GOODS: [Good; 26] = [
-    Good { id: "turnip", name: "turnips", food: 3, sells: 1 },
-    Good { id: "radish", name: "radishes", food: 2, sells: 1 },
-    Good { id: "pea", name: "peas", food: 3, sells: 2 },
-    Good { id: "potato", name: "potatoes", food: 4, sells: 1 },
-    Good { id: "strawberry", name: "strawberries", food: 3, sells: 3 },
-    Good { id: "grain", name: "grain", food: 0, sells: 1 },
-    Good { id: "bean", name: "beans", food: 3, sells: 2 },
-    Good { id: "tomato", name: "tomatoes", food: 3, sells: 2 },
-    Good { id: "corn", name: "sweetcorn", food: 4, sells: 2 },
-    Good { id: "seeds", name: "sunflower seeds", food: 2, sells: 2 },
-    Good { id: "pumpkin", name: "pumpkins", food: 5, sells: 3 },
-    Good { id: "cabbage", name: "cabbages", food: 4, sells: 2 },
-    Good { id: "carrot", name: "carrots", food: 3, sells: 1 },
-    Good { id: "kale", name: "winter kale", food: 3, sells: 2 },
-    Good { id: "fish", name: "fish", food: 4, sells: 2 },
-    Good { id: "smoked_fish", name: "smoked fish", food: 5, sells: 4 },
-    Good { id: "eggs", name: "eggs", food: 2, sells: 1 },
-    Good { id: "milk", name: "milk", food: 2, sells: 1 },
-    Good { id: "cheese", name: "cheese", food: 6, sells: 5 },
-    Good { id: "flour", name: "flour", food: 0, sells: 2 },
-    Good { id: "bread", name: "bread", food: 6, sells: 3 },
-    Good { id: "pie", name: "pies", food: 8, sells: 6 },
-    Good { id: "berries", name: "berries", food: 2, sells: 1 },
-    Good { id: "mushrooms", name: "mushrooms", food: 2, sells: 2 },
-    Good { id: "wood", name: "wood", food: 0, sells: 1 },
-    Good { id: "stone", name: "stone", food: 0, sells: 1 },
+    Good {
+        id: "turnip",
+        name: "turnips",
+        food: 3,
+        sells: 1,
+    },
+    Good {
+        id: "radish",
+        name: "radishes",
+        food: 2,
+        sells: 1,
+    },
+    Good {
+        id: "pea",
+        name: "peas",
+        food: 3,
+        sells: 2,
+    },
+    Good {
+        id: "potato",
+        name: "potatoes",
+        food: 4,
+        sells: 1,
+    },
+    Good {
+        id: "strawberry",
+        name: "strawberries",
+        food: 3,
+        sells: 3,
+    },
+    Good {
+        id: "grain",
+        name: "grain",
+        food: 0,
+        sells: 1,
+    },
+    Good {
+        id: "bean",
+        name: "beans",
+        food: 3,
+        sells: 2,
+    },
+    Good {
+        id: "tomato",
+        name: "tomatoes",
+        food: 3,
+        sells: 2,
+    },
+    Good {
+        id: "corn",
+        name: "sweetcorn",
+        food: 4,
+        sells: 2,
+    },
+    Good {
+        id: "seeds",
+        name: "sunflower seeds",
+        food: 2,
+        sells: 2,
+    },
+    Good {
+        id: "pumpkin",
+        name: "pumpkins",
+        food: 5,
+        sells: 3,
+    },
+    Good {
+        id: "cabbage",
+        name: "cabbages",
+        food: 4,
+        sells: 2,
+    },
+    Good {
+        id: "carrot",
+        name: "carrots",
+        food: 3,
+        sells: 1,
+    },
+    Good {
+        id: "kale",
+        name: "winter kale",
+        food: 3,
+        sells: 2,
+    },
+    Good {
+        id: "fish",
+        name: "fish",
+        food: 4,
+        sells: 2,
+    },
+    Good {
+        id: "smoked_fish",
+        name: "smoked fish",
+        food: 5,
+        sells: 4,
+    },
+    Good {
+        id: "eggs",
+        name: "eggs",
+        food: 2,
+        sells: 1,
+    },
+    Good {
+        id: "milk",
+        name: "milk",
+        food: 2,
+        sells: 1,
+    },
+    Good {
+        id: "cheese",
+        name: "cheese",
+        food: 6,
+        sells: 5,
+    },
+    Good {
+        id: "flour",
+        name: "flour",
+        food: 0,
+        sells: 2,
+    },
+    Good {
+        id: "bread",
+        name: "bread",
+        food: 6,
+        sells: 3,
+    },
+    Good {
+        id: "pie",
+        name: "pies",
+        food: 8,
+        sells: 6,
+    },
+    Good {
+        id: "berries",
+        name: "berries",
+        food: 2,
+        sells: 1,
+    },
+    Good {
+        id: "mushrooms",
+        name: "mushrooms",
+        food: 2,
+        sells: 2,
+    },
+    Good {
+        id: "wood",
+        name: "wood",
+        food: 0,
+        sells: 1,
+    },
+    Good {
+        id: "stone",
+        name: "stone",
+        food: 0,
+        sells: 1,
+    },
 ];
 
 /// Goods that are not food and not materials, kept in the store.
@@ -179,11 +309,41 @@ pub fn count(id: &str, n: u32) -> String {
         "berries" => "berry",
         "mushrooms" => "mushroom",
         NAILS => "nail",
-        "bread" => return if n == 1 { "1 loaf of bread".into() } else { format!("{n} loaves of bread") },
-        "milk" => return if n == 1 { "1 jug of milk".into() } else { format!("{n} jugs of milk") },
-        "flour" => return if n == 1 { "1 sack of flour".into() } else { format!("{n} sacks of flour") },
-        "cheese" => return if n == 1 { "1 cheese".into() } else { format!("{n} cheeses") },
-        FURNITURE => return if n == 1 { "1 piece of furniture".into() } else { format!("{n} pieces of furniture") },
+        "bread" => {
+            return if n == 1 {
+                "1 loaf of bread".into()
+            } else {
+                format!("{n} loaves of bread")
+            }
+        }
+        "milk" => {
+            return if n == 1 {
+                "1 jug of milk".into()
+            } else {
+                format!("{n} jugs of milk")
+            }
+        }
+        "flour" => {
+            return if n == 1 {
+                "1 sack of flour".into()
+            } else {
+                format!("{n} sacks of flour")
+            }
+        }
+        "cheese" => {
+            return if n == 1 {
+                "1 cheese".into()
+            } else {
+                format!("{n} cheeses")
+            }
+        }
+        FURNITURE => {
+            return if n == 1 {
+                "1 piece of furniture".into()
+            } else {
+                format!("{n} pieces of furniture")
+            }
+        }
         _ => return format!("{n} {}", good_name(id)),
     };
     if n == 1 {

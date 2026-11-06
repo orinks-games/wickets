@@ -81,7 +81,10 @@ impl HamletScreen {
             h.music_night = events::music_night(today);
             if h.fair_day && h.phase == Phase::Morning && !h.barge {
                 h.barge = true;
-                h.news.push("Barge fair today: the barge comes every day, and pays a coin more.".to_string());
+                h.news.push(
+                    "Barge fair today: the barge comes every day, and pays a coin more."
+                        .to_string(),
+                );
             }
         }
     }
@@ -116,9 +119,11 @@ impl HamletScreen {
         self.bed = None;
         self.sync_bed(ctx);
         if self.river.is_none() {
-            let s = ctx
-                .audio
-                .start_loop(sound::RIVER, Some(sound::place_pos(Place::River)), Bus::EFFECTS);
+            let s = ctx.audio.start_loop(
+                sound::RIVER,
+                Some(sound::place_pos(Place::River)),
+                Bus::EFFECTS,
+            );
             ctx.audio.set_volume(s, 0.5);
             self.river = Some(s);
         }
@@ -364,7 +369,9 @@ impl HamletScreen {
             why,
             match result {
                 ScoreResult::First => "Your first score here is saved.".to_string(),
-                ScoreResult::NewBest { previous } => format!("A new best. The old best was {previous}."),
+                ScoreResult::NewBest { previous } => {
+                    format!("A new best. The old best was {previous}.")
+                }
                 ScoreResult::Short { best } => format!("Your best is {best}."),
             },
             ch.resets(),

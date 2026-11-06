@@ -11,9 +11,7 @@ use serde::{Deserialize, Serialize};
 use crate::almanac::{self, Pace, Trouble};
 use crate::buildings::{good, good_name, Building, FURNITURE, GOODS, NAILS};
 use crate::crops::{crop, of_season, Crop, Season};
-use crate::people::{
-    Needs, Skill, Trade, Trait, INSTRUMENTS, NAMES, WANTS,
-};
+use crate::people::{Needs, Skill, Trade, Trait, INSTRUMENTS, NAMES, WANTS};
 
 /// Days in a season.
 pub const SEASON_DAYS: u32 = 10;
@@ -196,7 +194,9 @@ impl Plot {
 
     pub fn ripe(&self) -> bool {
         match self {
-            Plot::Sown { crop: c, growth, .. } => crop(c).is_some_and(|c| *growth >= c.days),
+            Plot::Sown {
+                crop: c, growth, ..
+            } => crop(c).is_some_and(|c| *growth >= c.days),
             _ => false,
         }
     }
@@ -1065,7 +1065,12 @@ impl Hamlet {
         self.weather = match season {
             // The first day is dry, so the first watering counts.
             _ if self.day == 1 => Weather::Sunny,
-            Season::Winter => *rng.pick(&[Weather::Frost, Weather::Snow, Weather::Cloudy, Weather::Sunny]),
+            Season::Winter => *rng.pick(&[
+                Weather::Frost,
+                Weather::Snow,
+                Weather::Cloudy,
+                Weather::Sunny,
+            ]),
             _ => {
                 let r = rng.below(10);
                 match r {
@@ -1079,7 +1084,8 @@ impl Hamlet {
         if self.hens > 0 && (self.fed_hens || self.day == 1) {
             self.eggs_waiting = self.hens;
         }
-        if self.goat && (self.fed_goat || self.day == 1) && !self.troubles.contains(&Trouble::Fence) {
+        if self.goat && (self.fed_goat || self.day == 1) && !self.troubles.contains(&Trouble::Fence)
+        {
             self.milk_waiting = true;
         }
         self.fed_hens = false;
@@ -1172,7 +1178,8 @@ impl Hamlet {
             self.work(i, hours);
         }
         for s in self.settlers.iter_mut() {
-            s.food = (s.food - hours * 0.03 * if s.has(Trait::Hungry) { 1.3 } else { 1.0 }).max(0.0);
+            s.food =
+                (s.food - hours * 0.03 * if s.has(Trait::Hungry) { 1.3 } else { 1.0 }).max(0.0);
             s.rest = (s.rest - hours * 0.04).max(0.0);
             let lonely = if s.has(Trait::Chatterbox) {
                 0.05
@@ -1244,7 +1251,9 @@ impl Hamlet {
             Skill::Farming => {
                 if self.plots.iter().any(|p| p.ripe()) {
                     Some(Task::Harvest)
-                } else if self.is_built(Building::Well) && self.plots.iter().any(|p| p.needs_water()) {
+                } else if self.is_built(Building::Well)
+                    && self.plots.iter().any(|p| p.needs_water())
+                {
                     Some(Task::Water)
                 } else if self.plots.iter().any(|p| p.weedy()) {
                     Some(Task::Weed)
@@ -1253,7 +1262,12 @@ impl Hamlet {
                 }
             }
             Skill::Cooking => {
-                for b in [Building::Bakery, Building::Mill, Building::Smokehouse, Building::Dairy] {
+                for b in [
+                    Building::Bakery,
+                    Building::Mill,
+                    Building::Smokehouse,
+                    Building::Dairy,
+                ] {
                     if self.can_make(b) {
                         return Some(Task::Cook(b));
                     }
@@ -1386,7 +1400,8 @@ impl Hamlet {
         if s.has(Trait::Clumsy) {
             rate *= 0.85;
         }
-        if s.has(Trait::EarlyRiser) && self.hour < 4.0 || s.has(Trait::NightOwl) && self.hour > 8.0 {
+        if s.has(Trait::EarlyRiser) && self.hour < 4.0 || s.has(Trait::NightOwl) && self.hour > 8.0
+        {
             rate *= 1.2;
         }
         let s = &mut self.settlers[i];
@@ -1762,7 +1777,9 @@ impl Hamlet {
     fn place_note(&self, p: Place) -> Option<String> {
         match p {
             Place::Gate => match &self.caller {
-                Some(Caller::Stranger(s)) => Some(format!("{}, a {}, is waiting.", s.name, s.trade.name())),
+                Some(Caller::Stranger(s)) => {
+                    Some(format!("{}, a {}, is waiting.", s.name, s.trade.name()))
+                }
                 Some(Caller::Visitor(v)) => Some(format!("{} is here.", sentence_case(v.who()))),
                 None => None,
             },
@@ -1802,7 +1819,9 @@ impl Hamlet {
                     s.name,
                     s.trade.name()
                 ),
-                Some(Caller::Visitor(v)) => format!("The gate. {}. Enter talks.", sentence_case(v.who())),
+                Some(Caller::Visitor(v)) => {
+                    format!("The gate. {}. Enter talks.", sentence_case(v.who()))
+                }
                 None => "The gate. Nobody here.".to_string(),
             },
             Spot::Homes => {
@@ -1814,9 +1833,15 @@ impl Hamlet {
                     .collect();
                 let furniture = self.has(FURNITURE);
                 if !ill.is_empty() {
-                    format!("The cottage doors. In bed: {}.", list_words(&ill.iter().map(|s| s.to_string()).collect::<Vec<_>>()))
+                    format!(
+                        "The cottage doors. In bed: {}.",
+                        list_words(&ill.iter().map(|s| s.to_string()).collect::<Vec<_>>())
+                    )
                 } else if furniture > 0 {
-                    format!("The cottage doors. {} to share out.", crate::buildings::count(FURNITURE, furniture))
+                    format!(
+                        "The cottage doors. {} to share out.",
+                        crate::buildings::count(FURNITURE, furniture)
+                    )
                 } else {
                     "The cottage doors.".to_string()
                 }
@@ -1911,7 +1936,12 @@ impl Hamlet {
         match p {
             Plot::Scrub => "rough".to_string(),
             Plot::Tilled => "dug".to_string(),
-            Plot::Sown { crop: id, watered, weeds, .. } => {
+            Plot::Sown {
+                crop: id,
+                watered,
+                weeds,
+                ..
+            } => {
                 let name = crop(id).map_or("a crop", |c| c.name);
                 let mut s = name.to_string();
                 if p.ripe() {
@@ -1932,7 +1962,12 @@ impl Hamlet {
         let state = match p {
             Plot::Scrub => "rough ground".to_string(),
             Plot::Tilled => "dug, ready to sow".to_string(),
-            Plot::Sown { crop: id, growth, watered, weeds } => {
+            Plot::Sown {
+                crop: id,
+                growth,
+                watered,
+                weeds,
+            } => {
                 let c = crop(id);
                 let name = c.map_or("a crop", |c| c.name);
                 let mut s = if p.ripe() {
@@ -2000,7 +2035,10 @@ impl Hamlet {
                     self.events.push(Event::Cue("harvest", Place::Fields));
                     if let Some(c) = c {
                         let (good, n) = c.yields;
-                        self.say(format!("{} in the larder.", crate::buildings::count(good, n)));
+                        self.say(format!(
+                            "{} in the larder.",
+                            crate::buildings::count(good, n)
+                        ));
                     }
                 } else if watered {
                     self.say("Already watered today.");
@@ -2066,9 +2104,11 @@ impl Hamlet {
                 if self.has(FURNITURE) > 0 {
                     self.take(FURNITURE, 1);
                     let names: Vec<usize> = (0..self.settlers.len()).collect();
-                    let who = names
-                        .into_iter()
-                        .min_by(|&a, &b| self.settlers[a].comfort.total_cmp(&self.settlers[b].comfort));
+                    let who = names.into_iter().min_by(|&a, &b| {
+                        self.settlers[a]
+                            .comfort
+                            .total_cmp(&self.settlers[b].comfort)
+                    });
                     if let Some(j) = who {
                         let s = &mut self.settlers[j];
                         s.comfort = (s.comfort + 0.4).min(1.0);
@@ -2117,7 +2157,10 @@ impl Hamlet {
                     self.say("The goat is fed and milked.");
                 }
             }
-            Spot::Table => self.say(format!("Supper is at the end of the day. {}", self.food_line())),
+            Spot::Table => self.say(format!(
+                "Supper is at the end of the day. {}",
+                self.food_line()
+            )),
             Spot::Site(b) => self.act_site(b),
             Spot::Fishing => {
                 if self.bite.is_some() {
@@ -2225,7 +2268,11 @@ impl Hamlet {
         }
         if let Some(first) = b.needs() {
             if !self.is_built(first) {
-                return Err(format!("{} needs {} first.", sentence_case(b.name()), first.name()));
+                return Err(format!(
+                    "{} needs {} first.",
+                    sentence_case(b.name()),
+                    first.name()
+                ));
             }
         }
         let (wood, stone, coins) = b.cost();
@@ -2259,7 +2306,9 @@ impl Hamlet {
         let builder = self
             .settlers
             .iter()
-            .max_by(|a, c| a.skills[Skill::Building.index()].total_cmp(&c.skills[Skill::Building.index()]))
+            .max_by(|a, c| {
+                a.skills[Skill::Building.index()].total_cmp(&c.skills[Skill::Building.index()])
+            })
             .map(|s| s.name.clone());
         let line = match builder {
             Some(n) => format!(
@@ -2284,7 +2333,11 @@ impl Hamlet {
             return false;
         };
         let t = self.troubles.remove(i);
-        let cue = if t == Trouble::Crows { "weed" } else { "hammer" };
+        let cue = if t == Trouble::Crows {
+            "weed"
+        } else {
+            "hammer"
+        };
         self.events.push(Event::Cue(cue, p));
         let line = t.fixed("You");
         self.say(line);
@@ -2354,7 +2407,11 @@ impl Hamlet {
             .iter()
             .copied()
             .find(|&i| self.settlers[i].wobble.is_some())
-            .or_else(|| here.iter().copied().find(|&i| !self.settlers[i].talked_today))
+            .or_else(|| {
+                here.iter()
+                    .copied()
+                    .find(|&i| !self.settlers[i].talked_today)
+            })
             .or_else(|| here.first().copied());
         let Some(i) = pick else {
             self.say(format!("Nobody at {} to talk to.", place.name()));
@@ -2389,7 +2446,10 @@ impl Hamlet {
             self.welcome(s);
             self.say(line);
         } else {
-            self.say(format!("{} thanks you, and walks on. They may come back.", s.name));
+            self.say(format!(
+                "{} thanks you, and walks on. They may come back.",
+                s.name
+            ));
             self.turned_away.push(s.name.clone());
         }
     }
@@ -2413,7 +2473,13 @@ impl Hamlet {
     pub fn barge_stock(&self) -> Vec<(String, String, u32)> {
         let mut out: Vec<(String, String, u32)> = of_season(self.season())
             .chain(of_season(self.season().next()).take(2))
-            .map(|c| (format!("seed:{}", c.id), format!("a {} seed", c.name), c.price))
+            .map(|c| {
+                (
+                    format!("seed:{}", c.id),
+                    format!("a {} seed", c.name),
+                    c.price,
+                )
+            })
             .collect();
         out.push((NAILS.to_string(), "a nail".to_string(), 1));
         if self.hens < 6 {
@@ -2427,11 +2493,16 @@ impl Hamlet {
 
     /// Buys one thing from the barge.
     pub fn buy(&mut self, id: &str) -> Result<String, String> {
-        let Some((_, what, price)) = self.barge_stock().into_iter().find(|(k, _, _)| k == id) else {
+        let Some((_, what, price)) = self.barge_stock().into_iter().find(|(k, _, _)| k == id)
+        else {
             return Err("The barge has none of that.".to_string());
         };
         if self.coins < price {
-            return Err(format!("{} costs {price} coins. You have {}.", sentence_case(&what), self.coins));
+            return Err(format!(
+                "{} costs {price} coins. You have {}.",
+                sentence_case(&what),
+                self.coins
+            ));
         }
         self.coins -= price;
         if let Some(c) = id.strip_prefix("seed:") {
@@ -2555,7 +2626,13 @@ impl Hamlet {
         let what = if eaten.is_empty() {
             "nothing from the larder".to_string()
         } else {
-            list_words(&eaten.iter().take(3).map(|s| s.to_string()).collect::<Vec<_>>())
+            list_words(
+                &eaten
+                    .iter()
+                    .take(3)
+                    .map(|s| s.to_string())
+                    .collect::<Vec<_>>(),
+            )
         };
         let mut line = if feast {
             format!("{}. A feast of {what}.", self.season().festival())
@@ -2616,7 +2693,13 @@ impl Hamlet {
         let green = self.settlers.iter().any(|s| s.has(Trait::GreenFingers));
         let mut night_rng = self.rng();
         for p in self.plots.iter_mut() {
-            if let Plot::Sown { crop: id, growth, watered, weeds } = p {
+            if let Plot::Sown {
+                crop: id,
+                growth,
+                watered,
+                weeds,
+            } = p
+            {
                 let c = crop(id);
                 let in_season = c.is_some_and(|c| c.season == season);
                 let ok = *watered && !*weeds && !halt;
@@ -2733,7 +2816,11 @@ impl Hamlet {
         if made.is_empty() {
             format!("Day {} done.", self.day_of_season())
         } else {
-            format!("Day {} done. Brought in today: {}.", self.day_of_season(), list_words(&made))
+            format!(
+                "Day {} done. Brought in today: {}.",
+                self.day_of_season(),
+                list_words(&made)
+            )
         }
     }
 
@@ -2748,10 +2835,13 @@ impl Hamlet {
                 None => false,
             },
             Kind::Challenge(Goal::Cheer) => {
-                !self.settlers.is_empty() && self.settlers.iter().all(|s| s.mood() == Mood::Cheerful)
+                !self.settlers.is_empty()
+                    && self.settlers.iter().all(|s| s.mood() == Mood::Cheerful)
             }
             Kind::Challenge(Goal::Founders) => {
-                self.is_built(Building::Mill) && self.is_built(Building::Bakery) && self.festivals > 0
+                self.is_built(Building::Mill)
+                    && self.is_built(Building::Bakery)
+                    && self.festivals > 0
             }
             _ => false,
         };
@@ -2766,8 +2856,17 @@ impl Hamlet {
 
     /// A challenge's score: goods made, moods, the goal, days to spare.
     pub fn score(&self) -> u64 {
-        let goods: u32 = self.larder.iter().filter(|(id, _)| *id != "wood" && *id != "stone").map(|(_, n)| *n).sum();
-        let cheerful = self.settlers.iter().filter(|s| s.mood() == Mood::Cheerful).count() as u64;
+        let goods: u32 = self
+            .larder
+            .iter()
+            .filter(|(id, _)| *id != "wood" && *id != "stone")
+            .map(|(_, n)| *n)
+            .sum();
+        let cheerful = self
+            .settlers
+            .iter()
+            .filter(|s| s.mood() == Mood::Cheerful)
+            .count() as u64;
         let mut score = goods as u64 * 2 + cheerful * 20 + self.built.len() as u64 * 30;
         if self.goal_met {
             score += 100;
@@ -2780,22 +2879,39 @@ impl Hamlet {
 
     /// Where the score came from, as one spoken line.
     pub fn score_line(&self) -> String {
-        let goods: u32 = self.larder.iter().filter(|(id, _)| *id != "wood" && *id != "stone").map(|(_, n)| *n).sum();
-        let cheerful = self.settlers.iter().filter(|s| s.mood() == Mood::Cheerful).count() as u64;
+        let goods: u32 = self
+            .larder
+            .iter()
+            .filter(|(id, _)| *id != "wood" && *id != "stone")
+            .map(|(_, n)| *n)
+            .sum();
+        let cheerful = self
+            .settlers
+            .iter()
+            .filter(|s| s.mood() == Mood::Cheerful)
+            .count() as u64;
         let mut parts = vec![format!("{} for {goods} goods in the larder", goods * 2)];
         if cheerful > 0 {
             parts.push(format!("{} for {cheerful} cheerful", cheerful * 20));
         }
         if !self.built.is_empty() {
             let n = self.built.len();
-            parts.push(format!("{} for {n} {}", n * 30, if n == 1 { "building" } else { "buildings" }));
+            parts.push(format!(
+                "{} for {n} {}",
+                n * 30,
+                if n == 1 { "building" } else { "buildings" }
+            ));
         }
         if self.goal_met {
             parts.push("100 for the goal".to_string());
             if let Some(limit) = self.day_limit {
                 let spare = (limit + 1).saturating_sub(self.day);
                 if spare > 0 {
-                    parts.push(format!("{} for {spare} {} to spare", spare * 10, if spare == 1 { "day" } else { "days" }));
+                    parts.push(format!(
+                        "{} for {spare} {} to spare",
+                        spare * 10,
+                        if spare == 1 { "day" } else { "days" }
+                    ));
                 }
             }
         }
@@ -2808,8 +2924,12 @@ impl Hamlet {
     pub fn needs_you(&self) -> Vec<String> {
         let mut out = Vec::new();
         match &self.caller {
-            Some(Caller::Stranger(s)) => out.push(format!("{} is at the gate, asking to stay.", s.name)),
-            Some(Caller::Visitor(v)) => out.push(format!("{} is at the gate.", sentence_case(v.who()))),
+            Some(Caller::Stranger(s)) => {
+                out.push(format!("{} is at the gate, asking to stay.", s.name))
+            }
+            Some(Caller::Visitor(v)) => {
+                out.push(format!("{} is at the gate.", sentence_case(v.who())))
+            }
             None => {}
         }
         for s in &self.settlers {
@@ -2856,7 +2976,10 @@ impl Hamlet {
         )];
         if let Some(limit) = self.day_limit {
             let left = (limit + 1).saturating_sub(self.day);
-            second.push(format!("{left} {} left.", if left == 1 { "day" } else { "days" }));
+            second.push(format!(
+                "{left} {} left.",
+                if left == 1 { "day" } else { "days" }
+            ));
         }
         second.push(self.where_line());
         if let Some((b, left)) = self.building {
@@ -2888,9 +3011,16 @@ impl Hamlet {
     /// H: the nearest thing worth doing, and the key.
     pub fn hint(&self) -> String {
         if let Some(Caller::Stranger(s)) = &self.caller {
-            return format!("{} waits at the gate. Go to the gate and press Enter to meet them.", s.name);
+            return format!(
+                "{} waits at the gate. Go to the gate and press Enter to meet them.",
+                s.name
+            );
         }
-        if let Some(s) = self.settlers.iter().find(|s| s.wobble.is_some() && !s.away()) {
+        if let Some(s) = self
+            .settlers
+            .iter()
+            .find(|s| s.wobble.is_some() && !s.away())
+        {
             return format!(
                 "{} is {}, {}. Go there and press Enter to talk {} round.",
                 s.name,
@@ -2906,25 +3036,40 @@ impl Hamlet {
             return format!("{}. {}", sentence_case(&t.name()), t.hint(&self.keys));
         }
         if self.plots.iter().any(|p| p.ripe()) {
-            return format!("Something is ripe in the fields. {} harvests it.", self.keys.main);
+            return format!(
+                "Something is ripe in the fields. {} harvests it.",
+                self.keys.main
+            );
         }
         if !self.is_built(Building::Well) && self.plots.iter().any(|p| p.needs_water()) {
             return format!("Plots in the fields are dry. {} waters. Once the well is built, settlers water too.", self.keys.main);
         }
         if self.plots.contains(&Plot::Tilled) && self.seeds.values().any(|&n| n > 0) {
-            return format!("A dug plot is ready in the fields. {} on it sows a seed.", self.keys.main);
+            return format!(
+                "A dug plot is ready in the fields. {} on it sows a seed.",
+                self.keys.main
+            );
         }
         if self.eggs_waiting > 0 {
-            return format!("Eggs at the hen house, by the cottages. {} gathers them.", self.keys.main);
+            return format!(
+                "Eggs at the hen house, by the cottages. {} gathers them.",
+                self.keys.main
+            );
         }
         if self.barge {
-            return format!("The barge is at the river dock. {} there trades.", self.keys.main);
+            return format!(
+                "The barge is at the river dock. {} there trades.",
+                self.keys.main
+            );
         }
         if self.food_days() < 2 {
             return "Food is low. Fish at the river, forage in the woods, or harvest.".to_string();
         }
         if self.building.is_none() {
-            if let Some(b) = Building::ALL.into_iter().find(|b| self.can_build(*b).is_ok()) {
+            if let Some(b) = Building::ALL
+                .into_iter()
+                .find(|b| self.can_build(*b).is_ok())
+            {
                 return format!(
                     "You have what {} needs. It goes on {}.",
                     b.name(),
@@ -2947,8 +3092,10 @@ impl Hamlet {
                 let mut out: Vec<String> = Place::ALL
                     .iter()
                     .filter_map(|p| {
-                        let names: Vec<String> = self.people_at(*p).iter().map(|s| s.name.clone()).collect();
-                        (!names.is_empty()).then(|| format!("{} {}.", list_words(&names), p.where_at()))
+                        let names: Vec<String> =
+                            self.people_at(*p).iter().map(|s| s.name.clone()).collect();
+                        (!names.is_empty())
+                            .then(|| format!("{} {}.", list_words(&names), p.where_at()))
                     })
                     .collect();
                 if out.is_empty() {
@@ -2975,7 +3122,8 @@ impl Hamlet {
             At::Plot(..) => (0..ROWS)
                 .rev()
                 .map(|r| {
-                    let plots: Vec<String> = (0..COLS).map(|c| self.plot_word(r * COLS + c)).collect();
+                    let plots: Vec<String> =
+                        (0..COLS).map(|c| self.plot_word(r * COLS + c)).collect();
                     format!("Row {}: {}.", ROWS - r, plots.join(", "))
                 })
                 .collect::<Vec<_>>()
@@ -2996,7 +3144,9 @@ impl Hamlet {
 /// How two people start out, from their traits.
 fn liking_between(a: &Settler, b: &Settler) -> i32 {
     let mut v = 0;
-    if a.has(Trait::Chatterbox) && b.has(Trait::Quiet) || a.has(Trait::Quiet) && b.has(Trait::Chatterbox) {
+    if a.has(Trait::Chatterbox) && b.has(Trait::Quiet)
+        || a.has(Trait::Quiet) && b.has(Trait::Chatterbox)
+    {
         v -= 3;
     }
     if a.has(Trait::Tidy) && b.has(Trait::Clumsy) {

@@ -29,7 +29,13 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hamlet: Live<HamletScreen>) -> Lesson {
         k(ParlorAction::Status),
         k(ParlorAction::Hint),
     );
-    let name = hamlet.with(|s| s.h.borrow().settlers.first().map(|s| s.name.clone()).unwrap_or_default());
+    let name = hamlet.with(|s| {
+        s.h.borrow()
+            .settlers
+            .first()
+            .map(|s| s.name.clone())
+            .unwrap_or_default()
+    });
     let walk = hamlet.step(
         format!(
             "You are on the lane, by the cottages. {} and {right} walk it, from the gate to the woods. Walk to the fields, past the green toward the woods.",
@@ -54,7 +60,10 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hamlet: Live<HamletScreen>) -> Lesson {
         },
     );
     let water = hamlet.step(
-        format!("A new seed needs water. {} on the same plot waters it.", sentence_start(&main)),
+        format!(
+            "A new seed needs water. {} on the same plot waters it.",
+            sentence_start(&main)
+        ),
         |s: &HamletScreen, _| {
             let h = s.h.borrow();
             h.plots

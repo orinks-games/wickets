@@ -117,13 +117,20 @@ pub fn supper_talk(h: &Hamlet, seat: Option<&str>, rng: &mut Rng) -> Vec<String>
             if s.name < *other && here.iter().any(|o| &o.name == other) {
                 let (a, b) = (&s.name, other);
                 if v >= 5 {
-                    lines.push(rng.pick(&[
-                        format!("{a} and {b} laugh at the same joke. They are good friends now."),
-                        format!("{a} saves {b} a seat. They are good friends."),
-                        format!("{a} and {b} wash up together, still talking."),
-                    ]).clone());
+                    lines.push(
+                        rng.pick(&[
+                            format!(
+                                "{a} and {b} laugh at the same joke. They are good friends now."
+                            ),
+                            format!("{a} saves {b} a seat. They are good friends."),
+                            format!("{a} and {b} wash up together, still talking."),
+                        ])
+                        .clone(),
+                    );
                 } else if v <= -3 {
-                    lines.push(format!("{a} and {b} bicker over the last potato. They will come round."));
+                    lines.push(format!(
+                        "{a} and {b} bicker over the last potato. They will come round."
+                    ));
                 }
             }
         }
@@ -157,7 +164,11 @@ pub fn supper_talk(h: &Hamlet, seat: Option<&str>, rng: &mut Rng) -> Vec<String>
         pages.push("After supper there is music on the bandstand.".to_string());
     } else if let Some(m) = here.iter().find(|s| s.has(Trait::Musician)) {
         if rng.chance(0.5) {
-            pages.push(format!("{} plays the {} after supper.", m.name, m.instrument()));
+            pages.push(format!(
+                "{} plays the {} after supper.",
+                m.name,
+                m.instrument()
+            ));
         }
     }
     if pages.is_empty() {
@@ -165,7 +176,10 @@ pub fn supper_talk(h: &Hamlet, seat: Option<&str>, rng: &mut Rng) -> Vec<String>
         pages.push(format!("{} is {} tonight.", s.name, s.mood().name()));
     }
     if h.music_night {
-        pages.push("It is music night. A band from the next village plays on the green till late.".to_string());
+        pages.push(
+            "It is music night. A band from the next village plays on the green till late."
+                .to_string(),
+        );
     }
     pages
 }
