@@ -20,7 +20,7 @@ Space starts the swing. A hum rises in pitch to the top of the swing, then falls
 
 The ball rumbles down the lane, moving left or right with its line, and grows louder as it nears the pins. A hollow rattle means the ball dropped into the gutter and will hit nothing. A light clatter is a few pins falling, a heavy clatter most of the rack. Then the pins left standing are spoken by number, and the pinsetter sweeps the deck. A rolling knock means your ball is back.
 
-Pin 1 is the head pin. Then 2 and 3, then 4 to 6, and the back row 7 to 10 (7 left corner, 10 right). A split: head pin down with a gap among the pins left.
+Pin 1 is the head pin. Then 2 and 3, then 4 to 6, and the back row 7 to 10, with 7 in the left corner and 10 in the right. A split: head pin down with a gap among the pins left.
 
 ## Scoring
 

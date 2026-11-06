@@ -32,7 +32,7 @@ pub const ABOUT: [&str; 5] = [
         env!("CARGO_PKG_VERSION"),
         ". Games played by ear, for blind and visually impaired players, on the Hearken engine."
     ),
-    "Games speak with their own voice and play with keyboard or controller. Sounds are made with genny.",
+    "Games speak through your screen reader or their own voice, and play with keyboard or controller. Sounds are made with genny.",
     "Built-in voice: genny speech, by Oriol Gomez and blal1, used with permission.",
     "Sound synthesis powered by Klang, by Chris Nash.",
     "Made by Orinks, with the assistance of an agentic coder.",

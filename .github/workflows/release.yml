@@ -109,10 +109,14 @@ jobs:
             echo "version=$version"
             echo "channel=$channel"
           } >> "$GITHUB_OUTPUT"
+      # This build includes the private overlay. A tag's cache can only be
+      # restored by that tag's runs, but one saved by a hand run on a
+      # branch could be restored by any pull request, so hand runs keep none.
       - uses: ./.github/actions/rust-setup
         with:
           token: ${{ secrets.HEARKEN_TOKEN }}
           cache-key: release
+          cache: ${{ startsWith(github.ref, 'refs/tags/') }}
       - uses: ./.github/actions/hearken-cli
       # A beta or alpha build carries its tag's version (see above): only
       # the workspace's own entries in Cargo.lock change with it.

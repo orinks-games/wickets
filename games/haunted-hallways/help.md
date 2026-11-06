@@ -14,7 +14,7 @@ The door you came in by slams shut behind you: walking into it gives a heavy sla
 
 ## Listening for things
 
-Things lie about the rooms and call out from where they are: a ticking clock, a humming crystal, a dripping potion, a music box, a silver bell, a crackling candle, a caged raven, a ring of keys and a beating heart. Each has its own sound. Sounds come from their direction: left is west, right east, ahead north; behind (south) is a little duller. Nearer means louder and more often. Stepping onto a thing speaks its name.
+Things lie about the rooms and call out from where they are: a ticking clock, a humming crystal, a dripping potion, a music box, a silver bell, a crackling candle, a caged raven, a ring of keys and a beating heart. Each has its own sound. Sounds come from their direction: left is west, right east, ahead north; behind is south, and a little duller. Nearer means louder and more often. Stepping onto a thing speaks its name.
 
 Sound check on the title plays each sound you need in the manor by name, including a demonstration of left, right, near and far.
 

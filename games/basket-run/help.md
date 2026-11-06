@@ -12,7 +12,7 @@ You hear the meadow from your own lane: a drop straight ahead is in your lane, o
 
 ## The cart
 
-The cart sits at one edge: left on odd rounds, right on even (weekly marathon too). Endless, daily, festival, and practice keep it on the left. Soft bell from its lane; Tab rings it and says how far. Wood block when you step into its lane.
+The cart sits at one edge: left on odd rounds, right on even, in the weekly marathon too. Endless, daily, festival, and practice keep it on the left. A soft bell rings from its lane; Tab rings it and says how far. A wood block sounds when you step into its lane.
 
 Standing in the cart's lane, press Space to bank your basket: the eggs roll into the cart and become points. Banking anywhere else tells you where the cart is.
 

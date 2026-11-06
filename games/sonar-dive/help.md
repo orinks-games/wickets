@@ -2,7 +2,7 @@
 
 ## About the game
 
-Salvage sub under a boat's bell. Ping for treasure, collect it, return to the bell to bank before air runs out. Each dive after the first goes deeper: the water is darker, the mines thicker, the currents stronger and the air shorter, but the treasure is worth more.
+You pilot a salvage sub from a boat. Ping for treasure, collect it, and return to the boat's bell to bank it before air runs out. Each dive after the first goes deeper: the water is darker, the mines thicker, the currents stronger and the air shorter, but the treasure is worth more.
 
 This help gives distances and depths in metres. Set Units to US in Settings and the game says feet instead.
 
@@ -44,7 +44,7 @@ Treasure is worth more the deeper you go: a quarter more for every dive past the
 
 ## Dangers
 
-Mines tick within about 16 metres, faster as you close. Touch one: lose a hull point (start with 3; zero ends the expedition). Surfacing repairs one.
+Mines tick within about 16 metres, faster as you close. Touching one costs a hull point. You start with 3, and losing them all ends the expedition. Surfacing repairs one.
 
 Rocks and the wall around the site scrape you and cost 3 seconds of air. Driving into them stops your engine: turn away and throttle up again. If a current pins you against rock, point away from it and throttle up. The engine keeps running while you pull clear.
 
