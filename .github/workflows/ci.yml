@@ -86,6 +86,16 @@ jobs:
         with:
           token: ${{ secrets.HEARKEN_TOKEN }}
           cache-key: test
+      # hearken-app's build script copies Hearken's SDL2.dll into
+      # target/debug. A restored cache can skip the script and leave the
+      # DLL out, and the tests then fail to start (STATUS_DLL_NOT_FOUND).
+      - name: Rebuild SDL2.dll if the cache left it out
+        if: runner.os == 'Windows'
+        shell: bash
+        run: |
+          if [ -z "$(find target/debug -maxdepth 1 -name SDL2.dll -print -quit 2>/dev/null)" ]; then
+            cargo clean -p hearken-app
+          fi
       - run: cargo test --workspace --locked
 
   # The leak test. The public tree must not name anything in the private
