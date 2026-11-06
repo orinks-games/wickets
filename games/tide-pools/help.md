@@ -2,7 +2,7 @@
 
 ## About the game
 
-Tide out: rock pools along the shore, sea ahead. Walk pool to pool, lean in, and gather creatures for your aquarium. No fail—each trip ends when the tide returns.
+Tide out: rock pools along the shore, sea ahead. Walk pool to pool, lean in, and gather creatures for your aquarium. No fail: each trip ends when the tide returns.
 
 ## Walking the shore
 

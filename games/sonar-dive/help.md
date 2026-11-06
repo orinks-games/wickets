@@ -12,7 +12,7 @@ Your score is the treasure you bank. An expedition ends when you choose to stop 
 
 You hear the sea from the sub, facing where the sub faces. A sound straight ahead is ahead of you. One on your right is to your right. One behind you is a little muffled. When you turn, the world turns around you.
 
-Ping: everything in range answers from where it is. Echo delay is distance—about half a second at 25 m, a full second at 50 m (there and back). Later and quieter means farther.
+Ping: everything in range answers from where it is. The later and quieter the echo, the farther away it is.
 
 Directions in speech use a clock face: 12 o'clock is straight ahead, 3 o'clock to your right, 6 o'clock behind you and 9 o'clock to your left.
 
@@ -44,7 +44,7 @@ Treasure is worth more the deeper you go: a quarter more for every dive past the
 
 ## Dangers
 
-Mines tick within about 16 m, faster as you close. Touch one: lose a hull point (start with 3; zero ends the expedition). Surfacing repairs one.
+Mines tick within about 16 metres, faster as you close. Touch one: lose a hull point (start with 3; zero ends the expedition). Surfacing repairs one.
 
 Rocks and the wall around the site scrape you and cost 3 seconds of air. Driving into them stops your engine: turn away and throttle up again. If a current pins you against rock, point away from it and throttle up. The engine keeps running while you pull clear.
 

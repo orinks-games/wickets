@@ -1,6 +1,6 @@
 ## About the game
 
-Night pantry maze: eat every crumb to clear a pantry, then the next opens with quicker cats. Ginger cat from pantry 1; tabby joins from pantry 2. A cat on your cell costs a whisker—3 whiskers, and the last ends the run.
+Night pantry maze: eat every crumb to clear a pantry, then the next opens with quicker cats. Ginger cat from pantry 1; tabby joins from pantry 2. A cat on your cell costs a whisker. Lose all 3 and the run ends.
 
 ## Moving
 
@@ -28,7 +28,7 @@ A short rising meow from a cat's side means that cat is 2 steps away or nearer. 
 
 ## Freezing
 
-Tab freezes you for 3 seconds (indrawn breath); the nearest cat loses you until a second after freeze ends. Other cats still hunt; contact still catches you. A soft breath out means you can move again. You have 3 freezes in each pantry.
+Tab freezes you briefly (indrawn breath); the nearest cat loses you until just after the freeze ends. Other cats still hunt; contact still catches you. A soft breath out means you can move again. You have 3 freezes in each pantry.
 
 ## Whiskers and catches
 

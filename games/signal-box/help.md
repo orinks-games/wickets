@@ -18,7 +18,7 @@ The dispatcher always says the call aloud as its sound plays. Before the line op
 
 ## The window and the tick
 
-Answer window starts near 3 seconds; every 5 trains it shrinks by 0.2 s, down to about 1 s. A dry tick marks four beats per window and speeds up as the window shrinks. S speaks the window.
+The answer window starts long and shrinks every 5 trains. A dry tick marks four beats per window and speeds up as it shrinks. S speaks the window.
 
 ## Scoring and records
 

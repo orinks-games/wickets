@@ -32,11 +32,11 @@ Status, pressed twice, says how much salt you carry.
 - Find: you are told the thing's name and what it sounds like. Find it, stand on it and press Space.
 - Match: a phonograph crackles and then plays a sound, but does not say what makes it. Find the thing in the room that makes the same sound.
 - Riddle: a voice asks a riddle that describes the thing. Work out which it is, then find it by its sound.
-- Offering, from floor 2: the exit spirit whispers, then plays the sound of what it wants—something you already picked up on this floor. Tab to choose it, stand at the door, Space to offer.
+- Offering, from floor 2: the exit spirit whispers, then plays the sound of what it wants: something you already picked up on this floor. Tab to choose it, stand at the door, Space to offer.
 - Missing, from floor 6: the phonograph plays every sound in the room but one. Find the thing it leaves out.
 - Séance, from floor 12: a medium's gong sounds and she calls up sounds one after another without naming them, two at first, three from floor 40 and four from floor 75. Pick up their things in that order. A soft rising hum tells you each one was right.
 
-Rooms hold decoys as well as the answer—more deeper down. Wrong touch or wrong offer costs 10 seconds on the haunt clock (15 from floor 30, 20 from floor 70). R replays the room's clue.
+Rooms hold decoys as well as the answer, more of them deeper down. A wrong touch or wrong offer takes time off the haunt clock, more on deeper floors. R replays the room's clue.
 
 ## Ghosts
 

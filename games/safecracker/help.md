@@ -22,7 +22,7 @@ Set the wrong number and the wheel springs back with a twang. That is a strike. 
 
 ## Hints
 
-H hints how far and which way: "very close" (1–2), "close" (within 6), "a little way off" (within 20), "far off" (more than 20). Each safe allows only a few hints, and each costs points. In time attack a hint also costs five seconds.
+H hints how far and which way: "very close" (1 or 2), "close" (within 6), "a little way off" (within 20), "far off" (more than 20). Each safe allows only a few hints, and each costs points. In time attack a hint also costs time.
 
 ## Building noises
 

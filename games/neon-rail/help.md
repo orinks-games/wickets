@@ -2,7 +2,7 @@
 
 ## About the game
 
-Courier in a combat skimmer through Black Sky City—three lanes, auto-forward. Merge with flow vehicles to score and cut stress. Avoid hazards, shoot threats, boost through blockades, reach extraction.
+Courier in a combat skimmer through Black Sky City: three lanes, auto-forward. Merge with flow vehicles to score and cut stress. Avoid hazards, shoot threats, boost through blockades, reach extraction.
 
 Reach extraction to complete the run. You lose if your hull reaches 0 or network stress reaches 100.
 
@@ -38,7 +38,7 @@ Be out of its lane when it arrives, or boost through it.
 
 ## Stress and pressure
 
-Stress runs 0–100. Mistakes raise it; stacked jams raise it faster. Clean play, pickups, emergency tools, and sector clears bring it down; calm flow bleeds a little every second.
+Stress runs from 0 to 100. Mistakes raise it; stacked jams raise it faster. Clean play, pickups, emergency tools, and sector clears bring it down; calm flow slowly bleeds it away.
 
 - Rising pressure, at stress 35 or more: a two-beep warning.
 - High stress, at 75 or more: a deep pulsing alarm, repeated every five seconds while it lasts, and the music grows harder.

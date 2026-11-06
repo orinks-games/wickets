@@ -2,9 +2,9 @@
 
 ## About the game
 
-Fourth of July fireworks director. Each level plays a show; launch it back—right firework, place, and moment. Twenty levels, freestyle compose, and a grand finale once they are all cleared. A level clears at 60 or more out of 100.
+Fourth of July fireworks director. Each level plays a show; launch it back: right firework, place, and moment. Twenty levels, freestyle compose, and a grand finale once they are all cleared. A level clears at 60 or more out of 100.
 
-Title menu: Play starts your next uncleared level. Grand finale opens after level 20. Freestyle composes, saves, and replays your shows. Level select plays any opened level. Independence night opens on the Fourth of July. Challenges holds daily, weekly, and monthly. Practice room is an unscored launch range. Tutorial is a short walkthrough; Help is this guide; Sound check plays each show sound by name. Records reads back your best scores. Settings changes speech, volume and controls.
+Title menu: Play starts your next uncleared level. Grand finale opens after level 20. Freestyle composes, saves, and replays your shows. Level select plays any of the twenty levels. Independence night opens on the Fourth of July. Challenges holds daily, weekly, and monthly. Practice room is an unscored launch range. Tutorial is a short walkthrough; Help is this guide; Sound check plays each show sound by name. Records reads back your best scores. Settings changes speech, volume and controls.
 
 ## A round
 

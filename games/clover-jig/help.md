@@ -1,6 +1,6 @@
 ## About the game
 
-Village ceili: fiddle, tin whistle, and bodhran. The caller names each step one beat before you dance it—press that key on the beat. Closer to the beat scores more. Tunes always play to the end.
+Village ceili: fiddle, tin whistle, and bodhran. The caller names each step one beat before you dance it, so press that key on the beat. Closer to the beat scores more. Tunes always play to the end.
 
 ## The steps
 

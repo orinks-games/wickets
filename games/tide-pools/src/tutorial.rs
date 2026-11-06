@@ -53,7 +53,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pools: Live<OutingScreen>) -> Lesson {
 
     let shy = pools.step(
         format!(
-            "{} and {r} walk from pool to pool. The pool on your right holds a shy shore crab with a clicking skitter. It darts away when you lean in—keep still until two soft rising notes, then gather it.",
+            "{} and {r} walk from pool to pool. The pool on your right holds a shy shore crab with a clicking skitter. It darts away when you lean in, so keep still until two soft rising notes, then gather it.",
             sentence_start(&l)
         ),
         |s: &OutingScreen, _| {

@@ -2,7 +2,7 @@
 
 ## About the game
 
-Small tea house, your pace. Guests name a taste; you pick tea and cup, heat by ear, pour, and lift the leaves when the steep is right. No fail—every cup pleases someone; a perfect one earns a note and a tip.
+Small tea house, your pace. Guests name a taste; you pick tea and cup, heat by ear, pour, and lift the leaves when the steep is right. No fail: every cup pleases someone; a perfect one earns a note and a tip.
 
 ## A guest comes in
 

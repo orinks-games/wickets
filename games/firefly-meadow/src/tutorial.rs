@@ -46,7 +46,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, patch: Live<EveningScreen>) -> Lesson {
     // reaching it never comes before it is taught.
     let walk = patch.step(
         format!(
-            "{}, {d}, {l} and {r} walk one step at a time, and {u} is always north. A firefly's soft tone marks where it drifts—quiet means far. Walk until the soft hum means it is in reach.",
+            "{}, {d}, {l} and {r} walk one step at a time, and {u} is always north. A firefly's soft tone marks where it drifts; quiet means far. Walk until the soft hum means it is in reach.",
             sentence_start(&u)
         ),
         move |s: &EveningScreen, _| {

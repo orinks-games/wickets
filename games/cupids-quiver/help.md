@@ -6,7 +6,7 @@ Rooftop at dusk: paper hearts hum from where they drift. Aim by ear, draw, and s
 
 ## Aiming by ear
 
-Three passengers play against you, each with one plain rule. The Widow sits on your left. She banks once the table holds 15. The Gambler sits across the table. He rides until it holds 40. The Captain sits on your right. Quieter hearts are farther off. Up faces straight ahead again. Each step of the bow ticks and says your aim, such as "15 degrees right", unless aim call-outs are off. At the end of its turn the bow knocks.
+Left and Right turn the bow 5 degrees a press, up to 70 degrees either way. The sky turns with you, so a heart straight in front of the bow sounds straight ahead, in the middle, and a heart off to one side sounds from that side. Quieter hearts are farther off. Up faces straight ahead again. Each step of the bow ticks and says your aim, such as "15 degrees right", unless aim call-outs are off. At the end of its turn the bow knocks.
 
 ## Drawing and shooting
 

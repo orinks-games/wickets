@@ -12,7 +12,7 @@ There are 6 bells, numbered 1 to 6. Bell 1, the treble, is the highest. Bell 6, 
 
 ## Building a row
 
-Row of 4 places: Left/Right move (each move rings and names that place). Up/Down change the bell, wrapping from 6 to 1. Tab plays your whole row back without ringing it for an answer, so it uses no row.
+Row of 4 places: Left and Right move, and each move rings and names that place. Up and Down change the bell, wrapping from 6 to 1. Tab plays your whole row back without ringing it for an answer, so it uses no row.
 
 ## Ringing a row and the answer
 
