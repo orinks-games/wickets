@@ -2,8 +2,8 @@
 
 ## About the parlor
 
-A parlor of games you play by ear. Every game can use its own voice.
-Nothing in any game is shown only on screen.
+A parlor of games you play by ear. Games speak through your screen reader, or their own
+voice. Nothing in any game is shown only on screen.
 
 ## Moving around
 

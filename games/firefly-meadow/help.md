@@ -2,7 +2,7 @@
 
 ## About the game
 
-Dusk meadow: fireflies blink as soft tones from where they drift. Walk close, press Space as one glows to jar it. A full jar set free lights the meadow and rings a chord. No fail; outside challenges, no timer. Enter heads home.
+Dusk meadow: fireflies blink as soft tones from where they drift. Walk close, press Space as one glows to jar it. A full jar set free lights the meadow and rings a chord. Nothing can go wrong, and outside challenges nothing is timed. Enter heads home.
 
 This help gives distances in metres. Set Units to US in Settings and the game says feet instead.
 

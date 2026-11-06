@@ -2,7 +2,7 @@
 
 ## About the game
 
-Winter holidays: sort gifts by sound, then keep midnight on the beat. Gift Sort: clear the shift before the clock runs out. Midnight Countdown: match the band to hold energy until midnight, or the party fizzles.
+Winter holidays: sort gifts by sound, then keep midnight on the beat. Gift Sort: clear the shift before the clock runs out. Midnight Countdown: answer the band's rhythms to keep the energy up until midnight, or the party fizzles.
 
 ## The two parts
 

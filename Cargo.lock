@@ -1502,6 +1502,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "47d9d19d1d6efa0109d2f65ff4c85cddd50bd572e5a00127ab10987290bcefae"
 
 [[package]]
+name = "little-rapids"
+version = "1.5.0"
+dependencies = [
+ "hearken",
+ "parlor-core",
+ "serde",
+ "wickets-content",
+]
+
+[[package]]
 name = "log"
 version = "0.4.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3036,6 +3046,7 @@ dependencies = [
  "lamplighter",
  "lantern-lake",
  "liberty-lights",
+ "little-rapids",
  "midnight-lanes",
  "neon-rail",
  "pantry-mouse",

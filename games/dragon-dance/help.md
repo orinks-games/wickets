@@ -18,7 +18,7 @@ The drum plays a deep beat, with a cymbal on the first beat of each bar. On ever
 
 ## Gongs and rearing up
 
-Drum roll: gong in 2 beats. Press Space right on the gong to rear for a perfect (100); a little off is good (60). A gong passed without a rear ends with a dull knock and scores nothing. Rearing when no gong is near breaks your combo, so wait for the roll.
+Drum roll: gong in 2 beats. Press Space right on the gong to rear for a perfect, 100 points; a little off is good, 60. A gong passed without a rear ends with a dull knock and scores nothing. Rearing when no gong is near breaks your combo, so wait for the roll.
 
 ## Red envelopes
 

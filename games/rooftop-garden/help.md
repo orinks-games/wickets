@@ -46,7 +46,7 @@ Plants only grow while their soil is damp but not waterlogged, and they are free
 ## What plants need
 
 - Dry soil crackles; a thirsty plant's song droops. A soft falling tone plays and its name and planter are spoken. Press Space to water.
-- Watering moist soil squelches, and it is waterlogged. The plant gurgles, stops growing, and drops out of the garden song. Each extra watering keeps it soggy for longer. The soil drains by itself, faster on a sunny day, and you hear a drip and its name when it grows again. Water a plant when it is thirsty, not every time you pass it.
+- Watering moist soil makes a squelch, and the soil is waterlogged. The plant gurgles, stops growing, and drops out of the garden song. Each extra watering keeps it soggy for longer. The soil drains by itself, faster on a sunny day, and you hear a drip and its name when it grows again. Water a plant when it is thirsty, not every time you pass it.
 - Reviving. A plant left in bone-dry soil for a while wilts with a long falling sound and goes quiet. Nothing is lost: water it and it lifts its leaves again.
 - Aphids. A buzz from a planter means aphids. The plant stops growing until you press Tab to pick them off.
 - Pruning. A plant in bloom sometimes gets leggy, with a rustle, and grows slowly. Press Tab to prune it.

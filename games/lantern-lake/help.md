@@ -2,7 +2,7 @@
 
 ## About the game
 
-Night canoe: paddle to drifting lantern chimes. Each gather adds a voice to the night's song until it is whole.
+Night canoe: paddle to drifting lantern chimes. Each one you gather adds a voice to the night's song until it is whole.
 
 No timer and no fail. Only challenges score. Take your time.
 

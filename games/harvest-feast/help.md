@@ -2,7 +2,7 @@
 
 ## About the game
 
-Thanksgiving kitchen: up to five stations, each with a cooking sound that changes when it needs you. Follow the recipe call, move to the station, and act on time. Eight courses; one star serves a course and opens the next (up to three stars).
+Thanksgiving kitchen: up to five stations, each with a cooking sound that changes when it needs you. Follow the recipe call, move to the station, and act on time. Eight courses. One star serves a course and opens the next, and a meal earns up to three stars.
 
 ## The kitchen
 

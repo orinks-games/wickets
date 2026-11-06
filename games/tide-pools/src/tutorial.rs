@@ -31,7 +31,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pools: Live<OutingScreen>) -> Lesson {
 
     let lean = pools.step(
         format!(
-            "{} leans toward the water; {d} steps back. Standing back hears this pool and its neighbours; leaning in hears only this one. Lean in close.",
+            "{} leans toward the water; {d} steps back. Stand back to hear this pool and its neighbours; lean in to hear only this one. Lean in close.",
             sentence_start(&u)
         ),
         |s: &OutingScreen, _| {
