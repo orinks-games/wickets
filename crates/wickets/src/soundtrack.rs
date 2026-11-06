@@ -165,6 +165,7 @@ fn game(id: &'static str, name: &'static str) -> Vec<Track> {
         "riverboat-dice" => vec![a.title_at("title-music", 10.0), a.pause(26.7)],
         "rooftop-garden" => rooftop_garden::soundtrack::tracks(),
         "larkfield" => larkfield::soundtrack::tracks(),
+        "little-rapids" => little_rapids::soundtrack::tracks(),
         "safecracker" => vec![a.title(41.7), a.score(38.4, "Crack a safe."), a.pause(25.3)],
         "signal-box" => vec![a.title(12.8), a.pause(27.4)],
         "slow-kettle" => vec![

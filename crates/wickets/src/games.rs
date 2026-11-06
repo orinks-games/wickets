@@ -39,6 +39,7 @@ fn every_game() -> Vec<GameInfo> {
         tide_pools::INFO,
         rooftop_garden::INFO,
         larkfield::INFO,
+        little_rapids::INFO,
         stargazer::INFO,
         slow_kettle::INFO,
         birdsong_trail::INFO,

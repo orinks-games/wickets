@@ -88,6 +88,7 @@ lantern-lake = { path = "../../games/lantern-lake" }
 tide-pools = { path = "../../games/tide-pools" }
 rooftop-garden = { path = "../../games/rooftop-garden" }
 larkfield = { path = "../../games/larkfield" }
+little-rapids = { path = "../../games/little-rapids" }
 riverboat-dice = { path = "../../games/riverboat-dice" }
 fireside-patience = { path = "../../games/fireside-patience" }
 cupids-quiver = { path = "../../games/cupids-quiver" }
