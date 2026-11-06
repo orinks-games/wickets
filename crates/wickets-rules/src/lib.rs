@@ -8,6 +8,7 @@
 
 mod period;
 mod rng;
+pub mod text;
 
 pub use period::Period;
 pub use rng::Rng;
