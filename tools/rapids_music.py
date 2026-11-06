@@ -402,11 +402,29 @@ def cues() -> list[dict]:
     ]
 
 
+def menu() -> list[dict]:
+    end = [{"type": "mono"}, {"type": "fade", "out": 0.04}]
+    return [
+        {"genny": "blal1", "out": "menu/move.wav", "_about": "Menu move: one small water drop.", "duration": 0.18,
+         "layers": [sfx("bubble", {"freq": 700}, 0.5)],
+         "fx": [{"type": "lowpass", "cutoff": 2500}] + end, "normalize": -9, "max_loudness": -28},
+        {"genny": "blal1", "out": "menu/select.wav", "_about": "Menu select: a splash of a drop and a harp note.",
+         "duration": 0.45,
+         "layers": [sfx("bubble", {"freq": 1000}, 0.35), seq("harp", "D5:1", 0.5, 0.45, at=0.03)],
+         "fx": [{"type": "lowpass", "cutoff": 4500}, {"type": "reverb", "mix": 0.12, "size": 0.3}] + end,
+         "bpm": 160, "normalize": -6, "max_loudness": -22},
+        {"genny": "blal1", "out": "menu/back.wav", "_about": "Menu back: a soft paper fold.", "duration": 0.3,
+         "layers": [sfx("paper", {"kind": "page", "dur": 0.25, "weight": 0.4, "seed": 31}, 0.6)],
+         "fx": [{"type": "highpass", "cutoff": 200}, {"type": "lowpass", "cutoff": 3000}] + end,
+         "normalize": -9, "max_loudness": -26},
+    ]
+
+
 def main() -> None:
     spec = {
         "genny": "blal1",
         "_about": "Little Rapids. Written by tools/rapids_music.py: edit that, not this file.",
-        "sounds": [title_music(), pause_music(), mouth_music(), sank_music()] + loops() + cues() + song(),
+        "sounds": [title_music(), pause_music(), mouth_music(), sank_music()] + loops() + cues() + menu() + song(),
     }
     SPEC.write_text(json.dumps(spec, indent=1) + "\n", encoding="utf-8")
     print(f"wrote {len(spec['sounds'])} sounds to {SPEC.relative_to(ROOT)}")

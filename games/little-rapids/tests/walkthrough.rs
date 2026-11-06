@@ -139,9 +139,10 @@ fn the_title_opens_on_the_tutorial_the_first_time() {
 #[test]
 fn garden_brook_runs_from_the_launch_to_the_results() {
     let mut h = start();
-    h.press(Key::Return); // Play
+    select(&mut h, "Play, Garden brook");
+    select(&mut h, "Choose a stream");
+    h.press(Key::Return);
     assert_eq!(h.app.top_name(), "little_rapids_streams");
-    assert!(spoke(&h, "Garden brook"), "{:?}", h.spoken());
     h.clear();
     h.press(Key::Return); // Garden brook
     assert_eq!(h.app.top_name(), "little_rapids_run");
@@ -150,7 +151,11 @@ fn garden_brook_runs_from_the_launch_to_the_results() {
     assert_eq!(h.app.top_name(), "results");
     assert!(spoke(&h, "River mouth"), "{:?}", h.spoken());
     let p = Progress::load(&mut h.app.ctx);
-    assert!(p.stars_for(little_rapids::rules::Stream::GardenBrook) >= 2, "{:?}", h.spoken());
+    assert!(
+        p.stars_for(little_rapids::rules::Stream::GardenBrook) >= 2,
+        "{:?}",
+        h.spoken()
+    );
     assert!(p.endless_open());
     assert!(Records::best(&mut h.app.ctx, little_rapids::ID, "garden").is_some());
     assert!(spoke(&h, "endless river is open"), "{:?}", h.spoken());
@@ -159,8 +164,8 @@ fn garden_brook_runs_from_the_launch_to_the_results() {
 #[test]
 fn status_and_hint_answer_on_the_water() {
     let mut h = start();
-    h.press(Key::Return);
-    h.press(Key::Return);
+    h.press(Key::Return); // Play: Garden brook
+    assert_eq!(h.app.top_name(), "little_rapids_run");
     h.press(Key::Space);
     for _ in 0..100 {
         h.frame(DT);

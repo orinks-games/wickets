@@ -60,5 +60,11 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, water: Live<RunScreen>) -> Lesson {
         "On a real stream, steer clear of stones and the banks: a bump costs your combo, and the band drops back. The longer your combo, the more of the band plays. {} gives your combo and score, and {h} says where the current is and what is coming.",
         sentence_start(&s)
     ))
-    .on_exit(move |ctx| quiet.with_mut(|s| s.silence(ctx)))
+    .on_exit(move |ctx| {
+        quiet.with_mut(|s| s.silence(ctx));
+        // The tutorial taught the petal, so a stream need not stop for it.
+        let mut p = crate::progress::Progress::load(ctx);
+        p.meet(crate::rules::Kind::Petal);
+        p.save(ctx);
+    })
 }

@@ -64,7 +64,13 @@ pub enum Part {
 }
 
 impl Part {
-    pub const ALL: [Part; 5] = [Part::Bass, Part::Pluck, Part::Pad, Part::Counter, Part::Drums];
+    pub const ALL: [Part; 5] = [
+        Part::Bass,
+        Part::Pluck,
+        Part::Pad,
+        Part::Counter,
+        Part::Drums,
+    ];
 
     pub fn file(self) -> &'static str {
         match self {

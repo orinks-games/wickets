@@ -15,8 +15,8 @@ fn target(run: &Run) -> f64 {
         .iter()
         .filter(|t| t.beats_left(pos) > -0.1 && t.beats_left(pos) < 3.0)
         .collect();
-    soon.sort_by(|a, b| a.arrive.cmp(&b.arrive));
-    for t in soon {
+    soon.sort_by_key(|t| t.arrive);
+    if let Some(t) = soon.first() {
         let x = t.x_at(t.arrive as f64);
         return match t.kind {
             k if k.is_catch() => x,
@@ -89,9 +89,18 @@ fn a_good_player_reaches_every_mouth_with_three_stars() {
 fn every_challenge_can_be_sailed() {
     for mode in [Mode::Daily, Mode::Weekly, Mode::Monthly] {
         for seed in 1..=3 {
-            let run = sail(Run::new(Course::challenge(mode), Boat::Paper, Rng::seeded(seed)));
+            let run = sail(Run::new(
+                Course::challenge(mode),
+                Boat::Paper,
+                Rng::seeded(seed),
+            ));
             assert!(run.reached_mouth(), "{mode:?}");
-            assert!(run.catch_share() >= 0.8, "{mode:?}: {} of {}", run.caught, run.offered);
+            assert!(
+                run.catch_share() >= 0.8,
+                "{mode:?}: {} of {}",
+                run.caught,
+                run.offered
+            );
         }
     }
 }
@@ -105,7 +114,10 @@ fn a_boat_left_alone_still_reaches_the_mouth() {
     ));
     assert!(run.reached_mouth());
     assert!(run.stars() >= 1);
-    assert!(run.catch_share() < 0.85, "an idle boat should not earn every star");
+    assert!(
+        run.catch_share() < 0.85,
+        "an idle boat should not earn every star"
+    );
 }
 
 #[test]
@@ -122,7 +134,11 @@ fn the_stream_runs_its_length_in_bars() {
 
 #[test]
 fn bumping_the_bank_sinks_an_endless_boat_on_the_fifth() {
-    let mut run = Run::new(Course::endless(&[Stream::GardenBrook]), Boat::Paper, Rng::seeded(2));
+    let mut run = Run::new(
+        Course::endless(&[Stream::GardenBrook]),
+        Boat::Paper,
+        Rng::seeded(2),
+    );
     run.start_now();
     let mut guard = 0;
     while !run.is_over() {
@@ -139,7 +155,11 @@ fn bumping_the_bank_sinks_an_endless_boat_on_the_fifth() {
 
 #[test]
 fn bumps_cost_the_combo_but_not_a_stream_run() {
-    let mut run = Run::new(Course::stream(Stream::GardenBrook), Boat::Paper, Rng::seeded(2));
+    let mut run = Run::new(
+        Course::stream(Stream::GardenBrook),
+        Boat::Paper,
+        Rng::seeded(2),
+    );
     run.start_now();
     run.combo = 12;
     for _ in 0..2000 {
@@ -161,7 +181,11 @@ fn the_leaf_boat_keeps_half_its_combo() {
 
 #[test]
 fn the_multiplier_steps_every_ten_and_stops_at_five() {
-    let mut run = Run::new(Course::stream(Stream::GardenBrook), Boat::Paper, Rng::seeded(1));
+    let mut run = Run::new(
+        Course::stream(Stream::GardenBrook),
+        Boat::Paper,
+        Rng::seeded(1),
+    );
     run.combo = COMBO_STEP - 1;
     assert_eq!(run.multiplier(), 1);
     run.combo = COMBO_STEP;
@@ -179,8 +203,16 @@ fn drift_scores_nothing() {
 
 #[test]
 fn the_same_seed_floats_the_same_stream() {
-    let a = Run::new(Course::stream(Stream::MillRace), Boat::Paper, Rng::seeded(9));
-    let b = Run::new(Course::stream(Stream::MillRace), Boat::Paper, Rng::seeded(9));
+    let a = Run::new(
+        Course::stream(Stream::MillRace),
+        Boat::Paper,
+        Rng::seeded(9),
+    );
+    let b = Run::new(
+        Course::stream(Stream::MillRace),
+        Boat::Paper,
+        Rng::seeded(9),
+    );
     let ka: Vec<_> = a.things.iter().map(|t| (t.kind, t.arrive)).collect();
     let kb: Vec<_> = b.things.iter().map(|t| (t.kind, t.arrive)).collect();
     assert_eq!(ka, kb);
@@ -204,9 +236,22 @@ fn each_stream_floats_its_own_hazard() {
 
 #[test]
 fn the_lead_in_waits_for_the_player() {
-    let mut run = Run::new(Course::stream(Stream::GardenBrook), Boat::Paper, Rng::seeded(1));
+    let mut run = Run::new(
+        Course::stream(Stream::GardenBrook),
+        Boat::Paper,
+        Rng::seeded(1),
+    );
     run.update(1.0);
     assert!(matches!(run.phase, Phase::LeadIn(_)));
     assert!(run.start_now());
     assert!(run.is_playing());
+}
+
+#[test]
+fn a_fresh_save_starts_with_the_settings_on() {
+    let p = little_rapids::progress::Progress::default();
+    assert_eq!(p.clean_width, 1);
+    assert!(p.trinket_names);
+    assert!(p.bank_lapping);
+    assert!(!p.gentle);
 }

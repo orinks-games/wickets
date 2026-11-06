@@ -1701,6 +1701,124 @@
   },
   {
    "genny": "blal1",
+   "out": "menu/move.wav",
+   "_about": "Menu move: one small water drop.",
+   "duration": 0.18,
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "bubble",
+     "at": 0,
+     "gain": 0.5,
+     "params": {
+      "freq": 700
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 2500
+    },
+    {
+     "type": "mono"
+    },
+    {
+     "type": "fade",
+     "out": 0.04
+    }
+   ],
+   "normalize": -9,
+   "max_loudness": -28
+  },
+  {
+   "genny": "blal1",
+   "out": "menu/select.wav",
+   "_about": "Menu select: a splash of a drop and a harp note.",
+   "duration": 0.45,
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "bubble",
+     "at": 0,
+     "gain": 0.35,
+     "params": {
+      "freq": 1000
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "harp",
+     "steps": "D5:1",
+     "gain": 0.5,
+     "at": 0.03,
+     "vel": 0.45,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 4500
+    },
+    {
+     "type": "reverb",
+     "mix": 0.12,
+     "size": 0.3
+    },
+    {
+     "type": "mono"
+    },
+    {
+     "type": "fade",
+     "out": 0.04
+    }
+   ],
+   "bpm": 160,
+   "normalize": -6,
+   "max_loudness": -22
+  },
+  {
+   "genny": "blal1",
+   "out": "menu/back.wav",
+   "_about": "Menu back: a soft paper fold.",
+   "duration": 0.3,
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "paper",
+     "at": 0,
+     "gain": 0.6,
+     "params": {
+      "kind": "page",
+      "dur": 0.25,
+      "weight": 0.4,
+      "seed": 31
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "highpass",
+     "cutoff": 200
+    },
+    {
+     "type": "lowpass",
+     "cutoff": 3000
+    },
+    {
+     "type": "mono"
+    },
+    {
+     "type": "fade",
+     "out": 0.04
+    }
+   ],
+   "normalize": -9,
+   "max_loudness": -26
+  },
+  {
+   "genny": "blal1",
    "out": "song/bass/d_0.wav",
    "layers": [
     {

@@ -9,8 +9,8 @@ use crate::challenge::{briefing, CHALLENGES_NAME};
 use crate::music::Conductor;
 use crate::progress::{ribbons_of, Progress, RIBBON_SCRAPS};
 use crate::rules::{
-    stars_phrase, Boat, Course, Event, Kind, Mode, Phase, Run, Stream, LEAD_BEATS,
-    MILL_LEAD_BEATS, SOGGY_SINKS,
+    stars_phrase, Boat, Course, Event, Kind, Mode, Phase, Run, Stream, LEAD_BEATS, MILL_LEAD_BEATS,
+    SOGGY_SINKS,
 };
 use crate::sound::{self, thing_pos};
 use crate::{events, shelf, HELP, ID};
@@ -156,7 +156,11 @@ impl RunScreen {
             return;
         }
         self.built = true;
-        let progress = Progress::load(ctx);
+        let mut progress = Progress::load(ctx);
+        if let Mode::Stream(s) = self.launch.mode {
+            progress.last_stream = Some(s.id().to_string());
+            progress.save(ctx);
+        }
         let today = parlor_core::challenges::today(ctx);
         let seed = self.launch.seed.unwrap_or(1);
         let course = course_for(self.launch.mode, &progress, today);
@@ -384,7 +388,11 @@ impl RunScreen {
                 self.tell(ctx, "New best.");
             }
             Event::Current(on) => {
-                let key = if on { sound::CURRENT_IN } else { sound::CURRENT_OUT };
+                let key = if on {
+                    sound::CURRENT_IN
+                } else {
+                    sound::CURRENT_OUT
+                };
                 ctx.audio.play(key, Bus::EFFECTS);
             }
             Event::Dried { soggy } => {
@@ -457,10 +465,10 @@ impl RunScreen {
             };
             let result = Records::record(ctx, ID, board, score);
             if mode == Mode::Endless {
-                if let ScoreResult::NewBest { .. } | ScoreResult::First = result {
-                    title.push_str(" A new best.");
-                } else if let ScoreResult::Short { best } = result {
-                    title.push_str(&format!(" Best {best}."));
+                match result {
+                    ScoreResult::First => title.push_str(" Your first run here."),
+                    ScoreResult::NewBest { .. } => title.push_str(" A new best."),
+                    ScoreResult::Short { best } => title.push_str(&format!(" Best {best} metres.")),
                 }
                 lines.push(format!("{} points on the way.", r.score));
                 Records::record(ctx, ID, "endless_score", r.score);
@@ -469,7 +477,10 @@ impl RunScreen {
                 lines.push(score_line(result));
             }
         } else {
-            title = format!("{} of {} things caught. Nothing is scored here.", r.caught, r.offered);
+            title = format!(
+                "{} of {} things caught. Nothing is scored here.",
+                r.caught, r.offered
+            );
         }
         lines.push(caught);
         // Stars and what they open.
@@ -482,7 +493,11 @@ impl RunScreen {
             if better {
                 line.push_str(" Your best there.");
             }
-            title.push_str(&format!(" {} on {}.", sentence_start(&stars_phrase(stars)), stream.name()));
+            title.push_str(&format!(
+                " {} on {}.",
+                sentence_start(&stars_phrase(stars)),
+                stream.name()
+            ));
             lines.push(line);
             for s in progress.open_streams() {
                 if !before.contains(&s) {
@@ -593,6 +608,10 @@ pub fn score_line(r: ScoreResult) -> String {
 }
 
 impl State<Parlor> for RunScreen {
+    fn visuals(&self, ctx: &Ctx<Parlor>) -> hearken::visuals::Scene {
+        self.visual_scene(ctx)
+    }
+
     fn name(&self) -> &'static str {
         RUN_NAME
     }
@@ -637,9 +656,6 @@ impl State<Parlor> for RunScreen {
                 Leave::Title(TITLE_NAME)
             };
             menus::pause(ctx, HELP, leave);
-            return;
-        }
-        if event.pressed().is_none() {
             return;
         }
         let Some(action) = ctx.action_for(event) else {
@@ -866,3 +882,5 @@ pub fn results(launch: Launch, title: String, lines: Vec<String>) -> Results {
         start(ctx, launch, true)
     })
 }
+
+mod visuals_runscreen;

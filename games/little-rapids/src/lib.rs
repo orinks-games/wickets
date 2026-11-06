@@ -161,17 +161,29 @@ impl TitleGame for LittleRapids {
             .select_sound(None)
             .help("Reach the mouth of Garden brook to open a river with no end.")
         };
+        let next = p.stream_to_sail();
         vec![
             MenuItem::new(
                 format!(
-                    "{}, {} of 4 streams open, {}",
+                    "{}, {}, {}",
                     labels::PLAY,
+                    next.name(),
+                    stars_phrase(p.stars_for(next))
+                ),
+                move |s: &mut Title, ctx: &mut Ctx<Parlor>| {
+                    start(ctx, Launch { mode: Mode::Stream(next), seed: s.game.seed }, false)
+                },
+            )
+            .help(format!("Sails {}: {}.", next.name(), next.twist())),
+            MenuItem::new(
+                format!(
+                    "Choose a stream, {} of 4 open, {}",
                     open,
                     stars_phrase(p.total_stars())
                 ),
                 |s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(menus_streams(s.game.seed)),
             )
-            .help("Choose a stream. Stars from one open the next."),
+            .help("Every stream with its stars and best. Stars from one open the next."),
             endless,
             MenuItem::new("Drift", |s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 start(ctx, Launch { mode: Mode::Drift, seed: s.game.seed }, false)

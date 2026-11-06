@@ -43,7 +43,7 @@ A bump sets your combo back to nothing and shakes the boat, so it steers slowly 
 
 ## The streams
 
-Play, on the title, opens the four streams. Stars from one open the next.
+Play, on the title, sails the stream you sailed last, or the newest one you have opened. Choose a stream, just below it, lists all four with their stars and bests. Stars from one open the next.
 
 - Garden brook: a gentle brook with a few stones and gates. Open from the start.
 - Rain gutter: waterfalls to steer through. Opens at 2 stars.
@@ -56,7 +56,7 @@ Rain gutter waterfalls roar through a gap in the rocks. Steer into the loudest p
 
 Reach the river mouth for 1 star. Catch 6 in every 10 things offered for 2 stars, and nearly 9 in 10 for 3 stars. The mouth sounds with a run of bells, and the results follow.
 
-Each stream has 3 ribbons: catch a number of things in one run, make a number of clean catches in one run, and one of its own, such as going through every waterfall in the Rain gutter. A ribbon counts only when you reach the mouth, and each one gives 10 paper scraps. The Play menu reads a stream's ribbons with F1.
+Each stream has 3 ribbons: catch a number of things in one run, make a number of clean catches in one run, and one of its own, such as going through every waterfall in the Rain gutter. A ribbon counts only when you reach the mouth, and each one gives 10 paper scraps. In Choose a stream, F1 on a stream reads its ribbons.
 
 ## Boats
 
@@ -112,7 +112,7 @@ Settings, on the title or the pause menu, has the game's own rows after speech, 
 
 ## Sound check
 
-Sound check, on the title, plays everything you need to know on the water, each with its name: every floating thing, from the left and then from the right, the banks, the current, each bump, and the catch and score sounds.
+Sound check, on the title, plays everything you need to know on the water, each with its name: every floating thing as it floats up to you, with the sound it makes as it reaches you, the banks, the current, a clean catch, a bump on the bank, and the multiplier going up.
 
 ## Controls
 

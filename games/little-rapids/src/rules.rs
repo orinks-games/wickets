@@ -943,7 +943,13 @@ impl Run {
             &[0, 2, 3]
         };
         // Every few bars a hazard takes a beat of its own.
-        let hazard_every = if level < 0.3 { 4 } else if level < 0.7 { 3 } else { 2 };
+        let hazard_every = if level < 0.3 {
+            4
+        } else if level < 0.7 {
+            3
+        } else {
+            2
+        };
         let hazard_beat = if bar >= 2 && bar % hazard_every == 1 {
             Some(first + 3)
         } else {
@@ -1423,7 +1429,11 @@ impl Run {
             ));
         }
         if self.course.mode.scored() {
-            first.push(format!("Combo {}, times {}.", self.combo, self.multiplier()));
+            first.push(format!(
+                "Combo {}, times {}.",
+                self.combo,
+                self.multiplier()
+            ));
         } else {
             first.push(format!("{} caught.", self.caught));
         }

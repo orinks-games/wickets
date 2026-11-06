@@ -10,7 +10,7 @@ use crate::ID;
 
 const KEY: &str = "little-rapids/progress";
 
-#[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Progress {
     /// Best stars per stream id.
     #[serde(default)]
@@ -47,6 +47,29 @@ pub struct Progress {
     pub gentle: bool,
     #[serde(default)]
     pub tutorial_seen: bool,
+    /// The stream sailed last, by id: Play sails it again.
+    #[serde(default)]
+    pub last_stream: Option<String>,
+}
+
+impl Default for Progress {
+    fn default() -> Progress {
+        Progress {
+            stars: Vec::new(),
+            boats: Vec::new(),
+            boat: String::new(),
+            scraps: 0,
+            trinkets: Vec::new(),
+            ribbons: Vec::new(),
+            met: Vec::new(),
+            clean_width: normal(),
+            trinket_names: yes(),
+            bank_lapping: yes(),
+            gentle: false,
+            tutorial_seen: false,
+            last_stream: None,
+        }
+    }
 }
 
 fn normal() -> u8 {
@@ -106,6 +129,16 @@ impl Progress {
             .collect()
     }
 
+    /// The stream Play sails: the last one sailed, or else the newest open.
+    pub fn stream_to_sail(&self) -> Stream {
+        self.last_stream
+            .as_deref()
+            .and_then(Stream::from_id)
+            .filter(|&s| self.is_open(s))
+            .or_else(|| self.open_streams().last().copied())
+            .unwrap_or(Stream::GardenBrook)
+    }
+
     /// Endless opens once Garden brook has a star.
     pub fn endless_open(&self) -> bool {
         self.stars_for(Stream::GardenBrook) > 0
@@ -162,18 +195,66 @@ pub const RIBBON_SCRAPS: u32 = 10;
 
 /// Three ribbons on every stream.
 pub const RIBBONS: &[Ribbon] = &[
-    Ribbon { id: "garden_catch", stream: Stream::GardenBrook, name: "Catch 30 things in one run" },
-    Ribbon { id: "garden_clean", stream: Stream::GardenBrook, name: "Make 8 clean catches in one run" },
-    Ribbon { id: "garden_dry", stream: Stream::GardenBrook, name: "Reach the mouth without a bump" },
-    Ribbon { id: "gutter_catch", stream: Stream::RainGutter, name: "Catch 35 things in one run" },
-    Ribbon { id: "gutter_clean", stream: Stream::RainGutter, name: "Make 10 clean catches in one run" },
-    Ribbon { id: "gutter_falls", stream: Stream::RainGutter, name: "Go through every waterfall in one run" },
-    Ribbon { id: "mill_catch", stream: Stream::MillRace, name: "Catch 40 things in one run" },
-    Ribbon { id: "mill_clean", stream: Stream::MillRace, name: "Make 12 clean catches in one run" },
-    Ribbon { id: "mill_wheels", stream: Stream::MillRace, name: "Pass every mill wheel in one run" },
-    Ribbon { id: "canal_catch", stream: Stream::MarketCanal, name: "Catch 45 things in one run" },
-    Ribbon { id: "canal_clean", stream: Stream::MarketCanal, name: "Make 14 clean catches in one run" },
-    Ribbon { id: "canal_ducks", stream: Stream::MarketCanal, name: "Bump no ducks in one run" },
+    Ribbon {
+        id: "garden_catch",
+        stream: Stream::GardenBrook,
+        name: "Catch 30 things in one run",
+    },
+    Ribbon {
+        id: "garden_clean",
+        stream: Stream::GardenBrook,
+        name: "Make 8 clean catches in one run",
+    },
+    Ribbon {
+        id: "garden_dry",
+        stream: Stream::GardenBrook,
+        name: "Reach the mouth without a bump",
+    },
+    Ribbon {
+        id: "gutter_catch",
+        stream: Stream::RainGutter,
+        name: "Catch 35 things in one run",
+    },
+    Ribbon {
+        id: "gutter_clean",
+        stream: Stream::RainGutter,
+        name: "Make 10 clean catches in one run",
+    },
+    Ribbon {
+        id: "gutter_falls",
+        stream: Stream::RainGutter,
+        name: "Go through every waterfall in one run",
+    },
+    Ribbon {
+        id: "mill_catch",
+        stream: Stream::MillRace,
+        name: "Catch 40 things in one run",
+    },
+    Ribbon {
+        id: "mill_clean",
+        stream: Stream::MillRace,
+        name: "Make 12 clean catches in one run",
+    },
+    Ribbon {
+        id: "mill_wheels",
+        stream: Stream::MillRace,
+        name: "Pass every mill wheel in one run",
+    },
+    Ribbon {
+        id: "canal_catch",
+        stream: Stream::MarketCanal,
+        name: "Catch 45 things in one run",
+    },
+    Ribbon {
+        id: "canal_clean",
+        stream: Stream::MarketCanal,
+        name: "Make 14 clean catches in one run",
+    },
+    Ribbon {
+        id: "canal_ducks",
+        stream: Stream::MarketCanal,
+        name: "Bump no ducks in one run",
+    },
 ];
 
 impl Ribbon {

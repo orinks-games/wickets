@@ -35,7 +35,10 @@ pub fn challenge_tag(ch: &Challenge) -> String {
         Period::Daily => format!("{bars} bars, every twist, on the paper boat"),
         Period::Weekly => {
             let boat = boat_for(Mode::Weekly, &Progress::default(), ch.seed);
-            format!("{bars} bars of mill wheels and ducks, on the {}", boat.name().to_lowercase())
+            format!(
+                "{bars} bars of mill wheels and ducks, on the {}",
+                boat.name().to_lowercase()
+            )
         }
         Period::Monthly => format!("{bars} bars, every twist, busier all the way down"),
     }

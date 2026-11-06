@@ -101,8 +101,10 @@ impl Menu for Streams {
             }
         }
         items.push(
-            MenuItem::new(labels::BACK, |_s: &mut Streams, ctx: &mut Ctx<Parlor>| ctx.pop())
-                .help("Return to the Little Rapids title."),
+            MenuItem::new(labels::BACK, |_s: &mut Streams, ctx: &mut Ctx<Parlor>| {
+                ctx.pop()
+            })
+            .help("Return to the Little Rapids title."),
         );
         items
     }
@@ -153,12 +155,18 @@ impl Menu for Boatyard {
             let (label, help) = if progress.boat() == boat {
                 (
                     format!("{}, sailing", boat.name()),
-                    format!("{}. This is the boat you sail.", hearken::text::sentence_start(boat.handling())),
+                    format!(
+                        "{}. This is the boat you sail.",
+                        hearken::text::sentence_start(boat.handling())
+                    ),
                 )
             } else if progress.has_boat(boat) {
                 (
                     boat.name().to_string(),
-                    format!("{}. Enter sails it.", hearken::text::sentence_start(boat.handling())),
+                    format!(
+                        "{}. Enter sails it.",
+                        hearken::text::sentence_start(boat.handling())
+                    ),
                 )
             } else {
                 (
@@ -202,8 +210,10 @@ impl Menu for Boatyard {
             );
         }
         items.push(
-            MenuItem::new(labels::BACK, |_s: &mut Boatyard, ctx: &mut Ctx<Parlor>| ctx.pop())
-                .help("Return to the Little Rapids title."),
+            MenuItem::new(labels::BACK, |_s: &mut Boatyard, ctx: &mut Ctx<Parlor>| {
+                ctx.pop()
+            })
+            .help("Return to the Little Rapids title."),
         );
         items
     }
@@ -344,10 +354,8 @@ impl Menu for SoundCheck {
             .help("Lapping water at the left bank, then the right. It gets louder as you get close."),
             plain("The current", sound::CURRENT_IN, "A rising swish as you slip into the current. Its hiss is ahead of you while you ride it."),
             plain("A clean catch", sound::CLEAN, "A bright ring on top of the note: you caught it dead centre, for double points."),
-            plain("Bumping the bank", sound::BUMP_BANK, "A scrape and a splash. Your combo is lost."),
-            plain("Combo goes up", sound::MULTIPLIER, "A rising run: your points multiply again."),
-            plain("A new best", sound::NEW_BEST, "A little fanfare: you passed your best score."),
-            plain("The river mouth", sound::MOUTH, "A long whoosh into open water: the end of the stream."),
+            plain("Bumping the bank", sound::BUMP_BANK, "A wooden knock and a splash. Your combo is lost."),
+            plain("Combo goes up", sound::MULTIPLIER, "A rising chime: your multiplier goes up by one."),
             MenuItem::new(labels::BACK, |_s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| ctx.pop())
                 .help("Return to the Little Rapids title."),
         ]
@@ -356,7 +364,11 @@ impl Menu for SoundCheck {
     fn update(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
         match &mut self.demo {
             Demo::None => {}
-            Demo::Float { kind, sound: s, left } => {
+            Demo::Float {
+                kind,
+                sound: s,
+                left,
+            } => {
                 *left -= dt;
                 let beats = (*left / DEMO_SECS * 6.0).max(0.0);
                 ctx.audio
@@ -369,7 +381,8 @@ impl Menu for SoundCheck {
                     let (kind, s) = (*kind, *s);
                     ctx.audio.stop(s, 60);
                     if let Some(key) = arrival(kind) {
-                        ctx.audio.play_at(key, sound::thing_pos(0.0, 0.0), Bus::EFFECTS);
+                        ctx.audio
+                            .play_at(key, sound::thing_pos(0.0, 0.0), Bus::EFFECTS);
                     } else {
                         ctx.audio.play("little-rapids/song/note/d_2", Bus::EFFECTS);
                     }
@@ -391,7 +404,11 @@ impl Menu for SoundCheck {
                         Vec3::new((side * HALF) as f32, 0.0, 0.0),
                         Bus::EFFECTS,
                     );
-                    ctx.say(if side < 0.0 { "Left bank." } else { "Right bank." });
+                    ctx.say(if side < 0.0 {
+                        "Left bank."
+                    } else {
+                        "Right bank."
+                    });
                 }
             }
         }
