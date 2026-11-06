@@ -8,6 +8,13 @@ inputs:
   cache-key:
     description: Keeps this job's build cache apart from jobs that build differently (clippy, tests, release).
     required: true
+  cache:
+    description: >-
+      Whether to keep compile caches. Set it to false for a build that
+      includes the private overlay on a ref other than a tag: a cache saved
+      on main can be restored by any pull request, forks included.
+    required: false
+    default: 'true'
 runs:
   using: composite
   steps:
@@ -23,7 +30,13 @@ runs:
     # sccache caches compiled crates by content; rust-cache keeps the target
     # directory, which also holds the C builds (SDL, Prism) sccache cannot.
     - uses: mozilla-actions/sccache-action@v0.0.9
+      if: inputs.cache == 'true'
+    # Without the cache, cargo must not call sccache either.
+    - if: inputs.cache != 'true'
+      shell: bash
+      run: echo "RUSTC_WRAPPER=" >> "$GITHUB_ENV"
     - uses: Swatinem/rust-cache@v2
+      if: inputs.cache == 'true'
       with:
         key: ${{ inputs.cache-key }}
         cache-on-failure: true

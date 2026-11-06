@@ -2,7 +2,7 @@
 
 ## About the game
 
-Hilltop night sky: stars chime (brighter is louder). Move a listening point, find a constellation's stars, and trace them in order. Each one plays a tune into your star journal. No fail, no timer.
+Hilltop night sky: stars chime, and brighter stars are louder. Move a listening point, find a constellation's stars, and trace them in order. Each one plays a tune into your star journal. No fail, no timer.
 
 ## The listening point
 

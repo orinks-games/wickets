@@ -2,7 +2,7 @@
 
 ## About the game
 
-Paddle-steamer dice table with three other passengers. Five landings a night; each landing the dealer rolls two dice for everyone still seated, and sums build on the table. Bank what the table holds (Tab) or stay for another roll (Space). A 1 on either die ends the landing, and everyone still seated gets nothing. Highest banked total wins. Untimed.
+A dice table on a paddle steamer, with three other passengers. Five landings a night; each landing the dealer rolls two dice for everyone still seated, and sums build on the table. Tab banks what the table holds; Space stays in for another roll. A 1 on either die ends the landing, and everyone still seated gets nothing. Highest banked total wins. Nothing is timed.
 
 ## A landing
 
