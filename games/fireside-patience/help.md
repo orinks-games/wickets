@@ -2,11 +2,11 @@
 
 ## About the game
 
-Cabin patience: move all 52 cards onto four suit foundations, ace to king. Every relaxed deal is winnable; undo unlimited; no clock, no move limit, no way to lose.
+Patience by a cabin fire: move all 52 cards onto four suit foundations, ace to king. Every relaxed deal can be won. Undo is unlimited, and there is no clock, no move limit and no way to lose.
 
 ## The row of places
 
-One row of 12: piles 1 to 7, then stock, then foundations (hearts, diamonds, clubs, spades). Left and Right move; each place speaks its top card. A soft chime marks the step from the piles to the stock, and from the stock to the foundations. At either end of the row, a dull tap tells you there is no further to go.
+One row of 12 places: piles 1 to 7, then the stock, then the foundations for hearts, diamonds, clubs and spades. Left and Right move; each place speaks its top card. A soft chime marks the step from the piles to the stock, and from the stock to the foundations. At either end of the row, a dull tap tells you there is no further to go.
 
 ## Piles
 

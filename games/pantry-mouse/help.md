@@ -28,7 +28,7 @@ A short rising meow from a cat's side means that cat is 2 steps away or nearer. 
 
 ## Freezing
 
-Tab freezes you briefly (indrawn breath); the nearest cat loses you until just after the freeze ends. Other cats still hunt; contact still catches you. A soft breath out means you can move again. You have 3 freezes in each pantry.
+Tab freezes you briefly, with an indrawn breath, and the nearest cat loses you until just after the freeze ends. Other cats still hunt, and one that walks into you still catches you. A soft breath out means you can move again. You have 3 freezes in each pantry.
 
 ## Whiskers and catches
 

@@ -1,6 +1,6 @@
 ## About the game
 
-Survey lander to an outer-planet pad. Gravity pulls; hold the engine to push back. Touch down under safe speed or crash. Fuel is short: fall freely first, burn near the pad.
+Fly a survey lander down to a pad on a far moon. Gravity pulls; hold the engine to push back. Touch down under safe speed, or you crash. Fuel is short: fall freely first, burn near the pad.
 
 This help gives heights and speeds in metric. Set Units to US in Settings and the game says feet and feet a second instead, with call-out marks every 300, 150 or 30 feet.
 

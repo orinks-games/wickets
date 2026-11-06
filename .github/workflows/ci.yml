@@ -1,0 +1,159 @@
+name: CI
+
+# Tests every pull request and every push to main on GitHub-hosted Windows,
+# Linux and macOS runners. Nothing here builds or uploads a package; the
+# Release workflow does that for tags.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths-ignore:
+      - "README.md"
+      - "AGENTS.md"
+      - "docs/**"
+      - "LICENSE*"
+  push:
+    branches: [main]
+    paths-ignore:
+      - "README.md"
+      - "AGENTS.md"
+      - "docs/**"
+      - "LICENSE*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A new push to a pull request cancels the run it replaces.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  CMAKE_POLICY_VERSION_MINIMUM: "3.5"
+  RUSTC_WRAPPER: sccache
+  SCCACHE_GHA_ENABLED: "true"
+  # Everything public builds without the private overlay.
+  WICKETS_MODE: stub
+
+jobs:
+  # Seconds-long checks that need no build.
+  checks:
+    name: fmt, sounds, text and test targets
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - run: rustup show
+      - run: cargo fmt --all --check
+      - run: python3 tools/render_sounds.py --check
+      - run: python3 tools/check_test_targets.py
+      - run: python3 tools/check_text.py
+      - run: python3 -m unittest discover -s tools
+
+  # Clippy runs once, on Linux: the Windows and Mac time goes to the tests.
+  clippy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/rust-setup
+        with:
+          token: ${{ secrets.HEARKEN_TOKEN }}
+          cache-key: clippy
+      - run: cargo clippy --workspace --all-targets --locked -- -D warnings
+
+  test:
+    name: test (${{ matrix.name }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: windows-x64
+            os: windows-2025
+          - name: linux-x64
+            os: ubuntu-24.04
+          - name: macos-arm64
+            os: macos-15
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    env:
+      SDL_VIDEODRIVER: dummy
+      SDL_AUDIODRIVER: dummy
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/rust-setup
+        with:
+          token: ${{ secrets.HEARKEN_TOKEN }}
+          cache-key: test
+      - run: cargo test --workspace --locked
+
+  # The leak test. The public tree must not name anything in the private
+  # overlay (holiday surprises, private games, story), and the public copies
+  # of shared files must match their private originals. Then the full build,
+  # overlay included, must pass its tests too, since many games' tests exist
+  # only in the overlay.
+  #
+  # Keeping the overlay out of this public repository:
+  # - Fork pull requests get no secrets, so this job skips them.
+  # - The checks print paths and line numbers only.
+  # - The full build's output goes to a file that is never printed or
+  #   uploaded; run the failing tests in wickets-secrets' CI or locally.
+  # - No compile cache: a cache saved here could be restored by a fork's
+  #   pull request.
+  private:
+    name: leak test and full build
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      SDL_VIDEODRIVER: dummy
+      SDL_AUDIODRIVER: dummy
+    steps:
+      - uses: actions/checkout@v5
+      # A change made in both repositories uses the same branch name in
+      # each. Use the overlay's copy of this branch when there is one,
+      # otherwise its main.
+      - name: Check out the private overlay's matching branch
+        id: branch
+        continue-on-error: true
+        uses: actions/checkout@v5
+        with:
+          repository: orinks-games/wickets-secrets
+          ref: ${{ github.head_ref || github.ref_name }}
+          path: secrets
+          ssh-key: ${{ secrets.WICKETS_SECRETS_DEPLOY_KEY }}
+          persist-credentials: false
+      - name: Check out the private overlay's main
+        if: steps.branch.outcome != 'success'
+        uses: actions/checkout@v5
+        with:
+          repository: orinks-games/wickets-secrets
+          path: secrets
+          ssh-key: ${{ secrets.WICKETS_SECRETS_DEPLOY_KEY }}
+          persist-credentials: false
+      - name: Check the public tree for private content
+        run: |
+          test -f secrets/WICKETS_SECRETS
+          python3 tools/check_spoilers.py --require
+          python3 tools/check_drift.py --require
+      - uses: ./.github/actions/rust-setup
+        with:
+          token: ${{ secrets.HEARKEN_TOKEN }}
+          cache-key: private
+          cache: "false"
+      - name: Full build and tests (output kept private)
+        env:
+          WICKETS_MODE: full
+        run: |
+          python3 tools/overlay.py
+          log="$RUNNER_TEMP/full.log"
+          if cargo test --workspace --locked >"$log" 2>&1; then
+            echo "The full build and its tests passed."
+          else
+            echo "::error::The full build or its tests failed. The output stays private: run the tests in wickets-secrets' CI or locally."
+            exit 1
+          fi
+      - name: Remove the overlay
+        if: always()
+        run: rm -rf secrets target "$RUNNER_TEMP/full.log"
