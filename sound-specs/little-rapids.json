@@ -859,6 +859,114 @@
   },
   {
    "genny": "blal1",
+   "out": "move/paddle_1.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "splash",
+     "at": 0,
+     "gain": 0.55,
+     "params": {
+      "size": 0.18,
+      "dur": 0.35,
+      "droplets": 1,
+      "seed": 41
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "stream",
+     "at": 0.06,
+     "gain": 0.45,
+     "params": {
+      "dur": 0.45,
+      "seed": 51
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "whoosh",
+     "at": 0.05,
+     "gain": 0.25,
+     "params": {
+      "dur": 0.4,
+      "low": 200,
+      "high": 900,
+      "direction": "down"
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19
+  },
+  {
+   "genny": "blal1",
+   "out": "move/paddle_2.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "splash",
+     "at": 0,
+     "gain": 0.55,
+     "params": {
+      "size": 0.18,
+      "dur": 0.35,
+      "droplets": 1,
+      "seed": 42
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "stream",
+     "at": 0.06,
+     "gain": 0.45,
+     "params": {
+      "dur": 0.45,
+      "seed": 52
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "whoosh",
+     "at": 0.05,
+     "gain": 0.25,
+     "params": {
+      "dur": 0.4,
+      "low": 200,
+      "high": 900,
+      "direction": "down"
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -19
+  },
+  {
+   "genny": "blal1",
    "out": "bump/bank.wav",
    "layers": [
     {

@@ -34,7 +34,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, water: Live<RunScreen>) -> Lesson {
     );
     let catch = water.step(
         format!(
-            "{} sets the boat off. Hold {l} or {r} to steer. A petal is a soft bell floating toward you, rising as it comes. Steer so it is straight ahead as it reaches you.",
+            "{} sets the boat off. Hold {l} or {r} to paddle that way: you hear each stroke on that side. A petal is a soft bell floating toward you, rising as it comes. Steer so it is straight ahead as it reaches you.",
             sentence_start(&go)
         ),
         |s: &RunScreen, _| (s.run.caught >= 1).then(|| "Caught. Each catch plays a note in the tune.".to_string()),

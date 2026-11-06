@@ -17,6 +17,10 @@ pub const BANK: &str = "little-rapids/loop/bank";
 pub const CURRENT: &str = "little-rapids/loop/current";
 
 pub const LAUNCH: &str = "little-rapids/move/launch";
+/// A paddle stroke, two takes so a long pull does not repeat itself.
+pub const PADDLE: [&str; 2] = ["little-rapids/move/paddle_1", "little-rapids/move/paddle_2"];
+/// Seconds between strokes while you keep paddling.
+pub const STROKE_SECS: f64 = 0.5;
 pub const BUMP_BANK: &str = "little-rapids/bump/bank";
 pub const BUMP_STONE: &str = "little-rapids/bump/stone";
 pub const BUMP_MILL: &str = "little-rapids/bump/mill";

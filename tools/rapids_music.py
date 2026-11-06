@@ -348,6 +348,12 @@ def cues() -> list[dict]:
     m = [MONO, {"type": "reverb", "mix": 0.08, "size": 0.4}, MONO]
     return [
         # Bumps: mono, placed where they happen.
+        # A paddle stroke: the blade dips, then pulls through the water.
+        *[sound(f"move/paddle_{i}.wav", [
+            sfx("splash", {"size": 0.18, "dur": 0.35, "droplets": 1, "seed": 40 + i}, 0.55),
+            sfx("stream", {"dur": 0.45, "seed": 50 + i}, 0.45, at=0.06),
+            sfx("whoosh", {"dur": 0.4, "low": 200, "high": 900, "direction": "down"}, 0.25, at=0.05),
+        ], m, -19) for i in (1, 2)],
         sound("bump/bank.wav", [sfx("knock", {"count": 1, "material": "hollow", "size": 0.8, "force": 0.7, "seed": 2}),
                                 sfx("splash", {"size": 0.3, "dur": 0.5, "droplets": 3, "seed": 1}, 0.4)], m, -14),
         sound("bump/stone.wav", [sfx("knock", {"count": 1, "material": "wood", "size": 0.6, "force": 0.9, "seed": 4}),

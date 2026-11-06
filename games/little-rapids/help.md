@@ -8,7 +8,7 @@ Reach the river mouth to earn stars. Catch more for more stars. Bumping a bank, 
 
 ## Steering and catching
 
-Hold Left or Right to steer. The boat glides across the stream while you hold, and drifts to a stop when you let go. There are no lanes: the boat can be anywhere between the two banks.
+Hold Left or Right to paddle that way. Each stroke splashes on that side of the boat, and the boat glides across the stream while you hold. Let go and it drifts to a stop. There are no lanes: the boat can be anywhere between the two banks.
 
 Everything you hear floating toward you is placed where it really is. A sound to your left is to your left of the boat, and it gets louder and clearer as it comes closer. Steer so the sound is straight ahead of you as it reaches the boat, and you catch it.
 

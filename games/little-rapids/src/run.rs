@@ -116,6 +116,9 @@ pub struct RunScreen {
     bank_lapping: bool,
     done: bool,
     built: bool,
+    /// Seconds to the next paddle stroke while steering, and which take.
+    stroke_in: f64,
+    stroke: usize,
 }
 
 impl RunScreen {
@@ -147,6 +150,8 @@ impl RunScreen {
             bank_lapping: true,
             done: false,
             built: false,
+            stroke_in: 0.0,
+            stroke: 0,
         }
     }
 
@@ -310,6 +315,24 @@ impl RunScreen {
                 .set_volume(c, if self.run.riding { 0.9 } else { 0.6 });
         }
         sound::listen_from(ctx, x);
+    }
+
+    /// A paddle stroke on the side you steer toward, the moment you start
+    /// and then every stroke while you hold.
+    fn paddle(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
+        if self.run.steer == 0 || !self.run.is_playing() {
+            self.stroke_in = 0.0;
+            return;
+        }
+        self.stroke_in -= dt;
+        if self.stroke_in <= 0.0 {
+            let side = f64::from(self.run.steer) * 0.6;
+            let key = sound::PADDLE[self.stroke % sound::PADDLE.len()];
+            ctx.audio
+                .play_at(key, thing_pos(self.run.x + side, 0.0), Bus::EFFECTS);
+            self.stroke += 1;
+            self.stroke_in = sound::STROKE_SECS;
+        }
     }
 
     fn on_event(&mut self, ctx: &mut Ctx<Parlor>, event: Event) {
@@ -668,7 +691,7 @@ impl State<Parlor> for RunScreen {
                 } else {
                     let l = ctx.control_name(ParlorAction::Left);
                     let r = ctx.control_name(ParlorAction::Right);
-                    ctx.say(format!("{} and {r} steer.", sentence_start(&l)));
+                    ctx.say(format!("{} and {r} paddle.", sentence_start(&l)));
                 }
             }
             ParlorAction::Status => {
@@ -691,7 +714,7 @@ impl State<Parlor> for RunScreen {
                 let l = ctx.control_name(ParlorAction::Left);
                 let r = ctx.control_name(ParlorAction::Right);
                 ctx.say(format!(
-                    "The stream carries you. {} and {r} steer.",
+                    "The stream carries you. {} and {r} paddle.",
                     sentence_start(&l)
                 ));
             }
@@ -718,6 +741,7 @@ impl State<Parlor> for RunScreen {
             (false, true) => 1,
             _ => 0,
         };
+        self.paddle(ctx, dt);
         self.run.update(dt);
         for event in self.run.take_events() {
             self.on_event(ctx, event);
@@ -793,7 +817,7 @@ pub fn controls_text(ctx: &Ctx<Parlor>) -> String {
     let hint = ctx.control_name(ParlorAction::Hint);
     let repeat = ctx.control_name(ParlorAction::Repeat);
     format!(
-        "Hold {left} or {right} to steer. Catch things as they reach you, steer clear of stones and ducks, and ride the hiss of the current for points. {} gives your combo, and again for your score. {} says where the current is and what comes next. {} repeats the last line. Escape pauses.",
+        "Hold {left} or {right} to paddle that way. Catch things as they reach you, steer clear of stones and ducks, and ride the hiss of the current for points. {} gives your combo, and again for your score. {} says where the current is and what comes next. {} repeats the last line. Escape pauses.",
         sentence_start(&status),
         sentence_start(&hint),
         sentence_start(&repeat),
