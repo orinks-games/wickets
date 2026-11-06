@@ -45,7 +45,7 @@ pub const TITLE_NAME: &str = "lamplighter";
 pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
-    category: Category::Relaxing,
+    category: Category::Cozy,
     blurb: "Walk the Long Hall and light its lamps by ear.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),

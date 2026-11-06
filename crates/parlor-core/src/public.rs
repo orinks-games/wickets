@@ -184,7 +184,7 @@ pub enum Category {
     /// Thinking games with no clock to beat.
     Puzzle,
     /// Calm games with no way to fail.
-    Relaxing,
+    Cozy,
     /// Card and dice games, played at your own pace.
     Table,
 }
@@ -194,7 +194,7 @@ impl Category {
         Category::Seasonal,
         Category::Action,
         Category::Puzzle,
-        Category::Relaxing,
+        Category::Cozy,
         Category::Table,
     ];
 
@@ -204,7 +204,9 @@ impl Category {
             Category::Seasonal => "seasonal",
             Category::Action => "action",
             Category::Puzzle => "puzzle",
-            Category::Relaxing => "relaxing",
+            // Cozy games were once Relaxing games; the id stays so saved
+            // preferences and story files keep working.
+            Category::Cozy => "relaxing",
             Category::Table => "table",
         }
     }
@@ -214,7 +216,7 @@ impl Category {
             Category::Seasonal => "Seasonal games",
             Category::Action => "Action games",
             Category::Puzzle => "Puzzle games",
-            Category::Relaxing => "Relaxing games",
+            Category::Cozy => "Cozy games",
             Category::Table => "Table games",
         }
     }

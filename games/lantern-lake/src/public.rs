@@ -39,7 +39,7 @@ pub const HELP: &str = include_str!("../help.md");
 pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Lantern Lake",
-    category: Category::Relaxing,
+    category: Category::Cozy,
     blurb: "Paddle a quiet lake at night and gather floating lanterns, each adding a note to the night's song.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),

@@ -131,7 +131,7 @@ pub struct StoryTags {
 
 /// Whether a category is calm: no clock to beat and nothing to dodge.
 pub fn is_calm(category: Category) -> bool {
-    matches!(category, Category::Relaxing | Category::Table)
+    matches!(category, Category::Cozy | Category::Table)
 }
 
 /// How close a game's event is.
@@ -655,32 +655,32 @@ mod tests {
             ),
             (
                 "lantern-lake",
-                Relaxing,
+                Cozy,
                 t(&[Evening, Night], &[Summer]),
                 None,
             ),
             (
                 "tide-pools",
-                Relaxing,
+                Cozy,
                 t(&[Morning, Afternoon], &[Spring, Summer]),
                 None,
             ),
             (
                 "rooftop-garden",
-                Relaxing,
+                Cozy,
                 t(&[Morning], &[Spring, Summer]),
                 None,
             ),
-            ("stargazer", Relaxing, t(&[Night, SmallHours], ANY), None),
+            ("stargazer", Cozy, t(&[Night, SmallHours], ANY), None),
             (
                 "slow-kettle",
-                Relaxing,
+                Cozy,
                 t(&[Afternoon, Evening], &[Autumn, Winter]),
                 None,
             ),
             (
                 "birdsong-trail",
-                Relaxing,
+                Cozy,
                 t(&[Dawn, Morning], &[Spring]),
                 None,
             ),

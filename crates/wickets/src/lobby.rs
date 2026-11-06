@@ -414,7 +414,7 @@ impl Menu for CategoryList {
                         Category::Seasonal => "Holiday games, one for each celebration.",
                         Category::Action => "Fast games that chase a high score.",
                         Category::Puzzle => "Listening puzzles with no clock to beat.",
-                        Category::Relaxing => "Calm games to unwind with and no way to fail.",
+                        Category::Cozy => "Calm games to unwind with and no way to fail.",
                         Category::Table => "Card and dice games, played at your own pace.",
                     }),
                 )

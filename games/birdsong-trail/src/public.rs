@@ -58,7 +58,7 @@ pub const TITLE_NAME: &str = "birdsong_trail";
 pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
-    category: Category::Relaxing,
+    category: Category::Cozy,
     blurb: "Walk a trail at dawn by ear, and befriend the birds by answering their songs.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
