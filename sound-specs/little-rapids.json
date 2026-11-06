@@ -967,6 +967,60 @@
   },
   {
    "genny": "blal1",
+   "out": "move/paddle_hard.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "splash",
+     "at": 0,
+     "gain": 0.7,
+     "params": {
+      "size": 0.35,
+      "dur": 0.5,
+      "droplets": 3,
+      "seed": 45
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "stream",
+     "at": 0.05,
+     "gain": 0.6,
+     "params": {
+      "dur": 0.6,
+      "seed": 46
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "whoosh",
+     "at": 0.04,
+     "gain": 0.4,
+     "params": {
+      "dur": 0.5,
+      "low": 150,
+      "high": 1200,
+      "direction": "down"
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -16
+  },
+  {
+   "genny": "blal1",
    "out": "bump/bank.wav",
    "layers": [
     {

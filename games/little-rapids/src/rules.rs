@@ -16,6 +16,8 @@ pub const BEAT: f64 = 60.0 / BPM;
 pub const BAR_BEATS: u32 = 4;
 /// From the middle of the stream to either bank, in metres.
 pub const HALF: f64 = 4.0;
+/// A hard stroke's push, as a multiple of the boat's top steering speed.
+pub const HARD_STROKE: f64 = 2.6;
 /// The boat bumps the bank when its middle is this close to it.
 pub const BANK_MARGIN: f64 = 0.4;
 /// The bank's lapping is said to be close inside this distance.
@@ -1316,6 +1318,16 @@ impl Run {
     }
 
     /// Moves the boat by the steering for `dt` seconds.
+    /// Shift's hard stroke: a strong push one way, `dir` -1 or 1. It
+    /// carries the boat about a metre and a half, then the water slows it.
+    pub fn hard_stroke(&mut self, dir: i8) -> bool {
+        if !self.is_playing() || dir == 0 {
+            return false;
+        }
+        self.vx = f64::from(dir) * self.boat.steer() * HARD_STROKE;
+        true
+    }
+
     fn steer_boat(&mut self, dt: f64) {
         let top = self.boat.steer() * if self.shake > 0.0 { 0.5 } else { 1.0 };
         let want = self.steer as f64 * top;

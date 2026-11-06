@@ -119,6 +119,8 @@ pub struct RunScreen {
     /// Seconds to the next paddle stroke while steering, and which take.
     stroke_in: f64,
     stroke: usize,
+    /// Left Shift and Right Shift last frame, so a hard stroke fires once a press.
+    shifts: (bool, bool),
 }
 
 impl RunScreen {
@@ -152,6 +154,7 @@ impl RunScreen {
             built: false,
             stroke_in: 0.0,
             stroke: 0,
+            shifts: (true, true),
         }
     }
 
@@ -331,6 +334,31 @@ impl RunScreen {
             ctx.audio
                 .play_at(key, thing_pos(self.run.x + side, 0.0), Bus::EFFECTS);
             self.stroke += 1;
+            self.stroke_in = sound::STROKE_SECS;
+        }
+    }
+
+    /// Left Shift and Right Shift: one hard stroke a press. The engine keeps
+    /// modifier keys from screens, so they are read as held keys.
+    fn hard_strokes(&mut self, ctx: &mut Ctx<Parlor>) {
+        let now = (
+            ctx.held.physically_down(Key::LShift),
+            ctx.held.physically_down(Key::RShift),
+        );
+        let dir = match (now.0 && !self.shifts.0, now.1 && !self.shifts.1) {
+            (true, false) => -1,
+            (false, true) => 1,
+            _ => 0,
+        };
+        self.shifts = now;
+        if self.run.hard_stroke(dir) {
+            let side = f64::from(dir) * 0.6;
+            ctx.audio.play_at(
+                sound::PADDLE_HARD,
+                thing_pos(self.run.x + side, 0.0),
+                Bus::EFFECTS,
+            );
+            // The next ordinary stroke waits its turn after the hard one.
             self.stroke_in = sound::STROKE_SECS;
         }
     }
@@ -742,6 +770,7 @@ impl State<Parlor> for RunScreen {
             _ => 0,
         };
         self.paddle(ctx, dt);
+        self.hard_strokes(ctx);
         self.run.update(dt);
         for event in self.run.take_events() {
             self.on_event(ctx, event);
@@ -817,7 +846,7 @@ pub fn controls_text(ctx: &Ctx<Parlor>) -> String {
     let hint = ctx.control_name(ParlorAction::Hint);
     let repeat = ctx.control_name(ParlorAction::Repeat);
     format!(
-        "Hold {left} or {right} to paddle that way. Catch things as they reach you, steer clear of stones and ducks, and ride the hiss of the current for points. {} gives your combo, and again for your score. {} says where the current is and what comes next. {} repeats the last line. Escape pauses.",
+        "Hold {left} or {right} to paddle that way, and Left Shift or Right Shift for one hard stroke. Catch things as they reach you, steer clear of stones and ducks, and ride the hiss of the current for points. {} gives your combo, and again for your score. {} says where the current is and what comes next. {} repeats the last line. Escape pauses.",
         sentence_start(&status),
         sentence_start(&hint),
         sentence_start(&repeat),

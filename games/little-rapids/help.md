@@ -8,7 +8,7 @@ Reach the river mouth to earn stars. Catch more for more stars. Bumping a bank, 
 
 ## Steering and catching
 
-Hold Left or Right to paddle that way. Each stroke splashes on that side of the boat, and the boat glides across the stream while you hold. Let go and it drifts to a stop. There are no lanes: the boat can be anywhere between the two banks.
+Hold Left or Right to paddle that way. Each stroke splashes on that side of the boat, and the boat glides across the stream while you hold. Let go and it drifts to a stop. Left Shift and Right Shift give one hard stroke that way, for a quick dodge. There are no lanes: the boat can be anywhere between the two banks.
 
 Everything you hear floating toward you is placed where it really is. A sound to your left is to your left of the boat, and it gets louder and clearer as it comes closer. Steer so the sound is straight ahead of you as it reaches the boat, and you catch it.
 
@@ -118,7 +118,8 @@ Sound check, on the title, plays everything you need to know on the water, each 
 
 These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
 
-- Left and Right arrows: hold to steer the boat across the stream.
+- Left and Right arrows: hold to paddle the boat across the stream.
+- Left Shift and Right Shift: one hard stroke that way. These two keys stay the same if you change your bindings.
 - Space: before the stream starts, starts it at once.
 - S: your combo and multiplier, and a bank if one is close. Press it again straight away for your score, how far down the stream you are, your best, and the current.
 - H: where the current is, and what is coming next.

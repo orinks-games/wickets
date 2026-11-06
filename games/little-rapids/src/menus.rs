@@ -354,6 +354,7 @@ impl Menu for SoundCheck {
             .help("Lapping water at the left bank, then the right. It gets louder as you get close."),
             plain("The current", sound::CURRENT_IN, "A rising swish as you slip into the current. Its hiss is ahead of you while you ride it."),
             plain("A paddle stroke", sound::PADDLE[0], "A dip and pull through the water, on the side you paddle toward."),
+            plain("A hard stroke", sound::PADDLE_HARD, "A deeper splash and a long pull: Left Shift or Right Shift, for a quick dodge."),
             plain("A clean catch", sound::CLEAN, "A bright ring on top of the note: you caught it dead centre, for double points."),
             plain("Bumping the bank", sound::BUMP_BANK, "A wooden knock and a splash. Your combo is lost."),
             plain("Combo goes up", sound::MULTIPLIER, "A rising chime: your multiplier goes up by one."),

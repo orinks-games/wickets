@@ -354,6 +354,12 @@ def cues() -> list[dict]:
             sfx("stream", {"dur": 0.45, "seed": 50 + i}, 0.45, at=0.06),
             sfx("whoosh", {"dur": 0.4, "low": 200, "high": 900, "direction": "down"}, 0.25, at=0.05),
         ], m, -19) for i in (1, 2)],
+        # A hard stroke on Shift: a deeper dig and a long, strong pull.
+        sound("move/paddle_hard.wav", [
+            sfx("splash", {"size": 0.35, "dur": 0.5, "droplets": 3, "seed": 45}, 0.7),
+            sfx("stream", {"dur": 0.6, "seed": 46}, 0.6, at=0.05),
+            sfx("whoosh", {"dur": 0.5, "low": 150, "high": 1200, "direction": "down"}, 0.4, at=0.04),
+        ], m, -16),
         sound("bump/bank.wav", [sfx("knock", {"count": 1, "material": "hollow", "size": 0.8, "force": 0.7, "seed": 2}),
                                 sfx("splash", {"size": 0.3, "dur": 0.5, "droplets": 3, "seed": 1}, 0.4)], m, -14),
         sound("bump/stone.wav", [sfx("knock", {"count": 1, "material": "wood", "size": 0.6, "force": 0.9, "seed": 4}),
