@@ -29,6 +29,8 @@ You start with 3 seeds: tomato, squash and bean. Harvests in your own garden unl
 - Lavender: the chimes. Happy in dry soil. Unlocked at 3 harvests.
 - Mint: a cool, glassy pad. The thirstiest of all. Unlocked at 6 harvests.
 
+Once you have found varieties of a seed, its row in the packet says how many kinds you have. Enter on it lists the plain seed and each variety, and Enter plants one.
+
 ## How plants grow
 
 A plant goes from seed, to sprout, to growing, to in bloom, to ripe.
@@ -55,6 +57,43 @@ When something needs you, its name and planter are spoken, so you can press H to
 
 Different kinds of plant that are in bloom and well watered at the same time make a harmony: two kinds make a two-part harmony, three kinds a three-part harmony, and so on. A thirsty, waterlogged or wilted plant falls out of tune and leaves the harmony until you water it. S, for status, tells you which parts are singing. Bring all six kinds into tune at once for the full rooftop chorus.
 
+## Varieties and crosses
+
+In your own garden, two different plants side by side can cross. When you harvest a plant in bloom with a different plant in bloom in the planter ahead, behind, left or right of it, the two may cross, and the harvest leaves a packet of new seeds. A different plant can be another species or another variety of the same one. A plant with no different neighbour now and then throws new seeds by itself.
+
+The new seeds are the harvested plant's species, with traits from both parents and sometimes a new one. There are four traits.
+
+- Instrument: each species can play its part on three instruments. Tomato: kalimba, marimba or music box. Squash: upright bass, finger bass or tuba. Bean: plucked strings, harp or banjo. Sunflower: flute, clarinet or ocarina. Lavender: glockenspiel, celesta or vibraphone. Mint: glass pad, string pad or choir.
+- Thirst: thirsty plants dry out faster than plain ones, and hardy plants slower.
+- Pace: quick plants grow faster. Slow plants grow slower, but aphids land on them less often.
+- Double harvests: half the harvests of these plants count twice.
+
+Each mix of traits has its own name, such as Copper Moon tomato. The name's first word comes from thirst and pace, and its second from the instrument and double harvests. A plain seed has neither. Every species has 54 varieties, 324 in all, and a cross of two of your varieties can turn up ones you have not found.
+
+When you find a new variety you hear a bright glockenspiel run and its name and traits. It goes into your seed packet straight away. Harvest one variety 5 times and it becomes an heirloom.
+
+The seed shed, on the title menu, lists every variety you have found under Varieties found. Enter on one plays its part, so you can hear its instrument. Varieties are kept even if you start your garden over. Challenge gardens grow plain seeds only, and nothing crosses there.
+
+## Stars and keepsakes
+
+You earn a star for each new variety, each heirloom and each neighbour's request you fill. Stars unlock keepsakes for your own rooftop. When one arrives you hear a wooden knock and a marimba, and its name.
+
+- Bird bath, at 3 stars: sparrows visit and eat some aphids before they settle. You hear a sparrow at that planter.
+- Rain barrel, at 8 stars: each rain shower fills it, and it then waters the next 3 plants that get thirsty. You hear the watering can and the plant's name.
+- Beehive, at 15 stars: plants cross more often.
+- Trellis, at 25 stars: plants in bloom get leggy half as often.
+- Compost bin, at 40 stars: new seeds sprout twice as fast.
+- Wind chimes, at 60 stars: your own chimes ring near the bench on breezy days, a little higher than the neighbour's.
+- String lights, at 85 stars: a click and a soft celesta each evening as the lights come on.
+
+Keepsakes, in the seed shed, lists them all and the stars still needed. Keepsakes are kept if you start your garden over.
+
+## Neighbours' requests
+
+People in your building ask for things from your garden, for example "Rosa wants beans from a hardy plant." New requests come with new garden days, up to 2 at a time, with a soft handbell. Harvest a plant that fits and the neighbour thanks you: you earn a star, and now and then they leave you seeds of a variety you have not found.
+
+N, in the garden, reads the open requests. S, pressed twice, says how many there are. Requests, in the seed shed, reads them too.
+
 ## Days and weather
 
 A garden day lasts about a minute and a half of play. Days only pass while you are in the garden, and the garden is saved when you leave, so it is waiting just as you left it.
@@ -72,9 +111,9 @@ A rain shower starts with distant thunder and waters every planter while it last
 
 Your garden starts with two rows of three planters, a squash already growing and a tomato seed just sown. At 4 harvests a neighbour lends you a third row, nearest you, and at 9 harvests a fourth planter joins the right of every row. New seeds unlock along the way.
 
-The Play row on the title menu opens your garden and reads its day, plants and harvests, and your fullest harmony. Records, on the title menu, reads your bests, your seeds and your challenge results.
+The Play row on the title menu opens your garden and reads its day, plants and harvests, and your fullest harmony. Records, on the title menu, reads your bests, your seeds, your collection and your challenge results.
 
-If you ever want a bare rooftop again, Start the garden over, near the end of the title menu, clears your garden after asking first. Your best records stay. Before you have a garden, the row says there is nothing to clear.
+If you ever want a bare rooftop again, Start the garden over, near the end of the title menu, clears your garden after asking first. Your best records, varieties, keepsakes and requests stay. Before you have a garden, the row says there is nothing to clear.
 
 ## Calendar events
 
@@ -111,6 +150,7 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - Delete or Backspace: pull the plant up and add it to the compost, to make room for something else. You are asked first.
 - Enter: sit on the bench, or get up again. While you sit, time passes 6 times faster, and you stand up as soon as a plant needs you.
 - L: list every planter, row by row.
+- N: read the neighbours' requests.
 - S: status. What needs you, any rain, and the planter under you. Press it again straight away for the day, the time of day, the weather, the harmony and your harvests.
 - R: repeat the last thing said.
 - H: hint. Where the nearest job is and which key does it.

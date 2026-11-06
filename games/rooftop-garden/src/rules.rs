@@ -7,6 +7,7 @@
 use parlor_core::{Period, Rng};
 use serde::{Deserialize, Serialize};
 
+use crate::breeding::{self, Collection, Keepsake, Traits, Variety};
 use crate::cues;
 
 /// Seconds of play in one garden day.
@@ -43,7 +44,7 @@ pub const MAX_ROWS: usize = 3;
 pub const MAX_COLS: usize = 4;
 
 /// What can grow in a planter. Each has a voice in the garden's song.
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
 pub enum Species {
     Tomato,
     Squash,
@@ -221,6 +222,9 @@ pub struct Plant {
     /// low bassoon. Only sown in pumpkin season.
     #[serde(default)]
     pub pumpkin: bool,
+    /// What it inherited: its tone, thirst, pace and harvests.
+    #[serde(default)]
+    pub traits: Traits,
 }
 
 impl Plant {
@@ -232,22 +236,48 @@ impl Plant {
         }
     }
 
-    /// "pumpkin", or the species' name.
-    pub fn name(&self) -> &'static str {
+    /// "pumpkin", or the variety's name: "Copper Moon tomato".
+    pub fn name(&self) -> String {
         if self.pumpkin {
-            "pumpkin"
+            "pumpkin".into()
         } else {
-            self.species.name()
+            self.variety().name()
         }
     }
 
-    /// Its voice in the song: "a low bassoon" for a pumpkin, or the
-    /// species' voice.
-    pub fn voice(&self) -> &'static str {
+    pub fn variety(&self) -> Variety {
+        Variety {
+            species: self.species,
+            traits: self.traits,
+        }
+    }
+
+    /// A seed of `variety`.
+    pub fn of(variety: Variety) -> Plant {
+        Plant {
+            traits: variety.traits,
+            ..Plant::new(variety.species)
+        }
+    }
+
+    /// Its voice in the song: "a low bassoon" for a pumpkin, the
+    /// species' voice, or its own instrument.
+    pub fn voice(&self) -> String {
         if self.pumpkin {
-            "a low bassoon"
+            "a low bassoon".into()
+        } else if self.traits.tone == 0 {
+            self.species.voice().into()
         } else {
-            self.species.voice()
+            self.variety().tone().into()
+        }
+    }
+
+    /// The instrument its part plays on: 0 is the species' own.
+    pub fn tone(&self) -> u8 {
+        if self.pumpkin {
+            0
+        } else {
+            self.traits.tone
         }
     }
 
@@ -271,6 +301,7 @@ impl Plant {
             pest: false,
             leggy: false,
             pumpkin: false,
+            traits: Traits::PLAIN,
         }
     }
 
@@ -305,7 +336,7 @@ impl Plant {
 
     /// "tomato, in bloom, thirsty, aphids".
     pub fn describe(&self) -> String {
-        let mut parts = vec![self.name().to_string()];
+        let mut parts = vec![self.name()];
         if self.wilted {
             parts.push("wilted".into());
         } else {
@@ -657,6 +688,10 @@ pub struct Garden {
     pub bells: bool,
     #[serde(skip)]
     bells_named: bool,
+    /// What every garden of yours has found: varieties, keepsakes and the
+    /// neighbours' requests. Saved apart, and only used in your own garden.
+    #[serde(skip)]
+    pub book: Collection,
 }
 
 impl Garden {
@@ -694,6 +729,7 @@ impl Garden {
             pumpkin_season: false,
             bells: false,
             bells_named: false,
+            book: Collection::default(),
         }
     }
 
@@ -775,6 +811,7 @@ impl Garden {
             self.seeds = vec![Species::Tomato, Species::Squash, Species::Bean];
         }
         for p in self.plots.iter_mut().flatten() {
+            p.traits.repair();
             if !p.water.is_finite() {
                 p.water = 0.6;
             }
@@ -1075,6 +1112,11 @@ impl Garden {
         if self.pumpkin_season {
             s.push_str(" Pumpkin seeds are in the packet until Thanksgiving.");
         }
+        match self.book.requests.len() {
+            0 => {}
+            1 => s.push_str(" 1 request: N reads it."),
+            n => s.push_str(&format!(" {n} requests: N reads them.")),
+        }
         vec![first, s]
     }
 
@@ -1131,7 +1173,7 @@ impl Garden {
         ];
         for (test, what, how) in jobs.iter() {
             if let Some(i) = self.nearest(|p| p.as_ref().is_some_and(test)) {
-                let name = self.plots[i].as_ref().map(|p| p.name()).unwrap_or("");
+                let name = self.plots[i].as_ref().map(|p| p.name()).unwrap_or_default();
                 return format!("{} {how}", self.pointer(i, &format!("the {name}"), what));
             }
         }
@@ -1143,7 +1185,7 @@ impl Garden {
             );
         }
         if let Some(i) = self.nearest(|p| p.as_ref().is_some_and(|p| p.water < 0.6)) {
-            let name = self.plots[i].as_ref().map(|p| p.name()).unwrap_or("");
+            let name = self.plots[i].as_ref().map(|p| p.name()).unwrap_or_default();
             return format!(
                 "All content. {}",
                 self.pointer(i, &format!("the {name}"), "needs water soon")
@@ -1255,7 +1297,7 @@ impl Garden {
             p.wilted = false;
             self.at(cues::WATER, i);
             self.at(cues::REVIVE, i);
-            self.say(format!("{} revived.", sentence(name)));
+            self.say(format!("{} revived.", sentence(&name)));
         } else {
             self.at(cues::WATER, i);
             self.say("Watered.");
@@ -1303,7 +1345,9 @@ impl Garden {
             return;
         };
         let species = p.species;
-        let what = if p.pumpkin {
+        let pumpkin = p.pumpkin;
+        let variety = p.variety();
+        let what = if pumpkin {
             "a round orange pumpkin"
         } else {
             species.harvest_text()
@@ -1311,15 +1355,149 @@ impl Garden {
         p.stage = Stage::Blooming;
         p.growth = 0.0;
         p.leggy = false;
-        self.harvests += 1;
-        self.harvested[species.index()] += 1;
+        let two = variety.traits.double && self.rng.chance(breeding::DOUBLE_CHANCE);
+        let count = if two { 2 } else { 1 };
+        self.harvests += count;
+        self.harvested[species.index()] += count;
         self.at(cues::HARVEST, i);
         self.notes.push(Note::Stinger(cues::MUSIC_HARVEST));
         let n = self.harvests;
-        self.say(format!("{}. {n} in all.", sentence(what)));
+        if two {
+            self.say(format!("Double harvest: {what}. {n} in all."));
+        } else {
+            self.say(format!("{}. {n} in all.", sentence(what)));
+        }
+        if self.kind == Kind::Home && !pumpkin {
+            self.heirloom(variety);
+            self.fill_request(variety);
+            self.try_cross(i, variety);
+        }
         if self.kind == Kind::Home {
             self.unlocks();
         }
+    }
+
+    /// Counts a harvest of a found variety; at five it breeds true.
+    fn heirloom(&mut self, variety: Variety) {
+        let Some(f) = self.book.found.iter_mut().find(|f| f.variety == variety) else {
+            return;
+        };
+        f.harvests += 1;
+        if f.harvests == breeding::HEIRLOOM_AT {
+            self.cue(cues::UNLOCK);
+            self.queue(format!(
+                "{} is an heirloom now. 1 star.",
+                sentence(&variety.name())
+            ));
+        }
+    }
+
+    /// A harvest a neighbour asked for: their thanks, and seeds to try.
+    fn fill_request(&mut self, variety: Variety) {
+        let Some(at) = self.book.requests.iter().position(|r| r.fits(variety)) else {
+            return;
+        };
+        let r = self.book.requests.remove(at);
+        self.book.thanks += 1;
+        self.cue(cues::THANKS);
+        let mut text = format!("{} thanks you. 1 star.", r.who());
+        // Now and then a neighbour leaves seeds you have not found.
+        let gift = if self.rng.chance(0.5) {
+            self.book.gift(&mut self.rng, &self.seeds)
+        } else {
+            None
+        };
+        if let Some(gift) = gift {
+            self.book.found.push(breeding::Found {
+                variety: gift,
+                harvests: 0,
+            });
+            text.push_str(&format!(" Gift seeds: {}.", gift.name()));
+        }
+        self.queue(text);
+    }
+
+    /// The plant at `i` may cross with a different neighbour in bloom, or
+    /// now and then throw something new by itself.
+    fn try_cross(&mut self, i: usize, mother: Variety) {
+        let (r, c) = self.cell(i);
+        let mut fathers = Vec::new();
+        for (dr, dc) in [(-1i32, 0i32), (1, 0), (0, -1), (0, 1)] {
+            let (nr, nc) = (r as i32 + dr, c as i32 + dc);
+            if nr < 0 || nc < 0 || nr >= self.rows as i32 || nc >= self.cols as i32 {
+                continue;
+            }
+            if let Some(p) = &self.plots[self.index(nr as usize, nc as usize)] {
+                if p.stage >= Stage::Blooming && !p.wilted && !p.pumpkin && p.variety() != mother {
+                    fathers.push(p.traits);
+                }
+            }
+        }
+        let hive = if self.book.has(Keepsake::Beehive) {
+            breeding::HIVE_BONUS
+        } else {
+            0.0
+        };
+        let child = if fathers.is_empty() {
+            if !self.rng.chance(breeding::SPORT_CHANCE + hive / 2.0) {
+                return;
+            }
+            breeding::cross(&mut self.rng, mother, None)
+        } else {
+            if !self.rng.chance(breeding::CROSS_CHANCE + hive) {
+                return;
+            }
+            let father = *self.rng.pick(&fathers);
+            breeding::cross(&mut self.rng, mother, Some(father))
+        };
+        if self.book.knows(child) {
+            return;
+        }
+        self.book.found.push(breeding::Found {
+            variety: child,
+            harvests: 0,
+        });
+        self.cue(cues::UNLOCK);
+        self.queue(format!(
+            "New seeds: {}, {}. 1 star.",
+            child.name(),
+            child.describe()
+        ));
+    }
+
+    /// Keepsakes earned by stars.
+    fn keepsakes(&mut self) {
+        let stars = self.book.stars();
+        for k in Keepsake::ALL {
+            if stars >= k.stars() && !self.book.has(k) {
+                self.book.keepsakes.push(k);
+                self.cue(cues::EXPAND);
+                self.queue(format!("New keepsake: {}. {}", k.name(), k.about()));
+            }
+        }
+    }
+
+    /// N: the neighbours' requests.
+    pub fn requests_text(&self) -> String {
+        if self.book.requests.is_empty() {
+            return "No requests. Neighbours ask as the days go by.".into();
+        }
+        self.book
+            .requests
+            .iter()
+            .map(|r| r.describe())
+            .collect::<Vec<_>>()
+            .join(" ")
+    }
+
+    pub fn speak_requests(&mut self) {
+        if self.kind != Kind::Home {
+            self.cue(cues::NO);
+            self.say("No requests in a challenge garden.");
+            return;
+        }
+        let s = self.requests_text();
+        self.say(s);
     }
 
     /// New seeds and planters, earned by harvests in your own garden.
@@ -1341,19 +1519,22 @@ impl Garden {
             self.cue(cues::EXPAND);
             self.queue("A fourth planter on the right of every row.");
         }
+        self.book.repair();
+        self.keepsakes();
     }
 
     /// Plants a seed in the empty planter under you.
-    pub fn sow(&mut self, species: Species) {
+    pub fn sow(&mut self, variety: impl Into<Variety>) {
+        let variety = variety.into();
         let i = self.here();
         if self.plots[i].is_some() {
             self.cue(cues::NO);
             self.say("Something is already growing here.");
             return;
         }
-        self.plots[i] = Some(Plant::new(species));
+        self.plots[i] = Some(Plant::of(variety));
         self.at(cues::PLANT, i);
-        self.say(format!("{} planted.", sentence(species.name())));
+        self.say(format!("{} planted.", sentence(&variety.name())));
     }
 
     /// Plants a pumpkin seed in the empty planter under you.
@@ -1386,7 +1567,7 @@ impl Garden {
         let i = self.here();
         if let Some(p) = self.plots[i].take() {
             self.at(cues::COMPOST, i);
-            self.say(format!("{} composted.", sentence(p.name())));
+            self.say(format!("{} composted.", sentence(&p.name())));
         }
     }
 
@@ -1473,6 +1654,9 @@ impl Garden {
                 self.rain_left = SHOWER_DAYS;
                 self.cue(cues::SHOWER);
                 self.queue("Rain shower. It waters every planter.");
+                if self.book.has(Keepsake::RainBarrel) {
+                    self.book.barrel = breeding::BARREL_FILL;
+                }
             }
         }
         let raining = self.raining();
@@ -1487,6 +1671,11 @@ impl Garden {
         let thirst = self.weather.thirst() * self.mods.thirst;
         let pests = PEST_RATE * self.weather.pests() * self.mods.pests;
         let growth = self.mods.growth;
+        let trellis = if self.book.has(Keepsake::Trellis) {
+            0.5
+        } else {
+            1.0
+        };
         for i in 0..self.plots.len() {
             let Some(mut p) = self.plots[i].take() else {
                 continue;
@@ -1505,16 +1694,24 @@ impl Garden {
                     self.queue(format!("Rain revived the {name}, {place}."));
                 }
             } else {
-                p.water = (p.water - p.species.thirst() * thirst * days).max(0.0);
+                p.water =
+                    (p.water - p.species.thirst() * p.traits.thirst_rate() * thirst * days).max(0.0);
             }
             if was_soggy && !p.waterlogged() {
                 self.at(cues::DRIP, i);
-                self.queue(format!("{} drained, {place}.", sentence(name)));
+                self.queue(format!("{} drained, {place}.", sentence(&name)));
             }
             // One meaning of thirsty everywhere: the dry-soil crackle, S, H
             // and this call all count a seed too, since a dry seed grows
             // at half speed.
-            if !was_thirsty && p.thirsty() {
+            if !was_thirsty && p.thirsty() && self.book.barrel > 0 {
+                // The rain barrel tops it up before it calls you.
+                self.book.barrel -= 1;
+                p.water = 1.0;
+                p.dry = 0.0;
+                self.at(cues::WATER, i);
+                self.queue(format!("Rain barrel watered the {name}, {place}."));
+            } else if !was_thirsty && p.thirsty() {
                 let what = if p.stage == Stage::Seed {
                     format!("{name} seed")
                 } else {
@@ -1535,14 +1732,17 @@ impl Garden {
                     self.need(
                         cues::WILT,
                         i,
-                        format!("{} wilted, {place}. {water} revives it.", sentence(name)),
+                        format!("{} wilted, {place}. {water} revives it.", sentence(&name)),
                     );
                 }
             } else {
                 p.dry = 0.0;
             }
             if !p.wilted && !p.pest && !p.waterlogged() && p.water > 0.0 && p.stage != Stage::Ripe {
-                let mut rate = p.species.speed() * growth;
+                let mut rate = p.species.speed() * p.traits.growth_rate() * growth;
+                if p.stage == Stage::Seed && self.book.has(Keepsake::CompostBin) {
+                    rate *= 2.0;
+                }
                 if p.thirsty() {
                     rate *= 0.5;
                 }
@@ -1559,8 +1759,16 @@ impl Garden {
             if p.stage >= Stage::Growing
                 && !p.pest
                 && !p.wilted
-                && self.rng.chance((pests * days) as f64)
+                && self
+                    .rng
+                    .chance((pests * p.traits.pest_rate() * days) as f64)
             {
+                if self.book.has(Keepsake::BirdBath) && self.rng.chance(0.35) {
+                    // A sparrow from the bird bath gets them first.
+                    self.at(cues::SPARROW, i);
+                    self.plots[i] = Some(p);
+                    continue;
+                }
                 p.pest = true;
                 let tend = self.keys.tend.clone();
                 self.need(
@@ -1574,14 +1782,14 @@ impl Garden {
                 && !p.wilted
                 && self
                     .rng
-                    .chance((LEGGY_RATE * self.mods.leggy * days) as f64)
+                    .chance((LEGGY_RATE * self.mods.leggy * trellis * days) as f64)
             {
                 p.leggy = true;
                 let tend = self.keys.tend.clone();
                 self.need(
                     cues::LEGGY,
                     i,
-                    format!("{} leggy, {place}. {tend} prunes it.", sentence(name)),
+                    format!("{} leggy, {place}. {tend} prunes it.", sentence(&name)),
                 );
             }
             self.plots[i] = Some(p);
@@ -1629,6 +1837,9 @@ impl Garden {
                 self.cue(cues::DUSK);
                 self.queue("Evening.");
             }
+            if self.book.has(Keepsake::StringLights) {
+                self.cue(cues::LIGHTS);
+            }
         }
         if self.clock >= 1.0 {
             self.clock -= 1.0;
@@ -1649,6 +1860,13 @@ impl Garden {
                 text.push_str(&format!(" Day {} of {limit}.", self.day));
             }
             self.queue(text);
+            if self.kind == Kind::Home && self.rng.chance(0.5) {
+                if let Some(r) = self.book.new_request(&mut self.rng, &self.seeds) {
+                    self.book.requests.push(r);
+                    self.cue(cues::THANKS);
+                    self.queue(format!("Request: {}", r.describe()));
+                }
+            }
             self.notes.push(Note::NewDay);
         }
     }
@@ -1660,26 +1878,26 @@ impl Garden {
             Stage::Seed => {}
             Stage::Sprout => {
                 self.at(cues::SPROUT, i);
-                self.queue(format!("{} sprouted, {place}.", sentence(name)));
+                self.queue(format!("{} sprouted, {place}.", sentence(&name)));
             }
             Stage::Growing => {
                 self.at(cues::GROW, i);
                 self.queue(format!(
                     "{} growing, {place}: {}.",
-                    sentence(name),
+                    sentence(&name),
                     p.voice()
                 ));
             }
             Stage::Blooming => {
                 self.at(cues::BLOOM, i);
-                self.queue(format!("{} in bloom, {place}.", sentence(name)));
+                self.queue(format!("{} in bloom, {place}.", sentence(&name)));
             }
             Stage::Ripe => {
                 let tend = self.keys.tend.clone();
                 self.need(
                     cues::RIPE,
                     i,
-                    format!("{} ripe, {place}. {tend} harvests it.", sentence(name)),
+                    format!("{} ripe, {place}. {tend} harvests it.", sentence(&name)),
                 );
             }
         }

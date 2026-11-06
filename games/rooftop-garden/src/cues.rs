@@ -77,6 +77,10 @@ pub const BENCH: &str = "rooftop-garden/ui/bench";
 pub const STAND: &str = "rooftop-garden/ui/stand";
 pub const UNLOCK: &str = "rooftop-garden/ui/unlock";
 pub const EXPAND: &str = "rooftop-garden/ui/expand";
+/// A neighbour's request comes in, or is filled: a soft doorbell.
+pub const THANKS: &str = "rooftop-garden/ui/thanks";
+/// The string lights switch on for the evening.
+pub const LIGHTS: &str = "rooftop-garden/ui/lights";
 
 /// How the sound check plays an entry.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
