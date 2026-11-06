@@ -183,6 +183,7 @@ dependencies = [
  "parlor-core",
  "serde",
  "wickets-content",
+ "wickets-rules",
 ]
 
 [[package]]
@@ -775,6 +776,7 @@ dependencies = [
  "parlor-core",
  "serde",
  "wickets-content",
+ "wickets-rules",
 ]
 
 [[package]]
@@ -996,7 +998,7 @@ dependencies = [
 [[package]]
 name = "hearken"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=ff744522adf43c802f270f2c10c5f15ef5fbfe1a#ff744522adf43c802f270f2c10c5f15ef5fbfe1a"
+source = "git+https://github.com/orinks-games/hearken?rev=e3b6feeb639d6646dcf9a4b2d2aca90225332fc4#e3b6feeb639d6646dcf9a4b2d2aca90225332fc4"
 dependencies = [
  "hearken-app",
  "hearken-replay",
@@ -1006,7 +1008,7 @@ dependencies = [
 [[package]]
 name = "hearken-app"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=ff744522adf43c802f270f2c10c5f15ef5fbfe1a#ff744522adf43c802f270f2c10c5f15ef5fbfe1a"
+source = "git+https://github.com/orinks-games/hearken?rev=e3b6feeb639d6646dcf9a4b2d2aca90225332fc4#e3b6feeb639d6646dcf9a4b2d2aca90225332fc4"
 dependencies = [
  "ab_glyph",
  "dirs",
@@ -1014,6 +1016,7 @@ dependencies = [
  "hearken-audio",
  "hearken-discord",
  "hearken-l10n",
+ "hearken-replay",
  "hearken-seal",
  "hearken-speech",
  "hearken-synth",
@@ -1025,13 +1028,14 @@ dependencies = [
  "serde",
  "serde_json",
  "tempfile",
+ "ureq",
  "windows-sys 0.59.0",
 ]
 
 [[package]]
 name = "hearken-audio"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=ff744522adf43c802f270f2c10c5f15ef5fbfe1a#ff744522adf43c802f270f2c10c5f15ef5fbfe1a"
+source = "git+https://github.com/orinks-games/hearken?rev=e3b6feeb639d6646dcf9a4b2d2aca90225332fc4#e3b6feeb639d6646dcf9a4b2d2aca90225332fc4"
 dependencies = [
  "cpal",
  "hearken-pack",
@@ -1046,12 +1050,12 @@ dependencies = [
 [[package]]
 name = "hearken-bake"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=ff744522adf43c802f270f2c10c5f15ef5fbfe1a#ff744522adf43c802f270f2c10c5f15ef5fbfe1a"
+source = "git+https://github.com/orinks-games/hearken?rev=e3b6feeb639d6646dcf9a4b2d2aca90225332fc4#e3b6feeb639d6646dcf9a4b2d2aca90225332fc4"
 
 [[package]]
 name = "hearken-discord"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=ff744522adf43c802f270f2c10c5f15ef5fbfe1a#ff744522adf43c802f270f2c10c5f15ef5fbfe1a"
+source = "git+https://github.com/orinks-games/hearken?rev=e3b6feeb639d6646dcf9a4b2d2aca90225332fc4#e3b6feeb639d6646dcf9a4b2d2aca90225332fc4"
 dependencies = [
  "discord-rich-presence",
  "log",
@@ -1061,12 +1065,12 @@ dependencies = [
 [[package]]
 name = "hearken-genny"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=ff744522adf43c802f270f2c10c5f15ef5fbfe1a#ff744522adf43c802f270f2c10c5f15ef5fbfe1a"
+source = "git+https://github.com/orinks-games/hearken?rev=e3b6feeb639d6646dcf9a4b2d2aca90225332fc4#e3b6feeb639d6646dcf9a4b2d2aca90225332fc4"
 
 [[package]]
 name = "hearken-l10n"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=ff744522adf43c802f270f2c10c5f15ef5fbfe1a#ff744522adf43c802f270f2c10c5f15ef5fbfe1a"
+source = "git+https://github.com/orinks-games/hearken?rev=e3b6feeb639d6646dcf9a4b2d2aca90225332fc4#e3b6feeb639d6646dcf9a4b2d2aca90225332fc4"
 dependencies = [
  "aho-corasick",
  "log",
@@ -1077,7 +1081,7 @@ dependencies = [
 [[package]]
 name = "hearken-pack"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=ff744522adf43c802f270f2c10c5f15ef5fbfe1a#ff744522adf43c802f270f2c10c5f15ef5fbfe1a"
+source = "git+https://github.com/orinks-games/hearken?rev=e3b6feeb639d6646dcf9a4b2d2aca90225332fc4#e3b6feeb639d6646dcf9a4b2d2aca90225332fc4"
 dependencies = [
  "chacha20poly1305",
  "getrandom 0.4.3",
@@ -1087,7 +1091,7 @@ dependencies = [
 [[package]]
 name = "hearken-replay"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=ff744522adf43c802f270f2c10c5f15ef5fbfe1a#ff744522adf43c802f270f2c10c5f15ef5fbfe1a"
+source = "git+https://github.com/orinks-games/hearken?rev=e3b6feeb639d6646dcf9a4b2d2aca90225332fc4#e3b6feeb639d6646dcf9a4b2d2aca90225332fc4"
 dependencies = [
  "serde",
  "serde_json",
@@ -1097,7 +1101,7 @@ dependencies = [
 [[package]]
 name = "hearken-seal"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=ff744522adf43c802f270f2c10c5f15ef5fbfe1a#ff744522adf43c802f270f2c10c5f15ef5fbfe1a"
+source = "git+https://github.com/orinks-games/hearken?rev=e3b6feeb639d6646dcf9a4b2d2aca90225332fc4#e3b6feeb639d6646dcf9a4b2d2aca90225332fc4"
 dependencies = [
  "chacha20poly1305",
  "getrandom 0.4.3",
@@ -1110,7 +1114,7 @@ dependencies = [
 [[package]]
 name = "hearken-speech"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=ff744522adf43c802f270f2c10c5f15ef5fbfe1a#ff744522adf43c802f270f2c10c5f15ef5fbfe1a"
+source = "git+https://github.com/orinks-games/hearken?rev=e3b6feeb639d6646dcf9a4b2d2aca90225332fc4#e3b6feeb639d6646dcf9a4b2d2aca90225332fc4"
 dependencies = [
  "cpal",
  "hearken-genny",
@@ -1124,7 +1128,7 @@ dependencies = [
 [[package]]
 name = "hearken-synth"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=ff744522adf43c802f270f2c10c5f15ef5fbfe1a#ff744522adf43c802f270f2c10c5f15ef5fbfe1a"
+source = "git+https://github.com/orinks-games/hearken?rev=e3b6feeb639d6646dcf9a4b2d2aca90225332fc4#e3b6feeb639d6646dcf9a4b2d2aca90225332fc4"
 dependencies = [
  "fundsp",
  "log",
@@ -1133,7 +1137,7 @@ dependencies = [
 [[package]]
 name = "hearken-update"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=ff744522adf43c802f270f2c10c5f15ef5fbfe1a#ff744522adf43c802f270f2c10c5f15ef5fbfe1a"
+source = "git+https://github.com/orinks-games/hearken?rev=e3b6feeb639d6646dcf9a4b2d2aca90225332fc4#e3b6feeb639d6646dcf9a4b2d2aca90225332fc4"
 dependencies = [
  "ed25519-dalek",
  "flate2",
@@ -1817,6 +1821,7 @@ dependencies = [
  "serde",
  "serde_json",
  "wickets-content",
+ "wickets-rules",
 ]
 
 [[package]]
@@ -2043,6 +2048,7 @@ dependencies = [
  "parlor-core",
  "serde",
  "wickets-content",
+ "wickets-rules",
 ]
 
 [[package]]
@@ -2162,7 +2168,9 @@ dependencies = [
  "hearken",
  "parlor-core",
  "serde",
+ "serde_json",
  "wickets-content",
+ "wickets-rules",
 ]
 
 [[package]]
@@ -2405,6 +2413,7 @@ dependencies = [
  "parlor-core",
  "serde",
  "wickets-content",
+ "wickets-rules",
 ]
 
 [[package]]
@@ -3063,6 +3072,16 @@ dependencies = [
 [[package]]
 name = "wickets-content"
 version = "1.5.0"
+
+[[package]]
+name = "wickets-rules"
+version = "1.5.0"
+dependencies = [
+ "hearken-replay",
+ "serde",
+ "serde_json",
+ "wickets-content",
+]
 
 [[package]]
 name = "wickets-slot-a"

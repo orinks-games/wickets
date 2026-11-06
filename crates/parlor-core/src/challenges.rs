@@ -14,43 +14,7 @@ use hearken::Ctx;
 
 use crate::{Parlor, Records, Rng, ScoreResult};
 
-/// How long a challenge lasts.
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
-pub enum Period {
-    Daily,
-    Weekly,
-    Monthly,
-}
-
-impl Period {
-    pub const ALL: [Period; 3] = [Period::Daily, Period::Weekly, Period::Monthly];
-
-    /// "Daily", "Weekly", "Monthly".
-    pub fn label(self) -> &'static str {
-        match self {
-            Period::Daily => "Daily",
-            Period::Weekly => "Weekly",
-            Period::Monthly => "Monthly",
-        }
-    }
-
-    /// "day", "week", "month", for sentences such as "a 3 day streak".
-    pub fn unit(self) -> &'static str {
-        match self {
-            Period::Daily => "day",
-            Period::Weekly => "week",
-            Period::Monthly => "month",
-        }
-    }
-
-    fn tag(self) -> &'static str {
-        match self {
-            Period::Daily => "daily",
-            Period::Weekly => "weekly",
-            Period::Monthly => "monthly",
-        }
-    }
-}
+pub use wickets_rules::Period;
 
 /// A calendar date (proleptic Gregorian, UTC).
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
