@@ -2,7 +2,7 @@
 
 ## About the game
 
-You are the head of a long paper dragon in a Lunar New Year street parade. The drum keeps the beat, and a dancer ahead of you carries a pearl on a pole. Keep your head in the pearl's lane on every beat, rear up when the gong strikes, catch red envelopes to grow the dragon, and keep out of the firecrackers. Nothing ends the dance early: every street plays to its end, and you earn up to 3 stars.
+Lunar New Year: you are the dragon's head. Keep your head in the pearl's lane on every beat, rear up on the gong, catch red envelopes, and avoid firecrackers. Streets always play to the end; up to 3 stars.
 
 ## The street and its lanes
 
@@ -18,7 +18,7 @@ The drum plays a deep beat, with a cymbal on the first beat of each bar. On ever
 
 ## Gongs and rearing up
 
-A drum roll means a gong strikes in 2 beats. Press Space as the gong strikes and the dragon rears up: within a tenth of a second is a perfect rear, worth 100 points, and a little further off is a good rear, worth 60. A gong passed without a rear ends with a dull knock and scores nothing. Rearing when no gong is near breaks your combo, so wait for the roll.
+Drum roll: gong in 2 beats. Press Space right on the gong to rear for a perfect (100); a little off is good (60). A gong passed without a rear ends with a dull knock and scores nothing. Rearing when no gong is near breaks your combo, so wait for the roll.
 
 ## Red envelopes
 

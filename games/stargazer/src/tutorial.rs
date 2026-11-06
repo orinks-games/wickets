@@ -63,7 +63,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hill: Live<NightScreen>) -> Lesson {
 
     let guide = hill.step(
         format!(
-            "{} turns on a guide tone. It pulses from the side of the next star to trace, faster as you near it. Turn it on.",
+            "{} turns on the guide tone. It pulses from the next star's side, faster as you near. Turn it on.",
             sentence_start(&t)
         ),
         // The game has just said "Guide tone on, toward …", so the step

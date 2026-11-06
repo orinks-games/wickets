@@ -1,6 +1,6 @@
 ## About the game
 
-You are a mouse in an old farmhouse pantry at night. The pantry is a small maze of cells, and crumbs lie in every open cell. Eat them all to clear the pantry, then the next one opens with quicker cats. Cats prowl the maze: in the pantry run, only the ginger cat in the first pantry, and the tabby cat joins from the second. A cat that reaches your cell catches you and costs a whisker. You have 3 whiskers, and losing the last ends the run.
+Night pantry maze: eat every crumb to clear a pantry, then the next opens with quicker cats. Ginger cat from pantry 1; tabby joins from pantry 2. A cat on your cell costs a whisker. Lose all 3 and the run ends.
 
 ## Moving
 
@@ -28,7 +28,7 @@ A short rising meow from a cat's side means that cat is 2 steps away or nearer. 
 
 ## Freezing
 
-Tab freezes. You keep still for 3 seconds, with an indrawn breath, and the nearest cat loses track of you. It wanders until a second after the freeze ends. Other cats still hunt you, and a cat that walks into you still catches you. A soft breath out means you can move again. You have 3 freezes in each pantry.
+Tab freezes you briefly (indrawn breath); the nearest cat loses you until just after the freeze ends. Other cats still hunt; contact still catches you. A soft breath out means you can move again. You have 3 freezes in each pantry.
 
 ## Whiskers and catches
 

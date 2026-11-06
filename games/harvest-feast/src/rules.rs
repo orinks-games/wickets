@@ -1398,6 +1398,56 @@ mod tests {
     }
 
     #[test]
+    fn perfect_steps_keep_quality_when_lesson_skips_fumble_charges() {
+        // Mirrors the tutorial: Perfect timings must not read as quality 0
+        // just because Space was mashed early while a prompt held the clock.
+        let mut meal = Meal::new(&course(1));
+        meal.patient = true;
+        let station = Station::LeftBurner;
+        // Start when due.
+        {
+            let d = &mut meal.dishes[0];
+            d.clock = d.current().unwrap().wait;
+        }
+        meal.act(station);
+        assert_eq!(Grade::for_score(*meal.dishes[0].scores.last().unwrap()), Grade::Perfect);
+        // Two stirs + take off, each on time.
+        for _ in 0..3 {
+            let d = &mut meal.dishes[0];
+            d.clock = d.current().unwrap().wait;
+            meal.act(station);
+        }
+        assert!(meal.dishes[0].done());
+        assert_eq!(meal.dishes[0].quality(), 100);
+        assert_eq!(Grade::for_score(*meal.dishes[0].scores.last().unwrap()), Grade::Perfect);
+    }
+
+    #[test]
+    fn fumbles_can_zero_quality_even_after_perfect_steps() {
+        let mut meal = Meal::new(&course(1));
+        let station = Station::LeftBurner;
+        // Stack early presses before the call.
+        for _ in 0..25 {
+            meal.act(station);
+        }
+        assert!(meal.dishes[0].fumbles >= 20);
+        {
+            let d = &mut meal.dishes[0];
+            d.clock = d.current().unwrap().wait;
+        }
+        meal.act(station);
+        for _ in 0..3 {
+            let d = &mut meal.dishes[0];
+            d.clock = d.current().unwrap().wait;
+            meal.act(station);
+        }
+        assert!(meal.dishes[0].done());
+        assert_eq!(Grade::for_score(*meal.dishes[0].scores.last().unwrap()), Grade::Perfect);
+        assert_eq!(meal.dishes[0].quality(), 0);
+    }
+
+
+    #[test]
     fn every_course_has_one_dish_per_station_at_a_time() {
         for n in 1..=COURSES {
             let c = course(n);

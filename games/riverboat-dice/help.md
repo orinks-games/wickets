@@ -2,7 +2,7 @@
 
 ## About the game
 
-It is a warm night on a paddle steamer, and you sit at the dice table with three other passengers. The night has 5 landings. Each landing, the dealer rolls two dice for everyone still seated, and the sums build up on the table. Stand up and bank what the table holds, or stay in for another roll. A 1 on either die ends the landing, and everyone still seated gets nothing for it. Whoever banks the most over the night wins. Nothing here is timed.
+Paddle-steamer dice table with three other passengers. Five landings a night; each landing the dealer rolls two dice for everyone still seated, and sums build on the table. Bank what the table holds (Tab) or stay for another roll (Space). A 1 on either die ends the landing, and everyone still seated gets nothing. Highest banked total wins. Untimed.
 
 ## A landing
 

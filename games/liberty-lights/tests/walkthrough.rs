@@ -931,7 +931,7 @@ fn the_tutorial_launches_one_boom() {
         h.frame(1.0 / 60.0);
     }
     assert!(
-        spoke(&h, "your turn. Press Space for your own count in"),
+        spoke(&h, "your turn. Press Space for your own count-in"),
         "{:?}",
         h.spoken()
     );

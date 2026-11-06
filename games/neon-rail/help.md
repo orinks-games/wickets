@@ -2,13 +2,13 @@
 
 ## About the game
 
-You are a courier flying a stolen combat skimmer through Black Sky City. The skimmer moves forward automatically; you choose between three lanes. Move into the lane of flow vehicles to score and reduce stress. Avoid hazards, shoot threats, and boost through blockades as you head for extraction.
+Courier in a combat skimmer through Black Sky City: three lanes, auto-forward. Merge with flow vehicles to score and cut stress. Avoid hazards, shoot threats, boost through blockades, reach extraction.
 
 Reach extraction to complete the run. You lose if your hull reaches 0 or network stress reaches 100.
 
 ## Hearing the rail
 
-Every arrival plays its own looping sound, placed in its lane and moving toward you, louder as it nears. Sounds are placed around you, not on a fixed map: a sound straight ahead is in your lane. One to your left is one or two lanes to your left. When you shift lanes you hear the arrivals move around you.
+Each arrival loops from its lane and grows louder as it nears. Straight ahead is your lane; left means one or two lanes left. Shift lanes and the arrivals move with you.
 
 Spoken call-outs are on by default. Each arrival is also named as it appears: "Debris left." Turn Spoken call-outs off in Settings, from the title or the pause menu, to play by sound alone. The hint key always names what is next.
 
@@ -38,7 +38,7 @@ Be out of its lane when it arrives, or boost through it.
 
 ## Stress and pressure
 
-Stress runs from 0 to 100. Mistakes raise it, and repeated mistakes raise it faster: every unresolved jam adds to a congestion count that makes the next stress gain bigger. Clean play, pickups, the emergency tools and sector clears bring it down, and calm flow bleeds a little away every second.
+Stress runs from 0 to 100. Mistakes raise it; stacked jams raise it faster. Clean play, pickups, emergency tools, and sector clears bring it down; calm flow slowly bleeds it away.
 
 - Rising pressure, at stress 35 or more: a two-beep warning.
 - High stress, at 75 or more: a deep pulsing alarm, repeated every five seconds while it lasts, and the music grows harder.

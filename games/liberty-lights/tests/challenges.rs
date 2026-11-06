@@ -191,7 +191,7 @@ fn the_title_has_a_challenges_row_listing_all_three() {
     goto(&mut h, "Challenges");
     assert_eq!(
         last(&h),
-        "Challenges, today's daily not played yet. 6 of 13."
+        "Challenges, daily not played yet. 6 of 13."
     );
     challenges(&mut h);
     let daily = plan(&h, Period::Daily);

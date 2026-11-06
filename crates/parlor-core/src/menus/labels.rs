@@ -67,13 +67,13 @@ pub fn challenge_again(period: Period) -> String {
     )
 }
 
-/// The title's challenges row: "Challenges, today's daily done" or
-/// "Challenges, today's daily not played yet".
+/// The title's challenges row: "Challenges, daily done" or
+/// "Challenges, daily not played yet".
 pub fn challenges_row_label(ctx: &mut Ctx<Parlor>, id: &'static str) -> String {
     let daily = Challenge::current(ctx, id, Period::Daily);
     if Challenges::done(ctx, &daily) {
-        format!("{CHALLENGES}, today's daily done")
+        format!("{CHALLENGES}, daily done")
     } else {
-        format!("{CHALLENGES}, today's daily not played yet")
+        format!("{CHALLENGES}, daily not played yet")
     }
 }

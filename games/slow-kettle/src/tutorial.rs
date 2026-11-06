@@ -49,7 +49,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let b = Rc::clone(&brew);
     let shelf = Step::new(
         format!(
-            "{} and {d} move along your shelf, and each tea is named. Find Sencha, then press {p} to put it in the pot.",
+            "{} and {d} move along your shelf; each tea is named. Find Sencha, then press {p} to put it in the pot.",
             sentence_start(&u)
         ),
         move |ctx, a| {

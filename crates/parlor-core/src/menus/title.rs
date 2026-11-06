@@ -457,7 +457,7 @@ mod tests {
             [
                 "Play, round 1",
                 "Hard mode, locked",
-                "Challenges, today's daily not played yet",
+                "Challenges, daily not played yet",
                 "Tutorial",
                 "Help",
                 "Sound check",
@@ -480,7 +480,7 @@ mod tests {
             [
                 "Play, round 1",
                 "Hard mode, locked",
-                "Challenges, today's daily not played yet",
+                "Challenges, daily not played yet",
                 "Practice room",
                 "Tutorial",
                 "Help",

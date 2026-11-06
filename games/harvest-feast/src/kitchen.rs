@@ -457,6 +457,31 @@ impl Kitchen {
     }
 
     fn act(&mut self, ctx: &mut Ctx<Parlor>) {
+        if self.lesson {
+            if let Some(i) = self.meal.active_at(self.focus) {
+                let d = &self.meal.dishes[i];
+                if let Some(s) = d.current() {
+                    if d.clock < s.wait - rules::EARLY_GRACE {
+                        sound::at(ctx, sound::EARLY, d.station());
+                        let line = if s.action == rules::Action::Start {
+                            format!(
+                                "Not yet: the {} {} not called.",
+                                d.name(),
+                                d.kind.is()
+                            )
+                        } else {
+                            format!(
+                                "Not yet: the {} {} time.",
+                                d.name(),
+                                d.kind.needs()
+                            )
+                        };
+                        ctx.say(line);
+                        return;
+                    }
+                }
+            }
+        }
         let events = self.meal.act(self.focus);
         self.voice(ctx, events);
     }
@@ -801,6 +826,9 @@ impl State<Parlor> for Kitchen {
         match action {
             Some(ParlorAction::Primary) => match self.phase {
                 Phase::Ready => self.begin(ctx),
+                // Lesson speech holds the meal clock; ignore Space so early
+                // presses do not stack fumbles over the prompt.
+                _ if self.hold > 0.0 => {}
                 _ => self.act(ctx),
             },
             Some(ParlorAction::Left) => self.step_focus(ctx, -1),

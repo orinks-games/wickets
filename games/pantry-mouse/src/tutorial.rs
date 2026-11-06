@@ -47,7 +47,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pantry: Live<Play>) -> Lesson {
 
     let crumbs = pantry.step(
         format!(
-            "The pantry is a small maze of cells. {}, {r}, {u} and {d} move you one cell, and a wall thuds. {} sniffs: the nearest crumbs tick from where they lie. {} names the way to one. Eat {CRUMBS} crumbs.",
+            "{}, {r}, {u} and {d} move one cell; walls thud. {} sniffs: the nearest crumbs tick from where they lie. {} names the way to a safe crumb. Eat {CRUMBS} crumbs.",
             sentence_start(&l),
             sentence_start(&p),
             sentence_start(&h)

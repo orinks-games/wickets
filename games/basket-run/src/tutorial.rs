@@ -37,7 +37,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, lanes: Live<RunScreen>) -> Lesson {
 
     let catch = lanes.step(
         format!(
-            "{} and {r} step one lane at a time, and each step says your lane. Everything that falls whistles from its own lane, and the lower and louder it gets, the sooner it lands. An egg is a soft whistle: stand in its lane as it lands to catch it.",
+            "{} and {r} step one lane at a time; each step says your lane. Falls whistle from their lane: lower and louder means sooner. An egg is a soft whistle: stand in its lane as it lands to catch it.",
             sentence_start(&l)
         ),
         |s: &RunScreen, _| {
@@ -47,7 +47,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, lanes: Live<RunScreen>) -> Lesson {
 
     let banked = lanes.step(
         format!(
-            "Eggs count once they are banked. The cart stands in the lane at one edge, and its soft bell rings from there. {} rings it now. Go to the cart's lane and press {bank} to bank your eggs.",
+            "Eggs count once banked. The cart's soft bell rings from its edge lane, and {} rings it now. Go to that lane and press {bank} to bank.",
             sentence_start(&cart)
         ),
         |s: &RunScreen, _| {

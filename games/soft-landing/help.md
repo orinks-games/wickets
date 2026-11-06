@@ -1,6 +1,6 @@
 ## About the game
 
-You fly a small survey lander down to a pad on the moons of the outer planets. Gravity pulls you down the whole way, and the main engine pushes back while you hold it. Touch the pad slower than the safe speed and you land. Any faster is a crash. Fuel is short, so fall freely first and burn nearer the pad.
+Survey lander to an outer-planet pad. Gravity pulls; hold the engine to push back. Touch down under safe speed or crash. Fuel is short: fall freely first, burn near the pad.
 
 This help gives heights and speeds in metric. Set Units to US in Settings and the game says feet and feet a second instead, with call-out marks every 300, 150 or 30 feet.
 
@@ -14,7 +14,7 @@ Hold Space to fire the main engine, and let go to fall. The engine is a low roar
 
 ## The descent tone
 
-A steady tone plays the whole way down. Its pitch follows your falling speed: low is slow and safe, high is fast. When your speed goes over the safe speed you hear Too fast, and when it comes back under you hear Safe speed. If you hear Too fast near the pad, hold the engine until you hear Safe speed.
+A tone tracks fall speed: low is safe, high is fast. Over safe speed you hear Too fast; back under, Safe speed. Near the pad, hold the engine until you hear Safe speed.
 
 ## The pad beacon
 

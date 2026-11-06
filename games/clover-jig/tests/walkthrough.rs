@@ -32,7 +32,7 @@ fn the_title_follows_the_standard_order() {
             "Play, set 1, the kitchen",
             "Set select",
             "Ceili night, locked",
-            "Challenges, today's daily not played yet",
+            "Challenges, daily not played yet",
             "Practice room",
             "Tutorial",
             "Help",

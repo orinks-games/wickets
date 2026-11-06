@@ -2,7 +2,7 @@
 
 ## About the game
 
-You stand on a rooftop at dusk with a bow and a quiver of arrows. Paper hearts drift across the sky, each humming a soft note from where it is. Turn the bow toward a heart by ear, draw, and let go to shoot. A round ends when the quiver is empty. On the rooftops, each round needs enough hearts to go on to the next roof, and the evening ends when a round falls short. Score as many points as you can.
+Rooftop at dusk: paper hearts hum from where they drift. Aim by ear, draw, and shoot. A round ends when the quiver is empty. On the rooftops you need enough hearts to advance; fall short and the evening ends.
 
 ## Aiming by ear
 

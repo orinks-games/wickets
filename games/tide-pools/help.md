@@ -2,7 +2,7 @@
 
 ## About the game
 
-The tide is out. A strip of rock pools lies along the shore, with the sea beyond them, ahead of you. Gulls call overhead and the wind comes and goes. Walk from pool to pool, lean in and listen, and gather the creatures you hear for your home aquarium. There is no way to fail: each trip ends when the tide comes back in.
+Tide out: rock pools along the shore, sea ahead. Walk pool to pool, lean in, and gather creatures for your aquarium. No fail: each trip ends when the tide returns.
 
 ## Walking the shore
 

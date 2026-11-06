@@ -21,7 +21,7 @@ fn the_title_follows_the_standard_order() {
         rows(&h),
         [
             "Play, evening tuning",
-            "Challenges, today's daily not played yet",
+            "Challenges, daily not played yet",
             "Practice rank",
             "Tutorial",
             "Help",

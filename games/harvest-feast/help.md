@@ -2,7 +2,7 @@
 
 ## About the game
 
-It's Thanksgiving, the family is in the next room, and you're running the kitchen. Dishes cook at up to five stations in front of you. Each one has its own cooking sound, and that sound changes when the dish needs you. Follow the recipe as it is called, move to the right station, and act at the right moment. Eight courses build from one saucepan to the full feast. A meal earns up to three stars, and one star serves the course and opens the next.
+Thanksgiving kitchen: up to five stations, each with a cooking sound that changes when it needs you. Follow the recipe call, move to the station, and act on time. Eight courses; one star serves a course and opens the next (up to three stars).
 
 ## The kitchen
 

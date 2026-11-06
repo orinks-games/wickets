@@ -2,7 +2,7 @@
 
 ## About the game
 
-You keep a small garden of planters on a city rooftop. Traffic hums far below, sparrows land on the railing, and a neighbour's wind chimes ring across the street. You water, pick off aphids, prune and harvest, all by ear.
+City rooftop planters. Water, pick aphids, prune, and harvest by ear.
 
 Every plant has a voice. Seeds are silent. Sprouts hum softly. As a plant grows it joins the garden's song, quietly at first and then in full voice once it blooms. All the parts are in one key, so the whole garden plays together.
 
@@ -43,8 +43,8 @@ Plants only grow while their soil is damp but not waterlogged, and they are free
 
 ## What plants need
 
-- Water. Dry soil crackles from its planter, and a thirsty plant's part of the song droops in pitch. You hear a soft falling tone the moment a plant gets thirsty, and its name and planter are spoken. Press Space to water it.
-- Not too much water. Watering soil that is already moist makes a squelch, and the soil is waterlogged. A waterlogged plant gurgles from its planter, stops growing, and its part of the song goes quiet and falls out of the harmony. Each extra watering keeps it soggy for longer. The soil drains by itself, faster on a sunny day, and you hear a drip and its name when it grows again. Water a plant when it is thirsty, not every time you pass it.
+- Dry soil crackles; a thirsty plant's song droops. A soft falling tone plays and its name and planter are spoken. Press Space to water.
+- Watering moist soil squelches, and it is waterlogged. The plant gurgles, stops growing, and drops out of the garden song. Each extra watering keeps it soggy for longer. The soil drains by itself, faster on a sunny day, and you hear a drip and its name when it grows again. Water a plant when it is thirsty, not every time you pass it.
 - Reviving. A plant left in bone-dry soil for a while wilts with a long falling sound and goes quiet. Nothing is lost: water it and it lifts its leaves again.
 - Aphids. A buzz from a planter means aphids. The plant stops growing until you press Tab to pick them off.
 - Pruning. A plant in bloom sometimes gets leggy, with a rustle, and grows slowly. Press Tab to prune it.

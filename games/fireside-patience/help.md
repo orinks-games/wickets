@@ -2,11 +2,11 @@
 
 ## About the game
 
-It is a winter evening in a cabin, and a game of patience waits on the table by the fire. Your goal is to put all 52 cards on the four foundations, one for each suit, from ace up to king. Every relaxed deal can be won, undo is unlimited, and there is no clock, no move limit and no way to lose.
+Cabin patience: move all 52 cards onto four suit foundations, ace to king. Every relaxed deal is winnable; undo unlimited; no clock, no move limit, no way to lose.
 
 ## The row of places
 
-The table is one row of 12 places. First come seven piles, numbered 1 to 7 from the left. Then comes the stock. Last come the four foundations: hearts, diamonds, clubs and spades. Left and Right move along the row, and each place says what is on top of it. A soft chime marks the step from the piles to the stock, and from the stock to the foundations. At either end of the row, a dull tap tells you there is no further to go.
+One row of 12: piles 1 to 7, then stock, then foundations (hearts, diamonds, clubs, spades). Left and Right move; each place speaks its top card. A soft chime marks the step from the piles to the stock, and from the stock to the foundations. At either end of the row, a dull tap tells you there is no further to go.
 
 ## Piles
 

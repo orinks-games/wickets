@@ -1,6 +1,6 @@
 ## About the game
 
-You work the signal box on a country junction at night. The dispatcher calls an order, such as points left or ring back, and you answer it with the matching key before the train reaches the points. A right answer lets the train through and scores. A wrong answer, or no answer in time, derails the train and ends the shift. The calls come faster as the night goes on.
+Night junction signal box. Answer each dispatcher call with its key before the train reaches the points. Right answers score; late or wrong derails and ends the shift. Calls speed up through the night.
 
 ## The five calls
 
@@ -18,7 +18,7 @@ The dispatcher always says the call aloud as its sound plays. Before the line op
 
 ## The window and the tick
 
-Each call gives you a time window to answer. The window is about 3 seconds at the start of a night shift. Every 5 trains it shrinks by a fifth of a second, down to about 1 second. A dry, quiet tick runs under the calls, four beats to a window, so the tick quickens as the window shrinks. S tells you the window in words.
+The answer window starts long and shrinks every 5 trains. A dry tick marks four beats per window and speeds up as it shrinks. S speaks the window.
 
 ## Scoring and records
 

@@ -115,7 +115,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, table: Live<TableScreen>) -> Lesson {
     let mut heard = Heard::default();
     let roll = table.step(
         format!(
-            "{} calls a roll. The dealer shakes two dice and calls the faces and the sum, and the sum goes on the table. Call a roll.",
+            "{} calls a roll. The dealer shakes two dice, calls the faces and the sum, and the sum goes on the table. Call a roll.",
             sentence_start(&p)
         ),
         move |s: &TableScreen, ctx| {

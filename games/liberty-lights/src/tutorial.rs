@@ -48,7 +48,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sky: Live<Show>) -> Lesson {
 
     let listen = sky.step(
         format!(
-            "{} plays the show. First come three wooden ticks and a brighter go. The go is time zero. Then listen for the boom, and when it went up.",
+            "{} plays the show: three wooden ticks, then a brighter go. The go is time zero. Listen for the boom and when it went up.",
             sentence_start(&p)
         ),
         |show: &Show, _| {
@@ -59,7 +59,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sky: Live<Show>) -> Lesson {
 
     let launch = sky.step(
         format!(
-            "Press {p} for your own count in. After the go, press 1 to launch a boom, just as long after the go as in the show. {} hears the show again.",
+            "Press {p} for your own count-in. After the go, press 1 to launch a boom at the same delay as in the show. {} hears the show again.",
             sentence_start(&t)
         ),
         |show: &Show, _| {

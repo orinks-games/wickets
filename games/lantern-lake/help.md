@@ -2,9 +2,9 @@
 
 ## About the game
 
-You sit in a canoe on a quiet lake at night. Lanterns drift on the water, each ringing a soft chime from where it floats. Paddle up to one to gather it, and a new voice joins the night's song: a handpan, a bass, a harp, a music box and more, until the song is whole.
+Night canoe: paddle to drifting lantern chimes. Each gather adds a voice to the night's song until it is whole.
 
-There is no timer and no way to fail. Only the challenges keep a score. Take as long as you like.
+No timer and no fail. Only challenges score. Take your time.
 
 ## Finding lanterns
 

@@ -2,7 +2,7 @@
 
 ## About the game
 
-It is dusk in a meadow full of crickets, frogs and fireflies. Each firefly blinks as a soft tone from where it drifts. Walk close, press Space as one glows, and it goes in your jar. A full jar set free lights up the meadow and rings a chord. Nothing can go wrong, and outside the challenges nothing is timed. Walk as long as you like, and press Enter to head home.
+Dusk meadow: fireflies blink as soft tones from where they drift. Walk close, press Space as one glows to jar it. A full jar set free lights the meadow and rings a chord. No fail; outside challenges, no timer. Enter heads home.
 
 This help gives distances in metres. Set Units to US in Settings and the game says feet instead.
 

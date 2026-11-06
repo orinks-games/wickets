@@ -2,7 +2,7 @@
 
 ## About the game
 
-Walk a wire strung between rooftops, one careful step at a time, high above the city. Everything you need is in the sound: your balance is a tone, the wind warns you before it pushes, and pigeons coo from where they sit. Ten crossings make the skyline, each longer, higher and windier than the last.
+Rooftop wire: balance is a tone, wind warns before it pushes, pigeons coo from where they sit. Ten crossings; each longer, higher, and windier.
 
 ## Your balance
 

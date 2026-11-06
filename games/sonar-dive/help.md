@@ -2,7 +2,7 @@
 
 ## About the game
 
-You pilot a small salvage submarine from a boat anchored above a dark sea. Every dive begins at the boat's bell. Find treasure by sonar, collect it, and come back to the bell to surface and bank it before your air runs out. Each dive after the first goes deeper: the water is darker, the mines thicker, the currents stronger and the air shorter, but the treasure is worth more.
+Salvage sub under a boat's bell. Ping for treasure, collect it, return to the bell to bank before air runs out. Each dive after the first goes deeper: the water is darker, the mines thicker, the currents stronger and the air shorter, but the treasure is worth more.
 
 This help gives distances and depths in metres. Set Units to US in Settings and the game says feet instead.
 
@@ -12,7 +12,7 @@ Your score is the treasure you bank. An expedition ends when you choose to stop 
 
 You hear the sea from the sub, facing where the sub faces. A sound straight ahead is ahead of you. One on your right is to your right. One behind you is a little muffled. When you turn, the world turns around you.
 
-A sonar ping goes out, and everything within range answers from where it really is. Sound travels about 50 metres a second there and back, so an echo from 25 metres arrives half a second after the ping, and one from 50 metres a whole second after. Later and quieter means farther.
+Ping: everything in range answers from where it is. The later and quieter the echo, the farther away it is.
 
 Directions in speech use a clock face: 12 o'clock is straight ahead, 3 o'clock to your right, 6 o'clock behind you and 9 o'clock to your left.
 
@@ -44,7 +44,7 @@ Treasure is worth more the deeper you go: a quarter more for every dive past the
 
 ## Dangers
 
-Mines tick when you come within about 16 metres, from where they float. The ticks come faster as you get closer. Touch one and it explodes, costing a hull point. You start with 3. Lose them all and the expedition is over. Surfacing repairs one hull point.
+Mines tick within about 16 metres, faster as you close. Touch one: lose a hull point (start with 3; zero ends the expedition). Surfacing repairs one.
 
 Rocks and the wall around the site scrape you and cost 3 seconds of air. Driving into them stops your engine: turn away and throttle up again. If a current pins you against rock, point away from it and throttle up. The engine keeps running while you pull clear.
 

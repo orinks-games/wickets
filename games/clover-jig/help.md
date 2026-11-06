@@ -1,6 +1,6 @@
 ## About the game
 
-You dance by ear at a village ceili. A fiddle, a tin whistle and a bodhran drum play a jig or a reel, and a caller calls each step one beat before you dance it. Press the step's key on the beat. Steps close to the beat score more. Nobody is thrown off the floor: a tune always plays to its end, and your score is what you danced.
+Village ceili: fiddle, tin whistle, and bodhran. The caller names each step one beat before you dance it, so press that key on the beat. Closer to the beat scores more. Tunes always play to the end.
 
 ## The steps
 
@@ -22,7 +22,7 @@ Before a dance starts, H plays every step with its call, and each step key plays
 
 Each tune starts with four deep bodhran beats, then the music. The caller's word comes one beat before its step, so listen for the call and dance on the next beat.
 
-A step right on the beat is spot on, with a small bright chime: 3 points. A little off the beat is good: 2 points. Further off, with a soft dull tick, is close: 1 point. Early and late count the same. A step you miss, or the wrong step, plays a scuff and a thud and scores nothing.
+On the beat is spot on (bright chime, 3). A little off is good (2). Further off is close (dull tick, 1). Early and late count the same. A step you miss, or the wrong step, plays a scuff and a thud and scores nothing.
 
 The first time each of these happens in a dance, a single word names it.
 
