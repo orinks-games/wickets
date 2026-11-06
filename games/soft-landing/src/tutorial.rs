@@ -66,7 +66,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pad: Live<Descent>) -> Lesson {
 
     let fall = pad.step(
         format!(
-            "Lesson 1 of 4, the fall. You wait {} above the pad. {} starts the descent; let go and listen: the tone climbs as you speed up.",
+            "Lesson 1 of 4, the fall. You wait {} above the pad. {} starts the descent. Let go and listen: the tone climbs as you speed up.",
             parlor_core::units::length(moon.height),
             sentence_start(&p)
         ),

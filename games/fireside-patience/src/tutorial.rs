@@ -101,7 +101,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, screen: Live<PlayScreen>) -> Lesson {
 
     let find = screen.step(
         format!(
-            "Seven piles, stock, then four foundations. {} and {r} move; each place says its top card. Find the ace of hearts.",
+            "Seven piles, stock, then four foundations. {} and {r} move along the row; each place says its top card. Find the ace of hearts.",
             sentence_start(&l)
         ),
         |s: &PlayScreen, _| (s.cursor == 4).then(|| "There it is.".to_string()),
