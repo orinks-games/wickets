@@ -20,7 +20,7 @@ fn the_title_follows_the_standard_order() {
             "Street select",
             "New Year parade, locked",
             "Lantern walk, locked",
-            "Challenges, today's daily not played yet",
+            "Challenges, daily not played yet",
             "Practice street",
             "Tutorial",
             "Help",

@@ -34,7 +34,7 @@ fn the_title_plays_its_theme_and_follows_the_standard() {
             "Play, Sandy Cove, not visited yet",
             "King tide, locked",
             "Moonlit pools, locked",
-            "Challenges, today's daily not played yet",
+            "Challenges, daily not played yet",
             "Practice pools",
             "Tutorial",
             "Help",

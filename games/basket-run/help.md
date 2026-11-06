@@ -2,7 +2,7 @@
 
 ## About the game
 
-It is Easter morning, and eggs are tumbling out of the trees over the meadow. You carry a basket along a row of lanes: catch the eggs, carry them to the cart before the bell, and dodge the mud clods and bees that fall too. Everything is played by ear, and a voice can call out every drop.
+Easter morning: eggs tumble over the meadow. Catch them in your basket, bank them at the cart before the bell, and dodge mud clods and bees. A voice can call out every drop.
 
 ## The meadow and your lanes
 
@@ -12,7 +12,7 @@ You hear the meadow from your own lane: a drop straight ahead is in your lane, o
 
 ## The cart
 
-The cart stands in the lane at one edge of the meadow: the left edge in odd rounds, the right edge in even ones. The weekly marathon swaps sides the same way. In the endless meadow, the daily challenge, the festival and practice, it is always on the left. Its soft bell rings every few seconds from where it is. Tab rings it on demand and says how far away it is. A wood block sounds as you step into its lane.
+The cart sits at one edge: left on odd rounds, right on even (weekly marathon too). Endless, daily, festival, and practice keep it on the left. Soft bell from its lane; Tab rings it and says how far. Wood block when you step into its lane.
 
 Standing in the cart's lane, press Space to bank your basket: the eggs roll into the cart and become points. Banking anywhere else tells you where the cart is.
 

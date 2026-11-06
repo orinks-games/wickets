@@ -918,7 +918,7 @@ fn the_title_offers_the_challenges_with_todays_state() {
     h.press(Key::Down);
     assert_eq!(
         h.spoken(),
-        ["Challenges, today's daily not played yet. 4 of 11."]
+        ["Challenges, daily not played yet. 4 of 11."]
     );
     h.clear();
     h.press(Key::F1);

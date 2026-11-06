@@ -59,7 +59,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
 
     let dance = room.step(
         format!(
-            "The caller says each step one beat before you dance it. {} dances left, {r} dances right, and {p} hops. Here the tune waits at each step and names its key. Dance {STEPS} steps.",
+            "The caller says each step one beat before you dance. {} dances left, {r} dances right, and {p} hops. Here the tune waits and names each key. Dance {STEPS} steps.",
             sentence_start(&l)
         ),
         |f: &Floor, _| {

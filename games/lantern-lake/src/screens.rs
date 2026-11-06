@@ -81,7 +81,7 @@ impl Launch {
 /// The page before an outing.
 fn intro_page(mode: Mode) -> String {
     match mode {
-        Mode::Pond => "The practice pond: a tiny, still pond with 2 lanterns. The first floats just ahead of you, and the second is off to your right. Every sound you hear is in the sound check on the title.".to_string(),
+        Mode::Pond => "Practice pond: 2 lanterns—one ahead, one to your right. Title Sound check has every sound.".to_string(),
         Mode::Night(n) => format!("Night {n}. The canoe slides out from the south shore."),
         Mode::Free => "Free paddle: a wide lake where a new lantern appears whenever you gather one. Stay as long as you like, and head home when you are ready.".to_string(),
         Mode::Challenge(p) => format!("{} challenge.", p.label()),

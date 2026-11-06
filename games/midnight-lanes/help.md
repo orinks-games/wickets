@@ -1,6 +1,6 @@
 ## About the game
 
-The bowling alley has closed for the night, and the owner lets you stay on lane nine. You bowl a game of ten frames. In each frame you get two balls to knock down all ten pins. You choose where to stand and where to aim, then time your release on the swing. The pins left standing are always spoken by number.
+After hours on lane nine: ten frames, two balls each. Choose stance and aim, then time the release on the swing. Standing pins are always spoken by number.
 
 ## Standing and aiming
 
@@ -20,7 +20,7 @@ Space starts the swing. A hum rises in pitch to the top of the swing, then falls
 
 The ball rumbles down the lane, moving left or right with its line, and grows louder as it nears the pins. A hollow rattle means the ball dropped into the gutter and will hit nothing. A light clatter is a few pins falling, a heavy clatter most of the rack. Then the pins left standing are spoken by number, and the pinsetter sweeps the deck. A rolling knock means your ball is back.
 
-Pin 1 is the head pin, nearest you. Pins 2 and 3 are behind it, then 4, 5 and 6, and the back row is 7, 8, 9 and 10, with 7 in the left corner and 10 in the right. A split is when the head pin is down and the pins left standing have a gap between them.
+Pin 1 is the head pin. Then 2–3, 4–6, and back row 7–10 (7 left corner, 10 right). A split: head pin down with a gap among the pins left.
 
 ## Scoring
 

@@ -2,7 +2,7 @@
 
 ## About the game
 
-The doors of Nevermore Manor have locked behind you. The stairs go on for a hundred floors in ten wings: the ground floor, the portrait gallery, the bedchambers, the servants' quarters, the attic, the clock tower, the flooded cellars, the catacombs, the crypt and, at the bottom, the heart of the house. Every floor is a chain of rooms. Every room has one sound puzzle, and solving it unlocks the room's exit. Find your way by ear, freeze when a ghost drifts by, and watch your step.
+The doors of Nevermore Manor have locked behind you. A hundred floors in ten wings, from the ground floor down to the heart of the house. Floor select and the journal name each wing as you reach it. Every floor is a chain of rooms. Every room has one sound puzzle, and solving it unlocks the room's exit. Find your way by ear, freeze when a ghost drifts by, and watch your step.
 
 Each floor is built from its number, so floor 40 is the same floor for every player, every time you play it.
 
@@ -14,7 +14,7 @@ The door you came in by slams shut behind you: walking into it gives a heavy sla
 
 ## Listening for things
 
-Things lie about the rooms and call out from where they are: a ticking clock, a humming crystal, a dripping potion, a music box, a silver bell, a crackling candle, a caged raven, a ring of keys and a beating heart. Each has its own sound. You hear it from its direction: to your left is west, to your right east, ahead is north, and sounds behind you, to the south, are a little duller. The nearer you are, the louder it is and the more often it calls. When you step onto a thing, its name is spoken.
+Things lie about the rooms and call out from where they are: a ticking clock, a humming crystal, a dripping potion, a music box, a silver bell, a crackling candle, a caged raven, a ring of keys and a beating heart. Each has its own sound. Sounds come from their direction: left is west, right east, ahead north; behind (south) is a little duller. Nearer means louder and more often. Stepping onto a thing speaks its name.
 
 Sound check on the title plays each sound you need in the manor by name, including a demonstration of left, right, near and far.
 
@@ -32,11 +32,11 @@ Status, pressed twice, says how much salt you carry.
 - Find: you are told the thing's name and what it sounds like. Find it, stand on it and press Space.
 - Match: a phonograph crackles and then plays a sound, but does not say what makes it. Find the thing in the room that makes the same sound.
 - Riddle: a voice asks a riddle that describes the thing. Work out which it is, then find it by its sound.
-- Offering, from floor 2: a spirit has sealed the exit door. It whispers from the door, then plays the sound of something it wants. That thing is one you picked up in an earlier room of this floor. Choose it with Tab, stand at the door and press Space to offer it.
+- Offering, from floor 2: the exit spirit whispers, then plays the sound of what it wants—something you already picked up on this floor. Tab to choose it, stand at the door, Space to offer.
 - Missing, from floor 6: the phonograph plays every sound in the room but one. Find the thing it leaves out.
 - Séance, from floor 12: a medium's gong sounds and she calls up sounds one after another without naming them, two at first, three from floor 40 and four from floor 75. Pick up their things in that order. A soft rising hum tells you each one was right.
 
-Rooms also hold other things besides the answer, more of them the deeper you go. Touching the wrong thing, or offering the wrong thing, costs ten seconds of the haunt clock, fifteen from floor 30 and twenty from floor 70. R plays a room's clue again whenever you like.
+Rooms hold decoys as well as the answer—more deeper down. Wrong touch or wrong offer costs 10 seconds on the haunt clock (15 from floor 30, 20 from floor 70). R replays the room's clue.
 
 ## Ghosts
 

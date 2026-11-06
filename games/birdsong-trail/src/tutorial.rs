@@ -48,7 +48,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, glade: Live<WalkScreen>) -> Lesson {
 
     let approach = glade.step(
         format!(
-            "{} steps forward and {d} steps back. {l} and {r} turn you. Every song comes from its true place, and one behind you is softer. Walk toward the chickadee until it sings to you.",
+            "{} steps forward and {d} steps back; {l} and {r} turn you. Songs come from their true place (behind is softer). Walk toward the chickadee until it sings to you.",
             sentence_start(&u),
             l = sentence_start(&l),
         ),

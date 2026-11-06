@@ -315,7 +315,7 @@ fn the_title_lists_the_three_challenges_with_what_each_is() {
     let mut h = title();
     h.press(Key::C);
     assert!(
-        spoke(&h, "Challenges, today's daily not played yet. 7 of 14."),
+        spoke(&h, "Challenges, daily not played yet. 7 of 14."),
         "{:?}",
         h.spoken()
     );

@@ -22,7 +22,7 @@ fn the_title_follows_the_standard_order() {
             "Moonlight, locked",
             "Valentine's night, locked",
             "For two, locked",
-            "Challenges, today's daily not played yet",
+            "Challenges, daily not played yet",
             "Practice field",
             "Tutorial",
             "Help",

@@ -2,7 +2,7 @@
 
 ## About the game
 
-Ten safes stand between you and the most famous score in the city, from an office lockbox to the Crown vault. You crack them by ear: turn the dial, listen for the tumbler, and set each wheel in turn. Nothing here needs fast hands. Unless you choose time attack, take all the time you need.
+Ten safes, from office lockbox to Crown vault. Crack each by ear: turn the dial, hear the tumbler, set each wheel. No rush unless you pick time attack.
 
 ## The dial
 
@@ -22,7 +22,7 @@ Set the wrong number and the wheel springs back with a twang. That is a strike. 
 
 ## Hints
 
-H gives a hint in words: how far the number is from the dial, and which way to turn. "Very close" is one or two numbers, "close" is within six, "a little way off" within twenty, and "far off" more than twenty. Each safe allows only a few hints, and each costs points. In time attack a hint also costs five seconds.
+H hints how far and which way: "very close" (1–2), "close" (within 6), "a little way off" (within 20), "far off" (more than 20). Each safe allows only a few hints, and each costs points. In time attack a hint also costs five seconds.
 
 ## Building noises
 

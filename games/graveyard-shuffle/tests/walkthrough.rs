@@ -34,7 +34,7 @@ fn the_title_follows_the_standard_order() {
         [
             "Play, night 1, the graveyard gate",
             "Night select",
-            "Challenges, today's daily not played yet",
+            "Challenges, daily not played yet",
             "Practice room",
             "Tutorial",
             "Help",

@@ -2,7 +2,7 @@
 
 ## About the game
 
-You keep a small tea house, at your own pace. Guests come in one at a time and say what they feel like. You choose a tea and a cup, heat the kettle by ear, pour, and lift the leaves out when the steep tastes right. Then the guest says how it was. Nothing here can go wrong: every cup pleases someone, and a perfect one earns a kind note and a tip.
+Small tea house, your pace. Guests name a taste; you pick tea and cup, heat by ear, pour, and lift the leaves when the steep is right. No fail—every cup pleases someone; a perfect one earns a note and a tip.
 
 ## A guest comes in
 

@@ -2,7 +2,7 @@
 
 ## About the game
 
-You walk a trail at dawn by ear, with birds singing all around you. Walk close to a bird and it sings to you. Whistle its song back, note for note, and the bird is befriended and goes into your field guide, with its song described in words and a line about it.
+Dawn trail: walk close until a bird sings to you. Whistle its song back note for note to befriend it into your field guide.
 
 There is no way to fail and no clock. A walk ends when you reach the trail's end or head home. The songs are made for the game from three notes. They are not recordings of real birds.
 
@@ -28,7 +28,7 @@ Space, when no bird is singing to you, names the three birds nearest you, where 
 
 ## Answering a song
 
-When the bird finishes, it is your turn. Whistle its song back with three keys: Down is the low note, Space the middle note and Up the high note. A song has 2 to 5 notes. Your whistle has its own soft sound, so you can hear your answer.
+Your turn: Down is low, Space middle, Up high (songs are 2–5 notes). Your whistle has its own soft sound so you can hear the answer.
 
 If your answer matches, a warm rising chime plays and the bird is befriended. If it does not, two soft low notes play and the bird sings again. You can try as often as you like. After two misses, its notes are spoken in words.
 

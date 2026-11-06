@@ -36,7 +36,7 @@ fn the_title_announces_itself() {
             "Endless night, locked",
             "The house stirs, locked",
             "The Lantern Night, locked",
-            "Challenges, today's daily not played yet",
+            "Challenges, daily not played yet",
             "Tutorial",
             "Help",
             "Sound check",

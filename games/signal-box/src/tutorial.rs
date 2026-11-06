@@ -40,7 +40,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Signal>) -> Lesson {
 
     let calls = Step::each(
         format!(
-            "The dispatcher has five calls, each with its own sound, and each key answers one. {}. Press each one to hear its call.",
+            "Five calls, five keys. {}. Press each to hear its call.",
             keys.join(". ")
         ),
         Call::ALL

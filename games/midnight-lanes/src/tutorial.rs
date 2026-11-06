@@ -49,7 +49,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let b = Rc::clone(&ball);
     let stand = Step::new(
         format!(
-            "You stand on board 20, in line with the head pin. A ball straight at the head pin often splits the pins, so strikes come from off centre. {} and {r} step one board. Step left to board {POCKET_STAND}.",
+            "You start on board 20 (head pin). Straight-on often splits—strikes come from off centre. {} and {r} step one board. Step left to board {POCKET_STAND}.",
             sentence_start(&l)
         ),
         move |ctx, a| {

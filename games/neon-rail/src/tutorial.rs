@@ -55,7 +55,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let mut been_left = false;
     let lanes = Step::new(
         format!(
-            "Your skimmer runs in three lanes, and you start in the center. {} shifts left and {r} shifts right, with a magnetic snap. Shift to the left lane, then all the way to the right.",
+            "Three lanes; you start in the center. {} shifts left and {r} shifts right, with a magnetic snap. Shift left, then all the way right.",
             sentence_start(&l)
         ),
         move |ctx, a| {

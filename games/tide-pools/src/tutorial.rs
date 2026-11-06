@@ -31,7 +31,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pools: Live<OutingScreen>) -> Lesson {
 
     let lean = pools.step(
         format!(
-            "{} brings you closer to the water, and {d} steps back. Standing back, you hear this pool and its neighbours. Leaning in, only this one. Lean in close.",
+            "{} leans toward the water; {d} steps back. Standing back hears this pool and its neighbours; leaning in hears only this one. Lean in close.",
             sentence_start(&u)
         ),
         |s: &OutingScreen, _| {
@@ -53,7 +53,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pools: Live<OutingScreen>) -> Lesson {
 
     let shy = pools.step(
         format!(
-            "{} and {r} walk along the rocks from pool to pool. The next pool, to your right, holds a shy shore crab with a clicking skitter. It darts away as you lean in: keep still until two soft rising notes, then gather it.",
+            "{} and {r} walk from pool to pool. The pool on your right holds a shy shore crab with a clicking skitter. It darts away when you lean in—keep still until two soft rising notes, then gather it.",
             sentence_start(&l)
         ),
         |s: &OutingScreen, _| {

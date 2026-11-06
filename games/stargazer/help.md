@@ -2,7 +2,7 @@
 
 ## About the game
 
-You lie on a dark hilltop and listen to the night sky. Stars twinkle as soft chimes, brighter stars louder. You move a listening point across the sky, find the stars of a constellation and trace them in order. Each traced constellation plays its own little tune and goes into your star journal with a line of sky lore. Nothing can go wrong, and nothing is timed.
+Hilltop night sky: stars chime (brighter is louder). Move a listening point, find a constellation's stars, and trace them in order. Each one plays a tune into your star journal. No fail, no timer.
 
 ## The listening point
 
