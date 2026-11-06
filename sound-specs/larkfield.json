@@ -1194,6 +1194,101 @@
   },
   {
    "genny": "blal1",
+   "out": "work/fire.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "fire",
+     "at": 0,
+     "gain": 0.7,
+     "params": {
+      "dur": 1.4,
+      "size": 0.6,
+      "crackle": 9.0,
+      "seed": 31
+     }
+    },
+    {
+     "type": "seq",
+     "inst": "handbell",
+     "steps": "A5:.25 A5:.25 A5:.25 A5:.25",
+     "gain": 0.45,
+     "at": 0,
+     "vel": 0.6,
+     "step": 1
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -14,
+   "bpm": 84,
+   "tail": 0.5
+  },
+  {
+   "genny": "blal1",
+   "out": "work/fox.wav",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "animal",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "size": 0.45,
+      "pitch": 760.0,
+      "contour": "arch",
+      "excursion": 0.5,
+      "roughness": 0.8,
+      "vowels": "A-E",
+      "dur": 0.16,
+      "seed": 32
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "animal",
+     "at": 0.3,
+     "gain": 1.0,
+     "params": {
+      "size": 0.45,
+      "pitch": 820.0,
+      "contour": "arch",
+      "excursion": 0.5,
+      "roughness": 0.8,
+      "vowels": "A-E",
+      "dur": 0.2,
+      "seed": 33
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    },
+    {
+     "type": "reverb",
+     "mix": 0.08,
+     "size": 0.4
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -15
+  },
+  {
+   "genny": "blal1",
    "out": "fish/bite.wav",
    "layers": [
     {

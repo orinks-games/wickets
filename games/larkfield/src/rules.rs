@@ -407,6 +407,9 @@ pub struct Settler {
     pub want: Option<usize>,
     pub story_step: u8,
     pub low_days: u32,
+    /// Warnings given that they may leave: 0, 1 or 2.
+    #[serde(default)]
+    pub warned: u32,
     pub wobble: Option<Wobble>,
     pub ill_days: u32,
     pub talked_today: bool,
@@ -704,6 +707,15 @@ pub struct Hamlet {
     /// Music night today: a band plays on the green after supper.
     #[serde(default)]
     pub music_night: bool,
+    /// The hour today when a fire, a fox or a lost settler comes, if any.
+    #[serde(default)]
+    pub alarm_at: Option<f32>,
+    /// Days left of a hard frost, when supper takes more food.
+    #[serde(default)]
+    pub cold_snap: u32,
+    /// Hours to the next crackle from a fire, so you can find it.
+    #[serde(skip)]
+    pub fire_bell: f32,
     #[serde(skip)]
     pub keys: Keys,
     #[serde(skip)]
@@ -811,6 +823,9 @@ impl Hamlet {
             goal_met: false,
             turned_away: Vec::new(),
             fair_day: false,
+            alarm_at: None,
+            cold_snap: 0,
+            fire_bell: 0.0,
             music_night: false,
             keys: Keys::default(),
             events: Vec::new(),
@@ -933,6 +948,7 @@ impl Hamlet {
             want: None,
             story_step: 0,
             low_days: 0,
+            warned: 0,
             wobble: None,
             ill_days: 0,
             talked_today: false,
@@ -963,7 +979,10 @@ impl Hamlet {
 
     /// Takes someone in.
     pub fn welcome(&mut self, mut s: Settler) {
-        s.instrument = self.settlers.len();
+        // The first instrument nobody plays, so one who left frees theirs.
+        s.instrument = (0..)
+            .find(|i| !self.settlers.iter().any(|o| o.instrument == *i))
+            .unwrap_or(0);
         s.arrived = self.day;
         for other in &self.settlers {
             let start = liking_between(&s, other);
@@ -1052,6 +1071,7 @@ impl Hamlet {
     pub fn begin_day(&mut self) {
         self.phase = Phase::Morning;
         self.hour = 0.0;
+        self.alarm_at = None;
         self.tally.clear();
         self.foraged = 0;
         self.fished = 0;
@@ -1151,6 +1171,7 @@ impl Hamlet {
         }
         let hours = dt / self.day_length.hour_secs();
         self.hour += hours;
+        self.dangers_tick(hours);
         // A market order can fill at any time of day: say so at once.
         if self.kind == Kind::Challenge(Goal::Market) && !self.goal_met {
             self.check_goal();
@@ -1281,7 +1302,7 @@ impl Hamlet {
             Skill::Building => {
                 if let Some((b, _)) = self.building {
                     Some(Task::Build(b))
-                } else if !self.troubles.is_empty() {
+                } else if self.troubles.iter().any(|t| self.settler_can_fix(t)) {
                     Some(Task::Fix)
                 } else if self.has("stone") < 12 {
                     Some(Task::Stone)
@@ -1471,13 +1492,14 @@ impl Hamlet {
                 self.build_work(unit, Some(name));
             }
             Task::Fix => {
-                if self.troubles.is_empty() {
+                let Some(t) = self.troubles.iter().position(|t| self.settler_can_fix(t)) else {
                     return false;
+                };
+                match self.work_trouble(t, name) {
+                    Some(line) if !line.is_empty() => self.say_news(line),
+                    Some(_) => {}
+                    None => return false,
                 }
-                let t = self.troubles.remove(0);
-                let line = t.fixed(name);
-                self.say_news(line);
-                self.events.push(Event::Cue("hammer", place));
             }
             Task::Wood => {
                 self.add("wood", 1);
@@ -1847,7 +1869,13 @@ impl Hamlet {
                 }
             }
             Spot::Hens => {
-                if self.hens == 0 {
+                if self
+                    .troubles
+                    .iter()
+                    .any(|t| matches!(t, Trouble::Fox { .. }))
+                {
+                    "The hen house. A fox is circling it.".to_string()
+                } else if self.hens == 0 {
                     "The hen house, empty. The barge sells hens.".to_string()
                 } else if self.eggs_waiting > 0 {
                     format!("The hen house. {} eggs to gather.", self.eggs_waiting)
@@ -1872,7 +1900,10 @@ impl Hamlet {
             Spot::Site(b) => self.site_line(b),
             Spot::Fishing => "The fishing spot.".to_string(),
             Spot::Dock => {
-                if self.barge {
+                if self.troubles.contains(&Trouble::Flood) {
+                    "The dock. The river is rising, and stone along the bank would hold it."
+                        .to_string()
+                } else if self.barge {
                     "The dock. The barge is in.".to_string()
                 } else {
                     format!("The dock. The barge comes in {}.", self.barge_words())
@@ -2122,6 +2153,9 @@ impl Hamlet {
                 }
             }
             Spot::Hens => {
+                if self.fix_trouble(|t| matches!(t, Trouble::Fox { .. })) {
+                    return;
+                }
                 if self.hens == 0 {
                     self.say("No hens yet. The barge sells them.");
                 } else if self.eggs_waiting > 0 {
@@ -2139,7 +2173,7 @@ impl Hamlet {
                 }
             }
             Spot::Goat => {
-                if self.fix_trouble_at(Place::Cottages) {
+                if self.fix_trouble(|t| *t == Trouble::Fence) {
                     return;
                 }
                 if !self.goat {
@@ -2179,6 +2213,9 @@ impl Hamlet {
                 }
             }
             Spot::Dock => {
+                if self.fix_trouble(|t| *t == Trouble::Flood) {
+                    return;
+                }
                 if self.barge {
                     self.events.push(Event::AskBarge);
                 } else {
@@ -2223,7 +2260,7 @@ impl Hamlet {
     fn act_site(&mut self, b: Building) {
         if self.is_built(b) {
             if self.troubles.iter().any(|t| t.stops() == Some(b)) {
-                let _ = self.fix_trouble_at(Place::of(b));
+                let _ = self.fix_trouble(|t| t.stops() == Some(b));
                 return;
             }
             if b.recipe().is_none() {
@@ -2327,21 +2364,215 @@ impl Hamlet {
         true
     }
 
-    /// Fixes a trouble here, if there is one: true when it did.
-    fn fix_trouble_at(&mut self, p: Place) -> bool {
-        let Some(i) = self.troubles.iter().position(|t| t.place() == p) else {
+    /// The day's alarm when its hour comes, and fires and foxes running
+    /// down their time.
+    fn dangers_tick(&mut self, hours: f32) {
+        if self.alarm_at.is_some_and(|at| self.hour >= at) {
+            self.alarm_at = None;
+            self.raise_alarm();
+        }
+        let mut burnt = None;
+        let mut fox_won = false;
+        let mut crackle = None;
+        for t in self.troubles.iter_mut() {
+            match t {
+                Trouble::Fire { b, left, .. } => {
+                    *left -= hours;
+                    if *left <= 0.0 {
+                        burnt = Some(*b);
+                    }
+                    crackle = Some(Place::of(*b));
+                }
+                Trouble::Fox { left } => {
+                    *left -= hours;
+                    if *left <= 0.0 {
+                        fox_won = true;
+                    }
+                }
+                _ => {}
+            }
+        }
+        // A fire crackles now and then, so you can walk to it.
+        if let Some(p) = crackle {
+            self.fire_bell -= hours;
+            if self.fire_bell <= 0.0 {
+                self.fire_bell = 0.5;
+                self.events.push(Event::Cue("fire", p));
+            }
+        }
+        if let Some(b) = burnt {
+            self.troubles.retain(|t| !matches!(t, Trouble::Fire { .. }));
+            self.troubles.push(Trouble::Burnt(b));
+            for s in self.settlers.iter_mut() {
+                s.think("the fire", -0.15, 2);
+            }
+            self.say(format!(
+                "The fire burnt through the roof of {}. It needs repairing.",
+                b.name()
+            ));
+        }
+        if fox_won {
+            self.troubles.retain(|t| !matches!(t, Trouble::Fox { .. }));
+            self.hens = self.hens.saturating_sub(1);
+            self.events.push(Event::Cue("fox", Place::Cottages));
+            self.say("The fox got into the hen house and took a hen.");
+        }
+    }
+
+    /// A fire, a fox, or someone lost in the woods, whichever can happen.
+    fn raise_alarm(&mut self) {
+        let mut options: Vec<Trouble> = Vec::new();
+        if !self.weather.wet()
+            && !self
+                .troubles
+                .iter()
+                .any(|t| matches!(t, Trouble::Fire { .. }))
+        {
+            for b in self.built.iter().filter(|b| b.recipe().is_some()) {
+                if !self.troubles.iter().any(|t| t.stops() == Some(*b)) {
+                    options.push(Trouble::Fire {
+                        b: *b,
+                        buckets: almanac::FIRE_BUCKETS,
+                        left: almanac::FIRE_HOURS,
+                    });
+                }
+            }
+        }
+        if self.hens > 0
+            && !self
+                .troubles
+                .iter()
+                .any(|t| matches!(t, Trouble::Fox { .. }))
+        {
+            options.push(Trouble::Fox {
+                left: almanac::FOX_HOURS,
+            });
+        }
+        if self.hour >= DAY_HOURS - 4.0 {
+            for s in self
+                .settlers
+                .iter()
+                .filter(|s| s.place() == Place::Woods && !s.away())
+            {
+                options.push(Trouble::Lost(s.name.clone()));
+            }
+        }
+        if options.is_empty() {
+            return;
+        }
+        let mut rng = self.rng();
+        let t = rng.pick(&options).clone();
+        let line = match &t {
+            Trouble::Fire { b, .. } => {
+                self.fire_bell = 0.0;
+                for s in self.settlers.iter_mut() {
+                    if s.has(Trait::Worrier) {
+                        s.think("frightened by the fire", -0.15, 1);
+                    }
+                }
+                format!("Fire! Smoke from {}. Get water on it.", b.name())
+            }
+            Trouble::Fox { .. } => {
+                self.events.push(Event::Cue("fox", Place::Cottages));
+                "A fox by the hen house! Chase it off.".to_string()
+            }
+            Trouble::Lost(n) => format!("Dusk, and {n} has not come back from the woods."),
+            _ => String::new(),
+        };
+        self.troubles.push(t);
+        self.say(line);
+    }
+
+    /// Works on trouble `i`, by "You" or a settler's name: Some with the
+    /// line said, None when there is not what it takes.
+    fn work_trouble(&mut self, i: usize, by: &str) -> Option<String> {
+        let place = self.troubles[i].place();
+        match self.troubles[i].clone() {
+            Trouble::Fire { b, buckets, left } => {
+                let brave = self.settler(by).is_some_and(|s| s.has(Trait::Brave));
+                let left_after = buckets.saturating_sub(if brave { 2 } else { 1 });
+                self.events.push(Event::Cue("water", place));
+                if left_after > 0 {
+                    self.troubles[i] = Trouble::Fire {
+                        b,
+                        buckets: left_after,
+                        left,
+                    };
+                    return Some(if by == "You" {
+                        format!("A bucket on the fire. {left_after} more.")
+                    } else {
+                        String::new()
+                    });
+                }
+                for s in self.settlers.iter_mut() {
+                    s.think("put out the fire together", 0.15, 2);
+                }
+            }
+            Trouble::Burnt(_) => {
+                if !self.take("wood", almanac::REPAIR_WOOD) {
+                    return None;
+                }
+            }
+            Trouble::Flood => {
+                if !self.take("stone", almanac::FLOOD_STONE) {
+                    return None;
+                }
+            }
+            Trouble::Lost(ref n) => {
+                if let Some(s) = self.settlers.iter_mut().find(|s| &s.name == n) {
+                    s.think("found in the woods", 0.15, 2);
+                }
+            }
+            _ => {}
+        }
+        let t = self.troubles.remove(i);
+        let cue = match t {
+            Trouble::Crows | Trouble::Fox { .. } => "weed",
+            Trouble::Fire { .. } | Trouble::Flood => "splash",
+            Trouble::Lost(_) => "talk",
+            _ => "hammer",
+        };
+        self.events.push(Event::Cue(cue, place));
+        Some(t.fixed(by))
+    }
+
+    /// A settler on building jobs can see to this now, with what is in store.
+    fn settler_can_fix(&self, t: &Trouble) -> bool {
+        match t {
+            Trouble::Burnt(_) => self.has("wood") >= almanac::REPAIR_WOOD,
+            Trouble::Flood => self.has("stone") >= almanac::FLOOD_STONE,
+            _ => t.settlers_fix(),
+        }
+    }
+
+    /// You see to the first trouble that `pick` names, saying how it went:
+    /// true when there was one.
+    fn fix_trouble(&mut self, pick: impl Fn(&Trouble) -> bool) -> bool {
+        let Some(i) = self.troubles.iter().position(pick) else {
             return false;
         };
-        let t = self.troubles.remove(i);
-        let cue = if t == Trouble::Crows {
-            "weed"
-        } else {
-            "hammer"
-        };
-        self.events.push(Event::Cue(cue, p));
-        let line = t.fixed("You");
-        self.say(line);
+        match self.work_trouble(i, "You") {
+            Some(line) => self.say(line),
+            None => {
+                let line = match &self.troubles[i] {
+                    Trouble::Burnt(_) => {
+                        format!("Repairing it takes {} wood.", almanac::REPAIR_WOOD)
+                    }
+                    Trouble::Flood => format!(
+                        "Holding back the river takes {} stone.",
+                        almanac::FLOOD_STONE
+                    ),
+                    _ => NOTHING_HERE.to_string(),
+                };
+                self.say(line);
+            }
+        }
         true
+    }
+
+    /// Fixes a trouble here, if there is one: true when it did.
+    fn fix_trouble_at(&mut self, p: Place) -> bool {
+        self.fix_trouble(|t| t.place() == p && !t.danger())
     }
 
     /// Tab: the second job: weeds, feeding.
@@ -2364,6 +2595,7 @@ impl Hamlet {
             return;
         }
         match self.spot() {
+            Some(Spot::Hens) if self.fix_trouble(|t| matches!(t, Trouble::Fox { .. })) => {}
             Some(Spot::Hens) if self.hens > 0 && !self.fed_hens => {
                 self.fed_hens = true;
                 self.events.push(Event::Cue("feed", Place::Cottages));
@@ -2397,6 +2629,10 @@ impl Hamlet {
                 }
                 None => {}
             }
+        }
+        // Someone lost in the woods comes first.
+        if self.fix_trouble(|t| matches!(t, Trouble::Lost(_)) && t.place() == place) {
+            return;
         }
         // A wobbling settler first, then the one who has gone longest
         // without a word.
@@ -2583,7 +2819,10 @@ impl Hamlet {
 
     /// Everyone eats from the larder. The line, and whether it was good.
     fn eat(&mut self, feast: bool) -> (String, bool) {
-        let need = MEAL * self.mouths();
+        let mut need = MEAL * self.mouths();
+        if self.cold_snap > 0 {
+            need += need / 2;
+        }
         let mut eaten: Vec<&'static str> = Vec::new();
         let mut got = 0;
         // Eat the best food first, a little of many things.
@@ -2686,7 +2925,7 @@ impl Hamlet {
 
     /// Bed: crops grow, moods settle, stories move on, a new day.
     fn end_day(&mut self) -> Vec<String> {
-        let mut pages = Vec::new();
+        let mut pages = self.dangers_at_supper();
         // Crops grow overnight.
         let season = self.season();
         let halt = self.weather == Weather::Frost || self.troubles.contains(&Trouble::Crows);
@@ -2804,6 +3043,55 @@ impl Hamlet {
         self.begin_day();
         self.news.extend(story_lines);
         pages
+    }
+
+    /// What a danger left until supper costs. The lines, for supper.
+    fn dangers_at_supper(&mut self) -> Vec<String> {
+        let mut lines = Vec::new();
+        self.cold_snap = self.cold_snap.saturating_sub(1);
+        for t in std::mem::take(&mut self.troubles) {
+            match t {
+                Trouble::Fire { b, .. } => {
+                    lines.push(format!(
+                        "The fire in {} burnt through before it was out. It needs repairing.",
+                        b.name()
+                    ));
+                    for s in self.settlers.iter_mut() {
+                        s.think("the fire", -0.15, 2);
+                    }
+                    self.troubles.push(Trouble::Burnt(b));
+                }
+                Trouble::Fox { .. } => {
+                    self.hens = self.hens.saturating_sub(1);
+                    lines.push("The fox got into the hen house and took a hen.".to_string());
+                }
+                Trouble::Flood => {
+                    let mut lost = 0;
+                    for p in self.plots[..COLS].iter_mut() {
+                        if matches!(p, Plot::Sown { .. }) {
+                            *p = Plot::Tilled;
+                            lost += 1;
+                        }
+                    }
+                    if lost > 0 {
+                        lines.push(
+                            "The river came over the far row of the fields and washed the crops away."
+                                .to_string(),
+                        );
+                    }
+                }
+                Trouble::Lost(n) => {
+                    if let Some(s) = self.settlers.iter_mut().find(|s| s.name == n) {
+                        s.think("a cold night lost in the woods", -0.25, 3);
+                    }
+                    lines.push(format!(
+                        "{n} found the way home after dark, cold and shaken."
+                    ));
+                }
+                other => self.troubles.push(other),
+            }
+        }
+        lines
     }
 
     fn tally_line(&self) -> String {
@@ -2939,8 +3227,15 @@ impl Hamlet {
                 }
             }
         }
-        for t in &self.troubles {
+        for s in self.settlers.iter().filter(|s| s.warned > 0) {
+            out.push(format!("{} is thinking of leaving.", s.name));
+        }
+        for t in self.troubles.iter().filter(|t| !t.danger()) {
             out.push(format!("{}.", sentence_case(&t.name())));
+        }
+        // Dangers first: they cost something if left.
+        for t in self.troubles.iter().filter(|t| t.danger()).rev() {
+            out.insert(0, format!("{}.", sentence_case(&t.name())));
         }
         if self.bite.is_some() {
             out.insert(0, "A bite on the line.".to_string());
@@ -3010,6 +3305,16 @@ impl Hamlet {
 
     /// H: the nearest thing worth doing, and the key.
     pub fn hint(&self) -> String {
+        if let Some(t) = self.troubles.iter().find(|t| t.danger()) {
+            return format!("{}. {}", sentence_case(&t.name()), t.hint(&self.keys));
+        }
+        if let Some(s) = self.settlers.iter().find(|s| s.warned > 0 && !s.away()) {
+            return format!(
+                "{} is thinking of leaving. Find them {}, press Enter to talk, and see to what they want.",
+                s.name,
+                s.place().where_at()
+            );
+        }
         if let Some(Caller::Stranger(s)) = &self.caller {
             return format!(
                 "{} waits at the gate. Go to the gate and press Enter to meet them.",

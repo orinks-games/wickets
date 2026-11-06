@@ -1,6 +1,6 @@
 ## About the game
 
-Larkfield is an empty hamlet by a river, and you are its first farmer. Dig and sow the fields, fish, chop wood and put up buildings. People come to the gate asking to stay. Each settler has a past trade, two traits and a dream that comes true in three steps. Keep everyone fed and cheerful, and the hamlet grows. Nobody is ever lost, and nothing is ruined for good.
+Larkfield is an empty hamlet by a river, and you are its first farmer. Dig and sow the fields, fish, chop wood and put up buildings. People come to the gate asking to stay. Each settler has a past trade, two traits and a dream that comes true in three steps. Keep everyone fed and cheerful, and the hamlet grows. Past the gentle pace, dangers can cost you crops, a hen or a repair, and a settler kept glum too long leaves. Nobody ever dies.
 
 ## Walking the lane
 
@@ -27,6 +27,8 @@ Enter talks to whoever is where you stand. A word cheers someone up, and they te
 A settler is glum, fine or cheerful. Food, company, a comfortable cottage and the day's news all count. A cheerful settler works faster, and a glum one slower.
 
 When a settler stays glum for a few days, they wobble: they sulk on the bridge, bake scones nobody asked for, play the same song over and over, or go to the next village for the night. A wobble is harmless. Find them and press Enter to talk them round. Someone who went to the next village is back the next morning.
+
+At the steady and lively paces, a settler who stays glum much longer may leave for good. They warn you twice first, in the morning news, and S and H say who it is. Talk to them and see to what they want before then. At the gentle pace, nobody leaves.
 
 ## Dreams and keepsakes
 
@@ -58,7 +60,21 @@ At the river's fishing spot, Space casts the line: a swish and a plop. Wait. A b
 
 Each morning brings news: the weather, someone at the gate, a visitor passing through, or a small trouble. A trouble stops one thing until someone fixes it. Crows in the fields stop the crops growing until Tab in the fields scares them off. A leaking roof stops a building until Space there mends it. Settlers on building jobs fix troubles too. H always says what to do about the first one.
 
-The pace in Settings sets how often all this happens. Gentle has few troubles and moods that lift easily. Lively has more visitors, more troubles and stormier weather.
+The pace in Settings sets how often all this happens. Gentle has few troubles, moods that lift easily, and no dangers. Lively has more visitors, more dangers and stormier weather.
+
+## Dangers
+
+At the steady and lively paces, your own hamlet has dangers. Each costs something if nobody deals with it, but what is lost can be won back. S and H put a danger first.
+
+A fire crackles, with a bell rung, at one of the buildings. Space there throws a bucket of water, and it takes several. Settlers on building jobs help. Left too long, it burns through, and the building makes nothing until Space there repairs it with 3 wood.
+
+A fox yelps at the hen house, by the cottages. Space or Tab there chases it off. Be quick, or it takes a hen.
+
+After rain in spring and autumn, the river can rise. Space at the dock piles 2 stone along the bank. If it is not done by supper, the far row of the fields is washed out, and needs sowing again.
+
+At dusk, a settler working in the woods can lose the way. Go into the woods and press Enter to find them before supper, or they come home cold and glum.
+
+In winter, a hard frost can last a few days, and everyone eats more at supper. Keep the larder full.
 
 ## Seasons and festivals
 
@@ -86,7 +102,7 @@ On the third Tuesday of every month there is a barge fair: the barge comes every
 
 ## Settings
 
-Pace sets how busy the almanac is. Day length sets how long a day lasts from the morning to the supper bell. The settlers' tune can be turned off, leaving only the birds and the river. Work from along the lane can be turned off too, so you only hear work where you stand.
+Pace sets how busy the almanac is, whether there are dangers, and whether glum settlers leave. Day length sets how long a day lasts from the morning to the supper bell. The settlers' tune can be turned off, leaving only the birds and the river. Work from along the lane can be turned off too, so you only hear work where you stand.
 
 ## Controls
 

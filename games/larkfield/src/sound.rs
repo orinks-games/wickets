@@ -33,9 +33,9 @@ pub const KEEPSAKE: &str = "larkfield/day/keepsake";
 pub const GOAL: &str = "larkfield/day/goal";
 
 /// Every work cue the hamlet can ask for, by id.
-pub const WORK: [&str; 17] = [
+pub const WORK: [&str; 19] = [
     "water", "dig", "sow", "weed", "harvest", "cook", "hammer", "chop", "pick", "hens", "goat",
-    "feed", "cast", "splash", "reel", "forage", "talk",
+    "feed", "cast", "splash", "reel", "forage", "talk", "fire", "fox",
 ];
 
 /// The sound key of a work cue.

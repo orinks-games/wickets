@@ -339,6 +339,14 @@ def cues() -> list[dict]:
         sound("work/forage.wav", [sfx("cloth", {"kind": "rustle", "dur": 0.6, "weight": 0.4, "seed": 25}, 0.6),
                                   sfx("gust", {"dur": 0.6, "through": "leaves", "strength": 0.3, "seed": 26}, 0.4)], m, -18),
         sound("work/talk.wav", [sfx("cloth", {"kind": "rustle", "dur": 0.3, "weight": 0.3, "seed": 27}, 0.4)], m, -24),
+        # Dangers, placed where they are: a fire crackling with a rung
+        # alarm, and a fox's yelp at the hen house.
+        sound("work/fire.wav", [sfx("fire", {"dur": 1.4, "size": 0.6, "crackle": 9.0, "seed": 31}, 0.7),
+                                seq("handbell", "A5:.25 A5:.25 A5:.25 A5:.25", 0.45, 0.6)], m, -14, bpm=BPM, tail=0.5),
+        sound("work/fox.wav", [animal(size=0.45, pitch=760.0, contour="arch", excursion=0.5, roughness=0.8,
+                                      vowels="A-E", dur=0.16, seed=32),
+                               {**animal(size=0.45, pitch=820.0, contour="arch", excursion=0.5, roughness=0.8,
+                                         vowels="A-E", dur=0.2, seed=33), "at": 0.3}], m, -15),
         # The fish bites: placed at the river.
         sound("fish/bite.wav", [sfx("splash", {"size": 0.2, "dur": 0.3, "droplets": 3, "seed": 28}, 0.7),
                                 seq("handbell", "E6:.5", 0.5, 0.5)], m, -13, bpm=BPM, tail=0.4),

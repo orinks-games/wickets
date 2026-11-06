@@ -1,9 +1,14 @@
 //! The almanac: what each morning brings. Weather turns, people come to
 //! the gate, small troubles turn up, and a low mood that lasts becomes a
-//! wobble. Nothing here is ever a disaster: a trouble stops one thing
-//! until someone fixes it, and nobody is ever lost.
+//! wobble.
 //!
-//! The pace in Settings sets how often things happen.
+//! Past Gentle, there are dangers too: a fire, a fox, a flood, a hard
+//! winter, someone lost in the woods. Each can cost something you can win
+//! back, crops, a hen, a building's repair, if nobody deals with it in
+//! time. Nobody ever dies. A settler who stays glum too long warns you
+//! twice, then leaves.
+//!
+//! The pace in Settings sets how often all this happens, and how harsh.
 
 use serde::{Deserialize, Serialize};
 
@@ -34,9 +39,11 @@ impl Pace {
 
     pub fn about(self) -> &'static str {
         match self {
-            Pace::Gentle => "Few troubles, kind weather, and moods that lift easily.",
-            Pace::Steady => "A little of everything.",
-            Pace::Lively => "More visitors, more troubles, and stormier weather.",
+            Pace::Gentle => "Few troubles, no dangers, kind weather, and nobody leaves.",
+            Pace::Steady => {
+                "Some dangers that can cost you, and a settler kept glum too long may leave."
+            }
+            Pace::Lively => "More visitors, dangers and storms, and glum settlers leave sooner.",
         }
     }
 
@@ -46,6 +53,24 @@ impl Pace {
             Pace::Gentle => 0.5,
             Pace::Steady => 1.0,
             Pace::Lively => 1.5,
+        }
+    }
+
+    /// The chance of a danger each day: none when gentle.
+    pub fn danger(self) -> f64 {
+        match self {
+            Pace::Gentle => 0.0,
+            Pace::Steady => 0.15,
+            Pace::Lively => 0.25,
+        }
+    }
+
+    /// Glum days in a row before a settler leaves, if they ever do.
+    pub fn leave_after(self) -> Option<u32> {
+        match self {
+            Pace::Gentle => None,
+            Pace::Steady => Some(7),
+            Pace::Lively => Some(5),
         }
     }
 
@@ -59,7 +84,17 @@ impl Pace {
     }
 }
 
-/// A small trouble that stops one thing until someone fixes it.
+/// Buckets of water a fire takes to put out.
+pub const FIRE_BUCKETS: u32 = 6;
+/// Hours before a fire burns through, or a fox gets a hen.
+pub const FIRE_HOURS: f32 = 2.0;
+pub const FOX_HOURS: f32 = 1.5;
+/// Wood a burnt building takes to repair, and stone to hold back a flood.
+pub const REPAIR_WOOD: u32 = 3;
+pub const FLOOD_STONE: u32 = 2;
+
+/// A trouble stops one thing until someone fixes it. A danger also costs
+/// something if nobody deals with it in time.
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub enum Trouble {
     /// Crows in the fields: crops do not grow until they are scared off.
@@ -68,13 +103,27 @@ pub enum Trouble {
     Fence,
     /// A building's roof leaks: it makes nothing until it is mended.
     Leak(Building),
+    /// A building is on fire: buckets left, and hours before it burns.
+    Fire {
+        b: Building,
+        buckets: u32,
+        left: f32,
+    },
+    /// A building the fire burnt through: it makes nothing until repaired.
+    Burnt(Building),
+    /// A fox by the hen house: hours before it takes a hen.
+    Fox { left: f32 },
+    /// The river is rising: by supper it takes the far row of crops.
+    Flood,
+    /// Someone lost in the woods at dusk.
+    Lost(String),
 }
 
 impl Trouble {
     /// The building it stops, if any.
     pub fn stops(&self) -> Option<Building> {
         match self {
-            Trouble::Leak(b) => Some(*b),
+            Trouble::Leak(b) | Trouble::Burnt(b) | Trouble::Fire { b, .. } => Some(*b),
             _ => None,
         }
     }
@@ -83,9 +132,24 @@ impl Trouble {
     pub fn place(&self) -> Place {
         match self {
             Trouble::Crows => Place::Fields,
-            Trouble::Fence => Place::Cottages,
-            Trouble::Leak(b) => Place::of(*b),
+            Trouble::Fence | Trouble::Fox { .. } => Place::Cottages,
+            Trouble::Leak(b) | Trouble::Burnt(b) | Trouble::Fire { b, .. } => Place::of(*b),
+            Trouble::Flood => Place::River,
+            Trouble::Lost(_) => Place::Woods,
         }
+    }
+
+    /// A danger, as against a small trouble: it costs something if left.
+    pub fn danger(&self) -> bool {
+        matches!(
+            self,
+            Trouble::Fire { .. } | Trouble::Fox { .. } | Trouble::Flood | Trouble::Lost(_)
+        )
+    }
+
+    /// Settlers on building jobs can see to it. Only you can find someone lost.
+    pub fn settlers_fix(&self) -> bool {
+        !matches!(self, Trouble::Lost(_))
     }
 
     pub fn name(&self) -> String {
@@ -93,6 +157,13 @@ impl Trouble {
             Trouble::Crows => "crows in the fields".to_string(),
             Trouble::Fence => "the fence by the goat pen is down".to_string(),
             Trouble::Leak(b) => format!("the roof of {} leaks", b.name()),
+            Trouble::Fire { b, buckets, .. } => {
+                format!("fire in {}, {buckets} buckets to put it out", b.name())
+            }
+            Trouble::Burnt(b) => format!("{} is burnt and needs repairing", b.name()),
+            Trouble::Fox { .. } => "a fox by the hen house".to_string(),
+            Trouble::Flood => "the river is rising toward the fields".to_string(),
+            Trouble::Lost(n) => format!("{n} is lost in the woods"),
         }
     }
 
@@ -102,6 +173,14 @@ impl Trouble {
             Trouble::Crows => format!("{by} scared the crows off the fields."),
             Trouble::Fence => format!("{by} put the fence by the goat pen back up."),
             Trouble::Leak(b) => format!("{by} mended the roof of {}.", b.name()),
+            Trouble::Fire { b, .. } => format!("The fire in {} is out.", b.name()),
+            Trouble::Burnt(b) => format!("{by} repaired {}. It works again.", b.name()),
+            Trouble::Fox { .. } => format!("{by} chased the fox off. The hens are safe."),
+            Trouble::Flood => format!("{by} piled stone along the bank. The fields are safe."),
+            Trouble::Lost(n) if by == "You" => {
+                format!("You find {n} by the old quarry, and walk home together.")
+            }
+            Trouble::Lost(n) => format!("{by} found {n} in the woods."),
         }
     }
 
@@ -118,6 +197,27 @@ impl Trouble {
             Trouble::Leak(_) => format!(
                 "{} at the building mends it. Until then, it makes nothing.",
                 keys.main
+            ),
+            Trouble::Fire { b, .. } => format!(
+                "{} at {} throws a bucket of water. Settlers on building jobs help. Put it out soon, or it burns through.",
+                keys.main,
+                b.name()
+            ),
+            Trouble::Burnt(b) => format!(
+                "{} at {} repairs it with {REPAIR_WOOD} wood. Settlers on building jobs repair it too.",
+                keys.main,
+                b.name()
+            ),
+            Trouble::Fox { .. } => format!(
+                "{} at the hen house, by the cottages, chases it off. Be quick, or it takes a hen.",
+                keys.main
+            ),
+            Trouble::Flood => format!(
+                "{} at the dock piles {FLOOD_STONE} stone along the bank. Do it before supper, or the far row of crops is lost.",
+                keys.main
+            ),
+            Trouble::Lost(n) => format!(
+                "Go into the woods and press Enter to find {n} before supper."
             ),
         }
     }
@@ -287,6 +387,72 @@ pub fn morning(h: &mut Hamlet) {
             let t = rng.pick(&options).clone();
             h.news.push(format!("Overnight, {}.", t.name()));
             h.troubles.push(t);
+        }
+    }
+
+    // Dangers, past Gentle, and only in your own hamlet.
+    let dangers = h.kind == crate::rules::Kind::Home && h.pace.danger() > 0.0;
+    if dangers {
+        // The river rises after rain in spring and autumn.
+        let far_row_sown = h.plots[..crate::rules::COLS]
+            .iter()
+            .any(|p| p.crop().is_some());
+        if h.weather.wet()
+            && matches!(season, Season::Spring | Season::Autumn)
+            && far_row_sown
+            && !h.troubles.contains(&Trouble::Flood)
+            && h.chance(h.pace.danger() * 0.8)
+        {
+            h.news.push(
+                "The river is rising after the rain. By supper it will reach the far row of the fields."
+                    .to_string(),
+            );
+            h.troubles.push(Trouble::Flood);
+        }
+        // A hard frost that lasts: supper takes more food.
+        if season == Season::Winter && h.cold_snap == 0 && h.chance(h.pace.danger() * 0.6) {
+            h.cold_snap = 3;
+            h.news.push(
+                "A hard frost sets in. For 3 days, everyone eats more at supper.".to_string(),
+            );
+        } else if h.cold_snap > 0 {
+            h.news
+                .push("Still bitterly cold. Supper takes more food.".to_string());
+        }
+        // Something during the day: a fire, a fox, or someone lost at dusk.
+        if h.chance(h.pace.danger()) {
+            let mut rng = h.rng();
+            h.alarm_at = Some(3.0 + rng.below(6) as f32);
+        }
+    }
+
+    // Someone kept glum too long leaves: two warnings, then they go.
+    if let (Some(after), true) = (h.pace.leave_after(), h.kind == crate::rules::Kind::Home) {
+        let mut leaving = Vec::new();
+        for s in h.settlers.iter_mut() {
+            let days = s.low_days;
+            if days >= after {
+                leaving.push(s.name.clone());
+            } else if days + 2 == after && s.warned == 0 {
+                s.warned = 1;
+                h.news
+                    .push(format!("{} is thinking of leaving Larkfield.", s.name));
+            } else if days + 1 == after && s.warned < 2 {
+                s.warned = 2;
+                h.news.push(format!(
+                    "{} says they will leave tomorrow unless things get better.",
+                    s.name
+                ));
+            } else if days + 2 < after {
+                s.warned = 0;
+            }
+        }
+        for name in leaving {
+            h.settlers.retain(|s| s.name != name);
+            h.troubles.retain(|t| t != &Trouble::Lost(name.clone()));
+            h.news.push(format!(
+                "{name} packed up in the night and left for the next village."
+            ));
         }
     }
 

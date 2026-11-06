@@ -553,6 +553,8 @@ impl Menu for SoundCheck {
             plain("A step inside a place", sound::STEP_IN, "Soft grass: you are inside a place."),
             plain("A step in the fields", sound::STEP_FIELD, "Soft earth: you are in the fields, among the plots."),
             plain("The end of the way", sound::EDGE, "A knock on a fence post: the end of the lane, a place or the field."),
+            plain("A fire", "larkfield/work/fire", "Crackling and a rung bell. Something is burning: follow the sound and throw water on it."),
+            plain("A fox", "larkfield/work/fox", "A sharp yelp at the hen house. Chase the fox off before it takes a hen."),
         ];
         for (i, name) in INSTRUMENTS.iter().enumerate() {
             let key = crate::music::part_key(i, crate::music::Chord::G, 0);
