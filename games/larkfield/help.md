@@ -1,0 +1,107 @@
+## About the game
+
+Larkfield is an empty hamlet by a river, and you are its first farmer. Dig and sow the fields, fish, chop wood and put up buildings. People come to the gate asking to stay. Each settler has a past trade, two traits and a dream that comes true in three steps. Keep everyone fed and cheerful, and the hamlet grows. Nobody is ever lost, and nothing is ruined for good.
+
+## Walking the lane
+
+Larkfield is one lane. From left to right: the gate, the cottages, the green, the fields, the yard, the river and the woods. Left and Right walk the lane. Up goes into the place you are beside, and Down comes back out to the lane. Inside a place, Left and Right move between its spots, such as the hen house and the goat pen at the cottages. Each step tells you where you are.
+
+You hear from where you stand. Gravel underfoot means the lane, soft grass means inside a place, and soft earth means the fields. The river runs to your right until you reach it.
+
+## The fields
+
+The fields are three rows of four plots. Up goes a row further in, and Down a row back toward the lane. On a plot, Space does what it needs: dig rough ground, sow a dug plot, water a growing crop, or harvest a ripe one. Tab pulls weeds.
+
+A crop grows one day each night it was watered and has no weeds. Rain waters every plot for you. A crop sown out of its season grows slowly. A crop that is finished keeps a seed back for the next sowing, and some crops, such as peas and strawberries, crop again without sowing. Once the well is built, settlers water the fields too.
+
+## Settlers
+
+Settlers arrive at the gate. Go to the gate and press Enter to hear who they are, then welcome them or send them on. Each one was something before, such as a baker or a sailor, and is best at that trade's work. Each has two traits, such as early riser or sweet tooth, which change how they work and what cheers them.
+
+Settlers choose their own work: farming, cooking, building, crafting, animals, fishing, mending or music. J opens the job board, where Left and Right give a settler a first job. When there is none of that work, they find something else.
+
+Enter talks to whoever is where you stand. A word cheers someone up, and they tell you what they want. P tells you about everyone: their traits, what they are best at, how they feel and why.
+
+## Moods and wobbles
+
+A settler is glum, fine or cheerful. Food, company, a comfortable cottage and the day's news all count. A cheerful settler works faster, and a glum one slower.
+
+When a settler stays glum for a few days, they wobble: they sulk on the bridge, bake scones nobody asked for, play the same song over and over, or go to the next village for the night. A wobble is harmless. Find them and press Enter to talk them round. Someone who went to the next village is back the next morning.
+
+## Dreams and keepsakes
+
+Every settler has a dream in three steps, such as a proper oven or a boat on the river. Each step waits for something: a building, goods in the larder, enough people, a festival, or a cheerful day. When a step comes true, you hear it at bedtime. When the third does, they leave a keepsake on your shelf. The keepsake shelf is on the title menu.
+
+## Buildings
+
+There are eight buildings, on the green and in the yard. Walk to a free spot and press Space to hear what goes there and what it costs in wood, stone and coins. The materials go when you start, and settlers on building jobs put it up. Space at a building site hammers too. One building goes up at a time.
+
+The mill grinds grain into flour, and the bakery bakes it into bread, or into pies with fruit. The smokehouse keeps fish, the workshop makes furniture for the cottages, and the dairy makes cheese from the goat's milk. The well waters the fields. The inn brings visitors, and the bandstand puts music on the green after supper.
+
+Wood comes from the fallen trees in the woods, and stone from the old quarry. Space strikes with the axe or the pick, and every third strike gives one.
+
+## The barge
+
+The barge comes to the river dock every third day. Space at the dock to trade. It buys from the larder, and sells seeds, nails, hens and a goat. Seeds for the season are the cheapest way to fill the fields.
+
+## Food and supper
+
+Everyone eats from the larder at supper, when the bell rings at the end of the day. A supper of two or more good things lifts everyone's mood; a thin one lowers it, and the next village sends bread over. Choose who to sit with: they are glad of the company. Then the day's news, and bed.
+
+S says how many days of food are in the larder. Fish at the river, forage in the woods, gather eggs and harvest the fields to keep it full.
+
+## Fishing
+
+At the river's fishing spot, Space casts the line: a swish and a plop. Wait. A bite is a sharp tug and a little bell. Press Space at once to reel it in, or it gets away.
+
+## The almanac and troubles
+
+Each morning brings news: the weather, someone at the gate, a visitor passing through, or a small trouble. A trouble stops one thing until someone fixes it. Crows in the fields stop the crops growing until Tab in the fields scares them off. A leaking roof stops a building until Space there mends it. Settlers on building jobs fix troubles too. H always says what to do about the first one.
+
+The pace in Settings sets how often all this happens. Gentle has few troubles and moods that lift easily. Lively has more visitors, more troubles and stormier weather.
+
+## Seasons and festivals
+
+A year is four seasons of ten days: spring, summer, autumn and winter. Each season has its own crops, and the barge sells its seeds. The tenth day of every season is a festival: sowing day, midsummer, the harvest fair and the lantern walk. Supper is a feast, everyone is cheered, and word spreads, so someone new comes the next day.
+
+## The hamlet's tune
+
+The guitar under everything is you. Every settler plays an instrument in the hamlet's tune, by the order they arrived: the fiddle, the flute, the accordion, the harp, the cello and the clarinet. Each plays from wherever they are working, so you can hear who is where. A cheerful settler plays out. A glum one plays softly, and only now and then. The sound check on the title menu plays each instrument.
+
+## Challenges
+
+Three challenges give everyone the same small hamlet and a few days.
+
+Market day, each day: fill the barge's order within five days. Supper leaves the order alone.
+
+Good spirits, each week: three tired newcomers. Get all three cheerful at the same supper within six days.
+
+Founders, each month: build the mill and the bakery, then hold the season's festival supper on day ten.
+
+Points come from what is in the larder, who is cheerful, what is built, the goal, and days to spare.
+
+## Barge fair and music night
+
+On the third Tuesday of every month there is a barge fair: the barge comes every day and pays a coin more for everything. On the fourth Sunday of every month it is music night: a band from the next village plays on the green after supper. Both touch your own hamlet, never a challenge.
+
+## Settings
+
+Pace sets how busy the almanac is. Day length sets how long a day lasts from the morning to the supper bell. The settlers' tune can be turned off, leaving only the birds and the river. Work from along the lane can be turned off too, so you only hear work where you stand.
+
+## Controls
+
+These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+
+- Left and Right: walk the lane, or move inside a place.
+- Up: go into a place, or a row further into the fields.
+- Down: come back out toward the lane.
+- Space: the job in front of you: dig, sow, water, harvest, chop, fish, build or trade.
+- Tab: pull weeds, or feed the hens or the goat.
+- Enter: talk to whoever is here.
+- J: the job board.
+- L: list what is around you.
+- P: everyone in Larkfield, a page each.
+- S: what needs you, then the day and your stores, then everyone's mood.
+- H: what to do next.
+- R: repeat the last line.
+- Escape: pause.
