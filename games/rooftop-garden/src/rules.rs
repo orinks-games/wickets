@@ -342,6 +342,10 @@ impl Plant {
     pub fn describe(&self) -> String {
         let mut parts = vec![self.name()];
         if self.wilted {
+            // A ripe plant still harvests when wilted, so say both.
+            if self.stage == Stage::Ripe {
+                parts.push(self.stage.name().into());
+            }
             parts.push("wilted".into());
         } else {
             parts.push(self.stage.name().into());
