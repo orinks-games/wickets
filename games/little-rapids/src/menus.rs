@@ -356,7 +356,7 @@ impl Menu for SoundCheck {
             plain("A paddle stroke", sound::PADDLE[0], "A dip and pull through the water, on the side you paddle toward."),
             plain("A hard stroke", sound::PADDLE_HARD, "A deeper splash and a long pull: Left Shift or Right Shift, for a quick dodge."),
             plain("A clean catch", sound::CLEAN, "A bright ring on top of the note: you caught it dead centre, for double points."),
-            plain("Bumping the bank", sound::BUMP_BANK, "A wooden knock and a splash. Your combo is lost."),
+            plain("Bumping the bank", sound::BUMP_BANK, "A wooden knock and a splash. A bump resets your combo, or halves it in the leaf boat."),
             plain("Combo goes up", sound::MULTIPLIER, "A rising chime: your multiplier goes up by one."),
             MenuItem::new(labels::BACK, |_s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| ctx.pop())
                 .help("Return to the Little Rapids title."),

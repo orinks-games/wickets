@@ -1589,7 +1589,7 @@ impl Garden {
             let name = self.plots[i].as_ref().map(|p| p.name()).unwrap_or_default();
             self.at(cues::RUSTLE, i);
             self.say(format!(
-                "{} picked. P on another plant in bloom crosses the two.",
+                "{} selected. Press P on a different variety in bloom or ripe to cross them.",
                 sentence(&name)
             ));
             return;
@@ -1602,7 +1602,7 @@ impl Garden {
         };
         if mother == father {
             self.cue(cues::NO);
-            self.say("Those two are the same variety. Pick a different plant.");
+            self.say("Both plants are the same variety. Select a different variety.");
             return;
         }
         let mut child = None;
@@ -1615,7 +1615,7 @@ impl Garden {
         }
         let Some(child) = child else {
             self.cue(cues::NO);
-            self.say("Those two have nothing new to give. Try another pair.");
+            self.say("The cross produced no new variety. Try another pair.");
             return;
         };
         self.potting = None;

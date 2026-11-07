@@ -4,13 +4,13 @@
 
 You sail a little boat down a stream. The water carries the boat along by itself, and you steer it from bank to bank to catch what floats down. Petals, leaves and paper scraps arrive on the beat of the music, and every catch plays a note in the river's song.
 
-Reach the river mouth to earn stars. Catch more for more stars. Bumping a bank, a stone or a duck costs your combo, never the run.
+Reach the river mouth to earn stars. Catch more for more stars. In the four streams, bumping a bank, a stone or a duck costs your combo but never ends the run.
 
 ## Steering and catching
 
 Hold Left or Right to paddle that way. Each stroke splashes on that side of the boat, and the boat glides across the stream while you hold. Let go and it drifts to a stop. Left Shift and Right Shift give one hard stroke that way, for a quick dodge. There are no lanes: the boat can be anywhere between the two banks.
 
-Everything you hear floating toward you is placed where it really is. A sound to your left is to your left of the boat, and it gets louder and clearer as it comes closer. Steer so the sound is straight ahead of you as it reaches the boat, and you catch it.
+Everything you hear floating toward you is placed where it really is. A sound to your left comes from something to the left of your boat, and it gets louder and clearer as it comes closer. Steer so the sound is straight ahead of you as it reaches the boat, and you catch it.
 
 A catch near the boat's very middle is a clean catch. It rings a little brighter and scores double. Settings has a Clean catch width row, Narrow, Normal or Wide, if clean catches feel too strict or too easy.
 
@@ -54,7 +54,7 @@ Rain gutter waterfalls roar through a gap in the rocks. Steer into the loudest p
 
 ## Stars and ribbons
 
-Reach the river mouth for 1 star. Catch 6 in every 10 things offered for 2 stars, and nearly 9 in 10 for 3 stars. The mouth sounds with a run of bells, and the results follow.
+Reach the river mouth for 1 star. Catch at least 60 percent of the things offered for 2 stars, or at least 85 percent for 3 stars. The mouth sounds with a run of bells, and the results follow.
 
 Each stream has 3 ribbons: catch a number of things in one run, make a number of clean catches in one run, and one of its own, such as going through every waterfall in the Rain gutter. A ribbon counts only when you reach the mouth, and each one gives 10 paper scraps. In Choose a stream, F1 on a stream reads its ribbons.
 
@@ -86,7 +86,7 @@ Drift is slow water with the whole band playing from the start. There is no scor
 
 ## Calendar events
 
-Two days a month change your own streams and the endless river. Challenges never see them.
+Two monthly events change your own streams and the endless river. Neither affects challenges.
 
 - Duck parade, the second Monday of every month: more ducks paddle across every stream, and each one you pass is worth 20 points.
 - Lantern float, the third Friday of every month: lanterns float down every stream. A lantern rings with a glassy chime and is worth 50 points.

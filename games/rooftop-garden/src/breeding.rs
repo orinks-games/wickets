@@ -340,7 +340,7 @@ impl Keepsake {
     pub fn about(self) -> &'static str {
         match self {
             Keepsake::BirdBath => "Sparrows visit and eat some aphids before they settle.",
-            Keepsake::RainBarrel => "Catches rain, then waters the next few plants that get thirsty.",
+            Keepsake::RainBarrel => "Catches rain, then waters the next 3 plants that get thirsty.",
             Keepsake::Beehive => "Bees carry pollen, so plants cross more often.",
             Keepsake::Trellis => "Plants in bloom get leggy half as often.",
             Keepsake::CompostBin => "New seeds sprout twice as fast.",
@@ -351,7 +351,7 @@ impl Keepsake {
             Keepsake::ColdFrame => "C sets it over a planter. The soil under it never dries out.",
             Keepsake::SwapBoard => "Neighbours can ask for 3 things at once, and every filled request brings gift seeds.",
             Keepsake::PottingBench => {
-                "Once a day, P on two plants in bloom crosses them by hand, into seeds you have not found."
+                "Once a garden day, use P to select two different varieties in bloom or ripe and try for new seeds."
             }
         }
     }

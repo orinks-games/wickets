@@ -59,7 +59,7 @@ Different kinds of plant that are in bloom and well watered at the same time mak
 
 ## Varieties and crosses
 
-In your own garden, two different plants side by side can cross. When you harvest a plant in bloom with a different plant in bloom in the planter ahead, behind, left or right of it, the two may cross, and the harvest leaves a packet of new seeds. A different plant can be another species or another variety of the same one. A plant with no different neighbour now and then throws new seeds by itself.
+In your own garden, two different plants side by side can cross. When you harvest a ripe plant beside a different plant that is in bloom or ripe, the two may cross and leave a packet of new seeds. The neighbouring planter can be ahead, behind, left or right. A different plant can be another species or another variety of the same one. A plant with no different neighbour now and then throws new seeds by itself.
 
 The new seeds are the harvested plant's species, with traits from both parents and sometimes a new one. There are four traits.
 
@@ -87,7 +87,7 @@ You earn a star for each new variety, each heirloom and each neighbour's request
 - String lights, at 85 stars: each evening the lights come on with a click and a soft celesta, and plants grow faster under them until morning.
 - Cold frame, at 110 stars: C sets it over the planter you stand at. The soil under it never dries out. C on another planter moves it.
 - Swap board, at 140 stars: neighbours can ask for up to 3 things at once, and every request you fill brings gift seeds.
-- Potting bench, at 180 stars: once a garden day, P on a plant in bloom picks it, and P on a second plant in bloom crosses the two by hand into seeds you have not found.
+- Potting bench, at 180 stars: once a garden day, press P on a plant in bloom or ripe to select it. Press P on a different variety in bloom or ripe to cross the two by hand and try for seeds you have not found.
 
 Keepsakes, in the seed shed, lists them all and the stars still needed. Keepsakes are kept if you start your garden over.
 
@@ -155,7 +155,7 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - L: list every planter, row by row.
 - N: read the neighbours' requests.
 - C: set the cold frame over this planter, once you have it.
-- P: pick a plant for the potting bench, once you have it.
+- P: select a plant for the potting bench, once you have it.
 - S: status. What needs you, any rain, and the planter under you. Press it again straight away for the day, the time of day, the weather, the harmony and your harvests.
 - R: repeat the last thing said.
 - H: hint. Where the nearest job is and which key does it.

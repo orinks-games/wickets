@@ -30,7 +30,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, water: Live<RunScreen>) -> Lesson {
         k(ParlorAction::Right),
         k(ParlorAction::Primary),
         k(ParlorAction::Status),
-        k(ParlorAction::Hint),
+        sentence_start(&k(ParlorAction::Hint)),
     );
     let catch = water.step(
         format!(
@@ -57,7 +57,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, water: Live<RunScreen>) -> Lesson {
     .step(current)
     .step(clean)
     .outro(format!(
-        "On a real stream, steer clear of stones and the banks: a bump costs your combo, and the band drops back. The longer your combo, the more of the band plays. {} gives your combo and score, and {h} says where the current is and what is coming.",
+        "On a real stream, steer clear of stones and the banks: a bump costs your combo, and the band drops back. The longer your combo, the more of the band plays. {} gives your combo and multiplier. Press it again straight away for your score and progress. {h} says where the current is and what is coming.",
         sentence_start(&s)
     ))
     .on_exit(move |ctx| {
