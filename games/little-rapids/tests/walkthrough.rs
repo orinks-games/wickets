@@ -204,3 +204,14 @@ fn drift_sails_to_the_mouth_with_no_score() {
     assert_eq!(h.app.top_name(), "results");
     assert!(spoke(&h, "Nothing is scored"), "{:?}", h.spoken());
 }
+
+#[test]
+fn bank_sound_help_explains_the_leaf_boats_smaller_penalty() {
+    let mut h = start();
+    select(&mut h, "Sound check");
+    h.press(Key::Return);
+    select(&mut h, "Bumping the bank");
+    h.clear();
+    h.press(Key::F1);
+    assert!(spoke(&h, "halves it in the leaf boat"), "{:?}", h.spoken());
+}

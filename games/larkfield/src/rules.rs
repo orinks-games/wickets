@@ -1950,9 +1950,14 @@ impl Hamlet {
         } else if let Some((ob, left)) = self.building {
             if ob == b {
                 return format!(
-                    "{}, going up. {} hours of work left.",
+                    "{}, going up. {} {} of work left.",
                     sentence_case(b.name()),
-                    left.ceil() as u32
+                    left.ceil() as u32,
+                    if left.ceil() as u32 == 1 {
+                        "hour"
+                    } else {
+                        "hours"
+                    }
                 );
             }
             format!("A free spot for {}.", b.name())
@@ -3279,9 +3284,14 @@ impl Hamlet {
         second.push(self.where_line());
         if let Some((b, left)) = self.building {
             second.push(format!(
-                "{} is going up, {} hours of work left.",
+                "{} is going up, {} {} of work left.",
                 sentence_case(b.name()),
-                left.ceil() as u32
+                left.ceil() as u32,
+                if left.ceil() as u32 == 1 {
+                    "hour"
+                } else {
+                    "hours"
+                }
             ));
         }
         second.push(self.store_line());

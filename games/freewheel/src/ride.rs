@@ -1007,7 +1007,7 @@ impl Ride {
                 let lost = self.world.drop_clock.map(|c| c.lost);
                 let line = match self.world.crash_limit {
                     _ if lost.is_some() => {
-                        format!("{why} Minus {} seconds.", clock::CRASH_S as i64)
+                        format!("{why} Lost {} seconds. Down for 3 seconds.", clock::CRASH_S as i64)
                     }
                     Some(n) if self.world.stats.crashes >= n => {
                         format!("{why} Crash {n} of {n}.")
@@ -1285,8 +1285,8 @@ impl Ride {
                 let left = self.world.drop_clock.map_or(0.0, |c| c.left).ceil() as i64;
                 let line = match (n, quick) {
                     (0, _) => format!("Drop made. The clock is full, {left} seconds."),
-                    (n, true) => format!("Plus {n}, quick drop. {left} left."),
-                    (n, false) => format!("Plus {n}. {left} left."),
+                    (n, true) => format!("Quick drop adds {n} seconds. {left} seconds left."),
+                    (n, false) => format!("Drop adds {n} seconds. {left} seconds left."),
                 };
                 self.tell(ctx, line);
             }
@@ -1733,7 +1733,7 @@ impl Ride {
                     span_words(time)
                 ),
                 format!(
-                    "{} at lockers, {} quick. {} {} earned. You have {} to spend in the bike shop.",
+                    "Locker drops: {}. Quick drops: {}. {} {} earned. You have {} to spend in the bike shop.",
                     c.lockers,
                     c.quick,
                     if c.lost > 0.0 {
