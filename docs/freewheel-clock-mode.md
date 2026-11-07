@@ -23,7 +23,7 @@ It ships on the alpha channel first (`clock::STAGE`). Stable and beta copies sho
 
 Each one is built as the recommendation, so the PR plays as is. Say if you want any changed.
 
-1. **Name.** "Against the clock". Not "rush" (the parcel rush and rush hour already exist) or "shift" (kept for career work).
+1. **Name.** "Against the clock". Not "rush" (rush hour already exists) or "shift" (kept for career work).
 2. **Numbers.** Start 60, doorway +14, locker +18, quick +4 within 30 seconds, crash -8, cap 90. Drops come about every 120 metres, the first 30 metres after the start. A careful rider loses a few seconds per drop and lasts two to four minutes. A rider who takes lockers and keeps the drops quick can hold the clock up.
 3. **Moped.** Allowed. It has to brake hard for every drop, and the help says so. The other choice is to leave it out of the mode.
 4. **Call-outs.** Time lines ("Plus 14. 52 left.", "Minus 8 seconds.", "10 seconds left.") are always spoken, like crash lines, because they are the score. The doorbell is named under the Spoken call-outs setting, as in the endless ride.
