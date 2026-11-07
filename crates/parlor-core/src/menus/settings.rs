@@ -110,14 +110,34 @@ mod tests {
         h
     }
 
+    /// The game's own category, open.
+    fn game_rows() -> Headless<Parlor> {
+        let mut h = settings();
+        h.press(Key::Return);
+        h.frame(0.0);
+        h
+    }
+
     #[test]
     fn the_games_rows_come_first_and_units_last() {
         let mut h = settings();
         assert!(
+            h.spoken().iter().any(|l| l.starts_with("Game")),
+            "Settings should open on the game's own category: {:?}",
+            h.spoken()
+        );
+        assert_eq!(
+            crate::menus::testing::rows(&h)[..5],
+            ["Game", "Speech", "Sound", "Display", "Controls"]
+        );
+        h.clear();
+        h.press(Key::Return);
+        h.frame(0.0);
+        assert!(
             h.spoken()
                 .iter()
                 .any(|l| l.starts_with("Spoken call-outs: off.")),
-            "Settings should open on the game's own row: {:?}",
+            "the category should open on the game's row: {:?}",
             h.spoken()
         );
         h.clear();
@@ -136,7 +156,7 @@ mod tests {
 
     #[test]
     fn a_toggle_flips_saves_and_explains() {
-        let mut h = settings();
+        let mut h = game_rows();
         assert!(h
             .spoken()
             .last()

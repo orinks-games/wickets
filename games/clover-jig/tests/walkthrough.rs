@@ -642,6 +642,7 @@ fn spoken_call_outs_speak_each_call() {
     let mut h = title();
     goto(&mut h, "Settings");
     h.press(Key::Return);
+    h.press(Key::Return); // the game's own category
     goto(&mut h, "Spoken call-outs");
     h.clear();
     h.press(Key::Return);
