@@ -190,7 +190,13 @@ impl Menu for DistrictSelect {
                     let mut c = Choices::load(ctx);
                     c.district = d;
                     c.store(ctx);
-                    ctx.pop_with(format!("Endless ride in {}", d.name()));
+                    // On alpha the district is the ride against the clock's too.
+                    let line = if crate::clock::offered() {
+                        format!("Riding in {}", d.name())
+                    } else {
+                        format!("Endless ride in {}", d.name())
+                    };
+                    ctx.pop_with(line);
                 })
                 .help(help),
             );
