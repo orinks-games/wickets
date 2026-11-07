@@ -333,10 +333,10 @@ impl Menu for Catalogue {
         if items.is_empty() {
             items.push(
                 MenuItem::new("None yet", |_m: &mut Self, ctx: &mut Ctx<Parlor>| {
-                    ctx.say("Grow two different plants side by side. When one is harvested in bloom beside the other, they may cross.")
+                    ctx.say("Grow two different plants side by side. Harvest a ripe plant while its neighbour is in bloom or ripe, and they may cross.")
                 })
                 .select_sound(None)
-                .help("Grow two different plants side by side. When one is harvested in bloom beside the other, they may cross."),
+                .help("Grow two different plants side by side. Harvest a ripe plant while its neighbour is in bloom or ripe, and they may cross."),
             );
         }
         items.push(
