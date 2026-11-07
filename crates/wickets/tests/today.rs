@@ -226,6 +226,7 @@ fn a_kind_left_out_in_preferences_leaves_events_but_not_play() {
 fn preferences_open_from_the_launchers_settings() {
     let mut h = start_on(QUIET_DAY);
     select(&mut h, "Settings");
+    select(&mut h, "Games");
     let settings = rows(&h);
     let row = settings
         .iter()

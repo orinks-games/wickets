@@ -517,6 +517,7 @@ fn drop_calls_can_be_turned_off() {
     h.press(Key::Return); // Back to the title
     select(&mut h, "Settings");
     h.press(Key::Return);
+    h.press(Key::Return); // the game's own category
     select(&mut h, "Spoken call-outs");
     h.clear();
     h.press(Key::Return);
@@ -529,6 +530,7 @@ fn drop_calls_can_be_turned_off() {
     h.press(Key::Down);
     h.press(Key::Up);
     assert!(spoke(&h, "Spoken call-outs: off. 1 of"), "{:?}", h.spoken());
+    h.press(Key::Escape);
     h.press(Key::Escape);
     h.press(Key::Home);
     h.press(Key::Return);
@@ -1348,6 +1350,7 @@ fn the_call_outs_row_switches_and_says_so() {
     let mut h = start();
     select(&mut h, "Settings");
     h.press(Key::Return);
+    h.press(Key::Return); // the game's own category
     select(&mut h, "Spoken call-outs");
     assert!(h
         .app
