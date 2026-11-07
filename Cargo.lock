@@ -3078,6 +3078,7 @@ name = "wickets-rules"
 version = "1.5.0"
 dependencies = [
  "hearken-replay",
+ "libm",
  "serde",
  "serde_json",
  "wickets-content",

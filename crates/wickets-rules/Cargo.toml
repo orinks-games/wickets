@@ -19,6 +19,7 @@ doctest = false
 hearken-replay.workspace = true
 serde.workspace = true
 serde_json.workspace = true
+libm.workspace = true
 
 [build-dependencies]
 wickets-content = { path = "../wickets-content" }
