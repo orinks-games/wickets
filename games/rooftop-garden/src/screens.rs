@@ -15,6 +15,7 @@ use parlor_core::{
 };
 use serde::{Deserialize, Serialize};
 
+use crate::breeding::{Collection, Keepsake, Variety};
 use crate::cues;
 use crate::menus::CHALLENGES_NAME;
 use crate::rules::{number, sentence, Ask, Garden, Goal, Keys, Kind, Note, Species, Stage, Twist};
@@ -30,6 +31,9 @@ pub const RUN_NAME: &str = "rooftop_garden_run";
 pub const GARDEN_KEY: &str = "rooftop-garden/garden";
 /// Where unfinished challenge gardens are saved, by challenge slot.
 pub const CHALLENGE_KEY: &str = "rooftop-garden/challenge-gardens";
+/// What your gardens have found: varieties, keepsakes and requests. Kept
+/// apart from the garden, so starting it over keeps them.
+pub const COLLECTION_KEY: &str = "rooftop-garden/collection";
 /// Small saved facts: whether the tutorial has been read.
 pub const PROGRESS_KEY: &str = "rooftop-garden/progress";
 
@@ -62,7 +66,7 @@ pub fn keys(ctx: &Ctx<Parlor>) -> Keys {
 pub fn controls_text(ctx: &Ctx<Parlor>) -> String {
     let k = keys(ctx);
     format!(
-        "In the garden. {} step between planters: up and down change row. {} waters, or plants in empty soil; watering moist soil waterlogs it. {} picks aphids, harvests or prunes. Delete composts a plant. Enter sits on the bench to pass time faster. L lists every planter. {} says what needs you; press it twice for the day, weather and harmony. {} repeats. {} points to the nearest job. Escape pauses; the garden saves when you leave.",
+        "In the garden. {} step between planters: up and down change row. {} waters, or plants in empty soil; watering moist soil waterlogs it. {} picks aphids, harvests or prunes. Delete composts a plant. Enter sits on the bench to pass time faster. L lists every planter. N reads the neighbours' requests. With those keepsakes, C sets the cold frame and P uses the potting bench. {} says what needs you; press it twice for the day, weather and harmony. {} repeats. {} points to the nearest job. Escape pauses; the garden saves when you leave.",
         sentence(&k.arrows),
         sentence(&k.water),
         sentence(&k.tend),
@@ -87,14 +91,23 @@ impl Launch {
 /// Your saved garden, or a fresh one.
 pub fn load_home(ctx: &mut Ctx<Parlor>, launch: Launch) -> Garden {
     let saved: Option<Garden> = Records::load(ctx, GARDEN_KEY);
-    match saved {
+    let mut g = match saved {
         Some(mut g) => {
             g.repair();
             g.rng = launch.rng();
             g
         }
         None => Garden::home(launch.rng()),
-    }
+    };
+    g.book = load_collection(ctx);
+    g
+}
+
+/// What your gardens have found.
+pub fn load_collection(ctx: &mut Ctx<Parlor>) -> Collection {
+    let mut book: Collection = Records::load(ctx, COLLECTION_KEY);
+    book.repair();
+    book
 }
 
 /// Saves a garden: yours under its own key, a challenge's by its slot.
@@ -102,6 +115,8 @@ pub fn save(ctx: &mut Ctx<Parlor>, garden: &Garden) {
     match garden.kind {
         Kind::Home => {
             Records::store(ctx, GARDEN_KEY, &Some(garden.clone()));
+            Records::store(ctx, COLLECTION_KEY, &garden.book);
+            Records::record(ctx, ID, "varieties", garden.book.found.len() as u64);
             Records::record(ctx, ID, "harvests", garden.harvests as u64);
             Records::record(ctx, ID, "harmony", garden.best_harmony as u64);
             Records::record(ctx, ID, "days", garden.day as u64);
@@ -251,7 +266,8 @@ pub fn plot_pos(garden: &Garden, i: usize) -> Vec3 {
 /// The sounds coming from one planter.
 #[derive(Default)]
 struct Voice {
-    species: Option<Species>,
+    /// The species and instrument it plays on.
+    species: Option<(Species, u8)>,
     hum: Option<Sound>,
     /// The plant's part of the song, while it sings.
     part: Option<Part>,
@@ -297,7 +313,7 @@ pub struct RunScreen {
     garden: Garden,
     challenge: Option<Challenge>,
     asked: Asked,
-    seed: Rc<Cell<Option<Species>>>,
+    seed: Rc<Cell<Option<Variety>>>,
     pumpkin: Rc<Cell<bool>>,
     compost: Rc<Cell<bool>>,
     voices: Vec<Voice>,
@@ -455,9 +471,10 @@ impl RunScreen {
             let pos = plot_pos(&self.garden, i);
             let plant = self.garden.plots[i].clone();
             let v = &mut self.voices[i];
-            if v.species != plant.as_ref().map(|p| p.species) {
+            let who = plant.as_ref().map(|p| (p.species, p.tone()));
+            if v.species != who {
                 Self::stop_voice(ctx, v);
-                v.species = plant.as_ref().map(|p| p.species);
+                v.species = who;
             }
             let Some(p) = plant else {
                 continue;
@@ -556,8 +573,9 @@ impl RunScreen {
             let Some(part) = v.part else {
                 continue;
             };
+            let tone = v.species.map_or(0, |(_, t)| t);
             let joining = v.layer.is_none();
-            if let Some((key, from)) = self.song.cue(part, joining) {
+            if let Some((key, from)) = self.song.cue_on(part, tone, joining) {
                 let s = start_part(ctx, &key, from, Some(pos), v.volume, v.pitch);
                 let last = v.layer.replace(s);
                 if let Some(old) = std::mem::replace(&mut v.tail, last) {
@@ -596,6 +614,14 @@ impl RunScreen {
             let s = ctx.audio.play_at(cues::CHIMES, pos, Bus::AMBIENCE);
             ctx.audio.set_volume(s, 0.5);
             let breezy = self.garden.weather == crate::rules::Weather::Breezy;
+            if breezy && self.garden.book.has(Keepsake::WindChimes) {
+                // Your own chimes, by the bench, a little higher.
+                let s = ctx
+                    .audio
+                    .play_at(cues::CHIMES, Vec3::new(-1.0, 1.0, 0.5), Bus::AMBIENCE);
+                ctx.audio.set_volume(s, 0.45);
+                ctx.audio.set_pitch(s, 1.26);
+            }
             self.chime_in = if breezy { 8.0 } else { 20.0 } + r.unit() * 15.0;
         }
         self.horn_in -= dt;
@@ -786,7 +812,13 @@ impl RunScreen {
                 self.pumpkin.set(false);
                 ctx.audio.pause_all();
                 let place = self.garden.place(self.garden.here());
-                let mut menu = SeedMenu::new(self.garden.seeds.clone(), place, self.seed.clone());
+                let choices = self
+                    .garden
+                    .seeds
+                    .iter()
+                    .map(|&s| self.garden.book.varieties(s))
+                    .collect();
+                let mut menu = SeedMenu::new(choices, place, self.seed.clone());
                 if self.garden.kind == Kind::Home {
                     // The season may have closed since the garden opened:
                     // no pumpkin seeds off their window.
@@ -805,7 +837,7 @@ impl RunScreen {
                     .garden
                     .plant_here()
                     .map(|p| p.name())
-                    .unwrap_or("plant");
+                    .unwrap_or_else(|| "plant".into());
                 let flag = self.compost.clone();
                 ctx.audio.pause_all();
                 ctx.push(
@@ -963,6 +995,9 @@ impl State<Parlor> for RunScreen {
             None => match key {
                 Key::Return | Key::KpEnter => g.bench(),
                 Key::L => g.speak_list(),
+                Key::N => g.speak_requests(),
+                Key::C => g.set_cold_frame(),
+                Key::P => g.pot(),
                 Key::Delete | Key::Backspace => ask = g.ask_compost(),
                 // Modifiers and screen-reader keys: Control silences the
                 // screen reader, so the garden must not talk back.
@@ -1016,17 +1051,23 @@ impl State<Parlor> for RunScreen {
     }
 }
 
-/// The seed packet: choose what to plant in an empty planter.
+/// The seed packet: choose what to plant in an empty planter. A species
+/// with varieties found opens a list of them.
 pub struct SeedMenu {
     menu: MenuCore<Self, Parlor>,
-    seeds: Vec<Species>,
-    chosen: Rc<Cell<Option<Species>>>,
+    /// Each unlocked species' varieties, the plain seed first.
+    seeds: Vec<Vec<Variety>>,
+    chosen: Rc<Cell<Option<Variety>>>,
     /// Set when the pumpkin is chosen, in pumpkin season.
     pumpkin: Option<Rc<Cell<bool>>>,
 }
 
 impl SeedMenu {
-    pub fn new(seeds: Vec<Species>, place: String, chosen: Rc<Cell<Option<Species>>>) -> SeedMenu {
+    pub fn new(
+        seeds: Vec<Vec<Variety>>,
+        place: String,
+        chosen: Rc<Cell<Option<Variety>>>,
+    ) -> SeedMenu {
         SeedMenu {
             menu: MenuCore::new(format!("Seeds for {place}")).with_intro_help(
                 "Up and Down choose a seed, Enter plants it, Escape plants nothing.",
@@ -1060,6 +1101,15 @@ impl Menu for SeedMenu {
         parlor_core::shop_music::stop(ctx);
     }
 
+    /// Back from a species' varieties: plant what was chosen there.
+    fn resume_quiet(&mut self, ctx: &mut Ctx<Parlor>) {
+        if self.chosen.get().is_some() {
+            ctx.pop_quiet();
+        } else {
+            self.refresh(ctx, true);
+        }
+    }
+
     fn menu(&self) -> &MenuCore<Self, Parlor> {
         &self.menu
     }
@@ -1072,15 +1122,29 @@ impl Menu for SeedMenu {
         let mut items: Vec<MenuItem<Self, Parlor>> = self
             .seeds
             .iter()
-            .map(|&s| {
-                MenuItem::new(
-                    format!("{}, sings {}", sentence(s.name()), s.voice()),
-                    move |m: &mut Self, ctx: &mut Ctx<Parlor>| {
-                        m.chosen.set(Some(s));
-                        ctx.pop_quiet();
-                    },
-                )
-                .help(s.tip())
+            .filter(|kinds| !kinds.is_empty())
+            .map(|kinds| {
+                let s = kinds[0].species;
+                if kinds.len() == 1 {
+                    let plain = kinds[0];
+                    MenuItem::new(
+                        format!("{}, sings {}", sentence(s.name()), s.voice()),
+                        move |m: &mut Self, ctx: &mut Ctx<Parlor>| {
+                            m.chosen.set(Some(plain));
+                            ctx.pop_quiet();
+                        },
+                    )
+                    .help(s.tip())
+                } else {
+                    let list = kinds.clone();
+                    MenuItem::new(
+                        format!("{}, {} kinds", sentence(s.name()), kinds.len()),
+                        move |m: &mut Self, ctx: &mut Ctx<Parlor>| {
+                            ctx.push(VarietyMenu::new(list.clone(), m.chosen.clone()));
+                        },
+                    )
+                    .help("Enter lists the plain seed and every variety you have found.")
+                }
             })
             .collect();
         if let Some(flag) = self.pumpkin.clone() {
@@ -1106,6 +1170,64 @@ impl Menu for SeedMenu {
 
     fn on_escape(&mut self, ctx: &mut Ctx<Parlor>) {
         ctx.pop_quiet();
+    }
+}
+
+/// One species' seeds: the plain seed and each variety found.
+pub struct VarietyMenu {
+    menu: MenuCore<Self, Parlor>,
+    kinds: Vec<Variety>,
+    chosen: Rc<Cell<Option<Variety>>>,
+}
+
+impl VarietyMenu {
+    pub fn new(kinds: Vec<Variety>, chosen: Rc<Cell<Option<Variety>>>) -> VarietyMenu {
+        let species = kinds.first().map_or("Seeds", |v| v.species.name());
+        VarietyMenu {
+            menu: MenuCore::new(sentence(species)).with_intro_help(
+                "Up and Down choose a variety, Enter plants it, Escape goes back to the packet.",
+            ),
+            kinds,
+            chosen,
+        }
+    }
+}
+
+impl Menu for VarietyMenu {
+    type Game = Parlor;
+
+    fn name(&self) -> &'static str {
+        "rooftop_garden_varieties"
+    }
+
+    fn menu(&self) -> &MenuCore<Self, Parlor> {
+        &self.menu
+    }
+
+    fn menu_mut(&mut self) -> &mut MenuCore<Self, Parlor> {
+        &mut self.menu
+    }
+
+    fn build_items(&mut self, _ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
+        self.kinds
+            .iter()
+            .map(|&v| {
+                let label = if v.is_plain() {
+                    format!("Plain {}, on {}", v.species.name(), v.tone())
+                } else {
+                    format!("{}, {}", sentence(&v.name()), v.describe())
+                };
+                MenuItem::new(label, move |m: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    m.chosen.set(Some(v));
+                    ctx.pop_quiet();
+                })
+                .help(v.species.tip())
+            })
+            .collect()
+    }
+
+    fn on_escape(&mut self, ctx: &mut Ctx<Parlor>) {
+        ctx.pop();
     }
 }
 

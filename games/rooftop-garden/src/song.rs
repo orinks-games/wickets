@@ -151,19 +151,47 @@ impl Part {
             || key
                 .strip_prefix("rooftop-garden/song/made/")
                 .and_then(|rest| rest.strip_prefix(self.file()))
-                .is_some_and(|rest| rest.starts_with('/'))
+                .is_some_and(|rest| rest.starts_with('/') || rest.starts_with('-'))
     }
 
     /// The key of one of the part's phrases.
     pub fn phrase(self, chord: Chord, n: u8) -> String {
-        format!(
-            "rooftop-garden/song/made/{}/{}-{}",
-            self.file(),
-            chord.file(),
-            n
-        )
+        self.phrase_on(chord, n, 0)
+    }
+
+    /// Whether the part can play on other instruments: every plant's but
+    /// the pumpkin's.
+    pub fn has_tones(self) -> bool {
+        !matches!(self, Part::Base | Part::Pumpkin)
+    }
+
+    /// The key of one of the part's phrases on instrument `tone`: tone 0
+    /// is the part's own, under `made/tomato/`; the others are under
+    /// `made/tomato-1/` and `made/tomato-2/`.
+    pub fn phrase_on(self, chord: Chord, n: u8, tone: u8) -> String {
+        let dir = if tone == 0 || !self.has_tones() {
+            self.file().to_string()
+        } else {
+            format!("{}-{tone}", self.file())
+        };
+        format!("rooftop-garden/song/made/{dir}/{}-{n}", chord.file())
+    }
+
+    /// The phrase a part on another instrument plays in bar `bar` of the
+    /// garden's own tune, whose loops are only on the part's own
+    /// instrument.
+    fn own_on(self, bar: usize, tone: u8) -> String {
+        let n = match self {
+            Part::Sunflower if bar == BARS - 1 => 0,
+            Part::Sunflower => 1 + (bar % 3) as u8,
+            _ => 0,
+        };
+        self.phrase_on(OWN[bar], n, tone)
     }
 }
+
+/// The chords of the garden's own tune.
+pub const OWN: [Chord; BARS] = [G, Em, C, D];
 
 /// A made-up tune: four chords, and each part's phrase in each bar.
 #[derive(Clone, Debug, PartialEq, Eq)]
@@ -193,7 +221,12 @@ impl Tune {
 
     /// The key `part` plays in `bar`.
     pub fn key(&self, part: Part, bar: usize) -> String {
-        part.phrase(self.chords[bar], self.picks[bar][part.index()])
+        self.key_on(part, bar, 0)
+    }
+
+    /// The key `part` plays in `bar`, on instrument `tone`.
+    pub fn key_on(&self, part: Part, bar: usize, tone: u8) -> String {
+        part.phrase_on(self.chords[bar], self.picks[bar][part.index()], tone)
     }
 }
 
@@ -269,6 +302,19 @@ impl Song {
     /// partway through it starts from the bar it joins on. A made-up tune
     /// plays a new phrase every bar.
     pub fn cue(&self, part: Part, joining: bool) -> Option<(String, f64)> {
+        self.cue_on(part, 0, joining)
+    }
+
+    /// As [`Song::cue`], for a part on instrument `tone`. On another
+    /// instrument the garden's own tune is played a phrase a bar too.
+    pub fn cue_on(&self, part: Part, tone: u8, joining: bool) -> Option<(String, f64)> {
+        let tone = if part.has_tones() { tone } else { 0 };
+        if tone > 0 {
+            return Some(match &self.verse {
+                Verse::Own => (part.own_on(self.bar, tone), 0.0),
+                Verse::New(tune) => (tune.key_on(part, self.bar, tone), 0.0),
+            });
+        }
         match &self.verse {
             Verse::Own if self.bar == 0 => Some((part.own().to_string(), 0.0)),
             Verse::Own if joining => Some((part.own().to_string(), self.bar as f64 * BAR)),

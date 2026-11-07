@@ -8,6 +8,7 @@
 // more planters. Daily, weekly and monthly challenges give everyone the
 // same garden with a gentle goal.
 
+pub mod breeding;
 pub mod cues;
 pub mod events;
 pub mod menus;
@@ -128,9 +129,21 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
             end_sentence(&Challenges::summary(ctx, &ch))
         })
         .collect();
+    let book = crate::screens::load_collection(ctx);
+    let collection = format!(
+        "Collection. Varieties found: {} of {}. Heirlooms: {}. Requests filled: {}. Keepsakes: {} of {}. Stars: {}.",
+        book.found.len(),
+        crate::breeding::Variety::count(),
+        book.heirlooms(),
+        book.thanks,
+        book.keepsakes.len(),
+        crate::breeding::Keepsake::ALL.len(),
+        book.stars()
+    );
     vec![
         first,
         bests,
+        collection,
         format!("Challenges. {}", challenges.join(" ")),
     ]
 }
@@ -184,14 +197,22 @@ impl TitleGame for RooftopGarden {
     fn extras(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
         let saved: Option<Garden> = Records::load(ctx, GARDEN_KEY);
         vec![MenuItem::new(
-            format!(
-                "Seed shed, {} of {} seeds",
-                seeds_open(&saved),
-                Species::ALL.len()
-            ),
+            {
+                let book = crate::screens::load_collection(ctx);
+                let seeds = format!(
+                    "Seed shed, {} of {} seeds",
+                    seeds_open(&saved),
+                    Species::ALL.len()
+                );
+                match book.found.len() {
+                    0 => seeds,
+                    1 => format!("{seeds}, 1 variety"),
+                    n => format!("{seeds}, {n} varieties"),
+                }
+            },
             |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(menus::SeedShed::new()),
         )
-        .help("Every kind of seed, its part in the song, and how many harvests unlock the rest.")]
+        .help("Every seed and variety, your keepsakes, and the neighbours' requests.")]
     }
 
     fn destructive(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
@@ -211,7 +232,7 @@ impl TitleGame for RooftopGarden {
             |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(
                     ConfirmScreen::<Parlor>::new(
-                        "Clear every planter and start your garden over from day 1? Your seeds go back in the shed too. Best records are kept.",
+                        "Clear every planter and start your garden over from day 1? Your seeds go back in the shed too. Varieties, keepsakes and best records are kept.",
                         |ctx| {
                             Records::store(ctx, GARDEN_KEY, &Option::<Garden>::None);
                             ctx.pop_with("Garden cleared");
