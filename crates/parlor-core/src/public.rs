@@ -47,6 +47,7 @@ pub use status::StatusKey;
 pub use tutorial::{Lesson, Live, Reaction, Reply, Step};
 pub use unlocks::{Unlock, UnlockGame, Unlocks, UnlocksMenu};
 
+use hearken::screens::settings::categories;
 use hearken::Ctx;
 
 /// The collection's name, as the window title and the launcher say it.
@@ -146,26 +147,57 @@ impl hearken::Game for Parlor {
         Some(presence::outside_story(&ctx.game))
     }
 
+    /// Settings opens on categories: the open game's own options first,
+    /// named after the game, then Speech, Sound, Display, Controls, Games
+    /// (from the launcher), Online and Updates.
+    fn settings_categories() -> bool {
+        true
+    }
+
     fn settings_rows(
         ctx: &Ctx<Self>,
         mut rows: Vec<hearken::screens::SettingsRow<Self>>,
     ) -> Vec<hearken::screens::SettingsRow<Self>> {
-        // The open game's own rows come first, so Settings from a game
-        // opens on that game's options; the shared ones follow, with Units
-        // last unless the game listed it among its own.
+        // The open game's own rows come first, under the game's name, so
+        // Settings from a game opens on that game's options. Units ends that
+        // list unless the game placed it itself. In the launcher, Units and
+        // Game preferences make up Games.
         let mut out = match ctx.game.game_settings {
             Some(game) => game(ctx),
             None => Vec::new(),
         };
         let has_units = out.iter().any(|row| row.id == units::ROW_ID);
-        out.append(&mut rows);
         if !has_units {
             out.push(units::row());
         }
+        let own = match ctx.game.game_settings {
+            Some(_) => ctx.game.open_game_name.unwrap_or("Game"),
+            None => "Games",
+        };
         // Preferences shape the launcher's story and events, so they are
         // only offered from the launcher's Settings.
         if ctx.game.game_settings.is_none() {
             out.push(preferences::row());
+        }
+        let mut out: Vec<_> = out.into_iter().map(|row| row.in_category(own)).collect();
+        // The launcher's Games sits after the built-in categories, before
+        // Online and Updates; a game's own list leads.
+        let online = rows
+            .iter()
+            .position(|row| {
+                matches!(
+                    row.category.as_deref(),
+                    Some(categories::ONLINE | categories::UPDATES)
+                )
+            })
+            .unwrap_or(rows.len());
+        if ctx.game.game_settings.is_some() {
+            out.append(&mut rows);
+        } else {
+            let mut tail = rows.split_off(online);
+            rows.append(&mut out);
+            rows.append(&mut tail);
+            out = rows;
         }
         out
     }

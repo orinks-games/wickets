@@ -123,7 +123,7 @@ lobby, H moves between Happening today and Help.
 
 ## Story and event games
 
-Story and event games, in the lobby's Settings, choose which categories and
+Story and event games, under Games in the lobby's Settings, choose which categories and
 games story mode and the events offer. Left and Right on a category turn
 the whole category on or off. Enter lists its games, and Enter on a game
 turns just that game on or off. Anything turned off leaves story sittings,
@@ -133,7 +133,7 @@ least one game stays on.
 
 ## Speech voice
 
-Speech voice, in Settings, picks who speaks. Automatic uses your screen
+Speech voice, under Speech in Settings, picks who speaks. Automatic uses your screen
 reader, and the game's own voice when there is no screen reader or speech
 engine, as on a handheld. Left and Right choose one of the game's voices
 instead: US female, US male, British female, British male, US child or
@@ -144,7 +144,7 @@ game's own voice on. Press it again to go back to automatic.
 
 ## Update channels
 
-Update channel, in Settings, picks which releases you get. Stable is for
+Update channel, under Updates in Settings, picks which releases you get. Stable is for
 regular play and gets stable releases. Beta gets only beta releases. Alpha
 gets only alpha releases, including the earliest work and alpha-only games.
 

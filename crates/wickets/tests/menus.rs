@@ -421,6 +421,7 @@ fn spoken_call_outs_row_flips_and_says_so() {
         let mut h = title(&g);
         goto(&mut h, labels::SETTINGS);
         h.press(Key::Return);
+        h.press(Key::Return); // the game's own category
         let Some(at) = rows(&h)
             .iter()
             .position(|r| r.starts_with("Spoken call-outs: "))
@@ -471,7 +472,9 @@ fn a_games_settings_rows_leave_with_the_game() {
             .count();
         assert!(shared <= inside, "{}", g.id);
         assert!(
-            !rows(&h).iter().any(|r| r.contains("call-outs")),
+            !rows(&h)
+                .iter()
+                .any(|r| r.contains("call-outs") || r == g.name),
             "{}: {:?}",
             g.id,
             rows(&h)
