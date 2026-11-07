@@ -1,4 +1,7 @@
 //! Text that only an installed content overlay may show.
+//!
+//! `alpha` and `beta` mark work on its way to stable: a copy shows it only
+//! when it shows that stage (see [`crate::channel`]).
 
 use std::collections::HashMap;
 use std::sync::{Mutex, OnceLock};
@@ -12,6 +15,12 @@ type Open = fn(Date) -> bool;
 
 const SEASONS: &[(&str, Open)] = &[];
 
+/// The update stages a mark can name, as `channel::shows` opens them.
+const STAGES: [(&str, crate::channel::Stage); 2] = [
+    ("alpha", crate::channel::Stage::Alpha),
+    ("beta", crate::channel::Stage::Beta),
+];
+
 pub fn help(ctx: &Ctx<Parlor>, doc: &'static str) -> &'static str {
     help_on(doc, challenges::today(ctx))
 }
@@ -24,6 +33,12 @@ pub fn help_on(doc: &'static str, date: Date) -> &'static str {
         .iter()
         .filter(|(_, on)| on(date))
         .map(|(name, _)| *name)
+        .chain(
+            STAGES
+                .iter()
+                .filter(|(_, stage)| crate::channel::shows(*stage))
+                .map(|(name, _)| *name),
+        )
         .collect();
     static CACHE: OnceLock<Mutex<Filtered>> = OnceLock::new();
     let key = (doc.as_ptr() as usize, open.join(","));
@@ -70,7 +85,11 @@ pub fn filter(doc: &str, open: &[&str]) -> String {
 }
 
 fn season(name: &str) -> Option<&'static str> {
-    SEASONS.iter().map(|(value, _)| *value).find(|value| *value == name)
+    SEASONS
+        .iter()
+        .map(|(value, _)| *value)
+        .chain(STAGES.iter().map(|(value, _)| *value))
+        .find(|value| *value == name)
 }
 
 fn trailing_mark(heading: &str) -> (&str, Option<&'static str>) {
@@ -125,6 +144,26 @@ mod tests {
     #[test]
     fn ordinary_text_is_unchanged() {
         assert_eq!(filter("## Play\n\nRun.\n", &[]), "## Play\n\nRun.\n");
+    }
+
+    #[test]
+    fn stage_marks_show_only_in_copies_of_that_stage() {
+        use crate::channel::{pin, Stage};
+        static D: &str =
+            "## Play\n\nRide.{alpha: Or race the clock.}\n\n## Clock {alpha}\n\nTick.\n";
+        pin(Some(Stage::Stable));
+        let stable = help_on(D, Date::new(2026, 11, 2));
+        pin(Some(Stage::Beta));
+        let beta = help_on(D, Date::new(2026, 11, 2));
+        pin(Some(Stage::Alpha));
+        let alpha = help_on(D, Date::new(2026, 11, 2));
+        pin(None);
+        assert_eq!(stable, "## Play\n\nRide.\n\n");
+        assert_eq!(beta, stable);
+        assert_eq!(
+            alpha,
+            "## Play\n\nRide. Or race the clock.\n\n## Clock\n\nTick.\n"
+        );
     }
 
     #[test]

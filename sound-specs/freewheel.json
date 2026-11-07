@@ -2171,6 +2171,45 @@
    "normalize": -14
   },
   {
+   "out": "ui/clock_tick.wav",
+   "_about": "Against the clock: the dry tick of a low clock, once a second under 15 seconds, twice a second in the last 5. A stopwatch click, brighter and shorter than the pothole's woodblock.",
+   "genny": "blal1",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "click",
+     "at": 0,
+     "gain": 1.0,
+     "params": {
+      "tone": 5200
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "noise",
+     "at": 0,
+     "gain": 0.35,
+     "params": {
+      "dur": 0.02,
+      "color": "white",
+      "attack": 0.001
+     },
+     "fx": [
+      {
+       "type": "highpass",
+       "cutoff": 3000
+      }
+     ]
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "normalize": -13
+  },
+  {
    "out": "ui/count.wav",
    "layers": [
     {

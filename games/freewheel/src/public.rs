@@ -10,6 +10,7 @@
 
 pub mod bike;
 pub mod challenge;
+pub mod clock;
 pub mod course;
 pub mod events;
 pub mod jobs;
@@ -150,6 +151,18 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         dollar_words(progress.cash_total),
         progress.deliveries
     ));
+    if clock::offered() {
+        let bests: Vec<String> = course::District::ALL
+            .into_iter()
+            .filter_map(|d| {
+                parlor_core::Records::best(ctx, ID, &clock::board(d))
+                    .map(|n| format!("{}, {}", d.name(), clock::drop_words(n as u32)))
+            })
+            .collect();
+        if !bests.is_empty() {
+            pages.push(format!("{}. Best: {}.", clock::NAME, bests.join("; ")));
+        }
+    }
     let challenges: Vec<String> = Period::ALL
         .into_iter()
         .map(|period| {
@@ -247,6 +260,31 @@ impl TitleGame for Freewheel {
                     "Ride until your third crash. Dodge oncoming cars and grab parcels.{best}"
                 ))
             },
+        ];
+        if clock::offered() {
+            let district = c.district;
+            let best = match parlor_core::Records::best(ctx, ID, &clock::board(district)) {
+                Some(n) => format!(" Best {}.", clock::drop_words(n as u32)),
+                None => String::new(),
+            };
+            rows.push(
+                MenuItem::new(
+                    format!("{}: {} on the {}", clock::NAME, district.name(), c.bike.name()),
+                    move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
+                        ctx.push(Ride::against_clock(
+                            c.bike,
+                            district,
+                            Rng::from_time().next_u64(),
+                        ))
+                    },
+                )
+                .help(format!(
+                    "Make drops to add time. Crashes cost {} seconds. The ride ends when the clock runs out.{best}",
+                    clock::CRASH_S as u32
+                )),
+            );
+        }
+        rows.extend([
             MenuItem::new("Job board", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(jobs::JobBoard::new())
             })
@@ -276,7 +314,11 @@ impl TitleGame for Freewheel {
                 "District select",
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(shop::DistrictSelect::new()),
             )
-            .help("Choose where the endless ride goes."),
+            .help(if clock::offered() {
+                "Choose where the endless ride and the ride against the clock go."
+            } else {
+                "Choose where the endless ride goes."
+            }),
             MenuItem::new("Bike shop", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(shop::Shop::new())
             })
@@ -284,7 +326,7 @@ impl TitleGame for Freewheel {
                 "Spend cash on bikes and districts. You have {}.",
                 dollar_words(Progress::load(ctx).cash)
             )),
-        ];
+        ]);
         let today = parlor_core::challenges::today(ctx);
         let on = format!(" On the {}.", c.bike.name());
         if events::leaf_open(today) {
