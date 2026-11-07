@@ -13,13 +13,18 @@ license = "PolyForm-Noncommercial-1.0.0"
 [workspace.dependencies]
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+# Pure Rust maths, the same to the last bit on every computer and in
+# WebAssembly, for rules a server replays.
+libm = "0.2"
 log = "0.4"
 # The engine, from its main branch (Cargo.lock pins the commit). To build
 # against a local checkout, add to .cargo/config.toml (or ~/.cargo/config.toml):
 #   [patch."https://github.com/orinks-games/hearken"]
 #   hearken = { path = "../hearken/crates/hearken" }
-hearken = { git = "https://github.com/orinks-games/hearken", rev = "ff744522adf43c802f270f2c10c5f15ef5fbfe1a", features = ["visuals"] }
+hearken = { git = "https://github.com/orinks-games/hearken", rev = "e3b6feeb639d6646dcf9a4b2d2aca90225332fc4", features = ["visuals", "online"] }
+hearken-replay = { git = "https://github.com/orinks-games/hearken", rev = "e3b6feeb639d6646dcf9a4b2d2aca90225332fc4" }
 parlor-core = { path = "crates/parlor-core" }
+wickets-rules = { path = "crates/wickets-rules" }
 
 [profile.release]
 opt-level = 3

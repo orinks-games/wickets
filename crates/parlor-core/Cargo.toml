@@ -21,6 +21,7 @@ hearken = { workspace = true, features = ["update"] }
 serde.workspace = true
 serde_json.workspace = true
 log.workspace = true
+wickets-rules.workspace = true
 
 [build-dependencies]
 wickets-content = { path = "../wickets-content" }

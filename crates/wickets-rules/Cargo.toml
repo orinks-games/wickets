@@ -1,0 +1,25 @@
+[package]
+name = "wickets-rules"
+description = "Game rules with no screen, sound or clock, so a server can replay a run"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+authors.workspace = true
+license.workspace = true
+publish = false
+build = "build.rs"
+
+[lib]
+# rlib for the games; cdylib is the WebAssembly module a server replays with.
+crate-type = ["cdylib", "rlib"]
+doctest = false
+
+[dependencies]
+hearken-replay.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+libm.workspace = true
+
+[build-dependencies]
+wickets-content = { path = "../wickets-content" }
