@@ -317,6 +317,14 @@ jobs:
           if [ -n "$INDEX" ]; then
             gh release upload "$GITHUB_REF_NAME" "$INDEX" --clobber
           fi
+          # The rules module orinks.net replays this build's ranked runs
+          # with: copy it into orinks-net's hearken-rules/wickets/. Each
+          # platform builds its own; identical ones share a name.
+          for f in dist/wickets-*-rules-*.wasm; do
+            if [ -e "$f" ]; then
+              gh release upload "$GITHUB_REF_NAME" "$f" --clobber
+            fi
+          done
           # The manifest last, for this release's channel only.
           gh release upload "$GITHUB_REF_NAME" "$MANIFEST" --clobber
       # A dry run keeps nothing: run artifacts on this public repository

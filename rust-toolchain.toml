@@ -4,3 +4,5 @@ channel = "1.98.0"
 # A user's complete profile requests components stable Windows lacks.
 profile = "minimal"
 components = ["rustfmt", "clippy"]
+# Releases also build the rules module a server replays runs with.
+targets = ["wasm32-unknown-unknown"]
