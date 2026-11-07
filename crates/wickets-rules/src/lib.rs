@@ -6,10 +6,12 @@
 //! only as fixed steps, and no `sin`, `cos`, `exp` or `powf` in anything
 //! that decides a score.
 
+pub mod fixed_step;
 mod period;
 mod rng;
 pub mod text;
 
+pub use fixed_step::FixedStep;
 pub use period::Period;
 pub use rng::Rng;
 
