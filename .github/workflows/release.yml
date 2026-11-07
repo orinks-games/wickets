@@ -348,3 +348,26 @@ jobs:
           # Already compressed.
           compression-level: 0
           retention-days: 2
+
+  # Once the packages and their rules modules are attached, ask orinks.net
+  # to redeploy: its deploy fetches every release's rules module, so this
+  # release's ranked runs count from then on. ORINKS_NET_DISPATCH_TOKEN is a
+  # fine-grained token with Contents read and write on Orinks/orinks-net
+  # only. Without it the site picks the module up at its next deploy.
+  site:
+    name: refresh orinks.net's rules modules
+    needs: build
+    if: ${{ !cancelled() && startsWith(github.ref, 'refs/tags/v') && github.event_name == 'push' }}
+    runs-on: ubuntu-24.04
+    permissions: {}
+    steps:
+      - name: Ask orinks.net to redeploy
+        env:
+          GH_TOKEN: ${{ secrets.ORINKS_NET_DISPATCH_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning::No ORINKS_NET_DISPATCH_TOKEN; orinks.net takes this release's rules module at its next deploy."
+            exit 0
+          fi
+          gh api repos/Orinks/orinks-net/dispatches -f event_type=hearken-rules \
+            -f "client_payload[release]=$GITHUB_REF_NAME"
