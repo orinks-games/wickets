@@ -83,14 +83,17 @@ You earn a star for each new variety, each heirloom and each neighbour's request
 - Beehive, at 15 stars: plants cross more often.
 - Trellis, at 25 stars: plants in bloom get leggy half as often.
 - Compost bin, at 40 stars: new seeds sprout twice as fast.
-- Wind chimes, at 60 stars: your own chimes ring near the bench on breezy days, a little higher than the neighbour's.
-- String lights, at 85 stars: a click and a soft celesta each evening as the lights come on.
+- Wind chimes, at 60 stars: on breezy days, pollen blows further, so a plant can cross with one at a corner or two planters away. Your own chimes ring near the bench, a little higher than the neighbour's.
+- String lights, at 85 stars: each evening the lights come on with a click and a soft celesta, and plants grow faster under them until morning.
+- Cold frame, at 110 stars: C sets it over the planter you stand at. The soil under it never dries out. C on another planter moves it.
+- Swap board, at 140 stars: neighbours can ask for up to 3 things at once, and every request you fill brings gift seeds.
+- Potting bench, at 180 stars: once a garden day, P on a plant in bloom picks it, and P on a second plant in bloom crosses the two by hand into seeds you have not found.
 
 Keepsakes, in the seed shed, lists them all and the stars still needed. Keepsakes are kept if you start your garden over.
 
 ## Neighbours' requests
 
-People in your building ask for things from your garden, for example "Rosa wants beans from a hardy plant." New requests come with new garden days, up to 2 at a time, with a soft handbell. Harvest a plant that fits and the neighbour thanks you: you earn a star, and now and then they leave you seeds of a variety you have not found.
+People in your building ask for things from your garden, for example "Rosa wants beans from a hardy plant." New requests come with new garden days, up to 2 at a time, or 3 with the swap board, with a soft handbell. Harvest a plant that fits and the neighbour thanks you: you earn a star, and now and then they leave you seeds of a variety you have not found.
 
 N, in the garden, reads the open requests. S, pressed twice, says how many there are. Requests, in the seed shed, reads them too.
 
@@ -151,6 +154,8 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - Enter: sit on the bench, or get up again. While you sit, time passes 6 times faster, and you stand up as soon as a plant needs you.
 - L: list every planter, row by row.
 - N: read the neighbours' requests.
+- C: set the cold frame over this planter, once you have it.
+- P: pick a plant for the potting bench, once you have it.
 - S: status. What needs you, any rain, and the planter under you. Press it again straight away for the day, the time of day, the weather, the harmony and your harvests.
 - R: repeat the last thing said.
 - H: hint. Where the nearest job is and which key does it.

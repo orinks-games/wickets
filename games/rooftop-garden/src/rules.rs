@@ -19,6 +19,10 @@ pub const THIRSTY: f32 = 0.3;
 /// and more water is too much. A plant drinks down to this in about a
 /// fifth of a day.
 pub const MOIST: f32 = 0.7;
+/// The soil under the cold frame never drinks down below this.
+pub const COLD_FRAME_FLOOR: f32 = 0.5;
+/// How much faster plants grow under the string lights, in the evening.
+pub const LIGHTS_GROWTH: f32 = 1.5;
 /// Above this much water the soil is waterlogged: the plant stops growing
 /// and falls out of tune until the extra drains away.
 pub const SOAKED: f32 = 1.0;
@@ -668,6 +672,15 @@ pub struct Garden {
     pub goal_met: bool,
     /// Whether the whole six-part chorus has been heard in this garden.
     pub chorus: bool,
+    /// The cold frame's planter, as row and column, once it is set.
+    #[serde(default)]
+    pub cold_frame: Option<(usize, usize)>,
+    /// The day the potting bench was last used.
+    #[serde(default)]
+    pub potted_day: u32,
+    /// The first plant picked at the potting bench.
+    #[serde(skip)]
+    pub potting: Option<usize>,
     #[serde(skip)]
     pub finished: bool,
     #[serde(skip)]
@@ -720,6 +733,9 @@ impl Garden {
             day_limit: None,
             goal_met: false,
             chorus: false,
+            cold_frame: None,
+            potted_day: 0,
+            potting: None,
             finished: false,
             sitting: false,
             notes: Vec::new(),
@@ -837,6 +853,11 @@ impl Garden {
         (i / self.cols, i % self.cols)
     }
 
+    /// Whether the cold frame is over planter `i`.
+    pub fn covered(&self, i: usize) -> bool {
+        self.book.has(Keepsake::ColdFrame) && self.cold_frame == Some(self.cell(i))
+    }
+
     /// "row 1, planter 2".
     pub fn place(&self, i: usize) -> String {
         let (r, c) = self.cell(i);
@@ -874,6 +895,7 @@ impl Garden {
         self.plots = plots;
         self.rows = rows;
         self.cols = cols;
+        self.potting = None;
         self.notes.push(Note::Expanded);
     }
 
@@ -986,10 +1008,14 @@ impl Garden {
 
     pub fn describe(&self, i: usize) -> String {
         let place = sentence(&self.place(i));
-        match &self.plots[i] {
+        let mut s = match &self.plots[i] {
             Some(p) => format!("{place}: {}.", p.describe()),
             None => format!("{place}: empty soil."),
+        };
+        if self.covered(i) {
+            s.push_str(" Under the cold frame.");
         }
+        s
     }
 
     /// The opening line.
@@ -1402,7 +1428,7 @@ impl Garden {
         self.cue(cues::THANKS);
         let mut text = format!("{} thanks you. 1 star.", r.who());
         // Now and then a neighbour leaves seeds you have not found.
-        let gift = if self.rng.chance(0.5) {
+        let gift = if self.book.has(Keepsake::SwapBoard) || self.rng.chance(0.5) {
             self.book.gift(&mut self.rng, &self.seeds)
         } else {
             None
@@ -1422,7 +1448,25 @@ impl Garden {
     fn try_cross(&mut self, i: usize, mother: Variety) {
         let (r, c) = self.cell(i);
         let mut fathers = Vec::new();
-        for (dr, dc) in [(-1i32, 0i32), (1, 0), (0, -1), (0, 1)] {
+        // On breezy days the wind chimes' breeze carries pollen from the
+        // corners and from two planters away too.
+        let far = self.weather == Weather::Breezy && self.book.has(Keepsake::WindChimes);
+        let near: &[(i32, i32)] = &[(-1, 0), (1, 0), (0, -1), (0, 1)];
+        let wide: &[(i32, i32)] = &[
+            (-1, 0),
+            (1, 0),
+            (0, -1),
+            (0, 1),
+            (-1, -1),
+            (-1, 1),
+            (1, -1),
+            (1, 1),
+            (-2, 0),
+            (2, 0),
+            (0, -2),
+            (0, 2),
+        ];
+        for &(dr, dc) in if far { wide } else { near } {
             let (nr, nc) = (r as i32 + dr, c as i32 + dc);
             if nr < 0 || nc < 0 || nr >= self.rows as i32 || nc >= self.cols as i32 {
                 continue;
@@ -1475,6 +1519,118 @@ impl Garden {
                 self.queue(format!("New keepsake: {}. {}", k.name(), k.about()));
             }
         }
+    }
+
+    /// C: sets the cold frame over the planter here.
+    pub fn set_cold_frame(&mut self) {
+        if self.kind != Kind::Home {
+            self.cue(cues::NO);
+            self.say("No cold frame in a challenge garden.");
+            return;
+        }
+        if !self.book.has(Keepsake::ColdFrame) {
+            self.cue(cues::NO);
+            self.say(format!(
+                "No cold frame yet. It comes at {} stars.",
+                Keepsake::ColdFrame.stars()
+            ));
+            return;
+        }
+        let i = self.here();
+        if self.covered(i) {
+            self.say("The cold frame is already here.");
+            return;
+        }
+        self.cold_frame = Some(self.cell(i));
+        self.at(cues::PLANT, i);
+        self.say(format!(
+            "Cold frame set over {}. The soil here never dries out.",
+            self.place(i)
+        ));
+    }
+
+    /// A plant the potting bench can use: in bloom and well.
+    fn pottable(&self, i: usize) -> bool {
+        self.plots[i].as_ref().is_some_and(|p| {
+            p.stage >= Stage::Blooming && !p.wilted && !p.pumpkin
+        })
+    }
+
+    /// P: picks a plant in bloom at the potting bench; a second plant
+    /// crosses the two by hand, into seeds you have not found.
+    pub fn pot(&mut self) {
+        if self.kind != Kind::Home {
+            self.cue(cues::NO);
+            self.say("No potting bench in a challenge garden.");
+            return;
+        }
+        if !self.book.has(Keepsake::PottingBench) {
+            self.cue(cues::NO);
+            self.say(format!(
+                "No potting bench yet. It comes at {} stars.",
+                Keepsake::PottingBench.stars()
+            ));
+            return;
+        }
+        if self.potted_day == self.day {
+            self.cue(cues::NO);
+            self.say("The potting bench is done for today. It is ready again tomorrow.");
+            return;
+        }
+        let i = self.here();
+        if !self.pottable(i) {
+            self.cue(cues::NO);
+            self.say("The potting bench needs a plant in bloom.");
+            return;
+        }
+        let first = self.potting.filter(|&f| f != i && self.pottable(f));
+        let Some(first) = first else {
+            self.potting = Some(i);
+            let name = self.plots[i].as_ref().map(|p| p.name()).unwrap_or_default();
+            self.at(cues::RUSTLE, i);
+            self.say(format!(
+                "{} picked. P on another plant in bloom crosses the two.",
+                sentence(&name)
+            ));
+            return;
+        };
+        let (Some(mother), Some(father)) = (
+            self.plots[first].as_ref().map(|p| p.variety()),
+            self.plots[i].as_ref().map(|p| p.variety()),
+        ) else {
+            return;
+        };
+        if mother == father {
+            self.cue(cues::NO);
+            self.say("Those two are the same variety. Pick a different plant.");
+            return;
+        }
+        let mut child = None;
+        for _ in 0..40 {
+            let c = breeding::cross(&mut self.rng, mother, Some(father.traits));
+            if !self.book.knows(c) {
+                child = Some(c);
+                break;
+            }
+        }
+        let Some(child) = child else {
+            self.cue(cues::NO);
+            self.say("Those two have nothing new to give. Try another pair.");
+            return;
+        };
+        self.potting = None;
+        self.potted_day = self.day;
+        self.book.found.push(breeding::Found {
+            variety: child,
+            harvests: 0,
+        });
+        self.cue(cues::UNLOCK);
+        self.say(format!(
+            "New seeds: {}, {}. 1 star.",
+            child.name(),
+            child.describe()
+        ));
+        self.keepsakes();
     }
 
     /// N: the neighbours' requests.
@@ -1676,6 +1832,11 @@ impl Garden {
         } else {
             1.0
         };
+        let lit = if self.clock >= 0.8 && self.book.has(Keepsake::StringLights) {
+            LIGHTS_GROWTH
+        } else {
+            1.0
+        };
         for i in 0..self.plots.len() {
             let Some(mut p) = self.plots[i].take() else {
                 continue;
@@ -1694,8 +1855,9 @@ impl Garden {
                     self.queue(format!("Rain revived the {name}, {place}."));
                 }
             } else {
-                p.water =
-                    (p.water - p.species.thirst() * p.traits.thirst_rate() * thirst * days).max(0.0);
+                let floor = if self.covered(i) { COLD_FRAME_FLOOR.min(p.water) } else { 0.0 };
+                p.water = (p.water - p.species.thirst() * p.traits.thirst_rate() * thirst * days)
+                    .max(floor);
             }
             if was_soggy && !p.waterlogged() {
                 self.at(cues::DRIP, i);
@@ -1739,7 +1901,7 @@ impl Garden {
                 p.dry = 0.0;
             }
             if !p.wilted && !p.pest && !p.waterlogged() && p.water > 0.0 && p.stage != Stage::Ripe {
-                let mut rate = p.species.speed() * p.traits.growth_rate() * growth;
+                let mut rate = p.species.speed() * p.traits.growth_rate() * growth * lit;
                 if p.stage == Stage::Seed && self.book.has(Keepsake::CompostBin) {
                     rate *= 2.0;
                 }

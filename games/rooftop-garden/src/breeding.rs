@@ -24,6 +24,8 @@ pub const TONES: u8 = 3;
 pub const HEIRLOOM_AT: u32 = 5;
 /// The most requests open at once.
 pub const MAX_REQUESTS: usize = 2;
+/// Requests open at once with the swap board.
+pub const SWAP_REQUESTS: usize = 3;
 /// How likely two different plants side by side are to cross at a harvest.
 pub const CROSS_CHANCE: f64 = 0.3;
 /// How likely a plant with no different neighbour is to throw a new
@@ -284,10 +286,13 @@ pub enum Keepsake {
     CompostBin,
     WindChimes,
     StringLights,
+    ColdFrame,
+    SwapBoard,
+    PottingBench,
 }
 
 impl Keepsake {
-    pub const ALL: [Keepsake; 7] = [
+    pub const ALL: [Keepsake; 10] = [
         Keepsake::BirdBath,
         Keepsake::RainBarrel,
         Keepsake::Beehive,
@@ -295,6 +300,9 @@ impl Keepsake {
         Keepsake::CompostBin,
         Keepsake::WindChimes,
         Keepsake::StringLights,
+        Keepsake::ColdFrame,
+        Keepsake::SwapBoard,
+        Keepsake::PottingBench,
     ];
 
     pub fn name(self) -> &'static str {
@@ -306,6 +314,9 @@ impl Keepsake {
             Keepsake::CompostBin => "compost bin",
             Keepsake::WindChimes => "wind chimes",
             Keepsake::StringLights => "string lights",
+            Keepsake::ColdFrame => "cold frame",
+            Keepsake::SwapBoard => "swap board",
+            Keepsake::PottingBench => "potting bench",
         }
     }
 
@@ -319,6 +330,9 @@ impl Keepsake {
             Keepsake::CompostBin => 40,
             Keepsake::WindChimes => 60,
             Keepsake::StringLights => 85,
+            Keepsake::ColdFrame => 110,
+            Keepsake::SwapBoard => 140,
+            Keepsake::PottingBench => 180,
         }
     }
 
@@ -330,8 +344,15 @@ impl Keepsake {
             Keepsake::Beehive => "Bees carry pollen, so plants cross more often.",
             Keepsake::Trellis => "Plants in bloom get leggy half as often.",
             Keepsake::CompostBin => "New seeds sprout twice as fast.",
-            Keepsake::WindChimes => "Your own chimes ring by the bench on breezy days.",
-            Keepsake::StringLights => "Lights come on over the rooftop each evening.",
+            Keepsake::WindChimes => {
+                "On breezy days, pollen blows further: plants can cross from a corner or two planters away."
+            }
+            Keepsake::StringLights => "Lights come on each evening, and plants grow faster under them.",
+            Keepsake::ColdFrame => "C sets it over a planter. The soil under it never dries out.",
+            Keepsake::SwapBoard => "Neighbours can ask for 3 things at once, and every filled request brings gift seeds.",
+            Keepsake::PottingBench => {
+                "Once a day, P on two plants in bloom crosses them by hand, into seeds you have not found."
+            }
         }
     }
 }
@@ -451,6 +472,15 @@ impl Collection {
         self.keepsakes.contains(&k)
     }
 
+    /// Requests open at once.
+    pub fn max_requests(&self) -> usize {
+        if self.has(Keepsake::SwapBoard) {
+            SWAP_REQUESTS
+        } else {
+            MAX_REQUESTS
+        }
+    }
+
     /// The next keepsake still to earn.
     pub fn next_keepsake(&self) -> Option<Keepsake> {
         Keepsake::ALL.into_iter().find(|k| !self.has(*k))
@@ -481,14 +511,14 @@ impl Collection {
             seen.push(f.variety);
             keep
         });
-        self.requests.truncate(MAX_REQUESTS);
+        self.requests.truncate(self.max_requests());
         self.barrel = self.barrel.min(BARREL_FILL);
     }
 
     /// A new request for one of `seeds`, from a neighbour not already
     /// asking. It asks for a trait you have, or now and then one to find.
     pub fn new_request(&self, rng: &mut Rng, seeds: &[Species]) -> Option<Request> {
-        if seeds.is_empty() || self.requests.len() >= MAX_REQUESTS {
+        if seeds.is_empty() || self.requests.len() >= self.max_requests() {
             return None;
         }
         let free: Vec<u8> = (0..NEIGHBOURS.len() as u8)

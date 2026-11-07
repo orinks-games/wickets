@@ -66,7 +66,7 @@ pub fn keys(ctx: &Ctx<Parlor>) -> Keys {
 pub fn controls_text(ctx: &Ctx<Parlor>) -> String {
     let k = keys(ctx);
     format!(
-        "In the garden. {} step between planters: up and down change row. {} waters, or plants in empty soil; watering moist soil waterlogs it. {} picks aphids, harvests or prunes. Delete composts a plant. Enter sits on the bench to pass time faster. L lists every planter. N reads the neighbours' requests. {} says what needs you; press it twice for the day, weather and harmony. {} repeats. {} points to the nearest job. Escape pauses; the garden saves when you leave.",
+        "In the garden. {} step between planters: up and down change row. {} waters, or plants in empty soil; watering moist soil waterlogs it. {} picks aphids, harvests or prunes. Delete composts a plant. Enter sits on the bench to pass time faster. L lists every planter. N reads the neighbours' requests. With those keepsakes, C sets the cold frame and P uses the potting bench. {} says what needs you; press it twice for the day, weather and harmony. {} repeats. {} points to the nearest job. Escape pauses; the garden saves when you leave.",
         sentence(&k.arrows),
         sentence(&k.water),
         sentence(&k.tend),
@@ -996,6 +996,8 @@ impl State<Parlor> for RunScreen {
                 Key::Return | Key::KpEnter => g.bench(),
                 Key::L => g.speak_list(),
                 Key::N => g.speak_requests(),
+                Key::C => g.set_cold_frame(),
+                Key::P => g.pot(),
                 Key::Delete | Key::Backspace => ask = g.ask_compost(),
                 // Modifiers and screen-reader keys: Control silences the
                 // screen reader, so the garden must not talk back.
