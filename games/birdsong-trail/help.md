@@ -28,7 +28,7 @@ Space, when no bird is singing to you, names the three birds nearest you, where 
 
 ## Answering a song
 
-Your turn: Down is low, Space middle, Up high (songs are 2 to 5 notes). Your whistle has its own soft sound so you can hear the answer.
+Your turn: Down is low, Space middle, Up high. Songs are 2 to 5 notes. Your whistle has its own soft sound so you can hear the answer.
 
 If your answer matches, a warm rising chime plays and the bird is befriended. If it does not, two soft low notes play and the bird sings again. You can try as often as you like. After two misses, its notes are spoken in words.
 

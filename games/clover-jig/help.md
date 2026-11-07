@@ -22,7 +22,7 @@ Before a dance starts, H plays every step with its call, and each step key plays
 
 Each tune starts with four deep bodhran beats, then the music. The caller's word comes one beat before its step, so listen for the call and dance on the next beat.
 
-On the beat is spot on (bright chime, 3). A little off is good (2). Further off is close (dull tick, 1). Early and late count the same. A step you miss, or the wrong step, plays a scuff and a thud and scores nothing.
+On the beat is spot on: a bright chime, 3 points. A little off is good: 2 points. Further off is close: a dull tick, 1 point. Early and late count the same. A step you miss, or the wrong step, plays a scuff and a thud and scores nothing.
 
 The first time each of these happens in a dance, a single word names it.
 

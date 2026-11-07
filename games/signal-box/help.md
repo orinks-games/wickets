@@ -1,6 +1,6 @@
 ## About the game
 
-Night junction signal box. Answer each dispatcher call with its key before the train reaches the points. Right answers score; late or wrong derails and ends the shift. Calls speed up through the night.
+Night junction signal box. Answer each dispatcher call with its key before the train reaches the points. Right answers score; a late or wrong answer derails the train and ends the shift. Calls speed up through the night.
 
 ## The five calls
 
