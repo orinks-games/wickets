@@ -229,6 +229,61 @@ def phrases() -> list[dict]:
         root = root_in(chord[1], "A2")
         out.append(phrase("base", name, 0, "warm_pad", f"[{note(root)},{note(root + 7)}]:4", 0.45, -18.3, vel=0.7,
                           params={"attack": 0.3, "release": 1.2, "cutoff": 800}))
+    return out + toned(out)
+
+
+# Each plant's other instruments, for seed varieties (tone 1 and tone 2;
+# tone 0 is the part's own, above): the instrument, a shift in semitones,
+# any params, and a change to `normalize` in dB that brings it level with
+# the part's own phrases (measured with ffmpeg's ebur128). They play the same phrases at the same loudness, under
+# `song/made/<part>-<tone>/`. Must match `breeding::tone_name`.
+TONES = {
+    "tomato": [("marimba", 0, None, 0.5), ("music_box", 12, None, -1.3)],
+    "squash": [("finger_bass", 0, None, -2.9), ("tuba", 12, None, -5.8)],
+    "bean": [("harp", 0, None, -4.0), ("banjo", 0, None, -0.8)],
+    "sunflower": [("clarinet", -12, None, 0.3), ("ocarina", 0, None, 1.2)],
+    "lavender": [("celesta", -12, None, -2.9), ("vibraphone", -12, None, -2.9)],
+    "mint": [("string_machine", 0, {"attack": 0.3, "release": 1.2}, 2.1), ("choir", 0, {"vowel": "o"}, 0.8)],
+}
+
+
+def shifted(steps_text: str, by: int) -> str:
+    """Moves every note of a step string `by` semitones."""
+    if by == 0:
+        return steps_text
+
+    def one(n: str) -> str:
+        return n if n == "-" else note(midi(n) + by)
+
+    out = []
+    for cell in steps_text.split(" "):
+        notes, beats = cell.rsplit(":", 1)
+        if notes.startswith("["):
+            notes = "[" + ",".join(one(n) for n in notes[1:-1].split(",")) + "]"
+        else:
+            notes = one(notes)
+        out.append(f"{notes}:{beats}")
+    return " ".join(out)
+
+
+def toned(own: list[dict]) -> list[dict]:
+    out = []
+    for spec in own:
+        rest = spec["out"][len(PREFIX):]
+        part, file = rest.split("/", 1)
+        for tone, (inst, by, params, level) in enumerate(TONES.get(part, []), start=1):
+            layer = dict(spec["layers"][0])
+            layer["inst"] = inst
+            layer["steps"] = shifted(layer["steps"], by)
+            layer.pop("params", None)
+            layer.pop("fx", None)
+            if params:
+                layer["params"] = params
+            made = dict(spec)
+            made["layers"] = [layer]
+            made["out"] = f"{PREFIX}{part}-{tone}/{file}"
+            made["normalize"] = round(spec["normalize"] + level, 1)
+            out.append(made)
     return out
 
 
