@@ -52,11 +52,11 @@ In the endless ride, cars overtake toward you in the traffic lane. A long horn b
 
 ## Against the clock {alpha}
 
-One clock, and drops to feed it. You start with 60 seconds on a street in the district you chose. The first drop is just after the start. The clock runs down the whole time, and the ride ends when it reaches zero. There is no crash limit and no finish.
+Make delivery drops to add time to the clock. You start with 60 seconds on a street in the district you chose. The first drop is just after the start. The clock runs down the whole time, and the ride ends when it reaches zero. There is no crash limit or finish line.
 
 A drop rings its doorbell from its side as it comes up, like a parcel in the endless ride. Ride over it at 20 kilometres an hour or less to make the drop. A drop in a shop doorway, in the door zone, adds 14 seconds and pays 3 dollars. A drop at a parcel locker by the centre line, out among the cars, adds 18 seconds and pays 6. A drop made within 30 seconds of the last one is a quick drop, and adds 4 seconds more. The clock holds 90 seconds at most.
 
-Each drop says the time it added and the time left. A crash takes 8 seconds off the clock, and you still lose the 3 seconds you are down. The game says 30 seconds left and 10 seconds left. Under 15 seconds the clock ticks, twice as fast in the last 5.
+Each drop says the time it added and the time left. A crash takes 8 seconds off the clock, and you still lose the 3 seconds you are down. The game says 30 seconds left and 10 seconds left. At 15 seconds or less, the clock ticks once a second. At 5 seconds or less, it ticks twice as fast.
 
 Every drop has clear road before and after it, so a doorbell never rings while a hazard is warning. The hazards still come closer together the further you ride. On the moped, brake hard for every drop.
 
