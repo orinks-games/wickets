@@ -114,6 +114,18 @@ pub enum WorldEvent {
     ParcelTooFast(usize),
     /// The last crash an endless ride allows: the ride is over.
     OutOfCrashes,
+    /// Against the clock: a drop added these seconds, `quick` when it
+    /// came soon after the last.
+    TimeAdded {
+        secs: f64,
+        quick: bool,
+    },
+    /// Against the clock: a crash took these seconds off.
+    TimeLost(f64),
+    /// Against the clock: the clock fell past this many seconds left.
+    TimeCall(f64),
+    /// Against the clock: the clock ran out, and the ride is over.
+    TimeUp,
     Ride(RideEvent),
 }
 
@@ -294,6 +306,8 @@ pub struct World {
     pub parcels: Vec<ParcelState>,
     /// Crashes that end the ride, for an endless ride.
     pub crash_limit: Option<u32>,
+    /// The clock that drops feed, in a ride against the clock.
+    pub drop_clock: Option<crate::clock::DropClock>,
     oncoming_plans: Vec<CarPlan>,
     next_oncoming: usize,
     first_parcel: usize,
@@ -358,6 +372,7 @@ impl World {
             oncoming: Vec::new(),
             parcels,
             crash_limit: None,
+            drop_clock: None,
             oncoming_plans,
             next_oncoming: 0,
             first_parcel: 0,
@@ -396,6 +411,12 @@ impl World {
     /// The same world, over after `n` crashes.
     pub fn with_crash_limit(mut self, n: u32) -> World {
         self.crash_limit = Some(n);
+        self
+    }
+
+    /// The same world, over when its drop clock runs out.
+    pub fn with_drop_clock(mut self) -> World {
+        self.drop_clock = Some(crate::clock::DropClock::new());
         self
     }
 
@@ -471,6 +492,16 @@ impl World {
         if self.finished.is_some() {
             return events;
         }
+        if let Some(c) = &mut self.drop_clock {
+            if let Some(n) = c.tick(dt) {
+                events.push(WorldEvent::TimeCall(n));
+            }
+            if c.out() {
+                self.finished = Some(self.clock);
+                events.push(WorldEvent::TimeUp);
+                return events;
+            }
+        }
         let length = self.course.length;
         let r = &self.rider;
         if !self.finish_warned && length - r.s <= FINISH_WARN_M.max(r.v * FINISH_LEAD) {
@@ -493,6 +524,10 @@ impl World {
             self.stats.doors += 1;
         }
         events.push(WorldEvent::Crash(cause));
+        if let Some(c) = &mut self.drop_clock {
+            let lost = c.crash();
+            events.push(WorldEvent::TimeLost(lost));
+        }
         if self.crash_limit.is_some_and(|n| self.stats.crashes >= n) {
             self.finished = Some(self.clock);
             events.push(WorldEvent::OutOfCrashes);
@@ -577,6 +612,13 @@ impl World {
                         state.taken = true;
                         self.stats.cash += c.value;
                         events.push(WorldEvent::Parcel(i));
+                        if let Some(clock) = &mut self.drop_clock {
+                            let a = clock.drop_at(&c, self.clock);
+                            events.push(WorldEvent::TimeAdded {
+                                secs: a.secs,
+                                quick: a.quick,
+                            });
+                        }
                     } else {
                         self.stats.missed_parcels += 1;
                         events.push(WorldEvent::ParcelTooFast(i));
@@ -980,6 +1022,10 @@ impl World {
         h.u(self.stats.crashes as u64);
         h.u(self.stats.tips as u64);
         h.u(self.stats.cash as u64);
+        if let Some(c) = &self.drop_clock {
+            h.f(c.left);
+            h.u(c.drops as u64);
+        }
         h.0
     }
 }

@@ -74,7 +74,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hamlet: Live<HamletScreen>) -> Lesson {
     );
     let talk = hamlet.step(
         format!(
-            "{name} lives here too. {} tells you what needs you. Pressed again, it gives the day, then everyone. Find {name} along the lane and press Enter to talk.",
+            "{name} lives here too. {} tells you what needs attention and how much food you have. Press it again straight away for the day and stores, and once more for everyone's mood and work. Find {name} along the lane and press Enter to talk.",
             sentence_start(&status)
         ),
         |s: &HamletScreen, _| {

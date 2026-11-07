@@ -7,7 +7,9 @@ use parlor_core::{Challenge, Parlor, Period};
 
 use crate::cues::{self, Play, SOUND_CHECK};
 use crate::rules::{number, sentence, Garden, Goal, Species};
-use crate::screens::{challenge_briefing, challenge_twist, period_text, GARDEN_KEY};
+use crate::breeding::{self, Keepsake, Variety};
+use crate::screens::{challenge_briefing, challenge_twist, load_collection, period_text, GARDEN_KEY};
+use crate::song::{Chord, Part};
 use crate::ID;
 
 /// The challenge list's `State::name`.
@@ -123,7 +125,7 @@ impl SeedShed {
     pub fn new() -> SeedShed {
         SeedShed {
             menu: MenuCore::new("The seed shed").with_intro_help(
-                "Every kind of seed. Harvests in your own garden unlock more. Up and Down read them, Escape goes back.",
+                "Every kind of seed, your varieties, keepsakes and requests. Up and Down read them, Escape goes back.",
             ),
         }
     }
@@ -198,12 +200,232 @@ impl Menu for SeedShed {
                 .help(tip),
             );
         }
+        let book = load_collection(ctx);
+        items.push(
+            MenuItem::new(
+                format!(
+                    "Varieties found, {} of {}",
+                    book.found.len(),
+                    Variety::count()
+                ),
+                |_m: &mut Self, ctx: &mut Ctx<Parlor>| ctx.push(Catalogue::new()),
+            )
+            .help("Every variety your crosses have made. Enter on one plays its part."),
+        );
+        items.push(
+            MenuItem::new(
+                format!(
+                    "Keepsakes, {} of {}",
+                    book.keepsakes.len(),
+                    Keepsake::ALL.len()
+                ),
+                |_m: &mut Self, ctx: &mut Ctx<Parlor>| ctx.push(Keepsakes::new()),
+            )
+            .help("Things for your rooftop, earned with stars."),
+        );
+        let requests = book
+            .requests
+            .iter()
+            .map(|r| r.describe())
+            .collect::<Vec<_>>()
+            .join(" ");
+        let label = match book.requests.len() {
+            0 => "Requests, none".to_string(),
+            n => format!("Requests, {n}"),
+        };
+        items.push(
+            MenuItem::new(label, move |_m: &mut Self, ctx: &mut Ctx<Parlor>| {
+                if requests.is_empty() {
+                    ctx.say("No requests. Neighbours ask as the days go by.")
+                } else {
+                    ctx.say(requests.clone())
+                }
+            })
+            .select_sound(None)
+            .help("What your neighbours would like from your harvests. Each one filled earns a star."),
+        );
         items.push(
             MenuItem::new(labels::BACK, |_m: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.play_ui(hearken::UiSound::Back);
                 ctx.pop()
             })
             .help("Return to the Rooftop Garden title."),
+        );
+        items
+    }
+}
+
+/// Every variety found: Enter plays its part.
+pub struct Catalogue {
+    menu: MenuCore<Self, Parlor>,
+    playing: Option<Sound>,
+}
+
+impl Catalogue {
+    pub fn new() -> Catalogue {
+        Catalogue {
+            menu: MenuCore::new("Varieties found").with_intro_help(
+                "Up and Down read the varieties, Enter plays one's part, Escape goes back.",
+            ),
+            playing: None,
+        }
+    }
+
+    fn stop(&mut self, ctx: &mut Ctx<Parlor>) {
+        if let Some(s) = self.playing.take() {
+            ctx.audio.stop(s, 300);
+        }
+    }
+}
+
+impl Default for Catalogue {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
+impl Menu for Catalogue {
+    type Game = Parlor;
+
+    fn name(&self) -> &'static str {
+        "rooftop_garden_catalogue"
+    }
+
+    fn menu(&self) -> &MenuCore<Self, Parlor> {
+        &self.menu
+    }
+
+    fn menu_mut(&mut self) -> &mut MenuCore<Self, Parlor> {
+        &mut self.menu
+    }
+
+    fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.stop(ctx);
+    }
+
+    fn build_items(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
+        let book = load_collection(ctx);
+        let mut found = book.found.clone();
+        found.sort_by_key(|f| f.variety);
+        let mut items: Vec<MenuItem<Self, Parlor>> = found
+            .into_iter()
+            .map(|f| {
+                let v = f.variety;
+                let mut label = format!("{}, {}", sentence(&v.name()), v.describe());
+                if f.heirloom() {
+                    label.push_str(", heirloom");
+                } else {
+                    let n = f.harvests;
+                    label.push_str(&format!(
+                        ", {n} of {} harvests to heirloom",
+                        breeding::HEIRLOOM_AT
+                    ));
+                }
+                let key = Part::of(v.species, false).phrase_on(Chord::G, 0, v.traits.tone);
+                MenuItem::new(label, move |m: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    m.stop(ctx);
+                    m.playing = Some(ctx.audio.play(&key, Bus::MUSIC));
+                })
+                .select_sound(None)
+                .help(v.species.tip())
+            })
+            .collect();
+        if items.is_empty() {
+            items.push(
+                MenuItem::new("None yet", |_m: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.say("Grow two different plants side by side. Harvest a ripe plant while its neighbour is in bloom or ripe, and they may cross.")
+                })
+                .select_sound(None)
+                .help("Grow two different plants side by side. Harvest a ripe plant while its neighbour is in bloom or ripe, and they may cross."),
+            );
+        }
+        items.push(
+            MenuItem::new(labels::BACK, |_m: &mut Self, ctx: &mut Ctx<Parlor>| {
+                ctx.play_ui(hearken::UiSound::Back);
+                ctx.pop()
+            })
+            .help("Return to the seed shed."),
+        );
+        items
+    }
+}
+
+/// The keepsakes: what each does, and the stars the locked ones need.
+pub struct Keepsakes {
+    menu: MenuCore<Self, Parlor>,
+}
+
+impl Keepsakes {
+    pub fn new() -> Keepsakes {
+        Keepsakes {
+            menu: MenuCore::new("Keepsakes").with_intro_help(
+                "Up and Down read the keepsakes, Escape goes back. New varieties, heirlooms and filled requests each earn a star.",
+            ),
+        }
+    }
+}
+
+impl Default for Keepsakes {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
+impl Menu for Keepsakes {
+    type Game = Parlor;
+
+    fn name(&self) -> &'static str {
+        "rooftop_garden_keepsakes"
+    }
+
+    fn menu(&self) -> &MenuCore<Self, Parlor> {
+        &self.menu
+    }
+
+    fn menu_mut(&mut self) -> &mut MenuCore<Self, Parlor> {
+        &mut self.menu
+    }
+
+    fn build_items(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
+        let book = load_collection(ctx);
+        let stars = book.stars();
+        let mut items: Vec<MenuItem<Self, Parlor>> = Keepsake::ALL
+            .into_iter()
+            .map(|k| {
+                let label = if book.has(k) {
+                    format!("{}: {}", sentence(k.name()), k.about())
+                } else {
+                    let n = k.stars().saturating_sub(stars).max(1);
+                    format!(
+                        "{}, locked: {n} more {}",
+                        sentence(k.name()),
+                        if n == 1 { "star" } else { "stars" }
+                    )
+                };
+                MenuItem::new(label, move |_m: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.say(k.about())
+                })
+                .select_sound(None)
+                .help(k.about())
+            })
+            .collect();
+        items.insert(
+            0,
+            MenuItem::new(
+                format!("Stars: {stars}"),
+                |_m: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.say("New varieties, heirlooms and filled requests each earn a star.")
+                },
+            )
+            .select_sound(None)
+            .help("New varieties, heirlooms and filled requests each earn a star."),
+        );
+        items.push(
+            MenuItem::new(labels::BACK, |_m: &mut Self, ctx: &mut Ctx<Parlor>| {
+                ctx.play_ui(hearken::UiSound::Back);
+                ctx.pop()
+            })
+            .help("Return to the seed shed."),
         );
         items
     }

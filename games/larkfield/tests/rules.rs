@@ -303,3 +303,13 @@ fn the_gentle_pace_has_no_dangers_and_nobody_leaves() {
         assert_eq!(h.cold_snap, 0);
     }
 }
+
+#[test]
+fn construction_announcements_use_singular_and_plural_hours() {
+    let mut h = Hamlet::home(3);
+    for (left, expected) in [(0.5, "1 hour of work left"), (1.5, "2 hours of work left")] {
+        h.building = Some((Building::Mill, left));
+        assert!(h.site_line(Building::Mill).contains(expected));
+        assert!(h.status_layers()[1].contains(expected));
+    }
+}

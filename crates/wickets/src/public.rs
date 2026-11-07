@@ -15,7 +15,9 @@ use parlor_core::Parlor;
 
 pub use games::all as games;
 pub use games::story as story_games;
-pub use games::{in_season, keepers, listed, specials, specials_listed, story_hall, Keeper};
+pub use games::{
+    days_to_holiday, in_season, keepers, listed, specials, specials_listed, story_hall, Keeper,
+};
 pub use lobby::{
     after_comma, happenings, happenings_line, last_game, CategoryList, ChallengeBoard,
     ChallengeList, GameList, Lobby, StoryGameList, LAST_GAME_KEY,

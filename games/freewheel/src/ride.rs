@@ -15,6 +15,7 @@ use parlor_core::{
 
 use crate::bike::{Bike, Input, RideEvent, MIN_MOVING, TUBE_SWAP_S};
 use crate::challenge::{self, Plan};
+use crate::clock;
 use crate::course::{
     Course, CourseInfo, District, HazardKind, BIKE_LANE_LINE, CENTRE_LINE, COURSES, PARKED_EDGE,
     TURN_SPEED,
@@ -54,6 +55,9 @@ pub enum Mode {
     Endless(District),
     /// A job from the job board, in this district.
     Delivery(District),
+    /// Against the clock through a district: drops feed the clock, and
+    /// the ride ends when it runs out.
+    Clock(District),
 }
 
 impl Mode {
@@ -165,6 +169,8 @@ pub struct Ride {
     banked: bool,
     /// The delivery this ride makes, from the job board.
     job: Option<crate::jobs::Job>,
+    /// Seconds to the low clock's next tick.
+    tick_in: f64,
 }
 
 impl Ride {
@@ -202,6 +208,7 @@ impl Ride {
             passed: false,
             banked: false,
             job: None,
+            tick_in: 0.0,
         }
     }
 
@@ -218,6 +225,24 @@ impl Ride {
         let course = Course::endless(district, seed);
         let world = World::new(course, bike, seed ^ 0x656e_646c).with_crash_limit(ENDLESS_CRASHES);
         Ride::new(world, Mode::Endless(district), 100.0)
+    }
+
+    /// A ride against the clock through `district`: drops feed the clock,
+    /// and it ends when the clock runs out.
+    pub fn against_clock(bike: Bike, district: District, seed: u64) -> Ride {
+        let course = clock::course(district, seed);
+        let world = World::new(course, bike, seed ^ 0x636c_6b72).with_drop_clock();
+        Ride::new(world, Mode::Clock(district), 100.0)
+    }
+
+    /// "Parcel" in the endless ride; "Drop" against the clock, where each
+    /// one is a delivery made.
+    fn parcel_word(&self) -> &'static str {
+        if matches!(self.mode, Mode::Clock(_)) {
+            "Drop"
+        } else {
+            "Parcel"
+        }
     }
 
     /// "Hold the Up arrow to pedal.", or on the moped, "for throttle".
@@ -426,6 +451,12 @@ impl Ride {
                 "Endless ride, {}, on the {bike}. {ENDLESS_CRASHES} crashes end it.",
                 d.name()
             ),
+            Mode::Clock(d) => format!(
+                "{}, {}, on the {bike}. {}. Drops add time.",
+                clock::NAME,
+                d.name(),
+                sentence_start(&secs_words(clock::START_S))
+            ),
             Mode::Training(n) => training::goal(ctx, n),
             Mode::LeafSeason => format!(
                 "{}, on the {bike}, {}. Ride through leaf piles for {} points each.",
@@ -500,7 +531,13 @@ impl Ride {
                 ),
             )
         };
-        first.push(format!("{speed}, {lane}."));
+        first.push(match &w.drop_clock {
+            Some(c) => format!(
+                "{} left. {speed}, {lane}.",
+                sentence_start(&secs_words(c.left.ceil()))
+            ),
+            None => format!("{speed}, {lane}."),
+        });
         let mut more = Vec::new();
         if !danger {
             more.push(ahead);
@@ -523,6 +560,12 @@ impl Ride {
                         "late, half pay".to_string()
                     });
                 }
+            }
+            Mode::Clock(_) => {
+                if let Some(c) = &w.drop_clock {
+                    more.push(clock::drop_words(c.drops));
+                }
+                more.push(dollar_words(w.stats.cash));
             }
             Mode::Endless(_) => {
                 more.push(distance_words(r.s));
@@ -586,7 +629,7 @@ impl Ride {
             return (true, format!("{word} in {}", metres_words(m)));
         }
         let mut best = (w.course.length - r.s, "finish".to_string(), false);
-        if let Mode::Endless(_) = self.mode {
+        if let Mode::Endless(_) | Mode::Clock(_) = self.mode {
             best = (f64::INFINITY, String::new(), false);
         }
         if let Some(car) = w.oncoming_ahead() {
@@ -797,8 +840,14 @@ impl Ride {
             let d = c.s - r.s;
             if d <= 50.0 {
                 let side = self.side_words(c.x - 0.1, c.x + 0.1);
+                let verb = if matches!(self.mode, Mode::Clock(_)) {
+                    "Make it"
+                } else {
+                    "Grab it"
+                };
                 return format!(
-                    "Parcel {side}, {} ahead. Grab it under {}.",
+                    "{} {side}, {} ahead. {verb} under {}.",
+                    self.parcel_word(),
                     metres_words(d),
                     speed_words(crate::world::GRAB_SPEED)
                 );
@@ -955,7 +1004,11 @@ impl Ride {
                     Cause::Car => "Hit by a car.",
                     Cause::Oncoming => "Hit an oncoming car.",
                 };
+                let lost = self.world.drop_clock.map(|c| c.lost);
                 let line = match self.world.crash_limit {
+                    _ if lost.is_some() => {
+                        format!("{why} Lost {} seconds. Down for 3 seconds.", clock::CRASH_S as i64)
+                    }
                     Some(n) if self.world.stats.crashes >= n => {
                         format!("{why} Crash {n} of {n}.")
                     }
@@ -1189,15 +1242,23 @@ impl Ride {
                 let s = sound::play_at(ctx, sound::PARCEL_CALL, place(r.x - c.x, c.s - r.s));
                 ctx.audio.set_volume(s, 0.7);
                 let side = self.side_words(c.x - 0.1, c.x + 0.1);
+                let word = self.parcel_word();
+                // Its own cue, so the endless ride's lesson does not stand
+                // for this one.
+                let cue = if word == "Drop" { "drop" } else { "parcel" };
                 self.call_queued(
                     ctx,
-                    "parcel",
+                    cue,
                     format!(
-                        "Parcel, {side}: that doorbell. Ride over it under {}.",
+                        "{word}, {side}: that doorbell. Ride over it under {}.",
                         speed_words(crate::world::GRAB_SPEED)
                     ),
-                    format!("Parcel, {side}."),
+                    format!("{word}, {side}."),
                 );
+            }
+            WorldEvent::Parcel(_) if matches!(self.mode, Mode::Clock(_)) => {
+                // The time it added is said with the TimeAdded that follows.
+                sound::play(ctx, sound::PARCEL_GRAB);
             }
             WorldEvent::Parcel(i) => {
                 sound::play(ctx, sound::PARCEL_GRAB);
@@ -1211,9 +1272,29 @@ impl Ride {
             }
             WorldEvent::ParcelTooFast(_) => {
                 sound::play(ctx, sound::NOPE);
-                self.tell(ctx, "Too fast to grab.".to_string());
+                let line = if matches!(self.mode, Mode::Clock(_)) {
+                    "Too fast. Drop missed."
+                } else {
+                    "Too fast to grab."
+                };
+                self.tell(ctx, line.to_string());
             }
             WorldEvent::OutOfCrashes => {}
+            WorldEvent::TimeAdded { secs, quick } => {
+                let n = secs.round() as i64;
+                let left = self.world.drop_clock.map_or(0.0, |c| c.left).ceil() as i64;
+                let line = match (n, quick) {
+                    (0, _) => format!("Drop made. The clock is full, {left} seconds."),
+                    (n, true) => format!("Quick drop adds {n} seconds. {left} seconds left."),
+                    (n, false) => format!("Drop adds {n} seconds. {left} seconds left."),
+                };
+                self.tell(ctx, line);
+            }
+            WorldEvent::TimeLost(_) => {}
+            WorldEvent::TimeCall(n) => {
+                self.tell(ctx, format!("{} seconds left.", n as i64));
+            }
+            WorldEvent::TimeUp => {}
             WorldEvent::Passed(i) => {
                 let h = self.world.course.hazards[i];
                 let r = self.world.rider;
@@ -1275,6 +1356,17 @@ impl Ride {
     }
 
     fn sound_frame(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
+        // A low clock ticks, faster in its last seconds.
+        match self.world.drop_clock.and_then(|c| c.tick_gap()) {
+            Some(gap) => {
+                self.tick_in -= dt;
+                if self.tick_in <= 0.0 {
+                    sound::play(ctx, sound::CLOCK_TICK);
+                    self.tick_in = gap;
+                }
+            }
+            None => self.tick_in = 0.0,
+        }
         let r = self.world.rider;
         let bike = self.world.bike;
         let speed = (r.v / 10.0).min(1.3) as f32;
@@ -1611,6 +1703,68 @@ impl Ride {
             self.show(ctx, pages, results);
             return;
         }
+        if let Mode::Clock(district) = self.mode {
+            progress.metres += w.rider.s - w.course.length;
+            progress.store(ctx);
+            let c = w.drop_clock.unwrap_or_default();
+            let cash = stats.cash;
+            let wallet = self.bank(ctx);
+            let result = parlor_core::Records::record(
+                ctx,
+                crate::ID,
+                &clock::board(district),
+                c.drops as u64,
+            );
+            let record = match result {
+                ScoreResult::First => {
+                    format!("Your first ride {} here.", clock::NAME.to_lowercase())
+                }
+                ScoreResult::NewBest { previous: 0 } => "A new best.".to_string(),
+                ScoreResult::NewBest { previous } => {
+                    format!("A new best, beating {previous}.")
+                }
+                ScoreResult::Short { best } => format!("Your best is {best}."),
+            };
+            let pages = vec![
+                format!(
+                    "Time's up. {} in {}, in {}. {record}",
+                    sentence_start(&clock::drop_words(c.drops)),
+                    district.name(),
+                    span_words(time)
+                ),
+                format!(
+                    "Locker drops: {}. Quick drops: {}. {} {} earned. You have {} to spend in the bike shop.",
+                    c.lockers,
+                    c.quick,
+                    if c.lost > 0.0 {
+                        format!("{} lost to crashes.", sentence_start(&secs_words(c.lost)))
+                    } else {
+                        "No crashes.".to_string()
+                    },
+                    sentence_start(&dollar_words(cash)),
+                    dollar_words(wallet)
+                ),
+            ];
+            let summary = format!(
+                "{}: {}, {}",
+                clock::NAME,
+                clock::drop_words(c.drops),
+                dollar_words(cash)
+            );
+            let results = Results::new(summary, pages.clone(), Back::Title(TITLE_NAME)).again(
+                labels::PLAY_AGAIN,
+                "A new street in the same district, on the same bike.",
+                move |ctx| {
+                    ctx.replace(Ride::against_clock(
+                        bike,
+                        district,
+                        Rng::from_time().next_u64(),
+                    ))
+                },
+            );
+            self.show(ctx, pages, results);
+            return;
+        }
         if let (Mode::Delivery(_), Some(job)) = (self.mode, self.job.clone()) {
             let paid = job.paid(time);
             let mut progress = Progress::load(ctx);
@@ -1765,7 +1919,7 @@ impl Ride {
                 );
                 self.show(ctx, pages, results);
             }
-            Mode::Training(_) | Mode::Endless(_) | Mode::Delivery(_) => {}
+            Mode::Training(_) | Mode::Endless(_) | Mode::Delivery(_) | Mode::Clock(_) => {}
         }
     }
 
@@ -1773,7 +1927,7 @@ impl Ride {
     /// the dollars there now.
     fn bank(&mut self, ctx: &mut Ctx<Parlor>) -> u32 {
         let mut progress = Progress::load(ctx);
-        if matches!(self.mode, Mode::Endless(_)) && !self.banked {
+        if matches!(self.mode, Mode::Endless(_) | Mode::Clock(_)) && !self.banked {
             self.banked = true;
             progress.bank(self.world.stats.cash);
             progress.store(ctx);
@@ -1975,7 +2129,7 @@ impl State<Parlor> for Ride {
         ctx.audio.set_listener(Vec3::ZERO, 0.0);
         if self.mode == Mode::Sunday {
             sound::sunday_bed(ctx);
-        } else if let Mode::Endless(d) | Mode::Delivery(d) = self.mode {
+        } else if let Mode::Endless(d) | Mode::Delivery(d) | Mode::Clock(d) = self.mode {
             sound::district_bed(ctx, d);
         } else {
             sound::city_bed(ctx);
@@ -1993,7 +2147,8 @@ impl State<Parlor> for Ride {
     }
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
-        // Parcel money from an endless ride is kept, even when it is left early.
+        // Parcel money from an endless ride, or one against the clock, is
+        // kept, even when it is left early.
         self.bank(ctx);
         self.stop_all(ctx);
         ctx.audio.set_bed(None);

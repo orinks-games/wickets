@@ -99,6 +99,38 @@ fn every_keeper() -> Vec<Keeper> {
     ]
 }
 
+/// The holiday a Seasonal game belongs to: the collection's own by id,
+/// and each holiday special's from its keeper.
+pub fn holiday(g: &GameInfo) -> Option<Holiday> {
+    let own = match g.id {
+        "liberty-lights" => Some(Holiday::IndependenceDay),
+        "haunted-hallways" => Some(Holiday::Halloween),
+        "harvest-feast" => Some(Holiday::Thanksgiving),
+        "winter-wonderland" => Some(Holiday::NewYearsEve),
+        "basket-run" => Some(Holiday::Easter),
+        "cupids-quiver" => Some(Holiday::ValentinesDay),
+        "clover-jig" => Some(Holiday::StPatricksDay),
+        "dragon-dance" => Some(Holiday::LunarNewYear),
+        "firefly-meadow" => Some(Holiday::SummerSolstice),
+        _ => None,
+    };
+    own.or_else(|| {
+        every_keeper()
+            .into_iter()
+            .find(|k| k.game.id == g.id)
+            .map(|k| k.holiday)
+    })
+}
+
+/// Whole days from `today` to `g`'s holiday, round the year: a holiday
+/// from yesterday or today is 0 or less, so it leads. A game with no
+/// holiday goes last.
+pub fn days_to_holiday(g: &GameInfo, today: Date) -> i64 {
+    holiday(g)
+        .and_then(|h| h.next(today))
+        .map_or(i64::MAX, |(_, days)| days)
+}
+
 /// The holiday specials in season on `date`.
 pub fn in_season(date: Date) -> Vec<GameInfo> {
     specials()

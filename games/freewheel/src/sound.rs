@@ -64,6 +64,8 @@ pub const FINISH: &str = "freewheel/nav/finish";
 pub const ACT_NOW: &str = "freewheel/ui/act_now";
 pub const NOPE: &str = "freewheel/ui/nope";
 pub const COUNT: &str = "freewheel/ui/count";
+/// The clock's dry tick in its last seconds, against the clock.
+pub const CLOCK_TICK: &str = "freewheel/ui/clock_tick";
 pub const GO: &str = "freewheel/ui/go";
 pub const LESSON: &str = "freewheel/ui/lesson";
 pub const CITY: &str = "freewheel/ambience/city";
@@ -184,16 +186,16 @@ pub fn sunday_bed(ctx: &mut Ctx<Parlor>) {
 /// Every cue, with its name and meaning, for the sound check. The name is
 /// the part before the colon.
 pub fn catalog() -> Vec<(&'static str, &'static str)> {
-    vec![
+    let mut all = vec![
         (ROAD_ROLL, "Road bike tyres: a thin hiss that rises with your speed."),
         (ROAD_FREEHUB, "Road bike freewheel: a fast, light ticking while you coast. It slows as you slow."),
-        (ROAD_PEDAL, "Road bike chain: a smooth whirr while you pedal."),
+        (ROAD_PEDAL, "Road bike chain: a fine, soft purr while you pedal."),
         (BMX_ROLL, "BMX tyres: a chunky buzz that rises with your speed."),
         (BMX_FREEHUB, "BMX freewheel: a loud, slower clatter while you coast."),
-        (BMX_PEDAL, "BMX chain: a clanking chain while you pedal."),
+        (BMX_PEDAL, "BMX chain: a chunky rattle while you pedal."),
         (MTB_ROLL, "Mountain bike tyres: a knobbly hum that rises with your speed."),
-        (MTB_FREEHUB, "Mountain bike freewheel: a steady, deep ticking while you coast."),
-        (MTB_PEDAL, "Mountain bike chain: a gritty whirr while you pedal."),
+        (MTB_FREEHUB, "Mountain bike freewheel: a deep, fast ticking while you coast. It slows as you slow."),
+        (MTB_PEDAL, "Mountain bike chain: a gritty purr while you pedal."),
         (EBIKE_ROLL, "E-bike tyres: a soft hiss that rises with your speed."),
         (EBIKE_FREEHUB, "E-bike freewheel: a quiet tick while you coast."),
         (EBIKE_PEDAL, "E-bike motor: a high electric whine while you pedal. It fades above 25 kilometres an hour."),
@@ -243,7 +245,18 @@ pub fn catalog() -> Vec<(&'static str, &'static str)> {
         (LESSON, "Lesson passed: a rising chime in training."),
         (LEAVES, "Leaf pile: a dry rustle from a pile of leaves ahead in the bike lane, in the Leaf season ride. It is not a hazard."),
         (CRUNCH, "Leaf crunch: a crackle as you ride through a leaf pile, for 1000 ride points. The freewheel goes quiet for a moment."),
-    ]
+    ];
+    if crate::clock::offered() {
+        let at = all
+            .iter()
+            .position(|(k, _)| *k == COUNT)
+            .unwrap_or(all.len());
+        all.insert(
+            at,
+            (CLOCK_TICK, "Clock tick: against the clock, under 15 seconds left. It ticks twice as fast in the last 5."),
+        );
+    }
+    all
 }
 
 /// The name of a catalog entry: the part before its colon.

@@ -1,6 +1,6 @@
 ## About the game
 
-Freewheel is a street-riding game played by ear, after Cyclepath by Talon. You are a bike courier in Courier City. Parked cars line your right, cars come up behind you, and doors, potholes, curbs and ramps lie ahead. Race the clock in time trials, ride the endless ride until your third crash, or take deliveries from the job board. Parcels and deliveries earn cash, which buys new bikes and districts in the bike shop.
+Freewheel is a street-riding game played by ear, after Cyclepath by Talon. You are a bike courier in Courier City. Parked cars line your right, cars come up behind you, and doors, potholes, curbs and ramps lie ahead. Race the clock in time trials, ride the endless ride until your third crash,{alpha: race the clock with drops that add time,} or take deliveries from the job board. Parcels and deliveries earn cash, which buys new bikes and districts in the bike shop.
 
 This help gives distances and speeds in metric. Set Units to US in Settings and the game says feet, miles and miles an hour instead: the turn speed is then 13 miles an hour.
 
@@ -50,6 +50,18 @@ Parcels wait for collection along the way. A shop doorbell rings from the side a
 
 In the endless ride, cars overtake toward you in the traffic lane. A long horn blast from ahead warns of one, at least 1.5 seconds before it reaches you, and its engine grows louder as it nears. Steer right into the bike lane until it has gone by. A sharp double beep means it is in your line now.
 
+## Against the clock {alpha}
+
+Make delivery drops to add time to the clock. You start with 60 seconds on a street in the district you chose. The first drop is just after the start. The clock runs down the whole time, and the ride ends when it reaches zero. There is no crash limit or finish line.
+
+A drop rings its doorbell from its side as it comes up, like a parcel in the endless ride. Ride over it at 20 kilometres an hour or less to make the drop. A drop in a shop doorway, in the door zone, adds 14 seconds and pays 3 dollars. A drop at a parcel locker by the centre line, out among the cars, adds 18 seconds and pays 6. A drop made within 30 seconds of the last one is a quick drop, and adds 4 seconds more. The clock holds 90 seconds at most.
+
+Each drop says the time it added and the time left. A crash takes 8 seconds off the clock, and you still lose the 3 seconds you are down. The game says 30 seconds left and 10 seconds left. At 15 seconds or less, the clock ticks once a second. At 5 seconds or less, it ticks twice as fast.
+
+Every drop has clear road before and after it, so a doorbell never rings while a hazard is warning. The hazards still come closer together the further you ride. On the moped, brake hard for every drop.
+
+Your score is the drops you make. The best in each district is kept, and you keep the money, even if you leave the ride early.
+
 ## The job board
 
 The job board offers three deliveries across the districts you own. Each says its route, its length and its pay in dollars. Get there within the deadline for full pay. Late pays half. A new set of jobs comes after each delivery.
@@ -64,7 +76,7 @@ Riverside is wet. Rain falls, and brakes need more room to stop. Old Town is cob
 
 ## Status, hint and call-outs
 
-S puts danger first: a hazard or oncoming car close ahead, then any flat tyre, then your speed and lane. Press S again straight away for the rest: what else is ahead, how far you are from the parked cars or the centre line, the clock, or in the endless ride your distance, cash and crashes left, then your stamina. H says what the next hazard is, how soon you reach it and what to do. R repeats the last spoken line.
+S puts danger first: a hazard or oncoming car close ahead, then any flat tyre, then your speed and lane. Press S again straight away for the rest: what else is ahead, how far you are from the parked cars or the centre line, the clock, or in the endless ride your distance, cash and crashes left, then your stamina.{alpha: Against the clock, the first press starts with the time left, and the second gives your drops and cash.} H says what the next hazard is, how soon you reach it and what to do. R repeats the last spoken line.
 
 Spoken call-outs, a row in Settings from the title or the pause menu, chooses how much the game names its sounds as they play. Once per session is the default: each gameplay cue is named the first time it plays after you start Wicket's. Every time names them always. Off leaves only the sounds, and S and H still speak.
 
@@ -75,6 +87,8 @@ Practice lessons: five short rides that teach pedalling and coasting, braking, s
 Time trial: one of three Downtown courses, Station Run, Market Street and Bank Square, on the bike you chose. Its traffic is the same every time, so you can learn it. Course select chooses the course, and Bike select the bike.
 
 Endless ride: ride until your third crash, grabbing parcels, in the district you chose.
+
+{alpha} Against the clock: make drops to add time, until the clock runs out, in the district you chose.
 
 Job board: courier deliveries for cash.
 

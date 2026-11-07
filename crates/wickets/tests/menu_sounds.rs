@@ -60,9 +60,10 @@ fn a_game_without_its_own_sounds_keeps_the_shared_ones() {
 
 #[test]
 fn the_launcher_puts_the_shared_sounds_back() {
-    // A day with no holiday, so Liberty Lights leads Seasonal games.
+    // A day with no holiday, the Fourth of July next, so Liberty Lights
+    // leads Seasonal games.
     let data = parlor_core::ParlorData {
-        today: Some(parlor_core::Date::new(2027, 6, 10)),
+        today: Some(parlor_core::Date::new(2027, 6, 24)),
         ..Default::default()
     };
     let mut h = Headless::new(data, Lobby::new());

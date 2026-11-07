@@ -533,8 +533,14 @@ impl Menu for GameList {
             .filter(|g| g.category == self.category)
             .collect();
         if self.category == Category::Seasonal {
-            // Today's holiday first; the rest keep the launcher's order.
-            games.sort_by_key(|g| happening(ctx, g).is_none());
+            // Today's events first, then the next holiday round the year.
+            let today = challenges::today(ctx);
+            games.sort_by_key(|g| {
+                (
+                    happening(ctx, g).is_none(),
+                    crate::days_to_holiday(g, today),
+                )
+            });
         }
         games
             .into_iter()

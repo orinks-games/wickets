@@ -23,6 +23,13 @@ sound is the `"genny"` key on the sound, or else on its spec:
   re-audition it: the same spec renders differently, often several dB
   louder or quieter.
 
+A sound's `"loudness"` key sets how loud it is, in LUFS (integrated
+loudness, measured over at least half a second, as genny does). genny masters
+blal1 sounds to it as they render. A kept Oriol's genny sound with the key is
+turned up or down to it instead: its committed Ogg is gained and re-encoded,
+never re-rendered. A sharp sound turned up has its peaks limited to -1 dBFS,
+by at most 6 dB, so a crash may stay a little under its loudness.
+
 Also needs `ffmpeg`. Deterministic: the same specs give the same sounds.
 
 Usage:
@@ -46,6 +53,9 @@ SPECS = ROOT / "sound-specs"
 BUILD = ROOT / "build" / "genny"
 SOUNDS = ROOT / "sounds"
 QUALITY = "5"
+PEAK_LIMIT = -1.0  # dBFS: a kept sound turned up never peaks past this
+SQUEEZE = 6.0  # dB: how far a kept sound's peaks may be limited to reach its loudness
+LEVEL_SLACK = 0.3  # LU: a kept sound this near its loudness is left alone
 
 # Recorded lines a game plays when present and speaks when not: the game,
 # the folder under sounds/<game id>/, and the script whose ids name the
@@ -89,6 +99,44 @@ def sound_outs(spec_path: Path) -> list[str]:
     return outs
 
 
+def measure(ogg: Path) -> tuple[float, float]:
+    """Integrated loudness (LUFS, padded to half a second) and sample peak (dBFS)."""
+    out = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-nostats", "-i", str(ogg),
+         "-af", "apad=whole_dur=0.5,ebur128,volumedetect", "-f", "null", "-"],
+        capture_output=True, text=True, check=True,
+    ).stderr
+    loud = float(out.split("Summary:")[1].split("I:")[1].split("LUFS")[0])
+    peak = float(out.split("max_volume:")[1].split("dB")[0])
+    return loud, peak
+
+
+def level(game: str, kept: list[dict]) -> None:
+    """Turn each kept sound with a `loudness` key up or down to it."""
+    for s in kept:
+        if s.get("loudness") is None:
+            continue
+        ogg = SOUNDS / game / Path(s["out"]).with_suffix(".ogg")
+        loud, peak = measure(ogg)
+        gain = min(float(s["loudness"]) - loud, PEAK_LIMIT - peak + SQUEEZE)
+        if abs(gain) < LEVEL_SLACK:
+            continue
+        chain = f"volume={gain:.2f}dB"
+        if peak + gain > PEAK_LIMIT:
+            limit = 10 ** (PEAK_LIMIT / 20)
+            chain += f",alimiter=limit={limit:.4f}:attack=1:release=40:level=0:latency=1"
+        tmp = ogg.with_suffix(".level.ogg")
+        subprocess.run(
+            ["ffmpeg", "-y", "-loglevel", "error", "-i", str(ogg), "-af", chain,
+             "-c:a", "libvorbis", "-q:a", QUALITY, "-map_metadata", "-1",
+             "-fflags", "+bitexact", "-flags:a", "+bitexact", "-serial_offset", "0",
+             str(tmp)],
+            check=True,
+        )
+        tmp.replace(ogg)
+        print(f"{game}/{Path(s['out']).with_suffix('')}: {gain:+.1f} dB")
+
+
 def render(spec_path: Path) -> None:
     game = spec_path.stem
     build = BUILD / game
@@ -96,9 +144,10 @@ def render(spec_path: Path) -> None:
     sound_outs(spec_path)  # rejects out_dir and bad out paths
     spec = json.loads(spec_path.read_text(encoding="utf-8"))
     todo = [s for s, b in sound_builds(spec_path) if b == "blal1"]
-    kept = len(sound_builds(spec_path)) - len(todo)
+    kept = [s for s, b in sound_builds(spec_path) if b != "blal1"]
     if kept:
-        print(f"{game}: kept {kept} sounds from Oriol's genny as shipped")
+        print(f"{game}: kept {len(kept)} sounds from Oriol's genny as shipped")
+        level(game, kept)
     if not todo:
         return
     # Render only the blal1 sounds, as one batch with the spec's shared settings.

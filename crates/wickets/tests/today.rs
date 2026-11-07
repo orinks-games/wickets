@@ -272,3 +272,80 @@ fn a_single_game_left_out_leaves_happening_today() {
     assert_eq!(today[0], "Cupid's Quiver, Valentine's night", "{today:?}");
     assert!(today[1].starts_with("Daily challenges, "), "{today:?}");
 }
+
+/// The names Seasonal games lists on `today`, in order.
+fn seasonal_on(today: Date) -> Vec<String> {
+    let mut h = start_on(today);
+    h.app
+        .ctx
+        .push(wickets::GameList::new(parlor_core::Category::Seasonal));
+    h.frame(0.0);
+    rows(&h)
+        .into_iter()
+        .filter(|r| r != labels::BACK)
+        .map(|r| r.split(", ").next().unwrap_or_default().to_string())
+        .collect()
+}
+
+#[test]
+fn seasonal_games_follow_the_calendar_from_today() {
+    // Early November: Thanksgiving next, Halloween's just gone, so last.
+    assert_eq!(
+        seasonal_on(Date::new(2026, 11, 7)),
+        [
+            "Harvest Feast",
+            "Winter Wonderland",
+            "Dragon Dance",
+            "Cupid's Quiver",
+            "Clover Jig",
+            "Basket Run",
+            "Firefly Meadow",
+            "Liberty Lights",
+            "Nevermore Manor",
+        ]
+    );
+    // March: the winter games wrap round to the end.
+    assert_eq!(
+        seasonal_on(Date::new(2027, 3, 1)),
+        [
+            "Clover Jig",
+            "Basket Run",
+            "Firefly Meadow",
+            "Liberty Lights",
+            "Nevermore Manor",
+            "Harvest Feast",
+            "Winter Wonderland",
+            "Dragon Dance",
+            "Cupid's Quiver",
+        ]
+    );
+}
+
+#[test]
+fn the_day_after_a_holiday_its_game_still_leads() {
+    let games = seasonal_on(Date::new(2026, 11, 1));
+    assert_eq!(games[0], "Nevermore Manor", "{games:?}");
+    assert_eq!(games[1], "Graveyard Shuffle", "{games:?}");
+    assert_eq!(games[2], "Harvest Feast", "{games:?}");
+}
+
+#[test]
+fn winter_wonderland_leads_until_new_year() {
+    let games = seasonal_on(Date::new(2026, 12, 28));
+    assert_eq!(games[0], "Winter Wonderland", "{games:?}");
+    let games = seasonal_on(Date::new(2027, 1, 2));
+    assert_eq!(games[0], "Dragon Dance", "{games:?}");
+    assert_eq!(games.last().unwrap(), "Winter Wonderland", "{games:?}");
+}
+
+#[test]
+fn every_seasonal_game_has_a_holiday() {
+    let today = Date::new(2026, 11, 7);
+    for g in wickets::games()
+        .into_iter()
+        .chain(wickets::specials().into_iter().map(|(g, _)| g))
+        .filter(|g| g.category == parlor_core::Category::Seasonal)
+    {
+        assert!(wickets::days_to_holiday(&g, today) < 400, "{} has no holiday", g.name);
+    }
+}

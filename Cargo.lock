@@ -168,7 +168,7 @@ checksum = "2af50177e190e07a26ab74f8b1efbfe2ef87da2116221318cb1c2e82baf7de06"
 
 [[package]]
 name = "basket-run"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -177,7 +177,7 @@ dependencies = [
 
 [[package]]
 name = "belfry"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -188,7 +188,7 @@ dependencies = [
 
 [[package]]
 name = "birdsong-trail"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -305,7 +305,7 @@ dependencies = [
 
 [[package]]
 name = "clover-jig"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -476,7 +476,7 @@ dependencies = [
 
 [[package]]
 name = "cupids-quiver"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -648,7 +648,7 @@ dependencies = [
 
 [[package]]
 name = "dragon-dance"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -760,7 +760,7 @@ checksum = "aedcfb3409746eddb02b9e19ebda1c3394f759a152e48ee875a0844d1b955484"
 
 [[package]]
 name = "firefly-meadow"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -770,7 +770,7 @@ dependencies = [
 
 [[package]]
 name = "fireside-patience"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -807,7 +807,7 @@ dependencies = [
 
 [[package]]
 name = "freewheel"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -942,7 +942,7 @@ dependencies = [
 
 [[package]]
 name = "graveyard-shuffle"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -951,7 +951,7 @@ dependencies = [
 
 [[package]]
 name = "harvest-feast"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -988,7 +988,7 @@ checksum = "ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a"
 
 [[package]]
 name = "haunted-hallways"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -1440,7 +1440,7 @@ dependencies = [
 
 [[package]]
 name = "lamplighter"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -1449,7 +1449,7 @@ dependencies = [
 
 [[package]]
 name = "lantern-lake"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -1459,7 +1459,7 @@ dependencies = [
 
 [[package]]
 name = "larkfield"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -1481,7 +1481,7 @@ checksum = "ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78"
 
 [[package]]
 name = "liberty-lights"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -1517,7 +1517,7 @@ checksum = "47d9d19d1d6efa0109d2f65ff4c85cddd50bd572e5a00127ab10987290bcefae"
 
 [[package]]
 name = "little-rapids"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -1565,7 +1565,7 @@ dependencies = [
 
 [[package]]
 name = "midnight-lanes"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -1620,7 +1620,7 @@ dependencies = [
 
 [[package]]
 name = "neon-rail"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -1824,7 +1824,7 @@ dependencies = [
 
 [[package]]
 name = "pantry-mouse"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -1834,7 +1834,7 @@ dependencies = [
 
 [[package]]
 name = "parlor-core"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "log",
@@ -2062,7 +2062,7 @@ dependencies = [
 
 [[package]]
 name = "riverboat-dice"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -2073,7 +2073,7 @@ dependencies = [
 
 [[package]]
 name = "rooftop-garden"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -2183,7 +2183,7 @@ dependencies = [
 
 [[package]]
 name = "safecracker"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -2354,7 +2354,7 @@ checksum = "f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba"
 
 [[package]]
 name = "signal-box"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -2401,7 +2401,7 @@ checksum = "0c790de23124f9ab44544d7ac05d60440adc586479ce501c1d6d7da3cd8c9cf5"
 
 [[package]]
 name = "slow-kettle"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -2417,7 +2417,7 @@ checksum = "5b3dc8af474f516a851ff4bd12db780f948b9250ad37211e4eec0bccea54e01b"
 
 [[package]]
 name = "soft-landing"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -2427,7 +2427,7 @@ dependencies = [
 
 [[package]]
 name = "sonar-dive"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -2454,7 +2454,7 @@ checksum = "6ce2be8dc25455e1f91df71bfa12ad37d7af1092ae736f3a6cd0e37bc7810596"
 
 [[package]]
 name = "stargazer"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -2701,7 +2701,7 @@ dependencies = [
 
 [[package]]
 name = "the-echo"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -2759,7 +2759,7 @@ dependencies = [
 
 [[package]]
 name = "tide-pools"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -2768,7 +2768,7 @@ dependencies = [
 
 [[package]]
 name = "tightrope"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -3046,7 +3046,7 @@ dependencies = [
 
 [[package]]
 name = "wickets"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "basket-run",
  "belfry",
@@ -3093,7 +3093,7 @@ dependencies = [
 
 [[package]]
 name = "wickets-content"
-version = "1.5.0"
+version = "1.6.0"
 
 [[package]]
 name = "wickets-rules"
@@ -3108,7 +3108,7 @@ dependencies = [
 
 [[package]]
 name = "wickets-slot-a"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -3118,7 +3118,7 @@ dependencies = [
 
 [[package]]
 name = "wickets-slot-b"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -3128,7 +3128,7 @@ dependencies = [
 
 [[package]]
 name = "wickets-slot-c"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -3138,7 +3138,7 @@ dependencies = [
 
 [[package]]
 name = "wickets-slot-d"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
@@ -3377,7 +3377,7 @@ dependencies = [
 
 [[package]]
 name = "winter-wonderland"
-version = "1.5.0"
+version = "1.6.0"
 dependencies = [
  "hearken",
  "parlor-core",
