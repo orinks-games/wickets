@@ -363,8 +363,10 @@ fn practice_never_ends_and_escape_leaves() {
 fn flip_in_settings(h: &mut hearken::Headless<parlor_core::Parlor>, row: &str) {
     goto(h, "Settings");
     h.press(Key::Return);
+    h.press(Key::Return); // the game's own category
     goto(h, row);
     h.press(Key::Return);
+    h.press(Key::Escape);
     h.press(Key::Escape);
 }
 
@@ -373,6 +375,7 @@ fn call_outs_switch_off_in_settings_and_stay_off() {
     let mut h = title();
     goto(&mut h, "Settings");
     h.press(Key::Return);
+    h.press(Key::Return); // the game's own category
     goto(&mut h, "Spoken targets");
     h.clear();
     h.press(Key::Return);
@@ -398,7 +401,9 @@ fn the_parlor_settings_hold_no_quiver_rows_once_the_game_is_left() {
         .app
         .top_lines()
         .iter()
-        .any(|l| l.contains(cupids_quiver::AIM_CALLS) || l.contains(cupids_quiver::TARGET_CALLS)));
+        .any(|l| l.contains(cupids_quiver::AIM_CALLS)
+            || l.contains(cupids_quiver::TARGET_CALLS)
+            || l.contains("Cupid")));
 }
 
 #[test]
