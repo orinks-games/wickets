@@ -68,7 +68,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, patch: Live<EveningScreen>) -> Lesson {
 
     let release = patch.step(
         format!(
-            "{} sets your jar free: each firefly rings its note together, as a chord. Set them free now.",
+            "{} releases the fireflies from your jar. Their notes ring together as a chord. Set them free now.",
             sentence_start(&t)
         ),
         |s: &EveningScreen, _| (s.evening.releases >= 1).then(String::new),

@@ -762,7 +762,7 @@ pub fn result_pages(flight: &Flight, saved: &Saved) -> Vec<String> {
     }
     if saved.survey_done {
         pages.push(
-            "Every survey moon is landed. Fly any of them again from Moon select.".to_string(),
+            "You have landed on every survey moon. Choose Moon select to fly any of them again.".to_string(),
         );
     }
     pages

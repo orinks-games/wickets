@@ -168,10 +168,16 @@ impl Date {
 /// event ahead of time; else the trusted clock ([`Date::system_today`]).
 /// Release builds ignore the variable, so it can't open an event early.
 pub fn today(ctx: &Ctx<Parlor>) -> Date {
+    pinned_today(ctx).unwrap_or_else(Date::system_today)
+}
+
+/// The day [`today`] plays as when it is not the clock's: a test's pinned
+/// date, or a debug build's preview. `None` on the real date.
+pub fn pinned_today(ctx: &Ctx<Parlor>) -> Option<Date> {
     if let Some(date) = ctx.game.today {
-        return date;
+        return Some(date);
     }
-    preview_today().unwrap_or_else(Date::system_today)
+    preview_today()
 }
 
 /// `ECHO_PARLOR_TODAY`, in debug builds only.

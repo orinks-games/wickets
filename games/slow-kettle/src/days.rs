@@ -155,7 +155,7 @@ impl Occasion {
     pub fn keepsake(self, year: i32) -> String {
         match self {
             Occasion::LunarNewYear => {
-                format!("a paper {} cut from red paper", zodiac(year).to_lowercase())
+                format!("a {} cut from red paper", zodiac(year).to_lowercase())
             }
             Occasion::Valentines => "a pressed rose in wax paper".to_string(),
             Occasion::SpringEquinox => "a cherry blossom bookmark".to_string(),

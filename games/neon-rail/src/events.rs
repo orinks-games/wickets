@@ -9,7 +9,7 @@
 //! On the last Friday of every month the title has a Friday night run
 //! row: three sectors made from that Friday's date, the same for every
 //! pilot, on a standard skimmer, where salvage comes as cargo crates worth
-//! double, with a bright chime over the salvage pulse. It keeps its own
+//! double. It keeps its own
 //! board. On other days the row stays in its place, locked, and says when
 //! it opens.
 //!
@@ -123,6 +123,6 @@ pub fn event(date: Date) -> Option<Happening> {
 pub fn friday_help(best: Option<u64>) -> String {
     let best = best.map_or(String::new(), |b| format!(" Your best is {b}."));
     format!(
-        "Friday night, the last of the month: three sectors made from tonight's date, the same for every pilot, on a standard skimmer. Salvage comes as cargo crates, worth double, with a bright chime over the salvage pulse. It keeps its own board and pays no credits, rank or story. Open all day.{best}"
+        "Friday night, the last of the month: three sectors made from tonight's date, the same for every pilot, on a standard skimmer. Salvage comes as cargo crates, worth double. It keeps its own board and pays no credits, rank or story. Open all day.{best}"
     )
 }

@@ -186,7 +186,7 @@ fn the_sound_check_plays_every_sound_with_its_name() {
         if let Some(m) = h.app.ctx.audio.music() {
             keys.push(m.to_string());
         }
-        assert!(!h.spoken().is_empty());
+        assert!(h.spoken().is_empty());
         h.press(Key::Down);
     }
     for (key, _, _) in &catalog {
@@ -197,7 +197,9 @@ fn the_sound_check_plays_every_sound_with_its_name() {
     }
     h.clear();
     h.press(Key::Return); // Left and right
-    assert!(spoke(&h, "pool to your left"));
+    assert!(h.spoken().is_empty());
+    assert!(played(&h, sound::creature(Species::Crab)));
+    assert!(played(&h, sound::creature(Species::Periwinkle)));
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), "tide_pools");
     assert_eq!(h.app.ctx.audio.music(), Some(sound::TITLE_MUSIC));
@@ -346,7 +348,10 @@ fn gathering_a_creature_by_ear() {
     assert!(matches!(evs[0], Ev::Gathered { .. }), "{evs:?}");
     assert!(played(&t.h, sound::GATHER));
     assert!(played(&t.h, sound::NEW));
-    assert!(spoke(&t.h, "A sea anemone. Plus 5. New for your aquarium."));
+    assert!(spoke(
+        &t.h,
+        "A sea anemone. 5 points. New for your aquarium."
+    ));
     t.h.clear();
     t.press(Key::S);
     assert!(spoke(&t.h, "Pool 1 of 3, leaning in close."));
@@ -378,7 +383,7 @@ fn a_shy_crab_hides_and_creeps_back_out() {
     assert!(played(&t.h, sound::EMERGE));
     assert!(spoke(&t.h, "Two rising notes"));
     t.gather(Species::Crab);
-    assert!(spoke(&t.h, "A shore crab. Plus 15."));
+    assert!(spoke(&t.h, "A shore crab. 15 points."));
 }
 
 #[test]
@@ -926,7 +931,7 @@ fn the_last_find_is_kept_when_the_pools_are_cleared() {
     // The last find is said once, and the page queues behind it rather
     // than cutting it off or saying it again.
     let calls = calls(&t.h);
-    let find = format!("A {}. Plus", other.name());
+    let find = format!("A {}.", other.name());
     assert_eq!(
         calls.iter().filter(|(l, _)| l.contains(&find)).count(),
         1,

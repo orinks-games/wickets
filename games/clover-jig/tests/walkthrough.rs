@@ -669,19 +669,22 @@ fn the_sound_check_plays_every_row() {
     assert_eq!(h.app.top_name(), SOUNDS_NAME);
     let n = rows(&h).len();
     assert_eq!(rows(&h)[0], "Left");
+    assert!(!rows(&h).iter().any(|row| row == "A tune"));
+    assert!(!rows(&h).iter().any(|row| row == "The ceili band"));
     assert_eq!(rows(&h).last().map(String::as_str), Some("Back"));
     h.press(Key::Home);
     for _ in 0..n - 1 {
         h.clear();
         h.press(Key::Return);
         assert!(!h.played().is_empty(), "{}", cursor_row(&h));
-        assert!(!h.spoken().is_empty(), "{}", cursor_row(&h));
+        assert!(h.spoken().is_empty(), "{}", cursor_row(&h));
         h.press(Key::Down);
     }
-    h.clear();
     h.press(Key::Home);
+    h.clear();
     h.press(Key::Return);
-    assert!(spoke(&h, "Left: the caller says left"));
+    assert!(h.spoken().is_empty());
+    assert!(!h.played().is_empty());
     h.press(Key::End);
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), TITLE_NAME);

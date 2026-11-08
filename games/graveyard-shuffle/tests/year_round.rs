@@ -1,4 +1,4 @@
-//! Keeping the game all year: three stars on night 1 keep it, and
+//! Starting play keeps the ordinary game; seasonal finales keep their dates.
 //! Doctor Volt's laboratory still waits for Halloween season.
 
 use crate::common::*;
@@ -104,4 +104,36 @@ fn out_of_season_the_laboratory_and_its_songs_wait() {
     let r = rows(&h);
     assert!(r[8].starts_with("The Bell Tower Bop,"), "{r:?}");
     assert!(r[9].contains("locked"), "{r:?}");
+}
+
+#[test]
+fn starting_play_or_practice_keeps_the_game_without_a_score() {
+    for mode in [Mode::Set(1), Mode::Practice(0)] {
+        let (mut h, mut twin) = floor(mode);
+        assert!(
+            !Progress::load(&mut h.app.ctx).kept(),
+            "ready is not playing"
+        );
+        start(&mut h, &mut twin);
+        let saved = Progress::load(&mut h.app.ctx);
+        assert!(saved.played);
+        assert!(saved.kept());
+        assert!(saved.stars.is_empty(), "retention must not award stars");
+        h.app.ctx.pop();
+        h.frame(0.0);
+        assert!(
+            graveyard_shuffle::kept(&mut h.app.ctx),
+            "abandoning still keeps the game"
+        );
+    }
+}
+
+#[test]
+fn old_practice_progress_keeps_the_game_without_a_new_flag() {
+    let old = Progress {
+        practice_steps: 1,
+        ..Default::default()
+    };
+    assert!(!old.played);
+    assert!(old.kept());
 }

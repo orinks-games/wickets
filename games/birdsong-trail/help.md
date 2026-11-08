@@ -2,7 +2,7 @@
 
 ## About the game
 
-Dawn trail: walk close until a bird sings to you. Whistle its song back note for note to befriend it into your field guide.
+Walk toward a bird until it sings to you. Whistle its song back note for note to add it to your field guide.
 
 There is no way to fail and no clock. A walk ends when you reach the trail's end or head home. The songs are made for the game from three notes. They are not recordings of real birds.
 
@@ -16,7 +16,7 @@ The trail's end makes its own sound the whole walk: a brook in the woodland, win
 
 ## Walking
 
-Up takes a step forward and Down a step back. Hold the key to keep walking. Your steps sound like the ground: earth, dry leaves, long grass, a boardwalk, pebbles or snow. Steps are only for flavour. No bird minds how loudly you walk.
+Up takes a step forward and Down a step back. Hold the key to keep walking. Your footsteps do not disturb the birds.
 
 You hear when you leave the path and when you come back to it. Brambles, a hedge, deep reeds or the river's edge stop you at the sides of the trail, and the game says which way the path is.
 
@@ -28,9 +28,9 @@ Space, when no bird is singing to you, names the three birds nearest you, where 
 
 ## Answering a song
 
-Your turn: Down is low, Space middle, Up high. Songs are 2 to 5 notes. Your whistle has its own soft sound so you can hear the answer.
+Your turn: Down is low, Space middle, Up high. Songs are 2 to 5 notes.
 
-If your answer matches, a warm rising chime plays and the bird is befriended. If it does not, two soft low notes play and the bird sings again. You can try as often as you like. After two misses, its notes are spoken in words.
+If your answer matches, you befriend the bird. Otherwise, the bird sings again. You can try as often as you like. After two misses, its notes are spoken in words.
 
 While a bird waits for your answer, R asks it to sing again, and H speaks its notes in words, such as low, high, middle. Turning away, or stepping off, lets the bird be. Walk a little way off and come back, and it will sing to you again.
 
@@ -57,7 +57,7 @@ A walk holds 6 birds in spring and summer, 5 in autumn and 4 in winter. Birds wi
 
 ## The field guide
 
-Every bird you befriend goes into your field guide. Each singing bird has 3 songs to learn: its signature song first, then two variations, one each time you meet it again. A soft page turn and a bell mean something new went into your guide.
+Every bird you befriend goes into your field guide. Each singing bird has 3 songs to learn: its signature song first, then two variations, one each time you meet it again.
 
 Read the guide from the Field guide row on the title. Each bird's page plays its song and reads how its song sounds, a line about the bird, how many songs you have learned, and where you first met it. The last row says how many birds are still to meet, and where to look.
 
@@ -73,7 +73,7 @@ The migrating flocks can only be met on these walks.
 
 Up to 8 birds sing at once, each from its own place around you. You are asked to find one, and its song is described and played alone first. Turn with Left and Right to face where you hear it, and press Space to pick it.
 
-The right bird plays a bright two-note chime and flies off, and another bird takes its place. A wrong pick names the bird you chose. R plays the song to find alone again, and H says where it is. Each bird you pick out goes into your field guide.
+The right bird flies off, and another bird takes its place. A wrong pick names the bird you chose. R plays the song to find alone again, and H says where it is. Each bird you pick out goes into your field guide.
 
 ## The migration count
 
@@ -103,7 +103,7 @@ Records, on the title, reads your field guide's totals, your walks and steps, yo
 
 ## Sound check and tutorial
 
-Sound check, on the title, plays each sound you need on the trail with its name and what it means: your whistle, each bird voice with its low, middle and high notes, the flock calls, each kind of step, the cues and the sounds at each trail's end. Tutorial explains the game a page at a time.
+Sound check, on the title, plays each sound you need on the trail with its name and what it means: your whistle, each bird voice with its low, middle and high notes, the flock calls, the cues and the sounds at each trail's end. Tutorial explains the game a page at a time.
 
 ## Controls
 

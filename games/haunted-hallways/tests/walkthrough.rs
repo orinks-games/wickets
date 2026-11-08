@@ -197,7 +197,7 @@ fn the_tutorial_walks_the_practice_house() {
     assert!(!spoke(&h, "follows your footsteps"), "{:?}", h.spoken());
     assert!(!spoke(&h, "hound"), "{:?}", h.spoken());
     said(&h, "Tutorial done.");
-    said(&h, "The floors above bring more");
+    said(&h, "Deeper floors bring new dangers");
     assert_eq!(h.app.top_name(), "haunted_hallways");
 }
 
@@ -213,7 +213,7 @@ fn the_sound_check_plays_every_cue_with_its_name() {
         h.clear();
         h.press(Key::Return);
         keys.extend(h.played());
-        assert!(!h.spoken().is_empty());
+        assert!(h.spoken().is_empty());
         h.press(Key::Down);
     }
     for (key, _) in sound::catalog() {
@@ -221,7 +221,12 @@ fn the_sound_check_plays_every_cue_with_its_name() {
     }
     h.clear();
     h.press(Key::Return); // Left and right
-    assert!(spoke(&h, "to your left"));
+    assert!(h.spoken().is_empty());
+    assert!(played(
+        &h,
+        sound::item(haunted_hallways::rules::Item::Clock)
+    ));
+    assert!(played(&h, sound::item(haunted_hallways::rules::Item::Bell)));
 }
 
 #[test]

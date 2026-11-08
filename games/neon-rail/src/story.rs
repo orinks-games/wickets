@@ -88,7 +88,7 @@ pub const LOGS: &[Log] = &[
     Log {
         title: "Breathing Freight",
         pages: &[
-            "The biological telemetry inside priority traffic is not cargo. They are passengers, sedated, being moved out of the dark districts under clean codes.",
+            "The biological telemetry comes from passengers, sedated and being moved out of the dark districts under clean codes.",
             "The partition was never about the orbital event. It was about who would be allowed to leave.",
         ],
         how: "Recover 20 intel fragments.",

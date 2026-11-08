@@ -275,7 +275,7 @@ impl Route {
     /// What the route is like and what it pays, for the route menu.
     pub fn blurb(self) -> &'static str {
         match self {
-            Route::Scripted => "The authored corridor.",
+            Route::Scripted => "The fixed corridor.",
             Route::Departure => "Calm commuter flow to learn the rail.",
             Route::Standard => "Mixed traffic and hazards. Normal pay.",
             Route::Salvage => {
@@ -706,7 +706,7 @@ impl Upgrade {
     pub fn gist(self) -> &'static str {
         match self {
             Upgrade::HardLock => "the rail gun locks sooner",
-            Upgrade::ScrapMesh => "pickups mend and calm more",
+            Upgrade::ScrapMesh => "pickups restore hull and reduce stress",
             Upgrade::DeadMan => "survive one hull breach",
             Upgrade::HotChain => "the multiplier climbs faster",
             _ => "",

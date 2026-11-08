@@ -41,7 +41,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, wire: Live<RunScreen>) -> Lesson {
 
     let steps = wire.step(
         format!(
-            "The tone is your balance: centred is safe. {} and {r} shift your weight; press opposite your lean. {} steps, only when balanced. Take 3 steps.",
+            "The tone is your balance: centred is safe. {} and {r} shift your weight once per press. Holding adds no further shift. Release and wait for your balance to settle; press opposite your lean. {} steps, only when balanced. Take 3 steps.",
             sentence_start(&l),
             sentence_start(&p)
         ),

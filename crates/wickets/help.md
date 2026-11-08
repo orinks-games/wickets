@@ -104,10 +104,19 @@ Offline, it uses your computer's clock.
 
 ## Holiday specials
 
-The holiday specials are in Seasonal games only around their holiday.
-Beat the first part in season and the game is yours: the rest of the year
-it is in the Action games, with its last night kept back for the holiday.
-F1 on the game in season says how to keep it.
+Holiday specials appear in Seasonal games around their holiday and stay
+there for two more weeks, so you can catch up. Start playing one, even in
+practice, to keep its ordinary game all year. You do not need a star or a
+high score. Earlier play counts too.
+
+Finding a special you have not played needs the date from the internet.
+Offline, Seasonal games has a Check for holiday specials row to try again.
+Games you have played open offline.
+
+After its season, a game you have kept moves to its usual category. Its
+holiday finale still follows the calendar. Games you have not played stay
+hidden outside their season and catch-up weeks. F1 on a listed game says
+what you can keep.
 
 ## Happening today
 

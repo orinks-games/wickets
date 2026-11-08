@@ -84,7 +84,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hall: Live<Round>) -> Lesson {
     .step(light)
     .step(rest)
     .outro(format!(
-        "In the evening round a taper burns as you go, and {p} lights it to start. Light every lamp before it burns down, and the seconds left are a bonus. If it runs out, Mabel lights you a fresh one, so the hall always gets lit. {} speaks your step, the lamps out and the taper.",
+        "In the evening round a taper burns as you go, and {p} lights it to start. Light every lamp before it burns down, and the seconds left are a bonus. If it runs out, Mabel lights you a fresh one, so the hall always gets lit. {} reads the lamps still out, your step and the taper time left.",
         sentence_start(&s)
     ))
 }

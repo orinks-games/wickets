@@ -138,7 +138,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
             "A fast passer on your right: a short warning, then it tears past. Get into its lane, or fire the slowdown pulse with {slow}. Do either now."
         ),
         move |ctx, a| {
-            const CLEARED: &str = "Cleared. Join its lane, or pulse.";
+            const CLEARED: &str = "Cleared. Meet a fast passer in its lane or use a slowdown pulse.";
             if a == ParlorAction::Down {
                 ctx.audio.play(cues::SLOWDOWN, Bus::EFFECTS);
                 ctx.audio.play(cues::CLEAN, Bus::EFFECTS);
@@ -163,7 +163,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let hit = Rc::new(Cell::new(0));
     let hit2 = Rc::clone(&hit);
     let debris = Step::new(
-        "Now debris is coming, straight ahead in your lane. Hazards you avoid: shift out of its lane.",
+        "Debris is coming straight ahead in your lane. Shift to another lane to avoid it.",
         move |ctx, a| {
             let Some(line) = shift(ctx, &ln, a) else {
                 return Reply::Nudge;

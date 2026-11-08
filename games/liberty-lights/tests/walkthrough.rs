@@ -842,13 +842,7 @@ fn the_sound_check_names_every_cue() {
     h.clear();
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), "sound_check");
-    assert_eq!(
-        h.spoken(),
-        [
-            "Sound check.",
-            "Boom, key 1: a deep bass thump that rolls away. 1 of 18."
-        ]
-    );
+    assert_eq!(h.spoken(), ["Sound check.", "Boom, key 1. 1 of 18."]);
     h.clear();
     h.press(Key::Return);
     assert_eq!(

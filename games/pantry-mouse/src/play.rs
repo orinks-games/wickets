@@ -978,13 +978,8 @@ impl State<Parlor> for Play {
             "{now} {} Each crumb is {CRUMB_POINTS} points and a cleared pantry {CLEAR_BONUS}.",
             self.controls(ctx)
         );
-        for (i, c) in self.run.cats.iter().enumerate() {
-            text.push_str(&format!(
-                " The {} has {}. {}",
-                c.name,
-                sound::cat_sound_words(i),
-                cat_rule(c.kind)
-            ));
+        for c in &self.run.cats {
+            text.push_str(&format!(" The {}: {}", c.name, cat_rule(c.kind)));
         }
         if let Some(line) = self.treat_line() {
             let left = self.treats_left_words().unwrap_or_default();

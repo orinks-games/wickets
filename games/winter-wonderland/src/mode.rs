@@ -82,7 +82,7 @@ pub fn story_intro(blizzard: bool) -> Vec<String> {
     } else {
         vec![
             "The elves have wrapped every gift beautifully, and then mixed up every label.".into(),
-            "You are the workshop's best listener. Shake each gift as it rides the conveyor, hear what is inside, and send it to whoever wished for it before it falls off the end of the belt.".into(),
+            "Shake each gift as it rides the conveyor, hear what is inside, and send it to whoever wished for it before it falls off the end of the belt.".into(),
             "Three shifts stand between you and the morning. And the letters are piling up on the Wish Desk.".into(),
         ]
     }

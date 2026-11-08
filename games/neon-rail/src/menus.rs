@@ -43,9 +43,8 @@ pub struct SoundCheck {
 impl SoundCheck {
     pub fn new() -> SoundCheck {
         SoundCheck {
-            menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
-            ),
+            menu: MenuCore::new("Sound check")
+                .with_intro_help("Up and Down choose a sound, Enter plays it, Escape goes back."),
             preview: Preview::None,
         }
     }
@@ -62,7 +61,7 @@ impl SoundCheck {
         self.stop(ctx);
         ctx.audio.set_listener(Vec3::ZERO, 0.0);
         let entry = &SOUND_CHECK[index];
-        ctx.say(format!("{}. {}", entry.name, entry.meaning));
+        ctx.stop_speech();
         match entry.play {
             Play::Once => {
                 ctx.audio.play(entry.key, Bus::EFFECTS);
@@ -130,13 +129,14 @@ impl Menu for SoundCheck {
             |s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 s.stop(ctx);
                 ctx.audio.set_listener(Vec3::ZERO, 0.0);
-                ctx.say("Lane positions. You are in the center lane.");
+                ctx.stop_speech();
                 s.preview = Preview::Lanes {
                     next: 0,
                     wait: 1.6,
                 };
             },
         )
+        .select_sound(None)
         .help("Hear where each lane sounds from while you are in the center lane: left, straight ahead, then right.")];
         for (i, entry) in SOUND_CHECK.iter().enumerate() {
             items.push(
@@ -174,8 +174,7 @@ impl Menu for SoundCheck {
                 *wait -= dt;
                 if *wait <= 0.0 {
                     let lane = *next;
-                    let name = ["Left lane.", "Center lane, straight ahead.", "Right lane."][lane];
-                    ctx.say(name);
+
                     let pos = Vec3::new(lane_x(lane), 2.0, 0.0);
                     ctx.audio.play_at(cues::CLEAN, pos, Bus::EFFECTS);
                     if lane >= 2 {

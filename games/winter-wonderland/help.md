@@ -12,15 +12,15 @@ Midnight Countdown is a rhythm game for New Year's Eve: the band plays a short r
 
 ## Gift Sort: the belt
 
-Before each shift you hear the briefing: how many gifts to sort, how long the shift clock runs, and who is waiting. Each person stands on your left, straight ahead or on your right, and wishes for one thing. Press Space to start the belt. A soft thump means a gift has landed on the belt. It rides towards the edge. Quick beeping means it is nearly there, and if it rides off it breaks and the clock loses 4 seconds.
+Before each shift you hear the briefing: how many gifts to sort, how long the shift clock runs, and who is waiting. Each person stands on your left, straight ahead or on your right, and wishes for one thing. Press Space to start the belt. Each gift rides toward the belt's edge. If it falls off, it breaks and the clock loses 4 seconds.
 
 ## Gift Sort: shaking and sending
 
-Space shakes the gift. Listen: blocks rattle, a teddy bear squishes, teacups clink, bells jingle. Later shifts bring crinkling sweets, sloshing snow globes, ticking clocks, squeaky toys, thumping books and chiming music boxes. Send the gift with the Left arrow for the person on your left, the Up arrow for the person straight ahead and the Right arrow for the person on your right. Rising bells from their side mean they are delighted. A low buzz means they did not wish for it: the clock loses a few seconds and the gift stays on the belt for another try. From shift 3, some gifts are wanted by nobody: drop those in the return sack behind you with the Down arrow. In the first two shifts, the game also names each sound a moment after you shake.
+Space shakes the gift so you can identify it. Gifts include blocks, teddy bears, teacups and bells. Later shifts add sweets, snow globes, clocks, squeaky toys, books and music boxes. Left sends it to the person on your left, Up to the person ahead, and Right to the person on your right. A wrong delivery costs time and leaves the gift on the belt for another try. From shift 3, use Down to return gifts nobody wants. In the first two shifts, the game also names each gift after you shake it.
 
 ## Gift Sort: shifts and scoring
 
-There are 8 shifts. Each one has more gifts, more kinds of sound and a faster belt, and the belt speeds up as you sort. The first three briefings say what each wish sounds like. From shift 4 you must work it out. From shift 5, someone changes their mind half way through: a doorbell rings and you hear their new wish. A delivery scores more the sooner you make it and the longer your streak, times the shift number. Clearing a shift adds a bonus for the time left on the clock. Shifts you reach stay open: choose a starting shift with Left and Right on the Gift Sort row of the title.
+There are 8 shifts. Each one has more gifts, more kinds of sound and a faster belt, and the belt speeds up as you sort. The first three briefings say what each wish sounds like. From shift 4 you must work it out. From shift 5, someone changes their mind half way through: their new wish is announced. A delivery scores more the sooner you make it and the longer your streak, times the shift number. Clearing a shift adds a bonus for the time left on the clock. Shifts you reach stay open: choose a starting shift with Left and Right on the Gift Sort row of the title.
 
 ## The Wish Desk: letters and the shelf
 
@@ -44,11 +44,11 @@ On the fourth Wednesday of every month, the post is muddled: the letters come fr
 
 ## Midnight Countdown: call and answer
 
-The countdown starts at ten minutes to midnight. Each minute, the band plays a call one bar long, then you answer it in the next bar: the same instruments on the same beats. A soft clock ticks every beat, with a lower tock on the first beat of each bar, so you can count along. Bells are Space. At seven minutes to midnight the drums join, a deep boom, answered with the Down arrow. At four minutes the horns join, a bright brass blast, answered with the Up arrow. The music stops while each new instrument is introduced, and waits for you to press Space. You can try the drum and horn while it waits. In the final seconds the full orchestra plays one long two-bar call with every instrument, for double points.
+The countdown starts at ten minutes to midnight. Each minute, the band plays a call one bar long, then you answer it in the next bar: the same instruments on the same beats. The count marks each beat and the start of each bar. Bells are Space. At seven minutes to midnight the drums join, answered with the Down arrow. At four minutes the horns join, answered with the Up arrow. The music stops while each new instrument is introduced, and waits for you to press Space. You can try the drum and horn while it waits. In the final seconds the full orchestra plays one long two-bar call with every instrument, for double points.
 
 ## Midnight Countdown: scoring and energy
 
-A note answered right on the beat is perfect. A little early or late is good. Every answer in a row adds to your combo, and every 8 in a row raise the score multiplier, up to times 4, with rising chimes. A deflating party blower means a missed note and a short buzz means the wrong instrument. Both break the combo and drain the party's energy. A soft tap means you pressed when there was nothing to answer. If the energy runs out, the party fizzles before midnight. Reach midnight to hear the bells, the champagne and the fireworks, and to open the next night. There are 5 nights, each faster with trickier rhythms. From the third night some notes fall between the beats.
+A note answered right on the beat is perfect. A little early or late is good. Each correct answer adds to your combo, and every 8 in a row raise the score multiplier, up to times 4. Missing a note or playing the wrong instrument breaks the combo and drains party energy. If the energy runs out, the party ends before midnight. Reach midnight to open the next night. There are 5 nights, each faster with trickier rhythms. From the third night, some notes fall between beats.
 
 ## Story mode
 
@@ -66,7 +66,7 @@ The monthly challenge is the midwinter post: stacks 3, 4 and 5 at the Wish Desk,
 
 ## Practice, tutorial and sound check
 
-Practice rhythm is a night of Midnight Countdown where the party never fizzles and nothing is saved. Choose any night you have opened with Left and Right on its row of the title. The tutorial sorts two gifts on the belt, then answers a letter at the Wish Desk. The sound check plays every sound in the game with its name, so you can learn each gift's shake and each cue before you play. Help is this guide.
+Practice rhythm is a night of Midnight Countdown where the party never fizzles and nothing is saved. Choose any night you have opened with Left and Right on its row of the title. The tutorial sorts two gifts on the belt, then answers a letter at the Wish Desk. Sound check lists the gameplay cues and lets you play them, so you can learn each gift's shake and each cue before you play. Help is this guide.
 
 ## Records and results
 

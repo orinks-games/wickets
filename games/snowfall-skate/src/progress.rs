@@ -22,9 +22,7 @@ pub const FAIR_BOARD: &str = "frost fair";
 /// The score board of the lantern skate.
 pub const LANTERN_BOARD: &str = "lantern skate";
 
-/// The pond whose first star keeps the game all year: the mill pond,
-/// opened by a star on the village pond, so a player skates at least two
-/// nights in winter.
+/// The pond used by the original score-based retention rule.
 pub const KEEP_POND: u32 = 2;
 
 pub fn key() -> String {
@@ -33,6 +31,9 @@ pub fn key() -> String {
 
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct Progress {
+    /// A real game or practice session has been started, even if abandoned.
+    #[serde(default)]
+    pub played: bool,
     /// The most stars each pond has earned, by number.
     #[serde(default)]
     pub stars: BTreeMap<u32, u32>,
@@ -74,6 +75,14 @@ pub struct Progress {
 }
 
 impl Progress {
+    /// Starting play keeps the ordinary game; holiday-only content keeps its dates.
+    pub fn note_played(ctx: &mut Ctx<Parlor>) {
+        let mut progress = Self::load(ctx);
+        if !progress.played {
+            progress.played = true;
+            progress.store(ctx);
+        }
+    }
     pub fn load(ctx: &mut Ctx<Parlor>) -> Progress {
         Records::load(ctx, &key())
     }
@@ -91,9 +100,16 @@ impl Progress {
         self.stars.get(&number).copied().unwrap_or(0)
     }
 
-    /// Whether the game is kept all year: a star on [`KEEP_POND`].
+    /// Playing keeps the ordinary game; old progress and earned access still count.
     pub fn kept(&self) -> bool {
-        self.stars_for(KEEP_POND) > 0
+        self.played || self.has_progress()
+    }
+
+    /// Whether a finished run, practice or star is saved: what kept the
+    /// game before starting play did, and what the first results check
+    /// to say it is kept.
+    pub fn has_progress(&self) -> bool {
+        self.any() || self.stars.values().any(|&stars| stars > 0)
     }
 
     /// Whether pond `number` is open: the first always, the rest once the
@@ -164,7 +180,7 @@ pub fn save_pond(ctx: &mut Ctx<Parlor>, number: u32, skate: &Skate) -> PondSaved
     let next = number + 1;
     let in_range = (next as usize) <= PONDS.len();
     let was_open = p.pond_open(next);
-    let was_kept = p.kept();
+    let was_kept = p.has_progress();
     let stars = stars_for(skate.score, pond(number).marks);
     let had = p.stars_for(number);
     if stars > had {
