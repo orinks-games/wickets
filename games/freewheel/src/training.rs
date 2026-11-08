@@ -59,13 +59,14 @@ pub fn page(ctx: &Ctx<Parlor>, n: u32) -> String {
     let left = k(ParlorAction::Left);
     let right = k(ParlorAction::Right);
     let p = k(ParlorAction::Primary);
+    let status = sentence_start(&k(ParlorAction::Status));
     match n {
         1 => format!(
-            "Lesson 1 of {LESSONS}: pedal and coast. Hold {up} to pedal, and the chain whirrs. Let go to coast, and the freewheel ticks, faster the faster you go. Pedal up to {}, then coast for 2 seconds.",
+            "Lesson 1 of {LESSONS}: pedal and coast. Hold {up} to pedal, and the chain whirrs. Let go to coast, and the freewheel ticks, faster the faster you go. {status} reports your speed. Pedal up to {}. The lesson tells you when to let go, then coast for 2 seconds.",
             parlor_core::units::per_hour(20.0)
         ),
         2 => format!(
-            "Lesson 2 of {LESSONS}: brake. Hold {down} to brake. The brakes build over a moment, so start early. Pedal up to {}, then brake to a stop.",
+            "Lesson 2 of {LESSONS}: brake. Hold {down} to brake. The brakes build over a moment, so start early. Hold {up} to pedal up to {}. {status} reports your speed. Wait for the instruction to brake, then release {up} and hold {down} until you stop.",
             parlor_core::units::per_hour(BRAKE_FROM * 3.6)
         ),
         3 => format!(
