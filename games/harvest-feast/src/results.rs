@@ -135,6 +135,19 @@ pub fn score(
     hints: u32,
     ctx: &mut Ctx<Parlor>,
 ) -> Served {
+    score_paced(mode, outcome, by_ear, hints, false, ctx)
+}
+
+/// Scores using the pace captured when cooking began, not a changed setting.
+pub fn score_paced(
+    mode: Mode,
+    outcome: Outcome,
+    by_ear: bool,
+    hints: u32,
+    relaxed: bool,
+    ctx: &mut Ctx<Parlor>,
+) -> Served {
+    let relaxed = relaxed && matches!(mode, Mode::Course(_));
     let o = &outcome;
     let passed = o.passed();
     let family = match &mode {
@@ -195,7 +208,11 @@ pub fn score(
     }
     match &mode {
         Mode::Course(n) => {
-            let r = Records::record(ctx, ID, &progress::course_board(*n), points);
+            if relaxed {
+                summary
+                    .push_str(" Relaxed pace. This score is kept separately from standard pace.");
+            }
+            let r = Records::record(ctx, ID, &progress::paced_course_board(*n, relaxed), points);
             summary.push_str(&format!(" {}", record_line(r, &format!("course {n}"))));
             let opened = passed && !progress.served(*n);
             progress.earn(*n, o.stars);
