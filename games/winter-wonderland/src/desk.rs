@@ -39,7 +39,6 @@ pub fn wish_words(item: &str) -> &'static str {
         "glass ornaments" => "shiny glass baubles to hang in the window",
         "a set of mugs" => "new mugs, because Dad broke ours",
         "bells" => "bells to wear when I dance",
-        "sleigh bells" => "sleigh bells for my sledge",
         "a bell for the bike" => "a bell for my bike, so people hear me coming",
         "jingle bell earrings" => "earrings for Mum that jingle when she laughs",
         "chocolates in foil" => "chocolates in shiny paper",
