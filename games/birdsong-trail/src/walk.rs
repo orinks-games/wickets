@@ -4,7 +4,7 @@
 use std::collections::HashSet;
 
 use hearken::text::{end_sentence, sentence_start};
-use hearken::{Bus, Ctx, InputEvent, Key, Sound, State, UiSound, Vec3};
+use hearken::{Bus, Ctx, InputEvent, Key, Sound, State, Vec3};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::{challenges, Challenge, Pages, Parlor, ParlorAction, Period, Season};
 
@@ -669,22 +669,6 @@ impl WalkScreen {
     }
 }
 
-/// Keys a player presses for their screen reader or as a modifier, which
-/// the walk leaves alone.
-pub fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 /// The results menu after a walk.
 pub fn after_walk(mode: Mode, summary: String, pages: Vec<String>) -> Results {
     let again_help = match mode {
@@ -862,15 +846,7 @@ impl State<Parlor> for WalkScreen {
                 Vec::new()
             }
             Some(ParlorAction::Secondary) => Vec::new(),
-            None => {
-                if let InputEvent::KeyDown { key, .. } = event {
-                    if !is_quiet_key(*key) && *key != Key::Escape {
-                        ctx.play_ui(UiSound::Error);
-                        ctx.say("Not a trail key. F1 lists the controls.");
-                    }
-                }
-                Vec::new()
-            }
+            None => Vec::new(),
         };
         self.update_listener(ctx);
         self.voice(ctx, evs);

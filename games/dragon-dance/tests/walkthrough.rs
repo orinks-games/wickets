@@ -241,11 +241,11 @@ fn a_stray_rear_says_there_is_no_gong() {
 }
 
 #[test]
-fn a_key_with_no_job_says_so() {
+fn a_key_with_no_job_stays_silent() {
     let mut h = dance(Mode::Street(1));
     h.clear();
     h.press(Key::Q);
-    assert_eq!(h.spoken(), ["Not a key here. F1 lists them."]);
+    assert!(h.spoken().is_empty(), "{:?}", h.spoken());
 }
 
 #[test]

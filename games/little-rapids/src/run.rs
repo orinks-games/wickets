@@ -890,11 +890,6 @@ impl State<Parlor> for PlayPage {
         ) || ctx.action_for(event) == Some(ParlorAction::Repeat);
         if passes {
             self.inner.handle_input(ctx, event);
-        } else if event.pressed().is_some() {
-            ctx.say(format!(
-                "The stream waits. Enter goes on, {} hears it again.",
-                ctx.control_name(ParlorAction::Repeat)
-            ));
         }
     }
 
@@ -903,7 +898,7 @@ impl State<Parlor> for PlayPage {
     }
 
     fn help(&self, ctx: &Ctx<Parlor>) -> String {
-        format!("The stream waits while you read. {}", self.inner.help(ctx))
+        self.inner.help(ctx)
     }
 }
 

@@ -442,22 +442,6 @@ impl Signal {
     }
 }
 
-/// Keys a player presses for their screen reader or as a modifier, which
-/// the box leaves alone.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 /// The one-line headline of a night shift, the results menu's title.
 pub fn result_summary(shift: &Shift) -> String {
     format!(
@@ -653,14 +637,7 @@ impl State<Parlor> for Signal {
             }
             Some(ParlorAction::Repeat) => self.repeat(ctx),
             Some(ParlorAction::Hint) => self.hint(ctx),
-            None => {
-                if let InputEvent::KeyDown { key, .. } = event {
-                    if !is_quiet_key(*key) {
-                        ctx.play_ui(UiSound::Error);
-                        ctx.say("Not a signal box key. F1 lists the controls.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 

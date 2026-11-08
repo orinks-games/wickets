@@ -1030,14 +1030,7 @@ impl State<Parlor> for OutingScreen {
                 ctx.say(text);
                 return;
             }
-            None => {
-                if let InputEvent::KeyDown { text: Some(c), .. } = event {
-                    if c.is_alphanumeric() {
-                        ctx.say("Not a key here. F1 lists them.");
-                    }
-                }
-                return;
-            }
+            None => return,
         };
         self.voice(ctx, evs);
     }

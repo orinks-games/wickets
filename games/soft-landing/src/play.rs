@@ -657,22 +657,6 @@ impl Descent {
     }
 }
 
-/// Keys a player presses for their screen reader or as a modifier, which
-/// the lander leaves alone.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 /// "1 minute 5 seconds", "40 seconds".
 pub fn time_words(secs: f64) -> String {
     let total = secs.round().max(0.0) as u32;
@@ -934,14 +918,7 @@ impl State<Parlor> for Descent {
             }
             Some(ParlorAction::Repeat) => self.repeat(ctx),
             Some(ParlorAction::Hint) => self.hint(ctx),
-            None => {
-                if let InputEvent::KeyDown { key, .. } = event {
-                    if !is_quiet_key(*key) {
-                        ctx.play_ui(UiSound::Error);
-                        ctx.say("Not a lander key. F1 lists the controls.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 

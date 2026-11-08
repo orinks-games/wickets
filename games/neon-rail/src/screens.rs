@@ -662,7 +662,7 @@ impl State<Parlor> for RunScreen {
                 Key::F => run.fire(),
                 Key::X => run.slowdown(),
                 Key::P => run.priority_override(),
-                _ => ctx.say("Not a run control. F1 lists them."),
+                _ => {}
             },
         }
         self.place_listener(ctx);

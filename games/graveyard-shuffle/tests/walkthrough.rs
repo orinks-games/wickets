@@ -331,11 +331,11 @@ fn repeat_and_hint_name_the_calls() {
 }
 
 #[test]
-fn an_unknown_key_says_so() {
+fn an_unknown_key_stays_silent() {
     let (mut h, _) = floor(Mode::Set(1));
     h.clear();
     h.press(Key::Q);
-    assert_eq!(h.spoken(), ["Not a dance key. F1 lists the controls."]);
+    assert!(h.spoken().is_empty(), "{:?}", h.spoken());
 }
 
 #[test]

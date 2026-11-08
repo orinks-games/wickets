@@ -676,22 +676,6 @@ fn hints_words(n: u32) -> String {
     }
 }
 
-/// Keys a player presses for their screen reader or as a modifier, which
-/// the dial leaves alone.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 /// The one-line headline of a safe's results, the results menu's title.
 pub fn result_summary(run: &Run, outcome: Outcome) -> String {
     let name = run.spec.name;
@@ -955,18 +939,7 @@ impl State<Parlor> for Crack {
                 ctx.say(text);
                 return;
             }
-            None => {
-                if let InputEvent::KeyDown {
-                    key, repeat: false, ..
-                } = event
-                {
-                    if !is_quiet_key(*key) {
-                        sound::play(ctx, sound::NOPE);
-                        ctx.say("Nothing happens. F1 lists the controls.");
-                    }
-                }
-                return;
-            }
+            None => return,
         };
         self.voice(ctx, evs);
     }

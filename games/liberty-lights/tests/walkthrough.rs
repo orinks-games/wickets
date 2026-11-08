@@ -615,7 +615,7 @@ fn repeat_status_and_help_speak_for_each_phase() {
     assert!(last(&h).contains("Every firework in this level goes up in the center."));
     h.clear();
     h.press(Key::Q);
-    assert!(last(&h).starts_with("Not a key here."));
+    assert!(h.spoken().is_empty(), "{:?}", h.spoken());
     listen(&mut h);
     h.press(Key::Space);
     h.clear();

@@ -824,21 +824,6 @@ pub fn results(
     })
 }
 
-/// Keys a player presses for their screen reader or as a modifier.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 impl State<Parlor> for DanceScreen {
     fn visuals(&self, ctx: &Ctx<Parlor>) -> hearken::visuals::Scene {
         self.visual_scene(ctx)
@@ -968,17 +953,7 @@ impl State<Parlor> for DanceScreen {
                 let text = self.dragon_line();
                 ctx.say(text);
             }
-            None => {
-                if let InputEvent::KeyDown {
-                    key, repeat: false, ..
-                } = event
-                {
-                    if !is_quiet_key(*key) {
-                        sound::play(ctx, sound::NOPE);
-                        ctx.say("Not a key here. F1 lists them.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 

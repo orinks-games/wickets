@@ -190,24 +190,6 @@ impl Keys {
     }
 }
 
-/// Keys a screen reader or the system uses alone: pressing them says
-/// nothing, so they never talk over the game.
-fn quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::F1
-            | Key::F2
-            | Key::Other(_)
-    )
-}
-
 /// The dive: the sub, the sonar and the sea.
 pub struct DiveScreen {
     exp: Option<Expedition>,
@@ -728,14 +710,6 @@ impl State<Parlor> for DiveScreen {
             return;
         }
         let Some(action) = ctx.action_for(event) else {
-            if let Some(key) = event.pressed() {
-                if !quiet_key(key) {
-                    ctx.say(format!(
-                        "Not a dive key. {} pings, F1 lists keys.",
-                        sentence_start(&ctx.control_name(ParlorAction::Primary))
-                    ));
-                }
-            }
             return;
         };
         match action {

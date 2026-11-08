@@ -3,7 +3,7 @@
 //! calling once, and you count each flock.
 
 use hearken::text::sentence_start;
-use hearken::{Ctx, InputEvent, Key, State, UiSound, Vec3};
+use hearken::{Ctx, InputEvent, Key, State, Vec3};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::{challenges, Challenge, Pages, Parlor, ParlorAction, Period, Records};
 
@@ -11,7 +11,7 @@ use crate::birds::Note;
 use crate::challenge::{self, CHALLENGES_NAME};
 use crate::guide::{self, Guide};
 use crate::rules::{best_possible, run_seed, Count, CountEv, CountPhase};
-use crate::walk::{is_quiet_key, END_PAUSE};
+use crate::walk::END_PAUSE;
 use crate::{birds::Kind, sound, HELP, ID, TITLE_NAME};
 
 /// The count screen's `State::name`.
@@ -388,15 +388,7 @@ impl State<Parlor> for CountScreen {
                 self.say(ctx, "Listen, and count the calls.");
                 Vec::new()
             }
-            None => {
-                if let InputEvent::KeyDown { key, .. } = event {
-                    if !is_quiet_key(*key) && *key != Key::Escape {
-                        ctx.play_ui(UiSound::Error);
-                        ctx.say("Not a count key. F1 lists the controls.");
-                    }
-                }
-                Vec::new()
-            }
+            None => Vec::new(),
         };
         self.voice(ctx, evs);
     }

@@ -3,7 +3,7 @@
 use std::collections::HashSet;
 
 use hearken::text::sentence_start;
-use hearken::{Ctx, InputEvent, Key, Sound, State, UiSound, Vec3};
+use hearken::{Ctx, InputEvent, Key, Sound, State, Vec3};
 use parlor_core::challenges::today;
 use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::{Challenge, Pages, Parlor, ParlorAction, Period, Rng, ScoreResult, StatusKey};
@@ -698,22 +698,6 @@ impl Floor {
     }
 }
 
-/// Keys a player presses for their screen reader or as a modifier, which
-/// the floor leaves alone.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 fn score_words(result: ScoreResult, score: u32) -> String {
     match result {
         ScoreResult::First => format!("{}, your first score here.", points_words(score)),
@@ -970,14 +954,7 @@ impl State<Parlor> for Floor {
                     self.dance(ctx, step);
                 }
             }
-            None => {
-                if let InputEvent::KeyDown { key, .. } = event {
-                    if !is_quiet_key(*key) {
-                        ctx.play_ui(UiSound::Error);
-                        ctx.say("Not a dance key. F1 lists the controls.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 

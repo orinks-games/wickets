@@ -889,21 +889,6 @@ impl Counter {
     }
 }
 
-/// Keys a player presses for their screen reader or as a modifier.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 /// The results after an afternoon or an evening.
 pub fn after_sitting(mode: Mode, summary: String, pages: Vec<String>) -> Results {
     let help = match mode {
@@ -1027,17 +1012,7 @@ impl State<Parlor> for Counter {
                 }
             }
             Some(ParlorAction::Hint) => self.hint(ctx),
-            None => {
-                if let InputEvent::KeyDown {
-                    key, repeat: false, ..
-                } = event
-                {
-                    if !is_quiet_key(*key) {
-                        sound::play(ctx, sound::NOPE);
-                        ctx.say("Nothing happens. F1 lists the controls.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 

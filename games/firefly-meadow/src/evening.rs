@@ -792,8 +792,6 @@ impl State<Parlor> for EveningScreen {
                 {
                     if !is_quiet_key(*key) {
                         self.confirm_home = false;
-                        sound::play(ctx, sound::NOTHING);
-                        ctx.say("Nothing happens. F1 lists the controls.");
                     }
                 }
             }
