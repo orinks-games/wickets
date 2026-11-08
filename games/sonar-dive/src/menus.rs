@@ -54,7 +54,7 @@ impl SoundCheck {
     pub fn new() -> SoundCheck {
         SoundCheck {
             menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down move through the cues, Enter plays one and names it, Escape goes back.",
+                "Up and Down move through the cues, Enter plays one, Escape goes back.",
             ),
             preview: Sound::NONE,
             demo: Vec::new(),
@@ -119,9 +119,8 @@ impl Menu for SoundCheck {
         }
         self.demo_in -= dt;
         if self.demo_in <= 0.0 {
-            let (wait, pos, text) = self.demo.remove(0);
+            let (wait, pos, _text) = self.demo.remove(0);
             ctx.audio.play_at(cues::ECHO_WRECK, pos, Bus::EFFECTS);
-            ctx.say(text);
             self.demo_in = wait;
         }
     }
@@ -141,7 +140,7 @@ impl Menu for SoundCheck {
                     })
                     .collect();
                 s.demo_in = 0.0;
-                ctx.say("Listen: the same echo from five directions.");
+                ctx.stop_speech();
             },
         )
         .select_sound(None)
@@ -174,7 +173,7 @@ impl Menu for SoundCheck {
                                 .play_music(Some(cue.key), cue.key == cues::MUSIC_TITLE);
                         }
                     }
-                    ctx.say(format!("{}: {}", cue.name, cue.meaning));
+                    ctx.stop_speech();
                 })
                 .select_sound(None)
                 .help(cue.meaning),

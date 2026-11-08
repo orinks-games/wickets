@@ -4,7 +4,7 @@ use hearken::menu::{Menu, MenuCore, MenuItem};
 use hearken::{Bus, Ctx, Sound};
 use parlor_core::Parlor;
 
-use crate::rules::{bell_words, CATHEDRAL, VILLAGE};
+use crate::rules::{bell_words, VILLAGE};
 use crate::sound;
 
 pub struct SoundCheck {
@@ -17,9 +17,8 @@ pub struct SoundCheck {
 impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
-            menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
-            ),
+            menu: MenuCore::new("Sound check")
+                .with_intro_help("Up and Down choose a sound, Enter plays it, Escape goes back."),
             playing: Vec::new(),
         }
     }
@@ -80,12 +79,11 @@ impl Menu for SoundCheck {
         let mut items: Vec<MenuItem<Self, Parlor>> = Vec::new();
         for b in 1..=VILLAGE.bells {
             let words = bell_words(b, VILLAGE.bells);
-            let meaning = format!("{words}. Up and Down pick it, and it rings with its name.");
             items.push(
                 MenuItem::new(words, move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.stop_speech();
                     let a = sound::play(ctx, sound::bell(b));
                     s.hear(ctx, &[a]);
-                    ctx.say(meaning.clone());
                 })
                 .select_sound(None)
                 .help("One of the six village bells, rung alone."),
@@ -93,13 +91,10 @@ impl Menu for SoundCheck {
         }
         items.push(
             MenuItem::new("Cathedral bells", |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                ctx.stop_speech();
                 let a = sound::play(ctx, sound::bell(7));
                 let b = sound::play(ctx, sound::bell(8));
                 s.hear(ctx, &[a, b]);
-                ctx.say(format!(
-                    "Bells 7 and 8, below the village tenor. The monthly cathedral peal rings all {} bells, and its tenor is bell 8.",
-                    CATHEDRAL.bells
-                ));
             })
             .select_sound(None)
             .help("The two deepest bells, which only the cathedral peal uses."),
@@ -109,17 +104,17 @@ impl Menu for SoundCheck {
                 MenuItem::new(
                     label(meaning),
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        ctx.stop_speech();
                         let a = if key.contains("/music/") || key.contains("/ambience/") {
                             ctx.audio.play(key, Bus::MUSIC)
                         } else {
                             sound::play(ctx, key)
                         };
                         s.hear(ctx, &[a]);
-                        ctx.say(meaning);
                     },
                 )
                 .select_sound(None)
-                .help("Enter plays it and says what it means."),
+                .help("Enter plays it."),
             );
         }
         items.push(

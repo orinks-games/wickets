@@ -7,7 +7,7 @@ use parlor_core::Parlor;
 
 use crate::birds::{self, Note, Voice};
 use crate::sound::{self, Tune};
-use crate::trails::{Ground, Trail};
+use crate::trails::Trail;
 
 /// The sound check's `State::name`.
 pub const SOUNDS_NAME: &str = "birdsong_trail_sounds";
@@ -81,13 +81,6 @@ pub fn rows() -> Vec<Row> {
             bus: Bus::EFFECTS,
         });
     }
-    for ground in Ground::ALL {
-        out.push(row(
-            format!("Step, {}", ground.slug()),
-            format!("Step, {}: {}.", ground.slug(), ground.words()),
-            sound::step_key(ground),
-        ));
-    }
     out.push(row(
         "Turn",
         "Turn: a soft rustle as you turn to face a new way.",
@@ -151,9 +144,8 @@ pub struct SoundCheck {
 impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
-            menu: MenuCore::new(labels::SOUND_CHECK).with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
-            ),
+            menu: MenuCore::new(labels::SOUND_CHECK)
+                .with_intro_help("Up and Down choose a sound, Enter plays it, Escape goes back."),
             tune: Tune::new(),
         }
     }
@@ -204,18 +196,18 @@ impl Menu for SoundCheck {
                 .unwrap_or_else(|| r.meaning.clone());
             let Row {
                 label,
-                meaning,
+                meaning: _,
                 keys,
                 bus,
             } = r;
             items.push(
                 MenuItem::new(label, move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.stop_speech();
                     if keys.len() == 1 && bus != Bus::EFFECTS {
                         s.tune.one(ctx, &keys[0].0, bus);
                     } else {
                         s.tune.start(ctx, keys.clone());
                     }
-                    ctx.say(meaning.clone());
                 })
                 .select_sound(None)
                 .help(help),
@@ -223,6 +215,7 @@ impl Menu for SoundCheck {
         }
         items.push(
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                ctx.stop_speech();
                 ctx.pop()
             })
             .help("Return to the Birdsong Trail title."),

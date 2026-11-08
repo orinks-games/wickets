@@ -451,7 +451,7 @@ impl SoundCheck {
     pub fn new() -> SoundCheck {
         SoundCheck {
             menu: MenuCore::new(labels::SOUND_CHECK).with_intro_help(
-                "Up and Down move through the sounds you need in play. Enter plays the one you are on and says what it means. Escape goes back.",
+                "Up and Down move through the sounds you need in play. Enter plays the selected sound. Escape goes back.",
             ),
             preview: Preview::None,
         }
@@ -469,14 +469,11 @@ impl SoundCheck {
         let entry = &SOUND_CHECK[index];
         match entry.play {
             Play::Once => {
-                ctx.say(format!("{}. {}", entry.name, entry.meaning));
+                ctx.stop_speech();
                 ctx.audio.play(entry.key, Bus::EFFECTS);
             }
             Play::Sides => {
-                ctx.say(format!(
-                    "{}. {} From your left, then your right.",
-                    entry.name, entry.meaning
-                ));
+                ctx.stop_speech();
                 ctx.audio
                     .play_at(entry.key, Vec3::new(-4.0, 1.0, 0.0), Bus::EFFECTS);
                 self.preview = Preview::Sides {
@@ -485,7 +482,7 @@ impl SoundCheck {
                 };
             }
             Play::Loop => {
-                ctx.say(format!("{}. {}", entry.name, entry.meaning));
+                ctx.stop_speech();
                 let sound =
                     ctx.audio
                         .start_loop(entry.key, Some(Vec3::new(0.0, 2.0, 0.0)), Bus::EFFECTS);
@@ -495,7 +492,7 @@ impl SoundCheck {
                 };
             }
             Play::Music => {
-                ctx.say(format!("{}. {}", entry.name, entry.meaning));
+                ctx.stop_speech();
                 let sound = ctx.audio.start_loop(entry.key, None, Bus::MUSIC);
                 self.preview = Preview::Held {
                     sound,

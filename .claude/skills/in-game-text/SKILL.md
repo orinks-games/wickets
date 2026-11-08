@@ -122,7 +122,9 @@ help.md:
   `## The night guard`, `## Scoring and best times`. Not `## Misc` or `## Notes`.
 - Each section stands alone. Repeat a key or term rather than point elsewhere.
 - Define every game word on first use in its section: `That is a strike.`
-- Describe each sound in plain words a listener can match: `a hollow metal clang`, `a bright double chime`.
+- Explain goals, rules, timing, scoring and keyboard/controller controls. Name a gameplay cue when needed to explain the action or timing, but do not describe its timbre or reproduce sound-generation prose.
+- Sound Check is a list of necessary gameplay sounds that the player can select and play. Keep atmosphere, music samples and decorative sounds out of that list. Labels and playback are enough; do not add spoken descriptions or teaching features just to replace text removed from Help.
+- Keep interactive tutorials focused on a current task, its input and useful feedback. Preserve the guidance a player needs to practise; do not turn tutorials into sound catalogues.
 - End with `## Controls`. Short paragraphs; no tables, no nested lists, no bold for meaning.
 
 ## 5. Results and failure messages

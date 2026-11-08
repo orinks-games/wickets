@@ -43,7 +43,7 @@ pub fn tag(period: Period, season: Season) -> String {
 pub fn rule(period: Period) -> String {
     match period {
         Period::Daily => format!(
-            "Find {HUNT_STARS} stars, named one at a time. Each is worth 100 points, less 25 a hint, and 50 if the guide tone led you there."
+            "Find {HUNT_STARS} stars, named one at a time. Each is worth 100 points. Each hint costs 25 points; using the guide tone costs 50."
         ),
         Period::Weekly => format!(
             "Trace {WEEKLY_PATTERNS} constellations. 10 points a star and 100 a constellation, less 10 a hint."

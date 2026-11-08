@@ -40,6 +40,7 @@ impl SoundCheck {
     }
 
     fn stop(&mut self, ctx: &mut Ctx<Parlor>) {
+        ctx.stop_speech();
         if let Demo::Approach { sound, .. } = self.demo {
             ctx.audio.stop(sound, 80);
         }

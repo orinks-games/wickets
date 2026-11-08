@@ -405,7 +405,9 @@ impl ChallengePlan {
     /// A short tag for the challenge's row in the list.
     pub fn tag(&self) -> String {
         match (self.period, self.twist) {
-            (Period::Monthly, _) => "ten dishes on every station, with golden plates".to_string(),
+            (Period::Monthly, _) => {
+                "ten dishes across five stations, with golden plates".to_string()
+            }
             (Period::Weekly, Some(t)) => format!("three courses, with {}", t.name()),
             (_, Some(t)) => format!("one meal on four stations, with {}", t.name()),
             (_, None) => "one meal".to_string(),
@@ -431,7 +433,7 @@ impl ChallengePlan {
             Some(Twist::Butterfingers) => format!("Butterfingers: every fumble costs {BUTTERFINGERS_COST} instead of 5."),
         };
         let shape = match self.period {
-            Period::Daily => "One seeded meal on four stations.".to_string(),
+            Period::Daily => "One meal on four stations, the same for every player.".to_string(),
             Period::Weekly => "Three courses on three, four, then five stations, each faster. Each course needs a star for the next.".to_string(),
             Period::Monthly => "Ten dishes, two on every station, the second waiting for the first.".to_string(),
         };

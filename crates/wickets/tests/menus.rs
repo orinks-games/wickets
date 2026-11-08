@@ -68,6 +68,9 @@ fn unlock_everything(id: &str, h: &mut Headless<Parlor>) {
             story: true,
             all_gifts: true,
             all_nights: true,
+            stack: 5,
+            all_stacks: true,
+            ..Default::default()
         };
         progress.store(&mut h.app.ctx);
     }

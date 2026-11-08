@@ -303,6 +303,7 @@ fn seasonal_games_follow_the_calendar_from_today() {
             "Firefly Meadow",
             "Liberty Lights",
             "Nevermore Manor",
+            "Graveyard Shuffle",
         ]
     );
     // March: the winter games wrap round to the end.
@@ -315,6 +316,7 @@ fn seasonal_games_follow_the_calendar_from_today() {
             "Liberty Lights",
             "Nevermore Manor",
             "Harvest Feast",
+            "Snowfall Skate",
             "Winter Wonderland",
             "Dragon Dance",
             "Cupid's Quiver",
@@ -347,6 +349,10 @@ fn every_seasonal_game_has_a_holiday() {
         .chain(wickets::specials().into_iter().map(|(g, _)| g))
         .filter(|g| g.category == parlor_core::Category::Seasonal)
     {
-        assert!(wickets::days_to_holiday(&g, today) < 400, "{} has no holiday", g.name);
+        assert!(
+            wickets::days_to_holiday(&g, today) < 400,
+            "{} has no holiday",
+            g.name
+        );
     }
 }

@@ -41,13 +41,9 @@ impl Default for SoundCheck {
 
 fn firework_row(kind: Kind) -> MenuItem<SoundCheck, Parlor> {
     MenuItem::new(
-        format!(
-            "{}, key {}: {}",
-            sentence_start(kind.name()),
-            kind.digit(),
-            kind.describe()
-        ),
+        format!("{}, key {}", sentence_start(kind.name()), kind.digit()),
         move |s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
+            ctx.stop_speech();
             s.last_pos = Pos::Center;
             sound::launch(ctx, Launch::new(kind, Pos::Center, 0));
         },
@@ -56,6 +52,7 @@ fn firework_row(kind: Kind) -> MenuItem<SoundCheck, Parlor> {
     .silent_adjust()
     .adjustable(move |s: &mut SoundCheck, ctx: &mut Ctx<Parlor>, d: i32| {
         let pos = if d < 0 { Pos::Left } else { Pos::Right };
+        ctx.stop_speech();
         s.last_pos = pos;
         sound::launch(ctx, Launch::new(kind, pos, 0));
     })
@@ -67,6 +64,7 @@ fn firework_row(kind: Kind) -> MenuItem<SoundCheck, Parlor> {
 
 fn cue_row(label: &str, key: &'static str, bus: Bus, help: &str) -> MenuItem<SoundCheck, Parlor> {
     MenuItem::new(label, move |_s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
+        ctx.stop_speech();
         ctx.audio.play(key, bus);
     })
     .select_sound(None)
@@ -75,6 +73,7 @@ fn cue_row(label: &str, key: &'static str, bus: Bus, help: &str) -> MenuItem<Sou
 
 fn crowd_row(label: &str, accuracy: u32) -> MenuItem<SoundCheck, Parlor> {
     MenuItem::new(label, move |_s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
+        ctx.stop_speech();
         sound::react(ctx, accuracy);
     })
     .select_sound(None)
@@ -97,7 +96,8 @@ impl Menu for SoundCheck {
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
-        sound::night(ctx);
+        ctx.audio.set_bed(None);
+        ctx.audio.play_music(None, false);
         hearken::menu::menu_enter(self, ctx);
     }
 
@@ -108,13 +108,17 @@ impl Menu for SoundCheck {
         items.extend(Kind::ALL.into_iter().map(firework_row));
         items.push(
             MenuItem::new(
-                "Aim tick: what aiming left or right sounds like on its own",
-                |_s: &mut Self, ctx: &mut Ctx<Parlor>| sound::aim(ctx, Pos::Center),
+                "Aim tick",
+                |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.stop_speech();
+                    sound::aim(ctx, Pos::Center);
+                },
             )
             .select_sound(None)
             .silent_adjust()
             .adjustable(|s: &mut Self, ctx: &mut Ctx<Parlor>, d: i32| {
                 let pos = if d < 0 { Pos::Left } else { Pos::Right };
+                ctx.stop_speech();
                 s.last_pos = pos;
                 sound::aim(ctx, pos);
             })
@@ -126,7 +130,7 @@ impl Menu for SoundCheck {
             )),
         );
         items.push(cue_row(
-            "Launch thump: a firework leaving its mortar",
+            "Launch thump",
             sound::LAUNCH,
             Bus::EFFECTS,
             "Plays under every firework you launch.",
@@ -173,8 +177,9 @@ impl Menu for SoundCheck {
         ));
         items.push(
             MenuItem::new(
-                "Night fog: a boom heard through the fog",
+                "Night fog boom",
                 |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.stop_speech();
                     sound::fogged(ctx, Launch::new(Kind::Boom, Pos::Center, 0))
                 },
             )
@@ -182,6 +187,7 @@ impl Menu for SoundCheck {
             .silent_adjust()
             .adjustable(|s: &mut Self, ctx: &mut Ctx<Parlor>, d: i32| {
                 let pos = if d < 0 { Pos::Left } else { Pos::Right };
+                ctx.stop_speech();
                 s.last_pos = pos;
                 sound::fogged(ctx, Launch::new(Kind::Boom, pos, 0));
             })

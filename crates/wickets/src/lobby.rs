@@ -164,6 +164,53 @@ pub(crate) fn open_game(ctx: &mut Ctx<Parlor>, g: GameInfo) {
     (g.open)(ctx)
 }
 
+/// Said when a list offers a holiday special not yet played, but the
+/// internet date is not known now.
+pub const NEEDS_DATE: &str =
+    "New holiday specials need the date from the internet. Games you have played still open offline.";
+
+/// [`open_game`] from a launcher list, checking first that the game is
+/// still there: a list can be older than the date. Returns whether it
+/// opened; if not, it says why and the caller rebuilds its rows.
+pub(crate) fn open_listed(ctx: &mut Ctx<Parlor>, g: GameInfo) -> bool {
+    match crate::access(ctx, g.id) {
+        crate::Access::Open => {
+            open_game(ctx, g);
+            true
+        }
+        crate::Access::NeedsDate => {
+            crate::discovery_clock::request();
+            ctx.say(NEEDS_DATE);
+            false
+        }
+        crate::Access::Closed => {
+            ctx.say(format!("{} is back next season.", g.name));
+            false
+        }
+    }
+}
+
+/// The Seasonal games row that checks the internet date again, while it
+/// is not known.
+fn date_row(ctx: &Ctx<Parlor>) -> Option<MenuItem<GameList, Parlor>> {
+    use crate::discovery_clock::{status, Status};
+    if crate::discovery_date(ctx).is_some() {
+        return None;
+    }
+    let label = match status() {
+        Status::Checking => "Checking for holiday specials",
+        _ => "Check for holiday specials",
+    };
+    Some(
+        MenuItem::new(label, |s: &mut GameList, ctx: &mut Ctx<Parlor>| {
+            crate::discovery_clock::request();
+            s.asked = true;
+            ctx.say("Checking.");
+        })
+        .help(NEEDS_DATE),
+    )
+}
+
 /// The Back row that ends each of the launcher's lists: it does what
 /// Escape does there.
 pub(crate) fn back_row<S: Menu<Game = Parlor>>(help: &'static str) -> MenuItem<S, Parlor> {
@@ -294,7 +341,11 @@ impl Menu for Lobby {
             items.push(
                 MenuItem::new(
                     format!("Continue, {}", g.name),
-                    move |_s: &mut Self, ctx: &mut Ctx<Parlor>| open_game(ctx, g),
+                    move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        if !open_listed(ctx, g) {
+                            s.refresh(ctx, true);
+                        }
+                    },
                 )
                 .help(format!("Open {}, the last game you played.", g.name)),
             );
@@ -499,6 +550,11 @@ impl Menu for StoryGameList {
 pub struct GameList {
     category: Category,
     menu: MenuCore<Self, Parlor>,
+    /// The internet date's status when the rows were built, so the list
+    /// rebuilds when it changes.
+    seen: Option<crate::discovery_clock::Status>,
+    /// The player chose the check row and waits to hear how it went.
+    asked: bool,
 }
 
 impl GameList {
@@ -506,6 +562,8 @@ impl GameList {
         GameList {
             category,
             menu: MenuCore::new(category.label()),
+            seen: None,
+            asked: false,
         }
     }
 }
@@ -517,7 +575,59 @@ impl Menu for GameList {
         "games"
     }
 
-    menu_music!(music::lobby);
+    fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
+        if self.category == Category::Seasonal {
+            crate::discovery_clock::request();
+        }
+        parlor_core::menu_sounds::use_shared(ctx);
+        music::lobby(ctx);
+        hearken::menu::menu_enter(self, ctx);
+    }
+
+    fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
+        parlor_core::menu_sounds::use_shared(ctx);
+        music::lobby(ctx);
+        self.refresh(ctx, true);
+        self.announce(ctx);
+    }
+
+    fn resume_quiet(&mut self, ctx: &mut Ctx<Parlor>) {
+        parlor_core::menu_sounds::use_shared(ctx);
+        music::lobby(ctx);
+        self.refresh(ctx, true);
+    }
+
+    fn resume_with(&mut self, ctx: &mut Ctx<Parlor>, result: &str) {
+        parlor_core::menu_sounds::use_shared(ctx);
+        music::lobby(ctx);
+        self.refresh(ctx, true);
+        ctx.say(hearken::text::end_sentence(result));
+        let current = self.current_text(ctx);
+        ctx.say_queued(current);
+    }
+
+    /// Rebuilds the Seasonal games when the internet date arrives or
+    /// fails, and answers a check the player asked for.
+    fn update(&mut self, ctx: &mut Ctx<Parlor>, _dt: f64) {
+        use crate::discovery_clock::Status;
+        if self.category != Category::Seasonal || self.seen.is_none() {
+            return;
+        }
+        let now = crate::discovery_clock::status();
+        if self.seen == Some(now) {
+            return;
+        }
+        self.refresh(ctx, true);
+        if self.asked && now != Status::Checking {
+            self.asked = false;
+            ctx.say(match now {
+                Status::Ready(_) => "Holiday specials checked.",
+                _ => "No internet date. Try again later.",
+            });
+            let current = self.current_text(ctx);
+            ctx.say_queued(current);
+        }
+    }
 
     fn menu(&self) -> &MenuCore<Self, Parlor> {
         &self.menu
@@ -528,6 +638,9 @@ impl Menu for GameList {
     }
 
     fn build_items(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
+        let seasonal = self.category == Category::Seasonal;
+        self.seen = seasonal.then(crate::discovery_clock::status);
+        let date_row = if seasonal { date_row(ctx) } else { None };
         let mut games: Vec<GameInfo> = crate::listed(ctx)
             .into_iter()
             .filter(|g| g.category == self.category)
@@ -552,11 +665,14 @@ impl Menu for GameList {
                     ),
                     None => (g.name.to_string(), g.blurb.to_string()),
                 };
-                MenuItem::new(label, move |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                    open_game(ctx, g)
+                MenuItem::new(label, move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    if !open_listed(ctx, g) {
+                        s.refresh(ctx, true);
+                    }
                 })
                 .help(help)
             })
+            .chain(date_row)
             .chain([back_row("Return to the kinds of game.")])
             .collect()
     }

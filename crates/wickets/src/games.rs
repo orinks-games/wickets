@@ -74,13 +74,26 @@ pub struct Keeper {
     pub in_season: fn(Date) -> bool,
     /// Where it is listed out of season, once kept.
     pub home: Category,
-    /// Whether the player has kept it: something only its season allows,
-    /// such as beating its first night.
+    /// Whether the player has started playing it, or has older saved progress.
     pub kept: fn(&mut Ctx<Parlor>) -> bool,
     /// The blurb in season until it is kept, saying how to keep it.
     pub keep_blurb: &'static str,
     /// The blurb out of season, saying what still waits for the holiday.
     pub year_round_blurb: &'static str,
+}
+
+/// Days after a special's season when a new player can still discover its base game.
+/// This affects launcher visibility only, never a holiday event or finale's dates.
+pub const DISCOVERY_GRACE_DAYS: i64 = 14;
+
+impl Keeper {
+    /// Is the base game available for a first visit today? Looking back from
+    /// today handles winter ending in February, leap years and the turn of the year
+    /// without changing the game's own seasonal rules.
+    pub fn available(self, today: Date) -> bool {
+        (0..=DISCOVERY_GRACE_DAYS)
+            .any(|days| (self.in_season)(Date::from_days(today.days() - days)))
+    }
 }
 
 /// Every holiday special, with how it is kept.
@@ -154,21 +167,73 @@ pub fn in_season(date: Date) -> Vec<GameInfo> {
         .collect()
 }
 
-/// The holiday specials the lists show today. In season, each is in
-/// Seasonal games, with a word on how to keep it until it is kept. Out of
+/// The holiday specials the lists show today. During discovery, each is in
+/// Seasonal games, including a two-week grace period after the season. Out of
 /// season, a kept one is in its own category, with what still waits for
 /// its holiday.
 pub fn specials_listed(ctx: &mut Ctx<Parlor>) -> Vec<GameInfo> {
+    specials_listed_at(ctx, discovery_date(ctx))
+}
+
+/// The date that decides whether a special not yet played can be found:
+/// a pinned date (a test's, a tester's Test date, or a debug build's
+/// preview), else the internet date from [`crate::discovery_clock`]. `None`
+/// while that date is unknown: the computer's clock never stands in.
+pub fn discovery_date(ctx: &Ctx<Parlor>) -> Option<Date> {
+    challenges::pinned_today(ctx).or(match crate::discovery_clock::status() {
+        crate::discovery_clock::Status::Ready(date) => Some(date),
+        _ => None,
+    })
+}
+
+/// Whether a game can be opened from a launcher list now.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Access {
+    Open,
+    /// A special not yet played, while the internet date is unknown.
+    NeedsDate,
+    /// A special not yet played, outside its season and catch-up weeks.
+    Closed,
+}
+
+/// Checks a game again as it opens, since a list can be older than the
+/// date: a special the player has not played needs the internet date and
+/// its window. Every other game, and a kept special, opens.
+pub fn access(ctx: &mut Ctx<Parlor>, id: &str) -> Access {
+    let date = discovery_date(ctx);
+    access_at(ctx, id, date)
+}
+
+/// [`access`] on a given internet date, for tests.
+#[doc(hidden)]
+pub fn access_at(ctx: &mut Ctx<Parlor>, id: &str, network_date: Option<Date>) -> Access {
+    let Some(k) = keepers().into_iter().find(|k| k.game.id == id) else {
+        return Access::Open;
+    };
+    if (k.kept)(ctx) {
+        return Access::Open;
+    }
+    match network_date {
+        None => Access::NeedsDate,
+        Some(date) if k.available(date) => Access::Open,
+        Some(_) => Access::Closed,
+    }
+}
+
+/// Explicit date seam for deterministic offline/boundary tests. None means no
+/// current network date, not permission to fall back to the computer clock.
+#[doc(hidden)]
+pub fn specials_listed_at(ctx: &mut Ctx<Parlor>, network_date: Option<Date>) -> Vec<GameInfo> {
     let today = challenges::today(ctx);
     keepers()
         .into_iter()
         .filter_map(|k| {
             let kept = (k.kept)(ctx);
             let mut g = k.game;
-            if (k.in_season)(today) {
-                if !kept {
-                    g.blurb = k.keep_blurb;
-                }
+            if !kept && network_date.is_some_and(|date| k.available(date)) {
+                g.blurb = k.keep_blurb;
+                Some(g)
+            } else if kept && (k.in_season)(today) {
                 Some(g)
             } else if kept {
                 g.category = k.home;
@@ -182,7 +247,7 @@ pub fn specials_listed(ctx: &mut Ctx<Parlor>) -> Vec<GameInfo> {
 }
 
 /// Every game the lists show today: the collection, then the holiday
-/// specials in season or kept.
+/// specials during their discovery window or kept.
 pub fn listed(ctx: &mut Ctx<Parlor>) -> Vec<GameInfo> {
     let mut out = all();
     out.extend(specials_listed(ctx));

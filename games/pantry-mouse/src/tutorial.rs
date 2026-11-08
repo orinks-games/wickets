@@ -61,7 +61,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pantry: Live<Play>) -> Lesson {
 
     let freeze = pantry.step(
         format!(
-            "A cat prowls here, wearing its own sound where it is, and a short meow means it is 2 steps away. In a real run, a catch costs a whisker. {} freezes: you keep still for 3 seconds and the nearest cat loses track of you. Freeze now.",
+            "The cat's sound marks its position. A short meow means it is within 2 steps. In a real run, a catch costs a whisker. {} freezes: you keep still for 3 seconds and the nearest cat loses track of you. Freeze now.",
             sentence_start(&t)
         ),
         move |p: &Play, _| {

@@ -16,6 +16,14 @@ pub fn key() -> String {
 pub fn course_board(n: u32) -> String {
     format!("course {n}")
 }
+/// Relaxed courses never replace the original timing's records.
+pub fn paced_course_board(n: u32, relaxed: bool) -> String {
+    if relaxed {
+        format!("course {n} relaxed")
+    } else {
+        course_board(n)
+    }
+}
 /// The best second-helpings run.
 pub const HELPINGS_BOARD: &str = "second helpings";
 
@@ -26,6 +34,8 @@ pub struct Progress {
     pub stars: Vec<u32>,
     /// Whether the kitchen speaks when a dish needs you.
     pub callouts: bool,
+    /// Slower campaign courses with time to hear instructions. Fixed per meal.
+    pub relaxed: bool,
     /// The most second-helpings rounds served in one run.
     pub best_rounds: u32,
 }
@@ -35,6 +45,7 @@ impl Default for Progress {
         Progress {
             stars: Vec::new(),
             callouts: true,
+            relaxed: false,
             best_rounds: 0,
         }
     }

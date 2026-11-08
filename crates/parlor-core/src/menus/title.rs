@@ -112,7 +112,7 @@ pub trait TitleGame: Sized + 'static {
     }
     /// F1 on the Sound check row.
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear each sound you need in play, with its name and meaning.".to_string()
+        "Choose and play the sounds you need to recognise during the game.".to_string()
     }
 
     /// Whether this is the player's first visit, which starts the cursor on

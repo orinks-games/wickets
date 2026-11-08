@@ -6,7 +6,7 @@ Larkfield is an empty hamlet by a river, and you are its first farmer. Dig and s
 
 Larkfield is one lane. From left to right: the gate, the cottages, the green, the fields, the yard, the river and the woods. Left and Right walk the lane. Up goes into the place you are beside, and Down comes back out to the lane. Inside a place, Left and Right move between its spots, such as the hen house and the goat pen at the cottages. Each step tells you where you are.
 
-You hear from where you stand. Gravel underfoot means the lane, soft grass means inside a place, and soft earth means the fields. The river runs to your right until you reach it.
+Sounds come from their positions relative to where you stand. Sound check, on the title menu, lets you learn the footsteps, fishing cues, dangers and settlers' instruments.
 
 ## The fields
 
@@ -54,7 +54,7 @@ S says how many days of food are in the larder. Fish at the river, forage in the
 
 ## Fishing
 
-At the river's fishing spot, Space casts the line: a swish and a plop. Wait. A bite is a sharp tug and a little bell. Press Space at once to reel it in, or it gets away.
+At the river's fishing spot, Space casts the line. Wait for a bite, then press Space at once to reel it in before the fish gets away.
 
 ## The almanac and troubles
 
@@ -66,9 +66,9 @@ The pace in Settings sets how often all this happens. Gentle has few troubles, m
 
 At the steady and lively paces, your own hamlet has dangers. Each costs something if nobody deals with it, but what is lost can be won back. S and H put a danger first.
 
-A fire crackles, with a bell rung, at one of the buildings. Space there throws a bucket of water, and it takes several. Settlers on building jobs help. Left too long, it burns through, and the building makes nothing until Space there repairs it with 3 wood.
+A fire can start at one of the buildings. Space there throws a bucket of water, and it takes several. Settlers on building jobs help. Left too long, it burns through, and the building makes nothing until Space there repairs it with 3 wood.
 
-A fox yelps at the hen house, by the cottages. Space or Tab there chases it off. Be quick, or it takes a hen.
+A fox can reach the hen house, by the cottages. Space or Tab there chases it off. Be quick, or it takes a hen.
 
 After rain in spring and autumn, the river can rise. Space at the dock piles 2 stone along the bank. If it is not done by supper, the far row of the fields is washed out, and needs sowing again.
 
@@ -82,7 +82,7 @@ A year is four seasons of ten days: spring, summer, autumn and winter. Each seas
 
 ## The hamlet's tune
 
-The guitar under everything is you. Every settler plays an instrument in the hamlet's tune, by the order they arrived: the fiddle, the flute, the accordion, the harp, the cello and the clarinet. Each plays from wherever they are working, so you can hear who is where. A cheerful settler plays out. A glum one plays softly, and only now and then. The sound check on the title menu plays each instrument.
+Each settler has an instrument in the hamlet's tune, assigned in arrival order. It plays from their workplace and changes with their mood. Sound check, on the title menu, lets you learn each settler's instrument.
 
 ## Challenges
 

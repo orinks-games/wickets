@@ -61,6 +61,8 @@ agent-server = ["hearken/agent-server"]
 [dependencies]
 # Where the old-named data folder was, to move it (see main.rs).
 dirs = "6"
+# Network-confirmed dates for new seasonal discovery; rustls, no native TLS.
+ureq = { version = "=2.12.1", default-features = false, features = ["tls"] }
 serde.workspace = true
 # Hearken must be a direct dependency: build.rs reads Prism's link arguments
 # from it. `discord`: the "Playing Wicket's" status (see

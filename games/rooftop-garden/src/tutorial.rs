@@ -98,7 +98,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, plot: Live<RunScreen>) -> Lesson {
     .step(water)
     .step(tend)
     .outro(format!(
-        "A sparkle means ripe: {t} harvests. Harvest beside a different plant in bloom and the two may cross into new seeds. Enter sits on the bench to pass time faster. {} says what needs you; {h} points to the nearest job.",
+        "A sparkle means ripe: {t} harvests. Harvest beside a different plant in bloom or ripe and the two may cross into new seeds. Enter sits on the bench to pass time faster. {} says what needs you; {h} points to the nearest job.",
         sentence_start(&s)
     ))
 }

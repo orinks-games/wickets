@@ -18,19 +18,19 @@ Directions in speech use a clock face: 12 o'clock is straight ahead, 3 o'clock t
 
 Turn on Spoken call-outs in Settings, from the title or the pause menu, to hear each ping's four nearest echoes named, with distance and clock direction. The hint key always names the nearest treasure.
 
-## The echoes
+## What sonar finds
 
-A wreck is a hollow metal clang: a sunken ship with treasure in its hold. An empty wreck, one you have salvaged, is a dull thud.
+A wreck is a sunken ship with treasure in its hold. An empty wreck has already been salvaged.
 
-A treasure chest is a bright double chime.
+Treasure chests can be collected without stopping.
 
-A mine is a harsh buzzing ring.
+Mines damage your hull on contact.
 
-A rock is a short stony knock: an outcrop that will stop you. The rock wall at the edge of the dive site is a deep rumble.
+Rocks and the wall at the edge of the dive site block your path.
 
-A whale is a soft low hum. A current is a rushing hiss.
+Whales offer extra air. Currents push the sub.
 
-The galleon is a great gong, only in the monthly event. A glow pearl is a glassy rising chime, only in the glow dive.
+The galleon appears in the monthly challenge. Glow pearls appear in the glow dive.
 
 Sound check, on the title, plays each of these with its name, and a demonstration of the same echo from five places around you.
 
@@ -38,17 +38,17 @@ Sound check, on the title, plays each of these with its name, and a demonstratio
 
 Swim into a treasure chest to take it: its coins are aboard at once.
 
-A wreck holds more, but takes work. Stop within a few metres of it, at all stop, and hold still while the grab arm clanks inside. Salvage takes 3 seconds. Moving off, or being pushed by a current, interrupts it, and you start again.
+A wreck holds more, but takes work. Stop within a few metres of it, at all stop, and hold still while the grab arm salvages it. Salvage takes 3 seconds. Moving off, or being pushed by a current, interrupts it, and you start again.
 
 Treasure is worth more the deeper you go: a quarter more for every dive past the first.
 
 ## Dangers
 
-Mines tick within about 16 metres, faster as you close. Touching one costs a hull point. You start with 3, and losing them all ends the expedition. Surfacing repairs one.
+Mines warn you when you come within about 16 metres. Touching one costs a hull point. You start with 3, and losing them all ends the expedition. Surfacing repairs one.
 
 Rocks and the wall around the site scrape you and cost 3 seconds of air. Driving into them stops your engine: turn away and throttle up again. If a current pins you against rock, point away from it and throttle up. The engine keeps running while you pull clear.
 
-Currents push you while you are inside them, and a rushing sound plays until you are out. Fight them at full ahead, or let them carry you. You cannot salvage inside a current.
+Currents push you while you are inside them. Fight them at full ahead, or let them carry you. You cannot salvage inside a current.
 
 ## Air
 
@@ -88,16 +88,15 @@ The challenges are the same sea for every player, and a new one comes each day, 
 
 ## Special nights
 
-- Moon pearl dive, on every full moon night. The title has a row for it. It is an expedition from dive 1 on a sea made from that full moon's date, so every player dives the same sea that night. Each dive also hides one moon pearl, worth 150 coins on the first dive and more the deeper you go. Its echo is a glassy rising chime, and you swim into it to collect it, like a chest. The moon pearl dive keeps its own best haul. Once the full moon has set, Play again says so and takes you back to the title.
-- The whale road, on the spring and autumn equinoxes, from the day before to the day after. On every dive but the challenges, deep whale song carries now and then from far to the north, beyond the dive site. It is lower and longer than the friendly whale's call. It is only a landmark: there is nothing to find there and it changes nothing else. A ping stops it at once, and it never starts while a ping's echoes are on their way back. The first dive names it, and S and H mention it.
+- Moon pearl dive, on every full moon night. The title has a row for it. It is an expedition from dive 1 on a sea made from that full moon's date, so every player dives the same sea that night. Each dive also hides one moon pearl, worth 150 coins on the first dive and more the deeper you go. Swim into a moon pearl to collect it, like a chest. The moon pearl dive keeps its own best haul. Once the full moon has set, Play again says so and takes you back to the title.
 
-Sound check plays the glow pearl's echo, its pick up and the whale road too.
+Sound check includes the pearl cues.
 
 ## Controls
 
 These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
 
-- Left and Right arrows: turn while held. A soft click marks every 30 degrees, and your heading is spoken when you let go.
+- Left and Right arrows: turn while held. Your heading is spoken when you let go.
 - Up and Down arrows: move the engine telegraph one step: slow astern, all stop, slow ahead, half ahead, full ahead.
 - Space: send a sonar ping.
 - Tab: drop a marker buoy where you are.

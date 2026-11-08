@@ -15,7 +15,7 @@ impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
             menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down move through the game's sounds, Enter plays one and says what it means, Escape goes back.",
+                "Up and Down move through the game's sounds, Enter plays one, Escape goes back.",
             ),
         }
     }
@@ -58,43 +58,37 @@ impl Menu for SoundCheck {
                     .trim_end_matches('.')
                     .to_string();
                 MenuItem::new(label, move |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.stop_speech();
                     let bus = if key.contains("/music/") {
                         Bus::MUSIC
                     } else {
                         Bus::EFFECTS
                     };
                     ctx.audio.play(key, bus);
-                    ctx.say(meaning.clone());
                 })
                 .select_sound(None)
             })
             .collect();
         items.push(
             MenuItem::new("Left and right", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.stop_speech();
                 sound::play_at(ctx, sound::item(crate::rules::Item::Clock), -3.0, 0.0);
                 sound::play_at(ctx, sound::item(crate::rules::Item::Bell), 3.0, 0.0);
-                ctx.say("A clock ticks to your left, three steps west, and a bell rings to your right, three steps east. Things ahead are north of you. Things behind, to the south, sound duller.");
             })
             .select_sound(None)
             .help("A clock on your left and a bell on your right, to hear which way is west and east."),
         );
         items.push(
             MenuItem::new("Near and far", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                ctx.stop_speech();
                 sound::play_at(ctx, sound::item(crate::rules::Item::Crystal), 0.0, 5.0);
-                ctx.say("The crystal hums five steps ahead: faint. Things call out faster and louder as you get nearer.");
             })
             .select_sound(None)
             .help("A crystal five steps ahead, to hear how far off a thing sounds."),
         );
         items.push(
-            MenuItem::new("I lists what you carry", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                ctx.say("I is a key of this game's own, and Settings cannot change it. During a haunt it lists what you carry, with no sound.");
-            })
-            .select_sound(None)
-            .help("The one key of this game's own: I lists what you carry."),
-        );
-        items.push(
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                ctx.stop_speech();
                 ctx.pop()
             })
             .help(format!("Return to the {} title.", crate::NAME)),

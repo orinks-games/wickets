@@ -123,7 +123,7 @@ fn best_words(best: Option<u64>) -> String {
 /// The Leftovers pantry row's help.
 pub fn leftovers_help(best: Option<u64>) -> String {
     format!(
-        "Thanksgiving leftovers: the pantry run with 4 turkey scraps hidden among the crumbs, 50 points each. A scrap tears with a juicy chew. Open from the day before Thanksgiving to 2 days after.{}",
+        "Thanksgiving leftovers: the pantry run with 4 turkey scraps hidden among the crumbs, 50 points each. Open from the day before Thanksgiving to 2 days after.{}",
         best_words(best)
     )
 }
@@ -131,7 +131,7 @@ pub fn leftovers_help(best: Option<u64>) -> String {
 /// The Bin night row's help.
 pub fn bin_night_help(best: Option<u64>) -> String {
     format!(
-        "Bin night, the first Tuesday of the month: the bin is full before collection, and the pantry run has a cheese rind in every pantry, 100 points. It rings with a soft glassy chime. Open all day.{}",
+        "Bin night, the first Tuesday of the month: the bin is full before collection, and the pantry run has a cheese rind in every pantry, 100 points. Open all day.{}",
         best_words(best)
     )
 }

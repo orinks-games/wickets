@@ -43,7 +43,7 @@ pub fn controls_pages(ctx: &Ctx<Parlor>) -> Vec<String> {
     let k = keys(ctx);
     vec![
         format!(
-            "{} and {} shift your weight, opposite your lean. {} steps, only when balanced. {} says your lean; again for lives and score.",
+            "{} and {} shift your weight once per press, opposite your lean. Holding adds no further shift; release between presses. {} steps, only when balanced. {} says your lean; again for lives and score.",
             sentence_start(&k.left),
             k.right,
             sentence_start(&k.step),

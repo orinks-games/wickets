@@ -27,7 +27,7 @@ pub fn event(date: Date) -> Option<Happening> {
     calendar::is_day(HOLIDAY, date).then(|| {
         Happening::new(
             NAME,
-            "A golden-egg hunt at sunrise, golden eggs worth double, open today only.",
+            "A golden-egg hunt at sunrise, with golden eggs worth double. Open for Easter.",
         )
     })
 }

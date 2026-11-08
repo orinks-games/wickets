@@ -2,23 +2,23 @@
 
 ## About the game
 
-Hilltop night sky: stars chime, and brighter stars are louder. Move a listening point, find a constellation's stars, and trace them in order. Each one plays a tune into your star journal. No fail, no timer.
+Find stars in the night sky and trace each constellation in order to add it to your journal. Move a listening point across the sky to search. There is no time limit or way to lose.
 
 ## The listening point
 
-Left and Right sweep the listening point round the sky, one step of 5 degrees at a time. Up and Down raise and lower it, from the horizon to straight overhead. Each step makes a soft tick, a little higher in pitch the higher the point is.
+Left and Right sweep the listening point round the sky, one step of 5 degrees at a time. Up and Down raise and lower it, from the horizon to straight overhead.
 
 You start facing south, 40 degrees up. When you pass due north, east, south or west, the direction is spoken. S says where the point is, such as "Southwest, 40 degrees up".
 
 ## Hearing the stars
 
-Stars within about 30 degrees of the point twinkle now and then as soft chimes. A chime comes from the star's side: a star to the right of the point chimes on the right. A star above the point chimes a little higher in pitch, and a star below it a little lower. Brighter stars chime louder, and the very brightest, such as Sirius and Vega, ring with a fuller chime.
+You can hear stars within about 30 degrees of the listening point. Their sounds indicate direction, height and brightness. Sound check, on the title, lets you learn these cues.
 
-When the point rests on a star, its chime rings out and its name is spoken, such as "Betelgeuse, in Orion". A star that belongs to no pattern tonight is "a faint star". Faint stars are scattered differently each night.
+When the point rests on a star, its name is spoken, such as "Betelgeuse, in Orion". A star that belongs to no pattern tonight is "a faint star". Faint stars are scattered differently each night.
 
 ## Tracing a constellation
 
-Each constellation has its stars in an order, such as Orion: Betelgeuse, Bellatrix, Mintaka, Alnilam, Alnitak, Saiph, then Rigel. When the point rests on the star that is next to trace, you hear "next", such as "Bellatrix, next in Orion". Space traces it, with a chime that climbs as the trace goes on.
+Each constellation has its stars in an order, such as Orion: Betelgeuse, Bellatrix, Mintaka, Alnilam, Alnitak, Saiph, then Rigel. When the point rests on the star that is next to trace, you hear "next", such as "Bellatrix, next in Orion". Space traces it.
 
 Space on a star of the right constellation but out of order names the star that comes next. When the last star is traced, the constellation plays its own tune, and the first time, it goes into your star journal with its lore.
 
@@ -26,7 +26,7 @@ Space on a star of the right constellation but out of order names the star that 
 
 H names the next star to find and the way there in steps, such as "Bellatrix, next in Orion: 3 steps right, 1 step up". Hints finish a constellation you have begun, then point to ones not yet in your journal, then to the nearest.
 
-Tab turns the guide tone on or off. It is a soft pulse from the next star's side, higher in pitch when the star is above the point. It pulses faster as you get near.
+Tab turns the guide tone on or off. It guides you toward the next star, indicating its direction and how close you are.
 
 ## The sky and the calendar
 
@@ -36,17 +36,17 @@ Ursa Major, Ursa Minor, Cassiopeia, Cepheus and Draco circle the pole star and a
 
 ## New constellations
 
-You start with the brightest few: the Big Dipper's Ursa Major, Cassiopeia, and one or two of the season's own. When your journal holds 2 constellations, more rise, and more again at 5. They can rise in the middle of a night, with a soft rising sound and their names spoken. To fill the whole journal, come back in every season.
+You start with the brightest few: the Big Dipper's Ursa Major, Cassiopeia, and one or two of the season's own. When your journal holds 2 constellations, more rise, and more again at 5. They can rise in the middle of a night. Their names are spoken when they rise. To fill the whole journal, come back in every season.
 
 ## Wonders
 
 Each season hides a few wonders: the Orion Nebula and the Pleiades in winter, the Beehive cluster in spring, the Ring Nebula and the heart of the Milky Way in summer, and the Andromeda Galaxy and the Double Cluster in autumn. Mizar and Alcor, in the Big Dipper's handle, are up all year.
 
-A wonder makes no chime. When the point comes within about 2 steps, a soft shimmer sounds from its side. Rest on the soft glow and press Space to find it.
+A wonder can be detected when the listening point comes within about 2 steps. Rest the point on it and press Space to find it.
 
 ## The full moon
 
-On a full moon night, the moon rises low in the east and hums softly. Rest on it and press Space to greet it, and it goes into your journal by its old name, such as the Hunter's Moon in October. A second full moon in one month is a blue moon. Under a full moon the faint stars are fewer and quieter.
+On a full moon night, the moon rises low in the east. Rest on it and press Space to greet it, and it goes into your journal by its old name, such as the Hunter's Moon in October. A second full moon in one month is a blue moon. Under a full moon the faint stars are fewer and quieter.
 
 ## Meteor showers
 
@@ -56,7 +56,7 @@ On those nights the Meteor shower row on the title opens. Other nights it says l
 
 ## Making wishes
 
-During a meteor watch you lie still. A shooting star is a whoosh that sweeps across the sky from one side to the other. A fireball is a brighter, slower one. Press Space while it passes, or just after it fades, to make a wish. Tab tells the shower's story. Enter twice heads home, and your wishes are counted for that shower and year.
+During a meteor watch you lie still. Press Space while a shooting star passes, or just after it fades, to make a wish. Fireballs pass more slowly. Tab tells the shower's story. Enter twice heads home, and your wishes are counted for that shower and year.
 
 ## Heading home
 

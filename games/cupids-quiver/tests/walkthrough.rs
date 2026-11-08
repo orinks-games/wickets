@@ -558,12 +558,12 @@ fn the_sound_check_plays_each_sound_by_name() {
     let rows = rows_of(&h.app.top_lines());
     assert_eq!(rows[0], "Red heart");
     assert!(rows.contains(&"Sweetheart chord".to_string()));
-    assert!(rows.contains(&"Enter between rooftops".to_string()));
+    assert!(!rows.contains(&"Enter between rooftops".to_string()));
     h.press(Key::Home);
     h.clear();
     h.press(Key::Return);
     assert!(played(&h, sound::HUM));
-    assert!(spoke(&h, "Red heart: a soft paper hum, the lowest note."));
+    assert!(h.spoken().is_empty());
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), TITLE_NAME);
 }

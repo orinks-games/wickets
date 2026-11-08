@@ -49,7 +49,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let b = Rc::clone(&ball);
     let stand = Step::new(
         format!(
-            "You start on board 20, in line with the head pin. Straight at it often splits the pins, so strikes come from off centre. {} and {r} step one board. Step left to board {POCKET_STAND}.",
+            "You start on board 20, in line with the head pin. A ball aimed straight at the head pin often leaves a split. Aim from off centre for a better chance of a strike. {} and {r} step one board. Step left to board {POCKET_STAND}.",
             sentence_start(&l)
         ),
         move |ctx, a| {
@@ -86,7 +86,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
             sound::play_at(ctx, sound::AIM_TONE, target as f64);
             let line = format!("{}, board {target} at the pins.", sentence_start(&aim_words(ball.aim)));
             if target == POCKET_AT {
-                Reply::done(format!("{line} In the pocket, angled in."))
+                Reply::done(format!("{line} You are aimed into the pocket at an angle."))
             } else {
                 Reply::say(line)
             }
