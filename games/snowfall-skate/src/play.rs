@@ -97,6 +97,7 @@ pub fn autoplay_asked() -> bool {
 enum HintSound {
     Lantern(i32),
     Take,
+    Wrong,
     Drift,
     Thin,
     Partner,
@@ -152,6 +153,9 @@ pub struct SkateScreen {
     start_held: bool,
     /// Whether this is the 31st of December or the 1st of January.
     new_year: bool,
+    /// The line before this frame's events, so a drift says "Line lost"
+    /// only when there was one.
+    line_before: u32,
 }
 
 impl SkateScreen {
@@ -214,6 +218,7 @@ impl SkateScreen {
             last_lean: 0,
             at_bank: false,
             start_held: false,
+            line_before: 0,
             new_year: mode == Mode::Midnight || events::new_year(today),
         }
     }
@@ -407,6 +412,11 @@ impl SkateScreen {
         let mut at = HINT_GAP;
         self.delayed.push((at, HintSound::Take));
         at += HINT_GAP;
+        if self.pairs() {
+            lines.push("The second lit, the wrong one.".to_string());
+            self.delayed.push((at, HintSound::Wrong));
+            at += HINT_GAP;
+        }
         if self.skate.course.level.partner {
             lines.push("Your partner, ahead.".to_string());
             self.delayed.push((at, HintSound::Partner));
@@ -452,6 +462,9 @@ impl SkateScreen {
                 HintSound::Drift => {
                     let s = sound::play_at(ctx, sound::DRIFT, sound::lane_place(1));
                     ctx.audio.stop(s, 2000);
+                }
+                HintSound::Wrong => {
+                    sound::play(ctx, sound::WRONG);
                 }
                 HintSound::Thin => {
                     let s = sound::play_at(ctx, sound::THIN, sound::lane_place(1));
@@ -719,12 +732,22 @@ impl SkateScreen {
             Ev::Drifted { patch } => {
                 self.drop_patch(ctx, patch);
                 sound::play_at(ctx, sound::DRIFTED, sound::UNDER);
-                self.speak(ctx, "Drift. Line lost.");
+                let line = if self.line_before > 0 {
+                    "Drift. Line lost."
+                } else {
+                    "Drift."
+                };
+                self.speak(ctx, line);
             }
             Ev::Cracked { patch } => {
                 self.drop_patch(ctx, patch);
                 sound::play_at(ctx, sound::CRACK, sound::UNDER);
-                self.speak(ctx, "Crack! Line lost.");
+                let line = if self.line_before > 0 {
+                    "Crack! Line lost."
+                } else {
+                    "Crack!"
+                };
+                self.speak(ctx, line);
             }
             Ev::PatchClear { patch } => {
                 let kind = self.skate.course.patches[patch].kind;
@@ -784,7 +807,11 @@ impl SkateScreen {
             Spin::Landed(points) => {
                 sound::play(ctx, sound::SPIN_LAND);
                 ctx.audio.play(music::SWEEP, Bus::MUSIC);
-                self.speak(ctx, format!("Spin, {}.", points_words(points)));
+                if self.practice() {
+                    self.speak(ctx, "Spin landed.");
+                } else {
+                    self.speak(ctx, format!("Spin, {}.", points_words(points)));
+                }
             }
             Spin::Stride => {
                 sound::play_at(ctx, sound::STRIDE, sound::UNDER);
@@ -794,7 +821,12 @@ impl SkateScreen {
             }
             Spin::Wobble => {
                 sound::play(ctx, sound::WOBBLE);
-                self.speak(ctx, "Wobble. Line lost. Let go once the spin is ready.");
+                let line = if self.line_before > 0 {
+                    "Wobble. Line lost. Let go once the spin is ready."
+                } else {
+                    "Wobble. Let go once the spin is ready."
+                };
+                self.speak(ctx, line);
             }
             Spin::TooSoon => {
                 sound::play_at(ctx, sound::STRIDE, sound::UNDER);
@@ -1467,7 +1499,12 @@ impl State<Parlor> for SkateScreen {
             Some(ParlorAction::Left | ParlorAction::Right) => {}
             Some(ParlorAction::Up | ParlorAction::Down) if self.skate.started() => {
                 ctx.play_ui(UiSound::Error);
-                ctx.say("Left and Right lean. You glide forward on your own.");
+                let line = format!(
+                    "{} and {} lean. You glide forward on your own.",
+                    sentence_start(&Self::key(ctx, ParlorAction::Left)),
+                    Self::key(ctx, ParlorAction::Right)
+                );
+                ctx.say(line);
             }
             Some(_) => {
                 ctx.play_ui(UiSound::Error);
@@ -1544,6 +1581,7 @@ impl State<Parlor> for SkateScreen {
             sound::play_at(ctx, sound::CARVE, sound::UNDER);
         }
         self.last_lean = lean;
+        self.line_before = self.skate.line;
         let evs = self.skate.update(dt, lean);
         for ev in evs {
             self.on_skate(ctx, ev);

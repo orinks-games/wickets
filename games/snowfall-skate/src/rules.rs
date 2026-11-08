@@ -741,13 +741,13 @@ impl Skate {
             .count()
     }
 
-    /// Points a landed spin earns now: 2 on clear ice, up to 5 as the snow
+    /// Points a landed spin earns now: 3 on clear ice, up to 5 as the snow
     /// deepens.
     pub fn spin_points(&self) -> u32 {
         if !self.snows() {
             return 3;
         }
-        2 + ((CLEAR_FULL - self.clear).max(0.0) / 25.0).floor().min(3.0) as u32
+        3 + ((CLEAR_FULL - self.clear).max(0.0) / 34.0).floor().min(2.0) as u32
     }
 
     /// The main key goes down: a spin starts winding.

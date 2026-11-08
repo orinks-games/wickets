@@ -42,7 +42,10 @@ fn every_key_in_the_source_is_rendered() {
     let keys = keys_in_source();
     assert!(keys.len() > 30, "{keys:?}");
     // The soundtrack's medley is a track id, played live, not a file.
-    for key in keys.into_iter().filter(|k| k != snowfall_skate::soundtrack::MEDLEY) {
+    for key in keys
+        .into_iter()
+        .filter(|k| k != snowfall_skate::soundtrack::MEDLEY)
+    {
         assert!(has(&key), "no Ogg for {key}");
     }
 }

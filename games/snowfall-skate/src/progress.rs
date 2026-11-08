@@ -148,7 +148,8 @@ impl Progress {
 pub struct PondSaved {
     pub score: ScoreResult,
     pub stars: u32,
-    /// More stars than ever on this pond, if so.
+    /// More stars than ever on this pond, if so, and only when it had
+    /// some before: a first star is news enough.
     pub better: Option<u32>,
     /// The pond this one opened, if any.
     pub opened: Option<u32>,
@@ -165,10 +166,11 @@ pub fn save_pond(ctx: &mut Ctx<Parlor>, number: u32, skate: &Skate) -> PondSaved
     let was_open = p.pond_open(next);
     let was_kept = p.kept();
     let stars = stars_for(skate.score, pond(number).marks);
-    let better = (stars > p.stars_for(number)).then_some(stars);
-    if better.is_some() {
+    let had = p.stars_for(number);
+    if stars > had {
         p.stars.insert(number, stars);
     }
+    let better = (stars > had && had > 0).then_some(stars);
     p.add(&skate.tally);
     let opened = (in_range && !was_open && p.pond_open(next)).then_some(next);
     let next_open = (in_range && p.pond_open(next)).then_some(next);
