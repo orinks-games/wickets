@@ -1,6 +1,6 @@
 # Sung parts for Snowfall Skate
 
-These are the carol sections the game's brass band plays at the Frost Fair, and the new year's song, with their words, for recording sung tracks to lay over the band.
+These are the carol sections the game's medley plays, and the new year's song, with their words, for recording sung tracks to lay over the band.
 
 `tools/snowfall_skate_sounds.py` writes every file here from the same melodies the game plays, so the singing lines up with the band exactly. Run it again after changing a melody.
 
@@ -37,4 +37,4 @@ All are in G major.
 
 ## Where the recordings go
 
-Put the WAVs in `games/snowfall-skate/vocals/recorded/`, and say so on the pull request. The game then needs a small change to play them: a sung track joins the band's lead whenever that section plays in the band style (at the Frost Fair, and the new year's song at midnight). That change and the Ogg encoding are done in the game's repository once the recordings are in.
+Put the WAVs in `games/snowfall-skate/vocals/recorded/`, and say so on the pull request. The game then needs a small change to play them: a sung track joins the lead whenever that section plays, with the brass band at the Frost Fair, and with the waltz band on the ponds and at midnight. That change and the Ogg encoding are done in the game's repository once the recordings are in.
