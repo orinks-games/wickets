@@ -6,6 +6,8 @@ use parlor_core::{Pages, Parlor};
 
 use crate::challenge::{Plan, CHALLENGES_NAME};
 use crate::count_run::CountRun;
+use crate::desk::STACKS;
+use crate::desk_run::DeskRun;
 use crate::mode::Mode;
 use crate::night::{NightSpec, NIGHTS};
 use crate::sort_run::SortRun;
@@ -48,6 +50,40 @@ pub fn gift_sort(first: u32, won: bool, summary: String, pages: Vec<String>) -> 
         again(won),
         format!("Gift Sort again, from shift {first}."),
         move |ctx| ctx.replace(SortRun::new(Mode::Free, first)),
+    )
+}
+
+/// After a Wish Desk stack from the title.
+pub fn desk(level: u32, summary: String, pages: Vec<String>) -> Results {
+    let mut results = Results::new(summary, pages, Back::Title(TITLE_NAME));
+    if level < STACKS {
+        let next = level + 1;
+        results = results.next(
+            format!("Next stack: stack {next}"),
+            "More letters, and more boxes on the shelf.",
+            move |ctx| ctx.replace(DeskRun::new(Mode::Free, next)),
+        );
+    }
+    results.again(
+        labels::PLAY_AGAIN,
+        format!("Stack {level} again, with new letters."),
+        move |ctx| ctx.replace(DeskRun::new(Mode::Free, level)),
+    )
+}
+
+/// After Muddled post.
+pub fn muddled(summary: String, pages: Vec<String>) -> Results {
+    Results::new(summary, pages, Back::Title(TITLE_NAME)).again(
+        labels::PLAY_AGAIN,
+        "More letters from the youngest children.",
+        move |ctx| {
+            if crate::events::muddled(parlor_core::challenges::today(ctx)) {
+                ctx.replace(DeskRun::new(Mode::Muddled, 1))
+            } else {
+                let today = parlor_core::challenges::today(ctx);
+                ctx.say(crate::events::muddled_locked_line(today))
+            }
+        },
     )
 }
 

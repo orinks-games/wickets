@@ -7,7 +7,6 @@ use parlor_core::score::{DANGER, HURRY};
 use parlor_core::{Mood, Pages, Parlor, ParlorAction, Rng, Score};
 
 use crate::challenge::{self, Part};
-use crate::count_run::CountRun;
 use crate::gifts::{SendRefusal, Shift, ShiftState, SortEvent, Spot, SHIFTS};
 use crate::mode::{story_bridge, Mode};
 use crate::progress::{self, Progress};
@@ -445,15 +444,7 @@ impl SortRun {
                     self.summary()
                 )];
                 pages.extend(story_bridge(blizzard));
-                ctx.replace(Pages::new(pages).then(move |ctx| {
-                    ctx.replace(CountRun::new(
-                        Mode::Story {
-                            blizzard,
-                            gifts: score,
-                        },
-                        Mode::story_night(blizzard),
-                    ))
-                }));
+                ctx.replace(crate::desk_run::story_desk(blizzard, score, pages));
             }
             Mode::Story { blizzard, .. } => {
                 let board = if blizzard {
@@ -474,22 +465,19 @@ impl SortRun {
                 );
             }
             Mode::Challenge { plan, .. } if success && plan.part == Part::Double => {
-                let party = plan.night().spec.name;
                 let pages = vec![
                     format!(
                         "The last shift is sorted. {} Gift Sort score {score}.",
                         self.summary()
                     ),
-                    format!(
-                        "A week later, New Year's Eve on {party}. The band is waiting for its conductor. Your Gift Sort score comes with you."
-                    ),
+                    "Then a stack of letters at the Wish Desk. Your Gift Sort score comes with you.".to_string(),
                 ];
                 ctx.replace(Pages::new(pages).then(move |ctx| {
                     let mode = Mode::Challenge {
                         plan: plan.clone(),
                         gifts: score,
                     };
-                    ctx.replace(CountRun::with_night(mode, plan.night()));
+                    ctx.replace(crate::desk_run::DeskRun::new(mode, plan.stacks().0));
                 }));
             }
             Mode::Challenge { plan, .. } => {
@@ -511,7 +499,7 @@ impl SortRun {
                     results::challenge(&plan, summary, pages),
                 );
             }
-            Mode::Free | Mode::Practice => {
+            _ => {
                 let line = progress::record(ctx, progress::GIFT_BOARD, score);
                 let mut text = if success {
                     Progress::mark(ctx, |p| &mut p.all_gifts);

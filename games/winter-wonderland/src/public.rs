@@ -1,13 +1,18 @@
-// Winter Wonderland: Winter holidays: sort shaken gifts by their sound, then ring in midnight on the beat.
+// Winter Wonderland: Winter holidays: sort shaken gifts by their sound, then answer children's letters at the Wish Desk.
 //
 // Two parts and a story that plays both. Gift Sort ([`gifts`]): shake
 // each gift on the workshop conveyor, hear what is inside and send it to
-// whoever wished for it before it rides off the belt. Midnight Countdown
-// ([`night`]): answer the band's calls on the beat as bells, drums and
-// horns join in, all the way to midnight.
+// whoever wished for it before it rides off the belt. The Wish Desk
+// ([`desk`]): read each child's letter, find its gift on the shelf by
+// shaking, and wrap it, with no clock. Midnight Countdown ([`night`]), a
+// New Year's Eve rhythm game, keeps its own row.
 
 pub mod challenge;
 pub mod count_run;
+pub mod desk;
+pub mod desk_music;
+pub mod desk_run;
+pub mod events;
 pub mod gifts;
 pub mod mode;
 pub mod night;
@@ -26,6 +31,7 @@ use parlor_core::{Category, GameInfo, Parlor, Period, Rng};
 
 pub use challenge::{ChallengeHost, ChallengesMenu, Parties, Plan, CHALLENGES_NAME};
 pub use count_run::CountRun;
+pub use desk_run::DeskRun;
 pub use mode::Mode;
 pub use sort_run::SortRun;
 pub use soundcheck::SoundCheck;
@@ -45,10 +51,10 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Winter Wonderland",
     category: Category::Seasonal,
-    blurb: "Winter holidays: sort shaken gifts by their sound, then ring in midnight on the beat.",
+    blurb: "Winter holidays: sort shaken gifts by their sound, then answer children's letters at the Wish Desk.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
-    event: None,
+    event: Some(events::event),
     event_done: None,
     tutorial: crate::tutorial::lesson,
     settings: <title::Winter as parlor_core::menus::TitleGame>::settings,
