@@ -2,14 +2,14 @@
 
 ## About the game
 
-Fourth of July fireworks director. Each level plays a show, and you launch it back: the right firework, place and moment. Twenty levels, a freestyle mode for your own shows, and a grand finale once they are all cleared. A level clears at 60 or more out of 100.
+Direct a Fourth of July fireworks show. Listen to each level, then repeat its fireworks in the right places and at the right moments. Twenty levels, a freestyle mode for your own shows, and a grand finale once they are all cleared. A level clears at 60 or more out of 100.
 
-Title menu: Play starts your next uncleared level. Grand finale opens after level 20. Freestyle composes, saves, and replays your shows. Level select plays any of the twenty levels. Independence night opens on the Fourth of July. Challenges holds daily, weekly, and monthly. Practice room is an unscored launch range. Tutorial is a short walkthrough; Help is this guide; Sound check plays each show sound by name. Records reads back your best scores. Settings changes speech, volume and controls.
+Title menu: Play starts your next uncleared level. Grand finale opens after level 20. Freestyle composes, saves, and replays your shows. Level select plays any of the twenty levels. Independence night opens on the Fourth of July. Challenges holds daily, weekly, and monthly. Practice room is an unscored launch range. Tutorial is a short walkthrough; Help is this guide; Sound check lets you practise recognising the gameplay cues. Records reads back your best scores. Settings changes speech, volume and controls.
 
 ## A round
 
-1. Press Space, the main action, to hear the show. It starts with a count-in: three wooden ticks half a second apart, then a brighter tick called the go. The go is time zero.
-2. The fireworks go up. Two seconds after the last one, a fuse fizzes and you hear "Your turn".
+1. Press Space, the main action, to hear the show. It starts with a count-in: three count-in ticks half a second apart, then the go cue. The go is time zero.
+2. The fireworks go up. Two seconds after the last one, the game says "Your turn".
 3. Press Space again for your own count-in: the same three ticks and the go. Launch each firework at the moment it went up in the show, measured from the go.
 4. Press Enter when you are finished. The crowd reacts and you hear your score.
 
@@ -21,16 +21,16 @@ While you launch, Space, the main action, does whatever you have chosen, and Up 
 
 ## Fireworks
 
-- 1, boom: a deep bass thump that rolls away.
-- 2, crackle: a high scatter of tiny pops.
-- 3, whistle: a rising whistle that ends in a small pop.
-- 4, sparkle: a soft glassy shimmer.
+- 1: launch a boom.
+- 2: launch a crackle.
+- 3: launch a whistle.
+- 4: launch a sparkle.
 
 The number keys on the keypad work too.
 
 ## Left, center and right
 
-From level 11, fireworks also go up on the left or the right. Hold the Left arrow or A while you press a number to launch on the left; hold the Right arrow or D for the right. With neither held, the firework goes up in the center. Pressing Left or Right on its own plays a small tick on that side, so you can check where you are aiming.
+From level 11, fireworks also go up on the left or the right. Hold the Left arrow or A while you press a number to launch on the left; hold the Right arrow or D for the right. With neither held, the firework goes up in the center. Pressing Left or Right on its own plays the aim cue on that side, so you can check where you are aiming.
 
 ## Scoring
 
@@ -42,11 +42,9 @@ Each firework in the show is matched with whichever of your launches fits it bes
 
 Every firework too many or too few takes 20 points off. The total is your score out of 100. 60 or more clears the level.
 
-The crowd tells you how it went: a cheer for 80 or more, an "ooh" for 60 or more, an "aah" for 40 or more, and a confused murmur below that. The better the show, the louder they are.
-
 ## Combos and show points
 
-A firework matched almost perfectly, with the right kind and place and within 0.3 seconds, starts a combo, and each next firework in the show matched as well adds to it. Each step of a combo is worth bonus points: 50 for the second in a row, 100 for the third, and so on. Combo bonuses are paid only when the show clears, at 60 or more. You hear a bright chime with your results when a combo paid.
+A firework matched almost perfectly, with the right kind and place and within 0.3 seconds, starts a combo, and each next firework in the show matched as well adds to it. Each step of a combo is worth bonus points: 50 for the second in a row, 100 for the third, and so on. Combo bonuses are paid only when the show clears, at 60 or more.
 
 Show points are your score times ten, plus combo bonuses. Every level keeps its best show points. Your run total is the points of every level cleared in a row from where you started, and it keeps a best too. Replaying a level starts it again from the run total you had before it, so a level counts once. Saving a new freestyle show clears the best score of the one it replaces.
 
@@ -74,9 +72,7 @@ The twists:
 - Quickstep: the shows play at double speed, fireworks a second apart instead of two.
 - Tough crowd: timing points only within 0.3 seconds; any firework further off earns none.
 - One shot: each show plays only once, with no hearing it again and no hints.
-- Night fog: the show's fireworks sound far off and quiet, though still on their side; your own launches sound as usual. The sound check has a fog boom to hear first.
-
-A chime opens each challenge show, and a fanfare plays when a challenge ends with your best result on it.
+- Night fog: the show is harder to hear, but firework positions and your own launches are unchanged. Practise the fog boom in Sound check.
 
 ## Results
 
@@ -103,7 +99,7 @@ The night has four acts, each played whatever it scores:
 3. Whistles over the river: ten fireworks, most of them whistles, some going up early.
 4. The grand finale: sixteen quick fireworks of every kind, then a closing salute of four booms, left, center, right and center.
 
-The boom is the night's signature firework. On an act that clears, every boom matched near-perfectly, with the right place and within 0.3 seconds, adds 100 bonus points. A salute of three drum booms and a trumpet call opens the night.
+The boom is the night's signature firework. On an act that clears, every boom matched near-perfectly, with the right place and within 0.3 seconds, adds 100 bonus points.
 
 In the week before the Fourth, Enter on the row plays a rehearsal of the opening salute, so you can learn it early.
 
@@ -115,7 +111,7 @@ The practice room is a launch range with nothing to score. Launch with 1 to 4 or
 
 ## Sound check
 
-Each sound you need in a show, by name. On each firework row, Enter plays it in the center and Left and Right play it on that side. There are rows for the aim tick, the launch thump, the count-in tick, the go, the fuse that means your turn, the four crowd reactions, the combo, undo, the choice tick and a boom through the night fog. Two keys belong to this game alone and cannot be changed in Settings: Enter finishes your show, and Backspace takes back your last firework.
+Sound check lets you hear the cues used to match a show. On each firework row, Enter plays it in the center. Left and Right play it on that side.
 
 ## Controller
 
@@ -123,11 +119,11 @@ On a controller, A is the main action: it hears the show, starts your count-in, 
 
 ## Controls
 
-- Space: hear the show; start your count-in.
+- Space: hear the show, start your count-in, or use the launch choice selected with Up and Down.
 - 1 to 4: launch a boom, crackle, whistle or sparkle.
 - Hold Left or A, Right or D: launch on that side.
 - Enter: finish your show and score it.
-- Backspace: take back your last firework.
+- Backspace: take back your last firework. Enter and Backspace cannot be changed in Settings.
 - Tab: hear the show again.
 - R: repeat the instructions for where you are.
 - S: the level, how many fireworks, how many you have launched and the time since the go. Press it again straight away for the level's style, any twist, and your points so far.

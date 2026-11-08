@@ -197,7 +197,7 @@ fn the_tutorial_walks_the_practice_house() {
     assert!(!spoke(&h, "follows your footsteps"), "{:?}", h.spoken());
     assert!(!spoke(&h, "hound"), "{:?}", h.spoken());
     said(&h, "Tutorial done.");
-    said(&h, "The floors above bring more");
+    said(&h, "Deeper floors bring new dangers");
     assert_eq!(h.app.top_name(), "haunted_hallways");
 }
 

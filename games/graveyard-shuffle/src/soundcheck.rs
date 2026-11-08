@@ -6,7 +6,7 @@ use hearken::{Bus, Ctx, Sound};
 use parlor_core::menus::labels;
 use parlor_core::Parlor;
 
-use crate::songs::{Monster, SONGS};
+use crate::songs::Monster;
 use crate::sound;
 
 /// The sound check's `State::name`.
@@ -125,20 +125,6 @@ impl Menu for SoundCheck {
                 )),
             );
         }
-        let tune = &SONGS[0];
-        items.push(
-            MenuItem::new("A song", move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                let key = tune.part_key(false);
-                let played = sound::play_part(ctx, &key);
-                s.hear(ctx, vec![played]);
-                ctx.say(format!(
-                    "A song: the first part of {}, with the graveyard band's organ, twangy guitar and drums.",
-                    tune.name
-                ));
-            })
-            .select_sound(None)
-            .help("The first part of the first song, played by the graveyard band."),
-        );
         items.push(
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.pop()

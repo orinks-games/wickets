@@ -115,13 +115,6 @@ impl Menu for SoundCheck {
             );
         }
         items.push(
-            MenuItem::new("Keys of its own", |s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                s.hush(ctx);
-                ctx.say("Slow Kettle reads no keys of its own. Every control is a shared control you can change in Settings.");
-            })
-            .help("Which keys the game reads beyond the shared controls."),
-        );
-        items.push(
             MenuItem::new("Back", |_s: &mut Self, ctx: &mut Ctx<Parlor>| ctx.pop())
                 .help("Return to the Slow Kettle title."),
         );

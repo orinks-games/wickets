@@ -7,7 +7,7 @@ use parlor_core::Parlor;
 
 use crate::birds::{self, Note, Voice};
 use crate::sound::{self, Tune};
-use crate::trails::{Ground, Trail};
+use crate::trails::Trail;
 
 /// The sound check's `State::name`.
 pub const SOUNDS_NAME: &str = "birdsong_trail_sounds";
@@ -80,13 +80,6 @@ pub fn rows() -> Vec<Row> {
             keys,
             bus: Bus::EFFECTS,
         });
-    }
-    for ground in Ground::ALL {
-        out.push(row(
-            format!("Step, {}", ground.slug()),
-            format!("Step, {}: {}.", ground.slug(), ground.words()),
-            sound::step_key(ground),
-        ));
     }
     out.push(row(
         "Turn",

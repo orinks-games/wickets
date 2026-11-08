@@ -125,16 +125,6 @@ impl Menu for SoundCheck {
             .help("Where each player sits, by the sound of their chair."),
         );
         items.push(
-            MenuItem::new(
-                "Keys of this game",
-                |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                    ctx.say("Riverboat Dice uses only the shared controls, which you can change in Settings. It has no keys of its own.");
-                },
-            )
-            .select_sound(None)
-            .help("Which keys the game reads beyond the shared controls."),
-        );
-        items.push(
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.pop()
             })

@@ -104,10 +104,9 @@ Offline, it uses your computer's clock.
 
 ## Holiday specials
 
-The holiday specials are in Seasonal games only around their holiday.
-Beat the first part in season and the game is yours: the rest of the year
-it is in the Action games, with its last night kept back for the holiday.
-F1 on the game in season says how to keep it.
+Holiday specials appear in Seasonal games around their holiday. Each
+game has a goal that keeps it available afterwards. F1 on the game in
+season explains that goal and which parts remain seasonal.
 
 ## Happening today
 

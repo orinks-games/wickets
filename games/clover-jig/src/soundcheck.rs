@@ -7,7 +7,7 @@ use parlor_core::menus::labels;
 use parlor_core::Parlor;
 
 use crate::sound;
-use crate::tunes::{Step, CEILI_TUNES, TUNES};
+use crate::tunes::Step;
 
 /// The sound check's `State::name`.
 pub const SOUNDS_NAME: &str = "clover_jig_sounds";
@@ -123,34 +123,6 @@ impl Menu for SoundCheck {
                 )),
             );
         }
-        let tune = &TUNES[0];
-        items.push(
-            MenuItem::new("A tune", move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                let key = tune.part_key(false);
-                let played = sound::play_part(ctx, &key);
-                s.hear(ctx, vec![played]);
-                ctx.say(format!(
-                    "A tune: the first part of {}, on fiddle and bodhran. The whistle joins in the second part.",
-                    tune.name
-                ));
-            })
-            .select_sound(None)
-            .help("The first part of the first tune, with the fiddle and the bodhran."),
-        );
-        let band = &CEILI_TUNES[0];
-        items.push(
-            MenuItem::new("The ceili band", move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                let key = band.part_key(false);
-                let played = sound::play_part(ctx, &key);
-                s.hear(ctx, vec![played]);
-                ctx.say(format!(
-                    "The ceili band: {}, with fiddle, whistle, harp, accordion, bass and bodhran. It plays on Saint Patrick's Day.",
-                    band.name
-                ));
-            })
-            .select_sound(None)
-            .help("The full band of ceili night, which plays on Saint Patrick's Day."),
-        );
         items.push(
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.pop()

@@ -26,7 +26,7 @@ The practice skate, the lantern skate, the Frost Fair and the midnight skate hav
 
 Drifts of snow lie on the ice between some lanterns. Skate into one and you slow down for a moment, lean more slowly, and your line starts again.
 
-On the mill pond and the long lake, some patches of ice are thin. Skate onto thin ice and it cracks under you: you stumble for a moment and cannot lean, your line starts again, and the snow gains on the ice. A drift or thin patch always comes up in time to lean round it. H tells you which way to lean.
+On the mill pond and the long lake, some patches of ice are thin. Skate onto thin ice and you stumble for a moment. You cannot lean while stumbling, your line starts again, and more snow settles on the ice. A drift or thin patch always comes up in time to lean round it. H tells you which way to lean.
 
 ## Your partner
 
@@ -46,7 +46,7 @@ Play, on the title, skates the newest pond without a star. Choose a pond lists a
 - The mill pond: thin ice joins the drifts.
 - The long lake: lanterns come faster, and the patches are wider.
 
-Each pond has three marks of points, one for each star. Choose a pond reads the marks for each pond.
+Each pond has three score targets, one for each star. Choose a pond reads its targets.
 
 ## The lantern skate
 
@@ -76,7 +76,11 @@ Challenges are the same ice for every player in the period. Tonight's pond is th
 
 ## The status key
 
-S speaks the most urgent thing first: the next lantern's lane and where you are. Press S again straight away for your line, your score and how deep the snow lies.
+S gives nearby hazards, the next lantern's lane, whether a spin is ready, and where you are. Press S again straight away for your score, your line and how deep the snow lies.
+
+## Sound check
+
+Sound check, on the title, lets you learn the lanterns, obstacles, partner and spin cues. Each row explains the cue and plays it as you would hear it on the ice.
 
 ## Controls
 

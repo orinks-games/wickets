@@ -6,11 +6,11 @@ This help gives distances and speeds in metric. Set Units to US in Settings and 
 
 ## The street
 
-Each ride is one street, heard from your bike. On your right, parked cars line the curb. Beside them is the bike lane, and its first metre is the door zone, where a car door can open into you. A painted line separates the bike lane from the traffic lane, which runs out to the centre line. You can ride anywhere from the parked cars to the centre line. When you press against either edge you hear a low rumble on that side.
+Each ride is one street, heard from your bike. On your right, parked cars line the curb. Beside them is the bike lane, and its first metre is the door zone, where a car door can open into you. A painted line separates the bike lane from the traffic lane, which runs out to the centre line. You can ride anywhere from the parked cars to the centre line. You cannot ride beyond either edge.
 
 ## Riding
 
-Up arrow pedals and Down arrow brakes. The brakes build over a moment, so start braking early. Let go of both to coast, and the freewheel ticks, faster the faster you go. Left arrow and Right arrow slide you across the road while you hold them. Tab sprints for extra speed, until you run out of breath. Breath comes back while you ride without sprinting.
+Up arrow pedals and Down arrow brakes. The brakes build over a moment, so start braking early. Let go of both to coast. Left arrow and Right arrow slide you across the road while you hold them. Tab sprints for extra speed, until you run out of breath. Breath comes back while you ride without sprinting.
 
 ## Hops and jumps
 
@@ -20,17 +20,17 @@ Space hops while you are moving. The BMX hops about 40 centimetres, high enough 
 
 Every hazard warns you at least 1.5 seconds before you reach it, at your speed, from the side it is on.
 
-A sharp click from a parked car means its door is about to open. A creak follows as it swings into the door zone. Move left, out of the door zone, before you reach it.
+A parked car's door can open into the door zone. Move left, out of the door zone, before you reach it.
 
-A tick ahead is a pothole. It ticks faster and higher as you get closer. A pothole gives the road bike or the e-bike a flat tyre, which slows you until you stop and stand still for 3 seconds to swap the tube. The BMX rolls through it, a little slower.
+A pothole's warning speeds up as you get closer. A pothole gives the road bike or the e-bike a flat tyre, which slows you until you stop and stand still for 3 seconds to swap the tube. The BMX rolls through it, a little slower.
 
-A low, hard tick is a raised curb across the bike lane. A bright rising tone is a ramp.
+Raised curbs cross the bike lane. Ramps let you jump.
 
-A sharp double beep means act now: the hazard is in your line. Hop, brake or steer.
+The urgent warning means a hazard is in your line. Hop, brake or steer.
 
 ## Cars from behind
 
-Cars come up behind you, muffled at first and clearer as they draw level. They pass on your left when there is room. Hold your line while a car passes: steering into it is a crash. If you ride in the middle of the traffic lane, a car cannot pass and honks. Move right to let it by, and it gives a thank-you toot and a tip.
+Cars approach from behind. They pass on your left when there is room. Hold your line while a car passes: steering into it is a crash. If you ride in the middle of the traffic lane, a car cannot pass and honks. Move right to let it by, and you earn a tip.
 
 ## Junction turns
 
@@ -48,7 +48,7 @@ Parcels wait for collection along the way. A shop doorbell rings from the side a
 
 ## Oncoming cars
 
-In the endless ride, cars overtake toward you in the traffic lane. A long horn blast from ahead warns of one, at least 1.5 seconds before it reaches you, and its engine grows louder as it nears. Steer right into the bike lane until it has gone by. A sharp double beep means it is in your line now.
+In the endless ride, cars overtake toward you in the traffic lane. Its warning comes from ahead, at least 1.5 seconds before it reaches you. Steer right into the bike lane until it has gone by. The urgent warning means it is in your line now.
 
 ## Against the clock {alpha}
 
@@ -72,7 +72,7 @@ The bike shop sells bikes and districts for cash. Whatever you buy, you ride at 
 
 The mountain bike has knobbly tyres. It rolls through potholes, hops curbs and keeps its speed on cobbles. The e-bike has a motor that helps up to 25 kilometres an hour. The moped has an engine instead of pedals and reaches 50 kilometres an hour. It cannot hop or sprint.
 
-Riverside is wet. Rain falls, and brakes need more room to stop. Old Town is cobbled. A rattle rises under your wheels, and thin road tyres crawl.
+In wet Riverside, brakes need more room to stop. Old Town's cobbles slow bikes with thin road tyres.
 
 ## Status, hint and call-outs
 
@@ -106,9 +106,9 @@ Every player gets the same challenge rides. The morning run is a new 700 metre c
 
 Two rides open on the title only on their own days. Each keeps its own best time and ride points for each bike, as the time trials do, so the time trial boards never change. Once a ride has closed, Play again on its results says so and does not start it.
 
-Leaf season ride, from 17 October to the end of November. The rest of the year its row stays on the title, locked, and says when it opens. 1000 metres of autumn Downtown, the same all season for every rider, with leaf piles in the middle of the bike lane. Each pile gives a dry rustle from where it is, once the hazards before it are behind you. Ride through it for a crackle and 1000 ride points, and the freewheel goes quiet for a moment under the leaves. Leaf piles are never hazards, and a hop goes over them. S counts the piles you have ridden through, and H names the next one.
+Leaf season ride, from 17 October to the end of November. The rest of the year its row stays on the title, locked, and says when it opens. 1000 metres of autumn Downtown, the same all season for every rider, with leaf piles in the middle of the bike lane. Each pile signals its location once the hazards before it are behind you. Ride through it for 1000 ride points. Leaf piles are never hazards, and a hop goes over them. S counts the piles you have ridden through, and H names the next one.
 
-Car-free Sunday, on the third Sunday of every month: 1200 metres made from that Sunday's date, the same for every rider. The streets are closed to cars, and birds sing and a church bell rings far off in place of the city. On other days its row stays on the title, locked, and says when it opens.
+Car-free Sunday, on the third Sunday of every month: 1200 metres made from that Sunday's date, the same for every rider. The streets are closed to cars. On other days its row stays on the title, locked, and says when it opens.
 
 ## Controls
 

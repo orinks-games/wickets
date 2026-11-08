@@ -37,7 +37,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, lanes: Live<RunScreen>) -> Lesson {
 
     let catch = lanes.step(
         format!(
-            "{} and {r} step one lane at a time; each step says your lane. Everything that falls whistles from its lane: lower and louder means sooner. An egg is a soft whistle: stand in its lane as it lands to catch it.",
+            "{} and {r} step one lane at a time; each step says your lane. Each falling object sounds from its lane: lower and louder means it will land sooner. An egg is a soft whistle: stand in its lane as it lands to catch it.",
             sentence_start(&l)
         ),
         |s: &RunScreen, _| {

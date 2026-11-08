@@ -4,19 +4,19 @@ The lamps along the Long Hall have gone out, and Mabel has handed you her old ta
 
 ## The hall
 
-The hall is a row of steps from the lobby door to the far wall. At each step there is an alcove on the left wall and one on the right. An alcove holds a lamp, or it is bare wall. Each footstep is a soft step on wooden boards. At the lobby end, a creaking door tells you there is no further back. At the far end, two hollow knocks tell you there is no further on.
+The hall is a row of steps from the lobby door to the far wall. At each step there is an alcove on the left wall and one on the right. An alcove holds a lamp, or it is bare wall. You cannot walk beyond the lobby door or the far wall.
 
 ## Hearing the lamps
 
-A lamp that is out gives a thin whistle of draught across its empty glass, every second and a half or so. You hear it from its own wall, ahead of you or behind you, and louder the nearer you are. You hear lamps up to 4 steps away. A burning lamp gives the small flutter of a candle flame from its wall as you step past it. Bare wall makes no sound.
+An unlit lamp signals every second and a half or so. You hear it from its own wall, ahead of you or behind you, and louder the nearer you are. You hear lamps up to 4 steps away. A lit lamp has its own cue as you pass it. Bare wall makes no sound.
 
 ## Lighting a lamp
 
-Left reaches to the left wall and Right to the right. A lamp that is out lights with a match strike and a glass ting, and the game says how many are left to light. A bare wall answers with one dull knock. A lamp that is already burning answers with a soft felt knock.
+Left reaches to the left wall and Right to the right. If there is an unlit lamp there, you light it and hear how many remain. Reaching toward a bare wall or a lit lamp changes nothing.
 
 ## The taper
 
-In the evening round and the challenges, the taper burns while you work. Space lights it and starts the clock, and until then you can listen but not move. A low, muted bell means it has 20 seconds left. If it burns down, a short puff and a quick match mean Mabel has lit you a fresh one. You carry on, and only the taper bonus is lost. The practice hall has no taper.
+In the evening round and the challenges, the taper burns while you work. Space lights it and starts the clock, and until then you can listen but not move. A warning tells you when the taper has 20 seconds left. If it burns down, Mabel lights you a fresh one. You carry on, and only the taper bonus is lost. The practice hall has no taper.
 
 ## Draughts
 
@@ -24,7 +24,7 @@ Now and then a long gust through a doorway blows a lamp out somewhere in the hal
 
 ## Scoring and records
 
-Each lamp lit is 10 points, a lamp blown out by a draught included. Light the whole hall on the first taper, and every second left on it is 1 more point. A rising run of glass means the hall is lit. Records keeps your best score, your fastest hall, the lamps you have lit, and your challenge results.
+Each lamp lit is 10 points, a lamp blown out by a draught included. Light the whole hall on the first taper, and every second left on it is 1 more point. Records keeps your best score, your fastest hall, the lamps you have lit, and your challenge results.
 
 ## The practice hall
 

@@ -1,12 +1,12 @@
 ## About the game
 
-After hours on lane nine: ten frames, two balls each. Choose stance and aim, then time the release on the swing. Standing pins are always spoken by number.
+Bowl ten frames. Choose your stance and aim, then time your release to knock down the pins. Standing pins are always spoken by number.
 
 ## Standing and aiming
 
-The lane is 39 boards wide. Board 1 is at the left gutter, board 39 at the right, and board 20 is in line with the head pin. The Left and Right arrows step you one board along the approach, with a soft step from where you stand, and speak your board.
+The lane is 39 boards wide. Board 1 is at the left gutter, board 39 at the right, and board 20 is in line with the head pin. The Left and Right arrows step you one board along the approach, and speak your board.
 
-The Up arrow turns your aim one step right, and the Down arrow one step left. Each step moves the ball's line one board at the pins. A soft high tone plays from where a clean ball would cross the pins, and that board is spoken.
+The Up arrow turns your aim one step right, and the Down arrow one step left. Each step moves the ball's line one board at the pins. The aim cue marks where a clean ball would cross the pins. The game also speaks that board.
 
 ## The pocket
 
@@ -14,17 +14,17 @@ Stand off centre and angle into the pocket. The pocket is just beside the head p
 
 ## The swing and the release
 
-Space starts the swing. A hum rises in pitch to the top of the swing, then falls. Press Space again at the top. A clean release goes where you aimed. An early or late release pulls the ball off line, and the further you are from the top, the bigger the pull. The lane decides which way it pulls. If you never let go, the ball leaves your hand late at the end of the swing.
+Space starts the swing. Use the swing cue to time your release. Press Space again at the top of the swing. A clean release goes where you aimed. An early or late release pulls the ball off line, and the further you are from the top, the bigger the pull. The lane decides which way it pulls. If you never let go, the ball leaves your hand late at the end of the swing.
 
-## What you hear
+## The ball and standing pins
 
-The ball rumbles down the lane, moving left or right with its line, and grows louder as it nears the pins. A hollow rattle means the ball dropped into the gutter and will hit nothing. A light clatter is a few pins falling, a heavy clatter most of the rack. Then the pins left standing are spoken by number, and the pinsetter sweeps the deck. A rolling knock means your ball is back.
+A ball in the gutter hits no pins. After each ball, the game speaks the pins left standing by number. Wait for the ball-return cue before rolling again.
 
-Pin 1 is the head pin. Then 2 and 3, then 4 to 6, and the back row 7 to 10, with 7 in the left corner and 10 in the right. A split: head pin down with a gap among the pins left.
+Pin 1 is the head pin. Then 2 and 3, then 4 to 6, and the back row 7 to 10, with 7 in the left corner and 10 in the right. A split means the head pin is down, with a gap between the pins left standing.
 
 ## Scoring
 
-A strike is all ten pins with the first ball of a frame, and plays a short jukebox flourish. It scores 10 plus the pins from your next two balls. A spare is all ten with both balls, and rings a bright bell. It scores 10 plus the pins from your next ball. Any other frame scores the pins knocked down.
+A strike means you knocked down all ten pins with the first ball of a frame. It scores 10 plus the pins from your next two balls. A spare means you knocked down all ten pins with both balls of a frame. It scores 10 plus the pins from your next ball. Any other frame scores the pins knocked down.
 
 In the tenth frame, a strike gives you two more balls and a spare gives you one more. Twelve strikes in a row is a perfect game of 300.
 
@@ -34,7 +34,7 @@ H suggests a board and an aim for the pins standing. For a full rack, it gives a
 
 ## Pumpkin night
 
-From 17 October to 1 November the title has a Pumpkin night row. The rest of the year the row says Pumpkin night, locked, and tells you when it opens. It is a full game of ten frames with pumpkins for pins. They fall with a hollow squash instead of a clatter, a strike carves a grin, and every leave is still spoken by pin number. Scoring is the same as a full game, and Pumpkin night keeps its own best score. Sound check plays the pumpkin sounds too.
+From 17 October to 1 November the title has a Pumpkin night row. The rest of the year the row says Pumpkin night, locked, and tells you when it opens. It is a full game of ten frames with pumpkins for pins. The pins left standing are still spoken by number. Scoring is the same as a full game, and Pumpkin night keeps its own best score.
 
 ## Records
 
@@ -68,7 +68,7 @@ Down arrow: turn the aim one step left.
 
 Space: start the swing, and again to let go of the ball.
 
-Tab: not used yet. There is no spin: a ball rolls straight along your aim.
+Tab: not used. There is no spin: a ball rolls straight along your aim.
 
 S: status: the frame and ball, the pins standing, your board and your aim. Press S again straight away for the score.
 

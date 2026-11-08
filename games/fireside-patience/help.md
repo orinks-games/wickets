@@ -6,15 +6,15 @@ Patience by a cabin fire: move all 52 cards onto four suit foundations, ace to k
 
 ## The row of places
 
-One row of 12 places: piles 1 to 7, then the stock, then the foundations for hearts, diamonds, clubs and spades. Left and Right move; each place speaks its top card. A soft chime marks the step from the piles to the stock, and from the stock to the foundations. At either end of the row, a dull tap tells you there is no further to go.
+The table has a row of 12 places: piles 1 to 7, then the stock, then the foundations for hearts, diamonds, clubs and spades. Left and Right move; each place speaks its top card. You cannot move beyond either end of the row.
 
 ## Piles
 
-Each pile starts with face-down cards and one face-up card on top. A pile builds down in alternating colours: a black 7 goes on a red 8, and a red queen on a black king. Only a king goes on an empty pile. When a pile's last face-up card leaves, the card under it turns face up with a flip, and you hear its name. Up goes one card deeper into the face-up run, and Down comes back toward the top card.
+Each pile starts with face-down cards and one face-up card on top. A pile builds down in alternating colours: a black 7 goes on a red 8, and a red queen on a black king. Only a king goes on an empty pile. When a pile's last face-up card leaves, the card under it turns face up, and you hear its name. Up goes one card deeper into the face-up run, and Down comes back toward the top card.
 
 ## Moving cards
 
-Space picks up the card under you, with every card on top of it. Move to where the cards go, and Space again places them. A soft tap means they went. A muffled thud means they cannot go there, and you hear the rule, such as "The 9 of spades cannot go on the 9 of hearts. It needs a red 10." You keep holding the cards, so you can try another place. While you hold cards, a place they fit says "Fits here." Holding one card on the wrong foundation, you hear where it goes, such as "Goes to spades." Space on the place they came from puts them back.
+Space picks up the card under you, with every card on top of it. Move to where the cards go, and Space again places them. If the cards cannot go there, the game explains the rule, such as "The 9 of spades cannot go on the 9 of hearts. It needs a red 10." You keep holding the cards, so you can try another place. While you hold cards, a place they fit says "Fits here." Holding one card on the wrong foundation, you hear where it goes, such as "Goes to spades." Space on the place they came from puts them back.
 
 ## The stock
 
@@ -22,7 +22,7 @@ Tab turns one card up from the stock. At the stock's place, Space picks up the t
 
 ## Foundations
 
-Each suit has its own foundation, built up one card at a time from the ace to the king. Space on any foundation sends a single card to its own suit. Once every card is face up and the stock is used, the rest go up on their own. A bright chime marks a complete suit, and a warm flourish the win.
+Each suit has its own foundation, built up one card at a time from the ace to the king. Space on any foundation sends a single card to its own suit. Once every card is face up and the stock is used, the rest go up on their own.
 
 ## Undo and getting stuck
 
@@ -46,11 +46,11 @@ Every player gets the same cards, and every challenge deal can be won. The daily
 
 ## Calendar events
 
-Rabbit rabbit deal: on the 1st of every month, when an old charm says "rabbit rabbit" for a lucky month, the Rabbit rabbit deal row on the title opens. On other days it stays in its place, locked, and says when it opens. It is one deal for every player that day, and it can always be won. Turning the stock costs no moves, so the score counts only the cards you move, and S says "turns are free". The fire burns low, and an owl calls outside in place of the usual fireside. It is scored on a board of its own. Once the day is over, Play again on the results says the Rabbit rabbit deal has ended and takes you back to the title.
+Rabbit rabbit deal: on the 1st of every month, when an old charm says "rabbit rabbit" for a lucky month, the Rabbit rabbit deal row on the title opens. On other days it stays in its place, locked, and says when it opens. It is one deal for every player that day, and it can always be won. Turning the stock costs no moves, so the score counts only the cards you move, and S says "turns are free". It is scored on a board of its own. Once the day is over, Play again on the results says the Rabbit rabbit deal has ended and takes you back to the title.
 
-## Sounds
+## Sound check
 
-Each suit has its own soft card sound, a paper slide with a short tone: a warm low bell for hearts, a bright high bell for diamonds, a soft wooden knock for clubs and a deep wooden knock for spades. You hear it with the card's name when you reach or pick up a card. A flip is a card turning face up. A soft tap places cards, and a muffled thud refuses them. A short shuffle turns the stock. A swish takes back a move. Under it all, the fire crackles and a clock ticks, kept quiet under speech. The sound check on the title plays each one with its name.
+Sound check on the title plays the cues you need during play.
 
 ## Controls
 

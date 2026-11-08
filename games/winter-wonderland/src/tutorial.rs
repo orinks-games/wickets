@@ -120,7 +120,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, party: Live<CountRu
     .step(sort)
     .step(rhythm)
     .outro(format!(
-        "From shift 3, {d} sends unwanted gifts to the sack. {}: clock and score. {}: hint.",
+        "From shift 3, {d} sends unwanted gifts to the sack. {} gives the current status. In Gift Sort it reads the gift and clock, then the shift, gifts sorted and score on a second press. {} gives a hint.",
         sentence_start(&s),
         sentence_start(&h)
     ))

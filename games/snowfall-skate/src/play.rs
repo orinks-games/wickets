@@ -299,13 +299,11 @@ impl SkateScreen {
     /// Every control, in a few sentences: gameplay only.
     pub fn controls(&self, ctx: &Ctx<Parlor>) -> String {
         let k = |a| Self::key(ctx, a);
-        let mut parts = vec![
-            format!(
-                "Hold {} and {} to lean across the ice. Be in a lantern's lane as it passes to take it.",
-                k(ParlorAction::Left),
-                k(ParlorAction::Right)
-            ),
-        ];
+        let mut parts = vec![format!(
+            "Hold {} or {} to lean across the ice. Be in a lantern's lane as it passes to take it.",
+            k(ParlorAction::Left),
+            k(ParlorAction::Right)
+        )];
         if self.pairs() {
             parts.push("Lanterns come in pairs: take the one that lit first.".to_string());
         } else {
@@ -1636,7 +1634,7 @@ impl State<Parlor> for SkateScreen {
         let now = if !self.skate.started() {
             self.start_prompt(ctx)
         } else {
-            "Each lantern in a line is worth 1 more, up to 5.".to_string()
+            "Each lantern in a line is worth 1 more point, up to 5 points.".to_string()
         };
         let mut text = format!("{now} {}", self.controls(ctx));
         if self.skate.snows() {

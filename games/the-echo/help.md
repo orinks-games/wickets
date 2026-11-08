@@ -4,11 +4,11 @@ The Echo is the listening machine in the parlor's cellar, and its pipes have dri
 
 ## The wobble
 
-While you tune a pipe, two steady organ tones play together: the pipe, and the true note it should hold. When the pipe is out of tune, the two tones wobble against each other, a slow pulse in the sound. The farther out the pipe is, the faster the wobble. As the pipe comes near its note the wobble slows, and when it is in tune the wobble stops and you hear one still tone. Tab plays the true note alone for a moment, if you want to hear what the pipe is aiming for.
+Each pipe plays alongside the note it should match. Adjust the pipe until the two notes match. Tab plays the target note alone. Sound check, on the title, lets you compare the tuning cues.
 
 ## Tuning a pipe
 
-Up raises the pipe one step and Down lowers it, with a tiny brass tick. A step is 5 cents, a twentieth of a semitone. Each pipe starts a few steps sharp or flat. If the wobble gets faster, you are going the wrong way. When the wobble is still, Space sets the pipe, and a clear bell says it is in tune. If it still wobbles, a dull thud says not yet, and one step away the game says nearly.
+Up raises the pipe one step and Down lowers it. A step is 5 cents, a twentieth of a semitone. Each pipe starts a few steps sharp or flat. H tells you which way to adjust it and how far. When the pipe matches its target note, Space sets it. If it is still out of tune, keep adjusting it. The game says nearly when you are one step away.
 
 ## The rank
 
@@ -20,7 +20,7 @@ Each pipe set in tune is worth 10 points. Each try at setting it while it still 
 
 ## Hints
 
-H says whether the pipe is sharp or flat and how many steps out it is, with a soft felt knock. In the evening tuning and the challenges a hint costs 3 points, unless the pipe is already in tune. In the practice rank hints are free.
+H says whether the pipe is sharp or flat and how many steps out it is. In the evening tuning and the challenges a hint costs 3 points, unless the pipe is already in tune. In the practice rank hints are free.
 
 ## The practice rank
 

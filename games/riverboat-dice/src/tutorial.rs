@@ -127,7 +127,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, table: Live<TableScreen>) -> Lesson {
     let mut heard = Heard::default();
     let bank = table.step(
         format!(
-            "{} rolls again and the table grows. {} banks what the table holds, and you stand until the next landing. On your first night, the first bank asks first: press {t} twice. Roll once more, then bank.",
+            "{} rolls again and the table grows. {} banks what the table holds, and you stand until the next landing. On your first night, press {t} twice to confirm your first bank. Roll once more, then bank.",
             sentence_start(&p),
             sentence_start(&t)
         ),

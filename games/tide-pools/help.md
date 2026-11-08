@@ -2,11 +2,11 @@
 
 ## About the game
 
-Tide out: rock pools along the shore, sea ahead. Walk pool to pool, lean in, and gather creatures for your aquarium. No fail: each trip ends when the tide returns.
+Walk between rock pools, lean in, and gather creatures for your aquarium. Each trip ends when the tide returns, and you keep everything you gathered.
 
 ## Walking the shore
 
-Left and Right arrows walk along the rocks from one pool to the next. Each step splashes on wet rock. A soft thud into sand means the rocks end and there are no more pools that way.
+Left and Right arrows walk along the rocks from one pool to the next. You cannot move beyond the pools at either end.
 
 You always face the sea, so the pools run from your left to your right. A sound on your left comes from a pool to your left.
 
@@ -24,49 +24,49 @@ Leaning in over a pool with nothing left in it, you are told there is only clear
 
 Lean in close, listen, and press Space just after you hear something. You have about three seconds after a sound to reach for it.
 
-If you press Space when you have not just heard anything, your hands come up with only water and you hear it drip. If you are not leaning in, you pat the rock instead: lean in with Up first.
+Pressing Space without a recent creature cue gathers nothing. If you are not leaning in, press Up to lean in first.
 
 The first time on a trip that you hear a creature in your pool, its name is spoken. Tab names the last sound you heard in your pool at any time.
 
 ## Shy creatures
 
-Some creatures are shy: the shore crab, the goby, the hermit crab, the rock shrimp, the seahorse and the baby octopus. As you lean in, they dart out of sight with a quick falling swish and a plop.
+The shore crab, goby, hermit crab, rock shrimp, seahorse and baby octopus are shy. They hide when you lean in.
 
-Keep still. When you hear two soft rising notes, something has crept back out; listen for its sound and gather it. If you reach in too soon, it tucks itself away again and you must wait a little longer. Stepping back and leaning in again startles them all over again.
+Keep still and wait for a shy creature to come back out before gathering it. Reaching in too soon makes it hide again for longer. Stepping back and leaning in again startles it again.
 
 Shy creatures come out quickly at Sandy Cove and take longer on the Far Reef.
 
 ## The creatures
 
-Common creatures, and their sounds:
+Common creatures:
 
-- Shore crab: a quick skitter of clicking claws. Shy. 15 points.
-- Periwinkle shell: a little shell rolling and clattering over pebbles. 5 points.
-- Starfish: a slow, soft two-note twinkle. 10 points.
-- Sea anemone: a soft, low, wet pop. 5 points.
-- Little goby fish: a bright little splash. Shy. 20 points.
-- Hermit crab: three wooden taps of a borrowed shell on rock. Shy. 15 points.
-- Rock shrimp: two sharp snaps. Shy. 15 points.
-- Mussel: a string of small bubbles. 5 points.
+- Shore crab: Shy. 15 points.
+- Periwinkle shell: 5 points.
+- Starfish: 10 points.
+- Sea anemone: 5 points.
+- Little goby fish: Shy. 20 points.
+- Hermit crab: Shy. 15 points.
+- Rock shrimp: Shy. 15 points.
+- Mussel: 5 points.
 
 Rare creatures, 50 points each, only turn up under the right conditions:
 
-- Cowrie shell, on a spring tide: a glossy shell rolling with a glassy ring.
-- Seahorse, on a sunny day: a tiny, breathy rising whistle. Shy.
-- Baby octopus, at dusk: a low gurgle and a squirt of ink. Shy.
-- Moon jellyfish, when it is breezy: a slow, soft pulse.
-- Sand dollar, in fog: a hollow tap and two low, round notes.
-- Sea slug, in drizzle: a slow, wobbling squelch.
+- Cowrie shell, on a spring tide.
+- Seahorse, on a sunny day. Shy.
+- Baby octopus, at dusk. Shy.
+- Moon jellyfish, when it is breezy.
+- Sand dollar, in fog.
+- Sea slug, in drizzle.
 
 Sound check, on the title menu, plays every one with its name.
 
 ## Weather, tides and time of day
 
-Every trip has its own weather, tide and time of day, told to you before you set off, with any rare creature the day might bring. The weather is sunny, breezy, foggy or drizzly. A neap tide is small and the trip is shorter; a spring tide is the lowest of the month and the trip is longer. The weather changes the beach around you too: more gulls on sunny days, gusts when it is breezy, a distant foghorn in fog, soft rain in drizzle.
+Every trip has its own weather, tide and time of day, told to you before you set off, with any rare creature the day might bring. The weather is sunny, breezy, foggy or drizzly. A neap tide is small and the trip is shorter; a spring tide is the lowest of the month and the trip is longer.
 
 ## The tide
 
-A distant bell buoy rings once when the tide turns, halfway through the trip, twice when there is about a minute left, and twice again at 20 seconds. The waves ahead grow louder and nearer as the water comes back. When a big wave washes over the rocks, the trip is over and you head home. A trip also ends early if you gather everything on the shore.
+The tide turns halfway through the trip. You receive warnings then, with about a minute left, and at 20 seconds. When the tide covers the rocks, the trip ends and you head home. A trip also ends early if you gather everything on the shore.
 
 ## After a trip
 
@@ -109,7 +109,7 @@ Some days the shore is different. Each event has a row of its own on the title m
 - King tide: within a day of a new or full moon, from November to February. The sea goes far out, so two extra pools open at each end of the shore, on a spring tide with a longer trip. The waves start far off and quiet, and curlews call from the wet sand. This is the game's take on the big winter tides, not a real tide table.
 - Moonlit pools: on every full moon night, all year. A night trip under the full moon. The gulls are asleep, and a night heron croaks along the shore. Moon jellyfish and baby octopuses can come out whatever the weather.
 
-The first curlew and the first heron of a trip are named when you hear them. S says which event you are on. Sound check plays both birds.
+S says which calendar event you are playing.
 
 ## Controls
 

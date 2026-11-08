@@ -335,6 +335,6 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, house: Live<Haunt>) -> Lesson {
     .step(door3)
     .step(shadow)
     .outro(
-        "That is the house. The floors above bring more, and each new danger is explained the first time you meet it. F1 says what to do at any moment. Play starts the climb.",
+        "Deeper floors bring new dangers. Each is explained the first time you meet it. F1 says what to do at any moment. Play starts the climb.",
     )
 }

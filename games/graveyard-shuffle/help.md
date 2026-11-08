@@ -12,31 +12,31 @@ Night 4, Doctor Volt's laboratory, is where the dance began, and it only opens a
 
 ## The monsters and their moves
 
-The zombie: a low groan. Its move is the drag, a foot dragged through the dirt. Dance it with the Down arrow.
+The zombie's move is the drag. Dance it with the Down arrow.
 
-The skeleton: a rattle of dry bones. Its move is the rattle, bones clacking together. Dance it with the Up arrow.
+The skeleton's move is the rattle. Dance it with the Up arrow.
 
-The mummy: a dusty moan. Its move is the unwrap, a strip of cloth tearing. Dance it with Space.
+The mummy's move is the unwrap. Dance it with Space.
 
-The vampire: a cape swishing and a hiss. Its move is the swoop, a cape whooshing past on your left. Dance it with the Left arrow. The vampire comes on night 2.
+The vampire's move is the swoop. Dance it with the Left arrow. The vampire comes on night 2.
 
-The werewolf: a short howl. Its move is the howl, claws scraping on your right. Dance it with the Right arrow.
+The werewolf's move is the howl. Dance it with the Right arrow.
 
-The ghost: a high, wavering whoo. Its move is the float, a chain clinking as it floats up. Dance it with Tab. The werewolf and the ghost come on night 3.
+The ghost's move is the float. Dance it with Tab. The werewolf and the ghost come on night 3.
 
 The first time each monster comes up in a dance, your screen reader names it and its key. A night that brings a new monster names it before the dance instead. After that, it is not named again, and F1 lists the moves. Before a dance starts, H plays every monster with its move, and each move key plays its own monster, so you can learn them with nothing at stake.
 
 ## The beat and timing
 
-Each song starts with four knocks on a coffin lid, then the music. A monster's sound comes one beat before its move, so listen for who comes up and dance on the next beat.
+Each song starts with four count-in beats, then the music. A monster's sound comes one beat before its move, so listen for who comes up and dance on the next beat.
 
-A move right on the beat is spot on, with a small spooky chime: 3 points. A little off the beat is good: 2 points. Further off, with a soft dull tick, is close: 1 point. Early and late count the same. A move you miss, or the wrong move, plays a thud and a clatter of bones and scores nothing.
+On the beat is spot on, worth 3 points. A little off is good, worth 2. Further off is close, worth 1. Early and late count the same. A missed or wrong move scores nothing.
 
 The first time each of these happens in a dance, a single word names it.
 
 ## Streaks and stars
 
-Every 8 moves in a row danced in time, the crowd gives three bony claps and adds 4 points. A miss or a wrong move starts the count again.
+Every 8 moves in a row danced in time, you earn 4 bonus points. A miss or a wrong move starts the count again.
 
 Each song earns stars from the share of its best points you earned: 1 star from half, 2 stars from three quarters, 3 stars from nine tenths. Streak bonuses do not count toward stars.
 
@@ -56,7 +56,7 @@ A star on every song of a night opens the next night, though night 4 opens only 
 
 ## The songs
 
-The graveyard band plays every song in a minor key, as sixties monster rock. Night 1: The Graveyard Warm-up, Boneyard Boogie and The Shallow Grave Shuffle. Night 2: The Cobweb Crawl, The Coffin Lid Clap and Drip in the Crypt. Night 3: Bat Wing Boogie, The Full Moon Stomp and The Bell Tower Bop. Night 4: Lightning Rod Rock, Off the Slab and The Graveyard Shuffle.
+Night 1: The Graveyard Warm-up, Boneyard Boogie and The Shallow Grave Shuffle. Night 2: The Cobweb Crawl, The Coffin Lid Clap and Drip in the Crypt. Night 3: Bat Wing Boogie, The Full Moon Stomp and The Bell Tower Bop. Night 4: Lightning Rod Rock, Off the Slab and The Graveyard Shuffle.
 
 ## The practice room
 
@@ -80,7 +80,7 @@ Each monster is a sound that plays with the music. With spoken call-outs on, you
 
 ## Pausing
 
-Escape pauses, and the music holds. When you come back, three coffin knocks count you back in, and the song goes on where it stopped.
+Escape pauses, and the music holds. When you come back, three beats count you back in, and the song goes on where it stopped.
 
 ## Controls
 

@@ -525,6 +525,7 @@ fn the_sound_check_plays_every_row() {
     assert_eq!(h.app.top_name(), SOUNDS_NAME);
     let n = rows(&h).len();
     assert_eq!(rows(&h)[0], "Zombie");
+    assert!(!rows(&h).iter().any(|row| row == "A song"));
     assert_eq!(rows(&h).last().map(String::as_str), Some("Back"));
     h.press(Key::Home);
     for _ in 0..n - 1 {

@@ -144,6 +144,9 @@ impl Menu for SoundCheck {
             );
         }
         for entry in CATALOG {
+            if entry.key == sound::BONFIRE {
+                continue;
+            }
             let text = format!("{}. {}", entry.name, entry.meaning);
             items.push(
                 MenuItem::new(entry.name, move |s: &mut Self, ctx: &mut Ctx<Parlor>| {

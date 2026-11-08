@@ -8,21 +8,21 @@ Each floor is built from its number, so floor 40 is the same floor for every pla
 
 ## Rooms and walls
 
-A room is a grid of floorboards, five cells across on the first floors and up to nine at the bottom of the house. Each step creaks; in the cellars and below, your steps ring on stone. Walking into a wall makes a dull thud and you stay where you are. Status says how many steps away the exit door is. Press S twice and it also gives your column, counted from the west wall, and your row, counted from the south wall.
+A room is a grid of floorboards, five cells across on the first floors and up to nine at the bottom of the house. Walking into a wall leaves you where you are. Status says how many steps away the exit door is. Press S twice and it also gives your column, counted from the west wall, and your row, counted from the south wall.
 
-The door you came in by slams shut behind you: walking into it gives a heavy slam and you cannot go back. The exit is on another wall. While the room is unsolved its handle only rattles. When you solve the room a bolt slides back and a cold draught starts to blow from the open door. Follow the draught, stand in the cell next to it, and walk through the wall there. The last room of a floor opens onto the stairs.
+The entrance locks behind you, so you cannot go back. The exit is on another wall. Solve the room to unlock its exit. Follow the open-door cue, stand in the cell next to it, and walk through the wall there. The last room of a floor opens onto the stairs.
 
 ## Listening for things
 
-Things lie about the rooms and call out from where they are: a ticking clock, a humming crystal, a dripping potion, a music box, a silver bell, a crackling candle, a caged raven, a ring of keys and a beating heart. Each has its own sound. Sounds come from their direction: left is west, right east, ahead north; behind is south, and a little duller. Nearer means louder and more often. Stepping onto a thing speaks its name.
+Things lie about the rooms and call out from where they are: a clock, a crystal, a potion, a music box, a bell, a candle, a raven, keys and a heart. Each has its own sound. Sounds come from their direction: left is west, right east, ahead north; behind is south, and a little duller. Nearer means louder and more often. Stepping onto a thing speaks its name.
 
 Sound check on the title plays each sound you need in the manor by name, including a demonstration of left, right, near and far.
 
 ## Charms
 
-From floor 3, some rooms hold a charm. It calls out with a soft glass chime, quieter than the puzzle's things, and touching it costs nothing. Walk onto it to take it.
+From floor 3, some rooms hold a charm. Its cue comes from its location, and touching it costs nothing. Walk onto it to take it.
 
-- A pinch of salt wards off one catch by a ghost, the shadow or the founder: a hiss of salt, and you stay where you are. You can carry up to 3 pinches, and they last the whole run.
+- A pinch of salt wards off one catch by a ghost, the shadow or the founder: you stay where you are. You can carry up to 3 pinches, and they last the whole run.
 - A candle stub adds 20 seconds to the haunt clock.
 
 Status, pressed twice, says how much salt you carry.
@@ -30,53 +30,53 @@ Status, pressed twice, says how much salt you carry.
 ## The puzzles
 
 - Find: you are told the thing's name and what it sounds like. Find it, stand on it and press Space.
-- Match: a phonograph crackles and then plays a sound, but does not say what makes it. Find the thing in the room that makes the same sound.
+- Match: a phonograph plays a sound, but does not say what makes it. Find the thing in the room that makes the same sound.
 - Riddle: a voice asks a riddle that describes the thing. Work out which it is, then find it by its sound.
-- Offering, from floor 2: the exit spirit whispers, then plays the sound of what it wants: something you already picked up on this floor. Tab to choose it, stand at the door, Space to offer.
+- Offering, from floor 2: the exit spirit plays the sound of what it wants: something you already picked up on this floor. Tab to choose it, stand at the door, Space to offer.
 - Missing, from floor 6: the phonograph plays every sound in the room but one. Find the thing it leaves out.
-- Séance, from floor 12: a medium's gong sounds and she calls up sounds one after another without naming them, two at first, three from floor 40 and four from floor 75. Pick up their things in that order. A soft rising hum tells you each one was right.
+- Séance, from floor 12: a medium calls up sounds one after another without naming them, two at first, three from floor 40 and four from floor 75. Pick up their things in that order. A cue confirms each correct choice.
 
 Rooms hold decoys as well as the answer, more of them deeper down. A wrong touch or wrong offer takes time off the haunt clock, more on deeper floors. R replays the room's clue.
 
 ## Ghosts
 
-Ghosts walk the halls, each with its own voice. The weeping widow wails and drifts slowly. The chained butler drags his chains and groans, and moves fast; he walks from floor 5. The whispering child whispers and giggles, and is quiet until close; she walks from floor 10. You hear a ghost coming from far off, in its direction, growing louder.
+Ghosts walk the halls, each with its own voice. The weeping widow moves slowly. The chained butler moves fast and appears from floor 5. The whispering child is hard to hear until close and appears from floor 10. You hear a ghost coming from far off, in its direction, growing louder.
 
-When it is right beside you, a sharp, harsh stab sounds. Freeze: do not take a single step until you hear a long breath out as it drifts away. Picking things up, choosing what you hold and asking for status are all quiet enough; only footsteps give you away.
+When it is right beside you, the freeze cue sounds. Freeze: do not take a single step until you hear the passing cue as it drifts away. Picking things up, choosing what you hold and asking for status are all quiet enough; only footsteps give you away.
 
 If you move while a ghost passes, it catches you. You lose one of your three courage and flee back to the door you came in by. Lose all three on a floor and you run screaming from the house. Every ghost you let pass scores points.
 
-From floor 25 the blind hound hunts too: it pants and growls. It is the one ghost you must not freeze for. It finds you by your stillness, so when its stab sounds, keep walking until it has passed. A howl and the words "Keep walking!" warn you.
+From floor 25 the blind hound hunts too. It is the one ghost you must not freeze for. It finds you by your stillness, so when its warning sounds, keep walking until it has passed. The words "Keep walking!" warn you.
 
-On the first four floors a voice also calls "Freeze!" when the stab sounds. After that, only the stab warns you. Status always says whether a ghost is coming or passing.
+On the first four floors a voice also calls "Freeze!" with the freeze cue. After that, only the cue warns you. Status always says whether a ghost is coming or passing.
 
 ## The deeper dangers
 
 Each of these arrives on its own floor, and the game explains it in full the first time you meet it. The first room of every floor is always free of them.
 
-- Rotten boards, from floor 8: when you stand next to one it groans from its side. Step on it and you fall through, losing one courage and starting the room again from its door. The board leaves a hole you cannot walk into.
+- Rotten boards, from floor 8: its warning comes from its direction when you stand next to it. Step on it and you fall through, losing one courage and starting the room again from its door. The board leaves a hole you cannot walk into.
 - Twists, from floor 11: a floor may carry one of the twists listed under Challenges. Deeper floors carry more, up to two by floor 71.
 - Dark rooms, from floor 15: things call out only when you are three steps away or nearer. Sweep the room row by row.
-- The shadow, from floor 20: a low breathing drone that walks a room one cell at a time. While it hears your footsteps it comes toward you; stand still and it wanders. Let it reach you, or walk into it, and it catches you. Status says where it is, in steps.
+- The shadow, from floor 20: a danger that moves around a room one cell at a time. While it hears your footsteps it comes toward you; stand still and it wanders. Let it reach you, or walk into it, and it catches you. Status says where it is, in steps.
 - Mimics, from floor 35: copies of the answer that sound just the same but hop to a new place every few seconds. The real thing never moves. Touching a mimic costs time like a wrong thing.
 - Mirrored rooms, from floor 45: every sound comes from the other side, east from your left and west from your right. North and south are true.
-- The pendulum, from floor 51: a blade swings along one row of the room, one column at a time, back and forth. Its swish tells you where it is. If it reaches your cell, it cuts you and costs one courage. Cross its row just after it passes. Status says which row it swings in.
-- Deep water, from floor 61: part of the room is flooded. A low lapping means deep water next to you. A step into it splashes, and you wade for a moment before you can step again. Every splash brings the next ghost sooner.
+- The pendulum, from floor 51: a blade swings along one row of the room, one column at a time, back and forth. Its cue tells you where it is. If it reaches your cell, it cuts you and costs one courage. Cross its row just after it passes. Status says which row it swings in.
+- Deep water, from floor 61: part of the room is flooded. Its warning means deep water is next to you. A step into it splashes, and you wade for a moment before you can step again. Every splash brings the next ghost sooner.
 - Falling stones, from floor 71: dust trickles over the cell you stand on, and 2 seconds later a stone falls there. Step off when you hear the dust. Stones never start while a ghost is passing.
 - The founder, from floor 81: see The founder.
-- The shifting house, from floor 91: now and then a deep rumble moves the exit door to another wall. The game says which wall, and status says how far.
+- The shifting house, from floor 91: the exit door sometimes moves to another wall. The game says which wall, and status says how far.
 
 ## The founder
 
-From floor 81 the founder walks: the first Nevermore, risen from his grave in the crypt. About 15 seconds after you enter a room he comes through the door behind you, in heavy boots, and walks toward you one step at a time. Freezing does not stop him. He follows you into every room of the floor.
+From floor 81 the founder walks: the first Nevermore, risen from his grave in the crypt. About 15 seconds after you enter a room he comes through the door behind you, and walks toward you one step at a time. Freezing does not stop him. He follows you into every room of the floor.
 
-You carry an iron candlestick. When he reaches you he stops and winds up a blow, a rising scrape from his side. Halfway through comes a ringing note: press Space then, and you hit him, and he staggers 2 steps back. Press Space before the ringing note and he blocks with a dull knock, so step away before the blow lands. If you are still beside him when it lands, you lose one courage and flee to the door you came in by.
+You carry an iron candlestick. When he reaches you he stops and winds up a blow, with a cue from his side. Halfway through, the strike cue plays: press Space then, and you hit him, and he staggers 2 steps back. Press Space before the strike cue and he blocks, so step away before the blow lands. If you are still beside him when it lands, you lose one courage and flee to the door you came in by.
 
 He takes 3 hits from floor 81, 4 from floor 91, and 5 in the endless dark. Bring him down and he crumbles to dust for the rest of the floor, for 200 points times the floor number. Status says where he is and whether he is winding up a blow.
 
 ## The haunt clock
 
-Every floor has a haunt clock: nearly four minutes on floor 1, longer on floors with more rooms and longer séances, and tighter the deeper you go. A tower bell tolls when one minute, thirty seconds and ten seconds are left. If the clock runs out the house keeps you. Thunder and distant screams are only atmosphere and mean nothing.
+Every floor has a haunt clock: nearly four minutes on floor 1, longer on floors with more rooms and longer séances, and tighter the deeper you go. Warnings mark one minute, thirty seconds and ten seconds remaining. If the clock runs out the house keeps you.
 
 H gives a hint that points the way. It costs five seconds of the clock, ten from floor 20 and fifteen from floor 60.
 
@@ -110,7 +110,7 @@ Unlocks on the title lists everything you can earn, in groups, with how many you
 - Music: the house's music, earned as you go deeper. Enter plays it.
 - Feats: harder goals, such as clearing a floor of five rooms without being caught.
 
-When you earn something, the game says so with a rising chime at the end of the floor.
+When you earn something, the game says so at the end of the floor.
 
 ## Results
 
@@ -140,10 +140,10 @@ Challenges use the first five. The twists are spoken as each floor begins, and F
 
 - Stand still and listen before you move. Turn the sound into a direction, then walk until it is straight ahead or right on top of you.
 - If two things sound alike, walk to each: their names are spoken when you stand on them. If one of them has moved since, it was a mimic.
-- Before you step, listen for a groan. A groan from ahead means go around.
+- Check for rotten boards before you step. If one is ahead, go around.
 - When the shadow is near, stand still and let it wander off, unless the hound is passing.
-- When a ghost comes, finish your step and wait for the stab, then keep still until the long breath out. For the hound, do the opposite.
-- Against the founder, wait for the ringing note. A strike too early is wasted, and leaves you beside him.
+- When a ghost comes, finish your step and wait for the freeze cue, then stay still until the passing cue. For the hound, do the opposite.
+- Against the founder, wait for the strike cue. A strike too early is wasted, and leaves you beside him.
 - Pick up every charm you hear. Salt is worth most in the deep floors.
 
 ## Controls

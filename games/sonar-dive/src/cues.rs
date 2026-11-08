@@ -252,12 +252,6 @@ pub const CUES: &[Cue] = &[
         play: Play::Ahead,
     },
     Cue {
-        key: WHALE_ROAD,
-        name: "The whale road",
-        meaning: "on the equinoxes only: deep whale song far off to the north, beyond the dive site. Only a landmark: nothing to find there.",
-        play: Play::Ahead,
-    },
-    Cue {
         key: WHALE_AIR,
         name: "Whale's air",
         meaning: "a whale shared air with you: your tank gains time.",

@@ -232,3 +232,22 @@ fn the_midnight_skate_ends_in_fireworks() {
     );
     assert_eq!(h.app.top_name(), "results", "{:?}", h.spoken());
 }
+
+#[test]
+fn control_help_uses_alternative_lean_keys() {
+    let mut h = start_with(data());
+    tap(&mut h, Key::Return);
+    h.clear();
+    tap(&mut h, Key::F1);
+    let spoken = h.spoken().join(" ");
+    let left = h.app.ctx.control_name(parlor_core::ParlorAction::Left);
+    let right = h.app.ctx.control_name(parlor_core::ParlorAction::Right);
+    assert!(
+        spoken.contains(&format!("Hold {left} or {right}")),
+        "{spoken}"
+    );
+    assert!(
+        !spoken.contains(&format!("Hold {left} and {right}")),
+        "{spoken}"
+    );
+}

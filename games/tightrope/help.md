@@ -2,15 +2,15 @@
 
 ## About the game
 
-Rooftop wire: balance is a tone, wind warns before it pushes, pigeons coo from where they sit. Ten crossings; each longer, higher, and windier.
+Cross ten rooftop wires. Shift your weight to stay balanced, counter gusts and shoo pigeons out of your path. Each crossing is longer, higher and windier.
 
 ## Your balance
 
-A tone plays the whole time you are on the wire. When you are balanced it sits in the centre, low and steady. As you lean, the tone moves toward the side you lean to and climbs in pitch: the further you lean, the higher and further out it goes.
+Use the balance cue or press S to check which way you are leaning. Sound check, on the title, lets you hear the balance cue and other gameplay cues.
 
 A lean grows by itself, the way a real wire tips you. Shift your weight with Left and Right. Press the opposite way to your lean: leaning left, press Right. Each press keeps you moving for a moment, so press briefly and give it time, or you will swing past the middle.
 
-When you come back to balance after leaning, the steady chime sounds, a soft two-note chime: that is your moment to step. Lean hard and an alarm sounds from that side, and the game says "Leaning hard left" or "Leaning hard right". Lean all the way and you fall to the safety net.
+Step once you have returned to balance. The game warns you when you lean hard left or right. Lean all the way and you fall to the safety net.
 
 The status key, S, always says your lean in words, so you never have to judge it by pitch alone.
 
@@ -18,13 +18,13 @@ The status key, S, always says your lean in words, so you never have to judge it
 
 Space takes one step. Steps need a moment between them, and no foot lands quite square: every step jolts the wire a little, so settle after each one.
 
-Step only when balanced. A step while you lean past the safe line is a wobble: the wire throws you further the way you were leaning. A refused step makes a soft double knock. A step is refused when it comes too soon after the last one, or while you crouch.
+Step only when balanced. A step while you lean past the safe line is a wobble: the wire throws you further the way you were leaning. A step is refused when it comes too soon after the last one, or while you crouch.
 
-A chime sounds from the far rooftop every few seconds, straight ahead. It grows louder as you get near. The game also says when you are halfway, 3 steps out and 1 step out.
+The game says when you are halfway, 3 steps out and 1 step out.
 
 ## Wind
 
-Every gust is warned in time. First a whistle sounds from the side the wind will come from, and a voice says "Gust from the left" or "Gust from the right". Then a whoosh rises from that side for at least 2 seconds and peaks the moment the wind hits. The wind then pushes you away from that side for about a second.
+Each gust is announced with its direction at least 2 seconds before it hits. It pushes you away from that side for about a second.
 
 You have two answers:
 
@@ -35,19 +35,19 @@ The status key tells you which side a gust comes from and how many seconds are l
 
 ## Pigeons
 
-From the second crossing on, pigeons land on the wire ahead of you, with a flutter of wings and a bounce of the wire toward their side. The game says how many steps ahead it sits and on which side, and you hear it coo from there, closer with every step.
+From the second crossing on, pigeons land on the wire ahead and tip it toward their side. The game says how many steps ahead each pigeon sits and on which side.
 
 Walk into a pigeon and it bursts up in your face and knocks you hard to the other side. Shoo it with Tab once it is within 2 steps, which dips the wire a little, or wait: a pigeon flies off by itself after several seconds. On the Practice wire it waits until you shoo it.
 
 ## Sway and height
 
-Long wires sway, most at mid-span, back and forth in a steady rhythm. You feel it as a slow push one way, then the other, and hear it as the wire creaking faster. Creaks come from the side you lean to.
+Long wires sway most at the middle, pushing you one way and then the other in a steady rhythm.
 
-The street hums far below with the odd car horn and siren. The higher the wire, the quieter the street and the stronger the wind. These sounds are only atmosphere: nothing in them needs an answer.
+Higher wires have stronger wind.
 
 ## Falling
 
-Lean all the way over and you fall: a rushing drop and the bounce of the safety net. You lose a life and climb back to the step where you fell, balanced, with a moment of calm before the wire moves again. Lose your last life and the run is over.
+Lean all the way over and you fall to the safety net. You lose a life and climb back to the step where you fell, balanced, with a moment of calm before the wire moves again. Lose your last life and the run is over.
 
 On the practice wire falling costs nothing.
 
