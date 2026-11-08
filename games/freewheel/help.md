@@ -48,7 +48,7 @@ Parcels wait for collection along the way. A shop doorbell rings from the side a
 
 ## Oncoming cars
 
-In the endless ride, cars overtake toward you in the traffic lane. Its warning comes from ahead, at least 1.5 seconds before it reaches you. Steer right into the bike lane until it has gone by. The urgent warning means it is in your line now.
+In the endless ride, cars overtake toward you in the traffic lane. Each car warns you from ahead at least 1.5 seconds before it reaches you. Steer right into the bike lane until it has gone by. The urgent warning means it is in your line now.
 
 ## Against the clock {alpha}
 
