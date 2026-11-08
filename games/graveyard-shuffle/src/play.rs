@@ -395,6 +395,7 @@ impl Floor {
     }
 
     fn start(&mut self, ctx: &mut Ctx<Parlor>) {
+        Progress::note_played(ctx);
         self.delayed.clear();
         self.run.start();
         ctx.say("Here we go. Four knocks in.");

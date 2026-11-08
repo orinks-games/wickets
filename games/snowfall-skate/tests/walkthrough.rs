@@ -251,3 +251,56 @@ fn control_help_uses_alternative_lean_keys() {
         "{spoken}"
     );
 }
+
+#[test]
+fn starting_a_skate_keeps_it_without_finishing_or_earning_stars() {
+    let mut h = start_with(data());
+    assert!(
+        !Progress::load(&mut h.app.ctx).kept(),
+        "title is not playing"
+    );
+    select(&mut h, "Play, Pond 1");
+    tap(&mut h, Key::Return);
+    assert!(
+        !Progress::load(&mut h.app.ctx).kept(),
+        "ready is not playing"
+    );
+    tap(&mut h, Key::Space);
+    let saved = Progress::load(&mut h.app.ctx);
+    assert!(saved.played);
+    assert!(saved.kept());
+    assert!(saved.stars.is_empty());
+    h.app.ctx.pop();
+    h.frame(0.0);
+    assert!(Progress::load(&mut h.app.ctx).kept());
+}
+
+#[test]
+fn legacy_practice_and_old_star_retention_are_preserved() {
+    let old = Progress {
+        practice_lanterns: 1,
+        ..Default::default()
+    };
+    assert!(!old.played);
+    assert!(old.kept());
+    let mut stars = Progress::default();
+    stars.stars.insert(snowfall_skate::progress::KEEP_POND, 1);
+    assert!(stars.kept());
+}
+
+#[test]
+fn practice_start_keeps_the_game_but_sound_check_does_not() {
+    let mut h = start_with(data());
+    select(&mut h, "Sound check");
+    tap(&mut h, Key::Return);
+    tap(&mut h, Key::Return);
+    tap(&mut h, Key::Escape);
+    assert!(!Progress::load(&mut h.app.ctx).kept());
+    select(&mut h, "Practice skate");
+    tap(&mut h, Key::Return);
+    assert!(!Progress::load(&mut h.app.ctx).kept());
+    tap(&mut h, Key::Space);
+    let saved = Progress::load(&mut h.app.ctx);
+    assert!(saved.kept());
+    assert!(saved.stars.is_empty());
+}

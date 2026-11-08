@@ -4,9 +4,9 @@ Doctor Volt's newest monster sat up on the slab and started to dance, and by mid
 
 ## A Halloween special
 
-Graveyard Shuffle turns up in the Seasonal games around Halloween: from two weeks before, October 17, to the day after, November 1.
+Graveyard Shuffle turns up in the Seasonal games around Halloween, from October 17 to November 1, and stays two more weeks, through November 15, so you can catch up.
 
-Earn a star on all three songs of night 1 in that time and the game is yours to keep. After Halloween it moves to the Action games for the rest of the year. Until you keep it, it is gone from the lists after November 1, and your stars, records and challenge results wait for next Halloween.
+Start a dance or a practice in that time and the game is yours to keep, even if you leave early. After the season it moves to the Action games. Earlier play counts too, and stars still open later nights. If you never play it, it leaves the lists until next Halloween.
 
 Night 4, Doctor Volt's laboratory, is where the dance began, and it only opens around Halloween. The rest of the year, the laboratory and its three songs in the practice room wait for October 17.
 

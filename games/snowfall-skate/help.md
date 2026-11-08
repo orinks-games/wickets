@@ -64,7 +64,7 @@ On New Year's Eve, from 11 at night to 1 in the morning by your clock, the midni
 
 ## Keeping the game all year
 
-Snowfall Skate is listed in Seasonal games through the winter, until the end of February. Earn a star on the mill pond and the game is yours to keep: after the winter it stays in the Cozy games. The Frost Fair waits for the next winter.
+Snowfall Skate is listed in Seasonal games through the winter, until the end of February, and stays two more weeks, through March 14. Start a skate or a practice in that time and the game is yours to keep, even if you leave early: after the winter it stays in the Cozy games. Earlier play counts too, and stars still open later ponds. The Frost Fair waits for the next winter.
 
 ## Practice and the tutorial
 

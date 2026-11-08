@@ -607,6 +607,7 @@ impl SkateScreen {
     }
 
     fn start(&mut self, ctx: &mut Ctx<Parlor>) {
+        Progress::note_played(ctx);
         self.stop_cues(ctx);
         self.skate.start();
         self.start_held = true;

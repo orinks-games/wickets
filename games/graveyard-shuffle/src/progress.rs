@@ -12,7 +12,7 @@ use crate::rules::{Run, Tally};
 use crate::songs::{Monster, NIGHTS};
 use crate::{HOLIDAY, ID};
 
-/// The night whose three stars keep the game all year.
+/// The night used by the original score-based retention rule.
 pub const KEEP_NIGHT: u32 = 1;
 
 /// The night that waits for Halloween season all year: Doctor Volt's
@@ -61,6 +61,9 @@ pub fn save_met(ctx: &mut Ctx<Parlor>, monster: Monster) {
 
 #[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
 pub struct Progress {
+    /// A real game or practice session has been started, even if abandoned.
+    #[serde(default)]
+    pub played: bool,
     /// The most stars each tune has earned, by tune id.
     #[serde(default)]
     pub stars: BTreeMap<String, u32>,
@@ -84,6 +87,14 @@ pub struct Progress {
 }
 
 impl Progress {
+    /// Starting play keeps the ordinary game; holiday-only content keeps its dates.
+    pub fn note_played(ctx: &mut Ctx<Parlor>) {
+        let mut progress = Self::load(ctx);
+        if !progress.played {
+            progress.played = true;
+            progress.store(ctx);
+        }
+    }
     pub fn load(ctx: &mut Ctx<Parlor>) -> Progress {
         Records::load(ctx, &key())
     }
@@ -115,10 +126,16 @@ impl Progress {
         number <= 1 || self.set_cleared(number - 1)
     }
 
-    /// Whether the game is kept all year: every song of [`KEEP_NIGHT`]
-    /// has a star.
+    /// Playing keeps the ordinary game; old progress and earned access still count.
     pub fn kept(&self) -> bool {
-        self.set_cleared(KEEP_NIGHT)
+        self.played || self.has_progress()
+    }
+
+    /// Whether a finished run, practice or star is saved: what kept the
+    /// game before starting play did, and what the first results check
+    /// to say it is kept.
+    pub fn has_progress(&self) -> bool {
+        self.any() || self.stars.values().any(|&stars| stars > 0)
     }
 
     /// Whether night `number` is open on `today`: earned, and in season
@@ -196,7 +213,7 @@ pub fn save_set(ctx: &mut Ctx<Parlor>, number: u32, run: &Run) -> SetSaved {
         .iter()
         .map(|s| p.night_open(s.number, today))
         .collect();
-    let was_kept = p.kept();
+    let was_kept = p.has_progress();
     let streak_record = run.best_streak() > p.best_streak;
     let mut better = Vec::new();
     for r in &run.results {

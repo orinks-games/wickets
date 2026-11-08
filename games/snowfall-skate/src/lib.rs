@@ -58,7 +58,7 @@ pub const HOLIDAY: Holiday = events::FAIR_DAY;
 pub const HOME: Category = Category::Cozy;
 
 /// The blurb in winter, until the game is kept.
-pub const KEEP_BLURB: &str = "A winter special. Skate a frozen pond at night, taking lanterns as they light, while the snow comes down. Earn a star on the mill pond to keep the game all year.";
+pub const KEEP_BLURB: &str = "A winter special. Skate a frozen pond at night, taking lanterns as they light, while the snow comes down. Play once, even in practice, to keep it all year.";
 
 /// The blurb out of winter, once the game is kept.
 pub const YEAR_ROUND_BLURB: &str = "Skate a frozen pond at night, taking lanterns as they light, while the snow comes down. The Frost Fair waits for winter.";
@@ -67,8 +67,7 @@ pub const YEAR_ROUND_BLURB: &str = "Skate a frozen pond at night, taking lantern
 pub const KEPT_LINE: &str =
     "Snowfall Skate is yours to keep. After the winter, it moves to the Cozy games.";
 
-/// Whether the player has kept the game all year: a star on the mill pond,
-/// which can only be skated while the game is listed in winter.
+/// Whether the ordinary game has been played or kept by an earlier save.
 pub fn kept(ctx: &mut Ctx<Parlor>) -> bool {
     Progress::load(ctx).kept()
 }
