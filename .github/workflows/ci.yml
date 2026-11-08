@@ -23,18 +23,22 @@ on:
 permissions:
   contents: read
 
-# A new push to a pull request cancels the run it replaces.
+# A new push to a pull request cancels the run it replaces. Runs on main
+# always finish, so main keeps a fresh compile cache for pull requests.
 concurrency:
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 env:
   CARGO_TERM_COLOR: always
   CMAKE_POLICY_VERSION_MINIMUM: "3.5"
-  RUSTC_WRAPPER: sccache
-  SCCACHE_GHA_ENABLED: "true"
   # Everything public builds without the private overlay.
   WICKETS_MODE: stub
+  # Linux test links skip link-time optimization and use mold. Prism ships
+  # LTO objects with native code alongside (fat objects), and re-optimizing
+  # Prism took 5 to 15 seconds for each of the ~47 test programs; without
+  # it a link takes well under a second. Release builds keep LTO.
+  CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUSTFLAGS: "-C link-arg=-fno-lto -C link-arg=-fuse-ld=mold"
 
 jobs:
   # Seconds-long checks that need no build.
@@ -109,8 +113,9 @@ jobs:
   # - The checks print paths and line numbers only.
   # - The full build's output goes to a file that is never printed or
   #   uploaded; run the failing tests in wickets-secrets' CI or locally.
-  # - No compile cache: a cache saved here could be restored by a fork's
-  #   pull request.
+  # - It saves no compile cache, since a cache saved here could be restored
+  #   by a fork's pull request. It only restores the Linux test job's cache
+  #   from main, which holds public dependencies and nothing of the overlay.
   private:
     name: leak test and full build
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
@@ -150,8 +155,8 @@ jobs:
       - uses: ./.github/actions/rust-setup
         with:
           token: ${{ secrets.HEARKEN_TOKEN }}
-          cache-key: private
-          cache: "false"
+          cache-key: test
+          save: "false"
       - name: Full build and tests (output kept private)
         env:
           WICKETS_MODE: full
