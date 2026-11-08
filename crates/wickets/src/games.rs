@@ -54,8 +54,9 @@ pub fn story() -> Vec<(GameInfo, &'static str)> {
     Vec::new()
 }
 
-/// The holiday specials: games the launcher lists in their holiday's
-/// season, from its lead days before to the day after, in Seasonal games.
+/// The holiday specials: games the launcher lists in their season, in
+/// Seasonal games: most from their holiday's lead days before to the day
+/// after, Snowfall Skate all winter.
 /// They have no lamp in the Long Hall, so they stay out of [`all`]. Their
 /// saves are kept the rest of the year.
 pub fn specials() -> Vec<(GameInfo, Holiday)> {
@@ -68,6 +69,9 @@ pub struct Keeper {
     /// The game as its season lists it, in Seasonal games.
     pub game: GameInfo,
     pub holiday: Holiday,
+    /// Whether `date` is in its season, when it is listed in Seasonal
+    /// games: most from the holiday's lead days to the day after.
+    pub in_season: fn(Date) -> bool,
     /// Where it is listed out of season, once kept.
     pub home: Category,
     /// Whether the player has kept it: something only its season allows,
@@ -91,10 +95,20 @@ fn every_keeper() -> Vec<Keeper> {
         Keeper {
             game: graveyard_shuffle::INFO,
             holiday: graveyard_shuffle::HOLIDAY,
+            in_season: |d| calendar::nearness(graveyard_shuffle::HOLIDAY, d).is_some(),
             home: graveyard_shuffle::HOME,
             kept: graveyard_shuffle::kept,
             keep_blurb: graveyard_shuffle::KEEP_BLURB,
             year_round_blurb: graveyard_shuffle::YEAR_ROUND_BLURB,
+        },
+        Keeper {
+            game: snowfall_skate::INFO,
+            holiday: snowfall_skate::HOLIDAY,
+            in_season: snowfall_skate::in_season,
+            home: snowfall_skate::HOME,
+            kept: snowfall_skate::kept,
+            keep_blurb: snowfall_skate::KEEP_BLURB,
+            year_round_blurb: snowfall_skate::YEAR_ROUND_BLURB,
         },
     ]
 }
@@ -133,10 +147,10 @@ pub fn days_to_holiday(g: &GameInfo, today: Date) -> i64 {
 
 /// The holiday specials in season on `date`.
 pub fn in_season(date: Date) -> Vec<GameInfo> {
-    specials()
+    keepers()
         .into_iter()
-        .filter(|(_, holiday)| calendar::nearness(*holiday, date).is_some())
-        .map(|(g, _)| g)
+        .filter(|k| (k.in_season)(date))
+        .map(|k| k.game)
         .collect()
 }
 
@@ -151,7 +165,7 @@ pub fn specials_listed(ctx: &mut Ctx<Parlor>) -> Vec<GameInfo> {
         .filter_map(|k| {
             let kept = (k.kept)(ctx);
             let mut g = k.game;
-            if calendar::nearness(k.holiday, today).is_some() {
+            if (k.in_season)(today) {
                 if !kept {
                     g.blurb = k.keep_blurb;
                 }
