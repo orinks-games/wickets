@@ -12,7 +12,7 @@ fn at(text: &str) -> LocalTime {
 }
 
 #[test]
-fn listed_from_december_to_february() {
+fn listed_through_the_winter() {
     assert!(!in_season(Date::new(2026, 11, 30)));
     assert!(in_season(Date::new(2026, 12, 1)));
     assert!(in_season(Date::new(2027, 2, 28)));

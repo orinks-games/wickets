@@ -7,7 +7,7 @@ genny. Then render with:
     python tools/render_sounds.py snowfall-skate
 
 The skate's music is played live (`games/snowfall-skate/src/music.rs`): a
-medley of an original waltz and public-domain carols, strung together a
+medley of an original waltz and public-domain tunes, strung together a
 section at a time, all in G. Every section is rendered as:
 
 - a lead line on each lead instrument, `music/lead/<section>-<lead>`;
@@ -24,10 +24,6 @@ Light room reverb. Leads a little right, the plucked or bowed
 accompaniment a little left, the bass in the middle. The game never names
 the tunes.
 
-It also writes `games/snowfall-skate/vocals/`: each carol section's melody
-as a MIDI file with its words, for singing over the band (see the README
-there).
-
 If you change a section, an instrument or a style, change the lists in
 `games/snowfall-skate/src/music.rs` to match; a test checks every key the
 medley can ask for has an Ogg.
@@ -36,12 +32,10 @@ medley can ask for has an Ogg.
 from __future__ import annotations
 
 import json
-import struct
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SPEC = ROOT / "sound-specs" / "snowfall-skate.json"
-VOCALS = ROOT / "games" / "snowfall-skate" / "vocals"
 
 ROOM = [{"type": "reverb", "mix": 0.1, "size": 0.45}, {"type": "compressor", "threshold": -18, "ratio": 2}]
 TAIL = 2.0
@@ -301,7 +295,7 @@ CHORD = {
 }
 
 # Each section: its meter (beats a bar), its tune bar by bar, and the chord
-# in each bar ("C-D" splits a bar). Every tune is in G. The carols' pickups
+# in each bar ("C-D" splits a bar). Every tune is in G. The other tunes' pickups
 # are moved to the end of the phrase before, so every section starts on its
 # first downbeat.
 SECTIONS: dict[str, tuple[int, list[tuple[str, float]], list[str]]] = {
@@ -312,7 +306,7 @@ SECTIONS: dict[str, tuple[int, list[tuple[str, float]], list[str]]] = {
     "waltz-b": (3, tokens("D5:2 B4", "C5:2 A4", "B4:2 G4", "E4:3",
                           "F#4 G4 A4", "B4:2 D5", "C5 A4 F#4", "G4:3"),
                 ["G", "C", "G", "C", "D", "G", "D", "G"]),
-    # O Christmas Tree.
+    # The tree song.
     "tree-a": (3, tokens("G4:0.75 G4:0.25 G4:1.5 A4:0.5", "B4:0.75 B4:0.25 B4:1.5 B4:0.5",
                          "A4:0.5 B4:0.5 C5 F#4", "A4 G4 D4",
                          "G4:0.75 G4:0.25 G4:1.5 A4:0.5", "B4:0.75 B4:0.25 B4:1.5 B4:0.5",
@@ -323,19 +317,19 @@ SECTIONS: dict[str, tuple[int, list[tuple[str, float]], list[str]]] = {
                          "G4:0.75 G4:0.25 G4:1.5 A4:0.5", "B4:0.75 B4:0.25 B4:1.5 B4:0.5",
                          "A4:0.5 B4:0.5 C5 F#4", "A4 G4:2"),
                ["G-C", "D", "D", "G", "G", "G", "C-D", "G"]),
-    # We Wish You a Merry Christmas.
+    # The wishing song.
     "wish": (3, tokens("G4 G4:0.5 A4:0.5 G4:0.5 F#4:0.5", "E4 E4 E4", "A4 A4:0.5 B4:0.5 A4:0.5 G4:0.5",
                        "F#4 D4 D4", "B4 B4:0.5 C5:0.5 B4:0.5 A4:0.5", "G4 E4 D4:0.5 D4:0.5",
                        "E4 A4 F#4", "G4:2 D4"),
              ["G", "C", "A", "D", "Em", "C", "C-D", "G"]),
-    # Good King Wenceslas.
+    # The king song.
     "king-a": (4, tokens("G4 G4 G4 A4", "G4 G4 D4:2", "E4 D4 E4 F#4", "G4:2 G4:2",
                          "G4 G4 G4 A4", "G4 G4 D4:2", "E4 D4 E4 F#4", "G4:2 G4:2"),
                ["G", "G-D", "Em-D", "G", "G", "G-D", "Em-D", "G"]),
     "king-b": (4, tokens("D5 C5 B4 A4", "B4 A4 G4:2", "E4 D4 E4 F#4", "G4:2 G4:2",
                          "D4 D4 E4 F#4", "G4 G4 A4:2", "D5 C5 B4 A4", "G4:2 C5:2", "G4:4"),
                ["G-D", "G", "Em-D", "G", "G-D", "G-D", "G-D", "G-C", "G"]),
-    # Silent Night.
+    # The quiet song.
     "still-a": (3, tokens("D5:1.5 E5:0.5 D5", "B4:3", "D5:1.5 E5:0.5 D5", "B4:3",
                           "A5:2 A5", "F#5:3", "G5:2 G5", "D5:3",
                           "E5:2 E5", "G5:1.5 F#5:0.5 E5", "D5:1.5 E5:0.5 D5", "B4:3"),
@@ -539,95 +533,17 @@ def pause() -> dict:
     }
 
 
-# --- the sung tracks -------------------------------------------------------
-
-# The words of each carol section, one syllable to a note, in order. A
-# syllable held over two notes is written "-" for the second. Every word is
-# public domain.
-WORDS = {
-    "tree-a": "Christ- mas tree, O Christ- mas tree, how love- ly are thy bran- ches. O "
-              "Christ- mas tree, O Christ- mas tree, how love- ly are thy bran- ches. Not",
-    "tree-b": "on- ly green when sum- mer's here, but al- so when it's cold and drear. O "
-              "Christ- mas tree, O Christ- mas tree, how love- ly are thy bran- ches.",
-    "wish": "wish you a mer- ry Christ- mas, we wish you a mer- ry Christ- mas, we "
-            "wish you a mer- ry Christ- mas and a hap- py new year. We",
-    "king-a": "Good King Wen- ces- las looked out on the Feast of Ste- phen, "
-              "when the snow lay round a- bout, deep and crisp and e- ven.",
-    "king-b": "Bright- ly shone the moon that night, though the frost was cru- el, "
-              "when a poor man came in sight, gath- 'ring win- ter fu- - el.",
-    "still-a": "Si- lent night, - ho- ly night, - all is calm, all is bright. "
-               "Round yon vir- gin moth- er and child, -",
-    "still-b": "Ho- ly in- fant so ten- der and mild, sleep in heav- en- ly peace, - "
-               "sleep in heav- en- ly peace. - -",
-    "year": "auld ac- quain- tance be for- got, and nev- er brought to mind? Should "
-            "auld ac- quain- tance be for- got, and auld lang - syne? - For",
-}
-
-
-def syllables(section: str) -> list[str]:
-    return WORDS[section].split()
-
-
-def midi_note(pitch: str) -> int:
-    names = {"C": 0, "D": 2, "E": 4, "F": 5, "G": 7, "A": 9, "B": 11}
-    n = names[pitch[0]]
-    rest = pitch[1:]
-    while rest and rest[0] in "#b":
-        n += 1 if rest[0] == "#" else -1
-        rest = rest[1:]
-    return 12 * (int(rest) + 1) + n
-
-
-def varlen(n: int) -> bytes:
-    out = [n & 0x7F]
-    n >>= 7
-    while n:
-        out.insert(0, (n & 0x7F) | 0x80)
-        n >>= 7
-    return bytes(out)
-
-
-def midi(section: str) -> bytes:
-    """One track: tempo, meter, then each note with its syllable as a lyric."""
-    meter, tune, _ = SECTIONS[section]
-    words = syllables(section)
-    assert len(words) == len(tune), f"{section}: {len(words)} syllables for {len(tune)} notes"
-    tpq = 480
-    ev = bytearray()
-    ev += varlen(0) + b"\xff\x51\x03" + (60_000_000 // bpm_of(section)).to_bytes(3, "big")
-    ev += varlen(0) + b"\xff\x58\x04" + bytes([meter, 2, 24, 8])
-    ev += varlen(0) + b"\xff\x03" + varlen(len(section)) + section.encode()
-    for (pitch, beats), word in zip(tune, words):
-        n = midi_note(pitch)
-        ticks = int(round(beats * tpq))
-        text = word.encode()
-        ev += varlen(0) + b"\xff\x05" + varlen(len(text)) + text
-        ev += varlen(0) + bytes([0x90, n, 90])
-        ev += varlen(ticks) + bytes([0x80, n, 0])
-    ev += varlen(0) + b"\xff\x2f\x00"
-    head = b"MThd" + struct.pack(">IHHH", 6, 0, 1, tpq)
-    return head + b"MTrk" + struct.pack(">I", len(ev)) + bytes(ev)
-
-
-def write_vocals() -> None:
-    VOCALS.mkdir(parents=True, exist_ok=True)
-    for name in WORDS:
-        (VOCALS / f"{name}.mid").write_bytes(midi(name))
-        (VOCALS / f"{name}.txt").write_text(" ".join(syllables(name)) + "\n")
-
-
 def main() -> None:
     spec = {
         "genny": "blal1",
         "_about": "Snowfall Skate sounds, on blal1's genny, written by tools/snowfall_skate_sounds.py. A frozen "
                   "pond at night: your blades and your partner's, lanterns burning and chiming, drifts and thin "
                   "ice, spins, the snow coming down, and the Frost Fair's stalls. Music is a live medley of an "
-                  "original waltz and public-domain carols, with fixed renders for the title and pause.",
+                  "original waltz and public-domain tunes, with fixed renders for the title and pause.",
         "sounds": pond_sounds() + medley() + [title(), pause()],
     }
     SPEC.write_text(json.dumps(spec, indent=2) + "\n")
-    write_vocals()
-    print(f"wrote {SPEC.relative_to(ROOT)}: {len(spec['sounds'])} sounds, and {len(WORDS)} sung parts")
+    print(f"wrote {SPEC.relative_to(ROOT)}: {len(spec['sounds'])} sounds")
 
 
 if __name__ == "__main__":

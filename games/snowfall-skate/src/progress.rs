@@ -52,8 +52,8 @@ pub struct Progress {
     /// Lanterns taken in practice.
     #[serde(default)]
     pub practice_lanterns: u32,
-    /// The winters the Frost Fair was skated on its day, by the year of
-    /// their December: one ribbon each, with a star.
+    /// The winters the Frost Fair was skated on its day, by the year each
+    /// winter starts in: one ribbon each, with a star.
     #[serde(default)]
     pub ribbons: Vec<i32>,
     /// The winters the Frost Fair was skated on its day at all, which

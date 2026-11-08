@@ -26,8 +26,8 @@ pub const FAIR_DAY: Holiday = Holiday::WinterSolstice;
 pub const DUSK_FROM: u32 = 16;
 pub const DUSK_TO: u32 = 21;
 
-/// Whether `date` is in the winter the game is listed in: December to
-/// February.
+/// Whether `date` is in the winter the game is listed in: the twelfth
+/// month to the end of February.
 pub fn winter(date: Date) -> bool {
     Season::of(date) == Season::Winter
 }
@@ -37,7 +37,7 @@ pub fn fair_day(date: Date) -> bool {
     calendar::is_day(FAIR_DAY, date)
 }
 
-/// The winter `date` belongs to, named by the year its December falls in.
+/// The winter `date` belongs to, named by the year it starts in.
 pub fn winter_of(date: Date) -> i32 {
     if date.month <= 6 {
         date.year - 1
@@ -100,14 +100,14 @@ pub fn event(date: Date) -> Option<Happening> {
 
 /// Words for the Frost Fair's day.
 pub fn fair_date_words() -> &'static str {
-    "the winter solstice, in December"
+    "the winter solstice"
 }
 
 /// The midnight skate's row and title.
 pub const MIDNIGHT_ROW: &str = "Midnight skate";
 
 /// Whether the midnight skate is open at `t`: from 11 at night on the
-/// 31st of December to 1 in the morning on the 1st of January.
+/// last day of the year to 1 in the morning on the 1st of January.
 pub fn midnight_open(t: hearken::clock::LocalTime) -> bool {
     (t.month == 12 && t.day == 31 && t.hour == 23) || (t.month == 1 && t.day == 1 && t.hour == 0)
 }
@@ -121,7 +121,7 @@ pub fn secs_to_midnight(t: hearken::clock::LocalTime) -> i64 {
     }
 }
 
-/// Whether `date` is the 31st of December or the 1st of January, when the
+/// Whether `date` is the last day of the year or the 1st of January, when the
 /// new year's song joins the music.
 pub fn new_year(date: Date) -> bool {
     (date.month == 12 && date.day == 31) || (date.month == 1 && date.day == 1)

@@ -1,5 +1,5 @@
 //! The medley's choices: style by mood, never the same tune twice running,
-//! the quiet carol in deep snow, and the new year's song only at new year.
+//! the quiet tune in deep snow, and the new year's song only at new year.
 
 use hearken::Headless;
 use parlor_core::{Parlor, ParlorData};

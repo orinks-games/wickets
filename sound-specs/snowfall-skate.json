@@ -1,6 +1,6 @@
 {
   "genny": "blal1",
-  "_about": "Snowfall Skate sounds, on blal1's genny, written by tools/snowfall_skate_sounds.py. A frozen pond at night: your blades and your partner's, lanterns burning and chiming, drifts and thin ice, spins, the snow coming down, and the Frost Fair's stalls. Music is a live medley of an original waltz and public-domain carols, with fixed renders for the title and pause.",
+  "_about": "Snowfall Skate sounds, on blal1's genny, written by tools/snowfall_skate_sounds.py. A frozen pond at night: your blades and your partner's, lanterns burning and chiming, drifts and thin ice, spins, the snow coming down, and the Frost Fair's stalls. Music is a live medley of an original waltz and public-domain tunes, with fixed renders for the title and pause.",
   "sounds": [
     {
       "out": "bed/pond.wav",

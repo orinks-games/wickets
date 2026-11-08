@@ -73,7 +73,7 @@ pub fn kept(ctx: &mut Ctx<Parlor>) -> bool {
     Progress::load(ctx).kept()
 }
 
-/// Whether `date` is in the game's season: December to February.
+/// Whether `date` is in the game's season: the twelfth month to February.
 pub fn in_season(date: parlor_core::Date) -> bool {
     events::winter(date)
 }

@@ -24,7 +24,9 @@ pub fn tracks() -> Vec<Track> {
         .unlocked_by(music::every_key())
         .varied()
         .album(ALBUM.name)
-        .about("The skate's medley of carols and a waltz, strung together anew each time."),
+        .about(
+            "The skate's medley of old winter tunes and a waltz, strung together anew each time.",
+        ),
         ALBUM.pause(PAUSE_S),
     ]
 }

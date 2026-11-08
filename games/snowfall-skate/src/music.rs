@@ -1,4 +1,4 @@
-//! The skate's music, played live: a medley of carols and a waltz, strung
+//! The skate's music, played live: a medley of old tunes and a waltz, strung
 //! together a section at a time, following the night on the ice.
 //!
 //! Each section is a phrase of one tune, rendered as a lead line on each
@@ -13,7 +13,7 @@
 //! - On clear ice, the waltz band: bass, pizzicato and harp under a flute,
 //!   a clarinet or a celesta.
 //! - Once the snow lies deep, held strings under a music box or a celesta,
-//!   and the quietest carol comes up more often.
+//!   and the quietest tune comes up more often.
 //! - At the Frost Fair, the brass band.
 //!
 //! The lead follows your line: a soft lead while the line is short, full
@@ -47,7 +47,7 @@ const fn sec(name: &'static str, beats: u32, bpm: f64) -> Section {
 }
 
 /// The tunes, each its sections in order. The first is the game's own
-/// waltz; the rest are public-domain carols, never named in the game.
+/// waltz; the rest are public-domain tunes, never named in the game.
 pub const TUNES: [&[Section]; 5] = [
     &[sec("waltz-a", 24, 144.0), sec("waltz-b", 24, 144.0)],
     &[sec("tree-a", 24, 120.0), sec("tree-b", 24, 120.0)],
@@ -56,10 +56,10 @@ pub const TUNES: [&[Section]; 5] = [
     &[sec("still-a", 36, 96.0), sec("still-b", 36, 96.0)],
 ];
 
-/// The quiet carol, more likely once the snow lies deep.
+/// The quiet tune, more likely once the snow lies deep.
 const QUIET: usize = 4;
 
-/// The new year's song: in the medley from the 31st of December to the 1st
+/// The new year's song: in the medley from the last day of the year to the 1st
 /// of January only, and the last thing heard on a skate then.
 pub const YEAR: Section = sec("year", 32, 100.0);
 
@@ -108,7 +108,7 @@ pub struct Mood {
     pub deep: bool,
     /// At the Frost Fair.
     pub fair: bool,
-    /// The 31st of December or the 1st of January.
+    /// The last day of the year or the 1st of January.
     pub new_year: bool,
 }
 

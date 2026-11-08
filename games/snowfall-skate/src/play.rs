@@ -151,7 +151,7 @@ pub struct SkateScreen {
     at_bank: bool,
     /// The start key is still down from the push-off.
     start_held: bool,
-    /// Whether this is the 31st of December or the 1st of January.
+    /// Whether this is the last day of the year or the 1st of January.
     new_year: bool,
     /// The line before this frame's events, so a drift says "Line lost"
     /// only when there was one.

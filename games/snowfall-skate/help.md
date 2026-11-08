@@ -54,7 +54,7 @@ Every evening, from 4 in the afternoon to 9 at night by your clock, the lantern 
 
 ## The Frost Fair
 
-On the winter solstice in December, the river freezes and the fair sets up on the ice. The Frost Fair is a long skate down the river, past the stalls along the banks, with your partner beside you. It ends at the far bridge.
+On the winter solstice, the river freezes and the fair sets up on the ice. The Frost Fair is a long skate down the river, past the stalls along the banks, with your partner beside you. It ends at the far bridge.
 
 A star at the Frost Fair on its day earns that winter's ribbon. Once you have skated it on its day, the fair stays open for the rest of that winter.
 
@@ -64,7 +64,7 @@ On New Year's Eve, from 11 at night to 1 in the morning by your clock, the midni
 
 ## Keeping the game all year
 
-Snowfall Skate is listed in Seasonal games from December to February. Earn a star on the mill pond and the game is yours to keep: after the winter it stays in the Cozy games. The Frost Fair waits for the next winter.
+Snowfall Skate is listed in Seasonal games through the winter, until the end of February. Earn a star on the mill pond and the game is yours to keep: after the winter it stays in the Cozy games. The Frost Fair waits for the next winter.
 
 ## Practice and the tutorial
 
