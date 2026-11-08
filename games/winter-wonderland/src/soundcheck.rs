@@ -31,7 +31,11 @@ impl Default for SoundCheck {
 }
 
 fn item(label: String, key: &'static str, pos: Option<Vec3>) -> MenuItem<SoundCheck, Parlor> {
-    let label = label.split([':', '.']).next().unwrap_or(&label).to_string();
+    // Desk cues share a "Wish Desk: " prefix, so their names run to the first full stop.
+    let label = match label.strip_prefix("Wish Desk: ") {
+        Some(rest) => format!("Wish Desk: {}", rest.split('.').next().unwrap_or(rest)),
+        None => label.split([':', '.']).next().unwrap_or(&label).to_string(),
+    };
     MenuItem::new(label, move |s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
         ctx.stop_speech();
         ctx.audio.stop(s.playing, 100);
