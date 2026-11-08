@@ -1,0 +1,5996 @@
+{
+  "genny": "blal1",
+  "_about": "Snowfall Skate sounds, on blal1's genny, written by tools/snowfall_skate_sounds.py. A frozen pond at night: your blades and your partner's, lanterns burning and chiming, drifts and thin ice, spins, the snow coming down, and the Frost Fair's stalls. Music is a live medley of an original waltz and public-domain carols, with fixed renders for the title and pause.",
+  "sounds": [
+    {
+      "out": "bed/pond.wav",
+      "_about": "The pond at night, looped: a still hush, a breath of wind over the ice, the village far off.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "gust",
+          "params": {
+            "through": "leaves",
+            "dur": 11.0,
+            "strength": 0.12,
+            "seed": 1
+          },
+          "gain": 0.4,
+          "at": 0.0
+        },
+        {
+          "type": "sfx",
+          "kind": "wind",
+          "params": {
+            "dur": 11.0,
+            "scale": 0.6,
+            "seed": 2
+          },
+          "gain": 0.3,
+          "at": 0.0,
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 900
+            }
+          ]
+        },
+        {
+          "type": "sfx",
+          "kind": "distant_bell",
+          "params": {
+            "seed": 3
+          },
+          "gain": 0.05,
+          "at": 6.5
+        }
+      ],
+      "loudness": -36,
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 1.0
+        }
+      ],
+      "duration": 10.0
+    },
+    {
+      "out": "bed/snowfall.wav",
+      "_about": "Snow coming down, looped: a soft fine hiss. The game turns it up as the snow lies deeper.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "shake",
+          "params": {
+            "preset": "sandpaper",
+            "energy": 0.15,
+            "rate": 1.5,
+            "dur": 11.0,
+            "seed": 4
+          },
+          "gain": 0.25,
+          "at": 0.0,
+          "fx": [
+            {
+              "type": "highpass",
+              "cutoff": 1500
+            }
+          ]
+        },
+        {
+          "type": "sfx",
+          "kind": "noise_bed",
+          "params": {
+            "kind": "hiss",
+            "dur": 11.0,
+            "level": -26,
+            "bright": 0.3,
+            "seed": 5
+          },
+          "gain": 0.3,
+          "at": 0.0,
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 3000
+            }
+          ]
+        }
+      ],
+      "loudness": -37,
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 1.0
+        }
+      ],
+      "duration": 10.0
+    },
+    {
+      "out": "bed/river.wav",
+      "_about": "The frozen river at the fair, looped: a crowd along the banks, laughter, boots on the ice.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "crowd_murmur",
+          "params": {
+            "people": 40,
+            "mood": 0.7,
+            "distance": 0.7,
+            "dur": 11.0,
+            "seed": 6
+          },
+          "gain": 0.5,
+          "at": 0.0
+        },
+        {
+          "type": "sfx",
+          "kind": "laugh",
+          "params": {
+            "seed": 7
+          },
+          "gain": 0.08,
+          "at": 3.0
+        },
+        {
+          "type": "sfx",
+          "kind": "footsteps",
+          "params": {
+            "ground": "snow",
+            "gait": "walk",
+            "steps": 8,
+            "weight": 0.8,
+            "seed": 8
+          },
+          "gain": 0.1,
+          "at": 1.0,
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 1500
+            }
+          ]
+        }
+      ],
+      "loudness": -34,
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 1.0
+        }
+      ],
+      "duration": 10.0
+    },
+    {
+      "out": "skate/blades.wav",
+      "_about": "Your blades on clear ice, looped: long gliding strokes, left and right.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 1.0,
+            "speed": 0.7,
+            "force": 0.6,
+            "roughness": 0.3,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.3,
+            "bright": 0.7,
+            "seed": 10
+          },
+          "gain": 0.8,
+          "at": 0.0
+        },
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 1.0,
+            "speed": 0.7,
+            "force": 0.55,
+            "roughness": 0.3,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.3,
+            "bright": 0.7,
+            "seed": 11
+          },
+          "gain": 0.7,
+          "at": 1.0
+        }
+      ],
+      "loudness": -31,
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 0.3
+        }
+      ],
+      "duration": 2.0
+    },
+    {
+      "out": "skate/blades_soft.wav",
+      "_about": "Your blades in settled snow, looped: the same strokes, muffled and crunching.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "footsteps",
+          "params": {
+            "ground": "snow",
+            "gait": "walk",
+            "steps": 2,
+            "weight": 0.7,
+            "seed": 12
+          },
+          "gain": 0.6,
+          "at": 0.0,
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 2500
+            }
+          ]
+        },
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 2.0,
+            "speed": 0.5,
+            "force": 0.4,
+            "roughness": 0.6,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.3,
+            "seed": 13
+          },
+          "gain": 0.4,
+          "at": 0.0,
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 1800
+            }
+          ]
+        }
+      ],
+      "loudness": -32,
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 0.3
+        }
+      ],
+      "duration": 2.0
+    },
+    {
+      "out": "skate/partner.wav",
+      "_about": "Your partner's blades, looped: a lighter pair of strokes a little ahead.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 0.9,
+            "speed": 0.8,
+            "force": 0.4,
+            "roughness": 0.25,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.25,
+            "bright": 0.8,
+            "seed": 14
+          },
+          "gain": 0.7,
+          "at": 0.0,
+          "fx": [
+            {
+              "type": "highpass",
+              "cutoff": 600
+            }
+          ]
+        },
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 0.9,
+            "speed": 0.8,
+            "force": 0.35,
+            "roughness": 0.25,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.25,
+            "bright": 0.8,
+            "seed": 15
+          },
+          "gain": 0.6,
+          "at": 0.9,
+          "fx": [
+            {
+              "type": "highpass",
+              "cutoff": 600
+            }
+          ]
+        }
+      ],
+      "loudness": -32,
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 0.3
+        }
+      ],
+      "duration": 1.8
+    },
+    {
+      "out": "skate/carve.wav",
+      "_about": "A lean taken up: one carving stroke of the blade.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 0.35,
+            "speed": 1.0,
+            "force": 0.9,
+            "roughness": 0.3,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.3,
+            "bright": 0.8,
+            "seed": 16
+          },
+          "gain": 0.9,
+          "at": 0.0
+        }
+      ],
+      "loudness": -27,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.1
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 0.45
+    },
+    {
+      "out": "skate/push.wav",
+      "_about": "The push-off: a dig of the blade, a long first glide and a harp lift.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 0.2,
+            "speed": 0.4,
+            "force": 1.4,
+            "roughness": 0.6,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.3,
+            "seed": 17
+          },
+          "gain": 1.0,
+          "at": 0.0
+        },
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 1.0,
+            "speed": 0.9,
+            "force": 0.6,
+            "roughness": 0.3,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.3,
+            "bright": 0.7,
+            "seed": 18
+          },
+          "gain": 0.8,
+          "at": 0.2
+        },
+        {
+          "type": "seq",
+          "inst": "harp",
+          "steps": "G4:0.12 B4:0.12 D5:0.12 G5:0.6",
+          "gain": 0.4,
+          "at": 0.3
+        }
+      ],
+      "loudness": -22,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.6
+    },
+    {
+      "out": "skate/stride.wav",
+      "_about": "One stride: a quick push of the blade.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 0.25,
+            "speed": 0.6,
+            "force": 1.0,
+            "roughness": 0.4,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.3,
+            "seed": 19
+          },
+          "gain": 0.9,
+          "at": 0.0
+        }
+      ],
+      "loudness": -27,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.08
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 0.35
+    },
+    {
+      "out": "lantern/flame.wav",
+      "_about": "A lantern burning ahead, looped: a small flame crackling in its glass.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "fire",
+          "params": {
+            "dur": 3.0,
+            "size": 0.15,
+            "crackle": 10,
+            "wet": 0.05,
+            "wind": 0.1,
+            "seed": 20
+          },
+          "gain": 0.9,
+          "at": 0.0
+        },
+        {
+          "type": "sfx",
+          "kind": "flame",
+          "params": {
+            "kind": "candle",
+            "dur": 3.0,
+            "seed": 21
+          },
+          "gain": 0.3,
+          "at": 0.0
+        }
+      ],
+      "loudness": -28,
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 0.4
+        }
+      ],
+      "duration": 2.5
+    },
+    {
+      "out": "lantern/wrong.wav",
+      "_about": "The wrong lantern taken: a flat glassy clink and a low note.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "clink",
+          "params": {
+            "seed": 22
+          },
+          "gain": 0.6,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "[C5,C#5]:0.5",
+          "gain": 0.4,
+          "at": 0.02
+        }
+      ],
+      "loudness": -24,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.2
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 0.9
+    },
+    {
+      "out": "lantern/passed.wav",
+      "_about": "A lantern gone by: its flame slipping past behind you, and a low falling note.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "params": {
+            "dur": 0.5,
+            "low": 200,
+            "high": 1500,
+            "direction": "down"
+          },
+          "gain": 0.4,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "D5:0.2 G4:0.5",
+          "gain": 0.4,
+          "at": 0.05
+        }
+      ],
+      "loudness": -28,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.2
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 0.9
+    },
+    {
+      "out": "patch/drift.wav",
+      "_about": "A drift ahead, looped: blown snow hissing over a soft heap.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "gust",
+          "params": {
+            "through": "leaves",
+            "dur": 3.0,
+            "strength": 0.3,
+            "tone": 1.5,
+            "seed": 30
+          },
+          "gain": 0.7,
+          "at": 0.0
+        },
+        {
+          "type": "sfx",
+          "kind": "shake",
+          "params": {
+            "preset": "sandpaper",
+            "energy": 0.3,
+            "rate": 3.0,
+            "dur": 3.0,
+            "seed": 31
+          },
+          "gain": 0.4,
+          "at": 0.0
+        }
+      ],
+      "loudness": -29,
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 0.4
+        }
+      ],
+      "duration": 2.5
+    },
+    {
+      "out": "patch/thin.wav",
+      "_about": "Thin ice ahead, looped: the ice ticking, creaking and pinging under strain.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "freeze",
+          "params": {
+            "dur": 3.0,
+            "rate": 6.0,
+            "creak": 0.6,
+            "pings": 3,
+            "seed": 32
+          },
+          "gain": 0.9,
+          "at": 0.0
+        }
+      ],
+      "loudness": -28,
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 0.4
+        }
+      ],
+      "duration": 2.5
+    },
+    {
+      "out": "patch/drifted.wav",
+      "_about": "Into a drift: a soft crunch of snow and a slow slide.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "footsteps",
+          "params": {
+            "ground": "snow",
+            "gait": "walk",
+            "steps": 1,
+            "weight": 1.3,
+            "seed": 33
+          },
+          "gain": 0.8,
+          "at": 0.0
+        },
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 0.7,
+            "speed": 0.3,
+            "force": 0.5,
+            "roughness": 0.8,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.3,
+            "seed": 34
+          },
+          "gain": 0.5,
+          "at": 0.1,
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 1500
+            }
+          ]
+        }
+      ],
+      "loudness": -23,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.25
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.0
+    },
+    {
+      "out": "patch/crack.wav",
+      "_about": "The ice cracks under you: a sharp crack running away through the ice.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "ice_crack",
+          "params": {
+            "dur": 1.4,
+            "thickness": 0.05,
+            "distance": 40.0,
+            "cracks": 3,
+            "brittle": 0.7,
+            "seed": 35
+          },
+          "gain": 1.0,
+          "at": 0.0
+        },
+        {
+          "type": "sfx",
+          "kind": "freeze",
+          "params": {
+            "dur": 1.2,
+            "rate": 14.0,
+            "creak": 0.7,
+            "pings": 2,
+            "seed": 36
+          },
+          "gain": 0.5,
+          "at": 0.05
+        },
+        {
+          "type": "sfx",
+          "kind": "thud",
+          "params": {
+            "body": "box",
+            "contact_ms": 8,
+            "size": 1.5,
+            "force": 0.9,
+            "seed": 37
+          },
+          "gain": 0.4,
+          "at": 0.0,
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 400
+            }
+          ]
+        }
+      ],
+      "loudness": -20,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.4
+    },
+    {
+      "out": "spin/wind.wav",
+      "_about": "A spin winding, looped while the key is held: blades turning on the spot, faster.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 1.5,
+            "speed": 1.2,
+            "force": 0.5,
+            "roughness": 0.2,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.25,
+            "bright": 0.8,
+            "seed": 40
+          },
+          "gain": 0.8,
+          "at": 0.0
+        },
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "params": {
+            "dur": 1.5,
+            "low": 500,
+            "high": 2500,
+            "direction": "up"
+          },
+          "gain": 0.3,
+          "at": 0.0
+        }
+      ],
+      "loudness": -29,
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 0.3
+        }
+      ],
+      "duration": 1.4
+    },
+    {
+      "out": "spin/ready.wav",
+      "_about": "A spin ready: a rising glassy shimmer. Let go now.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "glockenspiel",
+          "steps": "D6:0.06 G6:0.06 B6:0.06 D7:0.4",
+          "gain": 0.35,
+          "at": 0.0
+        },
+        {
+          "type": "sfx",
+          "kind": "magic",
+          "params": {
+            "dur": 0.6
+          },
+          "gain": 0.2,
+          "at": 0.0
+        }
+      ],
+      "loudness": -24,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.2
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 0.8
+    },
+    {
+      "out": "spin/land.wav",
+      "_about": "A spin landed: a clean scrape out of the turn and a bright ring.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 0.3,
+            "speed": 1.0,
+            "force": 1.2,
+            "roughness": 0.2,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.3,
+            "bright": 0.9,
+            "seed": 42
+          },
+          "gain": 0.9,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "[G5,B5,D6]:0.8",
+          "gain": 0.4,
+          "at": 0.1
+        }
+      ],
+      "loudness": -21,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.2
+    },
+    {
+      "out": "spin/wobble.wav",
+      "_about": "A wobble: the blades scuffing as you stagger out of the spin.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 0.25,
+            "speed": 0.3,
+            "force": 1.2,
+            "roughness": 0.9,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.3,
+            "seed": 43
+          },
+          "gain": 0.8,
+          "at": 0.0
+        },
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 0.2,
+            "speed": 0.3,
+            "force": 1.0,
+            "roughness": 0.9,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.3,
+            "seed": 44
+          },
+          "gain": 0.7,
+          "at": 0.3
+        },
+        {
+          "type": "seq",
+          "inst": "pizzicato",
+          "steps": "D3:0.2 C#3:0.4",
+          "gain": 0.4,
+          "at": 0.1
+        }
+      ],
+      "loudness": -23,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.2
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 0.9
+    },
+    {
+      "out": "end/snowed.wav",
+      "_about": "The snow has covered the ice: a hush, the wind dropping, and a low harp settling.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "gust",
+          "params": {
+            "through": "leaves",
+            "dur": 2.5,
+            "strength": 0.25,
+            "seed": 50
+          },
+          "gain": 0.6,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "harp",
+          "steps": "D5:0.3 B4:0.3 G4:0.3 D4:1.2",
+          "gain": 0.4,
+          "at": 0.3
+        }
+      ],
+      "loudness": -22,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.8
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 2.8
+    },
+    {
+      "out": "end/done.wav",
+      "_about": "A course skated to its end: a long glide to a stop and a harp run up.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 1.2,
+            "speed": 0.4,
+            "force": 0.5,
+            "roughness": 0.3,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.3,
+            "seed": 51
+          },
+          "gain": 0.7,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "harp",
+          "steps": "G4:0.1 B4:0.1 D5:0.1 G5:0.1 B5:0.8",
+          "gain": 0.4,
+          "at": 0.6
+        }
+      ],
+      "loudness": -22,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.4
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 2.0
+    },
+    {
+      "out": "end/won.wav",
+      "_about": "A night with a star: flute and celesta over the waltz bass.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "flute",
+          "steps": "D5:0.25 B4:0.25 G4:0.25 B4:0.25 D5:0.25 G5:0.9",
+          "gain": 0.45,
+          "at": 0.0,
+          "params": {
+            "breath": 0.3
+          }
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "[G4,B4,D5]:1.4",
+          "gain": 0.3,
+          "at": 0.75
+        },
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "steps": "G2:0.75 D2:0.75 G2:0.9",
+          "gain": 0.5,
+          "at": 0.0
+        }
+      ],
+      "loudness": -20,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.4
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 2.6
+    },
+    {
+      "out": "end/lost.wav",
+      "_about": "No star this night: the clarinet drifts down.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "D5:0.4 C5:0.4 B4:0.4 A4:1.0",
+          "gain": 0.45,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "steps": "D2:1.2 G1:1.0",
+          "gain": 0.5,
+          "at": 0.0
+        }
+      ],
+      "loudness": -21,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.4
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 2.4
+    },
+    {
+      "out": "stall/chestnuts.wav",
+      "_about": "A chestnut stall, looped: roasting chestnuts popping and hissing on a brazier.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "fire",
+          "params": {
+            "dur": 3.0,
+            "size": 0.3,
+            "crackle": 18,
+            "wet": 0.3,
+            "wind": 0.1,
+            "seed": 60
+          },
+          "gain": 0.6,
+          "at": 0.0
+        },
+        {
+          "type": "sfx",
+          "kind": "sizzle",
+          "params": {
+            "dur": 3.0,
+            "intensity": 0.3,
+            "spit": 3.0,
+            "hiss": 0.3,
+            "seed": 61
+          },
+          "gain": 0.3,
+          "at": 0.0
+        }
+      ],
+      "loudness": -30,
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 0.4
+        }
+      ],
+      "duration": 2.5
+    },
+    {
+      "out": "stall/cider.wav",
+      "_about": "A cider stall, looped: a kettle on the boil and mugs clinking.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "boil",
+          "params": {
+            "dur": 3.0,
+            "intensity": 0.4,
+            "size": 0.6,
+            "seed": 62
+          },
+          "gain": 0.5,
+          "at": 0.0
+        },
+        {
+          "type": "sfx",
+          "kind": "clink",
+          "params": {
+            "seed": 63
+          },
+          "gain": 0.3,
+          "at": 0.8
+        },
+        {
+          "type": "sfx",
+          "kind": "clink",
+          "params": {
+            "seed": 64
+          },
+          "gain": 0.25,
+          "at": 2.1
+        }
+      ],
+      "loudness": -30,
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 0.4
+        }
+      ],
+      "duration": 2.5
+    },
+    {
+      "out": "stall/band.wav",
+      "_about": "A little band on the bank, looped: a hurdy accordion and a bass drum.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "accordion",
+          "steps": "G4:0.5 B4:0.5 D5:0.5 B4:0.5 C5:0.5 A4:0.5 B4:1.0",
+          "gain": 0.4,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "tuba",
+          "steps": "G2:1 D2:1 C2:1 G2:1",
+          "gain": 0.45,
+          "at": 0.0
+        }
+      ],
+      "loudness": -30,
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 0.3
+        }
+      ],
+      "duration": 4.0
+    },
+    {
+      "out": "stall/gingerbread.wav",
+      "_about": "A gingerbread stall, looped: paper bags rustling and a crowd chatting close by.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "crumple",
+          "params": {
+            "kind": "paper",
+            "energy": 0.2,
+            "density": 0.3,
+            "size": 0.3,
+            "dur": 0.5,
+            "bright": 0.3,
+            "seed": 65
+          },
+          "gain": 0.3,
+          "at": 0.0
+        },
+        {
+          "type": "sfx",
+          "kind": "crumple",
+          "params": {
+            "kind": "paper",
+            "energy": 0.2,
+            "density": 0.3,
+            "size": 0.3,
+            "dur": 0.4,
+            "bright": 0.3,
+            "seed": 66
+          },
+          "gain": 0.25,
+          "at": 1.5
+        },
+        {
+          "type": "sfx",
+          "kind": "crowd_murmur",
+          "params": {
+            "people": 6,
+            "mood": 0.7,
+            "distance": 0.2,
+            "dur": 3.0,
+            "seed": 67
+          },
+          "gain": 0.5,
+          "at": 0.0
+        }
+      ],
+      "loudness": -30,
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "loop",
+          "crossfade": 0.4
+        }
+      ],
+      "duration": 2.5
+    },
+    {
+      "out": "music/sweep.wav",
+      "_about": "A landed spin's harp sweep up.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "harp",
+          "steps": "G3:0.06 B3:0.06 D4:0.06 G4:0.06 B4:0.06 D5:0.06 G5:0.5",
+          "gain": 0.45,
+          "at": 0.0
+        }
+      ],
+      "loudness": -24,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.2
+    },
+    {
+      "out": "menu/move.wav",
+      "_about": "Menu move: a light tick of a blade.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 0.08,
+            "speed": 1.0,
+            "force": 0.6,
+            "roughness": 0.3,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.25,
+            "bright": 0.8,
+            "seed": 70
+          },
+          "gain": 1.0,
+          "at": 0.0
+        }
+      ],
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.03
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 0.12,
+      "normalize": -9,
+      "max_loudness": -28
+    },
+    {
+      "out": "menu/select.wav",
+      "_about": "Menu select: a short glide and a celesta note.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "params": {
+            "dur": 0.2,
+            "speed": 0.9,
+            "force": 0.5,
+            "roughness": 0.3,
+            "material": "metal",
+            "body": "rect_plate",
+            "size": 0.25,
+            "seed": 71
+          },
+          "gain": 0.6,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "D5:0.3",
+          "gain": 0.4,
+          "at": 0.02
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -6,
+      "max_loudness": -22
+    },
+    {
+      "out": "menu/back.wav",
+      "_about": "Menu back: a soft pat of snow.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "thud",
+          "params": {
+            "body": "sack",
+            "contact_ms": 30,
+            "size": 0.4,
+            "force": 0.4,
+            "seed": 72
+          },
+          "gain": 1.0,
+          "at": 0.0
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -9,
+      "max_loudness": -26
+    },
+    {
+      "out": "lantern/light0.wav",
+      "_about": "A lantern lights: a soft bell on G4, the lantern's own note.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "G4:1.0",
+          "gain": 0.5,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "glass",
+          "steps": "G5:0.8",
+          "gain": 0.15,
+          "at": 0.02
+        }
+      ],
+      "loudness": -25,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.4
+    },
+    {
+      "out": "lantern/take0.wav",
+      "_about": "A lantern taken: a bright chime on G4 as you skate through its glow.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "glockenspiel",
+          "steps": "G5:0.8",
+          "gain": 0.45,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "G4:0.8",
+          "gain": 0.35,
+          "at": 0.01
+        },
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "params": {
+            "dur": 0.3,
+            "low": 800,
+            "high": 4000,
+            "direction": "up"
+          },
+          "gain": 0.2,
+          "at": 0.0
+        }
+      ],
+      "loudness": -22,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.2
+    },
+    {
+      "out": "lantern/light1.wav",
+      "_about": "A lantern lights: a soft bell on A4, the lantern's own note.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "A4:1.0",
+          "gain": 0.5,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "glass",
+          "steps": "A5:0.8",
+          "gain": 0.15,
+          "at": 0.02
+        }
+      ],
+      "loudness": -25,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.4
+    },
+    {
+      "out": "lantern/take1.wav",
+      "_about": "A lantern taken: a bright chime on A4 as you skate through its glow.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "glockenspiel",
+          "steps": "A5:0.8",
+          "gain": 0.45,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "A4:0.8",
+          "gain": 0.35,
+          "at": 0.01
+        },
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "params": {
+            "dur": 0.3,
+            "low": 800,
+            "high": 4000,
+            "direction": "up"
+          },
+          "gain": 0.2,
+          "at": 0.0
+        }
+      ],
+      "loudness": -22,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.2
+    },
+    {
+      "out": "lantern/light2.wav",
+      "_about": "A lantern lights: a soft bell on B4, the lantern's own note.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "B4:1.0",
+          "gain": 0.5,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "glass",
+          "steps": "B5:0.8",
+          "gain": 0.15,
+          "at": 0.02
+        }
+      ],
+      "loudness": -25,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.4
+    },
+    {
+      "out": "lantern/take2.wav",
+      "_about": "A lantern taken: a bright chime on B4 as you skate through its glow.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "glockenspiel",
+          "steps": "B5:0.8",
+          "gain": 0.45,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "B4:0.8",
+          "gain": 0.35,
+          "at": 0.01
+        },
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "params": {
+            "dur": 0.3,
+            "low": 800,
+            "high": 4000,
+            "direction": "up"
+          },
+          "gain": 0.2,
+          "at": 0.0
+        }
+      ],
+      "loudness": -22,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.2
+    },
+    {
+      "out": "lantern/light3.wav",
+      "_about": "A lantern lights: a soft bell on C5, the lantern's own note.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "C5:1.0",
+          "gain": 0.5,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "glass",
+          "steps": "C6:0.8",
+          "gain": 0.15,
+          "at": 0.02
+        }
+      ],
+      "loudness": -25,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.4
+    },
+    {
+      "out": "lantern/take3.wav",
+      "_about": "A lantern taken: a bright chime on C5 as you skate through its glow.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "glockenspiel",
+          "steps": "C6:0.8",
+          "gain": 0.45,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "C5:0.8",
+          "gain": 0.35,
+          "at": 0.01
+        },
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "params": {
+            "dur": 0.3,
+            "low": 800,
+            "high": 4000,
+            "direction": "up"
+          },
+          "gain": 0.2,
+          "at": 0.0
+        }
+      ],
+      "loudness": -22,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.2
+    },
+    {
+      "out": "lantern/light4.wav",
+      "_about": "A lantern lights: a soft bell on D5, the lantern's own note.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "D5:1.0",
+          "gain": 0.5,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "glass",
+          "steps": "D6:0.8",
+          "gain": 0.15,
+          "at": 0.02
+        }
+      ],
+      "loudness": -25,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.4
+    },
+    {
+      "out": "lantern/take4.wav",
+      "_about": "A lantern taken: a bright chime on D5 as you skate through its glow.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "glockenspiel",
+          "steps": "D6:0.8",
+          "gain": 0.45,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "D5:0.8",
+          "gain": 0.35,
+          "at": 0.01
+        },
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "params": {
+            "dur": 0.3,
+            "low": 800,
+            "high": 4000,
+            "direction": "up"
+          },
+          "gain": 0.2,
+          "at": 0.0
+        }
+      ],
+      "loudness": -22,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.2
+    },
+    {
+      "out": "lantern/light5.wav",
+      "_about": "A lantern lights: a soft bell on E5, the lantern's own note.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "E5:1.0",
+          "gain": 0.5,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "glass",
+          "steps": "E6:0.8",
+          "gain": 0.15,
+          "at": 0.02
+        }
+      ],
+      "loudness": -25,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.4
+    },
+    {
+      "out": "lantern/take5.wav",
+      "_about": "A lantern taken: a bright chime on E5 as you skate through its glow.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "glockenspiel",
+          "steps": "E5:0.8",
+          "gain": 0.45,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "E5:0.8",
+          "gain": 0.35,
+          "at": 0.01
+        },
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "params": {
+            "dur": 0.3,
+            "low": 800,
+            "high": 4000,
+            "direction": "up"
+          },
+          "gain": 0.2,
+          "at": 0.0
+        }
+      ],
+      "loudness": -22,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.2
+    },
+    {
+      "out": "lantern/light6.wav",
+      "_about": "A lantern lights: a soft bell on F#5, the lantern's own note.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "F#5:1.0",
+          "gain": 0.5,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "glass",
+          "steps": "F#6:0.8",
+          "gain": 0.15,
+          "at": 0.02
+        }
+      ],
+      "loudness": -25,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.4
+    },
+    {
+      "out": "lantern/take6.wav",
+      "_about": "A lantern taken: a bright chime on F#5 as you skate through its glow.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "glockenspiel",
+          "steps": "F#5:0.8",
+          "gain": 0.45,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "F#5:0.8",
+          "gain": 0.35,
+          "at": 0.01
+        },
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "params": {
+            "dur": 0.3,
+            "low": 800,
+            "high": 4000,
+            "direction": "up"
+          },
+          "gain": 0.2,
+          "at": 0.0
+        }
+      ],
+      "loudness": -22,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.2
+    },
+    {
+      "out": "lantern/light7.wav",
+      "_about": "A lantern lights: a soft bell on G5, the lantern's own note.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "G5:1.0",
+          "gain": 0.5,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "glass",
+          "steps": "G6:0.8",
+          "gain": 0.15,
+          "at": 0.02
+        }
+      ],
+      "loudness": -25,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.4
+    },
+    {
+      "out": "lantern/take7.wav",
+      "_about": "A lantern taken: a bright chime on G5 as you skate through its glow.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "glockenspiel",
+          "steps": "G5:0.8",
+          "gain": 0.45,
+          "at": 0.0
+        },
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "steps": "G5:0.8",
+          "gain": 0.35,
+          "at": 0.01
+        },
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "params": {
+            "dur": 0.3,
+            "low": 800,
+            "high": 4000,
+            "direction": "up"
+          },
+          "gain": 0.2,
+          "at": 0.0
+        }
+      ],
+      "loudness": -22,
+      "fx": [
+        {
+          "type": "fade",
+          "out": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "duration": 1.2
+    },
+    {
+      "out": "music/lead/waltz-a-flute.wav",
+      "_about": "Skate medley: the waltz-a tune on flute, 8 bars at 144 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "flute",
+          "step": 1,
+          "steps": "D5:2 B4:1 G4:2 B4:1 A4:1 B4:1 C5:1 B4:3 E5:2 C5:1 D5:2 B4:1 A4:2 F#4:1 A4:3",
+          "gain": 0.42,
+          "vel": 0.55,
+          "params": {
+            "breath": 0.3
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/waltz-a-clarinet.wav",
+      "_about": "Skate medley: the waltz-a tune on clarinet, 8 bars at 144 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "step": 1,
+          "steps": "D5:2 B4:1 G4:2 B4:1 A4:1 B4:1 C5:1 B4:3 E5:2 C5:1 D5:2 B4:1 A4:2 F#4:1 A4:3",
+          "gain": 0.4,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/waltz-a-celesta.wav",
+      "_about": "Skate medley: the waltz-a tune on celesta, 8 bars at 144 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "step": 1,
+          "steps": "D5:2 B4:1 G4:2 B4:1 A4:1 B4:1 C5:1 B4:3 E5:2 C5:1 D5:2 B4:1 A4:2 F#4:1 A4:3",
+          "gain": 0.45,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/waltz-a-waltz.wav",
+      "_about": "Skate medley: the waltz-a accompaniment, waltz, 8 bars at 144 beats a minute in G, plus its ring-out.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:1 -:2 G2:1 -:2 D2:1 -:2 G2:1 -:2 C2:1 -:2 G2:1 -:2 D2:1 -:2 D2:1 -:2",
+          "gain": 0.5,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "pizzicato",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1",
+          "gain": 0.28,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "harp",
+          "step": 1,
+          "steps": "G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5",
+          "gain": 0.22,
+          "vel": 0.45,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.45
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/waltz-a-music_box.wav",
+      "_about": "Skate medley: the waltz-a tune on music_box, 8 bars at 144 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "step": 1,
+          "steps": "D5:2 B4:1 G4:2 B4:1 A4:1 B4:1 C5:1 B4:3 E5:2 C5:1 D5:2 B4:1 A4:2 F#4:1 A4:3",
+          "gain": 0.45,
+          "vel": 0.55,
+          "transpose": 12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/waltz-a-hush.wav",
+      "_about": "Skate medley: the waltz-a accompaniment, hush, 8 bars at 144 beats a minute in G, plus its ring-out.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:3 G2:3 D2:3 G2:3 C2:3 G2:3 D2:3 D2:3",
+          "gain": 0.35,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "strings",
+          "step": 1,
+          "steps": "[D3,G3,B3]:3 [D3,G3,B3]:3 [D3,F#3,A3]:3 [D3,G3,B3]:3 [C3,E3,G3]:3 [D3,G3,B3]:3 [D3,F#3,A3]:3 [D3,F#3,A3]:3",
+          "gain": 0.24,
+          "vel": 0.4,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/waltz-a-trumpet.wav",
+      "_about": "Skate medley: the waltz-a tune on trumpet, 8 bars at 144 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "trumpet",
+          "step": 1,
+          "steps": "D5:2 B4:1 G4:2 B4:1 A4:1 B4:1 C5:1 B4:3 E5:2 C5:1 D5:2 B4:1 A4:2 F#4:1 A4:3",
+          "gain": 0.36,
+          "vel": 0.6,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/waltz-a-horn.wav",
+      "_about": "Skate medley: the waltz-a tune on horn, 8 bars at 144 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "french_horn",
+          "step": 1,
+          "steps": "D5:2 B4:1 G4:2 B4:1 A4:1 B4:1 C5:1 B4:3 E5:2 C5:1 D5:2 B4:1 A4:2 F#4:1 A4:3",
+          "gain": 0.42,
+          "vel": 0.6,
+          "transpose": -12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/waltz-a-band.wav",
+      "_about": "Skate medley: the waltz-a accompaniment, band, 8 bars at 144 beats a minute in G, plus its ring-out.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "tuba",
+          "step": 1,
+          "steps": "G2:1 -:1 -:1 G2:1 -:1 -:1 D2:1 -:1 -:1 G2:1 -:1 -:1 C2:1 -:1 -:1 G2:1 -:1 -:1 D2:1 -:1 -:1 D2:1 -:1 -:1",
+          "gain": 0.45,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "trombone",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1",
+          "gain": 0.22,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/waltz-b-flute.wav",
+      "_about": "Skate medley: the waltz-b tune on flute, 8 bars at 144 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "flute",
+          "step": 1,
+          "steps": "D5:2 B4:1 C5:2 A4:1 B4:2 G4:1 E4:3 F#4:1 G4:1 A4:1 B4:2 D5:1 C5:1 A4:1 F#4:1 G4:3",
+          "gain": 0.42,
+          "vel": 0.55,
+          "params": {
+            "breath": 0.3
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/waltz-b-clarinet.wav",
+      "_about": "Skate medley: the waltz-b tune on clarinet, 8 bars at 144 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "step": 1,
+          "steps": "D5:2 B4:1 C5:2 A4:1 B4:2 G4:1 E4:3 F#4:1 G4:1 A4:1 B4:2 D5:1 C5:1 A4:1 F#4:1 G4:3",
+          "gain": 0.4,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/waltz-b-celesta.wav",
+      "_about": "Skate medley: the waltz-b tune on celesta, 8 bars at 144 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "step": 1,
+          "steps": "D5:2 B4:1 C5:2 A4:1 B4:2 G4:1 E4:3 F#4:1 G4:1 A4:1 B4:2 D5:1 C5:1 A4:1 F#4:1 G4:3",
+          "gain": 0.45,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/waltz-b-waltz.wav",
+      "_about": "Skate medley: the waltz-b accompaniment, waltz, 8 bars at 144 beats a minute in G, plus its ring-out.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:1 -:2 C2:1 -:2 G2:1 -:2 C2:1 -:2 D2:1 -:2 G2:1 -:2 D2:1 -:2 G2:1 -:2",
+          "gain": 0.5,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "pizzicato",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.28,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "harp",
+          "step": 1,
+          "steps": "G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5",
+          "gain": 0.22,
+          "vel": 0.45,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.45
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/waltz-b-music_box.wav",
+      "_about": "Skate medley: the waltz-b tune on music_box, 8 bars at 144 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "step": 1,
+          "steps": "D5:2 B4:1 C5:2 A4:1 B4:2 G4:1 E4:3 F#4:1 G4:1 A4:1 B4:2 D5:1 C5:1 A4:1 F#4:1 G4:3",
+          "gain": 0.45,
+          "vel": 0.55,
+          "transpose": 12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/waltz-b-hush.wav",
+      "_about": "Skate medley: the waltz-b accompaniment, hush, 8 bars at 144 beats a minute in G, plus its ring-out.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:3 C2:3 G2:3 C2:3 D2:3 G2:3 D2:3 G2:3",
+          "gain": 0.35,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "strings",
+          "step": 1,
+          "steps": "[D3,G3,B3]:3 [C3,E3,G3]:3 [D3,G3,B3]:3 [C3,E3,G3]:3 [D3,F#3,A3]:3 [D3,G3,B3]:3 [D3,F#3,A3]:3 [D3,G3,B3]:3",
+          "gain": 0.24,
+          "vel": 0.4,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/waltz-b-trumpet.wav",
+      "_about": "Skate medley: the waltz-b tune on trumpet, 8 bars at 144 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "trumpet",
+          "step": 1,
+          "steps": "D5:2 B4:1 C5:2 A4:1 B4:2 G4:1 E4:3 F#4:1 G4:1 A4:1 B4:2 D5:1 C5:1 A4:1 F#4:1 G4:3",
+          "gain": 0.36,
+          "vel": 0.6,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/waltz-b-horn.wav",
+      "_about": "Skate medley: the waltz-b tune on horn, 8 bars at 144 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "french_horn",
+          "step": 1,
+          "steps": "D5:2 B4:1 C5:2 A4:1 B4:2 G4:1 E4:3 F#4:1 G4:1 A4:1 B4:2 D5:1 C5:1 A4:1 F#4:1 G4:3",
+          "gain": 0.42,
+          "vel": 0.6,
+          "transpose": -12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/waltz-b-band.wav",
+      "_about": "Skate medley: the waltz-b accompaniment, band, 8 bars at 144 beats a minute in G, plus its ring-out.",
+      "bpm": 144,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "tuba",
+          "step": 1,
+          "steps": "G2:1 -:1 -:1 C2:1 -:1 -:1 G2:1 -:1 -:1 C2:1 -:1 -:1 D2:1 -:1 -:1 G2:1 -:1 -:1 D2:1 -:1 -:1 G2:1 -:1 -:1",
+          "gain": 0.45,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "trombone",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.22,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/tree-a-flute.wav",
+      "_about": "Skate medley: the tree-a tune on flute, 8 bars at 120 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "flute",
+          "step": 1,
+          "steps": "G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:1 D4:1 G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:1 D5:1",
+          "gain": 0.42,
+          "vel": 0.55,
+          "params": {
+            "breath": 0.3
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/tree-a-clarinet.wav",
+      "_about": "Skate medley: the tree-a tune on clarinet, 8 bars at 120 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "step": 1,
+          "steps": "G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:1 D4:1 G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:1 D5:1",
+          "gain": 0.4,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/tree-a-celesta.wav",
+      "_about": "Skate medley: the tree-a tune on celesta, 8 bars at 120 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "step": 1,
+          "steps": "G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:1 D4:1 G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:1 D5:1",
+          "gain": 0.45,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/tree-a-waltz.wav",
+      "_about": "Skate medley: the tree-a accompaniment, waltz, 8 bars at 120 beats a minute in G, plus its ring-out.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:1 -:2 G2:1 -:2 C2:1 -:1 D2:1 G2:1 -:2 G2:1 -:2 G2:1 -:2 C2:1 -:1 D2:1 G2:1 -:2",
+          "gain": 0.5,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "pizzicato",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.28,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "harp",
+          "step": 1,
+          "steps": "G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 D3:0.5 F#3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 D3:0.5 F#3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5",
+          "gain": 0.22,
+          "vel": 0.45,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.45
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/tree-a-music_box.wav",
+      "_about": "Skate medley: the tree-a tune on music_box, 8 bars at 120 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "step": 1,
+          "steps": "G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:1 D4:1 G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:1 D5:1",
+          "gain": 0.45,
+          "vel": 0.55,
+          "transpose": 12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/tree-a-hush.wav",
+      "_about": "Skate medley: the tree-a accompaniment, hush, 8 bars at 120 beats a minute in G, plus its ring-out.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:3 G2:3 C2:2 D2:1 G2:3 G2:3 G2:3 C2:2 D2:1 G2:3",
+          "gain": 0.35,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "strings",
+          "step": 1,
+          "steps": "[D3,G3,B3]:3 [D3,G3,B3]:3 [C3,E3,G3]:2 [D3,F#3,A3]:1 [D3,G3,B3]:3 [D3,G3,B3]:3 [D3,G3,B3]:3 [C3,E3,G3]:2 [D3,F#3,A3]:1 [D3,G3,B3]:3",
+          "gain": 0.24,
+          "vel": 0.4,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/tree-a-trumpet.wav",
+      "_about": "Skate medley: the tree-a tune on trumpet, 8 bars at 120 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "trumpet",
+          "step": 1,
+          "steps": "G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:1 D4:1 G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:1 D5:1",
+          "gain": 0.36,
+          "vel": 0.6,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/tree-a-horn.wav",
+      "_about": "Skate medley: the tree-a tune on horn, 8 bars at 120 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "french_horn",
+          "step": 1,
+          "steps": "G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:1 D4:1 G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:1 D5:1",
+          "gain": 0.42,
+          "vel": 0.6,
+          "transpose": -12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/tree-a-band.wav",
+      "_about": "Skate medley: the tree-a accompaniment, band, 8 bars at 120 beats a minute in G, plus its ring-out.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "tuba",
+          "step": 1,
+          "steps": "G2:1 -:1 -:1 G2:1 -:1 -:1 C2:1 -:1 D2:1 G2:1 -:1 -:1 G2:1 -:1 -:1 G2:1 -:1 -:1 C2:1 -:1 D2:1 G2:1 -:1 -:1",
+          "gain": 0.45,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "trombone",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 -:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 -:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.22,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/tree-b-flute.wav",
+      "_about": "Skate medley: the tree-b tune on flute, 8 bars at 120 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "flute",
+          "step": 1,
+          "steps": "D5:0.5 B4:0.5 E5:1.5 D5:0.5 D5:0.75 C5:0.25 C5:1.5 C5:0.5 C5:0.5 A4:0.5 D5:1.5 C5:0.5 C5:0.75 B4:0.25 B4:1.5 D4:0.5 G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:2",
+          "gain": 0.42,
+          "vel": 0.55,
+          "params": {
+            "breath": 0.3
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/tree-b-clarinet.wav",
+      "_about": "Skate medley: the tree-b tune on clarinet, 8 bars at 120 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "step": 1,
+          "steps": "D5:0.5 B4:0.5 E5:1.5 D5:0.5 D5:0.75 C5:0.25 C5:1.5 C5:0.5 C5:0.5 A4:0.5 D5:1.5 C5:0.5 C5:0.75 B4:0.25 B4:1.5 D4:0.5 G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:2",
+          "gain": 0.4,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/tree-b-celesta.wav",
+      "_about": "Skate medley: the tree-b tune on celesta, 8 bars at 120 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "step": 1,
+          "steps": "D5:0.5 B4:0.5 E5:1.5 D5:0.5 D5:0.75 C5:0.25 C5:1.5 C5:0.5 C5:0.5 A4:0.5 D5:1.5 C5:0.5 C5:0.75 B4:0.25 B4:1.5 D4:0.5 G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:2",
+          "gain": 0.45,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/tree-b-waltz.wav",
+      "_about": "Skate medley: the tree-b accompaniment, waltz, 8 bars at 120 beats a minute in G, plus its ring-out.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:1 -:1 C2:1 D2:1 -:2 D2:1 -:2 G2:1 -:2 G2:1 -:2 G2:1 -:2 C2:1 -:1 D2:1 G2:1 -:2",
+          "gain": 0.5,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "pizzicato",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 [C3,E3,G3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.28,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "harp",
+          "step": 1,
+          "steps": "G3:0.5 B3:0.5 D4:0.5 G3:0.5 C3:0.5 E3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 D3:0.5 F#3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5",
+          "gain": 0.22,
+          "vel": 0.45,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.45
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/tree-b-music_box.wav",
+      "_about": "Skate medley: the tree-b tune on music_box, 8 bars at 120 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "step": 1,
+          "steps": "D5:0.5 B4:0.5 E5:1.5 D5:0.5 D5:0.75 C5:0.25 C5:1.5 C5:0.5 C5:0.5 A4:0.5 D5:1.5 C5:0.5 C5:0.75 B4:0.25 B4:1.5 D4:0.5 G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:2",
+          "gain": 0.45,
+          "vel": 0.55,
+          "transpose": 12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/tree-b-hush.wav",
+      "_about": "Skate medley: the tree-b accompaniment, hush, 8 bars at 120 beats a minute in G, plus its ring-out.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:2 C2:1 D2:3 D2:3 G2:3 G2:3 G2:3 C2:2 D2:1 G2:3",
+          "gain": 0.35,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "strings",
+          "step": 1,
+          "steps": "[D3,G3,B3]:2 [C3,E3,G3]:1 [D3,F#3,A3]:3 [D3,F#3,A3]:3 [D3,G3,B3]:3 [D3,G3,B3]:3 [D3,G3,B3]:3 [C3,E3,G3]:2 [D3,F#3,A3]:1 [D3,G3,B3]:3",
+          "gain": 0.24,
+          "vel": 0.4,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/tree-b-trumpet.wav",
+      "_about": "Skate medley: the tree-b tune on trumpet, 8 bars at 120 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "trumpet",
+          "step": 1,
+          "steps": "D5:0.5 B4:0.5 E5:1.5 D5:0.5 D5:0.75 C5:0.25 C5:1.5 C5:0.5 C5:0.5 A4:0.5 D5:1.5 C5:0.5 C5:0.75 B4:0.25 B4:1.5 D4:0.5 G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:2",
+          "gain": 0.36,
+          "vel": 0.6,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/tree-b-horn.wav",
+      "_about": "Skate medley: the tree-b tune on horn, 8 bars at 120 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "french_horn",
+          "step": 1,
+          "steps": "D5:0.5 B4:0.5 E5:1.5 D5:0.5 D5:0.75 C5:0.25 C5:1.5 C5:0.5 C5:0.5 A4:0.5 D5:1.5 C5:0.5 C5:0.75 B4:0.25 B4:1.5 D4:0.5 G4:0.75 G4:0.25 G4:1.5 A4:0.5 B4:0.75 B4:0.25 B4:1.5 B4:0.5 A4:0.5 B4:0.5 C5:1 F#4:1 A4:1 G4:2",
+          "gain": 0.42,
+          "vel": 0.6,
+          "transpose": -12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/tree-b-band.wav",
+      "_about": "Skate medley: the tree-b accompaniment, band, 8 bars at 120 beats a minute in G, plus its ring-out.",
+      "bpm": 120,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "tuba",
+          "step": 1,
+          "steps": "G2:1 -:1 C2:1 D2:1 -:1 -:1 D2:1 -:1 -:1 G2:1 -:1 -:1 G2:1 -:1 -:1 G2:1 -:1 -:1 C2:1 -:1 D2:1 G2:1 -:1 -:1",
+          "gain": 0.45,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "trombone",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 -:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 -:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.22,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/wish-flute.wav",
+      "_about": "Skate medley: the wish tune on flute, 8 bars at 150 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 150,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "flute",
+          "step": 1,
+          "steps": "G4:1 G4:0.5 A4:0.5 G4:0.5 F#4:0.5 E4:1 E4:1 E4:1 A4:1 A4:0.5 B4:0.5 A4:0.5 G4:0.5 F#4:1 D4:1 D4:1 B4:1 B4:0.5 C5:0.5 B4:0.5 A4:0.5 G4:1 E4:1 D4:0.5 D4:0.5 E4:1 A4:1 F#4:1 G4:2 D4:1",
+          "gain": 0.42,
+          "vel": 0.55,
+          "params": {
+            "breath": 0.3
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/wish-clarinet.wav",
+      "_about": "Skate medley: the wish tune on clarinet, 8 bars at 150 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 150,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "step": 1,
+          "steps": "G4:1 G4:0.5 A4:0.5 G4:0.5 F#4:0.5 E4:1 E4:1 E4:1 A4:1 A4:0.5 B4:0.5 A4:0.5 G4:0.5 F#4:1 D4:1 D4:1 B4:1 B4:0.5 C5:0.5 B4:0.5 A4:0.5 G4:1 E4:1 D4:0.5 D4:0.5 E4:1 A4:1 F#4:1 G4:2 D4:1",
+          "gain": 0.4,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/wish-celesta.wav",
+      "_about": "Skate medley: the wish tune on celesta, 8 bars at 150 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 150,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "step": 1,
+          "steps": "G4:1 G4:0.5 A4:0.5 G4:0.5 F#4:0.5 E4:1 E4:1 E4:1 A4:1 A4:0.5 B4:0.5 A4:0.5 G4:0.5 F#4:1 D4:1 D4:1 B4:1 B4:0.5 C5:0.5 B4:0.5 A4:0.5 G4:1 E4:1 D4:0.5 D4:0.5 E4:1 A4:1 F#4:1 G4:2 D4:1",
+          "gain": 0.45,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/wish-waltz.wav",
+      "_about": "Skate medley: the wish accompaniment, waltz, 8 bars at 150 beats a minute in G, plus its ring-out.",
+      "bpm": 150,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:1 -:2 C2:1 -:2 A1:1 -:2 D2:1 -:2 E2:1 -:2 C2:1 -:2 C2:1 -:1 D2:1 G2:1 -:2",
+          "gain": 0.5,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "pizzicato",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [C#3,E3,A3]:1 [C#3,E3,A3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [E3,G3,B3]:1 [E3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [C3,E3,G3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.28,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "harp",
+          "step": 1,
+          "steps": "G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 A2:0.5 C#3:0.5 E3:0.5 A2:0.5 C#3:0.5 E3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 E3:0.5 G3:0.5 B3:0.5 E3:0.5 G3:0.5 B3:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 D3:0.5 F#3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5",
+          "gain": 0.22,
+          "vel": 0.45,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.45
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/wish-music_box.wav",
+      "_about": "Skate medley: the wish tune on music_box, 8 bars at 150 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 150,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "step": 1,
+          "steps": "G4:1 G4:0.5 A4:0.5 G4:0.5 F#4:0.5 E4:1 E4:1 E4:1 A4:1 A4:0.5 B4:0.5 A4:0.5 G4:0.5 F#4:1 D4:1 D4:1 B4:1 B4:0.5 C5:0.5 B4:0.5 A4:0.5 G4:1 E4:1 D4:0.5 D4:0.5 E4:1 A4:1 F#4:1 G4:2 D4:1",
+          "gain": 0.45,
+          "vel": 0.55,
+          "transpose": 12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/wish-hush.wav",
+      "_about": "Skate medley: the wish accompaniment, hush, 8 bars at 150 beats a minute in G, plus its ring-out.",
+      "bpm": 150,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:3 C2:3 A1:3 D2:3 E2:3 C2:3 C2:2 D2:1 G2:3",
+          "gain": 0.35,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "strings",
+          "step": 1,
+          "steps": "[D3,G3,B3]:3 [C3,E3,G3]:3 [C#3,E3,A3]:3 [D3,F#3,A3]:3 [E3,G3,B3]:3 [C3,E3,G3]:3 [C3,E3,G3]:2 [D3,F#3,A3]:1 [D3,G3,B3]:3",
+          "gain": 0.24,
+          "vel": 0.4,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/wish-trumpet.wav",
+      "_about": "Skate medley: the wish tune on trumpet, 8 bars at 150 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 150,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "trumpet",
+          "step": 1,
+          "steps": "G4:1 G4:0.5 A4:0.5 G4:0.5 F#4:0.5 E4:1 E4:1 E4:1 A4:1 A4:0.5 B4:0.5 A4:0.5 G4:0.5 F#4:1 D4:1 D4:1 B4:1 B4:0.5 C5:0.5 B4:0.5 A4:0.5 G4:1 E4:1 D4:0.5 D4:0.5 E4:1 A4:1 F#4:1 G4:2 D4:1",
+          "gain": 0.36,
+          "vel": 0.6,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/wish-horn.wav",
+      "_about": "Skate medley: the wish tune on horn, 8 bars at 150 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 150,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "french_horn",
+          "step": 1,
+          "steps": "G4:1 G4:0.5 A4:0.5 G4:0.5 F#4:0.5 E4:1 E4:1 E4:1 A4:1 A4:0.5 B4:0.5 A4:0.5 G4:0.5 F#4:1 D4:1 D4:1 B4:1 B4:0.5 C5:0.5 B4:0.5 A4:0.5 G4:1 E4:1 D4:0.5 D4:0.5 E4:1 A4:1 F#4:1 G4:2 D4:1",
+          "gain": 0.42,
+          "vel": 0.6,
+          "transpose": -12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/wish-band.wav",
+      "_about": "Skate medley: the wish accompaniment, band, 8 bars at 150 beats a minute in G, plus its ring-out.",
+      "bpm": 150,
+      "beats": 24.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "tuba",
+          "step": 1,
+          "steps": "G2:1 -:1 -:1 C2:1 -:1 -:1 A1:1 -:1 -:1 D2:1 -:1 -:1 E2:1 -:1 -:1 C2:1 -:1 -:1 C2:1 -:1 D2:1 G2:1 -:1 -:1",
+          "gain": 0.45,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "trombone",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [C#3,E3,A3]:1 [C#3,E3,A3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [E3,G3,B3]:1 [E3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [C3,E3,G3]:1 -:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.22,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/king-a-flute.wav",
+      "_about": "Skate medley: the king-a tune on flute, 8 bars at 112 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 112,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "flute",
+          "step": 1,
+          "steps": "G4:1 G4:1 G4:1 A4:1 G4:1 G4:1 D4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2 G4:1 G4:1 G4:1 A4:1 G4:1 G4:1 D4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2",
+          "gain": 0.42,
+          "vel": 0.55,
+          "params": {
+            "breath": 0.3
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/king-a-clarinet.wav",
+      "_about": "Skate medley: the king-a tune on clarinet, 8 bars at 112 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 112,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "step": 1,
+          "steps": "G4:1 G4:1 G4:1 A4:1 G4:1 G4:1 D4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2 G4:1 G4:1 G4:1 A4:1 G4:1 G4:1 D4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2",
+          "gain": 0.4,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/king-a-celesta.wav",
+      "_about": "Skate medley: the king-a tune on celesta, 8 bars at 112 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 112,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "step": 1,
+          "steps": "G4:1 G4:1 G4:1 A4:1 G4:1 G4:1 D4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2 G4:1 G4:1 G4:1 A4:1 G4:1 G4:1 D4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2",
+          "gain": 0.45,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/king-a-waltz.wav",
+      "_about": "Skate medley: the king-a accompaniment, waltz, 8 bars at 112 beats a minute in G, plus its ring-out.",
+      "bpm": 112,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:1 -:3 G2:1 -:1 D2:1 -:1 E2:1 -:1 D2:1 -:1 G2:1 -:3 G2:1 -:3 G2:1 -:1 D2:1 -:1 E2:1 -:1 D2:1 -:1 G2:1 -:3",
+          "gain": 0.5,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "pizzicato",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [E3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [E3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.28,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "harp",
+          "step": 1,
+          "steps": "G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 E3:0.5 G3:0.5 B3:0.5 E3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 E3:0.5 G3:0.5 B3:0.5 E3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5",
+          "gain": 0.22,
+          "vel": 0.45,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.45
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/king-a-music_box.wav",
+      "_about": "Skate medley: the king-a tune on music_box, 8 bars at 112 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 112,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "step": 1,
+          "steps": "G4:1 G4:1 G4:1 A4:1 G4:1 G4:1 D4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2 G4:1 G4:1 G4:1 A4:1 G4:1 G4:1 D4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2",
+          "gain": 0.45,
+          "vel": 0.55,
+          "transpose": 12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/king-a-hush.wav",
+      "_about": "Skate medley: the king-a accompaniment, hush, 8 bars at 112 beats a minute in G, plus its ring-out.",
+      "bpm": 112,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:4 G2:2 D2:2 E2:2 D2:2 G2:4 G2:4 G2:2 D2:2 E2:2 D2:2 G2:4",
+          "gain": 0.35,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "strings",
+          "step": 1,
+          "steps": "[D3,G3,B3]:4 [D3,G3,B3]:2 [D3,F#3,A3]:2 [E3,G3,B3]:2 [D3,F#3,A3]:2 [D3,G3,B3]:4 [D3,G3,B3]:4 [D3,G3,B3]:2 [D3,F#3,A3]:2 [E3,G3,B3]:2 [D3,F#3,A3]:2 [D3,G3,B3]:4",
+          "gain": 0.24,
+          "vel": 0.4,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/king-a-trumpet.wav",
+      "_about": "Skate medley: the king-a tune on trumpet, 8 bars at 112 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 112,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "trumpet",
+          "step": 1,
+          "steps": "G4:1 G4:1 G4:1 A4:1 G4:1 G4:1 D4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2 G4:1 G4:1 G4:1 A4:1 G4:1 G4:1 D4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2",
+          "gain": 0.36,
+          "vel": 0.6,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/king-a-horn.wav",
+      "_about": "Skate medley: the king-a tune on horn, 8 bars at 112 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 112,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "french_horn",
+          "step": 1,
+          "steps": "G4:1 G4:1 G4:1 A4:1 G4:1 G4:1 D4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2 G4:1 G4:1 G4:1 A4:1 G4:1 G4:1 D4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2",
+          "gain": 0.42,
+          "vel": 0.6,
+          "transpose": -12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/king-a-band.wav",
+      "_about": "Skate medley: the king-a accompaniment, band, 8 bars at 112 beats a minute in G, plus its ring-out.",
+      "bpm": 112,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "tuba",
+          "step": 1,
+          "steps": "G2:1 -:1 D2:1 -:1 G2:1 -:1 D2:1 -:1 E2:1 -:1 D2:1 -:1 G2:1 -:1 D2:1 -:1 G2:1 -:1 D2:1 -:1 G2:1 -:1 D2:1 -:1 E2:1 -:1 D2:1 -:1 G2:1 -:1 D2:1 -:1",
+          "gain": 0.45,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "trombone",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [E3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [E3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1",
+          "gain": 0.22,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/king-b-flute.wav",
+      "_about": "Skate medley: the king-b tune on flute, 9 bars at 112 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 112,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "flute",
+          "step": 1,
+          "steps": "D5:1 C5:1 B4:1 A4:1 B4:1 A4:1 G4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2 D4:1 D4:1 E4:1 F#4:1 G4:1 G4:1 A4:2 D5:1 C5:1 B4:1 A4:1 G4:2 C5:2 G4:4",
+          "gain": 0.42,
+          "vel": 0.55,
+          "params": {
+            "breath": 0.3
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/king-b-clarinet.wav",
+      "_about": "Skate medley: the king-b tune on clarinet, 9 bars at 112 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 112,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "step": 1,
+          "steps": "D5:1 C5:1 B4:1 A4:1 B4:1 A4:1 G4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2 D4:1 D4:1 E4:1 F#4:1 G4:1 G4:1 A4:2 D5:1 C5:1 B4:1 A4:1 G4:2 C5:2 G4:4",
+          "gain": 0.4,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/king-b-celesta.wav",
+      "_about": "Skate medley: the king-b tune on celesta, 9 bars at 112 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 112,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "step": 1,
+          "steps": "D5:1 C5:1 B4:1 A4:1 B4:1 A4:1 G4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2 D4:1 D4:1 E4:1 F#4:1 G4:1 G4:1 A4:2 D5:1 C5:1 B4:1 A4:1 G4:2 C5:2 G4:4",
+          "gain": 0.45,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/king-b-waltz.wav",
+      "_about": "Skate medley: the king-b accompaniment, waltz, 9 bars at 112 beats a minute in G, plus its ring-out.",
+      "bpm": 112,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:1 -:1 D2:1 -:1 G2:1 -:3 E2:1 -:1 D2:1 -:1 G2:1 -:3 G2:1 -:1 D2:1 -:1 G2:1 -:1 D2:1 -:1 G2:1 -:1 D2:1 -:1 G2:1 -:1 C2:1 -:1 G2:1 -:3",
+          "gain": 0.5,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "pizzicato",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [E3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.28,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "harp",
+          "step": 1,
+          "steps": "G3:0.5 B3:0.5 D4:0.5 G3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 E3:0.5 G3:0.5 B3:0.5 E3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5",
+          "gain": 0.22,
+          "vel": 0.45,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.45
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/king-b-music_box.wav",
+      "_about": "Skate medley: the king-b tune on music_box, 9 bars at 112 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 112,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "step": 1,
+          "steps": "D5:1 C5:1 B4:1 A4:1 B4:1 A4:1 G4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2 D4:1 D4:1 E4:1 F#4:1 G4:1 G4:1 A4:2 D5:1 C5:1 B4:1 A4:1 G4:2 C5:2 G4:4",
+          "gain": 0.45,
+          "vel": 0.55,
+          "transpose": 12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/king-b-hush.wav",
+      "_about": "Skate medley: the king-b accompaniment, hush, 9 bars at 112 beats a minute in G, plus its ring-out.",
+      "bpm": 112,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:2 D2:2 G2:4 E2:2 D2:2 G2:4 G2:2 D2:2 G2:2 D2:2 G2:2 D2:2 G2:2 C2:2 G2:4",
+          "gain": 0.35,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "strings",
+          "step": 1,
+          "steps": "[D3,G3,B3]:2 [D3,F#3,A3]:2 [D3,G3,B3]:4 [E3,G3,B3]:2 [D3,F#3,A3]:2 [D3,G3,B3]:4 [D3,G3,B3]:2 [D3,F#3,A3]:2 [D3,G3,B3]:2 [D3,F#3,A3]:2 [D3,G3,B3]:2 [D3,F#3,A3]:2 [D3,G3,B3]:2 [C3,E3,G3]:2 [D3,G3,B3]:4",
+          "gain": 0.24,
+          "vel": 0.4,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/king-b-trumpet.wav",
+      "_about": "Skate medley: the king-b tune on trumpet, 9 bars at 112 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 112,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "trumpet",
+          "step": 1,
+          "steps": "D5:1 C5:1 B4:1 A4:1 B4:1 A4:1 G4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2 D4:1 D4:1 E4:1 F#4:1 G4:1 G4:1 A4:2 D5:1 C5:1 B4:1 A4:1 G4:2 C5:2 G4:4",
+          "gain": 0.36,
+          "vel": 0.6,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/king-b-horn.wav",
+      "_about": "Skate medley: the king-b tune on horn, 9 bars at 112 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 112,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "french_horn",
+          "step": 1,
+          "steps": "D5:1 C5:1 B4:1 A4:1 B4:1 A4:1 G4:2 E4:1 D4:1 E4:1 F#4:1 G4:2 G4:2 D4:1 D4:1 E4:1 F#4:1 G4:1 G4:1 A4:2 D5:1 C5:1 B4:1 A4:1 G4:2 C5:2 G4:4",
+          "gain": 0.42,
+          "vel": 0.6,
+          "transpose": -12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/king-b-band.wav",
+      "_about": "Skate medley: the king-b accompaniment, band, 9 bars at 112 beats a minute in G, plus its ring-out.",
+      "bpm": 112,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "tuba",
+          "step": 1,
+          "steps": "G2:1 -:1 D2:1 -:1 G2:1 -:1 D2:1 -:1 E2:1 -:1 D2:1 -:1 G2:1 -:1 D2:1 -:1 G2:1 -:1 D2:1 -:1 G2:1 -:1 D2:1 -:1 G2:1 -:1 D2:1 -:1 G2:1 -:1 C2:1 -:1 G2:1 -:1 D2:1 -:1",
+          "gain": 0.45,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "trombone",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [E3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1",
+          "gain": 0.22,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/still-a-flute.wav",
+      "_about": "Skate medley: the still-a tune on flute, 12 bars at 96 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "flute",
+          "step": 1,
+          "steps": "D5:1.5 E5:0.5 D5:1 B4:3 D5:1.5 E5:0.5 D5:1 B4:3 A5:2 A5:1 F#5:3 G5:2 G5:1 D5:3 E5:2 E5:1 G5:1.5 F#5:0.5 E5:1 D5:1.5 E5:0.5 D5:1 B4:3",
+          "gain": 0.42,
+          "vel": 0.55,
+          "params": {
+            "breath": 0.3
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/still-a-clarinet.wav",
+      "_about": "Skate medley: the still-a tune on clarinet, 12 bars at 96 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "step": 1,
+          "steps": "D5:1.5 E5:0.5 D5:1 B4:3 D5:1.5 E5:0.5 D5:1 B4:3 A5:2 A5:1 F#5:3 G5:2 G5:1 D5:3 E5:2 E5:1 G5:1.5 F#5:0.5 E5:1 D5:1.5 E5:0.5 D5:1 B4:3",
+          "gain": 0.4,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/still-a-celesta.wav",
+      "_about": "Skate medley: the still-a tune on celesta, 12 bars at 96 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "step": 1,
+          "steps": "D5:1.5 E5:0.5 D5:1 B4:3 D5:1.5 E5:0.5 D5:1 B4:3 A5:2 A5:1 F#5:3 G5:2 G5:1 D5:3 E5:2 E5:1 G5:1.5 F#5:0.5 E5:1 D5:1.5 E5:0.5 D5:1 B4:3",
+          "gain": 0.45,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/still-a-waltz.wav",
+      "_about": "Skate medley: the still-a accompaniment, waltz, 12 bars at 96 beats a minute in G, plus its ring-out.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:1 -:2 G2:1 -:2 G2:1 -:2 G2:1 -:2 D2:1 -:2 D2:1 -:2 G2:1 -:2 G2:1 -:2 C2:1 -:2 C2:1 -:2 G2:1 -:2 G2:1 -:2",
+          "gain": 0.5,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "pizzicato",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.28,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "harp",
+          "step": 1,
+          "steps": "G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5",
+          "gain": 0.22,
+          "vel": 0.45,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.45
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/still-a-music_box.wav",
+      "_about": "Skate medley: the still-a tune on music_box, 12 bars at 96 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "step": 1,
+          "steps": "D5:1.5 E5:0.5 D5:1 B4:3 D5:1.5 E5:0.5 D5:1 B4:3 A5:2 A5:1 F#5:3 G5:2 G5:1 D5:3 E5:2 E5:1 G5:1.5 F#5:0.5 E5:1 D5:1.5 E5:0.5 D5:1 B4:3",
+          "gain": 0.45,
+          "vel": 0.55,
+          "transpose": 12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/still-a-hush.wav",
+      "_about": "Skate medley: the still-a accompaniment, hush, 12 bars at 96 beats a minute in G, plus its ring-out.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:3 G2:3 G2:3 G2:3 D2:3 D2:3 G2:3 G2:3 C2:3 C2:3 G2:3 G2:3",
+          "gain": 0.35,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "strings",
+          "step": 1,
+          "steps": "[D3,G3,B3]:3 [D3,G3,B3]:3 [D3,G3,B3]:3 [D3,G3,B3]:3 [D3,F#3,A3]:3 [D3,F#3,A3]:3 [D3,G3,B3]:3 [D3,G3,B3]:3 [C3,E3,G3]:3 [C3,E3,G3]:3 [D3,G3,B3]:3 [D3,G3,B3]:3",
+          "gain": 0.24,
+          "vel": 0.4,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/still-a-trumpet.wav",
+      "_about": "Skate medley: the still-a tune on trumpet, 12 bars at 96 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "trumpet",
+          "step": 1,
+          "steps": "D5:1.5 E5:0.5 D5:1 B4:3 D5:1.5 E5:0.5 D5:1 B4:3 A5:2 A5:1 F#5:3 G5:2 G5:1 D5:3 E5:2 E5:1 G5:1.5 F#5:0.5 E5:1 D5:1.5 E5:0.5 D5:1 B4:3",
+          "gain": 0.36,
+          "vel": 0.6,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/still-a-horn.wav",
+      "_about": "Skate medley: the still-a tune on horn, 12 bars at 96 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "french_horn",
+          "step": 1,
+          "steps": "D5:1.5 E5:0.5 D5:1 B4:3 D5:1.5 E5:0.5 D5:1 B4:3 A5:2 A5:1 F#5:3 G5:2 G5:1 D5:3 E5:2 E5:1 G5:1.5 F#5:0.5 E5:1 D5:1.5 E5:0.5 D5:1 B4:3",
+          "gain": 0.42,
+          "vel": 0.6,
+          "transpose": -12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/still-a-band.wav",
+      "_about": "Skate medley: the still-a accompaniment, band, 12 bars at 96 beats a minute in G, plus its ring-out.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "tuba",
+          "step": 1,
+          "steps": "G2:1 -:1 -:1 G2:1 -:1 -:1 G2:1 -:1 -:1 G2:1 -:1 -:1 D2:1 -:1 -:1 D2:1 -:1 -:1 G2:1 -:1 -:1 G2:1 -:1 -:1 C2:1 -:1 -:1 C2:1 -:1 -:1 G2:1 -:1 -:1 G2:1 -:1 -:1",
+          "gain": 0.45,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "trombone",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.22,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/still-b-flute.wav",
+      "_about": "Skate medley: the still-b tune on flute, 12 bars at 96 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "flute",
+          "step": 1,
+          "steps": "E5:2 E5:1 G5:1.5 F#5:0.5 E5:1 D5:1.5 E5:0.5 D5:1 B4:3 A5:2 A5:1 C6:1.5 A5:0.5 F#5:1 G5:3 B5:3 G5:1.5 D5:0.5 B4:1 D5:1.5 C5:0.5 A4:1 G4:3 G4:3",
+          "gain": 0.42,
+          "vel": 0.55,
+          "params": {
+            "breath": 0.3
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/still-b-clarinet.wav",
+      "_about": "Skate medley: the still-b tune on clarinet, 12 bars at 96 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "step": 1,
+          "steps": "E5:2 E5:1 G5:1.5 F#5:0.5 E5:1 D5:1.5 E5:0.5 D5:1 B4:3 A5:2 A5:1 C6:1.5 A5:0.5 F#5:1 G5:3 B5:3 G5:1.5 D5:0.5 B4:1 D5:1.5 C5:0.5 A4:1 G4:3 G4:3",
+          "gain": 0.4,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/still-b-celesta.wav",
+      "_about": "Skate medley: the still-b tune on celesta, 12 bars at 96 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "step": 1,
+          "steps": "E5:2 E5:1 G5:1.5 F#5:0.5 E5:1 D5:1.5 E5:0.5 D5:1 B4:3 A5:2 A5:1 C6:1.5 A5:0.5 F#5:1 G5:3 B5:3 G5:1.5 D5:0.5 B4:1 D5:1.5 C5:0.5 A4:1 G4:3 G4:3",
+          "gain": 0.45,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/still-b-waltz.wav",
+      "_about": "Skate medley: the still-b accompaniment, waltz, 12 bars at 96 beats a minute in G, plus its ring-out.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "C2:1 -:2 C2:1 -:2 G2:1 -:2 G2:1 -:2 D2:1 -:2 D2:1 -:2 G2:1 -:2 G2:1 -:2 G2:1 -:2 D2:1 -:2 G2:1 -:2 G2:1 -:2",
+          "gain": 0.5,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "pizzicato",
+          "step": 1,
+          "steps": "-:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.28,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "harp",
+          "step": 1,
+          "steps": "C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5",
+          "gain": 0.22,
+          "vel": 0.45,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.45
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/still-b-music_box.wav",
+      "_about": "Skate medley: the still-b tune on music_box, 12 bars at 96 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "step": 1,
+          "steps": "E5:2 E5:1 G5:1.5 F#5:0.5 E5:1 D5:1.5 E5:0.5 D5:1 B4:3 A5:2 A5:1 C6:1.5 A5:0.5 F#5:1 G5:3 B5:3 G5:1.5 D5:0.5 B4:1 D5:1.5 C5:0.5 A4:1 G4:3 G4:3",
+          "gain": 0.45,
+          "vel": 0.55,
+          "transpose": 12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/still-b-hush.wav",
+      "_about": "Skate medley: the still-b accompaniment, hush, 12 bars at 96 beats a minute in G, plus its ring-out.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "C2:3 C2:3 G2:3 G2:3 D2:3 D2:3 G2:3 G2:3 G2:3 D2:3 G2:3 G2:3",
+          "gain": 0.35,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "strings",
+          "step": 1,
+          "steps": "[C3,E3,G3]:3 [C3,E3,G3]:3 [D3,G3,B3]:3 [D3,G3,B3]:3 [D3,F#3,A3]:3 [D3,F#3,A3]:3 [D3,G3,B3]:3 [D3,G3,B3]:3 [D3,G3,B3]:3 [D3,F#3,A3]:3 [D3,G3,B3]:3 [D3,G3,B3]:3",
+          "gain": 0.24,
+          "vel": 0.4,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/still-b-trumpet.wav",
+      "_about": "Skate medley: the still-b tune on trumpet, 12 bars at 96 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "trumpet",
+          "step": 1,
+          "steps": "E5:2 E5:1 G5:1.5 F#5:0.5 E5:1 D5:1.5 E5:0.5 D5:1 B4:3 A5:2 A5:1 C6:1.5 A5:0.5 F#5:1 G5:3 B5:3 G5:1.5 D5:0.5 B4:1 D5:1.5 C5:0.5 A4:1 G4:3 G4:3",
+          "gain": 0.36,
+          "vel": 0.6,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/still-b-horn.wav",
+      "_about": "Skate medley: the still-b tune on horn, 12 bars at 96 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "french_horn",
+          "step": 1,
+          "steps": "E5:2 E5:1 G5:1.5 F#5:0.5 E5:1 D5:1.5 E5:0.5 D5:1 B4:3 A5:2 A5:1 C6:1.5 A5:0.5 F#5:1 G5:3 B5:3 G5:1.5 D5:0.5 B4:1 D5:1.5 C5:0.5 A4:1 G4:3 G4:3",
+          "gain": 0.42,
+          "vel": 0.6,
+          "transpose": -12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/still-b-band.wav",
+      "_about": "Skate medley: the still-b accompaniment, band, 12 bars at 96 beats a minute in G, plus its ring-out.",
+      "bpm": 96,
+      "beats": 36.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "tuba",
+          "step": 1,
+          "steps": "C2:1 -:1 -:1 C2:1 -:1 -:1 G2:1 -:1 -:1 G2:1 -:1 -:1 D2:1 -:1 -:1 D2:1 -:1 -:1 G2:1 -:1 -:1 G2:1 -:1 -:1 G2:1 -:1 -:1 D2:1 -:1 -:1 G2:1 -:1 -:1 G2:1 -:1 -:1",
+          "gain": 0.45,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "trombone",
+          "step": 1,
+          "steps": "-:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.22,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/year-flute.wav",
+      "_about": "Skate medley: the year tune on flute, 8 bars at 100 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 100,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "flute",
+          "step": 1,
+          "steps": "G4:1.5 G4:0.5 G4:1 B4:1 A4:1.5 G4:0.5 A4:1 B4:1 G4:1.5 G4:0.5 B4:1 D5:1 E5:3 E5:1 D5:1.5 B4:0.5 B4:1 G4:1 A4:1.5 G4:0.5 A4:1 B4:1 G4:1.5 E4:0.5 E4:1 D4:1 G4:3 D4:1",
+          "gain": 0.42,
+          "vel": 0.55,
+          "params": {
+            "breath": 0.3
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/year-clarinet.wav",
+      "_about": "Skate medley: the year tune on clarinet, 8 bars at 100 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 100,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "step": 1,
+          "steps": "G4:1.5 G4:0.5 G4:1 B4:1 A4:1.5 G4:0.5 A4:1 B4:1 G4:1.5 G4:0.5 B4:1 D5:1 E5:3 E5:1 D5:1.5 B4:0.5 B4:1 G4:1 A4:1.5 G4:0.5 A4:1 B4:1 G4:1.5 E4:0.5 E4:1 D4:1 G4:3 D4:1",
+          "gain": 0.4,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/year-celesta.wav",
+      "_about": "Skate medley: the year tune on celesta, 8 bars at 100 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 100,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "celesta",
+          "step": 1,
+          "steps": "G4:1.5 G4:0.5 G4:1 B4:1 A4:1.5 G4:0.5 A4:1 B4:1 G4:1.5 G4:0.5 B4:1 D5:1 E5:3 E5:1 D5:1.5 B4:0.5 B4:1 G4:1 A4:1.5 G4:0.5 A4:1 B4:1 G4:1.5 E4:0.5 E4:1 D4:1 G4:3 D4:1",
+          "gain": 0.45,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/year-waltz.wav",
+      "_about": "Skate medley: the year accompaniment, waltz, 8 bars at 100 beats a minute in G, plus its ring-out.",
+      "bpm": 100,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:1 -:3 D2:1 -:3 G2:1 -:3 C2:1 -:3 G2:1 -:3 D2:1 -:3 C2:1 -:1 D2:1 -:1 G2:1 -:3",
+          "gain": 0.5,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "pizzicato",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [C3,E3,G3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+          "gain": 0.28,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "harp",
+          "step": 1,
+          "steps": "G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5",
+          "gain": 0.22,
+          "vel": 0.45,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.45
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/year-music_box.wav",
+      "_about": "Skate medley: the year tune on music_box, 8 bars at 100 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 100,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "step": 1,
+          "steps": "G4:1.5 G4:0.5 G4:1 B4:1 A4:1.5 G4:0.5 A4:1 B4:1 G4:1.5 G4:0.5 B4:1 D5:1 E5:3 E5:1 D5:1.5 B4:0.5 B4:1 G4:1 A4:1.5 G4:0.5 A4:1 B4:1 G4:1.5 E4:0.5 E4:1 D4:1 G4:3 D4:1",
+          "gain": 0.45,
+          "vel": 0.55,
+          "transpose": 12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/year-hush.wav",
+      "_about": "Skate medley: the year accompaniment, hush, 8 bars at 100 beats a minute in G, plus its ring-out.",
+      "bpm": 100,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "upright_bass",
+          "step": 1,
+          "steps": "G2:4 D2:4 G2:4 C2:4 G2:4 D2:4 C2:2 D2:2 G2:4",
+          "gain": 0.35,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "strings",
+          "step": 1,
+          "steps": "[D3,G3,B3]:4 [D3,F#3,A3]:4 [D3,G3,B3]:4 [C3,E3,G3]:4 [D3,G3,B3]:4 [D3,F#3,A3]:4 [C3,E3,G3]:2 [D3,F#3,A3]:2 [D3,G3,B3]:4",
+          "gain": 0.24,
+          "vel": 0.4,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/lead/year-trumpet.wav",
+      "_about": "Skate medley: the year tune on trumpet, 8 bars at 100 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 100,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "trumpet",
+          "step": 1,
+          "steps": "G4:1.5 G4:0.5 G4:1 B4:1 A4:1.5 G4:0.5 A4:1 B4:1 G4:1.5 G4:0.5 B4:1 D5:1 E5:3 E5:1 D5:1.5 B4:0.5 B4:1 G4:1 A4:1.5 G4:0.5 A4:1 B4:1 G4:1.5 E4:0.5 E4:1 D4:1 G4:3 D4:1",
+          "gain": 0.36,
+          "vel": 0.6,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/lead/year-horn.wav",
+      "_about": "Skate medley: the year tune on horn, 8 bars at 100 beats a minute in G, a little right, plus its ring-out. Played with a bed of the same section.",
+      "bpm": 100,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "french_horn",
+          "step": 1,
+          "steps": "G4:1.5 G4:0.5 G4:1 B4:1 A4:1.5 G4:0.5 A4:1 B4:1 G4:1.5 G4:0.5 B4:1 D5:1 E5:3 E5:1 D5:1.5 B4:0.5 B4:1 G4:1 A4:1.5 G4:0.5 A4:1 B4:1 G4:1.5 E4:0.5 E4:1 D4:1 G4:3 D4:1",
+          "gain": 0.42,
+          "vel": 0.6,
+          "transpose": -12,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/bed/year-band.wav",
+      "_about": "Skate medley: the year accompaniment, band, 8 bars at 100 beats a minute in G, plus its ring-out.",
+      "bpm": 100,
+      "beats": 32.0,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "tuba",
+          "step": 1,
+          "steps": "G2:1 -:1 D2:1 -:1 D2:1 -:1 A1:1 -:1 G2:1 -:1 D2:1 -:1 C2:1 -:1 G2:1 -:1 G2:1 -:1 D2:1 -:1 D2:1 -:1 A1:1 -:1 C2:1 -:1 D2:1 -:1 G2:1 -:1 D2:1 -:1",
+          "gain": 0.45,
+          "vel": 0.6
+        },
+        {
+          "type": "seq",
+          "inst": "trombone",
+          "step": 1,
+          "steps": "-:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 -:1 [C3,E3,G3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,F#3,A3]:1 -:1 [C3,E3,G3]:1 -:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1",
+          "gain": 0.22,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ],
+      "loudness": -30.5
+    },
+    {
+      "out": "music/title.wav",
+      "bpm": 144,
+      "beats": 96.0,
+      "loop": "fold",
+      "loudness": -25,
+      "_about": "Title theme, 96 beats at 144 a minute in G: the game's waltz twice, first on celesta over held strings, then on flute over bass, pizzicato and harp. Leads a little right, accompaniment a little left.",
+      "layers": [
+        {
+          "type": "group",
+          "_section": "0-waltz-a",
+          "at": 0.0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "G2:3 G2:3 D2:3 G2:3 C2:3 G2:3 D2:3 D2:3",
+              "gain": 0.35,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "strings",
+              "step": 1,
+              "steps": "[D3,G3,B3]:3 [D3,G3,B3]:3 [D3,F#3,A3]:3 [D3,G3,B3]:3 [C3,E3,G3]:3 [D3,G3,B3]:3 [D3,F#3,A3]:3 [D3,F#3,A3]:3",
+              "gain": 0.24,
+              "vel": 0.4,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.25
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "celesta",
+              "step": 1,
+              "steps": "D5:2 B4:1 G4:2 B4:1 A4:1 B4:1 C5:1 B4:3 E5:2 C5:1 D5:2 B4:1 A4:2 F#4:1 A4:3",
+              "gain": 0.45,
+              "vel": 0.55,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "1-waltz-b",
+          "at": 24.0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "G2:3 C2:3 G2:3 C2:3 D2:3 G2:3 D2:3 G2:3",
+              "gain": 0.35,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "strings",
+              "step": 1,
+              "steps": "[D3,G3,B3]:3 [C3,E3,G3]:3 [D3,G3,B3]:3 [C3,E3,G3]:3 [D3,F#3,A3]:3 [D3,G3,B3]:3 [D3,F#3,A3]:3 [D3,G3,B3]:3",
+              "gain": 0.24,
+              "vel": 0.4,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.25
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "celesta",
+              "step": 1,
+              "steps": "D5:2 B4:1 C5:2 A4:1 B4:2 G4:1 E4:3 F#4:1 G4:1 A4:1 B4:2 D5:1 C5:1 A4:1 F#4:1 G4:3",
+              "gain": 0.45,
+              "vel": 0.55,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "2-waltz-a",
+          "at": 48.0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "G2:1 -:2 G2:1 -:2 D2:1 -:2 G2:1 -:2 C2:1 -:2 G2:1 -:2 D2:1 -:2 D2:1 -:2",
+              "gain": 0.5,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "pizzicato",
+              "step": 1,
+              "steps": "-:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1",
+              "gain": 0.28,
+              "vel": 0.5,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.3
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "harp",
+              "step": 1,
+              "steps": "G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5",
+              "gain": 0.22,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.45
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "flute",
+              "step": 1,
+              "steps": "D5:2 B4:1 G4:2 B4:1 A4:1 B4:1 C5:1 B4:3 E5:2 C5:1 D5:2 B4:1 A4:2 F#4:1 A4:3",
+              "gain": 0.42,
+              "vel": 0.55,
+              "params": {
+                "breath": 0.3
+              },
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "3-waltz-b",
+          "at": 72.0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "G2:1 -:2 C2:1 -:2 G2:1 -:2 C2:1 -:2 D2:1 -:2 G2:1 -:2 D2:1 -:2 G2:1 -:2",
+              "gain": 0.5,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "pizzicato",
+              "step": 1,
+              "steps": "-:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [C3,E3,G3]:1 [C3,E3,G3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1 -:1 [D3,F#3,A3]:1 [D3,F#3,A3]:1 -:1 [D3,G3,B3]:1 [D3,G3,B3]:1",
+              "gain": 0.28,
+              "vel": 0.5,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.3
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "harp",
+              "step": 1,
+              "steps": "G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 C3:0.5 E3:0.5 G3:0.5 C3:0.5 E3:0.5 G3:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5 D3:0.5 F#3:0.5 A3:0.5 D3:0.5 F#3:0.5 A3:0.5 G3:0.5 B3:0.5 D4:0.5 G3:0.5 B3:0.5 D4:0.5",
+              "gain": 0.22,
+              "vel": 0.45,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.45
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "flute",
+              "step": 1,
+              "steps": "D5:2 B4:1 C5:2 A4:1 B4:2 G4:1 E4:3 F#4:1 G4:1 A4:1 B4:2 D5:1 C5:1 A4:1 F#4:1 G4:3",
+              "gain": 0.42,
+              "vel": 0.55,
+              "params": {
+                "breath": 0.3
+              },
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ]
+    },
+    {
+      "out": "music/pause.wav",
+      "bpm": 120,
+      "beats": 48.0,
+      "loop": "fold",
+      "loudness": -27,
+      "_about": "Pause music, 48 beats at 120 a minute in G: the game's waltz slowed, on music box over held strings and a soft bass.",
+      "layers": [
+        {
+          "type": "group",
+          "_section": "waltz-a",
+          "at": 0.0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "G2:3 G2:3 D2:3 G2:3 C2:3 G2:3 D2:3 D2:3",
+              "gain": 0.35,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "strings",
+              "step": 1,
+              "steps": "[D3,G3,B3]:3 [D3,G3,B3]:3 [D3,F#3,A3]:3 [D3,G3,B3]:3 [C3,E3,G3]:3 [D3,G3,B3]:3 [D3,F#3,A3]:3 [D3,F#3,A3]:3",
+              "gain": 0.24,
+              "vel": 0.4,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.25
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "music_box",
+              "step": 1,
+              "steps": "D5:2 B4:1 G4:2 B4:1 A4:1 B4:1 C5:1 B4:3 E5:2 C5:1 D5:2 B4:1 A4:2 F#4:1 A4:3",
+              "gain": 0.45,
+              "vel": 0.55,
+              "transpose": 12,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "_section": "waltz-b",
+          "at": 24.0,
+          "layers": [
+            {
+              "type": "seq",
+              "inst": "upright_bass",
+              "step": 1,
+              "steps": "G2:3 C2:3 G2:3 C2:3 D2:3 G2:3 D2:3 G2:3",
+              "gain": 0.35,
+              "vel": 0.6
+            },
+            {
+              "type": "seq",
+              "inst": "strings",
+              "step": 1,
+              "steps": "[D3,G3,B3]:3 [C3,E3,G3]:3 [D3,G3,B3]:3 [C3,E3,G3]:3 [D3,F#3,A3]:3 [D3,G3,B3]:3 [D3,F#3,A3]:3 [D3,G3,B3]:3",
+              "gain": 0.24,
+              "vel": 0.4,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": -0.25
+                }
+              ]
+            },
+            {
+              "type": "seq",
+              "inst": "music_box",
+              "step": 1,
+              "steps": "D5:2 B4:1 C5:2 A4:1 B4:2 G4:1 E4:3 F#4:1 G4:1 A4:1 B4:2 D5:1 C5:1 A4:1 F#4:1 G4:3",
+              "gain": 0.45,
+              "vel": 0.55,
+              "transpose": 12,
+              "fx": [
+                {
+                  "type": "pan",
+                  "pos": 0.3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.45
+        },
+        {
+          "type": "compressor",
+          "threshold": -18,
+          "ratio": 2
+        }
+      ]
+    }
+  ]
+}
