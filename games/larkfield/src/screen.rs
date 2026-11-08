@@ -82,7 +82,7 @@ impl HamletScreen {
             if h.fair_day && h.phase == Phase::Morning && !h.barge {
                 h.barge = true;
                 h.news.push(
-                    "Barge fair today: the barge comes every day, and pays a coin more."
+                    "Barge fair today: the barge visits every in-game day and pays an extra coin for each item."
                         .to_string(),
                 );
             }

@@ -56,7 +56,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Seasonal,
-    blurb: "Dance a jig or a reel on the caller's word, and keep Saint Patrick's night at the village ceili.",
+    blurb: "Dance a jig or reel on the beat after each call, and join the village ceili.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(event),

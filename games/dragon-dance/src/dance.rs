@@ -514,7 +514,7 @@ impl DanceScreen {
                 sound::play_at(ctx, sound::ENVELOPE_GET, at_lane(lane, lanes));
                 self.tell(
                     ctx,
-                    format!("Red envelope, {points} points. Dragon {segments} long."),
+                    format!("Red envelope, {points} points. Dragon {segments} segments long."),
                 );
             }
             Event::EnvelopeMissed { lane } => {

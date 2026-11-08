@@ -305,7 +305,9 @@ pub fn score(
                 } else {
                     labels::TRY_AGAIN
                 },
-                format!("Course {n} again, from the top. Best scores and stars keep the higher."),
+                format!(
+                    "Course {n} again, from the top. Your best score and star rating are kept."
+                ),
                 move |ctx| ctx.replace(Kitchen::new(Mode::Course(n))),
             )
         }

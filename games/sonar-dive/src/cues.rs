@@ -134,7 +134,7 @@ pub const CUES: &[Cue] = &[
     Cue {
         key: ECHO_CHEST,
         name: "Treasure chest echo",
-        meaning: "a bright double chime: a chest on the seabed. Swim into it.",
+        meaning: "a bright double chime: a chest on the seabed. Steer into it.",
         play: Play::Ahead,
     },
     Cue {
@@ -176,7 +176,7 @@ pub const CUES: &[Cue] = &[
     Cue {
         key: ECHO_PEARL,
         name: "Glow pearl echo",
-        meaning: "a glassy rising chime: the glow pearl of the new moon's glow dive. Swim into it.",
+        meaning: "a glassy rising chime: the glow pearl of the new moon's glow dive. Steer into it.",
         play: Play::Ahead,
     },
     Cue {
@@ -249,6 +249,12 @@ pub const CUES: &[Cue] = &[
         key: WHALE_SONG,
         name: "Whale song",
         meaning: "a whale calling from where it swims.",
+        play: Play::Ahead,
+    },
+    Cue {
+        key: WHALE_ROAD,
+        name: "The whale road",
+        meaning: "on the equinoxes only: whale song marks north, beyond the dive site. There is nothing to collect there.",
         play: Play::Ahead,
     },
     Cue {

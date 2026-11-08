@@ -19,9 +19,8 @@ pub struct SoundCheck {
 impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
-            menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
-            ),
+            menu: MenuCore::new("Sound check")
+                .with_intro_help("Up and Down choose a sound, Enter plays it, Escape goes back."),
             playing: Vec::new(),
             seat: 0,
         }
@@ -87,6 +86,7 @@ impl Menu for SoundCheck {
                 MenuItem::new(
                     label(meaning),
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        ctx.stop_speech();
                         let a = if key == sound::TITLE_MUSIC {
                             ctx.audio.play(key, Bus::MUSIC)
                         } else if key == sound::PADDLE_WHEEL
@@ -98,27 +98,20 @@ impl Menu for SoundCheck {
                             sound::play(ctx, key)
                         };
                         s.hear(ctx, &[a]);
-                        ctx.say(meaning);
                     },
                 )
                 .select_sound(None)
-                .help("Enter plays it and says what it means."),
+                .help("Enter plays it."),
             );
         }
         items.push(
             MenuItem::new(
-                "Seats around the table",
+                "Seats: Widow left, Gambler ahead, Captain right",
                 |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.stop_speech();
                     s.seat = s.seat % 3 + 1;
                     let a = sound::chair(ctx, s.seat, 3);
                     s.hear(ctx, &[a]);
-                    ctx.say(match s.seat {
-                        1 => "The Widow's chair, on your left. Enter again for the next seat.",
-                        2 => {
-                            "The Gambler's chair, across the table. Enter again for the next seat."
-                        }
-                        _ => "The Captain's chair, on your right. Enter again for the first seat.",
-                    });
                 },
             )
             .select_sound(None)

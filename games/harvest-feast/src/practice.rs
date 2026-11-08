@@ -36,6 +36,7 @@ impl SoundCheck {
     }
 
     fn preview(&mut self, ctx: &mut Ctx<Parlor>, key: &str, station: Station) {
+        ctx.stop_speech();
         self.stop(ctx);
         self.preview = ctx
             .audio
@@ -70,6 +71,7 @@ fn placed(
     help: &str,
 ) -> MenuItem<SoundCheck, Parlor> {
     MenuItem::new(label, move |s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
+        ctx.stop_speech();
         s.stop(ctx);
         sound::at(ctx, key, station);
     })
@@ -79,6 +81,7 @@ fn placed(
 
 fn plain(label: &str, key: &'static str, bus: Bus, help: &str) -> MenuItem<SoundCheck, Parlor> {
     MenuItem::new(label, move |s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
+        ctx.stop_speech();
         s.stop(ctx);
         ctx.audio.play(key, bus);
     })
@@ -133,6 +136,7 @@ impl Menu for SoundCheck {
     }
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
+        ctx.stop_speech();
         self.stop(ctx);
     }
 

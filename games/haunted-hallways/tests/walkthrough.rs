@@ -213,7 +213,7 @@ fn the_sound_check_plays_every_cue_with_its_name() {
         h.clear();
         h.press(Key::Return);
         keys.extend(h.played());
-        assert!(!h.spoken().is_empty());
+        assert!(h.spoken().is_empty());
         h.press(Key::Down);
     }
     for (key, _) in sound::catalog() {
@@ -221,7 +221,12 @@ fn the_sound_check_plays_every_cue_with_its_name() {
     }
     h.clear();
     h.press(Key::Return); // Left and right
-    assert!(spoke(&h, "to your left"));
+    assert!(h.spoken().is_empty());
+    assert!(played(
+        &h,
+        sound::item(haunted_hallways::rules::Item::Clock)
+    ));
+    assert!(played(&h, sound::item(haunted_hallways::rules::Item::Bell)));
 }
 
 #[test]

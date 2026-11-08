@@ -303,7 +303,7 @@ impl Modifier {
 
     pub fn describe(self) -> &'static str {
         match self {
-            Modifier::None => "No twist: the wires as the skyline strings them.",
+            Modifier::None => "No twist: the standard skyline wires.",
             Modifier::Gale => {
                 "Gale day: gusts come twice as often. Every one is still warned in time."
             }

@@ -828,7 +828,7 @@ impl SkateScreen {
             }
             Spin::TooSoon => {
                 sound::play_at(ctx, sound::STRIDE, sound::UNDER);
-                self.speak(ctx, "One spin a lantern.");
+                self.speak(ctx, "One spin per lantern.");
             }
         }
     }
@@ -1049,7 +1049,7 @@ impl SkateScreen {
         match action {
             ParlorAction::Left | ParlorAction::Right => {
                 ctx.say(format!(
-                    "Once away, hold {} and {} to lean.",
+                    "Once moving, hold {} or {} to lean.",
                     Self::key(ctx, ParlorAction::Left),
                     Self::key(ctx, ParlorAction::Right)
                 ));

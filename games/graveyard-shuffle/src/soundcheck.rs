@@ -21,9 +21,8 @@ pub struct SoundCheck {
 impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
-            menu: MenuCore::new(labels::SOUND_CHECK).with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
-            ),
+            menu: MenuCore::new(labels::SOUND_CHECK)
+                .with_intro_help("Up and Down choose a sound, Enter plays it, Escape goes back."),
             playing: Vec::new(),
         }
     }
@@ -90,11 +89,10 @@ impl Menu for SoundCheck {
         for step in Monster::ALL {
             items.push(
                 MenuItem::new(step.word(), move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.stop_speech();
                     let a = sound::play_call(ctx, step);
                     let b = sound::play_step(ctx, step, 1.0);
                     s.hear(ctx, vec![a, b]);
-                    let line = step_line(ctx, step);
-                    ctx.say(line);
                 })
                 .select_sound(None)
                 .help(format!(
@@ -110,13 +108,13 @@ impl Menu for SoundCheck {
                 MenuItem::new(
                     label(meaning),
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        ctx.stop_speech();
                         let played = if sound::is_music(key) {
                             ctx.audio.play(key, Bus::MUSIC)
                         } else {
                             sound::play(ctx, key)
                         };
                         s.hear(ctx, vec![played]);
-                        ctx.say(meaning);
                     },
                 )
                 .select_sound(None)
@@ -127,6 +125,7 @@ impl Menu for SoundCheck {
         }
         items.push(
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                ctx.stop_speech();
                 ctx.pop()
             })
             .help("Return to the Graveyard Shuffle title."),

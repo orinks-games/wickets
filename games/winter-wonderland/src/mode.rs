@@ -57,12 +57,12 @@ pub fn story_intro(blizzard: bool) -> Vec<String> {
     if blizzard {
         vec![
             "A blizzard has buried the North Pole, and the workshop is a day behind. The belt runs fast, the guests keep changing their minds, and the return sack is filling up with oddities.".into(),
-            "Three hard shifts on the belt, then New Year's Eve in the village square, where the band plays faster and trickier than before. Keep your ears sharp.".into(),
+            "Three hard shifts on the belt, then New Year's Eve in the village square, where the band plays faster and trickier than before.".into(),
         ]
     } else {
         vec![
             "The elves have wrapped every gift beautifully, and then mixed up every label.".into(),
-            "You are the workshop's best listener. Shake each gift as it rides the conveyor, hear what is inside, and send it to whoever wished for it before it falls off the end of the belt.".into(),
+            "Shake each gift as it rides the conveyor, hear what is inside, and send it to whoever wished for it before it falls off the end of the belt.".into(),
             "Three shifts stand between you and the morning. And a week later, a party will need a conductor.".into(),
         ]
     }
@@ -80,5 +80,5 @@ pub fn story_bridge(blizzard: bool) -> Vec<String> {
 
 /// The story's last page, before the score.
 pub fn story_ending() -> String {
-    "The bells ring twelve. Corks pop, fireworks bloom over the snow, and the whole village sings. From the workshop belt to the midnight bells, you heard your way through the holidays. Happy New Year!".into()
+    "The bells ring twelve. Corks pop, fireworks bloom over the snow, and the whole village sings. The last gift is delivered, and the party has made it to midnight. Happy New Year!".into()
 }

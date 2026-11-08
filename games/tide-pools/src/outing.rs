@@ -575,7 +575,7 @@ impl OutingScreen {
                         continue;
                     }
                     let mut text = format!(
-                        "{}. Plus {points}.",
+                        "{}. {points} points.",
                         sentence_start(&format!("a {}", species.name()))
                     );
                     if species.rare() {
@@ -719,7 +719,7 @@ impl OutingScreen {
                         o.kinds().len()
                     ),
                     Modifier::GreatLowTide => format!(
-                        "You found {} different kinds. 8 meets the goal.",
+                        "You found {} different kinds. The goal is 8.",
                         o.kinds().len()
                     ),
                     _ if met => "You found all of tonight's three.".to_string(),

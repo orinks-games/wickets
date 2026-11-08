@@ -20,9 +20,8 @@ pub struct SoundCheck {
 impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
-            menu: MenuCore::new(labels::SOUND_CHECK).with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
-            ),
+            menu: MenuCore::new(labels::SOUND_CHECK)
+                .with_intro_help("Up and Down choose a sound, Enter plays it, Escape goes back."),
             playing: None,
         }
     }
@@ -84,7 +83,7 @@ impl Menu for SoundCheck {
                             sound::play(ctx, key)
                         };
                         s.hear(ctx, played);
-                        ctx.say(meaning);
+                        ctx.stop_speech();
                     },
                 )
                 .select_sound(None)

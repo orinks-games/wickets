@@ -186,7 +186,7 @@ fn the_sound_check_plays_every_sound_with_its_name() {
         if let Some(m) = h.app.ctx.audio.music() {
             keys.push(m.to_string());
         }
-        assert!(!h.spoken().is_empty());
+        assert!(h.spoken().is_empty());
         h.press(Key::Down);
     }
     for (key, _, _) in &catalog {
@@ -197,7 +197,9 @@ fn the_sound_check_plays_every_sound_with_its_name() {
     }
     h.clear();
     h.press(Key::Return); // Left and right
-    assert!(spoke(&h, "pool to your left"));
+    assert!(h.spoken().is_empty());
+    assert!(played(&h, sound::creature(Species::Crab)));
+    assert!(played(&h, sound::creature(Species::Periwinkle)));
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), "tide_pools");
     assert_eq!(h.app.ctx.audio.music(), Some(sound::TITLE_MUSIC));

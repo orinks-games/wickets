@@ -100,9 +100,7 @@ pub const INFO: GameInfo = GameInfo {
 /// While the game is in the parlor, the launcher names it as an event.
 pub fn event(date: Date) -> Option<Happening> {
     let line = match calendar::nearness(HOLIDAY, date)? {
-        Nearness::Day => {
-            "It is Halloween, the last night before the graveyard goes quiet for the year."
-        }
+        Nearness::Day => "The Halloween dance is on. The graveyard goes quiet after 1 November.",
         Nearness::Season { .. } => {
             "The graveyard dances until the night after Halloween, then it goes quiet for the year."
         }

@@ -30,7 +30,7 @@ pub fn lobby_row<S: Menu<Game = Parlor>>(ctx: &mut Ctx<Parlor>) -> MenuItem<S, P
     MenuItem::new(label, |_s: &mut S, ctx: &mut Ctx<Parlor>| {
         ctx.push(TodayList::new())
     })
-    .help("Today's game events, the story's Happening and the challenges, each one Enter away.")
+    .help("Today's game events, the story's Happening and the challenges. Enter opens your selection.")
 }
 
 /// The next game event after a quiet `today`, with how many days off. A
@@ -155,7 +155,7 @@ impl Menu for TodayList {
                                 ctx.game.title_focus = Some(h.focus());
                                 open_game(ctx, g)
                             }
-                            None => ctx.say(format!("{} has no event today any more.", g.name)),
+                            None => ctx.say(format!("The event in {} has ended.", g.name)),
                         }
                     },
                 )

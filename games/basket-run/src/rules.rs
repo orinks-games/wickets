@@ -242,7 +242,7 @@ impl Twist {
     pub fn describe(self) -> &'static str {
         match self {
             Twist::GoldenRush => "golden eggs fall three times as often, among plenty of mud and bees.",
-            Twist::BeeSwarm => "no mud at all, but bees only: twice as many, and more of them dive right behind an egg.",
+            Twist::BeeSwarm => "no mud, twice as many bees, and more of them dive right behind an egg.",
             Twist::FastFall => "everything falls as fast as the meadow ever allows, and the drops come closer together.",
             Twist::MudSlide => "no bees, but mud clods fall three times as often.",
             Twist::SmallBasket => "the basket holds only 3 eggs, so you run to the cart far more often.",

@@ -31,7 +31,7 @@ impl SoundCheck {
     pub fn new() -> SoundCheck {
         SoundCheck {
             menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down move through the sounds you need in play. Enter plays the one you are on and says what it means. Escape goes back.",
+                "Up and Down move through the sounds you need in play. Enter plays the one you are on. Escape goes back.",
             ),
             preview: Preview::None,
         }
@@ -44,23 +44,21 @@ impl SoundCheck {
         }
     }
 
-    fn play(&mut self, ctx: &mut Ctx<Parlor>, key: &'static str, how: Play, text: String) {
+    fn play(&mut self, ctx: &mut Ctx<Parlor>, key: &'static str, how: Play, _text: String) {
+        ctx.stop_speech();
         self.stop(ctx);
         ctx.audio.set_listener(Vec3::ZERO, 0.0);
         match how {
             Play::Once => {
                 ctx.audio.play(key, Bus::EFFECTS);
-                ctx.say(text);
             }
             Play::Sides => {
                 ctx.audio
                     .play_at(key, Vec3::new(-4.0, 1.0, 0.0), Bus::EFFECTS);
-                ctx.say(format!("{text} From your left, then your right."));
                 self.preview = Preview::Sides { key, wait: 1.6 };
             }
             Play::Loop => {
                 let sound = ctx.audio.start_loop(key, None, Bus::AMBIENCE);
-                ctx.say(text);
                 self.preview = Preview::Playing {
                     sound,
                     left: LOOP_PREVIEW,
@@ -68,7 +66,6 @@ impl SoundCheck {
             }
             Play::Music => {
                 let sound = ctx.audio.start_loop(key, None, Bus::MUSIC);
-                ctx.say(text);
                 self.preview = Preview::Playing {
                     sound,
                     left: MUSIC_PREVIEW,
@@ -136,6 +133,7 @@ impl Menu for SoundCheck {
                 MenuItem::new(
                     format!("{}'s glow", species.name()),
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        ctx.stop_speech();
                         s.play(ctx, sound::glow(species), Play::Sides, text.clone())
                     },
                 )
@@ -150,6 +148,7 @@ impl Menu for SoundCheck {
             let text = format!("{}. {}", entry.name, entry.meaning);
             items.push(
                 MenuItem::new(entry.name, move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.stop_speech();
                     s.play(ctx, entry.key, entry.play, text.clone())
                 })
                 .select_sound(None)
@@ -158,6 +157,7 @@ impl Menu for SoundCheck {
         }
         items.push(
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                ctx.stop_speech();
                 ctx.pop()
             })
             .help("Return to the Firefly Meadow title."),

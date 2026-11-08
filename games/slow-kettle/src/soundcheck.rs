@@ -1,5 +1,4 @@
-//! The sound check: every cue of the game, by name, then the cups and the
-//! music box tunes, and the keys the game reads of its own.
+//! Gameplay sound previews, including the cups.
 
 use hearken::menu::{Menu, MenuCore, MenuItem};
 use hearken::{Bus, Ctx, Sound};
@@ -21,7 +20,7 @@ impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
             menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
+                "Up and Down choose a sound, Enter plays it, Escape goes back.",
             ),
             playing: Vec::new(),
         }
@@ -93,22 +92,18 @@ impl Menu for SoundCheck {
                     label(meaning),
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
                         s.hear(ctx, key, bus);
-                        ctx.say(meaning);
+                        ctx.stop_speech();
                     },
                 )
                 .select_sound(None)
-                .help("Enter plays it and says what it means."),
+                .help("Enter plays it."),
             );
         }
         for cup in CUPS.iter() {
-            let meaning = format!(
-                "{}: the sound of it set down on the counter. {}",
-                cup.name, cup.about
-            );
             items.push(
                 MenuItem::new(cup.name, move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
                     s.hear(ctx, sound::cup(cup), Bus::EFFECTS);
-                    ctx.say(meaning.clone());
+                    ctx.stop_speech();
                 })
                 .select_sound(None)
                 .help("One of the cups, set down on the counter."),

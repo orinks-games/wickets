@@ -677,13 +677,14 @@ fn the_sound_check_plays_every_row() {
         h.clear();
         h.press(Key::Return);
         assert!(!h.played().is_empty(), "{}", cursor_row(&h));
-        assert!(!h.spoken().is_empty(), "{}", cursor_row(&h));
+        assert!(h.spoken().is_empty(), "{}", cursor_row(&h));
         h.press(Key::Down);
     }
-    h.clear();
     h.press(Key::Home);
+    h.clear();
     h.press(Key::Return);
-    assert!(spoke(&h, "Left: the caller says left"));
+    assert!(h.spoken().is_empty());
+    assert!(!h.played().is_empty());
     h.press(Key::End);
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), TITLE_NAME);

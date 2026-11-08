@@ -31,7 +31,9 @@ impl Default for SoundCheck {
 }
 
 fn item(label: String, key: &'static str, pos: Option<Vec3>) -> MenuItem<SoundCheck, Parlor> {
+    let label = label.split([':', '.']).next().unwrap_or(&label).to_string();
     MenuItem::new(label, move |s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
+        ctx.stop_speech();
         ctx.audio.stop(s.playing, 100);
         s.playing = match pos {
             Some(p) => ctx.audio.play_at(key, p, Bus::EFFECTS),

@@ -292,7 +292,7 @@ impl TitleGame for SonarDive {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear every cue with its name and meaning, and one echo from five directions.".to_string()
+        "Hear the gameplay cues and compare an echo from five positions.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

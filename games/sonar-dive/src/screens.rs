@@ -443,7 +443,7 @@ impl DiveScreen {
                 if matches!(o.kind, Kind::Wreck | Kind::Galleon) {
                     s.push_str(" Stop beside it to salvage.");
                 } else {
-                    s.push_str(" Swim into it to collect it.");
+                    s.push_str(" Steer into it to collect it.");
                 }
                 s
             }
