@@ -6,7 +6,7 @@ use hearken::{Bus, Ctx, Sound};
 use parlor_core::menus::labels;
 use parlor_core::Parlor;
 
-use crate::songs::{Monster, SONGS};
+use crate::songs::Monster;
 use crate::sound;
 
 /// The sound check's `State::name`.
@@ -21,9 +21,8 @@ pub struct SoundCheck {
 impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
-            menu: MenuCore::new(labels::SOUND_CHECK).with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
-            ),
+            menu: MenuCore::new(labels::SOUND_CHECK)
+                .with_intro_help("Up and Down choose a sound, Enter plays it, Escape goes back."),
             playing: Vec::new(),
         }
     }
@@ -90,11 +89,10 @@ impl Menu for SoundCheck {
         for step in Monster::ALL {
             items.push(
                 MenuItem::new(step.word(), move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.stop_speech();
                     let a = sound::play_call(ctx, step);
                     let b = sound::play_step(ctx, step, 1.0);
                     s.hear(ctx, vec![a, b]);
-                    let line = step_line(ctx, step);
-                    ctx.say(line);
                 })
                 .select_sound(None)
                 .help(format!(
@@ -110,13 +108,13 @@ impl Menu for SoundCheck {
                 MenuItem::new(
                     label(meaning),
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        ctx.stop_speech();
                         let played = if sound::is_music(key) {
                             ctx.audio.play(key, Bus::MUSIC)
                         } else {
                             sound::play(ctx, key)
                         };
                         s.hear(ctx, vec![played]);
-                        ctx.say(meaning);
                     },
                 )
                 .select_sound(None)
@@ -125,22 +123,9 @@ impl Menu for SoundCheck {
                 )),
             );
         }
-        let tune = &SONGS[0];
-        items.push(
-            MenuItem::new("A song", move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                let key = tune.part_key(false);
-                let played = sound::play_part(ctx, &key);
-                s.hear(ctx, vec![played]);
-                ctx.say(format!(
-                    "A song: the first part of {}, with the graveyard band's organ, twangy guitar and drums.",
-                    tune.name
-                ));
-            })
-            .select_sound(None)
-            .help("The first part of the first song, played by the graveyard band."),
-        );
         items.push(
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                ctx.stop_speech();
                 ctx.pop()
             })
             .help("Return to the Graveyard Shuffle title."),

@@ -7,7 +7,7 @@ use parlor_core::menus::labels;
 use parlor_core::Parlor;
 
 use crate::sound;
-use crate::tunes::{Step, CEILI_TUNES, TUNES};
+use crate::tunes::Step;
 
 /// The sound check's `State::name`.
 pub const SOUNDS_NAME: &str = "clover_jig_sounds";
@@ -21,9 +21,8 @@ pub struct SoundCheck {
 impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
-            menu: MenuCore::new(labels::SOUND_CHECK).with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
-            ),
+            menu: MenuCore::new(labels::SOUND_CHECK)
+                .with_intro_help("Up and Down choose a sound, Enter plays it, Escape goes back."),
             playing: Vec::new(),
         }
     }
@@ -89,11 +88,10 @@ impl Menu for SoundCheck {
         for step in Step::ALL {
             items.push(
                 MenuItem::new(step.word(), move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.stop_speech();
                     let a = sound::play_call(ctx, step);
                     let b = sound::play_step(ctx, step, 1.0);
                     s.hear(ctx, vec![a, b]);
-                    let line = step_line(ctx, step);
-                    ctx.say(line);
                 })
                 .select_sound(None)
                 .help(format!(
@@ -108,13 +106,13 @@ impl Menu for SoundCheck {
                 MenuItem::new(
                     label(meaning),
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        ctx.stop_speech();
                         let played = if sound::is_music(key) {
                             ctx.audio.play(key, Bus::MUSIC)
                         } else {
                             sound::play(ctx, key)
                         };
                         s.hear(ctx, vec![played]);
-                        ctx.say(meaning);
                     },
                 )
                 .select_sound(None)
@@ -123,36 +121,9 @@ impl Menu for SoundCheck {
                 )),
             );
         }
-        let tune = &TUNES[0];
-        items.push(
-            MenuItem::new("A tune", move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                let key = tune.part_key(false);
-                let played = sound::play_part(ctx, &key);
-                s.hear(ctx, vec![played]);
-                ctx.say(format!(
-                    "A tune: the first part of {}, on fiddle and bodhran. The whistle joins in the second part.",
-                    tune.name
-                ));
-            })
-            .select_sound(None)
-            .help("The first part of the first tune, with the fiddle and the bodhran."),
-        );
-        let band = &CEILI_TUNES[0];
-        items.push(
-            MenuItem::new("The ceili band", move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                let key = band.part_key(false);
-                let played = sound::play_part(ctx, &key);
-                s.hear(ctx, vec![played]);
-                ctx.say(format!(
-                    "The ceili band: {}, with fiddle, whistle, harp, accordion, bass and bodhran. It plays on Saint Patrick's Day.",
-                    band.name
-                ));
-            })
-            .select_sound(None)
-            .help("The full band of ceili night, which plays on Saint Patrick's Day."),
-        );
         items.push(
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                ctx.stop_speech();
                 ctx.pop()
             })
             .help("Return to the Clover Jig title."),

@@ -2,7 +2,7 @@
 
 ## About the game
 
-Thanksgiving kitchen: up to five stations, each with a cooking sound that changes when it needs you. Follow the recipe call, move to the station, and act on time. Eight courses. One star serves a course and opens the next, and a meal earns up to three stars.
+Cook a Thanksgiving meal at up to five stations. Each station signals when it needs you. Follow the recipe call, move to the station, and act on time. There are eight courses. Earn one star to serve a course and open the next. A meal earns up to three stars.
 
 ## The kitchen
 
@@ -18,36 +18,44 @@ A course uses only some of them. The station in front of you is a little louder 
 
 ## The recipe
 
-The recipe calls each dish in order, with a page sound and two bells: "Recipe: put the cranberries on the left burner." A station that has been called knocks softly, twice. Go there and press Space to start the dish.
+The recipe calls each dish in order, such as "Recipe: put the cranberries on the left burner." The station signals that it is ready to start. Go there and press Space to start the dish.
 
 - Start a dish before the recipe calls it, and it is a fumble.
-- Wait too long and the knock speeds up to three quick knocks. Wait longer still and someone starts the dish for you, for no points on that step.
+- Wait too long and the station gives an urgent reminder. Wait longer still and someone starts the dish for you, for no points on that step.
 - In the full feast, a station can hold a second dish once its first is served: the kitchen tells you when the station is free.
 - No more than two dishes need you at once. Any other dish that is nearly ready keeps cooking until you have seen to one of them.
 
 ## Listening to the dishes
 
-Every dish has three sounds: cooking, needs you, and burning.
+Each dish has three states: cooking, ready for action, and burning. Wait while it cooks, then act when it needs you.
 
-- Left burner, the saucepan: a slow, thick simmer. When it needs you, thick bubbles come fast and spitting: stir or whisk it. Burning is a harsh, crackling scorch.
-- Right burner, the stockpot: light, quick little bubbles. When it needs you, a rolling boil with the lid rattling: stir or drain it. Burning is water hissing on the flame with the lid clattering.
-- Oven: a low fan hum. When it needs you, the oven timer rings: baste, turn the tray, or pull it out. Burning is fast beeping with crackling smoke.
-- Griddle: a soft sizzle. When it needs you, the sizzle turns sharp and crackly: flip or plate. Burning is rough, popping smoke.
-- Cutting board: quiet until there is work. Then a knife tip taps the board: chop or whisk, one press per stroke. Left waiting, the taps turn fast and impatient.
+- Left burner: stir or whisk the saucepan when it needs you.
+- Right burner: stir or drain the stockpot when it needs you.
+- Oven: baste the dish, turn the tray, or pull it out when ready.
+- Griddle: flip or plate the dish when ready.
+- Cutting board: chop or whisk when called, with one press per stroke.
 
 With spoken call-outs on, the kitchen also says which dish needs you as its sound changes: "Bubbling up on the left burner: the gravy. Whisk it." Sound check on the title plays every one of these by name.
 
+## Relaxed course pace
+
+Turn on Relaxed course pace in Settings before starting a campaign course. Cooking runs at half speed and waits after spoken instructions or feedback, and while you check a station, recipe, hint or status. Move between stations while it waits.
+
+Press Space to resume. If your station needs you, the same press acts; otherwise it only resumes cooking, without a fumble. Each chopping or whisking stroke still takes one press, and the kitchen waits between strokes. When everything is served, Space or Escape saves the meal and opens the results. Settings changes apply to the next course.
+
+Relaxed and standard courses keep separate best scores. Stars from either pace open courses. Second helpings, challenges and special meals keep standard timing. The tutorial keeps its own teaching pace.
+
 ## Timing and quality
 
-Act as soon as the sound changes for a perfect score: three rising bells. A little later is good: two rising notes. Once a dish is burning you can still save it, for few points: two falling notes. Leave it longer and the smoke alarm sounds and rescues it, for nothing.
+Act as soon as a dish needs you for a perfect score. A little later earns a good score. You can still save a burning dish for fewer points. Leave it longer and someone rescues it, for no points.
 
-Pressing Space at a dish that isn't ready yet is a fumble: a low double knock, and 5 points off that dish.
+Pressing Space at a dish that isn't ready yet is a fumble: 5 points off that dish.
 
 Each dish's quality, out of 100, is the average of its steps' scores, less its fumbles. When a dish's last step is done it is served, and its quality is spoken.
 
 ## Stars and points
 
-When every dish is served the dinner bell rings and the meal is scored.
+The meal is scored when every dish is served.
 
 - Three stars: an average quality of 90 or more.
 - Two stars: 75 or more.
@@ -82,7 +90,7 @@ Challenges, on the title, are menus every player cooks the same way: a new daily
 
 - Daily, Tonight's dinner: one seeded meal on four stations, with a twist for the day.
 - Weekly, Sunday dinner: three courses in a row, a starter on three stations, the main course on four and dessert on all five, each faster than the last, with the week's twist. Each course needs a star for the next one to come out; your points add up across them.
-- Monthly, the harvest banquet: ten dishes, two on every station, the second waiting for the first to be served. Its rule is golden plates: every dish served at quality 90 or better rings a bright bell and adds 200 points.
+- Monthly, the harvest banquet: ten dishes, two on every station, the second waiting for the first to be served. Its rule is golden plates: every dish served at quality 90 or better earns 200 bonus points.
 
 The twists:
 
@@ -92,7 +100,7 @@ The twists:
 - A quiet kitchen: no spoken call-outs, whatever your setting. The recipe still calls each dish, but you hear when a dish needs you by its sound alone, and the by-ear bonus applies.
 - Butterfingers: every fumble costs 20 instead of 5.
 
-A dinner gong opens every challenge meal. S, F1 and the kitchen's intro all remind you of the twist. The sound check plays the gong, the golden plate, the next-course stinger and the family's knock by name.
+S, F1 and the kitchen's intro all remind you of the twist.
 
 ## Thanksgiving dinner
 
@@ -106,7 +114,7 @@ The dinner is the biggest meal in the game: twelve dishes in three waves on all 
 - The carved turkey, on the cutting board: eight strokes, once the celery is chopped.
 - Pecan pie, in the oven: turn the tray, then pull it out.
 
-Each year a different relative comes to dinner and asks for one of those five dishes. The intro names them. That dish scores double: its quality counts twice in your points. Knocks at the door and a bright chime play as the dinner opens.
+Each year a different relative comes to dinner and asks for one of those five dishes. The intro names them. That dish scores double: its quality counts twice in your points.
 
 In the ten days before, Enter on the row reads the countdown, who is coming this year, and the whole menu.
 
@@ -123,7 +131,7 @@ When the dinner is served, it is kept as that year's keepsake: your best points,
 
 These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
 
-- Left and Right arrows: move between the stations in use. A tick plays from the station, and its name and dish are spoken. A bump means there is no station further that way.
+- Left and Right arrows: move between the stations in use. The station's name and dish are spoken. You cannot move beyond either end.
 - Number keys 1 to 5: jump straight to a station. These keys belong to this game alone, and Settings cannot change them.
 - Space: the main action at the station in front of you. It starts a dish, stirs, whisks, flips, bastes, turns the tray, pulls out, drains or plates, whatever the dish needs next. On the cutting board, press it once per stroke.
 - Up arrow: describe the dish in front of you: its step, what comes next and when.

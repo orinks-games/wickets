@@ -62,7 +62,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
                     let tea = teas[b.shelf];
                     if tea.id != sencha.id {
                         sound::play(ctx, sound::NOPE);
-                        return Reply::say(format!("{} is lovely, but this cup is for Sencha.", tea.name));
+                        return Reply::say("This lesson uses Sencha. Choose Sencha from the shelf.");
                     }
                     sound::play(ctx, sound::TIN);
                     b.service.choose(tea);

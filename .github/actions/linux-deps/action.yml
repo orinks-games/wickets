@@ -1,5 +1,5 @@
 name: Linux build dependencies
-description: SDL2 desktop backends, Speech Dispatcher headers and gcc 13 for Prism.
+description: SDL2 desktop backends, Speech Dispatcher headers, gcc 13 for Prism, and the mold linker for CI's test builds.
 runs:
   using: composite
   steps:
@@ -12,7 +12,7 @@ runs:
       run: |
         sudo apt-get update
         sudo apt-get install -y --no-install-recommends \
-          cmake pkg-config gcc-13 g++-13 libspeechd-dev \
+          cmake pkg-config gcc-13 g++-13 mold libspeechd-dev \
           libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxi-dev \
           libxinerama-dev libxss-dev libxfixes-dev libxkbcommon-dev \
           libwayland-dev wayland-protocols libdecor-0-dev \

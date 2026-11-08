@@ -317,7 +317,7 @@ pub fn safe_spec(n: u32) -> SafeSpec {
             hints: 1,
             par: 240.0,
             limit: 180.0,
-            news: "The last and finest safe in the city. Everything you have learned, all at once.",
+            news: "The Crown vault has five wheels, three false gates per wheel and one hint. The direction rule applies, the clunk is quiet, and the guard visits often.",
             ..base
         },
         _ => PRACTICE,

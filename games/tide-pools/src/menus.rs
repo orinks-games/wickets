@@ -109,7 +109,7 @@ impl SoundCheck {
     pub fn new() -> SoundCheck {
         SoundCheck {
             menu: MenuCore::new(labels::SOUND_CHECK).with_intro_help(
-                "Up and Down move through the game's sounds, Enter plays one and says what it means, Escape goes back.",
+                "Up and Down move through the game's sounds, Enter plays one, Escape goes back.",
             ),
         }
     }
@@ -152,7 +152,7 @@ impl Menu for SoundCheck {
                     } else {
                         ctx.audio.play(key, Bus::EFFECTS);
                     }
-                    ctx.say(meaning.clone());
+                    ctx.stop_speech();
                 })
                 .select_sound(None)
                 .help(help.clone())
@@ -170,7 +170,7 @@ impl Menu for SoundCheck {
                     sound::creature(Species::Periwinkle),
                     sound::pool_at(1, Lean::Edge),
                 );
-                ctx.say("A crab in the pool to your left, and a periwinkle shell in the pool to your right. You face the sea, so the pools run from your left to your right.");
+                ctx.stop_speech();
             })
             .select_sound(None)
             .help("Two creatures, one in the pool on each side of you."),
@@ -182,7 +182,7 @@ impl Menu for SoundCheck {
                     sound::creature(Species::Anemone),
                     sound::pool_at(0, Lean::Back),
                 );
-                ctx.say("An anemone in the pool in front of you, heard from standing back: fainter. Lean in and the pool you face sounds close and clear.");
+                ctx.stop_speech();
             })
             .select_sound(None)
             .help("How a pool sounds from standing back, compared with leaning in."),

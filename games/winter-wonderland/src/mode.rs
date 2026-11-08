@@ -1,20 +1,24 @@
-//! How a run was started, and the story that strings both parts together.
+//! How a run was started, and the story that strings Gift Sort and the
+//! Wish Desk together.
 
 use crate::challenge::Plan;
 
 /// How a run was started; decides where it goes when it ends.
 #[derive(Clone, Debug, PartialEq)]
 pub enum Mode {
-    /// Chosen from the title: Gift Sort from a shift, or one night.
+    /// Chosen from the title: Gift Sort or the Wish Desk from a shift or
+    /// stack, or one night of Midnight Countdown.
     Free,
     /// A daily, weekly or monthly challenge, the same for everyone.
-    /// `gifts` carries the weekly's Gift Sort score into its night.
+    /// `gifts` carries the weekly's Gift Sort score to the Wish Desk.
     Challenge { plan: Box<Plan>, gifts: u64 },
     /// Midnight Countdown with no way to fail and nothing saved.
     Practice,
-    /// The story: three shifts, then a night. `gifts` carries the Gift
-    /// Sort score into the countdown.
+    /// The story: three shifts, then a stack at the Wish Desk. `gifts`
+    /// carries the Gift Sort score to the desk.
     Story { blizzard: bool, gifts: u64 },
+    /// Muddled post: one stack of letters from the youngest children.
+    Muddled,
 }
 
 impl Mode {
@@ -30,12 +34,25 @@ impl Mode {
         }
     }
 
-    /// The night the story plays.
-    pub fn story_night(blizzard: bool) -> u32 {
+    /// The Wish Desk stacks a run in this mode plays, first to last.
+    pub fn stacks(&self, start: u32) -> (u32, u32) {
+        match self {
+            Mode::Story { blizzard, .. } => {
+                let s = Mode::story_stack(*blizzard);
+                (s, s)
+            }
+            Mode::Challenge { plan, .. } => plan.stacks(),
+            Mode::Muddled => (crate::events::MUDDLED_STACK, crate::events::MUDDLED_STACK),
+            _ => (start, start),
+        }
+    }
+
+    /// The Wish Desk stack the story plays.
+    pub fn story_stack(blizzard: bool) -> u32 {
         if blizzard {
-            3
+            4
         } else {
-            1
+            2
         }
     }
 
@@ -52,33 +69,43 @@ impl Mode {
     }
 }
 
+/// How a letter's writer is named: "Milo, age 6, writes".
+pub const WRITES: &str = "writes";
+
 /// The story's opening pages.
 pub fn story_intro(blizzard: bool) -> Vec<String> {
     if blizzard {
         vec![
             "A blizzard has buried the North Pole, and the workshop is a day behind. The belt runs fast, the guests keep changing their minds, and the return sack is filling up with oddities.".into(),
-            "Three hard shifts on the belt, then New Year's Eve in the village square, where the band plays faster and trickier than before. Keep your ears sharp.".into(),
+            "Three hard shifts on the belt. Then the snowed-in letters at the Wish Desk, which nobody else can answer.".into(),
         ]
     } else {
         vec![
             "The elves have wrapped every gift beautifully, and then mixed up every label.".into(),
-            "You are the workshop's best listener. Shake each gift as it rides the conveyor, hear what is inside, and send it to whoever wished for it before it falls off the end of the belt.".into(),
-            "Three shifts stand between you and the morning. And a week later, a party will need a conductor.".into(),
+            "Shake each gift as it rides the conveyor, hear what is inside, and send it to whoever wished for it before it falls off the end of the belt.".into(),
+            "Three shifts stand between you and the morning. And the letters are piling up on the Wish Desk.".into(),
         ]
     }
 }
 
-/// The bridge between the two halves.
+/// The bridge between the belt and the desk.
 pub fn story_bridge(blizzard: bool) -> Vec<String> {
-    let party = crate::night::NightSpec::new(Mode::story_night(blizzard)).name;
-    vec![
-        "Every gift is delivered. The morning comes and goes in a happy blur of paper and ribbon.".into(),
-        format!("A week later, the snow has settled and the village gathers at {party} for New Year's Eve. The band leader has lost her voice, and she hands you the baton."),
-        "The band will play a rhythm, and you answer it. Bells first, then drums, then horns, all the way to midnight.".into(),
-    ]
+    if blizzard {
+        vec![
+            "The last shift is done, and the belt groans to a stop.".into(),
+            "Then the snowplough brings one more sack. Letters the blizzard held up, every one of them still waiting for its gift.".into(),
+            "The gifts are on the Wish Desk's shelves, but the labels blew off in the storm. Read each letter, shake the boxes, and wrap the one that answers it. There is no clock at the desk.".into(),
+        ]
+    } else {
+        vec![
+            "Every gift is delivered. The belt stops, and the workshop goes quiet.".into(),
+            "Except at the Wish Desk. A stack of letters came too late for the belt, and their gifts sit on the shelves with no labels at all.".into(),
+            "Read each letter, shake the boxes until one sounds like the wish, and wrap it. There is no clock at the desk.".into(),
+        ]
+    }
 }
 
 /// The story's last page, before the score.
 pub fn story_ending() -> String {
-    "The bells ring twelve. Corks pop, fireworks bloom over the snow, and the whole village sings. From the workshop belt to the midnight bells, you heard your way through the holidays. Happy New Year!".into()
+    "The last letter is answered, and the stamp comes down on the last parcel. Outside, snow settles on the workshop roof. From the belt to the Wish Desk, you heard your way through the holidays.".into()
 }

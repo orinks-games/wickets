@@ -576,9 +576,13 @@ fn the_sound_check_drops_each_kind_and_tours_the_lanes() {
     for _ in 0..140 {
         h.frame(DT);
     }
+    assert!(h.spoken().is_empty());
     assert_eq!(
-        h.spoken(),
-        ["Lane 1.", "Lane 2.", "Lane 3.", "Lane 4.", "Lane 5."]
+        h.played()
+            .iter()
+            .filter(|k| k.as_str() == sound::CATCH_EGG)
+            .count(),
+        5
     );
     h.clear();
     h.press(Key::F1);

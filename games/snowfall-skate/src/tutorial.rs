@@ -36,7 +36,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pond: Live<SkateScreen>) -> Lesson {
         |s: &SkateScreen, _| (s.skate.tally.taken >= 1).then(|| "Taken.".to_string()),
     );
     let line = pond.step(
-        "Take lanterns one after another to build a line. Each lantern in a line is worth 1 more, up to 5. Take 3 in a row.",
+        "Take lanterns one after another to build a line. Each lantern in a line is worth 1 more point, up to 5 points. Take 3 in a row.",
         |s: &SkateScreen, _| (s.skate.line >= 3).then(|| "A line of 3.".to_string()),
     );
     let drift = pond.step(
@@ -62,7 +62,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pond: Live<SkateScreen>) -> Lesson {
     .step(drift)
     .step(spin)
     .outro(format!(
-        "On a real pond, snow settles as you skate, and the night ends when it covers the ice. Each lantern taken keeps it clear a little longer. Thin ice on the later ponds cracks under you: lean round it too. {} gives your line and the snow. Press it again straight away for your score. {h} says where the next lantern is.",
+        "On a real pond, snow settles as you skate, and the night ends when it covers the ice. Each lantern taken keeps it clear a little longer. Lean round thin ice on the later ponds too. {} gives nearby hazards, the next lantern and your position. Press it again straight away for your score, your line and the snow. {h} tells you what to do next.",
         sentence_start(&s)
     ))
     .on_exit(move |ctx| {

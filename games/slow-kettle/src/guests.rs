@@ -56,7 +56,7 @@ pub const REGULARS: [Regular; 6] = [
             "A pigeon has been eyeing my tomato plant. I have named him Gerald. We have come to an agreement.",
             "First tomato. Just one. I ate it on the balcony in my coat at six in the morning, and it was perfect.",
             "My neighbour saw the plant and asked for seeds. Now there are tomatoes on three balconies.",
-            "We had a tomato party on the stairs, all three balconies. Gerald came too. I am on day shifts next month, but I will still come here.",
+            "The neighbours from all three balconies had a tomato party on the stairs. Gerald came too. I am on day shifts next month, but I will still come here.",
         ],
         after: [
             "Day shifts suit me. I see the sun now, and so does the tomato.",

@@ -29,7 +29,7 @@ impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
             menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
+                "Up and Down choose a sound, Enter plays it, Escape goes back.",
             ),
             playing: Vec::new(),
             pending: None,
@@ -110,7 +110,6 @@ impl Menu for SoundCheck {
         let mut items: Vec<MenuItem<Self, Parlor>> = Vec::new();
         for entry in sound::catalog() {
             let key = entry.key.clone();
-            let meaning = entry.meaning.clone();
             let play = entry.play;
             items.push(
                 MenuItem::new(
@@ -133,11 +132,11 @@ impl Menu for SoundCheck {
                                 t: 0.0,
                             });
                         }
-                        ctx.say(meaning.clone());
+                        ctx.stop_speech();
                     },
                 )
                 .select_sound(None)
-                .help("Enter plays it and says what it means."),
+                .help("Enter plays it."),
             );
         }
         items.push(

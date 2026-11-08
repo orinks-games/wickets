@@ -8,7 +8,7 @@ Each guess is a row of bells. Ring your row and listen to the apprentice's knock
 
 ## The bells
 
-There are 6 bells, numbered 1 to 6. Bell 1, the treble, is the highest. Bell 6, the tenor, is the lowest. Each step down the numbers is one step down a major scale. Whenever you pick a bell, it rings and its number and name are spoken, such as "Bell 3, middle high".
+There are 6 bells, numbered 1 to 6. Bell 1, the treble, is the highest. Bell 6, the tenor, is the lowest. Whenever you pick a bell, it rings and its number and name are spoken, such as "Bell 3, middle high".
 
 ## Building a row
 
@@ -16,7 +16,7 @@ Your row has 4 places: Left and Right move, and each move rings and names that p
 
 ## Ringing a row and the answer
 
-Space rings your row. That uses one of your rows. After the bells, the apprentice answers. A firm knock on the beam means one bell of your row is right and in its place. A soft tap means one bell of your row is in the peal, but in another place. Then the count is spoken, such as "2 in place, 1 misplaced". The answer never says which bells it means. A knock for every place solves the peal: four knocks, or five in the cathedral.
+Space rings your row. That uses one of your rows. After the bells, the apprentice answers. The answer counts bells that are in the right place and bells that belong elsewhere in the peal, such as "2 in place, 1 misplaced". The answer never says which bells it means. Solve the peal by placing every bell correctly: four bells, or five in the cathedral.
 
 Each bell of your row counts once at most. If the peal is 1, 1, 2, 2 and you ring 1, 2, 1, 1, the first bell is in place, and one more 1 and one 2 are misplaced: 1 in place, 2 misplaced.
 
@@ -46,11 +46,11 @@ Every player gets the same challenges. The daily is one Village peal, new each d
 
 Two rows join the title on their nights only. Each keeps its own best score, fewest rows and streak, apart from Village and Plain, and Records reads them once you have played them.
 
-Practice night is on the second Wednesday of every month. The peal has 5 places from 6 bells and 10 rows. The tower captain calls one place: as the peal begins, you hear a soft glassy shimmer and the place and its bell are named, and that bell is already set in your row. The shimmer plays again each time you move onto that place, just after its bell, and stops as soon as you move on. S names it too. The other places you find as usual.
+Practice night is on the second Wednesday of every month. The peal has 5 places from 6 bells and 10 rows. The tower captain calls one place: as the peal begins, the place and its bell are named, and that bell is already set in your row. Its cue plays whenever you move onto that place. S names it too. The other places you find as usual.
 
-## Sounds
+## Sound check
 
-The 6 village bells are tuned church bells, high to low. A knock is a firm, dry knock on wood. A tap is a soft, light tap. A rope pull, a swish and a soft thump, starts each rung row. A solved peal rings every bell out three times. An empty tower ends with one low bell. A dull thud means there is nothing to do. Under it all is the wind round the tower, kept quiet. On New Year's Eve, the new year peal rings rounds and twelve strokes of the tenor. On Practice night, a short, quiet glassy shimmer marks the called place. The sound check on the title plays each one with its name.
+Sound check on the title plays the cues you need during play.
 
 ## Controls
 

@@ -55,7 +55,7 @@ pub fn tracks() -> Vec<Track> {
                 "Visit the potting shed.",
                 20.9,
             )
-            .about("The music in the potting shed, where seeds are bought."),
+            .about("The music in the seed shed, where you browse seeds and collections."),
         ALBUM.pause(25.3),
     ]
 }

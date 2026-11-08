@@ -265,7 +265,7 @@ impl TitleGame for BirdsongTrail {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear every bird voice, step and cue in the game, with what it means.".to_string()
+        "Play the bird voices and cues you need on the trail.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

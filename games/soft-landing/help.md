@@ -10,19 +10,19 @@ Each flight starts with the lander waiting high above the pad. You hear the moon
 
 ## The engine and fuel
 
-Hold Space to fire the main engine, and let go to fall. The engine is a low roar. It slows your fall, and it burns fuel only while it fires. Fuel is counted in seconds of burn. A fuel alarm of two soft beeps sounds at 25 percent and again at 10 percent, with the level spoken. When the tank is empty the engine stops and you hear Fuel out.
+Hold Space to fire the main engine, and let go to fall. Firing slows your fall and burns fuel, measured in seconds of burn. The game warns you at 25 percent and 10 percent fuel. When the tank is empty, the engine stops.
 
-## The descent tone
+## Safe speed
 
-A tone tracks fall speed: low is safe, high is fast. Over safe speed you hear Too fast; back under, Safe speed. Near the pad, hold the engine until you hear Safe speed.
+Keep your falling speed below the safe speed before touching down. The game says Too fast when you cross above the limit, and Safe speed when you return below it. Near the pad, hold the engine until you hear Safe speed.
 
 ## The pad beacon
 
-A soft ping comes from the pad below you. It pings slowly when you are high and quicker as you get closer, so its pace tells you how near the ground is.
+The pad beacon helps you judge how close you are to the ground. Sound check, on the title, lets you hear the beacon and the other gameplay cues.
 
 ## Call-outs
 
-Mission control calls your height as you pass each mark, with your falling speed in metres a second, after a short radio click. The marks are every 50 metres to start. The Up arrow calls less often and the Down arrow more often: every 100, 50 or 10 metres. The game remembers your choice, except on the practice pad. Tab asks for a call-out now, with your height, speed and fuel. R repeats the last call-out.
+Mission control calls your height as you pass each mark, with your falling speed in metres a second. The marks are every 50 metres to start. The Up arrow calls less often and the Down arrow more often: every 100, 50 or 10 metres. The game remembers your choice, except on the practice pad. Tab asks for a call-out now, with your height, speed and fuel. R repeats the last call-out.
 
 ## Status and hints
 
@@ -42,7 +42,7 @@ Moon select flies any moon you have opened.
 
 ## Scoring and records
 
-A landing scores 200 points. Fuel left adds up to 300 points, for a full tank. A soft touchdown adds up to 500 points: the slower you touch down, the more it pays. A crash scores nothing. Touchdown is a thud and a creak of the legs. A crash is a heavy crunch.
+A landing scores 200 points. Fuel left adds up to 300 points, for a full tank. A soft touchdown adds up to 500 points: the slower you touch down, the more it pays. A crash scores nothing.
 
 Records keeps your best score on each moon, your softest touchdown, how many landings and crashes you have made, and your challenge results.
 
@@ -68,10 +68,10 @@ Leave the challenge, on the pause menu, stops without counting the run, so you c
 
 ## Special nights
 
-- Full moon pad, on every full moon night. The title has a row for it. It flies one moon made from that full moon's date, so every player gets the same moon that night, and it is named for the full moon, such as the Harvest Moon or the Hunter's Moon. Its tank holds twice the best burn. Crickets sing quietly behind mission control's radio click, on their end of the radio. They are only atmosphere, and they are named the first time you hear them.
-- Tranquility pad, from 19 to 21 July, around the day of the first moon landing. The title has a row for it. You land at Tranquility Base in light gravity, 400 metres up, with a roomy tank. Mission control's radio beeps with the Quindar tone of the Apollo flights instead of the click. It means the same thing: a call-out follows. Land safely and you hear that the Eagle has landed.
+- Full moon pad, on every full moon night. The title has a row for it. It flies one moon made from that full moon's date, so every player gets the same moon that night, and it is named for the full moon, such as the Harvest Moon or the Hunter's Moon. Its tank holds twice the best burn.
+- Tranquility pad, from 19 to 21 July, around the day of the first moon landing. The title has a row for it. You land at Tranquility Base in light gravity, 400 metres up, with a roomy tank. Land safely and you hear that the Eagle has landed.
 
-Each keeps its own best score. Neither opens survey moons or sets your softest touchdown. Once its row has closed, Play again says so and takes you back to the title. Sound check plays the crickets and the Quindar tone too.
+Each keeps its own best score. Neither opens survey moons or sets your softest touchdown. Once its row has closed, Play again says so and takes you back to the title.
 
 ## Pausing
 

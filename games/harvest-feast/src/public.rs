@@ -92,8 +92,9 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         let lines: Vec<String> = (first..first + 4)
             .map(|n| {
                 let best = best_line(ctx, &progress::course_board(n));
+                let relaxed = best_line(ctx, &progress::paced_course_board(n, true));
                 format!(
-                    "Course {n}, {}: {}, {best}.",
+                    "Course {n}, {}: {}, standard {best}; relaxed {relaxed}.",
                     course(n).name,
                     stars_phrase(progress.stars(n))
                 )
@@ -157,7 +158,7 @@ pub(crate) fn dishes(n: usize) -> String {
 fn course_help(ctx: &mut Ctx<Parlor>, n: u32) -> String {
     let progress = Progress::load(ctx);
     let c = course(n);
-    let best = best_line(ctx, &progress::course_board(n));
+    let best = best_line(ctx, &progress::paced_course_board(n, progress.relaxed));
     format!(
         "{} {}. {}, {best}.",
         c.blurb,
@@ -239,6 +240,13 @@ impl TitleGame for HarvestFeast {
             set_callouts,
             |_ctx, _on| None,
             "When on, the kitchen says which dish needs you as its sound changes. Cook a whole course with it off for 10 percent more points.",
+        ), menus::settings::toggle(
+            "harvest_feast_relaxed",
+            |on| format!("Relaxed course pace: {}", if on { "on" } else { "off" }),
+            |ctx| Progress::peek(ctx).relaxed,
+            |ctx, on| { let mut p = Progress::load(ctx); p.relaxed = on; p.store(ctx); },
+            |_ctx, _on| None,
+            "For your next campaign course: half-speed cooking, with time to listen before you act. Scores are separate; stars still open courses. Second helpings and special meals keep standard timing.",
         )]
     }
 
@@ -330,7 +338,7 @@ impl Menu for CourseSelect {
             .map(|n| {
                 let c = course(n);
                 if progress.open(n) {
-                    let best = best_line(ctx, &progress::course_board(n));
+                    let best = best_line(ctx, &progress::paced_course_board(n, progress.relaxed));
                     MenuItem::new(
                         Label::from(format!(
                             "Course {n}: {}, {}, {best}",

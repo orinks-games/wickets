@@ -247,6 +247,7 @@ impl SoundCheck {
     }
 
     fn stop(&mut self, ctx: &mut Ctx<Parlor>) {
+        ctx.stop_speech();
         if let Demo::Float { sound, .. } = self.demo {
             ctx.audio.stop(sound, 80);
         }
@@ -406,11 +407,6 @@ impl Menu for SoundCheck {
                         Vec3::new((side * HALF) as f32, 0.0, 0.0),
                         Bus::EFFECTS,
                     );
-                    ctx.say(if side < 0.0 {
-                        "Left bank."
-                    } else {
-                        "Right bank."
-                    });
                 }
             }
         }

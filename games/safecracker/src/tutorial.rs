@@ -173,12 +173,12 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     Lesson::new(
         ID,
         "Safecracker",
-        "You open safes with nothing but your ears and a steady hand, and nothing here is a race. Learn on a practice dial with one wheel",
+        "Turn the dial and listen for the tumbler to find each wheel's number. Learn on a practice dial with one wheel and no time limit",
     )
     .step(clicks)
     .step(read)
     .step(spins)
     .step(back)
     .step(set)
-    .outro(format!("In a real safe the dial is silent: {t} says the number. Real safes have two to five wheels, and later ones add false gates and a night guard. Play starts with the office lockbox, and Practice dial gives endless single wheels."))
+    .outro(format!("In a real safe, turning the dial does not speak each number. Press {t} to hear the current number. Real safes have two to five wheels, and later ones add false gates and a night guard. Play starts with the office lockbox, and Practice dial gives endless single wheels."))
 }

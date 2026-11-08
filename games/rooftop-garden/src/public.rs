@@ -191,7 +191,7 @@ impl TitleGame for RooftopGarden {
             garden_line(ctx, &saved),
             |s: &mut Title, ctx: &mut Ctx<Parlor>| start_home(ctx, s.game.launch()),
         )
-        .help("Your own rooftop. It keeps growing between visits: days pass while you play and are saved when you leave.")]
+        .help("Tend your own rooftop. Days pass only while you play; your garden is saved when you leave.")]
     }
 
     fn extras(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {

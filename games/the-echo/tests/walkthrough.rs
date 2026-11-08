@@ -290,7 +290,7 @@ fn the_sound_check_plays_every_sound_by_name() {
         h.clear();
         h.press(Key::Return);
         assert!(played(&h, key), "{key}");
-        assert_eq!(h.spoken(), [meaning]);
+        assert!(h.spoken().is_empty());
     }
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), TITLE_NAME);

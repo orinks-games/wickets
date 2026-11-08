@@ -264,7 +264,7 @@ fn briefing(route: Route, pick: u32) -> &'static str {
             "Corporate security has armed the crossings. Keep the rail gun hot.",
         ],
         Route::Storm => &[
-            "Ion storm over the partition wall. Warnings come late. Trust your ears.",
+            "Ion storm over the partition wall. Warnings come late.",
             "The storm rail runs fast and blind. Short windows all the way.",
         ],
         Route::Relay => &[

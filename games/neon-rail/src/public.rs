@@ -281,7 +281,7 @@ impl TitleGame for NeonRail {
                     launch(ctx, s.game.launch(Mode::Challenge), false)
                 },
             )
-            .help("The original authored run: six sectors in two minutes, the same every time."),
+            .help("The original route: six sectors in two minutes, the same every time."),
             endless_row,
             cold_row,
         ];

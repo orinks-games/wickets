@@ -2,51 +2,51 @@
 
 ## About the game
 
-You are a courier flying a combat skimmer through Black Sky City. It flies forward by itself, and you pick one of three lanes. Move into the lane of flow vehicles to score and cut stress. Avoid hazards, shoot threats, boost through blockades, reach extraction.
+You are a courier flying a combat skimmer through Black Sky City. It flies forward by itself, and you pick one of three lanes. Move into the lane of flow vehicles to score and cut stress. Avoid hazards, shoot threats and boost through blockades.
 
 Reach extraction to complete the run. You lose if your hull reaches 0 or network stress reaches 100.
 
 ## Hearing the rail
 
-Each arrival loops from its lane and grows louder as it nears. Straight ahead is your lane; left means one or two lanes left. Shift lanes and the arrivals move with you.
+Arrival cues mark their lanes relative to yours. Straight ahead is your lane; left means one or two lanes left. The positions change when you shift lanes.
 
 Spoken call-outs are on by default. Each arrival is also named as it appears: "Debris left." Turn Spoken call-outs off in Settings, from the title or the pause menu, to play by sound alone. The hint key always names what is next.
 
-Choose Sound check on the title to hear every cue with its name and meaning, and the lane positions demonstration.
+Sound check lets you hear the gameplay cues and practise recognising their lane positions.
 
 ## Traffic you join
 
-Be in its lane when it arrives.
+Move into the lane of the traffic or pickup you want to meet.
 
-- Flow vehicle: a smooth, pulsing glide. Meeting it scores and eases stress. Missing it raises stress.
-- Fast passer: a high, rapid buzzing whine with a short warning. Meet it, or have a slowdown pulse running, or it clips the corridor: hull damage and stress.
-- Priority vehicle: an insistent two-note bell, with a rising bell notice as it is announced. Meet it, or use priority override or a slowdown pulse. Delaying it raises stress hard.
-- Repair pickup: a soft rising sparkle. Restores hull.
-- Salvage: plinking chimes. It adds to your score now, and your score becomes credits at the debrief.
+- Flow vehicle: meeting it scores and eases stress. Missing it raises stress.
+- Fast passer: you get a short warning. Meet it, or have a slowdown pulse running, or it clips the corridor: hull damage and stress.
+- Priority vehicle: meet it, or use priority override or a slowdown pulse. Delaying it sharply raises stress.
+- Repair pickup: restores hull.
+- Salvage: adds to your score, which becomes credits at the debrief.
 
 A pickup you miss is gone: you hear "Repair pickup missed" or "Salvage missed", with no penalty.
 
 ## Hazards you avoid
 
-Be out of its lane when it arrives, or boost through it.
+Move out of a hazard's lane before it reaches you, or boost through it.
 
-- Debris: a tumbling metal rattle. Boosting through it scores a boost smash.
-- Drone: a buzzing warble. Shoot it with the rail gun, dodge it, or boost-ram it.
-- Heavy blocker: a deep, slow throb, with a two-beep stress warning as it is announced. Dodge it, or boost into it to force it open for big points.
-- Unstable vehicle: a sputtering, crackling engine, with the stress warning. Shoot it, dodge it, or boost through. Even dodged, its turbulence spreads a little stress.
-- Full blockade: a two-tone alarm across all three lanes. You cannot dodge it. A bright double chime sounds just under a second before it hits: boost on the chime.
+- Debris: boosting through it scores a boost smash.
+- Drone: shoot it with the rail gun, dodge it, or boost-ram it.
+- Heavy blocker: dodge it, or boost into it to force it open for big points.
+- Unstable vehicle: shoot it, dodge it, or boost through. Even dodged, its turbulence spreads a little stress.
+- Full blockade: blocks all three lanes, so you cannot dodge it. Boost on the blockade cue, just under a second before impact.
 
 ## Stress and pressure
 
-Stress runs from 0 to 100. Mistakes raise it, and repeated mistakes raise it faster. Clean play, pickups, emergency tools, and sector clears bring it down; calm flow slowly bleeds it away.
+Stress runs from 0 to 100. Mistakes raise it, and repeated mistakes raise it faster. Clean play, pickups, emergency tools, and sector clears bring it down; calm flow slowly reduces it.
 
-- Rising pressure, at stress 35 or more: a two-beep warning.
-- High stress, at 75 or more: a deep pulsing alarm, repeated every five seconds while it lasts, and the music grows harder.
-- Recovery window: a bright chime as stress falls back out of danger.
+- The rising-pressure warning starts at stress 35.
+- At stress 75 or more, the high-stress warning repeats every five seconds.
+- The recovery cue tells you stress has fallen out of danger.
 
 ## Emergency tools
 
-- Boost: just under a second of breach power. Smashes debris, rams drones, forces heavy blockers open, punches through unstable vehicles and breaches blockades. Five seconds to recharge. A soft two-note marimba says it is ready.
+- Boost: just under a second of breach power. Smashes debris, rams drones, forces heavy blockers open, punches through unstable vehicles and breaches blockades. Five seconds to recharge. The ready cue tells you when boost has recharged.
 - Rail gun: locks onto the nearest drone or unstable vehicle in any lane and destroys it for 80 points. It only locks in the last second of an approach: within a second in your own lane, a little less one lane over, less again two lanes over. Fire too early, or with nothing coming, and you hear "No lock", and the gun still has to cool for under a second.
 - Slowdown pulse: two and a half seconds in which fast passers, priority traffic and heavy blockers are eased past. Lowers stress at once. Limited charges and a fourteen-second recharge.
 - Priority override: three and a half seconds in which priority traffic is held for you, whatever lane you are in. Lowers stress at once. Limited charges.
@@ -78,7 +78,7 @@ Every pilot in the same period flies the same rail, so challenges use a standard
   - Boost offline: the boost key does nothing. There are no full blockades. Heavy blockers take their place, so dodge or shoot everything.
   - Fog: every warning is a quarter shorter. Each arrival is heard later, so move on its first sound.
 - Weekly, the long haul: three sectors along a fixed route, ending in the extraction sprint, with a twist of its own for the week. You choose an upgrade after each of the first two sectors. The route ahead is already set, so the route menu has one choice.
-- Monthly, the Black Sky event, Blackout Convoy: three evacuation convoy sectors, then the extraction sprint. Priority vehicles are evacuation trains, called out as "Evacuation train". Each one you clear pays three times and plays a bright bell and pluck. Each one delayed costs double stress. Stress starts at 30, and you carry three priority overrides. The briefing reads the event's own story log, and flying an event to its end keeps that log in the story archive. The event has its own music.
+- Monthly, the Black Sky event, Blackout Convoy: three evacuation convoy sectors, then the extraction sprint. Priority vehicles are evacuation trains, called out as "Evacuation train". Each evacuation train you clear pays three times. Each one delayed costs double stress. Stress starts at 30, and you carry three priority overrides. The briefing reads the event's own story log, and flying an event to its end keeps that log in the story archive.
 
 During a challenge run, S includes the twist or rule. F1 adds the challenge's rule as its last page.
 
@@ -86,13 +86,13 @@ A challenge counts when the run ends, won or lost: you hear your result, whether
 
 ## Special nights
 
-Ghost cars, from 17 October to Halloween and the day after: in the guided run, a Black Sky Run, the endless rail, the challenge corridor and a cold start, flow vehicles wear a hollow whistle over their usual pulse. They are flow vehicles in costume: meet them as usual, and they score as usual. The run's briefing names them in words, the status key names the night, and the hint key calls them ghost cars. The daily, weekly and monthly challenges keep the plain flow sound.
+Ghost cars, from 17 October to Halloween and the day after: in the guided run, a Black Sky Run, the endless rail, the challenge corridor and a cold start, flow vehicles become ghost cars. Meet them as usual for the same score. The run's briefing names them in words, the status key names the night, and the hint key calls them ghost cars. Ghost cars do not appear in the daily, weekly or monthly challenges.
 
-Friday night run, on the last Friday of every month: a row of its own on the title. On other days the row stays in its place, locked, and says when it opens. Three sectors made from that Friday's date, the same for every pilot, on a standard skimmer: a salvage stretch, one more route, then extraction. Between sectors you fit an upgrade, but the route is fixed. Salvage comes as cargo crates, with a bright chime over the salvage pulse, and each is worth double. It keeps its own board: its score does not count toward your best score, it pays no credits, parts or intel, and your rank and story stay as they were. Once that Friday is over, Play again on the results says so and does not start a run.
+Friday night run, on the last Friday of every month: a row of its own on the title. On other days the row stays in its place, locked, and says when it opens. Three sectors made from that Friday's date, the same for every pilot, on a standard skimmer: a salvage stretch, one more route, then extraction. Between sectors you fit an upgrade, but the route is fixed. Salvage comes as cargo crates, each worth double. It keeps its own board: its score does not count toward your best score, it pays no credits, parts or intel, and your rank and story stay as they were. Once that Friday is over, Play again on the results says so and does not start a run.
 
 ## Routes and upgrades
 
-Routes between sectors. The three on offer always include the open route you have cleared least, so every strand of the archive comes around:
+Choose a route between sectors. The three choices always include the open route you have cleared least:
 
 - Standard rush: mixed traffic, normal pay.
 - Salvage stretch: more pickups and fewer threats, a smaller sector bonus.
@@ -109,8 +109,6 @@ Every debrief pays, even after a failed run: credits from your score and a finis
 The workshop sells permanent parts for credits and parts: a reinforced frame, spare charges, boost tuning, storm charts, a pickup magnet and stress dampers. Higher ranks open more: at rank 2 an armoured nose, which halves blockade collision damage, and long-range sensors, which announce repairs and salvage half a second sooner; at rank 3 a capacitor bank, for a longer boost, and a heat sink, for a faster rail gun; at rank 4 a shield emitter, one shield charge on every run; at rank 5 a chain governor, so a hit halves your multiplier instead of resetting it. Two more open with the story: the Relay tuner, which makes a data relay recover 2 intel fragments, with the signal's first log at pilot rank 4; and the Hunter jammer, which announces drones and unstable vehicles half a second sooner, with Security's last log. Clear the storm rail in a cold start and the Storm charts are fitted free. Fifty rail gun kills earn the Ace gunner licence.
 
 The story archive is in strands. The data core's twelve logs are the spine: the first come from finishing runs, lasting in them and reaching extraction, and the later ones open as your intel fragments add up, one a run. Around them, each strand opens from one kind of play, one log a run: the unions from the salvage stretch, the hunters from the standard rush, security from the ambush corridor, the weather service from the storm rail, the signal from the data relay, the Black box from runs you lose, the deep rail from how far you get on the endless rail, the hangar from your own record, and Origin from extractions after the data core is complete. The Blackout Convoy event log opens once you have flown a monthly Black Sky event to its end. Logs recovered during a run pause it while you listen. The rest are read at the debrief, and in the archive on the title, where each strand says how it opens.
-
-Before every second run the radio plays a fragment from what you have recovered so far. Clearing a data relay plays the signal's code at the intermission.
 
 ## The title and results
 

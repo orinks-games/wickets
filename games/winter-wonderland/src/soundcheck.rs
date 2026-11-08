@@ -31,7 +31,13 @@ impl Default for SoundCheck {
 }
 
 fn item(label: String, key: &'static str, pos: Option<Vec3>) -> MenuItem<SoundCheck, Parlor> {
+    // Desk cues share a "Wish Desk: " prefix, so their names run to the first full stop.
+    let label = match label.strip_prefix("Wish Desk: ") {
+        Some(rest) => format!("Wish Desk: {}", rest.split('.').next().unwrap_or(rest)),
+        None => label.split([':', '.']).next().unwrap_or(&label).to_string(),
+    };
     MenuItem::new(label, move |s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
+        ctx.stop_speech();
         ctx.audio.stop(s.playing, 100);
         s.playing = match pos {
             Some(p) => ctx.audio.play_at(key, p, Bus::EFFECTS),
@@ -95,6 +101,12 @@ impl Menu for SoundCheck {
             ("Change of plans: a doorbell, when someone changes their wish.".into(), sound::CHANGE, None),
             ("Nothing there: a dull knock.".into(), sound::EMPTY, None),
             ("Shift complete.".into(), sound::CLEAR, None),
+            ("Wish Desk: a step along the shelf, heard where the box sits. This one is at the left end.".into(), sound::DESK_STEP, Some(sound::shelf_pos(0, 5))),
+            ("Wish Desk: the end of the shelf.".into(), sound::DESK_END, None),
+            ("Wish Desk: an empty place, where a gift was wrapped.".into(), sound::DESK_EMPTY, None),
+            ("Wish Desk: a shake of only straw. Shake again to hear the gift.".into(), sound::DESK_STRAW, None),
+            (format!("Wish Desk: wrapping paper, while you hold {}. Let go now and nothing is wrapped.", n(ParlorAction::Primary)), sound::DESK_WRAP, None),
+            ("Wish Desk: the wrong box, unwrapped and put back.".into(), sound::DESK_WRONG, None),
             (format!("Midnight Countdown bells, answered with {}.", n(ParlorAction::Primary)), sound::inst(Inst::Bell), None),
             (format!("Drum, answered with {}.", n(ParlorAction::Down)), sound::inst(Inst::Drum), None),
             (format!("Horn, answered with {}.", n(ParlorAction::Up)), sound::inst(Inst::Horn), None),

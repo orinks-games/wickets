@@ -1,6 +1,7 @@
 // Wicket's launcher: the lobby, the category and game lists, and the
 // collection's settings, help and about screens.
 
+pub mod discovery_clock;
 mod extra;
 mod games;
 pub mod happening;
@@ -16,11 +17,12 @@ use parlor_core::Parlor;
 pub use games::all as games;
 pub use games::story as story_games;
 pub use games::{
-    days_to_holiday, in_season, keepers, listed, specials, specials_listed, story_hall, Keeper,
+    access, access_at, days_to_holiday, discovery_date, in_season, keepers, listed, specials,
+    specials_listed, specials_listed_at, story_hall, Access, Keeper,
 };
 pub use lobby::{
     after_comma, happenings, happenings_line, last_game, CategoryList, ChallengeBoard,
-    ChallengeList, GameList, Lobby, StoryGameList, LAST_GAME_KEY,
+    ChallengeList, GameList, Lobby, StoryGameList, LAST_GAME_KEY, NEEDS_DATE,
 };
 pub use today::TodayList;
 

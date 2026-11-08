@@ -529,6 +529,7 @@ impl Default for SoundCheck {
 fn plain(label: &str, key: impl Into<String>, help: &str) -> MenuItem<SoundCheck, Parlor> {
     let key = key.into();
     MenuItem::new(label, move |_s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
+        ctx.stop_speech();
         ctx.audio.play(&key, Bus::EFFECTS);
     })
     .select_sound(None)

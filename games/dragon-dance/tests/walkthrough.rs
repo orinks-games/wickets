@@ -422,7 +422,7 @@ fn the_sound_check_plays_and_names_every_sound() {
     for _ in 0..n - 1 {
         h.clear();
         h.press(Key::Return);
-        assert!(!h.spoken().is_empty(), "{}", cursor_row(&h));
+        assert!(h.spoken().is_empty(), "{}", cursor_row(&h));
         assert!(!h.played().is_empty(), "{}", cursor_row(&h));
         h.press(Key::Down);
     }

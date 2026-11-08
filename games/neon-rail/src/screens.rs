@@ -71,7 +71,7 @@ pub fn controls_pages(ctx: &Ctx<Parlor>) -> Vec<String> {
     let hint = ctx.control_name(ParlorAction::Hint);
     vec![
         format!(
-            "{} shifts left. {} shifts right. Each lane shift plays a magnetic route snap. Sounds are placed by lane around you: a sound straight ahead is in your lane.",
+            "{} shifts left. {} shifts right. Sounds are placed by lane around you: a sound straight ahead is in your lane.",
             sentence_start(&k.left),
             sentence_start(&k.right)
         ),
@@ -161,10 +161,10 @@ pub fn launch(ctx: &mut Ctx<Parlor>, launch: Launch, replace: bool) {
                     "Cold start: a bare skimmer with no rank bonuses or workshop parts, nine sectors with an upgrade and a route choice between them, and one life. It keeps its own board and pays no credits, parts or intel.".to_string(),
                 ),
                 Mode::FridayNight => pages.push(
-                    "A Friday night run is three sectors made from tonight's date, the same for every pilot, on a standard skimmer. Salvage comes as cargo crates, worth double, with a bright chime over the salvage pulse.".to_string(),
+                    "A Friday night run is three sectors made from tonight's date, the same for every pilot, on a standard skimmer. Salvage comes as cargo crates, worth double.".to_string(),
                 ),
                 _ => pages.push(
-                    "The challenge corridor: six authored sectors in two minutes, the same every time. Learn it, then chase the best score.".to_string(),
+                    "The challenge corridor: six fixed sectors in two minutes, the same every time. Learn it, then chase the best score.".to_string(),
                 ),
             }
             // The keys are taught by the tutorial and the guided run; a
@@ -211,7 +211,7 @@ fn tutorial_text(step: u8, k: &Keys) -> String {
         1 => format!("This low loop is your skimmer in motion. {} or {} shifts lanes, with a magnetic snap. Your lane changes where incoming sounds are placed.", sentence_start(&k.left), k.right),
         2 => "Flow vehicle in the center lane. Move into its lane before it arrives to score and reduce stress.".to_string(),
         3 => "Debris in the center lane, your lane. Shift out of its lane before it arrives.".to_string(),
-        4 => "Repair pickup on the left. Pickups sound less urgent than hazards. Be in its lane when it arrives to restore hull.".to_string(),
+        4 => "Repair pickup on the left. Be in its lane when it arrives to restore hull.".to_string(),
         5 => format!("Drone in the left lane. {} fires the rail gun at a drone or unstable vehicle as it closes in. It locks only in the last second of the approach. Fire too early and you hear No lock.", sentence_start(&k.fire)),
         6 => format!("Heavy blocker on the left. {} boosts. Boosting into a heavy blocker forces it open, and then boost needs time to recharge.", sentence_start(&k.boost)),
         7 => format!("Full blockade next. It fills all three lanes, so you cannot dodge it. Its alarm grows louder as it comes. {} boosts: press it on the bright chime that sounds just before it hits.", sentence_start(&k.boost)),

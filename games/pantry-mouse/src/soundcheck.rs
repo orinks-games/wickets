@@ -1,11 +1,10 @@
-//! The sound check: every sound of the game, by name, and the keys that
-//! go with them.
+//! The sound check: gameplay cues, by name.
 
 use hearken::menu::{Menu, MenuCore, MenuItem};
 use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, Sound};
 use parlor_core::menus::labels;
-use parlor_core::{Parlor, ParlorAction};
+use parlor_core::Parlor;
 
 use crate::sound;
 
@@ -21,9 +20,8 @@ pub struct SoundCheck {
 impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
-            menu: MenuCore::new(labels::SOUND_CHECK).with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
-            ),
+            menu: MenuCore::new(labels::SOUND_CHECK)
+                .with_intro_help("Up and Down choose a sound, Enter plays it, Escape goes back."),
             playing: None,
         }
     }
@@ -44,20 +42,6 @@ impl Default for SoundCheck {
 /// A sound's name: the text of its meaning before the colon.
 pub fn label(meaning: &str) -> String {
     meaning.split(':').next().unwrap_or(meaning).to_string()
-}
-
-/// What the keys row says: the keys that make sounds, and that the game
-/// reads no keys of its own.
-pub fn keys_line(ctx: &Ctx<Parlor>) -> String {
-    let k = |a| ctx.control_name(a);
-    format!(
-        "Keys: the arrows step, {} sniffs, {} freezes, {} gives the status, {} repeats the last line and {} points to a safe crumb. Pantry Mouse uses no keys of its own beyond these.",
-        k(ParlorAction::Primary),
-        k(ParlorAction::Secondary),
-        k(ParlorAction::Status),
-        k(ParlorAction::Repeat),
-        k(ParlorAction::Hint)
-    )
 }
 
 impl Menu for SoundCheck {
@@ -94,6 +78,7 @@ impl Menu for SoundCheck {
                 MenuItem::new(
                     label(meaning),
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        ctx.stop_speech();
                         let played = if key == sound::TITLE_MUSIC || key == sound::AMBIENCE {
                             ctx.audio.play(key, Bus::MUSIC)
                         } else if sound::is_loop(key) {
@@ -102,7 +87,6 @@ impl Menu for SoundCheck {
                             sound::play(ctx, key)
                         };
                         s.hear(ctx, played);
-                        ctx.say(meaning);
                     },
                 )
                 .select_sound(None)
@@ -111,17 +95,6 @@ impl Menu for SoundCheck {
                 )),
             );
         }
-        items.push(
-            MenuItem::new("Keys", |s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                if let Some(old) = s.playing.take() {
-                    ctx.audio.stop(old, 100);
-                }
-                let line = keys_line(ctx);
-                ctx.say(line);
-            })
-            .select_sound(None)
-            .help("Which key makes which sound. The game reads no keys of its own."),
-        );
         items.push(
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.pop()

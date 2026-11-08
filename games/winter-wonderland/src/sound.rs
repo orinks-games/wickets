@@ -35,6 +35,18 @@ pub const TOLL: &str = "winter-wonderland/count/toll";
 pub const CHEER: &str = "winter-wonderland/count/cheer";
 pub const FIREWORKS: &str = "winter-wonderland/count/fireworks";
 
+pub const DESK_STEP: &str = "winter-wonderland/desk/step";
+pub const DESK_END: &str = "winter-wonderland/desk/end";
+pub const DESK_EMPTY: &str = "winter-wonderland/desk/empty";
+pub const DESK_STRAW: &str = "winter-wonderland/desk/straw";
+pub const DESK_WRAP: &str = "winter-wonderland/desk/wrap";
+pub const DESK_SNAP: &str = "winter-wonderland/desk/snap";
+pub const DESK_STAMP: &str = "winter-wonderland/desk/stamp";
+pub const DESK_WRONG: &str = "winter-wonderland/desk/wrong";
+pub const DESK_LETTER: &str = "winter-wonderland/desk/letter";
+pub const DESK_LATE: &str = "winter-wonderland/desk/late";
+pub const DESK_CLEAR: &str = "winter-wonderland/desk/clear";
+
 pub const FIRE: &str = "winter-wonderland/ambience/fire";
 /// Gift Sort's dynamic score (see `parlor_core::score`).
 pub const SCORE: [parlor_core::Stem; 6] = parlor_core::score_stems!("winter-wonderland");
@@ -99,6 +111,17 @@ pub const GIFT_POS: Vec3 = Vec3 {
     y: 1.0,
     z: 0.0,
 };
+
+/// Where box `at` of `count` on the Wish Desk shelf is heard: the shelf
+/// runs from your left to your right, just in front of you.
+pub fn shelf_pos(at: usize, count: usize) -> Vec3 {
+    let x = if count <= 1 {
+        0.0
+    } else {
+        -2.0 + 4.0 * at as f32 / (count - 1) as f32
+    };
+    Vec3 { x, y: 1.0, z: 0.0 }
+}
 
 /// A cue on the effects bus.
 pub fn cue(ctx: &mut Ctx<Parlor>, key: &str) -> Sound {
