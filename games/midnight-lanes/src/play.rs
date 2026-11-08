@@ -412,22 +412,6 @@ impl Bowl {
     }
 }
 
-/// Keys a player presses for their screen reader or as a modifier, which
-/// the lane leaves alone.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 /// Strikes or spares still waiting for their bonus balls, as words:
 /// "2 strikes", "1 spare". None when every mark is scored. Both at once
 /// cannot happen: the two balls after a strike always score it.
@@ -695,15 +679,7 @@ impl State<Parlor> for Bowl {
                 ctx.say(line);
                 return;
             }
-            None => {
-                if let InputEvent::KeyDown { key, .. } = event {
-                    if !is_quiet_key(*key) {
-                        ctx.play_ui(UiSound::Error);
-                        ctx.say("Not a Midnight Lanes key. F1 lists the controls.");
-                    }
-                }
-                return;
-            }
+            None => return,
         };
         self.voice(ctx, evs);
     }

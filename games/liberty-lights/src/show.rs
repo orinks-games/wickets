@@ -602,14 +602,7 @@ impl State<Parlor> for Show {
                 self.status_key.speak(ctx, layers);
             }
             Some(ParlorAction::Hint) => self.hint(ctx),
-            _ => {
-                if event.pressed().is_some() {
-                    ctx.say(format!(
-                        "Not a key here. F1 explains, {} repeats.",
-                        ctx.control_name(ParlorAction::Repeat)
-                    ));
-                }
-            }
+            _ => {}
         }
     }
 

@@ -718,7 +718,7 @@ impl State<Parlor> for RunScreen {
                 let s = lake.hint();
                 ctx.say(s);
             }
-            None => ctx.say("Not a paddling control. F1 lists them."),
+            None => {}
         }
         self.play_notes(ctx);
         self.sync_audio(ctx);

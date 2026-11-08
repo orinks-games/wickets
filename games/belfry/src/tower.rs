@@ -669,17 +669,7 @@ impl State<Parlor> for Tower {
             }
             Some(ParlorAction::Repeat) => self.repeat(ctx),
             Some(ParlorAction::Hint) => self.hint(ctx),
-            None => {
-                if let InputEvent::KeyDown {
-                    key, repeat: false, ..
-                } = event
-                {
-                    if !is_quiet_key(*key) {
-                        sound::play(ctx, sound::NOPE);
-                        ctx.say("Nothing happens. F1 lists the controls.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 

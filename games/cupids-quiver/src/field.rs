@@ -793,21 +793,6 @@ impl Field {
     }
 }
 
-/// Keys a player presses for their screen reader or as a modifier.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 /// The results menu's title.
 pub fn result_summary(run: &Run) -> String {
     match run.mode {
@@ -1069,17 +1054,7 @@ impl State<Parlor> for Field {
                 let text = self.hint_words(ctx);
                 ctx.say(text);
             }
-            None => {
-                if let InputEvent::KeyDown {
-                    key, repeat: false, ..
-                } = event
-                {
-                    if !is_quiet_key(*key) {
-                        sound::play(ctx, sound::NOPE);
-                        ctx.say("Nothing happens. F1 lists the controls.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 

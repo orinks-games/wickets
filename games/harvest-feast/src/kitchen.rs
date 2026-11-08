@@ -955,10 +955,7 @@ impl State<Parlor> for Kitchen {
                         "{} acts at the station in front of you.",
                         sentence_start(&Self::primary(ctx))
                     )),
-                    _ => ctx.say(format!(
-                        "Not a key here. F1 explains, {} repeats.",
-                        ctx.control_name(ParlorAction::Repeat)
-                    )),
+                    _ => {}
                 }
             }
         }

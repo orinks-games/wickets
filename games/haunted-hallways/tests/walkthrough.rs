@@ -822,20 +822,13 @@ fn held_keys_do_not_walk() {
 }
 
 #[test]
-fn keys_with_no_text_still_answer() {
+fn keys_with_no_job_stay_silent() {
     let mut t = Twin::start(Mode::Climb(1));
-    for key in [Key::Return, Key::Home, Key::Q] {
+    for key in [Key::Return, Key::Home, Key::Q, Key::LShift] {
         t.h.clear();
         t.h.press(key);
-        assert!(
-            spoke(&t.h, "Nothing happens. F1 tells you the controls."),
-            "{key:?}: {:?}",
-            t.h.spoken()
-        );
+        assert!(t.h.spoken().is_empty(), "{key:?}: {:?}", t.h.spoken());
     }
-    t.h.clear();
-    t.h.press(Key::LShift);
-    assert!(t.h.spoken().is_empty(), "a bare modifier stays quiet");
 }
 
 #[test]

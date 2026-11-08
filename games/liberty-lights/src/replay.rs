@@ -122,7 +122,7 @@ impl State<Parlor> for Replay {
                     self.parts.len()
                 ));
             }
-            _ => ctx.say("Listening. Escape stops the replay."),
+            _ => {}
         }
     }
 

@@ -511,8 +511,7 @@ impl State<Parlor> for RunScreen {
                 let s = run.hint();
                 ctx.say(s);
             }
-            None if self.in_lesson => ctx.say("Not a wire control."),
-            None => ctx.say("Not a wire control. F1 lists them."),
+            None => {}
         }
         self.play_notes(ctx);
         self.sync_audio(ctx);

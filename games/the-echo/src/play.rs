@@ -378,22 +378,6 @@ impl Tuning {
     }
 }
 
-/// Keys a player presses for their screen reader or as a modifier, which
-/// the game leaves alone.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 /// "Rank tuned: 6 pipes, 4 at the first try."
 pub fn tuned_line(rank: &Rank) -> String {
     let perfect = match rank.perfect() {
@@ -534,15 +518,7 @@ impl State<Parlor> for Tuning {
                 ctx.say(p);
                 return;
             }
-            None => {
-                if let InputEvent::KeyDown { key, .. } = event {
-                    if !is_quiet_key(*key) {
-                        ctx.play_ui(hearken::UiSound::Error);
-                        ctx.say("Not a key for the Echo. F1 lists the controls.");
-                    }
-                }
-                return;
-            }
+            None => return,
         };
         self.voice(ctx, evs);
     }

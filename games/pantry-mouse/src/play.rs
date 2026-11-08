@@ -693,22 +693,6 @@ fn hold_delay(ctx: &Ctx<Parlor>) -> f64 {
     pulse.max(HOLD_DELAY)
 }
 
-/// Keys a player presses for their screen reader or as a modifier, which
-/// the pantry leaves alone.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 /// What ended a pantry run, in one sentence.
 fn ended_words(run: &Run) -> String {
     match run.outcome {
@@ -895,14 +879,7 @@ impl State<Parlor> for Play {
             }
             Some(ParlorAction::Repeat) => self.repeat(ctx),
             Some(ParlorAction::Hint) => self.hint(ctx),
-            None => {
-                if let InputEvent::KeyDown { key, .. } = event {
-                    if !is_quiet_key(*key) {
-                        ctx.play_ui(UiSound::Error);
-                        ctx.say("Not a pantry key. F1 lists the controls.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 

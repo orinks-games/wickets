@@ -424,13 +424,7 @@ impl State<Parlor> for AquariumScreen {
                 let text = self.last.clone();
                 ctx.say(text);
             }
-            None => {
-                if let InputEvent::KeyDown { text: Some(c), .. } = event {
-                    if c.is_alphanumeric() {
-                        ctx.say("That key does nothing here. F1 tells you the controls.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 

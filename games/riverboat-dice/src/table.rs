@@ -707,22 +707,6 @@ pub fn after_job(period: Period, summary: String, pages: Vec<String>) -> Results
     )
 }
 
-/// Keys a player presses for their screen reader or as a modifier, which
-/// the table leaves alone.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 impl State<Parlor> for TableScreen {
     fn visuals(&self, ctx: &Ctx<Parlor>) -> hearken::visuals::Scene {
         self.visual_scene(ctx)
@@ -828,16 +812,7 @@ impl State<Parlor> for TableScreen {
                 let text = self.hint_words(ctx);
                 ctx.say(text);
             }
-            None => {
-                if let InputEvent::KeyDown {
-                    key, repeat: false, ..
-                } = event
-                {
-                    if !is_quiet_key(*key) {
-                        self.nope(ctx, "Nothing happens. F1 lists the controls.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 

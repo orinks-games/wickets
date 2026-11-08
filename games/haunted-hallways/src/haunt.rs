@@ -1628,20 +1628,6 @@ impl State<Parlor> for Haunt {
                         format!("You carry: {}.", names.join(", "))
                     };
                     ctx.say(text);
-                } else if let Some(key) = event.pressed() {
-                    if !matches!(
-                        key,
-                        Key::LShift
-                            | Key::RShift
-                            | Key::LCtrl
-                            | Key::RCtrl
-                            | Key::LAlt
-                            | Key::RAlt
-                            | Key::F1
-                            | Key::F2
-                    ) {
-                        ctx.say("Nothing happens. F1 tells you the controls.");
-                    }
                 }
                 return;
             }

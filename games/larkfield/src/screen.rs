@@ -442,7 +442,7 @@ impl HamletScreen {
             | Key::RAlt
             | Key::Insert
             | Key::Other(_) => {}
-            _ => ctx.say("Not a Larkfield control. F1 lists them."),
+            _ => {}
         }
     }
 }

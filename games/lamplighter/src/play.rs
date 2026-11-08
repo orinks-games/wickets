@@ -347,22 +347,6 @@ impl Round {
     }
 }
 
-/// Keys a player presses for their screen reader or as a modifier, which
-/// the hall leaves alone.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 /// "Hall lit. 8 lamps in 1 minute 40 seconds."
 pub fn lit_line(hall: &Hall) -> String {
     let tapers = match hall.tapers {
@@ -536,15 +520,7 @@ impl State<Parlor> for Round {
                 ctx.say(hint);
                 return;
             }
-            None => {
-                if let InputEvent::KeyDown { key, .. } = event {
-                    if !is_quiet_key(*key) {
-                        ctx.play_ui(hearken::UiSound::Error);
-                        ctx.say("Not a Lamplighter key. F1 lists the controls.");
-                    }
-                }
-                return;
-            }
+            None => return,
         };
         self.voice(ctx, evs);
     }

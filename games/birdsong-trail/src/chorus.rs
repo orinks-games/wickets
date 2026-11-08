@@ -5,7 +5,7 @@
 use std::collections::HashSet;
 
 use hearken::text::{end_sentence, sentence_start};
-use hearken::{Ctx, InputEvent, Key, State, UiSound, Vec3};
+use hearken::{Ctx, InputEvent, Key, State, Vec3};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::{challenges, Challenge, Pages, Parlor, ParlorAction, Period, Records, Season};
 
@@ -13,7 +13,7 @@ use crate::birds::Kind;
 use crate::challenge::{self, CHALLENGES_NAME};
 use crate::guide::{self, Guide};
 use crate::rules::{compass, run_seed, sector_words, turn_words, Chorus, ChorusEv};
-use crate::walk::{is_quiet_key, END_PAUSE};
+use crate::walk::END_PAUSE;
 use crate::{days, sound, HELP, ID, TITLE_NAME};
 
 /// The chorus screen's `State::name`.
@@ -383,15 +383,7 @@ impl State<Parlor> for ChorusScreen {
                 Vec::new()
             }
             Some(ParlorAction::Secondary) => Vec::new(),
-            None => {
-                if let InputEvent::KeyDown { key, .. } = event {
-                    if !is_quiet_key(*key) && *key != Key::Escape {
-                        ctx.play_ui(UiSound::Error);
-                        ctx.say("Not a chorus key. F1 lists the controls.");
-                    }
-                }
-                Vec::new()
-            }
+            None => Vec::new(),
         };
         ctx.audio
             .set_listener(Vec3::ZERO, self.chorus.facing as f32 * 45.0);

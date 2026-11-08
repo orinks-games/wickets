@@ -332,24 +332,7 @@ impl State<Parlor> for Night {
                     ),
                 );
             }
-            None => {
-                if let InputEvent::KeyDown { key, .. } = event {
-                    if !matches!(
-                        key,
-                        Key::LCtrl
-                            | Key::RCtrl
-                            | Key::LShift
-                            | Key::RShift
-                            | Key::LAlt
-                            | Key::RAlt
-                            | Key::Insert
-                            | Key::Other(_)
-                    ) {
-                        sound::play(ctx, sound::NOTHING);
-                        ctx.say("Nothing happens. F1 lists the controls.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 

@@ -1009,7 +1009,7 @@ impl State<Parlor> for RunScreen {
                 | Key::RAlt
                 | Key::Insert
                 | Key::Other(_) => {}
-                _ => ctx.say("Not a garden control. F1 lists them."),
+                _ => {}
             },
         }
         self.play_notes(ctx);
