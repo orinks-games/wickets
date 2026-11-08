@@ -8,7 +8,7 @@ Cross ten rooftop wires. Shift your weight to stay balanced, counter gusts and s
 
 Use the balance cue or press S to check which way you are leaning. Sound check, on the title, lets you hear the balance cue and other gameplay cues.
 
-A lean grows by itself, the way a real wire tips you. Shift your weight with Left and Right. Press the opposite way to your lean: leaning left, press Right. Each press keeps you moving for a moment, so press briefly and give it time, or you will swing past the middle.
+A lean grows by itself, the way a real wire tips you. Shift your weight with Left and Right. Press the opposite way to your lean: leaning left, press Right. Each press shifts your weight once. Holding the key adds no further shift. Release it and wait for your balance to settle before pressing again, or you may swing past the middle.
 
 Step once you have returned to balance. The game warns you when you lean hard left or right. Lean all the way and you fall to the safety net.
 
@@ -85,11 +85,11 @@ The rule and the time until the next challenge are read before you start, and Es
 
 ## Sound check
 
-Sound check, on the title, plays each sound you need on the wire with its name and meaning. Its first row demonstrates the balance tone: balanced, then leaning further and further left, then right, with each lean named.
+Sound check, on the title, lists and plays the sounds you need on the wire. Its first row plays the balance tone at the centre, then further left and right.
 
 ## Controls
 
-- Left and Right: shift your weight.
+- Left and Right: shift your weight once per press. Release between presses; do not hold.
 - Space: take a step.
 - Down: crouch. Up: stand.
 - Tab: shoo a pigeon within 2 steps.
