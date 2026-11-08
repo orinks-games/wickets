@@ -1,19 +1,17 @@
-//! The tutorial: two gifts sorted on the first shift's belt, then a few
-//! answers to the band on a practice night.
+//! The tutorial: two gifts sorted on the first shift's belt, then one
+//! letter answered at the Wish Desk.
 
 use hearken::text::sentence_start;
 use hearken::Ctx;
 use parlor_core::{Lesson, Live, Parlor, ParlorAction};
 
-use crate::count_run::CountRun;
+use crate::desk_run::DeskRun;
 use crate::mode::Mode;
 use crate::sort_run::SortRun;
 use crate::ID;
 
 /// Gifts the lesson sorts before moving on.
 const GIFTS: u32 = 2;
-/// Notes the lesson answers on the beat before it ends.
-const NOTES: u32 = 4;
 
 /// The first shift of Gift Sort.
 pub fn belt() -> Live<SortRun> {
@@ -27,20 +25,20 @@ fn speech_secs(text: &str) -> f64 {
     0.4 + text.chars().count() as f64 / 15.0
 }
 
-/// A practice night of Midnight Countdown: the party never fizzles.
-pub fn party() -> Live<CountRun> {
-    let mut run = CountRun::new(Mode::Practice, 1);
+/// The first stack at the Wish Desk.
+pub fn desk() -> Live<DeskRun> {
+    let mut run = DeskRun::new(Mode::Free, 1);
     run.lesson = true;
     Live::new(run)
 }
 
 /// The tutorial, naming the player's own controls.
 pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
-    lesson_on(ctx, belt(), party())
+    lesson_on(ctx, belt(), desk())
 }
 
-/// The tutorial on `belt` and `party`, which a test can watch.
-pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, party: Live<CountRun>) -> Lesson {
+/// The tutorial on `belt` and `desk`, which a test can watch.
+pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>) -> Lesson {
     let k = |a| ctx.control_name(a);
     let (l, r, d, p, rep, s, h) = (
         k(ParlorAction::Left),
@@ -100,13 +98,33 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, party: Live<CountRu
         })
         .start(move |_| held.with_mut(|s| s.hold_for(sort_wait)));
 
-    let rhythm = party.step(
+    let open = desk.step(
         format!(
-            "Midnight Countdown, on New Year's Eve. The band plays a call one bar long, and you answer it in the next bar on the same beats. A clock ticks each beat, with a lower tock on the first beat of a bar. Bells are {p}, and {p} starts the music. Answer {NOTES} notes."
+            "The Wish Desk, with no clock. Children write in for one thing each, and the gifts sit on a shelf in front of you. {} opens the first letter.",
+            sentence_start(&p)
         ),
-        |s: &CountRun, _| {
-            let n = s.night();
-            (n.perfects + n.goods >= NOTES).then(|| "On the beat. Every answer in a row raises your combo.".to_string())
+        |s: &DeskRun, _| s.playing().then(|| "The first letter is open.".to_string()),
+    );
+    let find = desk.step(
+        format!(
+            "{} and {r} walk the shelf. {} shakes the box in front of you. Find the box that sounds like the wish. {} reads the letter again.",
+            sentence_start(&l),
+            sentence_start(&p),
+            sentence_start(&rep)
+        ),
+        |s: &DeskRun, _| {
+            let st = s.stack();
+            st.answer()
+                .is_some_and(|a| a == st.at && st.shelf[a].shakes > 0)
+                .then(|| "That is the one.".to_string())
+        },
+    );
+    let wrap = desk.step(
+        format!(
+            "Hold {p} to wrap it. The paper crinkles, then the ribbon snaps and the stamp comes down. Let go early and nothing is wrapped."
+        ),
+        |s: &DeskRun, _| {
+            (s.stack().answered() >= 1).then(|| "Wrapped and stamped. A wrong box goes back on the shelf and costs points, never time.".to_string())
         },
     );
 
@@ -118,9 +136,11 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, party: Live<CountRu
     .step(brief)
     .step(shake)
     .step(sort)
-    .step(rhythm)
+    .step(open)
+    .step(find)
+    .step(wrap)
     .outro(format!(
-        "From shift 3, {d} sends unwanted gifts to the sack. {}: clock and score. {}: hint.",
+        "From shift 3, {d} sends unwanted gifts to the sack. {}: clock and score. {}: hint. Midnight Countdown, the New Year's Eve rhythm game, teaches itself on its first night.",
         sentence_start(&s),
         sentence_start(&h)
     ))

@@ -1,20 +1,20 @@
 //! Daily, weekly and monthly challenges: the same run for every player.
 //!
-//! The daily alternates: Gift Sort on even days of the month, Midnight
-//! Countdown on odd ones, each with a twist drawn from the day's seed. The
-//! weekly is the holiday double, three Gift Sort shifts then a night,
-//! scored together under one twist. The monthly is the Midnight Gala, a
-//! New Year special where every instrument plays from the first minute,
-//! with its own finale at midnight.
+//! The daily alternates: Gift Sort on even days of the month, the Wish
+//! Desk on odd ones, each with a twist drawn from the day's seed. The
+//! weekly is the holiday double, three Gift Sort shifts then a stack at
+//! the desk, scored together under one twist on the belt. The monthly is
+//! the midwinter post: three stacks at the desk in a row, every box packed
+//! in straw.
 
 use hearken::{Ctx, State};
 use parlor_core::menus::{self, ChallengeGame};
 use parlor_core::{Challenge, Challenges, Date, Pages, Parlor, Period, Rng, ScoreResult};
 
-use crate::count_run::CountRun;
+use crate::desk::{Stack, StackSpec};
+use crate::desk_run::DeskRun;
 use crate::gifts::{Shift, ShiftSpec};
 use crate::mode::Mode;
-use crate::night::{Night, NightSpec};
 use crate::sort_run::SortRun;
 use crate::sound;
 use crate::ID;
@@ -24,15 +24,13 @@ pub const CHALLENGES_NAME: &str = "winter_wonderland_challenges";
 
 /// The Gift Sort shift the daily plays.
 pub const DAILY_SHIFT: u32 = 5;
-/// The night the Midnight Countdown daily plays.
-pub const DAILY_NIGHT: u32 = 3;
-/// The weekly's shifts and night.
+/// The Wish Desk stack the daily plays.
+pub const DAILY_STACK: u32 = 3;
+/// The weekly's shifts and stack.
 pub const WEEKLY_SHIFTS: (u32, u32) = (4, 6);
-pub const WEEKLY_NIGHT: u32 = 4;
-/// The night the gala is built on (its tempo and timing).
-pub const GALA_NIGHT: u32 = 3;
-/// The gala's venue, in place of the night's name.
-pub const GALA_NAME: &str = "the Midnight Gala";
+pub const WEEKLY_STACK: u32 = 4;
+/// The monthly's stacks.
+pub const MONTHLY_STACKS: (u32, u32) = (3, 5);
 
 /// A rule that changes a challenge run.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
@@ -45,16 +43,16 @@ pub enum Twist {
     BigOrder,
     /// Gift Sort: wrong guesses cost double.
     Picky,
-    /// Countdown: the band plays faster.
-    UpTempo,
-    /// Countdown: each miss drains half again as much energy.
-    Fragile,
-    /// Countdown: the timing windows are a quarter narrower.
-    Tight,
-    /// Countdown: the party starts low on energy.
-    LateArrivals,
-    /// The monthly gala: every instrument from the first minute.
-    Gala,
+    /// Wish Desk: every box packed in straw.
+    Straw,
+    /// Wish Desk: two more boxes on the shelf.
+    LongShelf,
+    /// Wish Desk: a wrong box costs double.
+    Careful,
+    /// Wish Desk: only two shakes a letter before they cost points.
+    FewShakes,
+    /// The monthly: straw in every box, three stacks in a row.
+    Midwinter,
 }
 
 impl Twist {
@@ -64,11 +62,11 @@ impl Twist {
         Twist::BigOrder,
         Twist::Picky,
     ];
-    pub const COUNT: [Twist; 4] = [
-        Twist::UpTempo,
-        Twist::Fragile,
-        Twist::Tight,
-        Twist::LateArrivals,
+    pub const DESK: [Twist; 4] = [
+        Twist::Straw,
+        Twist::LongShelf,
+        Twist::Careful,
+        Twist::FewShakes,
     ];
 
     pub fn name(self) -> &'static str {
@@ -77,11 +75,11 @@ impl Twist {
             Twist::ShortClock => "Short clock",
             Twist::BigOrder => "Big order",
             Twist::Picky => "Picky guests",
-            Twist::UpTempo => "Up-tempo",
-            Twist::Fragile => "Fragile party",
-            Twist::Tight => "Tight timing",
-            Twist::LateArrivals => "Late arrivals",
-            Twist::Gala => "The full orchestra",
+            Twist::Straw => "Packed in straw",
+            Twist::LongShelf => "A long shelf",
+            Twist::Careful => "Careful hands",
+            Twist::FewShakes => "Few shakes",
+            Twist::Midwinter => "Straw everywhere",
         }
     }
 
@@ -91,11 +89,11 @@ impl Twist {
             Twist::ShortClock => "the shift clock starts with only four fifths of its usual time",
             Twist::BigOrder => "three extra gifts to sort, with a little extra time for them",
             Twist::Picky => "a wrong guess costs twice the usual clock time",
-            Twist::UpTempo => "the band plays about fifteen percent faster",
-            Twist::Fragile => "every miss drains half again as much party energy",
-            Twist::Tight => "you must answer a quarter closer to the beat",
-            Twist::LateArrivals => "the party starts with only 35 energy instead of 60",
-            Twist::Gala => "bells, drums and horns all play from ten minutes to midnight, and the party starts at full energy",
+            Twist::Straw => "every box is packed in straw, so its first shake is only straw",
+            Twist::LongShelf => "two more boxes on the shelf",
+            Twist::Careful => "a wrong box costs twice the usual points",
+            Twist::FewShakes => "only two shakes a letter before shakes cost points",
+            Twist::Midwinter => "every box is packed in straw, so its first shake is only straw",
         }
     }
 
@@ -113,21 +111,13 @@ impl Twist {
         }
     }
 
-    /// Applies a countdown twist to a night.
-    pub fn night(self, night: &mut Night) {
+    /// Applies a Wish Desk twist to a stack spec.
+    pub fn stack_spec(self, spec: &mut StackSpec) {
         match self {
-            Twist::UpTempo => night.spec.bpm = (night.spec.bpm * 1.15).round(),
-            Twist::Fragile => night.spec.drain = night.spec.drain * 3 / 2,
-            Twist::Tight => {
-                night.spec.perfect *= 0.75;
-                night.spec.good *= 0.75;
-            }
-            Twist::LateArrivals => night.energy = 35,
-            Twist::Gala => {
-                night.gala = true;
-                night.energy = 100;
-                night.spec.name = GALA_NAME;
-            }
+            Twist::Straw | Twist::Midwinter => spec.straw = true,
+            Twist::LongShelf => spec.boxes = (spec.boxes + 2).min(10),
+            Twist::Careful => spec.wrong_cost *= 2,
+            Twist::FewShakes => spec.free_shakes = 2,
             _ => {}
         }
     }
@@ -138,12 +128,12 @@ impl Twist {
 pub enum Part {
     /// One Gift Sort shift.
     Gifts,
-    /// One night of Midnight Countdown.
-    Countdown,
-    /// Gift Sort shifts then a night, scored together.
+    /// One stack at the Wish Desk.
+    Desk,
+    /// Gift Sort shifts then a stack, scored together.
     Double,
-    /// The gala night.
-    Gala,
+    /// Three stacks in a row, the monthly.
+    Post,
 }
 
 /// A challenge, worked out from its seed: what it plays and how.
@@ -165,16 +155,16 @@ impl Plan {
                 if day.is_multiple_of(2) {
                     Part::Gifts
                 } else {
-                    Part::Countdown
+                    Part::Desk
                 }
             }
             Period::Weekly => Part::Double,
-            Period::Monthly => Part::Gala,
+            Period::Monthly => Part::Post,
         };
         let twist = match part {
             Part::Gifts | Part::Double => *rng.pick(&Twist::GIFTS),
-            Part::Countdown => *rng.pick(&Twist::COUNT),
-            Part::Gala => Twist::Gala,
+            Part::Desk => *rng.pick(&Twist::DESK),
+            Part::Post => Twist::Midwinter,
         };
         Plan {
             challenge,
@@ -196,9 +186,9 @@ impl Plan {
     pub fn name(&self) -> &'static str {
         match self.part {
             Part::Gifts => "Rush",
-            Part::Countdown => "Midnight warm-up",
+            Part::Desk => "Morning post",
             Part::Double => "The holiday double",
-            Part::Gala => "The Midnight Gala",
+            Part::Post => "The midwinter post",
         }
     }
 
@@ -210,16 +200,16 @@ impl Plan {
         }
     }
 
-    /// The night it plays, for the countdown parts.
-    pub fn night_level(&self) -> u32 {
+    /// The Wish Desk stacks it plays, first to last.
+    pub fn stacks(&self) -> (u32, u32) {
         match self.part {
-            Part::Double => WEEKLY_NIGHT,
-            Part::Gala => GALA_NIGHT,
-            _ => DAILY_NIGHT,
+            Part::Double => (WEEKLY_STACK, WEEKLY_STACK),
+            Part::Post => MONTHLY_STACKS,
+            _ => (DAILY_STACK, DAILY_STACK),
         }
     }
 
-    /// Whether the twist applies to Gift Sort (true) or the countdown.
+    /// Whether the twist applies to Gift Sort (true) or the Wish Desk.
     pub fn twists_gifts(&self) -> bool {
         Twist::GIFTS.contains(&self.twist)
     }
@@ -228,19 +218,17 @@ impl Plan {
     pub fn tag(&self) -> String {
         match self.part {
             Part::Gifts => format!("Gift Sort, shift {DAILY_SHIFT}, {}", self.twist.name()),
-            Part::Countdown => format!(
-                "Midnight Countdown at {}, {}",
-                NightSpec::new(DAILY_NIGHT).name,
-                self.twist.name()
-            ),
+            Part::Desk => format!("the Wish Desk, stack {DAILY_STACK}, {}", self.twist.name()),
             Part::Double => format!(
-                "Gift Sort shifts {} to {}, then {}, {}",
+                "Gift Sort shifts {} to {}, then the Wish Desk, {}",
                 WEEKLY_SHIFTS.0,
                 WEEKLY_SHIFTS.1,
-                NightSpec::new(WEEKLY_NIGHT).name,
                 self.twist.name()
             ),
-            Part::Gala => "every instrument from the first minute".to_string(),
+            Part::Post => format!(
+                "the Wish Desk, stacks {} to {}, every box in straw",
+                MONTHLY_STACKS.0, MONTHLY_STACKS.1
+            ),
         }
     }
 
@@ -260,19 +248,17 @@ impl Plan {
             Part::Gifts => format!(
                 "One Gift Sort shift at shift {DAILY_SHIFT}. Sort the whole order before the clock runs out."
             ),
-            Part::Countdown => format!(
-                "One night of Midnight Countdown at {}. Keep the party going to midnight.",
-                NightSpec::new(DAILY_NIGHT).name
+            Part::Desk => format!(
+                "One stack of letters at the Wish Desk, stack {DAILY_STACK}. Fewer shakes and no wrong boxes score more."
             ),
             Part::Double => format!(
-                "Gift Sort shifts {} to {}, then New Year's Eve on {}. Both scores add up. The twist is on the belt.",
-                WEEKLY_SHIFTS.0,
-                WEEKLY_SHIFTS.1,
-                NightSpec::new(WEEKLY_NIGHT).name
+                "Gift Sort shifts {} to {}, then stack {WEEKLY_STACK} at the Wish Desk. Both scores add up. The twist is on the belt.",
+                WEEKLY_SHIFTS.0, WEEKLY_SHIFTS.1
             ),
-            Part::Gala => {
-                "Ring in midnight for the finale.".to_string()
-            }
+            Part::Post => format!(
+                "Stacks {} to {} at the Wish Desk, one after another.",
+                MONTHLY_STACKS.0, MONTHLY_STACKS.1
+            ),
         };
         format!("{what} {}", self.twist_line())
     }
@@ -292,19 +278,13 @@ impl Plan {
         shift
     }
 
-    /// The night of a countdown part.
-    pub fn night(&self) -> Night {
-        let mut rng = Rng::seeded(self.run_seed);
-        // The Gift Sort half of the weekly draws first; the night has its own.
-        let mut night = Night::new(
-            self.night_level(),
-            false,
-            Rng::seeded(rng.next_u64() ^ 0x5eed),
-        );
+    /// Stack `level` of a Wish Desk part.
+    pub fn stack(&self, level: u32, rng: Rng) -> Stack {
+        let mut spec = StackSpec::new(level);
         if !self.twists_gifts() {
-            self.twist.night(&mut night);
+            self.twist.stack_spec(&mut spec);
         }
-        night
+        Stack::new(spec, rng)
     }
 
     /// Replaces the top screen with the run.
@@ -315,12 +295,11 @@ impl Plan {
         };
         match self.part {
             Part::Gifts | Part::Double => ctx.replace(SortRun::new(mode, self.shifts().0)),
-            Part::Countdown | Part::Gala => ctx.replace(CountRun::with_night(mode, self.night())),
+            Part::Desk | Part::Post => ctx.replace(DeskRun::new(mode, self.stacks().0)),
         }
     }
 }
 
-/// Plays the period's challenge music (the gala's song for the monthly).
 /// The briefing pages for `period`'s challenge, which then start the run.
 /// Escape goes back without starting.
 pub fn briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
@@ -385,7 +364,7 @@ impl ChallengeGame for Parties {
     }
 
     fn intro_help() -> String {
-        "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. Every player gets the same runs: a new daily each day, a weekly each Monday and a gala each month.".to_string()
+        "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. Every player gets the same runs: a new daily each day, a weekly each Monday and a monthly each month.".to_string()
     }
 }
 

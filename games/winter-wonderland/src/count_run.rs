@@ -4,8 +4,7 @@ use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, InputEvent, Key, State};
 use parlor_core::{Parlor, ParlorAction};
 
-use crate::challenge;
-use crate::mode::{story_ending, Mode};
+use crate::mode::Mode;
 use crate::night::{describe_call, Inst, Intro, Night, NightEvent, Stage, NIGHTS, PHRASES};
 use crate::progress::{self, Progress};
 use crate::sound::{self, cue, stinger};
@@ -58,14 +57,6 @@ impl CountRun {
         }
     }
 
-    /// The challenge's twist, when it changes the night: " Today's twist...".
-    fn twist_text(&self) -> String {
-        match self.mode.plan() {
-            Some(plan) if !plan.twists_gifts() => format!(" {}", plan.twist_line()),
-            _ => String::new(),
-        }
-    }
-
     /// The fanfare at midnight.
     fn fanfare(&self) -> &'static str {
         sound::WIN
@@ -89,10 +80,9 @@ impl CountRun {
                 Self::key(ctx, Inst::Horn)
             ),
             Intro::Bells if self.mode == Mode::Free && self.night.spec.level > 1 => format!(
-                "Night {}: {}.{} {} starts.",
+                "Night {}: {}. {} starts.",
                 self.night.spec.level,
                 self.night.spec.name,
-                self.twist_text(),
                 sentence_start(&primary)
             ),
             Intro::Bells => {
@@ -102,10 +92,9 @@ impl CountRun {
                     ""
                 };
                 format!(
-                    "Midnight Countdown, night {}: {}. Ten minutes to midnight. The band plays a one-bar call on bells; answer it in the next bar, on the same beats, with {primary}. A soft clock ticks every beat, with a lower tock at the start of each bar. Good answers lift the party's energy; misses drain it.{practice}{} Press {primary} to start. A bar of ticks counts you in.",
+                    "Midnight Countdown, night {}: {}. Ten minutes to midnight. The band plays a one-bar call on bells; answer it in the next bar, on the same beats, with {primary}. A soft clock ticks every beat, with a lower tock at the start of each bar. Good answers lift the party's energy; misses drain it.{practice} Press {primary} to start. A bar of ticks counts you in.",
                     self.night.spec.level,
-                    self.night.spec.name,
-                    self.twist_text()
+                    self.night.spec.name
                 )
             }
             Intro::Drums => format!(
@@ -269,42 +258,6 @@ impl CountRun {
             format!("The party fizzled out {at}.")
         };
         match self.mode.clone() {
-            Mode::Story { blizzard, gifts } => {
-                let total = gifts + score;
-                let board = if blizzard {
-                    progress::BLIZZARD_BOARD
-                } else {
-                    progress::STORY_BOARD
-                };
-                let line = progress::record(ctx, board, total);
-                let mut pages = Vec::new();
-                if won {
-                    pages.push(story_ending());
-                    let opened = !blizzard && Progress::mark(ctx, |p| &mut p.story);
-                    let extra = if opened {
-                        " The blizzard story is now open on the title."
-                    } else {
-                        ""
-                    };
-                    pages.push(format!(
-                        "Gift Sort {gifts} plus Midnight Countdown {score}: story score {total}. {stats} {line}{extra}"
-                    ));
-                } else {
-                    pages.push(format!(
-                        "{head} The story ends before midnight this year. Gift Sort {gifts} plus Midnight Countdown {score}: story score {total}. {line}"
-                    ));
-                }
-                let summary = if won {
-                    format!("Happy New Year. Story score {total}")
-                } else {
-                    format!("The party fizzled. Story score {total}")
-                };
-                results::show(
-                    ctx,
-                    pages.clone(),
-                    results::story(blizzard, won, summary, pages),
-                );
-            }
             Mode::Practice => {
                 let pages = vec![format!(
                     "{head} Practice score {score}. {stats} Nothing is saved from practice."
@@ -316,27 +269,7 @@ impl CountRun {
                     results::countdown(level, true, won, summary, pages),
                 );
             }
-            Mode::Challenge { plan, gifts } => {
-                let total = gifts + score;
-                let parts = if gifts > 0 || plan.part == challenge::Part::Double {
-                    format!("Gift Sort {gifts} plus Midnight Countdown {score}. ")
-                } else {
-                    String::new()
-                };
-                let line = challenge::result_line(ctx, &plan, total);
-                let pages = vec![format!("{head} {stats} {parts}{line}")];
-                let summary = if won {
-                    format!("Midnight. Score {total}")
-                } else {
-                    format!("The party fizzled. Score {total}")
-                };
-                results::show(
-                    ctx,
-                    pages.clone(),
-                    results::challenge(&plan, summary, pages),
-                );
-            }
-            Mode::Free => {
+            _ => {
                 let line = progress::record(ctx, progress::COUNT_BOARD, score);
                 progress::record(ctx, &progress::night_board(level), score);
                 let mut extra = String::new();
