@@ -7,9 +7,10 @@ relative, such as `fireworks/boom.wav`; it renders to
 `sounds/<game id>/fireworks/boom.ogg`, which the game plays by the key
 `<game id>/fireworks/boom`. A spec must not set `out_dir`.
 
-Sounds render with blal1's genny (github.com/blal1/genny, on PyPI as
-`genny`), always the latest release, run as `uvx --from genny@latest genny` unless `GENNY_BLAL1` names
-another command, such as `genny-blal1`.
+Sounds render with blal1's genny (github.com/blal1/genny), always its
+newest commit on GitHub, which can be ahead of the PyPI release. It runs as
+`uvx --refresh-package genny --from git+https://github.com/blal1/genny genny`
+unless `GENNY_BLAL1` names another command, such as `genny-blal1`.
 
 The first games were made with Oriol Gomez's genny
 (github.com/ogomez92/genny). This tool no longer runs it: those sounds stay
@@ -63,9 +64,9 @@ LEVEL_SLACK = 0.3  # LU: a kept sound this near its loudness is left alone
 OPTIONAL_RECORDINGS = {}
 
 BUILDS = ("blal1", "ogomez")  # ogomez: Oriol's genny, kept as shipped, never rendered
-# Always the latest genny. A new release may change older sounds when a spec is
-# re-rendered; that is fine.
-DEFAULT_GENNY = "uvx --from genny@latest genny"
+# Always the newest genny commit. A new commit may change older sounds when a
+# spec is re-rendered; that is fine.
+DEFAULT_GENNY = "uvx --refresh-package genny --from git+https://github.com/blal1/genny genny"
 
 
 def genny_command() -> list[str]:
