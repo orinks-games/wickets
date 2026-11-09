@@ -25,13 +25,17 @@ pub const ALBUM: Album = Album::new(crate::ID, "Rooftop Garden");
 pub const SONG: &str = "rooftop-garden/song";
 
 /// The parts a soundtrack play draws its singers from.
-pub const SINGERS: [Part; 6] = [
+pub const SINGERS: [Part; 10] = [
     Part::Tomato,
     Part::Squash,
     Part::Bean,
     Part::Sunflower,
     Part::Lavender,
     Part::Mint,
+    Part::Strawberry,
+    Part::Chilli,
+    Part::Rose,
+    Part::Jasmine,
 ];
 
 pub fn tracks() -> Vec<Track> {

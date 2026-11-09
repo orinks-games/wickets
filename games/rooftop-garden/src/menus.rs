@@ -164,17 +164,17 @@ impl Menu for SeedShed {
     fn build_items(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
         let saved: Option<Garden> = parlor_core::Records::load(ctx, GARDEN_KEY);
         let harvests = saved.as_ref().map_or(0, |g| g.harvests);
+        let chorus = saved.as_ref().map_or(0, |g| g.chorus);
+        let book = load_collection(ctx);
         let mut items = Vec::new();
         for s in Species::ALL {
-            let open = harvests >= s.unlock_at();
-            let label = if open {
+            let label = if s.open(harvests, chorus, &book) {
                 format!("{}: sings {}", sentence(s.name()), s.voice())
             } else {
-                let n = s.unlock_at() - harvests;
                 format!(
-                    "{}: locked, {n} more {} to unlock",
+                    "{}: locked, {}",
                     sentence(s.name()),
-                    if n == 1 { "harvest" } else { "harvests" }
+                    s.still_needed(harvests, &book)
                 )
             };
             let tip = s.tip().to_string();
@@ -200,7 +200,6 @@ impl Menu for SeedShed {
                 .help(tip),
             );
         }
-        let book = load_collection(ctx);
         items.push(
             MenuItem::new(
                 format!(

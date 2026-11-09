@@ -493,7 +493,7 @@ impl RunScreen {
             if let Some(h) = v.hum {
                 ctx.audio.set_pitch(h, pitch);
             }
-            if p.voiced() {
+            if self.garden.sings(&p) {
                 let volume = layer_volume(p.stage);
                 v.part = Some(Part::of(p.species, p.pumpkin));
                 if v.layer.is_none() {
@@ -923,10 +923,20 @@ impl State<Parlor> for RunScreen {
         ctx.audio.play_music(None, false);
         self.garden.keys = keys(ctx);
         self.garden.drain_notes();
+        let mut earned = Vec::new();
         if self.garden.kind == Kind::Home {
             // Seeds and planters earned before this version of the garden.
+            // New seeds are named after the opening line; the rest is quiet.
+            let had = self.garden.seeds.clone();
             self.garden.unlocks();
             self.garden.drain_notes();
+            earned = self
+                .garden
+                .seeds
+                .iter()
+                .filter(|s| !had.contains(s))
+                .map(|s| format!("New seed: {}, {}.", s.name(), s.voice()))
+                .collect();
             // The calendar touches your own garden only.
             let today = parlor_core::challenges::today(ctx);
             self.garden.pumpkin_season = crate::events::pumpkin_open(today);
@@ -936,6 +946,9 @@ impl State<Parlor> for RunScreen {
         let intro = self.garden.intro();
         self.garden.last = intro.clone();
         ctx.say(intro);
+        for line in earned {
+            ctx.say_queued(line);
+        }
     }
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {

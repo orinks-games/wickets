@@ -20,7 +20,7 @@ Every plant's sounds come from its own planter, and S, H and L always say where 
 
 On an empty planter, press Space to open the seed packet. Up and Down choose a seed, Enter plants it, and Escape plants nothing. A new seed is already a little damp; keep it watered and it sprouts after part of a day.
 
-You start with 3 seeds: tomato, squash and bean. Harvests in your own garden unlock more. Seed shed, on the title menu, lists every seed, its part in the song, and how many harvests unlock it.
+You start with 3 seeds: tomato, squash and bean. Your own garden unlocks 7 more. Seed shed, on the title menu, lists every seed, its part in the song, and what unlocks it.
 
 - Tomato: thirsty, and ripens again and again.
 - Squash: a slow grower.
@@ -28,6 +28,10 @@ You start with 3 seeds: tomato, squash and bean. Harvests in your own garden unl
 - Sunflower: unlocked by your first harvest.
 - Lavender: happy in dry soil. Unlocked at 3 harvests.
 - Mint: the thirstiest of all. Unlocked at 6 harvests.
+- Strawberry: in bloom, it now and then roots a runner, a sprout of the same variety, in an empty planter beside it. Unlocked at 12 harvests.
+- Chilli: thirsty, quick on sunny days and slow under cloud or rain. A neighbour leaves chilli seeds when you have filled 5 requests.
+- Rose: slow, and aphids land on it half as often, but it gets leggy more often. Comes with the trellis keepsake.
+- Jasmine: its flowers open late in the afternoon and close at dawn, and it sings and counts in the harmony only while they are open. Unlocked by your first chorus of six voices.
 
 Once you have found varieties of a seed, its row in the packet says how many kinds you have. Enter on it lists the plain seed and each variety, and Enter plants one.
 
@@ -51,7 +55,7 @@ When something needs you, its name and planter are spoken, so you can press H to
 
 ## Harmony
 
-Different kinds of plant that are in bloom and well watered at the same time make a harmony: two kinds make a two-part harmony, three kinds a three-part harmony, and so on. A thirsty, waterlogged or wilted plant leaves the harmony. Water thirsty or wilted plants, but let waterlogged soil drain. S, for status, tells you which parts are singing. Bring all six kinds into tune at once for the full rooftop chorus.
+Different kinds of plant that are in bloom and well watered at the same time make a harmony: two kinds make a two-part harmony, three kinds a three-part harmony, and so on. A thirsty, waterlogged or wilted plant leaves the harmony. Water thirsty or wilted plants, but let waterlogged soil drain. S, for status, tells you which parts are singing. Six kinds in tune at once make a chorus, and each bigger chorus after that is announced with its number of voices. When every seed in your packet is in tune, it is the full chorus. With all 10 seeds, a ten-voice chorus can only happen toward evening, while the jasmine is open.
 
 ## Varieties and crosses
 
@@ -59,12 +63,12 @@ In your own garden, two different plants side by side can cross. When you harves
 
 The new seeds are the harvested plant's species, with traits from both parents and sometimes a new one. There are four traits.
 
-- Instrument: each species can play its part on three instruments. Tomato: kalimba, marimba or music box. Squash: upright bass, finger bass or tuba. Bean: plucked strings, harp or banjo. Sunflower: flute, clarinet or ocarina. Lavender: glockenspiel, celesta or vibraphone. Mint: glass pad, string pad or choir.
+- Instrument: each species can play its part on three instruments. Tomato: kalimba, marimba or music box. Squash: upright bass, finger bass or tuba. Bean: plucked strings, harp or banjo. Sunflower: flute, clarinet or ocarina. Lavender: glockenspiel, celesta or vibraphone. Mint: glass pad, string pad or choir. Strawberry: mandolin, guitar or harpsichord. Chilli: handpan, xylophone or koto. Rose: cello, French horn or oboe. Jasmine: glass harmonica, theremin or singing bowl.
 - Thirst: thirsty plants dry out faster than plain ones, and hardy plants slower.
 - Pace: quick plants grow faster. Slow plants grow slower, but aphids land on them less often.
 - Double harvests: half the harvests of these plants count twice.
 
-Each mix of traits has its own name, such as Copper Moon tomato. The name's first word comes from thirst and pace, and its second from the instrument and double harvests. A plain seed has neither. Every species has 54 varieties, 324 in all, and a cross of two of your varieties can turn up ones you have not found.
+Each mix of traits has its own name, such as Copper Moon tomato. The name's first word comes from thirst and pace, and its second from the instrument and double harvests. A plain seed has neither. Every species has 54 varieties, 540 in all, and a cross of two of your varieties can turn up ones you have not found.
 
 When you find a new variety its name and traits are spoken. It goes into your seed packet straight away. Harvest one variety 5 times and it becomes an heirloom.
 
@@ -77,7 +81,7 @@ You earn a star for each new variety, each heirloom and each neighbour's request
 - Bird bath, at 3 stars: sparrows visit and eat some aphids before they settle.
 - Rain barrel, at 8 stars: each rain shower fills it, and it then waters the next 3 plants that get thirsty.
 - Beehive, at 15 stars: plants cross more often.
-- Trellis, at 25 stars: plants in bloom get leggy half as often.
+- Trellis, at 25 stars: plants in bloom get leggy half as often, and rose seeds come with it.
 - Compost bin, at 40 stars: new seeds sprout twice as fast.
 - Wind chimes, at 60 stars: on breezy days, pollen blows further, so a plant can cross with one at a corner or two planters away.
 - String lights, at 85 stars: each evening the lights come on, and plants grow faster under them until morning.
@@ -125,11 +129,11 @@ Sound check plays the pumpkin's part and the Sunday bells.
 
 ## Challenges
 
-Challenges are separate small gardens, the same for every player, each with a gentle goal and a twist announced before you start. Days pass the same way. If you choose Leave the challenge on the pause menu, your challenge garden waits for you until the challenge changes.
+Challenges are separate small gardens, the same for every player, grown from the first 6 seeds only, each with a gentle goal and a twist announced before you start. Days pass the same way. If you choose Leave the challenge on the pause menu, your challenge garden waits for you until the challenge changes.
 
 - Daily: 6 planters, 4 kinds of seed and 4 days to grow a three-part harmony. Each day has its own twist.
 - Weekly: 9 planters and 8 days to harvest 5 tomatoes, with a twist for the week.
-- Monthly: the rooftop festival. 12 planters, every seed, 4 sprouts already up, and 10 days to bring all 6 voices into one full chorus.
+- Monthly: the rooftop festival. 12 planters, the first 6 seeds, 4 sprouts already up, and 10 days to bring all 6 voices into one full chorus.
 
 There are four twists. Heat wave: the soil dries much faster and no rain comes. Drizzly days: a shower every day, but slower growing. Aphid season: far more aphids. Green thumb: faster growing, and a little more thirst.
 

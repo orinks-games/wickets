@@ -18,6 +18,10 @@ garden's own song:
 - sunflower: the flute tune, made up here from chord tones and steps
 - lavender: glockenspiel chimes
 - mint: a glass pad
+- strawberry: mandolin chords strummed on the off-beats
+- chilli: a handpan beat on root, fifth and octave
+- rose: a slow cello line under the flute
+- jasmine: one or two long glass harmonica notes a bar, at dusk
 - base: the warm pad under everything
 
 Each sound plays from its own planter, so the phrases are not panned: the
@@ -127,6 +131,34 @@ LAVENDER = [
     [(None, 2), (3, .5), (2, .5), (1, 1)],
 ]
 
+# The strawberry's strums: True strums the chord, None rests.
+STRUM = [
+    [(None, 1), (True, 1), (None, 1), (True, 1)],
+    [(None, 1), (True, .5), (True, .5), (None, 1), (True, 1)],
+    [(None, .5), (True, .5), (None, .5), (True, .5), (None, .5), (True, .5), (None, .5), (True, .5)],
+]
+HANDPAN = [
+    [(0, 1), (2, .5), (3, .5), (None, .5), (2, .5), (3, 1)],
+    [(0, .5), (None, .5), (2, .5), (3, .5), (0, .5), (2, .5), (3, 1)],
+    [(0, 1.5), (3, .5), (2, 1), (3, .5), (2, .5)],
+]
+CELLO = [
+    [(2, 2), (1, 2)],
+    [(0, 3), (1, 1)],
+    [(1, 2), (2, 1), (3, 1)],
+]
+GLASS = [
+    [(0, 4)],
+    [(1, 2), (0, 2)],
+    [(None, 1), (2, 3)],
+]
+
+
+def strummed(chord: tuple, low: str, pattern: list) -> str:
+    voicing = "[" + ",".join(note(m) for m in tones_from(chord, low, 3)) + "]"
+    return " ".join(f"{'-' if hit is None else voicing}:{beats:g}" for hit, beats in pattern)
+
+
 # The flute's rhythms, four beats each. The first is the resting bar that
 # ends a tune: one long note.
 RESTING = [3, 1]
@@ -223,6 +255,15 @@ def phrases() -> list[dict]:
                               params={"breath": 0.3}))
         for n, pat in enumerate(LAVENDER):
             out.append(phrase("lavender", name, n, "glockenspiel", by_degree(tones_from(chord, "G5", 4), pat), 0.3, -15.5, vel=0.5))
+        for n, pat in enumerate(STRUM):
+            out.append(phrase("strawberry", name, n, "mandolin", strummed(chord, "G3", pat), 0.4, -11.7))
+        for n, pat in enumerate(HANDPAN):
+            out.append(phrase("chilli", name, n, "handpan", by_degree(stacked(chord, "D3", 4), pat), 0.45, -16.0))
+        for n, pat in enumerate(CELLO):
+            out.append(phrase("rose", name, n, "cello", by_degree(stacked(chord, "D3", 4), pat), 0.45, -18.8, vel=0.5))
+        for n, pat in enumerate(GLASS):
+            out.append(phrase("jasmine", name, n, "glass_harmonica", by_degree(tones_from(chord, "G5", 3), pat), 0.3, -24.2,
+                              vel=0.5))
         pad = tones_from(chord, "A3", 3)
         out.append(phrase("mint", name, 0, "glass_pad", f"[{','.join(note(m) for m in pad)}]:4", 0.4, -17.4, vel=0.7,
                           params={"attack": 0.3, "release": 1.2}))
@@ -244,6 +285,10 @@ TONES = {
     "sunflower": [("clarinet", -12, None, 0.3), ("ocarina", 0, None, 1.2)],
     "lavender": [("celesta", -12, None, -2.9), ("vibraphone", -12, None, -2.9)],
     "mint": [("string_machine", 0, {"attack": 0.3, "release": 1.2}, 2.1), ("choir", 0, {"vowel": "o"}, 0.8)],
+    "strawberry": [("guitar", 0, None, 1.0), ("harpsichord", 0, None, -3.0)],
+    "chilli": [("xylophone", 12, None, 4.9), ("koto", 0, None, -0.2)],
+    "rose": [("french_horn", 0, None, 0.3), ("oboe", 12, None, -1.1)],
+    "jasmine": [("theremin", -12, None, 0.6), ("singing_bowl", -12, None, 9.2)],
 }
 
 
