@@ -117,6 +117,55 @@ impl Weapon {
     }
 }
 
+/// A quirk a raider of night 7 or later may come down with. The forecast
+/// names it with a working scanner, or with the quirks unlock.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Serialize, Deserialize)]
+pub enum Quirk {
+    /// One hit more than its kind.
+    Armoured,
+    /// Steps before every other raider in the phase.
+    Hasty,
+    /// Passes under one wall a night in a single phase instead of
+    /// bashing it.
+    Burrowing,
+}
+
+impl Quirk {
+    pub const ALL: [Quirk; 3] = [Quirk::Armoured, Quirk::Hasty, Quirk::Burrowing];
+
+    /// "armoured", as it goes before the kind's name.
+    pub fn name(self) -> &'static str {
+        match self {
+            Quirk::Armoured => "armoured",
+            Quirk::Hasty => "hasty",
+            Quirk::Burrowing => "burrowing",
+        }
+    }
+
+    /// What it does, as a sentence.
+    pub fn about(self) -> &'static str {
+        match self {
+            Quirk::Armoured => "Takes 1 hit more than its kind.",
+            Quirk::Hasty => "Steps before every other raider.",
+            Quirk::Burrowing => {
+                "Passes under one wall a night in a single phase instead of bashing it."
+            }
+        }
+    }
+
+    /// Which kinds can come down with it.
+    pub fn fits(self, kind: Kind) -> bool {
+        match self {
+            Quirk::Armoured => matches!(
+                kind,
+                Kind::Drifter | Kind::Skitter | Kind::Hulk | Kind::Sapper
+            ),
+            Quirk::Hasty => matches!(kind, Kind::Drifter | Kind::Skitter | Kind::Sapper),
+            Quirk::Burrowing => matches!(kind, Kind::Hulk | Kind::Sapper),
+        }
+    }
+}
+
 impl Kind {
     pub const ALL: [Kind; 7] = [
         Kind::Drifter,
@@ -286,6 +335,12 @@ pub struct Raider {
     pub lean: i8,
     /// Raiders' phases a mothership has spent at its post.
     pub posted: u32,
+    /// Its quirk, from night 7.
+    #[serde(default)]
+    pub quirk: Option<Quirk>,
+    /// A burrowing raider has used its burrow this night.
+    #[serde(default)]
+    pub burrowed: bool,
 }
 
 impl Raider {
@@ -300,16 +355,60 @@ impl Raider {
             heading: 1,
             lean: 0,
             posted: 0,
+            quirk: None,
+            burrowed: false,
         }
+    }
+
+    /// With a quirk; an armoured raider takes a hit more.
+    pub fn with_quirk(mut self, quirk: Option<Quirk>) -> Raider {
+        self.quirk = quirk;
+        if quirk == Some(Quirk::Armoured) {
+            self.hits += 1;
+        }
+        self
     }
 
     pub fn is_charging(&self) -> bool {
         matches!(self.state, State::Charging { .. })
     }
 
-    /// "Hulk, left, row 2".
+    pub fn has(&self, quirk: Quirk) -> bool {
+        self.quirk == Some(quirk)
+    }
+
+    /// Whether it can still burrow under a wall this night.
+    pub fn can_burrow(&self) -> bool {
+        self.has(Quirk::Burrowing) && !self.burrowed
+    }
+
+    /// "Hulk" or "Armoured hulk".
+    pub fn title(&self) -> String {
+        match self.quirk {
+            Some(q) => {
+                let mut s = q.name().to_string();
+                if let Some(first) = s.get_mut(0..1) {
+                    first.make_ascii_uppercase();
+                }
+                format!("{s} {}", self.kind.name())
+            }
+            None => self.kind.title().to_string(),
+        }
+    }
+
+    /// "a hulk" or "an armoured hulk".
+    pub fn a(&self) -> String {
+        match self.quirk {
+            Some(Quirk::Armoured) => format!("an armoured {}", self.kind.name()),
+            Some(q) => format!("a {} {}", q.name(), self.kind.name()),
+            None if self.kind == Kind::Carrier => "the carrier".to_string(),
+            None => format!("a {}", self.kind.name()),
+        }
+    }
+
+    /// "Hulk, left, row 2" or "Armoured hulk, left, row 2".
     pub fn words(&self) -> String {
-        format!("{}, {}", self.kind.title(), self.at.words())
+        format!("{}, {}", self.title(), self.at.words())
     }
 }
 

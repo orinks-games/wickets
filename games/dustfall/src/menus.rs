@@ -104,6 +104,7 @@ impl Menu for SoundCheck {
             at("A wall falls", sound::WALL_DOWN, Sector::new(1, 3), "The wall is gone and the sector is open."),
             at("A mine goes off", sound::MINE, Sector::new(3, 4), "A mine under a raider: 2 damage, and the mine is spent."),
             at("A flak post fires", sound::FLAK, Sector::new(1, 2), "A powered post firing at the nearest small raider beside it."),
+            at("The dust storm", sound::STORM_WIND, Sector::new(0, 3), "The storm's wind at the column it covers, on the dust storm's nights. Nothing in that column is heard or moves, flak there is silent, and a wall there falls a bash sooner."),
             plain("Your turn", sound::TURN, "The chime that starts each of your turns."),
             plain("Turn over", sound::TURN_OVER, "Your turn ends, by Enter or your last action, and the raiders move."),
             plain("Bought", sound::BUY, "Something built, placed or repaired in the colony phase."),

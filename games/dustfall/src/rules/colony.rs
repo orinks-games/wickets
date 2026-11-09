@@ -4,6 +4,7 @@
 use serde::{Deserialize, Serialize};
 
 use super::grid::COLS;
+use super::perks::Perks;
 use super::raiders::Take;
 
 /// Integrity the dome starts with and holds at most.
@@ -176,6 +177,25 @@ pub struct Colony {
     pub open: Vec<u8>,
     /// The building under each column, if any.
     pub slots: Vec<Option<Slot>>,
+    /// The caps this colony plays to: the defaults, or what its perks set.
+    #[serde(default = "dome_max")]
+    pub dome_max: u32,
+    #[serde(default = "shield_max")]
+    pub shield_max: u32,
+    #[serde(default = "missiles_max")]
+    pub missiles_max: u32,
+}
+
+fn dome_max() -> u32 {
+    DOME_MAX
+}
+
+fn shield_max() -> u32 {
+    SHIELD_MAX
+}
+
+fn missiles_max() -> u32 {
+    MISSILES_MAX
 }
 
 impl Default for Colony {
@@ -186,13 +206,29 @@ impl Default for Colony {
 
 impl Colony {
     pub fn new() -> Colony {
+        Colony::with(Perks::default())
+    }
+
+    /// A colony as `perks` set it up: more slots open, a thicker dome, a
+    /// bigger shield, a deeper rack, missiles in it from the start.
+    pub fn with(perks: Perks) -> Colony {
+        let mut open = OPEN_SLOTS.to_vec();
+        if perks.extra_slots >= 1 {
+            open.insert(0, 0);
+        }
+        if perks.extra_slots >= 2 {
+            open.push(COLS - 1);
+        }
         Colony {
             resources: Resources::START,
-            dome: DOME_MAX,
+            dome: perks.dome_max(),
             shield: SHIELD_START,
-            missiles: 0,
-            open: OPEN_SLOTS.to_vec(),
+            missiles: perks.start_missiles.min(perks.missiles_max()),
+            open,
             slots: vec![None; COLS as usize],
+            dome_max: perks.dome_max(),
+            shield_max: perks.shield_max(),
+            missiles_max: perks.missiles_max(),
         }
     }
 
@@ -251,7 +287,7 @@ impl Colony {
 
     /// Adds shield up to the cap. Returns what was added.
     pub fn charge(&mut self, amount: u32) -> u32 {
-        let added = amount.min(SHIELD_MAX.saturating_sub(self.shield));
+        let added = amount.min(self.shield_max.saturating_sub(self.shield));
         self.shield += added;
         added
     }

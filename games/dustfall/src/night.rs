@@ -9,8 +9,9 @@ use std::collections::VecDeque;
 
 use hearken::text::sentence_start;
 use hearken::visuals::{Scene, GOLD, PAPER, RED, TEAL};
-use hearken::{Bus, Ctx, InputEvent, Key, State, Vec3};
+use hearken::{Bus, Ctx, InputEvent, Key, Sound, State, Vec3};
 use parlor_core::menus::{self, labels, Back, Results};
+use parlor_core::unlocks::earned_line;
 use parlor_core::{
     Challenge, Challenges, Parlor, ParlorAction, Period, Records, ScoreResult, StatusKey,
 };
@@ -18,7 +19,9 @@ use parlor_core::{
 use crate::challenge::{self, CHALLENGES_NAME};
 use crate::colony::{notices, refusal_words, ColonyScreen, Mode, Shared, Watch};
 use crate::music::{Conductor, Pressure, Stab};
-use crate::progress::{nights_phrase, Progress, NIGHTS_BOARD, SCORE_BOARD};
+use crate::progress::{
+    nights_phrase, Progress, LONG_WATCH_BOARD, NIGHTS_BOARD, SCORE_BOARD, STORM_BOARD,
+};
 use crate::rules::grid::{column_name, Work, COLS, NEAR_ROW, ROWS};
 use crate::rules::nights::RELIEF_NIGHT;
 use crate::rules::raiders::State as RaiderState;
@@ -26,7 +29,7 @@ use crate::rules::{
     Building, Event, Hitter, Input, Kind, Phase, Raider, Refusal, Run, Sector, Weapon,
     CLEAN_NIGHT_POINTS,
 };
-use crate::sound;
+use crate::{sound, unlocks, Start};
 use crate::{HELP, ID, TITLE_NAME};
 
 pub const NIGHT_NAME: &str = "dustfall_night";
@@ -88,6 +91,8 @@ struct Beat {
     blocking: bool,
     /// A stab the score plays with the beat.
     stab: Option<Stab>,
+    /// The column the dust storm's wind moves to with the beat.
+    storm_col: Option<u8>,
 }
 
 impl Beat {
@@ -99,11 +104,17 @@ impl Beat {
             now: false,
             blocking: true,
             stab: None,
+            storm_col: None,
         }
     }
 
     fn stab(mut self, stab: Option<Stab>) -> Beat {
         self.stab = stab;
+        self
+    }
+
+    fn storm(mut self, col: u8) -> Beat {
+        self.storm_col = Some(col);
         self
     }
 
@@ -177,6 +188,8 @@ pub struct NightScreen {
     fresh_charges: Vec<(Kind, u8)>,
     /// The score, following the grid.
     music: Conductor,
+    /// The dust storm's wind, at the column it covers.
+    wind: Option<Sound>,
     ended: bool,
     /// For the tutorial: the controls tried.
     pub status_asked: bool,
@@ -192,6 +205,7 @@ impl NightScreen {
         };
         NightScreen {
             music: Conductor::night(seed),
+            wind: None,
             run,
             queue: VecDeque::new(),
             fresh_charges: Vec::new(),
@@ -247,6 +261,50 @@ impl NightScreen {
         self.call_outs = p.call_outs;
         self.confirm_end = p.confirm_end;
         self.left_to_right = p.scan_left_to_right;
+        if p.call_outs {
+            // The quiet bonus is for a whole colony with the call-outs off.
+            self.run.borrow_mut().perks.quiet = false;
+        }
+        let storm = self.run.borrow().storm;
+        match (storm, p.storm_wind, self.wind) {
+            (Some(storm), true, None) => {
+                let s = ctx.audio.start_loop(
+                    sound::STORM_WIND,
+                    Some(sound::column_pos(storm.col)),
+                    Bus::AMBIENCE,
+                );
+                self.wind = Some(s);
+            }
+            (_, false, Some(s)) | (None, _, Some(s)) => {
+                ctx.audio.stop(s, 400);
+                self.wind = None;
+            }
+            _ => {}
+        }
+    }
+
+    /// Moves the wind to the column the storm covers.
+    fn move_wind(&mut self, ctx: &mut Ctx<Parlor>, col: u8) {
+        if let Some(s) = self.wind {
+            ctx.audio.set_position(s, Some(sound::column_pos(col)));
+        }
+    }
+
+    fn stop_wind(&mut self, ctx: &mut Ctx<Parlor>, fade_ms: u32) {
+        if let Some(s) = self.wind.take() {
+            ctx.audio.stop(s, fade_ms);
+        }
+    }
+
+    /// Plays a beat's sounds, stab and storm move.
+    fn sound_beat(&mut self, ctx: &mut Ctx<Parlor>, beat: &Beat) {
+        beat.play(ctx);
+        if let Some(stab) = beat.stab {
+            self.music.stab(&mut ctx.audio, stab);
+        }
+        if let Some(col) = beat.storm_col {
+            self.move_wind(ctx, col);
+        }
     }
 
     fn tell(&mut self, ctx: &mut Ctx<Parlor>, text: String) {
@@ -273,10 +331,7 @@ impl NightScreen {
                 continue;
             };
             if beat.now && self.queue.is_empty() {
-                beat.play(ctx);
-                if let Some(stab) = beat.stab {
-                    self.music.stab(&mut ctx.audio, stab);
-                }
+                self.sound_beat(ctx, &beat);
                 if let Some(line) = &beat.line {
                     self.last = line.clone();
                     if first {
@@ -298,11 +353,18 @@ impl NightScreen {
         let run = self.run.borrow();
         let beat = match event {
             Event::NightOpens { night, arrivals } => {
-                let mut beats = vec![Beat::new(0.5).open().say(format!(
+                let mut opening = format!(
                     "Night {night}, gun at the {}. {}.",
                     column_name(run.gun),
                     sentence_start(&run.forecast_words())
-                ))];
+                );
+                if run.colony.has(Building::Scanner) || run.perks.forecast_quirks {
+                    if let Some(quirks) = run.quirk_words() {
+                        opening.push(' ');
+                        opening.push_str(&quirks);
+                    }
+                }
+                let mut beats = vec![Beat::new(0.5).open().say(opening)];
                 for (_, kind, at) in arrivals {
                     let mut b = Beat::new(0.5).open().at(sound::ARRIVE, *at);
                     if self.call_outs {
@@ -440,21 +502,40 @@ impl NightScreen {
                 }
                 beat.say(line)
             }
-            Event::Stepped { kind, to, .. } => {
+            Event::Stepped { id, kind, to, .. } => {
                 let stab = match kind {
                     Kind::Hulk | Kind::Mothership | Kind::Carrier => Some(Stab::Heavy),
                     Kind::Skitter if count >= 2 => Some(Stab::Run),
                     _ => None,
                 };
                 let mut beat = Beat::new(0.45).at(sound::raider(*kind), *to).stab(stab);
-                let who = sentence_start(&group(*kind, count));
+                let who = if count <= 1 {
+                    run.raider(*id).map_or_else(|| a(*kind), |r| r.a())
+                } else {
+                    group(*kind, count)
+                };
+                let who = sentence_start(&who);
                 if to.row == NEAR_ROW {
                     beat = beat.say(format!("{who} at the dome, {}.", column_name(to.col)));
+                } else if run.in_dust(*to) {
+                    beat = beat.say(format!("{who} into the dust, {}.", column_name(to.col)));
                 } else if self.call_outs {
                     beat = beat.say(format!("{who}, {}.", to.words()));
                 }
                 beat
             }
+            Event::Burrowed { id, kind, wall } => {
+                let who = run
+                    .raider(*id)
+                    .map_or_else(|| kind.title().to_string(), |r| r.title());
+                Beat::new(0.8)
+                    .at(sound::raider(*kind), *wall)
+                    .say(format!("{who} burrows under the wall at {}.", wall.words()))
+            }
+            Event::StormMoved { col } => Beat::new(0.6)
+                .open()
+                .storm(*col)
+                .say(format!("Dust at the {}.", column_name(*col))),
             Event::Bashed {
                 kind, wall, down, ..
             } => {
@@ -504,6 +585,9 @@ impl NightScreen {
                     line.push_str(&format!(" Clean night, {CLEAN_NIGHT_POINTS} bonus."));
                 }
                 line.push_str(&format!(" Score {}.", run.score));
+                if run.endless() && *night == RELIEF_NIGHT {
+                    line.push_str(" Relief lands, and the watch goes on.");
+                }
                 Beat::new(1.5).plain(sound::HELD).say(line)
             }
             Event::Fallen { .. } => Beat::new(1.5)
@@ -512,17 +596,18 @@ impl NightScreen {
             // A challenge cut short of night 12 ends on its own result.
             Event::Relief { .. } if run.relief < RELIEF_NIGHT => Beat::new(0.5),
             Event::Relief { .. } => Beat::new(0.5).say("Relief has landed."),
-            Event::ColonyOpens { .. } => {
+            Event::ColonyOpens { .. } | Event::OrderPaid { .. } => {
                 let lines = notices(event, &run);
                 drop(run);
-                self.notices = lines;
+                self.notices.extend(lines);
                 return None;
             }
             Event::Bought { .. }
             | Event::Placed { .. }
             | Event::DomeRepaired { .. }
             | Event::BuildingRepaired { .. }
-            | Event::MissileMade { .. } => return None,
+            | Event::MissileMade { .. }
+            | Event::OrderTaken { .. } => return None,
         };
         Some(beat)
     }
@@ -588,23 +673,26 @@ impl NightScreen {
         self.act(ctx, Input::EndTurn);
     }
 
-    /// The raiders in scan order.
+    /// The raiders in scan order. The ones in the dust are not heard.
     fn order(&self) -> Vec<u32> {
         let run = self.run.borrow();
+        let mut raiders = run.heard();
         if self.left_to_right {
-            let mut raiders: Vec<&Raider> = run.raiders.iter().collect();
             raiders.sort_by_key(|r| (r.at.col, r.at.row, r.id));
-            raiders.iter().map(|r| r.id).collect()
-        } else {
-            run.nearest_first().iter().map(|r| r.id).collect()
         }
+        raiders.iter().map(|r| r.id).collect()
     }
 
     fn scan(&mut self, ctx: &mut Ctx<Parlor>, forward: bool) {
         let order = self.order();
         if order.is_empty() {
             self.scanned = None;
-            self.tell(ctx, "No raiders on the grid.".to_string());
+            let text = if self.run.borrow().raiders.is_empty() {
+                "No raiders on the grid.".to_string()
+            } else {
+                "Nothing heard outside the dust.".to_string()
+            };
+            self.tell(ctx, text);
             return;
         }
         let at = self
@@ -638,6 +726,11 @@ impl NightScreen {
                 .or_else(|| run.nearest_first().first().copied());
             match target {
                 None => "No raiders on the grid.".to_string(),
+                Some(r) if run.in_dust(r.at) => format!(
+                    "{} is in the dust at the {}. Nothing is heard of it until the storm moves on.",
+                    sentence_start(&r.a()),
+                    column_name(r.at.col)
+                ),
                 Some(r) => route_words(&run, r),
             }
         };
@@ -671,7 +764,24 @@ impl NightScreen {
                 n => format!("{n} raiders"),
             }
         ));
-        let mut second: Vec<String> = run.nearest_first().iter().map(|r| raider_line(r)).collect();
+        let mut second: Vec<String> = run
+            .nearest_first()
+            .iter()
+            .map(|r| {
+                if run.in_dust(r.at) {
+                    format!(
+                        "{}, in the dust at the {}.",
+                        r.title(),
+                        column_name(r.at.col)
+                    )
+                } else {
+                    raider_line(r)
+                }
+            })
+            .collect();
+        if let Some(storm) = run.storm {
+            second.push(format!("Dust at the {}.", column_name(storm.col)));
+        }
         second.push(format!(
             "Night {}, turn {}. Missiles {}.",
             run.night, run.turn, run.colony.missiles
@@ -684,6 +794,7 @@ impl NightScreen {
     fn open_colony(&mut self, ctx: &mut Ctx<Parlor>) {
         self.ended = true;
         self.music.stop(&mut ctx.audio, 1200);
+        self.stop_wind(ctx, 1200);
         if self.practice() {
             ctx.say_queued("The tutorial night is over.");
             return;
@@ -696,6 +807,7 @@ impl NightScreen {
     fn finish(&mut self, ctx: &mut Ctx<Parlor>) {
         self.ended = true;
         self.music.stop(&mut ctx.audio, 600);
+        self.stop_wind(ctx, 600);
         let mode = self.mode();
         let run = self.run.borrow().run.clone();
         let won = run.phase == Phase::Relief;
@@ -730,53 +842,106 @@ impl NightScreen {
     fn finish_colony(&mut self, ctx: &mut Ctx<Parlor>, run: &Run, won: bool) {
         Self::end_music(ctx, won);
         let mut p = Progress::load(ctx);
-        p.saved = None;
-        if won {
-            p.reliefs += 1;
-        }
+        p.add_run(run, won);
         p.save(ctx);
-        let result = Records::record(ctx, ID, SCORE_BOARD, run.score);
-        Records::record(ctx, ID, NIGHTS_BOARD, run.nights_held as u64);
-        let best = match result {
-            ScoreResult::First => "Your first colony.".to_string(),
-            ScoreResult::NewBest { .. } => "A new best.".to_string(),
-            ScoreResult::Short { best } => format!("Best {best}."),
+        let start = Start::of(run);
+        let held = nights_phrase(run.nights_held);
+        let best = match start {
+            Start::Colony => {
+                let result = Records::record(ctx, ID, SCORE_BOARD, run.score);
+                Records::record(ctx, ID, NIGHTS_BOARD, run.nights_held as u64);
+                match result {
+                    ScoreResult::First => "Your first colony.".to_string(),
+                    ScoreResult::NewBest { .. } => "A new best.".to_string(),
+                    ScoreResult::Short { best } => format!("Best {best}."),
+                }
+            }
+            Start::LongWatch => {
+                match Records::record(ctx, ID, LONG_WATCH_BOARD, run.nights_held as u64) {
+                    ScoreResult::First => "Your first long watch.".to_string(),
+                    ScoreResult::NewBest { .. } => "Your longest watch yet.".to_string(),
+                    ScoreResult::Short { best } => {
+                        format!("Your longest watch is {}.", nights_phrase(best as u8))
+                    }
+                }
+            }
+            Start::Storm => match Records::record(ctx, ID, STORM_BOARD, run.score) {
+                ScoreResult::First => "Your first dust storm.".to_string(),
+                ScoreResult::NewBest { .. } => "A new best in the storm.".to_string(),
+                ScoreResult::Short { best } => format!("Best in the storm {best}."),
+            },
         };
+        let new = unlocks::sync(ctx);
+        let unlocked = earned_line(&new)
+            .map(|l| format!(" {l}"))
+            .unwrap_or_default();
         // The night's last beat has said "Relief has landed." or "The
         // dome falls.", so the spoken summary carries on from it; the page
         // read back later says it whole.
         let (summary, page) = if won {
             (
-                format!("{} points. {best}", run.score),
-                format!("Relief has landed. {} points. {best}", run.score),
+                format!("{} points. {best}{unlocked}", run.score),
+                format!("Relief has landed. {} points. {best}{unlocked}", run.score),
+            )
+        } else if start == Start::LongWatch {
+            (
+                format!(
+                    "Night {}. {} held. {} points. {best}{unlocked}",
+                    run.night,
+                    sentence_start(&held),
+                    run.score
+                ),
+                format!(
+                    "The dome fell on night {}. {} held. {} points. {best}{unlocked}",
+                    run.night,
+                    sentence_start(&held),
+                    run.score
+                ),
             )
         } else {
             (
-                format!("Night {}. {} points. {best}", run.night, run.score),
                 format!(
-                    "The dome fell on night {}. {} points. {best}",
+                    "Night {}. {} points. {best}{unlocked}",
+                    run.night, run.score
+                ),
+                format!(
+                    "The dome fell on night {}. {} points. {best}{unlocked}",
                     run.night, run.score
                 ),
             )
         };
-        let pages = vec![
-            page,
-            format!(
-                "{} held of {RELIEF_NIGHT}. Raiders downed: {}.",
-                sentence_start(&nights_phrase(run.nights_held)),
+        let mut pages = vec![page];
+        if start == Start::LongWatch {
+            pages.push(format!(
+                "{} held. Raiders downed: {}.",
+                sentence_start(&held),
                 run.downed
-            ),
-            Self::colony_line(run),
-        ];
+            ));
+        } else {
+            pages.push(format!(
+                "{} held of {RELIEF_NIGHT}. Raiders downed: {}.",
+                sentence_start(&held),
+                run.downed
+            ));
+        }
+        if let Some(bonus) = bonus_words(run) {
+            pages.push(bonus);
+        }
+        pages.push(Self::colony_line(run));
         let again = if won {
             labels::PLAY_AGAIN
         } else {
             labels::TRY_AGAIN
         };
+        let again_help = match start {
+            Start::Colony => "A new colony, from night 1.",
+            Start::LongWatch => "A new long watch, from night 1.",
+            Start::Storm => "A new colony in the dust storm, from night 1.",
+        };
         ctx.replace(Results::new(summary, pages, Back::Title(TITLE_NAME)).again(
             again,
-            "A new colony, from night 1.",
-            |ctx| crate::begin(ctx, None, true),
+            again_help,
+            move |ctx| crate::begin_as(ctx, start, None, true),
         ));
     }
 
@@ -805,15 +970,19 @@ impl NightScreen {
             )
         };
         let streak = Challenges::streak(ctx, ID, period).max(1);
-        let held = if run.nights() == 1 {
-            format!("Raiders downed: {}.", run.downed)
-        } else {
-            format!(
+        let held = match run.nights() {
+            1 => format!("Raiders downed: {}.", run.downed),
+            0 => format!(
+                "{} held. Raiders downed: {}.",
+                sentence_start(&nights_phrase(run.nights_held)),
+                run.downed
+            ),
+            nights => format!(
                 "{} of {} held. Raiders downed: {}.",
                 sentence_start(&nights_phrase(run.nights_held)),
-                nights_phrase(run.nights()),
+                nights_phrase(nights),
                 run.downed
-            )
+            ),
         };
         let pages = vec![
             page,
@@ -850,6 +1019,20 @@ fn group(kind: Kind, count: usize) -> String {
 fn some(kind: Kind, count: usize, one: &str, many: &str) -> String {
     let verb = if count <= 1 { one } else { many };
     format!("{} {verb}", group(kind, count))
+}
+
+/// "A quarter more for Hard vacuum." or for the call-outs off, or both.
+fn bonus_words(run: &Run) -> Option<String> {
+    let percent = run.perks.bonus_percent();
+    if percent == 0 {
+        return None;
+    }
+    let what = match (run.perks.hard_vacuum, run.perks.quiet) {
+        (true, true) => "Hard vacuum and the call-outs off",
+        (true, false) => "Hard vacuum",
+        _ => "the call-outs off",
+    };
+    Some(format!("{percent} percent more for {what}, counted in."))
 }
 
 /// What the score follows: the nearest raider, a pending charge, the
@@ -940,7 +1123,7 @@ pub fn route_words(run: &Run, raider: &Raider) -> String {
         RaiderState::Charging { col, .. } => {
             return format!(
                 "{} is charging at the {}. Move the gun off that column, or fire first.",
-                sentence_start(&a(raider.kind)),
+                sentence_start(&raider.a()),
                 column_name(col)
             );
         }
@@ -954,9 +1137,14 @@ pub fn route_words(run: &Run, raider: &Raider) -> String {
             );
         }
         RaiderState::Bashing { wall } => {
+            let verb = if raider.can_burrow() {
+                "burrows under"
+            } else {
+                "is bashing"
+            };
             return format!(
-                "{} is bashing the wall at {}.",
-                sentence_start(&a(raider.kind)),
+                "{} {verb} the wall at {}.",
+                sentence_start(&raider.a()),
                 wall.words()
             );
         }
@@ -975,11 +1163,13 @@ pub fn route_words(run: &Run, raider: &Raider) -> String {
     let Some(next) = route.first() else {
         return format!(
             "{} is at the dome, {}. It breaches next phase.",
-            sentence_start(&a(raider.kind)),
+            sentence_start(&raider.a()),
             column_name(raider.at.col)
         );
     };
-    if run.colony.has(Building::Scanner) {
+    let whole = run.colony.has(Building::Scanner)
+        || (raider.kind == Kind::Drifter && run.perks.drifter_routes);
+    if whole {
         let steps: Vec<String> = route.iter().map(|s| s.words()).collect();
         let phases = run.phases_to_land(raider.id).unwrap_or(0);
         format!(
@@ -1079,6 +1269,7 @@ impl State<Parlor> for NightScreen {
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
         self.music.stop(&mut ctx.audio, 300);
+        self.stop_wind(ctx, 300);
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -1144,10 +1335,7 @@ impl State<Parlor> for NightScreen {
             }
             let _ = front;
             let beat = self.queue.pop_front().expect("a beat");
-            beat.play(ctx);
-            if let Some(stab) = beat.stab {
-                self.music.stab(&mut ctx.audio, stab);
-            }
+            self.sound_beat(ctx, &beat);
             if let Some(line) = &beat.line {
                 self.last = line.clone();
                 ctx.say_queued(line.clone());

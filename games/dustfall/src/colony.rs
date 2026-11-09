@@ -19,7 +19,9 @@ use crate::music::Conductor;
 use crate::night::NightScreen;
 use crate::progress::Progress;
 use crate::rules::grid::{column_name, COLS, WORK_ROWS};
-use crate::rules::{colony, Building, Event, Input, Refusal, Run, Sector, Work, WorkKind};
+use crate::rules::{
+    colony, orders, Building, Event, Input, Order, Refusal, Run, Sector, Work, WorkKind,
+};
 use crate::sound;
 use crate::{HELP, TITLE_NAME};
 
@@ -128,7 +130,9 @@ pub fn refusal_words(refusal: Refusal, run: &Run) -> String {
         Refusal::NothingThere => "Nothing stands there.".to_string(),
         Refusal::NotDark => "It is working.".to_string(),
         Refusal::DomeWhole => "The dome is whole.".to_string(),
-        Refusal::MissilesFull => format!("The rack holds {} already.", colony::MISSILES_MAX),
+        Refusal::MissilesFull => format!("The rack holds {} already.", run.colony.missiles_max),
+        Refusal::NoSuchOrder => "That order is not on offer tonight.".to_string(),
+        Refusal::OrderTaken => "An order is taken already tonight.".to_string(),
         Refusal::WrongPhase => "Not now.".to_string(),
         Refusal::Edge => "The rail ends there.".to_string(),
         Refusal::NoMissiles => "No missiles.".to_string(),
@@ -167,17 +171,50 @@ fn done_words(event: &Event, run: &Run) -> Option<String> {
         ),
         Event::MissileMade { missiles } => format!(
             "Missile made, {missiles} of {}. Power {}, metal {}.",
-            colony::MISSILES_MAX,
-            r.power,
-            r.metal
+            run.colony.missiles_max, r.power, r.metal
         ),
+        Event::OrderTaken { order } => match order {
+            Order::Overclock => format!("Overclock taken. Shield {}.", run.colony.shield),
+            Order::Rationing => format!("Rationing taken. Food {}.", r.food),
+            Order::Salvage => format!(
+                "Salvage taken. Twice the metal from kills tonight, and skitters take {} steps.",
+                orders::SALVAGE_SKITTER_STEPS
+            ),
+        },
         _ => return None,
     })
+}
+
+/// F1 on an order's row.
+pub fn order_help(order: Order) -> String {
+    match order {
+        Order::Overclock => format!(
+            "Puts {} on the shield now, up to its cap. After the night the colony pays {} power.",
+            orders::OVERCLOCK_SHIELD,
+            orders::OVERCLOCK_POWER
+        ),
+        Order::Rationing => format!(
+            "{} food into store now. The raiders take one step before your first turn.",
+            orders::RATIONING_FOOD
+        ),
+        Order::Salvage => format!(
+            "Every kill tonight drops twice the metal. Skitters take {} steps a phase instead of 2.",
+            orders::SALVAGE_SKITTER_STEPS
+        ),
+    }
 }
 
 /// What the night left for the colony to hear: hunger, posts without
 /// power, dark buildings.
 pub fn notices(event: &Event, run: &Run) -> Vec<String> {
+    if let Event::OrderPaid { order } = event {
+        return vec![format!(
+            "{}: {} power spent. Power {}.",
+            order.name(),
+            orders::OVERCLOCK_POWER,
+            run.colony.resources.power
+        )];
+    }
     let Event::ColonyOpens {
         hungry,
         unpowered,
@@ -275,15 +312,17 @@ pub fn slots_words(run: &Run) -> String {
         "{} Missiles {} of {}. {}.",
         sentence_start(&format!("{}.", run.colony.resources.words())),
         run.colony.missiles,
-        colony::MISSILES_MAX,
+        run.colony.missiles_max,
         sentence_start(&parts.join("; "))
     )
 }
 
-/// The forecast with its columns when a scanner works.
+/// The forecast with its columns when a scanner works, and its quirks
+/// when a scanner works or the forecast unlock is earned.
 pub fn forecast_words(run: &Run) -> String {
     let kinds = run.forecast_words();
-    if run.colony.has(Building::Scanner) {
+    let scanner = run.colony.has(Building::Scanner);
+    let mut line = if scanner {
         let mut cols: Vec<u8> = run.forecast.iter().map(|a| a.col).collect();
         cols.sort_unstable();
         cols.dedup();
@@ -295,7 +334,14 @@ pub fn forecast_words(run: &Run) -> String {
         )
     } else {
         format!("Night {}: {kinds}.", run.night)
+    };
+    if scanner || run.perks.forecast_quirks {
+        if let Some(quirks) = run.quirk_words() {
+            line.push(' ');
+            line.push_str(&quirks);
+        }
     }
+    line
 }
 
 /// "left", "left and centre", "left, centre and right".
@@ -490,7 +536,7 @@ impl Menu for ColonyScreen {
                 forecast_words(&run)
             )),
         );
-        if run.colony.dome < colony::DOME_MAX {
+        if run.colony.dome < run.colony.dome_max {
             let ok = ColonyScreen::can_afford(&run, colony::DOME_REPAIR_COST, 0);
             items.push(
                 MenuItem::new(
@@ -498,14 +544,14 @@ impl Menu for ColonyScreen {
                         "Repair the dome, {} metal, dome {} of {}",
                         colony::DOME_REPAIR_COST,
                         run.colony.dome,
-                        colony::DOME_MAX
+                        run.colony.dome_max
                     ),
                     |s: &mut ColonyScreen, ctx: &mut Ctx<Parlor>| s.apply(ctx, Input::RepairDome),
                 )
                 .help(format!(
                     "Puts {} back on the dome, up to {}.{}",
                     colony::DOME_REPAIR,
-                    colony::DOME_MAX,
+                    run.colony.dome_max,
                     if ok { "" } else { " Too dear for now." }
                 )),
             );
@@ -532,7 +578,37 @@ impl Menu for ColonyScreen {
                 .help("A dark building does nothing until it is repaired."),
             );
         }
-        if run.colony.missiles < colony::MISSILES_MAX {
+        if run.mode != Mode::Practice {
+            match run.order {
+                None => {
+                    for order in run.offered.clone() {
+                        items.push(
+                            MenuItem::new(
+                                format!("Order: {}, {}", order.name(), order.terms()),
+                                move |s: &mut ColonyScreen, ctx: &mut Ctx<Parlor>| {
+                                    s.apply(ctx, Input::TakeOrder(order))
+                                },
+                            )
+                            .help(format!(
+                                "{} One order a night, of the two on offer.",
+                                order_help(order)
+                            )),
+                        );
+                    }
+                }
+                Some(order) => items.push(
+                    MenuItem::new(
+                        format!("Order taken: {}", order.name()),
+                        move |_s: &mut ColonyScreen, ctx: &mut Ctx<Parlor>| {
+                            ctx.say(format!("{}: {}.", order.name(), order.terms()));
+                        },
+                    )
+                    .select_sound(None)
+                    .help("Tonight's order. It stands until the night is over."),
+                ),
+            }
+        }
+        if run.colony.missiles < run.colony.missiles_max {
             let (power, metal) = run.colony.missile_cost();
             items.push(
                 MenuItem::new(
@@ -540,7 +616,7 @@ impl Menu for ColonyScreen {
                         "Make a missile, {}, {} of {} in the rack",
                         cost_words(metal, power),
                         run.colony.missiles,
-                        colony::MISSILES_MAX
+                        run.colony.missiles_max
                     ),
                     |s: &mut ColonyScreen, ctx: &mut Ctx<Parlor>| s.apply(ctx, Input::MakeMissile),
                 )

@@ -1033,6 +1033,52 @@
    "loudness": -24
   },
   {
+   "out": "storm/wind.wav",
+   "_about": "The dust storm's wind, looped at the column it covers: a low gritty gust with a slow swell.",
+   "duration": 6.0,
+   "loop": 1.0,
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "wind",
+     "at": 0,
+     "gain": 0.9,
+     "params": {
+      "dur": 6.5
+     }
+    },
+    {
+     "type": "sfx",
+     "kind": "noise",
+     "at": 0,
+     "gain": 0.5,
+     "params": {
+      "dur": 6.5,
+      "color": "brown",
+      "attack": 0.8
+     },
+     "fx": [
+      {
+       "type": "bandpass",
+       "center": 500,
+       "q": 0.5
+      },
+      {
+       "type": "tremolo",
+       "rate": 0.22,
+       "depth": 0.6
+      }
+     ]
+    }
+   ],
+   "fx": [
+    {
+     "type": "mono"
+    }
+   ],
+   "loudness": -30
+  },
+  {
    "out": "colony/buy.wav",
    "_about": "Bought: a bright two-note rise.",
    "layers": [

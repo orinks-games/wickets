@@ -566,7 +566,7 @@ fn the_challenges_menu_names_the_three_skies() {
         "{rows:?}"
     );
     assert!(
-        rows[2].starts_with("Monthly, The long watch: a whole colony, twelve nights to Relief"),
+        rows[2].starts_with("Monthly, The long watch: a whole colony, to Relief and on past it"),
         "{rows:?}"
     );
     assert_eq!(rows[3], "Back");
@@ -672,4 +672,110 @@ fn leaving_the_tutorial_early_keeps_the_first_visit() {
     h.app.ctx.push(title_with_seed(SEED));
     h.frame(0.0);
     assert!(spoke(&h, "New here?"), "{}", all_spoken(&h));
+}
+
+#[test]
+fn the_title_locks_the_long_watch_and_the_storm_and_lists_the_unlocks() {
+    let mut h = start();
+    let shown = rows(&h);
+    assert!(
+        shown
+            .iter()
+            .any(|r| r.starts_with("The long watch, locked")),
+        "{shown:?}"
+    );
+    assert!(
+        shown.iter().any(|r| r.starts_with("Dust storm, locked")),
+        "{shown:?}"
+    );
+    assert!(shown.iter().any(|r| r == "Unlocks, 0 of 23"), "{shown:?}");
+    h.clear();
+    choose(&mut h, "The long watch, locked");
+    assert!(
+        spoke(&h, "The long watch opens once Relief has landed."),
+        "{}",
+        all_spoken(&h)
+    );
+    assert_eq!(h.app.top_name(), TITLE_NAME);
+    h.clear();
+    choose(&mut h, "Dust storm, locked");
+    // 4 November 2026 is a Wednesday; the fourth Monday is the 23rd.
+    assert!(
+        spoke(&h, "The dust storm comes Monday 23 November, in 19 days."),
+        "{}",
+        all_spoken(&h)
+    );
+    assert_eq!(h.app.top_name(), TITLE_NAME);
+    h.clear();
+    choose(&mut h, "Unlocks");
+    assert_eq!(h.app.top_name(), dustfall::UNLOCKS_NAME);
+    let groups = rows(&h);
+    assert!(groups[0].starts_with("Colony, 0 of 4"), "{groups:?}");
+    assert!(
+        groups
+            .iter()
+            .any(|r| r.starts_with("Reva's logbook, 0 of 12")),
+        "{groups:?}"
+    );
+}
+
+#[test]
+fn the_colony_offers_two_orders_and_takes_one() {
+    let mut h = colony();
+    let shown = rows(&h);
+    let orders: Vec<&String> = shown.iter().filter(|r| r.starts_with("Order: ")).collect();
+    assert_eq!(orders.len(), 2, "{shown:?}");
+    let first = orders[0].clone();
+    h.clear();
+    choose(&mut h, &first);
+    let said = all_spoken(&h);
+    assert!(said.contains(" taken. "), "{said}");
+    let shown = rows(&h);
+    assert!(!shown.iter().any(|r| r.starts_with("Order: ")), "{shown:?}");
+    assert!(
+        shown.iter().any(|r| r.starts_with("Order taken: ")),
+        "{shown:?}"
+    );
+}
+
+#[test]
+fn on_the_fourth_monday_the_storm_row_opens_a_colony_in_the_dust() {
+    let data = ParlorData {
+        today: Some(Date::new(2026, 11, 23)),
+        ..Default::default()
+    };
+    let mut h = Headless::new(data, title_with_seed(SEED));
+    select(&mut h, "Play");
+    let shown = rows(&h);
+    assert!(
+        shown.iter().any(|r| r == "Dust storm, tonight"),
+        "{shown:?}"
+    );
+    h.clear();
+    choose(&mut h, "Dust storm, tonight");
+    assert_eq!(h.app.top_name(), COLONY_NAME, "{}", all_spoken(&h));
+    h.clear();
+    choose(&mut h, "Ready for night 1");
+    assert_eq!(h.app.top_name(), NIGHT_NAME);
+    settle(&mut h);
+    assert!(spoke(&h, "Dust at the far left."), "{}", all_spoken(&h));
+    h.clear();
+    h.press(Key::S);
+    h.press(Key::S);
+    assert!(spoke(&h, "Dust at the far left."), "{}", all_spoken(&h));
+    h.clear();
+    h.press(Key::Return);
+    settle(&mut h);
+    assert!(spoke(&h, "Dust at the left."), "{}", all_spoken(&h));
+    // Leaving saves the colony as a dust storm one.
+    h.press(Key::Escape);
+    choose(&mut h, "Back to the title");
+    for _ in 0..5 {
+        h.frame(DT);
+    }
+    let shown = rows(&h);
+    assert!(
+        shown[0].starts_with("Continue the dust storm colony, night 1"),
+        "{shown:?}"
+    );
 }

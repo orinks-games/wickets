@@ -37,6 +37,9 @@ pub const WALL_DOWN: &str = "dustfall/grid/wall_down";
 pub const MINE: &str = "dustfall/grid/mine";
 pub const FLAK: &str = "dustfall/grid/flak";
 
+/// The dust storm's wind, looped at the column it covers.
+pub const STORM_WIND: &str = "dustfall/storm/wind";
+
 pub const BUY: &str = "dustfall/colony/buy";
 pub const CANT: &str = "dustfall/colony/cant";
 pub const READY: &str = "dustfall/colony/ready";

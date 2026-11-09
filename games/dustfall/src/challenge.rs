@@ -12,7 +12,7 @@ use parlor_core::{Challenge, Pages, Parlor, Period};
 use crate::colony::{share_as, ColonyScreen, Mode};
 use crate::night::NightScreen;
 use crate::rules::grid::CENTRE;
-use crate::rules::{Building, Input, Run, Sector, WorkKind, RELIEF_NIGHT};
+use crate::rules::{Building, Input, Perks, Run, Sector, WorkKind, RELIEF_NIGHT};
 use crate::{sound, ID};
 
 /// The challenges menu's `State::name`.
@@ -58,7 +58,7 @@ pub fn tag(ctx: &mut Ctx<Parlor>, period: Period) -> String {
         Period::Weekly => {
             format!("five nights, {SIEGE_FIRST} to {SIEGE_LAST}, with stores to spend first")
         }
-        Period::Monthly => "a whole colony, twelve nights to Relief".to_string(),
+        Period::Monthly => "a whole colony, to Relief and on past it".to_string(),
     }
 }
 
@@ -75,7 +75,7 @@ pub fn rule(ctx: &mut Ctx<Parlor>, period: Period) -> String {
             "Five nights, from night {SIEGE_FIRST} to night {SIEGE_LAST}. The colony holds the stores the first nights would have brought, so spend them before the raiders come. Points add up across the nights."
         ),
         Period::Monthly => format!(
-            "A whole colony, from night 1 to Relief on night {RELIEF_NIGHT}, under the same sky as everyone else this month. The score is the colony's points."
+            "A whole colony under the same sky as everyone else this month, from night 1 to Relief on night {RELIEF_NIGHT} and on past it, the nights harder each round, until the dome falls. The score is the colony's points."
         ),
     }
 }
@@ -129,7 +129,11 @@ pub fn briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
 pub fn start(ctx: &mut Ctx<Parlor>, period: Period, replace: bool) {
     let ch = Challenge::current(ctx, ID, period);
     let (first, last) = nights(&ch);
-    let mut run = Run::prepared(ch.seed, first, last);
+    let mut run = if period == Period::Monthly {
+        Run::long_watch(ch.seed, Perks::default())
+    } else {
+        Run::prepared(ch.seed, first, last)
+    };
     let mode = Mode::Challenge(period);
     if period == Period::Daily {
         set_up(&mut run);

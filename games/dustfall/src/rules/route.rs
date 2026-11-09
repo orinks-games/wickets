@@ -223,12 +223,18 @@ pub fn plan(grid: &Grid, raider: &Raider, goal: &Goal, gun: u8) -> Option<Vec<Se
 /// Raiders' phases until a raider walking `route` reaches its end, given
 /// its steps a phase and whether a hulk rests next phase.
 pub fn phases_to_land(kind: Kind, rest: bool, route_len: usize) -> u32 {
-    let steps = route_len as u32;
-    if steps == 0 {
+    phases_with_steps(kind, rest, route_len, kind.steps())
+}
+
+/// The same, for a raider taking `steps` a phase: a skitter under
+/// Salvage takes three.
+pub fn phases_with_steps(kind: Kind, rest: bool, route_len: usize, steps: u8) -> u32 {
+    let len = route_len as u32;
+    if len == 0 {
         return 0;
     }
     match kind {
-        Kind::Hulk => steps * 2 - if rest { 0 } else { 1 },
-        _ => steps.div_ceil(kind.steps() as u32),
+        Kind::Hulk => len * 2 - if rest { 0 } else { 1 },
+        _ => len.div_ceil(u32::from(steps.max(1))),
     }
 }

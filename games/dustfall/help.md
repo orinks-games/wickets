@@ -4,7 +4,7 @@
 
 You hold a dome on a dusty world through twelve nights of raiders. Each night they come over the horizon onto a grid of five columns and six rows and walk down toward the dome. You have a gun on a rail along the dome's edge, a few missiles, and two actions a turn. When your turn ends the raiders move, and each one is heard at its new place on the grid.
 
-Between nights the colony phase opens. You spend the salvage the raiders leave on walls, flak posts and mines for the grid, and on buildings that keep the colony fed, powered and shielded. Hold all twelve nights and Relief lands.
+Between nights the colony phase opens. You spend the salvage the raiders leave on walls, flak posts and mines for the grid, and on buildings that keep the colony fed, powered and shielded. Hold all twelve nights and Relief lands. After that the long watch opens, where the nights go on until the dome falls.
 
 ## The grid
 
@@ -32,6 +32,14 @@ Scanning costs nothing. Up and Down step through the raiders, nearest the dome f
 
 A raider that reaches row 1 breaches the dome's edge on its next move. The shield takes the hit first, then the dome. The dome starts at 100 and the colony falls at 0.
 
+## Quirks
+
+From night 7 a raider or two may come down with a quirk. The scan names it with the raider, and the forecast names it when a scanner works or once Quirks in the forecast is unlocked.
+
+- Armoured: takes 1 hit more than its kind.
+- Hasty: steps before every other raider in the phase.
+- Burrowing: passes under one wall a night in a single phase instead of bashing it. The wall still stands.
+
 ## Routes
 
 Raiders find their own way. Each one looks for the shortest path to its goal and goes round walls, and a drifter also goes round flak cover unless the way round is too long. A hulk bashes a wall when that is shorter than going round, and any raider walled in bashes its way out. The same grid always gives the same routes, so what you build changes where they walk, and H tells you where.
@@ -49,6 +57,14 @@ The colony phase opens before each night with your stores: power, metal and food
 
 The game saves at the start of each colony phase. Leaving during a night brings you back to that colony phase, with what you had bought.
 
+## Orders
+
+Each colony phase offers two orders, and you may take one. Each is a gain now for a cost in the night to come.
+
+- Overclock: 20 shield now, up to the shield's cap. After the night the colony pays 4 power.
+- Rationing: 4 food now. The raiders take one step before your first turn.
+- Salvage: every kill tonight drops twice the metal. Skitters take 3 steps a phase instead of 2.
+
 ## Works on the grid
 
 - Wall: 3 metal. Blocks a sector. Two bashes bring it down.
@@ -65,13 +81,25 @@ The game saves at the start of each colony phase. Leaving during a night brings 
 
 A breach that reaches the dome darkens the building under that column, as does any sapper's breach. A dark building does nothing until repaired for 4 metal.
 
+## The long watch
+
+Once a colony of yours has held to Relief, The long watch opens on the title. It is a colony that goes on past Relief: night 13 brings night 9's raiders round again with another drifter, and each round of four nights adds one more, until the dome falls. Its record is the most nights held.
+
+## Dust storm
+
+On the fourth Monday of every month, Dust storm opens on the title: a colony through twelve nights with a column of dust crossing the grid. The dust moves one column each raiders' phase, far left to far right and back, and its wind is heard where it is. Raiders in the dust cannot be scanned or heard and lose their step, flak posts in it cannot fire, and a wall in it falls a bash sooner. The storm's best score is its own record. On other days the row says when the storm next comes.
+
+## Tech and unlocks
+
+Holding a night earns 1 tech, a mothership down earns 3, and Relief earns 5. Tech adds up across every colony, and Unlocks, on the title, lists what it opens: a thicker dome, a bigger shield, more slots, a missile or two walls at the start, a deeper rack, quirks in the forecast and a drifter's whole route without a scanner. The modes open on what one colony did: The long watch when Relief has landed, and Hard vacuum, which caps the shield at 30 for 25 percent more score, once a colony has held 8 nights. Reva's logbook opens a page for each night you have held at most. Playing a whole colony with the call-outs off earns 25 percent more score too.
+
 ## Challenges
 
-Challenges, on the title, gives everyone the same sky. Tonight's sky is one night, the raiders of a night between 3 and 9, on a colony already built for them: the gun is yours from the first turn. Siege week is five nights, 4 to 8, on a colony holding the stores the first nights would have brought, so spend them before the raiders come. The long watch is a whole colony, twelve nights to Relief. Only your best result on each is kept, and a run left from the pause menu does not count.
+Challenges, on the title, gives everyone the same sky. Tonight's sky is one night, the raiders of a night between 3 and 9, on a colony already built for them: the gun is yours from the first turn. Siege week is five nights, 4 to 8, on a colony holding the stores the first nights would have brought, so spend them before the raiders come. The long watch is a whole colony, to Relief and on past it until the dome falls. Only your best result on each is kept, and a run left from the pause menu does not count. Challenges play without your unlocks, so the sky is the same for everyone.
 
 ## Scores and records
 
-Each raider down scores points, 10 for a drifter or skitter up to 300 for the carrier. Holding a night scores 50, and a night with no breach scores 50 more. When Relief lands, the power and metal in store are added. Records keeps your best score and the most nights you have held.
+Each raider down scores points, 10 for a drifter or skitter up to 300 for the carrier. Holding a night scores 50, and a night with no breach scores 50 more. When Relief lands, the power and metal in store are added. Records keeps your best score, the most nights you have held, your longest watch, your best in the dust storm and your tech in all.
 
 ## Settings
 
@@ -80,10 +108,11 @@ Settings, on the title or the pause menu, has the game's own rows after speech, 
 - Spoken call-outs: names each raider's step with its column and row. Off, you hear the steps and only a raider reaching the dome is named.
 - Confirm end of turn: Enter asks before ending a turn, and a second Enter ends it.
 - Scan order: nearest first, or left to right across the grid.
+- Storm wind: whether the dust storm's wind is heard at the column it covers.
 
 ## Sound check
 
-Sound check, on the title, plays every cue you need to know: each raider's step, the gun, a charge, a breach, the works on the grid and the turn chimes. Each is played from where you would hear it.
+Sound check, on the title, plays every cue you need to know: each raider's step, the gun, a charge, a breach, the works on the grid, the dust storm's wind and the turn chimes. Each is played from where you would hear it.
 
 ## Controls
 

@@ -19,12 +19,20 @@
 //!
 //! Each raider's own machine is in [`raiders`]. The screen turns the
 //! [`Event`]s a step raises into sound and speech; nothing here is spoken.
+//!
+//! A run with `relief` 0 is the long watch: Relief lands on night 12 as a
+//! milestone and the nights go on until the dome falls. A run with a
+//! [`Storm`] is the dust storm event. [`Perks`] carry what the player's
+//! unlocks change, so a replay needs nothing but the run.
 
 pub mod colony;
 pub mod grid;
 pub mod nights;
+pub mod orders;
+pub mod perks;
 pub mod raiders;
 pub mod route;
+pub mod storm;
 
 use parlor_core::Rng;
 use serde::{Deserialize, Serialize};
@@ -32,7 +40,10 @@ use serde::{Deserialize, Serialize};
 pub use colony::{Building, Colony, Resources, Slot};
 pub use grid::{column_name, Grid, Sector, Work, WorkKind, CENTRE, COLS, FAR_ROW, NEAR_ROW, ROWS};
 pub use nights::RELIEF_NIGHT;
-pub use raiders::{Kind, Raider, State, Take, Weapon};
+pub use orders::Order;
+pub use perks::Perks;
+pub use raiders::{Kind, Quirk, Raider, State, Take, Weapon};
+pub use storm::Storm;
 
 /// Points for holding a night, and as much again for one with no breach.
 pub const NIGHT_HELD_POINTS: u64 = 50;
@@ -70,6 +81,8 @@ pub enum Phase {
 pub struct Arrival {
     pub kind: Kind,
     pub col: u8,
+    #[serde(default)]
+    pub quirk: Option<Quirk>,
 }
 
 /// Everything a player can do. Each is one input of a replay.
@@ -99,6 +112,8 @@ pub enum Input {
         col: u8,
     },
     MakeMissile,
+    /// Colony phase: one of the night's two orders.
+    TakeOrder(Order),
     /// Colony phase: start the night.
     Ready,
 }
@@ -129,6 +144,10 @@ pub enum Refusal {
     NotDark,
     DomeWhole,
     MissilesFull,
+    /// Not one of tonight's two orders.
+    NoSuchOrder,
+    /// An order is taken already this night.
+    OrderTaken,
 }
 
 /// What brought a raider down or hurt it.
@@ -216,6 +235,16 @@ pub enum Event {
         weapon: Weapon,
         col: u8,
     },
+    /// A burrowing raider passed under a wall, which still stands.
+    Burrowed {
+        id: u32,
+        kind: Kind,
+        wall: Sector,
+    },
+    /// The dust storm covers `col` for this raiders' phase.
+    StormMoved {
+        col: u8,
+    },
     /// A mothership let a skitter out beside it.
     Dropped {
         from: u32,
@@ -265,6 +294,13 @@ pub enum Event {
     MissileMade {
         missiles: u32,
     },
+    OrderTaken {
+        order: Order,
+    },
+    /// The night is over and an order's cost came due.
+    OrderPaid {
+        order: Order,
+    },
 }
 
 fn idle_rng() -> Rng {
@@ -290,9 +326,21 @@ pub struct Run {
     /// The night the run started on: 1, or later for a challenge.
     #[serde(default = "first_night")]
     pub first: u8,
-    /// The night that brings Relief once held.
+    /// The night that brings Relief once held; 0 for the long watch, where
+    /// Relief lands on night 12 and the nights go on.
     #[serde(default = "relief_night")]
     pub relief: u8,
+    /// What the player's unlocks and chosen modifiers changed.
+    #[serde(default)]
+    pub perks: Perks,
+    /// The orders offered before this night, and the one taken.
+    #[serde(default)]
+    pub offered: Vec<Order>,
+    #[serde(default)]
+    pub order: Option<Order>,
+    /// The dust storm, in a storm run.
+    #[serde(default)]
+    pub storm: Option<Storm>,
     /// The night in progress, or the one coming next in the colony phase.
     pub night: u8,
     pub phase: Phase,
@@ -327,15 +375,30 @@ pub struct Run {
 impl Run {
     /// A run in its first colony phase, night 1 forecast.
     pub fn new(seed: u64) -> Run {
+        Run::with_perks(seed, Perks::default())
+    }
+
+    /// A run set up as `perks` say.
+    pub fn with_perks(seed: u64, perks: Perks) -> Run {
+        let mut grid = Grid::new();
+        if perks.start_walls {
+            for col in [CENTRE - 1, CENTRE + 1] {
+                grid.set(Sector::new(col, 3), Some(WorkKind::Wall.build()));
+            }
+        }
         let mut run = Run {
             seed,
             first: 1,
             relief: RELIEF_NIGHT,
+            perks,
+            offered: Vec::new(),
+            order: None,
+            storm: None,
             night: 1,
             phase: Phase::Colony,
             turn: 0,
-            grid: Grid::new(),
-            colony: Colony::new(),
+            grid,
+            colony: Colony::with(perks),
             raiders: Vec::new(),
             gun: CENTRE,
             siphoned: false,
@@ -351,13 +414,28 @@ impl Run {
             rng: idle_rng(),
             events: Vec::new(),
         };
-        run.forecast = run.draw_forecast();
+        run.read_the_sky();
         run.events.push(Event::ColonyOpens {
             night: 1,
             hungry: false,
             unpowered: Vec::new(),
             dark: Vec::new(),
         });
+        run
+    }
+
+    /// The long watch: Relief lands on night 12 and the nights go on until
+    /// the dome falls.
+    pub fn long_watch(seed: u64, perks: Perks) -> Run {
+        let mut run = Run::with_perks(seed, perks);
+        run.relief = 0;
+        run
+    }
+
+    /// A run through the dust storm.
+    pub fn in_storm(seed: u64, perks: Perks) -> Run {
+        let mut run = Run::with_perks(seed, perks);
+        run.storm = Some(Storm::new());
         run
     }
 
@@ -368,8 +446,20 @@ impl Run {
         let mut run = Run::new(seed);
         run.night = night.clamp(1, RELIEF_NIGHT);
         run.first = run.night;
-        run.forecast = run.draw_forecast();
+        run.read_the_sky();
         run
+    }
+
+    /// The forecast and the orders for the night coming.
+    fn read_the_sky(&mut self) {
+        self.forecast = self.draw_forecast();
+        self.offered = Order::offered(self.seed, self.night);
+        self.order = None;
+    }
+
+    /// Whether the run goes on past Relief.
+    pub fn endless(&self) -> bool {
+        self.relief == 0
     }
 
     /// A run of the nights `first` to `last`, in the colony phase before
@@ -384,9 +474,13 @@ impl Run {
         run
     }
 
-    /// How many nights the run holds in all.
+    /// How many nights the run holds in all; 0 for the long watch.
     pub fn nights(&self) -> u8 {
-        self.relief + 1 - self.first
+        if self.endless() {
+            0
+        } else {
+            self.relief + 1 - self.first
+        }
     }
 
     pub fn seed(&self) -> u64 {
@@ -421,6 +515,7 @@ impl Run {
             (Phase::Colony, Input::RepairDome) => self.repair_dome(),
             (Phase::Colony, Input::RepairBuilding { col }) => self.repair_building(col),
             (Phase::Colony, Input::MakeMissile) => self.make_missile(),
+            (Phase::Colony, Input::TakeOrder(order)) => self.take_order(order),
             (Phase::Colony, Input::Ready) => {
                 self.ready();
                 Ok(())
@@ -464,9 +559,49 @@ impl Run {
     pub fn phases_to_land(&self, id: u32) -> Option<u32> {
         let raider = self.raider(id)?;
         let route = self.route_of(id)?;
-        let bashes: u32 =
-            route.iter().filter(|s| self.grid.is_wall(**s)).count() as u32 * grid::WALL_HITS as u32;
-        Some(route::phases_to_land(raider.kind, raider.rest, route.len()) + bashes)
+        let walls = route.iter().filter(|s| self.grid.is_wall(**s)).count() as u32;
+        let mut bashes = walls * u32::from(grid::WALL_HITS);
+        if raider.can_burrow() && walls > 0 {
+            // The first wall is passed under in one phase.
+            bashes -= u32::from(grid::WALL_HITS) - 1;
+        }
+        Some(
+            route::phases_with_steps(
+                raider.kind,
+                raider.rest,
+                route.len(),
+                self.steps_of(raider.kind),
+            ) + bashes,
+        )
+    }
+
+    /// Steps a raider of `kind` takes a phase: skitters take three under
+    /// Salvage.
+    pub fn steps_of(&self, kind: Kind) -> u8 {
+        if kind == Kind::Skitter && self.order == Some(Order::Salvage) {
+            orders::SALVAGE_SKITTER_STEPS
+        } else {
+            kind.steps()
+        }
+    }
+
+    /// Whether the dust storm covers `at` this phase.
+    pub fn in_dust(&self, at: Sector) -> bool {
+        self.storm.is_some_and(|s| s.covers(at))
+    }
+
+    /// The raiders the scan can hear: not the ones in the dust.
+    pub fn heard(&self) -> Vec<&Raider> {
+        self.nearest_first()
+            .into_iter()
+            .filter(|r| !self.in_dust(r.at))
+            .collect()
+    }
+
+    /// The score with the run's bonus on it, for Hard vacuum and the
+    /// call-outs off.
+    pub fn with_bonus(&self, score: u64) -> u64 {
+        score + score * u64::from(self.perks.bonus_percent()) / 100
     }
 
     /// The charges winding up: raider id, its kind and the column aimed at.
@@ -489,6 +624,33 @@ impl Run {
     pub fn forecast_words(&self) -> String {
         let kinds: Vec<Kind> = self.forecast.iter().map(|a| a.kind).collect();
         nights::describe(&kinds)
+    }
+
+    /// "An armoured hulk and a hasty drifter among them." when the forecast
+    /// carries quirks, for a scanner or the quirks unlock to read.
+    pub fn quirk_words(&self) -> Option<String> {
+        let named: Vec<String> = self
+            .forecast
+            .iter()
+            .filter_map(|a| {
+                let q = a.quirk?;
+                Some(match q {
+                    Quirk::Armoured => format!("an armoured {}", a.kind.name()),
+                    q => format!("a {} {}", q.name(), a.kind.name()),
+                })
+            })
+            .collect();
+        let list = match named.as_slice() {
+            [] => return None,
+            [one] => one.clone(),
+            [a, b] => format!("{a} and {b}"),
+            [rest @ .., last] => format!("{} and {last}", rest.join(", ")),
+        };
+        let mut line = format!("{list} among them.");
+        if let Some(first) = line.get_mut(0..1) {
+            first.make_ascii_uppercase();
+        }
+        Some(line)
     }
 
     // ----- The player's turn -----
@@ -606,7 +768,10 @@ impl Run {
             return false;
         }
         let raider = self.raiders.remove(index);
-        let take = raider.kind.drop();
+        let mut take = raider.kind.drop();
+        if self.order == Some(Order::Salvage) {
+            take.metal *= 2;
+        }
         self.colony.resources.add(take);
         self.take.add(take);
         self.score += raider.kind.score();
@@ -627,9 +792,22 @@ impl Run {
 
     // ----- The raiders' phase -----
 
+    /// The raiders in the order they act: the hasty first, then nearest
+    /// the domes first.
+    fn phase_order(&self) -> Vec<u32> {
+        let mut all: Vec<&Raider> = self.raiders.iter().collect();
+        all.sort_by_key(|r| (!r.has(Quirk::Hasty), r.at.row, r.at.col, r.id));
+        all.iter().map(|r| r.id).collect()
+    }
+
     fn raiders_phase(&mut self) {
         self.siphoned = false;
-        let order: Vec<u32> = self.nearest_first().iter().map(|r| r.id).collect();
+        if let Some(storm) = &mut self.storm {
+            storm.advance();
+            let col = storm.col;
+            self.events.push(Event::StormMoved { col });
+        }
+        let order = self.phase_order();
 
         // 1. Charges fire.
         for &id in &order {
@@ -727,7 +905,7 @@ impl Run {
             .filter(|r| r.is_charging() && r.kind.weapon() != Some(Weapon::Siege))
             .count();
         let docile = nights::docile(self.night);
-        let order: Vec<u32> = self.nearest_first().iter().map(|r| r.id).collect();
+        let order = self.phase_order();
         for &id in &order {
             if pending >= MAX_CHARGES {
                 break;
@@ -760,8 +938,11 @@ impl Run {
             });
         }
 
-        // 5. Flak.
+        // 5. Flak. A post in the dust cannot see to fire.
         for post in self.grid.powered_flak() {
+            if self.in_dust(post) {
+                continue;
+            }
             let covered = post.around();
             // Flak scatters off a mothership's or the carrier's hull.
             let target = self
@@ -792,7 +973,8 @@ impl Run {
         let Some(raider) = self.raider(id).cloned() else {
             return;
         };
-        if raider.is_charging() {
+        if raider.is_charging() || self.in_dust(raider.at) {
+            // In the dust a raider loses its step.
             return;
         }
         if raider.kind.crosses() {
@@ -812,9 +994,25 @@ impl Run {
             }
             return;
         }
-        // A wall in the way is bashed every phase, resting or not.
+        // A wall in the way is bashed every phase, resting or not; a
+        // burrowing raider passes under its first one in a single phase.
         if self.grid.is_wall(route[0]) {
-            let down = self.grid.bash(route[0]);
+            if raider.can_burrow() {
+                if let Some(r) = self.raiders.iter_mut().find(|r| r.id == id) {
+                    r.burrowed = true;
+                    r.at = route[0];
+                    r.state = State::Approaching;
+                }
+                self.events.push(Event::Burrowed {
+                    id,
+                    kind: raider.kind,
+                    wall: route[0],
+                });
+                return;
+            }
+            // In the dust a wall takes one bash less.
+            let down =
+                self.grid.bash(route[0]) || (self.in_dust(route[0]) && self.grid.bash(route[0]));
             self.set_state(id, State::Bashing { wall: route[0] });
             self.events.push(Event::Bashed {
                 id,
@@ -834,7 +1032,8 @@ impl Run {
             }
         }
         self.set_state(id, State::Approaching);
-        for &to in route.iter().take(raider.kind.steps() as usize) {
+        let steps = self.steps_of(raider.kind);
+        for &to in route.iter().take(steps as usize) {
             if self.grid.is_wall(to) {
                 break;
             }
@@ -933,7 +1132,7 @@ impl Run {
             let side: i8 = if self.rng.below(2) == 0 { -1 } else { 1 };
             let col = (at.col as i8 + side).clamp(0, COLS as i8 - 1) as u8;
             let spot = Sector::new(col, at.row);
-            let skitter = self.spawn(Kind::Skitter, spot, side);
+            let skitter = self.spawn(Kind::Skitter, spot, side, None);
             self.events.push(Event::Dropped {
                 from: id,
                 id: skitter,
@@ -948,10 +1147,10 @@ impl Run {
         }
     }
 
-    fn spawn(&mut self, kind: Kind, at: Sector, lean: i8) -> u32 {
+    fn spawn(&mut self, kind: Kind, at: Sector, lean: i8, quirk: Option<Quirk>) -> u32 {
         let id = self.next_id;
         self.next_id += 1;
-        let mut raider = Raider::new(id, kind, at);
+        let mut raider = Raider::new(id, kind, at).with_quirk(quirk);
         raider.lean = lean;
         raider.heading = if at.col == 0 { 1 } else { -1 };
         self.raiders.push(raider);
@@ -987,7 +1186,7 @@ impl Run {
                 0
             };
             let at = Sector::new(arrival.col, row);
-            let id = self.spawn(arrival.kind, at, lean);
+            let id = self.spawn(arrival.kind, at, lean, arrival.quirk);
             arrivals.push((id, arrival.kind, at));
         }
         let actions = self.colony.actions();
@@ -996,7 +1195,38 @@ impl Run {
             night: self.night,
             arrivals,
         });
+        if let Some(storm) = &mut self.storm {
+            *storm = Storm::new();
+            self.events.push(Event::StormMoved { col: storm.col });
+        }
+        if self.order == Some(Order::Rationing) {
+            // The raiders step once before the first turn.
+            for id in self.phase_order() {
+                if self.raider(id).is_some() {
+                    self.step(id);
+                }
+            }
+        }
         self.events.push(Event::YourTurn { turn: 1, actions });
+    }
+
+    fn take_order(&mut self, order: Order) -> Result<(), Refusal> {
+        if self.order.is_some() {
+            return Err(Refusal::OrderTaken);
+        }
+        if !self.offered.contains(&order) {
+            return Err(Refusal::NoSuchOrder);
+        }
+        self.order = Some(order);
+        match order {
+            Order::Overclock => {
+                self.colony.charge(orders::OVERCLOCK_SHIELD);
+            }
+            Order::Rationing => self.colony.resources.food += orders::RATIONING_FOOD,
+            Order::Salvage => {}
+        }
+        self.events.push(Event::OrderTaken { order });
+        Ok(())
     }
 
     fn hold_night(&mut self) {
@@ -1007,13 +1237,18 @@ impl Run {
             self.score += CLEAN_NIGHT_POINTS;
         }
         self.tech += NIGHT_HELD_TECH;
+        if self.endless() && self.night == RELIEF_NIGHT {
+            // Relief lands and the long watch goes on.
+            self.tech += RELIEF_TECH;
+        }
         self.events.push(Event::Held {
             night: self.night,
             take: self.take,
             clean,
         });
-        if self.night >= self.relief {
+        if !self.endless() && self.night >= self.relief {
             self.score += (self.colony.resources.power + self.colony.resources.metal) as u64;
+            self.score = self.with_bonus(self.score);
             self.tech += RELIEF_TECH;
             self.phase = Phase::Relief;
             self.events.push(Event::Relief {
@@ -1028,6 +1263,7 @@ impl Run {
 
     fn fall(&mut self) {
         self.phase = Phase::Fallen;
+        self.score = self.with_bonus(self.score);
         self.events.push(Event::Fallen {
             night: self.night,
             score: self.score,
@@ -1038,6 +1274,13 @@ impl Run {
     /// After a night: the colony eats, the buildings produce, the works and
     /// buildings draw their power, and the forecast is read.
     fn open_colony(&mut self) {
+        if let Some(order) = self.order.take() {
+            if order == Order::Overclock {
+                let r = &mut self.colony.resources;
+                r.power = r.power.saturating_sub(orders::OVERCLOCK_POWER);
+                self.events.push(Event::OrderPaid { order });
+            }
+        }
         let r = &mut self.colony.resources;
         r.food = r.food.saturating_sub(colony::FOOD_A_NIGHT);
         let mut dark = Vec::new();
@@ -1080,7 +1323,7 @@ impl Run {
                 self.colony.charge(10);
             }
         }
-        self.forecast = self.draw_forecast();
+        self.read_the_sky();
         self.phase = Phase::Colony;
         self.events.push(Event::ColonyOpens {
             night: self.night,
@@ -1114,7 +1357,30 @@ impl Run {
                 },
                 _ => rng.below(COLS as u32) as u8,
             };
-            out.push(Arrival { kind, col });
+            out.push(Arrival {
+                kind,
+                col,
+                quirk: None,
+            });
+        }
+        // Quirks come after the columns, so the columns of the first nights
+        // are what they always were.
+        let mut quirks = nights::quirks_at_most(self.night);
+        let mut slots: Vec<usize> = (0..out.len()).collect();
+        rng.shuffle(&mut slots);
+        for i in slots {
+            if quirks == 0 {
+                break;
+            }
+            let fits: Vec<Quirk> = Quirk::ALL
+                .into_iter()
+                .filter(|q| q.fits(out[i].kind))
+                .collect();
+            if fits.is_empty() {
+                continue;
+            }
+            out[i].quirk = Some(fits[rng.below(fits.len() as u32) as usize]);
+            quirks -= 1;
         }
         out
     }
@@ -1157,7 +1423,7 @@ impl Run {
     }
 
     fn repair_dome(&mut self) -> Result<(), Refusal> {
-        if self.colony.dome >= colony::DOME_MAX {
+        if self.colony.dome >= self.colony.dome_max {
             return Err(Refusal::DomeWhole);
         }
         if !self.colony.resources.spend(0, colony::DOME_REPAIR_COST) {
@@ -1166,7 +1432,7 @@ impl Run {
                 metal: colony::DOME_REPAIR_COST,
             });
         }
-        self.colony.dome = (self.colony.dome + colony::DOME_REPAIR).min(colony::DOME_MAX);
+        self.colony.dome = (self.colony.dome + colony::DOME_REPAIR).min(self.colony.dome_max);
         self.events.push(Event::DomeRepaired {
             dome: self.colony.dome,
         });
@@ -1200,7 +1466,7 @@ impl Run {
     }
 
     fn make_missile(&mut self) -> Result<(), Refusal> {
-        if self.colony.missiles >= colony::MISSILES_MAX {
+        if self.colony.missiles >= self.colony.missiles_max {
             return Err(Refusal::MissilesFull);
         }
         let (power, metal) = self.colony.missile_cost();
@@ -1217,7 +1483,7 @@ impl Run {
 
 /// A seed for one night's draws, so a saved run resumes on the same
 /// forecast and the same night.
-fn mix(seed: u64, night: u8, salt: u64) -> u64 {
+pub(crate) fn mix(seed: u64, night: u8, salt: u64) -> u64 {
     seed ^ (night as u64).wrapping_mul(0x9E37_79B9_7F4A_7C15)
         ^ salt.wrapping_mul(0xD1B5_4A32_D192_ED03)
 }
