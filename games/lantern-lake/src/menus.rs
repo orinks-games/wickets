@@ -152,7 +152,7 @@ impl SoundCheck {
     pub fn new() -> SoundCheck {
         SoundCheck {
             menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down move through the sounds you need in play. Enter plays the one you are on. Escape goes back.",
+                "Up and Down move through the sounds you need in play. Enter plays the chosen sound. Escape goes back.",
             ),
             preview: Preview::None,
         }

@@ -61,7 +61,7 @@ The meal is scored when every dish is served.
 - Two stars: 75 or more.
 - One star: 55 or more. One star serves the course and opens the next.
 
-Points are the dishes' quality times ten. Set Spoken call-outs to off in Settings, from the title or the pause menu, and cook a whole course by ear alone for 10 percent more. Switching it back on during a course ends the bonus for that course. Every course keeps its best points and best stars. Course select and Records on the title read them back.
+Points are the dishes' quality times ten. Set Spoken call-outs to off in Settings, from the title or the pause menu, and cook a whole course without them for 10 percent more. Switching it back on during a course ends the bonus for that course. Every course keeps its best points and best stars. Course select and Records on the title read them back.
 
 ## Courses
 

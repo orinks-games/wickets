@@ -78,7 +78,7 @@ Some nights the lake is different.
 
 ## Sound check and tutorial
 
-Sound check, on the title, plays each sound you need on the lake with its name and what it means. Tutorial explains the game a page at a time.
+Sound check, on the title, plays each sound you need on the lake. Tutorial explains the game a page at a time.
 
 ## Controls
 

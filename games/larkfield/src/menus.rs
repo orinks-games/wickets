@@ -304,7 +304,7 @@ impl ArrivalMenu {
     pub fn new(h: Shared, lead: String) -> ArrivalMenu {
         ArrivalMenu {
             menu: MenuCore::new(lead).with_intro_help(
-                "Up and Down choose, Enter answers, Escape keeps them waiting at the gate.",
+                "Up and Down choose a reply, Enter gives it, Escape goes back and the caller waits at the gate.",
             ),
             h,
         }

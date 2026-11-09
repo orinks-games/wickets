@@ -205,7 +205,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     Lesson::new(
         ID,
         "Neon Rail",
-        "You fly a stolen combat skimmer through the dead transit lines of Black Sky City, by ear. Learn the skimmer here, at a standstill",
+        "You fly a stolen combat skimmer through the dead transit lines of Black Sky City. Learn the skimmer here, at a standstill",
     )
     .step(lanes)
     .step(tools)

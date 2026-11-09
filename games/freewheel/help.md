@@ -1,6 +1,6 @@
 ## About the game
 
-Freewheel is a street-riding game played by ear, after Cyclepath by Talon. You are a bike courier in Courier City. Parked cars line your right, cars come up behind you, and doors, potholes, curbs and ramps lie ahead. Race the clock in time trials, ride the endless ride until your third crash,{alpha: race the clock with drops that add time,} or take deliveries from the job board. Parcels and deliveries earn cash, which buys new bikes and districts in the bike shop.
+Freewheel is a street-riding game, after Cyclepath by Talon. You are a bike courier in Courier City. Parked cars line your right, cars come up behind you, and doors, potholes, curbs and ramps lie ahead. Race the clock in time trials, ride the endless ride until your third crash,{alpha: race the clock with drops that add time,} or take deliveries from the job board. Parcels and deliveries earn cash, which buys new bikes and districts in the bike shop.
 
 This help gives distances and speeds in metric. Set Units to US in Settings and the game says feet, miles and miles an hour instead: the turn speed is then 13 miles an hour.
 

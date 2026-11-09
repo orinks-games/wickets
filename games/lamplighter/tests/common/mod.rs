@@ -1,5 +1,5 @@
 //! Shared test helpers: a stand-in launcher, and a walker that lights a
-//! hall by its lamps' places, as a player would by ear.
+//! hall by its lamps' places, as a player would.
 
 #![allow(dead_code)]
 

@@ -2,7 +2,7 @@
 
 ## About the game
 
-The doors of Nevermore Manor have locked behind you. A hundred floors in ten wings, from the ground floor down to the heart of the house. Floor select and the journal name each wing as you reach it. Every floor is a chain of rooms. Every room has one sound puzzle, and solving it unlocks the room's exit. Find your way by ear, freeze when a ghost drifts by, and watch your step.
+The doors of Nevermore Manor have locked behind you. A hundred floors in ten wings, from the ground floor down to the heart of the house. Floor select and the journal name each wing as you reach it. Every floor is a chain of rooms. Every room has one sound puzzle, and solving it unlocks the room's exit. Find your way, freeze when a ghost drifts by, and watch your step.
 
 Each floor is built from its number, so floor 40 is the same floor for every player, every time you play it.
 

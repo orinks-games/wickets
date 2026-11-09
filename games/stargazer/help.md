@@ -78,7 +78,7 @@ The result counts when the goals are met, or when you head home with Enter twice
 
 ## Sound check and tutorial
 
-Sound check, on the title, plays each sound you need under the sky with its name and what it means. Tutorial explains the game a page at a time.
+Sound check, on the title, plays each sound you need under the sky. Tutorial explains the game a page at a time.
 
 ## Controls
 

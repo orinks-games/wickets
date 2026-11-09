@@ -319,7 +319,7 @@ impl TitleGame for NeonRail {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear each Neon Rail sound with its name and what it means.".to_string()
+        "Play the sounds you need on the rail.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

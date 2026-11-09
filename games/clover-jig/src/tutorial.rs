@@ -99,7 +99,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
     Lesson::new(
         ID,
         "Clover Jig",
-        "You dance by ear at a village ceili, and a caller calls your steps. Learn in the practice room",
+        "You dance at a village ceili, and a caller calls your steps. Learn in the practice room",
     )
     .step(start)
     .step(dance)

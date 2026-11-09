@@ -45,7 +45,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Basket Run",
     category: Category::Seasonal,
-    blurb: "Easter: run the meadow lanes catching falling eggs in your basket by ear, and dodge the mud.",
+    blurb: "Easter: run the meadow lanes catching falling eggs in your basket, and dodge the mud.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(easter::event),
@@ -253,7 +253,7 @@ impl TitleGame for BasketRun {
                 Some(if on {
                     "Spoken call-outs: on. Each drop is called with its lane.".to_string()
                 } else {
-                    "Spoken call-outs: off. From your next run, play by ear for a tenth more points on everything you bank.".to_string()
+                    "Spoken call-outs: off. From your next run, a tenth more points on everything you bank.".to_string()
                 })
             },
             "When on, a voice names each drop and its lane as it starts to fall. Off for a whole run, you earn a tenth more on everything you bank.",

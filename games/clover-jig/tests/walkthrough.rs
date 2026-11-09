@@ -60,7 +60,7 @@ fn a_first_visit_starts_on_the_tutorial() {
     h.press(Key::Return);
     assert!(spoke(
         &h,
-        "You dance by ear at a village ceili, and a caller calls your steps."
+        "You dance at a village ceili, and a caller calls your steps."
     ));
     assert_eq!(h.app.top_name(), "lesson");
 }

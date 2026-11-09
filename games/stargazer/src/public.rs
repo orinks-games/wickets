@@ -55,7 +55,7 @@ pub const INFO: GameInfo = GameInfo {
     name: NAME,
     category: Category::Cozy,
     blurb:
-        "Lie on a dark hilltop and trace the constellations by ear, under the real season's sky.",
+        "Lie on a dark hilltop and trace the constellations under the real season's sky.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(event),

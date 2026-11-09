@@ -14,7 +14,7 @@ In your own garden, neglected plants wilt and fall silent, but watering brings t
 
 Each step names the planter and what grows in it, for example "Row 1, planter 2: tomato, in bloom, thirsty."
 
-Every plant's sounds come from its own planter. You never need to place a sound by ear alone: S, H and L always tell you where things are.
+Every plant's sounds come from its own planter, and S, H and L always say where things are.
 
 ## Planting
 
@@ -137,7 +137,7 @@ When the goal is met the garden celebrates and the challenge ends. If the days r
 
 ## Sound check
 
-Sound check, on the title menu, lets you learn the gameplay cues and each plant's part in the song. It names each sound and explains what it means.
+Sound check, on the title menu, plays the gameplay cues and each plant's part in the song.
 
 ## Controls
 

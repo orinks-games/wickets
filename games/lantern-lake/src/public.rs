@@ -249,7 +249,7 @@ impl TitleGame for LanternLake {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear each sound you need on the lake, with its name and what it means.".to_string()
+        "Play the sounds you need on the lake.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

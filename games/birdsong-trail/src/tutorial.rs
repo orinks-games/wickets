@@ -77,7 +77,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, glade: Live<WalkScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Birdsong Trail",
-        "You walk a trail at dawn by ear, and answer birds' songs to befriend them. There is no way to fail and no clock. Learn in the practice glade",
+        "You walk a trail at dawn, and answer birds' songs to befriend them. There is no way to fail and no clock. Learn in the practice glade",
     )
     .step(approach)
     .step(answer)

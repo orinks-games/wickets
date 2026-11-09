@@ -34,7 +34,7 @@ pub const ABOUT: [&str; 5] = [
     concat!(
         "Wicket's, version ",
         env!("CARGO_PKG_VERSION"),
-        ". Games played by ear, for blind and visually impaired players, on the Hearken engine."
+        ". Games for blind and visually impaired players, on the Hearken engine."
     ),
     "Games speak through your screen reader or their own voice, and play with keyboard or controller. Sounds are made with genny.",
     "Built-in voice: genny speech, by Oriol Gomez and blal1, used with permission.",

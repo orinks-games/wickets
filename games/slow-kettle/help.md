@@ -62,7 +62,7 @@ H gives a hint for what you are doing: teas on your shelf that suit the guest's 
 
 ## Spoken call-outs
 
-With spoken call-outs on, the kettle's song is also spoken as it changes, such as "Soft hiss, about 80 degrees", and the steep's seconds every 5 seconds. Turn them off in Settings, from the title or the pause menu, to brew by ear alone. Nothing changes in how a cup is judged.
+With spoken call-outs on, the kettle's song is also spoken as it changes, such as "Soft hiss, about 80 degrees", and the steep's seconds every 5 seconds. Turn them off in Settings, from the title or the pause menu, to brew without them. Nothing changes in how a cup is judged.
 
 ## Challenges
 

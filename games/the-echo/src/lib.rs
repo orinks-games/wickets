@@ -45,7 +45,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Puzzle,
-    blurb: "Tune the Echo's pipes by ear until the wobble is still.",
+    blurb: "Tune the Echo's pipes until the wobble is still.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: None,
@@ -161,7 +161,7 @@ impl TitleGame for TheEcho {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear each sound you need in the cellar, with its name and what it means.".to_string()
+        "Play the sounds you need in the cellar.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

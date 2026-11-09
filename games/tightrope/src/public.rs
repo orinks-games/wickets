@@ -1,4 +1,4 @@
-// Tightrope: Cross ever-longer wires high above the city, keeping your balance by sound as the wind gusts.
+// Tightrope: Cross ever-longer wires high above the city, keeping your balance as the wind gusts.
 //
 // Your balance is a tone panned and pitched by your lean. Shift your
 // weight to stay over the wire, step when balanced, ride out gusts that
@@ -37,7 +37,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Tightrope",
     category: Category::Action,
-    blurb: "Cross ever-longer wires high above the city, keeping your balance by sound as the wind gusts.",
+    blurb: "Cross ever-longer wires high above the city, keeping your balance as the wind gusts.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: None,

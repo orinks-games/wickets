@@ -53,7 +53,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hill: Live<NightScreen>) -> Lesson {
                     Some("You are on a star, and its chime rings out.".to_string())
                 }
                 Some(Body::Faint) => Some(
-                    "You are on a faint star. It belongs to no pattern, but you found it by ear."
+                    "You are on a faint star. It belongs to no pattern, but you found it."
                         .to_string(),
                 ),
                 _ => None,

@@ -1,5 +1,5 @@
 //! Nevermore Manor (once Haunted Hallways): Halloween. Find your way down
-//! a haunted house of a hundred floors by sound, and freeze when the ghost
+//! a haunted house of a hundred floors, and freeze when the ghost
 //! comes near.
 //!
 //! A house of ten wings of ten floors, and endless floors below them. Each
@@ -58,7 +58,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Seasonal,
-    blurb: "Halloween: find your way down a haunted house of a hundred floors by sound, and freeze when the ghost comes near.",
+    blurb: "Halloween: find your way down a haunted house of a hundred floors, and freeze when the ghost comes near.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(allhallows::event),
