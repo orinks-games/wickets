@@ -697,9 +697,7 @@ pub fn has_played(ctx: &mut Ctx<Parlor>, id: &str) -> bool {
 /// and the shared results screen call it; a game with none of those calls
 /// it when a session ends.
 pub fn mark_played(ctx: &mut Ctx<Parlor>, id: &str) {
-    if ctx.game.story_scene == Some(id) {
-        ctx.game.story_done = true;
-    }
+    ctx.game.finish_story_scene(id);
     note_played(ctx, id);
 }
 

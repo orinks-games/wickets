@@ -79,11 +79,10 @@ pub struct ParlorData {
     /// Pins the player's local time for story mode, so tests are not tied
     /// to the clock. `None` (the default) reads the trusted clock.
     pub now: Option<hearken::LocalTime>,
-    /// The game story mode has open as a scene, if any.
-    pub story_scene: Option<&'static str>,
-    /// Set once that game finishes a run, so story mode can tell a played
-    /// scene from one the player left early.
-    pub story_done: bool,
+    /// The scene story mode has open, if any: its game, and whether a run
+    /// has finished, so the sitting can tell a played scene from one the
+    /// player left early (see [`StoryScene`]).
+    pub story_scene: Option<StoryScene>,
     /// What the next title opens with, left by the screen sending the
     /// player there and taken whole by the title (see [`TitleOpening`]).
     pub title_opening: Option<TitleOpening>,
@@ -241,6 +240,45 @@ pub enum TitleOpening {
     /// A line said after the first-visit opening, from the screen that
     /// sent the player here: what plays once the tutorial is done.
     Note(String),
+}
+
+/// A story scene while its game is open. The sitting sets `Open` when it
+/// sends the player into the game; [`tutorial::mark_played`] (a finished
+/// run, score or challenge) and a finished lesson move it to `Finished`;
+/// the sitting takes it when the player comes back, and the lobby clears
+/// it. A scene can only be finished while it is open.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum StoryScene {
+    /// The game is open and no run has finished yet.
+    Open(&'static str),
+    /// The game has finished a run, or its lesson.
+    Finished(&'static str),
+}
+
+impl StoryScene {
+    /// The scene's game id.
+    pub fn game(self) -> &'static str {
+        match self {
+            StoryScene::Open(id) | StoryScene::Finished(id) => id,
+        }
+    }
+
+    /// Whether the scene's game has finished a run.
+    pub fn is_finished(self) -> bool {
+        matches!(self, StoryScene::Finished(_))
+    }
+}
+
+impl ParlorData {
+    /// Marks the open story scene finished when it is game `id`'s. Any
+    /// other game, or no open scene, changes nothing.
+    pub fn finish_story_scene(&mut self, id: &str) {
+        if let Some(scene) = self.story_scene {
+            if scene.game() == id {
+                self.story_scene = Some(StoryScene::Finished(scene.game()));
+            }
+        }
+    }
 }
 
 /// Where a game sits in the launcher.
