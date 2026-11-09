@@ -41,7 +41,7 @@ impl Menu for FreestyleMenu {
     type Game = Parlor;
 
     fn name(&self) -> &'static str {
-        "freestyle_menu"
+        "liberty_lights_freestyle_menu"
     }
 
     fn menu(&self) -> &MenuCore<Self, Parlor> {
@@ -173,7 +173,7 @@ impl State<Parlor> for Freestyle {
     }
 
     fn name(&self) -> &'static str {
-        "freestyle"
+        "liberty_lights_freestyle"
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -310,7 +310,7 @@ impl Menu for FreestyleDone {
     type Game = Parlor;
 
     fn name(&self) -> &'static str {
-        "freestyle_done"
+        "liberty_lights_freestyle_done"
     }
 
     fn menu(&self) -> &MenuCore<Self, Parlor> {

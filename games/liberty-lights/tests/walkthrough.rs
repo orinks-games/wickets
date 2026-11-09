@@ -127,7 +127,7 @@ fn perform(h: &mut Headless<Parlor>, launches: &[Launch]) {
 fn play_level_from_title(h: &mut Headless<Parlor>, launches: impl Fn(&[Launch]) -> Vec<Launch>) {
     let level = Progress::load(&mut h.app.ctx).next_level();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
     listen(h);
     let show = level_show(level);
     perform(h, &launches(&show));
@@ -140,14 +140,14 @@ fn play_level_from_title(h: &mut Headless<Parlor>, launches: impl Fn(&[Launch]) 
 fn select_level(h: &mut Headless<Parlor>, level: u32) {
     goto(h, "Level select");
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "level_select");
+    assert_eq!(h.app.top_name(), "liberty_lights_levels");
     h.press(Key::Home);
     for _ in 1..level {
         h.press(Key::Down);
     }
     h.clear();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
 }
 
 #[test]
@@ -162,7 +162,7 @@ fn starting_a_level_speaks_its_intro_and_quiets_the_music() {
     let mut h = start();
     h.clear();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
     assert_eq!(
         h.spoken(),
         ["Level 1. Single firework timing. Hear the show, then launch it back. Space plays the show."]
@@ -311,7 +311,7 @@ fn practice_this_level_replays_the_same_pattern() {
     play_level_from_title(&mut h, |_| Vec::new());
     goto(&mut h, "Practice this level");
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
     listen(&mut h);
     perform(&mut h, &level_show(1));
     h.clear();
@@ -325,7 +325,7 @@ fn next_level_carries_the_run_total() {
     play_level_from_title(&mut h, |show| show.to_vec());
     h.clear();
     h.press(Key::Return); // Next level
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
     assert!(h.spoken()[0].starts_with("Level 2."));
     h.clear();
     h.press(Key::S);
@@ -466,7 +466,7 @@ fn the_grand_finale_runs_until_a_round_fails() {
     goto(&mut h, "Grand finale");
     h.clear();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
     assert!(
         h.spoken()[0].starts_with("Grand finale, round 1. 6 fireworks"),
         "{:?}",
@@ -647,7 +647,7 @@ fn escape_pauses_and_the_pause_menu_returns_to_the_title() {
     assert_eq!(h.app.top_name(), "pause");
     h.clear();
     h.press(Key::Escape);
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
     assert!(h.spoken()[0].starts_with("Level 1. Listen phase."));
     h.press(Key::Escape);
     assert_eq!(
@@ -674,7 +674,7 @@ fn compare_plays_the_show_then_yours() {
     goto(&mut h, "Compare");
     h.clear();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "replay");
+    assert_eq!(h.app.top_name(), "liberty_lights_replay");
     assert_eq!(h.spoken(), ["The show."]);
     for _ in 0..400 {
         h.frame(0.05);
@@ -737,14 +737,14 @@ fn freestyle_composes_saves_and_challenges_your_show() {
     let mut h = start();
     goto(&mut h, "Freestyle show");
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "freestyle_menu");
+    assert_eq!(h.app.top_name(), "liberty_lights_freestyle_menu");
     assert_eq!(last(&h), "Compose a new show. 1 of 3.");
     h.press(Key::Down);
     assert_eq!(last(&h), "No saved show yet. 2 of 3.");
     h.press(Key::Up);
     h.clear();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "freestyle");
+    assert_eq!(h.app.top_name(), "liberty_lights_freestyle");
     assert!(h.spoken()[0].starts_with("Freestyle show. Compose your own show."));
     h.frame(3.0);
     launch(&mut h, Kind::Boom, Pos::Left);
@@ -760,7 +760,7 @@ fn freestyle_composes_saves_and_challenges_your_show() {
     );
     h.clear();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "freestyle_done");
+    assert_eq!(h.app.top_name(), "liberty_lights_freestyle_done");
     assert_eq!(
         h.spoken(),
         [
@@ -793,7 +793,7 @@ fn freestyle_composes_saves_and_challenges_your_show() {
     assert_eq!(h.app.top_name(), "liberty_lights");
     goto(&mut h, "Freestyle show");
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "freestyle_menu");
+    assert_eq!(h.app.top_name(), "liberty_lights_freestyle_menu");
     h.press(Key::Down);
     assert_eq!(
         last(&h),
@@ -802,7 +802,7 @@ fn freestyle_composes_saves_and_challenges_your_show() {
     h.press(Key::Down);
     h.clear();
     h.press(Key::Return); // Match your saved show
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
     assert!(h.spoken()[0].starts_with("Your saved show, 3 fireworks."));
     listen(&mut h);
     perform(&mut h, &saved);
@@ -825,11 +825,11 @@ fn hearing_a_freestyle_show_plays_it_back_and_the_crowd_cheers() {
     h.press(Key::Return);
     h.clear();
     h.press(Key::Return); // Hear your show
-    assert_eq!(h.app.top_name(), "replay");
+    assert_eq!(h.app.top_name(), "liberty_lights_replay");
     for _ in 0..200 {
         h.frame(0.05);
     }
-    assert_eq!(h.app.top_name(), "freestyle_done");
+    assert_eq!(h.app.top_name(), "liberty_lights_freestyle_done");
     assert!(played(&h, "liberty-lights/fireworks/sparkle"));
     assert!(played(&h, "liberty-lights/crowd/cheer"));
     assert!(spoke(&h, "That's the show."));
@@ -841,7 +841,7 @@ fn the_sound_check_names_every_cue() {
     goto(&mut h, "Sound check");
     h.clear();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "sound_check");
+    assert_eq!(h.app.top_name(), "liberty_lights_sounds");
     assert_eq!(h.spoken(), ["Sound check.", "Boom, key 1. 1 of 18."]);
     h.clear();
     h.press(Key::Return);
@@ -895,7 +895,7 @@ fn the_practice_room_is_a_launch_range_naming_each_firework() {
     goto(&mut h, "Practice room");
     h.clear();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "range");
+    assert_eq!(h.app.top_name(), "liberty_lights_range");
     assert!(h.spoken()[0].starts_with("Practice room, a launch range"));
     h.clear();
     launch(&mut h, Kind::Whistle, Pos::Left);

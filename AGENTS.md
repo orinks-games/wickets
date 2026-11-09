@@ -132,3 +132,14 @@ apply to player text, release notes, changelogs, README, PR text and docs.
 `tools/check_text.py` flags the fixed phrases above it can catch (rule
 `ai-phrase`). The rest is judgment: read the line as a player hears it at
 speed, and cut what it does not need.
+
+## Code rule: a screen's name says its game
+
+Every Hearken `State` (and `Menu`) in a game crate returns a `name()` that
+starts with the game's id, hyphens as underscores: `signal_box_play`,
+`lamplighter_sounds`. The agent server's `screen` tool prints that name,
+tests compare against it and `pop_to` jumps to it, so a bare `show` or
+`sound_check` says nothing about where the player is. A game that wraps a
+shared screen (`results`, `pages`) keeps the shared name. No two screens
+share a name. `python3 tools/check_screen_names.py` enforces this in CI;
+`--list` prints every screen and where it lives.

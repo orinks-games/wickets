@@ -107,7 +107,7 @@ impl Menu for Riddle {
     type Game = Parlor;
 
     fn name(&self) -> &'static str {
-        "riddle"
+        "story_riddle"
     }
 
     fn menu(&self) -> &MenuCore<Self, Parlor> {

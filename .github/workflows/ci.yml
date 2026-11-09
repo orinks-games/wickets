@@ -53,6 +53,7 @@ jobs:
       - run: python3 tools/render_sounds.py --check
       - run: python3 tools/check_test_targets.py
       - run: python3 tools/check_text.py
+      - run: python3 tools/check_screen_names.py
       - run: python3 -m unittest discover -s tools
 
   # Clippy runs once, on Linux: the Windows and Mac time goes to the tests.

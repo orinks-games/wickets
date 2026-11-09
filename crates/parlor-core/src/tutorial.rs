@@ -669,9 +669,57 @@ fn played_key(id: &str) -> String {
     format!("{id}/played")
 }
 
+/// How well the player knows a game, read from its saved keys. The title
+/// and story mode decide from this: `New` says "New here?", starts the
+/// cursor on Tutorial and plans a lesson; anything else plays. Finishing
+/// the tutorial ([`mark_tutorial_done`]) and finishing a run
+/// ([`mark_played`]) each move it one way; nothing moves it back.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Familiarity {
+    /// Never taught, never played.
+    New,
+    /// Finished the tutorial, no run yet.
+    Taught,
+    /// Finished a run, scored or played a challenge, tutorial not finished.
+    Played,
+    /// Both taught and played.
+    Settled,
+}
+
+impl Familiarity {
+    /// Whether the player has finished the tutorial.
+    pub fn taught(self) -> bool {
+        matches!(self, Familiarity::Taught | Familiarity::Settled)
+    }
+
+    /// Whether the player has played the game.
+    pub fn played(self) -> bool {
+        matches!(self, Familiarity::Played | Familiarity::Settled)
+    }
+}
+
+/// The player's familiarity with game `id`.
+pub fn familiarity(ctx: &mut Ctx<Parlor>, id: &str) -> Familiarity {
+    let taught: bool = Records::load(ctx, &tutorial_key(id));
+    let played = Records::load::<bool>(ctx, &played_key(id)) || {
+        // Saves from before the flag: any score or challenge result counts.
+        let scores: std::collections::BTreeMap<String, u64> =
+            Records::load(ctx, &format!("{id}/scores"));
+        let challenges: std::collections::BTreeMap<String, u64> =
+            Records::load(ctx, &format!("{id}/challenges"));
+        !scores.is_empty() || !challenges.is_empty()
+    };
+    match (taught, played) {
+        (false, false) => Familiarity::New,
+        (true, false) => Familiarity::Taught,
+        (false, true) => Familiarity::Played,
+        (true, true) => Familiarity::Settled,
+    }
+}
+
 /// Whether the player has finished this game's tutorial.
 pub fn tutorial_done(ctx: &mut Ctx<Parlor>, id: &str) -> bool {
-    Records::load(ctx, &tutorial_key(id))
+    familiarity(ctx, id).taught()
 }
 
 /// Notes that the player has finished this game's tutorial.
@@ -682,24 +730,14 @@ pub fn mark_tutorial_done(ctx: &mut Ctx<Parlor>, id: &str) {
 /// Whether the player has played this game: finished a run, saved a score
 /// or played a challenge, from anywhere in the parlor.
 pub fn has_played(ctx: &mut Ctx<Parlor>, id: &str) -> bool {
-    if Records::load::<bool>(ctx, &played_key(id)) {
-        return true;
-    }
-    // Saves from before the flag: any score or challenge result counts.
-    let scores: std::collections::BTreeMap<String, u64> =
-        Records::load(ctx, &format!("{id}/scores"));
-    let challenges: std::collections::BTreeMap<String, u64> =
-        Records::load(ctx, &format!("{id}/challenges"));
-    !scores.is_empty() || !challenges.is_empty()
+    familiarity(ctx, id).played()
 }
 
 /// Notes that the player has played this game. Scores, challenge results
 /// and the shared results screen call it; a game with none of those calls
 /// it when a session ends.
 pub fn mark_played(ctx: &mut Ctx<Parlor>, id: &str) {
-    if ctx.game.story_scene == Some(id) {
-        ctx.game.story_done = true;
-    }
+    ctx.game.finish_story_scene(id);
     note_played(ctx, id);
 }
 
@@ -714,7 +752,7 @@ pub fn note_played(ctx: &mut Ctx<Parlor>, id: &str) {
 /// Whether a new player should be taught this game: never played and
 /// never taught. Story mode skips the lesson when this is false.
 pub fn needs_lesson(ctx: &mut Ctx<Parlor>, id: &str) -> bool {
-    !tutorial_done(ctx, id) && !has_played(ctx, id)
+    familiarity(ctx, id) == Familiarity::New
 }
 
 #[cfg(test)]
@@ -779,6 +817,24 @@ mod tests {
         assert_eq!(h.app.top_name(), "base");
         assert!(tutorial_done(&mut h.app.ctx, "dummy"));
         assert!(!needs_lesson(&mut h.app.ctx, "dummy"));
+    }
+
+    #[test]
+    fn familiarity_moves_one_way_from_new() {
+        let mut h = Headless::new(Default::default(), Base);
+        let ctx = &mut h.app.ctx;
+        assert_eq!(familiarity(ctx, "dummy"), Familiarity::New);
+        assert!(needs_lesson(ctx, "dummy"));
+        mark_tutorial_done(ctx, "dummy");
+        assert_eq!(familiarity(ctx, "dummy"), Familiarity::Taught);
+        assert!(!needs_lesson(ctx, "dummy") && !has_played(ctx, "dummy"));
+        mark_played(ctx, "dummy");
+        assert_eq!(familiarity(ctx, "dummy"), Familiarity::Settled);
+        // A save from before the played flag: a score counts as played.
+        let scores: std::collections::BTreeMap<String, u64> = [("a".to_string(), 1)].into();
+        Records::store(ctx, "old/scores", &scores);
+        assert_eq!(familiarity(ctx, "old"), Familiarity::Played);
+        assert!(has_played(ctx, "old") && !tutorial_done(ctx, "old"));
     }
 
     #[test]

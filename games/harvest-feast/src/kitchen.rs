@@ -779,7 +779,7 @@ impl State<Parlor> for Kitchen {
     }
 
     fn name(&self) -> &'static str {
-        "kitchen"
+        "harvest_feast_kitchen"
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {

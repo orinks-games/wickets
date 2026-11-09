@@ -84,7 +84,7 @@ impl Menu for SoundCheck {
     type Game = Parlor;
 
     fn name(&self) -> &'static str {
-        "sound_check"
+        "liberty_lights_sounds"
     }
 
     fn menu(&self) -> &MenuCore<Self, Parlor> {
@@ -249,7 +249,7 @@ impl State<Parlor> for Range {
     }
 
     fn name(&self) -> &'static str {
-        "range"
+        "liberty_lights_range"
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
