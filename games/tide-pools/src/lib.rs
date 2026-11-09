@@ -1,4 +1,4 @@
-//! Tide Pools: Wander the beach at low tide, gather shells and creatures by sound, and stock your own aquarium.
+//! Tide Pools: Wander the beach at low tide, gather shells and creatures, and stock your own aquarium.
 //!
 //! A calm game with no way to fail. Walk a strip of rock pools at low
 //! tide, lean in to listen, and gather what you hear: crabs, shells,
@@ -44,7 +44,8 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Tide Pools",
     category: Category::Cozy,
-    blurb: "Wander the beach at low tide, gather shells and creatures by sound, and stock your own aquarium.",
+    blurb:
+        "Wander the beach at low tide, gather shells and creatures, and stock your own aquarium.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -52,7 +53,10 @@ pub const INFO: GameInfo = GameInfo {
     tutorial: crate::tutorial::lesson,
     settings: <TidePools as parlor_core::menus::TitleGame>::settings,
     story: parlor_core::story::StoryTags {
-        times: &[parlor_core::story::PartOfDay::Morning, parlor_core::story::PartOfDay::Afternoon],
+        times: &[
+            parlor_core::story::PartOfDay::Morning,
+            parlor_core::story::PartOfDay::Afternoon,
+        ],
         seasons: &[parlor_core::Season::Spring, parlor_core::Season::Summer],
     },
 };
