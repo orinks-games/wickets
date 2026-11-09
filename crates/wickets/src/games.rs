@@ -45,6 +45,7 @@ fn every_game() -> Vec<GameInfo> {
         birdsong_trail::INFO,
         riverboat_dice::INFO,
         fireside_patience::INFO,
+        dustfall::INFO,
     ]
 }
 

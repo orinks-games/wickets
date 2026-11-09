@@ -473,10 +473,26 @@ impl Run {
         match target {
             Some(id) => {
                 self.damage(id, 1, Hitter::Gun);
+                if self.hold_if_clear() {
+                    return;
+                }
             }
             None => self.events.push(Event::DryShot { col: self.gun }),
         }
         self.spend_action();
+    }
+
+    /// The last raider fell to the player's own shot: the night is held at
+    /// once, and the actions left after that shot charge the shield.
+    /// Returns whether it was.
+    fn hold_if_clear(&mut self) -> bool {
+        if !self.raiders.is_empty() {
+            return false;
+        }
+        if let Phase::Turn { actions } = self.phase {
+            self.end_turn(actions.saturating_sub(1));
+        }
+        true
     }
 
     fn missile(&mut self) -> Result<(), Refusal> {
@@ -492,7 +508,9 @@ impl Run {
             .ok_or(Refusal::NoTarget)?;
         self.colony.missiles -= 1;
         self.damage(target, colony::MISSILE_DAMAGE, Hitter::Missile);
-        self.spend_action();
+        if !self.hold_if_clear() {
+            self.spend_action();
+        }
         Ok(())
     }
 
