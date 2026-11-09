@@ -1,15 +1,17 @@
-//! The night: the gun on its rail, the raiders coming down, and the beats
-//! that tell the player what each one did.
+//! The night: the gun on its rail, the raiders coming down the lanes in
+//! real time, and what the player hears of each.
 //!
-//! The rules run the raiders' whole phase at once. The screen turns those
-//! events into beats, each a sound where it happened and a short line, and
-//! plays them one at a time so the player can follow.
+//! The rules tick ten times a second. Each raider has an engine looped at
+//! its place in the sky, so a lane with three raiders is three sounds at
+//! three distances. A lock tone pulses under the gun while a raider is in
+//! its lane, faster as it nears. Everything else the rules raise as an
+//! event is a sound where it happened and, when it matters, a few words.
 
-use std::collections::VecDeque;
+use std::collections::HashMap;
 
 use hearken::text::sentence_start;
 use hearken::visuals::{Scene, GOLD, PAPER, RED, TEAL};
-use hearken::{Bus, Ctx, InputEvent, Key, Sound, State, Vec3};
+use hearken::{Bus, Ctx, InputEvent, Key, Sound, State};
 use parlor_core::menus::{self, labels, Back, Results};
 use parlor_core::unlocks::earned_line;
 use parlor_core::{
@@ -22,17 +24,30 @@ use crate::music::{Conductor, Pressure, Stab};
 use crate::progress::{
     nights_phrase, Progress, LONG_WATCH_BOARD, NIGHTS_BOARD, SCORE_BOARD, STORM_BOARD,
 };
-use crate::rules::grid::{column_name, Work, COLS, NEAR_ROW, ROWS};
+use crate::rules::lanes::{lane_name, HORIZON, LANES, MID};
 use crate::rules::nights::RELIEF_NIGHT;
 use crate::rules::raiders::State as RaiderState;
 use crate::rules::{
-    Building, Event, Hitter, Input, Kind, Phase, Raider, Refusal, Run, Sector, Weapon,
-    CLEAN_NIGHT_POINTS,
+    Building, Event, Hitter, Input, Kind, Phase, Raider, Range, Refusal, Run, Weapon,
+    CLEAN_NIGHT_POINTS, TICKS_A_SECOND,
 };
 use crate::{sound, unlocks, Start};
 use crate::{HELP, ID, TITLE_NAME};
 
 pub const NIGHT_NAME: &str = "dustfall_night";
+
+/// Seconds a rules tick lasts.
+const TICK_SECS: f64 = 1.0 / TICKS_A_SECOND as f64;
+/// Ticks one frame may catch up at most, so a stall does not land half a
+/// night at once.
+const MAX_TICKS_A_FRAME: u32 = 5;
+/// Seconds between lock-tone pulses with the raider at the horizon, and
+/// at the dome.
+const LOCK_FAR: f64 = 0.7;
+const LOCK_NEAR: f64 = 0.12;
+/// Seconds between one "Out of range" and the next while the gun hammers
+/// a far mothership.
+const GLANCE_EVERY: f64 = 3.0;
 
 /// About how long a line takes to say.
 pub fn speech_secs(text: &str) -> f64 {
@@ -56,145 +71,58 @@ fn hits_phrase(n: u8) -> String {
     }
 }
 
-/// "1 action", "2 actions".
-pub fn actions_phrase(n: u8) -> String {
-    if n == 1 {
-        "1 action".to_string()
-    } else {
-        format!("{n} actions")
-    }
-}
-
-/// "Hulk, right, row 4, 3 hits, charging at the centre."
+/// "Hulk, right, near, 3 hits, winding up at the centre."
 pub fn raider_line(raider: &Raider) -> String {
-    let state = match raider.state {
-        RaiderState::Approaching if raider.kind.crosses() => ", crossing".to_string(),
-        RaiderState::Approaching => String::new(),
-        RaiderState::Charging { col, .. } => format!(", charging at the {}", column_name(col)),
-        RaiderState::Bashing { .. } => ", bashing a wall".to_string(),
-        RaiderState::Holding => ", holding".to_string(),
+    let doing = match (raider.state, raider.charge) {
+        (_, Some(c)) if c.weapon == Weapon::Siege => ", winding up a siege shot".to_string(),
+        (_, Some(c)) => format!(", winding up at the {}", lane_name(c.lane)),
+        (RaiderState::Crossing, None) => ", crossing".to_string(),
+        (RaiderState::Hovering, None) => ", holding".to_string(),
+        (RaiderState::Falling, None) => String::new(),
     };
-    format!("{}, {}{state}.", raider.words(), hits_phrase(raider.hits))
+    format!("{}, {}{doing}.", raider.words(), hits_phrase(raider.hits))
 }
 
-/// One thing that happened, as the player hears it.
-struct Beat {
-    sounds: Vec<(&'static str, Option<Vec3>)>,
-    line: Option<String>,
-    /// Seconds before the next beat, at least.
-    hold: f64,
-    /// Plays the moment it is made: the player's own action.
-    now: bool,
-    /// Holds the player's actions until it has played: the raiders' phase.
-    /// The night's opening and the turn chime do not, so an eager player
-    /// can act over them.
-    blocking: bool,
-    /// A stab the score plays with the beat.
-    stab: Option<Stab>,
-    /// The column the dust storm's wind moves to with the beat.
-    storm_col: Option<u8>,
-}
-
-impl Beat {
-    fn new(hold: f64) -> Beat {
-        Beat {
-            sounds: Vec::new(),
-            line: None,
-            hold,
-            now: false,
-            blocking: true,
-            stab: None,
-            storm_col: None,
-        }
-    }
-
-    fn stab(mut self, stab: Option<Stab>) -> Beat {
-        self.stab = stab;
-        self
-    }
-
-    fn storm(mut self, col: u8) -> Beat {
-        self.storm_col = Some(col);
-        self
-    }
-
-    fn open(mut self) -> Beat {
-        self.blocking = false;
-        self
-    }
-
-    fn at(mut self, key: &'static str, at: Sector) -> Beat {
-        self.sounds.push((key, Some(sound::sector_pos(at))));
-        self
-    }
-
-    fn under(mut self, key: &'static str, col: u8) -> Beat {
-        self.sounds.push((key, Some(sound::column_pos(col))));
-        self
-    }
-
-    fn plain(mut self, key: &'static str) -> Beat {
-        self.sounds.push((key, None));
-        self
-    }
-
-    fn say(mut self, line: impl Into<String>) -> Beat {
-        self.line = Some(line.into());
-        self
-    }
-
-    fn now(mut self) -> Beat {
-        self.now = true;
-        self
-    }
-
-    fn play(&self, ctx: &mut Ctx<Parlor>) {
-        for (key, pos) in &self.sounds {
-            match pos {
-                Some(pos) => ctx.audio.play_at(key, *pos, Bus::EFFECTS),
-                None => ctx.audio.play(key, Bus::EFFECTS),
-            };
-        }
-    }
-
-    fn secs(&self) -> f64 {
-        self.line
-            .as_deref()
-            .map_or(self.hold, |l| self.hold.max(speech_secs(l)))
-    }
+/// Where the screen goes once the night's last line has been said.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+enum Ending {
+    /// The night was held: the colony phase.
+    Colony,
+    /// Relief or the fallen dome: the results.
+    Finish,
 }
 
 pub struct NightScreen {
     run: Shared,
-    queue: VecDeque<Beat>,
-    wait: f64,
+    /// Seconds not yet ticked.
+    acc: f64,
+    /// Each raider's engine loop, by id.
+    engines: HashMap<u32, Sound>,
+    /// Seconds until the lock tone pulses again.
+    lock_wait: f64,
     /// The raider the scan rests on.
     pub scanned: Option<u32>,
     last: String,
     status_key: StatusKey,
     call_outs: bool,
-    confirm_end: bool,
     left_to_right: bool,
-    /// Enter was pressed once with actions left.
-    confirming: bool,
-    /// The player has been told the raiders are moving.
-    told_wait: bool,
-    /// The dome as the last beat knew it, to hear a breach reach it.
+    /// The dome as the last event knew it, to hear a hit reach it.
     dome_seen: u32,
     /// What the night left for the colony phase.
     notices: Vec<String>,
-    /// Charges announced in the batch being spoken, so the turn line does
-    /// not repeat them.
-    fresh_charges: Vec<(Kind, u8)>,
-    /// The score, following the grid.
+    /// The score, following the sky.
     music: Conductor,
-    /// The dust storm's wind, at the column it covers.
+    /// The dust storm's wind, at the lane it covers.
     wind: Option<Sound>,
+    /// The night is over: seconds until the screen moves on, and where.
+    ending: Option<(f64, Ending)>,
     ended: bool,
     /// For the tutorial: the controls tried.
     pub status_asked: bool,
     pub hint_asked: bool,
-    pub turns_ended: u32,
+    /// Seconds since "Out of range" was last said.
+    glanced_ago: f64,
+    pub shots: u32,
 }
 
 impl NightScreen {
@@ -207,23 +135,22 @@ impl NightScreen {
             music: Conductor::night(seed),
             wind: None,
             run,
-            queue: VecDeque::new(),
-            fresh_charges: Vec::new(),
-            wait: 0.0,
+            acc: 0.0,
+            engines: HashMap::new(),
+            lock_wait: 0.0,
             scanned: None,
             last: String::new(),
             status_key: StatusKey::new(),
             call_outs: true,
-            confirm_end: false,
             left_to_right: false,
-            confirming: false,
-            told_wait: false,
             dome_seen: dome,
             notices: Vec::new(),
+            ending: None,
             ended: false,
             status_asked: false,
             hint_asked: false,
-            turns_ended: 0,
+            glanced_ago: GLANCE_EVERY,
+            shots: 0,
         }
     }
 
@@ -240,26 +167,9 @@ impl NightScreen {
         self.mode() == Mode::Practice
     }
 
-    /// Whether the raiders' beats are still playing.
-    pub fn busy(&self) -> bool {
-        self.queue.iter().any(|b| b.blocking)
-    }
-
-    /// Drops beats the player need not wait for, such as the arrivals,
-    /// when the player acts over them.
-    fn flush(&mut self, ctx: &mut Ctx<Parlor>) {
-        if self.queue.is_empty() {
-            return;
-        }
-        self.queue.clear();
-        self.wait = 0.0;
-        ctx.stop_speech();
-    }
-
     fn settings(&mut self, ctx: &mut Ctx<Parlor>) {
         let p = Progress::load(ctx);
         self.call_outs = p.call_outs;
-        self.confirm_end = p.confirm_end;
         self.left_to_right = p.scan_left_to_right;
         if p.call_outs {
             // The quiet bonus is for a whole colony with the call-outs off.
@@ -270,7 +180,7 @@ impl NightScreen {
             (Some(storm), true, None) => {
                 let s = ctx.audio.start_loop(
                     sound::STORM_WIND,
-                    Some(sound::column_pos(storm.col)),
+                    Some(sound::lane_pos(storm.lane)),
                     Bus::AMBIENCE,
                 );
                 self.wind = Some(s);
@@ -283,10 +193,10 @@ impl NightScreen {
         }
     }
 
-    /// Moves the wind to the column the storm covers.
-    fn move_wind(&mut self, ctx: &mut Ctx<Parlor>, col: u8) {
+    /// Moves the wind to the lane the storm covers.
+    fn move_wind(&mut self, ctx: &mut Ctx<Parlor>, lane: u8) {
         if let Some(s) = self.wind {
-            ctx.audio.set_position(s, Some(sound::column_pos(col)));
+            ctx.audio.set_position(s, Some(sound::lane_pos(lane)));
         }
     }
 
@@ -296,15 +206,75 @@ impl NightScreen {
         }
     }
 
-    /// Plays a beat's sounds, stab and storm move.
-    fn sound_beat(&mut self, ctx: &mut Ctx<Parlor>, beat: &Beat) {
-        beat.play(ctx);
-        if let Some(stab) = beat.stab {
-            self.music.stab(&mut ctx.audio, stab);
+    // --- the engines and the lock tone ---------------------------------------
+
+    fn start_engine(&mut self, ctx: &mut Ctx<Parlor>, id: u32) {
+        let Some((kind, lane, height)) = self
+            .run
+            .borrow()
+            .raider(id)
+            .map(|r| (r.kind, r.lane, r.height))
+        else {
+            return;
+        };
+        let s = ctx.audio.start_loop(
+            sound::engine(kind),
+            Some(sound::sky_pos(lane, height)),
+            Bus::EFFECTS,
+        );
+        self.engines.insert(id, s);
+    }
+
+    fn stop_engine(&mut self, ctx: &mut Ctx<Parlor>, id: u32, fade_ms: u32) {
+        if let Some(s) = self.engines.remove(&id) {
+            ctx.audio.stop(s, fade_ms);
         }
-        if let Some(col) = beat.storm_col {
-            self.move_wind(ctx, col);
+        if self.scanned == Some(id) {
+            self.scanned = None;
         }
+    }
+
+    fn stop_engines(&mut self, ctx: &mut Ctx<Parlor>, fade_ms: u32) {
+        for (_, s) in self.engines.drain() {
+            ctx.audio.stop(s, fade_ms);
+        }
+    }
+
+    /// Puts every engine where its raider is, and silences the ones in
+    /// the dust.
+    fn place_engines(&mut self, ctx: &mut Ctx<Parlor>) {
+        let run = self.run.borrow();
+        for raider in &run.raiders {
+            let Some(&s) = self.engines.get(&raider.id) else {
+                continue;
+            };
+            ctx.audio
+                .set_position(s, Some(sound::sky_pos(raider.lane, raider.height)));
+            let volume = if run.in_dust(raider.lane) { 0.0 } else { 1.0 };
+            ctx.audio.set_volume(s, volume);
+        }
+    }
+
+    /// The lock tone pulses while a raider is in the gun's lane, faster
+    /// as it nears, and stops the moment the lane is clear.
+    fn lock(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
+        let under = {
+            let run = self.run.borrow();
+            run.under(run.gun)
+                .filter(|r| !run.in_dust(r.lane))
+                .map(|r| (r.height, run.gun))
+        };
+        let Some((height, gun)) = under else {
+            self.lock_wait = 0.0;
+            return;
+        };
+        self.lock_wait -= dt;
+        if self.lock_wait > 0.0 {
+            return;
+        }
+        sound::under(ctx, sound::LOCK, gun);
+        let far = height as f64 / HORIZON as f64;
+        self.lock_wait = LOCK_NEAR + (LOCK_FAR - LOCK_NEAR) * far;
     }
 
     fn tell(&mut self, ctx: &mut Ctx<Parlor>, text: String) {
@@ -312,50 +282,34 @@ impl NightScreen {
         ctx.say(text);
     }
 
-    // --- events to beats ---------------------------------------------------
+    // --- events ------------------------------------------------------------
 
-    /// Turns the run's events into beats. The player's own beats play at
-    /// once; the raiders' queue up.
+    /// Turns the run's events into sound and speech, at once.
     fn drain(&mut self, ctx: &mut Ctx<Parlor>) {
         let events = self.run.borrow_mut().take_events();
-        self.fresh_charges = events
-            .iter()
-            .filter_map(|e| match e {
-                Event::Charging { kind, col, .. } => Some((*kind, *col)),
-                _ => None,
-            })
-            .collect();
         let mut first = true;
-        for (event, count) in group_steps(events) {
-            let Some(beat) = self.beat(&event, count) else {
-                continue;
-            };
-            if beat.now && self.queue.is_empty() {
-                self.sound_beat(ctx, &beat);
-                if let Some(line) = &beat.line {
-                    self.last = line.clone();
-                    if first {
-                        ctx.say(line.clone());
-                    } else {
-                        ctx.say_queued(line.clone());
-                    }
-                    first = false;
+        for event in events {
+            if let Some(line) = self.hear(ctx, &event) {
+                self.last = line.clone();
+                if first {
+                    ctx.say(line);
+                } else {
+                    ctx.say_queued(line);
                 }
-            } else {
-                self.queue.push_back(beat);
+                first = false;
             }
         }
     }
 
-    /// The beat for an event. `count` is how many raiders of one kind
-    /// stepped onto the same sector in this phase, for a Stepped event.
-    fn beat(&mut self, event: &Event, count: usize) -> Option<Beat> {
-        let run = self.run.borrow();
-        let beat = match event {
-            Event::NightOpens { night, arrivals } => {
+    /// Plays an event's sounds and returns what, if anything, to say.
+    fn hear(&mut self, ctx: &mut Ctx<Parlor>, event: &Event) -> Option<String> {
+        let call_outs = self.call_outs;
+        match event {
+            Event::NightOpens { night, .. } => {
+                let run = self.run.borrow();
                 let mut opening = format!(
                     "Night {night}, gun at the {}. {}.",
-                    column_name(run.gun),
+                    lane_name(run.gun),
                     sentence_start(&run.forecast_words())
                 );
                 if run.colony.has(Building::Scanner) || run.perks.forecast_quirks {
@@ -364,125 +318,151 @@ impl NightScreen {
                         opening.push_str(&quirks);
                     }
                 }
-                let mut beats = vec![Beat::new(0.5).open().say(opening)];
-                for (_, kind, at) in arrivals {
-                    let mut b = Beat::new(0.5).open().at(sound::ARRIVE, *at);
-                    if self.call_outs {
-                        let crossing = if kind.crosses() { ", crossing" } else { "" };
-                        b = b.say(format!(
-                            "{} at the {}{crossing}.",
-                            sentence_start(&a(*kind)),
-                            column_name(at.col)
-                        ));
-                    }
-                    beats.push(b);
-                }
-                drop(run);
-                let last = beats.pop();
-                self.queue.extend(beats);
-                return last;
+                Some(opening)
             }
-            Event::YourTurn { turn, actions } => {
-                let mut line = String::new();
-                for (kind, col, n) in grouped_charges(&run) {
-                    if self.fresh_charges.contains(&(kind, col)) {
-                        continue;
-                    }
-                    line.push_str(&format!(
-                        "{} charging at the {}. ",
-                        sentence_start(&some(kind, n, "is", "are")),
-                        column_name(col)
-                    ));
-                }
-                if *turn == 1 || run.colony.hungry() {
-                    line.push_str(&format!("Your turn, {}.", actions_phrase(*actions)));
+            Event::WaveClear { wave, of } => {
+                ctx.audio.play(sound::WAVE_CLEAR, Bus::EFFECTS);
+                Some(format!("Wave {wave} of {of} down."))
+            }
+            Event::WaveComing { wave, of, kinds } => {
+                ctx.audio.play(sound::WAVE, Bus::EFFECTS);
+                if call_outs {
+                    Some(format!(
+                        "Wave {wave} of {of}: {}.",
+                        crate::rules::nights::describe(kinds)
+                    ))
                 } else {
-                    line.push_str("Your turn.");
+                    Some(format!("Wave {wave} of {of}."))
                 }
-                Beat::new(0.4).open().plain(sound::TURN).say(line)
             }
-            Event::Moved { col, under } => {
-                let in_column = under
-                    .map(|(kind, row)| format!(", {} at row {row}", a(kind)))
-                    .unwrap_or_default();
-                Beat::new(0.3)
-                    .under(sound::GUN_RAIL, *col)
-                    .say(format!("{}{in_column}.", sentence_start(column_name(*col))))
-                    .now()
+            Event::Arrived { id, kind, lane, .. } | Event::Dropped { id, kind, lane, .. } => {
+                self.start_engine(ctx, *id);
+                let dusted = self.run.borrow().in_dust(*lane);
+                if dusted {
+                    return None;
+                }
+                let height = self.run.borrow().raider(*id).map_or(HORIZON, |r| r.height);
+                sound::at(ctx, sound::ARRIVE, *lane, height);
+                let stab = match kind {
+                    Kind::Hulk | Kind::Mothership | Kind::Carrier => Some(Stab::Heavy),
+                    Kind::Skitter => Some(Stab::Run),
+                    _ => None,
+                };
+                if let Some(stab) = stab {
+                    self.music.stab(&mut ctx.audio, stab);
+                }
+                if !call_outs {
+                    return None;
+                }
+                let title = self
+                    .run
+                    .borrow()
+                    .raider(*id)
+                    .map_or_else(|| kind.title().to_string(), |r| r.title());
+                let what = match (event, kind) {
+                    (Event::Dropped { .. }, _) => format!("{title} dropped, {}.", lane_name(*lane)),
+                    (_, Kind::Mule | Kind::Carrier) => {
+                        format!("{title}, crossing from the {}.", lane_name(*lane))
+                    }
+                    _ => format!("{title}, {}.", lane_name(*lane)),
+                };
+                Some(what)
             }
-            Event::DryShot { col } => Beat::new(0.5)
-                .under(sound::GUN_FIRE, *col)
-                .say(format!("Nothing at the {}.", column_name(*col)))
-                .now(),
-            Event::Hit {
-                kind, at, left, by, ..
+            Event::Ranged {
+                id, lane, range, ..
             } => {
-                let (beat, word) = hitter(Beat::new(0.7), *by, *at);
-                beat.at(sound::GUN_HIT, *at).say(format!(
-                    "{word}. {}, {} left.",
-                    kind.title(),
-                    left
-                ))
+                if *range != Range::Near || !call_outs || self.run.borrow().in_dust(*lane) {
+                    return None;
+                }
+                let title = self.run.borrow().raider(*id).map(|r| r.title())?;
+                Some(format!("{title} near, {}.", lane_name(*lane)))
+            }
+            Event::Moved { lane, under } => {
+                sound::under(ctx, sound::GUN_RAIL, *lane);
+                let in_lane = under
+                    .map(|(kind, range)| {
+                        format!(" {}, {}.", sentence_start(&a(kind)), range.name())
+                    })
+                    .unwrap_or_default();
+                Some(format!("{}.{in_lane}", sentence_start(lane_name(*lane))))
+            }
+            Event::DryShot { lane } => {
+                sound::under(ctx, sound::GUN_FIRE, *lane);
+                None
+            }
+            Event::Glanced { lane, height, .. } => {
+                sound::under(ctx, sound::GUN_FIRE, *lane);
+                sound::at(ctx, sound::CHARGE_PASS, *lane, *height);
+                if self.glanced_ago < GLANCE_EVERY {
+                    return None;
+                }
+                self.glanced_ago = 0.0;
+                Some("Out of range.".to_string())
+            }
+            Event::Hit {
+                id,
+                kind,
+                lane,
+                height,
+                left,
+                by,
+            } => {
+                self.hitter(ctx, *by, *lane);
+                sound::at(ctx, sound::GUN_HIT, *lane, *height);
+                if !call_outs || kind.hits() < 3 {
+                    return None;
+                }
+                let title = self.run.borrow().raider(*id).map(|r| r.title())?;
+                Some(format!("{title}, {left} left."))
             }
             Event::Down {
-                kind, at, take, by, ..
+                id,
+                kind,
+                lane,
+                height,
+                by,
+                ..
             } => {
-                let (beat, word) = hitter(Beat::new(1.0), *by, *at);
-                let salvage = take.words();
-                let salvage = if salvage.is_empty() {
-                    String::new()
-                } else {
-                    format!(" {}.", sentence_start(&salvage))
-                };
-                let line = if *by == Hitter::Gun {
-                    format!("{} down.{salvage}", kind.title())
-                } else {
-                    format!("{word}. {} down.{salvage}", kind.title())
-                };
-                beat.at(sound::GUN_DOWN, *at).say(line)
+                self.hitter(ctx, *by, *lane);
+                sound::at(ctx, sound::GUN_DOWN, *lane, *height);
+                self.stop_engine(ctx, *id, 60);
+                Some(format!("{} down.", kind.title()))
             }
-            Event::TurnEnded { charged } => {
-                let line = if *charged > 0 {
-                    format!("Turn over. Shield up {charged}, to {}.", run.colony.shield)
-                } else {
-                    "Turn over.".to_string()
-                };
-                Beat::new(0.6).plain(sound::TURN_OVER).say(line).now()
+            Event::Charging { weapon, lane, .. } => {
+                sound::under(ctx, sound::CHARGE_WIND, *lane);
+                match weapon {
+                    Weapon::Siege => Some("Siege shot coming.".to_string()),
+                    _ if call_outs => Some(format!("Bolt at the {}.", lane_name(*lane))),
+                    _ => None,
+                }
             }
             Event::Shot {
-                kind,
-                weapon,
-                col,
+                lane,
                 dodged,
                 shield,
                 dome,
                 ..
             } => {
-                self.dome_seen = *dome;
                 if *dodged {
-                    Beat::new(0.8).under(sound::CHARGE_PASS, *col).say(format!(
-                        "{} fires at the {}. Dodged.",
-                        kind.title(),
-                        column_name(*col)
-                    ))
-                } else {
-                    let what = if *weapon == Weapon::Siege {
-                        "Siege shot hits".to_string()
-                    } else {
-                        format!("{} hits", kind.title())
-                    };
-                    Beat::new(1.0)
-                        .under(sound::CHARGE_HIT, *col)
-                        .say(format!("{what}. Shield {shield}, dome {dome}."))
+                    sound::under(ctx, sound::CHARGE_PASS, *lane);
+                    return Some("Dodged.".to_string());
                 }
+                sound::under(ctx, sound::CHARGE_HIT, *lane);
+                let line = if *dome < self.dome_seen {
+                    format!("Hit. Shield {shield}, dome {dome}.")
+                } else {
+                    format!("Hit. Shield {shield}.")
+                };
+                self.dome_seen = *dome;
+                Some(line)
             }
             Event::Breach {
+                id,
                 kind,
-                col,
+                lane,
                 shield,
                 dome,
                 darkened,
-                ..
             } => {
                 let key = if *dome < self.dome_seen {
                     sound::BREACH_DOME
@@ -490,92 +470,52 @@ impl NightScreen {
                     sound::BREACH_SHIELD
                 };
                 self.dome_seen = *dome;
-                let mut beat = Beat::new(1.2).under(key, *col);
+                sound::under(ctx, key, *lane);
+                self.stop_engine(ctx, *id, 0);
                 let mut line = format!(
-                    "Breach at the {}: {}. Shield {shield}, dome {dome}.",
-                    column_name(*col),
+                    "Breach at the {}, {}. Shield {shield}, dome {dome}.",
+                    lane_name(*lane),
                     a(*kind)
                 );
                 if let Some(building) = darkened {
-                    beat = beat.under(sound::BREACH_BUILDING, *col);
+                    sound::under(ctx, sound::BREACH_BUILDING, *lane);
                     line.push_str(&format!(" {} dark.", building.title()));
                 }
-                beat.say(line)
+                Some(line)
             }
-            Event::Stepped { id, kind, to, .. } => {
-                let stab = match kind {
-                    Kind::Hulk | Kind::Mothership | Kind::Carrier => Some(Stab::Heavy),
-                    Kind::Skitter if count >= 2 => Some(Stab::Run),
-                    _ => None,
-                };
-                let mut beat = Beat::new(0.45).at(sound::raider(*kind), *to).stab(stab);
-                let who = if count <= 1 {
-                    run.raider(*id).map_or_else(|| a(*kind), |r| r.a())
-                } else {
-                    group(*kind, count)
-                };
-                let who = sentence_start(&who);
-                if to.row == NEAR_ROW {
-                    beat = beat.say(format!("{who} at the dome, {}.", column_name(to.col)));
-                } else if run.in_dust(*to) {
-                    beat = beat.say(format!("{who} into the dust, {}.", column_name(to.col)));
-                } else if self.call_outs {
-                    beat = beat.say(format!("{who}, {}.", to.words()));
+            Event::Weaved { id, to, .. } => {
+                let height = self.run.borrow().raider(*id).map_or(MID, |r| r.height);
+                sound::at(ctx, sound::WEAVE, *to, height);
+                if !call_outs {
+                    return None;
                 }
-                beat
+                let title = self.run.borrow().raider(*id).map(|r| r.title())?;
+                Some(format!("{title} weaves to the {}.", lane_name(*to)))
             }
-            Event::Burrowed { id, kind, wall } => {
-                let who = run
-                    .raider(*id)
-                    .map_or_else(|| kind.title().to_string(), |r| r.title());
-                Beat::new(0.8)
-                    .at(sound::raider(*kind), *wall)
-                    .say(format!("{who} burrows under the wall at {}.", wall.words()))
+            Event::Crossed { .. } => None,
+            Event::Hovering { lane, .. } => Some(format!(
+                "Mothership holds at mid range, {}.",
+                lane_name(*lane)
+            )),
+            Event::Shifted { lane, .. } => {
+                call_outs.then(|| format!("Mothership to the {}.", lane_name(*lane)))
             }
-            Event::StormMoved { col } => Beat::new(0.6)
-                .open()
-                .storm(*col)
-                .say(format!("Dust at the {}.", column_name(*col))),
-            Event::Bashed {
-                kind, wall, down, ..
-            } => {
-                if *down {
-                    Beat::new(0.8)
-                        .at(sound::WALL_DOWN, *wall)
-                        .say(format!("Wall at {} down.", wall.words()))
-                } else {
-                    Beat::new(0.6).at(sound::WALL_CRACK, *wall).say(format!(
-                        "{} bashes the wall at {}.",
-                        kind.title(),
-                        wall.words()
-                    ))
-                }
+            Event::Left { id, kind } => {
+                ctx.audio.play(sound::LEAVE, Bus::EFFECTS);
+                self.stop_engine(ctx, *id, 300);
+                Some(format!("The {} leaves.", kind.name()))
             }
-            Event::Charging {
-                kind, weapon, col, ..
-            } => {
-                let line = if *weapon == Weapon::Siege {
-                    format!(
-                        "{} up a siege shot at the {}. It cannot be dodged.",
-                        sentence_start(&some(*kind, count, "winds", "wind")),
-                        column_name(*col)
-                    )
-                } else {
-                    format!(
-                        "{} charging at the {}.",
-                        sentence_start(&group(*kind, count)),
-                        column_name(*col)
-                    )
-                };
-                Beat::new(0.8).under(sound::CHARGE_WIND, *col).say(line)
+            Event::MineBlew { lane } => {
+                sound::at(ctx, sound::MINE, *lane, MID);
+                None
             }
-            Event::Dropped { at, .. } => Beat::new(0.6)
-                .at(sound::ARRIVE, *at)
-                .say(format!("A skitter drops at {}.", at.words())),
-            Event::Left { kind, .. } => Beat::new(0.6)
-                .plain(sound::LEAVE)
-                .say(format!("The {} leaves.", kind.name())),
+            Event::StormMoved { lane } => {
+                self.move_wind(ctx, *lane);
+                call_outs.then(|| format!("Dust at the {}.", lane_name(*lane)))
+            }
             Event::Held { night, take, clean } => {
+                ctx.audio.play(sound::HELD, Bus::EFFECTS);
+                let run = self.run.borrow();
                 let mut line = format!("Night {night} held.");
                 let salvage = take.words();
                 if !salvage.is_empty() {
@@ -588,54 +528,78 @@ impl NightScreen {
                 if run.endless() && *night == RELIEF_NIGHT {
                     line.push_str(" Relief lands, and the watch goes on.");
                 }
-                Beat::new(1.5).plain(sound::HELD).say(line)
-            }
-            Event::Fallen { .. } => Beat::new(1.5)
-                .plain(sound::BREACH_DOME)
-                .say("The dome falls."),
-            // A challenge cut short of night 12 ends on its own result.
-            Event::Relief { .. } if run.relief < RELIEF_NIGHT => Beat::new(0.5),
-            Event::Relief { .. } => Beat::new(0.5).say("Relief has landed."),
-            Event::ColonyOpens { .. } | Event::OrderPaid { .. } => {
-                let lines = notices(event, &run);
                 drop(run);
+                self.ending = Some((speech_secs(&line) + 0.8, Ending::Colony));
+                Some(line)
+            }
+            Event::Fallen { .. } => {
+                ctx.audio.play(sound::BREACH_DOME, Bus::EFFECTS);
+                self.stop_engines(ctx, 600);
+                self.ending = Some((2.0, Ending::Finish));
+                Some("The dome falls.".to_string())
+            }
+            Event::Relief { .. } => {
+                let (hold, line) = if self.run.borrow().relief < RELIEF_NIGHT {
+                    // A challenge cut short of night 12 ends on its own result.
+                    (1.0, None)
+                } else {
+                    (2.2, Some("Relief has landed.".to_string()))
+                };
+                self.ending = Some((hold, Ending::Finish));
+                line
+            }
+            Event::ColonyOpens { .. } | Event::OrderPaid { .. } => {
+                let lines = {
+                    let run = self.run.borrow();
+                    notices(event, &run)
+                };
                 self.notices.extend(lines);
-                return None;
+                None
             }
             Event::Bought { .. }
-            | Event::Placed { .. }
+            | Event::MineLaid { .. }
             | Event::DomeRepaired { .. }
             | Event::BuildingRepaired { .. }
             | Event::MissileMade { .. }
-            | Event::OrderTaken { .. } => return None,
-        };
-        Some(beat)
+            | Event::OrderTaken { .. } => None,
+        }
+    }
+
+    /// The sound of what hit a raider.
+    fn hitter(&mut self, ctx: &mut Ctx<Parlor>, by: Hitter, lane: u8) {
+        match by {
+            Hitter::Gun => sound::under(ctx, sound::GUN_FIRE, lane),
+            Hitter::Missile => {
+                ctx.audio.play(sound::MISSILE, Bus::EFFECTS);
+            }
+            // The mine's own event plays its blast.
+            Hitter::Mine => {}
+            Hitter::Flak(post) => sound::under(ctx, sound::FLAK, post),
+        }
     }
 
     // --- the player's actions ----------------------------------------------
 
-    /// Applies an input, or says why not.
+    /// Applies an input, or says why not. A shot while the gun reloads is
+    /// nothing at all.
     fn act(&mut self, ctx: &mut Ctx<Parlor>, input: Input) {
-        if self.busy() {
-            self.wait_please(ctx);
+        if self.ending.is_some() {
             return;
         }
-        self.confirming = false;
         let outcome = self.run.borrow_mut().apply(input);
         match outcome {
             Ok(()) => {
-                self.flush(ctx);
-                ctx.stop_speech();
+                if input == Input::Fire {
+                    self.shots += 1;
+                }
                 self.drain(ctx);
             }
+            Err(Refusal::Reloading) => {}
             Err(refusal) => {
                 let text = match refusal {
-                    Refusal::NoTarget => "No raiders to hit.".to_string(),
+                    Refusal::NoTarget => "Nothing to fire at.".to_string(),
                     Refusal::Edge => {
-                        format!(
-                            "The rail ends at the {}.",
-                            column_name(self.run.borrow().gun)
-                        )
+                        format!("The rail ends at the {}.", lane_name(self.run.borrow().gun))
                     }
                     other => refusal_words(other, &self.run.borrow()),
                 };
@@ -644,41 +608,12 @@ impl NightScreen {
         }
     }
 
-    fn wait_please(&mut self, ctx: &mut Ctx<Parlor>) {
-        if !self.told_wait {
-            self.told_wait = true;
-            ctx.say("The raiders are moving.");
-        }
-    }
-
-    fn end_turn(&mut self, ctx: &mut Ctx<Parlor>) {
-        if self.busy() {
-            self.wait_please(ctx);
-            return;
-        }
-        let actions = match self.run.borrow().phase {
-            Phase::Turn { actions } => actions,
-            _ => 0,
-        };
-        if self.confirm_end && !self.confirming {
-            self.confirming = true;
-            let text = format!(
-                "End the turn with {} left? Enter again ends it.",
-                actions_phrase(actions)
-            );
-            self.tell(ctx, text);
-            return;
-        }
-        self.turns_ended += 1;
-        self.act(ctx, Input::EndTurn);
-    }
-
     /// The raiders in scan order. The ones in the dust are not heard.
     fn order(&self) -> Vec<u32> {
         let run = self.run.borrow();
         let mut raiders = run.heard();
         if self.left_to_right {
-            raiders.sort_by_key(|r| (r.at.col, r.at.row, r.id));
+            raiders.sort_by_key(|r| (r.lane, r.height, r.id));
         }
         raiders.iter().map(|r| r.id).collect()
     }
@@ -687,10 +622,22 @@ impl NightScreen {
         let order = self.order();
         if order.is_empty() {
             self.scanned = None;
-            let text = if self.run.borrow().raiders.is_empty() {
-                "No raiders on the grid.".to_string()
-            } else {
-                "Nothing heard outside the dust.".to_string()
+            let text = {
+                let run = self.run.borrow();
+                if !run.raiders.is_empty() {
+                    "Nothing heard outside the dust.".to_string()
+                } else if run.to_come() == 0 {
+                    "The sky is clear.".to_string()
+                } else if let Some(ticks) = run.next_wave_in() {
+                    format!(
+                        "Nothing in the sky. Wave {} of {} in {}.",
+                        run.wave + 1,
+                        run.waves_total(),
+                        seconds_words(ticks)
+                    )
+                } else {
+                    "Nothing in the sky yet.".to_string()
+                }
             };
             self.tell(ctx, text);
             return;
@@ -706,95 +653,92 @@ impl NightScreen {
         };
         let id = order[next];
         self.scanned = Some(id);
-        let (line, key, at) = {
+        let (line, lane, height) = {
             let run = self.run.borrow();
             let raider = run.raider(id).expect("a scanned raider");
-            (raider_line(raider), sound::raider(raider.kind), raider.at)
+            (raider_line(raider), raider.lane, raider.height)
         };
-        sound::at(ctx, key, at);
+        sound::at(ctx, sound::SCAN, lane, height);
         self.tell(ctx, line);
     }
 
-    /// Where the scanned raider, or the nearest, is heading.
+    /// The sky, lane by lane.
     fn hint(&mut self, ctx: &mut Ctx<Parlor>) {
         self.hint_asked = true;
-        let text = {
-            let run = self.run.borrow();
-            let target = self
-                .scanned
-                .and_then(|id| run.raider(id))
-                .or_else(|| run.nearest_first().first().copied());
-            match target {
-                None => "No raiders on the grid.".to_string(),
-                Some(r) if run.in_dust(r.at) => format!(
-                    "{} is in the dust at the {}. Nothing is heard of it until the storm moves on.",
-                    sentence_start(&r.a()),
-                    column_name(r.at.col)
-                ),
-                Some(r) => route_words(&run, r),
-            }
-        };
+        let text = sky_words(&self.run.borrow());
         self.tell(ctx, text);
     }
 
     fn status_layers(&self) -> Vec<String> {
         let run = self.run.borrow();
-        let actions = match run.phase {
-            Phase::Turn { actions } => actions,
-            _ => 0,
-        };
         let mut first = String::new();
-        for (_, kind, col) in run.charges() {
+        for (_, kind, lane) in run.charges() {
             first.push_str(&format!(
-                "{} is charging at the {}. ",
+                "{} is winding up at the {}. ",
                 sentence_start(&a(kind)),
-                column_name(col)
+                lane_name(lane)
             ));
         }
         let raiders = run.raiders.len();
+        let coming = run.to_come();
+        let wave = if run.phase == Phase::Night {
+            format!(" Wave {} of {}.", run.wave.max(1), run.waves_total())
+        } else {
+            String::new()
+        };
         first.push_str(&format!(
-            "Gun {}. Dome {}, shield {}. {} left. {}.",
-            column_name(run.gun),
+            "Gun {}. Dome {}, shield {}.{wave} {}, {}.",
+            lane_name(run.gun),
             run.colony.dome,
             run.colony.shield,
-            actions_phrase(actions),
             match raiders {
-                0 => "No raiders".to_string(),
-                1 => "1 raider".to_string(),
-                n => format!("{n} raiders"),
+                0 => "No raiders in the sky".to_string(),
+                1 => "1 raider in the sky".to_string(),
+                n => format!("{n} raiders in the sky"),
+            },
+            match coming {
+                0 => "none to come".to_string(),
+                1 => "1 to come".to_string(),
+                n => format!("{n} to come"),
             }
         ));
         let mut second: Vec<String> = run
             .nearest_first()
             .iter()
             .map(|r| {
-                if run.in_dust(r.at) {
-                    format!(
-                        "{}, in the dust at the {}.",
-                        r.title(),
-                        column_name(r.at.col)
-                    )
+                if run.in_dust(r.lane) {
+                    format!("{}, in the dust at the {}.", r.title(), lane_name(r.lane))
                 } else {
                     raider_line(r)
                 }
             })
             .collect();
         if let Some(storm) = run.storm {
-            second.push(format!("Dust at the {}.", column_name(storm.col)));
+            second.push(format!("Dust at the {}.", lane_name(storm.lane)));
         }
         second.push(format!(
-            "Night {}, turn {}. Missiles {}.",
-            run.night, run.turn, run.colony.missiles
+            "Night {}, {} seconds in. Missiles {}.",
+            run.night,
+            run.seconds(),
+            run.colony.missiles
         ));
         vec![first, second.join(" ")]
     }
 
     // --- the night's end ---------------------------------------------------
 
+    fn move_on(&mut self, ctx: &mut Ctx<Parlor>, ending: Ending) {
+        match ending {
+            Ending::Colony => self.open_colony(ctx),
+            Ending::Finish => self.finish(ctx),
+        }
+    }
+
     fn open_colony(&mut self, ctx: &mut Ctx<Parlor>) {
         self.ended = true;
         self.music.stop(&mut ctx.audio, 1200);
         self.stop_wind(ctx, 1200);
+        self.stop_engines(ctx, 300);
         if self.practice() {
             ctx.say_queued("The tutorial night is over.");
             return;
@@ -808,6 +752,7 @@ impl NightScreen {
         self.ended = true;
         self.music.stop(&mut ctx.audio, 600);
         self.stop_wind(ctx, 600);
+        self.stop_engines(ctx, 300);
         let mode = self.mode();
         let run = self.run.borrow().run.clone();
         let won = run.phase == Phase::Relief;
@@ -875,7 +820,7 @@ impl NightScreen {
         let unlocked = earned_line(&new)
             .map(|l| format!(" {l}"))
             .unwrap_or_default();
-        // The night's last beat has said "Relief has landed." or "The
+        // The night's last line has said "Relief has landed." or "The
         // dome falls.", so the spoken summary carries on from it; the page
         // read back later says it whole.
         let (summary, page) = if won {
@@ -1006,21 +951,6 @@ impl NightScreen {
     }
 }
 
-/// "a skitter", "a skitter pair", "3 drifters": `count` raiders of a kind.
-fn group(kind: Kind, count: usize) -> String {
-    match (kind, count) {
-        (_, 0 | 1) => a(kind),
-        (Kind::Skitter, 2) => "a skitter pair".to_string(),
-        (kind, n) => format!("{n} {}s", kind.name()),
-    }
-}
-
-/// "a drifter is", "2 drifters are".
-fn some(kind: Kind, count: usize, one: &str, many: &str) -> String {
-    let verb = if count <= 1 { one } else { many };
-    format!("{} {verb}", group(kind, count))
-}
-
 /// "A quarter more for Hard vacuum." or for the call-outs off, or both.
 fn bonus_words(run: &Run) -> Option<String> {
     let percent = run.perks.bonus_percent();
@@ -1035,155 +965,80 @@ fn bonus_words(run: &Run) -> Option<String> {
     Some(format!("{percent} percent more for {what}, counted in."))
 }
 
+/// The nearest raider's height as a row of six, for the score: 1 at the
+/// dome, 6 at the horizon.
+fn row_of(height: u32) -> u8 {
+    (height * 5 / HORIZON) as u8 + 1
+}
+
 /// What the score follows: the nearest raider, a pending charge, the
 /// shield at 0.
 pub fn pressure(run: &Run) -> Pressure {
     Pressure {
-        near: run.nearest_first().first().map(|r| r.at.row),
+        near: run.nearest_first().first().map(|r| row_of(r.height)),
         charge: !run.charges().is_empty(),
         shield_down: run.colony.shield == 0,
     }
 }
 
-/// The charges on the grid by kind and column, with how many share each.
-fn grouped_charges(run: &Run) -> Vec<(Kind, u8, usize)> {
-    let mut out: Vec<(Kind, u8, usize)> = Vec::new();
-    for (_, kind, col) in run.charges() {
-        match out.iter_mut().find(|(k, c, _)| *k == kind && *c == col) {
-            Some(entry) => entry.2 += 1,
-            None => out.push((kind, col, 1)),
-        }
-    }
-    out
-}
-
-/// Raiders of one kind stepping onto one sector in the same phase become
-/// one beat: a skitter pair is heard as a pair, not as four steps.
-fn group_steps(events: Vec<Event>) -> Vec<(Event, usize)> {
-    let mut slots: Vec<Option<Event>> = events.into_iter().map(Some).collect();
-    let mut out = Vec::new();
-    for i in 0..slots.len() {
-        let Some(event) = slots[i].take() else {
+/// The sky lane by lane, far left to far right, then with a scanner what
+/// comes next.
+pub fn sky_words(run: &Run) -> String {
+    let mut parts = Vec::new();
+    for lane in 0..LANES {
+        let name = lane_name(lane);
+        if run.in_dust(lane) {
+            parts.push(format!("{name}, dust"));
             continue;
+        }
+        let mut in_lane: Vec<&Raider> = run.raiders.iter().filter(|r| r.lane == lane).collect();
+        in_lane.sort_by_key(|r| (r.height, r.id));
+        let part = match in_lane.as_slice() {
+            [] => format!("{name} clear"),
+            [one] => format!("{name}, {} {}", one.a(), one.range().name()),
+            [near, rest @ ..] => format!(
+                "{name}, {} {} and {} behind",
+                near.a(),
+                near.range().name(),
+                rest.len()
+            ),
         };
-        let mut count = 1;
-        if let Event::Charging {
-            kind, weapon, col, ..
-        } = &event
-        {
-            for slot in slots.iter_mut().skip(i + 1) {
-                match slot {
-                    Some(Event::Charging {
-                        kind: k,
-                        weapon: w,
-                        col: c,
-                        ..
-                    }) if k == kind && w == weapon && c == col => {
-                        *slot = None;
-                        count += 1;
-                    }
-                    Some(Event::Charging { .. }) | None => {}
-                    _ => break,
-                }
-            }
-        }
-        if let Event::Stepped { kind, to, .. } = &event {
-            for slot in slots.iter_mut().skip(i + 1) {
-                match slot {
-                    Some(Event::Stepped { kind: k, to: t, .. }) if k == kind && t == to => {
-                        *slot = None;
-                        count += 1;
-                    }
-                    Some(Event::Stepped { .. } | Event::Dropped { .. }) | None => {}
-                    _ => break,
-                }
-            }
-        }
-        out.push((event, count));
+        parts.push(part);
     }
-    out
+    let mut text = format!("{}.", sentence_start(&parts.join("; ")));
+    let lanes_known = run.colony.has(Building::Scanner) || run.perks.lane_forecast;
+    if let Some(next) = run.pending.first() {
+        let wait = seconds_words(next.at.saturating_sub(run.tick));
+        if lanes_known {
+            text.push_str(&format!(
+                " Next: {} at the {}, in {wait}.",
+                a(next.kind),
+                lane_name(next.lane)
+            ));
+        } else {
+            text.push_str(&format!(" Next: {}, in {wait}.", a(next.kind)));
+        }
+    } else if let Some(ticks) = run.next_wave_in() {
+        let wave = run.wave as usize;
+        let words = run.wave_words();
+        let kinds = words.get(wave).cloned().unwrap_or_default();
+        text.push_str(&format!(
+            " Wave {} of {} in {}: {kinds}.",
+            wave + 1,
+            run.waves_total(),
+            seconds_words(ticks)
+        ));
+    }
+    text
 }
 
-/// The sounds of what hit a raider, and the word for it.
-fn hitter(beat: Beat, by: Hitter, at: Sector) -> (Beat, &'static str) {
-    // The player's own shots play at once and never hold the next action,
-    // so Space twice is two shots. Mines and flak are the raiders' phase.
-    match by {
-        Hitter::Gun => (beat.under(sound::GUN_FIRE, at.col).open().now(), "Hit"),
-        Hitter::Missile => (beat.plain(sound::MISSILE).open().now(), "Missile hit"),
-        Hitter::Mine => (beat.at(sound::MINE, at), "Mine"),
-        Hitter::Flak(post) => (beat.at(sound::FLAK, post), "Flak"),
-    }
-}
-
-/// The route finder speaking: the next step, or with a scanner the whole
-/// route and when it lands.
-pub fn route_words(run: &Run, raider: &Raider) -> String {
-    match raider.state {
-        RaiderState::Charging { col, .. } => {
-            return format!(
-                "{} is charging at the {}. Move the gun off that column, or fire first.",
-                sentence_start(&raider.a()),
-                column_name(col)
-            );
-        }
-        RaiderState::Holding => {
-            return format!(
-                "The {} holds at {}, {}. The gun reaches it from the {}, a missile from anywhere.",
-                raider.kind.name(),
-                raider.at.words(),
-                hits_phrase(raider.hits),
-                column_name(raider.at.col)
-            );
-        }
-        RaiderState::Bashing { wall } => {
-            let verb = if raider.can_burrow() {
-                "burrows under"
-            } else {
-                "is bashing"
-            };
-            return format!(
-                "{} {verb} the wall at {}.",
-                sentence_start(&raider.a()),
-                wall.words()
-            );
-        }
-        RaiderState::Approaching => {}
-    }
-    if raider.kind.crosses() {
-        let way = if raider.heading < 0 { "left" } else { "right" };
-        return format!(
-            "The {} crosses row {} toward the {way}, {}.",
-            raider.kind.name(),
-            raider.at.row,
-            hits_phrase(raider.hits)
-        );
-    }
-    let route = run.route_of(raider.id).unwrap_or_default();
-    let Some(next) = route.first() else {
-        return format!(
-            "{} is at the dome, {}. It breaches next phase.",
-            sentence_start(&raider.a()),
-            column_name(raider.at.col)
-        );
-    };
-    let whole = run.colony.has(Building::Scanner)
-        || (raider.kind == Kind::Drifter && run.perks.drifter_routes);
-    if whole {
-        let steps: Vec<String> = route.iter().map(|s| s.words()).collect();
-        let phases = run.phases_to_land(raider.id).unwrap_or(0);
-        format!(
-            "{}: {}. Lands in {}.",
-            raider.kind.title(),
-            steps.join("; "),
-            if phases == 1 {
-                "1 phase".to_string()
-            } else {
-                format!("{phases} phases")
-            }
-        )
+/// "1 second", "4 seconds".
+fn seconds_words(ticks: u32) -> String {
+    let secs = ticks.div_ceil(TICKS_A_SECOND);
+    if secs == 1 {
+        "1 second".to_string()
     } else {
-        format!("{} heads to {}.", raider.kind.title(), next.words())
+        format!("{secs} seconds")
     }
 }
 
@@ -1191,44 +1046,29 @@ impl State<Parlor> for NightScreen {
     fn visuals(&self, ctx: &Ctx<Parlor>) -> Scene {
         let mut scene = Scene::from_lines(self.lines(ctx));
         let run = self.run.borrow();
-        // The grid fills the drawing area: the horizon at the top, the
+        // The lanes fill the drawing area: the horizon at the top, the
         // dome along the bottom.
-        let (x0, y0, cell_w, cell_h) = (100.0, 30.0, 160.0, 80.0);
-        let x_of = |col: u8| x0 + f32::from(col) * cell_w;
-        let y_of = |row: u8| y0 + f32::from(ROWS - row) * cell_h;
-        for col in 0..COLS {
-            for row in NEAR_ROW..=ROWS {
-                scene.line(
-                    (x_of(col), y_of(row)),
-                    (x_of(col) + cell_w, y_of(row)),
-                    1.0,
-                    PAPER,
-                );
-                scene.line(
-                    (x_of(col), y_of(row)),
-                    (x_of(col), y_of(row) + cell_h),
-                    1.0,
-                    PAPER,
-                );
-            }
+        let (x0, y0, lane_w, depth) = (100.0, 30.0, 160.0, 480.0);
+        let x_of = |lane: u8| x0 + f32::from(lane) * lane_w;
+        let y_of = |height: u32| y0 + depth * (1.0 - height as f32 / HORIZON as f32);
+        for lane in 0..=LANES {
+            scene.line((x_of(lane), y0), (x_of(lane), y0 + depth), 1.0, PAPER);
         }
-        let right = x_of(COLS);
-        let bottom = y_of(NEAR_ROW) + cell_h;
-        scene.line((right, y_of(ROWS)), (right, bottom), 1.0, PAPER);
-        scene.line((x0, bottom), (right, bottom), 1.0, PAPER);
-        for (at, work) in run.grid.works() {
-            let (x, y) = (x_of(at.col), y_of(at.row));
-            match work {
-                Work::Wall { .. } => scene.rect(x + 10.0, y + 30.0, cell_w - 20.0, 20.0, PAPER),
-                Work::Flak { .. } => scene.circle(x + cell_w / 2.0, y + cell_h / 2.0, 14.0, TEAL),
-                Work::Mine => scene.circle(x + cell_w / 2.0, y + cell_h / 2.0, 8.0, GOLD),
+        scene.line((x0, y0), (x_of(LANES), y0), 1.0, PAPER);
+        let bottom = y0 + depth;
+        scene.line((x0, bottom), (x_of(LANES), bottom), 1.0, PAPER);
+        for lane in 0..LANES {
+            if run.colony.mined(lane) {
+                scene.circle(x_of(lane) + lane_w / 2.0, y_of(MID), 8.0, GOLD);
+            }
+            if let Some(slot) = run.colony.slot(lane) {
+                if slot.building == Building::Flak {
+                    scene.circle(x_of(lane) + lane_w / 2.0, bottom + 18.0, 10.0, TEAL);
+                }
             }
         }
         for raider in &run.raiders {
-            let (x, y) = (
-                x_of(raider.at.col) + cell_w / 2.0,
-                y_of(raider.at.row) + cell_h / 2.0,
-            );
+            let (x, y) = (x_of(raider.lane) + lane_w / 2.0, y_of(raider.height));
             scene.circle(x, y, 12.0 + 4.0 * f32::from(raider.hits), RED);
             scene.label(
                 x - 6.0,
@@ -1237,15 +1077,18 @@ impl State<Parlor> for NightScreen {
                 PAPER,
             );
         }
-        // The dome under the grid, the gun on its rail.
-        scene.rect(x0, bottom + 6.0, cell_w * f32::from(COLS), 24.0, TEAL);
+        // The dome under the sky, the gun on its rail.
+        scene.rect(x0, bottom + 6.0, lane_w * f32::from(LANES), 24.0, TEAL);
         scene.rect(x_of(run.gun) + 50.0, bottom - 4.0, 60.0, 16.0, GOLD);
         scene.label(
             x0,
             bottom + 40.0,
             format!(
-                "Night {}, turn {}. Dome {}, shield {}.",
-                run.night, run.turn, run.colony.dome, run.colony.shield
+                "Night {}, {} s. Dome {}, shield {}.",
+                run.night,
+                run.seconds(),
+                run.colony.dome,
+                run.colony.shield
             ),
             PAPER,
         );
@@ -1270,11 +1113,19 @@ impl State<Parlor> for NightScreen {
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
         self.music.stop(&mut ctx.audio, 300);
         self.stop_wind(ctx, 300);
+        self.stop_engines(ctx, 300);
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
         if !self.practice() {
             self.settings(ctx);
+        }
+        // The engines were stopped under the pause; start them again.
+        let ids: Vec<u32> = self.run.borrow().raiders.iter().map(|r| r.id).collect();
+        for id in ids {
+            if !self.engines.contains_key(&id) {
+                self.start_engine(ctx, id);
+            }
         }
         let layers = self.status_layers();
         let text = format!("Back on watch. {}", layers[0]);
@@ -1282,23 +1133,27 @@ impl State<Parlor> for NightScreen {
     }
 
     fn handle_input(&mut self, ctx: &mut Ctx<Parlor>, event: &InputEvent) {
-        if event.is_repeat() || self.ended {
+        if self.ended {
             return;
         }
         let action = ctx.action_for(event);
+        // Held keys keep sliding and keep firing; the rest act once.
+        if event.is_repeat()
+            && !matches!(
+                action,
+                Some(ParlorAction::Left | ParlorAction::Right | ParlorAction::Primary)
+            )
+        {
+            return;
+        }
         if action.is_none() {
-            match event.pressed() {
-                Some(Key::Escape) if !self.practice() => {
+            if let Some(Key::Escape) = event.pressed() {
+                if !self.practice() {
                     let leave = self.mode().leave();
                     menus::pause(ctx, HELP, leave);
                 }
-                Some(Key::Return | Key::KpEnter) => self.end_turn(ctx),
-                _ => {}
             }
             return;
-        }
-        if action != Some(ParlorAction::Repeat) {
-            self.confirming = false;
         }
         match action {
             Some(ParlorAction::Left) => self.act(ctx, Input::Left),
@@ -1322,53 +1177,60 @@ impl State<Parlor> for NightScreen {
     }
 
     fn update(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
+        self.glanced_ago += dt;
         if self.ended {
             return;
         }
         let pressure = pressure(&self.run.borrow());
         self.music.set_pressure(pressure);
         self.music.update(&mut ctx.audio, dt);
-        if let Some(front) = self.queue.front() {
-            self.wait -= dt;
-            if self.wait > 0.0 {
-                return;
+        if let Some((left, ending)) = self.ending {
+            let left = left - dt;
+            if left <= 0.0 {
+                self.ending = None;
+                self.move_on(ctx, ending);
+            } else {
+                self.ending = Some((left, ending));
             }
-            let _ = front;
-            let beat = self.queue.pop_front().expect("a beat");
-            self.sound_beat(ctx, &beat);
-            if let Some(line) = &beat.line {
-                self.last = line.clone();
-                ctx.say_queued(line.clone());
-            }
-            self.wait = beat.secs();
-            if !self.queue.is_empty() {
+            return;
+        }
+        self.acc += dt;
+        let mut ticked = 0;
+        while self.acc >= TICK_SECS && ticked < MAX_TICKS_A_FRAME {
+            self.run.borrow_mut().tick();
+            self.acc -= TICK_SECS;
+            ticked += 1;
+            self.drain(ctx);
+            if self.ending.is_some() {
+                self.acc = 0.0;
                 return;
             }
         }
-        self.told_wait = false;
-        let phase = self.run.borrow().phase;
-        match phase {
-            Phase::Turn { .. } => {}
-            Phase::Colony => self.open_colony(ctx),
-            Phase::Relief | Phase::Fallen => self.finish(ctx),
+        if ticked == MAX_TICKS_A_FRAME {
+            self.acc = 0.0;
         }
+        self.place_engines(ctx);
+        self.lock(ctx, dt);
     }
 
     fn lines(&self, _ctx: &Ctx<Parlor>) -> Vec<String> {
         let run = self.run.borrow();
-        let (phase, actions) = match run.phase {
-            Phase::Colony => ("colony", 0),
-            Phase::Turn { actions } => ("turn", actions),
-            Phase::Relief => ("relief", 0),
-            Phase::Fallen => ("fallen", 0),
+        let phase = match run.phase {
+            Phase::Colony => "colony",
+            Phase::Night => "night",
+            Phase::Relief => "relief",
+            Phase::Fallen => "fallen",
         };
         let mut lines = vec![
             format!(
-                "night {}, turn {}, {phase}, gun {}, actions {actions}, queue {}",
+                "night {}, tick {}, {phase}, gun {}, wave {} of {}, pending {}, cooldown {}",
                 run.night,
-                run.turn,
+                run.tick,
                 run.gun,
-                self.queue.len()
+                run.wave,
+                run.waves_total(),
+                run.to_come(),
+                run.cooldown
             ),
             format!(
                 "dome {}, shield {}, missiles {}, score {}, scanned {}",
@@ -1380,18 +1242,18 @@ impl State<Parlor> for NightScreen {
             ),
         ];
         for r in run.nearest_first() {
-            let state = match r.state {
-                RaiderState::Approaching => "approaching".to_string(),
-                RaiderState::Charging { col, phases } => format!("charging {col} in {phases}"),
-                RaiderState::Bashing { wall } => format!("bashing {},{}", wall.col, wall.row),
-                RaiderState::Holding => "holding".to_string(),
+            let state = match (r.state, r.charge) {
+                (_, Some(c)) => format!("charging {} in {}", c.lane, c.ticks),
+                (RaiderState::Falling, None) => "falling".to_string(),
+                (RaiderState::Crossing, None) => "crossing".to_string(),
+                (RaiderState::Hovering, None) => "hovering".to_string(),
             };
             lines.push(format!(
                 "raider {} {} at {},{} hits {} {state}",
                 r.id,
                 r.kind.name(),
-                r.at.col,
-                r.at.row,
+                r.lane,
+                r.height,
                 r.hits
             ));
         }
@@ -1420,8 +1282,10 @@ pub fn controls_text(ctx: &Ctx<Parlor>) -> String {
     let hint = ctx.control_name(ParlorAction::Hint);
     let repeat = ctx.control_name(ParlorAction::Repeat);
     format!(
-        "{} and {right} slide the gun a column, {fire} fires at the nearest raider in its column, {missile} fires a missile at the nearest raider anywhere. Each costs an action. Enter ends the turn, and every action left charges the shield. {} and {down} scan the raiders without spending anything. {} gives the gun, the dome and the shield, and again for every raider. {} says where a raider is heading. {} repeats the last line. Escape pauses.",
+        "{} and {right} slide the gun a lane. A tone pulses under the gun while a raider is in its lane, faster as it nears. {} fires up the lane, and the gun fires again a moment later. {} fires a missile at the raider nearest the dome. {} and {down} scan the raiders. {} gives the gun, the dome and the shield, and again for every raider. {} reads the sky lane by lane. {} repeats the last line. Escape pauses.",
         sentence_start(&left),
+        sentence_start(&fire),
+        sentence_start(&missile),
         sentence_start(&up),
         sentence_start(&status),
         sentence_start(&hint),

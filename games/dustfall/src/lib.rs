@@ -1,17 +1,16 @@
-//! Dustfall: hold a dome through twelve nights of raiders, one turn at a
-//! time.
+//! Dustfall: hold a dome through twelve nights of raiders coming down five
+//! lanes in waves.
 //!
-//! A turn-based defence game. Raiders come over the horizon onto a grid of
-//! five columns and six rows and walk down toward the dome, finding their
-//! own way round whatever stands in their path. You have a gun on a rail
-//! along the dome's edge, a few missiles, and two actions a turn. Between
-//! nights you spend the salvage on walls, flak posts, mines and the
-//! buildings that keep the colony fed and powered. Hold twelve nights and
-//! Relief lands.
+//! A lane shooter with a colony between nights. Raiders come over the
+//! horizon in waves and fall down five lanes toward the dome, each heard
+//! at its place in the sky. You have a gun on a rail along the dome's
+//! edge, a few missiles, and the lanes you mined. Between nights you spend
+//! the salvage on mines, missiles and the buildings that keep the colony
+//! fed, powered and firing. Hold twelve nights and Relief lands.
 //!
 //! Past that, the long watch goes on until the dome falls, tech points
 //! open unlocks that set the next colony up better, and on the fourth
-//! Monday of the month the dust storm crosses the grid.
+//! Monday of the month the dust storm drifts across the sky.
 
 pub mod challenge;
 pub mod colony;
@@ -50,8 +49,8 @@ pub const TITLE_NAME: &str = "dustfall";
 pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Dustfall",
-    category: Category::Puzzle,
-    blurb: "Hold a dome through twelve nights of raiders, one turn at a time.",
+    category: Category::Action,
+    blurb: "Hold a dome through twelve nights of raiders coming down five lanes in waves.",
     open: |ctx| ctx.push(title()),
     challenge: Some(challenge::open_challenge),
     event: Some(events::event),
@@ -350,25 +349,13 @@ impl TitleGame for Dustfall {
                 },
                 |_ctx, on| {
                     Some(if on {
-                        "Spoken call-outs: on. Every step is named."
+                        "Spoken call-outs: on. Arrivals, ranges and shots are named."
                     } else {
-                        "Spoken call-outs: off. Steps are only heard, and a raider at the dome is still named."
+                        "Spoken call-outs: off. The sky is only heard, and a breach is still named."
                     }
                     .to_string())
                 },
-                "When on, each raider's step is named with its column and row. Off, you hear the steps and only a raider reaching the dome is named.",
-            ),
-            pm::settings::toggle(
-                "dustfall_confirm_end",
-                |on| format!("Confirm end of turn: {}", if on { "on" } else { "off" }),
-                |ctx| Progress::peek(ctx).confirm_end,
-                |ctx, on| {
-                    let mut p = Progress::load(ctx);
-                    p.confirm_end = on;
-                    p.save(ctx);
-                },
-                |_ctx, _on| None,
-                "When on, Enter asks before ending a turn, and a second Enter ends it.",
+                "When on, each raider is named with its lane as it arrives, comes near and fires. Off, you hear the engines and the shots, and only a breach is named.",
             ),
             pm::settings::toggle(
                 "dustfall_scan_order",
@@ -385,7 +372,7 @@ impl TitleGame for Dustfall {
                     p.save(ctx);
                 },
                 |_ctx, _on| None,
-                "Which way Up and Down scan the raiders: nearest the dome first, or across the grid from the far left.",
+                "Which way Up and Down scan the raiders: nearest the dome first, or across the sky from the far left.",
             ),
             pm::settings::toggle(
                 "dustfall_storm_wind",
@@ -397,7 +384,7 @@ impl TitleGame for Dustfall {
                     p.save(ctx);
                 },
                 |_ctx, _on| None,
-                "Whether the dust storm's wind is heard at the column it covers. Off, the storm is only named as it moves.",
+                "Whether the dust storm's wind is heard at the lane it covers. Off, the storm is only named as it moves.",
             ),
         ]
     }

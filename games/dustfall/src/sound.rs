@@ -1,10 +1,11 @@
-//! Sound keys, and where the grid sits around the listener: the dome is
-//! under you, the far row ahead, the far left column to your left.
+//! Sound keys, and where the sky sits around the listener: the dome is
+//! under you, the horizon ahead, the far left lane to your left.
 
 use hearken::{Bus, Ctx, Vec3};
 use parlor_core::Parlor;
 
-use crate::rules::{Kind, Sector};
+use crate::rules::lanes::HORIZON;
+use crate::rules::Kind;
 
 pub const TITLE_MUSIC: &str = "dustfall/music/title";
 pub const PAUSE_MUSIC: &str = "dustfall/music/pause";
@@ -13,16 +14,25 @@ pub const HELD: &str = "dustfall/music/held";
 pub const RELIEF_MUSIC: &str = "dustfall/music/relief";
 pub const FALLEN_MUSIC: &str = "dustfall/music/fallen";
 
-/// A raider enters the far row, or is dropped.
+/// A wave is called, and a wave is down with more to come.
+pub const WAVE: &str = "dustfall/wave/coming";
+pub const WAVE_CLEAR: &str = "dustfall/wave/clear";
+
+/// A raider comes over the horizon, or is dropped.
 pub const ARRIVE: &str = "dustfall/raider/arrive";
 /// A raider leaves over the edge.
 pub const LEAVE: &str = "dustfall/raider/leave";
+/// A weaving raider slips a lane.
+pub const WEAVE: &str = "dustfall/raider/weave";
 
 pub const GUN_RAIL: &str = "dustfall/gun/rail";
 pub const GUN_FIRE: &str = "dustfall/gun/fire";
 pub const GUN_HIT: &str = "dustfall/gun/hit";
 pub const GUN_DOWN: &str = "dustfall/gun/down";
 pub const MISSILE: &str = "dustfall/gun/missile";
+/// The lock tone: a raider is in the gun's lane. Pulses faster as it
+/// nears.
+pub const LOCK: &str = "dustfall/gun/lock";
 
 pub const CHARGE_WIND: &str = "dustfall/charge/wind";
 pub const CHARGE_PASS: &str = "dustfall/charge/pass";
@@ -32,68 +42,63 @@ pub const BREACH_SHIELD: &str = "dustfall/breach/shield";
 pub const BREACH_DOME: &str = "dustfall/breach/dome";
 pub const BREACH_BUILDING: &str = "dustfall/breach/building";
 
-pub const WALL_CRACK: &str = "dustfall/grid/wall_crack";
-pub const WALL_DOWN: &str = "dustfall/grid/wall_down";
-pub const MINE: &str = "dustfall/grid/mine";
-pub const FLAK: &str = "dustfall/grid/flak";
+pub const MINE: &str = "dustfall/lane/mine";
+pub const FLAK: &str = "dustfall/lane/flak";
 
-/// The dust storm's wind, looped at the column it covers.
+/// The dust storm's wind, looped at the lane it covers.
 pub const STORM_WIND: &str = "dustfall/storm/wind";
 
 pub const BUY: &str = "dustfall/colony/buy";
 pub const CANT: &str = "dustfall/colony/cant";
 pub const READY: &str = "dustfall/colony/ready";
 
-/// The scan and the placing cursor, played where the sector is.
+/// The scan, played where the raider is.
 pub const SCAN: &str = "dustfall/ui/scan";
-/// Your turn begins.
-pub const TURN: &str = "dustfall/ui/turn";
-/// Your turn ends.
-pub const TURN_OVER: &str = "dustfall/ui/turn_over";
 
-/// The sound a raider makes as it steps, by kind.
-pub fn raider(kind: Kind) -> &'static str {
+/// A raider's engine, looped at its place in the sky, by kind.
+pub fn engine(kind: Kind) -> &'static str {
     match kind {
-        Kind::Drifter => "dustfall/raider/drifter",
-        Kind::Skitter => "dustfall/raider/skitter",
-        Kind::Hulk => "dustfall/raider/hulk",
-        Kind::Sapper => "dustfall/raider/sapper",
-        Kind::Mule => "dustfall/raider/mule",
-        Kind::Mothership => "dustfall/raider/mothership",
-        Kind::Carrier => "dustfall/raider/carrier",
+        Kind::Drifter => "dustfall/engine/drifter",
+        Kind::Skitter => "dustfall/engine/skitter",
+        Kind::Hulk => "dustfall/engine/hulk",
+        Kind::Sapper => "dustfall/engine/sapper",
+        Kind::Mule => "dustfall/engine/mule",
+        Kind::Mothership => "dustfall/engine/mothership",
+        Kind::Carrier => "dustfall/engine/carrier",
     }
 }
 
-/// Metres between columns, and per row ahead.
-const COLUMN_GAP: f32 = 1.5;
-const ROW_GAP: f32 = 1.2;
+/// Metres between lanes, and from the dome to the horizon.
+const LANE_GAP: f32 = 1.5;
+const DEPTH: f32 = 7.0;
 
-/// Where a sector sits: the centre column dead ahead, row 1 just past the
-/// dome, row 6 at the horizon.
-pub fn sector_pos(at: Sector) -> Vec3 {
-    Vec3::new(column_x(at.col), at.row as f32 * ROW_GAP, 0.0)
+/// Where a raider sits: the centre lane dead ahead, the horizon seven
+/// metres out, the dome just past your feet.
+pub fn sky_pos(lane: u8, height: u32) -> Vec3 {
+    let out = 0.6 + DEPTH * height as f32 / HORIZON as f32;
+    Vec3::new(lane_x(lane), out, 0.0)
 }
 
-/// Where the gun sits in column `col`: right under the dome's edge.
-pub fn column_pos(col: u8) -> Vec3 {
-    Vec3::new(column_x(col), 0.5, 0.0)
+/// Where the gun sits in `lane`: right under the dome's edge.
+pub fn lane_pos(lane: u8) -> Vec3 {
+    Vec3::new(lane_x(lane), 0.5, 0.0)
 }
 
-fn column_x(col: u8) -> f32 {
-    (col as f32 - crate::rules::grid::CENTRE as f32) * COLUMN_GAP
+fn lane_x(lane: u8) -> f32 {
+    (lane as f32 - crate::rules::CENTRE as f32) * LANE_GAP
 }
 
-/// Plays `key` at a sector.
-pub fn at(ctx: &mut Ctx<Parlor>, key: &'static str, sector: Sector) {
-    ctx.audio.play_at(key, sector_pos(sector), Bus::EFFECTS);
+/// Plays `key` where a raider is.
+pub fn at(ctx: &mut Ctx<Parlor>, key: &'static str, lane: u8, height: u32) {
+    ctx.audio.play_at(key, sky_pos(lane, height), Bus::EFFECTS);
 }
 
-/// Plays `key` under column `col`.
-pub fn under(ctx: &mut Ctx<Parlor>, key: &'static str, col: u8) {
-    ctx.audio.play_at(key, column_pos(col), Bus::EFFECTS);
+/// Plays `key` under lane `lane`.
+pub fn under(ctx: &mut Ctx<Parlor>, key: &'static str, lane: u8) {
+    ctx.audio.play_at(key, lane_pos(lane), Bus::EFFECTS);
 }
 
-/// The listener stands in the dome, facing the grid.
+/// The listener stands in the dome, facing the sky.
 pub fn listen_from_the_dome(ctx: &mut Ctx<Parlor>) {
     ctx.audio.set_listener(Vec3::ZERO, 0.0);
 }

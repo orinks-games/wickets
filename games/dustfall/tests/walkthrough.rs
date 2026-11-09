@@ -1,10 +1,10 @@
 //! Dustfall through the headless app: the title, the colony phase, a night
 //! watched to its end, the tutorial, the settings and the sound check.
 
-use dustfall::colony::{COLONY_NAME, PLACER_NAME, SLOTS_NAME};
-use dustfall::night::NIGHT_NAME;
-use dustfall::rules::Run;
-use dustfall::{title_with_seed, tutorial, CHALLENGES_NAME, TITLE_NAME};
+use dustfall::colony::{share_as, Mode, COLONY_NAME, SLOTS_NAME};
+use dustfall::night::{NightScreen, NIGHT_NAME};
+use dustfall::rules::{Input, Kind, Run};
+use dustfall::{title_with_seed, CHALLENGES_NAME, TITLE_NAME};
 use hearken::{Headless, Key};
 use parlor_core::{Date, Parlor, ParlorData};
 
@@ -70,34 +70,37 @@ fn colony() -> Headless<Parlor> {
     h
 }
 
-/// Into night 1 of a new colony, with the opening beats played.
+/// Into night 1 of a new colony, just as it opens.
 fn night() -> Headless<Parlor> {
     let mut h = colony();
     h.clear();
     choose(&mut h, "Ready for night 1");
     assert_eq!(h.app.top_name(), NIGHT_NAME);
-    settle(&mut h);
     h
 }
 
-/// Frames until the raiders' beats are done and it is the player's turn.
-fn settle(h: &mut Headless<Parlor>) {
-    for _ in 0..600 {
-        if h.app.top_name() != NIGHT_NAME {
-            return;
-        }
-        let first = h.app.top_lines()[0].clone();
-        let n = nums(&first);
-        if first.contains(", turn,") && n[4] == 0 {
+/// Frames for `secs` seconds of the night.
+fn pass(h: &mut Headless<Parlor>, secs: f64) {
+    let frames = (secs / DT).round() as usize;
+    for _ in 0..frames {
+        h.frame(DT);
+    }
+}
+
+/// Frames until something is spoken containing `needle`.
+fn wait_for(h: &mut Headless<Parlor>, needle: &str, most_secs: f64) {
+    let frames = (most_secs / DT).round() as usize;
+    for _ in 0..frames {
+        if spoke(h, needle) {
             return;
         }
         h.frame(DT);
     }
-    panic!("the raiders never settled: {:?}", h.app.top_lines());
+    panic!("never heard {needle:?}: {}", all_spoken(h));
 }
 
-/// The nearest raider's column, from the night screen's lines.
-fn nearest_col(h: &Headless<Parlor>) -> Option<i64> {
+/// The nearest raider's lane, from the night screen's lines.
+fn nearest_lane(h: &Headless<Parlor>) -> Option<i64> {
     h.app
         .top_lines()
         .iter()
@@ -108,23 +111,21 @@ fn nearest_col(h: &Headless<Parlor>) -> Option<i64> {
         })
 }
 
-/// Watches the night on top to its end: the gun goes under the nearest
-/// raider and fires, and the turn ends when there is nothing to shoot.
+/// Watches the night on top to its end: the gun slides under the nearest
+/// raider and fires whenever it can.
 fn watch_night(h: &mut Headless<Parlor>) {
-    for _ in 0..3000 {
+    for _ in 0..30_000 {
         if h.app.top_name() != NIGHT_NAME {
             return;
         }
-        settle(h);
-        if h.app.top_name() != NIGHT_NAME {
-            return;
-        }
-        let gun = nums(&h.app.top_lines()[0])[2];
-        match nearest_col(h) {
-            None => h.frame(DT),
-            Some(col) if col == gun => h.press(Key::Space),
-            Some(col) if col < gun => h.press(Key::Left),
-            Some(_) => h.press(Key::Right),
+        let first = nums(&h.app.top_lines()[0]);
+        let (gun, cooldown) = (first[2], first[6]);
+        match nearest_lane(h) {
+            None => {}
+            Some(lane) if lane < gun => h.press(Key::Left),
+            Some(lane) if lane > gun => h.press(Key::Right),
+            Some(_) if cooldown == 0 => h.press(Key::Space),
+            Some(_) => {}
         }
         h.frame(DT);
     }
@@ -163,13 +164,18 @@ fn play_opens_the_colony_and_ready_starts_the_night() {
     );
     let rows = rows(&h);
     assert!(
-        rows[0].starts_with("Ready for night 1, 2 drifters"),
+        rows[0].starts_with("Ready for night 1, 2 drifters, in 2 waves"),
         "{rows:?}"
     );
     assert!(rows
         .iter()
         .any(|r| r.starts_with("Build a solar array, 8 metal")));
-    assert!(rows.iter().any(|r| r.starts_with("Place a wall, 3 metal")));
+    assert!(rows
+        .iter()
+        .any(|r| r.starts_with("Build a flak post, 6 metal and 1 power")));
+    assert!(rows
+        .iter()
+        .any(|r| r.starts_with("Lay a mine, 3 metal, 1 of 1 tonight")));
     assert!(rows
         .iter()
         .any(|r| r.starts_with("Make a missile, 4 metal and 6 power")));
@@ -180,18 +186,28 @@ fn play_opens_the_colony_and_ready_starts_the_night() {
     h.clear();
     choose(&mut h, "Ready for night 1");
     assert_eq!(h.app.top_name(), NIGHT_NAME);
-    settle(&mut h);
+    h.frame(DT);
     assert!(
-        spoke(&h, "Night 1, gun at the centre. 2 drifters."),
+        spoke(&h, "Night 1, gun at the centre. 2 drifters, in 2 waves."),
         "{}",
         all_spoken(&h)
     );
-    assert!(spoke(&h, "Your turn, 2 actions."), "{}", all_spoken(&h));
+    h.clear();
+    h.press(Key::Down);
+    assert!(
+        spoke(&h, "Nothing in the sky. Wave 1 of 2 in "),
+        "{}",
+        all_spoken(&h)
+    );
+    wait_for(&mut h, "Wave 1 of 2: a drifter.", 4.0);
+    assert!(h.played().iter().any(|k| k == "dustfall/wave/coming"));
+    h.clear();
+    wait_for(&mut h, "Drifter, ", 3.0);
     assert!(h.played().iter().any(|k| k == "dustfall/raider/arrive"));
 }
 
 #[test]
-fn the_colony_builds_places_and_refuses() {
+fn the_colony_builds_lays_mines_and_refuses() {
     let mut h = colony();
     h.clear();
     choose(&mut h, "Build a solar array");
@@ -210,36 +226,22 @@ fn the_colony_builds_places_and_refuses() {
         all_spoken(&h)
     );
     h.clear();
-    choose(&mut h, "Place a wall");
-    assert_eq!(h.app.top_name(), PLACER_NAME);
-    assert!(spoke(&h, "Centre, row 4, open."), "{}", all_spoken(&h));
-    h.press(Key::Up);
-    assert!(spoke(&h, "Centre, row 5, open."), "{}", all_spoken(&h));
-    h.press(Key::Left);
-    assert!(spoke(&h, "Left, row 5, open."), "{}", all_spoken(&h));
-    h.press(Key::Up);
-    assert!(spoke(&h, "The grid ends there."), "{}", all_spoken(&h));
-    h.clear();
-    h.press(Key::Return);
+    choose(&mut h, "Lay a mine");
+    assert_eq!(h.app.top_name(), SLOTS_NAME);
+    assert!(spoke(&h, "Which lane to mine"), "{}", all_spoken(&h));
+    assert_eq!(rows(&h)[0], "The far left lane");
+    choose(&mut h, "The centre lane");
     assert_eq!(h.app.top_name(), COLONY_NAME);
     assert!(
-        spoke(&h, "Wall placed at left, row 5. Metal 13."),
+        spoke(&h, "Mine laid in the centre lane. Metal 13."),
         "{}",
         all_spoken(&h)
     );
-    h.clear();
-    choose(&mut h, "Place a mine");
-    h.press(Key::Up);
-    h.press(Key::Left);
-    h.press(Key::Return);
-    assert!(spoke(&h, "That sector is taken."), "{}", all_spoken(&h));
-    assert_eq!(h.app.top_name(), PLACER_NAME);
-    h.press(Key::Escape);
-    assert_eq!(h.app.top_name(), COLONY_NAME);
-    assert!(spoke(&h, "Nothing placed."), "{}", all_spoken(&h));
-    h.clear();
-    choose(&mut h, "The grid");
-    assert!(spoke(&h, "a wall at left, row 5"), "{}", all_spoken(&h));
+    assert!(
+        !rows(&h).iter().any(|r| r.starts_with("Lay a mine")),
+        "one mine a night: {:?}",
+        rows(&h)
+    );
     h.clear();
     choose(&mut h, "Build a workshop");
     assert_eq!(
@@ -249,6 +251,11 @@ fn the_colony_builds_places_and_refuses() {
         all_spoken(&h)
     );
     assert_eq!(rows(&h)[0], "The centre slot");
+    choose(&mut h, "Back");
+    assert_eq!(h.app.top_name(), COLONY_NAME);
+    assert!(spoke(&h, "Nothing built."), "{}", all_spoken(&h));
+    h.clear();
+    choose(&mut h, "Build a workshop");
     h.press(Key::Return);
     assert!(
         spoke(&h, "Workshop built under the centre. Metal 3."),
@@ -275,7 +282,7 @@ fn the_colony_builds_places_and_refuses() {
     assert!(
         spoke(
             &h,
-            "Solar array under the left; workshop under the centre; the right slot open."
+            "Solar array under the left; workshop under the centre; the right slot open. A mine in the centre lane."
         ),
         "{}",
         all_spoken(&h)
@@ -283,87 +290,82 @@ fn the_colony_builds_places_and_refuses() {
 }
 
 #[test]
-fn scan_status_and_the_route_finder_speak() {
+fn scan_status_and_the_sky_speak() {
     let mut h = night();
+    wait_for(&mut h, "Drifter, ", 6.0);
     h.clear();
     h.press(Key::Down);
     assert!(spoke(&h, "Drifter, "), "{}", all_spoken(&h));
-    assert!(spoke(&h, "row 6, 1 hit."), "{}", all_spoken(&h));
-    assert!(h.played().iter().any(|k| k == "dustfall/raider/drifter"));
+    assert!(spoke(&h, ", far, 1 hit."), "{}", all_spoken(&h));
+    assert!(h.played().iter().any(|k| k == "dustfall/ui/scan"));
     let first = h.spoken().last().cloned().unwrap();
     h.clear();
     h.press(Key::Down);
-    let second = h.spoken().last().cloned().unwrap();
-    assert_ne!(first, second, "two drifters to scan");
-    h.press(Key::Down);
-    assert_eq!(h.spoken().last().cloned().unwrap(), first, "the scan wraps");
+    assert_eq!(
+        h.spoken().last().cloned().unwrap(),
+        first,
+        "one raider: the scan stays on it"
+    );
     h.clear();
     h.press(Key::S);
     assert!(
-        spoke(
-            &h,
-            "Gun centre. Dome 100, shield 20. 2 actions left. 2 raiders."
-        ),
+        spoke(&h, "Gun centre. Dome 100, shield 2"),
+        "{}",
+        all_spoken(&h)
+    );
+    assert!(
+        spoke(&h, ". Wave 1 of 2. 1 raider in the sky, 1 to come."),
         "{}",
         all_spoken(&h)
     );
     h.press(Key::S);
-    assert!(
-        spoke(&h, "Night 1, turn 1. Missiles 0."),
-        "{}",
-        all_spoken(&h)
-    );
+    assert!(spoke(&h, "Drifter, "), "{}", all_spoken(&h));
     h.clear();
     h.press(Key::H);
-    assert!(spoke(&h, "Drifter heads to "), "{}", all_spoken(&h));
+    let said = all_spoken(&h);
+    assert!(
+        said.contains("a drifter") || said.contains("Drifter"),
+        "{said}"
+    );
     h.clear();
     h.press(Key::R);
-    assert!(spoke(&h, "Drifter heads to "), "{}", all_spoken(&h));
-    h.clear();
-    h.press(Key::Tab);
-    assert!(spoke(&h, "No missiles."), "{}", all_spoken(&h));
+    assert!(!h.spoken().is_empty(), "R repeats the last line");
 }
 
 #[test]
-fn the_gun_slides_fires_and_the_turn_ends() {
+fn the_gun_slides_and_the_lock_tone_pulses_under_a_raider() {
     let mut h = night();
+    wait_for(&mut h, "Drifter, ", 6.0);
+    let lane = nearest_lane(&h).unwrap();
     h.clear();
     h.press(Key::Left);
     assert!(spoke(&h, "Left"), "{}", all_spoken(&h));
     assert!(h.played().iter().any(|k| k == "dustfall/gun/rail"));
+    h.press(Key::Left);
     h.clear();
     h.press(Key::Left);
-    // The second action ends the turn: the raiders move.
-    settle(&mut h);
-    assert!(spoke(&h, "Your turn."), "{}", all_spoken(&h));
-    assert!(h.played().iter().any(|k| k == "dustfall/raider/drifter"));
+    assert!(spoke(&h, "The rail ends"), "{}", all_spoken(&h));
+    for _ in 0..lane {
+        h.press(Key::Right);
+    }
     h.clear();
-    h.press(Key::Left);
+    pass(&mut h, 1.0);
     assert!(
-        spoke(&h, "The rail ends at the far left."),
-        "{}",
-        all_spoken(&h)
+        h.played().iter().any(|k| k == "dustfall/gun/lock"),
+        "the lock tone under the raider: {:?}",
+        h.played()
     );
     h.clear();
-    h.press(Key::Return);
-    settle(&mut h);
-    assert!(
-        spoke(&h, "Turn over. Shield up 10, to 30."),
-        "{}",
-        all_spoken(&h)
-    );
-}
-
-#[test]
-fn keys_wait_while_the_raiders_move() {
-    let mut h = night();
-    h.clear();
-    h.press(Key::Return);
-    // Beats are queued: the first plays on the next frame.
-    h.frame(0.01);
     h.press(Key::Space);
-    assert!(spoke(&h, "The raiders are moving."), "{}", all_spoken(&h));
-    settle(&mut h);
+    assert!(h.played().iter().any(|k| k == "dustfall/gun/fire"));
+    assert!(spoke(&h, "Drifter down."), "{}", all_spoken(&h));
+    h.clear();
+    h.press(Key::Space);
+    assert!(
+        h.spoken().is_empty(),
+        "reloading is silent: {}",
+        all_spoken(&h)
+    );
 }
 
 #[test]
@@ -371,6 +373,8 @@ fn a_night_watched_through_opens_the_next_colony_and_saves() {
     let mut h = night();
     watch_night(&mut h);
     assert_eq!(h.app.top_name(), COLONY_NAME, "{}", all_spoken(&h));
+    assert!(spoke(&h, "Wave 1 of 2 down."), "{}", all_spoken(&h));
+    assert!(spoke(&h, "Wave 2 of 2: a drifter."), "{}", all_spoken(&h));
     assert!(spoke(&h, "Night 1 held."), "{}", all_spoken(&h));
     assert!(spoke(&h, "Before night 2."), "{}", all_spoken(&h));
     assert!(h.played().iter().any(|k| k == "dustfall/music/held"));
@@ -389,6 +393,47 @@ fn a_night_watched_through_opens_the_next_colony_and_saves() {
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), COLONY_NAME);
     assert!(spoke(&h, "Before night 2."), "{}", all_spoken(&h));
+}
+
+#[test]
+fn a_mothership_night_is_heard_holding_shifting_and_firing() {
+    let mut h = start();
+    let mut run = Run::at_night(4, 5);
+    run.take_events();
+    run.apply(Input::Ready).unwrap();
+    run.waves
+        .retain(|w| w.iter().any(|a| a.kind == Kind::Mothership));
+    h.app
+        .ctx
+        .push(NightScreen::new(share_as(run, Mode::Practice)));
+    h.frame(DT);
+    assert_eq!(h.app.top_name(), NIGHT_NAME);
+    wait_for(&mut h, "Mothership, ", 6.0);
+    // Shots from the dome glance off while it is far out.
+    let lane = nearest_lane(&h).unwrap();
+    for _ in 0..(lane - 2).abs() {
+        h.press(if lane < 2 { Key::Left } else { Key::Right });
+    }
+    h.clear();
+    h.press(Key::Space);
+    assert!(spoke(&h, "Out of range."), "{}", all_spoken(&h));
+    assert!(h.played().iter().any(|k| k == "dustfall/charge/pass"));
+    wait_for(&mut h, "Mothership holds at mid range", 12.0);
+    wait_for(&mut h, "Siege shot coming.", 8.0);
+    wait_for(&mut h, "Mothership to the ", 8.0);
+    assert!(
+        spoke(&h, "Hit. Shield ") && spoke(&h, ", dome 95."),
+        "the siege shot lands through the shield: {}",
+        all_spoken(&h)
+    );
+    // It shifted a lane: slide after it, and a shot at mid range lands.
+    let to = nearest_lane(&h).unwrap();
+    for _ in 0..(to - lane).abs() {
+        h.press(if to < lane { Key::Left } else { Key::Right });
+    }
+    h.clear();
+    h.press(Key::Space);
+    assert!(spoke(&h, "Mothership, 7 left."), "{}", all_spoken(&h));
 }
 
 #[test]
@@ -429,56 +474,24 @@ fn the_tutorial_runs_through() {
         "{}",
         all_spoken(&h)
     );
+    wait_for(&mut h, "Drifter, ", 8.0);
     h.clear();
     h.press(Key::Down);
     h.frame(DT);
     assert!(spoke(&h, "Each raider is named"), "{}", all_spoken(&h));
-    // Slide toward a drifter's column, over the arrivals still playing.
-    let run = Run::new(tutorial::SEED);
-    let target = run.forecast[0].col as i64;
+    let lane = nearest_lane(&h).unwrap();
     h.clear();
     for _ in 0..4 {
-        if spoke(&h, "Under it.") {
+        if spoke(&h, "Locked on.") {
             break;
         }
-        h.press(if target < 2 { Key::Left } else { Key::Right });
+        h.press(if lane < 2 { Key::Left } else { Key::Right });
         h.frame(DT);
     }
-    assert!(spoke(&h, "Under it."), "{}", all_spoken(&h));
+    assert!(spoke(&h, "Locked on."), "{}", all_spoken(&h));
     h.clear();
     h.press(Key::Space);
-    for _ in 0..100 {
-        if spoke(&h, "Down. Its wreck leaves salvage") {
-            break;
-        }
-        h.frame(DT);
-    }
-    assert!(
-        spoke(&h, "Down. Its wreck leaves salvage"),
-        "{}",
-        all_spoken(&h)
-    );
-    // That was the second action: the raiders move on their own first.
-    for _ in 0..200 {
-        if spoke(&h, "Your turn.") {
-            break;
-        }
-        h.frame(DT);
-    }
-    assert!(spoke(&h, "Your turn."), "{}", all_spoken(&h));
-    h.clear();
-    h.press(Key::Return);
-    for _ in 0..200 {
-        if spoke(&h, "Your turn again.") {
-            break;
-        }
-        h.frame(DT);
-    }
-    assert!(
-        spoke(&h, "The raiders have moved. Your turn again."),
-        "{}",
-        all_spoken(&h)
-    );
+    wait_for(&mut h, "Down. Its wreck leaves salvage", 2.0);
     h.clear();
     h.press(Key::S);
     h.frame(DT);
@@ -490,7 +503,7 @@ fn the_tutorial_runs_through() {
     h.clear();
     h.press(Key::H);
     h.frame(DT);
-    assert!(spoke(&h, "The route finder."), "{}", all_spoken(&h));
+    assert!(spoke(&h, "The sky, read out."), "{}", all_spoken(&h));
     assert!(spoke(&h, "Good luck on the watch."), "{}", all_spoken(&h));
     assert_eq!(h.app.top_name(), TITLE_NAME, "{}", all_spoken(&h));
 }
@@ -503,14 +516,18 @@ fn the_settings_have_the_games_rows() {
     let rows = rows(&h);
     for label in [
         "Spoken call-outs: on",
-        "Confirm end of turn: off",
         "Scan order: nearest first",
+        "Storm wind: on",
     ] {
         assert!(
             rows.iter().any(|r| r.starts_with(label)),
             "{label}: {rows:?}"
         );
     }
+    assert!(
+        !rows.iter().any(|r| r.contains("turn")),
+        "nothing turn-based is left: {rows:?}"
+    );
 }
 
 #[test]
@@ -518,7 +535,7 @@ fn every_sound_check_row_plays_something() {
     let mut h = start();
     choose(&mut h, "Sound check");
     let rows = rows(&h);
-    assert!(rows.len() > 20, "{rows:?}");
+    assert!(rows.len() > 25, "{rows:?}");
     h.press(Key::Home);
     for row in rows.iter().take(rows.len() - 1) {
         h.clear();
@@ -583,14 +600,11 @@ fn tonights_sky_opens_on_a_built_colony_and_scores_its_board() {
         said.contains("Tonight's sky: One night against the raiders of night"),
         "{said}"
     );
-    assert!(!said.contains("not played yet"), "{said}");
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), NIGHT_NAME, "{}", all_spoken(&h));
-    // The colony came built: works on the grid, and two missiles in the rack.
+    // The colony came built: two missiles in the rack.
     let lines = h.app.top_lines();
-    let second = &lines[1];
-    assert!(second.contains("missiles 2"), "{second}");
-    settle(&mut h);
+    assert!(lines[1].contains("missiles 2"), "{}", lines[1]);
     h.clear();
     h.press(Key::S);
     h.press(Key::S);
@@ -634,7 +648,6 @@ fn siege_week_opens_on_a_stocked_colony_and_leaving_does_not_count() {
     let said = all_spoken(&h);
     assert!(said.contains("Before night 4."), "{said}");
     assert!(said.contains("Power 18, metal 39, food 6"), "{said}");
-    // Escape pauses; leaving goes back to the challenges, unscored.
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), "pause");
     choose(&mut h, "Leave the challenge");
@@ -757,16 +770,14 @@ fn on_the_fourth_monday_the_storm_row_opens_a_colony_in_the_dust() {
     h.clear();
     choose(&mut h, "Ready for night 1");
     assert_eq!(h.app.top_name(), NIGHT_NAME);
-    settle(&mut h);
+    h.frame(DT);
     assert!(spoke(&h, "Dust at the far left."), "{}", all_spoken(&h));
     h.clear();
     h.press(Key::S);
     h.press(Key::S);
     assert!(spoke(&h, "Dust at the far left."), "{}", all_spoken(&h));
     h.clear();
-    h.press(Key::Return);
-    settle(&mut h);
-    assert!(spoke(&h, "Dust at the left."), "{}", all_spoken(&h));
+    wait_for(&mut h, "Dust at the left.", 6.0);
     // Leaving saves the colony as a dust storm one.
     h.press(Key::Escape);
     choose(&mut h, "Back to the title");

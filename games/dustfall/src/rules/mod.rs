@@ -1,24 +1,27 @@
-//! The rules of Dustfall, with no sound, speech or clock, so every rule can
-//! be tested alone and the same code can referee an online room later.
-//! Everything here is whole numbers and a seeded [`Rng`], so a replay of the
-//! same seed and inputs lands on the same run anywhere.
+//! The rules of Dustfall, with no sound, speech or clock of their own, so
+//! every rule can be tested alone and the same code can referee an online
+//! room later. Everything here is whole numbers and a seeded [`Rng`], so a
+//! replay of the same seed, ticks and inputs lands on the same run
+//! anywhere.
 //!
-//! Two state machines, both moved only by [`Run::apply`]:
+//! Two state machines. The run is moved by [`Run::apply`] and
+//! [`Run::tick`]:
 //!
 //! ```text
-//! The run:    Colony --Ready--> Turn --(night held, night 12)--> Relief
-//!               ^                 |
-//!               +--(night held)---+--(dome at 0)--> Fallen
-//!
-//! The turn:   Turn { actions } --Left, Right, Fire, Missile--> Turn { actions - 1 }
-//!                  |                                                |
-//!                  +--EndTurn, or the last action--> the raiders' phase, whole:
-//!                       1 charges fire, 2 breaches, 3 steps, 4 wind-ups, 5 flak,
-//!                     then Turn { actions } again, or the night is held or lost.
+//! Colony --Ready--> Night --(sky clear, night 12)--> Relief
+//!   ^                 |
+//!   +--(sky clear)----+--(dome at 0)--> Fallen
 //! ```
 //!
-//! Each raider's own machine is in [`raiders`]. The screen turns the
-//! [`Event`]s a step raises into sound and speech; nothing here is spoken.
+//! The night is real time: the screen calls [`Run::tick`] ten times a
+//! second and applies the player's inputs between ticks. The raiders come
+//! in waves: a wave is called, its raiders come over the horizon a second
+//! apart, and once the sky is clear of them a lull passes and the next
+//! wave is called. Each tick the storm drifts, the wave's next raiders
+//! arrive, the shield recharges, every raider falls or crosses or fires,
+//! the flak posts fire, and the night ends when the last wave is down.
+//! Each raider's own machine is in [`raiders`]. The screen turns the [`Event`]s a tick
+//! raises into sound and speech; nothing here is spoken.
 //!
 //! A run with `relief` 0 is the long watch: Relief lands on night 12 as a
 //! milestone and the nights go on until the dome falls. A run with a
@@ -26,23 +29,22 @@
 //! unlocks change, so a replay needs nothing but the run.
 
 pub mod colony;
-pub mod grid;
+pub mod lanes;
 pub mod nights;
 pub mod orders;
 pub mod perks;
 pub mod raiders;
-pub mod route;
 pub mod storm;
 
 use parlor_core::Rng;
 use serde::{Deserialize, Serialize};
 
 pub use colony::{Building, Colony, Resources, Slot};
-pub use grid::{column_name, Grid, Sector, Work, WorkKind, CENTRE, COLS, FAR_ROW, NEAR_ROW, ROWS};
+pub use lanes::{lane_name, place_words, Range, CENTRE, HORIZON, LANES, MID, NEAR, TICKS_A_SECOND};
 pub use nights::RELIEF_NIGHT;
 pub use orders::Order;
 pub use perks::Perks;
-pub use raiders::{Kind, Quirk, Raider, State, Take, Weapon};
+pub use raiders::{Charge, Kind, Quirk, Raider, State, Take, Weapon};
 pub use storm::Storm;
 
 /// Points for holding a night, and as much again for one with no breach.
@@ -51,65 +53,72 @@ pub const CLEAN_NIGHT_POINTS: u64 = 50;
 /// Tech points for a night held, and for Relief.
 pub const NIGHT_HELD_TECH: u32 = 1;
 pub const RELIEF_TECH: u32 = 5;
-/// Charges that can be winding up at once, so the warnings stay readable.
-/// A mothership's siege is not counted.
+/// Bolts and siphons that can be winding up at once, so the warnings stay
+/// readable. Siege shots are not counted.
 pub const MAX_CHARGES: usize = 2;
-/// At its post a mothership drops a skitter every this many phases, and
-/// winds up a siege shot every this many.
+/// Ticks the gun takes to fire again, fed and hungry.
+pub const GUN_COOLDOWN: u32 = 3;
+pub const GUN_COOLDOWN_HUNGRY: u32 = 6;
+/// A hovering mothership shifts a lane every this many ticks, and drops a
+/// drifter with every second siege shot.
+pub const MOTHERSHIP_SHIFT_EVERY: u32 = 30;
 pub const MOTHERSHIP_DROP_EVERY: u32 = 2;
-pub const MOTHERSHIP_SIEGE_EVERY: u32 = 3;
-/// The carrier winds up a siege shot every this many phases.
-pub const CARRIER_SIEGE_EVERY: u32 = 3;
+/// The carrier lets a skitter down over every other lane it crosses.
+pub const CARRIER_DROP_LANES: [u8; 3] = [0, 2, 4];
+/// The pace of a practice night, in percent of the real one.
+pub const PRACTICE_PACE: u32 = 30;
 
 /// Where the run is.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Phase {
     /// Between nights: spending, then Ready.
     Colony,
-    /// The player's turn, with `actions` left to spend. The raiders' phase
-    /// runs whole when the turn ends, so it is never a state the player
-    /// waits in.
-    Turn { actions: u8 },
+    /// The night, ticking.
+    Night,
     /// Relief landed: the run is won.
     Relief,
     /// The dome fell: the run is lost.
     Fallen,
 }
 
-/// A raider the forecast promises, with the column it enters at.
+/// A raider the forecast promises: its kind, the lane it enters at, its
+/// quirk, the wave it comes in, and the tick it comes over the horizon.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Arrival {
     pub kind: Kind,
-    pub col: u8,
+    pub lane: u8,
     #[serde(default)]
     pub quirk: Option<Quirk>,
+    /// The wave it comes in, from 1.
+    #[serde(default)]
+    pub wave: u8,
+    /// The tick of the night it arrives on; set as its wave is called.
+    #[serde(default)]
+    pub at: u32,
 }
 
 /// Everything a player can do. Each is one input of a replay.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Input {
-    /// Slide the gun one column.
+    /// Slide the gun one lane.
     Left,
     Right,
-    /// Shoot up the gun's column.
+    /// Shoot up the gun's lane.
     Fire,
-    /// Launch a missile at the raider nearest the domes.
+    /// Launch a missile at the raider nearest the dome.
     Missile,
-    /// Stop early: each unspent action charges the shield.
-    EndTurn,
-    /// Colony phase: a building in the slot under `col`.
+    /// Colony phase: a building in the slot under `lane`.
     Buy {
         building: Building,
-        col: u8,
+        lane: u8,
     },
-    /// Colony phase: a work on the grid.
-    Place {
-        work: WorkKind,
-        at: Sector,
+    /// Colony phase: a mine in a lane for the night to come.
+    LayMine {
+        lane: u8,
     },
     RepairDome,
     RepairBuilding {
-        col: u8,
+        lane: u8,
     },
     MakeMissile,
     /// Colony phase: one of the night's two orders.
@@ -125,8 +134,10 @@ pub enum Refusal {
     WrongPhase,
     /// The gun is at the edge already.
     Edge,
+    /// The gun has not reloaded.
+    Reloading,
     NoMissiles,
-    /// Nothing on the grid to fire a missile at.
+    /// Nothing in the sky to fire a missile at.
     NoTarget,
     /// Short of power or metal; what it would take.
     CantAfford {
@@ -135,10 +146,11 @@ pub enum Refusal {
     },
     SlotClosed,
     SlotTaken,
-    /// Works go in rows 2 to 5.
-    RowOpen,
-    SectorTaken,
-    /// No building under that column.
+    /// A mine waits in that lane already.
+    LaneMined,
+    /// As many mines as may be laid before one night.
+    MinesLaid,
+    /// No building under that lane.
     NothingThere,
     /// The building is not dark.
     NotDark,
@@ -156,55 +168,89 @@ pub enum Hitter {
     Gun,
     Missile,
     Mine,
-    Flak(Sector),
+    /// The flak post under this lane.
+    Flak(u8),
 }
 
 /// What happened, in order, for the screen to tell.
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Event {
-    /// The night's raiders are on the grid.
+    /// The night has begun; `coming` raiders will come over the horizon.
     NightOpens {
         night: u8,
-        arrivals: Vec<(u32, Kind, Sector)>,
+        coming: usize,
+        waves: u8,
     },
-    YourTurn {
-        turn: u32,
-        actions: u8,
+    /// The last raider of a wave is gone, and another wave is to come.
+    WaveClear {
+        wave: u8,
+        of: u8,
     },
-    /// The gun slid to `col`; `under` is the nearest raider in that
-    /// column as it stood then, before the raiders moved.
+    /// A wave is called: its raiders start arriving a second from now.
+    WaveComing {
+        wave: u8,
+        of: u8,
+        kinds: Vec<Kind>,
+    },
+    /// A raider came over the horizon, or in from the edge.
+    Arrived {
+        id: u32,
+        kind: Kind,
+        lane: u8,
+        quirk: Option<Quirk>,
+    },
+    /// A raider came into a nearer range.
+    Ranged {
+        id: u32,
+        kind: Kind,
+        lane: u8,
+        range: Range,
+    },
+    /// The gun slid to `lane`; `under` is the nearest raider in it.
     Moved {
-        col: u8,
-        under: Option<(Kind, u8)>,
+        lane: u8,
+        under: Option<(Kind, Range)>,
     },
-    /// The gun fired up an empty column.
+    /// The gun fired up an empty lane.
     DryShot {
-        col: u8,
+        lane: u8,
+    },
+    /// The gun's shot glanced off an armoured hull still at far range.
+    Glanced {
+        id: u32,
+        kind: Kind,
+        lane: u8,
+        height: u32,
     },
     Hit {
         id: u32,
         kind: Kind,
-        at: Sector,
+        lane: u8,
+        height: u32,
         left: u8,
         by: Hitter,
     },
     Down {
         id: u32,
         kind: Kind,
-        at: Sector,
+        lane: u8,
+        height: u32,
         take: Take,
         by: Hitter,
     },
-    /// The turn ended early; `charged` went on the shield.
-    TurnEnded {
-        charged: u32,
+    /// A raider began winding up a shot at `lane`.
+    Charging {
+        id: u32,
+        kind: Kind,
+        weapon: Weapon,
+        lane: u8,
     },
     /// A wound-up shot went off.
     Shot {
         id: u32,
         kind: Kind,
         weapon: Weapon,
-        col: u8,
+        lane: u8,
         dodged: bool,
         shield: u32,
         dome: u32,
@@ -212,49 +258,53 @@ pub enum Event {
     Breach {
         id: u32,
         kind: Kind,
-        col: u8,
+        lane: u8,
         shield: u32,
         dome: u32,
         darkened: Option<Building>,
     },
-    Stepped {
+    /// A weaving raider changed lane.
+    Weaved {
         id: u32,
         kind: Kind,
-        from: Sector,
-        to: Sector,
+        from: u8,
+        to: u8,
     },
-    Bashed {
+    /// A crossing raider is over a new lane.
+    Crossed {
         id: u32,
         kind: Kind,
-        wall: Sector,
-        down: bool,
+        lane: u8,
     },
-    Charging {
+    /// A mothership reached mid range and holds there.
+    Hovering {
         id: u32,
-        kind: Kind,
-        weapon: Weapon,
-        col: u8,
+        lane: u8,
     },
-    /// A burrowing raider passed under a wall, which still stands.
-    Burrowed {
+    /// A hovering mothership shifted to `lane`.
+    Shifted {
         id: u32,
-        kind: Kind,
-        wall: Sector,
+        lane: u8,
     },
-    /// The dust storm covers `col` for this raiders' phase.
-    StormMoved {
-        col: u8,
-    },
-    /// A mothership let a skitter out beside it.
+    /// A mothership or the carrier let a raider out.
     Dropped {
         from: u32,
         id: u32,
-        at: Sector,
+        kind: Kind,
+        lane: u8,
     },
-    /// A mule crossed the grid and left.
+    /// A mule crossed the sky and left.
     Left {
         id: u32,
         kind: Kind,
+    },
+    /// The mine in `lane` went off.
+    MineBlew {
+        lane: u8,
+    },
+    /// The dust storm drifted to `lane`.
+    StormMoved {
+        lane: u8,
     },
     Held {
         night: u8,
@@ -273,23 +323,24 @@ pub enum Event {
     ColonyOpens {
         night: u8,
         hungry: bool,
-        unpowered: Vec<Sector>,
+        /// Lanes whose building went without power.
+        unpowered: Vec<u8>,
+        /// Lanes whose building is dark.
         dark: Vec<u8>,
     },
     Bought {
         building: Building,
-        col: u8,
+        lane: u8,
     },
-    Placed {
-        work: WorkKind,
-        at: Sector,
+    MineLaid {
+        lane: u8,
     },
     DomeRepaired {
         dome: u32,
     },
     BuildingRepaired {
         building: Building,
-        col: u8,
+        lane: u8,
     },
     MissileMade {
         missiles: u32,
@@ -319,6 +370,14 @@ fn relief_night() -> u8 {
     RELIEF_NIGHT
 }
 
+fn full_pace() -> u32 {
+    100
+}
+
+fn no_flak() -> Vec<u32> {
+    vec![0; LANES as usize]
+}
+
 /// One run, from the first colony phase to Relief or the fallen dome.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Run {
@@ -333,6 +392,9 @@ pub struct Run {
     /// What the player's unlocks and chosen modifiers changed.
     #[serde(default)]
     pub perks: Perks,
+    /// The pace of the night in percent: 100, or slower for practice.
+    #[serde(default = "full_pace")]
+    pub pace: u32,
     /// The orders offered before this night, and the one taken.
     #[serde(default)]
     pub offered: Vec<Order>,
@@ -344,15 +406,41 @@ pub struct Run {
     /// The night in progress, or the one coming next in the colony phase.
     pub night: u8,
     pub phase: Phase,
-    /// The turn of the night, from 1.
-    pub turn: u32,
-    pub grid: Grid,
+    /// Ticks since the night opened.
+    #[serde(default)]
+    pub tick: u32,
     pub colony: Colony,
+    /// The raiders in the sky.
     pub raiders: Vec<Raider>,
-    /// The gun's column.
+    /// The raiders of the current wave still to come, soonest first.
+    #[serde(default)]
+    pub pending: Vec<Arrival>,
+    /// The waves still to be called tonight.
+    #[serde(default)]
+    pub waves: Vec<Vec<Arrival>>,
+    /// The wave in the sky, from 1; 0 before the first is called.
+    #[serde(default)]
+    pub wave: u8,
+    /// The tick the next wave is called on, once the sky is clear.
+    #[serde(default)]
+    wave_at: u32,
+    /// The gun's lane.
     pub gun: u8,
-    /// A siphon hit: the shield takes no charge this turn.
-    pub siphoned: bool,
+    /// Ticks until the gun can fire again.
+    #[serde(default)]
+    pub cooldown: u32,
+    /// The shield does not recharge before this tick.
+    #[serde(default)]
+    pub siphoned_until: u32,
+    /// The tick the storm last drifted on.
+    #[serde(default)]
+    storm_at: u32,
+    /// The tick each lane's flak post last fired on.
+    #[serde(default = "no_flak")]
+    flak_at: Vec<u32>,
+    /// Mines laid this colony phase.
+    #[serde(default)]
+    pub mines_laid: u32,
     pub forecast: Vec<Arrival>,
     /// What the night's kills have brought in.
     pub take: Take,
@@ -380,28 +468,30 @@ impl Run {
 
     /// A run set up as `perks` say.
     pub fn with_perks(seed: u64, perks: Perks) -> Run {
-        let mut grid = Grid::new();
-        if perks.start_walls {
-            for col in [CENTRE - 1, CENTRE + 1] {
-                grid.set(Sector::new(col, 3), Some(WorkKind::Wall.build()));
-            }
-        }
         let mut run = Run {
             seed,
             first: 1,
             relief: RELIEF_NIGHT,
             perks,
+            pace: 100,
             offered: Vec::new(),
             order: None,
             storm: None,
             night: 1,
             phase: Phase::Colony,
-            turn: 0,
-            grid,
+            tick: 0,
             colony: Colony::with(perks),
             raiders: Vec::new(),
+            pending: Vec::new(),
+            waves: Vec::new(),
+            wave: 0,
+            wave_at: 0,
             gun: CENTRE,
-            siphoned: false,
+            cooldown: 0,
+            siphoned_until: 0,
+            storm_at: 0,
+            flak_at: no_flak(),
+            mines_laid: 0,
             forecast: Vec::new(),
             take: Take::default(),
             breached: false,
@@ -447,6 +537,14 @@ impl Run {
         run.night = night.clamp(1, RELIEF_NIGHT);
         run.first = run.night;
         run.read_the_sky();
+        run
+    }
+
+    /// The tutorial's run: night 1 at a third of the pace, so there is
+    /// time to hear each thing.
+    pub fn practice(seed: u64) -> Run {
+        let mut run = Run::new(seed);
+        run.pace = PRACTICE_PACE;
         run
     }
 
@@ -499,21 +597,14 @@ impl Run {
     /// Does one thing. On a refusal nothing changed.
     pub fn apply(&mut self, input: Input) -> Result<(), Refusal> {
         match (self.phase, input) {
-            (Phase::Turn { .. }, Input::Left) => self.slide(-1),
-            (Phase::Turn { .. }, Input::Right) => self.slide(1),
-            (Phase::Turn { .. }, Input::Fire) => {
-                self.fire();
-                Ok(())
-            }
-            (Phase::Turn { .. }, Input::Missile) => self.missile(),
-            (Phase::Turn { actions }, Input::EndTurn) => {
-                self.end_turn(actions);
-                Ok(())
-            }
-            (Phase::Colony, Input::Buy { building, col }) => self.buy(building, col),
-            (Phase::Colony, Input::Place { work, at }) => self.place(work, at),
+            (Phase::Night, Input::Left) => self.slide(-1),
+            (Phase::Night, Input::Right) => self.slide(1),
+            (Phase::Night, Input::Fire) => self.fire(),
+            (Phase::Night, Input::Missile) => self.missile(),
+            (Phase::Colony, Input::Buy { building, lane }) => self.buy(building, lane),
+            (Phase::Colony, Input::LayMine { lane }) => self.lay_mine(lane),
             (Phase::Colony, Input::RepairDome) => self.repair_dome(),
-            (Phase::Colony, Input::RepairBuilding { col }) => self.repair_building(col),
+            (Phase::Colony, Input::RepairBuilding { lane }) => self.repair_building(lane),
             (Phase::Colony, Input::MakeMissile) => self.make_missile(),
             (Phase::Colony, Input::TakeOrder(order)) => self.take_order(order),
             (Phase::Colony, Input::Ready) => {
@@ -526,10 +617,10 @@ impl Run {
 
     // ----- Queries the screen reads without changing anything -----
 
-    /// The raiders nearest the domes first.
+    /// The raiders nearest the dome first.
     pub fn nearest_first(&self) -> Vec<&Raider> {
         let mut all: Vec<&Raider> = self.raiders.iter().collect();
-        all.sort_by_key(|r| (r.at.row, r.at.col, r.id));
+        all.sort_by_key(|r| (r.height, r.lane, r.id));
         all
     }
 
@@ -537,65 +628,56 @@ impl Run {
         self.raiders.iter().find(|r| r.id == id)
     }
 
-    /// The route a raider will walk from where it stands, nearest step
-    /// first. A crossing raider's route is the rest of its crossing.
-    pub fn route_of(&self, id: u32) -> Option<Vec<Sector>> {
-        let raider = self.raider(id)?;
-        if raider.kind.crosses() {
-            let mut out = Vec::new();
-            let mut col = raider.at.col as i8 + raider.heading;
-            while (0..COLS as i8).contains(&col) {
-                out.push(Sector::new(col as u8, raider.at.row));
-                col += raider.heading;
-            }
-            return Some(out);
-        }
-        let (buildings, hydro) = self.colony.building_columns();
-        let goal = route::goal(raider.kind, &buildings, &hydro);
-        route::plan(&self.grid, raider, &goal, self.gun)
+    /// The nearest raider in `lane`.
+    pub fn under(&self, lane: u8) -> Option<&Raider> {
+        self.raiders
+            .iter()
+            .filter(|r| r.lane == lane)
+            .min_by_key(|r| (r.height, r.id))
     }
 
-    /// Raiders' phases until the raider reaches the end of its route.
-    pub fn phases_to_land(&self, id: u32) -> Option<u32> {
-        let raider = self.raider(id)?;
-        let route = self.route_of(id)?;
-        let walls = route.iter().filter(|s| self.grid.is_wall(**s)).count() as u32;
-        let mut bashes = walls * u32::from(grid::WALL_HITS);
-        if raider.can_burrow() && walls > 0 {
-            // The first wall is passed under in one phase.
-            bashes -= u32::from(grid::WALL_HITS) - 1;
-        }
-        Some(
-            route::phases_with_steps(
-                raider.kind,
-                raider.rest,
-                route.len(),
-                self.steps_of(raider.kind),
-            ) + bashes,
-        )
-    }
-
-    /// Steps a raider of `kind` takes a phase: skitters take three under
-    /// Salvage.
-    pub fn steps_of(&self, kind: Kind) -> u8 {
-        if kind == Kind::Skitter && self.order == Some(Order::Salvage) {
-            orders::SALVAGE_SKITTER_STEPS
-        } else {
-            kind.steps()
-        }
-    }
-
-    /// Whether the dust storm covers `at` this phase.
-    pub fn in_dust(&self, at: Sector) -> bool {
-        self.storm.is_some_and(|s| s.covers(at))
+    /// Whether the dust storm covers `lane` now.
+    pub fn in_dust(&self, lane: u8) -> bool {
+        self.storm.is_some_and(|s| s.covers(lane))
     }
 
     /// The raiders the scan can hear: not the ones in the dust.
     pub fn heard(&self) -> Vec<&Raider> {
         self.nearest_first()
             .into_iter()
-            .filter(|r| !self.in_dust(r.at))
+            .filter(|r| !self.in_dust(r.lane))
             .collect()
+    }
+
+    /// Seconds since the night opened.
+    pub fn seconds(&self) -> u32 {
+        self.tick / TICKS_A_SECOND
+    }
+
+    /// Whether nothing is in the sky and nothing is still to come.
+    pub fn sky_clear(&self) -> bool {
+        self.raiders.is_empty() && self.pending.is_empty() && self.waves.is_empty()
+    }
+
+    /// Whether the wave in the sky is over, with more to come.
+    fn wave_clear(&self) -> bool {
+        self.raiders.is_empty() && self.pending.is_empty() && !self.waves.is_empty()
+    }
+
+    /// Raiders still to come tonight, this wave's and the waves after.
+    pub fn to_come(&self) -> usize {
+        self.pending.len() + self.waves.iter().map(Vec::len).sum::<usize>()
+    }
+
+    /// How many waves the night has.
+    pub fn waves_total(&self) -> u8 {
+        self.forecast.iter().map(|a| a.wave).max().unwrap_or(0)
+    }
+
+    /// Ticks until the next wave is called, while the sky waits for it.
+    pub fn next_wave_in(&self) -> Option<u32> {
+        self.wave_clear()
+            .then(|| self.wave_at.saturating_sub(self.tick))
     }
 
     /// The score with the run's bonus on it, for Hard vacuum and the
@@ -604,26 +686,52 @@ impl Run {
         score + score * u64::from(self.perks.bonus_percent()) / 100
     }
 
-    /// The charges winding up: raider id, its kind and the column aimed at.
+    /// The charges winding up: raider id, its kind and the lane aimed at.
     pub fn charges(&self) -> Vec<(u32, Kind, u8)> {
         self.nearest_first()
             .into_iter()
-            .filter_map(|r| match r.state {
-                State::Charging { col, .. } => Some((r.id, r.kind, col)),
-                _ => None,
-            })
+            .filter_map(|r| r.charge.map(|c| (r.id, r.kind, c.lane)))
             .collect()
     }
 
-    /// Actions a turn as the colony stands.
-    pub fn actions_a_turn(&self) -> u8 {
-        self.colony.actions()
+    /// Range units a raider falls a tick, with its quirk, the night's
+    /// order and the run's pace.
+    pub fn speed_of(&self, raider: &Raider) -> u32 {
+        let mut speed = raider.kind.speed() * 100;
+        if raider.has(Quirk::Hasty) {
+            speed = speed * 125 / 100;
+        }
+        if raider.kind == Kind::Skitter && self.order == Some(Order::Salvage) {
+            speed = speed * 150 / 100;
+        }
+        speed = speed * self.pace / 100;
+        ((speed + 50) / 100).max(1)
     }
 
-    /// "2 drifters, a skitter pair, a mule".
+    /// "2 drifters, a skitter pair, a mule, in 3 waves".
     pub fn forecast_words(&self) -> String {
         let kinds: Vec<Kind> = self.forecast.iter().map(|a| a.kind).collect();
-        nights::describe(&kinds)
+        let waves = self.waves_total();
+        if waves > 1 {
+            format!("{}, in {waves} waves", nights::describe(&kinds))
+        } else {
+            nights::describe(&kinds)
+        }
+    }
+
+    /// The forecast's waves, each as "a skitter pair and a sapper".
+    pub fn wave_words(&self) -> Vec<String> {
+        (1..=self.waves_total())
+            .map(|w| {
+                let kinds: Vec<Kind> = self
+                    .forecast
+                    .iter()
+                    .filter(|a| a.wave == w)
+                    .map(|a| a.kind)
+                    .collect();
+                nights::describe(&kinds)
+            })
+            .collect()
     }
 
     /// "An armoured hulk and a hasty drifter among them." when the forecast
@@ -653,58 +761,53 @@ impl Run {
         Some(line)
     }
 
-    // ----- The player's turn -----
+    // ----- The gun -----
 
     fn slide(&mut self, dir: i8) -> Result<(), Refusal> {
-        let col = self.gun as i8 + dir;
-        if !(0..COLS as i8).contains(&col) {
+        let lane = self.gun as i8 + dir;
+        if !(0..LANES as i8).contains(&lane) {
             return Err(Refusal::Edge);
         }
-        self.gun = col as u8;
-        let under = self
-            .raiders
-            .iter()
-            .filter(|r| r.at.col == self.gun)
-            .min_by_key(|r| (r.at.row, r.id))
-            .map(|r| (r.kind, r.at.row));
+        self.gun = lane as u8;
+        let under = self.under(self.gun).map(|r| (r.kind, r.range()));
         self.events.push(Event::Moved {
-            col: self.gun,
+            lane: self.gun,
             under,
         });
-        self.spend_action();
         Ok(())
     }
 
-    fn fire(&mut self) {
-        let target = self
-            .raiders
-            .iter()
-            .filter(|r| r.at.col == self.gun)
-            .min_by_key(|r| (r.at.row, r.id))
-            .map(|r| r.id);
-        match target {
-            Some(id) => {
-                self.damage(id, 1, Hitter::Gun);
-                if self.hold_if_clear() {
-                    return;
-                }
+    fn fire(&mut self) -> Result<(), Refusal> {
+        if self.cooldown > 0 {
+            return Err(Refusal::Reloading);
+        }
+        self.cooldown = if self.colony.hungry() {
+            GUN_COOLDOWN_HUNGRY
+        } else {
+            GUN_COOLDOWN
+        };
+        match self
+            .under(self.gun)
+            .map(|r| (r.id, r.kind, r.lane, r.height))
+        {
+            // A mothership or the carrier is too well hulled for the gun
+            // until it is at mid range: it has to be let in and gone to.
+            Some((id, kind, lane, height))
+                if kind.armoured() && Range::of(height) == Range::Far =>
+            {
+                self.events.push(Event::Glanced {
+                    id,
+                    kind,
+                    lane,
+                    height,
+                });
             }
-            None => self.events.push(Event::DryShot { col: self.gun }),
+            Some((id, ..)) => {
+                self.damage(id, 1, Hitter::Gun);
+            }
+            None => self.events.push(Event::DryShot { lane: self.gun }),
         }
-        self.spend_action();
-    }
-
-    /// The last raider fell to the player's own shot: the night is held at
-    /// once, and the actions left after that shot charge the shield.
-    /// Returns whether it was.
-    fn hold_if_clear(&mut self) -> bool {
-        if !self.raiders.is_empty() {
-            return false;
-        }
-        if let Phase::Turn { actions } = self.phase {
-            self.end_turn(actions.saturating_sub(1));
-        }
-        true
+        Ok(())
     }
 
     fn missile(&mut self) -> Result<(), Refusal> {
@@ -715,39 +818,12 @@ impl Run {
         let target = self
             .raiders
             .iter()
-            .min_by_key(|r| (r.at.row, r.at.col.abs_diff(gun), r.at.col, r.id))
+            .min_by_key(|r| (r.height, r.lane.abs_diff(gun), r.lane, r.id))
             .map(|r| r.id)
             .ok_or(Refusal::NoTarget)?;
         self.colony.missiles -= 1;
         self.damage(target, colony::MISSILE_DAMAGE, Hitter::Missile);
-        if !self.hold_if_clear() {
-            self.spend_action();
-        }
         Ok(())
-    }
-
-    fn spend_action(&mut self) {
-        if let Phase::Turn { actions } = self.phase {
-            let left = actions.saturating_sub(1);
-            if left == 0 {
-                // The last action ends the turn with nothing left to charge.
-                self.events.push(Event::TurnEnded { charged: 0 });
-                self.raiders_phase();
-            } else {
-                self.phase = Phase::Turn { actions: left };
-            }
-        }
-    }
-
-    fn end_turn(&mut self, actions: u8) {
-        let charged = if self.siphoned {
-            0
-        } else {
-            self.colony
-                .charge(actions as u32 * colony::SHIELD_PER_ACTION)
-        };
-        self.events.push(Event::TurnEnded { charged });
-        self.raiders_phase();
     }
 
     /// Hurts a raider. Returns whether it went down.
@@ -761,7 +837,8 @@ impl Run {
             self.events.push(Event::Hit {
                 id,
                 kind: raider.kind,
-                at: raider.at,
+                lane: raider.lane,
+                height: raider.height,
                 left: raider.hits,
                 by,
             });
@@ -783,378 +860,458 @@ impl Run {
         self.events.push(Event::Down {
             id,
             kind: raider.kind,
-            at: raider.at,
+            lane: raider.lane,
+            height: raider.height,
             take,
             by,
         });
         true
     }
 
-    // ----- The raiders' phase -----
+    // ----- The night, a tick at a time -----
 
-    /// The raiders in the order they act: the hasty first, then nearest
-    /// the domes first.
-    fn phase_order(&self) -> Vec<u32> {
-        let mut all: Vec<&Raider> = self.raiders.iter().collect();
-        all.sort_by_key(|r| (!r.has(Quirk::Hasty), r.at.row, r.at.col, r.id));
-        all.iter().map(|r| r.id).collect()
+    /// One tick of the night: a tenth of a second. Nothing happens in any
+    /// other phase.
+    pub fn tick(&mut self) {
+        if self.phase != Phase::Night {
+            return;
+        }
+        self.tick += 1;
+        self.cooldown = self.cooldown.saturating_sub(1);
+        if let Some(storm) = &mut self.storm {
+            if self.tick - self.storm_at >= storm::STORM_EVERY {
+                storm.advance();
+                self.storm_at = self.tick;
+                let lane = storm.lane;
+                self.events.push(Event::StormMoved { lane });
+            }
+        }
+        // A wave shot down between ticks starts its lull here.
+        self.wave_down();
+        self.call_waves();
+        while self.pending.first().is_some_and(|a| a.at <= self.tick) {
+            let arrival = self.pending.remove(0);
+            self.arrive(arrival);
+        }
+        self.recharge();
+        let ids: Vec<u32> = self.raiders.iter().map(|r| r.id).collect();
+        for id in ids {
+            if self.raider(id).is_some() {
+                self.act(id);
+            }
+            if self.phase != Phase::Night {
+                return;
+            }
+        }
+        self.flak();
+        if self.phase != Phase::Night {
+            return;
+        }
+        self.wave_down();
+        if self.sky_clear() {
+            self.hold_night();
+        }
     }
 
-    fn raiders_phase(&mut self) {
-        self.siphoned = false;
-        if let Some(storm) = &mut self.storm {
-            storm.advance();
-            let col = storm.col;
-            self.events.push(Event::StormMoved { col });
+    /// Ticks the night on `n` times.
+    pub fn ticks(&mut self, n: u32) {
+        for _ in 0..n {
+            self.tick();
         }
-        let order = self.phase_order();
+    }
 
-        // 1. Charges fire.
-        for &id in &order {
-            let Some(raider) = self.raiders.iter_mut().find(|r| r.id == id) else {
-                continue;
-            };
-            let State::Charging { col, phases } = raider.state else {
-                continue;
-            };
-            if phases > 1 {
-                raider.state = State::Charging {
-                    col,
-                    phases: phases - 1,
-                };
-                continue;
+    /// Calls the next wave once the lull after the last is over, and
+    /// starts the lull once a wave is down.
+    fn call_waves(&mut self) {
+        if !self.wave_clear() {
+            return;
+        }
+        let of = self.waves_total();
+        if self.tick >= self.wave_at {
+            let mut wave = self.waves.remove(0);
+            self.wave += 1;
+            let mut stagger = nights::WAVE_STAGGER;
+            if self.order == Some(Order::Rationing) {
+                stagger = stagger * 2 / 3;
             }
-            raider.state = State::Approaching;
-            let (kind, id) = (raider.kind, raider.id);
-            let Some(weapon) = kind.weapon() else {
-                continue;
-            };
-            let dodged = weapon.dodgeable() && self.gun != col;
-            if !dodged {
-                self.colony.hit(weapon.damage(), weapon.through());
-                if weapon == Weapon::Siphon {
-                    self.siphoned = true;
+            let stagger = (stagger * 100 / self.pace.max(1)).max(1);
+            let mut at = self.tick + nights::WAVE_LEAD * 100 / self.pace.max(1);
+            let mut pair = false;
+            for arrival in &mut wave {
+                arrival.at = at;
+                // The second of a skitter pair is right behind the first.
+                if arrival.kind == Kind::Skitter && !pair {
+                    pair = true;
+                    at += stagger / 2;
+                } else {
+                    pair = false;
+                    at += stagger;
                 }
             }
-            self.events.push(Event::Shot {
-                id,
-                kind,
-                weapon,
-                col,
-                dodged,
-                shield: self.colony.shield,
-                dome: self.colony.dome,
-            });
-            if self.colony.fallen() {
-                return self.fall();
-            }
-        }
-
-        // 2. Breaches. A raider breaches where its route ends: a sapper
-        // walking along the near row to its building has not arrived yet.
-        let (buildings, hydro) = self.colony.building_columns();
-        for &id in &order {
-            let Some(index) = self.raiders.iter().position(|r| r.id == id) else {
-                continue;
-            };
-            let raider = &self.raiders[index];
-            if raider.at.row != NEAR_ROW || !raider.kind.hostile() || raider.kind.crosses() {
-                continue;
-            }
-            if !route::goal(raider.kind, &buildings, &hydro).reached(raider.at) {
-                continue;
-            }
-            let raider = self.raiders.remove(index);
-            let col = raider.at.col;
-            let (_, to_dome) = self.colony.hit(raider.kind.breach(), 0);
-            self.breached = true;
-            let mut darkened = None;
-            if to_dome > 0 || raider.kind == Kind::Sapper {
-                if let Some(slot) = self.colony.slot_mut(col) {
-                    if !slot.dark {
-                        slot.dark = true;
-                        darkened = Some(slot.building);
-                    }
-                }
-            }
-            self.events.push(Event::Breach {
-                id,
-                kind: raider.kind,
-                col,
-                shield: self.colony.shield,
-                dome: self.colony.dome,
-                darkened,
-            });
-            if self.colony.fallen() {
-                return self.fall();
-            }
-        }
-
-        // 3. Steps.
-        for &id in &order {
-            if self.raider(id).is_none() {
-                continue;
-            }
-            self.step(id);
-        }
-
-        // 4. Wind-ups.
-        let mut pending = self
-            .raiders
-            .iter()
-            .filter(|r| r.is_charging() && r.kind.weapon() != Some(Weapon::Siege))
-            .count();
-        let docile = nights::docile(self.night);
-        let order = self.phase_order();
-        for &id in &order {
-            if pending >= MAX_CHARGES {
-                break;
-            }
-            let gun = self.gun;
-            let Some(raider) = self.raiders.iter_mut().find(|r| r.id == id) else {
-                continue;
-            };
-            let Some(weapon) = raider.kind.weapon() else {
-                continue;
-            };
-            if weapon == Weapon::Siege
-                || raider.is_charging()
-                || raider.at.row < 2
-                || raider.at.row > raider.kind.range()
-                || (docile && raider.kind == Kind::Drifter)
-            {
-                continue;
-            }
-            raider.state = State::Charging {
-                col: gun,
-                phases: weapon.wind_up(),
-            };
-            pending += 1;
-            self.events.push(Event::Charging {
-                id,
-                kind: raider.kind,
-                weapon,
-                col: gun,
+            let kinds = wave.iter().map(|a| a.kind).collect();
+            self.pending = wave;
+            self.events.push(Event::WaveComing {
+                wave: self.wave,
+                of,
+                kinds,
             });
         }
+    }
 
-        // 5. Flak. A post in the dust cannot see to fire.
-        for post in self.grid.powered_flak() {
-            if self.in_dust(post) {
-                continue;
-            }
-            let covered = post.around();
-            // Flak scatters off a mothership's or the carrier's hull.
-            let target = self
-                .raiders
-                .iter()
-                .filter(|r| covered.contains(&r.at) && !r.kind.armoured())
-                .min_by_key(|r| (r.at.row, r.at.col, r.id))
-                .map(|r| r.id);
-            if let Some(id) = target {
-                self.damage(id, 1, Hitter::Flak(post));
-            }
+    /// Starts the lull once the wave in the sky is down.
+    fn wave_down(&mut self) {
+        if !self.wave_clear() || self.wave_at >= self.tick {
+            return;
         }
-
-        if self.raiders.is_empty() {
-            return self.hold_night();
+        let mut lull = nights::WAVE_LULL;
+        if self.order == Some(Order::Rationing) {
+            lull = lull * 2 / 3;
         }
-        self.turn += 1;
-        let actions = self.colony.actions();
-        self.phase = Phase::Turn { actions };
-        self.events.push(Event::YourTurn {
-            turn: self.turn,
-            actions,
+        self.wave_at = self.tick + lull;
+        self.events.push(Event::WaveClear {
+            wave: self.wave,
+            of: self.waves_total(),
         });
     }
 
-    /// One raider's move for the phase.
-    fn step(&mut self, id: u32) {
+    /// The shield comes back a point at a time, faster with a coil, not
+    /// at all for a while after a siphon.
+    fn recharge(&mut self) {
+        if self.tick < self.siphoned_until {
+            return;
+        }
+        let every = if self.colony.has(Building::ShieldCoil) {
+            colony::RECHARGE_EVERY_COIL
+        } else {
+            colony::RECHARGE_EVERY
+        };
+        if self.tick.is_multiple_of(every) {
+            self.colony.charge(1);
+        }
+    }
+
+    fn arrive(&mut self, arrival: Arrival) {
+        let id = self.next_id;
+        self.next_id += 1;
+        let height = match arrival.kind {
+            Kind::Mule => MID,
+            Kind::Carrier => lanes::CARRIER_HEIGHT,
+            _ => HORIZON,
+        };
+        let mut raider =
+            Raider::new(id, arrival.kind, arrival.lane, height).with_quirk(arrival.quirk);
+        if let Some(weapon) = arrival.kind.weapon() {
+            // Ready to fire as soon as it is in range.
+            raider.since_shot = weapon.rest();
+        }
+        self.raiders.push(raider);
+        self.events.push(Event::Arrived {
+            id,
+            kind: arrival.kind,
+            lane: arrival.lane,
+            quirk: arrival.quirk,
+        });
+    }
+
+    /// One raider's tick.
+    fn act(&mut self, id: u32) {
         let Some(raider) = self.raider(id).cloned() else {
             return;
         };
-        if raider.is_charging() || self.in_dust(raider.at) {
-            // In the dust a raider loses its step.
-            return;
+        if let Some(r) = self.raiders.iter_mut().find(|r| r.id == id) {
+            r.age += 1;
+            r.since_shot += 1;
         }
-        if raider.kind.crosses() {
-            return self.cross(id);
-        }
-        let (buildings, hydro) = self.colony.building_columns();
-        let goal = route::goal(raider.kind, &buildings, &hydro);
-        let Some(route) = route::plan(&self.grid, &raider, &goal, self.gun) else {
-            self.set_state(id, State::Holding);
-            return;
-        };
-        if route.is_empty() {
-            // At its goal. Only a mothership stops short of row 1.
-            if raider.kind == Kind::Mothership {
-                self.set_state(id, State::Holding);
-                self.mothership_acts(id);
-            }
-            return;
-        }
-        // A wall in the way is bashed every phase, resting or not; a
-        // burrowing raider passes under its first one in a single phase.
-        if self.grid.is_wall(route[0]) {
-            if raider.can_burrow() {
+        if let Some(charge) = raider.charge {
+            if charge.ticks > 1 {
                 if let Some(r) = self.raiders.iter_mut().find(|r| r.id == id) {
-                    r.burrowed = true;
-                    r.at = route[0];
-                    r.state = State::Approaching;
+                    r.charge = Some(Charge {
+                        ticks: charge.ticks - 1,
+                        ..charge
+                    });
                 }
-                self.events.push(Event::Burrowed {
-                    id,
-                    kind: raider.kind,
-                    wall: route[0],
-                });
-                return;
-            }
-            // In the dust a wall takes one bash less.
-            let down =
-                self.grid.bash(route[0]) || (self.in_dust(route[0]) && self.grid.bash(route[0]));
-            self.set_state(id, State::Bashing { wall: route[0] });
-            self.events.push(Event::Bashed {
-                id,
-                kind: raider.kind,
-                wall: route[0],
-                down,
-            });
-            return;
-        }
-        if raider.kind == Kind::Hulk {
-            let rest = raider.rest;
-            if let Some(r) = self.raiders.iter_mut().find(|r| r.id == id) {
-                r.rest = !rest;
-            }
-            if rest {
-                return;
-            }
-        }
-        self.set_state(id, State::Approaching);
-        let steps = self.steps_of(raider.kind);
-        for &to in route.iter().take(steps as usize) {
-            if self.grid.is_wall(to) {
-                break;
-            }
-            let from = self.raider(id).map(|r| r.at).unwrap_or(to);
-            if let Some(r) = self.raiders.iter_mut().find(|r| r.id == id) {
-                r.at = to;
-            }
-            self.events.push(Event::Stepped {
-                id,
-                kind: raider.kind,
-                from,
-                to,
-            });
-            if self.grid.get(to) == Some(Work::Mine) {
-                self.grid.set(to, None);
-                if self.damage(id, grid::MINE_DAMAGE, Hitter::Mine) {
+            } else {
+                self.shoot(id, charge);
+                if self.phase != Phase::Night {
                     return;
                 }
             }
-            if to.row == NEAR_ROW {
-                break;
-            }
+        }
+        match raider.state {
+            State::Falling => self.fall_tick(id, &raider),
+            State::Hovering => self.hover_tick(id, &raider),
+            State::Crossing => self.cross_tick(id, &raider),
         }
     }
 
-    /// A mule or the carrier takes its sideways step.
-    fn cross(&mut self, id: u32) {
-        let Some(raider) = self.raider(id).cloned() else {
-            return;
-        };
-        let next = raider.at.col as i8 + raider.heading;
-        if !(0..COLS as i8).contains(&next) {
-            if raider.kind == Kind::Mule {
-                self.raiders.retain(|r| r.id != id);
-                self.events.push(Event::Left {
-                    id,
-                    kind: raider.kind,
-                });
-                return;
-            }
-            // The carrier turns at the edge and comes back.
+    fn fall_tick(&mut self, id: u32, raider: &Raider) {
+        let speed = self.speed_of(raider);
+        let before = raider.height;
+        let after = before.saturating_sub(speed);
+        if raider.kind == Kind::Mothership && after <= MID {
             if let Some(r) = self.raiders.iter_mut().find(|r| r.id == id) {
-                r.heading = -r.heading;
+                r.height = MID;
+                r.state = State::Hovering;
+                r.age = 0;
+                r.heading = if self.rng.below(2) == 0 { -1 } else { 1 };
             }
-            return self.cross(id);
+            self.events.push(Event::Hovering {
+                id,
+                lane: raider.lane,
+            });
+            return;
         }
-        let to = Sector::new(next as u8, raider.at.row);
         if let Some(r) = self.raiders.iter_mut().find(|r| r.id == id) {
-            r.at = to;
-            r.posted += 1;
+            r.height = after;
         }
-        self.events.push(Event::Stepped {
-            id,
-            kind: raider.kind,
-            from: raider.at,
-            to,
-        });
-        if raider.kind == Kind::Carrier && (raider.posted + 1) % CARRIER_SIEGE_EVERY == 0 {
-            let gun = self.gun;
-            self.set_state(
+        let (was, now) = (Range::of(before), Range::of(after));
+        if now != was && now != Range::Dome {
+            self.events.push(Event::Ranged {
                 id,
-                State::Charging {
-                    col: gun,
-                    phases: Weapon::Siege.wind_up(),
-                },
-            );
-            self.events.push(Event::Charging {
-                id,
-                kind: Kind::Carrier,
-                weapon: Weapon::Siege,
-                col: gun,
+                kind: raider.kind,
+                lane: raider.lane,
+                range: now,
             });
         }
+        if before >= MID && after < MID && self.colony.mined(raider.lane) && !raider.kind.armoured()
+        {
+            self.colony.mines[raider.lane as usize] = false;
+            self.events.push(Event::MineBlew { lane: raider.lane });
+            if self.damage(id, colony::MINE_DAMAGE, Hitter::Mine) {
+                return;
+            }
+        }
+        if after < MID && raider.can_weave() {
+            self.weave(id, raider);
+        }
+        if after == 0 {
+            return self.breach(id);
+        }
+        self.consider_charge(id);
     }
 
-    /// A mothership at its post lets out skitters and winds up siege shots.
-    fn mothership_acts(&mut self, id: u32) {
+    fn hover_tick(&mut self, id: u32, raider: &Raider) {
+        if raider.age > 0 && raider.age.is_multiple_of(MOTHERSHIP_SHIFT_EVERY) {
+            let mut heading = raider.heading;
+            let mut next = raider.lane as i8 + heading;
+            if !(0..LANES as i8).contains(&next) {
+                heading = -heading;
+                next = raider.lane as i8 + heading;
+            }
+            if let Some(r) = self.raiders.iter_mut().find(|r| r.id == id) {
+                r.lane = next as u8;
+                r.heading = heading;
+            }
+            self.events.push(Event::Shifted {
+                id,
+                lane: next as u8,
+            });
+        }
+        self.consider_charge(id);
+    }
+
+    fn cross_tick(&mut self, id: u32, raider: &Raider) {
+        let every = raider.kind.cross_every() * 100 / self.pace.max(1);
+        if raider.age.is_multiple_of(every.max(1)) {
+            let next = raider.lane as i8 + raider.heading;
+            if !(0..LANES as i8).contains(&next) {
+                if raider.kind == Kind::Mule {
+                    self.raiders.retain(|r| r.id != id);
+                    self.events.push(Event::Left {
+                        id,
+                        kind: raider.kind,
+                    });
+                    return;
+                }
+                // The carrier turns at the edge and comes back.
+                if let Some(r) = self.raiders.iter_mut().find(|r| r.id == id) {
+                    r.heading = -r.heading;
+                }
+            } else {
+                let lane = next as u8;
+                if let Some(r) = self.raiders.iter_mut().find(|r| r.id == id) {
+                    r.lane = lane;
+                }
+                self.events.push(Event::Crossed {
+                    id,
+                    kind: raider.kind,
+                    lane,
+                });
+                if raider.kind == Kind::Carrier && CARRIER_DROP_LANES.contains(&lane) {
+                    self.drop_from(id, Kind::Skitter, lane);
+                }
+            }
+        }
+        self.consider_charge(id);
+    }
+
+    /// A weaving raider slips a lane away from the gun.
+    fn weave(&mut self, id: u32, raider: &Raider) {
+        let from = raider.lane;
+        let side: i8 = if from > self.gun || (from == self.gun && self.rng.below(2) == 1) {
+            1
+        } else {
+            -1
+        };
+        let mut to = from as i8 + side;
+        if !(0..LANES as i8).contains(&to) {
+            to = from as i8 - side;
+        }
+        let to = to as u8;
+        if let Some(r) = self.raiders.iter_mut().find(|r| r.id == id) {
+            r.lane = to;
+            r.weaved = true;
+        }
+        self.events.push(Event::Weaved {
+            id,
+            kind: raider.kind,
+            from,
+            to,
+        });
+    }
+
+    /// A raider with a weapon, rested and in range, winds up at the gun's
+    /// lane.
+    fn consider_charge(&mut self, id: u32) {
         let gun = self.gun;
+        let docile = nights::docile(self.night);
+        let pending = self
+            .raiders
+            .iter()
+            .filter(|r| r.charge.is_some_and(|c| c.weapon != Weapon::Siege))
+            .count();
         let Some(raider) = self.raiders.iter_mut().find(|r| r.id == id) else {
             return;
         };
-        raider.posted += 1;
-        let (posted, at) = (raider.posted, raider.at);
-        if posted % MOTHERSHIP_SIEGE_EVERY == 0 {
-            raider.state = State::Charging {
-                col: gun,
-                phases: Weapon::Siege.wind_up(),
-            };
-            self.events.push(Event::Charging {
-                id,
-                kind: Kind::Mothership,
-                weapon: Weapon::Siege,
-                col: gun,
-            });
-        } else if posted % MOTHERSHIP_DROP_EVERY == 0 {
-            let side: i8 = if self.rng.below(2) == 0 { -1 } else { 1 };
-            let col = (at.col as i8 + side).clamp(0, COLS as i8 - 1) as u8;
-            let spot = Sector::new(col, at.row);
-            let skitter = self.spawn(Kind::Skitter, spot, side, None);
-            self.events.push(Event::Dropped {
-                from: id,
-                id: skitter,
-                at: spot,
-            });
+        let Some(weapon) = raider.kind.weapon() else {
+            return;
+        };
+        if raider.charge.is_some()
+            || raider.since_shot < weapon.rest()
+            || raider.range() < raider.kind.fires_from()
+            || raider.range() == Range::Dome
+            || (docile && raider.kind == Kind::Drifter)
+            || (weapon != Weapon::Siege && pending >= MAX_CHARGES)
+        {
+            return;
+        }
+        raider.charge = Some(Charge {
+            weapon,
+            lane: gun,
+            ticks: weapon.wind_up(),
+        });
+        self.events.push(Event::Charging {
+            id,
+            kind: raider.kind,
+            weapon,
+            lane: gun,
+        });
+    }
+
+    /// A wound-up charge goes off.
+    fn shoot(&mut self, id: u32, charge: Charge) {
+        let Some(raider) = self.raiders.iter_mut().find(|r| r.id == id) else {
+            return;
+        };
+        raider.charge = None;
+        raider.since_shot = 0;
+        raider.fired += 1;
+        let (kind, fired, lane) = (raider.kind, raider.fired, raider.lane);
+        let dodged = charge.weapon.dodgeable() && self.gun != charge.lane;
+        if !dodged {
+            self.colony
+                .hit(charge.weapon.damage(), charge.weapon.through());
+            if charge.weapon == Weapon::Siphon {
+                self.siphoned_until = self.tick + colony::SIPHON_TICKS;
+            }
+        }
+        self.events.push(Event::Shot {
+            id,
+            kind,
+            weapon: charge.weapon,
+            lane: charge.lane,
+            dodged,
+            shield: self.colony.shield,
+            dome: self.colony.dome,
+        });
+        if self.colony.fallen() {
+            return self.fall();
+        }
+        if kind == Kind::Mothership && fired % MOTHERSHIP_DROP_EVERY == 0 {
+            self.drop_from(id, Kind::Drifter, lane);
         }
     }
 
-    fn set_state(&mut self, id: u32, state: State) {
-        if let Some(r) = self.raiders.iter_mut().find(|r| r.id == id) {
-            r.state = state;
-        }
-    }
-
-    fn spawn(&mut self, kind: Kind, at: Sector, lean: i8, quirk: Option<Quirk>) -> u32 {
+    /// A mothership or the carrier lets a raider out over `lane`.
+    fn drop_from(&mut self, from: u32, kind: Kind, lane: u8) {
         let id = self.next_id;
         self.next_id += 1;
-        let mut raider = Raider::new(id, kind, at).with_quirk(quirk);
-        raider.lean = lean;
-        raider.heading = if at.col == 0 { 1 } else { -1 };
+        let mut raider = Raider::arriving(id, kind, lane);
+        if let Some(weapon) = kind.weapon() {
+            raider.since_shot = weapon.rest();
+        }
         self.raiders.push(raider);
-        id
+        self.events.push(Event::Dropped {
+            from,
+            id,
+            kind,
+            lane,
+        });
+    }
+
+    /// A raider at the dome.
+    fn breach(&mut self, id: u32) {
+        let Some(index) = self.raiders.iter().position(|r| r.id == id) else {
+            return;
+        };
+        let raider = self.raiders.remove(index);
+        if !raider.kind.hostile() {
+            return;
+        }
+        let lane = raider.lane;
+        let (_, to_dome) = self.colony.hit(raider.kind.breach(), 0);
+        self.breached = true;
+        let mut darkened = None;
+        if to_dome > 0 || raider.kind == Kind::Sapper {
+            if let Some(slot) = self.colony.slot_mut(lane) {
+                if !slot.dark {
+                    slot.dark = true;
+                    darkened = Some(slot.building);
+                }
+            }
+        }
+        self.events.push(Event::Breach {
+            id,
+            kind: raider.kind,
+            lane,
+            shield: self.colony.shield,
+            dome: self.colony.dome,
+            darkened,
+        });
+        if self.colony.fallen() {
+            self.fall();
+        }
+    }
+
+    /// Every working flak post fires up its lane when it is ready and has
+    /// something to fire at. A post in the dust cannot see to fire. Flak
+    /// scatters off a mothership's or the carrier's hull.
+    fn flak(&mut self) {
+        for lane in self.colony.flak_lanes() {
+            if self.in_dust(lane) || self.tick - self.flak_at[lane as usize] < colony::FLAK_EVERY {
+                continue;
+            }
+            let target = self
+                .raiders
+                .iter()
+                .filter(|r| r.lane == lane && !r.kind.armoured() && r.height < lanes::FLAK_REACH)
+                .min_by_key(|r| (r.height, r.id))
+                .map(|r| r.id);
+            if let Some(id) = target {
+                self.flak_at[lane as usize] = self.tick;
+                self.damage(id, 1, Hitter::Flak(lane));
+            }
+        }
     }
 
     // ----- Nights -----
@@ -1162,52 +1319,50 @@ impl Run {
     fn ready(&mut self) {
         self.rng = Rng::seeded(mix(self.seed, self.night, 1));
         self.raiders.clear();
-        self.turn = 1;
+        self.tick = 0;
+        self.cooldown = 0;
+        self.siphoned_until = 0;
+        self.storm_at = 0;
+        self.flak_at = no_flak();
         self.take = Take::default();
         self.breached = false;
-        self.siphoned = false;
-        let forecast = self.forecast.clone();
-        let mut arrivals = Vec::new();
-        let mut pair = 0;
-        for arrival in forecast {
-            let row = if arrival.kind.crosses() {
-                grid::CROSSING_ROW
-            } else {
-                FAR_ROW
-            };
-            let lean = if arrival.kind == Kind::Skitter {
-                pair += 1;
-                if pair % 2 == 1 {
-                    -1
+        let (buildings, hydro) = self.colony.building_lanes();
+        let mut waves: Vec<Vec<Arrival>> = Vec::new();
+        for mut arrival in self.forecast.clone() {
+            if arrival.kind == Kind::Sapper {
+                let lanes = if !hydro.is_empty() {
+                    &hydro
                 } else {
-                    1
+                    &buildings
+                };
+                if !lanes.is_empty() {
+                    arrival.lane = lanes[self.rng.below(lanes.len() as u32) as usize];
                 }
-            } else {
-                0
-            };
-            let at = Sector::new(arrival.col, row);
-            let id = self.spawn(arrival.kind, at, lean, arrival.quirk);
-            arrivals.push((id, arrival.kind, at));
+            }
+            arrival.at = 0;
+            let wave = arrival.wave.max(1) as usize;
+            while waves.len() < wave {
+                waves.push(Vec::new());
+            }
+            waves[wave - 1].push(arrival);
         }
-        let actions = self.colony.actions();
-        self.phase = Phase::Turn { actions };
+        waves.retain(|w| !w.is_empty());
+        let coming = waves.iter().map(Vec::len).sum();
+        let count = waves.len() as u8;
+        self.pending = Vec::new();
+        self.waves = waves;
+        self.wave = 0;
+        self.wave_at = nights::FIRST_WAVE;
+        self.phase = Phase::Night;
         self.events.push(Event::NightOpens {
             night: self.night,
-            arrivals,
+            coming,
+            waves: count,
         });
         if let Some(storm) = &mut self.storm {
             *storm = Storm::new();
-            self.events.push(Event::StormMoved { col: storm.col });
+            self.events.push(Event::StormMoved { lane: storm.lane });
         }
-        if self.order == Some(Order::Rationing) {
-            // The raiders step once before the first turn.
-            for id in self.phase_order() {
-                if self.raider(id).is_some() {
-                    self.step(id);
-                }
-            }
-        }
-        self.events.push(Event::YourTurn { turn: 1, actions });
     }
 
     fn take_order(&mut self, order: Order) -> Result<(), Refusal> {
@@ -1271,8 +1426,8 @@ impl Run {
         });
     }
 
-    /// After a night: the colony eats, the buildings produce, the works and
-    /// buildings draw their power, and the forecast is read.
+    /// After a night: the colony eats, the buildings produce and draw
+    /// their power, and the forecast is read.
     fn open_colony(&mut self) {
         if let Some(order) = self.order.take() {
             if order == Order::Overclock {
@@ -1284,12 +1439,12 @@ impl Run {
         let r = &mut self.colony.resources;
         r.food = r.food.saturating_sub(colony::FOOD_A_NIGHT);
         let mut dark = Vec::new();
-        for col in 0..COLS {
-            let Some(slot) = self.colony.slot(col).copied() else {
+        for lane in 0..LANES {
+            let Some(slot) = self.colony.slot(lane).copied() else {
                 continue;
             };
             if slot.dark {
-                dark.push(col);
+                dark.push(lane);
                 continue;
             }
             match slot.building {
@@ -1299,30 +1454,25 @@ impl Run {
             }
         }
         let mut unpowered = Vec::new();
-        for (at, work) in self.grid.works() {
-            if let Work::Flak { .. } = work {
-                let paid = self.colony.resources.spend(WorkKind::Flak.upkeep(), 0);
-                self.grid.set(at, Some(Work::Flak { powered: paid }));
-                if !paid {
-                    unpowered.push(at);
-                }
-            }
-        }
-        for col in 0..COLS {
-            let Some(slot) = self.colony.slot(col).copied() else {
+        for lane in 0..LANES {
+            let Some(slot) = self.colony.slot(lane).copied() else {
                 continue;
             };
             if slot.dark || slot.building.upkeep() == 0 {
                 continue;
             }
             let paid = self.colony.resources.spend(slot.building.upkeep(), 0);
-            if let Some(s) = self.colony.slot_mut(col) {
+            if let Some(s) = self.colony.slot_mut(lane) {
                 s.powered = paid;
+            }
+            if !paid {
+                unpowered.push(lane);
             }
             if paid && slot.building == Building::ShieldCoil {
                 self.colony.charge(10);
             }
         }
+        self.mines_laid = 0;
         self.read_the_sky();
         self.phase = Phase::Colony;
         self.events.push(Event::ColonyOpens {
@@ -1336,34 +1486,47 @@ impl Run {
     fn draw_forecast(&self) -> Vec<Arrival> {
         let mut rng = Rng::seeded(mix(self.seed, self.night, 0));
         let mut out: Vec<Arrival> = Vec::new();
-        let mut pair_col = None;
-        for kind in nights::wave(self.night) {
-            let col = match kind {
-                Kind::Mothership => CENTRE,
-                Kind::Mule | Kind::Carrier => {
-                    if rng.below(2) == 0 {
-                        0
-                    } else {
-                        COLS - 1
+        let mut pair_lane = None;
+        let mut last = None;
+        for (w, wave) in nights::waves(self.night).into_iter().enumerate() {
+            for kind in wave {
+                let lane = match kind {
+                    Kind::Mothership => CENTRE,
+                    Kind::Mule | Kind::Carrier => {
+                        if rng.below(2) == 0 {
+                            0
+                        } else {
+                            LANES - 1
+                        }
                     }
-                }
-                Kind::Skitter => match pair_col.take() {
-                    Some(col) => col,
-                    None => {
-                        let col = rng.below(COLS as u32) as u8;
-                        pair_col = Some(col);
-                        col
+                    Kind::Skitter => match pair_lane.take() {
+                        Some(lane) => lane,
+                        None => {
+                            let lane = rng.below(LANES as u32) as u8;
+                            pair_lane = Some(lane);
+                            lane
+                        }
+                    },
+                    _ => {
+                        // Two in a row never take the same lane.
+                        let mut lane = rng.below(LANES as u32) as u8;
+                        if last == Some(lane) {
+                            lane = (lane + 1 + rng.below(LANES as u32 - 1) as u8) % LANES;
+                        }
+                        lane
                     }
-                },
-                _ => rng.below(COLS as u32) as u8,
-            };
-            out.push(Arrival {
-                kind,
-                col,
-                quirk: None,
-            });
+                };
+                last = Some(lane);
+                out.push(Arrival {
+                    kind,
+                    lane,
+                    quirk: None,
+                    wave: w as u8 + 1,
+                    at: 0,
+                });
+            }
         }
-        // Quirks come after the columns, so the columns of the first nights
+        // Quirks come after the lanes, so the lanes of the first nights
         // are what they always were.
         let mut quirks = nights::quirks_at_most(self.night);
         let mut slots: Vec<usize> = (0..out.len()).collect();
@@ -1387,38 +1550,42 @@ impl Run {
 
     // ----- The colony phase -----
 
-    fn buy(&mut self, building: Building, col: u8) -> Result<(), Refusal> {
-        if !self.colony.open.contains(&col) {
+    fn buy(&mut self, building: Building, lane: u8) -> Result<(), Refusal> {
+        if !self.colony.open.contains(&lane) {
             return Err(Refusal::SlotClosed);
         }
-        if self.colony.slot(col).is_some() {
+        if self.colony.slot(lane).is_some() {
             return Err(Refusal::SlotTaken);
         }
         let (metal, power) = building.cost();
         if !self.colony.resources.spend(power, metal) {
             return Err(Refusal::CantAfford { power, metal });
         }
-        self.colony.slots[col as usize] = Some(Slot {
+        self.colony.slots[lane as usize] = Some(Slot {
             building,
             dark: false,
             powered: true,
         });
-        self.events.push(Event::Bought { building, col });
+        self.events.push(Event::Bought { building, lane });
         Ok(())
     }
 
-    fn place(&mut self, work: WorkKind, at: Sector) -> Result<(), Refusal> {
-        match self.grid.can_place(at) {
-            Err(grid::Blocked::RowOpen) => return Err(Refusal::RowOpen),
-            Err(grid::Blocked::Taken) => return Err(Refusal::SectorTaken),
-            Ok(()) => {}
+    fn lay_mine(&mut self, lane: u8) -> Result<(), Refusal> {
+        if lane >= LANES || self.colony.mined(lane) {
+            return Err(Refusal::LaneMined);
         }
-        let metal = work.cost();
-        if !self.colony.resources.spend(0, metal) {
-            return Err(Refusal::CantAfford { power: 0, metal });
+        if self.mines_laid >= self.colony.mines_a_night {
+            return Err(Refusal::MinesLaid);
         }
-        self.grid.set(at, Some(work.build()));
-        self.events.push(Event::Placed { work, at });
+        if !self.colony.resources.spend(0, colony::MINE_COST) {
+            return Err(Refusal::CantAfford {
+                power: 0,
+                metal: colony::MINE_COST,
+            });
+        }
+        self.colony.mines[lane as usize] = true;
+        self.mines_laid += 1;
+        self.events.push(Event::MineLaid { lane });
         Ok(())
     }
 
@@ -1439,10 +1606,10 @@ impl Run {
         Ok(())
     }
 
-    fn repair_building(&mut self, col: u8) -> Result<(), Refusal> {
+    fn repair_building(&mut self, lane: u8) -> Result<(), Refusal> {
         let slot = self
             .colony
-            .slot(col)
+            .slot(lane)
             .copied()
             .ok_or(Refusal::NothingThere)?;
         if !slot.dark {
@@ -1454,13 +1621,13 @@ impl Run {
                 metal: colony::BUILDING_REPAIR_COST,
             });
         }
-        if let Some(s) = self.colony.slot_mut(col) {
+        if let Some(s) = self.colony.slot_mut(lane) {
             s.dark = false;
             s.powered = true;
         }
         self.events.push(Event::BuildingRepaired {
             building: slot.building,
-            col,
+            lane,
         });
         Ok(())
     }

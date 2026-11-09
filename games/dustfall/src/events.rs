@@ -1,9 +1,9 @@
 //! Dustfall's calendar event: the dust storm, on the fourth Monday of
-//! every month. A storm colony plays the twelve nights with a column of
-//! dust crossing the grid each raiders' phase. In the dust a raider is
-//! heard by nobody and stands still, a flak post cannot fire, and a wall
-//! falls a bash sooner. On other days the row stays on the title, locked,
-//! and says when it opens.
+//! every month. A storm colony plays the twelve nights with a lane of dust
+//! drifting across the sky all night. In the dust a raider is heard by
+//! nobody and falls on regardless, and the flak post under it is silent.
+//! On other days the row stays on the title, locked, and says when it
+//! opens.
 
 use parlor_core::almanac::{Week, Window};
 use parlor_core::{Date, Happening};
@@ -19,7 +19,7 @@ pub fn event(date: Date) -> Option<Happening> {
     if STORM.is_open(date) {
         return Some(Happening::new(
             STORM_NAME,
-            "A column of dust crosses the grid all night: nothing is heard in it, and nothing in it moves.",
+            "A lane of dust drifts across the sky all night: nothing in it is heard, and it falls on regardless.",
         ));
     }
     None
@@ -41,5 +41,5 @@ pub fn locked_help(date: Date) -> String {
 
 /// The open row's help.
 pub fn help() -> String {
-    "A colony through twelve nights with a column of dust crossing the grid, one column each raiders' phase. Raiders in the dust cannot be heard and lose their step, flak posts in it cannot fire, and a wall in it falls a bash sooner. Its score has its own record.".to_string()
+    "A colony through twelve nights with a lane of dust drifting across the sky, a lane at a time. Raiders in the dust cannot be heard and fall on regardless, and the flak post under it is silent. Its score has its own record.".to_string()
 }

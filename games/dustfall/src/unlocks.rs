@@ -64,11 +64,11 @@ const TECH: [(&str, &str, &str, u32, &str); 9] = [
         "Every colony starts with a missile made.",
     ),
     (
-        "walls-two",
+        "mines-two",
         ARMOURY,
-        "Two walls standing",
+        "Two mines a night",
         10,
-        "Every colony starts with walls at left, row 3 and right, row 3.",
+        "Two mines may be laid before a night instead of one.",
     ),
     (
         "rack-deep",
@@ -85,11 +85,11 @@ const TECH: [(&str, &str, &str, u32, &str); 9] = [
         "The forecast names a raider's quirk without a scanner.",
     ),
     (
-        "drifter-routes",
+        "lane-forecast",
         INTELLIGENCE,
-        "Drifter routes",
+        "Lanes in the forecast",
         15,
-        "The route finder gives a drifter's whole route without a scanner.",
+        "The forecast names the lanes the raiders enter at without a scanner.",
     ),
 ];
 
@@ -101,16 +101,16 @@ const LOG_IDS: [&str; 12] = [
 /// Reva's logbook from the radio room at Low Harbour, a page a night.
 pub const LOG_PAGES: [&str; 12] = [
     "Low Harbour, first night. The dust came down at dusk and something walked out of it. We have one gun on a rail and a dome that was never meant to be shot at. I am keeping this log so that someone knows what happened here.",
-    "They come in kinds. The small ones drift and fire. The quick ones come in pairs and go round whatever you put in their way. I have started drawing the grid on the wall of the radio room.",
+    "They come in kinds, and in waves. The small ones drift and fire. The quick ones come in pairs and slip a lane the moment the gun finds them. I have started chalking the five lanes on the wall of the radio room.",
     "Relief answered tonight. Twelve nights, they said, and then the ship. I did not ask what happens to the ship if there is nobody left to light the landing field.",
-    "A hulk reached the wall on the left and hit it until it fell. Marcus wants more walls. I want to know where they walk, and one wall where it matters.",
-    "The big one holds at the centre of the grid and drops its skitters like seeds. The gun cannot reach it from the sides. We learned that the hard way.",
-    "Sappers go for the hydroponics. Of course they do. Take the food and the colony gets one action a turn, and a slow colony is a dead one.",
+    "A hulk came down the left lane slow as a tide and drank the shield dry from close in. Marcus wants more mines. I want to know which lane they take, and one mine where it matters.",
+    "The big one holds at mid range and slides from lane to lane, dropping its skitters like seeds. The gun has to go to it. We learned that the hard way.",
+    "Sappers go for the hydroponics. Of course they do. Take the food and the gun reloads at half speed, and a slow gun is a dead colony.",
     "Some of them are different now. A drifter with plating the gun bounces off. Another that moves before the rest. The scanner picks them out of the dust, if you listen.",
     "Eight nights. The dome is patched in four places and we are eating the seed stock. Nobody says the word hungry. Everybody counts the food.",
-    "The dust storm crossed the grid tonight, one column at a time. Inside it you hear nothing, and they stand still in it as if they are waiting. The walls go down faster when it passes over them.",
+    "The dust storm crossed the sky tonight, one lane at a time. Inside it you hear nothing, and they come on regardless. The flak post under it went quiet and we never knew what passed over it.",
     "The second mothership. We put two missiles into it before it wound up and it kept coming. Marcus laughed, which he does when he is frightened.",
-    "Eleven nights. I have stopped drawing on the wall. The grid is in my head now, and I know where a skitter will go before it does. That is either skill or the dust getting to me.",
+    "Eleven nights. I have stopped chalking the wall. The lanes are in my head now, and I know which way a skitter will slip before it does. That is either skill or the dust getting to me.",
     "The carrier came over the horizon with two motherships behind it, and then Relief came over the top of them all. We held. Tomorrow I will walk out on the landing field and feel the sun. Then I will come back to the radio room, because somebody has to keep the watch.",
 ];
 
@@ -244,9 +244,9 @@ pub fn perks(ctx: &mut Ctx<Parlor>, quiet: bool) -> Perks {
         big_shield: has("shield-big"),
         thick_dome: has("dome-thick"),
         start_missiles: u32::from(has("rack-missile")),
-        start_walls: has("walls-two"),
+        more_mines: has("mines-two"),
         deep_rack: has("rack-deep"),
-        drifter_routes: has("drifter-routes"),
+        lane_forecast: has("lane-forecast"),
         forecast_quirks: has("quirks-forecast"),
         hard_vacuum: p.hard_vacuum && has("mode-hard-vacuum"),
         quiet,

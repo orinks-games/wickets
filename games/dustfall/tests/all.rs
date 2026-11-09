@@ -3,7 +3,6 @@
 //! Add a new test file here as a module.
 
 mod music;
-mod routes;
 mod rules;
 mod run;
 mod walkthrough;

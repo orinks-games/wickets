@@ -1,41 +1,69 @@
-//! The fourth build's rules: orders, quirks, perks, the long watch and the
-//! dust storm, each through the rules alone.
+//! Orders, quirks, perks, the long watch, the dust storm and the waves
+//! table, each through the rules alone.
 
 use dustfall::rules::colony::{DOME_MAX, MISSILES_MAX, SHIELD_MAX, SHIELD_START};
-use dustfall::rules::nights::{quirks_at_most, wave, QUIRKS_FROM};
+use dustfall::rules::lanes::MID;
+use dustfall::rules::nights::{kinds, quirks_at_most, waves, QUIRKS_FROM, WAVE_LULL};
 use dustfall::rules::orders::{OVERCLOCK_POWER, OVERCLOCK_SHIELD, RATIONING_FOOD};
-use dustfall::rules::perks::{BIG_SHIELD, DEEP_RACK, HARD_VACUUM_SHIELD, THICK_DOME};
-use dustfall::rules::{
-    Colony, Event, Input, Kind, Order, Perks, Phase, Quirk, Refusal, Run, Sector, Storm, WorkKind,
-    COLS, RELIEF_NIGHT,
+use dustfall::rules::perks::{
+    BIG_SHIELD, DEEP_RACK, HARD_VACUUM_SHIELD, MINES_A_NIGHT_MORE, THICK_DOME,
 };
-
-fn s(col: u8, row: u8) -> Sector {
-    Sector::new(col, row)
-}
+use dustfall::rules::storm::STORM_EVERY;
+use dustfall::rules::{
+    Arrival, Building, Colony, Event, Input, Kind, Order, Perks, Phase, Quirk, Raider, Refusal,
+    Run, Storm, LANES, RELIEF_NIGHT,
+};
 
 fn has(events: &[Event], f: impl Fn(&Event) -> bool) -> bool {
     events.iter().any(f)
 }
 
-/// Shoots until the night is held: the gun goes under the nearest raider
-/// and fires, and the turn ends when nothing is in reach.
+/// Shoots until the night is held or the dome falls.
 fn hold(run: &mut Run) {
-    for _ in 0..400 {
-        if !matches!(run.phase, Phase::Turn { .. }) {
+    for _ in 0..20_000 {
+        if run.phase != Phase::Night {
             return;
         }
-        let target = run.nearest_first().first().map(|r| r.at.col);
+        let target = run.nearest_first().first().map(|r| r.lane);
         match target {
-            None => run.apply(Input::EndTurn).unwrap(),
-            Some(col) if col == run.gun => {
-                run.apply(Input::Fire).unwrap();
-            }
-            Some(col) if col < run.gun => run.apply(Input::Left).unwrap(),
-            Some(_) => run.apply(Input::Right).unwrap(),
+            Some(lane) if lane < run.gun => run.apply(Input::Left).unwrap(),
+            Some(lane) if lane > run.gun => run.apply(Input::Right).unwrap(),
+            Some(_) if run.cooldown == 0 => run.apply(Input::Fire).unwrap(),
+            _ => {}
         }
+        run.tick();
     }
     panic!("the night never ended: {:?}", run.phase);
+}
+
+/// Ticks between a wave going down and the next being called.
+fn lull_of(run: &mut Run) -> u32 {
+    run.apply(Input::Ready).unwrap();
+    run.take_events();
+    let mut clear_at = None;
+    for _ in 0..20_000 {
+        if run.phase != Phase::Night {
+            break;
+        }
+        let target = run.nearest_first().first().map(|r| r.lane);
+        match target {
+            Some(lane) if lane < run.gun => run.apply(Input::Left).unwrap(),
+            Some(lane) if lane > run.gun => run.apply(Input::Right).unwrap(),
+            Some(_) if run.cooldown == 0 => run.apply(Input::Fire).unwrap(),
+            _ => {}
+        }
+        run.tick();
+        for e in run.take_events() {
+            match e {
+                Event::WaveClear { wave: 1, .. } => clear_at = Some(run.tick),
+                Event::WaveComing { wave: 2, .. } => {
+                    return run.tick - clear_at.expect("cleared first")
+                }
+                _ => {}
+            }
+        }
+    }
+    panic!("no second wave");
 }
 
 // ----- orders -----
@@ -88,190 +116,101 @@ fn overclock_charges_the_shield_now_and_costs_power_after_the_night() {
     run.take_events();
     hold(&mut run);
     assert_eq!(run.phase, Phase::Colony);
-    let events = run.take_events();
-    assert!(has(&events, |e| matches!(
+    assert_eq!(
+        run.colony.resources.power,
+        power + 2 - OVERCLOCK_POWER,
+        "two drifters' power, then the bill"
+    );
+    assert!(has(&run.take_events(), |e| matches!(
         e,
         Event::OrderPaid {
             order: Order::Overclock
         }
     )));
-    // Two drifters' power came in, and the overclock's went out.
-    assert_eq!(run.colony.resources.power, power + 2 - OVERCLOCK_POWER);
-    assert_eq!(run.order, None, "the order is spent with the night");
-    assert_eq!(run.offered.len(), 2, "two more for the next night");
+    assert_eq!(run.order, None, "an order lasts one night");
 }
 
 #[test]
-fn rationing_feeds_the_colony_and_the_raiders_step_first() {
+fn rationing_feeds_the_colony_and_packs_the_waves() {
+    let plain = lull_of(&mut Run::new(3));
+    assert_eq!(plain, WAVE_LULL);
     let mut run = with_order(3, Order::Rationing);
     let food = run.colony.resources.food;
     run.apply(Input::TakeOrder(Order::Rationing)).unwrap();
     assert_eq!(run.colony.resources.food, food + RATIONING_FOOD);
-    run.apply(Input::Ready).unwrap();
-    assert!(
-        run.raiders.iter().all(|r| r.at.row == 5),
-        "{:?}",
-        run.raiders
-    );
-    let events = run.take_events();
-    let steps = events
-        .iter()
-        .position(|e| matches!(e, Event::Stepped { .. }))
-        .unwrap();
-    let turn = events
-        .iter()
-        .position(|e| matches!(e, Event::YourTurn { .. }))
-        .unwrap();
-    assert!(
-        steps < turn,
-        "the steps come before the first turn: {events:?}"
-    );
+    assert_eq!(lull_of(&mut run), WAVE_LULL * 2 / 3);
 }
 
 #[test]
-fn salvage_doubles_the_metal_and_hurries_the_skitters() {
+fn salvage_doubles_the_metal_and_speeds_the_skitters() {
     let mut run = with_order(3, Order::Salvage);
     run.apply(Input::TakeOrder(Order::Salvage)).unwrap();
-    assert_eq!(run.steps_of(Kind::Skitter), 3);
-    assert_eq!(run.steps_of(Kind::Drifter), 1);
+    let skitter = Raider::new(1, Kind::Skitter, 0, 900);
+    assert_eq!(run.speed_of(&skitter), Kind::Skitter.speed() * 3 / 2);
     run.apply(Input::Ready).unwrap();
+    run.waves.clear();
     run.take_events();
-    hold(&mut run);
-    let events = run.take_events();
-    let downs: Vec<&Event> = events
-        .iter()
-        .filter(|e| matches!(e, Event::Down { .. }))
-        .collect();
-    assert_eq!(downs.len(), 2);
-    for d in downs {
-        let Event::Down { take, .. } = d else {
-            unreachable!()
-        };
-        assert_eq!(take.metal, Kind::Drifter.drop().metal * 2, "{d:?}");
-    }
+    run.raiders.push(Raider::new(2, Kind::Drifter, 2, 800));
+    let metal = run.colony.resources.metal;
+    run.apply(Input::Fire).unwrap();
+    assert_eq!(
+        run.colony.resources.metal,
+        metal + 2 * Kind::Drifter.drop().metal
+    );
 }
 
 // ----- quirks -----
 
 #[test]
-fn quirks_come_from_night_seven_and_never_more_than_two() {
-    assert_eq!(quirks_at_most(QUIRKS_FROM - 1), 0);
+fn quirks_come_from_night_seven_and_fit_their_kinds() {
+    for night in 1..QUIRKS_FROM {
+        assert_eq!(quirks_at_most(night), 0);
+        let run = Run::at_night(5, night);
+        assert!(
+            run.forecast.iter().all(|a| a.quirk.is_none()),
+            "night {night}"
+        );
+    }
     assert_eq!(quirks_at_most(QUIRKS_FROM), 1);
-    assert_eq!(quirks_at_most(QUIRKS_FROM + 1), 1);
-    assert_eq!(quirks_at_most(QUIRKS_FROM + 2), 2);
-    for seed in 0..40u64 {
-        for night in 1..=12u8 {
-            let run = Run::at_night(seed, night);
-            let quirks = run.forecast.iter().filter(|a| a.quirk.is_some()).count();
-            assert!(quirks <= quirks_at_most(night), "seed {seed} night {night}");
-            for a in &run.forecast {
-                if let Some(q) = a.quirk {
-                    assert!(q.fits(a.kind), "{a:?}");
-                }
-            }
+    assert_eq!(quirks_at_most(9), 2);
+    let mut any = false;
+    for seed in 1..20 {
+        let run = Run::at_night(seed, 9);
+        let quirked: Vec<_> = run.forecast.iter().filter(|a| a.quirk.is_some()).collect();
+        assert!(quirked.len() <= 2, "seed {seed}: {quirked:?}");
+        for a in quirked {
+            assert!(a.quirk.unwrap().fits(a.kind), "{a:?}");
+            any = true;
         }
     }
-    // Night 9 has quirks often enough to be heard of.
-    let any = (0..40u64).any(|seed| Run::at_night(seed, 9).quirk_words().is_some());
-    assert!(any);
-}
-
-/// A run before `night` whose forecast carries `quirk`, from the first
-/// seed that does.
-fn with_quirk(night: u8, quirk: Quirk) -> Run {
-    (0..2000u64)
-        .map(|seed| Run::at_night(seed, night))
-        .find(|run| run.forecast.iter().any(|a| a.quirk == Some(quirk)))
-        .unwrap_or_else(|| panic!("no seed brings {quirk:?} on night {night}"))
+    assert!(any, "some night 9 carries a quirk");
+    assert!(!Quirk::Weaving.fits(Kind::Hulk));
+    assert!(!Quirk::Armoured.fits(Kind::Mothership));
+    assert_eq!(Run::at_night(5, 9).forecast, Run::at_night(5, 9).forecast);
 }
 
 #[test]
-fn an_armoured_raider_takes_a_hit_more_and_is_named() {
-    let mut run = with_quirk(9, Quirk::Armoured);
-    let words = run.quirk_words().unwrap();
-    assert!(words.contains("an armoured"), "{words}");
-    assert!(words.ends_with("among them."), "{words}");
+fn a_weaving_raider_slips_a_lane_away_from_the_gun_at_mid_range() {
+    let mut run = Run::at_night(1, 9);
     run.apply(Input::Ready).unwrap();
-    let armoured = run
-        .raiders
-        .iter()
-        .find(|r| r.quirk == Some(Quirk::Armoured))
-        .unwrap();
-    assert_eq!(armoured.hits, armoured.kind.hits() + 1);
-    assert!(
-        armoured.title().starts_with("Armoured "),
-        "{}",
-        armoured.title()
-    );
-    assert!(armoured.a().starts_with("an armoured "), "{}", armoured.a());
-}
-
-#[test]
-fn a_hasty_raider_steps_before_the_rest() {
-    let mut run = with_quirk(9, Quirk::Hasty);
-    run.apply(Input::Ready).unwrap();
+    run.waves.clear();
     run.take_events();
-    let hasty = run
-        .raiders
-        .iter()
-        .find(|r| r.quirk == Some(Quirk::Hasty))
-        .unwrap()
-        .id;
-    run.apply(Input::EndTurn).unwrap();
-    let events = run.take_events();
-    let first_step = events
-        .iter()
-        .find_map(|e| match e {
-            Event::Stepped { id, .. } => Some(*id),
-            _ => None,
-        })
-        .unwrap();
-    assert_eq!(first_step, hasty, "{events:?}");
-}
-
-#[test]
-fn a_burrowing_raider_passes_under_one_wall_in_a_phase() {
-    let mut run = with_quirk(9, Quirk::Burrowing);
-    // Wall off row 5 whole, so every raider must go through.
-    for col in 0..COLS {
-        run.apply(Input::Place {
-            work: WorkKind::Wall,
-            at: s(col, 5),
-        })
-        .unwrap();
-    }
-    run.apply(Input::Ready).unwrap();
-    run.take_events();
-    let burrower = run
-        .raiders
-        .iter()
-        .find(|r| r.quirk == Some(Quirk::Burrowing))
-        .unwrap()
-        .clone();
-    assert!(burrower.can_burrow());
-    let landing = run.phases_to_land(burrower.id).unwrap();
-    run.apply(Input::EndTurn).unwrap();
+    run.apply(Input::Left).unwrap();
+    let weaver = Raider::new(7, Kind::Skitter, 2, MID + 5).with_quirk(Some(Quirk::Weaving));
+    assert!(weaver.can_weave());
+    run.raiders.push(weaver);
+    run.tick();
     let events = run.take_events();
     assert!(
-        has(
-            &events,
-            |e| matches!(e, Event::Burrowed { id, .. } if *id == burrower.id)
-        ),
-        "{events:?}"
+        has(&events, |e| matches!(
+            e,
+            Event::Weaved { from: 2, to: 3, .. }
+        )),
+        "away from the gun at the left: {events:?}"
     );
-    let after = run.raider(burrower.id).unwrap();
-    assert_eq!(after.at.row, 5);
-    assert!(after.burrowed && !after.can_burrow());
-    assert!(run.grid.is_wall(after.at), "the wall still stands");
-    // It counted one phase for the wall, where a basher counts two.
-    let plain = run
-        .raiders
-        .iter()
-        .find(|r| r.id != burrower.id && !r.kind.crosses())
-        .map(|r| r.id);
-    if let Some(other) = plain {
-        assert!(run.phases_to_land(other).unwrap_or(0) + 1 >= landing);
-    }
+    let after = run.raider(7).unwrap();
+    assert_eq!(after.lane, 3);
+    assert!(!after.can_weave(), "once a night");
 }
 
 // ----- perks -----
@@ -279,173 +218,158 @@ fn a_burrowing_raider_passes_under_one_wall_in_a_phase() {
 #[test]
 fn perks_set_the_colony_up() {
     let plain = Colony::new();
-    assert_eq!(plain.dome_max, DOME_MAX);
-    assert_eq!(plain.shield_max, SHIELD_MAX);
-    assert_eq!(plain.missiles_max, MISSILES_MAX);
     assert_eq!(plain.open, vec![1, 2, 3]);
+    assert_eq!(
+        (plain.dome_max, plain.shield_max, plain.missiles_max),
+        (DOME_MAX, SHIELD_MAX, MISSILES_MAX)
+    );
+    assert_eq!(plain.mines_a_night, 1);
     let perks = Perks {
         extra_slots: 2,
         big_shield: true,
         thick_dome: true,
         start_missiles: 1,
-        start_walls: true,
+        more_mines: true,
         deep_rack: true,
-        ..Perks::default()
+        lane_forecast: true,
+        forecast_quirks: true,
+        hard_vacuum: false,
+        quiet: false,
     };
-    let run = Run::with_perks(5, perks);
-    assert_eq!(run.colony.open, vec![0, 1, 2, 3, 4]);
-    assert_eq!(run.colony.dome, THICK_DOME);
-    assert_eq!(run.colony.dome_max, THICK_DOME);
-    assert_eq!(run.colony.shield_max, BIG_SHIELD);
-    assert_eq!(run.colony.missiles, 1);
-    assert_eq!(run.colony.missiles_max, DEEP_RACK);
-    assert!(run.grid.is_wall(s(1, 3)) && run.grid.is_wall(s(3, 3)));
-    let mut colony = run.colony.clone();
-    assert_eq!(colony.charge(100), BIG_SHIELD - SHIELD_START);
-    assert_eq!(run.with_bonus(100), 100, "no bonus without a hard mode");
-}
-
-#[test]
-fn hard_vacuum_caps_the_shield_and_pays_a_quarter_more() {
-    let perks = Perks {
-        hard_vacuum: true,
-        big_shield: true,
-        ..Perks::default()
-    };
-    let mut run = Run::with_perks(3, perks);
+    let full = Colony::with(perks);
+    assert_eq!(full.open, vec![0, 1, 2, 3, 4]);
+    assert_eq!(full.dome, THICK_DOME);
+    assert_eq!(full.shield_max, BIG_SHIELD);
+    assert_eq!(full.missiles, 1);
+    assert_eq!(full.missiles_max, DEEP_RACK);
+    assert_eq!(full.mines_a_night, MINES_A_NIGHT_MORE);
+    let mut run = Run::with_perks(1, perks);
+    run.apply(Input::LayMine { lane: 0 }).unwrap();
+    run.apply(Input::LayMine { lane: 4 }).unwrap();
     assert_eq!(
-        run.colony.shield_max, HARD_VACUUM_SHIELD,
-        "hard vacuum beats the bigger shield"
+        run.apply(Input::LayMine { lane: 2 }),
+        Err(Refusal::MinesLaid)
     );
-    assert_eq!(run.with_bonus(100), 125);
-    let quiet = Perks {
-        quiet: true,
+    let hard = Perks {
         hard_vacuum: true,
+        quiet: true,
         ..Perks::default()
     };
-    assert_eq!(Run::with_perks(3, quiet).with_bonus(100), 150);
-    // The bonus lands on the score as the run ends.
-    let mut plain = Run::new(3);
-    plain.relief = 1;
-    plain.apply(Input::Ready).unwrap();
-    hold(&mut plain);
-    assert_eq!(plain.phase, Phase::Relief);
-    run.relief = 1;
-    run.apply(Input::Ready).unwrap();
-    hold(&mut run);
-    assert_eq!(run.phase, Phase::Relief);
-    assert_eq!(run.score, plain.score + plain.score / 4);
+    assert_eq!(Colony::with(hard).shield_max, HARD_VACUUM_SHIELD);
+    assert_eq!(hard.bonus_percent(), 50);
+    assert_eq!(Run::with_perks(1, hard).with_bonus(200), 300);
 }
 
 // ----- the long watch -----
 
 #[test]
-fn the_long_watch_goes_on_past_relief() {
-    let mut run = Run::long_watch(3, Perks::default());
+fn the_long_watch_rounds_the_late_nights_with_more_drifters() {
+    let run = Run::long_watch(1, Perks::default());
     assert!(run.endless());
     assert_eq!(run.nights(), 0);
-    // Night 1's two drifters, held as if it were night 12.
-    run.night = RELIEF_NIGHT;
-    let tech = run.tech;
-    run.apply(Input::Ready).unwrap();
-    run.take_events();
-    hold(&mut run);
-    assert_eq!(run.phase, Phase::Colony, "no Relief: the watch goes on");
-    assert_eq!(run.night, RELIEF_NIGHT + 1);
-    assert!(
-        run.tech > tech + 1,
-        "Relief's tech still lands: {}",
-        run.tech
+    assert_eq!(kinds(13).len(), kinds(9).len() + 1);
+    assert_eq!(kinds(16).len(), kinds(12).len() + 1);
+    assert_eq!(kinds(17).len(), kinds(9).len() + 2);
+    assert_eq!(
+        waves(13).len(),
+        waves(9).len(),
+        "the same waves, one fuller"
     );
-    let events = run.take_events();
-    assert!(!has(&events, |e| matches!(e, Event::Relief { .. })));
-    assert!(has(&events, |e| matches!(
-        e,
-        Event::ColonyOpens { night: 13, .. }
-    )));
-    assert_eq!(run.forecast.len(), wave(13).len());
-}
-
-#[test]
-fn the_nights_past_relief_come_round_harder() {
-    assert_eq!(wave(13).len(), wave(9).len() + 1);
-    assert_eq!(wave(14).len(), wave(10).len() + 1);
-    assert_eq!(wave(16).len(), wave(12).len() + 1);
-    assert_eq!(wave(17).len(), wave(9).len() + 2);
-    assert_eq!(wave(21).len(), wave(9).len() + 3);
-    assert!(wave(16).contains(&Kind::Carrier));
-}
-
-// ----- the dust storm -----
-
-#[test]
-fn the_storm_crosses_the_grid_and_turns_at_the_edges() {
-    let mut storm = Storm::new();
-    let mut seen = vec![storm.col];
-    for _ in 0..(COLS as usize * 2 - 2) {
-        storm.advance();
-        seen.push(storm.col);
-    }
-    assert_eq!(seen, vec![0, 1, 2, 3, 4, 3, 2, 1, 0]);
-    assert!(storm.covers(s(0, 3)) && !storm.covers(s(1, 3)));
-}
-
-#[test]
-fn a_raider_in_the_dust_is_not_heard_and_loses_its_step() {
-    // A seed whose night 1 drifters enter at the left and elsewhere: the
-    // storm reaches the left on the first raiders' phase.
-    let seed = (0..500u64)
-        .find(|seed| {
-            let run = Run::in_storm(*seed, Perks::default());
-            run.forecast.iter().any(|a| a.col == 1) && run.forecast.iter().any(|a| a.col > 1)
-        })
-        .expect("a seed");
-    let mut run = Run::in_storm(seed, Perks::default());
-    assert_eq!(run.storm, Some(Storm::new()));
+    let mut run = Run::prepared(1, 1, 1);
+    run.relief = 0;
     run.apply(Input::Ready).unwrap();
-    let events = run.take_events();
-    assert!(has(&events, |e| matches!(e, Event::StormMoved { col: 0 })));
-    assert_eq!(run.heard().len(), 2, "nothing in the far left yet");
-    run.apply(Input::EndTurn).unwrap();
-    let events = run.take_events();
-    assert!(has(&events, |e| matches!(e, Event::StormMoved { col: 1 })));
-    assert_eq!(run.storm.unwrap().col, 1);
-    let in_dust = run.raiders.iter().find(|r| r.at.col == 1).unwrap();
-    assert_eq!(in_dust.at.row, 6, "it lost its step");
-    assert!(run.in_dust(in_dust.at));
-    let heard = run.heard();
-    assert!(heard.iter().all(|r| r.at.col != 1), "{heard:?}");
-    assert!(run.raiders.iter().any(|r| r.at.col != 1 && r.at.row == 5));
+    hold(&mut run);
+    assert_eq!(run.phase, Phase::Colony, "the long watch goes on");
+    assert_eq!(run.night, 2);
+}
+
+// ----- the storm -----
+
+#[test]
+fn the_storm_drifts_a_lane_at_a_time_and_turns_at_the_edges() {
+    let mut storm = Storm::new();
+    assert_eq!(storm.lane, 0);
+    let mut path = Vec::new();
+    for _ in 0..9 {
+        storm.advance();
+        path.push(storm.lane);
+    }
+    assert_eq!(path, vec![1, 2, 3, 4, 3, 2, 1, 0, 1]);
+    assert!(storm.covers(1));
 }
 
 #[test]
-fn flak_in_the_dust_is_silent() {
-    let seed = (0..500u64)
-        .find(|seed| {
-            Run::in_storm(*seed, Perks::default())
-                .forecast
-                .iter()
-                .all(|a| a.col == 1)
-        })
-        .expect("a seed with both drifters at the left");
-    let mut run = Run::in_storm(seed, Perks::default());
-    run.apply(Input::Place {
-        work: WorkKind::Flak,
-        at: s(1, 5),
+fn raiders_in_the_dust_are_not_heard_and_the_flak_under_it_is_silent() {
+    let mut run = Run::in_storm(2, Perks::default());
+    run.apply(Input::Buy {
+        building: Building::Flak,
+        lane: 1,
     })
     .unwrap();
     run.apply(Input::Ready).unwrap();
-    run.take_events();
-    // The storm is at the left for this phase: the post beside the
-    // drifters cannot fire, and the drifters do not move.
-    run.apply(Input::EndTurn).unwrap();
+    run.waves.clear();
+    run.pending = vec![Arrival {
+        kind: Kind::Drifter,
+        lane: 0,
+        quirk: None,
+        wave: 1,
+        at: u32::MAX,
+    }];
+    let events = run.take_events();
+    assert!(has(&events, |e| matches!(e, Event::StormMoved { lane: 0 })));
+    assert!(run.in_dust(0));
+    run.ticks(STORM_EVERY);
+    assert!(has(&run.take_events(), |e| matches!(
+        e,
+        Event::StormMoved { lane: 1 }
+    )));
+    assert!(run.in_dust(1) && !run.in_dust(0));
+    run.raiders.push(Raider::new(1, Kind::Hulk, 1, 800));
+    run.raiders.push(Raider::new(2, Kind::Hulk, 3, 800));
+    let heard: Vec<u32> = run.heard().iter().map(|r| r.id).collect();
+    assert_eq!(heard, vec![2], "the hulk in the dust is not heard");
+    run.ticks(STORM_EVERY - 1);
     let events = run.take_events();
     assert!(
         !has(&events, |e| matches!(
             e,
-            Event::Hit { .. } | Event::Down { .. }
+            Event::Hit {
+                by: dustfall::rules::Hitter::Flak(_),
+                ..
+            }
         )),
         "{events:?}"
     );
-    assert_eq!(run.raiders.len(), 2);
+    run.ticks(30);
+    assert!(
+        has(&run.take_events(), |e| matches!(
+            e,
+            Event::Hit {
+                by: dustfall::rules::Hitter::Flak(1),
+                ..
+            }
+        )),
+        "the post fires once the dust has moved on"
+    );
+}
+
+// ----- the waves table -----
+
+#[test]
+fn every_night_has_its_waves() {
+    for night in 1..=RELIEF_NIGHT {
+        let w = waves(night);
+        assert!(w.len() >= 2, "night {night} has more than one wave");
+        assert!(w.iter().all(|wave| !wave.is_empty()), "night {night}");
+        let flat: Vec<Kind> = w.iter().flatten().copied().collect();
+        assert_eq!(flat, kinds(night));
+        let run = Run::at_night(1, night);
+        assert_eq!(run.waves_total() as usize, w.len());
+        assert!(run.forecast.iter().all(|a| a.lane < LANES));
+    }
+    assert!(kinds(5).contains(&Kind::Mothership) && kinds(10).contains(&Kind::Mothership));
+    assert!(kinds(RELIEF_NIGHT).contains(&Kind::Carrier));
+    assert!(Run::at_night(1, 4)
+        .forecast_words()
+        .ends_with(", in 3 waves"));
 }

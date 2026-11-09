@@ -1,5 +1,6 @@
-//! The tutorial: one quiet night with two drifters that never fire. Scan,
-//! slide, shoot, end a turn, then the status and the route finder.
+//! The tutorial: one quiet night at a third of the pace, with two drifters
+//! in two waves that never fire. Scan, slide, shoot, then the status and
+//! the sky.
 
 use hearken::text::sentence_start;
 use hearken::Ctx;
@@ -10,12 +11,13 @@ use crate::night::NightScreen;
 use crate::rules::{Input, Run};
 use crate::ID;
 
-/// The practice night's seed: two drifters, one at the centre.
+/// The practice night's seed.
 pub const SEED: u64 = 3;
 
-/// A night 1 already under way, with its colony phase skipped.
+/// A night 1 already under way at the practice pace, with its colony
+/// phase skipped.
 pub fn night() -> Live<NightScreen> {
-    let mut run = Run::new(SEED);
+    let mut run = Run::practice(SEED);
     run.take_events();
     run.apply(Input::Ready).expect("the practice night starts");
     Live::new(NightScreen::new(share_as(run, Mode::Practice)))
@@ -28,10 +30,11 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
 /// The tutorial on `night`, which a test can watch.
 pub fn lesson_on(ctx: &mut Ctx<Parlor>, night: Live<NightScreen>) -> Lesson {
     let k = |a| ctx.control_name(a);
-    let (left, right, fire, up, down, status, hint) = (
+    let (left, right, fire, missile, up, down, status, hint) = (
         k(ParlorAction::Left),
         k(ParlorAction::Right),
         k(ParlorAction::Primary),
+        k(ParlorAction::Secondary),
         k(ParlorAction::Up),
         k(ParlorAction::Down),
         k(ParlorAction::Status),
@@ -39,68 +42,60 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, night: Live<NightScreen>) -> Lesson {
     );
     let scan = night.step(
         format!(
-            "Two drifters have come over the horizon, far out on row 6. The dome is under you, and the gun runs on a rail along its edge. Press {down} to scan to the nearest raider. {} goes back through them. Scanning costs nothing.",
+            "The dome is under you, and the gun runs on a rail along its edge. The raiders come down five lanes, far left to far right, and the first wave has just been called. Press {down} to scan to the nearest raider once you hear its engine. {} goes back through them. Scanning costs nothing.",
             sentence_start(&up)
         ),
         |s: &NightScreen, _| {
             s.scanned.map(|_| {
-                "Each raider is named with its column, its row and how many hits it has left. Its sound comes from where it stands."
+                "Each raider is named with its lane, its range and the hits it has left. Its engine sounds from where it is, and it is falling toward you."
                     .to_string()
             })
         },
     );
     let slide = night.step(
         format!(
-            "Slide the gun under a raider with {left} or {right}. Each slide costs 1 of your 2 actions, and the column is named as you arrive."
+            "Slide the gun into its lane with {left} or {right}. The lane is named as you arrive, and a lock tone starts when a raider is in the gun's lane. The tone pulses faster as it nears."
         ),
         |s: &NightScreen, _| {
             let run = s.run();
-            let under = run.raiders.iter().any(|r| r.at.col == run.gun);
-            under.then(|| "Under it.".to_string())
+            let under = run.raiders.iter().any(|r| r.lane == run.gun);
+            under.then(|| "Locked on.".to_string())
         },
     );
     let shoot = night.step(
         format!(
-            "Press {fire} to fire at the nearest raider in the gun's column. A drifter has 1 hit, so one shot brings it down."
+            "Press {fire} to fire up the gun's lane. A drifter has 1 hit, so one shot brings it down. The gun needs a moment to reload between shots."
         ),
         |s: &NightScreen, _| {
-            (s.run().downed >= 1 && !s.busy()).then(|| {
-                "Down. Its wreck leaves salvage, which the colony keeps. That was your second action, so the turn ended on its own and the raiders moved.".to_string()
+            (s.run().downed >= 1).then(|| {
+                "Down. Its wreck leaves salvage, which the colony keeps. Raiders come in waves: once the sky is clear, the next wave is called.".to_string()
             })
-        },
-    );
-    let end = night.step(
-        "Press Enter to end a turn with actions to spare. Each one left charges the shield by 5. Then the raiders move, each heard at its new sector, and your turn comes round again.",
-        |s: &NightScreen, _| {
-            (s.turns_ended >= 1 && !s.busy())
-                .then(|| "The raiders have moved. Your turn again.".to_string())
         },
     );
     let status_step = night.step(
         format!(
-            "Press {status} for the gun, the dome, the shield and your actions. Press it again straight away for every raider on the grid."
+            "Press {status} for the gun, the dome, the shield and the wave. Press it again straight away for every raider in the sky."
         ),
         |s: &NightScreen, _| s.status_asked.then(|| "That is the watch at a glance.".to_string()),
     );
-    let route = night.step(
+    let sky = night.step(
         format!(
-            "Press {hint} to hear where the scanned raider is heading. Raiders find their own way round your walls and flak, and this tells you the next step. A scanner building tells you the whole route."
+            "Press {hint} to hear the sky lane by lane, and what comes next. A scanner building tells it which lane the next raider takes."
         ),
-        |s: &NightScreen, _| s.hint_asked.then(|| "The route finder.".to_string()),
+        |s: &NightScreen, _| s.hint_asked.then(|| "The sky, read out.".to_string()),
     );
     Lesson::new(
         ID,
         "Dustfall",
-        "You hold a dome through twelve nights of raiders, one turn at a time. Between nights you spend what you have salvaged on walls, flak posts, mines and buildings. Learn the gun on a quiet night first",
+        "You hold a dome through twelve nights of raiders, who come down five lanes in waves. Between nights you spend what you have salvaged on buildings, mines and missiles. Learn the gun on a quiet night first",
     )
     .step(scan)
     .step(slide)
     .step(shoot)
-    .step(end)
     .step(status_step)
-    .step(route)
+    .step(sky)
     .outro(format!(
-        "On a real night the drifters fire back: a rising whine under a column means move the gun off it before you end the turn. When the last raider is gone, the colony phase opens, and what you build there changes the routes they take. {} fires, Enter ends the turn, {up} and {down} scan, and {hint} says where a raider is heading. Good luck on the watch.",
+        "On a real night the raiders fire back: a rising whine in a lane means slide the gun out of it before the shot lands. When the last wave is down, the colony phase opens, and what you build there shapes the nights to come. {} fires, {missile} fires a missile at the nearest raider, {up} and {down} scan, {status} is the status, and {hint} reads the sky. Good luck on the watch.",
         sentence_start(&fire)
     ))
 }

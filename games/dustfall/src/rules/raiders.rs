@@ -2,26 +2,25 @@
 //! in.
 //!
 //! A raider's life is one small state machine, moved only by
-//! [`super::Run`] in the raiders' phase:
+//! [`super::Run::tick`]:
 //!
 //! ```text
-//! arrive -> Approaching --(in range of the gun)--> Charging --(fires)--> Approaching
-//!              |  ^                                   |
-//!              |  +--(wall falls)-- Bashing <---------+ (a wall in its way)
-//!              |
-//!              +--(no open route)--> Holding --(a route opens)--> Approaching
+//! arrive -> Falling --(the dome)--> breach
+//!    |         |
+//!    |         +--(a mothership at mid range)--> Hovering
+//!    |
+//!    +--(a mule or the carrier)--> Crossing --(over the edge)--> leaves, or turns
 //!
-//! Any state leaves the grid as Down (shot, mined or flakked), Breached
-//! (reached row 1) or Gone (a mule that crossed).
+//! Any state leaves the sky as Down (shot, mined or flakked).
 //! ```
 //!
-//! A mothership that has reached its post, and the carrier and mules,
-//! which cross rather than approach, use Holding and Approaching too; their
-//! habits live in the step logic, not in extra states.
+//! A raider with a weapon winds up a charge now and then, whatever state
+//! it is in; the charge is a timer beside the state, not a state of its
+//! own, so a drifter keeps falling while its bolt winds up.
 
 use serde::{Deserialize, Serialize};
 
-use super::grid::Sector;
+use super::lanes::{Range, HORIZON};
 
 /// What a downed raider leaves behind.
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
@@ -77,11 +76,13 @@ pub enum Kind {
 /// A raider's weapon, fired after a wind-up.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Weapon {
-    /// A shot at the gun's column; moving off the column dodges it.
+    /// A shot at the lane the gun was in as the wind-up began; the gun
+    /// off that lane when it fires dodges it.
     Bolt,
-    /// Like a bolt, and the shield cannot be charged the turn after it hits.
+    /// Like a bolt, and the shield does not recharge for a while after
+    /// it hits.
     Siphon,
-    /// Hits the colony wherever the gun is. Two turns to wind up.
+    /// Hits the colony wherever the gun is.
     Siege,
 }
 
@@ -103,18 +104,37 @@ impl Weapon {
         }
     }
 
-    /// Whether moving the gun off the named column dodges it.
+    /// Whether moving the gun off the named lane dodges it.
     pub fn dodgeable(self) -> bool {
         !matches!(self, Weapon::Siege)
     }
 
-    /// Raiders' phases between the wind-up and the shot.
-    pub fn wind_up(self) -> u8 {
+    /// Ticks between the wind-up and the shot.
+    pub fn wind_up(self) -> u32 {
         match self {
-            Weapon::Siege => 2,
-            _ => 1,
+            Weapon::Siege => 20,
+            _ => 12,
         }
     }
+
+    /// Ticks a raider waits after one shot before the next wind-up.
+    pub fn rest(self) -> u32 {
+        match self {
+            Weapon::Bolt => 40,
+            Weapon::Siphon => 50,
+            Weapon::Siege => 60,
+        }
+    }
+}
+
+/// A charge winding up.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
+pub struct Charge {
+    pub weapon: Weapon,
+    /// The lane aimed at.
+    pub lane: u8,
+    /// Ticks until it fires.
+    pub ticks: u32,
 }
 
 /// A quirk a raider of night 7 or later may come down with. The forecast
@@ -123,22 +143,21 @@ impl Weapon {
 pub enum Quirk {
     /// One hit more than its kind.
     Armoured,
-    /// Steps before every other raider in the phase.
+    /// A quarter faster than its kind.
     Hasty,
-    /// Passes under one wall a night in a single phase instead of
-    /// bashing it.
-    Burrowing,
+    /// Changes lane once, at mid range.
+    Weaving,
 }
 
 impl Quirk {
-    pub const ALL: [Quirk; 3] = [Quirk::Armoured, Quirk::Hasty, Quirk::Burrowing];
+    pub const ALL: [Quirk; 3] = [Quirk::Armoured, Quirk::Hasty, Quirk::Weaving];
 
     /// "armoured", as it goes before the kind's name.
     pub fn name(self) -> &'static str {
         match self {
             Quirk::Armoured => "armoured",
             Quirk::Hasty => "hasty",
-            Quirk::Burrowing => "burrowing",
+            Quirk::Weaving => "weaving",
         }
     }
 
@@ -146,10 +165,8 @@ impl Quirk {
     pub fn about(self) -> &'static str {
         match self {
             Quirk::Armoured => "Takes 1 hit more than its kind.",
-            Quirk::Hasty => "Steps before every other raider.",
-            Quirk::Burrowing => {
-                "Passes under one wall a night in a single phase instead of bashing it."
-            }
+            Quirk::Hasty => "Falls a quarter faster than its kind.",
+            Quirk::Weaving => "Changes lane once, at mid range.",
         }
     }
 
@@ -161,7 +178,7 @@ impl Quirk {
                 Kind::Drifter | Kind::Skitter | Kind::Hulk | Kind::Sapper
             ),
             Quirk::Hasty => matches!(kind, Kind::Drifter | Kind::Skitter | Kind::Sapper),
-            Quirk::Burrowing => matches!(kind, Kind::Hulk | Kind::Sapper),
+            Quirk::Weaving => matches!(kind, Kind::Skitter | Kind::Sapper),
         }
     }
 }
@@ -202,12 +219,13 @@ impl Kind {
         }
     }
 
-    /// Hits to bring one down.
-    /// Too well hulled for flak: only the gun and missiles hurt it.
+    /// Too well hulled for flak or a mine, and for the gun while it is
+    /// still at far range: only missiles hurt it out there.
     pub fn armoured(self) -> bool {
         matches!(self, Kind::Mothership | Kind::Carrier)
     }
 
+    /// Hits to bring one down.
     pub fn hits(self) -> u8 {
         match self {
             Kind::Drifter | Kind::Skitter => 1,
@@ -225,17 +243,31 @@ impl Kind {
             Kind::Skitter => 6,
             Kind::Hulk => 20,
             Kind::Sapper => 4,
-            // These never reach row 1.
+            // These never reach the dome.
             Kind::Mule | Kind::Mothership | Kind::Carrier => 0,
         }
     }
 
-    /// Steps along its route in one raiders' phase. A hulk's one step comes
-    /// every other phase (see [`Raider::rest`]).
-    pub fn steps(self) -> u8 {
+    /// Range units it falls a tick: from the horizon to the dome in about
+    /// 20 seconds for a drifter, 8 for a skitter, 33 for a hulk.
+    pub fn speed(self) -> u32 {
         match self {
-            Kind::Skitter => 2,
-            _ => 1,
+            Kind::Drifter => 5,
+            Kind::Skitter => 12,
+            Kind::Hulk => 3,
+            Kind::Sapper => 7,
+            Kind::Mothership => 6,
+            // These cross; see `cross_every`.
+            Kind::Mule | Kind::Carrier => 0,
+        }
+    }
+
+    /// Ticks a crossing raider spends over each lane.
+    pub fn cross_every(self) -> u32 {
+        match self {
+            Kind::Mule => 15,
+            Kind::Carrier => 25,
+            _ => 0,
         }
     }
 
@@ -248,17 +280,15 @@ impl Kind {
         }
     }
 
-    /// The nearest row a raider must reach before it winds up its weapon.
-    pub fn range(self) -> u8 {
+    /// The range a raider must be within before it winds up its weapon.
+    pub fn fires_from(self) -> Range {
         match self {
-            Kind::Drifter => 3,
-            Kind::Hulk => 2,
-            _ => u8::MAX,
+            Kind::Hulk => Range::Near,
+            _ => Range::Mid,
         }
     }
 
-    /// Whether it crosses the grid sideways along the crossing row instead
-    /// of approaching the domes.
+    /// Whether it crosses the sky sideways instead of falling.
     pub fn crosses(self) -> bool {
         matches!(self, Kind::Mule | Kind::Carrier)
     }
@@ -270,7 +300,7 @@ impl Kind {
 
     pub fn drop(self) -> Take {
         match self {
-            Kind::Drifter => Take::new(1, 1, 0),
+            Kind::Drifter => Take::new(1, 2, 0),
             Kind::Skitter => Take::new(0, 1, 0),
             Kind::Hulk => Take::new(0, 4, 0),
             Kind::Sapper => Take::new(0, 3, 0),
@@ -304,19 +334,15 @@ impl Kind {
 /// Where a raider is in its life. Only the run moves it.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub enum State {
-    /// Walking its route toward its goal.
-    Approaching,
-    /// Winding up a shot at `col`; it fires when `phases` reaches zero at
-    /// the start of a raiders' phase. It stands still meanwhile.
-    Charging { col: u8, phases: u8 },
-    /// Breaking the wall at `wall`, which is the next step of its route.
-    Bashing { wall: Sector },
-    /// Standing still: no open route this phase, or a mothership at its
-    /// post.
-    Holding,
+    /// Falling down its lane toward the dome.
+    Falling,
+    /// Crossing the lanes sideways: a mule or the carrier.
+    Crossing,
+    /// A mothership holding at mid range, shifting a lane now and then.
+    Hovering,
 }
 
-/// One raider on the grid.
+/// One raider in the sky.
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Raider {
     /// Stable through the night, so the screen and tests can follow one.
@@ -324,40 +350,53 @@ pub struct Raider {
     pub kind: Kind,
     /// Hits left.
     pub hits: u8,
-    pub at: Sector,
+    pub lane: u8,
+    /// Range units from the dome: the horizon is [`HORIZON`], the dome 0.
+    pub height: u32,
     pub state: State,
-    /// A hulk steps only on phases where this is false; it flips each phase.
-    pub rest: bool,
-    /// Which way a crossing raider is going: 1 right, -1 left.
+    /// Which way a crossing or hovering raider shifts: 1 right, -1 left.
     pub heading: i8,
-    /// Which side a skitter of a pair leans to when routes tie: -1 left,
-    /// 1 right, 0 no lean.
-    pub lean: i8,
-    /// Raiders' phases a mothership has spent at its post.
-    pub posted: u32,
+    /// Ticks since it arrived.
+    pub age: u32,
+    /// Ticks since its last shot, or since it arrived.
+    pub since_shot: u32,
+    /// Shots it has fired this night.
+    pub fired: u32,
+    /// The charge winding up, if one is.
+    pub charge: Option<Charge>,
     /// Its quirk, from night 7.
-    #[serde(default)]
     pub quirk: Option<Quirk>,
-    /// A burrowing raider has used its burrow this night.
-    #[serde(default)]
-    pub burrowed: bool,
+    /// A weaving raider has made its weave.
+    pub weaved: bool,
 }
 
 impl Raider {
-    pub fn new(id: u32, kind: Kind, at: Sector) -> Raider {
+    pub fn new(id: u32, kind: Kind, lane: u8, height: u32) -> Raider {
+        let state = if kind.crosses() {
+            State::Crossing
+        } else {
+            State::Falling
+        };
         Raider {
             id,
             kind,
             hits: kind.hits(),
-            at,
-            state: State::Approaching,
-            rest: false,
-            heading: 1,
-            lean: 0,
-            posted: 0,
+            lane,
+            height,
+            state,
+            heading: if lane == 0 { 1 } else { -1 },
+            age: 0,
+            since_shot: 0,
+            fired: 0,
+            charge: None,
             quirk: None,
-            burrowed: false,
+            weaved: false,
         }
+    }
+
+    /// At the horizon.
+    pub fn arriving(id: u32, kind: Kind, lane: u8) -> Raider {
+        Raider::new(id, kind, lane, HORIZON)
     }
 
     /// With a quirk; an armoured raider takes a hit more.
@@ -369,17 +408,21 @@ impl Raider {
         self
     }
 
+    pub fn range(&self) -> Range {
+        Range::of(self.height)
+    }
+
     pub fn is_charging(&self) -> bool {
-        matches!(self.state, State::Charging { .. })
+        self.charge.is_some()
     }
 
     pub fn has(&self, quirk: Quirk) -> bool {
         self.quirk == Some(quirk)
     }
 
-    /// Whether it can still burrow under a wall this night.
-    pub fn can_burrow(&self) -> bool {
-        self.has(Quirk::Burrowing) && !self.burrowed
+    /// Whether it can still weave this night.
+    pub fn can_weave(&self) -> bool {
+        self.has(Quirk::Weaving) && !self.weaved
     }
 
     /// "Hulk" or "Armoured hulk".
@@ -406,14 +449,18 @@ impl Raider {
         }
     }
 
-    /// "Hulk, left, row 2" or "Armoured hulk, left, row 2".
+    /// "Hulk, left, near" or "Armoured hulk, left, near".
     pub fn words(&self) -> String {
-        format!("{}, {}", self.title(), self.at.words())
+        format!(
+            "{}, {}",
+            self.title(),
+            super::lanes::place_words(self.lane, self.height)
+        )
     }
 }
 
-/// Raiders sorted nearest the domes first, then far left to far right,
+/// Raiders sorted nearest the dome first, then far left to far right,
 /// then by arrival.
 pub fn nearest_first(raiders: &mut [Raider]) {
-    raiders.sort_by_key(|r| (r.at.row, r.at.col, r.id));
+    raiders.sort_by_key(|r| (r.height, r.lane, r.id));
 }

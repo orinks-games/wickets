@@ -1,9 +1,10 @@
-//! The colony: its three resources, the dome and shield, the missiles, and
-//! the buildings in the slots under the grid's columns.
+//! The colony: its three resources, the dome and shield, the missiles, the
+//! mines laid for the night, and the buildings in the slots under the
+//! lanes.
 
 use serde::{Deserialize, Serialize};
 
-use super::grid::COLS;
+use super::lanes::LANES;
 use super::perks::Perks;
 use super::raiders::Take;
 
@@ -13,8 +14,12 @@ pub const DOME_MAX: u32 = 100;
 pub const SHIELD_START: u32 = 20;
 /// The most shield the colony holds.
 pub const SHIELD_MAX: u32 = 50;
-/// Shield each unspent action adds when a turn ends early.
-pub const SHIELD_PER_ACTION: u32 = 5;
+/// Ticks between one point of shield recharge and the next in the night,
+/// and with a working shield coil.
+pub const RECHARGE_EVERY: u32 = 20;
+pub const RECHARGE_EVERY_COIL: u32 = 10;
+/// Ticks the shield stays flat after a siphon hits.
+pub const SIPHON_TICKS: u32 = 50;
 /// Missiles carried at most.
 pub const MISSILES_MAX: u32 = 3;
 /// A missile's damage: enough to destroy any raider but a mothership or
@@ -23,6 +28,12 @@ pub const MISSILE_DAMAGE: u8 = 4;
 /// Power and metal for a missile without a workshop, and with one.
 pub const MISSILE_COST: (u32, u32) = (6, 4);
 pub const MISSILE_COST_WORKSHOP: (u32, u32) = (3, 2);
+/// Metal to lay a mine in a lane.
+pub const MINE_COST: u32 = 3;
+/// A mine's damage.
+pub const MINE_DAMAGE: u8 = 2;
+/// Ticks between a flak post's shots.
+pub const FLAK_EVERY: u32 = 25;
 /// Metal to put [`DOME_REPAIR`] back on the dome.
 pub const DOME_REPAIR_COST: u32 = 5;
 pub const DOME_REPAIR: u32 = 20;
@@ -30,10 +41,7 @@ pub const DOME_REPAIR: u32 = 20;
 pub const BUILDING_REPAIR_COST: u32 = 4;
 /// Food the colony eats a night.
 pub const FOOD_A_NIGHT: u32 = 2;
-/// Actions a turn while fed, and while hungry.
-pub const ACTIONS_FED: u8 = 2;
-pub const ACTIONS_HUNGRY: u8 = 1;
-/// Slots open at the start: the columns under the middle of the grid.
+/// Slots open at the start: the lanes under the middle of the sky.
 pub const OPEN_SLOTS: [u8; 3] = [1, 2, 3];
 
 /// What the colony has in store.
@@ -89,15 +97,18 @@ pub enum Building {
     Scanner,
     Workshop,
     ShieldCoil,
+    /// Fires up its own lane through the night.
+    Flak,
 }
 
 impl Building {
-    pub const ALL: [Building; 5] = [
+    pub const ALL: [Building; 6] = [
         Building::Solar,
         Building::Hydroponics,
         Building::Scanner,
         Building::Workshop,
         Building::ShieldCoil,
+        Building::Flak,
     ];
 
     pub fn name(self) -> &'static str {
@@ -107,6 +118,7 @@ impl Building {
             Building::Scanner => "scanner",
             Building::Workshop => "workshop",
             Building::ShieldCoil => "shield coil",
+            Building::Flak => "flak post",
         }
     }
 
@@ -125,6 +137,7 @@ impl Building {
             Building::Scanner => "Scanner",
             Building::Workshop => "Workshop",
             Building::ShieldCoil => "Shield coil",
+            Building::Flak => "Flak post",
         }
     }
 
@@ -136,20 +149,21 @@ impl Building {
             Building::Scanner => (8, 2),
             Building::Workshop => (10, 0),
             Building::ShieldCoil => (8, 0),
+            Building::Flak => (6, 1),
         }
     }
 
     /// Power drawn each night to run.
     pub fn upkeep(self) -> u32 {
         match self {
-            Building::Scanner => 1,
+            Building::Scanner | Building::Flak => 1,
             Building::ShieldCoil => 2,
             _ => 0,
         }
     }
 }
 
-/// A slot under a column.
+/// A slot under a lane.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Slot {
     pub building: Building,
@@ -173,10 +187,14 @@ pub struct Colony {
     pub dome: u32,
     pub shield: u32,
     pub missiles: u32,
-    /// Which columns have an open slot.
+    /// Which lanes have an open slot.
     pub open: Vec<u8>,
-    /// The building under each column, if any.
+    /// The building under each lane, if any.
     pub slots: Vec<Option<Slot>>,
+    /// A mine laid in each lane, waiting for the first raider past mid
+    /// range.
+    #[serde(default = "no_mines")]
+    pub mines: Vec<bool>,
     /// The caps this colony plays to: the defaults, or what its perks set.
     #[serde(default = "dome_max")]
     pub dome_max: u32,
@@ -184,6 +202,12 @@ pub struct Colony {
     pub shield_max: u32,
     #[serde(default = "missiles_max")]
     pub missiles_max: u32,
+    #[serde(default = "mines_a_night")]
+    pub mines_a_night: u32,
+}
+
+fn no_mines() -> Vec<bool> {
+    vec![false; LANES as usize]
 }
 
 fn dome_max() -> u32 {
@@ -196,6 +220,10 @@ fn shield_max() -> u32 {
 
 fn missiles_max() -> u32 {
     MISSILES_MAX
+}
+
+fn mines_a_night() -> u32 {
+    super::perks::MINES_A_NIGHT
 }
 
 impl Default for Colony {
@@ -217,7 +245,7 @@ impl Colony {
             open.insert(0, 0);
         }
         if perks.extra_slots >= 2 {
-            open.push(COLS - 1);
+            open.push(LANES - 1);
         }
         Colony {
             resources: Resources::START,
@@ -225,19 +253,21 @@ impl Colony {
             shield: SHIELD_START,
             missiles: perks.start_missiles.min(perks.missiles_max()),
             open,
-            slots: vec![None; COLS as usize],
+            slots: vec![None; LANES as usize],
+            mines: no_mines(),
             dome_max: perks.dome_max(),
             shield_max: perks.shield_max(),
             missiles_max: perks.missiles_max(),
+            mines_a_night: perks.mines_a_night(),
         }
     }
 
-    pub fn slot(&self, col: u8) -> Option<&Slot> {
-        self.slots.get(col as usize).and_then(|s| s.as_ref())
+    pub fn slot(&self, lane: u8) -> Option<&Slot> {
+        self.slots.get(lane as usize).and_then(|s| s.as_ref())
     }
 
-    pub fn slot_mut(&mut self, col: u8) -> Option<&mut Slot> {
-        self.slots.get_mut(col as usize).and_then(|s| s.as_mut())
+    pub fn slot_mut(&mut self, lane: u8) -> Option<&mut Slot> {
+        self.slots.get_mut(lane as usize).and_then(|s| s.as_mut())
     }
 
     /// Whether a working building of `kind` stands anywhere.
@@ -248,19 +278,41 @@ impl Colony {
             .any(|s| s.building == kind && s.works())
     }
 
-    /// Columns with any building, and with hydroponics, for the sappers.
-    pub fn building_columns(&self) -> (Vec<u8>, Vec<u8>) {
+    /// Lanes with any building, and with hydroponics, for the sappers.
+    pub fn building_lanes(&self) -> (Vec<u8>, Vec<u8>) {
         let mut all = Vec::new();
         let mut hydro = Vec::new();
-        for (col, slot) in self.slots.iter().enumerate() {
+        for (lane, slot) in self.slots.iter().enumerate() {
             if let Some(s) = slot {
-                all.push(col as u8);
+                all.push(lane as u8);
                 if s.building == Building::Hydroponics {
-                    hydro.push(col as u8);
+                    hydro.push(lane as u8);
                 }
             }
         }
         (all, hydro)
+    }
+
+    /// Lanes with a working flak post.
+    pub fn flak_lanes(&self) -> Vec<u8> {
+        self.slots
+            .iter()
+            .enumerate()
+            .filter_map(|(lane, s)| match s {
+                Some(s) if s.building == Building::Flak && s.works() => Some(lane as u8),
+                _ => None,
+            })
+            .collect()
+    }
+
+    /// Whether a mine waits in `lane`.
+    pub fn mined(&self, lane: u8) -> bool {
+        self.mines.get(lane as usize).copied().unwrap_or(false)
+    }
+
+    /// Lanes with a mine laid.
+    pub fn mined_lanes(&self) -> Vec<u8> {
+        (0..LANES).filter(|l| self.mined(*l)).collect()
     }
 
     /// What a missile costs now.
@@ -269,15 +321,6 @@ impl Colony {
             MISSILE_COST_WORKSHOP
         } else {
             MISSILE_COST
-        }
-    }
-
-    /// Actions a turn: two while there is food, one while hungry.
-    pub fn actions(&self) -> u8 {
-        if self.resources.food > 0 {
-            ACTIONS_FED
-        } else {
-            ACTIONS_HUNGRY
         }
     }
 

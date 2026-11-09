@@ -25,10 +25,7 @@ pub struct Progress {
     /// Each raider's step is named as it moves.
     #[serde(default = "yes")]
     pub call_outs: bool,
-    /// Enter asks before ending a turn with actions left.
-    #[serde(default)]
-    pub confirm_end: bool,
-    /// Up and Down scan the grid left to right, not nearest first.
+    /// Up and Down scan the sky left to right, not nearest first.
     #[serde(default)]
     pub scan_left_to_right: bool,
     /// Colonies started.
@@ -62,7 +59,6 @@ impl Default for Progress {
         Progress {
             saved: None,
             call_outs: true,
-            confirm_end: false,
             scan_left_to_right: false,
             colonies: 0,
             reliefs: 0,

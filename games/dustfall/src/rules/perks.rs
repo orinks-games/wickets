@@ -11,6 +11,9 @@ pub const BIG_SHIELD: u32 = 70;
 pub const THICK_DOME: u32 = 110;
 /// Missiles the deeper rack holds.
 pub const DEEP_RACK: u32 = 5;
+/// Mines that may be laid for one night, and with the unlock.
+pub const MINES_A_NIGHT: u32 = 1;
+pub const MINES_A_NIGHT_MORE: u32 = 2;
 /// Score bonus, in percent, for Hard vacuum and for playing with the
 /// call-outs off.
 pub const BONUS_PERCENT: u32 = 25;
@@ -27,14 +30,14 @@ pub struct Perks {
     /// Missiles in the rack at the start.
     #[serde(default)]
     pub start_missiles: u32,
-    /// Two walls standing at the start.
+    /// Two mines may be laid a night instead of one.
     #[serde(default)]
-    pub start_walls: bool,
+    pub more_mines: bool,
     #[serde(default)]
     pub deep_rack: bool,
-    /// H gives a drifter's whole route without a scanner.
+    /// The forecast names the lanes without a scanner.
     #[serde(default)]
-    pub drifter_routes: bool,
+    pub lane_forecast: bool,
     /// The forecast names quirks without a scanner.
     #[serde(default)]
     pub forecast_quirks: bool,
@@ -70,6 +73,15 @@ impl Perks {
             DEEP_RACK
         } else {
             super::colony::MISSILES_MAX
+        }
+    }
+
+    /// Mines that may be laid before one night.
+    pub fn mines_a_night(self) -> u32 {
+        if self.more_mines {
+            MINES_A_NIGHT_MORE
+        } else {
+            MINES_A_NIGHT
         }
     }
 

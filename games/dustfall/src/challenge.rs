@@ -11,8 +11,7 @@ use parlor_core::{Challenge, Pages, Parlor, Period};
 
 use crate::colony::{share_as, ColonyScreen, Mode};
 use crate::night::NightScreen;
-use crate::rules::grid::CENTRE;
-use crate::rules::{Building, Input, Perks, Run, Sector, WorkKind, RELIEF_NIGHT};
+use crate::rules::{Building, Input, Perks, Run, CENTRE, RELIEF_NIGHT};
 use crate::{sound, ID};
 
 /// The challenges menu's `State::name`.
@@ -155,37 +154,26 @@ pub fn start(ctx: &mut Ctx<Parlor>, period: Period, replace: bool) {
     }
 }
 
-/// Tonight's sky's colony: power and a scanner under the grid, two
-/// missiles, walls either side of the centre, a mine on the centre's path
-/// and a flak post over the dome. What the stores cannot cover is left out.
+/// Tonight's sky's colony: power under the left lane, a scanner under the
+/// right, a flak post under the centre, two missiles and a mine in the
+/// centre lane. What the stores cannot cover is left out.
 fn set_up(run: &mut Run) {
     let builds = [
         Input::Buy {
             building: Building::Solar,
-            col: CENTRE - 1,
+            lane: CENTRE - 1,
         },
         Input::Buy {
             building: Building::Scanner,
-            col: CENTRE + 1,
+            lane: CENTRE + 1,
+        },
+        Input::Buy {
+            building: Building::Flak,
+            lane: CENTRE,
         },
         Input::MakeMissile,
         Input::MakeMissile,
-        Input::Place {
-            work: WorkKind::Wall,
-            at: Sector::new(CENTRE - 1, 3),
-        },
-        Input::Place {
-            work: WorkKind::Wall,
-            at: Sector::new(CENTRE + 1, 3),
-        },
-        Input::Place {
-            work: WorkKind::Mine,
-            at: Sector::new(CENTRE, 4),
-        },
-        Input::Place {
-            work: WorkKind::Flak,
-            at: Sector::new(CENTRE, 2),
-        },
+        Input::LayMine { lane: CENTRE },
     ];
     for input in builds {
         let _ = run.apply(input);

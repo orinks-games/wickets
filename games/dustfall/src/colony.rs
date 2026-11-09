@@ -1,16 +1,17 @@
-//! The colony phase: between nights the stores are spent, works go on the
-//! grid and buildings into the slots, then Ready sends the night down.
+//! The colony phase: between nights the stores are spent, buildings go
+//! into the slots and mines into the lanes, then Ready sends the night
+//! down.
 //!
-//! Three screens share one run: the colony menu, the slot picker for a
-//! building, and the placer that walks the grid for a work.
+//! Two screens share one run: the colony menu, and the lane picker for a
+//! building or a mine.
 
 use std::cell::RefCell;
 use std::ops::{Deref, DerefMut};
 use std::rc::Rc;
 
 use hearken::menu::{Menu, MenuCore, MenuItem};
-use hearken::text::{end_sentence, sentence_start};
-use hearken::{Bus, Ctx, InputEvent, Key, State};
+use hearken::text::sentence_start;
+use hearken::{Bus, Ctx, InputEvent};
 use parlor_core::menus::{self, labels, Leave};
 use parlor_core::{Parlor, ParlorAction, Period};
 
@@ -18,16 +19,13 @@ use crate::challenge::CHALLENGES_NAME;
 use crate::music::Conductor;
 use crate::night::NightScreen;
 use crate::progress::Progress;
-use crate::rules::grid::{column_name, COLS, WORK_ROWS};
-use crate::rules::{
-    colony, orders, Building, Event, Input, Order, Refusal, Run, Sector, Work, WorkKind,
-};
+use crate::rules::lanes::{lane_name, LANES};
+use crate::rules::{colony, orders, Building, Event, Input, Order, Refusal, Run};
 use crate::sound;
 use crate::{HELP, TITLE_NAME};
 
 pub const COLONY_NAME: &str = "dustfall_colony";
 pub const SLOTS_NAME: &str = "dustfall_slots";
-pub const PLACER_NAME: &str = "dustfall_placer";
 
 /// What kind of watch a run is, which decides what is saved and where
 /// leaving goes.
@@ -125,8 +123,11 @@ pub fn refusal_words(refusal: Refusal, run: &Run) -> String {
         ),
         Refusal::SlotClosed => "That slot is not open.".to_string(),
         Refusal::SlotTaken => "A building stands there already.".to_string(),
-        Refusal::RowOpen => "Works go on rows 2 to 5.".to_string(),
-        Refusal::SectorTaken => "That sector is taken.".to_string(),
+        Refusal::LaneMined => "A mine lies in that lane already.".to_string(),
+        Refusal::MinesLaid => match run.colony.mines_a_night {
+            1 => "One mine a night.".to_string(),
+            n => format!("{n} mines a night."),
+        },
         Refusal::NothingThere => "Nothing stands there.".to_string(),
         Refusal::NotDark => "It is working.".to_string(),
         Refusal::DomeWhole => "The dome is whole.".to_string(),
@@ -135,6 +136,7 @@ pub fn refusal_words(refusal: Refusal, run: &Run) -> String {
         Refusal::OrderTaken => "An order is taken already tonight.".to_string(),
         Refusal::WrongPhase => "Not now.".to_string(),
         Refusal::Edge => "The rail ends there.".to_string(),
+        Refusal::Reloading => "Reloading.".to_string(),
         Refusal::NoMissiles => "No missiles.".to_string(),
         Refusal::NoTarget => "Nothing to fire at.".to_string(),
     }
@@ -145,7 +147,7 @@ fn done_words(event: &Event, run: &Run) -> Option<String> {
     let r = run.colony.resources;
     let metal = format!("Metal {}.", r.metal);
     Some(match event {
-        Event::Bought { building, col } => {
+        Event::Bought { building, lane } => {
             let (_, power) = building.cost();
             let stores = if power > 0 {
                 format!("Metal {}, power {}.", r.metal, r.power)
@@ -155,19 +157,17 @@ fn done_words(event: &Event, run: &Run) -> Option<String> {
             format!(
                 "{} built under the {}. {stores}",
                 building.title(),
-                column_name(*col)
+                lane_name(*lane)
             )
         }
-        Event::Placed { work, at } => format!(
-            "{} placed at {}. {metal}",
-            sentence_start(work.name()),
-            at.words()
-        ),
+        Event::MineLaid { lane } => {
+            format!("Mine laid in the {} lane. {metal}", lane_name(*lane))
+        }
         Event::DomeRepaired { dome } => format!("Dome {dome}. {metal}"),
-        Event::BuildingRepaired { building, col } => format!(
+        Event::BuildingRepaired { building, lane } => format!(
             "{} under the {} repaired. {metal}",
             building.title(),
-            column_name(*col)
+            lane_name(*lane)
         ),
         Event::MissileMade { missiles } => format!(
             "Missile made, {missiles} of {}. Power {}, metal {}.",
@@ -176,10 +176,10 @@ fn done_words(event: &Event, run: &Run) -> Option<String> {
         Event::OrderTaken { order } => match order {
             Order::Overclock => format!("Overclock taken. Shield {}.", run.colony.shield),
             Order::Rationing => format!("Rationing taken. Food {}.", r.food),
-            Order::Salvage => format!(
-                "Salvage taken. Twice the metal from kills tonight, and skitters take {} steps.",
-                orders::SALVAGE_SKITTER_STEPS
-            ),
+            Order::Salvage => {
+                "Salvage taken. Twice the metal from kills tonight, and the skitters come faster."
+                    .to_string()
+            }
         },
         _ => return None,
     })
@@ -194,13 +194,13 @@ pub fn order_help(order: Order) -> String {
             orders::OVERCLOCK_POWER
         ),
         Order::Rationing => format!(
-            "{} food into store now. The raiders take one step before your first turn.",
+            "{} food into store now. Tonight's waves come closer together, and the raiders in them.",
             orders::RATIONING_FOOD
         ),
-        Order::Salvage => format!(
-            "Every kill tonight drops twice the metal. Skitters take {} steps a phase instead of 2.",
-            orders::SALVAGE_SKITTER_STEPS
-        ),
+        Order::Salvage => {
+            "Every kill tonight drops twice the metal. The skitters fall half as fast again."
+                .to_string()
+        }
     }
 }
 
@@ -226,20 +226,25 @@ pub fn notices(event: &Event, run: &Run) -> Vec<String> {
     };
     let mut lines = Vec::new();
     if *hungry {
-        lines.push(format!(
-            "The colony is hungry: {} action a turn until there is food.",
-            colony::ACTIONS_HUNGRY
-        ));
+        lines.push(
+            "The colony is hungry: the gun reloads at half speed until there is food.".to_string(),
+        );
     }
-    for at in unpowered {
-        lines.push(format!("No power for the flak post at {}.", at.words()));
+    for lane in unpowered {
+        if let Some(slot) = run.colony.slot(*lane) {
+            lines.push(format!(
+                "No power for the {} under the {}.",
+                slot.building.name(),
+                lane_name(*lane)
+            ));
+        }
     }
-    for col in dark {
-        if let Some(slot) = run.colony.slot(*col) {
+    for lane in dark {
+        if let Some(slot) = run.colony.slot(*lane) {
             lines.push(format!(
                 "The {} under the {} is dark.",
                 slot.building.name(),
-                column_name(*col)
+                lane_name(*lane)
             ));
         }
     }
@@ -250,66 +255,57 @@ pub fn notices(event: &Event, run: &Run) -> Vec<String> {
 pub fn building_help(building: Building) -> &'static str {
     match building {
         Building::Solar => "Makes 3 power a night.",
-        Building::Hydroponics => "Grows 2 food a night. The colony eats 2 a night, and a hungry colony gets 1 action a turn. Sappers head for it.",
-        Building::Scanner => "Tells the forecast which columns the raiders enter at, and tells the route finder a raider's whole route. Draws 1 power a night.",
+        Building::Hydroponics => "Grows 2 food a night. The colony eats 2 a night, and a hungry colony's gun reloads at half speed. Sappers head for it.",
+        Building::Scanner => "Tells the forecast which lanes the raiders enter at, and the sky which lane the next raider takes. Draws 1 power a night.",
         Building::Workshop => "Halves the cost of a missile.",
-        Building::ShieldCoil => "Adds 10 shield a night. Draws 2 power a night.",
+        Building::ShieldCoil => "Adds 10 shield a night, and recharges it twice as fast in the night. Draws 2 power a night.",
+        Building::Flak => "Fires up its own lane through the night, once every few seconds, at the nearest raider short of the horizon. Draws 1 power a night. Silent under the dust.",
     }
 }
 
-/// F1 on a work's row.
-pub fn work_help(work: WorkKind) -> &'static str {
-    match work {
-        WorkKind::Wall => "Blocks a sector. Raiders go round it, or bash it when the way round is long: 2 bashes bring it down.",
-        WorkKind::Flak => "Fires at the nearest raider in the sectors beside it, every phase. Draws 1 power a night. Drifters keep out of its cover.",
-        WorkKind::Mine => "Blows up under the first raider that steps on it, for 2 damage.",
-    }
+/// F1 on the mine's row.
+pub fn mine_help(run: &Run) -> String {
+    format!(
+        "Blows up under the first raider past mid range in its lane, for {} damage. {} It is spent when it goes off.",
+        colony::MINE_DAMAGE,
+        match run.colony.mines_a_night {
+            1 => "One may be laid a night.".to_string(),
+            n => format!("{n} may be laid a night."),
+        }
+    )
 }
 
-/// What stands at a sector: "open", "a wall, 1 hit left", "a flak post".
-pub fn work_words(work: Option<Work>) -> String {
-    match work {
-        None => "open".to_string(),
-        Some(Work::Wall { hits: 1 }) => "a wall, 1 hit left".to_string(),
-        Some(Work::Wall { .. }) => "a wall".to_string(),
-        Some(Work::Flak { powered: true }) => "a flak post".to_string(),
-        Some(Work::Flak { powered: false }) => "a flak post without power".to_string(),
-        Some(Work::Mine) => "a mine".to_string(),
-    }
-}
-
-/// Every work on the grid, nearest row first.
-pub fn grid_words(run: &Run) -> String {
-    let mut works = run.grid.works();
-    if works.is_empty() {
-        return "The grid is open ground.".to_string();
-    }
-    works.sort_by_key(|(at, _)| (at.row, at.col));
-    let parts: Vec<String> = works
-        .iter()
-        .map(|(at, work)| format!("{} at {}", work_words(Some(*work)), at.words()))
-        .collect();
-    format!("On the grid: {}.", parts.join("; "))
-}
-
-/// Every slot: what stands in it, or that it is open or closed.
+/// Every slot: what stands in it, or that it is open or closed; then the
+/// mines.
 pub fn slots_words(run: &Run) -> String {
     let mut parts = Vec::new();
-    for col in 0..COLS {
-        let name = column_name(col);
-        let part = match run.colony.slot(col) {
+    for lane in 0..LANES {
+        let name = lane_name(lane);
+        let part = match run.colony.slot(lane) {
             Some(slot) if slot.dark => format!("{} under the {name}, dark", slot.building.name()),
             Some(slot) if !slot.powered => {
                 format!("{} under the {name}, without power", slot.building.name())
             }
             Some(slot) => format!("{} under the {name}", slot.building.name()),
-            None if run.colony.open.contains(&col) => format!("the {name} slot open"),
+            None if run.colony.open.contains(&lane) => format!("the {name} slot open"),
             None => continue,
         };
         parts.push(part);
     }
+    let mined = run.colony.mined_lanes();
+    let mines = if mined.is_empty() {
+        "No mines laid.".to_string()
+    } else {
+        let names: Vec<&str> = mined.iter().map(|l| lane_name(*l)).collect();
+        format!(
+            "{} in the {} lane{}.",
+            if mined.len() == 1 { "A mine" } else { "Mines" },
+            join_and(&names),
+            if mined.len() == 1 { "" } else { "s" }
+        )
+    };
     format!(
-        "{} Missiles {} of {}. {}.",
+        "{} Missiles {} of {}. {}. {mines}",
         sentence_start(&format!("{}.", run.colony.resources.words())),
         run.colony.missiles,
         run.colony.missiles_max,
@@ -317,19 +313,24 @@ pub fn slots_words(run: &Run) -> String {
     )
 }
 
-/// The forecast with its columns when a scanner works, and its quirks
-/// when a scanner works or the forecast unlock is earned.
+/// The forecast with its lanes when a scanner works or the lane unlock is
+/// earned, and its quirks when a scanner works or the quirks unlock is.
 pub fn forecast_words(run: &Run) -> String {
     let kinds = run.forecast_words();
     let scanner = run.colony.has(Building::Scanner);
-    let mut line = if scanner {
-        let mut cols: Vec<u8> = run.forecast.iter().map(|a| a.col).collect();
-        cols.sort_unstable();
-        cols.dedup();
-        let names: Vec<&str> = cols.iter().map(|c| column_name(*c)).collect();
+    let mut line = if scanner || run.perks.lane_forecast {
+        let mut lanes: Vec<u8> = run.forecast.iter().map(|a| a.lane).collect();
+        lanes.sort_unstable();
+        lanes.dedup();
+        let names: Vec<&str> = lanes.iter().map(|l| lane_name(*l)).collect();
         format!(
-            "Night {}: {kinds}. The scanner has them entering at the {}.",
+            "Night {}: {kinds}. {} entering at the {}.",
             run.night,
+            if scanner {
+                "The scanner has them"
+            } else {
+                "They come"
+            },
             join_and(&names)
         )
     } else {
@@ -353,14 +354,24 @@ pub fn join_and(parts: &[&str]) -> String {
     }
 }
 
-/// Columns with an open, empty slot.
+/// Lanes with an open, empty slot.
 fn free_slots(run: &Run) -> Vec<u8> {
     run.colony
         .open
         .iter()
         .copied()
-        .filter(|col| run.colony.slot(*col).is_none())
+        .filter(|lane| run.colony.slot(*lane).is_none())
         .collect()
+}
+
+/// Lanes without a mine.
+fn unmined(run: &Run) -> Vec<u8> {
+    (0..LANES).filter(|l| !run.colony.mined(*l)).collect()
+}
+
+/// Whether another mine may be laid before this night.
+fn mines_left(run: &Run) -> bool {
+    run.mines_laid < run.colony.mines_a_night && !unmined(run).is_empty()
 }
 
 // --- the colony menu -------------------------------------------------------
@@ -384,7 +395,7 @@ impl ColonyScreen {
         };
         ColonyScreen {
             menu: MenuCore::new("Colony").with_intro_help(
-                "Up and Down choose, Enter buys or places, Escape pauses. Ready for the night sends the raiders down.",
+                "Up and Down choose, Enter buys, Escape pauses. Ready for the night sends the raiders down.",
             ),
             run,
             notices,
@@ -556,8 +567,8 @@ impl Menu for ColonyScreen {
                 )),
             );
         }
-        for col in 0..COLS {
-            let Some(slot) = run.colony.slot(col) else {
+        for lane in 0..LANES {
+            let Some(slot) = run.colony.slot(lane) else {
                 continue;
             };
             if !slot.dark {
@@ -568,11 +579,11 @@ impl Menu for ColonyScreen {
                     format!(
                         "Repair the {} under the {}, {} metal",
                         slot.building.name(),
-                        column_name(col),
+                        lane_name(lane),
                         colony::BUILDING_REPAIR_COST
                     ),
                     move |s: &mut ColonyScreen, ctx: &mut Ctx<Parlor>| {
-                        s.apply(ctx, Input::RepairBuilding { col })
+                        s.apply(ctx, Input::RepairBuilding { lane })
                     },
                 )
                 .help("A dark building does nothing until it is repaired."),
@@ -621,7 +632,7 @@ impl Menu for ColonyScreen {
                     |s: &mut ColonyScreen, ctx: &mut Ctx<Parlor>| s.apply(ctx, Input::MakeMissile),
                 )
                 .help(format!(
-                    "A missile hits any raider on the grid for {} damage, from any column. A workshop halves the cost.",
+                    "A missile hits the nearest raider in the sky for {} damage, whatever lane it is in. A workshop halves the cost.",
                     colony::MISSILE_DAMAGE
                 )),
             );
@@ -650,11 +661,11 @@ impl Menu for ColonyScreen {
                                     ctx,
                                     Input::Buy {
                                         building,
-                                        col: free[0],
+                                        lane: free[0],
                                     },
                                 );
                             } else {
-                                ctx.push(SlotPicker::new(Rc::clone(&s.run), building));
+                                ctx.push(LanePicker::new(Rc::clone(&s.run), Pick::Build(building)));
                             }
                         },
                     )
@@ -662,18 +673,23 @@ impl Menu for ColonyScreen {
                 );
             }
         }
-        for work in WorkKind::ALL {
+        if mines_left(&run) {
             items.push(
                 MenuItem::new(
-                    format!("Place a {}, {} metal", work.name(), work.cost()),
+                    format!(
+                        "Lay a mine, {} metal, {} of {} tonight",
+                        colony::MINE_COST,
+                        run.mines_laid + 1,
+                        run.colony.mines_a_night
+                    ),
                     move |s: &mut ColonyScreen, ctx: &mut Ctx<Parlor>| {
                         let short = {
                             let r = s.run.borrow();
-                            (!ColonyScreen::can_afford(&r, work.cost(), 0)).then(|| {
+                            (!ColonyScreen::can_afford(&r, colony::MINE_COST, 0)).then(|| {
                                 refusal_words(
                                     Refusal::CantAfford {
                                         power: 0,
-                                        metal: work.cost(),
+                                        metal: colony::MINE_COST,
                                     },
                                     &r,
                                 )
@@ -683,21 +699,13 @@ impl Menu for ColonyScreen {
                             ctx.audio.play(sound::CANT, Bus::EFFECTS);
                             ctx.say(text);
                         } else {
-                            ctx.push(Placer::new(Rc::clone(&s.run), work));
+                            ctx.push(LanePicker::new(Rc::clone(&s.run), Pick::Mine));
                         }
                     },
                 )
-                .help(work_help(work)),
+                .help(mine_help(&run)),
             );
         }
-        items.push(
-            MenuItem::new("The grid", |s: &mut ColonyScreen, ctx: &mut Ctx<Parlor>| {
-                let text = grid_words(&s.run.borrow());
-                ctx.say(text);
-            })
-            .select_sound(None)
-            .help("Reads every wall, flak post and mine on the grid, nearest row first."),
-        );
         items.push(
             MenuItem::new(
                 "The colony",
@@ -707,34 +715,92 @@ impl Menu for ColonyScreen {
                 },
             )
             .select_sound(None)
-            .help("Reads the stores, the missiles and what stands in each slot."),
+            .help(
+                "Reads the stores, the missiles, what stands in each slot and where the mines lie.",
+            ),
         );
         items
     }
 }
 
-// --- the slot picker -------------------------------------------------------
+// --- the lane picker -------------------------------------------------------
 
-/// Which open slot a building goes in.
-pub struct SlotPicker {
-    menu: MenuCore<Self, Parlor>,
-    run: Shared,
-    building: Building,
+/// What the lane picker puts down.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pick {
+    Build(Building),
+    Mine,
 }
 
-impl SlotPicker {
-    pub fn new(run: Shared, building: Building) -> SlotPicker {
-        SlotPicker {
-            menu: MenuCore::new(format!("Where to build the {}", building.name())).with_intro_help(
-                "Up and Down choose a slot, Enter builds there, Escape goes back.",
+impl Pick {
+    fn title(self) -> String {
+        match self {
+            Pick::Build(b) => format!("Where to build the {}", b.name()),
+            Pick::Mine => "Which lane to mine".to_string(),
+        }
+    }
+
+    /// The lanes on offer.
+    fn lanes(self, run: &Run) -> Vec<u8> {
+        match self {
+            Pick::Build(_) => free_slots(run),
+            Pick::Mine => unmined(run),
+        }
+    }
+
+    fn input(self, lane: u8) -> Input {
+        match self {
+            Pick::Build(building) => Input::Buy { building, lane },
+            Pick::Mine => Input::LayMine { lane },
+        }
+    }
+
+    fn row(self, lane: u8) -> String {
+        match self {
+            Pick::Build(_) => format!("The {} slot", lane_name(lane)),
+            Pick::Mine => format!("The {} lane", lane_name(lane)),
+        }
+    }
+
+    fn row_help(self, lane: u8) -> String {
+        match self {
+            Pick::Build(b) => format!(
+                "Builds the {} under the {} lane.",
+                b.name(),
+                lane_name(lane)
             ),
-            run,
-            building,
+            Pick::Mine => format!("Lays the mine in the {} lane.", lane_name(lane)),
+        }
+    }
+
+    fn nothing(self) -> &'static str {
+        match self {
+            Pick::Build(_) => "Nothing built.",
+            Pick::Mine => "No mine laid.",
         }
     }
 }
 
-impl Menu for SlotPicker {
+/// Which lane a building or a mine goes in.
+pub struct LanePicker {
+    menu: MenuCore<Self, Parlor>,
+    run: Shared,
+    pick: Pick,
+}
+
+impl LanePicker {
+    pub fn new(run: Shared, pick: Pick) -> LanePicker {
+        LanePicker {
+            menu: MenuCore::new(pick.title()).with_intro_help(
+                "Up and Down choose a lane, Enter puts it there, Escape goes back.",
+            ),
+            run,
+            pick,
+        }
+    }
+}
+
+impl Menu for LanePicker {
     type Game = Parlor;
 
     fn name(&self) -> &'static str {
@@ -754,15 +820,15 @@ impl Menu for SlotPicker {
     }
 
     fn build_items(&mut self, _ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
-        let free = free_slots(&self.run.borrow());
-        let mut items: Vec<MenuItem<Self, Parlor>> = free
+        let pick = self.pick;
+        let lanes = pick.lanes(&self.run.borrow());
+        let mut items: Vec<MenuItem<Self, Parlor>> = lanes
             .into_iter()
-            .map(|col| {
+            .map(|lane| {
                 MenuItem::new(
-                    format!("The {} slot", column_name(col)),
-                    move |s: &mut SlotPicker, ctx: &mut Ctx<Parlor>| {
-                        let building = s.building;
-                        let outcome = s.run.borrow_mut().apply(Input::Buy { building, col });
+                    pick.row(lane),
+                    move |s: &mut LanePicker, ctx: &mut Ctx<Parlor>| {
+                        let outcome = s.run.borrow_mut().apply(s.pick.input(lane));
                         match outcome {
                             Ok(()) => {
                                 let line = {
@@ -774,7 +840,7 @@ impl Menu for SlotPicker {
                                         .collect::<Vec<_>>()
                                         .join(" ")
                                 };
-                                ctx.audio.play(sound::BUY, Bus::EFFECTS);
+                                sound::under(ctx, sound::BUY, lane);
                                 s.run.borrow().keep(ctx);
                                 ctx.pop_with(line);
                             }
@@ -786,213 +852,16 @@ impl Menu for SlotPicker {
                         }
                     },
                 )
-                .help(format!(
-                    "Builds the {} under the {} column.",
-                    self.building.name(),
-                    column_name(col)
-                ))
+                .help(pick.row_help(lane))
             })
             .collect();
         items.push(
             MenuItem::new(
                 labels::BACK,
-                |_s: &mut SlotPicker, ctx: &mut Ctx<Parlor>| ctx.pop_with("Nothing built."),
+                move |_s: &mut LanePicker, ctx: &mut Ctx<Parlor>| ctx.pop_with(pick.nothing()),
             )
-            .help("Back to the colony without building."),
+            .help("Back to the colony without spending."),
         );
         items
-    }
-}
-
-// --- the placer ------------------------------------------------------------
-
-/// Walks the grid to put a work down.
-pub struct Placer {
-    run: Shared,
-    work: WorkKind,
-    at: Sector,
-    last: String,
-}
-
-impl Placer {
-    pub fn new(run: Shared, work: WorkKind) -> Placer {
-        let at = Sector::new(crate::rules::grid::CENTRE, crate::rules::grid::CROSSING_ROW);
-        Placer {
-            run,
-            work,
-            at,
-            last: String::new(),
-        }
-    }
-
-    /// "Centre, row 4, open."
-    fn here(&self) -> String {
-        let run = self.run.borrow();
-        format!(
-            "{}, {}.",
-            sentence_start(&self.at.words()),
-            work_words(run.grid.get(self.at))
-        )
-    }
-
-    fn tell(&mut self, ctx: &mut Ctx<Parlor>, text: String) {
-        self.last = text.clone();
-        ctx.say(text);
-    }
-
-    fn step(&mut self, ctx: &mut Ctx<Parlor>, dcol: i8, drow: i8) {
-        let col = (self.at.col as i8 + dcol).clamp(0, COLS as i8 - 1) as u8;
-        let row = (self.at.row as i8 + drow).clamp(*WORK_ROWS.start() as i8, *WORK_ROWS.end() as i8)
-            as u8;
-        let next = Sector::new(col, row);
-        if next == self.at {
-            let text = format!("The grid ends there. {}", self.here());
-            self.tell(ctx, text);
-            return;
-        }
-        self.at = next;
-        sound::at(ctx, sound::SCAN, self.at);
-        let text = self.here();
-        self.tell(ctx, text);
-    }
-
-    fn place(&mut self, ctx: &mut Ctx<Parlor>) {
-        let outcome = self.run.borrow_mut().apply(Input::Place {
-            work: self.work,
-            at: self.at,
-        });
-        match outcome {
-            Ok(()) => {
-                let line = {
-                    let mut r = self.run.borrow_mut();
-                    let events = r.take_events();
-                    events
-                        .iter()
-                        .filter_map(|e| done_words(e, &r))
-                        .collect::<Vec<_>>()
-                        .join(" ")
-                };
-                sound::at(ctx, sound::BUY, self.at);
-                self.run.borrow().keep(ctx);
-                ctx.pop_with(line);
-            }
-            Err(refusal) => {
-                ctx.audio.play(sound::CANT, Bus::EFFECTS);
-                let text = refusal_words(refusal, &self.run.borrow());
-                self.tell(ctx, text);
-            }
-        }
-    }
-
-    /// Where the forecast's raiders come in.
-    fn entries(&self) -> String {
-        let run = self.run.borrow();
-        if !run.colony.has(Building::Scanner) {
-            return format!(
-                "{} A scanner would say where they enter.",
-                forecast_words(&run)
-            );
-        }
-        forecast_words(&run)
-    }
-}
-
-impl State<Parlor> for Placer {
-    fn name(&self) -> &'static str {
-        PLACER_NAME
-    }
-
-    fn update(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
-        self.run.borrow_mut().play_bed(&mut ctx.audio, dt);
-    }
-
-    fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
-        let left = ctx.control_name(ParlorAction::Left);
-        let right = ctx.control_name(ParlorAction::Right);
-        let up = ctx.control_name(ParlorAction::Up);
-        let down = ctx.control_name(ParlorAction::Down);
-        let text = format!(
-            "Place a {}. {} and {right} choose the column, {up} and {down} the row, Enter places it. {}",
-            self.work.name(),
-            sentence_start(&left),
-            self.here()
-        );
-        sound::at(ctx, sound::SCAN, self.at);
-        self.tell(ctx, text);
-    }
-
-    fn handle_input(&mut self, ctx: &mut Ctx<Parlor>, event: &InputEvent) {
-        if event.is_repeat() {
-            return;
-        }
-        let action = ctx.action_for(event);
-        if action.is_none() {
-            match event.pressed() {
-                Some(Key::Escape) => ctx.pop_with("Nothing placed."),
-                Some(Key::Return | Key::KpEnter) => self.place(ctx),
-                _ => {}
-            }
-            return;
-        }
-        match action {
-            Some(ParlorAction::Left) => self.step(ctx, -1, 0),
-            Some(ParlorAction::Right) => self.step(ctx, 1, 0),
-            Some(ParlorAction::Up) => self.step(ctx, 0, 1),
-            Some(ParlorAction::Down) => self.step(ctx, 0, -1),
-            Some(ParlorAction::Primary) => self.place(ctx),
-            Some(ParlorAction::Status) => {
-                let run = self.run.borrow();
-                let text = format!(
-                    "A {} costs {} metal. {}.",
-                    self.work.name(),
-                    self.work.cost(),
-                    run.colony.resources.words()
-                );
-                drop(run);
-                self.tell(ctx, text);
-            }
-            Some(ParlorAction::Hint) => {
-                let text = self.entries();
-                self.tell(ctx, text);
-            }
-            Some(ParlorAction::Repeat) => {
-                let text = self.last.clone();
-                ctx.say(text);
-            }
-            Some(ParlorAction::Secondary) | None => {}
-        }
-    }
-
-    fn lines(&self, _ctx: &Ctx<Parlor>) -> Vec<String> {
-        vec![
-            format!(
-                "placing {} at {},{}",
-                self.work.name(),
-                self.at.col,
-                self.at.row
-            ),
-            end_sentence(&self.here()),
-        ]
-    }
-
-    fn help(&self, ctx: &Ctx<Parlor>) -> String {
-        let left = ctx.control_name(ParlorAction::Left);
-        let right = ctx.control_name(ParlorAction::Right);
-        let up = ctx.control_name(ParlorAction::Up);
-        let down = ctx.control_name(ParlorAction::Down);
-        let status = ctx.control_name(ParlorAction::Status);
-        let hint = ctx.control_name(ParlorAction::Hint);
-        format!(
-            "{} and {right} move along the row, {up} goes a row farther out, {down} a row nearer the dome. Enter places the {} where you are. {} says what it costs. {} says what is coming. Escape goes back without placing.",
-            sentence_start(&left),
-            self.work.name(),
-            sentence_start(&status),
-            sentence_start(&hint)
-        )
-    }
-
-    fn help_pressed(&mut self, ctx: &mut Ctx<Parlor>) {
-        let help = self.help(ctx);
-        parlor_core::explain(ctx, help);
     }
 }

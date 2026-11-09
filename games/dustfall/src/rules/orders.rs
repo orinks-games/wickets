@@ -11,8 +11,6 @@ pub const OVERCLOCK_SHIELD: u32 = 20;
 pub const OVERCLOCK_POWER: u32 = 4;
 /// Food Rationing brings in.
 pub const RATIONING_FOOD: u32 = 4;
-/// Steps a skitter takes under Salvage.
-pub const SALVAGE_SKITTER_STEPS: u8 = 3;
 /// Orders offered each night.
 pub const OFFERED: usize = 2;
 
@@ -20,9 +18,9 @@ pub const OFFERED: usize = 2;
 pub enum Order {
     /// 20 shield now, 4 power less after the night.
     Overclock,
-    /// 4 food now, and the raiders step once before your first turn.
+    /// 4 food now, and tonight's raiders arrive closer together.
     Rationing,
-    /// Twice the metal from kills tonight, and skitters take 3 steps.
+    /// Twice the metal from kills tonight, and the skitters are faster.
     Salvage,
 }
 
@@ -44,11 +42,11 @@ impl Order {
                 "{OVERCLOCK_SHIELD} shield now, {OVERCLOCK_POWER} power less after the night"
             ),
             Order::Rationing => {
-                format!("{RATIONING_FOOD} food now, and the raiders step once before your first turn")
+                format!("{RATIONING_FOOD} food now, and tonight's raiders come closer together")
             }
-            Order::Salvage => format!(
-                "twice the metal from kills tonight, and skitters take {SALVAGE_SKITTER_STEPS} steps"
-            ),
+            Order::Salvage => {
+                "twice the metal from kills tonight, and the skitters come faster".to_string()
+            }
         }
     }
 
