@@ -18,7 +18,7 @@ pub use games::all as games;
 pub use games::story as story_games;
 pub use games::{
     access, access_at, days_to_holiday, discovery_date, in_season, keepers, listed, specials,
-    specials_listed, specials_listed_at, story_hall, Access, Keeper,
+    specials_listed, specials_listed_at, story_hall, SpecialState, Access, Keeper,
 };
 pub use lobby::{
     after_comma, happenings, happenings_line, last_game, CategoryList, ChallengeBoard,
