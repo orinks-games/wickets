@@ -156,7 +156,7 @@ fn every_event_opens_its_title_on_a_row_that_plays_it() {
             parlor_core::menus::mark_tutorial_read(&mut h.app.ctx, g.id);
             parlor_core::tutorial::mark_played(&mut h.app.ctx, g.id);
             let focus = event.focus().to_lowercase();
-            h.app.ctx.game.title_focus = Some(event.focus());
+            h.app.ctx.game.title_opening = Some(parlor_core::TitleOpening::Row(event.focus()));
             (g.open)(&mut h.app.ctx);
             h.frame(0.0);
             let lines = h.app.top_lines();

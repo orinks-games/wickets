@@ -15,26 +15,26 @@ use crate::{music, ABOUT};
 macro_rules! menu_music {
     ($music:path) => {
         fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
-            parlor_core::menu_sounds::use_shared(ctx);
+            parlor_core::menu_sounds::leave_game(ctx);
             $music(ctx);
             hearken::menu::menu_enter(self, ctx);
         }
 
         fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
-            parlor_core::menu_sounds::use_shared(ctx);
+            parlor_core::menu_sounds::leave_game(ctx);
             $music(ctx);
             self.refresh(ctx, true);
             self.announce(ctx);
         }
 
         fn resume_quiet(&mut self, ctx: &mut Ctx<Parlor>) {
-            parlor_core::menu_sounds::use_shared(ctx);
+            parlor_core::menu_sounds::leave_game(ctx);
             $music(ctx);
             self.refresh(ctx, true);
         }
 
         fn resume_with(&mut self, ctx: &mut Ctx<Parlor>, result: &str) {
-            parlor_core::menu_sounds::use_shared(ctx);
+            parlor_core::menu_sounds::leave_game(ctx);
             $music(ctx);
             self.refresh(ctx, true);
             ctx.say(hearken::text::end_sentence(result));
@@ -260,7 +260,7 @@ impl Menu for Lobby {
         if ctx.soundtrack.tracks().is_empty() {
             parlor_core::soundtrack::refresh(ctx);
         }
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         parlor_core::soundtrack::heard_music(ctx);
         hearken::menu::menu_enter(self, ctx);
@@ -281,7 +281,7 @@ impl Menu for Lobby {
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
         forget_story_scene(ctx);
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         self.refresh(ctx, true);
         self.announce(ctx);
@@ -289,14 +289,14 @@ impl Menu for Lobby {
 
     fn resume_quiet(&mut self, ctx: &mut Ctx<Parlor>) {
         forget_story_scene(ctx);
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         self.refresh(ctx, true);
     }
 
     fn resume_with(&mut self, ctx: &mut Ctx<Parlor>, result: &str) {
         forget_story_scene(ctx);
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         self.refresh(ctx, true);
         ctx.say(hearken::text::end_sentence(result));
@@ -579,26 +579,26 @@ impl Menu for GameList {
         if self.category == Category::Seasonal {
             crate::discovery_clock::request();
         }
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         hearken::menu::menu_enter(self, ctx);
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         self.refresh(ctx, true);
         self.announce(ctx);
     }
 
     fn resume_quiet(&mut self, ctx: &mut Ctx<Parlor>) {
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         self.refresh(ctx, true);
     }
 
     fn resume_with(&mut self, ctx: &mut Ctx<Parlor>, result: &str) {
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         self.refresh(ctx, true);
         ctx.say(hearken::text::end_sentence(result));

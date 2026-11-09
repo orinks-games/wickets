@@ -95,26 +95,26 @@ impl Menu for TodayList {
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         hearken::menu::menu_enter(self, ctx);
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         self.refresh(ctx, true);
         self.announce(ctx);
     }
 
     fn resume_quiet(&mut self, ctx: &mut Ctx<Parlor>) {
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         self.refresh(ctx, true);
     }
 
     fn resume_with(&mut self, ctx: &mut Ctx<Parlor>, result: &str) {
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         self.refresh(ctx, true);
         ctx.say(hearken::text::end_sentence(result));
@@ -152,9 +152,10 @@ impl Menu for TodayList {
                         // Checked again, in case midnight passed.
                         match happening(ctx, &g) {
                             Some(h) => {
-                                ctx.game.title_focus = Some(h.focus());
+                                ctx.game.title_opening =
+                                    Some(parlor_core::TitleOpening::Row(h.focus()));
                                 if !open_listed(ctx, g) {
-                                    ctx.game.title_focus = None;
+                                    ctx.game.title_opening = None;
                                     s.refresh(ctx, true);
                                 }
                             }

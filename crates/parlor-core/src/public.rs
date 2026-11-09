@@ -69,19 +69,11 @@ pub struct ParlorData {
     pub lobby_turn: Option<u32>,
     /// Which of story mode's sitting pieces plays next, the same way.
     pub story_turn: Option<u32>,
-    /// The open game's id, from its title, or `None` in the launcher and
-    /// story mode. Pages keep what the player has learned under it.
-    pub open_game: Option<&'static str>,
-    /// The open game's name, for Discord status. Set with `open_game`, and
-    /// by story mode for a scene it opens straight into play.
-    pub open_game_name: Option<&'static str>,
-    /// The open game's own page cue, if it ships one (see [`menu_sounds`]).
-    pub page_sound: Option<&'static str>,
-    /// The open game's own pause music, if it ships one (see [`menu_sounds`]).
-    pub pause_music: Option<&'static str>,
-    /// The open game's own rows for the Settings screen (see
-    /// [`menus::TitleGame::settings`]), after the shared ones.
-    pub game_settings: Option<GameSettings>,
+    /// The game the player is in, or `None` in the launcher's own screens
+    /// and the story's sitting. Set by [`menu_sounds::enter_game`] and
+    /// cleared by [`menu_sounds::leave_game`]: every answer to "which game
+    /// is this" reads it.
+    pub open: Option<OpenGame>,
     /// Whether the lobby has named today's events yet this session.
     pub events_told: bool,
     /// Pins the player's local time for story mode, so tests are not tied
@@ -92,12 +84,9 @@ pub struct ParlorData {
     /// Set once that game finishes a run, so story mode can tell a played
     /// scene from one the player left early.
     pub story_done: bool,
-    /// The row the next title opens on, by the start of its label (as
-    /// "The house stirs"), when the player came for that row: an event
-    /// from the story or the Happening today list. Taken by the title.
-    pub title_focus: Option<String>,
-    /// A line the next title says after its opening. Taken by the title.
-    pub title_note: Option<String>,
+    /// What the next title opens with, left by the screen sending the
+    /// player there and taken whole by the title (see [`TitleOpening`]).
+    pub title_opening: Option<TitleOpening>,
 }
 
 /// The folder (and seal witness) name the game keeps its files under.
@@ -162,21 +151,21 @@ impl hearken::Game for Parlor {
         // Settings from a game opens on that game's options. Units ends that
         // list unless the game placed it itself. In the launcher, Units and
         // Game preferences make up Games.
-        let mut out = match ctx.game.game_settings {
-            Some(game) => game(ctx),
+        let mut out = match ctx.game.open {
+            Some(game) => (game.settings)(ctx),
             None => Vec::new(),
         };
         let has_units = out.iter().any(|row| row.id == units::ROW_ID);
         if !has_units {
             out.push(units::row());
         }
-        let own = match ctx.game.game_settings {
-            Some(_) => ctx.game.open_game_name.unwrap_or("Game"),
+        let own = match ctx.game.open {
+            Some(game) => game.name,
             None => "Games",
         };
         // Preferences shape the launcher's story and events, so they are
         // only offered from the launcher's Settings.
-        if ctx.game.game_settings.is_none() {
+        if ctx.game.open.is_none() {
             out.push(preferences::row());
         }
         let mut out: Vec<_> = out.into_iter().map(|row| row.in_category(own)).collect();
@@ -191,7 +180,7 @@ impl hearken::Game for Parlor {
                 )
             })
             .unwrap_or(rows.len());
-        if ctx.game.game_settings.is_some() {
+        if ctx.game.open.is_some() {
             out.append(&mut rows);
         } else {
             let mut tail = rows.split_off(online);
@@ -205,6 +194,54 @@ impl hearken::Game for Parlor {
 
 /// Builds a game's own Settings rows.
 pub type GameSettings = fn(&Ctx<Parlor>) -> Vec<hearken::screens::SettingsRow<Parlor>>;
+
+/// The game the player is in: from its title, or a run opened straight
+/// from a launcher list. One record holds everything the shared screens
+/// need to know about it, so a game's sounds and Settings rows can neither
+/// outlive it nor go missing on one way in.
+#[derive(Clone, Copy)]
+pub struct OpenGame {
+    /// The game's folder id, as `belfry`. Pages keep what the player has
+    /// learned under it.
+    pub id: &'static str,
+    /// The game's name, for Discord status and its Settings category.
+    pub name: &'static str,
+    /// The game's own rows for the Settings screen (see
+    /// [`menus::TitleGame::settings`]), after the shared ones.
+    pub settings: GameSettings,
+    /// The game's own page cue, if it ships one (see [`menu_sounds`]).
+    pub page_sound: Option<&'static str>,
+    /// The game's own pause music, if it ships one (see [`menu_sounds`]).
+    pub pause_music: Option<&'static str>,
+}
+
+impl OpenGame {
+    /// A game with none of its own sounds, for tests and for a build
+    /// whose sound bank has not loaded them.
+    pub fn new(id: &'static str, name: &'static str, settings: GameSettings) -> Self {
+        OpenGame {
+            id,
+            name,
+            settings,
+            page_sound: None,
+            pause_music: None,
+        }
+    }
+}
+
+/// What the next title opens with, when the player came for something on
+/// it. The title takes it whole on entering. A first visit starts on
+/// Tutorial (or the practice row) whatever the row asked for, and only a
+/// first visit says the note.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub enum TitleOpening {
+    /// Open on the row whose label starts with this, as "The house
+    /// stirs": an event from the story or the Happening today list.
+    Row(String),
+    /// A line said after the first-visit opening, as an advent door saying
+    /// it plays once the tutorial is done.
+    Note(String),
+}
 
 /// Where a game sits in the launcher.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
@@ -319,9 +356,7 @@ impl GameInfo {
     /// Uses the game's own menu sounds and Settings rows, for a run opened
     /// straight from the launcher rather than through the title.
     pub fn use_game(&self, ctx: &mut Ctx<Parlor>) {
-        menu_sounds::use_game(ctx, self.id);
-        ctx.game.open_game_name = Some(self.name);
-        ctx.game.game_settings = Some(self.settings);
+        menu_sounds::enter_game(ctx, self.id, self.name, self.settings);
     }
 
     /// Whether the player has played this game, from anywhere.

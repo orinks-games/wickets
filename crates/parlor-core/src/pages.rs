@@ -55,7 +55,7 @@ pub fn explain(ctx: &mut Ctx<Parlor>, text: impl Into<String>) {
 /// Where a game keeps that its player knows Enter turns the page: under
 /// the open game's id, or the launcher's own key in the lobby and story.
 fn learned_key(ctx: &Ctx<Parlor>) -> String {
-    match ctx.game.open_game {
+    match ctx.game.open.map(|g| g.id) {
         Some(id) => format!("{id}/pages_learned"),
         None => "parlor/pages_learned".to_string(),
     }
@@ -287,6 +287,7 @@ mod tests {
 
     use super::*;
     use crate::menus::testing::Base;
+    use crate::OpenGame;
     use hearken::Headless;
 
     fn open(pages: impl FnOnce(Rc<Cell<bool>>) -> Pages) -> (Headless<Parlor>, Rc<Cell<bool>>) {
@@ -401,7 +402,7 @@ mod tests {
     #[test]
     fn the_hint_comes_back_until_enter_is_pressed_then_stops_for_that_game() {
         let (mut h, _) = open(|_| Pages::new(["One.", "Two."]));
-        h.app.ctx.game.open_game = Some("lamplighter");
+        h.app.ctx.game.open = Some(OpenGame::new("lamplighter", "Lamplighter", |_| Vec::new()));
         // Left with Escape: the player has not pressed Enter yet.
         h.press(Key::Escape);
         h.clear();
@@ -416,7 +417,7 @@ mod tests {
         assert_eq!(h.spoken(), ["Three."], "learned in this game");
         h.press(Key::Return);
         h.clear();
-        h.app.ctx.game.open_game = Some("belfry");
+        h.app.ctx.game.open = Some(OpenGame::new("belfry", "Belfry", |_| Vec::new()));
         h.app.ctx.push(Pages::new(["Four."]));
         h.frame(0.0);
         assert_eq!(
