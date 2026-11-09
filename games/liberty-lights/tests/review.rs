@@ -118,11 +118,11 @@ fn replaying_an_earlier_level_keeps_start_level_where_it_was() {
         h.press(Key::Down);
     }
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "level_select");
+    assert_eq!(h.app.top_name(), "liberty_lights_levels");
     h.press(Key::Home);
     h.press(Key::Down);
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
     play_perfect(&mut h, 2);
     assert!(h.spoken()[0].contains("Level 2 cleared, 100 percent,"));
     let p = Progress::load(&mut h.app.ctx);
@@ -142,7 +142,7 @@ fn replaying_a_level_does_not_pile_up_the_run_total() {
     h.press(Key::Down);
     h.clear();
     h.press(Key::Return); // Play again
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
     h.press(Key::S);
     assert!(
         !spoke(&h, "show points so far"),
@@ -236,14 +236,14 @@ fn saving_a_new_freestyle_show_clears_the_old_shows_best() {
     h.press(Key::Down);
     h.press(Key::Down);
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "freestyle_menu");
+    assert_eq!(h.app.top_name(), "liberty_lights_freestyle_menu");
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "freestyle");
+    assert_eq!(h.app.top_name(), "liberty_lights_freestyle");
     h.press(Key::Num1);
     h.frame(0.5);
     h.press(Key::Num4);
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "freestyle_done");
+    assert_eq!(h.app.top_name(), "liberty_lights_freestyle_done");
     h.press(Key::Down); // Save this show
     h.clear();
     h.press(Key::Return);

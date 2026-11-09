@@ -1520,7 +1520,7 @@ impl State<Parlor> for Haunt {
     }
 
     fn name(&self) -> &'static str {
-        "haunt"
+        "haunted_hallways_haunt"
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {

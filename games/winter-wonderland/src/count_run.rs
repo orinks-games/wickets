@@ -326,7 +326,7 @@ impl State<Parlor> for CountRun {
     }
 
     fn name(&self) -> &'static str {
-        "countdown"
+        "winter_wonderland_countdown"
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {

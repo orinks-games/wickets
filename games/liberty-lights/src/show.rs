@@ -511,7 +511,7 @@ impl State<Parlor> for Show {
     }
 
     fn name(&self) -> &'static str {
-        "show"
+        "liberty_lights_show"
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {

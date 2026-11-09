@@ -637,7 +637,7 @@ impl State<Parlor> for SortRun {
     }
 
     fn name(&self) -> &'static str {
-        "gift_sort"
+        "winter_wonderland_gift_sort"
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
