@@ -24,6 +24,7 @@ pub fn tracks() -> Vec<Track> {
         .unlocked_by(music::every_key())
         .varied()
         .album(ALBUM.name)
+        .hint("Hold the dome through a night.")
         .about(
             "The night's score, built a bar at a time as the raiders come nearer, anew each play.",
         ),
