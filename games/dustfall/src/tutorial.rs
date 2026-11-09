@@ -64,7 +64,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, night: Live<NightScreen>) -> Lesson {
             "Press {fire} to fire at the nearest raider in the gun's column. A drifter has 1 hit, so one shot brings it down."
         ),
         |s: &NightScreen, _| {
-            (s.run().downed >= 1).then(|| {
+            (s.run().downed >= 1 && !s.busy()).then(|| {
                 "Down. Its wreck leaves salvage, which the colony keeps. That was your second action, so the turn ended on its own and the raiders moved.".to_string()
             })
         },

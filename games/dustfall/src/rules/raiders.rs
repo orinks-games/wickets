@@ -154,6 +154,11 @@ impl Kind {
     }
 
     /// Hits to bring one down.
+    /// Too well hulled for flak: only the gun and missiles hurt it.
+    pub fn armoured(self) -> bool {
+        matches!(self, Kind::Mothership | Kind::Carrier)
+    }
+
     pub fn hits(self) -> u8 {
         match self {
             Kind::Drifter | Kind::Skitter => 1,
@@ -216,8 +221,8 @@ impl Kind {
 
     pub fn drop(self) -> Take {
         match self {
-            Kind::Drifter => Take::new(2, 0, 0),
-            Kind::Skitter => Take::new(1, 0, 0),
+            Kind::Drifter => Take::new(1, 1, 0),
+            Kind::Skitter => Take::new(0, 1, 0),
             Kind::Hulk => Take::new(0, 4, 0),
             Kind::Sapper => Take::new(0, 3, 0),
             Kind::Mule => Take::new(0, 3, 4),

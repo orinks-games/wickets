@@ -52,7 +52,7 @@ The game saves at the start of each colony phase. Leaving during a night brings 
 ## Works on the grid
 
 - Wall: 3 metal. Blocks a sector. Two bashes bring it down.
-- Flak post: 6 metal, and 1 power a night. Each phase it fires once at the nearest raider in the sectors beside it. Drifters keep out of its cover. Without power it does nothing.
+- Flak post: 6 metal, and 1 power a night. Each phase it fires once at the nearest raider in the sectors beside it. Drifters keep out of its cover. It scatters off a mothership or the carrier, and without power it does nothing.
 - Mine: 2 metal. Goes off under the first raider to step on it, for 2 damage.
 
 ## Buildings

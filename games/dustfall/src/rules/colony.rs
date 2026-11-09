@@ -109,6 +109,14 @@ impl Building {
         }
     }
 
+    /// The name with its article: "a solar array", "hydroponics".
+    pub fn a(self) -> String {
+        match self {
+            Building::Hydroponics => self.name().to_string(),
+            _ => format!("a {}", self.name()),
+        }
+    }
+
     pub fn title(self) -> &'static str {
         match self {
             Building::Solar => "Solar array",

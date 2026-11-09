@@ -96,7 +96,7 @@ fn the_gun_slides_one_column_and_stops_at_the_edges() {
     assert_eq!(run.apply(Input::Left), Err(Refusal::Edge));
     assert_eq!(run.phase, Phase::Turn { actions: 2 });
     let events = run.take_events();
-    assert!(has(&events, |e| matches!(e, Event::Moved { col: 1 })));
+    assert!(has(&events, |e| matches!(e, Event::Moved { col: 1, .. })));
     assert!(has(&events, |e| matches!(e, Event::Stepped { .. })));
     assert!(has(&events, |e| matches!(
         e,
@@ -129,6 +129,7 @@ fn the_gun_brings_a_drifter_down_and_takes_its_power() {
     let mut run = night(7, 1, &[]);
     let target = run.nearest_first()[0].clone();
     let power = run.colony.resources.power;
+    let metal = run.colony.resources.metal;
     while run.gun != target.at.col {
         let input = if run.gun < target.at.col {
             Input::Right
@@ -147,7 +148,8 @@ fn the_gun_brings_a_drifter_down_and_takes_its_power() {
         "{events:?}"
     );
     assert!(run.raider(target.id).is_none());
-    assert_eq!(run.colony.resources.power, power + 2);
+    assert_eq!(run.colony.resources.power, power + 1);
+    assert_eq!(run.colony.resources.metal, metal + 1);
     assert_eq!(run.score, 10);
     assert_eq!(run.downed, 1);
 }

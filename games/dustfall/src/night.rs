@@ -163,6 +163,9 @@ pub struct NightScreen {
     dome_seen: u32,
     /// What the night left for the colony phase.
     notices: Vec<String>,
+    /// Charges announced in the batch being spoken, so the turn line does
+    /// not repeat them.
+    fresh_charges: Vec<(Kind, u8)>,
     ended: bool,
     /// For the tutorial: the controls tried.
     pub status_asked: bool,
@@ -176,6 +179,7 @@ impl NightScreen {
         NightScreen {
             run,
             queue: VecDeque::new(),
+            fresh_charges: Vec::new(),
             wait: 0.0,
             scanned: None,
             last: String::new(),
@@ -241,9 +245,16 @@ impl NightScreen {
     /// once; the raiders' queue up.
     fn drain(&mut self, ctx: &mut Ctx<Parlor>) {
         let events = self.run.borrow_mut().take_events();
+        self.fresh_charges = events
+            .iter()
+            .filter_map(|e| match e {
+                Event::Charging { kind, col, .. } => Some((*kind, *col)),
+                _ => None,
+            })
+            .collect();
         let mut first = true;
-        for event in events {
-            let Some(beat) = self.beat(&event) else {
+        for (event, count) in group_steps(events) {
+            let Some(beat) = self.beat(&event, count) else {
                 continue;
             };
             if beat.now && self.queue.is_empty() {
@@ -263,12 +274,15 @@ impl NightScreen {
         }
     }
 
-    fn beat(&mut self, event: &Event) -> Option<Beat> {
+    /// The beat for an event. `count` is how many raiders of one kind
+    /// stepped onto the same sector in this phase, for a Stepped event.
+    fn beat(&mut self, event: &Event, count: usize) -> Option<Beat> {
         let run = self.run.borrow();
         let beat = match event {
             Event::NightOpens { night, arrivals } => {
                 let mut beats = vec![Beat::new(0.5).open().say(format!(
-                    "Night {night}. {}.",
+                    "Night {night}, gun at the {}. {}.",
+                    column_name(run.gun),
                     sentence_start(&run.forecast_words())
                 ))];
                 for (_, kind, at) in arrivals {
@@ -290,10 +304,13 @@ impl NightScreen {
             }
             Event::YourTurn { turn, actions } => {
                 let mut line = String::new();
-                for (_, kind, col) in run.charges() {
+                for (kind, col, n) in grouped_charges(&run) {
+                    if self.fresh_charges.contains(&(kind, col)) {
+                        continue;
+                    }
                     line.push_str(&format!(
-                        "{} is charging at the {}. ",
-                        sentence_start(&a(kind)),
+                        "{} charging at the {}. ",
+                        sentence_start(&some(kind, n, "is", "are")),
                         column_name(col)
                     ));
                 }
@@ -304,12 +321,9 @@ impl NightScreen {
                 }
                 Beat::new(0.4).open().plain(sound::TURN).say(line)
             }
-            Event::Moved { col } => {
-                let in_column = run
-                    .nearest_first()
-                    .into_iter()
-                    .find(|r| r.at.col == *col)
-                    .map(|r| format!(", {} at row {}", a(r.kind), r.at.row))
+            Event::Moved { col, under } => {
+                let in_column = under
+                    .map(|(kind, row)| format!(", {} at row {row}", a(kind)))
                     .unwrap_or_default();
                 Beat::new(0.3)
                     .under(sound::GUN_RAIL, *col)
@@ -410,14 +424,11 @@ impl NightScreen {
             }
             Event::Stepped { kind, to, .. } => {
                 let mut beat = Beat::new(0.45).at(sound::raider(*kind), *to);
+                let who = sentence_start(&group(*kind, count));
                 if to.row == NEAR_ROW {
-                    beat = beat.say(format!(
-                        "{} at the dome, {}.",
-                        kind.title(),
-                        column_name(to.col)
-                    ));
+                    beat = beat.say(format!("{who} at the dome, {}.", column_name(to.col)));
                 } else if self.call_outs {
-                    beat = beat.say(format!("{}, {}.", kind.title(), to.words()));
+                    beat = beat.say(format!("{who}, {}.", to.words()));
                 }
                 beat
             }
@@ -441,12 +452,16 @@ impl NightScreen {
             } => {
                 let line = if *weapon == Weapon::Siege {
                     format!(
-                        "{} winds up a siege shot at the {}. It cannot be dodged.",
-                        kind.title(),
+                        "{} up a siege shot at the {}. It cannot be dodged.",
+                        sentence_start(&some(*kind, count, "winds", "wind")),
                         column_name(*col)
                     )
                 } else {
-                    format!("{} charging at the {}.", kind.title(), column_name(*col))
+                    format!(
+                        "{} charging at the {}.",
+                        sentence_start(&group(*kind, count)),
+                        column_name(*col)
+                    )
                 };
                 Beat::new(0.8).under(sound::CHARGE_WIND, *col).say(line)
             }
@@ -471,6 +486,8 @@ impl NightScreen {
             Event::Fallen { .. } => Beat::new(1.5)
                 .plain(sound::BREACH_DOME)
                 .say("The dome falls."),
+            // A challenge cut short of night 12 ends on its own result.
+            Event::Relief { .. } if run.relief < RELIEF_NIGHT => Beat::new(0.5),
             Event::Relief { .. } => Beat::new(0.5).say("Relief has landed."),
             Event::ColonyOpens { .. } => {
                 let lines = notices(event, &run);
@@ -700,16 +717,25 @@ impl NightScreen {
             ScoreResult::NewBest { .. } => "A new best.".to_string(),
             ScoreResult::Short { best } => format!("Best {best}."),
         };
-        let summary = if won {
-            format!("Relief has landed. {} points. {best}", run.score)
+        // The night's last beat has said "Relief has landed." or "The
+        // dome falls.", so the spoken summary carries on from it; the page
+        // read back later says it whole.
+        let (summary, page) = if won {
+            (
+                format!("{} points. {best}", run.score),
+                format!("Relief has landed. {} points. {best}", run.score),
+            )
         } else {
-            format!(
-                "The dome fell on night {}. {} points. {best}",
-                run.night, run.score
+            (
+                format!("Night {}. {} points. {best}", run.night, run.score),
+                format!(
+                    "The dome fell on night {}. {} points. {best}",
+                    run.night, run.score
+                ),
             )
         };
         let pages = vec![
-            summary.clone(),
+            page,
             format!(
                 "{} held of {RELIEF_NIGHT}. Raiders downed: {}.",
                 sentence_start(&nights_phrase(run.nights_held)),
@@ -741,12 +767,16 @@ impl NightScreen {
             ScoreResult::Short { best } => format!("Your best is {best}."),
         };
         let name = challenge::name(ctx, period);
-        let summary = if won {
-            format!("{name} held. {} points. {best}", run.score)
+        let (summary, page) = if won {
+            let line = format!("{name} held. {} points. {best}", run.score);
+            (line.clone(), line)
         } else {
-            format!(
-                "The dome fell on night {}. {} points. {best}",
-                run.night, run.score
+            (
+                format!("Night {}. {} points. {best}", run.night, run.score),
+                format!(
+                    "The dome fell on night {}. {} points. {best}",
+                    run.night, run.score
+                ),
             )
         };
         let streak = Challenges::streak(ctx, ID, period).max(1);
@@ -761,7 +791,7 @@ impl NightScreen {
             )
         };
         let pages = vec![
-            summary.clone(),
+            page,
             held,
             Self::colony_line(run),
             format!(
@@ -780,6 +810,80 @@ impl NightScreen {
             ),
         );
     }
+}
+
+/// "a skitter", "a skitter pair", "3 drifters": `count` raiders of a kind.
+fn group(kind: Kind, count: usize) -> String {
+    match (kind, count) {
+        (_, 0 | 1) => a(kind),
+        (Kind::Skitter, 2) => "a skitter pair".to_string(),
+        (kind, n) => format!("{n} {}s", kind.name()),
+    }
+}
+
+/// "a drifter is", "2 drifters are".
+fn some(kind: Kind, count: usize, one: &str, many: &str) -> String {
+    let verb = if count <= 1 { one } else { many };
+    format!("{} {verb}", group(kind, count))
+}
+
+/// The charges on the grid by kind and column, with how many share each.
+fn grouped_charges(run: &Run) -> Vec<(Kind, u8, usize)> {
+    let mut out: Vec<(Kind, u8, usize)> = Vec::new();
+    for (_, kind, col) in run.charges() {
+        match out.iter_mut().find(|(k, c, _)| *k == kind && *c == col) {
+            Some(entry) => entry.2 += 1,
+            None => out.push((kind, col, 1)),
+        }
+    }
+    out
+}
+
+/// Raiders of one kind stepping onto one sector in the same phase become
+/// one beat: a skitter pair is heard as a pair, not as four steps.
+fn group_steps(events: Vec<Event>) -> Vec<(Event, usize)> {
+    let mut slots: Vec<Option<Event>> = events.into_iter().map(Some).collect();
+    let mut out = Vec::new();
+    for i in 0..slots.len() {
+        let Some(event) = slots[i].take() else {
+            continue;
+        };
+        let mut count = 1;
+        if let Event::Charging {
+            kind, weapon, col, ..
+        } = &event
+        {
+            for slot in slots.iter_mut().skip(i + 1) {
+                match slot {
+                    Some(Event::Charging {
+                        kind: k,
+                        weapon: w,
+                        col: c,
+                        ..
+                    }) if k == kind && w == weapon && c == col => {
+                        *slot = None;
+                        count += 1;
+                    }
+                    Some(Event::Charging { .. }) | None => {}
+                    _ => break,
+                }
+            }
+        }
+        if let Event::Stepped { kind, to, .. } = &event {
+            for slot in slots.iter_mut().skip(i + 1) {
+                match slot {
+                    Some(Event::Stepped { kind: k, to: t, .. }) if k == kind && t == to => {
+                        *slot = None;
+                        count += 1;
+                    }
+                    Some(Event::Stepped { .. } | Event::Dropped { .. }) | None => {}
+                    _ => break,
+                }
+            }
+        }
+        out.push((event, count));
+    }
+    out
 }
 
 /// The sounds of what hit a raider, and the word for it.
@@ -805,10 +909,11 @@ pub fn route_words(run: &Run, raider: &Raider) -> String {
         }
         RaiderState::Holding => {
             return format!(
-                "The {} holds at {}, {}. Only a missile reaches it.",
+                "The {} holds at {}, {}. The gun reaches it from the {}, a missile from anywhere.",
                 raider.kind.name(),
                 raider.at.words(),
-                hits_phrase(raider.hits)
+                hits_phrase(raider.hits),
+                column_name(raider.at.col)
             );
         }
         RaiderState::Bashing { wall } => {

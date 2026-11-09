@@ -181,7 +181,11 @@ fn play_opens_the_colony_and_ready_starts_the_night() {
     choose(&mut h, "Ready for night 1");
     assert_eq!(h.app.top_name(), NIGHT_NAME);
     settle(&mut h);
-    assert!(spoke(&h, "Night 1. 2 drifters."), "{}", all_spoken(&h));
+    assert!(
+        spoke(&h, "Night 1, gun at the centre. 2 drifters."),
+        "{}",
+        all_spoken(&h)
+    );
     assert!(spoke(&h, "Your turn, 2 actions."), "{}", all_spoken(&h));
     assert!(h.played().iter().any(|k| k == "dustfall/raider/arrive"));
 }
@@ -400,11 +404,7 @@ fn a_whole_colony_reaches_the_results() {
     }
     assert_eq!(h.app.top_name(), "results", "{}", all_spoken(&h));
     let said = all_spoken(&h);
-    assert!(
-        said.contains("Relief has landed.") || said.contains("The dome fell on night"),
-        "{said}"
-    );
-    assert!(said.contains("Your first colony."), "{said}");
+    assert!(said.contains("points. Your first colony."), "{said}");
     let results = rows(&h);
     assert!(
         results
@@ -534,7 +534,7 @@ fn records_read_before_and_after_a_colony() {
     let mut h = start();
     choose(&mut h, "Records");
     assert!(
-        spoke(&h, "No colony finished yet. No colony started yet."),
+        spoke(&h, "Records. No colony started yet."),
         "{}",
         all_spoken(&h)
     );

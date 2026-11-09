@@ -74,33 +74,38 @@ impl Menu for SoundCheck {
     }
 
     fn build_items(&mut self, _ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
-        let far = Sector::new(CENTRE, 5);
-        let near = Sector::new(CENTRE, 2);
+        // Rows alternate sides so left against right is heard.
+        let far_left = Sector::new(0, 5);
+        let left = Sector::new(1, 4);
         let right = Sector::new(3, 4);
+        let far_right = Sector::new(4, 4);
+        let centre = Sector::new(CENTRE, 3);
         vec![
-            at("A drifter steps", sound::raider(Kind::Drifter), right, "A soft whoosh at its new sector. Drifters fire a bolt at the gun's column from 3 rows out."),
+            at("A drifter steps", sound::raider(Kind::Drifter), left, "A soft whoosh at its new sector. Drifters fire a bolt at the gun's column from 3 rows out."),
             at("A skitter steps", sound::raider(Kind::Skitter), right, "Two quick ticks: skitters take 2 steps a phase and slip to the side the gun is not on."),
-            at("A hulk steps", sound::raider(Kind::Hulk), right, "A heavy tread. Hulks rest every other phase, bash walls, and siphon the shield from 2 rows out."),
-            at("A sapper steps", sound::raider(Kind::Sapper), right, "A ratchet. Sappers head for your hydroponics and darken the building they breach under."),
-            at("A mule crosses", sound::raider(Kind::Mule), right, "A chugging engine crossing row 4. It never attacks: shoot it for its food and metal before it leaves."),
-            at("The mothership", sound::raider(Kind::Mothership), Sector::new(CENTRE, 3), "A deep pulse. It holds at the centre of row 3, drops skitters and winds up siege shots."),
-            at("A raider arrives", sound::ARRIVE, far, "A ping at the far row where a raider enters, or where a skitter is dropped."),
-            plain("The gun slides", sound::GUN_RAIL, "A scrape along the rail, under the new column."),
-            plain("The gun fires", sound::GUN_FIRE, "The gun's shot. A hit rings on the raider; a kill ends in a burst."),
-            at("A raider down", sound::GUN_DOWN, near, "The burst of a raider going down, where it stood."),
-            plain("A missile", sound::MISSILE, "A missile away: 4 damage to the nearest raider anywhere on the grid."),
-            at("A raider charging", sound::CHARGE_WIND, Sector::new(CENTRE, 3), "A rising whine under the column a raider is about to fire at. Move the gun off it."),
+            at("A hulk steps", sound::raider(Kind::Hulk), Sector::new(1, 3), "A heavy tread. Hulks rest every other phase, bash walls, and siphon the shield from 2 rows out."),
+            at("A sapper steps", sound::raider(Kind::Sapper), Sector::new(3, 5), "A ratchet. Sappers head for your hydroponics and darken the building they breach under."),
+            at("A mule crosses", sound::raider(Kind::Mule), Sector::new(0, 4), "A chugging engine crossing row 4. It never attacks: shoot it for its food and metal before it leaves."),
+            at("A mule leaves", sound::LEAVE, far_right, "A raider going off the far side of the grid with what it came for."),
+            at("The mothership", sound::raider(Kind::Mothership), centre, "A deep pulse. It holds at the centre of row 3, drops skitters and winds up siege shots. Flak cannot hurt it."),
+            at("A raider arrives", sound::ARRIVE, far_left, "A ping at the far row where a raider enters, or where a skitter is dropped."),
+            at("The scan", sound::SCAN, right, "The blip of Up and Down scanning, heard where the raider stands."),
+            at("The gun slides", sound::GUN_RAIL, Sector::new(1, 1), "A scrape along the rail, under the new column."),
+            at("The gun fires", sound::GUN_FIRE, Sector::new(3, 1), "The gun's shot, under its column. A hit rings on the raider; a kill ends in a burst."),
+            at("A raider down", sound::GUN_DOWN, Sector::new(1, 2), "The burst of a raider going down, where it stood."),
+            plain("A missile", sound::MISSILE, "A missile away from the dome: 4 damage to the nearest raider anywhere on the grid."),
+            at("A raider charging", sound::CHARGE_WIND, Sector::new(3, 3), "A rising whine under the column a raider is about to fire at. Move the gun off it."),
             plain("A shot dodged", sound::CHARGE_PASS, "The bolt passing: you moved off the column in time."),
             plain("A shot hits", sound::CHARGE_HIT, "The bolt landing on the shield or the dome."),
-            plain("A breach on the shield", sound::BREACH_SHIELD, "A raider at the dome's edge hits the shield."),
-            plain("A breach on the dome", sound::BREACH_DOME, "A breach that reaches the dome itself. At dome 0 the colony falls."),
+            at("A breach on the shield", sound::BREACH_SHIELD, Sector::new(1, 1), "A raider at the dome's edge hits the shield, under its column."),
+            at("A breach on the dome", sound::BREACH_DOME, Sector::new(3, 1), "A breach that reaches the dome itself. At dome 0 the colony falls."),
             plain("A building goes dark", sound::BREACH_BUILDING, "The building under a breached column stops working until repaired."),
-            at("A wall is bashed", sound::WALL_CRACK, right, "A wall takes a bash. The second brings it down."),
-            at("A wall falls", sound::WALL_DOWN, right, "The wall is gone and the sector is open."),
-            at("A mine goes off", sound::MINE, right, "A mine under a raider: 2 damage, and the mine is spent."),
-            at("A flak post fires", sound::FLAK, Sector::new(CENTRE, 3), "A powered post firing at the nearest raider beside it."),
+            at("A wall is bashed", sound::WALL_CRACK, Sector::new(1, 3), "A wall takes a bash. The second brings it down."),
+            at("A wall falls", sound::WALL_DOWN, Sector::new(1, 3), "The wall is gone and the sector is open."),
+            at("A mine goes off", sound::MINE, Sector::new(3, 4), "A mine under a raider: 2 damage, and the mine is spent."),
+            at("A flak post fires", sound::FLAK, Sector::new(1, 2), "A powered post firing at the nearest small raider beside it."),
             plain("Your turn", sound::TURN, "The chime that starts each of your turns."),
-            plain("Turn over", sound::TURN_OVER, "Your turn ends and the raiders move."),
+            plain("Turn over", sound::TURN_OVER, "Your turn ends, by Enter or your last action, and the raiders move."),
             plain("Bought", sound::BUY, "Something built, placed or repaired in the colony phase."),
             plain("Too dear", sound::CANT, "The colony phase refusing: not enough in store."),
             plain("Night held", sound::HELD, "The last raider is gone, or has left. The colony phase opens."),

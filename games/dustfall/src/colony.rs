@@ -435,6 +435,19 @@ impl Menu for ColonyScreen {
         menus::pause(ctx, HELP, leave);
     }
 
+    /// The repeat key says the row again, as it does on the night screen,
+    /// instead of jumping to the Ready row by its first letter.
+    fn handle_input(&mut self, ctx: &mut Ctx<Parlor>, event: &InputEvent) {
+        if ctx.action_for(event) == Some(ParlorAction::Repeat) {
+            if !event.is_repeat() {
+                let current = self.current_text(ctx);
+                ctx.say(current);
+            }
+            return;
+        }
+        hearken::menu::menu_input(self, ctx, event);
+    }
+
     fn build_items(&mut self, _ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
         let run = self.run.borrow();
         self.menu.title = ColonyScreen::title_words(&run);
@@ -516,7 +529,7 @@ impl Menu for ColonyScreen {
                 let free = free.clone();
                 items.push(
                     MenuItem::new(
-                        format!("Build a {}, {}", building.name(), cost_words(metal, power)),
+                        format!("Build {}, {}", building.a(), cost_words(metal, power)),
                         move |s: &mut ColonyScreen, ctx: &mut Ctx<Parlor>| {
                             let (metal, power) = building.cost();
                             let short = {
@@ -787,8 +800,9 @@ impl State<Parlor> for Placer {
         let up = ctx.control_name(ParlorAction::Up);
         let down = ctx.control_name(ParlorAction::Down);
         let text = format!(
-            "Place a {}. {left} and {right} choose the column, {up} and {down} the row, Enter places it. {}",
+            "Place a {}. {} and {right} choose the column, {up} and {down} the row, Enter places it. {}",
             self.work.name(),
+            sentence_start(&left),
             self.here()
         );
         sound::at(ctx, sound::SCAN, self.at);

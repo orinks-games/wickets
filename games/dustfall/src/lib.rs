@@ -181,8 +181,13 @@ impl TitleGame for Dustfall {
                 Challenges::summary(ctx, &ch)
             })
             .collect();
+        let colony_line = if p.colonies == 0 {
+            colonies
+        } else {
+            format!("{} {colonies} {reliefs}", records_line(ctx))
+        };
         vec![
-            format!("Records. {} {colonies} {reliefs}", records_line(ctx)),
+            format!("Records. {colony_line}"),
             format!("Challenges. {}", challenges.join(" ")),
         ]
     }

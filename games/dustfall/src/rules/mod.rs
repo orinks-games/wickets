@@ -152,8 +152,11 @@ pub enum Event {
         turn: u32,
         actions: u8,
     },
+    /// The gun slid to `col`; `under` is the nearest raider in that
+    /// column as it stood then, before the raiders moved.
     Moved {
         col: u8,
+        under: Option<(Kind, u8)>,
     },
     /// The gun fired up an empty column.
     DryShot {
@@ -496,7 +499,16 @@ impl Run {
             return Err(Refusal::Edge);
         }
         self.gun = col as u8;
-        self.events.push(Event::Moved { col: self.gun });
+        let under = self
+            .raiders
+            .iter()
+            .filter(|r| r.at.col == self.gun)
+            .min_by_key(|r| (r.at.row, r.id))
+            .map(|r| (r.kind, r.at.row));
+        self.events.push(Event::Moved {
+            col: self.gun,
+            under,
+        });
         self.spend_action();
         Ok(())
     }
@@ -556,6 +568,8 @@ impl Run {
         if let Phase::Turn { actions } = self.phase {
             let left = actions.saturating_sub(1);
             if left == 0 {
+                // The last action ends the turn with nothing left to charge.
+                self.events.push(Event::TurnEnded { charged: 0 });
                 self.raiders_phase();
             } else {
                 self.phase = Phase::Turn { actions: left };
@@ -749,10 +763,11 @@ impl Run {
         // 5. Flak.
         for post in self.grid.powered_flak() {
             let covered = post.around();
+            // Flak scatters off a mothership's or the carrier's hull.
             let target = self
                 .raiders
                 .iter()
-                .filter(|r| covered.contains(&r.at))
+                .filter(|r| covered.contains(&r.at) && !r.kind.armoured())
                 .min_by_key(|r| (r.at.row, r.at.col, r.id))
                 .map(|r| r.id);
             if let Some(id) = target {
