@@ -86,6 +86,28 @@ pub struct Keeper {
 /// This affects launcher visibility only, never a holiday event or finale's dates.
 pub const DISCOVERY_GRACE_DAYS: i64 = 14;
 
+/// Where a holiday special stands for one player today. The lists and
+/// [`access`] both read it, so a special is listed exactly when it opens.
+/// Playing the special once moves it from the first three states to the
+/// kept two for good; the season moves it between those two.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum SpecialState {
+    /// Not played, and outside its season and catch-up weeks: not listed,
+    /// and does not open.
+    Hidden,
+    /// Not played, and the internet date is not known: not listed, and
+    /// opening it says it needs the date.
+    NeedsDate,
+    /// Not played, within its season or catch-up weeks on the internet
+    /// date: listed in Seasonal games with the blurb saying how to keep it.
+    Discoverable,
+    /// Kept, in its season: listed in Seasonal games as the season shows it.
+    KeptInSeason,
+    /// Kept, out of season: listed in its home category with the blurb
+    /// saying what still waits for the holiday.
+    KeptYearRound,
+}
+
 impl Keeper {
     /// Is the base game available for a first visit today? Looking back from
     /// today handles winter ending in February, leap years and the turn of the year
@@ -93,6 +115,49 @@ impl Keeper {
     pub fn available(self, today: Date) -> bool {
         (0..=DISCOVERY_GRACE_DAYS)
             .any(|days| (self.in_season)(Date::from_days(today.days() - days)))
+    }
+
+    /// The special's state for this player: kept specials follow the
+    /// player's `today`; a special not yet kept is discovered only on the
+    /// internet date, `None` while that is unknown.
+    pub fn state(
+        self,
+        ctx: &mut Ctx<Parlor>,
+        today: Date,
+        network_date: Option<Date>,
+    ) -> SpecialState {
+        if (self.kept)(ctx) {
+            if (self.in_season)(today) {
+                SpecialState::KeptInSeason
+            } else {
+                SpecialState::KeptYearRound
+            }
+        } else {
+            match network_date {
+                None => SpecialState::NeedsDate,
+                Some(date) if self.available(date) => SpecialState::Discoverable,
+                Some(_) => SpecialState::Hidden,
+            }
+        }
+    }
+
+    /// How the lists show the special in `state`, or `None` when they do
+    /// not.
+    pub fn listing(self, state: SpecialState) -> Option<GameInfo> {
+        let mut g = self.game;
+        match state {
+            SpecialState::Hidden | SpecialState::NeedsDate => None,
+            SpecialState::Discoverable => {
+                g.blurb = self.keep_blurb;
+                Some(g)
+            }
+            SpecialState::KeptInSeason => Some(g),
+            SpecialState::KeptYearRound => {
+                g.category = self.home;
+                g.blurb = self.year_round_blurb;
+                Some(g)
+            }
+        }
     }
 }
 
@@ -210,13 +275,13 @@ pub fn access_at(ctx: &mut Ctx<Parlor>, id: &str, network_date: Option<Date>) ->
     let Some(k) = keepers().into_iter().find(|k| k.game.id == id) else {
         return Access::Open;
     };
-    if (k.kept)(ctx) {
-        return Access::Open;
-    }
-    match network_date {
-        None => Access::NeedsDate,
-        Some(date) if k.available(date) => Access::Open,
-        Some(_) => Access::Closed,
+    let today = challenges::today(ctx);
+    match k.state(ctx, today, network_date) {
+        SpecialState::Hidden => Access::Closed,
+        SpecialState::NeedsDate => Access::NeedsDate,
+        SpecialState::Discoverable | SpecialState::KeptInSeason | SpecialState::KeptYearRound => {
+            Access::Open
+        }
     }
 }
 
@@ -228,20 +293,8 @@ pub fn specials_listed_at(ctx: &mut Ctx<Parlor>, network_date: Option<Date>) -> 
     keepers()
         .into_iter()
         .filter_map(|k| {
-            let kept = (k.kept)(ctx);
-            let mut g = k.game;
-            if !kept && network_date.is_some_and(|date| k.available(date)) {
-                g.blurb = k.keep_blurb;
-                Some(g)
-            } else if kept && (k.in_season)(today) {
-                Some(g)
-            } else if kept {
-                g.category = k.home;
-                g.blurb = k.year_round_blurb;
-                Some(g)
-            } else {
-                None
-            }
+            let state = k.state(ctx, today, network_date);
+            k.listing(state)
         })
         .collect()
 }
