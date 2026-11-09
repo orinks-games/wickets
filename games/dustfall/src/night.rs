@@ -888,9 +888,11 @@ fn group_steps(events: Vec<Event>) -> Vec<(Event, usize)> {
 
 /// The sounds of what hit a raider, and the word for it.
 fn hitter(beat: Beat, by: Hitter, at: Sector) -> (Beat, &'static str) {
+    // The player's own shots play at once and never hold the next action,
+    // so Space twice is two shots. Mines and flak are the raiders' phase.
     match by {
-        Hitter::Gun => (beat.under(sound::GUN_FIRE, at.col), "Hit"),
-        Hitter::Missile => (beat.plain(sound::MISSILE), "Missile hit"),
+        Hitter::Gun => (beat.under(sound::GUN_FIRE, at.col).open().now(), "Hit"),
+        Hitter::Missile => (beat.plain(sound::MISSILE).open().now(), "Missile hit"),
         Hitter::Mine => (beat.at(sound::MINE, at), "Mine"),
         Hitter::Flak(post) => (beat.at(sound::FLAK, post), "Flak"),
     }
