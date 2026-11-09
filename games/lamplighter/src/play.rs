@@ -1,7 +1,7 @@
 //! Lighting the Long Hall: the play screen.
 
 use hearken::text::sentence_start;
-use hearken::{Ctx, InputEvent, Key, State, Vec3};
+use hearken::{Ctx, InputEvent, Key, Phase, Phases, State, Vec3};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::{Challenge, Pages, Parlor, ParlorAction, Period, ScoreResult};
 
@@ -25,6 +25,31 @@ pub const HEAR: i32 = 4;
 /// Seconds from the last lamp to the results, so the chime is heard and a
 /// key still held does not skip the first page.
 pub const END_PAUSE: f64 = 2.0;
+
+/// Where a hall stands. Changed only through `Round::phases`, which logs
+/// each change for tests and the agent server.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum HallPhase {
+    /// The taper is not lit: nothing moves until the player lights it.
+    Dark,
+    /// Walking the hall, lighting lamps.
+    Lit,
+    /// Every lamp is burning; a short pause before the results.
+    Ending,
+    /// The results are up, or the lesson has moved on.
+    Done,
+}
+
+impl Phase for HallPhase {
+    fn name(self) -> &'static str {
+        match self {
+            HallPhase::Dark => "dark",
+            HallPhase::Lit => "lit",
+            HallPhase::Ending => "ending",
+            HallPhase::Done => "done",
+        }
+    }
+}
 
 /// What kind of hall the screen is playing.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -55,8 +80,9 @@ pub struct Round {
     pulse: f64,
     /// Which footstep plays next.
     left_foot: bool,
-    /// Seconds until the results, once the hall is lit.
-    ending: Option<f64>,
+    /// Dark until the taper is lit, then lit, then a pause before the
+    /// results.
+    phases: Phases<HallPhase>,
     /// In the tutorial: a lit hall reads no results.
     in_lesson: bool,
     /// S, in layers: a second press reads the rest.
@@ -73,16 +99,20 @@ impl Round {
             Mode::Practice => Hall::new(PRACTICE, seed),
             _ => Hall::new(ROUND, seed),
         };
-        if !hall.timed() {
+        // An untimed hall needs no taper: it starts lit.
+        let phase = if hall.timed() {
+            HallPhase::Dark
+        } else {
             hall.start();
-        }
+            HallPhase::Lit
+        };
         Round {
             hall,
             mode,
             challenge: None,
             pulse: PULSE_AFTER_STEP,
             left_foot: true,
-            ending: None,
+            phases: Phases::new(phase),
             in_lesson: false,
             status_key: Default::default(),
         }
@@ -93,6 +123,7 @@ impl Round {
         let mut r = Round::with_seed(Mode::Practice, seed);
         r.hall = Hall::new(layout, seed);
         r.hall.start();
+        r.phases = Phases::new(HallPhase::Lit);
         r.in_lesson = true;
         r
     }
@@ -125,7 +156,7 @@ impl Round {
             sentence_start(&lamps_words(h.out())),
             h.length()
         );
-        if h.started() {
+        if !self.phases.is(HallPhase::Dark) {
             format!("{}. {what} No taper, so take your time.", self.mode.name())
         } else {
             format!(
@@ -159,7 +190,7 @@ impl Round {
         // Lamps first, and words, so it is not heard as "step 1 of 3".
         let first = format!("{} out, at step {}", lamps_words(h.out()), h.pos + 1);
         let length = format!("Step {} of {}", h.pos + 1, h.length());
-        if !h.started() {
+        if self.phases.is(HallPhase::Dark) {
             return vec![
                 format!("{first}, taper not lit."),
                 format!("{length}. {}", self.light_prompt(ctx)),
@@ -293,7 +324,7 @@ impl Round {
                 Ev::HallLit { .. } => {
                     sound::play(ctx, sound::HALL_LIT);
                     ctx.say("Every lamp is burning.");
-                    self.ending = Some(END_PAUSE);
+                    self.phases.set_for(ctx, HallPhase::Ending, END_PAUSE);
                 }
                 Ev::NotStarted => {
                     let p = self.light_prompt(ctx);
@@ -304,10 +335,18 @@ impl Round {
     }
 
     fn light_taper(&mut self, ctx: &mut Ctx<Parlor>) {
+        if !self.phases.set(ctx, HallPhase::Lit) {
+            return;
+        }
         self.hall.start();
         sound::play(ctx, sound::NEW_TAPER);
         self.pulse = PULSE_AFTER_STEP;
         ctx.say("Taper lit. Listen for the lamps that are out.");
+    }
+
+    /// Whether the hall is lit and the round is over, bar the results.
+    fn over(&self) -> bool {
+        matches!(self.phases.get(), HallPhase::Ending | HallPhase::Done)
     }
 
     /// The hall is lit: record it and read the results.
@@ -443,6 +482,10 @@ impl State<Parlor> for Round {
         PLAY_NAME
     }
 
+    fn phase(&self) -> Option<&'static str> {
+        Some(self.phases.name())
+    }
+
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         ctx.audio.set_listener(Vec3::ZERO, 0.0);
         sound::hall_bed(ctx);
@@ -462,7 +505,7 @@ impl State<Parlor> for Round {
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
-        if self.hall.finished() {
+        if self.over() {
             return;
         }
         sound::hall_bed(ctx);
@@ -472,7 +515,7 @@ impl State<Parlor> for Round {
     }
 
     fn handle_input(&mut self, ctx: &mut Ctx<Parlor>, event: &InputEvent) {
-        if self.hall.finished() || event.is_repeat() {
+        if self.over() || event.is_repeat() {
             return;
         }
         let action = ctx.action_for(event);
@@ -486,7 +529,7 @@ impl State<Parlor> for Round {
             return;
         }
         let evs = match action {
-            Some(ParlorAction::Primary) if !self.hall.started() => {
+            Some(ParlorAction::Primary) if self.phases.is(HallPhase::Dark) => {
                 self.light_taper(ctx);
                 return;
             }
@@ -526,17 +569,15 @@ impl State<Parlor> for Round {
     }
 
     fn update(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
-        if let Some(left) = self.ending.as_mut() {
-            *left -= dt;
-            if *left <= 0.0 {
-                self.ending = None;
-                if !self.in_lesson {
-                    self.finish(ctx);
-                }
+        if self.phases.is(HallPhase::Ending) {
+            // The chime plays out, then the results; a lesson's hall just
+            // stays lit until the lesson moves on.
+            if self.phases.tick(dt) && self.phases.set(ctx, HallPhase::Done) && !self.in_lesson {
+                self.finish(ctx);
             }
             return;
         }
-        if !self.hall.started() {
+        if self.phases.is(HallPhase::Dark) {
             return;
         }
         self.pulse -= dt;
@@ -566,7 +607,7 @@ impl State<Parlor> for Round {
     }
 
     fn help(&self, ctx: &Ctx<Parlor>) -> String {
-        let now = if !self.hall.started() {
+        let now = if self.phases.is(HallPhase::Dark) {
             self.light_prompt(ctx)
         } else {
             self.hint_words()
