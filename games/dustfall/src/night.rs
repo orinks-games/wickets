@@ -17,6 +17,7 @@ use parlor_core::{
 
 use crate::challenge::{self, CHALLENGES_NAME};
 use crate::colony::{notices, refusal_words, ColonyScreen, Mode, Shared, Watch};
+use crate::music::{Conductor, Pressure, Stab};
 use crate::progress::{nights_phrase, Progress, NIGHTS_BOARD, SCORE_BOARD};
 use crate::rules::grid::{column_name, Work, COLS, NEAR_ROW, ROWS};
 use crate::rules::nights::RELIEF_NIGHT;
@@ -85,6 +86,8 @@ struct Beat {
     /// The night's opening and the turn chime do not, so an eager player
     /// can act over them.
     blocking: bool,
+    /// A stab the score plays with the beat.
+    stab: Option<Stab>,
 }
 
 impl Beat {
@@ -95,7 +98,13 @@ impl Beat {
             hold,
             now: false,
             blocking: true,
+            stab: None,
         }
+    }
+
+    fn stab(mut self, stab: Option<Stab>) -> Beat {
+        self.stab = stab;
+        self
     }
 
     fn open(mut self) -> Beat {
@@ -166,6 +175,8 @@ pub struct NightScreen {
     /// Charges announced in the batch being spoken, so the turn line does
     /// not repeat them.
     fresh_charges: Vec<(Kind, u8)>,
+    /// The score, following the grid.
+    music: Conductor,
     ended: bool,
     /// For the tutorial: the controls tried.
     pub status_asked: bool,
@@ -175,8 +186,12 @@ pub struct NightScreen {
 
 impl NightScreen {
     pub fn new(run: Shared) -> NightScreen {
-        let dome = run.borrow().colony.dome;
+        let (dome, seed) = {
+            let r = run.borrow();
+            (r.colony.dome, r.seed() ^ (u64::from(r.night) << 8))
+        };
         NightScreen {
+            music: Conductor::night(seed),
             run,
             queue: VecDeque::new(),
             fresh_charges: Vec::new(),
@@ -259,6 +274,9 @@ impl NightScreen {
             };
             if beat.now && self.queue.is_empty() {
                 beat.play(ctx);
+                if let Some(stab) = beat.stab {
+                    self.music.stab(&mut ctx.audio, stab);
+                }
                 if let Some(line) = &beat.line {
                     self.last = line.clone();
                     if first {
@@ -423,7 +441,12 @@ impl NightScreen {
                 beat.say(line)
             }
             Event::Stepped { kind, to, .. } => {
-                let mut beat = Beat::new(0.45).at(sound::raider(*kind), *to);
+                let stab = match kind {
+                    Kind::Hulk | Kind::Mothership | Kind::Carrier => Some(Stab::Heavy),
+                    Kind::Skitter if count >= 2 => Some(Stab::Run),
+                    _ => None,
+                };
+                let mut beat = Beat::new(0.45).at(sound::raider(*kind), *to).stab(stab);
                 let who = sentence_start(&group(*kind, count));
                 if to.row == NEAR_ROW {
                     beat = beat.say(format!("{who} at the dome, {}.", column_name(to.col)));
@@ -660,6 +683,7 @@ impl NightScreen {
 
     fn open_colony(&mut self, ctx: &mut Ctx<Parlor>) {
         self.ended = true;
+        self.music.stop(&mut ctx.audio, 1200);
         if self.practice() {
             ctx.say_queued("The tutorial night is over.");
             return;
@@ -671,6 +695,7 @@ impl NightScreen {
 
     fn finish(&mut self, ctx: &mut Ctx<Parlor>) {
         self.ended = true;
+        self.music.stop(&mut ctx.audio, 600);
         let mode = self.mode();
         let run = self.run.borrow().run.clone();
         let won = run.phase == Phase::Relief;
@@ -825,6 +850,16 @@ fn group(kind: Kind, count: usize) -> String {
 fn some(kind: Kind, count: usize, one: &str, many: &str) -> String {
     let verb = if count <= 1 { one } else { many };
     format!("{} {verb}", group(kind, count))
+}
+
+/// What the score follows: the nearest raider, a pending charge, the
+/// shield at 0.
+pub fn pressure(run: &Run) -> Pressure {
+    Pressure {
+        near: run.nearest_first().first().map(|r| r.at.row),
+        charge: !run.charges().is_empty(),
+        shield_down: run.colony.shield == 0,
+    }
 }
 
 /// The charges on the grid by kind and column, with how many share each.
@@ -1036,7 +1071,14 @@ impl State<Parlor> for NightScreen {
         if !self.practice() {
             self.settings(ctx);
         }
+        let pressure = pressure(&self.run.borrow());
+        self.music.set_pressure(pressure);
+        self.music.start(&mut ctx.audio);
         self.drain(ctx);
+    }
+
+    fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.music.stop(&mut ctx.audio, 300);
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -1092,6 +1134,9 @@ impl State<Parlor> for NightScreen {
         if self.ended {
             return;
         }
+        let pressure = pressure(&self.run.borrow());
+        self.music.set_pressure(pressure);
+        self.music.update(&mut ctx.audio, dt);
         if let Some(front) = self.queue.front() {
             self.wait -= dt;
             if self.wait > 0.0 {
@@ -1100,6 +1145,9 @@ impl State<Parlor> for NightScreen {
             let _ = front;
             let beat = self.queue.pop_front().expect("a beat");
             beat.play(ctx);
+            if let Some(stab) = beat.stab {
+                self.music.stab(&mut ctx.audio, stab);
+            }
             if let Some(line) = &beat.line {
                 self.last = line.clone();
                 ctx.say_queued(line.clone());

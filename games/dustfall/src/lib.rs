@@ -12,6 +12,7 @@
 pub mod challenge;
 pub mod colony;
 pub mod menus;
+pub mod music;
 pub mod night;
 pub mod progress;
 pub mod rules;

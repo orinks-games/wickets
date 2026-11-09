@@ -15,6 +15,7 @@ use parlor_core::menus::{self, labels, Leave};
 use parlor_core::{Parlor, ParlorAction, Period};
 
 use crate::challenge::CHALLENGES_NAME;
+use crate::music::Conductor;
 use crate::night::NightScreen;
 use crate::progress::Progress;
 use crate::rules::grid::{column_name, COLS, WORK_ROWS};
@@ -53,6 +54,18 @@ impl Mode {
 pub struct Watch {
     pub run: Run,
     pub mode: Mode,
+    /// The colony phase's bed, kept here so the slot picker and the placer
+    /// carry it on.
+    pub bed: Conductor,
+}
+
+impl Watch {
+    /// Keeps the bed going, the bass alone while the colony is hungry.
+    pub fn play_bed(&mut self, audio: &mut hearken::Audio, dt: f64) {
+        let hungry = self.run.colony.hungry();
+        self.bed.set_hungry(hungry);
+        self.bed.update(audio, dt);
+    }
 }
 
 impl Watch {
@@ -87,7 +100,8 @@ pub fn share(run: Run) -> Shared {
 }
 
 pub fn share_as(run: Run, mode: Mode) -> Shared {
-    Rc::new(RefCell::new(Watch { run, mode }))
+    let bed = Conductor::colony(run.seed() ^ 0x00c0_104e);
+    Rc::new(RefCell::new(Watch { run, mode, bed }))
 }
 
 /// "8 metal", "6 metal and 2 power".
@@ -421,6 +435,12 @@ impl Menu for ColonyScreen {
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         sound::on_watch(ctx);
         self.run.borrow().keep(ctx);
+        {
+            let mut w = self.run.borrow_mut();
+            let hungry = w.colony.hungry();
+            w.bed.set_hungry(hungry);
+            w.bed.start(&mut ctx.audio);
+        }
         hearken::menu::menu_enter(self, ctx);
         if !self.told {
             self.told = true;
@@ -428,6 +448,14 @@ impl Menu for ColonyScreen {
                 ctx.say_queued(line);
             }
         }
+    }
+
+    fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.run.borrow_mut().bed.stop(&mut ctx.audio, 900);
+    }
+
+    fn update(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
+        self.run.borrow_mut().play_bed(&mut ctx.audio, dt);
     }
 
     fn on_escape(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -637,6 +665,10 @@ impl Menu for SlotPicker {
         SLOTS_NAME
     }
 
+    fn update(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
+        self.run.borrow_mut().play_bed(&mut ctx.audio, dt);
+    }
+
     fn menu(&self) -> &MenuCore<Self, Parlor> {
         &self.menu
     }
@@ -792,6 +824,10 @@ impl Placer {
 impl State<Parlor> for Placer {
     fn name(&self) -> &'static str {
         PLACER_NAME
+    }
+
+    fn update(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
+        self.run.borrow_mut().play_bed(&mut ctx.audio, dt);
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
