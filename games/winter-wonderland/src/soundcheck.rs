@@ -52,7 +52,7 @@ impl Menu for SoundCheck {
     type Game = Parlor;
 
     fn name(&self) -> &'static str {
-        "sound_check"
+        "winter_wonderland_sounds"
     }
 
     fn menu(&self) -> &MenuCore<Self, Parlor> {

@@ -314,7 +314,7 @@ impl Menu for CourseSelect {
     type Game = Parlor;
 
     fn name(&self) -> &'static str {
-        "course_select"
+        "harvest_feast_courses"
     }
 
     fn menu(&self) -> &MenuCore<Self, Parlor> {

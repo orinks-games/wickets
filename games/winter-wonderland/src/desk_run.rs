@@ -624,7 +624,7 @@ impl State<Parlor> for DeskRun {
     }
 
     fn name(&self) -> &'static str {
-        "wish_desk"
+        "winter_wonderland_wish_desk"
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {

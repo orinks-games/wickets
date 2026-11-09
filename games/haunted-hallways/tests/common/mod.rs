@@ -210,7 +210,12 @@ impl Twin {
                 panic!("Halloween runs open from their own rows")
             }
         }
-        assert_eq!(h.app.top_name(), "haunt", "{:?}", h.spoken());
+        assert_eq!(
+            h.app.top_name(),
+            "haunted_hallways_haunt",
+            "{:?}",
+            h.spoken()
+        );
         Twin {
             h,
             run: Run::new(mode, SEED),
@@ -230,7 +235,12 @@ impl Twin {
         h.press(Key::Return);
         assert_eq!(h.app.top_name(), "pages");
         h.press(Key::Return);
-        assert_eq!(h.app.top_name(), "haunt", "{:?}", h.spoken());
+        assert_eq!(
+            h.app.top_name(),
+            "haunted_hallways_haunt",
+            "{:?}",
+            h.spoken()
+        );
         let ch = Challenge::current(&h.app.ctx, ID, period);
         let (event, seed) = Event::from_challenge(&ch);
         Twin {

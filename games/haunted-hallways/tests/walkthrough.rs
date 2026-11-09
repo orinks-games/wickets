@@ -450,7 +450,7 @@ fn escape_pauses_and_the_pause_menu_returns_to_the_title() {
     assert_eq!(t.h.app.top_name(), "pause");
     t.h.clear();
     t.h.press(Key::Return); // Resume
-    assert_eq!(t.h.app.top_name(), "haunt");
+    assert_eq!(t.h.app.top_name(), "haunted_hallways_haunt");
     assert!(spoke(&t.h, "Back in the foyer"), "{:?}", t.h.spoken());
     t.h.press(Key::Escape);
     t.h.press(Key::End);
@@ -668,7 +668,7 @@ fn the_climb_goes_on_and_floor_25_opens_nightmare() {
         assert_eq!(t.h.app.top_name(), "pages");
         assert!(spoke(&t.h, &format!("Floor {floor} cleared in")));
         t.h.clear();
-        t.read_until("haunt");
+        t.read_until("haunted_hallways_haunt");
         t.run.next_floor();
         assert!(
             spoke(&t.h, &format!("Floor {}. ", floor + 1)),
@@ -708,7 +708,7 @@ fn the_climb_goes_on_and_floor_25_opens_nightmare() {
         t.h.spoken()
     );
     assert!(spoke(&t.h, "Unlocked:"), "{:?}", t.h.spoken());
-    t.read_until("haunt");
+    t.read_until("haunted_hallways_haunt");
     t.h.press(Key::Escape);
     common::goto(&mut t.h, "Back to the title");
     t.h.press(Key::Return);
@@ -946,7 +946,7 @@ fn a_cleared_floor_ends_on_the_shared_results() {
     );
     t.h.clear();
     t.h.press(Key::Return);
-    assert_eq!(t.h.app.top_name(), "haunt");
+    assert_eq!(t.h.app.top_name(), "haunted_hallways_haunt");
     assert!(spoke(&t.h, "Floor 2: the ground floor."));
 }
 
@@ -968,7 +968,7 @@ fn first_time_teaching_comes_once_per_save() {
     let mut h = title();
     h.clear();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "haunt");
+    assert_eq!(h.app.top_name(), "haunted_hallways_haunt");
     assert!(
         spoke(
             &h,
