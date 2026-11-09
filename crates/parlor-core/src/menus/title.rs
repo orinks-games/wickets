@@ -229,9 +229,10 @@ impl<G: TitleGame> Menu for Title<G> {
         self.refresh(ctx, false);
         let opening = ctx.game.title_opening.take();
         let first = self.game.first_visit(ctx);
-        if !first && !tutorial::has_played(ctx, G::ID) && !tutorial::tutorial_done(ctx, G::ID) {
+        if !first && tutorial::familiarity(ctx, G::ID) == tutorial::Familiarity::New {
             // The game's own saves show play from before story mode kept
-            // track. Opening the title finishes no story scene.
+            // track: New becomes Played. Opening the title finishes no
+            // story scene.
             tutorial::note_played(ctx, G::ID);
         }
         if first {
