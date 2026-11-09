@@ -238,8 +238,8 @@ pub enum TitleOpening {
     /// Open on the row whose label starts with this, as "The house
     /// stirs": an event from the story or the Happening today list.
     Row(String),
-    /// A line said after the first-visit opening, as an advent door saying
-    /// it plays once the tutorial is done.
+    /// A line said after the first-visit opening, from the screen that
+    /// sent the player here: what plays once the tutorial is done.
     Note(String),
 }
 
