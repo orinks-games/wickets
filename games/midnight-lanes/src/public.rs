@@ -45,7 +45,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Action,
-    blurb: "Bowl ten frames on lane nine after the alley closes, by ear.",
+    blurb: "Bowl ten frames on lane nine after the alley closes.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(pumpkin::event),

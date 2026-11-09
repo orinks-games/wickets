@@ -130,7 +130,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sea: Live<DiveScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Sonar Dive",
-        "You pilot a small salvage submarine by ear. Learn on a practice dive with one chest",
+        "You pilot a small salvage submarine. Learn on a practice dive with one chest",
     )
     .step(ping)
     .step(turn)

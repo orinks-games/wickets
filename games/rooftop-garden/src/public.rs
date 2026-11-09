@@ -1,4 +1,4 @@
-// Rooftop Garden: Tend a rooftop garden by ear, and hear each plant grow into a layer of music.
+// Rooftop Garden: Tend a rooftop garden, where each plant grows into a layer of music.
 //
 // A calm game with no way to fail. You walk a small grid of planters on a
 // city rooftop, watering, picking off aphids, pruning and harvesting by
@@ -42,7 +42,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Rooftop Garden",
     category: Category::Cozy,
-    blurb: "Tend a rooftop garden by ear, and hear each plant grow into a layer of music.",
+    blurb: "Tend a rooftop garden, where each plant grows into a layer of music.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),

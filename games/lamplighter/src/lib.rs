@@ -46,7 +46,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Cozy,
-    blurb: "Walk the Long Hall and light its lamps by ear.",
+    blurb: "Walk the Long Hall and light its lamps.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: None,
@@ -144,7 +144,7 @@ impl TitleGame for Lamplighter {
             MenuItem::new("Practice hall", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(Round::new(Mode::Practice))
             })
-            .help("A short hall with no taper and no score: learn the lamps by ear."),
+            .help("A short hall with no taper and no score: learn the lamps."),
         )
     }
 
@@ -165,7 +165,7 @@ impl TitleGame for Lamplighter {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear each sound you need in the hall, with its name and what it means.".to_string()
+        "Play the sounds you need in the hall.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

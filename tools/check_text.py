@@ -71,6 +71,23 @@ RULES = [
     ("percent-sign", re.compile(r"%")),
     ("deg-unit", re.compile(r"\d\s*deg\b|\bdeg\b")),
     ("clock-time", re.compile(r"\b\d{1,2}:\d{2}\b")),
+    # Interface talk a game manual never uses: see "player text reads like
+    # a game manual" in AGENTS.md.
+    ("manual-phrase", re.compile(
+        r"the one you are on|where it says|where it asked|what it means"
+        r"|keeps? (them|you|him|her) waiting|\bEnter answers\b|the key that answers"
+        r"|\bsee above\b|\bas mentioned\b|\bkeep in mind\b|\bby ear\b",
+        re.IGNORECASE,
+    )),
+    # Fixed AI-isms that never belong in a game's text: see "no AI-isms" in
+    # AGENTS.md; the unslop skill carries the rest.
+    ("ai-phrase", re.compile(
+        r"\bdelve|\btapestry\b|testament to|\bpivotal\b|\bseamless|\bimmersive\b"
+        r"|\bnuanced\b|\bgame-changer|it's worth noting|it is worth noting"
+        r"|it is important to note|important to remember|\bLet's dive\b|Here's the thing"
+        r"|\bFeel free to\b|\bmore than just\b",
+        re.IGNORECASE,
+    )),
 ]
 CAPS_WORD = re.compile(r"\b[A-Z][A-Z]{2,}\b")
 # Functions whose strings no player hears: `State::lines` is the screen as

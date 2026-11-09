@@ -60,7 +60,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pond: Live<RunScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Lantern Lake",
-        "You sit in a canoe on a quiet lake at night, gathering lanterns by ear. There is no timer and no way to fail. Learn on the practice pond",
+        "You sit in a canoe on a quiet lake at night, gathering lanterns. There is no timer and no way to fail. Learn on the practice pond",
     )
     .step(paddle)
     .step(turn)

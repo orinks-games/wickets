@@ -4,7 +4,7 @@
 
 Shoot the paper hearts drifting above the rooftops. Aim, draw the bow and release your arrow. A round ends when the quiver is empty. On the rooftops you need enough hearts to advance; fall short and the evening ends.
 
-## Aiming by ear
+## Aiming
 
 Left and Right turn the bow 5 degrees a press, up to 70 degrees either way. The sky turns with you, so a heart straight in front of the bow sounds straight ahead, in the middle, and a heart off to one side sounds from that side. Quieter hearts are farther off. Up faces straight ahead again. Each step of the bow says your aim, such as "15 degrees right", unless aim call-outs are off.
 
@@ -18,7 +18,7 @@ Hearts keep drifting while the arrow flies. A near heart is reached in a quarter
 
 ## Sweetheart pairs
 
-Hearts come in pairs: two hearts of one colour, red, pink, peach, violet or white, that hum the same note. The second heart of a pair drifts in a moment after the first, from either side. Hit both, one after the other, for a sweetheart pair: 50 bonus points. A miss, or another target hit in between, breaks the pair. S, Tab and H always name the colours, so you never need to tell the notes apart by ear.
+Hearts come in pairs: two hearts of one colour, red, pink, peach, violet or white, that hum the same note. The second heart of a pair drifts in a moment after the first, from either side. Hit both, one after the other, for a sweetheart pair: 50 bonus points. A miss, or another target hit in between, breaks the pair. S, Tab and H always name the colours, so you never need to tell the notes apart.
 
 ## Scoring
 

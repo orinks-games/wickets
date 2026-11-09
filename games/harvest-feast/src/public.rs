@@ -1,4 +1,4 @@
-// Harvest Feast: Thanksgiving: run a busy kitchen by ear, stirring, flipping and pulling dishes at the right moment.
+// Harvest Feast: Thanksgiving: run a busy kitchen, stirring, flipping and pulling dishes at the right moment.
 //
 // Up to five stations sit in an arc around you, each dish with its own
 // cooking sound that changes when it needs you. The recipe calls each dish
@@ -45,7 +45,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Harvest Feast",
     category: Category::Seasonal,
-    blurb: "Thanksgiving: run a busy kitchen by ear, stirring, flipping and pulling dishes at the right moment.",
+    blurb: "Thanksgiving: run a busy kitchen, stirring, flipping and pulling dishes at the right moment.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(thanksgiving::event),

@@ -103,7 +103,7 @@ Records, on the title, reads your field guide's totals, your walks and steps, yo
 
 ## Sound check and tutorial
 
-Sound check, on the title, plays each sound you need on the trail with its name and what it means: your whistle, each bird voice with its low, middle and high notes, the flock calls, the cues and the sounds at each trail's end. Tutorial explains the game a page at a time.
+Sound check, on the title, plays each sound you need on the trail: your whistle, each bird voice with its low, middle and high notes, the flock calls, the cues and the sounds at each trail's end. Tutorial explains the game a page at a time.
 
 ## Controls
 

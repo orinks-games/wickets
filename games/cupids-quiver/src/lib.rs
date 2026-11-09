@@ -54,7 +54,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Seasonal,
-    blurb: "Archery by ear over a rooftop sky: shoot drifting paper hearts, in pairs, for Valentine's Day.",
+    blurb: "Archery over a rooftop sky: shoot drifting paper hearts, in pairs, for Valentine's Day.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(event),

@@ -54,7 +54,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Freewheel",
     category: Category::Action,
-    blurb: "Ride a bike through city traffic by ear, as fast as you dare.",
+    blurb: "Ride a bike through city traffic, as fast as you dare.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),

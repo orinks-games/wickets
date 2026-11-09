@@ -28,7 +28,7 @@ Each lamp lit is 10 points, a lamp blown out by a draught included. Light the wh
 
 ## The practice hall
 
-The practice hall is 8 steps long with 4 lamps out, no taper and no score. Use it to learn the sounds by ear.
+The practice hall is 8 steps long with 4 lamps out, no taper and no score. Use it to learn the sounds.
 
 ## Challenges
 

@@ -522,7 +522,7 @@ fn drop_calls_can_be_turned_off() {
     h.clear();
     h.press(Key::Return);
     assert!(
-        spoke(&h, "Spoken call-outs: off. From your next run, play by ear"),
+        spoke(&h, "Spoken call-outs: off. From your next run, a tenth more points"),
         "{:?}",
         h.spoken()
     );

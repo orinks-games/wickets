@@ -68,7 +68,7 @@ Snowfall Skate is listed in Seasonal games through the winter, until the end of 
 
 ## Practice and the tutorial
 
-The tutorial teaches leaning, lanterns, drifts and spins on a slow pond. The practice skate is the village pond with no snow and no score, and every lantern's lane is spoken as it lights. Use it to learn the lanes by ear.
+The tutorial teaches leaning, lanterns, drifts and spins on a slow pond. The practice skate is the village pond with no snow and no score, and every lantern's lane is spoken as it lights. Use it to learn the lanes.
 
 ## Challenges
 

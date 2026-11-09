@@ -333,7 +333,7 @@ impl TitleGame for DragonDance {
                 Some(if on {
                     "Spoken call-outs: on. The pearl, envelopes and firecrackers are named with their lanes."
                 } else {
-                    "Spoken call-outs: off. You follow the pearl and dodge firecrackers by ear alone."
+                    "Spoken call-outs: off. You follow the pearl and dodge firecrackers without call-outs."
                 }
                 .to_string())
             },

@@ -228,7 +228,7 @@ impl TitleGame for SignalBox {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear every call and cue in the game, with its name and the key that answers it."
+        "Play every call and cue, each with its key."
             .to_string()
     }
 

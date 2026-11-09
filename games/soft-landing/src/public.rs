@@ -51,7 +51,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Action,
-    blurb: "Set a small lander down on the moons of the outer planets, by ear.",
+    blurb: "Set a small lander down on the moons of the outer planets.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
