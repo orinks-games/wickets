@@ -2094,6 +2094,7 @@ dependencies = [
  "hearken",
  "parlor-core",
  "serde",
+ "serde_json",
  "wickets-content",
 ]
 

@@ -29,3 +29,6 @@ serde.workspace = true
 
 [build-dependencies]
 wickets-content = { path = "../../crates/wickets-content" }
+
+[dev-dependencies]
+serde_json.workspace = true

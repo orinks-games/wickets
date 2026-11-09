@@ -6,7 +6,7 @@
 //! plant in your own garden that bloomed beside a different plant, the two
 //! may cross, and the harvest leaves a packet of new seeds that mixes
 //! their traits, with a little chance of something new. Each mix of traits
-//! has its own name, so every species has 54 varieties, 324 in all.
+//! has its own name, so every species has 54 varieties, 540 in all.
 //!
 //! What you find is kept in the [`Collection`], saved apart from the
 //! garden so starting the garden over never loses it. New varieties,
@@ -172,7 +172,7 @@ impl Variety {
         self.traits == Traits::PLAIN
     }
 
-    /// Every variety of every species: 324.
+    /// Every variety of every species: 540.
     pub fn count() -> usize {
         Species::ALL.len() * Traits::all().len()
     }
@@ -222,6 +222,10 @@ pub fn tone_name(species: Species, tone: u8) -> &'static str {
         Species::Sunflower => ["a flute", "a clarinet", "an ocarina"],
         Species::Lavender => ["a glockenspiel", "a celesta", "a vibraphone"],
         Species::Mint => ["a glass pad", "a string pad", "a choir"],
+        Species::Strawberry => ["a mandolin", "a guitar", "a harpsichord"],
+        Species::Chilli => ["a handpan", "a xylophone", "a koto"],
+        Species::Rose => ["a cello", "a French horn", "an oboe"],
+        Species::Jasmine => ["a glass harmonica", "a theremin", "a singing bowl"],
     };
     names[tone.min(TONES - 1) as usize]
 }
@@ -406,6 +410,10 @@ impl Request {
             Species::Sunflower => "a sunflower",
             Species::Lavender => "lavender",
             Species::Mint => "mint",
+            Species::Strawberry => "strawberries",
+            Species::Chilli => "a chilli",
+            Species::Rose => "a rose",
+            Species::Jasmine => "jasmine",
         };
         let from = match self.want {
             Want::Any => String::new(),

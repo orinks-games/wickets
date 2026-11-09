@@ -21,6 +21,10 @@ pub fn song(species: Species) -> &'static str {
         Species::Sunflower => "rooftop-garden/song/sunflower",
         Species::Lavender => "rooftop-garden/song/lavender",
         Species::Mint => "rooftop-garden/song/mint",
+        Species::Strawberry => "rooftop-garden/song/strawberry",
+        Species::Chilli => "rooftop-garden/song/chilli",
+        Species::Rose => "rooftop-garden/song/rose",
+        Species::Jasmine => "rooftop-garden/song/jasmine",
     }
 }
 
@@ -155,4 +159,8 @@ pub const SOUND_CHECK: &[Entry] = &[
     e("Sunflower's part", "The flute melody.", "rooftop-garden/song/sunflower", Play::Music),
     e("Lavender's part", "The chimes.", "rooftop-garden/song/lavender", Play::Music),
     e("Mint's part", "A cool, glassy pad.", "rooftop-garden/song/mint", Play::Music),
+    e("Strawberry's part", "A strummed mandolin on the off-beats.", "rooftop-garden/song/strawberry", Play::Music),
+    e("Chilli's part", "A handpan beat.", "rooftop-garden/song/chilli", Play::Music),
+    e("Rose's part", "A cello line under the flute.", "rooftop-garden/song/rose", Play::Music),
+    e("Jasmine's part", "A glass harmonica. The jasmine sings only from late afternoon until dawn.", "rooftop-garden/song/jasmine", Play::Music),
 ];

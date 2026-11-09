@@ -56,10 +56,48 @@ pub enum Species {
     Sunflower,
     Lavender,
     Mint,
+    Strawberry,
+    Chilli,
+    Rose,
+    Jasmine,
 }
 
+/// How a seed gets into the shed.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Unlock {
+    /// This many harvests in your own garden.
+    Harvests(u32),
+    /// This many neighbours' requests filled.
+    Requests(u32),
+    /// It comes with a keepsake.
+    Keepsake(Keepsake),
+    /// The first chorus: six voices in tune at once.
+    Chorus,
+}
+
+/// The fewest voices that make a chorus, and the size of the first.
+pub const CHORUS: u32 = 6;
+/// How far through the day the jasmine's flowers open; they close at dawn.
+pub const JASMINE_OPENS: f32 = 0.67;
+/// Runners a blooming strawberry sends out a day, on average.
+pub const RUNNER_RATE: f32 = 0.7;
+
 impl Species {
-    pub const ALL: [Species; 6] = [
+    pub const ALL: [Species; 10] = [
+        Species::Tomato,
+        Species::Squash,
+        Species::Bean,
+        Species::Sunflower,
+        Species::Lavender,
+        Species::Mint,
+        Species::Strawberry,
+        Species::Chilli,
+        Species::Rose,
+        Species::Jasmine,
+    ];
+
+    /// The six founding seeds: every challenge garden grows only these.
+    pub const FOUNDING: [Species; 6] = [
         Species::Tomato,
         Species::Squash,
         Species::Bean,
@@ -80,6 +118,10 @@ impl Species {
             Species::Sunflower => "sunflower",
             Species::Lavender => "lavender",
             Species::Mint => "mint",
+            Species::Strawberry => "strawberry",
+            Species::Chilli => "chilli",
+            Species::Rose => "rose",
+            Species::Jasmine => "jasmine",
         }
     }
 
@@ -92,6 +134,10 @@ impl Species {
             Species::Sunflower => "the flute melody",
             Species::Lavender => "the chimes",
             Species::Mint => "a cool, glassy pad",
+            Species::Strawberry => "a strummed mandolin",
+            Species::Chilli => "a handpan beat",
+            Species::Rose => "a cello line under the flute",
+            Species::Jasmine => "a glass harmonica at dusk",
         }
     }
 
@@ -104,6 +150,10 @@ impl Species {
             Species::Sunflower => "sunflowers",
             Species::Lavender => "lavender bunches",
             Species::Mint => "mint sprigs",
+            Species::Strawberry => "strawberry punnets",
+            Species::Chilli => "chilli strings",
+            Species::Rose => "roses",
+            Species::Jasmine => "jasmine sprays",
         }
     }
 
@@ -116,6 +166,10 @@ impl Species {
             Species::Sunflower => "a sunflower head full of seeds",
             Species::Lavender => "a bunch of lavender",
             Species::Mint => "a sprig of mint",
+            Species::Strawberry => "a punnet of strawberries",
+            Species::Chilli => "a string of red chillies",
+            Species::Rose => "a cut rose",
+            Species::Jasmine => "a spray of jasmine",
         }
     }
 
@@ -128,6 +182,10 @@ impl Species {
             Species::Sunflower => 1.2,
             Species::Lavender => 0.8,
             Species::Mint => 2.0,
+            Species::Strawberry => 1.3,
+            Species::Chilli => 1.8,
+            Species::Rose => 1.1,
+            Species::Jasmine => 1.0,
         }
     }
 
@@ -140,16 +198,92 @@ impl Species {
             Species::Sunflower => 0.9,
             Species::Lavender => 0.8,
             Species::Mint => 1.1,
+            Species::Strawberry => 1.0,
+            Species::Chilli => 1.0,
+            Species::Rose => 0.8,
+            Species::Jasmine => 0.9,
         }
     }
 
-    /// Harvests in your own garden before its seeds are in the shed.
-    pub fn unlock_at(self) -> u32 {
+    /// How its growth follows the weather: the chilli races in the sun
+    /// and stalls under cloud and rain.
+    pub fn weather_speed(self, weather: Weather, raining: bool) -> f32 {
+        if self != Species::Chilli {
+            return 1.0;
+        }
+        if raining {
+            return 0.5;
+        }
+        match weather {
+            Weather::Sunny => 1.6,
+            Weather::Breezy => 1.0,
+            Weather::Cloudy | Weather::Showery => 0.5,
+        }
+    }
+
+    /// How often aphids land on it: the rose's thorns keep most off.
+    pub fn pest_rate(self) -> f32 {
+        if self == Species::Rose {
+            0.5
+        } else {
+            1.0
+        }
+    }
+
+    /// How often it gets leggy in bloom: the rose more than most.
+    pub fn leggy_rate(self) -> f32 {
+        if self == Species::Rose {
+            1.5
+        } else {
+            1.0
+        }
+    }
+
+    /// What puts its seeds in the shed.
+    pub fn unlock(self) -> Unlock {
         match self {
-            Species::Tomato | Species::Squash | Species::Bean => 0,
-            Species::Sunflower => 1,
-            Species::Lavender => 3,
-            Species::Mint => 6,
+            Species::Tomato | Species::Squash | Species::Bean => Unlock::Harvests(0),
+            Species::Sunflower => Unlock::Harvests(1),
+            Species::Lavender => Unlock::Harvests(3),
+            Species::Mint => Unlock::Harvests(6),
+            Species::Strawberry => Unlock::Harvests(12),
+            Species::Chilli => Unlock::Requests(5),
+            Species::Rose => Unlock::Keepsake(Keepsake::Trellis),
+            Species::Jasmine => Unlock::Chorus,
+        }
+    }
+
+    /// Whether its seeds are in the shed, for a garden with `harvests`,
+    /// its biggest chorus `chorus`, and the collection `book`.
+    pub fn open(self, harvests: u32, chorus: u32, book: &Collection) -> bool {
+        match self.unlock() {
+            Unlock::Harvests(n) => harvests >= n,
+            Unlock::Requests(n) => book.thanks >= n,
+            Unlock::Keepsake(k) => book.has(k),
+            Unlock::Chorus => chorus >= CHORUS,
+        }
+    }
+
+    /// What is still needed, for a locked seed's row in the shed:
+    /// "4 more harvests to unlock".
+    pub fn still_needed(self, harvests: u32, book: &Collection) -> String {
+        match self.unlock() {
+            Unlock::Harvests(n) => {
+                let n = n.saturating_sub(harvests);
+                format!(
+                    "{n} more {} to unlock",
+                    if n == 1 { "harvest" } else { "harvests" }
+                )
+            }
+            Unlock::Requests(n) => {
+                let n = n.saturating_sub(book.thanks);
+                format!(
+                    "fill {n} more {}",
+                    if n == 1 { "request" } else { "requests" }
+                )
+            }
+            Unlock::Keepsake(k) => format!("comes with the {}", k.name()),
+            Unlock::Chorus => "hear a six-voice chorus".into(),
         }
     }
 
@@ -162,6 +296,10 @@ impl Species {
             Species::Sunflower => "Tall and patient; it sings the melody.",
             Species::Lavender => "Happy in dry soil and slow to grow; it rings the chimes.",
             Species::Mint => "The thirstiest of all, with a cool pad over the top.",
+            Species::Strawberry => "Sends runners into empty planters beside it; it strums the off-beats.",
+            Species::Chilli => "Quick in the sun, slow under cloud or rain, and thirsty; it plays the beat.",
+            Species::Rose => "Slow, and few aphids, but often leggy; it sings a cello line under the flute.",
+            Species::Jasmine => "Its flowers open late in the afternoon, so it sings only toward evening.",
         }
     }
 }
@@ -577,6 +715,10 @@ pub fn number(n: u32) -> String {
         4 => "four".into(),
         5 => "five".into(),
         6 => "six".into(),
+        7 => "seven".into(),
+        8 => "eight".into(),
+        9 => "nine".into(),
+        10 => "ten".into(),
         n => n.to_string(),
     }
 }
@@ -641,6 +783,21 @@ impl Keys {
     }
 }
 
+/// Reads the chorus as saved: a count, or an older save's yes or no.
+fn chorus_size<'de, D: serde::Deserializer<'de>>(d: D) -> Result<u32, D::Error> {
+    #[derive(Deserialize)]
+    #[serde(untagged)]
+    enum Saved {
+        Heard(bool),
+        Size(u32),
+    }
+    Ok(match Saved::deserialize(d)? {
+        Saved::Heard(true) => CHORUS,
+        Saved::Heard(false) => 0,
+        Saved::Size(n) => n,
+    })
+}
+
 fn fresh_rng() -> Rng {
     Rng::from_time()
 }
@@ -664,7 +821,9 @@ pub struct Garden {
     pub shower_at: Option<f32>,
     pub rain_left: f32,
     pub harvests: u32,
-    pub harvested: [u32; 6],
+    /// Harvests of each seed, in [`Species::ALL`] order. Older saves have
+    /// six; [`Garden::repair`] pads them.
+    pub harvested: Vec<u32>,
     pub pests_picked: u32,
     pub best_harmony: u32,
     /// The seeds you may plant.
@@ -674,8 +833,10 @@ pub struct Garden {
     pub goal: Option<Goal>,
     pub day_limit: Option<u32>,
     pub goal_met: bool,
-    /// Whether the whole six-part chorus has been heard in this garden.
-    pub chorus: bool,
+    /// The most voices heard in one chorus in this garden, 0 before the
+    /// first. Older saves kept a yes or no: yes was six.
+    #[serde(default, deserialize_with = "chorus_size")]
+    pub chorus: u32,
     /// The cold frame's planter, as row and column, once it is set.
     #[serde(default)]
     pub cold_frame: Option<(usize, usize)>,
@@ -727,7 +888,7 @@ impl Garden {
             shower_at: None,
             rain_left: 0.0,
             harvests: 0,
-            harvested: [0; 6],
+            harvested: vec![0; Species::ALL.len()],
             pests_picked: 0,
             best_harmony: 0,
             seeds: vec![Species::Tomato, Species::Squash, Species::Bean],
@@ -736,7 +897,7 @@ impl Garden {
             goal: None,
             day_limit: None,
             goal_met: false,
-            chorus: false,
+            chorus: 0,
             cold_frame: None,
             potted_day: 0,
             potting: None,
@@ -786,7 +947,7 @@ impl Garden {
             Period::Weekly => {
                 let mut g = Garden::blank(Kind::Weekly, 3, 3, Rng::seeded(0));
                 g.twist = Some(*rng.pick(&Twist::ROLLED));
-                g.seeds = Species::ALL[..5].to_vec();
+                g.seeds = Species::FOUNDING[..5].to_vec();
                 g.goal = Some(Goal::Harvest(Species::Tomato, 5));
                 g.day_limit = Some(8);
                 g
@@ -794,10 +955,10 @@ impl Garden {
             Period::Monthly => {
                 let mut g = Garden::blank(Kind::Monthly, 3, 4, Rng::seeded(0));
                 g.twist = Some(Twist::Festival);
-                g.seeds = Species::ALL.to_vec();
+                g.seeds = Species::FOUNDING.to_vec();
                 g.goal = Some(Goal::Harmony(6));
                 g.day_limit = Some(10);
-                let mut kinds = Species::ALL.to_vec();
+                let mut kinds = Species::FOUNDING.to_vec();
                 rng.shuffle(&mut kinds);
                 let corners = [0, 3, 8, 11];
                 for (i, &plot) in corners.iter().enumerate() {
@@ -830,6 +991,7 @@ impl Garden {
         if self.seeds.is_empty() {
             self.seeds = vec![Species::Tomato, Species::Squash, Species::Bean];
         }
+        self.harvested.resize(Species::ALL.len(), 0);
         for p in self.plots.iter_mut().flatten() {
             p.traits.repair();
             if !p.water.is_finite() {
@@ -903,11 +1065,28 @@ impl Garden {
         self.notes.push(Note::Expanded);
     }
 
+    /// Whether the jasmine's flowers are open: from late afternoon until
+    /// the next dawn.
+    pub fn jasmine_open(&self) -> bool {
+        self.clock >= JASMINE_OPENS
+    }
+
+    /// Whether `p` is singing its part now: the jasmine only once its
+    /// flowers open.
+    pub fn sings(&self, p: &Plant) -> bool {
+        p.voiced() && (p.species != Species::Jasmine || self.jasmine_open())
+    }
+
+    /// Whether `p` counts toward the harmony now.
+    pub fn tuned(&self, p: &Plant) -> bool {
+        p.in_tune() && self.sings(p)
+    }
+
     /// The different plants in tune right now, in seed order.
     pub fn harmony_parts(&self) -> Vec<Species> {
         Species::ALL
             .into_iter()
-            .filter(|&s| self.plants().any(|(_, p)| p.species == s && p.in_tune()))
+            .filter(|&s| self.plants().any(|(_, p)| p.species == s && self.tuned(p)))
             .collect()
     }
 
@@ -917,7 +1096,7 @@ impl Garden {
         let singers: Vec<&Plant> = self
             .plants()
             .map(|(_, p)| p)
-            .filter(|p| p.species == part && p.in_tune())
+            .filter(|p| p.species == part && self.tuned(p))
             .collect();
         if !singers.is_empty() && singers.iter().all(|p| p.pumpkin) {
             "pumpkin"
@@ -937,7 +1116,7 @@ impl Garden {
             Goal::Harmony(_) => self
                 .harmony()
                 .max(if self.goal_met { goal.target() } else { 0 }),
-            Goal::Harvest(s, _) => self.harvested[s.index()],
+            Goal::Harvest(s, _) => self.harvested.get(s.index()).copied().unwrap_or(0),
         };
         Some((now.min(goal.target()), goal.target()))
     }
@@ -1013,6 +1192,9 @@ impl Garden {
     pub fn describe(&self, i: usize) -> String {
         let place = sentence(&self.place(i));
         let mut s = match &self.plots[i] {
+            Some(p) if p.species == Species::Jasmine && p.voiced() && !self.jasmine_open() => {
+                format!("{place}: {}, closed until late afternoon.", p.describe())
+            }
             Some(p) => format!("{place}: {}.", p.describe()),
             None => format!("{place}: empty soil."),
         };
@@ -1388,6 +1570,7 @@ impl Garden {
         let two = variety.traits.double && self.rng.chance(breeding::DOUBLE_CHANCE);
         let count = if two { 2 } else { 1 };
         self.harvests += count;
+        self.harvested.resize(Species::ALL.len(), 0);
         self.harvested[species.index()] += count;
         self.at(cues::HARVEST, i);
         self.notes.push(Note::Stinger(cues::MUSIC_HARVEST));
@@ -1523,6 +1706,7 @@ impl Garden {
                 self.queue(format!("New keepsake: {}. {}", k.name(), k.about()));
             }
         }
+        self.unlock_seeds();
     }
 
     /// C: sets the cold frame over the planter here.
@@ -1660,15 +1844,36 @@ impl Garden {
         self.say(s);
     }
 
-    /// New seeds and planters, earned by harvests in your own garden.
-    pub fn unlocks(&mut self) {
+    /// Whether `s` has been earned in this garden.
+    pub fn opens(&self, s: Species) -> bool {
+        s.open(self.harvests, self.chorus, &self.book)
+    }
+
+    /// Puts every seed earned so far in the packet, in your own garden,
+    /// and names each new one. Also run as the garden opens, so a garden
+    /// saved before a seed existed gets it if it has already earned it.
+    pub fn unlock_seeds(&mut self) {
+        if self.kind != Kind::Home {
+            return;
+        }
         for s in Species::ALL {
-            if self.harvests >= s.unlock_at() && !self.seeds.contains(&s) {
+            if self.opens(s) && !self.seeds.contains(&s) {
                 self.seeds.push(s);
                 self.cue(cues::UNLOCK);
-                self.queue(format!("New seed: {}, {}.", s.name(), s.voice()));
+                let how = match s.unlock() {
+                    Unlock::Harvests(_) => String::new(),
+                    Unlock::Requests(_) => ", a gift with the thanks".into(),
+                    Unlock::Keepsake(k) => format!(", with the {}", k.name()),
+                    Unlock::Chorus => ", left on the bench".into(),
+                };
+                self.queue(format!("New seed: {}, {}{how}.", s.name(), s.voice()));
             }
         }
+    }
+
+    /// New seeds and planters, earned by harvests in your own garden.
+    pub fn unlocks(&mut self) {
+        self.unlock_seeds();
         if self.harvests >= THIRD_ROW_AT && self.rows < 3 {
             self.expand(3, self.cols);
             self.cue(cues::EXPAND);
@@ -1905,7 +2110,11 @@ impl Garden {
                 p.dry = 0.0;
             }
             if !p.wilted && !p.pest && !p.waterlogged() && p.water > 0.0 && p.stage != Stage::Ripe {
-                let mut rate = p.species.speed() * p.traits.growth_rate() * growth * lit;
+                let mut rate = p.species.speed()
+                    * p.species.weather_speed(self.weather, raining)
+                    * p.traits.growth_rate()
+                    * growth
+                    * lit;
                 if p.stage == Stage::Seed && self.book.has(Keepsake::CompostBin) {
                     rate *= 2.0;
                 }
@@ -1927,7 +2136,7 @@ impl Garden {
                 && !p.wilted
                 && self
                     .rng
-                    .chance((pests * p.traits.pest_rate() * days) as f64)
+                    .chance((pests * p.traits.pest_rate() * p.species.pest_rate() * days) as f64)
             {
                 if self.book.has(Keepsake::BirdBath) && self.rng.chance(0.35) {
                     // A sparrow from the bird bath gets them first.
@@ -1948,7 +2157,10 @@ impl Garden {
                 && !p.wilted
                 && self
                     .rng
-                    .chance((LEGGY_RATE * self.mods.leggy * trellis * days) as f64)
+                    .chance(
+                        (LEGGY_RATE * p.species.leggy_rate() * self.mods.leggy * trellis * days)
+                            as f64,
+                    )
             {
                 p.leggy = true;
                 let tend = self.keys.tend.clone();
@@ -1960,6 +2172,7 @@ impl Garden {
             }
             self.plots[i] = Some(p);
         }
+        self.runners(days);
         // Harmony.
         let h = self.harmony();
         if h > self.best_harmony {
@@ -1973,10 +2186,19 @@ impl Garden {
                 self.queue(format!("{}-part harmony: {}.", number(h), list(&names)));
             }
         }
-        if h as usize == Species::ALL.len() && !self.chorus {
-            self.chorus = true;
+        // A chorus is six voices or more, and each bigger one plays the
+        // stinger again and says its size. It is the full chorus when
+        // every seed in the packet is singing.
+        if h >= CHORUS && h > self.chorus {
+            self.chorus = h;
             self.notes.push(Note::Stinger(cues::MUSIC_CHORUS));
-            self.queue("Full chorus: every voice in tune.");
+            let all = self.seeds.iter().all(|s| self.harmony_parts().contains(s));
+            if all {
+                self.queue(format!("Full chorus: {} voices.", number(h)));
+            } else {
+                self.queue(format!("Chorus: {} voices.", number(h)));
+            }
+            self.unlock_seeds();
         }
         // The goal.
         if let Some((now, target)) = self.progress() {
@@ -1990,6 +2212,14 @@ impl Garden {
         // The day.
         let before = self.clock;
         self.clock += days;
+        if before < JASMINE_OPENS
+            && self.clock >= JASMINE_OPENS
+            && self
+                .plants()
+                .any(|(_, p)| p.species == Species::Jasmine && p.voiced())
+        {
+            self.queue("The jasmine opens.");
+        }
         if before < 0.8 && self.clock >= 0.8 {
             if self.bells {
                 self.cue(cues::SUNDAY_BELLS);
@@ -2034,6 +2264,46 @@ impl Garden {
                 }
             }
             self.notes.push(Note::NewDay);
+        }
+    }
+
+    /// A strawberry in bloom now and then roots a runner in an empty
+    /// planter beside it: a sprout of the same variety.
+    fn runners(&mut self, days: f32) {
+        for i in 0..self.plots.len() {
+            let Some(p) = &self.plots[i] else {
+                continue;
+            };
+            if p.species != Species::Strawberry || p.stage < Stage::Blooming || p.wilted {
+                continue;
+            }
+            let variety = p.variety();
+            if !self.rng.chance((RUNNER_RATE * days) as f64) {
+                continue;
+            }
+            let (r, c) = self.cell(i);
+            let empty: Vec<usize> = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+                .into_iter()
+                .map(|(dr, dc)| (r as i32 + dr, c as i32 + dc))
+                .filter(|&(nr, nc)| {
+                    nr >= 0 && nc >= 0 && nr < self.rows as i32 && nc < self.cols as i32
+                })
+                .map(|(nr, nc)| self.index(nr as usize, nc as usize))
+                .filter(|&j| self.plots[j].is_none())
+                .collect();
+            if empty.is_empty() {
+                continue;
+            }
+            let j = *self.rng.pick(&empty);
+            let mut sprout = Plant::of(variety);
+            sprout.stage = Stage::Sprout;
+            self.plots[j] = Some(sprout);
+            self.at(cues::SPROUT, j);
+            let place = self.place(j);
+            self.queue(format!(
+                "{} runner rooted, {place}.",
+                sentence(&variety.name())
+            ));
         }
     }
 

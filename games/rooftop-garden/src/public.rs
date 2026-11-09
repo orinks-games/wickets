@@ -94,14 +94,13 @@ fn garden_line(ctx: &mut Ctx<Parlor>, saved: &Option<Garden>) -> String {
 }
 
 /// How many kinds of seed your own garden has unlocked.
-fn seeds_open(saved: &Option<Garden>) -> usize {
-    match saved {
-        Some(g) => Species::ALL
-            .iter()
-            .filter(|s| g.harvests >= s.unlock_at())
-            .count(),
-        None => 3,
-    }
+fn seeds_open(ctx: &mut Ctx<Parlor>, saved: &Option<Garden>) -> usize {
+    let book = crate::screens::load_collection(ctx);
+    let (harvests, chorus) = saved.as_ref().map_or((0, 0), |g| (g.harvests, g.chorus));
+    Species::ALL
+        .iter()
+        .filter(|s| s.open(harvests, chorus, &book))
+        .count()
 }
 
 /// Records: your garden, its bests, the seeds and the challenges.
@@ -119,7 +118,7 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         "Bests. Most harvests: {harvests}. Fullest harmony: {harmony} {}. Longest garden: {days} {}. Seeds unlocked: {} of {}.",
         if harmony == 1 { "part" } else { "parts" },
         if days == 1 { "day" } else { "days" },
-        seeds_open(&saved),
+        seeds_open(ctx, &saved),
         Species::ALL.len()
     );
     let challenges: Vec<String> = Period::ALL
@@ -201,7 +200,7 @@ impl TitleGame for RooftopGarden {
                 let book = crate::screens::load_collection(ctx);
                 let seeds = format!(
                     "Seed shed, {} of {} seeds",
-                    seeds_open(&saved),
+                    seeds_open(ctx, &saved),
                     Species::ALL.len()
                 );
                 match book.found.len() {
