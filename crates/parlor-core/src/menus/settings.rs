@@ -78,6 +78,7 @@ mod tests {
     use crate::menus::labels;
     use crate::menus::testing::Base;
     use crate::Records;
+    use crate::OpenGame;
     use hearken::{Headless, Key};
 
     const KEY: &str = "dummy/call_outs";
@@ -104,7 +105,7 @@ mod tests {
 
     fn settings() -> Headless<Parlor> {
         let mut h = Headless::new(Default::default(), Base);
-        h.app.ctx.game.game_settings = Some(rows);
+        h.app.ctx.game.open = Some(OpenGame::new("game", "Game", rows));
         h.app.ctx.push(SettingsScreen::<Parlor>::new());
         h.frame(0.0);
         h

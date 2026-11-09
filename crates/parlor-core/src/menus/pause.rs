@@ -173,6 +173,7 @@ pub fn quit_confirm() -> ConfirmScreen<Parlor> {
 mod tests {
     use super::*;
     use crate::menus::testing::{rows, Base};
+    use crate::OpenGame;
     use hearken::{Bus, Headless, Key, State};
 
     struct Run;
@@ -300,7 +301,10 @@ mod tests {
         let mut h = Headless::new(Default::default(), Base);
         h.app.ctx.push(Run);
         h.frame(0.0);
-        h.app.ctx.game.pause_music = Some("belfry/music/pause");
+        h.app.ctx.game.open = Some(OpenGame {
+            pause_music: Some("belfry/music/pause"),
+            ..OpenGame::new("belfry", "Belfry", |_| Vec::new())
+        });
         h.app
             .ctx
             .push(Pause::new("## Help\n\nText.\n", Leave::Title("base")));
