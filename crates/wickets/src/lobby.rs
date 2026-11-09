@@ -150,7 +150,6 @@ const NOT_PLAYED: &str = "not played yet";
 /// with nothing said about it later.
 fn forget_story_scene(ctx: &mut Ctx<Parlor>) {
     ctx.game.story_scene = None;
-    ctx.game.story_done = false;
 }
 
 /// Saves `g` as the last game played, for the Continue row.
