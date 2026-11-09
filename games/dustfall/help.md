@@ -65,6 +65,10 @@ The game saves at the start of each colony phase. Leaving during a night brings 
 
 A breach that reaches the dome darkens the building under that column, as does any sapper's breach. A dark building does nothing until repaired for 4 metal.
 
+## Challenges
+
+Challenges, on the title, gives everyone the same sky. Tonight's sky is one night, the raiders of a night between 3 and 9, on a colony already built for them: the gun is yours from the first turn. Siege week is five nights, 4 to 8, on a colony holding the stores the first nights would have brought, so spend them before the raiders come. The long watch is a whole colony, twelve nights to Relief. Only your best result on each is kept, and a run left from the pause menu does not count.
+
 ## Scores and records
 
 Each raider down scores points, 10 for a drifter or skitter up to 300 for the carrier. Holding a night scores 50, and a night with no breach scores 50 more. When Relief lands, the power and metal in store are added. Records keeps your best score and the most nights you have held.

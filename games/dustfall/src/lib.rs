@@ -9,6 +9,7 @@
 //! buildings that keep the colony fed and powered. Hold twelve nights and
 //! Relief lands.
 
+pub mod challenge;
 pub mod colony;
 pub mod menus;
 pub mod night;
@@ -22,8 +23,9 @@ use hearken::menu::MenuItem;
 use hearken::screens::{ConfirmScreen, SettingsRow};
 use hearken::Ctx;
 use parlor_core::menus::{self as pm, labels, TitleGame, TitleRow};
-use parlor_core::{Category, GameInfo, Pages, Parlor, Rng};
+use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Rng};
 
+pub use crate::challenge::{ChallengeHost, ChallengesMenu, Sky, CHALLENGES_NAME};
 use crate::colony::{share, ColonyScreen};
 use crate::progress::{nights_phrase, records_line, Progress};
 use crate::rules::nights::RELIEF_NIGHT;
@@ -43,7 +45,7 @@ pub const INFO: GameInfo = GameInfo {
     category: Category::Puzzle,
     blurb: "Hold a dome through twelve nights of raiders, one turn at a time.",
     open: |ctx| ctx.push(title()),
-    challenge: None,
+    challenge: Some(challenge::open_challenge),
     event: None,
     event_done: None,
     tutorial: crate::tutorial::lesson,
@@ -172,15 +174,22 @@ impl TitleGame for Dustfall {
             1 => "Relief landed once.".to_string(),
             n => format!("Relief landed {n} times."),
         };
-        vec![format!(
-            "Records. {} {colonies} {reliefs}",
-            records_line(ctx)
-        )]
+        let challenges: Vec<String> = Period::ALL
+            .into_iter()
+            .map(|period| {
+                let ch = Challenge::current(ctx, ID, period);
+                Challenges::summary(ctx, &ch)
+            })
+            .collect();
+        vec![
+            format!("Records. {} {colonies} {reliefs}", records_line(ctx)),
+            format!("Challenges. {}", challenges.join(" ")),
+        ]
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
         format!(
-            "Your best score, the most nights held of {RELIEF_NIGHT}, and how many colonies reached Relief."
+            "Your best score, the most nights held of {RELIEF_NIGHT}, how many colonies reached Relief, and your challenge results."
         )
     }
 
@@ -189,13 +198,15 @@ impl TitleGame for Dustfall {
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {
-        ctx.push(Pages::new([
-            "Challenges are not ready yet. They come in a later build.",
-        ]));
+        ctx.push(ChallengesMenu::new());
     }
 
-    fn challenges_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Challenges come in a later build.".to_string()
+    fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
+        let daily = Challenge::current(ctx, ID, Period::Daily);
+        format!(
+            "A night each day, a siege each week and a whole colony each month, the same sky for every player. {}",
+            daily.resets()
+        )
     }
 
     fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
@@ -281,8 +292,7 @@ impl TitleGame for Dustfall {
     }
 
     fn first_visit(&mut self, ctx: &mut Ctx<Parlor>) -> bool {
-        let p = Progress::load(ctx);
-        !pm::tutorial_read(ctx, ID) && !p.tutorial_seen && p.colonies == 0
+        !pm::tutorial_read(ctx, ID) && Progress::load(ctx).colonies == 0
     }
 }
 

@@ -8,13 +8,17 @@
 use std::collections::VecDeque;
 
 use hearken::text::sentence_start;
+use hearken::visuals::{Scene, GOLD, PAPER, RED, TEAL};
 use hearken::{Bus, Ctx, InputEvent, Key, State, Vec3};
-use parlor_core::menus::{self, labels, Back, Leave, Results};
-use parlor_core::{Parlor, ParlorAction, Records, ScoreResult, StatusKey};
+use parlor_core::menus::{self, labels, Back, Results};
+use parlor_core::{
+    Challenge, Challenges, Parlor, ParlorAction, Period, Records, ScoreResult, StatusKey,
+};
 
-use crate::colony::{notices, refusal_words, ColonyScreen, Shared};
+use crate::challenge::{self, CHALLENGES_NAME};
+use crate::colony::{notices, refusal_words, ColonyScreen, Mode, Shared, Watch};
 use crate::progress::{nights_phrase, Progress, NIGHTS_BOARD, SCORE_BOARD};
-use crate::rules::grid::{column_name, NEAR_ROW};
+use crate::rules::grid::{column_name, Work, COLS, NEAR_ROW, ROWS};
 use crate::rules::nights::RELIEF_NIGHT;
 use crate::rules::raiders::State as RaiderState;
 use crate::rules::{
@@ -160,7 +164,6 @@ pub struct NightScreen {
     /// What the night left for the colony phase.
     notices: Vec<String>,
     ended: bool,
-    practice: bool,
     /// For the tutorial: the controls tried.
     pub status_asked: bool,
     pub hint_asked: bool,
@@ -185,21 +188,23 @@ impl NightScreen {
             dome_seen: dome,
             notices: Vec::new(),
             ended: false,
-            practice: false,
             status_asked: false,
             hint_asked: false,
             turns_ended: 0,
         }
     }
 
-    /// The tutorial's night: it never leaves for the colony or the results.
-    pub fn practice(mut self) -> NightScreen {
-        self.practice = true;
-        self
+    pub fn run(&self) -> std::cell::Ref<'_, Watch> {
+        self.run.borrow()
     }
 
-    pub fn run(&self) -> std::cell::Ref<'_, Run> {
-        self.run.borrow()
+    fn mode(&self) -> Mode {
+        self.run.borrow().mode
+    }
+
+    /// The tutorial's night never leaves for the colony or the results.
+    fn practice(&self) -> bool {
+        self.mode() == Mode::Practice
     }
 
     /// Whether the raiders' beats are still playing.
@@ -638,7 +643,7 @@ impl NightScreen {
 
     fn open_colony(&mut self, ctx: &mut Ctx<Parlor>) {
         self.ended = true;
-        if self.practice {
+        if self.practice() {
             ctx.say_queued("The tutorial night is over.");
             return;
         }
@@ -649,11 +654,17 @@ impl NightScreen {
 
     fn finish(&mut self, ctx: &mut Ctx<Parlor>) {
         self.ended = true;
-        if self.practice {
-            return;
-        }
-        let run = self.run.borrow().clone();
+        let mode = self.mode();
+        let run = self.run.borrow().run.clone();
         let won = run.phase == Phase::Relief;
+        match mode {
+            Mode::Practice => {}
+            Mode::Colony => self.finish_colony(ctx, &run, won),
+            Mode::Challenge(period) => self.finish_challenge(ctx, &run, won, period),
+        }
+    }
+
+    fn end_music(ctx: &mut Ctx<Parlor>, won: bool) {
         ctx.audio.play_music(
             Some(if won {
                 sound::RELIEF_MUSIC
@@ -662,6 +673,20 @@ impl NightScreen {
             }),
             false,
         );
+    }
+
+    /// "Dome 80, shield 20. Power 9, metal 4, food 6."
+    fn colony_line(run: &Run) -> String {
+        format!(
+            "Dome {}, shield {}. {}.",
+            run.colony.dome,
+            run.colony.shield,
+            run.colony.resources.words()
+        )
+    }
+
+    fn finish_colony(&mut self, ctx: &mut Ctx<Parlor>, run: &Run, won: bool) {
+        Self::end_music(ctx, won);
         let mut p = Progress::load(ctx);
         p.saved = None;
         if won {
@@ -690,12 +715,7 @@ impl NightScreen {
                 sentence_start(&nights_phrase(run.nights_held)),
                 run.downed
             ),
-            format!(
-                "Dome {}, shield {}. {}.",
-                run.colony.dome,
-                run.colony.shield,
-                run.colony.resources.words()
-            ),
+            Self::colony_line(run),
         ];
         let again = if won {
             labels::PLAY_AGAIN
@@ -707,6 +727,58 @@ impl NightScreen {
             "A new colony, from night 1.",
             |ctx| crate::begin(ctx, None, true),
         ));
+    }
+
+    /// A challenge's end: the score goes on its board, and the results
+    /// lead back to the challenges.
+    fn finish_challenge(&mut self, ctx: &mut Ctx<Parlor>, run: &Run, won: bool, period: Period) {
+        Self::end_music(ctx, won);
+        let ch = Challenge::current(ctx, ID, period);
+        let result = Challenges::submit(ctx, &ch, run.score);
+        let best = match result {
+            ScoreResult::First => "Your first result on this challenge.".to_string(),
+            ScoreResult::NewBest { previous } => format!("A new best, beating {previous}."),
+            ScoreResult::Short { best } => format!("Your best is {best}."),
+        };
+        let name = challenge::name(ctx, period);
+        let summary = if won {
+            format!("{name} held. {} points. {best}", run.score)
+        } else {
+            format!(
+                "The dome fell on night {}. {} points. {best}",
+                run.night, run.score
+            )
+        };
+        let streak = Challenges::streak(ctx, ID, period).max(1);
+        let held = if run.nights() == 1 {
+            format!("Raiders downed: {}.", run.downed)
+        } else {
+            format!(
+                "{} of {} held. Raiders downed: {}.",
+                sentence_start(&nights_phrase(run.nights_held)),
+                nights_phrase(run.nights()),
+                run.downed
+            )
+        };
+        let pages = vec![
+            summary.clone(),
+            held,
+            Self::colony_line(run),
+            format!(
+                "{} result: {} points. A {streak} {} streak. {}",
+                ch.title(),
+                run.score,
+                period.unit(),
+                ch.resets()
+            ),
+        ];
+        ctx.replace(
+            Results::new(summary, pages, Back::Challenges(CHALLENGES_NAME)).again(
+                labels::challenge_again(period),
+                "The same sky, straight away. Only your best result is kept.",
+                move |ctx| challenge::start(ctx, period, true),
+            ),
+        );
     }
 }
 
@@ -784,20 +856,84 @@ pub fn route_words(run: &Run, raider: &Raider) -> String {
 }
 
 impl State<Parlor> for NightScreen {
+    fn visuals(&self, ctx: &Ctx<Parlor>) -> Scene {
+        let mut scene = Scene::from_lines(self.lines(ctx));
+        let run = self.run.borrow();
+        // The grid fills the drawing area: the horizon at the top, the
+        // dome along the bottom.
+        let (x0, y0, cell_w, cell_h) = (100.0, 30.0, 160.0, 80.0);
+        let x_of = |col: u8| x0 + f32::from(col) * cell_w;
+        let y_of = |row: u8| y0 + f32::from(ROWS - row) * cell_h;
+        for col in 0..COLS {
+            for row in NEAR_ROW..=ROWS {
+                scene.line(
+                    (x_of(col), y_of(row)),
+                    (x_of(col) + cell_w, y_of(row)),
+                    1.0,
+                    PAPER,
+                );
+                scene.line(
+                    (x_of(col), y_of(row)),
+                    (x_of(col), y_of(row) + cell_h),
+                    1.0,
+                    PAPER,
+                );
+            }
+        }
+        let right = x_of(COLS);
+        let bottom = y_of(NEAR_ROW) + cell_h;
+        scene.line((right, y_of(ROWS)), (right, bottom), 1.0, PAPER);
+        scene.line((x0, bottom), (right, bottom), 1.0, PAPER);
+        for (at, work) in run.grid.works() {
+            let (x, y) = (x_of(at.col), y_of(at.row));
+            match work {
+                Work::Wall { .. } => scene.rect(x + 10.0, y + 30.0, cell_w - 20.0, 20.0, PAPER),
+                Work::Flak { .. } => scene.circle(x + cell_w / 2.0, y + cell_h / 2.0, 14.0, TEAL),
+                Work::Mine => scene.circle(x + cell_w / 2.0, y + cell_h / 2.0, 8.0, GOLD),
+            }
+        }
+        for raider in &run.raiders {
+            let (x, y) = (
+                x_of(raider.at.col) + cell_w / 2.0,
+                y_of(raider.at.row) + cell_h / 2.0,
+            );
+            scene.circle(x, y, 12.0 + 4.0 * f32::from(raider.hits), RED);
+            scene.label(
+                x - 6.0,
+                y - 10.0,
+                raider.kind.title().chars().take(1).collect::<String>(),
+                PAPER,
+            );
+        }
+        // The dome under the grid, the gun on its rail.
+        scene.rect(x0, bottom + 6.0, cell_w * f32::from(COLS), 24.0, TEAL);
+        scene.rect(x_of(run.gun) + 50.0, bottom - 4.0, 60.0, 16.0, GOLD);
+        scene.label(
+            x0,
+            bottom + 40.0,
+            format!(
+                "Night {}, turn {}. Dome {}, shield {}.",
+                run.night, run.turn, run.colony.dome, run.colony.shield
+            ),
+            PAPER,
+        );
+        scene
+    }
+
     fn name(&self) -> &'static str {
         NIGHT_NAME
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         sound::on_watch(ctx);
-        if !self.practice {
+        if !self.practice() {
             self.settings(ctx);
         }
         self.drain(ctx);
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
-        if !self.practice {
+        if !self.practice() {
             self.settings(ctx);
         }
         let layers = self.status_layers();
@@ -812,8 +948,9 @@ impl State<Parlor> for NightScreen {
         let action = ctx.action_for(event);
         if action.is_none() {
             match event.pressed() {
-                Some(Key::Escape) if !self.practice => {
-                    menus::pause(ctx, HELP, Leave::Title(TITLE_NAME));
+                Some(Key::Escape) if !self.practice() => {
+                    let leave = self.mode().leave();
+                    menus::pause(ctx, HELP, leave);
                 }
                 Some(Key::Return | Key::KpEnter) => self.end_turn(ctx),
                 _ => {}

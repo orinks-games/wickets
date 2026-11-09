@@ -5,9 +5,8 @@ use hearken::text::sentence_start;
 use hearken::Ctx;
 use parlor_core::{Lesson, Live, Parlor, ParlorAction};
 
-use crate::colony::share;
+use crate::colony::{share_as, Mode};
 use crate::night::NightScreen;
-use crate::progress::Progress;
 use crate::rules::{Input, Run};
 use crate::ID;
 
@@ -19,7 +18,7 @@ pub fn night() -> Live<NightScreen> {
     let mut run = Run::new(SEED);
     run.take_events();
     run.apply(Input::Ready).expect("the practice night starts");
-    Live::new(NightScreen::new(share(run)).practice())
+    Live::new(NightScreen::new(share_as(run, Mode::Practice)))
 }
 
 pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
@@ -104,9 +103,4 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, night: Live<NightScreen>) -> Lesson {
         "On a real night the drifters fire back: a rising whine under a column means move the gun off it before you end the turn. When the last raider is gone, the colony phase opens, and what you build there changes the routes they take. {} fires, Enter ends the turn, {up} and {down} scan, and {hint} says where a raider is heading. Good luck on the watch.",
         sentence_start(&fire)
     ))
-    .on_exit(|ctx| {
-        let mut p = Progress::load(ctx);
-        p.tutorial_seen = true;
-        p.save(ctx);
-    })
 }

@@ -5,14 +5,16 @@
 //! building, and the placer that walks the grid for a work.
 
 use std::cell::RefCell;
+use std::ops::{Deref, DerefMut};
 use std::rc::Rc;
 
 use hearken::menu::{Menu, MenuCore, MenuItem};
 use hearken::text::{end_sentence, sentence_start};
 use hearken::{Bus, Ctx, InputEvent, Key, State};
 use parlor_core::menus::{self, labels, Leave};
-use parlor_core::{Parlor, ParlorAction};
+use parlor_core::{Parlor, ParlorAction, Period};
 
+use crate::challenge::CHALLENGES_NAME;
 use crate::night::NightScreen;
 use crate::progress::Progress;
 use crate::rules::grid::{column_name, COLS, WORK_ROWS};
@@ -24,11 +26,68 @@ pub const COLONY_NAME: &str = "dustfall_colony";
 pub const SLOTS_NAME: &str = "dustfall_slots";
 pub const PLACER_NAME: &str = "dustfall_placer";
 
-/// The run, shared by the screens of one colony.
-pub type Shared = Rc<RefCell<Run>>;
+/// What kind of watch a run is, which decides what is saved and where
+/// leaving goes.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Mode {
+    /// A colony of your own: saved between nights, left for the title.
+    Colony,
+    /// The tutorial's night: nothing saved, nothing left for.
+    Practice,
+    /// A challenge: scored on its board, left for the challenges menu.
+    Challenge(Period),
+}
 
+impl Mode {
+    /// Where the pause menu's leave row goes.
+    pub fn leave(self) -> Leave {
+        match self {
+            Mode::Challenge(_) => Leave::Challenge(CHALLENGES_NAME),
+            _ => Leave::Title(TITLE_NAME),
+        }
+    }
+}
+
+/// A run and the kind of watch it is. It reads as the run itself.
+#[derive(Clone, Debug)]
+pub struct Watch {
+    pub run: Run,
+    pub mode: Mode,
+}
+
+impl Watch {
+    /// Saves the run as the colony to continue, when it is one.
+    pub fn keep(&self, ctx: &mut Ctx<Parlor>) {
+        if self.mode == Mode::Colony {
+            Progress::keep(ctx, &self.run);
+        }
+    }
+}
+
+impl Deref for Watch {
+    type Target = Run;
+
+    fn deref(&self) -> &Run {
+        &self.run
+    }
+}
+
+impl DerefMut for Watch {
+    fn deref_mut(&mut self) -> &mut Run {
+        &mut self.run
+    }
+}
+
+/// The run, shared by the screens of one watch.
+pub type Shared = Rc<RefCell<Watch>>;
+
+/// A colony of your own.
 pub fn share(run: Run) -> Shared {
-    Rc::new(RefCell::new(run))
+    share_as(run, Mode::Colony)
+}
+
+pub fn share_as(run: Run, mode: Mode) -> Shared {
+    Rc::new(RefCell::new(Watch { run, mode }))
 }
 
 /// "8 metal", "6 metal and 2 power".
@@ -252,8 +311,6 @@ pub struct ColonyScreen {
     notices: Vec<String>,
     /// Said after the title: what the night left.
     told: bool,
-    /// In the tutorial the colony is only talked about, never entered.
-    practice: bool,
 }
 
 impl ColonyScreen {
@@ -272,13 +329,11 @@ impl ColonyScreen {
             run,
             notices,
             told: false,
-            practice: false,
         }
     }
 
-    pub fn practice(mut self) -> ColonyScreen {
-        self.practice = true;
-        self
+    fn mode(&self) -> Mode {
+        self.run.borrow().mode
     }
 
     /// Lines the night screen kept from the night's end, said after the
@@ -288,7 +343,7 @@ impl ColonyScreen {
         self
     }
 
-    pub fn run(&self) -> std::cell::Ref<'_, Run> {
+    pub fn run(&self) -> std::cell::Ref<'_, Watch> {
         self.run.borrow()
     }
 
@@ -313,9 +368,7 @@ impl ColonyScreen {
                     events.iter().filter_map(|e| done_words(e, &r)).collect()
                 };
                 ctx.audio.play(sound::BUY, Bus::EFFECTS);
-                if !self.practice {
-                    Progress::keep(ctx, &self.run.borrow());
-                }
+                self.run.borrow().keep(ctx);
                 self.refresh(ctx, true);
                 ctx.say(lines.join(" "));
                 let current = self.current_text(ctx);
@@ -330,7 +383,7 @@ impl ColonyScreen {
     }
 
     fn ready(&mut self, ctx: &mut Ctx<Parlor>) {
-        if self.practice {
+        if self.mode() == Mode::Practice {
             ctx.say("The tutorial colony stays as it is.");
             return;
         }
@@ -367,9 +420,7 @@ impl Menu for ColonyScreen {
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         sound::on_watch(ctx);
-        if !self.practice {
-            Progress::keep(ctx, &self.run.borrow());
-        }
+        self.run.borrow().keep(ctx);
         hearken::menu::menu_enter(self, ctx);
         if !self.told {
             self.told = true;
@@ -380,7 +431,8 @@ impl Menu for ColonyScreen {
     }
 
     fn on_escape(&mut self, ctx: &mut Ctx<Parlor>) {
-        menus::pause(ctx, HELP, Leave::Title(TITLE_NAME));
+        let leave = self.mode().leave();
+        menus::pause(ctx, HELP, leave);
     }
 
     fn build_items(&mut self, _ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
@@ -602,7 +654,7 @@ impl Menu for SlotPicker {
                                         .join(" ")
                                 };
                                 ctx.audio.play(sound::BUY, Bus::EFFECTS);
-                                Progress::keep(ctx, &s.run.borrow());
+                                s.run.borrow().keep(ctx);
                                 ctx.pop_with(line);
                             }
                             Err(refusal) => {
@@ -700,7 +752,7 @@ impl Placer {
                         .join(" ")
                 };
                 sound::at(ctx, sound::BUY, self.at);
-                Progress::keep(ctx, &self.run.borrow());
+                self.run.borrow().keep(ctx);
                 ctx.pop_with(line);
             }
             Err(refusal) => {

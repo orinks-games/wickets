@@ -1155,6 +1155,85 @@
     }
    ],
    "loudness": -27
+  },
+  {
+   "out": "menu/move.wav",
+   "_about": "Menu move: a dry radio click.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "blip",
+     "at": 0,
+     "gain": 0.7,
+     "params": {
+      "freq": 900,
+      "dur": 0.035
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 2600
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "loudness": -30
+  },
+  {
+   "out": "menu/select.wav",
+   "_about": "Menu select: a soft sonar ping.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "blip",
+     "at": 0,
+     "gain": 0.8,
+     "params": {
+      "freq": 1320,
+      "dur": 0.12
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.18,
+     "size": 0.35
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "loudness": -26
+  },
+  {
+   "out": "menu/back.wav",
+   "_about": "Menu back: a lower, shorter ping.",
+   "layers": [
+    {
+     "type": "sfx",
+     "kind": "blip",
+     "at": 0,
+     "gain": 0.7,
+     "params": {
+      "freq": 780,
+      "dur": 0.09
+     }
+    }
+   ],
+   "fx": [
+    {
+     "type": "lowpass",
+     "cutoff": 3000
+    },
+    {
+     "type": "mono"
+    }
+   ],
+   "loudness": -29
   }
  ]
 }

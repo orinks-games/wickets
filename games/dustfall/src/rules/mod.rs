@@ -268,10 +268,28 @@ fn idle_rng() -> Rng {
     Rng::seeded(0)
 }
 
+/// Stores a skipped night would have brought, for a run that starts late.
+pub const SKIPPED_NIGHT_METAL: u32 = 5;
+pub const SKIPPED_NIGHT_POWER: u32 = 2;
+
+fn first_night() -> u8 {
+    1
+}
+
+fn relief_night() -> u8 {
+    RELIEF_NIGHT
+}
+
 /// One run, from the first colony phase to Relief or the fallen dome.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Run {
     seed: u64,
+    /// The night the run started on: 1, or later for a challenge.
+    #[serde(default = "first_night")]
+    pub first: u8,
+    /// The night that brings Relief once held.
+    #[serde(default = "relief_night")]
+    pub relief: u8,
     /// The night in progress, or the one coming next in the colony phase.
     pub night: u8,
     pub phase: Phase,
@@ -308,6 +326,8 @@ impl Run {
     pub fn new(seed: u64) -> Run {
         let mut run = Run {
             seed,
+            first: 1,
+            relief: RELIEF_NIGHT,
             night: 1,
             phase: Phase::Colony,
             turn: 0,
@@ -344,8 +364,26 @@ impl Run {
     pub fn at_night(seed: u64, night: u8) -> Run {
         let mut run = Run::new(seed);
         run.night = night.clamp(1, RELIEF_NIGHT);
+        run.first = run.night;
         run.forecast = run.draw_forecast();
         run
+    }
+
+    /// A run of the nights `first` to `last`, in the colony phase before
+    /// `first`, with the stores the skipped nights would have brought.
+    /// Relief lands once `last` is held.
+    pub fn prepared(seed: u64, first: u8, last: u8) -> Run {
+        let mut run = Run::at_night(seed, first);
+        run.relief = last.clamp(run.night, RELIEF_NIGHT);
+        let skipped = u32::from(run.night - 1);
+        run.colony.resources.metal += SKIPPED_NIGHT_METAL * skipped;
+        run.colony.resources.power += SKIPPED_NIGHT_POWER * skipped;
+        run
+    }
+
+    /// How many nights the run holds in all.
+    pub fn nights(&self) -> u8 {
+        self.relief + 1 - self.first
     }
 
     pub fn seed(&self) -> u64 {
@@ -959,7 +997,7 @@ impl Run {
             take: self.take,
             clean,
         });
-        if self.night >= RELIEF_NIGHT {
+        if self.night >= self.relief {
             self.score += (self.colony.resources.power + self.colony.resources.metal) as u64;
             self.tech += RELIEF_TECH;
             self.phase = Phase::Relief;

@@ -27,8 +27,6 @@ pub struct Progress {
     /// Up and Down scan the grid left to right, not nearest first.
     #[serde(default)]
     pub scan_left_to_right: bool,
-    #[serde(default)]
-    pub tutorial_seen: bool,
     /// Colonies started.
     #[serde(default)]
     pub colonies: u32,
@@ -48,7 +46,6 @@ impl Default for Progress {
             call_outs: true,
             confirm_end: false,
             scan_left_to_right: false,
-            tutorial_seen: false,
             colonies: 0,
             reliefs: 0,
         }

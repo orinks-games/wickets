@@ -4,7 +4,7 @@
 use dustfall::colony::{COLONY_NAME, PLACER_NAME, SLOTS_NAME};
 use dustfall::night::NIGHT_NAME;
 use dustfall::rules::Run;
-use dustfall::{title_with_seed, tutorial, TITLE_NAME};
+use dustfall::{title_with_seed, tutorial, CHALLENGES_NAME, TITLE_NAME};
 use hearken::{Headless, Key};
 use parlor_core::{Date, Parlor, ParlorData};
 
@@ -538,4 +538,138 @@ fn records_read_before_and_after_a_colony() {
         "{}",
         all_spoken(&h)
     );
+}
+
+// --- challenges ---------------------------------------------------------------
+
+/// The challenges menu, open from the title.
+fn challenges() -> Headless<Parlor> {
+    let mut h = start();
+    h.clear();
+    choose(&mut h, "Challenges");
+    assert_eq!(h.app.top_name(), CHALLENGES_NAME, "{}", all_spoken(&h));
+    h
+}
+
+#[test]
+fn the_challenges_menu_names_the_three_skies() {
+    let h = challenges();
+    let rows = rows(&h);
+    assert_eq!(rows.len(), 4, "{rows:?}");
+    assert!(
+        rows[0].starts_with("Daily, Tonight's sky: one night, the raiders of night"),
+        "{rows:?}"
+    );
+    assert!(rows[0].ends_with("Not played yet"), "{rows:?}");
+    assert!(
+        rows[1].starts_with("Weekly, Siege week: five nights, 4 to 8"),
+        "{rows:?}"
+    );
+    assert!(
+        rows[2].starts_with("Monthly, The long watch: a whole colony, twelve nights to Relief"),
+        "{rows:?}"
+    );
+    assert_eq!(rows[3], "Back");
+}
+
+#[test]
+fn tonights_sky_opens_on_a_built_colony_and_scores_its_board() {
+    let mut h = challenges();
+    h.clear();
+    choose(&mut h, "Daily");
+    assert_eq!(h.app.top_name(), "pages");
+    let said = all_spoken(&h);
+    assert!(
+        said.contains("Tonight's sky: One night against the raiders of night"),
+        "{said}"
+    );
+    assert!(!said.contains("not played yet"), "{said}");
+    h.press(Key::Return);
+    assert_eq!(h.app.top_name(), NIGHT_NAME, "{}", all_spoken(&h));
+    // The colony came built: works on the grid, and two missiles in the rack.
+    let lines = h.app.top_lines();
+    let second = &lines[1];
+    assert!(second.contains("missiles 2"), "{second}");
+    settle(&mut h);
+    h.clear();
+    h.press(Key::S);
+    h.press(Key::S);
+    let said = all_spoken(&h);
+    assert!(said.contains("Missiles 2."), "{said}");
+    // The night to its end: the results lead back to the challenges.
+    watch_night(&mut h);
+    assert_eq!(h.app.top_name(), "results", "{}", all_spoken(&h));
+    let said = all_spoken(&h);
+    assert!(
+        said.contains("Tonight's sky held.") || said.contains("The dome fell on night"),
+        "{said}"
+    );
+    assert!(
+        said.contains("Your first result on this challenge."),
+        "{said}"
+    );
+    let results = rows(&h);
+    assert!(
+        results
+            .iter()
+            .any(|r| r == "Play this daily challenge again"),
+        "{results:?}"
+    );
+    choose(&mut h, "Back to the challenges");
+    assert_eq!(h.app.top_name(), CHALLENGES_NAME);
+    assert!(rows(&h)[0].contains("Done, best"), "{:?}", rows(&h));
+    // Nothing of it was saved as a colony.
+    h.press(Key::Escape);
+    assert_eq!(h.app.top_name(), TITLE_NAME);
+    assert_eq!(rows(&h)[0], "Play", "{:?}", rows(&h));
+}
+
+#[test]
+fn siege_week_opens_on_a_stocked_colony_and_leaving_does_not_count() {
+    let mut h = challenges();
+    choose(&mut h, "Weekly");
+    h.clear();
+    h.press(Key::Return);
+    assert_eq!(h.app.top_name(), COLONY_NAME, "{}", all_spoken(&h));
+    let said = all_spoken(&h);
+    assert!(said.contains("Before night 4."), "{said}");
+    assert!(said.contains("Power 18, metal 39, food 6"), "{said}");
+    // Escape pauses; leaving goes back to the challenges, unscored.
+    h.press(Key::Escape);
+    assert_eq!(h.app.top_name(), "pause");
+    choose(&mut h, "Leave the challenge");
+    assert_eq!(h.app.top_name(), CHALLENGES_NAME, "{}", all_spoken(&h));
+    assert!(rows(&h)[1].ends_with("Not played yet"), "{:?}", rows(&h));
+    h.press(Key::Escape);
+    assert_eq!(rows(&h)[0], "Play", "{:?}", rows(&h));
+}
+
+#[test]
+fn the_long_watch_is_a_whole_colony_from_night_one() {
+    let mut h = challenges();
+    choose(&mut h, "Monthly");
+    h.clear();
+    h.press(Key::Return);
+    assert_eq!(h.app.top_name(), COLONY_NAME, "{}", all_spoken(&h));
+    assert!(spoke(&h, "Before night 1."), "{}", all_spoken(&h));
+    assert!(
+        spoke(&h, "Power 12, metal 24, food 6"),
+        "{}",
+        all_spoken(&h)
+    );
+}
+
+#[test]
+fn leaving_the_tutorial_early_keeps_the_first_visit() {
+    let mut h = Headless::new(data(), title_with_seed(SEED));
+    assert!(spoke(&h, "New here?"), "{}", all_spoken(&h));
+    h.press(Key::Return);
+    assert_eq!(h.app.top_name(), "lesson");
+    h.press(Key::Escape);
+    assert_eq!(h.app.top_name(), TITLE_NAME);
+    h.press(Key::Escape);
+    h.clear();
+    h.app.ctx.push(title_with_seed(SEED));
+    h.frame(0.0);
+    assert!(spoke(&h, "New here?"), "{}", all_spoken(&h));
 }
