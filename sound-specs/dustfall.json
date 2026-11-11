@@ -1,0 +1,3686 @@
+{
+  "genny": "blal1",
+  "_about": "Dustfall: the gun, the raiders' engines by kind, the wave calls, charges, breaches, mines and flak, the colony phase and the menu. Everything is placed in the sky in play, so one-shots render mono.",
+  "sounds": [
+    {
+      "out": "music/title.wav",
+      "_about": "The title: a slow minor sway under a marimba line, with wind under it all.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[D3,F3,A3]:4 | [Bb2,D3,F3]:4 | [F2,A2,C3]:4 | [C3,E3,G3]:4 | [D3,F3,A3]:4 | [Bb2,D3,F3]:4 | [G2,Bb2,D3]:4 | [A2,C#3,E3]:4 | [D3,F3,A3]:4 | [Bb2,D3,F3]:4 | [F2,A2,C3]:4 | [C3,E3,G3]:4 | [D3,F3,A3]:4 | [Bb2,D3,F3]:4 | [G2,Bb2,D3]:4 | [A2,C#3,E3]:4",
+          "gain": 0.26,
+          "at": 0,
+          "vel": 0.55,
+          "step": 1,
+          "params": {
+            "attack": 1.2,
+            "release": 1.8,
+            "cutoff": 850
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "D2:4 | Bb1:4 | F2:4 | C2:4 | D2:4 | Bb1:4 | G1:4 | A1:4 | D2:4 | Bb1:4 | F2:4 | C2:4 | D2:4 | Bb1:4 | G1:4 | A1:4",
+          "gain": 0.32,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1,
+          "params": {
+            "attack": 0.4
+          }
+        },
+        {
+          "type": "seq",
+          "inst": "marimba",
+          "steps": "D4:1 F4:1 A4:1 -:1 | D5:2 C5:1 A4:1 | F4:1 A4:1 C5:1 -:1 | E4:2 -:2 | D4:1 F4:1 A4:1 -:1 | D5:2 C5:1 A4:1 | G4:1 Bb4:1 D5:1 -:1 | C#5:2 E5:1 A4:1 | D4:1 F4:1 A4:1 -:1 | D5:2 C5:1 A4:1 | F4:1 A4:1 C5:1 -:1 | E4:2 -:2 | D4:1 F4:1 A4:1 -:1 | D5:2 C5:1 A4:1 | G4:1 Bb4:1 D5:1 -:1 | C#5:2 E5:1 A4:1",
+          "gain": 0.38,
+          "at": 0,
+          "vel": 0.5,
+          "step": 1,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "glass_pad",
+          "steps": "A4:16 | A4:16 | A4:16 | A4:16",
+          "gain": 0.1,
+          "at": 0,
+          "vel": 0.4,
+          "step": 1,
+          "params": {
+            "attack": 2.0,
+            "release": 2.0
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        },
+        {
+          "type": "sfx",
+          "kind": "wind",
+          "at": 0,
+          "gain": 0.12,
+          "params": {
+            "dur": 48.0,
+            "scale": 0.8,
+            "seed": 4
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.14,
+          "size": 0.6
+        },
+        {
+          "type": "lowpass",
+          "cutoff": 6000
+        }
+      ],
+      "normalize": -17,
+      "bpm": 80,
+      "beats": 64,
+      "loop": "fold"
+    },
+    {
+      "out": "music/pause.wav",
+      "_about": "The pause: the pad and a few kalimba notes, slower still.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[D3,F3,A3]:4 | [G2,Bb2,D3]:4 | [D3,F3,A3]:4 | [A2,C#3,E3]:4 | [Bb2,D3,F3]:4 | [D3,F3,A3]:4",
+          "gain": 0.28,
+          "at": 0,
+          "vel": 0.5,
+          "step": 1,
+          "params": {
+            "attack": 1.2,
+            "release": 1.8,
+            "cutoff": 750
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "steps": "A4:2 F4:2 | D4:2 -:2 | A4:1 D5:1 F4:2 | E4:2 -:2 | F4:2 D4:2 | A3:4",
+          "gain": 0.34,
+          "at": 0,
+          "vel": 0.4,
+          "step": 1,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "D2:4 | G1:4 | D2:4 | A1:4 | Bb1:4 | D2:4",
+          "gain": 0.3,
+          "at": 0,
+          "vel": 0.4,
+          "step": 1,
+          "params": {
+            "attack": 0.4
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.14,
+          "size": 0.6
+        }
+      ],
+      "normalize": -18,
+      "bpm": 60,
+      "beats": 24,
+      "loop": "fold"
+    },
+    {
+      "out": "music/held.wav",
+      "_about": "Night held: a rising harp figure that settles.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "harp",
+          "steps": "D4:.5 F4:.5 A4:.5 D5:2.5",
+          "gain": 0.4,
+          "at": 0,
+          "vel": 0.5,
+          "step": 1,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.2
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[D3,F3,A3,D4]:4",
+          "gain": 0.3,
+          "at": 0,
+          "vel": 0.55,
+          "step": 1,
+          "params": {
+            "attack": 0.2,
+            "release": 1.5
+          }
+        },
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "D2:4",
+          "gain": 0.35,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.14,
+          "size": 0.6
+        }
+      ],
+      "normalize": -16,
+      "bpm": 96,
+      "beats": 4,
+      "tail": 2.0
+    },
+    {
+      "out": "music/relief.wav",
+      "_about": "Relief lands: horns turn the minor sway major.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "french_horn",
+          "steps": "D4:2 F#4:2 A4:4",
+          "gain": 0.4,
+          "at": 0,
+          "vel": 0.55,
+          "step": 1
+        },
+        {
+          "type": "seq",
+          "inst": "harp",
+          "steps": "-:4 D5:.5 F#5:.5 A5:.5 D6:2.5",
+          "gain": 0.35,
+          "at": 0,
+          "vel": 0.5,
+          "step": 1,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.3
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[D3,F#3,A3]:4 [G3,B3,D4]:2 [D3,F#3,A3]:2",
+          "gain": 0.3,
+          "at": 0,
+          "vel": 0.55,
+          "step": 1,
+          "params": {
+            "attack": 0.3,
+            "release": 2.0
+          }
+        },
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "D2:8",
+          "gain": 0.35,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.14,
+          "size": 0.6
+        }
+      ],
+      "normalize": -16,
+      "bpm": 84,
+      "beats": 8,
+      "tail": 3.0
+    },
+    {
+      "out": "music/fallen.wav",
+      "_about": "The dome falls: a cello line sinking under rumble.",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "D3:2 C3:2 Bb2:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.5,
+          "step": 1,
+          "params": {
+            "attack": 0.2
+          }
+        },
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[D3,F3,A3]:3 [Bb2,D3,F3]:3",
+          "gain": 0.3,
+          "at": 0,
+          "vel": 0.5,
+          "step": 1,
+          "params": {
+            "attack": 0.3,
+            "release": 2.0,
+            "cutoff": 700
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "rumble",
+          "at": 0,
+          "gain": 0.3,
+          "params": {
+            "dur": 5.0,
+            "fmin": 30.0,
+            "fmax": 60.0,
+            "fade": 2.0
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.14,
+          "size": 0.6
+        }
+      ],
+      "normalize": -17,
+      "bpm": 72,
+      "beats": 6,
+      "tail": 3.0
+    },
+    {
+      "out": "engine/drifter.wav",
+      "_about": "A drifter's engine, looped where it is: a soft low drone with a slow waver.",
+      "duration": 4.0,
+      "loop": 1.0,
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "at": 0,
+          "gain": 0.7,
+          "params": {
+            "freq": 165,
+            "dur": 4.6,
+            "wave": "sine"
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "at": 0,
+          "gain": 0.25,
+          "params": {
+            "freq": 330,
+            "dur": 4.6,
+            "wave": "triangle"
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "tremolo",
+          "rate": 2.5,
+          "depth": 0.35
+        }
+      ],
+      "loudness": -27
+    },
+    {
+      "out": "engine/skitter.wav",
+      "_about": "A skitter's engine, looped: a quick nervous buzz.",
+      "duration": 4.0,
+      "loop": 1.0,
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "at": 0,
+          "gain": 0.6,
+          "params": {
+            "freq": 440,
+            "dur": 4.6,
+            "wave": "square"
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "at": 0,
+          "gain": 0.3,
+          "params": {
+            "freq": 660,
+            "dur": 4.6,
+            "wave": "saw"
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "lowpass",
+          "cutoff": 2200
+        },
+        {
+          "type": "tremolo",
+          "rate": 11,
+          "depth": 0.7
+        }
+      ],
+      "loudness": -27
+    },
+    {
+      "out": "engine/hulk.wav",
+      "_about": "A hulk's engine, looped: a heavy throb over a rumble.",
+      "duration": 4.0,
+      "loop": 1.0,
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "rumble",
+          "at": 0,
+          "gain": 0.6,
+          "params": {
+            "dur": 4.6,
+            "fmin": 40.0,
+            "fmax": 70.0
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "at": 0,
+          "gain": 0.6,
+          "params": {
+            "freq": 55,
+            "dur": 4.6,
+            "wave": "sine"
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "tremolo",
+          "rate": 1.8,
+          "depth": 0.75
+        }
+      ],
+      "loudness": -24
+    },
+    {
+      "out": "engine/sapper.wav",
+      "_about": "A sapper's engine, looped: a ratchet of gears.",
+      "duration": 4.0,
+      "loop": 1.0,
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "gears",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "dur": 4.6,
+            "rpm": 500
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -27
+    },
+    {
+      "out": "engine/mule.wav",
+      "_about": "A mule's engine, looped: a chugging little motor.",
+      "duration": 4.0,
+      "loop": 1.0,
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "fm_machine",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "dur": 4.6,
+            "size": 140.0,
+            "work": 50.0,
+            "speed": 2.0,
+            "modfreq": 30.0
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -27
+    },
+    {
+      "out": "engine/mothership.wav",
+      "_about": "The mothership, looped: a deep pulsing drone.",
+      "duration": 4.0,
+      "loop": 1.0,
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "freq": 55,
+            "dur": 4.6,
+            "wave": "sine"
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "at": 0,
+          "gain": 0.3,
+          "params": {
+            "freq": 110,
+            "dur": 4.6,
+            "wave": "triangle"
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "mains_hum",
+          "at": 0,
+          "gain": 0.3,
+          "params": {
+            "dur": 4.6
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "tremolo",
+          "rate": 6,
+          "depth": 0.5
+        }
+      ],
+      "loudness": -23
+    },
+    {
+      "out": "engine/carrier.wav",
+      "_about": "The carrier, looped: a vast rumble that shakes the floor.",
+      "duration": 4.0,
+      "loop": 1.0,
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "rumble",
+          "at": 0,
+          "gain": 0.9,
+          "params": {
+            "dur": 4.6,
+            "fmin": 28.0,
+            "fmax": 55.0
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "tone",
+          "at": 0,
+          "gain": 0.4,
+          "params": {
+            "freq": 41,
+            "dur": 4.6,
+            "wave": "sine"
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -22
+    },
+    {
+      "out": "raider/arrive.wav",
+      "_about": "A raider arrives over the horizon, or is dropped: a radar ping.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "radar",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "freq": 1200
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -25
+    },
+    {
+      "out": "raider/leave.wav",
+      "_about": "A raider leaves over the edge: a long falling whoosh.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "dur": 0.8,
+            "low": 300,
+            "high": 2500,
+            "direction": "down"
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -26
+    },
+    {
+      "out": "raider/weave.wav",
+      "_about": "A weaving raider slips a lane: a short sideways whoosh.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "dur": 0.25,
+            "low": 600,
+            "high": 2200,
+            "direction": "up"
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -25
+    },
+    {
+      "out": "wave/coming.wav",
+      "_about": "A wave is called: a two-tone horn over the dome.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "alarm",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "freq": 440,
+            "freq2": 554,
+            "rate": 2.5,
+            "dur": 0.8,
+            "wave": "triangle"
+          }
+        }
+      ],
+      "loudness": -24
+    },
+    {
+      "out": "wave/clear.wav",
+      "_about": "A wave is down: two falling beeps.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "beep",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "freq": 392,
+            "dur": 0.14,
+            "wave": "sine"
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "beep",
+          "at": 0.15,
+          "gain": 0.8,
+          "params": {
+            "freq": 294,
+            "dur": 0.18,
+            "wave": "sine"
+          }
+        }
+      ],
+      "loudness": -27
+    },
+    {
+      "out": "gun/rail.wav",
+      "_about": "The gun slides: a scrape along the rail under the new lane.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "scrape",
+          "at": 0,
+          "gain": 0.9,
+          "params": {
+            "dur": 0.3,
+            "speed": 0.6,
+            "force": 1.0,
+            "roughness": 0.4,
+            "body": "rect_plate",
+            "material": "metal",
+            "size": 0.5
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -25
+    },
+    {
+      "out": "gun/fire.wav",
+      "_about": "The gun fires: a falling laser.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "laser",
+          "at": 0,
+          "gain": 0.9,
+          "params": {
+            "start": 1800,
+            "end": 220,
+            "dur": 0.22
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -22
+    },
+    {
+      "out": "gun/hit.wav",
+      "_about": "A hit rings on the raider.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "hit",
+          "at": 0,
+          "gain": 0.9,
+          "params": {
+            "dur": 0.25,
+            "tone": 420,
+            "crunch": 0.4,
+            "material": "steel"
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -23
+    },
+    {
+      "out": "gun/down.wav",
+      "_about": "A raider down: a small burst.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "explosion",
+          "at": 0,
+          "gain": 0.9,
+          "params": {
+            "dur": 0.9,
+            "boom": 0.5,
+            "energy": 0.5,
+            "distance": 10.0,
+            "debris": 0.5
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -22
+    },
+    {
+      "out": "gun/missile.wav",
+      "_about": "A missile: a rising rush, then the burst.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "riser",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "dur": 0.45,
+            "start": 300,
+            "end": 1600
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "explosion",
+          "at": 0.45,
+          "gain": 0.9,
+          "params": {
+            "dur": 1.0,
+            "boom": 0.6,
+            "energy": 0.8,
+            "distance": 8.0
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -21
+    },
+    {
+      "out": "gun/lock.wav",
+      "_about": "The lock tone: a short pulse under the gun while a raider is in its lane. The screen plays it faster as the raider nears.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "blip",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "freq": 880,
+            "dur": 0.06
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -28
+    },
+    {
+      "out": "charge/wind.wav",
+      "_about": "A raider charging: a rising whine in its lane.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "riser",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "dur": 1.0,
+            "start": 150,
+            "end": 1200,
+            "pulse": 0.3
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -24
+    },
+    {
+      "out": "charge/pass.wav",
+      "_about": "A shot dodged: the bolt passing.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "whoosh",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "dur": 0.4,
+            "low": 800,
+            "high": 6000,
+            "direction": "down"
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -24
+    },
+    {
+      "out": "charge/hit.wav",
+      "_about": "A shot lands: a zap on the shield or dome.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "zap",
+          "at": 0,
+          "gain": 0.9,
+          "params": {
+            "dur": 0.25,
+            "freq": 110
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "hit",
+          "at": 0.05,
+          "gain": 0.7,
+          "params": {
+            "dur": 0.3,
+            "tone": 200,
+            "crunch": 0.6
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -22
+    },
+    {
+      "out": "breach/shield.wav",
+      "_about": "A breach on the shield: a crackle of discharge.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "tesla",
+          "at": 0,
+          "gain": 0.9,
+          "params": {
+            "dur": 0.5,
+            "rate": 90.0,
+            "chaos": 0.4
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -22
+    },
+    {
+      "out": "breach/dome.wav",
+      "_about": "A breach on the dome: a blast and a rumble.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "explosion",
+          "at": 0,
+          "gain": 0.9,
+          "params": {
+            "dur": 1.4,
+            "boom": 0.8,
+            "energy": 1.0,
+            "distance": 5.0,
+            "debris": 0.6
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "rumble",
+          "at": 0,
+          "gain": 0.6,
+          "params": {
+            "dur": 1.5,
+            "fmin": 30.0,
+            "fmax": 60.0
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -20
+    },
+    {
+      "out": "breach/building.wav",
+      "_about": "A building goes dark: a falling run of notes.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "powerdown",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "freq": "C5",
+            "steps": 5,
+            "rate": 0.08
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -25
+    },
+    {
+      "out": "lane/mine.wav",
+      "_about": "A mine goes off under a raider past mid range.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "explosion",
+          "at": 0,
+          "gain": 0.9,
+          "params": {
+            "dur": 0.8,
+            "boom": 0.6,
+            "energy": 0.6,
+            "distance": 6.0
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -22
+    },
+    {
+      "out": "lane/flak.wav",
+      "_about": "A flak post fires up its lane: three quick bursts.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "laser",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "start": 1400,
+            "end": 1000,
+            "dur": 0.07,
+            "wave": "square"
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "laser",
+          "at": 0.09,
+          "gain": 0.8,
+          "params": {
+            "start": 1400,
+            "end": 1000,
+            "dur": 0.07,
+            "wave": "square"
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "laser",
+          "at": 0.18,
+          "gain": 0.8,
+          "params": {
+            "start": 1400,
+            "end": 1000,
+            "dur": 0.07,
+            "wave": "square"
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -24
+    },
+    {
+      "out": "storm/wind.wav",
+      "_about": "The dust storm's wind, looped at the lane it covers: a low gritty gust with a slow swell.",
+      "duration": 6.0,
+      "loop": 1.0,
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "wind",
+          "at": 0,
+          "gain": 0.9,
+          "params": {
+            "dur": 6.5
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "noise",
+          "at": 0,
+          "gain": 0.5,
+          "params": {
+            "dur": 6.5,
+            "color": "brown",
+            "attack": 0.8
+          },
+          "fx": [
+            {
+              "type": "bandpass",
+              "center": 500,
+              "q": 0.5
+            },
+            {
+              "type": "tremolo",
+              "rate": 0.22,
+              "depth": 0.6
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -30
+    },
+    {
+      "out": "colony/buy.wav",
+      "_about": "Bought: a bright two-note rise.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "coin",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "freq": "E5",
+            "up": 4,
+            "wave": "sine"
+          }
+        }
+      ],
+      "loudness": -26
+    },
+    {
+      "out": "colony/cant.wav",
+      "_about": "Too dear: a low buzz.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "error",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "freq": 160,
+            "dur": 0.25
+          }
+        }
+      ],
+      "loudness": -27
+    },
+    {
+      "out": "colony/ready.wav",
+      "_about": "Ready for the night: a soft two-tone alarm.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "alarm",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "freq": 520,
+            "freq2": 650,
+            "rate": 3.0,
+            "dur": 0.6,
+            "wave": "sine"
+          }
+        }
+      ],
+      "loudness": -26
+    },
+    {
+      "out": "ui/scan.wav",
+      "_about": "The scan: a blip where the raider is.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "blip",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "freq": 1300,
+            "dur": 0.05
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -28
+    },
+    {
+      "out": "menu/move.wav",
+      "_about": "Menu move: a dry radio click.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "blip",
+          "at": 0,
+          "gain": 0.7,
+          "params": {
+            "freq": 900,
+            "dur": 0.035
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 2600
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -30
+    },
+    {
+      "out": "menu/select.wav",
+      "_about": "Menu select: a soft sonar ping.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "blip",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "freq": 1320,
+            "dur": 0.12
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.18,
+          "size": 0.35
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -26
+    },
+    {
+      "out": "menu/back.wav",
+      "_about": "Menu back: a lower, shorter ping.",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "blip",
+          "at": 0,
+          "gain": 0.7,
+          "params": {
+            "freq": 780,
+            "dur": 0.09
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "lowpass",
+          "cutoff": 3000
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "loudness": -29
+    },
+    {
+      "out": "music/score/bass-A-0.wav",
+      "_about": "Score: the bass on A, variant 0, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "A1:4",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-A-1.wav",
+      "_about": "Score: the bass on A, variant 1, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "A1:2 E2:2",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-A-2.wav",
+      "_about": "Score: the bass on A, variant 2, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "A1:1.5 A1:0.5 E2:1 A1:1",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pad-A-0.wav",
+      "_about": "Score: the pad on A, variant 0, one bar at 72, wide.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[A2,C#3,E3]:4",
+          "gain": 0.26,
+          "vel": 0.5,
+          "params": {
+            "attack": 0.6,
+            "release": 1.6,
+            "cutoff": 850
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pad-A-1.wav",
+      "_about": "Score: the pad on A, variant 1, one bar at 72, wide.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[A2,C#3,E3]:2 [C#3,E3,A3]:2",
+          "gain": 0.26,
+          "vel": 0.5,
+          "params": {
+            "attack": 0.6,
+            "release": 1.6,
+            "cutoff": 850
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pluck-A-0.wav",
+      "_about": "Score: the plucked line on A, variant 0, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "A3:1 C#4:1 E4:1 C#4:1",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/pluck-A-1.wav",
+      "_about": "Score: the plucked line on A, variant 1, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "A3:0.5 C#4:0.5 E4:0.5 C#4:0.5 A3:0.5 E4:0.5 C#4:1",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/pluck-A-2.wav",
+      "_about": "Score: the plucked line on A, variant 2, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "E4:1.5 C#4:0.5 A3:2",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/heavy-A.wav",
+      "_about": "Score: a brass stab on A as a hulk, a mothership or the carrier steps, a little left.",
+      "bpm": 72,
+      "beats": 1,
+      "tail": 1.5,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "brass",
+          "step": 1,
+          "steps": "[A2,C#3,E3]:0.75",
+          "gain": 0.3,
+          "vel": 0.7,
+          "params": {
+            "attack": 0.04
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "A1:0.75",
+          "gain": 0.25,
+          "vel": 0.6,
+          "params": {
+            "attack": 0.05
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -26.0
+    },
+    {
+      "out": "music/score/run-A.wav",
+      "_about": "Score: a marimba run up A as a skitter pair steps, a little right.",
+      "bpm": 72,
+      "beats": 1,
+      "tail": 1.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "marimba",
+          "step": 1,
+          "steps": "A3:0.25 C#4:0.25 E4:0.25 A4:0.25",
+          "gain": 0.34,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -26.0
+    },
+    {
+      "out": "music/colony/bass-A.wav",
+      "_about": "Colony: the bass on A, one bar at 36, centre.",
+      "bpm": 36,
+      "beats": 4,
+      "tail": 3.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "A1:4",
+          "gain": 0.3,
+          "vel": 0.4,
+          "params": {
+            "attack": 0.6
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/colony/pad-A.wav",
+      "_about": "Colony: the pad on A, one bar at 36, wide.",
+      "bpm": 36,
+      "beats": 4,
+      "tail": 3.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[A2,C#3,E3]:4",
+          "gain": 0.24,
+          "vel": 0.45,
+          "params": {
+            "attack": 1.2,
+            "release": 2.0,
+            "cutoff": 750
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-Bb-0.wav",
+      "_about": "Score: the bass on Bb, variant 0, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "Bb1:4",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-Bb-1.wav",
+      "_about": "Score: the bass on Bb, variant 1, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "Bb1:2 F2:2",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-Bb-2.wav",
+      "_about": "Score: the bass on Bb, variant 2, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "Bb1:1.5 Bb1:0.5 F2:1 Bb1:1",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pad-Bb-0.wav",
+      "_about": "Score: the pad on Bb, variant 0, one bar at 72, wide.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[Bb2,D3,F3]:4",
+          "gain": 0.26,
+          "vel": 0.5,
+          "params": {
+            "attack": 0.6,
+            "release": 1.6,
+            "cutoff": 850
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pad-Bb-1.wav",
+      "_about": "Score: the pad on Bb, variant 1, one bar at 72, wide.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[Bb2,D3,F3]:2 [D3,F3,Bb3]:2",
+          "gain": 0.26,
+          "vel": 0.5,
+          "params": {
+            "attack": 0.6,
+            "release": 1.6,
+            "cutoff": 850
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pluck-Bb-0.wav",
+      "_about": "Score: the plucked line on Bb, variant 0, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "Bb3:1 D4:1 F4:1 D4:1",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/pluck-Bb-1.wav",
+      "_about": "Score: the plucked line on Bb, variant 1, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "Bb3:0.5 D4:0.5 F4:0.5 D4:0.5 Bb3:0.5 F4:0.5 D4:1",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/pluck-Bb-2.wav",
+      "_about": "Score: the plucked line on Bb, variant 2, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "F4:1.5 D4:0.5 Bb3:2",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/heavy-Bb.wav",
+      "_about": "Score: a brass stab on Bb as a hulk, a mothership or the carrier steps, a little left.",
+      "bpm": 72,
+      "beats": 1,
+      "tail": 1.5,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "brass",
+          "step": 1,
+          "steps": "[Bb2,D3,F3]:0.75",
+          "gain": 0.3,
+          "vel": 0.7,
+          "params": {
+            "attack": 0.04
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "Bb1:0.75",
+          "gain": 0.25,
+          "vel": 0.6,
+          "params": {
+            "attack": 0.05
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -26.0
+    },
+    {
+      "out": "music/score/run-Bb.wav",
+      "_about": "Score: a marimba run up Bb as a skitter pair steps, a little right.",
+      "bpm": 72,
+      "beats": 1,
+      "tail": 1.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "marimba",
+          "step": 1,
+          "steps": "Bb3:0.25 D4:0.25 F4:0.25 Bb4:0.25",
+          "gain": 0.34,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -26.0
+    },
+    {
+      "out": "music/colony/bass-Bb.wav",
+      "_about": "Colony: the bass on Bb, one bar at 36, centre.",
+      "bpm": 36,
+      "beats": 4,
+      "tail": 3.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "Bb1:4",
+          "gain": 0.3,
+          "vel": 0.4,
+          "params": {
+            "attack": 0.6
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/colony/pad-Bb.wav",
+      "_about": "Colony: the pad on Bb, one bar at 36, wide.",
+      "bpm": 36,
+      "beats": 4,
+      "tail": 3.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[Bb2,D3,F3]:4",
+          "gain": 0.24,
+          "vel": 0.45,
+          "params": {
+            "attack": 1.2,
+            "release": 2.0,
+            "cutoff": 750
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-C-0.wav",
+      "_about": "Score: the bass on C, variant 0, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "C2:4",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-C-1.wav",
+      "_about": "Score: the bass on C, variant 1, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "C2:2 G1:2",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-C-2.wav",
+      "_about": "Score: the bass on C, variant 2, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "C2:1.5 C2:0.5 G1:1 C2:1",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pad-C-0.wav",
+      "_about": "Score: the pad on C, variant 0, one bar at 72, wide.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[C3,E3,G3]:4",
+          "gain": 0.26,
+          "vel": 0.5,
+          "params": {
+            "attack": 0.6,
+            "release": 1.6,
+            "cutoff": 850
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pad-C-1.wav",
+      "_about": "Score: the pad on C, variant 1, one bar at 72, wide.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[C3,E3,G3]:2 [E3,G3,C4]:2",
+          "gain": 0.26,
+          "vel": 0.5,
+          "params": {
+            "attack": 0.6,
+            "release": 1.6,
+            "cutoff": 850
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pluck-C-0.wav",
+      "_about": "Score: the plucked line on C, variant 0, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "C4:1 E4:1 G4:1 E4:1",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/pluck-C-1.wav",
+      "_about": "Score: the plucked line on C, variant 1, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "C4:0.5 E4:0.5 G4:0.5 E4:0.5 C4:0.5 G4:0.5 E4:1",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/pluck-C-2.wav",
+      "_about": "Score: the plucked line on C, variant 2, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "G4:1.5 E4:0.5 C4:2",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/heavy-C.wav",
+      "_about": "Score: a brass stab on C as a hulk, a mothership or the carrier steps, a little left.",
+      "bpm": 72,
+      "beats": 1,
+      "tail": 1.5,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "brass",
+          "step": 1,
+          "steps": "[C3,E3,G3]:0.75",
+          "gain": 0.3,
+          "vel": 0.7,
+          "params": {
+            "attack": 0.04
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "C2:0.75",
+          "gain": 0.25,
+          "vel": 0.6,
+          "params": {
+            "attack": 0.05
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -26.0
+    },
+    {
+      "out": "music/score/run-C.wav",
+      "_about": "Score: a marimba run up C as a skitter pair steps, a little right.",
+      "bpm": 72,
+      "beats": 1,
+      "tail": 1.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "marimba",
+          "step": 1,
+          "steps": "C4:0.25 E4:0.25 G4:0.25 C5:0.25",
+          "gain": 0.34,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -26.0
+    },
+    {
+      "out": "music/colony/bass-C.wav",
+      "_about": "Colony: the bass on C, one bar at 36, centre.",
+      "bpm": 36,
+      "beats": 4,
+      "tail": 3.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "C2:4",
+          "gain": 0.3,
+          "vel": 0.4,
+          "params": {
+            "attack": 0.6
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/colony/pad-C.wav",
+      "_about": "Colony: the pad on C, one bar at 36, wide.",
+      "bpm": 36,
+      "beats": 4,
+      "tail": 3.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[C3,E3,G3]:4",
+          "gain": 0.24,
+          "vel": 0.45,
+          "params": {
+            "attack": 1.2,
+            "release": 2.0,
+            "cutoff": 750
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-Dm-0.wav",
+      "_about": "Score: the bass on Dm, variant 0, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "D2:4",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-Dm-1.wav",
+      "_about": "Score: the bass on Dm, variant 1, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "D2:2 A1:2",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-Dm-2.wav",
+      "_about": "Score: the bass on Dm, variant 2, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "D2:1.5 D2:0.5 A1:1 D2:1",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pad-Dm-0.wav",
+      "_about": "Score: the pad on Dm, variant 0, one bar at 72, wide.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[D3,F3,A3]:4",
+          "gain": 0.26,
+          "vel": 0.5,
+          "params": {
+            "attack": 0.6,
+            "release": 1.6,
+            "cutoff": 850
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pad-Dm-1.wav",
+      "_about": "Score: the pad on Dm, variant 1, one bar at 72, wide.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[D3,F3,A3]:2 [F3,A3,D4]:2",
+          "gain": 0.26,
+          "vel": 0.5,
+          "params": {
+            "attack": 0.6,
+            "release": 1.6,
+            "cutoff": 850
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pluck-Dm-0.wav",
+      "_about": "Score: the plucked line on Dm, variant 0, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "D4:1 F4:1 A4:1 F4:1",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/pluck-Dm-1.wav",
+      "_about": "Score: the plucked line on Dm, variant 1, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "D4:0.5 F4:0.5 A4:0.5 F4:0.5 D4:0.5 A4:0.5 F4:1",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/pluck-Dm-2.wav",
+      "_about": "Score: the plucked line on Dm, variant 2, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "A4:1.5 F4:0.5 D4:2",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/heavy-Dm.wav",
+      "_about": "Score: a brass stab on Dm as a hulk, a mothership or the carrier steps, a little left.",
+      "bpm": 72,
+      "beats": 1,
+      "tail": 1.5,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "brass",
+          "step": 1,
+          "steps": "[D3,F3,A3]:0.75",
+          "gain": 0.3,
+          "vel": 0.7,
+          "params": {
+            "attack": 0.04
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "D2:0.75",
+          "gain": 0.25,
+          "vel": 0.6,
+          "params": {
+            "attack": 0.05
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -26.0
+    },
+    {
+      "out": "music/score/run-Dm.wav",
+      "_about": "Score: a marimba run up Dm as a skitter pair steps, a little right.",
+      "bpm": 72,
+      "beats": 1,
+      "tail": 1.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "marimba",
+          "step": 1,
+          "steps": "D4:0.25 F4:0.25 A4:0.25 D5:0.25",
+          "gain": 0.34,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -26.0
+    },
+    {
+      "out": "music/colony/bass-Dm.wav",
+      "_about": "Colony: the bass on Dm, one bar at 36, centre.",
+      "bpm": 36,
+      "beats": 4,
+      "tail": 3.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "D2:4",
+          "gain": 0.3,
+          "vel": 0.4,
+          "params": {
+            "attack": 0.6
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/colony/pad-Dm.wav",
+      "_about": "Colony: the pad on Dm, one bar at 36, wide.",
+      "bpm": 36,
+      "beats": 4,
+      "tail": 3.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[D3,F3,A3]:4",
+          "gain": 0.24,
+          "vel": 0.45,
+          "params": {
+            "attack": 1.2,
+            "release": 2.0,
+            "cutoff": 750
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-F-0.wav",
+      "_about": "Score: the bass on F, variant 0, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "F2:4",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-F-1.wav",
+      "_about": "Score: the bass on F, variant 1, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "F2:2 C2:2",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-F-2.wav",
+      "_about": "Score: the bass on F, variant 2, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "F2:1.5 F2:0.5 C2:1 F2:1",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pad-F-0.wav",
+      "_about": "Score: the pad on F, variant 0, one bar at 72, wide.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[F2,A2,C3]:4",
+          "gain": 0.26,
+          "vel": 0.5,
+          "params": {
+            "attack": 0.6,
+            "release": 1.6,
+            "cutoff": 850
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pad-F-1.wav",
+      "_about": "Score: the pad on F, variant 1, one bar at 72, wide.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[F2,A2,C3]:2 [A2,C3,F3]:2",
+          "gain": 0.26,
+          "vel": 0.5,
+          "params": {
+            "attack": 0.6,
+            "release": 1.6,
+            "cutoff": 850
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pluck-F-0.wav",
+      "_about": "Score: the plucked line on F, variant 0, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "F4:1 A4:1 C5:1 A4:1",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/pluck-F-1.wav",
+      "_about": "Score: the plucked line on F, variant 1, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "F4:0.5 A4:0.5 C5:0.5 A4:0.5 F4:0.5 C5:0.5 A4:1",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/pluck-F-2.wav",
+      "_about": "Score: the plucked line on F, variant 2, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "C5:1.5 A4:0.5 F4:2",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/heavy-F.wav",
+      "_about": "Score: a brass stab on F as a hulk, a mothership or the carrier steps, a little left.",
+      "bpm": 72,
+      "beats": 1,
+      "tail": 1.5,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "brass",
+          "step": 1,
+          "steps": "[F2,A2,C3]:0.75",
+          "gain": 0.3,
+          "vel": 0.7,
+          "params": {
+            "attack": 0.04
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "F2:0.75",
+          "gain": 0.25,
+          "vel": 0.6,
+          "params": {
+            "attack": 0.05
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -26.0
+    },
+    {
+      "out": "music/score/run-F.wav",
+      "_about": "Score: a marimba run up F as a skitter pair steps, a little right.",
+      "bpm": 72,
+      "beats": 1,
+      "tail": 1.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "marimba",
+          "step": 1,
+          "steps": "F4:0.25 A4:0.25 C5:0.25 F5:0.25",
+          "gain": 0.34,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -26.0
+    },
+    {
+      "out": "music/colony/bass-F.wav",
+      "_about": "Colony: the bass on F, one bar at 36, centre.",
+      "bpm": 36,
+      "beats": 4,
+      "tail": 3.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "F2:4",
+          "gain": 0.3,
+          "vel": 0.4,
+          "params": {
+            "attack": 0.6
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/colony/pad-F.wav",
+      "_about": "Colony: the pad on F, one bar at 36, wide.",
+      "bpm": 36,
+      "beats": 4,
+      "tail": 3.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[F2,A2,C3]:4",
+          "gain": 0.24,
+          "vel": 0.45,
+          "params": {
+            "attack": 1.2,
+            "release": 2.0,
+            "cutoff": 750
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-Gm-0.wav",
+      "_about": "Score: the bass on Gm, variant 0, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "G1:4",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-Gm-1.wav",
+      "_about": "Score: the bass on Gm, variant 1, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "G1:2 D2:2",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/bass-Gm-2.wav",
+      "_about": "Score: the bass on Gm, variant 2, one bar at 72, centre.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "G1:1.5 G1:0.5 D2:1 G1:1",
+          "gain": 0.34,
+          "vel": 0.45,
+          "params": {
+            "attack": 0.25
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pad-Gm-0.wav",
+      "_about": "Score: the pad on Gm, variant 0, one bar at 72, wide.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[G2,Bb2,D3]:4",
+          "gain": 0.26,
+          "vel": 0.5,
+          "params": {
+            "attack": 0.6,
+            "release": 1.6,
+            "cutoff": 850
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pad-Gm-1.wav",
+      "_about": "Score: the pad on Gm, variant 1, one bar at 72, wide.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[G2,Bb2,D3]:2 [Bb2,D3,G3]:2",
+          "gain": 0.26,
+          "vel": 0.5,
+          "params": {
+            "attack": 0.6,
+            "release": 1.6,
+            "cutoff": 850
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/pluck-Gm-0.wav",
+      "_about": "Score: the plucked line on Gm, variant 0, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "G3:1 Bb3:1 D4:1 Bb3:1",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/pluck-Gm-1.wav",
+      "_about": "Score: the plucked line on Gm, variant 1, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "G3:0.5 Bb3:0.5 D4:0.5 Bb3:0.5 G3:0.5 D4:0.5 Bb3:1",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/pluck-Gm-2.wav",
+      "_about": "Score: the plucked line on Gm, variant 2, one bar at 72, a little right.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "kalimba",
+          "step": 1,
+          "steps": "D4:1.5 Bb3:0.5 G3:2",
+          "gain": 0.36,
+          "vel": 0.5,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -29.0
+    },
+    {
+      "out": "music/score/heavy-Gm.wav",
+      "_about": "Score: a brass stab on Gm as a hulk, a mothership or the carrier steps, a little left.",
+      "bpm": 72,
+      "beats": 1,
+      "tail": 1.5,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "brass",
+          "step": 1,
+          "steps": "[G2,Bb2,D3]:0.75",
+          "gain": 0.3,
+          "vel": 0.7,
+          "params": {
+            "attack": 0.04
+          },
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "G1:0.75",
+          "gain": 0.25,
+          "vel": 0.6,
+          "params": {
+            "attack": 0.05
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -26.0
+    },
+    {
+      "out": "music/score/run-Gm.wav",
+      "_about": "Score: a marimba run up Gm as a skitter pair steps, a little right.",
+      "bpm": 72,
+      "beats": 1,
+      "tail": 1.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "marimba",
+          "step": 1,
+          "steps": "G3:0.25 Bb3:0.25 D4:0.25 G4:0.25",
+          "gain": 0.34,
+          "vel": 0.55,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.3
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -26.0
+    },
+    {
+      "out": "music/colony/bass-Gm.wav",
+      "_about": "Colony: the bass on Gm, one bar at 36, centre.",
+      "bpm": 36,
+      "beats": 4,
+      "tail": 3.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "step": 1,
+          "steps": "G1:4",
+          "gain": 0.3,
+          "vel": 0.4,
+          "params": {
+            "attack": 0.6
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/colony/pad-Gm.wav",
+      "_about": "Colony: the pad on Gm, one bar at 36, wide.",
+      "bpm": 36,
+      "beats": 4,
+      "tail": 3.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "step": 1,
+          "steps": "[G2,Bb2,D3]:4",
+          "gain": 0.24,
+          "vel": 0.45,
+          "params": {
+            "attack": 1.2,
+            "release": 2.0,
+            "cutoff": 750
+          },
+          "fx": [
+            {
+              "type": "width",
+              "amount": 0.5
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -30.0
+    },
+    {
+      "out": "music/score/danger.wav",
+      "_about": "Score: the danger layer, a high glass A held with a slow pulse, while a charge is pending or the shield is at 0 with a raider close. Fits every chord of the cycle.",
+      "bpm": 72,
+      "beats": 4,
+      "tail": 2.0,
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "glass_pad",
+          "step": 1,
+          "steps": "A4:4",
+          "gain": 0.16,
+          "vel": 0.4,
+          "params": {
+            "attack": 0.4,
+            "release": 1.2
+          }
+        },
+        {
+          "type": "seq",
+          "inst": "glass",
+          "step": 1,
+          "steps": "A5:0.5 -:0.5 A5:0.5 -:0.5 A5:0.5 -:0.5 A5:0.5 -:0.5",
+          "gain": 0.12,
+          "vel": 0.35
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.1,
+          "size": 0.5
+        }
+      ],
+      "loudness": -31.0
+    }
+  ]
+}

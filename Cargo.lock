@@ -665,6 +665,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "dustfall"
+version = "1.6.0"
+dependencies = [
+ "hearken",
+ "parlor-core",
+ "serde",
+ "serde_json",
+ "wickets-content",
+]
+
+[[package]]
 name = "dyn-clone"
 version = "1.0.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3092,6 +3103,7 @@ dependencies = [
  "cupids-quiver",
  "dirs",
  "dragon-dance",
+ "dustfall",
  "firefly-meadow",
  "fireside-patience",
  "freewheel",

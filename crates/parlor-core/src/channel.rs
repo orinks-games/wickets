@@ -29,6 +29,8 @@ pub const OWN_BUILD: [&str; 1] = ["alpha"];
 /// How ready a game or feature is, and so which copies show it.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub enum Stage {
+    /// Still being built: developer builds only, never a released copy.
+    Dev,
     /// On the edge: alpha copies only.
     Alpha,
     /// Being refined: beta and alpha copies.
@@ -51,6 +53,7 @@ impl Stage {
     /// The channel's name, as Settings says it.
     pub fn channel(self) -> &'static str {
         match self {
+            Stage::Dev => "dev",
             Stage::Alpha => "alpha",
             Stage::Beta => "beta",
             Stage::Stable => "stable",
@@ -63,6 +66,7 @@ impl Stage {
 pub const GAMES: &[(&str, Stage)] = &[
     ("larkfield", Stage::Alpha),
     ("little-rapids", Stage::Alpha),
+    ("dustfall", Stage::Dev),
     ("snowfall-skate", Stage::Alpha),
 ];
 
@@ -84,13 +88,13 @@ pub fn pin(stage: Option<Stage>) {
     PINNED.with(|p| p.set(stage));
 }
 
-/// The stage this copy was built for: its release channel's, or alpha for
+/// The stage this copy was built for: its release channel's, or dev for
 /// a developer build, which shows everything.
 pub fn copy_stage() -> Stage {
     if let Some(stage) = PINNED.with(Cell::get) {
         return stage;
     }
-    hearken::update::Running::baked().map_or(Stage::Alpha, |r| Stage::of_channel(&r.channel))
+    hearken::update::Running::baked().map_or(Stage::Dev, |r| Stage::of_channel(&r.channel))
 }
 
 /// Whether this copy shows work at `stage`.
