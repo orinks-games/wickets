@@ -77,16 +77,20 @@ like Lantern Lake's, come together in a new order each play, and Rooftop
 Garden's makes up new tunes as it goes. The Sound check never unlocks a
 track.
 
-Your own songs are kept too. Every night you paddle on Lantern Lake, and
-every session in your Rooftop Garden, goes into an album of its own:
-Your Lantern Lake nights, and Your Rooftop Garden songs. Each plays back
-the song as you heard it, with the same voices in the same order. The
-last 30 of each are kept.
+Your own songs are kept too. In a game whose music is made as you play,
+such as Rooftop Garden, Lantern Lake or Tightrope, each run's music goes
+into an album of its own, such as Your Rooftop Garden songs, named for
+the time of day and the date. It plays back as you heard it: the same
+voices joining and leaving at the same moments, the same fades, with
+nothing from a pause or a menu. The last 30 of each game are kept. A
+run's results offer Make a sound file of this run's song. Keep your
+songs, under Sound in Settings, turns the keeping off.
 
 Once you have heard every track in an album, its Export album row saves
 the whole album as sound files, each track as you hear it in the game.
-They go in the Music folder inside the Wicket's folder, in a folder
-named for the album. Escape stops an export partway.
+Shift and Enter on one track saves that track alone. They go in the
+Music folder inside the Wicket's folder, in a folder named for the
+album. Escape stops an export partway.
 
 ## Holidays and events
 

@@ -1253,7 +1253,7 @@ fn a_challenge_from_the_launcher_returns_there_when_finished() {
     h.press(Key::End);
     assert_eq!(
         h.spoken().last().map(String::as_str),
-        Some("Back to the challenges. 3 of 3."),
+        Some("Back to the challenges. 4 of 4."),
         "the row names where it goes"
     );
     h.press(Key::Return); // Back to the challenges, the launcher's here
@@ -1340,7 +1340,12 @@ fn results_back_row_matches_escape() {
     idle_until(&mut h, |h| h.app.top_name() == "results");
     assert_eq!(
         parlor_core::menus::rows_of(&h.app.top_lines()),
-        ["Try again", "Hear the results again", "Back to the title"]
+        [
+            "Try again",
+            "Hear the results again",
+            "Make a sound file of this run's song",
+            "Back to the title"
+        ]
     );
     h.press(Key::Escape);
     let by_escape = (h.app.top_name(), h.app.depth());

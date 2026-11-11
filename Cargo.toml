@@ -18,7 +18,7 @@ log = "0.4"
 # against a local checkout, add to .cargo/config.toml (or ~/.cargo/config.toml):
 #   [patch."https://github.com/orinks-games/hearken"]
 #   hearken = { path = "../hearken/crates/hearken" }
-hearken = { git = "https://github.com/orinks-games/hearken", rev = "c5a2cf105ee4bed148792fbcc58a5cf9d5a8e718", features = ["visuals", "online"] }
+hearken = { git = "https://github.com/orinks-games/hearken", rev = "07de4805cfb12370dc079b3a62cabf29ae7f49f3", features = ["visuals", "online"] }
 parlor-core = { path = "crates/parlor-core" }
 
 [profile.release]
