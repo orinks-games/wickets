@@ -1,8 +1,9 @@
 //! What the game remembers between runs: how far each part is open, and
 //! whether the story has been finished.
 
+use hearken::text::sentence_start;
 use hearken::Ctx;
-use parlor_core::{Parlor, Records, ScoreResult};
+use parlor_core::{pace, Pace, Parlor, Records, ScoreResult};
 use serde::{Deserialize, Serialize};
 
 use crate::desk::STACKS;
@@ -127,17 +128,36 @@ impl Progress {
 
 /// Records `score` on `board` and says how it went, for results pages.
 pub fn record(ctx: &mut Ctx<Parlor>, board: &str, score: u64) -> String {
-    match Records::record(ctx, ID, board, score) {
-        ScoreResult::First => "Your first score here is saved.".to_string(),
-        ScoreResult::NewBest { previous } => format!("A new best. The old best was {previous}."),
-        ScoreResult::Short { best } => format!("Your best is {best}."),
+    record_at(ctx, board, Pace::Normal, score)
+}
+
+/// "relaxed " for a relaxed run, whose scores are kept apart.
+pub fn relaxed_word(pace: Pace) -> &'static str {
+    if pace.separate() {
+        "relaxed "
+    } else {
+        ""
     }
 }
 
-/// The best on `board`, for menu labels.
+/// Records `score` from a run at `pace` on `base`'s board for that pace,
+/// and says how it went.
+pub fn record_at(ctx: &mut Ctx<Parlor>, base: &str, pace: Pace, score: u64) -> String {
+    let r = relaxed_word(pace);
+    match Records::record(ctx, ID, &pace.board(base), score) {
+        ScoreResult::First => format!("Your first {r}score here is saved."),
+        ScoreResult::NewBest { previous } => {
+            format!("A new {r}best. The old {r}best was {previous}.")
+        }
+        ScoreResult::Short { best } => format!("Your {r}best is {best}."),
+    }
+}
+
+/// The bests on `board` and its relaxed board, for menu labels: "Best
+/// 420, relaxed best 380", either alone, or "Not played yet".
 pub fn best_text(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    match Records::best(ctx, ID, board) {
-        Some(best) => format!("Best {best}"),
+    match pace::bests(ctx, ID, board, "best") {
+        Some(best) => sentence_start(&best),
         None => "Not played yet".to_string(),
     }
 }

@@ -20,11 +20,6 @@ pub fn belt() -> Live<SortRun> {
     Live::new(run)
 }
 
-/// About how long a line takes to say, so the belt waits for it.
-fn speech_secs(text: &str) -> f64 {
-    0.4 + text.chars().count() as f64 / 15.0
-}
-
 /// The first stack at the Wish Desk.
 pub fn desk() -> Live<DeskRun> {
     let mut run = DeskRun::new(Mode::Free, 1);
@@ -50,22 +45,21 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
         k(ParlorAction::Hint),
     );
 
-    // The wishes are said in the step, and the belt waits until they have
-    // been heard.
+    // The wishes are said in the step, and the belt cannot start until
+    // they have been said: the run's speech hold covers the lesson's
+    // opening line and this prompt.
     let wishes = belt.with(|s| s.wishes(ctx));
     let brief_prompt = format!(
         "Gift Sort. Here is who is waiting, and how each wish sounds in a box. {wishes} {} starts the belt.",
         sentence_start(&p)
     );
-    // The lesson's opening line comes first: about five seconds.
-    let brief_wait = 5.0 + speech_secs(&brief_prompt);
     let held = belt.clone();
     let brief = belt
         .step(brief_prompt, |s: &SortRun, _| {
             s.playing()
                 .then(|| "The belt is running. A soft thump means a gift has landed.".to_string())
         })
-        .start(move |_| held.with_mut(|s| s.hold_for(brief_wait)));
+        .start(move |_| held.with_mut(|s| s.lesson_prompt()));
 
     let shake = belt.step(
         format!(
@@ -87,8 +81,8 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
         sentence_start(&l),
         sentence_start(&rep)
     );
-    // The shaken gift waits on the belt until this has been heard.
-    let sort_wait = speech_secs(&format!("{MATCHED} {sort_prompt}"));
+    // The shaken gift waits on the belt while this is said, then rides its
+    // whole way.
     let held = belt.clone();
     let sort = belt
         .step(sort_prompt, |s: &SortRun, _| {
@@ -96,7 +90,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
                 format!("{GIFTS} gifts sorted. Quick beeping means a gift is near the edge, and if it falls it breaks.")
             })
         })
-        .start(move |_| held.with_mut(|s| s.hold_for(sort_wait)));
+        .start(move |_| held.with_mut(|s| s.lesson_prompt()));
 
     let open = desk.step(
         format!(

@@ -3,6 +3,7 @@
 //! challenges and rhythm practice, then the shared rows.
 
 use hearken::menu::{Label, MenuItem};
+use hearken::screens::SettingsRow;
 use hearken::text::end_sentence;
 use hearken::Ctx;
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
@@ -132,6 +133,12 @@ impl TitleGame for Winter {
 
     fn music(&mut self, ctx: &mut Ctx<Parlor>) {
         ctx.audio.play_music(Some(sound::TITLE_MUSIC), true);
+    }
+
+    /// Pace sets Gift Sort's clocks; the desk has none and Midnight
+    /// Countdown keeps the band's beat.
+    fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
+        vec![parlor_core::pace::row(ID)]
     }
 
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
