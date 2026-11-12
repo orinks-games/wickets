@@ -40,6 +40,16 @@ Moon 3, Ember: heavy gravity, 600 metres up, safe speed 2.5 metres a second, and
 
 Moon select flies any moon you have opened.
 
+## Pace
+
+The lander holds still while a call-out or another line is still being spoken. While you hold the engine and it burns, the lander keeps flying through speech. This holds at every pace and in every mode.
+
+Pace in Settings sets how fast the descent runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. Your fall, the engine, the fuel and the flight time follow the pace.
+
+A change applies from your next flight. A challenge and the practice pad keep the pace they started at until you leave them.
+
+Relaxed scores and the softest relaxed touchdown are saved separately, including challenges and events. Normal and quick share their scores. Moons you open count at every pace.
+
 ## Scoring and records
 
 A landing scores 200 points. Fuel left adds up to 300 points, for a full tank. A soft touchdown adds up to 500 points: the slower you touch down, the more it pays. A crash scores nothing.

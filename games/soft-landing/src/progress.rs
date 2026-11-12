@@ -2,7 +2,7 @@
 //! touchdown, tallies and the call-out interval.
 
 use hearken::Ctx;
-use parlor_core::{Parlor, Records, ScoreResult};
+use parlor_core::{Pace, Parlor, Records, ScoreResult};
 use serde::{Deserialize, Serialize};
 
 use crate::challenge::Job;
@@ -27,6 +27,9 @@ pub struct Progress {
     /// The slowest touchdown that landed, in metres a second.
     #[serde(default)]
     pub softest: Option<f64>,
+    /// The slowest touchdown that landed at the relaxed pace, kept apart.
+    #[serde(default)]
+    pub relaxed_softest: Option<f64>,
     #[serde(default)]
     pub landings: u32,
     #[serde(default)]
@@ -103,14 +106,19 @@ impl Progress {
     }
 
     /// Tallies a survey flight, and keeps its touchdown when it is the
-    /// softest yet.
-    fn count(&mut self, outcome: Outcome) -> bool {
+    /// softest yet at `pace`: relaxed keeps its own.
+    fn count(&mut self, outcome: Outcome, pace: Pace) -> bool {
         self.tally(outcome);
         match outcome {
             Outcome::Landed { speed } => {
-                let softest = self.softest.is_none_or(|s| speed < s);
+                let kept = if pace.separate() {
+                    &mut self.relaxed_softest
+                } else {
+                    &mut self.softest
+                };
+                let softest = kept.is_none_or(|s| speed < s);
                 if softest {
-                    self.softest = Some(speed);
+                    *kept = Some(speed);
                 }
                 softest
             }
@@ -119,13 +127,14 @@ impl Progress {
     }
 }
 
-/// Saves a finished flight onto survey moon `n`.
-pub fn save_flight(ctx: &mut Ctx<Parlor>, n: u32, flight: &Flight) -> Saved {
+/// Saves a finished flight onto survey moon `n`, flown at `pace`. The
+/// moon it opens opens at every pace; its score goes on the pace's board.
+pub fn save_flight(ctx: &mut Ctx<Parlor>, n: u32, flight: &Flight, pace: Pace) -> Saved {
     let mut p = Progress::load(ctx);
     let Some(outcome) = flight.outcome else {
         return Saved::nothing();
     };
-    let softest = p.count(outcome);
+    let softest = p.count(outcome, pace);
     let mut opened = None;
     let mut survey_done = false;
     if outcome.landed() && n == p.cleared + 1 {
@@ -137,9 +146,14 @@ pub fn save_flight(ctx: &mut Ctx<Parlor>, n: u32, flight: &Flight) -> Saved {
         }
     }
     p.store(ctx);
-    let score = outcome
-        .landed()
-        .then(|| Records::record(ctx, ID, &board(n), flight.score(outcome) as u64));
+    let score = outcome.landed().then(|| {
+        Records::record(
+            ctx,
+            ID,
+            &pace.board(&board(n)),
+            flight.score(outcome) as u64,
+        )
+    });
     Saved {
         score,
         opened,
@@ -152,7 +166,7 @@ pub fn save_flight(ctx: &mut Ctx<Parlor>, n: u32, flight: &Flight) -> Saved {
 /// `board` when it landed. An event moon has rules of its own (the
 /// Tranquility pad's low gravity), so it never sets the standing softest
 /// touchdown.
-pub fn save_event(ctx: &mut Ctx<Parlor>, board: &str, flight: &Flight) -> Saved {
+pub fn save_event(ctx: &mut Ctx<Parlor>, board: &str, flight: &Flight, pace: Pace) -> Saved {
     let mut p = Progress::load(ctx);
     let Some(outcome) = flight.outcome else {
         return Saved::nothing();
@@ -161,7 +175,7 @@ pub fn save_event(ctx: &mut Ctx<Parlor>, board: &str, flight: &Flight) -> Saved 
     p.store(ctx);
     let score = outcome
         .landed()
-        .then(|| Records::record(ctx, ID, board, flight.score(outcome) as u64));
+        .then(|| Records::record(ctx, ID, &pace.board(board), flight.score(outcome) as u64));
     Saved {
         score,
         opened: None,
