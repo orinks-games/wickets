@@ -45,6 +45,16 @@ In the meadow, each round asks you to bank a share of its eggs: the round's open
 
 The meadow has eight rounds. Round 2 brings mud clods and moves the cart to the right. Round 3 adds a fourth lane, golden eggs and bees. Round 4 sends some eggs in pairs, one close behind the other in a nearby lane. Round 5 adds a fifth lane, and bees that dive right behind an egg in the same lane: catch the egg, then step aside. Each round after is faster.
 
+## Pace
+
+The meadow holds while a line is still being spoken. The drops, the round's clock and the patterns stand still until it ends, so a call never eats into a drop's warning. A step or a bank pressed meanwhile happens at once. The wait before "Go" keeps its own time, so it is the same at every pace. This holds at every pace and in every mode.
+
+Pace in Settings sets how fast the meadow runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. The drops, the patterns, the round's clock and its warnings follow the pace.
+
+A change applies from your next run. A run or a challenge keeps the pace it started at until it ends.
+
+Relaxed scores and Easter keepsakes are saved separately, including challenges. Normal and quick share their scores. Rounds cleared and the endless meadow count at every pace, and so does the bonus for playing with Spoken call-outs off.
+
 ## Endless meadow
 
 Clear all eight rounds to open the endless meadow: rounds without end, faster each time, with no egg target. Instead, every fifth cracked egg wears out a basket. Play until your baskets are gone.

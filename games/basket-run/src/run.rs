@@ -4,7 +4,8 @@ use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, InputEvent, Key, Sound, State};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::{
-    Challenge, Challenges, Mood, Pages, Parlor, ParlorAction, Records, Rng, Score, ScoreResult,
+    Challenge, Challenges, Mood, Pace, Pages, Parlor, ParlorAction, Records, Rng, RunClock, Score,
+    ScoreResult,
 };
 
 use crate::challenge::{briefing, CHALLENGES_NAME};
@@ -157,6 +158,8 @@ pub struct RunScreen {
     pub score: Score,
     /// S, in layers: a second press reads the rest.
     status_key: parlor_core::StatusKey,
+    /// The meadow's clock: it holds for speech, at the run's pace.
+    pub run_clock: RunClock,
 }
 
 impl RunScreen {
@@ -181,6 +184,7 @@ impl RunScreen {
             awaiting_next: false,
             done: false,
             score: Score::new(),
+            run_clock: RunClock::default(),
         }
     }
 
@@ -310,6 +314,7 @@ impl RunScreen {
         let lanes = self.lanes();
         match event {
             Event::Go => {
+                self.run_clock.reset();
                 ctx.audio.play(sound::READY, Bus::EFFECTS);
                 ctx.say_queued("Go.");
             }
@@ -346,6 +351,7 @@ impl RunScreen {
                 self.chatter(ctx, text);
             }
             Event::BasketFull => {
+                self.run_clock.reset();
                 ctx.audio.play(sound::FULL, Bus::EFFECTS);
                 let cart = self.cart_text();
                 self.tell_queued(ctx, format!("Basket full. {cart}"));
@@ -376,6 +382,7 @@ impl RunScreen {
                 ctx.say_queued(format!("Streak {n}."));
             }
             Event::Splat { lane, spoiled } => {
+                self.run_clock.reset();
                 ctx.audio
                     .play_at(sound::SPLAT, ground(lane, lanes), Bus::EFFECTS);
                 if spoiled > 0 {
@@ -393,6 +400,7 @@ impl RunScreen {
                     .play_at(sound::MUD_THUD, ground(lane, lanes), Bus::EFFECTS);
             }
             Event::Stung { lane, lives } => {
+                self.run_clock.reset();
                 ctx.audio
                     .play_at(sound::STING, ground(lane, lanes), Bus::EFFECTS);
                 if self.run.mode == Mode::Practice {
@@ -420,6 +428,7 @@ impl RunScreen {
                 );
             }
             Event::Warning => {
+                self.run_clock.reset();
                 ctx.audio.play(sound::WARNING, Bus::EFFECTS);
                 if self.run.basket.is_empty() {
                     self.tell(ctx, "Ten seconds left.");
@@ -522,6 +531,7 @@ impl RunScreen {
             }
             Event::Finished => self.add_to_summary("Today's meadow is done.".to_string()),
             Event::Pattern { pattern, lane } => {
+                self.run_clock.reset();
                 ctx.audio.play(sound::PATTERN_CALL, Bus::EFFECTS);
                 let text = pattern_call(pattern, lane, self.lanes(), self.callouts);
                 self.tell(ctx, text);
@@ -575,15 +585,16 @@ impl RunScreen {
             self.run.cracks_total,
             self.run.best_streak
         ));
+        let pace = self.run_clock.pace();
         if let Some(challenge) = &self.challenge {
-            let r = Challenges::submit(ctx, challenge, self.run.score);
+            let r = Challenges::submit_at(ctx, challenge, pace, self.run.score);
             let period = challenge.period;
             let streak = Challenges::streak(ctx, ID, period);
             let result = format!(
                 "{} result: {}. {}",
                 challenge.title(),
                 self.run.score,
-                score_line(r)
+                score_line(r, pace)
             );
             title = format!("{title} {result}");
             lines.push(result);
@@ -597,15 +608,15 @@ impl RunScreen {
             title = format!("{title} {streak}");
             lines.push(streak);
         } else if let Some(board) = self.run.mode.board() {
-            let r = Records::record(ctx, ID, board, self.run.score);
-            title = format!("{title} {}", short_score_line(self.run.score, r));
-            lines.push(score_line(r));
+            let r = Records::record(ctx, ID, &pace.board(board), self.run.score);
+            title = format!("{title} {}", short_score_line(self.run.score, r, pace));
+            lines.push(score_line(r, pace));
             if self.run.mode == Mode::Easter {
                 let year = easter::year_of(parlor_core::challenges::today(ctx));
-                let mut keep = Keepsakes::load(ctx);
+                let mut keep = Keepsakes::load_at(ctx, pace);
                 let kept = keep.keep(year, self.run.score, self.run.golden_caught);
-                keep.store(ctx);
-                let kept = kept.line(year);
+                keep.store_at(ctx, pace);
+                let kept = kept.line(year, pace);
                 title = format!("{title} {kept}");
                 lines.push(kept);
             }
@@ -641,20 +652,28 @@ pub fn pattern_call(pattern: Pattern, lane: usize, lanes: usize, callouts: bool)
 }
 
 /// The score and what saving it meant, in a few words: "Score 61, saved."
-pub fn short_score_line(score: u64, r: ScoreResult) -> String {
+/// A relaxed run's best is its relaxed best.
+pub fn short_score_line(score: u64, r: ScoreResult, pace: Pace) -> String {
+    let word = pace.best_word();
     match r {
         ScoreResult::First => format!("Score {score}, saved."),
-        ScoreResult::NewBest { .. } => format!("Score {score}, a new best."),
-        ScoreResult::Short { best } => format!("Score {score}, best {best}."),
+        ScoreResult::NewBest { .. } => format!("Score {score}, a new {word}."),
+        ScoreResult::Short { best } => format!("Score {score}, {word} {best}."),
     }
 }
 
-/// What saving a score meant.
-pub fn score_line(r: ScoreResult) -> String {
+/// What saving a score meant, on the board for `pace`.
+pub fn score_line(r: ScoreResult, pace: Pace) -> String {
+    let word = pace.best_word();
     match r {
+        ScoreResult::First if pace.separate() => {
+            "Your first relaxed score here is saved.".to_string()
+        }
         ScoreResult::First => "Your first score here is saved.".to_string(),
-        ScoreResult::NewBest { previous } => format!("A new best. The old best was {previous}."),
-        ScoreResult::Short { best } => format!("Your best is {best}."),
+        ScoreResult::NewBest { previous } => {
+            format!("A new {word}. The old {word} was {previous}.")
+        }
+        ScoreResult::Short { best } => format!("Your {word} is {best}."),
     }
 }
 
@@ -681,6 +700,7 @@ impl State<Parlor> for RunScreen {
             }
         }
         self.run.introduce = true;
+        self.run_clock = RunClock::start(ctx, ID);
         sound::meadow(ctx);
         self.announce_round(ctx);
     }
@@ -692,6 +712,7 @@ impl State<Parlor> for RunScreen {
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.run_clock.reset();
         if self.run.mode != Mode::Practice {
             // Settings, from the pause menu, may have changed the call-outs.
             // Switching them on ends the by-ear bonus for this run; switching
@@ -880,8 +901,18 @@ impl State<Parlor> for RunScreen {
             ctx.push(PlayPage::new(introduction(kind)));
             return;
         }
+        // Speech is paced by real time.
         self.clock += dt;
-        self.run.update(dt);
+        let game_dt = if matches!(self.run.phase, Phase::LeadIn(_)) {
+            // The lead-in is timed to the round's announcement as it is
+            // spoken, so it keeps real time, at every pace.
+            self.run_clock.bypass();
+            self.run_clock.game_dt(ctx, dt);
+            dt
+        } else {
+            self.run_clock.game_dt(ctx, dt)
+        };
+        self.run.update(game_dt);
         for event in self.run.take_events() {
             self.on_rule_event(ctx, event);
         }
