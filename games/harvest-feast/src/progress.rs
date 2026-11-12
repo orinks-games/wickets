@@ -19,6 +19,7 @@ pub fn key() -> String {
 pub fn course_board(n: u32) -> String {
     format!("course {n}")
 }
+
 /// The board a course played at `pace` records on: relaxed courses keep
 /// their own, normal and quick share one.
 pub fn paced_course_board(n: u32, pace: Pace) -> String {
@@ -35,14 +36,14 @@ pub fn pace(ctx: &Ctx<Parlor>) -> Pace {
     })
 }
 
-/// Carries the old relaxed course switch over to the Pace setting, once,
-/// and moves the old relaxed course boards to the relaxed boards' names.
+/// Carries saves from before the Pace setting over, each part on its own
+/// so the order things happen in cannot lose one: the old relaxed course
+/// boards move to the relaxed boards' names whenever one is still there,
+/// keeping the higher score when both exist, and the old relaxed course
+/// switch becomes the Pace setting while none is saved. Runs wherever the
+/// game first reads its records: the title, Records, Course select and the
+/// kitchen. Doing it again changes nothing.
 pub fn migrate_pace(ctx: &mut Ctx<Parlor>) {
-    let progress = Progress::load(ctx);
-    Records::load::<Option<Pace>>(ctx, &pace::key(ID));
-    if pace::stored(ctx, ID).is_some() {
-        return;
-    }
     let key = format!("{ID}/scores");
     let mut scores: BTreeMap<String, u64> = Records::load(ctx, &key);
     let mut moved = false;
@@ -57,13 +58,18 @@ pub fn migrate_pace(ctx: &mut Ctx<Parlor>) {
     if moved {
         Records::store(ctx, &key, &scores);
     }
-    let value = if progress.relaxed {
-        Pace::Relaxed
-    } else {
-        Pace::Normal
-    };
-    pace::set(ctx, ID, value);
+    let progress = Progress::load(ctx);
+    Records::load::<Option<Pace>>(ctx, &pace::key(ID));
+    if pace::stored(ctx, ID).is_none() {
+        let value = if progress.relaxed {
+            Pace::Relaxed
+        } else {
+            Pace::Normal
+        };
+        pace::set(ctx, ID, value);
+    }
 }
+
 /// The best second-helpings run.
 pub const HELPINGS_BOARD: &str = "second helpings";
 

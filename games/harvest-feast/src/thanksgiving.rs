@@ -179,12 +179,15 @@ pub fn menu_line() -> String {
 }
 
 /// The row's help for `date`.
-pub fn row_help(date: Date, best: Option<u64>) -> String {
+pub fn row_help(date: Date, best: Option<u64>, relaxed: Option<u64>) -> String {
     if is_open(date) {
-        let best = match best {
+        let mut best = match best {
             Some(b) => format!(" Your best is {b} points."),
             None => String::new(),
         };
+        if let Some(b) = relaxed {
+            best.push_str(&format!(" Your relaxed best is {b} points."));
+        }
         format!(
             "The family's dinner: twelve dishes on all five stations, five made only today.{best}"
         )
@@ -325,15 +328,20 @@ impl Keepsakes {
                     1 => "1 star".to_string(),
                     n => format!("{n} stars"),
                 };
-                let relaxed = if k.relaxed_best > 0 {
-                    format!(", relaxed best {} points", k.relaxed_best)
-                } else {
-                    String::new()
-                };
+                let mut bests = Vec::new();
+                if k.best > 0 {
+                    bests.push(format!("best {} points", k.best));
+                }
+                if k.relaxed_best > 0 {
+                    bests.push(format!("relaxed best {} points", k.relaxed_best));
+                }
+                if bests.is_empty() {
+                    bests.push("no score yet".to_string());
+                }
                 format!(
-                    "Thanksgiving {}: best {} points{relaxed}, {stars}, {} at quality {}.",
+                    "Thanksgiving {}: {}, {stars}, {} at quality {}.",
                     k.year,
-                    k.best,
+                    bests.join(", "),
                     family(k.year).favourite.name(),
                     k.favourite
                 )
@@ -390,7 +398,9 @@ mod tests {
         assert!(line.contains("On the menu: turkey,"), "{line}");
         let far = locked_line(Date::new(2026, 3, 1));
         assert!(far.starts_with("Thanksgiving dinner opens on Thanksgiving Day."));
-        assert!(row_help(Date::new(2026, 11, 26), Some(5000)).contains("5000"));
+        assert!(row_help(Date::new(2026, 11, 26), Some(5000), None).contains("5000"));
+        assert!(row_help(Date::new(2026, 11, 26), None, Some(700))
+            .contains("Your relaxed best is 700 points."));
     }
 
     #[test]
@@ -447,5 +457,13 @@ mod tests {
         assert!(k
             .page(Date::new(2026, 11, 26))
             .contains("best 5000 points, relaxed best 9000 points, 3 stars"));
+        let mut only = Keepsakes::default();
+        only.keep_at(2026, 11100, 2, 80, Pace::Relaxed);
+        assert!(
+            only.page(Date::new(2026, 11, 26))
+                .contains("Thanksgiving 2026: relaxed best 11100 points, 2 stars"),
+            "{}",
+            only.page(Date::new(2026, 11, 26))
+        );
     }
 }

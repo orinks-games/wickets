@@ -153,19 +153,28 @@ pub fn row_with(
 ) -> SettingsRow<Parlor> {
     let current = std::rc::Rc::new(current);
     let read = std::rc::Rc::clone(&current);
+    let after = std::rc::Rc::clone(&current);
     setting(
         &format!("{}_pace", id.replace('-', "_")),
         move |ctx| label(read(ctx)),
         move |ctx, delta| {
             let pace = current(ctx).step(delta);
             set(ctx, id, pace);
-            Some(format!(
-                "{}. {} Applies from the next run.",
-                label(pace),
-                pace.meaning()
-            ))
+            Some(changed(pace))
         },
         "How fast timed play runs. Relaxed is the slowest and quick the fastest. A change applies from the next run. Stars and unlocks count at every pace. Relaxed scores are saved separately.",
+    )
+    // Left and Right say the same as Enter, so a change made during a run
+    // says it waits for the next one.
+    .value_first(move |ctx| changed(after(ctx)))
+}
+
+/// What the row says once the pace has changed to `pace`.
+fn changed(pace: Pace) -> String {
+    format!(
+        "{}. {} Applies from the next run.",
+        label(pace),
+        pace.meaning()
     )
 }
 
@@ -446,11 +455,18 @@ mod tests {
         assert_eq!(get(&h.app.ctx, "dummy"), Pace::Quick);
         h.clear();
         h.press(Key::Right);
-        assert!(
-            h.spoken()[0].starts_with("Pace: relaxed"),
-            "{:?}",
-            h.spoken()
+        // Left and Right confirm the change as Enter does.
+        assert_eq!(
+            h.spoken(),
+            ["Pace: relaxed. Much slower timing. Relaxed scores are saved separately. Applies from the next run."]
         );
         assert_eq!(get(&h.app.ctx, "dummy"), Pace::Relaxed);
+        h.clear();
+        h.press(Key::Left);
+        assert_eq!(
+            h.spoken(),
+            ["Pace: quick. The original timing. Applies from the next run."]
+        );
+        assert_eq!(get(&h.app.ctx, "dummy"), Pace::Quick);
     }
 }

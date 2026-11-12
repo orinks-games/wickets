@@ -64,34 +64,30 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
     ctx.push(ChallengeHost::new(period));
 }
 
-fn best_line(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    best_line_at(ctx, board, Pace::Normal)
-}
-
-/// "best 1200" on `base`'s board for `pace`, "relaxed best 900" on a
-/// relaxed board.
-fn best_line_at(ctx: &mut Ctx<Parlor>, base: &str, pace: Pace) -> String {
-    match Records::best(ctx, ID, &pace.board(base)) {
-        Some(b) => format!("{} {b}", pace.best_word()),
-        None => "no score yet".to_string(),
+/// The bests on `base`'s boards: "best 1200, relaxed best 900", or only
+/// the one that has a score, or "no score yet".
+fn best_line(ctx: &mut Ctx<Parlor>, base: &str) -> String {
+    let bests: Vec<String> = [Pace::Normal, Pace::Relaxed]
+        .into_iter()
+        .filter_map(|pace| {
+            Records::best(ctx, ID, &pace.board(base)).map(|b| format!("{} {b}", pace.best_word()))
+        })
+        .collect();
+    if bests.is_empty() {
+        "no score yet".to_string()
+    } else {
+        bests.join(", ")
     }
-}
-
-/// ", relaxed best 900" when a relaxed run has a best on `base`'s board.
-fn relaxed_part(ctx: &mut Ctx<Parlor>, base: &str) -> String {
-    Records::best(ctx, ID, &Pace::Relaxed.board(base))
-        .map(|b| format!(", relaxed best {b}"))
-        .unwrap_or_default()
 }
 
 /// Records: every best score, then the challenges, a page at a time.
 pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
+    progress::migrate_pace(ctx);
     let progress = Progress::load(ctx);
     let helpings = if progress.helpings_open() {
         format!(
-            "Second helpings: {}{}, most rounds {}.",
+            "Second helpings: {}, most rounds {}.",
             best_line(ctx, progress::HELPINGS_BOARD),
-            relaxed_part(ctx, progress::HELPINGS_BOARD),
             progress.best_rounds
         )
     } else {
@@ -106,9 +102,8 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         let lines: Vec<String> = (first..first + 4)
             .map(|n| {
                 let best = best_line(ctx, &progress::course_board(n));
-                let relaxed = relaxed_part(ctx, &progress::course_board(n));
                 format!(
-                    "Course {n}, {}: {}, {best}{relaxed}.",
+                    "Course {n}, {}: {}, {best}.",
                     course(n).name,
                     stars_phrase(progress.stars(n))
                 )
@@ -134,7 +129,9 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
 /// place on every date.
 fn thanksgiving_row(ctx: &mut Ctx<Parlor>) -> TitleRow<HarvestFeast> {
     let today = parlor_core::challenges::today(ctx);
-    let help = thanksgiving::row_help(today, Records::best(ctx, ID, thanksgiving::BOARD));
+    let best = Records::best(ctx, ID, thanksgiving::BOARD);
+    let relaxed = Records::best(ctx, ID, &Pace::Relaxed.board(thanksgiving::BOARD));
+    let help = thanksgiving::row_help(today, best, relaxed);
     if thanksgiving::is_open(today) {
         let year = thanksgiving::year_of(today);
         MenuItem::new(
@@ -172,8 +169,7 @@ pub(crate) fn dishes(n: usize) -> String {
 fn course_help(ctx: &mut Ctx<Parlor>, n: u32) -> String {
     let progress = Progress::load(ctx);
     let c = course(n);
-    let pace = progress::pace(ctx);
-    let best = best_line_at(ctx, &progress::course_board(n), pace);
+    let best = best_line(ctx, &progress::course_board(n));
     format!(
         "{} {}. {}, {best}.",
         c.blurb,
@@ -204,6 +200,7 @@ impl TitleGame for HarvestFeast {
     }
 
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
+        progress::migrate_pace(ctx);
         let progress = Progress::load(ctx);
         let next = progress.next_course();
         let next_help = course_help(ctx, next);
@@ -343,13 +340,13 @@ impl Menu for CourseSelect {
     }
 
     fn build_items(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
+        progress::migrate_pace(ctx);
         let progress = Progress::load(ctx);
-        let pace = progress::pace(ctx);
         let mut items: Vec<MenuItem<Self, Parlor>> = (1..=COURSES)
             .map(|n| {
                 let c = course(n);
                 if progress.open(n) {
-                    let best = best_line_at(ctx, &progress::course_board(n), pace);
+                    let best = best_line(ctx, &progress::course_board(n));
                     MenuItem::new(
                         Label::from(format!(
                             "Course {n}: {}, {}, {best}",

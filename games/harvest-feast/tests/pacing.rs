@@ -317,3 +317,115 @@ fn a_relaxed_challenge_and_thanksgiving_keep_their_own_results() {
     assert_eq!(year.best, 0);
     assert!(year.relaxed_best > 0);
 }
+
+/// A save from before the Pace setting: the old relaxed switch on, and
+/// courses 1 and 2 with old relaxed boards.
+fn old_save(h: &mut Headless<Parlor>) {
+    Progress {
+        stars: vec![3, 2, 1],
+        relaxed: true,
+        ..Progress::default()
+    }
+    .store(&mut h.app.ctx);
+    Records::record(&mut h.app.ctx, ID, "course 1", 800);
+    Records::record(&mut h.app.ctx, ID, "course 1 relaxed", 1500);
+    Records::record(&mut h.app.ctx, ID, "course 2 relaxed", 900);
+}
+
+#[test]
+fn old_relaxed_boards_survive_the_pace_row_being_touched_first() {
+    let mut h = headless();
+    old_save(&mut h);
+    // The player changes the Pace row before cooking anything.
+    pace::set(&mut h.app.ctx, ID, Pace::Quick);
+    let pages = harvest_feast::records_pages(&mut h.app.ctx);
+    assert_eq!(pace::stored(&h.app.ctx, ID), Some(Pace::Quick));
+    for (board, best) in [("course 1-relaxed", 1500), ("course 2-relaxed", 900)] {
+        assert_eq!(
+            Records::best(&mut h.app.ctx, ID, board),
+            Some(best),
+            "{board}"
+        );
+    }
+    for old in ["course 1 relaxed", "course 2 relaxed"] {
+        assert_eq!(Records::best(&mut h.app.ctx, ID, old), None, "{old}");
+    }
+    let all = pages.join(" ");
+    assert!(all.contains("best 800, relaxed best 1500"), "{all}");
+    assert!(all.contains("relaxed best 900"), "{all}");
+    assert!(!all.contains("best 0"), "{all}");
+
+    // Running it again changes nothing.
+    progress::migrate_pace(&mut h.app.ctx);
+    assert_eq!(
+        Records::best(&mut h.app.ctx, ID, "course 1-relaxed"),
+        Some(1500)
+    );
+}
+
+#[test]
+fn moving_an_old_relaxed_board_keeps_the_higher_score() {
+    let mut h = headless();
+    old_save(&mut h);
+    Records::record(&mut h.app.ctx, ID, "course 1-relaxed", 1200);
+    Records::record(&mut h.app.ctx, ID, "course 2-relaxed", 1100);
+    progress::migrate_pace(&mut h.app.ctx);
+    assert_eq!(
+        Records::best(&mut h.app.ctx, ID, "course 1-relaxed"),
+        Some(1500)
+    );
+    assert_eq!(
+        Records::best(&mut h.app.ctx, ID, "course 2-relaxed"),
+        Some(1100)
+    );
+    assert_eq!(Records::best(&mut h.app.ctx, ID, "course 1 relaxed"), None);
+    assert_eq!(pace::stored(&h.app.ctx, ID), Some(Pace::Relaxed));
+}
+
+#[test]
+fn course_select_names_both_boards() {
+    let mut h = headless();
+    old_save(&mut h);
+    Records::record(&mut h.app.ctx, ID, "course 3", 400);
+    h.app.ctx.push(harvest_feast::CourseSelect::new(1));
+    h.frame(0.0);
+    let first = h.spoken().join(" ");
+    assert!(first.contains("best 800, relaxed best 1500"), "{first}");
+    let mut lines = Vec::new();
+    for _ in 0..2 {
+        h.clear();
+        h.press(Key::Down);
+        lines.push(h.spoken().join(" "));
+    }
+    assert!(lines[0].contains("relaxed best 900"), "{lines:?}");
+    assert!(lines[1].contains("best 400"), "{lines:?}");
+    for line in lines.iter().chain([&first]) {
+        assert!(!line.contains("best 0"), "{line}");
+        assert!(!line.contains("no score yet"), "{line}");
+    }
+}
+
+#[test]
+fn records_leave_out_a_board_with_no_score() {
+    let mut h = headless();
+    Progress {
+        stars: vec![1; 8],
+        best_rounds: 4,
+        ..Progress::default()
+    }
+    .store(&mut h.app.ctx);
+    Records::record(
+        &mut h.app.ctx,
+        ID,
+        &Pace::Relaxed.board(progress::HELPINGS_BOARD),
+        2000,
+    );
+    Records::record(&mut h.app.ctx, ID, "course 1-relaxed", 700);
+    let all = harvest_feast::records_pages(&mut h.app.ctx).join(" ");
+    assert!(
+        all.contains("Second helpings: relaxed best 2000, most rounds 4."),
+        "{all}"
+    );
+    assert!(all.contains(": 1 star, relaxed best 700."), "{all}");
+    assert!(!all.contains("best 0"), "{all}");
+}
