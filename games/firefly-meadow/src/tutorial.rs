@@ -46,7 +46,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, patch: Live<EveningScreen>) -> Lesson {
     // reaching it never comes before it is taught.
     let walk = patch.step(
         format!(
-            "{}, {d}, {l} and {r} walk one step at a time, and {u} is always north. A firefly's soft tone marks where it drifts; quiet means far. Walk until the soft hum means it is in reach.",
+            "{}, {d}, {l} and {r} walk one step at a time, and {u} is always north. A firefly's tone marks where it drifts; quiet means far. Walk until it is in reach.",
             sentence_start(&u)
         ),
         move |s: &EveningScreen, _| {
@@ -58,7 +58,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, patch: Live<EveningScreen>) -> Lesson {
 
     let catch = patch.step(
         format!(
-            "{} catches a firefly in reach, but only while it glows. Listen for its tone, and press as you hear it.",
+            "{} catches a firefly in reach, but only while it glows. Press as its tone plays.",
             sentence_start(&p)
         ),
         // The meadow says what was caught; the lesson goes on without a

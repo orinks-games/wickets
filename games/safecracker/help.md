@@ -34,7 +34,7 @@ From the pawnbroker's safe on, false-gate cues mark wrong numbers. Ignore them a
 
 ## The direction rule
 
-From the jeweller's safe on, the safes behave like real combination dials. Wheel 1 is found turning right, wheel 2 turning left, wheel 3 right again, and so on. The tumbler only clunks when you are turning the right way, and you must reach the number turning that way before you set it. If you overshoot, turn back past the number and come forward again the right way. The same goes for a spin that clunks: stepping back one number at a time is silent, because that is the wrong way, so spin back the ten you just passed and then step forward the right way one number at a time until it clunks. Setting the right number reached the wrong way is a strike. Status tells you which way the current wheel wants and which way you last turned.
+From the jeweller's safe on, the safes behave like real combination dials. Wheel 1 is found turning right, wheel 2 turning left, wheel 3 right again, and so on. The tumbler only clunks when you are turning the right way, and you must reach the number turning that way before you set it. If you overshoot, turn back past the number and come forward again the right way. The same goes for a spin that clunks: stepping back one number at a time is silent, because that is the wrong way, so spin back the ten you just passed and then step forward the right way one number at a time until it clunks. Setting the right number reached the wrong way is a strike. Status says which way to turn for the current wheel and which way you last turned.
 
 ## The night guard
 

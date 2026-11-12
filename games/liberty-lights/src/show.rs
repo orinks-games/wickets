@@ -667,7 +667,7 @@ impl State<Parlor> for Show {
             )
         } else {
             format!(
-                "{} hears the show again, {r} repeats the instructions, {s} gives the status, twice for more, {h} describes the show in words for {HINT_COST} points.",
+                "{} plays the show again, {r} repeats the instructions, {s} gives the status, twice for more, {h} describes the show in words for {HINT_COST} points.",
                 sentence_start(&t)
             )
         };

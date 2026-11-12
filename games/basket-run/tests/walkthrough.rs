@@ -272,7 +272,7 @@ fn the_tutorial_catches_and_banks_an_egg() {
         }
         h.frame(DT);
     }
-    assert!(spoke(&h, "Caught, with a woody thump"), "{:?}", h.spoken());
+    assert!(spoke(&h, "Caught."), "{:?}", h.spoken());
     assert!(
         spoke(&h, "Banked as points. Tutorial done."),
         "{:?}",

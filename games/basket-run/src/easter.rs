@@ -71,11 +71,11 @@ pub fn row_help(date: Date, best: Option<u64>) -> String {
     if is_open(date) {
         let best = best.map_or(String::new(), |b| format!(" Your best is {b}."));
         format!(
-            "Three gentle rounds at sunrise, full of golden eggs worth double, with no bees and no egg target.{best}"
+            "Three rounds at sunrise, full of golden eggs worth double, with no bees and no egg target.{best}"
         )
     } else if run_up(date).is_some() {
         format!(
-            "{} Until then, Enter hears how the Easter bunny is getting on.",
+            "{} Until then, Enter says how the Easter bunny is getting on.",
             countdown(date)
         )
     } else {

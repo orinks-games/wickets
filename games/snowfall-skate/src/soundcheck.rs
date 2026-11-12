@@ -33,7 +33,7 @@ impl SoundCheck {
     pub fn new() -> SoundCheck {
         SoundCheck {
             menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down choose a sound, Enter plays it from where you would hear it, Escape goes back.",
+                "Up and Down choose a sound, Enter plays it from its place on the ice, Escape goes back.",
             ),
             demo: Demo::None,
         }

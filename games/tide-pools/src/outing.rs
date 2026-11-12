@@ -887,7 +887,7 @@ impl OutingScreen {
 
     fn controls_line(ctx: &Ctx<Parlor>) -> String {
         format!(
-            "{} and {} walk between pools, {} leans in, {} steps back, {} reaches in for what you just heard. {} gives the pool and the tide, again for what you have gathered, a third time for the shore. {} gives a hint, F1 helps, Escape pauses.",
+            "{} and {} walk between pools, {} leans in, {} steps back, {} reaches in after a creature cue. {} gives the pool and the tide, again for what you have gathered, a third time for the shore. {} gives a hint, F1 helps, Escape pauses.",
             sentence_start(&ctx.control_name(ParlorAction::Left)),
             ctx.control_name(ParlorAction::Right),
             ctx.control_name(ParlorAction::Up),
@@ -1088,21 +1088,21 @@ impl State<Parlor> for OutingScreen {
         let p = ctx.control_name(ParlorAction::Primary);
         let now = match o.lean {
             Lean::In if o.hiding_here() => {
-                "Something shy is hiding in this pool: keep still until you hear two soft rising notes, then wait for its sound.".to_string()
+                "Something shy is hiding in this pool: keep still until it creeps back out, then wait for its cue.".to_string()
             }
             Lean::In => format!(
-                "You are leaning in. When a creature makes its sound in this pool, press {p} right after to gather it."
+                "You are leaning in. When a creature cue plays in this pool, press {p} right after to gather it."
             ),
             Lean::Edge => format!(
-                "You are at the water's edge, hearing this pool and the next either side. Lean in with {up} to reach in."
+                "You are at the water's edge, in range of this pool and the next either side. Lean in with {up} to reach in."
             ),
             Lean::Back => format!(
-                "You are standing back, hearing two pools either side. {} brings you to the edge.",
+                "You are standing back, in range of two pools either side. {} brings you to the edge.",
                 sentence_start(&up)
             ),
         };
         format!(
-            "{now} {} {} names the last sound you heard here. {} repeats the last message.",
+            "{now} {} {} names the last cue here. {} repeats the last message.",
             Self::controls_line(ctx),
             sentence_start(&ctx.control_name(ParlorAction::Secondary)),
             sentence_start(&ctx.control_name(ParlorAction::Repeat)),

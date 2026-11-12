@@ -150,11 +150,11 @@ impl Crack {
     fn wheel_prompt(&self) -> String {
         let run = &self.run;
         if run.practice() {
-            return "Turn the dial either way and listen for the clunk, then set it.".to_string();
+            return "Turn the dial either way to the clunk, then set it.".to_string();
         }
         let way = match run.required() {
-            Some(t) => format!("turn {} and listen for the clunk", t.word()),
-            None => "turn either way and listen for the clunk".to_string(),
+            Some(t) => format!("turn {} to the clunk", t.word()),
+            None => "turn either way to the clunk".to_string(),
         };
         format!("Wheel {} of {}: {way}.", run.wheel + 1, run.spec.wheels)
     }
@@ -167,7 +167,7 @@ impl Crack {
                 let r = ctx.control_name(ParlorAction::Right);
                 let p = ctx.control_name(ParlorAction::Primary);
                 format!(
-                    "The practice safe. One wheel at a time, forever, and nothing to lose. {} and {r} turn the dial. When you hear the deep clunk, {p} sets the wheel and a new number is waiting. Escape pauses, and you leave from there.",
+                    "The practice safe. One wheel at a time, forever, and nothing to lose. {} and {r} turn the dial. At the clunk, {p} sets the wheel and a new number is waiting. Escape pauses, and you leave from there.",
                     sentence_start(&l)
                 )
             }
@@ -1032,7 +1032,7 @@ impl State<Parlor> for Crack {
         let now = if run.guard_listening() {
             "The guard is at the door, listening: keep still! Do not turn or set until his footsteps walk away. Status and hints are silent and safe.".to_string()
         } else if run.practice() {
-            "Practice: turn until you hear the deep clunk, then set. Nothing here can go wrong."
+            "Practice: turn to the clunk, then set. Nothing here is scored."
                 .to_string()
         } else {
             let mut s = self.wheel_prompt();
@@ -1041,7 +1041,7 @@ impl State<Parlor> for Crack {
                 s.push_str(&words);
             }
             if run.spec.decoys > 0 {
-                s.push_str(" Hollow rattles are false gates: ignore them.");
+                s.push_str(" False gates mark wrong numbers: ignore them.");
             }
             if let Some(words) = self.event_words(ctx) {
                 s.push(' ');

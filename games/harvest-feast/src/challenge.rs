@@ -429,7 +429,7 @@ impl ChallengePlan {
                 let st = self.hot.map_or("burner", |s| s.name());
                 format!("A hot burner: the {st} runs hot. Dishes there come due much sooner and burn faster.")
             }
-            Some(Twist::Quiet) => "A quiet kitchen: no spoken call-outs. The recipe still calls each dish, but you hear when a dish needs you by its sound alone. The by-ear bonus applies.".to_string(),
+            Some(Twist::Quiet) => "A quiet kitchen: no spoken call-outs. The recipe still calls each dish, but only its sound marks when a dish needs you. The bonus for cooking without call-outs applies.".to_string(),
             Some(Twist::Butterfingers) => format!("Butterfingers: every fumble costs {BUTTERFINGERS_COST} instead of 5."),
         };
         let shape = match self.period {

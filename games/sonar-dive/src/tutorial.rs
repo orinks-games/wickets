@@ -58,19 +58,19 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sea: Live<DiveScreen>) -> Lesson {
 
     let ping = sea.step(
         format!(
-            "{} sends a sonar ping. Everything nearby answers from its true direction, and far things answer later. A treasure chest is a bright double chime. Ping now.",
+            "{} sends a sonar ping. Everything nearby echoes from its true direction, and far things echo later. Ping now.",
             sentence_start(&p)
         ),
         |s: &DiveScreen, _| {
             dive(s)
                 .is_some_and(|d| !d.returns.is_empty())
-                .then(|| "Listen: the chime comes from your right.".to_string())
+                .then(|| "The chest is on your right.".to_string())
         },
     );
 
     let turn = sea.step(
         format!(
-            "{} and {r} turn the sub while you hold them, with a soft click every 30 degrees. Let go and your heading is spoken. Turn until the chest is straight ahead, and ping to check.",
+            "{} and {r} turn the sub while you hold them. Let go and your heading is spoken. Turn until the chest is straight ahead, and ping to check.",
             sentence_start(&l)
         ),
         |s: &DiveScreen, ctx| {
@@ -86,7 +86,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sea: Live<DiveScreen>) -> Lesson {
 
     let mut since = None;
     let mine = sea.step(
-        "A mine's echo is a harsh buzzing ring. Mines tick when you are near, and touching one costs hull. One lies south of you. Ping and listen for it.",
+        "Mines warn you when you are near, and touching one costs hull. One lies south of you. Ping to find it.",
         move |s: &DiveScreen, _| {
             let d = dive(s)?;
             // A mine already bumped into is gone and can never answer.
@@ -97,7 +97,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sea: Live<DiveScreen>) -> Lesson {
             // Once every echo of a new ping is back, so the buzz comes first.
             let heard = d.pings > start && !d.echoes_due();
             (heard && d.returns.iter().any(|r| r.kind == Kind::Mine))
-                .then(|| "That buzz was the mine.".to_string())
+                .then(|| "That echo was the mine.".to_string())
         },
     );
 

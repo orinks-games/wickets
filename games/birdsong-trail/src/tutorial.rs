@@ -9,7 +9,7 @@ use crate::walk::WalkScreen;
 use crate::ID;
 
 /// Said as the chickadee notices you.
-const NOTICED: &str = "It noticed you, and the rest of the glade hushes.";
+const NOTICED: &str = "It noticed you, and the rest of the glade goes quiet.";
 
 /// About how long a line takes to say.
 fn speech_secs(text: &str) -> f64 {
@@ -59,7 +59,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, glade: Live<WalkScreen>) -> Lesson {
     );
 
     let answer_prompt = format!(
-        "When the song ends, whistle it back note for note. {} is low, {p} is middle, {u} is high. {} asks the bird to sing once more.",
+        "When the song ends, whistle it back note for note. {} is low, {p} is middle, {u} is high. {} makes the bird sing once more.",
         sentence_start(&d),
         sentence_start(&rep)
     );
@@ -77,7 +77,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, glade: Live<WalkScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Birdsong Trail",
-        "You walk a trail at dawn, and answer birds' songs to befriend them. There is no way to fail and no clock. Learn in the practice glade",
+        "You walk a trail at dawn, and answer birds' songs to befriend them. You cannot fail, and there is no clock. Learn in the practice glade",
     )
     .step(approach)
     .step(answer)

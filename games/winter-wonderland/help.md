@@ -2,7 +2,7 @@
 
 ## About the game
 
-Winter holidays: sort gifts by sound, then answer children's letters. Gift Sort: clear the shift before the clock runs out. The Wish Desk: find each letter's gift on the shelf and wrap it, with no clock. Midnight Countdown, a rhythm game for New Year's Eve, has its own row on the title.
+Winter holidays: shake and sort gifts, then answer children's letters. Gift Sort: clear the shift before the clock runs out. The Wish Desk: find each letter's gift on the shelf and wrap it, with no clock. Midnight Countdown, a rhythm game for New Year's Eve, has its own row on the title.
 
 ## The two parts
 
@@ -56,7 +56,7 @@ Story mode plays shifts 1 to 3 of Gift Sort, a short bridge, then stack 2 at the
 
 ## Challenges
 
-Choose Challenges on the title, or Challenges in the parlor's lobby, for three runs that are the same for every player. Each row says what the challenge is, then whether you have played it, your best and your streak. The briefing states the twist and how long until the next one before you play. Your result counts when the run ends, win or lose. Choosing Leave the challenge on the pause menu does not count. Escape on a briefing goes back without starting. Afterwards you hear your score, your best on that challenge and your streak, then the results menu offers the same challenge again or Back to the challenges.
+Choose Challenges on the title, or Challenges in the parlor's lobby, for three runs that are the same for every player. Each row says what the challenge is, then whether you have played it, your best and your streak. The briefing states the twist and how long until the next one before you play. Your result counts when the run ends, win or lose. Choosing Leave the challenge on the pause menu does not count. Escape on a briefing goes back without starting. Afterwards the game reads your score, your best on that challenge and your streak, then the results menu offers the same challenge again or Back to the challenges.
 
 The daily challenge alternates. On even days of the month it is the rush: one Gift Sort shift at shift 5. On odd days it is the morning post: stack 3 at the Wish Desk. Each day brings one twist. On the belt, the twist is one of these. Rush hour: the belt runs a quarter faster. Short clock: four fifths of the usual time. Big order: three extra gifts, with a little extra time. Picky guests: a wrong guess costs double time. At the desk, the twist is one of these. Packed in straw: every box needs two shakes. A long shelf: two more boxes. Careful hands: a wrong box costs double. Few shakes: only two shakes a letter before shakes cost points. The briefing repeats the twist.
 
@@ -66,11 +66,11 @@ The monthly challenge is the midwinter post: stacks 3, 4 and 5 at the Wish Desk,
 
 ## Practice, tutorial and sound check
 
-Practice rhythm is a night of Midnight Countdown where the party never fizzles and nothing is saved. Choose any night you have opened with Left and Right on its row of the title. The tutorial sorts two gifts on the belt, then answers a letter at the Wish Desk. Sound check lists the gameplay cues and lets you play them, so you can learn each gift's shake and each cue before you play. Help is this guide.
+Practice rhythm is a night of Midnight Countdown where the party never fizzles and nothing is saved. Choose any night you have opened with Left and Right on its row of the title. The tutorial sorts two gifts on the belt, then answers a letter at the Wish Desk. Sound check lists and plays the gameplay cues, with each gift's shake. Help is this guide.
 
 ## Records and results
 
-The Gift Sort, Wish Desk and Midnight Countdown rows on the title name your best for the chosen shift, stack or night, and Play, story mode names your best story score. Records reads every best: the story, the blizzard story, Gift Sort, the Wish Desk and each stack, Muddled post, Midnight Countdown and each night, how many are open, and your challenge results. When a run ends you hear its results, then the results menu. Next stack or Next night plays the next one. Play again or Try again plays the same run. Hear the results again reads them once more, and Back to the title goes back. Escape on the results menu does the same as Back to the title.
+The Gift Sort, Wish Desk and Midnight Countdown rows on the title name your best for the chosen shift, stack or night, and Play, story mode names your best story score. Records reads every best: the story, the blizzard story, Gift Sort, the Wish Desk and each stack, Muddled post, Midnight Countdown and each night, how many are open, and your challenge results. When a run ends the game reads its results, then the results menu. Next stack or Next night plays the next one. Play again or Try again plays the same run. Hear the results again reads them once more, and Back to the title goes back. Escape on the results menu does the same as Back to the title.
 
 ## The title
 

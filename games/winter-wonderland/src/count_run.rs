@@ -488,7 +488,7 @@ impl State<Parlor> for CountRun {
                 n(ParlorAction::Up)
             ),
             _ => format!(
-                "Midnight Countdown. Listen to the band's call, then answer it in the next bar on the same beats. {} plays the bell, {} the drum, {} the horn. {} says the last call in words, {} speaks the time, energy and combo. Escape pauses.",
+                "Midnight Countdown. After the band's call, answer it in the next bar on the same beats. {} plays the bell, {} the drum, {} the horn. {} says the last call in words, {} speaks the time, energy and combo. Escape pauses.",
                 sentence_start(&n(ParlorAction::Primary)),
                 n(ParlorAction::Down),
                 n(ParlorAction::Up),

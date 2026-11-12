@@ -361,7 +361,7 @@ impl TitleGame for Cupid {
                 Mode::Practice.name(),
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(Field::mode(Mode::Practice)),
             )
-            .help("One slow heart at a time, endless arrows and nothing to lose. Escape pauses."),
+            .help("One slow heart at a time and endless arrows. Nothing is saved. Escape pauses."),
         )
     }
 

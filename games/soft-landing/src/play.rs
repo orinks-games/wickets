@@ -967,7 +967,7 @@ impl State<Parlor> for Descent {
         } else if self.hints_allowed() {
             self.hint_words(ctx)
         } else {
-            "Hold the engine when the tone rises, and let go when it drops.".to_string()
+            "Hold the engine when the game says Too fast, and let go at Safe speed.".to_string()
         };
         let mut text = format!("{now} {}", self.controls(ctx));
         if let Some(ch) = &self.challenge {

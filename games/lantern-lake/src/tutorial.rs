@@ -17,7 +17,7 @@ pub fn pond() -> Live<RunScreen> {
     };
     Live::new(RunScreen::new(launch, None)).guard(|_, ctx, event| {
         (ctx.action_for(event) == Some(ParlorAction::Secondary))
-            .then(|| "Stay out a little longer: a lantern is still waiting.".to_string())
+            .then(|| "Stay out a little longer: a lantern is still on the lake.".to_string())
     })
 }
 
@@ -38,7 +38,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pond: Live<RunScreen>) -> Lesson {
 
     let paddle = pond.step(
         format!(
-            "{} paddles toward the first lantern, directly ahead. Hold it to keep paddling. Listen for the lantern's chime to ring faster as you approach. {d} slows the canoe.",
+            "{} paddles toward the first lantern, directly ahead. Hold it to keep paddling. The lantern's chime rings faster as you approach. {d} slows the canoe.",
             sentence_start(&u),
             d = sentence_start(&d),
         ),
@@ -49,7 +49,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pond: Live<RunScreen>) -> Lesson {
 
     let turn = pond.step(
         format!(
-            "{} and {r} turn the canoe: a short press turns a little, and holding keeps turning. A chime behind you is muffled. The second lantern is off to your right. Turn until its chime is straight ahead, in both ears, then paddle to it.",
+            "{} and {r} turn the canoe: a short press turns a little, and holding keeps turning. The second lantern is off to your right. Turn until its chime is straight ahead, then paddle to it.",
             sentence_start(&l)
         ),
         |s: &RunScreen, _| {
@@ -65,6 +65,6 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pond: Live<RunScreen>) -> Lesson {
     .step(paddle)
     .step(turn)
     .outro(
-        "Listen for frogs and other creatures to find your way around the lake. They stay in the same places all night. Reeds brushing the canoe mean you have reached the shore. F1 explains your controls.",
+        "Frogs and other creatures are your landmarks on the lake. They stay in the same places all night. Reeds brushing the canoe mean you have reached the shore. F1 explains your controls.",
     )
 }

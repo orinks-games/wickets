@@ -63,13 +63,13 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
     let brief = belt
         .step(brief_prompt, |s: &SortRun, _| {
             s.playing()
-                .then(|| "The belt is running. A soft thump means a gift has landed.".to_string())
+                .then(|| "The belt is running, and a gift has landed.".to_string())
         })
         .start(move |_| held.with_mut(|s| s.hold_for(brief_wait)));
 
     let shake = belt.step(
         format!(
-            "{} shakes the gift, and you hear what is inside. Shake it now.",
+            "{} shakes the gift. Shake it now.",
             sentence_start(&p)
         ),
         |s: &SortRun, _| {
@@ -83,7 +83,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
 
     const MATCHED: &str = "Now match that sound to a wish.";
     let sort_prompt = format!(
-        "{} sends the gift to the person on your left, and {r} to the person on your right. Rising bells mean you got it right, and a low buzz costs clock time. {} says the wishes again. Sort {GIFTS} gifts.",
+        "{} sends the gift to the person on your left, and {r} to the person on your right. A wrong delivery costs clock time. {} says the wishes again. Sort {GIFTS} gifts.",
         sentence_start(&l),
         sentence_start(&rep)
     );
@@ -93,7 +93,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
     let sort = belt
         .step(sort_prompt, |s: &SortRun, _| {
             (s.shift().sorted >= GIFTS).then(|| {
-                format!("{GIFTS} gifts sorted. Quick beeping means a gift is near the edge, and if it falls it breaks.")
+                format!("{GIFTS} gifts sorted. The near the edge cue means a gift is about to fall, and if it falls it breaks.")
             })
         })
         .start(move |_| held.with_mut(|s| s.hold_for(sort_wait)));
@@ -121,7 +121,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
     );
     let wrap = desk.step(
         format!(
-            "Hold {p} to wrap it. The paper crinkles, then the ribbon snaps and the stamp comes down. Let go early and nothing is wrapped."
+            "Hold {p} to wrap it. Keep holding until it is wrapped. Let go early and nothing is wrapped."
         ),
         |s: &DeskRun, _| {
             (s.stack().answered() >= 1).then(|| "Wrapped and stamped. A wrong box goes back on the shelf and costs points, never time.".to_string())

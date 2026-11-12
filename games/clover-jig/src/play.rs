@@ -1001,12 +1001,12 @@ impl State<Parlor> for Floor {
             self.start_prompt(ctx)
         } else if let Some(i) = run.dance.waiting() {
             let step = run.dance.plan.calls[i].step;
-            format!("The tune is waiting for {}.", Self::step_line(ctx, step))
+            format!("The music holds for {}.", Self::step_line(ctx, step))
         } else if run.practice() {
-            "Listen for the caller: each step falls on the beat after its call.".to_string()
+            "Each step falls on the beat after its call.".to_string()
         } else {
             format!(
-                "Listen for the caller: each step falls on the beat after its call. Every {} in a row add {STREAK_BONUS} points.",
+                "Each step falls on the beat after its call. Every {} in a row add {STREAK_BONUS} points.",
                 crate::rules::STREAK_EVERY
             )
         };

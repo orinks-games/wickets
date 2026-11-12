@@ -281,7 +281,7 @@ impl TitleGame for TidePools {
             format!("Your aquarium, {kinds} of {} kinds", Species::ALL.len()),
             |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(AquariumScreen::new()),
         )
-        .help("Visit everything you have gathered, and listen to it.")]
+        .help("Visit everything you have gathered.")]
     }
 
     fn lesson(&mut self, ctx: &mut Ctx<Parlor>) -> parlor_core::Lesson {

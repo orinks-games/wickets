@@ -65,7 +65,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let dl = Rc::clone(&dial);
     let clicks = Step::new(
         format!(
-            "The dial runs from 0 to 99. {} turns it one number down and {r} one number up, with a soft click each. Every tenth number gives a firmer double click. Turn up to 5.",
+            "The dial runs from 0 to 99. {} turns it one number down and {r} one number up, one click each. Every tenth number has the ten-detent cue. Turn up to 5.",
             sentence_start(&l)
         ),
         move |ctx, a| {
@@ -95,7 +95,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let dl = Rc::clone(&dial);
     let spins = Step::new(
         format!(
-            "{} spins the dial ten numbers up and {d} ten down, with a quick ratchet. Listen for a deep, solid clunk: the tumbler dropping. Spin up until you hear it.",
+            "{} spins the dial ten numbers up and {d} ten down, with a quick ratchet. The tumbler clunk marks a wheel's number. Spin up until it clunks.",
             sentence_start(&u)
         ),
         move |ctx, a| {
@@ -160,7 +160,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
             ParlorAction::Primary => {
                 sound::play(ctx, sound::SPRING);
                 Reply::say(format!(
-                    "That twang was the wheel springing back: {} is not the number. In a real safe that is a strike, and three strikes jam it. Find the clunk at {SECRET} first.",
+                    "The wheel sprang back: {} is not the number. In a real safe that is a strike, and three strikes jam it. Find the clunk at {SECRET} first.",
                     dl.get()
                 ))
             }

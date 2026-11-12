@@ -265,7 +265,7 @@ impl TitleGame for SonarDive {
                 Some(if on {
                     "Spoken call-outs: on. Each ping's nearest echoes are spoken."
                 } else {
-                    "Spoken call-outs: off. You hear the echoes alone."
+                    "Spoken call-outs: off. The echoes play without names."
                 }
                 .to_string())
             },

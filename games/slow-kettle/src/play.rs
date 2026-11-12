@@ -177,7 +177,7 @@ impl Counter {
         let rep = ctx.control_name(ParlorAction::Repeat);
         let h = ctx.control_name(ParlorAction::Hint);
         format!(
-            "{} and {d} move along the shelf, {l} and {r} choose a cup. {p} chooses, heats, pours and lifts the leaves. {t} tells you more about what is in front of you. {s} gives the status, twice for more, {rep} repeats, {h} gives a hint. F1 helps, Escape pauses.",
+            "{} and {d} move along the shelf, {l} and {r} choose a cup. {p} chooses, heats, pours and lifts the leaves. {t} says more about what is in front of you. {s} gives the status, twice for more, {rep} repeats, {h} gives a hint. F1 helps, Escape pauses.",
             sentence_start(&u)
         )
     }

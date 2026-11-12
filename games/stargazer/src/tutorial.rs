@@ -50,7 +50,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hill: Live<NightScreen>) -> Lesson {
             // trace step says which stars belong to a pattern.
             match n.sky.object_at(n.point()).map(|o| o.body) {
                 Some(Body::Star { .. }) => {
-                    Some("You are on a star, and its chime rings out.".to_string())
+                    Some("You are on a star.".to_string())
                 }
                 Some(Body::Faint) => Some(
                     "You are on a faint star. It belongs to no pattern, but you found it."
@@ -63,7 +63,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hill: Live<NightScreen>) -> Lesson {
 
     let guide = hill.step(
         format!(
-            "{} turns on the guide tone. It pulses from the next star's side, faster as you near. Turn it on.",
+            "{} turns on the guide tone. It guides you toward the next star. Turn it on.",
             sentence_start(&t)
         ),
         // The game has just said "Guide tone on, toward …", so the step

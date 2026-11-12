@@ -53,7 +53,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sky: Live<Show>) -> Lesson {
         ),
         |show: &Show, _| {
             (show.round.phase == Phase::YourTurn)
-                .then(|| "That fizz is the fuse: your turn.".to_string())
+                .then(|| "That is the fuse cue: your turn.".to_string())
         },
     );
 

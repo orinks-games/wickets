@@ -44,7 +44,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
 
     let draw = field.step(
         format!(
-            "Hold {p} to draw the string. It creaks as it comes back, and clicks at a full draw. Let go after the click to shoot one arrow. {} eases the string without shooting.",
+            "Hold {p} to draw the string. Let go after the full draw cue to shoot one arrow. {} eases the string without shooting.",
             sentence_start(&d)
         ),
         |f: &Field, _| (f.run.tally.shots >= 1).then(|| "That is a shot.".to_string()),
@@ -52,7 +52,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
 
     let hit = field.step(
         format!(
-            "A paper heart hums from where it drifts, quieter when it is far. Turn toward it, aim a little ahead of its drift, and shoot. A small glassy ping means a shot now would meet it. {} says how far to turn to meet it. Hit one heart.",
+            "A paper heart hums from where it drifts, quieter when it is far. Turn toward it, aim a little ahead of its drift, and shoot. The sights cue means a shot now would meet it. {} says how far to turn to meet it. Hit one heart.",
             sentence_start(&h)
         ),
         |f: &Field, _| (f.run.tally.hits >= 1).then(|| "A hit.".to_string()),

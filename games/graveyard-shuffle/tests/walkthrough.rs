@@ -108,7 +108,7 @@ fn the_tutorial_teaches_in_the_practice_room() {
         "the lesson dances all three monsters"
     );
     assert!(spoke(&h, "Here comes the band."));
-    assert!(spoke(&h, "spot on, with a spooky chime, for 3 points."));
+    assert!(spoke(&h, "spot on, for 3 points."));
     assert!(spoke(&h, "Now one in time"));
     assert!(spoke(&h, "In time. Tutorial done."));
     assert!(

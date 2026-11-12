@@ -41,7 +41,7 @@ A plant goes from seed, to sprout, to growing, to in bloom, to ripe.
 
 Press Tab to harvest a ripe plant. It goes back to blooming and ripens again later.
 
-Plants only grow while their soil is damp but not waterlogged, and they are free of aphids. A thirsty plant grows at half speed, and so does a leggy one. A seed counts as a plant here: keep it moist, and it calls you when it gets thirsty.
+Plants only grow while their soil is damp but not waterlogged, and they are free of aphids. A thirsty plant grows at half speed, and so does a leggy one. A seed counts as a plant here: keep it moist, and its name is spoken when it gets thirsty.
 
 ## What plants need
 
@@ -55,7 +55,7 @@ When something needs you, its name and planter are spoken, so you can press H to
 
 ## Harmony
 
-Different kinds of plant that are in bloom and well watered at the same time make a harmony: two kinds make a two-part harmony, three kinds a three-part harmony, and so on. A thirsty, waterlogged or wilted plant leaves the harmony. Water thirsty or wilted plants, but let waterlogged soil drain. S, for status, tells you which parts are singing. Six kinds in tune at once make a chorus, and each bigger chorus after that is announced with its number of voices. When every seed in your packet is in tune, it is the full chorus. With all 10 seeds, a ten-voice chorus can only happen toward evening, while the jasmine is open.
+Different kinds of plant that are in bloom and well watered at the same time make a harmony: two kinds make a two-part harmony, three kinds a three-part harmony, and so on. A thirsty, waterlogged or wilted plant leaves the harmony. Water thirsty or wilted plants, but let waterlogged soil drain. S, for status, says which parts are singing. Six kinds in tune at once make a chorus, and each bigger chorus after that is announced with its number of voices. When every seed in your packet is in tune, it is the full chorus. With all 10 seeds, a ten-voice chorus can only happen toward evening, while the jasmine is open.
 
 ## Varieties and crosses
 
@@ -72,7 +72,7 @@ Each mix of traits has its own name, such as Copper Moon tomato. The name's firs
 
 When you find a new variety its name and traits are spoken. It goes into your seed packet straight away. Harvest one variety 5 times and it becomes an heirloom.
 
-The seed shed, on the title menu, lists every variety you have found under Varieties found. Enter on one plays its part, so you can hear its instrument. Varieties are kept even if you start your garden over. Challenge gardens grow plain seeds only, and nothing crosses there.
+The seed shed, on the title menu, lists every variety you have found under Varieties found. Enter on one plays its part. Varieties are kept even if you start your garden over. Challenge gardens grow plain seeds only, and nothing crosses there.
 
 ## Stars and keepsakes
 
@@ -160,4 +160,4 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - R: repeat the last thing said.
 - H: hint. Where the nearest job is and which key does it.
 - Escape: pause, with Resume, Settings, Help, Back to the title and Back to the lobby. During a challenge, Back to the title is Leave the challenge. Your garden is saved when you leave.
-- F1: what the keys do on the screen you are on.
+- F1: what the keys do on the current screen.

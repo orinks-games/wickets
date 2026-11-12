@@ -114,7 +114,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, screen: Live<PlayScreen>) -> Lesson {
         ),
         move |s: &PlayScreen, _| {
             (s.game.table.foundations[hearts] >= 1)
-                .then(|| "The soft tap means placed.".to_string())
+                .then(|| "Placed.".to_string())
         },
     );
 
@@ -156,7 +156,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, screen: Live<PlayScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Fireside Patience",
-        "A game of patience waits by the fire: put all 52 cards on the four foundations, by suit, from ace to king. There is no clock and no way to lose. Learn on a small table",
+        "A game of patience by the fire: put all 52 cards on the four foundations, by suit, from ace to king. There is no clock and no way to lose. Learn on a small table",
     )
     .step(find)
     .step(ace)

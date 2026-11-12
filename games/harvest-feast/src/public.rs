@@ -268,7 +268,7 @@ impl TitleGame for HarvestFeast {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear every station, cue and stinger of the kitchen by name.".to_string()
+        "Every station, cue and stinger of the kitchen, by name.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

@@ -89,7 +89,7 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - Space: push off. Once away, hold it to spin, and let go once the spin is ready.
 - Left and Right: hold to lean that way.
 - S: the status. Press it again straight away for more.
-- H: a hint on where to lean. Before you push off, it plays the sounds you will hear.
+- H: a hint on where to lean. Before you push off, it plays the skate's cues.
 - R: repeat the last thing said.
 - F1: help.
 - Escape: pause.

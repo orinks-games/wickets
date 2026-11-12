@@ -103,7 +103,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let pl = Rc::clone(&peal);
     let bells = Step::new(
         format!(
-            "{} moves to the next bell down the scale, {d} back up. Bell 1, the treble, is the highest. Change bells until you hear bell 6, the tenor, the lowest.",
+            "{} moves to the next bell down the scale, {d} back up. Bell 1, the treble, is the highest. Change bells until you reach bell 6, the tenor, the lowest.",
             sentence_start(&u)
         ),
         move |ctx, a| {
@@ -148,7 +148,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let rg_tick = Rc::clone(&ringer);
     let first_ring = Step::new(
         format!(
-            "{} rings your row, and the apprentice answers. A firm knock means a bell is right and in its place. A soft tap means a bell is in the peal, but in another place. Ring your row now.",
+            "{} rings your row, and the apprentice answers. A knock means a bell is right and in its place. A tap means a bell is in the peal, but in another place. Ring your row now.",
             sentence_start(&p)
         ),
         move |ctx, a| {
@@ -215,7 +215,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     Lesson::new(
         ID,
         "Belfry",
-        "The old bell ringer left a secret sequence of bells, called a peal. Work out which bells he chose and their order. Ring a guess, then listen to the apprentice's clues. Start with a practice sequence of 2 bells",
+        "The old bell ringer left a secret sequence of bells, called a peal. Work out which bells he chose and their order. Ring a guess, and the apprentice answers with clues. Start with a practice sequence of 2 bells",
     )
     .step(bells)
     .step(places)

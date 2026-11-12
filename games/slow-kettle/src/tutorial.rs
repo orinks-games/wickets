@@ -144,7 +144,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let b2 = Rc::clone(&brew);
     let steep = Step::new(
         format!(
-            "A soft clock ticks once a second. Sencha wants a 6 second steep. {} breathes in the steam to hear how strong it is, and {p} lifts the leaves out.",
+            "A clock ticks once a second. Sencha wants a 6 second steep. {} breathes in the steam to check how strong it is, and {p} lifts the leaves out.",
             sentence_start(&t)
         ),
         move |ctx, a| {

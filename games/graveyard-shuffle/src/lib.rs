@@ -234,7 +234,7 @@ impl TitleGame for GraveyardShuffle {
             MenuItem::new("Night select", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(picker::SetSelect::new())
             })
-            .help("Dance any night you have opened, and hear the stars on each."),
+            .help("Dance any night you have opened, with the stars on each."),
         ]
     }
 
@@ -243,7 +243,7 @@ impl TitleGame for GraveyardShuffle {
             MenuItem::new("Practice room", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(picker::TuneSelect::new())
             })
-            .help("Any song you have opened, waiting for each monster until you dance its move."),
+            .help("Any song you have opened. The music holds for each monster until you dance its move."),
         )
     }
 
@@ -269,14 +269,14 @@ impl TitleGame for GraveyardShuffle {
             |_ctx, on| {
                 Some(
                     if on {
-                        "Spoken call-outs: on. Your screen reader also names each monster."
+                        "Spoken call-outs: on. Each monster is also named."
                     } else {
-                        "Spoken call-outs: off. You hear the monsters alone."
+                        "Spoken call-outs: off. The monsters are not named."
                     }
                     .to_string(),
                 )
             },
-            "When on, your screen reader also names each monster as it comes up.",
+            "When on, the game also names each monster as it comes up.",
         )]
     }
 
@@ -285,7 +285,7 @@ impl TitleGame for GraveyardShuffle {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear every monster, move and cue in the game, with its name and the key that dances it."
+        "Every monster, move and cue in the game, with its name and the key that dances it."
             .to_string()
     }
 

@@ -12,7 +12,7 @@ A room is a grid of floorboards, five cells across on the first floors and up to
 
 The entrance locks behind you, so you cannot go back. The exit is on another wall. Solve the room to unlock its exit. Follow the open-door cue, stand in the cell next to it, and walk through the wall there. The last room of a floor opens onto the stairs.
 
-## Listening for things
+## Finding things
 
 Things lie about the rooms and call out from where they are: a clock, a crystal, a potion, a music box, a bell, a candle, a raven, keys and a heart. Each has its own sound. Sounds come from their direction: left is west, right east, ahead north; behind is south, and a little duller. Nearer means louder and more often. Stepping onto a thing speaks its name.
 
@@ -62,7 +62,7 @@ Each of these arrives on its own floor, and the game explains it in full the fir
 - Mirrored rooms, from floor 45: every sound comes from the other side, east from your left and west from your right. North and south are true.
 - The pendulum, from floor 51: a blade swings along one row of the room, one column at a time, back and forth. Its cue tells you where it is. If it reaches your cell, it cuts you and costs one courage. Cross its row just after it passes. Status says which row it swings in.
 - Deep water, from floor 61: part of the room is flooded. Its warning means deep water is next to you. A step into it splashes, and you wade for a moment before you can step again. Every splash brings the next ghost sooner.
-- Falling stones, from floor 71: dust trickles over the cell you stand on, and 2 seconds later a stone falls there. Step off when you hear the dust. Stones never start while a ghost is passing.
+- Falling stones, from floor 71: dust trickles over the cell you stand on, and 2 seconds later a stone falls there. Step off when the dust falls. Stones never start while a ghost is passing.
 - The founder, from floor 81: see The founder.
 - The shifting house, from floor 91: the exit door sometimes moves to another wall. The game says which wall, and status says how far.
 
@@ -138,13 +138,13 @@ Challenges use the first five. The twists are spoken as each floor begins, and F
 
 ## Tips
 
-- Stand still and listen before you move. Turn the sound into a direction, then walk until it is straight ahead or right on top of you.
+- Stand still before you move. Work out where the sound comes from, then walk until it is straight ahead or right on top of you.
 - If two things sound alike, walk to each: their names are spoken when you stand on them. If one of them has moved since, it was a mimic.
 - Check for rotten boards before you step. If one is ahead, go around.
 - When the shadow is near, stand still and let it wander off, unless the hound is passing.
 - When a ghost comes, finish your step and wait for the freeze cue, then stay still until the passing cue. For the hound, do the opposite.
 - Against the founder, wait for the strike cue. A strike too early is wasted, and leaves you beside him.
-- Pick up every charm you hear. Salt is worth most in the deep floors.
+- Pick up every charm you find. Salt is worth most in the deep floors.
 
 ## Controls
 

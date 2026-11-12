@@ -26,7 +26,7 @@ impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
             menu: MenuCore::new(labels::SOUND_CHECK).with_intro_help(
-                "Each row plays a sound of the game when you press Enter. On a firework row, Left and Right play it on that side. Escape goes back.",
+                "Enter plays the chosen sound. On a firework row, Left and Right play it on that side. Escape goes back.",
             ),
             last_pos: Pos::Center,
         }

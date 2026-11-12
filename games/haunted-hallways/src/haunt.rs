@@ -1769,8 +1769,12 @@ impl State<Parlor> for Haunt {
             Some(g) if g.phase == GhostPhase::Near => {
                 "A ghost is passing you right now: do not move! ".to_string()
             }
-            Some(g) if g.kind.hunts_stillness() => "The hound is coming: when it howls, keep walking until it breathes out and drifts away. ".to_string(),
-            Some(_) => "A ghost is coming: when its stab sounds, stop moving until it breathes out and drifts away. ".to_string(),
+            Some(g) if g.kind.hunts_stillness() => {
+                "The hound is coming: at its warning, keep walking until it has passed. "
+                    .to_string()
+            }
+            Some(_) => "A ghost is coming: at the freeze cue, stop moving until the passing cue. "
+                .to_string(),
             None => String::new(),
         };
         let room = self.run.current();
@@ -1785,7 +1789,8 @@ impl State<Parlor> for Haunt {
             dangers.push_str("The shadow follows your footsteps: keep away from it. ");
         }
         if !room.rotten.is_empty() {
-            dangers.push_str("A groan means a rotten board next to you: do not step there. ");
+            dangers
+                .push_str("A rotten board's warning means it is next to you: do not step there. ");
         }
         if room.mimics() > 0 {
             dangers.push_str("Mimics hop about; the real thing keeps still. ");

@@ -926,7 +926,7 @@ impl State<Parlor> for Floor {
             Some(i) => {
                 let step = run.dance.plan.calls[i].step;
                 format!(
-                    "The song is waiting for {}, {}: {}. {controls}",
+                    "The music holds for {}, {}: {}. {controls}",
                     step.lower(),
                     step.dance(),
                     Self::step_key(ctx, step)

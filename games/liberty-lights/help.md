@@ -11,13 +11,13 @@ Title menu: Play starts your next uncleared level. Grand finale opens after leve
 1. Press Space, the main action, to hear the show. It starts with a count-in: three count-in ticks half a second apart, then the go cue. The go is time zero.
 2. The fireworks go up. Two seconds after the last one, the game says "Your turn".
 3. Press Space again for your own count-in: the same three ticks and the go. Launch each firework at the moment it went up in the show, measured from the go.
-4. Press Enter when you are finished. The crowd reacts and you hear your score.
+4. Press Enter when you are finished. The crowd reacts, then the game reads your score.
 
 Once the show has played, Tab, the second action, plays it again. That clears anything you have launched so far.
 
 ## Choosing with Up and Down
 
-While you launch, Space, the main action, does whatever you have chosen, and Up and Down step through the choices, each spoken as you reach it: boom, crackle, whistle, sparkle, take back the last firework, and finish the show. It starts on boom, and a number key chooses its firework as it launches it, so Space then launches that kind again. This is how you play on a controller: A launches, Up and Down on the d-pad choose, and holding Left or Right on the d-pad aims. Enter on the keyboard still finishes, and Backspace still takes back.
+While you launch, Space, the main action, does whatever you have chosen, and Up and Down step through the choices: boom, crackle, whistle, sparkle, take back the last firework, and finish the show. It starts on boom, and a number key chooses its firework as it launches it, so Space then launches that kind again. This is how you play on a controller: A launches, Up and Down on the d-pad choose, and holding Left or Right on the d-pad aims. Enter on the keyboard still finishes, and Backspace still takes back.
 
 ## Fireworks
 
@@ -57,7 +57,7 @@ A hint takes 15 points off your score.
 - Levels 11 to 15: three fireworks, on the left, center or right.
 - Levels 16 to 20: four to eight fireworks, and some go up early, overlapping the one before.
 
-After level 1, a show may start up to two seconds after the go, so listen for when the first firework goes up, not just what it is.
+After level 1, a show may start up to two seconds after the go, so match when the first firework goes up as well as what it is.
 
 ## Challenges
 
@@ -71,7 +71,7 @@ The twists:
 
 - Quickstep: the shows play at double speed, fireworks a second apart instead of two.
 - Tough crowd: timing points only within 0.3 seconds; any firework further off earns none.
-- One shot: each show plays only once, with no hearing it again and no hints.
+- One shot: each show plays only once, with no replay and no hints.
 - Night fog: the show is harder to hear, but firework positions and your own launches are unchanged. Practise the fog boom in Sound check.
 
 ## Results
@@ -82,7 +82,7 @@ After a challenge show, the results end with Back to the challenges. Between the
 
 ## Freestyle
 
-Compose a show of your own: launch with 1 to 4, aiming with Left and Right, with no score and no clock to beat. Your show's time starts at your first launch. Backspace takes back the last firework; Enter finishes. Afterwards you can hear your show with the crowd watching, save it, or choose Play again to start another. A saved show can be heard again from the freestyle menu, or played with Match your saved show, scored like a level.
+Compose a show of your own: launch with 1 to 4, aiming with Left and Right, with no score and no clock to beat. Your show's time starts at your first launch. Backspace takes back the last firework; Enter finishes. Afterwards you can play your show with the crowd watching, save it, or choose Play again to start another. A saved show can be heard again from the freestyle menu, or played with Match your saved show, scored like a level.
 
 ## Grand finale
 
@@ -115,7 +115,7 @@ Sound check lets you hear the cues used to match a show. On each firework row, E
 
 ## Controller
 
-On a controller, A is the main action: it hears the show, starts your count-in, and launches the firework you have chosen. Up and Down on the d-pad choose a firework, take back or finish; hold Left or Right on the d-pad to launch on that side. X hears the show again, Y gives the status, the left bumper gives a hint, a click of the right stick repeats the instructions, Back reads help and B or Start pauses.
+On a controller, A is the main action: it plays the show, starts your count-in, and launches the firework you have chosen. Up and Down on the d-pad choose a firework, take back or finish; hold Left or Right on the d-pad to launch on that side. X plays the show again, Y gives the status, the left bumper gives a hint, a click of the right stick repeats the instructions, Back reads help and B or Start pauses.
 
 ## Controls
 
@@ -124,7 +124,7 @@ On a controller, A is the main action: it hears the show, starts your count-in, 
 - Hold Left or A, Right or D: launch on that side.
 - Enter: finish your show and score it.
 - Backspace: take back your last firework. Enter and Backspace cannot be changed in Settings.
-- Tab: hear the show again.
+- Tab: play the show again.
 - R: repeat the instructions for where you are.
 - S: the level, how many fireworks, how many you have launched and the time since the go. Press it again straight away for the level's style, any twist, and your points so far.
 - H: a hint, the show described in words, for 15 points.

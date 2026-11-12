@@ -192,7 +192,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, house: Live<Haunt>) -> Lesson {
 
     let walk = house.step(
         format!(
-            "Every room is a grid of floorboards, and you always face north. {} walks north, {d} south, {l} west and {r} east. Each step creaks, and a wall thuds. Take a few steps.",
+            "Every room is a grid of floorboards, and you always face north. {} walks north, {d} south, {l} west and {r} east. Take a few steps.",
             sentence_start(&u)
         ),
         move |h: &Haunt, _| {
@@ -215,7 +215,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, house: Live<Haunt>) -> Lesson {
 
     let find = house.step(
         format!(
-            "Things in a room call out from where they lie, louder as you near them. Sounds behind you are duller. This room asks for the {}: walk onto it and press {p}. {} repeats the clue.",
+            "Things in a room call out from where they lie, louder as you near them. This room asks for the {}: walk onto it and press {p}. {} repeats the clue.",
             first_find(),
             sentence_start(&rep)
         ),
@@ -234,7 +234,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, house: Live<Haunt>) -> Lesson {
 
     let ghost = house
         .step(
-            "Ghosts walk the halls. You hear one coming from far off, from its direction. When it is right beside you, a sharp stab sounds: freeze, and take no step until you hear a long breath out. One is coming now.",
+            "Ghosts walk the halls. A ghost comes from far off, from its direction. When it is right beside you, the freeze cue sounds: freeze, and take no step until the passing cue. One is coming now.",
             |h: &Haunt, _| {
                 (h.run.ghosts_evaded >= 1).then(|| {
                     "It drifts away without finding you. Every ghost you let pass scores points."
@@ -246,7 +246,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, house: Live<Haunt>) -> Lesson {
 
     let charm = house
         .step(
-            "Listen for a soft glass chime. It is a charm on the floor. Walk onto it to take it.",
+            "A charm lies on the floor, and its cue comes from where it lies. Walk onto it to take it.",
             |h: &Haunt, _| {
                 (h.run.stats.charms >= 1).then(|| {
                     "Salt: it wards off one catch. Charms lie in some rooms from floor 3."
@@ -258,7 +258,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, house: Live<Haunt>) -> Lesson {
 
     let matching = house.step(
         format!(
-            "This room's clue is on a phonograph. It crackles, then plays a sound without naming it. Find the thing that makes the same sound and press {p} on it. {} plays it again. The other thing here is wrong, and touching it costs time.",
+            "This room's clue is on a phonograph. It plays a sound without naming it. Find the thing that makes the same sound and press {p} on it. {} plays it again. The other thing here is wrong, and touching it costs time.",
             sentence_start(&rep)
         ),
         |h: &Haunt, _| {
@@ -281,7 +281,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, house: Live<Haunt>) -> Lesson {
     let door2 = through(&house, 2, "");
 
     let board = house.step(
-        "That groan is a rotten board, right beside you. Step on it and you fall through. Go around it to the sealed exit door, at column 4 of the north wall, where a spirit whispers.",
+        "That warning is a rotten board, right beside you. Step on it and you fall through. Go around it to the sealed exit door, at column 4 of the north wall, where a spirit whispers.",
         |h: &Haunt, _| {
             let room = &h.run.rooms[2];
             (h.run.room == 2 && room.inside(room.exit) == (h.run.x, h.run.y))
@@ -306,7 +306,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, house: Live<Haunt>) -> Lesson {
 
     let shadow = house.step(
         format!(
-            "A low breathing drone is the shadow. It walks the room one cell at a time, toward your footsteps. Stand still and it wanders. Find the candle by its crackle, and keep the shadow off you. {} says where it is.",
+            "That cue is the shadow. It walks the room one cell at a time, toward your footsteps. Stand still and it wanders. Find the candle, and keep the shadow off you. {} says where it is.",
             sentence_start(&s)
         ),
         |h: &Haunt, _| {

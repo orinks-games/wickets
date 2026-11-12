@@ -224,7 +224,7 @@ impl TitleGame for BasketRun {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear each sound you need in the meadow, with its name.".to_string()
+        "Each sound you need in the meadow, with its name.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

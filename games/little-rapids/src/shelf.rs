@@ -357,7 +357,7 @@ impl Menu for Shelf {
                         ctx.say("Not found yet. Trinkets float down that stream now and then.")
                     })
                     .select_sound(None)
-                    .help("Trinkets are rare: a bright sparkle on the water. New ones come before ones you have."),
+                    .help("Trinkets are rare. New ones come before ones you have."),
                 );
             }
         }

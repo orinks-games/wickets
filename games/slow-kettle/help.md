@@ -10,7 +10,7 @@ A guest comes to the counter and asks for a taste, such as "something smoky and 
 
 ## The shelf and your cups
 
-Up and Down move along your shelf. Each tea is named, with a short description. Left and Right choose a cup from your cupboard. Tab tells you more about the tea: the tastes it suits, the heat it wants, and how long it likes to steep. Space puts the tea in the pot. Up or Down before the kettle is on takes you back to the shelf.
+Up and Down move along your shelf. Each tea is named, with a short description. Left and Right choose a cup from your cupboard. Tab says more about the tea: the tastes it suits, the heat it wants, and how long it likes to steep. Space puts the tea in the pot. Up or Down before the kettle is on takes you back to the shelf.
 
 Each cup suits some tastes: the big mug for strong and warming cups, the clay cup for calm and smoky ones, the glass for fresh and bright ones, the thin porcelain for floral and sweet ones. A cup that suits the taste makes the guest a little happier. The plain white cup is good for anything.
 
@@ -54,7 +54,7 @@ After 3 afternoons the long evening opens on the title: seven guests on a rainy 
 
 ## Practice brewing
 
-Practice brewing is a quiet place to learn the kettle. Brew any tea on your shelf for yourself, as often as you like. After each cup you hear the exact heat you poured at and the seconds you steeped, beside what the tea wants. No guests, no coins.
+Practice brewing is a quiet place to learn the kettle. Brew any tea on your shelf for yourself, as often as you like. After each cup the game reads the exact heat you poured at and the seconds you steeped, beside what the tea wants. There are no guests and no coins.
 
 ## Hints
 
@@ -88,7 +88,7 @@ Tab: more about the tea, listen to the kettle, or breathe in the steam.
 
 S: status: the kettle, the steep or the cups, and while you choose, what the guest would like. Press S again straight away for which guest this is, what they would like and your coins.
 
-R: hear the guest's words again.
+R: repeat the guest's words.
 
 H: a hint.
 

@@ -293,7 +293,7 @@ impl TitleGame for Freewheel {
                 ctx.push(Ride::free_ride(c.bike, Rng::from_time().next_u64()))
             })
             .help(format!(
-                "{} of Downtown with no clock, to learn the sounds of the street.",
+                "{} of Downtown with no clock, to learn the street.",
                 parlor_core::units::route(ride::FREE_LENGTH)
             )),
             MenuItem::new("Course select", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {

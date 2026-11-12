@@ -18,7 +18,7 @@ Space hops while you are moving. The BMX hops about 40 centimetres, high enough 
 
 ## Hazards
 
-Every hazard warns you at least 1.5 seconds before you reach it, at your speed, from the side it is on.
+Every hazard's warning comes at least 1.5 seconds before you reach it, at your speed, from the side it is on.
 
 A parked car's door can open into the door zone. Move left, out of the door zone, before you reach it.
 
@@ -44,7 +44,7 @@ Crashing into an open door, a passing car, or a curb on the road bike or the e-b
 
 The endless ride goes on until your third crash. The further you go, the closer the hazards come and the more often oncoming cars appear. Your best distance in each district is kept.
 
-Parcels wait for collection along the way. A shop doorbell rings from the side a parcel is on as it comes up. Ride over it at 20 kilometres an hour or less to grab it. Any faster and you miss it. Parcels in shop doorways sit in the door zone and pay 3 dollars. Parcel lockers on the traffic island, by the centre line, sit out among the cars and pay 6. You keep the money, even if you leave the ride early.
+Parcels lie along the way. A shop doorbell rings from the side a parcel is on as it comes up. Ride over it at 20 kilometres an hour or less to grab it. Any faster and you miss it. Parcels in shop doorways sit in the door zone and pay 3 dollars. Parcel lockers on the traffic island, by the centre line, sit out among the cars and pay 6. You keep the money, even if you leave the ride early.
 
 ## Oncoming cars
 
@@ -82,7 +82,7 @@ Spoken call-outs, a row in Settings from the title or the pause menu, chooses ho
 
 ## Modes
 
-Practice lessons: five short rides that teach pedalling and coasting, braking, steering, the door zone and hopping. Each lesson tells you its goal and starts again if you miss it.
+Practice lessons: five short rides that teach pedalling and coasting, braking, steering, the door zone and hopping. Each lesson gives its goal and starts again if you miss it.
 
 Time trial: one of three Downtown courses, Station Run, Market Street and Bank Square, on the bike you chose. Its traffic is the same every time, so you can learn it. Course select chooses the course, and Bike select the bike.
 
@@ -92,7 +92,7 @@ Endless ride: ride until your third crash, grabbing parcels, in the district you
 
 Job board: courier deliveries for cash.
 
-Free ride: 3 kilometres of Downtown with no clock, to learn the sounds of the street.
+Free ride: 3 kilometres of Downtown with no clock, to learn the street.
 
 ## Scoring and best times
 

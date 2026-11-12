@@ -6,11 +6,11 @@ You are a courier flying a combat skimmer through Black Sky City. It flies forwa
 
 Reach extraction to complete the run. You lose if your hull reaches 0 or network stress reaches 100.
 
-## Hearing the rail
+## Cues and call-outs
 
 Arrival cues mark their lanes relative to yours. Straight ahead is your lane; left means one or two lanes left. The positions change when you shift lanes.
 
-Spoken call-outs are on by default. Each arrival is also named as it appears: "Debris left." Turn Spoken call-outs off in Settings, from the title or the pause menu, to play by sound alone. The hint key always names what is next.
+Spoken call-outs are on by default. Each arrival is also named as it appears: "Debris left." Turn Spoken call-outs off in Settings, from the title or the pause menu, to play with cues only. The hint key always names what is next.
 
 Sound check lets you hear the gameplay cues and practise recognising their lane positions.
 
@@ -24,7 +24,7 @@ Move into the lane of the traffic or pickup you want to meet.
 - Repair pickup: restores hull.
 - Salvage: adds to your score, which becomes credits at the debrief.
 
-A pickup you miss is gone: you hear "Repair pickup missed" or "Salvage missed", with no penalty.
+A pickup you miss is gone: the game says "Repair pickup missed" or "Salvage missed", with no penalty.
 
 ## Hazards you avoid
 
@@ -47,7 +47,7 @@ Stress runs from 0 to 100. Mistakes raise it, and repeated mistakes raise it fas
 ## Emergency tools
 
 - Boost: just under a second of breach power. Smashes debris, rams drones, forces heavy blockers open, punches through unstable vehicles and breaches blockades. Five seconds to recharge. The ready cue tells you when boost has recharged.
-- Rail gun: locks onto the nearest drone or unstable vehicle in any lane and destroys it for 80 points. It only locks in the last second of an approach: within a second in your own lane, a little less one lane over, less again two lanes over. Fire too early, or with nothing coming, and you hear "No lock", and the gun still has to cool for under a second.
+- Rail gun: locks onto the nearest drone or unstable vehicle in any lane and destroys it for 80 points. It only locks in the last second of an approach: within a second in your own lane, a little less one lane over, less again two lanes over. Fire too early, or with nothing coming, and the game says "No lock", and the gun still has to cool for under a second.
 - Slowdown pulse: two and a half seconds in which fast passers, priority traffic and heavy blockers are eased past. Lowers stress at once. Limited charges and a fourteen-second recharge.
 - Priority override: three and a half seconds in which priority traffic is held for you, whatever lane you are in. Lowers stress at once. Limited charges.
 
@@ -76,13 +76,13 @@ Every pilot in the same period flies the same rail, so challenges use a standard
 - Daily, the sector sprint: one 60-second sector, as hard as a fourth sector, along a route drawn for the day: a standard rush, an ambush corridor or the storm rail. The run is won at the sector's end. It carries one twist, announced in the briefing and when the run goes live:
   - Dense traffic: arrivals come more than a quarter closer together.
   - Boost offline: the boost key does nothing. There are no full blockades. Heavy blockers take their place, so dodge or shoot everything.
-  - Fog: every warning is a quarter shorter. Each arrival is heard later, so move on its first sound.
+  - Fog: every warning is a quarter shorter. Each arrival is announced later, so move on its first cue.
 - Weekly, the long haul: three sectors along a fixed route, ending in the extraction sprint, with a twist of its own for the week. You choose an upgrade after each of the first two sectors. The route ahead is already set, so the route menu has one choice.
 - Monthly, the Black Sky event, Blackout Convoy: three evacuation convoy sectors, then the extraction sprint. Priority vehicles are evacuation trains, called out as "Evacuation train". Each evacuation train you clear pays three times. Each one delayed costs double stress. Stress starts at 30, and you carry three priority overrides. The briefing reads the event's own story log, and flying an event to its end keeps that log in the story archive.
 
 During a challenge run, S includes the twist or rule. F1 adds the challenge's rule as its last page.
 
-A challenge counts when the run ends, won or lost: you hear your result, whether it beat your best, your streak, and when the next one comes. Choosing Leave the challenge on the pause menu does not count. Only a better score replaces your best, but any finished run keeps the streak going. Daily challenges reset at midnight UTC, weekly ones on Monday, monthly ones on the first of the month. After a challenge, the results menu can fly the same rail again, and its last row is Back to the challenges.
+A challenge counts when the run ends, won or lost: the game reads your result, whether it beat your best, your streak, and when the next one comes. Choosing Leave the challenge on the pause menu does not count. Only a better score replaces your best, but any finished run keeps the streak going. Daily challenges reset at midnight UTC, weekly ones on Monday, monthly ones on the first of the month. After a challenge, the results menu can fly the same rail again, and its last row is Back to the challenges.
 
 ## Special nights
 
@@ -100,7 +100,7 @@ Choose a route between sectors. The three choices always include the open route 
 - Data relay: lighter traffic, and it recovers an intel fragment.
 - Storm rail: fast traffic with short warnings, nearly double the bonus. Bought in the workshop from rank 3.
 
-Upgrades last for the rest of the run: shield plating, boost coils, heavy rounds for the rail gun, a hull patch, extra pulse or override cells, a near-miss amplifier, a stress damper, and a pickup magnet. Cold starts earn four more for the pool in every run: reach sector 4 for Hard lock, a longer rail gun lock; reach sector 7 for Scrap mesh, which makes repairs ease more stress and salvage mend 2 hull; finish one for the Dead man's switch, which survives one hull breach a run at 20 hull; finish three for Hot chain, a multiplier that climbs every 3 clean plays instead of 4. Pilot progress lists them. Press S at an intermission to hear your skimmer's state, and H for advice.
+Upgrades last for the rest of the run: shield plating, boost coils, heavy rounds for the rail gun, a hull patch, extra pulse or override cells, a near-miss amplifier, a stress damper, and a pickup magnet. Cold starts earn four more for the pool in every run: reach sector 4 for Hard lock, a longer rail gun lock; reach sector 7 for Scrap mesh, which makes repairs ease more stress and salvage mend 2 hull; finish one for the Dead man's switch, which survives one hull breach a run at 20 hull; finish three for Hot chain, a multiplier that climbs every 3 clean plays instead of 4. Pilot progress lists them. Press S at an intermission for your skimmer's state, and H for advice.
 
 ## Progress, the workshop and the archive
 
@@ -108,7 +108,7 @@ Every debrief pays, even after a failed run: credits from your score and a finis
 
 The workshop sells permanent parts for credits and parts: a reinforced frame, spare charges, boost tuning, storm charts, a pickup magnet and stress dampers. Higher ranks open more: at rank 2 an armoured nose, which halves blockade collision damage, and long-range sensors, which announce repairs and salvage half a second sooner; at rank 3 a capacitor bank, for a longer boost, and a heat sink, for a faster rail gun; at rank 4 a shield emitter, one shield charge on every run; at rank 5 a chain governor, so a hit halves your multiplier instead of resetting it. Two more open with the story: the Relay tuner, which makes a data relay recover 2 intel fragments, with the signal's first log at pilot rank 4; and the Hunter jammer, which announces drones and unstable vehicles half a second sooner, with Security's last log. Clear the storm rail in a cold start and the Storm charts are fitted free. Fifty rail gun kills earn the Ace gunner licence.
 
-The story archive is in strands. The data core's twelve logs are the spine: the first come from finishing runs, lasting in them and reaching extraction, and the later ones open as your intel fragments add up, one a run. Around them, each strand opens from one kind of play, one log a run: the unions from the salvage stretch, the hunters from the standard rush, security from the ambush corridor, the weather service from the storm rail, the signal from the data relay, the Black box from runs you lose, the deep rail from how far you get on the endless rail, the hangar from your own record, and Origin from extractions after the data core is complete. The Blackout Convoy event log opens once you have flown a monthly Black Sky event to its end. Logs recovered during a run pause it while you listen. The rest are read at the debrief, and in the archive on the title, where each strand says how it opens.
+The story archive is in strands. The data core's twelve logs are the spine: the first come from finishing runs, lasting in them and reaching extraction, and the later ones open as your intel fragments add up, one a run. Around them, each strand opens from one kind of play, one log a run: the unions from the salvage stretch, the hunters from the standard rush, security from the ambush corridor, the weather service from the storm rail, the signal from the data relay, the Black box from runs you lose, the deep rail from how far you get on the endless rail, the hangar from your own record, and Origin from extractions after the data core is complete. The Blackout Convoy event log opens once you have flown a monthly Black Sky event to its end. Logs recovered during a run pause it while the log is read. The rest are read at the debrief, and in the archive on the title, where each strand says how it opens.
 
 ## The title and results
 
@@ -131,6 +131,6 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - Up arrow: priority override. P also works.
 - S: your lane, hull and stress. Press it again straight away for every tool's state, and a third time for the sector, time left, score and multiplier.
 - R: repeat the last call-out or message.
-- H: hear what arrives next, where, how soon, and what to do about it.
+- H: what arrives next, where, how soon, and what to do about it.
 - Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
-- F1: help for the screen you are on. During a run it pauses the rail and reads the controls a page at a time. F2 stops speech.
+- F1: help for the current screen. During a run it pauses the rail and reads the controls a page at a time. F2 stops speech.

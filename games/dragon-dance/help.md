@@ -6,7 +6,7 @@ Lead the dragon through the Lunar New Year parade. Keep your head in the pearl's
 
 ## The street and its lanes
 
-A street has 3, 4 or 5 lanes, numbered from the left. Left and Right move your head one lane at a time, and each move says the lane you are in. At the edge of the street a wooden bump sounds and your head stays where it is. Your ears move with your head, so whatever is in your lane sounds straight ahead.
+A street has 3, 4 or 5 lanes, numbered from the left. Left and Right move your head one lane at a time, and each move says the lane you are in. At the edge of the street a bump sounds and your head stays where it is. Whatever is in your lane sounds straight ahead.
 
 ## Following the pearl
 
@@ -38,7 +38,7 @@ The parade has 8 streets, from Market Row to The Grand Avenue. Each is faster an
 
 ## Practice street
 
-Practice street is short and slow, with every call spoken. Stumbles cost nothing, and nothing is saved. It is a safe place to learn the sounds before the parade.
+Practice street is short and slow, with every call spoken. Stumbles cost nothing, and nothing is saved.
 
 ## Lunar New Year on the real calendar
 
@@ -62,7 +62,7 @@ Every player gets the same challenges. The daily is one street of 4 lanes and 24
 
 ## Spoken call-outs
 
-Spoken call-outs, a row in Settings from the title or the pause menu, switches the spoken calls in play. On, a voice names the pearl's lane when it moves, each red envelope, lantern and firecracker string with its lane as it starts to come, and each cheering shop. Off, you play by the sounds alone. Practice street always speaks its calls. Status, Up and the hint work either way.
+Spoken call-outs, a row in Settings from the title or the pause menu, switches the spoken calls in play. On, a voice names the pearl's lane when it moves, each red envelope, lantern and firecracker string with its lane as it starts to come, and each cheering shop. Off, none of these are spoken. Practice street always speaks its calls. Status, Up and the hint work either way.
 
 ## Status, what is coming and hints
 
@@ -78,7 +78,7 @@ Left and Right: move your head one lane.
 
 Space: rear up, as the gong strikes.
 
-Tab: ring the pearl's chime and hear its lane.
+Tab: ring the pearl's chime and name its lane.
 
 Up: what is coming down the lanes, and the next gong.
 
