@@ -713,6 +713,7 @@ impl State<Parlor> for SortRun {
                     pause(ctx, &self.mode);
                 }
                 Some(_) => {
+                    self.clock.asked();
                     let r = self.reminder(ctx);
                     ctx.say(r);
                 }
@@ -721,6 +722,11 @@ impl State<Parlor> for SortRun {
             return;
         }
         let Some(action) = action else { return };
+        self.clock.asked_by(Some(action));
+        if action == ParlorAction::Secondary {
+            // Secondary reads the wishes again, as Repeat does.
+            self.clock.asked();
+        }
         match (self.phase, action) {
             (_, ParlorAction::Status) => {
                 let layers = self.status(ctx);

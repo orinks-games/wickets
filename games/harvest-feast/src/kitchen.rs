@@ -845,6 +845,11 @@ impl State<Parlor> for Kitchen {
                 return;
             }
         }
+        self.clock.asked_by(action);
+        if matches!(action, Some(ParlorAction::Up | ParlorAction::Down)) {
+            // A dish's detail and the recipe card are asked for too.
+            self.clock.asked();
+        }
         match action {
             Some(ParlorAction::Primary) => match self.phase {
                 Phase::Ready => self.begin(ctx),

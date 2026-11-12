@@ -348,7 +348,7 @@ fn records_course_select_and_the_title_name_both_boards() {
     Records::record(ctx, ID, &Pace::Relaxed.board(&endless), 900);
     let all = freewheel::records_pages(ctx).join(" ");
     assert!(
-        all.contains("on the road bike, 1 minute 4.0 seconds, 98000 ride points, relaxed best 1 minute 50.0 seconds, 57000 ride points"),
+        all.contains("on the road bike, best 1 minute 4.0 seconds, 98000 ride points, relaxed best 1 minute 50.0 seconds, 57000 ride points"),
         "{all}"
     );
     assert!(
@@ -417,4 +417,112 @@ fn info_keys_never_improve_a_ride_time() {
     let spam = coast_trial(true);
     // The street stood still for the status lines, and their time counts.
     assert!(spam > time + 1.5, "{spam} {time}");
+}
+
+/// Rides into an open door holding Up, then keeps holding it: gives the
+/// real seconds the rider was down and the metres ridden in the 3 real
+/// seconds after getting up.
+fn doored_holding_up(pace: Pace) -> (f64, f64) {
+    let mut course = Course::empty("Door street", 400.0);
+    course.hazards.push(freewheel::course::Hazard {
+        kind: freewheel::course::HazardKind::Door,
+        s: 80.0,
+        x0: -6.0,
+        x1: 6.0,
+    });
+    let ride = Ride::custom(course, Bike::Bmx, Mode::TimeTrial(0));
+    let (mut h, s) = open(ride, pace);
+    hold(&mut h, Key::Up);
+    let dt = 1.0 / 60.0;
+    let mut frames = 0;
+    while !s.borrow().world.rider.down() {
+        h.frame(dt);
+        frames += 1;
+        assert!(frames < 60 * 60, "no crash: {:?}", h.spoken());
+    }
+    assert!(
+        h.spoken().iter().any(|l| l.starts_with("Doored.")),
+        "{:?}",
+        h.spoken()
+    );
+    // The crash line is still being spoken: the held key keeps the street
+    // running through it.
+    let mut down = 0.0;
+    while s.borrow().world.rider.down() {
+        h.frame(dt);
+        down += dt;
+        assert!(down < 30.0, "never back up");
+    }
+    let from = s.borrow().world.rider.s;
+    for _ in 0..180 {
+        h.frame(dt);
+    }
+    let to = s.borrow().world.rider.s;
+    (down, to - from)
+}
+
+#[test]
+fn a_held_up_pedals_again_after_a_crash_at_every_pace() {
+    for pace in Pace::ALL {
+        let (down, moved) = doored_holding_up(pace);
+        let expected = 3.0 / pace.scale();
+        assert!(
+            (down - expected).abs() < 0.1,
+            "{pace:?}: down {down} real seconds, not {expected}"
+        );
+        assert!(moved > 1.5, "{pace:?}: moved {moved} metres");
+    }
+}
+
+#[test]
+fn a_crash_that_takes_the_clock_past_10_seconds_calls_it_once() {
+    for pace in Pace::ALL {
+        let mut course = Course::empty("Door street", 400.0);
+        course.hazards.push(freewheel::course::Hazard {
+            kind: freewheel::course::HazardKind::Door,
+            s: 60.0,
+            x0: -6.0,
+            x1: 6.0,
+        });
+        let world = World::new(course, Bike::Bmx, 1).with_drop_clock();
+        let ride = Ride::from_world(world, Mode::Clock(District::Downtown), 100.0);
+        let (mut h, s) = open(ride, pace);
+        hold(&mut h, Key::Up);
+        let mut said = Vec::new();
+        for _ in 0..60 * 90 {
+            {
+                // 14 seconds left as the door comes: the crash takes 8.
+                let mut r = s.borrow_mut();
+                if r.world.rider.s < 55.0 {
+                    r.world.drop_clock.as_mut().unwrap().left = 14.0;
+                }
+            }
+            h.frame(1.0 / 60.0);
+            said.extend(h.spoken());
+            h.clear();
+            if h.app.top_name() != "freewheel_observed" {
+                break;
+            }
+        }
+        let crash = said
+            .iter()
+            .position(|l| l.starts_with("Doored. Lost 8 seconds."));
+        let crash = crash.unwrap_or_else(|| panic!("{pace:?}: no crash: {said:?}"));
+        let calls: Vec<usize> = said
+            .iter()
+            .enumerate()
+            .filter(|(_, l)| l.as_str() == "10 seconds left.")
+            .map(|(i, _)| i)
+            .collect();
+        assert_eq!(calls, vec![crash + 1], "{pace:?}: {said:?}");
+        // No drops goes on no board, at any pace.
+        assert!(
+            said.iter()
+                .any(|l| l.contains("0 drops in Downtown")
+                    && l.contains("Nothing goes on the board.")),
+            "{pace:?}: {said:?}"
+        );
+        let board = pace.board(&freewheel::clock::board(District::Downtown));
+        assert_eq!(Records::best(&mut h.app.ctx, ID, &board), None);
+    }
 }

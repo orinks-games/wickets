@@ -639,6 +639,7 @@ impl State<Parlor> for Signal {
             menus::pause(ctx, HELP, leave);
             return;
         }
+        self.clock.asked_by(action);
         match action {
             Some(ParlorAction::Primary) if !self.shift.started() => self.open_line(ctx),
             Some(

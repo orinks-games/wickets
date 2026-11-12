@@ -729,14 +729,17 @@ pub fn result_pages(run: &Run, saved: &Saved) -> Vec<String> {
     };
     let best_word = saved.pace.best_word();
     let score = match saved.score {
-        ScoreResult::First => format!("{}, your first {relaxed}score.", points_words(run.score)),
-        ScoreResult::NewBest { previous } => {
+        None => format!("{}, so nothing goes on the board.", points_words(run.score)),
+        Some(ScoreResult::First) => {
+            format!("{}, your first {relaxed}score.", points_words(run.score))
+        }
+        Some(ScoreResult::NewBest { previous }) => {
             format!(
                 "{}, a new {best_word}, beating {previous}.",
                 points_words(run.score)
             )
         }
-        ScoreResult::Short { best } => {
+        Some(ScoreResult::Short { best }) => {
             format!("{}. Your {best_word} is {best}.", points_words(run.score))
         }
     };
@@ -879,6 +882,7 @@ impl State<Parlor> for Play {
         ) {
             return;
         }
+        self.clock.asked_by(action);
         match action {
             Some(
                 a @ (ParlorAction::Left

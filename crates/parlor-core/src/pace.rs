@@ -14,7 +14,8 @@
 //!
 //! Holds are of two kinds. A game calls [`RunClock::reset`] before each
 //! line the player must act on, and on resume: the hold that follows is a
-//! *key-line hold*, bounded only by Hearken's own cap. Any other speech,
+//! *key-line hold*, bounded only by Hearken's own cap. A line the player
+//! asks for ([`RunClock::asked`]) ends a key-line hold. Any other speech,
 //! such as the status, repeat and hint keys or outcome chatter, holds the
 //! clock only while the *information budget* lasts: [`INFO_HOLD_BUDGET_S`]
 //! of real frame time, spent while such a hold keeps the clock still and
@@ -45,7 +46,7 @@ use hearken::{Ctx, SpeechHold, SpeechHoldState};
 use serde::{Deserialize, Serialize};
 
 use crate::menus::settings::setting;
-use crate::{Parlor, Records};
+use crate::{Parlor, ParlorAction, Records, ScoreResult};
 
 /// The information budget when full, in seconds of real frame time: how
 /// long speech that did not follow a [`RunClock::reset`] may hold the
@@ -181,6 +182,36 @@ pub fn bests(ctx: &mut Ctx<Parlor>, id: &str, base: &str, word: &str) -> Option<
     let normal = Records::best(ctx, id, base);
     let relaxed = Records::best(ctx, id, &Pace::Relaxed.board(base));
     both(word, normal, relaxed)
+}
+
+/// [`bests`] for a game that saves its scores with [`record`]: a best of 0
+/// saved before counts as no score, so the view never says "best 0".
+pub fn scored_bests(ctx: &mut Ctx<Parlor>, id: &str, base: &str, word: &str) -> Option<String> {
+    let normal = best(ctx, id, base);
+    let relaxed = best(ctx, id, &Pace::Relaxed.board(base));
+    both(word, normal, relaxed)
+}
+
+/// Game `id`'s best on `board`, with a best of 0 (saved before
+/// [`record`] kept 0s off the boards) counted as no score.
+pub fn best(ctx: &mut Ctx<Parlor>, id: &str, board: &str) -> Option<u64> {
+    Records::best(ctx, id, board).filter(|&b| b > 0)
+}
+
+/// Records `score` on game `id`'s `board` (the pace's own board) as
+/// [`Records::record`] does, except that a 0 goes on no board, at any pace:
+/// `None`, so no result or view says "best 0" or "relaxed best 0". A 0
+/// still marks the game played, and a best of 0 saved before counts as no
+/// score, so beating it is a first score.
+pub fn record(ctx: &mut Ctx<Parlor>, id: &str, board: &str, score: u64) -> Option<ScoreResult> {
+    if score == 0 {
+        crate::tutorial::mark_played(ctx, id.split('/').next().unwrap_or(id));
+        return None;
+    }
+    Some(match Records::record(ctx, id, board, score) {
+        ScoreResult::NewBest { previous: 0 } => ScoreResult::First,
+        r => r,
+    })
 }
 
 /// "Pace: relaxed".
@@ -388,6 +419,27 @@ impl RunClock {
         }
         self.state = state;
         flowed * self.pace.scale()
+    }
+
+    /// Marks a line the player asked for, such as the status, a repeat or a
+    /// hint: call it where such a line is spoken. It ends any key-line hold
+    /// a [`RunClock::reset`] granted, so a held key line cannot be stretched
+    /// by asking again and again: the hold from here on, and the next one,
+    /// draw on the information budget.
+    pub fn asked(&mut self) {
+        self.keyed = false;
+    }
+
+    /// [`RunClock::asked`] when `action` is the status, repeat or hint key:
+    /// call it with each press, before the press is handled. A game's own
+    /// information keys call `asked` themselves.
+    pub fn asked_by(&mut self, action: Option<ParlorAction>) {
+        if matches!(
+            action,
+            Some(ParlorAction::Status | ParlorAction::Repeat | ParlorAction::Hint)
+        ) {
+            self.asked();
+        }
     }
 
     /// Lets game time run through speech on the next frame only: for an
@@ -684,6 +736,103 @@ mod tests {
             assert_eq!(clock.budget(), budget);
         }
         assert!(close(clock.held_time(), 5.0));
+    }
+
+    /// Status pressed again and again for `seconds`: each press asks, then
+    /// two seconds of speech and a short breath that does not end the hold.
+    /// Gives the time held.
+    fn spam(clock: &mut RunClock, seconds: f64) -> f64 {
+        let mut held = 0.0;
+        let mut t = 0.0;
+        while t < seconds {
+            clock.asked();
+            for _ in 0..20 {
+                held += 0.1 - clock.step(true, 0.1);
+            }
+            held += 0.1 - clock.step(false, 0.1);
+            t += 2.1;
+        }
+        held
+    }
+
+    #[test]
+    fn asking_during_a_key_line_ends_its_free_hold() {
+        let mut clock = RunClock::new(Pace::Quick);
+        // Half the budget spent on earlier information lines.
+        steps(&mut clock, true, 100, 0.1);
+        steps(&mut clock, false, 6, 0.1);
+        let budget = clock.budget();
+        clock.reset();
+        let key = 2.0;
+        assert_eq!(steps(&mut clock, true, 20, 0.1), 0.0, "the key line holds");
+        let held = key + spam(&mut clock, 60.0);
+        let refill = 60.0 / REFILL_RUN_S / 2.0;
+        assert!(
+            held <= key + budget + refill,
+            "held {held}, key line {key}, budget {budget}"
+        );
+        assert!(held < 20.0 - 1.0, "short of Hearken's cap: {held}");
+        assert_ne!(clock.state(), ClockState::Held);
+    }
+
+    #[test]
+    fn asking_after_a_resume_draws_on_the_budget() {
+        let mut clock = RunClock::new(Pace::Quick);
+        drain(&mut clock);
+        for _ in 0..3 {
+            // Pause and resume, then status again and again: the hold is
+            // what the budget had, not a fresh freeze to Hearken's cap.
+            let budget = clock.budget();
+            clock.reset();
+            let held = spam(&mut clock, 20.0);
+            // The breaths between presses run, and refill a little.
+            assert!(held <= budget + 0.5, "held {held} of {budget}");
+            assert!(held < 10.0, "{held}");
+        }
+    }
+
+    #[test]
+    fn a_reset_after_asking_grants_the_next_key_line_in_full() {
+        let mut clock = RunClock::new(Pace::Quick);
+        drain(&mut clock);
+        clock.asked();
+        clock.reset();
+        assert_eq!(steps(&mut clock, true, 50, 0.1), 0.0);
+        assert!(clock.held());
+    }
+
+    #[test]
+    fn a_score_of_0_goes_on_no_board() {
+        let mut h = Headless::new(Default::default(), Base);
+        let ctx = &mut h.app.ctx;
+        let board = Pace::Relaxed.board("meadow");
+        assert_eq!(record(ctx, "dummy", &board, 0), None);
+        assert_eq!(Records::best(ctx, "dummy", &board), None);
+        assert_eq!(scored_bests(ctx, "dummy", "meadow", "best"), None);
+        assert_eq!(record(ctx, "dummy", &board, 12), Some(ScoreResult::First));
+        assert_eq!(
+            record(ctx, "dummy", &board, 0),
+            None,
+            "a 0 after a score changes nothing"
+        );
+        assert_eq!(best(ctx, "dummy", &board), Some(12));
+        // A 0 saved before counts as no score.
+        Records::record(ctx, "dummy", "meadow", 0);
+        assert_eq!(best(ctx, "dummy", "meadow"), None);
+        assert_eq!(
+            scored_bests(ctx, "dummy", "meadow", "best").as_deref(),
+            Some("relaxed best 12")
+        );
+        assert_eq!(
+            bests(ctx, "dummy", "meadow", "best").as_deref(),
+            Some("best 0, relaxed best 12"),
+            "a game still saving 0s keeps its view"
+        );
+        assert_eq!(record(ctx, "dummy", "meadow", 5), Some(ScoreResult::First));
+        assert_eq!(
+            record(ctx, "dummy", "meadow", 9),
+            Some(ScoreResult::NewBest { previous: 5 })
+        );
     }
 
     #[test]

@@ -35,7 +35,8 @@ pub struct Progress {
 /// What a finished pantry run changed.
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Saved {
-    pub score: ScoreResult,
+    /// What saving the score meant: `None` for a 0, which goes on no board.
+    pub score: Option<ScoreResult>,
     /// The deepest pantry before this run, when this run went deeper.
     pub deeper: Option<u32>,
     pub deepest: u32,
@@ -70,7 +71,7 @@ pub fn save_run(ctx: &mut Ctx<Parlor>, run: &Run, pace: Pace) -> Saved {
     p.runs += 1;
     p.crumbs += run.eaten;
     p.store(ctx);
-    let score = Records::record(ctx, ID, &pace.board(PANTRY_BOARD), run.score as u64);
+    let score = parlor_core::pace::record(ctx, ID, &pace.board(PANTRY_BOARD), run.score as u64);
     Saved {
         score,
         deeper,
@@ -87,7 +88,7 @@ pub fn save_event_run(ctx: &mut Ctx<Parlor>, run: &Run, board: &str, pace: Pace)
     let mut p = Progress::load(ctx);
     p.crumbs += run.eaten;
     p.store(ctx);
-    let score = Records::record(ctx, ID, &pace.board(board), run.score as u64);
+    let score = parlor_core::pace::record(ctx, ID, &pace.board(board), run.score as u64);
     Saved {
         score,
         deeper: None,

@@ -913,6 +913,7 @@ impl State<Parlor> for Descent {
             menus::pause(ctx, HELP, self.leave());
             return;
         }
+        self.clock.asked_by(action);
         match action {
             Some(ParlorAction::Primary) => {
                 if !self.flight.started() {

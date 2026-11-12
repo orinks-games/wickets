@@ -431,11 +431,14 @@ fn a_good_player_clears_round_one_and_hears_every_catch_and_bank() {
 }
 
 #[test]
-fn standing_still_fails_round_one_and_the_score_is_saved() {
+fn standing_still_fails_round_one_and_a_0_is_not_saved() {
     let mut h = into_meadow();
     idle_until(&mut h, |h| h.app.top_name() == "results");
     assert!(
-        spoke(&h, "banked, run over. Score 0, saved."),
+        spoke(
+            &h,
+            "banked, run over. Score 0, so nothing goes on the board."
+        ),
         "{:?}",
         h.spoken()
     );
@@ -445,13 +448,17 @@ fn standing_still_fails_round_one_and_the_score_is_saved() {
     assert_eq!(h.app.ctx.audio.bed(), None);
     assert_eq!(
         Records::best(&mut h.app.ctx, basket_run::ID, "meadow"),
-        Some(0)
+        None
     );
     h.press(Key::End);
     h.clear();
     h.press(Key::Return); // Back to the title
     assert_eq!(h.app.top_name(), "basket_run");
-    assert!(spoke(&h, "Play, the meadow, best 0."), "{:?}", h.spoken());
+    assert!(
+        spoke(&h, "Play, the meadow, no score yet."),
+        "{:?}",
+        h.spoken()
+    );
 }
 
 #[test]
@@ -466,13 +473,21 @@ fn a_better_run_sets_a_new_best_and_a_worse_one_does_not() {
     let best = Records::best(&mut h.app.ctx, basket_run::ID, "meadow").unwrap();
     assert!(best > 0);
     assert_eq!(h.app.ctx.audio.music(), Some(sound::LOSE));
-    // Play again, standing still.
+    // Play again, standing still: a 0 leaves the best alone.
     h.press(Key::Home);
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), "basket_run_run");
     h.clear();
     idle_until(&mut h, |h| h.app.top_name() == "results");
-    assert!(spoke(&h, &format!(", best {best}.")), "{:?}", h.spoken());
+    assert!(
+        spoke(&h, "Score 0, so nothing goes on the board."),
+        "{:?}",
+        h.spoken()
+    );
+    assert_eq!(
+        Records::best(&mut h.app.ctx, basket_run::ID, "meadow"),
+        Some(best)
+    );
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), "basket_run");
     assert!(spoke(&h, &format!("Play, the meadow, best {best}.")));

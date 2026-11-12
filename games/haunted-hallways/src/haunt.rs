@@ -1674,6 +1674,7 @@ impl State<Parlor> for Haunt {
                 return;
             }
         }
+        self.clock.asked_by(ctx.action_for(event));
         let evs = match ctx.action_for(event) {
             Some(ParlorAction::Up) => self.run.walk(Side::North),
             Some(ParlorAction::Down) => self.run.walk(Side::South),
@@ -1697,6 +1698,7 @@ impl State<Parlor> for Haunt {
             }
             None => {
                 if event.pressed() == Some(Key::I) {
+                    self.clock.asked();
                     let text = if self.run.inventory.is_empty() {
                         "You carry nothing.".to_string()
                     } else {

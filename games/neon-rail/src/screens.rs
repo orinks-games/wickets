@@ -685,6 +685,7 @@ impl State<Parlor> for RunScreen {
         {
             return;
         }
+        self.clock.asked_by(ctx.action_for(event));
         match ctx.action_for(event) {
             Some(ParlorAction::Left) => run.shift(-1),
             Some(ParlorAction::Right) => run.shift(1),

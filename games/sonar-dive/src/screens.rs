@@ -737,6 +737,7 @@ impl State<Parlor> for DiveScreen {
         let Some(action) = ctx.action_for(event) else {
             return;
         };
+        self.clock.asked_by(Some(action));
         match action {
             ParlorAction::Primary => {
                 let ev = self.exp.as_mut().map(|e| e.dive.ping());

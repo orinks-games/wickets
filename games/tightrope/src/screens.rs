@@ -605,6 +605,7 @@ impl State<Parlor> for RunScreen {
         if event.is_repeat() {
             return;
         }
+        self.run_clock.asked_by(action);
         let run = &mut self.run;
         match action {
             Some(ParlorAction::Left) => run.shift(Side::Left),

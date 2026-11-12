@@ -4,7 +4,7 @@ use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, InputEvent, Key, Sound, State};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::{
-    Challenge, Challenges, Mood, Pace, Pages, Parlor, ParlorAction, Records, Rng, RunClock, Score,
+    Challenge, Challenges, Mood, Pace, Pages, Parlor, ParlorAction, Rng, RunClock, Score,
     ScoreResult,
 };
 
@@ -608,7 +608,14 @@ impl RunScreen {
             title = format!("{title} {streak}");
             lines.push(streak);
         } else if let Some(board) = self.run.mode.board() {
-            let r = Records::record(ctx, ID, &pace.board(board), self.run.score);
+            // A 0 goes on no board, at any pace, so no view says "best 0".
+            let score = self.run.score;
+            let Some(r) = parlor_core::pace::record(ctx, ID, &pace.board(board), score) else {
+                title = format!("{title} {ZERO_SCORE}");
+                lines.push(ZERO_SCORE.to_string());
+                ctx.replace(results(self.launch, won, title.trim().to_string(), lines));
+                return;
+            };
             title = format!("{title} {}", short_score_line(self.run.score, r, pace));
             lines.push(score_line(r, pace));
             if self.run.mode == Mode::Easter {
@@ -650,6 +657,9 @@ pub fn pattern_call(pattern: Pattern, lane: usize, lanes: usize, callouts: bool)
         }
     }
 }
+
+/// What a run that scored nothing says: a 0 goes on no board.
+pub const ZERO_SCORE: &str = "Score 0, so nothing goes on the board.";
 
 /// The score and what saving it meant, in a few words: "Score 61, saved."
 /// A relaxed run's best is its relaxed best.
@@ -772,6 +782,14 @@ impl State<Parlor> for RunScreen {
         let Some(action) = ctx.action_for(event) else {
             return;
         };
+        self.run_clock.asked_by(Some(action));
+        if matches!(
+            action,
+            ParlorAction::Secondary | ParlorAction::Up | ParlorAction::Down
+        ) {
+            // The cart's place and the sideways reminder are asked for too.
+            self.run_clock.asked();
+        }
         match action {
             ParlorAction::Left | ParlorAction::Right => {
                 let delta = if action == ParlorAction::Left { -1 } else { 1 };

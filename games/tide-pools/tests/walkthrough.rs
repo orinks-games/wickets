@@ -578,9 +578,9 @@ fn a_trip_with_nothing_new_walks_home_quietly() {
     assert!(spoke(&t.h, "Nothing gathered this time"));
     assert_eq!(t.h.app.ctx.audio.music(), Some(sound::HOME));
     t.h.press(Key::Return);
-    assert!(spoke(&t.h, "Score 0."));
+    assert!(spoke(&t.h, "Score 0, so nothing goes on the board."));
     read_pages(&mut t.h);
-    assert_eq!(Records::best(&mut t.h.app.ctx, ID, "cove"), Some(0));
+    assert_eq!(Records::best(&mut t.h.app.ctx, ID, "cove"), None);
 }
 
 #[test]

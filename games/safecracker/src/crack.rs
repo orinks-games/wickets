@@ -972,6 +972,11 @@ impl State<Parlor> for Crack {
         ) {
             self.run.clock_running = true;
         }
+        self.clock.asked_by(action);
+        if action == Some(ParlorAction::Secondary) {
+            // The dial's number is asked for too.
+            self.clock.asked();
+        }
         let evs = match action {
             Some(ParlorAction::Left) => self.run.turn(Turn::Left),
             Some(ParlorAction::Right) => self.run.turn(Turn::Right),

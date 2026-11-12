@@ -446,3 +446,32 @@ fn records_and_the_title_name_both_boards() {
         "{rows:?}"
     );
 }
+
+#[test]
+fn an_idle_relaxed_run_scores_0_and_saves_no_relaxed_best() {
+    let (mut h, _s) = playing(Mode::Meadow, Pace::Relaxed);
+    let said = play_out(&mut h);
+    assert!(
+        said.contains("Score 0, so nothing goes on the board."),
+        "{said}"
+    );
+    assert!(!said.contains("saved"), "{said}");
+    let relaxed = Pace::Relaxed.board("meadow");
+    assert_eq!(Records::best(&mut h.app.ctx, ID, &relaxed), None);
+    assert_eq!(
+        basket_run::progress::best_line(&mut h.app.ctx, "meadow"),
+        "no score yet"
+    );
+    // A relaxed 0 saved before this counts as no score: the next score is
+    // the first, not "a new best, the old best was 0".
+    Records::record(&mut h.app.ctx, ID, &relaxed, 0);
+    assert_eq!(
+        basket_run::progress::best_line(&mut h.app.ctx, "meadow"),
+        "no score yet"
+    );
+    let r = pace::record(&mut h.app.ctx, ID, &relaxed, 33).unwrap();
+    assert_eq!(
+        score_line(r, Pace::Relaxed),
+        "Your first relaxed score here is saved."
+    );
+}

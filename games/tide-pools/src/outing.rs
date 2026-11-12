@@ -692,29 +692,33 @@ impl OutingScreen {
         let best_word = pace.best_word();
         match (o.plan.mode, self.challenge.clone()) {
             (Mode::Beach(place), _) => {
-                match Records::record(ctx, crate::ID, &pace.board(place.board()), score) {
-                    ScoreResult::First => {
+                // A 0 goes on no board, at any pace.
+                match parlor_core::pace::record(ctx, crate::ID, &pace.board(place.board()), score) {
+                    None => score_line = "Score 0, so nothing goes on the board.".to_string(),
+                    Some(ScoreResult::First) => {
                         score_line.push_str(&format!(" Your {first} at {}.", place.name()))
                     }
-                    ScoreResult::NewBest { previous } => score_line.push_str(&format!(
+                    Some(ScoreResult::NewBest { previous }) => score_line.push_str(&format!(
                         " A new {best_word} at {}, beating {previous}.",
                         place.name()
                     )),
-                    ScoreResult::Short { best } => score_line
+                    Some(ScoreResult::Short { best }) => score_line
                         .push_str(&format!(" Your {best_word} at {} is {best}.", place.name())),
                 }
                 pages.push(score_line);
             }
             (Mode::Event(event, _), _) => {
-                match Records::record(ctx, crate::ID, &pace.board(event.board()), score) {
-                    ScoreResult::First => {
+                // A 0 goes on no board, at any pace.
+                match parlor_core::pace::record(ctx, crate::ID, &pace.board(event.board()), score) {
+                    None => score_line = "Score 0, so nothing goes on the board.".to_string(),
+                    Some(ScoreResult::First) => {
                         score_line.push_str(&format!(" Your {first} on {}.", event.the()))
                     }
-                    ScoreResult::NewBest { previous } => score_line.push_str(&format!(
+                    Some(ScoreResult::NewBest { previous }) => score_line.push_str(&format!(
                         " A new {best_word} on {}, beating {previous}.",
                         event.the()
                     )),
-                    ScoreResult::Short { best } => score_line
+                    Some(ScoreResult::Short { best }) => score_line
                         .push_str(&format!(" Your {best_word} on {} is {best}.", event.the())),
                 }
                 pages.push(score_line);
@@ -1009,7 +1013,13 @@ impl State<Parlor> for OutingScreen {
             menus::pause(ctx, HELP, leave);
             return;
         }
-        let evs = match ctx.action_for(event) {
+        let action = ctx.action_for(event);
+        self.clock.asked_by(action);
+        if action == Some(ParlorAction::Secondary) {
+            // The last sound's name is asked for too.
+            self.clock.asked();
+        }
+        let evs = match action {
             Some(ParlorAction::Left) => self.outing.walk(-1),
             Some(ParlorAction::Right) => self.outing.walk(1),
             Some(ParlorAction::Up) => self.outing.lean_in(),

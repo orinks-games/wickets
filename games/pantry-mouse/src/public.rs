@@ -24,7 +24,7 @@ use hearken::screens::SettingsRow;
 use hearken::text::end_sentence;
 use hearken::Ctx;
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
-use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period};
 
 pub use challenge::{ChallengeHost, ChallengesMenu, Larders, CHALLENGES_NAME};
 pub use play::{Mode, Play};
@@ -76,7 +76,7 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
 /// Records: the pantry's bests, the tallies, then the challenges.
 pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let p = Progress::load(ctx);
-    let best = pace::bests(ctx, ID, progress::PANTRY_BOARD, "best score")
+    let best = pace::scored_bests(ctx, ID, progress::PANTRY_BOARD, "best score")
         .unwrap_or_else(|| "no score yet".to_string());
     let deepest = match p.deepest {
         0 => "no pantry reached yet".to_string(),
@@ -108,7 +108,7 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     ]
     .into_iter()
     .filter_map(|(name, board)| {
-        pace::bests(ctx, ID, board, "best").map(|b| format!("{name}, {b}."))
+        pace::scored_bests(ctx, ID, board, "best").map(|b| format!("{name}, {b}."))
     })
     .collect();
     if !events.is_empty() {
@@ -120,8 +120,8 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
 /// The best score on an event's `board` and on its relaxed board.
 fn event_bests(ctx: &mut Ctx<Parlor>, board: &str) -> events::Bests {
     (
-        Records::best(ctx, ID, board),
-        Records::best(ctx, ID, &Pace::Relaxed.board(board)),
+        pace::best(ctx, ID, board),
+        pace::best(ctx, ID, &Pace::Relaxed.board(board)),
     )
 }
 
@@ -151,7 +151,7 @@ impl TitleGame for PantryMouse {
     }
 
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
-        let label = match pace::bests(ctx, ID, progress::PANTRY_BOARD, "best") {
+        let label = match pace::scored_bests(ctx, ID, progress::PANTRY_BOARD, "best") {
             Some(b) => format!("{}, the pantry, {b}", labels::PLAY),
             None => format!("{}, the pantry", labels::PLAY),
         };

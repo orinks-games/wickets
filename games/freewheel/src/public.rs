@@ -121,16 +121,16 @@ fn board_bests(
     board: &str,
     words: impl Fn(u64) -> String,
 ) -> Option<String> {
-    let best = parlor_core::Records::best(ctx, ID, board).map(&words);
-    let relaxed = parlor_core::Records::best(ctx, ID, &Pace::Relaxed.board(board)).map(&words);
+    let best = pace::best(ctx, ID, board).map(&words);
+    let relaxed = pace::best(ctx, ID, &Pace::Relaxed.board(board)).map(&words);
     plus_relaxed(best, relaxed)
 }
 
 /// " Best 1.2 kilometres, relaxed best 900 metres." for a row's help,
 /// leaving out one with no score, or nothing.
 fn row_best(ctx: &mut Ctx<Parlor>, board: &str, words: impl Fn(u64) -> String) -> String {
-    let best = parlor_core::Records::best(ctx, ID, board).map(&words);
-    let relaxed = parlor_core::Records::best(ctx, ID, &Pace::Relaxed.board(board)).map(&words);
+    let best = pace::best(ctx, ID, board).map(&words);
+    let relaxed = pace::best(ctx, ID, &Pace::Relaxed.board(board)).map(&words);
     match pace::both("best", best, relaxed) {
         Some(b) => format!(" {}.", sentence_start(&b)),
         None => String::new(),
@@ -170,7 +170,7 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
                 let b = board(info.id, bike);
                 let best = time_points(ctx, &b);
                 let relaxed = time_points(ctx, &Pace::Relaxed.board(&b));
-                match plus_relaxed(best, relaxed) {
+                match pace::both("best", best, relaxed) {
                     Some(t) => format!("on the {}, {t}", bike.name()),
                     None => format!("on the {}, no time yet", bike.name()),
                 }

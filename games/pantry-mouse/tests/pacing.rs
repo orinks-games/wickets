@@ -375,3 +375,90 @@ fn records_the_title_and_special_nights_name_both_boards() {
         h.spoken()
     );
 }
+
+/// Status pressed every 2 seconds for `secs` seconds, the voice never
+/// quiet: gives the real seconds until the cats first ran.
+fn spam_status(h: &mut Headless<Parlor>, s: &Screen, secs: u32) -> f64 {
+    let mut first_run = None;
+    for frame in 0..secs * 10 {
+        if frame % 20 == 0 {
+            h.press(Key::S);
+        }
+        tick(h, s, 0.1);
+        if first_run.is_none() && !s.borrow().clock.held() {
+            first_run = Some(f64::from(frame) * 0.1);
+        }
+    }
+    first_run.unwrap_or(f64::from(secs))
+}
+
+/// A run whose information budget was spent on status presses, then 6
+/// quiet seconds of play: gives the budget left.
+fn spent_then_played(h: &mut Headless<Parlor>, s: &Screen) -> f64 {
+    first_step(h, s);
+    spam_status(h, s, 21);
+    assert!(s.borrow().clock.budget() < 1.0);
+    for _ in 0..60 {
+        quiet(h);
+        tick(h, s, 0.1);
+    }
+    assert!(!s.borrow().run.finished());
+    let budget = s.borrow().clock.budget();
+    assert!(budget < pace::INFO_HOLD_BUDGET_S / 4.0, "{budget}");
+    budget
+}
+
+#[test]
+fn status_after_a_key_line_holds_no_longer_than_the_line_and_the_budget() {
+    let (mut h, s) = open(Mode::Pantry, Pace::Normal);
+    let budget = spent_then_played(&mut h, &s);
+    // A key line, held in full.
+    s.borrow_mut().clock.reset();
+    let key = 2.0;
+    for _ in 0..20 {
+        h.app.ctx.say("Ginger cat close, up.");
+        tick(&mut h, &s, 0.1);
+        assert!(s.borrow().clock.held());
+    }
+    // Status again and again, without a quiet moment: it ends the key
+    // line's free hold, so the rest comes from the budget.
+    let held = spam_status(&mut h, &s, 30);
+    assert!(
+        held <= budget + 0.3,
+        "held {held} more after the key line, budget {budget}"
+    );
+    assert!(key + held < 15.0, "short of Hearken's cap: {}", key + held);
+}
+
+#[test]
+fn status_after_a_resume_holds_no_longer_than_the_budget() {
+    let (mut h, s) = open(Mode::Pantry, Pace::Normal);
+    let budget = spent_then_played(&mut h, &s);
+    h.press(Key::Escape);
+    assert_ne!(h.app.top_name(), "pantry_mouse_observed");
+    h.press(Key::Escape);
+    assert_eq!(h.app.top_name(), "pantry_mouse_observed");
+    // The resume's fresh hold lasts only until status is asked for.
+    let held = spam_status(&mut h, &s, 30);
+    assert!(held <= budget + 0.3, "held {held}, budget {budget}");
+    assert!(held < 15.0, "no fresh freeze: {held}");
+}
+
+#[test]
+fn a_run_of_0_points_goes_on_no_board_at_any_pace() {
+    for pace in Pace::ALL {
+        let (mut h, s) = open(Mode::Pantry, pace);
+        let run = s.borrow().run.clone();
+        assert_eq!(run.score, 0);
+        let saved = progress::save_run(&mut h.app.ctx, &run, pace);
+        assert_eq!(saved.score, None);
+        let board = pace.board(progress::PANTRY_BOARD);
+        assert_eq!(Records::best(&mut h.app.ctx, ID, &board), None);
+        let pages = pantry_mouse::play::result_pages(&run, &saved).join(" ");
+        assert!(
+            pages.contains("0 points, so nothing goes on the board."),
+            "{pages}"
+        );
+        assert!(!pages.contains("best 0"), "{pages}");
+    }
+}

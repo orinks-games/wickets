@@ -21,7 +21,7 @@ use hearken::screens::SettingsRow;
 use hearken::text::sentence_start;
 use hearken::Ctx;
 use parlor_core::menus::{labels, TitleGame, TitleRow};
-use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period};
 
 pub use menus::{
     AquariumScreen, ChallengeHost, ChallengesMenu, Shores, SoundCheck, CHALLENGES_NAME,
@@ -70,14 +70,15 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
 
 /// "best 120, relaxed best 140", or "not visited yet".
 fn best_words(ctx: &mut Ctx<Parlor>, place: Place) -> String {
-    pace::bests(ctx, ID, place.board(), "best").unwrap_or_else(|| "not visited yet".to_string())
+    pace::scored_bests(ctx, ID, place.board(), "best")
+        .unwrap_or_else(|| "not visited yet".to_string())
 }
 
 /// An event's best score and relaxed best score.
 fn event_bests(ctx: &mut Ctx<Parlor>, event: events::Event) -> events::Bests {
     (
-        Records::best(ctx, ID, event.board()),
-        Records::best(ctx, ID, &Pace::Relaxed.board(event.board())),
+        pace::best(ctx, ID, event.board()),
+        pace::best(ctx, ID, &Pace::Relaxed.board(event.board())),
     )
 }
 
@@ -149,7 +150,7 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let events: Vec<String> = events::Event::ALL
         .into_iter()
         .filter_map(|e| {
-            pace::bests(ctx, ID, e.board(), "best").map(|b| format!("{}: {b}.", e.name()))
+            pace::scored_bests(ctx, ID, e.board(), "best").map(|b| format!("{}: {b}.", e.name()))
         })
         .collect();
     if !events.is_empty() {

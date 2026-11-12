@@ -1321,7 +1321,14 @@ impl Ride {
             }
             WorldEvent::TimeLost(_) => {}
             WorldEvent::TimeCall(n) => {
-                self.tell(ctx, format!("{} seconds left.", n as i64));
+                let line = format!("{} seconds left.", n as i64);
+                if self.world.rider.down() {
+                    // After the crash line that took the clock past it.
+                    ctx.say_queued(line.clone());
+                    self.last_line = format!("{} {line}", self.last_line);
+                } else {
+                    self.tell(ctx, line);
+                }
             }
             WorldEvent::TimeUp => {}
             WorldEvent::Passed(i) => {
@@ -1703,14 +1710,16 @@ impl Ride {
             let grabbed = w.parcels.iter().filter(|p| p.taken).count();
             let wallet = self.bank(ctx);
             let board = pace.board(&progress::endless_board(district));
-            let result = parlor_core::Records::record(ctx, crate::ID, &board, metres as u64);
+            // A 0 goes on no board, at any pace.
+            let result = parlor_core::pace::record(ctx, crate::ID, &board, metres as u64);
             let record = match result {
-                ScoreResult::First => format!("Your first {relaxed}endless ride here."),
-                ScoreResult::NewBest { previous } => format!(
+                None => "Nothing goes on the board.".to_string(),
+                Some(ScoreResult::First) => format!("Your first {relaxed}endless ride here."),
+                Some(ScoreResult::NewBest { previous }) => format!(
                     "A new {best_word}, beating {}.",
                     distance_words(previous as f64)
                 ),
-                ScoreResult::Short { best } => {
+                Some(ScoreResult::Short { best }) => {
                     format!("Your {best_word} is {}.", distance_words(best as f64))
                 }
             };
@@ -1746,22 +1755,23 @@ impl Ride {
             let c = w.drop_clock.unwrap_or_default();
             let cash = stats.cash;
             let wallet = self.bank(ctx);
-            let result = parlor_core::Records::record(
+            // No drops goes on no board, at any pace.
+            let result = parlor_core::pace::record(
                 ctx,
                 crate::ID,
                 &pace.board(&clock::board(district)),
                 c.drops as u64,
             );
             let record = match result {
-                ScoreResult::First => format!(
+                None => "Nothing goes on the board.".to_string(),
+                Some(ScoreResult::First) => format!(
                     "Your first {relaxed}ride {} here.",
                     clock::NAME.to_lowercase()
                 ),
-                ScoreResult::NewBest { previous: 0 } => format!("A new {best_word}."),
-                ScoreResult::NewBest { previous } => {
+                Some(ScoreResult::NewBest { previous }) => {
                     format!("A new {best_word}, beating {previous}.")
                 }
-                ScoreResult::Short { best } => format!("Your {best_word} is {best}."),
+                Some(ScoreResult::Short { best }) => format!("Your {best_word} is {best}."),
             };
             let pages = vec![
                 format!(
@@ -2243,6 +2253,7 @@ impl State<Parlor> for Ride {
         let Some(action) = action else {
             return;
         };
+        self.run_clock.asked_by(Some(action));
         let up = Self::key(ctx, ParlorAction::Up);
         match action {
             ParlorAction::Status => {

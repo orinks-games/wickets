@@ -22,7 +22,7 @@ use hearken::screens::SettingsRow;
 use hearken::text::end_sentence;
 use hearken::Ctx;
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
-use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period};
 
 use crate::challenge::{ChallengeHost, ChallengesMenu};
 use crate::easter::Keepsakes;
@@ -128,8 +128,8 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
 fn easter_row(ctx: &mut Ctx<Parlor>) -> TitleRow<BasketRun> {
     let today = parlor_core::challenges::today(ctx);
     let bests = (
-        Records::best(ctx, ID, "easter morning"),
-        Records::best(ctx, ID, &Pace::Relaxed.board("easter morning")),
+        pace::best(ctx, ID, "easter morning"),
+        pace::best(ctx, ID, &Pace::Relaxed.board("easter morning")),
     );
     let help = easter::row_help(today, bests);
     if easter::is_open(today) {
