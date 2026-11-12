@@ -51,6 +51,16 @@ Lean all the way over and you fall to the safety net. You lose a life and climb 
 
 On the practice wire falling costs nothing.
 
+## Pace
+
+The wire holds while a line is still being spoken. Your balance, the wind and the pigeons stand still until it ends. Once a gust whoosh starts, the wire runs on through speech until the gust hits. This holds at every pace and in every mode.
+
+Pace in Settings sets how fast the wire runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. Your balance, the wind, the pigeons and each crossing's time follow the pace.
+
+A change applies from your next run. A run or a challenge keeps the pace it started at until it ends.
+
+Relaxed scores and best times are saved separately, including challenges and events. Normal and quick share their scores. Your furthest crossing counts at every pace.
+
 ## Scoring
 
 - Each step scores 10 points times the crossing's number.

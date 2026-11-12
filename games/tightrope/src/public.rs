@@ -14,10 +14,11 @@ pub mod screens;
 pub mod tutorial;
 
 use hearken::menu::MenuItem;
+use hearken::screens::SettingsRow;
 use hearken::text::end_sentence;
 use hearken::Ctx;
 use parlor_core::menus::{self as shared, labels, TitleGame, TitleRow};
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Parlor, Period};
 
 use crate::menus::time_text;
 use crate::rules::{skyline_level, Mode, SKYLINE_LEN};
@@ -86,11 +87,10 @@ pub fn title_with_seed(seed: u64) -> Title {
     shared::Title::new(Tightrope { seed: Some(seed) })
 }
 
+/// "best 30, relaxed best 41", leaving out a board with no score, or
+/// "no score yet".
 fn best_text(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    match Records::best(ctx, ID, board) {
-        Some(best) => format!("best {best}"),
-        None => "no score yet".to_string(),
-    }
+    pace::bests(ctx, ID, board, "best").unwrap_or_else(|| "no score yet".to_string())
 }
 
 /// Records: the best scores, the furthest crossing, every best time and
@@ -115,7 +115,7 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         .map(|n| {
             let level = skyline_level(n, false);
             if n <= progress::unlocked(ctx) {
-                let best = progress::best_time(ctx, &level.time_board());
+                let best = progress::best_times(ctx, &level.time_board());
                 format!("Crossing {n}, {}.", time_text(best))
             } else {
                 format!("Crossing {n}, locked.")
@@ -126,7 +126,7 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     if progress::night_unlocked(ctx) {
         let night: Vec<String> = (1..=SKYLINE_LEN)
             .map(|n| {
-                let best = progress::best_time(ctx, &format!("night {n}"));
+                let best = progress::best_times(ctx, &format!("night {n}"));
                 format!("Night crossing {n}, {}.", time_text(best))
             })
             .collect();
@@ -151,6 +151,10 @@ impl TitleGame for Tightrope {
 
     fn music(&mut self, ctx: &mut Ctx<Parlor>) {
         ctx.audio.play_music(Some(cues::MUSIC_TITLE), true);
+    }
+
+    fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
+        vec![pace::row(ID)]
     }
 
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {

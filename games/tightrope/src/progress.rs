@@ -4,7 +4,7 @@
 use std::collections::BTreeMap;
 
 use hearken::Ctx;
-use parlor_core::{Parlor, Records, ScoreResult};
+use parlor_core::{Pace, Parlor, Records, ScoreResult};
 
 use crate::rules::{Mode, Run, SKYLINE_LEN};
 use crate::ID;
@@ -68,9 +68,18 @@ pub fn trained(ctx: &mut Ctx<Parlor>) -> bool {
     Records::best(ctx, ID, "training").is_some()
 }
 
-/// Saves what a finished run earned, and says what it meant: one line per
-/// record.
-pub fn save_run(ctx: &mut Ctx<Parlor>, run: &Run) -> Vec<String> {
+/// The best times on `board` and on its relaxed board.
+pub fn best_times(ctx: &mut Ctx<Parlor>, board: &str) -> (Option<f64>, Option<f64>) {
+    (
+        best_time(ctx, board),
+        best_time(ctx, &Pace::Relaxed.board(board)),
+    )
+}
+
+/// Saves what a finished run at `pace` earned, and says what it meant: one
+/// line per record. Relaxed scores and times go on their own boards; the
+/// furthest crossing and the practice wire count at every pace.
+pub fn save_run(ctx: &mut Ctx<Parlor>, run: &Run, pace: Pace) -> Vec<String> {
     let mut lines = Vec::new();
     if let Mode::Challenge(_) = run.mode {
         return lines;
@@ -81,21 +90,23 @@ pub fn save_run(ctx: &mut Ctx<Parlor>, run: &Run) -> Vec<String> {
         }
         return lines;
     }
-    let board = run.mode.board();
+    let board = pace.board(&run.mode.board());
+    let relaxed = if pace.separate() { "relaxed " } else { "" };
     match Records::record(ctx, ID, &board, run.score) {
         ScoreResult::First => lines.push(format!(
-            "First {} score saved: {}.",
+            "First {relaxed}{} score saved: {}.",
             run.mode.name(),
             run.score
         )),
         ScoreResult::NewBest { previous } => lines.push(format!(
-            "New best {} score: {}, beating {previous}.",
+            "New {relaxed}best {} score: {}, beating {previous}.",
             run.mode.name(),
             run.score
         )),
-        ScoreResult::Short { best } => {
-            lines.push(format!("Your best {} score stays {best}.", run.mode.name()))
-        }
+        ScoreResult::Short { best } => lines.push(format!(
+            "Your {relaxed}best {} score stays {best}.",
+            run.mode.name()
+        )),
     }
     for &(number, secs) in &run.times {
         if number == 0 {
@@ -109,10 +120,12 @@ pub fn save_run(ctx: &mut Ctx<Parlor>, run: &Run) -> Vec<String> {
         } else {
             (format!("crossing {number}"), format!("crossing {number}"))
         };
-        match record_time(ctx, &board, secs) {
-            TimeResult::First => lines.push(format!("First time on {name}: {secs:.1} seconds.")),
+        match record_time(ctx, &pace.board(&board), secs) {
+            TimeResult::First => {
+                lines.push(format!("First {relaxed}time on {name}: {secs:.1} seconds."))
+            }
             TimeResult::NewBest { previous } => lines.push(format!(
-                "New best time on {name}: {secs:.1} seconds, beating {previous:.1}."
+                "New {relaxed}best time on {name}: {secs:.1} seconds, beating {previous:.1}."
             )),
             TimeResult::Short { .. } => {}
         }
