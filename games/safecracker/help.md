@@ -46,6 +46,16 @@ The first noise he hears makes him suspicious: "He heard something!" He stays su
 
 Every wheel is worth 100 points. Crack a safe quickly for a time bonus. Each strike costs 30 points and each hint 20. Each safe keeps your best time and best score, and Records on the title reads them all, with your challenge results.
 
+## Pace
+
+The clock and the guard stand still while a line is still being spoken. This holds at every pace and in every mode. Time spent while a line is spoken still counts toward your time on the safe, and comes off your time attack bonus.
+
+Pace in Settings sets how fast the safe runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. Your time on the safe, the time attack clock, the guard and the building noises follow the pace.
+
+A change applies from your next safe. A challenge job keeps the pace it started at until it ends.
+
+Relaxed scores and best times are saved separately, including challenges and bonus safes. Normal and quick share their scores. Safes you crack count at every pace.
+
 ## Modes
 
 Play, the first row of the title, opens the first safe you have not yet cracked. Safe select replays any safe you have reached. Crack safe 3 to open time attack, where any safe you have cracked comes with a clock. The clock warning plays at 1 minute, 30 seconds and 10 seconds left. The clock stops while the guard listens at the door. Practice dial gives you endless single wheels with nothing to lose, so you can practise finding the tumbler. Sound check plays each sound you need at the safe, with its name. Challenges holds the daily, weekly and monthly jobs.
