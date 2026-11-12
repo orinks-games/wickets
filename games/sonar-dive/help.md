@@ -70,6 +70,16 @@ When you surface, what you carry is banked, your air is refilled, and you choose
 
 When an expedition ends, you hear how it went, your haul and your best. Then the results menu offers Play again, or Try again after a loss, Hear the results again, and Back to the title. After a challenge, the last row is Back to the challenges. Escape does the same as the last row.
 
+## Pace
+
+The sea holds while a line is still being spoken. Your air, the sub, the mines, the currents, the bell, the buoys and the grab arm stand still until it ends. While you hold a turn key, and while a ping's echoes are coming back, the sea runs on through speech. This holds at every pace and in every mode.
+
+Pace in Settings sets how fast the sea runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. Your air, the sub's speed and turns, the echoes, the mine ticks, the bell, the buoys and salvage all follow the pace, so a later echo still means a farther one.
+
+A change applies from your next expedition. An expedition keeps the pace it started at until it ends.
+
+Relaxed hauls are saved separately, including challenges and special dives. Normal and quick share their hauls. Your deepest dive, your expeditions and Deep start count at every pace.
+
 ## Modes
 
 - Play, expedition: from dive 1, as deep as you dare. Your best haul is on the row and in Records.
