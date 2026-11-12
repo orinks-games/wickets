@@ -135,6 +135,31 @@ pub fn set(ctx: &mut Ctx<Parlor>, id: &str, pace: Pace) {
     Records::store(ctx, &key(id), &Some(pace));
 }
 
+/// "best 1200, relaxed best 900": `word` and the value for normal and
+/// quick, then "relaxed" `word` and the relaxed value, leaving out one
+/// with no value. `None` when neither has one, so a view never says
+/// "relaxed best 0".
+pub fn both<T: std::fmt::Display>(
+    word: &str,
+    normal: Option<T>,
+    relaxed: Option<T>,
+) -> Option<String> {
+    let parts: Vec<String> = [normal.map(|v| format!("{word} {v}"))]
+        .into_iter()
+        .chain([relaxed.map(|v| format!("relaxed {word} {v}"))])
+        .flatten()
+        .collect();
+    (!parts.is_empty()).then(|| parts.join(", "))
+}
+
+/// The bests on board `base` of game `id` and on its relaxed board, as
+/// [`both`] says them: "best score 30, relaxed best score 41".
+pub fn bests(ctx: &mut Ctx<Parlor>, id: &str, base: &str, word: &str) -> Option<String> {
+    let normal = Records::best(ctx, id, base);
+    let relaxed = Records::best(ctx, id, &Pace::Relaxed.board(base));
+    both(word, normal, relaxed)
+}
+
 /// "Pace: relaxed".
 pub fn label(pace: Pace) -> String {
     format!("Pace: {}", pace.word())
@@ -324,6 +349,28 @@ mod tests {
         assert_eq!(Pace::Quick.board("episode-3"), "episode-3");
         assert_eq!(Pace::Relaxed.best_word(), "relaxed best");
         assert_eq!(Pace::Quick.best_word(), "best");
+    }
+
+    #[test]
+    fn both_boards_leave_out_one_with_no_score() {
+        assert_eq!(
+            both("best", Some(30), Some(41)).as_deref(),
+            Some("best 30, relaxed best 41")
+        );
+        assert_eq!(both("best", Some(30), None).as_deref(), Some("best 30"));
+        assert_eq!(
+            both("best run", None, Some(7)).as_deref(),
+            Some("relaxed best run 7")
+        );
+        assert_eq!(both::<u32>("best", None, None), None);
+        let mut h = Headless::new(Default::default(), Base);
+        let ctx = &mut h.app.ctx;
+        assert_eq!(bests(ctx, "dummy", "shift", "best score"), None);
+        Records::record(ctx, "dummy", &Pace::Relaxed.board("shift"), 12);
+        assert_eq!(
+            bests(ctx, "dummy", "shift", "best score").as_deref(),
+            Some("relaxed best score 12")
+        );
     }
 
     #[test]

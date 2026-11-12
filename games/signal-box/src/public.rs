@@ -19,10 +19,11 @@ pub mod soundcheck;
 pub mod tutorial;
 
 use hearken::menu::MenuItem;
-use hearken::text::end_sentence;
+use hearken::screens::SettingsRow;
+use hearken::text::{end_sentence, sentence_start};
 use hearken::Ctx;
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Parlor, Period};
 
 pub use challenge::{ChallengeHost, ChallengesMenu, Timetables, CHALLENGES_NAME};
 pub use play::{Mode, Signal};
@@ -74,18 +75,20 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
 /// Records: the night shift's bests, the tallies, then the challenges.
 pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let p = Progress::load(ctx);
-    let best = match Records::best(ctx, ID, progress::SHIFT_BOARD) {
-        Some(b) => format!("best score {b}"),
-        None => "no score yet".to_string(),
-    };
-    let run = match p.best_run {
-        0 => "no run yet".to_string(),
-        n => format!("longest run {}", trains_words(n)),
-    };
-    let window = match p.shortest_window {
-        Some(w) => format!("shortest window {}", window_words(w)),
-        None => "no window reached yet".to_string(),
-    };
+    let best = pace::bests(ctx, ID, progress::SHIFT_BOARD, "best score")
+        .unwrap_or_else(|| "no score yet".to_string());
+    let run = pace::both(
+        "longest run",
+        run_words(p.best_run),
+        run_words(p.relaxed_best_run),
+    )
+    .unwrap_or_else(|| "no run yet".to_string());
+    let window = pace::both(
+        "shortest window",
+        p.shortest_window.map(window_words),
+        p.relaxed_shortest_window.map(window_words),
+    )
+    .unwrap_or_else(|| "no window reached yet".to_string());
     let calls = match p.practice_calls {
         1 => "1 practice call".to_string(),
         n => format!("{n} practice calls"),
@@ -95,8 +98,8 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         n => format!("{n} night shifts"),
     };
     let mut extra = String::new();
-    if let Some(b) = Records::best(ctx, ID, events::GALA_BOARD) {
-        extra.push_str(&format!(" {}: best score {b}.", events::GALA_NAME));
+    if let Some(line) = pace::bests(ctx, ID, events::GALA_BOARD, "best score") {
+        extra.push_str(&format!(" {}: {line}.", events::GALA_NAME));
     }
     match p.thirteenth_trains {
         0 => {}
@@ -122,6 +125,11 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     ]
 }
 
+/// "34 trains", or nothing for no run.
+fn run_words(n: u32) -> Option<String> {
+    (n > 0).then(|| trains_words(n))
+}
+
 /// The game on the shared title builder.
 pub struct SignalBox;
 
@@ -143,18 +151,22 @@ impl TitleGame for SignalBox {
         sound::title_music(ctx);
     }
 
+    fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
+        vec![pace::row(ID)]
+    }
+
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
         let p = Progress::load(ctx);
-        let label = match p.best_run {
-            0 => format!("{}, night shift", labels::PLAY),
-            n => format!(
-                "{}, night shift, best run {}",
-                labels::PLAY,
-                trains_words(n)
-            ),
+        let label = match pace::both(
+            "best run",
+            run_words(p.best_run),
+            run_words(p.relaxed_best_run),
+        ) {
+            None => format!("{}, night shift", labels::PLAY),
+            Some(runs) => format!("{}, night shift, {runs}", labels::PLAY),
         };
-        let best = match Records::best(ctx, ID, progress::SHIFT_BOARD) {
-            Some(b) => format!(" Best score {b}."),
+        let best = match pace::bests(ctx, ID, progress::SHIFT_BOARD, "best score") {
+            Some(b) => format!(" {}.", sentence_start(&b)),
             None => String::new(),
         };
         let today = parlor_core::challenges::today(ctx);
@@ -170,8 +182,8 @@ impl TitleGame for SignalBox {
             "Calls until a train derails, the window shrinking every {SHRINK_EVERY} trains.{best}{thirteenth}"
         ))];
         if events::GALA.is_open(today) {
-            let best = match Records::best(ctx, ID, events::GALA_BOARD) {
-                Some(b) => format!(" Your steam gala best is {b}."),
+            let best = match pace::bests(ctx, ID, events::GALA_BOARD, "steam gala best") {
+                Some(b) => format!(" {}.", sentence_start(&b)),
                 None => String::new(),
             };
             rows.push(

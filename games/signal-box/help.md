@@ -20,6 +20,16 @@ The dispatcher always says the call aloud as its sound plays. Before the line op
 
 The answer window is the time you have to respond to a call. It shrinks every 5 trains. The timing cue marks four beats per window and speeds up as the window shrinks. S tells you how long the answer window lasts.
 
+## Pace
+
+The answer window holds while a call or another line is still being spoken. This holds at every pace and in every mode.
+
+Pace in Settings sets how fast the shift runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. The window, the gaps between trains and the timing cue all follow the pace.
+
+A change applies from your next run. A shift or a timetable keeps the pace it started at until it ends.
+
+Relaxed scores and records are saved separately, including challenges and events. Normal and quick share their scores.
+
 ## Scoring and records
 
 Each train that passes is 1 point. Every 10 trains in a row add a bonus of 5 points. The train-passing cue confirms a correct answer. The derailment cue means the shift is over.
@@ -68,7 +78,7 @@ Tab: not used.
 
 S: status: the shift, trains passed, the window and your score.
 
-R: say and play the call again. The clock keeps running.
+R: say and play the call again.
 
 H: before the line opens, play every call with its key. In the practice room, name the key for the call that is out.
 
