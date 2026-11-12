@@ -2,7 +2,7 @@
 //! a few tallies. The best score is a `Records` board.
 
 use hearken::Ctx;
-use parlor_core::{Parlor, Records, ScoreResult};
+use parlor_core::{Pace, Parlor, Records, ScoreResult};
 use serde::{Deserialize, Serialize};
 
 use crate::rules::Run;
@@ -42,6 +42,8 @@ pub struct Saved {
     /// An event pantry's run, on its own board: it leaves the pantry's
     /// records alone.
     pub event: bool,
+    /// The pace played: a relaxed run keeps its own best score.
+    pub pace: Pace,
 }
 
 impl Progress {
@@ -59,36 +61,39 @@ impl Progress {
     }
 }
 
-/// Saves a finished pantry run.
-pub fn save_run(ctx: &mut Ctx<Parlor>, run: &Run) -> Saved {
+/// Saves a finished pantry run played at `pace`. A relaxed run keeps its
+/// own best score; the deepest pantry counts at every pace.
+pub fn save_run(ctx: &mut Ctx<Parlor>, run: &Run, pace: Pace) -> Saved {
     let mut p = Progress::load(ctx);
     let deeper = (run.pantry > p.deepest).then_some(p.deepest);
     p.deepest = p.deepest.max(run.pantry);
     p.runs += 1;
     p.crumbs += run.eaten;
     p.store(ctx);
-    let score = Records::record(ctx, ID, PANTRY_BOARD, run.score as u64);
+    let score = Records::record(ctx, ID, &pace.board(PANTRY_BOARD), run.score as u64);
     Saved {
         score,
         deeper,
         deepest: p.deepest,
         event: false,
+        pace,
     }
 }
 
 /// Saves a finished event pantry run on its own `board`. The pantry's
 /// best, deepest pantry and run count are left alone; the crumbs count
-/// in the tally.
-pub fn save_event_run(ctx: &mut Ctx<Parlor>, run: &Run, board: &str) -> Saved {
+/// in the tally. A relaxed run keeps its own best score.
+pub fn save_event_run(ctx: &mut Ctx<Parlor>, run: &Run, board: &str, pace: Pace) -> Saved {
     let mut p = Progress::load(ctx);
     p.crumbs += run.eaten;
     p.store(ctx);
-    let score = Records::record(ctx, ID, board, run.score as u64);
+    let score = Records::record(ctx, ID, &pace.board(board), run.score as u64);
     Saved {
         score,
         deeper: None,
         deepest: p.deepest,
         event: true,
+        pace,
     }
 }
 

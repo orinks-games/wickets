@@ -5,7 +5,7 @@ use std::collections::HashSet;
 use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, InputEvent, Key, Sound, State, UiSound, Vec3};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
-use parlor_core::{Challenge, Pages, Parlor, ParlorAction, Period, ScoreResult};
+use parlor_core::{Challenge, Pace, Pages, Parlor, ParlorAction, Period, RunClock, ScoreResult};
 
 use crate::challenge::{self, Plan, CHALLENGES_NAME};
 use crate::events;
@@ -129,6 +129,9 @@ pub struct Play {
     practice_unsaved: u32,
     /// S, in layers: a second press reads the rest.
     status_key: parlor_core::StatusKey,
+    /// The run's game clock: its pace, set as the run starts, and the hold
+    /// that keeps the cats still while a line is spoken.
+    pub clock: RunClock,
 }
 
 impl Play {
@@ -160,6 +163,7 @@ impl Play {
             ending: None,
             last: String::new(),
             practice_unsaved: 0,
+            clock: RunClock::new(Pace::Normal),
         }
     }
 
@@ -502,6 +506,7 @@ impl Play {
                 Ev::CatMoved { .. } => {}
                 Ev::CatHeard { cat, heard } => {
                     if heard && self.met.insert(cat) {
+                        self.clock.reset();
                         let c = &self.run.cats[cat];
                         let way = self
                             .run
@@ -520,6 +525,7 @@ impl Play {
                     sound::play_at(ctx, sound::CAT_CLOSE, dx, dy);
                     if self.warnings < CLOSE_WARNINGS {
                         self.warnings += 1;
+                        self.clock.reset();
                         let way = self
                             .run
                             .cat_way(cat)
@@ -534,6 +540,7 @@ impl Play {
                     lost,
                 } => {
                     sound::play(ctx, sound::CAUGHT);
+                    self.clock.reset();
                     self.ticks.clear();
                     self.held = None;
                     let by = format!("Caught by the {}.", self.run.cats[cat].name);
@@ -548,6 +555,7 @@ impl Play {
                     self.say(ctx, line);
                 }
                 Ev::Prowling => {
+                    self.clock.reset();
                     self.say(ctx, "Cats moving.");
                 }
                 Ev::Frozen { cat, left } => {
@@ -607,6 +615,7 @@ impl Play {
                             format!("Pantry {pantry}. {joins} {}", self.start_prompt(ctx))
                         }
                     };
+                    self.clock.reset();
                     self.say(ctx, line);
                     self.start_loops(ctx);
                 }
@@ -640,8 +649,9 @@ impl Play {
     fn finish(&mut self, ctx: &mut Ctx<Parlor>) {
         self.stop_loops(ctx);
         ctx.audio.set_bed(None);
+        let pace = self.clock.pace();
         if let Some(ch) = self.challenge.take() {
-            let pages = challenge::finish(ctx, &ch, &self.run);
+            let pages = challenge::finish(ctx, &ch, &self.run, pace);
             let summary = challenge::summary(&ch, &self.run);
             let mut results = Some(after_challenge(ch.period, summary, pages.clone()));
             ctx.replace(Pages::new(pages).then(move |ctx| {
@@ -652,8 +662,8 @@ impl Play {
             return;
         }
         let saved = match self.mode.event_board() {
-            Some(board) => progress::save_event_run(ctx, &self.run, board),
-            None => progress::save_run(ctx, &self.run),
+            Some(board) => progress::save_event_run(ctx, &self.run, board, pace),
+            None => progress::save_run(ctx, &self.run, pace),
         };
         let pages = result_pages(&self.run, &saved);
         let summary = result_summary(&self.run);
@@ -712,16 +722,22 @@ pub fn result_summary(run: &Run) -> String {
 
 /// The pages after a pantry run.
 pub fn result_pages(run: &Run, saved: &Saved) -> Vec<String> {
+    let relaxed = if saved.pace.separate() {
+        "relaxed "
+    } else {
+        ""
+    };
+    let best_word = saved.pace.best_word();
     let score = match saved.score {
-        ScoreResult::First => format!("{}, your first score.", points_words(run.score)),
+        ScoreResult::First => format!("{}, your first {relaxed}score.", points_words(run.score)),
         ScoreResult::NewBest { previous } => {
             format!(
-                "{}, a new best, beating {previous}.",
+                "{}, a new {best_word}, beating {previous}.",
                 points_words(run.score)
             )
         }
         ScoreResult::Short { best } => {
-            format!("{}. Your best is {best}.", points_words(run.score))
+            format!("{}. Your {best_word} is {best}.", points_words(run.score))
         }
     };
     let first = format!("{} {}", ended_words(run), sentence_start(&score));
@@ -801,6 +817,9 @@ impl State<Parlor> for Play {
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
+        // The pace is fixed for the run: a change in Settings applies from
+        // the next one.
+        self.clock = RunClock::start(ctx, ID);
         ctx.audio.set_listener(Vec3::ZERO, 0.0);
         sound::pantry_bed(ctx);
         self.start_loops(ctx);
@@ -828,6 +847,7 @@ impl State<Parlor> for Play {
         if self.run.finished() {
             return;
         }
+        self.clock.reset();
         sound::pantry_bed(ctx);
         self.start_loops(ctx);
         self.held = None;
@@ -892,9 +912,15 @@ impl State<Parlor> for Play {
             }
             return;
         }
+        // The cats and every timer run on game time: still while a line is
+        // spoken, and at the run's pace. A key pressed meanwhile moves the
+        // mouse at once; a held arrow steps on once the pantry runs. The
+        // sniff cues keep real time.
+        let game_dt = self.clock.game_dt(ctx, dt);
         self.play_ticks(ctx, dt);
-        self.hold(ctx, dt);
-        let evs = self.run.update(dt);
+        let hold_dt = if self.clock.held() { 0.0 } else { dt };
+        self.hold(ctx, hold_dt);
+        let evs = self.run.update(game_dt);
         let moved = evs.iter().any(|e| {
             matches!(
                 e,
