@@ -4,10 +4,10 @@ use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, InputEvent, Key, Sound, State};
 use parlor_core::menus::{self, Leave};
 use parlor_core::score::{DANGER, HURRY};
-use parlor_core::{Mood, Parlor, ParlorAction, Score};
+use parlor_core::{Mood, Pace, Parlor, ParlorAction, RunClock, Score};
 
 use crate::challenge::{self, ChallengePlan, ChallengeRun};
-use crate::progress::Progress;
+use crate::progress::{self, Progress};
 use crate::results;
 use crate::rules::{
     self, course, helping, meal_rng, sentence, Course, Event, Grade, Meal, Stage, Station,
@@ -62,8 +62,13 @@ pub struct Kitchen {
     pub focus: Station,
     pub hints: u32,
     callouts: bool,
-    relaxed: bool,
-    listening: bool,
+    /// The meal's game clock: its pace, fixed when the meal starts, and
+    /// the hold that keeps every dish still while a line is spoken.
+    pub clock: RunClock,
+    /// The pace carried from the meal before, for a run of several meals
+    /// (second helpings, a challenge's courses): the whole run keeps the
+    /// pace it started at.
+    carried: Option<Pace>,
     /// Call-outs were off from the start and never switched on: the meal
     /// earns the by-ear bonus.
     by_ear: bool,
@@ -124,8 +129,8 @@ impl Kitchen {
             focus,
             hints: 0,
             callouts: true,
-            relaxed: false,
-            listening: false,
+            clock: RunClock::default(),
+            carried: None,
             by_ear: false,
             plan,
             plates,
@@ -157,17 +162,10 @@ impl Kitchen {
         ctx.control_name(ParlorAction::Primary)
     }
 
-    fn listening_help(&self, ctx: &Ctx<Parlor>) -> String {
-        if !self.relaxed {
-            return String::new();
-        }
-        format!(" Relaxed pace: cooking runs at half speed and waits while you hear instructions or check a station. Move freely while it waits. {} resumes cooking and acts if this station needs you; otherwise it only resumes. Scores are kept separately.", sentence_start(&Self::primary(ctx)))
-    }
-
-    fn wait_to_listen(&mut self) {
-        if self.relaxed && self.phase == Phase::Cooking {
-            self.listening = true;
-        }
+    /// The next meal of the same run, at this run's pace.
+    pub fn at_pace(mut self, pace: Pace) -> Kitchen {
+        self.carried = Some(pace);
+        self
     }
 
     fn menu_line(&self) -> String {
@@ -214,10 +212,9 @@ impl Kitchen {
             String::new()
         };
         format!(
-            "{head} {} {} starts cooking.{then}{}",
+            "{head} {} {} starts cooking.{then}",
             self.menu_line(),
             sentence_start(&p),
-            self.listening_help(ctx)
         )
     }
 
@@ -225,10 +222,6 @@ impl Kitchen {
     fn prompt(&self, ctx: &Ctx<Parlor>) -> String {
         match self.phase {
             Phase::Ready => self.intro(ctx),
-            Phase::Served(_) if self.relaxed => format!(
-                "Everything is served. {} opens the results.",
-                sentence_start(&Self::primary(ctx))
-            ),
             Phase::Served(_) => "Everything is served. The results are coming.".to_string(),
             Phase::Cooking if self.last_prompt.is_empty() => {
                 "Cooking. Listen for the recipe to call the first dish.".to_string()
@@ -431,7 +424,6 @@ impl Kitchen {
     }
 
     fn set_focus(&mut self, ctx: &mut Ctx<Parlor>, station: Station) {
-        self.wait_to_listen();
         self.focus = station;
         sound::at(ctx, sound::FOCUS, station);
         let line = self.station_line(station);
@@ -456,7 +448,6 @@ impl Kitchen {
     }
 
     fn jump(&mut self, ctx: &mut Ctx<Parlor>, station: Station) {
-        self.wait_to_listen();
         if !self.meal.uses(station) {
             sound::at(ctx, sound::EDGE, station);
             ctx.say(format!(
@@ -554,7 +545,7 @@ impl Kitchen {
                     }
                 }
                 Event::Stroke { dish, done, of } => {
-                    if self.relaxed {
+                    if self.clock.pace() == Pace::Relaxed {
                         lines.push(format!("{done} of {of} strokes."));
                     }
                     let d = &self.meal.dishes[dish];
@@ -632,11 +623,6 @@ impl Kitchen {
                 }
             }
         }
-        // Freeze before speaking a batch, so another deadline cannot interrupt it.
-        // Action feedback also waits: multi-stroke tasks still take one press per stroke.
-        if !lines.is_empty() {
-            self.wait_to_listen();
-        }
         let mut lines = lines.into_iter();
         if let Some(first) = lines.next() {
             // In the lesson the prompts come first: the kitchen waits.
@@ -648,17 +634,6 @@ impl Kitchen {
         }
         for line in lines {
             ctx.say_queued(line);
-        }
-        if self.relaxed && matches!(self.phase, Phase::Served(_)) {
-            ctx.say_queued(format!(
-                "{} opens the results when you are ready.",
-                sentence_start(&Self::primary(ctx))
-            ));
-        } else if self.listening {
-            ctx.say_queued(format!(
-                "Kitchen waiting. {} resumes and acts if this station needs you.",
-                sentence_start(&Self::primary(ctx))
-            ));
         }
         self.sync_loops(ctx);
     }
@@ -722,7 +697,7 @@ impl Kitchen {
     fn finish(&mut self, ctx: &mut Ctx<Parlor>) {
         let outcome = self.meal.outcome();
         if let Mode::Challenge(run) = &self.mode {
-            challenge::finish(ctx, run.clone(), outcome, self.by_ear);
+            challenge::finish(ctx, run.clone(), outcome, self.by_ear, self.clock.pace());
             return;
         }
         let results = results::score_paced(
@@ -730,7 +705,7 @@ impl Kitchen {
             outcome,
             self.by_ear,
             self.hints,
-            self.relaxed,
+            self.clock.pace(),
             ctx,
         );
         ctx.replace(results);
@@ -785,7 +760,8 @@ impl State<Parlor> for Kitchen {
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         let progress = Progress::load(ctx);
         self.callouts = progress.callouts;
-        self.relaxed = progress.relaxed && matches!(self.mode, Mode::Course(_)) && !self.lesson;
+        progress::migrate_pace(ctx);
+        self.clock = RunClock::new(self.carried.unwrap_or_else(|| progress::pace(ctx)));
         if self.plan.as_ref().is_some_and(ChallengePlan::quiet) {
             self.callouts = false;
         }
@@ -832,11 +808,7 @@ impl State<Parlor> for Kitchen {
                 self.prompt(ctx)
             ),
         };
-        self.wait_to_listen();
         ctx.say(line);
-        if self.listening {
-            ctx.say_queued(self.listening_help(ctx));
-        }
         self.sync_loops(ctx);
     }
 
@@ -848,12 +820,6 @@ impl State<Parlor> for Kitchen {
             return;
         }
         if action.is_none() && event.pressed() == Some(Key::Escape) {
-            // A completed relaxed meal waits for the player, but leaving must
-            // not discard its score. Save it and open the results once.
-            if self.relaxed && matches!(self.phase, Phase::Served(_)) {
-                self.finish(ctx);
-                return;
-            }
             let leave = if matches!(self.mode, Mode::Challenge(_)) {
                 Leave::Challenge(CHALLENGES_NAME)
             } else {
@@ -868,21 +834,7 @@ impl State<Parlor> for Kitchen {
             return;
         }
         if let Phase::Served(_) = self.phase {
-            if self.relaxed {
-                if action == Some(ParlorAction::Primary) {
-                    self.finish(ctx);
-                } else if action == Some(ParlorAction::Status) {
-                    let layers = self.status(ctx);
-                    self.status_key.speak(ctx, layers);
-                } else {
-                    ctx.say(format!(
-                        "Everything is served. {} opens the results.",
-                        sentence_start(&Self::primary(ctx))
-                    ));
-                }
-            } else {
-                ctx.say("Everything is served. The results are coming.");
-            }
+            ctx.say("Everything is served. The results are coming.");
             return;
         }
         if action.is_none() {
@@ -891,38 +843,12 @@ impl State<Parlor> for Kitchen {
                 return;
             }
         }
-        if matches!(
-            action,
-            Some(
-                ParlorAction::Up
-                    | ParlorAction::Down
-                    | ParlorAction::Secondary
-                    | ParlorAction::Status
-                    | ParlorAction::Repeat
-                    | ParlorAction::Hint
-                    | ParlorAction::Left
-                    | ParlorAction::Right
-            )
-        ) {
-            self.wait_to_listen();
-        }
         match action {
             Some(ParlorAction::Primary) => match self.phase {
                 Phase::Ready => self.begin(ctx),
                 // Lesson speech holds the meal clock; ignore Space so early
                 // presses do not stack fumbles over the prompt.
                 _ if self.hold > 0.0 => {}
-                _ if self.listening => {
-                    self.listening = false;
-                    let due = self.meal.active_at(self.focus).is_some_and(|i| {
-                        matches!(self.meal.dishes[i].stage, Stage::Due | Stage::Burning)
-                    });
-                    if due {
-                        self.act(ctx);
-                    } else {
-                        ctx.say("Cooking resumed.");
-                    }
-                }
                 _ => self.act(ctx),
             },
             Some(ParlorAction::Left) => self.step_focus(ctx, -1),
@@ -945,19 +871,14 @@ impl State<Parlor> for Kitchen {
                 ctx.say(p);
             }
             Some(ParlorAction::Hint) => self.hint(ctx),
-            None => {
-                self.wait_to_listen();
-                match event.pressed() {
-                    Some(Key::Return | Key::KpEnter) if self.phase == Phase::Ready => {
-                        self.begin(ctx)
-                    }
-                    Some(Key::Return | Key::KpEnter) => ctx.say(format!(
-                        "{} acts at the station in front of you.",
-                        sentence_start(&Self::primary(ctx))
-                    )),
-                    _ => {}
-                }
-            }
+            None => match event.pressed() {
+                Some(Key::Return | Key::KpEnter) if self.phase == Phase::Ready => self.begin(ctx),
+                Some(Key::Return | Key::KpEnter) => ctx.say(format!(
+                    "{} acts at the station in front of you.",
+                    sentence_start(&Self::primary(ctx))
+                )),
+                _ => {}
+            },
         }
     }
 
@@ -965,9 +886,11 @@ impl State<Parlor> for Kitchen {
         match self.phase {
             Phase::Ready => {}
             Phase::Cooking if self.hold > 0.0 => self.hold -= dt,
-            Phase::Cooking if self.listening => {}
             Phase::Cooking => {
-                let events = self.meal.update(if self.relaxed { dt * 0.5 } else { dt });
+                // Every dish's clock holds while a line is being spoken,
+                // and runs at the meal's pace.
+                let game_dt = self.clock.game_dt(ctx, dt);
+                let events = self.meal.update(game_dt);
                 if !events.is_empty() {
                     self.voice(ctx, events);
                 }
@@ -976,7 +899,6 @@ impl State<Parlor> for Kitchen {
                     self.score.follow(ctx, mood, dt);
                 }
             }
-            Phase::Served(_) if self.relaxed => {}
             Phase::Served(left) => {
                 let left = left - dt;
                 if left <= 0.0 {
@@ -1023,9 +945,8 @@ impl State<Parlor> for Kitchen {
             .map(|p| format!(" {}", p.reminder()))
             .unwrap_or_default();
         format!(
-            "{}.{rule}{} Stations this meal: {}. {left} and {right} move between them, or press a station's number. {p} starts, stirs, flips, bastes or pulls out the dish in front of you: wait for its sound to change, then act at once. {up} describes the dish in front of you, {down} reads the recipe card, {t} explains what you are hearing. {s} says what needs you now, again for every station, {r} repeats the last call, {h} says what needs you most. Escape pauses.",
+            "{}.{rule} Stations this meal: {}. {left} and {right} move between them, or press a station's number. {p} starts, stirs, flips, bastes or pulls out the dish in front of you: wait for its sound to change, then act at once. {up} describes the dish in front of you, {down} reads the recipe card, {t} explains what you are hearing. {s} says what needs you now, again for every station, {r} repeats the last call, {h} says what needs you most. Escape pauses.",
             self.mode.title(),
-            self.listening_help(ctx),
             join(&stations),
             left = sentence_start(&left),
             up = sentence_start(&up),

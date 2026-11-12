@@ -14,7 +14,7 @@
 
 use hearken::Ctx;
 use parlor_core::calendar::{self, Holiday, Nearness};
-use parlor_core::{Date, Happening, Parlor, Records, Rng};
+use parlor_core::{Date, Happening, Pace, Parlor, Records, Rng};
 use serde::{Deserialize, Serialize};
 
 use crate::rules::{Course, DishKind, Outcome, Plan};
@@ -225,8 +225,10 @@ pub fn keepsake_key() -> String {
 #[serde(default)]
 pub struct Keepsake {
     pub year: i32,
-    /// The best dinner's points that year.
+    /// The best dinner's points that year, at normal or quick pace.
     pub best: u64,
+    /// The best relaxed dinner's points that year, kept apart.
+    pub relaxed_best: u64,
     /// The most stars that year.
     pub stars: u32,
     /// The favourite's best quality that year.
@@ -263,8 +265,21 @@ impl Keepsakes {
         self.years.iter().find(|k| k.year == year)
     }
 
-    /// Keeps a dinner cooked in `year`.
+    /// Keeps a dinner cooked in `year` at normal or quick pace.
     pub fn keep(&mut self, year: i32, points: u64, stars: u32, favourite: u32) -> Kept {
+        self.keep_at(year, points, stars, favourite, Pace::Normal)
+    }
+
+    /// Keeps a dinner cooked in `year` at `pace`. Stars and the favourite
+    /// count at every pace; a relaxed dinner's points have their own best.
+    pub fn keep_at(
+        &mut self,
+        year: i32,
+        points: u64,
+        stars: u32,
+        favourite: u32,
+        pace: Pace,
+    ) -> Kept {
         if self.year(year).is_none() {
             self.years.push(Keepsake {
                 year,
@@ -275,15 +290,20 @@ impl Keepsakes {
         let Some(k) = self.years.iter_mut().find(|k| k.year == year) else {
             return Kept::First;
         };
-        let kept = if k.dinners == 0 {
-            Kept::First
-        } else if points > k.best {
-            Kept::Better { previous: k.best }
+        let best = if pace.separate() {
+            &mut k.relaxed_best
         } else {
-            Kept::Short { best: k.best }
+            &mut k.best
         };
+        let kept = if *best == 0 {
+            Kept::First
+        } else if points > *best {
+            Kept::Better { previous: *best }
+        } else {
+            Kept::Short { best: *best }
+        };
+        *best = (*best).max(points);
         k.dinners += 1;
-        k.best = k.best.max(points);
         k.stars = k.stars.max(stars);
         k.favourite = k.favourite.max(favourite);
         kept
@@ -305,8 +325,13 @@ impl Keepsakes {
                     1 => "1 star".to_string(),
                     n => format!("{n} stars"),
                 };
+                let relaxed = if k.relaxed_best > 0 {
+                    format!(", relaxed best {} points", k.relaxed_best)
+                } else {
+                    String::new()
+                };
                 format!(
-                    "Thanksgiving {}: best {} points, {stars}, {} at quality {}.",
+                    "Thanksgiving {}: best {} points{relaxed}, {stars}, {} at quality {}.",
                     k.year,
                     k.best,
                     family(k.year).favourite.name(),
@@ -412,5 +437,15 @@ mod tests {
         assert!(k
             .page(Date::new(2026, 11, 26))
             .contains("Thanksgiving 2026: best 5000 points, 2 stars"));
+        assert_eq!(
+            k.keep_at(2026, 9000, 3, 95, Pace::Relaxed),
+            Kept::First,
+            "a relaxed dinner keeps its own best"
+        );
+        let year = k.year(2026).unwrap();
+        assert_eq!((year.best, year.relaxed_best, year.stars), (5000, 9000, 3));
+        assert!(k
+            .page(Date::new(2026, 11, 26))
+            .contains("best 5000 points, relaxed best 9000 points, 3 stars"));
     }
 }
