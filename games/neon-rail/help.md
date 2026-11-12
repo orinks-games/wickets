@@ -55,6 +55,16 @@ Stress runs from 0 to 100. Mistakes raise it, and repeated mistakes raise it fas
 
 You score for distance every second, for every clean pass, dodge, smash, pickup and kill, and a bonus at each sector's end. Four clean plays in a row raise the multiplier, up to five times. So does each sector clear. Any hit resets the multiplier to one. Reaching extraction adds 500 times your multiplier.
 
+## Pace
+
+The rail holds while a call-out or another line is still being spoken: arrivals, their approach, the tools' timers and the sector clock stand still. This holds at every pace and in every run.
+
+Pace in Settings sets how fast the rail runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed.
+
+A change applies from your next run. A run keeps the pace it started at through all its sectors.
+
+Rank, credits, parts, intel, unlocks and the story count at every pace. Relaxed scores are saved separately, including challenges and special nights. Normal and quick share their scores.
+
 ## Modes
 
 - Play: your very first run is the guided training run. After that it starts a Black Sky Run.
@@ -112,7 +122,7 @@ The story archive is in strands. The data core's twelve logs are the spine: the 
 
 ## The title and results
 
-The title has these rows. Play, then Challenge corridor, Endless rail and Cold start, which say locked until you open them. Challenges and Practice run. Tutorial, which teaches the goal and the controls a page at a time, Help and Sound check. Records, with every best score, your pilot rank, credits, bonuses and challenge results. Workshop and Story archive. Settings, which also holds Spoken call-outs, and Back to the parlor. On your first visit the title starts on Tutorial.
+The title has these rows. Play, then Challenge corridor, Endless rail and Cold start, which say locked until you open them. Challenges and Practice run. Tutorial, which teaches the goal and the controls a page at a time, Help and Sound check. Records, with every best score, your pilot rank, credits, bonuses and challenge results. Workshop and Story archive. Settings, which also holds Spoken call-outs and Pace, and Back to the parlor. On your first visit the title starts on Tutorial.
 
 After the debrief, the results menu offers Play again or Try again, Hear the results again, Pilot progress, Archive, which holds the story logs, and Back to the title. After the guided run, Next starts a Black Sky Run. After a challenge, the first row flies the same challenge again and the last is Back to the challenges. Escape does the same as the last row.
 

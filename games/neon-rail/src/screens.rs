@@ -9,12 +9,12 @@ use hearken::{Bus, Ctx, InputEvent, Key, Sound, State, Vec3};
 use parlor_core::menus::{self as shared, labels, Back, Leave};
 use parlor_core::score::{DANGER, HURRY};
 use parlor_core::{
-    Challenge, Challenges, Date, Mood, Pages, Parlor, ParlorAction, Records, Rng, Score,
-    ScoreResult,
+    Challenge, Challenges, Date, Mood, Pace, Pages, Parlor, ParlorAction, Records, Rng, RunClock,
+    Score, ScoreResult,
 };
 
 use crate::cues;
-use crate::profile::{debrief, Debrief, Profile};
+use crate::profile::{debrief_at, Debrief, Profile};
 use crate::rules::{
     Keys, Kind, Lane, Loadout, Mode, Note, Phase, Pressure, Route, Run, Upgrade, MAX_STRESS,
 };
@@ -241,6 +241,10 @@ pub struct RunScreen {
     /// The guided run's tutorial messages so far, so Up can go back over
     /// them while one holds the run.
     tutorial_log: Vec<String>,
+    /// The run's game clock: its pace, fixed when the run starts and kept
+    /// through its intermissions, and the hold that keeps the rail still
+    /// while a line is spoken.
+    pub clock: RunClock,
 }
 
 impl RunScreen {
@@ -286,11 +290,14 @@ impl RunScreen {
             score: Score::new(),
             status_key: Default::default(),
             tutorial_log: Vec::new(),
+            // The pace is fixed for the run: a change in Settings applies
+            // from the next one.
+            clock: RunClock::start(ctx, ID),
         }
     }
 
-    /// The run going on after an intermission.
-    pub fn continuing(run: Run, launch: Launch, route: Route) -> RunScreen {
+    /// The run going on after an intermission, at the run's `pace`.
+    pub fn continuing(run: Run, launch: Launch, route: Route, pace: Pace) -> RunScreen {
         RunScreen {
             run: Some(run),
             launch,
@@ -301,6 +308,7 @@ impl RunScreen {
             score: Score::new(),
             status_key: Default::default(),
             tutorial_log: Vec::new(),
+            clock: RunClock::new(pace),
         }
     }
 
@@ -333,6 +341,11 @@ impl RunScreen {
             return;
         };
         let notes = run.drain_notes();
+        // Each new arrival's call-out gets a full hold, however long the
+        // lines before it ran.
+        if notes.iter().any(|n| matches!(n, Note::Spawn(_))) {
+            self.clock.reset();
+        }
         let driving = run.phase == Phase::Driving;
         let over = matches!(run.phase, Phase::Over { .. });
         let k = keys(ctx);
@@ -446,7 +459,8 @@ impl RunScreen {
         let mut profile = Profile::load(ctx);
         // Logs found on the rail are already saved: count them too.
         let before = run.story_start.min(profile.story_stage);
-        let report = debrief(&mut profile, &run, before);
+        let pace = self.clock.pace();
+        let report = debrief_at(&mut profile, &run, before, pace);
         profile.save(ctx);
         let challenge = self.launch.challenge();
         let board = if run.mode == Mode::Tutorial || challenge.is_some() {
@@ -455,7 +469,7 @@ impl RunScreen {
             Some(Records::record(
                 ctx,
                 ID,
-                run.mode.board(),
+                &pace.board(run.mode.board()),
                 run.score.max(0) as u64,
             ))
         };
@@ -476,16 +490,21 @@ impl RunScreen {
         let headline = if won { "Run complete." } else { "Run failed." };
         pages[0] = format!("{headline} {}", pages[0]);
         if let Some(result) = board {
-            pages.push(board_text(run.mode, result, run.score.max(0) as u64));
+            pages.push(board_text_at(
+                run.mode,
+                result,
+                run.score.max(0) as u64,
+                pace,
+            ));
         }
         if let Some(ch) = challenge {
             let score = run.score.max(0) as u64;
-            let result = Challenges::submit(ctx, &ch, score);
+            let result = Challenges::submit_at(ctx, &ch, pace, score);
             let streak = Challenges::streak(ctx, ID, ch.period).max(1);
             pages.push(format!(
                 "{} result: {score}. {} A {streak} {} streak. {}",
                 ch.title(),
-                challenge_result(result),
+                challenge_result_at(result, pace),
                 ch.period.unit(),
                 ch.resets()
             ));
@@ -514,22 +533,43 @@ impl RunScreen {
 
 /// What a challenge's record said about this run.
 pub fn challenge_result(result: ScoreResult) -> String {
+    challenge_result_at(result, Pace::Normal)
+}
+
+/// "relaxed " for a relaxed run, whose results are kept apart.
+fn relaxed_word(pace: Pace) -> &'static str {
+    if pace.separate() {
+        "relaxed "
+    } else {
+        ""
+    }
+}
+
+/// What a challenge's record for `pace` said about this run.
+pub fn challenge_result_at(result: ScoreResult, pace: Pace) -> String {
+    let r = relaxed_word(pace);
     match result {
-        ScoreResult::First => "Your first recorded result.".to_string(),
-        ScoreResult::NewBest { previous } => format!("A new best, beating {previous}."),
-        ScoreResult::Short { best } => format!("Your best stays {best}."),
+        ScoreResult::First => format!("Your first recorded {r}result."),
+        ScoreResult::NewBest { previous } => format!("A new {r}best, beating {previous}."),
+        ScoreResult::Short { best } => format!("Your {r}best stays {best}."),
     }
 }
 
 /// What the best-score board said about this run.
 pub fn board_text(mode: Mode, result: ScoreResult, score: u64) -> String {
-    let board = mode.name();
+    board_text_at(mode, result, score, Pace::Normal)
+}
+
+/// What the best-score board for `pace` said about this run: relaxed runs
+/// have boards of their own.
+pub fn board_text_at(mode: Mode, result: ScoreResult, score: u64, pace: Pace) -> String {
+    let board = format!("{}{}", relaxed_word(pace), mode.name());
     match result {
         ScoreResult::First => format!("First score on the {board} board: {score}."),
         ScoreResult::NewBest { previous } => {
             format!("New best on the {board} board: {score}, beating {previous}.")
         }
-        ScoreResult::Short { best } => format!("{board} best stays {best}."),
+        ScoreResult::Short { best } => format!("{} best stays {best}.", sentence_start(&board)),
     }
 }
 
@@ -588,6 +628,8 @@ impl State<Parlor> for RunScreen {
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
+        // A pause ends any hold, so the resume line gets a full one.
+        self.clock.reset();
         ctx.audio.resume_all();
         // Settings, from the pause menu, may have changed the call-outs.
         let quiet = Profile::load(ctx).quiet_callouts;
@@ -670,10 +712,17 @@ impl State<Parlor> for RunScreen {
     }
 
     fn update(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
+        if self.run.is_none() {
+            return;
+        }
+        // The rail runs on game time: arrivals, their approach sounds,
+        // cooldowns and sector clocks hold while a line is spoken and run
+        // at the run's pace. The music keeps real time.
+        let game_dt = self.clock.game_dt(ctx, dt);
         let Some(run) = self.run.as_mut() else {
             return;
         };
-        run.update(dt);
+        run.update(game_dt);
         let phase = run.phase;
         if phase == Phase::Driving {
             let mood = mood(run);
@@ -687,7 +736,7 @@ impl State<Parlor> for RunScreen {
                 self.stop_sounds(ctx);
                 if let Some(run) = self.run.take() {
                     let launch = self.launch;
-                    ctx.replace(UpgradeMenu::new(run, launch));
+                    ctx.replace(UpgradeMenu::new(run, launch).at_pace(self.clock.pace()));
                 }
             }
             Phase::Over { .. } => self.finish(ctx),
@@ -805,9 +854,17 @@ pub struct UpgradeMenu {
     options: Vec<Upgrade>,
     /// The relay's radio fragment, which R repeats.
     fragment: Option<String>,
+    /// The run's pace, carried to the sectors after.
+    pace: Pace,
 }
 
 impl UpgradeMenu {
+    /// The menu of a run at `pace`.
+    pub fn at_pace(mut self, pace: Pace) -> UpgradeMenu {
+        self.pace = pace;
+        self
+    }
+
     pub fn new(mut run: Run, launch: Launch) -> UpgradeMenu {
         let options = run.upgrade_options();
         let title = format!(
@@ -820,6 +877,7 @@ impl UpgradeMenu {
             launch,
             options,
             fragment: None,
+            pace: Pace::Normal,
         }
     }
 }
@@ -916,7 +974,9 @@ impl Menu for UpgradeMenu {
                         run.apply_upgrade(u);
                         ctx.audio.play(cues::UPGRADE, Bus::UI);
                         let launch = s.launch;
-                        ctx.replace(RouteMenu::new(run, launch, u.name()));
+                        let mut menu = RouteMenu::new(run, launch, u.name());
+                        menu.pace = s.pace;
+                        ctx.replace(menu);
                     },
                 )
                 .select_sound(None)
@@ -937,7 +997,8 @@ impl Menu for UpgradeMenu {
                             return;
                         };
                         run.end_here();
-                        let mut screen = RunScreen::continuing(run, s.launch, Route::Standard);
+                        let mut screen =
+                            RunScreen::continuing(run, s.launch, Route::Standard, s.pace);
                         screen.finish(ctx);
                     },
                 )
@@ -956,6 +1017,8 @@ pub struct RouteMenu {
     run: Option<Run>,
     launch: Launch,
     options: Vec<Route>,
+    /// The run's pace, carried to the sectors after.
+    pace: Pace,
 }
 
 impl RouteMenu {
@@ -972,6 +1035,7 @@ impl RouteMenu {
             menu: MenuCore::new(title),
             run: Some(run),
             launch,
+            pace: Pace::Normal,
         }
     }
 }
@@ -1040,7 +1104,7 @@ impl Menu for RouteMenu {
                         };
                         run.choose_route(r);
                         let launch = s.launch;
-                        ctx.replace(RunScreen::continuing(run, launch, r));
+                        ctx.replace(RunScreen::continuing(run, launch, r, s.pace));
                     },
                 )
                 .help(blurb(r))
