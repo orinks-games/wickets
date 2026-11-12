@@ -49,7 +49,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
 
     let dance = room.step(
         format!(
-            "Each monster comes up one beat before its move. The zombie: {d} drags. The skeleton: {u} rattles. The mummy: {p} unwraps. Here the music holds for each move, and its key is named. Dance {STEPS} moves."
+            "Each monster makes its sound one beat before its move. The zombie groans: {d} drags. The skeleton rattles: {u} rattles back. The mummy moans: {p} unwraps. Here the music holds for each move, and its key is named. Dance {STEPS} moves."
         ),
         |f: &Floor, _| {
             (f.run.dance.tally().hits() >= STEPS || f.run.finished()).then(|| {

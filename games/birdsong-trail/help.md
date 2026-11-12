@@ -18,7 +18,7 @@ The trail's end makes its own sound the whole walk: a brook in the woodland, win
 
 Up takes a step forward and Down a step back. Hold the key to keep walking. Your footsteps do not disturb the birds.
 
-A cue plays when you leave the path and when you come back to it. Brambles, a hedge, deep reeds or the river's edge stop you at the sides of the trail, and the game says which way the path is.
+The game says when you leave the path and when you come back to it. Brambles, a hedge, deep reeds or the river's edge stop you at the sides of the trail, and the game says which way the path is.
 
 ## Meeting a bird
 

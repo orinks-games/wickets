@@ -60,7 +60,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, street: Live<DanceScreen>) -> Lesson {
 
     let follow = street.step(
         format!(
-            "The drum marks the beat. {} and {r} move your head one lane. The pearl plays from its lane, and its chime sounds when it moves. {} names its lane. Follow it for {FOLLOW} beats in a row.",
+            "The drum marks the beat. {} and {r} move your head one lane. The pearl shimmers from its lane; a bright chime sounds when it moves. {} names its lane. Follow it for {FOLLOW} beats in a row.",
             sentence_start(&l),
             sentence_start(&t)
         ),

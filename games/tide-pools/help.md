@@ -14,9 +14,9 @@ You always face the sea, so the pools run from your left to your right. A sound 
 
 Up brings you closer to the water and Down steps back. There are three places to stand:
 
-- Standing back on the rocks: the pool in front of you and two pools either side are in range, all a little faint. Good for finding where things are.
-- At the water's edge: the pool in front of you and the next pool either side are in range. Walking always brings you to the edge.
-- Leaning in close: only the pool in front of you is in range, and you can reach in.
+- Standing back on the rocks: the pool in front of you and two pools either side play, all a little faint. Good for finding where things are.
+- At the water's edge: the pool in front of you and the next pool either side play. Walking always brings you to the edge.
+- Leaning in close: only the pool in front of you plays, and you can reach in.
 
 Leaning in over a pool with nothing left in it, you are told there is only clear water and weed.
 
@@ -96,7 +96,7 @@ Three sheltered pools close to home, with no tide: an anemone, a shy shore crab,
 
 Challenges give every player the same shore for a day, a week or a month, with a gentle goal. Each finished trip counts toward your streak. Leave the challenge, on the pause menu, does not count, so you can come back and try again.
 
-- Daily: tonight's three species. A short dusk trip on Rocky Point with three species to find, each worth 100 points more, and one twist. The twist is still water, where shy creatures come out twice as fast; a busy shore, where every pool holds something; a quick tide, a shorter trip where every find is worth double; or hushed, where only the pool in front of you is in range.
+- Daily: tonight's three species. A short dusk trip on Rocky Point with three species to find, each worth 100 points more, and one twist. The twist is still water, where shy creatures come out twice as fast; a busy shore, where every pool holds something; a quick tide, a shorter trip where every find is worth double; or hushed, where only the pool in front of you plays.
 - Weekly: this week's rare find. A long trip on the Far Reef, where one rare creature is waiting somewhere. Finding it is worth 300 points.
 - Monthly: the Great Low Tide. 15 pools on a spring tide, when every rare creature can turn up whatever the weather, and every different kind you gather is worth 40 points more. Gathering 8 different kinds meets the goal.
 

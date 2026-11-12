@@ -102,7 +102,7 @@ On the third Tuesday of every month there is a barge fair: the barge comes every
 
 ## Settings
 
-Pace sets how busy the almanac is, whether there are dangers, and whether glum settlers leave. Day length sets how long a day lasts from the morning to the supper bell. The settlers' tune can be turned off, leaving only the birds and the river. Work from along the lane can be turned off too, so only work where you stand plays.
+Pace sets how busy the almanac is, whether there are dangers, and whether glum settlers leave. Day length sets how long a day lasts from the morning to the supper bell. The settlers' tune can be turned off, leaving only the birds and the river. Work from along the lane can be turned off too, so only the work where you stand plays.
 
 ## Controls
 

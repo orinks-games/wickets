@@ -295,7 +295,7 @@ impl TitleGame for Larkfield {
                     p.save(ctx);
                 },
                 |_ctx, _on| None,
-                "When on, settlers chopping, hammering and fishing play from wherever they are. Off, only work where you stand.",
+                "When on, the sounds of settlers chopping, hammering and fishing play from wherever they are. Off, only the work where you stand.",
             ),
         ]
     }

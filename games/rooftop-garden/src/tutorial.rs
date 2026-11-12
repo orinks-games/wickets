@@ -65,7 +65,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, plot: Live<RunScreen>) -> Lesson {
 
     let water = plot.step(
         format!(
-            "{} also waters. Water your seed.",
+            "{} also waters. Dry soil crackles, and a thirsty plant droops in pitch. Water your seed.",
             sentence_start(&w)
         ),
         |s: &RunScreen, _| {
@@ -78,7 +78,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, plot: Live<RunScreen>) -> Lesson {
 
     let tend = plot.step(
         format!(
-            "Aphids stop a plant growing. The squash in row 1, planter 1 has them: {t} picks them off there."
+            "A buzz means aphids, and the plant stops growing. The squash in row 1, planter 1 has them: {t} picks them off there."
         ),
         |s: &RunScreen, _| {
             s.garden().plots[SQUASH]

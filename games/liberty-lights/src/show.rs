@@ -703,7 +703,7 @@ impl State<Parlor> for Show {
                 format!("Your turn. {} counts in, then launch.", sentence_start(&p))
             }
             Phase::YourTurn => format!(
-                "Your turn. {} counts in, then launch. {} hears the show again.",
+                "Your turn. {} counts in, then launch. {} plays the show again.",
                 sentence_start(&p),
                 sentence_start(&t)
             ),

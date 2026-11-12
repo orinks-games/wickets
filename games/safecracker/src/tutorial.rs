@@ -65,7 +65,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let dl = Rc::clone(&dial);
     let clicks = Step::new(
         format!(
-            "The dial runs from 0 to 99. {} turns it one number down and {r} one number up, one click each. Every tenth number has the ten-detent cue. Turn up to 5.",
+            "The dial runs from 0 to 99. {} turns it one number down and {r} one number up, with a soft click each. Every tenth number gives a firmer double click. Turn up to 5.",
             sentence_start(&l)
         ),
         move |ctx, a| {

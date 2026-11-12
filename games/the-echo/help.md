@@ -1,6 +1,6 @@
 ## About the game
 
-The Echo is the listening machine in the parlor's cellar, and its pipes have drifted out of tune. Theo's notes say how to fix them: low to high, and wait for the wobble to go still. Raise or lower each pipe until it holds its note, then set it. Once every pipe in the rank is in tune, the Echo plays them back as a tune. Nothing fails here. The Echo opens in story mode, in act 4.
+The Echo is the listening machine in the parlor's cellar, and its pipes have drifted out of tune. Theo's notes say how to fix them: low to high, and tune each one until the wobble goes still. Raise or lower each pipe until it holds its note, then set it. Once every pipe in the rank is in tune, the Echo plays them back as a tune. Nothing fails here. The Echo opens in story mode, in act 4.
 
 ## The wobble
 

@@ -10,7 +10,7 @@ Your score is the treasure you bank. An expedition ends when you choose to stop 
 
 ## Directions
 
-Sounds are placed around the sub, facing where the sub faces. A sound straight ahead is ahead of you. One on your right is to your right. When you turn, the world turns around you.
+Sounds are placed around the sub, facing where the sub faces. A sound straight ahead is ahead of you. One on your right is to your right. One behind you is a little muffled. When you turn, the world turns around you.
 
 Ping: everything in range echoes from where it is. The later and quieter the echo, the farther away it is.
 

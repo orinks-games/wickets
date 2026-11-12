@@ -458,7 +458,7 @@ fn the_practice_room_waits_and_names_the_key() {
     let (mut h, mut twin) = floor(Mode::Practice(1));
     assert!(spoke(
         &h,
-        "The song waits for each monster until you dance its move."
+        "The music holds for each monster until you dance its move."
     ));
     start(&mut h, &mut twin);
     while twin.dance.waiting().is_none() {

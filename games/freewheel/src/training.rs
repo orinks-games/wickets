@@ -93,7 +93,7 @@ pub fn goal(ctx: &Ctx<Parlor>, n: u32) -> String {
             "Lesson 3. Get moving, then hold {} to steer into the traffic lane.",
             k(ParlorAction::Left)
         ),
-        4 => "Lesson 4. Ride on until the door handle cue.".to_string(),
+        4 => "Lesson 4. Ride on, and move left at the door handle cue.".to_string(),
         _ => format!(
             "Lesson 5. Ride on in the bike lane and press {} at the act now cue.",
             k(ParlorAction::Primary)

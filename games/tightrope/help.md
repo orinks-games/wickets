@@ -12,7 +12,7 @@ A lean grows by itself, the way a real wire tips you. Shift your weight with Lef
 
 Step once you have returned to balance. The game warns you when you lean hard left or right. Lean all the way and you fall to the safety net.
 
-The status key, S, always says your lean in words.
+The status key, S, always says your lean in words, so you never have to judge it by pitch alone.
 
 ## Walking
 

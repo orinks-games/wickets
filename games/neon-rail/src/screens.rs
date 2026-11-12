@@ -214,7 +214,7 @@ fn tutorial_text(step: u8, k: &Keys) -> String {
         4 => "Repair pickup on the left. Be in its lane when it arrives to restore hull.".to_string(),
         5 => format!("Drone in the left lane. {} fires the rail gun at a drone or unstable vehicle as it closes in. It locks only in the last second of the approach. Fire too early and the game says No lock.", sentence_start(&k.fire)),
         6 => format!("Heavy blocker on the left. {} boosts. Boosting into a heavy blocker forces it open, and then boost needs time to recharge.", sentence_start(&k.boost)),
-        7 => format!("Full blockade next. It fills all three lanes, so you cannot dodge it. Its alarm grows louder as it comes. {} boosts: press it on the blockade cue, just before it hits.", sentence_start(&k.boost)),
+        7 => format!("Full blockade next. It fills all three lanes, so you cannot dodge it. Its alarm grows louder as it comes. {} boosts: press it on the boost chime, just before it hits.", sentence_start(&k.boost)),
         8 => format!("Priority traffic on the right. Priority vehicles raise stress if delayed. {} activates priority override when you need to protect the route.", sentence_start(&k.priority)),
         9 => "Salvage in the center lane. Salvage adds to your score now, and your score becomes credits at the debrief. Every debrief pays, even after a failed run.".to_string(),
         _ => format!("Unstable vehicle on the left. Dodge it or boost through it. If stress spikes, {} triggers a slowdown pulse for a recovery window.", k.slowdown),

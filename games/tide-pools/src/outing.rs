@@ -1088,16 +1088,16 @@ impl State<Parlor> for OutingScreen {
         let p = ctx.control_name(ParlorAction::Primary);
         let now = match o.lean {
             Lean::In if o.hiding_here() => {
-                "Something shy is hiding in this pool: keep still until it creeps back out, then wait for its cue.".to_string()
+                "Something shy is hiding in this pool: keep still until two soft rising notes, then wait for its cue.".to_string()
             }
             Lean::In => format!(
                 "You are leaning in. When a creature cue plays in this pool, press {p} right after to gather it."
             ),
             Lean::Edge => format!(
-                "You are at the water's edge, in range of this pool and the next either side. Lean in with {up} to reach in."
+                "You are at the water's edge, where this pool and the next either side play. Lean in with {up} to reach in."
             ),
             Lean::Back => format!(
-                "You are standing back, in range of two pools either side. {} brings you to the edge.",
+                "You are standing back, where two pools either side play. {} brings you to the edge.",
                 sentence_start(&up)
             ),
         };

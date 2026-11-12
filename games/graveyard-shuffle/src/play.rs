@@ -193,7 +193,7 @@ impl Floor {
         let what = match self.mode {
             Mode::Set(_) => format!("3 songs: {}.", self.tune_names()),
             Mode::Practice(_) => format!(
-                "{}. The song waits for each monster until you dance its move.",
+                "{}. The music holds for each monster until you dance its move.",
                 self.run.plans[0].tune.name
             ),
             Mode::Challenge(_) => {

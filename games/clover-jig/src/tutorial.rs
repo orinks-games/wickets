@@ -81,7 +81,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
             let (t, b) = (f.run.dance.tally(), before.get());
             let live = (t.good + t.close + t.missed) - (b.good + b.close + b.missed);
             if t.spot_on > b.spot_on {
-                Some("That chime is 3 points.".to_string())
+                Some("That bright chime is 3 points.".to_string())
             } else if live >= LIVE_STEPS || f.run.finished() {
                 Some("Right on the beat scores 3 points.".to_string())
             } else {

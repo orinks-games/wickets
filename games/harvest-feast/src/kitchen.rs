@@ -209,7 +209,7 @@ impl Kitchen {
         };
         // The first course teaches the loop; later ones only say the key.
         let then = if matches!(self.mode, Mode::Course(1)) {
-            format!(" Then listen for the recipe, go to the station it names, and press {p}.")
+            format!(" Then wait for the recipe, go to the station it names, and press {p}.")
         } else {
             String::new()
         };

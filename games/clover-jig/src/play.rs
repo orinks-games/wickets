@@ -203,7 +203,7 @@ impl Floor {
         let what = match self.mode {
             Mode::Set(_) => format!("3 tunes: {}.", self.tune_names()),
             Mode::Practice(_) => format!(
-                "{}. The tune waits at each step until you dance it.",
+                "{}. The music holds at each step until you dance it.",
                 self.run.plans[0].tune.title()
             ),
             Mode::Ceili => format!(
@@ -914,7 +914,7 @@ impl State<Parlor> for Floor {
         if let Some(i) = self.run.dance.waiting() {
             let step = self.run.dance.plan.calls[i].step;
             let line = Self::step_line(ctx, step);
-            ctx.say(format!("Back on the floor. The tune is waiting. {line}"));
+            ctx.say(format!("Back on the floor. The music is holding. {line}"));
             return;
         }
         self.run.count_in();
@@ -1001,7 +1001,7 @@ impl State<Parlor> for Floor {
             self.start_prompt(ctx)
         } else if let Some(i) = run.dance.waiting() {
             let step = run.dance.plan.calls[i].step;
-            format!("The music holds for {}.", Self::step_line(ctx, step))
+            format!("The music holds. {}", Self::step_line(ctx, step))
         } else if run.practice() {
             "Each step falls on the beat after its call.".to_string()
         } else {

@@ -790,7 +790,7 @@ impl State<Parlor> for DeskRun {
                 n(ParlorAction::Status)
             ),
             Phase::Playing => format!(
-                "Wish Desk. {} and {} walk the shelf, {} and {} jump to its ends. {} shakes the box in front of you. Hold {} to wrap it for the letter, and let go early to stop. {} reads the letter again, {} says where you are, {} gives a hint at half points. Escape pauses.",
+                "Wish Desk. {} and {} walk the shelf, {} and {} jump to its ends. {} shakes the box in front of you. Hold {} to wrap it for the letter, until the ribbon snaps; let go sooner to stop. {} reads the letter again, {} says where you are, {} gives a hint at half points. Escape pauses.",
                 sentence_start(&n(ParlorAction::Left)),
                 n(ParlorAction::Right),
                 n(ParlorAction::Up),

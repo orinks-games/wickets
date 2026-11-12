@@ -183,7 +183,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
 
     let blockade = Step::new(
         format!(
-            "Last, a full blockade. It fills all three lanes, so you cannot dodge it. In a run, the blockade cue plays just before it hits: boost then. Boost now with {boost}."
+            "Last, a full blockade. It fills all three lanes, so you cannot dodge it. In a run, the boost chime plays just before it hits: boost then. Boost now with {boost}."
         ),
         |ctx, a| match a {
             ParlorAction::Primary => {
