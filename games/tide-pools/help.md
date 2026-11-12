@@ -68,6 +68,14 @@ Every trip has its own weather, tide and time of day, told to you before you set
 
 The tide turns halfway through the trip. You receive warnings then, with about a minute left, and at 20 seconds. When the tide covers the rocks, the trip ends and you head home. A trip also ends early if you gather everything on the shore.
 
+## Pace
+
+The pools and the tide hold while a line is still being spoken. Creatures wait to call, shy ones wait to creep out, and the time you have to reach for a sound stands still until it ends. This holds at every pace and on every trip.
+
+Pace in Settings sets how fast the shore runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. The creatures, the time to reach in and the tide follow the pace. A change applies from your next trip.
+
+Relaxed scores are saved separately, including challenges and calendar events. Normal and quick share their scores. Your aquarium and the shores it opens count at every pace.
+
 ## After a trip
 
 When a trip ends, you hear what you gathered, your score and what is new in your aquarium, all on one page. Then a short menu offers Play again, Hear the results again, Your aquarium, and Back to the title. After a challenge, Play again becomes Play this challenge again, and the last row is Back to the challenges. Escape does the same as the last row.

@@ -17,10 +17,11 @@ pub mod sound;
 pub mod tutorial;
 
 use hearken::menu::{Label, MenuItem};
+use hearken::screens::SettingsRow;
 use hearken::text::sentence_start;
 use hearken::Ctx;
 use parlor_core::menus::{labels, TitleGame, TitleRow};
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period, Records};
 
 pub use menus::{
     AquariumScreen, ChallengeHost, ChallengesMenu, Shores, SoundCheck, CHALLENGES_NAME,
@@ -67,11 +68,17 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
     ctx.push(ChallengeHost::new(period));
 }
 
+/// "best 120, relaxed best 140", or "not visited yet".
 fn best_words(ctx: &mut Ctx<Parlor>, place: Place) -> String {
-    match Records::best(ctx, ID, place.board()) {
-        Some(b) => format!("best {b}"),
-        None => "not visited yet".to_string(),
-    }
+    pace::bests(ctx, ID, place.board(), "best").unwrap_or_else(|| "not visited yet".to_string())
+}
+
+/// An event's best score and relaxed best score.
+fn event_bests(ctx: &mut Ctx<Parlor>, event: events::Event) -> events::Bests {
+    (
+        Records::best(ctx, ID, event.board()),
+        Records::best(ctx, ID, &Pace::Relaxed.board(event.board())),
+    )
 }
 
 /// What the Play row says and does for one shore.
@@ -142,7 +149,7 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let events: Vec<String> = events::Event::ALL
         .into_iter()
         .filter_map(|e| {
-            Records::best(ctx, ID, e.board()).map(|b| format!("{}: best {b}.", e.name()))
+            pace::bests(ctx, ID, e.board(), "best").map(|b| format!("{}: {b}.", e.name()))
         })
         .collect();
     if !events.is_empty() {
@@ -188,9 +195,9 @@ fn event_rows(ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<TidePools>> {
                 .select_sound(None)
                 .help(event.locked_help(today));
             }
-            let best = Records::best(ctx, ID, event.board());
-            let label = match best {
-                Some(b) => format!("{}, {}, best {b}", event.name(), place.name()),
+            let best = event_bests(ctx, event);
+            let label = match pace::both("best", best.0, best.1) {
+                Some(b) => format!("{}, {}, {b}", event.name(), place.name()),
                 None => format!("{}, {}", event.name(), place.name()),
             };
             MenuItem::new(label, move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
@@ -224,6 +231,10 @@ impl TitleGame for TidePools {
 
     fn music(&mut self, ctx: &mut Ctx<Parlor>) {
         sound::title_music(ctx);
+    }
+
+    fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
+        vec![pace::row(ID)]
     }
 
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {

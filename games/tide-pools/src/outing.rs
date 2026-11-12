@@ -7,8 +7,8 @@ use hearken::{Bus, Ctx, InputEvent, Key, Sound, State, Vec3};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::score::{DANGER, HURRY};
 use parlor_core::{
-    Challenge, Challenges, Mood, Pages, Parlor, ParlorAction, Period, Records, Rng, Score,
-    ScoreResult,
+    Challenge, Challenges, Mood, Pages, Parlor, ParlorAction, Period, Records, Rng, RunClock,
+    Score, ScoreResult,
 };
 
 use crate::rules::{
@@ -252,6 +252,8 @@ pub struct OutingScreen {
     pub score: Score,
     /// S, in layers: a second press reads the rest.
     status_key: parlor_core::StatusKey,
+    /// The shore's clock: it holds for speech, at the trip's pace.
+    pub clock: RunClock,
 }
 
 impl OutingScreen {
@@ -279,6 +281,7 @@ impl OutingScreen {
             done: false,
             lesson: false,
             score: Score::new(),
+            clock: RunClock::default(),
         }
     }
 
@@ -539,6 +542,7 @@ impl OutingScreen {
                     }
                 }
                 Ev::Emerge { .. } => {
+                    self.clock.reset();
                     sound::play_at(ctx, sound::EMERGE, sound::pool_at(0, self.outing.lean));
                     if self.first("emerge") {
                         ctx.say_queued(format!(
@@ -608,6 +612,7 @@ impl OutingScreen {
                     ctx.say_queued("The tide has turned.");
                 }
                 Ev::TideWarning(secs) => {
+                    self.clock.reset();
                     sound::play(ctx, sound::TIDE_WARN);
                     if secs >= 60 {
                         ctx.say_queued("Tide in about a minute.");
@@ -677,34 +682,40 @@ impl OutingScreen {
             format!("Score {score}.")
         };
         let mut won = !new.is_empty();
+        let pace = self.clock.pace();
+        // A relaxed trip's scores are its relaxed ones.
+        let first = if pace.separate() {
+            "first relaxed score"
+        } else {
+            "first score"
+        };
+        let best_word = pace.best_word();
         match (o.plan.mode, self.challenge.clone()) {
             (Mode::Beach(place), _) => {
-                match Records::record(ctx, crate::ID, place.board(), score) {
+                match Records::record(ctx, crate::ID, &pace.board(place.board()), score) {
                     ScoreResult::First => {
-                        score_line.push_str(&format!(" Your first score at {}.", place.name()))
+                        score_line.push_str(&format!(" Your {first} at {}.", place.name()))
                     }
                     ScoreResult::NewBest { previous } => score_line.push_str(&format!(
-                        " A new best at {}, beating {previous}.",
+                        " A new {best_word} at {}, beating {previous}.",
                         place.name()
                     )),
-                    ScoreResult::Short { best } => {
-                        score_line.push_str(&format!(" Your best at {} is {best}.", place.name()))
-                    }
+                    ScoreResult::Short { best } => score_line
+                        .push_str(&format!(" Your {best_word} at {} is {best}.", place.name())),
                 }
                 pages.push(score_line);
             }
             (Mode::Event(event, _), _) => {
-                match Records::record(ctx, crate::ID, event.board(), score) {
+                match Records::record(ctx, crate::ID, &pace.board(event.board()), score) {
                     ScoreResult::First => {
-                        score_line.push_str(&format!(" Your first score on {}.", event.the()))
+                        score_line.push_str(&format!(" Your {first} on {}.", event.the()))
                     }
                     ScoreResult::NewBest { previous } => score_line.push_str(&format!(
-                        " A new best on {}, beating {previous}.",
+                        " A new {best_word} on {}, beating {previous}.",
                         event.the()
                     )),
-                    ScoreResult::Short { best } => {
-                        score_line.push_str(&format!(" Your best on {} is {best}.", event.the()))
-                    }
+                    ScoreResult::Short { best } => score_line
+                        .push_str(&format!(" Your {best_word} on {} is {best}.", event.the())),
                 }
                 pages.push(score_line);
             }
@@ -733,13 +744,13 @@ impl OutingScreen {
                         format!("You found {found} of tonight's three.")
                     }
                 };
-                let result = Challenges::submit(ctx, &challenge, score);
+                let result = Challenges::submit_at(ctx, &challenge, pace, score);
                 let best = match result {
-                    ScoreResult::First => "Your first score on this one.".to_string(),
+                    ScoreResult::First => format!("Your {first} on this one."),
                     ScoreResult::NewBest { previous } => {
-                        format!("A new best, beating {previous}.")
+                        format!("A new {best_word}, beating {previous}.")
                     }
-                    ScoreResult::Short { best } => format!("Your best is {best}."),
+                    ScoreResult::Short { best } => format!("Your {best_word} is {best}."),
                 };
                 let streak = Challenges::streak(ctx, crate::ID, period);
                 let streak = match streak {
@@ -910,6 +921,7 @@ impl State<Parlor> for OutingScreen {
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         self.started = true;
+        self.clock = RunClock::start(ctx, crate::ID);
         self.owned = Aquarium::load(ctx).species();
         ctx.audio.set_listener(Vec3::ZERO, 0.0);
         ctx.audio.play_music(None, false);
@@ -970,6 +982,7 @@ impl State<Parlor> for OutingScreen {
         if self.done {
             return;
         }
+        self.clock.reset();
         let o = &self.outing;
         let tide = if o.plan.mode == Mode::Practice {
             String::new()
@@ -1039,8 +1052,11 @@ impl State<Parlor> for OutingScreen {
         if !self.started || self.done {
             return;
         }
+        // The pools and the tide hold for speech; the gulls, wind and waves
+        // keep real time.
+        let game_dt = self.clock.game_dt(ctx, dt);
         self.atmosphere(ctx, dt);
-        let evs = self.outing.update(dt);
+        let evs = self.outing.update(game_dt);
         self.voice(ctx, evs);
         if !self.done {
             let mood = mood(&self.outing);
