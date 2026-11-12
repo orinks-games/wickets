@@ -47,7 +47,7 @@ The meadow has eight rounds. Round 2 brings mud clods and moves the cart to the 
 
 ## Pace
 
-The meadow holds while a line is still being spoken. The drops, the round's clock and the patterns stand still until it ends, so a call never eats into a drop's warning. A step or a bank pressed meanwhile happens at once. The wait before "Go" keeps its own time, so it is the same at every pace. This holds at every pace and in every mode.
+The meadow holds while a line is still being spoken. The drops, the round's clock and the patterns stand still until it ends, so a call never eats into a drop's warning. A step or a bank pressed meanwhile happens at once. The wait before "Go" keeps its own time, so it is the same at every pace. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode.
 
 Pace in Settings sets how fast the meadow runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. The drops, the patterns, the round's clock and its warnings follow the pace.
 
@@ -95,7 +95,7 @@ Three slow lanes with every kind of drop, each explained the first time it falls
 - Help: this guide.
 - Sound check: each sound you need in play, by name. Falling sounds fall and land just as they do in play.
 - Records: your best scores, the rounds you have cleared, your Easter keepsakes and your challenge results.
-- Settings: speech, volume and controls, then this game's Spoken call-outs, on or off.
+- Settings: speech, volume and controls, then this game's Spoken call-outs, on or off, and its Pace.
 - Back to the parlor.
 
 ## Results

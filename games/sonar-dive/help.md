@@ -72,7 +72,7 @@ When an expedition ends, you hear how it went, your haul and your best. Then the
 
 ## Pace
 
-The sea holds while a line is still being spoken. Your air, the sub, the mines, the currents, the bell, the buoys and the grab arm stand still until it ends. While you hold a turn key, and while a ping's echoes are coming back, the sea runs on through speech. This holds at every pace and in every mode.
+The sea holds while a line is still being spoken. Your air, the sub, the mines, the currents, the bell, the buoys and the grab arm stand still until it ends. While you hold a turn key, and while a ping's echoes are coming back, the sea runs on through speech. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode.
 
 Pace in Settings sets how fast the sea runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. Your air, the sub's speed and turns, the echoes, the mine ticks, the bell, the buoys and salvage all follow the pace, so a later echo still means a farther one.
 

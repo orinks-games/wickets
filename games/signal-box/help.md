@@ -22,7 +22,7 @@ The answer window is the time you have to respond to a call. It shrinks every 5 
 
 ## Pace
 
-The answer window holds while a call or another line is still being spoken. This holds at every pace and in every mode.
+The answer window holds while a call or another line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode.
 
 Pace in Settings sets how fast the shift runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. The window, the gaps between trains and the timing cue all follow the pace.
 

@@ -12,6 +12,18 @@
 //!   share their best scores; relaxed runs keep their own boards
 //!   ([`Pace::board`], [`crate::Challenges::submit_at`]).
 //!
+//! Holds are of two kinds. A game calls [`RunClock::reset`] before each
+//! line the player must act on, and on resume: the hold that follows is a
+//! *key-line hold*, bounded only by Hearken's own cap. Any other speech,
+//! such as the status, repeat and hint keys or outcome chatter, holds the
+//! clock only while the *information budget* lasts: [`INFO_HOLD_BUDGET_S`]
+//! of real frame time, spent while such a hold keeps the clock still and
+//! refilled by one second for every [`REFILL_RUN_S`] seconds the clock
+//! runs. So a player cannot keep the dangers frozen by pressing an
+//! information key over and over: under endless chatter the clock is held
+//! a quarter of the time at most. When the budget is empty the clock runs
+//! through the speech ([`ClockState::Spent`]).
+//!
 //! A game adds it in a few lines:
 //!
 //! ```ignore
@@ -34,6 +46,17 @@ use serde::{Deserialize, Serialize};
 
 use crate::menus::settings::setting;
 use crate::{Parlor, Records};
+
+/// The information budget when full, in seconds of real frame time: how
+/// long speech that did not follow a [`RunClock::reset`] may hold the
+/// clock before it runs through. The same as Hearken's cap on one hold.
+pub const INFO_HOLD_BUDGET_S: f64 = 20.0;
+
+/// Seconds of running frame time (neither held nor bypassed) that refill
+/// one second of the information budget. At 3, endless information speech
+/// holds the clock for a quarter of the time: 1 held second for every 3
+/// that run.
+pub const REFILL_RUN_S: f64 = 3.0;
 
 /// How fast a game's timed play runs.
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Hash, Serialize, Deserialize)]
@@ -231,6 +254,11 @@ pub enum ClockState {
     /// The game let time run through speech for this frame, such as under
     /// a held key (see [`RunClock::bypass`]).
     Bypassed,
+    /// Speech that did not follow a [`RunClock::reset`] was playing, but
+    /// the information budget ran out during this hold, so game time ran
+    /// through it (on the first such frame, through the part the budget
+    /// could not cover).
+    Spent,
 }
 
 impl ClockState {
@@ -240,6 +268,7 @@ impl ClockState {
             ClockState::Running => "running",
             ClockState::Held => "held",
             ClockState::Bypassed => "bypassed",
+            ClockState::Spent => "spent",
         }
     }
 }
@@ -256,6 +285,16 @@ pub struct RunClock {
     /// Game time the hold has kept back since it was last taken: what a
     /// timed score adds back, so a hold never improves a time.
     held_time: f64,
+    /// Whether the hold now (or the next one) follows a [`RunClock::reset`]:
+    /// a key-line hold, not drawn from the budget. It ends once the hold
+    /// is over and speech has been quiet.
+    keyed: bool,
+    /// Seconds of real frame time left for holds that did not follow a
+    /// reset, up to [`INFO_HOLD_BUDGET_S`].
+    budget: f64,
+    /// Whether the budget ran out during the hold now: the clock runs
+    /// through the rest of it. It ends with the hold, as `keyed` does.
+    spent: bool,
 }
 
 impl Default for RunClock {
@@ -273,6 +312,9 @@ impl RunClock {
             bypass: false,
             state: ClockState::Running,
             held_time: 0.0,
+            keyed: false,
+            budget: INFO_HOLD_BUDGET_S,
+            spent: false,
         }
     }
 
@@ -296,22 +338,55 @@ impl RunClock {
 
     /// The same, with the answer to "is speech playing?" given, and with
     /// every transition in one place.
+    ///
+    /// - Bypassed: time runs; the budget is neither spent nor refilled.
+    /// - Hearken would hold, after a reset: a key-line hold, in full.
+    /// - Hearken would hold, otherwise: held as far as the budget goes,
+    ///   which pays for it; past that the clock runs ([`ClockState::Spent`])
+    ///   until that hold is over, even if the budget refills meanwhile.
+    /// - Every second that runs unbypassed refills the budget by a
+    ///   [`REFILL_RUN_S`]th of a second, up to [`INFO_HOLD_BUDGET_S`].
     pub fn step(&mut self, busy: bool, dt: f64) -> f64 {
+        let dt = dt.max(0.0);
         let bypassed = std::mem::take(&mut self.bypass);
-        let flowed = if bypassed {
+        let (flowed, state) = if bypassed {
             // Time runs this frame; the next hold starts afresh.
             self.hold.reset();
-            dt.max(0.0)
+            (dt, ClockState::Bypassed)
         } else {
-            let flowed = self.hold.step(busy, dt);
-            self.held_time += (dt.max(0.0) - flowed).max(0.0) * self.pace.scale();
-            flowed
+            let allowed = self.hold.step(busy, dt).clamp(0.0, dt);
+            let asked = dt - allowed;
+            // A frame of no time still holds while Hearken is holding.
+            if asked <= 0.0 && !self.hold.held() {
+                (dt, ClockState::Running)
+            } else if self.keyed {
+                (allowed, ClockState::Held)
+            } else if self.spent {
+                (dt, ClockState::Spent)
+            } else {
+                let paid = asked.min(self.budget);
+                self.budget -= paid;
+                self.spent = paid < asked;
+                let state = if self.spent {
+                    ClockState::Spent
+                } else {
+                    ClockState::Held
+                };
+                (dt - paid, state)
+            }
         };
-        self.state = match (bypassed, self.hold.held()) {
-            (true, _) => ClockState::Bypassed,
-            (false, true) => ClockState::Held,
-            (false, false) => ClockState::Running,
-        };
+        if !bypassed {
+            self.held_time += (dt - flowed) * self.pace.scale();
+            if matches!(state, ClockState::Running | ClockState::Spent) {
+                self.budget = (self.budget + flowed / REFILL_RUN_S).min(INFO_HOLD_BUDGET_S);
+            }
+            // A hold, key line or spent, is over once speech has been quiet.
+            if self.hold.state() == SpeechHoldState::Flowing {
+                self.keyed = false;
+                self.spent = false;
+            }
+        }
+        self.state = state;
         flowed * self.pace.scale()
     }
 
@@ -320,6 +395,12 @@ impl RunClock {
     /// key, which must not freeze. Call it before [`RunClock::game_dt`].
     pub fn bypass(&mut self) {
         self.bypass = true;
+    }
+
+    /// Seconds of real frame time left for holds that do not follow a
+    /// [`RunClock::reset`].
+    pub fn budget(&self) -> f64 {
+        self.budget
     }
 
     /// Whether the last frame held game time for speech.
@@ -350,10 +431,15 @@ impl RunClock {
         std::mem::take(&mut self.held_time)
     }
 
-    /// Back to running, as after a pause.
+    /// Back to running, as after a pause, with the next hold a key-line
+    /// hold: call it before each line the player must act on, and on
+    /// resume. That hold is granted in full whatever the budget, and does
+    /// not refill it.
     pub fn reset(&mut self) {
         self.hold.reset();
         self.bypass = false;
+        self.keyed = true;
+        self.spent = false;
         self.state = ClockState::Running;
     }
 }
@@ -417,6 +503,8 @@ mod tests {
         assert_eq!(clock.state(), ClockState::Running);
         assert_eq!(clock.step(true, 0.5), 0.0);
         assert!(clock.held());
+        assert_eq!(clock.step(true, 0.0), 0.0);
+        assert!(clock.held(), "a frame of no time still holds");
         assert!(close(clock.step(false, 0.5), 0.425));
         assert!(!clock.held());
     }
@@ -459,6 +547,143 @@ mod tests {
             ran += clock.step(true, 0.1);
         }
         assert!(ran > 5.0, "the hold ends at Hearken's bound: {ran}");
+    }
+
+    /// Steps `frames` frames of `dt`, all busy or all quiet, and returns the
+    /// game time that ran.
+    fn steps(clock: &mut RunClock, busy: bool, frames: usize, dt: f64) -> f64 {
+        (0..frames).map(|_| clock.step(busy, dt)).sum()
+    }
+
+    /// Information speech until the budget runs out, then quiet long enough
+    /// for the hold to end, leaving the budget a little above empty.
+    fn drain(clock: &mut RunClock) {
+        while clock.state() != ClockState::Spent {
+            clock.step(true, 0.1);
+        }
+        steps(clock, false, 6, 0.1);
+        assert_eq!(clock.hold_state(), SpeechHoldState::Flowing);
+    }
+
+    #[test]
+    fn a_key_line_after_a_reset_holds_in_full_with_an_empty_budget() {
+        let mut clock = RunClock::new(Pace::Quick);
+        drain(&mut clock);
+        let before = clock.budget();
+        assert!(before < 0.5, "{before}");
+        clock.reset();
+        assert_eq!(steps(&mut clock, true, 150, 0.1), 0.0, "15 seconds held");
+        assert_eq!(clock.state(), ClockState::Held);
+        assert!(close(clock.budget(), before), "neither spent nor refilled");
+        // A short breath between two key lines keeps one key-line hold.
+        steps(&mut clock, false, 2, 0.1);
+        assert_eq!(steps(&mut clock, true, 10, 0.1), 0.0);
+        assert!(close(clock.budget(), before + 0.2 / REFILL_RUN_S));
+    }
+
+    #[test]
+    fn back_to_back_information_lines_hold_for_the_budget_then_run() {
+        // Lines of 3 seconds, each after a gap long enough for Hearken to
+        // hold afresh: without the budget every line would hold in full.
+        let mut clock = RunClock::new(Pace::Quick);
+        let mut held = 0.0;
+        let mut gaps = 0.0;
+        while clock.state() != ClockState::Spent {
+            for _ in 0..30 {
+                held += 0.1 - clock.step(true, 0.1);
+                if clock.state() == ClockState::Spent {
+                    break;
+                }
+            }
+            if clock.state() != ClockState::Spent {
+                steps(&mut clock, false, 6, 0.1);
+                gaps += 0.6;
+            }
+        }
+        let budget = INFO_HOLD_BUDGET_S + gaps / REFILL_RUN_S;
+        assert!((held - budget).abs() < 1e-6, "held {held} of {budget}");
+        assert!(held < INFO_HOLD_BUDGET_S + 3.0, "{held}");
+        // The rest of that line runs, though the budget refills meanwhile.
+        assert!(close(steps(&mut clock, true, 20, 0.1), 2.0));
+        assert_eq!(clock.state(), ClockState::Spent);
+        assert!(!clock.held());
+        assert!(clock.budget() > 0.5);
+        // Once the voice has been quiet, the next line holds again.
+        steps(&mut clock, false, 6, 0.1);
+        assert_eq!(clock.step(true, 0.1), 0.0);
+        assert!(clock.held());
+    }
+
+    #[test]
+    fn the_budget_refills_at_its_rate_and_never_past_full() {
+        let mut clock = RunClock::new(Pace::Relaxed);
+        steps(&mut clock, true, 100, 0.1);
+        assert!((clock.budget() - (INFO_HOLD_BUDGET_S - 10.0)).abs() < 1e-9);
+        steps(&mut clock, false, 60, 0.1);
+        let expected = INFO_HOLD_BUDGET_S - 10.0 + 6.0 / REFILL_RUN_S;
+        assert!(
+            (clock.budget() - expected).abs() < 1e-9,
+            "{}",
+            clock.budget()
+        );
+        steps(&mut clock, false, 1000, 0.1);
+        assert_eq!(clock.budget(), INFO_HOLD_BUDGET_S);
+        // Held frames do not refill it.
+        steps(&mut clock, true, 10, 0.1);
+        let budget = clock.budget();
+        steps(&mut clock, true, 10, 0.1);
+        assert!(close(clock.budget(), budget - 1.0));
+    }
+
+    #[test]
+    fn under_endless_information_speech_the_clock_holds_a_quarter() {
+        // Status pressed again and again: two seconds of speech, then just
+        // enough quiet for the next press to hold afresh.
+        let mut clock = RunClock::new(Pace::Quick);
+        let mut ran = 0.0;
+        let mut total = 0.0;
+        for _ in 0..3000 {
+            ran += steps(&mut clock, true, 40, 0.05);
+            ran += steps(&mut clock, false, 12, 0.05);
+            total += 52.0 * 0.05;
+        }
+        let share = 1.0 - ran / total;
+        assert!((share - 0.25).abs() < 0.01, "held share {share}");
+        assert!((clock.held_time() - (total - ran)).abs() < 1e-6);
+        // Speech with no quiet at all is bounded by Hearken's own cap.
+        let mut clock = RunClock::new(Pace::Quick);
+        let ran = steps(&mut clock, true, 60_000, 0.05);
+        let share = 1.0 - ran / 3000.0;
+        assert!(share < 0.25, "held share {share}");
+    }
+
+    #[test]
+    fn a_normal_status_read_is_held_once_the_budget_has_refilled() {
+        let mut clock = RunClock::new(Pace::Normal);
+        for _ in 0..5 {
+            drain(&mut clock);
+            // Fifteen seconds of play, then a four-second status read.
+            steps(&mut clock, false, 150, 0.1);
+            assert_eq!(steps(&mut clock, true, 40, 0.1), 0.0);
+            assert!(clock.held());
+            steps(&mut clock, false, 6, 0.1);
+        }
+    }
+
+    #[test]
+    fn bypassed_frames_neither_spend_nor_refill() {
+        let mut clock = RunClock::new(Pace::Quick);
+        steps(&mut clock, true, 50, 0.1);
+        let budget = clock.budget();
+        for busy in [true, false] {
+            for _ in 0..50 {
+                clock.bypass();
+                clock.step(busy, 0.1);
+            }
+            assert_eq!(clock.state(), ClockState::Bypassed);
+            assert_eq!(clock.budget(), budget);
+        }
+        assert!(close(clock.held_time(), 5.0));
     }
 
     #[test]

@@ -39,7 +39,7 @@ With spoken call-outs on, the kitchen also says which dish needs you as its soun
 
 ## Pace
 
-Every dish's clock holds while a recipe call or another line is still being spoken. This holds at every pace and in every meal.
+Every dish's clock holds while a recipe call or another line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every meal.
 
 Pace in Settings sets how fast cooking runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed.
 

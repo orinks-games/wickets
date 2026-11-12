@@ -70,7 +70,7 @@ The tide turns halfway through the trip. You receive warnings then, with about a
 
 ## Pace
 
-The pools and the tide hold while a line is still being spoken. Creatures wait to call, shy ones wait to creep out, and the time you have to reach for a sound stands still until it ends. This holds at every pace and on every trip.
+The pools and the tide hold while a line is still being spoken. Creatures wait to call, shy ones wait to creep out, and the time you have to reach for a sound stands still until it ends. A line you ask for again and again stops holding after a while. This holds at every pace and on every trip.
 
 Pace in Settings sets how fast the shore runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. The creatures, the time to reach in and the tide follow the pace. A change applies from your next trip.
 
