@@ -80,6 +80,10 @@ pub struct Haunt {
     /// A step taken while wading and the house was held for speech: it
     /// goes ahead once the wade is over, so the key is never lost.
     pending_walk: Option<Side>,
+    /// Game time held for speech on this floor: it counts toward the
+    /// floor's time and comes off its time bonus, so a hold never
+    /// improves either.
+    floor_held: f64,
 }
 
 impl Haunt {
@@ -127,6 +131,7 @@ impl Haunt {
             status_key: StatusKey::new(),
             heard_more: false,
             pending_walk: None,
+            floor_held: 0.0,
         }
     }
 
@@ -666,6 +671,29 @@ impl Haunt {
         format!(" {word}: {}.", parts.join(". "))
     }
 
+    /// A cleared floor's time and time bonus with this floor's held time
+    /// counted: the time grows by it, the bonus is worked out from the
+    /// haunt clock less it (never below zero), and the run's score and
+    /// totals follow. With nothing held, both are as the house gave them.
+    fn count_floor_held(&mut self, time: f64, bonus: u64) -> (f64, u64) {
+        let held = std::mem::take(&mut self.floor_held);
+        if held <= 0.0 {
+            return (time, bonus);
+        }
+        let run = &mut self.run;
+        let left = (run.haunt_left - held).max(0.0);
+        let fair = run
+            .curses
+            .bonus((left as u64) * 5 + run.courage as u64 * 100)
+            .min(bonus);
+        run.score -= bonus - fair;
+        run.total_time += held;
+        if let Some(last) = run.floor_times.last_mut() {
+            *last += held;
+        }
+        (time + held, fair)
+    }
+
     fn voice(&mut self, ctx: &mut Ctx<Parlor>, evs: Vec<Ev>) {
         self.voice_events(ctx, evs);
         self.keep_taught(ctx);
@@ -1171,6 +1199,7 @@ impl Haunt {
                     time,
                     bonus,
                 } => {
+                    let (time, bonus) = self.count_floor_held(time, bonus);
                     self.stop_ghost(ctx);
                     self.stop_shadow(ctx);
                     self.score.stop(ctx);
@@ -1604,6 +1633,7 @@ impl State<Parlor> for Haunt {
             return;
         }
         if self.run.next_floor_waiting {
+            self.floor_held = 0.0;
             let evs = self.run.next_floor();
             self.voice(ctx, evs);
             return;
@@ -1691,6 +1721,7 @@ impl State<Parlor> for Haunt {
         // clue stays in step with the phonograph that plays it; the house
         // itself runs on game time.
         let game_dt = self.clock.game_dt(ctx, dt);
+        self.floor_held += self.clock.take_held_time();
         let mood = self.mood();
         self.score.follow(ctx, mood, dt);
         let mut due = Vec::new();

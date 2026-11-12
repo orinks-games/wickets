@@ -423,3 +423,59 @@ fn the_pace_rows_help_says_it_applies_to_gift_sort() {
     let help = h.spoken().last().cloned().unwrap_or_default();
     assert!(help.ends_with("Pace applies to Gift Sort only."), "{help}");
 }
+
+/// Shift 1 at quick, every gift sent home as soon as it lands. With
+/// `spam`, a status line is spoken before every gift is sent, and the belt
+/// is held while it is. Gives the clock bonus said, the score and the time
+/// held for speech.
+fn sort_shift_one(spam: bool) -> (u64, u64, f64) {
+    let (mut h, s) = start_at(Mode::Free, 1, Pace::Quick);
+    let mut held = 0.0;
+    let done = |h: &Headless<Parlor>| {
+        h.spoken()
+            .iter()
+            .find(|l| l.starts_with("Shift 1 complete."))
+            .cloned()
+    };
+    for _ in 0..5000 {
+        if done(&h).is_some() {
+            break;
+        }
+        let Some(key) = home_key(&s) else {
+            quiet(&mut h);
+            tick(&mut h, &s, 0.1);
+            continue;
+        };
+        if spam {
+            for _ in 0..3 {
+                h.app.ctx.say("3 to go.");
+                tick(&mut h, &s, 0.5);
+                held += 0.5;
+            }
+        }
+        h.press(key);
+    }
+    let line = done(&h).unwrap_or_else(|| panic!("{:?}", h.spoken()));
+    let bonus = line
+        .split(". ")
+        .nth(1)
+        .and_then(|r| r.split(' ').next())
+        .and_then(|n| n.parse().ok())
+        .unwrap_or_else(|| panic!("{line}"));
+    let score = s.borrow().score();
+    (bonus, score, held)
+}
+
+#[test]
+fn info_keys_never_raise_the_clock_bonus() {
+    let (bonus, score, _) = sort_shift_one(false);
+    let (spam_bonus, spam_score, held) = sort_shift_one(true);
+    assert!(held >= 3.0, "{held}");
+    // Every second held comes off the time left, ten points a second.
+    let lost = bonus - spam_bonus;
+    assert!(
+        (lost as f64 - held * 10.0).abs() <= 10.0,
+        "{bonus} > {spam_bonus} for {held} held"
+    );
+    assert_eq!(spam_score, score - lost);
+}

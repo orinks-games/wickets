@@ -256,6 +256,9 @@ pub struct RunScreen {
     /// has not run out: it is taken once the cooldown ends, so the hold
     /// never drops a press.
     step_waiting: bool,
+    /// Game time held for speech on this wire: it counts toward the
+    /// crossing's time and its par bonus, so a hold never improves them.
+    wire_held: f64,
 }
 
 /// How loud the street is from `floors` up.
@@ -285,6 +288,7 @@ impl RunScreen {
             score: Score::new(),
             in_lesson: false,
             step_waiting: false,
+            wire_held: 0.0,
         }
     }
 
@@ -313,9 +317,62 @@ impl RunScreen {
         self.score.stop(ctx);
     }
 
+    /// On arriving, counts this wire's held time into the crossing: its
+    /// time grows by it and the par bonus is worked out from that time,
+    /// in the run's times and score and in the arrival line. With nothing
+    /// held, all are as the wire gave them.
+    fn count_wire_held(&mut self, notes: &mut [Note]) {
+        let Some(line) = notes.iter_mut().find_map(|n| match n {
+            Note::Say(s) if s.starts_with("Across.") => Some(s),
+            _ => None,
+        }) else {
+            return;
+        };
+        let held = std::mem::take(&mut self.wire_held);
+        if held <= 0.0 || self.run.times.is_empty() {
+            return;
+        }
+        let run = &mut self.run;
+        let par = run.level().par();
+        let Some(last) = run.times.last_mut() else {
+            return;
+        };
+        let bonus = |t: f64| ((par - t).max(0.0) * 5.0) as u64;
+        let (t, timed) = (last.1, last.1 + held);
+        let lost = bonus(t) - bonus(timed);
+        last.1 = timed;
+        let old_score = run.score;
+        run.score -= lost;
+        let mut said = line.replacen(
+            &format!(" {t:.1} seconds, par "),
+            &format!(" {timed:.1} seconds, par "),
+            1,
+        );
+        said = said.replacen(
+            &format!(". Score {old_score}."),
+            &format!(". Score {}.", run.score),
+            1,
+        );
+        if let Some(at) = said.find(" Bonus ") {
+            let digits = &said[at + 7..];
+            let end = digits
+                .find(|c: char| !c.is_ascii_digit())
+                .unwrap_or(digits.len());
+            if let Ok(was) = digits[..end].parse::<u64>() {
+                said.replace_range(at + 7..at + 7 + end, &(was - lost).to_string());
+            }
+        }
+        if let Some(rest) = run.last.strip_prefix(line.as_str()) {
+            run.last = format!("{said}{rest}");
+        }
+        *line = said;
+    }
+
     fn play_notes(&mut self, ctx: &mut Ctx<Parlor>) {
         let floors = self.run.level().floors;
-        for note in self.run.drain_notes() {
+        let mut notes = self.run.drain_notes();
+        self.count_wire_held(&mut notes);
+        for note in notes {
             match note {
                 // The screen plays the riser itself, in real time.
                 Note::At(key, _) if key == cues::GUST_WARNING => {}
@@ -596,6 +653,10 @@ impl State<Parlor> for RunScreen {
             self.run_clock.bypass();
         }
         let game_dt = self.run_clock.game_dt(ctx, dt);
+        let held = self.run_clock.take_held_time();
+        if matches!(self.run.phase, Phase::Walking | Phase::Falling { .. }) {
+            self.wire_held += held;
+        }
         self.start_riser(ctx);
         self.run.update(game_dt);
         if self.step_waiting && (self.run.phase != Phase::Walking || self.run.step_ready()) {

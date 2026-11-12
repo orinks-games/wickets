@@ -73,6 +73,9 @@ pub struct SortRun {
     /// In the lesson, the start key was pressed while the wishes were
     /// still being said: the belt starts once they have been.
     start_waiting: bool,
+    /// Game time held for speech while this shift's belt ran: it comes
+    /// off the time left for the clock bonus, so a hold never raises it.
+    shift_held: f64,
 }
 
 /// "1 second", "5 seconds" or "5.5 seconds".
@@ -118,6 +121,7 @@ impl SortRun {
             lesson: false,
             clock: RunClock::default(),
             start_waiting: false,
+            shift_held: 0.0,
         }
     }
 
@@ -378,7 +382,16 @@ impl SortRun {
                     r.item
                 ));
             }
-            SortEvent::Cleared { bonus } => self.bonus = bonus,
+            SortEvent::Cleared { bonus } => {
+                // The bonus for the time left, less the time held for
+                // speech, never below zero.
+                let held = std::mem::take(&mut self.shift_held);
+                let level = self.shift.spec.level as u64;
+                let left = (self.shift.clock - held).max(0.0);
+                let fair = ((left.floor() as u64) * 10 * level + 250 * level).min(bonus);
+                self.shift.score -= bonus - fair;
+                self.bonus = fair;
+            }
             SortEvent::TimeUp => {}
         }
     }
@@ -418,6 +431,7 @@ impl SortRun {
         self.shift = Self::make_shift(&self.mode, self.level, Rng::seeded(self.rng.next_u64()));
         self.phase = Phase::Briefing;
         self.start_waiting = false;
+        self.shift_held = 0.0;
         self.told_low = false;
         ctx.say_queued(format!(
             "Shift {done} complete. {} bonus points for the time left. Score {}.",
@@ -753,6 +767,10 @@ impl State<Parlor> for SortRun {
         // clock runs in the briefing too, so the lesson knows when its
         // prompt has been said.
         let game_dt = self.clock.game_dt(ctx, dt);
+        let held = self.clock.take_held_time();
+        if self.phase == Phase::Playing {
+            self.shift_held += held;
+        }
         if self.phase == Phase::Briefing && self.start_waiting && !self.clock.held() {
             self.start_waiting = false;
             self.start_belt(ctx);

@@ -479,3 +479,62 @@ fn a_step_pressed_while_the_wire_is_held_is_taken_once_it_runs() {
     }
     assert_eq!(pos(&s), 2, "the press was kept");
 }
+
+/// Crossing a still wire of 4 steps at quick, half a second between
+/// steps. With `spam`, a status line is spoken before every step, and the
+/// wire is held while it is. Gives the crossing's saved time, the score,
+/// the arrival line and the time held for speech.
+fn cross_still(spam: bool) -> (f64, u64, String, f64) {
+    let (mut h, s) = on_level(Mode::Single(1), still_level(4, None, None), Pace::Quick);
+    let mut held = 0.0;
+    for _ in 0..4 {
+        if spam {
+            for _ in 0..3 {
+                h.app.ctx.say("Step 1 of 4.");
+                tick(&mut h, &s, 0.1);
+                held += 0.1;
+            }
+        }
+        h.press(Key::Space);
+        quiet(&mut h);
+        tick(&mut h, &s, 0.5);
+    }
+    let run = s.borrow();
+    let &(_, time) = run.run().times.last().expect("crossed");
+    let line = h
+        .spoken()
+        .iter()
+        .find(|l| l.starts_with("Across."))
+        .cloned()
+        .unwrap_or_default();
+    (time, run.run().score, line, held)
+}
+
+#[test]
+fn info_keys_never_improve_a_crossing_time_or_its_par_bonus() {
+    let (time, score, line, _) = cross_still(false);
+    assert!(
+        (time - 1.5).abs() < 1e-6,
+        "with nothing said, as before: {time}"
+    );
+    assert!(
+        line.contains(&format!(" {time:.1} seconds, par ")),
+        "{line}"
+    );
+    let (spam_time, spam_score, spam_line, held) = cross_still(true);
+    assert!((spam_time - (time + held)).abs() < 1e-6, "{spam_time}");
+    // The par bonus is worked out from the time with the hold counted.
+    let par = still_level(4, None, None).par();
+    let bonus = |t: f64| ((par - t).max(0.0) * 5.0) as u64;
+    assert_eq!(spam_score, score - (bonus(time) - bonus(spam_time)));
+    assert!(spam_score < score);
+    // What is said is what is saved.
+    assert!(
+        spam_line.contains(&format!(" {spam_time:.1} seconds, par ")),
+        "{spam_line}"
+    );
+    assert!(
+        spam_line.ends_with(&format!("Score {spam_score}.")),
+        "{spam_line}"
+    );
+}

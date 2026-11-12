@@ -253,6 +253,9 @@ pub struct RunClock {
     hold: SpeechHold,
     bypass: bool,
     state: ClockState,
+    /// Game time the hold has kept back since it was last taken: what a
+    /// timed score adds back, so a hold never improves a time.
+    held_time: f64,
 }
 
 impl Default for RunClock {
@@ -269,6 +272,7 @@ impl RunClock {
             hold: SpeechHold::new(),
             bypass: false,
             state: ClockState::Running,
+            held_time: 0.0,
         }
     }
 
@@ -299,7 +303,9 @@ impl RunClock {
             self.hold.reset();
             dt.max(0.0)
         } else {
-            self.hold.step(busy, dt)
+            let flowed = self.hold.step(busy, dt);
+            self.held_time += (dt.max(0.0) - flowed).max(0.0) * self.pace.scale();
+            flowed
         };
         self.state = match (bypassed, self.hold.held()) {
             (true, _) => ClockState::Bypassed,
@@ -329,6 +335,19 @@ impl RunClock {
     /// Where the speech hold stands, as Hearken counts it.
     pub fn hold_state(&self) -> SpeechHoldState {
         self.hold.state()
+    }
+
+    /// Game time held for speech since the last [`RunClock::take_held_time`]
+    /// (or the clock's start): the time the run would have spent at its
+    /// pace had nothing been said. Bypassed frames are not held.
+    pub fn held_time(&self) -> f64 {
+        self.held_time
+    }
+
+    /// The held time so far, zeroed for the next scored part, such as a
+    /// floor or a crossing.
+    pub fn take_held_time(&mut self) -> f64 {
+        std::mem::take(&mut self.held_time)
     }
 
     /// Back to running, as after a pause.
@@ -411,6 +430,25 @@ mod tests {
         assert_eq!(clock.state(), ClockState::Bypassed);
         assert_eq!(clock.step(true, 0.1), 0.0, "the next frame holds again");
         assert_eq!(clock.state(), ClockState::Held);
+    }
+
+    #[test]
+    fn held_time_counts_what_the_hold_kept_back_at_the_pace() {
+        let mut clock = RunClock::new(Pace::Relaxed);
+        clock.step(false, 1.0);
+        assert_eq!(clock.held_time(), 0.0, "running is not held");
+        clock.step(true, 1.0);
+        clock.step(true, 0.5);
+        assert!(close(clock.held_time(), 0.75), "{}", clock.held_time());
+        clock.bypass();
+        clock.step(true, 1.0);
+        assert!(close(clock.held_time(), 0.75), "a bypass is not held");
+        clock.reset();
+        assert!(close(clock.held_time(), 0.75), "a reset keeps it");
+        assert!(close(clock.take_held_time(), 0.75));
+        assert_eq!(clock.held_time(), 0.0, "taken for the next part");
+        clock.step(true, 0.2);
+        assert!(close(clock.held_time(), 0.1));
     }
 
     #[test]

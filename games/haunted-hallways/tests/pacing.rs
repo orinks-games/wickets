@@ -435,3 +435,89 @@ fn a_step_while_wading_through_a_hold_is_kept_until_the_wade_ends() {
         "the step went ahead once the wade ended"
     );
 }
+
+/// Floor 1 at quick, solved through the screen's own keys with no ghost to
+/// come. With `spam`, a status line is spoken before every key, and the
+/// house is held while it is. Gives the saved floor time, the time bonus
+/// spoken, the haunt clock left and the time held for speech.
+fn clear_floor_one(spam: bool) -> (f64, u64, f64, f64) {
+    use crate::common::route;
+    use haunted_hallways::rules::{Puzzle, WADE_TIME};
+    let (mut h, s) = start(Mode::Floor(1), Pace::Quick);
+    s.borrow_mut().run.spec.ghost_gap = (1e9, 1e9);
+    let held = std::cell::Cell::new(0.0);
+    let mut press = |h: &mut Headless<Parlor>, key: Key| {
+        if spam {
+            for _ in 0..3 {
+                h.app.ctx.say("Courage 3 of 3.");
+                tick(h, &s, 0.1);
+                held.set(held.get() + 0.1);
+            }
+        }
+        h.press(key);
+        if s.borrow().run.wade > 0.0 {
+            quiet(h);
+            tick(h, &s, WADE_TIME + 0.05);
+        }
+    };
+    let walk_to =
+        |h: &mut Headless<Parlor>, press: &mut dyn FnMut(&mut Headless<Parlor>, Key), to| {
+            let path = route(&s.borrow().run, to);
+            for side in path {
+                press(h, key_for(side));
+            }
+        };
+    for _ in 0..3 {
+        let room = s.borrow().run.current().clone();
+        if let Puzzle::Offering(want) = room.puzzle {
+            while s.borrow().run.held() != Some(want) {
+                press(&mut h, Key::Tab);
+            }
+        }
+        for _ in 0..room.puzzle.wanted().len() {
+            let goal = s.borrow().run.goal();
+            walk_to(&mut h, &mut press, goal);
+            press(&mut h, Key::Space);
+        }
+        walk_to(&mut h, &mut press, room.inside(room.exit));
+        press(&mut h, key_for(room.exit.side));
+    }
+    let page = h
+        .spoken()
+        .iter()
+        .find(|l| l.starts_with("Floor 1 cleared in"))
+        .cloned()
+        .unwrap_or_else(|| panic!("{:?}", h.spoken()));
+    let bonus: u64 = page
+        .split("plus ")
+        .nth(1)
+        .and_then(|r| r.split('.').next())
+        .and_then(|n| n.parse().ok())
+        .unwrap_or_else(|| panic!("{page}"));
+    let p = Progress::load(&mut h.app.ctx);
+    let time = p.floor_time(1).expect("a floor time is saved");
+    // What is said is what is saved.
+    let said = format!("Floor 1 cleared in {}.", rules::time_short(time));
+    assert!(page.starts_with(&said), "{page}");
+    let left = s.borrow().run.haunt_left;
+    let courage = s.borrow().run.courage as u64;
+    let held = held.get();
+    // The bonus is for the haunt clock left less the time held.
+    assert_eq!(bonus, ((left - held).max(0.0) as u64) * 5 + courage * 100);
+    (time, bonus, left, held)
+}
+
+#[test]
+fn info_keys_never_improve_a_floor_time_or_its_time_bonus() {
+    let (time, bonus, left, _) = clear_floor_one(false);
+    let (spam_time, spam_bonus, spam_left, held) = clear_floor_one(true);
+    // The haunt clock held for every line: it stands where it did.
+    assert_eq!(spam_left, left);
+    assert!(held > 5.0, "{held}");
+    assert!(
+        (spam_time - (time + held)).abs() < 1e-6,
+        "{spam_time} is {time} and {held} held"
+    );
+    assert!(spam_time > 0.0, "a 0.0 time cannot come from a hold");
+    assert!(spam_bonus < bonus, "{spam_bonus} < {bonus}");
+}
