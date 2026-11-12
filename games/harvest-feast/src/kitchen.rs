@@ -789,6 +789,8 @@ impl State<Parlor> for Kitchen {
 
     /// Back from pause or help: the kitchen picks up where it was.
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
+        // A pause ends any hold, so the resume line gets a full one.
+        self.clock.reset();
         // Settings, from the pause menu, may have changed the call-outs.
         // Switching them on ends the by-ear bonus for this meal; switching
         // them off starts it only from the next one.
