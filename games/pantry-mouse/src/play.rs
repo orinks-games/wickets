@@ -579,6 +579,7 @@ impl Play {
                 Ev::Thawed => {
                     sound::play(ctx, sound::THAW);
                     if self.first("thaw") {
+                        self.clock.reset();
                         self.say(ctx, "You can move again.");
                     }
                 }

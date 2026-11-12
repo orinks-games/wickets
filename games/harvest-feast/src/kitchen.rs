@@ -496,9 +496,12 @@ impl Kitchen {
     /// Plays and speaks what happened.
     fn voice(&mut self, ctx: &mut Ctx<Parlor>, events: Vec<Event>) {
         let mut lines: Vec<String> = Vec::new();
+        // A call the player must act on gets a full hold of its own.
+        let mut key = false;
         for event in events {
             match event {
                 Event::Called(i) => {
+                    key = true;
                     let d = &self.meal.dishes[i];
                     ctx.audio.play(sound::RECIPE, Bus::UI);
                     let line = rules::called_line(d.kind);
@@ -507,6 +510,7 @@ impl Kitchen {
                 }
                 Event::Due(i) => {
                     if self.callouts {
+                        key = true;
                         let line = rules::due_line(&self.meal.dishes[i]);
                         self.last_prompt = line.clone();
                         lines.push(line);
@@ -514,6 +518,7 @@ impl Kitchen {
                 }
                 Event::Burning(i) => {
                     if self.callouts {
+                        key = true;
                         let line = rules::burning_line(&self.meal.dishes[i]);
                         self.last_prompt = line.clone();
                         lines.push(line);
@@ -622,6 +627,9 @@ impl Kitchen {
                     self.score.stop(ctx);
                 }
             }
+        }
+        if key {
+            self.clock.reset();
         }
         let mut lines = lines.into_iter();
         if let Some(first) = lines.next() {

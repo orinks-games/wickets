@@ -309,6 +309,8 @@ impl SortRun {
                     .play_at(sound::ARRIVE, sound::GIFT_POS, Bus::EFFECTS);
                 if !self.told_arrive {
                     self.told_arrive = true;
+                    // A line to act on: a full hold of its own.
+                    self.clock.reset();
                     let primary = Self::name(ctx, ParlorAction::Primary);
                     ctx.say_queued(format!("A gift on the belt. Shake it with {primary}."));
                 }
@@ -317,6 +319,7 @@ impl SortRun {
                 cue(ctx, sound::WARN);
                 if !self.told_warn {
                     self.told_warn = true;
+                    self.clock.reset();
                     ctx.say("Beeping: near the edge.");
                 }
             }

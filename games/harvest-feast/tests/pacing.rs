@@ -207,8 +207,10 @@ fn the_kitchen_holds_until_the_recipe_call_has_been_said() {
 
 #[test]
 fn a_hold_never_lasts_forever() {
+    // Each key line on the way (the recipe call, then "Hurry") gets a
+    // hold of its own, each bounded.
     let (mut h, k) = start(Mode::Course(1), Pace::Quick);
-    for _ in 0..400 {
+    for _ in 0..1000 {
         h.app.ctx.say("Still talking.");
         tick(&mut h, &k, 0.1);
     }
@@ -495,5 +497,25 @@ fn a_meal_that_scores_0_goes_on_no_board() {
             "{said}"
         );
         assert!(!said.contains("keepsake"), "{said}");
+    }
+}
+
+#[test]
+fn the_recipe_call_and_hurry_hold_once_the_budget_is_spent() {
+    // Round five: S for longer than the budget, then the recipe call and
+    // "Hurry" held the kitchen for no time at all.
+    use parlor_core::testkit::{held_for, quiet_until, spend_budget};
+    for (course, line) in [(1, "Hurry"), (1, "Bubbling up"), (3, "Recipe:")] {
+        let (mut h, k) = start(Mode::Course(course), Pace::Normal);
+        spend_budget(&mut h, |h| tick(h, &k, 0.1));
+        h.clear();
+        let said = |h: &Headless<Parlor>| h.spoken().iter().any(|l| l.contains(line));
+        assert!(
+            quiet_until(&mut h, 60, |h| tick(h, &k, 0.1), said),
+            "{line} never came: {:?}",
+            h.spoken()
+        );
+        let held = held_for(&mut h, 10, |h| tick(h, &k, 0.1), |_| elapsed(&k));
+        assert!(held >= 5.0, "{line} held only {held}");
     }
 }

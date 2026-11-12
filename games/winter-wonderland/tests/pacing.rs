@@ -225,9 +225,11 @@ fn a_change_of_plans_gets_a_full_hold_however_long_the_lines_before_it() {
 
 #[test]
 fn a_hold_never_lasts_forever() {
+    // The first gift's line and the first edge warning get holds of
+    // their own, each bounded.
     let (mut h, s) = start(Mode::Free, Pace::Quick);
     let before = clock(&s);
-    for _ in 0..300 {
+    for _ in 0..900 {
         h.app.ctx.say("Still talking.");
         tick(&mut h, &s, 0.1);
     }

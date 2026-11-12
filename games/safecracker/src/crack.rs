@@ -558,6 +558,7 @@ impl Crack {
                 Ev::GuardLeaving => {
                     self.start_steps(ctx, 1.0);
                     if self.run.spec.call_guard {
+                        self.clock.reset();
                         ctx.say("He walks away. Carry on.");
                     }
                 }

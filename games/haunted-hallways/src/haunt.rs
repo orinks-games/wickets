@@ -977,6 +977,7 @@ impl Haunt {
                             g.from_name()
                         ));
                     } else if self.run.spec.call_freeze {
+                        self.clock.reset();
                         ctx.say(format!(
                             "{} comes from the {}.",
                             sentence_start(g.kind.name()),
