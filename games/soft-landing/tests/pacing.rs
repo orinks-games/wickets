@@ -448,3 +448,34 @@ fn settings_has_units_then_pace() {
     let rows = <soft_landing::SoftLanding as parlor_core::menus::TitleGame>::settings(&h.app.ctx);
     assert_eq!(rows.len(), 2);
 }
+
+#[test]
+fn status_from_the_first_frame_holds_only_for_the_budget() {
+    // The status key every second from the first frame, the voice never
+    // quiet: the danger moves once the information budget is spent.
+    let (mut h, s) = flying(Mode::Moon(1), Pace::Normal);
+    let before = time(&s);
+    let t = parlor_core::testkit::status_spam_until(
+        &mut h,
+        60,
+        |h| tick(h, &s, 0.1),
+        |_| time(&s) > before,
+    );
+    let t = t.expect("the danger never moved");
+    assert!(t <= parlor_core::testkit::SPAM_BOUND_S, "{t}");
+}
+
+#[test]
+fn an_old_saved_0_is_no_best() {
+    use parlor_core::ScoreResult;
+    use soft_landing::rules::{survey_moon, Outcome};
+    let mut h = headless();
+    let ctx = &mut h.app.ctx;
+    Records::record(ctx, ID, &progress::board(1), 0);
+    let all = soft_landing::records_pages(ctx).join(" ");
+    assert!(!all.contains("best score 0"), "{all}");
+    let mut flight = Flight::new(survey_moon(1));
+    flight.outcome = Some(Outcome::Landed { speed: 1.0 });
+    let saved = progress::save_flight(ctx, 1, &flight, Pace::Normal);
+    assert_eq!(saved.score, Some(ScoreResult::First));
+}

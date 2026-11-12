@@ -92,18 +92,19 @@ pub fn save_run(ctx: &mut Ctx<Parlor>, run: &Run, pace: Pace) -> Vec<String> {
     }
     let board = pace.board(&run.mode.board());
     let relaxed = if pace.separate() { "relaxed " } else { "" };
-    match Records::record(ctx, ID, &board, run.score) {
-        ScoreResult::First => lines.push(format!(
+    match parlor_core::pace::record(ctx, ID, &board, run.score) {
+        None => lines.push("Score 0, so nothing goes on the board.".to_string()),
+        Some(ScoreResult::First) => lines.push(format!(
             "First {relaxed}{} score saved: {}.",
             run.mode.name(),
             run.score
         )),
-        ScoreResult::NewBest { previous } => lines.push(format!(
+        Some(ScoreResult::NewBest { previous }) => lines.push(format!(
             "New {relaxed}best {} score: {}, beating {previous}.",
             run.mode.name(),
             run.score
         )),
-        ScoreResult::Short { best } => lines.push(format!(
+        Some(ScoreResult::Short { best }) => lines.push(format!(
             "Your {relaxed}best {} score stays {best}.",
             run.mode.name()
         )),

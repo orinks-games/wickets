@@ -1367,7 +1367,7 @@ impl Haunt {
             Some(ScoreResult::Short { best }) => {
                 format!("Score {}. Your {} is {best}.", run.score, pace.best_word())
             }
-            None => "No score this time.".to_string(),
+            None => "Score 0, so nothing goes on the board.".to_string(),
         };
         let score = challenge_line.unwrap_or(score);
         let curses = match run.curses.count() {

@@ -150,7 +150,7 @@ impl TitleGame for Winter {
             .map(|n| best_words(ctx, &progress::stack_board(n)))
             .collect();
         let today = parlor_core::challenges::today(ctx);
-        let muddled_best = parlor_core::Records::best(ctx, ID, events::MUDDLED_BOARD);
+        let muddled_best = parlor_core::pace::best(ctx, ID, events::MUDDLED_BOARD);
         let muddled_row = if events::muddled(today) {
             MenuItem::new(
                 events::MUDDLED_NAME,

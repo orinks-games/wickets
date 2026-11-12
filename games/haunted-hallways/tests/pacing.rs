@@ -521,3 +521,19 @@ fn info_keys_never_improve_a_floor_time_or_its_time_bonus() {
     assert!(spam_time > 0.0, "a 0.0 time cannot come from a hold");
     assert!(spam_bonus < bonus, "{spam_bonus} < {bonus}");
 }
+
+#[test]
+fn status_from_the_first_frame_holds_only_for_the_budget() {
+    // The status key every second from the first frame, the voice never
+    // quiet: the danger moves once the information budget is spent.
+    let (mut h, s) = start(Mode::Floor(1), Pace::Normal);
+    let before = left(&s);
+    let t = parlor_core::testkit::status_spam_until(
+        &mut h,
+        60,
+        |h| tick(h, &s, 0.1),
+        |_| left(&s) < before,
+    );
+    let t = t.expect("the danger never moved");
+    assert!(t <= parlor_core::testkit::SPAM_BOUND_S, "{t}");
+}

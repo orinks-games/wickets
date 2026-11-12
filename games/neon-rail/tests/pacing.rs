@@ -395,3 +395,39 @@ fn the_rail_gun_fired_while_the_rail_is_held_fires_once_it_has_cooled() {
     }
     assert_eq!(shots(&h), 1, "the press was kept and fired");
 }
+
+#[test]
+fn status_from_the_first_frame_holds_only_for_the_budget() {
+    // The status key every second from the first frame, the voice never
+    // quiet: the danger moves once the information budget is spent.
+    let (mut h, s) = start(Mode::Challenge, Pace::Normal);
+    let before = t(&s);
+    let t = parlor_core::testkit::status_spam_until(
+        &mut h,
+        60,
+        |h| tick(h, &s, 0.1),
+        |_| t(&s) > before,
+    );
+    let t = t.expect("the danger never moved");
+    assert!(t <= parlor_core::testkit::SPAM_BOUND_S, "{t}");
+}
+
+#[test]
+fn a_run_that_scores_0_goes_on_no_board() {
+    use neon_rail::screens::no_board_text;
+    let mut h = Headless::new(Default::default(), Base);
+    let ctx = &mut h.app.ctx;
+    // An old save that kept a 0.
+    Records::record(ctx, ID, Mode::BlackSky.board(), 0);
+    let all = neon_rail::records_pages(ctx).join(" ");
+    assert!(all.contains("Black Sky Run: no score yet."), "{all}");
+    assert_eq!(
+        no_board_text(Mode::BlackSky, Pace::Normal),
+        "Score 0, so nothing goes on the Black Sky Run board."
+    );
+    assert_eq!(
+        pace::record(ctx, ID, Mode::BlackSky.board(), 0),
+        None,
+        "a 0 is not recorded"
+    );
+}

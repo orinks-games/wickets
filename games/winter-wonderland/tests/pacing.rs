@@ -111,8 +111,17 @@ fn home_key(s: &Screen) -> Option<Key> {
     })
 }
 
-/// Quiet frames until the shift clock runs out and the results are up.
+/// Sorts the first gift, so the run scores, then quiet frames until the
+/// shift clock runs out and the results are up.
 fn run_out(h: &mut Headless<Parlor>, s: &Screen) {
+    for _ in 0..2000 {
+        if let Some(key) = home_key(s) {
+            h.press(key);
+            break;
+        }
+        quiet(h);
+        tick(h, s, 0.1);
+    }
     for _ in 0..2000 {
         if h.app.top_name() != "winter_wonderland_observed" {
             return;
@@ -478,4 +487,39 @@ fn info_keys_never_raise_the_clock_bonus() {
         "{bonus} > {spam_bonus} for {held} held"
     );
     assert_eq!(spam_score, score - lost);
+}
+
+#[test]
+fn status_from_the_first_frame_holds_only_for_the_budget() {
+    // The status key every second from the first frame, the voice never
+    // quiet: the danger moves once the information budget is spent.
+    let (mut h, s) = start(Mode::Free, Pace::Normal);
+    let before = clock(&s);
+    let t = parlor_core::testkit::status_spam_until(
+        &mut h,
+        60,
+        |h| tick(h, &s, 0.1),
+        |_| clock(&s) < before,
+    );
+    let t = t.expect("the danger never moved");
+    assert!(t <= parlor_core::testkit::SPAM_BOUND_S, "{t}");
+}
+
+#[test]
+fn a_run_that_scores_0_goes_on_no_board() {
+    use winter_wonderland::progress::{best_text, record_at};
+    let mut h = Headless::new(Default::default(), Base);
+    let ctx = &mut h.app.ctx;
+    // An old save that kept a 0.
+    Records::record(ctx, ID, GIFT_BOARD, 0);
+    assert_eq!(best_text(ctx, GIFT_BOARD), "Not played yet");
+    assert_eq!(
+        record_at(ctx, GIFT_BOARD, Pace::Normal, 0),
+        "Nothing goes on the board."
+    );
+    assert_eq!(
+        record_at(ctx, GIFT_BOARD, Pace::Normal, 120),
+        "Your first score here is saved."
+    );
+    assert_eq!(best_text(ctx, GIFT_BOARD), "Best 120");
 }

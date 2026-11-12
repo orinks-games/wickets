@@ -429,3 +429,71 @@ fn records_leave_out_a_board_with_no_score() {
     assert!(all.contains(": 1 star, relaxed best 700."), "{all}");
     assert!(!all.contains("best 0"), "{all}");
 }
+
+#[test]
+fn status_from_the_first_frame_holds_only_for_the_budget() {
+    // The status key every second from the first frame, the voice never
+    // quiet: the danger moves once the information budget is spent.
+    let (mut h, k) = start(Mode::Course(1), Pace::Normal);
+    let before = elapsed(&k);
+    let t = parlor_core::testkit::status_spam_until(
+        &mut h,
+        60,
+        |h| tick(h, &k, 0.1),
+        |_| elapsed(&k) > before,
+    );
+    let t = t.expect("the danger never moved");
+    assert!(t <= parlor_core::testkit::SPAM_BOUND_S, "{t}");
+}
+
+#[test]
+fn a_meal_that_scores_0_goes_on_no_board() {
+    use harvest_feast::results::score_paced;
+    use harvest_feast::rules::Outcome;
+    let mut h = Headless::new(Default::default(), Base);
+    let board = progress::paced_course_board(1, Pace::Normal);
+    // An old save that kept a 0.
+    Records::record(&mut h.app.ctx, ID, &board, 0);
+    let zero = Outcome {
+        qualities: Vec::new(),
+        average: 0,
+        stars: 0,
+        fumbles: 0,
+        ruined: 0,
+        seconds: 60.0,
+    };
+    let served = score_paced(
+        Mode::Course(1),
+        zero.clone(),
+        false,
+        0,
+        Pace::Normal,
+        &mut h.app.ctx,
+    );
+    h.app.ctx.push(served);
+    h.frame(0.0);
+    h.press(Key::R);
+    let said = h.spoken().join(" ");
+    assert!(
+        said.contains("0 points, so nothing goes on the board."),
+        "{said}"
+    );
+    let all = harvest_feast::records_pages(&mut h.app.ctx).join(" ");
+    assert!(!all.contains("best 0"), "{all}");
+    for mode in [
+        Mode::Helpings { round: 1, total: 0 },
+        Mode::Thanksgiving { year: 2026 },
+    ] {
+        h.clear();
+        let served = score_paced(mode, zero.clone(), false, 0, Pace::Normal, &mut h.app.ctx);
+        h.app.ctx.push(served);
+        h.frame(0.0);
+        h.press(Key::R);
+        let said = h.spoken().join(" ");
+        assert!(
+            said.contains("0 points, so nothing goes on the board."),
+            "{said}"
+        );
+        assert!(!said.contains("keepsake"), "{said}");
+    }
+}

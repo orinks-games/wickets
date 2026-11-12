@@ -22,7 +22,7 @@ use hearken::menu::{Menu, MenuCore, MenuItem};
 use hearken::text::{end_sentence, sentence_start};
 use hearken::Ctx;
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
-use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period};
 
 pub use challenge::{ChallengeHost, ChallengesMenu, Landings, CHALLENGES_NAME};
 pub use play::{Descent, Mode};
@@ -85,11 +85,11 @@ pub fn moon_summary(moon: &Moon) -> String {
 /// " Your best is 900. Your relaxed best is 1200." for an event row's
 /// help, leaving out a board with no score, or nothing.
 fn event_best(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    let mut text = match Records::best(ctx, ID, board) {
+    let mut text = match pace::best(ctx, ID, board) {
         Some(b) => format!(" Your best is {b}."),
         None => String::new(),
     };
-    if let Some(r) = Records::best(ctx, ID, &Pace::Relaxed.board(board)) {
+    if let Some(r) = pace::best(ctx, ID, &Pace::Relaxed.board(board)) {
         text.push_str(&format!(" Your relaxed best is {r}."));
     }
     text
@@ -98,7 +98,7 @@ fn event_best(ctx: &mut Ctx<Parlor>, board: &str) -> String {
 /// Moon `n`'s bests as `word` and the score, normal and quick then
 /// relaxed: "best score 900, relaxed best score 1200".
 fn best_words(ctx: &mut Ctx<Parlor>, n: u32, word: &str) -> Option<String> {
-    pace::bests(ctx, ID, &progress::board(n), word)
+    pace::scored_bests(ctx, ID, &progress::board(n), word)
 }
 
 /// Records: moons landed, bests, tallies, then the challenges.

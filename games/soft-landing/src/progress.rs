@@ -146,14 +146,18 @@ pub fn save_flight(ctx: &mut Ctx<Parlor>, n: u32, flight: &Flight, pace: Pace) -
         }
     }
     p.store(ctx);
-    let score = outcome.landed().then(|| {
-        Records::record(
-            ctx,
-            ID,
-            &pace.board(&board(n)),
-            flight.score(outcome) as u64,
-        )
-    });
+    // A score of 0 goes on no board.
+    let score = outcome
+        .landed()
+        .then(|| {
+            parlor_core::pace::record(
+                ctx,
+                ID,
+                &pace.board(&board(n)),
+                flight.score(outcome) as u64,
+            )
+        })
+        .flatten();
     Saved {
         score,
         opened,
@@ -175,7 +179,10 @@ pub fn save_event(ctx: &mut Ctx<Parlor>, board: &str, flight: &Flight, pace: Pac
     p.store(ctx);
     let score = outcome
         .landed()
-        .then(|| Records::record(ctx, ID, &pace.board(board), flight.score(outcome) as u64));
+        .then(|| {
+            parlor_core::pace::record(ctx, ID, &pace.board(board), flight.score(outcome) as u64)
+        })
+        .flatten();
     Saved {
         score,
         opened: None,

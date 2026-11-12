@@ -462,3 +462,21 @@ fn a_run_of_0_points_goes_on_no_board_at_any_pace() {
         assert!(!pages.contains("best 0"), "{pages}");
     }
 }
+
+#[test]
+fn status_from_the_first_frame_holds_only_for_the_budget() {
+    // The status key every second from the first frame, the voice never
+    // quiet: the danger moves once the information budget is spent.
+    let (mut h, s) = open(Mode::Pantry, Pace::Normal);
+    // The cats sleep until the first step, by design: that is frame one.
+    first_step(&mut h, &s);
+    let before = cats(&s);
+    let t = parlor_core::testkit::status_spam_until(
+        &mut h,
+        60,
+        |h| tick(h, &s, 0.1),
+        |_| cats(&s) != before,
+    );
+    let t = t.expect("the danger never moved");
+    assert!(t <= parlor_core::testkit::SPAM_BOUND_S, "{t}");
+}

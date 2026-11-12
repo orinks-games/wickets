@@ -331,3 +331,19 @@ fn records_the_title_and_event_rows_name_both_boards() {
         "{rows:?}"
     );
 }
+
+#[test]
+fn status_from_the_first_frame_holds_only_for_the_budget() {
+    // The status key every second from the first frame, the voice never
+    // quiet: the danger moves once the information budget is spent.
+    let (mut h, s) = open(Mode::Beach(Place::Cove), Pace::Normal);
+    let before = elapsed(&s);
+    let t = parlor_core::testkit::status_spam_until(
+        &mut h,
+        60,
+        |h| tick(h, &s, 0.1),
+        |_| elapsed(&s) > before,
+    );
+    let t = t.expect("the danger never moved");
+    assert!(t <= parlor_core::testkit::SPAM_BOUND_S, "{t}");
+}

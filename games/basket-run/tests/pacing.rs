@@ -475,3 +475,19 @@ fn an_idle_relaxed_run_scores_0_and_saves_no_relaxed_best() {
         "Your first relaxed score here is saved."
     );
 }
+
+#[test]
+fn status_from_the_first_frame_holds_only_for_the_budget() {
+    // The status key every second from the first frame, the voice never
+    // quiet: the danger moves once the information budget is spent.
+    let (mut h, s) = playing(Mode::Meadow, Pace::Normal);
+    let before = time_left(&s);
+    let t = parlor_core::testkit::status_spam_until(
+        &mut h,
+        60,
+        |h| tick(h, &s, 0.1),
+        |_| time_left(&s) < before,
+    );
+    let t = t.expect("the danger never moved");
+    assert!(t <= parlor_core::testkit::SPAM_BOUND_S, "{t}");
+}

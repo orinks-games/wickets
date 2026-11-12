@@ -75,7 +75,7 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
 /// Records: the night shift's bests, the tallies, then the challenges.
 pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let p = Progress::load(ctx);
-    let best = pace::bests(ctx, ID, progress::SHIFT_BOARD, "best score")
+    let best = pace::scored_bests(ctx, ID, progress::SHIFT_BOARD, "best score")
         .unwrap_or_else(|| "no score yet".to_string());
     let run = pace::both(
         "longest run",
@@ -98,7 +98,7 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         n => format!("{n} night shifts"),
     };
     let mut extra = String::new();
-    if let Some(line) = pace::bests(ctx, ID, events::GALA_BOARD, "best score") {
+    if let Some(line) = pace::scored_bests(ctx, ID, events::GALA_BOARD, "best score") {
         extra.push_str(&format!(" {}: {line}.", events::GALA_NAME));
     }
     match p.thirteenth_trains {
@@ -165,7 +165,7 @@ impl TitleGame for SignalBox {
             None => format!("{}, night shift", labels::PLAY),
             Some(runs) => format!("{}, night shift, {runs}", labels::PLAY),
         };
-        let best = match pace::bests(ctx, ID, progress::SHIFT_BOARD, "best score") {
+        let best = match pace::scored_bests(ctx, ID, progress::SHIFT_BOARD, "best score") {
             Some(b) => format!(" {}.", sentence_start(&b)),
             None => String::new(),
         };
@@ -182,7 +182,7 @@ impl TitleGame for SignalBox {
             "Calls until a train derails, the window shrinking every {SHRINK_EVERY} trains.{best}{thirteenth}"
         ))];
         if events::GALA.is_open(today) {
-            let best = match pace::bests(ctx, ID, events::GALA_BOARD, "steam gala best") {
+            let best = match pace::scored_bests(ctx, ID, events::GALA_BOARD, "steam gala best") {
                 Some(b) => format!(" {}.", sentence_start(&b)),
                 None => String::new(),
             };

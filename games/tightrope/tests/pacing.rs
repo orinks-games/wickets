@@ -538,3 +538,43 @@ fn info_keys_never_improve_a_crossing_time_or_its_par_bonus() {
         "{spam_line}"
     );
 }
+
+#[test]
+fn status_from_the_first_frame_holds_only_for_the_budget() {
+    // The status key every second from the first frame, the voice never
+    // quiet: the danger moves once the information budget is spent.
+    let (mut h, s) = on_level(Mode::Single(2), still_level(10, None, None), Pace::Normal);
+    let before = time(&s);
+    let t = parlor_core::testkit::status_spam_until(
+        &mut h,
+        60,
+        |h| tick(h, &s, 0.1),
+        |_| time(&s) > before,
+    );
+    let t = t.expect("the danger never moved");
+    assert!(t <= parlor_core::testkit::SPAM_BOUND_S, "{t}");
+}
+
+#[test]
+fn a_run_that_scores_0_goes_on_no_board() {
+    let mut h = headless();
+    let ctx = &mut h.app.ctx;
+    // An old save that kept a 0.
+    Records::record(ctx, ID, "skyline", 0);
+    let all = tightrope::records_pages(ctx).join(" ");
+    assert!(all.contains("Skyline run: no score yet"), "{all}");
+    let mut run = Run::of(Mode::Skyline, Rng::seeded(1));
+    let lines = progress::save_run(ctx, &run, Pace::Normal);
+    assert!(
+        lines.contains(&"Score 0, so nothing goes on the board.".to_string()),
+        "{lines:?}"
+    );
+    run.score = 40;
+    let lines = progress::save_run(ctx, &run, Pace::Normal);
+    assert!(
+        lines
+            .iter()
+            .any(|l| l.starts_with("First Skyline run score saved")),
+        "{lines:?}"
+    );
+}

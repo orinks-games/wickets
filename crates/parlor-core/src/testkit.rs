@@ -4,6 +4,8 @@
 //!   top and fails if any of them is met with silence.
 //! - [`same_at_frame_rates`] runs a simulation at 30, 60 and 144 frames a
 //!   second and fails if the results differ.
+//! - [`status_spam_until`] presses the status key every second from the
+//!   first frame and says when the run's danger first moved.
 //!
 //! They sit in the library, not behind a feature, because they need only
 //! `hearken::Headless`, which Hearken always builds. A game's tests call
@@ -22,6 +24,38 @@ pub const FRAME_RATES: [f64; 3] = [1.0 / 30.0, 1.0 / 60.0, 1.0 / 144.0];
 /// One frame at 60 frames a second, run after each press so a game that
 /// answers in `update` is heard too.
 const AFTER_PRESS: f64 = 1.0 / 60.0;
+
+/// The status key pressed once a second from the first frame, the voice
+/// never quiet, as a player who keeps asking would: steps the run with
+/// `frame` in tenths of a second for at most `seconds`, and gives the
+/// seconds until `advanced` first reports the danger moved, or `None`.
+///
+/// A run's danger must move once the information budget
+/// ([`crate::pace::INFO_HOLD_BUDGET_S`]) is spent, so a game's test asserts
+/// the answer is a little over the budget at most. A start that waits on
+/// speech rather than on the clock shows up as `None`.
+pub fn status_spam_until(
+    h: &mut Headless<Parlor>,
+    seconds: u32,
+    mut frame: impl FnMut(&mut Headless<Parlor>),
+    mut advanced: impl FnMut(&Headless<Parlor>) -> bool,
+) -> Option<f64> {
+    for tenth in 0..seconds * 10 {
+        if tenth % 10 == 0 {
+            h.press(hearken::Key::S);
+        }
+        frame(h);
+        if advanced(h) {
+            return Some(f64::from(tenth + 1) / 10.0);
+        }
+    }
+    None
+}
+
+/// The most a status spam from the first frame may keep a run's danger
+/// still: the information budget, and a little for the key lines a run
+/// opens with.
+pub const SPAM_BOUND_S: f64 = crate::pace::INFO_HOLD_BUDGET_S + 5.0;
 
 /// Presses F1 and, when the help opens as pages over play, reads them all
 /// with Enter until play is back on top. Everything said stays in

@@ -141,22 +141,26 @@ pub fn relaxed_word(pace: Pace) -> &'static str {
 }
 
 /// Records `score` from a run at `pace` on `base`'s board for that pace,
-/// and says how it went.
+/// and says how it went. A score of 0 goes on no board.
 pub fn record_at(ctx: &mut Ctx<Parlor>, base: &str, pace: Pace, score: u64) -> String {
     let r = relaxed_word(pace);
-    match Records::record(ctx, ID, &pace.board(base), score) {
-        ScoreResult::First => format!("Your first {r}score here is saved."),
-        ScoreResult::NewBest { previous } => {
+    match parlor_core::pace::record(ctx, ID, &pace.board(base), score) {
+        None => NO_BOARD.to_string(),
+        Some(ScoreResult::First) => format!("Your first {r}score here is saved."),
+        Some(ScoreResult::NewBest { previous }) => {
             format!("A new {r}best. The old {r}best was {previous}.")
         }
-        ScoreResult::Short { best } => format!("Your {r}best is {best}."),
+        Some(ScoreResult::Short { best }) => format!("Your {r}best is {best}."),
     }
 }
+
+/// What a score of 0 gets, after the score itself.
+pub const NO_BOARD: &str = "Nothing goes on the board.";
 
 /// The bests on `board` and its relaxed board, for menu labels: "Best
 /// 420, relaxed best 380", either alone, or "Not played yet".
 pub fn best_text(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    match pace::bests(ctx, ID, board, "best") {
+    match pace::scored_bests(ctx, ID, board, "best") {
         Some(best) => sentence_start(&best),
         None => "Not played yet".to_string(),
     }

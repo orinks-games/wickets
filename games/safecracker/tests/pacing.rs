@@ -434,3 +434,21 @@ fn info_keys_never_improve_a_time_or_its_bonus() {
     assert!(close(spam_time, 2.0 + held), "{spam_time}");
     assert_eq!(spam_score, score - (held * 3.0).round() as u64);
 }
+
+#[test]
+fn status_from_the_first_frame_holds_only_for_the_budget() {
+    // The status key every second from the first frame, the voice never
+    // quiet: the danger moves once the information budget is spent.
+    let (mut h, s) = open(Mode::Safe(1), Pace::Normal);
+    // The clock starts with the first turn, by design.
+    first_turn(&mut h);
+    let before = time(&s);
+    let t = parlor_core::testkit::status_spam_until(
+        &mut h,
+        60,
+        |h| tick(h, &s, 0.1),
+        |_| time(&s) > before,
+    );
+    let t = t.expect("the danger never moved");
+    assert!(t <= parlor_core::testkit::SPAM_BOUND_S, "{t}");
+}

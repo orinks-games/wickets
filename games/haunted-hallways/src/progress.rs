@@ -235,7 +235,11 @@ pub fn save_end(ctx: &mut Ctx<Parlor>, run: &Run, pace: Pace) -> EndSaved {
     let deepest = progress.run_done(run);
     progress.store(ctx);
     // A challenge's result goes to its own record, not the best boards.
-    let scored = run.score > 0 && !matches!(run.mode, Mode::Challenge(_));
-    let score = scored.then(|| Records::record(ctx, ID, &pace.board(&run.mode.board()), run.score));
+    // A score of 0 goes on no board.
+    let score = if matches!(run.mode, Mode::Challenge(_)) {
+        None
+    } else {
+        parlor_core::pace::record(ctx, ID, &pace.board(&run.mode.board()), run.score)
+    };
     EndSaved { score, deepest }
 }

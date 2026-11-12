@@ -9,8 +9,8 @@ use hearken::{Bus, Ctx, InputEvent, Key, Sound, State, Vec3};
 use parlor_core::menus::{self as shared, labels, Back, Leave};
 use parlor_core::score::{DANGER, HURRY};
 use parlor_core::{
-    Challenge, Challenges, Date, Mood, Pace, Pages, Parlor, ParlorAction, Records, Rng, RunClock,
-    Score, ScoreResult,
+    Challenge, Challenges, Date, Mood, Pace, Pages, Parlor, ParlorAction, Rng, RunClock, Score,
+    ScoreResult,
 };
 
 use crate::cues;
@@ -477,7 +477,8 @@ impl RunScreen {
         let board = if run.mode == Mode::Tutorial || challenge.is_some() {
             None
         } else {
-            Some(Records::record(
+            // A score of 0 goes on no board.
+            Some(parlor_core::pace::record(
                 ctx,
                 ID,
                 &pace.board(run.mode.board()),
@@ -500,13 +501,15 @@ impl RunScreen {
         let mut pages = report.pages();
         let headline = if won { "Run complete." } else { "Run failed." };
         pages[0] = format!("{headline} {}", pages[0]);
-        if let Some(result) = board {
-            pages.push(board_text_at(
+        match board {
+            Some(Some(result)) => pages.push(board_text_at(
                 run.mode,
                 result,
                 run.score.max(0) as u64,
                 pace,
-            ));
+            )),
+            Some(None) => pages.push(no_board_text(run.mode, pace)),
+            None => {}
         }
         if let Some(ch) = challenge {
             let score = run.score.max(0) as u64;
@@ -569,6 +572,12 @@ pub fn challenge_result_at(result: ScoreResult, pace: Pace) -> String {
 /// What the best-score board said about this run.
 pub fn board_text(mode: Mode, result: ScoreResult, score: u64) -> String {
     board_text_at(mode, result, score, Pace::Normal)
+}
+
+/// A run that scored 0, which goes on no board.
+pub fn no_board_text(mode: Mode, pace: Pace) -> String {
+    let board = format!("{}{}", relaxed_word(pace), mode.name());
+    format!("Score 0, so nothing goes on the {board} board.")
 }
 
 /// What the best-score board for `pace` said about this run: relaxed runs

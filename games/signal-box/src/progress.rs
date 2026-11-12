@@ -47,7 +47,8 @@ pub struct Progress {
 /// What a finished night shift changed.
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Saved {
-    pub score: ScoreResult,
+    /// `None` for a score of 0, which goes on no board.
+    pub score: Option<ScoreResult>,
     /// The best run before this one, when this one beat it.
     pub run_record: Option<u32>,
     /// This run reached a shorter window than ever before.
@@ -112,7 +113,7 @@ pub fn save_shift_at(ctx: &mut Ctx<Parlor>, shift: &Shift, pace: Pace) -> Saved 
     p.shifts += 1;
     p.trains += shift.passed;
     p.store(ctx);
-    let score = Records::record(ctx, ID, &pace.board(SHIFT_BOARD), shift.score as u64);
+    let score = parlor_core::pace::record(ctx, ID, &pace.board(SHIFT_BOARD), shift.score as u64);
     Saved {
         score,
         run_record,
@@ -123,16 +124,17 @@ pub fn save_shift_at(ctx: &mut Ctx<Parlor>, shift: &Shift, pace: Pace) -> Saved 
 
 /// Saves a finished steam gala shift: its score on its own board, and its
 /// trains in the tally. The night shift's records stay as they are.
-pub fn save_gala(ctx: &mut Ctx<Parlor>, shift: &Shift) -> ScoreResult {
+pub fn save_gala(ctx: &mut Ctx<Parlor>, shift: &Shift) -> Option<ScoreResult> {
     save_gala_at(ctx, shift, Pace::Normal)
 }
 
-/// Saves a finished steam gala shift played at `pace`.
-pub fn save_gala_at(ctx: &mut Ctx<Parlor>, shift: &Shift, pace: Pace) -> ScoreResult {
+/// Saves a finished steam gala shift played at `pace`. A score of 0 goes
+/// on no board.
+pub fn save_gala_at(ctx: &mut Ctx<Parlor>, shift: &Shift, pace: Pace) -> Option<ScoreResult> {
     let mut p = Progress::load(ctx);
     p.trains += shift.passed;
     p.store(ctx);
-    Records::record(
+    parlor_core::pace::record(
         ctx,
         ID,
         &pace.board(crate::events::GALA_BOARD),

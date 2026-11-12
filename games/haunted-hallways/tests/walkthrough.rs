@@ -560,7 +560,7 @@ fn the_clock_running_out_ends_the_haunt() {
         &t.h,
         "The haunt clock strikes zero on floor 1, in the foyer."
     ));
-    assert!(spoke(&t.h, "No score this time."));
+    assert!(spoke(&t.h, "Score 0, so nothing goes on the board."));
     assert_eq!(t.h.app.ctx.audio.music(), Some(sound::LOSE));
     t.read_until("haunted_hallways");
 }

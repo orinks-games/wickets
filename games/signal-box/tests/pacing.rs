@@ -414,3 +414,48 @@ fn settings_has_the_pace_row() {
     let rows = <signal_box::SignalBox as parlor_core::menus::TitleGame>::settings(&h.app.ctx);
     assert_eq!(rows.len(), 1);
 }
+
+#[test]
+fn status_from_the_first_frame_holds_only_for_the_budget() {
+    // The status key every second from the first frame, the voice never
+    // quiet: the danger moves once the information budget is spent.
+    let (mut h, s) = start(Mode::Practice, Pace::Normal);
+    let before = time(&s);
+    let t = parlor_core::testkit::status_spam_until(
+        &mut h,
+        60,
+        |h| tick(h, &s, 0.1),
+        |_| time(&s) > before,
+    );
+    let t = t.expect("the danger never moved");
+    assert!(t <= parlor_core::testkit::SPAM_BOUND_S, "{t}");
+}
+
+#[test]
+fn a_shift_that_scores_0_goes_on_no_board() {
+    use signal_box::play::{gala_pages, result_pages};
+    use signal_box::progress::{save_gala_at, save_shift_at};
+    let mut h = headless();
+    let ctx = &mut h.app.ctx;
+    // An old save that kept a 0.
+    Records::record(ctx, ID, SHIFT_BOARD, 0);
+    let mut shift = rules::Shift::practice(1);
+    let saved = save_shift_at(ctx, &shift, Pace::Normal);
+    assert_eq!(saved.score, None);
+    let pages = result_pages(&shift, &saved, Pace::Normal);
+    assert_eq!(pages[0], "0 points, so nothing goes on the board.");
+    let all = signal_box::records_pages(ctx).join(" ");
+    assert!(all.contains("Night shift: no score yet"), "{all}");
+    assert!(!all.contains("best score 0"), "{all}");
+    let gala = gala_pages(
+        &shift,
+        save_gala_at(ctx, &shift, Pace::Normal),
+        Pace::Normal,
+    );
+    assert_eq!(gala[0], "0 points, so nothing goes on the board.");
+    // The first real score is a first, not a best beating 0.
+    shift.score = 1;
+    let saved = save_shift_at(ctx, &shift, Pace::Normal);
+    let pages = result_pages(&shift, &saved, Pace::Normal);
+    assert_eq!(pages[0], "1 point, your first score.");
+}

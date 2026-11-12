@@ -722,6 +722,7 @@ pub fn result_pages(flight: &Flight, saved: &Saved, pace: Pace) -> Vec<String> {
                 Some(ScoreResult::Short { best: b }) => {
                     format!("{points} points. Your {best} is {b}.")
                 }
+                None if points == 0 => format!("{points} points, so nothing goes on the board."),
                 None => format!("{points} points."),
             };
             let soft = match (saved.softest, pace.separate()) {
@@ -762,7 +763,8 @@ pub fn result_pages(flight: &Flight, saved: &Saved, pace: Pace) -> Vec<String> {
     }
     if saved.survey_done {
         pages.push(
-            "You have landed on every survey moon. Choose Moon select to fly any of them again.".to_string(),
+            "You have landed on every survey moon. Choose Moon select to fly any of them again."
+                .to_string(),
         );
     }
     pages

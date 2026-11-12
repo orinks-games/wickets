@@ -90,7 +90,7 @@ pub fn title_with_seed(seed: u64) -> Title {
 /// "best 30, relaxed best 41", leaving out a board with no score, or
 /// "no score yet".
 fn best_text(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    pace::bests(ctx, ID, board, "best").unwrap_or_else(|| "no score yet".to_string())
+    pace::scored_bests(ctx, ID, board, "best").unwrap_or_else(|| "no score yet".to_string())
 }
 
 /// Records: the best scores, the furthest crossing, every best time and

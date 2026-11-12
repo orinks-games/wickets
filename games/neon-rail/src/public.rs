@@ -25,7 +25,7 @@ use hearken::screens::SettingsRow;
 use hearken::text::end_sentence;
 use hearken::{Bus, Ctx};
 use parlor_core::menus::{self as shared, labels, TitleGame, TitleRow};
-use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Parlor, Period};
 
 use crate::profile::Profile;
 use crate::rules::Mode;
@@ -66,7 +66,7 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
 
 /// "best 500, relaxed best 400", either alone, or "no score yet".
 fn best_text(ctx: &mut Ctx<Parlor>, mode: Mode) -> String {
-    pace::bests(ctx, ID, mode.board(), "best").unwrap_or_else(|| "no score yet".to_string())
+    pace::scored_bests(ctx, ID, mode.board(), "best").unwrap_or_else(|| "no score yet".to_string())
 }
 
 /// Records: every mode's best, the pilot's progress, then the challenges.
@@ -98,7 +98,7 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let mut first = format!(
         "Records. Black Sky Run: {black_sky}. Challenge corridor: {corridor}. Endless rail: {endless}. Cold start: {cold}."
     );
-    if let Some(best) = pace::bests(ctx, ID, Mode::FridayNight.board(), "best") {
+    if let Some(best) = pace::scored_bests(ctx, ID, Mode::FridayNight.board(), "best") {
         first.push_str(&format!(" Friday night run: {best}."));
     }
     let mut pages = vec![first];
@@ -240,8 +240,8 @@ impl TitleGame for NeonRail {
         let today = parlor_core::challenges::today(ctx);
         let friday_row = if events::friday_open(today) {
             let help = events::friday_help(
-                Records::best(ctx, ID, Mode::FridayNight.board()),
-                Records::best(
+                pace::best(ctx, ID, Mode::FridayNight.board()),
+                pace::best(
                     ctx,
                     ID,
                     &parlor_core::Pace::Relaxed.board(Mode::FridayNight.board()),

@@ -20,7 +20,7 @@ use hearken::screens::SettingsRow;
 use hearken::text::{end_sentence, sentence_start};
 use hearken::{Ctx, UiSound};
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period};
 
 pub use challenge::{
     ChallengeHost, ChallengePlan, ChallengeRun, ChallengesMenu, Dinners, Twist, CHALLENGES_NAME,
@@ -70,7 +70,8 @@ fn best_line(ctx: &mut Ctx<Parlor>, base: &str) -> String {
     let bests: Vec<String> = [Pace::Normal, Pace::Relaxed]
         .into_iter()
         .filter_map(|pace| {
-            Records::best(ctx, ID, &pace.board(base)).map(|b| format!("{} {b}", pace.best_word()))
+            parlor_core::pace::best(ctx, ID, &pace.board(base))
+                .map(|b| format!("{} {b}", pace.best_word()))
         })
         .collect();
     if bests.is_empty() {
@@ -129,8 +130,8 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
 /// place on every date.
 fn thanksgiving_row(ctx: &mut Ctx<Parlor>) -> TitleRow<HarvestFeast> {
     let today = parlor_core::challenges::today(ctx);
-    let best = Records::best(ctx, ID, thanksgiving::BOARD);
-    let relaxed = Records::best(ctx, ID, &Pace::Relaxed.board(thanksgiving::BOARD));
+    let best = pace::best(ctx, ID, thanksgiving::BOARD);
+    let relaxed = pace::best(ctx, ID, &Pace::Relaxed.board(thanksgiving::BOARD));
     let help = thanksgiving::row_help(today, best, relaxed);
     if thanksgiving::is_open(today) {
         let year = thanksgiving::year_of(today);

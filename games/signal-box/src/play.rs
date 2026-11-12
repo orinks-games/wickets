@@ -467,18 +467,29 @@ fn relaxed_word(pace: Pace) -> &'static str {
     }
 }
 
+/// A shift that scored nothing: no board takes a 0.
+fn no_board(shift: &Shift) -> String {
+    format!(
+        "{}, so nothing goes on the board.",
+        points_words(shift.score)
+    )
+}
+
 /// The pages after a night shift played at `pace`.
 pub fn result_pages(shift: &Shift, saved: &Saved, pace: Pace) -> Vec<String> {
     let r = relaxed_word(pace);
     let score = match saved.score {
-        ScoreResult::First => format!("{}, your first {r}score.", points_words(shift.score)),
-        ScoreResult::NewBest { previous } => {
+        None => no_board(shift),
+        Some(ScoreResult::First) => {
+            format!("{}, your first {r}score.", points_words(shift.score))
+        }
+        Some(ScoreResult::NewBest { previous }) => {
             format!(
                 "{}, a new {r}best, beating {previous}.",
                 points_words(shift.score)
             )
         }
-        ScoreResult::Short { best } => {
+        Some(ScoreResult::Short { best }) => {
             format!("{}. Your {r}best is {best}.", points_words(shift.score))
         }
     };
@@ -510,18 +521,19 @@ pub fn result_pages(shift: &Shift, saved: &Saved, pace: Pace) -> Vec<String> {
 
 /// The pages after a steam gala shift played at `pace`: its score on its
 /// own board, and the specials through.
-pub fn gala_pages(shift: &Shift, saved: ScoreResult, pace: Pace) -> Vec<String> {
+pub fn gala_pages(shift: &Shift, saved: Option<ScoreResult>, pace: Pace) -> Vec<String> {
     let r = relaxed_word(pace);
     let score = match saved {
-        ScoreResult::First => format!(
+        None => no_board(shift),
+        Some(ScoreResult::First) => format!(
             "{}, your first {r}steam gala score.",
             points_words(shift.score)
         ),
-        ScoreResult::NewBest { previous } => format!(
+        Some(ScoreResult::NewBest { previous }) => format!(
             "{}, a new {r}steam gala best, beating {previous}.",
             points_words(shift.score)
         ),
-        ScoreResult::Short { best } => format!(
+        Some(ScoreResult::Short { best }) => format!(
             "{}. Your {r}steam gala best is {best}.",
             points_words(shift.score)
         ),

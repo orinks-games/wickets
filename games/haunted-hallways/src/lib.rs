@@ -81,7 +81,7 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
 /// "best score 30, relaxed best score 41", leaving out a board with no
 /// score, or "no score yet".
 fn best_score(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    pace::bests(ctx, ID, board, "best score").unwrap_or_else(|| "no score yet".to_string())
+    pace::scored_bests(ctx, ID, board, "best score").unwrap_or_else(|| "no score yet".to_string())
 }
 
 /// A floor's best times, normal and quick then relaxed: "best 1 minute
