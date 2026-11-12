@@ -52,7 +52,7 @@ In the endless ride, cars overtake toward you in the traffic lane. Its warning c
 
 ## Against the clock {alpha}
 
-Make delivery drops to add time to the clock. You start with 60 seconds on a street in the district you chose. The first drop is just after the start. The clock runs down the whole time, and the ride ends when it reaches zero. There is no crash limit or finish line.
+Make delivery drops to add time to the clock. You start with 60 seconds on a street in the district you chose. The first drop is just after the start. The clock runs down, and the ride ends when it reaches zero. There is no crash limit or finish line.
 
 A drop rings its doorbell from its side as it comes up, like a parcel in the endless ride. Ride over it at 20 kilometres an hour or less to make the drop. A drop in a shop doorway, in the door zone, adds 14 seconds and pays 3 dollars. A drop at a parcel locker by the centre line, out among the cars, adds 18 seconds and pays 6. A drop made within 30 seconds of the last one is a quick drop, and adds 4 seconds more. The clock holds 90 seconds at most.
 
@@ -79,6 +79,16 @@ In wet Riverside, brakes need more room to stop. Old Town's cobbles slow bikes w
 S puts danger first: a hazard or oncoming car close ahead, then any flat tyre, then your speed and lane. Press S again straight away for the rest: what else is ahead, how far you are from the parked cars or the centre line, the clock, or in the endless ride your distance, cash and crashes left, then your stamina.{alpha: Against the clock, the first press starts with the time left, and the second gives your drops and cash.} H says what the next hazard is, how soon you reach it and what to do. R repeats the last spoken line.
 
 Spoken call-outs, a row in Settings from the title or the pause menu, chooses how much the game names its sounds as they play. Once per session is the default: each gameplay cue is named the first time it plays after you start Wicket's. Every time names them always. Off leaves only the sounds, and S and H still speak.
+
+## Pace
+
+The street holds while a line is still being spoken. The bike, the traffic, the hazards and the clock stand still until it ends. While you hold a key to pedal, brake, steer or sprint, the street runs on through speech. This holds at every pace and in every mode. Time spent while a line is spoken still counts toward your ride time and ride points.
+
+Pace in Settings sets how fast the street runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. Your bike, the traffic, every hazard's warning and the clock follow the pace.
+
+A change applies from your next ride.
+
+Relaxed best times, ride points, distances and drops are saved separately, including challenges and special rides. Normal and quick share their scores. Cash, lessons, bikes and districts count at every pace.
 
 ## Modes
 

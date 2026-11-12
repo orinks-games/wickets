@@ -29,7 +29,7 @@ use hearken::screens::SettingsRow;
 use hearken::text::{end_sentence, sentence_start};
 use hearken::Ctx;
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Rng};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period, Rng};
 
 pub use bike::Bike;
 pub use progress::{CallOuts, Choices, Progress};
@@ -38,7 +38,7 @@ pub use rides::{ChallengeHost, ChallengesMenu, Rides, CHALLENGES_NAME};
 pub use soundcheck::SoundCheck;
 
 use course::COURSES;
-use progress::{best_time, board, distance_words, dollar_words, endless_board, time_words};
+use progress::{best_times, board, distance_words, dollar_words, endless_board, time_words};
 
 /// The game's id: its sounds live under `sounds/freewheel/`.
 pub const ID: &str = "freewheel";
@@ -77,24 +77,77 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
     ctx.push(ChallengeHost::new(period));
 }
 
+/// "best 1 minute 4 seconds, relaxed best 1 minute 50 seconds", leaving
+/// out one with no time, or "no time yet".
 fn best_words(ctx: &mut Ctx<Parlor>, course: usize, bike: Bike) -> String {
-    match best_time(ctx, &board(COURSES[course].id, bike)) {
-        Some(t) => format!("best {}", time_words(t)),
-        None => "no time yet".to_string(),
+    let (best, relaxed) = best_times(ctx, &board(COURSES[course].id, bike));
+    pace::both("best", best.map(time_words), relaxed.map(time_words))
+        .unwrap_or_else(|| "no time yet".to_string())
+}
+
+/// "1 minute 4 seconds, 98000 ride points": the best time on `board` and
+/// its ride points, if it has a time.
+fn time_points(ctx: &mut Ctx<Parlor>, board: &str) -> Option<String> {
+    let t = progress::best_time(ctx, board)?;
+    Some(format!(
+        "{}, {} ride points",
+        time_words(t),
+        parlor_core::Records::best(ctx, ID, board).unwrap_or(0)
+    ))
+}
+
+/// The same for `board` and its relaxed board: "best ..., relaxed best
+/// ...", leaving out one with no time.
+fn both_time_points(ctx: &mut Ctx<Parlor>, board: &str) -> Option<String> {
+    let best = time_points(ctx, board);
+    let relaxed = time_points(ctx, &Pace::Relaxed.board(board));
+    pace::both("best", best, relaxed)
+}
+
+/// `normal` as it reads, then ", relaxed best" and the relaxed value,
+/// leaving out one with none.
+fn plus_relaxed(normal: Option<String>, relaxed: Option<String>) -> Option<String> {
+    match (normal, relaxed) {
+        (n, None) => n,
+        (None, Some(r)) => Some(format!("relaxed best {r}")),
+        (Some(n), Some(r)) => Some(format!("{n}, relaxed best {r}")),
+    }
+}
+
+/// The best on `board` and on its relaxed board, each read by `words`,
+/// as [`plus_relaxed`] puts them.
+fn board_bests(
+    ctx: &mut Ctx<Parlor>,
+    board: &str,
+    words: impl Fn(u64) -> String,
+) -> Option<String> {
+    let best = parlor_core::Records::best(ctx, ID, board).map(&words);
+    let relaxed = parlor_core::Records::best(ctx, ID, &Pace::Relaxed.board(board)).map(&words);
+    plus_relaxed(best, relaxed)
+}
+
+/// " Best 1.2 kilometres, relaxed best 900 metres." for a row's help,
+/// leaving out one with no score, or nothing.
+fn row_best(ctx: &mut Ctx<Parlor>, board: &str, words: impl Fn(u64) -> String) -> String {
+    let best = parlor_core::Records::best(ctx, ID, board).map(&words);
+    let relaxed = parlor_core::Records::best(ctx, ID, &Pace::Relaxed.board(board)).map(&words);
+    match pace::both("best", best, relaxed) {
+        Some(b) => format!(" {}.", sentence_start(&b)),
+        None => String::new(),
     }
 }
 
 /// " Your best is 1 minute 4 seconds, 98000 ride points." for an event
-/// row's help, or nothing.
+/// row's help, then the relaxed best the same way, or nothing.
 fn event_best(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    match best_time(ctx, board) {
-        Some(t) => format!(
-            " Your best is {}, {} ride points.",
-            time_words(t),
-            parlor_core::Records::best(ctx, ID, board).unwrap_or(0)
-        ),
-        None => String::new(),
+    let mut out = String::new();
+    if let Some(b) = time_points(ctx, board) {
+        out.push_str(&format!(" Your best is {b}."));
     }
+    if let Some(b) = time_points(ctx, &Pace::Relaxed.board(board)) {
+        out.push_str(&format!(" Your relaxed best is {b}."));
+    }
+    out
 }
 
 /// Records: best times, totals and the challenges, a page at a time.
@@ -115,13 +168,10 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
             .filter(|&bike| progress.owns_bike(bike))
             .map(|bike| {
                 let b = board(info.id, bike);
-                match best_time(ctx, &b) {
-                    Some(t) => format!(
-                        "on the {}, {}, {} ride points",
-                        bike.name(),
-                        time_words(t),
-                        parlor_core::Records::best(ctx, ID, &b).unwrap_or(0)
-                    ),
+                let best = time_points(ctx, &b);
+                let relaxed = time_points(ctx, &Pace::Relaxed.board(&b));
+                match plus_relaxed(best, relaxed) {
+                    Some(t) => format!("on the {}, {t}", bike.name()),
                     None => format!("on the {}, no time yet", bike.name()),
                 }
             })
@@ -136,8 +186,8 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let endless: Vec<String> = course::District::ALL
         .into_iter()
         .filter_map(|d| {
-            parlor_core::Records::best(ctx, ID, &endless_board(d))
-                .map(|m| format!("{}, {}", d.name(), distance_words(m as f64)))
+            board_bests(ctx, &endless_board(d), |m| distance_words(m as f64))
+                .map(|m| format!("{}, {m}", d.name()))
         })
         .collect();
     pages.push(format!(
@@ -155,8 +205,8 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         let bests: Vec<String> = course::District::ALL
             .into_iter()
             .filter_map(|d| {
-                parlor_core::Records::best(ctx, ID, &clock::board(d))
-                    .map(|n| format!("{}, {}", d.name(), clock::drop_words(n as u32)))
+                board_bests(ctx, &clock::board(d), |n| clock::drop_words(n as u32))
+                    .map(|n| format!("{}, {n}", d.name()))
             })
             .collect();
         if !bests.is_empty() {
@@ -178,13 +228,8 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     ] {
         for bike in Bike::ALL {
             let board = events::board(stem, bike);
-            if let Some(t) = best_time(ctx, &board) {
-                events.push(format!(
-                    "{name} on the {}, best {}, {} ride points.",
-                    bike.name(),
-                    time_words(t),
-                    parlor_core::Records::best(ctx, ID, &board).unwrap_or(0)
-                ));
+            if let Some(t) = both_time_points(ctx, &board) {
+                events.push(format!("{name} on the {}, {t}.", bike.name()));
             }
         }
     }
@@ -246,10 +291,7 @@ impl TitleGame for Freewheel {
             .help(format!("{} {}.", info.about(), sentence_start(&best))),
             {
                 let district = Choices::load(ctx).district;
-                let best = match parlor_core::Records::best(ctx, ID, &endless_board(district)) {
-                    Some(m) => format!(" Best {}.", distance_words(m as f64)),
-                    None => String::new(),
-                };
+                let best = row_best(ctx, &endless_board(district), |m| distance_words(m as f64));
                 MenuItem::new(
                     format!("Endless ride: {} on the {}", district.name(), c.bike.name()),
                     move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
@@ -263,10 +305,9 @@ impl TitleGame for Freewheel {
         ];
         if clock::offered() {
             let district = c.district;
-            let best = match parlor_core::Records::best(ctx, ID, &clock::board(district)) {
-                Some(n) => format!(" Best {}.", clock::drop_words(n as u32)),
-                None => String::new(),
-            };
+            let best = row_best(ctx, &clock::board(district), |n| {
+                clock::drop_words(n as u32)
+            });
             rows.push(
                 MenuItem::new(
                     format!("{}: {} on the {}", clock::NAME, district.name(), c.bike.name()),
@@ -420,6 +461,7 @@ impl TitleGame for Freewheel {
             "Choose when gameplay cues are named: every time, once per session, or off. A session lasts until you close Wicket's. Status and Hint always speak.",
         ),
             parlor_core::units::row(),
+            pace::row(ID),
         ]
     }
 
