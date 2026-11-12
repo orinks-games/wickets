@@ -138,7 +138,7 @@ impl TitleGame for Winter {
     /// Pace sets Gift Sort's clocks; the desk has none and Midnight
     /// Countdown keeps the band's beat.
     fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
-        vec![parlor_core::pace::row(ID)]
+        vec![parlor_core::pace::row_for(ID, "Gift Sort")]
     }
 
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {

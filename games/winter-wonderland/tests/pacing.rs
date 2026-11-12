@@ -328,3 +328,98 @@ fn the_title_and_records_name_both_boards() {
         "{said}"
     );
 }
+
+#[test]
+fn a_change_of_plans_waits_behind_the_line_before_it() {
+    use hearken::speech::SpeechChannel;
+    // Shift 5: someone changes their mind half way through, often in the
+    // frame a gift is delivered.
+    let (mut h, s) = start_at(Mode::Free, 5, Pace::Quick);
+    let changed =
+        |h: &Headless<Parlor>| h.spoken().iter().any(|l| l.starts_with("Change of plans."));
+    for _ in 0..4000 {
+        if changed(&h) {
+            break;
+        }
+        quiet(&mut h);
+        if let Some(key) = home_key(&s) {
+            h.press(key);
+        }
+        if changed(&h) {
+            break;
+        }
+        tick(&mut h, &s, 0.1);
+    }
+    let calls = h.speech.borrow().calls(SpeechChannel::Main);
+    let change = calls
+        .iter()
+        .find(|(l, _)| l.starts_with("Change of plans."))
+        .expect("someone changes their mind");
+    assert!(!change.1, "it is queued, not said over: {calls:?}");
+}
+
+/// The tutorial on the first shift, its belt watched, its opening said.
+fn tutorial() -> (Headless<Parlor>, parlor_core::Live<SortRun>) {
+    use winter_wonderland::tutorial;
+    let mut h = headless();
+    let (belt, desk) = (tutorial::belt(), tutorial::desk());
+    let lesson = tutorial::lesson_on(&mut h.app.ctx, belt.clone(), desk);
+    h.app.ctx.push(lesson);
+    h.frame(0.0);
+    (h, belt)
+}
+
+#[test]
+fn the_tutorial_says_shake_it_now_with_a_gift_on_the_belt() {
+    let (mut h, belt) = tutorial();
+    quiet(&mut h);
+    h.frame(0.01);
+    h.press(Key::Space);
+    assert!(belt.with(|s| s.playing()));
+    for _ in 0..2000 {
+        if h.spoken().iter().any(|l| l.contains("Shake it now.")) {
+            break;
+        }
+        quiet(&mut h);
+        h.frame(0.01);
+    }
+    assert!(
+        h.spoken().iter().any(|l| l.contains("Shake it now.")),
+        "{:?}",
+        h.spoken()
+    );
+    assert!(belt.with(|s| s.shift().gift.is_some()), "a gift to shake");
+}
+
+#[test]
+fn space_while_the_tutorial_says_the_wishes_starts_the_belt_after_them() {
+    let (mut h, belt) = tutorial();
+    // The wishes are still being said: the press is kept, not dropped.
+    h.press(Key::Space);
+    h.frame(0.01);
+    assert!(!belt.with(|s| s.playing()));
+    assert!(belt.with(|s| s.clock.held()));
+    quiet(&mut h);
+    h.frame(0.01);
+    assert!(belt.with(|s| s.playing()), "the belt starts once they end");
+}
+
+#[test]
+fn the_pace_rows_help_says_it_applies_to_gift_sort() {
+    let mut h = headless();
+    h.app.ctx.game.open = Some(parlor_core::OpenGame::new(
+        ID,
+        "Winter Wonderland",
+        <winter_wonderland::Winter as parlor_core::menus::TitleGame>::settings,
+    ));
+    h.app
+        .ctx
+        .push(hearken::screens::SettingsScreen::<Parlor>::new());
+    h.frame(0.0);
+    h.press(Key::Return);
+    h.frame(0.0);
+    h.clear();
+    h.press(Key::F1);
+    let help = h.spoken().last().cloned().unwrap_or_default();
+    assert!(help.ends_with("Pace applies to Gift Sort only."), "{help}");
+}

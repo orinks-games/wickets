@@ -56,24 +56,31 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
     let held = belt.clone();
     let brief = belt
         .step(brief_prompt, |s: &SortRun, _| {
-            s.playing()
+            // Done once the first gift has landed, so the next prompt's
+            // "Shake it now" comes with a gift there to shake.
+            (s.playing() && s.shift().gift.is_some())
                 .then(|| "The belt is running. A soft thump means a gift has landed.".to_string())
         })
         .start(move |_| held.with_mut(|s| s.lesson_prompt()));
 
-    let shake = belt.step(
-        format!(
-            "{} shakes the gift, and you hear what is inside. Shake it now.",
-            sentence_start(&p)
-        ),
-        |s: &SortRun, _| {
-            s.shift()
-                .gift
-                .as_ref()
-                .is_some_and(|g| g.shakes > 0)
-                .then(|| MATCHED.to_string())
-        },
-    );
+    // The gift waits on the belt while this is said, then rides its whole
+    // way.
+    let held = belt.clone();
+    let shake = belt
+        .step(
+            format!(
+                "{} shakes the gift, and you hear what is inside. Shake it now.",
+                sentence_start(&p)
+            ),
+            |s: &SortRun, _| {
+                s.shift()
+                    .gift
+                    .as_ref()
+                    .is_some_and(|g| g.shakes > 0)
+                    .then(|| MATCHED.to_string())
+            },
+        )
+        .start(move |_| held.with_mut(|s| s.lesson_prompt()));
 
     const MATCHED: &str = "Now match that sound to a wish.";
     let sort_prompt = format!(

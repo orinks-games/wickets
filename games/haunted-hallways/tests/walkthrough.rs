@@ -752,7 +752,7 @@ fn records_read_back_what_was_saved() {
     assert!(
         spoke(
             &t.h,
-            "Floors 1 to 10, the ground floor: floor 1, 3.0 seconds; floor 2, not yet cleared."
+            "Floors 1 to 10, the ground floor: floor 1, best 3.0 seconds; floor 2, not yet cleared."
         ),
         "{:?}",
         t.h.spoken()

@@ -70,6 +70,9 @@ pub struct SortRun {
     /// spoken. In the lesson it also keeps the belt from starting until
     /// the step's prompt has been said.
     pub clock: RunClock,
+    /// In the lesson, the start key was pressed while the wishes were
+    /// still being said: the belt starts once they have been.
+    start_waiting: bool,
 }
 
 /// "1 second", "5 seconds" or "5.5 seconds".
@@ -114,6 +117,7 @@ impl SortRun {
             score: Score::new(),
             lesson: false,
             clock: RunClock::default(),
+            start_waiting: false,
         }
     }
 
@@ -365,7 +369,9 @@ impl SortRun {
                 } else {
                     String::new()
                 };
-                ctx.say(format!(
+                // Queued, so a delivery line said in the same frame is
+                // heard first, and neither is lost.
+                ctx.say_queued(format!(
                     "Change of plans. {}, {}, now wishes for {}{which}.",
                     r.name,
                     r.spot.place(),
@@ -411,6 +417,7 @@ impl SortRun {
         self.level += 1;
         self.shift = Self::make_shift(&self.mode, self.level, Rng::seeded(self.rng.next_u64()));
         self.phase = Phase::Briefing;
+        self.start_waiting = false;
         self.told_low = false;
         ctx.say_queued(format!(
             "Shift {done} complete. {} bonus points for the time left. Score {}.",
@@ -707,8 +714,10 @@ impl State<Parlor> for SortRun {
             }
             (Phase::Briefing, ParlorAction::Primary) if self.lesson && self.clock.held() => {
                 // The lesson is still saying the wishes: a soft knock, and
-                // nothing said over them.
+                // nothing said over them. The press is kept, and the belt
+                // starts once they have been said.
                 cue(ctx, sound::EMPTY);
+                self.start_waiting = true;
             }
             (Phase::Briefing, ParlorAction::Primary) => self.start_belt(ctx),
             (Phase::Briefing, ParlorAction::Repeat | ParlorAction::Secondary) => {
@@ -744,6 +753,11 @@ impl State<Parlor> for SortRun {
         // clock runs in the briefing too, so the lesson knows when its
         // prompt has been said.
         let game_dt = self.clock.game_dt(ctx, dt);
+        if self.phase == Phase::Briefing && self.start_waiting && !self.clock.held() {
+            self.start_waiting = false;
+            self.start_belt(ctx);
+            return;
+        }
         if self.phase != Phase::Playing {
             return;
         }

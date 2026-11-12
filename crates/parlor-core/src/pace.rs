@@ -170,11 +170,29 @@ pub fn row(id: &'static str) -> SettingsRow<Parlor> {
     row_with(id, move |ctx| get(ctx, id))
 }
 
+/// The game's Pace row for a game where only `part` is timed, such as
+/// "Gift Sort": its help says the pace applies there only.
+pub fn row_for(id: &'static str, part: &str) -> SettingsRow<Parlor> {
+    let help = format!("{HELP} Pace applies to {part} only.");
+    row_helped(id, move |ctx| get(ctx, id), &help)
+}
+
+/// What the Pace row's help says.
+const HELP: &str = "How fast timed play runs. Relaxed is the slowest and quick the fastest. A change applies from the next run. Stars and unlocks count at every pace. Relaxed scores are saved separately.";
+
 /// The game's Pace row, reading the current pace with `current`: for a
 /// game with its own default or an older setting to carry over.
 pub fn row_with(
     id: &'static str,
     current: impl Fn(&Ctx<Parlor>) -> Pace + 'static,
+) -> SettingsRow<Parlor> {
+    row_helped(id, current, HELP)
+}
+
+fn row_helped(
+    id: &'static str,
+    current: impl Fn(&Ctx<Parlor>) -> Pace + 'static,
+    help: &str,
 ) -> SettingsRow<Parlor> {
     let current = std::rc::Rc::new(current);
     let read = std::rc::Rc::clone(&current);
@@ -187,7 +205,7 @@ pub fn row_with(
             set(ctx, id, pace);
             Some(changed(pace))
         },
-        "How fast timed play runs. Relaxed is the slowest and quick the fastest. A change applies from the next run. Stars and unlocks count at every pace. Relaxed scores are saved separately.",
+        help,
     )
     // Left and Right say the same as Enter, so a change made during a run
     // says it waits for the next one.
@@ -515,5 +533,26 @@ mod tests {
             ["Pace: quick. The original timing. Applies from the next run."]
         );
         assert_eq!(get(&h.app.ctx, "dummy"), Pace::Quick);
+    }
+
+    fn part_rows(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
+        vec![row_for("dummy", "Gift Sort")]
+    }
+
+    #[test]
+    fn a_row_for_one_part_says_where_it_applies() {
+        let mut h = Headless::new(Default::default(), Base);
+        h.app.ctx.game.open = Some(OpenGame::new("dummy", "Dummy", part_rows));
+        h.app
+            .ctx
+            .push(hearken::screens::SettingsScreen::<Parlor>::new());
+        h.frame(0.0);
+        h.press(Key::Return);
+        h.frame(0.0);
+        h.clear();
+        h.press(Key::F1);
+        let help = h.spoken().last().cloned().unwrap_or_default();
+        assert!(help.starts_with("How fast timed play runs."), "{help}");
+        assert!(help.ends_with("Pace applies to Gift Sort only."), "{help}");
     }
 }

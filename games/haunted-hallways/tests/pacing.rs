@@ -273,6 +273,11 @@ fn read_pages(h: &mut Headless<Parlor>) -> String {
 fn a_relaxed_run_keeps_its_own_board() {
     let (mut h, s) = start(Mode::Climb(1), Pace::Relaxed);
     run_out(&mut h, &s, 500);
+    let pages = read_pages(&mut h);
+    assert!(
+        pages.contains("Score 500: your first relaxed score on this board."),
+        "{pages}"
+    );
     assert_eq!(
         Records::best(&mut h.app.ctx, ID, "climb-relaxed"),
         Some(500)
@@ -353,7 +358,7 @@ fn records_and_the_title_name_both_boards() {
         "{all}"
     );
     assert!(
-        all.contains("floor 1, 1 minute 2.0 seconds, relaxed best 50.0 seconds; floor 2, relaxed best 45.0 seconds;"),
+        all.contains("floor 1, best 1 minute 2.0 seconds, relaxed best 50.0 seconds; floor 2, relaxed best 45.0 seconds;"),
         "{all}"
     );
     assert!(!all.contains("relaxed best score 0"), "{all}");
@@ -396,4 +401,37 @@ fn settings_has_the_pace_row() {
     let rows =
         <haunted_hallways::HauntedHallways as parlor_core::menus::TitleGame>::settings(&h.app.ctx);
     assert_eq!(rows.len(), 1);
+}
+
+#[test]
+fn a_step_while_wading_through_a_hold_is_kept_until_the_wade_ends() {
+    let (mut h, s) = start(Mode::Floor(1), Pace::Quick);
+    let (x, y, side) = {
+        let haunt = s.borrow();
+        let run = &haunt.run;
+        let side = if run.y + 1 < run.current().h {
+            Side::North
+        } else {
+            Side::South
+        };
+        (run.x, run.y, side)
+    };
+    s.borrow_mut().run.wade = 0.5;
+    h.app.ctx.say("A line still being spoken.");
+    tick(&mut h, &s, 0.05);
+    assert!(s.borrow().clock.held());
+    h.clear();
+    h.press(key_for(side));
+    assert!(!spoke(&h, "Still wading."), "{:?}", h.spoken());
+    tick(&mut h, &s, 0.05);
+    assert_eq!((s.borrow().run.x, s.borrow().run.y), (x, y), "still wading");
+    for _ in 0..40 {
+        quiet(&mut h);
+        tick(&mut h, &s, 0.05);
+    }
+    assert_ne!(
+        (s.borrow().run.x, s.borrow().run.y),
+        (x, y),
+        "the step went ahead once the wade ended"
+    );
 }

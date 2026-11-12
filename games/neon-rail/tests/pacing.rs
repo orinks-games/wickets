@@ -360,3 +360,38 @@ fn records_and_the_title_name_both_boards() {
         "{said}"
     );
 }
+
+#[test]
+fn the_rail_gun_fired_while_the_rail_is_held_fires_once_it_has_cooled() {
+    use neon_rail::cues;
+    let (mut h, s) = start(Mode::BlackSky, Pace::Normal);
+    let shots = |h: &Headless<Parlor>| {
+        h.played()
+            .iter()
+            .filter(|k| *k == cues::RAILGUN || *k == cues::NO_LOCK)
+            .count()
+    };
+    h.press(Key::F);
+    assert_eq!(shots(&h), 1);
+    let ready = |s: &Screen| s.borrow().run().unwrap().weapon_ready_in() <= 0.0;
+    assert!(!ready(&s), "the rail gun is cooling");
+    // A line holds the rail, so the cooldown stands still.
+    h.app.ctx.say("Still talking.");
+    tick(&mut h, &s, 0.1);
+    assert!(s.borrow().clock.held());
+    h.clear();
+    h.press(Key::F);
+    assert!(!h.played().iter().any(|k| k == cues::DENIED), "not refused");
+    assert!(
+        !h.spoken()
+            .iter()
+            .any(|l| l.starts_with("Rail gun cooling.")),
+        "{:?}",
+        h.spoken()
+    );
+    quiet(&mut h);
+    for _ in 0..40 {
+        tick(&mut h, &s, 0.05);
+    }
+    assert_eq!(shots(&h), 1, "the press was kept and fired");
+}

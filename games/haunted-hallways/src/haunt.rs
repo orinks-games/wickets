@@ -77,6 +77,9 @@ pub struct Haunt {
     status_key: StatusKey,
     /// The second layer of S has been heard, for the tutorial.
     pub heard_more: bool,
+    /// A step taken while wading and the house was held for speech: it
+    /// goes ahead once the wade is over, so the key is never lost.
+    pending_walk: Option<Side>,
 }
 
 impl Haunt {
@@ -123,6 +126,7 @@ impl Haunt {
             score: Score::new(),
             status_key: StatusKey::new(),
             heard_more: false,
+            pending_walk: None,
         }
     }
 
@@ -1319,6 +1323,12 @@ impl Haunt {
             challenge::result_line(ch, run.score, result, streak, pace)
         });
         let score = match saved.score {
+            Some(ScoreResult::First) if pace.separate() => {
+                format!(
+                    "Score {}: your first relaxed score on this board.",
+                    run.score
+                )
+            }
             Some(ScoreResult::First) => format!("Score {}: your first on this board.", run.score),
             Some(ScoreResult::NewBest { previous }) => format!(
                 "Score {}: a new {}, beating {previous}.",
@@ -1619,6 +1629,21 @@ impl State<Parlor> for Haunt {
             menus::pause(ctx, HELP, leave);
             return;
         }
+        let side = match ctx.action_for(event) {
+            Some(ParlorAction::Up) => Some(Side::North),
+            Some(ParlorAction::Down) => Some(Side::South),
+            Some(ParlorAction::Left) => Some(Side::West),
+            Some(ParlorAction::Right) => Some(Side::East),
+            _ => None,
+        };
+        // Wading lasts game time, which stands still while speech holds
+        // the house: a step then waits for the wade to end.
+        if let Some(side) = side {
+            if self.run.wade > 0.0 && self.clock.held() {
+                self.pending_walk = Some(side);
+                return;
+            }
+        }
         let evs = match ctx.action_for(event) {
             Some(ParlorAction::Up) => self.run.walk(Side::North),
             Some(ParlorAction::Down) => self.run.walk(Side::South),
@@ -1704,7 +1729,12 @@ impl State<Parlor> for Haunt {
                 );
             }
         }
-        let evs = self.run.update(game_dt);
+        let mut evs = self.run.update(game_dt);
+        if self.run.wade <= 0.0 && !self.run.finished() && !self.run.next_floor_waiting {
+            if let Some(side) = self.pending_walk.take() {
+                evs.extend(self.run.walk(side));
+            }
+        }
         if let Some(g) = self.run.ghost {
             if self.ghost_loop != Sound::NONE {
                 let (x, y) = g.offset();

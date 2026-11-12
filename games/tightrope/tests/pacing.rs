@@ -454,3 +454,28 @@ fn settings_has_the_pace_row() {
     let rows = <tightrope::Tightrope as parlor_core::menus::TitleGame>::settings(&h.app.ctx);
     assert_eq!(rows.len(), 1);
 }
+
+#[test]
+fn a_step_pressed_while_the_wire_is_held_is_taken_once_it_runs() {
+    let (mut h, s) = on_level(Mode::Single(2), still_level(10, None, None), Pace::Normal);
+    let pos = |s: &Screen| s.borrow().run().pos;
+    h.press(Key::Space);
+    assert_eq!(pos(&s), 1);
+    // The step's cooldown has not run out, and a line holds the wire.
+    h.app.ctx.say("Still talking.");
+    tick(&mut h, &s, 0.05);
+    assert!(s.borrow().run_clock.held());
+    let refused = played_count(&h, cues::REFUSED);
+    h.press(Key::Space);
+    assert_eq!(pos(&s), 1);
+    assert_eq!(played_count(&h, cues::REFUSED), refused, "not refused");
+    for _ in 0..20 {
+        tick(&mut h, &s, 0.05);
+    }
+    assert_eq!(pos(&s), 1, "still held");
+    quiet(&mut h);
+    for _ in 0..20 {
+        tick(&mut h, &s, 0.05);
+    }
+    assert_eq!(pos(&s), 2, "the press was kept");
+}

@@ -132,17 +132,9 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         }
         let floors: Vec<String> = (first..=last)
             .filter(|&n| n <= progress.open_floors())
-            .map(|n| {
-                let normal = progress.floor_time_at(Pace::Normal, n).map(time_short);
-                let relaxed = progress
-                    .floor_time_at(Pace::Relaxed, n)
-                    .map(|t| format!("relaxed best {}", time_short(t)));
-                let times: Vec<String> = normal.into_iter().chain(relaxed).collect();
-                if times.is_empty() {
-                    format!("floor {n}, not yet cleared")
-                } else {
-                    format!("floor {n}, {}", times.join(", "))
-                }
+            .map(|n| match floor_times(&progress, n) {
+                Some(t) => format!("floor {n}, {t}"),
+                None => format!("floor {n}, not yet cleared"),
             })
             .collect();
         pages.push(format!(

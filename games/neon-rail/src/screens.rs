@@ -245,6 +245,15 @@ pub struct RunScreen {
     /// through its intermissions, and the hold that keeps the rail still
     /// while a line is spoken.
     pub clock: RunClock,
+    /// The rail gun was fired while the rail was held and still cooling:
+    /// it fires once the cooldown ends, so the hold never drops a press.
+    fire_waiting: bool,
+}
+
+/// Whether a press of the rail gun waits for its cooldown instead of being
+/// refused: the rail is held, so the cooldown is not running.
+fn fire_waits(run: &Run, clock: &RunClock) -> bool {
+    run.phase == Phase::Driving && run.weapon_ready_in() > 0.0 && clock.held()
 }
 
 impl RunScreen {
@@ -293,6 +302,7 @@ impl RunScreen {
             // The pace is fixed for the run: a change in Settings applies
             // from the next one.
             clock: RunClock::start(ctx, ID),
+            fire_waiting: false,
         }
     }
 
@@ -309,6 +319,7 @@ impl RunScreen {
             status_key: Default::default(),
             tutorial_log: Vec::new(),
             clock: RunClock::new(pace),
+            fire_waiting: false,
         }
     }
 
@@ -678,6 +689,9 @@ impl State<Parlor> for RunScreen {
             Some(ParlorAction::Left) => run.shift(-1),
             Some(ParlorAction::Right) => run.shift(1),
             Some(ParlorAction::Primary) => run.boost(),
+            Some(ParlorAction::Secondary) if fire_waits(run, &self.clock) => {
+                self.fire_waiting = true;
+            }
             Some(ParlorAction::Secondary) => run.fire(),
             Some(ParlorAction::Down) => run.slowdown(),
             Some(ParlorAction::Up) => run.priority_override(),
@@ -701,6 +715,7 @@ impl State<Parlor> for RunScreen {
                 // The original's keys still work.
                 Key::A => run.shift(-1),
                 Key::D => run.shift(1),
+                Key::F if fire_waits(run, &self.clock) => self.fire_waiting = true,
                 Key::F => run.fire(),
                 Key::X => run.slowdown(),
                 Key::P => run.priority_override(),
@@ -723,6 +738,10 @@ impl State<Parlor> for RunScreen {
             return;
         };
         run.update(game_dt);
+        if self.fire_waiting && (run.phase != Phase::Driving || run.weapon_ready_in() <= 0.0) {
+            self.fire_waiting = false;
+            run.fire();
+        }
         let phase = run.phase;
         if phase == Phase::Driving {
             let mood = mood(run);

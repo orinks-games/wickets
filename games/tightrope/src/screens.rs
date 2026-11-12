@@ -252,6 +252,10 @@ pub struct RunScreen {
     status_key: parlor_core::StatusKey,
     /// Walked inside the tutorial, where F1 repeats the step.
     pub in_lesson: bool,
+    /// A step pressed while the wire is held and the last step's cooldown
+    /// has not run out: it is taken once the cooldown ends, so the hold
+    /// never drops a press.
+    step_waiting: bool,
 }
 
 /// How loud the street is from `floors` up.
@@ -280,6 +284,7 @@ impl RunScreen {
             done: false,
             score: Score::new(),
             in_lesson: false,
+            step_waiting: false,
         }
     }
 
@@ -547,6 +552,14 @@ impl State<Parlor> for RunScreen {
         match action {
             Some(ParlorAction::Left) => run.shift(Side::Left),
             Some(ParlorAction::Right) => run.shift(Side::Right),
+            Some(ParlorAction::Primary)
+                if run.phase == Phase::Walking
+                    && !run.crouched
+                    && !run.step_ready()
+                    && self.run_clock.held() =>
+            {
+                self.step_waiting = true;
+            }
             Some(ParlorAction::Primary) => run.step(),
             Some(ParlorAction::Secondary) => run.shoo(),
             Some(ParlorAction::Down) => run.crouch(),
@@ -585,6 +598,12 @@ impl State<Parlor> for RunScreen {
         let game_dt = self.run_clock.game_dt(ctx, dt);
         self.start_riser(ctx);
         self.run.update(game_dt);
+        if self.step_waiting && (self.run.phase != Phase::Walking || self.run.step_ready()) {
+            self.step_waiting = false;
+            if self.run.phase == Phase::Walking {
+                self.run.step();
+            }
+        }
         self.play_notes(ctx);
         self.sync_audio(ctx);
         let mood = mood(&self.run);
