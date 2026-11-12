@@ -8,8 +8,8 @@ use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::score::{DANGER, HURRY};
 use parlor_core::status::sentences;
 use parlor_core::{
-    Challenge, Challenges, Mood, Pages, Parlor, ParlorAction, Period, Records, Rng, Score,
-    ScoreResult, StatusKey,
+    Challenge, Challenges, Mood, Pace, Pages, Parlor, ParlorAction, Period, Records, Rng, RunClock,
+    Score, ScoreResult, StatusKey,
 };
 
 use crate::challenge::{self, challenge_name};
@@ -40,6 +40,9 @@ const SHADOW_VOLUME: f32 = 0.6;
 
 pub struct Haunt {
     pub run: Run,
+    /// The run's game clock: its pace, set when the haunt begins, and the
+    /// hold that keeps the house still while speech plays.
+    pub clock: RunClock,
     last_prompt: String,
     /// The exit's place as the last prompt words it, so a shifting door
     /// can be put right in what R repeats.
@@ -100,6 +103,7 @@ impl Haunt {
     pub fn with_seed(mode: Mode, seed: u64) -> Haunt {
         Haunt {
             run: Run::new(mode, seed),
+            clock: RunClock::new(Pace::Normal),
             last_prompt: String::new(),
             prompt_door: String::new(),
             ghost_loop: Sound::NONE,
@@ -464,6 +468,7 @@ impl Haunt {
             )
         };
         self.last_prompt = text.clone();
+        self.clock.reset();
         ctx.say_queued(text);
         self.start_clue(ctx);
         self.start_shadow(ctx);
@@ -932,6 +937,7 @@ impl Haunt {
                         } else {
                             ""
                         };
+                        self.clock.reset();
                         ctx.say(format!(
                             "A ghost! {}, {}, from the {}.{how}",
                             sentence_start(g.kind.name()),
@@ -950,11 +956,13 @@ impl Haunt {
                     if g.kind.hunts_stillness() {
                         sound::play(ctx, sound::HOWL);
                         if self.run.spec.call_freeze || self.first("howl") {
+                            self.clock.reset();
                             ctx.say("Keep walking!");
                         }
                     } else {
                         sound::play(ctx, sound::FREEZE);
                         if self.run.spec.call_freeze || self.first("freeze") {
+                            self.clock.reset();
                             ctx.say("Freeze!");
                         }
                     }
@@ -1142,6 +1150,7 @@ impl Haunt {
                     if !self.prompt_door.is_empty() {
                         self.last_prompt = self.last_prompt.replace(&self.prompt_door, &door);
                     }
+                    self.clock.reset();
                     ctx.say(format!("The house shifts. Exit now in {door}."));
                     self.prompt_door = door;
                 }
@@ -1162,7 +1171,8 @@ impl Haunt {
                     self.stop_shadow(ctx);
                     self.score.stop(ctx);
                     sound::play(ctx, sound::STAIRS);
-                    let saved = progress::save_floor(ctx, self.run.mode, number, time);
+                    let pace = self.clock.pace();
+                    let saved = progress::save_floor(ctx, self.run.mode, pace, number, time);
                     let names = unlocks::on_floor(ctx, &self.run, number);
                     if !names.is_empty() {
                         sound::play(ctx, sound::UNLOCK);
@@ -1219,7 +1229,8 @@ impl Haunt {
     }
 
     fn finish(&mut self, ctx: &mut Ctx<Parlor>, outcome: Outcome) {
-        let saved = progress::save_end(ctx, &self.run);
+        let pace = self.clock.pace();
+        let saved = progress::save_end(ctx, &self.run, pace);
         let won = outcome == Outcome::Escaped;
         let names = unlocks::on_end(ctx, &self.run, won);
         if !names.is_empty() {
@@ -1303,17 +1314,19 @@ impl Haunt {
         };
         let halloween = halloween_line(ctx, run.mode, won);
         let challenge_line = self.challenge.as_ref().map(|ch| {
-            let result = Challenges::submit(ctx, ch, run.score);
+            let result = Challenges::submit_at(ctx, ch, pace, run.score);
             let streak = Challenges::streak(ctx, ch.game, ch.period);
-            challenge::result_line(ch, run.score, result, streak)
+            challenge::result_line(ch, run.score, result, streak, pace)
         });
         let score = match saved.score {
             Some(ScoreResult::First) => format!("Score {}: your first on this board.", run.score),
-            Some(ScoreResult::NewBest { previous }) => {
-                format!("Score {}: a new best, beating {previous}.", run.score)
-            }
+            Some(ScoreResult::NewBest { previous }) => format!(
+                "Score {}: a new {}, beating {previous}.",
+                run.score,
+                pace.best_word()
+            ),
             Some(ScoreResult::Short { best }) => {
-                format!("Score {}. Your best is {best}.", run.score)
+                format!("Score {}. Your {} is {best}.", run.score, pace.best_word())
             }
             None => "No score this time.".to_string(),
         };
@@ -1493,13 +1506,18 @@ fn floor_page(number: u32, time: f64, bonus: u64, score: u64, saved: FloorSaved)
         "Floor {number} cleared in {}. Time bonus and courage: plus {bonus}. Score {score}.",
         time_short(time)
     );
+    // A relaxed time goes on its own list, and says so.
+    let relaxed = if saved.relaxed { " relaxed" } else { "" };
     match (saved.record, saved.previous) {
         (true, Some(prev)) => line.push_str(&format!(
-            " A new best time for this floor, beating {}.",
+            " A new{relaxed} best time for this floor, beating {}.",
             time_short(prev)
         )),
-        (true, None) => line.push_str(" Your first time on this floor."),
-        (false, Some(prev)) => line.push_str(&format!(" Your best here is {}.", time_short(prev))),
+        (true, None) => line.push_str(&format!(" Your first{relaxed} time on this floor.")),
+        (false, Some(prev)) => line.push_str(&format!(
+            " Your{relaxed} best here is {}.",
+            time_short(prev)
+        )),
         _ => {}
     }
     if let Some(next) = saved.opened {
@@ -1524,6 +1542,9 @@ impl State<Parlor> for Haunt {
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
+        if !self.started {
+            self.clock = RunClock::start(ctx, crate::ID);
+        }
         self.started = true;
         ctx.audio.set_listener(Vec3::ZERO, 0.0);
         let names = unlocks::on_start(ctx);
@@ -1568,6 +1589,7 @@ impl State<Parlor> for Haunt {
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.clock.reset();
         if self.run.finished() {
             return;
         }
@@ -1640,6 +1662,10 @@ impl State<Parlor> for Haunt {
         if !self.started || self.run.finished() || self.run.next_floor_waiting {
             return;
         }
+        // The music, the clue sounds and the storm keep real time, so a
+        // clue stays in step with the phonograph that plays it; the house
+        // itself runs on game time.
+        let game_dt = self.clock.game_dt(ctx, dt);
         let mood = self.mood();
         self.score.follow(ctx, mood, dt);
         let mut due = Vec::new();
@@ -1678,7 +1704,7 @@ impl State<Parlor> for Haunt {
                 );
             }
         }
-        let evs = self.run.update(dt);
+        let evs = self.run.update(game_dt);
         if let Some(g) = self.run.ghost {
             if self.ghost_loop != Sound::NONE {
                 let (x, y) = g.offset();

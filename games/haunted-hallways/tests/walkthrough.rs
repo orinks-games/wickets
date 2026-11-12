@@ -83,8 +83,11 @@ fn the_tutorial_walks_the_practice_house() {
     assert_eq!(lesson.len(), 13);
     h.app.ctx.push(lesson);
     h.frame(0.0);
+    // The voice is reported quiet each frame, so the speech hold does not
+    // stop the house; tests/pacing.rs covers the hold.
     let wait = |h: &mut Headless<Parlor>, secs: f64| {
         for _ in 0..(secs * 60.0) as usize {
+            h.app.ctx.stop_speech();
             h.frame(1.0 / 60.0);
         }
     };

@@ -4,7 +4,7 @@
 use std::collections::BTreeMap;
 
 use hearken::Ctx;
-use parlor_core::{Parlor, Records, ScoreResult};
+use parlor_core::{Pace, Parlor, Records, ScoreResult};
 use serde::{Deserialize, Serialize};
 
 use crate::rules::{Curses, Mode, Run, Twist, FLOORS};
@@ -26,6 +26,9 @@ pub struct Progress {
     /// Best time per floor in tenths of a second, by floor number.
     #[serde(default)]
     pub floor_best: BTreeMap<u32, u64>,
+    /// Best time per floor at the relaxed pace, kept apart.
+    #[serde(default)]
+    pub relaxed_floor_best: BTreeMap<u32, u64>,
     /// The highest floor cleared in Nightmare.
     #[serde(default)]
     pub nightmare_deepest: u32,
@@ -52,6 +55,8 @@ pub struct FloorSaved {
     pub record: bool,
     /// The old best, in seconds.
     pub previous: Option<f64>,
+    /// The time went on the relaxed list.
+    pub relaxed: bool,
     /// The floor this opened in Floor select.
     pub opened: Option<u32>,
     /// Clearing this floor opened Nightmare.
@@ -101,7 +106,21 @@ impl Progress {
 
     /// A floor's best time in seconds.
     pub fn floor_time(&self, floor: u32) -> Option<f64> {
-        self.floor_best.get(&floor).map(|t| *t as f64 / 10.0)
+        self.floor_time_at(Pace::Normal, floor)
+    }
+
+    /// A floor's best time in seconds on `pace`'s list: relaxed keeps
+    /// its own.
+    pub fn floor_time_at(&self, pace: Pace, floor: u32) -> Option<f64> {
+        self.times(pace).get(&floor).map(|t| *t as f64 / 10.0)
+    }
+
+    fn times(&self, pace: Pace) -> &BTreeMap<u32, u64> {
+        if pace.separate() {
+            &self.relaxed_floor_best
+        } else {
+            &self.floor_best
+        }
     }
 
     /// The curses switched on.
@@ -123,8 +142,14 @@ impl Progress {
         }
     }
 
-    /// A floor cleared in `secs`, in `mode`.
+    /// A floor cleared in `secs`, in `mode`, at normal pace.
     pub fn floor_done(&mut self, mode: Mode, floor: u32, secs: f64) -> FloorSaved {
+        self.floor_done_at(mode, Pace::Normal, floor, secs)
+    }
+
+    /// A floor cleared in `secs`, in `mode`, at `pace`. The floor opens
+    /// the next at every pace; its time goes on that pace's list.
+    pub fn floor_done_at(&mut self, mode: Mode, pace: Pace, floor: u32, secs: f64) -> FloorSaved {
         let mut saved = FloorSaved::default();
         if matches!(mode, Mode::Challenge(_)) {
             return saved;
@@ -146,10 +171,15 @@ impl Progress {
             Mode::Climb(_) | Mode::Floor(_) => {}
         }
         let t = tenths(secs);
-        saved.previous = self.floor_time(floor);
-        saved.record = self.floor_best.get(&floor).is_none_or(|&b| t < b);
+        saved.relaxed = pace.separate();
+        saved.previous = self.floor_time_at(pace, floor);
+        saved.record = self.times(pace).get(&floor).is_none_or(|&b| t < b);
         if saved.record {
-            self.floor_best.insert(floor, t);
+            if pace.separate() {
+                self.relaxed_floor_best.insert(floor, t);
+            } else {
+                self.floor_best.insert(floor, t);
+            }
         }
         if floor > self.cleared {
             let was = self.clone();
@@ -185,20 +215,27 @@ impl Progress {
 }
 
 /// Saves a cleared floor at once, so leaving mid-run keeps it.
-pub fn save_floor(ctx: &mut Ctx<Parlor>, mode: Mode, floor: u32, secs: f64) -> FloorSaved {
+pub fn save_floor(
+    ctx: &mut Ctx<Parlor>,
+    mode: Mode,
+    pace: Pace,
+    floor: u32,
+    secs: f64,
+) -> FloorSaved {
     let mut progress = Progress::load(ctx);
-    let saved = progress.floor_done(mode, floor, secs);
+    let saved = progress.floor_done_at(mode, pace, floor, secs);
     progress.store(ctx);
     saved
 }
 
-/// Saves the end of a run: ghosts, and its score.
-pub fn save_end(ctx: &mut Ctx<Parlor>, run: &Run) -> EndSaved {
+/// Saves the end of a run played at `pace`: ghosts, and its score, on
+/// the pace's board.
+pub fn save_end(ctx: &mut Ctx<Parlor>, run: &Run, pace: Pace) -> EndSaved {
     let mut progress = Progress::load(ctx);
     let deepest = progress.run_done(run);
     progress.store(ctx);
     // A challenge's result goes to its own record, not the best boards.
     let scored = run.score > 0 && !matches!(run.mode, Mode::Challenge(_));
-    let score = scored.then(|| Records::record(ctx, ID, &run.mode.board(), run.score));
+    let score = scored.then(|| Records::record(ctx, ID, &pace.board(&run.mode.board()), run.score));
     EndSaved { score, deepest }
 }
