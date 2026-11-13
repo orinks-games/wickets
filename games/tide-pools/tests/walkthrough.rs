@@ -336,7 +336,7 @@ fn the_first_sound_of_each_creature_is_named() {
     );
     t.h.clear();
     t.press(Key::Tab);
-    assert!(spoke(&t.h, "That last sound was the sea anemone"));
+    assert!(spoke(&t.h, "That last call was the sea anemone"));
 }
 
 #[test]
@@ -381,7 +381,7 @@ fn a_shy_crab_hides_and_creeps_back_out() {
         }
     }
     assert!(played(&t.h, sound::EMERGE));
-    assert!(spoke(&t.h, "Two rising notes"));
+    assert!(spoke(&t.h, "It crept out."));
     t.gather(Species::Crab);
     assert!(spoke(&t.h, "A shore crab. 15 points."));
 }
@@ -851,7 +851,7 @@ fn the_neighbouring_pools_are_heard_from_the_side() {
         }
     }
     assert!(side, "something called from a neighbouring pool");
-    assert!(spoke(&t.h, "Side sounds are the next pools."));
+    assert!(spoke(&t.h, "Creatures either side are in the next pools."));
 }
 
 /// Main-channel speech since the last clear, with whether each interrupts.
@@ -875,7 +875,7 @@ fn creeping_out_never_cuts_off_the_hiding_lesson() {
     }
     let line = calls(&t.h)
         .into_iter()
-        .find(|(l, _)| l.contains("Two rising notes"))
+        .find(|(l, _)| l.contains("It crept out."))
         .expect("the emerge lesson");
     assert!(!line.1, "the emerge lesson must queue, not interrupt");
 }
