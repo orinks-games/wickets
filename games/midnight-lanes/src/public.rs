@@ -182,7 +182,7 @@ impl TitleGame for MidnightLanes {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear each sound you need on the lane, with its name and what it tells you.".to_string()
+        "Plays each sound you need on the lane.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

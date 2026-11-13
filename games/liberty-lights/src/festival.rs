@@ -43,18 +43,18 @@ impl Twist {
     pub fn describe(self) -> String {
         match self {
             Twist::Quickstep => {
-                "the shows play at double speed, fireworks a second apart instead of two"
+                "the shows play at double speed"
                     .to_string()
             }
             Twist::ToughCrowd => format!(
-                "the crowd only pays for timing within {} seconds; any firework further off earns no timing points",
+                "the crowd only pays for timing within {} seconds. Any firework further off earns no timing points",
                 TOUGH_WINDOW_MS as f64 / 1000.0
             ),
             Twist::OneShot => {
-                "each show plays only once: no hearing it again, and no hints".to_string()
+                "each show plays only once: no replays and no hints".to_string()
             }
             Twist::NightFog => {
-                "fog hangs over the field, so the show's fireworks sound far off and quiet; your own launches sound as usual"
+                "fog hangs over the field, so the show's fireworks seem far off, but your own launches do not"
                     .to_string()
             }
         }
@@ -291,7 +291,7 @@ impl Plan {
             Period::Monthly => {
                 let f = self.festival.unwrap_or_else(|| festival(12));
                 format!(
-                    "The {} festival: three acts, played whatever they score, ending with a {}-firework finale. The festival celebrates the {}, and its shows are full of them. On a show that clears, every {} matched near-perfectly, right kind and place within 0.3 seconds, adds {} bonus points.",
+                    "The {} festival: three acts, played whatever they score, ending with a {}-firework finale. The festival celebrates the {}, and its shows are full of them. On a show that clears, every {} matched closely in kind, place and time, adds {} bonus points.",
                     f.name,
                     self.acts.last().map_or(0, |a| a.show.len()),
                     f.signature.name(),
