@@ -207,7 +207,7 @@ impl Kitchen {
         };
         // The first course teaches the loop; later ones only say the key.
         let then = if matches!(self.mode, Mode::Course(1)) {
-            format!(" Then listen for the recipe, go to the station it names, and press {p}.")
+            format!(" Then wait for the recipe, go to the station it names, and press {p}.")
         } else {
             String::new()
         };
@@ -960,7 +960,7 @@ impl State<Parlor> for Kitchen {
             .map(|p| format!(" {}", p.reminder()))
             .unwrap_or_default();
         format!(
-            "{}.{rule} Stations this meal: {}. {left} and {right} move between them, or press a station's number. {p} starts, stirs, flips, bastes or pulls out the dish in front of you: wait for its sound to change, then act at once. {up} describes the dish in front of you, {down} reads the recipe card, {t} explains what you are hearing. {s} says what needs you now, again for every station, {r} repeats the last call, {h} says what needs you most. Escape pauses.",
+            "{}.{rule} Stations this meal: {}. {left} and {right} move between them, or press a station's number. {p} starts, stirs, flips, bastes or pulls out the dish in front of you: wait until it needs you, then act at once. {up} describes the dish in front of you, {down} reads the recipe card, {t} says what is happening at that station. {s} says what needs you now, again for every station, {r} repeats the last call, {h} says what needs you most. Escape pauses.",
             self.mode.title(),
             join(&stations),
             left = sentence_start(&left),

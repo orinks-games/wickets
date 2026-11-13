@@ -208,7 +208,7 @@ impl TitleGame for SoftLanding {
                     ctx.push(Descent::event(Mode::FullMoon, moon))
                 })
                 .help(format!(
-                    "Tonight's pad on {}, the same for every player: {}. Crickets sing behind the radio click.{best}",
+                    "Tonight's pad on {}, the same for every player: {}.{best}",
                     moon.name,
                     moon_summary(&moon)
                 )),
@@ -239,7 +239,7 @@ impl TitleGame for SoftLanding {
                     },
                 )
                 .help(format!(
-                    "Moon landing day: Tranquility Base, {}. The radio beeps with the Quindar tone.{best}",
+                    "Moon landing day: Tranquility Base, {}.{best}",
                     moon_summary(&moon)
                 )),
             );

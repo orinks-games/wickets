@@ -260,7 +260,7 @@ impl SkateScreen {
 
     fn start_prompt(&self, ctx: &Ctx<Parlor>) -> String {
         format!(
-            "{} pushes off. {} plays the sounds.",
+            "{} pushes off. {} plays what you will meet on the ice.",
             sentence_start(&Self::key(ctx, ParlorAction::Primary)),
             sentence_start(&Self::key(ctx, ParlorAction::Hint))
         )

@@ -1,6 +1,6 @@
 ## About the game
 
-The Echo is the listening machine in the parlor's cellar, and its pipes have drifted out of tune. Theo's notes say how to fix them: low to high, and listen for the wobble to go still. Raise or lower each pipe until it holds its note, then set it. Once every pipe in the rank is in tune, the Echo plays them back as a tune. Nothing fails here. The Echo opens in story mode, in act 4.
+The Echo is the listening machine in the parlor's cellar, and its pipes have drifted out of tune. Theo's notes say how to fix them: low to high, and tune each one until the wobble goes still. Raise or lower each pipe until it holds its note, then set it. Once every pipe in the rank is in tune, the Echo plays them back as a tune. Nothing fails here. The Echo opens in story mode, in act 4.
 
 ## The wobble
 
@@ -24,7 +24,7 @@ H says whether the pipe is sharp or flat and how many steps out it is. In the ev
 
 ## The practice rank
 
-The practice rank has 4 pipes, free hints and no score. Use it to learn the sound of the wobble.
+The practice rank has 4 pipes, free hints and no score. Use it to learn the wobble.
 
 ## Challenges
 

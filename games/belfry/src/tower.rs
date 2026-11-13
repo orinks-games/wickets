@@ -716,7 +716,7 @@ impl State<Parlor> for Tower {
     fn help(&self, ctx: &Ctx<Parlor>) -> String {
         let p = ctx.control_name(ParlorAction::Primary);
         let mut now = format!(
-            "{} Build a row of {} bells, then {p} rings it. Knocks are right bells in their place, taps are right bells in the wrong place.",
+            "{} Build a row of {} bells, then {p} rings it. In place is a right bell in its place, misplaced is a right bell in the wrong place.",
             self.status_layers(ctx).join(" "),
             self.peal.rules.places
         );

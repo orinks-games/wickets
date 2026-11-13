@@ -76,7 +76,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, rank: Live<Tuning>) -> Lesson {
 
     let first = rank.step(
         format!(
-            "Two tones are playing: the pipe, and the note it should hold. While the pipe is out, they wobble against each other. {} raises the pipe and {down} lowers it. Find the way that slows the wobble, keep going until it is still, then {p} sets the pipe.",
+            "The pipe is out of tune with the note it should hold, so it wobbles. {} raises the pipe and {down} lowers it. Find the way that slows the wobble, keep going until it is still, then {p} sets the pipe.",
             sentence_start(&up)
         ),
         {
@@ -102,7 +102,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, rank: Live<Tuning>) -> Lesson {
     Lesson::new(
         ID,
         "The Echo",
-        "Theo's notes are open on the cellar bench: tune the Echo's pipes low to high, and listen for the wobble to go still",
+        "Theo's notes are open on the cellar bench: tune the Echo's pipes low to high, until each wobble goes still",
     )
     .step(first)
     .step(second)

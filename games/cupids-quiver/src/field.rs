@@ -68,7 +68,7 @@ pub fn controls_line(ctx: &Ctx<Parlor>) -> String {
     let s = ctx.control_name(ParlorAction::Status);
     let h = ctx.control_name(ParlorAction::Hint);
     format!(
-        "{} and {r} aim. Hold {p} past the click, then let go at the ping. {} lists the sky, {s} the status, {h} a hint.",
+        "{} and {r} aim. Hold {p} to full draw, then let go when your sights are on a heart. {} lists the sky, {s} the status, {h} a hint.",
         sentence_start(&l),
         sentence_start(&t)
     )
@@ -1094,7 +1094,7 @@ impl State<Parlor> for Field {
     }
 
     fn help(&self, ctx: &Ctx<Parlor>) -> String {
-        let mut now = "Hearts hum as they drift. Aim a little ahead of one.".to_string();
+        let mut now = "Aim a little ahead of a drifting heart.".to_string();
         if let Some(ch) = &self.challenge {
             now.push_str(&format!(
                 " This is the {} challenge. Leaving from the pause menu does not count it.",

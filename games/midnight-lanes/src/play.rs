@@ -136,7 +136,7 @@ impl Bowl {
     pub fn controls(&self, ctx: &Ctx<Parlor>) -> String {
         let k = |a| Self::key(ctx, a);
         format!(
-            "{} and {} step one board left or right. {} turns the aim right and {} turns it left. {} starts the swing, and again lets go at the top, when the rising tone peaks. {} speaks the frame, pins and your line, twice for the score, {} repeats the last result, {} suggests a line, and Escape pauses.",
+            "{} and {} step one board left or right. {} turns the aim right and {} turns it left. {} starts the swing, and again lets go at the top of the swing. {} speaks the frame, pins and your line, twice for the score, {} repeats the last result, {} suggests a line, and Escape pauses.",
             sentence_start(&k(ParlorAction::Left)),
             k(ParlorAction::Right),
             sentence_start(&k(ParlorAction::Up)),
@@ -731,7 +731,7 @@ impl State<Parlor> for Bowl {
             self.rack_line()
         } else if s.swing_time().is_some() {
             format!(
-                "Mid swing. {} lets go at the top, when the tone peaks.",
+                "Mid swing. {} lets go at the top of the swing.",
                 sentence_start(&Self::key(ctx, ParlorAction::Primary))
             )
         } else {

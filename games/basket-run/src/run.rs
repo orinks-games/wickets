@@ -1114,7 +1114,7 @@ impl State<Parlor> for PlayPage {
 
     fn help(&self, ctx: &Ctx<Parlor>) -> String {
         format!(
-            "The meadow waits while you read: nothing falls and the clock is stopped. {}",
+            "Play pauses while a page is open: nothing falls and the clock is stopped. {}",
             self.inner.help(ctx)
         )
     }

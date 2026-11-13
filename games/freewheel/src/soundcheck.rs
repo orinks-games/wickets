@@ -96,7 +96,7 @@ impl Menu for SoundCheck {
                 s.hear(ctx, &[a]);
             })
             .select_sound(None)
-            .help("Hear a hazard tick placed to your right."),
+            .help("Plays a hazard tick placed to your right."),
             MenuItem::new("Behind you", |s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.stop_speech();
                 let a = ctx
@@ -105,7 +105,7 @@ impl Menu for SoundCheck {
                 s.hear(ctx, &[a]);
             })
             .select_sound(None)
-            .help("Hear a car placed behind you."),
+            .help("Plays a car placed behind you."),
             MenuItem::new(
                 "Nearer and faster",
                 |s: &mut Self, ctx: &mut Ctx<Parlor>| {
@@ -120,7 +120,7 @@ impl Menu for SoundCheck {
                 },
             )
             .select_sound(None)
-            .help("Hear how a hazard tick rises as it comes near."),
+            .help("Plays a hazard tick rising as it comes near."),
         ];
         for (key, meaning) in sound::catalog() {
             items.push(

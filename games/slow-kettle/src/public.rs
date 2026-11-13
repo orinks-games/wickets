@@ -249,7 +249,7 @@ impl TitleGame for SlowKettle {
             MenuItem::new("Practice brewing", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 start(ctx, Mode::Practice)
             })
-            .help("Brew any tea on your shelf for yourself, as often as you like, and hear the exact heat and steep. No guests, no coins."),
+            .help("Brew any tea on your shelf for yourself, as often as you like, with the exact heat and steep read back. There are no guests and no coins."),
         )
     }
 

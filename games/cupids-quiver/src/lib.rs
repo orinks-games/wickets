@@ -361,7 +361,7 @@ impl TitleGame for Cupid {
                 Mode::Practice.name(),
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(Field::mode(Mode::Practice)),
             )
-            .help("One slow heart at a time, endless arrows and nothing to lose. Escape pauses."),
+            .help("One slow heart at a time and endless arrows. Nothing is saved. Escape pauses."),
         )
     }
 
@@ -392,13 +392,13 @@ impl TitleGame for Cupid {
                 "aim_call_outs",
                 AIM_CALLS,
                 |p| &mut p.quiet_aim,
-                "When on, turning the bow speaks its aim, such as 15 degrees right. The tick always sounds.",
+                "When on, turning the bow speaks its aim, such as 15 degrees right.",
             ),
             call_out_row(
                 "target_call_outs",
                 TARGET_CALLS,
                 |p| &mut p.quiet,
-                "When on, each arriving target is named, such as pink heart, from the left. Target hums always sound.",
+                "When on, each arriving target is named, such as pink heart, from the left.",
             ),
         ]
     }

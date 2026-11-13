@@ -72,7 +72,7 @@ In the Boatyard, Enter folds a boat you have scraps for, or sails one you alread
 
 Trinkets are lost things the streams carry: buttons, keys, a thimble and more. Each stream has its own, and you find ones you have not caught before first. The Keepsake shelf, on the title, lists each one with a line about it.
 
-Some trinkets belong to a set. Find a whole set and the shelf tells its little story. The music box set plays its tune.
+Some trinkets belong to a set. Find a whole set and the shelf reads its little story. The music box set plays its tune.
 
 ## The endless river
 
@@ -82,7 +82,7 @@ On the endless river each bump makes the boat soggier, and the count is said. Th
 
 ## Drift
 
-Drift is slow water with the whole band playing from the start. There is no score, no stars, and the banks only nudge you. Sail it to listen and unwind.
+Drift is slow water with the whole band playing from the start. There is no score and there are no stars, and the banks only nudge you.
 
 ## Calendar events
 
@@ -125,4 +125,4 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - H: where the current is, and what is coming next.
 - R: repeat the last thing said.
 - Escape: pause, with Resume, Settings, Help, Back to the title and Back to the lobby. During a challenge, Back to the title is Leave the challenge.
-- F1: what the keys do on the screen you are on.
+- F1: what the keys do on the current screen.

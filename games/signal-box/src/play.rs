@@ -726,7 +726,7 @@ impl State<Parlor> for Signal {
                 format!("{}: {}", call.word(), answer_words(&key, call))
             }
         } else {
-            "Listen for the next call.".to_string()
+            "Wait for the next call.".to_string()
         };
         let mut text = self.with_event(format!("{now} {}", self.controls(ctx)));
         if let Some(ch) = &self.challenge {
