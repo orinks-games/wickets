@@ -218,7 +218,7 @@ impl TitleGame for Winter {
                 s.game.shift = (s.game.shift as i32 + delta).clamp(1, open) as u32;
             })
             .help(format!(
-                "Sort gifts by their sound, shift after shift, up to shift {SHIFTS}. Left and Right choose the starting shift once later shifts are open."
+                "Sort shaken gifts, shift after shift, up to shift {SHIFTS}. Left and Right choose the starting shift once later shifts are open."
             )),
             MenuItem::new(
                 Label::dynamic(move |s: &Title, _| {
@@ -310,7 +310,7 @@ impl TitleGame for Winter {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear every gift's shake and every cue, each with its name.".to_string()
+        "Plays every gift's shake and every cue.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

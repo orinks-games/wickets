@@ -51,7 +51,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Winter Wonderland",
     category: Category::Seasonal,
-    blurb: "Winter holidays: sort shaken gifts by their sound, then answer children's letters at the Wish Desk.",
+    blurb: "Winter holidays: sort shaken gifts, then answer children's letters at the Wish Desk.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
