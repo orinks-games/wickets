@@ -83,8 +83,11 @@ fn the_tutorial_walks_the_practice_house() {
     assert_eq!(lesson.len(), 13);
     h.app.ctx.push(lesson);
     h.frame(0.0);
+    // The voice is reported quiet each frame, so the speech hold does not
+    // stop the house; tests/pacing.rs covers the hold.
     let wait = |h: &mut Headless<Parlor>, secs: f64| {
         for _ in 0..(secs * 60.0) as usize {
+            h.app.ctx.stop_speech();
             h.frame(1.0 / 60.0);
         }
     };
@@ -485,7 +488,7 @@ fn wait_for(t: &mut Twin, line: &str) {
 fn a_ghost_comes_and_moving_as_it_passes_gets_you_caught() {
     let mut t = into_room_two();
     wait_for(&mut t, "A ghost! ");
-    assert!(spoke(&t.h, "At the stab, freeze until it breathes out."));
+    assert!(spoke(&t.h, "Freeze until it has passed."));
     assert!(t
         .h
         .app
@@ -557,7 +560,7 @@ fn the_clock_running_out_ends_the_haunt() {
         &t.h,
         "The haunt clock strikes zero on floor 1, in the foyer."
     ));
-    assert!(spoke(&t.h, "No score this time."));
+    assert!(spoke(&t.h, "Score 0, so nothing goes on the board."));
     assert_eq!(t.h.app.ctx.audio.music(), Some(sound::LOSE));
     t.read_until("haunted_hallways");
 }
@@ -749,7 +752,7 @@ fn records_read_back_what_was_saved() {
     assert!(
         spoke(
             &t.h,
-            "Floors 1 to 10, the ground floor: floor 1, 3.0 seconds; floor 2, not yet cleared."
+            "Floors 1 to 10, the ground floor: floor 1, best 3.0 seconds; floor 2, not yet cleared."
         ),
         "{:?}",
         t.h.spoken()

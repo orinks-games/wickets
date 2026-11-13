@@ -3,6 +3,7 @@
 //! challenges and rhythm practice, then the shared rows.
 
 use hearken::menu::{Label, MenuItem};
+use hearken::screens::SettingsRow;
 use hearken::text::end_sentence;
 use hearken::Ctx;
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
@@ -134,6 +135,12 @@ impl TitleGame for Winter {
         ctx.audio.play_music(Some(sound::TITLE_MUSIC), true);
     }
 
+    /// Pace sets Gift Sort's clocks; the desk has none and Midnight
+    /// Countdown keeps the band's beat.
+    fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
+        vec![parlor_core::pace::row_for(ID, "Gift Sort")]
+    }
+
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
         self.progress = Progress::load(ctx);
         self.shift = self.shift.clamp(1, self.progress.shifts_open());
@@ -143,7 +150,7 @@ impl TitleGame for Winter {
             .map(|n| best_words(ctx, &progress::stack_board(n)))
             .collect();
         let today = parlor_core::challenges::today(ctx);
-        let muddled_best = parlor_core::Records::best(ctx, ID, events::MUDDLED_BOARD);
+        let muddled_best = parlor_core::pace::best(ctx, ID, events::MUDDLED_BOARD);
         let muddled_row = if events::muddled(today) {
             MenuItem::new(
                 events::MUDDLED_NAME,
@@ -211,7 +218,7 @@ impl TitleGame for Winter {
                 s.game.shift = (s.game.shift as i32 + delta).clamp(1, open) as u32;
             })
             .help(format!(
-                "Sort gifts by their sound, shift after shift, up to shift {SHIFTS}. Left and Right choose the starting shift once later shifts are open."
+                "Sort shaken gifts, shift after shift, up to shift {SHIFTS}. Left and Right choose the starting shift once later shifts are open."
             )),
             MenuItem::new(
                 Label::dynamic(move |s: &Title, _| {
@@ -303,7 +310,7 @@ impl TitleGame for Winter {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear every gift's shake and every cue, each with its name.".to_string()
+        "Plays every gift's shake and every cue.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

@@ -5,7 +5,7 @@
 use std::collections::BTreeMap;
 
 use hearken::Ctx;
-use parlor_core::{Parlor, Records};
+use parlor_core::{Pace, Parlor, Records};
 use serde::{Deserialize, Serialize};
 
 use crate::rules::{Loadout, Mode, Phase, Route, Run, Upgrade, COLD_START_SECTORS};
@@ -33,6 +33,8 @@ pub struct Profile {
     pub rank: u32,
     pub lifetime_score: u64,
     pub best_score: u64,
+    /// The best score of a relaxed run, kept apart from `best_score`.
+    pub relaxed_best_score: u64,
     pub runs_started: u64,
     pub runs_completed: u64,
     /// How many archive logs are recovered, in order.
@@ -480,8 +482,9 @@ impl Profile {
                 self.intel
             ),
             format!(
-                "Best score {}. Lifetime score {}. Runs started {}. Runs completed {}. Extractions {}. {}",
+                "Best score {}{}. Lifetime score {}. Runs started {}. Runs completed {}. Extractions {}. {}",
                 self.best_score,
+                relaxed_part(self.relaxed_best_score),
                 self.lifetime_score,
                 self.runs_started,
                 self.runs_completed,
@@ -632,13 +635,30 @@ pub struct Debrief {
     pub new_strand_logs: Vec<(usize, usize)>,
     pub rank: u32,
     pub best_score: u64,
+    /// The pilot's best relaxed score, 0 for none.
+    pub relaxed_best_score: u64,
     /// The guided route flown again: nothing paid, nothing counted.
     pub practice: bool,
+}
+
+/// ", relaxed best score 900" once a relaxed run has scored, else nothing.
+pub fn relaxed_part(relaxed_best: u64) -> String {
+    if relaxed_best > 0 {
+        format!(", relaxed best score {relaxed_best}")
+    } else {
+        String::new()
+    }
 }
 
 /// The original's `apply_run_rewards`, plus the workshop's currency, the
 /// later archive logs and the endless rail.
 pub fn debrief(p: &mut Profile, run: &Run, story_before: usize) -> Debrief {
+    debrief_at(p, run, story_before, Pace::Normal)
+}
+
+/// The same for a run flown at `pace`: everything counts at every pace,
+/// and a relaxed run keeps its own personal best.
+pub fn debrief_at(p: &mut Profile, run: &Run, story_before: usize, pace: Pace) -> Debrief {
     let won = matches!(run.phase, Phase::Over { won: true });
     let score = run.score.max(0) as u64;
     let rank_before = p.rank();
@@ -668,6 +688,7 @@ pub fn debrief(p: &mut Profile, run: &Run, story_before: usize) -> Debrief {
             new_strand_logs: Vec::new(),
             rank: rank_before,
             best_score: p.best_score,
+            relaxed_best_score: p.relaxed_best_score,
             practice,
         };
     }
@@ -681,7 +702,12 @@ pub fn debrief(p: &mut Profile, run: &Run, story_before: usize) -> Debrief {
     if !cold {
         p.runs_completed += 1;
         p.lifetime_score += score;
-        if score > p.best_score {
+        if pace.separate() {
+            if score > p.relaxed_best_score {
+                p.relaxed_best_score = score;
+                unlocks.push("New relaxed personal best.".to_string());
+            }
+        } else if score > p.best_score {
             p.best_score = score;
             unlocks.push("New personal best.".to_string());
         }
@@ -836,6 +862,7 @@ pub fn debrief(p: &mut Profile, run: &Run, story_before: usize) -> Debrief {
         new_strand_logs,
         rank: p.rank(),
         best_score: p.best_score,
+        relaxed_best_score: p.relaxed_best_score,
         practice: false,
     }
 }
@@ -901,8 +928,10 @@ impl Debrief {
         // already said the rank stays.
         if self.mode != Mode::ColdStart {
             pages.push(format!(
-                "Pilot rank {}. Best score {}.",
-                self.rank, self.best_score
+                "Pilot rank {}. Best score {}{}.",
+                self.rank,
+                self.best_score,
+                relaxed_part(self.relaxed_best_score)
             ));
         }
         pages

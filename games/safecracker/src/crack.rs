@@ -7,7 +7,9 @@ use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, InputEvent, Key, Sound, State, Vec3};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::score::{DANGER, HURRY};
-use parlor_core::{Challenge, Mood, Pages, Parlor, ParlorAction, Period, Score, ScoreResult};
+use parlor_core::{
+    Challenge, Mood, Pace, Pages, Parlor, ParlorAction, Period, RunClock, Score, ScoreResult,
+};
 
 use crate::challenge::{self, Job, Plan};
 
@@ -61,6 +63,13 @@ pub struct Crack {
     pub score: Score,
     /// S, in layers: a second press reads the rest.
     status_key: parlor_core::StatusKey,
+    /// The safe's game clock: its pace, set as the screen opens and kept
+    /// for a whole job, and the hold that keeps the clock and the guard
+    /// still while a line is spoken.
+    pub clock: RunClock,
+    /// Time held for speech while the time attack clock would have run:
+    /// it comes off the clock bonus, so a hold never improves a score.
+    clock_held: f64,
 }
 
 impl Crack {
@@ -82,6 +91,8 @@ impl Crack {
             job: None,
             challenge: None,
             score: Score::new(),
+            clock: RunClock::new(Pace::Normal),
+            clock_held: 0.0,
         }
     }
 
@@ -146,15 +157,15 @@ impl Crack {
         self.delayed.push((wait, key, volume));
     }
 
-    /// "Wheel 2 of 3: turn left and listen for the clunk."
+    /// "Wheel 2 of 3: turn left until the tumbler falls."
     fn wheel_prompt(&self) -> String {
         let run = &self.run;
         if run.practice() {
-            return "Turn the dial either way and listen for the clunk, then set it.".to_string();
+            return "Turn the dial either way until the tumbler falls, then set it.".to_string();
         }
         let way = match run.required() {
-            Some(t) => format!("turn {} and listen for the clunk", t.word()),
-            None => "turn either way and listen for the clunk".to_string(),
+            Some(t) => format!("turn {} until the tumbler falls", t.word()),
+            None => "turn either way until the tumbler falls".to_string(),
         };
         format!("Wheel {} of {}: {way}.", run.wheel + 1, run.spec.wheels)
     }
@@ -167,7 +178,7 @@ impl Crack {
                 let r = ctx.control_name(ParlorAction::Right);
                 let p = ctx.control_name(ParlorAction::Primary);
                 format!(
-                    "The practice safe. One wheel at a time, forever, and nothing to lose. {} and {r} turn the dial. When you hear the deep clunk, {p} sets the wheel and a new number is waiting. Escape pauses, and you leave from there.",
+                    "The practice safe. One wheel at a time, forever, and nothing to lose. {} and {r} turn the dial. At the clunk, {p} sets the wheel and a new number is waiting. Escape pauses, and you leave from there.",
                     sentence_start(&l)
                 )
             }
@@ -280,7 +291,7 @@ impl Crack {
             out.push_str(if spec.call_guard {
                 " A guard walks the corridor, and you are told when he comes."
             } else {
-                " A guard walks the corridor, unannounced: listen for his footsteps."
+                " A guard walks the corridor, unannounced."
             });
         }
         if let Some(t) = job.plan.twist {
@@ -360,11 +371,11 @@ impl Crack {
         if let Some(t) = run.required() {
             first.push(match run.last_turn {
                 Some(last) => format!(
-                    "Found turning {}; you last turned {}.",
+                    "Found turning {}. You last turned {}.",
                     t.word(),
                     last.word()
                 ),
-                None => format!("Found turning {}; you have not turned yet.", t.word()),
+                None => format!("Found turning {}. You have not turned yet.", t.word()),
             });
         }
         let mut more = vec![
@@ -394,10 +405,10 @@ impl Crack {
         }
         match run.mode {
             Mode::Unlucky => {
-                more.push("One wheel is 13, and the cat yowls after its clunk.".to_string())
+                more.push("One wheel is 13, and the cat yowls when you find it.".to_string())
             }
             Mode::Blackout => {
-                more.push("The power is cut: the tens click plain, so count from zero.".to_string())
+                more.push("The power is cut, so count from zero.".to_string())
             }
             _ => {}
         }
@@ -427,7 +438,7 @@ impl Crack {
             Turn::Left => (ParlorAction::Up, ParlorAction::Left),
         };
         Some(format!(
-            "If a spin clunks, the number is in the ten you just passed, but stepping back the other way is silent under the direction rule. {} spins back those ten. Then step {} with {} one number at a time until it clunks.",
+            "If the tumbler falls during a spin, the number is in the ten you just passed, but under the direction rule stepping back the other way never finds it. {} spins back those ten. Then step {} with {} one number at a time until it falls.",
             sentence_start(&ctx.control_name(back)),
             way.word(),
             ctx.control_name(step)
@@ -463,11 +474,11 @@ impl Crack {
                     if self.teaching(1) && self.first("clunk") {
                         let p = ctx.control_name(ParlorAction::Primary);
                         ctx.say(format!(
-                            "Clunk: the tumbler. After one step, {p} sets it. After a spin, step back one at a time to find it."
+                            "The tumbler fell. After one step, {p} sets it. After a spin, step back one at a time to find it."
                         ));
                     } else if spun && self.teaching(5) && self.first("spin rule") {
                         if let Some(words) = self.spin_back_words(ctx) {
-                            ctx.say(format!("Clunk, on a spin. {words}"));
+                            ctx.say(format!("The tumbler fell on a spin. {words}"));
                         }
                     }
                 }
@@ -475,7 +486,7 @@ impl Crack {
                     self.later(wait, sound::FALSE_GATE, self.run.spec.clunk * GATE_VOLUME);
                     wait += 0.25;
                     if self.teaching(3) && self.first("false") {
-                        ctx.say("A hollow rattle: a false gate. Ignore it.");
+                        ctx.say("A false gate. Ignore it.");
                     }
                 }
                 Ev::Set { wheel, of } => {
@@ -495,7 +506,7 @@ impl Crack {
                     sound::play(ctx, sound::SPRING);
                     let text = if self.run.practice() {
                         match why {
-                            Wrong::Number => "Wrong number. Set on the deep clunk.".to_string(),
+                            Wrong::Number => "Wrong number. Set when the tumbler falls.".to_string(),
                             Wrong::Direction => "Wrong way.".to_string(),
                         }
                     } else {
@@ -529,10 +540,12 @@ impl Crack {
                 Ev::GuardComing => {
                     self.start_steps(ctx, 0.15);
                     if self.run.spec.call_guard {
+                        self.clock.reset();
                         ctx.say("Footsteps! The guard is coming.");
                     }
                 }
                 Ev::GuardNear => {
+                    self.clock.reset();
                     self.stop_steps(ctx);
                     ctx.audio.play_at(sound::STOP, sound::DOOR, Bus::EFFECTS);
                     if self.run.suspicion > 0 {
@@ -545,6 +558,7 @@ impl Crack {
                 Ev::GuardLeaving => {
                     self.start_steps(ctx, 1.0);
                     if self.run.spec.call_guard {
+                        self.clock.reset();
                         ctx.say("He walks away. Carry on.");
                     }
                 }
@@ -552,6 +566,7 @@ impl Crack {
                     self.stop_steps(ctx);
                 }
                 Ev::Heard { suspicion } => {
+                    self.clock.reset();
                     if suspicion < SUSPICION {
                         ctx.audio.play_at(sound::HEARD, sound::DOOR, Bus::EFFECTS);
                         ctx.say("He heard something! One more noise and you are caught.");
@@ -560,6 +575,7 @@ impl Crack {
                     }
                 }
                 Ev::TimeWarning(secs) => {
+                    self.clock.reset();
                     sound::play(ctx, sound::TICK);
                     ctx.say(format!(
                         "{} left.",
@@ -591,7 +607,7 @@ impl Crack {
             return;
         }
         self.score.stop(ctx);
-        let saved = progress::save_end(ctx, &self.run);
+        let saved = progress::save_end(ctx, &self.run, self.clock.pace());
         ctx.audio.set_bed(None);
         ctx.audio.play_music(
             Some(if outcome.won() {
@@ -620,13 +636,22 @@ impl Crack {
             return;
         };
         let before = job.banked;
-        if let Some(next) = job.advance(&self.run) {
+        let next = job.advance(&self.run);
+        // The heist's clock bonus counts the time held for speech.
+        if job.clock_bonus > 0 {
+            let left = (self.run.time_left - self.clock_held).max(0.0);
+            let bonus = (left * 3.0).round() as u64;
+            job.banked = job.banked - job.clock_bonus + bonus;
+            job.clock_bonus = bonus;
+        }
+        if let Some(next) = next {
             let gained = job.banked - before;
             let banked = job.banked;
             let name = self.run.spec.name;
             self.run = next;
             // The next safe's clock waits for its first turn too.
             self.run.clock_running = false;
+            self.clock.reset();
             self.later(1.0, sound::ONWARD, 1.0);
             ctx.say(format!(
                 "Cracked. {} is open: {gained} points, {banked} banked.",
@@ -649,7 +674,7 @@ impl Crack {
             Some(if job.won() { sound::WIN } else { sound::LOSE }),
             false,
         );
-        let pages = crate::heist::finish_job(ctx, &ch, &job, &self.run);
+        let pages = crate::heist::finish_job(ctx, &ch, &job, &self.run, self.clock.pace());
         let summary = format!("{} result: {} points", ch.title(), job.score());
         let mut results = Some(after_job(ch.period, summary, pages.clone()));
         ctx.replace(Pages::new(pages).then(move |ctx| {
@@ -657,6 +682,23 @@ impl Crack {
                 ctx.replace(results);
             }
         }));
+    }
+
+    /// A time attack safe just opened: its clock bonus is worked out from
+    /// the time left less the time held for speech, never below zero.
+    fn count_held(&mut self) {
+        let run = &mut self.run;
+        if self.job.is_some()
+            || !run.mode.timed()
+            || run.outcome != Some(Outcome::Opened)
+            || self.clock_held <= 0.0
+        {
+            return;
+        }
+        let left = run.time_left;
+        run.time_left = (left - self.clock_held).max(0.0);
+        run.score = run.crack_score();
+        run.time_left = left;
     }
 
     fn save_practice(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -745,26 +787,39 @@ pub fn result_pages(run: &Run, outcome: Outcome, saved: &Saved) -> Vec<String> {
         Outcome::TimeUp => format!("Time's up. {} stays shut.", sentence_start(name)),
     };
     if outcome.won() {
+        let relaxed = if saved.pace.separate() {
+            "relaxed "
+        } else {
+            ""
+        };
+        let best = saved.pace.best_word();
         first.push_str(&match saved.score {
+            Some(ScoreResult::First) if saved.pace.separate() => {
+                format!(
+                    " Score {}: your first relaxed score on this safe.",
+                    run.score
+                )
+            }
             Some(ScoreResult::First) => format!(" Score {}: your first on this safe.", run.score),
             Some(ScoreResult::NewBest { previous }) => {
-                format!(" Score {}: a new best, beating {previous}.", run.score)
+                format!(" Score {}: a new {best}, beating {previous}.", run.score)
             }
-            Some(ScoreResult::Short { best }) => {
-                format!(" Score {}. Your best is {best}.", run.score)
+            Some(ScoreResult::Short { best: b }) => {
+                format!(" Score {}. Your {best} is {b}.", run.score)
             }
             None => String::new(),
         });
         match (saved.record, saved.previous) {
-            (true, Some(prev)) => {
-                first.push_str(&format!(" A new best time, beating {}.", time_words(prev)))
-            }
+            (true, Some(prev)) => first.push_str(&format!(
+                " A new {best} time, beating {}.",
+                time_words(prev)
+            )),
             // A first score has said it is the first.
             (true, None) if !matches!(saved.score, Some(ScoreResult::First)) => {
-                first.push_str(" Your first time on the board.")
+                first.push_str(&format!(" Your first {relaxed}time on the board."))
             }
             (false, Some(prev)) => {
-                first.push_str(&format!(" Your best time is {}.", time_words(prev)))
+                first.push_str(&format!(" Your {best} time is {}.", time_words(prev)))
             }
             _ => {}
         }
@@ -797,7 +852,7 @@ pub fn result_pages(run: &Run, outcome: Outcome, saved: &Saved) -> Vec<String> {
         ));
     } else if outcome.won() && run.mode == Mode::Safe(SAFES) && saved.previous.is_none() {
         news.push(
-            "You have cracked every safe in the city. Time attack waits for faster hands."
+            "You have cracked every safe in the city."
                 .to_string(),
         );
     }
@@ -821,6 +876,9 @@ impl State<Parlor> for Crack {
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         self.started = true;
+        // The pace is fixed for the safe, or the whole job: a change in
+        // Settings applies from the next one.
+        self.clock = RunClock::start(ctx, ID);
         // The clock waits for the first turn, not the intro.
         self.run.clock_running = false;
         // A player who has cracked a safe knows the clunk.
@@ -861,6 +919,7 @@ impl State<Parlor> for Crack {
         if self.run.finished() {
             return;
         }
+        self.clock.reset();
         let mut text = format!("Back at the dial, at {}.", self.run.dial);
         if self.run.guard_listening() {
             text.push_str(" The guard is still at the door: keep still!");
@@ -914,12 +973,21 @@ impl State<Parlor> for Crack {
         ) {
             self.run.clock_running = true;
         }
+        self.clock.asked_by(action);
+        if action == Some(ParlorAction::Secondary) {
+            // The dial's number is asked for too.
+            self.clock.asked();
+        }
         let evs = match action {
             Some(ParlorAction::Left) => self.run.turn(Turn::Left),
             Some(ParlorAction::Right) => self.run.turn(Turn::Right),
             Some(ParlorAction::Up) => self.run.spin(Turn::Right),
             Some(ParlorAction::Down) => self.run.spin(Turn::Left),
-            Some(ParlorAction::Primary) => self.run.set(),
+            Some(ParlorAction::Primary) => {
+                let evs = self.run.set();
+                self.count_held();
+                evs
+            }
             Some(ParlorAction::Hint) => self.run.hint(),
             Some(ParlorAction::Secondary) => {
                 ctx.say(format!("{}.", self.run.dial));
@@ -971,7 +1039,20 @@ impl State<Parlor> for Crack {
                 self.yowl = s;
             }
         }
-        let evs = self.run.update(dt);
+        // The clock, the guard and the building run on game time: still
+        // while a line is spoken, and at the run's pace. The guard's
+        // footsteps follow him, so they stand still with him. The music
+        // and the clunks after a click keep real time.
+        let game_dt = self.clock.game_dt(ctx, dt);
+        let held = self.clock.take_held_time();
+        if self.run.clock_running {
+            // Time held for speech still counts toward the safe's time.
+            self.run.time += held;
+            if self.run.mode.timed() && !self.run.guard_listening() {
+                self.clock_held += held;
+            }
+        }
+        let evs = self.run.update(game_dt);
         if self.steps != Sound::NONE {
             if let Some(g) = self.run.guard {
                 let p = g.progress() as f32;
@@ -1030,9 +1111,9 @@ impl State<Parlor> for Crack {
     fn help(&self, ctx: &Ctx<Parlor>) -> String {
         let run = &self.run;
         let now = if run.guard_listening() {
-            "The guard is at the door, listening: keep still! Do not turn or set until his footsteps walk away. Status and hints are silent and safe.".to_string()
+            "The guard is at the door, listening: keep still! Do not turn or set until he walks away. Status and hints are silent and safe.".to_string()
         } else if run.practice() {
-            "Practice: turn until you hear the deep clunk, then set. Nothing here can go wrong."
+            "Practice: turn until the tumbler falls, then set. Nothing here is scored."
                 .to_string()
         } else {
             let mut s = self.wheel_prompt();
@@ -1041,7 +1122,7 @@ impl State<Parlor> for Crack {
                 s.push_str(&words);
             }
             if run.spec.decoys > 0 {
-                s.push_str(" Hollow rattles are false gates: ignore them.");
+                s.push_str(" False gates mark wrong numbers: ignore them.");
             }
             if let Some(words) = self.event_words(ctx) {
                 s.push(' ');
@@ -1049,7 +1130,7 @@ impl State<Parlor> for Crack {
             }
             if run.spec.guard.is_some() {
                 s.push_str(
-                    " When the guard's footsteps stop at the door, keep still until he leaves.",
+                    " When the guard stops at the door, keep still until he leaves.",
                 );
             }
             if let Some(job) = &self.job {

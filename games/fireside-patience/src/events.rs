@@ -76,6 +76,6 @@ pub fn rabbit_help(best: Option<u64>) -> String {
         None => String::new(),
     };
     format!(
-        "Rabbit rabbit, for a lucky month: one deal for everyone today, and it can always be won. Turning the stock costs no moves, and the fire burns low while an owl calls outside. Scored on a board of its own. Open all day.{best}"
+        "Rabbit rabbit, for a lucky month: one deal for everyone today, and it can always be won. Turning the stock costs no moves. Scored on a board of its own. Open all day.{best}"
     )
 }

@@ -64,7 +64,7 @@ impl ChallengeGame for Gardens {
     }
 
     fn intro_help() -> String {
-        "Up and Down choose a challenge, Enter hears its goal and twist, Escape goes back. Every player gets the same garden: a new daily each day, a weekly each Monday and a festival each month.".to_string()
+        "Up and Down choose a challenge, Enter reads its goal and twist, Escape goes back. Every player gets the same garden: a new daily each day, a weekly each Monday and a festival each month.".to_string()
     }
 }
 

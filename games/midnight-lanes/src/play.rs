@@ -136,7 +136,7 @@ impl Bowl {
     pub fn controls(&self, ctx: &Ctx<Parlor>) -> String {
         let k = |a| Self::key(ctx, a);
         format!(
-            "{} and {} step one board left or right. {} turns the aim right and {} turns it left. {} starts the swing, and again lets go at the top, when the rising tone peaks. {} speaks the frame, pins and your line, twice for the score, {} repeats the last result, {} suggests a line, and Escape pauses.",
+            "{} and {} step one board left or right. {} turns the aim right and {} turns it left. {} starts the swing, and again lets go at the top of the swing. {} speaks the frame, pins and your line, twice for the score, {} repeats the last result, {} suggests a line, and Escape pauses.",
             sentence_start(&k(ParlorAction::Left)),
             k(ParlorAction::Right),
             sentence_start(&k(ParlorAction::Up)),
@@ -246,13 +246,10 @@ impl Bowl {
                 Ev::Aim(aim) => {
                     let target = self.session.target();
                     sound::play_at(ctx, sound::AIM_TONE, target as f64);
-                    let mut line = format!(
+                    let line = format!(
                         "{}, board {target} at the pins.",
                         sentence_start(&aim_words(aim))
                     );
-                    if self.first("aim") {
-                        line.push_str(" The tone sounds from where the ball would cross.");
-                    }
                     ctx.say(line);
                 }
                 Ev::AimEdge(aim) => {
@@ -267,7 +264,7 @@ impl Bowl {
                     ctx.audio.set_pitch(s, sound::SWING_LOW);
                     self.swing = Some(s);
                     if self.first("swing") {
-                        ctx.say("Swing. Let go when the tone peaks.");
+                        ctx.say("Swing. Let go at the top.");
                     }
                 }
                 Ev::Released { error, .. } => {
@@ -731,7 +728,7 @@ impl State<Parlor> for Bowl {
             self.rack_line()
         } else if s.swing_time().is_some() {
             format!(
-                "Mid swing. {} lets go at the top, when the tone peaks.",
+                "Mid swing. {} lets go at the top of the swing.",
                 sentence_start(&Self::key(ctx, ParlorAction::Primary))
             )
         } else {

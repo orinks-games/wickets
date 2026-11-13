@@ -184,7 +184,9 @@ impl Show {
                 };
                 let twist = match (run.plan.twist, run.plan.festival) {
                     (Some(t), _) => format!(" Twist: {}.", t.name()),
-                    (None, Some(f)) => format!(" Listen for the {}s.", f.signature.name()),
+                    (None, Some(f)) => {
+                        format!(" {}s pay a bonus.", sentence_start(f.signature.name()))
+                    }
                     _ => String::new(),
                 };
                 let total = if run.stage > 0 {
@@ -263,7 +265,7 @@ impl Show {
             Phase::Ready => {
                 format!("Listen phase. Press {p} to hear the show, then launch it back.")
             }
-            Phase::Listening => "The show is playing. Listen for each firework.".to_string(),
+            Phase::Listening => "The show is playing.".to_string(),
             Phase::YourTurn if self.mode.twist() == Some(Twist::OneShot) => {
                 format!("Your turn. Press {p} for the count-in, then launch.")
             }
@@ -326,7 +328,7 @@ impl Show {
         };
         let phase = match self.round.phase {
             Phase::Ready => format!(
-                "You haven't heard the show yet; {} plays it.",
+                "The show has not played yet. {} plays it.",
                 ctx.control_name(ParlorAction::Primary)
             ),
             Phase::Listening => "The show is playing.".to_string(),
@@ -382,7 +384,7 @@ impl Show {
 
     fn listen(&mut self, ctx: &mut Ctx<Parlor>) {
         self.round.listen();
-        ctx.say("Listen.");
+        ctx.say("The show starts.");
         let cues = self.round.update(0.0);
         self.play_cues(ctx, cues);
     }
@@ -428,7 +430,7 @@ impl Show {
                 ctx.control_name(ParlorAction::Primary)
             )),
             Phase::Ready => ctx.say(format!(
-                "Listen first: press {} to hear the show.",
+                "Play the show first: press {}.",
                 ctx.control_name(ParlorAction::Primary)
             )),
             Phase::Listening => ctx.say("Wait for the show to finish."),
@@ -474,7 +476,7 @@ impl Show {
                 "Press {} for the count-in and launch your show first.",
                 ctx.control_name(ParlorAction::Primary)
             )),
-            _ => ctx.say("Listen to the show first."),
+            _ => ctx.say("Play the show first."),
         }
     }
 
@@ -667,7 +669,7 @@ impl State<Parlor> for Show {
             )
         } else {
             format!(
-                "{} hears the show again, {r} repeats the instructions, {s} gives the status, twice for more, {h} describes the show in words for {HINT_COST} points.",
+                "{} plays the show again, {r} repeats the instructions, {s} gives the status, twice for more, {h} describes the show in words for {HINT_COST} points.",
                 sentence_start(&t)
             )
         };
@@ -698,12 +700,12 @@ impl State<Parlor> for Show {
                 self.mode.title(),
                 sentence_start(&p)
             ),
-            Phase::Listening => "The show is playing. Listen for each firework.".to_string(),
+            Phase::Listening => "The show is playing.".to_string(),
             Phase::YourTurn if self.mode.twist() == Some(Twist::OneShot) => {
                 format!("Your turn. {} counts in, then launch.", sentence_start(&p))
             }
             Phase::YourTurn => format!(
-                "Your turn. {} counts in, then launch. {} hears the show again.",
+                "Your turn. {} counts in, then launch. {} plays the show again.",
                 sentence_start(&p),
                 sentence_start(&t)
             ),

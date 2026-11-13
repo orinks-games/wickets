@@ -40,7 +40,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Signal>) -> Lesson {
 
     let calls = Step::each(
         format!(
-            "Five calls, five keys. {}. Press each to hear its call.",
+            "Five calls, five keys. {}. Press each to play its call.",
             keys.join(". ")
         ),
         Call::ALL
@@ -48,7 +48,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Signal>) -> Lesson {
             .map(|c| {
                 let reaction: parlor_core::Reaction = Box::new(move |ctx| {
                     sound::play_call(ctx, c);
-                    end_sentence(&format!("{}: {}", c.word(), c.sound_words()))
+                    end_sentence(c.word())
                 });
                 (c.action(), reaction)
             })

@@ -4,14 +4,14 @@
 use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, InputEvent, Sound, State};
 use parlor_core::score::{DANGER, HURRY};
-use parlor_core::{Mood, Pages, Parlor, ParlorAction, Rng, Score};
+use parlor_core::{Mood, Pages, Parlor, ParlorAction, Rng, RunClock, Score};
 
 use crate::challenge::{self, Part};
 use crate::gifts::{SendRefusal, Shift, ShiftState, SortEvent, Spot, SHIFTS};
 use crate::mode::{story_bridge, Mode};
 use crate::progress::{self, Progress};
 use crate::sound::{self, cue, cue_at, stinger};
-use crate::{fresh_rng, pause, results};
+use crate::{fresh_rng, pause, results, ID};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 enum Phase {
@@ -65,9 +65,17 @@ pub struct SortRun {
     /// Run inside the tutorial: no "to go" count, since the lesson moves
     /// on before the quota, and the step prompts say when a gift lands.
     pub lesson: bool,
-    /// Seconds the belt waits for a lesson prompt to be heard: the belt
-    /// does not start, and a gift on it does not move.
-    hold: f64,
+    /// The run's game clock: its pace, fixed when the run starts, and the
+    /// hold that keeps the belt and the shift clock still while a line is
+    /// spoken. In the lesson it also keeps the belt from starting until
+    /// the step's prompt has been said.
+    pub clock: RunClock,
+    /// In the lesson, the start key was pressed while the wishes were
+    /// still being said: the belt starts once they have been.
+    start_waiting: bool,
+    /// Game time held for speech while this shift's belt ran: it comes
+    /// off the time left for the clock bonus, so a hold never raises it.
+    shift_held: f64,
 }
 
 /// "1 second", "5 seconds" or "5.5 seconds".
@@ -111,13 +119,16 @@ impl SortRun {
             pending: None,
             score: Score::new(),
             lesson: false,
-            hold: 0.0,
+            clock: RunClock::default(),
+            start_waiting: false,
+            shift_held: 0.0,
         }
     }
 
-    /// Holds the belt for `secs`, while a lesson prompt is said.
-    pub fn hold_for(&mut self, secs: f64) {
-        self.hold = secs;
+    /// A lesson step's prompt is being said: it gets a full hold of its
+    /// own, and the gift on the belt rides its whole way after it.
+    pub fn lesson_prompt(&mut self) {
+        self.clock.reset();
         if self.lesson {
             self.told_arrive = true;
             // The gift on the belt rides its whole way after the prompt.
@@ -207,7 +218,7 @@ impl SortRun {
         );
         if spec.level == 1 {
             text.push_str(&format!(
-                " Shake each gift with {primary} and listen. Then send it with {} or {} to the person who wished for it, before it rides off the end of the belt. A wrong guess costs time, but the gift stays on the belt.",
+                " Shake each gift with {primary}. Then send it with {} or {} to the person who wished for it, before it rides off the end of the belt. A wrong guess costs time, but the gift stays on the belt.",
                 Self::name(ctx, ParlorAction::Left),
                 Self::name(ctx, ParlorAction::Right)
             ));
@@ -221,7 +232,7 @@ impl SortRun {
             text.push_str(" From now on, the wishes do not say what they sound like. Think about what each one would sound like in a box.");
         }
         if spec.mind_change {
-            text.push_str(" Listen out: someone may change their mind half way through.");
+            text.push_str(" Someone may change their mind half way through.");
         }
         if let Some(plan) = self.mode.plan() {
             if plan.twists_gifts() {
@@ -238,7 +249,7 @@ impl SortRun {
     fn status(&self, ctx: &Ctx<Parlor>) -> Vec<String> {
         let s = &self.shift;
         let gift = match (&s.gift, self.phase) {
-            (_, Phase::Briefing) => "The belt is waiting for you.".to_string(),
+            (_, Phase::Briefing) => "The belt has not started.".to_string(),
             (None, _) => "Belt empty. A gift is coming.".to_string(),
             (Some(g), _) => {
                 let shaken = if g.shakes == 0 {
@@ -272,6 +283,9 @@ impl SortRun {
             .set_pitch(self.belt, 1.0 + 0.05 * (self.level - 1) as f32);
         let mood = mood(&self.shift);
         self.score.start(ctx, &sound::SCORE, mood);
+        // The briefing's hold is over: the belt's first lines get one of
+        // their own.
+        self.clock.reset();
         if !self.lesson {
             // The lesson's next step says the belt is running.
             ctx.say("The belt starts rolling.");
@@ -295,6 +309,8 @@ impl SortRun {
                     .play_at(sound::ARRIVE, sound::GIFT_POS, Bus::EFFECTS);
                 if !self.told_arrive {
                     self.told_arrive = true;
+                    // A line to act on: a full hold of its own.
+                    self.clock.reset();
                     let primary = Self::name(ctx, ParlorAction::Primary);
                     ctx.say_queued(format!("A gift on the belt. Shake it with {primary}."));
                 }
@@ -303,7 +319,8 @@ impl SortRun {
                 cue(ctx, sound::WARN);
                 if !self.told_warn {
                     self.told_warn = true;
-                    ctx.say("Beeping: near the edge.");
+                    self.clock.reset();
+                    ctx.say("Near the edge.");
                 }
             }
             SortEvent::Fell { penalty, .. } => {
@@ -350,20 +367,34 @@ impl SortRun {
             }
             SortEvent::MindChanged { who } => {
                 cue(ctx, sound::CHANGE);
+                // The player must act on this line: a full hold for it,
+                // however long the lines before it ran.
+                self.clock.reset();
                 let r = &self.shift.recipients[who];
                 let which = if self.shift.spec.say_sounds {
                     format!(", a {} in the box", r.wish.name())
                 } else {
                     String::new()
                 };
-                ctx.say(format!(
+                // Queued, so a delivery line said in the same frame is
+                // heard first, and neither is lost.
+                ctx.say_queued(format!(
                     "Change of plans. {}, {}, now wishes for {}{which}.",
                     r.name,
                     r.spot.place(),
                     r.item
                 ));
             }
-            SortEvent::Cleared { bonus } => self.bonus = bonus,
+            SortEvent::Cleared { bonus } => {
+                // The bonus for the time left, less the time held for
+                // speech, never below zero.
+                let held = std::mem::take(&mut self.shift_held);
+                let level = self.shift.spec.level as u64;
+                let left = (self.shift.clock - held).max(0.0);
+                let fair = ((left.floor() as u64) * 10 * level + 250 * level).min(bonus);
+                self.shift.score -= bonus - fair;
+                self.bonus = fair;
+            }
             SortEvent::TimeUp => {}
         }
     }
@@ -402,6 +433,8 @@ impl SortRun {
         self.level += 1;
         self.shift = Self::make_shift(&self.mode, self.level, Rng::seeded(self.rng.next_u64()));
         self.phase = Phase::Briefing;
+        self.start_waiting = false;
+        self.shift_held = 0.0;
         self.told_low = false;
         ctx.say_queued(format!(
             "Shift {done} complete. {} bonus points for the time left. Score {}.",
@@ -444,7 +477,8 @@ impl SortRun {
                     self.summary()
                 )];
                 pages.extend(story_bridge(blizzard));
-                ctx.replace(crate::desk_run::story_desk(blizzard, score, pages));
+                let pace = self.clock.pace();
+                ctx.replace(crate::desk_run::story_desk(blizzard, score, pages, pace));
             }
             Mode::Story { blizzard, .. } => {
                 let board = if blizzard {
@@ -452,7 +486,7 @@ impl SortRun {
                 } else {
                     progress::STORY_BOARD
                 };
-                let line = progress::record(ctx, board, score);
+                let line = progress::record_at(ctx, board, self.clock.pace(), score);
                 let pages = vec![format!(
                     "{head}The story ends on the workshop floor this year. {} Story score {score}. {line}",
                     self.summary()
@@ -472,12 +506,13 @@ impl SortRun {
                     ),
                     "Then a stack of letters at the Wish Desk. Your Gift Sort score comes with you.".to_string(),
                 ];
+                let pace = self.clock.pace();
                 ctx.replace(Pages::new(pages).then(move |ctx| {
                     let mode = Mode::Challenge {
                         plan: plan.clone(),
                         gifts: score,
                     };
-                    ctx.replace(crate::desk_run::DeskRun::new(mode, plan.stacks().0));
+                    ctx.replace(crate::desk_run::DeskRun::new(mode, plan.stacks().0).at_pace(pace));
                 }));
             }
             Mode::Challenge { plan, .. } => {
@@ -486,7 +521,7 @@ impl SortRun {
                     (false, Part::Double) => "The holiday double ends on the workshop floor. ",
                     _ => "",
                 };
-                let line = challenge::result_line(ctx, &plan, score);
+                let line = challenge::result_line(ctx, &plan, self.clock.pace(), score);
                 let pages = vec![format!("{head}{cleared}{} {line}", self.summary())];
                 let summary = if success {
                     format!("Challenge cleared. Score {score}")
@@ -500,7 +535,7 @@ impl SortRun {
                 );
             }
             _ => {
-                let line = progress::record(ctx, progress::GIFT_BOARD, score);
+                let line = progress::record_at(ctx, progress::GIFT_BOARD, self.clock.pace(), score);
                 let mut text = if success {
                     Progress::mark(ctx, |p| &mut p.all_gifts);
                     "Every shift is sorted. ".to_string()
@@ -643,6 +678,9 @@ impl State<Parlor> for SortRun {
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         ctx.audio.play_music(None, false);
         ctx.audio.set_bed(Some(sound::FIRE));
+        // The pace is fixed for the run, every shift of it: a change in
+        // Settings applies from the next run.
+        self.clock = RunClock::start(ctx, ID);
         let brief = self.briefing(ctx);
         ctx.say(brief);
     }
@@ -653,6 +691,8 @@ impl State<Parlor> for SortRun {
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
+        // A pause ends any hold, so the resume line gets a full one.
+        self.clock.reset();
         match self.phase {
             Phase::Briefing => {
                 let brief = self.briefing(ctx);
@@ -676,6 +716,7 @@ impl State<Parlor> for SortRun {
                     pause(ctx, &self.mode);
                 }
                 Some(_) => {
+                    self.clock.asked();
                     let r = self.reminder(ctx);
                     ctx.say(r);
                 }
@@ -684,15 +725,22 @@ impl State<Parlor> for SortRun {
             return;
         }
         let Some(action) = action else { return };
+        self.clock.asked_by(Some(action));
+        if action == ParlorAction::Secondary {
+            // Secondary reads the wishes again, as Repeat does.
+            self.clock.asked();
+        }
         match (self.phase, action) {
             (_, ParlorAction::Status) => {
                 let layers = self.status(ctx);
                 self.status_key.speak(ctx, layers);
             }
-            (Phase::Briefing, ParlorAction::Primary) if self.hold > 0.0 => {
+            (Phase::Briefing, ParlorAction::Primary) if self.lesson && self.clock.held() => {
                 // The lesson is still saying the wishes: a soft knock, and
-                // nothing said over them.
+                // nothing said over them. The press is kept, and the belt
+                // starts once they have been said.
                 cue(ctx, sound::EMPTY);
+                self.start_waiting = true;
             }
             (Phase::Briefing, ParlorAction::Primary) => self.start_belt(ctx),
             (Phase::Briefing, ParlorAction::Repeat | ParlorAction::Secondary) => {
@@ -723,15 +771,30 @@ impl State<Parlor> for SortRun {
     }
 
     fn update(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
-        if self.hold > 0.0 {
-            self.hold = (self.hold - dt).max(0.0);
+        // The belt, the gift's ride and the shift clock run on game time:
+        // they hold while a line is spoken and run at the run's pace. The
+        // clock runs in the briefing too, so the lesson knows when its
+        // prompt has been said.
+        let game_dt = self.clock.game_dt(ctx, dt);
+        let held = self.clock.take_held_time();
+        if self.phase == Phase::Playing {
+            self.shift_held += held;
+        }
+        if self.phase == Phase::Briefing && self.start_waiting && !self.clock.held() {
+            self.start_waiting = false;
+            self.start_belt(ctx);
             return;
         }
         if self.phase != Phase::Playing {
             return;
         }
+        // The shake's line waits for the shake sound, in real time, and
+        // then for any line still being spoken, such as a lesson prompt.
+        // The music keeps real time.
         if let Some((left, text)) = self.pending.as_mut() {
-            *left -= dt;
+            if !self.clock.held() {
+                *left -= dt;
+            }
             if *left <= 0.0 {
                 let text = std::mem::take(text);
                 self.pending = None;
@@ -743,7 +806,7 @@ impl State<Parlor> for SortRun {
             // results or a saved score.
             self.shift.clock = self.shift.clock.max(self.shift.spec.time);
         }
-        let events = self.shift.update(dt);
+        let events = self.shift.update(game_dt);
         let mood = mood(&self.shift);
         self.score.follow(ctx, mood, dt);
         self.after(ctx, events);

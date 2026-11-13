@@ -21,10 +21,11 @@ mod soundcheck;
 pub mod tutorial;
 
 use hearken::menu::{Menu, MenuCore, MenuItem};
+use hearken::screens::SettingsRow;
 use hearken::text::sentence_start;
 use hearken::Ctx;
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Parlor, Period};
 
 pub use crack::Crack;
 pub use heist::{ChallengeHost, ChallengesMenu, Jobs, CHALLENGES_NAME};
@@ -47,7 +48,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Safecracker",
     category: Category::Puzzle,
-    blurb: "Turn the dial and listen for the tumblers to open safe after safe.",
+    blurb: "Turn the dial to find each tumbler and open safe after safe.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -70,18 +71,20 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
     ctx.push(ChallengeHost::new(period));
 }
 
+/// "best score 300, relaxed best score 250", leaving out a board with no
+/// score, or "no score yet".
 fn best_score(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    match Records::best(ctx, ID, board) {
-        Some(b) => format!("best score {b}"),
-        None => "no score yet".to_string(),
-    }
+    pace::bests(ctx, ID, board, "best score").unwrap_or_else(|| "no score yet".to_string())
 }
 
-fn best_time(t: Option<f64>) -> String {
-    match t {
-        Some(t) => format!("best time {}", time_words(t)),
-        None => "not yet cracked".to_string(),
-    }
+/// "best time 1 minute, relaxed best time 2 minutes", leaving out one
+/// with no time.
+fn best_times(word: &str, best: Option<f64>, relaxed: Option<f64>) -> Option<String> {
+    pace::both(word, best.map(time_words), relaxed.map(time_words))
+}
+
+fn best_time(best: Option<f64>, relaxed: Option<f64>) -> String {
+    best_times("best time", best, relaxed).unwrap_or_else(|| "not yet cracked".to_string())
 }
 
 /// A safe's features, in a few words.
@@ -117,8 +120,8 @@ pub fn safe_summary(n: u32) -> String {
 /// An event safe's features, in a few words.
 pub fn event_summary(mode: Mode) -> String {
     match mode {
-        Mode::Unlucky => "Four wheels, one always 13, a false gate a wheel, and a black cat who yowls after the clunk at 13".to_string(),
-        Mode::Blackout => "Three wheels, a false gate a wheel, and the power cut: rain on the windows, and the tens click plain".to_string(),
+        Mode::Unlucky => "Four wheels, one always 13, a false gate a wheel, and a black cat who yowls at 13".to_string(),
+        Mode::Blackout => "Three wheels, a false gate a wheel, and the power cut, so count from zero".to_string(),
         _ => String::new(),
     }
 }
@@ -134,12 +137,9 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let lines: Vec<String> = (1..=SAFES)
         .map(|n| {
             let spec = safe_spec(n);
-            let time = match progress.best_time(n) {
-                Some(t) => format!(
-                    "best time {}, {}",
-                    time_words(t),
-                    best_score(ctx, &format!("safe {n}"))
-                ),
+            let times = best_times("best time", progress.best_time(n), progress.relaxed_time(n));
+            let time = match times {
+                Some(t) => format!("{t}, {}", best_score(ctx, &format!("safe {n}"))),
                 None if n <= progress.open_safes() => "not yet cracked".to_string(),
                 None => "locked".to_string(),
             };
@@ -150,13 +150,18 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     pages.push(lines[5..].join(" "));
     if progress.attack_open() {
         let attack: Vec<String> = (1..=progress.cracked.min(SAFES))
-            .map(|n| match progress.attack_time(n) {
-                Some(t) => format!(
-                    "safe {n}, {}, {}",
-                    time_words(t),
-                    best_score(ctx, &format!("time attack {n}"))
-                ),
-                None => format!("safe {n}, not yet beaten"),
+            .map(|n| {
+                match best_times(
+                    "best",
+                    progress.attack_time(n),
+                    progress.relaxed_attack_time(n),
+                ) {
+                    Some(t) => format!(
+                        "safe {n}, {t}, {}",
+                        best_score(ctx, &format!("time attack {n}"))
+                    ),
+                    None => format!("safe {n}, not yet beaten"),
+                }
             })
             .collect();
         // Five a page, like the safes.
@@ -186,7 +191,7 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     ]
     .into_iter()
     .filter_map(|(mode, name)| {
-        Records::best(ctx, ID, &mode.board()).map(|b| format!("{name}, best score {b}."))
+        pace::bests(ctx, ID, &mode.board(), "best score").map(|b| format!("{name}, {b}."))
     })
     .collect();
     if !bonus.is_empty() {
@@ -217,6 +222,10 @@ impl TitleGame for Safecracker {
         sound::title_music(ctx);
     }
 
+    fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
+        vec![pace::row(ID)]
+    }
+
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
         let progress = Progress::load(ctx);
         let next = progress.next_safe();
@@ -224,7 +233,10 @@ impl TitleGame for Safecracker {
         let play_help = format!(
             "{}. {}, {}.",
             safe_summary(next),
-            sentence_start(&best_time(progress.best_time(next))),
+            sentence_start(&best_time(
+                progress.best_time(next),
+                progress.relaxed_time(next)
+            )),
             best_score(ctx, &format!("safe {next}"))
         );
         let attack = if progress.attack_open() {
@@ -300,7 +312,7 @@ impl TitleGame for Safecracker {
             MenuItem::new("Practice dial", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(Crack::new(Mode::Practice))
             })
-            .help("Endless single wheels with nothing to lose: learn the clunk."),
+            .help("Endless single wheels with nothing to lose."),
         )
     }
 
@@ -403,17 +415,23 @@ impl Menu for SafeSelect {
                 );
                 continue;
             }
-            let (mode, time, board) = if self.attack {
+            let (mode, time, relaxed, board) = if self.attack {
                 (
                     Mode::TimeAttack(n),
                     progress.attack_time(n),
+                    progress.relaxed_attack_time(n),
                     format!("time attack {n}"),
                 )
             } else {
-                (Mode::Safe(n), progress.best_time(n), format!("safe {n}"))
+                (
+                    Mode::Safe(n),
+                    progress.best_time(n),
+                    progress.relaxed_time(n),
+                    format!("safe {n}"),
+                )
             };
-            let label = match time {
-                Some(t) => format!("Safe {n}, {}, best {}", spec.name, time_words(t)),
+            let label = match best_times("best", time, relaxed) {
+                Some(t) => format!("Safe {n}, {}, {t}", spec.name),
                 None => format!("Safe {n}, {}", spec.name),
             };
             let mut help = format!(

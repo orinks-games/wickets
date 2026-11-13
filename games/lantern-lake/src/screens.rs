@@ -517,7 +517,7 @@ impl RunScreen {
         let opening = if complete {
             "The song is whole, and you paddle home under the stars.".to_string()
         } else {
-            "You turn the canoe toward home, and the song fades softly behind you.".to_string()
+            "You turn the canoe toward home, and the song fades behind you.".to_string()
         };
 
         let gathered = match lake.gathered {

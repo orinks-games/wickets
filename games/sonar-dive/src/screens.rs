@@ -7,7 +7,8 @@ use parlor_core::challenges::today;
 use parlor_core::menus::{self as shared, labels, Back, Leave, Results};
 use parlor_core::score::{DANGER, HURRY};
 use parlor_core::{
-    Challenge, Challenges, Mood, Pages, Parlor, ParlorAction, Period, Records, Score, ScoreResult,
+    pace, Challenge, Challenges, Mood, Pace, Pages, Parlor, ParlorAction, Period, Records,
+    RunClock, Score, ScoreResult,
 };
 
 use crate::cues;
@@ -180,7 +181,7 @@ impl Keys {
                 self.down,
             ),
             format!(
-                "{} speaks air, hull and the bell; twice for the rest. {} gives a hint. {} drops a marker buoy. {} repeats. Escape pauses.",
+                "{} speaks air, hull and the bell, twice for the rest. {} gives a hint. {} drops a marker buoy. {} repeats. Escape pauses.",
                 sentence_start(&self.status),
                 sentence_start(&self.hint),
                 sentence_start(&self.buoy),
@@ -215,6 +216,11 @@ pub struct DiveScreen {
     road: Sound,
     /// S, in layers: a second press reads the rest.
     status_key: parlor_core::StatusKey,
+    /// The expedition's pace, fixed on its first dive and carried to the
+    /// next through the boat.
+    pace: Option<Pace>,
+    /// The sea's clock: it holds for speech, at the expedition's pace.
+    pub clock: RunClock,
 }
 
 impl DiveScreen {
@@ -237,7 +243,16 @@ impl DiveScreen {
             whale_road: false,
             road_in: crate::events::ROAD_FIRST,
             road: Sound::NONE,
+            pace: None,
+            clock: RunClock::default(),
         }
+    }
+
+    /// The same dive at `pace`, as the expedition's later dives keep the
+    /// pace of its first.
+    pub fn at_pace(mut self, pace: Option<Pace>) -> DiveScreen {
+        self.pace = pace;
+        self
     }
 
     /// Where the whale road runs: due north, beyond the site's edge.
@@ -303,7 +318,7 @@ impl DiveScreen {
         }
         if exp.config.pearl {
             if exp.dives_begun() == 1 {
-                text.push_str(" The new moon makes the sea glow, and a glow pearl lies on every dive tonight: a glassy rising chime.");
+                text.push_str(" The new moon makes the sea glow, and a glow pearl lies on every dive tonight.");
             } else {
                 text.push_str(" A glow pearl lies somewhere on this dive.");
             }
@@ -458,7 +473,7 @@ impl DiveScreen {
         } else if !d.left_bell {
             "You are at the boat's bell. Find treasure by sonar, then come back here to surface."
         } else {
-            "Steer toward treasure echoes, and come back to the bell before your air runs out."
+            "Steer toward treasure, and come back to the bell before your air runs out."
         }
     }
 
@@ -502,6 +517,7 @@ impl DiveScreen {
                 );
             }
             Event::SalvageStart { galleon } => {
+                self.clock.reset();
                 let what = if galleon { "the galleon" } else { "the wreck" };
                 self.tell(ctx, format!("Salvaging {what}. Stay stopped."));
             }
@@ -516,17 +532,19 @@ impl DiveScreen {
                 self.tell(ctx, "Salvage interrupted.");
             }
             Event::MineNear { .. } => {
+                self.clock.reset();
                 if self.mine_taught {
                     ctx.say("Mine.");
                 } else {
                     self.mine_taught = true;
-                    self.tell(ctx, "Mine! Faster ticks mean closer. Steer away.");
+                    self.tell(ctx, "Mine! Steer away.");
                 }
             }
             Event::MineTick { pos } => {
                 ctx.audio.play_at(cues::MINE_TICK, at(pos), Bus::EFFECTS);
             }
             Event::MineHit { hull, .. } => {
+                self.clock.reset();
                 ctx.audio.play(cues::MINE_BLAST, Bus::EFFECTS);
                 let practice = self.exp.as_ref().is_some_and(|e| e.dive.practice);
                 if practice {
@@ -537,6 +555,7 @@ impl DiveScreen {
                 }
             }
             Event::Scrape { pos, wall } => {
+                self.clock.reset();
                 ctx.audio.play_at(cues::SCRAPE, at(pos), Bus::EFFECTS);
                 let what = if wall { "the rock wall" } else { "a rock" };
                 if self.scrape_taught {
@@ -568,6 +587,7 @@ impl DiveScreen {
                 self.tell(ctx, text);
             }
             Event::CurrentIn { flow } => {
+                self.clock.reset();
                 ctx.audio.stop(self.current, 100);
                 self.current = ctx.audio.start_loop(cues::CURRENT, None, Bus::EFFECTS);
                 ctx.audio.set_volume(self.current, 0.6);
@@ -591,6 +611,7 @@ impl DiveScreen {
                 ctx.say("Out of the current.");
             }
             Event::Air(w) => {
+                self.clock.reset();
                 ctx.audio.play(cues::AIR_WARNING, Bus::EFFECTS);
                 let left = self.exp.as_ref().map_or(0.0, |e| e.dive.oxygen).round();
                 let at_bell = self
@@ -637,9 +658,10 @@ impl DiveScreen {
         }
         exp.settle();
         if exp.end.is_none() {
-            ctx.replace(SurfaceMenu::new(exp, self.mode, self.challenge.take()));
+            ctx.replace(SurfaceMenu::new(exp, self.mode, self.challenge.take()).at_pace(self.pace));
         } else {
-            conclude(ctx, exp, self.mode, self.challenge.take());
+            let pace = self.clock.pace();
+            conclude(ctx, exp, self.mode, self.challenge.take(), pace);
         }
     }
 }
@@ -655,6 +677,8 @@ impl State<Parlor> for DiveScreen {
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         self.readout = Saved::load(ctx).readout;
+        let pace = *self.pace.get_or_insert_with(|| pace::get(ctx, ID));
+        self.clock = RunClock::new(pace);
         let today = parlor_core::challenges::today(ctx);
         self.whale_road = crate::events::whale_road(self.mode, today);
         ctx.audio.play_music(None, false);
@@ -687,6 +711,7 @@ impl State<Parlor> for DiveScreen {
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
         ctx.audio.resume_all();
+        self.clock.reset();
         // Settings, from the pause menu, may have changed the call-outs.
         self.readout = Saved::load(ctx).readout;
         let Some(exp) = &self.exp else {
@@ -712,6 +737,7 @@ impl State<Parlor> for DiveScreen {
         let Some(action) = ctx.action_for(event) else {
             return;
         };
+        self.clock.asked_by(Some(action));
         match action {
             ParlorAction::Primary => {
                 let ev = self.exp.as_mut().map(|e| e.dive.ping());
@@ -788,7 +814,13 @@ impl State<Parlor> for DiveScreen {
         let Some(exp) = self.exp.as_mut() else {
             return;
         };
-        let events = exp.dive.update(dt, turn);
+        // A held turn answers through speech, and a ping's echoes keep
+        // their real delays: the delay is the distance.
+        if turn != 0 || exp.dive.echoes_pending() {
+            self.clock.bypass();
+        }
+        let game_dt = self.clock.game_dt(ctx, dt);
+        let events = exp.dive.update(game_dt, turn);
         let mood = mood(exp);
         self.score.follow(ctx, mood, dt);
         let heading = exp.dive.heading;
@@ -865,6 +897,7 @@ pub struct SurfaceMenu {
     exp: Option<Expedition>,
     mode: Mode,
     challenge: Option<Challenge>,
+    pace: Option<Pace>,
 }
 
 impl SurfaceMenu {
@@ -880,7 +913,14 @@ impl SurfaceMenu {
             exp: Some(exp),
             mode,
             challenge,
+            pace: None,
         }
+    }
+
+    /// The menu for an expedition diving at `pace`.
+    pub fn at_pace(mut self, pace: Option<Pace>) -> SurfaceMenu {
+        self.pace = pace;
+        self
     }
 }
 
@@ -927,7 +967,9 @@ impl Menu for SurfaceMenu {
                 |s: &mut Self, ctx: &mut Ctx<Parlor>| {
                     if let Some(mut exp) = s.exp.take() {
                         exp.next_dive();
-                        ctx.replace(DiveScreen::new(exp, s.mode, s.challenge.take()));
+                        ctx.replace(
+                            DiveScreen::new(exp, s.mode, s.challenge.take()).at_pace(s.pace),
+                        );
                     }
                 },
             )
@@ -937,7 +979,8 @@ impl Menu for SurfaceMenu {
                 |s: &mut Self, ctx: &mut Ctx<Parlor>| {
                     if let Some(mut exp) = s.exp.take() {
                         exp.stop();
-                        conclude(ctx, exp, s.mode, s.challenge.take());
+                        let pace = s.pace.unwrap_or_else(|| pace::get(ctx, ID));
+                        conclude(ctx, exp, s.mode, s.challenge.take(), pace);
                     }
                 },
             )
@@ -950,18 +993,26 @@ impl Menu for SurfaceMenu {
     }
 }
 
-fn score_line(result: ScoreResult, noun: &str) -> String {
+fn score_line(result: ScoreResult, noun: &str, pace: Pace) -> String {
+    let best = pace.best_word();
     match result {
+        ScoreResult::First if pace.separate() => format!("Your first relaxed {noun}."),
         ScoreResult::First => format!("Your first recorded {noun}."),
         ScoreResult::NewBest { previous } => {
-            format!("A new best {noun}. The old best was {previous}.")
+            format!("A new {best} {noun}. The old {best} was {previous}.")
         }
-        ScoreResult::Short { best } => format!("Your best {noun} is {best}."),
+        ScoreResult::Short { best: b } => format!("Your {best} {noun} is {b}."),
     }
 }
 
 /// Ends an expedition: records it, plays its stinger and reads the result.
-pub fn conclude(ctx: &mut Ctx<Parlor>, exp: Expedition, mode: Mode, challenge: Option<Challenge>) {
+pub fn conclude(
+    ctx: &mut Ctx<Parlor>,
+    exp: Expedition,
+    mode: Mode,
+    challenge: Option<Challenge>,
+    pace: Pace,
+) {
     let end = exp.end.unwrap_or(ExpeditionEnd::Banked);
     let n = exp.dive_number();
     let score = exp.score();
@@ -1016,13 +1067,13 @@ pub fn conclude(ctx: &mut Ctx<Parlor>, exp: Expedition, mode: Mode, challenge: O
     }
     match (mode, &challenge) {
         (Mode::Challenge(_), Some(ch)) => {
-            let result = Challenges::submit(ctx, ch, score as u64);
+            let result = Challenges::submit_at(ctx, ch, pace, score as u64);
             let streak = Challenges::streak(ctx, ID, ch.period);
             let streak = format!("A {} {} streak.", streak.max(1), ch.period.unit());
             pages.push(format!(
                 "{} result: {score} coins. {} {streak} {}",
                 ch.title(),
-                score_line(result, "result"),
+                score_line(result, "result", pace),
                 ch.resets()
             ));
         }
@@ -1037,10 +1088,10 @@ pub fn conclude(ctx: &mut Ctx<Parlor>, exp: Expedition, mode: Mode, challenge: O
                 pages.push("Haul: 0 coins, so nothing goes on the board.".to_string())
             }
             Some(board) => {
-                let result = Records::record(ctx, ID, board, score as u64);
+                let result = Records::record(ctx, ID, &pace.board(board), score as u64);
                 pages.push(format!(
                     "Haul: {score} coins. {}",
-                    score_line(result, "haul")
+                    score_line(result, "haul", pace)
                 ));
             }
             None => pages.push("Practice dives are not scored.".to_string()),

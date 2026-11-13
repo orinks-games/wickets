@@ -17,10 +17,11 @@ pub mod sound;
 pub mod tutorial;
 
 use hearken::menu::{Label, MenuItem};
+use hearken::screens::SettingsRow;
 use hearken::text::sentence_start;
 use hearken::Ctx;
 use parlor_core::menus::{labels, TitleGame, TitleRow};
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period};
 
 pub use menus::{
     AquariumScreen, ChallengeHost, ChallengesMenu, Shores, SoundCheck, CHALLENGES_NAME,
@@ -67,11 +68,18 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
     ctx.push(ChallengeHost::new(period));
 }
 
+/// "best 120, relaxed best 140", or "not visited yet".
 fn best_words(ctx: &mut Ctx<Parlor>, place: Place) -> String {
-    match Records::best(ctx, ID, place.board()) {
-        Some(b) => format!("best {b}"),
-        None => "not visited yet".to_string(),
-    }
+    pace::scored_bests(ctx, ID, place.board(), "best")
+        .unwrap_or_else(|| "not visited yet".to_string())
+}
+
+/// An event's best score and relaxed best score.
+fn event_bests(ctx: &mut Ctx<Parlor>, event: events::Event) -> events::Bests {
+    (
+        pace::best(ctx, ID, event.board()),
+        pace::best(ctx, ID, &Pace::Relaxed.board(event.board())),
+    )
 }
 
 /// What the Play row says and does for one shore.
@@ -142,7 +150,7 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let events: Vec<String> = events::Event::ALL
         .into_iter()
         .filter_map(|e| {
-            Records::best(ctx, ID, e.board()).map(|b| format!("{}: best {b}.", e.name()))
+            pace::scored_bests(ctx, ID, e.board(), "best").map(|b| format!("{}: {b}.", e.name()))
         })
         .collect();
     if !events.is_empty() {
@@ -188,9 +196,9 @@ fn event_rows(ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<TidePools>> {
                 .select_sound(None)
                 .help(event.locked_help(today));
             }
-            let best = Records::best(ctx, ID, event.board());
-            let label = match best {
-                Some(b) => format!("{}, {}, best {b}", event.name(), place.name()),
+            let best = event_bests(ctx, event);
+            let label = match pace::both("best", best.0, best.1) {
+                Some(b) => format!("{}, {}, {b}", event.name(), place.name()),
                 None => format!("{}, {}", event.name(), place.name()),
             };
             MenuItem::new(label, move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
@@ -224,6 +232,10 @@ impl TitleGame for TidePools {
 
     fn music(&mut self, ctx: &mut Ctx<Parlor>) {
         sound::title_music(ctx);
+    }
+
+    fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
+        vec![pace::row(ID)]
     }
 
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
@@ -269,9 +281,7 @@ impl TitleGame for TidePools {
             MenuItem::new("Practice pools", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 outing::start(ctx, Mode::Practice)
             })
-            .help(
-                "Three sheltered pools with no tide, to learn leaning in, listening and gathering.",
-            ),
+            .help("Three sheltered pools with no tide, to learn leaning in and gathering."),
         )
     }
 
@@ -281,7 +291,7 @@ impl TitleGame for TidePools {
             format!("Your aquarium, {kinds} of {} kinds", Species::ALL.len()),
             |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(AquariumScreen::new()),
         )
-        .help("Visit everything you have gathered, and listen to it.")]
+        .help("Visit everything you have gathered.")]
     }
 
     fn lesson(&mut self, ctx: &mut Ctx<Parlor>) -> parlor_core::Lesson {
@@ -308,7 +318,7 @@ impl TitleGame for TidePools {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "Daily, weekly and monthly shores, the same for every player, each with a gentle goal. {}",
+            "Daily, weekly and monthly shores, the same for every player, each with a goal. {}",
             daily.resets()
         )
     }

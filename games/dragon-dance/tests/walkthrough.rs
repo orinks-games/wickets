@@ -145,7 +145,7 @@ fn every_title_row_has_its_own_help() {
 fn play_starts_the_first_street_with_its_intro() {
     let mut h = title();
     h.clear();
-    h.press(Key::Return);
+    start(&mut h);
     assert_eq!(h.app.top_name(), DANCE_NAME);
     assert!(spoke(
         &h,
@@ -168,10 +168,7 @@ fn the_count_in_then_the_first_beat_teaches_the_pearl() {
     assert!(played(&h, sound::COUNT));
     assert!(h.spoken().is_empty());
     wait(&mut h, 3.5);
-    assert!(spoke(
-        &h,
-        "Dance. Keep your head in the shimmering pearl's lane."
-    ));
+    assert!(spoke(&h, "Dance. Keep your head in the pearl's lane."));
     assert!(played(&h, sound::DRUM_DOWN));
     assert!(played(&h, sound::DRUM));
 }
@@ -265,12 +262,12 @@ fn escape_pauses_and_back_to_the_title_leaves() {
 #[test]
 fn a_whole_street_danced_by_the_keys_earns_stars_and_opens_the_next() {
     let mut h = title();
-    h.press(Key::Return);
+    start(&mut h);
     let heard = dance_by_keys(&mut h, 200.0);
     assert_eq!(h.app.top_name(), "results");
     let all = heard.join(" ");
     assert!(all.contains("Perfect rear, 100 points."), "{all}");
-    assert!(all.contains("Drum roll: a gong in 2 beats."));
+    assert!(all.contains("A gong in 2 beats. "));
     let results = rows(&h);
     assert_eq!(results[0], "Next street: street 2, Tea House Lane");
     assert_eq!(results[1], "Play again");
@@ -283,10 +280,17 @@ fn a_whole_street_danced_by_the_keys_earns_stars_and_opens_the_next() {
     assert!(progress.opened(2));
     assert_eq!(progress.danced, 1);
     assert!(Records::best(&mut h.app.ctx, ID, "street 1").is_some());
-    // Next street goes straight on.
+    // Next street opens its own briefing in place of the results, so
+    // Escape there goes back to the title.
+    h.clear();
     h.press(Key::Return);
+    assert_eq!(h.app.top_name(), parlor_core::briefing::NAME);
+    assert!(spoke(&h, "Street 2: Tea House Lane."), "{:?}", h.spoken());
+    h.press(Key::Escape);
+    assert_eq!(h.app.top_name(), TITLE_NAME);
+    goto(&mut h, "Play, street 2: Tea House Lane");
+    start(&mut h);
     assert_eq!(h.app.top_name(), DANCE_NAME);
-    assert!(spoke(&h, "Street 2: Tea House Lane."));
     h.press(Key::Escape);
     goto(&mut h, "Back to the title");
     h.press(Key::Return);
@@ -333,7 +337,7 @@ fn firecrackers_are_called_and_a_stumble_costs_points() {
 fn the_practice_street_saves_nothing() {
     let mut h = title();
     goto(&mut h, "Practice street");
-    h.press(Key::Return);
+    start(&mut h);
     assert!(spoke(
         &h,
         "Practice: nothing is saved, and stumbles cost nothing."
@@ -363,7 +367,7 @@ fn street_select_lists_open_and_locked_streets() {
     assert!(spoke(&h, "Earn a star on street 1 to open it."));
     assert!(played(&h, sound::NOPE));
     h.press(Key::Up);
-    h.press(Key::Return);
+    start(&mut h);
     assert_eq!(h.app.top_name(), DANCE_NAME);
 }
 
@@ -448,4 +452,138 @@ fn help_ends_with_the_controls() {
     let last = help.rsplit("\n## ").next().unwrap();
     assert!(last.starts_with("Controls"));
     let _ = Headless::<parlor_core::Parlor>::new(Default::default(), Base);
+}
+
+#[test]
+fn a_streets_briefing_plays_the_cues_it_uses() {
+    let labels = |mode| {
+        dragon_dance::briefing::cues(mode)
+            .iter()
+            .map(|c| c.label().to_string())
+            .collect::<Vec<_>>()
+    };
+    assert_eq!(
+        labels(Mode::Street(1)),
+        [
+            "Drum",
+            "Drum roll",
+            "Gong",
+            "Pearl",
+            "Pearl moves",
+            "Off the pearl",
+            "Red envelope coming"
+        ]
+    );
+    assert_eq!(
+        labels(Mode::Practice),
+        [
+            "Drum",
+            "Drum roll",
+            "Gong",
+            "Pearl",
+            "Pearl moves",
+            "Off the pearl",
+            "Red envelope coming",
+            "Firecrackers coming",
+        ]
+    );
+    assert_eq!(
+        labels(Mode::NewYear(2027)),
+        [
+            "Drum",
+            "Drum roll",
+            "Gong",
+            "Midnight gong",
+            "Pearl",
+            "Pearl moves",
+            "Off the pearl",
+            "Red envelope coming",
+            "Firecrackers coming",
+            "Countdown",
+        ]
+    );
+    assert_eq!(
+        labels(Mode::Lantern(2027)),
+        [
+            "Drum",
+            "Pearl",
+            "Pearl moves",
+            "Off the pearl",
+            "Lantern coming"
+        ]
+    );
+
+    let mut h = title();
+    h.clear();
+    h.press(Key::Return);
+    assert_eq!(h.app.top_name(), parlor_core::briefing::NAME);
+    h.frame(1.0);
+    assert_eq!(h.app.ctx.audio.music(), None, "no music under the briefing");
+    assert_eq!(h.app.ctx.audio.bed(), None, "no bed under the briefing");
+    assert_eq!(
+        h.spoken(),
+        ["Street 1: Market Row. Keep your head in the pearl's lane on every beat. Space rears up as the gong strikes. Catch red envelopes. 1 to 7 play the sounds. Enter starts."]
+    );
+    h.clear();
+    h.press(Key::Num3);
+    wait(&mut h, 1.0);
+    assert_eq!(h.spoken(), ["Gong"]);
+    assert!(played(&h, sound::GONG), "{:?}", h.played());
+    h.press(Key::Space);
+    assert_eq!(h.app.top_name(), DANCE_NAME);
+}
+
+/// Whether `h`'s Settings for this game list the briefing row.
+fn lists_the_briefing_row(h: &mut Headless<parlor_core::Parlor>) -> bool {
+    goto(h, "Settings");
+    h.press(Key::Return);
+    h.press(Key::Return); // the game's own category
+    let listed = rows(h)
+        .iter()
+        .any(|r| r.starts_with("Briefing before play"));
+    h.press(Key::Escape);
+    h.press(Key::Escape);
+    listed
+}
+
+#[test]
+fn a_stable_copy_starts_every_street_at_once() {
+    use parlor_core::channel::{pin, Stage};
+    pin(Some(Stage::Stable));
+    let mut h = title();
+    let help = parlor_core::seasonal::help(&h.app.ctx, dragon_dance::HELP);
+    let row = lists_the_briefing_row(&mut h);
+    goto(&mut h, "Play, street 1: Market Row");
+    h.clear();
+    h.press(Key::Return);
+    let play = h.app.top_name().to_string();
+    let said = h.spoken().join(" ");
+    dance_by_keys(&mut h, 200.0);
+    let results = h.app.top_name().to_string();
+    goto(&mut h, "Next street: street 2, Tea House Lane");
+    h.press(Key::Return);
+    let next = h.app.top_name().to_string();
+    pin(None);
+    assert!(!help.contains("briefing"), "{help}");
+    assert!(!row);
+    assert_eq!(play, DANCE_NAME);
+    assert!(!said.contains("play the sounds"), "{said}");
+    assert_eq!(results, "results");
+    assert_eq!(next, DANCE_NAME);
+}
+
+#[test]
+fn a_beta_copy_shows_the_briefing() {
+    use parlor_core::channel::{pin, Stage};
+    pin(Some(Stage::Beta));
+    let mut h = title();
+    let help = parlor_core::seasonal::help(&h.app.ctx, dragon_dance::HELP);
+    let row = lists_the_briefing_row(&mut h);
+    goto(&mut h, "Play, street 1: Market Row");
+    h.press(Key::Return);
+    let top = h.app.top_name().to_string();
+    pin(None);
+    assert!(help.contains("on the briefing before a street"), "{help}");
+    assert!(row);
+    assert_eq!(top, parlor_core::briefing::NAME);
 }

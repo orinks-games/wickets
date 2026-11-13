@@ -12,12 +12,12 @@ use crate::rules::{skyline_level, Mode, SKYLINE_LEN};
 use crate::screens::{briefing, challenge_plan, period_text, start, Launch, CHALLENGES_NAME};
 use crate::ID;
 
-/// "best 23.4 seconds" or "no time yet".
-pub fn time_text(best: Option<f64>) -> String {
-    match best {
-        Some(t) => format!("best {t:.1} seconds"),
-        None => "no time yet".to_string(),
-    }
+/// "best 23.4 seconds, relaxed best 40.1 seconds", leaving out one with
+/// no time, or "no time yet".
+pub fn time_text((best, relaxed): (Option<f64>, Option<f64>)) -> String {
+    let secs = |t: f64| format!("{t:.1} seconds");
+    parlor_core::pace::both("best", best.map(secs), relaxed.map(secs))
+        .unwrap_or_else(|| "no time yet".to_string())
 }
 
 /// Every skyline crossing, to walk alone for its best time.
@@ -58,7 +58,7 @@ impl Menu for CrossingSelect {
         for n in 1..=SKYLINE_LEN {
             let level = skyline_level(n, false);
             if n <= open {
-                let best = progress::best_time(ctx, &level.time_board());
+                let best = progress::best_times(ctx, &level.time_board());
                 items.push(
                     MenuItem::new(
                         format!("Crossing {n}, {}, {}", level.route(), time_text(best)),

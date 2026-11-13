@@ -2,7 +2,7 @@
 
 ## About the game
 
-Winter holidays: sort gifts by sound, then answer children's letters. Gift Sort: clear the shift before the clock runs out. The Wish Desk: find each letter's gift on the shelf and wrap it, with no clock. Midnight Countdown, a rhythm game for New Year's Eve, has its own row on the title.
+Winter holidays: shake and sort gifts, then answer children's letters. Gift Sort: clear the shift before the clock runs out. The Wish Desk: find each letter's gift on the shelf and wrap it, with no clock. Midnight Countdown, a rhythm game for New Year's Eve, has its own row on the title.
 
 ## The two parts
 
@@ -22,13 +22,23 @@ Space shakes the gift so you can identify it. Gifts include blocks, teddy bears,
 
 There are 8 shifts. Each one has more gifts, more kinds of sound and a faster belt, and the belt speeds up as you sort. The first three briefings say what each wish sounds like. From shift 4 you must work it out. From shift 5, someone changes their mind half way through: their new wish is announced. A delivery scores more the sooner you make it and the longer your streak, times the shift number. Clearing a shift adds a bonus for the time left on the clock. Shifts you reach stay open: choose a starting shift with Left and Right on the Gift Sort row of the title.
 
+## Gift Sort: pace
+
+The belt, each gift's ride and the shift clock hold while the wishes, a change of plans or another line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every Gift Sort run. Time spent while a line is spoken still comes off the time left for your clock bonus.
+
+Pace in Settings applies to Gift Sort only, and sets how fast it runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. The Wish Desk has no clock, and Midnight Countdown keeps the band's beat at every pace.
+
+A change applies from your next run. A run keeps the pace it started at through all its shifts, and on to the Wish Desk in the story.
+
+Shifts open at every pace. Relaxed scores are saved separately, including the story and challenges. Normal and quick share their scores.
+
 ## The Wish Desk: letters and the shelf
 
 A stack is a pile of letters. Each child asks for one thing, in their own words, and the letter says how old they are. The gifts are on a shelf in front of you, one box in each place. Walk the shelf with the Left and Right arrows, or jump to its ends with Up and Down. Space shakes the box in front of you. In the first two stacks, each letter also says how its wish would sound in a box. From stack 3 you must work it out.
 
 ## The Wish Desk: wrapping
 
-When a box sounds like the wish, hold Space to wrap it. Keep holding until it is wrapped. Let go early and nothing is wrapped. The right gift answers the letter, and the next letter comes straight away. A wrong box goes back on the shelf and the letter stays. A wrapped gift leaves an empty place on the shelf.
+When you find the box that holds the wish, hold Space to wrap it. Keep holding until it is wrapped. Let go early and nothing is wrapped. The right gift answers the letter, and the next letter comes straight away. A wrong box goes back on the shelf and the letter stays. A wrapped gift leaves an empty place on the shelf.
 
 ## The Wish Desk: stacks and scoring
 
@@ -56,7 +66,7 @@ Story mode plays shifts 1 to 3 of Gift Sort, a short bridge, then stack 2 at the
 
 ## Challenges
 
-Choose Challenges on the title, or Challenges in the parlor's lobby, for three runs that are the same for every player. Each row says what the challenge is, then whether you have played it, your best and your streak. The briefing states the twist and how long until the next one before you play. Your result counts when the run ends, win or lose. Choosing Leave the challenge on the pause menu does not count. Escape on a briefing goes back without starting. Afterwards you hear your score, your best on that challenge and your streak, then the results menu offers the same challenge again or Back to the challenges.
+Choose Challenges on the title, or Challenges in the parlor's lobby, for three runs that are the same for every player. Each row says what the challenge is, then whether you have played it, your best and your streak. The briefing states the twist and how long until the next one before you play. Your result counts when the run ends, win or lose. Choosing Leave the challenge on the pause menu does not count. Escape on a briefing goes back without starting. Afterwards the game reads your score, your best on that challenge and your streak, then the results menu offers the same challenge again or Back to the challenges.
 
 The daily challenge alternates. On even days of the month it is the rush: one Gift Sort shift at shift 5. On odd days it is the morning post: stack 3 at the Wish Desk. Each day brings one twist. On the belt, the twist is one of these. Rush hour: the belt runs a quarter faster. Short clock: four fifths of the usual time. Big order: three extra gifts, with a little extra time. Picky guests: a wrong guess costs double time. At the desk, the twist is one of these. Packed in straw: every box needs two shakes. A long shelf: two more boxes. Careful hands: a wrong box costs double. Few shakes: only two shakes a letter before shakes cost points. The briefing repeats the twist.
 
@@ -66,11 +76,11 @@ The monthly challenge is the midwinter post: stacks 3, 4 and 5 at the Wish Desk,
 
 ## Practice, tutorial and sound check
 
-Practice rhythm is a night of Midnight Countdown where the party never fizzles and nothing is saved. Choose any night you have opened with Left and Right on its row of the title. The tutorial sorts two gifts on the belt, then answers a letter at the Wish Desk. Sound check lists the gameplay cues and lets you play them, so you can learn each gift's shake and each cue before you play. Help is this guide.
+Practice rhythm is a night of Midnight Countdown where the party never fizzles and nothing is saved. Choose any night you have opened with Left and Right on its row of the title. The tutorial sorts two gifts on the belt, then answers a letter at the Wish Desk. Sound check lists and plays the gameplay cues, with each gift's shake. Help is this guide.
 
 ## Records and results
 
-The Gift Sort, Wish Desk and Midnight Countdown rows on the title name your best for the chosen shift, stack or night, and Play, story mode names your best story score. Records reads every best: the story, the blizzard story, Gift Sort, the Wish Desk and each stack, Muddled post, Midnight Countdown and each night, how many are open, and your challenge results. When a run ends you hear its results, then the results menu. Next stack or Next night plays the next one. Play again or Try again plays the same run. Hear the results again reads them once more, and Back to the title goes back. Escape on the results menu does the same as Back to the title.
+The Gift Sort, Wish Desk and Midnight Countdown rows on the title name your best for the chosen shift, stack or night, and Play, story mode names your best story score. Records reads every best: the story, the blizzard story, Gift Sort, the Wish Desk and each stack, Muddled post, Midnight Countdown and each night, how many are open, and your challenge results. When a run ends the game reads its results, then the results menu. Next stack or Next night plays the next one. Play again or Try again plays the same run. Hear the results again reads them once more, and Back to the title goes back. Escape on the results menu does the same as Back to the title.
 
 ## The title
 
@@ -132,4 +142,4 @@ Everywhere:
 
 F1: help for what you are doing right now. F2 stops speech.
 
-Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge. When you come back from the pause menu in the middle of the music, a bar of ticks counts you back in and the band plays the call again. Notes you already answered stay answered.
+Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge. When you come back from the pause menu in the middle of the music, the band counts you back in with a bar and plays the call again. Notes you already answered stay answered.

@@ -61,7 +61,7 @@ pub fn page(ctx: &Ctx<Parlor>, n: u32) -> String {
     let p = k(ParlorAction::Primary);
     match n {
         1 => format!(
-            "Lesson 1 of {LESSONS}: pedal and coast. Hold {up} to pedal, and the chain whirrs. Let go to coast, and the freewheel ticks, faster the faster you go. Pedal up to {}, then coast for 2 seconds.",
+            "Lesson 1 of {LESSONS}: pedal and coast. Hold {up} to pedal. Let go to coast. Pedal up to {}, then coast for 2 seconds.",
             parlor_core::units::per_hour(20.0)
         ),
         2 => format!(
@@ -69,15 +69,15 @@ pub fn page(ctx: &Ctx<Parlor>, n: u32) -> String {
             parlor_core::units::per_hour(BRAKE_FROM * 3.6)
         ),
         3 => format!(
-            "Lesson 3 of {LESSONS}: steer. {} and {right} slide you across the road while you hold them. A short thrum means you crossed the line between the bike lane and the traffic lane. Get moving, steer out into the traffic lane, then back into the bike lane.",
+            "Lesson 3 of {LESSONS}: steer. {} and {right} slide you across the road while you hold them. A line divides the bike lane from the traffic lane. Get moving, steer out into the traffic lane, then back into the bike lane.",
             sentence_start(&left)
         ),
         4 => format!(
-            "Lesson 4 of {LESSONS}: the door zone. A sharp click from a parked car means a door is about to open. {} steers left: move out before it does. Pass both doors.",
+            "Lesson 4 of {LESSONS}: the door zone. Now and then a parked car's door is about to open. {} steers left: move out before it does. Pass both doors.",
             sentence_start(&left)
         ),
         _ => format!(
-            "Lesson 5 of {LESSONS}: hop. {} hops while you are moving. A tick ahead means a pothole, and it ticks faster as it nears. A sharp double beep means it is in your line: hop then. Two potholes lie in the bike lane: hop one of them.",
+            "Lesson 5 of {LESSONS}: hop. {} hops while you are moving. Two potholes lie in the bike lane: hop one of them as you reach it.",
             sentence_start(&p)
         ),
     }
@@ -93,9 +93,9 @@ pub fn goal(ctx: &Ctx<Parlor>, n: u32) -> String {
             "Lesson 3. Get moving, then hold {} to steer into the traffic lane.",
             k(ParlorAction::Left)
         ),
-        4 => "Lesson 4. Ride on and listen for the click of a door.".to_string(),
+        4 => "Lesson 4. Ride on, and move left when a door is about to open.".to_string(),
         _ => format!(
-            "Lesson 5. Ride on in the bike lane and press {} on the double beep.",
+            "Lesson 5. Ride on in the bike lane and press {} as you reach a pothole.",
             k(ParlorAction::Primary)
         ),
     }
@@ -111,6 +111,6 @@ pub fn start(ctx: &Ctx<Parlor>, bike: Bike) -> Pages {
 pub fn done_pages(_ctx: &Ctx<Parlor>) -> Vec<String> {
     vec![
         "Training complete: all five lessons passed. You can pedal, coast, brake, steer, keep out of the door zone and hop.".to_string(),
-        "Next, try a time trial. Downtown adds cars from behind, curbs, ramps and junction turns. Hint tells you what to do about whatever comes next.".to_string(),
+        "Next, try a time trial. Downtown adds cars from behind, curbs, ramps and junction turns. Hint says what to do about whatever comes next.".to_string(),
     ]
 }

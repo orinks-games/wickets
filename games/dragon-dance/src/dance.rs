@@ -386,7 +386,7 @@ impl DanceScreen {
                     self.progress.store(ctx);
                     self.tell_queued(
                         ctx,
-                        format!("Dance. Keep your head in the shimmering pearl's lane. {line}"),
+                        format!("Dance. Keep your head in the pearl's lane. {line}"),
                     );
                 } else {
                     self.tell_queued(ctx, "Dance.");
@@ -447,7 +447,7 @@ impl DanceScreen {
                 self.teach(
                     ctx,
                     "gong",
-                    format!("Drum roll: a gong in 2 beats. {p} on the gong rears up."),
+                    format!("A gong in 2 beats. {p} on the gong rears up."),
                 );
             }
             Event::Gong { great } => {
@@ -798,7 +798,7 @@ pub fn results(
         r = r.next(
             format!("Next street: street {next}, {}", streets::street(next).name),
             format!("{}.", sentence_start(&streets::street(next).describe())),
-            move |ctx| ctx.replace(DanceScreen::new(Launch::new(Mode::Street(next)))),
+            move |ctx| crate::briefing::briefing(ctx, Mode::Street(next)).show_in_place(ctx),
         );
     }
     let (label, help) = match launch.mode {

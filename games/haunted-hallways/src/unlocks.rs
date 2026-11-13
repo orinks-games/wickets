@@ -93,7 +93,7 @@ const BEASTS: [(&str, &str, &str, &str, &str); 16] = [
         "Mimics",
         sound::MIMIC,
         "Clear a floor with mimics, from floor 35.",
-        "Copies of the answer that sound just like it but hop to a new place every few seconds. Stand still and listen: the real thing never moves. Touching a mimic costs time.",
+        "Copies of the answer that sound just like it but hop to a new place every few seconds. Stand still: the real thing never moves. Touching a mimic costs time.",
     ),
     (
         "beast-rotten",
@@ -149,7 +149,7 @@ const BEASTS: [(&str, &str, &str, &str, &str); 16] = [
         "Falling stones",
         sound::DUST,
         "Clear a floor where stones fall, from floor 71.",
-        "The catacombs' ceilings crumble. Dust trickles over you first, and 2 seconds later a stone falls on that spot. Step off when you hear the dust.",
+        "The catacombs' ceilings crumble. Dust trickles over you first, and 2 seconds later a stone falls on that spot. Step off as the dust trickles.",
     ),
     (
         "beast-founder",

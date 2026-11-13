@@ -108,7 +108,7 @@ fn the_tutorial_teaches_in_the_practice_room() {
         "the lesson dances all three monsters"
     );
     assert!(spoke(&h, "Here comes the band."));
-    assert!(spoke(&h, "spot on, with a spooky chime, for 3 points."));
+    assert!(spoke(&h, "spot on, for 3 points."));
     assert!(spoke(&h, "Now one in time"));
     assert!(spoke(&h, "In time. Tutorial done."));
     assert!(
@@ -214,7 +214,7 @@ fn the_dance_counts_in_plays_the_tune_and_calls_each_step() {
     let (mut h, mut twin) = floor(Mode::Set(1));
     h.clear();
     start(&mut h, &mut twin);
-    assert!(spoke(&h, "Here we go. Four knocks in."));
+    assert!(spoke(&h, "Here we go. Four beats in."));
     let evs = wait(&mut h, &mut twin, 4.0);
     assert_eq!(played_count(&h, sound::COUNT), 4);
     let first = SONGS[0].part_key(false);
@@ -349,7 +349,7 @@ fn pausing_counts_back_in_on_three_beats() {
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), PLAY_NAME);
     twin.count_in();
-    assert!(spoke(&h, "Back on the floor. Three knocks in."));
+    assert!(spoke(&h, "Back on the floor. Three beats in."));
     let before = twin.dance.now();
     wait(&mut h, &mut twin, 2.5);
     assert_eq!(played_count(&h, sound::COUNT), 3);
@@ -458,7 +458,7 @@ fn the_practice_room_waits_and_names_the_key() {
     let (mut h, mut twin) = floor(Mode::Practice(1));
     assert!(spoke(
         &h,
-        "The song waits for each monster until you dance its move."
+        "The music holds for each monster until you dance its move."
     ));
     start(&mut h, &mut twin);
     while twin.dance.waiting().is_none() {
@@ -667,5 +667,5 @@ fn help_mid_dance_pauses_the_song_and_names_only_this_nights_monsters() {
     assert!(!spoke(&h, "vampire"));
     read_pages(&mut h);
     assert_eq!(h.app.top_name(), PLAY_NAME);
-    assert!(spoke(&h, "Back on the floor. Three knocks in."));
+    assert!(spoke(&h, "Back on the floor. Three beats in."));
 }

@@ -208,12 +208,37 @@ fn event_trips_score_on_their_own_boards() {
     read_pages(&mut h);
     rules::fix_seed(Some(SEED));
     let mut t = Twin::new(h, outing_for(Mode::Event(Event::Moonlit, Place::Cove)));
+    let target =
+        t.o.pools
+            .iter()
+            .flat_map(|p| p.finds.iter())
+            .map(|f| f.species)
+            .find(|s| s.shy().is_none())
+            .expect("something calm on the shore");
+    t.fetch(target);
+    let score = t.o.score();
+    assert!(score > 0);
     t.wait_for_tide();
     t.h.press(Key::Return);
     assert!(spoke(&t.h, "Your first score on the moonlit pools."));
     read_pages(&mut t.h);
-    assert_eq!(Records::best(&mut t.h.app.ctx, ID, "moonlit"), Some(0));
+    assert_eq!(Records::best(&mut t.h.app.ctx, ID, "moonlit"), Some(score));
     assert_eq!(Records::best(&mut t.h.app.ctx, ID, "cove"), None);
+}
+
+#[test]
+fn an_event_trip_that_scores_0_goes_on_no_board() {
+    let mut h = title_on(HUNTERS_MOON);
+    choose(&mut h, "Moonlit pools");
+    rules::fix_seed(Some(SEED));
+    read_pages(&mut h);
+    rules::fix_seed(Some(SEED));
+    let mut t = Twin::new(h, outing_for(Mode::Event(Event::Moonlit, Place::Cove)));
+    t.wait_for_tide();
+    t.h.press(Key::Return);
+    assert!(spoke(&t.h, "Score 0, so nothing goes on the board."));
+    read_pages(&mut t.h);
+    assert_eq!(Records::best(&mut t.h.app.ctx, ID, "moonlit"), None);
 }
 
 /// Finishes a moonlit trip on the Hunter's Moon, to its results menu.
@@ -247,7 +272,7 @@ fn play_again_after_the_moon_wanes_goes_back_to_the_title() {
         t.h.spoken()
     );
     assert!(rows(&t.h).iter().any(|r| r == "Moonlit pools, locked"));
-    assert_eq!(Records::best(&mut t.h.app.ctx, ID, "moonlit"), Some(0));
+    assert_eq!(Records::best(&mut t.h.app.ctx, ID, "moonlit"), None, "a 0");
 }
 
 #[test]

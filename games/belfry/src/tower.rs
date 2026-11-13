@@ -133,7 +133,7 @@ impl Tower {
     fn moon_words(&self) -> Option<String> {
         let place = self.lit?;
         Some(format!(
-            "The captain calls place {}: {}, already set. A shimmer marks it.",
+            "The captain calls place {}: {}, already set.",
             place + 1,
             bell_words(self.peal.code[place], self.bells()).to_lowercase()
         ))
@@ -247,10 +247,10 @@ impl Tower {
             sentence_start(&self.rows_left_words())
         );
         if answer.in_place > 0 && self.taught.insert(TAUGHT_KNOCK) {
-            text.push_str(" A knock is a right bell in its place.");
+            text.push_str(" In place means a right bell in its place.");
         }
         if answer.misplaced > 0 && self.taught.insert(TAUGHT_TAP) {
-            text.push_str(" A tap is a right bell in the wrong place.");
+            text.push_str(" Misplaced means a right bell in the wrong place.");
         }
         text
     }
@@ -716,7 +716,7 @@ impl State<Parlor> for Tower {
     fn help(&self, ctx: &Ctx<Parlor>) -> String {
         let p = ctx.control_name(ParlorAction::Primary);
         let mut now = format!(
-            "{} Build a row of {} bells, then {p} rings it. Knocks are right bells in their place, taps are right bells in the wrong place.",
+            "{} Build a row of {} bells, then {p} rings it. In place is a right bell in its place, misplaced is a right bell in the wrong place.",
             self.status_layers(ctx).join(" "),
             self.peal.rules.places
         );

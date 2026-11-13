@@ -61,7 +61,7 @@ pub fn leftovers_locked_line(date: Date) -> String {
 }
 
 /// The locked Leftovers row's help.
-pub fn leftovers_locked_help(date: Date, best: Option<u64>) -> String {
+pub fn leftovers_locked_help(date: Date, best: Bests) -> String {
     format!(
         "Opens {}, around Thanksgiving: {TURKEY_SCRAPS} turkey scraps in every pantry, 50 points each.{}",
         leftovers_next_words(date),
@@ -80,7 +80,7 @@ pub fn bin_night_locked_line(date: Date) -> String {
 }
 
 /// The locked Bin night row's help.
-pub fn bin_night_locked_help(date: Date, best: Option<u64>) -> String {
+pub fn bin_night_locked_help(date: Date, best: Bests) -> String {
     format!(
         "Opens {}, {}: a cheese rind in every pantry, 100 points.{}",
         BIN_NIGHT_WINDOW.every(),
@@ -110,18 +110,26 @@ pub fn event(date: Date) -> Option<Happening> {
     bin_night_open(date).then(|| {
         Happening::new(
             BIN_NIGHT,
-            "The bin is full before collection: a cheese rind waits in every pantry, 100 points.",
+            "The bin is full before collection: a cheese rind hides in every pantry, 100 points.",
         )
     })
 }
 
-/// " Your best is 900." for an event row's help, or nothing.
-fn best_words(best: Option<u64>) -> String {
-    best.map_or(String::new(), |b| format!(" Your best is {b}."))
+/// An event's best score and relaxed best score.
+pub type Bests = (Option<u64>, Option<u64>);
+
+/// " Your best is 900. Your relaxed best is 1200." for an event row's
+/// help, leaving out one with no score, or nothing.
+fn best_words((best, relaxed): Bests) -> String {
+    let mut out = best.map_or(String::new(), |b| format!(" Your best is {b}."));
+    if let Some(r) = relaxed {
+        out.push_str(&format!(" Your relaxed best is {r}."));
+    }
+    out
 }
 
 /// The Leftovers pantry row's help.
-pub fn leftovers_help(best: Option<u64>) -> String {
+pub fn leftovers_help(best: Bests) -> String {
     format!(
         "Thanksgiving leftovers: the pantry run with 4 turkey scraps hidden among the crumbs, 50 points each. Open from the day before Thanksgiving to 2 days after.{}",
         best_words(best)
@@ -129,7 +137,7 @@ pub fn leftovers_help(best: Option<u64>) -> String {
 }
 
 /// The Bin night row's help.
-pub fn bin_night_help(best: Option<u64>) -> String {
+pub fn bin_night_help(best: Bests) -> String {
     format!(
         "Bin night, the first Tuesday of the month: the bin is full before collection, and the pantry run has a cheese rind in every pantry, 100 points. Open all day.{}",
         best_words(best)

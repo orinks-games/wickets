@@ -570,7 +570,7 @@ impl ShowerScreen {
         let t = ctx.control_name(ParlorAction::Secondary);
         let s = ctx.control_name(ParlorAction::Status);
         format!(
-            "Listen for the whoosh of a shooting star. {} makes a wish while one passes. {t} tells the shower's story, {s} counts your wishes. Enter twice heads home, Escape pauses.",
+            "{} makes a wish while a shooting star passes. {t} tells the shower's story, {s} counts your wishes. Enter twice heads home, Escape pauses.",
             sentence_start(&p)
         )
     }
@@ -785,11 +785,11 @@ impl State<Parlor> for ShowerScreen {
                 let often = if self.tonight.is_peak() {
                     "every few seconds"
                 } else {
-                    "every 15 seconds or so"
+                    "now and then"
                 };
                 self.say(
                     ctx,
-                    format!("Shooting stars come {often} tonight. Press {p} during the whoosh."),
+                    format!("Shooting stars come {often} tonight. Press {p} while one passes."),
                 );
             }
             Some(_) => {

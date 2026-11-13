@@ -2,7 +2,7 @@
 
 ## About the game
 
-Patience by a cabin fire: move all 52 cards onto four suit foundations, ace to king. Every relaxed deal can be won. Undo is unlimited, and there is no clock, no move limit and no way to lose.
+Patience by a cabin fire: move all 52 cards onto four suit foundations, ace to king. Every relaxed deal can be won. Undo is unlimited. There is no clock and no move limit, and you cannot lose.
 
 ## The row of places
 

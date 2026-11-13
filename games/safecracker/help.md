@@ -14,7 +14,7 @@ Use the dial-click cue to count individual numbers, the ten-detent cue to count 
 
 Every safe has between two and five wheels, and each wheel has its own secret number. Turn the dial and listen. The tumbler-clunk cue marks the correct number, just after the dial click. Press Space to set the wheel and move to the next.
 
-If a spin of ten clunks, the number is somewhere in the ten you just passed. Step back one number at a time until it clunks again, then set it. Under the direction rule, from the jeweller's safe on, spin back instead and step forward the right way.
+If the tumbler falls during a spin of ten, the number is somewhere in the ten you just passed. Step back one number at a time until it falls again, then set it. Under the direction rule, from the jeweller's safe on, spin back instead and step forward the right way.
 
 ## Wrong sets and strikes
 
@@ -34,7 +34,7 @@ From the pawnbroker's safe on, false-gate cues mark wrong numbers. Ignore them a
 
 ## The direction rule
 
-From the jeweller's safe on, the safes behave like real combination dials. Wheel 1 is found turning right, wheel 2 turning left, wheel 3 right again, and so on. The tumbler only clunks when you are turning the right way, and you must reach the number turning that way before you set it. If you overshoot, turn back past the number and come forward again the right way. The same goes for a spin that clunks: stepping back one number at a time is silent, because that is the wrong way, so spin back the ten you just passed and then step forward the right way one number at a time until it clunks. Setting the right number reached the wrong way is a strike. Status tells you which way the current wheel wants and which way you last turned.
+From the jeweller's safe on, the safes behave like real combination dials. Wheel 1 is found turning right, wheel 2 turning left, wheel 3 right again, and so on. The tumbler only falls when you are turning the right way, and you must reach the number turning that way before you set it. If you overshoot, turn back past the number and come forward again the right way. The same goes for a spin where the tumbler falls: stepping back one number at a time never finds it, because that is the wrong way, so spin back the ten you just passed and then step forward the right way one number at a time until it falls. Setting the right number reached the wrong way is a strike. Status says which way to turn for the current wheel and which way you last turned.
 
 ## The night guard
 
@@ -45,6 +45,16 @@ The first noise he hears makes him suspicious: "He heard something!" He stays su
 ## Scoring and best times
 
 Every wheel is worth 100 points. Crack a safe quickly for a time bonus. Each strike costs 30 points and each hint 20. Each safe keeps your best time and best score, and Records on the title reads them all, with your challenge results.
+
+## Pace
+
+The clock and the guard stand still while a line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode. Time spent while a line is spoken still counts toward your time on the safe, and comes off your time attack bonus.
+
+Pace in Settings sets how fast the safe runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. Your time on the safe, the time attack clock, the guard and the building noises follow the pace.
+
+A change applies from your next safe. A challenge job keeps the pace it started at until it ends.
+
+Relaxed scores and best times are saved separately, including challenges and bonus safes. Normal and quick share their scores. Safes you crack count at every pace.
 
 ## Modes
 

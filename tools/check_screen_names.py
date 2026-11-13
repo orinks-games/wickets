@@ -6,7 +6,7 @@ agent server's `screen` tool prints it, tests compare against it and
 `pop_to` jumps to it. A screen inside games/<id>/ must return a name that
 starts with the game id (hyphens as underscores), so the name alone says
 whose screen it is, and no two screens may share a name. A game may wrap
-one of the shared screens (results, pages) and keep that screen's name.
+one of the shared screens (results, pages, briefing) and keep that screen's name.
 
 Run with --list to print every screen name and where it lives. The private
 overlay under secrets/ is checked too when it is present.
@@ -21,7 +21,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 TREES = ["games", "crates", "secrets/games", "secrets/crates"]
-SHARED_WRAPPED = {"results", "pages"}
+SHARED_WRAPPED = {"results", "pages", "briefing"}
 IMPL = re.compile(
     r"\bimpl(?:<[^{]*?>)?\s+(?:\w+::)*(?:State|Menu)(?:<[^{]*?>)?\s+for\s+([\w:]+)"
 )

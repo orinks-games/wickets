@@ -8,15 +8,15 @@ This help gives distances and depths in metres. Set Units to US in Settings and 
 
 Your score is the treasure you bank. An expedition ends when you choose to stop at the boat, when your air runs out, or when mines breach your hull. If you are lost at sea, the treasure aboard is lost with you, but everything you banked is kept.
 
-## Hearing the sea
+## Directions
 
-You hear the sea from the sub, facing where the sub faces. A sound straight ahead is ahead of you. One on your right is to your right. One behind you is a little muffled. When you turn, the world turns around you.
+Everything is placed around the sub, facing where the sub faces. When you turn, the world turns around you.
 
-Ping: everything in range answers from where it is. The later and quieter the echo, the farther away it is.
+Ping: everything in range echoes from where it is. The later the echo, the farther away it is.
 
 Directions in speech use a clock face: 12 o'clock is straight ahead, 3 o'clock to your right, 6 o'clock behind you and 9 o'clock to your left.
 
-Turn on Spoken call-outs in Settings, from the title or the pause menu, to hear each ping's four nearest echoes named, with distance and clock direction. The hint key always names the nearest treasure.
+Turn on Spoken call-outs in Settings, from the title or the pause menu, to have each ping's four nearest echoes named, with distance and clock direction. The hint key always names the nearest treasure.
 
 ## What sonar finds
 
@@ -54,13 +54,13 @@ Currents push you while you are inside them. Fight them at full ahead, or let th
 
 Your tank holds 150 seconds on the first dive and less on each deeper dive. Full ahead uses air faster than slow ahead, and all stop uses the least. You are warned at half, at a quarter, and at 15 seconds. Press H at any time: when your air is short of what the trip home needs, it says so.
 
-A friendly whale circles somewhere on most sites, singing as it goes. Pass within a few metres of it and it shares a breath of air: 25 seconds more, once a dive. It keeps its gift while your tank is still nearly full, so you can come back to it later.
+A friendly whale circles somewhere on most sites. Pass within a few metres of it and it shares a breath of air: 25 seconds more, once a dive. It keeps its gift while your tank is still nearly full, so you can come back to it later.
 
 ## Buoys and the bell
 
-The boat's bell rings every 5 seconds from where you began. Come back within a few metres of it to surface.
+The boat's bell is where you began. Come back within a few metres of it to surface.
 
-Tab drops a marker buoy that beeps every few seconds from where you left it. Up to 3 can be out at once, and a fourth takes the place of the oldest. Use them to mark a wreck you mean to come back to, or a safe path home past the mines.
+Tab drops a marker buoy where you are. Up to 3 can be out at once, and a fourth takes the place of the oldest. Use them to mark a wreck you mean to come back to, or a safe path home past the mines.
 
 ## At the boat
 
@@ -68,7 +68,17 @@ When you surface, what you carry is banked, your air is refilled, and you choose
 
 ## After an expedition
 
-When an expedition ends, you hear how it went, your haul and your best. Then the results menu offers Play again, or Try again after a loss, Hear the results again, and Back to the title. After a challenge, the last row is Back to the challenges. Escape does the same as the last row.
+When an expedition ends, the game reads how it went, your haul and your best. Then the results menu offers Play again, or Try again after a loss, Hear the results again, and Back to the title. After a challenge, the last row is Back to the challenges. Escape does the same as the last row.
+
+## Pace
+
+The sea holds while a line is still being spoken. Your air, the sub, the mines, the currents, the bell, the buoys and the grab arm stand still until it ends. While you hold a turn key, and while a ping's echoes are coming back, the sea runs on through speech. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode.
+
+Pace in Settings sets how fast the sea runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. Your air, the sub's speed and turns, the echoes, the mine ticks, the bell, the buoys and salvage all follow the pace, so a later echo still means a farther one.
+
+A change applies from your next expedition. An expedition keeps the pace it started at until it ends.
+
+Relaxed hauls are saved separately, including challenges and special dives. Normal and quick share their hauls. Your deepest dive, your expeditions and Deep start count at every pace.
 
 ## Modes
 
@@ -80,7 +90,7 @@ Records, on the title, reads both best hauls, your deepest dive and your challen
 
 ## Challenges
 
-The challenges are the same sea for every player, and a new one comes each day, week and month. The Challenges menu shows each one's best result and your streak. Before each run you hear its rule and when the next one arrives. Afterwards you hear your result, your best and your streak. A run counts when it ends at the boat or at sea. Leave the challenge, on the pause menu, does not count, and neither does Escape on the briefing, which goes back without starting.
+The challenges are the same sea for every player, and a new one comes each day, week and month. The Challenges menu shows each one's best result and your streak. Before each run the briefing reads its rule and when the next one arrives. Afterwards the game reads your result, your best and your streak. A run counts when it ends at the boat or at sea. Leave the challenge, on the pause menu, does not count, and neither does Escape on the briefing, which goes back without starting.
 
 - Daily, Sprint dive: one dive, from dive 1 to 3, with a twist announced up front: murky water that halves your sonar, rich wrecks with more mines, rip currents, or thin air.
 - Weekly, Long haul: up to 3 dives from dive 3, with no hull repairs between them, and a twist of its own.
@@ -104,4 +114,4 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - R: repeat the last message.
 - H: a hint, naming the nearest treasure and how to take it, any mine close by, and a warning when it is time to head home.
 - Escape: pause. The pause menu can resume, open settings or this help, go back to the title, or go back to the lobby. During a challenge, its leave row is Leave the challenge.
-- F1: help for the screen you are on. F2 stops speech.
+- F1: help for the current screen. F2 stops speech.

@@ -7,7 +7,8 @@ use hearken::{Ctx, InputEvent, Key, Sound, State, UiSound, Vec3};
 use parlor_core::challenges::today;
 use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::{
-    units, Challenge, Date, Pages, Parlor, ParlorAction, Period, ScoreResult, StatusKey,
+    units, Challenge, Date, Pace, Pages, Parlor, ParlorAction, Period, RunClock, ScoreResult,
+    StatusKey,
 };
 
 use crate::challenge::{self, Job, Plan, CHALLENGES_NAME};
@@ -76,6 +77,9 @@ const START_GRACE: f64 = 0.5;
 pub struct Descent {
     pub flight: Flight,
     pub mode: Mode,
+    /// The run's game clock: its pace, set when the screen opens, and the
+    /// hold that keeps the lander still while speech plays.
+    pub clock: RunClock,
     job: Option<Job>,
     challenge: Option<Challenge>,
     /// Cues already explained in words this run.
@@ -110,6 +114,7 @@ impl Descent {
         Descent {
             flight,
             mode,
+            clock: RunClock::new(Pace::Normal),
             job: None,
             challenge: None,
             taught: HashSet::new(),
@@ -336,7 +341,9 @@ impl Descent {
                 self.start_prompt(ctx)
             ),
             Advice::Climbing => format!("You are climbing. Let go of {p}."),
-            Advice::Steady => "Speed is safe. Burn briefly only if the tone rises.".to_string(),
+            Advice::Steady => {
+                "Speed is safe. Burn briefly only when the game says Too fast.".to_string()
+            }
             Advice::Coast { secs } => format!("Fall for about {}, then burn.", seconds_words(secs)),
             Advice::Burn { secs: 0 } => "Burn now with the last of the fuel.".to_string(),
             Advice::Burn { secs } => {
@@ -412,11 +419,8 @@ impl Descent {
     fn start(&mut self, ctx: &mut Ctx<Parlor>) {
         self.flight.start();
         self.await_release = true;
-        if self.first(ctx, "descent") {
-            ctx.say("Descent begun. Listen to the tone.");
-        } else {
-            ctx.say("Descent begun.");
-        }
+        self.clock.reset();
+        ctx.say("Descent begun.");
         self.sync_loops(ctx);
     }
 
@@ -464,19 +468,18 @@ impl Descent {
                 }
                 Ev::EngineOff => {}
                 Ev::FuelOut => {
+                    self.clock.reset();
                     ctx.play_ui(UiSound::Error);
                     ctx.say("Fuel out. The engine is dead.");
                 }
                 Ev::FuelLow(pct) => {
+                    self.clock.reset();
                     sound::play(ctx, sound::FUEL_LOW);
                     ctx.say(format!("Fuel {pct} percent."));
                 }
                 Ev::TooFast => {
-                    let line = if self.first(ctx, "tone") {
-                        "Too fast. The tone rises with speed."
-                    } else {
-                        "Too fast."
-                    };
+                    self.clock.reset();
+                    let line = "Too fast.";
                     // At the start of a descent, after Descent begun, not
                     // over it; in the tutorial, after the lesson's line.
                     if self.flight.time < START_GRACE || self.lesson_says.contains("prompts") {
@@ -487,6 +490,7 @@ impl Descent {
                 }
                 Ev::SafeSpeed => ctx.say("Safe speed."),
                 Ev::CallOut { altitude, speed } => {
+                    self.clock.reset();
                     let first = self.radio(ctx);
                     let line = if speed < 0.0 {
                         format!("{}, climbing.", units::count(altitude.into()))
@@ -566,8 +570,9 @@ impl Descent {
             }
             Mode::Moon(n) => {
                 ctx.audio.set_bed(None);
-                let saved = progress::save_flight(ctx, n, &self.flight);
-                let pages = result_pages(&self.flight, &saved);
+                let pace = self.clock.pace();
+                let saved = progress::save_flight(ctx, n, &self.flight, pace);
+                let pages = result_pages(&self.flight, &saved, pace);
                 let summary = result_summary(&self.flight);
                 let mut results = Some(after_moon(n, outcome.landed(), summary, pages.clone()));
                 ctx.push(Pages::new(pages).then(move |ctx| {
@@ -582,12 +587,13 @@ impl Descent {
                 ctx.audio.set_bed(None);
                 let board = self.mode.event_board().expect("an event row");
                 let open = self.mode.open_on(today(ctx));
+                let pace = self.clock.pace();
                 let saved = if open {
-                    progress::save_event(ctx, board, &self.flight)
+                    progress::save_event(ctx, board, &self.flight, pace)
                 } else {
                     Saved::nothing()
                 };
-                let mut pages = result_pages(&self.flight, &saved);
+                let mut pages = result_pages(&self.flight, &saved, pace);
                 if !open {
                     pages.push(format!(
                         "{}, so this flight stays off its board.",
@@ -638,7 +644,7 @@ impl Descent {
             return;
         };
         ctx.audio.set_bed(None);
-        let pages = challenge::finish(ctx, &ch, &job);
+        let pages = challenge::finish(ctx, &ch, &job, self.clock.pace());
         let summary = challenge::summary(&ch, &job);
         let mut results = Some(after_challenge(ch.period, summary, pages.clone()));
         ctx.replace(Pages::new(pages).then(move |ctx| {
@@ -687,8 +693,8 @@ pub fn result_summary(flight: &Flight) -> String {
     }
 }
 
-/// The pages after a survey flight.
-pub fn result_pages(flight: &Flight, saved: &Saved) -> Vec<String> {
+/// The pages after a survey flight at `pace`.
+pub fn result_pages(flight: &Flight, saved: &Saved, pace: Pace) -> Vec<String> {
     let moon = &flight.moon;
     let name = moon.name;
     let Some(outcome) = flight.outcome else {
@@ -698,20 +704,25 @@ pub fn result_pages(flight: &Flight, saved: &Saved) -> Vec<String> {
     match outcome {
         Outcome::Landed { speed: _ } => {
             let points = flight.score(outcome);
+            let best = pace.best_word();
             let score = match saved.score {
+                Some(ScoreResult::First) if pace.separate() => {
+                    format!("{points} points, your first relaxed score on {name}.")
+                }
                 Some(ScoreResult::First) => format!("{points} points, your first on {name}."),
                 Some(ScoreResult::NewBest { previous }) => {
-                    format!("{points} points, a new best, beating {previous}.")
+                    format!("{points} points, a new {best}, beating {previous}.")
                 }
-                Some(ScoreResult::Short { best }) => {
-                    format!("{points} points. Your best is {best}.")
+                Some(ScoreResult::Short { best: b }) => {
+                    format!("{points} points. Your {best} is {b}.")
                 }
+                None if points == 0 => format!("{points} points, so nothing goes on the board."),
                 None => format!("{points} points."),
             };
-            let soft = if saved.softest {
-                " Your softest touchdown yet."
-            } else {
-                ""
+            let soft = match (saved.softest, pace.separate()) {
+                (true, true) => " Your softest relaxed touchdown yet.",
+                (true, false) => " Your softest touchdown yet.",
+                (false, _) => "",
             };
             // Touchdown already said where and how fast: the page leads with
             // the score, and a moon this landing opened.
@@ -746,7 +757,8 @@ pub fn result_pages(flight: &Flight, saved: &Saved) -> Vec<String> {
     }
     if saved.survey_done {
         pages.push(
-            "You have landed on every survey moon. Choose Moon select to fly any of them again.".to_string(),
+            "You have landed on every survey moon. Choose Moon select to fly any of them again."
+                .to_string(),
         );
     }
     pages
@@ -828,6 +840,7 @@ impl State<Parlor> for Descent {
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.clock = RunClock::start(ctx, ID);
         ctx.audio.set_listener(Vec3::ZERO, 0.0);
         sound::space_bed(ctx);
         let p = Progress::load(ctx);
@@ -853,6 +866,7 @@ impl State<Parlor> for Descent {
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.clock.reset();
         if self.flight.finished() {
             return;
         }
@@ -895,6 +909,7 @@ impl State<Parlor> for Descent {
             menus::pause(ctx, HELP, self.leave());
             return;
         }
+        self.clock.asked_by(action);
         match action {
             Some(ParlorAction::Primary) => {
                 if !self.flight.started() {
@@ -935,7 +950,14 @@ impl State<Parlor> for Descent {
         if !held {
             self.await_release = false;
         }
-        let evs = self.flight.update(dt, held && !self.await_release);
+        let burn = held && !self.await_release;
+        // A burn under the held engine key never freezes: the lander keeps
+        // answering the key through speech. Coasting, speech holds it.
+        if burn && (self.flight.unlimited || self.flight.fuel > 0.0) {
+            self.clock.bypass();
+        }
+        let game_dt = self.clock.game_dt(ctx, dt);
+        let evs = self.flight.update(game_dt, burn);
         self.voice(ctx, evs);
         if self.ending.is_none() {
             self.sync_loops(ctx);
@@ -967,7 +989,7 @@ impl State<Parlor> for Descent {
         } else if self.hints_allowed() {
             self.hint_words(ctx)
         } else {
-            "Hold the engine when the tone rises, and let go when it drops.".to_string()
+            "Hold the engine when the game says Too fast, and let go at Safe speed.".to_string()
         };
         let mut text = format!("{now} {}", self.controls(ctx));
         if let Some(ch) = &self.challenge {

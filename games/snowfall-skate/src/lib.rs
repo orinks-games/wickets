@@ -61,7 +61,7 @@ pub const HOME: Category = Category::Cozy;
 pub const KEEP_BLURB: &str = "A winter special. Skate a frozen pond at night, taking lanterns as they light, while the snow comes down. Play once, even in practice, to keep it all year.";
 
 /// The blurb out of winter, once the game is kept.
-pub const YEAR_ROUND_BLURB: &str = "Skate a frozen pond at night, taking lanterns as they light, while the snow comes down. The Frost Fair waits for winter.";
+pub const YEAR_ROUND_BLURB: &str = "Skate a frozen pond at night, taking lanterns as they light, while the snow comes down. The Frost Fair opens in winter.";
 
 /// Said in the results when a skate first keeps the game.
 pub const KEPT_LINE: &str =
@@ -333,7 +333,7 @@ impl TitleGame for SnowfallSkate {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear the lanterns, the drifts, the thin ice, your partner and the spin, each from where it is heard on the ice.".to_string()
+        "Plays the lanterns, the drifts, the thin ice, your partner and the spin.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -357,14 +357,14 @@ impl TitleGame for SnowfallSkate {
             |_ctx, on| {
                 Some(
                     if on {
-                        "Spoken call-outs: on. Your screen reader also names each lantern's lane."
+                        "Spoken call-outs: on. The game also names each lantern's lane."
                     } else {
-                        "Spoken call-outs: off. You hear the lanterns alone."
+                        "Spoken call-outs: off. The lanterns play without names."
                     }
                     .to_string(),
                 )
             },
-            "When on, your screen reader also names each lantern's lane as it lights.",
+            "When on, the game also names each lantern's lane as it lights.",
         )]
     }
 

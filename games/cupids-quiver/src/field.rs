@@ -68,7 +68,7 @@ pub fn controls_line(ctx: &Ctx<Parlor>) -> String {
     let s = ctx.control_name(ParlorAction::Status);
     let h = ctx.control_name(ParlorAction::Hint);
     format!(
-        "{} and {r} aim. Hold {p} past the click, then let go at the ping. {} lists the sky, {s} the status, {h} a hint.",
+        "{} and {r} aim. Hold {p} to full draw, then let go when your sights are on a heart. {} lists the sky, {s} the status, {h} a hint.",
         sentence_start(&l),
         sentence_start(&t)
     )
@@ -521,7 +521,7 @@ impl Field {
                 if !self.teach(
                     ctx,
                     "slack",
-                    format!("Too soon, {pct} percent. Hold {p} until the click."),
+                    format!("Too soon, {pct} percent. Hold {p} to full draw."),
                 ) {
                     ctx.say(format!("Too soon, {pct} percent."));
                 }
@@ -617,7 +617,7 @@ impl Field {
             Kind::Heart(_) => self.teach(
                 ctx,
                 "heart",
-                format!("A paper heart, from {side}. Turn until its hum is just ahead."),
+                format!("A paper heart, from {side}. Turn until it is just ahead."),
             ),
         };
         if !taught && !self.quiet {
@@ -1094,7 +1094,7 @@ impl State<Parlor> for Field {
     }
 
     fn help(&self, ctx: &Ctx<Parlor>) -> String {
-        let mut now = "Hearts hum as they drift. Aim a little ahead of one.".to_string();
+        let mut now = "Aim a little ahead of a drifting heart.".to_string();
         if let Some(ch) = &self.challenge {
             now.push_str(&format!(
                 " This is the {} challenge. Leaving from the pause menu does not count it.",

@@ -294,7 +294,7 @@ impl Tally {
             format!("{} close", self.close),
         ];
         if self.waited > 0 {
-            parts.push(format!("{} with the song waiting", self.waited));
+            parts.push(format!("{} with the song held", self.waited));
         }
         parts.push(format!("{} missed", self.missed));
         parts.join(", ")

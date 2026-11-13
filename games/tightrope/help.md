@@ -12,7 +12,7 @@ A lean grows by itself, the way a real wire tips you. Shift your weight with Lef
 
 Step once you have returned to balance. The game warns you when you lean hard left or right. Lean all the way and you fall to the safety net.
 
-The status key, S, always says your lean in words, so you never have to judge it by pitch alone.
+The status key, S, always says your lean in words.
 
 ## Walking
 
@@ -31,7 +31,7 @@ You have two answers:
 - Lean a little into the wind before it arrives: for a gust from the left, a press of Left.
 - Crouch with Down. Crouching makes the wire much steadier and the wind pushes less than half as hard, but you cannot step. Stand with Up once it passes.
 
-The status key tells you which side a gust comes from and how many seconds are left. The hint key, H, says what to do about it.
+The status key says which side a gust comes from and how many seconds are left. The hint key, H, says what to do about it.
 
 ## Pigeons
 
@@ -50,6 +50,16 @@ Higher wires have stronger wind.
 Lean all the way over and you fall to the safety net. You lose a life and climb back to the step where you fell, balanced, with a moment of calm before the wire moves again. Lose your last life and the run is over.
 
 On the practice wire falling costs nothing.
+
+## Pace
+
+The wire holds while a line is still being spoken. Your balance, the wind and the pigeons stand still until it ends. Once a gust whoosh starts, the wire runs on through speech until the gust hits. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode. Time spent while a line is spoken still counts toward your crossing time and your par bonus.
+
+Pace in Settings sets how fast the wire runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. Your balance, the wind, the pigeons and each crossing's time follow the pace.
+
+A change applies from your next run. A run or a challenge keeps the pace it started at until it ends.
+
+Relaxed scores and best times are saved separately, including challenges and events. Normal and quick share their scores. Your furthest crossing counts at every pace.
 
 ## Scoring
 
@@ -71,7 +81,7 @@ Before each run a page says what the run is. Enter begins, and Escape goes back 
 
 ## After a run
 
-When a run ends you hear how it went and what records it set. Then the results menu offers Play again, or Try again after a fall ends the run, Hear the results again, and Back to the title. After a single crossing you win, Next crossing comes first. After a challenge, the last row is Back to the challenges. Escape does the same as the last row.
+When a run ends the game reads how it went and what records it set. Then the results menu offers Play again, or Try again after a fall ends the run, Hear the results again, and Back to the title. After a single crossing you win, Next crossing comes first. After a challenge, the last row is Back to the challenges. Escape does the same as the last row.
 
 ## Challenges
 
@@ -81,7 +91,7 @@ Challenges are the same wires for every player, built from the date.
 - Weekly: 3 high crossings in a row, with a twist, on only 2 lives.
 - Monthly: the Grand Span, one immense wire 60 floors up and 60 steps long, with a single life, and the wind changes side with every gust.
 
-The rule and the time until the next challenge are read before you start, and Escape on that briefing goes back without starting. Any finished run counts toward your streak, even one that ends in the net. Leave the challenge, on the pause menu, does not. Afterwards you hear your score, your best and your streak.
+The rule and the time until the next challenge are read before you start, and Escape on that briefing goes back without starting. Any finished run counts toward your streak, even one that ends in the net. Leave the challenge, on the pause menu, does not. Afterwards the game reads your score, your best and your streak.
 
 ## Sound check
 
@@ -97,6 +107,6 @@ Sound check, on the title, lists and plays the sounds you need on the wire. Its 
 - R: repeat the last announcement.
 - H: a hint for this moment.
 - Escape: pause. The pause menu can resume, open settings or this help, go back to the title, or go back to the lobby. During a challenge, its leave row is Leave the challenge.
-- F1: help for the screen you are on.
+- F1: help for the current screen.
 
 These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.

@@ -7,12 +7,14 @@
 
 mod actions;
 pub mod almanac;
+pub mod briefing;
 pub mod calendar;
 pub mod challenges;
 pub mod channel;
 pub mod help;
 pub mod menu_sounds;
 pub mod menus;
+pub mod pace;
 mod pages;
 pub mod preferences;
 pub mod presence;
@@ -35,9 +37,11 @@ pub mod visuals;
 pub mod words;
 
 pub use actions::ParlorAction;
+pub use briefing::Briefing;
 pub use calendar::{Happening, Holiday, Nearness, Season};
 pub use challenges::{Challenge, Challenges, Date, Period};
 pub use help::Help;
+pub use pace::{Pace, RunClock};
 pub use pages::{explain, Pages};
 pub use records::{Records, ScoreResult};
 pub use rng::Rng;
@@ -128,6 +132,29 @@ impl hearken::Game for Parlor {
                 .own_build(&channel::OWN_BUILD)
                 .prompt_at_start()
         })
+    }
+
+    /// Report a problem, in Settings: the game log goes ahead to orinks.net
+    /// and the report form opens in the browser with it attached; the site
+    /// emails the report. The engine asks once after a run that never
+    /// exited cleanly. The www host on purpose: the apex answers with a
+    /// redirect, which the sender does not follow.
+    fn reports() -> Option<hearken::ReportConfig> {
+        hearken::ReportConfig::new(
+            NAME,
+            env!("CARGO_PKG_VERSION"),
+            "https://www.orinks.net/api/problem-reports",
+        )
+    }
+
+    /// Which game the player has open, for a problem report: the report
+    /// says `Game: Tightrope`, and its email subject names it. A report
+    /// from the lobby says nothing more than the app.
+    fn report_details(ctx: &Ctx<Self>) -> Vec<(String, String)> {
+        match ctx.game.open {
+            Some(game) => vec![("Game".to_string(), game.name.to_string())],
+            None => Vec::new(),
+        }
     }
 
     fn discord() -> Option<hearken::DiscordConfig> {

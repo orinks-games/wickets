@@ -134,7 +134,7 @@ impl Tuning {
             ""
         };
         format!(
-            "{}. A rank of {}, low to high. Listen to the wobble: the slower it gets, the nearer the pipe is to its note.{hints}",
+            "{}. A rank of {}, low to high. The slower the wobble, the nearer the pipe is to its note.{hints}",
             self.mode.name(),
             pipes_words(r.pipes.len())
         )
@@ -305,9 +305,7 @@ impl Tuning {
                 }
                 Ev::RankTuned => {
                     self.stop_tones(ctx);
-                    ctx.say_queued(
-                        "Every pipe is in tune. Listen: the Echo is playing the rank back.",
-                    );
+                    ctx.say_queued("Every pipe is in tune. The Echo is playing the rank back.");
                     self.tune = self
                         .rank
                         .tune

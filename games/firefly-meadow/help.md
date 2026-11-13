@@ -10,7 +10,7 @@ This help gives distances in metres. Set Units to US in Settings and the game sa
 
 Up, Down, Left and Right walk one step at a time. Up is always north. Hold a key to keep walking. The game names the edge of the meadow when you reach it, such as "the north edge". Frogs, the creek and the trees each sound from one place all evening, so you can find your way by them.
 
-## Hearing fireflies
+## Finding fireflies
 
 Each firefly's cue marks its blink. A tone in your left ear is to your left, a tone in both ears is ahead or behind, and a quiet one is far away. The in-reach cue means a firefly is close enough to catch. H names the way to the nearest glow in words, such as "5 metres ahead and to the left", and plays its tone from where it is.
 
@@ -44,7 +44,7 @@ On the Fourth of July weekend, fireworks appear on summer evenings. That is July
 
 ## Status and hints
 
-S gives the status, always in this order: in a challenge the time left, then your jar, and the nearest glow or "a firefly in reach". On a winter walk it gives the memories found instead of the jar. Press S again straight away for the fireflies caught tonight, their species, the time so far and the meadow. R repeats the last thing said. H names the way to the nearest glow and plays its tone.
+S gives the status, always in this order: in a challenge the time left, then your jar, and the nearest glow or "a firefly in reach". On a winter walk it gives the memories found instead of the jar. Press S again straight away for the fireflies caught tonight, their species, the time so far and the meadow. R repeats the last thing said. H names the way to the nearest glow.
 
 ## Records
 

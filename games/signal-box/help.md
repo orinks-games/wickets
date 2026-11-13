@@ -14,11 +14,21 @@ Signal down: answer with the Down arrow.
 
 Ring back: answer with Space.
 
-The dispatcher always says the call aloud as its sound plays. Before the line opens, H plays every call with its key, and each answer key plays its own call, so you can learn them with nothing at stake.
+The dispatcher always says the call aloud. Before the line opens, H plays every call with its key, and each answer key plays its own call, so you can learn them with nothing at stake.
 
-## The window and the tick
+## The answer window
 
 The answer window is the time you have to respond to a call. It shrinks every 5 trains. The timing cue marks four beats per window and speeds up as the window shrinks. S tells you how long the answer window lasts.
+
+## Pace
+
+The answer window holds while a call or another line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode.
+
+Pace in Settings sets how fast the shift runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. The window, the gaps between trains and the timing cue all follow the pace.
+
+A change applies from your next run. A shift or a timetable keeps the pace it started at until it ends.
+
+Relaxed scores and records are saved separately, including challenges and events. Normal and quick share their scores.
 
 ## Scoring and records
 
@@ -68,7 +78,7 @@ Tab: not used.
 
 S: status: the shift, trains passed, the window and your score.
 
-R: say and play the call again. The clock keeps running.
+R: say and play the call again.
 
 H: before the line opens, play every call with its key. In the practice room, name the key for the call that is out.
 

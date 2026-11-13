@@ -101,6 +101,15 @@ pub fn played(h: &Headless<Parlor>, key: &str) -> bool {
     h.played().iter().any(|k| k == key)
 }
 
+/// Presses Enter on a row that starts a street, then Enter again through
+/// the street's briefing.
+pub fn start(h: &mut Headless<Parlor>) {
+    h.press(Key::Return);
+    if h.app.top_name() == parlor_core::briefing::NAME {
+        h.press(Key::Return);
+    }
+}
+
 /// Time passing, in frames of a sixtieth of a second.
 pub fn wait(h: &mut Headless<Parlor>, secs: f64) {
     let frames = (secs * 60.0).round() as usize;

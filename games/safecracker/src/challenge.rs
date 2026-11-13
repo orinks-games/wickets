@@ -71,15 +71,15 @@ impl Twist {
     pub fn describe(self) -> &'static str {
         match self {
             Twist::QuietTumblers => {
-                "the tumblers are freshly oiled, so the clunk is as quiet as in the Crown vault"
+                "the tumblers are freshly oiled and harder to find, as in the Crown vault"
             }
             Twist::NervousGuard => {
-                "a night guard walks by often and listens long at the door; when his footsteps stop, keep still until he walks away"
+                "a night guard walks by often and listens long at the door. When he stops, keep still until he walks away"
             }
             Twist::DirectionRule => {
-                "wheel 1 is found turning right, wheel 2 turning left, and so on, and only the right way clunks"
+                "wheel 1 is found turning right, wheel 2 turning left, and so on, and the tumbler falls only the right way"
             }
-            Twist::CrowdedGates => "every wheel has three false gates rattling at wrong numbers",
+            Twist::CrowdedGates => "every wheel has three false gates at wrong numbers",
             Twist::NoHints => "there are no hints",
             Twist::BusyBuilding => {
                 "pipes knock and floors creak every few seconds, off to your left and right"

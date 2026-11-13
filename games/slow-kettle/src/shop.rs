@@ -55,7 +55,7 @@ impl Item {
             Item::Tea(i) => format!("{} {}", TEAS[i].about, TEAS[i].needs()),
             Item::Cup(i) => CUPS[i].about.to_string(),
             Item::Tune(i) => TUNES[i].about.to_string(),
-            Item::SandTimer => "Chimes softly when a steep reaches what its tea wants.".to_string(),
+            Item::SandTimer => "Marks when a steep reaches what its tea wants.".to_string(),
         }
     }
 
@@ -134,7 +134,7 @@ pub fn buy(house: &mut House, item: Item) -> (bool, String) {
         Item::Tea(_) => " It is on your shelf now.",
         Item::Cup(_) => " It is in your cupboard now.",
         Item::Tune(_) => " The music box plays it in the tea house.",
-        Item::SandTimer => " It chimes during each steep.",
+        Item::SandTimer => " It marks each steep.",
     };
     (
         true,

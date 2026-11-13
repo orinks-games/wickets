@@ -128,7 +128,7 @@ pub fn leaf_locked_help(date: Date) -> String {
 /// The locked Car-free Sunday row's help.
 pub fn sunday_locked_help(date: Date) -> String {
     format!(
-        "Opens {}, {}: Downtown with the streets closed to cars, and birdsong instead of the city.",
+        "Opens {}, {}: Downtown with the streets closed to cars.",
         SUNDAY_WINDOW.every(),
         SUNDAY_WINDOW.next_words(date)
     )
@@ -139,13 +139,13 @@ pub fn event(date: Date) -> Option<Happening> {
     if sunday_open(date) {
         return Some(Happening::new(
             SUNDAY,
-            "Ride today's course on streets closed to cars, to birdsong and a far church bell.",
+            "Ride today's course on streets closed to cars.",
         ));
     }
     leaf_open(date).then(|| {
         Happening::new(
             LEAF_SEASON,
-            "Ride through crunchy leaf piles in the bike lane for 1000 ride points each, until the end of November.",
+            "Ride through leaf piles in the bike lane for 1000 ride points each, until the end of November.",
         )
     })
 }
@@ -154,7 +154,7 @@ pub fn event(date: Date) -> Option<Happening> {
 /// the row's help without them.
 pub fn leaf_help() -> String {
     format!(
-        "Leaf season: {} of autumn Downtown, with leaf piles in the bike lane. Each one rustles ahead of you. Ride through it for a crunch and {LEAF_POINTS} ride points. Leaf piles are never hazards. Open until the end of November.",
+        "Leaf season: {} of autumn Downtown, with leaf piles in the bike lane. Ride through one for {LEAF_POINTS} ride points. Leaf piles are never hazards. Open until the end of November.",
         parlor_core::units::route(LEAF_LENGTH)
     )
 }
@@ -162,7 +162,7 @@ pub fn leaf_help() -> String {
 /// The Car-free Sunday row's help.
 pub fn sunday_help() -> String {
     format!(
-        "Today's Car-free Sunday course, {}, the same for every player: the streets are closed to cars, and birds sing with a far church bell instead of the city. Open all day.",
+        "Today's Car-free Sunday course, {}, the same for every player: the streets are closed to cars. Open all day.",
         parlor_core::units::route(SUNDAY_LENGTH)
     )
 }

@@ -20,11 +20,6 @@ pub fn belt() -> Live<SortRun> {
     Live::new(run)
 }
 
-/// About how long a line takes to say, so the belt waits for it.
-fn speech_secs(text: &str) -> f64 {
-    0.4 + text.chars().count() as f64 / 15.0
-}
-
 /// The first stack at the Wish Desk.
 pub fn desk() -> Live<DeskRun> {
     let mut run = DeskRun::new(Mode::Free, 1);
@@ -50,53 +45,59 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
         k(ParlorAction::Hint),
     );
 
-    // The wishes are said in the step, and the belt waits until they have
-    // been heard.
+    // The wishes are said in the step, and the belt cannot start until
+    // they have been said: the run's speech hold covers the lesson's
+    // opening line and this prompt.
     let wishes = belt.with(|s| s.wishes(ctx));
     let brief_prompt = format!(
         "Gift Sort. Here is who is waiting, and how each wish sounds in a box. {wishes} {} starts the belt.",
         sentence_start(&p)
     );
-    // The lesson's opening line comes first: about five seconds.
-    let brief_wait = 5.0 + speech_secs(&brief_prompt);
     let held = belt.clone();
     let brief = belt
         .step(brief_prompt, |s: &SortRun, _| {
-            s.playing()
-                .then(|| "The belt is running. A soft thump means a gift has landed.".to_string())
+            // Done once the first gift has landed, so the next prompt's
+            // "Shake it now" comes with a gift there to shake.
+            (s.playing() && s.shift().gift.is_some())
+                .then(|| "The belt is running. A gift has landed.".to_string())
         })
-        .start(move |_| held.with_mut(|s| s.hold_for(brief_wait)));
+        .start(move |_| held.with_mut(|s| s.lesson_prompt()));
 
-    let shake = belt.step(
-        format!(
-            "{} shakes the gift, and you hear what is inside. Shake it now.",
-            sentence_start(&p)
-        ),
-        |s: &SortRun, _| {
-            s.shift()
-                .gift
-                .as_ref()
-                .is_some_and(|g| g.shakes > 0)
-                .then(|| MATCHED.to_string())
-        },
-    );
+    // The gift waits on the belt while this is said, then rides its whole
+    // way.
+    let held = belt.clone();
+    let shake = belt
+        .step(
+            format!(
+                "{} shakes the gift, and you hear what is inside. Shake it now.",
+                sentence_start(&p)
+            ),
+            |s: &SortRun, _| {
+                s.shift()
+                    .gift
+                    .as_ref()
+                    .is_some_and(|g| g.shakes > 0)
+                    .then(|| MATCHED.to_string())
+            },
+        )
+        .start(move |_| held.with_mut(|s| s.lesson_prompt()));
 
-    const MATCHED: &str = "Now match that sound to a wish.";
+    const MATCHED: &str = "Now match that gift to a wish.";
     let sort_prompt = format!(
-        "{} sends the gift to the person on your left, and {r} to the person on your right. Rising bells mean you got it right, and a low buzz costs clock time. {} says the wishes again. Sort {GIFTS} gifts.",
+        "{} sends the gift to the person on your left, and {r} to the person on your right. A wrong delivery costs clock time. {} says the wishes again. Sort {GIFTS} gifts.",
         sentence_start(&l),
         sentence_start(&rep)
     );
-    // The shaken gift waits on the belt until this has been heard.
-    let sort_wait = speech_secs(&format!("{MATCHED} {sort_prompt}"));
+    // The shaken gift waits on the belt while this is said, then rides its
+    // whole way.
     let held = belt.clone();
     let sort = belt
         .step(sort_prompt, |s: &SortRun, _| {
             (s.shift().sorted >= GIFTS).then(|| {
-                format!("{GIFTS} gifts sorted. Quick beeping means a gift is near the edge, and if it falls it breaks.")
+                format!("{GIFTS} gifts sorted. A gift left too long rides off the edge of the belt, and if it falls it breaks.")
             })
         })
-        .start(move |_| held.with_mut(|s| s.hold_for(sort_wait)));
+        .start(move |_| held.with_mut(|s| s.lesson_prompt()));
 
     let open = desk.step(
         format!(
@@ -107,7 +108,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
     );
     let find = desk.step(
         format!(
-            "{} and {r} walk the shelf. {} shakes the box in front of you. Find the box that sounds like the wish. {} reads the letter again.",
+            "{} and {r} walk the shelf. {} shakes the box in front of you. Find the box that holds the wish. {} reads the letter again.",
             sentence_start(&l),
             sentence_start(&p),
             sentence_start(&rep)
@@ -121,7 +122,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
     );
     let wrap = desk.step(
         format!(
-            "Hold {p} to wrap it. The paper crinkles, then the ribbon snaps and the stamp comes down. Let go early and nothing is wrapped."
+            "Hold {p} to wrap it. Keep holding until it is wrapped. Let go early and nothing is wrapped."
         ),
         |s: &DeskRun, _| {
             (s.stack().answered() >= 1).then(|| "Wrapped and stamped. A wrong box goes back on the shelf and costs points, never time.".to_string())

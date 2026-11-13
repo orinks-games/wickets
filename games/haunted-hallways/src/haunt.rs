@@ -8,8 +8,8 @@ use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::score::{DANGER, HURRY};
 use parlor_core::status::sentences;
 use parlor_core::{
-    Challenge, Challenges, Mood, Pages, Parlor, ParlorAction, Period, Records, Rng, Score,
-    ScoreResult, StatusKey,
+    Challenge, Challenges, Mood, Pace, Pages, Parlor, ParlorAction, Period, Records, Rng, RunClock,
+    Score, ScoreResult, StatusKey,
 };
 
 use crate::challenge::{self, challenge_name};
@@ -40,6 +40,9 @@ const SHADOW_VOLUME: f32 = 0.6;
 
 pub struct Haunt {
     pub run: Run,
+    /// The run's game clock: its pace, set when the haunt begins, and the
+    /// hold that keeps the house still while speech plays.
+    pub clock: RunClock,
     last_prompt: String,
     /// The exit's place as the last prompt words it, so a shifting door
     /// can be put right in what R repeats.
@@ -74,6 +77,13 @@ pub struct Haunt {
     status_key: StatusKey,
     /// The second layer of S has been heard, for the tutorial.
     pub heard_more: bool,
+    /// A step taken while wading and the house was held for speech: it
+    /// goes ahead once the wade is over, so the key is never lost.
+    pending_walk: Option<Side>,
+    /// Game time held for speech on this floor: it counts toward the
+    /// floor's time and comes off its time bonus, so a hold never
+    /// improves either.
+    floor_held: f64,
 }
 
 impl Haunt {
@@ -100,6 +110,7 @@ impl Haunt {
     pub fn with_seed(mode: Mode, seed: u64) -> Haunt {
         Haunt {
             run: Run::new(mode, seed),
+            clock: RunClock::new(Pace::Normal),
             last_prompt: String::new(),
             prompt_door: String::new(),
             ghost_loop: Sound::NONE,
@@ -119,6 +130,8 @@ impl Haunt {
             score: Score::new(),
             status_key: StatusKey::new(),
             heard_more: false,
+            pending_walk: None,
+            floor_held: 0.0,
         }
     }
 
@@ -315,7 +328,7 @@ impl Haunt {
             };
             if self.first("rotten") {
                 out.push_str(&format!(
-                    " {}. A groan means one is next to you.",
+                    " {}. When one is next to you, do not step there.",
                     sentence_start(&boards)
                 ));
             } else {
@@ -326,7 +339,7 @@ impl Haunt {
             if self.first("shadow") {
                 let s = ctx.control_name(ParlorAction::Status);
                 out.push_str(&format!(
-                    " A shadow, the breathing drone, follows your footsteps. {} says where it is.",
+                    " A shadow follows your footsteps. {} says where it is.",
                     sentence_start(&s)
                 ));
             } else {
@@ -336,7 +349,7 @@ impl Haunt {
         if let Some(p) = room.pendulum {
             if self.first("pendulum") {
                 out.push_str(&format!(
-                    " A pendulum swings along row {} from the south. Cross just after the swish passes.",
+                    " A pendulum swings along row {} from the south. Cross just after the blade passes.",
                     p.row + 1
                 ));
             } else {
@@ -345,9 +358,7 @@ impl Haunt {
         }
         if !room.water.is_empty() {
             if self.first("water") {
-                out.push_str(
-                    " Flooded. Lapping means deep water. Wading is slow and draws ghosts.",
-                );
+                out.push_str(" Flooded. Wading through deep water is slow and draws ghosts.");
             } else {
                 out.push_str(" Deep water here.");
             }
@@ -361,14 +372,14 @@ impl Haunt {
         }
         if room.shifts {
             if self.first("shifts") {
-                out.push_str(" This room shifts: a rumble moves the exit door.");
+                out.push_str(" This room shifts: the exit door moves.");
             } else {
                 out.push_str(" This room shifts.");
             }
         }
         if room.charm.is_some_and(|c| !c.taken) && self.first("charm") {
             out.push_str(&format!(
-                " A soft chime is a charm: walk onto it. Salt wards off one catch, a candle stub adds {}.",
+                " A charm is here: walk onto it. Salt wards off one catch, a candle stub adds {}.",
                 clock_words(STUB_SECONDS)
             ));
         }
@@ -464,6 +475,7 @@ impl Haunt {
             )
         };
         self.last_prompt = text.clone();
+        self.clock.reset();
         ctx.say_queued(text);
         self.start_clue(ctx);
         self.start_shadow(ctx);
@@ -655,6 +667,29 @@ impl Haunt {
             .collect();
         let word = if parts.len() == 1 { "Twist" } else { "Twists" };
         format!(" {word}: {}.", parts.join(". "))
+    }
+
+    /// A cleared floor's time and time bonus with this floor's held time
+    /// counted: the time grows by it, the bonus is worked out from the
+    /// haunt clock less it (never below zero), and the run's score and
+    /// totals follow. With nothing held, both are as the house gave them.
+    fn count_floor_held(&mut self, time: f64, bonus: u64) -> (f64, u64) {
+        let held = std::mem::take(&mut self.floor_held);
+        if held <= 0.0 {
+            return (time, bonus);
+        }
+        let run = &mut self.run;
+        let left = (run.haunt_left - held).max(0.0);
+        let fair = run
+            .curses
+            .bonus((left as u64) * 5 + run.courage as u64 * 100)
+            .min(bonus);
+        run.score -= bonus - fair;
+        run.total_time += held;
+        if let Some(last) = run.floor_times.last_mut() {
+            *last += held;
+        }
+        (time + held, fair)
     }
 
     fn voice(&mut self, ctx: &mut Ctx<Parlor>, evs: Vec<Ev>) {
@@ -926,12 +961,13 @@ impl Haunt {
                     // Short enough to finish before even the butler arrives.
                     if self.first(format!("ghost {}", g.kind.name())) {
                         let how = if g.kind.hunts_stillness() {
-                            " It hunts stillness: at its howl, keep walking."
+                            " It hunts stillness: when it comes, keep walking."
                         } else if self.first("ghost") {
-                            " At the stab, freeze until it breathes out."
+                            " Freeze until it has passed."
                         } else {
                             ""
                         };
+                        self.clock.reset();
                         ctx.say(format!(
                             "A ghost! {}, {}, from the {}.{how}",
                             sentence_start(g.kind.name()),
@@ -939,6 +975,7 @@ impl Haunt {
                             g.from_name()
                         ));
                     } else if self.run.spec.call_freeze {
+                        self.clock.reset();
                         ctx.say(format!(
                             "{} comes from the {}.",
                             sentence_start(g.kind.name()),
@@ -950,11 +987,13 @@ impl Haunt {
                     if g.kind.hunts_stillness() {
                         sound::play(ctx, sound::HOWL);
                         if self.run.spec.call_freeze || self.first("howl") {
+                            self.clock.reset();
                             ctx.say("Keep walking!");
                         }
                     } else {
                         sound::play(ctx, sound::FREEZE);
                         if self.run.spec.call_freeze || self.first("freeze") {
+                            self.clock.reset();
                             ctx.say("Freeze!");
                         }
                     }
@@ -1060,7 +1099,7 @@ impl Haunt {
                 Ev::Splash => {
                     sound::play(ctx, sound::SPLASH);
                     if self.first("splash") {
-                        ctx.say("Deep water. Slow, and the splash carries.");
+                        ctx.say("Deep water. Slow, and it draws ghosts.");
                     }
                 }
                 Ev::Wading => {
@@ -1092,7 +1131,7 @@ impl Haunt {
                     if self.first("founder") {
                         let p = ctx.control_name(ParlorAction::Primary);
                         ctx.say(format!(
-                            "The founder follows you, in heavy boots. Freezing will not stop him. At the ringing note, {p} strikes with your candlestick. Too soon and he blocks."
+                            "The founder follows you. Freezing will not stop him. In the second half of his wind-up, {p} strikes with your candlestick. Too soon and he blocks."
                         ));
                     } else {
                         ctx.say("The founder follows you in.");
@@ -1142,6 +1181,7 @@ impl Haunt {
                     if !self.prompt_door.is_empty() {
                         self.last_prompt = self.last_prompt.replace(&self.prompt_door, &door);
                     }
+                    self.clock.reset();
                     ctx.say(format!("The house shifts. Exit now in {door}."));
                     self.prompt_door = door;
                 }
@@ -1158,11 +1198,13 @@ impl Haunt {
                     time,
                     bonus,
                 } => {
+                    let (time, bonus) = self.count_floor_held(time, bonus);
                     self.stop_ghost(ctx);
                     self.stop_shadow(ctx);
                     self.score.stop(ctx);
                     sound::play(ctx, sound::STAIRS);
-                    let saved = progress::save_floor(ctx, self.run.mode, number, time);
+                    let pace = self.clock.pace();
+                    let saved = progress::save_floor(ctx, self.run.mode, pace, number, time);
                     let names = unlocks::on_floor(ctx, &self.run, number);
                     if !names.is_empty() {
                         sound::play(ctx, sound::UNLOCK);
@@ -1219,7 +1261,8 @@ impl Haunt {
     }
 
     fn finish(&mut self, ctx: &mut Ctx<Parlor>, outcome: Outcome) {
-        let saved = progress::save_end(ctx, &self.run);
+        let pace = self.clock.pace();
+        let saved = progress::save_end(ctx, &self.run, pace);
         let won = outcome == Outcome::Escaped;
         let names = unlocks::on_end(ctx, &self.run, won);
         if !names.is_empty() {
@@ -1303,19 +1346,27 @@ impl Haunt {
         };
         let halloween = halloween_line(ctx, run.mode, won);
         let challenge_line = self.challenge.as_ref().map(|ch| {
-            let result = Challenges::submit(ctx, ch, run.score);
+            let result = Challenges::submit_at(ctx, ch, pace, run.score);
             let streak = Challenges::streak(ctx, ch.game, ch.period);
-            challenge::result_line(ch, run.score, result, streak)
+            challenge::result_line(ch, run.score, result, streak, pace)
         });
         let score = match saved.score {
+            Some(ScoreResult::First) if pace.separate() => {
+                format!(
+                    "Score {}: your first relaxed score on this board.",
+                    run.score
+                )
+            }
             Some(ScoreResult::First) => format!("Score {}: your first on this board.", run.score),
-            Some(ScoreResult::NewBest { previous }) => {
-                format!("Score {}: a new best, beating {previous}.", run.score)
-            }
+            Some(ScoreResult::NewBest { previous }) => format!(
+                "Score {}: a new {}, beating {previous}.",
+                run.score,
+                pace.best_word()
+            ),
             Some(ScoreResult::Short { best }) => {
-                format!("Score {}. Your best is {best}.", run.score)
+                format!("Score {}. Your {} is {best}.", run.score, pace.best_word())
             }
-            None => "No score this time.".to_string(),
+            None => "Score 0, so nothing goes on the board.".to_string(),
         };
         let score = challenge_line.unwrap_or(score);
         let curses = match run.curses.count() {
@@ -1493,13 +1544,18 @@ fn floor_page(number: u32, time: f64, bonus: u64, score: u64, saved: FloorSaved)
         "Floor {number} cleared in {}. Time bonus and courage: plus {bonus}. Score {score}.",
         time_short(time)
     );
+    // A relaxed time goes on its own list, and says so.
+    let relaxed = if saved.relaxed { " relaxed" } else { "" };
     match (saved.record, saved.previous) {
         (true, Some(prev)) => line.push_str(&format!(
-            " A new best time for this floor, beating {}.",
+            " A new{relaxed} best time for this floor, beating {}.",
             time_short(prev)
         )),
-        (true, None) => line.push_str(" Your first time on this floor."),
-        (false, Some(prev)) => line.push_str(&format!(" Your best here is {}.", time_short(prev))),
+        (true, None) => line.push_str(&format!(" Your first{relaxed} time on this floor.")),
+        (false, Some(prev)) => line.push_str(&format!(
+            " Your{relaxed} best here is {}.",
+            time_short(prev)
+        )),
         _ => {}
     }
     if let Some(next) = saved.opened {
@@ -1524,6 +1580,9 @@ impl State<Parlor> for Haunt {
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
+        if !self.started {
+            self.clock = RunClock::start(ctx, crate::ID);
+        }
         self.started = true;
         ctx.audio.set_listener(Vec3::ZERO, 0.0);
         let names = unlocks::on_start(ctx);
@@ -1568,10 +1627,12 @@ impl State<Parlor> for Haunt {
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.clock.reset();
         if self.run.finished() {
             return;
         }
         if self.run.next_floor_waiting {
+            self.floor_held = 0.0;
             let evs = self.run.next_floor();
             self.voice(ctx, evs);
             return;
@@ -1597,6 +1658,22 @@ impl State<Parlor> for Haunt {
             menus::pause(ctx, HELP, leave);
             return;
         }
+        let side = match ctx.action_for(event) {
+            Some(ParlorAction::Up) => Some(Side::North),
+            Some(ParlorAction::Down) => Some(Side::South),
+            Some(ParlorAction::Left) => Some(Side::West),
+            Some(ParlorAction::Right) => Some(Side::East),
+            _ => None,
+        };
+        // Wading lasts game time, which stands still while speech holds
+        // the house: a step then waits for the wade to end.
+        if let Some(side) = side {
+            if self.run.wade > 0.0 && self.clock.held() {
+                self.pending_walk = Some(side);
+                return;
+            }
+        }
+        self.clock.asked_by(ctx.action_for(event));
         let evs = match ctx.action_for(event) {
             Some(ParlorAction::Up) => self.run.walk(Side::North),
             Some(ParlorAction::Down) => self.run.walk(Side::South),
@@ -1620,6 +1697,7 @@ impl State<Parlor> for Haunt {
             }
             None => {
                 if event.pressed() == Some(Key::I) {
+                    self.clock.asked();
                     let text = if self.run.inventory.is_empty() {
                         "You carry nothing.".to_string()
                     } else {
@@ -1640,6 +1718,11 @@ impl State<Parlor> for Haunt {
         if !self.started || self.run.finished() || self.run.next_floor_waiting {
             return;
         }
+        // The music, the clue sounds and the storm keep real time, so a
+        // clue stays in step with the phonograph that plays it; the house
+        // itself runs on game time.
+        let game_dt = self.clock.game_dt(ctx, dt);
+        self.floor_held += self.clock.take_held_time();
         let mood = self.mood();
         self.score.follow(ctx, mood, dt);
         let mut due = Vec::new();
@@ -1678,7 +1761,12 @@ impl State<Parlor> for Haunt {
                 );
             }
         }
-        let evs = self.run.update(dt);
+        let mut evs = self.run.update(game_dt);
+        if self.run.wade <= 0.0 && !self.run.finished() && !self.run.next_floor_waiting {
+            if let Some(side) = self.pending_walk.take() {
+                evs.extend(self.run.walk(side));
+            }
+        }
         if let Some(g) = self.run.ghost {
             if self.ghost_loop != Sound::NONE {
                 let (x, y) = g.offset();
@@ -1769,8 +1857,13 @@ impl State<Parlor> for Haunt {
             Some(g) if g.phase == GhostPhase::Near => {
                 "A ghost is passing you right now: do not move! ".to_string()
             }
-            Some(g) if g.kind.hunts_stillness() => "The hound is coming: when it howls, keep walking until it breathes out and drifts away. ".to_string(),
-            Some(_) => "A ghost is coming: when its stab sounds, stop moving until it breathes out and drifts away. ".to_string(),
+            Some(g) if g.kind.hunts_stillness() => {
+                "The hound is coming: keep walking until it has passed. ".to_string()
+            }
+            Some(_) => {
+                "A ghost is coming: when it is beside you, stop moving until it has passed. "
+                    .to_string()
+            }
             None => String::new(),
         };
         let room = self.run.current();
@@ -1785,34 +1878,34 @@ impl State<Parlor> for Haunt {
             dangers.push_str("The shadow follows your footsteps: keep away from it. ");
         }
         if !room.rotten.is_empty() {
-            dangers.push_str("A groan means a rotten board next to you: do not step there. ");
+            dangers
+                .push_str("Rotten boards lie here: when one is next to you, do not step there. ");
         }
         if room.mimics() > 0 {
             dangers.push_str("Mimics hop about; the real thing keeps still. ");
         }
         if room.mirror {
-            dangers.push_str("This room is mirrored: east sounds from your left. ");
+            dangers.push_str("This room is mirrored: east is on your left. ");
         }
         if room.dark {
-            dangers.push_str("This room is dark: things call out only when you are near. ");
+            dangers.push_str("This room is dark: things are found only when you are near. ");
         }
         if room.pendulum.is_some() {
-            dangers.push_str(
-                "The swish is the pendulum's blade: cross its row just after it passes. ",
-            );
+            dangers
+                .push_str("A pendulum's blade swings here: cross its row just after it passes. ");
         }
         if !room.water.is_empty() {
-            dangers.push_str("Lapping means deep water: wading is slow and brings ghosts sooner. ");
+            dangers.push_str("Deep water lies here: wading is slow and brings ghosts sooner. ");
         }
         if room.stones {
             dangers.push_str("When dust trickles over you, step off before the stone falls. ");
         }
         if room.shifts {
-            dangers.push_str("A rumble moves the exit door: status says where. ");
+            dangers.push_str("The exit door moves: status says where. ");
         }
         if self.run.founder.is_some() {
             dangers.push_str(&format!(
-                "The founder hunts you. At his ringing note, {} strikes him; too soon and he blocks, so step away. ",
+                "The founder hunts you. In the second half of his wind-up, {} strikes him; too soon and he blocks, so step away. ",
                 ctx.control_name(ParlorAction::Primary)
             ));
         }
@@ -1820,7 +1913,8 @@ impl State<Parlor> for Haunt {
             Some(e) => {
                 let twist = match e.twist {
                     Some(t) => format!(" Twist: {}, {}.", t.name(), t.describe()),
-                    None => " Séance rooms want their sounds' things in order.".to_string(),
+                    None => " In séance rooms, pick up the things the medium calls up, in order."
+                        .to_string(),
                 };
                 let carry = if e.carries_courage() {
                     " Courage does not refill between floors."

@@ -312,7 +312,7 @@ impl TitleGame for Meadow {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear every firefly's tone and each sound you need in the meadow, with its meaning."
+        "Every firefly's tone and each sound you need in the meadow."
             .to_string()
     }
 

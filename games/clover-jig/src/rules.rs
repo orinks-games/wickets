@@ -367,7 +367,7 @@ impl Tally {
             format!("{} close", self.close),
         ];
         if self.waited > 0 {
-            parts.push(format!("{} with the tune waiting", self.waited));
+            parts.push(format!("{} with the tune held", self.waited));
         }
         parts.push(format!("{} missed", self.missed));
         parts.join(", ")

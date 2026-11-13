@@ -56,10 +56,9 @@ impl Progress {
     }
 }
 
-/// "best 540", or "no score yet".
+/// "best 540, relaxed best 610", leaving out a board with no score, or
+/// "no score yet".
 pub fn best_line(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    match Records::best(ctx, ID, board) {
-        Some(b) => format!("best {b}"),
-        None => "no score yet".to_string(),
-    }
+    parlor_core::pace::scored_bests(ctx, ID, board, "best")
+        .unwrap_or_else(|| "no score yet".to_string())
 }

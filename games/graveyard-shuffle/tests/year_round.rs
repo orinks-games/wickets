@@ -52,8 +52,8 @@ fn three_stars_on_night_1_keep_the_game() {
         "{:?}",
         h.spoken()
     );
-    // In season the laboratory is open, so the line does not say it waits.
-    assert!(!spoke(&h, "waits for Halloween"), "{:?}", h.spoken());
+    // In season the laboratory is open, so the line does not say when it opens.
+    assert!(!spoke(&h, "opens at Halloween"), "{:?}", h.spoken());
     assert!(graveyard_shuffle::kept(&mut h.app.ctx));
 }
 
@@ -76,7 +76,7 @@ fn out_of_season_the_kept_line_says_the_laboratory_waits() {
     };
     assert!(!set_pages(1, &run, &saved)[0].contains("laboratory"));
     saved.in_season = false;
-    assert!(set_pages(1, &run, &saved)[0].contains("Doctor Volt's laboratory waits for Halloween."));
+    assert!(set_pages(1, &run, &saved)[0].contains("Doctor Volt's laboratory opens at Halloween."));
 }
 
 #[test]

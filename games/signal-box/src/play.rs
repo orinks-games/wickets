@@ -5,7 +5,7 @@ use std::collections::HashSet;
 use hearken::text::sentence_start;
 use hearken::{Ctx, InputEvent, Key, Sound, State, UiSound, Vec3};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
-use parlor_core::{Challenge, Pages, Parlor, ParlorAction, Period, ScoreResult};
+use parlor_core::{Challenge, Pace, Pages, Parlor, ParlorAction, Period, RunClock, ScoreResult};
 
 use crate::challenge::{self, Plan, CHALLENGES_NAME};
 use crate::events::{self, THIRTEENTH};
@@ -77,6 +77,9 @@ pub struct Signal {
     pub ghost_seen: bool,
     /// The ghost train or the special passing now, cut as the next call comes.
     passing: Sound,
+    /// The run's game clock: its pace, fixed when the run starts, and the
+    /// hold that keeps the answer window still while a line is spoken.
+    pub clock: RunClock,
 }
 
 impl Signal {
@@ -102,6 +105,7 @@ impl Signal {
             thirteenth: false,
             ghost_seen: false,
             passing: Sound::NONE,
+            clock: RunClock::default(),
         }
     }
 
@@ -279,9 +283,9 @@ impl Signal {
         self.delayed.clear();
         self.shift.start();
         if self.shift.timed() {
-            ctx.say("Line open. The tick keeps the pace.");
+            ctx.say("Line open.");
         } else {
-            ctx.say("Line open. Take your time.");
+            ctx.say("Line open. No clock.");
         }
     }
 
@@ -291,6 +295,9 @@ impl Signal {
                 Ev::Call(call) => {
                     // Already faded in the gap; on a long frame, cut it.
                     self.stop_passing_over(ctx, 0);
+                    // Each call gets a full hold, however long the lines
+                    // before it ran.
+                    self.clock.reset();
                     self.say_call(ctx, call)
                 }
                 Ev::Tick => {
@@ -408,7 +415,7 @@ impl Signal {
     fn finish(&mut self, ctx: &mut Ctx<Parlor>) {
         ctx.audio.set_bed(None);
         if let Some(ch) = self.challenge.take() {
-            let pages = challenge::finish(ctx, &ch, &self.shift);
+            let pages = challenge::finish(ctx, &ch, &self.shift, self.clock.pace());
             let summary = challenge::summary(&ch, &self.shift);
             let mut results = Some(after_challenge(ch.period, summary, pages.clone()));
             ctx.replace(Pages::new(pages).then(move |ctx| {
@@ -419,11 +426,11 @@ impl Signal {
             return;
         }
         let pages = if self.mode == Mode::SteamGala {
-            let score = progress::save_gala(ctx, &self.shift);
-            gala_pages(&self.shift, score)
+            let score = progress::save_gala_at(ctx, &self.shift, self.clock.pace());
+            gala_pages(&self.shift, score, self.clock.pace())
         } else {
-            let saved = progress::save_shift(ctx, &self.shift);
-            let mut pages = result_pages(&self.shift, &saved);
+            let saved = progress::save_shift_at(ctx, &self.shift, self.clock.pace());
+            let mut pages = result_pages(&self.shift, &saved, self.clock.pace());
             if self.ghost_seen {
                 if let Some(last) = pages.last_mut() {
                     last.push_str(" The thirteenth train went by.");
@@ -451,37 +458,59 @@ pub fn result_summary(shift: &Shift) -> String {
     )
 }
 
-/// The pages after a night shift.
-pub fn result_pages(shift: &Shift, saved: &Saved) -> Vec<String> {
+/// "relaxed " on a relaxed run's records, which are kept apart.
+fn relaxed_word(pace: Pace) -> &'static str {
+    if pace.separate() {
+        "relaxed "
+    } else {
+        ""
+    }
+}
+
+/// A shift that scored nothing: no board takes a 0.
+fn no_board(shift: &Shift) -> String {
+    format!(
+        "{}, so nothing goes on the board.",
+        points_words(shift.score)
+    )
+}
+
+/// The pages after a night shift played at `pace`.
+pub fn result_pages(shift: &Shift, saved: &Saved, pace: Pace) -> Vec<String> {
+    let r = relaxed_word(pace);
     let score = match saved.score {
-        ScoreResult::First => format!("{}, your first score.", points_words(shift.score)),
-        ScoreResult::NewBest { previous } => {
+        None => no_board(shift),
+        Some(ScoreResult::First) => {
+            format!("{}, your first {r}score.", points_words(shift.score))
+        }
+        Some(ScoreResult::NewBest { previous }) => {
             format!(
-                "{}, a new best, beating {previous}.",
+                "{}, a new {r}best, beating {previous}.",
                 points_words(shift.score)
             )
         }
-        ScoreResult::Short { best } => {
-            format!("{}. Your best is {best}.", points_words(shift.score))
+        Some(ScoreResult::Short { best }) => {
+            format!("{}. Your {r}best is {best}.", points_words(shift.score))
         }
     };
     // The derailment was said as it happened: the pages lead with the
     // score.
     let first = sentence_start(&score);
+    let longest = sentence_start(&format!("longest {r}run"));
     let run = match saved.run_record {
         Some(0) => format!(
-            "Longest run: {}, your first on the board.",
+            "{longest}: {}, your first on the board.",
             trains_words(shift.passed)
         ),
         Some(previous) => format!(
-            "Longest run: {}, a new record, beating {previous}.",
+            "{longest}: {}, a new record, beating {previous}.",
             trains_words(shift.passed)
         ),
-        None => format!("Longest run: {}.", trains_words(saved.best_run)),
+        None => format!("{longest}: {}.", trains_words(saved.best_run)),
     };
     let window = if saved.window_record {
         format!(
-            "Window reached: {}, your shortest yet.",
+            "Window reached: {}, your shortest {r}window yet.",
             window_words(shift.window)
         )
     } else {
@@ -490,20 +519,22 @@ pub fn result_pages(shift: &Shift, saved: &Saved) -> Vec<String> {
     vec![first, format!("{run} {window}")]
 }
 
-/// The pages after a steam gala shift: its score on its own board, and the
-/// specials through.
-pub fn gala_pages(shift: &Shift, saved: ScoreResult) -> Vec<String> {
+/// The pages after a steam gala shift played at `pace`: its score on its
+/// own board, and the specials through.
+pub fn gala_pages(shift: &Shift, saved: Option<ScoreResult>, pace: Pace) -> Vec<String> {
+    let r = relaxed_word(pace);
     let score = match saved {
-        ScoreResult::First => format!(
-            "{}, your first steam gala score.",
+        None => no_board(shift),
+        Some(ScoreResult::First) => format!(
+            "{}, your first {r}steam gala score.",
             points_words(shift.score)
         ),
-        ScoreResult::NewBest { previous } => format!(
-            "{}, a new steam gala best, beating {previous}.",
+        Some(ScoreResult::NewBest { previous }) => format!(
+            "{}, a new {r}steam gala best, beating {previous}.",
             points_words(shift.score)
         ),
-        ScoreResult::Short { best } => format!(
-            "{}. Your steam gala best is {best}.",
+        Some(ScoreResult::Short { best }) => format!(
+            "{}. Your {r}steam gala best is {best}.",
             points_words(shift.score)
         ),
     };
@@ -561,6 +592,9 @@ impl State<Parlor> for Signal {
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         ctx.audio.set_listener(Vec3::ZERO, 0.0);
         sound::box_bed(ctx);
+        // The pace is fixed for the run: a change in Settings applies from
+        // the next one.
+        self.clock = RunClock::start(ctx, ID);
         let today = parlor_core::challenges::today(ctx);
         self.thirteenth = self.mode == Mode::Shift && events::is_thirteenth(today);
         let intro = self.intro(ctx);
@@ -584,6 +618,8 @@ impl State<Parlor> for Signal {
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
+        // A pause ends any hold, so the resume line gets a full one.
+        self.clock.reset();
         if self.shift.finished() {
             return;
         }
@@ -615,6 +651,7 @@ impl State<Parlor> for Signal {
             menus::pause(ctx, HELP, leave);
             return;
         }
+        self.clock.asked_by(action);
         match action {
             Some(ParlorAction::Primary) if !self.shift.started() => self.open_line(ctx),
             Some(
@@ -650,9 +687,13 @@ impl State<Parlor> for Signal {
             }
             return;
         }
+        // The before-shift hint's earcons keep real time.
         self.play_due(ctx, dt);
-        self.fade_before_call(ctx, dt);
-        let evs = self.shift.update(dt);
+        // The window, the gaps and the tick run on game time: they hold
+        // while a line is spoken and run at the run's pace.
+        let game_dt = self.clock.game_dt(ctx, dt);
+        self.fade_before_call(ctx, game_dt);
+        let evs = self.shift.update(game_dt);
         self.voice(ctx, evs);
     }
 
@@ -685,7 +726,7 @@ impl State<Parlor> for Signal {
                 format!("{}: {}", call.word(), answer_words(&key, call))
             }
         } else {
-            "Listen for the next call.".to_string()
+            "Wait for the next call.".to_string()
         };
         let mut text = self.with_event(format!("{now} {}", self.controls(ctx)));
         if let Some(ch) = &self.challenge {

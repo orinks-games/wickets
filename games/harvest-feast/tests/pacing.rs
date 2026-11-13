@@ -1,16 +1,18 @@
-//! Listening protection belongs to Harvest Feast's discrete station actions.
+//! Pace and the speech hold: every dish's clock stands still while a line
+//! is being spoken, and runs at the meal's pace.
 use harvest_feast::progress;
-use harvest_feast::rules::{self, Stage};
-use harvest_feast::{Kitchen, Mode, Phase, Progress, ID};
-use hearken::{ControllerButton, Ctx, Headless, InputEvent, Key, State};
-use parlor_core::{Challenge, Date, Parlor, Period, Records};
+use harvest_feast::thanksgiving;
+use harvest_feast::{ChallengeRun, Kitchen, Mode, Phase, Progress, ID};
+use hearken::{Ctx, Headless, InputEvent, Key, State};
+use parlor_core::pace::{self, ClockState};
+use parlor_core::{Challenge, Challenges, Date, Pace, Parlor, Period, Records};
 use std::cell::RefCell;
 use std::rc::Rc;
 
 struct Observed(Rc<RefCell<Kitchen>>);
 impl State<Parlor> for Observed {
     fn name(&self) -> &'static str {
-        "observed_kitchen"
+        "harvest_feast_observed"
     }
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         self.0.borrow_mut().enter(ctx);
@@ -40,243 +42,207 @@ impl State<Parlor> for Base {
         String::new()
     }
 }
-fn start(mode: Mode, relaxed: bool) -> (Headless<Parlor>, Rc<RefCell<Kitchen>>) {
+
+fn headless() -> Headless<Parlor> {
     let mut h = Headless::new(Default::default(), Base);
     h.app.ctx.game.today = Some(Date::new(2026, 10, 16));
-    Progress {
-        relaxed,
-        ..Progress::default()
-    }
-    .store(&mut h.app.ctx);
-    let k = Rc::new(RefCell::new(Kitchen::new(mode)));
+    h
+}
+
+/// A meal of `kitchen` begun at `pace`, with the opening lines said.
+fn begin(mut h: Headless<Parlor>, kitchen: Kitchen) -> (Headless<Parlor>, Rc<RefCell<Kitchen>>) {
+    let k = Rc::new(RefCell::new(kitchen));
     h.app.ctx.push(Observed(k.clone()));
     h.frame(0.0);
     h.press(Key::Space);
+    quiet(&mut h);
     (h, k)
 }
-fn frames(h: &mut Headless<Parlor>, seconds: f64) {
-    for _ in 0..(seconds / 0.05).round() as usize {
-        h.frame(0.05);
-    }
+
+fn start(mode: Mode, pace: Pace) -> (Headless<Parlor>, Rc<RefCell<Kitchen>>) {
+    let mut h = headless();
+    pace::set(&mut h.app.ctx, ID, pace);
+    begin(h, Kitchen::new(mode))
 }
+
+/// Speech has finished: the voice is quiet.
+fn quiet(h: &mut Headless<Parlor>) {
+    h.app.ctx.stop_speech();
+}
+
 fn elapsed(k: &Rc<RefCell<Kitchen>>) -> f64 {
     k.borrow().meal.elapsed
 }
-fn assert_frozen(h: &mut Headless<Parlor>, k: &Rc<RefCell<Kitchen>>) {
-    let before = elapsed(k);
-    frames(h, 30.0);
-    assert_eq!(elapsed(k), before);
+
+/// One frame of `dt` straight to the kitchen, with nothing else moving.
+fn tick(h: &mut Headless<Parlor>, k: &Rc<RefCell<Kitchen>>, dt: f64) {
+    k.borrow_mut().update(&mut h.app.ctx, dt);
 }
-#[test]
-fn relaxed_call_waits_for_listening_and_the_same_press_starts_the_dish() {
-    let (mut h, k) = start(Mode::Course(1), true);
-    frames(&mut h, 3.0);
-    assert_eq!(k.borrow().meal.dishes[0].stage, Stage::Due);
-    assert_frozen(&mut h, &k);
-    h.press(Key::Space);
-    assert!(k.borrow().meal.dishes[0].started());
-    assert_eq!(k.borrow().meal.dishes[0].scores, vec![100]);
-    assert_frozen(&mut h, &k); // hear action feedback before the next wait
-    h.press(Key::Space); // resumes, but must not stir early
-    assert_eq!(k.borrow().meal.dishes[0].fumbles, 0);
-    let before = elapsed(&k);
-    frames(&mut h, 2.0);
-    assert!((elapsed(&k) - before - 1.0).abs() < 0.001);
+
+fn close(a: f64, b: f64) -> bool {
+    (a - b).abs() < 1e-6
 }
+
+fn modes(h: &Headless<Parlor>) -> Vec<Mode> {
+    let ch = Challenge::current(&h.app.ctx, ID, Period::Daily);
+    vec![
+        Mode::Course(1),
+        Mode::Helpings { round: 1, total: 0 },
+        Mode::Thanksgiving { year: 2026 },
+        Mode::Challenge(ChallengeRun::new(ch)),
+    ]
+}
+
 #[test]
-fn status_repeat_recipe_hint_listen_and_navigation_wait_without_changing_quality() {
-    let (mut h, k) = start(Mode::Course(2), true);
+fn normal_is_the_default_and_the_old_relaxed_switch_carries_over() {
+    let mut h = headless();
+    Progress::load(&mut h.app.ctx);
+    assert_eq!(progress::pace(&h.app.ctx), Pace::Normal);
+
+    let mut h = headless();
+    Progress {
+        relaxed: true,
+        ..Progress::default()
+    }
+    .store(&mut h.app.ctx);
+    Records::record(&mut h.app.ctx, ID, "course 2 relaxed", 700);
+    assert_eq!(progress::pace(&h.app.ctx), Pace::Relaxed);
+    let (h, k) = begin(h, Kitchen::new(Mode::Course(1)));
+    let mut h = h;
+    assert_eq!(k.borrow().clock.pace(), Pace::Relaxed);
+    assert_eq!(pace::stored(&h.app.ctx, ID), Some(Pace::Relaxed));
+    assert_eq!(
+        Records::best(
+            &mut h.app.ctx,
+            ID,
+            &progress::paced_course_board(2, Pace::Relaxed)
+        ),
+        Some(700),
+        "the old relaxed board moves to the relaxed board's name"
+    );
+    assert_eq!(Records::best(&mut h.app.ctx, ID, "course 2 relaxed"), None);
+}
+
+#[test]
+fn every_meal_holds_for_speech_and_runs_at_its_pace() {
+    let h = headless();
+    for mode in modes(&h) {
+        for pace in Pace::ALL {
+            let (mut h, k) = start(mode.clone(), pace);
+            assert_eq!(k.borrow().phase, Phase::Cooking, "{mode:?}");
+            assert_eq!(k.borrow().clock.pace(), pace);
+            let before = elapsed(&k);
+            h.app.ctx.say("A line still being spoken.");
+            tick(&mut h, &k, 1.0);
+            assert_eq!(elapsed(&k), before, "{mode:?} holds for speech");
+            assert_eq!(k.borrow().clock.state(), ClockState::Held);
+            quiet(&mut h);
+            tick(&mut h, &k, 1.0);
+            assert!(
+                close(elapsed(&k) - before, pace.scale()),
+                "{mode:?} at {pace:?}: {}",
+                elapsed(&k) - before
+            );
+        }
+    }
+}
+
+#[test]
+fn information_keys_hold_the_kitchen_only_while_they_are_spoken() {
+    let (mut h, k) = start(Mode::Course(2), Pace::Quick);
     for key in [
         Key::S,
         Key::R,
         Key::Up,
         Key::Down,
         Key::H,
-        Key::T,
         Key::Right,
         Key::Num1,
     ] {
+        let before = elapsed(&k);
         h.press(key);
-        assert_frozen(&mut h, &k);
-        h.press(Key::Space);
+        tick(&mut h, &k, 0.5);
+        assert_eq!(elapsed(&k), before, "{key:?} is being spoken");
+        quiet(&mut h);
+        tick(&mut h, &k, 0.5);
+        assert!(close(elapsed(&k), before + 0.5), "{key:?}");
     }
-    assert!(k
-        .borrow()
-        .meal
-        .dishes
-        .iter()
-        .all(|d| d.fumbles == 0 && d.ruined == 0));
 }
+
 #[test]
-fn controller_status_and_action_use_the_same_listening_rules() {
-    let (mut h, k) = start(Mode::Course(1), true);
-    h.connect_pad();
-    h.send(InputEvent::button(ControllerButton::Y));
-    h.send(InputEvent::button_up(ControllerButton::Y));
-    assert_frozen(&mut h, &k);
-    h.send(InputEvent::button(ControllerButton::A));
-    h.send(InputEvent::button_up(ControllerButton::A));
-    frames(&mut h, 3.0);
-    assert_frozen(&mut h, &k);
-    h.send(InputEvent::button(ControllerButton::A));
-    h.send(InputEvent::button_up(ControllerButton::A));
-    assert!(k.borrow().meal.dishes[0].started());
-    assert_eq!(k.borrow().meal.dishes[0].fumbles, 0);
-}
-#[test]
-fn pace_stays_fixed_during_a_course_and_resume_waits_for_the_status() {
-    let (mut h, k) = start(Mode::Course(1), true);
-    let mut p = Progress::load(&mut h.app.ctx);
-    p.relaxed = false;
-    p.store(&mut h.app.ctx);
-    h.press(Key::Escape);
-    h.press(Key::Escape);
-    assert_frozen(&mut h, &k);
+fn the_kitchen_holds_until_the_recipe_call_has_been_said() {
+    let mut h = headless();
+    pace::set(&mut h.app.ctx, ID, Pace::Quick);
+    let k = Rc::new(RefCell::new(Kitchen::new(Mode::Course(1))));
+    h.app.ctx.push(Observed(k.clone()));
+    h.frame(0.0);
     h.press(Key::Space);
-    let before = elapsed(&k);
-    frames(&mut h, 1.0);
-    assert!((elapsed(&k) - before - 0.5).abs() < 0.001);
-}
-#[test]
-fn standard_courses_and_other_modes_do_not_freeze_or_slow() {
-    let (mut h, k) = start(Mode::Course(1), false);
-    h.press(Key::S);
-    frames(&mut h, 1.0);
-    assert!((elapsed(&k) - 1.0).abs() < 0.001);
-    let ch = Challenge::current(&h.app.ctx, ID, Period::Daily);
-    for mode in [
-        Mode::Helpings { round: 1, total: 0 },
-        Mode::Thanksgiving { year: 2026 },
-        Mode::Challenge(harvest_feast::ChallengeRun::new(ch)),
-    ] {
-        let (mut h, k) = start(mode, true);
-        h.press(Key::S);
-        frames(&mut h, 1.0);
-        assert!((elapsed(&k) - 1.0).abs() < 0.001);
-    }
-}
-#[test]
-fn relaxed_meal_can_finish_with_slow_listening_and_multistroke_actions() {
-    let (mut h, k) = start(Mode::Course(3), true);
-    for _ in 0..3000 {
-        if !matches!(k.borrow().phase, Phase::Cooking) {
+    h.frame(0.05);
+    assert!(k.borrow().clock.held(), "Cooking is being said");
+    for _ in 0..2000 {
+        if !k.borrow().clock.held() {
             break;
         }
-        let urgent = k
-            .borrow()
-            .meal
-            .most_urgent()
-            .map(|i| k.borrow().meal.dishes[i].station());
-        if let Some(station) = urgent {
-            let key = match station.number() {
-                1 => Key::Num1,
-                2 => Key::Num2,
-                3 => Key::Num3,
-                4 => Key::Num4,
-                _ => Key::Num5,
-            };
-            h.press(key);
-            assert_frozen(&mut h, &k);
-            h.press(Key::Space);
-        } else {
-            h.press(Key::S); // safely inspect before resuming the next wait
-            h.press(Key::Space);
+        assert_eq!(elapsed(&k), 0.0, "nothing cooks while a line is said");
+        h.frame(0.05);
+    }
+    h.frame(0.5);
+    assert!(
+        elapsed(&k) > 0.0,
+        "the kitchen runs once the lines are said"
+    );
+    let said = |h: &Headless<Parlor>| h.spoken().iter().any(|l| l.starts_with("Recipe:"));
+    for _ in 0..2000 {
+        if said(&h) {
+            break;
         }
         h.frame(0.05);
     }
-    assert!(k.borrow().meal.over);
-    assert_eq!(k.borrow().meal.outcome().fumbles, 0);
-    assert_eq!(k.borrow().meal.outcome().ruined, 0);
-    frames(&mut h, 30.0);
-    assert_eq!(h.app.top_name(), "observed_kitchen");
-    h.press(Key::S);
-    assert_eq!(h.app.top_name(), "observed_kitchen");
-    h.press(Key::Space);
-    assert!(Records::best(&mut h.app.ctx, ID, &progress::paced_course_board(3, true)).is_some());
-    assert!(Records::best(&mut h.app.ctx, ID, &progress::course_board(3)).is_none());
-    assert!(Progress::load(&mut h.app.ctx).open(4));
+    assert!(said(&h), "{:?}", h.spoken());
+    let before = elapsed(&k);
+    h.frame(0.05);
+    assert!(k.borrow().clock.held(), "the recipe call is being said");
+    assert_eq!(elapsed(&k), before);
 }
+
 #[test]
-fn original_rules_and_standard_board_identifiers_are_unchanged() {
-    assert!(!Progress::default().relaxed);
+fn a_hold_never_lasts_forever() {
+    // Each key line on the way (the recipe call, then "Hurry") gets a
+    // hold of its own, each bounded.
+    let (mut h, k) = start(Mode::Course(1), Pace::Quick);
+    for _ in 0..1000 {
+        h.app.ctx.say("Still talking.");
+        tick(&mut h, &k, 0.1);
+    }
+    assert!(elapsed(&k) > 10.0, "{}", elapsed(&k));
+}
+
+#[test]
+fn pace_stays_fixed_for_the_meal_and_carries_through_a_run() {
+    let (mut h, k) = start(Mode::Course(1), Pace::Relaxed);
+    pace::set(&mut h.app.ctx, ID, Pace::Quick);
+    h.press(Key::Escape);
+    h.press(Key::Escape);
+    assert_eq!(k.borrow().clock.pace(), Pace::Relaxed);
+    let next = Kitchen::new(Mode::Helpings {
+        round: 2,
+        total: 300,
+    })
+    .at_pace(Pace::Relaxed);
+    let (_h, k) = begin(h, next);
     assert_eq!(
-        progress::paced_course_board(1, false),
-        progress::course_board(1)
+        k.borrow().clock.pace(),
+        Pace::Relaxed,
+        "the run keeps its pace"
     );
-    assert_ne!(
-        progress::paced_course_board(1, true),
-        progress::course_board(1)
-    );
-    assert_eq!(rules::START_WINDOW, 4.0);
-    assert_eq!(rules::MIN_WINDOW, 2.0);
 }
 
-#[test]
-fn a_multistroke_task_waits_between_primary_presses_without_navigation() {
-    let (mut h, k) = start(Mode::Course(3), true);
-    // Celery starts on the board, then needs several chopping strokes.
-    h.press(Key::Num2);
-    h.press(Key::Space);
-    frames(&mut h, 3.0);
-    h.press(Key::Space); // start celery
-    h.press(Key::Space); // resume until chopping is called
-    frames(&mut h, 1.0);
-    let needed = k.borrow().meal.dishes[0].current().unwrap().strokes;
-    assert!(needed > 1);
-    for _ in 0..needed {
-        assert_frozen(&mut h, &k);
-        h.press(Key::Space);
-    }
-    assert_eq!(k.borrow().meal.dishes[0].scores, vec![100, 100]);
-    assert_eq!(k.borrow().meal.dishes[0].fumbles, 0);
-}
-
-#[test]
-fn two_due_dishes_keep_their_deadlines_while_the_player_listens() {
-    let (mut h, k) = start(Mode::Course(2), true);
+/// Cooks the rest of the meal by its rules, perfectly, then lets the
+/// dinner bell ring out to the results.
+fn finish(h: &mut Headless<Parlor>, k: &Rc<RefCell<Kitchen>>) {
     {
         let mut kitchen = k.borrow_mut();
-        for dish in &mut kitchen.meal.dishes {
-            dish.clock = dish.current().unwrap().wait;
-            dish.stage = Stage::Due;
-        }
-    }
-    h.press(Key::S);
-    assert_frozen(&mut h, &k);
-    h.press(Key::Space);
-    h.press(Key::Num3);
-    assert_frozen(&mut h, &k);
-    h.press(Key::Space);
-    assert!(k.borrow().meal.dishes.iter().all(|d| d.scores == vec![100]));
-}
-
-#[test]
-fn rebound_primary_resumes_and_instructional_keys_hold_the_clock() {
-    let (mut h, k) = start(Mode::Course(1), true);
-    let _ = h.app.ctx.bindings.set_chord(
-        parlor_core::ParlorAction::Primary,
-        hearken::Chord::plain(Key::P),
-    );
-    h.press(Key::Return); // explains the rebound action
-    assert_frozen(&mut h, &k);
-    assert!(h.spoken().iter().any(|line| line.contains("P acts")));
-    h.press(Key::P);
-    h.press(Key::Num5); // unused station also gives time to hear its explanation
-    assert_frozen(&mut h, &k);
-    h.press(Key::P);
-    frames(&mut h, 3.0);
-    h.press(Key::P);
-    assert!(k.borrow().meal.dishes[0].started());
-    assert_eq!(k.borrow().meal.dishes[0].fumbles, 0);
-}
-
-#[test]
-fn escape_from_a_completed_relaxed_meal_saves_before_leaving() {
-    let (mut h, k) = start(Mode::Course(1), true);
-    // Finish the rules normally, then exercise the screen's terminal Escape.
-    {
-        let mut kitchen = k.borrow_mut();
-        for _ in 0..1000 {
+        for _ in 0..4000 {
             if kitchen.meal.over {
                 break;
             }
@@ -287,11 +253,269 @@ fn escape_from_a_completed_relaxed_meal_saves_before_leaving() {
             }
         }
         assert!(kitchen.meal.over);
-        kitchen.phase = Phase::Served(2.5);
+        kitchen.phase = Phase::Served(0.1);
     }
-    h.press(Key::Escape);
-    assert_ne!(h.app.top_name(), "pause");
-    assert_ne!(h.app.top_name(), "observed_kitchen");
-    assert!(Records::best(&mut h.app.ctx, ID, &progress::paced_course_board(1, true)).is_some());
+    for _ in 0..10 {
+        h.frame(0.05);
+    }
+}
+
+#[test]
+fn a_relaxed_course_keeps_its_own_best_and_still_opens_the_next() {
+    let (mut h, k) = start(Mode::Course(1), Pace::Relaxed);
+    finish(&mut h, &k);
+    assert_ne!(h.app.top_name(), "harvest_feast_observed");
+    let relaxed = progress::paced_course_board(1, Pace::Relaxed);
+    assert_eq!(relaxed, "course 1-relaxed");
+    assert!(Records::best(&mut h.app.ctx, ID, &relaxed).is_some());
+    assert!(Records::best(&mut h.app.ctx, ID, &progress::course_board(1)).is_none());
     assert!(Progress::load(&mut h.app.ctx).open(2));
+    assert!(
+        h.spoken().iter().any(|l| l.contains("relaxed score")),
+        "{:?}",
+        h.spoken()
+    );
+}
+
+#[test]
+fn normal_and_quick_share_the_course_board() {
+    let (mut h, k) = start(Mode::Course(1), Pace::Normal);
+    finish(&mut h, &k);
+    let normal = Records::best(&mut h.app.ctx, ID, &progress::course_board(1));
+    assert!(normal.is_some());
+    assert_eq!(
+        progress::paced_course_board(1, Pace::Quick),
+        progress::course_board(1)
+    );
+}
+
+#[test]
+fn a_relaxed_challenge_and_thanksgiving_keep_their_own_results() {
+    let (mut h, k) = start(
+        Mode::Challenge(ChallengeRun::new(Challenge::current(
+            &headless().app.ctx,
+            ID,
+            Period::Daily,
+        ))),
+        Pace::Relaxed,
+    );
+    finish(&mut h, &k);
+    let ch = Challenge::current(&h.app.ctx, ID, Period::Daily);
+    assert!(Challenges::done(&mut h.app.ctx, &ch));
+    assert_eq!(Challenges::best(&mut h.app.ctx, &ch), None);
+    assert!(Challenges::best_at(&mut h.app.ctx, &ch, Pace::Relaxed).is_some());
+
+    let (mut h, k) = start(Mode::Thanksgiving { year: 2026 }, Pace::Relaxed);
+    finish(&mut h, &k);
+    assert_eq!(Records::best(&mut h.app.ctx, ID, thanksgiving::BOARD), None);
+    assert!(Records::best(
+        &mut h.app.ctx,
+        ID,
+        &Pace::Relaxed.board(thanksgiving::BOARD)
+    )
+    .is_some());
+    let keep = thanksgiving::Keepsakes::load(&mut h.app.ctx);
+    let year = keep.year(2026).unwrap();
+    assert_eq!(year.best, 0);
+    assert!(year.relaxed_best > 0);
+}
+
+/// A save from before the Pace setting: the old relaxed switch on, and
+/// courses 1 and 2 with old relaxed boards.
+fn old_save(h: &mut Headless<Parlor>) {
+    Progress {
+        stars: vec![3, 2, 1],
+        relaxed: true,
+        ..Progress::default()
+    }
+    .store(&mut h.app.ctx);
+    Records::record(&mut h.app.ctx, ID, "course 1", 800);
+    Records::record(&mut h.app.ctx, ID, "course 1 relaxed", 1500);
+    Records::record(&mut h.app.ctx, ID, "course 2 relaxed", 900);
+}
+
+#[test]
+fn old_relaxed_boards_survive_the_pace_row_being_touched_first() {
+    let mut h = headless();
+    old_save(&mut h);
+    // The player changes the Pace row before cooking anything.
+    pace::set(&mut h.app.ctx, ID, Pace::Quick);
+    let pages = harvest_feast::records_pages(&mut h.app.ctx);
+    assert_eq!(pace::stored(&h.app.ctx, ID), Some(Pace::Quick));
+    for (board, best) in [("course 1-relaxed", 1500), ("course 2-relaxed", 900)] {
+        assert_eq!(
+            Records::best(&mut h.app.ctx, ID, board),
+            Some(best),
+            "{board}"
+        );
+    }
+    for old in ["course 1 relaxed", "course 2 relaxed"] {
+        assert_eq!(Records::best(&mut h.app.ctx, ID, old), None, "{old}");
+    }
+    let all = pages.join(" ");
+    assert!(all.contains("best 800, relaxed best 1500"), "{all}");
+    assert!(all.contains("relaxed best 900"), "{all}");
+    assert!(!all.contains("best 0"), "{all}");
+
+    // Running it again changes nothing.
+    progress::migrate_pace(&mut h.app.ctx);
+    assert_eq!(
+        Records::best(&mut h.app.ctx, ID, "course 1-relaxed"),
+        Some(1500)
+    );
+}
+
+#[test]
+fn moving_an_old_relaxed_board_keeps_the_higher_score() {
+    let mut h = headless();
+    old_save(&mut h);
+    Records::record(&mut h.app.ctx, ID, "course 1-relaxed", 1200);
+    Records::record(&mut h.app.ctx, ID, "course 2-relaxed", 1100);
+    progress::migrate_pace(&mut h.app.ctx);
+    assert_eq!(
+        Records::best(&mut h.app.ctx, ID, "course 1-relaxed"),
+        Some(1500)
+    );
+    assert_eq!(
+        Records::best(&mut h.app.ctx, ID, "course 2-relaxed"),
+        Some(1100)
+    );
+    assert_eq!(Records::best(&mut h.app.ctx, ID, "course 1 relaxed"), None);
+    assert_eq!(pace::stored(&h.app.ctx, ID), Some(Pace::Relaxed));
+}
+
+#[test]
+fn course_select_names_both_boards() {
+    let mut h = headless();
+    old_save(&mut h);
+    Records::record(&mut h.app.ctx, ID, "course 3", 400);
+    h.app.ctx.push(harvest_feast::CourseSelect::new(1));
+    h.frame(0.0);
+    let first = h.spoken().join(" ");
+    assert!(first.contains("best 800, relaxed best 1500"), "{first}");
+    let mut lines = Vec::new();
+    for _ in 0..2 {
+        h.clear();
+        h.press(Key::Down);
+        lines.push(h.spoken().join(" "));
+    }
+    assert!(lines[0].contains("relaxed best 900"), "{lines:?}");
+    assert!(lines[1].contains("best 400"), "{lines:?}");
+    for line in lines.iter().chain([&first]) {
+        assert!(!line.contains("best 0"), "{line}");
+        assert!(!line.contains("no score yet"), "{line}");
+    }
+}
+
+#[test]
+fn records_leave_out_a_board_with_no_score() {
+    let mut h = headless();
+    Progress {
+        stars: vec![1; 8],
+        best_rounds: 4,
+        ..Progress::default()
+    }
+    .store(&mut h.app.ctx);
+    Records::record(
+        &mut h.app.ctx,
+        ID,
+        &Pace::Relaxed.board(progress::HELPINGS_BOARD),
+        2000,
+    );
+    Records::record(&mut h.app.ctx, ID, "course 1-relaxed", 700);
+    let all = harvest_feast::records_pages(&mut h.app.ctx).join(" ");
+    assert!(
+        all.contains("Second helpings: relaxed best 2000, most rounds 4."),
+        "{all}"
+    );
+    assert!(all.contains(": 1 star, relaxed best 700."), "{all}");
+    assert!(!all.contains("best 0"), "{all}");
+}
+
+#[test]
+fn status_from_the_first_frame_holds_only_for_the_budget() {
+    // The status key every second from the first frame, the voice never
+    // quiet: the danger moves once the information budget is spent.
+    let (mut h, k) = start(Mode::Course(1), Pace::Normal);
+    let before = elapsed(&k);
+    let t = parlor_core::testkit::status_spam_until(
+        &mut h,
+        60,
+        |h| tick(h, &k, 0.1),
+        |_| elapsed(&k) > before,
+    );
+    let t = t.expect("the danger never moved");
+    assert!(t <= parlor_core::testkit::SPAM_BOUND_S, "{t}");
+}
+
+#[test]
+fn a_meal_that_scores_0_goes_on_no_board() {
+    use harvest_feast::results::score_paced;
+    use harvest_feast::rules::Outcome;
+    let mut h = Headless::new(Default::default(), Base);
+    let board = progress::paced_course_board(1, Pace::Normal);
+    // An old save that kept a 0.
+    Records::record(&mut h.app.ctx, ID, &board, 0);
+    let zero = Outcome {
+        qualities: Vec::new(),
+        average: 0,
+        stars: 0,
+        fumbles: 0,
+        ruined: 0,
+        seconds: 60.0,
+    };
+    let served = score_paced(
+        Mode::Course(1),
+        zero.clone(),
+        false,
+        0,
+        Pace::Normal,
+        &mut h.app.ctx,
+    );
+    h.app.ctx.push(served);
+    h.frame(0.0);
+    h.press(Key::R);
+    let said = h.spoken().join(" ");
+    assert!(
+        said.contains("0 points, so nothing goes on the board."),
+        "{said}"
+    );
+    let all = harvest_feast::records_pages(&mut h.app.ctx).join(" ");
+    assert!(!all.contains("best 0"), "{all}");
+    for mode in [
+        Mode::Helpings { round: 1, total: 0 },
+        Mode::Thanksgiving { year: 2026 },
+    ] {
+        h.clear();
+        let served = score_paced(mode, zero.clone(), false, 0, Pace::Normal, &mut h.app.ctx);
+        h.app.ctx.push(served);
+        h.frame(0.0);
+        h.press(Key::R);
+        let said = h.spoken().join(" ");
+        assert!(
+            said.contains("0 points, so nothing goes on the board."),
+            "{said}"
+        );
+        assert!(!said.contains("keepsake"), "{said}");
+    }
+}
+
+#[test]
+fn the_recipe_call_and_hurry_hold_once_the_budget_is_spent() {
+    // Round five: S for longer than the budget, then the recipe call and
+    // "Hurry" held the kitchen for no time at all.
+    use parlor_core::testkit::{held_for, quiet_until, spend_budget};
+    for (course, line) in [(1, "Hurry"), (1, "Bubbling up"), (3, "Recipe:")] {
+        let (mut h, k) = start(Mode::Course(course), Pace::Normal);
+        spend_budget(&mut h, |h| tick(h, &k, 0.1));
+        h.clear();
+        let said = |h: &Headless<Parlor>| h.spoken().iter().any(|l| l.contains(line));
+        assert!(
+            quiet_until(&mut h, 60, |h| tick(h, &k, 0.1), said),
+            "{line} never came: {:?}",
+            h.spoken()
+        );
+        let held = held_for(&mut h, 10, |h| tick(h, &k, 0.1), |_| elapsed(&k));
+        assert!(held >= 5.0, "{line} held only {held}");
+    }
 }

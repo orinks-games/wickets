@@ -140,7 +140,7 @@ impl TitleGame for TheEcho {
             MenuItem::new("Practice rank", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(Tuning::new(Mode::Practice))
             })
-            .help("Four pipes with free hints and no score: learn to hear the wobble."),
+            .help("Four pipes with free hints and no score: learn the wobble."),
         )
     }
 

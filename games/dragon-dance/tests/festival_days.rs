@@ -54,7 +54,7 @@ fn the_run_up_hangs_lanterns_and_brings_the_lion_drums() {
     assert_eq!(event.title, "Lanterns going up");
     h.press(Key::Home);
     h.clear();
-    h.press(Key::Return);
+    start(&mut h);
     assert!(spoke(&h, "Lanterns are up: red envelopes count double."));
     wait(&mut h, 8.0);
     assert!(played(&h, sound::LION));
@@ -72,7 +72,7 @@ fn new_years_day_opens_the_parade_with_the_animals_greeting() {
     h.press(Key::F1);
     assert!(spoke(&h, "The Year of the Goat parade:"));
     h.clear();
-    h.press(Key::Return);
+    start(&mut h);
     assert_eq!(h.app.top_name(), DANCE_NAME);
     assert!(spoke(&h, "The New Year parade, the Year of the Goat."));
     assert!(spoke(&h, "The Goat: Take your time."));
@@ -124,7 +124,7 @@ fn the_lantern_walk_opens_on_the_fifteenth_day() {
     assert_eq!(rows(&h)[3], "Lantern walk");
     assert_eq!(rows(&h)[2], "New Year parade, locked");
     goto(&mut h, LANTERN_ROW);
-    h.press(Key::Return);
+    start(&mut h);
     assert_eq!(h.app.top_name(), DANCE_NAME);
     assert!(played(&h, sound::LANTERN_BED));
     assert!(played(&h, sound::NIGHT));

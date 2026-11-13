@@ -283,7 +283,7 @@ impl Species {
                 )
             }
             Unlock::Keepsake(k) => format!("comes with the {}", k.name()),
-            Unlock::Chorus => "hear a six-voice chorus".into(),
+            Unlock::Chorus => "grow a six-voice chorus".into(),
         }
     }
 
@@ -1392,7 +1392,7 @@ impl Garden {
         if let Some(i) = self.nearest(|p| p.is_none()) {
             return format!(
                 "{} {} plants a seed there.",
-                self.pointer(i, "an empty planter", "is waiting"),
+                self.pointer(i, "an empty planter", ""),
                 sentence(&self.keys.water)
             );
         }

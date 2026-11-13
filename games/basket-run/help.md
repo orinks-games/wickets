@@ -14,7 +14,7 @@ You hear the meadow from your own lane: a drop straight ahead is in your lane, o
 
 The cart sits at one edge: left on odd rounds, right on even, in the weekly marathon too. Endless, daily, festival, and practice keep it on the left. Tab locates the cart and says how far away it is.
 
-Standing in the cart's lane, press Space to bank your basket: the eggs roll into the cart and become points. Banking anywhere else tells you where the cart is.
+Standing in the cart's lane, press Space to bank your basket: the eggs roll into the cart and become points. Banking anywhere else says where the cart is.
 
 ## What falls
 
@@ -45,15 +45,25 @@ In the meadow, each round asks you to bank a share of its eggs: the round's open
 
 The meadow has eight rounds. Round 2 brings mud clods and moves the cart to the right. Round 3 adds a fourth lane, golden eggs and bees. Round 4 sends some eggs in pairs, one close behind the other in a nearby lane. Round 5 adds a fifth lane, and bees that dive right behind an egg in the same lane: catch the egg, then step aside. Each round after is faster.
 
+## Pace
+
+The meadow holds while a line is still being spoken. The drops, the round's clock and the patterns stand still until it ends, so a call never eats into a drop's warning. A step or a bank pressed meanwhile happens at once. The wait before "Go" keeps its own time, so it is the same at every pace. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode.
+
+Pace in Settings sets how fast the meadow runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. The drops, the patterns, the round's clock and its warnings follow the pace.
+
+A change applies from your next run. A run or a challenge keeps the pace it started at until it ends.
+
+Relaxed scores and Easter keepsakes are saved separately, including challenges. Normal and quick share their scores. Rounds cleared and the endless meadow count at every pace, and so does the bonus for playing with Spoken call-outs off.
+
 ## Endless meadow
 
 Clear all eight rounds to open the endless meadow: rounds without end, faster each time, with no egg target. Instead, every fifth cracked egg wears out a basket. Play until your baskets are gone.
 
 ## Easter morning
 
-On Easter Sunday, and the day either side of it, the Easter morning row on the title opens a golden-egg hunt. It has three gentle rounds: sunrise in the garden on three lanes, then the orchard on four, then the big hunt on five. Golden eggs fall often and are worth double. There are no bees and no egg target, so the hunt always runs to the end. The results name how many golden eggs you found, and each Easter you play keeps a keepsake: your best hunt that year and the most golden eggs in one hunt. Records reads them all.
+On Easter Sunday, and the day either side of it, the Easter morning row on the title opens a golden-egg hunt. It has three rounds: sunrise in the garden on three lanes, then the orchard on four, then the big hunt on five. Golden eggs fall often and are worth double. There are no bees and no egg target, so the hunt always runs to the end. The results name how many golden eggs you found, and each Easter you play keeps a keepsake: your best hunt that year and the most golden eggs in one hunt. Records reads them all.
 
-Easter moves from year to year, between the 22nd of March and the 25th of April. The rest of the year the row says locked, and F1 or Enter on it tells you how many days are left. In the ten days before Easter, Enter tells you how the Easter bunny is getting on.
+Easter moves from year to year, between the 22nd of March and the 25th of April. The rest of the year the row says locked, and F1 or Enter on it says how many days are left. In the ten days before Easter, Enter says how the Easter bunny is getting on.
 
 ## Challenges
 
@@ -80,27 +90,27 @@ Three slow lanes with every kind of drop, each explained the first time it falls
 - Endless meadow: opens once the meadow is cleared. Until then the row says locked.
 - Easter morning: the golden-egg hunt, open around Easter Sunday. The rest of the year the row says locked and counts down the days.
 - Challenges: the daily twist, the weekly marathon and the monthly Easter festival, each with your best and streak.
-- Practice lanes: try everything with nothing to lose.
+- Practice lanes: every kind of drop, with no score saved.
 - Tutorial: how to play, a page at a time. On your first visit the title starts here.
 - Help: this guide.
 - Sound check: each sound you need in play, by name. Falling sounds fall and land just as they do in play.
 - Records: your best scores, the rounds you have cleared, your Easter keepsakes and your challenge results.
-- Settings: speech, volume and controls, then this game's Spoken call-outs, on or off.
+- Settings: speech, volume and controls, then this game's Spoken call-outs, on or off, and its Pace.
 - Back to the parlor.
 
 ## Results
 
-When a run ends you hear the whole result: your score, whether it is your best, and for a challenge your streak. Then the results menu offers Play again or Try again, Hear the results again, and Back to the title. After a challenge, the first row plays the same challenge again and the last row is Back to the challenges. Escape does the same as the last row.
+When a run ends, the results give your score, whether it is your best, and for a challenge your streak. Then the results menu offers Play again or Try again, Hear the results again, and Back to the title. After a challenge, the first row plays the same challenge again and the last row is Back to the challenges. Escape does the same as the last row.
 
 ## Controls
 
 - Left and Right arrows: step one lane.
 - Space: bank your basket at the cart. Before a round begins, Space starts it at once.
-- Tab: ring the cart's bell and hear where it is.
+- Tab: ring the cart's bell and say where the cart is.
 - S: your lane, how full your basket is, and the next two things to land. Press it again straight away for the clock, eggs banked and needed, and baskets left, and a third time for your score and streak.
 - R: repeat the last announcement.
 - H: a hint for right now: which way to move, when to bank.
-- F1: help for the screen you are on.
+- F1: help for the current screen.
 - Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
 These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.

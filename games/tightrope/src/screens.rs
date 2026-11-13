@@ -6,12 +6,13 @@ use hearken::{Bus, Ctx, InputEvent, Key, Sound, State, Vec3};
 use parlor_core::menus::{self as shared, labels, Back, Leave, Results};
 use parlor_core::score::{DANGER, HURRY};
 use parlor_core::{
-    Challenge, Challenges, Mood, Pages, Parlor, ParlorAction, Period, Rng, Score, ScoreResult,
+    Challenge, Challenges, Mood, Pace, Pages, Parlor, ParlorAction, Period, Rng, RunClock, Score,
+    ScoreResult,
 };
 
 use crate::cues;
 use crate::progress;
-use crate::rules::{Keys, Mode, Note, Phase, Plan, Run, Side, DANGER_LEAN, SKYLINE_LEN};
+use crate::rules::{Keys, Mode, Note, Phase, Plan, Run, Side, DANGER_LEAN, RISER, SKYLINE_LEN};
 use crate::HELP;
 
 /// The title's screen name.
@@ -232,6 +233,12 @@ pub fn mood(run: &Run) -> Mood {
 /// The wire.
 pub struct RunScreen {
     run: Run,
+    /// The run's game clock: its pace, set when the wire begins, and the
+    /// hold that keeps the wire still while speech plays.
+    pub run_clock: RunClock,
+    /// The gust's riser is sounding: it climbs to the moment the gust
+    /// hits, so the wire runs through speech until then.
+    riser: bool,
     launch: Launch,
     challenge: Option<Challenge>,
     tone: Option<Sound>,
@@ -245,6 +252,13 @@ pub struct RunScreen {
     status_key: parlor_core::StatusKey,
     /// Walked inside the tutorial, where F1 repeats the step.
     pub in_lesson: bool,
+    /// A step pressed while the wire is held and the last step's cooldown
+    /// has not run out: it is taken once the cooldown ends, so the hold
+    /// never drops a press.
+    step_waiting: bool,
+    /// Game time held for speech on this wire: it counts toward the
+    /// crossing's time and its par bonus, so a hold never improves them.
+    wire_held: f64,
 }
 
 /// How loud the street is from `floors` up.
@@ -262,6 +276,8 @@ impl RunScreen {
         RunScreen {
             status_key: Default::default(),
             run: launch.build(),
+            run_clock: RunClock::new(Pace::Normal),
+            riser: false,
             launch,
             challenge,
             tone: None,
@@ -271,12 +287,19 @@ impl RunScreen {
             done: false,
             score: Score::new(),
             in_lesson: false,
+            step_waiting: false,
+            wire_held: 0.0,
         }
     }
 
     /// The rules, for tests.
     pub fn run(&self) -> &Run {
         &self.run
+    }
+
+    /// The rules, for tests to set up a wire.
+    pub fn run_mut(&mut self) -> &mut Run {
+        &mut self.run
     }
 
     fn stop_sounds(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -294,10 +317,75 @@ impl RunScreen {
         self.score.stop(ctx);
     }
 
+    /// On arriving, counts this wire's held time into the crossing: its
+    /// time grows by it and the par bonus is worked out from that time,
+    /// in the run's times and score and in the arrival line. With nothing
+    /// held, all are as the wire gave them.
+    fn count_wire_held(&mut self, notes: &mut [Note]) {
+        let Some(line) = notes.iter_mut().find_map(|n| match n {
+            Note::Say(s) if s.starts_with("Across.") => Some(s),
+            _ => None,
+        }) else {
+            return;
+        };
+        let held = std::mem::take(&mut self.wire_held);
+        if held <= 0.0 || self.run.times.is_empty() {
+            return;
+        }
+        let run = &mut self.run;
+        let par = run.level().par();
+        let Some(last) = run.times.last_mut() else {
+            return;
+        };
+        let bonus = |t: f64| ((par - t).max(0.0) * 5.0) as u64;
+        let (t, timed) = (last.1, last.1 + held);
+        let lost = bonus(t) - bonus(timed);
+        last.1 = timed;
+        let old_score = run.score;
+        run.score -= lost;
+        let mut said = line.replacen(
+            &format!(" {t:.1} seconds, par "),
+            &format!(" {timed:.1} seconds, par "),
+            1,
+        );
+        said = said.replacen(
+            &format!(". Score {old_score}."),
+            &format!(". Score {}.", run.score),
+            1,
+        );
+        if let Some(at) = said.find(" Bonus ") {
+            let digits = &said[at + 7..];
+            let end = digits
+                .find(|c: char| !c.is_ascii_digit())
+                .unwrap_or(digits.len());
+            if let Ok(was) = digits[..end].parse::<u64>() {
+                said.replace_range(at + 7..at + 7 + end, &(was - lost).to_string());
+            }
+        }
+        if let Some(rest) = run.last.strip_prefix(line.as_str()) {
+            run.last = format!("{said}{rest}");
+        }
+        *line = said;
+    }
+
     fn play_notes(&mut self, ctx: &mut Ctx<Parlor>) {
         let floors = self.run.level().floors;
-        for note in self.run.drain_notes() {
+        let mut notes = self.run.drain_notes();
+        self.count_wire_held(&mut notes);
+        for note in notes {
             match note {
+                // The screen plays the riser itself, in real time.
+                Note::At(key, _) if key == cues::GUST_WARNING => {}
+                // A gust, a pigeon, the danger alarm and a new wire come
+                // with a line to act on: each gets a fresh hold.
+                Note::At(key, x)
+                    if key == cues::GUST_ALERT
+                        || key == cues::PIGEON_LAND
+                        || key == cues::DANGER =>
+                {
+                    self.run_clock.reset();
+                    ctx.audio.play_at(key, Vec3::new(x, 1.0, 0.0), Bus::EFFECTS);
+                }
                 Note::Say(text) => ctx.say(text),
                 Note::Queue(text) => ctx.say_queued(text),
                 Note::Cue(key) => {
@@ -318,6 +406,7 @@ impl RunScreen {
                     ctx.audio.play_music(Some(key), false);
                 }
                 Note::NewWire => {
+                    self.run_clock.reset();
                     if let Some(s) = self.street {
                         ctx.audio.set_volume(s, street_volume(floors));
                     }
@@ -366,20 +455,47 @@ impl RunScreen {
         }
     }
 
+    /// Starts the gust's riser so it reaches its height as the gust hits.
+    /// The riser lasts its own length in real time, so at a slower pace it
+    /// starts closer to the gust, and never while the wire is held.
+    fn start_riser(&mut self, ctx: &mut Ctx<Parlor>) {
+        let Some(gust) = self.run.gust.as_ref().filter(|g| !g.blowing()) else {
+            self.riser = false;
+            return;
+        };
+        if self.riser
+            || self.run_clock.held()
+            || gust.warn_left > RISER * self.run_clock.pace().scale()
+        {
+            return;
+        }
+        self.riser = true;
+        let x = (gust.side.sign() * 4.0) as f32;
+        ctx.audio
+            .play_at(cues::GUST_WARNING, Vec3::new(x, 1.0, 0.0), Bus::EFFECTS);
+    }
+
     fn finish(&mut self, ctx: &mut Ctx<Parlor>, won: bool) {
         self.done = true;
         self.stop_sounds(ctx);
         let run = &self.run;
+        let pace = self.run_clock.pace();
         let mut lines = vec![self.run.last.clone()];
         if let Some(c) = self.challenge.clone() {
             let score = run.score;
             let mut line = format!("{} score: {score}.", c.title());
-            match Challenges::submit(ctx, &c, score) {
+            let best = pace.best_word();
+            match Challenges::submit_at(ctx, &c, pace, score) {
+                ScoreResult::First if pace.separate() => {
+                    line.push_str(" Your first relaxed score on this one.")
+                }
                 ScoreResult::First => line.push_str(" Your first score on this one."),
                 ScoreResult::NewBest { previous } => {
-                    line.push_str(&format!(" A new best, beating {previous}."))
+                    line.push_str(&format!(" A new {best}, beating {previous}."))
                 }
-                ScoreResult::Short { best } => line.push_str(&format!(" Your best stays {best}.")),
+                ScoreResult::Short { best: b } => {
+                    line.push_str(&format!(" Your {best} stays {b}."))
+                }
             }
             let streak = Challenges::streak(ctx, crate::ID, c.period);
             if streak > 0 {
@@ -389,7 +505,7 @@ impl RunScreen {
             line.push_str(&c.resets());
             lines.push(line);
         } else {
-            lines.extend(progress::save_run(ctx, &self.run));
+            lines.extend(progress::save_run(ctx, &self.run, pace));
         }
         let score = self.run.score;
         let launch = self.launch;
@@ -423,6 +539,7 @@ impl State<Parlor> for RunScreen {
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.run_clock = RunClock::start(ctx, crate::ID);
         ctx.audio.play_music(None, false);
         ctx.audio.set_listener(Vec3::ZERO, 0.0);
         self.run.keys = keys(ctx);
@@ -453,6 +570,7 @@ impl State<Parlor> for RunScreen {
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.run_clock.reset();
         self.run.keys = keys(ctx);
         ctx.audio.resume_all();
         let status = self.run.status_layers().remove(0);
@@ -487,10 +605,19 @@ impl State<Parlor> for RunScreen {
         if event.is_repeat() {
             return;
         }
+        self.run_clock.asked_by(action);
         let run = &mut self.run;
         match action {
             Some(ParlorAction::Left) => run.shift(Side::Left),
             Some(ParlorAction::Right) => run.shift(Side::Right),
+            Some(ParlorAction::Primary)
+                if run.phase == Phase::Walking
+                    && !run.crouched
+                    && !run.step_ready()
+                    && self.run_clock.held() =>
+            {
+                self.step_waiting = true;
+            }
             Some(ParlorAction::Primary) => run.step(),
             Some(ParlorAction::Secondary) => run.shoo(),
             Some(ParlorAction::Down) => run.crouch(),
@@ -521,7 +648,24 @@ impl State<Parlor> for RunScreen {
         if self.done {
             return;
         }
-        self.run.update(dt);
+        // Once the riser sounds, the wire keeps time with it; otherwise
+        // speech holds the wire. The music keeps real time.
+        if self.riser && self.run.gust.as_ref().is_some_and(|g| !g.blowing()) {
+            self.run_clock.bypass();
+        }
+        let game_dt = self.run_clock.game_dt(ctx, dt);
+        let held = self.run_clock.take_held_time();
+        if matches!(self.run.phase, Phase::Walking | Phase::Falling { .. }) {
+            self.wire_held += held;
+        }
+        self.start_riser(ctx);
+        self.run.update(game_dt);
+        if self.step_waiting && (self.run.phase != Phase::Walking || self.run.step_ready()) {
+            self.step_waiting = false;
+            if self.run.phase == Phase::Walking {
+                self.run.step();
+            }
+        }
         self.play_notes(ctx);
         self.sync_audio(ctx);
         let mood = mood(&self.run);

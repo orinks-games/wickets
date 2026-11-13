@@ -679,7 +679,7 @@ pub fn controls_text(ctx: &Ctx<Parlor>) -> String {
         k(ParlorAction::Repeat),
     );
     format!(
-        "{} and {right} walk the lane, or move inside a place. {} goes into a place, {down} back out. {} does the job in front of you: dig, sow, water, harvest, chop, fish, build or trade. {} pulls weeds and feeds animals. Enter talks to whoever is here. J opens the job board, L lists what is around you, and P tells you about everyone in Larkfield. {} says what needs you, and again for more. {} says what to do next. {} repeats the last line. Escape pauses.",
+        "{} and {right} walk the lane, or move inside a place. {} goes into a place, {down} back out. {} does the job in front of you: dig, sow, water, harvest, chop, fish, build or trade. {} pulls weeds and feeds animals. Enter talks to whoever is here. J opens the job board, L lists what is around you, and P describes everyone in Larkfield. {} says what needs you, and again for more. {} says what to do next. {} repeats the last line. Escape pauses.",
         sentence_start(&left),
         sentence_start(&up),
         sentence_start(&main),

@@ -280,15 +280,13 @@ impl AquariumScreen {
         };
         match s.when() {
             Some(when) => format!(
-                "You have not found a {} yet. It only turns up {when}. Listen for {}.",
+                "You have not found a {} yet. It only turns up {when}.",
                 s.name(),
-                s.sound_words()
             ),
             None => format!(
-                "You have not found a {} yet. It lives at {}. Listen for {}.",
+                "You have not found a {} yet. It lives at {}.",
                 s.name(),
                 list_words(&homes(*s)),
-                s.sound_words()
             ),
         }
     }
@@ -322,7 +320,7 @@ impl AquariumScreen {
 
     fn controls(ctx: &Ctx<Parlor>) -> String {
         format!(
-            "{} and {} move along the tanks, {} listens to one again, {} plays the whole tank, {} sums it up, {} says what is still missing, Escape goes back.",
+            "{} and {} move along the tanks, {} plays one again, {} plays the whole tank, {} sums it up, {} says what is still missing, Escape goes back.",
             sentence_start(&ctx.control_name(ParlorAction::Left)),
             ctx.control_name(ParlorAction::Right),
             ctx.control_name(ParlorAction::Primary),
@@ -398,7 +396,7 @@ impl State<Parlor> for AquariumScreen {
             Some(ParlorAction::Secondary) => {
                 let owned = self.owned();
                 if owned.is_empty() {
-                    ctx.say("The tank is empty and still: only the pump bubbles.");
+                    ctx.say("The tank is empty.");
                 } else {
                     self.tour = owned
                         .iter()
@@ -486,7 +484,7 @@ impl State<Parlor> for AquariumScreen {
             return "Your aquarium is empty. Gather creatures at the beach and they come home with you. Escape goes back.".to_string();
         }
         format!(
-            "Your aquarium: everything you have gathered lives here, each kind in its own spot from left to right, and they make their sounds now and then. {}",
+            "Your aquarium: everything you have gathered lives here, each kind in its own spot from left to right, and they call now and then. {}",
             Self::controls(ctx)
         )
     }

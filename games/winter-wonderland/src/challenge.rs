@@ -9,7 +9,7 @@
 
 use hearken::{Ctx, State};
 use parlor_core::menus::{self, ChallengeGame};
-use parlor_core::{Challenge, Challenges, Date, Pages, Parlor, Period, Rng, ScoreResult};
+use parlor_core::{Challenge, Challenges, Date, Pace, Pages, Parlor, Period, Rng, ScoreResult};
 
 use crate::desk::{Stack, StackSpec};
 use crate::desk_run::DeskRun;
@@ -310,17 +310,18 @@ pub fn briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
     })
 }
 
-/// Submits a finished run and says how it went: result, best, streak and
-/// when the next one comes.
-pub fn result_line(ctx: &mut Ctx<Parlor>, plan: &Plan, score: u64) -> String {
+/// Submits a finished run, played at `pace`, on that pace's board and
+/// says how it went: result, best, streak and when the next one comes.
+pub fn result_line(ctx: &mut Ctx<Parlor>, plan: &Plan, pace: Pace, score: u64) -> String {
     let ch = &plan.challenge;
-    let result = Challenges::submit(ctx, ch, score);
+    let result = Challenges::submit_at(ctx, ch, pace, score);
+    let r = crate::progress::relaxed_word(pace);
     let line = match result {
-        ScoreResult::First => format!("Your first result on this challenge: {score}."),
+        ScoreResult::First => format!("Your first {r}result on this challenge: {score}."),
         ScoreResult::NewBest { previous } => {
-            format!("A new best. The old best was {previous}.")
+            format!("A new {r}best. The old {r}best was {previous}.")
         }
-        ScoreResult::Short { best } => format!("Your best on this challenge is {best}."),
+        ScoreResult::Short { best } => format!("Your {r}best on this challenge is {best}."),
     };
     let streak = Challenges::streak(ctx, ID, ch.period).max(1);
     format!(

@@ -12,7 +12,7 @@
 
 use hearken::Ctx;
 use parlor_core::calendar::{self, Holiday, Nearness};
-use parlor_core::{Date, Happening, Parlor, Records};
+use parlor_core::{Date, Happening, Pace, Parlor, Records};
 use serde::{Deserialize, Serialize};
 
 use crate::ID;
@@ -67,15 +67,18 @@ pub fn bunny_line(days: i64) -> &'static str {
 }
 
 /// The row's help for `date`.
-pub fn row_help(date: Date, best: Option<u64>) -> String {
+pub fn row_help(date: Date, (best, relaxed): (Option<u64>, Option<u64>)) -> String {
     if is_open(date) {
-        let best = best.map_or(String::new(), |b| format!(" Your best is {b}."));
+        let mut best = best.map_or(String::new(), |b| format!(" Your best is {b}."));
+        if let Some(r) = relaxed {
+            best.push_str(&format!(" Your relaxed best is {r}."));
+        }
         format!(
-            "Three gentle rounds at sunrise, full of golden eggs worth double, with no bees and no egg target.{best}"
+            "Three rounds at sunrise, full of golden eggs worth double, with no bees and no egg target.{best}"
         )
     } else if run_up(date).is_some() {
         format!(
-            "{} Until then, Enter hears how the Easter bunny is getting on.",
+            "{} Until then, Enter says how the Easter bunny is getting on.",
             countdown(date)
         )
     } else {
@@ -128,13 +131,18 @@ pub enum Kept {
 }
 
 impl Kept {
-    pub fn line(self, year: i32) -> String {
+    /// What keeping a hunt at `pace` meant: relaxed hunts keep their own.
+    pub fn line(self, year: i32, pace: Pace) -> String {
+        let word = pace.best_word();
         match self {
+            Kept::First if pace.separate() => {
+                format!("Your relaxed keepsake for Easter {year} is saved.")
+            }
             Kept::First => format!("Your keepsake for Easter {year} is saved."),
             Kept::Better { previous } => {
-                format!("A new best for Easter {year}, up from {previous}.")
+                format!("A new {word} for Easter {year}, up from {previous}.")
             }
-            Kept::Short { best } => format!("Your best for Easter {year} is {best}."),
+            Kept::Short { best } => format!("Your {word} for Easter {year} is {best}."),
         }
     }
 }
@@ -146,6 +154,15 @@ impl Keepsakes {
 
     pub fn store(&self, ctx: &mut Ctx<Parlor>) {
         Records::store(ctx, &keepsake_key(), self);
+    }
+
+    /// The keepsakes of hunts at `pace`: relaxed hunts keep their own.
+    pub fn load_at(ctx: &mut Ctx<Parlor>, pace: Pace) -> Keepsakes {
+        Records::load(ctx, &pace.board(&keepsake_key()))
+    }
+
+    pub fn store_at(&self, ctx: &mut Ctx<Parlor>, pace: Pace) {
+        Records::store(ctx, &pace.board(&keepsake_key()), self);
     }
 
     pub fn year(&self, year: i32) -> Option<&Keepsake> {
@@ -185,6 +202,17 @@ impl Keepsakes {
                 countdown(today)
             );
         }
+        format!("Keepsakes. {}", self.lines(Pace::Normal))
+    }
+
+    /// The Records page of relaxed hunts' keepsakes, when there are any.
+    pub fn relaxed_page(&self) -> Option<String> {
+        (!self.years.is_empty())
+            .then(|| format!("Relaxed keepsakes. {}", self.lines(Pace::Relaxed)))
+    }
+
+    /// "Easter 2026: best 300, 4 golden eggs in one hunt." for each year.
+    fn lines(&self, pace: Pace) -> String {
         let lines: Vec<String> = self
             .years
             .iter()
@@ -193,9 +221,14 @@ impl Keepsakes {
                     1 => "1 golden egg".to_string(),
                     n => format!("{n} golden eggs"),
                 };
-                format!("Easter {}: best {}, {golden} in one hunt.", k.year, k.best)
+                format!(
+                    "Easter {}: {} {}, {golden} in one hunt.",
+                    k.year,
+                    pace.best_word(),
+                    k.best
+                )
             })
             .collect();
-        format!("Keepsakes. {}", lines.join(" "))
+        lines.join(" ")
     }
 }
