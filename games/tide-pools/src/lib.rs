@@ -281,9 +281,7 @@ impl TitleGame for TidePools {
             MenuItem::new("Practice pools", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 outing::start(ctx, Mode::Practice)
             })
-            .help(
-                "Three sheltered pools with no tide, to learn leaning in, listening and gathering.",
-            ),
+            .help("Three sheltered pools with no tide, to learn leaning in and gathering."),
         )
     }
 
@@ -320,7 +318,7 @@ impl TitleGame for TidePools {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "Daily, weekly and monthly shores, the same for every player, each with a gentle goal. {}",
+            "Daily, weekly and monthly shores, the same for every player, each with a goal. {}",
             daily.resets()
         )
     }

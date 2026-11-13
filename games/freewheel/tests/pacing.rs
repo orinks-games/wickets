@@ -542,3 +542,57 @@ fn status_from_the_first_frame_holds_only_for_the_budget() {
     let t = t.expect("the danger never moved");
     assert!(t <= parlor_core::testkit::SPAM_BOUND_S, "{t}");
 }
+
+/// Frames with the voice quiet until a line starting `start` is said, or
+/// `secs` pass; every line said.
+fn ride_until_said(h: &mut Headless<Parlor>, start: &str, secs: f64) -> Vec<String> {
+    let mut said = Vec::new();
+    for _ in 0..(secs * 60.0) as usize {
+        h.frame(1.0 / 60.0);
+        said.extend(h.spoken());
+        h.clear();
+        quiet(h);
+        if said.iter().any(|l| l.starts_with(start)) {
+            break;
+        }
+    }
+    said
+}
+
+#[test]
+fn an_oncoming_car_in_your_line_has_its_own_first_time_line() {
+    // A door in your line first...
+    let mut course = Course::empty("Door street", 400.0);
+    course.hazards.push(freewheel::course::Hazard {
+        kind: freewheel::course::HazardKind::Door,
+        s: 60.0,
+        x0: -6.0,
+        x1: 6.0,
+    });
+    let world = World::new(course, Bike::Bmx, 1);
+    let (mut h, _s) = open(Ride::from_world(world, Mode::FreeRide, 100.0), Pace::Normal);
+    h.clear();
+    hold(&mut h, Key::Up);
+    let said = ride_until_said(&mut h, "Now", 30.0);
+    assert!(said.iter().any(|l| l == "Now. In your line."), "{said:?}");
+    // ...then, in the same session, an oncoming car in your line.
+    let mut world = World::new(Course::empty("Busy street", 500.0), Bike::Road, 1);
+    world.rider.x = freewheel::course::CAR_LANE_X;
+    world.oncoming.push(freewheel::world::Oncoming {
+        id: 0,
+        s: 60.0,
+        x: freewheel::course::CAR_LANE_X,
+        v: 10.0,
+        warned: true,
+        act_now: false,
+        hit: false,
+        passed: false,
+    });
+    let (mut h, _s) = open(Ride::from_world(world, Mode::FreeRide, 100.0), Pace::Normal);
+    h.clear();
+    let said = ride_until_said(&mut h, "It is in your line", 30.0);
+    assert!(
+        said.iter().any(|l| l == "It is in your line. Act now."),
+        "{said:?}"
+    );
+}

@@ -269,7 +269,7 @@ impl TitleGame for RooftopGarden {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "Daily, weekly and monthly gardens with gentle goals, the same for every player. {}",
+            "Daily, weekly and monthly gardens with goals, the same for every player. {}",
             daily.resets()
         )
     }

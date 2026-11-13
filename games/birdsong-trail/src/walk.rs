@@ -331,7 +331,7 @@ impl WalkScreen {
             sector_words(s),
             distance_words(d)
         ));
-        format!("You hear {}.", lines.join("; "))
+        format!("Nearby: {}.", lines.join("; "))
     }
 
     fn key_lines(&mut self, ctx: &mut Ctx<Parlor>, i: usize, missed: bool) -> String {
@@ -400,7 +400,7 @@ impl WalkScreen {
                     let name = sentence_start(&self.walk.birds[bird].species.a_name());
                     if self.first("noticed") {
                         lines.push(format!(
-                            "{name} sings to you, close by. Listen, then answer."
+                            "{name} sings to you, close by. Answer when it ends."
                         ));
                     } else {
                         lines.push(format!("{name} sings to you."));
@@ -437,7 +437,7 @@ impl WalkScreen {
                 }
                 Ev::Busy { bird } => {
                     lines.push(format!(
-                        "Listen first. The {} is still singing.",
+                        "The {} is still singing. Answer when it ends.",
                         self.bird_name(bird)
                     ));
                 }
@@ -447,7 +447,7 @@ impl WalkScreen {
                 Ev::Nudge { bird } => {
                     if self.first("nudge") {
                         lines.push(format!(
-                            "The {} sings again, waiting for you.",
+                            "The {} sings again.",
                             self.bird_name(bird)
                         ));
                     }

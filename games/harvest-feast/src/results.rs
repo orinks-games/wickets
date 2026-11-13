@@ -212,7 +212,7 @@ pub fn score_paced(
     }
     summary.push_str(&format!(" {points} points"));
     if by_ear {
-        summary.push_str(", with the by-ear bonus");
+        summary.push_str(", with the bonus for cooking without call-outs");
     }
     summary.push('.');
     if let Some(f) = &family {
@@ -253,7 +253,7 @@ pub fn score_paced(
                     }
                 } else {
                     feast = true;
-                    summary.push_str(" The whole feast is on the table. Happy Thanksgiving!");
+                    summary.push_str(" The whole feast is on the table. Happy Thanksgiving.");
                     if !was_feast_served {
                         summary.push_str(" Second helpings is open on the title.");
                     }

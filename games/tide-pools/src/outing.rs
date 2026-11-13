@@ -219,7 +219,7 @@ pub fn after_trip(mode: Mode, summary: String, pages: Vec<String>) -> Results {
     };
     results.extra(
         "Your aquarium",
-        "Visit everything you have gathered, and listen to it.",
+        "Visit everything you have gathered.",
         |ctx| ctx.push(AquariumScreen::new()),
     )
 }
@@ -429,9 +429,9 @@ impl OutingScreen {
                 return format!("Something lives here. Lean in with {up}.");
             }
             if o.hiding_here() {
-                return "Something shy is hiding. Keep still for the two rising notes.".to_string();
+                return "Something shy is hiding. Keep still until it creeps out.".to_string();
             }
-            return format!("Something is out. Press {p} right after its sound.");
+            return format!("Something is out. Press {p} right after it calls.");
         }
         match o.nearest() {
             Some(off) => {
@@ -497,7 +497,8 @@ impl OutingScreen {
                             sentence_start(&p)
                         )),
                         Lean::Back if self.first("lean back") => {
-                            text.push_str(" Two pools either side, fainter.")
+                            text.pop();
+                            text.push_str(", with two pools either side.")
                         }
                         _ => {}
                     }
@@ -527,7 +528,7 @@ impl OutingScreen {
                         let key = format!("{}/told_neighbours", crate::ID);
                         if !Records::load::<bool>(ctx, &key) {
                             Records::store(ctx, &key, &true);
-                            ctx.say_queued("Side sounds are the next pools.");
+                            ctx.say_queued("Creatures either side are in the next pools.");
                         }
                     }
                 }
@@ -545,9 +546,7 @@ impl OutingScreen {
                     self.clock.reset();
                     sound::play_at(ctx, sound::EMERGE, sound::pool_at(0, self.outing.lean));
                     if self.first("emerge") {
-                        ctx.say_queued(format!(
-                            "Two rising notes: it crept out. Press {p} after its sound."
-                        ));
+                        ctx.say_queued(format!("It crept out. Press {p} after it calls."));
                     }
                 }
                 Ev::TooSoon => {
@@ -556,7 +555,10 @@ impl OutingScreen {
                 }
                 Ev::NotYet => {
                     sound::play(ctx, sound::EMPTY);
-                    self.prompt(ctx, format!("Only water. Press {p} right after a sound."));
+                    self.prompt(
+                        ctx,
+                        format!("Only water. Press {p} right after a creature calls."),
+                    );
                 }
                 Ev::EmptyPool => {
                     sound::play(ctx, sound::EMPTY);
@@ -1028,12 +1030,11 @@ impl State<Parlor> for OutingScreen {
             Some(ParlorAction::Secondary) => {
                 let text = match self.outing.last_heard {
                     Some(s) => format!(
-                        "That last sound was the {}: {}.{}",
+                        "That last call was the {}.{}",
                         s.name(),
-                        s.sound_words(),
                         if s.shy().is_some() { " It is shy." } else { "" }
                     ),
-                    None => "No sound here yet.".to_string(),
+                    None => "Nothing has called here yet.".to_string(),
                 };
                 ctx.say(text);
                 return;

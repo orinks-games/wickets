@@ -219,7 +219,7 @@ impl DeskRun {
         let s = &self.stack;
         if self.phase == Phase::Briefing {
             return vec![
-                "The letters are waiting for you.".to_string(),
+                "No letter open yet.".to_string(),
                 format!("Stack {}. Score {}.", s.spec.level, self.score()),
             ];
         }
@@ -312,7 +312,7 @@ impl DeskRun {
                     self.told_straw = true;
                     let p = Self::name(ctx, ParlorAction::Primary);
                     ctx.say(format!(
-                        "Only straw. {} again to hear the gift.",
+                        "Only straw. {} shakes it again.",
                         sentence_start(&p)
                     ));
                 }
@@ -333,7 +333,7 @@ impl DeskRun {
             self.paper = Sound::NONE;
         }
         if wrapping && say {
-            ctx.say("Wrapping stopped. Hold to the snap to finish.");
+            ctx.say("Wrapping stopped. Hold until it is wrapped.");
         }
     }
 

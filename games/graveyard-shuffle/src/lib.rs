@@ -59,10 +59,10 @@ pub const HOLIDAY: Holiday = Holiday::Halloween;
 pub const HOME: Category = Category::Action;
 
 /// The blurb in season, until the game is kept.
-pub const KEEP_BLURB: &str = "A Halloween special. Lead the monsters' new dance craze: hear who comes up, and dance their move on the beat. Play once, even in practice, to keep it all year.";
+pub const KEEP_BLURB: &str = "A Halloween special. Lead the monsters' new dance craze: dance each monster's move on the beat. Play once, even in practice, to keep it all year.";
 
 /// The blurb out of season, once the game is kept.
-pub const YEAR_ROUND_BLURB: &str = "The monsters' dance craze, all year: hear who comes up, and dance their move on the beat. Doctor Volt's laboratory waits for Halloween.";
+pub const YEAR_ROUND_BLURB: &str = "The monsters' dance craze, all year: dance each monster's move on the beat. Doctor Volt's laboratory opens at Halloween.";
 
 /// Said in the results when a night first keeps the game in season.
 pub const KEPT_LINE: &str =
@@ -70,7 +70,7 @@ pub const KEPT_LINE: &str =
 
 /// Said in the results when a night first keeps the game out of season,
 /// when the laboratory is shut.
-pub const KEPT_LINE_OUT_OF_SEASON: &str = "Graveyard Shuffle is yours to keep, in the Action games. Doctor Volt's laboratory waits for Halloween.";
+pub const KEPT_LINE_OUT_OF_SEASON: &str = "Graveyard Shuffle is yours to keep, in the Action games. Doctor Volt's laboratory opens at Halloween.";
 
 /// Whether the ordinary game has been played or kept by an earlier save.
 pub fn kept(ctx: &mut Ctx<Parlor>) -> bool {
@@ -83,7 +83,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Seasonal,
-    blurb: "A Halloween special. Lead the monsters' new dance craze: hear who comes up, and dance their move on the beat.",
+    blurb: "A Halloween special. Lead the monsters' new dance craze: dance each monster's move on the beat.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(event),
@@ -101,7 +101,7 @@ pub fn event(date: Date) -> Option<Happening> {
     let line = match calendar::nearness(HOLIDAY, date)? {
         Nearness::Day => "The Halloween dance is on. The graveyard goes quiet after 1 November.",
         Nearness::Season { .. } => {
-            "The graveyard dances until the night after Halloween, then it goes quiet for the year."
+            "The graveyard dances until the night after Halloween, then it closes for the year."
         }
     };
     Some(Happening::new("The Halloween special", line))

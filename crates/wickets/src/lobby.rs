@@ -370,7 +370,7 @@ impl Menu for Lobby {
             MenuItem::new(crate::soundtrack::ROW, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(crate::soundtrack::Albums::new())
             })
-            .help("Every game's music, to sit and listen. A track unlocks the first time you hear it in play."),
+            .help("Every game's music. A track unlocks the first time it plays in a game."),
             MenuItem::new("Settings", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(SettingsScreen::<Parlor>::new())
             })
@@ -463,7 +463,7 @@ impl Menu for CategoryList {
                     .help(match category {
                         Category::Seasonal => "Holiday games, one for each celebration.",
                         Category::Action => "Fast games that chase a high score.",
-                        Category::Puzzle => "Listening puzzles with no clock to beat.",
+                        Category::Puzzle => "Puzzles with no clock to beat.",
                         Category::Cozy => "Calm games to unwind with and no way to fail.",
                         Category::Table => "Card and dice games, played at your own pace.",
                     }),

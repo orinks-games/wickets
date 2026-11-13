@@ -48,7 +48,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Safecracker",
     category: Category::Puzzle,
-    blurb: "Turn the dial and listen for the tumblers to open safe after safe.",
+    blurb: "Turn the dial to find each tumbler and open safe after safe.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -120,8 +120,8 @@ pub fn safe_summary(n: u32) -> String {
 /// An event safe's features, in a few words.
 pub fn event_summary(mode: Mode) -> String {
     match mode {
-        Mode::Unlucky => "Four wheels, one always 13, a false gate a wheel, and a black cat who yowls after the clunk at 13".to_string(),
-        Mode::Blackout => "Three wheels, a false gate a wheel, and the power cut: rain on the windows, and the tens click plain".to_string(),
+        Mode::Unlucky => "Four wheels, one always 13, a false gate a wheel, and a black cat who yowls at 13".to_string(),
+        Mode::Blackout => "Three wheels, a false gate a wheel, and the power cut, so count from zero".to_string(),
         _ => String::new(),
     }
 }
@@ -312,7 +312,7 @@ impl TitleGame for Safecracker {
             MenuItem::new("Practice dial", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(Crack::new(Mode::Practice))
             })
-            .help("Endless single wheels with nothing to lose: learn the clunk."),
+            .help("Endless single wheels with nothing to lose."),
         )
     }
 

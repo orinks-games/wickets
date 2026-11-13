@@ -114,7 +114,7 @@ pub fn event(date: Date) -> Option<Happening> {
     ghost_cars(date).then(|| {
         Happening::new(
             GHOST_CARS,
-            "Until 1 November, cars going your way whistle. Meet them as usual.",
+            "Until 1 November, flow vehicles come in costume. Meet them as usual.",
         )
     })
 }

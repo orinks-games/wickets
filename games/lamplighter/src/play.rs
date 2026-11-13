@@ -157,7 +157,10 @@ impl Round {
             h.length()
         );
         if !self.phases.is(HallPhase::Dark) {
-            format!("{}. {what} No taper, so take your time.", self.mode.name())
+            format!(
+                "{}. {what} No taper, so there is no clock.",
+                self.mode.name()
+            )
         } else {
             format!(
                 "{}. {what} The taper burns for {}. {}",
@@ -341,7 +344,7 @@ impl Round {
         self.hall.start();
         sound::play(ctx, sound::NEW_TAPER);
         self.pulse = PULSE_AFTER_STEP;
-        ctx.say("Taper lit. Listen for the lamps that are out.");
+        ctx.say("Taper lit. Find the lamps that are out.");
     }
 
     /// Whether the hall is lit and the round is over, bar the results.

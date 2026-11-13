@@ -268,7 +268,7 @@ impl ChorusScreen {
             let tab = sentence_start(&ctx.control_name(ParlorAction::Secondary));
             self.say(
                 ctx,
-                format!("Head home? {tab} again heads home. Any other key keeps listening."),
+                format!("Head home? {tab} again heads home. Any other key keeps playing."),
             );
         }
     }

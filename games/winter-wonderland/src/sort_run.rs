@@ -249,7 +249,7 @@ impl SortRun {
     fn status(&self, ctx: &Ctx<Parlor>) -> Vec<String> {
         let s = &self.shift;
         let gift = match (&s.gift, self.phase) {
-            (_, Phase::Briefing) => "The belt is waiting for you.".to_string(),
+            (_, Phase::Briefing) => "The belt has not started.".to_string(),
             (None, _) => "Belt empty. A gift is coming.".to_string(),
             (Some(g), _) => {
                 let shaken = if g.shakes == 0 {
@@ -320,7 +320,7 @@ impl SortRun {
                 if !self.told_warn {
                     self.told_warn = true;
                     self.clock.reset();
-                    ctx.say("Beeping: near the edge.");
+                    ctx.say("Near the edge.");
                 }
             }
             SortEvent::Fell { penalty, .. } => {

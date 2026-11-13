@@ -181,7 +181,7 @@ impl Keys {
                 self.down,
             ),
             format!(
-                "{} speaks air, hull and the bell; twice for the rest. {} gives a hint. {} drops a marker buoy. {} repeats. Escape pauses.",
+                "{} speaks air, hull and the bell, twice for the rest. {} gives a hint. {} drops a marker buoy. {} repeats. Escape pauses.",
                 sentence_start(&self.status),
                 sentence_start(&self.hint),
                 sentence_start(&self.buoy),
@@ -318,7 +318,7 @@ impl DiveScreen {
         }
         if exp.config.pearl {
             if exp.dives_begun() == 1 {
-                text.push_str(" The new moon makes the sea glow, and a glow pearl lies on every dive tonight: a glassy rising chime.");
+                text.push_str(" The new moon makes the sea glow, and a glow pearl lies on every dive tonight.");
             } else {
                 text.push_str(" A glow pearl lies somewhere on this dive.");
             }
@@ -537,7 +537,7 @@ impl DiveScreen {
                     ctx.say("Mine.");
                 } else {
                     self.mine_taught = true;
-                    self.tell(ctx, "Mine! Faster ticks mean closer. Steer away.");
+                    self.tell(ctx, "Mine! Steer away.");
                 }
             }
             Event::MineTick { pos } => {

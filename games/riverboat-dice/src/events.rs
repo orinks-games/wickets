@@ -25,7 +25,7 @@ pub const MOON_ENDED: &str = "Showboat Saturday is over, so its table has closed
 
 /// The line a high water night starts with.
 pub const HIGH_WATER_LINE: &str =
-    "High water. The spring river runs fast under the boat, and you hear its rushing current. The rules do not change.";
+    "High water. The spring river runs fast under the boat. The rules do not change.";
 
 /// Whether the river is high on `date`.
 pub fn high_water(date: Date) -> bool {
@@ -63,7 +63,7 @@ pub fn event(date: Date) -> Option<Happening> {
     high_water(date).then(|| {
         Happening::new(
             "High water",
-            "The spring river runs fast and loud under the boat, until the end of May.",
+            "The spring river runs fast under the boat, until the end of May.",
         )
     })
 }

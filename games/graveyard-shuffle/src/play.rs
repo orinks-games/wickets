@@ -398,7 +398,7 @@ impl Floor {
         Progress::note_played(ctx);
         self.delayed.clear();
         self.run.start();
-        ctx.say("Here we go. Four knocks in.");
+        ctx.say("Here we go. Four beats in.");
     }
 
     fn hold_parts(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -763,7 +763,7 @@ pub fn after_set(n: u32, summary: String, pages: Vec<String>, saved: &SetSaved) 
 pub fn after_practice(i: usize, summary: String, pages: Vec<String>) -> Results {
     Results::new(summary, pages, Back::Title(TITLE_NAME)).again(
         "Practise again",
-        "The same song again, waiting for each move.",
+        "The same song again, holding for each move.",
         move |ctx| {
             let f = Floor::open(ctx, Mode::Practice(i));
             ctx.replace(f)
@@ -831,13 +831,13 @@ impl State<Parlor> for Floor {
         if let Some(i) = self.run.dance.waiting() {
             let step = self.run.dance.plan.calls[i].step;
             let line = Self::step_line(ctx, step);
-            ctx.say(format!("Back on the floor. The song is waiting. {line}"));
+            ctx.say(format!("Back on the floor. The song is holding. {line}"));
             return;
         }
         self.run.count_in();
         if self.run.dance.counting_in() {
             self.hold_parts(ctx);
-            ctx.say("Back on the floor. Three knocks in.");
+            ctx.say("Back on the floor. Three beats in.");
         } else {
             ctx.say("Back on the floor.");
         }

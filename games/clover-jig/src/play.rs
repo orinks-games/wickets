@@ -224,15 +224,11 @@ impl Floor {
     /// The second line of the intro: what is new or special this run.
     fn news(&self, ctx: &Ctx<Parlor>) -> Option<String> {
         if self.run.plans.iter().any(|p| p.has_clover()) {
-            return Some(
-                "A four-leaf clover hides tonight: three sparkling notes. Dance that step."
-                    .to_string(),
-            );
+            return Some("A four-leaf clover hides tonight. Dance its step.".to_string());
         }
         if self.shamrocks {
             return Some(
-                "Shamrocks hide in the tunes: two high chimes. Dance that step well for luck."
-                    .to_string(),
+                "Shamrocks hide in the tunes. Dance a shamrock's step well for luck.".to_string(),
             );
         }
         if let Mode::Set(n) = self.mode {
@@ -836,7 +832,7 @@ pub fn after_set(n: u32, summary: String, pages: Vec<String>, saved: &SetSaved) 
 pub fn after_practice(i: usize, summary: String, pages: Vec<String>) -> Results {
     Results::new(summary, pages, Back::Title(TITLE_NAME)).again(
         "Practise again",
-        "The same tune again, waiting for each step.",
+        "The same tune again, holding at each step.",
         move |ctx| {
             let f = Floor::open(ctx, Mode::Practice(i));
             ctx.replace(f)

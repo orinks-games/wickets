@@ -196,7 +196,7 @@ impl TitleGame for BasketRun {
                 },
             )
             .help(format!(
-                "{ROUNDS} rounds, from three lanes to five, with 3 baskets. Each round asks you to bank a share of its eggs before the bell. {} of {ROUNDS} cleared so far.",
+                "{ROUNDS} rounds, from three lanes to five, with 3 baskets. Each round needs a share of its eggs banked before the bell. {} of {ROUNDS} cleared so far.",
                 progress.cleared.min(ROUNDS)
             )),
             endless,

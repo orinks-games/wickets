@@ -70,7 +70,7 @@ impl CountScreen {
     pub fn controls(ctx: &Ctx<Parlor>) -> String {
         let k = |a| ctx.control_name(a);
         format!(
-            "Each bird calls once as it flies over: count the calls. When the flock has passed, {} and {} set your count and {} gives it. {} hears the flock again before you answer.",
+            "Each bird calls once as it flies over: count the calls. When the flock has passed, {} and {} set your count and {} gives it. {} plays the flock again before you answer.",
             k(ParlorAction::Up),
             k(ParlorAction::Down),
             k(ParlorAction::Primary),
@@ -364,7 +364,7 @@ impl State<Parlor> for CountScreen {
             Some(ParlorAction::Hint) => {
                 let h = if asking {
                     let r = sentence_start(&ctx.control_name(ParlorAction::Repeat));
-                    format!("Each bird calls once. Count the calls, not the wingbeats. {r} hears the flock again.")
+                    format!("Each bird calls once. Count the calls, not the wingbeats. {r} plays the flock again.")
                 } else {
                     "Each bird calls once. Count the calls, not the wingbeats.".to_string()
                 };
@@ -385,7 +385,7 @@ impl State<Parlor> for CountScreen {
                 Vec::new()
             }
             Some(_) => {
-                self.say(ctx, "Listen, and count the calls.");
+                self.say(ctx, "Count the calls.");
                 Vec::new()
             }
             None => Vec::new(),

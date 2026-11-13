@@ -288,7 +288,7 @@ impl Albums {
         Albums {
             menu: MenuCore::new(ROW).with_intro_help(
                 "Up and Down choose an album, Enter opens it, Escape goes back. \
-                 Music unlocks as you hear it in play.",
+                 Music unlocks as it plays in a game.",
             ),
         }
     }
@@ -346,7 +346,7 @@ impl Menu for Albums {
                     ctx.push(SoundtrackScreen::<Parlor>::new().album(album.clone()))
                 })
                 .help(format!(
-                    "{name}'s music. A track unlocks the first time you hear it in play."
+                    "Music from {name}. A track unlocks the first time it plays in a game."
                 )),
             );
         }

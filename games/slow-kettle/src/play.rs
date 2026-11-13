@@ -150,7 +150,7 @@ impl Counter {
                 format!("A long, rainy evening. {n} guests are on their way.")
             }
             (Mode::Practice, _) => {
-                "Practice brewing. Brew any tea for yourself, and hear exactly how it went."
+                "Practice brewing. Brew any tea for yourself, with the exact heat and steep read back."
                     .to_string()
             }
             _ => format!("The tea house is open. {n} guests this afternoon."),
@@ -289,7 +289,7 @@ impl Counter {
         );
         if self.taught.insert(TAUGHT_SONG) {
             text.push_str(&format!(
-                " Listen to the kettle's song rise from a rumble to a hiss to a whistle. {} says the heat this tea wants.",
+                " {} says the heat this tea wants.",
                 sentence_start(&s)
             ));
         }
@@ -311,7 +311,7 @@ impl Counter {
         let mut text = format!("Poured at {} degrees. Steeping.", at.round() as u32);
         if self.taught.insert(TAUGHT_TICK) {
             text.push_str(&format!(
-                " The clock ticks once a second. {} lifts the leaves out when it tastes right.",
+                " {} lifts the leaves out when it tastes right.",
                 sentence_start(&p)
             ));
         }
@@ -774,7 +774,7 @@ impl Counter {
     fn closer_look(&mut self, ctx: &mut Ctx<Parlor>) {
         let s = &self.service;
         let text = match s.phase {
-            Phase::Arriving => "Footsteps, coming to the counter.".to_string(),
+            Phase::Arriving => "A guest is coming to the counter.".to_string(),
             Phase::Choosing => {
                 let t = self.tea();
                 let tastes: Vec<&str> = t.tastes.iter().map(|x| x.word()).collect();
@@ -787,7 +787,7 @@ impl Counter {
             }
             Phase::Ready => s.tea.unwrap_or(self.tea()).needs(),
             Phase::Heating => format!(
-                "You listen: {}, {} degrees.",
+                "The kettle: {}, {} degrees.",
                 s.kettle.stage().words(),
                 s.kettle.degrees()
             ),

@@ -261,7 +261,7 @@ pub fn score(
                     )
                     .extra(
                         "Practice this level",
-                        "Play the very same show again.",
+                        "Play the same show again.",
                         move |ctx| {
                             ctx.replace(Show::with_show(
                                 Mode::Level {
