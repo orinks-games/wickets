@@ -438,8 +438,8 @@ pub fn rule(plan: &Plan) -> String {
 /// The monthly heist's story, read before play.
 pub fn story() -> Vec<String> {
     vec![
-        "The Crown heist. Once a month the Crown jewels leave the vault for cleaning and come back at midnight, and for five minutes, while the night shift changes, the museum's east wing is yours.".to_string(),
-        "Your fence has the plan. Through the curator's office first: his safe holds the key card to the vault corridor. Then the Crown vault itself, five wheels deep. A single guard walks the corridor between the two. Out by the time the new shift clocks in, or not at all.".to_string(),
+        "The Crown heist. Once a month the Crown jewels leave the vault for cleaning and come back at midnight. For five minutes, while the night shift changes, the museum's east wing is yours.".to_string(),
+        "Your fence has the plan. Through the curator's office first: his safe holds the key card to the vault corridor. Then the Crown vault itself, five wheels deep. A single guard walks the corridor between the two. You must be out before the new shift clocks in.".to_string(),
     ]
 }
 
@@ -447,7 +447,7 @@ pub fn story() -> Vec<String> {
 pub fn ending(job: &Job) -> &'static str {
     match (job.won(), job.opened) {
         (true, _) => {
-            "The vault door swings wide. You lift the Crown from its velvet, slip out of the east wing as the new shift's footsteps reach the stairs, and the city wakes to the most famous empty case in its history."
+            "The vault door swings wide. You lift the Crown from its velvet and slip out of the east wing as the new shift's footsteps reach the stairs. By morning, the city has the most famous empty case in its history."
         }
         (false, 1) => {
             "You had the key card in your hand and the Crown vault in front of you. Next month, the jewels come home again."

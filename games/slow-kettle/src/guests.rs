@@ -124,7 +124,7 @@ pub const REGULARS: [Regular; 6] = [
         after: [
             "Someone brought me a diary from a lighthouse. I am taking my time with it.",
             "I bound a book of pressed flowers today. The whole shop smells of summer.",
-            "The plum cake family sent me a card. Still burnt, they say. Still perfect.",
+            "The plum cake family sent me a card. They say it is still burnt, and still perfect.",
         ],
         midnight: "To old books, and the notes hidden in them.",
     },

@@ -77,7 +77,7 @@ pub fn story_intro(blizzard: bool) -> Vec<String> {
     if blizzard {
         vec![
             "A blizzard has buried the North Pole, and the workshop is a day behind. The belt runs fast, the guests keep changing their minds, and the return sack is filling up with oddities.".into(),
-            "Three hard shifts on the belt. Then the snowed-in letters at the Wish Desk, which nobody else can answer.".into(),
+            "You have three hard shifts on the belt. Then come the snowed-in letters at the Wish Desk, which nobody else can answer.".into(),
         ]
     } else {
         vec![
@@ -93,13 +93,13 @@ pub fn story_bridge(blizzard: bool) -> Vec<String> {
     if blizzard {
         vec![
             "The last shift is done, and the belt groans to a stop.".into(),
-            "Then the snowplough brings one more sack. Letters the blizzard held up, every one of them still waiting for its gift.".into(),
+            "Then the snowplough brings one more sack. It holds the letters that the blizzard delayed, every one of them still waiting for its gift.".into(),
             "The gifts are on the Wish Desk's shelves, but the labels blew off in the storm. Read each letter, shake the boxes, and wrap the one that answers it. There is no clock at the desk.".into(),
         ]
     } else {
         vec![
             "Every gift is delivered. The belt stops, and the workshop goes quiet.".into(),
-            "Except at the Wish Desk. A stack of letters came too late for the belt, and their gifts sit on the shelves with no labels at all.".into(),
+            "The Wish Desk is still busy. A stack of letters came too late for the belt, and their gifts sit on the shelves with no labels at all.".into(),
             "Read each letter, shake the boxes until one sounds like the wish, and wrap it. There is no clock at the desk.".into(),
         ]
     }
@@ -107,5 +107,5 @@ pub fn story_bridge(blizzard: bool) -> Vec<String> {
 
 /// The story's last page, before the score.
 pub fn story_ending() -> String {
-    "The last letter is answered, and the stamp comes down on the last parcel. Outside, snow settles on the workshop roof. From the belt to the Wish Desk, you heard your way through the holidays.".into()
+    "The last letter is answered, and the stamp comes down on the last parcel. Outside, snow settles on the workshop roof.".into()
 }
