@@ -146,7 +146,7 @@ pub fn notes_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let total = notes::NOTES.len();
     if n == 0 {
         return vec![format!(
-            "Love notes: none kept yet, of {total}. A folded note drifts slowly over the rooftops now and then, with a flutter of paper. Hit it to keep it."
+            "Love notes: none kept yet, of {total}. A folded note drifts slowly over the rooftops now and then. Hit it to keep it."
         )];
     }
     let mut pages = vec![format!(

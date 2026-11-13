@@ -167,7 +167,7 @@ pub fn keepsake_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         n => format!("{n} shamrocks"),
     };
     let mut pages = vec![format!(
-        "Keepsakes. {}, from {shamrocks} heard. {}.",
+        "Keepsakes. {}, from {shamrocks} in the tunes. {}.",
         sentence_start(&luck_words(p.luck)),
         sentence_start(&clovers)
     )];
@@ -205,7 +205,7 @@ pub fn ceili_briefing(ctx: &mut Ctx<Parlor>) -> Pages {
     let date = today(ctx);
     let night = season::night_key(date);
     let clover = if progress::clover_due(ctx, &night) {
-        "A four-leaf clover hides in the third or fourth tune, once a night: three sparkling notes with a call. Dance that step to find it."
+        "A four-leaf clover hides in the third or fourth tune, once a night, on one call. Dance that step to find it."
     } else {
         "The four-leaf clover has been out once tonight already, so tonight's dances have shamrocks only."
     };

@@ -521,7 +521,7 @@ impl Field {
                 if !self.teach(
                     ctx,
                     "slack",
-                    format!("Too soon, {pct} percent. Hold {p} until the click."),
+                    format!("Too soon, {pct} percent. Hold {p} to full draw."),
                 ) {
                     ctx.say(format!("Too soon, {pct} percent."));
                 }
@@ -617,7 +617,7 @@ impl Field {
             Kind::Heart(_) => self.teach(
                 ctx,
                 "heart",
-                format!("A paper heart, from {side}. Turn until its hum is just ahead."),
+                format!("A paper heart, from {side}. Turn until it is just ahead."),
             ),
         };
         if !taught && !self.quiet {
