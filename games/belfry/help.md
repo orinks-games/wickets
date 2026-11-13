@@ -72,4 +72,6 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
+Number keys, on the briefing before a peal: play the sounds the peal needs. Enter or Space starts it.
+
 These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.

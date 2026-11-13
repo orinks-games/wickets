@@ -11,6 +11,7 @@
 //! Year parade on Lunar New Year itself, with a keepsake for the year's
 //! animal, and the Lantern walk on the fifteenth day.
 
+pub mod briefing;
 pub mod challenge;
 pub mod dance;
 pub mod festival;
@@ -189,7 +190,7 @@ fn festival_row(
 ) -> TitleRow<DragonDance> {
     match open {
         Some(mode) => MenuItem::new(name, move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-            dance::start(ctx, Launch::new(mode))
+            briefing::open(ctx, mode)
         })
         .help(open_help),
         None => {
@@ -243,7 +244,7 @@ impl TitleGame for DragonDance {
                     streets::street(n).name
                 ),
                 move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                    dance::start(ctx, Launch::new(Mode::Street(n)))
+                    briefing::open(ctx, Mode::Street(n))
                 },
             )
             .help(play_help),
@@ -284,7 +285,7 @@ impl TitleGame for DragonDance {
     fn practice_row(&mut self, _ctx: &mut Ctx<Parlor>) -> Option<TitleRow<Self>> {
         Some(
             MenuItem::new(PRACTICE_ROW, |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                dance::start(ctx, Launch::new(Mode::Practice))
+                briefing::open(ctx, Mode::Practice)
             })
             .help("A short, slow street with every call spoken. Nothing is saved, and stumbles cost nothing."),
         )
@@ -338,7 +339,8 @@ impl TitleGame for DragonDance {
                 .to_string())
             },
             "When on, a voice names the pearl's lane as it moves, and each envelope and firecracker string as it comes.",
-        )]
+        ),
+        parlor_core::briefing::row()]
     }
 
     fn sound_check(&mut self, ctx: &mut Ctx<Parlor>) {

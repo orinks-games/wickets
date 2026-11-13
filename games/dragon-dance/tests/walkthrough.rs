@@ -145,7 +145,7 @@ fn every_title_row_has_its_own_help() {
 fn play_starts_the_first_street_with_its_intro() {
     let mut h = title();
     h.clear();
-    h.press(Key::Return);
+    start(&mut h);
     assert_eq!(h.app.top_name(), DANCE_NAME);
     assert!(spoke(
         &h,
@@ -265,7 +265,7 @@ fn escape_pauses_and_back_to_the_title_leaves() {
 #[test]
 fn a_whole_street_danced_by_the_keys_earns_stars_and_opens_the_next() {
     let mut h = title();
-    h.press(Key::Return);
+    start(&mut h);
     let heard = dance_by_keys(&mut h, 200.0);
     assert_eq!(h.app.top_name(), "results");
     let all = heard.join(" ");
@@ -333,7 +333,7 @@ fn firecrackers_are_called_and_a_stumble_costs_points() {
 fn the_practice_street_saves_nothing() {
     let mut h = title();
     goto(&mut h, "Practice street");
-    h.press(Key::Return);
+    start(&mut h);
     assert!(spoke(
         &h,
         "Practice: nothing is saved, and stumbles cost nothing."
@@ -363,7 +363,7 @@ fn street_select_lists_open_and_locked_streets() {
     assert!(spoke(&h, "Earn a star on street 1 to open it."));
     assert!(played(&h, sound::NOPE));
     h.press(Key::Up);
-    h.press(Key::Return);
+    start(&mut h);
     assert_eq!(h.app.top_name(), DANCE_NAME);
 }
 
@@ -448,4 +448,80 @@ fn help_ends_with_the_controls() {
     let last = help.rsplit("\n## ").next().unwrap();
     assert!(last.starts_with("Controls"));
     let _ = Headless::<parlor_core::Parlor>::new(Default::default(), Base);
+}
+
+#[test]
+fn a_streets_briefing_plays_the_cues_it_uses() {
+    let labels = |mode| {
+        dragon_dance::briefing::cues(mode)
+            .iter()
+            .map(|c| c.label().to_string())
+            .collect::<Vec<_>>()
+    };
+    assert_eq!(
+        labels(Mode::Street(1)),
+        [
+            "Drum",
+            "Drum roll",
+            "Gong",
+            "Pearl",
+            "Pearl moves",
+            "Off the pearl",
+            "Red envelope coming"
+        ]
+    );
+    assert_eq!(
+        labels(Mode::Practice),
+        [
+            "Drum",
+            "Drum roll",
+            "Gong",
+            "Pearl",
+            "Pearl moves",
+            "Off the pearl",
+            "Red envelope coming",
+            "Firecrackers coming",
+        ]
+    );
+    assert_eq!(
+        labels(Mode::NewYear(2027)),
+        [
+            "Drum",
+            "Drum roll",
+            "Gong",
+            "Midnight gong",
+            "Pearl",
+            "Pearl moves",
+            "Off the pearl",
+            "Red envelope coming",
+            "Firecrackers coming",
+            "Countdown",
+        ]
+    );
+    assert_eq!(
+        labels(Mode::Lantern(2027)),
+        [
+            "Drum",
+            "Pearl",
+            "Pearl moves",
+            "Off the pearl",
+            "Lantern coming"
+        ]
+    );
+
+    let mut h = title();
+    h.clear();
+    h.press(Key::Return);
+    assert_eq!(h.app.top_name(), parlor_core::briefing::NAME);
+    assert_eq!(
+        h.spoken(),
+        ["Street 1: Market Row. Keep your head in the pearl's lane on every beat, rear up on the gong, and catch red envelopes. 1 to 7 play the sounds. Enter starts."]
+    );
+    h.clear();
+    h.press(Key::Num3);
+    wait(&mut h, 1.0);
+    assert_eq!(h.spoken(), ["Gong"]);
+    assert!(played(&h, sound::GONG), "{:?}", h.played());
+    h.press(Key::Space);
+    assert_eq!(h.app.top_name(), DANCE_NAME);
 }

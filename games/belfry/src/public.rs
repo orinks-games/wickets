@@ -6,6 +6,7 @@
 // for each right bell in the wrong place, then the count in words. The
 // tower allows ten rows. Village lets a bell come twice; Plain does not.
 
+pub mod briefing;
 pub mod challenge;
 pub mod events;
 pub mod progress;
@@ -162,7 +163,7 @@ impl TitleGame for Belfry {
             .map(|mode| {
                 let help = mode_help(ctx, mode);
                 MenuItem::new(mode.name(), move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                    ctx.push(Tower::new(mode))
+                    briefing::open(ctx, mode)
                 })
                 .help(help)
             })
@@ -170,12 +171,12 @@ impl TitleGame for Belfry {
         let mut rows = vec![
             MenuItem::new(
                 format!("{}, Village", labels::PLAY),
-                |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(Tower::new(Mode::Village)),
+                |_s: &mut Title, ctx: &mut Ctx<Parlor>| briefing::open(ctx, Mode::Village),
             )
             .help(village),
             MenuItem::new(
                 format!("{}, the easier peal", Mode::Plain.name()),
-                |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(Tower::new(Mode::Plain)),
+                |_s: &mut Title, ctx: &mut Ctx<Parlor>| briefing::open(ctx, Mode::Plain),
             )
             .help(plain),
         ];
@@ -196,6 +197,10 @@ impl TitleGame for Belfry {
             );
         }
         rows
+    }
+
+    fn settings(_ctx: &Ctx<Parlor>) -> Vec<hearken::screens::SettingsRow<Parlor>> {
+        vec![parlor_core::briefing::row()]
     }
 
     fn lesson(&mut self, ctx: &mut Ctx<Parlor>) -> parlor_core::Lesson {

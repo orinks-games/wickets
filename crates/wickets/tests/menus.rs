@@ -552,6 +552,10 @@ fn paused(g: &GameInfo) -> Headless<Parlor> {
     let mut h = title(g);
     h.press(Key::Home);
     h.press(Key::Return);
+    // A game with a briefing before play starts on Enter.
+    if h.app.top_name() == parlor_core::briefing::NAME {
+        h.press(Key::Return);
+    }
     read_pages(&mut h);
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), "pause", "{}", g.id);

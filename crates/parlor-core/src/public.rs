@@ -7,6 +7,7 @@
 
 mod actions;
 pub mod almanac;
+pub mod briefing;
 pub mod calendar;
 pub mod challenges;
 pub mod channel;
@@ -35,6 +36,7 @@ pub mod visuals;
 pub mod words;
 
 pub use actions::ParlorAction;
+pub use briefing::Briefing;
 pub use calendar::{Happening, Holiday, Nearness, Season};
 pub use challenges::{Challenge, Challenges, Date, Period};
 pub use help::Help;
