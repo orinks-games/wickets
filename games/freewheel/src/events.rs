@@ -139,13 +139,13 @@ pub fn event(date: Date) -> Option<Happening> {
     if sunday_open(date) {
         return Some(Happening::new(
             SUNDAY,
-            "Ride today's course on streets closed to cars, to birdsong and a far church bell.",
+            "Ride today's course on streets closed to cars.",
         ));
     }
     leaf_open(date).then(|| {
         Happening::new(
             LEAF_SEASON,
-            "Ride through crunchy leaf piles in the bike lane for 1000 ride points each, until the end of November.",
+            "Ride through leaf piles in the bike lane for 1000 ride points each, until the end of November.",
         )
     })
 }

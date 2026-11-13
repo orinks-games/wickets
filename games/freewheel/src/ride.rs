@@ -919,7 +919,7 @@ impl Ride {
                         self.call(
                             ctx,
                             "pothole",
-                            format!("That tick is a pothole, {side}."),
+                            format!("A pothole, {side}."),
                             format!("Pothole, {side}."),
                         );
                     }
@@ -1260,7 +1260,7 @@ impl Ride {
                 self.call(
                     ctx,
                     "act_now",
-                    "Double beep: it is in your line. Act now.".to_string(),
+                    "It is in your line. Act now.".to_string(),
                     "Now.".to_string(),
                 );
             }
@@ -1279,7 +1279,7 @@ impl Ride {
                     ctx,
                     cue,
                     format!(
-                        "{word}, {side}: that doorbell. Ride over it under {}.",
+                        "{word}, {side}. Ride over it under {}.",
                         speed_words(crate::world::GRAB_SPEED)
                     ),
                     format!("{word}, {side}."),
