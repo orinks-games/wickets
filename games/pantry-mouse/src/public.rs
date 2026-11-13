@@ -226,7 +226,7 @@ impl TitleGame for PantryMouse {
                 "Practice pantry",
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(Play::new(Mode::Practice)),
             )
-            .help("One slow cat, and a catch costs nothing: learn the maze and the sounds."),
+            .help("One slow cat, and a catch costs nothing: learn the maze and the cats."),
         )
     }
 

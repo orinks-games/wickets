@@ -99,7 +99,7 @@ impl Night {
         let s = ctx.control_name(ParlorAction::Status);
         let h = ctx.control_name(ParlorAction::Hint);
         format!(
-            "{} with each flash keeps the fireflies in step. {} and {r} listen to each side of the fire. {s} for status, {h} for the rhythm. Escape pauses.",
+            "{} with each flash brings a straggler back into step. {} and {r} say how many are out of step on each side. {s} for status, {h} for the rhythm. Escape pauses.",
             sentence_start(&p),
             sentence_start(&l)
         )

@@ -218,7 +218,7 @@ impl SortRun {
         );
         if spec.level == 1 {
             text.push_str(&format!(
-                " Shake each gift with {primary} and listen. Then send it with {} or {} to the person who wished for it, before it rides off the end of the belt. A wrong guess costs time, but the gift stays on the belt.",
+                " Shake each gift with {primary}. Then send it with {} or {} to the person who wished for it, before it rides off the end of the belt. A wrong guess costs time, but the gift stays on the belt.",
                 Self::name(ctx, ParlorAction::Left),
                 Self::name(ctx, ParlorAction::Right)
             ));
@@ -232,7 +232,7 @@ impl SortRun {
             text.push_str(" From now on, the wishes do not say what they sound like. Think about what each one would sound like in a box.");
         }
         if spec.mind_change {
-            text.push_str(" Listen out: someone may change their mind half way through.");
+            text.push_str(" Someone may change their mind half way through.");
         }
         if let Some(plan) = self.mode.plan() {
             if plan.twists_gifts() {

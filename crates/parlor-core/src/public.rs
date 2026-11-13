@@ -131,6 +131,29 @@ impl hearken::Game for Parlor {
         })
     }
 
+    /// Report a problem, in Settings: the game log goes ahead to orinks.net
+    /// and the report form opens in the browser with it attached; the site
+    /// emails the report. The engine asks once after a run that never
+    /// exited cleanly. The www host on purpose: the apex answers with a
+    /// redirect, which the sender does not follow.
+    fn reports() -> Option<hearken::ReportConfig> {
+        hearken::ReportConfig::new(
+            NAME,
+            env!("CARGO_PKG_VERSION"),
+            "https://www.orinks.net/api/problem-reports",
+        )
+    }
+
+    /// Which game the player has open, for a problem report: the report
+    /// says `Game: Tightrope`, and its email subject names it. A report
+    /// from the lobby says nothing more than the app.
+    fn report_details(ctx: &Ctx<Self>) -> Vec<(String, String)> {
+        match ctx.game.open {
+            Some(game) => vec![("Game".to_string(), game.name.to_string())],
+            None => Vec::new(),
+        }
+    }
+
     fn discord() -> Option<hearken::DiscordConfig> {
         presence::config()
     }

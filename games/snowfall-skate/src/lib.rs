@@ -357,9 +357,9 @@ impl TitleGame for SnowfallSkate {
             |_ctx, on| {
                 Some(
                     if on {
-                        "Spoken call-outs: on. Your screen reader also names each lantern's lane."
+                        "Spoken call-outs: on. The game also names each lantern's lane."
                     } else {
-                        "Spoken call-outs: off. You hear the lanterns alone."
+                        "Spoken call-outs: off. The lanterns play without names."
                     }
                     .to_string(),
                 )

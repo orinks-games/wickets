@@ -163,7 +163,7 @@ impl WalkScreen {
     pub fn controls(ctx: &Ctx<Parlor>) -> String {
         let k = |a| Self::key(ctx, a);
         format!(
-            "{} and {} turn. {} steps forward and {} steps back. When a bird sings to you, answer it note for note: {} is low, {} is middle, {} is high. {} listens around you, {} speaks the status and {} gives a hint. {} twice heads home.",
+            "{} and {} turn. {} steps forward and {} steps back. When a bird sings to you, answer it note for note: {} is low, {} is middle, {} is high. {} names the birds around you, {} speaks the status and {} gives a hint. {} twice heads home.",
             sentence_start(&k(ParlorAction::Left)),
             k(ParlorAction::Right),
             sentence_start(&k(ParlorAction::Up)),
@@ -889,7 +889,7 @@ impl State<Parlor> for WalkScreen {
     fn help(&self, ctx: &Ctx<Parlor>) -> String {
         let now = match &self.walk.phase {
             Phase::Listening(i) => format!(
-                "The {} is singing to you. Listen to the end.",
+                "The {} is singing to you. Answer when it ends.",
                 self.bird_name(*i)
             ),
             Phase::Answering(i, _) => format!(

@@ -271,7 +271,7 @@ impl TitleGame for CloverJig {
             MenuItem::new("Set select", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(picker::SetSelect::new())
             })
-            .help("Dance any set you have opened, and hear the stars on each."),
+            .help("Dance any set you have opened, with the stars on each."),
             MenuItem::new(ceili_label, |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 let date = today(ctx);
                 if season::ceili_open(date) {
@@ -291,7 +291,7 @@ impl TitleGame for CloverJig {
             MenuItem::new("Practice room", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(picker::TuneSelect::new())
             })
-            .help("Any tune you have opened, waiting at each step until you dance it."),
+            .help("Any tune you have opened. The music holds at each step until you dance it."),
         )
     }
 
@@ -327,14 +327,14 @@ impl TitleGame for CloverJig {
             |_ctx, on| {
                 Some(
                     if on {
-                        "Spoken call-outs: on. Your screen reader also says each call."
+                        "Spoken call-outs: on. Each call is also spoken."
                     } else {
-                        "Spoken call-outs: off. You hear the caller alone."
+                        "Spoken call-outs: off. Only the caller calls the steps."
                     }
                     .to_string(),
                 )
             },
-            "When on, your screen reader also says each step as the caller calls it.",
+            "When on, the game also speaks each step as the caller calls it.",
         )]
     }
 
@@ -343,7 +343,7 @@ impl TitleGame for CloverJig {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear every call, step and cue in the game, with its name and the key that dances it."
+        "Every call, step and cue in the game, with its name and the key that dances it."
             .to_string()
     }
 

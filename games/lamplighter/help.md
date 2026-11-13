@@ -1,12 +1,12 @@
 ## About the game
 
-The lamps along the Long Hall have gone out, and Mabel has handed you her old taper. Walk the hall, listen for each lamp that is out, and reach to its wall to light it. The round ends when every lamp is burning. Nothing fails here: if your taper burns down, Mabel lights you a fresh one. Lamplighter opens in story mode, on opening night.
+The lamps along the Long Hall have gone out, and Mabel has handed you her old taper. Walk the hall, find each lamp that is out, and reach to its wall to light it. The round ends when every lamp is burning. Nothing fails here: if your taper burns down, Mabel lights you a fresh one. Lamplighter opens in story mode, on opening night.
 
 ## The hall
 
 The hall is a row of steps from the lobby door to the far wall. At each step there is an alcove on the left wall and one on the right. An alcove holds a lamp, or it is bare wall. You cannot walk beyond the lobby door or the far wall.
 
-## Hearing the lamps
+## Finding the lamps
 
 An unlit lamp signals every second and a half or so. You hear it from its own wall, ahead of you or behind you, and louder the nearer you are. You hear lamps up to 4 steps away. A lit lamp has its own cue as you pass it. Bare wall makes no sound.
 
@@ -28,7 +28,7 @@ Each lamp lit is 10 points, a lamp blown out by a draught included. Light the wh
 
 ## The practice hall
 
-The practice hall is 8 steps long with 4 lamps out, no taper and no score. Use it to learn the sounds.
+The practice hall is 8 steps long with 4 lamps out, no taper and no score.
 
 ## Challenges
 
@@ -58,7 +58,7 @@ S: status: the lamps out, your step and the taper time left. Press it again for 
 
 R: what is at your step, on the left wall and the right.
 
-H: where the nearest lamp out is, with its whistle from that place.
+H: where the nearest lamp out is.
 
 F1: help for what you are doing right now. F2 stops speech.
 

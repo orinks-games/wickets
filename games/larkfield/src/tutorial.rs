@@ -82,7 +82,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hamlet: Live<HamletScreen>) -> Lesson {
             h.settlers
                 .iter()
                 .any(|st| st.talked_today)
-                .then(|| "A word with a settler cheers them up, and tells you what they want.".to_string())
+                .then(|| "A word with a settler cheers them up, and they say what they want.".to_string())
         },
     );
     let quiet = hamlet.clone();

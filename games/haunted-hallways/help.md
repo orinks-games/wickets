@@ -2,7 +2,7 @@
 
 ## About the game
 
-The doors of Nevermore Manor have locked behind you. A hundred floors in ten wings, from the ground floor down to the heart of the house. Floor select and the journal name each wing as you reach it. Every floor is a chain of rooms. Every room has one sound puzzle, and solving it unlocks the room's exit. Find your way, freeze when a ghost drifts by, and watch your step.
+The doors of Nevermore Manor have locked behind you. A hundred floors in ten wings, from the ground floor down to the heart of the house. Floor select and the journal name each wing as you reach it. Every floor is a chain of rooms. Every room has one puzzle, and solving it unlocks the room's exit. Find your way, freeze when a ghost drifts by, and watch your step.
 
 Each floor is built from its number, so floor 40 is the same floor for every player, every time you play it.
 
@@ -12,7 +12,7 @@ A room is a grid of floorboards, five cells across on the first floors and up to
 
 The entrance locks behind you, so you cannot go back. The exit is on another wall. Solve the room to unlock its exit. Follow the open-door cue, stand in the cell next to it, and walk through the wall there. The last room of a floor opens onto the stairs.
 
-## Listening for things
+## Finding things
 
 Things lie about the rooms and call out from where they are: a clock, a crystal, a potion, a music box, a bell, a candle, a raven, keys and a heart. Each has its own sound. Sounds come from their direction: left is west, right east, ahead north; behind is south, and a little duller. Nearer means louder and more often. Stepping onto a thing speaks its name.
 
@@ -31,7 +31,7 @@ Status, pressed twice, says how much salt you carry.
 
 - Find: you are told the thing's name and what it sounds like. Find it, stand on it and press Space.
 - Match: a phonograph plays a sound, but does not say what makes it. Find the thing in the room that makes the same sound.
-- Riddle: a voice asks a riddle that describes the thing. Work out which it is, then find it by its sound.
+- Riddle: a voice asks a riddle that describes the thing. Work out which it is, then find it.
 - Offering, from floor 2: the exit spirit plays the sound of what it wants: something you already picked up on this floor. Tab to choose it, stand at the door, Space to offer.
 - Missing, from floor 6: the phonograph plays every sound in the room but one. Find the thing it leaves out.
 - Séance, from floor 12: a medium calls up sounds one after another without naming them, two at first, three from floor 40 and four from floor 75. Pick up their things in that order. A cue confirms each correct choice.
@@ -58,11 +58,11 @@ Each of these arrives on its own floor, and the game explains it in full the fir
 - Twists, from floor 11: a floor may carry one of the twists listed under Challenges. Deeper floors carry more, up to two by floor 71.
 - Dark rooms, from floor 15: things call out only when you are three steps away or nearer. Sweep the room row by row.
 - The shadow, from floor 20: a danger that moves around a room one cell at a time. While it hears your footsteps it comes toward you; stand still and it wanders. Let it reach you, or walk into it, and it catches you. Status says where it is, in steps.
-- Mimics, from floor 35: copies of the answer that sound just the same but hop to a new place every few seconds. The real thing never moves. Touching a mimic costs time like a wrong thing.
-- Mirrored rooms, from floor 45: every sound comes from the other side, east from your left and west from your right. North and south are true.
+- Mimics, from floor 35: copies of the answer that seem just the same but hop to a new place every few seconds. The real thing never moves. Touching a mimic costs time like a wrong thing.
+- Mirrored rooms, from floor 45: east and west swap sides, east on your left and west on your right. North and south are true.
 - The pendulum, from floor 51: a blade swings along one row of the room, one column at a time, back and forth. Its cue tells you where it is. If it reaches your cell, it cuts you and costs one courage. Cross its row just after it passes. Status says which row it swings in.
 - Deep water, from floor 61: part of the room is flooded. Its warning means deep water is next to you. A step into it splashes, and you wade for a moment before you can step again. Every splash brings the next ghost sooner.
-- Falling stones, from floor 71: dust trickles over the cell you stand on, and 2 seconds later a stone falls there. Step off when you hear the dust. Stones never start while a ghost is passing.
+- Falling stones, from floor 71: dust trickles over the cell you stand on, and 2 seconds later a stone falls there. Step off when the dust falls. Stones never start while a ghost is passing.
 - The founder, from floor 81: see The founder.
 - The shifting house, from floor 91: the exit door sometimes moves to another wall. The game says which wall, and status says how far.
 
@@ -148,13 +148,13 @@ Challenges use the first five. The twists are spoken as each floor begins, and F
 
 ## Tips
 
-- Stand still and listen before you move. Turn the sound into a direction, then walk until it is straight ahead or right on top of you.
-- If two things sound alike, walk to each: their names are spoken when you stand on them. If one of them has moved since, it was a mimic.
+- Stand still before you move. Work out where a thing is, then walk until it is straight ahead or right on top of you.
+- If two things seem the same, walk to each: their names are spoken when you stand on them. If one of them has moved since, it was a mimic.
 - Check for rotten boards before you step. If one is ahead, go around.
 - When the shadow is near, stand still and let it wander off, unless the hound is passing.
 - When a ghost comes, finish your step and wait for the freeze cue, then stay still until the passing cue. For the hound, do the opposite.
 - Against the founder, wait for the strike cue. A strike too early is wasted, and leaves you beside him.
-- Pick up every charm you hear. Salt is worth most in the deep floors.
+- Pick up every charm you find. Salt is worth most in the deep floors.
 
 ## Controls
 
@@ -162,11 +162,11 @@ These are the default keys. If you change them in Settings, the game's spoken in
 
 - Up, Down, Left and Right arrows: walk one step north, south, west or east. You always face north.
 - Space: the main action. Pick up the thing you stand on, offer what you hold at a sealed door, or check the door. With the founder beside you, strike him.
-- Tab: choose the next thing you carry. Its name is spoken and its sound plays.
+- Tab: choose the next thing you carry. Its name is spoken.
 - I: list everything you carry. This key belongs to this game alone, and Settings cannot change it.
 - S: status, short. Any ghost, the founder, falling dust, the blade in your row, the shadow or a rotten board next to you, then the haunt clock, your courage, and how many steps to the exit door and whether it is open.
 - S twice: the rest. The floor and room, whether it is dark or mirrored, the room's other dangers, the puzzle, your column and row, what you hold, your salt and your score.
-- R: repeat the room's instructions, and play its clue sound again.
+- R: repeat the room's instructions, and play its clue again.
 - H: a hint pointing the way to what you need, for a few seconds of the haunt clock.
 - F1: help for what you are doing right now.
 - Escape: pause. Resume, change settings, read this guide, go back to the title, or leave the challenge.

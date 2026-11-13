@@ -14,9 +14,9 @@ Signal down: answer with the Down arrow.
 
 Ring back: answer with Space.
 
-The dispatcher always says the call aloud as its sound plays. Before the line opens, H plays every call with its key, and each answer key plays its own call, so you can learn them with nothing at stake.
+The dispatcher always says the call aloud. Before the line opens, H plays every call with its key, and each answer key plays its own call, so you can learn them with nothing at stake.
 
-## The window and the tick
+## The answer window
 
 The answer window is the time you have to respond to a call. It shrinks every 5 trains. The timing cue marks four beats per window and speeds up as the window shrinks. S tells you how long the answer window lasts.
 

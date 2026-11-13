@@ -74,11 +74,11 @@ pub fn row_help(date: Date, (best, relaxed): (Option<u64>, Option<u64>)) -> Stri
             best.push_str(&format!(" Your relaxed best is {r}."));
         }
         format!(
-            "Three gentle rounds at sunrise, full of golden eggs worth double, with no bees and no egg target.{best}"
+            "Three rounds at sunrise, full of golden eggs worth double, with no bees and no egg target.{best}"
         )
     } else if run_up(date).is_some() {
         format!(
-            "{} Until then, Enter hears how the Easter bunny is getting on.",
+            "{} Until then, Enter says how the Easter bunny is getting on.",
             countdown(date)
         )
     } else {

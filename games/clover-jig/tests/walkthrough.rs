@@ -107,9 +107,9 @@ fn the_tutorial_teaches_in_the_practice_room() {
     assert!(spoke(&h, "4 steps danced."));
     assert!(spoke(
         &h,
-        "Now the tune goes on, as in a real dance, after three drum beats."
+        "Now the tune goes on, as in a real dance, after three count-in beats."
     ));
-    assert!(spoke(&h, "That bright chime is 3 points."));
+    assert!(spoke(&h, "That was spot on: 3 points."));
     assert!(!spoke(&h, "Missed."), "no call is lost under the line");
     assert!(
         spoke(&h, "Tutorial done. Before a dance, H plays every step with its call. Play starts the first set."),
@@ -486,7 +486,10 @@ fn the_practice_room_waits_and_names_the_key() {
     assert_eq!(rows(&h)[0], "The Kettle on the Hob, a jig, no stars");
     assert_eq!(rows(&h)[3], "The Crossroads Jig, a jig, locked");
     let (mut h, mut twin) = floor(Mode::Practice(1));
-    assert!(spoke(&h, "The tune waits at each step until you dance it."));
+    assert!(spoke(
+        &h,
+        "The music holds at each step until you dance it."
+    ));
     start(&mut h, &mut twin);
     while twin.dance.waiting().is_none() {
         frame(&mut h, &mut twin);

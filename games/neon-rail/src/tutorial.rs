@@ -55,7 +55,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let mut been_left = false;
     let lanes = Step::new(
         format!(
-            "Three lanes; you start in the center. {} shifts left and {r} shifts right, with a magnetic snap. Shift left, then all the way right.",
+            "Three lanes; you start in the center. {} shifts left and {r} shifts right. Shift left, then all the way right.",
             sentence_start(&l)
         ),
         move |ctx, a| {
@@ -114,7 +114,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let ln = Rc::clone(&lane);
     let ln2 = Rc::clone(&lane);
     let flow = Step::new(
-        "That steady hum on your left is a flow vehicle. Flow traffic is safe to meet: be in its lane when it arrives. Shift into its lane.",
+        "A flow vehicle is coming on your left. Flow traffic is safe to meet: be in its lane when it arrives. Shift into its lane.",
         move |ctx, a| {
             let Some(line) = shift(ctx, &ln, a) else {
                 return Reply::Nudge;
@@ -183,7 +183,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
 
     let blockade = Step::new(
         format!(
-            "Last, a full blockade. It fills all three lanes, so you cannot dodge it. In a run, a bright chime sounds just before it hits: boost then. Boost now with {boost}."
+            "Last, a full blockade. It fills all three lanes, so you cannot dodge it. In a run, boost just before it hits. Boost now with {boost}."
         ),
         |ctx, a| match a {
             ParlorAction::Primary => {
@@ -213,5 +213,5 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     .step(fast)
     .step(debris)
     .step(blockade)
-    .outro("Too many misses raise stress, and at 100 the network collapses. Practice run flies the guided route, where each new sound is explained as it arrives, and your first Play flies it too.")
+    .outro("Too many misses raise stress, and at 100 the network collapses. Practice run flies the guided route, where each new kind of traffic is explained as it arrives, and your first Play flies it too.")
 }

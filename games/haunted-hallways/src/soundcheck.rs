@@ -76,7 +76,7 @@ impl Menu for SoundCheck {
                 sound::play_at(ctx, sound::item(crate::rules::Item::Bell), 3.0, 0.0);
             })
             .select_sound(None)
-            .help("A clock on your left and a bell on your right, to hear which way is west and east."),
+            .help("A clock on your left and a bell on your right, to show which way is west and east."),
         );
         items.push(
             MenuItem::new("Near and far", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
@@ -84,7 +84,7 @@ impl Menu for SoundCheck {
                 sound::play_at(ctx, sound::item(crate::rules::Item::Crystal), 0.0, 5.0);
             })
             .select_sound(None)
-            .help("A crystal five steps ahead, to hear how far off a thing sounds."),
+            .help("A crystal five steps ahead, to show how far off a thing sounds."),
         );
         items.push(
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {

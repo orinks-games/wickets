@@ -20,7 +20,7 @@ impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
             menu: MenuCore::new("Sound check").with_intro_help(
-                "Each row plays one sound of the kitchen when you press Enter, from where you would hear it in the game. Cooking sounds play for a few seconds. In the kitchen, the number keys 1 to 5 jump to these stations from left to right: they belong to this game alone. Escape goes back.",
+                "Each row plays one sound of the kitchen when you press Enter, from its place in the kitchen. Cooking sounds play for a few seconds. In the kitchen, the number keys 1 to 5 jump to these stations from left to right: they belong to this game alone. Escape goes back.",
             ),
             preview: Sound::NONE,
             left: 0.0,
