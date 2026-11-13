@@ -212,7 +212,7 @@ impl Weather {
     pub fn describe(self) -> &'static str {
         match self {
             Weather::Clear => "The night is clear and still.",
-            Weather::Rain => "A light rain patters on the water.",
+            Weather::Rain => "A light rain falls on the water.",
             Weather::Mist => "Mist lies on the water, and far sounds are hushed.",
             Weather::Breeze => "A soft breeze is blowing, and the lanterns drift a little faster.",
         }
@@ -451,8 +451,8 @@ impl Twist {
 
     pub fn describe(self) -> &'static str {
         match self {
-            Twist::Mist => "Mist hushes the far side of the lake: listen closely, the lanterns sound softer until you are near.",
-            Twist::Rain => "Light rain falls the whole night, pattering around you.",
+            Twist::Mist => "Mist covers the far side of the lake: the lanterns are faint until you are near.",
+            Twist::Rain => "Light rain falls the whole night.",
             Twist::StillWater => "Not a breath of wind: the lanterns do not drift at all.",
             Twist::Breeze => "A breeze pushes the lanterns along twice as fast as usual.",
             Twist::Starry => "4 places hide around the lake.",
@@ -1193,8 +1193,8 @@ impl Lake {
         let lit = self.lit_count();
         match lit {
             0 => {}
-            1 => text.push_str(" Listen: the lit lantern rings."),
-            _ => text.push_str(" Listen: each lantern rings once, nearest first."),
+            1 => text.push_str(" The lit lantern rings."),
+            _ => text.push_str(" Each lantern rings once, nearest first."),
         }
         // The nearest ring first, half a second apart.
         let mut order: Vec<usize> = (0..self.lanterns.len()).filter(|&i| self.lit(i)).collect();
@@ -1297,7 +1297,7 @@ impl Lake {
                         (&self.keys.right, rel)
                     };
                     let how = if amount < 45.0 { "a little" } else { "well" };
-                    format!("Turn {how} with {key} until its chime is straight ahead, then paddle.")
+                    format!("Turn {how} with {key} until it is straight ahead, then paddle.")
                 };
                 self.lanterns[i].chime_in = 0.3;
                 let near = distance_words(self.pos.dist(l));
