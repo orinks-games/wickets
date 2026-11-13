@@ -100,7 +100,7 @@ pub fn tutorial(run: &mut Run) {
         0.0,
         20.0,
         "Tutorial 1. Departure rail",
-        "Learn lane movement and the standard flow sound.",
+        "Learn lane movement and flow traffic.",
     );
     run.push_sector(
         20.0,
@@ -112,7 +112,7 @@ pub fn tutorial(run: &mut Run) {
         40.0,
         60.0,
         "Tutorial 3. Pressure recovery",
-        "Hear priority traffic and stress recovery.",
+        "Priority traffic and stress recovery.",
     );
     let p = PICKUP_APPROACH;
     let script: &[(f64, Kind, Lane, i32, f64)] = &[
@@ -268,7 +268,7 @@ fn briefing(route: Route, pick: u32) -> &'static str {
             "The storm rail runs fast and blind. Short windows all the way.",
         ],
         Route::Relay => &[
-            "A dead data relay hums beside the rail. Light traffic. Listen for the signal.",
+            "A dead data relay stands beside the rail. Light traffic.",
             "The unknown signal is strongest here. Priority traffic carries it.",
         ],
         Route::Extraction => &["Sustained overload conditions. Survive the final corridor."],

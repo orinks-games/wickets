@@ -518,7 +518,7 @@ fn the_practice_room_waits_and_names_the_key() {
 #[test]
 fn shamrock_week_hides_shamrocks_that_give_luck() {
     let (mut h, mut twin) = floor_on(SHAMROCK_DAY, Mode::Set(1));
-    assert!(spoke(&h, "Shamrocks hide in the tunes:"));
+    assert!(spoke(&h, "Shamrocks hide in the tunes. Dance"));
     assert!(twin.plans.iter().all(|p| p.shamrocks() >= 2));
     start(&mut h, &mut twin);
     let first = twin
@@ -633,7 +633,7 @@ fn keepsakes_count_down_when_empty() {
     h.press(Key::Return);
     assert!(spoke(
         &h,
-        "Keepsakes. 0 luck points, from 0 shamrocks heard."
+        "Keepsakes. 0 luck points, from 0 shamrocks in the tunes."
     ));
     h.press(Key::Return);
     assert!(spoke(&h, "No ceili keepsakes yet."));

@@ -509,7 +509,7 @@ impl PlayScreen {
         ctx.say(text);
         if crossed && !self.told_row {
             self.told_row = true;
-            ctx.say_queued("That chime marks a new part of the row.");
+            ctx.say_queued("The row goes piles, then the stock, then the foundations.");
         }
     }
 

@@ -47,7 +47,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Table,
-    blurb: "A quiet game of patience by the fire, with deals that can always be won.",
+    blurb: "A game of patience by the fire, with deals that can always be won.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),

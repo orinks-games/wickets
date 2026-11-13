@@ -80,17 +80,10 @@ pub fn controls_text(ctx: &Ctx<Parlor>) -> String {
 /// The page explaining a kind the first time it falls.
 pub fn introduction(kind: Kind) -> String {
     match kind {
-        Kind::Egg => {
-            "Your first egg: a soft falling whistle. Step into its lane and stay until it lands."
-                .to_string()
-        }
-        Kind::Golden => "A golden egg: sparkling bells. Worth five eggs. Catch it.".to_string(),
-        Kind::Mud => {
-            "A mud clod: a gloopy wobble. It spoils your basket. Step out of its lane.".to_string()
-        }
-        Kind::Bee => {
-            "A bee: a buzzing dive. Its sting breaks a basket. Step out of its lane.".to_string()
-        }
+        Kind::Egg => "Your first egg. Step into its lane and stay until it lands.".to_string(),
+        Kind::Golden => "A golden egg. Worth five eggs. Catch it.".to_string(),
+        Kind::Mud => "A mud clod. It spoils your basket. Step out of its lane.".to_string(),
+        Kind::Bee => "A bee. Its sting breaks a basket. Step out of its lane.".to_string(),
     }
 }
 

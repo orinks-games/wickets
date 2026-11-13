@@ -488,7 +488,7 @@ fn wait_for(t: &mut Twin, line: &str) {
 fn a_ghost_comes_and_moving_as_it_passes_gets_you_caught() {
     let mut t = into_room_two();
     wait_for(&mut t, "A ghost! ");
-    assert!(spoke(&t.h, "At the stab, freeze until it breathes out."));
+    assert!(spoke(&t.h, "Freeze until it has passed."));
     assert!(t
         .h
         .app

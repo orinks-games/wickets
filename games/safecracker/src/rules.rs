@@ -201,7 +201,7 @@ pub fn safe_spec(n: u32) -> SafeSpec {
     match n {
         1 => SafeSpec {
             name: "the office lockbox",
-            news: "A good loud clunk on every wheel. Take your time: nothing is chasing you.",
+            news: "No guard and no false gates.",
             ..base
         },
         2 => SafeSpec {
@@ -209,7 +209,7 @@ pub fn safe_spec(n: u32) -> SafeSpec {
             clunk: 0.85,
             noises: Some((10.0, 18.0)),
             limit: 55.0,
-            news: "The hotel's old pipes knock and its floors creak, off to your left and right. They are only the building. The tumbler always clunks from the dial, right in front of you.",
+            news: "The hotel's old pipes knock and its floors creak, off to your left and right. They are only the building. The tumbler always falls at the dial, right in front of you.",
             ..base
         },
         3 => SafeSpec {
@@ -220,7 +220,7 @@ pub fn safe_spec(n: u32) -> SafeSpec {
             noises: Some((12.0, 20.0)),
             par: 90.0,
             limit: 75.0,
-            news: "Each has a false gate: a hollow rattle at a wrong number. Only the deep clunk is the true tumbler. Crack this safe to open time attack.",
+            news: "Each has a false gate at a wrong number: ignore it. Crack this safe to open time attack.",
             ..base
         },
         4 => SafeSpec {
@@ -232,7 +232,7 @@ pub fn safe_spec(n: u32) -> SafeSpec {
             noises: Some((12.0, 20.0)),
             par: 100.0,
             limit: 80.0,
-            news: "A real combination dial: the direction rule. The tumbler only clunks when you turn the right way, and you must reach the number turning that way before you set it.",
+            news: "A real combination dial: the direction rule. The tumbler only falls when you turn the right way, and you must reach the number turning that way before you set it.",
             ..base
         },
         5 => SafeSpec {
@@ -247,7 +247,7 @@ pub fn safe_spec(n: u32) -> SafeSpec {
             hints: 2,
             par: 120.0,
             limit: 100.0,
-            news: "A night guard walks the corridor. You will hear his footsteps coming for several seconds. When they stop outside the door, keep still: do not turn the dial or set a wheel until you hear him walk away. The first noise makes him suspicious, and the second gets you caught. On this safe, the game tells you when he comes and goes.",
+            news: "A night guard walks the corridor. His footsteps come for a while first. When he stops outside the door, keep still: do not turn the dial or set a wheel until he walks away. The first noise makes him suspicious, and the second gets you caught. On this safe, you are told when he comes and goes.",
             ..base
         },
         6 => SafeSpec {
@@ -261,7 +261,7 @@ pub fn safe_spec(n: u32) -> SafeSpec {
             hints: 2,
             par: 150.0,
             limit: 115.0,
-            news: "Two false gates on each wheel. From now on the guard comes unannounced: listen for his footsteps, and press {status} if you are unsure where he is.",
+            news: "Two false gates on each wheel. From now on the guard comes unannounced. Press {status} if you are unsure where he is.",
             ..base
         },
         7 => SafeSpec {
@@ -275,7 +275,7 @@ pub fn safe_spec(n: u32) -> SafeSpec {
             hints: 2,
             par: 170.0,
             limit: 130.0,
-            news: "The tumblers here are well oiled: the clunk is quieter. Listen closely.",
+            news: "The tumblers here are well oiled and harder to find.",
             ..base
         },
         8 => SafeSpec {
@@ -289,7 +289,7 @@ pub fn safe_spec(n: u32) -> SafeSpec {
             hints: 2,
             par: 200.0,
             limit: 155.0,
-            news: "Keep listening for the guard.",
+            news: "The guard still walks the corridor.",
             ..base
         },
         9 => SafeSpec {
@@ -303,7 +303,7 @@ pub fn safe_spec(n: u32) -> SafeSpec {
             hints: 1,
             par: 220.0,
             limit: 165.0,
-            news: "Three false gates a wheel, a quieter clunk, and a guard who walks by more often. One hint only.",
+            news: "Three false gates a wheel, oiled tumblers, and a guard who walks by more often. One hint only.",
             ..base
         },
         10 => SafeSpec {
@@ -338,7 +338,7 @@ pub const UNLUCKY: SafeSpec = SafeSpec {
     hints: 3,
     par: 120.0,
     limit: 160.0,
-    news: "One of its four wheels is always 13, and each has a false gate. A black cat sleeps on top. She yowls softly just after the clunk at 13, so you know that wheel when you find it.",
+    news: "One of its four wheels is always 13, and each has a false gate. A black cat sleeps on top. She yowls when you find the 13, so you know that wheel.",
 };
 
 /// The new moon's bonus safe, in the dark: three wheels, and the dial's
@@ -356,7 +356,7 @@ pub const BLACKOUT: SafeSpec = SafeSpec {
     hints: 3,
     par: 90.0,
     limit: 120.0,
-    news: "The power is cut and the room hum is gone: you hear rain on the windows. In the dark the tens give the plain click, so count from the deep zero notch, or press {secondary} for the number. Each wheel has a false gate.",
+    news: "The power is cut, and rain is on the windows. In the dark the tens are not marked, so count from the zero notch, or press {secondary} for the number. Each wheel has a false gate.",
 };
 
 /// What kind of play this is.

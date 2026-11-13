@@ -214,7 +214,7 @@ fn the_dance_counts_in_plays_the_tune_and_calls_each_step() {
     let (mut h, mut twin) = floor(Mode::Set(1));
     h.clear();
     start(&mut h, &mut twin);
-    assert!(spoke(&h, "Here we go. Four knocks in."));
+    assert!(spoke(&h, "Here we go. Four beats in."));
     let evs = wait(&mut h, &mut twin, 4.0);
     assert_eq!(played_count(&h, sound::COUNT), 4);
     let first = SONGS[0].part_key(false);
@@ -349,7 +349,7 @@ fn pausing_counts_back_in_on_three_beats() {
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), PLAY_NAME);
     twin.count_in();
-    assert!(spoke(&h, "Back on the floor. Three knocks in."));
+    assert!(spoke(&h, "Back on the floor. Three beats in."));
     let before = twin.dance.now();
     wait(&mut h, &mut twin, 2.5);
     assert_eq!(played_count(&h, sound::COUNT), 3);
@@ -667,5 +667,5 @@ fn help_mid_dance_pauses_the_song_and_names_only_this_nights_monsters() {
     assert!(!spoke(&h, "vampire"));
     read_pages(&mut h);
     assert_eq!(h.app.top_name(), PLAY_NAME);
-    assert!(spoke(&h, "Back on the floor. Three knocks in."));
+    assert!(spoke(&h, "Back on the floor. Three beats in."));
 }

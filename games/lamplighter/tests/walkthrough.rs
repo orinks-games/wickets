@@ -221,7 +221,7 @@ fn the_practice_hall_has_no_taper_and_counts_its_hall() {
     assert_eq!(h.app.top_name(), PLAY_NAME);
     assert!(spoke(
         &h,
-        "Practice hall. 4 lamps out along 8 steps. No taper, so take your time."
+        "Practice hall. 4 lamps out along 8 steps. No taper, so there is no clock."
     ));
     let (mut h, mut twin) = play(Mode::Practice);
     h.clear();

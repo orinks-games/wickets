@@ -168,10 +168,7 @@ fn the_count_in_then_the_first_beat_teaches_the_pearl() {
     assert!(played(&h, sound::COUNT));
     assert!(h.spoken().is_empty());
     wait(&mut h, 3.5);
-    assert!(spoke(
-        &h,
-        "Dance. Keep your head in the shimmering pearl's lane."
-    ));
+    assert!(spoke(&h, "Dance. Keep your head in the pearl's lane."));
     assert!(played(&h, sound::DRUM_DOWN));
     assert!(played(&h, sound::DRUM));
 }
@@ -270,7 +267,7 @@ fn a_whole_street_danced_by_the_keys_earns_stars_and_opens_the_next() {
     assert_eq!(h.app.top_name(), "results");
     let all = heard.join(" ");
     assert!(all.contains("Perfect rear, 100 points."), "{all}");
-    assert!(all.contains("Drum roll: a gong in 2 beats."));
+    assert!(all.contains("A gong in 2 beats. "));
     let results = rows(&h);
     assert_eq!(results[0], "Next street: street 2, Tea House Lane");
     assert_eq!(results[1], "Play again");

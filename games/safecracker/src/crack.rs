@@ -291,7 +291,7 @@ impl Crack {
             out.push_str(if spec.call_guard {
                 " A guard walks the corridor, and you are told when he comes."
             } else {
-                " A guard walks the corridor, unannounced: listen for his footsteps."
+                " A guard walks the corridor, unannounced."
             });
         }
         if let Some(t) = job.plan.twist {
@@ -371,11 +371,11 @@ impl Crack {
         if let Some(t) = run.required() {
             first.push(match run.last_turn {
                 Some(last) => format!(
-                    "Found turning {}; you last turned {}.",
+                    "Found turning {}. You last turned {}.",
                     t.word(),
                     last.word()
                 ),
-                None => format!("Found turning {}; you have not turned yet.", t.word()),
+                None => format!("Found turning {}. You have not turned yet.", t.word()),
             });
         }
         let mut more = vec![
@@ -405,10 +405,10 @@ impl Crack {
         }
         match run.mode {
             Mode::Unlucky => {
-                more.push("One wheel is 13, and the cat yowls after its clunk.".to_string())
+                more.push("One wheel is 13, and the cat yowls when you find it.".to_string())
             }
             Mode::Blackout => {
-                more.push("The power is cut: the tens click plain, so count from zero.".to_string())
+                more.push("The power is cut, so count from zero.".to_string())
             }
             _ => {}
         }
@@ -474,11 +474,11 @@ impl Crack {
                     if self.teaching(1) && self.first("clunk") {
                         let p = ctx.control_name(ParlorAction::Primary);
                         ctx.say(format!(
-                            "Clunk: the tumbler. After one step, {p} sets it. After a spin, step back one at a time to find it."
+                            "The tumbler fell. After one step, {p} sets it. After a spin, step back one at a time to find it."
                         ));
                     } else if spun && self.teaching(5) && self.first("spin rule") {
                         if let Some(words) = self.spin_back_words(ctx) {
-                            ctx.say(format!("Clunk, on a spin. {words}"));
+                            ctx.say(format!("The tumbler fell on a spin. {words}"));
                         }
                     }
                 }
@@ -486,7 +486,7 @@ impl Crack {
                     self.later(wait, sound::FALSE_GATE, self.run.spec.clunk * GATE_VOLUME);
                     wait += 0.25;
                     if self.teaching(3) && self.first("false") {
-                        ctx.say("A hollow rattle: a false gate. Ignore it.");
+                        ctx.say("A false gate. Ignore it.");
                     }
                 }
                 Ev::Set { wheel, of } => {
@@ -506,7 +506,7 @@ impl Crack {
                     sound::play(ctx, sound::SPRING);
                     let text = if self.run.practice() {
                         match why {
-                            Wrong::Number => "Wrong number. Set on the deep clunk.".to_string(),
+                            Wrong::Number => "Wrong number. Set when the tumbler falls.".to_string(),
                             Wrong::Direction => "Wrong way.".to_string(),
                         }
                     } else {
@@ -852,7 +852,7 @@ pub fn result_pages(run: &Run, outcome: Outcome, saved: &Saved) -> Vec<String> {
         ));
     } else if outcome.won() && run.mode == Mode::Safe(SAFES) && saved.previous.is_none() {
         news.push(
-            "You have cracked every safe in the city. Time attack waits for faster hands."
+            "You have cracked every safe in the city."
                 .to_string(),
         );
     }
@@ -1111,7 +1111,7 @@ impl State<Parlor> for Crack {
     fn help(&self, ctx: &Ctx<Parlor>) -> String {
         let run = &self.run;
         let now = if run.guard_listening() {
-            "The guard is at the door, listening: keep still! Do not turn or set until his footsteps walk away. Status and hints are silent and safe.".to_string()
+            "The guard is at the door, listening: keep still! Do not turn or set until he walks away. Status and hints are silent and safe.".to_string()
         } else if run.practice() {
             "Practice: turn until the tumbler falls, then set. Nothing here is scored."
                 .to_string()
@@ -1130,7 +1130,7 @@ impl State<Parlor> for Crack {
             }
             if run.spec.guard.is_some() {
                 s.push_str(
-                    " When the guard's footsteps stop at the door, keep still until he leaves.",
+                    " When the guard stops at the door, keep still until he leaves.",
                 );
             }
             if let Some(job) = &self.job {

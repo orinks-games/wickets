@@ -805,7 +805,7 @@ impl Run {
         }
         if self.training() {
             text.push_str(&format!(
-                " The tone is your balance: centred and low when you are steady. {} and {} shift your weight. {} takes a step.",
+                " {} and {} shift your weight. {} takes a step.",
                 sentence_start(&self.keys.left),
                 self.keys.right,
                 sentence_start(&self.keys.step)
@@ -1551,7 +1551,7 @@ impl Run {
                 &k.left
             };
             return format!(
-                "{} and drifting {}. Press {fix}, then wait for the chime.",
+                "{} and drifting {}. Press {fix}, then wait until you are balanced.",
                 sentence_start(&lean_words(self.lean)),
                 side.name()
             );

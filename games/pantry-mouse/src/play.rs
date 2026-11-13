@@ -199,7 +199,7 @@ impl Play {
                 whiskers_words(self.run.whiskers)
             ),
             Mode::Practice => {
-                "One slow cat, and a catch costs nothing. Learn the sounds.".to_string()
+                "One slow cat, and a catch costs nothing. Learn the maze and the cats.".to_string()
             }
             Mode::Challenge(_) => {
                 let total = self.run.pantries().unwrap_or(1);
@@ -241,10 +241,9 @@ impl Play {
             Treat::CheeseRind => "Bin night",
         };
         Some(format!(
-            "{each}: {} in every pantry, {} points each. Listen for {}. A sniff plays the nearest one from where it hides.",
+            "{each}: {} in every pantry, {} points each. A sniff finds the nearest one.",
             treat.count_words(n),
             treat.points(),
-            sound::treat_words(treat)
         ))
     }
 
@@ -398,7 +397,7 @@ impl Play {
         if self.first("sniff") {
             self.say(
                 ctx,
-                format!("Each tick is a crumb, from its direction, nearest first. {left}"),
+                format!("A sniff finds each crumb, nearest first. {left}"),
             );
         } else {
             self.say(ctx, left);

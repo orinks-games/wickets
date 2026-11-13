@@ -785,11 +785,11 @@ impl State<Parlor> for ShowerScreen {
                 let often = if self.tonight.is_peak() {
                     "every few seconds"
                 } else {
-                    "every 15 seconds or so"
+                    "now and then"
                 };
                 self.say(
                     ctx,
-                    format!("Shooting stars come {often} tonight. Press {p} during the whoosh."),
+                    format!("Shooting stars come {often} tonight. Press {p} while one passes."),
                 );
             }
             Some(_) => {

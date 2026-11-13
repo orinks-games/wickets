@@ -110,7 +110,7 @@ pub fn event(date: Date) -> Option<Happening> {
     bin_night_open(date).then(|| {
         Happening::new(
             BIN_NIGHT,
-            "The bin is full before collection: a cheese rind waits in every pantry, 100 points.",
+            "The bin is full before collection: a cheese rind hides in every pantry, 100 points.",
         )
     })
 }

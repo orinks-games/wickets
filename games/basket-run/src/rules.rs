@@ -1608,7 +1608,7 @@ impl Run {
         if !self.basket.is_empty() {
             return "You are at the cart: bank your basket.".to_string();
         }
-        "Nothing falling yet. Wait in the middle of the meadow and listen.".to_string()
+        "Nothing falling yet. Wait in the middle of the meadow.".to_string()
     }
 }
 

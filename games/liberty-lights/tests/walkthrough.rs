@@ -189,7 +189,7 @@ fn the_show_counts_in_then_plays_its_fireworks() {
         &format!("liberty-lights/fireworks/{}", kind.name())
     ));
     assert!(played(&h, "liberty-lights/launch/fuse"));
-    assert_eq!(h.spoken()[0], "Listen.");
+    assert_eq!(h.spoken()[0], "The show starts.");
 }
 
 #[test]
@@ -432,7 +432,7 @@ fn level_20_plays_every_firework_and_opens_the_finale() {
     assert!(summary.contains("The grand finale is open"));
     assert!(played(&h, "liberty-lights/music/finale"));
     assert!(Progress::load(&mut h.app.ctx).finale_open());
-    assert_eq!(h.spoken()[1], "Play again. 1 of 4.");
+    assert_eq!(h.spoken()[1], "Play again. 1 of 5.");
     goto(&mut h, "Back to the title");
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), "liberty_lights");
@@ -482,7 +482,7 @@ fn the_grand_finale_runs_until_a_round_fails() {
         "{:?}",
         h.spoken()
     );
-    assert_eq!(h.spoken()[1], "Next round. 1 of 4.");
+    assert_eq!(h.spoken()[1], "Next round. 1 of 5.");
     h.clear();
     h.press(Key::Return);
     assert!(h.spoken()[0].starts_with("Grand finale, round 2."));
@@ -524,7 +524,7 @@ fn launching_out_of_turn_is_explained() {
     h.press(Key::Return);
     h.clear();
     h.press(Key::Num2);
-    assert_eq!(h.spoken(), ["Listen first: press Space to hear the show."]);
+    assert_eq!(h.spoken(), ["Play the show first: press Space."]);
     listen(&mut h);
     h.clear();
     h.press(Key::Num2);
@@ -576,7 +576,7 @@ fn tab_hears_the_show_again() {
     h.press(Key::Num1);
     h.clear();
     h.press(Key::Tab);
-    assert_eq!(h.spoken(), ["Listen."]);
+    assert_eq!(h.spoken(), ["The show starts."]);
     for _ in 0..200 {
         h.frame(0.05);
     }

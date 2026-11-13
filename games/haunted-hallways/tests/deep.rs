@@ -411,9 +411,9 @@ fn screen(run: Run) -> hearken::Headless<parlor_core::Parlor> {
 fn the_screen_teaches_each_deep_danger_the_first_time() {
     for (floor, line) in [
         (PENDULUM_FROM, "A pendulum swings along row"),
-        (WATER_FROM, "Flooded. Lapping means deep water."),
+        (WATER_FROM, "Flooded. Wading through deep water"),
         (STONES_FROM, "Stones fall here. When dust trickles"),
-        (SHIFTS_FROM, "This room shifts: a rumble moves"),
+        (SHIFTS_FROM, "This room shifts: the exit door moves"),
     ] {
         let h = screen(second_room(floor));
         assert!(

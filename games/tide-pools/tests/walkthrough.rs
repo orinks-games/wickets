@@ -285,7 +285,7 @@ fn leaning_in_and_stepping_back_are_spoken_and_heard() {
     assert!(played(&t.h, sound::LEAN_BACK));
     assert!(spoke(
         &t.h,
-        "Standing back on the rocks. Two pools either side"
+        "Standing back on the rocks, with two pools either side."
     ));
     t.h.clear();
     t.press(Key::Down);
@@ -336,7 +336,7 @@ fn the_first_sound_of_each_creature_is_named() {
     );
     t.h.clear();
     t.press(Key::Tab);
-    assert!(spoke(&t.h, "That last sound was the sea anemone"));
+    assert!(spoke(&t.h, "That last call was the sea anemone"));
 }
 
 #[test]
@@ -381,7 +381,7 @@ fn a_shy_crab_hides_and_creeps_back_out() {
         }
     }
     assert!(played(&t.h, sound::EMERGE));
-    assert!(spoke(&t.h, "Two rising notes"));
+    assert!(spoke(&t.h, "It crept out."));
     t.gather(Species::Crab);
     assert!(spoke(&t.h, "A shore crab. 15 points."));
 }
@@ -753,6 +753,7 @@ fn a_finished_daily_counts_its_targets_and_starts_a_streak() {
             "Play this daily challenge again",
             "Hear the results again",
             "Your aquarium",
+            "Make a sound file of this run's song",
             "Back to the challenges",
         ]
     );
@@ -851,7 +852,7 @@ fn the_neighbouring_pools_are_heard_from_the_side() {
         }
     }
     assert!(side, "something called from a neighbouring pool");
-    assert!(spoke(&t.h, "Side sounds are the next pools."));
+    assert!(spoke(&t.h, "Creatures either side are in the next pools."));
 }
 
 /// Main-channel speech since the last clear, with whether each interrupts.
@@ -875,7 +876,7 @@ fn creeping_out_never_cuts_off_the_hiding_lesson() {
     }
     let line = calls(&t.h)
         .into_iter()
-        .find(|(l, _)| l.contains("Two rising notes"))
+        .find(|(l, _)| l.contains("It crept out."))
         .expect("the emerge lesson");
     assert!(!line.1, "the emerge lesson must queue, not interrupt");
 }
@@ -890,7 +891,10 @@ fn repeat_says_where_you_walked_and_leaned() {
     t.press(Key::Down);
     t.h.clear();
     t.press(Key::R);
-    assert!(spoke(&t.h, "Standing back on the rocks."));
+    assert!(spoke(
+        &t.h,
+        "Standing back on the rocks, with two pools either side."
+    ));
     t.press(Key::Left);
     t.press(Key::Left);
     t.h.clear();
@@ -1017,6 +1021,7 @@ fn results_back_row_matches_escape() {
             "Play again",
             "Hear the results again",
             "Your aquarium",
+            "Make a sound file of this run's song",
             "Back to the title",
         ]
     );

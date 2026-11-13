@@ -290,6 +290,7 @@ fn the_daily_states_its_twist_scores_and_records_its_result() {
             "Play this daily challenge again",
             "Hear the results again",
             "Compare",
+            "Make a sound file of this run's song",
             "Back to the challenges"
         ]
     );
@@ -388,7 +389,7 @@ fn the_monthly_festival_pays_for_its_signature_and_leaving_does_not_count() {
     assert_said(&h, "adds 100 bonus points");
     h.press(Key::Return);
     assert_said(&h, "Monthly challenge, show 1 of 3: The opening act.");
-    assert_said(&h, "Listen for the crackles.");
+    assert_said(&h, "Crackles pay a bonus.");
     let show = &monthly.acts[0].show;
     let crackles = show.iter().filter(|l| l.kind == Kind::Crackle).count();
     play_perfect(&mut h, show);
@@ -574,7 +575,7 @@ fn a_controller_plays_a_whole_level_with_a_and_the_d_pad() {
     h.clear();
     // A is Enter to menus; in the show it is the main action.
     tap(&mut h, ControllerButton::A);
-    assert_eq!(h.spoken(), ["Listen."]);
+    assert_eq!(h.spoken(), ["The show starts."]);
     for _ in 0..1000 {
         if spoke(&h, "Your turn.") {
             break;

@@ -246,13 +246,10 @@ impl Bowl {
                 Ev::Aim(aim) => {
                     let target = self.session.target();
                     sound::play_at(ctx, sound::AIM_TONE, target as f64);
-                    let mut line = format!(
+                    let line = format!(
                         "{}, board {target} at the pins.",
                         sentence_start(&aim_words(aim))
                     );
-                    if self.first("aim") {
-                        line.push_str(" The tone sounds from where the ball would cross.");
-                    }
                     ctx.say(line);
                 }
                 Ev::AimEdge(aim) => {
@@ -267,7 +264,7 @@ impl Bowl {
                     ctx.audio.set_pitch(s, sound::SWING_LOW);
                     self.swing = Some(s);
                     if self.first("swing") {
-                        ctx.say("Swing. Let go when the tone peaks.");
+                        ctx.say("Swing. Let go at the top.");
                     }
                 }
                 Ev::Released { error, .. } => {

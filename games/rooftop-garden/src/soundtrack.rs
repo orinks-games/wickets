@@ -327,7 +327,7 @@ pub fn history(ctx: &mut hearken::Ctx<parlor_core::Parlor>) -> Vec<Track> {
         .map(|session| {
             let parts = session.parts();
             let about = format!(
-                "Your garden's song from {}, with {} plant{} singing, as you heard it.",
+                "Your garden's song from {}, with {} plant{} singing.",
                 parlor_core::soundtrack::date_words(session.date()),
                 parts.len(),
                 if parts.len() == 1 { "" } else { "s" }

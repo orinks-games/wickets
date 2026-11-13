@@ -56,7 +56,7 @@ pub fn event(date: Date) -> Option<Happening> {
     if is_thirteenth(date) {
         return Some(Happening::new(
             THIRTEENTH_NAME,
-            "Friday the 13th: on the night shift, the thirteenth train passes with a ghostly whistle.",
+            "Friday the 13th: on the night shift, the thirteenth train is a ghost train.",
         ));
     }
     GALA.is_open(date).then(|| {

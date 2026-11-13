@@ -302,7 +302,7 @@ fn the_first_egg_is_explained_before_it_falls_and_the_meadow_waits() {
         }
     }
     assert_eq!(h.app.top_name(), "pages");
-    assert!(spoke(&h, "Your first egg:"), "{:?}", h.spoken());
+    assert!(spoke(&h, "Your first egg."), "{:?}", h.spoken());
     let loops = falling_loops(&h);
     assert_eq!(loops.len(), 1);
     assert!(loops[0].paused, "the egg waits while the page is read");
@@ -647,7 +647,7 @@ fn practice_explains_every_kind_and_costs_nothing() {
     for _ in 0..2400 {
         if h.app.top_name() == "pages" {
             if h.spoken().iter().any(|l| {
-                ["Your first egg:", "A golden egg:", "A mud clod:", "A bee:"]
+                ["Your first egg.", "A golden egg.", "A mud clod.", "A bee."]
                     .iter()
                     .any(|m| l.starts_with(m))
             }) {
@@ -820,7 +820,7 @@ fn a_page_in_the_middle_of_play_is_not_skipped_by_space_or_the_arrows() {
     while h.app.top_name() != "pages" {
         step(&mut h, DT);
     }
-    assert!(spoke(&h, "Your first egg:"));
+    assert!(spoke(&h, "Your first egg."));
     for key in [Key::Space, Key::Right, Key::Tab, Key::S] {
         h.clear();
         h.press(key);
@@ -829,7 +829,7 @@ fn a_page_in_the_middle_of_play_is_not_skipped_by_space_or_the_arrows() {
     }
     h.clear();
     h.press(Key::R);
-    assert!(spoke(&h, "Your first egg:"), "R repeats it");
+    assert!(spoke(&h, "Your first egg."), "R repeats it");
     h.clear();
     h.press(Key::F1);
     assert!(spoke(&h, "the clock is stopped"), "{:?}", h.spoken());
@@ -1279,7 +1279,7 @@ fn a_challenge_from_the_launcher_returns_there_when_finished() {
     h.press(Key::End);
     assert_eq!(
         h.spoken().last().map(String::as_str),
-        Some("Back to the challenges. 3 of 3."),
+        Some("Back to the challenges. 4 of 4."),
         "the row names where it goes"
     );
     h.press(Key::Return); // Back to the challenges, the launcher's here
@@ -1366,7 +1366,12 @@ fn results_back_row_matches_escape() {
     idle_until(&mut h, |h| h.app.top_name() == "results");
     assert_eq!(
         parlor_core::menus::rows_of(&h.app.top_lines()),
-        ["Try again", "Hear the results again", "Back to the title"]
+        [
+            "Try again",
+            "Hear the results again",
+            "Make a sound file of this run's song",
+            "Back to the title"
+        ]
     );
     h.press(Key::Escape);
     let by_escape = (h.app.top_name(), h.app.depth());
