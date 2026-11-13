@@ -51,12 +51,12 @@ pub fn event(date: Date) -> Option<Happening> {
     if is_midsummer(date) {
         Some(Happening::new(
             "Midsummer night",
-            "The whole meadow blinks together round a bonfire, and this year's keepsake waits.",
+            "The whole meadow blinks together round a bonfire, with this year's keepsake.",
         ))
     } else if fireworks(date) {
         Some(Happening::new(
             "Fourth of July fireworks",
-            "Fireworks pop far off on the horizon while you walk the summer meadow.",
+            "Fireworks go off far away on the horizon while you walk the summer meadow.",
         ))
     } else {
         None

@@ -29,7 +29,7 @@ fn v3(p: (f64, f64)) -> Vec3 {
 pub fn intro_page(ctx: &Ctx<Parlor>) -> String {
     let p = ctx.control_name(ParlorAction::Primary);
     format!(
-        "Midsummer night. A bonfire crackles in the middle of the meadow, and the fireflies gather round it. They flash together, {FLASHES} flashes in a row, then rest. Some drift out of step and flash a moment late. Press {p} with each flash to bring a straggler back into the chorus. The show lasts {ROUNDS} rounds."
+        "Midsummer night. A bonfire burns in the middle of the meadow, and the fireflies gather round it. They flash together, {FLASHES} flashes in a row, then rest. Some drift out of step and flash a moment late. Press {p} with each flash to bring a straggler back into the chorus. The show lasts {ROUNDS} rounds."
     )
 }
 
@@ -328,7 +328,7 @@ impl State<Parlor> for Night {
                 self.say(
                     ctx,
                     format!(
-                        "The chorus flashes {FLASHES} times, a little over half a second apart, then rests for {dark} beats. Press with each flash you hear."
+                        "The chorus flashes {FLASHES} times, close together, then rests for {dark} beats. Press with each flash."
                     ),
                 );
             }
