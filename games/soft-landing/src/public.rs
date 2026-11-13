@@ -22,7 +22,7 @@ use hearken::menu::{Menu, MenuCore, MenuItem};
 use hearken::text::{end_sentence, sentence_start};
 use hearken::Ctx;
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period};
 
 pub use challenge::{ChallengeHost, ChallengesMenu, Landings, CHALLENGES_NAME};
 pub use play::{Descent, Mode};
@@ -82,30 +82,39 @@ pub fn moon_summary(moon: &Moon) -> String {
     )
 }
 
-/// " Your best is 900." for an event row's help, or nothing.
+/// " Your best is 900. Your relaxed best is 1200." for an event row's
+/// help, leaving out a board with no score, or nothing.
 fn event_best(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    match Records::best(ctx, ID, board) {
+    let mut text = match pace::best(ctx, ID, board) {
         Some(b) => format!(" Your best is {b}."),
         None => String::new(),
+    };
+    if let Some(r) = pace::best(ctx, ID, &Pace::Relaxed.board(board)) {
+        text.push_str(&format!(" Your relaxed best is {r}."));
     }
+    text
 }
 
-fn best_words(ctx: &mut Ctx<Parlor>, n: u32) -> Option<u64> {
-    Records::best(ctx, ID, &progress::board(n))
+/// Moon `n`'s bests as `word` and the score, normal and quick then
+/// relaxed: "best score 900, relaxed best score 1200".
+fn best_words(ctx: &mut Ctx<Parlor>, n: u32, word: &str) -> Option<String> {
+    pace::scored_bests(ctx, ID, &progress::board(n), word)
 }
 
 /// Records: moons landed, bests, tallies, then the challenges.
 pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let p = Progress::load(ctx);
-    let softest = match p.softest {
-        Some(s) => format!("softest touchdown {}", speed_words(s)),
-        None => "no landing yet".to_string(),
-    };
+    let softest = pace::both(
+        "softest touchdown",
+        p.softest.map(speed_words),
+        p.relaxed_softest.map(speed_words),
+    )
+    .unwrap_or_else(|| "no landing yet".to_string());
     let moons: Vec<String> = (1..=MOONS)
         .map(|n| {
             let name = survey_moon(n).name;
-            match best_words(ctx, n) {
-                Some(b) => format!("Moon {n}, {name}: best score {b}."),
+            match best_words(ctx, n, "best score") {
+                Some(b) => format!("Moon {n}, {name}: {b}."),
                 None if n <= p.open_moons() => format!("Moon {n}, {name}: not landed yet."),
                 None => format!("Moon {n}, {name}: locked."),
             }
@@ -160,7 +169,7 @@ impl TitleGame for SoftLanding {
 
     /// Distances are spoken in the player's units, so Units sits here too.
     fn settings(_ctx: &Ctx<Parlor>) -> Vec<hearken::screens::SettingsRow<Parlor>> {
-        vec![parlor_core::units::row()]
+        vec![parlor_core::units::row(), pace::row(ID)]
     }
 
     fn music(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -171,8 +180,8 @@ impl TitleGame for SoftLanding {
         let p = Progress::load(ctx);
         let next = p.next_moon();
         let moon = survey_moon(next);
-        let best = match best_words(ctx, next) {
-            Some(b) => format!(" Best score {b}."),
+        let best = match best_words(ctx, next, "best score") {
+            Some(b) => format!(" {}.", sentence_start(&b)),
             None => String::new(),
         };
         let mut rows = vec![
@@ -360,9 +369,9 @@ impl Menu for MoonSelect {
                 );
                 continue;
             }
-            let best = best_words(ctx, n);
+            let best = best_words(ctx, n, "best");
             let label = match best {
-                Some(b) => format!("Moon {n}, {}, best {b}", moon.name),
+                Some(b) => format!("Moon {n}, {}, {b}", moon.name),
                 None => format!("Moon {n}, {}", moon.name),
             };
             items.push(

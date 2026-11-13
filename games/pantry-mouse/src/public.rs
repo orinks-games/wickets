@@ -20,10 +20,11 @@ pub mod soundcheck;
 pub mod tutorial;
 
 use hearken::menu::MenuItem;
+use hearken::screens::SettingsRow;
 use hearken::text::end_sentence;
 use hearken::Ctx;
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period};
 
 pub use challenge::{ChallengeHost, ChallengesMenu, Larders, CHALLENGES_NAME};
 pub use play::{Mode, Play};
@@ -75,10 +76,8 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
 /// Records: the pantry's bests, the tallies, then the challenges.
 pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let p = Progress::load(ctx);
-    let best = match Records::best(ctx, ID, progress::PANTRY_BOARD) {
-        Some(b) => format!("best score {b}"),
-        None => "no score yet".to_string(),
-    };
+    let best = pace::scored_bests(ctx, ID, progress::PANTRY_BOARD, "best score")
+        .unwrap_or_else(|| "no score yet".to_string());
     let deepest = match p.deepest {
         0 => "no pantry reached yet".to_string(),
         n => format!("deepest pantry {n}"),
@@ -108,12 +107,22 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         (events::BIN_NIGHT, events::BIN_NIGHT_BOARD),
     ]
     .into_iter()
-    .filter_map(|(name, board)| Records::best(ctx, ID, board).map(|b| format!("{name}, best {b}.")))
+    .filter_map(|(name, board)| {
+        pace::scored_bests(ctx, ID, board, "best").map(|b| format!("{name}, {b}."))
+    })
     .collect();
     if !events.is_empty() {
         pages.push(format!("Special nights. {}", events.join(" ")));
     }
     pages
+}
+
+/// The best score on an event's `board` and on its relaxed board.
+fn event_bests(ctx: &mut Ctx<Parlor>, board: &str) -> events::Bests {
+    (
+        pace::best(ctx, ID, board),
+        pace::best(ctx, ID, &Pace::Relaxed.board(board)),
+    )
 }
 
 /// The game on the shared title builder.
@@ -137,9 +146,13 @@ impl TitleGame for PantryMouse {
         sound::title_music(ctx);
     }
 
+    fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
+        vec![pace::row(ID)]
+    }
+
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
-        let label = match Records::best(ctx, ID, progress::PANTRY_BOARD) {
-            Some(b) => format!("{}, the pantry, best {b}", labels::PLAY),
+        let label = match pace::scored_bests(ctx, ID, progress::PANTRY_BOARD, "best") {
+            Some(b) => format!("{}, the pantry, {b}", labels::PLAY),
             None => format!("{}, the pantry", labels::PLAY),
         };
         let deepest = match Progress::load(ctx).deepest {
@@ -156,7 +169,7 @@ impl TitleGame for PantryMouse {
         ];
         let today = parlor_core::challenges::today(ctx);
         if events::leftovers_open(today) {
-            let help = events::leftovers_help(Records::best(ctx, ID, events::LEFTOVERS_BOARD));
+            let help = events::leftovers_help(event_bests(ctx, events::LEFTOVERS_BOARD));
             rows.push(
                 MenuItem::new(
                     events::LEFTOVERS,
@@ -166,7 +179,7 @@ impl TitleGame for PantryMouse {
             );
         } else {
             // Out of season: the row keeps its place and says when it opens.
-            let best = Records::best(ctx, ID, events::LEFTOVERS_BOARD);
+            let best = event_bests(ctx, events::LEFTOVERS_BOARD);
             rows.push(
                 MenuItem::new(
                     labels::locked(events::LEFTOVERS),
@@ -180,7 +193,7 @@ impl TitleGame for PantryMouse {
                 .help(events::leftovers_locked_help(today, best)),
             );
         }
-        let best = Records::best(ctx, ID, events::BIN_NIGHT_BOARD);
+        let best = event_bests(ctx, events::BIN_NIGHT_BOARD);
         if events::bin_night_open(today) {
             rows.push(
                 MenuItem::new(

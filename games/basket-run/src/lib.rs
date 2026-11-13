@@ -22,7 +22,7 @@ use hearken::screens::SettingsRow;
 use hearken::text::end_sentence;
 use hearken::Ctx;
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period};
 
 use crate::challenge::{ChallengeHost, ChallengesMenu};
 use crate::easter::Keepsakes;
@@ -110,14 +110,16 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
             end_sentence(&Challenges::summary(ctx, &challenge))
         })
         .collect();
-    vec![
+    let mut pages = vec![
         format!(
             "Records. The meadow: {meadow}, {} of {ROUNDS} rounds cleared. {endless}",
             progress.cleared.min(ROUNDS)
         ),
         Keepsakes::load(ctx).page(parlor_core::challenges::today(ctx)),
-        format!("Challenges. {}", challenges.join(" ")),
-    ]
+    ];
+    pages.extend(Keepsakes::load_at(ctx, Pace::Relaxed).relaxed_page());
+    pages.push(format!("Challenges. {}", challenges.join(" ")));
+    pages
 }
 
 /// The Easter morning row: open on Easter, the bunny's news in the run-up,
@@ -125,7 +127,11 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
 /// every date.
 fn easter_row(ctx: &mut Ctx<Parlor>) -> TitleRow<BasketRun> {
     let today = parlor_core::challenges::today(ctx);
-    let help = easter::row_help(today, Records::best(ctx, ID, "easter morning"));
+    let bests = (
+        pace::best(ctx, ID, "easter morning"),
+        pace::best(ctx, ID, &Pace::Relaxed.board("easter morning")),
+    );
+    let help = easter::row_help(today, bests);
     if easter::is_open(today) {
         return MenuItem::new(easter::NAME, |s: &mut Title, ctx: &mut Ctx<Parlor>| {
             start(ctx, s.game.launch(Mode::Easter), false)
@@ -240,7 +246,8 @@ impl TitleGame for BasketRun {
     }
 
     fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
-        vec![menus::settings::toggle(
+        vec![
+            menus::settings::toggle(
             "basket_run_call_outs",
             labels::call_outs,
             |ctx| !Progress::peek(ctx).quiet_calls,
@@ -257,7 +264,9 @@ impl TitleGame for BasketRun {
                 })
             },
             "When on, a voice names each drop and its lane as it starts to fall. Off for a whole run, you earn a tenth more on everything you bank.",
-        )]
+        ),
+            pace::row(ID),
+        ]
     }
 
     /// A player who has read the tutorial or cleared a round is not new.

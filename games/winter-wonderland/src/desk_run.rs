@@ -7,7 +7,7 @@
 
 use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, InputEvent, Sound, State};
-use parlor_core::{Pages, Parlor, ParlorAction, Rng};
+use parlor_core::{Pace, Pages, Parlor, ParlorAction, Rng};
 
 use crate::challenge::{self, Part};
 use crate::desk::{Shake, Stack, StackSpec, Wrapped, STACKS};
@@ -67,6 +67,10 @@ pub struct DeskRun {
     status_key: parlor_core::StatusKey,
     /// Run inside the tutorial: one stack, never results.
     pub lesson: bool,
+    /// The pace of the Gift Sort shifts before this stack, in the story or
+    /// the holiday double: the run's score goes on that pace's board. The
+    /// desk itself has no clock.
+    pace: Pace,
 }
 
 impl DeskRun {
@@ -103,7 +107,14 @@ impl DeskRun {
             time: 0.0,
             status_key: Default::default(),
             lesson: false,
+            pace: Pace::Normal,
         }
+    }
+
+    /// The stack that follows Gift Sort shifts played at `pace`.
+    pub fn at_pace(mut self, pace: Pace) -> DeskRun {
+        self.pace = pace;
+        self
     }
 
     fn make_stack(mode: &Mode, level: u32, rng: Rng) -> Stack {
@@ -483,7 +494,7 @@ impl DeskRun {
                 } else {
                     progress::STORY_BOARD
                 };
-                let line = progress::record(ctx, board, total);
+                let line = progress::record_at(ctx, board, self.pace, total);
                 let opened = !blizzard && Progress::mark(ctx, |p| &mut p.story);
                 let extra = if opened {
                     " The blizzard story is now open on the title."
@@ -511,7 +522,7 @@ impl DeskRun {
                 } else {
                     String::new()
                 };
-                let line = challenge::result_line(ctx, &plan, total);
+                let line = challenge::result_line(ctx, &plan, self.pace, total);
                 let pages = vec![format!(
                     "Challenge cleared. {}{bonus} {parts}{line}",
                     self.summary()
@@ -813,13 +824,14 @@ impl State<Parlor> for DeskRun {
     }
 }
 
-/// The story's bridge, then its stack at the desk.
-pub fn story_desk(blizzard: bool, gifts: u64, pages: Vec<String>) -> Pages {
+/// The story's bridge, then its stack at the desk, scored at the `pace`
+/// its Gift Sort shifts were played at.
+pub fn story_desk(blizzard: bool, gifts: u64, pages: Vec<String>, pace: Pace) -> Pages {
     Pages::new(pages).then(move |ctx| {
-        ctx.replace(DeskRun::new(
-            Mode::Story { blizzard, gifts },
-            Mode::story_stack(blizzard),
-        ))
+        ctx.replace(
+            DeskRun::new(Mode::Story { blizzard, gifts }, Mode::story_stack(blizzard))
+                .at_pace(pace),
+        )
     })
 }
 

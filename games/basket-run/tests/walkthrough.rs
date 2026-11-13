@@ -27,9 +27,20 @@ fn start() -> Headless<Parlor> {
     h
 }
 
-/// A fresh save's title, as it first opens.
+/// A fresh save's title, as it first opens. Quick, with the voice
+/// reported quiet each frame (see `step`), keeps the original timings these
+/// tests were written for.
 fn fresh() -> Headless<Parlor> {
-    Headless::new(data(), title_with_seed(SEED))
+    let mut h = Headless::new(data(), title_with_seed(SEED));
+    parlor_core::pace::set(&mut h.app.ctx, basket_run::ID, parlor_core::Pace::Quick);
+    h
+}
+
+/// One frame with the voice quiet, so the meadow runs as it did before it
+/// held for speech: `pacing.rs` tests the hold itself.
+fn step(h: &mut Headless<Parlor>, dt: f64) {
+    h.app.ctx.stop_speech();
+    h.frame(dt);
 }
 
 /// The run screen on top, nothing spoken yet.
@@ -153,7 +164,7 @@ fn play_frame(h: &mut Headless<Parlor>) {
             h.press(Key::Space);
         }
     }
-    h.frame(DT);
+    step(h, DT);
 }
 
 /// Plays until `done` says so, reading every page that opens on the way.
@@ -180,7 +191,7 @@ fn idle_until(h: &mut Headless<Parlor>, mut done: impl FnMut(&Headless<Parlor>) 
         if h.app.top_name() == "pages" {
             h.press(Key::Return);
         } else {
-            h.frame(DT);
+            step(h, DT);
         }
     }
     panic!("never finished");
@@ -270,7 +281,7 @@ fn the_tutorial_catches_and_banks_an_egg() {
             Some(_) if lanes.with(|s| s.run.caught_total > 0) => h.press(Key::Space),
             _ => {}
         }
-        h.frame(DT);
+        step(&mut h, DT);
     }
     assert!(spoke(&h, "Caught."), "{:?}", h.spoken());
     assert!(
@@ -285,7 +296,7 @@ fn the_tutorial_catches_and_banks_an_egg() {
 fn the_first_egg_is_explained_before_it_falls_and_the_meadow_waits() {
     let mut h = into_meadow();
     for _ in 0..((MAX_LEAD_IN + 2.0) / DT) as usize {
-        h.frame(DT);
+        step(&mut h, DT);
         if h.app.top_name() == "pages" {
             break;
         }
@@ -369,7 +380,7 @@ fn drops_sound_from_their_lane_falling_lower_and_louder() {
     let lane = view(&h).falling[0].1;
     let first = falling_loops(&h)[0].pos.unwrap();
     for _ in 0..30 {
-        h.frame(DT);
+        step(&mut h, DT);
     }
     let later = falling_loops(&h)[0].pos.unwrap();
     assert!(later.z < first.z, "it falls: {first:?} then {later:?}");
@@ -420,11 +431,14 @@ fn a_good_player_clears_round_one_and_hears_every_catch_and_bank() {
 }
 
 #[test]
-fn standing_still_fails_round_one_and_the_score_is_saved() {
+fn standing_still_fails_round_one_and_a_0_is_not_saved() {
     let mut h = into_meadow();
     idle_until(&mut h, |h| h.app.top_name() == "results");
     assert!(
-        spoke(&h, "banked, run over. Score 0, saved."),
+        spoke(
+            &h,
+            "banked, run over. Score 0, so nothing goes on the board."
+        ),
         "{:?}",
         h.spoken()
     );
@@ -434,13 +448,17 @@ fn standing_still_fails_round_one_and_the_score_is_saved() {
     assert_eq!(h.app.ctx.audio.bed(), None);
     assert_eq!(
         Records::best(&mut h.app.ctx, basket_run::ID, "meadow"),
-        Some(0)
+        None
     );
     h.press(Key::End);
     h.clear();
     h.press(Key::Return); // Back to the title
     assert_eq!(h.app.top_name(), "basket_run");
-    assert!(spoke(&h, "Play, the meadow, best 0."), "{:?}", h.spoken());
+    assert!(
+        spoke(&h, "Play, the meadow, no score yet."),
+        "{:?}",
+        h.spoken()
+    );
 }
 
 #[test]
@@ -455,13 +473,21 @@ fn a_better_run_sets_a_new_best_and_a_worse_one_does_not() {
     let best = Records::best(&mut h.app.ctx, basket_run::ID, "meadow").unwrap();
     assert!(best > 0);
     assert_eq!(h.app.ctx.audio.music(), Some(sound::LOSE));
-    // Play again, standing still.
+    // Play again, standing still: a 0 leaves the best alone.
     h.press(Key::Home);
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), "basket_run_run");
     h.clear();
     idle_until(&mut h, |h| h.app.top_name() == "results");
-    assert!(spoke(&h, &format!(", best {best}.")), "{:?}", h.spoken());
+    assert!(
+        spoke(&h, "Score 0, so nothing goes on the board."),
+        "{:?}",
+        h.spoken()
+    );
+    assert_eq!(
+        Records::best(&mut h.app.ctx, basket_run::ID, "meadow"),
+        Some(best)
+    );
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), "basket_run");
     assert!(spoke(&h, &format!("Play, the meadow, best {best}.")));
@@ -478,7 +504,7 @@ fn pause_holds_the_meadow_and_returns_to_the_title() {
     assert_eq!(h.app.top_name(), "pause");
     assert!(falling_loops(&h).iter().all(|s| s.paused));
     for _ in 0..20 {
-        h.frame(DT);
+        step(&mut h, DT);
     }
     h.clear();
     h.press(Key::Return); // Resume
@@ -539,7 +565,7 @@ fn drop_calls_can_be_turned_off() {
     h.press(Key::Return);
     h.clear();
     for _ in 0..400 {
-        h.frame(DT);
+        step(&mut h, DT);
         if h.app.top_name() == "pages" {
             h.press(Key::Return);
         }
@@ -560,7 +586,7 @@ fn the_sound_check_drops_each_kind_and_tours_the_lanes() {
     h.press(Key::Return);
     assert!(played(&h, sound::falling(Kind::Egg)));
     for _ in 0..60 {
-        h.frame(DT);
+        step(&mut h, DT);
     }
     assert!(played(&h, sound::CATCH_EGG), "it lands");
     assert!(falling_loops(&h).is_empty());
@@ -569,7 +595,7 @@ fn the_sound_check_drops_each_kind_and_tours_the_lanes() {
     h.press(Key::Return);
     assert!(played(&h, sound::falling(Kind::Mud)));
     for _ in 0..60 {
-        h.frame(DT);
+        step(&mut h, DT);
     }
     assert!(played(&h, sound::SPLAT));
     h.press(Key::Down);
@@ -577,7 +603,7 @@ fn the_sound_check_drops_each_kind_and_tours_the_lanes() {
     h.clear();
     h.press(Key::Return); // Lanes, left to right
     for _ in 0..140 {
-        h.frame(DT);
+        step(&mut h, DT);
     }
     assert!(h.spoken().is_empty());
     assert_eq!(
@@ -630,7 +656,7 @@ fn practice_explains_every_kind_and_costs_nothing() {
             h.clear();
             h.press(Key::Return);
         } else {
-            h.frame(DT);
+            step(&mut h, DT);
         }
     }
     assert!(intros >= 3, "{intros} kinds explained");
@@ -745,7 +771,7 @@ fn nothing_falls_until_the_round_announcement_has_been_heard() {
     assert!(wait >= speech_secs(&intro).min(basket_run::run::MAX_LEAD_IN));
     let mut t = 0.0;
     while view(&h).phase == "ready" {
-        h.frame(DT);
+        step(&mut h, DT);
         t += DT;
     }
     assert!(t + DT >= wait, "the lead-in lasted {t}s of {wait}s");
@@ -792,7 +818,7 @@ fn a_page_in_the_middle_of_play_is_not_skipped_by_space_or_the_arrows() {
     let mut h = into_meadow();
     h.press(Key::Space);
     while h.app.top_name() != "pages" {
-        h.frame(DT);
+        step(&mut h, DT);
     }
     assert!(spoke(&h, "Your first egg:"));
     for key in [Key::Space, Key::Right, Key::Tab, Key::S] {
@@ -880,7 +906,7 @@ fn hoard_frame(h: &mut Headless<Parlor>) {
             h.press(Key::Right);
         }
     }
-    h.frame(DT);
+    step(h, DT);
 }
 
 #[test]
@@ -1183,7 +1209,7 @@ fn a_festival_pattern_call_silences_its_own_drop_calls() {
     let at = h.spoken().len();
     // The pattern's own drops start within its span; none is called.
     for _ in 0..40 {
-        h.frame(DT);
+        step(&mut h, DT);
     }
     let after: Vec<String> = h.spoken()[at..].to_vec();
     assert!(

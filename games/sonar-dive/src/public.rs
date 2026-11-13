@@ -14,7 +14,9 @@ use hearken::menu::MenuItem;
 use hearken::screens::SettingsRow;
 use hearken::Ctx;
 use parlor_core::menus::{self as shared, labels, TitleGame, TitleRow};
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Records, Rng};
+use parlor_core::{
+    pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period, Records, Rng,
+};
 
 use crate::menus::{ChallengesMenu, SoundCheck};
 use crate::rules::{Config, Expedition};
@@ -108,19 +110,28 @@ pub(crate) fn new_dive(mode: Mode) -> DiveScreen {
     DiveScreen::new(Expedition::new(config_for(mode), run_rng()), mode, None)
 }
 
-fn haul(best: Option<u64>) -> String {
-    match best {
-        Some(b) => format!("best haul {b} coins"),
-        None => "no haul banked yet".to_string(),
-    }
+/// "best haul 300 coins, relaxed best haul 180 coins", from board `base`
+/// and its relaxed board, or "no haul banked yet".
+fn haul(ctx: &mut Ctx<Parlor>, base: &str) -> String {
+    let (normal, relaxed) = hauls(ctx, base);
+    pace::both("best haul", normal, relaxed).unwrap_or_else(|| "no haul banked yet".to_string())
+}
+
+/// The best haul on board `base` and on its relaxed board, as "300 coins".
+fn hauls(ctx: &mut Ctx<Parlor>, base: &str) -> (Option<String>, Option<String>) {
+    let coins = |b: Option<u64>| b.map(|b| format!("{b} coins"));
+    (
+        coins(Records::best(ctx, ID, base)),
+        coins(Records::best(ctx, ID, &Pace::Relaxed.board(base))),
+    )
 }
 
 /// Records: both best hauls, how deep you have been, and the challenges.
 pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let saved = Saved::load(ctx);
-    let best = haul(Records::best(ctx, ID, "best"));
+    let best = haul(ctx, "best");
     let deep = if saved.deep_unlocked() {
-        haul(Records::best(ctx, ID, "deep"))
+        haul(ctx, "deep")
     } else {
         format!("locked until you reach dive {DEEP_UNLOCK}")
     };
@@ -181,11 +192,11 @@ impl TitleGame for SonarDive {
 
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
         let saved = Saved::load(ctx);
-        let best = Records::best(ctx, ID, "best");
+        let best = haul(ctx, "best");
         let deep = if saved.deep_unlocked() {
-            let deep_best = Records::best(ctx, ID, "deep");
+            let deep_best = haul(ctx, "deep");
             MenuItem::new(
-                format!("Deep start at dive {DEEP_UNLOCK}, {}", haul(deep_best)),
+                format!("Deep start at dive {DEEP_UNLOCK}, {deep_best}"),
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| start(ctx, Mode::Deep),
             )
             .help(format!("An expedition that begins {} down, where treasure is worth more, mines are thicker and currents stronger.", screens::depth(120.0)))
@@ -205,7 +216,7 @@ impl TitleGame for SonarDive {
         };
         let mut rows = vec![
             MenuItem::new(
-                format!("{}, expedition, {}", labels::PLAY, haul(best)),
+                format!("{}, expedition, {best}", labels::PLAY),
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| start(ctx, Mode::Expedition),
             )
             .help(
@@ -215,10 +226,11 @@ impl TitleGame for SonarDive {
         ];
         let today = parlor_core::challenges::today(ctx);
         if events::glow_open(today) {
-            let best = match Records::best(ctx, ID, events::GLOW_BOARD) {
-                Some(b) => format!(" Your best haul is {b} coins."),
-                None => String::new(),
-            };
+            let (normal, relaxed) = hauls(ctx, events::GLOW_BOARD);
+            let mut best = normal.map_or(String::new(), |b| format!(" Your best haul is {b}."));
+            if let Some(r) = relaxed {
+                best.push_str(&format!(" Your relaxed best haul is {r}."));
+            }
             rows.push(
                 MenuItem::new(
                     events::GLOW_DIVE,
@@ -272,6 +284,7 @@ impl TitleGame for SonarDive {
             "When on, each ping's nearest echoes are also spoken, with distance and clock direction.",
         ),
             parlor_core::units::row(),
+            pace::row(ID),
         ]
     }
 
