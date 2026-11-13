@@ -142,8 +142,13 @@ pub struct Briefing {
     at: Option<usize>,
     /// What the last cue started, stopped when another plays.
     playing: Vec<Sound>,
-    /// The music that was playing on entering, put back on Escape.
+    /// The music and ambience bed playing on entering, put back on
+    /// Escape.
     music: Option<String>,
+    bed: Option<String>,
+    /// Shown in place of a results menu: its sting is not put back on
+    /// Escape, since the screen beneath starts its own music.
+    in_place: bool,
 }
 
 /// Whether briefings are on: "Briefing before play" in Settings, on unless
@@ -234,6 +239,8 @@ impl Briefing {
             at: None,
             playing: Vec::new(),
             music: None,
+            bed: None,
+            in_place: false,
         }
     }
 
@@ -297,6 +304,17 @@ impl Briefing {
             self.phase = Phase::Skipping;
         }
         ctx.push(self);
+    }
+
+    /// [`Briefing::show`] in place of the screen on top, such as a results
+    /// menu that goes on to a different run: the briefing takes its place,
+    /// so Escape goes back to the screen beneath it.
+    pub fn show_in_place(mut self, ctx: &mut Ctx<Parlor>) {
+        if Records::load::<bool>(ctx, OFF_KEY) {
+            self.phase = Phase::Skipping;
+        }
+        self.in_place = true;
+        ctx.replace(self);
     }
 
     fn learned(ctx: &mut Ctx<Parlor>) -> bool {
@@ -375,6 +393,9 @@ impl Briefing {
         if let Some(music) = self.music.take() {
             ctx.audio.play_music(Some(&music), true);
         }
+        if let Some(bed) = self.bed.take() {
+            ctx.audio.set_bed(Some(&bed));
+        }
         ctx.play_ui(UiSound::Back);
         ctx.pop();
     }
@@ -394,9 +415,14 @@ impl State<Parlor> for Briefing {
             self.run(ctx);
             return;
         }
-        // The cues play with the music stopped, as in a sound check.
-        self.music = ctx.audio.music().map(str::to_string);
+        // The cues play with the music and bed stopped, as in a sound
+        // check.
+        if !self.in_place {
+            self.music = ctx.audio.music().map(str::to_string);
+            self.bed = ctx.audio.bed().map(str::to_string);
+        }
         ctx.audio.play_music(None, false);
+        ctx.audio.set_bed(None);
         self.speak(ctx);
     }
 
@@ -658,6 +684,66 @@ mod tests {
             ]
         );
         assert_eq!(heard[1].1, KEYS[1]);
+    }
+
+    #[test]
+    fn a_looping_cue_stops_on_escape_and_on_start() {
+        for key in [Key::Escape, Key::Return] {
+            let (mut h, _) = open();
+            h.press(Key::Num3);
+            settle(&mut h);
+            let live = |h: &Headless<Parlor>| {
+                h.app
+                    .ctx
+                    .audio
+                    .live()
+                    .iter()
+                    .any(|l| l.key == KEYS[2] && l.looping)
+            };
+            assert!(live(&h), "the door bell loops");
+            h.press(key);
+            h.frame(1.0);
+            assert!(!live(&h), "{key:?} stops the loop");
+        }
+    }
+
+    #[test]
+    fn music_and_bed_stop_while_open_and_come_back_on_escape() {
+        let ran = Rc::new(Cell::new(false));
+        let mut h = Headless::new(Default::default(), Base);
+        h.app.ctx.audio.play_music(Some("test/music"), true);
+        h.app.ctx.audio.set_bed(Some("test/bed"));
+        h.frame(0.0);
+        briefing(Rc::clone(&ran)).show(&mut h.app.ctx);
+        h.frame(1.0);
+        assert_eq!(h.app.ctx.audio.music(), None);
+        assert_eq!(h.app.ctx.audio.bed(), None);
+        h.press(Key::Escape);
+        h.frame(0.0);
+        assert_eq!(h.app.ctx.audio.music(), Some("test/music"));
+        assert_eq!(h.app.ctx.audio.bed(), Some("test/bed"));
+    }
+
+    #[test]
+    fn shown_in_place_it_takes_the_top_screens_place() {
+        struct Results;
+        impl State<Parlor> for Results {
+            fn name(&self) -> &'static str {
+                "results"
+            }
+            fn help(&self, _ctx: &Ctx<Parlor>) -> String {
+                String::new()
+            }
+        }
+        let mut h = Headless::new(Default::default(), Base);
+        h.app.ctx.push(Results);
+        h.frame(0.0);
+        briefing(Rc::new(Cell::new(false))).show_in_place(&mut h.app.ctx);
+        h.frame(0.0);
+        assert_eq!(h.app.top_name(), NAME);
+        h.press(Key::Escape);
+        h.frame(0.0);
+        assert_eq!(h.app.top_name(), "base");
     }
 
     #[test]

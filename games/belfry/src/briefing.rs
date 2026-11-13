@@ -19,7 +19,7 @@ pub fn text(mode: Mode) -> String {
         "No bell comes twice."
     };
     let mut line = format!(
-        "{}. Ring rows to find the secret peal of {} bells from {}, in {} rows. {twice}",
+        "{}. Find the secret peal of {} bells from {} in {} rows. {twice}",
         mode.name(),
         r.places,
         r.bells,

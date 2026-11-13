@@ -7,7 +7,7 @@
 use hearken::text::sentence_start;
 use hearken::Ctx;
 use parlor_core::briefing::{Briefing, Cue};
-use parlor_core::Parlor;
+use parlor_core::{Parlor, ParlorAction};
 
 use crate::dance::{DanceScreen, Launch, Mode};
 use crate::rules::{Finale, Street};
@@ -18,28 +18,28 @@ fn gongs(street: &Street) -> bool {
     street.gong_every > 0 || street.finale != Finale::Calm
 }
 
-/// What the street is, in a sentence or two.
-pub fn text(mode: Mode) -> String {
+/// What the street is, one short sentence a fact, in help.md's words.
+pub fn text(ctx: &Ctx<Parlor>, mode: Mode) -> String {
     let street = mode.street();
-    let mut parts = vec!["keep your head in the pearl's lane on every beat"];
+    let mut lines = vec![
+        format!("{}.", mode.title()),
+        "Keep your head in the pearl's lane on every beat.".to_string(),
+    ];
     if gongs(&street) {
-        parts.push("rear up on the gong");
+        let p = sentence_start(&ctx.control_name(ParlorAction::Primary));
+        lines.push(format!("{p} rears up as the gong strikes."));
     }
     if street.envelope_chance > 0.0 {
-        parts.push(if street.calm() {
-            "catch the lanterns"
+        lines.push(if street.calm() {
+            "Catch the lanterns.".to_string()
         } else {
-            "catch red envelopes"
+            "Catch red envelopes.".to_string()
         });
     }
     if street.firecracker_chance > 0.0 && !street.calm() {
-        parts.push("avoid firecrackers");
+        lines.push("Avoid firecrackers.".to_string());
     }
-    let todo = match parts.split_last() {
-        Some((last, rest)) if !rest.is_empty() => format!("{}, and {last}", rest.join(", ")),
-        _ => parts.concat(),
-    };
-    format!("{}. {}.", mode.title(), sentence_start(&todo))
+    lines.join(" ")
 }
 
 /// The sound check's cues this street plays, in the sound check's order.
@@ -71,8 +71,8 @@ pub fn cues(mode: Mode) -> Vec<Cue> {
 }
 
 /// The briefing for `mode`, which starts the street on Enter.
-pub fn briefing(mode: Mode) -> Briefing {
-    Briefing::new(text(mode))
+pub fn briefing(ctx: &Ctx<Parlor>, mode: Mode) -> Briefing {
+    Briefing::new(text(ctx, mode))
         .cues(cues(mode))
         .then(move |ctx| ctx.replace(DanceScreen::new(Launch::new(mode))))
 }
@@ -80,5 +80,5 @@ pub fn briefing(mode: Mode) -> Briefing {
 /// Opens `mode`'s briefing, or starts the street at once with briefings
 /// off.
 pub fn open(ctx: &mut Ctx<Parlor>, mode: Mode) {
-    briefing(mode).show(ctx);
+    briefing(ctx, mode).show(ctx);
 }

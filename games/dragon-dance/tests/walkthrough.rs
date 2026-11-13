@@ -283,10 +283,17 @@ fn a_whole_street_danced_by_the_keys_earns_stars_and_opens_the_next() {
     assert!(progress.opened(2));
     assert_eq!(progress.danced, 1);
     assert!(Records::best(&mut h.app.ctx, ID, "street 1").is_some());
-    // Next street goes straight on.
+    // Next street opens its own briefing in place of the results, so
+    // Escape there goes back to the title.
+    h.clear();
     h.press(Key::Return);
+    assert_eq!(h.app.top_name(), parlor_core::briefing::NAME);
+    assert!(spoke(&h, "Street 2: Tea House Lane."), "{:?}", h.spoken());
+    h.press(Key::Escape);
+    assert_eq!(h.app.top_name(), TITLE_NAME);
+    goto(&mut h, "Play, street 2: Tea House Lane");
+    start(&mut h);
     assert_eq!(h.app.top_name(), DANCE_NAME);
-    assert!(spoke(&h, "Street 2: Tea House Lane."));
     h.press(Key::Escape);
     goto(&mut h, "Back to the title");
     h.press(Key::Return);
@@ -513,9 +520,12 @@ fn a_streets_briefing_plays_the_cues_it_uses() {
     h.clear();
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), parlor_core::briefing::NAME);
+    h.frame(1.0);
+    assert_eq!(h.app.ctx.audio.music(), None, "no music under the briefing");
+    assert_eq!(h.app.ctx.audio.bed(), None, "no bed under the briefing");
     assert_eq!(
         h.spoken(),
-        ["Street 1: Market Row. Keep your head in the pearl's lane on every beat, rear up on the gong, and catch red envelopes. 1 to 7 play the sounds. Enter starts."]
+        ["Street 1: Market Row. Keep your head in the pearl's lane on every beat. Space rears up as the gong strikes. Catch red envelopes. 1 to 7 play the sounds. Enter starts."]
     );
     h.clear();
     h.press(Key::Num3);
