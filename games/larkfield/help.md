@@ -4,7 +4,7 @@ Larkfield is an empty hamlet by a river, and you are its first farmer. Dig and s
 
 ## Walking the lane
 
-Larkfield is one lane. From left to right: the gate, the cottages, the green, the fields, the yard, the river and the woods. Left and Right walk the lane. Up goes into the place you are beside, and Down comes back out to the lane. Inside a place, Left and Right move between its spots, such as the hen house and the goat pen at the cottages. Each step tells you where you are.
+Larkfield is one lane. From left to right: the gate, the cottages, the green, the fields, the yard, the river and the woods. Left and Right walk the lane. Up goes into the place you are beside, and Down comes back out to the lane. Inside a place, Left and Right move between its spots, such as the hen house and the goat pen at the cottages. Each step names where you are.
 
 Sounds come from their positions relative to where you stand. Sound check, on the title menu, lets you learn the footsteps, fishing cues, dangers and settlers' instruments.
 
@@ -16,11 +16,11 @@ Each night, a watered crop with no weeds makes one day of growth. Rain waters ev
 
 ## Settlers
 
-Settlers arrive at the gate. Go to the gate and press Enter to hear who they are, then welcome them or send them on. Each one was something before, such as a baker or a sailor, and is best at that trade's work. Each has two traits, such as early riser or sweet tooth, which change how they work and what cheers them.
+Settlers arrive at the gate. Go to the gate and press Enter to meet them, then welcome them or send them on. Each one was something before, such as a baker or a sailor, and is best at that trade's work. Each has two traits, such as early riser or sweet tooth, which change how they work and what cheers them.
 
 Settlers choose their own work: farming, cooking, building, crafting, animals, fishing, mending or music. J opens the job board, where Left and Right give a settler a first job. When there is none of that work, they find something else.
 
-Enter talks to whoever is where you stand. A word cheers someone up, and they tell you what they want. P tells you about everyone: their traits, what they are best at, how they feel and why.
+Enter talks to whoever is where you stand. A word cheers someone up, and they tell you what they want. P describes everyone: their traits, what they are best at, how they feel and why.
 
 ## Moods and wobbles
 
@@ -32,7 +32,7 @@ At the steady and lively paces, a settler who stays glum much longer may leave f
 
 ## Dreams and keepsakes
 
-Every settler has a dream in three steps, such as a proper oven or a boat on the river. Each step waits for something: a building, goods in the larder, enough people, a festival, or a cheerful day. When a step comes true, you hear it at bedtime. When the third does, they leave a keepsake on your shelf. The keepsake shelf is on the title menu.
+Every settler has a dream in three steps, such as a proper oven or a boat on the river. Each step waits for something: a building, goods in the larder, enough people, a festival, or a cheerful day. When a step comes true, it is in the bedtime news. When the third does, they leave a keepsake on your shelf. The keepsake shelf is on the title menu.
 
 ## Buildings
 
@@ -102,7 +102,7 @@ On the third Tuesday of every month there is a barge fair: the barge comes every
 
 ## Settings
 
-Pace sets how busy the almanac is, whether there are dangers, and whether glum settlers leave. Day length sets how long a day lasts from the morning to the supper bell. The settlers' tune can be turned off, leaving only the birds and the river. Work from along the lane can be turned off too, so you only hear work where you stand.
+Pace sets how busy the almanac is, whether there are dangers, and whether glum settlers leave. Day length sets how long a day lasts from the morning to the supper bell. The settlers' tune can be turned off, leaving only the birds and the river. Work from along the lane can be turned off too, so only the work where you stand plays.
 
 ## Controls
 

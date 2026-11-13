@@ -424,7 +424,7 @@ impl State<Parlor> for CountScreen {
         let now = if self.count.phase == CountPhase::Asking {
             "Flock passed. How many birds?"
         } else {
-            "Listen for the next flock."
+            "The next flock is on its way."
         };
         format!("{now} {}", Self::controls(ctx))
     }

@@ -237,7 +237,7 @@ impl TitleGame for SonarDive {
                     |_s: &mut Title, ctx: &mut Ctx<Parlor>| start(ctx, Mode::Glow),
                 )
                 .help(format!(
-                    "An expedition on tonight's glowing sea, under the new moon, the same for every player. A glow pearl lies on every dive, with an echo of its own.{best}"
+                    "An expedition on tonight's glowing sea, under the new moon, the same for every player. A glow pearl lies on every dive.{best}"
                 )),
             );
         } else {
@@ -277,7 +277,7 @@ impl TitleGame for SonarDive {
                 Some(if on {
                     "Spoken call-outs: on. Each ping's nearest echoes are spoken."
                 } else {
-                    "Spoken call-outs: off. You hear the echoes alone."
+                    "Spoken call-outs: off. The echoes play without names."
                 }
                 .to_string())
             },

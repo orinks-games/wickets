@@ -45,7 +45,7 @@ fn item(label: String, key: &'static str, pos: Option<Vec3>) -> MenuItem<SoundCh
         };
     })
     .select_sound(None)
-    .help("Press Enter to hear it.")
+    .help("Enter plays it.")
 }
 
 impl Menu for SoundCheck {

@@ -1,6 +1,6 @@
 ## About the game
 
-Doctor Volt's newest monster sat up on the slab and started to dance, and by midnight the whole graveyard wants to learn it. You lead the dance. The graveyard band plays, and each monster comes up with its own sound one beat before its move. Dance the move on the beat with that monster's key. Moves close to the beat score more. A song always plays to its end, and your score is what you danced.
+Doctor Volt's newest monster sat up on the slab and started to dance, and by midnight the whole graveyard wants to learn it. You lead the dance. The graveyard band plays, and each monster comes up one beat before its move. Dance the move on the beat with that monster's key. Moves close to the beat score more. A song always plays to its end, and your score is what you danced.
 
 ## A Halloween special
 
@@ -8,7 +8,7 @@ Graveyard Shuffle turns up in the Seasonal games around Halloween, from October 
 
 Start a dance or a practice in that time and the game is yours to keep, even if you leave early. After the season it moves to the Action games. Earlier play counts too, and stars still open later nights. If you never play it, it leaves the lists until next Halloween.
 
-Night 4, Doctor Volt's laboratory, is where the dance began, and it only opens around Halloween. The rest of the year, the laboratory and its three songs in the practice room wait for October 17.
+Night 4, Doctor Volt's laboratory, is where the dance began, and it only opens around Halloween. The rest of the year, the laboratory and its three songs in the practice room are locked until October 17.
 
 ## The monsters and their moves
 
@@ -24,7 +24,7 @@ The werewolf's move is the howl. Dance it with the Right arrow.
 
 The ghost's move is the float. Dance it with Tab. The werewolf and the ghost come on night 3.
 
-The first time each monster comes up in a dance, your screen reader names it and its key. A night that brings a new monster names it before the dance instead. After that, it is not named again, and F1 lists the moves. Before a dance starts, H plays every monster with its move, and each move key plays its own monster, so you can learn them with nothing at stake.
+The first time each monster comes up in a dance, the game names it and its key. A night that brings a new monster names it before the dance instead. After that, it is not named again, and F1 lists the moves. Before a dance starts, H plays every monster with its move, and each move key plays its own monster.
 
 ## The beat and timing
 
@@ -60,7 +60,7 @@ Night 1: The Graveyard Warm-up, Boneyard Boogie and The Shallow Grave Shuffle. N
 
 ## The practice room
 
-The practice room plays one song of any night you have opened. When a move's beat comes, the song waits for you: the music holds, and the monster and its key are named. Dance the move and the song goes on. A wrong move names the right key. Nothing is scored.
+The practice room plays one song of any night you have opened. When a move's beat comes, the music holds, and the monster and its key are named. Dance the move and the song goes on. A wrong move names the right key. Nothing is scored.
 
 ## Challenges
 
@@ -76,7 +76,7 @@ Your score is every point and bonus you earn. Leave the challenge, on the pause 
 
 ## Spoken call-outs
 
-Each monster is a sound that plays with the music. With spoken call-outs on, your screen reader also names each monster as it comes up. It is off at the start. Switch it in Settings, from the title or the pause menu.
+With spoken call-outs on, the game names each monster as it comes up. It is off at the start. Switch it in Settings, from the title or the pause menu.
 
 ## Pausing
 

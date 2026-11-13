@@ -137,7 +137,7 @@ impl TuneSelect {
     pub fn new() -> TuneSelect {
         TuneSelect {
             menu: MenuCore::new("Practice room").with_intro_help(
-                "Up and Down choose a tune, Enter practises it, Escape goes back. The tune waits at each step until you dance it.",
+                "Up and Down choose a tune, Enter practises it, Escape goes back. The music holds at each step until you dance it.",
             ),
         }
     }

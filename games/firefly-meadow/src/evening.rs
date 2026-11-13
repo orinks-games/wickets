@@ -836,7 +836,7 @@ impl State<Parlor> for EveningScreen {
 
     fn help(&self, ctx: &Ctx<Parlor>) -> String {
         let mut now = format!(
-            "{} Walk toward a firefly's tone, and press {} while it glows. A firefly that flashes more than once needs every flash of one blink answered.",
+            "{} Walk toward a firefly, and press {} while it glows. A firefly that flashes more than once needs every flash of one blink answered.",
             self.status(),
             ctx.control_name(ParlorAction::Primary)
         );

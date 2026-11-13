@@ -165,10 +165,10 @@ pub fn row_help(event: Event, date: Date, place: &str, (best, relaxed): Bests) -
     let left = left_words(event, date);
     match event {
         Event::KingTide => format!(
-            "King tide. The sea is far out today, so two extra pools open at each end of {place}, on a spring tide. Curlews call from the wet sand. Scored on a board of its own.{best} King tides come within a day of a new or full moon, from November to February.{left}"
+            "King tide. The sea is far out today, so two extra pools open at each end of {place}, on a spring tide. Scored on a board of its own.{best} King tides come within a day of a new or full moon, from November to February.{left}"
         ),
         Event::Moonlit => format!(
-            "A night trip to {place} under {}. The gulls sleep and a night heron calls. Moon jellyfish and baby octopuses can come out whatever the weather. Scored on a board of its own.{best} Moonlit pools open on every full moon.{left}",
+            "A night trip to {place} under {}. Moon jellyfish and baby octopuses can come out whatever the weather. Scored on a board of its own.{best} Moonlit pools open on every full moon.{left}",
             moon_name(date)
         ),
     }

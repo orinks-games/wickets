@@ -80,7 +80,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let b2 = Rc::clone(&brew);
     let kettle = Step::new(
         format!(
-            "{} puts the kettle on. It sings a low rumble, then small bubbles, a soft hiss, a rolling hiss, and a whistle at the boil. Pour between the bubbles and the hiss: press {p} again then. {} says the heat.",
+            "{} puts the kettle on, and it heats toward the boil. Sencha wants water at 75 degrees, well before the boil: press {p} again then. {} says the heat.",
             sentence_start(&p),
             sentence_start(&s)
         ),
@@ -144,7 +144,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let b2 = Rc::clone(&brew);
     let steep = Step::new(
         format!(
-            "A soft clock ticks once a second. Sencha wants a 6 second steep. {} breathes in the steam to hear how strong it is, and {p} lifts the leaves out.",
+            "Sencha wants a 6 second steep. {} breathes in the steam to check how strong it is, and {p} lifts the leaves out.",
             sentence_start(&t)
         ),
         move |ctx, a| {
@@ -216,6 +216,6 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     .step(kettle)
     .step(steep)
     .step(hint)
-    .outro("Guests come in with a door bell and say what they would like. Play opens the tea house, and Practice brewing is a quiet place to learn the kettle.")
+    .outro("Guests come in and say what they would like. Play opens the tea house, and Practice brewing is a quiet place to learn the kettle.")
     .on_exit(move |ctx| b.borrow_mut().song.stop(ctx))
 }

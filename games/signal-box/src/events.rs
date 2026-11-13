@@ -70,11 +70,9 @@ pub fn event(date: Date) -> Option<Happening> {
 }
 
 /// The thirteenth train in words, before the shift and for S, H and F1.
-/// Its sound is named here, before the line opens, never mid-shift.
 pub const THIRTEENTH_WORDS: &str =
-    "Friday the 13th: the thirteenth train runs tonight. Once you answer its call, it passes with a long, ghostly whistle instead of the rush.";
+    "Friday the 13th: the thirteenth train runs tonight.";
 
-/// The special in words, before the shift and for S, H and F1. Its
-/// sound is named here, before the line opens, never mid-shift.
+/// The special in words, before the shift and for S, H and F1.
 pub const SPECIAL_WORDS: &str =
-    "Every fifth train is the steam special: 3 points, and it passes with steam chuffs and a whistle instead of the rush.";
+    "Every fifth train is the steam special: 3 points.";

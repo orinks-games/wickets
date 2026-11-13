@@ -259,7 +259,7 @@ impl TitleGame for LanternLake {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "Daily, weekly and monthly lakes with gentle goals, the same for every player. {}",
+            "Daily, weekly and monthly lakes, the same for every player. {}",
             daily.resets()
         )
     }

@@ -56,7 +56,7 @@ Records keeps your best score, the deepest pantry you reached, your tallies, and
 
 ## The practice pantry
 
-The practice pantry has only the ginger cat, moving slowly, and a catch costs no whisker. Use it to learn the maze and the sounds.
+The practice pantry has only the ginger cat, moving slowly, and a catch costs no whisker. Use it to learn the maze and the cats.
 
 ## Challenges
 

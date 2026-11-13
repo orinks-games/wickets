@@ -50,7 +50,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, kitchen: Live<Kitchen>) -> Lesson {
     );
 
     let start_text = format!(
-        "The recipe is called out as you cook, and the called station knocks softly. {} and {r} move there; {p} starts the dish. Starting before its call is a fumble. Start the cranberries on the left burner.",
+        "The recipe calls out each dish as you cook. {} and {r} move to its station; {p} starts the dish. Starting before its call is a fumble. Start the cranberries on the left burner.",
         sentence_start(&l)
     );
     let start_hold = hold_for(&kitchen, &start_text);
@@ -63,7 +63,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, kitchen: Live<Kitchen>) -> Lesson {
         .start(start_hold);
 
     let tend_text = format!(
-        "When the simmer turns fast and spitting, press {p} to stir. Act on that change for a perfect. Stir twice, then take it off the heat."
+        "When the sauce bubbles up, press {p} to stir. Stir at once for a perfect. Stir twice, then take it off the heat."
     );
     let tend_hold = hold_for(&kitchen, &tend_text);
     let tend = kitchen
@@ -88,7 +88,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, kitchen: Live<Kitchen>) -> Lesson {
     .step(start)
     .step(tend)
     .outro(format!(
-        "Later courses use more stations: {l} and {r} move between them, and each has its own cooking sound. {} says what needs you most. Play starts course 1.",
+        "Later courses use more stations: {l} and {r} move between them. {} says what needs you most. Play starts course 1.",
         sentence_start(&h)
     ))
 }

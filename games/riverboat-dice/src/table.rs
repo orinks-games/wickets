@@ -162,7 +162,7 @@ impl TableScreen {
         let rep = ctx.control_name(ParlorAction::Repeat);
         let h = ctx.control_name(ParlorAction::Hint);
         format!(
-            "{} stays in for a roll, {t} banks. {l} and {r} hear each player, {u} the odds, {d} the night totals. {s} gives the status, twice for more, {rep} the last roll, {h} a hint. F1 helps, Escape pauses.",
+            "{} stays in for a roll, {t} banks. {l} and {r} name each player, {u} the odds, {d} the night totals. {s} gives the status, twice for more, {rep} the last roll, {h} a hint. F1 helps, Escape pauses.",
             sentence_start(&p),
             l = sentence_start(&l),
         )

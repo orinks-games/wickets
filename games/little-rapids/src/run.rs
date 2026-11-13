@@ -846,7 +846,7 @@ pub fn controls_text(ctx: &Ctx<Parlor>) -> String {
     let hint = ctx.control_name(ParlorAction::Hint);
     let repeat = ctx.control_name(ParlorAction::Repeat);
     format!(
-        "Hold {left} or {right} to paddle that way, and Left Shift or Right Shift for one hard stroke. Catch things as they reach you, steer clear of stones and ducks, and ride the hiss of the current for points. {} gives your combo, and again for your score. {} says where the current is and what comes next. {} repeats the last line. Escape pauses.",
+        "Hold {left} or {right} to paddle that way, and Left Shift or Right Shift for one hard stroke. Catch things as they reach you, steer clear of stones and ducks, and ride the current for points. {} gives your combo, and again for your score. {} says where the current is and what comes next. {} repeats the last line. Escape pauses.",
         sentence_start(&status),
         sentence_start(&hint),
         sentence_start(&repeat),

@@ -86,7 +86,7 @@ pub fn controls_pages(ctx: &Ctx<Parlor>) -> Vec<String> {
             sentence_start(&k.priority)
         ),
         format!(
-            "{} speaks the corridor summary. {} repeats the last call-out. {} says what is coming next and what to do about it. Escape opens the pause menu. F1 gives help for the screen you are on.",
+            "{} speaks the corridor summary. {} repeats the last call-out. {} says what is coming next and what to do about it. Escape opens the pause menu. F1 gives help for the current screen.",
             sentence_start(&status),
             sentence_start(&repeat),
             sentence_start(&hint)
@@ -146,7 +146,7 @@ pub fn launch(ctx: &mut Ctx<Parlor>, launch: Launch, replace: bool) {
             ));
         }
         Mode::Tutorial => pages.push(
-            "Guided run: each new sound is explained as it comes, and the run pauses while you read."
+            "Guided run: each new kind of traffic is explained as it comes, and the run pauses while you read."
                 .to_string(),
         ),
         _ => {
@@ -208,13 +208,13 @@ pub fn launch(ctx: &mut Ctx<Parlor>, launch: Launch, replace: bool) {
 /// The text of each tutorial step, the original's with the player's keys.
 fn tutorial_text(step: u8, k: &Keys) -> String {
     let text = match step {
-        1 => format!("This low loop is your skimmer in motion. {} or {} shifts lanes, with a magnetic snap. Your lane changes where incoming sounds are placed.", sentence_start(&k.left), k.right),
+        1 => format!("Your skimmer is in motion. {} or {} shifts lanes. Everything coming is placed by its lane, relative to yours.", sentence_start(&k.left), k.right),
         2 => "Flow vehicle in the center lane. Move into its lane before it arrives to score and reduce stress.".to_string(),
         3 => "Debris in the center lane, your lane. Shift out of its lane before it arrives.".to_string(),
         4 => "Repair pickup on the left. Be in its lane when it arrives to restore hull.".to_string(),
-        5 => format!("Drone in the left lane. {} fires the rail gun at a drone or unstable vehicle as it closes in. It locks only in the last second of the approach. Fire too early and you hear No lock.", sentence_start(&k.fire)),
+        5 => format!("Drone in the left lane. {} fires the rail gun at a drone or unstable vehicle as it closes in. It locks only in the last second of the approach. Fire too early and the game says No lock.", sentence_start(&k.fire)),
         6 => format!("Heavy blocker on the left. {} boosts. Boosting into a heavy blocker forces it open, and then boost needs time to recharge.", sentence_start(&k.boost)),
-        7 => format!("Full blockade next. It fills all three lanes, so you cannot dodge it. Its alarm grows louder as it comes. {} boosts: press it on the bright chime that sounds just before it hits.", sentence_start(&k.boost)),
+        7 => format!("Full blockade next. It fills all three lanes, so you cannot dodge it. {} boosts: press it just before it hits.", sentence_start(&k.boost)),
         8 => format!("Priority traffic on the right. Priority vehicles raise stress if delayed. {} activates priority override when you need to protect the route.", sentence_start(&k.priority)),
         9 => "Salvage in the center lane. Salvage adds to your score now, and your score becomes credits at the debrief. Every debrief pays, even after a failed run.".to_string(),
         _ => format!("Unstable vehicle on the left. Dodge it or boost through it. If stress spikes, {} triggers a slowdown pulse for a recovery window.", k.slowdown),
