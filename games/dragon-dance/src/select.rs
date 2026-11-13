@@ -6,7 +6,7 @@ use hearken::{Ctx, UiSound};
 use parlor_core::menus::labels;
 use parlor_core::{Parlor, Records};
 
-use crate::dance::{self, stars_words, Launch, Mode};
+use crate::dance::{stars_words, Mode};
 use crate::progress::Progress;
 use crate::streets::STREETS;
 use crate::{sound, ID};
@@ -90,7 +90,7 @@ impl Menu for StreetSelect {
                     row_label(&progress, n),
                     move |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                         if open {
-                            dance::start(ctx, Launch::new(Mode::Street(n)));
+                            crate::briefing::open(ctx, Mode::Street(n));
                         } else {
                             sound::play(ctx, sound::NOPE);
                             ctx.say(why.clone());
