@@ -283,9 +283,9 @@ impl Signal {
         self.delayed.clear();
         self.shift.start();
         if self.shift.timed() {
-            ctx.say("Line open. The tick keeps the pace.");
+            ctx.say("Line open.");
         } else {
-            ctx.say("Line open. Take your time.");
+            ctx.say("Line open. No clock.");
         }
     }
 
