@@ -341,7 +341,7 @@ impl Descent {
                 self.start_prompt(ctx)
             ),
             Advice::Climbing => format!("You are climbing. Let go of {p}."),
-            Advice::Steady => "Speed is safe. Burn briefly only if the tone rises.".to_string(),
+            Advice::Steady => "Speed is safe. Burn briefly only at Too fast.".to_string(),
             Advice::Coast { secs } => format!("Fall for about {}, then burn.", seconds_words(secs)),
             Advice::Burn { secs: 0 } => "Burn now with the last of the fuel.".to_string(),
             Advice::Burn { secs } => {
@@ -418,11 +418,7 @@ impl Descent {
         self.flight.start();
         self.await_release = true;
         self.clock.reset();
-        if self.first(ctx, "descent") {
-            ctx.say("Descent begun. Listen to the tone.");
-        } else {
-            ctx.say("Descent begun.");
-        }
+        ctx.say("Descent begun.");
         self.sync_loops(ctx);
     }
 
@@ -481,11 +477,7 @@ impl Descent {
                 }
                 Ev::TooFast => {
                     self.clock.reset();
-                    let line = if self.first(ctx, "tone") {
-                        "Too fast. The tone rises with speed."
-                    } else {
-                        "Too fast."
-                    };
+                    let line = "Too fast.";
                     // At the start of a descent, after Descent begun, not
                     // over it; in the tutorial, after the lesson's line.
                     if self.flight.time < START_GRACE || self.lesson_says.contains("prompts") {
