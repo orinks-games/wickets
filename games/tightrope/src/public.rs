@@ -235,7 +235,7 @@ impl TitleGame for Tightrope {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear each sound you need on the wire, with its meaning, starting with the balance tone."
+        "Plays each sound you need on the wire, starting with the balance tone."
             .to_string()
     }
 
