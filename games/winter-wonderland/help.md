@@ -22,6 +22,16 @@ Space shakes the gift so you can identify it. Gifts include blocks, teddy bears,
 
 There are 8 shifts. Each one has more gifts, more kinds of sound and a faster belt, and the belt speeds up as you sort. The first three briefings say what each wish sounds like. From shift 4 you must work it out. From shift 5, someone changes their mind half way through: their new wish is announced. A delivery scores more the sooner you make it and the longer your streak, times the shift number. Clearing a shift adds a bonus for the time left on the clock. Shifts you reach stay open: choose a starting shift with Left and Right on the Gift Sort row of the title.
 
+## Gift Sort: pace
+
+The belt, each gift's ride and the shift clock hold while the wishes, a change of plans or another line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every Gift Sort run. Time spent while a line is spoken still comes off the time left for your clock bonus.
+
+Pace in Settings applies to Gift Sort only, and sets how fast it runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. The Wish Desk has no clock, and Midnight Countdown keeps the band's beat at every pace.
+
+A change applies from your next run. A run keeps the pace it started at through all its shifts, and on to the Wish Desk in the story.
+
+Shifts open at every pace. Relaxed scores are saved separately, including the story and challenges. Normal and quick share their scores.
+
 ## The Wish Desk: letters and the shelf
 
 A stack is a pile of letters. Each child asks for one thing, in their own words, and the letter says how old they are. The gifts are on a shelf in front of you, one box in each place. Walk the shelf with the Left and Right arrows, or jump to its ends with Up and Down. Space shakes the box in front of you. In the first two stacks, each letter also says how its wish would sound in a box. From stack 3 you must work it out.

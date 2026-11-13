@@ -5,7 +5,7 @@ use hearken::menu::Menu;
 use hearken::text::{end_sentence, sentence_start};
 use hearken::{Bus, Ctx, InputEvent, State};
 use parlor_core::menus::{labels, Back, Results};
-use parlor_core::{Parlor, ParlorAction, Records, ScoreResult};
+use parlor_core::{Pace, Parlor, ParlorAction, ScoreResult};
 
 use crate::kitchen::{Kitchen, Mode};
 use crate::progress::{self, Progress};
@@ -14,11 +14,39 @@ use crate::sound;
 use crate::thanksgiving::{self, Keepsakes, Kept};
 use crate::{ID, TITLE_NAME};
 
-fn record_line(result: ScoreResult, what: &str) -> String {
+/// What recording a score did, on the board for `pace`: relaxed runs
+/// have their own best. `None` is a score of 0, which goes on no board.
+fn record_line(result: Option<ScoreResult>, what: &str, pace: Pace) -> String {
+    let best = pace.best_word();
     match result {
-        ScoreResult::First => format!("First score saved for {what}."),
-        ScoreResult::NewBest { previous } => format!("New best for {what}, up from {previous}."),
-        ScoreResult::Short { best } => format!("Your best for {what} is {best}."),
+        None => NO_BOARD.to_string(),
+        Some(ScoreResult::First) if pace.separate() => {
+            format!("First relaxed score saved for {what}.")
+        }
+        Some(ScoreResult::First) => format!("First score saved for {what}."),
+        Some(ScoreResult::NewBest { previous }) => {
+            format!("New {best} for {what}, up from {previous}.")
+        }
+        Some(ScoreResult::Short { best: b }) => format!("Your {best} for {what} is {b}."),
+    }
+}
+
+/// A meal that scored nothing: no board takes a 0.
+pub const NO_BOARD: &str = "0 points, so nothing goes on the board.";
+
+/// Records `points` on `board`: none for a 0, which goes on no board.
+fn record(ctx: &mut Ctx<Parlor>, board: &str, points: u64) -> Option<ScoreResult> {
+    parlor_core::pace::record(ctx, ID, board, points)
+}
+
+/// What keeping a Thanksgiving keepsake did.
+fn kept_line(kept: Kept, year: i32, pace: Pace) -> String {
+    match kept {
+        Kept::First => format!("Your keepsake for {year} is saved."),
+        Kept::Better { previous } => {
+            format!("A new {} for {year}, up from {previous}.", pace.best_word())
+        }
+        Kept::Short { best } => format!("Your {} for {year} is {best}.", pace.best_word()),
     }
 }
 
@@ -135,19 +163,18 @@ pub fn score(
     hints: u32,
     ctx: &mut Ctx<Parlor>,
 ) -> Served {
-    score_paced(mode, outcome, by_ear, hints, false, ctx)
+    score_paced(mode, outcome, by_ear, hints, Pace::Normal, ctx)
 }
 
-/// Scores using the pace captured when cooking began, not a changed setting.
+/// Scores a meal cooked at `pace`, the pace fixed when the run began.
 pub fn score_paced(
     mode: Mode,
     outcome: Outcome,
     by_ear: bool,
     hints: u32,
-    relaxed: bool,
+    pace: Pace,
     ctx: &mut Ctx<Parlor>,
 ) -> Served {
-    let relaxed = relaxed && matches!(mode, Mode::Course(_));
     let o = &outcome;
     let passed = o.passed();
     let family = match &mode {
@@ -208,12 +235,11 @@ pub fn score_paced(
     }
     match &mode {
         Mode::Course(n) => {
-            if relaxed {
-                summary
-                    .push_str(" Relaxed pace. This score is kept separately from standard pace.");
-            }
-            let r = Records::record(ctx, ID, &progress::paced_course_board(*n, relaxed), points);
-            summary.push_str(&format!(" {}", record_line(r, &format!("course {n}"))));
+            let r = record(ctx, &progress::paced_course_board(*n, pace), points);
+            summary.push_str(&format!(
+                " {}",
+                record_line(r, &format!("course {n}"), pace)
+            ));
             let opened = passed && !progress.served(*n);
             progress.earn(*n, o.stars);
             if passed {
@@ -257,23 +283,21 @@ pub fn score_paced(
                     }
                 ));
             }
-            let r = Records::record(ctx, ID, progress::HELPINGS_BOARD, total);
-            if !passed || matches!(r, ScoreResult::NewBest { .. } | ScoreResult::First) {
-                summary.push_str(&format!(" {}", record_line(r, "second helpings")));
+            let r = record(ctx, &pace.board(progress::HELPINGS_BOARD), total);
+            if !passed || !matches!(r, Some(ScoreResult::Short { .. })) {
+                summary.push_str(&format!(" {}", record_line(r, "second helpings", pace)));
             }
         }
         Mode::Thanksgiving { year } => {
             feast = passed;
-            Records::record(ctx, ID, thanksgiving::BOARD, points);
-            let mut keep = Keepsakes::load(ctx);
-            let kept = keep.keep(*year, points, o.stars, (favourite / 10) as u32);
-            keep.store(ctx);
-            let line = match kept {
-                Kept::First => format!("Your keepsake for {year} is saved."),
-                Kept::Better { previous } => {
-                    format!("A new best for {year}, up from {previous}.")
-                }
-                Kept::Short { best } => format!("Your best for {year} is {best}."),
+            let line = if record(ctx, &pace.board(thanksgiving::BOARD), points).is_none() {
+                // A 0 is no keepsake either.
+                NO_BOARD.to_string()
+            } else {
+                let mut keep = Keepsakes::load(ctx);
+                let kept = keep.keep_at(*year, points, o.stars, (favourite / 10) as u32, pace);
+                keep.store(ctx);
+                kept_line(kept, *year, pace)
             };
             let toast = family.as_ref().map_or("", |f| f.toast);
             summary.push_str(&format!(" {line} {toast} Happy Thanksgiving."));
@@ -332,10 +356,13 @@ pub fn score_paced(
             "Next round",
             "Another random meal, faster. The run goes on until a meal earns no stars.",
             move |ctx| {
-                ctx.replace(Kitchen::new(Mode::Helpings {
-                    round: round + 1,
-                    total,
-                }))
+                ctx.replace(
+                    Kitchen::new(Mode::Helpings {
+                        round: round + 1,
+                        total,
+                    })
+                    .at_pace(pace),
+                )
             },
         ),
         Mode::Helpings { .. } => results.again(

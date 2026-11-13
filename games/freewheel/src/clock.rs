@@ -125,7 +125,16 @@ impl DropClock {
     pub fn tick(&mut self, dt: f64) -> Option<f64> {
         let before = self.left;
         self.left = (self.left - dt).max(0.0);
-        CALLS.into_iter().find(|&c| before > c && self.left <= c)
+        self.fell_past(before)
+    }
+
+    /// The call-out the clock fell past since it stood at `before`, by
+    /// ticking or by a crash: the lowest, if it fell past more than one.
+    pub fn fell_past(&self, before: f64) -> Option<f64> {
+        CALLS
+            .into_iter()
+            .rev()
+            .find(|&c| before > c && self.left <= c)
     }
 
     /// Whether the clock has run out.

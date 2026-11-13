@@ -6,7 +6,7 @@
 use haunted_hallways::rules::{self, Ev, Event, Mode, Puzzle, Run, Side};
 use haunted_hallways::ID;
 use hearken::{Ctx, Headless, Key, State};
-use parlor_core::{Challenge, Date, Parlor, Period};
+use parlor_core::{pace, Challenge, Date, Pace, Parlor, Period};
 
 /// The day challenge tests are pinned to.
 pub const TODAY: Date = Date::new(2026, 10, 16);
@@ -30,12 +30,18 @@ impl State<Parlor> for Base {
 }
 
 /// The game's title on top of the stand-in launcher, with the tutorial
-/// read, so the cursor starts on Play.
+/// read, so the cursor starts on Play. The pace is quick, the original
+/// timing, so a twin run stepped by the same frames stays in step, with
+/// the voice reported quiet each frame (see [`Twin::frame`]).
+/// tests/pacing.rs covers the pace and the speech hold.
 pub fn title() -> Headless<Parlor> {
     rules::fix_seed(Some(SEED));
     let mut h = Headless::new(Default::default(), Base);
     h.app.ctx.game.today = Some(TODAY);
     parlor_core::menus::mark_tutorial_read(&mut h.app.ctx, ID);
+    if pace::stored(&h.app.ctx, ID).is_none() {
+        pace::set(&mut h.app.ctx, ID, Pace::Quick);
+    }
     h.app.ctx.push(haunted_hallways::title());
     h.frame(0.0);
     h
@@ -279,7 +285,10 @@ impl Twin {
         self.run.cycle()
     }
 
+    /// A frame of `dt` with the voice already quiet, so the speech hold
+    /// never stops the house and the twin stays in step.
     pub fn frame(&mut self, dt: f64) -> Vec<Ev> {
+        self.h.app.ctx.stop_speech();
         self.h.frame(dt);
         self.run.update(dt)
     }
