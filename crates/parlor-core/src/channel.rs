@@ -61,8 +61,8 @@ impl Stage {
 /// Games not yet on stable, by id, with their stage. A game not listed is
 /// stable.
 pub const GAMES: &[(&str, Stage)] = &[
-    ("larkfield", Stage::Beta),
-    ("little-rapids", Stage::Beta),
+    ("larkfield", Stage::Alpha),
+    ("little-rapids", Stage::Alpha),
     ("snowfall-skate", Stage::Alpha),
 ];
 
