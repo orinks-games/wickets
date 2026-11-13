@@ -341,7 +341,9 @@ impl Descent {
                 self.start_prompt(ctx)
             ),
             Advice::Climbing => format!("You are climbing. Let go of {p}."),
-            Advice::Steady => "Speed is safe. Burn briefly only when the game says Too fast.".to_string(),
+            Advice::Steady => {
+                "Speed is safe. Burn briefly only when the game says Too fast.".to_string()
+            }
             Advice::Coast { secs } => format!("Fall for about {}, then burn.", seconds_words(secs)),
             Advice::Burn { secs: 0 } => "Burn now with the last of the fuel.".to_string(),
             Advice::Burn { secs } => {
