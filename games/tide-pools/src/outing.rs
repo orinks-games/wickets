@@ -545,9 +545,7 @@ impl OutingScreen {
                     self.clock.reset();
                     sound::play_at(ctx, sound::EMERGE, sound::pool_at(0, self.outing.lean));
                     if self.first("emerge") {
-                        ctx.say_queued(format!(
-                            "It crept out. Press {p} after it calls."
-                        ));
+                        ctx.say_queued(format!("It crept out. Press {p} after it calls."));
                     }
                 }
                 Ev::TooSoon => {
@@ -556,7 +554,10 @@ impl OutingScreen {
                 }
                 Ev::NotYet => {
                     sound::play(ctx, sound::EMPTY);
-                    self.prompt(ctx, format!("Only water. Press {p} right after a creature calls."));
+                    self.prompt(
+                        ctx,
+                        format!("Only water. Press {p} right after a creature calls."),
+                    );
                 }
                 Ev::EmptyPool => {
                     sound::play(ctx, sound::EMPTY);

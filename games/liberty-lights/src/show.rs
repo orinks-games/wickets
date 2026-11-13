@@ -184,7 +184,9 @@ impl Show {
                 };
                 let twist = match (run.plan.twist, run.plan.festival) {
                     (Some(t), _) => format!(" Twist: {}.", t.name()),
-                    (None, Some(f)) => format!(" {}s pay a bonus.", sentence_start(f.signature.name())),
+                    (None, Some(f)) => {
+                        format!(" {}s pay a bonus.", sentence_start(f.signature.name()))
+                    }
                     _ => String::new(),
                 };
                 let total = if run.stage > 0 {

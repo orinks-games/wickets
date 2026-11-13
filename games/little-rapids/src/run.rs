@@ -67,14 +67,20 @@ pub fn boat_for(mode: Mode, progress: &Progress, seed: u64) -> Boat {
 /// The page explaining a kind the first time it comes down a stream.
 pub fn introduction(kind: Kind) -> &'static str {
     match kind {
-        Kind::Petal => "A petal, floating toward you. Steer so it is straight ahead as it reaches you.",
+        Kind::Petal => {
+            "A petal, floating toward you. Steer so it is straight ahead as it reaches you."
+        }
         Kind::Leaf => "A leaf. Catch it like a petal.",
         Kind::Scrap => "A paper scrap. Scraps fold into new boats.",
         Kind::Trinket => "A trinket, and rare. Catch it for your shelf.",
         Kind::Lantern => "A floating lantern. Worth five petals.",
         Kind::Stone => "A stone. Steer clear, or the bump costs your combo.",
-        Kind::Gate => "A gate between two stones. Go through the middle for points. Going round is fine.",
-        Kind::Falls => "A waterfall through a gap in the rocks. Steer into the gap, or you bump the rocks.",
+        Kind::Gate => {
+            "A gate between two stones. Go through the middle for points. Going round is fine."
+        }
+        Kind::Falls => {
+            "A waterfall through a gap in the rocks. Steer into the gap, or you bump the rocks."
+        }
         Kind::Mill => "A mill wheel on one side. Be on the other side of the stream as it passes.",
         Kind::Duck => "A duck, paddling across. Steer clear of it.",
     }

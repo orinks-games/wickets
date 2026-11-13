@@ -281,9 +281,7 @@ impl TitleGame for TidePools {
             MenuItem::new("Practice pools", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 outing::start(ctx, Mode::Practice)
             })
-            .help(
-                "Three sheltered pools with no tide, to learn leaning in and gathering.",
-            ),
+            .help("Three sheltered pools with no tide, to learn leaning in and gathering."),
         )
     }
 

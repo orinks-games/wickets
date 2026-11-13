@@ -358,9 +358,7 @@ impl Haunt {
         }
         if !room.water.is_empty() {
             if self.first("water") {
-                out.push_str(
-                    " Flooded. Wading through deep water is slow and draws ghosts.",
-                );
+                out.push_str(" Flooded. Wading through deep water is slow and draws ghosts.");
             } else {
                 out.push_str(" Deep water here.");
             }

@@ -305,9 +305,7 @@ impl Tuning {
                 }
                 Ev::RankTuned => {
                     self.stop_tones(ctx);
-                    ctx.say_queued(
-                        "Every pipe is in tune. The Echo is playing the rank back.",
-                    );
+                    ctx.say_queued("Every pipe is in tune. The Echo is playing the rank back.");
                     self.tune = self
                         .rank
                         .tune

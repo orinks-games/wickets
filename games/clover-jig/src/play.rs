@@ -224,15 +224,11 @@ impl Floor {
     /// The second line of the intro: what is new or special this run.
     fn news(&self, ctx: &Ctx<Parlor>) -> Option<String> {
         if self.run.plans.iter().any(|p| p.has_clover()) {
-            return Some(
-                "A four-leaf clover hides tonight. Dance its step."
-                    .to_string(),
-            );
+            return Some("A four-leaf clover hides tonight. Dance its step.".to_string());
         }
         if self.shamrocks {
             return Some(
-                "Shamrocks hide in the tunes. Dance a shamrock's step well for luck."
-                    .to_string(),
+                "Shamrocks hide in the tunes. Dance a shamrock's step well for luck.".to_string(),
             );
         }
         if let Mode::Set(n) = self.mode {

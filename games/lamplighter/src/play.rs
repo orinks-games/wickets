@@ -157,7 +157,10 @@ impl Round {
             h.length()
         );
         if !self.phases.is(HallPhase::Dark) {
-            format!("{}. {what} No taper, so there is no clock.", self.mode.name())
+            format!(
+                "{}. {what} No taper, so there is no clock.",
+                self.mode.name()
+            )
         } else {
             format!(
                 "{}. {what} The taper burns for {}. {}",
