@@ -832,6 +832,11 @@ impl Run {
             .push(Note::At(cues::SHIFT, (side.sign() * 1.5) as f32));
     }
 
+    /// Whether a step would be taken now: the last step's cooldown is over.
+    pub fn step_ready(&self) -> bool {
+        self.step_cool <= 0.0
+    }
+
     /// Takes one step forward.
     pub fn step(&mut self) {
         if self.phase != Phase::Walking {

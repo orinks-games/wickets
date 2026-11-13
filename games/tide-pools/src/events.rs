@@ -150,12 +150,18 @@ fn left_words(event: Event, date: Date) -> &'static str {
     }
 }
 
+/// An event's best score and relaxed best score.
+pub type Bests = (Option<u64>, Option<u64>);
+
 /// The row's help, for the shore it visits.
-pub fn row_help(event: Event, date: Date, place: &str, best: Option<u64>) -> String {
-    let best = match best {
+pub fn row_help(event: Event, date: Date, place: &str, (best, relaxed): Bests) -> String {
+    let mut best = match best {
         Some(b) => format!(" Your best is {b}."),
         None => String::new(),
     };
+    if let Some(r) = relaxed {
+        best.push_str(&format!(" Your relaxed best is {r}."));
+    }
     let left = left_words(event, date);
     match event {
         Event::KingTide => format!(

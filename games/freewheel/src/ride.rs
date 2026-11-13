@@ -10,7 +10,8 @@ use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, InputEvent, Key, Sound, State, Vec3};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::{
-    units, Challenge, Challenges, Pages, Parlor, ParlorAction, Period, Rng, ScoreResult,
+    units, Challenge, Challenges, Pace, Pages, Parlor, ParlorAction, Period, Rng, RunClock,
+    ScoreResult,
 };
 
 use crate::bike::{Bike, Input, RideEvent, MIN_MOVING, TUBE_SWAP_S};
@@ -171,6 +172,13 @@ pub struct Ride {
     job: Option<crate::jobs::Job>,
     /// Seconds to the low clock's next tick.
     tick_in: f64,
+    /// The ride's game clock: its pace, set as the ride starts, and the
+    /// hold that keeps the street still while a line is spoken and no
+    /// riding key is held.
+    pub run_clock: RunClock,
+    /// Time held for speech while rolling: it counts toward the ride's
+    /// time, so a hold never improves a time or its ride points.
+    held: f64,
 }
 
 impl Ride {
@@ -209,6 +217,8 @@ impl Ride {
             banked: false,
             job: None,
             tick_in: 0.0,
+            run_clock: RunClock::new(Pace::Normal),
+            held: 0.0,
         }
     }
 
@@ -872,6 +882,22 @@ impl Ride {
 
     fn on_event(&mut self, ctx: &mut Ctx<Parlor>, ev: WorldEvent) {
         let p = Self::key(ctx, ParlorAction::Primary);
+        // A warning, a crash and a clock call come with a line to act on:
+        // each gets a fresh hold.
+        if matches!(
+            ev,
+            WorldEvent::Warn(_)
+                | WorldEvent::DoorOpen(_)
+                | WorldEvent::ActNow(_)
+                | WorldEvent::Crash(_)
+                | WorldEvent::TurnAhead(_)
+                | WorldEvent::OncomingAhead(_)
+                | WorldEvent::OncomingNow(_)
+                | WorldEvent::ParcelAhead(_)
+                | WorldEvent::TimeCall(_)
+        ) {
+            self.run_clock.reset();
+        }
         match ev {
             WorldEvent::Warn(i) => {
                 let h = self.world.course.hazards[i];
@@ -1007,7 +1033,10 @@ impl Ride {
                 let lost = self.world.drop_clock.map(|c| c.lost);
                 let line = match self.world.crash_limit {
                     _ if lost.is_some() => {
-                        format!("{why} Lost {} seconds. Down for 3 seconds.", clock::CRASH_S as i64)
+                        format!(
+                            "{why} Lost {} seconds. Down for 3 seconds.",
+                            clock::CRASH_S as i64
+                        )
                     }
                     Some(n) if self.world.stats.crashes >= n => {
                         format!("{why} Crash {n} of {n}.")
@@ -1292,7 +1321,14 @@ impl Ride {
             }
             WorldEvent::TimeLost(_) => {}
             WorldEvent::TimeCall(n) => {
-                self.tell(ctx, format!("{} seconds left.", n as i64));
+                let line = format!("{} seconds left.", n as i64);
+                if self.world.rider.down() {
+                    // After the crash line that took the clock past it.
+                    ctx.say_queued(line.clone());
+                    self.last_line = format!("{} {line}", self.last_line);
+                } else {
+                    self.tell(ctx, line);
+                }
             }
             WorldEvent::TimeUp => {}
             WorldEvent::Passed(i) => {
@@ -1355,11 +1391,14 @@ impl Ride {
         }
     }
 
-    fn sound_frame(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
+    /// The ride's sounds for a frame of `dt` real seconds, `game_dt` of
+    /// them on the street: the clock's ticks and the hazard markers keep
+    /// the street's time, so they stand still with it.
+    fn sound_frame(&mut self, ctx: &mut Ctx<Parlor>, dt: f64, game_dt: f64) {
         // A low clock ticks, faster in its last seconds.
         match self.world.drop_clock.and_then(|c| c.tick_gap()) {
             Some(gap) => {
-                self.tick_in -= dt;
+                self.tick_in -= game_dt;
                 if self.tick_in <= 0.0 {
                     sound::play(ctx, sound::CLOCK_TICK);
                     self.tick_in = gap;
@@ -1502,7 +1541,7 @@ impl Ride {
             if !state.warned || state.passed {
                 continue;
             }
-            self.ticks[i] -= dt;
+            self.ticks[i] -= game_dt;
             if self.ticks[i] > 0.0 {
                 continue;
             }
@@ -1635,8 +1674,12 @@ impl Ride {
         self.stop_all(ctx);
         sound::play(ctx, sound::FINISH);
         let w = &self.world;
-        let time = w.finished.unwrap_or(w.clock);
+        // Time held for speech still counts toward the ride's time.
+        let time = w.finished.unwrap_or(w.clock) + self.held;
         let stats = w.stats;
+        let pace = self.run_clock.pace();
+        let relaxed = if pace.separate() { "relaxed " } else { "" };
+        let best_word = pace.best_word();
         let bike = w.bike;
         if let Mode::Training(n) = self.mode {
             self.tell(
@@ -1666,15 +1709,18 @@ impl Ride {
             let cash = stats.cash;
             let grabbed = w.parcels.iter().filter(|p| p.taken).count();
             let wallet = self.bank(ctx);
-            let board = progress::endless_board(district);
-            let result = parlor_core::Records::record(ctx, crate::ID, &board, metres as u64);
+            let board = pace.board(&progress::endless_board(district));
+            // A 0 goes on no board, at any pace.
+            let result = parlor_core::pace::record(ctx, crate::ID, &board, metres as u64);
             let record = match result {
-                ScoreResult::First => "Your first endless ride here.".to_string(),
-                ScoreResult::NewBest { previous } => {
-                    format!("A new best, beating {}.", distance_words(previous as f64))
-                }
-                ScoreResult::Short { best } => {
-                    format!("Your best is {}.", distance_words(best as f64))
+                None => "Nothing goes on the board.".to_string(),
+                Some(ScoreResult::First) => format!("Your first {relaxed}endless ride here."),
+                Some(ScoreResult::NewBest { previous }) => format!(
+                    "A new {best_word}, beating {}.",
+                    distance_words(previous as f64)
+                ),
+                Some(ScoreResult::Short { best }) => {
+                    format!("Your {best_word} is {}.", distance_words(best as f64))
                 }
             };
             let pages = vec![
@@ -1709,21 +1755,23 @@ impl Ride {
             let c = w.drop_clock.unwrap_or_default();
             let cash = stats.cash;
             let wallet = self.bank(ctx);
-            let result = parlor_core::Records::record(
+            // No drops goes on no board, at any pace.
+            let result = parlor_core::pace::record(
                 ctx,
                 crate::ID,
-                &clock::board(district),
+                &pace.board(&clock::board(district)),
                 c.drops as u64,
             );
             let record = match result {
-                ScoreResult::First => {
-                    format!("Your first ride {} here.", clock::NAME.to_lowercase())
+                None => "Nothing goes on the board.".to_string(),
+                Some(ScoreResult::First) => format!(
+                    "Your first {relaxed}ride {} here.",
+                    clock::NAME.to_lowercase()
+                ),
+                Some(ScoreResult::NewBest { previous }) => {
+                    format!("A new {best_word}, beating {previous}.")
                 }
-                ScoreResult::NewBest { previous: 0 } => "A new best.".to_string(),
-                ScoreResult::NewBest { previous } => {
-                    format!("A new best, beating {previous}.")
-                }
-                ScoreResult::Short { best } => format!("Your best is {best}."),
+                Some(ScoreResult::Short { best }) => format!("Your {best_word} is {best}."),
             };
             let pages = vec![
                 format!(
@@ -1798,7 +1846,7 @@ impl Ride {
             Mode::TimeTrial(c) => {
                 let info = &COURSES[c];
                 let board = progress::board(info.id, bike);
-                let saved = progress::save_time(ctx, &board, time, points);
+                let saved = progress::save_time(ctx, &board, time, points, pace);
                 let pages = trial_pages(info, bike, time, points, &breakdown, &saved);
                 let summary = format!(
                     "{} in {}. {points} ride points",
@@ -1830,14 +1878,14 @@ impl Ride {
                 let Some(ch) = self.challenge.clone() else {
                     return;
                 };
-                let result = Challenges::submit(ctx, &ch, points);
+                let result = Challenges::submit_at(ctx, &ch, pace, points);
                 let streak = Challenges::streak(ctx, crate::ID, period).max(1);
                 let pages = vec![
                     format!(
                         "{} done in {}. {points} ride points. {}",
                         challenge::name(period),
                         time_words(time),
-                        score_words(result)
+                        score_words(result, pace)
                     ),
                     format!("Ride points: {}.", breakdown.join(", ")),
                     format!("A {streak} {} streak. {}", period.unit(), ch.resets()),
@@ -1859,14 +1907,14 @@ impl Ride {
                     return;
                 };
                 let board = events::board(stem, bike);
-                let saved = progress::save_time(ctx, &board, time, points);
+                let saved = progress::save_time(ctx, &board, time, points, pace);
                 let record = match saved.previous {
-                    None => format!("Your first {name}."),
+                    None => format!("Your first {relaxed}{name}."),
                     Some(p) if saved.record => {
-                        format!("A new best time, {} faster.", time_words(p - time))
+                        format!("A new {best_word} time, {} faster.", time_words(p - time))
                     }
                     Some(p) => format!(
-                        "{} slower than your best of {}.",
+                        "{} slower than your {best_word} of {}.",
                         sentence_start(&time_words(time - p)),
                         time_words(p)
                     ),
@@ -1888,7 +1936,7 @@ impl Ride {
                     format!(
                         "{points} ride points: {}. {}",
                         breakdown.join(", "),
-                        score_words(saved.points)
+                        score_words(saved.points, saved.pace)
                     ),
                 ];
                 let summary = format!("{name} in {}. {points} ride points", time_words(time));
@@ -1994,6 +2042,11 @@ impl Ride {
     }
 }
 
+/// Whether a steering key is held, either way.
+fn riding_steer(ctx: &Ctx<Parlor>) -> bool {
+    ctx.action_held(ParlorAction::Left) || ctx.action_held(ParlorAction::Right)
+}
+
 /// Ride points: 100,000 at par time, more for faster, with bonuses and a
 /// cost for each crash. Also the parts, in words.
 pub fn ride_points(par: f64, time: f64, stats: &crate::world::Stats) -> (u64, Vec<String>) {
@@ -2048,11 +2101,13 @@ fn crash_words(n: u32) -> String {
     }
 }
 
-fn score_words(result: ScoreResult) -> String {
+fn score_words(result: ScoreResult, pace: Pace) -> String {
+    let best_word = pace.best_word();
     match result {
+        ScoreResult::First if pace.separate() => "Your first relaxed result here.".to_string(),
         ScoreResult::First => "Your first result here.".to_string(),
-        ScoreResult::NewBest { previous } => format!("A new best, beating {previous}."),
-        ScoreResult::Short { best } => format!("Your best is {best}."),
+        ScoreResult::NewBest { previous } => format!("A new {best_word}, beating {previous}."),
+        ScoreResult::Short { best } => format!("Your {best_word} is {best}."),
     }
 }
 
@@ -2066,11 +2121,23 @@ pub fn trial_pages(
     breakdown: &[String],
     saved: &Saved,
 ) -> Vec<String> {
+    let relaxed = if saved.pace.separate() {
+        "relaxed "
+    } else {
+        ""
+    };
+    let best_word = saved.pace.best_word();
     let record = match saved.previous {
-        None => format!("Your first time on {} on the {}.", info.name, bike.name()),
-        Some(p) if saved.record => format!("A new best time, {} faster.", time_words(p - time)),
+        None => format!(
+            "Your first {relaxed}time on {} on the {}.",
+            info.name,
+            bike.name()
+        ),
+        Some(p) if saved.record => {
+            format!("A new {best_word} time, {} faster.", time_words(p - time))
+        }
         Some(p) => format!(
-            "{} slower than your best of {}.",
+            "{} slower than your {best_word} of {}.",
             sentence_start(&time_words(time - p)),
             time_words(p)
         ),
@@ -2085,7 +2152,7 @@ pub fn trial_pages(
         format!(
             "{points} ride points: {}. {}",
             breakdown.join(", "),
-            score_words(saved.points)
+            score_words(saved.points, saved.pace)
         ),
     ]
 }
@@ -2125,6 +2192,9 @@ impl State<Parlor> for Ride {
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         self.started = true;
+        // The pace is fixed for the ride: a change in Settings applies
+        // from the next one.
+        self.run_clock = RunClock::start(ctx, crate::ID);
         self.call_outs = Choices::load(ctx).call_outs;
         ctx.audio.set_listener(Vec3::ZERO, 0.0);
         if self.mode == Mode::Sunday {
@@ -2158,6 +2228,7 @@ impl State<Parlor> for Ride {
         if self.finished {
             return;
         }
+        self.run_clock.reset();
         // Settings, from the pause menu, may have changed the call-outs.
         self.call_outs = Choices::load(ctx).call_outs;
         let status = self.status_layers().remove(0);
@@ -2182,6 +2253,7 @@ impl State<Parlor> for Ride {
         let Some(action) = action else {
             return;
         };
+        self.run_clock.asked_by(Some(action));
         let up = Self::key(ctx, ParlorAction::Up);
         match action {
             ParlorAction::Status => {
@@ -2290,9 +2362,18 @@ impl State<Parlor> for Ride {
             return;
         }
         let input = self.input(ctx);
-        // A hop press reaches the world's first substep, then is spent.
+        // The street runs on game time, at the ride's pace. While a line
+        // is spoken it holds, unless a riding key is held: then the bike
+        // keeps answering it through speech.
+        if input.pedal || input.brake || input.sprint || riding_steer(ctx) {
+            self.run_clock.bypass();
+        }
+        let game_dt = self.run_clock.game_dt(ctx, dt);
+        self.held += self.run_clock.take_held_time();
+        // A hop press reaches the world's first substep, then is spent:
+        // pressed during a hold, it waits for the street to run.
         let before = self.world.clock;
-        let events = self.world.update(input, dt);
+        let events = self.world.update(input, game_dt);
         if self.world.clock > before {
             self.hop = false;
         }
@@ -2305,8 +2386,8 @@ impl State<Parlor> for Ride {
         if self.finished {
             return;
         }
-        self.sound_frame(ctx, dt);
-        self.lesson_step(ctx, dt);
+        self.sound_frame(ctx, dt, game_dt);
+        self.lesson_step(ctx, game_dt);
         if self.finished {
             return;
         }

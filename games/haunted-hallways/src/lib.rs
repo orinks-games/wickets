@@ -26,11 +26,12 @@ pub mod tutorial;
 pub mod unlocks;
 
 use hearken::menu::{Menu, MenuCore, MenuItem};
+use hearken::screens::SettingsRow;
 use hearken::text::{end_sentence, sentence_start};
 use hearken::Ctx;
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
 use parlor_core::unlocks::Unlocks;
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period};
 
 pub use challenge::{ChallengeHost, ChallengesMenu, Hauntings, CHALLENGES_NAME};
 pub use haunt::Haunt;
@@ -77,11 +78,17 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
     ctx.push(ChallengeHost::new(period));
 }
 
+/// "best score 30, relaxed best score 41", leaving out a board with no
+/// score, or "no score yet".
 fn best_score(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    match Records::best(ctx, ID, board) {
-        Some(b) => format!("best score {b}"),
-        None => "no score yet".to_string(),
-    }
+    pace::scored_bests(ctx, ID, board, "best score").unwrap_or_else(|| "no score yet".to_string())
+}
+
+/// A floor's best times, normal and quick then relaxed: "best 1 minute
+/// 2.0 seconds, relaxed best 50.0 seconds".
+fn floor_times(progress: &Progress, floor: u32) -> Option<String> {
+    let at = |pace| progress.floor_time_at(pace, floor).map(time_short);
+    pace::both("best", at(Pace::Normal), at(Pace::Relaxed))
 }
 
 /// Records: how deep you have gone, best times and scores, and the
@@ -125,8 +132,8 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         }
         let floors: Vec<String> = (first..=last)
             .filter(|&n| n <= progress.open_floors())
-            .map(|n| match progress.floor_time(n) {
-                Some(t) => format!("floor {n}, {}", time_short(t)),
+            .map(|n| match floor_times(&progress, n) {
+                Some(t) => format!("floor {n}, {t}"),
                 None => format!("floor {n}, not yet cleared"),
             })
             .collect();
@@ -325,6 +332,10 @@ impl TitleGame for HauntedHallways {
         rows
     }
 
+    fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
+        vec![pace::row(ID)]
+    }
+
     fn lesson(&mut self, ctx: &mut Ctx<Parlor>) -> parlor_core::Lesson {
         crate::tutorial::lesson(ctx)
     }
@@ -486,10 +497,7 @@ impl Menu for FloorSelect {
         for n in first..first + WING_FLOORS {
             let spec = floor_spec(n, false);
             if n <= open {
-                let time = match progress.floor_time(n) {
-                    Some(t) => format!("best {}", time_short(t)),
-                    None => "not cleared".to_string(),
-                };
+                let time = floor_times(&progress, n).unwrap_or_else(|| "not cleared".to_string());
                 let twists = if spec.twists.is_empty() {
                     String::new()
                 } else {

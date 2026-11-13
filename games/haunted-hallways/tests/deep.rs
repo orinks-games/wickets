@@ -442,6 +442,8 @@ fn a_fight_with_the_founder_by_keys() {
     let mut struck = false;
     for _ in 0..60 * 30 {
         h.clear();
+        // The voice quiet, so the speech hold does not stop the fight.
+        h.app.ctx.stop_speech();
         h.frame(1.0 / 60.0);
         if played(&h, sound::OPENING) {
             h.press(Key::Space);

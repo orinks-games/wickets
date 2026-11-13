@@ -37,13 +37,17 @@ Each dish has three states: cooking, ready for action, and burning. Wait while i
 
 With spoken call-outs on, the kitchen also says which dish needs you as its sound changes: "Bubbling up on the left burner: the gravy. Whisk it." Sound check on the title plays every one of these by name.
 
-## Relaxed course pace
+## Pace
 
-Turn on Relaxed course pace in Settings before starting a campaign course. Cooking runs at half speed and waits after spoken instructions or feedback, and while you check a station, recipe, hint or status. Move between stations while it waits.
+Every dish's clock holds while a recipe call or another line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every meal.
 
-Press Space to resume. If your station needs you, the same press acts; otherwise it only resumes cooking, without a fumble. Each chopping or whisking stroke still takes one press, and the kitchen waits between strokes. When everything is served, Space or Escape saves the meal and opens the results. Settings changes apply to the next course.
+Pace in Settings sets how fast cooking runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed.
 
-Relaxed and standard courses keep separate best scores. Stars from either pace open courses. Second helpings, challenges and special meals keep standard timing. The tutorial keeps its own teaching pace.
+A change applies from your next meal. Second helpings and a challenge keep the pace they started at until the run ends.
+
+On relaxed, the kitchen counts each chopping or whisking stroke.
+
+Stars and unlocks count at every pace. Relaxed scores are saved separately, including challenges and Thanksgiving dinner. Normal and quick share their scores.
 
 ## Timing and quality
 

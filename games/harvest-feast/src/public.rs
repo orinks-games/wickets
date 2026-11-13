@@ -20,7 +20,7 @@ use hearken::screens::SettingsRow;
 use hearken::text::{end_sentence, sentence_start};
 use hearken::{Ctx, UiSound};
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period};
 
 pub use challenge::{
     ChallengeHost, ChallengePlan, ChallengeRun, ChallengesMenu, Dinners, Twist, CHALLENGES_NAME,
@@ -64,15 +64,26 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
     ctx.push(ChallengeHost::new(period));
 }
 
-fn best_line(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    match Records::best(ctx, ID, board) {
-        Some(b) => format!("best {b}"),
-        None => "no score yet".to_string(),
+/// The bests on `base`'s boards: "best 1200, relaxed best 900", or only
+/// the one that has a score, or "no score yet".
+fn best_line(ctx: &mut Ctx<Parlor>, base: &str) -> String {
+    let bests: Vec<String> = [Pace::Normal, Pace::Relaxed]
+        .into_iter()
+        .filter_map(|pace| {
+            parlor_core::pace::best(ctx, ID, &pace.board(base))
+                .map(|b| format!("{} {b}", pace.best_word()))
+        })
+        .collect();
+    if bests.is_empty() {
+        "no score yet".to_string()
+    } else {
+        bests.join(", ")
     }
 }
 
 /// Records: every best score, then the challenges, a page at a time.
 pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
+    progress::migrate_pace(ctx);
     let progress = Progress::load(ctx);
     let helpings = if progress.helpings_open() {
         format!(
@@ -92,9 +103,8 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         let lines: Vec<String> = (first..first + 4)
             .map(|n| {
                 let best = best_line(ctx, &progress::course_board(n));
-                let relaxed = best_line(ctx, &progress::paced_course_board(n, true));
                 format!(
-                    "Course {n}, {}: {}, standard {best}; relaxed {relaxed}.",
+                    "Course {n}, {}: {}, {best}.",
                     course(n).name,
                     stars_phrase(progress.stars(n))
                 )
@@ -120,7 +130,9 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
 /// place on every date.
 fn thanksgiving_row(ctx: &mut Ctx<Parlor>) -> TitleRow<HarvestFeast> {
     let today = parlor_core::challenges::today(ctx);
-    let help = thanksgiving::row_help(today, Records::best(ctx, ID, thanksgiving::BOARD));
+    let best = pace::best(ctx, ID, thanksgiving::BOARD);
+    let relaxed = pace::best(ctx, ID, &Pace::Relaxed.board(thanksgiving::BOARD));
+    let help = thanksgiving::row_help(today, best, relaxed);
     if thanksgiving::is_open(today) {
         let year = thanksgiving::year_of(today);
         MenuItem::new(
@@ -158,7 +170,7 @@ pub(crate) fn dishes(n: usize) -> String {
 fn course_help(ctx: &mut Ctx<Parlor>, n: u32) -> String {
     let progress = Progress::load(ctx);
     let c = course(n);
-    let best = best_line(ctx, &progress::paced_course_board(n, progress.relaxed));
+    let best = best_line(ctx, &progress::course_board(n));
     format!(
         "{} {}. {}, {best}.",
         c.blurb,
@@ -189,6 +201,7 @@ impl TitleGame for HarvestFeast {
     }
 
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
+        progress::migrate_pace(ctx);
         let progress = Progress::load(ctx);
         let next = progress.next_course();
         let next_help = course_help(ctx, next);
@@ -240,14 +253,9 @@ impl TitleGame for HarvestFeast {
             set_callouts,
             |_ctx, _on| None,
             "When on, the kitchen says which dish needs you as its sound changes. Cook a whole course with it off for 10 percent more points.",
-        ), menus::settings::toggle(
-            "harvest_feast_relaxed",
-            |on| format!("Relaxed course pace: {}", if on { "on" } else { "off" }),
-            |ctx| Progress::peek(ctx).relaxed,
-            |ctx, on| { let mut p = Progress::load(ctx); p.relaxed = on; p.store(ctx); },
-            |_ctx, _on| None,
-            "For your next campaign course: half-speed cooking, with time to listen before you act. Scores are separate; stars still open courses. Second helpings and special meals keep standard timing.",
-        )]
+        ),
+            parlor_core::pace::row_with(ID, progress::pace),
+        ]
     }
 
     fn lesson(&mut self, ctx: &mut Ctx<Parlor>) -> parlor_core::Lesson {
@@ -333,12 +341,13 @@ impl Menu for CourseSelect {
     }
 
     fn build_items(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
+        progress::migrate_pace(ctx);
         let progress = Progress::load(ctx);
         let mut items: Vec<MenuItem<Self, Parlor>> = (1..=COURSES)
             .map(|n| {
                 let c = course(n);
                 if progress.open(n) {
-                    let best = best_line(ctx, &progress::paced_course_board(n, progress.relaxed));
+                    let best = best_line(ctx, &progress::course_board(n));
                     MenuItem::new(
                         Label::from(format!(
                             "Course {n}: {}, {}, {best}",

@@ -119,9 +119,14 @@ pub fn event(date: Date) -> Option<Happening> {
     })
 }
 
-/// The Friday night row's help.
-pub fn friday_help(best: Option<u64>) -> String {
-    let best = best.map_or(String::new(), |b| format!(" Your best is {b}."));
+/// The Friday night row's help, with the best and the relaxed best.
+pub fn friday_help(best: Option<u64>, relaxed: Option<u64>) -> String {
+    let best = match (best, relaxed) {
+        (Some(b), Some(r)) => format!(" Your best is {b}, relaxed best {r}."),
+        (Some(b), None) => format!(" Your best is {b}."),
+        (None, Some(r)) => format!(" Your relaxed best is {r}."),
+        (None, None) => String::new(),
+    };
     format!(
         "Friday night, the last of the month: three sectors made from tonight's date, the same for every pilot, on a standard skimmer. Salvage comes as cargo crates, worth double. It keeps its own board and pays no credits, rank or story. Open all day.{best}"
     )

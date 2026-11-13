@@ -4,5 +4,6 @@
 
 mod common;
 mod events;
+mod pacing;
 mod rules;
 mod walkthrough;
