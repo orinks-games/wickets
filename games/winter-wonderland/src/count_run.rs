@@ -98,7 +98,7 @@ impl CountRun {
                 )
             }
             Intro::Drums => format!(
-                "Seven minutes to midnight. The drums join in: a deep boom. Answer a drum with {}. Bells are still {primary}. Press {primary} to play on.",
+                "Seven minutes to midnight. The drums join in. Answer a drum with {}. Bells are still {primary}. Press {primary} to play on.",
                 Self::key(ctx, Inst::Drum)
             ),
             Intro::Horns => format!(
@@ -475,7 +475,7 @@ impl State<Parlor> for CountRun {
     fn help(&self, ctx: &Ctx<Parlor>) -> String {
         let n = |a| ctx.control_name(a);
         if self.celebrating.is_some() {
-            return "Midnight. The bells, champagne and fireworks are playing. Press any key to skip to the results.".to_string();
+            return "Midnight, and the town is celebrating. Press any key to skip to the results.".to_string();
         }
         match self.night.stage {
             Stage::Waiting(_) => format!(

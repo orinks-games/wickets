@@ -208,7 +208,7 @@ pub fn launch(ctx: &mut Ctx<Parlor>, launch: Launch, replace: bool) {
 /// The text of each tutorial step, the original's with the player's keys.
 fn tutorial_text(step: u8, k: &Keys) -> String {
     let text = match step {
-        1 => format!("Your skimmer is in motion. {} or {} shifts lanes. Everything coming is placed by lane around you.", sentence_start(&k.left), k.right),
+        1 => format!("Your skimmer is in motion. {} or {} shifts lanes. Everything coming is placed by its lane, relative to yours.", sentence_start(&k.left), k.right),
         2 => "Flow vehicle in the center lane. Move into its lane before it arrives to score and reduce stress.".to_string(),
         3 => "Debris in the center lane, your lane. Shift out of its lane before it arrives.".to_string(),
         4 => "Repair pickup on the left. Be in its lane when it arrives to restore hull.".to_string(),

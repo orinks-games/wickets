@@ -73,7 +73,7 @@ pub fn page(ctx: &Ctx<Parlor>, n: u32) -> String {
             sentence_start(&left)
         ),
         4 => format!(
-            "Lesson 4 of {LESSONS}: the door zone. A hand on a parked car's door handle means the door is about to open. {} steers left: move out before it does. Pass both doors.",
+            "Lesson 4 of {LESSONS}: the door zone. Now and then a parked car's door is about to open. {} steers left: move out before it does. Pass both doors.",
             sentence_start(&left)
         ),
         _ => format!(

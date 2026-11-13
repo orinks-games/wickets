@@ -32,7 +32,7 @@ The lake changes every night: its size, where the lanterns float, the weather an
 
 - Clear nights are still and quiet.
 - Light rain falls on the lake.
-- In mist, lanterns across the lake are softer until you get close.
+- In mist, lanterns across the lake are hard to make out until you get close.
 - A breeze makes the lanterns drift faster.
 
 Night 1 is small, with 4 lanterns. Each later night is a little wider, with one more lantern, drifting a little faster, up to 10.
@@ -62,7 +62,7 @@ When you head home, the results say how the night went and what went into your j
 The Challenges menu holds 3 lakes that are the same for every player. Before you push off, each reads its rule and score. Escape on that briefing goes back without starting.
 
 - Daily: a small lake with 5 lanterns and a twist that changes every day: mist, rain, still water, a breeze, or a starry night with extra places to find.
-- Weekly: a lantern constellation. Only one lantern is lit at a time. Gather it to light the next. Unlit lanterns are asleep and can't be gathered yet.
+- Weekly: a lantern constellation. Only one lantern is lit at a time, with its own cue. Gather it to light the next. Unlit lanterns are asleep and can't be gathered yet.
 - Monthly: the lantern festival. A great lake with 10 lanterns, every creature out, and a slow current that carries you and the lanterns around the lake.
 
 Your challenge score is 1 for each lantern and 2 for each place you discover. Heading home with Tab counts toward your streak, however many lanterns you have. Leave the challenge, on the pause menu, does not.

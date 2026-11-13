@@ -78,7 +78,7 @@ In wet Riverside, brakes need more room to stop. Old Town's cobbles slow bikes w
 
 S puts danger first: a hazard or oncoming car close ahead, then any flat tyre, then your speed and lane. Press S again straight away for the rest: what else is ahead, how far you are from the parked cars or the centre line, the clock, or in the endless ride your distance, cash and crashes left, then your stamina.{alpha: Against the clock, the first press starts with the time left, and the second gives your drops and cash.} H says what the next hazard is, how soon you reach it and what to do. R repeats the last spoken line.
 
-Spoken call-outs, a row in Settings from the title or the pause menu, chooses how much the game names its sounds as they play. Once per session is the default: each gameplay cue is named the first time it plays after you start Wicket's. Every time names them always. Off leaves only the sounds, and S and H still speak.
+Spoken call-outs, a row in Settings from the title or the pause menu, chooses how often the game names what is coming on the road. Once per session is the default: each kind is named the first time it comes up after you start Wicket's. Every time names them always. Off names none of them, and S and H still speak.
 
 ## Pace
 

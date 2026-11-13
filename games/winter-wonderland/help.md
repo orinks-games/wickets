@@ -38,7 +38,7 @@ A stack is a pile of letters. Each child asks for one thing, in their own words,
 
 ## The Wish Desk: wrapping
 
-When a box sounds like the wish, hold Space to wrap it. Keep holding until it is wrapped. Let go early and nothing is wrapped. The right gift answers the letter, and the next letter comes straight away. A wrong box goes back on the shelf and the letter stays. A wrapped gift leaves an empty place on the shelf.
+When you find the box that holds the wish, hold Space to wrap it. Keep holding until it is wrapped. Let go early and nothing is wrapped. The right gift answers the letter, and the next letter comes straight away. A wrong box goes back on the shelf and the letter stays. A wrapped gift leaves an empty place on the shelf.
 
 ## The Wish Desk: stacks and scoring
 

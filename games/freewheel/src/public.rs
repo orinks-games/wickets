@@ -458,7 +458,7 @@ impl TitleGame for Freewheel {
             "freewheel_call_outs",
             |ctx| format!("Spoken call-outs: {}", Choices::peek(ctx).call_outs.word()),
             cycle_call_outs,
-            "Choose when gameplay cues are named: every time, once per session, or off. A session lasts until you close Wicket's. Status and Hint always speak.",
+            "Choose when the game names what is coming on the road: every time, once per session, or off. A session lasts until you close Wicket's. Status and Hint always speak.",
         ),
             parlor_core::units::row(),
             pace::row(ID),

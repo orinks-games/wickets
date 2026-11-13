@@ -59,7 +59,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
             // Done once the first gift has landed, so the next prompt's
             // "Shake it now" comes with a gift there to shake.
             (s.playing() && s.shift().gift.is_some())
-                .then(|| "The belt is running, and a gift has landed.".to_string())
+                .then(|| "The belt is running. A gift has landed.".to_string())
         })
         .start(move |_| held.with_mut(|s| s.lesson_prompt()));
 
@@ -82,7 +82,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
         )
         .start(move |_| held.with_mut(|s| s.lesson_prompt()));
 
-    const MATCHED: &str = "Now match that sound to a wish.";
+    const MATCHED: &str = "Now match that gift to a wish.";
     let sort_prompt = format!(
         "{} sends the gift to the person on your left, and {r} to the person on your right. A wrong delivery costs clock time. {} says the wishes again. Sort {GIFTS} gifts.",
         sentence_start(&l),
@@ -108,7 +108,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
     );
     let find = desk.step(
         format!(
-            "{} and {r} walk the shelf. {} shakes the box in front of you. Find the box that sounds like the wish. {} reads the letter again.",
+            "{} and {r} walk the shelf. {} shakes the box in front of you. Find the box that holds the wish. {} reads the letter again.",
             sentence_start(&l),
             sentence_start(&p),
             sentence_start(&rep)

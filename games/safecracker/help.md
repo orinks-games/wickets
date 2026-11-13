@@ -14,7 +14,7 @@ Use the dial-click cue to count individual numbers, the ten-detent cue to count 
 
 Every safe has between two and five wheels, and each wheel has its own secret number. Turn the dial and listen. The tumbler-clunk cue marks the correct number, just after the dial click. Press Space to set the wheel and move to the next.
 
-If a spin of ten clunks, the number is somewhere in the ten you just passed. Step back one number at a time until it clunks again, then set it. Under the direction rule, from the jeweller's safe on, spin back instead and step forward the right way.
+If the tumbler falls during a spin of ten, the number is somewhere in the ten you just passed. Step back one number at a time until it falls again, then set it. Under the direction rule, from the jeweller's safe on, spin back instead and step forward the right way.
 
 ## Wrong sets and strikes
 
@@ -34,7 +34,7 @@ From the pawnbroker's safe on, false-gate cues mark wrong numbers. Ignore them a
 
 ## The direction rule
 
-From the jeweller's safe on, the safes behave like real combination dials. Wheel 1 is found turning right, wheel 2 turning left, wheel 3 right again, and so on. The tumbler only clunks when you are turning the right way, and you must reach the number turning that way before you set it. If you overshoot, turn back past the number and come forward again the right way. The same goes for a spin that clunks: stepping back one number at a time is silent, because that is the wrong way, so spin back the ten you just passed and then step forward the right way one number at a time until it clunks. Setting the right number reached the wrong way is a strike. Status says which way to turn for the current wheel and which way you last turned.
+From the jeweller's safe on, the safes behave like real combination dials. Wheel 1 is found turning right, wheel 2 turning left, wheel 3 right again, and so on. The tumbler only falls when you are turning the right way, and you must reach the number turning that way before you set it. If you overshoot, turn back past the number and come forward again the right way. The same goes for a spin where the tumbler falls: stepping back one number at a time never finds it, because that is the wrong way, so spin back the ten you just passed and then step forward the right way one number at a time until it falls. Setting the right number reached the wrong way is a strike. Status says which way to turn for the current wheel and which way you last turned.
 
 ## The night guard
 

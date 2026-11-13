@@ -157,15 +157,15 @@ impl Crack {
         self.delayed.push((wait, key, volume));
     }
 
-    /// "Wheel 2 of 3: turn left and listen for the clunk."
+    /// "Wheel 2 of 3: turn left until the tumbler falls."
     fn wheel_prompt(&self) -> String {
         let run = &self.run;
         if run.practice() {
-            return "Turn the dial either way to the clunk, then set it.".to_string();
+            return "Turn the dial either way until the tumbler falls, then set it.".to_string();
         }
         let way = match run.required() {
-            Some(t) => format!("turn {} to the clunk", t.word()),
-            None => "turn either way to the clunk".to_string(),
+            Some(t) => format!("turn {} until the tumbler falls", t.word()),
+            None => "turn either way until the tumbler falls".to_string(),
         };
         format!("Wheel {} of {}: {way}.", run.wheel + 1, run.spec.wheels)
     }
@@ -438,7 +438,7 @@ impl Crack {
             Turn::Left => (ParlorAction::Up, ParlorAction::Left),
         };
         Some(format!(
-            "If a spin clunks, the number is in the ten you just passed, but stepping back the other way is silent under the direction rule. {} spins back those ten. Then step {} with {} one number at a time until it clunks.",
+            "If the tumbler falls during a spin, the number is in the ten you just passed, but under the direction rule stepping back the other way never finds it. {} spins back those ten. Then step {} with {} one number at a time until it falls.",
             sentence_start(&ctx.control_name(back)),
             way.word(),
             ctx.control_name(step)
@@ -1113,7 +1113,7 @@ impl State<Parlor> for Crack {
         let now = if run.guard_listening() {
             "The guard is at the door, listening: keep still! Do not turn or set until his footsteps walk away. Status and hints are silent and safe.".to_string()
         } else if run.practice() {
-            "Practice: turn to the clunk, then set. Nothing here is scored."
+            "Practice: turn until the tumbler falls, then set. Nothing here is scored."
                 .to_string()
         } else {
             let mut s = self.wheel_prompt();

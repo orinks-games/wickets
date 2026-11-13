@@ -59,7 +59,7 @@ Each of these arrives on its own floor, and the game explains it in full the fir
 - Dark rooms, from floor 15: things call out only when you are three steps away or nearer. Sweep the room row by row.
 - The shadow, from floor 20: a danger that moves around a room one cell at a time. While it hears your footsteps it comes toward you; stand still and it wanders. Let it reach you, or walk into it, and it catches you. Status says where it is, in steps.
 - Mimics, from floor 35: copies of the answer that seem just the same but hop to a new place every few seconds. The real thing never moves. Touching a mimic costs time like a wrong thing.
-- Mirrored rooms, from floor 45: every sound comes from the other side, east from your left and west from your right. North and south are true.
+- Mirrored rooms, from floor 45: east and west swap sides, east on your left and west on your right. North and south are true.
 - The pendulum, from floor 51: a blade swings along one row of the room, one column at a time, back and forth. Its cue tells you where it is. If it reaches your cell, it cuts you and costs one courage. Cross its row just after it passes. Status says which row it swings in.
 - Deep water, from floor 61: part of the room is flooded. Its warning means deep water is next to you. A step into it splashes, and you wade for a moment before you can step again. Every splash brings the next ghost sooner.
 - Falling stones, from floor 71: dust trickles over the cell you stand on, and 2 seconds later a stone falls there. Step off when the dust falls. Stones never start while a ghost is passing.

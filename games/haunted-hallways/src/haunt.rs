@@ -1887,7 +1887,7 @@ impl State<Parlor> for Haunt {
             dangers.push_str("Mimics hop about; the real thing keeps still. ");
         }
         if room.mirror {
-            dangers.push_str("This room is mirrored: east sounds from your left. ");
+            dangers.push_str("This room is mirrored: east is on your left. ");
         }
         if room.dark {
             dangers.push_str("This room is dark: things are found only when you are near. ");
@@ -1907,7 +1907,7 @@ impl State<Parlor> for Haunt {
         }
         if self.run.founder.is_some() {
             dangers.push_str(&format!(
-                "The founder hunts you. Halfway through his wind-up, {} strikes him; too soon and he blocks, so step away. ",
+                "The founder hunts you. In the second half of his wind-up, {} strikes him; too soon and he blocks, so step away. ",
                 ctx.control_name(ParlorAction::Primary)
             ));
         }
@@ -1915,7 +1915,7 @@ impl State<Parlor> for Haunt {
             Some(e) => {
                 let twist = match e.twist {
                     Some(t) => format!(" Twist: {}, {}.", t.name(), t.describe()),
-                    None => " Séance rooms want their sounds' things in order.".to_string(),
+                    None => " In séance rooms, pick up the things the medium calls up, in order.".to_string(),
                 };
                 let carry = if e.carries_courage() {
                     " Courage does not refill between floors."
