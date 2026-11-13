@@ -336,12 +336,15 @@ pub fn fresh(ctx: &Ctx<Parlor>) -> Option<Kept> {
 /// Opens the Soundtrack on `kept` and starts saving it as a sound file.
 pub fn save(ctx: &mut Ctx<Parlor>, kept: &Kept) {
     crate::soundtrack::refresh(ctx);
-    let name = game_name(&kept.game);
-    ctx.push(
-        SoundtrackScreen::new()
-            .album(album(&name))
-            .saving(kept.track_id()),
-    );
+    let id = kept.track_id();
+    // The album the track is listed under: the launcher names every game
+    // there, a holiday special too, which the roster here does not hold.
+    let album = ctx
+        .soundtrack
+        .track(&id)
+        .map(|t| t.album.clone())
+        .unwrap_or_else(|| album(&game_name(&kept.game)));
+    ctx.push(SoundtrackScreen::new().album(album).saving(id));
 }
 
 /// A game's name, from the launcher's roster; its id when the roster does
