@@ -1915,7 +1915,8 @@ impl State<Parlor> for Haunt {
             Some(e) => {
                 let twist = match e.twist {
                     Some(t) => format!(" Twist: {}, {}.", t.name(), t.describe()),
-                    None => " In séance rooms, pick up the things the medium calls up, in order.".to_string(),
+                    None => " In séance rooms, pick up the things the medium calls up, in order."
+                        .to_string(),
                 };
                 let carry = if e.carries_courage() {
                     " Courage does not refill between floors."
