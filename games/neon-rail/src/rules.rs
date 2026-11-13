@@ -50,9 +50,9 @@ pub const BLACK_SKY_SECTORS: usize = 5;
 /// the extraction sprint.
 pub const COLD_START_SECTORS: usize = 9;
 /// Said the first time a ghost car comes in a run.
-pub const GHOST_LINE: &str = "Ghost cars tonight: cars going your way whistle. Meet them as usual.";
+pub const GHOST_LINE: &str = "Ghost cars tonight: flow vehicles come in costume. Meet them as usual.";
 /// The status key's line while ghost cars run.
-pub const GHOST_RULE: &str = "Ghost cars: cars going your way whistle. Meet them as usual.";
+pub const GHOST_RULE: &str = "Ghost cars: flow vehicles come in costume. Meet them as usual.";
 
 /// One of the three lanes, or all of them at once (a blockade).
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
@@ -184,7 +184,7 @@ impl Kind {
         match self {
             Kind::Debris => format!("Debris {l}."),
             Kind::Drone => format!("Drone {l}."),
-            Kind::Blockade => "Full blockade. Boost on the chime.".to_string(),
+            Kind::Blockade => "Full blockade. Boost just before it hits.".to_string(),
             Kind::Repair => format!("Repair pickup {l}."),
             Kind::Salvage => format!("Salvage {l}."),
             Kind::Flow => format!("Flow vehicle {l}. Route cleanly."),
@@ -486,8 +486,8 @@ impl Twist {
     pub fn describe(self) -> &'static str {
         match self {
             Twist::Dense => "Arrivals come more than a quarter closer together, so there is less time between one decision and the next.",
-            Twist::NoBoost => "Your boost is offline. There are no full blockades; heavy blockers take their place, so every hazard must be dodged or shot.",
-            Twist::Fog => "Fog cuts every warning by a quarter: each arrival is heard later, so react on its first sound.",
+            Twist::NoBoost => "Your boost is offline. There are no full blockades. Heavy blockers take their place, so every hazard must be dodged or shot.",
+            Twist::Fog => "Fog cuts every warning by a quarter, so each arrival comes with less notice.",
         }
     }
 
@@ -2149,7 +2149,7 @@ impl Run {
                 keys.fire
             ),
             (Kind::Blockade, _) => format!(
-                "You cannot dodge it. Press {} on the bright chime, just before it hits.",
+                "You cannot dodge it. Press {} just before it hits.",
                 keys.boost
             ),
             (Kind::Debris, true) => format!(
