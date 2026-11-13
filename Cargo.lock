@@ -1006,7 +1006,7 @@ dependencies = [
 [[package]]
 name = "hearken"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=7168f1f07060d9072c51f8ea092d0050e41c30ce#7168f1f07060d9072c51f8ea092d0050e41c30ce"
+source = "git+https://github.com/orinks-games/hearken?rev=9a19808ba676a2874249bad1ba480e283c15f4ba#9a19808ba676a2874249bad1ba480e283c15f4ba"
 dependencies = [
  "hearken-app",
  "hearken-replay",
@@ -1016,7 +1016,7 @@ dependencies = [
 [[package]]
 name = "hearken-app"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=7168f1f07060d9072c51f8ea092d0050e41c30ce#7168f1f07060d9072c51f8ea092d0050e41c30ce"
+source = "git+https://github.com/orinks-games/hearken?rev=9a19808ba676a2874249bad1ba480e283c15f4ba#9a19808ba676a2874249bad1ba480e283c15f4ba"
 dependencies = [
  "ab_glyph",
  "dirs",
@@ -1045,7 +1045,7 @@ dependencies = [
 [[package]]
 name = "hearken-audio"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=7168f1f07060d9072c51f8ea092d0050e41c30ce#7168f1f07060d9072c51f8ea092d0050e41c30ce"
+source = "git+https://github.com/orinks-games/hearken?rev=9a19808ba676a2874249bad1ba480e283c15f4ba#9a19808ba676a2874249bad1ba480e283c15f4ba"
 dependencies = [
  "cpal",
  "hearken-pack",
@@ -1060,12 +1060,12 @@ dependencies = [
 [[package]]
 name = "hearken-bake"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=7168f1f07060d9072c51f8ea092d0050e41c30ce#7168f1f07060d9072c51f8ea092d0050e41c30ce"
+source = "git+https://github.com/orinks-games/hearken?rev=9a19808ba676a2874249bad1ba480e283c15f4ba#9a19808ba676a2874249bad1ba480e283c15f4ba"
 
 [[package]]
 name = "hearken-discord"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=7168f1f07060d9072c51f8ea092d0050e41c30ce#7168f1f07060d9072c51f8ea092d0050e41c30ce"
+source = "git+https://github.com/orinks-games/hearken?rev=9a19808ba676a2874249bad1ba480e283c15f4ba#9a19808ba676a2874249bad1ba480e283c15f4ba"
 dependencies = [
  "discord-rich-presence",
  "log",
@@ -1075,12 +1075,12 @@ dependencies = [
 [[package]]
 name = "hearken-genny"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=7168f1f07060d9072c51f8ea092d0050e41c30ce#7168f1f07060d9072c51f8ea092d0050e41c30ce"
+source = "git+https://github.com/orinks-games/hearken?rev=9a19808ba676a2874249bad1ba480e283c15f4ba#9a19808ba676a2874249bad1ba480e283c15f4ba"
 
 [[package]]
 name = "hearken-l10n"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=7168f1f07060d9072c51f8ea092d0050e41c30ce#7168f1f07060d9072c51f8ea092d0050e41c30ce"
+source = "git+https://github.com/orinks-games/hearken?rev=9a19808ba676a2874249bad1ba480e283c15f4ba#9a19808ba676a2874249bad1ba480e283c15f4ba"
 dependencies = [
  "aho-corasick",
  "log",
@@ -1091,7 +1091,7 @@ dependencies = [
 [[package]]
 name = "hearken-pack"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=7168f1f07060d9072c51f8ea092d0050e41c30ce#7168f1f07060d9072c51f8ea092d0050e41c30ce"
+source = "git+https://github.com/orinks-games/hearken?rev=9a19808ba676a2874249bad1ba480e283c15f4ba#9a19808ba676a2874249bad1ba480e283c15f4ba"
 dependencies = [
  "chacha20poly1305",
  "getrandom 0.4.3",
@@ -1101,7 +1101,7 @@ dependencies = [
 [[package]]
 name = "hearken-replay"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=7168f1f07060d9072c51f8ea092d0050e41c30ce#7168f1f07060d9072c51f8ea092d0050e41c30ce"
+source = "git+https://github.com/orinks-games/hearken?rev=9a19808ba676a2874249bad1ba480e283c15f4ba#9a19808ba676a2874249bad1ba480e283c15f4ba"
 dependencies = [
  "serde",
  "serde_json",
@@ -1111,7 +1111,7 @@ dependencies = [
 [[package]]
 name = "hearken-rooms"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=7168f1f07060d9072c51f8ea092d0050e41c30ce#7168f1f07060d9072c51f8ea092d0050e41c30ce"
+source = "git+https://github.com/orinks-games/hearken?rev=9a19808ba676a2874249bad1ba480e283c15f4ba#9a19808ba676a2874249bad1ba480e283c15f4ba"
 dependencies = [
  "hearken-replay",
  "log",
@@ -1123,7 +1123,7 @@ dependencies = [
 [[package]]
 name = "hearken-seal"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=7168f1f07060d9072c51f8ea092d0050e41c30ce#7168f1f07060d9072c51f8ea092d0050e41c30ce"
+source = "git+https://github.com/orinks-games/hearken?rev=9a19808ba676a2874249bad1ba480e283c15f4ba#9a19808ba676a2874249bad1ba480e283c15f4ba"
 dependencies = [
  "chacha20poly1305",
  "getrandom 0.4.3",
@@ -1136,7 +1136,7 @@ dependencies = [
 [[package]]
 name = "hearken-speech"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=7168f1f07060d9072c51f8ea092d0050e41c30ce#7168f1f07060d9072c51f8ea092d0050e41c30ce"
+source = "git+https://github.com/orinks-games/hearken?rev=9a19808ba676a2874249bad1ba480e283c15f4ba#9a19808ba676a2874249bad1ba480e283c15f4ba"
 dependencies = [
  "cpal",
  "hearken-genny",
@@ -1150,7 +1150,7 @@ dependencies = [
 [[package]]
 name = "hearken-synth"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=7168f1f07060d9072c51f8ea092d0050e41c30ce#7168f1f07060d9072c51f8ea092d0050e41c30ce"
+source = "git+https://github.com/orinks-games/hearken?rev=9a19808ba676a2874249bad1ba480e283c15f4ba#9a19808ba676a2874249bad1ba480e283c15f4ba"
 dependencies = [
  "fundsp",
  "log",
@@ -1159,7 +1159,7 @@ dependencies = [
 [[package]]
 name = "hearken-update"
 version = "0.1.0"
-source = "git+https://github.com/orinks-games/hearken?rev=7168f1f07060d9072c51f8ea092d0050e41c30ce#7168f1f07060d9072c51f8ea092d0050e41c30ce"
+source = "git+https://github.com/orinks-games/hearken?rev=9a19808ba676a2874249bad1ba480e283c15f4ba#9a19808ba676a2874249bad1ba480e283c15f4ba"
 dependencies = [
  "ed25519-dalek",
  "flate2",
