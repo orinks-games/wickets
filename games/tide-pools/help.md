@@ -114,8 +114,8 @@ The challenge list says your best and streak for each, and how long until the ne
 
 Some days the shore is different. Each event has a row of its own on the title menu, just below Play. While it is closed, the row says locked and when it opens. It takes you to the furthest shore you have opened, and keeps its own best score. If the event has ended by the time you choose Play again, the game says it has ended and you go back to the title. The ordinary shores and the challenges never change.
 
-- King tide: within a day of a new or full moon, from November to February. The sea goes far out, so two extra pools open at each end of the shore, on a spring tide with a longer trip. The waves start far off, and curlews call from the wet sand. This is the game's take on the big winter tides, not a real tide table.
-- Moonlit pools: on every full moon night, all year. A night trip under the full moon. The gulls are asleep, and a night heron croaks along the shore. Moon jellyfish and baby octopuses can come out whatever the weather.
+- King tide: within a day of a new or full moon, from November to February. The sea goes far out, so two extra pools open at each end of the shore, on a spring tide with a longer trip. This is the game's take on the big winter tides, not a real tide table.
+- Moonlit pools: on every full moon night, all year. A night trip under the full moon. Moon jellyfish and baby octopuses can come out whatever the weather.
 
 S says which calendar event you are playing.
 

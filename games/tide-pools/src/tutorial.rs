@@ -73,6 +73,6 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pools: Live<OutingScreen>) -> Lesson {
     .step(gather)
     .step(shy)
     .outro(
-        "A trip lasts until the tide comes back: a bell buoy rings when it turns. On a trip, what you gather goes home to your aquarium. These practice creatures go back in the water. F1 lists the rest.",
+        "A trip lasts until the tide comes back. On a trip, what you gather goes home to your aquarium. These practice creatures go back in the water. F1 lists the rest.",
     )
 }
