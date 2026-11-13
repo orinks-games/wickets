@@ -42,7 +42,7 @@ pub const LOGS: &[Log] = &[
     },
     Log {
         title: "Black Sky Run",
-        pages: &["Extraction is not escape. Every clean run recovers another fragment from the data core, and every fragment proves the collapse was planned."],
+        pages: &["Every clean run recovers another fragment from the data core, and every fragment proves the collapse was planned."],
         how: "Complete a run to extraction.",
     },
     Log {
@@ -57,14 +57,14 @@ pub const LOGS: &[Log] = &[
         title: "The Orbital Event",
         pages: &[
             "The orbital defense grid did not fail. It was told to stand down for ninety seconds, and in those ninety seconds the sky over the eastern districts went black.",
-            "The order came through the transit network. The same relays your skimmer has been passing every run.",
+            "The order came through the transit network, on the same relays your skimmer passes every run.",
         ],
         how: "Recover 6 intel fragments.",
     },
     Log {
         title: "Corporate Security",
         pages: &[
-            "Corporate security does not want the skimmer back. Their drones are tuned to destroy the data core, not to disable the craft.",
+            "Corporate security has no use for the skimmer. Their drones are tuned to destroy the data core.",
             "Whatever is on the core, someone would rather lose it forever than let a courier read it.",
         ],
         how: "Recover 9 intel fragments.",
@@ -72,7 +72,7 @@ pub const LOGS: &[Log] = &[
     Log {
         title: "The Unknown Signal",
         pages: &[
-            "The signal that guides you deeper is not a person. It is the network itself, or something living in it, routing you away from the hunters a moment before they close.",
+            "The signal that guides you deeper is the network itself, or something living in it. It routes you away from the hunters a moment before they close.",
             "It speaks only in transit codes. Tonight it sent one you have never heard: return to origin.",
         ],
         how: "Recover 12 intel fragments.",
@@ -89,7 +89,7 @@ pub const LOGS: &[Log] = &[
         title: "Breathing Freight",
         pages: &[
             "The biological telemetry comes from passengers, sedated and being moved out of the dark districts under clean codes.",
-            "The partition was never about the orbital event. It was about who would be allowed to leave.",
+            "The orbital event was the excuse. The partition decided who would be allowed to leave.",
         ],
         how: "Recover 20 intel fragments.",
     },
