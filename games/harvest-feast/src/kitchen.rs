@@ -224,7 +224,7 @@ impl Kitchen {
             Phase::Ready => self.intro(ctx),
             Phase::Served(_) => "Everything is served. The results are coming.".to_string(),
             Phase::Cooking if self.last_prompt.is_empty() => {
-                "Cooking. Listen for the recipe to call the first dish.".to_string()
+                "Cooking. Wait for the recipe to call the first dish.".to_string()
             }
             Phase::Cooking => self.last_prompt.clone(),
         }
@@ -380,18 +380,18 @@ impl Kitchen {
         ctx.say(line);
     }
 
-    /// What the focused station sounds like now, and what that means.
+    /// What the focused station is doing now.
     fn listen(&self, ctx: &mut Ctx<Parlor>) {
         let st = self.focus;
         let line = match self.meal.active_at(st).map(|i| &self.meal.dishes[i]) {
-            None => format!("The {} is quiet: nothing on it.", st.name()),
+            None => format!("Nothing on the {}.", st.name()),
             Some(d) if !d.started() => match d.stage {
-                Stage::Due => format!("Double knock, {}: start the {}.", st.name(), d.name()),
+                Stage::Due => format!("The {}: start the {}.", st.name(), d.name()),
                 Stage::Burning => {
-                    format!("Triple knock, {}: start the {} now!", st.name(), d.name())
+                    format!("The {}: start the {} now!", st.name(), d.name())
                 }
                 _ => format!(
-                    "The {} is quiet: the {} {} not called for yet.",
+                    "The {}: the {} {} not called for yet.",
                     st.name(),
                     d.name(),
                     d.kind.is()
@@ -399,22 +399,22 @@ impl Kitchen {
             },
             Some(d) => match d.stage {
                 Stage::Due => format!(
-                    "You hear {}: the {} {} {}.",
-                    st.due_sound(),
+                    "The {}: the {} {} {}.",
+                    st.name(),
                     d.name(),
                     d.kind.needs(),
                     d.current()
                         .map_or("you".to_string(), |s| s.action.gerund(d.kind.plural()))
                 ),
                 Stage::Burning => format!(
-                    "You hear {}: the {} {} burning. Act now.",
-                    st.burning_sound(),
+                    "The {}: the {} {} burning. Act now.",
+                    st.name(),
                     d.name(),
                     d.kind.is()
                 ),
                 _ => format!(
-                    "You hear {}: the {} {} cooking happily.",
-                    st.cooking_sound(),
+                    "The {}: the {} {} cooking.",
+                    st.name(),
                     d.name(),
                     d.kind.is()
                 ),
@@ -465,7 +465,7 @@ impl Kitchen {
         // The recipe cue waits for the first call; the lesson's own prompt
         // says what comes next.
         if !self.lesson {
-            ctx.say("Cooking. Listen for the recipe.");
+            ctx.say("Cooking. Wait for the recipe.");
         }
         let events = self.meal.update(0.0);
         self.voice(ctx, events);

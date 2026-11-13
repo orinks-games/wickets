@@ -578,7 +578,7 @@ pub fn finish(
     }
     summary.push_str(&format!(" {} points", score.points));
     if by_ear {
-        summary.push_str(", with the by-ear bonus");
+        summary.push_str(", with the bonus for cooking without call-outs");
     }
     summary.push('.');
     ctx.audio.set_bed(None);
