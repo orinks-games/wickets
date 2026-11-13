@@ -274,7 +274,7 @@ impl TableScreen {
             Advice::FirstRoll => format!("Roll: nothing at risk. {} rolls.", sentence_start(&p)),
             Advice::Stay(why) => format!("Stay in. {why} {} stays in.", sentence_start(&p)),
             Advice::Bank(why) => format!("Bank. {why} {} banks.", sentence_start(&t)),
-            Advice::Standing => "You have banked. Listen to the others.".to_string(),
+            Advice::Standing => "You have banked. Wait for the others.".to_string(),
             Advice::Over => "The night is over.".to_string(),
         }
     }
