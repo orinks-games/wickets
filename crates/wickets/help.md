@@ -168,10 +168,11 @@ saved records.
 ## Reporting a problem
 
 Report a problem, in Settings, sends the game log to orinks.net and opens
-the report form in your web browser with the log already attached. Write
-what happened, add your email address if you want a reply, and send it. If
-the form cannot open, the game's own report screen opens instead and says
-why.
+the report form in your web browser with the log already attached. Settings
+is on every game's pause menu too, and a report sent from inside a game
+names that game. Write what happened, add your email address if you want a
+reply, and send it. If the form cannot open, the game's own report screen
+opens instead and says why.
 
 If Wicket's closed without quitting the last time it ran, the next start asks
 once whether to report it. Yes opens the same form with that run's log. Don't
