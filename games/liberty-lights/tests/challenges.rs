@@ -574,7 +574,7 @@ fn a_controller_plays_a_whole_level_with_a_and_the_d_pad() {
     h.clear();
     // A is Enter to menus; in the show it is the main action.
     tap(&mut h, ControllerButton::A);
-    assert_eq!(h.spoken(), ["The show."]);
+    assert_eq!(h.spoken(), ["The show starts."]);
     for _ in 0..1000 {
         if spoke(&h, "Your turn.") {
             break;

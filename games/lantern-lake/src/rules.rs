@@ -1188,7 +1188,7 @@ impl Lake {
             }
         }
         if !heard.is_empty() {
-            text.push_str(&format!(" You hear {}.", heard.join("; ")));
+            text.push_str(&format!(" {}.", sentence(&heard.join("; "))));
         }
         let lit = self.lit_count();
         match lit {

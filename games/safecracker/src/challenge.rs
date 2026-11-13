@@ -71,7 +71,7 @@ impl Twist {
     pub fn describe(self) -> &'static str {
         match self {
             Twist::QuietTumblers => {
-                "the tumblers are freshly oiled, as in the Crown vault"
+                "the tumblers are freshly oiled and harder to find, as in the Crown vault"
             }
             Twist::NervousGuard => {
                 "a night guard walks by often and listens long at the door. When he stops, keep still until he walks away"

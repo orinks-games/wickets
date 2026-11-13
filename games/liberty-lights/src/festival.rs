@@ -291,7 +291,7 @@ impl Plan {
             Period::Monthly => {
                 let f = self.festival.unwrap_or_else(|| festival(12));
                 format!(
-                    "The {} festival: three acts, played whatever they score, ending with a {}-firework finale. The festival celebrates the {}, and its shows are full of them. On a show that clears, every {} matched closely in kind, place and time, adds {} bonus points.",
+                    "The {} festival: three acts, played whatever they score, ending with a {}-firework finale. The festival celebrates the {}, and its shows are full of them. On a show that clears, every {} matched closely in kind, place and time adds {} bonus points.",
                     f.name,
                     self.acts.last().map_or(0, |a| a.show.len()),
                     f.signature.name(),

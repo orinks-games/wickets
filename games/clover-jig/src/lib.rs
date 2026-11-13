@@ -205,7 +205,7 @@ pub fn ceili_briefing(ctx: &mut Ctx<Parlor>) -> Pages {
     let date = today(ctx);
     let night = season::night_key(date);
     let clover = if progress::clover_due(ctx, &night) {
-        "A four-leaf clover hides in the third or fourth tune, once a night, on one call. Dance that step to find it."
+        "A four-leaf clover hides in the third or fourth tune, once a night, on one of the calls. Dance that step to find it."
     } else {
         "The four-leaf clover has been out once tonight already, so tonight's dances have shamrocks only."
     };

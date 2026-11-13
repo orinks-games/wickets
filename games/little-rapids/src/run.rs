@@ -72,7 +72,7 @@ pub fn introduction(kind: Kind) -> &'static str {
         }
         Kind::Leaf => "A leaf. Catch it like a petal.",
         Kind::Scrap => "A paper scrap. Scraps fold into new boats.",
-        Kind::Trinket => "A trinket, and rare. Catch it for your shelf.",
+        Kind::Trinket => "A trinket. They are rare. Catch it for your shelf.",
         Kind::Lantern => "A floating lantern. Worth five petals.",
         Kind::Stone => "A stone. Steer clear, or the bump costs your combo.",
         Kind::Gate => {

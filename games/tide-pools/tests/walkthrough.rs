@@ -285,7 +285,7 @@ fn leaning_in_and_stepping_back_are_spoken_and_heard() {
     assert!(played(&t.h, sound::LEAN_BACK));
     assert!(spoke(
         &t.h,
-        "Standing back on the rocks. Two pools either side"
+        "Standing back on the rocks, with two pools either side."
     ));
     t.h.clear();
     t.press(Key::Down);

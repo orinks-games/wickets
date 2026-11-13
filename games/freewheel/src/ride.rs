@@ -1259,7 +1259,7 @@ impl Ride {
                 sound::play(ctx, sound::ACT_NOW);
                 self.call(
                     ctx,
-                    "act_now",
+                    "act_now_car",
                     "It is in your line. Act now.".to_string(),
                     "Now.".to_string(),
                 );

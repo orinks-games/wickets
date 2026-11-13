@@ -497,7 +497,8 @@ impl OutingScreen {
                             sentence_start(&p)
                         )),
                         Lean::Back if self.first("lean back") => {
-                            text.push_str(" Two pools either side.")
+                            text.pop();
+                            text.push_str(", with two pools either side.")
                         }
                         _ => {}
                     }

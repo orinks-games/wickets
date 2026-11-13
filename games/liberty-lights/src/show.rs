@@ -384,7 +384,7 @@ impl Show {
 
     fn listen(&mut self, ctx: &mut Ctx<Parlor>) {
         self.round.listen();
-        ctx.say("The show.");
+        ctx.say("The show starts.");
         let cues = self.round.update(0.0);
         self.play_cues(ctx, cues);
     }
