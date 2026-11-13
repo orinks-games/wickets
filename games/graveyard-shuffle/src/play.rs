@@ -193,7 +193,7 @@ impl Floor {
         let what = match self.mode {
             Mode::Set(_) => format!("3 songs: {}.", self.tune_names()),
             Mode::Practice(_) => format!(
-                "{}. The song waits for each monster until you dance its move.",
+                "{}. The music holds for each monster until you dance its move.",
                 self.run.plans[0].tune.name
             ),
             Mode::Challenge(_) => {
@@ -926,7 +926,7 @@ impl State<Parlor> for Floor {
             Some(i) => {
                 let step = run.dance.plan.calls[i].step;
                 format!(
-                    "The song is waiting for {}, {}: {}. {controls}",
+                    "The music holds for {}, {}: {}. {controls}",
                     step.lower(),
                     step.dance(),
                     Self::step_key(ctx, step)

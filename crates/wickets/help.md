@@ -165,6 +165,18 @@ To switch from a beta to an older alpha, download the alpha manually.
 Installing a beta or stable copy hides alpha-only games, but keeps their
 saved records.
 
+## Reporting a problem
+
+Report a problem, in Settings, sends the game log to orinks.net and opens
+the report form in your web browser with the log already attached. Write
+what happened, add your email address if you want a reply, and send it. If
+the form cannot open, the game's own report screen opens instead and says
+why.
+
+If Wicket's closed without quitting the last time it ran, the next start asks
+once whether to report it. Yes opens the same form with that run's log. Don't
+ask again turns the question off, and a row in Settings turns it back on.
+
 ## Stories, tutorials and results
 
 Stories, tutorials and results come one page at a time. Enter goes on, Up

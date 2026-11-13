@@ -16,7 +16,7 @@ Forward: dance it with the Up arrow.
 
 Back: dance it with the Down arrow. Forward and back join the calls in set 3.
 
-Before a dance starts, H plays every step with its call, and each step key plays its own call and step, so you can learn them with nothing at stake.
+Before a dance starts, H plays every step with its call, and each step key plays its own call and step.
 
 ## The beat and timing
 
@@ -48,7 +48,7 @@ A star on every tune of a set opens the next set. Play dances the first set you 
 
 ## The practice room
 
-The practice room plays one tune of any set you have opened. When a step's beat comes, the tune waits for you: the music holds, and the step and its key are named. Dance the step and the tune goes on. A wrong step names the right key. Nothing is scored.
+The practice room plays one tune of any set you have opened. When a step's beat comes, the music holds, and the step and its key are named. Dance the step and the tune goes on. A wrong step names the right key. Nothing is scored.
 
 ## Saint Patrick's Day
 
@@ -80,7 +80,7 @@ Your score is every point and bonus you earn. Leave the challenge, on the pause 
 
 ## Spoken call-outs
 
-The caller is a recorded voice that plays with the music. With spoken call-outs on, your screen reader also says each step as it is called. It is off at the start. Switch it in Settings, from the title or the pause menu.
+The caller is a recorded voice that plays with the music. With spoken call-outs on, the game also speaks each step as it is called. It is off at the start. Switch it in Settings, from the title or the pause menu.
 
 ## Pausing
 

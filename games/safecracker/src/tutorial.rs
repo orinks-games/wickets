@@ -65,7 +65,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let dl = Rc::clone(&dial);
     let clicks = Step::new(
         format!(
-            "The dial runs from 0 to 99. {} turns it one number down and {r} one number up, with a soft click each. Every tenth number gives a firmer double click. Turn up to 5.",
+            "The dial runs from 0 to 99. {} turns it one number down and {r} one number up. Turn up to 5.",
             sentence_start(&l)
         ),
         move |ctx, a| {
@@ -95,7 +95,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let dl = Rc::clone(&dial);
     let spins = Step::new(
         format!(
-            "{} spins the dial ten numbers up and {d} ten down, with a quick ratchet. Listen for a deep, solid clunk: the tumbler dropping. Spin up until you hear it.",
+            "{} spins the dial ten numbers up and {d} ten down. At a wheel's number, the tumbler falls into place. Spin up until it does.",
             sentence_start(&u)
         ),
         move |ctx, a| {
@@ -110,18 +110,18 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
             };
             if spin(ctx, &dl, up) {
                 Reply::done(format!(
-                    "{}. That was the clunk: the number is in the ten you just spun past.",
+                    "{}. That was the tumbler: the number is in the ten you just spun past.",
                     dl.get()
                 ))
             } else {
-                Reply::say(format!("{}. No clunk.", dl.get()))
+                Reply::say(format!("{}. Not there yet.", dl.get()))
             }
         },
     );
 
     let dl = Rc::clone(&dial);
     let back = Step::new(
-        format!("Now step back one number at a time with {l} until it clunks again."),
+        format!("Now step back one number at a time with {l} until the tumbler falls again."),
         move |ctx, a| {
             let n = match a {
                 ParlorAction::Left => turn(ctx, &dl, -1),
@@ -138,7 +138,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
                 _ => return Reply::Nudge,
             };
             if n == SECRET {
-                Reply::done(format!("{n}. Clunk. The number is {n}."))
+                Reply::done(format!("{n}. There it is. The number is {n}."))
             } else {
                 Reply::say(n.to_string())
             }
@@ -160,7 +160,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
             ParlorAction::Primary => {
                 sound::play(ctx, sound::SPRING);
                 Reply::say(format!(
-                    "That twang was the wheel springing back: {} is not the number. In a real safe that is a strike, and three strikes jam it. Find the clunk at {SECRET} first.",
+                    "The wheel sprang back: {} is not the number. In a real safe that is a strike, and three strikes jam it. Find the tumbler at {SECRET} first.",
                     dl.get()
                 ))
             }

@@ -44,7 +44,7 @@ fn guard(
     } else if n.landing > 1 {
         Some("The landing is over.".to_string())
     } else if !n.you().seated {
-        Some("Listen for the 1.".to_string())
+        Some("Wait for the 1.".to_string())
     } else if action == ParlorAction::Secondary && n.history.len() < 2 {
         Some(format!("Not yet. {} rolls.", key(ParlorAction::Primary)))
     } else if action == ParlorAction::Primary && n.history.len() >= 2 && !s.table.busy() {
@@ -144,7 +144,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, table: Live<TableScreen>) -> Lesson {
     .start(move |_ctx| first.set(false));
 
     let one_prompt = format!(
-        "A 1 on either die ends the landing with a dull thud. Everyone still seated loses what the table holds. {ONE_ROLLS} of 36 rolls have a 1, and {u} says the odds. You have banked, so listen for the 1."
+        "A 1 on either die ends the landing. Everyone still seated loses what the table holds. {ONE_ROLLS} of 36 rolls have a 1, and {u} says the odds. You have banked, so wait for the 1."
     );
     let wait = speech_secs(&one_prompt);
     let held = table.clone();

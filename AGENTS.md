@@ -60,9 +60,11 @@ nothing about the interface itself.
 - No filler openers or hedges: "note that", "keep in mind", "remember",
   "simply", "just", "as mentioned", "see above", "as you may have noticed".
   Say the fact.
-- A sound is described only in the sound check. `help.md` and spoken lines
-  name a cue by what it marks ("the freeze cue", "the strike cue"), never by
-  how it sounds. Help explains gameplay, goals, scoring and controls.
+- A sound is named and described only in the sound check. Tutorials, F1
+  help, `help.md` and Settings help never mention a sound, not even by a cue
+  name: the game plays it, and the text says what is happening and what to
+  do. Before: "A sharp stab sounds: freeze." After: "A ghost is coming:
+  freeze."
 - No timing numbers in spoken lines: "a moment", "straight away", "soon",
   not "0.2 seconds" or "10 s". `help.md` may give a rule's clock in whole
   seconds or minutes when the number is the rule.

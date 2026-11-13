@@ -473,7 +473,7 @@ impl DiveScreen {
         } else if !d.left_bell {
             "You are at the boat's bell. Find treasure by sonar, then come back here to surface."
         } else {
-            "Steer toward treasure echoes, and come back to the bell before your air runs out."
+            "Steer toward treasure, and come back to the bell before your air runs out."
         }
     }
 

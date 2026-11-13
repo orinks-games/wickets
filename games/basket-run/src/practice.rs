@@ -38,7 +38,7 @@ impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
             menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down choose a sound, Enter plays it from where you would hear it in play, Escape goes back. Falling sounds fall from high to low and land.",
+                "Up and Down choose a sound, Enter plays it from its place in play, Escape goes back. Falling sounds fall from high to low and land.",
             ),
             demo: Demo::None,
         }
@@ -169,7 +169,7 @@ impl Menu for SoundCheck {
             plain("Eggs banked", sound::BANK, "Eggs rolling into the cart and a bright chime: banked as points."),
             plain("Nothing to bank", sound::EMPTY, "Two hollow knocks: the basket is empty, or the cart is not in your lane."),
             plain("Eggs spilled", sound::SPILL, "A tumble: eggs lost from the basket, to mud or to the bell."),
-            placed("The cart's bell", sound::BEACON, "A soft bell every few seconds from the cart's lane, so you can always find it."),
+            placed("The cart's bell", sound::BEACON, "A soft bell every few seconds from the cart's lane."),
             plain("A step", sound::STEP, "Rustling grass: you moved one lane."),
             placed("Reaching the cart", sound::AT_CART, "A wood block: you stepped into the cart's lane."),
             plain("The fence", sound::EDGE, "A bump: the edge of the meadow."),

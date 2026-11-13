@@ -322,7 +322,7 @@ impl AquariumScreen {
 
     fn controls(ctx: &Ctx<Parlor>) -> String {
         format!(
-            "{} and {} move along the tanks, {} listens to one again, {} plays the whole tank, {} sums it up, {} says what is still missing, Escape goes back.",
+            "{} and {} move along the tanks, {} plays one again, {} plays the whole tank, {} sums it up, {} says what is still missing, Escape goes back.",
             sentence_start(&ctx.control_name(ParlorAction::Left)),
             ctx.control_name(ParlorAction::Right),
             ctx.control_name(ParlorAction::Primary),
@@ -486,7 +486,7 @@ impl State<Parlor> for AquariumScreen {
             return "Your aquarium is empty. Gather creatures at the beach and they come home with you. Escape goes back.".to_string();
         }
         format!(
-            "Your aquarium: everything you have gathered lives here, each kind in its own spot from left to right, and they make their sounds now and then. {}",
+            "Your aquarium: everything you have gathered lives here, each kind in its own spot from left to right, and they call now and then. {}",
             Self::controls(ctx)
         )
     }

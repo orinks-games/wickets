@@ -10,7 +10,7 @@ Left and Right sweep the listening point round the sky, one step of 5 degrees at
 
 You start facing south, 40 degrees up. When you pass due north, east, south or west, the direction is spoken. S says where the point is, such as "Southwest, 40 degrees up".
 
-## Hearing the stars
+## Stars near the point
 
 You can hear stars within about 30 degrees of the listening point. Their sounds indicate direction, height and brightness. Sound check, on the title, lets you learn these cues.
 
@@ -60,7 +60,7 @@ During a meteor watch you lie still. Press Space while a shooting star passes, o
 
 ## Heading home
 
-Enter twice heads home and ends the night at any time: the first press asks, the second within 4 seconds goes. Everything you traced or found is already in your journal. You hear what the night brought, then the results menu offers Play again, Hear the results again, and Back to the title. Escape does the same as the last row.
+Enter twice heads home and ends the night at any time: the first press asks, the second within 4 seconds goes. Everything you traced or found is already in your journal. The game reads what the night brought, then the results menu offers Play again, Hear the results again, and Back to the title. Escape does the same as the last row.
 
 ## The star journal
 
@@ -68,7 +68,7 @@ Star journal, on the title, reads every constellation you have traced, with the 
 
 ## Challenges
 
-The Challenges menu holds 3 challenges that are the same for every player, under this season's whole sky. Each briefing tells you the goal and when the next one comes. Escape on a briefing goes back without starting.
+The Challenges menu holds 3 challenges that are the same for every player, under this season's whole sky. Each briefing gives the goal and when the next one comes. Escape on a briefing goes back without starting.
 
 - Daily, Tonight's star hunt: find 5 named stars, one at a time. Each is worth 100 points, less 25 for each hint, and 50 if the guide tone led you there.
 - Weekly, The week's patterns: trace 3 constellations. Each star is worth 10 points, each constellation 100, and each hint costs 10.
@@ -93,4 +93,4 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - H: hint. The next star to find, and the way there in steps.
 - Enter twice: head home and end the night. The first press asks, the second within 4 seconds goes.
 - Escape: pause. The pause menu can resume, open settings or this help, go back to the title, or go back to the lobby. During a challenge, its leave row is Leave the challenge.
-- F1: what the keys do on the screen you are on.
+- F1: what the keys do on the current screen.

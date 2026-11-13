@@ -64,5 +64,5 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, wire: Live<RunScreen>) -> Lesson {
     )
     .step(steps)
     .step(across)
-    .outro("Long wires sway most at mid-span. A chime on the far roof grows louder as you near it. Practice wire on the title walks this wire again.")
+    .outro("Long wires sway most at mid-span. Practice wire on the title walks this wire again.")
 }

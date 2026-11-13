@@ -43,7 +43,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, rides: Vec<Live<Ride>>) -> Lesson {
         lesson = lesson.step(step);
     }
     lesson.outro(format!(
-        "In Downtown, cars come up behind you, muffled at first, and junctions name your turn. {} names the next danger, then your speed and lane, and {h} says how to deal with the next hazard. Ride them again from Practice lessons.",
+        "In Downtown, cars come up behind you, and junctions name your turn. {} names the next danger, then your speed and lane, and {h} says how to deal with the next hazard. Ride them again from Practice lessons.",
         sentence_start(&s)
     ))
 }

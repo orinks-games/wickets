@@ -75,6 +75,6 @@ pub fn row_help(best: Option<u64>) -> String {
         None => String::new(),
     };
     format!(
-        "A saloon night on the showboat. Doubles with no 1 ring a chime and double what the table holds. The passengers keep their rules. Scored on a board of its own. Open all day.{best}"
+        "A saloon night on the showboat. Doubles with no 1 double what the table holds. The passengers keep their rules. Scored on a board of its own. Open all day.{best}"
     )
 }

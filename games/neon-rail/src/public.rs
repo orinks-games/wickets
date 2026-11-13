@@ -300,7 +300,7 @@ impl TitleGame for NeonRail {
             MenuItem::new("Practice run", |s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 launch(ctx, s.game.launch(Mode::Tutorial), false)
             })
-            .help("The guided one-minute route, with a tutorial page as each new sound arrives."),
+            .help("The guided one-minute route, with a tutorial page as each new kind of traffic arrives."),
         )
     }
 
