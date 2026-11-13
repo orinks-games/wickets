@@ -302,7 +302,7 @@ fn the_first_egg_is_explained_before_it_falls_and_the_meadow_waits() {
         }
     }
     assert_eq!(h.app.top_name(), "pages");
-    assert!(spoke(&h, "Your first egg:"), "{:?}", h.spoken());
+    assert!(spoke(&h, "Your first egg."), "{:?}", h.spoken());
     let loops = falling_loops(&h);
     assert_eq!(loops.len(), 1);
     assert!(loops[0].paused, "the egg waits while the page is read");
@@ -647,7 +647,7 @@ fn practice_explains_every_kind_and_costs_nothing() {
     for _ in 0..2400 {
         if h.app.top_name() == "pages" {
             if h.spoken().iter().any(|l| {
-                ["Your first egg:", "A golden egg:", "A mud clod:", "A bee:"]
+                ["Your first egg.", "A golden egg.", "A mud clod.", "A bee."]
                     .iter()
                     .any(|m| l.starts_with(m))
             }) {
@@ -820,7 +820,7 @@ fn a_page_in_the_middle_of_play_is_not_skipped_by_space_or_the_arrows() {
     while h.app.top_name() != "pages" {
         step(&mut h, DT);
     }
-    assert!(spoke(&h, "Your first egg:"));
+    assert!(spoke(&h, "Your first egg."));
     for key in [Key::Space, Key::Right, Key::Tab, Key::S] {
         h.clear();
         h.press(key);
@@ -829,7 +829,7 @@ fn a_page_in_the_middle_of_play_is_not_skipped_by_space_or_the_arrows() {
     }
     h.clear();
     h.press(Key::R);
-    assert!(spoke(&h, "Your first egg:"), "R repeats it");
+    assert!(spoke(&h, "Your first egg."), "R repeats it");
     h.clear();
     h.press(Key::F1);
     assert!(spoke(&h, "the clock is stopped"), "{:?}", h.spoken());
