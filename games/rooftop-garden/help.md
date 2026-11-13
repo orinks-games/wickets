@@ -14,7 +14,7 @@ In your own garden, neglected plants wilt and fall silent, but watering brings t
 
 Each step names the planter and what grows in it, for example "Row 1, planter 2: tomato, in bloom, thirsty."
 
-Every plant's sounds come from its own planter, and S, H and L always say where things are.
+Every plant grows in its own planter, and S, H and L always say where things are.
 
 ## Planting
 

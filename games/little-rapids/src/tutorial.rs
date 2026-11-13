@@ -34,17 +34,17 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, water: Live<RunScreen>) -> Lesson {
     );
     let catch = water.step(
         format!(
-            "{} sets the boat off. Hold {l} or {r} to paddle that way. A petal is a soft bell floating toward you, rising as it comes. Steer so it is straight ahead as it reaches you.",
+            "{} sets the boat off. Hold {l} or {r} to paddle that way. A petal is floating toward you. Steer so it is straight ahead as it reaches you.",
             sentence_start(&go)
         ),
         |s: &RunScreen, _| (s.run.caught >= 1).then(|| "Caught. Each catch plays a note in the tune.".to_string()),
     );
     let current = water.step(
-        "The hiss ahead of you is the current, the fastest water. Steer into it and stay there for a few beats. Riding it scores points every beat.",
+        "Ahead of you is the current, the fastest water. Steer into it and stay there for a few beats. Riding it scores points every beat.",
         |s: &RunScreen, _| (s.run.flow_beats >= 6).then(|| "Riding the current.".to_string()),
     );
     let clean = water.step(
-        "A catch dead centre is a clean catch: a bright ring, and double points. Catch one clean.",
+        "A catch dead centre is a clean catch, worth double points. Catch one clean.",
         |s: &RunScreen, _| (s.run.clean >= 1).then(|| "Clean.".to_string()),
     );
     let quiet = water.clone();

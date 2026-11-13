@@ -58,7 +58,7 @@ S: status: the lamps out, your step and the taper time left. Press it again for 
 
 R: what is at your step, on the left wall and the right.
 
-H: where the nearest lamp out is, with its cue from that place.
+H: where the nearest lamp out is.
 
 F1: help for what you are doing right now. F2 stops speech.
 

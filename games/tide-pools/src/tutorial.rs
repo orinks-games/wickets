@@ -41,19 +41,19 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pools: Live<OutingScreen>) -> Lesson {
 
     let gather = pools.step(
         format!(
-            "Every creature has its own cue. This pool holds an anemone. Press {p} just after its cue."
+            "This pool holds an anemone. Press {p} just after it calls."
         ),
         |s: &OutingScreen, _| {
             s.outing
                 .gathered
                 .contains(&Species::Anemone)
-                .then(|| "The anemone is yours. With no creature cue, your hands come up with only water.".to_string())
+                .then(|| "The anemone is yours. Reach in when nothing has called, and your hands come up with only water.".to_string())
         },
     );
 
     let shy = pools.step(
         format!(
-            "{} and {r} walk from pool to pool. The pool on your right holds a shy shore crab. It darts away when you lean in, so keep still until two soft rising notes, then gather it.",
+            "{} and {r} walk from pool to pool. The pool on your right holds a shy shore crab. It darts away when you lean in, so keep still until it creeps back out, then gather it.",
             sentence_start(&l)
         ),
         |s: &OutingScreen, _| {
@@ -67,7 +67,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pools: Live<OutingScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Tide Pools",
-        "The tide is out, and rock pools line the shore with the sea ahead of you. There is no way to fail: listen, and gather what you find. Learn in the practice pools",
+        "The tide is out, and rock pools line the shore with the sea ahead of you. There is no way to fail: gather what you find. Learn in the practice pools",
     )
     .step(lean)
     .step(gather)

@@ -148,7 +148,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let rg_tick = Rc::clone(&ringer);
     let first_ring = Step::new(
         format!(
-            "{} rings your row, and the apprentice answers. A knock means a bell is right and in its place. A tap means a bell is in the peal, but in another place. Ring your row now.",
+            "{} rings your row, and the apprentice answers. In place means a bell is right and in its place. Misplaced means a bell is in the peal, but in another place. Ring your row now.",
             sentence_start(&p)
         ),
         move |ctx, a| {
@@ -173,7 +173,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let p_name = p.clone();
     let solve = Step::new(
         format!(
-            "Now find the peal. Change bells, move between places, and ring until both places knock. {} reads the rows you have rung so far.",
+            "Now find the peal. Change bells, move between places, and ring until both bells are in place. {} reads the rows you have rung so far.",
             sentence_start(&rep)
         ),
         move |ctx, a| {

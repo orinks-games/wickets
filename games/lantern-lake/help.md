@@ -8,11 +8,9 @@ There is no timer or way to lose. Only challenges keep a score.
 
 ## Finding lanterns
 
-Every sound comes from its true direction around you. A chime in your right ear is to your right. One in both ears equally is straight ahead or behind, and a sound behind you is a little softer. Turn until a chime is straight ahead, then paddle toward it.
+Everything on the lake is in its true direction around you. Turn until a lantern is straight ahead, then paddle toward it.
 
 A lantern's chime rings faster as you get near: slow when it is far across the water, quick when it is close. You gather a lantern when you reach it.
-
-Lanterns ring one of 3 bells. All 3 mean the same thing. The different bells only help you tell nearby lanterns apart.
 
 The canoe glides on after each stroke and slowly comes to a stop. When reeds brush the canoe, you have reached the shore: turn back toward open water.
 
@@ -41,7 +39,7 @@ Night 1 is small, with 4 lanterns. Each later night is a little wider, with one 
 
 ## Discoveries and your journal
 
-Some nights hide small places to find: an old dock, an island where an owl lives, a firefly meadow, a little stream, lily pads, a bell buoy, a beaver lodge and a weeping willow. Each has its own sound. Paddle toward any sound you don't recognise.
+Some nights hide small places to find: an old dock, an island where an owl lives, a firefly meadow, a little stream, lily pads, a bell buoy, a beaver lodge and a weeping willow. Paddle toward anything you don't recognise.
 
 Everything you find goes into your journal at once, even if you leave the night early. Read it from the Journal row on the title: it lists the places you have found, how often, and blank pages for the ones still to find.
 
@@ -64,7 +62,7 @@ When you head home, the results say how the night went and what went into your j
 The Challenges menu holds 3 lakes that are the same for every player. Before you push off, each reads its rule and score. Escape on that briefing goes back without starting.
 
 - Daily: a small lake with 5 lanterns and a twist that changes every day: mist, rain, still water, a breeze, or a starry night with extra places to find.
-- Weekly: a lantern constellation. Only one lantern is lit at a time, with its own cue. Gather it to light the next. Unlit lanterns are asleep and can't be gathered yet.
+- Weekly: a lantern constellation. Only one lantern is lit at a time. Gather it to light the next. Unlit lanterns are asleep and can't be gathered yet.
 - Monthly: the lantern festival. A great lake with 10 lanterns, every creature out, and a slow current that carries you and the lanterns around the lake.
 
 Your challenge score is 1 for each lantern and 2 for each place you discover. Heading home with Tab counts toward your streak, however many lanterns you have. Leave the challenge, on the pause menu, does not.
@@ -91,6 +89,6 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - Tab: head home and end the night. You are asked first.
 - S: status. How many lanterns you have and roughly where the nearest one is. Press it again straight away for which way you face, the weather and tonight's discoveries.
 - R: repeat the last thing said.
-- H: hint. Which way to turn for the next lantern, and its chime rings again.
+- H: hint. Which way to turn for the next lantern, and it rings again.
 - Escape: pause. The pause menu can resume, open settings or this help, go back to the title, or go back to the lobby. During a challenge, its leave row is Leave the challenge.
 - F1: what the keys do on the current screen.

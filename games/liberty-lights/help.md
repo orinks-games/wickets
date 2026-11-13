@@ -10,7 +10,7 @@ Title menu: Play starts your next uncleared level. Grand finale opens after leve
 
 1. Press Space, the main action, to hear the show. It starts with a count-in: three count-in ticks half a second apart, then the go cue. The go is time zero.
 2. The fireworks go up. Two seconds after the last one, the game says "Your turn".
-3. Press Space again for your own count-in: the same three ticks and the go. Launch each firework at the moment it went up in the show, measured from the go.
+3. Press Space again for your own count-in, the same as the show's. Launch each firework at the moment it went up in the show, measured from the go.
 4. Press Enter when you are finished. The crowd reacts, then the game reads your score.
 
 Once the show has played, Tab, the second action, plays it again. That clears anything you have launched so far.

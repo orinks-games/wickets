@@ -213,7 +213,7 @@ impl TitleGame for Tightrope {
             MenuItem::new("Practice wire", |s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 start(ctx, s.game.launch(Mode::Training), false)
             })
-            .help("A short, low wire where every sound is explained as it comes, and falling costs nothing."),
+            .help("A short, low wire where everything is explained as it comes, and falling costs nothing."),
         )
     }
 

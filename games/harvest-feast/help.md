@@ -14,7 +14,7 @@ The stations sit in an arc in front of you, always in the same places. From far 
 4. The griddle, front right: corn cakes, sprouts and fritters.
 5. The right burner, far right: a stockpot, for green beans, potatoes and cider.
 
-A course uses only some of them. The station in front of you is a little louder than the rest.
+A course uses only some of them.
 
 ## The recipe
 
@@ -35,7 +35,7 @@ Each dish has three states: cooking, ready for action, and burning. Wait while i
 - Griddle: flip or plate the dish when ready.
 - Cutting board: chop or whisk when called, with one press per stroke.
 
-With spoken call-outs on, the kitchen also says which dish needs you as its sound changes: "Bubbling up on the left burner: the gravy. Whisk it." Sound check on the title plays every one of these by name.
+With spoken call-outs on, the kitchen also says when a dish needs you: "Bubbling up on the left burner: the gravy. Whisk it." Sound check on the title plays every one of these by name.
 
 ## Pace
 
@@ -101,7 +101,7 @@ The twists:
 - Rush hour: the guests are early, and everything cooks a fifth faster.
 - A picky guest: Uncle Walt only eats one dish, named before you start. It scores double, but served below 75 he sends it back and it scores nothing. When it is served the kitchen says whether he loved it.
 - A hot burner: the left or right burner, named before you start, runs hot. Its dishes come due much sooner and burn faster.
-- A quiet kitchen: no spoken call-outs, whatever your setting. The recipe still calls each dish, but only its sound marks when a dish needs you, and the bonus for cooking without call-outs applies.
+- A quiet kitchen: no spoken call-outs, whatever your setting. The recipe still calls each dish, but no voice says when a dish needs you, and the bonus for cooking without call-outs applies.
 - Butterfingers: every fumble costs 20 instead of 5.
 
 S, F1 and the kitchen's intro all remind you of the twist.
@@ -140,7 +140,7 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - Space: the main action at the station in front of you. It starts a dish, stirs, whisks, flips, bastes, turns the tray, pulls out, drains or plates, whatever the dish needs next. On the cutting board, press it once per stroke.
 - Up arrow: describe the dish in front of you: its step, what comes next and when.
 - Down arrow: read the recipe card: every dish on the menu and how it stands.
-- Tab: explain the sound at the station in front of you.
+- Tab: describe what is happening at the station in front of you.
 - S: any station that needs you now, where you stand and how many dishes are served. Press it again straight away for every other station and the time, and a third time for the course and its rule.
 - R: repeat the last call.
 - H: a hint, naming what needs you most and how to get there.

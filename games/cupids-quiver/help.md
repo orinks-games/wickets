@@ -18,7 +18,7 @@ Hearts keep drifting while the arrow flies. A near heart is reached in a quarter
 
 ## Sweetheart pairs
 
-Hearts come in pairs: two hearts of one colour, red, pink, peach, violet or white, that hum the same note. The second heart of a pair drifts in a moment after the first, from either side. Hit both, one after the other, for a sweetheart pair: 50 bonus points. A miss, or another target hit in between, breaks the pair. S, Tab and H always name the colours.
+Hearts come in pairs: two hearts of one colour, red, pink, peach, violet or white. The second heart of a pair drifts in a moment after the first, from either side. Hit both, one after the other, for a sweetheart pair: 50 bonus points. A miss, or another target hit in between, breaks the pair. S, Tab and H always name the colours.
 
 ## Scoring
 

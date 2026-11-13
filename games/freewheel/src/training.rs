@@ -69,15 +69,15 @@ pub fn page(ctx: &Ctx<Parlor>, n: u32) -> String {
             parlor_core::units::per_hour(BRAKE_FROM * 3.6)
         ),
         3 => format!(
-            "Lesson 3 of {LESSONS}: steer. {} and {right} slide you across the road while you hold them. The lane line cue means you crossed the line between the bike lane and the traffic lane. Get moving, steer out into the traffic lane, then back into the bike lane.",
+            "Lesson 3 of {LESSONS}: steer. {} and {right} slide you across the road while you hold them. A line divides the bike lane from the traffic lane. Get moving, steer out into the traffic lane, then back into the bike lane.",
             sentence_start(&left)
         ),
         4 => format!(
-            "Lesson 4 of {LESSONS}: the door zone. The door handle cue from a parked car means a door is about to open. {} steers left: move out before it does. Pass both doors.",
+            "Lesson 4 of {LESSONS}: the door zone. A hand on a parked car's door handle means the door is about to open. {} steers left: move out before it does. Pass both doors.",
             sentence_start(&left)
         ),
         _ => format!(
-            "Lesson 5 of {LESSONS}: hop. {} hops while you are moving. The hazard tick ahead means a pothole, and it ticks faster as it nears. The act now cue means it is in your line: hop then. Two potholes lie in the bike lane: hop one of them.",
+            "Lesson 5 of {LESSONS}: hop. {} hops while you are moving. Two potholes lie in the bike lane: hop one of them as you reach it.",
             sentence_start(&p)
         ),
     }
@@ -93,9 +93,9 @@ pub fn goal(ctx: &Ctx<Parlor>, n: u32) -> String {
             "Lesson 3. Get moving, then hold {} to steer into the traffic lane.",
             k(ParlorAction::Left)
         ),
-        4 => "Lesson 4. Ride on, and move left at the door handle cue.".to_string(),
+        4 => "Lesson 4. Ride on, and move left when a door is about to open.".to_string(),
         _ => format!(
-            "Lesson 5. Ride on in the bike lane and press {} at the act now cue.",
+            "Lesson 5. Ride on in the bike lane and press {} as you reach a pothole.",
             k(ParlorAction::Primary)
         ),
     }

@@ -8,25 +8,25 @@ Walk between rock pools, lean in, and gather creatures for your aquarium. Each t
 
 Left and Right arrows walk along the rocks from one pool to the next. You cannot move beyond the pools at either end.
 
-You always face the sea, so the pools run from your left to your right. A sound on your left comes from a pool to your left.
+You always face the sea, so the pools run from your left to your right.
 
 ## Leaning in and stepping back
 
 Up brings you closer to the water and Down steps back. There are three places to stand:
 
-- Standing back on the rocks: the pool in front of you and two pools either side play, all a little faint. Good for finding where things are.
-- At the water's edge: the pool in front of you and the next pool either side play. Walking always brings you to the edge.
-- Leaning in close: only the pool in front of you plays, and you can reach in.
+- Standing back on the rocks: you take in the pool in front of you and two pools either side, all a little far off. Good for finding where things are.
+- At the water's edge: you take in the pool in front of you and the next pool either side. Walking always brings you to the edge.
+- Leaning in close: you take in only the pool in front of you, and you can reach in.
 
 Leaning in over a pool with nothing left in it, you are told there is only clear water and weed.
 
 ## Gathering
 
-Lean in close and press Space just after a creature cue. You have about three seconds after a cue to reach for it.
+Lean in close and press Space just after a creature calls. You have about three seconds after it calls to reach for it.
 
 Pressing Space without a recent creature cue gathers nothing. If you are not leaning in, press Up to lean in first.
 
-The first time on a trip that a creature cue plays in your pool, its name is spoken. Tab names the last cue in your pool at any time.
+The first time on a trip that a creature calls in your pool, its name is spoken. Tab names the last creature to call in your pool at any time.
 
 ## Shy creatures
 
@@ -82,7 +82,7 @@ When a trip ends, the game reads what you gathered, your score and what is new i
 
 ## Your aquarium
 
-Everything you gather goes home to your aquarium, which keeps growing. Leaving a trip early from the pause menu still brings home what you gathered, though the shore's best score counts only a finished trip. Visit it from Your aquarium on the title menu: each kind lives in its own spot from left to right, and they make their sounds now and then, more often as the tank fills.
+Everything you gather goes home to your aquarium, which keeps growing. Leaving a trip early from the pause menu still brings home what you gathered, though the shore's best score counts only a finished trip. Visit it from Your aquarium on the title menu: each kind lives in its own spot from left to right, and they call now and then, more often as the tank fills.
 
 In the aquarium, Left and Right move along the tanks and say each kind's name, how many you have and where you first found one. Space plays one again, Tab plays the whole tank from left to right, S sums it up, and H names a kind you are still missing and where to look.
 
@@ -114,7 +114,7 @@ The challenge list says your best and streak for each, and how long until the ne
 
 Some days the shore is different. Each event has a row of its own on the title menu, just below Play. While it is closed, the row says locked and when it opens. It takes you to the furthest shore you have opened, and keeps its own best score. If the event has ended by the time you choose Play again, the game says it has ended and you go back to the title. The ordinary shores and the challenges never change.
 
-- King tide: within a day of a new or full moon, from November to February. The sea goes far out, so two extra pools open at each end of the shore, on a spring tide with a longer trip. The waves start far off and quiet, and curlews call from the wet sand. This is the game's take on the big winter tides, not a real tide table.
+- King tide: within a day of a new or full moon, from November to February. The sea goes far out, so two extra pools open at each end of the shore, on a spring tide with a longer trip. The waves start far off, and curlews call from the wet sand. This is the game's take on the big winter tides, not a real tide table.
 - Moonlit pools: on every full moon night, all year. A night trip under the full moon. The gulls are asleep, and a night heron croaks along the shore. Moon jellyfish and baby octopuses can come out whatever the weather.
 
 S says which calendar event you are playing.
@@ -123,8 +123,8 @@ S says which calendar event you are playing.
 
 - Left and Right: walk between pools.
 - Up: lean closer. Down: step back.
-- Space: reach in and gather after a creature cue.
-- Tab: name the last cue in your pool.
+- Space: reach in and gather after a creature calls.
+- Tab: name the last creature to call in your pool.
 - S: which pool you are at and how long until the tide returns. Press it again straight away for what you have gathered and your score, and a third time for the shore and its weather.
 - H: a hint: what to do at this pool, or which way the nearest creature is.
 - R: repeat the last message.

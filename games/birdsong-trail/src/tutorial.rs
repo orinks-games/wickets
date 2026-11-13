@@ -48,7 +48,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, glade: Live<WalkScreen>) -> Lesson {
 
     let approach = glade.step(
         format!(
-            "{} steps forward and {d} steps back; {l} and {r} turn you. Songs come from their true place; one behind you is softer. Walk toward the chickadee until it sings to you.",
+            "{} steps forward and {d} steps back; {l} and {r} turn you. Birds sing from their true place. Walk toward the chickadee until it sings to you.",
             sentence_start(&u),
             l = sentence_start(&l),
         ),
@@ -82,6 +82,6 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, glade: Live<WalkScreen>) -> Lesson {
     .step(approach)
     .step(answer)
     .outro(format!(
-        "On a trail, {p} names the birds nearest you, and {h} says which way the nearest new bird is. Each trail ends at a sound you can walk toward, or press {tab} twice to head home. The birds follow the real seasons."
+        "On a trail, {p} names the birds nearest you, and {h} says which way the nearest new bird is. Each trail ends at a landmark you can walk toward, or press {tab} twice to head home. The birds follow the real seasons."
     ))
 }

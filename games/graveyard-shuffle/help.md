@@ -1,6 +1,6 @@
 ## About the game
 
-Doctor Volt's newest monster sat up on the slab and started to dance, and by midnight the whole graveyard wants to learn it. You lead the dance. The graveyard band plays, and each monster comes up with its own sound one beat before its move. Dance the move on the beat with that monster's key. Moves close to the beat score more. A song always plays to its end, and your score is what you danced.
+Doctor Volt's newest monster sat up on the slab and started to dance, and by midnight the whole graveyard wants to learn it. You lead the dance. The graveyard band plays, and each monster comes up one beat before its move. Dance the move on the beat with that monster's key. Moves close to the beat score more. A song always plays to its end, and your score is what you danced.
 
 ## A Halloween special
 
@@ -76,7 +76,7 @@ Your score is every point and bonus you earn. Leave the challenge, on the pause 
 
 ## Spoken call-outs
 
-Each monster is a sound that plays with the music. With spoken call-outs on, the game also names each monster as it comes up. It is off at the start. Switch it in Settings, from the title or the pause menu.
+With spoken call-outs on, the game names each monster as it comes up. It is off at the start. Switch it in Settings, from the title or the pause menu.
 
 ## Pausing
 

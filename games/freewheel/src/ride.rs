@@ -1344,9 +1344,9 @@ impl Ride {
                         self.restart_in = Some(1.0);
                         "Both missed. The lesson starts again.".to_string()
                     } else if r.since_hop < 1.0 {
-                        "Too early. Hop at the act now cue.".to_string()
+                        "Too early. Hop as you reach the pothole.".to_string()
                     } else {
-                        format!("No hop. Press {p} at the act now cue.")
+                        format!("No hop. Press {p} as you reach the pothole.")
                     };
                     // After the pothole's own line, not over it.
                     ctx.say_queued(line.clone());

@@ -1122,7 +1122,7 @@ impl State<Parlor> for Crack {
                 s.push_str(&words);
             }
             if run.spec.decoys > 0 {
-                s.push_str(" Hollow rattles are false gates: ignore them.");
+                s.push_str(" False gates mark wrong numbers: ignore them.");
             }
             if let Some(words) = self.event_words(ctx) {
                 s.push(' ');

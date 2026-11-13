@@ -62,7 +62,7 @@ H gives a hint for what you are doing: teas on your shelf that suit the guest's 
 
 ## Spoken call-outs
 
-With spoken call-outs on, the kettle's song is also spoken as it changes, such as "Soft hiss, about 80 degrees", and the steep's seconds every 5 seconds. Turn them off in Settings, from the title or the pause menu, to brew without them. Nothing changes in how a cup is judged.
+With spoken call-outs on, the kettle's heat is also spoken as it changes, such as "Soft hiss, about 80 degrees", and the steep's seconds every 5 seconds. Turn them off in Settings, from the title or the pause menu, to brew without them. Nothing changes in how a cup is judged.
 
 ## Challenges
 
@@ -84,7 +84,7 @@ Left and Right: choose a cup.
 
 Space: choose the tea, put the kettle on, pour, lift the leaves, pour each cup of a pot, then welcome the next guest.
 
-Tab: more about the tea, listen to the kettle, or breathe in the steam.
+Tab: more about the tea, the kettle up close, or breathe in the steam.
 
 S: status: the kettle, the steep or the cups, and while you choose, what the guest would like. Press S again straight away for which guest this is, what they would like and your coins.
 

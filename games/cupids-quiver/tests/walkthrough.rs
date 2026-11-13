@@ -209,7 +209,7 @@ fn play_opens_the_sky_and_says_where_you_are() {
     ));
     assert!(spoke(
         &h,
-        "Hold Space past the full draw cue, then let go at the sights cue."
+        "Hold Space to full draw, then let go when your sights are on a heart."
     ));
     assert!(played(&h, sound::ROOFTOP));
     assert!(played(&h, sound::ROUND_START));

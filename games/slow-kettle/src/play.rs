@@ -1045,7 +1045,7 @@ impl State<Parlor> for Counter {
             Phase::Choosing => "Choose a tea for the guest's taste, and a cup.".to_string(),
             Phase::Ready => format!("{} puts the kettle on.", sentence_start(&p)),
             Phase::Heating => format!(
-                "{} pours when the kettle sounds right for this tea.",
+                "{} pours when the kettle is right for this tea.",
                 sentence_start(&p)
             ),
             Phase::Steeping => format!(

@@ -6,11 +6,11 @@ You are a courier flying a combat skimmer through Black Sky City. It flies forwa
 
 Reach extraction to complete the run. You lose if your hull reaches 0 or network stress reaches 100.
 
-## Cues and call-outs
+## Arrivals and call-outs
 
 Arrival cues mark their lanes relative to yours. Straight ahead is your lane; left means one or two lanes left. The positions change when you shift lanes.
 
-Spoken call-outs are on by default. Each arrival is also named as it appears: "Debris left." Turn Spoken call-outs off in Settings, from the title or the pause menu, to play with cues only. The hint key always names what is next.
+Spoken call-outs are on by default. Each arrival is also named as it appears: "Debris left." Turn Spoken call-outs off in Settings, from the title or the pause menu, to play without them. The hint key always names what is next.
 
 Sound check lets you hear the gameplay cues and practise recognising their lane positions.
 
@@ -72,7 +72,7 @@ Rank, credits, parts, intel, unlocks and the story count at every pace. Relaxed 
 - Challenge corridor: the original authored run, six sectors in two minutes, the same every time. Learn it and chase the score.
 - Endless rail: opens after your first Black Sky extraction. Sectors without end, each harder than the last. Between sectors, End run here, the last row of the upgrade menu, ends it as a finished run: it is paid and the sector reached counts. Quitting from the pause menu counts nothing.
 - Cold start: opens with the endless rail. The roguelike run: a bare skimmer with no rank bonuses or workshop parts, nine sectors with an upgrade and a route choice between them, every route open, and one life. It keeps its own board and pays no credits, parts or intel, and your rank stays as it was. Routes cleared, runs lost and kills still count toward the story archive. Records counts cold starts finished and the furthest sector reached.
-- Practice run: the guided one-minute route again, with a tutorial page as each new sound arrives. It pays nothing after the first time.
+- Practice run: the guided one-minute route again, with a tutorial page as each new kind of traffic arrives. It pays nothing after the first time.
 - Challenges: a daily, a weekly and a monthly challenge, the same rail for every pilot.
 
 Each mode keeps its own best score, read on its title row and in Records.
@@ -86,7 +86,7 @@ Every pilot in the same period flies the same rail, so challenges use a standard
 - Daily, the sector sprint: one 60-second sector, as hard as a fourth sector, along a route drawn for the day: a standard rush, an ambush corridor or the storm rail. The run is won at the sector's end. It carries one twist, announced in the briefing and when the run goes live:
   - Dense traffic: arrivals come more than a quarter closer together.
   - Boost offline: the boost key does nothing. There are no full blockades. Heavy blockers take their place, so dodge or shoot everything.
-  - Fog: every warning is a quarter shorter. Each arrival is announced later, so move on its first cue.
+  - Fog: every warning is a quarter shorter. Each arrival comes later, so move at once.
 - Weekly, the long haul: three sectors along a fixed route, ending in the extraction sprint, with a twist of its own for the week. You choose an upgrade after each of the first two sectors. The route ahead is already set, so the route menu has one choice.
 - Monthly, the Black Sky event, Blackout Convoy: three evacuation convoy sectors, then the extraction sprint. Priority vehicles are evacuation trains, called out as "Evacuation train". Each evacuation train you clear pays three times. Each one delayed costs double stress. Stress starts at 30, and you carry three priority overrides. The briefing reads the event's own story log, and flying an event to its end keeps that log in the story archive.
 

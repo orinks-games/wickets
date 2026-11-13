@@ -44,7 +44,7 @@ On the Fourth of July weekend, fireworks appear on summer evenings. That is July
 
 ## Status and hints
 
-S gives the status, always in this order: in a challenge the time left, then your jar, and the nearest glow or "a firefly in reach". On a winter walk it gives the memories found instead of the jar. Press S again straight away for the fireflies caught tonight, their species, the time so far and the meadow. R repeats the last thing said. H names the way to the nearest glow and plays its tone.
+S gives the status, always in this order: in a challenge the time left, then your jar, and the nearest glow or "a firefly in reach". On a winter walk it gives the memories found instead of the jar. Press S again straight away for the fireflies caught tonight, their species, the time so far and the meadow. R repeats the last thing said. H names the way to the nearest glow.
 
 ## Records
 

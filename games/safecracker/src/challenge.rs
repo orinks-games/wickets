@@ -79,7 +79,7 @@ impl Twist {
             Twist::DirectionRule => {
                 "wheel 1 is found turning right, wheel 2 turning left, and so on, and only the right way clunks"
             }
-            Twist::CrowdedGates => "every wheel has three false gates rattling at wrong numbers",
+            Twist::CrowdedGates => "every wheel has three false gates at wrong numbers",
             Twist::NoHints => "there are no hints",
             Twist::BusyBuilding => {
                 "pipes knock and floors creak every few seconds, off to your left and right"

@@ -10,9 +10,9 @@ Your score is the treasure you bank. An expedition ends when you choose to stop 
 
 ## Directions
 
-Sounds are placed around the sub, facing where the sub faces. A sound straight ahead is ahead of you. One on your right is to your right. One behind you is a little muffled. When you turn, the world turns around you.
+Everything is placed around the sub, facing where the sub faces. When you turn, the world turns around you.
 
-Ping: everything in range echoes from where it is. The later and quieter the echo, the farther away it is.
+Ping: everything in range echoes from where it is. The later the echo, the farther away it is.
 
 Directions in speech use a clock face: 12 o'clock is straight ahead, 3 o'clock to your right, 6 o'clock behind you and 9 o'clock to your left.
 
@@ -58,9 +58,9 @@ A friendly whale circles somewhere on most sites. Pass within a few metres of it
 
 ## Buoys and the bell
 
-The boat's bell rings every 5 seconds from where you began. Come back within a few metres of it to surface.
+The boat's bell is where you began. Come back within a few metres of it to surface.
 
-Tab drops a marker buoy that beeps every few seconds from where you left it. Up to 3 can be out at once, and a fourth takes the place of the oldest. Use them to mark a wreck you mean to come back to, or a safe path home past the mines.
+Tab drops a marker buoy where you are. Up to 3 can be out at once, and a fourth takes the place of the oldest. Use them to mark a wreck you mean to come back to, or a safe path home past the mines.
 
 ## At the boat
 

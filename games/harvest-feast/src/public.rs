@@ -252,7 +252,7 @@ impl TitleGame for HarvestFeast {
             |ctx| Progress::peek(ctx).callouts,
             set_callouts,
             |_ctx, _on| None,
-            "When on, the kitchen says which dish needs you as its sound changes. Cook a whole course with it off for 10 percent more points.",
+            "When on, the kitchen says when a dish needs you. Cook a whole course with it off for 10 percent more points.",
         ),
             parlor_core::pace::row_with(ID, progress::pace),
         ]

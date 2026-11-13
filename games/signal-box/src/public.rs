@@ -219,7 +219,7 @@ impl TitleGame for SignalBox {
             MenuItem::new("Practice room", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(Signal::new(Mode::Practice))
             })
-            .help("Calls with no clock and nothing to lose: learn each sound and its key."),
+            .help("Calls with no clock and nothing to lose: learn each call and its key."),
         )
     }
 

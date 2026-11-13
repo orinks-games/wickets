@@ -68,7 +68,7 @@ pub fn controls_line(ctx: &Ctx<Parlor>) -> String {
     let s = ctx.control_name(ParlorAction::Status);
     let h = ctx.control_name(ParlorAction::Hint);
     format!(
-        "{} and {r} aim. Hold {p} past the full draw cue, then let go at the sights cue. {} lists the sky, {s} the status, {h} a hint.",
+        "{} and {r} aim. Hold {p} to full draw, then let go when your sights are on a heart. {} lists the sky, {s} the status, {h} a hint.",
         sentence_start(&l),
         sentence_start(&t)
     )

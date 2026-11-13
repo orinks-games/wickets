@@ -36,7 +36,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
 
     let start = room.step(
         format!(
-            "{} starts the dance after four knocks on a coffin lid. Start it now.",
+            "{} starts the dance after four count-in beats. Start it now.",
             sentence_start(&p)
         ),
         |f: &Floor, _| {
@@ -49,7 +49,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
 
     let dance = room.step(
         format!(
-            "Each monster makes its sound one beat before its move. The zombie groans: {d} drags. The skeleton rattles: {u} rattles back. The mummy moans: {p} unwraps. Here the music holds for each move, and its key is named. Dance {STEPS} moves."
+            "Each monster comes up one beat before its move. The zombie: {d} drags. The skeleton: {u} rattles. The mummy: {p} unwraps. Here the music holds for each move, and its key is named. Dance {STEPS} moves."
         ),
         |f: &Floor, _| {
             (f.run.dance.tally().hits() >= STEPS || f.run.finished()).then(|| {

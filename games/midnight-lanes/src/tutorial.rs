@@ -72,7 +72,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let b = Rc::clone(&ball);
     let aim = Step::new(
         format!(
-            "{} turns your aim one step right, {d} one step left. The aim tone marks where the ball would cross the pins. Aim right until it crosses board {POCKET_AT}, the pocket beside the head pin.",
+            "{} turns your aim one step right, {d} one step left. Aim right until the ball would cross board {POCKET_AT}, the pocket beside the head pin.",
             sentence_start(&u)
         ),
         move |ctx, a| {
@@ -97,7 +97,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let b2 = Rc::clone(&ball);
     let swing = Step::new(
         format!(
-            "{} starts the swing. The swing tone rises to the top, then falls. Press {p} again right at the top to let go.",
+            "{} starts the swing. The swing climbs to the top, then falls. Press {p} again right at the top to let go.",
             sentence_start(&p)
         ),
         move |ctx, a| {
@@ -133,7 +133,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
         ctx.audio.stop(s, 40);
         ball.swing = None;
         Some(Reply::say(format!(
-            "The swing ran out. Press {} again, and let go as the swing tone stops rising.",
+            "The swing ran out. Press {} again, and let go right at the top of the swing.",
             ctx.control_name(ParlorAction::Primary)
         )))
     });

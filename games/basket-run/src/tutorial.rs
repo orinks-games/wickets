@@ -47,7 +47,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, lanes: Live<RunScreen>) -> Lesson {
 
     let banked = lanes.step(
         format!(
-            "Eggs count once banked. The cart's bell rings from its edge lane, and {} rings it now. Go to that lane and press {bank} to bank.",
+            "Eggs count once banked. The cart stands in an edge lane, and {} rings its bell now. Go to that lane and press {bank} to bank.",
             sentence_start(&cart)
         ),
         |s: &RunScreen, _| {

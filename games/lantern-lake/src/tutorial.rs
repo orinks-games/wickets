@@ -38,7 +38,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pond: Live<RunScreen>) -> Lesson {
 
     let paddle = pond.step(
         format!(
-            "{} paddles toward the first lantern, directly ahead. Hold it to keep paddling. The lantern's chime rings faster as you approach. {d} slows the canoe.",
+            "{} paddles toward the first lantern, directly ahead. Hold it to keep paddling. {d} slows the canoe.",
             sentence_start(&u),
             d = sentence_start(&d),
         ),
@@ -49,7 +49,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pond: Live<RunScreen>) -> Lesson {
 
     let turn = pond.step(
         format!(
-            "{} and {r} turn the canoe: a short press turns a little, and holding keeps turning. The second lantern is off to your right. Turn until its chime is straight ahead, then paddle to it.",
+            "{} and {r} turn the canoe: a short press turns a little, and holding keeps turning. The second lantern is off to your right. Turn until it is straight ahead, then paddle to it.",
             sentence_start(&l)
         ),
         |s: &RunScreen, _| {

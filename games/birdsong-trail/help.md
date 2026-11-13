@@ -10,9 +10,9 @@ You cannot fail, and there is no clock. A walk ends when you reach the trail's e
 
 Left and Right turn you one eighth of a circle, and each turn names the way you face: north, north-east, east and so on. The trail runs north from where you start.
 
-Every song comes from the bird's true place. A song in your right ear is to your right. One in both ears equally is ahead or behind, and a song behind you is a little softer. Near birds are louder than far ones.
+Every bird sings from its true place around you.
 
-The trail's end makes its own sound the whole walk: a brook in the woodland, wind chimes on the meadow gate, frogs by the marsh's bird hide, and the weir on the river. Walk toward it to finish.
+Each trail ends at a landmark: a brook in the woodland, wind chimes on the meadow gate, frogs by the marsh's bird hide, and the weir on the river. Walk toward it to finish.
 
 ## Walking
 
@@ -40,7 +40,7 @@ Turn on Spoken call-outs in Settings, from the title or the pause menu, to have 
 
 The birds follow the real calendar, by the seasons of the northern hemisphere.
 
-In spring the migrants arrive: swallows, warblers, the chiffchaff and the cuckoo. They sing through the summer and leave in autumn. Winter brings visitors from the north, such as juncos, waxwings, redwings and snow buntings. In winter the trails are quieter, with fewer birds and longer gaps between songs, and snow underfoot.
+In spring the migrants arrive: swallows, warblers, the chiffchaff and the cuckoo. They sing through the summer and leave in autumn. Winter brings visitors from the north, such as juncos, waxwings, redwings and snow buntings. In winter the trails have fewer birds, longer gaps between songs, and snow underfoot.
 
 At the start of a walk, the game says which bird is new for the season, or which has gone.
 

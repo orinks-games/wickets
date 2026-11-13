@@ -34,7 +34,7 @@ Cars approach from behind. They pass on your left when there is room. Hold your 
 
 ## Junction turns
 
-A chime from your left or right and a spoken distance mean a junction turn is coming. For a right turn, be in the bike lane. For a left turn, be near the centre line. Either way, slow to 22 kilometres an hour or less before the junction line. Too fast, or on the wrong side, and you run wide, which costs you speed.
+The game names each junction turn as it comes up, with its distance. For a right turn, be in the bike lane. For a left turn, be near the centre line. Either way, slow to 22 kilometres an hour or less before the junction line. Too fast, or on the wrong side, and you run wide, which costs you speed.
 
 ## Crashes
 
@@ -44,7 +44,7 @@ Crashing into an open door, a passing car, or a curb on the road bike or the e-b
 
 The endless ride goes on until your third crash. The further you go, the closer the hazards come and the more often oncoming cars appear. Your best distance in each district is kept.
 
-Parcels lie along the way. A shop doorbell rings from the side a parcel is on as it comes up. Ride over it at 20 kilometres an hour or less to grab it. Any faster and you miss it. Parcels in shop doorways sit in the door zone and pay 3 dollars. Parcel lockers on the traffic island, by the centre line, sit out among the cars and pay 6. You keep the money, even if you leave the ride early.
+Parcels lie along the way. Ride over one at 20 kilometres an hour or less to grab it. Any faster and you miss it. Parcels in shop doorways sit in the door zone and pay 3 dollars. Parcel lockers on the traffic island, by the centre line, sit out among the cars and pay 6. You keep the money, even if you leave the ride early.
 
 ## Oncoming cars
 
@@ -54,11 +54,11 @@ In the endless ride, cars overtake toward you in the traffic lane. Its warning c
 
 Make delivery drops to add time to the clock. You start with 60 seconds on a street in the district you chose. The first drop is just after the start. The clock runs down, and the ride ends when it reaches zero. There is no crash limit or finish line.
 
-A drop rings its doorbell from its side as it comes up, like a parcel in the endless ride. Ride over it at 20 kilometres an hour or less to make the drop. A drop in a shop doorway, in the door zone, adds 14 seconds and pays 3 dollars. A drop at a parcel locker by the centre line, out among the cars, adds 18 seconds and pays 6. A drop made within 30 seconds of the last one is a quick drop, and adds 4 seconds more. The clock holds 90 seconds at most.
+Drops lie along the way, like parcels in the endless ride. Ride over one at 20 kilometres an hour or less to make the drop. A drop in a shop doorway, in the door zone, adds 14 seconds and pays 3 dollars. A drop at a parcel locker by the centre line, out among the cars, adds 18 seconds and pays 6. A drop made within 30 seconds of the last one is a quick drop, and adds 4 seconds more. The clock holds 90 seconds at most.
 
 Each drop says the time it added and the time left. A crash takes 8 seconds off the clock, and you still lose the 3 seconds you are down. The game says 30 seconds left and 10 seconds left. At 15 seconds or less, the clock ticks once a second. At 5 seconds or less, it ticks twice as fast.
 
-Every drop has clear road before and after it, so a doorbell never rings while a hazard is warning. The hazards still come closer together the further you ride. On the moped, brake hard for every drop.
+Every drop has clear road before and after it, so a drop never comes up while a hazard is warning. The hazards still come closer together the further you ride. On the moped, brake hard for every drop.
 
 Your score is the drops you make. The best in each district is kept, and you keep the money, even if you leave the ride early.
 

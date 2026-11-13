@@ -486,7 +486,7 @@ impl State<Parlor> for AquariumScreen {
             return "Your aquarium is empty. Gather creatures at the beach and they come home with you. Escape goes back.".to_string();
         }
         format!(
-            "Your aquarium: everything you have gathered lives here, each kind in its own spot from left to right, and they make their sounds now and then. {}",
+            "Your aquarium: everything you have gathered lives here, each kind in its own spot from left to right, and they call now and then. {}",
             Self::controls(ctx)
         )
     }

@@ -107,9 +107,9 @@ fn the_tutorial_teaches_in_the_practice_room() {
     assert!(spoke(&h, "4 steps danced."));
     assert!(spoke(
         &h,
-        "Now the tune goes on, as in a real dance, after three drum beats."
+        "Now the tune goes on, as in a real dance, after three count-in beats."
     ));
-    assert!(spoke(&h, "That bright chime is 3 points."));
+    assert!(spoke(&h, "That was spot on: 3 points."));
     assert!(!spoke(&h, "Missed."), "no call is lost under the line");
     assert!(
         spoke(&h, "Tutorial done. Before a dance, H plays every step with its call. Play starts the first set."),

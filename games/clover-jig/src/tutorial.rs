@@ -46,7 +46,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
 
     let start = room.step(
         format!(
-            "{} starts the dance after four beats of the bodhran drum. Start it now.",
+            "{} starts the dance after four count-in beats. Start it now.",
             sentence_start(&p)
         ),
         |f: &Floor, _| {
@@ -72,7 +72,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
     // Steps judged before this one began do not count toward it.
     let before = Rc::new(Cell::new(Tally::default()));
     let (live_room, at_start) = (room.clone(), Rc::clone(&before));
-    let live_prompt = "Now the tune goes on, as in a real dance, after three drum beats. Step on the beat after each call. Spot on is 3 points.";
+    let live_prompt = "Now the tune goes on, as in a real dance, after three count-in beats. Step on the beat after each call. Spot on is 3 points.";
     // The tune waits while this is said, then counts in, so its first
     // call is not lost under the words.
     let page = format!("{STEPS} steps danced. {live_prompt}");
@@ -81,7 +81,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
             let (t, b) = (f.run.dance.tally(), before.get());
             let live = (t.good + t.close + t.missed) - (b.good + b.close + b.missed);
             if t.spot_on > b.spot_on {
-                Some("That bright chime is 3 points.".to_string())
+                Some("That was spot on: 3 points.".to_string())
             } else if live >= LIVE_STEPS || f.run.finished() {
                 Some("Right on the beat scores 3 points.".to_string())
             } else {

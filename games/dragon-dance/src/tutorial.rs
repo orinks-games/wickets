@@ -60,7 +60,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, street: Live<DanceScreen>) -> Lesson {
 
     let follow = street.step(
         format!(
-            "The drum marks the beat. {} and {r} move your head one lane. The pearl shimmers from its lane; a bright chime sounds when it moves. {} names its lane. Follow it for {FOLLOW} beats in a row.",
+            "{} and {r} move your head one lane. The pearl moves from lane to lane, and {} names its lane. Follow it for {FOLLOW} beats in a row.",
             sentence_start(&l),
             sentence_start(&t)
         ),
@@ -80,7 +80,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, street: Live<DanceScreen>) -> Lesson {
     let gong = street
         .step(
             format!(
-                "A drum roll means a gong strikes in 2 beats. {} right as the gong strikes rears the dragon up. Keep following, and rear on the next gong.",
+                "Now and then a gong strikes. {} right as the gong strikes rears the dragon up. Keep following, and rear on the next gong.",
                 sentence_start(&p)
             ),
             move |s: &DanceScreen, _| {

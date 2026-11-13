@@ -6,7 +6,7 @@ Lead the dragon through the Lunar New Year parade. Keep your head in the pearl's
 
 ## The street and its lanes
 
-A street has 3, 4 or 5 lanes, numbered from the left. Left and Right move your head one lane at a time, and each move says the lane you are in. At the edge of the street a bump sounds and your head stays where it is. Whatever is in your lane sounds straight ahead.
+A street has 3, 4 or 5 lanes, numbered from the left. Left and Right move your head one lane at a time, and each move says the lane you are in. At the edge of the street your head stays where it is. Whatever is in your lane is straight ahead.
 
 ## Following the pearl
 
@@ -78,7 +78,7 @@ Left and Right: move your head one lane.
 
 Space: rear up, as the gong strikes.
 
-Tab: ring the pearl's chime and name its lane.
+Tab: name the pearl's lane.
 
 Up: what is coming down the lanes, and the next gong.
 

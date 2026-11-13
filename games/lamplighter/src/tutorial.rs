@@ -55,14 +55,14 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hall: Live<Round>) -> Lesson {
 
     let walk = hall.step(
         format!(
-            "You stand at the lobby end of the Long Hall, with a wall on each side. {} walks toward the far wall and {down} walks back. A thin whistle across empty glass is a lamp that is out, on the wall it comes from. Walk until the whistle is right beside you.",
+            "You stand at the lobby end of the Long Hall, with a wall on each side. {} walks toward the far wall and {down} walks back. A lamp is out on one of the walls ahead. Walk until it is right beside you.",
             sentence_start(&up)
         ),
         |r: &Round, _| beside_out(r).then(|| "A lamp that is out is right beside you.".to_string()),
     );
     let light = hall.step(
         format!(
-            "{} reaches to the left wall and {right} to the right. Reach toward the whistle to light the lamp.",
+            "{} reaches to the left wall and {right} to the right. Reach toward its wall to light the lamp.",
             sentence_start(&left)
         ),
         |r: &Round, _| (r.hall.lit >= 1).then(String::new),

@@ -58,7 +58,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Signal>) -> Lesson {
 
     let trains = room.step(
         format!(
-            "Now the practice room, with no clock. {} opens the line. Listen for each call and answer with its matching key. Take as long as you need in practice. {} says the call again. Send {TRAINS} trains through.",
+            "Now the practice room, with no clock. {} opens the line. Answer each call with its matching key. Take as long as you need in practice. {} says the call again. Send {TRAINS} trains through.",
             sentence_start(&p),
             sentence_start(&rep)
         ),

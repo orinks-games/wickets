@@ -142,4 +142,4 @@ Everywhere:
 
 F1: help for what you are doing right now. F2 stops speech.
 
-Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge. When you come back from the pause menu in the middle of the music, a bar of ticks counts you back in and the band plays the call again. Notes you already answered stay answered.
+Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge. When you come back from the pause menu in the middle of the music, the band counts you back in with a bar and plays the call again. Notes you already answered stay answered.

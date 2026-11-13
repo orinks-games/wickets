@@ -183,7 +183,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
 
     let blockade = Step::new(
         format!(
-            "Last, a full blockade. It fills all three lanes, so you cannot dodge it. In a run, the boost chime plays just before it hits: boost then. Boost now with {boost}."
+            "Last, a full blockade. It fills all three lanes, so you cannot dodge it. In a run, boost just before it hits. Boost now with {boost}."
         ),
         |ctx, a| match a {
             ParlorAction::Primary => {
@@ -213,5 +213,5 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     .step(fast)
     .step(debris)
     .step(blockade)
-    .outro("Too many misses raise stress, and at 100 the network collapses. Practice run flies the guided route, where each new sound is explained as it arrives, and your first Play flies it too.")
+    .outro("Too many misses raise stress, and at 100 the network collapses. Practice run flies the guided route, where each new kind of traffic is explained as it arrives, and your first Play flies it too.")
 }

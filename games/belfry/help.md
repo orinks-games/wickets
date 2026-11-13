@@ -4,7 +4,7 @@
 
 The old bell ringer left a secret sequence of 4 bells, chosen from 6. This sequence is called a peal. Work out the bells and their order within 10 guesses.
 
-Each guess is a row of bells. Ring your row, and the apprentice answers with knocks and taps for clues. If you use all 10 guesses, the secret sequence is read out. Nothing here is timed.
+Each guess is a row of bells. Ring your row, and the apprentice answers with clues. If you use all 10 guesses, the secret sequence is read out. Nothing here is timed.
 
 ## The bells
 
@@ -28,7 +28,7 @@ Village is the main game. A bell may come twice in the peal, or more, such as 3,
 
 ## The row log
 
-R plays the last answer's knocks and taps again, then reads every row so far with its answer, such as "Row 2: 1, 1, 4, 5. 2 in place, 1 misplaced." S gives the status: your row number, your place, the row you are building and the last answer. S again gives rows left and hints.
+R repeats the last answer, then reads every row so far with its answer, such as "Row 2: 1, 1, 4, 5. 2 in place, 1 misplaced." S gives the status: your row number, your place, the row you are building and the last answer. S again gives rows left and hints.
 
 ## Hints
 

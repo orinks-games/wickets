@@ -74,7 +74,7 @@ impl CountRun {
         let primary = ctx.control_name(ParlorAction::Primary);
         match intro {
             Intro::Bells if self.night.gala => format!(
-                "Midnight Countdown: {}. Ten minutes to midnight, and the full orchestra is here from the first call. The band plays a one-bar call; answer it in the next bar, on the same beats. Bells are {primary}, the deep drum boom is {}, the bright horn blast is {}. A soft clock ticks every beat, with a lower tock at the start of each bar. The party starts at full energy; misses drain it. Press {primary} to start. A bar of ticks counts you in.",
+                "Midnight Countdown: {}. Ten minutes to midnight, and the full orchestra is here from the first call. The band plays a one-bar call; answer it in the next bar, on the same beats. Bells are {primary}, the drum is {}, the horn is {}. The party starts at full energy; misses drain it. Press {primary} to start. A bar counts you in.",
                 self.night.spec.name,
                 Self::key(ctx, Inst::Drum),
                 Self::key(ctx, Inst::Horn)
@@ -92,7 +92,7 @@ impl CountRun {
                     ""
                 };
                 format!(
-                    "Midnight Countdown, night {}: {}. Ten minutes to midnight. The band plays a one-bar call on bells; answer it in the next bar, on the same beats, with {primary}. A soft clock ticks every beat, with a lower tock at the start of each bar. Good answers lift the party's energy; misses drain it.{practice} Press {primary} to start. A bar of ticks counts you in.",
+                    "Midnight Countdown, night {}: {}. Ten minutes to midnight. The band plays a one-bar call on bells; answer it in the next bar, on the same beats, with {primary}. Good answers lift the party's energy; misses drain it.{practice} Press {primary} to start. A bar counts you in.",
                     self.night.spec.level,
                     self.night.spec.name
                 )
@@ -102,7 +102,7 @@ impl CountRun {
                 Self::key(ctx, Inst::Drum)
             ),
             Intro::Horns => format!(
-                "Four minutes to midnight. The horns join in: a bright brass blast. Answer a horn with {}. Press {primary} to play on.",
+                "Four minutes to midnight. The horns join in. Answer a horn with {}. Press {primary} to play on.",
                 Self::key(ctx, Inst::Horn)
             ),
             Intro::Orchestra => format!(

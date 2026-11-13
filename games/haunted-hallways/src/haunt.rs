@@ -1859,8 +1859,13 @@ impl State<Parlor> for Haunt {
             Some(g) if g.phase == GhostPhase::Near => {
                 "A ghost is passing you right now: do not move! ".to_string()
             }
-            Some(g) if g.kind.hunts_stillness() => "The hound is coming: when it howls, keep walking until it breathes out and drifts away. ".to_string(),
-            Some(_) => "A ghost is coming: when its stab sounds, stop moving until it breathes out and drifts away. ".to_string(),
+            Some(g) if g.kind.hunts_stillness() => {
+                "The hound is coming: keep walking until it has passed. ".to_string()
+            }
+            Some(_) => {
+                "A ghost is coming: when it is beside you, stop moving until it has passed. "
+                    .to_string()
+            }
             None => String::new(),
         };
         let room = self.run.current();
@@ -1875,7 +1880,8 @@ impl State<Parlor> for Haunt {
             dangers.push_str("The shadow follows your footsteps: keep away from it. ");
         }
         if !room.rotten.is_empty() {
-            dangers.push_str("A groan means a rotten board next to you: do not step there. ");
+            dangers
+                .push_str("Rotten boards lie here: when one is next to you, do not step there. ");
         }
         if room.mimics() > 0 {
             dangers.push_str("Mimics hop about; the real thing keeps still. ");
@@ -1884,25 +1890,24 @@ impl State<Parlor> for Haunt {
             dangers.push_str("This room is mirrored: east sounds from your left. ");
         }
         if room.dark {
-            dangers.push_str("This room is dark: things call out only when you are near. ");
+            dangers.push_str("This room is dark: things are found only when you are near. ");
         }
         if room.pendulum.is_some() {
-            dangers.push_str(
-                "The swish is the pendulum's blade: cross its row just after it passes. ",
-            );
+            dangers
+                .push_str("A pendulum's blade swings here: cross its row just after it passes. ");
         }
         if !room.water.is_empty() {
-            dangers.push_str("Lapping means deep water: wading is slow and brings ghosts sooner. ");
+            dangers.push_str("Deep water lies here: wading is slow and brings ghosts sooner. ");
         }
         if room.stones {
             dangers.push_str("When dust trickles over you, step off before the stone falls. ");
         }
         if room.shifts {
-            dangers.push_str("A rumble moves the exit door: status says where. ");
+            dangers.push_str("The exit door moves: status says where. ");
         }
         if self.run.founder.is_some() {
             dangers.push_str(&format!(
-                "The founder hunts you. At his ringing note, {} strikes him; too soon and he blocks, so step away. ",
+                "The founder hunts you. Halfway through his wind-up, {} strikes him; too soon and he blocks, so step away. ",
                 ctx.control_name(ParlorAction::Primary)
             ));
         }
