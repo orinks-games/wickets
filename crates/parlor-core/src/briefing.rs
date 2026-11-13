@@ -36,14 +36,24 @@
 //! "1 to 6 play the sounds. Enter starts.", until the player has started a
 //! run from a briefing in this game once (`<game>/briefing_learned`); then
 //! only the explanation is said. F1 always gives the keys.
+//!
+//! The briefing is beta work ([`STAGE`]). A stable copy has none: every
+//! run starts at once with nothing said, as with the setting off, and
+//! [`rows`] lists no Settings row. Games mark their help lines about it
+//! `{beta}`. Promoting it is one edit: change [`STAGE`].
 
 use std::rc::Rc;
 
 use hearken::screens::SettingsRow;
 use hearken::{Bus, Ctx, InputEvent, Key, Sound, State, UiSound};
 
+use crate::channel::{self, Stage};
 use crate::menus::settings;
 use crate::{Parlor, ParlorAction, Records};
+
+/// The channel stage the briefing is at: a copy shows it only when
+/// `channel::shows(STAGE)`.
+pub const STAGE: Stage = Stage::Beta;
 
 /// The screen's `State::name`, shared by every game, as `pages` is.
 pub const NAME: &str = "briefing";
@@ -151,10 +161,15 @@ pub struct Briefing {
     in_place: bool,
 }
 
-/// Whether briefings are on: "Briefing before play" in Settings, on unless
-/// the player turned it off.
+/// Whether this copy shows briefings at all ([`STAGE`]).
+pub fn shown() -> bool {
+    channel::shows(STAGE)
+}
+
+/// Whether briefings are on: shown in this copy, and "Briefing before
+/// play" in Settings, on unless the player turned it off.
 pub fn enabled(ctx: &Ctx<Parlor>) -> bool {
-    !Records::peek::<bool>(ctx, OFF_KEY)
+    shown() && !Records::peek::<bool>(ctx, OFF_KEY)
 }
 
 /// Opens `briefing`, or starts its run at once with the setting off.
@@ -162,8 +177,18 @@ pub fn open(ctx: &mut Ctx<Parlor>, briefing: Briefing) {
     briefing.show(ctx);
 }
 
-/// The shared "Briefing before play" row for a game's Settings. A game
-/// that shows briefings lists it among its own rows.
+/// The Settings rows a game that shows briefings lists among its own:
+/// [`row`], or none on a copy that does not show briefings.
+pub fn rows() -> Vec<SettingsRow<Parlor>> {
+    if shown() {
+        vec![row()]
+    } else {
+        Vec::new()
+    }
+}
+
+/// The shared "Briefing before play" row for a game's Settings. Games list
+/// it through [`rows`].
 pub fn row() -> SettingsRow<Parlor> {
     settings::toggle(
         ROW_ID,
@@ -300,7 +325,7 @@ impl Briefing {
     /// Opens the briefing over the current screen, or, with "Briefing
     /// before play" off, starts its run at once with nothing said.
     pub fn show(mut self, ctx: &mut Ctx<Parlor>) {
-        if Records::load::<bool>(ctx, OFF_KEY) {
+        if !shown() || Records::load::<bool>(ctx, OFF_KEY) {
             self.phase = Phase::Skipping;
         }
         ctx.push(self);
@@ -310,7 +335,7 @@ impl Briefing {
     /// menu that goes on to a different run: the briefing takes its place,
     /// so Escape goes back to the screen beneath it.
     pub fn show_in_place(mut self, ctx: &mut Ctx<Parlor>) {
-        if Records::load::<bool>(ctx, OFF_KEY) {
+        if !shown() || Records::load::<bool>(ctx, OFF_KEY) {
             self.phase = Phase::Skipping;
         }
         self.in_place = true;
@@ -752,6 +777,31 @@ mod tests {
         assert_eq!(keys_line(1), "1 plays the sound. Enter starts.");
         assert_eq!(keys_line(6), "1 to 6 play the sounds. Enter starts.");
         assert_eq!(keys_line(10), "1 to 9 and 0 play the sounds. Enter starts.");
+    }
+
+    #[test]
+    fn a_stable_copy_starts_the_run_at_once_and_lists_no_row() {
+        channel::pin(Some(Stage::Stable));
+        let (h, ran) = open();
+        let rows = rows().len();
+        let on = enabled(&h.app.ctx);
+        channel::pin(None);
+        assert!(ran.get());
+        assert_ne!(h.app.top_name(), NAME);
+        assert!(h.spoken().is_empty(), "{:?}", h.spoken());
+        assert_eq!(rows, 0);
+        assert!(!on);
+    }
+
+    #[test]
+    fn a_beta_copy_shows_the_briefing_and_its_row() {
+        channel::pin(Some(Stage::Beta));
+        let (h, ran) = open();
+        let rows = rows().len();
+        channel::pin(None);
+        assert!(!ran.get());
+        assert_eq!(h.app.top_name(), NAME);
+        assert_eq!(rows, 1);
     }
 
     #[test]

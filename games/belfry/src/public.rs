@@ -200,7 +200,7 @@ impl TitleGame for Belfry {
     }
 
     fn settings(_ctx: &Ctx<Parlor>) -> Vec<hearken::screens::SettingsRow<Parlor>> {
-        vec![parlor_core::briefing::row()]
+        parlor_core::briefing::rows()
     }
 
     fn lesson(&mut self, ctx: &mut Ctx<Parlor>) -> parlor_core::Lesson {

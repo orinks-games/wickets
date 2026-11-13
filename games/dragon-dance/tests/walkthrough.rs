@@ -535,3 +535,58 @@ fn a_streets_briefing_plays_the_cues_it_uses() {
     h.press(Key::Space);
     assert_eq!(h.app.top_name(), DANCE_NAME);
 }
+
+/// Whether `h`'s Settings for this game list the briefing row.
+fn lists_the_briefing_row(h: &mut Headless<parlor_core::Parlor>) -> bool {
+    goto(h, "Settings");
+    h.press(Key::Return);
+    h.press(Key::Return); // the game's own category
+    let listed = rows(h)
+        .iter()
+        .any(|r| r.starts_with("Briefing before play"));
+    h.press(Key::Escape);
+    h.press(Key::Escape);
+    listed
+}
+
+#[test]
+fn a_stable_copy_starts_every_street_at_once() {
+    use parlor_core::channel::{pin, Stage};
+    pin(Some(Stage::Stable));
+    let mut h = title();
+    let help = parlor_core::seasonal::help(&h.app.ctx, dragon_dance::HELP);
+    let row = lists_the_briefing_row(&mut h);
+    goto(&mut h, "Play, street 1: Market Row");
+    h.clear();
+    h.press(Key::Return);
+    let play = h.app.top_name().to_string();
+    let said = h.spoken().join(" ");
+    dance_by_keys(&mut h, 200.0);
+    let results = h.app.top_name().to_string();
+    goto(&mut h, "Next street: street 2, Tea House Lane");
+    h.press(Key::Return);
+    let next = h.app.top_name().to_string();
+    pin(None);
+    assert!(!help.contains("briefing"), "{help}");
+    assert!(!row);
+    assert_eq!(play, DANCE_NAME);
+    assert!(!said.contains("play the sounds"), "{said}");
+    assert_eq!(results, "results");
+    assert_eq!(next, DANCE_NAME);
+}
+
+#[test]
+fn a_beta_copy_shows_the_briefing() {
+    use parlor_core::channel::{pin, Stage};
+    pin(Some(Stage::Beta));
+    let mut h = title();
+    let help = parlor_core::seasonal::help(&h.app.ctx, dragon_dance::HELP);
+    let row = lists_the_briefing_row(&mut h);
+    goto(&mut h, "Play, street 1: Market Row");
+    h.press(Key::Return);
+    let top = h.app.top_name().to_string();
+    pin(None);
+    assert!(help.contains("on the briefing before a street"), "{help}");
+    assert!(row);
+    assert_eq!(top, parlor_core::briefing::NAME);
+}

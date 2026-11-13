@@ -321,7 +321,7 @@ impl TitleGame for DragonDance {
     }
 
     fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
-        vec![menus::settings::toggle(
+        let mut rows = vec![menus::settings::toggle(
             "dragon_dance_call_outs",
             labels::call_outs,
             |ctx| !Progress::peek(ctx).quiet,
@@ -339,8 +339,9 @@ impl TitleGame for DragonDance {
                 .to_string())
             },
             "When on, a voice names the pearl's lane as it moves, and each envelope and firecracker string as it comes.",
-        ),
-        parlor_core::briefing::row()]
+        )];
+        rows.extend(parlor_core::briefing::rows());
+        rows
     }
 
     fn sound_check(&mut self, ctx: &mut Ctx<Parlor>) {
