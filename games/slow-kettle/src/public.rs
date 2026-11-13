@@ -313,7 +313,7 @@ impl TitleGame for SlowKettle {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear the kettle's song, every cue and every cup, each with its name.".to_string()
+        "Plays the kettle's song, every cue and every cup.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {
