@@ -328,7 +328,7 @@ impl Haunt {
             };
             if self.first("rotten") {
                 out.push_str(&format!(
-                    " {}. A groan means one is next to you.",
+                    " {}. When one is next to you, do not step there.",
                     sentence_start(&boards)
                 ));
             } else {
@@ -339,7 +339,7 @@ impl Haunt {
             if self.first("shadow") {
                 let s = ctx.control_name(ParlorAction::Status);
                 out.push_str(&format!(
-                    " A shadow, the breathing drone, follows your footsteps. {} says where it is.",
+                    " A shadow follows your footsteps. {} says where it is.",
                     sentence_start(&s)
                 ));
             } else {
@@ -349,7 +349,7 @@ impl Haunt {
         if let Some(p) = room.pendulum {
             if self.first("pendulum") {
                 out.push_str(&format!(
-                    " A pendulum swings along row {} from the south. Cross just after the swish passes.",
+                    " A pendulum swings along row {} from the south. Cross just after the blade passes.",
                     p.row + 1
                 ));
             } else {
@@ -359,7 +359,7 @@ impl Haunt {
         if !room.water.is_empty() {
             if self.first("water") {
                 out.push_str(
-                    " Flooded. Lapping means deep water. Wading is slow and draws ghosts.",
+                    " Flooded. Wading through deep water is slow and draws ghosts.",
                 );
             } else {
                 out.push_str(" Deep water here.");
@@ -374,14 +374,14 @@ impl Haunt {
         }
         if room.shifts {
             if self.first("shifts") {
-                out.push_str(" This room shifts: a rumble moves the exit door.");
+                out.push_str(" This room shifts: the exit door moves.");
             } else {
                 out.push_str(" This room shifts.");
             }
         }
         if room.charm.is_some_and(|c| !c.taken) && self.first("charm") {
             out.push_str(&format!(
-                " A soft chime is a charm: walk onto it. Salt wards off one catch, a candle stub adds {}.",
+                " A charm is here: walk onto it. Salt wards off one catch, a candle stub adds {}.",
                 clock_words(STUB_SECONDS)
             ));
         }
@@ -963,9 +963,9 @@ impl Haunt {
                     // Short enough to finish before even the butler arrives.
                     if self.first(format!("ghost {}", g.kind.name())) {
                         let how = if g.kind.hunts_stillness() {
-                            " It hunts stillness: at its howl, keep walking."
+                            " It hunts stillness: when it comes, keep walking."
                         } else if self.first("ghost") {
-                            " At the stab, freeze until it breathes out."
+                            " Freeze until it has passed."
                         } else {
                             ""
                         };
@@ -1101,7 +1101,7 @@ impl Haunt {
                 Ev::Splash => {
                     sound::play(ctx, sound::SPLASH);
                     if self.first("splash") {
-                        ctx.say("Deep water. Slow, and the splash carries.");
+                        ctx.say("Deep water. Slow, and it draws ghosts.");
                     }
                 }
                 Ev::Wading => {
@@ -1133,7 +1133,7 @@ impl Haunt {
                     if self.first("founder") {
                         let p = ctx.control_name(ParlorAction::Primary);
                         ctx.say(format!(
-                            "The founder follows you, in heavy boots. Freezing will not stop him. At the ringing note, {p} strikes with your candlestick. Too soon and he blocks."
+                            "The founder follows you. Freezing will not stop him. In the second half of his wind-up, {p} strikes with your candlestick. Too soon and he blocks."
                         ));
                     } else {
                         ctx.say("The founder follows you in.");
