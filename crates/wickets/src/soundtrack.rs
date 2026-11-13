@@ -277,6 +277,16 @@ fn albums(ctx: &mut Ctx<Parlor>) -> Vec<(String, usize, usize)> {
         .collect()
 }
 
+/// An album's name as an owner: "Basket Run's", and "Wicket's" for a
+/// name that already ends in "'s".
+fn possessive(name: &str) -> String {
+    if name.ends_with("'s") {
+        name.to_string()
+    } else {
+        format!("{name}'s")
+    }
+}
+
 /// The lobby's Soundtrack: every album, then Back. An album opens Hearken's
 /// soundtrack menu for it. Nothing heard while it is open unlocks a track.
 pub struct Albums {
@@ -346,7 +356,8 @@ impl Menu for Albums {
                     ctx.push(SoundtrackScreen::<Parlor>::new().album(album.clone()))
                 })
                 .help(format!(
-                    "{name}'s music. A track unlocks the first time it plays in a game."
+                    "{} music. A track unlocks the first time it plays in a game.",
+                    possessive(&name)
                 )),
             );
         }
