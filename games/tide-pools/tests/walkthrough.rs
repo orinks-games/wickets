@@ -890,7 +890,10 @@ fn repeat_says_where_you_walked_and_leaned() {
     t.press(Key::Down);
     t.h.clear();
     t.press(Key::R);
-    assert!(spoke(&t.h, "Standing back on the rocks."));
+    assert!(spoke(
+        &t.h,
+        "Standing back on the rocks, with two pools either side."
+    ));
     t.press(Key::Left);
     t.press(Key::Left);
     t.h.clear();
