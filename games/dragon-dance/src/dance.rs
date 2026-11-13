@@ -798,7 +798,7 @@ pub fn results(
         r = r.next(
             format!("Next street: street {next}, {}", streets::street(next).name),
             format!("{}.", sentence_start(&streets::street(next).describe())),
-            move |ctx| ctx.replace(DanceScreen::new(Launch::new(Mode::Street(next)))),
+            move |ctx| crate::briefing::briefing(ctx, Mode::Street(next)).show_in_place(ctx),
         );
     }
     let (label, help) = match launch.mode {
