@@ -201,7 +201,7 @@ pub fn safe_spec(n: u32) -> SafeSpec {
     match n {
         1 => SafeSpec {
             name: "the office lockbox",
-            news: "Two wheels, with no guard and no false gates.",
+            news: "No guard and no false gates.",
             ..base
         },
         2 => SafeSpec {
