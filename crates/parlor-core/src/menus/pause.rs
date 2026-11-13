@@ -212,6 +212,22 @@ mod tests {
     }
 
     #[test]
+    fn settings_from_the_pause_menu_reports_a_problem_naming_the_open_game() {
+        let mut h = paused(Leave::Title("base"));
+        h.app.ctx.game.open = Some(OpenGame::new("tightrope", "Tightrope", |_| Vec::new()));
+        assert_eq!(
+            <Parlor as hearken::Game>::report_details(&h.app.ctx),
+            [("Game".to_string(), "Tightrope".to_string())]
+        );
+        h.press(Key::Down);
+        h.press(Key::Return);
+        assert_eq!(h.app.top_name(), "settings");
+        assert!(rows(&h).iter().any(|row| row == "Report a problem"));
+        h.app.ctx.game.open = None;
+        assert!(<Parlor as hearken::Game>::report_details(&h.app.ctx).is_empty());
+    }
+
+    #[test]
     fn leaving_pops_to_its_target() {
         let mut h = paused(Leave::Challenge("base"));
         for _ in 0..3 {

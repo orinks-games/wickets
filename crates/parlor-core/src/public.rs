@@ -142,6 +142,16 @@ impl hearken::Game for Parlor {
         )
     }
 
+    /// Which game the player has open, for a problem report: the report
+    /// says `Game: Tightrope`, and its email subject names it. A report
+    /// from the lobby says nothing more than the app.
+    fn report_details(ctx: &Ctx<Self>) -> Vec<(String, String)> {
+        match ctx.game.open {
+            Some(game) => vec![("Game".to_string(), game.name.to_string())],
+            None => Vec::new(),
+        }
+    }
+
     fn discord() -> Option<hearken::DiscordConfig> {
         presence::config()
     }
