@@ -243,9 +243,20 @@ pub fn register() {
     parlor_core::soundtrack::register_history(history);
 }
 
-/// The player's own songs, from the games that keep them.
+/// The player's own songs: each run's music as it was played (see
+/// `parlor_core::songs`), then the nights and garden sessions kept before
+/// runs were recorded, which age out as new songs push them past the
+/// thirty kept.
 pub fn history(ctx: &mut Ctx<Parlor>) -> Vec<Track> {
-    let mut out = lantern_lake::soundtrack::history(ctx);
+    // Every game that can keep a song, the holiday specials too: a song
+    // exists only once its game was played, so none names a surprise early.
+    let mut games: Vec<(&str, &str)> = crate::games::all()
+        .into_iter()
+        .map(|g| (g.id, g.name))
+        .collect();
+    games.extend(crate::games::specials().into_iter().map(|(g, _)| (g.id, g.name)));
+    let mut out = parlor_core::songs::tracks_for(ctx, &games);
+    out.extend(lantern_lake::soundtrack::history(ctx));
     out.extend(rooftop_garden::soundtrack::history(ctx));
     out
 }

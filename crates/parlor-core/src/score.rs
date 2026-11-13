@@ -12,6 +12,12 @@
 //! `dt`, and stops it when
 //! play ends. Pause and resume need nothing: Hearken's pause menu pauses
 //! every sound and resumes them together.
+//!
+//! The score also keeps the run's song (see [`crate::songs`]): the first
+//! [`Score::start`] of a run begins the take and [`Score::stop`] ends it,
+//! so every game with a score keeps its runs without a line of its own. A
+//! start while the score plays (a new round) starts the stems over inside
+//! the same song.
 
 use crate::Parlor;
 use hearken::{Bus, Ctx, Sound};
@@ -151,6 +157,8 @@ pub const STOP_MS: u32 = 600;
 pub struct Score {
     stems: Vec<(Stem, Sound, f32)>,
     mood: Mood,
+    /// The game whose song the score is keeping, from its stems' keys.
+    game: Option<&'static str>,
 }
 
 impl Score {
@@ -162,8 +170,12 @@ impl Score {
     /// Starts every stem together on the music bus, at `mood`'s volumes,
     /// stopping whatever music was playing. Already playing, it starts over.
     pub fn start(&mut self, ctx: &mut Ctx<Parlor>, stems: &[Stem], mood: Mood) {
-        self.stop(ctx);
+        self.silence(ctx);
         ctx.audio.play_music(None, false);
+        if let Some(game) = stems.first().and_then(|s| s.key.split('/').next()) {
+            self.game = Some(game);
+            crate::songs::begin(ctx);
+        }
         self.mood = mood;
         for stem in stems {
             let sound = ctx.audio.start_loop(stem.key, None, Bus::MUSIC);
@@ -202,8 +214,15 @@ impl Score {
         }
     }
 
-    /// Fades every stem out.
+    /// Fades every stem out, and keeps the run's song.
     pub fn stop(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.silence(ctx);
+        if let Some(game) = self.game.take() {
+            crate::songs::end(ctx, game);
+        }
+    }
+
+    fn silence(&mut self, ctx: &mut Ctx<Parlor>) {
         for (_, sound, _) in self.stems.drain(..) {
             ctx.audio.stop(sound, STOP_MS);
         }
@@ -227,6 +246,41 @@ impl Score {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::menus::testing::Base;
+    use hearken::{Headless, State, TakeState};
+
+    struct Run;
+    impl State<Parlor> for Run {
+        fn name(&self) -> &'static str {
+            "tightrope_run"
+        }
+        fn help(&self, _ctx: &Ctx<Parlor>) -> String {
+            String::new()
+        }
+    }
+
+    #[test]
+    fn the_score_keeps_the_runs_song_from_its_first_start_to_its_stop() {
+        let mut h = Headless::new(Default::default(), Base);
+        h.app.ctx.push(Run);
+        h.frame(0.0);
+        let stems = score_stems!("tightrope");
+        let mut score = Score::new();
+        score.start(&mut h.app.ctx, &stems, Mood::new(0.2));
+        assert_eq!(h.app.ctx.take_state(), TakeState::Recording);
+        h.frame(10.0);
+        // A new round starts the stems over inside the same song.
+        score.start(&mut h.app.ctx, &stems, Mood::new(0.5));
+        assert_eq!(h.app.ctx.take_state(), TakeState::Recording);
+        h.frame(10.0);
+        score.stop(&mut h.app.ctx);
+        assert_eq!(h.app.ctx.take_state(), TakeState::Idle);
+        let kept = crate::songs::fresh(&h.app.ctx).expect("the song is kept");
+        assert_eq!(kept.game, "tightrope");
+        let entries = crate::songs::entries(&mut h.app.ctx, "tightrope");
+        assert_eq!(entries.len(), 1);
+        assert!((entries[0].length_s - 20.0).abs() < 0.1, "{}", entries[0].length_s);
+    }
 
     #[test]
     fn a_stem_rises_between_its_bounds_and_follows_its_flag() {

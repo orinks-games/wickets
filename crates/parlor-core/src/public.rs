@@ -25,6 +25,7 @@ pub mod seasonal;
 pub mod seats;
 pub mod shop_music;
 pub mod sim;
+pub mod songs;
 pub mod soundtrack;
 pub mod status;
 pub mod story;
@@ -90,6 +91,8 @@ pub struct ParlorData {
     /// What the next title opens with, left by the screen sending the
     /// player there and taken whole by the title (see [`TitleOpening`]).
     pub title_opening: Option<TitleOpening>,
+    /// The runs' songs this session has loaded or kept (see [`songs`]).
+    pub songs: songs::Songs,
 }
 
 /// The folder (and seal witness) name the game keeps its files under.
@@ -195,6 +198,12 @@ impl hearken::Game for Parlor {
             out.push(preferences::row());
         }
         let mut out: Vec<_> = out.into_iter().map(|row| row.in_category(own)).collect();
+        // Keep your songs joins Hearken's Sound rows, after the last of them.
+        let sound_end = rows
+            .iter()
+            .rposition(|row| row.category.as_deref() == Some(categories::SOUND))
+            .map_or(rows.len(), |i| i + 1);
+        rows.insert(sound_end, songs::row());
         // The launcher's Games sits after the built-in categories, before
         // Online and Updates; a game's own list leads.
         let online = rows

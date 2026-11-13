@@ -285,7 +285,6 @@ pub struct RunScreen {
     pending: Vec<usize>,
     song_clock: f64,
     /// The song loop each voice joined on, kept with the night.
-    joins: Vec<u32>,
     home: Rc<Cell<bool>>,
     /// Seconds left to let the whole song ring before the night ends.
     ending: Option<f64>,
@@ -314,7 +313,6 @@ impl RunScreen {
             layers: Vec::new(),
             pending: Vec::new(),
             song_clock: 0.0,
-            joins: Vec::new(),
             home: Rc::new(Cell::new(false)),
             ending: None,
             done: false,
@@ -470,24 +468,10 @@ impl RunScreen {
         ENDING.max(to_next + cues::SONG_LOOP)
     }
 
-    /// Keeps tonight's song in the player's nights, for the soundtrack.
+    /// Keeps tonight's song, as the lake played it, in the player's
+    /// songs for the soundtrack.
     fn keep_night(&self, ctx: &mut Ctx<Parlor>) {
-        let today = parlor_core::challenges::today(ctx);
-        let mode = self.lake.plan.mode;
-        crate::soundtrack::keep_night(
-            ctx,
-            crate::soundtrack::Night {
-                n: 0,
-                year: today.year,
-                month: today.month,
-                day: today.day,
-                mode: mode.name(),
-                festival: mode == Mode::Festival,
-                weather: self.lake.plan.weather.bed().map(str::to_string),
-                joins: self.joins.clone(),
-                complete: self.lake.complete,
-            },
-        );
+        parlor_core::songs::end_and_tell(ctx, crate::ID);
     }
 
     /// Seconds left before the night ends while the whole song rings.
@@ -507,7 +491,6 @@ impl RunScreen {
                 let s = ctx.audio.start_loop(key, None, Bus::MUSIC);
                 ctx.audio.set_volume(s, LAYER_VOLUME);
                 self.layers.push(s);
-                self.joins.push(after as u32);
             }
         }
     }
@@ -634,6 +617,7 @@ impl State<Parlor> for RunScreen {
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         ctx.audio.play_music(None, false);
+        parlor_core::songs::begin(ctx);
         self.lake.keys = keys(ctx);
         // A full moon is heard on ordinary nights and free paddles only.
         if matches!(self.lake.plan.mode, Mode::Night(_) | Mode::Free) {
@@ -649,6 +633,7 @@ impl State<Parlor> for RunScreen {
     }
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.keep_night(ctx);
         self.stop_sounds(ctx);
     }
 
