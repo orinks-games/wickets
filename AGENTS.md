@@ -145,3 +145,13 @@ tests compare against it and `pop_to` jumps to it, so a bare `show` or
 shared screen (`results`, `pages`) keeps the shared name. No two screens
 share a name. `python3 tools/check_screen_names.py` enforces this in CI;
 `--list` prints every screen and where it lives.
+
+## Rule: public text never names private content
+
+This repository is public, and so is everything written about it: PR
+titles and descriptions, review comments, commit messages and branch names.
+None of them name anything that lives only in the overlay. Say "a private
+game", "the overlay" or "a holiday test date" instead. Put the details in
+the paired wickets-secrets PR, which is private.
+`tools/check_pr_text.py` checks the PR text in CI; it prints the input and
+line number of a hit, never the word.

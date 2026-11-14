@@ -1,0 +1,55 @@
+name: PR text
+
+# Fails a pull request whose title, description, branch name or commit
+# messages name something that lives only in the private overlay. This
+# repository is public, so that text is public too.
+#
+# - Fork pull requests get no secrets, so this skips them.
+# - The title, description and branch name reach the script through env
+#   variables and files, never by interpolation into the script text.
+# - The check prints input names and line numbers only, never the term.
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: private names in PR text
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Check out the private overlay's main
+        uses: actions/checkout@v5
+        with:
+          repository: orinks-games/wickets-secrets
+          path: secrets
+          ssh-key: ${{ secrets.WICKETS_SECRETS_DEPLOY_KEY }}
+          persist-credentials: false
+      - name: Check the PR text
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_BRANCH: ${{ github.event.pull_request.head.ref }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          test -f secrets/WICKETS_SECRETS
+          dir="$RUNNER_TEMP/pr-text"
+          mkdir -p "$dir"
+          printf '%s\n' "$PR_TITLE" > "$dir/title"
+          printf '%s\n' "$PR_BODY" > "$dir/description"
+          printf '%s\n' "$PR_BRANCH" > "$dir/branch"
+          for sha in $(git rev-list "$BASE_SHA..$HEAD_SHA"); do
+            git log -1 --format=%B "$sha" > "$dir/commit-${sha:0:7}"
+          done
+          python3 tools/check_pr_text.py --require "$dir"/*
+      - name: Remove the overlay
+        if: always()
+        run: rm -rf secrets "$RUNNER_TEMP/pr-text"
