@@ -267,15 +267,22 @@ impl OpenGame {
 /// What the next title opens with, when the player came for something on
 /// it. The title takes it whole on entering. A first visit starts on
 /// Tutorial (or the practice row) whatever the row asked for, and only a
-/// first visit says the note.
+/// first visit gets its welcome, unless the opening is `Known` or `Quiet`.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub enum TitleOpening {
     /// Open on the row whose label starts with this, as "The house
     /// stirs": an event from the story or the Happening today list.
     Row(String),
-    /// A line said after the first-visit opening, from the screen that
-    /// sent the player here: what plays once the tutorial is done.
-    Note(String),
+    /// The title is only a base under an event run started over it, so it
+    /// says nothing on entering. The run speaks, and the title speaks when
+    /// the player comes back to it. The lesson is neither shown nor marked
+    /// done.
+    Quiet,
+    /// Open as for a player who has done the tutorial: no first-visit
+    /// welcome, and the cursor stays on the first row. For a screen that
+    /// sends the player straight to what they came for. The lesson is
+    /// neither shown nor marked done.
+    Known,
 }
 
 /// A story scene while its game is open. The sitting sets `Open` when it
