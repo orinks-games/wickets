@@ -4,13 +4,13 @@ Larkfield is an empty hamlet by a river, and you are its first farmer. Dig and s
 
 ## Walking the lane
 
-Larkfield is one lane. From left to right: the gate, the cottages, the green, the fields, the yard, the river and the woods. Left and Right walk the lane. Up goes into the place you are beside, and Down comes back out to the lane. Inside a place, Left and Right move between its spots, such as the hen house and the goat pen at the cottages. Each step names where you are.
+Larkfield is one lane. From left to right: the gate, the cottages, the green, the fields, the yard, the river and the woods. Left and Right walk the lane. Up goes into the place you are beside. Down comes back out to the lane. Inside a place, Left and Right move between its spots, such as the hen house and the goat pen at the cottages. Each step names where you are.
 
 Sounds come from their positions relative to where you stand. Sound check, on the title menu, lets you learn the footsteps, fishing cues, dangers and settlers' instruments.
 
 ## The fields
 
-The fields are three rows of four plots. Up goes a row further in, and Down a row back toward the lane. On a plot, Space does what it needs: dig rough ground, sow a dug plot, water a growing crop, or harvest a ripe one. Tab pulls weeds.
+The fields are three rows of four plots. Up goes a row further in. Down goes a row back toward the lane. On a plot, Space does what it needs: dig rough ground, sow a dug plot, water a growing crop, or harvest a ripe one. Tab pulls weeds.
 
 Each night, a watered crop with no weeds makes one day of growth. Rain waters every plot for you. A crop sown out of its season grows slowly. A crop that is finished keeps a seed back for the next sowing, and some crops, such as peas and strawberries, crop again without sowing. Once the well is built, settlers water the fields too.
 
@@ -32,11 +32,11 @@ At the steady and lively paces, a settler who stays glum much longer may leave f
 
 ## Dreams and keepsakes
 
-Every settler has a dream in three steps, such as a proper oven or a boat on the river. Each step waits for something: a building, goods in the larder, enough people, a festival, or a cheerful day. When a step comes true, it is in the bedtime news. When the third does, they leave a keepsake on your shelf. The keepsake shelf is on the title menu.
+Every settler has a dream in three steps, such as a proper oven or a boat on the river. Each step needs something: a building, goods in the larder, enough people, a festival, or a cheerful day. When a step comes true, it is in the bedtime news. When the third does, they leave a keepsake on your shelf. The keepsake shelf is on the title menu.
 
 ## Buildings
 
-There are eight buildings, on the green and in the yard. Walk to a free spot and press Space to hear what goes there and what it costs in wood, stone and coins. The materials are used when you start, and settlers on building jobs put it up. Space at a building site hammers too. One building goes up at a time.
+There are eight buildings, on the green and in the yard. Walk to a free spot and press Space to hear what goes there and what it costs in wood, stone and coins. The materials are used when you start, and settlers on building jobs put it up. Space hammers at a building site too. One building goes up at a time.
 
 The mill grinds grain into flour, and the bakery bakes it into bread, or into pies with fruit. The smokehouse keeps fish, the workshop makes furniture for the cottages, and the dairy makes cheese from the goat's milk. The well waters the fields. The inn brings visitors, and the bandstand puts music on the green after supper.
 
@@ -44,11 +44,11 @@ Wood comes from the fallen trees in the woods, and stone from the old quarry. Sp
 
 ## The barge
 
-The barge comes to the river dock every third day. Press Space at the dock to trade. It buys from the larder, and sells seeds, nails, hens and a goat. Seeds for the season are the cheapest way to fill the fields.
+The barge comes to the river dock every third day. Space trades at the dock. It buys from the larder, and sells seeds, nails, hens and a goat. Seeds for the season are the cheapest way to fill the fields.
 
 ## Food and supper
 
-Everyone eats from the larder at supper, when the bell rings at the end of the day. A supper of two or more good things lifts everyone's mood; a thin one lowers it, and the next village sends bread over. Choose who to sit with: they are glad of the company. Then the day's news, and bed.
+Everyone eats from the larder at supper, when the bell rings at the end of the day. A supper of two or more good things lifts everyone's mood. A thin one lowers it, and the next village sends bread over. Choose who to sit with: they are glad of the company. Then comes the day's news, and you go to bed.
 
 S says how many days of food are in the larder. Fish at the river, forage in the woods, gather eggs and harvest the fields to keep it full.
 
@@ -114,10 +114,10 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - Space: the job in front of you: dig, sow, water, harvest, chop, fish, build or trade.
 - Tab: pull weeds, or feed the hens or the goat.
 - Enter: talk to whoever is here.
-- J: the job board.
+- J: open the job board.
 - L: list what is around you.
 - P: everyone in Larkfield, a page each.
 - S: what needs attention and how many days of food you have. Press it again straight away for the day and your stores, and once more for everyone's mood and work.
-- H: what to do next.
+- H: say what to do next.
 - R: repeat the last line.
 - Escape: pause.

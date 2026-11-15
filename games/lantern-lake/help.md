@@ -12,13 +12,13 @@ Everything on the lake is in its true direction around you. Turn until a lantern
 
 A lantern's chime rings faster as you get near: slow when it is far across the water, quick when it is close. You gather a lantern when you reach it.
 
-The canoe glides on after each stroke and slowly comes to a stop. When reeds brush the canoe, you have reached the shore: turn back toward open water.
+The canoe glides on after each stroke and slowly comes to a stop. When reeds brush the canoe, you have reached the shore. Turn back toward open water.
 
 ## Finding your way
 
 Frogs, crickets and the wind in the reeds each sing from one place on the shore all night. They are your landmarks: if the frogs are on your left, you know which way you face.
 
-Space describes the lake around you in words, and S and H say where the next lantern is, in words and as a clock position: 12 o'clock is straight ahead, 3 o'clock to your right, 6 o'clock behind you.
+Space describes the lake around you in words. S and H say where the next lantern is, in words and as a clock position. 12 o'clock is straight ahead, 3 o'clock to your right, 6 o'clock behind you.
 
 ## The song
 
@@ -41,7 +41,7 @@ Night 1 is small, with 4 lanterns. Each later night is a little wider, with one 
 
 Some nights hide small places to find: an old dock, an island where an owl lives, a firefly meadow, a little stream, lily pads, a bell buoy, a beaver lodge and a weeping willow. Paddle toward anything you don't recognise.
 
-Everything you find goes into your journal at once, even if you leave the night early. Read it from the Journal row on the title: it lists the places you have found, how often, and blank pages for the ones still to find.
+Everything you find goes into your journal at once, even if you leave the night early. Read it from the Journal row on the title. It lists the places you have found and how often. Blank pages mark the ones still to find.
 
 ## Modes
 
@@ -49,7 +49,7 @@ Everything you find goes into your journal at once, even if you leave the night 
 - Free paddle: locked until you finish your first night. A wide lake where a new lantern appears whenever you gather one. Stay as long as you like and head home with Tab.
 - Practice pond: a tiny, still pond with 2 lanterns, one straight ahead and one to your right. On your first visit the title starts on the tutorial, which plays on the practice pond.
 
-Before each outing a page says what the lake is. Enter pushes off, and Escape goes back to the title.
+Before each outing a page says what the lake is. Enter pushes off. Escape goes back to the title.
 
 Records, on the title, reads the most lanterns you have gathered in a night, your journal's tallies and your challenge results.
 
@@ -59,7 +59,7 @@ When you head home, the results say how the night went and what went into your j
 
 ## Challenges
 
-The Challenges menu holds 3 lakes that are the same for every player. Before you push off, each reads its rule and score. Escape on that briefing goes back without starting.
+The Challenges menu holds 3 lakes that are the same for every player. Before you push off, each reads its rule and score. Escape goes back from that briefing without starting.
 
 - Daily: a small lake with 5 lanterns and a twist that changes every day: mist, rain, still water, a breeze, or a starry night with extra places to find.
 - Weekly: a lantern constellation. Only one lantern is lit at a time, with its own cue. Gather it to light the next. Unlit lanterns are asleep and can't be gathered yet.
@@ -85,7 +85,7 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - Left and Right arrows: turn the canoe. A short press turns a little. Hold to keep turning.
 - Up arrow: paddle one stroke. Hold it to keep paddling.
 - Down arrow: back-paddle, to slow down or back away.
-- Space: look around. It says which way you face, where the nearest shore is and what is around you, and every lantern rings once, nearest first.
+- Space: look around. It says which way you face, where the nearest shore is and what is around you. Every lantern rings once, nearest first.
 - Tab: head home and end the night. You are asked first.
 - S: status. How many lanterns you have and roughly where the nearest one is. Press it again straight away for which way you face, the weather and tonight's discoveries.
 - R: repeat the last thing said.

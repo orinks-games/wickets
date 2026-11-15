@@ -16,13 +16,13 @@ Each trail ends at a landmark: a brook in the woodland, wind chimes on the meado
 
 ## Walking
 
-Up takes a step forward and Down a step back. Hold the key to keep walking. Your footsteps do not disturb the birds.
+Up takes a step forward. Down takes a step back. Hold the key to keep walking. Your footsteps do not disturb the birds.
 
 The game says when you leave the path and when you come back to it. Brambles, a hedge, deep reeds or the river's edge stop you at the sides of the trail, and the game says which way the path is.
 
 ## Meeting a bird
 
-Walk toward a song. When you are within a few steps, the bird notices you, its name is spoken, and it sings its song to you alone. The other birds go quiet while it sings.
+Walk toward a song. When you are within a few steps, the bird notices you. Its name is spoken. It sings its song to you alone. The other birds go quiet while it sings.
 
 Space, when no bird is singing to you, names the three birds nearest you, where they are and how far, and the trail's end. H names the nearest bird you have not befriended, where it is, and how to turn to face it.
 
@@ -32,7 +32,7 @@ Your turn: Down is low, Space middle, Up high. Songs are 2 to 5 notes.
 
 If your answer matches, you befriend the bird. Otherwise, the bird sings again. You can try as often as you like. After two misses, its notes are spoken in words.
 
-While a bird waits for your answer, R makes it sing again, and H speaks its notes in words, such as low, high, middle. Turning away, or stepping off, leaves the bird. Walk a little way off and come back, and it sings to you again.
+While a bird waits for your answer, R makes it sing again, and H speaks its notes in words, such as low, high, middle. Turning away or stepping off leaves the bird. Walk a little way off and come back, and it sings to you again.
 
 Turn on Spoken call-outs in Settings, from the title or the pause menu, to have the notes of every song spoken after it.
 
@@ -71,15 +71,15 @@ The migrating flocks can only be met on these walks.
 
 ## The dawn chorus
 
-Up to 8 birds sing at once, each from its own place around you. You are asked to find one, and its song is described and played alone first. Turn with Left and Right to face it, and press Space to pick it.
+Up to 8 birds sing at once, each from its own place around you. You are asked to find one, and its song is described and played alone first. Left and Right turn you to face it. Space picks it.
 
-The right bird flies off, and another bird takes its place. A wrong pick names the bird you chose. R plays the song to find alone again, and H says where it is. Each bird you pick out goes into your field guide.
+The right bird flies off, and another bird takes its place. A wrong pick names the bird you chose. R plays the song to find alone again. H says where it is. Each bird you pick out goes into your field guide.
 
 ## The migration count
 
 You stand on a hill as flocks fly over, from behind you to ahead in spring, and the other way in autumn. A rush of wings means a flock is coming. Each bird calls once as it passes. Count the calls.
 
-When the flock has passed, Up and Down set your count, and Space gives it. R plays the flock again before you answer. An exact count is 3 points, one off is 1 point. An exact count puts the flock's bird in your field guide.
+When the flock has passed, Up and Down set your count. Space gives it. R plays the flock again before you answer. An exact count is 3 points. One off is 1 point. An exact count puts the flock's bird in your field guide.
 
 ## The practice glade
 
@@ -113,7 +113,7 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - Up arrow: step forward. When a bird waits for your answer, the high note. In the migration count, count up.
 - Down arrow: step back. When a bird waits for your answer, the low note. In the migration count, count down.
 - Space: name the birds around you. When a bird waits for your answer, the middle note. In the dawn chorus, pick the bird you face. In the migration count, give your count.
-- Tab: head home. Press it twice; any other key cancels.
+- Tab: head home. Press it twice. Any other key cancels.
 - S: status. The bird you are with, which way you face, and where the trail's end is. Press it again straight away for the trail and season and the birds befriended.
 - R: repeat. The bird sings again, or the last thing said is repeated. In the chorus, the song to find plays alone. In the count, the flock flies over again.
 - H: hint. Where the nearest new bird is and how to turn to it, or the notes of the song in words.

@@ -6,7 +6,7 @@ Easter morning: eggs tumble over the meadow. Catch them in your basket, bank the
 
 ## The meadow and your lanes
 
-The meadow is a row of lanes, numbered from 1 on the far left. The first rounds have three lanes, then four, then five. You step one lane at a time with the Left and Right arrows. Each step says your lane. At either edge you bump the fence.
+The meadow is a row of lanes, numbered from 1 on the far left. The first rounds have three lanes, then four, then five. Left and Right arrows move you one lane at a time. Each step says your lane. At either edge you bump the fence.
 
 You hear the meadow from your own lane: a drop straight ahead is in your lane, one a little to the left is one lane left, and one far to the left is further.
 
@@ -14,7 +14,7 @@ You hear the meadow from your own lane: a drop straight ahead is in your lane, o
 
 The cart sits at one edge: left on odd rounds, right on even, in the weekly marathon too. Endless, daily, festival, and practice keep it on the left. Tab locates the cart and says how far away it is.
 
-Standing in the cart's lane, press Space to bank your basket: the eggs roll into the cart and become points. Banking anywhere else says where the cart is.
+Space banks your basket when you stand in the cart's lane. The eggs roll into the cart and become points. Banking anywhere else says where the cart is.
 
 ## What falls
 
@@ -39,9 +39,9 @@ Spoken call-outs is a row in Settings, from the title or from the pause menu dur
 
 ## Rounds and the clock
 
-Each round opens with its announcement, then "Go". Nothing falls until the announcement has had time to be read. Press Space to start sooner. While a page is open in the middle of play, such as a first-time explanation or a round's summary, the meadow waits: only Enter goes on, so a late Space press cannot skip it. Each round has a clock. Warnings mark ten seconds left and each of the last five seconds. When time runs out, eggs still in your basket are lost.
+Each round opens with its announcement, then "Go". Nothing falls until the announcement has had time to be read. Space starts the round sooner. Play pauses while a page is open, such as a first-time explanation or a round's summary. Only Enter continues play, so a late Space press cannot skip it. Each round has a clock. Warnings mark ten seconds left and each of the last five seconds. When time runs out, eggs still in your basket are lost.
 
-In the meadow, each round asks you to bank a share of its eggs: the round's opening announcement says how many. Bank too few and the run ends. You have 3 baskets: lose them all to bee stings and the run ends too.
+In the meadow, you must bank a share of each round's eggs. The round's opening announcement says how many. Bank too few and the run ends. You have 3 baskets: lose them all to bee stings and the run ends too.
 
 The meadow has eight rounds. Round 2 brings mud clods and moves the cart to the right. Round 3 adds a fourth lane, golden eggs and bees. Round 4 sends some eggs in pairs, one close behind the other in a nearby lane. Round 5 adds a fifth lane, and bees that dive right behind an egg in the same lane: catch the egg, then step aside. Each round after is faster.
 

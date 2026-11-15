@@ -12,11 +12,11 @@ An unlit lamp signals every second and a half or so. You hear it from its own wa
 
 ## Lighting a lamp
 
-Left reaches to the left wall and Right to the right. If there is an unlit lamp there, you light it and hear how many remain. Reaching toward a bare wall or a lit lamp changes nothing.
+Left reaches to the left wall. Right reaches to the right. If there is an unlit lamp there, you light it and hear how many remain. Reaching toward a bare wall or a lit lamp changes nothing.
 
 ## The taper
 
-In the evening round and the challenges, the taper burns while you work. Space lights it and starts the clock, and until then you can listen but not move. A warning tells you when the taper has 20 seconds left. If it burns down, Mabel lights you a fresh one. You carry on, and only the taper bonus is lost. The practice hall has no taper.
+In the evening round and the challenges, the taper burns while you work. Space lights it and starts the clock. Until then you can listen but not move. A warning marks when the taper has 20 seconds left. If it burns down, Mabel lights you a fresh one. You carry on, and only the taper bonus is lost. The practice hall has no taper.
 
 ## Draughts
 
@@ -40,7 +40,7 @@ The east wing, the weekly: 24 steps, 12 lamps out, a taper of 2 minutes 30 secon
 
 The grand gallery, the monthly: 32 steps, 16 lamps out, a taper of 3 minutes 30 seconds, and 3 draughts. A new one comes on the first of every month.
 
-Leave the challenge, on the pause menu, stops without counting the hall, so you can try again later.
+Leave the challenge, on the pause menu, stops without counting the hall. You can try again later.
 
 ## Controls
 

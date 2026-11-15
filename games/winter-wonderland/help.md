@@ -12,11 +12,11 @@ Midnight Countdown is a rhythm game for New Year's Eve: the band plays a short r
 
 ## Gift Sort: the belt
 
-Before each shift you hear the briefing: how many gifts to sort, how long the shift clock runs, and who is waiting. Each person stands on your left, straight ahead or on your right, and wishes for one thing. Press Space to start the belt. Each gift rides toward the belt's edge. If it falls off, it breaks and the clock loses 4 seconds.
+Before each shift, the briefing covers how many gifts to sort, how long the shift clock runs, and who is waiting. Each person stands on your left, straight ahead or on your right, and wishes for one thing. Space starts the belt. Each gift rides toward the belt's edge. If it falls off, it breaks and the clock loses 4 seconds.
 
 ## Gift Sort: shaking and sending
 
-Space shakes the gift so you can identify it. Gifts include blocks, teddy bears, teacups and bells. Later shifts add sweets, snow globes, clocks, squeaky toys, books and music boxes. Left sends it to the person on your left, Up to the person ahead, and Right to the person on your right. A wrong delivery costs time and leaves the gift on the belt for another try. From shift 3, use Down to return gifts nobody wants. In the first two shifts, the game also names each gift after you shake it.
+Space shakes the gift so you can identify it. Gifts include blocks, teddy bears, teacups and bells. Later shifts add sweets, snow globes, clocks, squeaky toys, books and music boxes. Left sends it to the person on your left. Up sends it to the person ahead. Right sends it to the person on your right. A wrong delivery costs time and leaves the gift on the belt for another try. Down returns gifts nobody wants, from shift 3. In the first two shifts, the game also names each gift after you shake it.
 
 ## Gift Sort: shifts and scoring
 
@@ -34,7 +34,7 @@ Shifts open at every pace. Relaxed scores are saved separately, including the st
 
 ## The Wish Desk: letters and the shelf
 
-A stack is a pile of letters. Each child asks for one thing, in their own words, and the letter says how old they are. The gifts are on a shelf in front of you, one box in each place. Walk the shelf with the Left and Right arrows, or jump to its ends with Up and Down. Space shakes the box in front of you. In the first two stacks, each letter also says how its wish would sound in a box. From stack 3 you must work it out.
+A stack is a pile of letters. Each child asks for one thing, in their own words, and the letter says how old they are. The gifts are on a shelf in front of you, one box in each place. Left and Right arrows move you along the shelf. Up and Down jump to its ends. Space shakes the box in front of you. In the first two stacks, each letter also says how its wish would sound in a box. From stack 3 you must work it out.
 
 ## The Wish Desk: wrapping
 
@@ -42,7 +42,7 @@ When you find the box that holds the wish, hold Space to wrap it. Keep holding u
 
 ## The Wish Desk: stacks and scoring
 
-There are 5 stacks, each with more letters and more boxes. Each letter is worth up to 750 points, times the stack number. Every wrong box costs 250 of them, and shakes past about half the shelf cost 50 each. A stack with no wrong box earns a bonus. H names the sound of the wish, for half the letter's points, and asked again it says which way to walk. Answering a stack opens the next: choose a stack with Left and Right on the Wish Desk row of the title.
+There are 5 stacks, each with more letters and more boxes. Each letter is worth up to 750 points, times the stack number. Every wrong box costs 250 of them, and shakes past about half the shelf cost 50 each. A stack with no wrong box earns a bonus. H names the sound of the wish, for half the letter's points. H says which way to walk when pressed again. Answering a stack opens the next: choose a stack with Left and Right on the Wish Desk row of the title.
 
 ## Late post
 
@@ -54,7 +54,7 @@ On the fourth Wednesday of every month, the post is muddled: the letters come fr
 
 ## Midnight Countdown: call and answer
 
-The countdown starts at ten minutes to midnight. Each minute, the band plays a call one bar long, then you answer it in the next bar: the same instruments on the same beats. The count marks each beat and the start of each bar. Bells are Space. At seven minutes to midnight the drums join, answered with the Down arrow. At four minutes the horns join, answered with the Up arrow. The music stops while each new instrument is introduced, and waits for you to press Space. You can try the drum and horn while it waits. In the final seconds the full orchestra plays one long two-bar call with every instrument, for double points.
+The countdown starts at ten minutes to midnight. Each minute, the band plays a call one bar long, then you answer it in the next bar: the same instruments on the same beats. The count marks each beat and the start of each bar. Bells are Space. At seven minutes to midnight the drums join, answered with the Down arrow. At four minutes the horns join, answered with the Up arrow. The music stops while each new instrument is introduced. Space starts it again. You can try the drum and horn while it is stopped. In the final seconds the full orchestra plays one long two-bar call with every instrument, for double points.
 
 ## Midnight Countdown: scoring and energy
 
@@ -104,7 +104,7 @@ Down arrow: drop it in the return sack, from shift 3.
 
 R: repeat the wishes.
 
-S: the gift on the belt and the clock. Press it again straight away for the shift, the gifts sorted and the score.
+S: report the gift on the belt and the clock. Press it again straight away for the shift, the gifts sorted and the score.
 
 H: a hint about the gift you just shook, for half its points.
 
@@ -120,13 +120,13 @@ Up and Down arrows: jump to the first or last box.
 
 R: read the letter again.
 
-S: where you stand and the letter. Press it again straight away for the stack and the score.
+S: report where you stand and the letter. Press it again straight away for the stack and the score.
 
 H: a hint, for half the letter's points.
 
 In Midnight Countdown:
 
-Space: play the bell, and start the music when it waits.
+Space: play the bell, and start the music when it is stopped.
 
 Down arrow: play the drum.
 
@@ -134,7 +134,7 @@ Up arrow: play the horn.
 
 R: say the last call in words, with its beats.
 
-S: the minutes to midnight, the party energy, the score and the combo.
+S: report the minutes to midnight, the party energy, the score and the combo.
 
 H: list your instruments.
 

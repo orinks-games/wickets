@@ -10,7 +10,7 @@ Each ride is one street, heard from your bike. On your right, parked cars line t
 
 ## Riding
 
-Up arrow pedals and Down arrow brakes. The brakes build over a moment, so start braking early. Let go of both to coast. Left arrow and Right arrow slide you across the road while you hold them. Tab sprints for extra speed, until you run out of breath. Breath comes back while you ride without sprinting.
+Up arrow pedals. Down arrow brakes. The brakes build over a moment, so start braking early. Let go of both to coast. Left arrow and Right arrow slide you across the road while you hold them. Tab sprints for extra speed until you run out of breath. Breath comes back while you ride without sprinting.
 
 ## Hops and jumps
 
@@ -22,7 +22,7 @@ Every hazard's warning comes at least 1.5 seconds before you reach it, at your s
 
 A parked car's door can open into the door zone. Move left, out of the door zone, before you reach it.
 
-A pothole's warning speeds up as you get closer. A pothole gives the road bike or the e-bike a flat tyre, which slows you until you stop and stand still for 3 seconds to swap the tube. The BMX rolls through it, a little slower.
+A pothole's warning speeds up as you get closer. A pothole gives the road bike or the e-bike a flat tyre. This slows you until you stop and stand still for 3 seconds to swap the tube. The BMX rolls through it, a little slower.
 
 Raised curbs cross the bike lane. Ramps let you jump.
 
@@ -30,11 +30,11 @@ The urgent warning means a hazard is in your line. Hop, brake or steer.
 
 ## Cars from behind
 
-Cars approach from behind. They pass on your left when there is room. Hold your line while a car passes: steering into it is a crash. If you ride in the middle of the traffic lane, a car cannot pass and honks. Move right to let it by, and you earn a tip.
+Cars approach from behind. They pass on your left when there is room. Hold your line while a car passes. Steering into it is a crash. If you ride in the middle of the traffic lane, a car cannot pass and honks. Move right to let it by, and you earn a tip.
 
 ## Junction turns
 
-The game names each junction turn as it comes up, with its distance. For a right turn, be in the bike lane. For a left turn, be near the centre line. Either way, slow to 22 kilometres an hour or less before the junction line. Too fast, or on the wrong side, and you run wide, which costs you speed.
+The game names each junction turn as it comes up, with its distance. For a right turn, be in the bike lane. For a left turn, be near the centre line. Either way, slow to 22 kilometres an hour or less before the junction line. If you are too fast or on the wrong side, you run wide and lose speed.
 
 ## Crashes
 
@@ -54,9 +54,9 @@ In the endless ride, cars overtake toward you in the traffic lane. Its warning c
 
 Make delivery drops to add time to the clock. You start with 60 seconds on a street in the district you chose. The first drop is just after the start. The clock runs down, and the ride ends when it reaches zero. There is no crash limit or finish line.
 
-Drops lie along the way, like parcels in the endless ride. Ride over one at 20 kilometres an hour or less to make the drop. A drop in a shop doorway, in the door zone, adds 14 seconds and pays 3 dollars. A drop at a parcel locker by the centre line, out among the cars, adds 18 seconds and pays 6. A drop made within 30 seconds of the last one is a quick drop, and adds 4 seconds more. The clock holds 90 seconds at most.
+Drops lie along the way, like parcels in the endless ride. Ride over one at 20 kilometres an hour or less to make the drop. A drop in a shop doorway, in the door zone, adds 14 seconds and pays 3 dollars. A drop at a parcel locker by the centre line, out among the cars, adds 18 seconds and pays 6. A drop made within 30 seconds of the last one is a quick drop. It adds 4 seconds more. The clock holds 90 seconds at most.
 
-Each drop says the time it added and the time left. A crash takes 8 seconds off the clock, and you still lose the 3 seconds you are down. The game says 30 seconds left and 10 seconds left. At 15 seconds or less, the clock ticks once a second. At 5 seconds or less, it ticks twice as fast.
+After each drop, the game says the time it added and the time left. A crash takes 8 seconds off the clock, and you still lose the 3 seconds you are down. The game says 30 seconds left and 10 seconds left. At 15 seconds or less, the clock ticks once a second. At 5 seconds or less, it ticks twice as fast.
 
 Every drop has clear road before and after it, so a drop never comes up while a hazard is warning. The hazards still come closer together the further you ride. On the moped, brake hard for every drop.
 
@@ -64,7 +64,7 @@ Your score is the drops you make. The best in each district is kept, and you kee
 
 ## The job board
 
-The job board offers three deliveries across the districts you own. Each says its route, its length and its pay in dollars. Get there within the deadline for full pay. Late pays half. A new set of jobs comes after each delivery.
+The job board offers three deliveries across the districts you own. Each says its route, its length and its pay in dollars. Get there within the deadline for full pay. A late delivery pays half. A new set of jobs comes after each delivery.
 
 ## The bike shop and districts
 

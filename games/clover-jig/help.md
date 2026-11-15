@@ -1,6 +1,6 @@
 ## About the game
 
-Dance at the village ceili. The caller names each step one beat before you dance it, so press that key on the beat. Closer to the beat scores more. Tunes always play to the end.
+Dance at the village ceili. The caller names each step one beat before you dance it. Press that key on the beat. Closer to the beat scores more. Tunes always play to the end.
 
 ## The steps
 
@@ -16,7 +16,7 @@ Forward: dance it with the Up arrow.
 
 Back: dance it with the Down arrow. Forward and back join the calls in set 3.
 
-Before a dance starts, H plays every step with its call, and each step key plays its own call and step.
+Before a dance starts, H plays every step with its call. Each step key plays its own call and step.
 
 ## The beat and timing
 
@@ -34,7 +34,7 @@ Each tune earns stars from the share of its best points you earned: 1 star from 
 
 ## The sets
 
-There are four sets of three tunes, each set a little faster than the one before, and each tune played through twice.
+There are four sets of three tunes. Each set is a little faster than the one before. Each tune plays through twice.
 
 Set 1, the kitchen: left, right and hop, one step a bar.
 
@@ -76,7 +76,7 @@ The weekly set: three tunes, with every step. A new one comes every Monday.
 
 The long set, the monthly: five tunes, with every step and more of them. A new one comes on the first of every month.
 
-Your score is every point and bonus you earn. Leave the challenge, on the pause menu, stops without counting the run, so you can try again later.
+Your score is every point and bonus you earn. Leave the challenge, on the pause menu, stops without counting the run. You can try again later.
 
 ## Spoken call-outs
 
@@ -84,7 +84,7 @@ The caller is a recorded voice that plays with the music. With spoken call-outs 
 
 ## Pausing
 
-Escape pauses, and the music holds. When you come back, three beats count you back in, and the tune goes on where it stopped.
+Escape pauses, and the music holds. When you come back, three beats count you back in. The tune goes on where it stopped.
 
 ## Controls
 

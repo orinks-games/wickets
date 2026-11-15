@@ -7,11 +7,11 @@ voice. Nothing in any game is shown only on screen.
 
 ## Moving around
 
-Up and Down move through a menu, Home and End jump to its ends, and Enter
+Up and Down move through a menu. Home and End jump to its ends. Enter
 chooses. Escape goes back one screen. Escape in the lobby asks whether to
 quit, and the cursor starts on No. A game's pause menu ends with Back to
-the lobby, so nothing quits the parlor without asking. F1 reads help for wherever you are,
-and F2 stops speech.
+the lobby, so nothing quits the parlor without asking. F1 reads help for wherever you are.
+F2 stops speech.
 
 ## Continue
 
@@ -138,8 +138,8 @@ lobby, H moves between Happening today and Help.
 
 Story and event games, under Games in the lobby's Settings, choose which categories and
 games story mode and the events offer. Left and Right on a category turn
-the whole category on or off. Enter lists its games, and Enter on a game
-turns just that game on or off. Anything turned off leaves story sittings,
+the whole category on or off. Enter lists its games. Enter on a game
+turns only that game on or off. Anything turned off leaves story sittings,
 the Long Hall's lamps, Happening today and the lobby's event line. It
 remains in Play, including its event modes. Everything starts on, and at
 least one game stays on.
@@ -184,13 +184,13 @@ ask again turns the question off, and a row in Settings turns it back on.
 
 ## Stories, tutorials and results
 
-Stories, tutorials and results come one page at a time. Enter goes on, Up
-and Down go back and forward a page, R repeats the page, and Escape skips to
+Stories, tutorials and results come one page at a time. Enter goes on. Up
+and Down go back and forward a page. R repeats the page. Escape skips to
 the end. A game's clock stops while you read. On a results menu, S repeats
 the summary.
 
 Help comes in pages too. Enter opens a topic. Up and Down read it a page
-at a time, Left and Right change topic, Enter reads the rest, and Escape
+at a time. Left and Right change topic. Enter reads the rest. Escape
 goes back to the topics.
 
 ## Sounds
@@ -209,7 +209,7 @@ That licence is the Apache License 2.0 with an attribution requirement.
 
 ## Controls
 
-Every game uses the same controls, and Settings lets you move any of them
+Every game uses the same controls. In Settings, you can move any of them
 to another key or controller button.
 
 The arrow keys move, aim or choose.

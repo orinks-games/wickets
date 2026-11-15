@@ -10,11 +10,11 @@ The Up arrow turns your aim one step right, and the Down arrow one step left. Ea
 
 ## The pocket
 
-Stand off centre and angle into the pocket. The pocket is just beside the head pin, about board 17 or board 23. A ball rolled straight at the head pin hits it full and often leaves a split, such as the 4, 6, 7 and 10. A ball that comes in at an angle, from board 12 aiming 5 right or board 28 aiming 5 left, carries the pins best. Miss the pocket by a board or two and a single pin is often left. Even a perfect ball does not always strike: the lane and the pins add a little chance to every ball.
+Stand off centre and angle into the pocket. The pocket is beside the head pin, about board 17 or board 23. A ball rolled straight at the head pin hits it full and often leaves a split, such as the 4, 6, 7 and 10. A ball that comes in at an angle, from board 12 aiming 5 right or board 28 aiming 5 left, carries the pins best. Miss the pocket by a board or two and a single pin is often left. Even a perfect ball does not always strike: the lane and the pins add a little chance to every ball.
 
 ## The swing and the release
 
-Space starts the swing. Use the swing cue to time your release. Press Space again at the top of the swing. A clean release goes where you aimed. An early or late release pulls the ball off line, and the further you are from the top, the bigger the pull. The lane decides which way it pulls. If you never let go, the ball leaves your hand late at the end of the swing.
+Space starts the swing. Use the swing cue to time your release. Press Space again at the top of the swing. A clean release goes where you aimed. An early or late release pulls the ball off line. The further you are from the top, the bigger the pull. The lane decides which way it pulls. If you never let go, the ball leaves your hand late at the end of the swing.
 
 ## The ball and standing pins
 
@@ -34,7 +34,7 @@ H suggests a board and an aim for the pins standing. For a full rack, it gives a
 
 ## Pumpkin night
 
-From 17 October to 1 November the title has a Pumpkin night row. The rest of the year the row says Pumpkin night, locked, and tells you when it opens. It is a full game of ten frames with pumpkins for pins. The pins left standing are still spoken by number. Scoring is the same as a full game, and Pumpkin night keeps its own best score.
+From 17 October to 1 November the title has a Pumpkin night row. The rest of the year the row says Pumpkin night, locked, with its opening date. It is a full game of ten frames with pumpkins for pins. The pins left standing are still spoken by number. Scoring is the same as a full game, and Pumpkin night keeps its own best score.
 
 ## Records
 
@@ -50,11 +50,11 @@ Spare week, the weekly: 20 leaves, one ball at each. Your score is the spares yo
 
 The late league, the monthly: a three-game series. Your score is the series total. A new one comes on the first of every month.
 
-Leave the challenge, on the pause menu, stops without counting the run, so you can try again later.
+Leave the challenge, on the pause menu, stops without counting the run. You can try again later.
 
 ## Pausing
 
-Escape pauses. A swing in progress stops without letting go, and you start it again when you come back.
+Escape pauses. A swing in progress stops without letting go. You start it again when you come back.
 
 ## Controls
 

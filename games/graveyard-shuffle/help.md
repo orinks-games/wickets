@@ -1,10 +1,10 @@
 ## About the game
 
-Doctor Volt's newest monster sat up on the slab and started to dance, and by midnight the whole graveyard wants to learn it. You lead the dance. The graveyard band plays, and each monster comes up one beat before its move. Dance the move on the beat with that monster's key. Moves close to the beat score more. A song always plays to its end, and your score is what you danced.
+Doctor Volt's newest monster sat up on the slab and started to dance. By midnight the whole graveyard wants to learn it. You lead the dance. The graveyard band plays, and each monster comes up one beat before its move. Dance the move on the beat with that monster's key. Moves close to the beat score more. A song always plays to its end, and your score is what you danced.
 
 ## A Halloween special
 
-Graveyard Shuffle turns up in the Seasonal games around Halloween, from October 17 to November 1, and stays two more weeks, through November 15, so you can catch up.
+Graveyard Shuffle turns up in the Seasonal games around Halloween, from October 17 to November 1. It stays two more weeks, through November 15, so you can catch up.
 
 Start a dance or a practice in that time and the game is yours to keep, even if you leave early. After the season it moves to the Action games. Earlier play counts too, and stars still open later nights. If you never play it, it leaves the lists until next Halloween.
 
@@ -42,7 +42,7 @@ Each song earns stars from the share of its best points you earned: 1 star from 
 
 ## The nights
 
-There are four nights of three songs, each night a little faster than the one before, and each song played through twice.
+There are four nights of three songs. Each night is a little faster than the one before. Each song plays through twice.
 
 Night 1, the graveyard gate: the zombie, the skeleton and the mummy, one monster a bar.
 
@@ -80,7 +80,7 @@ With spoken call-outs on, the game names each monster as it comes up. It is off 
 
 ## Pausing
 
-Escape pauses, and the music holds. When you come back, three beats count you back in, and the song goes on where it stopped.
+Escape pauses, and the music holds. When you come back, three beats count you back in. The song goes on where it stopped.
 
 ## Controls
 

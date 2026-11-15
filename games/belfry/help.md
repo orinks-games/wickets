@@ -12,7 +12,7 @@ There are 6 bells, numbered 1 to 6. Bell 1, the treble, is the highest. Bell 6, 
 
 ## Building a row
 
-Your row has 4 places: Left and Right move, and each move rings and names that place. Up and Down change the bell, wrapping from 6 to 1. Tab plays your whole row back without ringing it for an answer, so it uses no row.
+Your row has 4 places. Left and Right move between places. Each move rings and names that place. Up and Down change the bell, wrapping from 6 to 1. Tab plays your whole row back without ringing it for an answer, so it uses no row.
 
 ## Ringing a row and the answer
 
@@ -32,11 +32,11 @@ R repeats the last answer, then reads every row so far with its answer, such as 
 
 ## Hints
 
-H names one bell, and says whether it is in the peal. A hint is always true, and never names the same bell twice. Each hint uses one of your rows, and halves your score. A hint needs 2 rows left, so your last row is always kept for ringing.
+H names one bell and says whether it is in the peal. A hint is always true, and never names the same bell twice. Each hint uses one of your rows, and halves your score. A hint needs 2 rows left, so your last row is always kept for ringing.
 
 ## Scoring and records
 
-Solving a peal scores 100, plus 100 for each row left. Each hint halves it. Records keep your best score, the fewest rows you solved a peal in, and your streak of peals solved in a row, for Village and Plain apart. A peal that runs out of rows ends the streak, and so does a peal you leave after ringing a row.
+Solving a peal scores 100, plus 100 for each row left. Each hint halves it. Records keep your best score, the fewest rows you solved a peal in, and your streak of peals solved in a row, separately for Village and Plain. A peal that runs out of rows ends the streak, and so does a peal you leave after ringing a row.
 
 ## Challenges
 
@@ -46,7 +46,7 @@ Every player gets the same challenges. The daily is one Village peal, new each d
 
 Two rows join the title on their nights only. Each keeps its own best score, fewest rows and streak, apart from Village and Plain, and Records reads them once you have played them.
 
-Practice night is on the second Wednesday of every month. The peal has 5 places from 6 bells and 10 rows. The tower captain calls one place: as the peal begins, the place and its bell are named, and that bell is already set in your row. Its cue plays whenever you move onto that place. S names it too. The other places you find as usual.
+Practice night is on the second Wednesday of every month. The peal has 5 places from 6 bells and 10 rows. The tower captain calls one place: as the peal begins, the place and its bell are named, and that bell is already set in your row. Its cue plays whenever you move onto that place. S names it too. You find the other places as usual.
 
 ## Sound check
 

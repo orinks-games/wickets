@@ -55,7 +55,7 @@ Act as soon as a dish needs you for a perfect score. A little later earns a good
 
 Pressing Space at a dish that isn't ready yet is a fumble: 5 points off that dish.
 
-Each dish's quality, out of 100, is the average of its steps' scores, less its fumbles. When a dish's last step is done it is served, and its quality is spoken.
+Each dish's quality, out of 100, is the average of its steps' scores, less its fumbles. When a dish's last step is done, it is served. Its quality is spoken.
 
 ## Stars and points
 
@@ -90,16 +90,16 @@ When a meal is scored, the results menu reads how it went. Next course comes fir
 
 ## Challenges
 
-Challenges, on the title, are menus every player cooks the same way: a new daily each day, a new weekly each Monday, and a new monthly each month, all on UTC dates. Each row names the challenge and what it is, then whether you have played it, your best and your streak. F1 on a row reads its full rule and when the next one comes. Before a challenge starts, a briefing reads its rule and twist and how long until the next one. Enter on its last page starts the meal, and Escape goes back without starting. When it ends, the results give your score, your best and your streak. Leave the challenge, on the pause menu, does not count it.
+Challenges, on the title, are menus every player cooks the same way: a new daily each day, a new weekly each Monday, and a new monthly each month, all on UTC dates. Each row names the challenge and what it is, then whether you have played it, your best and your streak. F1 on a row reads its full rule and when the next one comes. Before a challenge starts, a briefing reads its rule and twist and how long until the next one. Enter on its last page starts the meal. Escape goes back without starting. When it ends, the results give your score, your best and your streak. Leave the challenge, on the pause menu, does not count it.
 
 - Daily, Tonight's dinner: one seeded meal on four stations, with a twist for the day.
-- Weekly, Sunday dinner: three courses in a row, a starter on three stations, the main course on four and dessert on all five, each faster than the last, with the week's twist. Each course needs a star for the next one to come out; your points add up across them.
+- Weekly, Sunday dinner: three courses in a row, a starter on three stations, the main course on four and dessert on all five, each faster than the last, with the week's twist. Each course needs a star for the next one to come out. Your points add up across them.
 - Monthly, the harvest banquet: ten dishes, two on every station, the second waiting for the first to be served. Its rule is golden plates: every dish served at quality 90 or better earns 200 bonus points.
 
 The twists:
 
 - Rush hour: the guests are early, and everything cooks a fifth faster.
-- A picky guest: Uncle Walt only eats one dish, named before you start. It scores double, but served below 75 he sends it back and it scores nothing. When it is served the kitchen says whether he loved it.
+- A picky guest: Uncle Walt only eats one dish, named before you start. It scores double. If served below 75, he sends it back and it scores nothing. When it is served the kitchen says whether he loved it.
 - A hot burner: the left or right burner, named before you start, runs hot. Its dishes come due much sooner and burn faster.
 - A quiet kitchen: no spoken call-outs, whatever your setting. The recipe still calls each dish, but no voice says when a dish needs you, and the bonus for cooking without call-outs applies.
 - Butterfingers: every fumble costs 20 instead of 5.
@@ -127,8 +127,8 @@ When the dinner is served, it is kept as that year's keepsake: your best points,
 ## Tips
 
 - Start dishes as soon as they are called: a late start costs as much as a late stir.
-- Keep track of the whole kitchen, not just the station in front of you. When something changes, the number keys get you there fastest.
-- Press Up before acting if you are unsure: it says how long until the dish in front of you is ready.
+- Keep track of the whole kitchen. When something changes, the number keys get you there fastest.
+- Up says how long until the dish in front of you is ready. Press it before acting if you are unsure.
 - H names what needs you most.
 
 ## Controls

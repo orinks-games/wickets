@@ -12,7 +12,7 @@ You start facing south, 40 degrees up. When you pass due north, east, south or w
 
 ## Stars near the point
 
-You can hear stars within about 30 degrees of the listening point. Their sounds indicate direction, height and brightness. Sound check, on the title, lets you learn these cues.
+You can hear stars within about 30 degrees of the listening point. Their sounds indicate direction, height and brightness. Sound check, on the title, plays these cues.
 
 When the point rests on a star, its name is spoken, such as "Betelgeuse, in Orion". A star that belongs to no pattern tonight is "a faint star". Faint stars are scattered differently each night.
 
@@ -20,7 +20,7 @@ When the point rests on a star, its name is spoken, such as "Betelgeuse, in Orio
 
 Each constellation has its stars in an order, such as Orion: Betelgeuse, Bellatrix, Mintaka, Alnilam, Alnitak, Saiph, then Rigel. When the point rests on the star that is next to trace, you hear "next", such as "Bellatrix, next in Orion". Space traces it.
 
-Space on a star of the right constellation but out of order names the star that comes next. When the last star is traced, the constellation plays its own tune, and the first time, it goes into your star journal with its lore.
+Space on a star of the right constellation but out of order names the star that comes next. When the last star is traced, the constellation plays its own tune. The first time, it goes into your star journal with its lore.
 
 ## Hints and the guide tone
 
@@ -56,11 +56,11 @@ On those nights the Meteor shower row on the title opens. Other nights it says l
 
 ## Making wishes
 
-During a meteor watch you lie still. Press Space while a shooting star passes, or just after it fades, to make a wish. Fireballs pass more slowly. Tab tells the shower's story. Enter twice heads home, and your wishes are counted for that shower and year.
+During a meteor watch you lie still. Press Space while a shooting star passes, or just after it fades, to make a wish. Fireballs pass more slowly. Tab reads the shower's story. Enter twice heads home, and your wishes are counted for that shower and year.
 
 ## Heading home
 
-Enter twice heads home and ends the night at any time: the first press asks, the second within 4 seconds goes. Everything you traced or found is already in your journal. The game reads what the night brought, then the results menu offers Play again, Hear the results again, and Back to the title. Escape does the same as the last row.
+Enter twice heads home and ends the night at any time. Press Enter a second time within 4 seconds. Everything you traced or found is already in your journal. The game reads what the night brought, then the results menu offers Play again, Hear the results again, and Back to the title. Escape goes back to the title.
 
 ## The star journal
 
@@ -91,6 +91,6 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - S: status. Where the point is, what it rests on, and any constellation you are part way through. Press it again straight away for tonight's progress, the guide tone and the moon.
 - R: repeat the last thing said.
 - H: hint. The next star to find, and the way there in steps.
-- Enter twice: head home and end the night. The first press asks, the second within 4 seconds goes.
+- Enter twice: head home and end the night. The second press must come within 4 seconds.
 - Escape: pause. The pause menu can resume, open settings or this help, go back to the title, or go back to the lobby. During a challenge, its leave row is Leave the challenge.
 - F1: what the keys do on the current screen.

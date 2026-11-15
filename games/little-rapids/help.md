@@ -2,13 +2,13 @@
 
 ## About the game
 
-You sail a little boat down a stream. The water carries the boat along by itself, and you steer it from bank to bank to catch what floats down. Petals, leaves and paper scraps arrive on the beat of the music.
+You sail a little boat down a stream. The water carries the boat along by itself. You steer it from bank to bank to catch what floats down. Petals, leaves and paper scraps arrive on the beat of the music.
 
 Reach the river mouth to earn stars. Catch more for more stars. In the four streams, bumping a bank, a stone or a duck costs your combo but never ends the run.
 
 ## Steering and catching
 
-Hold Left or Right to paddle that way. The boat glides across the stream while you hold. Let go and it drifts to a stop. Left Shift and Right Shift give one hard stroke that way, for a quick dodge. There are no lanes: the boat can be anywhere between the two banks.
+Hold Left or Right to paddle that way. The boat glides across the stream while you hold. Let go and it drifts to a stop. Left Shift and Right Shift give one hard stroke that way for a quick dodge. There are no lanes: the boat can be anywhere between the two banks.
 
 Everything you hear floating toward you is placed where it really is. A sound to your left comes from something to the left of your boat, and it gets louder and clearer as it comes closer. Steer so the sound is straight ahead of you as it reaches the boat, and you catch it.
 
@@ -39,7 +39,7 @@ More instruments join the river's song as your combo grows. A bump costs the com
 
 Touch a bank and the boat bumps. Stones, mill wheels and ducks bump you too.
 
-A bump sets your combo back to nothing and shakes the boat, so it steers slowly for a moment. The leaf boat keeps half its combo. Outside the endless river, a bump never ends the run.
+A bump sets your combo back to nothing. It shakes the boat, so it steers slowly for a moment. The leaf boat keeps half its combo. Outside the endless river, a bump never ends the run.
 
 ## The streams
 
@@ -56,7 +56,7 @@ Rain gutter waterfalls flow through gaps in the rocks. Steer through a gap for 4
 
 Reach the river mouth for 1 star. Catch at least 60 percent of the things offered for 2 stars, or at least 85 percent for 3 stars. The results follow when you reach the mouth.
 
-Each stream has 3 ribbons: catch a number of things in one run, make a number of clean catches in one run, and one of its own, such as going through every waterfall in the Rain gutter. A ribbon counts only when you reach the mouth, and each one gives 10 paper scraps. In Choose a stream, F1 on a stream reads its ribbons.
+Each stream has 3 ribbons: catch a number of things in one run, make a number of clean catches in one run, and one of its own, such as going through every waterfall in the Rain gutter. A ribbon counts only when you reach the mouth, and each one gives 10 paper scraps. F1 reads a stream's ribbons in Choose a stream.
 
 ## Boats
 
@@ -82,7 +82,7 @@ On the endless river each bump makes the boat soggier, and the count is said. Th
 
 ## Drift
 
-Drift is slow water with the whole band playing from the start. There is no score and there are no stars, and the banks only nudge you.
+Drift is slow water with the whole band playing from the start. There is no score and there are no stars. The banks only nudge you.
 
 ## Calendar events
 
@@ -112,7 +112,7 @@ Settings, on the title or the pause menu, has the game's own rows after speech, 
 
 ## Sound check
 
-Sound check, on the title, lets you learn the floating objects, obstacles and other gameplay cues. Each demonstration names the cue and plays it as you would hear it on the water.
+Sound check, on the title, plays the floating objects, obstacles and other gameplay cues. Each demonstration names the cue and plays it as you would hear it on the water.
 
 ## Controls
 

@@ -2,7 +2,7 @@
 
 ## About the game
 
-Shoot the paper hearts drifting above the rooftops. Aim, draw the bow and release your arrow. A round ends when the quiver is empty. On the rooftops you need enough hearts to advance; fall short and the evening ends.
+Shoot the paper hearts drifting above the rooftops. Aim, draw the bow and release your arrow. A round ends when the quiver is empty. On the rooftops you need enough hearts to advance. Fall short and the evening ends.
 
 ## Aiming
 
@@ -14,7 +14,7 @@ Hold Space to draw the bow. It reaches full draw after nearly a second. Release 
 
 ## Leading a heart
 
-Hearts keep drifting while the arrow flies. A near heart is reached in a quarter of a second, a far one in nearly three quarters, so far hearts need the most lead. Aim a little ahead of a heart, in the way it is drifting. When a shot let go now would meet a target, the sights cue plays from it. H names the best target and the angle to meet it at.
+Hearts keep drifting while the arrow flies. A near heart is reached in a quarter of a second, a far one in nearly three quarters. Far hearts need the most lead. Aim a little ahead of a heart, in the direction it is drifting. The sights cue plays from a target when a shot released now would meet it. H names the best target and the angle to meet it at.
 
 ## Sweetheart pairs
 
@@ -42,7 +42,7 @@ The practice field has one slow heart at a time, never far, and endless arrows. 
 
 ## Challenges
 
-Every player gets the same challenges. The daily is today's sky: one long round of 15 arrows with a twist, such as a breeze that speeds the hearts, a far sky, a crowded sky, or sweetheart pairs worth double. The weekly is three rooftops, each busier than the last, new each Monday. The monthly is five rounds under the full moon, with roses. Every round is played and the points are added. Your result counts when the last round ends. Leave the challenge, on the pause menu, does not count, so you can try again later.
+Every player gets the same challenges. The daily is today's sky: one long round of 15 arrows with a twist, such as a breeze that speeds the hearts, a far sky, a crowded sky, or sweetheart pairs worth double. The weekly is three rooftops, each busier than the last. It is new each Monday. The monthly is five rounds under the full moon, with roses. Every round is played and the points are added. Your result counts when the last round ends. Leave the challenge, on the pause menu, does not count, so you can try again later.
 
 ## Spoken call-outs
 

@@ -6,15 +6,15 @@ Patience by a cabin fire: move all 52 cards onto four suit foundations, ace to k
 
 ## The row of places
 
-The table has a row of 12 places: piles 1 to 7, then the stock, then the foundations for hearts, diamonds, clubs and spades. Left and Right move; each place speaks its top card. You cannot move beyond either end of the row.
+The table has a row of 12 places: piles 1 to 7, then the stock, then the foundations for hearts, diamonds, clubs and spades. Left and Right move. The game names the top card at each place. You cannot move beyond either end of the row.
 
 ## Piles
 
-Each pile starts with face-down cards and one face-up card on top. A pile builds down in alternating colours: a black 7 goes on a red 8, and a red queen on a black king. Only a king goes on an empty pile. When a pile's last face-up card leaves, the card under it turns face up, and you hear its name. Up goes one card deeper into the face-up run, and Down comes back toward the top card.
+Each pile starts with face-down cards and one face-up card on top. A pile builds down in alternating colours: a black 7 goes on a red 8, and a red queen on a black king. Only a king goes on an empty pile. When a pile's last face-up card leaves, the card under it turns face up, and you hear its name. Up moves one card deeper into the face-up run. Down moves back toward the top card.
 
 ## Moving cards
 
-Space picks up the card under you, with every card on top of it. Move to where the cards go, and Space again places them. If the cards cannot go there, the game explains the rule, such as "The 9 of spades cannot go on the 9 of hearts. It needs a red 10." You keep holding the cards, so you can try another place. While you hold cards, a place they fit says "Fits here." Holding one card on the wrong foundation, you hear where it goes, such as "Goes to spades." Space on the place they came from puts them back.
+Space picks up the card under you, with every card on top of it. Move to where the cards go, and Space again places them. If the cards cannot go there, the game explains the rule, such as "The 9 of spades cannot go on the 9 of hearts. It needs a red 10." You keep holding the cards, so you can try another place. While you hold cards, "Fits here." marks each place they fit. If you hold one card on the wrong foundation, the game names its foundation, such as "Goes to spades." Space on the place they came from puts them back.
 
 ## The stock
 
@@ -30,7 +30,7 @@ Backspace takes back your last move, as many times as you like, face-down cards 
 
 ## Hints
 
-H names the next move, such as "The 4 of clubs in pile 2 can go on the 5 of hearts in pile 6." It follows a line that wins the deal from where you are, when it can find one, so taking every hint never leads into a dead end. When the card it wants is deeper in the stock, the hint says to turn it. Hints cost nothing.
+H names the next move, such as "The 4 of clubs in pile 2 can go on the 5 of hearts in pile 6." When it can find one, it follows a line that wins the deal from where you are. Taking every hint never leads into a dead end. When the suggested card is deeper in the stock, the hint says to turn it. Hints cost nothing.
 
 ## Status and the table
 
