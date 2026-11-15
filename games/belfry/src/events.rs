@@ -65,7 +65,7 @@ fn left_words(window: Window, date: Date) -> String {
 pub fn lead(mode: Mode, _date: Date) -> String {
     match mode {
         Mode::PracticeNight => {
-            "Practice night: the tower captain calls one place of the peal, and a shimmer marks it"
+            "Practice night: the tower captain calls one place of the peal and sets its bell"
                 .to_string()
         }
         _ => String::new(),

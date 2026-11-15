@@ -4,5 +4,6 @@
 
 mod challenges;
 mod easter;
+mod pacing;
 mod rules;
 mod walkthrough;

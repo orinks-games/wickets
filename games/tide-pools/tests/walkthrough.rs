@@ -3,7 +3,7 @@
 use crate::common;
 
 use common::{base, choose, played, read_pages, spoke, title, Twin, SEED};
-use hearken::{Headless, Key};
+use hearken::{Call, Headless, Key, Vec3};
 use parlor_core::menus;
 use parlor_core::{Challenge, Challenges, Parlor, Period, Records};
 use tide_pools::outing::{challenge_outing, outing_for};
@@ -186,7 +186,7 @@ fn the_sound_check_plays_every_sound_with_its_name() {
         if let Some(m) = h.app.ctx.audio.music() {
             keys.push(m.to_string());
         }
-        assert!(!h.spoken().is_empty());
+        assert!(h.spoken().is_empty());
         h.press(Key::Down);
     }
     for (key, _, _) in &catalog {
@@ -197,7 +197,9 @@ fn the_sound_check_plays_every_sound_with_its_name() {
     }
     h.clear();
     h.press(Key::Return); // Left and right
-    assert!(spoke(&h, "pool to your left"));
+    assert!(h.spoken().is_empty());
+    assert!(played(&h, sound::creature(Species::Crab)));
+    assert!(played(&h, sound::creature(Species::Periwinkle)));
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), "tide_pools");
     assert_eq!(h.app.ctx.audio.music(), Some(sound::TITLE_MUSIC));
@@ -268,6 +270,49 @@ fn walking_splashes_and_the_rocks_end() {
 }
 
 #[test]
+fn a_step_re_pans_a_call_while_it_sounds() {
+    // Creatures keep their pool, so the moment the player walks on they
+    // move around them, not on the next call.
+    let mut t = practice();
+    t.h.clear();
+    let mut heard = None;
+    for _ in 0..1200 {
+        t.frame(1.0 / 60.0);
+        heard = t.h.sounds.calls().into_iter().find_map(|c| match c {
+            Call::Play {
+                channel, key, mix, ..
+            } if key.starts_with("tide-pools/creatures/") => {
+                Some((channel, mix.relative.expect("a placed sound")))
+            }
+            _ => None,
+        });
+        if heard.is_some() {
+            break;
+        }
+    }
+    let (channel, before) = heard.expect("a creature called");
+    t.h.clear();
+    t.press(Key::Right);
+    t.frame(1.0 / 60.0);
+    let after =
+        t.h.sounds
+            .calls()
+            .into_iter()
+            .find_map(|c| match c {
+                Call::SetMix {
+                    channel: ch, mix, ..
+                } if ch == channel => mix.relative,
+                _ => None,
+            })
+            .unwrap_or_else(|| panic!("the call was not re-panned: {:?}", t.h.sounds.calls()));
+    let step = Vec3::new(rules::POOL_SPACING, 0.0, 0.0);
+    assert!(
+        (after - (before - step)).length() < 0.01,
+        "{after:?} vs {before:?} less {step:?}"
+    );
+}
+
+#[test]
 fn leaning_in_and_stepping_back_are_spoken_and_heard() {
     let mut t = practice();
     t.h.clear();
@@ -283,7 +328,7 @@ fn leaning_in_and_stepping_back_are_spoken_and_heard() {
     assert!(played(&t.h, sound::LEAN_BACK));
     assert!(spoke(
         &t.h,
-        "Standing back on the rocks. Two pools either side"
+        "Standing back on the rocks, with two pools either side."
     ));
     t.h.clear();
     t.press(Key::Down);
@@ -334,7 +379,7 @@ fn the_first_sound_of_each_creature_is_named() {
     );
     t.h.clear();
     t.press(Key::Tab);
-    assert!(spoke(&t.h, "That last sound was the sea anemone"));
+    assert!(spoke(&t.h, "That last call was the sea anemone"));
 }
 
 #[test]
@@ -346,7 +391,10 @@ fn gathering_a_creature_by_ear() {
     assert!(matches!(evs[0], Ev::Gathered { .. }), "{evs:?}");
     assert!(played(&t.h, sound::GATHER));
     assert!(played(&t.h, sound::NEW));
-    assert!(spoke(&t.h, "A sea anemone. Plus 5. New for your aquarium."));
+    assert!(spoke(
+        &t.h,
+        "A sea anemone. 5 points. New for your aquarium."
+    ));
     t.h.clear();
     t.press(Key::S);
     assert!(spoke(&t.h, "Pool 1 of 3, leaning in close."));
@@ -376,9 +424,9 @@ fn a_shy_crab_hides_and_creeps_back_out() {
         }
     }
     assert!(played(&t.h, sound::EMERGE));
-    assert!(spoke(&t.h, "Two rising notes"));
+    assert!(spoke(&t.h, "It crept out."));
     t.gather(Species::Crab);
-    assert!(spoke(&t.h, "A shore crab. Plus 15."));
+    assert!(spoke(&t.h, "A shore crab. 15 points."));
 }
 
 #[test]
@@ -573,9 +621,9 @@ fn a_trip_with_nothing_new_walks_home_quietly() {
     assert!(spoke(&t.h, "Nothing gathered this time"));
     assert_eq!(t.h.app.ctx.audio.music(), Some(sound::HOME));
     t.h.press(Key::Return);
-    assert!(spoke(&t.h, "Score 0."));
+    assert!(spoke(&t.h, "Score 0, so nothing goes on the board."));
     read_pages(&mut t.h);
-    assert_eq!(Records::best(&mut t.h.app.ctx, ID, "cove"), Some(0));
+    assert_eq!(Records::best(&mut t.h.app.ctx, ID, "cove"), None);
 }
 
 #[test]
@@ -748,6 +796,7 @@ fn a_finished_daily_counts_its_targets_and_starts_a_streak() {
             "Play this daily challenge again",
             "Hear the results again",
             "Your aquarium",
+            "Make a sound file of this run's song",
             "Back to the challenges",
         ]
     );
@@ -846,7 +895,7 @@ fn the_neighbouring_pools_are_heard_from_the_side() {
         }
     }
     assert!(side, "something called from a neighbouring pool");
-    assert!(spoke(&t.h, "Side sounds are the next pools."));
+    assert!(spoke(&t.h, "Creatures either side are in the next pools."));
 }
 
 /// Main-channel speech since the last clear, with whether each interrupts.
@@ -870,7 +919,7 @@ fn creeping_out_never_cuts_off_the_hiding_lesson() {
     }
     let line = calls(&t.h)
         .into_iter()
-        .find(|(l, _)| l.contains("Two rising notes"))
+        .find(|(l, _)| l.contains("It crept out."))
         .expect("the emerge lesson");
     assert!(!line.1, "the emerge lesson must queue, not interrupt");
 }
@@ -885,7 +934,10 @@ fn repeat_says_where_you_walked_and_leaned() {
     t.press(Key::Down);
     t.h.clear();
     t.press(Key::R);
-    assert!(spoke(&t.h, "Standing back on the rocks."));
+    assert!(spoke(
+        &t.h,
+        "Standing back on the rocks, with two pools either side."
+    ));
     t.press(Key::Left);
     t.press(Key::Left);
     t.h.clear();
@@ -926,7 +978,7 @@ fn the_last_find_is_kept_when_the_pools_are_cleared() {
     // The last find is said once, and the page queues behind it rather
     // than cutting it off or saying it again.
     let calls = calls(&t.h);
-    let find = format!("A {}. Plus", other.name());
+    let find = format!("A {}.", other.name());
     assert_eq!(
         calls.iter().filter(|(l, _)| l.contains(&find)).count(),
         1,
@@ -1012,6 +1064,7 @@ fn results_back_row_matches_escape() {
             "Play again",
             "Hear the results again",
             "Your aquarium",
+            "Make a sound file of this run's song",
             "Back to the title",
         ]
     );

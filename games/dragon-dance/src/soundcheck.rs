@@ -15,9 +15,8 @@ pub struct SoundCheck {
 impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
-            menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
-            ),
+            menu: MenuCore::new("Sound check")
+                .with_intro_help("Up and Down choose a sound, Enter plays it, Escape goes back."),
             playing: Vec::new(),
         }
     }
@@ -82,14 +81,10 @@ impl Menu for SoundCheck {
                 MenuItem::new(
                     format!("Pearl {place}"),
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        ctx.stop_speech();
                         s.hush(ctx);
                         let a = sound::play_at(ctx, sound::PEARL_MOVE, sound::pearl_pos(lane, 3));
                         s.playing.push(a);
-                        let find = ctx.control_name(parlor_core::ParlorAction::Secondary);
-                        ctx.say(format!(
-                            "The pearl's chime from lane {} of 3, {place}. In play {find} rings it and names its lane.",
-                            lane + 1
-                        ));
                     },
                 )
                 .select_sound(None)
@@ -101,6 +96,7 @@ impl Menu for SoundCheck {
                 MenuItem::new(
                     label(meaning),
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        ctx.stop_speech();
                         s.hush(ctx);
                         let loops = key.contains("/music/")
                             || key.contains("/ambience/")
@@ -116,11 +112,10 @@ impl Menu for SoundCheck {
                             sound::play(ctx, key)
                         };
                         s.playing.push(a);
-                        ctx.say(meaning);
                     },
                 )
                 .select_sound(None)
-                .help("Enter plays it and says what it means."),
+                .help("Enter plays it."),
             );
         }
         items.push(

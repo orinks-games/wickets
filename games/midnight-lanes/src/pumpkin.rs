@@ -59,5 +59,5 @@ pub fn row_help(date: Date, best: Option<u64>) -> String {
         Some(Nearness::Season { .. }) => " It stays until 1 November.",
         _ => " Tonight is Halloween, and it ends after 1 November.",
     };
-    format!("Ten frames with pumpkins for pins. They fall with a hollow squash, and a strike carves a grin. Scored the standard way.{best}{left}")
+    format!("Ten frames with pumpkins for pins, and a strike carves a grin. Scored the standard way.{best}{left}")
 }

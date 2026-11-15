@@ -27,7 +27,7 @@ pub fn event(date: Date) -> Option<Happening> {
     if barge_fair(date) {
         return Some(Happening::new(
             "Barge fair",
-            "The barge comes to Larkfield every day today, and pays a coin more for everything.",
+            "Today, the barge visits every in-game day and pays an extra coin for each item.",
         ));
     }
     if music_night(date) {

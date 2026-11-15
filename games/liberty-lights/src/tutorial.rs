@@ -48,18 +48,18 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sky: Live<Show>) -> Lesson {
 
     let listen = sky.step(
         format!(
-            "{} plays the show: three wooden ticks, then a brighter go. The go is time zero. Listen for the boom and when it went up.",
+            "{} plays the show: three wooden ticks, then a brighter go. The go is time zero. Listen for the boom and its timing.",
             sentence_start(&p)
         ),
         |show: &Show, _| {
             (show.round.phase == Phase::YourTurn)
-                .then(|| "That fizz is the fuse: your turn.".to_string())
+                .then(|| "The show is over: your turn.".to_string())
         },
     );
 
     let launch = sky.step(
         format!(
-            "Press {p} for your own count-in. After the go, press 1 to launch a boom at the same delay as in the show. {} hears the show again.",
+            "Press {p} for your own count-in. After the go, press 1 to launch a boom at the same delay as in the show. {} replays the show.",
             sentence_start(&t)
         ),
         |show: &Show, _| {
@@ -79,7 +79,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sky: Live<Show>) -> Lesson {
     .step(listen)
     .step(launch)
     .outro(format!(
-        "There are four fireworks, on keys 1 to 4. {} From level 11 they also go up left or right. 60 percent clears a level, and Enter finishes a show. The Practice room tries every firework with nothing to score.",
+        "There are four fireworks, on keys 1 to 4. {} From level 11 they also go up left or right. 60 percent clears a level, and Enter finishes a show. Try every firework without scoring in the Practice room.",
         kinds.join(" ")
     ))
 }

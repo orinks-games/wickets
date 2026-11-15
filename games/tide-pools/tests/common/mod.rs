@@ -31,6 +31,9 @@ pub fn base() -> Headless<Parlor> {
     rules::fix_seed(Some(SEED));
     let mut h = Headless::new(Default::default(), Base);
     h.app.ctx.game.today = Some(TODAY);
+    // Quick, with the voice reported quiet each frame (see `Twin::frame`),
+    // keeps the original timings, so the twin keeps step with the screen.
+    parlor_core::pace::set(&mut h.app.ctx, tide_pools::ID, parlor_core::Pace::Quick);
     h.frame(0.0);
     h
 }
@@ -110,6 +113,9 @@ impl Twin {
     }
 
     pub fn frame(&mut self, dt: f64) {
+        // The voice quiet, so the shore runs as it did before it held for
+        // speech: `pacing.rs` tests the hold itself.
+        self.h.app.ctx.stop_speech();
         self.h.frame(dt);
         self.evs = self.o.update(dt);
     }

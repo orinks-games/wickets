@@ -12,6 +12,10 @@ use hearken::{Ctx, State};
 use parlor_core::menus::{self, ChallengeGame};
 use parlor_core::{Challenge, Challenges, Pages, Parlor, Period, ScoreResult};
 
+/// The player's Pace setting, which shares its name with the timetable's
+/// window rules.
+type Speed = parlor_core::Pace;
+
 use crate::rules::{
     points_words, timetable, trains_words, window_words, Call, Line, Outcome, Pace, Shift,
 };
@@ -225,11 +229,16 @@ impl State<Parlor> for ChallengeHost {
     }
 }
 
-fn score_line(result: ScoreResult) -> String {
+/// What a challenge result did to the record, on the board for `speed`.
+fn score_line(result: ScoreResult, speed: Speed) -> String {
+    let best = speed.best_word();
     match result {
+        ScoreResult::First if speed.separate() => {
+            "Your first relaxed result on this challenge.".to_string()
+        }
         ScoreResult::First => "Your first result on this challenge.".to_string(),
-        ScoreResult::NewBest { previous } => format!("A new best, beating {previous}."),
-        ScoreResult::Short { best } => format!("Your best is {best}."),
+        ScoreResult::NewBest { previous } => format!("A new {best}, beating {previous}."),
+        ScoreResult::Short { best: b } => format!("Your {best} is {b}."),
     }
 }
 
@@ -238,8 +247,9 @@ pub fn summary(ch: &Challenge, shift: &Shift) -> String {
     format!("{} result: {}", ch.title(), points_words(shift.score))
 }
 
-/// Records a finished timetable and returns the pages that read it back.
-pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, shift: &Shift) -> Vec<String> {
+/// Records a finished timetable, played at `speed`, and returns the pages
+/// that read it back.
+pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, shift: &Shift, speed: Speed) -> Vec<String> {
     let total = shift.trains().unwrap_or(0);
     // How the shift ended was said as it happened: the pages lead with
     // the trains through, then the result.
@@ -248,7 +258,7 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, shift: &Shift) -> Vec<Strin
         _ => None,
     };
     crate::progress::save_trains(ctx, shift.passed);
-    let result = Challenges::submit(ctx, ch, shift.score as u64);
+    let result = Challenges::submit_at(ctx, ch, speed, shift.score as u64);
     let streak = Challenges::streak(ctx, ID, ch.period).max(1);
     first
         .into_iter()
@@ -256,7 +266,7 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, shift: &Shift) -> Vec<Strin
             "{} result: {}. {} A {streak} {} streak. {}",
             ch.title(),
             points_words(shift.score),
-            score_line(result),
+            score_line(result, speed),
             ch.period.unit(),
             ch.resets()
         )])

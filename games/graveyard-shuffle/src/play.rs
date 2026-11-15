@@ -3,7 +3,7 @@
 use std::collections::HashSet;
 
 use hearken::text::sentence_start;
-use hearken::{Ctx, InputEvent, Key, Sound, State, UiSound, Vec3};
+use hearken::{Ctx, InputEvent, Key, Sound, State, Vec3};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::{Challenge, Pages, Parlor, ParlorAction, Period, Rng, ScoreResult, StatusKey};
 
@@ -193,7 +193,7 @@ impl Floor {
         let what = match self.mode {
             Mode::Set(_) => format!("3 songs: {}.", self.tune_names()),
             Mode::Practice(_) => format!(
-                "{}. The song waits for each monster until you dance its move.",
+                "{}. The music holds for each monster until you dance its move.",
                 self.run.plans[0].tune.name
             ),
             Mode::Challenge(_) => {
@@ -395,9 +395,10 @@ impl Floor {
     }
 
     fn start(&mut self, ctx: &mut Ctx<Parlor>) {
+        Progress::note_played(ctx);
         self.delayed.clear();
         self.run.start();
-        ctx.say("Here we go. Four knocks in.");
+        ctx.say("Here we go. Four beats in.");
     }
 
     fn hold_parts(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -657,22 +658,6 @@ impl Floor {
     }
 }
 
-/// Keys a player presses for their screen reader or as a modifier, which
-/// the floor leaves alone.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 fn score_words(result: ScoreResult, score: u32) -> String {
     match result {
         ScoreResult::First => format!("{}, your first score here.", points_words(score)),
@@ -778,7 +763,7 @@ pub fn after_set(n: u32, summary: String, pages: Vec<String>, saved: &SetSaved) 
 pub fn after_practice(i: usize, summary: String, pages: Vec<String>) -> Results {
     Results::new(summary, pages, Back::Title(TITLE_NAME)).again(
         "Practise again",
-        "The same song again, waiting for each move.",
+        "The same song again, holding for each move.",
         move |ctx| {
             let f = Floor::open(ctx, Mode::Practice(i));
             ctx.replace(f)
@@ -846,13 +831,13 @@ impl State<Parlor> for Floor {
         if let Some(i) = self.run.dance.waiting() {
             let step = self.run.dance.plan.calls[i].step;
             let line = Self::step_line(ctx, step);
-            ctx.say(format!("Back on the floor. The song is waiting. {line}"));
+            ctx.say(format!("Back on the floor. The song is holding. {line}"));
             return;
         }
         self.run.count_in();
         if self.run.dance.counting_in() {
             self.hold_parts(ctx);
-            ctx.say("Back on the floor. Three knocks in.");
+            ctx.say("Back on the floor. Three beats in.");
         } else {
             ctx.say("Back on the floor.");
         }
@@ -886,14 +871,7 @@ impl State<Parlor> for Floor {
                     self.dance(ctx, step);
                 }
             }
-            None => {
-                if let InputEvent::KeyDown { key, .. } = event {
-                    if !is_quiet_key(*key) {
-                        ctx.play_ui(UiSound::Error);
-                        ctx.say("Not a dance key. F1 lists the controls.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 
@@ -948,7 +926,7 @@ impl State<Parlor> for Floor {
             Some(i) => {
                 let step = run.dance.plan.calls[i].step;
                 format!(
-                    "The song is waiting for {}, {}: {}. {controls}",
+                    "The music holds for {}, {}: {}. {controls}",
                     step.lower(),
                     step.dance(),
                     Self::step_key(ctx, step)

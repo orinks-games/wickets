@@ -9,7 +9,7 @@
 //! On the last Friday of every month the title has a Friday night run
 //! row: three sectors made from that Friday's date, the same for every
 //! pilot, on a standard skimmer, where salvage comes as cargo crates worth
-//! double, with a bright chime over the salvage pulse. It keeps its own
+//! double. It keeps its own
 //! board. On other days the row stays in its place, locked, and says when
 //! it opens.
 //!
@@ -114,15 +114,20 @@ pub fn event(date: Date) -> Option<Happening> {
     ghost_cars(date).then(|| {
         Happening::new(
             GHOST_CARS,
-            "Until 1 November, cars going your way whistle. Meet them as usual.",
+            "Until 1 November, flow vehicles come in costume. Meet them as usual.",
         )
     })
 }
 
-/// The Friday night row's help.
-pub fn friday_help(best: Option<u64>) -> String {
-    let best = best.map_or(String::new(), |b| format!(" Your best is {b}."));
+/// The Friday night row's help, with the best and the relaxed best.
+pub fn friday_help(best: Option<u64>, relaxed: Option<u64>) -> String {
+    let best = match (best, relaxed) {
+        (Some(b), Some(r)) => format!(" Your best is {b}, relaxed best {r}."),
+        (Some(b), None) => format!(" Your best is {b}."),
+        (None, Some(r)) => format!(" Your relaxed best is {r}."),
+        (None, None) => String::new(),
+    };
     format!(
-        "Friday night, the last of the month: three sectors made from tonight's date, the same for every pilot, on a standard skimmer. Salvage comes as cargo crates, worth double, with a bright chime over the salvage pulse. It keeps its own board and pays no credits, rank or story. Open all day.{best}"
+        "Friday night, the last of the month: three sectors made from tonight's date, the same for every pilot, on a standard skimmer. Salvage comes as cargo crates, worth double. It keeps its own board and pays no credits, rank or story. Open all day.{best}"
     )
 }

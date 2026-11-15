@@ -2,16 +2,16 @@
 
 ## About the parlor
 
-A parlor of games you play by ear. Games speak through your screen reader, or their own
+A parlor of games. Games speak through your screen reader, or their own
 voice. Nothing in any game is shown only on screen.
 
 ## Moving around
 
-Up and Down move through a menu, Home and End jump to its ends, and Enter
+Up and Down move through a menu. Home and End jump to its ends. Enter
 chooses. Escape goes back one screen. Escape in the lobby asks whether to
 quit, and the cursor starts on No. A game's pause menu ends with Back to
-the lobby, so nothing quits the parlor without asking. F1 reads help for wherever you are,
-and F2 stops speech.
+the lobby, so nothing quits the parlor without asking. F1 reads help for wherever you are.
+F2 stops speech.
 
 ## Continue
 
@@ -77,16 +77,20 @@ like Lantern Lake's, come together in a new order each play, and Rooftop
 Garden's makes up new tunes as it goes. The Sound check never unlocks a
 track.
 
-Your own songs are kept too. Every night you paddle on Lantern Lake, and
-every session in your Rooftop Garden, goes into an album of its own:
-Your Lantern Lake nights, and Your Rooftop Garden songs. Each plays back
-the song as you heard it, with the same voices in the same order. The
-last 30 of each are kept.
+Your own songs are kept too. In a game whose music is made as you play,
+such as Rooftop Garden, Lantern Lake or Tightrope, each run's music goes
+into an album of its own, such as Your Rooftop Garden songs, named for
+the time of day and the date. It plays back as you heard it: the same
+voices joining and leaving at the same moments, the same fades, with
+nothing from a pause or a menu. The last 30 of each game are kept. A
+run's results offer Make a sound file of this run's song. Keep your
+songs, under Sound in Settings, turns the keeping off.
 
 Once you have heard every track in an album, its Export album row saves
 the whole album as sound files, each track as you hear it in the game.
-They go in the Music folder inside the Wicket's folder, in a folder
-named for the album. Escape stops an export partway.
+Shift and Enter on one track saves that track alone. They go in the
+Music folder inside the Wicket's folder, in a folder named for the
+album. Escape stops an export partway.
 
 ## Holidays and events
 
@@ -104,10 +108,19 @@ Offline, it uses your computer's clock.
 
 ## Holiday specials
 
-The holiday specials are in Seasonal games only around their holiday.
-Beat the first part in season and the game is yours: the rest of the year
-it is in the Action games, with its last night kept back for the holiday.
-F1 on the game in season says how to keep it.
+Holiday specials appear in Seasonal games around their holiday and stay
+there for two more weeks, so you can catch up. Start playing one, even in
+practice, to keep its ordinary game all year. You do not need a star or a
+high score. Earlier play counts too.
+
+Finding a special you have not played needs the date from the internet.
+Offline, Seasonal games has a Check for holiday specials row to try again.
+Games you have played open offline.
+
+After its season, a game you have kept moves to its usual category. Its
+holiday finale still follows the calendar. Games you have not played stay
+hidden outside their season and catch-up weeks. F1 on a listed game says
+what you can keep.
 
 ## Happening today
 
@@ -123,17 +136,17 @@ lobby, H moves between Happening today and Help.
 
 ## Story and event games
 
-Story and event games, in the lobby's Settings, choose which categories and
+Story and event games, under Games in the lobby's Settings, choose which categories and
 games story mode and the events offer. Left and Right on a category turn
-the whole category on or off. Enter lists its games, and Enter on a game
-turns just that game on or off. Anything turned off leaves story sittings,
+the whole category on or off. Enter lists its games. Enter on a game
+turns only that game on or off. Anything turned off leaves story sittings,
 the Long Hall's lamps, Happening today and the lobby's event line. It
 remains in Play, including its event modes. Everything starts on, and at
 least one game stays on.
 
 ## Speech voice
 
-Speech voice, in Settings, picks who speaks. Automatic uses your screen
+Speech voice, under Speech in Settings, picks who speaks. Automatic uses your screen
 reader, and the game's own voice when there is no screen reader or speech
 engine, as on a handheld. Left and Right choose one of the game's voices
 instead: US female, US male, British female, British male, US child or
@@ -144,7 +157,7 @@ game's own voice on. Press it again to go back to automatic.
 
 ## Update channels
 
-Update channel, in Settings, picks which releases you get. Stable is for
+Update channel, under Updates in Settings, picks which releases you get. Stable is for
 regular play and gets stable releases. Beta gets only beta releases. Alpha
 gets only alpha releases, including the earliest work and alpha-only games.
 
@@ -156,15 +169,28 @@ To switch from a beta to an older alpha, download the alpha manually.
 Installing a beta or stable copy hides alpha-only games, but keeps their
 saved records.
 
+## Reporting a problem
+
+Report a problem, in Settings, sends the game log to orinks.net and opens
+the report form in your web browser with the log already attached. Settings
+is on every game's pause menu too, and a report sent from inside a game
+names that game. Write what happened, add your email address if you want a
+reply, and send it. If the form cannot open, the game's own report screen
+opens instead and says why.
+
+If Wicket's closed without quitting the last time it ran, the next start asks
+once whether to report it. Yes opens the same form with that run's log. Don't
+ask again turns the question off, and a row in Settings turns it back on.
+
 ## Stories, tutorials and results
 
-Stories, tutorials and results come one page at a time. Enter goes on, Up
-and Down go back and forward a page, R repeats the page, and Escape skips to
+Stories, tutorials and results come one page at a time. Enter goes on. Up
+and Down go back and forward a page. R repeats the page. Escape skips to
 the end. A game's clock stops while you read. On a results menu, S repeats
 the summary.
 
 Help comes in pages too. Enter opens a topic. Up and Down read it a page
-at a time, Left and Right change topic, Enter reads the rest, and Escape
+at a time. Left and Right change topic. Enter reads the rest. Escape
 goes back to the topics.
 
 ## Sounds
@@ -183,17 +209,17 @@ That licence is the Apache License 2.0 with an attribution requirement.
 
 ## Controls
 
-Every game uses the same controls, and Settings lets you move any of them
+Every game uses the same controls. In Settings, you can move any of them
 to another key or controller button.
 
 The arrow keys move, aim or choose.
 Space is the main action.
 Tab is the second action.
-S speaks your status, such as score and lives.
+S gives your status, such as score and lives.
 R repeats the last prompt or pattern.
 H gives a hint, where the game has one.
 
 Some games add keys of their own, and each game's help names them.
 
 These are the default keys. If you change them in Settings, the game's
-spoken instructions follow your bindings.
+instructions follow your bindings.

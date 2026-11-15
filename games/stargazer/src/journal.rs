@@ -136,7 +136,7 @@ impl Journal {
     /// written in, then wonders, moons and wishes.
     pub fn pages(&self) -> Vec<String> {
         let mut pages = vec![format!(
-            "Star journal. {}. Each season's sky holds its own constellations, so some wait for another time of year.",
+            "Star journal. {}. Each season's sky holds its own constellations, so some are up at another time of year.",
             hearken::text::sentence_start(&self.tally())
         )];
         if self.logged.is_empty() {

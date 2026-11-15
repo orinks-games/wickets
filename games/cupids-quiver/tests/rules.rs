@@ -58,7 +58,7 @@ fn the_bow_turns_in_steps_and_stops_at_its_limit() {
     assert_eq!(aim_words(-1.0), "1 degree left");
     assert_eq!(degrees_words(1), "1 degree");
     assert_eq!(degrees_words(2), "2 degrees");
-    assert_eq!(turn_words(10.0, -25.0), "turn 35 left");
+    assert_eq!(turn_words(10.0, -25.0), "turn 35 degrees left");
     assert_eq!(turn_words(5.0, 5.0), "hold your aim");
 }
 

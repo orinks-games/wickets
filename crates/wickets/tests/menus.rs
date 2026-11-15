@@ -68,6 +68,9 @@ fn unlock_everything(id: &str, h: &mut Headless<Parlor>) {
             story: true,
             all_gifts: true,
             all_nights: true,
+            stack: 5,
+            all_stacks: true,
+            ..Default::default()
         };
         progress.store(&mut h.app.ctx);
     }
@@ -421,6 +424,7 @@ fn spoken_call_outs_row_flips_and_says_so() {
         let mut h = title(&g);
         goto(&mut h, labels::SETTINGS);
         h.press(Key::Return);
+        h.press(Key::Return); // the game's own category
         let Some(at) = rows(&h)
             .iter()
             .position(|r| r.starts_with("Spoken call-outs: "))
@@ -471,7 +475,9 @@ fn a_games_settings_rows_leave_with_the_game() {
             .count();
         assert!(shared <= inside, "{}", g.id);
         assert!(
-            !rows(&h).iter().any(|r| r.contains("call-outs")),
+            !rows(&h)
+                .iter()
+                .any(|r| r.contains("call-outs") || r == g.name),
             "{}: {:?}",
             g.id,
             rows(&h)
@@ -546,6 +552,10 @@ fn paused(g: &GameInfo) -> Headless<Parlor> {
     let mut h = title(g);
     h.press(Key::Home);
     h.press(Key::Return);
+    // A game with a briefing before play starts on Enter.
+    if h.app.top_name() == parlor_core::briefing::NAME {
+        h.press(Key::Return);
+    }
     read_pages(&mut h);
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), "pause", "{}", g.id);

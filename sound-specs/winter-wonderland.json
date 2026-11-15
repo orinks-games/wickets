@@ -3403,6 +3403,2829 @@
         }
       ],
       "normalize": -15
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/pad/f_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[C3,F3,A3]:4",
+          "gain": 0.4,
+          "at": 0,
+          "vel": 0.6,
+          "step": 1,
+          "params": {
+            "attack": 0.6,
+            "release": 1.2,
+            "cutoff": 800
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "width",
+          "amount": 0.5
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -21,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/pad/f_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[A3,C4,F4]:2 [A3,C4,F4]:2",
+          "gain": 0.4,
+          "at": 0,
+          "vel": 0.55,
+          "step": 1,
+          "params": {
+            "attack": 0.4,
+            "release": 1.0,
+            "cutoff": 900
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "width",
+          "amount": 0.5
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -21,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/f_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "F5:0.5 A5:0.5 C6:0.5 F6:0.5 C6:0.5 A5:0.5 C6:0.5 A5:0.5",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/f_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "F5:1 C6:0.5 F6:0.5 A6:1 C6:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/f_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "A6:0.5 F6:0.5 C6:0.5 A5:0.5 C6:0.5 F6:0.5 C6:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/f_3.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "F5:0.5 C6:0.5 A5:0.5 F6:0.5 C6:1 -:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/f_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "F2:2 C3:2",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/f_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "F2:3 A2:1",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/f_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "F2:1.5 C3:0.5 A2:2",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/f_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "C5:1 E5:0.5 C5:0.5 A4:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/f_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "C5:1 A#4:0.5 A4:0.5 F4:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/f_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "C5:1 A4:0.5 G4:0.5 F4:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/f_3.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "A4:3 A#4:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/pad/dm_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[D3,F3,A3]:4",
+          "gain": 0.4,
+          "at": 0,
+          "vel": 0.6,
+          "step": 1,
+          "params": {
+            "attack": 0.6,
+            "release": 1.2,
+            "cutoff": 800
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "width",
+          "amount": 0.5
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -21,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/pad/dm_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[A3,D4,F4]:2 [A3,D4,F4]:2",
+          "gain": 0.4,
+          "at": 0,
+          "vel": 0.55,
+          "step": 1,
+          "params": {
+            "attack": 0.4,
+            "release": 1.0,
+            "cutoff": 900
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "width",
+          "amount": 0.5
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -21,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/dm_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "D6:0.5 F6:0.5 A6:0.5 D7:0.5 A6:0.5 F6:0.5 A6:0.5 F6:0.5",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/dm_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "D6:1 A6:0.5 D7:0.5 F7:1 A6:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/dm_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "F7:0.5 D7:0.5 A6:0.5 F6:0.5 A6:0.5 D7:0.5 A6:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/dm_3.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "D6:0.5 A6:0.5 F6:0.5 D7:0.5 A6:1 -:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/dm_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "D3:2 A3:2",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/dm_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "D3:3 F3:1",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/dm_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "D3:1.5 A3:0.5 F3:2",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/dm_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "D5:1.5 C5:0.5 A4:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/dm_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "A4:1 C5:1 A4:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/dm_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "F5:2 D5:1 C5:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/dm_3.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "D5:2 A4:1 C5:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/pad/bb_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[D3,F3,A#3]:4",
+          "gain": 0.4,
+          "at": 0,
+          "vel": 0.6,
+          "step": 1,
+          "params": {
+            "attack": 0.6,
+            "release": 1.2,
+            "cutoff": 800
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "width",
+          "amount": 0.5
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -21,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/pad/bb_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[A#3,D4,F4]:2 [A#3,D4,F4]:2",
+          "gain": 0.4,
+          "at": 0,
+          "vel": 0.55,
+          "step": 1,
+          "params": {
+            "attack": 0.4,
+            "release": 1.0,
+            "cutoff": 900
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "width",
+          "amount": 0.5
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -21,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/bb_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "A#5:0.5 D6:0.5 F6:0.5 A#6:0.5 F6:0.5 D6:0.5 F6:0.5 D6:0.5",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/bb_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "A#5:1 F6:0.5 A#6:0.5 D7:1 F6:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/bb_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "D7:0.5 A#6:0.5 F6:0.5 D6:0.5 F6:0.5 A#6:0.5 F6:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/bb_3.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "A#5:0.5 F6:0.5 D6:0.5 A#6:0.5 F6:1 -:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/bb_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "A#2:2 F3:2",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/bb_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "A#2:3 D3:1",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/bb_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "A#2:1.5 F3:0.5 D3:2",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/bb_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "A#4:1 A4:0.5 G4:0.5 F4:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/bb_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "D5:3 A#4:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/bb_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "D5:3 C5:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/bb_3.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "A#4:1.5 D5:0.5 A#4:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/pad/c_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[C3,E3,G3]:4",
+          "gain": 0.4,
+          "at": 0,
+          "vel": 0.6,
+          "step": 1,
+          "params": {
+            "attack": 0.6,
+            "release": 1.2,
+            "cutoff": 800
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "width",
+          "amount": 0.5
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -21,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/pad/c_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[C4,E4,G4]:2 [C4,E4,G4]:2",
+          "gain": 0.4,
+          "at": 0,
+          "vel": 0.55,
+          "step": 1,
+          "params": {
+            "attack": 0.4,
+            "release": 1.0,
+            "cutoff": 900
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "width",
+          "amount": 0.5
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -21,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/c_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "C6:0.5 E6:0.5 G6:0.5 C7:0.5 G6:0.5 E6:0.5 G6:0.5 E6:0.5",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/c_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "C6:1 G6:0.5 C7:0.5 E7:1 G6:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/c_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "E7:0.5 C7:0.5 G6:0.5 E6:0.5 G6:0.5 C7:0.5 G6:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/c_3.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "C6:0.5 G6:0.5 E6:0.5 C7:0.5 G6:1 -:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/c_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "C3:2 G3:2",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/c_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "C3:3 E3:1",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/c_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "C3:1.5 G3:0.5 E3:2",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/c_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "G4:2 G4:1 A4:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/c_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "C5:1 E5:1 C5:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/c_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "C5:1 D5:1 C5:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/c_3.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "C5:2 C5:1 A#4:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/pad/gm_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[D3,G3,A#3]:4",
+          "gain": 0.4,
+          "at": 0,
+          "vel": 0.6,
+          "step": 1,
+          "params": {
+            "attack": 0.6,
+            "release": 1.2,
+            "cutoff": 800
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "width",
+          "amount": 0.5
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -21,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/pad/gm_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[A#3,D4,G4]:2 [A#3,D4,G4]:2",
+          "gain": 0.4,
+          "at": 0,
+          "vel": 0.55,
+          "step": 1,
+          "params": {
+            "attack": 0.4,
+            "release": 1.0,
+            "cutoff": 900
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "width",
+          "amount": 0.5
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -21,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/gm_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "G5:0.5 A#5:0.5 D6:0.5 G6:0.5 D6:0.5 A#5:0.5 D6:0.5 A#5:0.5",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/gm_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "G5:1 D6:0.5 G6:0.5 A#6:1 D6:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/gm_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "A#6:0.5 G6:0.5 D6:0.5 A#5:0.5 D6:0.5 G6:0.5 D6:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/gm_3.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "G5:0.5 D6:0.5 A#5:0.5 G6:0.5 D6:1 -:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/gm_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "G2:2 D3:2",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/gm_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "G2:3 A#2:1",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/gm_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "G2:1.5 D3:0.5 A#2:2",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/gm_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "D5:1.5 F5:0.5 D5:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/gm_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "A#4:1 D5:1 A#4:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/gm_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "G4:2 A#4:1 C5:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/gm_3.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "A#4:1 D5:1 D5:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/pad/am_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[C3,E3,A3]:4",
+          "gain": 0.4,
+          "at": 0,
+          "vel": 0.6,
+          "step": 1,
+          "params": {
+            "attack": 0.6,
+            "release": 1.2,
+            "cutoff": 800
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "width",
+          "amount": 0.5
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -21,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/pad/am_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "warm_pad",
+          "steps": "[A3,C4,E4]:2 [A3,C4,E4]:2",
+          "gain": 0.4,
+          "at": 0,
+          "vel": 0.55,
+          "step": 1,
+          "params": {
+            "attack": 0.4,
+            "release": 1.0,
+            "cutoff": 900
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "width",
+          "amount": 0.5
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -21,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/am_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "A5:0.5 C6:0.5 E6:0.5 A6:0.5 E6:0.5 C6:0.5 E6:0.5 C6:0.5",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/am_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "A5:1 E6:0.5 A6:0.5 C7:1 E6:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/am_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "C7:0.5 A6:0.5 E6:0.5 C6:0.5 E6:0.5 A6:0.5 E6:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/keys/am_3.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "A5:0.5 E6:0.5 C6:0.5 A6:0.5 E6:1 -:1",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": -0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/am_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "A2:2 E3:2",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/am_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "A2:3 C3:1",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/bass/am_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "cello",
+          "steps": "A2:1.5 E3:0.5 C3:2",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -19,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/am_0.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "C5:1 A4:1 A4:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/am_1.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "C5:1.5 D5:0.5 C5:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/am_2.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "E5:1 C5:1 C5:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/song/tune/am_3.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "A4:1 C5:1 E5:2",
+          "gain": 0.45,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "pan",
+          "pos": 0.35
+        },
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -20,
+      "bpm": 76,
+      "beats": 4,
+      "tail": 1.4
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/step.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "footstep",
+          "at": 0,
+          "gain": 0.5,
+          "params": {
+            "tone": 140,
+            "ground": "wood",
+            "variation": 2
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "knock",
+          "at": 0.05,
+          "gain": 0.6,
+          "params": {
+            "count": 1,
+            "material": "hollow",
+            "size": 0.45,
+            "force": 0.35,
+            "seed": 3
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -20,
+      "_about": "A step along the shelf and a light tap on the box there."
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/end.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "thud",
+          "at": 0,
+          "gain": 0.9,
+          "params": {
+            "body": "crate",
+            "size": 0.9,
+            "force": 0.6,
+            "seed": 2
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -18,
+      "_about": "The end of the shelf: a dull wooden bump."
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/empty.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "knock",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "count": 2,
+            "pace": 7.0,
+            "material": "wood",
+            "size": 1.4,
+            "force": 0.3,
+            "seed": 5
+          },
+          "fx": [
+            {
+              "type": "lowpass",
+              "cutoff": 1400
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -21,
+      "_about": "An empty place: two soft knocks on the bare shelf."
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/straw.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "crumple",
+          "at": 0,
+          "gain": 0.7,
+          "params": {
+            "kind": "bag",
+            "energy": 0.2,
+            "density": 0.9,
+            "size": 0.4,
+            "dur": 0.6,
+            "seed": 7
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "cloth",
+          "at": 0,
+          "gain": 0.6,
+          "params": {
+            "kind": "rustle",
+            "dur": 0.6,
+            "rate": 6.0,
+            "weight": 0.9,
+            "seed": 8
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -18,
+      "_about": "Only straw: a dry rustle with nothing under it."
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/wrap.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "paper",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "kind": "rustle",
+            "dur": 1.2,
+            "weight": 0.35,
+            "seed": 11
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "crumple",
+          "at": 0.1,
+          "gain": 0.4,
+          "params": {
+            "kind": "paper",
+            "energy": 0.15,
+            "density": 0.7,
+            "size": 0.35,
+            "dur": 1.1,
+            "seed": 12
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -18,
+      "_about": "Wrapping paper folded round the box while Space is held."
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/snap.wav",
+      "layers": [
+        {
+          "type": "drum",
+          "kind": "snap",
+          "gain": 0.6,
+          "at": 0,
+          "vel": 0.5,
+          "params": {}
+        },
+        {
+          "type": "sfx",
+          "kind": "paper",
+          "at": 0.03,
+          "gain": 0.4,
+          "params": {
+            "kind": "page",
+            "dur": 0.2,
+            "weight": 0.6,
+            "seed": 13
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -17,
+      "_about": "The ribbon pulled tight."
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/stamp.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "thud",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "body": "crate",
+            "size": 0.6,
+            "force": 0.8,
+            "seed": 14
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "knock",
+          "at": 0,
+          "gain": 0.5,
+          "params": {
+            "count": 1,
+            "material": "wood",
+            "size": 0.6,
+            "force": 0.7,
+            "seed": 15
+          }
+        },
+        {
+          "type": "seq",
+          "inst": "handbell",
+          "steps": "-:.5 A5:.5 C6:1",
+          "gain": 0.25,
+          "at": 0,
+          "vel": 0.4,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -16,
+      "_about": "The stamp comes down, and a small bell for a gift done.",
+      "bpm": 76,
+      "beats": 2,
+      "tail": 0.8
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/wrong.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "paper",
+          "at": 0,
+          "gain": 0.6,
+          "params": {
+            "kind": "tear",
+            "dur": 0.35,
+            "weight": 0.4,
+            "seed": 16
+          }
+        },
+        {
+          "type": "seq",
+          "inst": "bassoon",
+          "steps": "E2:.5 D2:1",
+          "gain": 0.4,
+          "at": 0.15,
+          "vel": 0.4,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -17,
+      "_about": "The wrong box: paper pulled off, and a low sigh.",
+      "bpm": 76,
+      "beats": 1.5,
+      "tail": 0.6
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/letter.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "paper",
+          "at": 0,
+          "gain": 0.7,
+          "params": {
+            "kind": "page",
+            "dur": 0.4,
+            "weight": 0.5,
+            "seed": 17
+          }
+        },
+        {
+          "type": "sfx",
+          "kind": "paper",
+          "at": 0.25,
+          "gain": 0.5,
+          "params": {
+            "kind": "page",
+            "dur": 0.3,
+            "weight": 0.5,
+            "seed": 18
+          }
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -20,
+      "_about": "A letter unfolded."
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/late.wav",
+      "layers": [
+        {
+          "type": "sfx",
+          "kind": "book_drop",
+          "at": 0,
+          "gain": 0.8,
+          "params": {
+            "size": 1.6,
+            "height": 0.4,
+            "seed": 19
+          }
+        },
+        {
+          "type": "seq",
+          "inst": "handbell",
+          "steps": "-:.5 F5:.5 A5:.5 C6:1",
+          "gain": 0.3,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1
+        }
+      ],
+      "fx": [
+        {
+          "type": "mono"
+        },
+        {
+          "type": "reverb",
+          "mix": 0.08,
+          "size": 0.3
+        },
+        {
+          "type": "mono"
+        }
+      ],
+      "normalize": -16,
+      "_about": "Late post: a sack set down on the desk.",
+      "bpm": 76,
+      "beats": 2.5,
+      "tail": 0.8
+    },
+    {
+      "genny": "blal1",
+      "out": "desk/clear.wav",
+      "layers": [
+        {
+          "type": "seq",
+          "inst": "music_box",
+          "steps": "F5:.5 A5:.5 C6:.5 F6:1.5",
+          "gain": 0.5,
+          "at": 0,
+          "vel": 0.45,
+          "step": 1,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": -0.25
+            }
+          ]
+        },
+        {
+          "type": "seq",
+          "inst": "clarinet",
+          "steps": "-:.5 C5:.5 F5:2",
+          "gain": 0.3,
+          "at": 0,
+          "vel": 0.4,
+          "step": 1,
+          "fx": [
+            {
+              "type": "pan",
+              "pos": 0.25
+            }
+          ]
+        }
+      ],
+      "fx": [
+        {
+          "type": "reverb",
+          "mix": 0.12,
+          "size": 0.5
+        }
+      ],
+      "normalize": -17,
+      "_about": "A stack answered.",
+      "bpm": 76,
+      "beats": 3,
+      "tail": 1.2
     }
   ]
 }

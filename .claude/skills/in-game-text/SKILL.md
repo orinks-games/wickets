@@ -98,7 +98,7 @@ the verb for this screen. After: `Up and Down choose a safe, Enter plays it, Esc
 - Write "press", "hold", "let go". Never "click", "tap", "see", "look", "above", "below", "on screen".
 - Engine keys are fixed and may be named literally: F1 help, F2 stops speech, Escape pauses or goes back.
 - help.md may name default keys, with this line once per file: `These are
-  the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.`
+  the default keys. If you change them in Settings, the game's instructions follow your bindings.`
 - Controls lists use `Key: effect.` one per line or bullet, in the order the
   player needs them. After: `Space: set the wheel.`
 
@@ -122,7 +122,9 @@ help.md:
   `## The night guard`, `## Scoring and best times`. Not `## Misc` or `## Notes`.
 - Each section stands alone. Repeat a key or term rather than point elsewhere.
 - Define every game word on first use in its section: `That is a strike.`
-- Describe each sound in plain words a listener can match: `a hollow metal clang`, `a bright double chime`.
+- Explain goals, rules, timing, scoring and keyboard/controller controls. Name a gameplay cue when needed to explain the action or timing, but do not describe its timbre or reproduce sound-generation prose.
+- Sound Check is a list of necessary gameplay sounds that the player can select and play. Keep atmosphere, music samples and decorative sounds out of that list. Labels and playback are enough; do not add spoken descriptions or teaching features just to replace text removed from Help.
+- Keep interactive tutorials focused on a current task, its input and useful feedback. Preserve the guidance a player needs to practise; do not turn tutorials into sound catalogues.
 - End with `## Controls`. Short paragraphs; no tables, no nested lists, no bold for meaning.
 
 ## 5. Results and failure messages

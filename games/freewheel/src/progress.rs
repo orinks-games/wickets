@@ -4,7 +4,7 @@
 use std::collections::BTreeMap;
 
 use hearken::Ctx;
-use parlor_core::{units, Parlor, Records, ScoreResult};
+use parlor_core::{units, Pace, Parlor, Records, ScoreResult};
 use serde::{Deserialize, Serialize};
 
 use crate::bike::Bike;
@@ -299,10 +299,22 @@ pub struct Saved {
     /// Whether this time is the new best.
     pub record: bool,
     pub points: ScoreResult,
+    /// The pace ridden: a relaxed ride keeps its own time and points.
+    pub pace: Pace,
 }
 
-/// Keeps a time trial's time, when it is the best, and its ride points.
-pub fn save_time(ctx: &mut Ctx<Parlor>, board: &str, secs: f64, points: u64) -> Saved {
+/// The best times on `board` and on its relaxed board.
+pub fn best_times(ctx: &mut Ctx<Parlor>, board: &str) -> (Option<f64>, Option<f64>) {
+    (
+        best_time(ctx, board),
+        best_time(ctx, &Pace::Relaxed.board(board)),
+    )
+}
+
+/// Keeps a time trial's time, when it is the best, and its ride points,
+/// on `board`'s own board for `pace`: relaxed rides keep their own.
+pub fn save_time(ctx: &mut Ctx<Parlor>, board: &str, secs: f64, points: u64, pace: Pace) -> Saved {
+    let board = &pace.board(board);
     let mut times: BTreeMap<String, u64> = Records::load(ctx, &times_key());
     let ms = (secs * 1000.0).round() as u64;
     let previous = times.get(board).copied();
@@ -316,6 +328,7 @@ pub fn save_time(ctx: &mut Ctx<Parlor>, board: &str, secs: f64, points: u64) -> 
         previous: previous.map(|p| p as f64 / 1000.0),
         record,
         points,
+        pace,
     }
 }
 

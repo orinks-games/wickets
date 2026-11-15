@@ -181,7 +181,7 @@ fn brief(h: &mut Headless<Parlor>) {
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), "pages");
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
 }
 
 #[test]
@@ -240,7 +240,7 @@ fn the_daily_states_its_twist_scores_and_records_its_result() {
     );
     h.clear();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
     assert!(played(&h, "liberty-lights/cue/twist"));
     assert_said(
         &h,
@@ -290,6 +290,7 @@ fn the_daily_states_its_twist_scores_and_records_its_result() {
             "Play this daily challenge again",
             "Hear the results again",
             "Compare",
+            "Make a sound file of this run's song",
             "Back to the challenges"
         ]
     );
@@ -354,7 +355,7 @@ fn the_weekly_gauntlet_adds_up_and_ends_at_its_first_failure() {
     assert!(!Challenges::done(&mut h.app.ctx, &ch), "not over yet");
     h.clear();
     h.press(Key::Return); // Next
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
     assert_said(&h, "Weekly challenge, show 2 of 5: The build.");
     assert_said(&h, "show points so far.");
     play_nothing(&mut h);
@@ -388,7 +389,7 @@ fn the_monthly_festival_pays_for_its_signature_and_leaving_does_not_count() {
     assert_said(&h, "adds 100 bonus points");
     h.press(Key::Return);
     assert_said(&h, "Monthly challenge, show 1 of 3: The opening act.");
-    assert_said(&h, "Listen for the crackles.");
+    assert_said(&h, "Crackles pay a bonus.");
     let show = &monthly.acts[0].show;
     let crackles = show.iter().filter(|l| l.kind == Kind::Crackle).count();
     play_perfect(&mut h, show);
@@ -448,7 +449,7 @@ fn the_launcher_opens_a_challenge_and_pausing_out_returns_there_uncounted() {
     assert_eq!(h.app.top_name(), "pages");
     assert_said(&h, "Tonight's show:");
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), "pause");
     goto(&mut h, "Leave the challenge");
@@ -569,12 +570,12 @@ fn a_controller_plays_a_whole_level_with_a_and_the_d_pad() {
     let mut h = title();
     h.connect_pad();
     h.press(Key::Return); // Start level 1
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
     let show = generate(1, &mut parlor_core::Rng::seeded(4));
     h.clear();
     // A is Enter to menus; in the show it is the main action.
     tap(&mut h, ControllerButton::A);
-    assert_eq!(h.spoken(), ["Listen."]);
+    assert_eq!(h.spoken(), ["The show starts."]);
     for _ in 0..1000 {
         if spoke(&h, "Your turn.") {
             break;
@@ -611,7 +612,11 @@ fn a_controller_plays_a_whole_level_with_a_and_the_d_pad() {
         &h,
         &format!("liberty-lights/fireworks/{}", show[0].kind.name())
     ));
-    assert_eq!(h.app.top_name(), "show", "A launched, it did not finish");
+    assert_eq!(
+        h.app.top_name(),
+        "liberty_lights_show",
+        "A launched, it did not finish"
+    );
     // Up from the firework steps back round to Finish.
     for _ in 0..show[0].kind.digit() {
         tap(&mut h, ControllerButton::DPadUp);
@@ -665,11 +670,11 @@ fn a_controller_composes_and_finishes_a_freestyle_show() {
     goto(&mut h, "Freestyle show");
     h.press(Key::Return);
     h.press(Key::Return); // Compose
-    assert_eq!(h.app.top_name(), "freestyle");
+    assert_eq!(h.app.top_name(), "liberty_lights_freestyle");
     h.sounds.clear();
     tap(&mut h, ControllerButton::A);
     assert!(played(&h, "liberty-lights/fireworks/boom"));
-    assert_eq!(h.app.top_name(), "freestyle");
+    assert_eq!(h.app.top_name(), "liberty_lights_freestyle");
     // Hold Left on the d-pad to launch on the left.
     h.send(InputEvent::button(ControllerButton::DPadLeft));
     h.sounds.clear();
@@ -685,7 +690,7 @@ fn a_controller_composes_and_finishes_a_freestyle_show() {
     tap(&mut h, ControllerButton::DPadUp);
     assert_eq!(last(&h), "Finish the show and score it.");
     tap(&mut h, ControllerButton::A);
-    assert_eq!(h.app.top_name(), "freestyle_done");
+    assert_eq!(h.app.top_name(), "liberty_lights_freestyle_done");
     assert_said(&h, "You launched 2 fireworks.");
 }
 
@@ -695,7 +700,7 @@ fn the_launch_range_launches_the_chosen_firework() {
     h.connect_pad();
     goto(&mut h, "Practice room");
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "range");
+    assert_eq!(h.app.top_name(), "liberty_lights_range");
     h.press(Key::Up);
     assert_eq!(last(&h), "Sparkle, key 4.");
     tap(&mut h, ControllerButton::A);

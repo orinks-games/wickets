@@ -2,23 +2,22 @@
 //! check.
 
 use hearken::menu::{menu_enter, Menu, MenuCore, MenuItem};
-use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, Sound, Vec3};
 use parlor_core::menus::{self as shared, labels, ChallengeGame};
 use parlor_core::{Parlor, Period};
 
 use crate::cues::{self, Play, SOUND_CHECK};
 use crate::progress;
-use crate::rules::{lean_words, skyline_level, Mode, SKYLINE_LEN};
+use crate::rules::{skyline_level, Mode, SKYLINE_LEN};
 use crate::screens::{briefing, challenge_plan, period_text, start, Launch, CHALLENGES_NAME};
 use crate::ID;
 
-/// "best 23.4 seconds" or "no time yet".
-pub fn time_text(best: Option<f64>) -> String {
-    match best {
-        Some(t) => format!("best {t:.1} seconds"),
-        None => "no time yet".to_string(),
-    }
+/// "best 23.4 seconds, relaxed best 40.1 seconds", leaving out one with
+/// no time, or "no time yet".
+pub fn time_text((best, relaxed): (Option<f64>, Option<f64>)) -> String {
+    let secs = |t: f64| format!("{t:.1} seconds");
+    parlor_core::pace::both("best", best.map(secs), relaxed.map(secs))
+        .unwrap_or_else(|| "no time yet".to_string())
 }
 
 /// Every skyline crossing, to walk alone for its best time.
@@ -59,7 +58,7 @@ impl Menu for CrossingSelect {
         for n in 1..=SKYLINE_LEN {
             let level = skyline_level(n, false);
             if n <= open {
-                let best = progress::best_time(ctx, &level.time_board());
+                let best = progress::best_times(ctx, &level.time_board());
                 items.push(
                     MenuItem::new(
                         format!("Crossing {n}, {}, {}", level.route(), time_text(best)),
@@ -178,7 +177,7 @@ impl SoundCheck {
     pub fn new() -> SoundCheck {
         SoundCheck {
             menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down move through the sounds you need in play. Enter plays the one you are on and says what it means. Escape goes back.",
+                "Up and Down move through the sounds you need in play. Enter plays the selected sound. Escape goes back.",
             ),
             preview: Preview::None,
         }
@@ -198,14 +197,11 @@ impl SoundCheck {
         let entry = &SOUND_CHECK[index];
         match entry.play {
             Play::Once => {
-                ctx.say(format!("{}. {}", entry.name, entry.meaning));
+                ctx.stop_speech();
                 ctx.audio.play(entry.key, Bus::EFFECTS);
             }
             Play::Sides => {
-                ctx.say(format!(
-                    "{}. {} From the left, then the right.",
-                    entry.name, entry.meaning
-                ));
+                ctx.stop_speech();
                 ctx.audio
                     .play_at(entry.key, Vec3::new(-3.0, 1.0, 0.0), Bus::EFFECTS);
                 self.preview = Preview::Sides {
@@ -214,12 +210,12 @@ impl SoundCheck {
                 };
             }
             Play::Ahead => {
-                ctx.say(format!("{}. {}", entry.name, entry.meaning));
+                ctx.stop_speech();
                 ctx.audio
                     .play_at(entry.key, Vec3::new(0.0, 4.0, 0.0), Bus::EFFECTS);
             }
             Play::Loop => {
-                ctx.say(format!("{}. {}", entry.name, entry.meaning));
+                ctx.stop_speech();
                 let sound =
                     ctx.audio
                         .start_loop(entry.key, Some(Vec3::new(0.0, 2.0, 0.0)), Bus::EFFECTS);
@@ -229,7 +225,7 @@ impl SoundCheck {
                 };
             }
             Play::Music => {
-                ctx.say(format!("{}. {}", entry.name, entry.meaning));
+                ctx.stop_speech();
                 ctx.audio
                     .play_music(Some(entry.key), entry.key == cues::MUSIC_TITLE);
                 self.preview = Preview::Music {
@@ -288,7 +284,7 @@ impl Menu for SoundCheck {
                     .audio
                     .start_loop(cues::TONE, Some(Vec3::new(0.0, 1.0, 0.0)), Bus::EFFECTS);
                 SoundCheck::tone_at(ctx, sound, 0.0);
-                ctx.say("Balance tone. Balanced: centred and low.");
+                ctx.stop_speech();
                 s.preview = Preview::Tone {
                     sound,
                     stage: 0,
@@ -297,7 +293,7 @@ impl Menu for SoundCheck {
             },
         )
         .select_sound(None)
-        .help("The tone that is your balance, at each lean in turn, with its name: it moves to the side you lean to and rises as you lean further.")];
+        .help("The tone that is your balance, at each lean in turn: it moves to the side you lean to and rises as you lean further.")];
         for (i, entry) in SOUND_CHECK.iter().enumerate() {
             items.push(
                 MenuItem::new(entry.name, move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
@@ -341,8 +337,6 @@ impl Menu for SoundCheck {
                         Some(&lean) => {
                             let sound = *sound;
                             SoundCheck::tone_at(ctx, sound, lean);
-                            let words = sentence_start(&lean_words(lean));
-                            ctx.say(format!("{words}."));
                         }
                         None => done = true,
                     }

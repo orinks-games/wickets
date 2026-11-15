@@ -55,7 +55,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Slow Kettle",
     category: Category::Cozy,
-    blurb: "Keep a small tea house at your own pace, brewing each guest's cup by ear.",
+    blurb: "Keep a small tea house at your own pace, brewing each guest's cup.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(event),
@@ -249,7 +249,7 @@ impl TitleGame for SlowKettle {
             MenuItem::new("Practice brewing", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 start(ctx, Mode::Practice)
             })
-            .help("Brew any tea on your shelf for yourself, as often as you like, and hear the exact heat and steep. No guests, no coins."),
+            .help("Brew any tea on your shelf for yourself, as often as you like, with the exact heat and steep read back. There are no guests and no coins."),
         )
     }
 
@@ -313,7 +313,7 @@ impl TitleGame for SlowKettle {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear the kettle's song, every cue and every cup, each with its name.".to_string()
+        "Plays the kettle's song, every cue and every cup.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

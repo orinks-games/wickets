@@ -12,7 +12,7 @@ use std::collections::BTreeMap;
 
 use hearken::Ctx;
 
-use crate::{Parlor, Records, Rng, ScoreResult};
+use crate::{Pace, Parlor, Records, Rng, ScoreResult};
 
 pub use wickets_rules::Period;
 
@@ -132,10 +132,16 @@ impl Date {
 /// event ahead of time; else the trusted clock ([`Date::system_today`]).
 /// Release builds ignore the variable, so it can't open an event early.
 pub fn today(ctx: &Ctx<Parlor>) -> Date {
+    pinned_today(ctx).unwrap_or_else(Date::system_today)
+}
+
+/// The day [`today`] plays as when it is not the clock's: a test's pinned
+/// date, or a debug build's preview. `None` on the real date.
+pub fn pinned_today(ctx: &Ctx<Parlor>) -> Option<Date> {
     if let Some(date) = ctx.game.today {
-        return date;
+        return Some(date);
     }
-    preview_today().unwrap_or_else(Date::system_today)
+    preview_today()
 }
 
 /// `ECHO_PARLOR_TODAY`, in debug builds only.
@@ -209,6 +215,12 @@ impl Challenge {
     fn slot(&self) -> String {
         format!("{}:{}", self.period.tag(), self.key)
     }
+
+    /// The saved result's slot at `pace`: relaxed results keep their own
+    /// (see [`crate::Pace::board`]).
+    fn slot_at(&self, pace: Pace) -> String {
+        pace.board(&self.slot())
+    }
 }
 
 /// Saved challenge results.
@@ -219,25 +231,50 @@ impl Challenges {
         Records::load(ctx, &format!("{game}/challenges"))
     }
 
-    /// The best score on this challenge, if it has been played.
+    /// The best normal or quick score on this challenge, if it has one.
     pub fn best(ctx: &mut Ctx<Parlor>, challenge: &Challenge) -> Option<u64> {
+        Self::best_at(ctx, challenge, Pace::Normal)
+    }
+
+    /// The best score on this challenge's board for `pace`: relaxed runs
+    /// have their own, normal and quick share one.
+    pub fn best_at(ctx: &mut Ctx<Parlor>, challenge: &Challenge, pace: Pace) -> Option<u64> {
         Self::load(ctx, challenge.game)
-            .get(&challenge.slot())
+            .get(&challenge.slot_at(pace))
             .copied()
     }
 
-    /// Whether this challenge has been completed.
+    /// Whether this challenge has been completed, at any pace.
     pub fn done(ctx: &mut Ctx<Parlor>, challenge: &Challenge) -> bool {
-        Self::best(ctx, challenge).is_some()
+        let all = Self::load(ctx, challenge.game);
+        Self::played(&all, challenge)
     }
 
-    /// Records a finished challenge run (any finish counts toward the
-    /// streak; a run abandoned from pause should not be submitted). Keeps
-    /// the best score, and marks the day played for the parlor's own streak.
+    fn played(all: &BTreeMap<String, u64>, challenge: &Challenge) -> bool {
+        [Pace::Normal, Pace::Relaxed]
+            .iter()
+            .any(|&p| all.contains_key(&challenge.slot_at(p)))
+    }
+
+    /// Records a finished challenge run at normal or quick pace; see
+    /// [`Challenges::submit_at`].
     pub fn submit(ctx: &mut Ctx<Parlor>, challenge: &Challenge, score: u64) -> ScoreResult {
+        Self::submit_at(ctx, challenge, Pace::Normal, score)
+    }
+
+    /// Records a finished challenge run played at `pace` (any finish
+    /// counts toward the streak; a run abandoned from pause should not be
+    /// submitted). Keeps the best score on the pace's board, and marks the
+    /// day played for the parlor's own streak.
+    pub fn submit_at(
+        ctx: &mut Ctx<Parlor>,
+        challenge: &Challenge,
+        pace: Pace,
+        score: u64,
+    ) -> ScoreResult {
         let key = format!("{}/challenges", challenge.game);
         let mut all: BTreeMap<String, u64> = Records::load(ctx, &key);
-        let slot = challenge.slot();
+        let slot = challenge.slot_at(pace);
         let result = match all.get(&slot).copied() {
             None => ScoreResult::First,
             Some(previous) if score > previous => ScoreResult::NewBest { previous },
@@ -260,8 +297,7 @@ impl Challenges {
     /// one, while the current one is still to play).
     pub fn streak(ctx: &mut Ctx<Parlor>, game: &str, period: Period) -> u32 {
         let all = Self::load(ctx, game);
-        let tag = period.tag();
-        let has = |d: Date| all.contains_key(&format!("{tag}:{}", d.period_key(period)));
+        let has = |d: Date| Self::played(&all, &Challenge::on(d, "", period));
         let mut date = today(ctx);
         if !has(date) {
             date = date.previous_period(period);
@@ -300,9 +336,16 @@ impl Challenges {
                 challenge.period.unit()
             ),
         };
-        match Self::best(ctx, challenge) {
-            Some(best) => format!("{}, done, best {best}{streak}", challenge.title()),
-            None => format!("{}, not played yet{streak}", challenge.title()),
+        let bests: Vec<String> = [Pace::Normal, Pace::Relaxed]
+            .into_iter()
+            .filter_map(|p| {
+                Self::best_at(ctx, challenge, p).map(|b| format!("{} {b}", p.best_word()))
+            })
+            .collect();
+        if bests.is_empty() {
+            format!("{}, not played yet{streak}", challenge.title())
+        } else {
+            format!("{}, done, {}{streak}", challenge.title(), bests.join(", "))
         }
     }
 }

@@ -65,7 +65,8 @@ pub fn register(games: fn() -> Vec<GameInfo>) {
     let _ = GAMES.set(games);
 }
 
-fn games() -> Vec<GameInfo> {
+/// The launcher's roster, or none before [`register`].
+pub(crate) fn games() -> Vec<GameInfo> {
     GAMES.get().map(|f| f()).unwrap_or_default()
 }
 

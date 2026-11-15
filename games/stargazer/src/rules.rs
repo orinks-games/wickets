@@ -914,7 +914,7 @@ impl Night {
         if !self.shimmer_told {
             self.shimmer_told = true;
             out.push(Cue::Queue(format!(
-                "A shimmer: something hidden. Rest on it, press {}.",
+                "Something hidden is near. Rest on it and press {}.",
                 self.primary_key
             )));
         }

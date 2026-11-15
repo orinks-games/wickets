@@ -3,7 +3,7 @@
 //! calling once, and you count each flock.
 
 use hearken::text::sentence_start;
-use hearken::{Ctx, InputEvent, Key, State, UiSound, Vec3};
+use hearken::{Ctx, InputEvent, Key, State, Vec3};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
 use parlor_core::{challenges, Challenge, Pages, Parlor, ParlorAction, Period, Records};
 
@@ -11,7 +11,7 @@ use crate::birds::Note;
 use crate::challenge::{self, CHALLENGES_NAME};
 use crate::guide::{self, Guide};
 use crate::rules::{best_possible, run_seed, Count, CountEv, CountPhase};
-use crate::walk::{is_quiet_key, END_PAUSE};
+use crate::walk::END_PAUSE;
 use crate::{birds::Kind, sound, HELP, ID, TITLE_NAME};
 
 /// The count screen's `State::name`.
@@ -70,7 +70,7 @@ impl CountScreen {
     pub fn controls(ctx: &Ctx<Parlor>) -> String {
         let k = |a| ctx.control_name(a);
         format!(
-            "Each bird calls once as it flies over: count the calls. When the flock has passed, {} and {} set your count and {} gives it. {} hears the flock again before you answer.",
+            "Each bird calls once as it flies over: count the calls. When the flock has passed, {} and {} set your count and {} gives it. {} plays the flock again before you answer.",
             k(ParlorAction::Up),
             k(ParlorAction::Down),
             k(ParlorAction::Primary),
@@ -364,7 +364,7 @@ impl State<Parlor> for CountScreen {
             Some(ParlorAction::Hint) => {
                 let h = if asking {
                     let r = sentence_start(&ctx.control_name(ParlorAction::Repeat));
-                    format!("Each bird calls once. Count the calls, not the wingbeats. {r} hears the flock again.")
+                    format!("Each bird calls once. Count the calls, not the wingbeats. {r} plays the flock again.")
                 } else {
                     "Each bird calls once. Count the calls, not the wingbeats.".to_string()
                 };
@@ -385,18 +385,10 @@ impl State<Parlor> for CountScreen {
                 Vec::new()
             }
             Some(_) => {
-                self.say(ctx, "Listen, and count the calls.");
+                self.say(ctx, "Count the calls.");
                 Vec::new()
             }
-            None => {
-                if let InputEvent::KeyDown { key, .. } = event {
-                    if !is_quiet_key(*key) && *key != Key::Escape {
-                        ctx.play_ui(UiSound::Error);
-                        ctx.say("Not a count key. F1 lists the controls.");
-                    }
-                }
-                Vec::new()
-            }
+            None => Vec::new(),
         };
         self.voice(ctx, evs);
     }
@@ -432,7 +424,7 @@ impl State<Parlor> for CountScreen {
         let now = if self.count.phase == CountPhase::Asking {
             "Flock passed. How many birds?"
         } else {
-            "Listen for the next flock."
+            "The next flock is on its way."
         };
         format!("{now} {}", Self::controls(ctx))
     }

@@ -525,8 +525,14 @@ impl World {
         }
         events.push(WorldEvent::Crash(cause));
         if let Some(c) = &mut self.drop_clock {
+            let before = c.left;
             let lost = c.crash();
             events.push(WorldEvent::TimeLost(lost));
+            // A crash that takes the clock past a call-out makes it, as
+            // ticking past it would.
+            if let Some(n) = c.fell_past(before) {
+                events.push(WorldEvent::TimeCall(n));
+            }
         }
         if self.crash_limit.is_some_and(|n| self.stats.crashes >= n) {
             self.finished = Some(self.clock);

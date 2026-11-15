@@ -24,7 +24,7 @@ use hearken::{Ctx, UiSound};
 
 use super::labels;
 use crate::tutorial::{self, Lesson};
-use crate::{Challenge, Pages, Parlor, Period};
+use crate::{Challenge, Pages, Parlor, Period, TitleOpening};
 
 /// A row a game adds to its title. Its closures get the whole `Title`, so
 /// they reach the game's own state through `s.game`.
@@ -112,7 +112,7 @@ pub trait TitleGame: Sized + 'static {
     }
     /// F1 on the Sound check row.
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear each sound you need in play, with its name and meaning.".to_string()
+        "Choose and play the sounds you need to recognise during the game.".to_string()
     }
 
     /// Whether this is the player's first visit, which starts the cursor on
@@ -201,11 +201,9 @@ impl<G: TitleGame> Title<G> {
     /// The game's own menu sounds and Settings rows, on entering or coming
     /// back to its title.
     fn use_game(ctx: &mut Ctx<Parlor>) {
-        crate::menu_sounds::use_game(ctx, G::ID);
+        crate::menu_sounds::enter_game(ctx, G::ID, G::NAME, G::settings);
         // Back from the Sound check: music heard in play unlocks again.
         crate::soundtrack::listen(ctx);
-        ctx.game.open_game_name = Some(G::NAME);
-        ctx.game.game_settings = Some(G::settings);
     }
 }
 
@@ -229,30 +227,32 @@ impl<G: TitleGame> Menu for Title<G> {
         self.game.music(ctx);
         ctx.play_ui(UiSound::Open);
         self.refresh(ctx, false);
-        let focus = ctx.game.title_focus.take();
-        let first = self.game.first_visit(ctx);
-        if !first && !tutorial::has_played(ctx, G::ID) && !tutorial::tutorial_done(ctx, G::ID) {
+        let opening = ctx.game.title_opening.take();
+        let new_here = self.game.first_visit(ctx);
+        if !new_here && tutorial::familiarity(ctx, G::ID) == tutorial::Familiarity::New {
             // The game's own saves show play from before story mode kept
-            // track. Opening the title finishes no story scene.
+            // track: New becomes Played. Opening the title finishes no
+            // story scene.
             tutorial::note_played(ctx, G::ID);
         }
-        if first {
+        if opening == Some(TitleOpening::Quiet) {
+            return;
+        }
+        if new_here && opening != Some(TitleOpening::Known) {
             let (index, start) = match (self.game.first_cursor(), self.practice_at) {
                 (FirstCursor::Practice, Some(at)) => (at, "Start with practice."),
                 _ => (self.tutorial_at, "Start with the tutorial."),
             };
             self.menu.index = index;
             ctx.say(format!("{} New here? {start}", end_sentence(G::NAME)));
-            if let Some(note) = ctx.game.title_note.take() {
-                ctx.say_queued(note);
-            }
             let current = self.current_text(ctx);
             ctx.say_queued(current);
         } else {
-            if let Some(at) = focus.and_then(|f| self.row_starting(ctx, &f)) {
-                self.menu.index = at;
+            if let Some(TitleOpening::Row(start)) = opening {
+                if let Some(at) = self.row_starting(ctx, &start) {
+                    self.menu.index = at;
+                }
             }
-            ctx.game.title_note = None;
             self.announce(ctx);
         }
     }
@@ -286,11 +286,11 @@ impl<G: TitleGame> Menu for Title<G> {
         ctx.say_queued(current);
     }
 
-    /// Leaving for the launcher stops the music.
+    /// Leaving for the launcher stops the music and closes the game.
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
         crate::soundtrack::listen(ctx);
         self.game.stop_music(ctx);
-        ctx.game.game_settings = None;
+        crate::menu_sounds::leave_game(ctx);
     }
 
     fn build_items(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<G>> {

@@ -386,7 +386,7 @@ impl DanceScreen {
                     self.progress.store(ctx);
                     self.tell_queued(
                         ctx,
-                        format!("Dance. Keep your head in the shimmering pearl's lane. {line}"),
+                        format!("Dance. Keep your head in the pearl's lane. {line}"),
                     );
                 } else {
                     self.tell_queued(ctx, "Dance.");
@@ -447,7 +447,7 @@ impl DanceScreen {
                 self.teach(
                     ctx,
                     "gong",
-                    format!("Drum roll: a gong in 2 beats. {p} on the gong rears up."),
+                    format!("A gong in 2 beats. {p} on the gong rears up."),
                 );
             }
             Event::Gong { great } => {
@@ -514,7 +514,7 @@ impl DanceScreen {
                 sound::play_at(ctx, sound::ENVELOPE_GET, at_lane(lane, lanes));
                 self.tell(
                     ctx,
-                    format!("Red envelope, {points} points. Dragon {segments} long."),
+                    format!("Red envelope, {points} points. Dragon {segments} segments long."),
                 );
             }
             Event::EnvelopeMissed { lane } => {
@@ -798,7 +798,7 @@ pub fn results(
         r = r.next(
             format!("Next street: street {next}, {}", streets::street(next).name),
             format!("{}.", sentence_start(&streets::street(next).describe())),
-            move |ctx| ctx.replace(DanceScreen::new(Launch::new(Mode::Street(next)))),
+            move |ctx| crate::briefing::briefing(ctx, Mode::Street(next)).show_in_place(ctx),
         );
     }
     let (label, help) = match launch.mode {
@@ -822,21 +822,6 @@ pub fn results(
         };
         ctx.replace(screen)
     })
-}
-
-/// Keys a player presses for their screen reader or as a modifier.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
 }
 
 impl State<Parlor> for DanceScreen {
@@ -968,17 +953,7 @@ impl State<Parlor> for DanceScreen {
                 let text = self.dragon_line();
                 ctx.say(text);
             }
-            None => {
-                if let InputEvent::KeyDown {
-                    key, repeat: false, ..
-                } = event
-                {
-                    if !is_quiet_key(*key) {
-                        sound::play(ctx, sound::NOPE);
-                        ctx.say("Not a key here. F1 lists them.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 

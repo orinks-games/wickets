@@ -73,7 +73,7 @@ pub fn full_moon_locked_line(date: Date) -> String {
 /// The locked full moon row's help.
 pub fn full_moon_locked_help(date: Date) -> String {
     format!(
-        "Opens for {}: one moon for every player, with crickets on the radio.",
+        "Opens for {}: one moon for every player.",
         next_full_moon_words(date)
     )
 }
@@ -114,14 +114,14 @@ pub fn tranquility() -> Moon {
 
 /// The Tranquility pad's line, while it is open.
 const TRANQUILITY_LINE: &str =
-    "Land at Tranquility Base in low gravity for moon landing day, with the Quindar tone on the radio.";
+    "Land at Tranquility Base in low gravity for moon landing day.";
 
 /// What the launcher names while a row is open: both rows when a full
 /// moon falls on moon landing day.
 pub fn event(date: Date) -> Option<Happening> {
     let full = full_moon_pad(date).map(|moon| {
         format!(
-            "Land on {} tonight, the same moon for every player, with crickets on the radio.",
+            "Land on {} tonight, the same moon for every player.",
             moon.name
         )
     });

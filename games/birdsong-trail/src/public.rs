@@ -59,7 +59,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Cozy,
-    blurb: "Walk a trail at dawn by ear, and befriend the birds by answering their songs.",
+    blurb: "Walk a trail at dawn, and befriend the birds by answering their songs.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(event),
@@ -265,7 +265,7 @@ impl TitleGame for BirdsongTrail {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear every bird voice, step and cue in the game, with what it means.".to_string()
+        "Play the bird voices and cues you need on the trail.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -305,7 +305,7 @@ impl TitleGame for BirdsongTrail {
                         .to_string()
                 } else {
                     format!(
-                        "Spoken call-outs: off. Answer by ear, and {} speaks the notes when you want them.",
+                        "Spoken call-outs: off. {} speaks the notes when you want them.",
                         ctx.control_name(ParlorAction::Hint)
                     )
                 })

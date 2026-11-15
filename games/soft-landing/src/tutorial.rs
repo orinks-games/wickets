@@ -66,7 +66,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pad: Live<Descent>) -> Lesson {
 
     let fall = pad.step(
         format!(
-            "Lesson 1 of 4, the fall. You wait {} above the pad. {} starts the descent. Let go and listen: the tone climbs as you speed up.",
+            "Lesson 1 of 4, the fall. You wait {} above the pad. {} starts the descent. Let go and fall freely.",
             parlor_core::units::length(moon.height),
             sentence_start(&p)
         ),
@@ -80,7 +80,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pad: Live<Descent>) -> Lesson {
 
     let engine = pad.step(
         format!(
-            "Lesson 2 of 4, the engine. Hold {p} to slow down. Let go when you hear Safe speed."
+            "Lesson 2 of 4, the engine. Hold {p} to slow down. Let go at Safe speed."
         ),
         |d: &Descent, _| {
             let f = &d.flight;
@@ -113,11 +113,11 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pad: Live<Descent>) -> Lesson {
 
     let mut coach = Coach::default();
     let burn_now = format!("Burn now. Hold {p} until Safe speed.");
-    let ease = format!("Let go. If you hear Too fast, hold {p} until Safe speed.");
-    let late = format!("Hold {p} as soon as you hear Burn now.");
-    let tap = format!("Each time you hear Too fast, hold {p} until Safe speed.");
+    let ease = format!("Let go. If the game says Too fast, hold {p} until Safe speed.");
+    let late = format!("Hold {p} as soon as the game says Burn now.");
+    let tap = format!("Each time the game says Too fast, hold {p} until Safe speed.");
     let land = pad.step(
-        "Lesson 4 of 4, the landing. Fall freely until you hear Burn now.",
+        "Lesson 4 of 4, the landing. Fall freely until the game says Burn now.",
         move |d: &Descent, ctx| {
             let f = &d.flight;
             match f.outcome {

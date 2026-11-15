@@ -8,8 +8,8 @@
 //! how near the beat they land. Four nights of three songs, each a little
 //! faster, open one after another; the practice room plays a song that
 //! waits for each move. A holiday special: the launcher lists it in the
-//! two weeks before Halloween, and all year once three stars on the first
-//! night keep it. Doctor Volt's laboratory, the last night, opens only in
+//! two weeks before Halloween, and all year once the player starts a dance or practice
+//! session. Doctor Volt's laboratory, the last night, opens only in
 //! Halloween season, even in a game kept all year.
 
 pub mod challenge;
@@ -59,10 +59,10 @@ pub const HOLIDAY: Holiday = Holiday::Halloween;
 pub const HOME: Category = Category::Action;
 
 /// The blurb in season, until the game is kept.
-pub const KEEP_BLURB: &str = "A Halloween special. Lead the monsters' new dance craze: hear who comes up, and dance their move on the beat. Earn a star on every song of night 1 to keep the game all year.";
+pub const KEEP_BLURB: &str = "A Halloween special. Lead the monsters' new dance craze: dance each monster's move on the beat. Play once, even in practice, to keep it all year.";
 
 /// The blurb out of season, once the game is kept.
-pub const YEAR_ROUND_BLURB: &str = "The monsters' dance craze, all year: hear who comes up, and dance their move on the beat. Doctor Volt's laboratory waits for Halloween.";
+pub const YEAR_ROUND_BLURB: &str = "The monsters' dance craze, all year: dance each monster's move on the beat. Doctor Volt's laboratory opens at Halloween.";
 
 /// Said in the results when a night first keeps the game in season.
 pub const KEPT_LINE: &str =
@@ -70,10 +70,9 @@ pub const KEPT_LINE: &str =
 
 /// Said in the results when a night first keeps the game out of season,
 /// when the laboratory is shut.
-pub const KEPT_LINE_OUT_OF_SEASON: &str = "Graveyard Shuffle is yours to keep, in the Action games. Doctor Volt's laboratory waits for Halloween.";
+pub const KEPT_LINE_OUT_OF_SEASON: &str = "Graveyard Shuffle is yours to keep, in the Action games. Doctor Volt's laboratory opens at Halloween.";
 
-/// Whether the player has kept the game all year: a star on every song
-/// of night 1, which can only be earned in Halloween season.
+/// Whether the ordinary game has been played or kept by an earlier save.
 pub fn kept(ctx: &mut Ctx<Parlor>) -> bool {
     Progress::load(ctx).kept()
 }
@@ -84,7 +83,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Seasonal,
-    blurb: "A Halloween special. Lead the monsters' new dance craze: hear who comes up, and dance their move on the beat.",
+    blurb: "A Halloween special. Lead the monsters' new dance craze: dance each monster's move on the beat.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(event),
@@ -100,11 +99,9 @@ pub const INFO: GameInfo = GameInfo {
 /// While the game is in the parlor, the launcher names it as an event.
 pub fn event(date: Date) -> Option<Happening> {
     let line = match calendar::nearness(HOLIDAY, date)? {
-        Nearness::Day => {
-            "It is Halloween, the last night before the graveyard goes quiet for the year."
-        }
+        Nearness::Day => "The Halloween dance is on. The graveyard goes quiet after 1 November.",
         Nearness::Season { .. } => {
-            "The graveyard dances until the night after Halloween, then it goes quiet for the year."
+            "The graveyard dances until the night after Halloween, then it closes for the year."
         }
     };
     Some(Happening::new("The Halloween special", line))
@@ -237,7 +234,7 @@ impl TitleGame for GraveyardShuffle {
             MenuItem::new("Night select", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(picker::SetSelect::new())
             })
-            .help("Dance any night you have opened, and hear the stars on each."),
+            .help("Dance any night you have opened, with the stars on each."),
         ]
     }
 
@@ -246,7 +243,7 @@ impl TitleGame for GraveyardShuffle {
             MenuItem::new("Practice room", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(picker::TuneSelect::new())
             })
-            .help("Any song you have opened, waiting for each monster until you dance its move."),
+            .help("Any song you have opened. The music holds for each monster until you dance its move."),
         )
     }
 
@@ -272,14 +269,14 @@ impl TitleGame for GraveyardShuffle {
             |_ctx, on| {
                 Some(
                     if on {
-                        "Spoken call-outs: on. Your screen reader also names each monster."
+                        "Spoken call-outs: on. Each monster is also named."
                     } else {
-                        "Spoken call-outs: off. You hear the monsters alone."
+                        "Spoken call-outs: off. The monsters are not named."
                     }
                     .to_string(),
                 )
             },
-            "When on, your screen reader also names each monster as it comes up.",
+            "When on, the game also names each monster as it comes up.",
         )]
     }
 
@@ -288,7 +285,7 @@ impl TitleGame for GraveyardShuffle {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear every monster, move and cue in the game, with its name and the key that dances it."
+        "Every monster, move and cue in the game, with its name and the key that dances it."
             .to_string()
     }
 

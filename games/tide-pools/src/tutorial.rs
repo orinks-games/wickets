@@ -31,7 +31,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pools: Live<OutingScreen>) -> Lesson {
 
     let lean = pools.step(
         format!(
-            "{} leans toward the water; {d} steps back. Stand back to hear this pool and its neighbours; lean in to hear only this one. Lean in close.",
+            "{} leans toward the water; {d} steps back. Stand back to take in this pool and its neighbours; lean in for only this one. Lean in close.",
             sentence_start(&u)
         ),
         |s: &OutingScreen, _| {
@@ -41,19 +41,19 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pools: Live<OutingScreen>) -> Lesson {
 
     let gather = pools.step(
         format!(
-            "Every creature has its own sound. This pool holds an anemone, with a low pop. Listen, and press {p} just after you hear it."
+            "This pool holds an anemone. Press {p} just after it calls."
         ),
         |s: &OutingScreen, _| {
             s.outing
                 .gathered
                 .contains(&Species::Anemone)
-                .then(|| "The anemone is yours. If you hear nothing, your hands come up with only water.".to_string())
+                .then(|| "The anemone is yours. Reach in when nothing has called, and your hands come up with only water.".to_string())
         },
     );
 
     let shy = pools.step(
         format!(
-            "{} and {r} walk from pool to pool. The pool on your right holds a shy shore crab with a clicking skitter. It darts away when you lean in, so keep still until two soft rising notes, then gather it.",
+            "{} and {r} walk from pool to pool. The pool on your right holds a shy shore crab. It darts away when you lean in, so keep still until it creeps back out, then gather it.",
             sentence_start(&l)
         ),
         |s: &OutingScreen, _| {
@@ -67,12 +67,12 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pools: Live<OutingScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Tide Pools",
-        "The tide is out, and rock pools line the shore with the sea ahead of you. There is no way to fail: listen, and gather what you find. Learn in the practice pools",
+        "The tide is out, and rock pools line the shore with the sea ahead of you. There is no way to fail: gather what you find. Learn in the practice pools",
     )
     .step(lean)
     .step(gather)
     .step(shy)
     .outro(
-        "A trip lasts until the tide comes back: a bell buoy rings when it turns. On a trip, what you gather goes home to your aquarium. These practice creatures go back in the water. F1 lists the rest.",
+        "A trip lasts until the tide comes back. On a trip, what you gather goes home to your aquarium. These practice creatures go back in the water. F1 lists the rest.",
     )
 }

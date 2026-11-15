@@ -551,7 +551,7 @@ impl Modifier {
             Modifier::StillWater => "Still water: shy creatures come back out twice as fast.".to_string(),
             Modifier::Crowded => "A busy shore: every pool holds at least one creature.".to_string(),
             Modifier::QuickTide => "A quick tide: the trip is half a minute shorter, and every find is worth double.".to_string(),
-            Modifier::Hushed => "Hushed: you hear only the pool in front of you, wherever you stand.".to_string(),
+            Modifier::Hushed => "Hushed: the pools either side are silent, wherever you stand.".to_string(),
             Modifier::RareHunt(s) => format!(
                 "Somewhere along the reef is one {}: {}. Finding it is worth 300 points.",
                 s.name(),

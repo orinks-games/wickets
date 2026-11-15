@@ -37,17 +37,17 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, lanes: Live<RunScreen>) -> Lesson {
 
     let catch = lanes.step(
         format!(
-            "{} and {r} step one lane at a time; each step says your lane. Everything that falls whistles from its lane: lower and louder means sooner. An egg is a soft whistle: stand in its lane as it lands to catch it.",
+            "{} and {r} step one lane at a time; each step says your lane. Each falling object sounds from its lane: lower and louder means it will land sooner. An egg is a soft whistle: stand in its lane as it lands to catch it.",
             sentence_start(&l)
         ),
         |s: &RunScreen, _| {
-            (s.run.caught_total >= 1).then(|| "Caught, with a woody thump into your basket.".to_string())
+            (s.run.caught_total >= 1).then(|| "Caught.".to_string())
         },
     );
 
     let banked = lanes.step(
         format!(
-            "Eggs count once banked. The cart's soft bell rings from its edge lane, and {} rings it now. Go to that lane and press {bank} to bank.",
+            "Eggs count once banked. The cart stands in an edge lane, and {} rings its bell now. Go to that lane and press {bank} to bank.",
             sentence_start(&cart)
         ),
         |s: &RunScreen, _| {
@@ -63,7 +63,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, lanes: Live<RunScreen>) -> Lesson {
     .step(catch)
     .step(banked)
     .outro(format!(
-        "In a run, step out of the lane of a gloopy mud clod or a buzzing bee. A golden egg sparkles and is worth five. Bank before the bell ends the round. {} says your lane and what lands next, again for the clock, and {h} says what to do right now.",
+        "In a run, step out of the lane of a mud clod or a bee. A golden egg is worth five. Bank before the bell ends the round. {} says your lane and what lands next, again for the clock, and {h} says what to do right now.",
         sentence_start(&s)
     ))
 }

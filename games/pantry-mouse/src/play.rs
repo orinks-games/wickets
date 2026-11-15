@@ -5,7 +5,7 @@ use std::collections::HashSet;
 use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, InputEvent, Key, Sound, State, UiSound, Vec3};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
-use parlor_core::{Challenge, Pages, Parlor, ParlorAction, Period, ScoreResult};
+use parlor_core::{Challenge, Pace, Pages, Parlor, ParlorAction, Period, RunClock, ScoreResult};
 
 use crate::challenge::{self, Plan, CHALLENGES_NAME};
 use crate::events;
@@ -112,8 +112,8 @@ pub struct Play {
     warnings: u32,
     /// The cats' loops, by cat.
     loops: Vec<Option<Sound>>,
-    /// Sniff sounds still to play: seconds to wait, offset from the
-    /// mouse, and the sound.
+    /// Sniff sounds still to play: seconds to wait, the cell it sounds
+    /// from, and the sound.
     ticks: Vec<(f64, (i32, i32), &'static str)>,
     /// The arrow held down, and seconds until it steps again.
     held: Option<(Dir, f64)>,
@@ -129,6 +129,9 @@ pub struct Play {
     practice_unsaved: u32,
     /// S, in layers: a second press reads the rest.
     status_key: parlor_core::StatusKey,
+    /// The run's game clock: its pace, set as the run starts, and the hold
+    /// that keeps the cats still while a line is spoken.
+    pub clock: RunClock,
 }
 
 impl Play {
@@ -160,6 +163,7 @@ impl Play {
             ending: None,
             last: String::new(),
             practice_unsaved: 0,
+            clock: RunClock::new(Pace::Normal),
         }
     }
 
@@ -195,7 +199,7 @@ impl Play {
                 whiskers_words(self.run.whiskers)
             ),
             Mode::Practice => {
-                "One slow cat, and a catch costs nothing. Learn the sounds.".to_string()
+                "One slow cat, and a catch costs nothing. Learn the maze and the cats.".to_string()
             }
             Mode::Challenge(_) => {
                 let total = self.run.pantries().unwrap_or(1);
@@ -237,10 +241,9 @@ impl Play {
             Treat::CheeseRind => "Bin night",
         };
         Some(format!(
-            "{each}: {} in every pantry, {} points each. Listen for {}. A sniff plays the nearest one from where it hides.",
+            "{each}: {} in every pantry, {} points each. A sniff finds the nearest one.",
             treat.count_words(n),
             treat.points(),
-            sound::treat_words(treat)
         ))
     }
 
@@ -315,15 +318,21 @@ impl Play {
         vec![format!("{}.", sentence_start(&first.join(", "))), more]
     }
 
+    /// Puts the listener on the mouse's cell, before anything sounds.
+    fn hear_from_here(&self, ctx: &mut Ctx<Parlor>) {
+        sound::listen_at(ctx, self.run.mouse.x, self.run.mouse.y);
+    }
+
     /// Starts each cat's loop, silent until it is within hearing.
     fn start_loops(&mut self, ctx: &mut Ctx<Parlor>) {
         self.stop_loops(ctx);
+        self.hear_from_here(ctx);
         self.loops = (0..self.run.cats.len())
             .map(|i| {
-                let (dx, dy) = self.run.cat_offset(i);
+                let c = self.run.cats[i].pos;
                 let s = ctx.audio.start_loop(
                     sound::cat_loop(i),
-                    Some(sound::place(dx, dy)),
+                    Some(sound::place(c.x, c.y)),
                     Bus::EFFECTS,
                 );
                 ctx.audio
@@ -341,10 +350,11 @@ impl Play {
 
     /// Moves every cat's loop to where the cat now is.
     fn place_loops(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.hear_from_here(ctx);
         for (i, s) in self.loops.iter().enumerate() {
             if let (Some(s), true) = (s, i < self.run.cats.len()) {
-                let (dx, dy) = self.run.cat_offset(i);
-                ctx.audio.set_position(*s, Some(sound::place(dx, dy)));
+                let c = self.run.cats[i].pos;
+                ctx.audio.set_position(*s, Some(sound::place(c.x, c.y)));
                 ctx.audio
                     .set_volume(*s, if self.run.cat_heard(i) { 1.0 } else { 0.0 });
             }
@@ -371,19 +381,16 @@ impl Play {
         self.ticks = found
             .iter()
             .enumerate()
-            .map(|(i, (c, _))| {
-                (
-                    i as f64 * SNIFF_GAP,
-                    (c.x - m.x, c.y - m.y),
-                    sound::SNIFF_TICK,
-                )
-            })
+            .map(|(i, (c, _))| (i as f64 * SNIFF_GAP, (c.x, c.y), sound::SNIFF_TICK))
             .collect();
         let mut treat_words = String::new();
         if let (Some((treat, _)), Some((c, _))) = (self.run.treat, self.run.nearest_treat()) {
             let at = (c.x - m.x, c.y - m.y);
-            self.ticks
-                .push((found.len() as f64 * SNIFF_GAP, at, sound::treat(treat)));
+            self.ticks.push((
+                found.len() as f64 * SNIFF_GAP,
+                (c.x, c.y),
+                sound::treat(treat),
+            ));
             treat_words = format!(" Nearest {}: {}.", treat.name(), offset_words(at.0, at.1));
         }
         self.play_ticks(ctx, 0.0);
@@ -394,7 +401,7 @@ impl Play {
         if self.first("sniff") {
             self.say(
                 ctx,
-                format!("Each tick is a crumb, from its direction, nearest first. {left}"),
+                format!("A sniff finds each crumb, nearest first. {left}"),
             );
         } else {
             self.say(ctx, left);
@@ -412,8 +419,11 @@ impl Play {
                 true
             }
         });
-        for ((dx, dy), key) in due {
-            sound::play_at(ctx, key, dx, dy);
+        if !due.is_empty() {
+            self.hear_from_here(ctx);
+        }
+        for ((x, y), key) in due {
+            sound::play_at(ctx, key, x, y);
         }
     }
 
@@ -450,6 +460,8 @@ impl Play {
     }
 
     fn voice(&mut self, ctx: &mut Ctx<Parlor>, evs: Vec<Ev>) {
+        // A step moves the listener before anything it set off sounds.
+        self.hear_from_here(ctx);
         for ev in evs {
             match ev {
                 Ev::Step { crumb } => {
@@ -502,6 +514,7 @@ impl Play {
                 Ev::CatMoved { .. } => {}
                 Ev::CatHeard { cat, heard } => {
                     if heard && self.met.insert(cat) {
+                        self.clock.reset();
                         let c = &self.run.cats[cat];
                         let way = self
                             .run
@@ -516,10 +529,11 @@ impl Play {
                     }
                 }
                 Ev::CatClose { cat } => {
-                    let (dx, dy) = self.run.cat_offset(cat);
-                    sound::play_at(ctx, sound::CAT_CLOSE, dx, dy);
+                    let c = self.run.cats[cat].pos;
+                    sound::play_at(ctx, sound::CAT_CLOSE, c.x, c.y);
                     if self.warnings < CLOSE_WARNINGS {
                         self.warnings += 1;
+                        self.clock.reset();
                         let way = self
                             .run
                             .cat_way(cat)
@@ -534,6 +548,7 @@ impl Play {
                     lost,
                 } => {
                     sound::play(ctx, sound::CAUGHT);
+                    self.clock.reset();
                     self.ticks.clear();
                     self.held = None;
                     let by = format!("Caught by the {}.", self.run.cats[cat].name);
@@ -548,6 +563,7 @@ impl Play {
                     self.say(ctx, line);
                 }
                 Ev::Prowling => {
+                    self.clock.reset();
                     self.say(ctx, "Cats moving.");
                 }
                 Ev::Frozen { cat, left } => {
@@ -571,6 +587,7 @@ impl Play {
                 Ev::Thawed => {
                     sound::play(ctx, sound::THAW);
                     if self.first("thaw") {
+                        self.clock.reset();
                         self.say(ctx, "You can move again.");
                     }
                 }
@@ -607,6 +624,7 @@ impl Play {
                             format!("Pantry {pantry}. {joins} {}", self.start_prompt(ctx))
                         }
                     };
+                    self.clock.reset();
                     self.say(ctx, line);
                     self.start_loops(ctx);
                 }
@@ -640,8 +658,9 @@ impl Play {
     fn finish(&mut self, ctx: &mut Ctx<Parlor>) {
         self.stop_loops(ctx);
         ctx.audio.set_bed(None);
+        let pace = self.clock.pace();
         if let Some(ch) = self.challenge.take() {
-            let pages = challenge::finish(ctx, &ch, &self.run);
+            let pages = challenge::finish(ctx, &ch, &self.run, pace);
             let summary = challenge::summary(&ch, &self.run);
             let mut results = Some(after_challenge(ch.period, summary, pages.clone()));
             ctx.replace(Pages::new(pages).then(move |ctx| {
@@ -652,8 +671,8 @@ impl Play {
             return;
         }
         let saved = match self.mode.event_board() {
-            Some(board) => progress::save_event_run(ctx, &self.run, board),
-            None => progress::save_run(ctx, &self.run),
+            Some(board) => progress::save_event_run(ctx, &self.run, board, pace),
+            None => progress::save_run(ctx, &self.run, pace),
         };
         let pages = result_pages(&self.run, &saved);
         let summary = result_summary(&self.run);
@@ -693,22 +712,6 @@ fn hold_delay(ctx: &Ctx<Parlor>) -> f64 {
     pulse.max(HOLD_DELAY)
 }
 
-/// Keys a player presses for their screen reader or as a modifier, which
-/// the pantry leaves alone.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 /// What ended a pantry run, in one sentence.
 fn ended_words(run: &Run) -> String {
     match run.outcome {
@@ -728,16 +731,25 @@ pub fn result_summary(run: &Run) -> String {
 
 /// The pages after a pantry run.
 pub fn result_pages(run: &Run, saved: &Saved) -> Vec<String> {
+    let relaxed = if saved.pace.separate() {
+        "relaxed "
+    } else {
+        ""
+    };
+    let best_word = saved.pace.best_word();
     let score = match saved.score {
-        ScoreResult::First => format!("{}, your first score.", points_words(run.score)),
-        ScoreResult::NewBest { previous } => {
+        None => format!("{}, so nothing goes on the board.", points_words(run.score)),
+        Some(ScoreResult::First) => {
+            format!("{}, your first {relaxed}score.", points_words(run.score))
+        }
+        Some(ScoreResult::NewBest { previous }) => {
             format!(
-                "{}, a new best, beating {previous}.",
+                "{}, a new {best_word}, beating {previous}.",
                 points_words(run.score)
             )
         }
-        ScoreResult::Short { best } => {
-            format!("{}. Your best is {best}.", points_words(run.score))
+        Some(ScoreResult::Short { best }) => {
+            format!("{}. Your {best_word} is {best}.", points_words(run.score))
         }
     };
     let first = format!("{} {}", ended_words(run), sentence_start(&score));
@@ -817,7 +829,10 @@ impl State<Parlor> for Play {
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
-        ctx.audio.set_listener(Vec3::ZERO, 0.0);
+        // The pace is fixed for the run: a change in Settings applies from
+        // the next one.
+        self.clock = RunClock::start(ctx, ID);
+        self.hear_from_here(ctx);
         sound::pantry_bed(ctx);
         self.start_loops(ctx);
         let intro = self.intro(ctx);
@@ -838,12 +853,15 @@ impl State<Parlor> for Play {
         self.save_practice(ctx);
         self.stop_loops(ctx);
         ctx.audio.set_bed(None);
+        // The screens after this one hear from the middle again.
+        ctx.audio.set_listener(Vec3::ZERO, 0.0);
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
         if self.run.finished() {
             return;
         }
+        self.clock.reset();
         sound::pantry_bed(ctx);
         self.start_loops(ctx);
         self.held = None;
@@ -875,6 +893,7 @@ impl State<Parlor> for Play {
         ) {
             return;
         }
+        self.clock.asked_by(action);
         match action {
             Some(
                 a @ (ParlorAction::Left
@@ -895,14 +914,7 @@ impl State<Parlor> for Play {
             }
             Some(ParlorAction::Repeat) => self.repeat(ctx),
             Some(ParlorAction::Hint) => self.hint(ctx),
-            None => {
-                if let InputEvent::KeyDown { key, .. } = event {
-                    if !is_quiet_key(*key) {
-                        ctx.play_ui(UiSound::Error);
-                        ctx.say("Not a pantry key. F1 lists the controls.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 
@@ -915,9 +927,15 @@ impl State<Parlor> for Play {
             }
             return;
         }
+        // The cats and every timer run on game time: still while a line is
+        // spoken, and at the run's pace. A key pressed meanwhile moves the
+        // mouse at once; a held arrow steps on once the pantry runs. The
+        // sniff cues keep real time.
+        let game_dt = self.clock.game_dt(ctx, dt);
         self.play_ticks(ctx, dt);
-        self.hold(ctx, dt);
-        let evs = self.run.update(dt);
+        let hold_dt = if self.clock.held() { 0.0 } else { dt };
+        self.hold(ctx, hold_dt);
+        let evs = self.run.update(game_dt);
         let moved = evs.iter().any(|e| {
             matches!(
                 e,
@@ -978,13 +996,8 @@ impl State<Parlor> for Play {
             "{now} {} Each crumb is {CRUMB_POINTS} points and a cleared pantry {CLEAR_BONUS}.",
             self.controls(ctx)
         );
-        for (i, c) in self.run.cats.iter().enumerate() {
-            text.push_str(&format!(
-                " The {} has {}. {}",
-                c.name,
-                sound::cat_sound_words(i),
-                cat_rule(c.kind)
-            ));
+        for c in &self.run.cats {
+            text.push_str(&format!(" The {}: {}", c.name, cat_rule(c.kind)));
         }
         if let Some(line) = self.treat_line() {
             let left = self.treats_left_words().unwrap_or_default();

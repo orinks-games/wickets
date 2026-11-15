@@ -19,22 +19,6 @@ pub const NIGHT_NAME: &str = "stargazer_night";
 /// The meteor watch's `State::name`.
 pub const SHOWER_NAME: &str = "stargazer_shower";
 
-/// Keys a player presses for their screen reader or as a modifier, which
-/// play leaves alone.
-fn is_quiet_key(key: Key) -> bool {
-    matches!(
-        key,
-        Key::LCtrl
-            | Key::RCtrl
-            | Key::LShift
-            | Key::RShift
-            | Key::LAlt
-            | Key::RAlt
-            | Key::Insert
-            | Key::Other(_)
-    )
-}
-
 /// "22 October".
 pub fn day_words(date: Date) -> String {
     format!("{} {}", date.day, almanac::month_name(date.month))
@@ -473,23 +457,15 @@ impl State<Parlor> for NightScreen {
                 return;
             }
             None => {
-                match event {
-                    InputEvent::KeyDown {
-                        key: Key::Return | Key::KpEnter,
-                        repeat: false,
-                        ..
-                    } => {
-                        if self.home.press(ctx) {
-                            self.finish(ctx);
-                        }
+                if let InputEvent::KeyDown {
+                    key: Key::Return | Key::KpEnter,
+                    repeat: false,
+                    ..
+                } = event
+                {
+                    if self.home.press(ctx) {
+                        self.finish(ctx);
                     }
-                    InputEvent::KeyDown {
-                        key, repeat: false, ..
-                    } if !is_quiet_key(*key) => {
-                        sound::play(ctx, sound::NOTHING);
-                        ctx.say("Nothing happens. F1 lists the controls.");
-                    }
-                    _ => {}
                 }
                 return;
             }
@@ -594,7 +570,7 @@ impl ShowerScreen {
         let t = ctx.control_name(ParlorAction::Secondary);
         let s = ctx.control_name(ParlorAction::Status);
         format!(
-            "Listen for the whoosh of a shooting star. {} makes a wish while one passes. {t} tells the shower's story, {s} counts your wishes. Enter twice heads home, Escape pauses.",
+            "{} makes a wish while a shooting star passes. {t} tells the shower's story, {s} counts your wishes. Enter twice heads home, Escape pauses.",
             sentence_start(&p)
         )
     }
@@ -809,32 +785,28 @@ impl State<Parlor> for ShowerScreen {
                 let often = if self.tonight.is_peak() {
                     "every few seconds"
                 } else {
-                    "every 15 seconds or so"
+                    "now and then"
                 };
                 self.say(
                     ctx,
-                    format!("Shooting stars come {often} tonight. Press {p} during the whoosh."),
+                    format!("Shooting stars come {often} tonight. Press {p} while one passes."),
                 );
             }
             Some(_) => {
                 sound::play(ctx, sound::NOTHING);
                 self.say(ctx, "No need to move: you watch the whole sky.".to_string());
             }
-            None => match event {
-                InputEvent::KeyDown {
+            None => {
+                if let InputEvent::KeyDown {
                     key: Key::Return | Key::KpEnter,
                     ..
-                } => {
+                } = event
+                {
                     if self.home.press(ctx) {
                         self.finish(ctx);
                     }
                 }
-                InputEvent::KeyDown { key, .. } if !is_quiet_key(*key) => {
-                    sound::play(ctx, sound::NOTHING);
-                    ctx.say("Nothing happens. F1 lists the controls.");
-                }
-                _ => {}
-            },
+            }
         }
     }
 

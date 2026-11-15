@@ -45,7 +45,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Action,
-    blurb: "Bowl ten frames on lane nine after the alley closes, by ear.",
+    blurb: "Bowl ten frames on lane nine after the alley closes.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(pumpkin::event),
@@ -182,7 +182,7 @@ impl TitleGame for MidnightLanes {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear each sound you need on the lane, with its name and what it tells you.".to_string()
+        "Plays each sound you need on the lane.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

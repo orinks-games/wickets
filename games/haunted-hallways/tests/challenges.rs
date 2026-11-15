@@ -377,7 +377,7 @@ fn the_daily_briefing_states_its_floor_and_twist_on_one_page() {
     ));
     h.clear();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "haunt");
+    assert_eq!(h.app.top_name(), "haunted_hallways_haunt");
     assert!(
         spoke(&h, &format!("Floor {}: ", e.first)),
         "{:?}",
@@ -470,7 +470,7 @@ fn a_second_try_keeps_the_best_and_tomorrow_extends_the_streak() {
     t.h.press(Key::Home);
     t.h.press(Key::Return);
     t.h.press(Key::Return);
-    assert_eq!(t.h.app.top_name(), "haunt");
+    assert_eq!(t.h.app.top_name(), "haunted_hallways_haunt");
     for _ in 0..2000 {
         t.h.frame(0.5);
         if t.h.app.top_name() == "pages" {
@@ -530,7 +530,7 @@ fn the_weekly_climbs_three_floors_with_courage_carried() {
             assert!(spoke(&t.h, &format!("Floor {floor} cleared in")));
             t.h.press(Key::Return);
             assert!(spoke(&t.h, "Your courage does not refill: 3 of 3."));
-            t.read_until("haunt");
+            t.read_until("haunted_hallways_haunt");
             t.run.next_floor();
             assert!(spoke(&t.h, &format!("Floor {}", floor + 1)));
         }
@@ -638,7 +638,7 @@ fn the_launcher_opens_a_challenge_and_gets_it_back_when_finished() {
     assert_eq!(h.app.top_name(), "pages");
     assert!(spoke(&h, "Tonight's haunting:"));
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "haunt");
+    assert_eq!(h.app.top_name(), "haunted_hallways_haunt");
     let ch = Challenge::current(&h.app.ctx, ID, Period::Daily);
     let (e, seed) = Event::from_challenge(&ch);
     let mut t = Twin {
@@ -659,7 +659,7 @@ fn leaving_a_launcher_challenge_from_pause_returns_to_the_launcher() {
     h.frame(0.0);
     assert!(spoke(&h, "The midnight masquerade:"));
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "haunt");
+    assert_eq!(h.app.top_name(), "haunted_hallways_haunt");
     h.press(Key::Escape);
     h.press(Key::End);
     h.press(Key::Up); // Return to the title

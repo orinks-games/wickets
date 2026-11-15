@@ -21,9 +21,8 @@ pub struct SoundCheck {
 impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
-            menu: MenuCore::new(labels::SOUND_CHECK).with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
-            ),
+            menu: MenuCore::new(labels::SOUND_CHECK)
+                .with_intro_help("Up and Down choose a sound, Enter plays it, Escape goes back."),
             playing: None,
         }
     }
@@ -79,6 +78,7 @@ impl Menu for SoundCheck {
                 MenuItem::new(
                     label(meaning),
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        ctx.stop_speech();
                         let played = if key == sound::TITLE_MUSIC || key == sound::AMBIENCE {
                             ctx.audio.play(key, Bus::MUSIC)
                         } else if on_wall(key) {
@@ -87,7 +87,6 @@ impl Menu for SoundCheck {
                             sound::play(ctx, key)
                         };
                         s.hear(ctx, played);
-                        ctx.say(meaning);
                     },
                 )
                 .select_sound(None)
@@ -98,6 +97,7 @@ impl Menu for SoundCheck {
         }
         items.push(
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                ctx.stop_speech();
                 ctx.pop()
             })
             .help("Return to the Lamplighter title."),

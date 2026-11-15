@@ -82,7 +82,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hamlet: Live<HamletScreen>) -> Lesson {
             h.settlers
                 .iter()
                 .any(|st| st.talked_today)
-                .then(|| "A word with a settler cheers them up, and tells you what they want.".to_string())
+                .then(|| "A word with a settler cheers them up, and they say what they want.".to_string())
         },
     );
     let quiet = hamlet.clone();
@@ -96,7 +96,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hamlet: Live<HamletScreen>) -> Lesson {
     .step(water)
     .step(talk)
     .outro(format!(
-        "Settlers work on their own, at what they are best at. Each one plays an instrument in the hamlet's tune, from wherever they are working. At the end of the day the supper bell rings, and everyone eats from the larder. {} says what to do next whenever you are unsure.",
+        "Settlers work on their own, at what they are best at. At the end of the day, everyone eats supper from the larder. {} says what to do next whenever you are unsure.",
         sentence_start(&hint)
     ))
     .on_exit(move |ctx| {

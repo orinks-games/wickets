@@ -23,7 +23,7 @@ impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
             menu: MenuCore::new(labels::SOUND_CHECK).with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
+                "Up and Down choose a sound, Enter plays it, Escape goes back.",
             ),
             playing: None,
         }
@@ -63,7 +63,7 @@ fn tone_row(name: &'static str, speed: f64, meaning: &'static str) -> MenuItem<S
         let tone = sound::start_loop(ctx, sound::DESCENT_TONE, sound::TONE_VOLUME);
         ctx.audio.set_pitch(tone, tone_pitch(speed, SURVEY[0].safe));
         s.hear(ctx, tone);
-        ctx.say(meaning);
+        ctx.stop_speech();
     })
     .select_sound(None)
     .help(sentence_start(
@@ -122,7 +122,7 @@ impl Menu for SoundCheck {
                             sound::play(ctx, key)
                         };
                         s.hear(ctx, played);
-                        ctx.say(meaning);
+                        ctx.stop_speech();
                     },
                 )
                 .select_sound(None)

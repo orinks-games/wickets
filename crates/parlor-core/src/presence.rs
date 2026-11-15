@@ -5,6 +5,8 @@
 use hearken::{DiscordConfig, Presence};
 
 use crate::ParlorData;
+#[cfg(test)]
+use crate::OpenGame;
 
 /// Wicket's application on the Discord developer portal. Discord shows the
 /// application's name as the game being played. Empty keeps Discord off.
@@ -18,7 +20,7 @@ pub fn config() -> Option<DiscordConfig> {
 
 /// Outside story mode: the open game, else the lobby.
 pub fn outside_story(data: &ParlorData) -> Presence {
-    match data.open_game_name {
+    match data.open.map(|g| g.name) {
         Some(name) => Presence::new(format!("Playing {name}")),
         None => Presence::new("In the lobby"),
     }
@@ -27,7 +29,7 @@ pub fn outside_story(data: &ParlorData) -> Presence {
 /// In story mode, with the scene's game when one is open.
 pub fn in_story(data: &ParlorData) -> Presence {
     let presence = Presence::new("In story mode");
-    match data.open_game_name {
+    match data.open.map(|g| g.name) {
         Some(name) => presence.detail(format!("Playing {name}")),
         None => presence,
     }
@@ -41,7 +43,7 @@ mod tests {
     fn the_lobby_and_an_open_game() {
         let mut data = ParlorData::default();
         assert_eq!(outside_story(&data), Presence::new("In the lobby"));
-        data.open_game_name = Some("Belfry");
+        data.open = Some(OpenGame::new("belfry", "Belfry", |_| Vec::new()));
         assert_eq!(outside_story(&data), Presence::new("Playing Belfry"));
     }
 
@@ -49,7 +51,7 @@ mod tests {
     fn story_mode_names_the_scenes_game() {
         let mut data = ParlorData::default();
         assert_eq!(in_story(&data), Presence::new("In story mode"));
-        data.open_game_name = Some("Tightrope");
+        data.open = Some(OpenGame::new("tightrope", "Tightrope", |_| Vec::new()));
         assert_eq!(
             in_story(&data),
             Presence::new("In story mode").detail("Playing Tightrope")

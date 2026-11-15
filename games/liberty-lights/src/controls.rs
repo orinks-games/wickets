@@ -153,13 +153,13 @@ pub fn wheel_line(ctx: &Ctx<Parlor>, finish: bool) -> String {
 pub fn aim_line(ctx: &Ctx<Parlor>) -> String {
     if on_pad(ctx) {
         return format!(
-            "Hold {} to launch on the left, {} for the right; otherwise it goes up in the center.",
+            "Hold {} to launch on the left, {} for the right. Otherwise it goes up in the center.",
             ctx.control_name(ParlorAction::Left),
             ctx.control_name(ParlorAction::Right)
         );
     }
     format!(
-        "Hold {} or A to launch on the left, {} or D for the right; otherwise it goes up in the center.",
+        "Hold {} or A to launch on the left, {} or D for the right. Otherwise it goes up in the center.",
         ctx.control_name(ParlorAction::Left),
         ctx.control_name(ParlorAction::Right)
     )

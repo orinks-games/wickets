@@ -1,48 +1,48 @@
 ## About the game
 
-Doctor Volt's newest monster sat up on the slab and started to dance, and by midnight the whole graveyard wants to learn it. You lead the dance. The graveyard band plays, and each monster comes up with its own sound one beat before its move. Dance the move on the beat with that monster's key. Moves close to the beat score more. A song always plays to its end, and your score is what you danced.
+Doctor Volt's newest monster sat up on the slab and started to dance. By midnight the whole graveyard wants to learn it. You lead the dance. The graveyard band plays, and each monster comes up one beat before its move. Dance the move on the beat with that monster's key. Moves close to the beat score more. A song always plays to its end, and your score is what you danced.
 
 ## A Halloween special
 
-Graveyard Shuffle turns up in the Seasonal games around Halloween: from two weeks before, October 17, to the day after, November 1.
+Graveyard Shuffle turns up in the Seasonal games around Halloween, from October 17 to November 1. It stays two more weeks, through November 15, so you can catch up.
 
-Earn a star on all three songs of night 1 in that time and the game is yours to keep. After Halloween it moves to the Action games for the rest of the year. Until you keep it, it is gone from the lists after November 1, and your stars, records and challenge results wait for next Halloween.
+Start a dance or a practice in that time and the game is yours to keep, even if you leave early. After the season it moves to the Action games. Earlier play counts too, and stars still open later nights. If you never play it, it leaves the lists until next Halloween.
 
-Night 4, Doctor Volt's laboratory, is where the dance began, and it only opens around Halloween. The rest of the year, the laboratory and its three songs in the practice room wait for October 17.
+Night 4, Doctor Volt's laboratory, is where the dance began, and it only opens around Halloween. The rest of the year, the laboratory and its three songs in the practice room are locked until October 17.
 
 ## The monsters and their moves
 
-The zombie: a low groan. Its move is the drag, a foot dragged through the dirt. Dance it with the Down arrow.
+The zombie's move is the drag. Dance it with the Down arrow.
 
-The skeleton: a rattle of dry bones. Its move is the rattle, bones clacking together. Dance it with the Up arrow.
+The skeleton's move is the rattle. Dance it with the Up arrow.
 
-The mummy: a dusty moan. Its move is the unwrap, a strip of cloth tearing. Dance it with Space.
+The mummy's move is the unwrap. Dance it with Space.
 
-The vampire: a cape swishing and a hiss. Its move is the swoop, a cape whooshing past on your left. Dance it with the Left arrow. The vampire comes on night 2.
+The vampire's move is the swoop. Dance it with the Left arrow. The vampire comes on night 2.
 
-The werewolf: a short howl. Its move is the howl, claws scraping on your right. Dance it with the Right arrow.
+The werewolf's move is the howl. Dance it with the Right arrow.
 
-The ghost: a high, wavering whoo. Its move is the float, a chain clinking as it floats up. Dance it with Tab. The werewolf and the ghost come on night 3.
+The ghost's move is the float. Dance it with Tab. The werewolf and the ghost come on night 3.
 
-The first time each monster comes up in a dance, your screen reader names it and its key. A night that brings a new monster names it before the dance instead. After that, it is not named again, and F1 lists the moves. Before a dance starts, H plays every monster with its move, and each move key plays its own monster, so you can learn them with nothing at stake.
+The first time each monster comes up in a dance, the game names it and its key. A night that brings a new monster names it before the dance instead. After that, it is not named again, and F1 lists the moves. Before a dance starts, H plays every monster with its move, and each move key plays its own monster.
 
 ## The beat and timing
 
-Each song starts with four knocks on a coffin lid, then the music. A monster's sound comes one beat before its move, so listen for who comes up and dance on the next beat.
+Each song starts with four count-in beats, then the music. A monster's sound comes one beat before its move, so listen for who comes up and dance on the next beat.
 
-A move right on the beat is spot on, with a small spooky chime: 3 points. A little off the beat is good: 2 points. Further off, with a soft dull tick, is close: 1 point. Early and late count the same. A move you miss, or the wrong move, plays a thud and a clatter of bones and scores nothing.
+On the beat is spot on, worth 3 points. A little off is good, worth 2. Further off is close, worth 1. Early and late count the same. A missed or wrong move scores nothing.
 
 The first time each of these happens in a dance, a single word names it.
 
 ## Streaks and stars
 
-Every 8 moves in a row danced in time, the crowd gives three bony claps and adds 4 points. A miss or a wrong move starts the count again.
+Every 8 moves in a row danced in time, you earn 4 bonus points. A miss or a wrong move starts the count again.
 
 Each song earns stars from the share of its best points you earned: 1 star from half, 2 stars from three quarters, 3 stars from nine tenths. Streak bonuses do not count toward stars.
 
 ## The nights
 
-There are four nights of three songs, each night a little faster than the one before, and each song played through twice.
+There are four nights of three songs. Each night is a little faster than the one before. Each song plays through twice.
 
 Night 1, the graveyard gate: the zombie, the skeleton and the mummy, one monster a bar.
 
@@ -56,11 +56,11 @@ A star on every song of a night opens the next night, though night 4 opens only 
 
 ## The songs
 
-The graveyard band plays every song in a minor key, as sixties monster rock. Night 1: The Graveyard Warm-up, Boneyard Boogie and The Shallow Grave Shuffle. Night 2: The Cobweb Crawl, The Coffin Lid Clap and Drip in the Crypt. Night 3: Bat Wing Boogie, The Full Moon Stomp and The Bell Tower Bop. Night 4: Lightning Rod Rock, Off the Slab and The Graveyard Shuffle.
+Night 1: The Graveyard Warm-up, Boneyard Boogie and The Shallow Grave Shuffle. Night 2: The Cobweb Crawl, The Coffin Lid Clap and Drip in the Crypt. Night 3: Bat Wing Boogie, The Full Moon Stomp and The Bell Tower Bop. Night 4: Lightning Rod Rock, Off the Slab and The Graveyard Shuffle.
 
 ## The practice room
 
-The practice room plays one song of any night you have opened. When a move's beat comes, the song waits for you: the music holds, and the monster and its key are named. Dance the move and the song goes on. A wrong move names the right key. Nothing is scored.
+The practice room plays one song of any night you have opened. When a move's beat comes, the music holds, and the monster and its key are named. Dance the move and the song goes on. A wrong move names the right key. Nothing is scored.
 
 ## Challenges
 
@@ -76,11 +76,11 @@ Your score is every point and bonus you earn. Leave the challenge, on the pause 
 
 ## Spoken call-outs
 
-Each monster is a sound that plays with the music. With spoken call-outs on, your screen reader also names each monster as it comes up. It is off at the start. Switch it in Settings, from the title or the pause menu.
+With spoken call-outs on, the game names each monster as it comes up. It is off at the start. Switch it in Settings, from the title or the pause menu.
 
 ## Pausing
 
-Escape pauses, and the music holds. When you come back, three coffin knocks count you back in, and the song goes on where it stopped.
+Escape pauses, and the music holds. When you come back, three beats count you back in. The song goes on where it stopped.
 
 ## Controls
 
@@ -106,4 +106,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

@@ -64,7 +64,7 @@ impl ChallengeGame for Gardens {
     }
 
     fn intro_help() -> String {
-        "Up and Down choose a challenge, Enter hears its goal and twist, Escape goes back. Every player gets the same garden: a new daily each day, a weekly each Monday and a festival each month.".to_string()
+        "Up and Down choose a challenge, Enter reads its goal and twist, Escape goes back. Every player gets the same garden: a new daily each day, a weekly each Monday and a festival each month.".to_string()
     }
 }
 
@@ -164,17 +164,17 @@ impl Menu for SeedShed {
     fn build_items(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
         let saved: Option<Garden> = parlor_core::Records::load(ctx, GARDEN_KEY);
         let harvests = saved.as_ref().map_or(0, |g| g.harvests);
+        let chorus = saved.as_ref().map_or(0, |g| g.chorus);
+        let book = load_collection(ctx);
         let mut items = Vec::new();
         for s in Species::ALL {
-            let open = harvests >= s.unlock_at();
-            let label = if open {
+            let label = if s.open(harvests, chorus, &book) {
                 format!("{}: sings {}", sentence(s.name()), s.voice())
             } else {
-                let n = s.unlock_at() - harvests;
                 format!(
-                    "{}: locked, {n} more {} to unlock",
+                    "{}: locked, {}",
                     sentence(s.name()),
-                    if n == 1 { "harvest" } else { "harvests" }
+                    s.still_needed(harvests, &book)
                 )
             };
             let tip = s.tip().to_string();
@@ -200,7 +200,6 @@ impl Menu for SeedShed {
                 .help(tip),
             );
         }
-        let book = load_collection(ctx);
         items.push(
             MenuItem::new(
                 format!(
@@ -451,7 +450,7 @@ impl SoundCheck {
     pub fn new() -> SoundCheck {
         SoundCheck {
             menu: MenuCore::new(labels::SOUND_CHECK).with_intro_help(
-                "Up and Down move through the sounds you need in play. Enter plays the one you are on and says what it means. Escape goes back.",
+                "Up and Down move through the sounds you need in play. Enter plays the selected sound. Escape goes back.",
             ),
             preview: Preview::None,
         }
@@ -469,14 +468,11 @@ impl SoundCheck {
         let entry = &SOUND_CHECK[index];
         match entry.play {
             Play::Once => {
-                ctx.say(format!("{}. {}", entry.name, entry.meaning));
+                ctx.stop_speech();
                 ctx.audio.play(entry.key, Bus::EFFECTS);
             }
             Play::Sides => {
-                ctx.say(format!(
-                    "{}. {} From your left, then your right.",
-                    entry.name, entry.meaning
-                ));
+                ctx.stop_speech();
                 ctx.audio
                     .play_at(entry.key, Vec3::new(-4.0, 1.0, 0.0), Bus::EFFECTS);
                 self.preview = Preview::Sides {
@@ -485,7 +481,7 @@ impl SoundCheck {
                 };
             }
             Play::Loop => {
-                ctx.say(format!("{}. {}", entry.name, entry.meaning));
+                ctx.stop_speech();
                 let sound =
                     ctx.audio
                         .start_loop(entry.key, Some(Vec3::new(0.0, 2.0, 0.0)), Bus::EFFECTS);
@@ -495,7 +491,7 @@ impl SoundCheck {
                 };
             }
             Play::Music => {
-                ctx.say(format!("{}. {}", entry.name, entry.meaning));
+                ctx.stop_speech();
                 let sound = ctx.audio.start_loop(entry.key, None, Bus::MUSIC);
                 self.preview = Preview::Held {
                     sound,

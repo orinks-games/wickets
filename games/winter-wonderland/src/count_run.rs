@@ -4,8 +4,7 @@ use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, InputEvent, Key, State};
 use parlor_core::{Parlor, ParlorAction};
 
-use crate::challenge;
-use crate::mode::{story_ending, Mode};
+use crate::mode::Mode;
 use crate::night::{describe_call, Inst, Intro, Night, NightEvent, Stage, NIGHTS, PHRASES};
 use crate::progress::{self, Progress};
 use crate::sound::{self, cue, stinger};
@@ -58,14 +57,6 @@ impl CountRun {
         }
     }
 
-    /// The challenge's twist, when it changes the night: " Today's twist...".
-    fn twist_text(&self) -> String {
-        match self.mode.plan() {
-            Some(plan) if !plan.twists_gifts() => format!(" {}", plan.twist_line()),
-            _ => String::new(),
-        }
-    }
-
     /// The fanfare at midnight.
     fn fanfare(&self) -> &'static str {
         sound::WIN
@@ -83,16 +74,15 @@ impl CountRun {
         let primary = ctx.control_name(ParlorAction::Primary);
         match intro {
             Intro::Bells if self.night.gala => format!(
-                "Midnight Countdown: {}. Ten minutes to midnight, and the full orchestra is here from the first call. The band plays a one-bar call; answer it in the next bar, on the same beats. Bells are {primary}, the deep drum boom is {}, the bright horn blast is {}. A soft clock ticks every beat, with a lower tock at the start of each bar. The party starts at full energy; misses drain it. Press {primary} to start. A bar of ticks counts you in.",
+                "Midnight Countdown: {}. Ten minutes to midnight, and the full orchestra is here from the first call. The band plays a one-bar call; answer it in the next bar, on the same beats. Bells are {primary}, the drum is {}, the horn is {}. The party starts at full energy; misses drain it. Press {primary} to start. A bar counts you in.",
                 self.night.spec.name,
                 Self::key(ctx, Inst::Drum),
                 Self::key(ctx, Inst::Horn)
             ),
             Intro::Bells if self.mode == Mode::Free && self.night.spec.level > 1 => format!(
-                "Night {}: {}.{} {} starts.",
+                "Night {}: {}. {} starts.",
                 self.night.spec.level,
                 self.night.spec.name,
-                self.twist_text(),
                 sentence_start(&primary)
             ),
             Intro::Bells => {
@@ -102,18 +92,17 @@ impl CountRun {
                     ""
                 };
                 format!(
-                    "Midnight Countdown, night {}: {}. Ten minutes to midnight. The band plays a one-bar call on bells; answer it in the next bar, on the same beats, with {primary}. A soft clock ticks every beat, with a lower tock at the start of each bar. Good answers lift the party's energy; misses drain it.{practice}{} Press {primary} to start. A bar of ticks counts you in.",
+                    "Midnight Countdown, night {}: {}. Ten minutes to midnight. The band plays a one-bar call on bells; answer it in the next bar, on the same beats, with {primary}. Good answers lift the party's energy; misses drain it.{practice} Press {primary} to start. A bar counts you in.",
                     self.night.spec.level,
-                    self.night.spec.name,
-                    self.twist_text()
+                    self.night.spec.name
                 )
             }
             Intro::Drums => format!(
-                "Seven minutes to midnight. The drums join in: a deep boom. Answer a drum with {}. Bells are still {primary}. Press {primary} to play on.",
+                "Seven minutes to midnight. The drums join in. Answer a drum with {}. Bells are still {primary}. Press {primary} to play on.",
                 Self::key(ctx, Inst::Drum)
             ),
             Intro::Horns => format!(
-                "Four minutes to midnight. The horns join in: a bright brass blast. Answer a horn with {}. Press {primary} to play on.",
+                "Four minutes to midnight. The horns join in. Answer a horn with {}. Press {primary} to play on.",
                 Self::key(ctx, Inst::Horn)
             ),
             Intro::Orchestra => format!(
@@ -155,7 +144,7 @@ impl CountRun {
     }
 
     fn play(&mut self, ctx: &mut Ctx<Parlor>, inst: Inst) {
-        ctx.audio.play(sound::inst(inst), Bus::EFFECTS);
+        ctx.audio.play(sound::inst(inst), Bus::MUSIC);
         let events = self.night.press(inst);
         self.after(ctx, events);
     }
@@ -178,7 +167,7 @@ impl CountRun {
                 }
             }
             NightEvent::Call(inst) => {
-                ctx.audio.play(sound::inst(inst), Bus::EFFECTS);
+                ctx.audio.play(sound::inst(inst), Bus::MUSIC);
             }
             NightEvent::Hit { .. } => {}
             NightEvent::Wrong { .. } => {
@@ -242,6 +231,7 @@ impl CountRun {
     }
 
     fn finish(&mut self, ctx: &mut Ctx<Parlor>, won: bool) {
+        parlor_core::songs::end(ctx, crate::ID);
         let n = &self.night;
         let level = n.spec.level;
         let score = n.score;
@@ -269,42 +259,6 @@ impl CountRun {
             format!("The party fizzled out {at}.")
         };
         match self.mode.clone() {
-            Mode::Story { blizzard, gifts } => {
-                let total = gifts + score;
-                let board = if blizzard {
-                    progress::BLIZZARD_BOARD
-                } else {
-                    progress::STORY_BOARD
-                };
-                let line = progress::record(ctx, board, total);
-                let mut pages = Vec::new();
-                if won {
-                    pages.push(story_ending());
-                    let opened = !blizzard && Progress::mark(ctx, |p| &mut p.story);
-                    let extra = if opened {
-                        " The blizzard story is now open on the title."
-                    } else {
-                        ""
-                    };
-                    pages.push(format!(
-                        "Gift Sort {gifts} plus Midnight Countdown {score}: story score {total}. {stats} {line}{extra}"
-                    ));
-                } else {
-                    pages.push(format!(
-                        "{head} The story ends before midnight this year. Gift Sort {gifts} plus Midnight Countdown {score}: story score {total}. {line}"
-                    ));
-                }
-                let summary = if won {
-                    format!("Happy New Year. Story score {total}")
-                } else {
-                    format!("The party fizzled. Story score {total}")
-                };
-                results::show(
-                    ctx,
-                    pages.clone(),
-                    results::story(blizzard, won, summary, pages),
-                );
-            }
             Mode::Practice => {
                 let pages = vec![format!(
                     "{head} Practice score {score}. {stats} Nothing is saved from practice."
@@ -316,27 +270,7 @@ impl CountRun {
                     results::countdown(level, true, won, summary, pages),
                 );
             }
-            Mode::Challenge { plan, gifts } => {
-                let total = gifts + score;
-                let parts = if gifts > 0 || plan.part == challenge::Part::Double {
-                    format!("Gift Sort {gifts} plus Midnight Countdown {score}. ")
-                } else {
-                    String::new()
-                };
-                let line = challenge::result_line(ctx, &plan, total);
-                let pages = vec![format!("{head} {stats} {parts}{line}")];
-                let summary = if won {
-                    format!("Midnight. Score {total}")
-                } else {
-                    format!("The party fizzled. Score {total}")
-                };
-                results::show(
-                    ctx,
-                    pages.clone(),
-                    results::challenge(&plan, summary, pages),
-                );
-            }
-            Mode::Free => {
+            _ => {
                 let line = progress::record(ctx, progress::COUNT_BOARD, score);
                 progress::record(ctx, &progress::night_board(level), score);
                 let mut extra = String::new();
@@ -393,15 +327,20 @@ impl State<Parlor> for CountRun {
     }
 
     fn name(&self) -> &'static str {
-        "countdown"
+        "winter_wonderland_countdown"
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         ctx.audio.play_music(None, false);
+        parlor_core::songs::begin(ctx);
         if let Stage::Waiting(intro) = self.night.stage {
             let text = self.intro_text(ctx, intro);
             ctx.say(text);
         }
+    }
+
+    fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
+        parlor_core::songs::end(ctx, crate::ID);
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -472,10 +411,10 @@ impl State<Parlor> for CountRun {
                     ctx.say(m);
                 }
                 ParlorAction::Down => {
-                    ctx.audio.play(sound::inst(Inst::Drum), Bus::EFFECTS);
+                    ctx.audio.play(sound::inst(Inst::Drum), Bus::MUSIC);
                 }
                 ParlorAction::Up => {
-                    ctx.audio.play(sound::inst(Inst::Horn), Bus::EFFECTS);
+                    ctx.audio.play(sound::inst(Inst::Horn), Bus::MUSIC);
                 }
                 ParlorAction::Left | ParlorAction::Right => {
                     cue(ctx, sound::STRAY);
@@ -542,7 +481,7 @@ impl State<Parlor> for CountRun {
     fn help(&self, ctx: &Ctx<Parlor>) -> String {
         let n = |a| ctx.control_name(a);
         if self.celebrating.is_some() {
-            return "Midnight. The bells, champagne and fireworks are playing. Press any key to skip to the results.".to_string();
+            return "Midnight, and the town is celebrating. Press any key to skip to the results.".to_string();
         }
         match self.night.stage {
             Stage::Waiting(_) => format!(
@@ -555,7 +494,7 @@ impl State<Parlor> for CountRun {
                 n(ParlorAction::Up)
             ),
             _ => format!(
-                "Midnight Countdown. Listen to the band's call, then answer it in the next bar on the same beats. {} plays the bell, {} the drum, {} the horn. {} says the last call in words, {} speaks the time, energy and combo. Escape pauses.",
+                "Midnight Countdown. After the band's call, answer it in the next bar on the same beats. {} plays the bell, {} the drum, {} the horn. {} says the last call in words, {} speaks the time, energy and combo. Escape pauses.",
                 sentence_start(&n(ParlorAction::Primary)),
                 n(ParlorAction::Down),
                 n(ParlorAction::Up),

@@ -20,7 +20,7 @@ impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
             menu: MenuCore::new("Sound check").with_intro_help(
-                "Each row plays one sound of the kitchen when you press Enter, from where you would hear it in the game. Cooking sounds play for a few seconds. In the kitchen, the number keys 1 to 5 jump to these stations from left to right: they belong to this game alone. Escape goes back.",
+                "Each row plays one sound of the kitchen when you press Enter, from its place in the kitchen. Cooking sounds play for a few seconds. In the kitchen, the number keys 1 to 5 jump to these stations from left to right: they belong to this game alone. Escape goes back.",
             ),
             preview: Sound::NONE,
             left: 0.0,
@@ -36,6 +36,7 @@ impl SoundCheck {
     }
 
     fn preview(&mut self, ctx: &mut Ctx<Parlor>, key: &str, station: Station) {
+        ctx.stop_speech();
         self.stop(ctx);
         self.preview = ctx
             .audio
@@ -70,6 +71,7 @@ fn placed(
     help: &str,
 ) -> MenuItem<SoundCheck, Parlor> {
     MenuItem::new(label, move |s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
+        ctx.stop_speech();
         s.stop(ctx);
         sound::at(ctx, key, station);
     })
@@ -79,6 +81,7 @@ fn placed(
 
 fn plain(label: &str, key: &'static str, bus: Bus, help: &str) -> MenuItem<SoundCheck, Parlor> {
     MenuItem::new(label, move |s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
+        ctx.stop_speech();
         s.stop(ctx);
         ctx.audio.play(key, bus);
     })
@@ -116,7 +119,7 @@ impl Menu for SoundCheck {
     type Game = Parlor;
 
     fn name(&self) -> &'static str {
-        "sound_check"
+        "harvest_feast_sounds"
     }
 
     fn menu(&self) -> &MenuCore<Self, Parlor> {
@@ -133,6 +136,7 @@ impl Menu for SoundCheck {
     }
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
+        ctx.stop_speech();
         self.stop(ctx);
     }
 

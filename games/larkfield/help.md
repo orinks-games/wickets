@@ -4,23 +4,23 @@ Larkfield is an empty hamlet by a river, and you are its first farmer. Dig and s
 
 ## Walking the lane
 
-Larkfield is one lane. From left to right: the gate, the cottages, the green, the fields, the yard, the river and the woods. Left and Right walk the lane. Up goes into the place you are beside, and Down comes back out to the lane. Inside a place, Left and Right move between its spots, such as the hen house and the goat pen at the cottages. Each step tells you where you are.
+Larkfield is one lane. From left to right: the gate, the cottages, the green, the fields, the yard, the river and the woods. Left and Right walk the lane. Up goes into the place you are beside. Down comes back out to the lane. Inside a place, Left and Right move between its spots, such as the hen house and the goat pen at the cottages. Each step names where you are.
 
-You hear from where you stand. Gravel underfoot means the lane, soft grass means inside a place, and soft earth means the fields. The river runs to your right until you reach it.
+Sounds come from their positions relative to where you stand. Sound check, on the title menu, lets you learn the footsteps, fishing cues, dangers and settlers' instruments.
 
 ## The fields
 
-The fields are three rows of four plots. Up goes a row further in, and Down a row back toward the lane. On a plot, Space does what it needs: dig rough ground, sow a dug plot, water a growing crop, or harvest a ripe one. Tab pulls weeds.
+The fields are three rows of four plots. Up goes a row further in. Down goes a row back toward the lane. On a plot, Space does what it needs: dig rough ground, sow a dug plot, water a growing crop, or harvest a ripe one. Tab pulls weeds.
 
 Each night, a watered crop with no weeds makes one day of growth. Rain waters every plot for you. A crop sown out of its season grows slowly. A crop that is finished keeps a seed back for the next sowing, and some crops, such as peas and strawberries, crop again without sowing. Once the well is built, settlers water the fields too.
 
 ## Settlers
 
-Settlers arrive at the gate. Go to the gate and press Enter to hear who they are, then welcome them or send them on. Each one was something before, such as a baker or a sailor, and is best at that trade's work. Each has two traits, such as early riser or sweet tooth, which change how they work and what cheers them.
+Settlers arrive at the gate. Go to the gate and press Enter to meet them, then welcome them or send them on. Each one was something before, such as a baker or a sailor, and is best at that trade's work. Each has two traits, such as early riser or sweet tooth, which change how they work and what cheers them.
 
 Settlers choose their own work: farming, cooking, building, crafting, animals, fishing, mending or music. J opens the job board, where Left and Right give a settler a first job. When there is none of that work, they find something else.
 
-Enter talks to whoever is where you stand. A word cheers someone up, and they tell you what they want. P tells you about everyone: their traits, what they are best at, how they feel and why.
+Enter talks to whoever is where you stand. A word cheers someone up, and they tell you what they want. P describes everyone: their traits, what they are best at, how they feel and why.
 
 ## Moods and wobbles
 
@@ -32,11 +32,11 @@ At the steady and lively paces, a settler who stays glum much longer may leave f
 
 ## Dreams and keepsakes
 
-Every settler has a dream in three steps, such as a proper oven or a boat on the river. Each step waits for something: a building, goods in the larder, enough people, a festival, or a cheerful day. When a step comes true, you hear it at bedtime. When the third does, they leave a keepsake on your shelf. The keepsake shelf is on the title menu.
+Every settler has a dream in three steps, such as a proper oven or a boat on the river. Each step needs something: a building, goods in the larder, enough people, a festival, or a cheerful day. When a step comes true, it is in the bedtime news. When the third does, they leave a keepsake on your shelf. The keepsake shelf is on the title menu.
 
 ## Buildings
 
-There are eight buildings, on the green and in the yard. Walk to a free spot and press Space to hear what goes there and what it costs in wood, stone and coins. The materials are used when you start, and settlers on building jobs put it up. Space at a building site hammers too. One building goes up at a time.
+There are eight buildings, on the green and in the yard. Walk to a free spot and press Space to hear what goes there and what it costs in wood, stone and coins. The materials are used when you start, and settlers on building jobs put it up. Space hammers at a building site too. One building goes up at a time.
 
 The mill grinds grain into flour, and the bakery bakes it into bread, or into pies with fruit. The smokehouse keeps fish, the workshop makes furniture for the cottages, and the dairy makes cheese from the goat's milk. The well waters the fields. The inn brings visitors, and the bandstand puts music on the green after supper.
 
@@ -44,17 +44,17 @@ Wood comes from the fallen trees in the woods, and stone from the old quarry. Sp
 
 ## The barge
 
-The barge comes to the river dock every third day. Press Space at the dock to trade. It buys from the larder, and sells seeds, nails, hens and a goat. Seeds for the season are the cheapest way to fill the fields.
+The barge comes to the river dock every third day. Space trades at the dock. It buys from the larder, and sells seeds, nails, hens and a goat. Seeds for the season are the cheapest way to fill the fields.
 
 ## Food and supper
 
-Everyone eats from the larder at supper, when the bell rings at the end of the day. A supper of two or more good things lifts everyone's mood; a thin one lowers it, and the next village sends bread over. Choose who to sit with: they are glad of the company. Then the day's news, and bed.
+Everyone eats from the larder at supper, when the bell rings at the end of the day. A supper of two or more good things lifts everyone's mood. A thin one lowers it, and the next village sends bread over. Choose who to sit with: they are glad of the company. Then comes the day's news, and you go to bed.
 
 S says how many days of food are in the larder. Fish at the river, forage in the woods, gather eggs and harvest the fields to keep it full.
 
 ## Fishing
 
-At the river's fishing spot, Space casts the line: a swish and a plop. Wait. A bite is a sharp tug and a little bell. Press Space at once to reel it in, or it gets away.
+At the river's fishing spot, Space casts the line. Wait for a bite, then press Space at once to reel it in before the fish gets away.
 
 ## The almanac and troubles
 
@@ -66,9 +66,9 @@ The pace in Settings sets how often all this happens. Gentle has few troubles, m
 
 At the steady and lively paces, your own hamlet has dangers. Each costs something if nobody deals with it, but what is lost can be won back. S and H put a danger first.
 
-A fire crackles, with a bell rung, at one of the buildings. Space there throws a bucket of water, and it takes several. Settlers on building jobs help. Left too long, it burns through, and the building makes nothing until Space there repairs it with 3 wood.
+A fire can start at one of the buildings. Space there throws a bucket of water, and it takes several. Settlers on building jobs help. Left too long, it burns through, and the building makes nothing until Space there repairs it with 3 wood.
 
-A fox yelps at the hen house, by the cottages. Space or Tab there chases it off. Be quick, or it takes a hen.
+A fox can reach the hen house, by the cottages. Space or Tab there chases it off. Be quick, or it takes a hen.
 
 After rain in spring and autumn, the river can rise. Space at the dock piles 2 stone along the bank. If it is not done by supper, the far row of the fields is washed out, and needs sowing again.
 
@@ -82,7 +82,7 @@ A year is four seasons of ten days: spring, summer, autumn and winter. Each seas
 
 ## The hamlet's tune
 
-The guitar under everything is you. Every settler plays an instrument in the hamlet's tune, by the order they arrived: the fiddle, the flute, the accordion, the harp, the cello and the clarinet. Each plays from wherever they are working, so you can hear who is where. A cheerful settler plays out. A glum one plays softly, and only now and then. The sound check on the title menu plays each instrument.
+Each settler has an instrument in the hamlet's tune, assigned in arrival order. It plays from their workplace and changes with their mood. Sound check, on the title menu, lets you learn each settler's instrument.
 
 ## Challenges
 
@@ -102,11 +102,11 @@ On the third Tuesday of every month there is a barge fair: the barge comes every
 
 ## Settings
 
-Pace sets how busy the almanac is, whether there are dangers, and whether glum settlers leave. Day length sets how long a day lasts from the morning to the supper bell. The settlers' tune can be turned off, leaving only the birds and the river. Work from along the lane can be turned off too, so you only hear work where you stand.
+Pace sets how busy the almanac is, whether there are dangers, and whether glum settlers leave. Day length sets how long a day lasts from the morning to the supper bell. The settlers' tune can be turned off, leaving only the birds and the river. Work from along the lane can be turned off too, so only the work where you stand plays.
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Left and Right: walk the lane, or move inside a place.
 - Up: go into a place, or a row further into the fields.
@@ -114,10 +114,10 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - Space: the job in front of you: dig, sow, water, harvest, chop, fish, build or trade.
 - Tab: pull weeds, or feed the hens or the goat.
 - Enter: talk to whoever is here.
-- J: the job board.
+- J: open the job board.
 - L: list what is around you.
 - P: everyone in Larkfield, a page each.
 - S: what needs attention and how many days of food you have. Press it again straight away for the day and your stores, and once more for everyone's mood and work.
-- H: what to do next.
+- H: say what to do next.
 - R: repeat the last line.
 - Escape: pause.

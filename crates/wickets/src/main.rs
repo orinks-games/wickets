@@ -8,6 +8,9 @@ fn main() {
     // Check the computer's clock against a time server, so dated events
     // and challenges follow the real date. Never blocks start-up.
     hearken::clock::sync_in_background();
+    // The internet date that lets a holiday special be found (see
+    // discovery_clock). Never blocks either.
+    wickets::discovery_clock::request();
     std::process::exit(hearken::run::<parlor_core::Parlor>(
         Default::default(),
         || Box::new(wickets::Lobby::new()),

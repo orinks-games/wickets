@@ -3,7 +3,7 @@ resolver = "2"
 members = ["crates/*", "extras/*", "games/*"]
 
 [workspace.package]
-version = "1.6.0"
+version = "1.7.0"
 edition = "2021"
 rust-version = "1.95"
 repository = "https://github.com/orinks-games/echo-parlor"
@@ -21,8 +21,8 @@ log = "0.4"
 # against a local checkout, add to .cargo/config.toml (or ~/.cargo/config.toml):
 #   [patch."https://github.com/orinks-games/hearken"]
 #   hearken = { path = "../hearken/crates/hearken" }
-hearken = { git = "https://github.com/orinks-games/hearken", rev = "9f18517da21fcdec7fdb11cef69737cdede2a86b", features = ["visuals", "online"] }
-hearken-replay = { git = "https://github.com/orinks-games/hearken", rev = "9f18517da21fcdec7fdb11cef69737cdede2a86b" }
+hearken = { git = "https://github.com/orinks-games/hearken", rev = "c6ef7b83c5706f79d4ea3a8d2d70fcb3f3b58856", features = ["visuals", "online", "report"] }
+hearken-replay = { git = "https://github.com/orinks-games/hearken", rev = "c6ef7b83c5706f79d4ea3a8d2d70fcb3f3b58856" }
 parlor-core = { path = "crates/parlor-core" }
 wickets-rules = { path = "crates/wickets-rules" }
 

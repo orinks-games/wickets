@@ -108,7 +108,7 @@ fn the_tutorial_teaches_in_the_practice_room() {
         "the lesson dances all three monsters"
     );
     assert!(spoke(&h, "Here comes the band."));
-    assert!(spoke(&h, "spot on, with a spooky chime, for 3 points."));
+    assert!(spoke(&h, "spot on, for 3 points."));
     assert!(spoke(&h, "Now one in time"));
     assert!(spoke(&h, "In time. Tutorial done."));
     assert!(
@@ -214,7 +214,7 @@ fn the_dance_counts_in_plays_the_tune_and_calls_each_step() {
     let (mut h, mut twin) = floor(Mode::Set(1));
     h.clear();
     start(&mut h, &mut twin);
-    assert!(spoke(&h, "Here we go. Four knocks in."));
+    assert!(spoke(&h, "Here we go. Four beats in."));
     let evs = wait(&mut h, &mut twin, 4.0);
     assert_eq!(played_count(&h, sound::COUNT), 4);
     let first = SONGS[0].part_key(false);
@@ -331,11 +331,11 @@ fn repeat_and_hint_name_the_calls() {
 }
 
 #[test]
-fn an_unknown_key_says_so() {
+fn an_unknown_key_stays_silent() {
     let (mut h, _) = floor(Mode::Set(1));
     h.clear();
     h.press(Key::Q);
-    assert_eq!(h.spoken(), ["Not a dance key. F1 lists the controls."]);
+    assert!(h.spoken().is_empty(), "{:?}", h.spoken());
 }
 
 #[test]
@@ -349,7 +349,7 @@ fn pausing_counts_back_in_on_three_beats() {
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), PLAY_NAME);
     twin.count_in();
-    assert!(spoke(&h, "Back on the floor. Three knocks in."));
+    assert!(spoke(&h, "Back on the floor. Three beats in."));
     let before = twin.dance.now();
     wait(&mut h, &mut twin, 2.5);
     assert_eq!(played_count(&h, sound::COUNT), 3);
@@ -458,7 +458,7 @@ fn the_practice_room_waits_and_names_the_key() {
     let (mut h, mut twin) = floor(Mode::Practice(1));
     assert!(spoke(
         &h,
-        "The song waits for each monster until you dance its move."
+        "The music holds for each monster until you dance its move."
     ));
     start(&mut h, &mut twin);
     while twin.dance.waiting().is_none() {
@@ -498,6 +498,7 @@ fn spoken_call_outs_speak_each_call() {
     let mut h = title();
     goto(&mut h, "Settings");
     h.press(Key::Return);
+    h.press(Key::Return); // the game's own category
     goto(&mut h, "Spoken call-outs");
     h.clear();
     h.press(Key::Return);
@@ -524,19 +525,21 @@ fn the_sound_check_plays_every_row() {
     assert_eq!(h.app.top_name(), SOUNDS_NAME);
     let n = rows(&h).len();
     assert_eq!(rows(&h)[0], "Zombie");
+    assert!(!rows(&h).iter().any(|row| row == "A song"));
     assert_eq!(rows(&h).last().map(String::as_str), Some("Back"));
     h.press(Key::Home);
     for _ in 0..n - 1 {
         h.clear();
         h.press(Key::Return);
         assert!(!h.played().is_empty(), "{}", cursor_row(&h));
-        assert!(!h.spoken().is_empty(), "{}", cursor_row(&h));
+        assert!(h.spoken().is_empty(), "{}", cursor_row(&h));
         h.press(Key::Down);
     }
-    h.clear();
     h.press(Key::Home);
+    h.clear();
     h.press(Key::Return);
-    assert!(spoke(&h, "Zombie: a low groan, then its move, the drag"));
+    assert!(h.spoken().is_empty());
+    assert!(!h.played().is_empty());
     h.press(Key::End);
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), TITLE_NAME);
@@ -664,5 +667,5 @@ fn help_mid_dance_pauses_the_song_and_names_only_this_nights_monsters() {
     assert!(!spoke(&h, "vampire"));
     read_pages(&mut h);
     assert_eq!(h.app.top_name(), PLAY_NAME);
-    assert!(spoke(&h, "Back on the floor. Three knocks in."));
+    assert!(spoke(&h, "Back on the floor. Three beats in."));
 }

@@ -1,7 +1,9 @@
-//! The title, on the shared `parlor_core::menus::Title`: the story, both
-//! parts, the challenges and rhythm practice, then the shared rows.
+//! The title, on the shared `parlor_core::menus::Title`: the story, Gift
+//! Sort, the Wish Desk and Muddled post, Midnight Countdown, the
+//! challenges and rhythm practice, then the shared rows.
 
 use hearken::menu::{Label, MenuItem};
+use hearken::screens::SettingsRow;
 use hearken::text::end_sentence;
 use hearken::Ctx;
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
@@ -9,6 +11,9 @@ use parlor_core::{Challenge, Challenges, Pages, Parlor, Period};
 
 use crate::challenge::ChallengesMenu;
 use crate::count_run::CountRun;
+use crate::desk::STACKS;
+use crate::desk_run::DeskRun;
+use crate::events;
 use crate::gifts::SHIFTS;
 use crate::mode::{story_intro, Mode};
 use crate::night::{NightSpec, NIGHTS};
@@ -25,6 +30,8 @@ pub struct Winter {
     pub shift: u32,
     /// The night Midnight Countdown and rhythm practice play.
     pub night: u32,
+    /// The stack the Wish Desk plays.
+    pub stack: u32,
     progress: Progress,
 }
 
@@ -33,6 +40,7 @@ impl Default for Winter {
         Winter {
             shift: 1,
             night: 1,
+            stack: 1,
             progress: Progress::default(),
         }
     }
@@ -75,12 +83,26 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         "locked".to_string()
     };
     let gifts = best_words(ctx, progress::GIFT_BOARD);
+    let desk = best_words(ctx, progress::DESK_BOARD);
+    let muddled = best_words(ctx, events::MUDDLED_BOARD);
     let count = best_words(ctx, progress::COUNT_BOARD);
     let mut pages = vec![format!(
-        "Records. Story mode: {story}. Blizzard story: {blizzard}. Gift Sort: {gifts}, {} of {SHIFTS} shifts open. Midnight Countdown: {count}, {} of {NIGHTS} nights open.",
+        "Records. Story mode: {story}. Blizzard story: {blizzard}. Gift Sort: {gifts}, {} of {SHIFTS} shifts open. Wish Desk: {desk}, {} of {STACKS} stacks open. Muddled post: {muddled}. Midnight Countdown: {count}, {} of {NIGHTS} nights open.",
         p.shifts_open(),
+        p.stacks_open(),
         p.nights_open()
     )];
+    let stacks: Vec<String> = (1..=STACKS)
+        .map(|n| {
+            let best = if n <= p.stacks_open() {
+                best_words(ctx, &progress::stack_board(n))
+            } else {
+                "locked".to_string()
+            };
+            format!("Stack {n}: {best}.")
+        })
+        .collect();
+    pages.push(format!("Wish Desk by stack. {}", stacks.join(" ")));
     let nights: Vec<String> = (1..=NIGHTS)
         .map(|n| {
             let best = if n <= p.nights_open() {
@@ -113,10 +135,46 @@ impl TitleGame for Winter {
         ctx.audio.play_music(Some(sound::TITLE_MUSIC), true);
     }
 
+    /// Pace sets Gift Sort's clocks; the desk has none and Midnight
+    /// Countdown keeps the band's beat.
+    fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
+        vec![parlor_core::pace::row_for(ID, "Gift Sort")]
+    }
+
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
         self.progress = Progress::load(ctx);
         self.shift = self.shift.clamp(1, self.progress.shifts_open());
         self.night = self.night.clamp(1, self.progress.nights_open());
+        self.stack = self.stack.clamp(1, self.progress.stacks_open());
+        let stacks: Vec<String> = (1..=STACKS)
+            .map(|n| best_words(ctx, &progress::stack_board(n)))
+            .collect();
+        let today = parlor_core::challenges::today(ctx);
+        let muddled_best = parlor_core::pace::best(ctx, ID, events::MUDDLED_BOARD);
+        let muddled_row = if events::muddled(today) {
+            MenuItem::new(
+                events::MUDDLED_NAME,
+                |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(DeskRun::new(Mode::Muddled, 1)),
+            )
+            .help(events::muddled_help(muddled_best))
+        } else {
+            // Closed today: the row keeps its place and says when it opens.
+            MenuItem::new(
+                labels::locked(events::MUDDLED_NAME),
+                |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
+                    let today = parlor_core::challenges::today(ctx);
+                    ctx.play_ui(hearken::UiSound::Error);
+                    ctx.say(events::muddled_locked_line(today))
+                },
+            )
+            .select_sound(None)
+            .help(events::muddled_locked_help(today, muddled_best))
+        };
+        let late = if events::late_post_due(ctx) {
+            " Late post tonight: two more letters after your next stack."
+        } else {
+            ""
+        };
         let story = best_words(ctx, progress::STORY_BOARD);
         let blizzard = best_words(ctx, progress::BLIZZARD_BOARD);
         let gifts = best_words(ctx, progress::GIFT_BOARD);
@@ -129,7 +187,7 @@ impl TitleGame for Winter {
                 format!("Blizzard story, {blizzard}"),
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(story_briefing(true)),
             )
-            .help("The story again, harder: shifts 4 to 6, then the village square.")
+            .help("The story again, harder: shifts 4 to 6, then a bigger stack at the desk.")
         } else {
             MenuItem::new(
                 labels::locked("Blizzard story"),
@@ -145,7 +203,7 @@ impl TitleGame for Winter {
                 format!("{}, story mode, {story}", labels::PLAY),
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(story_briefing(false)),
             )
-            .help("Three Gift Sort shifts, then a night of Midnight Countdown, scored together."),
+            .help("Three Gift Sort shifts, then a stack of letters at the Wish Desk, scored together."),
             blizzard_row,
             MenuItem::new(
                 Label::dynamic(move |s: &Title, _| {
@@ -160,8 +218,32 @@ impl TitleGame for Winter {
                 s.game.shift = (s.game.shift as i32 + delta).clamp(1, open) as u32;
             })
             .help(format!(
-                "Sort gifts by their sound, shift after shift, up to shift {SHIFTS}. Left and Right choose the starting shift once later shifts are open."
+                "Sort shaken gifts, shift after shift, up to shift {SHIFTS}. Left and Right choose the starting shift once later shifts are open."
             )),
+            MenuItem::new(
+                Label::dynamic(move |s: &Title, _| {
+                    let best = stacks
+                        .get(s.game.stack as usize - 1)
+                        .cloned()
+                        .unwrap_or_default();
+                    format!(
+                        "Wish Desk, stack {}, {} open, {best}",
+                        s.game.stack,
+                        s.game.progress.stacks_open()
+                    )
+                }),
+                |s: &mut Title, ctx: &mut Ctx<Parlor>| {
+                    ctx.push(DeskRun::new(Mode::Free, s.game.stack))
+                },
+            )
+            .adjustable(|s: &mut Title, _ctx: &mut Ctx<Parlor>, delta: i32| {
+                let open = s.game.progress.stacks_open() as i32;
+                s.game.stack = (s.game.stack as i32 + delta).clamp(1, open) as u32;
+            })
+            .help(format!(
+                "Read children's letters, find each gift on the shelf by shaking, and wrap it. No clock. Left and Right choose the stack, up to {STACKS}.{late}"
+            )),
+            muddled_row,
             MenuItem::new(
                 Label::dynamic(move |s: &Title, _| {
                     let best = nights
@@ -184,7 +266,7 @@ impl TitleGame for Winter {
                 s.game.night = (s.game.night as i32 + delta).clamp(1, open) as u32;
             })
             .help(format!(
-                "Answer the band on the beat all the way to midnight. Reaching midnight opens the next night, up to {NIGHTS}. Left and Right choose the night."
+                "A rhythm game for New Year's Eve: answer the band on the beat to midnight. Reaching midnight opens the next night, up to {NIGHTS}. Left and Right choose the night."
             )),
         ]
     }
@@ -220,7 +302,7 @@ impl TitleGame for Winter {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your best story, Gift Sort and Midnight Countdown scores, each night's best, your holiday keepsakes and your challenge results.".to_string()
+        "Your best story, Gift Sort, Wish Desk and Midnight Countdown scores, each stack and night, your holiday keepsakes and your challenge results.".to_string()
     }
 
     fn sound_check(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -228,7 +310,7 @@ impl TitleGame for Winter {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear every gift's shake and every cue, each with its name.".to_string()
+        "Plays every gift's shake and every cue.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -238,7 +320,7 @@ impl TitleGame for Winter {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily run with a twist, the weekly holiday double and the monthly Midnight Gala, the same for every player. {}",
+            "A daily run with a twist, the weekly holiday double and the monthly midwinter post, the same for every player. {}",
             daily.resets()
         )
     }
@@ -249,6 +331,6 @@ impl TitleGame for Winter {
     }
 
     fn intro_help(&self) -> Option<String> {
-        Some("Up and Down choose, Left and Right choose the shift or night, Enter starts, Escape goes back to the parlor.".to_string())
+        Some("Up and Down choose, Left and Right choose the shift, stack or night, Enter starts, Escape goes back to the parlor.".to_string())
     }
 }

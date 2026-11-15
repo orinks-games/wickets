@@ -1156,13 +1156,13 @@ pub fn offset_words(from: f64, to: f64) -> String {
     }
 }
 
-/// How to turn from the aim to an angle: "turn 35 left", "hold your aim".
+/// How to turn from the aim to an angle: "turn 35 degrees left", "hold your aim".
 pub fn turn_words(from: f64, to: f64) -> String {
     let d = (to - from).round() as i64;
     match d {
         0 => "hold your aim".to_string(),
-        d if d > 0 => format!("turn {d} right"),
-        d => format!("turn {} left", -d),
+        d if d > 0 => format!("turn {} right", degrees_words(d)),
+        d => format!("turn {} left", degrees_words(-d)),
     }
 }
 

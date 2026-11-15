@@ -1,18 +1,23 @@
 name: Rust build setup
-description: Hearken access, the platform's build dependencies, the pinned toolchain and the compile caches.
+description: Hearken access, the platform's build dependencies, the pinned toolchain and the compile cache.
 inputs:
   token:
     description: The HEARKEN_TOKEN secret, if set. Optional, since Hearken is public.
     required: false
     default: ''
   cache-key:
-    description: Keeps this job's build cache apart from jobs that build differently (clippy, tests, release).
-    required: true
-  cache:
     description: >-
-      Whether to keep compile caches. Set it to false for a build that
-      includes the private overlay on a ref other than a tag: a cache saved
-      on main can be restored by any pull request, forks included.
+      Names the compile cache. Jobs that build the same way (same profile,
+      same platform) share one key, so one job's cache warms the others.
+    required: true
+  save:
+    description: >-
+      Whether this job may save the cache. Even then it saves only on main,
+      so pull requests restore main's cache instead of filling the cache
+      quota with one copy per branch. Set it to false for any build that
+      includes the private overlay: a cache saved on main can be restored by
+      any pull request, forks included. Restoring is always safe, since the
+      cache keeps dependencies only, never this workspace's own crates.
     required: false
     default: 'true'
 runs:
@@ -27,16 +32,12 @@ runs:
       if: runner.os == 'Windows'
     - shell: bash
       run: rustup show
-    # sccache caches compiled crates by content; rust-cache keeps the target
-    # directory, which also holds the C builds (SDL, Prism) sccache cannot.
-    - uses: mozilla-actions/sccache-action@v0.0.9
-      if: inputs.cache == 'true'
-    # Without the cache, cargo must not call sccache either.
-    - if: inputs.cache != 'true'
-      shell: bash
-      run: echo "RUSTC_WRAPPER=" >> "$GITHUB_ENV"
+    # Keeps the compiled dependencies (including the C builds, SDL and
+    # Prism) in target/. The workspace's own crates are left out, and are
+    # rebuilt every run. (sccache was tried and dropped: the workspace's
+    # crates change on nearly every pull request, so it hit 2 to 3 percent.)
     - uses: Swatinem/rust-cache@v2
-      if: inputs.cache == 'true'
       with:
-        key: ${{ inputs.cache-key }}
+        shared-key: ${{ inputs.cache-key }}
+        save-if: ${{ inputs.save == 'true' && github.ref == 'refs/heads/main' }}
         cache-on-failure: true

@@ -109,7 +109,7 @@ pub const SOUND_CHECK: &[Entry] = &[
     e("Flow vehicle", "Baseline traffic. Be in its lane when it arrives for steady score and lower stress. Missing it raises stress.", FLOW, Play::Approach),
     e("Fast passer", "Fast traffic with a short warning. Be in its lane, or have a slowdown pulse running, or it clips the corridor.", FAST, Play::Approach),
     e("Heavy blocker", "A dense vehicle. Stay out of its lane, or boost into it to force it open. Meeting it unboosted jams the corridor.", HEAVY, Play::Approach),
-    e("Priority vehicle", "Priority traffic. Be in its lane, or use priority override or a slowdown pulse. Delaying it raises stress hard.", PRIORITY, Play::Approach),
+    e("Priority vehicle", "Priority traffic. Be in its lane, or use priority override or a slowdown pulse. Delaying it sharply raises stress.", PRIORITY, Play::Approach),
     e("Unstable vehicle", "A damaged vehicle. Stay out of its lane, boost through it, or shoot it with the rail gun. Even dodged, it spreads a little stress.", UNSTABLE, Play::Approach),
     e("Debris", "Incoming debris. Shift away before impact, or boost through it.", DEBRIS, Play::Approach),
     e("Drone", "A hostile drone. Shift away, boost through it, or fire the rail gun.", DRONE, Play::Approach),

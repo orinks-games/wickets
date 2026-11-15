@@ -30,8 +30,6 @@ concurrency:
 env:
   CARGO_TERM_COLOR: always
   CMAKE_POLICY_VERSION_MINIMUM: "3.5"
-  RUSTC_WRAPPER: sccache
-  SCCACHE_GHA_ENABLED: "true"
 
 jobs:
   build:
@@ -109,14 +107,15 @@ jobs:
             echo "version=$version"
             echo "channel=$channel"
           } >> "$GITHUB_OUTPUT"
-      # This build includes the private overlay. A tag's cache can only be
-      # restored by that tag's runs, but one saved by a hand run on a
-      # branch could be restored by any pull request, so hand runs keep none.
+      # Starts from the nightly's compile cache on main, which builds the
+      # same release profile with public dependencies only. This build
+      # includes the private overlay, so it saves no cache of its own (and a
+      # tag's cache could only ever be restored by that same tag).
       - uses: ./.github/actions/rust-setup
         with:
           token: ${{ secrets.HEARKEN_TOKEN }}
           cache-key: release
-          cache: ${{ startsWith(github.ref, 'refs/tags/') }}
+          save: "false"
       - uses: ./.github/actions/hearken-cli
       # A beta or alpha build carries its tag's version (see above): only
       # the workspace's own entries in Cargo.lock change with it.

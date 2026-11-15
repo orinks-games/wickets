@@ -240,13 +240,14 @@ impl SoundCheck {
     pub fn new() -> SoundCheck {
         SoundCheck {
             menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down choose a sound, Enter plays it from where you would hear it, Escape goes back.",
+                "Up and Down choose a sound, Enter plays it from its place on the stream, Escape goes back.",
             ),
             demo: Demo::None,
         }
     }
 
     fn stop(&mut self, ctx: &mut Ctx<Parlor>) {
+        ctx.stop_speech();
         if let Demo::Float { sound, .. } = self.demo {
             ctx.audio.stop(sound, 80);
         }
@@ -406,11 +407,6 @@ impl Menu for SoundCheck {
                         Vec3::new((side * HALF) as f32, 0.0, 0.0),
                         Bus::EFFECTS,
                     );
-                    ctx.say(if side < 0.0 {
-                        "Left bank."
-                    } else {
-                        "Right bank."
-                    });
                 }
             }
         }

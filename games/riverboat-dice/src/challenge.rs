@@ -54,7 +54,7 @@ pub fn tag(period: Period) -> String {
 pub fn rule(period: Period) -> String {
     match period {
         Period::Daily => "One saloon night against the Widow, the Gambler and the Captain. Your score is your night total.".to_string(),
-        Period::Weekly => "Three saloon nights. Snag rule: a double 1 wipes the night total of everyone still seated. Your score is the three nights added.".to_string(),
+        Period::Weekly => "Three saloon nights. Snag rule: a double 1 wipes the night total of everyone still seated. Your score is the total from all three nights.".to_string(),
         Period::Monthly => format!("A night of {CAPTAIN_LANDINGS} landings at the Captain's table, you and the Captain alone. Your score is your night total."),
     }
 }

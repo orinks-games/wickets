@@ -1,7 +1,10 @@
 name: Nightly
 
 # Builds the default branch once a night when it has new commits, on
-# GitHub-hosted Linux and Windows runners. No macOS (release-only).
+# GitHub-hosted Windows, Linux and macOS runners. Its compile cache, saved
+# on main, is the one the Release workflow starts from, so a tag's build
+# only compiles the workspace. The Mac build is for that cache only: it
+# keeps no package.
 on:
   schedule:
     - cron: "17 7 * * *"
@@ -18,8 +21,6 @@ concurrency:
 env:
   CARGO_TERM_COLOR: always
   CMAKE_POLICY_VERSION_MINIMUM: "3.5"
-  RUSTC_WRAPPER: sccache
-  SCCACHE_GHA_ENABLED: "true"
 
 jobs:
   # Skips the night when the default branch has not moved since the last
@@ -58,10 +59,13 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          # The same images as the Release workflow, so its cache fits.
           - name: windows-x64
-            os: windows-latest
+            os: windows-2025
           - name: linux-x64
-            os: ubuntu-latest
+            os: ubuntu-24.04
+          - name: macos-arm64
+            os: macos-15
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     # Nightlies are stub-only: their artifacts are downloadable, so they
@@ -73,7 +77,7 @@ jobs:
       - uses: ./.github/actions/rust-setup
         with:
           token: ${{ secrets.HEARKEN_TOKEN }}
-          cache-key: nightly
+          cache-key: release
       - uses: ./.github/actions/hearken-cli
       - name: Rebuild SDL2.dll if the cache left it out
         if: runner.os == 'Windows'
@@ -103,6 +107,7 @@ jobs:
           fi
           echo "file=$file" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v5
+        if: runner.os != 'macOS'
         with:
           name: nightly-${{ matrix.name }}
           path: ${{ steps.package.outputs.file }}

@@ -209,7 +209,7 @@ fn play_opens_the_sky_and_says_where_you_are() {
     ));
     assert!(spoke(
         &h,
-        "Hold Space past the click, then let go at the ping."
+        "Hold Space to full draw, then let go when your sights are on a heart."
     ));
     assert!(played(&h, sound::ROOFTOP));
     assert!(played(&h, sound::ROUND_START));
@@ -363,8 +363,10 @@ fn practice_never_ends_and_escape_leaves() {
 fn flip_in_settings(h: &mut hearken::Headless<parlor_core::Parlor>, row: &str) {
     goto(h, "Settings");
     h.press(Key::Return);
+    h.press(Key::Return); // the game's own category
     goto(h, row);
     h.press(Key::Return);
+    h.press(Key::Escape);
     h.press(Key::Escape);
 }
 
@@ -373,6 +375,7 @@ fn call_outs_switch_off_in_settings_and_stay_off() {
     let mut h = title();
     goto(&mut h, "Settings");
     h.press(Key::Return);
+    h.press(Key::Return); // the game's own category
     goto(&mut h, "Spoken targets");
     h.clear();
     h.press(Key::Return);
@@ -398,7 +401,9 @@ fn the_parlor_settings_hold_no_quiver_rows_once_the_game_is_left() {
         .app
         .top_lines()
         .iter()
-        .any(|l| l.contains(cupids_quiver::AIM_CALLS) || l.contains(cupids_quiver::TARGET_CALLS)));
+        .any(|l| l.contains(cupids_quiver::AIM_CALLS)
+            || l.contains(cupids_quiver::TARGET_CALLS)
+            || l.contains("Cupid")));
 }
 
 #[test]
@@ -553,12 +558,12 @@ fn the_sound_check_plays_each_sound_by_name() {
     let rows = rows_of(&h.app.top_lines());
     assert_eq!(rows[0], "Red heart");
     assert!(rows.contains(&"Sweetheart chord".to_string()));
-    assert!(rows.contains(&"Enter between rooftops".to_string()));
+    assert!(!rows.contains(&"Enter between rooftops".to_string()));
     h.press(Key::Home);
     h.clear();
     h.press(Key::Return);
     assert!(played(&h, sound::HUM));
-    assert!(spoke(&h, "Red heart: a soft paper hum, the lowest note."));
+    assert!(h.spoken().is_empty());
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), TITLE_NAME);
 }
@@ -589,7 +594,7 @@ fn the_help_document_ends_with_controls() {
     let help = cupids_quiver::HELP;
     assert!(help.contains("## About the game"));
     assert!(help.trim_end().ends_with(
-        "These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings."
+        "These are the default keys. If you change them in Settings, the game's instructions follow your bindings."
     ));
     let last = help.rsplit("\n## ").next().unwrap();
     assert!(last.starts_with("Controls"));

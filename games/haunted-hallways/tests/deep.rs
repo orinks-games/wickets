@@ -411,9 +411,9 @@ fn screen(run: Run) -> hearken::Headless<parlor_core::Parlor> {
 fn the_screen_teaches_each_deep_danger_the_first_time() {
     for (floor, line) in [
         (PENDULUM_FROM, "A pendulum swings along row"),
-        (WATER_FROM, "Flooded. Lapping means deep water."),
+        (WATER_FROM, "Flooded. Wading through deep water"),
         (STONES_FROM, "Stones fall here. When dust trickles"),
-        (SHIFTS_FROM, "This room shifts: a rumble moves"),
+        (SHIFTS_FROM, "This room shifts: the exit door moves"),
     ] {
         let h = screen(second_room(floor));
         assert!(
@@ -442,6 +442,8 @@ fn a_fight_with_the_founder_by_keys() {
     let mut struck = false;
     for _ in 0..60 * 30 {
         h.clear();
+        // The voice quiet, so the speech hold does not stop the fight.
+        h.app.ctx.stop_speech();
         h.frame(1.0 / 60.0);
         if played(&h, sound::OPENING) {
             h.press(Key::Space);

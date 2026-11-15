@@ -57,7 +57,7 @@ impl State<Parlor> for SittingMenu {
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
     }
 
     fn handle_input(&mut self, ctx: &mut Ctx<Parlor>, event: &InputEvent) {

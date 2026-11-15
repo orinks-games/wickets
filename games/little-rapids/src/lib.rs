@@ -150,7 +150,7 @@ impl TitleGame for LittleRapids {
                     start(ctx, Launch { mode: Mode::Endless, seed: s.game.seed }, false)
                 },
             )
-            .help("A river with no end, made of every stream you have opened, busier as it goes. Each bump makes the boat soggier, and the fifth sinks it.")
+            .help("A river with no end, made of every stream you have opened, busier as it goes. Each bump makes the boat soggier. It sinks at 5 sogginess.")
         } else {
             MenuItem::new(
                 labels::locked("The endless river"),
@@ -183,7 +183,7 @@ impl TitleGame for LittleRapids {
                 ),
                 |s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(menus_streams(s.game.seed)),
             )
-            .help("Every stream with its stars and best. Stars from one open the next."),
+            .help("Choose a stream and hear its stars and best score. Earn stars to open more streams."),
             endless,
             MenuItem::new("Drift", |s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 start(ctx, Launch { mode: Mode::Drift, seed: s.game.seed }, false)

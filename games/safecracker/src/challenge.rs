@@ -71,16 +71,16 @@ impl Twist {
     pub fn describe(self) -> &'static str {
         match self {
             Twist::QuietTumblers => {
-                "the tumblers are freshly oiled, so the clunk is as quiet as in the Crown vault"
+                "the tumblers are freshly oiled and harder to find, as in the Crown vault"
             }
             Twist::NervousGuard => {
-                "a night guard walks by often and listens long at the door; when his footsteps stop, keep still until he walks away"
+                "a night guard walks by often and listens long at the door. When he stops, keep still until he walks away"
             }
             Twist::DirectionRule => {
-                "wheel 1 is found turning right, wheel 2 turning left, and so on, and only the right way clunks"
+                "wheel 1 is found turning right, wheel 2 turning left, and so on, and the tumbler falls only the right way"
             }
-            Twist::CrowdedGates => "every wheel has three false gates rattling at wrong numbers",
-            Twist::NoHints => "there are no hints: only your ears",
+            Twist::CrowdedGates => "every wheel has three false gates at wrong numbers",
+            Twist::NoHints => "there are no hints",
             Twist::BusyBuilding => {
                 "pipes knock and floors creak every few seconds, off to your left and right"
             }
@@ -438,8 +438,8 @@ pub fn rule(plan: &Plan) -> String {
 /// The monthly heist's story, read before play.
 pub fn story() -> Vec<String> {
     vec![
-        "The Crown heist. Once a month the Crown jewels leave the vault for cleaning and come back at midnight, and for five minutes, while the night shift changes, the museum's east wing is yours.".to_string(),
-        "Your fence has the plan. Through the curator's office first: his safe holds the key card to the vault corridor. Then the Crown vault itself, five wheels deep. A single guard walks the corridor between the two. Out by the time the new shift clocks in, or not at all.".to_string(),
+        "The Crown heist. Once a month the Crown jewels leave the vault for cleaning and come back at midnight. For five minutes, while the night shift changes, the museum's east wing is yours.".to_string(),
+        "Your fence has the plan. Through the curator's office first: his safe holds the key card to the vault corridor. Then the Crown vault itself, five wheels deep. A single guard walks the corridor between the two. You must be out before the new shift clocks in.".to_string(),
     ]
 }
 
@@ -447,7 +447,7 @@ pub fn story() -> Vec<String> {
 pub fn ending(job: &Job) -> &'static str {
     match (job.won(), job.opened) {
         (true, _) => {
-            "The vault door swings wide. You lift the Crown from its velvet, slip out of the east wing as the new shift's footsteps reach the stairs, and the city wakes to the most famous empty case in its history."
+            "The vault door swings wide. You lift the Crown from its velvet and slip out of the east wing as the new shift's footsteps reach the stairs. By morning, the city has the most famous empty case in its history."
         }
         (false, 1) => {
             "You had the key card in your hand and the Crown vault in front of you. Next month, the jewels come home again."

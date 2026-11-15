@@ -38,7 +38,7 @@ impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
             menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down choose a sound, Enter plays it from where you would hear it in play, Escape goes back. Falling sounds fall from high to low and land.",
+                "Up and Down choose a sound, Enter plays it from its place in play, Escape goes back. Falling sounds fall from high to low and land.",
             ),
             demo: Demo::None,
         }
@@ -52,6 +52,7 @@ impl SoundCheck {
     }
 
     fn fall(&mut self, ctx: &mut Ctx<Parlor>, kind: Kind) {
+        ctx.stop_speech();
         self.stop(ctx);
         let pos = drop_pos(1, 3, 0.0);
         let s = ctx
@@ -98,6 +99,7 @@ fn falling_row(label: &str, kind: Kind, help: &str) -> MenuItem<SoundCheck, Parl
 
 fn placed(label: &str, key: &'static str, help: &str) -> MenuItem<SoundCheck, Parlor> {
     MenuItem::new(label, move |s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
+        ctx.stop_speech();
         s.stop(ctx);
         ctx.audio.play_at(key, ground(1, 3), Bus::EFFECTS);
     })
@@ -107,6 +109,7 @@ fn placed(label: &str, key: &'static str, help: &str) -> MenuItem<SoundCheck, Pa
 
 fn plain(label: &str, key: &'static str, help: &str) -> MenuItem<SoundCheck, Parlor> {
     MenuItem::new(label, move |s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
+        ctx.stop_speech();
         s.stop(ctx);
         ctx.audio.play(key, Bus::EFFECTS);
     })
@@ -137,6 +140,7 @@ impl Menu for SoundCheck {
     }
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
+        ctx.stop_speech();
         self.stop(ctx);
     }
 
@@ -147,11 +151,12 @@ impl Menu for SoundCheck {
             falling_row("A mud clod falling", Kind::Mud, "A low, gloopy wobble, ending in the splat of mud landing in your basket. Dodge it: it spoils the eggs inside."),
             falling_row("A bee diving", Kind::Bee, "A buzz, ending in a sting. Dodge it: a sting breaks a basket."),
             MenuItem::new("Lanes, left to right", |s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
-                s.stop(ctx);
+                ctx.stop_speech();
+        s.stop(ctx);
                 s.demo = Demo::Tour { next: 0, wait: 0.0 };
             })
             .select_sound(None)
-            .help("A basket thump from each of five lanes in turn, each lane named, from lane 1 on the far left to lane 5 on the far right, heard from the middle lane."),
+            .help("A basket thump from each of five lanes in turn, from lane 1 on the far left to lane 5 on the far right, heard from the middle lane."),
             placed("Egg caught", sound::CATCH_EGG, "A woody thump: an egg in your basket."),
             placed("Golden egg caught", sound::CATCH_GOLDEN, "A thump and rising bells: a golden egg in your basket."),
             placed("Egg cracked", sound::CRACK_EGG, "A crunchy crack: an egg missed your basket and broke on the grass."),
@@ -164,7 +169,7 @@ impl Menu for SoundCheck {
             plain("Eggs banked", sound::BANK, "Eggs rolling into the cart and a bright chime: banked as points."),
             plain("Nothing to bank", sound::EMPTY, "Two hollow knocks: the basket is empty, or the cart is not in your lane."),
             plain("Eggs spilled", sound::SPILL, "A tumble: eggs lost from the basket, to mud or to the bell."),
-            placed("The cart's bell", sound::BEACON, "A soft bell every few seconds from the cart's lane, so you can always find it."),
+            placed("The cart's bell", sound::BEACON, "A soft bell every few seconds from the cart's lane."),
             plain("A step", sound::STEP, "Rustling grass: you moved one lane."),
             placed("Reaching the cart", sound::AT_CART, "A wood block: you stepped into the cart's lane."),
             plain("The fence", sound::EDGE, "A bump: the edge of the meadow."),
@@ -218,7 +223,6 @@ impl Menu for SoundCheck {
                         0.0,
                     );
                     ctx.audio.play_at(sound::CATCH_EGG, pos, Bus::EFFECTS);
-                    ctx.say(format!("Lane {}.", lane + 1));
                 }
             }
         }

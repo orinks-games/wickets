@@ -1,40 +1,40 @@
 ## About the game
 
-Freewheel is a street-riding game played by ear, after Cyclepath by Talon. You are a bike courier in Courier City. Parked cars line your right, cars come up behind you, and doors, potholes, curbs and ramps lie ahead. Race the clock in time trials, ride the endless ride until your third crash,{alpha: race the clock with drops that add time,} or take deliveries from the job board. Parcels and deliveries earn cash, which buys new bikes and districts in the bike shop.
+Freewheel is a street-riding game, after Cyclepath by Talon. You are a bike courier in Courier City. Parked cars line your right, cars come up behind you, and doors, potholes, curbs and ramps lie ahead. Race the clock in time trials, ride the endless ride until your third crash, race the clock with drops that add time, or take deliveries from the job board. Parcels and deliveries earn cash, which buys new bikes and districts in the bike shop.
 
 This help gives distances and speeds in metric. Set Units to US in Settings and the game says feet, miles and miles an hour instead: the turn speed is then 13 miles an hour.
 
 ## The street
 
-Each ride is one street, heard from your bike. On your right, parked cars line the curb. Beside them is the bike lane, and its first metre is the door zone, where a car door can open into you. A painted line separates the bike lane from the traffic lane, which runs out to the centre line. You can ride anywhere from the parked cars to the centre line. When you press against either edge you hear a low rumble on that side.
+Each ride is one street, heard from your bike. On your right, parked cars line the curb. Beside them is the bike lane, and its first metre is the door zone, where a car door can open into you. A painted line separates the bike lane from the traffic lane, which runs out to the centre line. You can ride anywhere from the parked cars to the centre line. You cannot ride beyond either edge.
 
 ## Riding
 
-Up arrow pedals and Down arrow brakes. The brakes build over a moment, so start braking early. Let go of both to coast, and the freewheel ticks, faster the faster you go. Left arrow and Right arrow slide you across the road while you hold them. Tab sprints for extra speed, until you run out of breath. Breath comes back while you ride without sprinting.
+Up arrow pedals. Down arrow brakes. The brakes build over a moment, so start braking early. Let go of both to coast. Left arrow and Right arrow slide you across the road while you hold them. Tab sprints for extra speed until you run out of breath. Breath comes back while you ride without sprinting.
 
 ## Hops and jumps
 
-Space hops while you are moving. The BMX hops about 40 centimetres, high enough to clear a curb. The road bike and the e-bike hop only about 10 centimetres, so ride around curbs on them. The moped cannot hop at all: ride around curbs and potholes. Press Space at a ramp's lip for a jump. Jumps earn airtime points.
+Space hops while you are moving. The BMX hops about 40 centimetres, high enough to clear a curb. The road bike and the e-bike hop only about 10 centimetres, so ride around curbs on them. The moped cannot hop. Ride around curbs and potholes. Space jumps at a ramp's lip. Jumps earn airtime points.
 
 ## Hazards
 
-Every hazard warns you at least 1.5 seconds before you reach it, at your speed, from the side it is on.
+Every hazard's warning comes at least 1.5 seconds before you reach it, at your speed, from the side it is on.
 
-A sharp click from a parked car means its door is about to open. A creak follows as it swings into the door zone. Move left, out of the door zone, before you reach it.
+A parked car's door can open into the door zone. Move left, out of the door zone, before you reach it.
 
-A tick ahead is a pothole. It ticks faster and higher as you get closer. A pothole gives the road bike or the e-bike a flat tyre, which slows you until you stop and stand still for 3 seconds to swap the tube. The BMX rolls through it, a little slower.
+A pothole's warning speeds up as you get closer. A pothole gives the road bike or the e-bike a flat tyre. This slows you until you stop and stand still for 3 seconds to swap the tube. The BMX rolls through it, a little slower.
 
-A low, hard tick is a raised curb across the bike lane. A bright rising tone is a ramp.
+Raised curbs cross the bike lane. Ramps let you jump.
 
-A sharp double beep means act now: the hazard is in your line. Hop, brake or steer.
+The urgent warning means a hazard is in your line. Hop, brake or steer.
 
 ## Cars from behind
 
-Cars come up behind you, muffled at first and clearer as they draw level. They pass on your left when there is room. Hold your line while a car passes: steering into it is a crash. If you ride in the middle of the traffic lane, a car cannot pass and honks. Move right to let it by, and it gives a thank-you toot and a tip.
+Cars approach from behind. They pass on your left when there is room. Hold your line while a car passes: steering into it is a crash. If you ride in the middle of the traffic lane, a car cannot pass and honks. Move right to let it by, and you earn a tip.
 
 ## Junction turns
 
-A chime from your left or right and a spoken distance mean a junction turn is coming. For a right turn, be in the bike lane. For a left turn, be near the centre line. Either way, slow to 22 kilometres an hour or less before the junction line. Too fast, or on the wrong side, and you run wide, which costs you speed.
+The game names each junction turn as it comes up, with its distance. For a right turn, be in the bike lane. For a left turn, be near the centre line. Either way, slow to 22 kilometres an hour or less before the junction line. If you are too fast or on the wrong side, you run wide and lose speed.
 
 ## Crashes
 
@@ -44,55 +44,67 @@ Crashing into an open door, a passing car, or a curb on the road bike or the e-b
 
 The endless ride goes on until your third crash. The further you go, the closer the hazards come and the more often oncoming cars appear. Your best distance in each district is kept.
 
-Parcels wait for collection along the way. A shop doorbell rings from the side a parcel is on as it comes up. Ride over it at 20 kilometres an hour or less to grab it. Any faster and you miss it. Parcels in shop doorways sit in the door zone and pay 3 dollars. Parcel lockers on the traffic island, by the centre line, sit out among the cars and pay 6. You keep the money, even if you leave the ride early.
+Parcels lie along the way. Ride over one at 20 kilometres an hour or less to grab it. Any faster and you miss it. Parcels in shop doorways sit in the door zone and pay 3 dollars. Parcel lockers on the traffic island, by the centre line, sit out among the cars and pay 6. You keep the money, even if you leave the ride early.
 
 ## Oncoming cars
 
-In the endless ride, cars overtake toward you in the traffic lane. A long horn blast from ahead warns of one, at least 1.5 seconds before it reaches you, and its engine grows louder as it nears. Steer right into the bike lane until it has gone by. A sharp double beep means it is in your line now.
+In the endless ride, cars overtake toward you in the traffic lane. Each car's warning comes from ahead, at least 1.5 seconds before it reaches you. Steer right into the bike lane until it has gone by. The urgent warning means it is in your line now.
 
-## Against the clock {alpha}
+## Against the clock
 
-Make delivery drops to add time to the clock. You start with 60 seconds on a street in the district you chose. The first drop is just after the start. The clock runs down the whole time, and the ride ends when it reaches zero. There is no crash limit or finish line.
+Make delivery drops to add time to the clock. You start with 60 seconds on a street in the district you chose. The first drop is just after the start. The clock runs down, and the ride ends when it reaches zero. There is no crash limit or finish line.
 
-A drop rings its doorbell from its side as it comes up, like a parcel in the endless ride. Ride over it at 20 kilometres an hour or less to make the drop. A drop in a shop doorway, in the door zone, adds 14 seconds and pays 3 dollars. A drop at a parcel locker by the centre line, out among the cars, adds 18 seconds and pays 6. A drop made within 30 seconds of the last one is a quick drop, and adds 4 seconds more. The clock holds 90 seconds at most.
+Drops lie along the way, like parcels in the endless ride. Ride over one at 20 kilometres an hour or less to make the drop. A drop in a shop doorway, in the door zone, adds 14 seconds and pays 3 dollars. A drop at a parcel locker by the centre line, out among the cars, adds 18 seconds and pays 6. A drop made within 30 seconds of the last one is a quick drop and adds 4 seconds more. The clock holds 90 seconds at most.
 
-Each drop says the time it added and the time left. A crash takes 8 seconds off the clock, and you still lose the 3 seconds you are down. The game says 30 seconds left and 10 seconds left. At 15 seconds or less, the clock ticks once a second. At 5 seconds or less, it ticks twice as fast.
+After each drop, the game says the time it added and the time left. A crash takes 8 seconds off the clock, and you still lose the 3 seconds you are down. The game says 30 seconds left and 10 seconds left. At 15 seconds or less, the clock ticks once a second. At 5 seconds or less, it ticks twice as fast.
 
-Every drop has clear road before and after it, so a doorbell never rings while a hazard is warning. The hazards still come closer together the further you ride. On the moped, brake hard for every drop.
+Every drop has clear road before and after it, so a drop never comes up while a hazard is warning. The hazards still come closer together the further you ride. On the moped, brake hard for every drop.
 
 Your score is the drops you make. The best in each district is kept, and you keep the money, even if you leave the ride early.
 
 ## The job board
 
-The job board offers three deliveries across the districts you own. Each says its route, its length and its pay in dollars. Get there within the deadline for full pay. Late pays half. A new set of jobs comes after each delivery.
+The job board offers three deliveries across the districts you own. Each says its route, its length and its pay in dollars. Get there within the deadline for full pay. Late deliveries pay half. A new set of jobs comes after each delivery.
 
 ## The bike shop and districts
 
-The bike shop sells bikes and districts for cash. Whatever you buy, you ride at once. Bike select and District select change them later.
+The bike shop sells bikes and districts for cash. Whatever you buy, you ride at once. Bike select and District select, in the garage, change them later.
 
 The mountain bike has knobbly tyres. It rolls through potholes, hops curbs and keeps its speed on cobbles. The e-bike has a motor that helps up to 25 kilometres an hour. The moped has an engine instead of pedals and reaches 50 kilometres an hour. It cannot hop or sprint.
 
-Riverside is wet. Rain falls, and brakes need more room to stop. Old Town is cobbled. A rattle rises under your wheels, and thin road tyres crawl.
+In wet Riverside, brakes need more room to stop. Old Town's cobbles slow bikes with thin road tyres.
 
 ## Status, hint and call-outs
 
-S puts danger first: a hazard or oncoming car close ahead, then any flat tyre, then your speed and lane. Press S again straight away for the rest: what else is ahead, how far you are from the parked cars or the centre line, the clock, or in the endless ride your distance, cash and crashes left, then your stamina.{alpha: Against the clock, the first press starts with the time left, and the second gives your drops and cash.} H says what the next hazard is, how soon you reach it and what to do. R repeats the last spoken line.
+S puts danger first: a hazard or oncoming car close ahead, then any flat tyre, then your speed and lane. Press S again straight away for the rest: what else is ahead, how far you are from the parked cars or the centre line, the clock, or in the endless ride your distance, cash and crashes left, then your stamina. Against the clock, the first press starts with the time left, and the second gives your drops and cash. H says what the next hazard is, how soon you reach it and what to do. R repeats the last line.
 
-Spoken call-outs, a row in Settings from the title or the pause menu, chooses how much the game names its sounds as they play. Once per session is the default: each gameplay cue is named the first time it plays after you start Wicket's. Every time names them always. Off leaves only the sounds, and S and H still speak.
+Spoken call-outs, a row in Settings from the title or the pause menu, chooses how often the game names what is coming on the road. Once per session is the default: each kind is named the first time it comes up after you start Wicket's. Every time names them always. Off names none of them, and S and H still work.
+
+## Pace
+
+The street holds while a line is still being spoken. The bike, the traffic, the hazards and the clock stand still until it ends. While you hold a key to pedal, brake, steer or sprint, the street runs on through speech. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode. Time spent while a line is spoken still counts toward your ride time and ride points.
+
+Pace in Settings sets how fast the street runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. Your bike, the traffic, every hazard's warning and the clock follow the pace.
+
+A change applies from your next ride.
+
+Relaxed best times, ride points, distances and drops are saved separately, including challenges and special rides. Normal and quick share their scores. Cash, lessons, bikes and districts count at every pace.
 
 ## Modes
 
-Practice lessons: five short rides that teach pedalling and coasting, braking, steering, the door zone and hopping. Each lesson tells you its goal and starts again if you miss it.
+The title starts with the endless ride. More rides holds the time trial, the ride against the clock and the free ride. The job board joins the title after your first ride. Events holds the special rides, and the garage holds Bike select, District select and the bike shop.
 
-Time trial: one of three Downtown courses, Station Run, Market Street and Bank Square, on the bike you chose. Its traffic is the same every time, so you can learn it. Course select chooses the course, and Bike select the bike.
+Practice lessons: five short rides that teach pedalling and coasting, braking, steering, the door zone and hopping. Each lesson gives its goal and starts again if you miss it.
+
+Time trial: one of three Downtown courses, Station Run, Market Street and Bank Square, on the bike you chose. Its traffic is the same every time, so you can learn it. Time trial, under More rides, lists the courses, and Bike select in the garage chooses the bike.
 
 Endless ride: ride until your third crash, grabbing parcels, in the district you chose.
 
-{alpha} Against the clock: make drops to add time, until the clock runs out, in the district you chose.
+Against the clock: make drops to add time, until the clock runs out, in the district you chose.
 
 Job board: courier deliveries for cash.
 
-Free ride: 3 kilometres of Downtown with no clock, to learn the sounds of the street.
+Free ride: 3 kilometres of Downtown with no clock, to learn the street.
 
 ## Scoring and best times
 
@@ -104,15 +116,15 @@ Every player gets the same challenge rides. The morning run is a new 700 metre c
 
 ## Special rides
 
-Two rides open on the title only on their own days. Each keeps its own best time and ride points for each bike, as the time trials do, so the time trial boards never change. Once a ride has closed, Play again on its results says so and does not start it.
+Two rides, under Events on the title, open only on their own days. Each keeps its own best time and ride points for each bike, as the time trials do, so the time trial boards never change. Once a ride has closed, Play again on its results says so and does not start it.
 
-Leaf season ride, from 17 October to the end of November. The rest of the year its row stays on the title, locked, and says when it opens. 1000 metres of autumn Downtown, the same all season for every rider, with leaf piles in the middle of the bike lane. Each pile gives a dry rustle from where it is, once the hazards before it are behind you. Ride through it for a crackle and 1000 ride points, and the freewheel goes quiet for a moment under the leaves. Leaf piles are never hazards, and a hop goes over them. S counts the piles you have ridden through, and H names the next one.
+Leaf season ride, from 17 October to the end of November. The rest of the year its row stays under Events, locked, and says when it opens. 1000 metres of autumn Downtown, the same all season for every rider, with leaf piles in the middle of the bike lane. Each pile signals its location once the hazards before it are behind you. Ride through it for 1000 ride points. Leaf piles are never hazards, and a hop goes over them. S counts the piles you have ridden through, and H names the next one.
 
-Car-free Sunday, on the third Sunday of every month: 1200 metres made from that Sunday's date, the same for every rider. The streets are closed to cars, and birds sing and a church bell rings far off in place of the city. On other days its row stays on the title, locked, and says when it opens.
+Car-free Sunday, on the third Sunday of every month: 1200 metres made from that Sunday's date, the same for every rider. The streets are closed to cars. On other days its row stays under Events, locked, and says when it opens.
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Up arrow: pedal, while held. On the moped, it opens the throttle.
 - Down arrow: brake, while held.

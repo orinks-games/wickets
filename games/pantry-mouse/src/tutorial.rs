@@ -47,7 +47,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pantry: Live<Play>) -> Lesson {
 
     let crumbs = pantry.step(
         format!(
-            "{}, {r}, {u} and {d} move one cell; walls thud. {} sniffs: the nearest crumbs tick from where they lie. {} names the way to a safe crumb. Eat {CRUMBS} crumbs.",
+            "{}, {r}, {u} and {d} move one cell. {} sniffs out the nearest crumbs. {} names the way to a safe crumb. Eat {CRUMBS} crumbs.",
             sentence_start(&l),
             sentence_start(&p),
             sentence_start(&h)
@@ -61,7 +61,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pantry: Live<Play>) -> Lesson {
 
     let freeze = pantry.step(
         format!(
-            "A cat prowls here, wearing its own sound where it is, and a short meow means it is 2 steps away. In a real run, a catch costs a whisker. {} freezes: you keep still for 3 seconds and the nearest cat loses track of you. Freeze now.",
+            "The cat's sound marks its position. A short meow means it is within 2 steps. In a real run, a catch costs a whisker. {} freezes: you keep still for 3 seconds and the nearest cat loses track of you. Freeze now.",
             sentence_start(&t)
         ),
         move |p: &Play, _| {
@@ -97,7 +97,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pantry: Live<Play>) -> Lesson {
     .step(crumbs)
     .step(freeze)
     .outro(format!(
-        "The ginger cat wears a bell and heads straight for you. The tabby pads softly and wanders until you are near. {} reads where every cat is.",
+        "The ginger cat heads straight for you. The tabby wanders until you are near. {} reads where every cat is.",
         sentence_start(&s)
     ))
 }

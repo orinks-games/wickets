@@ -83,8 +83,11 @@ fn the_tutorial_walks_the_practice_house() {
     assert_eq!(lesson.len(), 13);
     h.app.ctx.push(lesson);
     h.frame(0.0);
+    // The voice is reported quiet each frame, so the speech hold does not
+    // stop the house; tests/pacing.rs covers the hold.
     let wait = |h: &mut Headless<Parlor>, secs: f64| {
         for _ in 0..(secs * 60.0) as usize {
+            h.app.ctx.stop_speech();
             h.frame(1.0 / 60.0);
         }
     };
@@ -197,8 +200,114 @@ fn the_tutorial_walks_the_practice_house() {
     assert!(!spoke(&h, "follows your footsteps"), "{:?}", h.spoken());
     assert!(!spoke(&h, "hound"), "{:?}", h.spoken());
     said(&h, "Tutorial done.");
-    said(&h, "The floors above bring more");
+    said(&h, "Deeper floors bring new dangers");
     assert_eq!(h.app.top_name(), "haunted_hallways");
+}
+
+#[test]
+fn the_practice_house_holds_each_door_until_its_lesson_is_done() {
+    // A player who solves the library before the ghost, the charm and the
+    // hint are taught used to walk on ahead of the lesson and reach the
+    // parlour with it stuck behind them: the candle found, the stairs
+    // barred, and Space saying the door was open.
+    use haunted_hallways::haunt::Haunt;
+    use haunted_hallways::rules::ExitState;
+    use haunted_hallways::tutorial;
+    use parlor_core::Live;
+    let mut h = title();
+    let house = tutorial::house();
+    let lesson = tutorial::lesson_on(&mut h.app.ctx, house.clone());
+    h.app.ctx.push(lesson);
+    h.frame(0.0);
+    let wait = |h: &mut Headless<Parlor>, secs: f64| {
+        for _ in 0..(secs * 60.0) as usize {
+            h.app.ctx.stop_speech();
+            h.frame(1.0 / 60.0);
+        }
+    };
+    let walk = |h: &mut Headless<Parlor>, house: &Live<Haunt>, to: (i32, i32)| {
+        for _ in 0..40 {
+            let run = house.with(|x| x.run.clone());
+            if (run.x, run.y) == to {
+                return;
+            }
+            let Some(&side) = route(&run, to).first() else {
+                return;
+            };
+            h.press(key_for(side));
+            wait(h, 0.2);
+        }
+    };
+    let solve = |h: &mut Headless<Parlor>, house: &Live<Haunt>| {
+        for _ in 0..10 {
+            if house.with(|x| x.run.current().solved) {
+                return;
+            }
+            let goal = house.with(|x| x.run.goal());
+            walk(h, house, goal);
+            h.press(Key::Space);
+            wait(h, 0.1);
+        }
+    };
+
+    // The foyer, solved before the walking and status steps are done:
+    // its door stays held, and walking, Space and S all say so.
+    solve(&mut h, &house);
+    assert_eq!(house.with(|x| x.run.exit_state()), ExitState::Held);
+    let room = house.with(|x| x.run.current().clone());
+    walk(&mut h, &house, room.inside(room.exit));
+    h.clear();
+    h.press(key_for(room.exit.side));
+    assert!(
+        spoke(&h, "Not yet. F1 says what the lesson asks."),
+        "{:?}",
+        h.spoken()
+    );
+    assert_eq!(house.with(|x| x.run.room), 0);
+    h.clear();
+    h.press(Key::Space);
+    assert!(spoke(&h, "Not yet."), "{:?}", h.spoken());
+    assert!(!spoke(&h, "Open."), "{:?}", h.spoken());
+    h.clear();
+    h.press(Key::S);
+    assert!(
+        spoke(&h, "Exit door held for the lesson"),
+        "{:?}",
+        h.spoken()
+    );
+
+    // Status twice finishes the walking and status steps, the find step
+    // sees the solved room, and the door opens.
+    h.press(Key::S);
+    h.press(Key::S);
+    wait(&mut h, 0.1);
+    assert_eq!(house.with(|x| x.run.exit_state()), ExitState::Open);
+    // Past the second-press window, S starts again at its first layer.
+    wait(&mut h, 7.0);
+    h.clear();
+    h.press(Key::S);
+    assert!(spoke(&h, "Exit door open"), "{:?}", h.spoken());
+    h.press(key_for(room.exit.side));
+    assert_eq!(house.with(|x| x.run.room), 1);
+
+    // The library, solved straight away: held until the ghost, the charm
+    // and the hint are done.
+    solve(&mut h, &house);
+    let room = house.with(|x| x.run.current().clone());
+    walk(&mut h, &house, room.inside(room.exit));
+    h.press(key_for(room.exit.side));
+    assert_eq!(house.with(|x| x.run.room), 1, "{:?}", h.spoken());
+    for _ in 0..30 * 4 {
+        if spoke(&h, "It drifts away without finding you.") {
+            break;
+        }
+        wait(&mut h, 0.25);
+    }
+    walk(&mut h, &house, (4, 1));
+    assert_eq!(house.with(|x| x.run.exit_state()), ExitState::Held);
+    h.press(Key::H);
+    wait(&mut h, 0.1);
+    assert_eq!(house.with(|x| x.run.exit_state()), ExitState::Open);
 }
 
 #[test]
@@ -213,7 +322,7 @@ fn the_sound_check_plays_every_cue_with_its_name() {
         h.clear();
         h.press(Key::Return);
         keys.extend(h.played());
-        assert!(!h.spoken().is_empty());
+        assert!(h.spoken().is_empty());
         h.press(Key::Down);
     }
     for (key, _) in sound::catalog() {
@@ -221,7 +330,12 @@ fn the_sound_check_plays_every_cue_with_its_name() {
     }
     h.clear();
     h.press(Key::Return); // Left and right
-    assert!(spoke(&h, "to your left"));
+    assert!(h.spoken().is_empty());
+    assert!(played(
+        &h,
+        sound::item(haunted_hallways::rules::Item::Clock)
+    ));
+    assert!(played(&h, sound::item(haunted_hallways::rules::Item::Bell)));
 }
 
 #[test]
@@ -303,6 +417,72 @@ fn things_call_out_from_their_places() {
         let want = sound::at((p.x - t.run.x) as f32, (p.y - t.run.y) as f32);
         assert!((rel - want).length() < 0.01, "{rel:?} vs {want:?}");
     }
+}
+
+#[test]
+fn a_step_re_pans_a_call_while_it_sounds() {
+    // Sounds keep their place in the room, so the moment the player steps
+    // they move around them, not on the next call.
+    let mut t = Twin::start(Mode::Climb(1));
+    for _ in 0..40 {
+        t.frame(0.05);
+    }
+    let (channel, before) = t
+        .h
+        .sounds
+        .calls()
+        .into_iter()
+        .rev()
+        .find_map(|c| match c {
+            Call::Play {
+                channel, key, mix, ..
+            } if key.contains("/items/") => Some((channel, mix.relative.expect("a placed sound"))),
+            _ => None,
+        })
+        .expect("a thing called out");
+    let room = t.run.current().clone();
+    let side = [Side::East, Side::West, Side::North, Side::South]
+        .into_iter()
+        .find(|&side| {
+            let (dx, dy) = match side {
+                Side::East => (1, 0),
+                Side::West => (-1, 0),
+                Side::North => (0, 1),
+                Side::South => (0, -1),
+            };
+            let (x, y) = (t.run.x + dx, t.run.y + dy);
+            x >= 0
+                && y >= 0
+                && x < room.w
+                && y < room.h
+                && room.item_at(x, y).is_none()
+                && !room.rotten.contains(&(x, y))
+        })
+        .expect("room to step");
+    t.h.clear();
+    t.walk(side);
+    t.frame(1.0 / 60.0);
+    let step = match side {
+        Side::East => sound::at(1.0, 0.0),
+        Side::West => sound::at(-1.0, 0.0),
+        Side::North => sound::at(0.0, 1.0),
+        Side::South => sound::at(0.0, -1.0),
+    };
+    let after =
+        t.h.sounds
+            .calls()
+            .into_iter()
+            .find_map(|c| match c {
+                Call::SetMix {
+                    channel: ch, mix, ..
+                } if ch == channel => mix.relative,
+                _ => None,
+            })
+            .unwrap_or_else(|| panic!("the call was not re-panned: {:?}", t.h.sounds.calls()));
+    assert!(
+        (after - (before - step)).length() < 0.01,
+        "{after:?} vs {before:?} less {step:?}"
+    );
 }
 
 #[test]
@@ -445,7 +625,7 @@ fn escape_pauses_and_the_pause_menu_returns_to_the_title() {
     assert_eq!(t.h.app.top_name(), "pause");
     t.h.clear();
     t.h.press(Key::Return); // Resume
-    assert_eq!(t.h.app.top_name(), "haunt");
+    assert_eq!(t.h.app.top_name(), "haunted_hallways_haunt");
     assert!(spoke(&t.h, "Back in the foyer"), "{:?}", t.h.spoken());
     t.h.press(Key::Escape);
     t.h.press(Key::End);
@@ -480,7 +660,7 @@ fn wait_for(t: &mut Twin, line: &str) {
 fn a_ghost_comes_and_moving_as_it_passes_gets_you_caught() {
     let mut t = into_room_two();
     wait_for(&mut t, "A ghost! ");
-    assert!(spoke(&t.h, "At the stab, freeze until it breathes out."));
+    assert!(spoke(&t.h, "Freeze until it has passed."));
     assert!(t
         .h
         .app
@@ -552,7 +732,7 @@ fn the_clock_running_out_ends_the_haunt() {
         &t.h,
         "The haunt clock strikes zero on floor 1, in the foyer."
     ));
-    assert!(spoke(&t.h, "No score this time."));
+    assert!(spoke(&t.h, "Score 0, so nothing goes on the board."));
     assert_eq!(t.h.app.ctx.audio.music(), Some(sound::LOSE));
     t.read_until("haunted_hallways");
 }
@@ -663,7 +843,7 @@ fn the_climb_goes_on_and_floor_25_opens_nightmare() {
         assert_eq!(t.h.app.top_name(), "pages");
         assert!(spoke(&t.h, &format!("Floor {floor} cleared in")));
         t.h.clear();
-        t.read_until("haunt");
+        t.read_until("haunted_hallways_haunt");
         t.run.next_floor();
         assert!(
             spoke(&t.h, &format!("Floor {}. ", floor + 1)),
@@ -703,7 +883,7 @@ fn the_climb_goes_on_and_floor_25_opens_nightmare() {
         t.h.spoken()
     );
     assert!(spoke(&t.h, "Unlocked:"), "{:?}", t.h.spoken());
-    t.read_until("haunt");
+    t.read_until("haunted_hallways_haunt");
     t.h.press(Key::Escape);
     common::goto(&mut t.h, "Back to the title");
     t.h.press(Key::Return);
@@ -744,7 +924,7 @@ fn records_read_back_what_was_saved() {
     assert!(
         spoke(
             &t.h,
-            "Floors 1 to 10, the ground floor: floor 1, 3.0 seconds; floor 2, not yet cleared."
+            "Floors 1 to 10, the ground floor: floor 1, best 3.0 seconds; floor 2, not yet cleared."
         ),
         "{:?}",
         t.h.spoken()
@@ -817,20 +997,13 @@ fn held_keys_do_not_walk() {
 }
 
 #[test]
-fn keys_with_no_text_still_answer() {
+fn keys_with_no_job_stay_silent() {
     let mut t = Twin::start(Mode::Climb(1));
-    for key in [Key::Return, Key::Home, Key::Q] {
+    for key in [Key::Return, Key::Home, Key::Q, Key::LShift] {
         t.h.clear();
         t.h.press(key);
-        assert!(
-            spoke(&t.h, "Nothing happens. F1 tells you the controls."),
-            "{key:?}: {:?}",
-            t.h.spoken()
-        );
+        assert!(t.h.spoken().is_empty(), "{key:?}: {:?}", t.h.spoken());
     }
-    t.h.clear();
-    t.h.press(Key::LShift);
-    assert!(t.h.spoken().is_empty(), "a bare modifier stays quiet");
 }
 
 #[test]
@@ -948,7 +1121,7 @@ fn a_cleared_floor_ends_on_the_shared_results() {
     );
     t.h.clear();
     t.h.press(Key::Return);
-    assert_eq!(t.h.app.top_name(), "haunt");
+    assert_eq!(t.h.app.top_name(), "haunted_hallways_haunt");
     assert!(spoke(&t.h, "Floor 2: the ground floor."));
 }
 
@@ -970,7 +1143,7 @@ fn first_time_teaching_comes_once_per_save() {
     let mut h = title();
     h.clear();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "haunt");
+    assert_eq!(h.app.top_name(), "haunted_hallways_haunt");
     assert!(
         spoke(
             &h,

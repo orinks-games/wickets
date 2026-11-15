@@ -47,7 +47,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Table,
-    blurb: "A quiet game of patience by the fire, with deals that can always be won.",
+    blurb: "A game of patience by the fire, with deals that can always be won.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -198,8 +198,7 @@ impl TitleGame for FiresidePatience {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear each sound you need in play, with its meaning, and the one key of this game."
-            .to_string()
+        "Play the card and table cues you need in a deal.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

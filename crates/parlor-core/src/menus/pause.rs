@@ -173,6 +173,7 @@ pub fn quit_confirm() -> ConfirmScreen<Parlor> {
 mod tests {
     use super::*;
     use crate::menus::testing::{rows, Base};
+    use crate::OpenGame;
     use hearken::{Bus, Headless, Key, State};
 
     struct Run;
@@ -208,6 +209,22 @@ mod tests {
         );
         let h = paused(Leave::Challenge("base"));
         assert_eq!(rows(&h)[3], "Leave the challenge");
+    }
+
+    #[test]
+    fn settings_from_the_pause_menu_reports_a_problem_naming_the_open_game() {
+        let mut h = paused(Leave::Title("base"));
+        h.app.ctx.game.open = Some(OpenGame::new("tightrope", "Tightrope", |_| Vec::new()));
+        assert_eq!(
+            <Parlor as hearken::Game>::report_details(&h.app.ctx),
+            [("Game".to_string(), "Tightrope".to_string())]
+        );
+        h.press(Key::Down);
+        h.press(Key::Return);
+        assert_eq!(h.app.top_name(), "settings");
+        assert!(rows(&h).iter().any(|row| row == "Report a problem"));
+        h.app.ctx.game.open = None;
+        assert!(<Parlor as hearken::Game>::report_details(&h.app.ctx).is_empty());
     }
 
     #[test]
@@ -300,7 +317,10 @@ mod tests {
         let mut h = Headless::new(Default::default(), Base);
         h.app.ctx.push(Run);
         h.frame(0.0);
-        h.app.ctx.game.pause_music = Some("belfry/music/pause");
+        h.app.ctx.game.open = Some(OpenGame {
+            pause_music: Some("belfry/music/pause"),
+            ..OpenGame::new("belfry", "Belfry", |_| Vec::new())
+        });
         h.app
             .ctx
             .push(Pause::new("## Help\n\nText.\n", Leave::Title("base")));

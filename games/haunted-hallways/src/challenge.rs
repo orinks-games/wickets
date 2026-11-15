@@ -6,7 +6,7 @@
 
 use hearken::{Ctx, State};
 use parlor_core::menus::{self, ChallengeGame};
-use parlor_core::{Challenge, Pages, Parlor, Period, ScoreResult};
+use parlor_core::{Challenge, Pace, Pages, Parlor, Period, ScoreResult};
 
 use crate::rules::{floor_spec, Event};
 use crate::{sound, Haunt, ID};
@@ -68,12 +68,23 @@ pub fn challenge_rule(ch: &Challenge) -> String {
     }
 }
 
-/// The result spoken when a challenge run ends: score, best and streak.
-pub fn result_line(ch: &Challenge, score: u64, result: ScoreResult, streak: u32) -> String {
+/// The result spoken when a challenge run at `pace` ends: score, best on
+/// the pace's board, and streak.
+pub fn result_line(
+    ch: &Challenge,
+    score: u64,
+    result: ScoreResult,
+    streak: u32,
+    pace: Pace,
+) -> String {
+    let best = pace.best_word();
     let record = match result {
+        ScoreResult::First if pace.separate() => {
+            "Your first relaxed result on this challenge.".to_string()
+        }
         ScoreResult::First => "Your first result on this challenge.".to_string(),
-        ScoreResult::NewBest { previous } => format!("A new best, beating {previous}."),
-        ScoreResult::Short { best } => format!("Your best is {best}."),
+        ScoreResult::NewBest { previous } => format!("A new {best}, beating {previous}."),
+        ScoreResult::Short { best: b } => format!("Your {best} is {b}."),
     };
     format!(
         "{} result: score {score}. {record} A {} {} streak. {}",

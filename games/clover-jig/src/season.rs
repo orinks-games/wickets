@@ -53,7 +53,7 @@ pub fn event(today: Date) -> Option<Happening> {
         )),
         Festival::Shamrocks { .. } => Some(Happening::new(
             "Shamrock week",
-            "Shamrocks hide in the tunes: hit a step on its chime for a luck point.",
+            "Shamrocks hide in the tunes: dance a shamrock's step well for a luck point.",
         )),
         Festival::Off => None,
     }

@@ -15,26 +15,26 @@ use crate::{music, ABOUT};
 macro_rules! menu_music {
     ($music:path) => {
         fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
-            parlor_core::menu_sounds::use_shared(ctx);
+            parlor_core::menu_sounds::leave_game(ctx);
             $music(ctx);
             hearken::menu::menu_enter(self, ctx);
         }
 
         fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
-            parlor_core::menu_sounds::use_shared(ctx);
+            parlor_core::menu_sounds::leave_game(ctx);
             $music(ctx);
             self.refresh(ctx, true);
             self.announce(ctx);
         }
 
         fn resume_quiet(&mut self, ctx: &mut Ctx<Parlor>) {
-            parlor_core::menu_sounds::use_shared(ctx);
+            parlor_core::menu_sounds::leave_game(ctx);
             $music(ctx);
             self.refresh(ctx, true);
         }
 
         fn resume_with(&mut self, ctx: &mut Ctx<Parlor>, result: &str) {
-            parlor_core::menu_sounds::use_shared(ctx);
+            parlor_core::menu_sounds::leave_game(ctx);
             $music(ctx);
             self.refresh(ctx, true);
             ctx.say(hearken::text::end_sentence(result));
@@ -150,7 +150,6 @@ const NOT_PLAYED: &str = "not played yet";
 /// with nothing said about it later.
 fn forget_story_scene(ctx: &mut Ctx<Parlor>) {
     ctx.game.story_scene = None;
-    ctx.game.story_done = false;
 }
 
 /// Saves `g` as the last game played, for the Continue row.
@@ -162,6 +161,53 @@ pub(crate) fn note_last_game(ctx: &mut Ctx<Parlor>, g: &GameInfo) {
 pub(crate) fn open_game(ctx: &mut Ctx<Parlor>, g: GameInfo) {
     note_last_game(ctx, &g);
     (g.open)(ctx)
+}
+
+/// Said when a list offers a holiday special not yet played, but the
+/// internet date is not known now.
+pub const NEEDS_DATE: &str =
+    "New holiday specials need the date from the internet. Games you have played still open offline.";
+
+/// [`open_game`] from a launcher list, checking first that the game is
+/// still there: a list can be older than the date. Returns whether it
+/// opened; if not, it says why and the caller rebuilds its rows.
+pub(crate) fn open_listed(ctx: &mut Ctx<Parlor>, g: GameInfo) -> bool {
+    match crate::access(ctx, g.id) {
+        crate::Access::Open => {
+            open_game(ctx, g);
+            true
+        }
+        crate::Access::NeedsDate => {
+            crate::discovery_clock::request();
+            ctx.say(NEEDS_DATE);
+            false
+        }
+        crate::Access::Closed => {
+            ctx.say(format!("{} is back next season.", g.name));
+            false
+        }
+    }
+}
+
+/// The Seasonal games row that checks the internet date again, while it
+/// is not known.
+fn date_row(ctx: &Ctx<Parlor>) -> Option<MenuItem<GameList, Parlor>> {
+    use crate::discovery_clock::{status, Status};
+    if crate::discovery_date(ctx).is_some() {
+        return None;
+    }
+    let label = match status() {
+        Status::Checking => "Checking for holiday specials",
+        _ => "Check for holiday specials",
+    };
+    Some(
+        MenuItem::new(label, |s: &mut GameList, ctx: &mut Ctx<Parlor>| {
+            crate::discovery_clock::request();
+            s.asked = true;
+            ctx.say("Checking.");
+        })
+        .help(NEEDS_DATE),
+    )
 }
 
 /// The Back row that ends each of the launcher's lists: it does what
@@ -213,7 +259,7 @@ impl Menu for Lobby {
         if ctx.soundtrack.tracks().is_empty() {
             parlor_core::soundtrack::refresh(ctx);
         }
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         parlor_core::soundtrack::heard_music(ctx);
         hearken::menu::menu_enter(self, ctx);
@@ -234,7 +280,7 @@ impl Menu for Lobby {
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
         forget_story_scene(ctx);
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         self.refresh(ctx, true);
         self.announce(ctx);
@@ -242,14 +288,14 @@ impl Menu for Lobby {
 
     fn resume_quiet(&mut self, ctx: &mut Ctx<Parlor>) {
         forget_story_scene(ctx);
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         self.refresh(ctx, true);
     }
 
     fn resume_with(&mut self, ctx: &mut Ctx<Parlor>, result: &str) {
         forget_story_scene(ctx);
-        parlor_core::menu_sounds::use_shared(ctx);
+        parlor_core::menu_sounds::leave_game(ctx);
         music::lobby(ctx);
         self.refresh(ctx, true);
         ctx.say(hearken::text::end_sentence(result));
@@ -294,7 +340,11 @@ impl Menu for Lobby {
             items.push(
                 MenuItem::new(
                     format!("Continue, {}", g.name),
-                    move |_s: &mut Self, ctx: &mut Ctx<Parlor>| open_game(ctx, g),
+                    move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        if !open_listed(ctx, g) {
+                            s.refresh(ctx, true);
+                        }
+                    },
                 )
                 .help(format!("Open {}, the last game you played.", g.name)),
             );
@@ -320,7 +370,7 @@ impl Menu for Lobby {
             MenuItem::new(crate::soundtrack::ROW, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(crate::soundtrack::Albums::new())
             })
-            .help("Every game's music, to sit and listen. A track unlocks the first time you hear it in play."),
+            .help("Every game's music. A track unlocks the first time it plays in a game."),
             MenuItem::new("Settings", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(SettingsScreen::<Parlor>::new())
             })
@@ -413,7 +463,7 @@ impl Menu for CategoryList {
                     .help(match category {
                         Category::Seasonal => "Holiday games, one for each celebration.",
                         Category::Action => "Fast games that chase a high score.",
-                        Category::Puzzle => "Listening puzzles with no clock to beat.",
+                        Category::Puzzle => "Puzzles with no clock to beat.",
                         Category::Cozy => "Calm games to unwind with and no way to fail.",
                         Category::Table => "Card and dice games, played at your own pace.",
                     }),
@@ -499,6 +549,11 @@ impl Menu for StoryGameList {
 pub struct GameList {
     category: Category,
     menu: MenuCore<Self, Parlor>,
+    /// The internet date's status when the rows were built, so the list
+    /// rebuilds when it changes.
+    seen: Option<crate::discovery_clock::Status>,
+    /// The player chose the check row and waits to hear how it went.
+    asked: bool,
 }
 
 impl GameList {
@@ -506,6 +561,8 @@ impl GameList {
         GameList {
             category,
             menu: MenuCore::new(category.label()),
+            seen: None,
+            asked: false,
         }
     }
 }
@@ -517,7 +574,59 @@ impl Menu for GameList {
         "games"
     }
 
-    menu_music!(music::lobby);
+    fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
+        if self.category == Category::Seasonal {
+            crate::discovery_clock::request();
+        }
+        parlor_core::menu_sounds::leave_game(ctx);
+        music::lobby(ctx);
+        hearken::menu::menu_enter(self, ctx);
+    }
+
+    fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
+        parlor_core::menu_sounds::leave_game(ctx);
+        music::lobby(ctx);
+        self.refresh(ctx, true);
+        self.announce(ctx);
+    }
+
+    fn resume_quiet(&mut self, ctx: &mut Ctx<Parlor>) {
+        parlor_core::menu_sounds::leave_game(ctx);
+        music::lobby(ctx);
+        self.refresh(ctx, true);
+    }
+
+    fn resume_with(&mut self, ctx: &mut Ctx<Parlor>, result: &str) {
+        parlor_core::menu_sounds::leave_game(ctx);
+        music::lobby(ctx);
+        self.refresh(ctx, true);
+        ctx.say(hearken::text::end_sentence(result));
+        let current = self.current_text(ctx);
+        ctx.say_queued(current);
+    }
+
+    /// Rebuilds the Seasonal games when the internet date arrives or
+    /// fails, and answers a check the player asked for.
+    fn update(&mut self, ctx: &mut Ctx<Parlor>, _dt: f64) {
+        use crate::discovery_clock::Status;
+        if self.category != Category::Seasonal || self.seen.is_none() {
+            return;
+        }
+        let now = crate::discovery_clock::status();
+        if self.seen == Some(now) {
+            return;
+        }
+        self.refresh(ctx, true);
+        if self.asked && now != Status::Checking {
+            self.asked = false;
+            ctx.say(match now {
+                Status::Ready(_) => "Holiday specials checked.",
+                _ => "No internet date. Try again later.",
+            });
+            let current = self.current_text(ctx);
+            ctx.say_queued(current);
+        }
+    }
 
     fn menu(&self) -> &MenuCore<Self, Parlor> {
         &self.menu
@@ -528,6 +637,9 @@ impl Menu for GameList {
     }
 
     fn build_items(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
+        let seasonal = self.category == Category::Seasonal;
+        self.seen = seasonal.then(crate::discovery_clock::status);
+        let date_row = if seasonal { date_row(ctx) } else { None };
         let mut games: Vec<GameInfo> = crate::listed(ctx)
             .into_iter()
             .filter(|g| g.category == self.category)
@@ -552,11 +664,14 @@ impl Menu for GameList {
                     ),
                     None => (g.name.to_string(), g.blurb.to_string()),
                 };
-                MenuItem::new(label, move |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                    open_game(ctx, g)
+                MenuItem::new(label, move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    if !open_listed(ctx, g) {
+                        s.refresh(ctx, true);
+                    }
                 })
                 .help(help)
             })
+            .chain(date_row)
             .chain([back_row("Return to the kinds of game.")])
             .collect()
     }

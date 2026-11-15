@@ -81,7 +81,7 @@ pub fn save_outing(ctx: &mut Ctx<Parlor>, lake: &Lake) -> Vec<String> {
         Mode::Night(n) if lake.complete && n > j.nights => {
             j.nights = n;
             lines.push(format!(
-                "Night {n} is in your journal. Night {} waits.",
+                "Night {n} is in your journal. Night {} is next.",
                 n + 1
             ));
             if n == 1 {

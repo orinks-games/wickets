@@ -60,7 +60,7 @@ fn a_first_visit_starts_on_the_tutorial() {
     h.press(Key::Return);
     assert!(spoke(
         &h,
-        "You dance by ear at a village ceili, and a caller calls your steps."
+        "You dance at a village ceili, and a caller calls your steps."
     ));
     assert_eq!(h.app.top_name(), "lesson");
 }
@@ -107,9 +107,9 @@ fn the_tutorial_teaches_in_the_practice_room() {
     assert!(spoke(&h, "4 steps danced."));
     assert!(spoke(
         &h,
-        "Now the tune goes on, as in a real dance, after three drum beats."
+        "Now the tune goes on, as in a real dance, after three count-in beats."
     ));
-    assert!(spoke(&h, "That bright chime is 3 points."));
+    assert!(spoke(&h, "That was spot on: 3 points."));
     assert!(!spoke(&h, "Missed."), "no call is lost under the line");
     assert!(
         spoke(&h, "Tutorial done. Before a dance, H plays every step with its call. Play starts the first set."),
@@ -366,11 +366,11 @@ fn repeat_and_hint_name_the_calls() {
 }
 
 #[test]
-fn an_unknown_key_says_so() {
+fn an_unknown_key_stays_silent() {
     let (mut h, _) = floor(Mode::Set(1));
     h.clear();
     h.press(Key::Q);
-    assert_eq!(h.spoken(), ["Not a dance key. F1 lists the controls."]);
+    assert!(h.spoken().is_empty(), "{:?}", h.spoken());
 }
 
 #[test]
@@ -486,7 +486,10 @@ fn the_practice_room_waits_and_names_the_key() {
     assert_eq!(rows(&h)[0], "The Kettle on the Hob, a jig, no stars");
     assert_eq!(rows(&h)[3], "The Crossroads Jig, a jig, locked");
     let (mut h, mut twin) = floor(Mode::Practice(1));
-    assert!(spoke(&h, "The tune waits at each step until you dance it."));
+    assert!(spoke(
+        &h,
+        "The music holds at each step until you dance it."
+    ));
     start(&mut h, &mut twin);
     while twin.dance.waiting().is_none() {
         frame(&mut h, &mut twin);
@@ -515,7 +518,7 @@ fn the_practice_room_waits_and_names_the_key() {
 #[test]
 fn shamrock_week_hides_shamrocks_that_give_luck() {
     let (mut h, mut twin) = floor_on(SHAMROCK_DAY, Mode::Set(1));
-    assert!(spoke(&h, "Shamrocks hide in the tunes:"));
+    assert!(spoke(&h, "Shamrocks hide in the tunes. Dance"));
     assert!(twin.plans.iter().all(|p| p.shamrocks() >= 2));
     start(&mut h, &mut twin);
     let first = twin
@@ -630,7 +633,7 @@ fn keepsakes_count_down_when_empty() {
     h.press(Key::Return);
     assert!(spoke(
         &h,
-        "Keepsakes. 0 luck points, from 0 shamrocks heard."
+        "Keepsakes. 0 luck points, from 0 shamrocks in the tunes."
     ));
     h.press(Key::Return);
     assert!(spoke(&h, "No ceili keepsakes yet."));
@@ -642,6 +645,7 @@ fn spoken_call_outs_speak_each_call() {
     let mut h = title();
     goto(&mut h, "Settings");
     h.press(Key::Return);
+    h.press(Key::Return); // the game's own category
     goto(&mut h, "Spoken call-outs");
     h.clear();
     h.press(Key::Return);
@@ -668,19 +672,22 @@ fn the_sound_check_plays_every_row() {
     assert_eq!(h.app.top_name(), SOUNDS_NAME);
     let n = rows(&h).len();
     assert_eq!(rows(&h)[0], "Left");
+    assert!(!rows(&h).iter().any(|row| row == "A tune"));
+    assert!(!rows(&h).iter().any(|row| row == "The ceili band"));
     assert_eq!(rows(&h).last().map(String::as_str), Some("Back"));
     h.press(Key::Home);
     for _ in 0..n - 1 {
         h.clear();
         h.press(Key::Return);
         assert!(!h.played().is_empty(), "{}", cursor_row(&h));
-        assert!(!h.spoken().is_empty(), "{}", cursor_row(&h));
+        assert!(h.spoken().is_empty(), "{}", cursor_row(&h));
         h.press(Key::Down);
     }
-    h.clear();
     h.press(Key::Home);
+    h.clear();
     h.press(Key::Return);
-    assert!(spoke(&h, "Left: the caller says left"));
+    assert!(h.spoken().is_empty());
+    assert!(!h.played().is_empty());
     h.press(Key::End);
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), TITLE_NAME);

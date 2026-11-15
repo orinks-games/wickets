@@ -1,5 +1,4 @@
-//! The sound check: every sound of the game, by name, and the game's own
-//! key.
+//! Sound check: gameplay cues by name, with playback.
 
 use hearken::menu::{Menu, MenuCore, MenuItem};
 use hearken::{Bus, Ctx, Sound};
@@ -18,9 +17,8 @@ pub struct SoundCheck {
 impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
-            menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
-            ),
+            menu: MenuCore::new("Sound check")
+                .with_intro_help("Up and Down choose a sound, Enter plays it, Escape goes back."),
             playing: Vec::new(),
         }
     }
@@ -47,9 +45,6 @@ pub fn label(meaning: &str) -> String {
         .trim_end_matches('.')
         .to_string()
 }
-
-/// What the keys row says.
-pub const KEYS_WORDS: &str = "Fireside Patience reads one key of its own, Backspace. In play, Backspace takes back the last move, or puts back the cards you hold. It cannot be changed in Settings. Every other key is a shared control.";
 
 impl Menu for SoundCheck {
     type Game = Parlor;
@@ -83,6 +78,7 @@ impl Menu for SoundCheck {
                 MenuItem::new(
                     label(meaning),
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        ctx.stop_speech();
                         s.hush(ctx);
                         let a = if sound::is_bed(key) {
                             ctx.audio.play(key, Bus::AMBIENCE)
@@ -90,23 +86,12 @@ impl Menu for SoundCheck {
                             sound::play(ctx, key)
                         };
                         s.playing.push(a);
-                        ctx.say(meaning);
                     },
                 )
                 .select_sound(None)
-                .help("Enter plays it and says what it means."),
+                .help("Enter plays it."),
             );
         }
-        items.push(
-            MenuItem::new(
-                "Keys of this game",
-                |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                    ctx.say(KEYS_WORDS);
-                },
-            )
-            .select_sound(None)
-            .help("Which key the game reads beyond the shared controls."),
-        );
         items.push(
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.pop()

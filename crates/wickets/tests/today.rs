@@ -156,7 +156,7 @@ fn every_event_opens_its_title_on_a_row_that_plays_it() {
             parlor_core::menus::mark_tutorial_read(&mut h.app.ctx, g.id);
             parlor_core::tutorial::mark_played(&mut h.app.ctx, g.id);
             let focus = event.focus().to_lowercase();
-            h.app.ctx.game.title_focus = Some(event.focus());
+            h.app.ctx.game.title_opening = Some(parlor_core::TitleOpening::Row(event.focus()));
             (g.open)(&mut h.app.ctx);
             h.frame(0.0);
             let lines = h.app.top_lines();
@@ -226,6 +226,7 @@ fn a_kind_left_out_in_preferences_leaves_events_but_not_play() {
 fn preferences_open_from_the_launchers_settings() {
     let mut h = start_on(QUIET_DAY);
     select(&mut h, "Settings");
+    select(&mut h, "Games");
     let settings = rows(&h);
     let row = settings
         .iter()
@@ -302,6 +303,7 @@ fn seasonal_games_follow_the_calendar_from_today() {
             "Firefly Meadow",
             "Liberty Lights",
             "Nevermore Manor",
+            "Graveyard Shuffle",
         ]
     );
     // March: the winter games wrap round to the end.
@@ -314,6 +316,7 @@ fn seasonal_games_follow_the_calendar_from_today() {
             "Liberty Lights",
             "Nevermore Manor",
             "Harvest Feast",
+            "Snowfall Skate",
             "Winter Wonderland",
             "Dragon Dance",
             "Cupid's Quiver",
@@ -346,6 +349,10 @@ fn every_seasonal_game_has_a_holiday() {
         .chain(wickets::specials().into_iter().map(|(g, _)| g))
         .filter(|g| g.category == parlor_core::Category::Seasonal)
     {
-        assert!(wickets::days_to_holiday(&g, today) < 400, "{} has no holiday", g.name);
+        assert!(
+            wickets::days_to_holiday(&g, today) < 400,
+            "{} has no holiday",
+            g.name
+        );
     }
 }

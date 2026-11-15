@@ -63,6 +63,8 @@ agent-server = ["hearken/agent-server"]
 [dependencies]
 # Where the old-named data folder was, to move it (see main.rs).
 dirs = "6"
+# Network-confirmed dates for new seasonal discovery; rustls, no native TLS.
+ureq = { version = "=2.12.1", default-features = false, features = ["tls"] }
 serde.workspace = true
 # Hearken must be a direct dependency: build.rs reads Prism's link arguments
 # from it. `discord`: the "Playing Wicket's" status (see
@@ -91,6 +93,7 @@ tide-pools = { path = "../../games/tide-pools" }
 rooftop-garden = { path = "../../games/rooftop-garden" }
 larkfield = { path = "../../games/larkfield" }
 little-rapids = { path = "../../games/little-rapids" }
+snowfall-skate = { path = "../../games/snowfall-skate" }
 riverboat-dice = { path = "../../games/riverboat-dice" }
 fireside-patience = { path = "../../games/fireside-patience" }
 cupids-quiver = { path = "../../games/cupids-quiver" }
@@ -106,6 +109,7 @@ graveyard-shuffle = { path = "../../games/graveyard-shuffle" }
 wickets-slot-a = { path = "../../extras/slot-a" }
 wickets-slot-c = { path = "../../extras/slot-c" }
 wickets-slot-d = { path = "../../extras/slot-d" }
+wickets-slot-e = { path = "../../extras/slot-e" }
 
 [build-dependencies]
 wickets-content = { path = "../wickets-content" }

@@ -20,6 +20,7 @@ pub mod rides;
 pub mod shop;
 pub mod sound;
 mod soundcheck;
+pub mod submenus;
 pub mod training;
 pub mod tutorial;
 pub mod world;
@@ -29,7 +30,7 @@ use hearken::screens::SettingsRow;
 use hearken::text::{end_sentence, sentence_start};
 use hearken::Ctx;
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Rng};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period, Rng};
 
 pub use bike::Bike;
 pub use progress::{CallOuts, Choices, Progress};
@@ -38,7 +39,7 @@ pub use rides::{ChallengeHost, ChallengesMenu, Rides, CHALLENGES_NAME};
 pub use soundcheck::SoundCheck;
 
 use course::COURSES;
-use progress::{best_time, board, distance_words, dollar_words, endless_board, time_words};
+use progress::{best_times, board, distance_words, dollar_words, endless_board, time_words};
 
 /// The game's id: its sounds live under `sounds/freewheel/`.
 pub const ID: &str = "freewheel";
@@ -54,7 +55,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Freewheel",
     category: Category::Action,
-    blurb: "Ride a bike through city traffic by ear, as fast as you dare.",
+    blurb: "Ride a bike through city traffic, as fast as you dare.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -77,24 +78,77 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
     ctx.push(ChallengeHost::new(period));
 }
 
+/// "best 1 minute 4 seconds, relaxed best 1 minute 50 seconds", leaving
+/// out one with no time, or "no time yet".
 fn best_words(ctx: &mut Ctx<Parlor>, course: usize, bike: Bike) -> String {
-    match best_time(ctx, &board(COURSES[course].id, bike)) {
-        Some(t) => format!("best {}", time_words(t)),
-        None => "no time yet".to_string(),
+    let (best, relaxed) = best_times(ctx, &board(COURSES[course].id, bike));
+    pace::both("best", best.map(time_words), relaxed.map(time_words))
+        .unwrap_or_else(|| "no time yet".to_string())
+}
+
+/// "1 minute 4 seconds, 98000 ride points": the best time on `board` and
+/// its ride points, if it has a time.
+fn time_points(ctx: &mut Ctx<Parlor>, board: &str) -> Option<String> {
+    let t = progress::best_time(ctx, board)?;
+    Some(format!(
+        "{}, {} ride points",
+        time_words(t),
+        parlor_core::Records::best(ctx, ID, board).unwrap_or(0)
+    ))
+}
+
+/// The same for `board` and its relaxed board: "best ..., relaxed best
+/// ...", leaving out one with no time.
+fn both_time_points(ctx: &mut Ctx<Parlor>, board: &str) -> Option<String> {
+    let best = time_points(ctx, board);
+    let relaxed = time_points(ctx, &Pace::Relaxed.board(board));
+    pace::both("best", best, relaxed)
+}
+
+/// `normal` as it reads, then ", relaxed best" and the relaxed value,
+/// leaving out one with none.
+fn plus_relaxed(normal: Option<String>, relaxed: Option<String>) -> Option<String> {
+    match (normal, relaxed) {
+        (n, None) => n,
+        (None, Some(r)) => Some(format!("relaxed best {r}")),
+        (Some(n), Some(r)) => Some(format!("{n}, relaxed best {r}")),
+    }
+}
+
+/// The best on `board` and on its relaxed board, each read by `words`,
+/// as [`plus_relaxed`] puts them.
+fn board_bests(
+    ctx: &mut Ctx<Parlor>,
+    board: &str,
+    words: impl Fn(u64) -> String,
+) -> Option<String> {
+    let best = pace::best(ctx, ID, board).map(&words);
+    let relaxed = pace::best(ctx, ID, &Pace::Relaxed.board(board)).map(&words);
+    plus_relaxed(best, relaxed)
+}
+
+/// " Best 1.2 kilometres, relaxed best 900 metres." for a row's help,
+/// leaving out one with no score, or nothing.
+fn row_best(ctx: &mut Ctx<Parlor>, board: &str, words: impl Fn(u64) -> String) -> String {
+    let best = pace::best(ctx, ID, board).map(&words);
+    let relaxed = pace::best(ctx, ID, &Pace::Relaxed.board(board)).map(&words);
+    match pace::both("best", best, relaxed) {
+        Some(b) => format!(" {}.", sentence_start(&b)),
+        None => String::new(),
     }
 }
 
 /// " Your best is 1 minute 4 seconds, 98000 ride points." for an event
-/// row's help, or nothing.
+/// row's help, then the relaxed best the same way, or nothing.
 fn event_best(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    match best_time(ctx, board) {
-        Some(t) => format!(
-            " Your best is {}, {} ride points.",
-            time_words(t),
-            parlor_core::Records::best(ctx, ID, board).unwrap_or(0)
-        ),
-        None => String::new(),
+    let mut out = String::new();
+    if let Some(b) = time_points(ctx, board) {
+        out.push_str(&format!(" Your best is {b}."));
     }
+    if let Some(b) = time_points(ctx, &Pace::Relaxed.board(board)) {
+        out.push_str(&format!(" Your relaxed best is {b}."));
+    }
+    out
 }
 
 /// Records: best times, totals and the challenges, a page at a time.
@@ -115,13 +169,10 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
             .filter(|&bike| progress.owns_bike(bike))
             .map(|bike| {
                 let b = board(info.id, bike);
-                match best_time(ctx, &b) {
-                    Some(t) => format!(
-                        "on the {}, {}, {} ride points",
-                        bike.name(),
-                        time_words(t),
-                        parlor_core::Records::best(ctx, ID, &b).unwrap_or(0)
-                    ),
+                let best = time_points(ctx, &b);
+                let relaxed = time_points(ctx, &Pace::Relaxed.board(&b));
+                match pace::both("best", best, relaxed) {
+                    Some(t) => format!("on the {}, {t}", bike.name()),
                     None => format!("on the {}, no time yet", bike.name()),
                 }
             })
@@ -136,8 +187,8 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let endless: Vec<String> = course::District::ALL
         .into_iter()
         .filter_map(|d| {
-            parlor_core::Records::best(ctx, ID, &endless_board(d))
-                .map(|m| format!("{}, {}", d.name(), distance_words(m as f64)))
+            board_bests(ctx, &endless_board(d), |m| distance_words(m as f64))
+                .map(|m| format!("{}, {m}", d.name()))
         })
         .collect();
     pages.push(format!(
@@ -155,8 +206,8 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         let bests: Vec<String> = course::District::ALL
             .into_iter()
             .filter_map(|d| {
-                parlor_core::Records::best(ctx, ID, &clock::board(d))
-                    .map(|n| format!("{}, {}", d.name(), clock::drop_words(n as u32)))
+                board_bests(ctx, &clock::board(d), |n| clock::drop_words(n as u32))
+                    .map(|n| format!("{}, {n}", d.name()))
             })
             .collect();
         if !bests.is_empty() {
@@ -178,13 +229,8 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     ] {
         for bike in Bike::ALL {
             let board = events::board(stem, bike);
-            if let Some(t) = best_time(ctx, &board) {
-                events.push(format!(
-                    "{name} on the {}, best {}, {} ride points.",
-                    bike.name(),
-                    time_words(t),
-                    parlor_core::Records::best(ctx, ID, &board).unwrap_or(0)
-                ));
+            if let Some(t) = both_time_points(ctx, &board) {
+                events.push(format!("{name} on the {}, {t}.", bike.name()));
             }
         }
     }
@@ -229,167 +275,47 @@ impl TitleGame for Freewheel {
 
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
         let c = Choices::load(ctx);
-        let info = &COURSES[c.course];
-        let best = best_words(ctx, c.course, c.bike);
-        let mut rows = vec![
-            MenuItem::new(
-                format!(
-                    "{}, time trial: {} on the {}",
-                    labels::PLAY,
-                    info.name,
-                    c.bike.name()
-                ),
-                move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                    ctx.push(Ride::time_trial(c.course, c.bike))
-                },
-            )
-            .help(format!("{} {}.", info.about(), sentence_start(&best))),
-            {
-                let district = Choices::load(ctx).district;
-                let best = match parlor_core::Records::best(ctx, ID, &endless_board(district)) {
-                    Some(m) => format!(" Best {}.", distance_words(m as f64)),
-                    None => String::new(),
-                };
-                MenuItem::new(
-                    format!("Endless ride: {} on the {}", district.name(), c.bike.name()),
-                    move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                        ctx.push(Ride::endless(c.bike, district, Rng::from_time().next_u64()))
-                    },
-                )
-                .help(format!(
-                    "Ride until your third crash. Dodge oncoming cars and grab parcels.{best}"
-                ))
-            },
-        ];
-        if clock::offered() {
-            let district = c.district;
-            let best = match parlor_core::Records::best(ctx, ID, &clock::board(district)) {
-                Some(n) => format!(" Best {}.", clock::drop_words(n as u32)),
-                None => String::new(),
-            };
-            rows.push(
-                MenuItem::new(
-                    format!("{}: {} on the {}", clock::NAME, district.name(), c.bike.name()),
-                    move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                        ctx.push(Ride::against_clock(
-                            c.bike,
-                            district,
-                            Rng::from_time().next_u64(),
-                        ))
-                    },
-                )
-                .help(format!(
-                    "Make drops to add time. Crashes cost {} seconds. The ride ends when the clock runs out.{best}",
-                    clock::CRASH_S as u32
-                )),
-            );
-        }
-        rows.extend([
-            MenuItem::new("Job board", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                ctx.push(jobs::JobBoard::new())
-            })
-            .help("Courier deliveries for cash. Full pay on time, half pay late."),
-            MenuItem::new("Free ride", move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                ctx.push(Ride::free_ride(c.bike, Rng::from_time().next_u64()))
-            })
-            .help(format!(
-                "{} of Downtown with no clock, to learn the sounds of the street.",
-                parlor_core::units::route(ride::FREE_LENGTH)
-            )),
-            MenuItem::new("Course select", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                ctx.push(CourseSelect::new())
-            })
-            .help(format!(
-                "Choose one of the {} Downtown courses for the time trial.",
-                COURSES.len()
-            )),
-            MenuItem::new("Bike select", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                ctx.push(BikeSelect::new())
-            })
-            .help(format!(
-                "Choose your bike. Riding the {} now.",
+        let district = c.district;
+        let best = row_best(ctx, &endless_board(district), |m| distance_words(m as f64));
+        let mut rows = vec![MenuItem::new(
+            format!(
+                "{}, endless ride: {} on the {}",
+                labels::PLAY,
+                district.name(),
                 c.bike.name()
-            )),
-            MenuItem::new(
-                "District select",
-                |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(shop::DistrictSelect::new()),
-            )
-            .help(if clock::offered() {
-                "Choose where the endless ride and the ride against the clock go."
-            } else {
-                "Choose where the endless ride goes."
-            }),
-            MenuItem::new("Bike shop", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                ctx.push(shop::Shop::new())
-            })
-            .help(format!(
-                "Spend cash on bikes and districts. You have {}.",
-                dollar_words(Progress::load(ctx).cash)
-            )),
-        ]);
+            ),
+            move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
+                ctx.push(Ride::endless(c.bike, district, Rng::from_time().next_u64()))
+            },
+        )
+        .help(format!(
+            "Ride until your third crash. Dodge oncoming cars and grab parcels.{best}"
+        ))];
+        // The job board joins the title after a first finished ride.
+        if job_board_open(&Progress::load(ctx)) {
+            rows.push(
+                MenuItem::new("Job board", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
+                    ctx.push(jobs::JobBoard::new())
+                })
+                .help("Courier deliveries for cash. Full pay on time, half pay late."),
+            );
+        }
         let today = parlor_core::challenges::today(ctx);
-        let on = format!(" On the {}.", c.bike.name());
-        if events::leaf_open(today) {
-            let help = format!(
-                "{}{on}{}",
-                events::leaf_help(),
-                event_best(ctx, &events::board(events::LEAF_BOARD, c.bike))
-            );
-            rows.push(
-                MenuItem::new(
-                    events::LEAF_SEASON,
-                    move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                        let today = parlor_core::challenges::today(ctx);
-                        ctx.push(Ride::leaf_season(c.bike, today))
-                    },
-                )
-                .help(help),
-            );
-        } else {
-            // Out of season: the row keeps its place and says when it opens.
-            rows.push(
-                MenuItem::new(
-                    labels::locked(events::LEAF_SEASON),
-                    |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                        let today = parlor_core::challenges::today(ctx);
-                        ctx.play_ui(hearken::UiSound::Error);
-                        ctx.say(events::leaf_locked_line(today))
-                    },
-                )
-                .select_sound(None)
-                .help(events::leaf_locked_help(today)),
-            );
-        }
-        if let Some(course) = events::sunday_course(today) {
-            let help = format!(
-                "{}{on}{}",
-                events::sunday_help(),
-                event_best(ctx, &events::board(events::SUNDAY_BOARD, c.bike))
-            );
-            rows.push(
-                MenuItem::new(
-                    events::SUNDAY,
-                    move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                        ctx.push(Ride::sunday(c.bike, course.clone()))
-                    },
-                )
-                .help(help),
-            );
-        } else {
-            // Closed today: the row keeps its place and says when it opens.
-            rows.push(
-                MenuItem::new(
-                    labels::locked(events::SUNDAY),
-                    |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                        let today = parlor_core::challenges::today(ctx);
-                        ctx.play_ui(hearken::UiSound::Error);
-                        ctx.say(events::sunday_locked_line(today))
-                    },
-                )
-                .select_sound(None)
-                .help(events::sunday_locked_help(today)),
-            );
-        }
+        rows.extend([
+            MenuItem::new(submenus::MORE_RIDES, |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
+                ctx.push(submenus::MoreRides::new())
+            })
+            .help(submenus::more_rides_help()),
+            MenuItem::new(
+                submenus::events_label(today),
+                |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(submenus::Events::new()),
+            )
+            .help(submenus::events_help(today)),
+            MenuItem::new(submenus::GARAGE, |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
+                ctx.push(submenus::Garage::new())
+            })
+            .help(submenus::garage_help(ctx)),
+        ]);
         rows
     }
 
@@ -417,9 +343,10 @@ impl TitleGame for Freewheel {
             "freewheel_call_outs",
             |ctx| format!("Spoken call-outs: {}", Choices::peek(ctx).call_outs.word()),
             cycle_call_outs,
-            "Choose when gameplay cues are named: every time, once per session, or off. A session lasts until you close Wicket's. Status and Hint always speak.",
+            "Choose when the game names what is coming on the road: every time, once per session, or off. A session lasts until you close Wicket's. Status and Hint always speak.",
         ),
             parlor_core::units::row(),
+            pace::row(ID),
         ]
     }
 
@@ -459,7 +386,14 @@ impl TitleGame for Freewheel {
     }
 }
 
-/// Choose a time trial course. Enter rides it and keeps it as the Play row's course.
+/// Whether the job board is on the title: once a ride or a delivery is
+/// finished, so a new player meets a shorter title.
+pub fn job_board_open(progress: &Progress) -> bool {
+    progress.rides > 0 || progress.deliveries > 0
+}
+
+/// Choose a time trial course. Enter rides it and keeps it as the next
+/// time trial's course, where the list opens.
 pub struct CourseSelect {
     menu: MenuCore<Self, Parlor>,
 }
@@ -467,7 +401,7 @@ pub struct CourseSelect {
 impl CourseSelect {
     pub fn new() -> Self {
         CourseSelect {
-            menu: MenuCore::new("Course select")
+            menu: MenuCore::new("Time trial")
                 .with_intro_help("Up and Down choose a course, Enter rides it, Escape goes back."),
         }
     }
@@ -484,6 +418,14 @@ impl Menu for CourseSelect {
 
     fn name(&self) -> &'static str {
         "freewheel_courses"
+    }
+
+    /// Opens on the course ridden last.
+    fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
+        ctx.play_ui(hearken::UiSound::Open);
+        self.refresh(ctx, false);
+        self.menu.index = Choices::load(ctx).course.min(COURSES.len() - 1);
+        self.announce(ctx);
     }
 
     fn menu(&self) -> &MenuCore<Self, Parlor> {
@@ -516,7 +458,7 @@ impl Menu for CourseSelect {
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.pop()
             })
-            .help("Return to the Freewheel title."),
+            .help("Return to More rides."),
         );
         items
     }
@@ -583,7 +525,7 @@ impl Menu for BikeSelect {
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.pop()
             })
-            .help("Return to the Freewheel title."),
+            .help("Return to the garage."),
         );
         items
     }

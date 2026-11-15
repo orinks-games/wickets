@@ -14,7 +14,7 @@
 
 use hearken::{Bus, Ctx, State};
 use parlor_core::menus::{self, labels, Back, ChallengeGame, Results};
-use parlor_core::{Challenge, Challenges, Pages, Parlor, Period, Rng, ScoreResult};
+use parlor_core::{Challenge, Challenges, Pace, Pages, Parlor, Period, Rng, ScoreResult};
 
 use crate::kitchen::{Kitchen, Mode};
 use crate::rules::{
@@ -405,7 +405,9 @@ impl ChallengePlan {
     /// A short tag for the challenge's row in the list.
     pub fn tag(&self) -> String {
         match (self.period, self.twist) {
-            (Period::Monthly, _) => "ten dishes on every station, with golden plates".to_string(),
+            (Period::Monthly, _) => {
+                "ten dishes across five stations, with golden plates".to_string()
+            }
             (Period::Weekly, Some(t)) => format!("three courses, with {}", t.name()),
             (_, Some(t)) => format!("one meal on four stations, with {}", t.name()),
             (_, None) => "one meal".to_string(),
@@ -427,11 +429,11 @@ impl ChallengePlan {
                 let st = self.hot.map_or("burner", |s| s.name());
                 format!("A hot burner: the {st} runs hot. Dishes there come due much sooner and burn faster.")
             }
-            Some(Twist::Quiet) => "A quiet kitchen: no spoken call-outs. The recipe still calls each dish, but you hear when a dish needs you by its sound alone. The by-ear bonus applies.".to_string(),
+            Some(Twist::Quiet) => "A quiet kitchen: no spoken call-outs. The recipe still calls each dish, but no voice says when a dish needs you. The bonus for cooking without call-outs applies.".to_string(),
             Some(Twist::Butterfingers) => format!("Butterfingers: every fumble costs {BUTTERFINGERS_COST} instead of 5."),
         };
         let shape = match self.period {
-            Period::Daily => "One seeded meal on four stations.".to_string(),
+            Period::Daily => "One meal on four stations, the same for every player.".to_string(),
             Period::Weekly => "Three courses on three, four, then five stations, each faster. Each course needs a star for the next.".to_string(),
             Period::Monthly => "Ten dishes, two on every station, the second waiting for the first.".to_string(),
         };
@@ -509,16 +511,28 @@ pub fn served_note(
     None
 }
 
-fn result_line(result: ScoreResult) -> String {
+/// What a challenge result did to the record, on the board for `pace`.
+fn result_line(result: ScoreResult, pace: Pace) -> String {
+    let best = pace.best_word();
     match result {
+        ScoreResult::First if pace.separate() => {
+            "Your first relaxed result on this challenge.".to_string()
+        }
         ScoreResult::First => "Your first result on this challenge.".to_string(),
-        ScoreResult::NewBest { previous } => format!("A new best, up from {previous}."),
-        ScoreResult::Short { best } => format!("Your best is {best}."),
+        ScoreResult::NewBest { previous } => format!("A new {best}, up from {previous}."),
+        ScoreResult::Short { best: b } => format!("Your {best} is {b}."),
     }
 }
 
-/// Ends one challenge meal: on to the next course, or the result.
-pub fn finish(ctx: &mut Ctx<Parlor>, run: ChallengeRun, outcome: Outcome, by_ear: bool) {
+/// Ends one challenge meal: on to the next course at the run's `pace`, or
+/// the result, on the board for that pace.
+pub fn finish(
+    ctx: &mut Ctx<Parlor>,
+    run: ChallengeRun,
+    outcome: Outcome,
+    by_ear: bool,
+    pace: Pace,
+) {
     let plan = run.plan();
     let score = plan.score(&outcome, by_ear);
     let passed = outcome.passed();
@@ -564,7 +578,7 @@ pub fn finish(ctx: &mut Ctx<Parlor>, run: ChallengeRun, outcome: Outcome, by_ear
     }
     summary.push_str(&format!(" {} points", score.points));
     if by_ear {
-        summary.push_str(", with the by-ear bonus");
+        summary.push_str(", with the bonus for cooking without call-outs");
     }
     summary.push('.');
     ctx.audio.set_bed(None);
@@ -585,13 +599,13 @@ pub fn finish(ctx: &mut Ctx<Parlor>, run: ChallengeRun, outcome: Outcome, by_ear
             ),
         ];
         ctx.replace(Pages::new(pages).then(move |ctx| {
-            ctx.replace(Kitchen::new(Mode::Challenge(next.clone())));
+            ctx.replace(Kitchen::new(Mode::Challenge(next.clone())).at_pace(pace));
         }));
         return;
     }
     let total = run.total + score.points;
     let ch = run.challenge.clone();
-    let result = Challenges::submit(ctx, &ch, total);
+    let result = Challenges::submit_at(ctx, &ch, pace, total);
     let streak = Challenges::streak(ctx, ID, ch.period).max(1);
     let stinger = if !passed {
         sound::LOSE
@@ -618,7 +632,7 @@ pub fn finish(ctx: &mut Ctx<Parlor>, run: ChallengeRun, outcome: Outcome, by_ear
         format!(
             "{} result: {total} points. {} A {streak} {} streak. {}",
             ch.title(),
-            result_line(result),
+            result_line(result, pace),
             ch.period.unit(),
             ch.resets()
         ),

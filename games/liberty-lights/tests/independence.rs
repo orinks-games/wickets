@@ -146,7 +146,7 @@ fn the_week_before_plays_a_rehearsal_of_the_salute() {
     assert!(spoke(&h, "rehearsal"));
     h.clear();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "replay");
+    assert_eq!(h.app.top_name(), "liberty_lights_replay");
     assert!(spoke(&h, "Rehearsal: the opening salute"));
     for _ in 0..400 {
         h.frame(0.05);
@@ -189,7 +189,7 @@ fn on_the_fourth_the_night_opens_with_the_salute() {
     assert!(spoke(&h, "Four acts for the Fourth of July"));
     h.clear();
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "show");
+    assert_eq!(h.app.top_name(), "liberty_lights_show");
     assert!(
         spoke(
             &h,
@@ -213,7 +213,7 @@ fn a_whole_night_is_kept_as_this_years_keepsake() {
     h.press(Key::Return);
     let acts = independence::acts(2026);
     for (i, act) in acts.iter().enumerate() {
-        assert_eq!(h.app.top_name(), "show");
+        assert_eq!(h.app.top_name(), "liberty_lights_show");
         play_act(&mut h, &act.show);
         let said = h.spoken()[0].clone();
         assert!(

@@ -82,7 +82,7 @@ impl HamletScreen {
             if h.fair_day && h.phase == Phase::Morning && !h.barge {
                 h.barge = true;
                 h.news.push(
-                    "Barge fair today: the barge comes every day, and pays a coin more."
+                    "Barge fair today: the barge visits every in-game day and pays an extra coin for each item."
                         .to_string(),
                 );
             }
@@ -349,6 +349,11 @@ impl HamletScreen {
     fn finish(&mut self, ctx: &mut Ctx<Parlor>) {
         self.done = true;
         self.stop_sounds(ctx);
+        // A challenge's results offer to save the song; a day at home is
+        // told about it as the hamlet closes.
+        if self.challenge.is_some() {
+            parlor_core::songs::end(ctx, crate::ID);
+        }
         let (score, met, why) = {
             let h = self.h.borrow();
             (h.score(), h.goal_met, h.score_line())
@@ -442,7 +447,7 @@ impl HamletScreen {
             | Key::RAlt
             | Key::Insert
             | Key::Other(_) => {}
-            _ => ctx.say("Not a Larkfield control. F1 lists them."),
+            _ => {}
         }
     }
 }
@@ -525,6 +530,7 @@ impl State<Parlor> for HamletScreen {
             return self.resume(ctx);
         }
         self.entered = true;
+        parlor_core::songs::begin(ctx);
         self.settings(ctx);
         self.start_sounds(ctx);
         let phase = self.h.borrow().phase;
@@ -552,6 +558,7 @@ impl State<Parlor> for HamletScreen {
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
         self.keep(ctx);
+        parlor_core::songs::end_and_tell(ctx, crate::ID);
         self.stop_sounds(ctx);
     }
 
@@ -672,7 +679,7 @@ pub fn controls_text(ctx: &Ctx<Parlor>) -> String {
         k(ParlorAction::Repeat),
     );
     format!(
-        "{} and {right} walk the lane, or move inside a place. {} goes into a place, {down} back out. {} does the job in front of you: dig, sow, water, harvest, chop, fish, build or trade. {} pulls weeds and feeds animals. Enter talks to whoever is here. J opens the job board, L lists what is around you, and P tells you about everyone in Larkfield. {} says what needs you, and again for more. {} says what to do next. {} repeats the last line. Escape pauses.",
+        "{} and {right} walk the lane, or move inside a place. {} goes into a place, {down} back out. {} does the job in front of you: dig, sow, water, harvest, chop, fish, build or trade. {} pulls weeds and feeds animals. Enter talks to whoever is here. J opens the job board, L lists what is around you, and P describes everyone in Larkfield. {} says what needs you, and again for more. {} says what to do next. {} repeats the last line. Escape pauses.",
         sentence_start(&left),
         sentence_start(&up),
         sentence_start(&main),

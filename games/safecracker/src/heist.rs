@@ -5,7 +5,7 @@
 use hearken::text::sentence_start;
 use hearken::{Ctx, State};
 use parlor_core::menus::{self, ChallengeGame};
-use parlor_core::{Challenge, Challenges, Pages, Parlor, Period, ScoreResult};
+use parlor_core::{Challenge, Challenges, Pace, Pages, Parlor, Period, ScoreResult};
 
 use crate::challenge::{self, Job, Plan};
 use crate::rules::{time_words, Outcome, Run};
@@ -156,18 +156,29 @@ pub fn loss_words(outcome: Outcome, name: &str) -> String {
     }
 }
 
-fn score_line(result: ScoreResult) -> String {
+fn score_line(result: ScoreResult, pace: Pace) -> String {
+    let best = pace.best_word();
     match result {
+        ScoreResult::First if pace.separate() => {
+            "Your first relaxed result on this challenge.".to_string()
+        }
         ScoreResult::First => "Your first result on this challenge.".to_string(),
         ScoreResult::NewBest { previous } => {
-            format!("A new best, beating {previous}.")
+            format!("A new {best}, beating {previous}.")
         }
-        ScoreResult::Short { best } => format!("Your best is {best}."),
+        ScoreResult::Short { best: b } => format!("Your {best} is {b}."),
     }
 }
 
-/// Records a finished job and returns the pages that read it back.
-pub fn finish_job(ctx: &mut Ctx<Parlor>, ch: &Challenge, job: &Job, last: &Run) -> Vec<String> {
+/// Records a finished job played at `pace` and returns the pages that
+/// read it back. A relaxed job keeps its own result.
+pub fn finish_job(
+    ctx: &mut Ctx<Parlor>,
+    ch: &Challenge,
+    job: &Job,
+    last: &Run,
+    pace: Pace,
+) -> Vec<String> {
     let score = job.score();
     let n = job.safes();
     let mut first = match ch.period {
@@ -199,14 +210,14 @@ pub fn finish_job(ctx: &mut Ctx<Parlor>, ch: &Challenge, job: &Job, last: &Run) 
             job.clock_bonus
         ));
     }
-    let result = Challenges::submit(ctx, ch, score);
+    let result = Challenges::submit_at(ctx, ch, pace, score);
     let streak = Challenges::streak(ctx, ID, ch.period).max(1);
     vec![
         first,
         format!(
             "{} result: {score} points. {} A {streak} {} streak. {}",
             ch.title(),
-            score_line(result),
+            score_line(result, pace),
             ch.period.unit(),
             ch.resets()
         ),

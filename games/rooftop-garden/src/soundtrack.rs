@@ -25,13 +25,17 @@ pub const ALBUM: Album = Album::new(crate::ID, "Rooftop Garden");
 pub const SONG: &str = "rooftop-garden/song";
 
 /// The parts a soundtrack play draws its singers from.
-pub const SINGERS: [Part; 6] = [
+pub const SINGERS: [Part; 10] = [
     Part::Tomato,
     Part::Squash,
     Part::Bean,
     Part::Sunflower,
     Part::Lavender,
     Part::Mint,
+    Part::Strawberry,
+    Part::Chilli,
+    Part::Rose,
+    Part::Jasmine,
 ];
 
 pub fn tracks() -> Vec<Track> {
@@ -55,7 +59,7 @@ pub fn tracks() -> Vec<Track> {
                 "Visit the potting shed.",
                 20.9,
             )
-            .about("The music in the potting shed, where seeds are bought."),
+            .about("The music in the seed shed, where you browse seeds and collections."),
         ALBUM.pause(25.3),
     ]
 }
@@ -323,7 +327,7 @@ pub fn history(ctx: &mut hearken::Ctx<parlor_core::Parlor>) -> Vec<Track> {
         .map(|session| {
             let parts = session.parts();
             let about = format!(
-                "Your garden's song from {}, with {} plant{} singing, as you heard it.",
+                "Your garden's song from {}, with {} plant{} singing.",
                 parlor_core::soundtrack::date_words(session.date()),
                 parts.len(),
                 if parts.len() == 1 { "" } else { "s" }

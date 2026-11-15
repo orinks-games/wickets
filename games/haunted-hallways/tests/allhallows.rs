@@ -110,7 +110,7 @@ fn the_house_stirs_in_the_run_up_and_a_floor_opens_with_lantern_jack() {
     );
     goto(&mut h, allhallows::STIRS);
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "haunt");
+    assert_eq!(h.app.top_name(), "haunted_hallways_haunt");
     assert!(
         spoke(&h, "The house stirs: Lantern Jack"),
         "{:?}",
@@ -157,7 +157,7 @@ fn the_lantern_night_opens_on_halloween_with_the_candles_lit() {
     );
     goto(&mut h, allhallows::NIGHT);
     h.press(Key::Return);
-    assert_eq!(h.app.top_name(), "haunt");
+    assert_eq!(h.app.top_name(), "haunted_hallways_haunt");
     assert!(spoke(&h, "The Lantern Night."), "{:?}", h.spoken());
     assert!(spoke(&h, "3 candles"), "{:?}", h.spoken());
 }

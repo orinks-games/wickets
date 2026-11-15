@@ -30,9 +30,8 @@ impl SoundCheck {
 impl SoundCheck {
     pub fn new() -> Self {
         SoundCheck {
-            menu: MenuCore::new("Sound check").with_intro_help(
-                "Up and Down choose a sound, Enter plays it and says what it means, Escape goes back.",
-            ),
+            menu: MenuCore::new("Sound check")
+                .with_intro_help("Up and Down choose a sound, Enter plays it, Escape goes back."),
             playing: Vec::new(),
         }
     }
@@ -81,23 +80,20 @@ impl Menu for SoundCheck {
     fn build_items(&mut self, _ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
         let mut items: Vec<MenuItem<Self, Parlor>> = Vec::new();
         items.push(
-            MenuItem::new(
-                "Click and clunk",
-                |s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                    // How a found number sounds.
-                    let a = sound::play(ctx, sound::CLICK);
-                    let b = sound::play(ctx, sound::CLUNK);
-                    s.hear(ctx, &[a, b]);
-                    ctx.say("A click with the tumbler's clunk: the dial has reached the number. In play, the clunk follows the click by a moment.");
-                },
-            )
+            MenuItem::new("Click and clunk", |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                ctx.stop_speech();
+                // How a found number sounds.
+                let a = sound::play(ctx, sound::CLICK);
+                let b = sound::play(ctx, sound::CLUNK);
+                s.hear(ctx, &[a, b]);
+            })
             .select_sound(None),
         );
         items.push(
             MenuItem::new("Quiet clunk", |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                ctx.stop_speech();
                 let a = sound::play_vol(ctx, sound::CLUNK, safe_spec(SAFES).clunk);
                 s.hear(ctx, &[a]);
-                ctx.say("The clunk as quiet as it gets, in the Crown vault.");
             })
             .select_sound(None),
         );
@@ -106,6 +102,7 @@ impl Menu for SoundCheck {
                 MenuItem::new(
                     label(meaning),
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        ctx.stop_speech();
                         let a = if key.contains("/music/") || key.contains("/ambience/") {
                             ctx.audio.play(key, Bus::MUSIC)
                         } else if key == sound::STEPS || key.contains("/guard/") {
@@ -117,7 +114,6 @@ impl Menu for SoundCheck {
                             sound::play(ctx, key)
                         };
                         s.hear(ctx, &[a]);
-                        ctx.say(meaning);
                     },
                 )
                 .select_sound(None),

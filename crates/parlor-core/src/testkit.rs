@@ -4,6 +4,10 @@
 //!   top and fails if any of them is met with silence.
 //! - [`same_at_frame_rates`] runs a simulation at 30, 60 and 144 frames a
 //!   second and fails if the results differ.
+//! - [`status_spam_until`] presses the status key every second from the
+//!   first frame and says when the run's danger first moved.
+//! - [`spend_budget`], [`quiet_until`] and [`held_for`] check that a key
+//!   line the game says on its own still holds once the budget is spent.
 //!
 //! They sit in the library, not behind a feature, because they need only
 //! `hearken::Headless`, which Hearken always builds. A game's tests call
@@ -22,6 +26,88 @@ pub const FRAME_RATES: [f64; 3] = [1.0 / 30.0, 1.0 / 60.0, 1.0 / 144.0];
 /// One frame at 60 frames a second, run after each press so a game that
 /// answers in `update` is heard too.
 const AFTER_PRESS: f64 = 1.0 / 60.0;
+
+/// The status key pressed once a second from the first frame, the voice
+/// never quiet, as a player who keeps asking would: steps the run with
+/// `frame` in tenths of a second for at most `seconds`, and gives the
+/// seconds until `advanced` first reports the danger moved, or `None`.
+///
+/// A run's danger must move once the information budget
+/// ([`crate::pace::INFO_HOLD_BUDGET_S`]) is spent, so a game's test asserts
+/// the answer is a little over the budget at most. A start that waits on
+/// speech rather than on the clock shows up as `None`.
+pub fn status_spam_until(
+    h: &mut Headless<Parlor>,
+    seconds: u32,
+    mut frame: impl FnMut(&mut Headless<Parlor>),
+    mut advanced: impl FnMut(&Headless<Parlor>) -> bool,
+) -> Option<f64> {
+    for tenth in 0..seconds * 10 {
+        if tenth % 10 == 0 {
+            h.press(hearken::Key::S);
+        }
+        frame(h);
+        if advanced(h) {
+            return Some(f64::from(tenth + 1) / 10.0);
+        }
+    }
+    None
+}
+
+/// The most a status spam from the first frame may keep a run's danger
+/// still: the information budget, and a little for the key lines a run
+/// opens with.
+pub const SPAM_BOUND_S: f64 = crate::pace::INFO_HOLD_BUDGET_S + 5.0;
+
+/// Spends the information budget as a player who keeps asking would: the
+/// status key once a second for [`SPAM_BOUND_S`] seconds of `frame`s in
+/// tenths, then the voice is quiet.
+pub fn spend_budget(h: &mut Headless<Parlor>, mut frame: impl FnMut(&mut Headless<Parlor>)) {
+    for tenth in 0..(SPAM_BOUND_S as u32) * 10 {
+        if tenth % 10 == 0 {
+            h.press(hearken::Key::S);
+        }
+        frame(h);
+    }
+    h.app.ctx.stop_speech();
+}
+
+/// Steps `frame` in tenths, the voice quiet before each, for at most
+/// `seconds` until `said` sees the line it waits for. Whether it came.
+pub fn quiet_until(
+    h: &mut Headless<Parlor>,
+    seconds: u32,
+    mut frame: impl FnMut(&mut Headless<Parlor>),
+    mut said: impl FnMut(&Headless<Parlor>) -> bool,
+) -> bool {
+    for _ in 0..seconds * 10 {
+        if said(h) {
+            return true;
+        }
+        h.app.ctx.stop_speech();
+        frame(h);
+    }
+    said(h)
+}
+
+/// Steps `frame` in tenths with the line just said still being spoken,
+/// for at most `seconds`, and gives the seconds `measure` (the danger's
+/// clock) stayed where it was: how long that line held the run.
+pub fn held_for(
+    h: &mut Headless<Parlor>,
+    seconds: u32,
+    mut frame: impl FnMut(&mut Headless<Parlor>),
+    measure: impl Fn(&Headless<Parlor>) -> f64,
+) -> f64 {
+    let before = measure(h);
+    for tenth in 0..seconds * 10 {
+        frame(h);
+        if measure(h) != before {
+            return f64::from(tenth) / 10.0;
+        }
+    }
+    f64::from(seconds)
+}
 
 /// Presses F1 and, when the help opens as pages over play, reads them all
 /// with Enter until play is back on top. Everything said stays in

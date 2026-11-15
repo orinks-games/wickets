@@ -32,9 +32,16 @@ fn title_on(date: Date) -> Headless<Parlor> {
     };
     let mut h = Headless::new(data, title_with_seed(SEED));
     menus::mark_tutorial_read(&mut h.app.ctx, ID);
+    parlor_core::pace::set(&mut h.app.ctx, ID, parlor_core::Pace::Quick);
     h.frame(0.0);
     h.clear();
     h
+}
+
+/// One frame with the voice quiet, so the meadow never holds for speech.
+fn step(h: &mut Headless<Parlor>, dt: f64) {
+    h.app.ctx.stop_speech();
+    h.frame(dt);
 }
 
 fn rows(h: &Headless<Parlor>) -> Vec<String> {
@@ -112,7 +119,7 @@ fn play_frame(h: &mut Headless<Parlor>) {
             h.press(Key::Space);
         }
     }
-    h.frame(DT);
+    step(h, DT);
 }
 
 /// Plays to the results, reading every page on the way.

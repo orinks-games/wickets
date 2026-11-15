@@ -13,7 +13,7 @@
 use hearken::text::sentence_start;
 use hearken::{Ctx, State};
 use parlor_core::menus::{self, ChallengeGame};
-use parlor_core::{Challenge, Challenges, Pages, Parlor, Period, Rng, ScoreResult};
+use parlor_core::{Challenge, Challenges, Pace, Pages, Parlor, Period, Rng, ScoreResult};
 
 use crate::rules::{fuel_points, landing_points, speed_words, Flight, Moon, Outcome};
 use crate::{sound, Descent, ID, NAME};
@@ -310,11 +310,15 @@ impl State<Parlor> for ChallengeHost {
     }
 }
 
-fn score_line(result: ScoreResult) -> String {
+fn score_line(result: ScoreResult, pace: Pace) -> String {
+    let best = pace.best_word();
     match result {
+        ScoreResult::First if pace.separate() => {
+            "Your first relaxed result on this challenge.".to_string()
+        }
         ScoreResult::First => "Your first result on this challenge.".to_string(),
-        ScoreResult::NewBest { previous } => format!("A new best, beating {previous}."),
-        ScoreResult::Short { best } => format!("Your best is {best}."),
+        ScoreResult::NewBest { previous } => format!("A new {best}, beating {previous}."),
+        ScoreResult::Short { best: b } => format!("Your {best} is {b}."),
     }
 }
 
@@ -323,8 +327,9 @@ pub fn summary(ch: &Challenge, job: &Job) -> String {
     format!("{} result: {} points", ch.title(), job.score())
 }
 
-/// Records a finished challenge and returns the pages that read it back.
-pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, job: &Job) -> Vec<String> {
+/// Records a finished challenge flown at `pace` and returns the pages
+/// that read it back.
+pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, job: &Job, pace: Pace) -> Vec<String> {
     let n = job.moons();
     // Touchdown already said where and how fast: a one-moon challenge's
     // pages lead with the result, a longer one's with the moons landed.
@@ -337,7 +342,7 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, job: &Job) -> Vec<String> {
         )),
     };
     crate::progress::save_challenge(ctx, job);
-    let result = Challenges::submit(ctx, ch, job.score() as u64);
+    let result = Challenges::submit_at(ctx, ch, pace, job.score() as u64);
     let streak = Challenges::streak(ctx, ID, ch.period).max(1);
     first
         .into_iter()
@@ -345,7 +350,7 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, job: &Job) -> Vec<String> {
             "{} result: {} points. {} A {streak} {} streak. {}",
             ch.title(),
             job.score(),
-            score_line(result),
+            score_line(result, pace),
             ch.period.unit(),
             sentence_start(&ch.resets())
         )])

@@ -109,7 +109,7 @@ impl SoundCheck {
     pub fn new() -> SoundCheck {
         SoundCheck {
             menu: MenuCore::new(labels::SOUND_CHECK).with_intro_help(
-                "Up and Down move through the game's sounds, Enter plays one and says what it means, Escape goes back.",
+                "Up and Down move through the game's sounds, Enter plays one, Escape goes back.",
             ),
         }
     }
@@ -152,7 +152,7 @@ impl Menu for SoundCheck {
                     } else {
                         ctx.audio.play(key, Bus::EFFECTS);
                     }
-                    ctx.say(meaning.clone());
+                    ctx.stop_speech();
                 })
                 .select_sound(None)
                 .help(help.clone())
@@ -170,7 +170,7 @@ impl Menu for SoundCheck {
                     sound::creature(Species::Periwinkle),
                     sound::pool_at(1, Lean::Edge),
                 );
-                ctx.say("A crab in the pool to your left, and a periwinkle shell in the pool to your right. You face the sea, so the pools run from your left to your right.");
+                ctx.stop_speech();
             })
             .select_sound(None)
             .help("Two creatures, one in the pool on each side of you."),
@@ -182,7 +182,7 @@ impl Menu for SoundCheck {
                     sound::creature(Species::Anemone),
                     sound::pool_at(0, Lean::Back),
                 );
-                ctx.say("An anemone in the pool in front of you, heard from standing back: fainter. Lean in and the pool you face sounds close and clear.");
+                ctx.stop_speech();
             })
             .select_sound(None)
             .help("How a pool sounds from standing back, compared with leaning in."),
@@ -280,15 +280,13 @@ impl AquariumScreen {
         };
         match s.when() {
             Some(when) => format!(
-                "You have not found a {} yet. It only turns up {when}. Listen for {}.",
+                "You have not found a {} yet. It only turns up {when}.",
                 s.name(),
-                s.sound_words()
             ),
             None => format!(
-                "You have not found a {} yet. It lives at {}. Listen for {}.",
+                "You have not found a {} yet. It lives at {}.",
                 s.name(),
                 list_words(&homes(*s)),
-                s.sound_words()
             ),
         }
     }
@@ -322,7 +320,7 @@ impl AquariumScreen {
 
     fn controls(ctx: &Ctx<Parlor>) -> String {
         format!(
-            "{} and {} move along the tanks, {} listens to one again, {} plays the whole tank, {} sums it up, {} says what is still missing, Escape goes back.",
+            "{} and {} move along the tanks, {} plays one again, {} plays the whole tank, {} sums it up, {} says what is still missing, Escape goes back.",
             sentence_start(&ctx.control_name(ParlorAction::Left)),
             ctx.control_name(ParlorAction::Right),
             ctx.control_name(ParlorAction::Primary),
@@ -398,7 +396,7 @@ impl State<Parlor> for AquariumScreen {
             Some(ParlorAction::Secondary) => {
                 let owned = self.owned();
                 if owned.is_empty() {
-                    ctx.say("The tank is empty and still: only the pump bubbles.");
+                    ctx.say("The tank is empty.");
                 } else {
                     self.tour = owned
                         .iter()
@@ -424,13 +422,7 @@ impl State<Parlor> for AquariumScreen {
                 let text = self.last.clone();
                 ctx.say(text);
             }
-            None => {
-                if let InputEvent::KeyDown { text: Some(c), .. } = event {
-                    if c.is_alphanumeric() {
-                        ctx.say("That key does nothing here. F1 tells you the controls.");
-                    }
-                }
-            }
+            None => {}
         }
     }
 
@@ -492,7 +484,7 @@ impl State<Parlor> for AquariumScreen {
             return "Your aquarium is empty. Gather creatures at the beach and they come home with you. Escape goes back.".to_string();
         }
         format!(
-            "Your aquarium: everything you have gathered lives here, each kind in its own spot from left to right, and they make their sounds now and then. {}",
+            "Your aquarium: everything you have gathered lives here, each kind in its own spot from left to right, and they call now and then. {}",
             Self::controls(ctx)
         )
     }

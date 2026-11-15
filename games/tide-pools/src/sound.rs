@@ -122,7 +122,30 @@ pub fn play(ctx: &mut Ctx<Parlor>, key: &str) -> Sound {
     ctx.audio.play(key, Bus::EFFECTS)
 }
 
-pub fn play_at(ctx: &mut Ctx<Parlor>, key: &str, pos: Vec3) -> Sound {
+/// Where the player stands on the shore: at pool `at`, `lean` back from
+/// its water. The listener stands here and every sound keeps its own
+/// place, so a step or a lean re-pans whatever is still sounding at once.
+pub fn ear(at: usize, lean: Lean) -> Vec3 {
+    Vec3::new(at as f32 * POOL_SPACING, -lean.distance(), 0.0)
+}
+
+/// Puts the listener at pool `at`, leaning `lean`.
+pub fn listen_at(ctx: &mut Ctx<Parlor>, at: usize, lean: Lean) {
+    let ear = ear(at, lean);
+    if ctx.audio.listener().pos != ear {
+        ctx.audio.set_listener(ear, 0.0);
+    }
+}
+
+/// Where a sound `offset` metres from the listener sits on the shore.
+pub fn from_listener(ctx: &Ctx<Parlor>, offset: Vec3) -> Vec3 {
+    let ear = ctx.audio.listener().pos;
+    Vec3::new(ear.x + offset.x, ear.y + offset.y, ear.z + offset.z)
+}
+
+/// Plays `key` `offset` metres from the listener.
+pub fn play_at(ctx: &mut Ctx<Parlor>, key: &str, offset: Vec3) -> Sound {
+    let pos = from_listener(ctx, offset);
     ctx.audio.play_at(key, pos, Bus::EFFECTS)
 }
 

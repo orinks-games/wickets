@@ -251,12 +251,17 @@ impl<S: State<Parlor>> LiveScreen for LiveCell<S> {
 /// log.
 fn unspoken(ctx: &mut Ctx<Parlor>, f: impl FnOnce(&mut Ctx<Parlor>)) {
     let speech = std::mem::replace(&mut ctx.speech, Box::new(hearken::speech::NullSpeech));
-    let (lines, said) = (ctx.transcript.len(), ctx.said);
+    let said = ctx.said;
     let level = log::max_level();
     log::set_max_level(log::LevelFilter::Off);
     f(ctx);
     log::set_max_level(level);
-    ctx.transcript.truncate(lines);
+    // Drop the lines by count, not back to the old length: a transcript at
+    // Hearken's cap drops its oldest line for each new one, so its length
+    // never changes and the unspoken lines would stay.
+    let added = usize::try_from(ctx.said - said).unwrap_or(usize::MAX);
+    let keep = ctx.transcript.len().saturating_sub(added);
+    ctx.transcript.truncate(keep);
     ctx.said = said;
     ctx.speech = speech;
 }
@@ -326,6 +331,7 @@ impl<S: State<Parlor> + 'static> Live<S> {
 pub struct Lesson {
     id: &'static str,
     name: String,
+    lead: Option<String>,
     intro: String,
     steps: Vec<Step>,
     outro: String,
@@ -343,6 +349,7 @@ impl Lesson {
         Lesson {
             id,
             name: name.to_string(),
+            lead: None,
             intro: intro.into(),
             steps: Vec::new(),
             outro: String::new(),
@@ -355,6 +362,13 @@ impl Lesson {
 
     pub fn step(mut self, step: Step) -> Lesson {
         self.steps.push(step);
+        self
+    }
+
+    /// A line said before the intro, in the same breath: story mode's
+    /// errand line when an errand opens the lesson.
+    pub fn lead(mut self, line: impl Into<String>) -> Lesson {
+        self.lead = Some(line.into());
         self
     }
 
@@ -514,7 +528,10 @@ impl State<Parlor> for Lesson {
         }
         self.begun = true;
         ctx.audio.play(PAGE_SOUND, Bus::UI);
-        let intro = end_sentence(&self.intro);
+        let intro = match &self.lead {
+            Some(lead) => format!("{} {}", end_sentence(lead), end_sentence(&self.intro)),
+            None => end_sentence(&self.intro),
+        };
         match self.steps.first() {
             Some(step) => {
                 ctx.say(format!("{intro} {}", step.prompt));
@@ -669,9 +686,57 @@ fn played_key(id: &str) -> String {
     format!("{id}/played")
 }
 
+/// How well the player knows a game, read from its saved keys. The title
+/// and story mode decide from this: `New` says "New here?", starts the
+/// cursor on Tutorial and plans a lesson; anything else plays. Finishing
+/// the tutorial ([`mark_tutorial_done`]) and finishing a run
+/// ([`mark_played`]) each move it one way; nothing moves it back.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Familiarity {
+    /// Never taught, never played.
+    New,
+    /// Finished the tutorial, no run yet.
+    Taught,
+    /// Finished a run, scored or played a challenge, tutorial not finished.
+    Played,
+    /// Both taught and played.
+    Settled,
+}
+
+impl Familiarity {
+    /// Whether the player has finished the tutorial.
+    pub fn taught(self) -> bool {
+        matches!(self, Familiarity::Taught | Familiarity::Settled)
+    }
+
+    /// Whether the player has played the game.
+    pub fn played(self) -> bool {
+        matches!(self, Familiarity::Played | Familiarity::Settled)
+    }
+}
+
+/// The player's familiarity with game `id`.
+pub fn familiarity(ctx: &mut Ctx<Parlor>, id: &str) -> Familiarity {
+    let taught: bool = Records::load(ctx, &tutorial_key(id));
+    let played = Records::load::<bool>(ctx, &played_key(id)) || {
+        // Saves from before the flag: any score or challenge result counts.
+        let scores: std::collections::BTreeMap<String, u64> =
+            Records::load(ctx, &format!("{id}/scores"));
+        let challenges: std::collections::BTreeMap<String, u64> =
+            Records::load(ctx, &format!("{id}/challenges"));
+        !scores.is_empty() || !challenges.is_empty()
+    };
+    match (taught, played) {
+        (false, false) => Familiarity::New,
+        (true, false) => Familiarity::Taught,
+        (false, true) => Familiarity::Played,
+        (true, true) => Familiarity::Settled,
+    }
+}
+
 /// Whether the player has finished this game's tutorial.
 pub fn tutorial_done(ctx: &mut Ctx<Parlor>, id: &str) -> bool {
-    Records::load(ctx, &tutorial_key(id))
+    familiarity(ctx, id).taught()
 }
 
 /// Notes that the player has finished this game's tutorial.
@@ -682,24 +747,14 @@ pub fn mark_tutorial_done(ctx: &mut Ctx<Parlor>, id: &str) {
 /// Whether the player has played this game: finished a run, saved a score
 /// or played a challenge, from anywhere in the parlor.
 pub fn has_played(ctx: &mut Ctx<Parlor>, id: &str) -> bool {
-    if Records::load::<bool>(ctx, &played_key(id)) {
-        return true;
-    }
-    // Saves from before the flag: any score or challenge result counts.
-    let scores: std::collections::BTreeMap<String, u64> =
-        Records::load(ctx, &format!("{id}/scores"));
-    let challenges: std::collections::BTreeMap<String, u64> =
-        Records::load(ctx, &format!("{id}/challenges"));
-    !scores.is_empty() || !challenges.is_empty()
+    familiarity(ctx, id).played()
 }
 
 /// Notes that the player has played this game. Scores, challenge results
 /// and the shared results screen call it; a game with none of those calls
 /// it when a session ends.
 pub fn mark_played(ctx: &mut Ctx<Parlor>, id: &str) {
-    if ctx.game.story_scene == Some(id) {
-        ctx.game.story_done = true;
-    }
+    ctx.game.finish_story_scene(id);
     note_played(ctx, id);
 }
 
@@ -714,7 +769,7 @@ pub fn note_played(ctx: &mut Ctx<Parlor>, id: &str) {
 /// Whether a new player should be taught this game: never played and
 /// never taught. Story mode skips the lesson when this is false.
 pub fn needs_lesson(ctx: &mut Ctx<Parlor>, id: &str) -> bool {
-    !tutorial_done(ctx, id) && !has_played(ctx, id)
+    familiarity(ctx, id) == Familiarity::New
 }
 
 #[cfg(test)]
@@ -779,6 +834,24 @@ mod tests {
         assert_eq!(h.app.top_name(), "base");
         assert!(tutorial_done(&mut h.app.ctx, "dummy"));
         assert!(!needs_lesson(&mut h.app.ctx, "dummy"));
+    }
+
+    #[test]
+    fn familiarity_moves_one_way_from_new() {
+        let mut h = Headless::new(Default::default(), Base);
+        let ctx = &mut h.app.ctx;
+        assert_eq!(familiarity(ctx, "dummy"), Familiarity::New);
+        assert!(needs_lesson(ctx, "dummy"));
+        mark_tutorial_done(ctx, "dummy");
+        assert_eq!(familiarity(ctx, "dummy"), Familiarity::Taught);
+        assert!(!needs_lesson(ctx, "dummy") && !has_played(ctx, "dummy"));
+        mark_played(ctx, "dummy");
+        assert_eq!(familiarity(ctx, "dummy"), Familiarity::Settled);
+        // A save from before the played flag: a score counts as played.
+        let scores: std::collections::BTreeMap<String, u64> = [("a".to_string(), 1)].into();
+        Records::store(ctx, "old/scores", &scores);
+        assert_eq!(familiarity(ctx, "old"), Familiarity::Played);
+        assert!(has_played(ctx, "old") && !tutorial_done(ctx, "old"));
     }
 
     #[test]
@@ -917,6 +990,38 @@ mod tests {
         press_action(&mut h, ParlorAction::Primary);
         assert_eq!(h.app.top_name(), "base");
         assert_eq!(entered.get(), 101);
+    }
+
+    /// What the live screen says as it is entered stays out of the
+    /// transcript even once the transcript is full, so a reader of the new
+    /// lines (the agent server) gets the intro and the step.
+    #[test]
+    fn a_live_screen_stays_unspoken_with_a_full_transcript() {
+        let field = Live::new(Field {
+            shots: 0,
+            entered: Rc::new(Cell::new(0)),
+        });
+        let mut h = Headless::new(Default::default(), Base);
+        for i in 0..hearken::TRANSCRIPT_CAP {
+            h.app.ctx.say(format!("Line {i}."));
+        }
+        h.clear();
+        let said = h.app.ctx.said;
+        h.app.ctx.push(
+            Lesson::new("dummy", "Dummy", "Hi")
+                .lead("An errand")
+                .step(field.step("Shoot once.", |f, _| (f.shots >= 1).then(|| "One".into()))),
+        );
+        h.frame(0.0);
+        assert_eq!(h.spoken(), ["An errand. Hi. Shoot once."]);
+        let new = (h.app.ctx.said - said) as usize;
+        let t = &h.app.ctx.transcript;
+        assert_eq!(t[t.len() - new..], ["An errand. Hi. Shoot once."]);
+        assert!(
+            !t.iter().any(|l| l == "Practice field."),
+            "{:?}",
+            &t[t.len() - 3..]
+        );
     }
 
     #[test]

@@ -14,7 +14,7 @@
 
 use hearken::Ctx;
 use parlor_core::calendar::{self, Holiday, Nearness};
-use parlor_core::{Date, Happening, Parlor, Records, Rng};
+use parlor_core::{Date, Happening, Pace, Parlor, Records, Rng};
 use serde::{Deserialize, Serialize};
 
 use crate::rules::{Course, DishKind, Outcome, Plan};
@@ -179,12 +179,15 @@ pub fn menu_line() -> String {
 }
 
 /// The row's help for `date`.
-pub fn row_help(date: Date, best: Option<u64>) -> String {
+pub fn row_help(date: Date, best: Option<u64>, relaxed: Option<u64>) -> String {
     if is_open(date) {
-        let best = match best {
+        let mut best = match best {
             Some(b) => format!(" Your best is {b} points."),
             None => String::new(),
         };
+        if let Some(b) = relaxed {
+            best.push_str(&format!(" Your relaxed best is {b} points."));
+        }
         format!(
             "The family's dinner: twelve dishes on all five stations, five made only today.{best}"
         )
@@ -225,8 +228,10 @@ pub fn keepsake_key() -> String {
 #[serde(default)]
 pub struct Keepsake {
     pub year: i32,
-    /// The best dinner's points that year.
+    /// The best dinner's points that year, at normal or quick pace.
     pub best: u64,
+    /// The best relaxed dinner's points that year, kept apart.
+    pub relaxed_best: u64,
     /// The most stars that year.
     pub stars: u32,
     /// The favourite's best quality that year.
@@ -263,8 +268,21 @@ impl Keepsakes {
         self.years.iter().find(|k| k.year == year)
     }
 
-    /// Keeps a dinner cooked in `year`.
+    /// Keeps a dinner cooked in `year` at normal or quick pace.
     pub fn keep(&mut self, year: i32, points: u64, stars: u32, favourite: u32) -> Kept {
+        self.keep_at(year, points, stars, favourite, Pace::Normal)
+    }
+
+    /// Keeps a dinner cooked in `year` at `pace`. Stars and the favourite
+    /// count at every pace; a relaxed dinner's points have their own best.
+    pub fn keep_at(
+        &mut self,
+        year: i32,
+        points: u64,
+        stars: u32,
+        favourite: u32,
+        pace: Pace,
+    ) -> Kept {
         if self.year(year).is_none() {
             self.years.push(Keepsake {
                 year,
@@ -275,15 +293,20 @@ impl Keepsakes {
         let Some(k) = self.years.iter_mut().find(|k| k.year == year) else {
             return Kept::First;
         };
-        let kept = if k.dinners == 0 {
-            Kept::First
-        } else if points > k.best {
-            Kept::Better { previous: k.best }
+        let best = if pace.separate() {
+            &mut k.relaxed_best
         } else {
-            Kept::Short { best: k.best }
+            &mut k.best
         };
+        let kept = if *best == 0 {
+            Kept::First
+        } else if points > *best {
+            Kept::Better { previous: *best }
+        } else {
+            Kept::Short { best: *best }
+        };
+        *best = (*best).max(points);
         k.dinners += 1;
-        k.best = k.best.max(points);
         k.stars = k.stars.max(stars);
         k.favourite = k.favourite.max(favourite);
         kept
@@ -305,10 +328,20 @@ impl Keepsakes {
                     1 => "1 star".to_string(),
                     n => format!("{n} stars"),
                 };
+                let mut bests = Vec::new();
+                if k.best > 0 {
+                    bests.push(format!("best {} points", k.best));
+                }
+                if k.relaxed_best > 0 {
+                    bests.push(format!("relaxed best {} points", k.relaxed_best));
+                }
+                if bests.is_empty() {
+                    bests.push("no score yet".to_string());
+                }
                 format!(
-                    "Thanksgiving {}: best {} points, {stars}, {} at quality {}.",
+                    "Thanksgiving {}: {}, {stars}, {} at quality {}.",
                     k.year,
-                    k.best,
+                    bests.join(", "),
                     family(k.year).favourite.name(),
                     k.favourite
                 )
@@ -365,7 +398,9 @@ mod tests {
         assert!(line.contains("On the menu: turkey,"), "{line}");
         let far = locked_line(Date::new(2026, 3, 1));
         assert!(far.starts_with("Thanksgiving dinner opens on Thanksgiving Day."));
-        assert!(row_help(Date::new(2026, 11, 26), Some(5000)).contains("5000"));
+        assert!(row_help(Date::new(2026, 11, 26), Some(5000), None).contains("5000"));
+        assert!(row_help(Date::new(2026, 11, 26), None, Some(700))
+            .contains("Your relaxed best is 700 points."));
     }
 
     #[test]
@@ -412,5 +447,23 @@ mod tests {
         assert!(k
             .page(Date::new(2026, 11, 26))
             .contains("Thanksgiving 2026: best 5000 points, 2 stars"));
+        assert_eq!(
+            k.keep_at(2026, 9000, 3, 95, Pace::Relaxed),
+            Kept::First,
+            "a relaxed dinner keeps its own best"
+        );
+        let year = k.year(2026).unwrap();
+        assert_eq!((year.best, year.relaxed_best, year.stars), (5000, 9000, 3));
+        assert!(k
+            .page(Date::new(2026, 11, 26))
+            .contains("best 5000 points, relaxed best 9000 points, 3 stars"));
+        let mut only = Keepsakes::default();
+        only.keep_at(2026, 11100, 2, 80, Pace::Relaxed);
+        assert!(
+            only.page(Date::new(2026, 11, 26))
+                .contains("Thanksgiving 2026: relaxed best 11100 points, 2 stars"),
+            "{}",
+            only.page(Date::new(2026, 11, 26))
+        );
     }
 }

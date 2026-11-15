@@ -303,7 +303,7 @@ impl Modifier {
 
     pub fn describe(self) -> &'static str {
         match self {
-            Modifier::None => "No twist: the wires as the skyline strings them.",
+            Modifier::None => "No twist: the standard skyline wires.",
             Modifier::Gale => {
                 "Gale day: gusts come twice as often. Every one is still warned in time."
             }
@@ -805,7 +805,7 @@ impl Run {
         }
         if self.training() {
             text.push_str(&format!(
-                " The tone is your balance: centred and low when you are steady. {} and {} shift your weight. {} takes a step.",
+                " {} and {} shift your weight. {} takes a step.",
                 sentence_start(&self.keys.left),
                 self.keys.right,
                 sentence_start(&self.keys.step)
@@ -830,6 +830,11 @@ impl Run {
         self.vel += side.sign() * SHIFT;
         self.notes
             .push(Note::At(cues::SHIFT, (side.sign() * 1.5) as f32));
+    }
+
+    /// Whether a step would be taken now: the last step's cooldown is over.
+    pub fn step_ready(&self) -> bool {
+        self.step_cool <= 0.0
     }
 
     /// Takes one step forward.
@@ -1546,7 +1551,7 @@ impl Run {
                 &k.left
             };
             return format!(
-                "{} and drifting {}. Press {fix}, then wait for the chime.",
+                "{} and drifting {}. Press {fix}, then wait until you are balanced.",
                 sentence_start(&lean_words(self.lean)),
                 side.name()
             );

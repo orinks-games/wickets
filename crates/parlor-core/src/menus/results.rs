@@ -191,7 +191,7 @@ impl Menu for Results {
         hearken::menu::menu_enter(self, ctx);
     }
 
-    fn build_items(&mut self, _ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
+    fn build_items(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
         let mut items = Vec::new();
         if let Some(next) = &self.next {
             items.push(next.item());
@@ -214,6 +214,15 @@ impl Menu for Results {
             .help("The full results again, a page at a time."),
         );
         items.extend(self.extras.iter().map(Row::item));
+        if let Some(kept) = crate::songs::fresh_for(ctx, self.back.target()) {
+            items.push(
+                MenuItem::new(
+                    crate::songs::SAVE_ROW,
+                    move |_s: &mut Self, ctx: &mut Ctx<Parlor>| crate::songs::save(ctx, &kept),
+                )
+                .help("Writes this run's music to a sound file. It is kept in the Soundtrack either way."),
+            );
+        }
         let back = self.back;
         let help = match back {
             Back::Title(_) => "Return to the game's title.",
@@ -318,6 +327,42 @@ mod tests {
                 "Back to the challenges"
             ]
         );
+    }
+
+    #[test]
+    fn a_run_that_kept_its_song_can_save_it_from_the_results() {
+        use hearken::Bus;
+        let mut h = Headless::new(Default::default(), Base);
+        h.app.ctx.push(Run);
+        h.frame(0.0);
+        // The run keeps its song, then opens its results.
+        crate::songs::begin(&mut h.app.ctx);
+        let s = h
+            .app
+            .ctx
+            .audio
+            .start_loop("run/score/base", None, Bus::MUSIC);
+        h.frame(20.0);
+        h.app.ctx.audio.stop(s, 0);
+        assert!(crate::songs::end(&mut h.app.ctx, "run").is_some());
+        h.app.ctx.push(Results::new("Done", ["Done."], Back::Title("run")));
+        h.frame(0.0);
+        assert_eq!(
+            rows(&h),
+            [
+                "Hear the results again",
+                "Make a sound file of this run's song",
+                "Back to the title"
+            ]
+        );
+        // Another game's results do not offer it.
+        h.app.ctx.pop();
+        h.frame(0.0);
+        h.app
+            .ctx
+            .push(Results::new("Done", ["Done."], Back::Title("base")));
+        h.frame(0.0);
+        assert_eq!(rows(&h), ["Hear the results again", "Back to the title"]);
     }
 
     #[test]

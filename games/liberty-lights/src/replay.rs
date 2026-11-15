@@ -85,7 +85,7 @@ impl State<Parlor> for Replay {
     }
 
     fn name(&self) -> &'static str {
-        "replay"
+        "liberty_lights_replay"
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -122,7 +122,7 @@ impl State<Parlor> for Replay {
                     self.parts.len()
                 ));
             }
-            _ => ctx.say("Listening. Escape stops the replay."),
+            _ => {}
         }
     }
 

@@ -69,10 +69,14 @@ pub enum Part {
     Sunflower,
     Lavender,
     Mint,
+    Strawberry,
+    Chilli,
+    Rose,
+    Jasmine,
 }
 
 impl Part {
-    pub const ALL: [Part; 8] = [
+    pub const ALL: [Part; 12] = [
         Part::Base,
         Part::Tomato,
         Part::Squash,
@@ -81,6 +85,10 @@ impl Part {
         Part::Sunflower,
         Part::Lavender,
         Part::Mint,
+        Part::Strawberry,
+        Part::Chilli,
+        Part::Rose,
+        Part::Jasmine,
     ];
 
     /// The part a plant sings.
@@ -93,6 +101,10 @@ impl Part {
             Species::Sunflower => Part::Sunflower,
             Species::Lavender => Part::Lavender,
             Species::Mint => Part::Mint,
+            Species::Strawberry => Part::Strawberry,
+            Species::Chilli => Part::Chilli,
+            Species::Rose => Part::Rose,
+            Species::Jasmine => Part::Jasmine,
         }
     }
 
@@ -118,6 +130,10 @@ impl Part {
             Part::Sunflower => "sunflower",
             Part::Lavender => "lavender",
             Part::Mint => "mint",
+            Part::Strawberry => "strawberry",
+            Part::Chilli => "chilli",
+            Part::Rose => "rose",
+            Part::Jasmine => "jasmine",
         }
     }
 
@@ -127,6 +143,7 @@ impl Part {
         match self {
             Part::Tomato | Part::Sunflower => 4,
             Part::Squash | Part::Pumpkin | Part::Bean | Part::Lavender => 3,
+            Part::Strawberry | Part::Chilli | Part::Rose | Part::Jasmine => 3,
             Part::Base | Part::Mint => 1,
         }
     }
@@ -142,6 +159,10 @@ impl Part {
             Part::Sunflower => cues::song(Species::Sunflower),
             Part::Lavender => cues::song(Species::Lavender),
             Part::Mint => cues::song(Species::Mint),
+            Part::Strawberry => cues::song(Species::Strawberry),
+            Part::Chilli => cues::song(Species::Chilli),
+            Part::Rose => cues::song(Species::Rose),
+            Part::Jasmine => cues::song(Species::Jasmine),
         }
     }
 
@@ -197,13 +218,13 @@ pub const OWN: [Chord; BARS] = [G, Em, C, D];
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Tune {
     pub chords: [Chord; BARS],
-    picks: [[u8; 8]; BARS],
+    picks: [[u8; Part::ALL.len()]; BARS],
 }
 
 impl Tune {
     pub fn compose(rng: &mut Rng) -> Tune {
         let chords = *rng.pick(PROGRESSIONS);
-        let mut picks = [[0u8; 8]; BARS];
+        let mut picks = [[0u8; Part::ALL.len()]; BARS];
         for (bar, row) in picks.iter_mut().enumerate() {
             for part in Part::ALL {
                 let n = part.variants() as u32;

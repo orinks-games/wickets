@@ -17,7 +17,7 @@ use std::sync::{Mutex, OnceLock};
 use hearken::{Ctx, UiSound, UiSounds};
 
 use crate::pages::PAGE_SOUND;
-use crate::Parlor;
+use crate::{GameSettings, OpenGame, Parlor};
 
 /// The pause music for a game that ships none of its own.
 pub const PAUSE_MUSIC: &str = "parlor/music/pause";
@@ -52,12 +52,16 @@ fn intern(key: String) -> &'static str {
     k
 }
 
-/// Points the menu earcons and the page cue at game `id`'s own sounds,
-/// keeping the shared sound for any it does not ship.
-pub fn use_game(ctx: &mut Ctx<Parlor>, id: &str) {
+/// Enters game `id`: points the menu earcons and the page cue at its own
+/// sounds, keeping the shared sound for any it does not ship, and records
+/// it as [`ParlorData::open`](crate::ParlorData::open) with `name` and its
+/// Settings rows. Called by a title on entering and coming back, and by
+/// [`GameInfo::use_game`](crate::GameInfo::use_game) for a run opened
+/// straight from a launcher list.
+pub fn enter_game(ctx: &mut Ctx<Parlor>, id: &str, name: &'static str, settings: GameSettings) {
     let shared = UiSounds::default();
-    for (kind, name) in KINDS {
-        let own = intern(key(id, name));
+    for (kind, kind_name) in KINDS {
+        let own = intern(key(id, kind_name));
         let pick = if ctx.audio.has_clip(own) {
             Some(own)
         } else {
@@ -65,34 +69,37 @@ pub fn use_game(ctx: &mut Ctx<Parlor>, id: &str) {
         };
         ctx.ui_sounds.set(kind, pick);
     }
-    ctx.game.open_game = Some(intern(id.to_string()));
     let page = intern(key(id, "page"));
-    ctx.game.page_sound = ctx.audio.has_clip(page).then_some(page);
     let pause = intern(format!("{id}/music/pause"));
-    ctx.game.pause_music = ctx.audio.has_clip(pause).then_some(pause);
+    ctx.game.open = Some(OpenGame {
+        id: intern(id.to_string()),
+        name,
+        settings,
+        page_sound: ctx.audio.has_clip(page).then_some(page),
+        pause_music: ctx.audio.has_clip(pause).then_some(pause),
+    });
     crate::units::sync(ctx);
 }
 
-/// Puts the launcher's shared menu sounds back.
-pub fn use_shared(ctx: &mut Ctx<Parlor>) {
+/// Leaves the open game, if any: puts the launcher's shared menu sounds
+/// back and clears [`ParlorData::open`](crate::ParlorData::open). Called
+/// by every launcher screen on entering and coming back, and by a title
+/// on leaving the stack.
+pub fn leave_game(ctx: &mut Ctx<Parlor>) {
     let shared = UiSounds::default();
     for (kind, _) in KINDS {
         ctx.ui_sounds.set(kind, shared.get(kind));
     }
-    ctx.game.open_game = None;
-    ctx.game.open_game_name = None;
-    ctx.game.page_sound = None;
-    ctx.game.pause_music = None;
-    ctx.game.game_settings = None;
+    ctx.game.open = None;
     crate::units::sync(ctx);
 }
 
 /// The cue that starts each page: the open game's own, or the shared one.
 pub fn page(ctx: &Ctx<Parlor>) -> &'static str {
-    ctx.game.page_sound.unwrap_or(PAGE_SOUND)
+    ctx.game.open.and_then(|g| g.page_sound).unwrap_or(PAGE_SOUND)
 }
 
 /// The loop the pause screen plays: the open game's own, or the shared one.
 pub fn pause_music(ctx: &Ctx<Parlor>) -> &'static str {
-    ctx.game.pause_music.unwrap_or(PAUSE_MUSIC)
+    ctx.game.open.and_then(|g| g.pause_music).unwrap_or(PAUSE_MUSIC)
 }

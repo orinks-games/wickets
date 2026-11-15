@@ -45,7 +45,7 @@ pub const DIARY_PAGES: [&str; 20] = [
     "The catacombs are older than the house. The master did not build them. He only dug until he found them, and I think they were waiting.",
     "Some rooms down here are mirrored. Left is right and right is left, and the sounds all lie about where they come from. I trust my count of steps, not my ears.",
     "Eleanor's tomb is empty. Ada's is not. The master's has his name on it but no date, as if he has not finished dying.",
-    "The heart under the floor beats louder the deeper I go. It is not a person's heart. It is the house's, and the master built it out of a clock.",
+    "The heart under the floor beats louder the deeper I go. It is the house's heart, and the master built it out of a clock.",
     "I understand now. The master did not want to keep time. He wanted to stop it, on the night before Ada fell ill, and the house is that night, going on and on.",
     "I found the master in the last room, winding the heart. He did not see me. He only said, one more turn, and she will wake.",
     "I took the key from his hand, and the heart stopped. Every door in the house opened at once. If you are reading this, the way out is behind you. Walk quietly.",
@@ -93,7 +93,7 @@ const BEASTS: [(&str, &str, &str, &str, &str); 16] = [
         "Mimics",
         sound::MIMIC,
         "Clear a floor with mimics, from floor 35.",
-        "Copies of the answer that sound just like it but hop to a new place every few seconds. Stand still and listen: the real thing never moves. Touching a mimic costs time.",
+        "Copies of the answer that sound just like it but hop to a new place every few seconds. Stand still: the real thing never moves. Touching a mimic costs time.",
     ),
     (
         "beast-rotten",
@@ -149,7 +149,7 @@ const BEASTS: [(&str, &str, &str, &str, &str); 16] = [
         "Falling stones",
         sound::DUST,
         "Clear a floor where stones fall, from floor 71.",
-        "The catacombs' ceilings crumble. Dust trickles over you first, and 2 seconds later a stone falls on that spot. Step off when you hear the dust.",
+        "The catacombs' ceilings crumble. Dust trickles over you first, and 2 seconds later a stone falls on that spot. Step off as the dust trickles.",
     ),
     (
         "beast-founder",

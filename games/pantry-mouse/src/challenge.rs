@@ -239,11 +239,15 @@ impl State<Parlor> for ChallengeHost {
     }
 }
 
-fn score_line(result: ScoreResult) -> String {
+fn score_line(result: ScoreResult, pace: parlor_core::Pace) -> String {
+    let best_word = pace.best_word();
     match result {
+        ScoreResult::First if pace.separate() => {
+            "Your first relaxed result on this challenge.".to_string()
+        }
         ScoreResult::First => "Your first result on this challenge.".to_string(),
-        ScoreResult::NewBest { previous } => format!("A new best, beating {previous}."),
-        ScoreResult::Short { best } => format!("Your best is {best}."),
+        ScoreResult::NewBest { previous } => format!("A new {best_word}, beating {previous}."),
+        ScoreResult::Short { best } => format!("Your {best_word} is {best}."),
     }
 }
 
@@ -267,9 +271,14 @@ pub fn outcome_words(run: &Run) -> String {
 }
 
 /// Records a finished challenge and returns the pages that read it back.
-pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, run: &Run) -> Vec<String> {
+pub fn finish(
+    ctx: &mut Ctx<Parlor>,
+    ch: &Challenge,
+    run: &Run,
+    pace: parlor_core::Pace,
+) -> Vec<String> {
     crate::progress::save_crumbs(ctx, run.eaten);
-    let result = Challenges::submit(ctx, ch, run.score as u64);
+    let result = Challenges::submit_at(ctx, ch, pace, run.score as u64);
     let streak = Challenges::streak(ctx, ID, ch.period).max(1);
     vec![
         format!("{} {}.", outcome_words(run), points_words(run.score)),
@@ -277,7 +286,7 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, run: &Run) -> Vec<String> {
             "{} result: {}. {} A {streak} {} streak. {}",
             ch.title(),
             points_words(run.score),
-            score_line(result),
+            score_line(result, pace),
             ch.period.unit(),
             ch.resets()
         ),

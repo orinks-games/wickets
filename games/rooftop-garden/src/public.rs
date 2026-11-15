@@ -1,4 +1,4 @@
-// Rooftop Garden: Tend a rooftop garden by ear, and hear each plant grow into a layer of music.
+// Rooftop Garden: Tend a rooftop garden, where each plant grows into a layer of music.
 //
 // A calm game with no way to fail. You walk a small grid of planters on a
 // city rooftop, watering, picking off aphids, pruning and harvesting by
@@ -42,7 +42,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Rooftop Garden",
     category: Category::Cozy,
-    blurb: "Tend a rooftop garden by ear, and hear each plant grow into a layer of music.",
+    blurb: "Tend a rooftop garden, where each plant grows into a layer of music.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -94,14 +94,13 @@ fn garden_line(ctx: &mut Ctx<Parlor>, saved: &Option<Garden>) -> String {
 }
 
 /// How many kinds of seed your own garden has unlocked.
-fn seeds_open(saved: &Option<Garden>) -> usize {
-    match saved {
-        Some(g) => Species::ALL
-            .iter()
-            .filter(|s| g.harvests >= s.unlock_at())
-            .count(),
-        None => 3,
-    }
+fn seeds_open(ctx: &mut Ctx<Parlor>, saved: &Option<Garden>) -> usize {
+    let book = crate::screens::load_collection(ctx);
+    let (harvests, chorus) = saved.as_ref().map_or((0, 0), |g| (g.harvests, g.chorus));
+    Species::ALL
+        .iter()
+        .filter(|s| s.open(harvests, chorus, &book))
+        .count()
 }
 
 /// Records: your garden, its bests, the seeds and the challenges.
@@ -119,7 +118,7 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         "Bests. Most harvests: {harvests}. Fullest harmony: {harmony} {}. Longest garden: {days} {}. Seeds unlocked: {} of {}.",
         if harmony == 1 { "part" } else { "parts" },
         if days == 1 { "day" } else { "days" },
-        seeds_open(&saved),
+        seeds_open(ctx, &saved),
         Species::ALL.len()
     );
     let challenges: Vec<String> = Period::ALL
@@ -191,7 +190,7 @@ impl TitleGame for RooftopGarden {
             garden_line(ctx, &saved),
             |s: &mut Title, ctx: &mut Ctx<Parlor>| start_home(ctx, s.game.launch()),
         )
-        .help("Your own rooftop. It keeps growing between visits: days pass while you play and are saved when you leave.")]
+        .help("Tend your own rooftop. Days pass only while you play; your garden is saved when you leave.")]
     }
 
     fn extras(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
@@ -201,7 +200,7 @@ impl TitleGame for RooftopGarden {
                 let book = crate::screens::load_collection(ctx);
                 let seeds = format!(
                     "Seed shed, {} of {} seeds",
-                    seeds_open(&saved),
+                    seeds_open(ctx, &saved),
                     Species::ALL.len()
                 );
                 match book.found.len() {
@@ -270,7 +269,7 @@ impl TitleGame for RooftopGarden {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "Daily, weekly and monthly gardens with gentle goals, the same for every player. {}",
+            "Daily, weekly and monthly gardens with goals, the same for every player. {}",
             daily.resets()
         )
     }

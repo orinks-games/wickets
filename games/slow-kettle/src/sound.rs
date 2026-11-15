@@ -150,10 +150,6 @@ pub fn catalog() -> Vec<(&'static str, &'static str)> {
             "Door bell: a small brass bell. A guest comes in.",
         ),
         (STEPS, "Footsteps: soft steps on the wooden floor, coming to the counter."),
-        (
-            STRANGER,
-            "Cold wind: the door opens on a gust and nobody walks in. Only on Halloween.",
-        ),
         (SHELF, "Shelf tick: a soft wooden tick as you move along the shelf or the cups."),
         (TIN, "Tin lid: a tea tin opens. Your tea goes in the pot."),
         (KETTLE_ON, "Kettle switch: a click. The kettle is on."),

@@ -38,12 +38,16 @@ fn every_game_ships_its_own_pause_music() {
     assert!(missing.is_empty(), "no pause music at {missing:?}");
 }
 
-fn shared(h: &Headless<Parlor>) -> bool {
+/// The launcher's own earcons are in place.
+fn shared_earcons(h: &Headless<Parlor>) -> bool {
     KINDS
         .iter()
         .all(|(kind, _)| h.app.ctx.ui_sounds.get(*kind) == hearken::UiSounds::default().get(*kind))
-        && h.app.ctx.game.page_sound.is_none()
-        && h.app.ctx.game.pause_music.is_none()
+}
+
+/// No game is open, and the launcher's own sounds are in place.
+fn shared(h: &Headless<Parlor>) -> bool {
+    shared_earcons(h) && h.app.ctx.game.open.is_none()
 }
 
 #[test]
@@ -54,8 +58,11 @@ fn a_game_without_its_own_sounds_keeps_the_shared_ones() {
         .ui_sounds
         .set(UiSound::Move, Some("elsewhere/move"));
     // The test build has no sound files, so nothing of the game's is there.
-    menu_sounds::use_game(&mut h.app.ctx, "liberty-lights");
-    assert!(shared(&h));
+    menu_sounds::enter_game(&mut h.app.ctx, "liberty-lights", "Liberty Lights", |_| Vec::new());
+    assert!(shared_earcons(&h));
+    let open = h.app.ctx.game.open.expect("the game is open");
+    assert_eq!(open.id, "liberty-lights");
+    assert!(open.page_sound.is_none() && open.pause_music.is_none());
 }
 
 #[test]
@@ -77,8 +84,11 @@ fn the_launcher_puts_the_shared_sounds_back() {
         .ctx
         .ui_sounds
         .set(UiSound::Move, Some("liberty-lights/menu/move"));
-    h.app.ctx.game.page_sound = Some("liberty-lights/menu/page");
-    h.app.ctx.game.pause_music = Some("liberty-lights/music/pause");
+    h.app.ctx.game.open = Some(parlor_core::OpenGame {
+        page_sound: Some("liberty-lights/menu/page"),
+        pause_music: Some("liberty-lights/music/pause"),
+        ..parlor_core::OpenGame::new("liberty-lights", "Liberty Lights", |_| Vec::new())
+    });
     h.press(Key::Escape);
     assert!(shared(&h));
 }
@@ -91,7 +101,10 @@ fn the_story_sitting_puts_the_shared_sounds_back() {
         .ctx
         .ui_sounds
         .set(UiSound::Move, Some("liberty-lights/menu/move"));
-    h.app.ctx.game.page_sound = Some("liberty-lights/menu/page");
+    h.app.ctx.game.open = Some(parlor_core::OpenGame {
+        page_sound: Some("liberty-lights/menu/page"),
+        ..parlor_core::OpenGame::new("liberty-lights", "Liberty Lights", |_| Vec::new())
+    });
     h.app.ctx.push(wickets::story::SittingMenu::new());
     h.frame(0.0);
     assert_eq!(h.app.top_name(), "story");
@@ -109,8 +122,11 @@ fn the_lobby_puts_the_shared_sounds_back() {
         .ctx
         .ui_sounds
         .set(UiSound::Move, Some("liberty-lights/menu/move"));
-    h.app.ctx.game.page_sound = Some("liberty-lights/menu/page");
-    h.app.ctx.game.pause_music = Some("liberty-lights/music/pause");
+    h.app.ctx.game.open = Some(parlor_core::OpenGame {
+        page_sound: Some("liberty-lights/menu/page"),
+        pause_music: Some("liberty-lights/music/pause"),
+        ..parlor_core::OpenGame::new("liberty-lights", "Liberty Lights", |_| Vec::new())
+    });
     h.app.ctx.pop();
     h.frame(0.0);
     assert_eq!(h.app.top_name(), "lobby");

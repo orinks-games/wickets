@@ -7,5 +7,6 @@ mod challenges;
 mod common;
 mod dangers;
 mod deep;
+mod pacing;
 mod rules;
 mod walkthrough;

@@ -1,4 +1,4 @@
-// Harvest Feast: Thanksgiving: run a busy kitchen by ear, stirring, flipping and pulling dishes at the right moment.
+// Harvest Feast: Thanksgiving: run a busy kitchen, stirring, flipping and pulling dishes at the right moment.
 //
 // Up to five stations sit in an arc around you, each dish with its own
 // cooking sound that changes when it needs you. The recipe calls each dish
@@ -20,7 +20,7 @@ use hearken::screens::SettingsRow;
 use hearken::text::{end_sentence, sentence_start};
 use hearken::{Ctx, UiSound};
 use parlor_core::menus::{self, labels, TitleGame, TitleRow};
-use parlor_core::{Category, Challenge, Challenges, GameInfo, Parlor, Period, Records};
+use parlor_core::{pace, Category, Challenge, Challenges, GameInfo, Pace, Parlor, Period};
 
 pub use challenge::{
     ChallengeHost, ChallengePlan, ChallengeRun, ChallengesMenu, Dinners, Twist, CHALLENGES_NAME,
@@ -45,7 +45,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Harvest Feast",
     category: Category::Seasonal,
-    blurb: "Thanksgiving: run a busy kitchen by ear, stirring, flipping and pulling dishes at the right moment.",
+    blurb: "Thanksgiving: run a busy kitchen and tend each dish at the right moment.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(thanksgiving::event),
@@ -64,15 +64,26 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
     ctx.push(ChallengeHost::new(period));
 }
 
-fn best_line(ctx: &mut Ctx<Parlor>, board: &str) -> String {
-    match Records::best(ctx, ID, board) {
-        Some(b) => format!("best {b}"),
-        None => "no score yet".to_string(),
+/// The bests on `base`'s boards: "best 1200, relaxed best 900", or only
+/// the one that has a score, or "no score yet".
+fn best_line(ctx: &mut Ctx<Parlor>, base: &str) -> String {
+    let bests: Vec<String> = [Pace::Normal, Pace::Relaxed]
+        .into_iter()
+        .filter_map(|pace| {
+            parlor_core::pace::best(ctx, ID, &pace.board(base))
+                .map(|b| format!("{} {b}", pace.best_word()))
+        })
+        .collect();
+    if bests.is_empty() {
+        "no score yet".to_string()
+    } else {
+        bests.join(", ")
     }
 }
 
 /// Records: every best score, then the challenges, a page at a time.
 pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
+    progress::migrate_pace(ctx);
     let progress = Progress::load(ctx);
     let helpings = if progress.helpings_open() {
         format!(
@@ -119,7 +130,9 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
 /// place on every date.
 fn thanksgiving_row(ctx: &mut Ctx<Parlor>) -> TitleRow<HarvestFeast> {
     let today = parlor_core::challenges::today(ctx);
-    let help = thanksgiving::row_help(today, Records::best(ctx, ID, thanksgiving::BOARD));
+    let best = pace::best(ctx, ID, thanksgiving::BOARD);
+    let relaxed = pace::best(ctx, ID, &Pace::Relaxed.board(thanksgiving::BOARD));
+    let help = thanksgiving::row_help(today, best, relaxed);
     if thanksgiving::is_open(today) {
         let year = thanksgiving::year_of(today);
         MenuItem::new(
@@ -188,6 +201,7 @@ impl TitleGame for HarvestFeast {
     }
 
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
+        progress::migrate_pace(ctx);
         let progress = Progress::load(ctx);
         let next = progress.next_course();
         let next_help = course_help(ctx, next);
@@ -238,8 +252,10 @@ impl TitleGame for HarvestFeast {
             |ctx| Progress::peek(ctx).callouts,
             set_callouts,
             |_ctx, _on| None,
-            "When on, the kitchen says which dish needs you as its sound changes. Cook a whole course with it off for 10 percent more points.",
-        )]
+            "When on, the kitchen says when a dish needs you. Cook a whole course with it off for 10 percent more points.",
+        ),
+            parlor_core::pace::row_with(ID, progress::pace),
+        ]
     }
 
     fn lesson(&mut self, ctx: &mut Ctx<Parlor>) -> parlor_core::Lesson {
@@ -260,7 +276,7 @@ impl TitleGame for HarvestFeast {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear every station, cue and stinger of the kitchen by name.".to_string()
+        "Every station, cue and stinger of the kitchen, by name.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -306,7 +322,7 @@ impl Menu for CourseSelect {
     type Game = Parlor;
 
     fn name(&self) -> &'static str {
-        "course_select"
+        "harvest_feast_courses"
     }
 
     fn menu(&self) -> &MenuCore<Self, Parlor> {
@@ -325,6 +341,7 @@ impl Menu for CourseSelect {
     }
 
     fn build_items(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
+        progress::migrate_pace(ctx);
         let progress = Progress::load(ctx);
         let mut items: Vec<MenuItem<Self, Parlor>> = (1..=COURSES)
             .map(|n| {

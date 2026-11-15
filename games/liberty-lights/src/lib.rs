@@ -314,7 +314,7 @@ impl Menu for LevelSelect {
     type Game = Parlor;
 
     fn name(&self) -> &'static str {
-        "level_select"
+        "liberty_lights_levels"
     }
 
     fn menu(&self) -> &MenuCore<Self, Parlor> {
