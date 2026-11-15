@@ -3,7 +3,7 @@
 use crate::common;
 
 use common::{base, choose, played, read_pages, spoke, title, Twin, SEED};
-use hearken::{Headless, Key};
+use hearken::{Call, Headless, Key, Vec3};
 use parlor_core::menus;
 use parlor_core::{Challenge, Challenges, Parlor, Period, Records};
 use tide_pools::outing::{challenge_outing, outing_for};
@@ -267,6 +267,49 @@ fn walking_splashes_and_the_rocks_end() {
     t.press(Key::Right);
     assert!(played(&t.h, sound::EDGE));
     assert!(spoke(&t.h, "No more pools to the right"));
+}
+
+#[test]
+fn a_step_re_pans_a_call_while_it_sounds() {
+    // Creatures keep their pool, so the moment the player walks on they
+    // move around them, not on the next call.
+    let mut t = practice();
+    t.h.clear();
+    let mut heard = None;
+    for _ in 0..1200 {
+        t.frame(1.0 / 60.0);
+        heard = t.h.sounds.calls().into_iter().find_map(|c| match c {
+            Call::Play {
+                channel, key, mix, ..
+            } if key.starts_with("tide-pools/creatures/") => {
+                Some((channel, mix.relative.expect("a placed sound")))
+            }
+            _ => None,
+        });
+        if heard.is_some() {
+            break;
+        }
+    }
+    let (channel, before) = heard.expect("a creature called");
+    t.h.clear();
+    t.press(Key::Right);
+    t.frame(1.0 / 60.0);
+    let after =
+        t.h.sounds
+            .calls()
+            .into_iter()
+            .find_map(|c| match c {
+                Call::SetMix {
+                    channel: ch, mix, ..
+                } if ch == channel => mix.relative,
+                _ => None,
+            })
+            .unwrap_or_else(|| panic!("the call was not re-panned: {:?}", t.h.sounds.calls()));
+    let step = Vec3::new(rules::POOL_SPACING, 0.0, 0.0);
+    assert!(
+        (after - (before - step)).length() < 0.01,
+        "{after:?} vs {before:?} less {step:?}"
+    );
 }
 
 #[test]

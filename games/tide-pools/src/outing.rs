@@ -342,10 +342,16 @@ impl OutingScreen {
         }
     }
 
+    /// Puts the listener where the player stands, before anything sounds.
+    fn hear_from_here(&self, ctx: &mut Ctx<Parlor>) {
+        sound::listen_at(ctx, self.outing.at, self.outing.lean);
+    }
+
     fn place_pool(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.hear_from_here(ctx);
         if let Some(s) = self.pool {
-            ctx.audio
-                .set_position(s, Some(sound::pool_at(0, self.outing.lean)));
+            let at = sound::from_listener(ctx, sound::pool_at(0, self.outing.lean));
+            ctx.audio.set_position(s, Some(at));
         }
     }
 
@@ -445,6 +451,9 @@ impl OutingScreen {
     }
 
     fn voice(&mut self, ctx: &mut Ctx<Parlor>, evs: Vec<Ev>) {
+        // A step or a lean moves the listener before anything it set off
+        // sounds.
+        self.hear_from_here(ctx);
         let p = ctx.control_name(ParlorAction::Primary);
         let up = ctx.control_name(ParlorAction::Up);
         for ev in evs {
@@ -834,9 +843,11 @@ impl OutingScreen {
             } else if self.heron_in <= 0.0 {
                 self.heron_in = 18.0 + self.atmos.unit() * 12.0;
                 let x = (self.atmos.unit() as f32 - 0.5) * 24.0;
-                let s = ctx
-                    .audio
-                    .play_at(sound::HERON, Vec3::new(x, 4.0, 0.0), Bus::AMBIENCE);
+                let s = ctx.audio.play_at(
+                    sound::HERON,
+                    sound::from_listener(ctx, Vec3::new(x, 4.0, 0.0)),
+                    Bus::AMBIENCE,
+                );
                 ctx.audio.set_volume(s, 0.5);
                 if self.first("heron") {
                     ctx.say_queued("A night heron. Just the night.");
@@ -850,9 +861,11 @@ impl OutingScreen {
             } else if self.curlew_in <= 0.0 {
                 self.curlew_in = 16.0 + self.atmos.unit() * 12.0;
                 let x = (self.atmos.unit() as f32 - 0.5) * 20.0;
-                let s = ctx
-                    .audio
-                    .play_at(sound::CURLEW, Vec3::new(x, 12.0, 0.0), Bus::AMBIENCE);
+                let s = ctx.audio.play_at(
+                    sound::CURLEW,
+                    sound::from_listener(ctx, Vec3::new(x, 12.0, 0.0)),
+                    Bus::AMBIENCE,
+                );
                 ctx.audio.set_volume(s, 0.5);
                 if self.first("curlew") {
                     ctx.say_queued("A curlew. Just the seaside.");
@@ -866,9 +879,11 @@ impl OutingScreen {
                 _ => 16.0,
             } + self.atmos.unit() * 12.0;
             let x = (self.atmos.unit() as f32 - 0.5) * 16.0;
-            let s = ctx
-                .audio
-                .play_at(sound::GULL, Vec3::new(x, 5.0, 6.0), Bus::AMBIENCE);
+            let s = ctx.audio.play_at(
+                sound::GULL,
+                sound::from_listener(ctx, Vec3::new(x, 5.0, 6.0)),
+                Bus::AMBIENCE,
+            );
             ctx.audio.set_volume(s, 0.5);
         }
         self.gust_in -= dt;
@@ -879,23 +894,27 @@ impl OutingScreen {
                 22.0
             } + self.atmos.unit() * 10.0;
             let x = if self.atmos.chance(0.5) { -6.0 } else { 6.0 };
-            let s = ctx
-                .audio
-                .play_at(sound::GUST, Vec3::new(x, 2.0, 1.0), Bus::AMBIENCE);
+            let s = ctx.audio.play_at(
+                sound::GUST,
+                sound::from_listener(ctx, Vec3::new(x, 2.0, 1.0)),
+                Bus::AMBIENCE,
+            );
             ctx.audio.set_volume(s, 0.5);
         }
         if weather == Weather::Foggy {
             self.fog_in -= dt;
             if self.fog_in <= 0.0 {
                 self.fog_in = 30.0 + self.atmos.unit() * 20.0;
-                let s =
-                    ctx.audio
-                        .play_at(sound::FOGHORN, Vec3::new(-20.0, 30.0, 0.0), Bus::AMBIENCE);
+                let s = ctx.audio.play_at(
+                    sound::FOGHORN,
+                    sound::from_listener(ctx, Vec3::new(-20.0, 30.0, 0.0)),
+                    Bus::AMBIENCE,
+                );
                 ctx.audio.set_volume(s, 0.6);
             }
         }
         if let Some(w) = self.waves {
-            let pos = self.waves_pos();
+            let pos = sound::from_listener(ctx, self.waves_pos());
             let vol = self.waves_volume();
             ctx.audio.set_position(w, Some(pos));
             ctx.audio.set_volume(w, vol);
@@ -929,19 +948,15 @@ impl State<Parlor> for OutingScreen {
         self.started = true;
         self.clock = RunClock::start(ctx, crate::ID);
         self.owned = Aquarium::load(ctx).species();
-        ctx.audio.set_listener(Vec3::ZERO, 0.0);
+        self.hear_from_here(ctx);
         ctx.audio.play_music(None, false);
         ctx.audio.set_bed(Some(sound::SHORE));
-        let waves = ctx
-            .audio
-            .start_loop(sound::WAVES, Some(self.waves_pos()), Bus::AMBIENCE);
+        let at = sound::from_listener(ctx, self.waves_pos());
+        let waves = ctx.audio.start_loop(sound::WAVES, Some(at), Bus::AMBIENCE);
         ctx.audio.set_volume(waves, self.waves_volume());
         self.waves = Some(waves);
-        let pool = ctx.audio.start_loop(
-            sound::POOL,
-            Some(sound::pool_at(0, self.outing.lean)),
-            Bus::AMBIENCE,
-        );
+        let at = sound::from_listener(ctx, sound::pool_at(0, self.outing.lean));
+        let pool = ctx.audio.start_loop(sound::POOL, Some(at), Bus::AMBIENCE);
         ctx.audio.set_volume(pool, 0.5);
         self.pool = Some(pool);
         let mood = mood(&self.outing);
@@ -971,6 +986,8 @@ impl State<Parlor> for OutingScreen {
     /// trip.
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
         self.stop_loops(ctx);
+        // The screens after this one hear from the middle again.
+        ctx.audio.set_listener(Vec3::ZERO, 0.0);
         if !self.done && !self.lesson && !self.outing.gathered.is_empty() {
             self.done = true;
             let found = format!(
@@ -988,6 +1005,7 @@ impl State<Parlor> for OutingScreen {
         if self.done {
             return;
         }
+        self.hear_from_here(ctx);
         self.clock.reset();
         let o = &self.outing;
         let tide = if o.plan.mode == Mode::Practice {

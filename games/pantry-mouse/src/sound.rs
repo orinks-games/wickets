@@ -58,18 +58,29 @@ pub fn cat_sound_words(i: usize) -> &'static str {
     }
 }
 
-/// Where a cell offset sits around the listener: right is right, up the
-/// maze is ahead.
-pub fn place(dx: i32, dy: i32) -> Vec3 {
-    Vec3::new(dx as f32 * CELL_METRES, -(dy as f32) * CELL_METRES, 0.0)
+/// Where a cell sits in the pantry, as the audio hears it: right is
+/// right, up the maze is ahead. The listener stands on the mouse's cell
+/// and every sound keeps its own cell, so a step re-pans whatever is still
+/// sounding at once.
+pub fn place(x: i32, y: i32) -> Vec3 {
+    Vec3::new(x as f32 * CELL_METRES, -(y as f32) * CELL_METRES, 0.0)
+}
+
+/// Puts the listener on the mouse's cell.
+pub fn listen_at(ctx: &mut Ctx<Parlor>, x: i32, y: i32) {
+    let ear = place(x, y);
+    if ctx.audio.listener().pos != ear {
+        ctx.audio.set_listener(ear, 0.0);
+    }
 }
 
 pub fn play(ctx: &mut Ctx<Parlor>, key: &str) -> Sound {
     ctx.audio.play(key, Bus::EFFECTS)
 }
 
-pub fn play_at(ctx: &mut Ctx<Parlor>, key: &str, dx: i32, dy: i32) -> Sound {
-    ctx.audio.play_at(key, place(dx, dy), Bus::EFFECTS)
+/// Plays `key` from the cell at `x`, `y`.
+pub fn play_at(ctx: &mut Ctx<Parlor>, key: &str, x: i32, y: i32) -> Sound {
+    ctx.audio.play_at(key, place(x, y), Bus::EFFECTS)
 }
 
 pub fn title_music(ctx: &mut Ctx<Parlor>) {

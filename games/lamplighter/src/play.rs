@@ -230,8 +230,14 @@ impl Round {
         }
     }
 
+    /// Puts the listener where the player stands, before anything sounds.
+    fn hear_from_here(&self, ctx: &mut Ctx<Parlor>) {
+        sound::listen_at(ctx, self.hall.pos);
+    }
+
     /// The lamps that are out within hearing, each from its wall.
     fn pulse_lamps(&self, ctx: &mut Ctx<Parlor>) {
+        self.hear_from_here(ctx);
         let pos = self.hall.pos as i32;
         for (step, side) in self.hall.out_lamps() {
             let ahead = step as i32 - pos;
@@ -251,6 +257,8 @@ impl Round {
     }
 
     fn voice(&mut self, ctx: &mut Ctx<Parlor>, evs: Vec<Ev>) {
+        // A step moves the listener before anything it set off sounds.
+        self.hear_from_here(ctx);
         // A draught in the same moment as a light changes the count, so the
         // count waits for the draught's line.
         let lit = evs.iter().any(|e| matches!(e, Ev::Lit { .. }));
@@ -272,7 +280,7 @@ impl Round {
                 Ev::LobbyDoor => {
                     ctx.audio.play_at(
                         sound::LOBBY_DOOR,
-                        Vec3::new(0.0, -sound::STEP, 0.0),
+                        sound::from_listener(ctx, Vec3::new(0.0, -sound::STEP, 0.0)),
                         hearken::Bus::EFFECTS,
                     );
                     ctx.say("The lobby door. The hall runs ahead of you.");
@@ -280,7 +288,7 @@ impl Round {
                 Ev::FarWall => {
                     ctx.audio.play_at(
                         sound::FAR_WALL,
-                        Vec3::new(0.0, sound::STEP, 0.0),
+                        sound::from_listener(ctx, Vec3::new(0.0, sound::STEP, 0.0)),
                         hearken::Bus::EFFECTS,
                     );
                     ctx.say("The far wall. The hall runs back behind you.");
@@ -490,7 +498,7 @@ impl State<Parlor> for Round {
     }
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
-        ctx.audio.set_listener(Vec3::ZERO, 0.0);
+        self.hear_from_here(ctx);
         sound::hall_bed(ctx);
         let intro = self.intro(ctx);
         ctx.say(intro);
@@ -505,12 +513,15 @@ impl State<Parlor> for Round {
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
         ctx.audio.set_bed(None);
+        // The screens after this one hear from the middle again.
+        ctx.audio.set_listener(Vec3::ZERO, 0.0);
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
         if self.over() {
             return;
         }
+        self.hear_from_here(ctx);
         sound::hall_bed(ctx);
         let here = self.here_words();
         ctx.say(format!("Back in the hall. {here}"));
@@ -559,6 +570,7 @@ impl State<Parlor> for Round {
                 return;
             }
             Some(ParlorAction::Hint) => {
+                self.hear_from_here(ctx);
                 if let Some((ahead, side)) = self.hall.nearest_out() {
                     sound::play_at(ctx, sound::LAMP_OUT, ahead, side);
                 }

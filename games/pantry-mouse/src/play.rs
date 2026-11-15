@@ -112,8 +112,8 @@ pub struct Play {
     warnings: u32,
     /// The cats' loops, by cat.
     loops: Vec<Option<Sound>>,
-    /// Sniff sounds still to play: seconds to wait, offset from the
-    /// mouse, and the sound.
+    /// Sniff sounds still to play: seconds to wait, the cell it sounds
+    /// from, and the sound.
     ticks: Vec<(f64, (i32, i32), &'static str)>,
     /// The arrow held down, and seconds until it steps again.
     held: Option<(Dir, f64)>,
@@ -318,15 +318,21 @@ impl Play {
         vec![format!("{}.", sentence_start(&first.join(", "))), more]
     }
 
+    /// Puts the listener on the mouse's cell, before anything sounds.
+    fn hear_from_here(&self, ctx: &mut Ctx<Parlor>) {
+        sound::listen_at(ctx, self.run.mouse.x, self.run.mouse.y);
+    }
+
     /// Starts each cat's loop, silent until it is within hearing.
     fn start_loops(&mut self, ctx: &mut Ctx<Parlor>) {
         self.stop_loops(ctx);
+        self.hear_from_here(ctx);
         self.loops = (0..self.run.cats.len())
             .map(|i| {
-                let (dx, dy) = self.run.cat_offset(i);
+                let c = self.run.cats[i].pos;
                 let s = ctx.audio.start_loop(
                     sound::cat_loop(i),
-                    Some(sound::place(dx, dy)),
+                    Some(sound::place(c.x, c.y)),
                     Bus::EFFECTS,
                 );
                 ctx.audio
@@ -344,10 +350,11 @@ impl Play {
 
     /// Moves every cat's loop to where the cat now is.
     fn place_loops(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.hear_from_here(ctx);
         for (i, s) in self.loops.iter().enumerate() {
             if let (Some(s), true) = (s, i < self.run.cats.len()) {
-                let (dx, dy) = self.run.cat_offset(i);
-                ctx.audio.set_position(*s, Some(sound::place(dx, dy)));
+                let c = self.run.cats[i].pos;
+                ctx.audio.set_position(*s, Some(sound::place(c.x, c.y)));
                 ctx.audio
                     .set_volume(*s, if self.run.cat_heard(i) { 1.0 } else { 0.0 });
             }
@@ -374,19 +381,16 @@ impl Play {
         self.ticks = found
             .iter()
             .enumerate()
-            .map(|(i, (c, _))| {
-                (
-                    i as f64 * SNIFF_GAP,
-                    (c.x - m.x, c.y - m.y),
-                    sound::SNIFF_TICK,
-                )
-            })
+            .map(|(i, (c, _))| (i as f64 * SNIFF_GAP, (c.x, c.y), sound::SNIFF_TICK))
             .collect();
         let mut treat_words = String::new();
         if let (Some((treat, _)), Some((c, _))) = (self.run.treat, self.run.nearest_treat()) {
             let at = (c.x - m.x, c.y - m.y);
-            self.ticks
-                .push((found.len() as f64 * SNIFF_GAP, at, sound::treat(treat)));
+            self.ticks.push((
+                found.len() as f64 * SNIFF_GAP,
+                (c.x, c.y),
+                sound::treat(treat),
+            ));
             treat_words = format!(" Nearest {}: {}.", treat.name(), offset_words(at.0, at.1));
         }
         self.play_ticks(ctx, 0.0);
@@ -415,8 +419,11 @@ impl Play {
                 true
             }
         });
-        for ((dx, dy), key) in due {
-            sound::play_at(ctx, key, dx, dy);
+        if !due.is_empty() {
+            self.hear_from_here(ctx);
+        }
+        for ((x, y), key) in due {
+            sound::play_at(ctx, key, x, y);
         }
     }
 
@@ -453,6 +460,8 @@ impl Play {
     }
 
     fn voice(&mut self, ctx: &mut Ctx<Parlor>, evs: Vec<Ev>) {
+        // A step moves the listener before anything it set off sounds.
+        self.hear_from_here(ctx);
         for ev in evs {
             match ev {
                 Ev::Step { crumb } => {
@@ -520,8 +529,8 @@ impl Play {
                     }
                 }
                 Ev::CatClose { cat } => {
-                    let (dx, dy) = self.run.cat_offset(cat);
-                    sound::play_at(ctx, sound::CAT_CLOSE, dx, dy);
+                    let c = self.run.cats[cat].pos;
+                    sound::play_at(ctx, sound::CAT_CLOSE, c.x, c.y);
                     if self.warnings < CLOSE_WARNINGS {
                         self.warnings += 1;
                         self.clock.reset();
@@ -823,7 +832,7 @@ impl State<Parlor> for Play {
         // The pace is fixed for the run: a change in Settings applies from
         // the next one.
         self.clock = RunClock::start(ctx, ID);
-        ctx.audio.set_listener(Vec3::ZERO, 0.0);
+        self.hear_from_here(ctx);
         sound::pantry_bed(ctx);
         self.start_loops(ctx);
         let intro = self.intro(ctx);
@@ -844,6 +853,8 @@ impl State<Parlor> for Play {
         self.save_practice(ctx);
         self.stop_loops(ctx);
         ctx.audio.set_bed(None);
+        // The screens after this one hear from the middle again.
+        ctx.audio.set_listener(Vec3::ZERO, 0.0);
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {

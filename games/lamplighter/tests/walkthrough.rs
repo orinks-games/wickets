@@ -1,7 +1,7 @@
 //! The game through its screens, as a player would meet it.
 
 use crate::common::*;
-use hearken::{Headless, Key};
+use hearken::{Call, Headless, Key};
 use lamplighter::play::{END_PAUSE, PLAY_NAME, PULSE};
 use lamplighter::progress::ROUND_BOARD;
 use lamplighter::soundcheck::SOUNDS_NAME;
@@ -157,6 +157,46 @@ fn the_unlit_lamps_nearby_pulse_from_their_walls() {
     wait(&mut h, PULSE * 2.0);
     assert_eq!(played(&h, sound::LAMP_OUT), near);
     light_all(&mut h, &mut twin);
+}
+
+#[test]
+fn a_step_re_pans_a_lamp_while_it_sounds() {
+    // Sounds keep their place in the hall, so the moment the player steps
+    // they move around them, not on the next pulse.
+    let (mut h, _twin) = play(Mode::Practice);
+    h.clear();
+    wait(&mut h, PULSE * 2.0);
+    let (channel, before) = h
+        .sounds
+        .calls()
+        .into_iter()
+        .rev()
+        .find_map(|c| match c {
+            Call::Play {
+                channel, key, mix, ..
+            } if key == sound::LAMP_OUT => Some((channel, mix.relative.expect("a placed sound"))),
+            _ => None,
+        })
+        .expect("a lamp pulsed");
+    h.clear();
+    h.press(Key::Up);
+    h.frame(DT);
+    let after = h
+        .sounds
+        .calls()
+        .into_iter()
+        .find_map(|c| match c {
+            Call::SetMix {
+                channel: ch, mix, ..
+            } if ch == channel => mix.relative,
+            _ => None,
+        })
+        .unwrap_or_else(|| panic!("the lamp was not re-panned: {:?}", h.sounds.calls()));
+    let step = hearken::Vec3::new(0.0, sound::STEP, 0.0);
+    assert!(
+        (after - (before - step)).length() < 0.01,
+        "{after:?} vs {before:?} less {step:?}"
+    );
 }
 
 #[test]
