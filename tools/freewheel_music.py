@@ -16,7 +16,7 @@ as written. Then render with:
     python tools/freewheel_music.py
     python tools/render_sounds.py freewheel
 
-- music/title: 96 beats at 140 a minute, about 41 seconds in G, looping
+- music/title: 96 beats at 144 a minute, 40 seconds in E minor, looping
   cleanly with "loop": "fold" at about -26.5 LUFS, like the other titles.
 """
 
@@ -68,32 +68,34 @@ def group(name: str, at: float, *layers: dict) -> dict:
 ROOM = [{"type": "reverb", "mix": 0.1, "size": 0.45}, {"type": "compressor", "threshold": -18, "ratio": 2},
         {"type": "lowpass", "cutoff": 9000}]
 
-# --- the changes, in G ---------------------------------------------------------
+# --- the changes, in E minor ----------------------------------------------------
 
 # Each chord as its notes, low to high, for the arpeggios and the pad.
 CHORD = {
-    "G": ["G3", "B3", "D4"], "Bm7": ["F#3", "A3", "B3", "D4"], "Cmaj7": ["E3", "G3", "B3", "C4"],
-    "D": ["F#3", "A3", "D4"], "Em7": ["E3", "G3", "B3", "D4"], "Am7": ["E3", "G3", "A3", "C4"],
-    "C": ["E3", "G3", "C4"], "Bm": ["F#3", "B3", "D4"], "Em": ["E3", "G3", "B3"],
-    "D7": ["F#3", "A3", "C4", "D4"],
+    "Em": ["E3", "G3", "B3"], "C": ["E3", "G3", "C4"], "G": ["D3", "G3", "B3"],
+    "D": ["D3", "F#3", "A3"], "Am": ["E3", "A3", "C4"], "B7": ["F#3", "A3", "B3", "D#4"],
 }
-A_CHORDS = ["G", "Bm7", "Cmaj7", "D", "Em7", "Am7", "Cmaj7", "D"]
-B_CHORDS = ["C", "D", "Bm", "Em", "Am7", "D", "G", "D7"]
-ROOT_NOTE = {"G": "G", "Bm7": "B", "Cmaj7": "C", "D": "D", "Em7": "E", "Am7": "A", "C": "C",
-             "Bm": "B", "Em": "E", "D7": "D"}
-# The bass octave each root sits in, kept between E1 and D2.
+A_CHORDS = ["Em", "C", "G", "D", "Em", "C", "Am", "B7"]
+B_CHORDS = ["C", "D", "G", "Em", "Am", "C", "D", "D"]
+ROOT_NOTE = {"Em": "E", "C": "C", "G": "G", "D": "D", "Am": "A", "B7": "B"}
+# The bass octave each root sits in, kept between G1 and E2.
 LOW = {"G": "G1", "A": "A1", "B": "B1", "C": "C2", "D": "D2", "E": "E2"}
 
-# The title's tune: leaping up and coasting down.
-A_TUNE = bars("D5:.5 G5:.5 B5:1 A5:.5 G5:.5 D5:1", "F#5:1.5 E5:.5 D5:1 A5:1",
-              "G5:.5 E5:.5 G5:.5 B5:.5 A5:1 G5:1", "F#5:3 -:1",
-              "B5:.5 A5:.5 G5:.5 E5:.5 G5:1 B5:1", "C6:1.5 B5:.5 A5:1 E5:1",
-              "G5:.5 A5:.5 B5:.5 G5:.5 E5:1 D5:1", "E5:1 F#5:1 A5:1 -:1")
-# The bridge's own tune, for the SID.
-B_TUNE = bars("E5:1 G5:.5 E5:.5 C5:2", "F#5:1 A5:.5 F#5:.5 D5:2",
-              "D5:.5 F#5:.5 B5:1 A5:1 F#5:1", "G5:3 E5:1",
-              "C5:1 E5:1 G5:1 A5:1", "F#5:1.5 E5:.5 D5:1 C5:1",
-              "B4:1 D5:1 G5:2", "F#5:1 E5:1 D5:1 C5:1")
+# The title's tune: a quick pick-up, a leap to the top and a fall back,
+# climbing higher the second time and turning on B7 to start again.
+A_TUNE = bars("E5:.5 E5:.25 G5:.25 B5:.5 E6:.5 D6:.5 B5:.5 G5:1",
+              "-:.5 C6:.5 B5:.5 G5:.5 E5:1 G5:1",
+              "D6:.75 B5:.25 D6:.5 G6:.5 F#6:.5 D6:.5 B5:1",
+              "A5:1.5 F#5:.5 A5:.5 D6:1.5",
+              "E5:.5 E5:.25 G5:.25 B5:.5 E6:.5 F#6:.5 G6:.5 E6:1",
+              "-:.5 G6:.5 F#6:.5 E6:.5 C6:1 E6:1",
+              "A5:.5 C6:.5 E6:.5 A6:.5 G6:.5 E6:.5 C6:.5 A5:.5",
+              "B5:1 D#6:1 F#6:1 A6:.5 D#6:.5")
+# The bridge's own tune, for the SID: longer notes, then a run up home.
+B_TUNE = bars("G5:1.5 E5:.5 G5:1 C6:1", "A5:1.5 F#5:.5 A5:1 D6:1",
+              "B5:1 D6:1 G6:1 D6:1", "E6:3 B5:1",
+              "C6:1.5 B5:.5 A5:1 E5:1", "G5:1.5 A5:.5 B5:1 C6:1",
+              "D6:1 C6:.5 B5:.5 A5:1 F#5:1", "A5:.5 B5:.5 C6:.5 D6:.5 E6:.5 F#6:.5 A6:1")
 
 
 def up(note: str, octaves: int) -> str:
@@ -159,11 +161,11 @@ def title() -> dict:
         "out": "music/title.wav",
         "genny": "blal1",
         "loudness": -26.5,
-        "bpm": 140,
+        "bpm": 144,
         "beats": 96,
         "loop": "fold",
         "_arrangement": (
-            "96 beats in G, modern retro: NES triangle octaves over a sine sub, a modern kick, 808 snare "
+            "96 beats in E minor, modern retro: NES triangle octaves over a sine sub, a modern kick, 808 snare "
             "and clap and 808 hats in the middle, Game Boy pulse arpeggios on the left and a wide pad. "
             "A the title's own tune on a NES pulse on the right; B the bridge's tune on a C64 SID saw; A2 "
             "the NES pulse with the Game Boy an octave up."
