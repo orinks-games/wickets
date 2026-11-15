@@ -280,7 +280,7 @@ mod tests {
         merge(&mut ba, &a);
         assert_eq!(ab.games["x/scores"], ba.games["x/scores"]);
         assert_eq!(ab.games["story"], ba.games["story"]);
-        let mut sorted = |v: &Value| {
+        let sorted = |v: &Value| {
             let mut items: Vec<String> = v["earned"].as_array().unwrap().iter().map(|s| s.to_string()).collect();
             items.sort();
             items
