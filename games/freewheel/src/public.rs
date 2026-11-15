@@ -20,6 +20,7 @@ pub mod rides;
 pub mod shop;
 pub mod sound;
 mod soundcheck;
+pub mod submenus;
 pub mod training;
 pub mod tutorial;
 pub mod world;
@@ -274,163 +275,47 @@ impl TitleGame for Freewheel {
 
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
         let c = Choices::load(ctx);
-        let info = &COURSES[c.course];
-        let best = best_words(ctx, c.course, c.bike);
-        let mut rows = vec![
-            MenuItem::new(
-                format!(
-                    "{}, time trial: {} on the {}",
-                    labels::PLAY,
-                    info.name,
-                    c.bike.name()
-                ),
-                move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                    ctx.push(Ride::time_trial(c.course, c.bike))
-                },
-            )
-            .help(format!("{} {}.", info.about(), sentence_start(&best))),
-            {
-                let district = Choices::load(ctx).district;
-                let best = row_best(ctx, &endless_board(district), |m| distance_words(m as f64));
-                MenuItem::new(
-                    format!("Endless ride: {} on the {}", district.name(), c.bike.name()),
-                    move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                        ctx.push(Ride::endless(c.bike, district, Rng::from_time().next_u64()))
-                    },
-                )
-                .help(format!(
-                    "Ride until your third crash. Dodge oncoming cars and grab parcels.{best}"
-                ))
-            },
-        ];
-        if clock::offered() {
-            let district = c.district;
-            let best = row_best(ctx, &clock::board(district), |n| {
-                clock::drop_words(n as u32)
-            });
-            rows.push(
-                MenuItem::new(
-                    format!("{}: {} on the {}", clock::NAME, district.name(), c.bike.name()),
-                    move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                        ctx.push(Ride::against_clock(
-                            c.bike,
-                            district,
-                            Rng::from_time().next_u64(),
-                        ))
-                    },
-                )
-                .help(format!(
-                    "Make drops to add time. Crashes cost {} seconds. The ride ends when the clock runs out.{best}",
-                    clock::CRASH_S as u32
-                )),
-            );
-        }
-        rows.extend([
-            MenuItem::new("Job board", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                ctx.push(jobs::JobBoard::new())
-            })
-            .help("Courier deliveries for cash. Full pay on time, half pay late."),
-            MenuItem::new("Free ride", move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                ctx.push(Ride::free_ride(c.bike, Rng::from_time().next_u64()))
-            })
-            .help(format!(
-                "{} of Downtown with no clock, to learn the street.",
-                parlor_core::units::route(ride::FREE_LENGTH)
-            )),
-            MenuItem::new("Course select", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                ctx.push(CourseSelect::new())
-            })
-            .help(format!(
-                "Choose one of the {} Downtown courses for the time trial.",
-                COURSES.len()
-            )),
-            MenuItem::new("Bike select", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                ctx.push(BikeSelect::new())
-            })
-            .help(format!(
-                "Choose your bike. Riding the {} now.",
+        let district = c.district;
+        let best = row_best(ctx, &endless_board(district), |m| distance_words(m as f64));
+        let mut rows = vec![MenuItem::new(
+            format!(
+                "{}, endless ride: {} on the {}",
+                labels::PLAY,
+                district.name(),
                 c.bike.name()
-            )),
-            MenuItem::new(
-                "District select",
-                |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(shop::DistrictSelect::new()),
-            )
-            .help(if clock::offered() {
-                "Choose where the endless ride and the ride against the clock go."
-            } else {
-                "Choose where the endless ride goes."
-            }),
-            MenuItem::new("Bike shop", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                ctx.push(shop::Shop::new())
-            })
-            .help(format!(
-                "Spend cash on bikes and districts. You have {}.",
-                dollar_words(Progress::load(ctx).cash)
-            )),
-        ]);
+            ),
+            move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
+                ctx.push(Ride::endless(c.bike, district, Rng::from_time().next_u64()))
+            },
+        )
+        .help(format!(
+            "Ride until your third crash. Dodge oncoming cars and grab parcels.{best}"
+        ))];
+        // The job board joins the title after a first finished ride.
+        if job_board_open(&Progress::load(ctx)) {
+            rows.push(
+                MenuItem::new("Job board", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
+                    ctx.push(jobs::JobBoard::new())
+                })
+                .help("Courier deliveries for cash. Full pay on time, half pay late."),
+            );
+        }
         let today = parlor_core::challenges::today(ctx);
-        let on = format!(" On the {}.", c.bike.name());
-        if events::leaf_open(today) {
-            let help = format!(
-                "{}{on}{}",
-                events::leaf_help(),
-                event_best(ctx, &events::board(events::LEAF_BOARD, c.bike))
-            );
-            rows.push(
-                MenuItem::new(
-                    events::LEAF_SEASON,
-                    move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                        let today = parlor_core::challenges::today(ctx);
-                        ctx.push(Ride::leaf_season(c.bike, today))
-                    },
-                )
-                .help(help),
-            );
-        } else {
-            // Out of season: the row keeps its place and says when it opens.
-            rows.push(
-                MenuItem::new(
-                    labels::locked(events::LEAF_SEASON),
-                    |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                        let today = parlor_core::challenges::today(ctx);
-                        ctx.play_ui(hearken::UiSound::Error);
-                        ctx.say(events::leaf_locked_line(today))
-                    },
-                )
-                .select_sound(None)
-                .help(events::leaf_locked_help(today)),
-            );
-        }
-        if let Some(course) = events::sunday_course(today) {
-            let help = format!(
-                "{}{on}{}",
-                events::sunday_help(),
-                event_best(ctx, &events::board(events::SUNDAY_BOARD, c.bike))
-            );
-            rows.push(
-                MenuItem::new(
-                    events::SUNDAY,
-                    move |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                        ctx.push(Ride::sunday(c.bike, course.clone()))
-                    },
-                )
-                .help(help),
-            );
-        } else {
-            // Closed today: the row keeps its place and says when it opens.
-            rows.push(
-                MenuItem::new(
-                    labels::locked(events::SUNDAY),
-                    |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
-                        let today = parlor_core::challenges::today(ctx);
-                        ctx.play_ui(hearken::UiSound::Error);
-                        ctx.say(events::sunday_locked_line(today))
-                    },
-                )
-                .select_sound(None)
-                .help(events::sunday_locked_help(today)),
-            );
-        }
+        rows.extend([
+            MenuItem::new(submenus::MORE_RIDES, |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
+                ctx.push(submenus::MoreRides::new())
+            })
+            .help(submenus::more_rides_help()),
+            MenuItem::new(
+                submenus::events_label(today),
+                |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(submenus::Events::new()),
+            )
+            .help(submenus::events_help(today)),
+            MenuItem::new(submenus::GARAGE, |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
+                ctx.push(submenus::Garage::new())
+            })
+            .help(submenus::garage_help(ctx)),
+        ]);
         rows
     }
 
@@ -501,7 +386,14 @@ impl TitleGame for Freewheel {
     }
 }
 
-/// Choose a time trial course. Enter rides it and keeps it as the Play row's course.
+/// Whether the job board is on the title: once a ride or a delivery is
+/// finished, so a new player meets a shorter title.
+pub fn job_board_open(progress: &Progress) -> bool {
+    progress.rides > 0 || progress.deliveries > 0
+}
+
+/// Choose a time trial course. Enter rides it and keeps it as the next
+/// time trial's course, where the list opens.
 pub struct CourseSelect {
     menu: MenuCore<Self, Parlor>,
 }
@@ -509,7 +401,7 @@ pub struct CourseSelect {
 impl CourseSelect {
     pub fn new() -> Self {
         CourseSelect {
-            menu: MenuCore::new("Course select")
+            menu: MenuCore::new("Time trial")
                 .with_intro_help("Up and Down choose a course, Enter rides it, Escape goes back."),
         }
     }
@@ -526,6 +418,14 @@ impl Menu for CourseSelect {
 
     fn name(&self) -> &'static str {
         "freewheel_courses"
+    }
+
+    /// Opens on the course ridden last.
+    fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
+        ctx.play_ui(hearken::UiSound::Open);
+        self.refresh(ctx, false);
+        self.menu.index = Choices::load(ctx).course.min(COURSES.len() - 1);
+        self.announce(ctx);
     }
 
     fn menu(&self) -> &MenuCore<Self, Parlor> {
@@ -558,7 +458,7 @@ impl Menu for CourseSelect {
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.pop()
             })
-            .help("Return to the Freewheel title."),
+            .help("Return to More rides."),
         );
         items
     }
@@ -625,7 +525,7 @@ impl Menu for BikeSelect {
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.pop()
             })
-            .help("Return to the Freewheel title."),
+            .help("Return to the garage."),
         );
         items
     }

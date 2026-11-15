@@ -116,7 +116,7 @@ impl Menu for Shop {
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.pop()
             })
-            .help("Return to the Freewheel title."),
+            .help("Return to the garage."),
         );
         items
     }
@@ -205,7 +205,7 @@ impl Menu for DistrictSelect {
             MenuItem::new(labels::BACK, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.pop()
             })
-            .help("Return to the Freewheel title."),
+            .help("Return to the garage."),
         );
         items
     }
