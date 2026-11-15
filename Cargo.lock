@@ -193,6 +193,7 @@ dependencies = [
  "parlor-core",
  "serde",
  "wickets-content",
+ "wickets-rules",
 ]
 
 [[package]]
@@ -785,6 +786,7 @@ dependencies = [
  "parlor-core",
  "serde",
  "wickets-content",
+ "wickets-rules",
 ]
 
 [[package]]
@@ -1887,6 +1889,7 @@ dependencies = [
  "serde",
  "serde_json",
  "wickets-content",
+ "wickets-rules",
 ]
 
 [[package]]
@@ -2113,6 +2116,7 @@ dependencies = [
  "parlor-core",
  "serde",
  "wickets-content",
+ "wickets-rules",
 ]
 
 [[package]]
@@ -2233,7 +2237,9 @@ dependencies = [
  "hearken",
  "parlor-core",
  "serde",
+ "serde_json",
  "wickets-content",
+ "wickets-rules",
 ]
 
 [[package]]
@@ -2486,6 +2492,7 @@ dependencies = [
  "parlor-core",
  "serde",
  "wickets-content",
+ "wickets-rules",
 ]
 
 [[package]]
@@ -3162,6 +3169,17 @@ dependencies = [
 [[package]]
 name = "wickets-content"
 version = "1.7.0"
+
+[[package]]
+name = "wickets-rules"
+version = "1.7.0"
+dependencies = [
+ "hearken-replay",
+ "libm",
+ "serde",
+ "serde_json",
+ "wickets-content",
+]
 
 [[package]]
 name = "wickets-slot-a"

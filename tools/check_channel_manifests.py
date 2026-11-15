@@ -84,10 +84,11 @@ def check_workflow(text: str) -> list[str]:
     uploads = re.findall(r"gh release upload\s+\S+\s+(\S+)", text)
     if uploads.count('"$MANIFEST"') != 1:
         problems.append("does not upload exactly one manifest, $MANIFEST")
-    allowed = {'"$FILE"', '"$INDEX"', '"$MANIFEST"'}
+    # $RULES: the rules module orinks.net replays ranked runs with.
+    allowed = {'"$FILE"', '"$INDEX"', '"$MANIFEST"', '"$RULES"'}
     for arg in uploads:
         if arg not in allowed:
-            problems.append(f"uploads {arg}, not the package, its index or its manifest")
+            problems.append(f"uploads {arg}, not the package, its index, its manifest or its rules module")
     return problems
 
 

@@ -33,6 +33,8 @@ app-name = "Wicket's"
 bundle-id = "net.orinks.wickets"
 update = true
 update-key = "ed25519:a03d280b19505838690fd8d43347bba108a74c73f35cbdc90df0a8f93adca438"
+# Built for WebAssembly too, so orinks.net can replay a ranked run.
+rules = "wickets-rules"
 
 [lib]
 # No unit tests or doc examples here (tools/check_test_targets.py keeps
