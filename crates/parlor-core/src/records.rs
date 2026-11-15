@@ -58,6 +58,10 @@ pub const UNREADABLE_NOTICE: &str =
 struct File {
     #[serde(default)]
     games: BTreeMap<String, serde_json::Value>,
+    /// When each key was last saved, in unix seconds, so a copy kept with
+    /// the player's account merges the right way round (see [`crate::merge`]).
+    #[serde(default, skip_serializing_if = "BTreeMap::is_empty")]
+    stamps: BTreeMap<String, i64>,
 }
 
 /// What recording a score did.
@@ -77,6 +81,8 @@ pub struct Records {
     loaded: Option<Loaded>,
     /// Something the player should hear about the records, once.
     notice: Option<&'static str>,
+    /// Something was saved since [`Records::take_changed`] last asked.
+    changed: bool,
 }
 
 /// The records as read from one data folder.
@@ -229,11 +235,67 @@ impl Records {
             return;
         };
         let records = &mut ctx.game.records;
-        records
-            .file(&mut ctx.vault)
-            .games
-            .insert(game.to_string(), value);
+        let file = records.file(&mut ctx.vault);
+        if file.games.get(game) == Some(&value) {
+            return;
+        }
+        file.games.insert(game.to_string(), value);
+        let (now, _) = hearken::clock::trusted_unix_now();
+        file.stamps.insert(game.to_string(), now);
+        records.changed = true;
         records.save(&mut ctx.vault);
+    }
+
+    /// Whether anything was saved since the last call.
+    pub fn take_changed(ctx: &mut Ctx<Parlor>) -> bool {
+        std::mem::take(&mut ctx.game.records.changed)
+    }
+
+    /// The records as they go to the player's account: every key but the
+    /// ones that stay on this computer, as JSON, and whether they hold any
+    /// progress (see [`crate::merge::is_progress`]). `None` when the records
+    /// could not be read, so nothing should go anywhere.
+    pub fn export(ctx: &mut Ctx<Parlor>) -> Option<(Vec<u8>, bool)> {
+        let records = &mut ctx.game.records;
+        records.file(&mut ctx.vault);
+        let loaded = records.loaded.as_ref()?;
+        if !loaded.writable {
+            return None;
+        }
+        let shared = |key: &String| crate::merge::rule(key) != crate::merge::Rule::Local;
+        let copy = File {
+            games: loaded.file.games.iter().filter(|(k, _)| shared(k)).map(|(k, v)| (k.clone(), v.clone())).collect(),
+            stamps: loaded.file.stamps.iter().filter(|(k, _)| shared(k)).map(|(k, v)| (k.clone(), *v)).collect(),
+        };
+        let progress = copy.games.iter().any(|(k, v)| crate::merge::is_progress(k, v));
+        serde_json::to_vec(&copy).ok().map(|bytes| (bytes, progress))
+    }
+
+    /// Merges a copy from the player's account into these records and saves
+    /// them. `Ok(true)` when anything here changed.
+    pub fn merge_copy(ctx: &mut Ctx<Parlor>, bytes: &[u8]) -> Result<bool, String> {
+        let cloud: File = serde_json::from_slice(bytes).map_err(|e| e.to_string())?;
+        let records = &mut ctx.game.records;
+        records.file(&mut ctx.vault);
+        let loaded = records.loaded.as_mut().expect("just loaded");
+        if !loaded.writable {
+            return Err("the records here cannot be saved".into());
+        }
+        let mut ours = crate::merge::Copy {
+            games: std::mem::take(&mut loaded.file.games),
+            stamps: std::mem::take(&mut loaded.file.stamps),
+        };
+        let theirs = crate::merge::Copy {
+            games: cloud.games,
+            stamps: cloud.stamps,
+        };
+        let changed = crate::merge::merge(&mut ours, &theirs);
+        loaded.file.games = ours.games;
+        loaded.file.stamps = ours.stamps;
+        if changed {
+            records.save(&mut ctx.vault);
+        }
+        Ok(changed)
     }
 
     /// The best score on one of a game's boards (`"best"`, `"freestyle"`,

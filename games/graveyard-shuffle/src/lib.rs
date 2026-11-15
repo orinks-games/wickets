@@ -77,6 +77,13 @@ pub fn kept(ctx: &mut Ctx<Parlor>) -> bool {
     Progress::load(ctx).kept()
 }
 
+/// Whether the player has beaten the special: every tune of its last set
+/// has a star.
+pub fn beaten(ctx: &mut Ctx<Parlor>) -> bool {
+    let last = songs::NIGHTS[songs::NIGHTS.len() - 1].number;
+    Progress::load(ctx).set_cleared(last)
+}
+
 /// How the launcher lists the game in Halloween season, and all year once
 /// it is kept.
 pub const INFO: GameInfo = GameInfo {

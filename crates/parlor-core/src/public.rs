@@ -18,6 +18,7 @@ pub mod pace;
 mod pages;
 pub mod preferences;
 pub mod presence;
+pub mod merge;
 pub mod records;
 mod rng;
 pub mod score;
