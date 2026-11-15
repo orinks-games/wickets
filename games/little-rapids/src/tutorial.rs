@@ -37,7 +37,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, water: Live<RunScreen>) -> Lesson {
             "{} sets the boat off. Hold {l} or {r} to paddle that way. A petal is floating toward you. Steer so it is straight ahead as it reaches you.",
             sentence_start(&go)
         ),
-        |s: &RunScreen, _| (s.run.caught >= 1).then(|| "Caught. Each catch plays a note in the tune.".to_string()),
+        |s: &RunScreen, _| (s.run.caught >= 1).then(|| "Caught.".to_string()),
     );
     let current = water.step(
         "Ahead of you is the current, the fastest water. Steer into it and stay there for a few beats. Riding it scores points every beat.",
@@ -57,7 +57,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, water: Live<RunScreen>) -> Lesson {
     .step(current)
     .step(clean)
     .outro(format!(
-        "On a real stream, steer clear of stones and the banks: a bump costs your combo, and the band drops back. The longer your combo, the more of the band plays. {} gives your combo and multiplier. Press it again straight away for your score and progress. {h} says where the current is and what is coming.",
+        "On a real stream, steer clear of stones and the banks: a bump costs your combo. {} gives your combo and multiplier. Press it again straight away for your score and progress. {h} says where the current is and what is coming.",
         sentence_start(&s)
     ))
     .on_exit(move |ctx| {

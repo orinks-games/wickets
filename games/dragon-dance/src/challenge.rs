@@ -45,10 +45,8 @@ pub fn tag(period: Period) -> &'static str {
 pub fn rule(period: Period) -> String {
     let s = street(period);
     format!(
-        "One street: {}. About {} seconds, at {} beats a minute.",
-        s.describe(),
-        s.seconds(),
-        s.bpm
+        "One street: {}.",
+        s.describe()
     )
 }
 
