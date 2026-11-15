@@ -63,12 +63,13 @@ impl Menu for SoundCheck {
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         ctx.audio.set_bed(None);
+        ctx.audio.play_music(None, false);
         hearken::menu::menu_enter(self, ctx);
     }
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
         self.hush(ctx);
-        sound::fireside(ctx);
+        sound::title_music(ctx);
     }
 
     fn build_items(&mut self, _ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {

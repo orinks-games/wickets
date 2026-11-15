@@ -133,7 +133,7 @@ fn game(id: &'static str, name: &'static str) -> Vec<Track> {
             a.pause(27.4),
         ],
         "firefly-meadow" => vec![a.title(32.0), a.pause(24.0)],
-        "fireside-patience" => vec![a.pause(29.1)],
+        "fireside-patience" => vec![a.title(75.8), a.score(133.3, &play), a.pause(58.2)],
         "freewheel" => vec![a.title(11.9), a.pause(22.9)],
         "graveyard-shuffle" => vec![a.title(90.0), a.pause(19.2)],
         "harvest-feast" => vec![a.title(36.9), a.score(36.9, &play), a.pause(22.9)],
