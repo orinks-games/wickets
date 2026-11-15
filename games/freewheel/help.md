@@ -68,7 +68,7 @@ The job board offers three deliveries across the districts you own. Each says it
 
 ## The bike shop and districts
 
-The bike shop sells bikes and districts for cash. Whatever you buy, you ride at once. Bike select and District select change them later.
+The bike shop sells bikes and districts for cash. Whatever you buy, you ride at once. Bike select and District select, in the garage, change them later.
 
 The mountain bike has knobbly tyres. It rolls through potholes, hops curbs and keeps its speed on cobbles. The e-bike has a motor that helps up to 25 kilometres an hour. The moped has an engine instead of pedals and reaches 50 kilometres an hour. It cannot hop or sprint.
 
@@ -92,9 +92,11 @@ Relaxed best times, ride points, distances and drops are saved separately, inclu
 
 ## Modes
 
+The title starts with the endless ride. More rides holds the time trial{alpha:, the ride against the clock} and the free ride. The job board joins the title after your first ride. Events holds the special rides, and the garage holds Bike select, District select and the bike shop.
+
 Practice lessons: five short rides that teach pedalling and coasting, braking, steering, the door zone and hopping. Each lesson gives its goal and starts again if you miss it.
 
-Time trial: one of three Downtown courses, Station Run, Market Street and Bank Square, on the bike you chose. Its traffic is the same every time, so you can learn it. Course select chooses the course, and Bike select the bike.
+Time trial: one of three Downtown courses, Station Run, Market Street and Bank Square, on the bike you chose. Its traffic is the same every time, so you can learn it. Time trial, under More rides, lists the courses, and Bike select in the garage chooses the bike.
 
 Endless ride: ride until your third crash, grabbing parcels, in the district you chose.
 
@@ -114,11 +116,11 @@ Every player gets the same challenge rides. The morning run is a new 700 metre c
 
 ## Special rides
 
-Two rides open on the title only on their own days. Each keeps its own best time and ride points for each bike, as the time trials do, so the time trial boards never change. Once a ride has closed, Play again on its results says so and does not start it.
+Two rides, under Events on the title, open only on their own days. Each keeps its own best time and ride points for each bike, as the time trials do, so the time trial boards never change. Once a ride has closed, Play again on its results says so and does not start it.
 
-Leaf season ride, from 17 October to the end of November. The rest of the year its row stays on the title, locked, and says when it opens. 1000 metres of autumn Downtown, the same all season for every rider, with leaf piles in the middle of the bike lane. Each pile signals its location once the hazards before it are behind you. Ride through it for 1000 ride points. Leaf piles are never hazards, and a hop goes over them. S counts the piles you have ridden through, and H names the next one.
+Leaf season ride, from 17 October to the end of November. The rest of the year its row stays under Events, locked, and says when it opens. 1000 metres of autumn Downtown, the same all season for every rider, with leaf piles in the middle of the bike lane. Each pile signals its location once the hazards before it are behind you. Ride through it for 1000 ride points. Leaf piles are never hazards, and a hop goes over them. S counts the piles you have ridden through, and H names the next one.
 
-Car-free Sunday, on the third Sunday of every month: 1200 metres made from that Sunday's date, the same for every rider. The streets are closed to cars. On other days its row stays on the title, locked, and says when it opens.
+Car-free Sunday, on the third Sunday of every month: 1200 metres made from that Sunday's date, the same for every rider. The streets are closed to cars. On other days its row stays under Events, locked, and says when it opens.
 
 ## Controls
 
