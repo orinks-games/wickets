@@ -2,7 +2,7 @@
 
 ## About the game
 
-You sail a little boat down a stream. The water carries the boat along by itself, and you steer it from bank to bank to catch what floats down. Petals, leaves and paper scraps arrive on the beat of the music, and every catch plays a note in the river's song.
+You sail a little boat down a stream. The water carries the boat along by itself, and you steer it from bank to bank to catch what floats down. Petals, leaves and paper scraps arrive on the beat of the music.
 
 Reach the river mouth to earn stars. Catch more for more stars. In the four streams, bumping a bank, a stone or a duck costs your combo but never ends the run.
 

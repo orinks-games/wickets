@@ -44,12 +44,7 @@ pub fn tag(period: Period) -> &'static str {
 /// The rule, in a sentence or two.
 pub fn rule(period: Period) -> String {
     let s = street(period);
-    format!(
-        "One street: {}. About {} seconds, at {} beats a minute.",
-        s.describe(),
-        s.seconds(),
-        s.bpm
-    )
+    format!("One street: {}.", s.describe())
 }
 
 /// The game's side of the shared challenges menu.
