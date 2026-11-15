@@ -53,7 +53,7 @@ use crate::{Parlor, ParlorAction, Records};
 
 /// The channel stage the briefing is at: a copy shows it only when
 /// `channel::shows(STAGE)`.
-pub const STAGE: Stage = Stage::Beta;
+pub const STAGE: Stage = Stage::Stable;
 
 /// The screen's `State::name`, shared by every game, as `pages` is.
 pub const NAME: &str = "briefing";
@@ -779,23 +779,9 @@ mod tests {
         assert_eq!(keys_line(10), "1 to 9 and 0 play the sounds. Enter starts.");
     }
 
-    #[test]
-    fn a_stable_copy_starts_the_run_at_once_and_lists_no_row() {
+        #[test]
+    fn a_stable_copy_shows_the_briefing_and_its_row() {
         channel::pin(Some(Stage::Stable));
-        let (h, ran) = open();
-        let rows = rows().len();
-        let on = enabled(&h.app.ctx);
-        channel::pin(None);
-        assert!(ran.get());
-        assert_ne!(h.app.top_name(), NAME);
-        assert!(h.spoken().is_empty(), "{:?}", h.spoken());
-        assert_eq!(rows, 0);
-        assert!(!on);
-    }
-
-    #[test]
-    fn a_beta_copy_shows_the_briefing_and_its_row() {
-        channel::pin(Some(Stage::Beta));
         let (h, ran) = open();
         let rows = rows().len();
         channel::pin(None);

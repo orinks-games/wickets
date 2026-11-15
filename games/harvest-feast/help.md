@@ -41,7 +41,7 @@ With spoken call-outs on, the kitchen also says when a dish needs you: "Bubbling
 
 Every dish's clock holds while a recipe call or another line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every meal.
 
-Pace in Settings sets how fast cooking runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed.
+Pace in Settings sets how fast cooking runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed.
 
 A change applies from your next meal. Second helpings and a challenge keep the pace they started at until the run ends.
 

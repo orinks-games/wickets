@@ -42,7 +42,7 @@ S reads the status in the same order every time: each cat's place from you in ce
 
 The cats and your freeze stand still while a line is still being spoken. An arrow pressed meanwhile moves you at once, and a held arrow steps on once the line ends. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode.
 
-Pace in Settings sets how fast the cats move: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. The cats, your freezes and the waits between pantries follow the pace.
+Pace in Settings sets how fast the cats move: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. The cats, your freezes and the waits between pantries follow the pace.
 
 A change applies from your next run. A run or a challenge keeps the pace it started at until it ends.
 

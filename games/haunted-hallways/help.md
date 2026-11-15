@@ -84,7 +84,7 @@ H gives a hint that points the way. It costs five seconds of the clock, ten from
 
 The haunt clock and the ghosts hold while a room or another line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode. Time spent while a line is spoken still counts toward your floor time, and comes off your time bonus.
 
-Pace in Settings sets how fast the house runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. The haunt clock, the ghosts and every danger follow the pace.
+Pace in Settings sets how fast the house runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. The haunt clock, the ghosts and every danger follow the pace.
 
 A change applies from your next run. A climb, a challenge or a Halloween night keeps the pace it started at until it ends.
 

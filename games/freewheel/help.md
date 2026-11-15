@@ -1,6 +1,6 @@
 ## About the game
 
-Freewheel is a street-riding game, after Cyclepath by Talon. You are a bike courier in Courier City. Parked cars line your right, cars come up behind you, and doors, potholes, curbs and ramps lie ahead. Race the clock in time trials, ride the endless ride until your third crash,{alpha: race the clock with drops that add time,} or take deliveries from the job board. Parcels and deliveries earn cash, which buys new bikes and districts in the bike shop.
+Freewheel is a street-riding game, after Cyclepath by Talon. You are a bike courier in Courier City. Parked cars line your right, cars come up behind you, and doors, potholes, curbs and ramps lie ahead. Race the clock in time trials, ride the endless ride until your third crash, race the clock with drops that add time, or take deliveries from the job board. Parcels and deliveries earn cash, which buys new bikes and districts in the bike shop.
 
 This help gives distances and speeds in metric. Set Units to US in Settings and the game says feet, miles and miles an hour instead: the turn speed is then 13 miles an hour.
 
@@ -50,7 +50,7 @@ Parcels lie along the way. Ride over one at 20 kilometres an hour or less to gra
 
 In the endless ride, cars overtake toward you in the traffic lane. Its warning comes from ahead, at least 1.5 seconds before it reaches you. Steer right into the bike lane until it has gone by. The urgent warning means it is in your line now.
 
-## Against the clock {alpha}
+## Against the clock
 
 Make delivery drops to add time to the clock. You start with 60 seconds on a street in the district you chose. The first drop is just after the start. The clock runs down, and the ride ends when it reaches zero. There is no crash limit or finish line.
 
@@ -76,7 +76,7 @@ In wet Riverside, brakes need more room to stop. Old Town's cobbles slow bikes w
 
 ## Status, hint and call-outs
 
-S puts danger first: a hazard or oncoming car close ahead, then any flat tyre, then your speed and lane. Press S again straight away for the rest: what else is ahead, how far you are from the parked cars or the centre line, the clock, or in the endless ride your distance, cash and crashes left, then your stamina.{alpha: Against the clock, the first press starts with the time left, and the second gives your drops and cash.} H says what the next hazard is, how soon you reach it and what to do. R repeats the last spoken line.
+S puts danger first: a hazard or oncoming car close ahead, then any flat tyre, then your speed and lane. Press S again straight away for the rest: what else is ahead, how far you are from the parked cars or the centre line, the clock, or in the endless ride your distance, cash and crashes left, then your stamina. Against the clock, the first press starts with the time left, and the second gives your drops and cash. H says what the next hazard is, how soon you reach it and what to do. R repeats the last spoken line.
 
 Spoken call-outs, a row in Settings from the title or the pause menu, chooses how often the game names what is coming on the road. Once per session is the default: each kind is named the first time it comes up after you start Wicket's. Every time names them always. Off names none of them, and S and H still speak.
 
@@ -84,7 +84,7 @@ Spoken call-outs, a row in Settings from the title or the pause menu, chooses ho
 
 The street holds while a line is still being spoken. The bike, the traffic, the hazards and the clock stand still until it ends. While you hold a key to pedal, brake, steer or sprint, the street runs on through speech. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode. Time spent while a line is spoken still counts toward your ride time and ride points.
 
-Pace in Settings sets how fast the street runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. Your bike, the traffic, every hazard's warning and the clock follow the pace.
+Pace in Settings sets how fast the street runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. Your bike, the traffic, every hazard's warning and the clock follow the pace.
 
 A change applies from your next ride.
 
@@ -92,7 +92,7 @@ Relaxed best times, ride points, distances and drops are saved separately, inclu
 
 ## Modes
 
-The title starts with the endless ride. More rides holds the time trial{alpha:, the ride against the clock} and the free ride. The job board joins the title after your first ride. Events holds the special rides, and the garage holds Bike select, District select and the bike shop.
+The title starts with the endless ride. More rides holds the time trial, the ride against the clock and the free ride. The job board joins the title after your first ride. Events holds the special rides, and the garage holds Bike select, District select and the bike shop.
 
 Practice lessons: five short rides that teach pedalling and coasting, braking, steering, the door zone and hopping. Each lesson gives its goal and starts again if you miss it.
 
@@ -100,7 +100,7 @@ Time trial: one of three Downtown courses, Station Run, Market Street and Bank S
 
 Endless ride: ride until your third crash, grabbing parcels, in the district you chose.
 
-{alpha} Against the clock: make drops to add time, until the clock runs out, in the district you chose.
+Against the clock: make drops to add time, until the clock runs out, in the district you chose.
 
 Job board: courier deliveries for cash.
 

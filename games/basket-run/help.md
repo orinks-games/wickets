@@ -49,7 +49,7 @@ The meadow has eight rounds. Round 2 brings mud clods and moves the cart to the 
 
 The meadow holds while a line is still being spoken. The drops, the round's clock and the patterns stand still until it ends, so a call never eats into a drop's warning. A step or a bank pressed meanwhile happens at once. The wait before "Go" keeps its own time, so it is the same at every pace. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode.
 
-Pace in Settings sets how fast the meadow runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. The drops, the patterns, the round's clock and its warnings follow the pace.
+Pace in Settings sets how fast the meadow runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. The drops, the patterns, the round's clock and its warnings follow the pace.
 
 A change applies from your next run. A run or a challenge keeps the pace it started at until it ends.
 
