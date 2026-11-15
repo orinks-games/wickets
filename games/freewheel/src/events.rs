@@ -137,16 +137,17 @@ pub fn sunday_locked_help(date: Date) -> String {
 /// What the launcher names while a row is open.
 pub fn event(date: Date) -> Option<Happening> {
     if sunday_open(date) {
-        return Some(Happening::new(
-            SUNDAY,
-            "Ride today's course on streets closed to cars.",
-        ));
+        return Some(
+            Happening::new(SUNDAY, "Ride today's course on streets closed to cars.")
+                .on_row(crate::submenus::EVENTS),
+        );
     }
     leaf_open(date).then(|| {
         Happening::new(
             LEAF_SEASON,
             "Ride through leaf piles in the bike lane for 1000 ride points each, until the end of November.",
         )
+        .on_row(crate::submenus::EVENTS)
     })
 }
 

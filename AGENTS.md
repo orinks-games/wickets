@@ -152,6 +152,5 @@ This repository is public, and so is everything written about it: PR
 titles and descriptions, review comments, commit messages and branch names.
 None of them name anything that lives only in the overlay. Say "a private
 game", "the overlay" or "a holiday test date" instead. Put the details in
-the paired wickets-secrets PR, which is private.
-`tools/check_pr_text.py` checks the PR text in CI; it prints the input and
-line number of a hit, never the word.
+the paired wickets-secrets PR, which is private. Nothing in CI checks this,
+so it is on whoever writes the text.

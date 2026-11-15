@@ -225,7 +225,7 @@ fn the_exit_is_locked_until_the_room_is_solved() {
         run.walk(room.exit.side),
         vec![Ev::DoorLocked { sealed: false }]
     );
-    assert_eq!(run.interact(), vec![Ev::AtDoor { open: false }]);
+    assert_eq!(run.interact(), vec![Ev::AtDoor(ExitState::Locked)]);
     assert_eq!(run.room, 0);
 }
 

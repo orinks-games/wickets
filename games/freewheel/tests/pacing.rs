@@ -364,20 +364,22 @@ fn records_course_select_and_the_title_name_both_boards() {
     Choices::default().store(&mut h.app.ctx);
     h.app.ctx.push(freewheel::title());
     h.frame(0.0);
-    // F1 on a row reads its help.
-    h.clear();
-    h.press(Key::F1);
-    let said = h.spoken().join(" ");
-    assert!(
-        said.contains("Best 1 minute 4.0 seconds, relaxed best 1 minute 50.0 seconds."),
-        "{said}"
-    );
-    h.press(Key::Down);
+    // F1 on a row reads its help: the endless ride on the title, the
+    // time trial in More rides.
     h.clear();
     h.press(Key::F1);
     let said = h.spoken().join(" ");
     assert!(
         said.contains("Best 1.2 kilometres, relaxed best 900 metres."),
+        "{said}"
+    );
+    h.press(Key::Down); // More rides: no job board before a first ride
+    h.press(Key::Return);
+    h.clear();
+    h.press(Key::F1);
+    let said = h.spoken().join(" ");
+    assert!(
+        said.contains("Opens on Station Run, best 1 minute 4.0 seconds, relaxed best 1 minute 50.0 seconds."),
         "{said}"
     );
 }
