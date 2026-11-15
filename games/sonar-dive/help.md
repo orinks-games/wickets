@@ -22,7 +22,7 @@ Turn on Spoken call-outs in Settings, from the title or the pause menu, to have 
 
 A wreck is a sunken ship with treasure in its hold. An empty wreck has already been salvaged.
 
-Treasure chests can be collected without stopping.
+You can collect treasure chests without stopping.
 
 Mines damage your hull on contact.
 
@@ -36,9 +36,9 @@ Sound check, on the title, plays each of these with its name, and a demonstratio
 
 ## Treasure
 
-Swim into a treasure chest to take it: its coins are aboard at once.
+Swim into a treasure chest to take it. Its coins are aboard at once.
 
-A wreck holds more, but takes work. Stop within a few metres of it, at all stop, and hold still while the grab arm salvages it. Salvage takes 3 seconds. Moving off or being pushed by a current interrupts it. You start again.
+A wreck holds more, but takes work. Stop within a few metres of it, at all stop, and hold still while the grab arm salvages it. Salvage takes 3 seconds. Moving off or being pushed by a current interrupts salvage, and you start again.
 
 Treasure is worth more the deeper you go: a quarter more for every dive past the first.
 
@@ -46,7 +46,7 @@ Treasure is worth more the deeper you go: a quarter more for every dive past the
 
 Mines warn you when you come within about 16 metres. Touching one costs a hull point. You start with 3, and losing them all ends the expedition. Surfacing repairs one.
 
-Rocks and the wall around the site scrape you and cost 3 seconds of air. Driving into them stops your engine: turn away and throttle up again. If a current pins you against rock, point away from it and throttle up. The engine keeps running while you pull clear.
+Rocks and the wall around the site scrape you and cost 3 seconds of air. Driving into them stops your engine. Turn away and throttle up again. If a current pins you against rock, point away from it and throttle up. The engine keeps running while you pull clear.
 
 Currents push you while you are inside them. Fight them at full ahead, or let them carry you. You cannot salvage inside a current.
 

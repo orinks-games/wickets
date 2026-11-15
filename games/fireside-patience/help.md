@@ -6,7 +6,7 @@ Patience by a cabin fire: move all 52 cards onto four suit foundations, ace to k
 
 ## The row of places
 
-The table has a row of 12 places: piles 1 to 7, then the stock, then the foundations for hearts, diamonds, clubs and spades. Left and Right move. The game names the top card at each place. You cannot move beyond either end of the row.
+The table has a row of 12 places: piles 1 to 7, then the stock, then the foundations for hearts, diamonds, clubs and spades. Left and Right move. The game names each place's top card. You cannot move beyond either end of the row.
 
 ## Piles
 
@@ -18,7 +18,7 @@ Space picks up the card under you, with every card on top of it. Move to where t
 
 ## The stock
 
-Tab turns one card up from the stock. At the stock's place, Space picks up the turned-up card. When the stock runs out, Tab turns the turned-up cards back over to use again, as often as you like. Tab while you hold cards puts them back first. In draw three, Tab turns 3 cards at a time, and only the top one can be played.
+Tab turns one card up from the stock. Space picks up the turned-up card at the stock's place. When the stock runs out, Tab turns the turned-up cards back over to use again, as often as you like. Tab while you hold cards puts them back first. In draw three, Tab turns 3 cards at a time, and only the top one can be played.
 
 ## Foundations
 
@@ -26,11 +26,11 @@ Each suit has its own foundation, built up one card at a time from the ace to th
 
 ## Undo and getting stuck
 
-Backspace takes back your last move, as many times as you like, face-down cards and all. While you hold cards, Backspace puts them back. If no move is left that helps, the game says so. Every relaxed deal can be won from the start, so undo far enough and a way through is always there. For a fresh deal, press Escape, then Back to the title, then Play.
+Backspace takes back your last move, as many times as you like, face-down cards and all. Backspace puts cards back while you hold them. If no move is left that helps, the game says so. Every relaxed deal can be won from the start, so undo far enough and a way through is always there. For a fresh deal, press Escape, then Back to the title, then Play.
 
 ## Hints
 
-H names the next move, such as "The 4 of clubs in pile 2 can go on the 5 of hearts in pile 6." When it can find one, it follows a line that wins the deal from where you are. Taking every hint never leads into a dead end. When the suggested card is deeper in the stock, the hint says to turn it. Hints cost nothing.
+H names the next move, such as "The 4 of clubs in pile 2 can go on the 5 of hearts in pile 6." It follows a line that wins the deal from where you are, when it can find one, so taking every hint never leads into a dead end. When the suggested card is deeper in the stock, the hint says to turn it. Hints cost nothing.
 
 ## Status and the table
 

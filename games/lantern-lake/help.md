@@ -46,7 +46,7 @@ Everything you find goes into your journal at once, even if you leave the night 
 ## Modes
 
 - Play: the next night. Finishing a night opens the one after it.
-- Free paddle: locked until you finish your first night. A wide lake where a new lantern appears whenever you gather one. Stay as long as you like and head home with Tab.
+- Free paddle: locked until you finish your first night. A wide lake where a new lantern appears whenever you gather one. Stay as long as you like. Tab heads home.
 - Practice pond: a tiny, still pond with 2 lanterns, one straight ahead and one to your right. On your first visit the title starts on the tutorial, which plays on the practice pond.
 
 Before each outing a page says what the lake is. Enter pushes off. Escape goes back to the title.
@@ -59,7 +59,7 @@ When you head home, the results say how the night went and what went into your j
 
 ## Challenges
 
-The Challenges menu holds 3 lakes that are the same for every player. Before you push off, each reads its rule and score. Escape goes back from that briefing without starting.
+The Challenges menu holds 3 lakes that are the same for every player. Before you push off, each reads its rule and score. Escape on that briefing goes back without starting.
 
 - Daily: a small lake with 5 lanterns and a twist that changes every day: mist, rain, still water, a breeze, or a starry night with extra places to find.
 - Weekly: a lantern constellation. Only one lantern is lit at a time, with its own cue. Gather it to light the next. Unlit lanterns are asleep and can't be gathered yet.

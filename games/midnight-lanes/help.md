@@ -6,7 +6,7 @@ Bowl ten frames. Choose your stance and aim, then time your release to knock dow
 
 The lane is 39 boards wide. Board 1 is at the left gutter, board 39 at the right, and board 20 is in line with the head pin. The Left and Right arrows step you one board along the approach, and speak your board.
 
-The Up arrow turns your aim one step right, and the Down arrow one step left. Each step moves the ball's line one board at the pins. The aim cue marks where a clean ball would cross the pins. The game also speaks that board.
+The Up arrow turns your aim one step right. The Down arrow turns your aim one step left. Each step moves the ball's line one board at the pins. The aim cue marks where a clean ball would cross the pins. The game also speaks that board.
 
 ## The pocket
 
@@ -26,7 +26,7 @@ Pin 1 is the head pin. Then 2 and 3, then 4 to 6, and the back row 7 to 10, with
 
 A strike means you knocked down all ten pins with the first ball of a frame. It scores 10 plus the pins from your next two balls. A spare means you knocked down all ten pins with both balls of a frame. It scores 10 plus the pins from your next ball. Any other frame scores the pins knocked down.
 
-In the tenth frame, a strike gives you two more balls and a spare gives you one more. Twelve strikes in a row is a perfect game of 300.
+In the tenth frame, a strike gives you two more balls and a spare gives you one more. Twelve strikes in a row make a perfect game of 300.
 
 ## Hints
 
@@ -54,7 +54,7 @@ Leave the challenge, on the pause menu, stops without counting the run. You can 
 
 ## Pausing
 
-Escape pauses. A swing in progress stops without letting go. You start it again when you come back.
+Escape pauses. A swing in progress stops without letting go, and you start it again when you come back.
 
 ## Controls
 

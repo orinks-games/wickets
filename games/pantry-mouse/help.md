@@ -32,7 +32,7 @@ Tab freezes you briefly. The nearest cat loses you until just after the freeze e
 
 ## Whiskers and catches
 
-A catch costs a whisker. Then you and the cats go back to the start. The cats wait 2 seconds before they move again. "Cats moving" says the wait is over. In the practice pantry a catch costs nothing.
+A catch costs a whisker. Then you and the cats go back to the start. The cats wait 2 seconds before they move again. "Cats moving" means the wait is over. In the practice pantry a catch costs nothing.
 
 ## Status
 
@@ -76,7 +76,7 @@ Two pantries open on the title only on their own nights. Each is the pantry run 
 
 Leftovers pantry, from the day before Thanksgiving to 2 days after: 4 turkey scraps in every pantry, 50 points each.
 
-Bin night, on the first Tuesday of every month: the kitchen bin is full before collection, and a cheese rind waits in every pantry, 100 points.
+Bin night, on the first Tuesday of every month: the kitchen bin is full before collection, and a cheese rind is in every pantry, 100 points.
 
 ## Controls
 

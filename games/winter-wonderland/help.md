@@ -54,7 +54,7 @@ On the fourth Wednesday of every month, the post is muddled: the letters come fr
 
 ## Midnight Countdown: call and answer
 
-The countdown starts at ten minutes to midnight. Each minute, the band plays a call one bar long, then you answer it in the next bar: the same instruments on the same beats. The count marks each beat and the start of each bar. Bells are Space. At seven minutes to midnight the drums join, answered with the Down arrow. At four minutes the horns join, answered with the Up arrow. The music stops while each new instrument is introduced. Space starts it again. You can try the drum and horn while it is stopped. In the final seconds the full orchestra plays one long two-bar call with every instrument, for double points.
+The countdown starts at ten minutes to midnight. Each minute, the band plays a call one bar long, then you answer it in the next bar: the same instruments on the same beats. The count marks each beat and the start of each bar. Bells are Space. At seven minutes to midnight the drums join, answered with the Down arrow. At four minutes the horns join, answered with the Up arrow. The music stops while each new instrument is introduced. Space starts it again. You can try the drum and horn while the music is stopped. In the final seconds the full orchestra plays one long call of two bars with every instrument, for double points.
 
 ## Midnight Countdown: scoring and energy
 
@@ -104,7 +104,7 @@ Down arrow: drop it in the return sack, from shift 3.
 
 R: repeat the wishes.
 
-S: report the gift on the belt and the clock. Press it again straight away for the shift, the gifts sorted and the score.
+S: the gift on the belt and the clock. Press it again straight away for the shift, the gifts sorted and the score.
 
 H: a hint about the gift you just shook, for half its points.
 
@@ -120,7 +120,7 @@ Up and Down arrows: jump to the first or last box.
 
 R: read the letter again.
 
-S: report where you stand and the letter. Press it again straight away for the stack and the score.
+S: where you stand and the letter. Press it again straight away for the stack and the score.
 
 H: a hint, for half the letter's points.
 
@@ -134,7 +134,7 @@ Up arrow: play the horn.
 
 R: say the last call in words, with its beats.
 
-S: report the minutes to midnight, the party energy, the score and the combo.
+S: the minutes to midnight, the party energy, the score and the combo.
 
 H: list your instruments.
 

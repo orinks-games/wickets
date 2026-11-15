@@ -10,11 +10,11 @@ Each landing starts with everyone seated and the table empty. Space calls a roll
 
 ## Staying in and banking
 
-After each roll, you choose. Space stays in for another roll. Tab banks the table total into your night total and leaves your seat for the rest of the landing. Once you have banked, the table rolls on without you until the landing ends. Space or Tab while the dealer talks hurries him along. In your first night, press Tab again to confirm your first bank.
+After each roll, you choose. Space stays in for another roll. Tab banks the table total into your night total and leaves your seat for the rest of the landing. Once you have banked, the table rolls on without you until the landing ends. Space or Tab while the dealer talks hurries him along. In your very first night, press Tab again to confirm your first bank.
 
 ## The 1
 
-A 1 on either die ends the landing. The dealer says "A one. The landing is over." Everyone still seated gets nothing for the landing, but keeps what they banked in earlier landings. If everyone has banked before a 1 comes, the landing ends too. 11 of 36 rolls have a 1. Up reads the odds at any time.
+A 1 on either die ends the landing. The dealer says "A one. The landing is over." Everyone still seated gets nothing for the landing, but keeps what they banked in earlier landings. If everyone has banked before a 1 comes, the landing ends too. 11 of 36 rolls have a 1. Up gives the odds at any time.
 
 ## The other passengers
 

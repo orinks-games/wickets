@@ -16,7 +16,7 @@ S, the status key, always says your lean in words.
 
 ## Walking
 
-Space takes one step. Steps need a moment between them, and no foot lands quite square: every step jolts the wire a little, so settle after each one.
+Space takes one step. Steps need a moment between them. No foot lands quite square. Every step jolts the wire a little, so settle after each one.
 
 Step only when balanced. A step while you lean past the safe line is a wobble: the wire throws you further the way you were leaning. A step is refused when it comes too soon after the last one, or while you crouch.
 
@@ -29,9 +29,9 @@ Each gust is announced with its direction at least 2 seconds before it hits. It 
 You have two choices:
 
 - Lean a little into the wind before it arrives: for a gust from the left, a press of Left.
-- Down crouches. Crouching makes the wire much steadier and the wind pushes less than half as hard. You cannot step while crouching. Up stands once it passes.
+- Down crouches. Crouching makes the wire much steadier and the wind pushes less than half as hard, but you cannot step. Up stands once it passes.
 
-The status key says which side a gust comes from and how many seconds are left. H, the hint key, says what to do about it.
+The status key says which side a gust comes from and how many seconds are left. The hint key, H, says what to do about it.
 
 ## Pigeons
 
@@ -47,7 +47,7 @@ Higher wires have stronger wind.
 
 ## Falling
 
-Lean all the way over and you fall to the safety net. You lose a life and climb back to the step where you fell, balanced. You have a moment of calm before the wire moves again. Lose your last life and the run is over.
+Lean all the way over and you fall to the safety net. You lose a life and climb back to the step where you fell, balanced, with a moment of calm before the wire moves again. Lose your last life and the run is over.
 
 On the practice wire falling costs nothing.
 
@@ -77,7 +77,7 @@ Your best score on each mode, your best time on each crossing and your furthest 
 - Crossing select: walk one crossing alone, for its best time. A crossing opens once you reach it.
 - Practice wire: a short, low wire where the gust and the pigeon are each explained as they arrive. On your first visit the title starts on it.
 
-Before each run a page says what the run is. Enter begins the run. Escape goes back to the title.
+Before each run a page describes the run. Enter begins. Escape goes back to the title.
 
 ## After a run
 

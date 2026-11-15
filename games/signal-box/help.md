@@ -14,11 +14,11 @@ Signal down: answer with the Down arrow.
 
 Ring back: answer with Space.
 
-The dispatcher always says the call aloud. Before the line opens, H plays every call with its key. Each answer key plays its own call. You can learn them with nothing at stake.
+The dispatcher always says the call aloud. Before the line opens, H plays every call with its key. Each answer key plays its own call, so you can learn them with nothing at stake.
 
 ## The answer window
 
-The answer window is the time you have to respond to a call. It shrinks every 5 trains. The timing cue marks four beats per window and speeds up as the window shrinks. S reports how long the answer window lasts.
+The answer window is the time you have to respond to a call. It shrinks every 5 trains. The timing cue marks four beats per window and speeds up as the window shrinks. S says how long the answer window lasts.
 
 ## Pace
 
@@ -40,7 +40,7 @@ Records keeps your best score, your longest run of trains, the shortest window y
 
 The steam gala is on the last weekend of every month, Saturday and Sunday. The title then has a Steam gala row: a night shift of its own, with the same calls, window and tick. Every fifth train is the steam special. It scores 3 points instead of 1. On other days the row stays in its place, locked, and says when it opens. The steam gala keeps its own best score, and it never changes your night shift records.
 
-The thirteenth train appears in ordinary night shifts on Friday the 13th. Answer its call as usual. Scoring is unchanged. The results say the thirteenth train went by, and Records keeps count of how many you have seen. The game announces the event before the line opens. S, H and F1 report when either event is on.
+The thirteenth train appears in ordinary night shifts on Friday the 13th. Answer its call as usual. Scoring is unchanged. The results say the thirteenth train went by, and Records keeps count of how many you have seen. The game announces the event before the line opens. S, H and F1 say when either event is on.
 
 ## The practice room
 

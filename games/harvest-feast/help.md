@@ -18,7 +18,7 @@ A course uses only some of them.
 
 ## The recipe
 
-The recipe calls each dish in order, such as "Recipe: put the cranberries on the left burner." The station signals that it is ready to start. Go there and press Space to start the dish.
+The recipe calls each dish in order, such as "Recipe: put the cranberries on the left burner." The station signals that it is ready to start. Go to the station. Space starts the dish.
 
 - Start a dish before the recipe calls it, and it is a fumble.
 - Wait too long and the station gives an urgent reminder. Wait longer still and someone starts the dish for you, for no points on that step.

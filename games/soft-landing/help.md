@@ -52,7 +52,7 @@ Relaxed scores and the softest relaxed touchdown are saved separately, including
 
 ## Scoring and records
 
-A landing scores 200 points. Fuel left adds up to 300 points, for a full tank. A soft touchdown adds up to 500 points. The slower you touch down, the more it pays. A crash scores nothing.
+A landing scores 200 points. Fuel left adds up to 300 points for a full tank. A soft touchdown adds up to 500 points. The slower you touch down, the more it pays. A crash scores nothing.
 
 Records keeps your best score on each moon, your softest touchdown, how many landings and crashes you have made, and your challenge results.
 
@@ -62,7 +62,7 @@ The tutorial is four short lessons on the practice pad, with endless fuel. Lesso
 
 ## The practice pad
 
-The practice pad flies the first moon with endless fuel, and call-outs every 10 metres once you fall slowly enough. Nothing is saved but a count of practice landings. After each touchdown you go back to the top for another try.
+The practice pad flies the first moon with endless fuel, and call-outs every 10 metres once you fall slowly enough. Only a count of practice landings is saved. After each touchdown you go back to the top for another try.
 
 ## Challenges
 

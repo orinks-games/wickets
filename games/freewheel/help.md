@@ -14,7 +14,7 @@ Up arrow pedals. Down arrow brakes. The brakes build over a moment, so start bra
 
 ## Hops and jumps
 
-Space hops while you are moving. The BMX hops about 40 centimetres, high enough to clear a curb. The road bike and the e-bike hop only about 10 centimetres, so ride around curbs on them. The moped cannot hop at all: ride around curbs and potholes. Press Space at a ramp's lip for a jump. Jumps earn airtime points.
+Space hops while you are moving. The BMX hops about 40 centimetres, high enough to clear a curb. The road bike and the e-bike hop only about 10 centimetres, so ride around curbs on them. The moped cannot hop. Ride around curbs and potholes. Space jumps at a ramp's lip. Jumps earn airtime points.
 
 ## Hazards
 
@@ -30,7 +30,7 @@ The urgent warning means a hazard is in your line. Hop, brake or steer.
 
 ## Cars from behind
 
-Cars approach from behind. They pass on your left when there is room. Hold your line while a car passes. Steering into it is a crash. If you ride in the middle of the traffic lane, a car cannot pass and honks. Move right to let it by, and you earn a tip.
+Cars approach from behind. They pass on your left when there is room. Hold your line while a car passes: steering into it is a crash. If you ride in the middle of the traffic lane, a car cannot pass and honks. Move right to let it by, and you earn a tip.
 
 ## Junction turns
 
@@ -48,13 +48,13 @@ Parcels lie along the way. Ride over one at 20 kilometres an hour or less to gra
 
 ## Oncoming cars
 
-In the endless ride, cars overtake toward you in the traffic lane. Its warning comes from ahead, at least 1.5 seconds before it reaches you. Steer right into the bike lane until it has gone by. The urgent warning means it is in your line now.
+In the endless ride, cars overtake toward you in the traffic lane. Each car's warning comes from ahead, at least 1.5 seconds before it reaches you. Steer right into the bike lane until it has gone by. The urgent warning means it is in your line now.
 
 ## Against the clock
 
 Make delivery drops to add time to the clock. You start with 60 seconds on a street in the district you chose. The first drop is just after the start. The clock runs down, and the ride ends when it reaches zero. There is no crash limit or finish line.
 
-Drops lie along the way, like parcels in the endless ride. Ride over one at 20 kilometres an hour or less to make the drop. A drop in a shop doorway, in the door zone, adds 14 seconds and pays 3 dollars. A drop at a parcel locker by the centre line, out among the cars, adds 18 seconds and pays 6. A drop made within 30 seconds of the last one is a quick drop. It adds 4 seconds more. The clock holds 90 seconds at most.
+Drops lie along the way, like parcels in the endless ride. Ride over one at 20 kilometres an hour or less to make the drop. A drop in a shop doorway, in the door zone, adds 14 seconds and pays 3 dollars. A drop at a parcel locker by the centre line, out among the cars, adds 18 seconds and pays 6. A drop made within 30 seconds of the last one is a quick drop and adds 4 seconds more. The clock holds 90 seconds at most.
 
 After each drop, the game says the time it added and the time left. A crash takes 8 seconds off the clock, and you still lose the 3 seconds you are down. The game says 30 seconds left and 10 seconds left. At 15 seconds or less, the clock ticks once a second. At 5 seconds or less, it ticks twice as fast.
 
@@ -64,7 +64,7 @@ Your score is the drops you make. The best in each district is kept, and you kee
 
 ## The job board
 
-The job board offers three deliveries across the districts you own. Each says its route, its length and its pay in dollars. Get there within the deadline for full pay. A late delivery pays half. A new set of jobs comes after each delivery.
+The job board offers three deliveries across the districts you own. Each says its route, its length and its pay in dollars. Get there within the deadline for full pay. Late deliveries pay half. A new set of jobs comes after each delivery.
 
 ## The bike shop and districts
 

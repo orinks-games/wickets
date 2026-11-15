@@ -58,7 +58,7 @@ Practice brewing is a quiet place to learn the kettle. Brew any tea on your shel
 
 ## Hints
 
-H gives a hint for what you are doing: teas on your shelf that suit the guest's taste and a cup that suits it, when to pour by the kettle's song, or how many seconds the tea likes. Hints are free and as many as you like.
+H gives a hint for what you are doing: teas on your shelf that suit the guest's taste and a cup that suits it, when to pour by the kettle's song, or how many seconds the tea likes. Hints are free. You can use as many as you like.
 
 ## Spoken call-outs
 
@@ -74,7 +74,7 @@ Records keep the afternoons and evenings you have played, cups served, perfect c
 
 ## Sound check
 
-In Sound check, on the title, you choose and play the gameplay cues.
+Sound check, on the title, plays the gameplay cues.
 
 ## Controls
 

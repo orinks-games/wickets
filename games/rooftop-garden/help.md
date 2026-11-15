@@ -112,7 +112,7 @@ Rain waters every planter while it lasts and revives wilted plants.
 
 ## Growing your garden
 
-Your garden starts with two rows of three planters, a squash already growing and a tomato seed just sown. At 4 harvests a neighbour lends you a third row, nearest you, and at 9 harvests a fourth planter joins the right of every row. New seeds unlock along the way.
+Your garden starts with two rows of three planters, a squash already growing and a tomato seed just sown. At 4 harvests a neighbour lends you a third row, nearest you. At 9 harvests a fourth planter joins the right of every row. New seeds unlock along the way.
 
 Play on the title menu opens your garden and reads its day, plants and harvests, and your fullest harmony. Records, on the title menu, reads your bests, your seeds, your collection and your challenge results.
 
@@ -129,7 +129,7 @@ Sound check plays the pumpkin's part and the Sunday bells.
 
 ## Challenges
 
-Challenges are separate small gardens, the same for every player, grown from the first 6 seeds only, each with a gentle goal and a twist announced before you start. Days pass the same way. If you choose Leave the challenge on the pause menu, your challenge garden waits for you until the challenge changes.
+Challenges are separate small gardens, the same for every player, grown from the first 6 seeds only, each with a gentle goal and a twist announced before you start. Days pass the same way. If you choose Leave the challenge on the pause menu, your challenge garden is kept until the challenge changes.
 
 - Daily: 6 planters, 4 kinds of seed and 4 days to grow a three-part harmony. Each day has its own twist.
 - Weekly: 9 planters and 8 days to harvest 5 tomatoes, with a twist for the week.
@@ -147,7 +147,7 @@ Sound check, on the title menu, plays the gameplay cues and each plant's part in
 
 These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
 
-- Arrow keys: step between planters. Up and Down change row, Left and Right change planter. Row 1 is the far row, ahead of you, and planter 1 is on the left.
+- Arrow keys: step between planters. Up and Down change row. Left and Right change planter. Row 1 is the far row, ahead of you, and planter 1 is on the left.
 - Space: water the plant under you. Watering soil that is already moist waterlogs it. On empty soil, Space opens your seed packet so you can plant something.
 - Tab: tend the plant under you. It picks off aphids first, then harvests a ripe plant, then prunes leggy stems.
 - Delete or Backspace: pull the plant up and add it to the compost, to make room for something else. You are asked first.

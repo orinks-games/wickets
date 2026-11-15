@@ -22,7 +22,7 @@ Setting the wrong number gives you a strike. Three strikes jam the safe and end 
 
 ## Hints
 
-H says how far to turn and which way: "very close" is 1 or 2 numbers away, "close" within 6, "a little way off" within 20, and "far off" more than 20. Each safe allows only a few hints, and each costs points. In time attack a hint also costs time.
+H says how far to turn and which way: "very close" is 1 or 2 numbers away, "close" within 6, "a little way off" within 20, and "far off" more than 20. Each safe allows only a few hints. Each costs points. In time attack a hint also costs time.
 
 ## Building noises
 
@@ -34,7 +34,7 @@ From the pawnbroker's safe on, false-gate cues mark wrong numbers. Ignore them a
 
 ## The direction rule
 
-From the jeweller's safe on, the safes behave like real combination dials. Wheel 1 is found turning right, wheel 2 turning left, wheel 3 right again, and so on. The tumbler only falls when you are turning the right way. You must reach the number turning that way before you set it. If you overshoot, turn back past the number and come forward again the right way. The same goes for a spin where the tumbler falls: stepping back one number at a time never finds it, because that is the wrong way, so spin back the ten you just passed and then step forward the right way one number at a time until it falls. Setting the right number reached the wrong way is a strike. Status says which way to turn for the current wheel and which way you last turned.
+From the jeweller's safe on, the safes behave like real combination dials. Wheel 1 is found turning right, wheel 2 turning left, wheel 3 right again, and so on. The tumbler only falls when you are turning the right way. You must reach the number turning that way before you set it. If you overshoot, turn back past the number and come forward again the right way. The same goes for a spin where the tumbler falls. Stepping back one number at a time never finds it, because that is the wrong way, so spin back the ten you just passed. Then step forward the right way one number at a time until it falls. Setting the right number reached the wrong way is a strike. Status says which way to turn for the current wheel and which way you last turned.
 
 ## The night guard
 
@@ -64,7 +64,7 @@ After a safe, the results menu offers the next safe when you opened one, Play ag
 
 ## Bonus safes
 
-Two bonus safes open on the title on their nights only, after Safe select. On other nights their rows say locked and say when they open. Anyone can open them, however far you have got. Each keeps its own best score, apart from the ten safes, and Records reads them once you have cracked them.
+Two bonus safes open on the title on their nights only, after Safe select. On other nights their rows say locked and give their opening dates. Anyone can open them, however far you have got. Each keeps its own best score, apart from the ten safes, and Records reads them once you have cracked them.
 
 The unlucky safe is on every Friday the 13th. It has four wheels, each with a false gate, and building noises. One of the wheels is always 13. The cat cue confirms the wheel at 13. Turning or spinning the dial stops the cat cue.
 
@@ -72,7 +72,7 @@ The blackout safe is on every new moon night, and the night either side, about o
 
 ## Challenges
 
-Challenges on the title holds three jobs that are the same for every player, built from the date. Each row names the period and the job, says what it is this time, then gives your record: not played yet, or your best and your streak. Enter reads the briefing first: the rule, the twist, your record and when the next one comes. Enter on the last page starts the job, and Escape on any page goes back without starting. Your result counts when the job ends, by opening every safe or losing one. Leave the challenge, on the pause menu, does not count, so you can come back and try again. After the job, the results menu offers the same job again, Hear the results again, and Back to the challenges.
+Challenges on the title holds three jobs that are the same for every player, built from the date. Each row names the period and the job, says what it is this time, then gives your record: not played yet, or your best and your streak. Enter reads the briefing first: the rule, the twist, your record and when the next one comes. Enter on the last page starts the job. Escape on any page goes back without starting. Your result counts when the job ends, by opening every safe or losing one. Leave the challenge, on the pause menu, does not count, so you can come back and try again. After the job, the results menu offers the same job again, Hear the results again, and Back to the challenges.
 
 Tonight's job, the daily: one safe of three or four wheels, with one twist. The Quiet tumblers twist lowers the tumbler-cue volume to match the Crown vault. A nervous guard comes often and listens long. The direction rule puts the real dial's rule on. Crowded gates give every wheel three false gates. No hints means only your ears. A busy building adds distractions every few seconds. A new job comes every day.
 
@@ -80,7 +80,7 @@ The vault of three, the weekly: three safes in a row, the outer safe, the inner 
 
 The Crown heist, the monthly: a story event. Through the curator's safe for the key card, then the five wheels of the Crown vault, with a guard on the corridor between. One clock of 5 minutes runs for the whole heist. It stops while the guard listens, and a hint costs five seconds. Open both for 3 points for every second left. A new heist comes on the first of every month.
 
-Challenge scores are 100 a wheel, less 30 a strike and 20 a hint. The daily and weekly add a bonus for a quick crack. The onward cue means a safe is open and the next is waiting. S reads which safe of the job you are on, your banked points and the twist. After the job you hear your score, your best and your streak.
+Challenge scores are 100 a wheel, less 30 a strike and 20 a hint. The daily and weekly add a bonus for a quick crack. The onward cue means a safe is open and the next is waiting. S gives the current safe, your banked points and the twist. After the job you hear your score, your best and your streak.
 
 ## Controls
 
