@@ -228,23 +228,23 @@ impl<G: TitleGame> Menu for Title<G> {
         ctx.play_ui(UiSound::Open);
         self.refresh(ctx, false);
         let opening = ctx.game.title_opening.take();
-        let first = self.game.first_visit(ctx);
-        if !first && tutorial::familiarity(ctx, G::ID) == tutorial::Familiarity::New {
+        let new_here = self.game.first_visit(ctx);
+        if !new_here && tutorial::familiarity(ctx, G::ID) == tutorial::Familiarity::New {
             // The game's own saves show play from before story mode kept
             // track: New becomes Played. Opening the title finishes no
             // story scene.
             tutorial::note_played(ctx, G::ID);
         }
-        if first {
+        if opening == Some(TitleOpening::Quiet) {
+            return;
+        }
+        if new_here && opening != Some(TitleOpening::Known) {
             let (index, start) = match (self.game.first_cursor(), self.practice_at) {
                 (FirstCursor::Practice, Some(at)) => (at, "Start with practice."),
                 _ => (self.tutorial_at, "Start with the tutorial."),
             };
             self.menu.index = index;
             ctx.say(format!("{} New here? {start}", end_sentence(G::NAME)));
-            if let Some(TitleOpening::Note(note)) = opening {
-                ctx.say_queued(note);
-            }
             let current = self.current_text(ctx);
             ctx.say_queued(current);
         } else {
