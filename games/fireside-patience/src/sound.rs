@@ -1,7 +1,7 @@
 //! Sound keys, and the sound check's catalog.
 
 use hearken::{Bus, Ctx, Sound};
-use parlor_core::Parlor;
+use parlor_core::{Mood, Parlor, Stem};
 
 use crate::rules::Suit;
 
@@ -20,6 +20,22 @@ pub const NOPE: &str = "fireside-patience/nope";
 pub const WIN_FLOURISH: &str = "fireside-patience/win-flourish";
 pub const AMBIENCE: &str = "fireside-patience/fireside-ambience";
 pub const MOONLIT: &str = "fireside-patience/moonlit-ambience";
+pub const TITLE_MUSIC: &str = "fireside-patience/music/title";
+
+/// The table's music (see `parlor_core::score`): the accompaniment from
+/// the deal, the tune once the first cards reach the foundations, then
+/// the rest of the band as they fill. There is no clock, so no hurry.
+pub const SCORE: [Stem; 4] = [
+    Stem::always("fireside-patience/score/base", 1.0),
+    Stem::between("fireside-patience/score/melody", 1.0, 0.0, 0.1),
+    Stem::between("fireside-patience/score/pulse", 1.0, 0.15, 0.4),
+    Stem::between("fireside-patience/score/lift", 1.0, 0.6, 0.9),
+];
+
+/// The score's mood with `cards` of the 52 on the foundations.
+pub fn mood(cards: usize) -> Mood {
+    Mood::new(cards as f32 / 52.0)
+}
 
 /// The soft card sound of a suit.
 pub fn card_key(suit: Suit) -> &'static str {
@@ -39,7 +55,13 @@ pub fn card(ctx: &mut Ctx<Parlor>, suit: Suit) -> Sound {
     play(ctx, card_key(suit))
 }
 
-/// The fire and the clock, under the title and the table alike.
+/// The title's music, with the fire and the clock under it.
+pub fn title_music(ctx: &mut Ctx<Parlor>) {
+    ctx.audio.set_bed(Some(AMBIENCE));
+    ctx.audio.play_music(Some(TITLE_MUSIC), true);
+}
+
+/// The fire and the clock at the table, under its score.
 pub fn fireside(ctx: &mut Ctx<Parlor>) {
     ctx.audio.play_music(None, false);
     ctx.audio.set_bed(Some(AMBIENCE));

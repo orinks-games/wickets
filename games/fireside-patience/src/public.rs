@@ -161,7 +161,7 @@ impl TitleGame for FiresidePatience {
     const TITLE_NAME: &'static str = TITLE_NAME;
 
     fn music(&mut self, ctx: &mut Ctx<Parlor>) {
-        sound::fireside(ctx);
+        sound::title_music(ctx);
     }
 
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
