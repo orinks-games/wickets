@@ -110,14 +110,24 @@ pub fn ambience(floor: u32) -> &'static str {
     }
 }
 
-/// A cell offset (x east, y north) as metres around the listener, who
-/// always faces north.
+/// A cell offset (x east, y north) as metres, for a listener who always
+/// faces north.
 pub fn at(dx: f32, dy: f32) -> Vec3 {
     Vec3::new(dx * CELL, dy * CELL, 0.0)
 }
 
+/// Where a sound `offset` metres from the listener sits in the house. The
+/// sound keeps that place, so when the player steps the audio re-pans it
+/// around them at once, even while it is still sounding.
+pub fn from_listener(ctx: &Ctx<Parlor>, offset: Vec3) -> Vec3 {
+    let ear = ctx.audio.listener().pos;
+    Vec3::new(ear.x + offset.x, ear.y + offset.y, ear.z + offset.z)
+}
+
+/// Plays `key` a cell offset from the listener.
 pub fn play_at(ctx: &mut Ctx<Parlor>, key: &str, dx: f32, dy: f32) -> Sound {
-    ctx.audio.play_at(key, at(dx, dy), Bus::EFFECTS)
+    let pos = from_listener(ctx, at(dx, dy));
+    ctx.audio.play_at(key, pos, Bus::EFFECTS)
 }
 
 pub fn play(ctx: &mut Ctx<Parlor>, key: &str) -> Sound {

@@ -164,14 +164,21 @@ fn calm(house: &Live<Haunt>) -> impl FnMut(&mut Ctx<Parlor>) {
     }
 }
 
-/// Walk through the open door into room `to`, counting from 0.
+/// Walk through the open door into room `to`, counting from 0. Until
+/// this step the room's exit is held shut, so the player never walks
+/// ahead of the lesson.
 fn through(house: &Live<Haunt>, to: usize, done: &'static str) -> parlor_core::Step {
+    let mut quiet = calm(house);
+    let open = house.clone();
     house
         .step(
             "Follow the cold draught to the open door, and walk through it.",
             move |h: &Haunt, _| (h.run.room >= to).then(|| done.to_string()),
         )
-        .start(calm(house))
+        .start(move |ctx| {
+            quiet(ctx);
+            open.with_mut(|h| h.run.held = false);
+        })
 }
 
 /// The tutorial on `house`, which a test can watch.
