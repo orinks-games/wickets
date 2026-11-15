@@ -11,7 +11,7 @@ the racing and arcade games of the time. The set is chosen for that:
 - square_lead, a classic game-melody lead, on the tune a little right;
 - sax, breathy and husky, taking the bridge's tune a little right;
 - brass, synth brass stabs that push into the section turns;
-- a kit: kick, snare, clap, hats, an open hat and a shaker.
+- a kit: kick, snare, clap, hats and an open hat.
 
 Like all of Wicket's newer music it is made for blal1's genny from short
 chord and tune tables, with a light room (reverb mix 0.1) and the parts
@@ -45,7 +45,7 @@ def bars(*items: str) -> str:
 # right, bass, pad and drums in the middle.
 PAN = {
     "epiano": -0.25, "clav": -0.45, "square_lead": 0.3, "sax": 0.3, "brass": 0.15,
-    "hihat": 0.2, "openhat": 0.2, "shaker": -0.2,
+    "hihat": 0.2, "openhat": 0.2,
 }
 
 
@@ -187,7 +187,6 @@ KICK = "x-----x-x-------"
 SNARE = "----x-------x---"
 HATS = "x-x-x-x-x-x-x-x-"
 OPEN = "--x---x---x---x-"
-SHAKE = "xxxxxxxxxxxxxxxx"
 
 EPIANO = {"tremolo": 0.25, "decay": 1.2}
 CLAV = {"decay": 0.4}
@@ -204,7 +203,6 @@ def band(chords: list[str], n_bars: int) -> list[dict]:
         pattern("clap", SNARE, n_bars, 0.11),
         pattern("hihat", HATS, n_bars, 0.09),
         pattern("openhat", OPEN, n_bars, 0.06),
-        pattern("shaker", SHAKE, n_bars, 0.08),
         seq("epiano", keys(chords), 0.28, 0.45, params=EPIANO),
         seq("clav", chops(chords), 0.28, 0.4, params=CLAV),
         seq("string_machine", strings(chords), 0.11, 0.4, params=STRINGS,
