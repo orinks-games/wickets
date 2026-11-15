@@ -29,6 +29,27 @@ pub const STEP: f32 = 1.2;
 /// How loud a burning lamp crackles as you pass it.
 pub const BURNING_VOLUME: f32 = 0.5;
 
+/// Where the player stands in the hall, `pos` steps from the lobby door.
+/// The listener stands here and every hall sound keeps its own place, so a
+/// step re-pans whatever is still sounding at once.
+pub fn ear(pos: usize) -> Vec3 {
+    Vec3::new(0.0, pos as f32 * STEP, 0.0)
+}
+
+/// Puts the listener at step `pos`.
+pub fn listen_at(ctx: &mut Ctx<Parlor>, pos: usize) {
+    let ear = ear(pos);
+    if ctx.audio.listener().pos != ear {
+        ctx.audio.set_listener(ear, 0.0);
+    }
+}
+
+/// Where a sound `offset` metres from the listener sits in the hall.
+pub fn from_listener(ctx: &Ctx<Parlor>, offset: Vec3) -> Vec3 {
+    let ear = ctx.audio.listener().pos;
+    Vec3::new(ear.x + offset.x, ear.y + offset.y, ear.z + offset.z)
+}
+
 /// Where an alcove sits from the player: `ahead` steps on, on `side`.
 pub fn place(ahead: i32, side: Side) -> Vec3 {
     let x = match side {
@@ -42,8 +63,10 @@ pub fn play(ctx: &mut Ctx<Parlor>, key: &str) -> Sound {
     ctx.audio.play(key, Bus::EFFECTS)
 }
 
+/// Plays `key` at an alcove `ahead` steps from the listener, on `side`.
 pub fn play_at(ctx: &mut Ctx<Parlor>, key: &str, ahead: i32, side: Side) -> Sound {
-    ctx.audio.play_at(key, place(ahead, side), Bus::EFFECTS)
+    let pos = from_listener(ctx, place(ahead, side));
+    ctx.audio.play_at(key, pos, Bus::EFFECTS)
 }
 
 pub fn play_at_vol(ctx: &mut Ctx<Parlor>, key: &str, ahead: i32, side: Side, volume: f32) {
