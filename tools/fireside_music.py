@@ -9,8 +9,8 @@ corner: slow, swung and warm. The set:
 - vibraphone, the tune, a little right;
 - sax, the bridge's tune, and long notes under the tune near the win, right;
 - strings, a soft section holding the chords wide behind, near the win;
-- a kit played with brushes: a ride cymbal's swing, a brushed snare on two
-  and four, and the hi-hat's foot.
+- a kit played with brushes: a brushed snare swinging with its accent on
+  two and four, and the hi-hat's foot.
 
 Like all of Wicket's newer music it is made for blal1's genny from short
 chord and tune tables, with a light room (reverb mix 0.12) and the parts
@@ -21,8 +21,8 @@ panned apart. The pieces and their tunes are original.
 - score/base, score/melody, score/pulse, score/lift: the table's music,
   160 beats at 72 a minute, about 133 seconds, four stems of one piece that
   start together and loop. The base (Rhodes and bass) plays from the deal;
-  the tune joins as the first cards reach the foundations; the brushes and
-  ride as they fill; the sax and strings near the win. Stems share one
+  the tune joins as the first cards reach the foundations; the brushes as they
+  fill; the sax and strings near the win. Stems share one
   gain, so together they make the full piece.
 - music/pause: 64 beats at 66 a minute, about 58 seconds: the Rhodes, the
   bass and a soft vibraphone tune, with no drums.
@@ -47,7 +47,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SPEC = ROOT / "sound-specs" / "fireside-patience.json"
 
 BEATS = 4
-SWING = 1 / 3  # the ride and brushes play on swung eighth-note triplets
+SWING = 1 / 3  # the brushes play on swung eighth-note triplets
 
 
 def bars(*items: str) -> str:
@@ -56,7 +56,7 @@ def bars(*items: str) -> str:
 
 # Where each part sits, -1 left to 1 right: accompaniment left, tunes
 # right, bass, strings and snare in the middle.
-PAN = {"rhodes": -0.3, "vibraphone": 0.3, "sax": 0.35, "ride": 0.25, "hihat": -0.2, "brush": -0.05}
+PAN = {"rhodes": -0.3, "vibraphone": 0.3, "sax": 0.35, "hihat": -0.2, "brush": -0.05}
 
 
 def seq(inst: str, steps: str, gain: float, vel: float = 0.5, pan: float | None = None, **extra) -> dict:
@@ -76,11 +76,10 @@ def pattern(kind: str, steps: str, n_bars: int, gain: float) -> dict:
 
 
 def kit(n_bars: int) -> list[dict]:
-    """Brushes: the ride's swing, the snare on two and four, the hat's foot
-    with it."""
+    """Brushes: a swung brushed snare with its accent on two and four, and
+    the hat's foot with it."""
     return [
-        pattern("ride", "x--x-xx--x-x", n_bars, 0.058),
-        pattern("brush", "---x-----x--", n_bars, 0.3),
+        pattern("brush", "o--x-oo--x-o", n_bars, 0.3),
         pattern("hihat", "---o-----o--", n_bars, 0.05),
     ]
 
@@ -264,7 +263,7 @@ def title() -> dict:
         "loop": "fold",
         "_arrangement": (
             "96 beats in F, a late-night jazz trio: Rhodes comping on the left, a walking upright bass, "
-            "the vibraphone's tune on the right, ride and brushes. The bridge, from C minor, is the sax's."
+            "the vibraphone's tune on the right, brushes. The bridge, from C minor, is the sax's."
         ),
         "layers": [
             group("A", 0,
