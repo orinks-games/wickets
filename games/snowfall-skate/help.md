@@ -2,7 +2,7 @@
 
 ## About the game
 
-You skate across a frozen pond at night while the snow comes down. Lanterns light ahead of you one at a time, each in one of five lanes across the ice, and you take a lantern by being in its lane as it reaches you.
+You skate across a frozen pond at night while the snow comes down. Lanterns light ahead of you one at a time, each in one of five lanes across the ice. You take a lantern by being in its lane as it reaches you.
 
 Snow settles on the ice as you skate, and the night ends when it covers the ice. Each lantern you take keeps the ice clear a little longer. Nothing knocks you down: drifts slow you and thin ice makes you stumble, but the skate goes on.
 
@@ -26,7 +26,7 @@ The practice skate, the lantern skate, the Frost Fair and the midnight skate hav
 
 Drifts of snow lie on the ice between some lanterns. Skate into one and you slow down for a moment, lean more slowly, and your line starts again.
 
-On the mill pond and the long lake, some patches of ice are thin. Skate onto thin ice and you stumble for a moment. You cannot lean while stumbling, your line starts again, and more snow settles on the ice. A drift or thin patch always comes up in time to lean round it. H tells you which way to lean.
+On the mill pond and the long lake, some patches of ice are thin. Skate onto thin ice and you stumble for a moment. You cannot lean while stumbling. Your line starts again, and more snow settles on the ice. A drift or thin patch always comes up in time to lean round it. H says which way to lean.
 
 ## Your partner
 
@@ -50,7 +50,7 @@ Each pond has three score targets, one for each star. Choose a pond reads its ta
 
 ## The lantern skate
 
-Every evening, from 4 in the afternoon to 9 at night by your clock, the lantern skate is lit. Its lanterns light in pairs, one just after the other, and you take the one that lit first. Taking the second breaks your line. The lanterns are the same for every player that day, and taken in order, the first-lit lanterns play the day's tune. The skate ends after its last pair.
+Every evening, from 4 in the afternoon to 9 at night by your clock, the lantern skate is lit. Its lanterns light in pairs, one just after the other, and you take the one that lit first. Taking the second breaks your line. The lanterns are the same for every player that day. Taken in order, the lanterns that lit first play the day's tune. The skate ends after its last pair.
 
 ## The Frost Fair
 
@@ -64,11 +64,11 @@ On New Year's Eve, from 11 at night to 1 in the morning by your clock, the midni
 
 ## Keeping the game all year
 
-Snowfall Skate is listed in Seasonal games from 27 November through the winter, until the end of February, and stays two more weeks, through March 14. Start a skate or a practice in that time and the game is yours to keep, even if you leave early: after the winter it stays in the Cozy games. Earlier play counts too, and stars still open later ponds. The Frost Fair waits for the next winter.
+Snowfall Skate is listed in Seasonal games from 27 November through the winter, until the end of February, and stays two more weeks, through March 14. Start a skate or a practice in that time and the game is yours to keep, even if you leave early: after the winter it stays in the Cozy games. Earlier play counts too, and stars still open later ponds. The Frost Fair returns the next winter.
 
 ## Practice and the tutorial
 
-The tutorial teaches leaning, lanterns, drifts and spins on a slow pond. The practice skate is the village pond with no snow and no score, and every lantern's lane is spoken as it lights. Use it to learn the lanes.
+The tutorial teaches leaning, lanterns, drifts and spins on a slow pond. The practice skate is the village pond with no snow and no score, and every lantern's lane is named as it lights. Use it to learn the lanes.
 
 ## Challenges
 
@@ -80,11 +80,11 @@ S gives nearby hazards, the next lantern's lane, whether a spin is ready, and wh
 
 ## Sound check
 
-Sound check, on the title, lets you learn the lanterns, obstacles, partner and spin cues. Each row explains the cue and plays it as you would hear it on the ice.
+Sound check, on the title, plays the lanterns, obstacles, partner and spin cues. Each row explains the cue and plays it as you would hear it on the ice.
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Space: push off. Once away, hold it to spin, and let go once the spin is ready.
 - Left and Right: hold to lean that way.

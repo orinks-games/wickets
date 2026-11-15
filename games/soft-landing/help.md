@@ -1,6 +1,6 @@
 ## About the game
 
-Fly a survey lander down to a pad on a far moon. Gravity pulls; hold the engine to push back. Touch down under safe speed, or you crash. Fuel is short: fall freely first, burn near the pad.
+Fly a survey lander down to a pad on a far moon. Gravity pulls. Hold the engine to push back. Touch down under safe speed, or you crash. Fuel is short: fall freely first, burn near the pad.
 
 This help gives heights and speeds in metric. Set Units to US in Settings and the game says feet and feet a second instead, with call-out marks every 300, 150 or 30 feet.
 
@@ -18,11 +18,11 @@ Keep your falling speed below the safe speed before touching down. The game says
 
 ## The pad beacon
 
-The pad beacon helps you judge how close you are to the ground. Sound check, on the title, lets you hear the beacon and the other gameplay cues.
+The pad beacon helps you judge how close you are to the ground. Sound check, on the title, plays the beacon and the other gameplay cues.
 
 ## Call-outs
 
-Mission control calls your height as you pass each mark, with your falling speed in metres a second. The marks are every 50 metres to start. The Up arrow calls less often and the Down arrow more often: every 100, 50 or 10 metres. The game remembers your choice, except on the practice pad. Tab asks for a call-out now, with your height, speed and fuel. R repeats the last call-out.
+Mission control calls your height as you pass each mark, with your falling speed in metres a second. The marks are every 50 metres to start. The Up arrow calls less often and the Down arrow more often: every 100, 50 or 10 metres. The game remembers your choice, except on the practice pad. Tab reads a call-out now, with your height, speed and fuel. R repeats the last call-out.
 
 ## Status and hints
 
@@ -52,7 +52,7 @@ Relaxed scores and the softest relaxed touchdown are saved separately, including
 
 ## Scoring and records
 
-A landing scores 200 points. Fuel left adds up to 300 points, for a full tank. A soft touchdown adds up to 500 points: the slower you touch down, the more it pays. A crash scores nothing.
+A landing scores 200 points. Fuel left adds up to 300 points for a full tank. A soft touchdown adds up to 500 points. The slower you touch down, the more it pays. A crash scores nothing.
 
 Records keeps your best score on each moon, your softest touchdown, how many landings and crashes you have made, and your challenge results.
 
@@ -62,7 +62,7 @@ The tutorial is four short lessons on the practice pad, with endless fuel. Lesso
 
 ## The practice pad
 
-The practice pad flies the first moon with endless fuel, and call-outs every 10 metres once you fall slowly enough. Nothing is saved but a count of practice landings. After each touchdown you go back to the top for another try.
+The practice pad flies the first moon with endless fuel, and call-outs every 10 metres once you fall slowly enough. Only a count of practice landings is saved. After each touchdown you go back to the top for another try.
 
 ## Challenges
 
@@ -97,7 +97,7 @@ Down arrow: call the altitude more often.
 
 Left arrow and Right arrow: not used. This lander has no side thrusters.
 
-Tab: ask mission control for a call-out now.
+Tab: read a call-out from mission control now.
 
 S: height, speed and fuel. Press it again for the moon, the safe speed and a hint.
 
@@ -109,4 +109,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

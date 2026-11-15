@@ -98,7 +98,7 @@ the verb for this screen. After: `Up and Down choose a safe, Enter plays it, Esc
 - Write "press", "hold", "let go". Never "click", "tap", "see", "look", "above", "below", "on screen".
 - Engine keys are fixed and may be named literally: F1 help, F2 stops speech, Escape pauses or goes back.
 - help.md may name default keys, with this line once per file: `These are
-  the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.`
+  the default keys. If you change them in Settings, the game's instructions follow your bindings.`
 - Controls lists use `Key: effect.` one per line or bullet, in the order the
   player needs them. After: `Space: set the wheel.`
 

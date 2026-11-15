@@ -12,7 +12,7 @@ The cats sleep until your first step in each pantry.
 
 Space sniffs. It marks the nearest 3 crumbs with directional cues, nearest first, then says how many crumbs are left.
 
-H names the way to the nearest crumb that no cat is close to, then how many steps it is, such as "Up, 3 steps." "No safe crumb" means every crumb left is near a cat. H does not work in the monthly challenge.
+H names the way to the nearest crumb that no cat is close to. The direction comes before the number of steps, such as "Up, 3 steps." "No safe crumb" means every crumb left is near a cat. H does not work in the monthly challenge.
 
 ## The cats
 
@@ -24,7 +24,7 @@ The tabby cat wanders at random until it is 4 steps away, then chases like the g
 
 The grey cat wanders like the tabby cat and only joins the monthly challenge.
 
-The cat-close warning means a cat is within 2 steps. The first 3 times in a run, the warning is spoken too, such as "Ginger cat close, right." The direction is the way towards the cat, so go another way.
+The cat-close warning means a cat is within 2 steps. The first 3 times in a run, the warning also names the cat, such as "Ginger cat close, right." The direction is towards the cat. Go another way.
 
 ## Freezing
 
@@ -32,7 +32,7 @@ Tab freezes you briefly. The nearest cat loses you until just after the freeze e
 
 ## Whiskers and catches
 
-A catch costs a whisker. Then you and the cats go back to the start, and the cats wait 2 seconds before they move again. "Cats moving" says the wait is over. In the practice pantry a catch costs nothing.
+A catch costs a whisker. Then you and the cats go back to the start. The cats wait 2 seconds before they move again. "Cats moving" means the wait is over. In the practice pantry a catch costs nothing.
 
 ## Status
 
@@ -56,11 +56,11 @@ Records keeps your best score, the deepest pantry you reached, your tallies, and
 
 ## The practice pantry
 
-The practice pantry has only the ginger cat, moving slowly, and a catch costs no whisker. Use it to learn the maze and the cats.
+The practice pantry has only the ginger cat, moving slowly. A catch costs no whisker. Use it to learn the maze and the cats.
 
 ## Challenges
 
-Every player gets the same mazes for each challenge period. Each run has 3 whiskers, and losing the last ends it with the points so far.
+Every player gets the same mazes for each challenge period. Each run has 3 whiskers. Losing the last ends the run with the points so far.
 
 Tonight's pantry, the daily: one 9 by 9 maze with the ginger cat and the tabby cat. A new one comes every day.
 
@@ -76,7 +76,7 @@ Two pantries open on the title only on their own nights. Each is the pantry run 
 
 Leftovers pantry, from the day before Thanksgiving to 2 days after: 4 turkey scraps in every pantry, 50 points each.
 
-Bin night, on the first Tuesday of every month: the kitchen bin is full before collection, and a cheese rind waits in every pantry, 100 points.
+Bin night, on the first Tuesday of every month: the kitchen bin is full before collection, and a cheese rind is in every pantry, 100 points.
 
 ## Controls
 
@@ -96,4 +96,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

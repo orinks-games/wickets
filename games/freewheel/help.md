@@ -10,11 +10,11 @@ Each ride is one street, heard from your bike. On your right, parked cars line t
 
 ## Riding
 
-Up arrow pedals and Down arrow brakes. The brakes build over a moment, so start braking early. Let go of both to coast. Left arrow and Right arrow slide you across the road while you hold them. Tab sprints for extra speed, until you run out of breath. Breath comes back while you ride without sprinting.
+Up arrow pedals. Down arrow brakes. The brakes build over a moment, so start braking early. Let go of both to coast. Left arrow and Right arrow slide you across the road while you hold them. Tab sprints for extra speed until you run out of breath. Breath comes back while you ride without sprinting.
 
 ## Hops and jumps
 
-Space hops while you are moving. The BMX hops about 40 centimetres, high enough to clear a curb. The road bike and the e-bike hop only about 10 centimetres, so ride around curbs on them. The moped cannot hop at all: ride around curbs and potholes. Press Space at a ramp's lip for a jump. Jumps earn airtime points.
+Space hops while you are moving. The BMX hops about 40 centimetres, high enough to clear a curb. The road bike and the e-bike hop only about 10 centimetres, so ride around curbs on them. The moped cannot hop. Ride around curbs and potholes. Space jumps at a ramp's lip. Jumps earn airtime points.
 
 ## Hazards
 
@@ -22,7 +22,7 @@ Every hazard's warning comes at least 1.5 seconds before you reach it, at your s
 
 A parked car's door can open into the door zone. Move left, out of the door zone, before you reach it.
 
-A pothole's warning speeds up as you get closer. A pothole gives the road bike or the e-bike a flat tyre, which slows you until you stop and stand still for 3 seconds to swap the tube. The BMX rolls through it, a little slower.
+A pothole's warning speeds up as you get closer. A pothole gives the road bike or the e-bike a flat tyre. This slows you until you stop and stand still for 3 seconds to swap the tube. The BMX rolls through it, a little slower.
 
 Raised curbs cross the bike lane. Ramps let you jump.
 
@@ -34,7 +34,7 @@ Cars approach from behind. They pass on your left when there is room. Hold your 
 
 ## Junction turns
 
-The game names each junction turn as it comes up, with its distance. For a right turn, be in the bike lane. For a left turn, be near the centre line. Either way, slow to 22 kilometres an hour or less before the junction line. Too fast, or on the wrong side, and you run wide, which costs you speed.
+The game names each junction turn as it comes up, with its distance. For a right turn, be in the bike lane. For a left turn, be near the centre line. Either way, slow to 22 kilometres an hour or less before the junction line. If you are too fast or on the wrong side, you run wide and lose speed.
 
 ## Crashes
 
@@ -48,15 +48,15 @@ Parcels lie along the way. Ride over one at 20 kilometres an hour or less to gra
 
 ## Oncoming cars
 
-In the endless ride, cars overtake toward you in the traffic lane. Its warning comes from ahead, at least 1.5 seconds before it reaches you. Steer right into the bike lane until it has gone by. The urgent warning means it is in your line now.
+In the endless ride, cars overtake toward you in the traffic lane. Each car's warning comes from ahead, at least 1.5 seconds before it reaches you. Steer right into the bike lane until it has gone by. The urgent warning means it is in your line now.
 
 ## Against the clock
 
 Make delivery drops to add time to the clock. You start with 60 seconds on a street in the district you chose. The first drop is just after the start. The clock runs down, and the ride ends when it reaches zero. There is no crash limit or finish line.
 
-Drops lie along the way, like parcels in the endless ride. Ride over one at 20 kilometres an hour or less to make the drop. A drop in a shop doorway, in the door zone, adds 14 seconds and pays 3 dollars. A drop at a parcel locker by the centre line, out among the cars, adds 18 seconds and pays 6. A drop made within 30 seconds of the last one is a quick drop, and adds 4 seconds more. The clock holds 90 seconds at most.
+Drops lie along the way, like parcels in the endless ride. Ride over one at 20 kilometres an hour or less to make the drop. A drop in a shop doorway, in the door zone, adds 14 seconds and pays 3 dollars. A drop at a parcel locker by the centre line, out among the cars, adds 18 seconds and pays 6. A drop made within 30 seconds of the last one is a quick drop and adds 4 seconds more. The clock holds 90 seconds at most.
 
-Each drop says the time it added and the time left. A crash takes 8 seconds off the clock, and you still lose the 3 seconds you are down. The game says 30 seconds left and 10 seconds left. At 15 seconds or less, the clock ticks once a second. At 5 seconds or less, it ticks twice as fast.
+After each drop, the game says the time it added and the time left. A crash takes 8 seconds off the clock, and you still lose the 3 seconds you are down. The game says 30 seconds left and 10 seconds left. At 15 seconds or less, the clock ticks once a second. At 5 seconds or less, it ticks twice as fast.
 
 Every drop has clear road before and after it, so a drop never comes up while a hazard is warning. The hazards still come closer together the further you ride. On the moped, brake hard for every drop.
 
@@ -64,7 +64,7 @@ Your score is the drops you make. The best in each district is kept, and you kee
 
 ## The job board
 
-The job board offers three deliveries across the districts you own. Each says its route, its length and its pay in dollars. Get there within the deadline for full pay. Late pays half. A new set of jobs comes after each delivery.
+The job board offers three deliveries across the districts you own. Each says its route, its length and its pay in dollars. Get there within the deadline for full pay. Late deliveries pay half. A new set of jobs comes after each delivery.
 
 ## The bike shop and districts
 
@@ -76,9 +76,9 @@ In wet Riverside, brakes need more room to stop. Old Town's cobbles slow bikes w
 
 ## Status, hint and call-outs
 
-S puts danger first: a hazard or oncoming car close ahead, then any flat tyre, then your speed and lane. Press S again straight away for the rest: what else is ahead, how far you are from the parked cars or the centre line, the clock, or in the endless ride your distance, cash and crashes left, then your stamina. Against the clock, the first press starts with the time left, and the second gives your drops and cash. H says what the next hazard is, how soon you reach it and what to do. R repeats the last spoken line.
+S puts danger first: a hazard or oncoming car close ahead, then any flat tyre, then your speed and lane. Press S again straight away for the rest: what else is ahead, how far you are from the parked cars or the centre line, the clock, or in the endless ride your distance, cash and crashes left, then your stamina. Against the clock, the first press starts with the time left, and the second gives your drops and cash. H says what the next hazard is, how soon you reach it and what to do. R repeats the last line.
 
-Spoken call-outs, a row in Settings from the title or the pause menu, chooses how often the game names what is coming on the road. Once per session is the default: each kind is named the first time it comes up after you start Wicket's. Every time names them always. Off names none of them, and S and H still speak.
+Spoken call-outs, a row in Settings from the title or the pause menu, chooses how often the game names what is coming on the road. Once per session is the default: each kind is named the first time it comes up after you start Wicket's. Every time names them always. Off names none of them, and S and H still work.
 
 ## Pace
 
@@ -124,7 +124,7 @@ Car-free Sunday, on the third Sunday of every month: 1200 metres made from that 
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Up arrow: pedal, while held. On the moped, it opens the throttle.
 - Down arrow: brake, while held.

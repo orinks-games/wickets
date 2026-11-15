@@ -22,7 +22,7 @@ Turn on Spoken call-outs in Settings, from the title or the pause menu, to have 
 
 A wreck is a sunken ship with treasure in its hold. An empty wreck has already been salvaged.
 
-Treasure chests can be collected without stopping.
+You can collect treasure chests without stopping.
 
 Mines damage your hull on contact.
 
@@ -36,9 +36,9 @@ Sound check, on the title, plays each of these with its name, and a demonstratio
 
 ## Treasure
 
-Swim into a treasure chest to take it: its coins are aboard at once.
+Swim into a treasure chest to take it. Its coins are aboard at once.
 
-A wreck holds more, but takes work. Stop within a few metres of it, at all stop, and hold still while the grab arm salvages it. Salvage takes 3 seconds. Moving off, or being pushed by a current, interrupts it, and you start again.
+A wreck holds more, but takes work. Stop within a few metres of it, at all stop, and hold still while the grab arm salvages it. Salvage takes 3 seconds. Moving off or being pushed by a current interrupts salvage, and you start again.
 
 Treasure is worth more the deeper you go: a quarter more for every dive past the first.
 
@@ -46,13 +46,13 @@ Treasure is worth more the deeper you go: a quarter more for every dive past the
 
 Mines warn you when you come within about 16 metres. Touching one costs a hull point. You start with 3, and losing them all ends the expedition. Surfacing repairs one.
 
-Rocks and the wall around the site scrape you and cost 3 seconds of air. Driving into them stops your engine: turn away and throttle up again. If a current pins you against rock, point away from it and throttle up. The engine keeps running while you pull clear.
+Rocks and the wall around the site scrape you and cost 3 seconds of air. Driving into them stops your engine. Turn away and throttle up again. If a current pins you against rock, point away from it and throttle up. The engine keeps running while you pull clear.
 
 Currents push you while you are inside them. Fight them at full ahead, or let them carry you. You cannot salvage inside a current.
 
 ## Air
 
-Your tank holds 150 seconds on the first dive and less on each deeper dive. Full ahead uses air faster than slow ahead, and all stop uses the least. You are warned at half, at a quarter, and at 15 seconds. Press H at any time: when your air is short of what the trip home needs, it says so.
+Your tank holds 150 seconds on the first dive and less on each deeper dive. Full ahead uses air faster than slow ahead, and all stop uses the least. You are warned at half, at a quarter, and at 15 seconds. H works at any time. When your air is short of what the trip home needs, H says so.
 
 A friendly whale circles somewhere on most sites. Pass within a few metres of it and it shares a breath of air: 25 seconds more, once a dive. It keeps its gift while your tank is still nearly full, so you can come back to it later.
 
@@ -64,7 +64,7 @@ Tab drops a marker buoy where you are. Up to 3 can be out at once, and a fourth 
 
 ## At the boat
 
-When you surface, what you carry is banked, your air is refilled, and you choose: dive again, deeper, or end the expedition and keep your haul. Escape there opens the pause menu.
+When you surface, what you carry is banked and your air is refilled. You choose to dive again, deeper, or end the expedition and keep your haul. Escape there opens the pause menu.
 
 ## After an expedition
 
@@ -90,7 +90,7 @@ Records, on the title, reads both best hauls, your deepest dive and your challen
 
 ## Challenges
 
-The challenges are the same sea for every player, and a new one comes each day, week and month. The Challenges menu shows each one's best result and your streak. Before each run the briefing reads its rule and when the next one arrives. Afterwards the game reads your result, your best and your streak. A run counts when it ends at the boat or at sea. Leave the challenge, on the pause menu, does not count, and neither does Escape on the briefing, which goes back without starting.
+The challenges are the same sea for every player, and a new one comes each day, week and month. The Challenges menu shows each one's best result and your streak. Before each run the briefing reads its rule and when the next one arrives. Afterwards the game reads your result, your best and your streak. A run counts when it ends at the boat or at sea. Leave the challenge, on the pause menu, does not count. Neither does Escape on the briefing, which goes back without starting.
 
 - Daily, Sprint dive: one dive, from dive 1 to 3, with a twist announced up front: murky water that halves your sonar, rich wrecks with more mines, rip currents, or thin air.
 - Weekly, Long haul: up to 3 dives from dive 3, with no hull repairs between them, and a twist of its own.
@@ -104,9 +104,9 @@ Sound check includes the pearl cues.
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
-- Left and Right arrows: turn while held. Your heading is spoken when you let go.
+- Left and Right arrows: turn while held. Letting go names your heading.
 - Up and Down arrows: move the engine telegraph one step: slow astern, all stop, slow ahead, half ahead, full ahead.
 - Space: send a sonar ping.
 - Tab: drop a marker buoy where you are.

@@ -2,7 +2,7 @@
 
 ## About the game
 
-Keep a small tea house at your own pace. Guests name a taste; you choose tea and a cup, heat the water, pour, and time the steep. Every cup pleases someone. A perfect cup earns a note and a tip.
+Keep a small tea house at your own pace. Guests name a taste. You choose tea and a cup, heat the water, pour, and time the steep. Every cup pleases someone. A perfect cup earns a note and a tip.
 
 ## A guest comes in
 
@@ -10,7 +10,7 @@ A guest comes to the counter and asks for a taste, such as "something smoky and 
 
 ## The shelf and your cups
 
-Up and Down move along your shelf. Each tea is named, with a short description. Left and Right choose a cup from your cupboard. Tab says more about the tea: the tastes it suits, the heat it wants, and how long it likes to steep. Space puts the tea in the pot. Up or Down before the kettle is on takes you back to the shelf.
+Up and Down move along your shelf. Each tea is named, with a short description. Left and Right choose a cup from your cupboard. Tab says more about the tea: the tastes it suits, the heat it needs and its steeping time. Space puts the tea in the pot. Up or Down before the kettle is on takes you back to the shelf.
 
 Each cup suits some tastes: the big mug for strong and warming cups, the clay cup for calm and smoky ones, the glass for fresh and bright ones, the thin porcelain for floral and sweet ones. A cup that suits the taste makes the guest a little happier. The plain white cup is good for anything.
 
@@ -34,7 +34,7 @@ Every cup pays 2 coins. A lovely cup pays 3. A perfect cup pays 2 and leaves a t
 
 ## The shop
 
-The shop is on the title, and on the results after each afternoon as Visit the shop. It sells 11 more teas, 4 more cups, a music box with three tunes, and a sand timer. A new tea goes on your shelf, a new cup in your cupboard. The music box plays its tune quietly in the tea house; the Music box row in Settings changes the tune or turns it off, from the title or the pause menu. The sand timer alerts you when the tea has steeped for its target time.
+The shop is on the title, and on the results after each afternoon as Visit the shop. It sells 11 more teas, 4 more cups, a music box with three tunes, and a sand timer. A new tea goes on your shelf, a new cup in your cupboard. The music box plays its tune quietly in the tea house. The Music box row in Settings changes the tune or turns it off, from the title or the pause menu. The sand timer alerts you when the tea has steeped for its target time.
 
 ## Regulars and their stories
 
@@ -58,11 +58,11 @@ Practice brewing is a quiet place to learn the kettle. Brew any tea on your shel
 
 ## Hints
 
-H gives a hint for what you are doing: teas on your shelf that suit the guest's taste and a cup that suits it, when to pour by the kettle's song, or how many seconds the tea likes. Hints are free and as many as you like.
+H gives a hint for what you are doing: teas on your shelf that suit the guest's taste and a cup that suits it, when to pour by the kettle's song, or how many seconds the tea likes. Hints are free. You can use as many as you like.
 
 ## Spoken call-outs
 
-With spoken call-outs on, the kettle's heat is also spoken as it changes, such as "Soft hiss, about 80 degrees", and the steep's seconds every 5 seconds. Turn them off in Settings, from the title or the pause menu, to brew without them. Nothing changes in how a cup is judged.
+With spoken call-outs on, the game also names the kettle's heat as it changes, such as "Soft hiss, about 80 degrees", and the steep's seconds every 5 seconds. Turn them off in Settings, from the title or the pause menu, to brew without them. Nothing changes in how a cup is judged.
 
 ## Challenges
 
@@ -74,7 +74,7 @@ Records keep the afternoons and evenings you have played, cups served, perfect c
 
 ## Sound check
 
-Sound check, on the title, lets you choose and play the gameplay cues.
+Sound check, on the title, plays the gameplay cues.
 
 ## Controls
 
@@ -96,4 +96,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

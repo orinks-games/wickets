@@ -8,11 +8,11 @@ Reach extraction to complete the run. You lose if your hull reaches 0 or network
 
 ## Arrivals and call-outs
 
-Arrival cues mark their lanes relative to yours. Straight ahead is your lane; left means one or two lanes left. The positions change when you shift lanes.
+Arrival cues mark their lanes relative to yours. Straight ahead is your lane. Left means one or two lanes left. The positions change when you shift lanes.
 
 Spoken call-outs are on by default. Each arrival is also named as it appears: "Debris left." Turn Spoken call-outs off in Settings, from the title or the pause menu, to play without them. The hint key always names what is next.
 
-Sound check lets you hear the gameplay cues and practise recognising their lane positions.
+Sound check plays the gameplay cues so you can practise recognising their lane positions.
 
 ## Traffic you join
 
@@ -38,15 +38,15 @@ Move out of a hazard's lane before it reaches you, or boost through it.
 
 ## Stress and pressure
 
-Stress runs from 0 to 100. Mistakes raise it, and repeated mistakes raise it faster. Clean play, pickups, emergency tools, and sector clears bring it down; calm flow slowly reduces it.
+Stress runs from 0 to 100. Mistakes raise it, and repeated mistakes raise it faster. Clean play, pickups, emergency tools, and sector clears bring it down. Calm flow slowly reduces it.
 
 - The rising-pressure warning starts at stress 35.
 - At stress 75 or more, the high-stress warning repeats every five seconds.
-- The recovery cue tells you stress has fallen out of danger.
+- The recovery cue marks when stress has fallen out of danger.
 
 ## Emergency tools
 
-- Boost: just under a second of breach power. Smashes debris, rams drones, forces heavy blockers open, punches through unstable vehicles and breaches blockades. Five seconds to recharge. The ready cue tells you when boost has recharged.
+- Boost: just under a second of breach power. Smashes debris, rams drones, forces heavy blockers open, punches through unstable vehicles and breaches blockades. Five seconds to recharge. The ready cue marks when boost has recharged.
 - Rail gun: locks onto the nearest drone or unstable vehicle in any lane and destroys it for 80 points. It only locks in the last second of an approach: within a second in your own lane, a little less one lane over, less again two lanes over. Fire too early, or with nothing coming, and the game says "No lock", and the gun still has to cool for under a second.
 - Slowdown pulse: two and a half seconds in which fast passers, priority traffic and heavy blockers are eased past. Lowers stress at once. Limited charges and a fourteen-second recharge.
 - Priority override: three and a half seconds in which priority traffic is held for you, whatever lane you are in. Lowers stress at once. Limited charges.
@@ -96,7 +96,7 @@ A challenge counts when the run ends, won or lost: the game reads your result, w
 
 ## Special nights
 
-Ghost cars, from 17 October to Halloween and the day after: in the guided run, a Black Sky Run, the endless rail, the challenge corridor and a cold start, flow vehicles become ghost cars. Meet them as usual for the same score. The run's briefing names them in words, the status key names the night, and the hint key calls them ghost cars. Ghost cars do not appear in the daily, weekly or monthly challenges.
+Ghost cars, from 17 October to Halloween and the day after: in the guided run, a Black Sky Run, the endless rail, the challenge corridor and a cold start, flow vehicles become ghost cars. Meet them as usual for the same score. The run's briefing names them, the status key names the night, and the hint key calls them ghost cars. Ghost cars do not appear in the daily, weekly or monthly challenges.
 
 Friday night run, on the last Friday of every month: a row of its own on the title. On other days the row stays in its place, locked, and says when it opens. Three sectors made from that Friday's date, the same for every pilot, on a standard skimmer: a salvage stretch, one more route, then extraction. Between sectors you fit an upgrade, but the route is fixed. Salvage comes as cargo crates, each worth double. It keeps its own board: its score does not count toward your best score, it pays no credits, parts or intel, and your rank and story stay as they were. Once that Friday is over, Play again on the results says so and does not start a run.
 
@@ -110,13 +110,13 @@ Choose a route between sectors. The three choices always include the open route 
 - Data relay: lighter traffic, and it recovers an intel fragment.
 - Storm rail: fast traffic with short warnings, nearly double the bonus. Bought in the workshop from rank 3.
 
-Upgrades last for the rest of the run: shield plating, boost coils, heavy rounds for the rail gun, a hull patch, extra pulse or override cells, a near-miss amplifier, a stress damper, and a pickup magnet. Cold starts earn four more for the pool in every run: reach sector 4 for Hard lock, a longer rail gun lock; reach sector 7 for Scrap mesh, which makes repairs ease more stress and salvage mend 2 hull; finish one for the Dead man's switch, which survives one hull breach a run at 20 hull; finish three for Hot chain, a multiplier that climbs every 3 clean plays instead of 4. Pilot progress lists them. Press S at an intermission for your skimmer's state, and H for advice.
+Upgrades last for the rest of the run: shield plating, boost coils, heavy rounds for the rail gun, a hull patch, extra pulse or override cells, a near-miss amplifier, a stress damper, and a pickup magnet. Cold starts earn four more for the pool in every run: reach sector 4 for Hard lock, a longer rail gun lock. Reach sector 7 for Scrap mesh, which makes repairs ease more stress and salvage mend 2 hull. Finish one for the Dead man's switch, which survives one hull breach a run at 20 hull. Finish three for Hot chain, a multiplier that climbs every 3 clean plays instead of 4. Pilot progress lists them. S reads your skimmer's state at an intermission. H reads advice.
 
 ## Progress, the workshop and the archive
 
 Every debrief pays, even after a failed run: credits from your score and a finished run, parts from sectors cleared and a finished run, intel fragments from Black Sky extractions and data relays. Salvage pays through your score. An endless run pays credits for its first 40,000 points. Your pilot rank rises with Black Sky extractions: 1, 4, 10 and 20. Each rank adds a bonus: more hull, an extra override, an extra slowdown pulse, then a doubled starting multiplier.
 
-The workshop sells permanent parts for credits and parts: a reinforced frame, spare charges, boost tuning, storm charts, a pickup magnet and stress dampers. Higher ranks open more: at rank 2 an armoured nose, which halves blockade collision damage, and long-range sensors, which announce repairs and salvage half a second sooner; at rank 3 a capacitor bank, for a longer boost, and a heat sink, for a faster rail gun; at rank 4 a shield emitter, one shield charge on every run; at rank 5 a chain governor, so a hit halves your multiplier instead of resetting it. Two more open with the story: the Relay tuner, which makes a data relay recover 2 intel fragments, with the signal's first log at pilot rank 4; and the Hunter jammer, which announces drones and unstable vehicles half a second sooner, with Security's last log. Clear the storm rail in a cold start and the Storm charts are fitted free. Fifty rail gun kills earn the Ace gunner licence.
+The workshop sells permanent parts for credits and parts: a reinforced frame, spare charges, boost tuning, storm charts, a pickup magnet and stress dampers. Higher ranks open more parts. At rank 2 you can buy an armoured nose, which halves blockade collision damage, and long-range sensors, which announce repairs and salvage half a second sooner. At rank 3 you can buy a capacitor bank, for a longer boost, and a heat sink, for a faster rail gun. At rank 4 you can buy a shield emitter, one shield charge on every run. At rank 5 you can buy a chain governor, so a hit halves your multiplier instead of resetting it. Two more open with the story: the Relay tuner, which makes a data relay recover 2 intel fragments, with the signal's first log at pilot rank 4. The Hunter jammer, which announces drones and unstable vehicles half a second sooner, opens with Security's last log. Clear the storm rail in a cold start and the Storm charts are fitted free. Fifty rail gun kills earn the Ace gunner licence.
 
 The story archive is in strands. The data core's twelve logs are the spine: the first come from finishing runs, lasting in them and reaching extraction, and the later ones open as your intel fragments add up, one a run. Around them, each strand opens from one kind of play, one log a run: the unions from the salvage stretch, the hunters from the standard rush, security from the ambush corridor, the weather service from the storm rail, the signal from the data relay, the Black box from runs you lose, the deep rail from how far you get on the endless rail, the hangar from your own record, and Origin from extractions after the data core is complete. The Blackout Convoy event log opens once you have flown a monthly Black Sky event to its end. Logs recovered during a run pause it while the log is read. The rest are read at the debrief, and in the archive on the title, where each strand says how it opens.
 
@@ -128,11 +128,11 @@ After the debrief, the results menu offers Play again or Try again, Hear the res
 
 ## Pages
 
-Story, tutorial and debrief text comes a page at a time. Enter reads the next page you have not heard, Up and Down move back and forth over the pages, R repeats the page, and Escape skips to the end. The pages before a run are different: Escape on them goes back without starting.
+Story, tutorial and debrief text comes a page at a time. Enter reads the next page you have not heard. Up and Down move back and forth over the pages. R repeats the page. Escape skips to the end. The pages before a run are different: Escape on them goes back without starting.
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Left and Right arrows: shift one lane. A and D also work.
 - Space: boost, for just under a second. It recharges in five seconds.

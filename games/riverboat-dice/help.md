@@ -2,7 +2,7 @@
 
 ## About the game
 
-Play five landings of dice against three passengers. During each landing, the dealer rolls two dice for everyone still seated. Each roll adds to the table total. Tab banks what the table holds; Space stays in for another roll. A 1 on either die ends the landing, and everyone still seated gets nothing. Highest banked total wins. Nothing is timed.
+Play five landings of dice against three passengers. During each landing, the dealer rolls two dice for everyone still seated. Each roll adds to the table total. Tab banks what the table holds. Space stays in for another roll. A 1 on either die ends the landing, and everyone still seated gets nothing. Highest banked total wins. Nothing is timed.
 
 ## A landing
 
@@ -10,11 +10,11 @@ Each landing starts with everyone seated and the table empty. Space calls a roll
 
 ## Staying in and banking
 
-After each roll, you choose. Space stays in for another roll. Tab banks the table total into your night total and leaves your seat for the rest of the landing. Once you have banked, the table rolls on without you until the landing ends. Space or Tab while the dealer talks hurries him along. In your very first night, the first bank asks you to press Tab again to make sure.
+After each roll, you choose. Space stays in for another roll. Tab banks the table total into your night total and leaves your seat for the rest of the landing. Once you have banked, the table rolls on without you until the landing ends. Space or Tab while the dealer talks hurries him along. In your very first night, press Tab again to confirm your first bank.
 
 ## The 1
 
-A 1 on either die ends the landing. The dealer says "A one. The landing is over." Everyone still seated gets nothing for the landing, but keeps what they banked in earlier landings. If everyone has banked before a 1 comes, the landing ends too. 11 of 36 rolls have a 1. Up tells you the odds at any time.
+A 1 on either die ends the landing. The dealer says "A one. The landing is over." Everyone still seated gets nothing for the landing, but keeps what they banked in earlier landings. If everyone has banked before a 1 comes, the landing ends too. 11 of 36 rolls have a 1. Up gives the odds at any time.
 
 ## The other passengers
 
@@ -24,7 +24,7 @@ Left and Right name each passenger in turn, with their night total, whether they
 
 ## Hints
 
-H says what a careful player would do now, and why. The careful player stays in while one more roll is worth more on average than what a 1 would take, and banks once the table holds 19 or more. With the snag rule on, your night total counts as at risk too. On the last landing, the careful player stays in while banking would not put them in the lead.
+H says what a careful player would do now, and why. The careful player stays in while one more roll is worth more on average than what a 1 would take. The careful player banks once the table holds 19 or more. With the snag rule on, your night total counts as at risk too. On the last landing, the careful player stays in while banking would not put them in the lead.
 
 ## Status and the last roll
 
@@ -64,4 +64,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
