@@ -1,12 +1,12 @@
 ## About the game
 
-Bowl ten frames. Choose your stance and aim, then time your release to knock down the pins. Standing pins are always spoken by number.
+Bowl ten frames. Choose your stance and aim, then time your release to knock down the pins. Standing pins are always named by number.
 
 ## Standing and aiming
 
-The lane is 39 boards wide. Board 1 is at the left gutter, board 39 at the right, and board 20 is in line with the head pin. The Left and Right arrows step you one board along the approach, and speak your board.
+The lane is 39 boards wide. Board 1 is at the left gutter, board 39 at the right, and board 20 is in line with the head pin. The Left and Right arrows step you one board along the approach, and name your board.
 
-The Up arrow turns your aim one step right. The Down arrow turns your aim one step left. Each step moves the ball's line one board at the pins. The aim cue marks where a clean ball would cross the pins. The game also speaks that board.
+The Up arrow turns your aim one step right. The Down arrow turns your aim one step left. Each step moves the ball's line one board at the pins. The aim cue marks where a clean ball would cross the pins. The game also names that board.
 
 ## The pocket
 
@@ -18,7 +18,7 @@ Space starts the swing. Use the swing cue to time your release. Press Space agai
 
 ## The ball and standing pins
 
-A ball in the gutter hits no pins. After each ball, the game speaks the pins left standing by number. Wait for the ball-return cue before rolling again.
+A ball in the gutter hits no pins. After each ball, the game names the pins left standing by number. Wait for the ball-return cue before rolling again.
 
 Pin 1 is the head pin. Then 2 and 3, then 4 to 6, and the back row 7 to 10, with 7 in the left corner and 10 in the right. A split means the head pin is down, with a gap between the pins left standing.
 
@@ -34,7 +34,7 @@ H suggests a board and an aim for the pins standing. For a full rack, it gives a
 
 ## Pumpkin night
 
-From 17 October to 1 November the title has a Pumpkin night row. The rest of the year the row says Pumpkin night, locked, with its opening date. It is a full game of ten frames with pumpkins for pins. The pins left standing are still spoken by number. Scoring is the same as a full game, and Pumpkin night keeps its own best score.
+From 17 October to 1 November the title has a Pumpkin night row. The rest of the year the row says Pumpkin night, locked, with its opening date. It is a full game of ten frames with pumpkins for pins. The pins left standing are still named by number. Scoring is the same as a full game, and Pumpkin night keeps its own best score.
 
 ## Records
 
@@ -80,4 +80,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

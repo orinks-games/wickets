@@ -30,7 +30,7 @@ The main game is six rooftops, from the bakery to the cathedral. Each round has 
 
 ## Love notes
 
-Now and then a folded love note drifts slowly over the rooftops. Hit it and the note is read out and kept, even if you leave the evening early. There are 24 to find. Love notes on the title reads every note you have kept, a page at a time.
+Now and then a folded love note drifts slowly over the rooftops. Hit it and the note is read and kept, even if you leave the evening early. There are 24 to find. Love notes on the title reads every note you have kept, a page at a time.
 
 ## Valentine's Day
 
@@ -46,7 +46,7 @@ Every player gets the same challenges. The daily is today's sky: one long round 
 
 ## Spoken call-outs
 
-Two rows in Settings turn spoken call-outs on and off, from the title or from the pause menu during a run. The Spoken aim setting says your aim each time the bow turns, such as "15 degrees right". With Spoken aim off, each step only ticks, and S still gives your aim. The Spoken targets setting names each target as it drifts in, such as "Pink heart, from the left." With Spoken targets off, you hear only the hums, and Tab still lists the sky. The first time you meet each kind of target or cue, it is explained in words, once. The tutorial explains the bow and the sights cue, so after it play does not explain them again.
+Two rows in Settings turn spoken call-outs on and off, from the title or from the pause menu during a run. The Spoken aim setting says your aim each time the bow turns, such as "15 degrees right". With Spoken aim off, each step only ticks, and S still gives your aim. The Spoken targets setting names each target as it drifts in, such as "Pink heart, from the left." With Spoken targets off, you hear only the hums, and Tab still lists the sky. The first time you meet each kind of target or cue, it is explained once. The tutorial explains the bow and the sights cue, so after it play does not explain them again.
 
 ## Sound check
 
@@ -76,4 +76,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

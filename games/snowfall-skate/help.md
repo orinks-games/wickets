@@ -68,7 +68,7 @@ Snowfall Skate is listed in Seasonal games through the winter, until the end of 
 
 ## Practice and the tutorial
 
-The tutorial teaches leaning, lanterns, drifts and spins on a slow pond. The practice skate is the village pond with no snow and no score, and every lantern's lane is spoken as it lights. Use it to learn the lanes.
+The tutorial teaches leaning, lanterns, drifts and spins on a slow pond. The practice skate is the village pond with no snow and no score, and every lantern's lane is named as it lights. Use it to learn the lanes.
 
 ## Challenges
 
@@ -84,7 +84,7 @@ Sound check, on the title, plays the lanterns, obstacles, partner and spin cues.
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Space: push off. Once away, hold it to spin, and let go once the spin is ready.
 - Left and Right: hold to lean that way.

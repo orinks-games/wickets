@@ -14,7 +14,7 @@ The entrance locks behind you, so you cannot go back. The exit is on another wal
 
 ## Finding things
 
-Things lie about the rooms and call out from where they are: a clock, a crystal, a potion, a music box, a bell, a candle, a raven, keys and a heart. Each has its own sound. Sounds come from their direction: left is west, right east, ahead north. Behind is south, and a little duller. Nearer means louder and more often. Stepping onto a thing speaks its name.
+Things lie about the rooms and call out from where they are: a clock, a crystal, a potion, a music box, a bell, a candle, a raven, keys and a heart. Each has its own sound. Sounds come from their direction: left is west, right east, ahead north. Behind is south, and a little duller. Nearer means louder and more often. Stepping onto a thing names it.
 
 Sound check on the title plays each sound you need in the manor by name, including a demonstration of left, right, near and far.
 
@@ -128,7 +128,7 @@ When a run ends, its pages read how it went: the outcome, your score and record,
 
 ## Challenges
 
-Challenges on the title are the same house for every player in the world: everyone who plays today's daily walks the same rooms, with the same things in the same places. Each row names the challenge and what it is, then your best, whether you have played it and your streak. Before you start, a briefing names the challenge's rule or twist and says how long until the next one. Enter on its last page starts the run. Escape goes back without starting. When the run ends, by escaping, by the clock running out or by losing your courage, your score, your best and your streak are read out. Leave the challenge, on the pause menu, does not count it. Challenges do not change your best times or open floors, but they can earn unlocks.
+Challenges on the title are the same house for every player in the world: everyone who plays today's daily walks the same rooms, with the same things in the same places. Each row names the challenge and what it is, then your best, whether you have played it and your streak. Before you start, a briefing names the challenge's rule or twist and says how long until the next one. Enter on its last page starts the run. Escape goes back without starting. When the run ends, by escaping, by the clock running out or by losing your courage, the game gives your score, your best and your streak. Leave the challenge, on the pause menu, does not count it. Challenges do not change your best times or open floors, but they can earn unlocks.
 
 - Daily, Tonight's haunting: one floor from floors 3 to 30, with a twist. A new one every day.
 - Weekly, The long night: three floors in a row, starting between floors 10 and 40, with a twist, and your three courage must last the whole night: it does not refill between floors. A new one every Monday.
@@ -144,12 +144,12 @@ The twists:
 - Pitch dark, on floors 15 and deeper: every room is dark.
 - Hall of mirrors, on floors 45 and deeper: every room is mirrored.
 
-Challenges use the first five. The twists are spoken as each floor begins, and F1 repeats them. Your streak counts the days, weeks or months in a row you finished that challenge.
+Challenges use the first five. The twists are named as each floor begins, and F1 repeats them. Your streak counts the days, weeks or months in a row you finished that challenge.
 
 ## Tips
 
 - Stand still before you move. Work out where a thing is, then walk until it is straight ahead or right on top of you.
-- If two things seem the same, walk to each: their names are spoken when you stand on them. If one of them has moved since, it was a mimic.
+- If two things seem the same, walk to each: standing on a thing names it. If one of them has moved since, it was a mimic.
 - Check for rotten boards before you step. If one is ahead, go around.
 - When the shadow is near, stand still and let it wander off, unless the hound is passing.
 - When a ghost comes, finish your step and wait for the freeze cue, then stay still until the passing cue. For the hound, do the opposite.
@@ -158,11 +158,11 @@ Challenges use the first five. The twists are spoken as each floor begins, and F
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Up, Down, Left and Right arrows: walk one step north, south, west or east. You always face north.
 - Space: the main action. Pick up the thing you stand on, offer what you hold at a sealed door, or check the door. With the founder beside you, strike him.
-- Tab: choose the next thing you carry. Its name is spoken.
+- Tab: choose the next thing you carry.
 - I: list everything you carry. This key belongs to this game alone, and Settings cannot change it.
 - S: status, short. Any ghost, the founder, falling dust, the blade in your row, the shadow or a rotten board next to you, then the haunt clock, your courage, and how many steps to the exit door and whether it is open.
 - S twice: the rest. The floor and room, whether it is dark or mirrored, the room's other dangers, the puzzle, your column and row, what you hold, your salt and your score.

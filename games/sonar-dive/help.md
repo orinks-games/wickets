@@ -104,9 +104,9 @@ Sound check includes the pearl cues.
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
-- Left and Right arrows: turn while held. Your heading is spoken when you let go.
+- Left and Right arrows: turn while held. Letting go names your heading.
 - Up and Down arrows: move the engine telegraph one step: slow astern, all stop, slow ahead, half ahead, full ahead.
 - Space: send a sonar ping.
 - Tab: drop a marker buoy where you are.

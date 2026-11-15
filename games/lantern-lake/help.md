@@ -18,7 +18,7 @@ The canoe glides on after each stroke and slowly comes to a stop. When reeds bru
 
 Frogs, crickets and the wind in the reeds each sing from one place on the shore all night. They are your landmarks: if the frogs are on your left, you know which way you face.
 
-Space describes the lake around you in words. S and H say where the next lantern is, in words and as a clock position. 12 o'clock is straight ahead, 3 o'clock to your right, 6 o'clock behind you.
+Space describes the lake around you. S and H say where the next lantern is, also as a clock position. 12 o'clock is straight ahead, 3 o'clock to your right, 6 o'clock behind you.
 
 ## The song
 
@@ -80,7 +80,7 @@ Sound check, on the title, plays each sound you need on the lake. Tutorial expla
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Left and Right arrows: turn the canoe. A short press turns a little. Hold to keep turning.
 - Up arrow: paddle one stroke. Hold it to keep paddling.

@@ -78,7 +78,7 @@ Some trinkets belong to a set. Find a whole set and the shelf reads its little s
 
 The endless river opens with your first star on Garden brook. It is made of every stream you have opened, and gets busier the further you go. Your score is how far you sail, in metres.
 
-On the endless river each bump makes the boat soggier, and the count is said. The fifth bump sinks it. Every 20 catches dry the boat out by one bump.
+On the endless river each bump makes the boat soggier, and the game counts the bumps. The fifth bump sinks it. Every 20 catches dry the boat out by one bump.
 
 ## Drift
 
@@ -116,7 +116,7 @@ Sound check, on the title, plays the floating objects, obstacles and other gamep
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Left and Right arrows: hold to paddle the boat across the stream.
 - Left Shift and Right Shift: one hard stroke that way. These two keys stay the same if you change your bindings.

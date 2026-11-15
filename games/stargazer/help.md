@@ -8,13 +8,13 @@ Find stars in the night sky and trace each constellation in order to add it to y
 
 Left and Right sweep the listening point round the sky, one step of 5 degrees at a time. Up and Down raise and lower it, from the horizon to straight overhead.
 
-You start facing south, 40 degrees up. When you pass due north, east, south or west, the direction is spoken. S says where the point is, such as "Southwest, 40 degrees up".
+You start facing south, 40 degrees up. When you pass due north, east, south or west, the game names the direction. S says where the point is, such as "Southwest, 40 degrees up".
 
 ## Stars near the point
 
 You can hear stars within about 30 degrees of the listening point. Their sounds indicate direction, height and brightness. Sound check, on the title, plays these cues.
 
-When the point rests on a star, its name is spoken, such as "Betelgeuse, in Orion". A star that belongs to no pattern tonight is "a faint star". Faint stars are scattered differently each night.
+When the point rests on a star, the game names it, such as "Betelgeuse, in Orion". A star that belongs to no pattern tonight is "a faint star". Faint stars are scattered differently each night.
 
 ## Tracing a constellation
 
@@ -36,7 +36,7 @@ Ursa Major, Ursa Minor, Cassiopeia, Cepheus and Draco circle the pole star and a
 
 ## New constellations
 
-You start with the brightest few: the Big Dipper's Ursa Major, Cassiopeia, and one or two of the season's own. When your journal holds 2 constellations, more rise, and more again at 5. They can rise in the middle of a night. Their names are spoken when they rise. To fill the whole journal, come back in every season.
+You start with the brightest few: the Big Dipper's Ursa Major, Cassiopeia, and one or two of the season's own. When your journal holds 2 constellations, more rise, and more again at 5. They can rise in the middle of a night. The game names them as they rise. To fill the whole journal, come back in every season.
 
 ## Wonders
 
@@ -82,7 +82,7 @@ Sound check, on the title, plays each sound you need under the sky. Tutorial exp
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Left and Right arrows: sweep the listening point round the sky.
 - Up and Down arrows: raise and lower the point.

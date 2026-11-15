@@ -106,7 +106,7 @@ Pace sets how busy the almanac is, whether there are dangers, and whether glum s
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Left and Right: walk the lane, or move inside a place.
 - Up: go into a place, or a row further into the fields.

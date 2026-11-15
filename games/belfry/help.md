@@ -4,11 +4,11 @@
 
 The old bell ringer left a secret sequence of 4 bells, chosen from 6. This sequence is called a peal. Work out the bells and their order within 10 guesses.
 
-Each guess is a row of bells. Ring your row, and the apprentice answers with clues. If you use all 10 guesses, the secret sequence is read out. Nothing here is timed.
+Each guess is a row of bells. Ring your row, and the apprentice answers with clues. If you use all 10 guesses, the game gives the secret sequence. Nothing here is timed.
 
 ## The bells
 
-There are 6 bells, numbered 1 to 6. Bell 1, the treble, is the highest. Bell 6, the tenor, is the lowest. Whenever you pick a bell, it rings and its number and name are spoken, such as "Bell 3, middle high".
+There are 6 bells, numbered 1 to 6. Bell 1, the treble, is the highest. Bell 6, the tenor, is the lowest. Whenever you pick a bell, it rings and the game names it, such as "Bell 3, middle high".
 
 ## Building a row
 
@@ -20,7 +20,7 @@ Space rings your row. That uses one of your rows. After the bells, the apprentic
 
 Each bell of your row counts once at most. If the peal is 1, 1, 2, 2 and you ring 1, 2, 1, 1, the first bell is in place, and one more 1 and one 2 are misplaced: 1 in place, 2 misplaced.
 
-A row rings out over a second or two. Any key but Escape while it rings skips straight to the spoken answer.
+A row rings out over a second or two. Any key but Escape while it rings skips straight to the answer.
 
 ## Village and Plain
 
@@ -74,4 +74,4 @@ Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the l
 
 Number keys, on the briefing before a peal: play the sounds the peal needs. Enter or Space starts it.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

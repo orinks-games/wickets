@@ -24,7 +24,7 @@ The tabby cat wanders at random until it is 4 steps away, then chases like the g
 
 The grey cat wanders like the tabby cat and only joins the monthly challenge.
 
-The cat-close warning means a cat is within 2 steps. The first 3 times in a run, the warning is spoken too, such as "Ginger cat close, right." The direction is towards the cat. Go another way.
+The cat-close warning means a cat is within 2 steps. The first 3 times in a run, the warning also names the cat, such as "Ginger cat close, right." The direction is towards the cat. Go another way.
 
 ## Freezing
 
@@ -96,4 +96,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

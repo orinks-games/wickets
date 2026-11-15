@@ -594,7 +594,7 @@ fn the_help_document_ends_with_controls() {
     let help = cupids_quiver::HELP;
     assert!(help.contains("## About the game"));
     assert!(help.trim_end().ends_with(
-        "These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings."
+        "These are the default keys. If you change them in Settings, the game's instructions follow your bindings."
     ));
     let last = help.rsplit("\n## ").next().unwrap();
     assert!(last.starts_with("Controls"));

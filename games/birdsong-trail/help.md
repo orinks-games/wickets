@@ -22,7 +22,7 @@ The game says when you leave the path and when you come back to it. Brambles, a 
 
 ## Meeting a bird
 
-Walk toward a song. When you are within a few steps, the bird notices you. Its name is spoken. It sings its song to you alone. The other birds go quiet while it sings.
+Walk toward a song. When you are within a few steps, the bird notices you and sings its song to you alone. The other birds go quiet while it sings.
 
 Space, when no bird is singing to you, names the three birds nearest you, where they are and how far, and the trail's end. H names the nearest bird you have not befriended, where it is, and how to turn to face it.
 
@@ -30,11 +30,11 @@ Space, when no bird is singing to you, names the three birds nearest you, where 
 
 Your turn: Down is low, Space middle, Up high. Songs are 2 to 5 notes.
 
-If your answer matches, you befriend the bird. Otherwise, the bird sings again. You can try as often as you like. After two misses, its notes are spoken in words.
+If your answer matches, you befriend the bird. Otherwise, the bird sings again. You can try as often as you like. After two misses, the game names its notes.
 
-While a bird waits for your answer, R makes it sing again, and H speaks its notes in words, such as low, high, middle. Turning away or stepping off leaves the bird. Walk a little way off and come back, and it sings to you again.
+While a bird waits for your answer, R makes it sing again, and H names its notes, such as low, high, middle. Turning away or stepping off leaves the bird. Walk a little way off and come back, and it sings to you again.
 
-Turn on Spoken call-outs in Settings, from the title or the pause menu, to have the notes of every song spoken after it.
+Turn on Spoken call-outs in Settings, from the title or the pause menu, to have the notes of every song named after it.
 
 ## Seasons
 
@@ -107,7 +107,7 @@ Sound check, on the title, plays each sound you need on the trail: your whistle,
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Left and Right arrows: turn. In the migration count, change your count.
 - Up arrow: step forward. When a bird waits for your answer, the high note. In the migration count, count up.
@@ -116,6 +116,6 @@ These are the default keys. If you change them in Settings, the game's spoken in
 - Tab: head home. Press it twice. Any other key cancels.
 - S: status. The bird you are with, which way you face, and where the trail's end is. Press it again straight away for the trail and season and the birds befriended.
 - R: repeat. The bird sings again, or the last thing said is repeated. In the chorus, the song to find plays alone. In the count, the flock flies over again.
-- H: hint. Where the nearest new bird is and how to turn to it, or the notes of the song in words.
+- H: hint. Where the nearest new bird is and how to turn to it, or the notes of the song.
 - Escape: pause. The pause menu can resume, open settings or this help, go back to the title, or go back to the lobby. During a challenge, its leave row is Leave the challenge.
 - F1: what the keys do on the current screen.

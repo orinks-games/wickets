@@ -80,7 +80,7 @@ Your score is every point and bonus you earn. Leave the challenge, on the pause 
 
 ## Spoken call-outs
 
-The caller is a recorded voice that plays with the music. With spoken call-outs on, the game also speaks each step as it is called. It is off at the start. Switch it in Settings, from the title or the pause menu.
+The caller is a recorded voice that plays with the music. With spoken call-outs on, the game also names each step as it is called. It is off at the start. Switch it in Settings, from the title or the pause menu.
 
 ## Pausing
 
@@ -110,4 +110,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

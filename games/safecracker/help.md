@@ -8,7 +8,7 @@ Crack ten safes, from the office lockbox to the Crown vault. Turn the dial, list
 
 The dial runs from 0 to 99 and wraps round. Left turns it one number down and Right one number up. Hold either to keep turning. Up spins the dial ten numbers up and Down spins it ten numbers down.
 
-Use the dial-click cue to count individual numbers, the ten-detent cue to count tens, and the zero-notch cue to find zero. Tab speaks the number under the mark, and S gives the full status.
+Use the dial-click cue to count individual numbers, the ten-detent cue to count tens, and the zero-notch cue to find zero. Tab says the number under the mark, and S gives the full status.
 
 ## Finding a wheel's number
 
@@ -40,7 +40,7 @@ From the jeweller's safe on, the safes behave like real combination dials. Wheel
 
 From the bank manager's safe on, a night guard walks the corridor. The footsteps warn you he is approaching. When they stop, he is at the door listening. Keep still: do not turn the dial or set a wheel until you hear his footsteps walk away. Status, repeat, Tab and hints make no noise, so you can use them while he listens.
 
-The first noise he hears makes him suspicious: "He heard something!" He stays suspicious until the safe opens, and each time he comes back the game says so in words. Make a second noise while the guard listens and you are caught. A key held down as he stops counts only once: let go, and only a fresh press can make that second noise. On the bank manager's safe the game also tells you in words when he comes and goes. After that, listen for him, and press S if you are unsure where he is.
+The first noise he hears makes him suspicious: "He heard something!" He stays suspicious until the safe opens, and each time he comes back the game says so. Make a second noise while the guard listens and you are caught. A key held down as he stops counts only once: let go, and only a fresh press can make that second noise. On the bank manager's safe the game also says when he comes and goes. After that, listen for him, and press S if you are unsure where he is.
 
 ## Scoring and best times
 
@@ -102,4 +102,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

@@ -12,7 +12,7 @@ A lean grows by itself, the way a real wire tips you. Left and Right shift your 
 
 Step once you have returned to balance. The game warns you when you lean hard left or right. Lean all the way and you fall to the safety net.
 
-S, the status key, always says your lean in words.
+S, the status key, always says your lean.
 
 ## Walking
 
@@ -109,4 +109,4 @@ Sound check, on the title, lists and plays the sounds you need on the wire. Its 
 - Escape: pause. The pause menu can resume, open settings or this help, go back to the title, or go back to the lobby. During a challenge, its leave row is Leave the challenge.
 - F1: help for the current screen.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

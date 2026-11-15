@@ -14,7 +14,7 @@ Signal down: answer with the Down arrow.
 
 Ring back: answer with Space.
 
-The dispatcher always says the call aloud. Before the line opens, H plays every call with its key. Each answer key plays its own call, so you can learn them with nothing at stake.
+The dispatcher always says the call. Before the line opens, H plays every call with its key. Each answer key plays its own call, so you can learn them with nothing at stake.
 
 ## The answer window
 
@@ -86,4 +86,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

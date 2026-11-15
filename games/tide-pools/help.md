@@ -26,7 +26,7 @@ Lean in close and press Space just after a creature calls. You have about three 
 
 Space gathers nothing without a recent creature cue. If you are not leaning in, press Up to lean in first.
 
-The first time on a trip that a creature calls in your pool, its name is spoken. Tab names the last creature to call in your pool at any time.
+The first time on a trip that a creature calls in your pool, the game names it. Tab names the last creature to call in your pool at any time.
 
 ## Shy creatures
 
@@ -131,4 +131,4 @@ S says which calendar event you are playing.
 - F1: help for where you are right now.
 - Escape: pause, with Resume, Settings, Help, Back to the title and Back to the lobby. During a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

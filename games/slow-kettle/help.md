@@ -62,7 +62,7 @@ H gives a hint for what you are doing: teas on your shelf that suit the guest's 
 
 ## Spoken call-outs
 
-With spoken call-outs on, the kettle's heat is also spoken as it changes, such as "Soft hiss, about 80 degrees", and the steep's seconds every 5 seconds. Turn them off in Settings, from the title or the pause menu, to brew without them. Nothing changes in how a cup is judged.
+With spoken call-outs on, the game also names the kettle's heat as it changes, such as "Soft hiss, about 80 degrees", and the steep's seconds every 5 seconds. Turn them off in Settings, from the title or the pause menu, to brew without them. Nothing changes in how a cup is judged.
 
 ## Challenges
 
@@ -96,4 +96,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

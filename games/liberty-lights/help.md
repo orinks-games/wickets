@@ -127,9 +127,9 @@ On a controller, A is the main action: it plays the show, starts your count-in, 
 - Tab: play the show again.
 - R: repeat the instructions for where you are.
 - S: the level, how many fireworks, how many you have launched and the time since the go. Press it again straight away for the level's style, any twist, and your points so far.
-- H: a hint, the show described in words, for 15 points.
+- H: a hint, the show described, for 15 points.
 - F1: help for the current screen.
 - Up and Down: choose what Space does while you launch, a firework, take back, or finish.
 - Escape: pause, with help and a way back to the title, or out of a challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

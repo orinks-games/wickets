@@ -88,7 +88,7 @@ The title has these rows. Play, story mode. Blizzard story, which says locked un
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 In Gift Sort:
 
@@ -132,7 +132,7 @@ Down arrow: play the drum.
 
 Up arrow: play the horn.
 
-R: say the last call in words, with its beats.
+R: say the last call, with its beats.
 
 S: the minutes to midnight, the party energy, the score and the combo.
 

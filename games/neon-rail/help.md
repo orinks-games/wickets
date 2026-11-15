@@ -96,7 +96,7 @@ A challenge counts when the run ends, won or lost: the game reads your result, w
 
 ## Special nights
 
-Ghost cars, from 17 October to Halloween and the day after: in the guided run, a Black Sky Run, the endless rail, the challenge corridor and a cold start, flow vehicles become ghost cars. Meet them as usual for the same score. The run's briefing names them in words, the status key names the night, and the hint key calls them ghost cars. Ghost cars do not appear in the daily, weekly or monthly challenges.
+Ghost cars, from 17 October to Halloween and the day after: in the guided run, a Black Sky Run, the endless rail, the challenge corridor and a cold start, flow vehicles become ghost cars. Meet them as usual for the same score. The run's briefing names them, the status key names the night, and the hint key calls them ghost cars. Ghost cars do not appear in the daily, weekly or monthly challenges.
 
 Friday night run, on the last Friday of every month: a row of its own on the title. On other days the row stays in its place, locked, and says when it opens. Three sectors made from that Friday's date, the same for every pilot, on a standard skimmer: a salvage stretch, one more route, then extraction. Between sectors you fit an upgrade, but the route is fixed. Salvage comes as cargo crates, each worth double. It keeps its own board: its score does not count toward your best score, it pays no credits, parts or intel, and your rank and story stay as they were. Once that Friday is over, Play again on the results says so and does not start a run.
 
@@ -132,7 +132,7 @@ Story, tutorial and debrief text comes a page at a time. Enter reads the next pa
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Left and Right arrows: shift one lane. A and D also work.
 - Space: boost, for just under a second. It recharges in five seconds.

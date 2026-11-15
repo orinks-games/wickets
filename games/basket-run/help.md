@@ -113,4 +113,4 @@ When a run ends, the results give your score, whether it is your best, and for a
 - F1: help for the current screen.
 - Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

@@ -215,11 +215,11 @@ to another key or controller button.
 The arrow keys move, aim or choose.
 Space is the main action.
 Tab is the second action.
-S speaks your status, such as score and lives.
+S gives your status, such as score and lives.
 R repeats the last prompt or pattern.
 H gives a hint, where the game has one.
 
 Some games add keys of their own, and each game's help names them.
 
 These are the default keys. If you change them in Settings, the game's
-spoken instructions follow your bindings.
+instructions follow your bindings.

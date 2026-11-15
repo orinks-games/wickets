@@ -41,17 +41,17 @@ A plant goes from seed, to sprout, to growing, to in bloom, to ripe.
 
 Tab harvests a ripe plant. It goes back to blooming and ripens again later.
 
-Plants only grow while their soil is damp but not waterlogged, and they are free of aphids. A thirsty plant grows at half speed, and so does a leggy one. A seed counts as a plant here: keep it moist, and its name is spoken when it gets thirsty.
+Plants only grow while their soil is damp but not waterlogged, and they are free of aphids. A thirsty plant grows at half speed, and so does a leggy one. A seed counts as a plant here: keep it moist, and the game names it when it gets thirsty.
 
 ## What plants need
 
-- Thirst. A thirsty plant's name and planter are spoken. Space waters it.
-- Watering moist soil waterlogs it. The plant stops growing and drops out of the garden song. Each extra watering keeps it soggy for longer. The soil drains by itself, faster on a sunny day, and the plant's name is spoken when it grows again. Water a plant when it is thirsty, not every time you pass it.
+- Thirst. The game names a thirsty plant and its planter. Space waters it.
+- Watering moist soil waterlogs it. The plant stops growing and drops out of the garden song. Each extra watering keeps it soggy for longer. The soil drains by itself, faster on a sunny day, and the game names the plant when it grows again. Water a plant when it is thirsty, not every time you pass it.
 - Reviving. A plant left in bone-dry soil for a while wilts and stops playing. Nothing is lost: water it and it lifts its leaves again.
 - Aphids stop a plant growing. Tab picks them off at its planter.
 - Pruning. A plant in bloom sometimes gets leggy and grows slowly. Tab prunes it.
 
-When something needs you, its name and planter are spoken. H points you straight to it.
+When something needs you, the game names it and its planter. H points you straight to it.
 
 ## Harmony
 
@@ -70,7 +70,7 @@ The new seeds are the harvested plant's species, with traits from both parents a
 
 Each mix of traits has its own name, such as Copper Moon tomato. The name's first word comes from thirst and pace, and its second from the instrument and double harvests. A plain seed has neither. Every species has 54 varieties, 540 in all, and a cross of two of your varieties can turn up ones you have not found.
 
-When you find a new variety, its name and traits are spoken. It goes into your seed packet straight away. Harvest one variety 5 times and it becomes an heirloom.
+When you find a new variety, the game names it and its traits. It goes into your seed packet straight away. Harvest one variety 5 times and it becomes an heirloom.
 
 The seed shed, on the title menu, lists every variety you have found under Varieties found. Enter on one plays its part. Varieties are kept even if you start your garden over. Challenge gardens grow plain seeds only, and nothing crosses there.
 
@@ -137,7 +137,7 @@ Challenges are separate small gardens, the same for every player, grown from the
 
 There are four twists. Heat wave: the soil dries much faster and no rain comes. Drizzly days: a shower every day, but slower growing. Aphid season: far more aphids. Green thumb: faster growing, and a little more thirst.
 
-When the goal is met, the garden celebrates and the challenge ends. If the days run out first, the garden closes for the season and your score still counts. Score: 5 for each harvest, 2 for each pest picked, 5 for each part of your fullest harmony, and 100 for meeting the goal, plus 10 for every day left over. Your best and your streak are read out at the end, and in the challenges menu. After the results, a short menu offers Play this challenge again, Hear the results again, and Back to the challenges. Escape does the same as Back to the challenges.
+When the goal is met, the garden celebrates and the challenge ends. If the days run out first, the garden closes for the season and your score still counts. Score: 5 for each harvest, 2 for each pest picked, 5 for each part of your fullest harmony, and 100 for meeting the goal, plus 10 for every day left over. Your best and your streak come at the end, and in the challenges menu. After the results, a short menu offers Play this challenge again, Hear the results again, and Back to the challenges. Escape does the same as Back to the challenges.
 
 ## Sound check
 
@@ -145,7 +145,7 @@ Sound check, on the title menu, plays the gameplay cues and each plant's part in
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Arrow keys: step between planters. Up and Down change row. Left and Right change planter. Row 1 is the far row, ahead of you, and planter 1 is on the left.
 - Space: water the plant under you. Watering soil that is already moist waterlogs it. On empty soil, Space opens your seed packet so you can plant something.

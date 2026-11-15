@@ -55,7 +55,7 @@ Act as soon as a dish needs you for a perfect score. A little later earns a good
 
 Pressing Space at a dish that isn't ready yet is a fumble: 5 points off that dish.
 
-Each dish's quality, out of 100, is the average of its steps' scores, less its fumbles. When a dish's last step is done, it is served. Its quality is spoken.
+Each dish's quality, out of 100, is the average of its steps' scores, less its fumbles. When a dish's last step is done, it is served and the game gives its quality.
 
 ## Stars and points
 
@@ -133,9 +133,9 @@ When the dinner is served, it is kept as that year's keepsake: your best points,
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
-- Left and Right arrows: move between the stations in use. The station's name and dish are spoken. You cannot move beyond either end.
+- Left and Right arrows: move between the stations in use. Each move names the station and its dish. You cannot move beyond either end.
 - Number keys 1 to 5: jump straight to a station. These keys belong to this game alone, and Settings cannot change them.
 - Space: the main action at the station in front of you. It starts a dish, stirs, whisks, flips, bastes, turns the tray, pulls out, drains or plates, whatever the dish needs next. On the cutting board, press it once per stroke.
 - Up arrow: describe the dish in front of you: its step, what comes next and when.

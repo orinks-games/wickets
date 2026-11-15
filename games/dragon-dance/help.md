@@ -38,7 +38,7 @@ The parade has 8 streets, from Market Row to The Grand Avenue. Each is faster an
 
 ## Practice street
 
-Practice street is short and slow, with every call spoken. Stumbles cost nothing, and nothing is saved.
+Practice street is short and slow, with every call named. Stumbles cost nothing, and nothing is saved.
 
 ## Lunar New Year on the real calendar
 
@@ -62,7 +62,7 @@ Every player gets the same challenges. The daily is one street of 4 lanes and 24
 
 ## Spoken call-outs
 
-Spoken call-outs, a row in Settings from the title or the pause menu, switches the spoken calls in play. On, a voice names the pearl's lane when it moves, each red envelope, lantern and firecracker string with its lane as it starts to come, and each cheering shop. Off, none of these are spoken. Practice street always speaks its calls. Status, Up and the hint work either way.
+Spoken call-outs, a row in Settings from the title or the pause menu, switches the spoken calls in play. On, a voice names the pearl's lane when it moves, each red envelope, lantern and firecracker string with its lane as it starts to come, and each cheering shop. Off, none of these are named. Practice street always names its calls. Status, Up and the hint work either way.
 
 ## Status, what is coming and hints
 
@@ -96,4 +96,4 @@ Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the l
 
 Number keys, on the briefing before a street: play the sounds the street needs. Enter or Space starts it.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

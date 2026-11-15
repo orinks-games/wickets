@@ -12,7 +12,7 @@ Up, Down, Left and Right walk one step at a time. Up is always north. Hold a key
 
 ## Finding fireflies
 
-Each firefly's cue marks its blink. A tone in your left ear is to your left, a tone in both ears is ahead or behind, and a quiet one is far away. The in-reach cue means a firefly is close enough to catch. H names the way to the nearest glow in words, such as "5 metres ahead and to the left", and plays its tone from where it is.
+Each firefly's cue marks its blink. A tone in your left ear is to your left, a tone in both ears is ahead or behind, and a quiet one is far away. The in-reach cue means a firefly is close enough to catch. H names the way to the nearest glow, such as "5 metres ahead and to the left", and plays its tone from where it is.
 
 ## Catching a firefly
 
@@ -78,4 +78,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
