@@ -1,13 +1,14 @@
 """Write Freewheel's title music into `sound-specs/freewheel.json`.
 
-Freewheel is a courier bike ride through a city, so its title is a bright
-city-pop tune for a sunny morning on the bike: fingerstyle bass and a
-light kit in the middle, a palm-muted guitar and an electric piano a
-little left, and the tune a little right, whistled the first time, on a
-clean electric guitar in the bridge, then whistle and glockenspiel
-together. Like all of Wicket's newer music it is made for blal1's genny
-from short chord and tune tables, with a light room (reverb mix 0.1).
-The piece is original.
+Freewheel's title is a modern retro track: chiptune voices from genny's
+sound-chip models over a modern kit, pad and sub. A NES pulse plays the
+tune a little right, a Game Boy pulse runs arpeggios a little left, and
+the NES triangle bounces octaves under a sine sub in the middle. The
+bridge hands the tune to a Commodore 64 SID saw, and the last part has
+the NES pulse with the Game Boy echoing an octave up. Like all of
+Wicket's newer music it is made for blal1's genny from short chord and
+tune tables, with a light room (reverb mix 0.1) and the parts panned
+apart. The piece is original.
 
 It replaces `music/title` by its `out` and leaves the rest of the spec
 as written. Then render with:
@@ -15,7 +16,7 @@ as written. Then render with:
     python tools/freewheel_music.py
     python tools/render_sounds.py freewheel
 
-- music/title: 96 beats at 132 a minute, about 44 seconds in G, looping
+- music/title: 96 beats at 140 a minute, about 41 seconds in G, looping
   cleanly with "loop": "fold" at about -26.5 LUFS, like the other titles.
 """
 
@@ -34,11 +35,9 @@ def bars(*items: str) -> str:
 
 
 # Where each part sits, -1 left to 1 right: accompaniment a little left,
-# tunes a little right, bass and drums in the middle.
+# tunes a little right, bass, pad and drums in the middle.
 PAN = {
-    "muted_guitar": -0.35, "rhodes": -0.25,
-    "whistle": 0.3, "electric_guitar": 0.3, "glockenspiel": 0.4,
-    "shaker": 0.15,
+    "gb_pulse": -0.35, "nes_pulse": 0.3, "sid": 0.3, "hat808": 0.15,
 }
 
 
@@ -67,65 +66,91 @@ def group(name: str, at: float, *layers: dict) -> dict:
 
 # Light reverb only: the space comes from the panning.
 ROOM = [{"type": "reverb", "mix": 0.1, "size": 0.45}, {"type": "compressor", "threshold": -18, "ratio": 2},
-        {"type": "lowpass", "cutoff": 8000}]
+        {"type": "lowpass", "cutoff": 9000}]
 
 # --- the changes, in G ---------------------------------------------------------
 
-G, BM7, CM7, D = "[B3,D4,G4]", "[A3,D4,F#4]", "[B3,E4,G4]", "[A3,D4,F#4,A4]"
-EM7, AM7, C, BM = "[G3,B3,D4,E4]", "[G3,C4,E4]", "[G3,C4,E4,G4]", "[F#3,B3,D4]"
-EM, D7, GG = "[G3,B3,E4]", "[F#3,C4,D4]", "[G3,B3,D4,G4]"
+# Each chord as its notes, low to high, for the arpeggios and the pad.
+CHORD = {
+    "G": ["G3", "B3", "D4"], "Bm7": ["F#3", "A3", "B3", "D4"], "Cmaj7": ["E3", "G3", "B3", "C4"],
+    "D": ["F#3", "A3", "D4"], "Em7": ["E3", "G3", "B3", "D4"], "Am7": ["E3", "G3", "A3", "C4"],
+    "C": ["E3", "G3", "C4"], "Bm": ["F#3", "B3", "D4"], "Em": ["E3", "G3", "B3"],
+    "D7": ["F#3", "A3", "C4", "D4"],
+}
+A_CHORDS = ["G", "Bm7", "Cmaj7", "D", "Em7", "Am7", "Cmaj7", "D"]
+B_CHORDS = ["C", "D", "Bm", "Em", "Am7", "D", "G", "D7"]
+ROOT_NOTE = {"G": "G", "Bm7": "B", "Cmaj7": "C", "D": "D", "Em7": "E", "Am7": "A", "C": "C",
+             "Bm": "B", "Em": "E", "D7": "D"}
+# The bass octave each root sits in, kept between E1 and D2.
+LOW = {"G": "G1", "A": "A1", "B": "B1", "C": "C2", "D": "D2", "E": "E2"}
 
-A_CHORDS = [G, BM7, CM7, D, EM7, AM7, CM7, D]
-B_CHORDS = [C, D, BM, EM, AM7, D, GG, D7]
-
-# Fingerstyle bass: root on one, a push into three, the fifth, a step on.
-A_BASS = bars("G2:1.5 G2:.5 D3:1 G2:1", "B1:1.5 B1:.5 F#2:1 A2:1", "C2:1.5 C2:.5 G2:1 E2:1",
-              "D2:1.5 D2:.5 A2:1 F#2:1", "E2:1.5 E2:.5 B2:1 E2:1", "A1:1.5 A1:.5 E2:1 G2:1",
-              "C2:1.5 C2:.5 G2:1 C2:1", "D2:1 D2:1 E2:1 F#2:1")
-B_BASS = bars("C2:1.5 C2:.5 G2:1 E2:1", "D2:1.5 D2:.5 A2:1 F#2:1", "B1:1.5 B1:.5 F#2:1 D2:1",
-              "E2:1.5 E2:.5 B2:1 G2:1", "A1:1.5 A1:.5 E2:1 C2:1", "D2:1.5 D2:.5 A2:1 C2:1",
-              "G1:1.5 G1:.5 D2:1 B1:1", "D2:1 E2:1 F#2:1 A2:1")
-
-# The title's tune: whistled, leaping up and coasting down.
+# The title's tune: leaping up and coasting down.
 A_TUNE = bars("D5:.5 G5:.5 B5:1 A5:.5 G5:.5 D5:1", "F#5:1.5 E5:.5 D5:1 A5:1",
               "G5:.5 E5:.5 G5:.5 B5:.5 A5:1 G5:1", "F#5:3 -:1",
               "B5:.5 A5:.5 G5:.5 E5:.5 G5:1 B5:1", "C6:1.5 B5:.5 A5:1 E5:1",
               "G5:.5 A5:.5 B5:.5 G5:.5 E5:1 D5:1", "E5:1 F#5:1 A5:1 -:1")
-# The bridge's own tune, for the electric guitar.
+# The bridge's own tune, for the SID.
 B_TUNE = bars("E5:1 G5:.5 E5:.5 C5:2", "F#5:1 A5:.5 F#5:.5 D5:2",
               "D5:.5 F#5:.5 B5:1 A5:1 F#5:1", "G5:3 E5:1",
               "C5:1 E5:1 G5:1 A5:1", "F#5:1.5 E5:.5 D5:1 C5:1",
               "B4:1 D5:1 G5:2", "F#5:1 E5:1 D5:1 C5:1")
 
 
-def chop(chords: list[str]) -> str:
-    """Muted guitar on every off beat."""
-    return bars(*(f"-:.5 {c}:.5 -:.5 {c}:.5 -:.5 {c}:.5 -:.5 {c}:.5" for c in chords))
+def up(note: str, octaves: int) -> str:
+    return note[:-1] + str(int(note[-1]) + octaves)
 
 
-def keys(chords: list[str]) -> str:
-    """Electric piano on one and pushed into three."""
-    return bars(*(f"{c}:1.5 {c}:2.5" for c in chords))
+def arps(chords: list[str]) -> str:
+    """Sixteenths up and down each chord an octave up, the chip way."""
+    out = []
+    for name in chords:
+        notes = [up(n, 1) for n in CHORD[name]]
+        ring = notes + [up(notes[0], 1)] + notes[-2:0:-1] if len(notes) == 3 else notes + notes[-2:0:-1]
+        run = [ring[i % len(ring)] for i in range(16)]
+        out.append(" ".join(f"{n}:.25" for n in run))
+    return bars(*out)
 
 
-KICK = "x-------x-x-----"
+def octaves(chords: list[str]) -> str:
+    """Triangle bass bouncing root and octave in eighths."""
+    out = []
+    for name in chords:
+        low = LOW[ROOT_NOTE[name]]
+        hi = up(low, 1)
+        out.append(" ".join(f"{n}:.5" for n in [low, low, hi, low, low, hi, low, hi]))
+    return bars(*out)
+
+
+def subs(chords: list[str]) -> str:
+    """The sine sub on each bar's root, pushed into the and of two."""
+    return bars(*(f"{LOW[ROOT_NOTE[c]]}:1.5 {LOW[ROOT_NOTE[c]]}:2.5" for c in chords))
+
+
+def pads(chords: list[str]) -> str:
+    return bars(*(f"[{','.join(CHORD[c])}]:4" for c in chords))
+
+
+KICK = "x-----x---x-----"
 SNARE = "----x-------x---"
-HATS = "x-x-x-x-x-x-x-x-"
-SHAKE = "-x-x-x-x-x-x-x-x"
+HATS = "x-xxx-x-x-xxx-x-"
 
-RHODES = {"tremolo": 0.15, "decay": 1.2}
-GUITAR = {"tone": 3200}
+LEAD = {"duty": 1, "vib": 0.25, "vib_delay": 0.2}
+ECHO = {"duty": 2, "vib": 0.15}
+ARP = {"duty": 0}
+SID = {"wave": "saw", "a": 0, "d": 9, "s": 8, "r": 6, "cutoff": 1800, "res": 6, "vib": 0.2}
+PAD = {"attack": 0.6, "release": 1.0, "cutoff": 1400}
 
 
-def rhythm(chords: list[str], bass: str, n_bars: int, hats: float = 0.07) -> list[dict]:
+def rhythm(chords: list[str], n_bars: int, arp_gain: float = 0.1) -> list[dict]:
     return [
-        seq("finger_bass", bass, 0.5, 0.55),
-        pattern("kick", KICK, n_bars, 0.32),
-        pattern("snare", SNARE, n_bars, 0.16),
-        pattern("hihat", HATS, n_bars, hats),
-        pattern("shaker", SHAKE, n_bars, 0.06),
-        seq("muted_guitar", chop(chords), 0.2, 0.4),
-        seq("rhodes", keys(chords), 0.16, 0.4, params=RHODES),
+        seq("nes_triangle", octaves(chords), 0.4, 0.6),
+        seq("sub", subs(chords), 0.3, 0.5),
+        pattern("kick", KICK, n_bars, 0.36),
+        pattern("snare808", SNARE, n_bars, 0.2),
+        pattern("clap", SNARE, n_bars, 0.08),
+        pattern("hat808", HATS, n_bars, 0.06),
+        seq("gb_pulse", arps(chords), arp_gain, 0.4, params=ARP),
+        seq("pad", pads(chords), 0.1, 0.4, params=PAD, fx=[{"type": "width", "amount": 0.6}]),
     ]
 
 
@@ -134,23 +159,23 @@ def title() -> dict:
         "out": "music/title.wav",
         "genny": "blal1",
         "loudness": -26.5,
-        "bpm": 132,
+        "bpm": 140,
         "beats": 96,
         "loop": "fold",
         "_arrangement": (
-            "96 beats in G, bright city pop: fingerstyle bass, kick, snare, hats and a shaker in the "
-            "middle, muted guitar on the off beats and an electric piano on the left. A the title's own "
-            "tune whistled on the right; B the bridge's tune on a clean electric guitar; A2 whistle and "
-            "glockenspiel together."
+            "96 beats in G, modern retro: NES triangle octaves over a sine sub, a modern kick, 808 snare "
+            "and clap and 808 hats in the middle, Game Boy pulse arpeggios on the left and a wide pad. "
+            "A the title's own tune on a NES pulse on the right; B the bridge's tune on a C64 SID saw; A2 "
+            "the NES pulse with the Game Boy an octave up."
         ),
         "layers": [
-            group("A", 0, *rhythm(A_CHORDS, A_BASS, 8),
-                  seq("whistle", A_TUNE, 0.28, 0.5)),
-            group("B", 32, *rhythm(B_CHORDS, B_BASS, 8, hats=0.05),
-                  seq("electric_guitar", B_TUNE, 0.24, 0.5, params=GUITAR)),
-            group("A2", 64, *rhythm(A_CHORDS, A_BASS, 8),
-                  seq("whistle", A_TUNE, 0.26, 0.5),
-                  seq("glockenspiel", A_TUNE, 0.1, 0.4, transpose=12)),
+            group("A", 0, *rhythm(A_CHORDS, 8),
+                  seq("nes_pulse", A_TUNE, 0.22, 0.6, params=LEAD)),
+            group("B", 32, *rhythm(B_CHORDS, 8, arp_gain=0.08),
+                  seq("sid", B_TUNE, 0.2, 0.6, params=SID)),
+            group("A2", 64, *rhythm(A_CHORDS, 8),
+                  seq("nes_pulse", A_TUNE, 0.2, 0.6, params=LEAD),
+                  seq("gb_pulse", A_TUNE, 0.08, 0.5, pan=0.4, transpose=12, params=ECHO)),
         ],
         "fx": ROOM,
     }
