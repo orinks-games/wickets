@@ -7,7 +7,6 @@ corner: slow, swung and warm. The set:
 - rhodes, a Rhodes electric piano comping the chords, a little left;
 - upright_bass, walking, in the middle;
 - vibraphone, the tune, a little right;
-- sax, the bridge's tune, and long notes under the tune near the win, right;
 - strings, a soft section holding the chords wide behind, near the win;
 - a kit played with brushes: a ride cymbal's swing, a brushed snare on two
   and four, and the hi-hat's foot.
@@ -17,12 +16,12 @@ chord and tune tables, with a light room (reverb mix 0.12) and the parts
 panned apart. The pieces and their tunes are original.
 
 - music/title: 96 beats at 76 a minute, about 76 seconds in F: the
-  vibraphone's tune, then the sax's bridge, looping with "loop": "fold".
+  vibraphone's tune, then its bridge from C minor, looping with "loop": "fold".
 - score/base, score/melody, score/pulse, score/lift: the table's music,
   160 beats at 72 a minute, about 133 seconds, four stems of one piece that
   start together and loop. The base (Rhodes and bass) plays from the deal;
   the tune joins as the first cards reach the foundations; the brushes and
-  ride as they fill; the sax and strings near the win. Stems share one
+  ride as they fill; the strings near the win. Stems share one
   gain, so together they make the full piece.
 - music/pause: 64 beats at 66 a minute, about 58 seconds: the Rhodes, the
   bass and a soft vibraphone tune, with no drums.
@@ -56,7 +55,7 @@ def bars(*items: str) -> str:
 
 # Where each part sits, -1 left to 1 right: accompaniment left, tunes
 # right, bass, strings and snare in the middle.
-PAN = {"rhodes": -0.3, "vibraphone": 0.3, "sax": 0.35, "ride": 0.25, "hihat": -0.2, "brush": -0.05}
+PAN = {"rhodes": -0.3, "vibraphone": 0.3, "ride": 0.25, "hihat": -0.2, "brush": -0.05}
 
 
 def seq(inst: str, steps: str, gain: float, vel: float = 0.5, pan: float | None = None, **extra) -> dict:
@@ -93,23 +92,22 @@ def group(name: str, at: float, *layers: dict) -> dict:
 ROOM = [{"type": "reverb", "mix": 0.12, "size": 0.5}, {"type": "compressor", "threshold": -18, "ratio": 2},
         {"type": "lowpass", "cutoff": 9000}]
 
-# --- the chords: the Rhodes voicing, the bass's root, third and fifth, and a
-# guide tone for the long notes under the tune
+# --- the chords: the Rhodes voicing, and the bass's root, third and fifth
 CHORD = {
-    "Fmaj7": (["A3", "C4", "E4"], ["F2", "A2", "C3"], "A4"),
-    "Dm7": (["F3", "A3", "C4"], ["D2", "F2", "A2"], "C5"),
-    "Gm7": (["F3", "Bb3", "D4"], ["G2", "Bb2", "D3"], "Bb4"),
-    "C7": (["E3", "Bb3", "D4"], ["C2", "E2", "G2"], "Bb4"),
-    "Am7": (["G3", "C4", "E4"], ["A2", "C3", "E3"], "G4"),
-    "D7": (["F#3", "C4", "E4"], ["D2", "F#2", "A2"], "F#4"),
-    "G7": (["F3", "B3", "E4"], ["G2", "B2", "D3"], "F4"),
-    "Bbmaj7": (["A3", "D4", "F4"], ["Bb2", "D3", "F3"], "A4"),
-    "Bbm6": (["G3", "Db4", "F4"], ["Bb2", "Db3", "F3"], "Db5"),
-    "F7": (["A3", "Eb4", "G4"], ["F2", "A2", "C3"], "Eb5"),
-    "Eb7": (["G3", "Db4", "F4"], ["Eb2", "G2", "Bb2"], "Db5"),
-    "Em7b5": (["G3", "Bb3", "D4"], ["E2", "G2", "Bb2"], "Bb4"),
-    "A7": (["G3", "C#4", "E4"], ["A2", "C#3", "E3"], "C#5"),
-    "Cm7": (["G3", "Bb3", "Eb4"], ["C2", "Eb2", "G2"], "Eb5"),
+    "Fmaj7": (["A3", "C4", "E4"], ["F2", "A2", "C3"]),
+    "Dm7": (["F3", "A3", "C4"], ["D2", "F2", "A2"]),
+    "Gm7": (["F3", "Bb3", "D4"], ["G2", "Bb2", "D3"]),
+    "C7": (["E3", "Bb3", "D4"], ["C2", "E2", "G2"]),
+    "Am7": (["G3", "C4", "E4"], ["A2", "C3", "E3"]),
+    "D7": (["F#3", "C4", "E4"], ["D2", "F#2", "A2"]),
+    "G7": (["F3", "B3", "E4"], ["G2", "B2", "D3"]),
+    "Bbmaj7": (["A3", "D4", "F4"], ["Bb2", "D3", "F3"]),
+    "Bbm6": (["G3", "Db4", "F4"], ["Bb2", "Db3", "F3"]),
+    "F7": (["A3", "Eb4", "G4"], ["F2", "A2", "C3"]),
+    "Eb7": (["G3", "Db4", "F4"], ["Eb2", "G2", "Bb2"]),
+    "Em7b5": (["G3", "Bb3", "D4"], ["E2", "G2", "Bb2"]),
+    "A7": (["G3", "C#4", "E4"], ["A2", "C#3", "E3"]),
+    "Cm7": (["G3", "Bb3", "Eb4"], ["C2", "Eb2", "G2"]),
 }
 
 NAMES = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"]
@@ -193,14 +191,6 @@ def two_feel(chords: list[str]) -> str:
     return bars(*out)
 
 
-def guide(chords: list[str]) -> str:
-    out = []
-    for bar in chords:
-        a, b = halves(bar)
-        out.append(f"{CHORD[a][2]}:4" if a == b else f"{CHORD[a][2]}:2 {CHORD[b][2]}:2")
-    return bars(*out)
-
-
 def held(chords: list[str]) -> str:
     out = []
     for bar in chords:
@@ -250,7 +240,6 @@ PAUSE_TUNE = bars(
     "Bb4:1 D5:1 F5:2", "E5:2 Bb4:2", "A4:4", "-:4")
 
 RHODES = {"tremolo": 0.2, "decay": 1.4}
-SAX = {"breath": 0.15}
 STRINGS = {"attack": 0.8, "release": 1.2}
 
 
@@ -264,7 +253,7 @@ def title() -> dict:
         "loop": "fold",
         "_arrangement": (
             "96 beats in F, a late-night jazz trio: Rhodes comping on the left, a walking upright bass, "
-            "the vibraphone's tune on the right, ride and brushes. The bridge, from C minor, is the sax's."
+            "the vibraphone's tune on the right, ride and brushes, then a bridge from C minor."
         ),
         "layers": [
             group("A", 0,
@@ -275,7 +264,7 @@ def title() -> dict:
             group("B", 64,
                   seq("rhodes", comp(BRIDGE), 0.27, 0.4, params=RHODES),
                   seq("upright_bass", walk_into(BRIDGE, "Fmaj7"), 0.23, 0.5),
-                  seq("sax", BRIDGE_TUNE, 0.3, 0.5, params=SAX),
+                  seq("vibraphone", BRIDGE_TUNE, 0.34, 0.5),
                   *kit(8)),
         ],
         "fx": ROOM,
@@ -288,21 +277,15 @@ STEM_GAIN = 0.49
 
 
 def stem_layers(stem: str, section: str, chords: list[str], tune: str, nxt: str) -> list[dict]:
-    bridge = section == "B"
     if stem == "base":
         return [seq("rhodes", comp(chords), 0.27, 0.4, params=RHODES),
                 seq("upright_bass", walk_into(chords, nxt), 0.23, 0.5)]
     if stem == "melody":
-        if bridge:
-            return [seq("sax", tune, 0.3, 0.5, params=SAX)]
         return [seq("vibraphone", tune, 0.34, 0.5)]
     if stem == "pulse":
         return kit(len(chords))
     if stem == "lift":
-        layers = [seq("strings", held(chords), 0.05, 0.35, params=STRINGS)]
-        if not bridge:
-            layers.append(seq("sax", guide(chords), 0.13, 0.4, transpose=-12, params=SAX))
-        return layers
+        return [seq("strings", held(chords), 0.08, 0.35, params=STRINGS)]
     raise ValueError(stem)
 
 
