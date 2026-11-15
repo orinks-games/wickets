@@ -753,6 +753,7 @@ fn a_finished_daily_counts_its_targets_and_starts_a_streak() {
             "Play this daily challenge again",
             "Hear the results again",
             "Your aquarium",
+            "Make a sound file of this run's song",
             "Back to the challenges",
         ]
     );
@@ -1020,6 +1021,7 @@ fn results_back_row_matches_escape() {
             "Play again",
             "Hear the results again",
             "Your aquarium",
+            "Make a sound file of this run's song",
             "Back to the title",
         ]
     );

@@ -349,6 +349,11 @@ impl HamletScreen {
     fn finish(&mut self, ctx: &mut Ctx<Parlor>) {
         self.done = true;
         self.stop_sounds(ctx);
+        // A challenge's results offer to save the song; a day at home is
+        // told about it as the hamlet closes.
+        if self.challenge.is_some() {
+            parlor_core::songs::end(ctx, crate::ID);
+        }
         let (score, met, why) = {
             let h = self.h.borrow();
             (h.score(), h.goal_met, h.score_line())
@@ -525,6 +530,7 @@ impl State<Parlor> for HamletScreen {
             return self.resume(ctx);
         }
         self.entered = true;
+        parlor_core::songs::begin(ctx);
         self.settings(ctx);
         self.start_sounds(ctx);
         let phase = self.h.borrow().phase;
@@ -552,6 +558,7 @@ impl State<Parlor> for HamletScreen {
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
         self.keep(ctx);
+        parlor_core::songs::end_and_tell(ctx, crate::ID);
         self.stop_sounds(ctx);
     }
 

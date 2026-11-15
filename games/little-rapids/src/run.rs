@@ -470,6 +470,7 @@ impl RunScreen {
     fn finish(&mut self, ctx: &mut Ctx<Parlor>) {
         self.done = true;
         self.stop_loops(ctx);
+        parlor_core::songs::end(ctx, crate::ID);
         ctx.audio.set_bed(None);
         let mouth = self.run.reached_mouth();
         ctx.audio.play_music(
@@ -675,6 +676,7 @@ impl State<Parlor> for RunScreen {
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         self.build(ctx);
+        parlor_core::songs::begin(ctx);
         sound::on_the_water(ctx);
         let line = self.opening_line(ctx);
         self.run
@@ -685,6 +687,7 @@ impl State<Parlor> for RunScreen {
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
         self.stop_loops(ctx);
+        parlor_core::songs::end(ctx, crate::ID);
         ctx.audio.set_bed(None);
     }
 

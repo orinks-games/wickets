@@ -432,7 +432,7 @@ fn level_20_plays_every_firework_and_opens_the_finale() {
     assert!(summary.contains("The grand finale is open"));
     assert!(played(&h, "liberty-lights/music/finale"));
     assert!(Progress::load(&mut h.app.ctx).finale_open());
-    assert_eq!(h.spoken()[1], "Play again. 1 of 4.");
+    assert_eq!(h.spoken()[1], "Play again. 1 of 5.");
     goto(&mut h, "Back to the title");
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), "liberty_lights");
@@ -482,7 +482,7 @@ fn the_grand_finale_runs_until_a_round_fails() {
         "{:?}",
         h.spoken()
     );
-    assert_eq!(h.spoken()[1], "Next round. 1 of 4.");
+    assert_eq!(h.spoken()[1], "Next round. 1 of 5.");
     h.clear();
     h.press(Key::Return);
     assert!(h.spoken()[0].starts_with("Grand finale, round 2."));

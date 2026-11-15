@@ -251,12 +251,17 @@ impl<S: State<Parlor>> LiveScreen for LiveCell<S> {
 /// log.
 fn unspoken(ctx: &mut Ctx<Parlor>, f: impl FnOnce(&mut Ctx<Parlor>)) {
     let speech = std::mem::replace(&mut ctx.speech, Box::new(hearken::speech::NullSpeech));
-    let (lines, said) = (ctx.transcript.len(), ctx.said);
+    let said = ctx.said;
     let level = log::max_level();
     log::set_max_level(log::LevelFilter::Off);
     f(ctx);
     log::set_max_level(level);
-    ctx.transcript.truncate(lines);
+    // Drop the lines by count, not back to the old length: a transcript at
+    // Hearken's cap drops its oldest line for each new one, so its length
+    // never changes and the unspoken lines would stay.
+    let added = usize::try_from(ctx.said - said).unwrap_or(usize::MAX);
+    let keep = ctx.transcript.len().saturating_sub(added);
+    ctx.transcript.truncate(keep);
     ctx.said = said;
     ctx.speech = speech;
 }
@@ -326,6 +331,7 @@ impl<S: State<Parlor> + 'static> Live<S> {
 pub struct Lesson {
     id: &'static str,
     name: String,
+    lead: Option<String>,
     intro: String,
     steps: Vec<Step>,
     outro: String,
@@ -343,6 +349,7 @@ impl Lesson {
         Lesson {
             id,
             name: name.to_string(),
+            lead: None,
             intro: intro.into(),
             steps: Vec::new(),
             outro: String::new(),
@@ -355,6 +362,13 @@ impl Lesson {
 
     pub fn step(mut self, step: Step) -> Lesson {
         self.steps.push(step);
+        self
+    }
+
+    /// A line said before the intro, in the same breath: story mode's
+    /// errand line when an errand opens the lesson.
+    pub fn lead(mut self, line: impl Into<String>) -> Lesson {
+        self.lead = Some(line.into());
         self
     }
 
@@ -514,7 +528,10 @@ impl State<Parlor> for Lesson {
         }
         self.begun = true;
         ctx.audio.play(PAGE_SOUND, Bus::UI);
-        let intro = end_sentence(&self.intro);
+        let intro = match &self.lead {
+            Some(lead) => format!("{} {}", end_sentence(lead), end_sentence(&self.intro)),
+            None => end_sentence(&self.intro),
+        };
         match self.steps.first() {
             Some(step) => {
                 ctx.say(format!("{intro} {}", step.prompt));
@@ -973,6 +990,38 @@ mod tests {
         press_action(&mut h, ParlorAction::Primary);
         assert_eq!(h.app.top_name(), "base");
         assert_eq!(entered.get(), 101);
+    }
+
+    /// What the live screen says as it is entered stays out of the
+    /// transcript even once the transcript is full, so a reader of the new
+    /// lines (the agent server) gets the intro and the step.
+    #[test]
+    fn a_live_screen_stays_unspoken_with_a_full_transcript() {
+        let field = Live::new(Field {
+            shots: 0,
+            entered: Rc::new(Cell::new(0)),
+        });
+        let mut h = Headless::new(Default::default(), Base);
+        for i in 0..hearken::TRANSCRIPT_CAP {
+            h.app.ctx.say(format!("Line {i}."));
+        }
+        h.clear();
+        let said = h.app.ctx.said;
+        h.app.ctx.push(
+            Lesson::new("dummy", "Dummy", "Hi")
+                .lead("An errand")
+                .step(field.step("Shoot once.", |f, _| (f.shots >= 1).then(|| "One".into()))),
+        );
+        h.frame(0.0);
+        assert_eq!(h.spoken(), ["An errand. Hi. Shoot once."]);
+        let new = (h.app.ctx.said - said) as usize;
+        let t = &h.app.ctx.transcript;
+        assert_eq!(t[t.len() - new..], ["An errand. Hi. Shoot once."]);
+        assert!(
+            !t.iter().any(|l| l == "Practice field."),
+            "{:?}",
+            &t[t.len() - 3..]
+        );
     }
 
     #[test]

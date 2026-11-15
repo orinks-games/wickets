@@ -62,7 +62,7 @@ pub fn tracks() -> Vec<Track> {
 pub const HISTORY_KEY: &str = "lantern-lake.nights";
 
 /// The album the player's own nights are listed under.
-pub const HISTORY_ALBUM: &str = "Your Lantern Lake nights";
+pub const HISTORY_ALBUM: &str = "Your Lantern Lake songs";
 
 /// One night's song as the player heard it: when, where, and the loop each
 /// voice joined on. A few numbers, so no recording is kept.

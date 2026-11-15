@@ -5,7 +5,9 @@ use std::collections::HashSet;
 use hearken::text::sentence_start;
 use hearken::{Ctx, InputEvent, Key, Sound, State, UiSound, Vec3};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
-use parlor_core::{Challenge, Pace, Pages, Parlor, ParlorAction, Period, RunClock, ScoreResult};
+use parlor_core::{
+    Challenge, Pace, Pages, Parlor, ParlorAction, Period, RunClock, ScoreResult, StatusKey,
+};
 
 use crate::challenge::{self, Plan, CHALLENGES_NAME};
 use crate::events::{self, THIRTEENTH};
@@ -80,6 +82,8 @@ pub struct Signal {
     /// The run's game clock: its pace, fixed when the run starts, and the
     /// hold that keeps the answer window still while a line is spoken.
     pub clock: RunClock,
+    /// S in layers: a quick second press reads the event's sentence.
+    status_key: StatusKey,
 }
 
 impl Signal {
@@ -106,10 +110,11 @@ impl Signal {
             ghost_seen: false,
             passing: Sound::NONE,
             clock: RunClock::default(),
+            status_key: StatusKey::new(),
         }
     }
 
-    /// The event on this run, in a sentence, for S, H and F1.
+    /// The event on this run, in a sentence, for the second S and F1.
     fn event_words(&self) -> Option<&'static str> {
         if self.mode == Mode::SteamGala {
             Some(events::SPECIAL_WORDS)
@@ -204,17 +209,22 @@ impl Signal {
         )
     }
 
-    /// The status line, in a fixed order: the run, trains passed, the
-    /// window, the score.
-    pub fn status(&self, ctx: &Ctx<Parlor>) -> String {
+    /// The status key's layers. First, in a fixed order: the run, trains
+    /// passed, the window, the score. A quick second press: the event.
+    pub fn status(&self, ctx: &Ctx<Parlor>) -> Vec<String> {
+        let event = self.event_words().unwrap_or_default().to_string();
+        vec![self.status_line(ctx), event]
+    }
+
+    fn status_line(&self, ctx: &Ctx<Parlor>) -> String {
         let s = &self.shift;
         let name = self.mode.name();
         if !s.started() {
-            return self.with_event(format!(
+            return format!(
                 "{name}, line not open, window {}. {}",
                 window_words(s.window),
                 self.open_prompt(ctx)
-            ));
+            );
         }
         if !s.timed() {
             let n = s.passed;
@@ -229,11 +239,11 @@ impl Signal {
             Some(total) => format!("{} of {total} trains passed", s.passed),
             None => format!("{} passed", trains_words(s.passed)),
         };
-        self.with_event(format!(
+        format!(
             "{name}, {passed}, window {}, score {}.",
             window_words(s.window),
             s.score
-        ))
+        )
     }
 
     fn say_call(&mut self, ctx: &mut Ctx<Parlor>, call: Call) {
@@ -254,7 +264,7 @@ impl Signal {
             .into_iter()
             .map(|c| format!("{}, {}.", c.word(), Self::key(ctx, c.action())))
             .collect();
-        ctx.say(self.with_event(lines.join(" ")));
+        ctx.say(lines.join(" "));
         self.delayed = Call::ALL
             .into_iter()
             .enumerate()
@@ -397,8 +407,7 @@ impl Signal {
         } else if !self.shift.timed() {
             ctx.say("No call yet. Wait for the next one.");
         } else {
-            let text = self.with_event("No hints once the line is open.".to_string());
-            ctx.say(text);
+            ctx.say("No hints once the line is open.");
         }
     }
 
@@ -669,8 +678,8 @@ impl State<Parlor> for Signal {
                 ctx.say("Nothing to hold. This line has no hold calls.");
             }
             Some(ParlorAction::Status) => {
-                let s = self.status(ctx);
-                ctx.say(s);
+                let layers = self.status(ctx);
+                self.status_key.speak(ctx, layers);
             }
             Some(ParlorAction::Repeat) => self.repeat(ctx),
             Some(ParlorAction::Hint) => self.hint(ctx),

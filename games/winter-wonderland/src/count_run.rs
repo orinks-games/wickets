@@ -144,7 +144,7 @@ impl CountRun {
     }
 
     fn play(&mut self, ctx: &mut Ctx<Parlor>, inst: Inst) {
-        ctx.audio.play(sound::inst(inst), Bus::EFFECTS);
+        ctx.audio.play(sound::inst(inst), Bus::MUSIC);
         let events = self.night.press(inst);
         self.after(ctx, events);
     }
@@ -167,7 +167,7 @@ impl CountRun {
                 }
             }
             NightEvent::Call(inst) => {
-                ctx.audio.play(sound::inst(inst), Bus::EFFECTS);
+                ctx.audio.play(sound::inst(inst), Bus::MUSIC);
             }
             NightEvent::Hit { .. } => {}
             NightEvent::Wrong { .. } => {
@@ -231,6 +231,7 @@ impl CountRun {
     }
 
     fn finish(&mut self, ctx: &mut Ctx<Parlor>, won: bool) {
+        parlor_core::songs::end(ctx, crate::ID);
         let n = &self.night;
         let level = n.spec.level;
         let score = n.score;
@@ -331,10 +332,15 @@ impl State<Parlor> for CountRun {
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         ctx.audio.play_music(None, false);
+        parlor_core::songs::begin(ctx);
         if let Stage::Waiting(intro) = self.night.stage {
             let text = self.intro_text(ctx, intro);
             ctx.say(text);
         }
+    }
+
+    fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
+        parlor_core::songs::end(ctx, crate::ID);
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -405,10 +411,10 @@ impl State<Parlor> for CountRun {
                     ctx.say(m);
                 }
                 ParlorAction::Down => {
-                    ctx.audio.play(sound::inst(Inst::Drum), Bus::EFFECTS);
+                    ctx.audio.play(sound::inst(Inst::Drum), Bus::MUSIC);
                 }
                 ParlorAction::Up => {
-                    ctx.audio.play(sound::inst(Inst::Horn), Bus::EFFECTS);
+                    ctx.audio.play(sound::inst(Inst::Horn), Bus::MUSIC);
                 }
                 ParlorAction::Left | ParlorAction::Right => {
                     cue(ctx, sound::STRAY);

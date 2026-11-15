@@ -1067,6 +1067,7 @@ impl SkateScreen {
     fn finish(&mut self, ctx: &mut Ctx<Parlor>) {
         self.stop_all(ctx);
         self.music.stop(&mut ctx.audio, 1500);
+        parlor_core::songs::end(ctx, crate::ID);
         ctx.audio.set_bed(None);
         ctx.audio.play_music(None, false);
         if let Some(ch) = self.challenge.take() {
@@ -1405,6 +1406,7 @@ impl State<Parlor> for SkateScreen {
         ctx.audio.set_listener(Vec3::ZERO, 0.0);
         ctx.audio.set_bed(None);
         ctx.audio.play_music(None, false);
+        parlor_core::songs::begin(ctx);
         let mood = self.mood();
         self.music.set_mood(mood);
         self.music.start(&mut ctx.audio);
@@ -1422,6 +1424,7 @@ impl State<Parlor> for SkateScreen {
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
         self.stop_all(ctx);
         self.music.stop(&mut ctx.audio, 600);
+        parlor_core::songs::end(ctx, crate::ID);
         ctx.audio.set_bed(None);
     }
 

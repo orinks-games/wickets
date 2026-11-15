@@ -325,9 +325,6 @@ pub struct RunScreen {
     song: Song,
     /// The song's seed, and the parts that sang it in the order they
     /// joined, kept with the session for the soundtrack.
-    song_seed: u64,
-    sung: Vec<Part>,
-    verses_heard: u32,
     song_kept: bool,
     fx_rng: Rng,
     bird_in: f64,
@@ -357,9 +354,6 @@ impl RunScreen {
             rain: None,
             base: [None, None],
             song: Song::new(seed ^ 0x5eed),
-            song_seed: seed ^ 0x5eed,
-            sung: Vec::new(),
-            verses_heard: 0,
             song_kept: false,
             fx_rng: Rng::seeded(seed),
             bird_in: 6.0,
@@ -549,16 +543,6 @@ impl RunScreen {
     /// The top of a bar: each singing part starts what the song gives it
     /// here, and parts waiting to join come in.
     fn play_bar(&mut self, ctx: &mut Ctx<Parlor>) {
-        if self.song.bar() == 0 {
-            self.verses_heard += 1;
-        }
-        for v in &self.voices {
-            if let Some(part) = v.part {
-                if !self.sung.contains(&part) {
-                    self.sung.push(part);
-                }
-            }
-        }
         let base_joins = self.base[0].is_none();
         if let Some((key, from)) = self.song.cue(Part::Base, base_joins) {
             let s = start_part(ctx, &key, from, None, 0.6, 1.0);
@@ -670,26 +654,14 @@ impl RunScreen {
         }
     }
 
-    /// Keeps this session's song in the player's garden songs, once.
+    /// Keeps this session's song, as the garden played it, in the player's
+    /// garden songs, once.
     fn keep_song(&mut self, ctx: &mut Ctx<Parlor>) {
-        if !self.keep || self.song_kept {
+        if self.song_kept {
             return;
         }
         self.song_kept = true;
-        let today = parlor_core::challenges::today(ctx);
-        crate::soundtrack::keep_session(
-            ctx,
-            crate::soundtrack::Session {
-                n: 0,
-                year: today.year,
-                month: today.month,
-                day: today.day,
-                garden_day: self.garden.day,
-                seed: self.song_seed,
-                parts: self.sung.iter().map(|p| p.id().to_string()).collect(),
-                verses: self.verses_heard,
-            },
-        );
+        parlor_core::songs::end_and_tell(ctx, crate::ID);
     }
 
     fn finish(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -921,6 +893,7 @@ impl State<Parlor> for RunScreen {
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         ctx.audio.play_music(None, false);
+        parlor_core::songs::begin(ctx);
         self.garden.keys = keys(ctx);
         self.garden.drain_notes();
         let mut earned = Vec::new();

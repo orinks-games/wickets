@@ -290,6 +290,7 @@ fn the_daily_states_its_twist_scores_and_records_its_result() {
             "Play this daily challenge again",
             "Hear the results again",
             "Compare",
+            "Make a sound file of this run's song",
             "Back to the challenges"
         ]
     );
