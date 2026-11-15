@@ -1,24 +1,24 @@
 ## About the game
 
-Bowl ten frames. Choose your stance and aim, then time your release to knock down the pins. Standing pins are always spoken by number.
+Bowl ten frames. Choose your stance and aim, then time your release to knock down the pins. Standing pins are always named by number.
 
 ## Standing and aiming
 
-The lane is 39 boards wide. Board 1 is at the left gutter, board 39 at the right, and board 20 is in line with the head pin. The Left and Right arrows step you one board along the approach, and speak your board.
+The lane is 39 boards wide. Board 1 is at the left gutter, board 39 at the right, and board 20 is in line with the head pin. The Left and Right arrows step you one board along the approach, and name your board.
 
-The Up arrow turns your aim one step right, and the Down arrow one step left. Each step moves the ball's line one board at the pins. The aim cue marks where a clean ball would cross the pins. The game also speaks that board.
+The Up arrow turns your aim one step right. The Down arrow turns your aim one step left. Each step moves the ball's line one board at the pins. The aim cue marks where a clean ball would cross the pins. The game also names that board.
 
 ## The pocket
 
-Stand off centre and angle into the pocket. The pocket is just beside the head pin, about board 17 or board 23. A ball rolled straight at the head pin hits it full and often leaves a split, such as the 4, 6, 7 and 10. A ball that comes in at an angle, from board 12 aiming 5 right or board 28 aiming 5 left, carries the pins best. Miss the pocket by a board or two and a single pin is often left. Even a perfect ball does not always strike: the lane and the pins add a little chance to every ball.
+Stand off centre and angle into the pocket. The pocket is beside the head pin, about board 17 or board 23. A ball rolled straight at the head pin hits it full and often leaves a split, such as the 4, 6, 7 and 10. A ball that comes in at an angle, from board 12 aiming 5 right or board 28 aiming 5 left, carries the pins best. Miss the pocket by a board or two and a single pin is often left. Even a perfect ball does not always strike: the lane and the pins add a little chance to every ball.
 
 ## The swing and the release
 
-Space starts the swing. Use the swing cue to time your release. Press Space again at the top of the swing. A clean release goes where you aimed. An early or late release pulls the ball off line, and the further you are from the top, the bigger the pull. The lane decides which way it pulls. If you never let go, the ball leaves your hand late at the end of the swing.
+Space starts the swing. Use the swing cue to time your release. Press Space again at the top of the swing. A clean release goes where you aimed. An early or late release pulls the ball off line. The further you are from the top, the bigger the pull. The lane decides which way it pulls. If you never let go, the ball leaves your hand late at the end of the swing.
 
 ## The ball and standing pins
 
-A ball in the gutter hits no pins. After each ball, the game speaks the pins left standing by number. Wait for the ball-return cue before rolling again.
+A ball in the gutter hits no pins. After each ball, the game names the pins left standing by number. Wait for the ball-return cue before rolling again.
 
 Pin 1 is the head pin. Then 2 and 3, then 4 to 6, and the back row 7 to 10, with 7 in the left corner and 10 in the right. A split means the head pin is down, with a gap between the pins left standing.
 
@@ -26,7 +26,7 @@ Pin 1 is the head pin. Then 2 and 3, then 4 to 6, and the back row 7 to 10, with
 
 A strike means you knocked down all ten pins with the first ball of a frame. It scores 10 plus the pins from your next two balls. A spare means you knocked down all ten pins with both balls of a frame. It scores 10 plus the pins from your next ball. Any other frame scores the pins knocked down.
 
-In the tenth frame, a strike gives you two more balls and a spare gives you one more. Twelve strikes in a row is a perfect game of 300.
+In the tenth frame, a strike gives you two more balls and a spare gives you one more. Twelve strikes in a row make a perfect game of 300.
 
 ## Hints
 
@@ -34,7 +34,7 @@ H suggests a board and an aim for the pins standing. For a full rack, it gives a
 
 ## Pumpkin night
 
-From 17 October to 1 November the title has a Pumpkin night row. The rest of the year the row says Pumpkin night, locked, and tells you when it opens. It is a full game of ten frames with pumpkins for pins. The pins left standing are still spoken by number. Scoring is the same as a full game, and Pumpkin night keeps its own best score.
+From 17 October to 1 November the title has a Pumpkin night row. The rest of the year the row says Pumpkin night, locked, with its opening date. It is a full game of ten frames with pumpkins for pins. The pins left standing are still named by number. Scoring is the same as a full game, and Pumpkin night keeps its own best score.
 
 ## Records
 
@@ -50,7 +50,7 @@ Spare week, the weekly: 20 leaves, one ball at each. Your score is the spares yo
 
 The late league, the monthly: a three-game series. Your score is the series total. A new one comes on the first of every month.
 
-Leave the challenge, on the pause menu, stops without counting the run, so you can try again later.
+Leave the challenge, on the pause menu, stops without counting the run. You can try again later.
 
 ## Pausing
 
@@ -80,4 +80,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

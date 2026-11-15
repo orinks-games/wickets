@@ -4,7 +4,7 @@
 
 Direct a Fourth of July fireworks show. Listen to each level, then repeat its fireworks in the right places and at the right moments. Twenty levels, a freestyle mode for your own shows, and a grand finale once they are all cleared. A level clears at 60 or more out of 100.
 
-Title menu: Play starts your next uncleared level. Grand finale opens after level 20. Freestyle composes, saves, and replays your shows. Level select plays any of the twenty levels. Independence night opens on the Fourth of July. Challenges holds daily, weekly, and monthly. Practice room is an unscored launch range. Tutorial is a short walkthrough; Help is this guide; Sound check lets you practise recognising the gameplay cues. Records reads back your best scores. Settings changes speech, volume and controls.
+Title menu: Play starts your next uncleared level. Grand finale opens after level 20. Freestyle composes, saves, and replays your shows. Level select plays any of the twenty levels. Independence night opens on the Fourth of July. Challenges holds daily, weekly, and monthly. Practice room is an unscored launch range. Tutorial is a short walkthrough. Help is this guide. Sound check plays the gameplay cues. Records reads back your best scores. Settings changes speech, volume and controls.
 
 ## A round
 
@@ -30,7 +30,7 @@ The number keys on the keypad work too.
 
 ## Left, center and right
 
-From level 11, fireworks also go up on the left or the right. Hold the Left arrow or A while you press a number to launch on the left; hold the Right arrow or D for the right. With neither held, the firework goes up in the center. Pressing Left or Right on its own plays the aim cue on that side, so you can check where you are aiming.
+From level 11, fireworks also go up on the left or the right. Hold the Left arrow or A while you press a number to launch on the left. Hold the Right arrow or D for the right. With neither held, the firework goes up in the center. Pressing Left or Right on its own plays the aim cue on that side, so you can check where you are aiming.
 
 ## Scoring
 
@@ -64,13 +64,13 @@ After level 1, a show may start up to two seconds after the go, so match when th
 Challenges on the title, or Challenges in the lobby, holds three challenges that are the same for every player and change on their own: the daily each day, the weekly each Monday, the monthly on the first of the month. Each row names the challenge and what it is, then your result so far and your streak. Choosing one reads a short briefing, with the twist and how long until the next one. Enter on its last page starts the first show, and Escape goes back without starting. A challenge counts when its last show is over. Leaving by Leave the challenge on the pause menu, or by Back to the challenges between shows, does not count it. Your score is the show points of every show added up, and the results say your result, your best and your streak.
 
 - Daily, tonight's show: one show from the harder half of the campaign, levels 11 to 20, under a twist.
-- Weekly, the five-show gauntlet: five shows in a row, each bigger than the last, under the week's twist. A show under 60 percent ends the gauntlet; its points still count.
+- Weekly, the five-show gauntlet: five shows in a row, each bigger than the last, under the week's twist. A show under 60 percent ends the gauntlet. Its points still count.
 - Monthly, the festival: a themed festival, such as Independence Day in July, with two acts and a 14-firework finale. Every act is played, whatever it scores. The festival celebrates one firework, its signature, and its shows are full of them: on a show that clears, each signature firework matched near-perfectly, with the right kind and place within 0.3 seconds, adds 100 bonus points.
 
 The twists:
 
 - Quickstep: the shows play at double speed, fireworks a second apart instead of two.
-- Tough crowd: timing points only within 0.3 seconds; any firework further off earns none.
+- Tough crowd: timing points only within 0.3 seconds. Any firework further off earns none.
 - One shot: each show plays only once, with no replay and no hints.
 - Night fog: the show is harder to hear, but firework positions and your own launches are unchanged. Practise the fog boom in Sound check.
 
@@ -82,7 +82,7 @@ After a challenge show, the results end with Back to the challenges. Between the
 
 ## Freestyle
 
-Compose a show of your own: launch with 1 to 4, aiming with Left and Right, with no score and no clock to beat. Your show's time starts at your first launch. Backspace takes back the last firework; Enter finishes. Afterwards you can play your show with the crowd watching, save it, or choose Play again to start another. A saved show can be heard again from the freestyle menu, or played with Match your saved show, scored like a level.
+Compose a show of your own: launch with 1 to 4, aiming with Left and Right, with no score and no clock to beat. Your show's time starts at your first launch. Backspace takes back the last firework. Enter finishes. Afterwards you can play your show with the crowd watching, save it, or choose Play again to start another. A saved show can be heard again from the freestyle menu, or played with Match your saved show, scored like a level.
 
 ## Grand finale
 
@@ -111,11 +111,11 @@ The practice room is a launch range with nothing to score. Launch with 1 to 4 or
 
 ## Sound check
 
-Sound check lets you hear the cues used to match a show. On each firework row, Enter plays it in the center. Left and Right play it on that side.
+Sound check plays the cues used to match a show. On each firework row, Enter plays it in the center. Left and Right play it on that side.
 
 ## Controller
 
-On a controller, A is the main action: it plays the show, starts your count-in, and launches the firework you have chosen. Up and Down on the d-pad choose a firework, take back or finish; hold Left or Right on the d-pad to launch on that side. X plays the show again, Y gives the status, the left bumper gives a hint, a click of the right stick repeats the instructions, Back reads help and B or Start pauses.
+On a controller, A is the main action: it plays the show, starts your count-in, and launches the firework you have chosen. Up and Down on the d-pad choose a firework, take back or finish. Hold Left or Right on the d-pad to launch on that side. X plays the show again, Y gives the status, the left bumper gives a hint, a click of the right stick repeats the instructions, Back reads help and B or Start pauses.
 
 ## Controls
 
@@ -127,9 +127,9 @@ On a controller, A is the main action: it plays the show, starts your count-in, 
 - Tab: play the show again.
 - R: repeat the instructions for where you are.
 - S: the level, how many fireworks, how many you have launched and the time since the go. Press it again straight away for the level's style, any twist, and your points so far.
-- H: a hint, the show described in words, for 15 points.
+- H: a hint, the show described, for 15 points.
 - F1: help for the current screen.
 - Up and Down: choose what Space does while you launch, a firework, take back, or finish.
 - Escape: pause, with help and a way back to the title, or out of a challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

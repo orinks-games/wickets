@@ -2,9 +2,9 @@
 
 ## About the game
 
-Walk toward a firefly, then press Space as it glows to catch it in your jar. A full jar set free lights the meadow and rings a chord. Nothing can go wrong, and outside challenges nothing is timed. Enter heads home.
+Walk toward a firefly, then press Space as it glows to catch it in your jar. Setting a full jar free lights the meadow and rings a chord. Nothing can go wrong, and outside challenges nothing is timed. Enter heads home.
 
-This help gives distances in metres. Set Units to US in Settings and the game says feet instead.
+This help gives distances in metres. Set Units to US in Settings for distances in feet instead.
 
 ## Walking the meadow
 
@@ -12,7 +12,7 @@ Up, Down, Left and Right walk one step at a time. Up is always north. Hold a key
 
 ## Finding fireflies
 
-Each firefly's cue marks its blink. A tone in your left ear is to your left, a tone in both ears is ahead or behind, and a quiet one is far away. The in-reach cue means a firefly is close enough to catch. H names the way to the nearest glow in words, such as "5 metres ahead and to the left", and plays its tone from where it is.
+Each firefly's cue marks its blink. A tone in your left ear is to your left, a tone in both ears is ahead or behind, and a quiet one is far away. The in-reach cue means a firefly is close enough to catch. H names the way to the nearest glow, such as "5 metres ahead and to the left", and plays its tone from where it is.
 
 ## Catching a firefly
 
@@ -24,11 +24,11 @@ The jar holds 6 fireflies. Tab sets them free. For a few seconds after a release
 
 ## Species and the journal
 
-There are 10 species. Each blinks its own pattern and rings its own note. The Dipper flashes once, the Twin Spark twice, and the Triple Twinkle three times. Others live only in one meadow or one season. The first time you catch a species, it goes in your journal. Journal, on the title, plays each species' blink and reads about it, and lists your chords and keepsakes. An unknown firefly's row says where to look for it.
+There are 10 species. Each blinks its own pattern and rings its own note. The Dipper flashes once. The Twin Spark flashes twice. The Triple Twinkle flashes three times. Others live only in one meadow or one season. The first time you catch a species, it goes in your journal. Journal, on the title, plays each species' blink and reads about it, and lists your chords and keepsakes. An unknown firefly's row says where to look for it.
 
 ## Meadows
 
-The home meadow is open from the start. Catching fireflies opens the orchard, at 8 caught in all, the creek bank at 20, and the hayfield at 35. Each has its own species, landmarks and size. On the title, the Meadow row chooses which one the Play row walks. Practice catch is a small patch with one easy Dipper just ahead, in summer whatever the date, and nothing there counts.
+The home meadow is open from the start. Catching fireflies opens the orchard, at 8 caught in all, the creek bank at 20, and the hayfield at 35. Each has its own species, landmarks and size. On the title, the Meadow row chooses which one the Play row walks. Practice catch is a small patch with one easy Dipper just ahead. It is summer whatever the date. Nothing there counts.
 
 ## The seasons
 
@@ -52,7 +52,7 @@ Records keep the fireflies you have caught in all, species and chords found, you
 
 ## Challenges
 
-Every player gets the same challenges, and they are always summer evenings, whatever the season outside. The daily is 4 minutes in one of the meadows. The weekly is 6 minutes with a small jar of 4, so chords come quickly. The monthly is 8 minutes in the hayfield. Each scores 10 points a firefly, 25 a species, and 40 for each named chord you set free. A voice warns you 30 seconds before the light fades. Heading home with Enter also ends it. Leave the challenge, on the pause menu, does not count, so you can try again.
+Every player gets the same challenges. They are always summer evenings, whatever the season outside. The daily is 4 minutes in one of the meadows. The weekly is 6 minutes with a small jar of 4, so chords come quickly. The monthly is 8 minutes in the hayfield. Each scores 10 points a firefly, 25 a species, and 40 for each named chord you set free. A voice warns you 30 seconds before the light fades. Enter heads home and also ends the challenge. Leave the challenge, on the pause menu, does not count, so you can try again.
 
 ## Sound check
 
@@ -72,10 +72,10 @@ R: repeat the last thing said.
 
 H: the way to the nearest glow.
 
-Enter: head home and end the evening. It asks first: press Enter again.
+Enter: head home and end the evening. Press Enter again to confirm.
 
 F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

@@ -8,15 +8,15 @@ Cross ten rooftop wires. Shift your weight to stay balanced, counter gusts and s
 
 Use the balance cue or press S to check which way you are leaning. Sound check, on the title, lets you hear the balance cue and other gameplay cues.
 
-A lean grows by itself, the way a real wire tips you. Shift your weight with Left and Right. Press the opposite way to your lean: leaning left, press Right. Each press shifts your weight once. Holding the key adds no further shift. Release it and wait for your balance to settle before pressing again, or you may swing past the middle.
+A lean grows by itself, the way a real wire tips you. Left and Right shift your weight. Press the opposite way to your lean: leaning left, press Right. Each press shifts your weight once. Holding the key adds no further shift. Release it and wait for your balance to settle before pressing again, or you may swing past the middle.
 
 Step once you have returned to balance. The game warns you when you lean hard left or right. Lean all the way and you fall to the safety net.
 
-The status key, S, always says your lean in words.
+S, the status key, always says your lean.
 
 ## Walking
 
-Space takes one step. Steps need a moment between them, and no foot lands quite square: every step jolts the wire a little, so settle after each one.
+Space takes one step. Steps need a moment between them. No foot lands quite square. Every step jolts the wire a little, so settle after each one.
 
 Step only when balanced. A step while you lean past the safe line is a wobble: the wire throws you further the way you were leaning. A step is refused when it comes too soon after the last one, or while you crouch.
 
@@ -26,10 +26,10 @@ The game says when you are halfway, 3 steps out and 1 step out.
 
 Each gust is announced with its direction at least 2 seconds before it hits. It pushes you away from that side for about a second.
 
-You have two answers:
+You have two choices:
 
 - Lean a little into the wind before it arrives: for a gust from the left, a press of Left.
-- Crouch with Down. Crouching makes the wire much steadier and the wind pushes less than half as hard, but you cannot step. Stand with Up once it passes.
+- Down crouches. Crouching makes the wire much steadier and the wind pushes less than half as hard, but you cannot step. Up stands once it passes.
 
 The status key says which side a gust comes from and how many seconds are left. The hint key, H, says what to do about it.
 
@@ -77,7 +77,7 @@ Your best score on each mode, your best time on each crossing and your furthest 
 - Crossing select: walk one crossing alone, for its best time. A crossing opens once you reach it.
 - Practice wire: a short, low wire where the gust and the pigeon are each explained as they arrive. On your first visit the title starts on it.
 
-Before each run a page says what the run is. Enter begins, and Escape goes back to the title.
+Before each run a page describes the run. Enter begins. Escape goes back to the title.
 
 ## After a run
 
@@ -99,7 +99,7 @@ Sound check, on the title, lists and plays the sounds you need on the wire. Its 
 
 ## Controls
 
-- Left and Right: shift your weight once per press. Release between presses; do not hold.
+- Left and Right: shift your weight once per press. Release between presses. Do not hold.
 - Space: take a step.
 - Down: crouch. Up: stand.
 - Tab: shoo a pigeon within 2 steps.
@@ -109,4 +109,4 @@ Sound check, on the title, lists and plays the sounds you need on the wire. Its 
 - Escape: pause. The pause menu can resume, open settings or this help, go back to the title, or go back to the lobby. During a challenge, its leave row is Leave the challenge.
 - F1: help for the current screen.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

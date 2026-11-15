@@ -8,15 +8,15 @@ Each pipe plays alongside the note it should match. Adjust the pipe until the tw
 
 ## Tuning a pipe
 
-Up raises the pipe one step and Down lowers it. A step is 5 cents, a twentieth of a semitone. Each pipe starts a few steps sharp or flat. H tells you which way to adjust it and how far. When the pipe matches its target note, Space sets it. If it is still out of tune, keep adjusting it. The game says nearly when you are one step away.
+Up raises the pipe one step. Down lowers it. A step is 5 cents, a twentieth of a semitone. Each pipe starts a few steps sharp or flat. H says which way to adjust it and how far. Space sets the pipe when it matches its target note. If it is still out of tune, keep adjusting it. The game says nearly when you are one step away.
 
 ## The rank
 
-A rank is a row of pipes from low to high. When you set a pipe, the game moves you on to the next pipe that needs tuning. Left and Right move down and up the rank by hand, and R names the pipe and its note.
+A rank is a row of pipes from low to high. When you set a pipe, the game moves you on to the next pipe that needs tuning. Left and Right move down and up the rank by hand. R names the pipe and its note.
 
 ## Scoring and records
 
-Each pipe set in tune is worth 10 points. Each try at setting it while it still wobbles costs 2, and each hint costs 3, but a pipe in tune always scores at least 2. A pipe set at the first try with no hint counts toward your first-try total. Records keeps your best score, the ranks and pipes you have tuned, and your challenge results.
+Each pipe set in tune is worth 10 points. Each try at setting it while it still wobbles costs 2. Each hint costs 3. A pipe in tune always scores at least 2. A pipe set at the first try with no hint counts toward your first-try total. Records keeps your best score, the ranks and pipes you have tuned, and your challenge results.
 
 ## Hints
 
@@ -62,4 +62,4 @@ F1: help for what you are doing right now. F2 stops speech.
 
 Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

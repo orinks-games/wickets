@@ -6,7 +6,7 @@ Lead the dragon through the Lunar New Year parade. Keep your head in the pearl's
 
 ## The street and its lanes
 
-A street has 3, 4 or 5 lanes, numbered from the left. Left and Right move your head one lane at a time, and each move says the lane you are in. At the edge of the street your head stays where it is. Whatever is in your lane is straight ahead.
+A street has 3, 4 or 5 lanes, numbered from the left. Left and Right move your head one lane at a time. Each move says the lane you are in. At the edge of the street your head stays where it is. Whatever is in your lane is straight ahead.
 
 ## Following the pearl
 
@@ -18,7 +18,7 @@ The drum marks every beat and the start of each bar. On every beat that your hea
 
 ## Gongs and rearing up
 
-Drum roll: gong in 2 beats. Press Space right on the gong to rear for a perfect, 100 points; a little off is good, 60. Missing a gong scores nothing. Rearing when no gong is near breaks your combo, so wait for the roll.
+Drum roll: gong in 2 beats. Space right on the gong rears for a perfect, 100 points. A little off is good, 60. Missing a gong scores nothing. Rearing when no gong is near breaks your combo, so wait for the roll.
 
 ## Red envelopes
 
@@ -26,7 +26,7 @@ A red envelope approaches down a lane. It is heard far ahead and comes closer ov
 
 ## Firecrackers
 
-Firecrackers approach down a lane over 4 beats. Keep your head out of that lane on the beat they reach you. If your head is in it, the tail stumbles over them, and you lose 50 points and your combo. Firecrackers never end the dance, and they are never in the pearl's lane: stay with the pearl and you are safe. On the later streets they wait in the lane the pearl has just left, so follow quickly.
+Firecrackers approach down a lane over 4 beats. Keep your head out of that lane on the beat they reach you. If your head is in it, the tail stumbles over them, and you lose 50 points and your combo. Firecrackers never end the dance, and they are never in the pearl's lane: stay with the pearl and you are safe. On the later streets they are in the lane the pearl has just left, so follow quickly.
 
 ## Shops and crowds
 
@@ -38,7 +38,7 @@ The parade has 8 streets, from Market Row to The Grand Avenue. Each is faster an
 
 ## Practice street
 
-Practice street is short and slow, with every call spoken. Stumbles cost nothing, and nothing is saved.
+Practice street is short and slow, with every call named. Stumbles cost nothing, and nothing is saved.
 
 ## Lunar New Year on the real calendar
 
@@ -54,7 +54,7 @@ Dancing the New Year parade to the end earns a keepsake for the year's animal, s
 
 ## The Lantern walk
 
-The Lantern Festival is the fifteenth day of the new year, 14 days after Lunar New Year. On that day, and the day either side, the Lantern walk opens on the title. It is a calm walk at a slow drum, on a quiet evening street, with no firecrackers and no gongs. Lanterns come down the lanes instead of envelopes, catch them as you would an envelope. There are 12 kinds of lantern, such as the rabbit lantern and the carp lantern, and each new one joins your collection.
+The Lantern Festival is the fifteenth day of the new year, 14 days after Lunar New Year. On that day, and the day either side, the Lantern walk opens on the title. It is a calm walk at a slow drum, on a quiet evening street, with no firecrackers and no gongs. Lanterns come down the lanes instead of envelopes. Catch them as you would an envelope. There are 12 kinds of lantern, such as the rabbit lantern and the carp lantern, and each new one joins your collection.
 
 ## Challenges
 
@@ -62,7 +62,7 @@ Every player gets the same challenges. The daily is one street of 4 lanes and 24
 
 ## Spoken call-outs
 
-Spoken call-outs, a row in Settings from the title or the pause menu, switches the spoken calls in play. On, a voice names the pearl's lane when it moves, each red envelope, lantern and firecracker string with its lane as it starts to come, and each cheering shop. Off, none of these are spoken. Practice street always speaks its calls. Status, Up and the hint work either way.
+Spoken call-outs, a row in Settings from the title or the pause menu, switches the spoken calls in play. On, a voice names the pearl's lane when it moves, each red envelope, lantern and firecracker string with its lane as it starts to come, and each cheering shop. Off, none of these are named. Practice street always names its calls. Status, Up and the hint work either way.
 
 ## Status, what is coming and hints
 
@@ -96,4 +96,4 @@ Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the l
 
 Number keys, on the briefing before a street: play the sounds the street needs. Enter or Space starts it.
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

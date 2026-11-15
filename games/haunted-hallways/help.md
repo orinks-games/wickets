@@ -2,7 +2,7 @@
 
 ## About the game
 
-The doors of Nevermore Manor have locked behind you. A hundred floors in ten wings, from the ground floor down to the heart of the house. Floor select and the journal name each wing as you reach it. Every floor is a chain of rooms. Every room has one puzzle, and solving it unlocks the room's exit. Find your way, freeze when a ghost drifts by, and watch your step.
+The doors of Nevermore Manor have locked behind you. There are a hundred floors in ten wings, from the ground floor down to the heart of the house. Floor select and the journal name each wing as you reach it. Every floor is a chain of rooms. Every room has one puzzle. Solving it unlocks the room's exit. Find your way, freeze when a ghost drifts by, and watch your step.
 
 Each floor is built from its number, so floor 40 is the same floor for every player, every time you play it.
 
@@ -14,7 +14,7 @@ The entrance locks behind you, so you cannot go back. The exit is on another wal
 
 ## Finding things
 
-Things lie about the rooms and call out from where they are: a clock, a crystal, a potion, a music box, a bell, a candle, a raven, keys and a heart. Each has its own sound. Sounds come from their direction: left is west, right east, ahead north; behind is south, and a little duller. Nearer means louder and more often. Stepping onto a thing speaks its name.
+Things lie about the rooms and call out from where they are: a clock, a crystal, a potion, a music box, a bell, a candle, a raven, keys and a heart. Each has its own sound. Sounds come from their direction: left is west, right east, ahead north. Behind is south, and a little duller. Nearer means louder and more often. Stepping onto a thing names it.
 
 Sound check on the title plays each sound you need in the manor by name, including a demonstration of left, right, near and far.
 
@@ -42,7 +42,7 @@ Rooms hold decoys as well as the answer, more of them deeper down. A wrong touch
 
 Ghosts walk the halls, each with its own voice. The weeping widow moves slowly. The chained butler moves fast and appears from floor 5. The whispering child is hard to hear until close and appears from floor 10. You hear a ghost coming from far off, in its direction, growing louder.
 
-When it is right beside you, the freeze cue sounds. Freeze: do not take a single step until you hear the passing cue as it drifts away. Picking things up, choosing what you hold and asking for status are all quiet enough; only footsteps give you away.
+When it is right beside you, the freeze cue sounds. Freeze: do not take a single step until you hear the passing cue as it drifts away. Picking things up, choosing what you hold and asking for status are all quiet enough. Only footsteps give you away.
 
 If you move while a ghost passes, it catches you. You lose one of your three courage and flee back to the door you came in by. Lose all three on a floor and you run screaming from the house. Every ghost you let pass scores points.
 
@@ -57,10 +57,10 @@ Each of these arrives on its own floor, and the game explains it in full the fir
 - Rotten boards, from floor 8: its warning comes from its direction when you stand next to it. Step on it and you fall through, losing one courage and starting the room again from its door. The board leaves a hole you cannot walk into.
 - Twists, from floor 11: a floor may carry one of the twists listed under Challenges. Deeper floors carry more, up to two by floor 71.
 - Dark rooms, from floor 15: things call out only when you are three steps away or nearer. Sweep the room row by row.
-- The shadow, from floor 20: a danger that moves around a room one cell at a time. While it hears your footsteps it comes toward you; stand still and it wanders. Let it reach you, or walk into it, and it catches you. Status says where it is, in steps.
-- Mimics, from floor 35: copies of the answer that seem just the same but hop to a new place every few seconds. The real thing never moves. Touching a mimic costs time like a wrong thing.
+- The shadow, from floor 20: a danger that moves around a room one cell at a time. While it hears your footsteps it comes toward you. Stand still and it wanders. Let it reach you, or walk into it, and it catches you. Status says where it is, in steps.
+- Mimics, from floor 35: copies of the answer that seem the same but hop to a new place every few seconds. The real thing never moves. Touching a mimic costs time like a wrong thing.
 - Mirrored rooms, from floor 45: east and west swap sides, east on your left and west on your right. North and south are true.
-- The pendulum, from floor 51: a blade swings along one row of the room, one column at a time, back and forth. Its cue tells you where it is. If it reaches your cell, it cuts you and costs one courage. Cross its row just after it passes. Status says which row it swings in.
+- The pendulum, from floor 51: a blade swings along one row of the room, one column at a time, back and forth. Its cue marks where it is. If it reaches your cell, it cuts you and costs one courage. Cross its row just after it passes. Status says which row it swings in.
 - Deep water, from floor 61: part of the room is flooded. Its warning means deep water is next to you. A step into it splashes, and you wade for a moment before you can step again. Every splash brings the next ghost sooner.
 - Falling stones, from floor 71: dust trickles over the cell you stand on, and 2 seconds later a stone falls there. Step off when the dust falls. Stones never start while a ghost is passing.
 - The founder, from floor 81: see The founder.
@@ -111,7 +111,7 @@ The game keeps your best time on every floor, the deepest floor you have cleared
 
 ## Unlocks and curses
 
-Unlocks on the title lists everything you can earn, in groups, with how many you have of each. Enter on an earned entry uses it; on a locked one, Enter and F1 say how to earn it.
+Unlocks on the title lists everything you can earn, in groups, with how many you have of each. Enter uses an earned entry. Enter and F1 on a locked one say how to earn it.
 
 - Modes: Nightmare and Endless night.
 - Curses: a curse is a twist you switch on yourself. You earn each one by clearing a floor that carries that twist. Enter switches a curse on or off. Each curse on adds a quarter to your score in Play, Floor select, Nightmare and Endless night. Curses never touch challenges.
@@ -128,7 +128,7 @@ When a run ends, its pages read how it went: the outcome, your score and record,
 
 ## Challenges
 
-Challenges on the title are the same house for every player in the world: everyone who plays today's daily walks the same rooms, with the same things in the same places. Each row names the challenge and what it is, then your best, whether you have played it and your streak. Before you start, a briefing names the challenge's rule or twist and says how long until the next one. Enter on its last page starts the run, and Escape goes back without starting. When the run ends, by escaping, by the clock running out or by losing your courage, your score, your best and your streak are read out. Leave the challenge, on the pause menu, does not count it. Challenges do not change your best times or open floors, but they can earn unlocks.
+Challenges on the title are the same house for every player in the world: everyone who plays today's daily walks the same rooms, with the same things in the same places. Each row names the challenge and what it is, then your best, whether you have played it and your streak. Before you start, a briefing names the challenge's rule or twist and says how long until the next one. Enter on its last page starts the run. Escape goes back without starting. When the run ends, by escaping, by the clock running out or by losing your courage, the game gives your score, your best and your streak. Leave the challenge, on the pause menu, does not count it. Challenges do not change your best times or open floors, but they can earn unlocks.
 
 - Daily, Tonight's haunting: one floor from floors 3 to 30, with a twist. A new one every day.
 - Weekly, The long night: three floors in a row, starting between floors 10 and 40, with a twist, and your three courage must last the whole night: it does not refill between floors. A new one every Monday.
@@ -144,12 +144,12 @@ The twists:
 - Pitch dark, on floors 15 and deeper: every room is dark.
 - Hall of mirrors, on floors 45 and deeper: every room is mirrored.
 
-Challenges use the first five. The twists are spoken as each floor begins, and F1 repeats them. Your streak counts the days, weeks or months in a row you finished that challenge.
+Challenges use the first five. The twists are named as each floor begins, and F1 repeats them. Your streak counts the days, weeks or months in a row you finished that challenge.
 
 ## Tips
 
 - Stand still before you move. Work out where a thing is, then walk until it is straight ahead or right on top of you.
-- If two things seem the same, walk to each: their names are spoken when you stand on them. If one of them has moved since, it was a mimic.
+- If two things seem the same, walk to each: standing on a thing names it. If one of them has moved since, it was a mimic.
 - Check for rotten boards before you step. If one is ahead, go around.
 - When the shadow is near, stand still and let it wander off, unless the hound is passing.
 - When a ghost comes, finish your step and wait for the freeze cue, then stay still until the passing cue. For the hound, do the opposite.
@@ -158,11 +158,11 @@ Challenges use the first five. The twists are spoken as each floor begins, and F
 
 ## Controls
 
-These are the default keys. If you change them in Settings, the game's spoken instructions follow your bindings.
+These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Up, Down, Left and Right arrows: walk one step north, south, west or east. You always face north.
 - Space: the main action. Pick up the thing you stand on, offer what you hold at a sealed door, or check the door. With the founder beside you, strike him.
-- Tab: choose the next thing you carry. Its name is spoken.
+- Tab: choose the next thing you carry.
 - I: list everything you carry. This key belongs to this game alone, and Settings cannot change it.
 - S: status, short. Any ghost, the founder, falling dust, the blade in your row, the shadow or a rotten board next to you, then the haunt clock, your courage, and how many steps to the exit door and whether it is open.
 - S twice: the rest. The floor and room, whether it is dark or mirrored, the room's other dangers, the puzzle, your column and row, what you hold, your salt and your score.

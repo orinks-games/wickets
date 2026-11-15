@@ -39,7 +39,7 @@ ALLOW = ROOT / "tools" / "check_text_allow.txt"
 
 DEFAULT_KEYS_LINE = (
     "These are the default keys. If you change them in Settings, "
-    "the game's spoken instructions follow your bindings."
+    "the game's instructions follow your bindings."
 )
 
 # Words in capitals that are fine: key names, and names that are said letter
