@@ -14,7 +14,7 @@ use parlor_core::Rng;
 pub const NAME: &str = "Against the clock";
 
 /// The stage of the mode: it ships on alpha first.
-pub const STAGE: parlor_core::channel::Stage = parlor_core::channel::Stage::Alpha;
+pub const STAGE: parlor_core::channel::Stage = parlor_core::channel::Stage::Stable;
 
 /// Whether this copy offers the mode.
 pub fn offered() -> bool {

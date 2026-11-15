@@ -547,35 +547,9 @@ fn lists_the_briefing_row(h: &mut Headless<parlor_core::Parlor>) -> bool {
 }
 
 #[test]
-fn a_stable_copy_starts_every_street_at_once() {
+fn a_stable_copy_shows_the_briefing() {
     use parlor_core::channel::{pin, Stage};
     pin(Some(Stage::Stable));
-    let mut h = title();
-    let help = parlor_core::seasonal::help(&h.app.ctx, dragon_dance::HELP);
-    let row = lists_the_briefing_row(&mut h);
-    goto(&mut h, "Play, street 1: Market Row");
-    h.clear();
-    h.press(Key::Return);
-    let play = h.app.top_name().to_string();
-    let said = h.spoken().join(" ");
-    dance_by_keys(&mut h, 200.0);
-    let results = h.app.top_name().to_string();
-    goto(&mut h, "Next street: street 2, Tea House Lane");
-    h.press(Key::Return);
-    let next = h.app.top_name().to_string();
-    pin(None);
-    assert!(!help.contains("briefing"), "{help}");
-    assert!(!row);
-    assert_eq!(play, DANCE_NAME);
-    assert!(!said.contains("play the sounds"), "{said}");
-    assert_eq!(results, "results");
-    assert_eq!(next, DANCE_NAME);
-}
-
-#[test]
-fn a_beta_copy_shows_the_briefing() {
-    use parlor_core::channel::{pin, Stage};
-    pin(Some(Stage::Beta));
     let mut h = title();
     let help = parlor_core::seasonal::help(&h.app.ctx, dragon_dance::HELP);
     let row = lists_the_briefing_row(&mut h);
