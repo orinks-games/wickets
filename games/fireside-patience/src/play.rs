@@ -4,7 +4,9 @@
 use hearken::text::sentence_start;
 use hearken::{Ctx, InputEvent, Key, State};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
-use parlor_core::{Challenge, Date, Pages, Parlor, ParlorAction, Period, Records, ScoreResult};
+use parlor_core::{
+    Challenge, Date, Pages, Parlor, ParlorAction, Period, Records, Score, ScoreResult,
+};
 
 use crate::challenge::{self, Job, CHALLENGES_NAME};
 use crate::events::{self, EventDeal};
@@ -101,6 +103,8 @@ pub struct PlayScreen {
     lesson: bool,
     /// S, in layers: a second press reads the rest.
     status_key: parlor_core::StatusKey,
+    /// The table's music, which fills out as the foundations do.
+    score: Score,
 }
 
 impl PlayScreen {
@@ -127,6 +131,7 @@ impl PlayScreen {
             stuck_up: 0,
             keep: true,
             lesson: false,
+            score: Score::new(),
         }
     }
 
@@ -761,6 +766,7 @@ impl PlayScreen {
     fn win(&mut self, ctx: &mut Ctx<Parlor>) {
         self.ended = true;
         self.held = None;
+        self.score.stop(ctx);
         if let Some(deal) = self.event {
             self.win_event(ctx, deal);
             return;
@@ -947,6 +953,8 @@ impl State<Parlor> for PlayScreen {
 
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         self.bed(ctx);
+        let mood = sound::mood(self.game.table.on_foundations());
+        self.score.start(ctx, &sound::SCORE, mood);
         if !self.is_challenge() && self.keep && self.event.is_none() {
             progress::note_deal(ctx);
         }
@@ -970,7 +978,15 @@ impl State<Parlor> for PlayScreen {
     }
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
+        self.score.stop(ctx);
         ctx.audio.set_bed(None);
+    }
+
+    fn update(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
+        if !self.ended {
+            let mood = sound::mood(self.game.table.on_foundations());
+            self.score.follow(ctx, mood, dt);
+        }
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {

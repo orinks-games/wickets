@@ -139,7 +139,7 @@ impl ChallengeGame for Deals {
     }
 
     fn music(ctx: &mut Ctx<Parlor>) {
-        sound::fireside(ctx);
+        sound::title_music(ctx);
     }
 
     fn intro_help() -> String {
@@ -186,7 +186,7 @@ impl State<Parlor> for ChallengeHost {
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         if !self.opened {
             self.opened = true;
-            sound::fireside(ctx);
+            sound::title_music(ctx);
             let pages = briefing(ctx, self.period);
             ctx.push(pages);
         }
