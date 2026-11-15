@@ -60,7 +60,8 @@ fn winter_catch_up_handles_february_and_leap_years() {
         assert!(k.available(Date::new(year, 3, 14)));
         assert!(!k.available(Date::new(year, 3, 15)));
         assert!(!(k.in_season)(Date::new(year, 3, 1)));
-        assert!(!k.available(Date::new(year, 11, 30)));
+        assert!(!k.available(Date::new(year, 11, 26)));
+        assert!(k.available(Date::new(year, 11, 27)));
     }
 }
 

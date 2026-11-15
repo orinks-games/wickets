@@ -26,6 +26,10 @@ path = "tests/all.rs"
 hearken.workspace = true
 parlor-core.workspace = true
 serde.workspace = true
+wickets-rules.workspace = true
 
 [build-dependencies]
 wickets-content = { path = "../../crates/wickets-content" }
+
+[dev-dependencies]
+serde_json.workspace = true
