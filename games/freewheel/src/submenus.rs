@@ -46,13 +46,14 @@ pub fn open_events(today: parlor_core::Date) -> Vec<&'static str> {
     open
 }
 
-/// "Events", or "Events, Car-free Sunday open" while one is open.
+/// "Events", "Events, Car-free Sunday open" while one is open, or
+/// "Events, 2 open".
 pub fn events_label(today: parlor_core::Date) -> String {
     let open = open_events(today);
-    if open.is_empty() {
-        EVENTS.to_string()
-    } else {
-        format!("{EVENTS}, {} open", open.join(" and "))
+    match open.as_slice() {
+        [] => EVENTS.to_string(),
+        [one] => format!("{EVENTS}, {one} open"),
+        more => format!("{EVENTS}, {} open", more.len()),
     }
 }
 
@@ -96,7 +97,7 @@ impl Menu for MoreRides {
             ctx.push(CourseSelect::new())
         })
         .help(format!(
-            "Race the clock on one of {} Downtown courses, on the {}. Last ridden: {}, {}.",
+            "Race the clock on one of {} Downtown courses, on the {}. Opens on {}, {}.",
             COURSES.len(),
             c.bike.name(),
             COURSES[c.course].name,
@@ -281,8 +282,12 @@ impl Menu for Garage {
                 ctx.push(shop::DistrictSelect::new())
             })
             .help(format!(
-                "Choose where the endless ride{} goes. Riding in {} now.",
-                if clock::offered() { " and the ride against the clock" } else { "" },
+                "Choose where the endless ride{}. Riding in {} now.",
+                if clock::offered() {
+                    " and the ride against the clock go"
+                } else {
+                    " goes"
+                },
                 c.district.name()
             )),
             MenuItem::new("Bike shop", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {

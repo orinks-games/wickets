@@ -379,7 +379,7 @@ fn records_course_select_and_the_title_name_both_boards() {
     h.press(Key::F1);
     let said = h.spoken().join(" ");
     assert!(
-        said.contains("Last ridden: Station Run, best 1 minute 4.0 seconds, relaxed best 1 minute 50.0 seconds."),
+        said.contains("Opens on Station Run, best 1 minute 4.0 seconds, relaxed best 1 minute 50.0 seconds."),
         "{said}"
     );
 }
