@@ -1907,11 +1907,29 @@ pub struct FallingStone {
     pub fall_in: f64,
 }
 
+/// The exit door of the room you are in.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ExitState {
+    /// The puzzle is unsolved.
+    Locked,
+    /// An offering room's spirit holds it until it gets its thing.
+    Sealed,
+    /// Walk through it.
+    Open,
+    /// Solved, but the tutorial holds it until its step is done (or, in
+    /// its last room, the stairs stay barred).
+    Held,
+}
+
 /// Something that happened, for the screen to voice.
 #[derive(Clone, Debug, PartialEq)]
 pub enum Ev {
-    /// The practice house's last door: the stairs stay barred.
-    StairsBarred,
+    /// A solved room's exit in the practice house, which the lesson
+    /// holds shut until its step for the room is done. `stairs`: the
+    /// last room's, which stays barred.
+    DoorHeld {
+        stairs: bool,
+    },
     /// A new floor begins.
     FloorBegins {
         number: u32,
@@ -1968,10 +1986,8 @@ pub enum Ev {
     NothingHere,
     /// A thing already left behind in a solved room.
     Leftover(Item),
-    /// Standing at the exit: whether it is open.
-    AtDoor {
-        open: bool,
-    },
+    /// Standing at the exit: what it does now.
+    AtDoor(ExitState),
     /// An offering to the spirit away from its door.
     NotAtDoor(Side),
     OfferAccepted(Item),
@@ -2137,6 +2153,9 @@ pub struct Run {
     /// The tutorial's house: nothing costs courage and the clock stands
     /// still.
     pub practice: bool,
+    /// In practice, the lesson holds this room's exit shut until its step
+    /// for the room is done, so the player never walks ahead of it.
+    pub held: bool,
     /// Salt carried: each pinch wards off one catch. Kept for the run.
     pub salt: u32,
     /// Seconds still wading.
@@ -2165,6 +2184,7 @@ impl Run {
         run.spec.rooms = run.rooms.len();
         run.spec.ghost_gap = (1e9, 1e9);
         run.practice = true;
+        run.held = true;
         run.room = 0;
         run.place_at_entry();
         run.reset_room_clocks();
@@ -2215,6 +2235,7 @@ impl Run {
             warned: 0,
             rng: Rng::seeded(seed ^ 0x6057_6057),
             practice: false,
+            held: false,
             salt: 0,
             wade: 0.0,
             charm_in: 0.0,
@@ -2462,17 +2483,15 @@ impl Run {
         // Leaving the grid: a door, or a wall.
         let here = (self.x, self.y);
         if side == room.exit.side && room.inside(room.exit) == here {
-            // The practice house has no stairs: the lesson ends on the
-            // landing, never in a cleared floor's results.
-            if room.solved && self.practice && self.room + 1 == self.rooms.len() {
-                return vec![Ev::StairsBarred];
-            }
-            if room.solved {
-                return self.go_through();
-            }
-            return vec![Ev::DoorLocked {
-                sealed: matches!(room.puzzle, Puzzle::Offering(_)),
-            }];
+            return match self.exit_state() {
+                ExitState::Open => self.go_through(),
+                ExitState::Held => vec![Ev::DoorHeld {
+                    stairs: self.room + 1 == self.rooms.len(),
+                }],
+                state => vec![Ev::DoorLocked {
+                    sealed: state == ExitState::Sealed,
+                }],
+            };
         }
         if side == room.entry.side && room.inside(room.entry) == here {
             return vec![Ev::DoorShut];
@@ -2520,6 +2539,7 @@ impl Run {
         let mut out = vec![Ev::DoorOpened];
         if self.room + 1 < self.rooms.len() {
             self.room += 1;
+            self.held = self.practice;
             self.ghost = None;
             self.place_at_entry();
             self.reset_room_clocks();
@@ -2629,7 +2649,7 @@ impl Run {
         if let Puzzle::Offering(wanted) = room.puzzle {
             if room.solved {
                 return vec![if at_exit {
-                    Ev::AtDoor { open: true }
+                    Ev::AtDoor(self.exit_state())
                 } else {
                     Ev::NothingHere
                 }];
@@ -2694,7 +2714,7 @@ impl Run {
             return vec![Ev::WrongItem(item)];
         }
         if at_exit {
-            return vec![Ev::AtDoor { open: room.solved }];
+            return vec![Ev::AtDoor(self.exit_state())];
         }
         vec![Ev::NothingHere]
     }
@@ -2796,6 +2816,27 @@ impl Run {
         match room.target() {
             Some(p) => (p.x, p.y),
             None => room.inside(room.exit),
+        }
+    }
+
+    /// What the exit door does now. Walking into it, Space at it and S all
+    /// read this, so they always agree.
+    pub fn exit_state(&self) -> ExitState {
+        let room = self.current();
+        if !room.solved {
+            return if matches!(room.puzzle, Puzzle::Offering(_)) {
+                ExitState::Sealed
+            } else {
+                ExitState::Locked
+            };
+        }
+        // The practice house has no stairs: the lesson ends on the
+        // landing, never in a cleared floor's results.
+        let last = self.room + 1 == self.rooms.len();
+        if self.practice && (self.held || last) {
+            ExitState::Held
+        } else {
+            ExitState::Open
         }
     }
 
@@ -2934,7 +2975,10 @@ impl Run {
                 let dy = py - self.y as f32;
                 if room.solved {
                     self.beacon_in = 2.0;
-                    out.push(Ev::Draft { dx, dy });
+                    // No draught from a door the lesson still holds.
+                    if !(self.practice && self.held) {
+                        out.push(Ev::Draft { dx, dy });
+                    }
                 } else {
                     self.beacon_in = 2.5;
                     out.push(Ev::Spirit { dx, dy });

@@ -15,8 +15,8 @@ use parlor_core::{
 use crate::challenge::{self, challenge_name};
 use crate::progress::{self, FloorSaved, Progress};
 use crate::rules::{
-    clock_words, floor_spec, time_short, wing, CharmKind, Ev, GhostPhase, Item, Mode, Outcome,
-    Puzzle, Run, Side, Threat, Twist, COURAGE, DARK_REACH, FLOORS, STUB_SECONDS,
+    clock_words, floor_spec, time_short, wing, CharmKind, Ev, ExitState, GhostPhase, Item, Mode,
+    Outcome, Puzzle, Run, Side, Threat, Twist, COURAGE, DARK_REACH, FLOORS, STUB_SECONDS,
 };
 use crate::{sound, unlocks, CHALLENGES_NAME, HELP, TITLE_NAME};
 
@@ -198,8 +198,33 @@ impl Haunt {
     /// Plays a sound from a cell offset, flipped east for west in a
     /// mirrored room.
     fn play_at(&self, ctx: &mut Ctx<Parlor>, key: &str, dx: f32, dy: f32) -> Sound {
+        self.hear_from_here(ctx);
         let dx = if self.run.current().mirror { -dx } else { dx };
         sound::play_at(ctx, key, dx, dy)
+    }
+
+    /// Where the player stands, as the audio hears the house: cells as
+    /// metres, with east and west swapped in a mirrored room. Every
+    /// positioned sound is placed in this space and the listener moves
+    /// through it, so a step re-pans everything at once.
+    fn ear(&self) -> Vec3 {
+        let x = self.run.x as f32;
+        let x = if self.run.current().mirror { -x } else { x };
+        sound::at(x, self.run.y as f32)
+    }
+
+    /// Puts the listener where the player stands.
+    fn hear_from_here(&self, ctx: &mut Ctx<Parlor>) {
+        let ear = self.ear();
+        if ctx.audio.listener().pos != ear {
+            ctx.audio.set_listener(ear, 0.0);
+        }
+    }
+
+    /// A point `offset` metres from the player, in the house's audio space.
+    fn around(&self, offset: Vec3) -> Vec3 {
+        let ear = self.ear();
+        Vec3::new(ear.x + offset.x, ear.y + offset.y, 0.0)
     }
 
     fn stop_ghost(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -225,7 +250,7 @@ impl Haunt {
         let s = self.run.current().shadow?;
         let dx = (s.x - self.run.x) as f32;
         let dx = if self.run.current().mirror { -dx } else { dx };
-        Some(sound::at(dx, (s.y - self.run.y) as f32))
+        Some(self.around(sound::at(dx, (s.y - self.run.y) as f32)))
     }
 
     fn start_shadow(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -551,14 +576,15 @@ impl Haunt {
             .filter(|w| w == "in your row")
             .map(|_| "The blade swings in your row!".to_string());
         let way = run.exit_words();
-        let door = if room.solved {
-            "open"
-        } else if matches!(room.puzzle, Puzzle::Offering(_)) {
-            "sealed"
-        } else {
-            "locked"
+        let exit = match run.exit_state() {
+            ExitState::Open => format!("Exit door open, {way}."),
+            ExitState::Sealed => format!("Exit door sealed, {way}."),
+            ExitState::Locked => format!("Exit door locked, {way}."),
+            ExitState::Held if run.room + 1 == run.rooms.len() => {
+                format!("Stairs barred in practice, {way}.")
+            }
+            ExitState::Held => format!("Exit door held for the lesson, {way}."),
         };
-        let exit = format!("Exit door {door}, {way}.");
         let brief = sentences([
             ghost.unwrap_or_default(),
             founder.unwrap_or_default(),
@@ -693,6 +719,8 @@ impl Haunt {
     }
 
     fn voice(&mut self, ctx: &mut Ctx<Parlor>, evs: Vec<Ev>) {
+        // A step moves the listener before anything it set off sounds.
+        self.hear_from_here(ctx);
         self.voice_events(ctx, evs);
         self.keep_taught(ctx);
     }
@@ -796,9 +824,13 @@ impl Haunt {
                         ctx.say("Locked. Solve the room first.");
                     }
                 }
-                Ev::StairsBarred => {
+                Ev::DoorHeld { stairs } => {
                     sound::play(ctx, sound::DOOR_LOCKED);
-                    ctx.say("Stairs barred in practice.");
+                    ctx.say(if stairs {
+                        "Stairs barred in practice."
+                    } else {
+                        "Not yet. F1 says what the lesson asks."
+                    });
                 }
                 Ev::DoorShut => {
                     sound::play(ctx, sound::DOOR_SHUT);
@@ -890,15 +922,30 @@ impl Haunt {
                 }
                 Ev::Leftover(item) => {
                     sound::play(ctx, sound::NOTHING);
-                    ctx.say(format!("The {} is silent. The door is open.", item.name()));
-                }
-                Ev::AtDoor { open } => {
-                    let side = self.run.current().exit.side;
-                    if open {
-                        ctx.say(format!("Open. Walk {} to go through.", side.name()));
+                    if self.run.exit_state() == ExitState::Open {
+                        ctx.say(format!("The {} is silent. The door is open.", item.name()));
                     } else {
-                        sound::play(ctx, sound::DOOR_LOCKED);
-                        ctx.say("Locked. Solve the room first.");
+                        ctx.say(format!("The {} is silent.", item.name()));
+                    }
+                }
+                Ev::AtDoor(state) => {
+                    let side = self.run.current().exit.side;
+                    match state {
+                        ExitState::Open => {
+                            ctx.say(format!("Open. Walk {} to go through.", side.name()))
+                        }
+                        ExitState::Held => {
+                            sound::play(ctx, sound::DOOR_LOCKED);
+                            ctx.say(if self.run.room + 1 == self.run.rooms.len() {
+                                "Stairs barred in practice."
+                            } else {
+                                "Not yet. F1 says what the lesson asks."
+                            });
+                        }
+                        ExitState::Sealed | ExitState::Locked => {
+                            sound::play(ctx, sound::DOOR_LOCKED);
+                            ctx.say("Locked. Solve the room first.");
+                        }
                     }
                 }
                 Ev::NotAtDoor(side) => {
@@ -954,7 +1001,7 @@ impl Haunt {
                     let x = if self.run.current().mirror { -x } else { x };
                     self.ghost_loop = ctx.audio.start_loop(
                         sound::ghost(g.kind),
-                        Some(Vec3::new(x, y, 0.0)),
+                        Some(self.around(Vec3::new(x, y, 0.0))),
                         Bus::EFFECTS,
                     );
                     ctx.audio.set_volume(self.ghost_loop, GHOST_VOLUME);
@@ -1584,7 +1631,7 @@ impl State<Parlor> for Haunt {
             self.clock = RunClock::start(ctx, crate::ID);
         }
         self.started = true;
-        ctx.audio.set_listener(Vec3::ZERO, 0.0);
+        self.hear_from_here(ctx);
         let names = unlocks::on_start(ctx);
         self.earned.extend(names);
         self.load_taught(ctx);
@@ -1624,6 +1671,8 @@ impl State<Parlor> for Haunt {
         self.stop_shadow(ctx);
         self.score.stop(ctx);
         ctx.audio.set_bed(None);
+        // The screens after this one hear from the middle again.
+        ctx.audio.set_listener(Vec3::ZERO, 0.0);
     }
 
     fn resume(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -1767,12 +1816,13 @@ impl State<Parlor> for Haunt {
                 evs.extend(self.run.walk(side));
             }
         }
+        self.hear_from_here(ctx);
         if let Some(g) = self.run.ghost {
             if self.ghost_loop != Sound::NONE {
                 let (x, y) = g.offset();
                 let x = if self.run.current().mirror { -x } else { x };
-                ctx.audio
-                    .set_position(self.ghost_loop, Some(Vec3::new(x, y, 0.0)));
+                let at = self.around(Vec3::new(x, y, 0.0));
+                ctx.audio.set_position(self.ghost_loop, Some(at));
             }
         }
         if self.shadow_loop != Sound::NONE {
