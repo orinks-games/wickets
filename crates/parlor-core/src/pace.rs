@@ -129,7 +129,7 @@ impl Pace {
         match self {
             Pace::Relaxed => "Much slower timing. Relaxed scores are saved separately.",
             Pace::Normal => "A little slower than quick.",
-            Pace::Quick => "The original timing.",
+            Pace::Quick => "The fastest timing.",
         }
     }
 }
@@ -960,7 +960,7 @@ mod tests {
         h.press(Key::Return);
         assert_eq!(
             h.spoken(),
-            ["Pace: quick. The original timing. Applies from the next run."]
+            ["Pace: quick. The fastest timing. Applies from the next run."]
         );
         assert_eq!(get(&h.app.ctx, "dummy"), Pace::Quick);
         h.clear();
@@ -975,7 +975,7 @@ mod tests {
         h.press(Key::Left);
         assert_eq!(
             h.spoken(),
-            ["Pace: quick. The original timing. Applies from the next run."]
+            ["Pace: quick. The fastest timing. Applies from the next run."]
         );
         assert_eq!(get(&h.app.ctx, "dummy"), Pace::Quick);
     }

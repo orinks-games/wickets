@@ -84,7 +84,7 @@ Spoken call-outs, a row in Settings from the title or the pause menu, chooses ho
 
 The street holds while a line is still being spoken. The bike, the traffic, the hazards and the clock stand still until it ends. While you hold a key to pedal, brake, steer or sprint, the street runs on through speech. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode. Time spent while a line is spoken still counts toward your ride time and ride points.
 
-Pace in Settings sets how fast the street runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. Your bike, the traffic, every hazard's warning and the clock follow the pace.
+Pace in Settings sets how fast the street runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. Your bike, the traffic, every hazard's warning and the clock follow the pace.
 
 A change applies from your next ride.
 

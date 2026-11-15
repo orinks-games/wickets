@@ -55,7 +55,7 @@ On the practice wire falling costs nothing.
 
 The wire holds while a line is still being spoken. Your balance, the wind and the pigeons stand still until it ends. Once a gust whoosh starts, the wire runs on through speech until the gust hits. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode. Time spent while a line is spoken still counts toward your crossing time and your par bonus.
 
-Pace in Settings sets how fast the wire runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick keeps the original timings, and relaxed runs at half speed. Your balance, the wind, the pigeons and each crossing's time follow the pace.
+Pace in Settings sets how fast the wire runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. Your balance, the wind, the pigeons and each crossing's time follow the pace.
 
 A change applies from your next run. A run or a challenge keeps the pace it started at until it ends.
 
