@@ -89,7 +89,7 @@ English.
 | errand | course | Feminine. A Happening errand: "Course faite." |
 | hint | indice | Masculine. What H gives: "H donne un indice." |
 | Play (title row) | Jouer | "Jouer lance la première nuit." |
-| the daily, the weekly, the monthly | le quotidien, l'hebdomadaire, le mensuel | A game's challenges as nouns: "Le quotidien, Tonight's deal, est…". Challenge titles stay English. |
+| the daily, the weekly, the monthly | le quotidien, l'hebdomadaire, le mensuel | A game's challenges as nouns: "Le quotidien, Tonight's deal, est…". Descriptive challenge titles are translated. |
 | Back to the challenges | Retour aux défis | The results row after a challenge. |
 | relaxed, normal, quick (pace values) | Détente, normal, rapide | "Rythme : Détente, normal ou rapide." |
 | X select (Floor select, Bike select…) | Choix de X | "Choix de l'étage", "Choix du vélo", "Choix de la nuit". |
