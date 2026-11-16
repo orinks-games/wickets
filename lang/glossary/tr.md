@@ -53,3 +53,30 @@ English.
 | Quit, Exit | Çıkış | |
 | Resume | Devam | |
 | New game | Yeni tur | |
+| title, title menu | başlangıç ekranı, başlangıç menüsü | A game's own first screen: "başlangıç menüsünde", "Başlangıç ekranına dönün". |
+| briefing | görev özeti | The page read before a challenge starts. |
+| streak | seri | "3 günlük seri". |
+| life, lives | can, can | "3 canla", "Bir can kaybettiniz." |
+| Play again, Try again | Yeniden oyna, Yeniden dene | Results menu rows. |
+| Records | Kayıtlar | The title row that reads bests and challenge results. |
+| round | bölüm | One stage of a run ("2. bölüm"); "tur" is the whole run. |
+| keepsake | hatıra | "Paskalya hatıraları". |
+| Spoken call-outs | Sesli bildirimler | The setting row. |
+| Happening (story) | Olay | The story list's errand or riddle: "hikâyenin Olay'ı". |
+| stamp | damga | "İlk damganız." |
+| {a} of {b} | {a}, toplam {b} | "Sayfa {page}, toplam {pages}." Never a slash. |
+| level | bölüm | A game's numbered stage: "bölüm 11'den itibaren". Avoid "11. bölüm": the dot reads as a sentence end. |
+| hint | ipucu |  |
+| twist | sürpriz kural | A challenge's changed rule: "haftanın sürpriz kuralıyla". |
+| bonus | bonus | "100 bonus puan". |
+| Advent calendar | Advent takvimi | The lobby row; doors are "kapı 1", "kapı 25". |
+| ornament | süs | What a door hangs on the lobby tree. |
+| Grandma | Büyükanne | Character role, capitalised: "Büyükanne'nin". |
+| Santa | Noel Baba |  |
+| the Echo | The Echo | Theo's machine: a name, kept in English: "The Echo'nun". |
+| Calendar Hall, Arcade Floor, the Study, the Conservatory, the Card Room | Takvim Odası, Atari Katı, Çalışma Odası, Limonluk, Kart Odası | The parlor's rooms in the story. |
+| From the story | Hikâyeden | The Play menu group: "Oyna'da, Hikâyeden altında". |
+| lantern | fener | Lantern Lake's lanterns and the Lantern Festival ("Fener Festivali"), same word as lamp. |
+| mince pie | Noel turtası |  |
+| Christmas Eve, New Year's Eve | Noel arifesi, Yılbaşı gecesi |  |
+| night (numbered) | gece {n} | "Gece 3", "gece 4'ten itibaren", like level: no "3. gece". |
