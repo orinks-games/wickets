@@ -67,6 +67,10 @@ jobs:
           token: ${{ secrets.HEARKEN_TOKEN }}
           cache-key: clippy
       - run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      # The translation template and every language file match the source,
+      # and every translation keeps its placeholders, numbers and keys.
+      - run: cargo run -p wickets-l10n --locked -- extract --check
+      - run: cargo run -p wickets-l10n --locked -- check
 
   test:
     name: test (${{ matrix.name }})

@@ -5,7 +5,9 @@
 //! future argument reaches it with no change to the game.
 
 fn main() {
-    wickets_content::detect();
+    let full = wickets_content::detect();
+    // Each language's translation, merged with the overlay's (catalogs.rs).
+    wickets_content::write_catalogs(full);
     println!("cargo:rerun-if-env-changed=DEP_HEARKEN_LINK_ARGS");
     match std::env::var("DEP_HEARKEN_LINK_ARGS") {
         Ok(args) => {
