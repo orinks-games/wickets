@@ -52,6 +52,7 @@ type OnTick = Box<dyn FnMut(&mut Ctx<Parlor>, f64) -> Option<Reply>>;
 type OnStart = Box<dyn FnMut(&mut Ctx<Parlor>)>;
 type Done = Box<dyn FnMut(&mut Ctx<Parlor>)>;
 type Check = Box<dyn FnMut(&mut Ctx<Parlor>) -> Option<String>>;
+type Now = Box<dyn Fn(&Ctx<Parlor>) -> String>;
 /// What a control answers with in [`Step::each`].
 pub type Reaction = Box<dyn FnMut(&mut Ctx<Parlor>) -> String>;
 
@@ -68,6 +69,8 @@ pub struct Step {
     live: Option<(Rc<dyn LiveScreen>, Check)>,
     /// The step answers the repeat control itself, so F1 says the step.
     own_repeat: bool,
+    /// What to do at this moment, for a step that guides a whole game.
+    now: Option<Now>,
 }
 
 impl Step {
@@ -86,6 +89,7 @@ impl Step {
             on_enter: None,
             live: None,
             own_repeat: false,
+            now: None,
         }
     }
 
@@ -171,9 +175,34 @@ impl Step {
         self
     }
 
+    /// For a live step that guides the player through a whole game, one
+    /// move at a time: `now` gives what to do at this moment, and F1 and
+    /// the screen's lines say it in place of the prompt.
+    pub fn now(mut self, now: impl Fn(&Ctx<Parlor>) -> String + 'static) -> Step {
+        self.now = Some(Box::new(now));
+        self
+    }
+
     /// The step's prompt, as it is spoken.
     pub fn prompt(&self) -> &str {
         &self.prompt
+    }
+
+    /// What the step asks for now: its guide's words, or its prompt.
+    fn asks(&self, ctx: &Ctx<Parlor>) -> String {
+        match &self.now {
+            Some(now) => now(ctx),
+            None => self.prompt.clone(),
+        }
+    }
+
+    /// The step's lines on screen: where it is in the lesson, and what it
+    /// asks. A guided step is the whole lesson, so it has no number.
+    fn heading(&self, at: usize, of: usize, ctx: &Ctx<Parlor>) -> Vec<String> {
+        match self.now {
+            Some(_) => vec![self.asks(ctx)],
+            None => vec![format!("Step {} of {of}", at + 1), self.prompt.clone()],
+        }
     }
 }
 
@@ -508,10 +537,7 @@ impl State<Parlor> for Lesson {
             .map(|(live, _)| live.visuals(ctx))
             .unwrap_or_default();
         if let Some(step) = self.steps.get(self.at) {
-            let mut lines = vec![
-                format!("Step {} of {}", self.at + 1, self.steps.len()),
-                step.prompt.clone(),
-            ];
+            let mut lines = step.heading(self.at, self.steps.len(), ctx);
             lines.append(&mut scene.lines);
             scene.lines = lines;
         }
@@ -527,6 +553,7 @@ impl State<Parlor> for Lesson {
             return self.resume(ctx);
         }
         self.begun = true;
+        crate::songs::lesson_opened(ctx);
         ctx.audio.play(PAGE_SOUND, Bus::UI);
         let intro = match &self.lead {
             Some(lead) => format!("{} {}", end_sentence(lead), end_sentence(&self.intro)),
@@ -546,6 +573,9 @@ impl State<Parlor> for Lesson {
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
         self.end_live(ctx);
+        if self.begun {
+            crate::songs::lesson_closed(ctx);
+        }
         if let Some(cleanup) = self.cleanup.as_mut() {
             cleanup(ctx);
         }
@@ -643,10 +673,7 @@ impl State<Parlor> for Lesson {
     fn lines(&self, ctx: &Ctx<Parlor>) -> Vec<String> {
         match self.steps.get(self.at) {
             Some(step) => {
-                let mut lines = vec![
-                    format!("Step {} of {}", self.at + 1, self.steps.len()),
-                    step.prompt.clone(),
-                ];
+                let mut lines = step.heading(self.at, self.steps.len(), ctx);
                 if let Some((live, _)) = &step.live {
                     lines.extend(live.lines(ctx));
                 }
@@ -658,7 +685,13 @@ impl State<Parlor> for Lesson {
 
     fn help(&self, ctx: &Ctx<Parlor>) -> String {
         let step = self.steps.get(self.at);
-        let prompt = step.map(|s| s.prompt.as_str()).unwrap_or_default();
+        let prompt = step.map(|s| s.asks(ctx)).unwrap_or_default();
+        if step.is_some_and(|s| s.now.is_some()) {
+            return format!(
+                "{} tutorial. {prompt} F1 repeats this. Escape leaves the tutorial.",
+                self.name
+            );
+        }
         let again = if step.is_some_and(|s| s.live.is_some() || s.own_repeat) {
             "F1 says this step again.".to_string()
         } else {

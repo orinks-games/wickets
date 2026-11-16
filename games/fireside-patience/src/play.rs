@@ -15,6 +15,7 @@ use crate::rules::{
     cards_words, moves_words, ordinal, points, rank_words, run_seed, Card, Game, Hint, Move,
     Played, Spot, Suit, Turned, DECK, KING, PILES,
 };
+use crate::tutorial::{Did, Guide};
 use crate::{sound, HELP, ID, TITLE_NAME};
 
 /// The play screen's `State::name`.
@@ -101,6 +102,8 @@ pub struct PlayScreen {
     /// Inside the tutorial: the lesson's prompts teach, so the table keeps
     /// its intro, controls and stuck notice to itself.
     lesson: bool,
+    /// The tutorial's guide, naming each move of its deal.
+    guide: Option<Guide>,
     /// S, in layers: a second press reads the rest.
     status_key: parlor_core::StatusKey,
     /// The table's music, which fills out as the foundations do.
@@ -131,6 +134,7 @@ impl PlayScreen {
             stuck_up: 0,
             keep: true,
             lesson: false,
+            guide: None,
             score: Score::new(),
         }
     }
@@ -148,6 +152,24 @@ impl PlayScreen {
     pub fn in_lesson(mut self) -> PlayScreen {
         self.lesson = true;
         self
+    }
+
+    /// The tutorial's deal, with the guide that names each move.
+    pub fn guided(mut self, guide: Guide) -> PlayScreen {
+        self.guide = Some(guide);
+        self
+    }
+
+    /// The tutorial's guide, when this is its deal.
+    pub fn guide(&self) -> Option<&Guide> {
+        self.guide.as_ref()
+    }
+
+    /// Lets the guide hear what the player just did.
+    fn guide_after(&mut self, ctx: &mut Ctx<Parlor>, did: Did) {
+        if let Some(guide) = self.guide.as_mut() {
+            guide.after(did, &self.game, ctx);
+        }
     }
 
     /// The challenge's deals, from its seed.
@@ -437,6 +459,9 @@ impl PlayScreen {
     }
 
     fn hint_words(&self, ctx: &Ctx<Parlor>) -> String {
+        if let Some(guide) = &self.guide {
+            return guide.hint(&self.game);
+        }
         match self.game.hint() {
             Hint::Move(mv) => self.move_words(mv),
             Hint::Turn => format!(
@@ -767,6 +792,11 @@ impl PlayScreen {
         self.ended = true;
         self.held = None;
         self.score.stop(ctx);
+        if self.lesson {
+            // The tutorial's deal: no records, and the lesson says the rest.
+            sound::play(ctx, sound::WIN_FLOURISH);
+            return;
+        }
         if let Some(deal) = self.event {
             self.win_event(ctx, deal);
             return;
@@ -983,6 +1013,9 @@ impl State<Parlor> for PlayScreen {
     }
 
     fn update(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) {
+        if let Some(guide) = self.guide.as_mut() {
+            guide.begin(&self.game, ctx);
+        }
         if !self.ended {
             let mood = sound::mood(self.game.table.on_foundations());
             self.score.follow(ctx, mood, dt);
@@ -1029,8 +1062,14 @@ impl State<Parlor> for PlayScreen {
             Some(ParlorAction::Right) => self.step(ctx, true),
             Some(ParlorAction::Up) => self.within(ctx, true),
             Some(ParlorAction::Down) => self.within(ctx, false),
-            Some(ParlorAction::Primary) => self.primary(ctx),
-            Some(ParlorAction::Secondary) => self.turn(ctx),
+            Some(ParlorAction::Primary) => {
+                self.primary(ctx);
+                self.guide_after(ctx, Did::Place);
+            }
+            Some(ParlorAction::Secondary) => {
+                self.turn(ctx);
+                self.guide_after(ctx, Did::Turn);
+            }
             Some(ParlorAction::Status) => {
                 let layers = self.status_layers();
                 self.status_key.speak(ctx, layers);
@@ -1038,10 +1077,12 @@ impl State<Parlor> for PlayScreen {
             Some(ParlorAction::Repeat) => {
                 let text = self.table_words();
                 ctx.say(text);
+                self.guide_after(ctx, Did::Table);
             }
             Some(ParlorAction::Hint) => {
                 let text = self.hint_words(ctx);
                 ctx.say(text);
+                self.guide_after(ctx, Did::Hint);
             }
             None => {
                 if let InputEvent::KeyDown {
@@ -1050,6 +1091,7 @@ impl State<Parlor> for PlayScreen {
                 {
                     if *key == UNDO_KEY {
                         self.undo(ctx);
+                        self.guide_after(ctx, Did::Undo);
                     } else if *key == Key::Home {
                         self.jump(ctx, 0);
                     } else if *key == Key::End {
