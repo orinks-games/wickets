@@ -21,7 +21,8 @@ fn up(cards: &[Card]) -> Pile {
 }
 
 /// The lesson's table: the ace of hearts on pile 5, a black 7 ready for a
-/// red 8, and the 2 of hearts next in the stock.
+/// red 8, the 2 of hearts next in the stock, and the ace of clubs at the
+/// bottom of the stock, so finding it takes the whole stock.
 pub fn table() -> Table {
     use Suit::*;
     Table {
@@ -37,7 +38,7 @@ pub fn table() -> Table {
             up(&[card(5, Clubs)]),
             up(&[card(11, Diamonds)]),
         ],
-        stock: vec![card(9, Clubs), card(4, Spades), card(2, Hearts)],
+        stock: vec![card(1, Clubs), card(9, Clubs), card(4, Spades), card(2, Hearts)],
         waste: Vec::new(),
         foundations: [0; 4],
     }
@@ -53,32 +54,44 @@ fn speech_secs(text: &str) -> f64 {
     0.4 + text.chars().count() as f64 / 15.0
 }
 
-/// Waits for what the game says to be heard before a step ends, so the
-/// lesson's next words do not cut it off.
+/// Waits for what the game says about the move that finished a step, so
+/// the lesson's next words do not cut it off. Only that move's lines are
+/// waited for: a key pressed after it has already cut them off, so the
+/// next step comes at once, and the player's presses never hold it back.
 #[derive(Default)]
 struct Heard {
-    /// `ctx.said` when last looked.
-    said: u64,
-    /// When the lines said so far should be done.
-    until: f64,
+    /// `ctx.said` when last looked; none before the step's first frame.
+    said: Option<u64>,
+    /// When the finishing move's lines should be done, once it is made.
+    until: Option<f64>,
 }
 
 impl Heard {
-    /// Whether everything said since `armed` first held has been heard.
-    /// Lines said in the frame that arms it count.
-    fn after(&mut self, armed: bool, ctx: &Ctx<Parlor>) -> bool {
-        if !armed {
-            self.said = ctx.said;
-            self.until = ctx.clock;
+    /// Whether the step can end: `done` holds, and what the move that made
+    /// it hold said has been heard or cut off by a later key.
+    fn after(&mut self, done: bool, ctx: &Ctx<Parlor>) -> bool {
+        if !done {
+            self.said = Some(ctx.said);
+            self.until = None;
             return false;
         }
-        let new = ((ctx.said - self.said) as usize).min(ctx.transcript.len());
-        let lines = &ctx.transcript[ctx.transcript.len() - new..];
-        for line in lines.iter().filter(|l| !l.starts_with("[event]")) {
-            self.until = self.until.max(ctx.clock) + speech_secs(line);
+        match self.until {
+            None => {
+                // The frame of the move: its lines start now. A step that
+                // begins already done waits for its own prompt instead.
+                let since = self.said.unwrap_or(ctx.said.saturating_sub(1));
+                let new = ((ctx.said - since) as usize).min(ctx.transcript.len());
+                let lines = &ctx.transcript[ctx.transcript.len() - new..];
+                let until = lines
+                    .iter()
+                    .filter(|l| !l.starts_with("[event]"))
+                    .fold(ctx.clock, |t, line| t + speech_secs(line));
+                self.said = Some(ctx.said);
+                self.until = Some(until);
+                ctx.clock >= until
+            }
+            Some(until) => self.said.is_some_and(|s| ctx.said > s) || ctx.clock >= until,
         }
-        self.said = ctx.said;
-        ctx.clock >= self.until
     }
 }
 
@@ -122,7 +135,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, screen: Live<PlayScreen>) -> Lesson {
         "A pile builds down in alternating colours: a black 7 goes on a red 8. Move the 7 of spades from pile 3 onto the 8 of diamonds on pile 2.",
         |s: &PlayScreen, _| {
             (s.game.table.piles[1].top() == Some(card(7, Suit::Spades))).then(|| {
-                "The flip means a hidden card turned up.".to_string()
+                "A face-down card turns up when you move the cards off it.".to_string()
             })
         },
     );
@@ -138,6 +151,41 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, screen: Live<PlayScreen>) -> Lesson {
             move |s: &PlayScreen, ctx| {
                 heard
                     .after(s.game.table.foundations[hearts] >= 2, ctx)
+                    .then(String::new)
+            }
+        },
+    );
+
+    let clubs = Suit::Clubs.index();
+    let aces = screen.step(
+        format!(
+            "The other aces are face down in the piles or deeper in the stock. Press {t} until the ace of clubs turns up. Put it on its foundation."
+        ),
+        {
+            let mut heard = Heard::default();
+            move |s: &PlayScreen, ctx| {
+                heard
+                    .after(s.game.table.foundations[clubs] >= 1, ctx)
+                    .then(String::new)
+            }
+        },
+    );
+
+    let refill = screen.step(
+        format!(
+            "{} turns the stock back over when it is empty, as often as you like. Turn it over now.",
+            sentence_start(&t)
+        ),
+        {
+            // Ends on the turn that refills the stock, not on a stock that
+            // was never used up.
+            let mut ran_out = false;
+            let mut heard = Heard::default();
+            move |s: &PlayScreen, ctx| {
+                let t = &s.game.table;
+                ran_out |= t.stock.is_empty();
+                heard
+                    .after(ran_out && !t.stock.is_empty() && t.waste.is_empty(), ctx)
                     .then(String::new)
             }
         },
@@ -162,9 +210,11 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, screen: Live<PlayScreen>) -> Lesson {
     .step(ace)
     .step(seven)
     .step(stock)
+    .step(aces)
+    .step(refill)
     .step(undo)
     .outro(format!(
-        "Only a king goes on an empty pile, and every relaxed deal can be won. {} gives a useful move. Play deals a full game.",
+        "To win, build all 4 foundations from ace to king. Only a king goes on an empty pile. {} gives a useful move. Play deals a full game.",
         sentence_start(&h)
     ))
 }
