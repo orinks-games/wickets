@@ -278,6 +278,36 @@ fn the_tutorial_tunes_two_pipes() {
 }
 
 #[test]
+fn keys_after_a_pipe_is_set_never_hold_the_next_step_back() {
+    // F1 or the hint said over the wait after the first pipe used to push
+    // the next step back by every line.
+    let mut h = Headless::new(Default::default(), Base);
+    h.app.ctx.game.today = Some(QUIET_DAY);
+    let rank = the_echo::tutorial::rank();
+    let lesson = the_echo::tutorial::lesson_on(&mut h.app.ctx, rank.clone());
+    h.app.ctx.push(lesson);
+    h.frame(0.0);
+    let off = rank.with(|t| t.rank.pipe().off);
+    let key = if off > 0 { Key::Down } else { Key::Up };
+    for _ in 0..off.abs() {
+        h.press(key);
+        h.frame(DT);
+    }
+    h.press(Key::Space);
+    h.frame(DT);
+    assert!(!spoke(&h, "The next pipe is higher."), "{:?}", h.spoken());
+    h.press(Key::F1);
+    h.frame(DT);
+    assert!(
+        h.spoken()
+            .last()
+            .is_some_and(|l| l.contains("The next pipe is higher.")),
+        "{:?}",
+        h.spoken()
+    );
+}
+
+#[test]
 fn the_sound_check_plays_every_sound_by_name() {
     let mut h = title();
     goto(&mut h, "Sound check");
