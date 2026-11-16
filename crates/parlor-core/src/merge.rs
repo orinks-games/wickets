@@ -16,6 +16,13 @@
 //!   `played` flag stays on, so a holiday special's stars from either
 //!   computer survive.
 //!
+//! When both sides played on from a copy they last agreed on (the base,
+//! which Hearken keeps after each sync), a Newer value only one side
+//! changed takes that side's, and one both changed is merged field by field
+//! ([`three_way`]): a count of plays adds both sides' plays, a best or a
+//! level keeps the higher, a list that only grew keeps everything either
+//! side added, and anything else goes to the copy saved later.
+//!
 //! A key only one side has is simply kept. Values are merged as JSON, so a
 //! field a newer version added survives a pass through an older one.
 
@@ -71,8 +78,9 @@ pub struct Copy {
     pub stamps: BTreeMap<String, i64>,
 }
 
-/// Merges `cloud` into `local`. True when `local` changed.
-pub fn merge(local: &mut Copy, cloud: &Copy) -> bool {
+/// Merges `cloud` into `local`, from `base` when there is one: the last
+/// copy both sides agreed on. True when `local` changed.
+pub fn merge(local: &mut Copy, cloud: &Copy, base: Option<&Copy>) -> bool {
     let mut changed = false;
     for (key, theirs) in &cloud.games {
         let rule = rule(key);
@@ -88,11 +96,20 @@ pub fn merge(local: &mut Copy, cloud: &Copy) -> bool {
         };
         let our_stamp = local.stamps.get(key).copied().unwrap_or(0);
         let newer_is_theirs = their_stamp > our_stamp;
+        let was = base.and_then(|b| b.games.get(key));
         let merged = match rule {
             Rule::Best => best(ours, theirs, newer_is_theirs),
             Rule::Set => set(ours, theirs, newer_is_theirs),
-            _ if newer_is_theirs => keep_earned(theirs, ours),
-            _ => keep_earned(ours, theirs),
+            _ => match was {
+                Some(was) if theirs == was => ours.clone(),
+                Some(was) if ours == was => theirs.clone(),
+                Some(was) => {
+                    let both = three_way(ours, theirs, was, newer_is_theirs, Field::Other);
+                    keep_earned(&both, if newer_is_theirs { ours } else { theirs })
+                }
+                None if newer_is_theirs => keep_earned(theirs, ours),
+                None => keep_earned(ours, theirs),
+            },
         };
         if &merged != ours {
             local.games.insert(key.clone(), merged);
@@ -103,6 +120,94 @@ pub fn merge(local: &mut Copy, cloud: &Copy) -> bool {
         }
     }
     changed
+}
+
+/// What a number in a Newer value counts, by its field's name.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+enum Field {
+    /// Plays counted up: both sides' plays since the base add up.
+    Count,
+    /// Lower is better (a fastest time, the fewest moves).
+    Lowest,
+    /// Anything else: a best, a level, a place reached. The higher stays.
+    Other,
+}
+
+/// Fields that count plays, across the games. A field not named here keeps
+/// the higher number, which never loses a level or a best, though a count
+/// left off this list would only keep one side's plays.
+const COUNTS: &[&str] = &[
+    "nights", "wins", "runs", "games", "rounds", "strikes", "spares", "opened", "cracked",
+    "sets_danced", "tunes_danced", "steps", "hearts", "pairs", "roses", "pipes", "perfect",
+    "lamps", "practice_halls", "crumbs", "cleared_runs",
+];
+
+fn field(name: &str, parent: Field) -> Field {
+    if COUNTS.contains(&name) {
+        Field::Count
+    } else if name.starts_with("fastest") || name.contains("fewest") || name.starts_with("shortest") {
+        Field::Lowest
+    } else if parent == Field::Count {
+        // Inside a count's map (plays per level): still counts.
+        Field::Count
+    } else {
+        parent
+    }
+}
+
+/// `ours` and `theirs` both changed from `was`: put them together field by
+/// field, as the module docs say.
+fn three_way(ours: &Value, theirs: &Value, was: &Value, newer_is_theirs: bool, kind: Field) -> Value {
+    if ours == theirs || theirs == was {
+        return ours.clone();
+    }
+    if ours == was {
+        return theirs.clone();
+    }
+    let newer = || if newer_is_theirs { theirs.clone() } else { ours.clone() };
+    match (ours, theirs) {
+        (Value::Object(a), Value::Object(b)) => {
+            let empty = serde_json::Map::new();
+            let w = was.as_object().unwrap_or(&empty);
+            let mut out = a.clone();
+            for (k, t) in b {
+                let next = match (a.get(k), w.get(k)) {
+                    (None, _) => t.clone(),
+                    (Some(o), Some(w)) => three_way(o, t, w, newer_is_theirs, field(k, kind)),
+                    (Some(o), None) => both_new(o, t, newer_is_theirs, field(k, kind)),
+                };
+                out.insert(k.clone(), next);
+            }
+            Value::Object(out)
+        }
+        (Value::Number(_), Value::Number(_)) => match (ours.as_i64(), theirs.as_i64(), was.as_i64()) {
+            (Some(o), Some(t), Some(w)) if kind == Field::Count => Value::from((w + (o - w) + (t - w)).max(0)),
+            (Some(_), Some(_), _) => both_new(ours, theirs, newer_is_theirs, kind),
+            _ => newer(),
+        },
+        (Value::Array(a), Value::Array(b)) => {
+            let w = was.as_array().map(Vec::as_slice).unwrap_or(&[]);
+            let grew = |list: &Vec<Value>| w.iter().all(|item| list.contains(item));
+            if grew(a) && grew(b) {
+                let mut out = a.clone();
+                out.extend(b.iter().filter(|item| !a.contains(item)).cloned());
+                Value::Array(out)
+            } else {
+                newer()
+            }
+        }
+        _ => newer(),
+    }
+}
+
+/// Two values with no base between them (a field both sides added).
+fn both_new(ours: &Value, theirs: &Value, newer_is_theirs: bool, kind: Field) -> Value {
+    match (ours.as_i64(), theirs.as_i64()) {
+        (Some(o), Some(t)) if kind == Field::Lowest => Value::from(o.min(t)),
+        (Some(o), Some(t)) => Value::from(o.max(t)),
+        _ if newer_is_theirs => theirs.clone(),
+        _ => ours.clone(),
+    }
 }
 
 /// `newer` whole, with the stars and played flag `older` earned kept.
@@ -214,7 +319,7 @@ mod tests {
             }),
             &[],
         );
-        assert!(merge(&mut one, &two));
+        assert!(merge(&mut one, &two, None));
         assert_eq!(one.games["belfry/scores"], json!({"best": 40, "daily": 7, "weekly": 9}));
         assert_eq!(one.games["belfry/unlocks"], json!({"earned": ["a", "b", "c"]}));
         assert_eq!(one.games["belfry/played"], json!(true));
@@ -227,15 +332,15 @@ mod tests {
         let garden_b = json!({"plants": ["tomato", "lavender"], "day": 2});
         let mut one = copy(json!({"rooftop-garden/garden": garden_a}), &[("rooftop-garden/garden", 100)]);
         let two = copy(json!({"rooftop-garden/garden": garden_b}), &[("rooftop-garden/garden", 200)]);
-        assert!(merge(&mut one, &two));
+        assert!(merge(&mut one, &two, None));
         assert_eq!(one.games["rooftop-garden/garden"], garden_b, "never a mix of the two");
         assert_eq!(one.stamps["rooftop-garden/garden"], 200);
 
         // Saved earlier on the account: this computer's stays, and on a tie too.
         let mut three = copy(json!({"rooftop-garden/garden": garden_a}), &[("rooftop-garden/garden", 300)]);
-        assert!(!merge(&mut three, &two));
+        assert!(!merge(&mut three, &two, None));
         let mut four = copy(json!({"rooftop-garden/garden": garden_a}), &[]);
-        assert!(!merge(&mut four, &copy(json!({"rooftop-garden/garden": garden_b}), &[])));
+        assert!(!merge(&mut four, &copy(json!({"rooftop-garden/garden": garden_b}), &[]), None));
         assert_eq!(four.games["rooftop-garden/garden"], garden_a);
     }
 
@@ -249,7 +354,7 @@ mod tests {
             json!({"x/progress": {"played": false, "stars": {"1": 1, "2": 2}, "nights": 2}}),
             &[("x/progress", 200)],
         );
-        assert!(merge(&mut one, &two));
+        assert!(merge(&mut one, &two, None));
         assert_eq!(
             one.games["x/progress"],
             json!({"played": true, "stars": {"1": 3, "2": 2, "4": 1}, "nights": 2})
@@ -257,10 +362,63 @@ mod tests {
     }
 
     #[test]
+    fn counts_played_on_both_computers_add_up() {
+        let was = copy(json!({"riverboat-dice/progress": {"nights": 3, "wins": 1, "longest_stay": 10}}), &[]);
+        let mut one = copy(
+            json!({"riverboat-dice/progress": {"nights": 4, "wins": 2, "longest_stay": 10}}),
+            &[("riverboat-dice/progress", 100)],
+        );
+        let two = copy(
+            json!({"riverboat-dice/progress": {"nights": 5, "wins": 1, "longest_stay": 12}}),
+            &[("riverboat-dice/progress", 200)],
+        );
+        assert!(merge(&mut one, &two, Some(&was)));
+        assert_eq!(
+            one.games["riverboat-dice/progress"],
+            json!({"nights": 6, "wins": 2, "longest_stay": 12})
+        );
+    }
+
+    #[test]
+    fn from_a_base_only_the_side_that_changed_counts() {
+        let was = copy(json!({"x/progress": {"level": 2}, "x/garden": {"day": 1}}), &[]);
+        // This computer saved later but never touched the garden.
+        let mut one = copy(
+            json!({"x/progress": {"level": 2}, "x/garden": {"day": 1}}),
+            &[("x/garden", 900)],
+        );
+        let two = copy(json!({"x/progress": {"level": 3}, "x/garden": {"day": 4}}), &[("x/garden", 100)]);
+        assert!(merge(&mut one, &two, Some(&was)));
+        assert_eq!(one.games["x/garden"], json!({"day": 4}));
+        assert_eq!(one.games["x/progress"], json!({"level": 3}));
+    }
+
+    #[test]
+    fn levels_and_bests_keep_the_higher_and_lists_keep_both_additions() {
+        let was = copy(
+            json!({"x/progress": {"night": 3, "fastest": 90, "best": {"1": 10}, "songs": ["a"], "boat": "red"}}),
+            &[],
+        );
+        let mut one = copy(
+            json!({"x/progress": {"night": 4, "fastest": 80, "best": {"1": 12}, "songs": ["a", "b"], "boat": "blue"}}),
+            &[("x/progress", 100)],
+        );
+        let two = copy(
+            json!({"x/progress": {"night": 4, "fastest": 85, "best": {"1": 11, "2": 5}, "songs": ["a", "c"], "boat": "green"}}),
+            &[("x/progress", 200)],
+        );
+        assert!(merge(&mut one, &two, Some(&was)));
+        assert_eq!(
+            one.games["x/progress"],
+            json!({"night": 4, "fastest": 80, "best": {"1": 12, "2": 5}, "songs": ["a", "b", "c"], "boat": "green"})
+        );
+    }
+
+    #[test]
     fn local_keys_never_come_from_the_account() {
         let mut one = copy(json!({}), &[]);
         let two = copy(json!({"parlor/tester": {"date": "2026-12-01"}, "parlor.last_game": "belfry"}), &[]);
-        assert!(!merge(&mut one, &two));
+        assert!(!merge(&mut one, &two, None));
         assert!(one.games.is_empty());
     }
 
@@ -275,9 +433,9 @@ mod tests {
             &[("story", 9)],
         );
         let mut ab = a.clone();
-        merge(&mut ab, &b);
+        merge(&mut ab, &b, None);
         let mut ba = b.clone();
-        merge(&mut ba, &a);
+        merge(&mut ba, &a, None);
         assert_eq!(ab.games["x/scores"], ba.games["x/scores"]);
         assert_eq!(ab.games["story"], ba.games["story"]);
         let sorted = |v: &Value| {
@@ -287,15 +445,15 @@ mod tests {
         };
         assert_eq!(sorted(&ab.games["x/unlocks"]), sorted(&ba.games["x/unlocks"]));
         let again = ab.clone();
-        assert!(!merge(&mut ab, &again));
-        assert!(!merge(&mut ab, &b));
+        assert!(!merge(&mut ab, &again, None));
+        assert!(!merge(&mut ab, &b, None));
     }
 
     #[test]
     fn fields_a_newer_version_added_survive() {
         let mut one = copy(json!({"x/scores": {"best": 4}}), &[]);
         let two = copy(json!({"x/scores": {"best": 2, "new-board": 8}, "x/new-thing": {"a": 1}}), &[]);
-        merge(&mut one, &two);
+        merge(&mut one, &two, None);
         assert_eq!(one.games["x/scores"]["new-board"], json!(8));
         assert_eq!(one.games["x/new-thing"], json!({"a": 1}));
     }

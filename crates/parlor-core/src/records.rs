@@ -272,9 +272,18 @@ impl Records {
     }
 
     /// Merges a copy from the player's account into these records and saves
-    /// them. `Ok(true)` when anything here changed.
-    pub fn merge_copy(ctx: &mut Ctx<Parlor>, bytes: &[u8]) -> Result<bool, String> {
+    /// them, from `base` (the last copy both sides agreed on) when there is
+    /// one. `Ok(true)` when anything here changed.
+    pub fn merge_copy(ctx: &mut Ctx<Parlor>, bytes: &[u8], base: Option<&[u8]>) -> Result<bool, String> {
         let cloud: File = serde_json::from_slice(bytes).map_err(|e| e.to_string())?;
+        // A base that does not read is no base: the merge falls back to the
+        // later copy for whole values.
+        let base = base
+            .and_then(|b| serde_json::from_slice::<File>(b).ok())
+            .map(|b| crate::merge::Copy {
+                games: b.games,
+                stamps: b.stamps,
+            });
         let records = &mut ctx.game.records;
         records.file(&mut ctx.vault);
         let loaded = records.loaded.as_mut().expect("just loaded");
@@ -289,7 +298,7 @@ impl Records {
             games: cloud.games,
             stamps: cloud.stamps,
         };
-        let changed = crate::merge::merge(&mut ours, &theirs);
+        let changed = crate::merge::merge(&mut ours, &theirs, base.as_ref());
         loaded.file.games = ours.games;
         loaded.file.stamps = ours.stamps;
         if changed {
