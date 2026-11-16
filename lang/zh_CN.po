@@ -564,13 +564,13 @@ msgid "Back"
 msgstr "Back"
 
 msgid "Back to the parlor"
-msgstr "返回游艺馆"
+msgstr "回到游艺馆"
 
 msgid "Back to the title"
-msgstr "返回标题菜单"
+msgstr "回到标题菜单"
 
 msgid "Back to the challenges"
-msgstr "返回挑战"
+msgstr "回到挑战"
 
 msgid "Leave the challenge"
 msgstr "离开挑战"
@@ -582,7 +582,7 @@ msgid "Resume"
 msgstr "继续"
 
 msgid "Back to the lobby"
-msgstr "返回大厅"
+msgstr "回到大厅"
 
 msgid "Quit Wicket's"
 msgstr "退出Wicket's"
@@ -606,7 +606,7 @@ msgstr "{UNLOCKS}，已获得{earned}个，共{of}个"
 
 #. placeholders: {else}
 msgid "Spoken call-outs: {else}"
-msgstr "提示播报：{else}"
+msgstr "语音播报：{else}"
 
 msgid "off"
 msgstr "关闭"
@@ -625,11 +625,11 @@ msgstr ""
 
 #. placeholders: {CHALLENGES}
 msgid "{CHALLENGES}, daily done"
-msgstr "{CHALLENGES}，每日已完成"
+msgstr "{CHALLENGES}，每日挑战已完成"
 
 #. placeholders: {CHALLENGES}
 msgid "{CHALLENGES}, daily not played yet"
-msgstr "{CHALLENGES}，每日还没玩"
+msgstr "{CHALLENGES}，每日挑战还没玩"
 
 msgid "lobby"
 msgstr ""
@@ -1536,7 +1536,7 @@ msgid ""
 "wherever you are. F2 stops speech."
 msgstr ""
 "Up和Down在菜单中移动。Home和End跳到两头。Enter选择。Escape返回上一个界面。在大厅按Escape会问你是否退出，光标先停在“否”上"
-"。游戏的暂停菜单最后一项是返回大厅，所以没有什么会不经询问就退出游艺馆。F1朗读你当前所在位置的帮助。F2停止语音。"
+"。游戏的暂停菜单最后一项是回到大厅，所以没有什么会不经询问就退出游艺馆。F1朗读你当前所在位置的帮助。F2停止语音。"
 
 msgid "Up and Down move through a menu."
 msgstr "Up和Down在菜单中移动。"
@@ -1557,7 +1557,7 @@ msgstr "在大厅按Escape会问你是否退出，光标先停在“否”上。
 msgid ""
 "A game's pause menu ends with Back to the lobby, so nothing quits the "
 "parlor without asking."
-msgstr "游戏的暂停菜单最后一项是返回大厅，所以没有什么会不经询问就退出游艺馆。"
+msgstr "游戏的暂停菜单最后一项是回到大厅，所以没有什么会不经询问就退出游艺馆。"
 
 msgid "F1 reads help for wherever you are."
 msgstr "F1朗读你当前所在位置的帮助。"
@@ -2354,8 +2354,7 @@ msgid ""
 "second action. S gives your status, such as score and lives. R repeats the "
 "last prompt or pattern. H gives a hint, where the game has one."
 msgstr ""
-"方向键用来移动、瞄准或选择。Space是主操作。Tab是副操作。S报告你的状态，比如得分和剩下的命。R重复上一个提示或节奏型。H给出提示，如果游戏有的话"
-"。"
+"方向键用来移动、瞄准或选择。Space是主操作。Tab是副操作。S报告你的状态，比如得分和剩下的命。R重复上一句话或节奏型。H给出提示，如果游戏有的话。"
 
 msgid "The arrow keys move, aim or choose."
 msgstr "方向键用来移动、瞄准或选择。"
@@ -2370,7 +2369,7 @@ msgid "S gives your status, such as score and lives."
 msgstr "S报告你的状态，比如得分和剩下的命。"
 
 msgid "R repeats the last prompt or pattern."
-msgstr "R重复上一个提示或节奏型。"
+msgstr "R重复上一句话或节奏型。"
 
 msgid "H gives a hint, where the game has one."
 msgstr "H给出提示，如果游戏有的话。"
@@ -2557,25 +2556,25 @@ msgid "Tranquility"
 msgstr ""
 
 msgid "Geminid"
-msgstr ""
+msgstr "双子座"
 
 msgid "Leonid"
-msgstr ""
+msgstr "狮子座"
 
 msgid "Lyrid"
-msgstr ""
+msgstr "天琴座"
 
 msgid "Orionid"
-msgstr ""
+msgstr "猎户座"
 
 msgid "Perseid"
-msgstr ""
+msgstr "英仙座"
 
 msgid "Quadrantid"
-msgstr ""
+msgstr "象限仪座"
 
 msgid "Eta Aquariid"
-msgstr ""
+msgstr "宝瓶座η"
 
 msgid "Lantern Festival"
 msgstr "元宵节"
@@ -3293,13 +3292,13 @@ msgid ""
 "worth a tenth more. Switching it on during a run ends the bonus for that "
 "run."
 msgstr ""
-"提示播报是设置里的一行，可以从标题菜单进入，也可以在一局中从暂停菜单进入。整局都关着它玩，你存入的一切都多值十分之一。在一局中打开它，这一局的奖励就没了"
+"语音播报是设置里的一行，可以从标题菜单进入，也可以在一局中从暂停菜单进入。整局都关着它玩，你存入的一切都多值十分之一。在一局中打开它，这一局的奖励就没了"
 "。"
 
 msgid ""
 "Spoken call-outs is a row in Settings, from the title or from the pause "
 "menu during a run."
-msgstr "提示播报是设置里的一行，可以从标题菜单进入，也可以在一局中从暂停菜单进入。"
+msgstr "语音播报是设置里的一行，可以从标题菜单进入，也可以在一局中从暂停菜单进入。"
 
 msgid ""
 "Play a whole run with it off, and everything you bank is worth a tenth more."
@@ -3474,7 +3473,7 @@ msgid ""
 "endless meadow count at every pace, and so does the bonus for playing with "
 "Spoken call-outs off."
 msgstr ""
-"轻松节奏的得分和复活节纪念品单独保存，挑战也一样。普通和快速共用得分。过关的轮次和无尽草地在任何节奏下都算数，关闭提示播报的奖励也一样。"
+"轻松节奏的得分和复活节纪念品单独保存，挑战也一样。普通和快速共用得分。过关的轮次和无尽草地在任何节奏下都算数，关闭语音播报的奖励也一样。"
 
 msgid ""
 "Relaxed scores and Easter keepsakes are saved separately, including "
@@ -3487,7 +3486,7 @@ msgstr "普通和快速共用得分。"
 msgid ""
 "Rounds cleared and the endless meadow count at every pace, and so does the "
 "bonus for playing with Spoken call-outs off."
-msgstr "过关的轮次和无尽草地在任何节奏下都算数，关闭提示播报的奖励也一样。"
+msgstr "过关的轮次和无尽草地在任何节奏下都算数，关闭语音播报的奖励也一样。"
 
 msgid ""
 "Clear all eight rounds to open the endless meadow: rounds without end, "
@@ -3707,7 +3706,7 @@ msgid ""
 "Catching every egg in a pattern and dodging its hazards earns 100 bonus "
 "points. Every fifth cracked egg breaks a basket. With Spoken call-outs off, "
 "the call names the pattern but not its lane."
-msgstr "接住一组花样里的每个蛋并躲开它的危险，奖励100分。每碎五个蛋就坏一个篮子。关闭提示播报时，播报只说花样的名字，不说它在哪条道。"
+msgstr "接住一组花样里的每个蛋并躲开它的危险，奖励100分。每碎五个蛋就坏一个篮子。关闭语音播报时，播报只说花样的名字，不说它在哪条道。"
 
 msgid ""
 "Catching every egg in a pattern and dodging its hazards earns 100 bonus "
@@ -3716,7 +3715,7 @@ msgstr "接住一组花样里的每个蛋并躲开它的危险，奖励100分。
 
 msgid ""
 "With Spoken call-outs off, the call names the pattern but not its lane."
-msgstr "关闭提示播报时，播报只说花样的名字，不说它在哪条道。"
+msgstr "关闭语音播报时，播报只说花样的名字，不说它在哪条道。"
 
 msgid ""
 "Your result counts when a challenge run ends, however it ends: the results "
@@ -3752,7 +3751,7 @@ msgid ""
 "Three slow lanes with every kind of drop, each explained the first time it "
 "falls and every drop called out. Nothing costs a basket and no score is "
 "saved. Pause and choose Back to the title to stop."
-msgstr "三条慢速的道，有各种掉落物，每种第一次掉下时都会讲解，每次掉落都有播报。不会损失篮子，也不保存得分。想停下来就暂停，选择返回标题菜单。"
+msgstr "三条慢速的道，有各种掉落物，每种第一次掉下时都会讲解，每次掉落都有播报。不会损失篮子，也不保存得分。想停下来就暂停，选择回到标题菜单。"
 
 msgid ""
 "Three slow lanes with every kind of drop, each explained the first time it "
@@ -3763,7 +3762,7 @@ msgid "Nothing costs a basket and no score is saved."
 msgstr "不会损失篮子，也不保存得分。"
 
 msgid "Pause and choose Back to the title to stop."
-msgstr "想停下来就暂停，选择返回标题菜单。"
+msgstr "想停下来就暂停，选择回到标题菜单。"
 
 msgid "The title"
 msgstr "标题菜单"
@@ -3842,10 +3841,10 @@ msgstr "纪录：你的最高分、过关的轮次、你的复活节纪念品和
 msgid ""
 "Settings: speech, volume and controls, then this game's Spoken call-outs, "
 "on or off, and its Pace."
-msgstr "设置：语音、音量和控制，然后是这个游戏的提示播报开关和节奏。"
+msgstr "设置：语音、音量和控制，然后是这个游戏的语音播报开关和节奏。"
 
 msgid "Back to the parlor."
-msgstr "返回游艺馆。"
+msgstr "回到游艺馆。"
 
 msgid "Results"
 msgstr "结算"
@@ -3857,8 +3856,8 @@ msgid ""
 "the first row plays the same challenge again and the last row is Back to "
 "the challenges. Escape does the same as the last row."
 msgstr ""
-"一局结束时，结算会给出你的得分、是不是你的最高分，挑战的话还有你的连胜。然后结算菜单提供再来一局或再试一次、再听一遍结算，以及返回标题菜单。挑战之后，第"
-"一行是再玩同一个挑战，最后一行是返回挑战。Escape和最后一行的作用一样。"
+"一局结束时，结算会给出你的得分、是不是你的最高分，挑战的话还有你的连胜。然后结算菜单提供再来一局或再试一次、再听一遍结算，以及回到标题菜单。挑战之后，第"
+"一行是再玩同一个挑战，最后一行是回到挑战。Escape和最后一行的作用一样。"
 
 msgid ""
 "When a run ends, the results give your score, whether it is your best, and "
@@ -3868,12 +3867,12 @@ msgstr "一局结束时，结算会给出你的得分、是不是你的最高分
 msgid ""
 "Then the results menu offers Play again or Try again, Hear the results "
 "again, and Back to the title."
-msgstr "然后结算菜单提供再来一局或再试一次、再听一遍结算，以及返回标题菜单。"
+msgstr "然后结算菜单提供再来一局或再试一次、再听一遍结算，以及回到标题菜单。"
 
 msgid ""
 "After a challenge, the first row plays the same challenge again and the "
 "last row is Back to the challenges."
-msgstr "挑战之后，第一行是再玩同一个挑战，最后一行是返回挑战。"
+msgstr "挑战之后，第一行是再玩同一个挑战，最后一行是回到挑战。"
 
 msgid "Escape does the same as the last row."
 msgstr "Escape和最后一行的作用一样。"
@@ -3923,15 +3922,15 @@ msgstr "F1：当前界面的帮助。"
 msgid ""
 "Escape: pause, with Resume, Settings, Help, Back to the title, and Back to "
 "the lobby. In a challenge, Back to the title is Leave the challenge."
-msgstr "Escape：暂停，有继续、设置、帮助、返回标题菜单和返回大厅。在挑战中，返回标题菜单会变成离开挑战。"
+msgstr "Escape：暂停，有继续、设置、帮助、回到标题菜单和回到大厅。在挑战中，回到标题菜单会变成离开挑战。"
 
 msgid ""
 "Escape: pause, with Resume, Settings, Help, Back to the title, and Back to "
 "the lobby."
-msgstr "Escape：暂停，有继续、设置、帮助、返回标题菜单和返回大厅。"
+msgstr "Escape：暂停，有继续、设置、帮助、回到标题菜单和回到大厅。"
 
 msgid "In a challenge, Back to the title is Leave the challenge."
-msgstr "在挑战中，返回标题菜单会变成离开挑战。"
+msgstr "在挑战中，回到标题菜单会变成离开挑战。"
 
 msgid "Twist of the day"
 msgstr "今日变化"
@@ -4167,7 +4166,7 @@ msgid "Challenges. {join}"
 msgstr "挑战。{join}"
 
 msgid "easter morning"
-msgstr ""
+msgstr "复活节早晨"
 
 #. placeholders: {best}
 msgid "Endless meadow, {best}"
@@ -4244,12 +4243,12 @@ msgid ""
 msgstr "今日变化、每周马拉松和每月复活节庆典：所有玩家的掉落都一样。{resets}"
 
 msgid "Spoken call-outs: on. Each drop is called with its lane."
-msgstr "提示播报：开。每次掉落都会报出它的道。"
+msgstr "语音播报：开。每次掉落都会报出它的道。"
 
 msgid ""
 "Spoken call-outs: off. From your next run, a tenth more points on "
 "everything you bank."
-msgstr "提示播报：关。从下一局起，你存入的一切都多得十分之一的分。"
+msgstr "语音播报：关。从下一局起，你存入的一切都多得十分之一的分。"
 
 msgid ""
 "When on, a voice names each drop and its lane as it starts to fall. Off for "
@@ -5336,7 +5335,7 @@ msgid "Sideways only: {left} and {right}. Lane {lane}."
 msgstr "只能横着走：{left}和{right}。第{lane}道。"
 
 msgid "Round over."
-msgstr ""
+msgstr "本轮结束。"
 
 msgid "playing"
 msgstr ""
@@ -6998,7 +6997,7 @@ msgstr "走开一小段再回来，它会再为你唱一遍。"
 msgid ""
 "Turn on Spoken call-outs in Settings, from the title or the pause menu, to "
 "have the notes of every song named after it."
-msgstr "在设置里打开提示播报，可以从标题菜单或暂停菜单进入，每首歌唱完后都会说出它的音。"
+msgstr "在设置里打开语音播报，可以从标题菜单或暂停菜单进入，每首歌唱完后都会说出它的音。"
 
 msgid "Seasons"
 msgstr "季节"
@@ -7186,6 +7185,7 @@ msgid ""
 "names the bird you chose. R plays the song to find alone again. H says "
 "where it is. Each bird you pick out goes into your field guide."
 msgstr ""
+"选对的鸟会飞走，另一只鸟来接替它的位置。选错的话，会说出你选的那只鸟。R再单独播放一次要找的歌。H说出它在哪里。你找出的每只鸟都会进入你的观鸟图鉴。"
 
 msgid "The right bird flies off, and another bird takes its place."
 msgstr "选对的鸟会飞走，另一只鸟来接替它的位置。"
@@ -7338,7 +7338,7 @@ msgid ""
 "the results again, the Field guide, and Back to the title. Escape does the "
 "same as the last row."
 msgstr ""
-"散步结束时，结算会说出你结交的鸟、新学的歌，以及你观鸟图鉴的总数。然后结算菜单提供再来一局、再听一遍结算、观鸟图鉴和返回标题菜单。Escape和最后一行"
+"散步结束时，结算会说出你结交的鸟、新学的歌，以及你观鸟图鉴的总数。然后结算菜单提供再来一局、再听一遍结算、观鸟图鉴和回到标题菜单。Escape和最后一行"
 "的作用一样。"
 
 msgid ""
@@ -7349,7 +7349,7 @@ msgstr "散步结束时，结算会说出你结交的鸟、新学的歌，以及
 msgid ""
 "Then the results menu offers Play again, Hear the results again, the Field "
 "guide, and Back to the title."
-msgstr "然后结算菜单提供再来一局、再听一遍结算、观鸟图鉴和返回标题菜单。"
+msgstr "然后结算菜单提供再来一局、再听一遍结算、观鸟图鉴和回到标题菜单。"
 
 msgid ""
 "Records, on the title, reads your field guide's totals, your walks and "
@@ -8996,16 +8996,16 @@ msgstr "你遇到过的每只鸟，用文字描述的歌，以及你学会的歌
 
 msgid ""
 "Spoken call-outs: on. After a bird sings to you, its notes are spoken."
-msgstr "提示播报：开。鸟儿对你唱完后，会说出它的音。"
+msgstr "语音播报：开。鸟儿对你唱完后，会说出它的音。"
 
 #. one sentence of a longer line
 msgid "Spoken call-outs: off."
-msgstr "提示播报：关。"
+msgstr "语音播报：关。"
 
 #. placeholders: {control_name}
 msgid ""
 "Spoken call-outs: off. {control_name} speaks the notes when you want them."
-msgstr "提示播报：关。想听时，{control_name}说出音。"
+msgstr "语音播报：关。想听时，{control_name}说出音。"
 
 #. placeholders: {control_name}
 #. one sentence of a longer line
@@ -10207,21 +10207,21 @@ msgid "You can try again later."
 msgstr "你以后可以再试。"
 
 msgid "Spoken call-outs"
-msgstr "提示播报"
+msgstr "语音播报"
 
 msgid ""
 "The caller is a recorded voice that plays with the music. With spoken "
 "call-outs on, the game also names each step as it is called. It is off at "
 "the start. Switch it in Settings, from the title or the pause menu."
 msgstr ""
-"领舞人是一段和音乐一起播放的录音。打开提示播报时，游戏还会在每一步喊出时说出它。一开始它是关着的。在设置里切换，可以从标题菜单或暂停菜单进入。"
+"领舞人是一段和音乐一起播放的录音。打开语音播报时，游戏还会在每一步喊出时说出它。一开始它是关着的。在设置里切换，可以从标题菜单或暂停菜单进入。"
 
 msgid "The caller is a recorded voice that plays with the music."
 msgstr "领舞人是一段和音乐一起播放的录音。"
 
 msgid ""
 "With spoken call-outs on, the game also names each step as it is called."
-msgstr "打开提示播报时，游戏还会在每一步喊出时说出它。"
+msgstr "打开语音播报时，游戏还会在每一步喊出时说出它。"
 
 msgid "It is off at the start."
 msgstr "一开始它是关着的。"
@@ -10235,7 +10235,7 @@ msgstr "暂停"
 msgid ""
 "Escape pauses, and the music holds. When you come back, three beats count "
 "you back in. The tune goes on where it stopped."
-msgstr ""
+msgstr "Escape暂停，音乐会停住。你回来时，会数三拍让你重新进入。曲子从停下的地方继续。"
 
 msgid "Escape pauses, and the music holds."
 msgstr "Escape暂停，音乐会停住。"
@@ -10563,10 +10563,10 @@ msgid ""
 msgstr "你的幸运点、四叶草，以及每一届圣帕特里克舞会的纪念品。"
 
 msgid "Spoken call-outs: on. Each call is also spoken."
-msgstr "提示播报：开。每个口令也会说出来。"
+msgstr "语音播报：开。每个口令也会说出来。"
 
 msgid "Spoken call-outs: off. Only the caller calls the steps."
-msgstr "提示播报：关。只有领舞人喊舞步。"
+msgstr "语音播报：关。只有领舞人喊舞步。"
 
 msgid "When on, the game also speaks each step as the caller calls it."
 msgstr "开启时，领舞人每喊一步，游戏也会说出它。"
@@ -11278,97 +11278,97 @@ msgid "tune"
 msgstr "曲子"
 
 msgid "The Kettle on the Hob"
-msgstr ""
+msgstr "炉上的水壶"
 
 msgid "kettle"
 msgstr ""
 
 msgid "The Turf Fire"
-msgstr ""
+msgstr "泥炭火"
 
 msgid "turf-fire"
 msgstr ""
 
 msgid "Granny's Rocking Chair"
-msgstr ""
+msgstr "奶奶的摇椅"
 
 msgid "rocking-chair"
 msgstr ""
 
 msgid "The Crossroads Jig"
-msgstr ""
+msgstr "十字路口吉格舞"
 
 msgid "crossroads"
 msgstr ""
 
 msgid "The Mill Road"
-msgstr ""
+msgstr "磨坊路"
 
 msgid "mill-road"
 msgstr ""
 
 msgid "The Hazel Gate"
-msgstr ""
+msgstr "榛树门"
 
 msgid "hazel-gate"
 msgstr ""
 
 msgid "The Market Cart"
-msgstr ""
+msgstr "集市推车"
 
 msgid "market-cart"
 msgstr ""
 
 msgid "The Tinker's Purse"
-msgstr ""
+msgstr "补锅匠的钱袋"
 
 msgid "tinkers-purse"
 msgstr ""
 
 msgid "The Fair Day"
-msgstr ""
+msgstr "赶集日"
 
 msgid "fair-day"
 msgstr ""
 
 msgid "The Harbour Lights"
-msgstr ""
+msgstr "港口灯火"
 
 msgid "harbour-lights"
 msgstr ""
 
 msgid "The Fisherman's Lilt"
-msgstr ""
+msgstr "渔夫小调"
 
 msgid "fishermans-lilt"
 msgstr ""
 
 msgid "The Salt Spray"
-msgstr ""
+msgstr "咸咸的浪花"
 
 msgid "salt-spray"
 msgstr ""
 
 msgid "The Green Ribbon"
-msgstr ""
+msgstr "绿丝带"
 
 msgid "green-ribbon"
 msgstr ""
 
 msgid "The Lucky Penny"
-msgstr ""
+msgstr "幸运硬币"
 
 msgid "lucky-penny"
 msgstr ""
 
 msgid "The Clover Field"
-msgstr ""
+msgstr "三叶草田"
 
 msgid "clover-field"
 msgstr ""
 
 msgid "The Saint's Day"
-msgstr ""
+msgstr "圣人节"
 
 msgid "saints-day"
 msgstr ""
@@ -11839,14 +11839,14 @@ msgid ""
 "once. The tutorial explains the bow and the sights cue, so after it play "
 "does not explain them again."
 msgstr ""
-"设置里有两行可以开关提示播报，可以从标题菜单进入，也可以在一局中从暂停菜单进入。瞄准播报会在弓每次转动时说出你的瞄准方向，比如“右15度”。关闭瞄准播报"
+"设置里有两行可以开关语音播报，可以从标题菜单进入，也可以在一局中从暂停菜单进入。瞄准播报会在弓每次转动时说出你的瞄准方向，比如“右15度”。关闭瞄准播报"
 "时，每一步只有滴答声，S仍然会告诉你瞄准方向。目标播报会在每个目标飘进来时说出它，比如“粉色纸心，从左边来。”关闭目标播报时，你只能听到嗡嗡声，Tab仍"
 "然会列出天空中的目标。第一次遇到每种目标或提示音时，会讲解一次。教程会讲解弓和准星提示音，所以之后游戏中不会再讲。"
 
 msgid ""
 "Two rows in Settings turn spoken call-outs on and off, from the title or "
 "from the pause menu during a run."
-msgstr "设置里有两行可以开关提示播报，可以从标题菜单进入，也可以在一局中从暂停菜单进入。"
+msgstr "设置里有两行可以开关语音播报，可以从标题菜单进入，也可以在一局中从暂停菜单进入。"
 
 msgid ""
 "The Spoken aim setting says your aim each time the bow turns, such as \"15 "
@@ -13369,7 +13369,7 @@ msgid ""
 "on, each move is also named, such as \"Pearl, lane 3.\""
 msgstr ""
 "龙珠的提示音从它的道上传来：在你左边、前面或右边。它移动时，提示音也跟着移动。它只在一小节的第一拍移动，那一拍不算：你有到下一拍的时间去追上它。到达提示"
-"音确认你的龙头已经到了龙珠那条道。Tab再次敲响龙珠的铃声，并说出它在哪条道。打开提示播报时，每次移动也会说出来，比如“龙珠，第3道。”"
+"音确认你的龙头已经到了龙珠那条道。Tab再次敲响龙珠的铃声，并说出它在哪条道。打开语音播报时，每次移动也会说出来，比如“龙珠，第3道。”"
 
 msgid ""
 "The pearl's cue comes from its lane: to your left, in front, or to your "
@@ -13393,7 +13393,7 @@ msgstr "Tab再次敲响龙珠的铃声，并说出它在哪条道。"
 
 msgid ""
 "With spoken call-outs on, each move is also named, such as \"Pearl, lane 3.\""
-msgstr "打开提示播报时，每次移动也会说出来，比如“龙珠，第3道。”"
+msgstr "打开语音播报时，每次移动也会说出来，比如“龙珠，第3道。”"
 
 msgid "Beats, points and combos"
 msgstr "节拍、分数和连击"
@@ -13406,6 +13406,8 @@ msgid ""
 "to catch an envelope or dodge, keeps the combo. Two beats away in a row "
 "break it."
 msgstr ""
+"鼓声标出每一拍和每一小节的开始。每一拍龙头在龙珠那条道上时，龙就会起舞，身体每一节得1分。连续踩在龙珠上的拍子会累积你的连击。每连续16拍奖励50分。为"
+"了接红包或躲闪离开龙珠一拍，连击会保留。连续离开两拍就会中断。"
 
 msgid "The drum marks every beat and the start of each bar."
 msgstr "鼓声标出每一拍和每一小节的开始。"
@@ -13536,7 +13538,7 @@ msgid ""
 "call-outs on, a cheering shop is named, such as \"The tea house cheers, on "
 "your left.\""
 msgstr ""
-"街道两边都是店铺，每隔一小节一家。经过一家店铺时，人群会礼貌地鼓掌，如果你的连击有4或以上就会欢呼，得20分。欢呼声从店铺所在的那一边传来。打开提示播报"
+"街道两边都是店铺，每隔一小节一家。经过一家店铺时，人群会礼貌地鼓掌，如果你的连击有4或以上就会欢呼，得20分。欢呼声从店铺所在的那一边传来。打开语音播报"
 "时，欢呼的店铺会说出名字，比如“茶馆在欢呼，在你左边。”"
 
 msgid "Shops line both sides of the street, one every other bar."
@@ -13553,7 +13555,7 @@ msgstr "欢呼声从店铺所在的那一边传来。"
 msgid ""
 "With spoken call-outs on, a cheering shop is named, such as \"The tea house "
 "cheers, on your left.\""
-msgstr "打开提示播报时，欢呼的店铺会说出名字，比如“茶馆在欢呼，在你左边。”"
+msgstr "打开语音播报时，欢呼的店铺会说出名字，比如“茶馆在欢呼，在你左边。”"
 
 msgid "Stars and the streets"
 msgstr "星星和街道"
@@ -13773,13 +13775,13 @@ msgid ""
 "Practice street always names its calls. Status, Up and the hint work either "
 "way."
 msgstr ""
-"提示播报是设置里的一行，可以从标题菜单或暂停菜单进入，用来开关游戏中的语音口令。开启时，龙珠移动会说出它的道，每个红包、灯笼和鞭炮串开始过来时会说出它的"
+"语音播报是设置里的一行，可以从标题菜单或暂停菜单进入，用来开关游戏中的语音口令。开启时，龙珠移动会说出它的道，每个红包、灯笼和鞭炮串开始过来时会说出它的"
 "道，每家欢呼的店铺也会说出来。关闭时，这些都不会说。练习街总会说出口令。状态、Up和提示在两种情况下都能用。"
 
 msgid ""
 "Spoken call-outs, a row in Settings from the title or the pause menu, "
 "switches the spoken calls in play."
-msgstr "提示播报是设置里的一行，可以从标题菜单或暂停菜单进入，用来开关游戏中的语音口令。"
+msgstr "语音播报是设置里的一行，可以从标题菜单或暂停菜单进入，用来开关游戏中的语音口令。"
 
 msgid ""
 "On, a voice names the pearl's lane when it moves, each red envelope, "
@@ -13932,10 +13934,10 @@ msgid "street {n}"
 msgstr "第{n}条街"
 
 msgid "new year"
-msgstr ""
+msgstr "新年"
 
 msgid "lantern walk"
-msgstr ""
+msgstr "提灯游行"
 
 #. placeholders: {n}, {name}
 msgid "Street {n}: {name}"
@@ -14858,12 +14860,12 @@ msgstr "历年生肖的纪念品，{keepsakes}个，共12个，以及你找到�
 msgid ""
 "Spoken call-outs: on. The pearl, envelopes and firecrackers are named with "
 "their lanes."
-msgstr "提示播报：开。龙珠、红包和鞭炮都会连同它们的道一起说出来。"
+msgstr "语音播报：开。龙珠、红包和鞭炮都会连同它们的道一起说出来。"
 
 msgid ""
 "Spoken call-outs: off. You follow the pearl and dodge firecrackers without "
 "call-outs."
-msgstr "提示播报：关。你在没有播报的情况下追龙珠、躲鞭炮。"
+msgstr "语音播报：关。你在没有播报的情况下追龙珠、躲鞭炮。"
 
 msgid ""
 "When on, a voice names the pearl's lane as it moves, and each envelope and "
@@ -15572,7 +15574,7 @@ msgid ""
 "G. The first time you ring one, it goes in your journal."
 msgstr ""
 "罐子能装6只萤火虫。Tab把它们放走。放走之后的几秒里，每只萤火虫都闪得更频繁。每个种类都对应五声音阶里的一个音：C、D、E、G或A。罐子里的音一起响起"
-"，成为一个和弦。有六个和弦有名字，比如夏日三和弦，就是C、E和G。你第一次弹出一个，它就会记进你的日记。"
+"，成为一个和弦。有六个和弦有名字，比如夏日三和弦，就是C、E和G。你第一次弹出一个，它就会记进你的日志。"
 
 msgid "The jar holds 6 fireflies."
 msgstr "罐子能装6只萤火虫。"
@@ -15594,10 +15596,10 @@ msgid ""
 msgstr "有六个和弦有名字，比如夏日三和弦，就是C、E和G。"
 
 msgid "The first time you ring one, it goes in your journal."
-msgstr "你第一次弹出一个，它就会记进你的日记。"
+msgstr "你第一次弹出一个，它就会记进你的日志。"
 
 msgid "Species and the journal"
-msgstr "种类和日记"
+msgstr "种类和日志"
 
 msgid ""
 "There are 10 species. Each blinks its own pattern and rings its own note. "
@@ -15608,7 +15610,7 @@ msgid ""
 "and keepsakes. An unknown firefly's row says where to look for it."
 msgstr ""
 "一共有10个种类。每种都有自己的闪烁方式和自己的音。单闪萤闪一下。双星萤闪两下。三闪萤闪三下。其他的只生活在某一片草地或某一个季节。你第一次抓到一个种类"
-"，它就会记进你的日记。标题菜单上的日记会播放每个种类的闪烁并介绍它，还会列出你的和弦和纪念品。还不认识的萤火虫那一行会说去哪里找它。"
+"，它就会记进你的日志。标题菜单上的日志会播放每个种类的闪烁并介绍它，还会列出你的和弦和纪念品。还不认识的萤火虫那一行会说去哪里找它。"
 
 msgid "There are 10 species."
 msgstr "一共有10个种类。"
@@ -15629,12 +15631,12 @@ msgid "Others live only in one meadow or one season."
 msgstr "其他的只生活在某一片草地或某一个季节。"
 
 msgid "The first time you catch a species, it goes in your journal."
-msgstr "你第一次抓到一个种类，它就会记进你的日记。"
+msgstr "你第一次抓到一个种类，它就会记进你的日志。"
 
 msgid ""
 "Journal, on the title, plays each species' blink and reads about it, and "
 "lists your chords and keepsakes."
-msgstr "标题菜单上的日记会播放每个种类的闪烁并介绍它，还会列出你的和弦和纪念品。"
+msgstr "标题菜单上的日志会播放每个种类的闪烁并介绍它，还会列出你的和弦和纪念品。"
 
 msgid "An unknown firefly's row says where to look for it."
 msgstr "还不认识的萤火虫那一行会说去哪里找它。"
@@ -16468,7 +16470,7 @@ msgstr " 你目前最长的一个夜晚。"
 
 #. placeholders: {list_words}
 msgid "New in your journal: {list_words}."
-msgstr "日记新收录：{list_words}。"
+msgstr "日志新收录：{list_words}。"
 
 msgid "New chord"
 msgstr "新和弦"
@@ -16485,7 +16487,7 @@ msgstr "{sentence_start}开放了：在标题菜单的“草地”一行选择�
 msgid ""
 "Your journal: {species_found} of {ALL} species, {chords_found} of 6 chords, "
 "{format} caught in all."
-msgstr "你的日记：{species_found}个种类，共{ALL}个，{chords_found}个和弦，共6个，一共抓到{format}。"
+msgstr "你的日志：{species_found}个种类，共{ALL}个，{chords_found}个和弦，共6个，一共抓到{format}。"
 
 msgid "Another visit to the practice patch."
 msgstr "再去一次练习草地。"
@@ -16529,12 +16531,12 @@ msgid ""
 msgstr "{status}朝一只萤火虫走过去，在它发光时按{control_name}。闪不止一下的萤火虫，一次闪烁里的每一下都要回应。"
 
 msgid "Journal"
-msgstr "日记"
+msgstr "日志"
 
 msgid ""
 "Up and Down choose a page of the journal. Enter on a firefly plays its "
 "blink and reads about it. Escape goes back."
-msgstr "Up和Down选择日记的一页。在萤火虫上按Enter会播放它的闪烁并介绍它。Escape返回。"
+msgstr "Up和Down选择日志的一页。在萤火虫上按Enter会播放它的闪烁并介绍它。Escape返回。"
 
 #. placeholders: {sentence_start}, {times}, {lower_first}
 msgid "{sentence_start}, made {times}: {lower_first}"
@@ -16810,7 +16812,7 @@ msgstr "草地有百分之{harmony}整齐。"
 #. placeholders: {harmony}
 #. one sentence of a longer line
 msgid "It goes in your journal, with tonight's {harmony} percent."
-msgstr "它会记进你的日记，附上今晚的百分之{harmony}。"
+msgstr "它会记进你的日志，附上今晚的百分之{harmony}。"
 
 #. placeholders: {year}, {name}
 #. one sentence of a longer line
@@ -16821,7 +16823,7 @@ msgstr "你{year}年的纪念品：{name}。"
 msgid ""
 "Your {year} keepsake: {name}. It goes in your journal, with tonight's "
 "{harmony} percent."
-msgstr "你{year}年的纪念品：{name}。它会记进你的日记，附上今晚的百分之{harmony}。"
+msgstr "你{year}年的纪念品：{name}。它会记进你的日志，附上今晚的百分之{harmony}。"
 
 #. placeholders: {best}
 #. one sentence of a longer line
@@ -17142,7 +17144,7 @@ msgstr "抓到了"
 
 msgid ""
 "A rising chime: a firefly you have never caught. It goes in your journal."
-msgstr "一声上扬的叮：一只你从没抓过的萤火虫。它会记进你的日记。"
+msgstr "一声上扬的叮：一只你从没抓过的萤火虫。它会记进你的日志。"
 
 msgid "New species"
 msgstr "新种类"
@@ -17511,7 +17513,7 @@ msgid ""
 "Some species flash two or three times: press once for every flash. Your jar "
 "holds 6, and chords with names go in your journal. Play walks the home "
 "meadow."
-msgstr "有些种类会闪两三下：每闪一下就按一次。你的罐子能装6只，有名字的和弦会记进你的日记。选开始会走进家门口的草地。"
+msgstr "有些种类会闪两三下：每闪一下就按一次。你的罐子能装6只，有名字的和弦会记进你的日志。选开始会走进家门口的草地。"
 
 msgid ""
 "Patience by a cabin fire: move all 52 cards onto four suit foundations, ace "
@@ -19547,7 +19549,7 @@ msgid "Old Town's cobbles slow bikes with thin road tyres."
 msgstr "Old Town的石子路会让细轮胎的公路车变慢。"
 
 msgid "Status, hint and call-outs"
-msgstr "状态、提示和提示播报"
+msgstr "状态、提示和语音播报"
 
 msgid ""
 "S puts danger first: a hazard or oncoming car close ahead, then any flat "
@@ -19592,13 +19594,13 @@ msgid ""
 "you start Wicket's. Every time names them always. Off names none of them, "
 "and S and H still work."
 msgstr ""
-"提示播报是标题菜单或暂停菜单设置里的一行，用来选择游戏多久报一次路上即将出现的东西。默认是每次来访一次：每种东西在你打开Wicket's后第一次出现时报"
+"语音播报是标题菜单或暂停菜单设置里的一行，用来选择游戏多久报一次路上即将出现的东西。默认是每次来访一次：每种东西在你打开Wicket's后第一次出现时报"
 "一次。每次都报会一直报。关则一个都不报，S和H照常可用。"
 
 msgid ""
 "Spoken call-outs, a row in Settings from the title or the pause menu, "
 "chooses how often the game names what is coming on the road."
-msgstr "提示播报是标题菜单或暂停菜单设置里的一行，用来选择游戏多久报一次路上即将出现的东西。"
+msgstr "语音播报是标题菜单或暂停菜单设置里的一行，用来选择游戏多久报一次路上即将出现的东西。"
 
 msgid ""
 "Once per session is the default: each kind is named the first time it comes "
@@ -20528,7 +20530,7 @@ msgstr "已通过{passed}节。"
 
 #. placeholders: {word}
 msgid "Spoken call-outs: {word}"
-msgstr "提示播报：{word}"
+msgstr "语音播报：{word}"
 
 msgid ""
 "Choose when the game names what is coming on the road: every time, once per "
@@ -23014,11 +23016,11 @@ msgstr "在暂停菜单里选离开挑战会停下来，这一局不算，你可
 msgid ""
 "With spoken call-outs on, the game names each monster as it comes up. It is "
 "off at the start. Switch it in Settings, from the title or the pause menu."
-msgstr "打开提示播报后，每个怪物出现时游戏都会报出它。开始时是关的。可以在标题菜单或暂停菜单的设置里切换。"
+msgstr "打开语音播报后，每个怪物出现时游戏都会报出它。开始时是关的。可以在标题菜单或暂停菜单的设置里切换。"
 
 msgid ""
 "With spoken call-outs on, the game names each monster as it comes up."
-msgstr "打开提示播报后，每个怪物出现时游戏都会报出它。"
+msgstr "打开语音播报后，每个怪物出现时游戏都会报出它。"
 
 msgid ""
 "Escape pauses, and the music holds. When you come back, three beats count "
@@ -23206,10 +23208,10 @@ msgid ""
 msgstr "你的星星、每夜的最高分、跳过的动作，还有你的挑战成绩。"
 
 msgid "Spoken call-outs: on. Each monster is also named."
-msgstr "提示播报：开。每个怪物也会被报出。"
+msgstr "语音播报：开。每个怪物也会被报出。"
 
 msgid "Spoken call-outs: off. The monsters are not named."
-msgstr "提示播报：关。不会报出怪物。"
+msgstr "语音播报：关。不会报出怪物。"
 
 msgid "When on, the game also names each monster as it comes up."
 msgstr "打开后，每个怪物出现时游戏也会报出它。"
@@ -23941,12 +23943,12 @@ msgid ""
 "With spoken call-outs on, the kitchen also says when a dish needs you: "
 "\"Bubbling up on the left burner: the gravy. Whisk it.\" Sound check on the "
 "title plays every one of these by name."
-msgstr "打开提示播报后，厨房也会告诉你哪样菜需要你：“左灶冒泡了：肉汁。搅打它。”标题菜单的音效试听会一一报出名字播放这些声音。"
+msgstr "打开语音播报后，厨房也会告诉你哪样菜需要你：“左灶冒泡了：肉汁。搅打它。”标题菜单的音效试听会一一报出名字播放这些声音。"
 
 msgid ""
 "With spoken call-outs on, the kitchen also says when a dish needs you: "
 "\"Bubbling up on the left burner: the gravy."
-msgstr "打开提示播报后，厨房也会告诉你哪样菜需要你：“左灶冒泡了：肉汁。"
+msgstr "打开语音播报后，厨房也会告诉你哪样菜需要你：“左灶冒泡了：肉汁。"
 
 msgid ""
 "Whisk it.\" Sound check on the title plays every one of these by name."
@@ -24076,7 +24078,7 @@ msgid ""
 "bonus for that course. Every course keeps its best points and best stars. "
 "Course select and Records on the title read them back."
 msgstr ""
-"分数是各样菜品质乘以十。在标题菜单或暂停菜单的设置里把提示播报设为关，不靠它做完一整道菜，能多得百分之10。做菜途中再打开，这道菜的奖励就没了。每道菜都"
+"分数是各样菜品质乘以十。在标题菜单或暂停菜单的设置里把语音播报设为关，不靠它做完一整道菜，能多得百分之10。做菜途中再打开，这道菜的奖励就没了。每道菜都"
 "会保留最高分和最多星星。标题菜单上的选菜和纪录会读出它们。"
 
 msgid "Points are the dishes' quality times ten."
@@ -24085,7 +24087,7 @@ msgstr "分数是各样菜品质乘以十。"
 msgid ""
 "Set Spoken call-outs to off in Settings, from the title or the pause menu, "
 "and cook a whole course without them for 10 percent more."
-msgstr "在标题菜单或暂停菜单的设置里把提示播报设为关，不靠它做完一整道菜，能多得百分之10。"
+msgstr "在标题菜单或暂停菜单的设置里把语音播报设为关，不靠它做完一整道菜，能多得百分之10。"
 
 msgid "Switching it back on during a course ends the bonus for that course."
 msgstr "做菜途中再打开，这道菜的奖励就没了。"
@@ -24314,10 +24316,10 @@ msgid ""
 "A quiet kitchen: no spoken call-outs, whatever your setting. The recipe "
 "still calls each dish, but no voice says when a dish needs you, and the "
 "bonus for cooking without call-outs applies."
-msgstr "安静的厨房：不管你怎么设置，都没有提示播报。菜谱照样报出每样菜，但没有声音告诉你哪样菜需要你，不靠播报做菜的奖励也适用。"
+msgstr "安静的厨房：不管你怎么设置，都没有语音播报。菜谱照样报出每样菜，但没有声音告诉你哪样菜需要你，不靠播报做菜的奖励也适用。"
 
 msgid "A quiet kitchen: no spoken call-outs, whatever your setting."
-msgstr "安静的厨房：不管你怎么设置，都没有提示播报。"
+msgstr "安静的厨房：不管你怎么设置，都没有语音播报。"
 
 msgid ""
 "The recipe still calls each dish, but no voice says when a dish needs you, "
@@ -24658,7 +24660,7 @@ msgid ""
 "A quiet kitchen: no spoken call-outs. The recipe still calls each dish, but "
 "no voice says when a dish needs you. The bonus for cooking without "
 "call-outs applies."
-msgstr "安静的厨房：没有提示播报。菜谱照样报出每样菜，但没有声音告诉你哪样菜需要你。不靠播报做菜的奖励适用。"
+msgstr "安静的厨房：没有语音播报。菜谱照样报出每样菜，但没有声音告诉你哪样菜需要你。不靠播报做菜的奖励适用。"
 
 #. placeholders: {BUTTERFINGERS_COST}
 msgid "Butterfingers: every fumble costs {BUTTERFINGERS_COST} instead of 5."
@@ -29350,7 +29352,7 @@ msgid "intro"
 msgstr ""
 
 msgid "Arrows"
-msgstr ""
+msgstr "方向键"
 
 #. placeholders: {sentence_start}, {keys}, {keys2}, {keys3}
 msgid "{sentence_start}, {keys}, {keys2} and {keys3}"
@@ -36001,7 +36003,7 @@ msgid "They walk on, and someone else may come another day."
 msgstr "他们继续赶路，改天也许会有别人来。"
 
 msgid "The job board"
-msgstr "工作板"
+msgstr "任务板"
 
 msgid ""
 "Up and Down choose a settler, Left and Right change their first job, Escape "
@@ -37978,7 +37980,7 @@ msgstr "按Enter和这里的人交谈。"
 msgid ""
 "J opens the job board, L lists what is around you, and P describes everyone "
 "in Larkfield."
-msgstr "J打开工作板，L列出你周围的东西，P介绍Larkfield的每个人。"
+msgstr "J打开任务板，L列出你周围的东西，P介绍Larkfield的每个人。"
 
 #. placeholders: {sentence_start2}, {down}
 #. one sentence of a longer line
@@ -38030,7 +38032,7 @@ msgid ""
 msgstr ""
 "{sentence_start}和{right}沿小路走，或在某个地方里移动。{sentence_start2}进入某个地方，{down}出来。{sen"
 "tence_start3}做你面前的活：挖地、播种、浇水、收获、砍柴、钓鱼、建造或交易。{sentence_start4}拔草和喂动物。按Enter和这"
-"里的人交谈。J打开工作板，L列出你周围的东西，P介绍Larkfield的每个人。{sentence_start5}说出需要你的事，再按一次听更多。{se"
+"里的人交谈。J打开任务板，L列出你周围的东西，P介绍Larkfield的每个人。{sentence_start5}说出需要你的事，再按一次听更多。{se"
 "ntence_start6}说出下一步做什么。{sentence_start7}重复上一句。Escape暂停。"
 
 #. placeholders: {a}, {b}
@@ -38452,7 +38454,7 @@ msgid ""
 "Settings changes speech, volume and controls."
 msgstr ""
 "标题菜单：开始进入你下一个未通关的关卡。压轴大秀在第20关之后开放。自由编排用来创作、保存和重放你的表演。选关可以玩二十关中的任意一关。独立之夜在7月4"
-"日开放。挑战里有每日、每周和每月挑战。练习场是不计分的发射场。教程是一段简短的引导。帮助就是这份指南。音效试听播放游戏中的提示音。纪录读出你的最高分。设"
+"日开放。挑战里有每日、每周和每月挑战。练习室是不计分的发射场。教程是一段简短的引导。帮助就是这份指南。音效试听播放游戏中的提示音。纪录读出你的最高分。设"
 "置用来调整语音、音量和控制。"
 
 msgid "Title menu: Play starts your next uncleared level."
@@ -38471,7 +38473,7 @@ msgid "Challenges holds daily, weekly, and monthly."
 msgstr "挑战里有每日、每周和每月挑战。"
 
 msgid "Practice room is an unscored launch range."
-msgstr "练习场是不计分的发射场。"
+msgstr "练习室是不计分的发射场。"
 
 msgid "Tutorial is a short walkthrough."
 msgstr "教程是一段简短的引导。"
@@ -39074,10 +39076,10 @@ msgid ""
 "The practice room is a launch range with nothing to score. Launch with 1 to "
 "4 or Space, aiming with Left and Right, and each firework is named after it "
 "goes up. Escape pauses."
-msgstr "练习场是不计分的发射场。用1到4或Space发射，用Left和Right瞄准，每枚烟花升空后都会报出名字。Escape暂停。"
+msgstr "练习室是不计分的发射场。用1到4或Space发射，用Left和Right瞄准，每枚烟花升空后都会报出名字。Escape暂停。"
 
 msgid "The practice room is a launch range with nothing to score."
-msgstr "练习场是不计分的发射场。"
+msgstr "练习室是不计分的发射场。"
 
 msgid ""
 "Launch with 1 to 4 or Space, aiming with Left and Right, and each firework "
@@ -40014,7 +40016,7 @@ msgstr "每枚烟花升空后都会报出名字。"
 
 #. one sentence of a longer line
 msgid "Practice room, a launch range with nothing to score."
-msgstr "练习场，不计分的发射场。"
+msgstr "练习室，不计分的发射场。"
 
 #. placeholders: {KEYS_LINE}, {aim_line}, {wheel_line}, {sentence_start}
 msgid ""
@@ -40022,7 +40024,7 @@ msgid ""
 "{wheel_line} {sentence_start} launches it. Each firework is named after it "
 "goes up. Escape pauses."
 msgstr ""
-"练习场，不计分的发射场。{KEYS_LINE}{aim_line}{wheel_line}{sentence_start}发射。每枚烟花升空后都会报出名"
+"练习室，不计分的发射场。{KEYS_LINE}{aim_line}{wheel_line}{sentence_start}发射。每枚烟花升空后都会报出名"
 "字。Escape暂停。"
 
 #. placeholders: {KEYS_LINE}, {aim_line}, {wheel_line}, {sentence_start}
@@ -40031,7 +40033,7 @@ msgid "{KEYS_LINE} {aim_line} {wheel_line} {sentence_start} launches it."
 msgstr "{KEYS_LINE}{aim_line}{wheel_line}{sentence_start}发射。"
 
 msgid "Practice room."
-msgstr "练习场。"
+msgstr "练习室。"
 
 #. placeholders: {name}
 msgid "Aiming {name}."
@@ -40046,7 +40048,7 @@ msgstr "这里已发射{launched}枚烟花。"
 
 #. placeholders: {launched}
 msgid "Practice room: {launched} launched"
-msgstr "练习场：已发射{launched}"
+msgstr "练习室：已发射{launched}"
 
 #. placeholders: {level}
 msgid "level {level}"
@@ -40903,12 +40905,12 @@ msgid ""
 "up left or right. 60 percent clears a level, and Enter finishes a show. Try "
 "every firework without scoring in the Practice room."
 msgstr ""
-"一共四种烟花，在按键1到4上。{join}从第11关起，它们也会在左边或右边升空。百分之60就能通关，Enter结束一场表演。在练习场里不计分地试试每种"
+"一共四种烟花，在按键1到4上。{join}从第11关起，它们也会在左边或右边升空。百分之60就能通关，Enter结束一场表演。在练习室里不计分地试试每种"
 "烟花。"
 
 #. one sentence of a longer line
 msgid "Try every firework without scoring in the Practice room."
-msgstr "在练习场里不计分地试试每种烟花。"
+msgstr "在练习室里不计分地试试每种烟花。"
 
 #. placeholders: {join}
 #. one sentence of a longer line
@@ -44217,7 +44219,7 @@ msgid "You lose if your hull reaches 0 or network stress reaches 100."
 msgstr "船体降到0或网络压力升到100就算失败。"
 
 msgid "Arrivals and call-outs"
-msgstr "来物和提示播报"
+msgstr "来物和语音播报"
 
 msgid ""
 "Arrival cues mark their lanes relative to yours. Straight ahead is your "
@@ -44243,16 +44245,16 @@ msgid ""
 "title or the pause menu, to play without them. The hint key always names "
 "what is next."
 msgstr ""
-"提示播报默认开启。每个来物出现时也会报出名字：“左边有残骸。”在标题菜单或暂停菜单的设置里关闭提示播报，就可以不听它们玩。提示键总会说出接下来是什么。"
+"语音播报默认开启。每个来物出现时也会报出名字：“左边有残骸。”在标题菜单或暂停菜单的设置里关闭语音播报，就可以不听它们玩。提示键总会说出接下来是什么。"
 
 msgid "Spoken call-outs are on by default."
-msgstr "提示播报默认开启。"
+msgstr "语音播报默认开启。"
 
 msgid ""
 "Each arrival is also named as it appears: \"Debris left.\" Turn Spoken "
 "call-outs off in Settings, from the title or the pause menu, to play "
 "without them."
-msgstr "每个来物出现时也会报出名字：“左边有残骸。”在标题菜单或暂停菜单的设置里关闭提示播报，就可以不听它们玩。"
+msgstr "每个来物出现时也会报出名字：“左边有残骸。”在标题菜单或暂停菜单的设置里关闭语音播报，就可以不听它们玩。"
 
 msgid "The hint key always names what is next."
 msgstr "提示键总会说出接下来是什么。"
@@ -44498,14 +44500,14 @@ msgid ""
 "still. A line you ask for again and again stops holding after a while. This "
 "holds at every pace and in every run."
 msgstr ""
-"提示播报或其他话还没说完时，轨道会暂停：来物、它们的接近、工具的计时和区段时钟都会停住。你一遍又一遍要求重复的话，过一会儿就不再暂停。在任何节奏、任何一"
+"语音播报或其他话还没说完时，轨道会暂停：来物、它们的接近、工具的计时和区段时钟都会停住。你一遍又一遍要求重复的话，过一会儿就不再暂停。在任何节奏、任何一"
 "局里都是这样。"
 
 msgid ""
 "The rail holds while a call-out or another line is still being spoken: "
 "arrivals, their approach, the tools' timers and the sector clock stand "
 "still."
-msgstr "提示播报或其他话还没说完时，轨道会暂停：来物、它们的接近、工具的计时和区段时钟都会停住。"
+msgstr "语音播报或其他话还没说完时，轨道会暂停：来物、它们的接近、工具的计时和区段时钟都会停住。"
 
 msgid "This holds at every pace and in every run."
 msgstr "在任何节奏、任何一局里都是这样。"
@@ -45204,7 +45206,7 @@ msgid ""
 "parlor. On your first visit the title starts on Tutorial."
 msgstr ""
 "标题菜单有这些行。开始，然后是挑战走廊、无尽轨道和冷启动，开放前会显示未解锁。挑战和练习局。教程，一页一页地教你目标和操作，还有帮助和音效试听。纪录，有"
-"每项最高分、你的驾驶员等级、信用点、加成和挑战成绩。工坊和故事档案。设置，里面还有提示播报和节奏，以及回到游艺馆。第一次来时，标题菜单停在教程上。"
+"每项最高分、你的驾驶员等级、信用点、加成和挑战成绩。工坊和故事档案。设置，里面还有语音播报和节奏，以及回到游艺馆。第一次来时，标题菜单停在教程上。"
 
 msgid "The title has these rows."
 msgstr "标题菜单有这些行。"
@@ -45233,7 +45235,7 @@ msgstr "工坊和故事档案。"
 msgid ""
 "Settings, which also holds Spoken call-outs and Pace, and Back to the "
 "parlor."
-msgstr "设置，里面还有提示播报和节奏，以及回到游艺馆。"
+msgstr "设置，里面还有语音播报和节奏，以及回到游艺馆。"
 
 msgid "On your first visit the title starts on Tutorial."
 msgstr "第一次来时，标题菜单停在教程上。"
@@ -46910,10 +46912,10 @@ msgid "black sky"
 msgstr ""
 
 msgid "full moon"
-msgstr ""
+msgstr "满月"
 
 msgid "cold start"
-msgstr ""
+msgstr "冷启动"
 
 msgid "dense traffic"
 msgstr "密集车流"
@@ -55649,16 +55651,16 @@ msgid ""
 "Play again or Try again, Hear the results again, and Back to the title. "
 "Escape does the same as Back to the title."
 msgstr ""
-"开完一个保险柜后，结算菜单会提供：打开了新保险柜时的下一个保险柜、再来一局或再试一次、再听一遍结算，以及返回标题菜单。Escape和返回标题菜单的作用一"
+"开完一个保险柜后，结算菜单会提供：打开了新保险柜时的下一个保险柜、再来一局或再试一次、再听一遍结算，以及回到标题菜单。Escape和回到标题菜单的作用一"
 "样。"
 
 msgid ""
 "After a safe, the results menu offers the next safe when you opened one, "
 "Play again or Try again, Hear the results again, and Back to the title."
-msgstr "开完一个保险柜后，结算菜单会提供：打开了新保险柜时的下一个保险柜、再来一局或再试一次、再听一遍结算，以及返回标题菜单。"
+msgstr "开完一个保险柜后，结算菜单会提供：打开了新保险柜时的下一个保险柜、再来一局或再试一次、再听一遍结算，以及回到标题菜单。"
 
 msgid "Escape does the same as Back to the title."
-msgstr "Escape和返回标题菜单的作用一样。"
+msgstr "Escape和回到标题菜单的作用一样。"
 
 msgid "Bonus safes"
 msgstr "额外保险柜"
@@ -55754,7 +55756,7 @@ msgid ""
 msgstr ""
 "标题菜单上的挑战有三个任务，每位玩家都一样，根据日期生成。每一行说出周期和任务名称、这次的内容，然后是你的纪录：还没玩过，或者你的最高分和连胜。按Ent"
 "er先读简报：规则、变化、你的纪录，以及下一个什么时候来。在最后一页按Enter开始任务。在任何一页按Escape都会返回，不开始。任务结束时成绩才算数"
-"，要么打开每个保险柜，要么失手一个。从暂停菜单里离开挑战不算数，所以你可以回来再试。任务结束后，结算菜单会提供再玩同一任务、再听一遍结算，以及返回挑战。"
+"，要么打开每个保险柜，要么失手一个。从暂停菜单里离开挑战不算数，所以你可以回来再试。任务结束后，结算菜单会提供再玩同一任务、再听一遍结算，以及回到挑战。"
 
 msgid ""
 "Challenges on the title holds three jobs that are the same for every "
@@ -55789,7 +55791,7 @@ msgstr "从暂停菜单里离开挑战不算数，所以你可以回来再试。
 msgid ""
 "After the job, the results menu offers the same job again, Hear the results "
 "again, and Back to the challenges."
-msgstr "任务结束后，结算菜单会提供再玩同一任务、再听一遍结算，以及返回挑战。"
+msgstr "任务结束后，结算菜单会提供再玩同一任务、再听一遍结算，以及回到挑战。"
 
 msgid ""
 "Tonight's job, the daily: one safe of three or four wheels, with one twist. "
@@ -58942,14 +58944,14 @@ msgid ""
 "every 5 seconds. Turn them off in Settings, from the title or the pause "
 "menu, to brew without them. Nothing changes in how a cup is judged."
 msgstr ""
-"打开提示播报时，游戏还会在水温变化时说出水壶的温度，比如“轻轻的嘶声，大约80度”，浸泡时每5秒报一次秒数。在设置里关掉它们，标题菜单或暂停菜单里都可以"
+"打开语音播报时，游戏还会在水温变化时说出水壶的温度，比如“轻轻的嘶声，大约80度”，浸泡时每5秒报一次秒数。在设置里关掉它们，标题菜单或暂停菜单里都可以"
 "，就能不靠播报泡茶。评判一杯茶的方式不变。"
 
 msgid ""
 "With spoken call-outs on, the game also names the kettle's heat as it "
 "changes, such as \"Soft hiss, about 80 degrees\", and the steep's seconds "
 "every 5 seconds."
-msgstr "打开提示播报时，游戏还会在水温变化时说出水壶的温度，比如“轻轻的嘶声，大约80度”，浸泡时每5秒报一次秒数。"
+msgstr "打开语音播报时，游戏还会在水温变化时说出水壶的温度，比如“轻轻的嘶声，大约80度”，浸泡时每5秒报一次秒数。"
 
 msgid ""
 "Turn them off in Settings, from the title or the pause menu, to brew "
@@ -62387,10 +62389,10 @@ msgid ""
 msgstr "今晚的池塘、薄冰周和仲冬滑冰：每位玩家的冰都一样。{resets}"
 
 msgid "Spoken call-outs: on. The game also names each lantern's lane."
-msgstr "提示播报：开。游戏还会说出每盏灯笼的冰道。"
+msgstr "语音播报：开。游戏还会说出每盏灯笼的冰道。"
 
 msgid "Spoken call-outs: off. The lanterns play without names."
-msgstr "提示播报：关。灯笼只有声音，不报名字。"
+msgstr "语音播报：关。灯笼只有声音，不报名字。"
 
 msgid "When on, the game also names each lantern's lane as it lights."
 msgstr "打开时，每盏灯笼亮起时游戏还会说出它的冰道。"
@@ -63137,7 +63139,7 @@ msgid "frost fair"
 msgstr ""
 
 msgid "lantern skate"
-msgstr ""
+msgstr "灯笼滑冰"
 
 msgid "the middle"
 msgstr "中间"
@@ -64960,13 +64962,13 @@ msgid ""
 "Turn on Spoken call-outs in Settings, from the title or the pause menu, to "
 "have each ping's four nearest echoes named, with distance and clock "
 "direction. The hint key always names the nearest treasure."
-msgstr "在设置里打开提示播报，标题菜单或暂停菜单里都可以，每次声呐最近的四个回声就会报出名字，包括距离和钟点方向。提示键总会说出最近的宝藏。"
+msgstr "在设置里打开语音播报，标题菜单或暂停菜单里都可以，每次声呐最近的四个回声就会报出名字，包括距离和钟点方向。提示键总会说出最近的宝藏。"
 
 msgid ""
 "Turn on Spoken call-outs in Settings, from the title or the pause menu, to "
 "have each ping's four nearest echoes named, with distance and clock "
 "direction."
-msgstr "在设置里打开提示播报，标题菜单或暂停菜单里都可以，每次声呐最近的四个回声就会报出名字，包括距离和钟点方向。"
+msgstr "在设置里打开语音播报，标题菜单或暂停菜单里都可以，每次声呐最近的四个回声就会报出名字，包括距离和钟点方向。"
 
 msgid "The hint key always names the nearest treasure."
 msgstr "提示键总会说出最近的宝藏。"
@@ -65228,8 +65230,8 @@ msgid ""
 "Hear the results again, and Back to the title. After a challenge, the last "
 "row is Back to the challenges. Escape does the same as the last row."
 msgstr ""
-"探险结束时，游戏会读出过程、你的收获和你的最高纪录。然后结算菜单会提供再来一局，失败后是再试一次，还有再听一遍结算和返回标题菜单。挑战之后，最后一行是返"
-"回挑战。Escape和最后一行的作用一样。"
+"探险结束时，游戏会读出过程、你的收获和你的最高纪录。然后结算菜单会提供再来一局，失败后是再试一次，还有再听一遍结算和回到标题菜单。挑战之后，最后一行是回"
+"到挑战。Escape和最后一行的作用一样。"
 
 msgid ""
 "When an expedition ends, the game reads how it went, your haul and your "
@@ -65239,7 +65241,7 @@ msgstr "探险结束时，游戏会读出过程、你的收获和你的最高纪
 msgid ""
 "Then the results menu offers Play again, or Try again after a loss, Hear "
 "the results again, and Back to the title."
-msgstr "然后结算菜单会提供再来一局，失败后是再试一次，还有再听一遍结算和返回标题菜单。"
+msgstr "然后结算菜单会提供再来一局，失败后是再试一次，还有再听一遍结算和回到标题菜单。"
 
 msgid ""
 "The sea holds while a line is still being spoken. Your air, the sub, the "
@@ -65896,10 +65898,10 @@ msgid "Endless air and harmless mines, to learn the sonar. Not scored."
 msgstr "空气无限，水雷无害，用来熟悉声呐。不计分。"
 
 msgid "Spoken call-outs: on. Each ping's nearest echoes are spoken."
-msgstr "提示播报：开。每次声呐最近的回声都会报出来。"
+msgstr "语音播报：开。每次声呐最近的回声都会报出来。"
 
 msgid "Spoken call-outs: off. The echoes play without names."
-msgstr "提示播报：关。回声只有声音，不报名字。"
+msgstr "语音播报：关。回声只有声音，不报名字。"
 
 msgid ""
 "When on, each ping's nearest echoes are also spoken, with distance and "
@@ -67195,7 +67197,7 @@ msgid ""
 "goes back to the title."
 msgstr ""
 "随时按两次Enter就能回家，结束这一夜。第二次按Enter要在4秒内。你描出或找到的一切都已经在你的日志里了。游戏会读出这一夜的收获，然后结算菜单会提"
-"供再来一局、再听一遍结算和返回标题菜单。按Escape回到标题菜单。"
+"供再来一局、再听一遍结算和回到标题菜单。按Escape回到标题菜单。"
 
 msgid "Enter twice heads home and ends the night at any time."
 msgstr "随时按两次Enter就能回家，结束这一夜。"
@@ -67209,7 +67211,7 @@ msgstr "你描出或找到的一切都已经在你的日志里了。"
 msgid ""
 "The game reads what the night brought, then the results menu offers Play "
 "again, Hear the results again, and Back to the title."
-msgstr "游戏会读出这一夜的收获，然后结算菜单会提供再来一局、再听一遍结算和返回标题菜单。"
+msgstr "游戏会读出这一夜的收获，然后结算菜单会提供再来一局、再听一遍结算和回到标题菜单。"
 
 msgid "The star journal"
 msgstr "观星日志"
@@ -67405,7 +67407,7 @@ msgstr "狮子座流星雨"
 
 #. placeholders: {adjective}
 msgid "{adjective} meteor shower"
-msgstr ""
+msgstr "{adjective}流星雨"
 
 msgid "the northeast, below the handle of the Big Dipper"
 msgstr "东北方，在北斗七星的斗柄下面"
@@ -70501,8 +70503,8 @@ msgid ""
 "challenge, Play again becomes Play this challenge again, and the last row "
 "is Back to the challenges. Escape does the same as the last row."
 msgstr ""
-"出行结束时，游戏会在一页里读出你收集到的东西、你的得分和水族箱里的新成员。然后一个小菜单会提供再来一局、再听一遍结算、你的水族箱和返回标题菜单。挑战之后"
-"，再来一局会变成再玩一次这个挑战，最后一行是返回挑战。Escape和最后一行的作用一样。"
+"出行结束时，游戏会在一页里读出你收集到的东西、你的得分和水族箱里的新成员。然后一个小菜单会提供再来一局、再听一遍结算、你的水族箱和回到标题菜单。挑战之后"
+"，再来一局会变成再玩一次这个挑战，最后一行是回到挑战。Escape和最后一行的作用一样。"
 
 msgid ""
 "When a trip ends, the game reads what you gathered, your score and what is "
@@ -70512,12 +70514,12 @@ msgstr "出行结束时，游戏会在一页里读出你收集到的东西、你
 msgid ""
 "Then a short menu offers Play again, Hear the results again, Your aquarium, "
 "and Back to the title."
-msgstr "然后一个小菜单会提供再来一局、再听一遍结算、你的水族箱和返回标题菜单。"
+msgstr "然后一个小菜单会提供再来一局、再听一遍结算、你的水族箱和回到标题菜单。"
 
 msgid ""
 "After a challenge, Play again becomes Play this challenge again, and the "
 "last row is Back to the challenges."
-msgstr "挑战之后，再来一局会变成再玩一次这个挑战，最后一行是返回挑战。"
+msgstr "挑战之后，再来一局会变成再玩一次这个挑战，最后一行是回到挑战。"
 
 msgid ""
 "Everything you gather goes home to your aquarium, which keeps growing. "
@@ -70746,7 +70748,7 @@ msgid ""
 "ordinary shores and the challenges never change."
 msgstr ""
 "有些日子，海岸会不一样。每个活动在标题菜单上都有自己的一行，就在“开始”下面。活动未开放时，这一行会说已锁定，以及何时开放。它会带你去你开放过的最远的海"
-"岸，并有自己的最高分。如果你再选“开始”时活动已经结束，游戏会告诉你，然后你回到标题菜单。平常的海岸和挑战从不改变。"
+"岸，并有自己的最高分。如果你选“再来一局”时活动已经结束，游戏会告诉你，然后你回到标题菜单。平常的海岸和挑战从不改变。"
 
 msgid "Some days the shore is different."
 msgstr "有些日子，海岸会不一样。"
@@ -70765,7 +70767,7 @@ msgstr "它会带你去你开放过的最远的海岸，并有自己的最高分
 msgid ""
 "If the event has ended by the time you choose Play again, the game says it "
 "has ended and you go back to the title."
-msgstr "如果你再选“开始”时活动已经结束，游戏会告诉你，然后你回到标题菜单。"
+msgstr "如果你选“再来一局”时活动已经结束，游戏会告诉你，然后你回到标题菜单。"
 
 msgid "The ordinary shores and the challenges never change."
 msgstr "平常的海岸和挑战从不改变。"
@@ -74260,7 +74262,7 @@ msgstr "心愿桌没有时钟，午夜倒计时在每种节奏下都保持乐队
 msgid ""
 "A change applies from your next run. A run keeps the pace it started at "
 "through all its shifts, and on to the Wish Desk in the story."
-msgstr "更改从你的下一局开始生效。"
+msgstr "更改从你的下一局开始生效。一局在所有班次里都保持开始时的节奏，在故事里一直保持到心愿桌。"
 
 msgid ""
 "A run keeps the pace it started at through all its shifts, and on to the "
@@ -74894,7 +74896,9 @@ msgid ""
 "you come back from the pause menu in the middle of the music, the band "
 "counts you back in with a bar and plays the call again. Notes you already "
 "answered stay answered."
-msgstr "Escape：暂停，有继续、设置、帮助、回到标题菜单和回到大厅。在挑战中，回到标题菜单变成离开挑战。"
+msgstr ""
+"Escape：暂停，有继续、设置、帮助、回到标题菜单和回到大厅。在挑战中，回到标题菜单变成离开挑战。在音乐中途从暂停菜单回来时，乐队会用一小节带你重新进"
+"入，并再奏一遍呼叫。已经回应过的音仍然算数。"
 
 msgid ""
 "When you come back from the pause menu in the middle of the music, the band "
