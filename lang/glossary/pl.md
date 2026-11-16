@@ -53,3 +53,36 @@ English.
 | Quit, Exit | Wyjdź | |
 | Resume | Wznów | |
 | New game | Nowa rozgrywka | |
+| title menu, the title | menu tytułowe, ekran tytułowy | Neuter, masculine. A game's first menu: "w menu tytułowym". |
+| streak | seria | Feminine. "Seria: 3 dni." |
+| briefing | opis | Masculine. "Enter czyta jego opis." |
+| Spoken call-outs | Zapowiedzi | Plural. "Zapowiedzi: włączone." Never a word for "spoken". |
+| bonus | bonus | Masculine. "4 punkty bonusu." |
+| star | gwiazdka | Feminine. "1 gwiazdka, 3 gwiazdki, 5 gwiazdek." |
+| Happening (the story's errand or riddle) | Atrakcja | Feminine, capitalized. Distinct from "wydarzenie". |
+| stamp, stamp book | pieczątka, księga pieczątek | Feminine. |
+| keepsake | pamiątka | Feminine. |
+| track (Soundtrack) | utwór | Masculine. |
+| your songs (music kept from a run) | melodia, Twoje melodie | Feminine. "Zachowuj melodie". |
+| round | runda | Feminine. |
+| lantern | lampion | Masculine. A light in a game (skating, festivals). Not "lampa", which is the door light. |
+| twist (a challenge's extra rule) | utrudnienie | Neuter. "Utrudnienie: nerwowy strażnik." |
+| Advent calendar, its door | Kalendarz adwentowy, okienko | Neuter "okienko", not "drzwi": "okienko 5 jest otwarte". |
+| ornament, the lobby tree | ozdoba, choinka w holu | Feminine. |
+| Records | Rekordy | The title menu row. "Rekordy odczytują je wszystkie." |
+| pause menu | menu pauzy | Neuter. "Escape włącza pauzę." |
+| Leave the challenge | Opuść wyzwanie | The pause menu row. |
+| Play again, Try again | Zagraj ponownie, Spróbuj jeszcze raz | Results menu rows. |
+| Hear the results again | Posłuchaj podsumowania jeszcze raz | Results menu row. |
+| Unlocks | Odblokowania | The menu. |
+| hint | podpowiedź | Feminine. |
+| Continue | Kontynuuj | The lobby row. |
+| Back to the title, Back to the challenges | Powrót do tytułu, Powrót do wyzwań | Results menu rows. |
+| the Echo | Echo | Neuter, a name: "Echo odtwarza", "przy Echu". Theo's machine in the cellar. |
+| the Calendar Hall, the Arcade Floor, the Study, the Conservatory, the Card Room | Sala Kalendarza, Piętro Automatów, Gabinet, Oranżeria, Pokój Karciany | The parlor's rooms in the story. Places: capitals as shown. |
+| Play (the title row) | Graj | "Graj zaczyna pierwszą noc." |
+| Back to the lobby, Back to the parlor | Powrót do holu, Powrót do salonu | Menu rows, same form as "Powrót do tytułu". |
+| Pace: relaxed, normal, quick | Tempo: swobodne, normalne, szybkie | Neuter, agrees with "tempo". "Rekord przy swobodnym tempie." |
+| special nights | noce specjalne | Feminine plural. A game's own dated nights. |
+| combo, multiplier | kombo, mnożnik | Neuter (indeclinable), masculine. "Kombo 12, razy 3." |
+| Opening the X challenge. | Otwieram wyzwanie X. | The line before a challenge starts. |
