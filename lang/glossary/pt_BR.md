@@ -56,7 +56,7 @@ English.
 | briefing | instruções | Feminine plural. "Enter lê as instruções." |
 | streak | sequência | Feminine. "Uma sequência de 3 dias." |
 | hint | dica | |
-| weekly, monthly challenge | desafio da semana, desafio do mês | Like "desafio do dia". |
+| weekly, monthly challenge | desafio da semana, desafio do mês | Like "desafio do dia". "Um desafio do dia, um da semana e um do mês". |
 | pause menu | menu de pausa | |
 | Play, Play again | Jogar, Jogar de novo | Menu rows. |
 | Records | Recordes | The menu. |
@@ -69,7 +69,7 @@ English.
 | level | fase | Feminine. "Fase 3", "Escolher fase". |
 | twist (challenge) | regra especial | A challenge's modifier. "com uma regra especial". |
 | combo | combo | Masculine. |
-| lane | faixa | Feminine. Where raiders, reindeer and the like come down. "na faixa da esquerda". |
+| lane | faixa | Feminine. Where raiders, reindeer, eggs and the like come down. "na faixa da esquerda". Only for lanes: a music track is "música". |
 | spoken call-outs | avisos falados | The setting. "Avisos falados: ligado." |
 | ornament | enfeite | Masculine. Advent calendar and tree ornaments. |
 | errand | tarefa | A Happening errand in story mode. |
@@ -87,7 +87,7 @@ English.
 | stamp, stamp book | carimbo, álbum de carimbos | What a Happening earns. |
 | round | rodada | Feminine. "Rodada 3 de 8." |
 | Unlocks | Desbloqueios | The menu. |
-| track, album | faixa, álbum | In the Soundtrack. |
+| track, album | música, álbum | In the Soundtrack. Feminine. "Uma música é desbloqueada...", "Exportando, música 3 de 8." Never "faixa", which is a lane. |
 | the Challenges board | a tela de Desafios | The lobby's Challenges screen. |
 | relaxed best | recorde no relaxado | "Seu recorde no relaxado é 40." |
 | Story mode | modo história | |
@@ -96,4 +96,7 @@ English.
 | normal, quick (pace) | normal, rápido | With Relaxado: "relaxado, normal ou rápido". |
 | Try again, Hear the results again | Tentar de novo, Ouvir os resultados de novo | Results menu rows. |
 | Back to the title, Back to the challenges | Voltar à tela inicial, Voltar aos desafios | Results menu rows. |
-| row (of a menu) | opção | Feminine. "a opção Jogar". |
+| row (of a menu) | opção | Feminine. "a opção Jogar", "Não tem opção na tela inicial". Never "linha" for a menu row. A row of bells, plots or seats is "fileira". |
+| Year of the {zodiac} | o ano do signo {zodiac} | Fits every animal, feminine ones too (Cabra, Serpente). Never "o Ano do {zodiac}". |
+| Gift Sort, the Wish Desk, Midnight Countdown | Separação de Presentes, a Mesa dos Desejos, Contagem para a Meia-Noite | Winter Wonderland's modes, all feminine: "na Mesa dos Desejos", "na Separação de Presentes". |
+| journal, star journal | diário, diário de estrelas | Firefly Meadow, Lantern Lake and Stargazer. |
