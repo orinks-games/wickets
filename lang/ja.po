@@ -592,7 +592,7 @@ msgid "Play again"
 msgstr "もう一度プレイ"
 
 msgid "Try again"
-msgstr "再挑戦"
+msgstr "もう一度挑戦"
 
 msgid "Hear the results again"
 msgstr "結果をもう一度聞く"
@@ -1544,8 +1544,8 @@ msgid ""
 "wherever you are. F2 stops speech."
 msgstr ""
 "UpとDownでメニューを移動します。HomeとEndで端に飛びます。Enterで決定します。Escapeでひとつ前の画面に戻ります。ロビーでEscap"
-"eを押すと終了するか確認され、カーソルは「いいえ」から始まります。ゲームのポーズメニューの最後は「ロビーに戻る」なので、確認なしに遊戯館を終了することは"
-"ありません。F1で今いる場所のヘルプを読みます。F2で読み上げを止めます。"
+"eを押すと終了するか確認され、カーソルは「いいえ」から始まります。ゲームの一時停止メニューの最後は「ロビーに戻る」なので、確認なしに遊戯館を終了すること"
+"はありません。F1で今いる場所のヘルプを読みます。F2で読み上げを止めます。"
 
 msgid "Up and Down move through a menu."
 msgstr "UpとDownでメニューを移動します。"
@@ -1566,7 +1566,7 @@ msgstr "ロビーでEscapeを押すと終了するか確認され、カーソル
 msgid ""
 "A game's pause menu ends with Back to the lobby, so nothing quits the "
 "parlor without asking."
-msgstr "ゲームのポーズメニューの最後は「ロビーに戻る」なので、確認なしに遊戯館を終了することはありません。"
+msgstr "ゲームの一時停止メニューの最後は「ロビーに戻る」なので、確認なしに遊戯館を終了することはありません。"
 
 msgid "F1 reads help for wherever you are."
 msgstr "F1で今いる場所のヘルプを読みます。"
@@ -1744,14 +1744,14 @@ msgid ""
 "count, so you can try again. Challenges never change a game's own best "
 "scores."
 msgstr ""
-"チャレンジはプレイが終わったときに数えられます。ポーズメニューからやめた場合は数えられないので、もう一度挑戦できます。チャレンジでゲーム自体の自己ベスト"
-"が変わることはありません。"
+"チャレンジはプレイが終わったときに数えられます。一時停止メニューからやめた場合は数えられないので、もう一度挑戦できます。チャレンジでゲーム自体の自己ベス"
+"トが変わることはありません。"
 
 msgid "A challenge counts when the run ends."
 msgstr "チャレンジはプレイが終わったときに数えられます。"
 
 msgid "Leaving from the pause menu does not count, so you can try again."
-msgstr "ポーズメニューからやめた場合は数えられないので、もう一度挑戦できます。"
+msgstr "一時停止メニューからやめた場合は数えられないので、もう一度挑戦できます。"
 
 msgid "Challenges never change a game's own best scores."
 msgstr "チャレンジでゲーム自体の自己ベストが変わることはありません。"
@@ -2235,9 +2235,9 @@ msgid ""
 "reply, and send it. If the form cannot open, the game's own report screen "
 "opens instead and says why."
 msgstr ""
-"設定の「問題を報告」で、ゲームのログをorinks.netに送り、ログを添付した報告フォームをウェブブラウザで開きます。設定はどのゲームのポーズメニュー"
-"にもあり、ゲームの中から送った報告にはそのゲーム名が入ります。起きたことを書き、返事がほしければメールアドレスを入れて、送信してください。フォームが開け"
-"ないときは、代わりにゲーム自身の報告画面が開き、その理由を伝えます。"
+"設定の「問題を報告」で、ゲームのログをorinks.netに送り、ログを添付した報告フォームをウェブブラウザで開きます。設定はどのゲームの一時停止メニュ"
+"ーにもあり、ゲームの中から送った報告にはそのゲーム名が入ります。起きたことを書き、返事がほしければメールアドレスを入れて、送信してください。フォームが開"
+"けないときは、代わりにゲーム自身の報告画面が開き、その理由を伝えます。"
 
 msgid ""
 "Report a problem, in Settings, sends the game log to orinks.net and opens "
@@ -2247,7 +2247,7 @@ msgstr "設定の「問題を報告」で、ゲームのログをorinks.netに�
 msgid ""
 "Settings is on every game's pause menu too, and a report sent from inside a "
 "game names that game."
-msgstr "設定はどのゲームのポーズメニューにもあり、ゲームの中から送った報告にはそのゲーム名が入ります。"
+msgstr "設定はどのゲームの一時停止メニューにもあり、ゲームの中から送った報告にはそのゲーム名が入ります。"
 
 msgid ""
 "Write what happened, add your email address if you want a reply, and send "
@@ -2624,13 +2624,13 @@ msgid "Eta Aquariid"
 msgstr ""
 
 msgid "Lantern Festival"
-msgstr "ランタンフェスティバル"
+msgstr "元宵節"
 
 msgid "Sundae Thursday"
-msgstr ""
+msgstr "サンデー木曜日"
 
 msgid "Ice Cream Social"
-msgstr "アイスクリームの集い"
+msgstr "アイスクリーム交流会"
 
 msgid "Peanut Butter Day"
 msgstr "ピーナッツバターの日"
@@ -3347,13 +3347,13 @@ msgid ""
 "worth a tenth more. Switching it on during a run ends the bonus for that "
 "run."
 msgstr ""
-"「音声の案内」は設定の行で、タイトルか、プレイ中のポーズメニューから開けます。これをオフにしたまま一回のプレイを通すと、納めたものがすべて一割増しになり"
-"ます。プレイ中にオンにすると、そのプレイのボーナスはなくなります。"
+"「音声の案内」は設定の行で、タイトルか、プレイ中の一時停止メニューから開けます。これをオフにしたまま一回のプレイを通すと、納めたものがすべて一割増しにな"
+"ります。プレイ中にオンにすると、そのプレイのボーナスはなくなります。"
 
 msgid ""
 "Spoken call-outs is a row in Settings, from the title or from the pause "
 "menu during a run."
-msgstr "「音声の案内」は設定の行で、タイトルか、プレイ中のポーズメニューから開けます。"
+msgstr "「音声の案内」は設定の行で、タイトルか、プレイ中の一時停止メニューから開けます。"
 
 msgid ""
 "Play a whole run with it off, and everything you bank is worth a tenth more."
@@ -3795,9 +3795,9 @@ msgid ""
 "only your best is kept. Finishing a challenge in each period in a row "
 "builds that challenge's streak."
 msgstr ""
-"チャレンジのプレイは、どう終わっても終わったときに数えられます。結果ではスコア、自己ベストかどうか、連続記録、次がいつ来るかを伝えます。ポーズメニューで"
-"「チャレンジをやめる」を選んだ場合は数えられません。チャレンジは何度でも遊び直せます。落ちてくるものは同じで、自己ベストだけが残ります。期間ごとに続けて"
-"チャレンジをクリアすると、そのチャレンジの連続記録が伸びます。"
+"チャレンジのプレイは、どう終わっても終わったときに数えられます。結果ではスコア、自己ベストかどうか、連続記録、次がいつ来るかを伝えます。一時停止メニュー"
+"で「チャレンジをやめる」を選んだ場合は数えられません。チャレンジは何度でも遊び直せます。落ちてくるものは同じで、自己ベストだけが残ります。期間ごとに続け"
+"てチャレンジをクリアすると、そのチャレンジの連続記録が伸びます。"
 
 msgid ""
 "Your result counts when a challenge run ends, however it ends: the results "
@@ -3807,7 +3807,7 @@ msgstr ""
 "チャレンジのプレイは、どう終わっても終わったときに数えられます。結果ではスコア、自己ベストかどうか、連続記録、次がいつ来るかを伝えます。"
 
 msgid "Choosing Leave the challenge on the pause menu does not count."
-msgstr "ポーズメニューで「チャレンジをやめる」を選んだ場合は数えられません。"
+msgstr "一時停止メニューで「チャレンジをやめる」を選んだ場合は数えられません。"
 
 msgid ""
 "You can replay a challenge as often as you like: the drops are the same, "
@@ -5905,8 +5905,8 @@ msgid ""
 msgstr ""
 "チャレンジは全員共通です。デイリーは「村」の鳴らし順ひとつで、毎日変わります。ウィークリーは「村」の鳴らし順を五つ続けて解き、スコアを合計します。毎週月"
 "曜日に変わります。マンスリーは大聖堂の鳴らし順です。位置は5つ、選べる鐘は8個、列は12回で、ヒントはありません。7番と8番の鐘は村のテナーより低く鳴り"
-"、8番の鐘が大聖堂のテナーです。結果は最後の鳴らし順が終わったときに数えられます。ポーズメニューの「チャレンジをやめる」は数えられないので、あとでもう一"
-"度挑戦できます。"
+"、8番の鐘が大聖堂のテナーです。結果は最後の鳴らし順が終わったときに数えられます。一時停止メニューの「チャレンジをやめる」は数えられないので、あとでもう"
+"一度挑戦できます。"
 
 msgid "Every player gets the same challenges."
 msgstr "チャレンジは全員共通です。"
@@ -5935,7 +5935,7 @@ msgstr "結果は最後の鳴らし順が終わったときに数えられます
 msgid ""
 "Leave the challenge, on the pause menu, does not count, so you can try "
 "again later."
-msgstr "ポーズメニューの「チャレンジをやめる」は数えられないので、あとでもう一度挑戦できます。"
+msgstr "一時停止メニューの「チャレンジをやめる」は数えられないので、あとでもう一度挑戦できます。"
 
 msgid ""
 "Two rows join the title on their nights only. Each keeps its own best "
@@ -6766,7 +6766,7 @@ msgstr ""
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count it."
-msgstr "ポーズメニューからやめると数えられません。"
+msgstr "一時停止メニューからやめると数えられません。"
 
 #. placeholders: {challenge_title}, {name}
 #. one sentence of a longer line
@@ -7119,7 +7119,7 @@ msgstr "少し離れてから戻ってくると、また歌ってくれます。
 msgid ""
 "Turn on Spoken call-outs in Settings, from the title or the pause menu, to "
 "have the notes of every song named after it."
-msgstr "タイトルかポーズメニューから設定の「音声の案内」をオンにすると、歌のあとに毎回その音を伝えます。"
+msgstr "タイトルか一時停止メニューから設定の「音声の案内」をオンにすると、歌のあとに毎回その音を伝えます。"
 
 msgid "Seasons"
 msgstr "季節"
@@ -7446,7 +7446,7 @@ msgid ""
 "does not."
 msgstr ""
 "始める前に、それぞれのルールと次がいつ来るかを読みます。そのブリーフィングでEscapeを押すと、始めずに戻ります。終わりまで着くか家に帰れば、連続記録"
-"に数えられます。ポーズメニューの「チャレンジをやめる」は数えられません。"
+"に数えられます。一時停止メニューの「チャレンジをやめる」は数えられません。"
 
 msgid "Before you start, each reads its rule and when the next one comes."
 msgstr "始める前に、それぞれのルールと次がいつ来るかを読みます。"
@@ -7458,7 +7458,7 @@ msgid "Reaching the end, or heading home, counts toward your streak."
 msgstr "終わりまで着くか家に帰れば、連続記録に数えられます。"
 
 msgid "Leave the challenge, on the pause menu, does not."
-msgstr "ポーズメニューの「チャレンジをやめる」は数えられません。"
+msgstr "一時停止メニューの「チャレンジをやめる」は数えられません。"
 
 msgid "Records and results"
 msgstr "記録と結果"
@@ -7634,8 +7634,8 @@ msgid ""
 "back to the title, or go back to the lobby. During a challenge, its leave "
 "row is Leave the challenge."
 msgstr ""
-"Escape：ポーズ。ポーズメニューでは、再開、設定やこのヘルプを開く、タイトルに戻る、ロビーに戻るができます。チャレンジ中は、やめる行が「チャレンジを"
-"やめる」になります。"
+"Escape：ポーズ。一時停止メニューでは、再開、設定やこのヘルプを開く、タイトルに戻る、ロビーに戻るができます。チャレンジ中は、やめる行が「チャレンジ"
+"をやめる」になります。"
 
 msgid "Escape: pause."
 msgstr "Escape：ポーズ。"
@@ -7643,7 +7643,7 @@ msgstr "Escape：ポーズ。"
 msgid ""
 "The pause menu can resume, open settings or this help, go back to the "
 "title, or go back to the lobby."
-msgstr "ポーズメニューでは、再開、設定やこのヘルプを開く、タイトルに戻る、ロビーに戻るができます。"
+msgstr "一時停止メニューでは、再開、設定やこのヘルプを開く、タイトルに戻る、ロビーに戻るができます。"
 
 msgid "During a challenge, its leave row is Leave the challenge."
 msgstr "チャレンジ中は、やめる行が「チャレンジをやめる」になります。"
@@ -9983,7 +9983,7 @@ msgstr ""
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the walk."
-msgstr "ポーズメニューからやめると、散歩は数えられません。"
+msgstr "一時停止メニューからやめると、散歩は数えられません。"
 
 msgid "Bird"
 msgstr "鳥"
@@ -10182,7 +10182,7 @@ msgid "Set select dances any set you have opened."
 msgstr "「セット選択」で、開いたセットのどれでも踊れます。"
 
 msgid "The practice room"
-msgstr "練習部屋"
+msgstr "練習室"
 
 msgid ""
 "The practice room plays one tune of any set you have opened. When a step's "
@@ -10190,11 +10190,11 @@ msgid ""
 "step and the tune goes on. A wrong step names the right key. Nothing is "
 "scored."
 msgstr ""
-"練習部屋では、開いたセットのどれかの曲を一曲流します。ステップの拍が来ると音楽が止まり、そのステップとキーを伝えます。ステップを踏むと曲が続きます。違う"
-"ステップを踏むと、正しいキーを伝えます。点数はつきません。"
+"練習室では、開いたセットのどれかの曲を一曲流します。ステップの拍が来ると音楽が止まり、そのステップとキーを伝えます。ステップを踏むと曲が続きます。違うス"
+"テップを踏むと、正しいキーを伝えます。点数はつきません。"
 
 msgid "The practice room plays one tune of any set you have opened."
-msgstr "練習部屋では、開いたセットのどれかの曲を一曲流します。"
+msgstr "練習室では、開いたセットのどれかの曲を一曲流します。"
 
 msgid ""
 "When a step's beat comes, the music holds, and the step and its key are "
@@ -10351,14 +10351,14 @@ msgid ""
 "Your score is every point and bonus you earn. Leave the challenge, on the "
 "pause menu, stops without counting the run. You can try again later."
 msgstr ""
-"スコアは、取った点とボーナスすべての合計です。ポーズメニューの「チャレンジをやめる」で、プレイを数えずにやめます。あとでもう一度挑戦できます。"
+"スコアは、取った点とボーナスすべての合計です。一時停止メニューの「チャレンジをやめる」で、プレイを数えずにやめます。あとでもう一度挑戦できます。"
 
 msgid "Your score is every point and bonus you earn."
 msgstr "スコアは、取った点とボーナスすべての合計です。"
 
 msgid ""
 "Leave the challenge, on the pause menu, stops without counting the run."
-msgstr "ポーズメニューの「チャレンジをやめる」で、プレイを数えずにやめます。"
+msgstr "一時停止メニューの「チャレンジをやめる」で、プレイを数えずにやめます。"
 
 msgid "You can try again later."
 msgstr "あとでもう一度挑戦できます。"
@@ -10372,7 +10372,7 @@ msgid ""
 "the start. Switch it in Settings, from the title or the pause menu."
 msgstr ""
 "コーラーは、音楽といっしょに流れる録音の声です。「音声の案内」をオンにすると、かけ声のたびにゲームもステップの名前を伝えます。最初はオフです。タイトルか"
-"ポーズメニューから、設定で切り替えます。"
+"一時停止メニューから、設定で切り替えます。"
 
 msgid "The caller is a recorded voice that plays with the music."
 msgstr "コーラーは、音楽といっしょに流れる録音の声です。"
@@ -10385,7 +10385,7 @@ msgid "It is off at the start."
 msgstr "最初はオフです。"
 
 msgid "Switch it in Settings, from the title or the pause menu."
-msgstr "タイトルかポーズメニューから、設定で切り替えます。"
+msgstr "タイトルか一時停止メニューから、設定で切り替えます。"
 
 msgid "Pausing"
 msgstr "ポーズ"
@@ -10452,7 +10452,7 @@ msgid "Today's tune"
 msgstr "今日の曲"
 
 msgid "The weekly set"
-msgstr "今週のセット"
+msgstr "ウィークリーのセット"
 
 msgid "The long set"
 msgstr "長いセット"
@@ -10575,7 +10575,7 @@ msgid ""
 "{steps_words3}."
 msgstr ""
 "これまでに踊ったもの：{set_count}、{tunes}、タイミングよく{steps_words}、そのうちばっちりが{spot_on}。タイミング"
-"よく続いた最長：{steps_words2}。練習部屋：{steps_words3}。"
+"よく続いた最長：{steps_words2}。練習室：{steps_words3}。"
 
 #. placeholders: {steps_words2}
 #. one sentence of a longer line
@@ -10585,7 +10585,7 @@ msgstr "タイミングよく続いた最長：{steps_words2}。"
 #. placeholders: {steps_words3}
 #. one sentence of a longer line
 msgid "Practice room: {steps_words3}."
-msgstr "練習部屋：{steps_words3}。"
+msgstr "練習室：{steps_words3}。"
 
 msgid "no four-leaf clover yet"
 msgstr "四つ葉のクローバーはまだ"
@@ -10707,7 +10707,7 @@ msgid "Dance any set you have opened, with the stars on each."
 msgstr "開いたセットのどれでも、それぞれの星といっしょに踊れます。"
 
 msgid "Practice room"
-msgstr "練習部屋"
+msgstr "練習室"
 
 msgid ""
 "Any tune you have opened. The music holds at each step until you dance it."
@@ -11213,7 +11213,7 @@ msgstr ""
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the run."
-msgstr "ポーズメニューからやめると、プレイは数えられません。"
+msgstr "一時停止メニューからやめると、プレイは数えられません。"
 
 #. one sentence of a longer line
 msgid "The tune is stopped."
@@ -11648,7 +11648,7 @@ msgstr "拍ぴったりで3点です。"
 msgid ""
 "You dance at a village ceili, and a caller calls your steps. Learn in the "
 "practice room"
-msgstr "村のケーリーで、コーラーのかけ声に合わせて踊ります。練習部屋で覚えましょう"
+msgstr "村のケーリーで、コーラーのかけ声に合わせて踊ります。練習室で覚えましょう"
 
 #. placeholders: {h}
 #. one sentence of a longer line
@@ -11979,8 +11979,8 @@ msgid ""
 msgstr ""
 "チャレンジは全員共通です。デイリーは「今日の空」：15本の矢の長いラウンドがひとつで、変化があります。ハートを速くするそよ風、遠い空、混み合った空、二倍"
 "の価値の恋人ペアなどです。ウィークリーは三つの屋根で、だんだんにぎやかになります。毎週月曜日に新しくなります。マンスリーは満月の下の五ラウンドで、バラが"
-"出ます。すべてのラウンドを遊び、点を合計します。結果は最後のラウンドが終わったときに数えられます。ポーズメニューの「チャレンジをやめる」は数えられないの"
-"で、あとでもう一度挑戦できます。"
+"出ます。すべてのラウンドを遊び、点を合計します。結果は最後のラウンドが終わったときに数えられます。一時停止メニューの「チャレンジをやめる」は数えられない"
+"ので、あとでもう一度挑戦できます。"
 
 msgid ""
 "The daily is today's sky: one long round of 15 arrows with a twist, such as "
@@ -12015,15 +12015,15 @@ msgid ""
 "once. The tutorial explains the bow and the sights cue, so after it play "
 "does not explain them again."
 msgstr ""
-"設定のふたつの行で、音声の案内のオンとオフを切り替えます。タイトルか、プレイ中のポーズメニューから開けます。「狙いの案内」では、弓が回るたびに「右15度"
-"」のように狙いを伝えます。「狙いの案内」がオフだと一歩ごとにカチッと鳴るだけですが、Sで狙いを聞けます。「的の案内」では、的が漂ってくるたびに「ピンクの"
-"ハート、左から。」のように名前を伝えます。「的の案内」がオフだとハミングだけが聞こえますが、Tabで空の一覧を聞けます。初めて出会う種類の的や合図は、一"
-"度だけ説明があります。チュートリアルで弓と照準の合図を説明するので、そのあとのプレイではもう説明しません。"
+"設定のふたつの行で、音声の案内のオンとオフを切り替えます。タイトルか、プレイ中の一時停止メニューから開けます。「狙いの案内」では、弓が回るたびに「右15"
+"度」のように狙いを伝えます。「狙いの案内」がオフだと一歩ごとにカチッと鳴るだけですが、Sで狙いを聞けます。「的の案内」では、的が漂ってくるたびに「ピンク"
+"のハート、左から。」のように名前を伝えます。「的の案内」がオフだとハミングだけが聞こえますが、Tabで空の一覧を聞けます。初めて出会う種類の的や合図は、"
+"一度だけ説明があります。チュートリアルで弓と照準の合図を説明するので、そのあとのプレイではもう説明しません。"
 
 msgid ""
 "Two rows in Settings turn spoken call-outs on and off, from the title or "
 "from the pause menu during a run."
-msgstr "設定のふたつの行で、音声の案内のオンとオフを切り替えます。タイトルか、プレイ中のポーズメニューから開けます。"
+msgstr "設定のふたつの行で、音声の案内のオンとオフを切り替えます。タイトルか、プレイ中の一時停止メニューから開けます。"
 
 msgid ""
 "The Spoken aim setting says your aim each time the bow turns, such as \"15 "
@@ -13942,7 +13942,7 @@ msgid ""
 msgstr ""
 "チャレンジは全員共通です。デイリーはレーン4本で24小節の通りひとつで、毎日変わります。ウィークリーは長いパレードで、48小節、一小節おきに銅鑼があり、"
 "毎週月曜日に変わります。マンスリーは大祭りです。レーン5本、速い太鼓、宝珠のすぐ後ろに爆竹があり、毎月変わります。結果は通りが終わったときに数えられます"
-"。ポーズメニューの「チャレンジをやめる」は数えられないので、あとでもう一度挑戦できます。"
+"。一時停止メニューの「チャレンジをやめる」は数えられないので、あとでもう一度挑戦できます。"
 
 msgid "The daily is one street of 4 lanes and 24 bars, new each day."
 msgstr "デイリーはレーン4本で24小節の通りひとつで、毎日変わります。"
@@ -13968,14 +13968,14 @@ msgid ""
 "Practice street always names its calls. Status, Up and the hint work either "
 "way."
 msgstr ""
-"タイトルかポーズメニューから開ける設定の「音声の案内」の行で、プレイ中の声の案内を切り替えます。オンにすると、宝珠が動いたときのレーン、来はじめた赤い封"
-"筒、ランタン、爆竹とそのレーン、歓声のお店を声で伝えます。オフにすると、どれも伝えません。練習の通りでは、いつもかけ声を伝えます。状況、Up、ヒントはど"
-"ちらでも使えます。"
+"タイトルか一時停止メニューから開ける設定の「音声の案内」の行で、プレイ中の声の案内を切り替えます。オンにすると、宝珠が動いたときのレーン、来はじめた赤い"
+"封筒、ランタン、爆竹とそのレーン、歓声のお店を声で伝えます。オフにすると、どれも伝えません。練習の通りでは、いつもかけ声を伝えます。状況、Up、ヒントは"
+"どちらでも使えます。"
 
 msgid ""
 "Spoken call-outs, a row in Settings from the title or the pause menu, "
 "switches the spoken calls in play."
-msgstr "タイトルかポーズメニューから開ける設定の「音声の案内」の行で、プレイ中の声の案内を切り替えます。"
+msgstr "タイトルか一時停止メニューから開ける設定の「音声の案内」の行で、プレイ中の声の案内を切り替えます。"
 
 msgid ""
 "On, a voice names the pearl's lane when it moves, each red envelope, "
@@ -16033,7 +16033,8 @@ msgid ""
 msgstr ""
 "チャレンジは全員共通です。外の季節にかかわらず、いつも夏の夕方です。デイリーは、どれかの野原で4分間です。ウィークリーは6分間で、瓶は4匹の小さなものな"
 "ので、和音がすぐできます。マンスリーは干し草畑で8分間です。どれもホタル一匹10点、種類ごとに25点、名前のある和音を放すごとに40点です。光が消える3"
-"0秒前に、声で知らせます。Enterで家に帰り、チャレンジも終わります。ポーズメニューの「チャレンジをやめる」は数えられないので、もう一度挑戦できます。"
+"0秒前に、声で知らせます。Enterで家に帰り、チャレンジも終わります。一時停止メニューの「チャレンジをやめる」は数えられないので、もう一度挑戦できます"
+"。"
 
 msgid "They are always summer evenings, whatever the season outside."
 msgstr "外の季節にかかわらず、いつも夏の夕方です。"
@@ -16062,7 +16063,7 @@ msgstr "Enterで家に帰り、チャレンジも終わります。"
 msgid ""
 "Leave the challenge, on the pause menu, does not count, so you can try "
 "again."
-msgstr "ポーズメニューの「チャレンジをやめる」は数えられないので、もう一度挑戦できます。"
+msgstr "一時停止メニューの「チャレンジをやめる」は数えられないので、もう一度挑戦できます。"
 
 msgid "Up, Down, Left and Right: walk one step. Up is north."
 msgstr "Up、Down、Left、Right：一歩歩く。Upは北です。"
@@ -17729,7 +17730,7 @@ msgid ""
 "holds 6, and chords with names go in your journal. Play walks the home "
 "meadow."
 msgstr ""
-"二回や三回光る種類もいます。光るたびに一回押しましょう。びんには6匹入り、名前のある和音は日誌に記録されます。プレイではおうちの草地を歩きます。"
+"二回や三回光る種類もいます。光るたびに一回押しましょう。びんには6匹入り、名前のある和音は日記に記録されます。プレイではおうちの草地を歩きます。"
 
 msgid ""
 "Patience by a cabin fire: move all 52 cards onto four suit foundations, ace "
@@ -18033,7 +18034,7 @@ msgid ""
 msgstr ""
 "全員に同じカードが配られ、チャレンジのディールはどれも必ず解けます。デイリーの「今夜のディール」は一枚めくりのディールで、毎日新しくなります。ウィークリ"
 "ーの「三枚めくりの週」は三枚めくりのディールで、毎週月曜に新しくなります。マンスリーの「炉端の五ディール」は一枚めくりのディールを五回続けて、スコアを合"
-"計します。最後のカードが上がった時点で結果が記録されます。一時停止メニューでチャレンジをやめた場合は記録されないので、あとでもう一度挑戦できます。"
+"計します。最後のカードが上がった時点で結果が記録されます。一時停止メニューの「チャレンジをやめる」は記録されないので、あとでもう一度挑戦できます。"
 
 msgid ""
 "Every player gets the same cards, and every challenge deal can be won."
@@ -18903,7 +18904,7 @@ msgstr "一枚めくり、取り消し無制限、どのディールも必ず解
 msgid ""
 "Draw one, unlimited undo, and every deal can be won. {POINTS} points less 1 "
 "a move.{record}"
-msgstr "1枚めくり、取り消し無制限、どのディールも必ず解けます。{POINTS}点から一手ごとに一点減ります。{record}"
+msgstr "一枚めくり、取り消し無制限、どのディールも必ず解けます。{POINTS}点から一手ごとに1点減ります。{record}"
 
 #. placeholders: {POINTS}, {record}
 #. one sentence of a longer line
@@ -18920,13 +18921,13 @@ msgstr "ディールで使うカードとテーブルの音を鳴らします。
 msgid ""
 "A daily deal, a weekly draw three deal and five deals a month, the same for "
 "every player."
-msgstr "毎日のディール、毎週の三枚めくりのディール、毎月五ディール。全員に同じカードです。"
+msgstr "デイリーのディール、ウィークリーの三枚めくりのディール、マンスリーの五ディール。全員に同じカードです。"
 
 #. placeholders: {resets}
 msgid ""
 "A daily deal, a weekly draw three deal and five deals a month, the same for "
 "every player. {resets}"
-msgstr "毎日のディール、毎週の三枚めくりのディール、毎月五ディール。全員に同じカードです。{resets}"
+msgstr "デイリーのディール、ウィークリーの三枚めくりのディール、マンスリーの五ディール。全員に同じカードです。{resets}"
 
 msgid "diamonds"
 msgstr "ダイヤ"
@@ -20058,7 +20059,7 @@ msgid ""
 msgstr ""
 "チャレンジのライドは全員同じです。朝のライドは毎日新しい700メートルのコースで、ロードバイクとBMXが曜日ごとに交代します。ラッシュアワーは毎週月曜に"
 "新しくなる1200メートルのコースで、車が多めです。街横断ライドは毎月新しくなる2200メートルのコースで、交差点の曲がり角が3か所あります。ライドポイ"
-"ントのベストが記録され、走り切ると連続記録が続きます。一時停止メニューでチャレンジをやめた場合は記録されません。"
+"ントのベストが記録され、走り切ると連続記録が続きます。一時停止メニューの「チャレンジをやめる」は記録されません。"
 
 msgid "Every player gets the same challenge rides."
 msgstr "チャレンジのライドは全員同じです。"
@@ -20082,7 +20083,7 @@ msgid ""
 msgstr "ライドポイントのベストが記録され、走り切ると連続記録が続きます。"
 
 msgid "Leave the challenge, on the pause menu, does not count."
-msgstr "一時停止メニューでチャレンジをやめた場合は記録されません。"
+msgstr "一時停止メニューの「チャレンジをやめる」は記録されません。"
 
 msgid "Special rides"
 msgstr "スペシャルライド"
@@ -20818,13 +20819,13 @@ msgstr "コースと自転車ごとのベストタイムとライドポイント
 msgid ""
 "A daily morning run, a weekly rush hour and a monthly cross-town ride, the "
 "same for every player."
-msgstr "毎日の朝のライド、毎週のラッシュアワー、毎月の街横断ライド。全員同じです。"
+msgstr "デイリーの朝のライド、ウィークリーのラッシュアワー、マンスリーの街横断ライド。全員同じです。"
 
 #. placeholders: {resets}
 msgid ""
 "A daily morning run, a weekly rush hour and a monthly cross-town ride, the "
 "same for every player. {resets}"
-msgstr "毎日の朝のライド、毎週のラッシュアワー、毎月の街横断ライド。全員同じです。{resets}"
+msgstr "デイリーの朝のライド、ウィークリーのラッシュアワー、マンスリーの街横断ライド。全員同じです。{resets}"
 
 msgid "Time trial"
 msgstr "タイムトライアル"
@@ -22979,8 +22980,8 @@ msgid ""
 "Earlier play counts too, and stars still open later nights. If you never "
 "play it, it leaves the lists until next Halloween."
 msgstr ""
-"この期間にダンスか練習を始めれば、途中でやめてもゲームはずっと遊べます。シーズンのあとはアクションのゲームに移ります。前のプレイも数えられ、星で後の夜が"
-"開きます。一度も遊ばなければ、次のハロウィンまで一覧から消えます。"
+"この期間にダンスか練習を始めれば、途中でやめてもゲームはずっと遊べます。シーズンのあとはアクションゲームに移ります。前のプレイも数えられ、星で後の夜が開"
+"きます。一度も遊ばなければ、次のハロウィンまで一覧から消えます。"
 
 msgid ""
 "Start a dance or a practice in that time and the game is yours to keep, "
@@ -22988,7 +22989,7 @@ msgid ""
 msgstr "この期間にダンスか練習を始めれば、途中でやめてもゲームはずっと遊べます。"
 
 msgid "After the season it moves to the Action games."
-msgstr "シーズンのあとはアクションのゲームに移ります。"
+msgstr "シーズンのあとはアクションゲームに移ります。"
 
 msgid "Earlier play counts too, and stars still open later nights."
 msgstr "前のプレイも数えられ、星で後の夜が開きます。"
@@ -23280,10 +23281,10 @@ msgstr "デイリーの「今夜の曲」：ゾンビ、ガイコツ、ミイラ
 msgid ""
 "The weekly haunt: three songs, with every monster. A new one comes every "
 "Monday."
-msgstr "「今週の怪」：全モンスターが出る三曲。毎週月曜に新しくなります。"
+msgstr "「ウィークリーの怪」：全モンスターが出る三曲。毎週月曜に新しくなります。"
 
 msgid "The weekly haunt: three songs, with every monster."
-msgstr "「今週の怪」：全モンスターが出る三曲。"
+msgstr "「ウィークリーの怪」：全モンスターが出る三曲。"
 
 msgid ""
 "The long night, the monthly: five songs, with every monster and more of "
@@ -23365,7 +23366,7 @@ msgid "Tonight's song"
 msgstr "今夜の曲"
 
 msgid "The weekly haunt"
-msgstr "今週の怪"
+msgstr "ウィークリーの怪"
 
 msgid "The long night"
 msgstr "長い夜"
@@ -23416,12 +23417,12 @@ msgstr "一年中、モンスターたちのダンスブーム。各モンスタ
 msgid ""
 "Graveyard Shuffle is yours to keep. After Halloween, it moves to the Action "
 "games."
-msgstr "Graveyard Shuffleはずっと遊べます。ハロウィンのあとはアクションのゲームに移ります。"
+msgstr "Graveyard Shuffleはずっと遊べます。ハロウィンのあとはアクションゲームに移ります。"
 
 msgid ""
 "Graveyard Shuffle is yours to keep, in the Action games. Doctor Volt's "
 "laboratory opens at Halloween."
-msgstr "Graveyard Shuffleはアクションのゲームでずっと遊べます。Volt博士の研究所はハロウィンに開きます。"
+msgstr "Graveyard Shuffleはアクションゲームでずっと遊べます。Volt博士の研究所はハロウィンに開きます。"
 
 msgid ""
 "A Halloween special. Lead the monsters' new dance craze: dance each "
@@ -23521,13 +23522,13 @@ msgstr "ゲームのすべてのモンスター、動き、合図を、名前と
 msgid ""
 "A daily song, a weekly night and a monthly long night, the same monsters "
 "for every player."
-msgstr "毎日の曲、毎週の夜、毎月の長い夜。モンスターは全員同じです。"
+msgstr "デイリーの曲、ウィークリーの夜、マンスリーの長い夜。モンスターは全員同じです。"
 
 #. placeholders: {resets}
 msgid ""
 "A daily song, a weekly night and a monthly long night, the same monsters "
 "for every player. {resets}"
-msgstr "毎日の曲、毎週の夜、毎月の長い夜。モンスターは全員同じです。{resets}"
+msgstr "デイリーの曲、ウィークリーの夜、マンスリーの長い夜。モンスターは全員同じです。{resets}"
 
 #. placeholders: {title}
 msgid ""
@@ -24512,7 +24513,7 @@ msgstr ""
 "タイトルのチャレンジは、全員が同じように作るメニューです。デイリーは毎日、ウィークリーは毎週月曜、マンスリーは毎月新しくなり、日付はすべてUTCです。各"
 "項目はチャレンジの名前と内容、そしてプレイ済みか、ベスト、連続記録を伝えます。項目でF1を押すと、ルールの全文と次がいつかを伝えます。チャレンジの前に、"
 "ブリーフィングでルールと変化、次までの時間を伝えます。最後のページでEnterを押すと食事が始まります。Escapeで始めずに戻ります。終わると、結果で"
-"スコア、ベスト、連続記録を伝えます。一時停止メニューでチャレンジをやめた場合は記録されません。"
+"スコア、ベスト、連続記録を伝えます。一時停止メニューの「チャレンジをやめる」は記録されません。"
 
 msgid ""
 "Challenges, on the title, are menus every player cooks the same way: a new "
@@ -24542,7 +24543,7 @@ msgid ""
 msgstr "終わると、結果でスコア、ベスト、連続記録を伝えます。"
 
 msgid "Leave the challenge, on the pause menu, does not count it."
-msgstr "一時停止メニューでチャレンジをやめた場合は記録されません。"
+msgstr "一時停止メニューの「チャレンジをやめる」は記録されません。"
 
 msgid ""
 "Daily, Tonight's dinner: one seeded meal on four stations, with a twist for "
@@ -25725,13 +25726,13 @@ msgstr "キッチンのすべての調理台、合図、効果音を名前つき
 msgid ""
 "The daily dinner, the weekly three-course Sunday dinner and the monthly "
 "harvest banquet, the same menus for every player."
-msgstr "毎日のディナー、毎週の三コースの日曜のディナー、毎月の収穫の宴。メニューは全員同じです。"
+msgstr "デイリーのディナー、ウィークリーの三コースの日曜のディナー、マンスリーの収穫の宴。メニューは全員同じです。"
 
 #. placeholders: {resets}
 msgid ""
 "The daily dinner, the weekly three-course Sunday dinner and the monthly "
 "harvest banquet, the same menus for every player. {resets}"
-msgstr "毎日のディナー、毎週の三コースの日曜のディナー、毎月の収穫の宴。メニューは全員同じです。{resets}"
+msgstr "デイリーのディナー、ウィークリーの三コースの日曜のディナー、マンスリーの収穫の宴。メニューは全員同じです。{resets}"
 
 #. placeholders: {n}, {name}, {stars_phrase}, {best}
 msgid "Course {n}: {name}, {stars_phrase}, {best}"
@@ -26737,7 +26738,7 @@ msgid ""
 "exit. Find your way, freeze when a ghost drifts by, and watch your step."
 msgstr ""
 "背後でNevermore "
-"Manorの扉に鍵がかかりました。十の棟に百の階があり、地上階から屋敷の心臓部まで下っていきます。階選びと日誌では、たどり着いた棟の名前を伝えます。どの"
+"Manorの扉に鍵がかかりました。十の棟に百の階があり、地上階から屋敷の心臓部まで下っていきます。階選びと日記では、たどり着いた棟の名前を伝えます。どの"
 "階も部屋がつながってできています。どの部屋にも謎が一つあります。解くと部屋の出口の鍵が開きます。道を探し、幽霊が通りかかったら動きを止め、足元に気をつけ"
 "ましょう。"
 
@@ -26750,7 +26751,7 @@ msgid ""
 msgstr "十の棟に百の階があり、地上階から屋敷の心臓部まで下っていきます。"
 
 msgid "Floor select and the journal name each wing as you reach it."
-msgstr "階選びと日誌では、たどり着いた棟の名前を伝えます。"
+msgstr "階選びと日記では、たどり着いた棟の名前を伝えます。"
 
 msgid "Every floor is a chain of rooms."
 msgstr "どの階も部屋がつながってできています。"
@@ -27843,7 +27844,7 @@ msgstr ""
 "タイトルのチャレンジは、世界中の全員に同じ屋敷です。今日のデイリーを遊ぶ人はみな、同じ部屋を、同じ場所の同じものと歩きます。各項目はチャレンジの名前と内"
 "容、そしてベスト、プレイ済みか、連続記録を伝えます。始める前に、ブリーフィングでチャレンジのルールか変化と、次までの時間を伝えます。最後のページでEnt"
 "erを押すとプレイが始まります。Escapeで始めずに戻ります。脱出、時間切れ、勇気がなくなる、のどれかでプレイが終わると、スコア、ベスト、連続記録を伝"
-"えます。一時停止メニューでチャレンジをやめた場合は記録されません。チャレンジではベストタイムも開く階も変わりませんが、解放は手に入ります。"
+"えます。一時停止メニューの「チャレンジをやめる」は記録されません。チャレンジではベストタイムも開く階も変わりませんが、解放は手に入ります。"
 
 msgid ""
 "Challenges on the title are the same house for every player in the world: "
@@ -30106,13 +30107,13 @@ msgstr "どこまで深く進んだか、ベストタイムとスコア、チャ
 msgid ""
 "A daily floor, a weekly climb and a monthly masked ball, the same haunted "
 "house for every player."
-msgstr "毎日の階、毎週の登り、毎月の仮面舞踏会。幽霊屋敷は全員同じです。"
+msgstr "デイリーの階、ウィークリーの登り、マンスリーの仮面舞踏会。幽霊屋敷は全員同じです。"
 
 #. placeholders: {resets}
 msgid ""
 "A daily floor, a weekly climb and a monthly masked ball, the same haunted "
 "house for every player. {resets}"
-msgstr "毎日の階、毎週の登り、毎月の仮面舞踏会。幽霊屋敷は全員同じです。{resets}"
+msgstr "デイリーの階、ウィークリーの登り、マンスリーの仮面舞踏会。幽霊屋敷は全員同じです。{resets}"
 
 msgid ""
 "Up and Down choose a wing of ten floors, Enter lists its floors, Escape "
@@ -32325,13 +32326,13 @@ msgstr "廊下で必要な音を鳴らします。"
 #. one sentence of a longer line
 msgid ""
 "A daily, a weekly and a monthly hall, the same lamps for every player."
-msgstr "毎日、毎週、毎月の廊下。ランプは全員同じです。"
+msgstr "デイリー、ウィークリー、マンスリーの廊下。ランプは全員同じです。"
 
 #. placeholders: {resets}
 msgid ""
 "A daily, a weekly and a monthly hall, the same lamps for every player. "
 "{resets}"
-msgstr "毎日、毎週、毎月の廊下。ランプは全員同じです。{resets}"
+msgstr "デイリー、ウィークリー、マンスリーの廊下。ランプは全員同じです。{resets}"
 
 msgid "lit"
 msgstr ""
@@ -32964,7 +32965,7 @@ msgid ""
 msgstr "夜が進むごとに少し広くなり、ランタンが一つ増え、少し速く漂います。最大10個です。"
 
 msgid "Discoveries and your journal"
-msgstr "発見と日誌"
+msgstr "発見と日記"
 
 msgid ""
 "Some nights hide small places to find: an old dock, an island where an owl "
@@ -32989,16 +32990,16 @@ msgid ""
 "night early. Read it from the Journal row on the title. It lists the places "
 "you have found and how often. Blank pages mark the ones still to find."
 msgstr ""
-"見つけたものは、夜を途中でやめても、すぐに日誌に記録されます。タイトルの日誌の項目で読めます。見つけた場所と回数を一覧します。白紙のページは、まだ見つけ"
+"見つけたものは、夜を途中でやめても、すぐに日記に記録されます。タイトルの日記の項目で読めます。見つけた場所と回数を一覧します。白紙のページは、まだ見つけ"
 "ていない場所です。"
 
 msgid ""
 "Everything you find goes into your journal at once, even if you leave the "
 "night early."
-msgstr "見つけたものは、夜を途中でやめても、すぐに日誌に記録されます。"
+msgstr "見つけたものは、夜を途中でやめても、すぐに日記に記録されます。"
 
 msgid "Read it from the Journal row on the title."
-msgstr "タイトルの日誌の項目で読めます。"
+msgstr "タイトルの日記の項目で読めます。"
 
 msgid "It lists the places you have found and how often."
 msgstr "見つけた場所と回数を一覧します。"
@@ -33068,7 +33069,7 @@ msgstr "Escapeでタイトルに戻ります。"
 msgid ""
 "Records, on the title, reads the most lanterns you have gathered in a "
 "night, your journal's tallies and your challenge results."
-msgstr "タイトルの記録では、一晩で集めたランタンの最多数、日誌の集計、チャレンジの結果を伝えます。"
+msgstr "タイトルの記録では、一晩で集めたランタンの最多数、日記の集計、チャレンジの結果を伝えます。"
 
 msgid "After an outing"
 msgstr "漕ぎ終えたら"
@@ -33080,13 +33081,13 @@ msgid ""
 "comes first. After a challenge, the last row is Back to the challenges. "
 "Escape does the same as the last row."
 msgstr ""
-"帰ると、結果でその夜がどうだったか、日誌に何が記録されたかを伝えます。続いて結果メニューで「もう一度プレイ」「結果をもう一度聞く」「タイトルに戻る」を選"
+"帰ると、結果でその夜がどうだったか、日記に何が記録されたかを伝えます。続いて結果メニューで「もう一度プレイ」「結果をもう一度聞く」「タイトルに戻る」を選"
 "べます。歌が完成した夜のあとは、「次の夜」が最初に来ます。チャレンジのあとは、最後の項目が「チャレンジに戻る」です。Escapeは最後の項目と同じです。"
 
 msgid ""
 "When you head home, the results say how the night went and what went into "
 "your journal."
-msgstr "帰ると、結果でその夜がどうだったか、日誌に何が記録されたかを伝えます。"
+msgstr "帰ると、結果でその夜がどうだったか、日記に何が記録されたかを伝えます。"
 
 msgid ""
 "Then the results menu offers Play again, Hear the results again, and Back "
@@ -33159,8 +33160,8 @@ msgid ""
 "discover. Heading home with Tab counts toward your streak, however many "
 "lanterns you have. Leave the challenge, on the pause menu, does not."
 msgstr ""
-"チャレンジのスコアは、ランタン一つにつき1、見つけた場所一つにつき2です。Tabで帰ると、ランタンがいくつでも連続記録に数えます。一時停止メニューでチャ"
-"レンジをやめた場合は数えません。"
+"チャレンジのスコアは、ランタン一つにつき1、見つけた場所一つにつき2です。Tabで帰ると、ランタンがいくつでも連続記録に数えます。一時停止メニューの「チ"
+"ャレンジをやめる」は数えません。"
 
 msgid ""
 "Your challenge score is 1 for each lantern and 2 for each place you "
@@ -33468,7 +33469,7 @@ msgid "Discovery"
 msgstr "発見"
 
 msgid "You found a place. It goes in your journal."
-msgstr "場所を見つけました。日誌に記録されます。"
+msgstr "場所を見つけました。日記に記録されます。"
 
 msgid "Lantern Festival night"
 msgstr "元宵節の夜"
@@ -33548,11 +33549,11 @@ msgstr "次は第{n2}夜です。"
 #. placeholders: {n}
 #. one sentence of a longer line
 msgid "Night {n} is in your journal."
-msgstr "第{n}夜が日誌に記録されました。"
+msgstr "第{n}夜が日記に記録されました。"
 
 #. placeholders: {n}, {n2}
 msgid "Night {n} is in your journal. Night {n2} is next."
-msgstr "第{n}夜が日誌に記録されました。次は第{n2}夜です。"
+msgstr "第{n}夜が日記に記録されました。次は第{n2}夜です。"
 
 msgid "Free paddle is open on the title."
 msgstr "タイトルでのんびり漕ぎが開きました。"
@@ -33591,7 +33592,7 @@ msgstr ""
 "ります。"
 
 msgid "Your journal"
-msgstr "日誌"
+msgstr "日記"
 
 msgid ""
 "Everything you have found on the lake. Up and Down read the pages, Escape "
@@ -33748,7 +33749,7 @@ msgstr "見つけた場所と集計を読みます。"
 msgid ""
 "The most lanterns you have gathered, your journal's tallies and your "
 "challenge results."
-msgstr "集めたランタンの最多数、日誌の集計、チャレンジの結果。"
+msgstr "集めたランタンの最多数、日記の集計、チャレンジの結果。"
 
 msgid "Play the sounds you need on the lake."
 msgstr "湖で必要な音を鳴らします。"
@@ -34001,16 +34002,16 @@ msgid "{join} and {n}"
 msgstr "{join}と{n}"
 
 msgid "the Left arrow"
-msgstr "左矢印キー"
+msgstr "Leftの矢印キー"
 
 msgid "the Right arrow"
-msgstr "右矢印キー"
+msgstr "Rightの矢印キー"
 
 msgid "the Up arrow"
-msgstr "上矢印キー"
+msgstr "Upの矢印キー"
 
 msgid "the Down arrow"
-msgstr "下矢印キー"
+msgstr "Downの矢印キー"
 
 msgid "Space"
 msgstr "Space"
@@ -34437,11 +34438,11 @@ msgstr "新しい湖で、同じ夜をもう一度。"
 
 #. placeholders: {name}
 msgid "New in your journal: {name}."
-msgstr "日誌に新しく記録：{name}。"
+msgstr "日記に新しく記録：{name}。"
 
 #. placeholders: {sentence_start}
 msgid "{sentence_start} is already in your journal."
-msgstr "{sentence_start}はもう日誌にあります。"
+msgstr "{sentence_start}はもう日記にあります。"
 
 msgid "The song is whole, and you paddle home under the stars."
 msgstr "歌が完成し、星空の下を漕いで帰ります。"
@@ -34524,7 +34525,7 @@ msgstr "湖に戻りました。{status}"
 
 #. placeholders: {places}, {ALL}
 msgid "Journal, {places} of {ALL} places found"
-msgstr "日誌、{ALL}か所中{places}か所を発見"
+msgstr "日記、{ALL}か所中{places}か所を発見"
 
 msgid "The night's song"
 msgstr "夜の歌"
@@ -35017,18 +35018,18 @@ msgid ""
 msgstr "斧を三回振るごとに木材1、つるはしを三回振るごとに石1が手に入ります。"
 
 msgid "The barge"
-msgstr "はしけ"
+msgstr "荷船"
 
 msgid ""
 "The barge comes to the river dock every third day. Space trades at the "
 "dock. It buys from the larder, and sells seeds, nails, hens and a goat. "
 "Seeds for the season are the cheapest way to fill the fields."
 msgstr ""
-"はしけは三日ごとに川の船着き場に来ます。船着き場でSpaceを押すと取引します。食料庫の品を買い取り、種、くぎ、めんどり、ヤギを売っています。季節の種は"
-"、畑を埋めるいちばん安い方法です。"
+"荷船は三日ごとに川の船着き場に来ます。船着き場でSpaceを押すと取引します。食料庫の品を買い取り、種、くぎ、めんどり、ヤギを売っています。季節の種は、"
+"畑を埋めるいちばん安い方法です。"
 
 msgid "The barge comes to the river dock every third day."
-msgstr "はしけは三日ごとに川の船着き場に来ます。"
+msgstr "荷船は三日ごとに川の船着き場に来ます。"
 
 msgid "Space trades at the dock."
 msgstr "船着き場でSpaceを押すと取引します。"
@@ -35260,15 +35261,15 @@ msgid ""
 "lantern walk. Supper is a feast, everyone is cheered, and word spreads, so "
 "someone new comes the next day."
 msgstr ""
-"一年は十日ずつの四つの季節です。春、夏、秋、冬。季節ごとに作物があり、はしけがその種を売ります。各季節の十日目はお祭りです。種まきの日、夏至祭、収穫市、"
-"ランタン行列。夕食はごちそうで、みんなが元気になり、うわさが広まって、翌日に新しい人がやってきます。"
+"一年は十日ずつの四つの季節です。春、夏、秋、冬。季節ごとに作物があり、荷船がその種を売ります。各季節の十日目はお祭りです。種まきの日、夏至祭、収穫市、ラ"
+"ンタン行列。夕食はごちそうで、みんなが元気になり、うわさが広まって、翌日に新しい人がやってきます。"
 
 msgid ""
 "A year is four seasons of ten days: spring, summer, autumn and winter."
 msgstr "一年は十日ずつの四つの季節です。春、夏、秋、冬。"
 
 msgid "Each season has its own crops, and the barge sells its seeds."
-msgstr "季節ごとに作物があり、はしけがその種を売ります。"
+msgstr "季節ごとに作物があり、荷船がその種を売ります。"
 
 msgid ""
 "The tenth day of every season is a festival: sowing day, midsummer, the "
@@ -35309,13 +35310,13 @@ msgstr "三つのチャレンジでは、全員に同じ小さな集落と数日
 msgid ""
 "Market day, each day: fill the barge's order within five days. Food "
 "reserved for the barge's order is not eaten at supper."
-msgstr "デイリーの「市の日」：五日以内にはしけの注文をそろえます。はしけの注文用に取っておいた食べ物は、夕食で食べられません。"
+msgstr "デイリーの「市場の日」：五日以内に荷船の注文をそろえます。荷船の注文用に取っておいた食べ物は、夕食で食べられません。"
 
 msgid "Market day, each day: fill the barge's order within five days."
-msgstr "デイリーの「市の日」：五日以内にはしけの注文をそろえます。"
+msgstr "デイリーの「市場の日」：五日以内に荷船の注文をそろえます。"
 
 msgid "Food reserved for the barge's order is not eaten at supper."
-msgstr "はしけの注文用に取っておいた食べ物は、夕食で食べられません。"
+msgstr "荷船の注文用に取っておいた食べ物は、夕食で食べられません。"
 
 msgid ""
 "Good spirits, each week: three tired newcomers. Get all three cheerful at "
@@ -35339,7 +35340,7 @@ msgid ""
 msgstr "点は、食料庫の中身、ごきげんな住人、建てた建物、目標、残った日数で決まります。"
 
 msgid "Barge fair and music night"
-msgstr "はしけ市と音楽の夜"
+msgstr "荷船の市と音楽の夜"
 
 msgid ""
 "On the third Tuesday of every month there is a barge fair: the barge comes "
@@ -35347,13 +35348,13 @@ msgid ""
 "every month it is music night: a band from the next village plays on the "
 "green after supper. Both events affect your own hamlet, never a challenge."
 msgstr ""
-"毎月第三火曜日は、はしけ市です。はしけが毎日来て、何でもコイン一枚高く買ってくれます。毎月第四日曜日は音楽の夜です。夕食のあと、となりの村の楽団が広場で"
-"演奏します。どちらのイベントも自分の集落だけで、チャレンジには影響しません。"
+"毎月第三火曜日は、荷船の市です。荷船が毎日来て、何でもコイン一枚高く買ってくれます。毎月第四日曜日は音楽の夜です。夕食のあと、となりの村の楽団が広場で演"
+"奏します。どちらのイベントも自分の集落だけで、チャレンジには影響しません。"
 
 msgid ""
 "On the third Tuesday of every month there is a barge fair: the barge comes "
 "every day and pays a coin more for everything."
-msgstr "毎月第三火曜日は、はしけ市です。はしけが毎日来て、何でもコイン一枚高く買ってくれます。"
+msgstr "毎月第三火曜日は、荷船の市です。荷船が毎日来て、何でもコイン一枚高く買ってくれます。"
 
 msgid ""
 "On the fourth Sunday of every month it is music night: a band from the next "
@@ -36297,7 +36298,7 @@ msgstr "どの種をまきますか？"
 
 msgid ""
 "Up and Down choose a seed, Enter sows it, Escape leaves the plot as it is."
-msgstr "Up と Down で種を選び、Enter でまき、Escape で何もせずに畑を離れます。"
+msgstr "UpとDownで種を選び、Enterでまき、Escapeで何もせずに畑を離れます。"
 
 #. placeholders: {days}
 msgid "ripe in {days} days"
@@ -36339,7 +36340,7 @@ msgid "{about} It takes {list_words}."
 msgstr "{about}{list_words}が要ります。"
 
 msgid "Up and Down choose, Enter picks, Escape leaves the spot empty."
-msgstr "Up と Down で選び、Enter で決定、Escape で空き地のままにします。"
+msgstr "UpとDownで選び、Enterで決定、Escapeで空き地のままにします。"
 
 #. placeholders: {name}
 msgid "Build {name}"
@@ -36377,7 +36378,7 @@ msgid "You have {coins} coins."
 msgstr "{coins}コイン持っています。"
 
 msgid "Up and Down choose, Enter buys or opens, Escape leaves the barge."
-msgstr "Up と Down で選び、Enter で購入か開く、Escape で荷船を離れます。"
+msgstr "UpとDownで選び、Enterで購入か開く、Escapeで荷船を離れます。"
 
 msgid ", a coin more today"
 msgstr "、今日は一コイン多く"
@@ -36412,7 +36413,7 @@ msgstr "売る"
 msgid ""
 "Up and Down choose a good, Enter sells half of it, Escape goes back to the "
 "barge."
-msgstr "Up と Down で品物を選び、Enter で半分売り、Escape で荷船に戻ります。"
+msgstr "UpとDownで品物を選び、Enterで半分売り、Escapeで荷船に戻ります。"
 
 #. placeholders: {sentence_case}, {n}, {price}, {else}
 msgid "{sentence_case}, {n}, {price} {else} each"
@@ -36438,7 +36439,7 @@ msgstr "荷船が買い取るものは食料庫にありません"
 msgid ""
 "Up and Down choose a reply, Enter gives it, Escape goes back and the caller "
 "waits at the gate."
-msgstr "Up と Down で返事を選び、Enter で答え、Escape で戻ります。訪問者は門で待っています。"
+msgstr "UpとDownで返事を選び、Enterで答え、Escapeで戻ります。訪問者は門で待っています。"
 
 #. placeholders: {name}
 msgid "Welcome {name}"
@@ -36465,7 +36466,7 @@ msgstr "仕事の掲示板"
 msgid ""
 "Up and Down choose a settler, Left and Right change their first job, Escape "
 "goes back to the lane."
-msgstr "Up と Down で開拓民を選び、Left と Right で第一の仕事を変え、Escape で小道に戻ります。"
+msgstr "UpとDownで開拓民を選び、LeftとRightで第一の仕事を変え、Escapeで小道に戻ります。"
 
 msgid "Nobody lives here yet"
 msgstr "まだ誰も住んでいません"
@@ -36519,7 +36520,7 @@ msgstr "夕食です。誰の隣に座りますか？"
 msgid ""
 "Up and Down choose a seat, Enter sits down. Sitting with someone cheers "
 "them up."
-msgstr "Up と Down で席を選び、Enter で座ります。隣に座ると、その人が元気になります。"
+msgstr "UpとDownで席を選び、Enterで座ります。隣に座ると、その人が元気になります。"
 
 #. placeholders: {name}, {name2}
 msgid "Next to {name}, {name2}"
@@ -37425,7 +37426,7 @@ msgstr "{dry}つ乾いている"
 
 #. one sentence of a longer line
 msgid "Enter talks."
-msgstr "Enter で話します。"
+msgstr "Enterで話します。"
 
 #. one sentence of a longer line
 msgid "The gate."
@@ -37433,7 +37434,7 @@ msgstr "門です。"
 
 #. placeholders: {name}, {name2}
 msgid "The gate. {name}, a {name2}, asks to stay. Enter talks."
-msgstr "門です。{name2}の{name}が、住まわせてほしいそうです。Enter で話します。"
+msgstr "門です。{name2}の{name}が、住まわせてほしいそうです。Enterで話します。"
 
 #. placeholders: {name}, {name2}
 #. one sentence of a longer line
@@ -37442,7 +37443,7 @@ msgstr "{name2}の{name}が、住まわせてほしいそうです。"
 
 #. placeholders: {sentence_case}
 msgid "The gate. {sentence_case}. Enter talks."
-msgstr "門です。{sentence_case}。Enter で話します。"
+msgstr "門です。{sentence_case}。Enterで話します。"
 
 msgid "The gate. Nobody here."
 msgstr "門です。誰もいません。"
@@ -38158,17 +38159,17 @@ msgstr "小道の{name}のそばです。"
 #. one sentence of a longer line
 msgid ""
 "Find them {where_at}, press Enter to talk, and see to what they want."
-msgstr "{where_at}にいるので、Enter を押して話し、望みをかなえてあげましょう。"
+msgstr "{where_at}にいるので、Enterを押して話し、望みをかなえてあげましょう。"
 
 #. placeholders: {name}, {where_at}
 msgid ""
 "{name} is thinking of leaving. Find them {where_at}, press Enter to talk, "
 "and see to what they want."
-msgstr "{name}が出ていこうか考えています。{where_at}にいるので、Enter を押して話し、望みをかなえてあげましょう。"
+msgstr "{name}が出ていこうか考えています。{where_at}にいるので、Enterを押して話し、望みをかなえてあげましょう。"
 
 #. one sentence of a longer line
 msgid "Go to the gate and press Enter to meet them."
-msgstr "門へ行って Enter を押し、会ってみましょう。"
+msgstr "門へ行ってEnterを押し、会ってみましょう。"
 
 #. placeholders: {name}
 #. one sentence of a longer line
@@ -38178,18 +38179,18 @@ msgstr "{name}が門で待っています。"
 #. placeholders: {name}
 msgid ""
 "{name} waits at the gate. Go to the gate and press Enter to meet them."
-msgstr "{name}が門で待っています。門へ行って Enter を押し、会ってみましょう。"
+msgstr "{name}が門で待っています。門へ行ってEnterを押し、会ってみましょう。"
 
 #. placeholders: {name2}
 #. one sentence of a longer line
 msgid "Go there and press Enter to talk {name2} round."
-msgstr "そこへ行って Enter を押し、{name2}を説得しましょう。"
+msgstr "そこへ行ってEnterを押し、{name2}を説得しましょう。"
 
 #. placeholders: {name}, {map_or}, {where_at}, {name2}
 msgid ""
 "{name} is {map_or}, {where_at}. Go there and press Enter to talk {name2} "
 "round."
-msgstr "{name}は{map_or}、{where_at}にいます。そこへ行って Enter を押し、{name2}を説得しましょう。"
+msgstr "{name}は{map_or}、{where_at}にいます。そこへ行ってEnterを押し、{name2}を説得しましょう。"
 
 #. one sentence of a longer line
 msgid "A bite."
@@ -38431,13 +38432,13 @@ msgstr ""
 
 #. one sentence of a longer line
 msgid "Enter talks to whoever is here."
-msgstr "Enter で、ここにいる人と話します。"
+msgstr "Enterで、ここにいる人と話します。"
 
 #. one sentence of a longer line
 msgid ""
 "J opens the job board, L lists what is around you, and P describes everyone "
 "in Larkfield."
-msgstr "J で仕事の掲示板を開き、L で周りにあるものを一覧し、P でLarkfieldの全員の紹介を聞きます。"
+msgstr "Jで仕事の掲示板を開き、Lで周りにあるものを一覧し、PでLarkfieldの全員の紹介を聞きます。"
 
 #. placeholders: {sentence_start2}, {down}
 #. one sentence of a longer line
@@ -38489,9 +38490,9 @@ msgid ""
 msgstr ""
 "{sentence_start}と{right}で小道を歩くか、建物の中を移動します。{sentence_start2}で建物に入り、{down}で出ま"
 "す。{sentence_start3}で目の前の作業をします。耕す、種をまく、水をやる、収穫、薪割り、釣り、建築、取引です。{sentence_star"
-"t4}で雑草を抜き、動物にえさをやります。Enter で、ここにいる人と話します。J で仕事の掲示板を開き、L で周りにあるものを一覧し、P "
-"でLarkfieldの全員の紹介を聞きます。{sentence_start5}で今やることを聞き、もう一度押すと続きを聞けます。{sentence_st"
-"art6}で次にやることを聞きます。{sentence_start7}で最後の言葉を繰り返します。Escape で一時停止します。"
+"t4}で雑草を抜き、動物にえさをやります。Enterで、ここにいる人と話します。Jで仕事の掲示板を開き、Lで周りにあるものを一覧し、PでLarkfiel"
+"dの全員の紹介を聞きます。{sentence_start5}で今やることを聞き、もう一度押すと続きを聞けます。{sentence_start6}で次にや"
+"ることを聞きます。{sentence_start7}で最後の言葉を繰り返します。Escapeで一時停止します。"
 
 #. placeholders: {a}, {b}
 #. one sentence of a longer line
@@ -38818,7 +38819,7 @@ msgstr "水をやった作物は一晩で育ちます。"
 #. placeholders: {name}
 #. one sentence of a longer line
 msgid "Find {name} along the lane and press Enter to talk."
-msgstr "小道で{name}を見つけ、Enter を押して話しましょう。"
+msgstr "小道で{name}を見つけ、Enterを押して話しましょう。"
 
 #. one sentence of a longer line
 msgid ""
@@ -38839,7 +38840,7 @@ msgid ""
 "lane and press Enter to talk."
 msgstr ""
 "{name}もここに住んでいます。{sentence_start}で、気にかけることと食べ物の量を聞けます。すぐにもう一度押すと日付と蓄えを、さらにもう"
-"一度押すと皆の気分と仕事を聞けます。小道で{name}を見つけ、Enter を押して話しましょう。"
+"一度押すと皆の気分と仕事を聞けます。小道で{name}を見つけ、Enterを押して話しましょう。"
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
@@ -38916,7 +38917,7 @@ msgid ""
 msgstr ""
 "タイトルメニュー：プレイは、まだクリアしていない次のレベルを始めます。グランドフィナーレはレベル20のあとに開きます。フリースタイルでは、ショーを作り、"
 "保存し、再生します。レベル選択では、二十のレベルのどれでもプレイできます。独立記念日の夜は七月四日に開きます。チャレンジには、デイリー、ウィークリー、マ"
-"ンスリーがあります。練習場は、スコアのつかない打ち上げ場です。チュートリアルは短い手引きです。ヘルプはこの案内です。サウンドテストでは、ゲーム中の合図を"
+"ンスリーがあります。練習室は、スコアのつかない打ち上げ場です。チュートリアルは短い手引きです。ヘルプはこの案内です。サウンドテストでは、ゲーム中の合図を"
 "鳴らします。記録では、自己ベストを読み上げます。設定では、音声、音量、操作を変えます。"
 
 msgid "Title menu: Play starts your next uncleared level."
@@ -38935,7 +38936,7 @@ msgid "Challenges holds daily, weekly, and monthly."
 msgstr "チャレンジには、デイリー、ウィークリー、マンスリーがあります。"
 
 msgid "Practice room is an unscored launch range."
-msgstr "練習場は、スコアのつかない打ち上げ場です。"
+msgstr "練習室は、スコアのつかない打ち上げ場です。"
 
 msgid "Tutorial is a short walkthrough."
 msgstr "チュートリアルは短い手引きです。"
@@ -38960,11 +38961,11 @@ msgid ""
 "three count-in ticks half a second apart, then the go cue. The go is time "
 "zero."
 msgstr ""
-"メインの操作の Space "
-"を押すと、ショーが聞けます。最初にカウントがあります。半秒おきに三回カチッと鳴り、そのあとスタートの合図です。スタートが時間ゼロです。"
+"メインの操作のSpaceを押すと、ショーが聞けます。最初にカウントがあります。半秒おきに三回カチッと鳴り、そのあとスタートの合図です。スタートが時間ゼロ"
+"です。"
 
 msgid "Press Space, the main action, to hear the show."
-msgstr "メインの操作の Space を押すと、ショーが聞けます。"
+msgstr "メインの操作のSpaceを押すと、ショーが聞けます。"
 
 msgid ""
 "It starts with a count-in: three count-in ticks half a second apart, then "
@@ -38986,10 +38987,10 @@ msgid ""
 "Press Space again for your own count-in, the same as the show's. Launch "
 "each firework at the moment it went up in the show, measured from the go."
 msgstr ""
-"もう一度 Space を押すと、ショーと同じカウントが始まります。ショーで上がったタイミングで、スタートから測って、花火を一つずつ打ち上げましょう。"
+"もう一度Spaceを押すと、ショーと同じカウントが始まります。ショーで上がったタイミングで、スタートから測って、花火を一つずつ打ち上げましょう。"
 
 msgid "Press Space again for your own count-in, the same as the show's."
-msgstr "もう一度 Space を押すと、ショーと同じカウントが始まります。"
+msgstr "もう一度Spaceを押すと、ショーと同じカウントが始まります。"
 
 msgid ""
 "Launch each firework at the moment it went up in the show, measured from "
@@ -38999,10 +39000,10 @@ msgstr "ショーで上がったタイミングで、スタートから測って
 msgid ""
 "Press Enter when you are finished. The crowd reacts, then the game reads "
 "your score."
-msgstr "終わったら Enter を押します。観客が反応し、そのあとスコアが読み上げられます。"
+msgstr "終わったらEnterを押します。観客が反応し、そのあとスコアが読み上げられます。"
 
 msgid "Press Enter when you are finished."
-msgstr "終わったら Enter を押します。"
+msgstr "終わったらEnterを押します。"
 
 msgid "The crowd reacts, then the game reads your score."
 msgstr "観客が反応し、そのあとスコアが読み上げられます。"
@@ -39010,16 +39011,16 @@ msgstr "観客が反応し、そのあとスコアが読み上げられます。
 msgid ""
 "Once the show has played, Tab, the second action, plays it again. That "
 "clears anything you have launched so far."
-msgstr "ショーを一度聞いたら、二番目の操作の Tab でもう一度聞けます。それまでに打ち上げた花火は消えます。"
+msgstr "ショーを一度聞いたら、二番目の操作のTabでもう一度聞けます。それまでに打ち上げた花火は消えます。"
 
 msgid "Once the show has played, Tab, the second action, plays it again."
-msgstr "ショーを一度聞いたら、二番目の操作の Tab でもう一度聞けます。"
+msgstr "ショーを一度聞いたら、二番目の操作のTabでもう一度聞けます。"
 
 msgid "That clears anything you have launched so far."
 msgstr "それまでに打ち上げた花火は消えます。"
 
 msgid "Choosing with Up and Down"
-msgstr "Up と Down で選ぶ"
+msgstr "UpとDownで選ぶ"
 
 msgid ""
 "While you launch, Space, the main action, does whatever you have chosen, "
@@ -39030,33 +39031,32 @@ msgid ""
 "Down on the d-pad choose, and holding Left or Right on the d-pad aims. "
 "Enter on the keyboard still finishes, and Backspace still takes back."
 msgstr ""
-"打ち上げ中は、メインの操作の Space で選んでいるものを実行し、Up と Down "
-"で選択肢を切り替えます。ドーン、パチパチ、ヒュー、キラキラ、最後の花火を取り消す、ショーを終える、の順です。最初はドーンで、数字キーを押すとその花火を選"
-"んで打ち上げるので、そのあとは Space で同じ種類を打ち上げられます。コントローラーでは、A で打ち上げ、十字キーの Up と Down "
-"で選び、十字キーの Left か Right を押したままで狙います。キーボードの Enter で終了、Backspace で取り消しも使えます。"
+"打ち上げ中は、メインの操作のSpaceで選んでいるものを実行し、UpとDownで選択肢を切り替えます。ドーン、パチパチ、ヒュー、キラキラ、最後の花火を取"
+"り消す、ショーを終える、の順です。最初はドーンで、数字キーを押すとその花火を選んで打ち上げるので、そのあとはSpaceで同じ種類を打ち上げられます。コン"
+"トローラーでは、Aで打ち上げ、十字キーのUpとDownで選び、十字キーのLeftかRightを押したままで狙います。キーボードのEnterで終了、Bac"
+"kspaceで取り消しも使えます。"
 
 msgid ""
 "While you launch, Space, the main action, does whatever you have chosen, "
 "and Up and Down step through the choices: boom, crackle, whistle, sparkle, "
 "take back the last firework, and finish the show."
 msgstr ""
-"打ち上げ中は、メインの操作の Space で選んでいるものを実行し、Up と Down "
-"で選択肢を切り替えます。ドーン、パチパチ、ヒュー、キラキラ、最後の花火を取り消す、ショーを終える、の順です。"
+"打ち上げ中は、メインの操作のSpaceで選んでいるものを実行し、UpとDownで選択肢を切り替えます。ドーン、パチパチ、ヒュー、キラキラ、最後の花火を取"
+"り消す、ショーを終える、の順です。"
 
 msgid ""
 "It starts on boom, and a number key chooses its firework as it launches it, "
 "so Space then launches that kind again."
-msgstr "最初はドーンで、数字キーを押すとその花火を選んで打ち上げるので、そのあとは Space で同じ種類を打ち上げられます。"
+msgstr "最初はドーンで、数字キーを押すとその花火を選んで打ち上げるので、そのあとはSpaceで同じ種類を打ち上げられます。"
 
 msgid ""
 "This is how you play on a controller: A launches, Up and Down on the d-pad "
 "choose, and holding Left or Right on the d-pad aims."
-msgstr ""
-"コントローラーでは、A で打ち上げ、十字キーの Up と Down で選び、十字キーの Left か Right を押したままで狙います。"
+msgstr "コントローラーでは、Aで打ち上げ、十字キーのUpとDownで選び、十字キーのLeftかRightを押したままで狙います。"
 
 msgid ""
 "Enter on the keyboard still finishes, and Backspace still takes back."
-msgstr "キーボードの Enter で終了、Backspace で取り消しも使えます。"
+msgstr "キーボードのEnterで終了、Backspaceで取り消しも使えます。"
 
 msgid "1: launch a boom."
 msgstr "1：ドーンを打ち上げます。"
@@ -39083,19 +39083,18 @@ msgid ""
 "center. Pressing Left or Right on its own plays the aim cue on that side, "
 "so you can check where you are aiming."
 msgstr ""
-"レベル11からは、花火が左や右にも上がります。Left の矢印キーか A を押したまま数字を押すと、左に打ち上げます。右は Right の矢印キーか "
-"D です。どちらも押していなければ、花火は中央に上がります。Left か Right "
-"だけを押すと、その側で狙いの合図が鳴るので、どこを狙っているか確かめられます。"
+"レベル11からは、花火が左や右にも上がります。Leftの矢印キーかAを押したまま数字を押すと、左に打ち上げます。右はRightの矢印キーかDです。どちら"
+"も押していなければ、花火は中央に上がります。LeftかRightだけを押すと、その側で狙いの合図が鳴るので、どこを狙っているか確かめられます。"
 
 msgid "From level 11, fireworks also go up on the left or the right."
 msgstr "レベル11からは、花火が左や右にも上がります。"
 
 msgid ""
 "Hold the Left arrow or A while you press a number to launch on the left."
-msgstr "Left の矢印キーか A を押したまま数字を押すと、左に打ち上げます。"
+msgstr "Leftの矢印キーかAを押したまま数字を押すと、左に打ち上げます。"
 
 msgid "Hold the Right arrow or D for the right."
-msgstr "右は Right の矢印キーか D です。"
+msgstr "右はRightの矢印キーかDです。"
 
 msgid "With neither held, the firework goes up in the center."
 msgstr "どちらも押していなければ、花火は中央に上がります。"
@@ -39103,7 +39102,7 @@ msgstr "どちらも押していなければ、花火は中央に上がります
 msgid ""
 "Pressing Left or Right on its own plays the aim cue on that side, so you "
 "can check where you are aiming."
-msgstr "Left か Right だけを押すと、その側で狙いの合図が鳴るので、どこを狙っているか確かめられます。"
+msgstr "LeftかRightだけを押すと、その側で狙いの合図が鳴るので、どこを狙っているか確かめられます。"
 
 msgid ""
 "Each firework in the show is matched with whichever of your launches fits "
@@ -39241,9 +39240,9 @@ msgid ""
 msgstr ""
 "タイトルのチャレンジ、またはロビーのチャレンジには、全員に同じ内容で自動的に切り替わるチャレンジが三つあります。デイリーは毎日、ウィークリーは毎週月曜日"
 "、マンスリーは毎月一日に変わります。各行ではチャレンジの名前と内容、これまでの結果と連続記録を読み上げます。選ぶと短いブリーフィングがあり、変化と次のチ"
-"ャレンジまでの時間がわかります。最後のページで Enter を押すと最初のショーが始まり、Escape "
-"で始めずに戻ります。チャレンジは最後のショーが終わると記録されます。一時停止メニューのチャレンジをやめる、またはショーの合間のチャレンジに戻るで抜けると"
-"、記録されません。スコアは全ショーのショーポイントの合計で、結果では今回の結果、自己ベスト、連続記録がわかります。"
+"ャレンジまでの時間がわかります。最後のページでEnterを押すと最初のショーが始まり、Escapeで始めずに戻ります。チャレンジは最後のショーが終わると"
+"記録されます。一時停止メニューのチャレンジをやめる、またはショーの合間のチャレンジに戻るで抜けると、記録されません。スコアは全ショーのショーポイントの合"
+"計で、結果では今回の結果、自己ベスト、連続記録がわかります。"
 
 msgid ""
 "Challenges on the title, or Challenges in the lobby, holds three challenges "
@@ -39266,7 +39265,7 @@ msgstr "選ぶと短いブリーフィングがあり、変化と次のチャレ
 msgid ""
 "Enter on its last page starts the first show, and Escape goes back without "
 "starting."
-msgstr "最後のページで Enter を押すと最初のショーが始まり、Escape で始めずに戻ります。"
+msgstr "最後のページでEnterを押すと最初のショーが始まり、Escapeで始めずに戻ります。"
 
 msgid "A challenge counts when its last show is over."
 msgstr "チャレンジは最後のショーが終わると記録されます。"
@@ -39377,7 +39376,7 @@ msgid ""
 msgstr ""
 "レベルをクリアしたあと：次のレベル、もう一度プレイ、結果をもう一度聞く、比べる、タイトルに戻る。もう一度プレイでは、新しいショーでそのレベルをプレイしま"
 "す。結果をもう一度聞くでは、結果と、各花火がどれだけ合ったかを読み上げます。比べるでは、ショーと自分の打ち上げを、それぞれカウントのあとに流します。クリ"
-"アできなかったときは、再挑戦で新しいショーを、このレベルを練習でまったく同じショーをもう一度プレイします。Escape はタイトルに戻ると同じです。"
+"アできなかったときは、再挑戦で新しいショーを、このレベルを練習でまったく同じショーをもう一度プレイします。Escapeはタイトルに戻ると同じです。"
 
 msgid ""
 "After a level that clears: Next level, Play again, Hear the results again, "
@@ -39402,7 +39401,7 @@ msgid ""
 msgstr "クリアできなかったときは、再挑戦で新しいショーを、このレベルを練習でまったく同じショーをもう一度プレイします。"
 
 msgid "Escape does what Back to the title does."
-msgstr "Escape はタイトルに戻ると同じです。"
+msgstr "Escapeはタイトルに戻ると同じです。"
 
 msgid ""
 "After a challenge show, the results end with Back to the challenges. "
@@ -39430,18 +39429,17 @@ msgid ""
 "again to start another. A saved show can be heard again from the freestyle "
 "menu, or played with Match your saved show, scored like a level."
 msgstr ""
-"自分だけのショーを作りましょう。1から4で打ち上げ、Left と Right "
-"で狙います。スコアも制限時間もありません。ショーの時間は最初の打ち上げから始まります。Backspace で最後の花火を取り消します。Enter "
-"で終了です。そのあと、観客の前でショーを披露したり、保存したり、もう一度プレイで新しく作ったりできます。保存したショーは、フリースタイルのメニューでもう"
-"一度聞くか、保存したショーに挑戦で、レベルと同じように採点してプレイできます。"
+"自分だけのショーを作りましょう。1から4で打ち上げ、LeftとRightで狙います。スコアも制限時間もありません。ショーの時間は最初の打ち上げから始まり"
+"ます。Backspaceで最後の花火を取り消します。Enterで終了です。そのあと、観客の前でショーを披露したり、保存したり、もう一度プレイで新しく作っ"
+"たりできます。保存したショーは、フリースタイルのメニューでもう一度聞くか、保存したショーに挑戦で、レベルと同じように採点してプレイできます。"
 
 msgid ""
 "Compose a show of your own: launch with 1 to 4, aiming with Left and Right, "
 "with no score and no clock to beat."
-msgstr "自分だけのショーを作りましょう。1から4で打ち上げ、Left と Right で狙います。スコアも制限時間もありません。"
+msgstr "自分だけのショーを作りましょう。1から4で打ち上げ、LeftとRightで狙います。スコアも制限時間もありません。"
 
 msgid "Enter finishes."
-msgstr "Enter で終了です。"
+msgstr "Enterで終了です。"
 
 msgid ""
 "Afterwards you can play your show with the crowd watching, save it, or "
@@ -39479,7 +39477,7 @@ msgid ""
 "reads Independence night, locked, and F1 on it says how many days are left."
 msgstr ""
 "七月四日には、タイトルの独立記念日の夜の行で、この日のためのショーが開きます。七月3日から5日までをその日として扱うので、どこにいても四日には開いていま"
-"す。それ以外の時期は、独立記念日の夜、ロック中と読み上げ、その行で F1 を押すとあと何日かわかります。"
+"す。それ以外の時期は、独立記念日の夜、ロック中と読み上げ、その行でF1を押すとあと何日かわかります。"
 
 msgid ""
 "On the Fourth of July, the Independence night row on the title opens a show "
@@ -39494,7 +39492,7 @@ msgstr "七月3日から5日までをその日として扱うので、どこに�
 msgid ""
 "The rest of the year the row reads Independence night, locked, and F1 on it "
 "says how many days are left."
-msgstr "それ以外の時期は、独立記念日の夜、ロック中と読み上げ、その行で F1 を押すとあと何日かわかります。"
+msgstr "それ以外の時期は、独立記念日の夜、ロック中と読み上げ、その行でF1を押すとあと何日かわかります。"
 
 msgid "The night has four acts, each played whatever it scores:"
 msgstr "この夜には四つの演目があり、スコアにかかわらず全部プレイします："
@@ -39542,7 +39540,7 @@ msgstr "クリアした演目では、ドーンを場所も合わせて0.3秒以
 msgid ""
 "In the week before the Fourth, Enter on the row plays a rehearsal of the "
 "opening salute, so you can learn it early."
-msgstr "七月四日の前の週は、この行で Enter を押すと開幕の礼砲のリハーサルができるので、早めに覚えられます。"
+msgstr "七月四日の前の週は、この行でEnterを押すと開幕の礼砲のリハーサルができるので、早めに覚えられます。"
 
 msgid ""
 "When the last act is over, the night is kept as that year's keepsake: your "
@@ -39561,32 +39559,31 @@ msgid ""
 "4 or Space, aiming with Left and Right, and each firework is named after it "
 "goes up. Escape pauses."
 msgstr ""
-"練習場は、スコアのつかない打ち上げ場です。1から4か Space で打ち上げ、Left と Right "
-"で狙います。花火は上がったあとに名前がわかります。Escape で一時停止します。"
+"練習室は、スコアのつかない打ち上げ場です。1から4かSpaceで打ち上げ、LeftとRightで狙います。花火は上がったあとに名前がわかります。Esca"
+"peで一時停止します。"
 
 msgid "The practice room is a launch range with nothing to score."
-msgstr "練習場は、スコアのつかない打ち上げ場です。"
+msgstr "練習室は、スコアのつかない打ち上げ場です。"
 
 msgid ""
 "Launch with 1 to 4 or Space, aiming with Left and Right, and each firework "
 "is named after it goes up."
-msgstr "1から4か Space で打ち上げ、Left と Right で狙います。花火は上がったあとに名前がわかります。"
+msgstr "1から4かSpaceで打ち上げ、LeftとRightで狙います。花火は上がったあとに名前がわかります。"
 
 msgid ""
 "Sound check plays the cues used to match a show. On each firework row, "
 "Enter plays it in the center. Left and Right play it on that side."
 msgstr ""
-"サウンドテストでは、ショーを合わせるのに使う合図を鳴らします。花火の各行で Enter を押すと中央で鳴ります。Left と Right "
-"でその側で鳴ります。"
+"サウンドテストでは、ショーを合わせるのに使う合図を鳴らします。花火の各行でEnterを押すと中央で鳴ります。LeftとRightでその側で鳴ります。"
 
 msgid "Sound check plays the cues used to match a show."
 msgstr "サウンドテストでは、ショーを合わせるのに使う合図を鳴らします。"
 
 msgid "On each firework row, Enter plays it in the center."
-msgstr "花火の各行で Enter を押すと中央で鳴ります。"
+msgstr "花火の各行でEnterを押すと中央で鳴ります。"
 
 msgid "Left and Right play it on that side."
-msgstr "Left と Right でその側で鳴ります。"
+msgstr "LeftとRightでその側で鳴ります。"
 
 msgid "Controller"
 msgstr "コントローラー"
@@ -39599,39 +39596,38 @@ msgid ""
 "the left bumper gives a hint, a click of the right stick repeats the "
 "instructions, Back reads help and B or Start pauses."
 msgstr ""
-"コントローラーでは、A がメインの操作です。ショーを聞く、カウントを始める、選んだ花火を打ち上げる、に使います。十字キーの Up と Down "
-"で花火、取り消し、終了を選びます。十字キーの Left か Right を押したままで、その側に打ち上げます。X でショーをもう一度聞き、Y "
-"で状況、左のバンパーでヒント、右スティック押し込みで説明の繰り返し、Back でヘルプ、B か Start で一時停止です。"
+"コントローラーでは、Aがメインの操作です。ショーを聞く、カウントを始める、選んだ花火を打ち上げる、に使います。十字キーのUpとDownで花火、取り消し、"
+"終了を選びます。十字キーのLeftかRightを押したままで、その側に打ち上げます。Xでショーをもう一度聞き、Yで状況、左のバンパーでヒント、右スティッ"
+"ク押し込みで説明の繰り返し、Backでヘルプ、BかStartで一時停止です。"
 
 msgid ""
 "On a controller, A is the main action: it plays the show, starts your "
 "count-in, and launches the firework you have chosen."
-msgstr "コントローラーでは、A がメインの操作です。ショーを聞く、カウントを始める、選んだ花火を打ち上げる、に使います。"
+msgstr "コントローラーでは、Aがメインの操作です。ショーを聞く、カウントを始める、選んだ花火を打ち上げる、に使います。"
 
 msgid "Up and Down on the d-pad choose a firework, take back or finish."
-msgstr "十字キーの Up と Down で花火、取り消し、終了を選びます。"
+msgstr "十字キーのUpとDownで花火、取り消し、終了を選びます。"
 
 msgid "Hold Left or Right on the d-pad to launch on that side."
-msgstr "十字キーの Left か Right を押したままで、その側に打ち上げます。"
+msgstr "十字キーのLeftかRightを押したままで、その側に打ち上げます。"
 
 msgid ""
 "X plays the show again, Y gives the status, the left bumper gives a hint, a "
 "click of the right stick repeats the instructions, Back reads help and B or "
 "Start pauses."
 msgstr ""
-"X でショーをもう一度聞き、Y で状況、左のバンパーでヒント、右スティック押し込みで説明の繰り返し、Back でヘルプ、B か Start "
-"で一時停止です。"
+"Xでショーをもう一度聞き、Yで状況、左のバンパーでヒント、右スティック押し込みで説明の繰り返し、Backでヘルプ、BかStartで一時停止です。"
 
 msgid ""
 "Space: hear the show, start your count-in, or use the launch choice "
 "selected with Up and Down."
-msgstr "Space：ショーを聞く、カウントを始める、または Up と Down で選んだ打ち上げの操作をします。"
+msgstr "Space：ショーを聞く、カウントを始める、またはUpとDownで選んだ打ち上げの操作をします。"
 
 msgid "1 to 4: launch a boom, crackle, whistle or sparkle."
 msgstr "1から4：ドーン、パチパチ、ヒュー、キラキラを打ち上げます。"
 
 msgid "Hold Left or A, Right or D: launch on that side."
-msgstr "Left か A、Right か D を押したまま：その側に打ち上げます。"
+msgstr "LeftかA、RightかDを押したまま：その側に打ち上げます。"
 
 msgid "Enter: finish your show and score it."
 msgstr "Enter：ショーを終えて採点します。"
@@ -39639,13 +39635,13 @@ msgstr "Enter：ショーを終えて採点します。"
 msgid ""
 "Backspace: take back your last firework. Enter and Backspace cannot be "
 "changed in Settings."
-msgstr "Backspace：最後の花火を取り消します。Enter と Backspace は設定で変えられません。"
+msgstr "Backspace：最後の花火を取り消します。EnterとBackspaceは設定で変えられません。"
 
 msgid "Backspace: take back your last firework."
 msgstr "Backspace：最後の花火を取り消します。"
 
 msgid "Enter and Backspace cannot be changed in Settings."
-msgstr "Enter と Backspace は設定で変えられません。"
+msgstr "EnterとBackspaceは設定で変えられません。"
 
 msgid "Tab: play the show again."
 msgstr "Tab：ショーをもう一度聞きます。"
@@ -39675,7 +39671,7 @@ msgstr "H：ヒント。15点と引き換えにショーの内容を説明しま
 msgid ""
 "Up and Down: choose what Space does while you launch, a firework, take "
 "back, or finish."
-msgstr "Up と Down：打ち上げ中に Space でする操作を選びます。花火、取り消し、終了です。"
+msgstr "UpとDown：打ち上げ中にSpaceでする操作を選びます。花火、取り消し、終了です。"
 
 msgid "Liberty Lights"
 msgstr "Liberty Lights"
@@ -39685,8 +39681,8 @@ msgid ""
 "Every player gets the same shows: a new daily each day, a weekly gauntlet "
 "each Monday, a festival each month."
 msgstr ""
-"Up と Down でチャレンジを選び、Enter でブリーフィングを聞き、Escape "
-"で戻ります。全員に同じショーが出ます。デイリーは毎日、ウィークリーの連続ショーは毎週月曜日、祭りは毎月です。"
+"UpとDownでチャレンジを選び、Enterでブリーフィングを聞き、Escapeで戻ります。全員に同じショーが出ます。デイリーは毎日、ウィークリーの連続"
+"ショーは毎週月曜日、祭りは毎月です。"
 
 msgid "Opening the Liberty Lights challenge."
 msgstr "Liberty Lightsのチャレンジを開きます。"
@@ -39734,14 +39730,13 @@ msgstr "それ以外は中央に上がります。"
 msgid ""
 "Hold {control_name} or A to launch on the left, {control_name2} or D for "
 "the right."
-msgstr "{control_name}か A を押したままで左に、{control_name2}か D で右に打ち上げます。"
+msgstr "{control_name}かAを押したままで左に、{control_name2}かDで右に打ち上げます。"
 
 #. placeholders: {control_name}, {control_name2}
 msgid ""
 "Hold {control_name} or A to launch on the left, {control_name2} or D for "
 "the right. Otherwise it goes up in the center."
-msgstr ""
-"{control_name}か A を押したままで左に、{control_name2}か D で右に打ち上げます。それ以外は中央に上がります。"
+msgstr "{control_name}かAを押したままで左に、{control_name2}かDで右に打ち上げます。それ以外は中央に上がります。"
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
@@ -40011,7 +40006,7 @@ msgstr "Liberty Lightsのタイトルに戻ります。"
 
 #. one sentence of a longer line
 msgid "Backspace takes back the last firework."
-msgstr "Backspace で最後の花火を取り消します。"
+msgstr "Backspaceで最後の花火を取り消します。"
 
 #. one sentence of a longer line
 msgid "Freestyle show."
@@ -40023,13 +40018,13 @@ msgid ""
 "finished. Backspace takes back the last firework. {wheel_line} "
 "{sentence_start} now: {spoken}"
 msgstr ""
-"フリースタイルのショーです。{KEYS_LINE}{aim_line}ショーが終わったら Enter を押します。Backspace "
-"で最後の花火を取り消します。{wheel_line}今の{sentence_start}：{spoken}"
+"フリースタイルのショーです。{KEYS_LINE}{aim_line}ショーが終わったらEnterを押します。Backspaceで最後の花火を取り消しま"
+"す。{wheel_line}今の{sentence_start}：{spoken}"
 
 #. placeholders: {KEYS_LINE}, {aim_line}
 #. one sentence of a longer line
 msgid "{KEYS_LINE} {aim_line} Press Enter when your show is finished."
-msgstr "{KEYS_LINE}{aim_line}ショーが終わったら Enter を押します。"
+msgstr "{KEYS_LINE}{aim_line}ショーが終わったらEnterを押します。"
 
 #. placeholders: {wheel_line}, {sentence_start}, {spoken}
 #. one sentence of a longer line
@@ -40038,7 +40033,7 @@ msgstr "{wheel_line}今の{sentence_start}：{spoken}"
 
 #. one sentence of a longer line
 msgid "Press Enter to finish it."
-msgstr "Enter を押すと終了します。"
+msgstr "Enterを押すと終了します。"
 
 #. placeholders: {FREESTYLE_CAP}
 #. one sentence of a longer line
@@ -40048,7 +40043,7 @@ msgstr "ショーは花火{FREESTYLE_CAP}発でいっぱいです。"
 #. placeholders: {FREESTYLE_CAP}
 msgid ""
 "Your show is full at {FREESTYLE_CAP} fireworks. Press Enter to finish it."
-msgstr "ショーは花火{FREESTYLE_CAP}発でいっぱいです。Enter を押すと終了します。"
+msgstr "ショーは花火{FREESTYLE_CAP}発でいっぱいです。Enterを押すと終了します。"
 
 #. placeholders: {name}
 msgid "Last firework removed: {name}."
@@ -40075,12 +40070,12 @@ msgstr "自分だけのショーを作りましょう。"
 msgid ""
 "Freestyle show. Compose your own show. {KEYS_LINE} {aim_line} Enter "
 "finishes."
-msgstr "フリースタイルのショーです。自分だけのショーを作りましょう。{KEYS_LINE}{aim_line}Enter で終了です。"
+msgstr "フリースタイルのショーです。自分だけのショーを作りましょう。{KEYS_LINE}{aim_line}Enterで終了です。"
 
 #. placeholders: {KEYS_LINE}, {aim_line}
 #. one sentence of a longer line
 msgid "{KEYS_LINE} {aim_line} Enter finishes."
-msgstr "{KEYS_LINE}{aim_line}Enter で終了です。"
+msgstr "{KEYS_LINE}{aim_line}Enterで終了です。"
 
 #. placeholders: {launches}
 msgid "Freestyle show, {launches} launched."
@@ -40116,10 +40111,10 @@ msgid ""
 "you chose. {sentence_start2} repeats the instructions, {control_name} "
 "counts your fireworks, {control_name2} gives an idea. Escape pauses."
 msgstr ""
-"フリースタイル：スコアも制限時間もありません。ショーの時間は最初の打ち上げから始まります。{KEYS_LINE}{aim_line}Backspace "
-"で最後の花火を取り消し、Enter "
-"でショーを終えます。{wheel_line}{sentence_start}で選んだ操作をします。{sentence_start2}で説明を繰り返し、{"
-"control_name}で花火の数を数え、{control_name2}でアイデアを聞けます。Escape で一時停止します。"
+"フリースタイル：スコアも制限時間もありません。ショーの時間は最初の打ち上げから始まります。{KEYS_LINE}{aim_line}Backspaceで"
+"最後の花火を取り消し、Enterでショーを終えます。{wheel_line}{sentence_start}で選んだ操作をします。{sentence_s"
+"tart2}で説明を繰り返し、{control_name}で花火の数を数え、{control_name2}でアイデアを聞けます。Escapeで一時停止し"
+"ます。"
 
 #. one sentence of a longer line
 msgid "Your show's time starts at your first launch."
@@ -40130,7 +40125,7 @@ msgstr "ショーの時間は最初の打ち上げから始まります。"
 msgid ""
 "{KEYS_LINE} {aim_line} Backspace takes back the last firework, Enter "
 "finishes the show."
-msgstr "{KEYS_LINE}{aim_line}Backspace で最後の花火を取り消し、Enter でショーを終えます。"
+msgstr "{KEYS_LINE}{aim_line}Backspaceで最後の花火を取り消し、Enterでショーを終えます。"
 
 #. placeholders: {sentence_start2}, {control_name}, {control_name2}
 #. one sentence of a longer line
@@ -40209,7 +40204,7 @@ msgstr "七月四日のための四幕で、最後は花火{FINALE_SIZE}発の�
 #. placeholders: {countdown}
 msgid ""
 "{countdown} Until then, Enter plays a rehearsal of the opening salute."
-msgstr "{countdown}それまでは、Enter で開幕の礼砲のリハーサルができます。"
+msgstr "{countdown}それまでは、Enterで開幕の礼砲のリハーサルができます。"
 
 #. placeholders: {countdown}
 msgid "{countdown} On the day, a four-act show built for it opens here."
@@ -40396,14 +40391,14 @@ msgstr "{tier_description}花火1発。"
 msgid ""
 "Enter plays the chosen sound. On a firework row, Left and Right play it on "
 "that side. Escape goes back."
-msgstr "Enter で選んだ音を鳴らします。花火の行では、Left と Right でその側で鳴ります。Escape で戻ります。"
+msgstr "Enterで選んだ音を鳴らします。花火の行では、LeftとRightでその側で鳴ります。Escapeで戻ります。"
 
 #. placeholders: {sentence_start}, {digit}
 msgid "{sentence_start}, key {digit}"
 msgstr "{sentence_start}、{digit}キー"
 
 msgid "Enter plays it in the center. Left and Right play it on that side."
-msgstr "Enter を押すと中央で鳴ります。Left と Right でその側で鳴ります。"
+msgstr "Enterを押すと中央で鳴ります。LeftとRightでその側で鳴ります。"
 
 msgid ""
 "The crowd reacts like this when a show ends; the better the show, the "
@@ -40422,11 +40417,11 @@ msgstr "狙い、{phrase}"
 msgid ""
 "During a show, pressing {left} or A, or {right} or D, ticks on that side, "
 "so you know where your next launch will go."
-msgstr "ショーの間に{left}か A、または{right}か D を押すと、その側でカチッと鳴るので、次の打ち上げがどこに行くかわかります。"
+msgstr "ショーの間に{left}かA、または{right}かDを押すと、その側でカチッと鳴るので、次の打ち上げがどこに行くかわかります。"
 
 #. one sentence of a longer line
 msgid "Here Left and Right play it on that side."
-msgstr "ここでは Left と Right でその側で鳴ります。"
+msgstr "ここではLeftとRightでその側で鳴ります。"
 
 #. placeholders: {left}, {right}
 msgid ""
@@ -40434,8 +40429,8 @@ msgid ""
 "A, or {right} or D, ticks on that side, so you know where your next launch "
 "will go."
 msgstr ""
-"ここでは Left と Right でその側で鳴ります。ショーの間に{left}か A、または{right}か D "
-"を押すと、その側でカチッと鳴るので、次の打ち上げがどこに行くかわかります。"
+"ここではLeftとRightでその側で鳴ります。ショーの間に{left}かA、または{right}かDを押すと、その側でカチッと鳴るので、次の打ち上げが"
+"どこに行くかわかります。"
 
 msgid "Launch thump"
 msgstr "打ち上げの音"
@@ -40461,7 +40456,7 @@ msgstr "導火線：出番"
 msgid ""
 "Fizzes when the show is over and it is your turn. Then Enter, a key of this "
 "game's own, finishes your show."
-msgstr "ショーが終わって出番になると、シュッと鳴ります。そのあと、このゲーム専用のキー Enter でショーを終えます。"
+msgstr "ショーが終わって出番になると、シュッと鳴ります。そのあと、このゲーム専用のキーEnterでショーを終えます。"
 
 msgid "Crowd cheer: 80 percent or better"
 msgstr "観客の歓声：80パーセント以上"
@@ -40487,7 +40482,7 @@ msgstr "取り消し：花火を取り消した"
 msgid ""
 "Backspace, a key of this game's own, takes back your last firework with "
 "this sound."
-msgstr "このゲーム専用のキー Backspace で最後の花火を取り消すと、この音が鳴ります。"
+msgstr "このゲーム専用のキーBackspaceで最後の花火を取り消すと、この音が鳴ります。"
 
 msgid "Choice tick: the main action's firework changed"
 msgstr "選択の音：メインの操作の花火が変わった"
@@ -40495,7 +40490,7 @@ msgstr "選択の音：メインの操作の花火が変わった"
 msgid ""
 "Plays as Up and Down choose what the main action launches, with the choice "
 "spoken."
-msgstr "Up と Down でメインの操作で打ち上げる花火を選ぶと、選んだものの名前と一緒に鳴ります。"
+msgstr "UpとDownでメインの操作で打ち上げる花火を選ぶと、選んだものの名前と一緒に鳴ります。"
 
 msgid "Night fog boom"
 msgstr "夜霧のドーン"
@@ -40508,7 +40503,7 @@ msgid ""
 "Under a challenge's night fog twist, the show's fireworks sound like this: "
 "far off and quiet, still on their side. Left and Right play it on that side."
 msgstr ""
-"チャレンジの変化が夜霧のときは、ショーの花火がこう聞こえます。遠くて静かですが、左右の位置はそのままです。Left と Right でその側で鳴ります。"
+"チャレンジの変化が夜霧のときは、ショーの花火がこう聞こえます。遠くて静かですが、左右の位置はそのままです。LeftとRightでその側で鳴ります。"
 
 #. one sentence of a longer line
 msgid "Each firework is named after it goes up."
@@ -40516,7 +40511,7 @@ msgstr "花火は上がったあとに名前がわかります。"
 
 #. one sentence of a longer line
 msgid "Practice room, a launch range with nothing to score."
-msgstr "練習場、スコアのつかない打ち上げ場です。"
+msgstr "練習室、スコアのつかない打ち上げ場です。"
 
 #. placeholders: {KEYS_LINE}, {aim_line}, {wheel_line}, {sentence_start}
 msgid ""
@@ -40524,8 +40519,8 @@ msgid ""
 "{wheel_line} {sentence_start} launches it. Each firework is named after it "
 "goes up. Escape pauses."
 msgstr ""
-"練習場、スコアのつかない打ち上げ場です。{KEYS_LINE}{aim_line}{wheel_line}{sentence_start}で打ち上げます"
-"。花火は上がったあとに名前がわかります。Escape で一時停止します。"
+"練習室、スコアのつかない打ち上げ場です。{KEYS_LINE}{aim_line}{wheel_line}{sentence_start}で打ち上げます"
+"。花火は上がったあとに名前がわかります。Escapeで一時停止します。"
 
 #. placeholders: {KEYS_LINE}, {aim_line}, {wheel_line}, {sentence_start}
 #. one sentence of a longer line
@@ -40533,7 +40528,7 @@ msgid "{KEYS_LINE} {aim_line} {wheel_line} {sentence_start} launches it."
 msgstr "{KEYS_LINE}{aim_line}{wheel_line}{sentence_start}で打ち上げます。"
 
 msgid "Practice room."
-msgstr "練習場です。"
+msgstr "練習室です。"
 
 #. placeholders: {name}
 msgid "Aiming {name}."
@@ -40548,7 +40543,7 @@ msgstr "ここで花火を{launched}発打ち上げました。"
 
 #. placeholders: {launched}
 msgid "Practice room: {launched} launched"
-msgstr "練習場：{launched}発打ち上げ済み"
+msgstr "練習室：{launched}発打ち上げ済み"
 
 #. placeholders: {level}
 msgid "level {level}"
@@ -40583,7 +40578,7 @@ msgstr "花火1発"
 
 #. one sentence of a longer line
 msgid "Escape stops."
-msgstr "Escape で停止します。"
+msgstr "Escapeで停止します。"
 
 #. placeholders: {at}, {parts}, {fireworks}
 #. one sentence of a longer line
@@ -40592,7 +40587,7 @@ msgstr "{parts}パート中{at}、{fireworks}。"
 
 #. placeholders: {at}, {parts}, {fireworks}
 msgid "Part {at} of {parts}, {fireworks}. Escape stops."
-msgstr "{parts}パート中{at}、{fireworks}。Escape で停止します。"
+msgstr "{parts}パート中{at}、{fireworks}。Escapeで停止します。"
 
 #. one sentence of a longer line
 msgid "A replay: each part is named, counted in, then played."
@@ -40605,14 +40600,14 @@ msgid ""
 "is, Escape stops."
 msgstr ""
 "再生です。各パートの名前、カウント、演奏の順に流れます。{control_name}でパートを名前から再生し直し、{control_name2}で今どこ"
-"かを聞き、Escape で停止します。"
+"かを聞き、Escapeで停止します。"
 
 #. placeholders: {control_name}, {control_name2}
 #. one sentence of a longer line
 msgid ""
 "{control_name} starts the part again from its name, {control_name2} says "
 "where the replay is, Escape stops."
-msgstr "{control_name}でパートを名前から再生し直し、{control_name2}で今どこかを聞き、Escape で停止します。"
+msgstr "{control_name}でパートを名前から再生し直し、{control_name2}で今どこかを聞き、Escapeで停止します。"
 
 msgid "First score saved."
 msgstr "初めてのスコアを保存しました。"
@@ -41032,7 +41027,7 @@ msgstr "終わったら、{control_name}で終了を選んで{control_name2}を�
 
 #. placeholders: {control_name}
 msgid "Press Enter when finished, or choose Finish with {control_name}."
-msgstr "終わったら Enter を押すか、{control_name}で終了を選びます。"
+msgstr "終わったらEnterを押すか、{control_name}で終了を選びます。"
 
 #. placeholders: {sentence_start}
 msgid "Your turn. {sentence_start} counts in."
@@ -41103,13 +41098,13 @@ msgid ""
 "Play phase. {KEYS_LINE}{aim} Enter finishes. Backspace takes back the last "
 "firework. {wheel_line} {p} now: {spoken}"
 msgstr ""
-"打ち上げる番です。{KEYS_LINE}{aim}Enter で終了です。Backspace "
-"で最後の花火を取り消します。{wheel_line}今の{p}：{spoken}"
+"打ち上げる番です。{KEYS_LINE}{aim}Enterで終了です。Backspaceで最後の花火を取り消します。{wheel_line}今の{p}"
+"：{spoken}"
 
 #. placeholders: {KEYS_LINE}, {aim}
 #. one sentence of a longer line
 msgid "{KEYS_LINE}{aim} Enter finishes."
-msgstr "{KEYS_LINE}{aim}Enter で終了です。"
+msgstr "{KEYS_LINE}{aim}Enterで終了です。"
 
 #. placeholders: {wheel_line}, {p}, {spoken}
 #. one sentence of a longer line
@@ -41267,7 +41262,7 @@ msgstr ""
 msgid ""
 "{KEYS_LINE}{aim} Backspace takes back the last firework, Enter finishes and "
 "scores."
-msgstr "{KEYS_LINE}{aim}Backspace で最後の花火を取り消し、Enter で終了して採点します。"
+msgstr "{KEYS_LINE}{aim}Backspaceで最後の花火を取り消し、Enterで終了して採点します。"
 
 #. placeholders: {title}, {size}, {rule}, {p}
 #. one sentence of a longer line
@@ -41286,13 +41281,13 @@ msgid ""
 "scores. {wheel_line} {extras} Escape pauses."
 msgstr ""
 "{title}：合わせるのは{size}。{rule}{p}を押すと、三つのカウントのあとにショーが流れます。出番になったら、もう一度押すと自分のカウン"
-"トが始まります。スタートが時間ゼロです。{KEYS_LINE}{aim}Backspace で最後の花火を取り消し、Enter "
-"で終了して採点します。{wheel_line}{extras}Escape で一時停止します。"
+"トが始まります。スタートが時間ゼロです。{KEYS_LINE}{aim}Backspaceで最後の花火を取り消し、Enterで終了して採点します。{wh"
+"eel_line}{extras}Escapeで一時停止します。"
 
 #. placeholders: {wheel_line}, {extras}
 #. one sentence of a longer line
 msgid "{wheel_line} {extras} Escape pauses."
-msgstr "{wheel_line}{extras}Escape で一時停止します。"
+msgstr "{wheel_line}{extras}Escapeで一時停止します。"
 
 #. placeholders: {title}, {twist}, {sentence_start}
 msgid "{title}.{twist} {sentence_start} plays the show."
@@ -41322,16 +41317,16 @@ msgstr "{sentence_start2}でショーをもう一度聞けます。"
 #. placeholders: {keys_line}, {aim}
 #. one sentence of a longer line
 msgid "{keys_line}{aim} Backspace takes back the last firework."
-msgstr "{keys_line}{aim}Backspace で最後の花火を取り消します。"
+msgstr "{keys_line}{aim}Backspaceで最後の花火を取り消します。"
 
 #. placeholders: {keys_line}, {aim}, {finish_line}
 msgid ""
 "{keys_line}{aim} Backspace takes back the last firework. {finish_line}"
-msgstr "{keys_line}{aim}Backspace で最後の花火を取り消します。{finish_line}"
+msgstr "{keys_line}{aim}Backspaceで最後の花火を取り消します。{finish_line}"
 
 #. placeholders: {now}
 msgid "{now} F1 again for every key."
-msgstr "{now}もう一度 F1 を押すと、すべてのキーを聞けます。"
+msgstr "{now}もう一度F1を押すと、すべてのキーを聞けます。"
 
 #. placeholders: {control_name}
 msgid "Launch the boom first, with 1 or {control_name}."
@@ -41408,7 +41403,7 @@ msgstr "花火の演出家として、ショーを聞いて、それを打ち上
 
 #. one sentence of a longer line
 msgid "60 percent clears a level, and Enter finishes a show."
-msgstr "60パーセントでレベルクリア、Enter でショーを終えます。"
+msgstr "60パーセントでレベルクリア、Enterでショーを終えます。"
 
 #. one sentence of a longer line
 msgid "There are four fireworks, on keys 1 to 4."
@@ -41420,12 +41415,12 @@ msgid ""
 "up left or right. 60 percent clears a level, and Enter finishes a show. Try "
 "every firework without scoring in the Practice room."
 msgstr ""
-"花火は四種類で、1から4のキーです。{join}レベル11からは左や右にも上がります。60パーセントでレベルクリア、Enter "
-"でショーを終えます。練習場では、スコアなしで全部の花火を試せます。"
+"花火は四種類で、1から4のキーです。{join}レベル11からは左や右にも上がります。60パーセントでレベルクリア、Enterでショーを終えます。練習室"
+"では、スコアなしで全部の花火を試せます。"
 
 #. one sentence of a longer line
 msgid "Try every firework without scoring in the Practice room."
-msgstr "練習場では、スコアなしで全部の花火を試せます。"
+msgstr "練習室では、スコアなしで全部の花火を試せます。"
 
 #. placeholders: {join}
 #. one sentence of a longer line
@@ -41479,11 +41474,11 @@ msgid ""
 "give one hard stroke that way for a quick dodge. There are no lanes: the "
 "boat can be anywhere between the two banks."
 msgstr ""
-"Left か Right を押したままにすると、その方向にこぎます。押している間、舟は流れを横切って進みます。離すと、ゆっくり止まります。Left "
-"Shift と Right Shift で、その方向に一回強くこいで素早くよけます。レーンはなく、舟は両岸の間のどこにでも行けます。"
+"LeftかRightを押したままにすると、その方向にこぎます。押している間、舟は流れを横切って進みます。離すと、ゆっくり止まります。Left "
+"ShiftとRight Shiftで、その方向に一回強くこいで素早くよけます。レーンはなく、舟は両岸の間のどこにでも行けます。"
 
 msgid "Hold Left or Right to paddle that way."
-msgstr "Left か Right を押したままにすると、その方向にこぎます。"
+msgstr "LeftかRightを押したままにすると、その方向にこぎます。"
 
 msgid "The boat glides across the stream while you hold."
 msgstr "押している間、舟は流れを横切って進みます。"
@@ -41493,7 +41488,7 @@ msgstr "離すと、ゆっくり止まります。"
 
 msgid ""
 "Left Shift and Right Shift give one hard stroke that way for a quick dodge."
-msgstr "Left Shift と Right Shift で、その方向に一回強くこいで素早くよけます。"
+msgstr "Left ShiftとRight Shiftで、その方向に一回強くこいで素早くよけます。"
 
 msgid "There are no lanes: the boat can be anywhere between the two banks."
 msgstr "レーンはなく、舟は両岸の間のどこにでも行けます。"
@@ -41543,7 +41538,7 @@ msgstr "流れてくるもの"
 msgid ""
 "The first time you meet each thing on the water, play stops and a page "
 "names it. Enter carries on."
-msgstr "水の上で初めて出会うものがあると、プレイが止まり、その名前を説明するページが出ます。Enter で続けます。"
+msgstr "水の上で初めて出会うものがあると、プレイが止まり、その名前を説明するページが出ます。Enterで続けます。"
 
 msgid ""
 "The first time you meet each thing on the water, play stops and a page "
@@ -41551,7 +41546,7 @@ msgid ""
 msgstr "水の上で初めて出会うものがあると、プレイが止まり、その名前を説明するページが出ます。"
 
 msgid "Enter carries on."
-msgstr "Enter で続けます。"
+msgstr "Enterで続けます。"
 
 msgid "Petal: the common catch, worth 10 points."
 msgstr "花びら：よく流れてくるもので、10点。"
@@ -41605,7 +41600,7 @@ msgstr "よけて通っても減点はありません。"
 msgid ""
 "The current wanders across the stream. While the boat rides in it, you "
 "score 2 points every beat. H says which way the current is."
-msgstr "流れの筋は、川の上を左右にさまよいます。舟が筋に乗っている間は、ビートごとに2点入ります。H で筋がどちらにあるかわかります。"
+msgstr "流れの筋は、川の上を左右にさまよいます。舟が筋に乗っている間は、ビートごとに2点入ります。Hで筋がどちらにあるかわかります。"
 
 msgid "The current wanders across the stream."
 msgstr "流れの筋は、川の上を左右にさまよいます。"
@@ -41614,7 +41609,7 @@ msgid "While the boat rides in it, you score 2 points every beat."
 msgstr "舟が筋に乗っている間は、ビートごとに2点入ります。"
 
 msgid "H says which way the current is."
-msgstr "H で筋がどちらにあるかわかります。"
+msgstr "Hで筋がどちらにあるかわかります。"
 
 msgid "Combo and the song"
 msgstr "コンボと川の歌"
@@ -41791,8 +41786,8 @@ msgid ""
 "ribbons in Choose a stream."
 msgstr ""
 "各流れにはリボンが3つあります。一回のプレイで決まった数を受け止める、一回のプレイで決まった数のクリーンキャッチをする、そしてその流れ独自のもの、たとえ"
-"ば雨どいの滝を全部抜けるなどです。リボンは河口に着いたときだけ記録され、一つにつき紙くずが10枚もらえます。流れを選ぶで F1 "
-"を押すと、その流れのリボンを聞けます。"
+"ば雨どいの滝を全部抜けるなどです。リボンは河口に着いたときだけ記録され、一つにつき紙くずが10枚もらえます。流れを選ぶでF1を押すと、その流れのリボンを"
+"聞けます。"
 
 msgid ""
 "Each stream has 3 ribbons: catch a number of things in one run, make a "
@@ -41808,7 +41803,7 @@ msgid ""
 msgstr "リボンは河口に着いたときだけ記録され、一つにつき紙くずが10枚もらえます。"
 
 msgid "F1 reads a stream's ribbons in Choose a stream."
-msgstr "流れを選ぶで F1 を押すと、その流れのリボンを聞けます。"
+msgstr "流れを選ぶでF1を押すと、その流れのリボンを聞けます。"
 
 msgid "Boats"
 msgstr "舟"
@@ -41857,7 +41852,7 @@ msgstr "紙くず50枚。"
 msgid ""
 "In the Boatyard, Enter folds a boat you have scraps for, or sails one you "
 "already own."
-msgstr "造船所では、Enter で紙くずが足りる舟を折るか、持っている舟で出発します。"
+msgstr "造船所では、Enterで紙くずが足りる舟を折るか、持っている舟で出発します。"
 
 msgid "The keepsake shelf"
 msgstr "記念品の棚"
@@ -42075,15 +42070,15 @@ msgid ""
 msgstr "それぞれ合図の名前と、水の上で聞こえるとおりの音を流します。"
 
 msgid "Left and Right arrows: hold to paddle the boat across the stream."
-msgstr "Left と Right の矢印キー：押したままで、舟をこいで流れを横切ります。"
+msgstr "LeftとRightの矢印キー：押したままで、舟をこいで流れを横切ります。"
 
 msgid ""
 "Left Shift and Right Shift: one hard stroke that way. These two keys stay "
 "the same if you change your bindings."
-msgstr "Left Shift と Right Shift：その方向に一回強くこぎます。この二つのキーは、キー設定を変えても同じです。"
+msgstr "Left ShiftとRight Shift：その方向に一回強くこぎます。この二つのキーは、キー設定を変えても同じです。"
 
 msgid "Left Shift and Right Shift: one hard stroke that way."
-msgstr "Left Shift と Right Shift：その方向に一回強くこぎます。"
+msgstr "Left ShiftとRight Shift：その方向に一回強くこぎます。"
 
 msgid "These two keys stay the same if you change your bindings."
 msgstr "この二つのキーは、キー設定を変えても同じです。"
@@ -42377,7 +42372,7 @@ msgstr "流れ"
 
 msgid ""
 "Up and Down choose a stream, Enter sets your boat on it, Escape goes back."
-msgstr "Up と Down で流れを選び、Enter で舟を浮かべ、Escape で戻ります。"
+msgstr "UpとDownで流れを選び、Enterで舟を浮かべ、Escapeで戻ります。"
 
 #. placeholders: {name}
 msgid "{name}, done"
@@ -42415,7 +42410,7 @@ msgstr "造船所"
 
 msgid ""
 "Up and Down choose a boat, Enter sails it or folds it, Escape goes back."
-msgstr "Up と Down で舟を選び、Enter で乗るか折り、Escape で戻ります。"
+msgstr "UpとDownで舟を選び、Enterで乗るか折り、Escapeで戻ります。"
 
 #. placeholders: {name}
 msgid "{name}, sailing"
@@ -42431,11 +42426,11 @@ msgstr "{sentence_start}。今乗っている舟です。"
 
 #. one sentence of a longer line
 msgid "Enter sails it."
-msgstr "Enter で乗ります。"
+msgstr "Enterで乗ります。"
 
 #. placeholders: {sentence_start}
 msgid "{sentence_start}. Enter sails it."
-msgstr "{sentence_start}。Enter で乗ります。"
+msgstr "{sentence_start}。Enterで乗ります。"
 
 #. placeholders: {name}, {scraps}
 msgid "{name}, {scraps} paper scraps"
@@ -42443,7 +42438,7 @@ msgstr "{name}、紙くず{scraps}枚"
 
 #. one sentence of a longer line
 msgid "Enter folds it when you have the scraps."
-msgstr "紙くずが足りれば、Enter で折れます。"
+msgstr "紙くずが足りれば、Enterで折れます。"
 
 #. placeholders: {scraps}
 #. one sentence of a longer line
@@ -42454,7 +42449,7 @@ msgstr "{scraps}枚持っています。"
 msgid ""
 "{sentence_start}. Enter folds it when you have the scraps. You have "
 "{scraps}."
-msgstr "{sentence_start}。紙くずが足りれば、Enter で折れます。{scraps}枚持っています。"
+msgstr "{sentence_start}。紙くずが足りれば、Enterで折れます。{scraps}枚持っています。"
 
 #. placeholders: {name}
 msgid "Sailing the {name}."
@@ -42496,7 +42491,7 @@ msgstr "折るには紙くずがあと{scraps}枚要ります。紙くずはど�
 msgid ""
 "Up and Down choose a sound, Enter plays it from its place on the stream, "
 "Escape goes back."
-msgstr "Up と Down で音を選び、Enter で流れの上のその位置から鳴らし、Escape で戻ります。"
+msgstr "UpとDownで音を選び、Enterで流れの上のその位置から鳴らし、Escapeで戻ります。"
 
 msgid "A petal"
 msgstr "花びら"
@@ -42583,7 +42578,7 @@ msgstr "ひとこぎ"
 msgid ""
 "A deeper splash and a long pull: Left Shift or Right Shift, for a quick "
 "dodge."
-msgstr "深い水しぶきと長い引き：Left Shift か Right Shift の素早いよけです。"
+msgstr "深い水しぶきと長い引き：Left ShiftかRight Shiftの素早いよけです。"
 
 msgid "A hard stroke"
 msgstr "強いひとこぎ"
@@ -43082,7 +43077,7 @@ msgstr "届いたものを受け止め、石やカモをよけ、流れの筋に
 msgid ""
 "Hold {left} or {right} to paddle that way, and Left Shift or Right Shift "
 "for one hard stroke."
-msgstr "{left}か{right}を押したままでその方向にこぎ、Left Shift か Right Shift で一回強くこぎます。"
+msgstr "{left}か{right}を押したままでその方向にこぎ、Left ShiftかRight Shiftで一回強くこぎます。"
 
 #. placeholders: {left}, {right}, {sentence_start}, {sentence_start2}, {sentence_start3}
 msgid ""
@@ -43093,10 +43088,10 @@ msgid ""
 "is and what comes next. {sentence_start3} repeats the last line. Escape "
 "pauses."
 msgstr ""
-"{left}か{right}を押したままでその方向にこぎ、Left Shift か Right Shift "
-"で一回強くこぎます。届いたものを受け止め、石やカモをよけ、流れの筋に乗って点を稼ぎましょう。{sentence_start}でコンボを、もう一度押すとス"
-"コアを聞けます。{sentence_start2}で流れの筋の位置と次に来るものを聞けます。{sentence_start3}で最後の言葉を繰り返します"
-"。Escape で一時停止します。"
+"{left}か{right}を押したままでその方向にこぎ、Left ShiftかRight "
+"Shiftで一回強くこぎます。届いたものを受け止め、石やカモをよけ、流れの筋に乗って点を稼ぎましょう。{sentence_start}でコンボを、もう一"
+"度押すとスコアを聞けます。{sentence_start2}で流れの筋の位置と次に来るものを聞けます。{sentence_start3}で最後の言葉を繰"
+"り返します。Escapeで一時停止します。"
 
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
@@ -43345,7 +43340,7 @@ msgstr "記念品の棚"
 
 msgid ""
 "Up and Down go along the shelf, Enter reads a trinket, Escape goes back."
-msgstr "Up と Down で棚を見ていき、Enter で小物の説明を聞き、Escape で戻ります。"
+msgstr "UpとDownで棚を見ていき、Enterで小物の説明を聞き、Escapeで戻ります。"
 
 #. placeholders: {name}, {format}
 msgid "{name}: {format} still in the water"
@@ -43465,8 +43460,8 @@ msgid ""
 "right, and board 20 is in line with the head pin. The Left and Right arrows "
 "step you one board along the approach, and name your board."
 msgstr ""
-"レーンの幅は39ボードです。左のガターがボード1、右がボード39で、ボード20がヘッドピンの正面です。Left と Right "
-"の矢印キーでアプローチ上を一ボードずつ動き、今のボードを伝えます。"
+"レーンの幅は39ボードです。左のガターがボード1、右がボード39で、ボード20がヘッドピンの正面です。LeftとRightの矢印キーでアプローチ上を一ボ"
+"ードずつ動き、今のボードを伝えます。"
 
 msgid "The lane is 39 boards wide."
 msgstr "レーンの幅は39ボードです。"
@@ -43479,7 +43474,7 @@ msgstr "左のガターがボード1、右がボード39で、ボード20がヘ�
 msgid ""
 "The Left and Right arrows step you one board along the approach, and name "
 "your board."
-msgstr "Left と Right の矢印キーでアプローチ上を一ボードずつ動き、今のボードを伝えます。"
+msgstr "LeftとRightの矢印キーでアプローチ上を一ボードずつ動き、今のボードを伝えます。"
 
 msgid ""
 "The Up arrow turns your aim one step right. The Down arrow turns your aim "
@@ -43487,15 +43482,14 @@ msgid ""
 "aim cue marks where a clean ball would cross the pins. The game also names "
 "that board."
 msgstr ""
-"Up の矢印キーで狙いを一段右へ、Down "
-"の矢印キーで一段左へ向けます。一段ごとに、ピンの位置でボールの軌道が一ボード動きます。狙いの合図は、きれいに投げたボールがピンを通る位置を示します。その"
-"ボードも伝えます。"
+"Upの矢印キーで狙いを一段右へ、Downの矢印キーで一段左へ向けます。一段ごとに、ピンの位置でボールの軌道が一ボード動きます。狙いの合図は、きれいに投げ"
+"たボールがピンを通る位置を示します。そのボードも伝えます。"
 
 msgid "The Up arrow turns your aim one step right."
-msgstr "Up の矢印キーで狙いを一段右へ向けます。"
+msgstr "Upの矢印キーで狙いを一段右へ向けます。"
 
 msgid "The Down arrow turns your aim one step left."
-msgstr "Down の矢印キーで狙いを一段左へ向けます。"
+msgstr "Downの矢印キーで狙いを一段左へ向けます。"
 
 msgid "Each step moves the ball's line one board at the pins."
 msgstr "一段ごとに、ピンの位置でボールの軌道が一ボード動きます。"
@@ -43556,18 +43550,18 @@ msgid ""
 "top, the bigger the pull. The lane decides which way it pulls. If you never "
 "let go, the ball leaves your hand late at the end of the swing."
 msgstr ""
-"Space でスイングを始めます。スイングの合図でリリースのタイミングを計りましょう。スイングの頂点でもう一度 Space "
-"を押します。きれいなリリースなら狙いどおりに転がります。早すぎたり遅すぎたりすると、ボールが軌道から外れます。頂点から離れるほど大きく外れます。どちらに"
-"外れるかはレーンしだいです。離さないままだと、スイングの終わりに遅れて手から離れます。"
+"Spaceでスイングを始めます。スイングの合図でリリースのタイミングを計りましょう。スイングの頂点でもう一度Spaceを押します。きれいなリリースなら狙"
+"いどおりに転がります。早すぎたり遅すぎたりすると、ボールが軌道から外れます。頂点から離れるほど大きく外れます。どちらに外れるかはレーンしだいです。離さな"
+"いままだと、スイングの終わりに遅れて手から離れます。"
 
 msgid "Space starts the swing."
-msgstr "Space でスイングを始めます。"
+msgstr "Spaceでスイングを始めます。"
 
 msgid "Use the swing cue to time your release."
 msgstr "スイングの合図でリリースのタイミングを計りましょう。"
 
 msgid "Press Space again at the top of the swing."
-msgstr "スイングの頂点でもう一度 Space を押します。"
+msgstr "スイングの頂点でもう一度Spaceを押します。"
 
 msgid "A clean release goes where you aimed."
 msgstr "きれいなリリースなら狙いどおりに転がります。"
@@ -43669,12 +43663,11 @@ msgid ""
 "clean release there should take. It favours a line that still works if the "
 "ball drifts a board."
 msgstr ""
-"H "
-"で、残ったピンに合わせたボードと狙いを提案します。ピンが全部立っているときは、ポケットに角度をつけて入るラインを伝えます。スペアのときは、そこからきれい"
-"に投げれば何本倒れるかを伝えます。ボールが一ボードずれてもうまくいくラインを優先します。"
+"Hで、残ったピンに合わせたボードと狙いを提案します。ピンが全部立っているときは、ポケットに角度をつけて入るラインを伝えます。スペアのときは、そこからきれ"
+"いに投げれば何本倒れるかを伝えます。ボールが一ボードずれてもうまくいくラインを優先します。"
 
 msgid "H suggests a board and an aim for the pins standing."
-msgstr "H で、残ったピンに合わせたボードと狙いを提案します。"
+msgstr "Hで、残ったピンに合わせたボードと狙いを提案します。"
 
 msgid "For a full rack, it gives a line angled into the pocket."
 msgstr "ピンが全部立っているときは、ポケットに角度をつけて入るラインを伝えます。"
@@ -43769,7 +43762,7 @@ msgstr "一時停止メニューのチャレンジをやめるで、プレイを
 msgid ""
 "Escape pauses. A swing in progress stops without letting go, and you start "
 "it again when you come back."
-msgstr "Escape で一時停止します。スイング中なら、ボールを離さずに止まり、戻ってきたらスイングをやり直します。"
+msgstr "Escapeで一時停止します。スイング中なら、ボールを離さずに止まり、戻ってきたらスイングをやり直します。"
 
 msgid ""
 "A swing in progress stops without letting go, and you start it again when "
@@ -43777,16 +43770,16 @@ msgid ""
 msgstr "スイング中なら、ボールを離さずに止まり、戻ってきたらスイングをやり直します。"
 
 msgid "Left arrow: step one board left."
-msgstr "Left の矢印キー：一ボード左へ。"
+msgstr "Leftの矢印キー：一ボード左へ。"
 
 msgid "Right arrow: step one board right."
-msgstr "Right の矢印キー：一ボード右へ。"
+msgstr "Rightの矢印キー：一ボード右へ。"
 
 msgid "Up arrow: turn the aim one step right."
-msgstr "Up の矢印キー：狙いを一段右へ。"
+msgstr "Upの矢印キー：狙いを一段右へ。"
 
 msgid "Down arrow: turn the aim one step left."
-msgstr "Down の矢印キー：狙いを一段左へ。"
+msgstr "Downの矢印キー：狙いを一段左へ。"
 
 msgid "Space: start the swing, and again to let go of the ball."
 msgstr "Space：スイングを始め、もう一度押してボールを離します。"
@@ -43804,14 +43797,14 @@ msgstr "回転はなく、ボールは狙いどおりにまっすぐ転がりま
 msgid ""
 "S: status: the frame and ball, the pins standing, your board and your aim. "
 "Press S again straight away for the score."
-msgstr "S：状況。フレームと投球、残ったピン、ボード、狙い。すぐにもう一度 S を押すとスコアを聞けます。"
+msgstr "S：状況。フレームと投球、残ったピン、ボード、狙い。すぐにもう一度Sを押すとスコアを聞けます。"
 
 msgid ""
 "S: status: the frame and ball, the pins standing, your board and your aim."
 msgstr "S：状況。フレームと投球、残ったピン、ボード、狙い。"
 
 msgid "Press S again straight away for the score."
-msgstr "すぐにもう一度 S を押すとスコアを聞けます。"
+msgstr "すぐにもう一度Sを押すとスコアを聞けます。"
 
 msgid "R: repeat the last result."
 msgstr "R：最後の結果を繰り返します。"
@@ -43876,8 +43869,8 @@ msgid ""
 "Every player gets the same lane: a new one each day, each Monday and each "
 "month."
 msgstr ""
-"Up と Down でチャレンジを選び、Enter でブリーフィングを聞き、Escape "
-"で戻ります。全員に同じレーンが出ます。毎日、毎週月曜日、毎月新しくなります。"
+"UpとDownでチャレンジを選び、Enterでブリーフィングを聞き、Escapeで戻ります。全員に同じレーンが出ます。毎日、毎週月曜日、毎月新しくなりま"
+"す。"
 
 msgid "Opening the Midnight Lanes challenge."
 msgstr "Midnight Lanesのチャレンジを開きます。"
@@ -43987,7 +43980,7 @@ msgid ""
 "pauses."
 msgstr ""
 "{sentence_start4}でフレーム、ピン、ラインを聞き、二回押すとスコア、{k3}で最後の結果を繰り返し、{k4}でラインの提案、Escape"
-" で一時停止します。"
+"で一時停止します。"
 
 #. placeholders: {sentence_start}, {k}
 #. one sentence of a longer line
@@ -44004,7 +43997,7 @@ msgid ""
 msgstr ""
 "{sentence_start}と{k}で一ボード左右に動きます。{sentence_start2}で狙いを右へ、{k2}で左へ向けます。{senten"
 "ce_start3}でスイングを始め、スイングの頂点でもう一度押して離します。{sentence_start4}でフレーム、ピン、ラインを聞き、二回押す"
-"とスコア、{k3}で最後の結果を繰り返し、{k4}でラインの提案、Escape で一時停止します。"
+"とスコア、{k3}で最後の結果を繰り返し、{k4}でラインの提案、Escapeで一時停止します。"
 
 msgid "Game over."
 msgstr "ゲーム終了。"
@@ -45114,13 +45107,13 @@ msgstr "ゆったりのスコアは、チャレンジや特別な夜も含めて
 msgid ""
 "Play: your very first run is the guided training run. After that it starts "
 "a Black Sky Run."
-msgstr "プレイ：一番最初のプレイは、案内つきの訓練プレイです。そのあとは Black Sky Run が始まります。"
+msgstr "プレイ：一番最初のプレイは、案内つきの訓練プレイです。そのあとはBlack Sky Runが始まります。"
 
 msgid "Play: your very first run is the guided training run."
 msgstr "プレイ：一番最初のプレイは、案内つきの訓練プレイです。"
 
 msgid "After that it starts a Black Sky Run."
-msgstr "そのあとは Black Sky Run が始まります。"
+msgstr "そのあとはBlack Sky Runが始まります。"
 
 msgid ""
 "Black Sky Run: five sectors. After each one you fit one upgrade from three, "
@@ -45161,12 +45154,12 @@ msgid ""
 "of the upgrade menu, ends it as a finished run: it is paid and the sector "
 "reached counts. Quitting from the pause menu counts nothing."
 msgstr ""
-"エンドレスレール：Black Sky "
-"で初めて脱出すると開きます。終わりのないセクターが、だんだん難しくなります。セクターの合間に、アップグレードメニューの最後の行、ここで終えるを選ぶと、完"
-"了したプレイとして終わります。報酬がもらえ、到達したセクターが記録されます。一時停止メニューからやめると何も記録されません。"
+"エンドレスレール：Black "
+"Skyで初めて脱出すると開きます。終わりのないセクターが、だんだん難しくなります。セクターの合間に、アップグレードメニューの最後の行、ここで終えるを選ぶ"
+"と、完了したプレイとして終わります。報酬がもらえ、到達したセクターが記録されます。一時停止メニューからやめると何も記録されません。"
 
 msgid "Endless rail: opens after your first Black Sky extraction."
-msgstr "エンドレスレール：Black Sky で初めて脱出すると開きます。"
+msgstr "エンドレスレール：Black Skyで初めて脱出すると開きます。"
 
 msgid "Sectors without end, each harder than the last."
 msgstr "終わりのないセクターが、だんだん難しくなります。"
@@ -45245,9 +45238,8 @@ msgid ""
 "briefing goes back without starting."
 msgstr ""
 "タイトルでチャレンジを開きます。各行では期間とチャレンジの内容、続いて記録を読み上げます。記録は、まだプレイしていないか、自己ベストと連続記録です。行で"
-" F1 を押すと、ルールの全文と次のチャレンジまでの時間を聞けます。Enter "
-"でブリーフィングを聞きます。ルール、記録、リセットの時期、操作の順で、そのあとプレイが始まります。ブリーフィングで Escape "
-"を押すと、始めずに戻ります。"
+"F1を押すと、ルールの全文と次のチャレンジまでの時間を聞けます。Enterでブリーフィングを聞きます。ルール、記録、リセットの時期、操作の順で、そのあと"
+"プレイが始まります。ブリーフィングでEscapeを押すと、始めずに戻ります。"
 
 msgid "Open Challenges on the title."
 msgstr "タイトルでチャレンジを開きます。"
@@ -45261,15 +45253,15 @@ msgid ""
 msgstr "記録は、まだプレイしていないか、自己ベストと連続記録です。"
 
 msgid "F1 on a row gives the full rule and how long until the next one."
-msgstr "行で F1 を押すと、ルールの全文と次のチャレンジまでの時間を聞けます。"
+msgstr "行でF1を押すと、ルールの全文と次のチャレンジまでの時間を聞けます。"
 
 msgid ""
 "Enter reads the briefing: the rule, your record, when it resets, then the "
 "controls, and the run starts."
-msgstr "Enter でブリーフィングを聞きます。ルール、記録、リセットの時期、操作の順で、そのあとプレイが始まります。"
+msgstr "Enterでブリーフィングを聞きます。ルール、記録、リセットの時期、操作の順で、そのあとプレイが始まります。"
 
 msgid "Escape on the briefing goes back without starting."
-msgstr "ブリーフィングで Escape を押すと、始めずに戻ります。"
+msgstr "ブリーフィングでEscapeを押すと、始めずに戻ります。"
 
 msgid ""
 "Every pilot in the same period flies the same rail, so challenges use a "
@@ -45353,13 +45345,13 @@ msgid ""
 "upgrade after each of the first two sectors. The route ahead is already "
 "set, so the route menu has one choice."
 msgstr ""
-"ウィークリー、長距離輸送：決まったルートで三つのセクターを進み、最後は脱出のスプリントです。その週だけの変化があります。最初の二つのセクターのあとにアッ"
-"プグレードを選びます。この先のルートは決まっているので、ルートのメニューには選択肢が一つだけです。"
+"ウィークリー、長丁場：決まったルートで三つのセクターを進み、最後は脱出のスプリントです。その週だけの変化があります。最初の二つのセクターのあとにアップグ"
+"レードを選びます。この先のルートは決まっているので、ルートのメニューには選択肢が一つだけです。"
 
 msgid ""
 "Weekly, the long haul: three sectors along a fixed route, ending in the "
 "extraction sprint, with a twist of its own for the week."
-msgstr "ウィークリー、長距離輸送：決まったルートで三つのセクターを進み、最後は脱出のスプリントです。その週だけの変化があります。"
+msgstr "ウィークリー、長丁場：決まったルートで三つのセクターを進み、最後は脱出のスプリントです。その週だけの変化があります。"
 
 msgid "You choose an upgrade after each of the first two sectors."
 msgstr "最初の二つのセクターのあとにアップグレードを選びます。"
@@ -45376,7 +45368,7 @@ msgid ""
 "own story log, and flying an event to its end keeps that log in the story "
 "archive."
 msgstr ""
-"マンスリー、Black Sky のイベント、Blackout "
+"マンスリー、Black Skyのイベント、Blackout "
 "Convoy：避難車列のセクターが三つ、そのあと脱出のスプリントです。優先車両は避難列車になり、「避難列車」と伝えます。避難列車を通すたびに三倍の得点で"
 "す。邪魔をするとストレスが二倍上がります。ストレスは30から始まり、優先オーバーライドを三回持っています。ブリーフィングではイベント専用のストーリーログ"
 "を読み上げ、イベントを最後まで飛ぶとそのログがストーリーアーカイブに残ります。"
@@ -45384,7 +45376,7 @@ msgstr ""
 msgid ""
 "Monthly, the Black Sky event, Blackout Convoy: three evacuation convoy "
 "sectors, then the extraction sprint."
-msgstr "マンスリー、Black Sky のイベント、Blackout Convoy：避難車列のセクターが三つ、そのあと脱出のスプリントです。"
+msgstr "マンスリー、Black Skyのイベント、Blackout Convoy：避難車列のセクターが三つ、そのあと脱出のスプリントです。"
 
 msgid ""
 "Priority vehicles are evacuation trains, called out as \"Evacuation train\"."
@@ -45407,13 +45399,13 @@ msgstr "ブリーフィングではイベント専用のストーリーログを
 msgid ""
 "During a challenge run, S includes the twist or rule. F1 adds the "
 "challenge's rule as its last page."
-msgstr "チャレンジのプレイ中は、S で変化やルールも聞けます。F1 では最後のページにチャレンジのルールが加わります。"
+msgstr "チャレンジのプレイ中は、Sで変化やルールも聞けます。F1では最後のページにチャレンジのルールが加わります。"
 
 msgid "During a challenge run, S includes the twist or rule."
-msgstr "チャレンジのプレイ中は、S で変化やルールも聞けます。"
+msgstr "チャレンジのプレイ中は、Sで変化やルールも聞けます。"
 
 msgid "F1 adds the challenge's rule as its last page."
-msgstr "F1 では最後のページにチャレンジのルールが加わります。"
+msgstr "F1では最後のページにチャレンジのルールが加わります。"
 
 msgid ""
 "A challenge counts when the run ends, won or lost: the game reads your "
@@ -45426,9 +45418,8 @@ msgid ""
 msgstr ""
 "チャレンジは、勝っても負けても、プレイが終わると記録されます。結果、自己ベストを超えたか、連続記録、次のチャレンジがいつかを読み上げます。一時停止メニュ"
 "ーのチャレンジをやめるを選ぶと記録されません。自己ベストはより良いスコアのときだけ更新されますが、最後まで終えたプレイなら連続記録は続きます。デイリーは"
-"UTC "
-"の真夜中、ウィークリーは月曜日、マンスリーは毎月一日にリセットされます。チャレンジのあと、結果のメニューで同じレールをもう一度飛べます。最後の行はチャレ"
-"ンジに戻るです。"
+"UTCの真夜中、ウィークリーは月曜日、マンスリーは毎月一日にリセットされます。チャレンジのあと、結果のメニューで同じレールをもう一度飛べます。最後の行は"
+"チャレンジに戻るです。"
 
 msgid ""
 "A challenge counts when the run ends, won or lost: the game reads your "
@@ -45444,7 +45435,7 @@ msgstr "自己ベストはより良いスコアのときだけ更新されます
 msgid ""
 "Daily challenges reset at midnight UTC, weekly ones on Monday, monthly ones "
 "on the first of the month."
-msgstr "デイリーはUTC の真夜中、ウィークリーは月曜日、マンスリーは毎月一日にリセットされます。"
+msgstr "デイリーはUTCの真夜中、ウィークリーは月曜日、マンスリーは毎月一日にリセットされます。"
 
 msgid ""
 "After a challenge, the results menu can fly the same rail again, and its "
@@ -45591,7 +45582,7 @@ msgstr ""
 "幅器、ストレス緩衝器、アイテム磁石です。コールドスタートでは、さらに四つが全プレイの候補に加わります。セクター4に着くとハードロック、レールガンのロック"
 "が長くなります。セクター7に着くとスクラップメッシュ、修理でストレスがより和らぎ、サルベージで機体が2回復します。一回完了するとデッドマンスイッチ、一回"
 "のプレイで一度だけ機体の破損を耐久20で耐えます。三回完了するとホットチェーン、倍率がきれいなプレイ4回ではなく3回ごとに上がります。パイロットの進み具"
-"合で一覧できます。インターミッションでは S でスキマーの状態を、H でアドバイスを聞けます。"
+"合で一覧できます。インターミッションではSでスキマーの状態を、Hでアドバイスを聞けます。"
 
 msgid ""
 "Upgrades last for the rest of the run: shield plating, boost coils, heavy "
@@ -45625,10 +45616,10 @@ msgid "Pilot progress lists them."
 msgstr "パイロットの進み具合で一覧できます。"
 
 msgid "S reads your skimmer's state at an intermission."
-msgstr "インターミッションでは S でスキマーの状態を聞けます。"
+msgstr "インターミッションではSでスキマーの状態を聞けます。"
 
 msgid "H reads advice."
-msgstr "H でアドバイスを聞けます。"
+msgstr "Hでアドバイスを聞けます。"
 
 msgid "Progress, the workshop and the archive"
 msgstr "進み具合、工房、アーカイブ"
@@ -45643,11 +45634,11 @@ msgid ""
 "doubled starting multiplier."
 msgstr ""
 "デブリーフィングでは、失敗したプレイでも必ず報酬があります。スコアと完了したプレイからクレジット、クリアしたセクターと完了したプレイからパーツ、Blac"
-"k Sky "
-"での脱出とデータ中継から情報のかけらです。サルベージはスコアを通して支払われます。エンドレスのプレイでは、最初の40,000点までクレジットがもらえます"
-"。パイロットのランクは Black Sky "
-"での脱出の回数、1、4、10、20回で上がります。ランクごとにボーナスがつきます。機体の耐久アップ、オーバーライド一回追加、減速パルス一回追加、最後に開"
-"始時の倍率が二倍になります。"
+"k "
+"Skyでの脱出とデータ中継から情報のかけらです。サルベージはスコアを通して支払われます。エンドレスのプレイでは、最初の40,000点までクレジットがもら"
+"えます。パイロットのランクはBlack "
+"Skyでの脱出の回数、1、4、10、20回で上がります。ランクごとにボーナスがつきます。機体の耐久アップ、オーバーライド一回追加、減速パルス一回追加、最"
+"後に開始時の倍率が二倍になります。"
 
 msgid ""
 "Every debrief pays, even after a failed run: credits from your score and a "
@@ -45655,7 +45646,7 @@ msgid ""
 "fragments from Black Sky extractions and data relays."
 msgstr ""
 "デブリーフィングでは、失敗したプレイでも必ず報酬があります。スコアと完了したプレイからクレジット、クリアしたセクターと完了したプレイからパーツ、Blac"
-"k Sky での脱出とデータ中継から情報のかけらです。"
+"k Skyでの脱出とデータ中継から情報のかけらです。"
 
 msgid "Salvage pays through your score."
 msgstr "サルベージはスコアを通して支払われます。"
@@ -45664,7 +45655,7 @@ msgid "An endless run pays credits for its first 40,000 points."
 msgstr "エンドレスのプレイでは、最初の40,000点までクレジットがもらえます。"
 
 msgid "Your pilot rank rises with Black Sky extractions: 1, 4, 10 and 20."
-msgstr "パイロットのランクは Black Sky での脱出の回数、1、4、10、20回で上がります。"
+msgstr "パイロットのランクはBlack Skyでの脱出の回数、1、4、10、20回で上がります。"
 
 msgid ""
 "Each rank adds a bonus: more hull, an extra override, an extra slowdown "
@@ -45761,10 +45752,10 @@ msgstr ""
 "ストーリーアーカイブはいくつかの筋に分かれています。データコアの十二のログが軸です。最初のログはプレイを終えること、長く生き残ること、脱出することで手に"
 "入り、後のログは情報のかけらが集まるにつれて、一回のプレイで一つずつ開きます。その周りの筋は、それぞれ一種類の遊び方で、一回のプレイで一つずつ開きます。"
 "組合はサルベージ区間、ハンターは標準ラッシュ、セキュリティは待ち伏せ回廊、気象局は嵐のレール、信号はデータ中継、ブラックボックスは負けたプレイ、深層レー"
-"ルはエンドレスレールでどこまで進んだか、格納庫は自分の記録、オリジンはデータコアがそろったあとの脱出からです。Blackout Convoy "
-"のイベントログは、マンスリーの Black Sky "
-"イベントを最後まで飛ぶと開きます。プレイ中に回収したログは、読み上げる間プレイが止まります。残りはデブリーフィングと、タイトルのアーカイブで読めます。ア"
-"ーカイブでは各筋の開き方もわかります。"
+"ルはエンドレスレールでどこまで進んだか、格納庫は自分の記録、オリジンはデータコアがそろったあとの脱出からです。Blackout "
+"Convoyのイベントログは、マンスリーのBlack "
+"Skyイベントを最後まで飛ぶと開きます。プレイ中に回収したログは、読み上げる間プレイが止まります。残りはデブリーフィングと、タイトルのアーカイブで読めま"
+"す。アーカイブでは各筋の開き方もわかります。"
 
 msgid "The story archive is in strands."
 msgstr "ストーリーアーカイブはいくつかの筋に分かれています。"
@@ -45792,7 +45783,7 @@ msgstr ""
 msgid ""
 "The Blackout Convoy event log opens once you have flown a monthly Black Sky "
 "event to its end."
-msgstr "Blackout Convoy のイベントログは、マンスリーの Black Sky イベントを最後まで飛ぶと開きます。"
+msgstr "Blackout Convoyのイベントログは、マンスリーのBlack Skyイベントを最後まで飛ぶと開きます。"
 
 msgid "Logs recovered during a run pause it while the log is read."
 msgstr "プレイ中に回収したログは、読み上げる間プレイが止まります。"
@@ -45858,8 +45849,8 @@ msgid ""
 "Back to the challenges. Escape does the same as the last row."
 msgstr ""
 "デブリーフィングのあと、結果のメニューには、もう一度プレイか再挑戦、結果をもう一度聞く、パイロットの進み具合、ストーリーログのあるアーカイブ、タイトルに"
-"戻るがあります。案内つきのプレイのあとは、次へで Black Sky Run "
-"が始まります。チャレンジのあとは、最初の行で同じチャレンジをもう一度飛び、最後の行はチャレンジに戻るです。Escape は最後の行と同じです。"
+"戻るがあります。案内つきのプレイのあとは、次へでBlack Sky "
+"Runが始まります。チャレンジのあとは、最初の行で同じチャレンジをもう一度飛び、最後の行はチャレンジに戻るです。Escapeは最後の行と同じです。"
 
 msgid ""
 "After the debrief, the results menu offers Play again or Try again, Hear "
@@ -45870,7 +45861,7 @@ msgstr ""
 "戻るがあります。"
 
 msgid "After the guided run, Next starts a Black Sky Run."
-msgstr "案内つきのプレイのあとは、次へで Black Sky Run が始まります。"
+msgstr "案内つきのプレイのあとは、次へでBlack Sky Runが始まります。"
 
 msgid ""
 "After a challenge, the first row flies the same challenge again and the "
@@ -45886,31 +45877,31 @@ msgid ""
 "pages. R repeats the page. Escape skips to the end. The pages before a run "
 "are different: Escape on them goes back without starting."
 msgstr ""
-"ストーリー、チュートリアル、デブリーフィングの文章は一ページずつ流れます。Enter でまだ聞いていない次のページを読みます。Up と Down "
-"でページを行き来します。R でページを繰り返します。Escape で最後まで飛ばします。プレイ前のページだけは違い、Escape で始めずに戻ります。"
+"ストーリー、チュートリアル、デブリーフィングの文章は一ページずつ流れます。Enterでまだ聞いていない次のページを読みます。UpとDownでページを行き"
+"来します。Rでページを繰り返します。Escapeで最後まで飛ばします。プレイ前のページだけは違い、Escapeで始めずに戻ります。"
 
 msgid "Story, tutorial and debrief text comes a page at a time."
 msgstr "ストーリー、チュートリアル、デブリーフィングの文章は一ページずつ流れます。"
 
 msgid "Enter reads the next page you have not heard."
-msgstr "Enter でまだ聞いていない次のページを読みます。"
+msgstr "Enterでまだ聞いていない次のページを読みます。"
 
 msgid "Up and Down move back and forth over the pages."
-msgstr "Up と Down でページを行き来します。"
+msgstr "UpとDownでページを行き来します。"
 
 msgid ""
 "The pages before a run are different: Escape on them goes back without "
 "starting."
-msgstr "プレイ前のページだけは違い、Escape で始めずに戻ります。"
+msgstr "プレイ前のページだけは違い、Escapeで始めずに戻ります。"
 
 msgid "Left and Right arrows: shift one lane. A and D also work."
-msgstr "Left と Right の矢印キー：レーンを一つ移ります。A と D も使えます。"
+msgstr "LeftとRightの矢印キー：レーンを一つ移ります。AとDも使えます。"
 
 msgid "Left and Right arrows: shift one lane."
-msgstr "Left と Right の矢印キー：レーンを一つ移ります。"
+msgstr "LeftとRightの矢印キー：レーンを一つ移ります。"
 
 msgid "A and D also work."
-msgstr "A と D も使えます。"
+msgstr "AとDも使えます。"
 
 msgid "Space: boost, for just under a second. It recharges in five seconds."
 msgstr "Space：ブースト。一秒弱続きます。五秒で再充電されます。"
@@ -45924,7 +45915,7 @@ msgstr "五秒で再充電されます。"
 msgid ""
 "Tab: fire the rail gun at the nearest drone or unstable vehicle as it "
 "closes in. F also works."
-msgstr "Tab：迫ってくる一番近いドローンか不安定車両にレールガンを撃ちます。F も使えます。"
+msgstr "Tab：迫ってくる一番近いドローンか不安定車両にレールガンを撃ちます。Fも使えます。"
 
 msgid ""
 "Tab: fire the rail gun at the nearest drone or unstable vehicle as it "
@@ -45932,25 +45923,25 @@ msgid ""
 msgstr "Tab：迫ってくる一番近いドローンか不安定車両にレールガンを撃ちます。"
 
 msgid "F also works."
-msgstr "F も使えます。"
+msgstr "Fも使えます。"
 
 msgid "Down arrow: slowdown pulse. X also works."
-msgstr "Down の矢印キー：減速パルス。X も使えます。"
+msgstr "Downの矢印キー：減速パルス。Xも使えます。"
 
 msgid "Down arrow: slowdown pulse."
-msgstr "Down の矢印キー：減速パルス。"
+msgstr "Downの矢印キー：減速パルス。"
 
 msgid "X also works."
-msgstr "X も使えます。"
+msgstr "Xも使えます。"
 
 msgid "Up arrow: priority override. P also works."
-msgstr "Up の矢印キー：優先オーバーライド。P も使えます。"
+msgstr "Upの矢印キー：優先オーバーライド。Pも使えます。"
 
 msgid "Up arrow: priority override."
-msgstr "Up の矢印キー：優先オーバーライド。"
+msgstr "Upの矢印キー：優先オーバーライド。"
 
 msgid "P also works."
-msgstr "P も使えます。"
+msgstr "Pも使えます。"
 
 msgid ""
 "S: your lane, hull and stress. Press it again straight away for every "
@@ -45975,7 +45966,7 @@ msgstr "H：次に何が、どこに、どのくらいで来るか、どうす�
 msgid ""
 "F1: help for the current screen. During a run it pauses the rail and reads "
 "the controls a page at a time. F2 stops speech."
-msgstr "F1：今の画面のヘルプ。プレイ中はレールを止めて、操作を一ページずつ読みます。F2 で音声を止めます。"
+msgstr "F1：今の画面のヘルプ。プレイ中はレールを止めて、操作を一ページずつ読みます。F2で音声を止めます。"
 
 msgid ""
 "During a run it pauses the rail and reads the controls a page at a time."
@@ -45989,8 +45980,8 @@ msgid ""
 "seconds, as it did the night the sky went black. The partition gates open, "
 "and the evacuation trains run."
 msgstr ""
-"Black Sky "
-"のイベントログ。月に一度、軌道グリッドが九十秒間停止します。空が真っ暗になったあの夜と同じように。区画ゲートが開き、避難列車が走り出します。"
+"Black "
+"Skyのイベントログ。月に一度、軌道グリッドが九十秒間停止します。空が真っ暗になったあの夜と同じように。区画ゲートが開き、避難列車が走り出します。"
 
 msgid ""
 "Tonight the unknown signal has put your skimmer at the head of the convoy. "
@@ -46009,10 +46000,10 @@ msgid "Sector sprint"
 msgstr "セクタースプリント"
 
 msgid "Long haul"
-msgstr "長距離輸送"
+msgstr "長丁場"
 
 msgid "Black Sky event: Blackout Convoy"
-msgstr "Black Sky のイベント：Blackout Convoy"
+msgstr "Black Skyのイベント：Blackout Convoy"
 
 #. placeholders: {join}, {last}
 msgid "{join}, then {last}"
@@ -46087,8 +46078,8 @@ msgid ""
 "to the title. Only a better score replaces your best, and any finished run "
 "keeps your streak."
 msgstr ""
-"Up と Down でチャレンジを選び、Enter でブリーフィングを聞き、Escape "
-"でタイトルに戻ります。自己ベストはより良いスコアのときだけ更新され、最後まで終えたプレイなら連続記録は続きます。"
+"UpとDownでチャレンジを選び、Enterでブリーフィングを聞き、Escapeでタイトルに戻ります。自己ベストはより良いスコアのときだけ更新され、最後"
+"まで終えたプレイなら連続記録は続きます。"
 
 msgid "Opening the Neon Rail challenge."
 msgstr "Neon Railのチャレンジを開きます。"
@@ -46356,7 +46347,7 @@ msgstr "避難列車が通過"
 msgid ""
 "In the monthly Black Sky event, an evacuation train cleared: triple "
 "priority points."
-msgstr "マンスリーの Black Sky イベントで避難列車を通しました。優先車両の得点が三倍です。"
+msgstr "マンスリーのBlack Skyイベントで避難列車を通しました。優先車両の得点が三倍です。"
 
 msgid "Ghost cars"
 msgstr "ゴーストカー"
@@ -46453,17 +46444,17 @@ msgid "Event log. {EVENT_LOG_TITLE}"
 msgstr "イベントログ。{EVENT_LOG_TITLE}"
 
 msgid "The Black Sky event's own log. Enter reads it."
-msgstr "Black Sky イベント専用のログです。Enter で読みます。"
+msgstr "Black Skyイベント専用のログです。Enterで読みます。"
 
 msgid "Locked event log"
 msgstr "ロック中のイベントログ"
 
 msgid "Event log locked. Fly a monthly Black Sky event to its end."
-msgstr "イベントログはロック中です。マンスリーの Black Sky イベントを最後まで飛びましょう。"
+msgstr "イベントログはロック中です。マンスリーのBlack Skyイベントを最後まで飛びましょう。"
 
 msgid ""
 "Locked. Fly a monthly Black Sky event to its end, from the Challenges menu."
-msgstr "ロック中です。チャレンジのメニューから、マンスリーの Black Sky イベントを最後まで飛びましょう。"
+msgstr "ロック中です。チャレンジのメニューから、マンスリーのBlack Skyイベントを最後まで飛びましょう。"
 
 msgid "Return to the Neon Rail menu."
 msgstr "Neon Railのメニューに戻ります。"
@@ -46478,7 +46469,7 @@ msgstr ""
 
 #. one sentence of a longer line
 msgid "Enter opens its logs."
-msgstr "Enter でログを開きます。"
+msgstr "Enterでログを開きます。"
 
 #. placeholders: {row}
 #. one sentence of a longer line
@@ -46489,7 +46480,7 @@ msgstr "{row}各行がストーリーの筋です。"
 msgid ""
 "{row} Each row is a strand of the story. Enter opens its logs. A locked "
 "strand says how its first log is recovered."
-msgstr "{row}各行がストーリーの筋です。Enter でログを開きます。ロック中の筋では、最初のログの回収方法がわかります。"
+msgstr "{row}各行がストーリーの筋です。Enterでログを開きます。ロック中の筋では、最初のログの回収方法がわかります。"
 
 msgid "Data core"
 msgstr "データコア"
@@ -46504,7 +46495,7 @@ msgid "Log {i}. {title}"
 msgstr "ログ{i}。{title}"
 
 msgid "A recovered log. Enter reads it."
-msgstr "回収したログです。Enter で読みます。"
+msgstr "回収したログです。Enterで読みます。"
 
 #. one sentence of a longer line
 msgid "Story log locked."
@@ -46537,13 +46528,13 @@ msgstr ""
 #. placeholders: {row}
 #. one sentence of a longer line
 msgid "{row} Recovered logs open with Enter."
-msgstr "{row}回収したログは Enter で開きます。"
+msgstr "{row}回収したログはEnterで開きます。"
 
 #. placeholders: {row}
 msgid ""
 "{row} Recovered logs open with Enter. Locked logs need more runs, and each "
 "says how it is recovered."
-msgstr "{row}回収したログは Enter で開きます。ロック中のログはもっとプレイが必要で、それぞれ回収方法がわかります。"
+msgstr "{row}回収したログはEnterで開きます。ロック中のログはもっとプレイが必要で、それぞれ回収方法がわかります。"
 
 msgid "Workshop"
 msgstr "工房"
@@ -46841,7 +46832,7 @@ msgstr "エンドレスレールとコールドスタートが解放されまし
 msgid ""
 "Finish a Black Sky Run to extraction to unlock the endless rail and cold "
 "start."
-msgstr "Black Sky Run を脱出まで終えると、エンドレスレールとコールドスタートが解放されます。"
+msgstr "Black Sky Runを脱出まで終えると、エンドレスレールとコールドスタートが解放されます。"
 
 #. placeholders: {credits}
 #. one sentence of a longer line
@@ -47230,10 +47221,10 @@ msgstr "エンドレスレール"
 
 msgid ""
 "Locked. Finish a Black Sky Run to extraction to open the endless rail."
-msgstr "ロック中。Black Sky Run を脱出まで終えると、エンドレスレールが開きます。"
+msgstr "ロック中。Black Sky Runを脱出まで終えると、エンドレスレールが開きます。"
 
 msgid "Finish a Black Sky Run to extraction to open the endless rail."
-msgstr "Black Sky Run を脱出まで終えると、エンドレスレールが開きます。"
+msgstr "Black Sky Runを脱出まで終えると、エンドレスレールが開きます。"
 
 #. placeholders: {best_text}
 msgid "Cold start, {best_text}"
@@ -47248,12 +47239,12 @@ msgid "Cold start"
 msgstr "コールドスタート"
 
 msgid "Locked. Finish a Black Sky Run to extraction to open the cold start."
-msgstr "ロック中。Black Sky Run を脱出まで終えると、コールドスタートが開きます。"
+msgstr "ロック中。Black Sky Runを脱出まで終えると、コールドスタートが開きます。"
 
 msgid ""
 "Finish a Black Sky Run to extraction to open the cold start: a bare "
 "skimmer, nine sectors, one life."
-msgstr "Black Sky Run を脱出まで終えると、コールドスタートが開きます。素のスキマー、九つのセクター、命は一つです。"
+msgstr "Black Sky Runを脱出まで終えると、コールドスタートが開きます。素のスキマー、九つのセクター、命は一つです。"
 
 #. placeholders: {corridor}
 msgid "Challenge corridor, {corridor}"
@@ -47284,15 +47275,15 @@ msgid ""
 "A daily sector sprint, a weekly long haul and the monthly Black Sky event: "
 "the same rail for every pilot, on a standard skimmer."
 msgstr ""
-"デイリーのセクタースプリント、ウィークリーの長距離輸送、マンスリーの Black Sky イベント。全パイロットに同じレールで、標準のスキマーです。"
+"デイリーのセクタースプリント、ウィークリーの長丁場、マンスリーのBlack Skyイベント。全パイロットに同じレールで、標準のスキマーです。"
 
 #. placeholders: {resets}
 msgid ""
 "A daily sector sprint, a weekly long haul and the monthly Black Sky event: "
 "the same rail for every pilot, on a standard skimmer. {resets}"
 msgstr ""
-"デイリーのセクタースプリント、ウィークリーの長距離輸送、マンスリーの Black Sky "
-"イベント。全パイロットに同じレールで、標準のスキマーです。{resets}"
+"デイリーのセクタースプリント、ウィークリーの長丁場、マンスリーのBlack "
+"Skyイベント。全パイロットに同じレールで、標準のスキマーです。{resets}"
 
 #. placeholders: {credits}, {parts_phrase}
 msgid "Workshop, {credits} credits, {parts_phrase}"
@@ -47306,7 +47297,7 @@ msgid "Story archive, {logs_recovered} of {total_logs} logs"
 msgstr "ストーリーアーカイブ、{total_logs}中{logs_recovered}のログ"
 
 msgid "The Black Sky City logs you have recovered."
-msgstr "回収した Black Sky City のログです。"
+msgstr "回収したBlack Sky Cityのログです。"
 
 msgid ""
 "When on, approaching traffic, hazards and pickups are named, such as Debris "
@@ -47316,7 +47307,7 @@ msgstr ""
 
 msgid ""
 "Up and Down choose, Enter starts or opens, Escape goes back to the parlor."
-msgstr "Up と Down で選び、Enter で始めるか開き、Escape で遊戯館に戻ります。"
+msgstr "UpとDownで選び、Enterで始めるか開き、Escapeで遊戯館に戻ります。"
 
 msgid ""
 "Ghost cars tonight: flow vehicles come in costume. Meet them as usual."
@@ -47534,7 +47525,7 @@ msgid "Black Sky Run"
 msgstr "Black Sky Run"
 
 msgid "Black Sky event"
-msgstr "Black Sky イベント"
+msgstr "Black Skyイベント"
 
 msgid "challenge"
 msgstr ""
@@ -48247,11 +48238,11 @@ msgstr ""
 
 #. one sentence of a longer line
 msgid "Escape opens the pause menu."
-msgstr "Escape で一時停止メニューを開きます。"
+msgstr "Escapeで一時停止メニューを開きます。"
 
 #. one sentence of a longer line
 msgid "F1 gives help for the current screen."
-msgstr "F1 で今の画面のヘルプを聞けます。"
+msgstr "F1で今の画面のヘルプを聞けます。"
 
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
@@ -48275,7 +48266,7 @@ msgid ""
 "about it. Escape opens the pause menu. F1 gives help for the current screen."
 msgstr ""
 "{sentence_start}で回廊のまとめを聞けます。{sentence_start2}で最後の案内を繰り返します。{sentence_start3"
-"}で次に来るものと、どうすればいいかを聞けます。Escape で一時停止メニューを開きます。F1 で今の画面のヘルプを聞けます。"
+"}で次に来るものと、どうすればいいかを聞けます。Escapeで一時停止メニューを開きます。F1で今の画面のヘルプを聞けます。"
 
 #. one sentence of a longer line
 msgid "Center lane."
@@ -48291,8 +48282,7 @@ msgid ""
 msgstr ""
 "中央のレーン。{sentence_start}と{right}でレーンを移ります。{sentence_start2}でブースト。{sentence_st"
 "art3}でレールガン。{sentence_start4}で減速パルス。{sentence_start5}で優先オーバーライド。{sentence_st"
-"art6}でレーン、機体の耐久、ストレスを聞き、もう一度押すとツール、さらに押すとセクターとチャレンジのルールを聞けます。Escape "
-"で一時停止します。"
+"art6}でレーン、機体の耐久、ストレスを聞き、もう一度押すとツール、さらに押すとセクターとチャレンジのルールを聞けます。Escapeで一時停止します。"
 
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
@@ -48336,8 +48326,8 @@ msgid ""
 "A Black Sky Run is five sectors. After each sector you fit one upgrade and "
 "choose the route ahead. The fifth sector is the extraction sprint."
 msgstr ""
-"Black Sky Run "
-"は五つのセクターです。セクターごとにアップグレードを一つ取りつけ、次のルートを選びます。五つ目のセクターは脱出のスプリントです。"
+"Black Sky "
+"Runは五つのセクターです。セクターごとにアップグレードを一つ取りつけ、次のルートを選びます。五つ目のセクターは脱出のスプリントです。"
 
 msgid ""
 "The endless rail never ends. Every sector is harder than the last. Choose "
@@ -48367,7 +48357,7 @@ msgid ""
 msgstr "チャレンジ回廊：決まった六セクターを二分間で、毎回同じです。覚えて、ベストスコアを狙いましょう。"
 
 msgid "Rogue courier route open. F1 lists the controls."
-msgstr "はぐれ運び屋のルートが開きました。F1 で操作を一覧できます。"
+msgstr "はぐれ運び屋のルートが開きました。F1で操作を一覧できます。"
 
 #. one sentence of a longer line
 msgid "Rogue courier route open."
@@ -48415,7 +48405,7 @@ msgid ""
 "lane, hull and stress; press it again for your tools. Escape pauses."
 msgstr ""
 "{sentence_start}でレールガン。{sentence_start2}で減速パルス。{sentence_start3}で優先オーバーライド。{"
-"sentence_start4}でレーン、機体の耐久、ストレスを聞き、もう一度押すとツールを聞けます。Escape で一時停止します。"
+"sentence_start4}でレーン、機体の耐久、ストレスを聞き、もう一度押すとツールを聞けます。Escapeで一時停止します。"
 
 #. one sentence of a longer line
 msgid "Everything coming is placed by its lane, relative to yours."
@@ -48735,11 +48725,11 @@ msgstr ""
 #. placeholders: {blurb}
 #. one sentence of a longer line
 msgid "{blurb} Enter fits it."
-msgstr "{blurb}Enter で取りつけます。"
+msgstr "{blurb}Enterで取りつけます。"
 
 #. placeholders: {blurb}, {status}
 msgid "{blurb} Enter fits it. {status} speaks your skimmer's state."
-msgstr "{blurb}Enter で取りつけます。{status}でスキマーの状態を聞けます。"
+msgstr "{blurb}Enterで取りつけます。{status}でスキマーの状態を聞けます。"
 
 #. placeholders: {status}
 #. one sentence of a longer line
@@ -48767,7 +48757,7 @@ msgstr "一時停止メニューからやめると何も記録されません。
 
 #. one sentence of a longer line
 msgid "Enter flies on"
-msgstr "Enter で先へ進みます"
+msgstr "Enterで先へ進みます"
 
 #. one sentence of a longer line
 msgid "Tonight's route is fixed."
@@ -48780,7 +48770,7 @@ msgstr "{fitted}を取りつけました。"
 
 #. placeholders: {fitted}
 msgid "{fitted} fitted. Tonight's route is fixed. Enter flies on"
-msgstr "{fitted}を取りつけました。今夜のルートは決まっています。Enter で先へ進みます"
+msgstr "{fitted}を取りつけました。今夜のルートは決まっています。Enterで先へ進みます"
 
 #. one sentence of a longer line
 msgid "This challenge's route is fixed."
@@ -48788,7 +48778,7 @@ msgstr "このチャレンジのルートは決まっています。"
 
 #. placeholders: {fitted}
 msgid "{fitted} fitted. This challenge's route is fixed. Enter flies on"
-msgstr "{fitted}を取りつけました。このチャレンジのルートは決まっています。Enter で先へ進みます"
+msgstr "{fitted}を取りつけました。このチャレンジのルートは決まっています。Enterで先へ進みます"
 
 #. one sentence of a longer line
 msgid "Choose your route"
@@ -50183,10 +50173,10 @@ msgstr "パンくずを探す"
 msgid ""
 "Space sniffs. It marks the nearest 3 crumbs with directional cues, nearest "
 "first, then says how many crumbs are left."
-msgstr "Space でにおいをかぎます。近い順に3つのパンくずを方向の合図で知らせ、そのあと残りのパンくずの数を伝えます。"
+msgstr "Spaceでにおいをかぎます。近い順に3つのパンくずを方向の合図で知らせ、そのあと残りのパンくずの数を伝えます。"
 
 msgid "Space sniffs."
-msgstr "Space でにおいをかぎます。"
+msgstr "Spaceでにおいをかぎます。"
 
 msgid ""
 "It marks the nearest 3 crumbs with directional cues, nearest first, then "
@@ -50199,12 +50189,11 @@ msgid ""
 "means every crumb left is near a cat. H does not work in the monthly "
 "challenge."
 msgstr ""
-"H "
-"で、猫が近くにいない一番近いパンくずへの道を伝えます。方向が先、歩数があとで、「上、3歩。」のように言います。「安全なパンくずなし」は、残りのパンくずが"
-"どれも猫の近くにあるという意味です。マンスリーチャレンジでは H は使えません。"
+"Hで、猫が近くにいない一番近いパンくずへの道を伝えます。方向が先、歩数があとで、「上、3歩。」のように言います。「安全なパンくずなし」は、残りのパンくず"
+"がどれも猫の近くにあるという意味です。マンスリーチャレンジではHは使えません。"
 
 msgid "H names the way to the nearest crumb that no cat is close to."
-msgstr "H で、猫が近くにいない一番近いパンくずへの道を伝えます。"
+msgstr "Hで、猫が近くにいない一番近いパンくずへの道を伝えます。"
 
 msgid ""
 "The direction comes before the number of steps, such as \"Up, 3 steps.\" \"No "
@@ -50212,7 +50201,7 @@ msgid ""
 msgstr "方向が先、歩数があとで、「上、3歩。」のように言います。「安全なパンくずなし」は、残りのパンくずがどれも猫の近くにあるという意味です。"
 
 msgid "H does not work in the monthly challenge."
-msgstr "マンスリーチャレンジでは H は使えません。"
+msgstr "マンスリーチャレンジではHは使えません。"
 
 msgid "The cats"
 msgstr "猫"
@@ -50222,8 +50211,7 @@ msgid ""
 "cat and its direction on the first encounter. F1 during play explains how "
 "each cat moves."
 msgstr ""
-"猫が5歩以内にいると、位置の合図が鳴ります。初めて出会ったときは、猫の名前と方向を伝えます。プレイ中に F1 "
-"を押すと、それぞれの猫の動き方がわかります。"
+"猫が5歩以内にいると、位置の合図が鳴ります。初めて出会ったときは、猫の名前と方向を伝えます。プレイ中にF1を押すと、それぞれの猫の動き方がわかります。"
 
 msgid "Each cat has a position cue when it is within 5 steps."
 msgstr "猫が5歩以内にいると、位置の合図が鳴ります。"
@@ -50232,7 +50220,7 @@ msgid "The game names the cat and its direction on the first encounter."
 msgstr "初めて出会ったときは、猫の名前と方向を伝えます。"
 
 msgid "F1 during play explains how each cat moves."
-msgstr "プレイ中に F1 を押すと、それぞれの猫の動き方がわかります。"
+msgstr "プレイ中にF1を押すと、それぞれの猫の動き方がわかります。"
 
 msgid "The ginger cat takes the shortest route to you."
 msgstr "茶トラは一番の近道で追ってきます。"
@@ -50275,12 +50263,11 @@ msgid ""
 "catches you. The thaw cue means you can move again. You have 3 freezes in "
 "each pantry."
 msgstr ""
-"Tab "
-"で少しの間フリーズします。一番近い猫は、フリーズが終わる少しあとまで見失います。ほかの猫は追ってきますし、ぶつかってきたら捕まります。溶ける合図が鳴った"
-"ら、また動けます。フリーズは各食料庫で3回使えます。"
+"Tabで少しの間フリーズします。一番近い猫は、フリーズが終わる少しあとまで見失います。ほかの猫は追ってきますし、ぶつかってきたら捕まります。溶ける合図が"
+"鳴ったら、また動けます。フリーズは各食料庫で3回使えます。"
 
 msgid "Tab freezes you briefly."
-msgstr "Tab で少しの間フリーズします。"
+msgstr "Tabで少しの間フリーズします。"
 
 msgid "The nearest cat loses you until just after the freeze ends."
 msgstr "一番近い猫は、フリーズが終わる少しあとまで見失います。"
@@ -50327,20 +50314,19 @@ msgid ""
 "and whiskers left. Press S again straight away for your freezes, your score "
 "and the pantry."
 msgstr ""
-"S "
-"では、いつも同じ順で状況を伝えます。まず各猫の位置を「茶トラ、左に3マス、上に1マス」のようにマス数で、次に残りのパンくず、ごちそう、ひげです。すぐにも"
-"う一度 S を押すと、フリーズ、スコア、食料庫を聞けます。"
+"Sでは、いつも同じ順で状況を伝えます。まず各猫の位置を「茶トラ、左に3マス、上に1マス」のようにマス数で、次に残りのパンくず、ごちそう、ひげです。すぐに"
+"もう一度Sを押すと、フリーズ、スコア、食料庫を聞けます。"
 
 msgid ""
 "S reads the status in the same order every time: each cat's place from you "
 "in cells, such as \"ginger cat 3 cells left and 1 up\", then crumbs, treats "
 "and whiskers left."
 msgstr ""
-"S では、いつも同じ順で状況を伝えます。まず各猫の位置を「茶トラ、左に3マス、上に1マス」のようにマス数で、次に残りのパンくず、ごちそう、ひげです。"
+"Sでは、いつも同じ順で状況を伝えます。まず各猫の位置を「茶トラ、左に3マス、上に1マス」のようにマス数で、次に残りのパンくず、ごちそう、ひげです。"
 
 msgid ""
 "Press S again straight away for your freezes, your score and the pantry."
-msgstr "すぐにもう一度 S を押すと、フリーズ、スコア、食料庫を聞けます。"
+msgstr "すぐにもう一度Sを押すと、フリーズ、スコア、食料庫を聞けます。"
 
 msgid ""
 "The cats and your freeze stand still while a line is still being spoken. An "
@@ -50482,8 +50468,8 @@ msgid ""
 msgstr ""
 "二つの食料庫は、決まった夜だけタイトルに開きます。どちらも食料庫めぐりで、パンくずの中にごちそうが隠れています。それぞれ別の自己ベストが残るので、食料庫"
 "めぐりのランキングは変わりません。食料庫が閉じたあとは、結果のもう一度プレイでその旨を伝え、始まりません。ごちそうは、同じマスのパンくずと一緒に食べられ"
-"ます。Space で、パンくずの合図のあとに、一番近いごちそうを隠れている場所から鳴らし、どこにあるかを伝えます。S で残りのごちそうを数え、H "
-"で一番近いごちそうへの道を伝えます。"
+"ます。Spaceで、パンくずの合図のあとに、一番近いごちそうを隠れている場所から鳴らし、どこにあるかを伝えます。Sで残りのごちそうを数え、Hで一番近いご"
+"ちそうへの道を伝えます。"
 
 msgid "Two pantries open on the title only on their own nights."
 msgstr "二つの食料庫は、決まった夜だけタイトルに開きます。"
@@ -50505,10 +50491,10 @@ msgstr "ごちそうは、同じマスのパンくずと一緒に食べられま
 msgid ""
 "Space plays the nearest treat after the crumb cues, from where it hides, "
 "and names where it is."
-msgstr "Space で、パンくずの合図のあとに、一番近いごちそうを隠れている場所から鳴らし、どこにあるかを伝えます。"
+msgstr "Spaceで、パンくずの合図のあとに、一番近いごちそうを隠れている場所から鳴らし、どこにあるかを伝えます。"
 
 msgid "S counts the treats left, and H names the way to the nearest one."
-msgstr "S で残りのごちそうを数え、H で一番近いごちそうへの道を伝えます。"
+msgstr "Sで残りのごちそうを数え、Hで一番近いごちそうへの道を伝えます。"
 
 msgid ""
 "Leftovers pantry, from the day before Thanksgiving to 2 days after: 4 "
@@ -50538,14 +50524,14 @@ msgstr "Tab：フリーズして、一番近い猫に見失わせます。"
 msgid ""
 "S: status. Where each cat is, then crumbs, treats and whiskers left. Press "
 "S again straight away for freezes, score and which maze you are in."
-msgstr "S：状況。各猫の位置、残りのパンくず、ごちそう、ひげ。すぐにもう一度 S を押すと、フリーズ、スコア、今どの迷路かを聞けます。"
+msgstr "S：状況。各猫の位置、残りのパンくず、ごちそう、ひげ。すぐにもう一度Sを押すと、フリーズ、スコア、今どの迷路かを聞けます。"
 
 msgid "Where each cat is, then crumbs, treats and whiskers left."
 msgstr "各猫の位置、残りのパンくず、ごちそう、ひげ。"
 
 msgid ""
 "Press S again straight away for freezes, score and which maze you are in."
-msgstr "すぐにもう一度 S を押すと、フリーズ、スコア、今どの迷路かを聞けます。"
+msgstr "すぐにもう一度Sを押すと、フリーズ、スコア、今どの迷路かを聞けます。"
 
 msgid "H: the way to the nearest safe crumb, direction first."
 msgstr "H：一番近い安全なパンくずへの道。方向が先です。"
@@ -50590,8 +50576,8 @@ msgid ""
 "Every player gets the same mazes: new ones each day, each Monday and each "
 "month."
 msgstr ""
-"Up と Down でチャレンジを選び、Enter でブリーフィングを聞き、Escape "
-"で戻ります。全員に同じ迷路が出ます。毎日、毎週月曜日、毎月新しくなります。"
+"UpとDownでチャレンジを選び、Enterでブリーフィングを聞き、Escapeで戻ります。全員に同じ迷路が出ます。毎日、毎週月曜日、毎月新しくなります"
+"。"
 
 msgid "Opening the Pantry Mouse challenge."
 msgstr "Pantry Mouseのチャレンジを開きます。"
@@ -50817,7 +50803,7 @@ msgid ""
 msgstr ""
 "矢印キーで一マス動き、押したままで動き続けます。{sentence_start}でにおいをかいで近いパンくずを探します。{sentence_start2"
 "}でフリーズして、一番近い猫に見失わせます。{sentence_start3}で猫、パンくず、ひげを聞き、二回押すと残りも聞けます。{k}で最後の言葉を"
-"繰り返し、{k2}で安全なパンくずを教え、Escape で一時停止します。"
+"繰り返し、{k2}で安全なパンくずを教え、Escapeで一時停止します。"
 
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
@@ -50831,7 +50817,7 @@ msgid ""
 "{k} repeats the last line, {k2} points to a safe crumb, and Escape pauses."
 msgstr ""
 "{sentence_start3}で猫、パンくず、ひげを聞き、二回押すと残りも聞けます。{k}で最後の言葉を繰り返し、{k2}で安全なパンくずを教え、E"
-"scape で一時停止します。"
+"scapeで一時停止します。"
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
@@ -51444,9 +51430,8 @@ msgid ""
 "nothing. Highest banked total wins. Nothing is timed."
 msgstr ""
 "三人の乗客を相手に、サイコロで五回の寄港を戦います。各寄港では、ディーラーがまだ席にいる全員のためにサイコロを二つ振ります。出た目はテーブルの合計に加わ"
-"ります。Tab でテーブルの分を確保します。Space "
-"で残ってもう一回振ります。どちらかのサイコロが1なら寄港は終わり、席に残っていた全員は何ももらえません。確保した合計が一番多い人の勝ちです。時間制限はあ"
-"りません。"
+"ります。Tabでテーブルの分を確保します。Spaceで残ってもう一回振ります。どちらかのサイコロが1なら寄港は終わり、席に残っていた全員は何ももらえませ"
+"ん。確保した合計が一番多い人の勝ちです。時間制限はありません。"
 
 msgid "Play five landings of dice against three passengers."
 msgstr "三人の乗客を相手に、サイコロで五回の寄港を戦います。"
@@ -51459,10 +51444,10 @@ msgid "Each roll adds to the table total."
 msgstr "出た目はテーブルの合計に加わります。"
 
 msgid "Tab banks what the table holds."
-msgstr "Tab でテーブルの分を確保します。"
+msgstr "Tabでテーブルの分を確保します。"
 
 msgid "Space stays in for another roll."
-msgstr "Space で残ってもう一回振ります。"
+msgstr "Spaceで残ってもう一回振ります。"
 
 msgid ""
 "A 1 on either die ends the landing, and everyone still seated gets nothing."
@@ -51483,15 +51468,14 @@ msgid ""
 "table holds 19.\" The sum of every roll in the landing adds up on the table. "
 "Everyone still seated stands to win what the table holds."
 msgstr ""
-"寄港のはじめは、全員が席にいて、テーブルは空です。Space "
-"で振ってもらいます。ディーラーが二つの目とその合計を「4と3で7。テーブルは19。」のように伝えます。寄港中に出た目の合計が、すべてテーブルに積み上がり"
-"ます。席に残っている全員が、テーブルの分を手にするチャンスがあります。"
+"寄港のはじめは、全員が席にいて、テーブルは空です。Spaceで振ってもらいます。ディーラーが二つの目とその合計を「4と3で7。テーブルは19。」のように"
+"伝えます。寄港中に出た目の合計が、すべてテーブルに積み上がります。席に残っている全員が、テーブルの分を手にするチャンスがあります。"
 
 msgid "Each landing starts with everyone seated and the table empty."
 msgstr "寄港のはじめは、全員が席にいて、テーブルは空です。"
 
 msgid "Space calls a roll."
-msgstr "Space で振ってもらいます。"
+msgstr "Spaceで振ってもらいます。"
 
 msgid "The dealer calls the two dice and their sum, such as \"4 and 3, 7."
 msgstr "ディーラーが二つの目とその合計を「4と3で7。"
@@ -51514,9 +51498,9 @@ msgid ""
 "landing ends. Space or Tab while the dealer talks hurries him along. In "
 "your very first night, press Tab again to confirm your first bank."
 msgstr ""
-"振るたびに選びます。Space で残ってもう一回振ります。Tab "
-"でテーブルの合計をその夜の合計に確保し、その寄港の残りは席を外します。確保したあとは、寄港が終わるまでテーブルは自分抜きで振られます。ディーラーが話して"
-"いる間に Space か Tab を押すと、急がせられます。一番最初の夜では、初めての確保のときにもう一度 Tab を押して確かめます。"
+"振るたびに選びます。Spaceで残ってもう一回振ります。Tabでテーブルの合計をその夜の合計に確保し、その寄港の残りは席を外します。確保したあとは、寄港"
+"が終わるまでテーブルは自分抜きで振られます。ディーラーが話している間にSpaceかTabを押すと、急がせられます。一番最初の夜では、初めての確保のときに"
+"もう一度Tabを押して確かめます。"
 
 msgid "After each roll, you choose."
 msgstr "振るたびに選びます。"
@@ -51524,18 +51508,18 @@ msgstr "振るたびに選びます。"
 msgid ""
 "Tab banks the table total into your night total and leaves your seat for "
 "the rest of the landing."
-msgstr "Tab でテーブルの合計をその夜の合計に確保し、その寄港の残りは席を外します。"
+msgstr "Tabでテーブルの合計をその夜の合計に確保し、その寄港の残りは席を外します。"
 
 msgid ""
 "Once you have banked, the table rolls on without you until the landing ends."
 msgstr "確保したあとは、寄港が終わるまでテーブルは自分抜きで振られます。"
 
 msgid "Space or Tab while the dealer talks hurries him along."
-msgstr "ディーラーが話している間に Space か Tab を押すと、急がせられます。"
+msgstr "ディーラーが話している間にSpaceかTabを押すと、急がせられます。"
 
 msgid ""
 "In your very first night, press Tab again to confirm your first bank."
-msgstr "一番最初の夜では、初めての確保のときにもう一度 Tab を押して確かめます。"
+msgstr "一番最初の夜では、初めての確保のときにもう一度Tabを押して確かめます。"
 
 msgid "The 1"
 msgstr "1の目"
@@ -51548,8 +51532,8 @@ msgid ""
 "time."
 msgstr ""
 "どちらかのサイコロが1なら寄港は終わりです。ディーラーが「一が出ました。この寄港は終わりです。」と言います。席に残っていた全員はこの寄港の分は何ももらえ"
-"ませんが、前の寄港で確保した分は残ります。1が出る前に全員が確保した場合も、寄港は終わります。36通り中11通りで1が出ます。Up "
-"でいつでも確率を聞けます。"
+"ませんが、前の寄港で確保した分は残ります。1が出る前に全員が確保した場合も、寄港は終わります。36通り中11通りで1が出ます。Upでいつでも確率を聞けま"
+"す。"
 
 msgid "The dealer says \"A one."
 msgstr "ディーラーが「一が出ました。"
@@ -51566,7 +51550,7 @@ msgid "11 of 36 rolls have a 1."
 msgstr "36通り中11通りで1が出ます。"
 
 msgid "Up gives the odds at any time."
-msgstr "Up でいつでも確率を聞けます。"
+msgstr "Upでいつでも確率を聞けます。"
 
 msgid "The other passengers"
 msgstr "ほかの乗客"
@@ -51619,15 +51603,15 @@ msgid ""
 "they are seated, and their rule. Down reads every night total, highest "
 "first."
 msgstr ""
-"Left と Right で乗客を順番に、その夜の合計、席にいるかどうか、ルールと一緒に聞けます。Down で全員のその夜の合計を多い順に聞けます。"
+"LeftとRightで乗客を順番に、その夜の合計、席にいるかどうか、ルールと一緒に聞けます。Downで全員のその夜の合計を多い順に聞けます。"
 
 msgid ""
 "Left and Right name each passenger in turn, with their night total, whether "
 "they are seated, and their rule."
-msgstr "Left と Right で乗客を順番に、その夜の合計、席にいるかどうか、ルールと一緒に聞けます。"
+msgstr "LeftとRightで乗客を順番に、その夜の合計、席にいるかどうか、ルールと一緒に聞けます。"
 
 msgid "Down reads every night total, highest first."
-msgstr "Down で全員のその夜の合計を多い順に聞けます。"
+msgstr "Downで全員のその夜の合計を多い順に聞けます。"
 
 msgid ""
 "H says what a careful player would do now, and why. The careful player "
@@ -51636,13 +51620,12 @@ msgid ""
 "snag rule on, your night total counts as at risk too. On the last landing, "
 "the careful player stays in while banking would not put them in the lead."
 msgstr ""
-"H "
-"で、慎重な人なら今どうするか、そしてその理由を聞けます。慎重な人は、もう一回振る平均の得が、1で失う分より大きい間は残ります。慎重な人は、テーブルが19"
-"以上になったら確保します。ピンゾロのルールがあるときは、その夜の合計も危険にさらされていると考えます。最後の寄港では、慎重な人は確保してもトップに立てな"
-"い間は残ります。"
+"Hで、慎重な人なら今どうするか、そしてその理由を聞けます。慎重な人は、もう一回振る平均の得が、1で失う分より大きい間は残ります。慎重な人は、テーブルが1"
+"9以上になったら確保します。ピンゾロのルールがあるときは、その夜の合計も危険にさらされていると考えます。最後の寄港では、慎重な人は確保してもトップに立て"
+"ない間は残ります。"
 
 msgid "H says what a careful player would do now, and why."
-msgstr "H で、慎重な人なら今どうするか、そしてその理由を聞けます。"
+msgstr "Hで、慎重な人なら今どうするか、そしてその理由を聞けます。"
 
 msgid ""
 "The careful player stays in while one more roll is worth more on average "
@@ -51669,22 +51652,22 @@ msgid ""
 "who is still in. R repeats the last roll and what it did: who stood, or who "
 "lost what when a 1 came."
 msgstr ""
-"S で、寄港、テーブルの分、席にいるかどうかを、いつもこの順で聞けます。すぐにもう一度 S を押すと、その夜の合計とまだ残っている人を聞けます。R "
-"で直前の目と、その結果を繰り返します。誰が席を立ったか、1が出たときは誰が何を失ったかです。"
+"Sで、寄港、テーブルの分、席にいるかどうかを、いつもこの順で聞けます。すぐにもう一度Sを押すと、その夜の合計とまだ残っている人を聞けます。Rで直前の目と"
+"、その結果を繰り返します。誰が席を立ったか、1が出たときは誰が何を失ったかです。"
 
 msgid ""
 "S gives the landing, what the table holds and whether you are seated, "
 "always in that order."
-msgstr "S で、寄港、テーブルの分、席にいるかどうかを、いつもこの順で聞けます。"
+msgstr "Sで、寄港、テーブルの分、席にいるかどうかを、いつもこの順で聞けます。"
 
 msgid ""
 "Press S again straight away for your night total and who is still in."
-msgstr "すぐにもう一度 S を押すと、その夜の合計とまだ残っている人を聞けます。"
+msgstr "すぐにもう一度Sを押すと、その夜の合計とまだ残っている人を聞けます。"
 
 msgid ""
 "R repeats the last roll and what it did: who stood, or who lost what when a "
 "1 came."
-msgstr "R で直前の目と、その結果を繰り返します。誰が席を立ったか、1が出たときは誰が何を失ったかです。"
+msgstr "Rで直前の目と、その結果を繰り返します。誰が席を立ったか、1が出たときは誰が何を失ったかです。"
 
 msgid ""
 "Your score is your night total. Records keep your best night, how many "
@@ -51755,17 +51738,17 @@ msgid ""
 "Records show your best. Once the day is over, Play again on the results "
 "says Showboat Saturday is over and takes you back to the title."
 msgstr ""
-"Showboat Saturday：毎月第二土曜日に、プレイの次の Showboat Saturday "
-"の行が開きます。ほかの日は、その行はロック中のまま同じ場所にあり、いつ開くかを伝えます。同じ三人の乗客を相手にした5回の寄港のサロンの夜で、一つだけ違い"
-"があります。1を含まないゾロ目、2と2から6と6までが出ると、テーブルの分が二倍になります。ディーラーは「ショーボートのゾロ目。テーブルは24に倍増。」"
-"のようにゾロ目を伝えます。乗客のルールは変わりません。Up "
-"ではゾロ目も含めた確率を聞けて、慎重な人のヒントはテーブルが40になるまで残ります。専用のランキングで採点され、記録でベストがわかります。その日が過ぎる"
-"と、結果のもう一度プレイでは Showboat Saturday が終わったことを伝え、タイトルに戻ります。"
+"Showboat Saturday：毎月第二土曜日に、プレイの次のShowboat "
+"Saturdayの行が開きます。ほかの日は、その行はロック中のまま同じ場所にあり、いつ開くかを伝えます。同じ三人の乗客を相手にした5回の寄港のサロンの夜"
+"で、一つだけ違いがあります。1を含まないゾロ目、2と2から6と6までが出ると、テーブルの分が二倍になります。ディーラーは「ショーボートのゾロ目。テーブル"
+"は24に倍増。」のようにゾロ目を伝えます。乗客のルールは変わりません。Upではゾロ目も含めた確率を聞けて、慎重な人のヒントはテーブルが40になるまで残り"
+"ます。専用のランキングで採点され、記録でベストがわかります。その日が過ぎると、結果のもう一度プレイではShowboat "
+"Saturdayが終わったことを伝え、タイトルに戻ります。"
 
 msgid ""
 "Showboat Saturday: on the second Saturday of every month, the Showboat "
 "Saturday row after Play opens."
-msgstr "Showboat Saturday：毎月第二土曜日に、プレイの次の Showboat Saturday の行が開きます。"
+msgstr "Showboat Saturday：毎月第二土曜日に、プレイの次のShowboat Saturdayの行が開きます。"
 
 msgid ""
 "It is a saloon night of 5 landings against the same three passengers, with "
@@ -51784,7 +51767,7 @@ msgstr "テーブルは24に倍増。」のようにゾロ目を伝えます。�
 msgid ""
 "Up gives the odds with the doubles in, and the careful player's hint stays "
 "in until the table holds 40."
-msgstr "Up ではゾロ目も含めた確率を聞けて、慎重な人のヒントはテーブルが40になるまで残ります。"
+msgstr "Upではゾロ目も含めた確率を聞けて、慎重な人のヒントはテーブルが40になるまで残ります。"
 
 msgid "It is scored on a board of its own, and Records show your best."
 msgstr "専用のランキングで採点され、記録でベストがわかります。"
@@ -51792,7 +51775,7 @@ msgstr "専用のランキングで採点され、記録でベストがわかり
 msgid ""
 "Once the day is over, Play again on the results says Showboat Saturday is "
 "over and takes you back to the title."
-msgstr "その日が過ぎると、結果のもう一度プレイでは Showboat Saturday が終わったことを伝え、タイトルに戻ります。"
+msgstr "その日が過ぎると、結果のもう一度プレイではShowboat Saturdayが終わったことを伝え、タイトルに戻ります。"
 
 msgid "Space: stay in, and call the next roll."
 msgstr "Space：残って、次を振ってもらいます。"
@@ -51803,7 +51786,7 @@ msgstr "Tab：テーブルの分を確保し、その寄港の残りは席を立
 
 msgid ""
 "Left and Right: name each passenger, their night total and their rule."
-msgstr "Left と Right：乗客ごとに、その夜の合計とルールを聞きます。"
+msgstr "LeftとRight：乗客ごとに、その夜の合計とルールを聞きます。"
 
 msgid "Up: the odds."
 msgstr "Up：確率。"
@@ -51882,8 +51865,8 @@ msgid ""
 "Every player gets the same dice: a new table each day, a snag week each "
 "Monday and a Captain's table each month."
 msgstr ""
-"Up と Down でチャレンジを選び、Enter でブリーフィングを聞き、Escape "
-"で戻ります。全員に同じサイコロが出ます。毎日新しいテーブル、毎週月曜日にピンゾロ週、毎月船長のテーブルです。"
+"UpとDownでチャレンジを選び、Enterでブリーフィングを聞き、Escapeで戻ります。全員に同じサイコロが出ます。毎日新しいテーブル、毎週月曜日に"
+"ピンゾロ週、毎月船長のテーブルです。"
 
 msgid "Opening the Riverboat Dice challenge."
 msgstr "Riverboat Diceのチャレンジを開きます。"
@@ -51931,7 +51914,7 @@ msgid "Showboat Saturday"
 msgstr "Showboat Saturday"
 
 msgid "Showboat Saturday is over, so its table has closed."
-msgstr "Showboat Saturday は終わり、テーブルは閉まりました。"
+msgstr "Showboat Saturdayは終わり、テーブルは閉まりました。"
 
 msgid ""
 "High water. The spring river runs fast under the boat. The rules do not "
@@ -51940,7 +51923,7 @@ msgstr "増水。春の川が船の下を速く流れています。ルールは
 
 #. placeholders: {next_words}
 msgid "Showboat Saturday opens {next_words}."
-msgstr "Showboat Saturday は{next_words}に開きます。"
+msgstr "Showboat Saturdayは{next_words}に開きます。"
 
 #. placeholders: {every}, {next_words}
 msgid ""
@@ -52310,7 +52293,7 @@ msgstr "鈍いコツン：今はすることがありません。"
 
 msgid ""
 "Showboat chime: on Showboat Saturday, doubles double what the table holds."
-msgstr "ショーボートのチャイム：Showboat Saturday に、ゾロ目でテーブルの分が二倍になります。"
+msgstr "ショーボートのチャイム：Showboat Saturdayに、ゾロ目でテーブルの分が二倍になります。"
 
 msgid "Seats: Widow left, Gambler ahead, Captain right"
 msgstr "席：未亡人は左、ばくち打ちは正面、船長は右"
@@ -52351,7 +52334,7 @@ msgid ""
 "more, {rep} the last roll, {h} a hint. F1 helps, Escape pauses."
 msgstr ""
 "{sentence_start}で残って振り、{t}で確保します。{l}と{r}で各プレイヤー、{u}で確率、{d}でその夜の合計を聞けます。{s}で状"
-"況、二回押すと詳しく、{rep}で直前の目、{h}でヒント。F1 でヘルプ、Escape で一時停止です。"
+"況、二回押すと詳しく、{rep}で直前の目、{h}でヒント。F1でヘルプ、Escapeで一時停止です。"
 
 #. placeholders: {s}, {rep}, {h}
 #. one sentence of a longer line
@@ -52614,7 +52597,7 @@ msgstr "新しいサイコロで、新しいサロンの夜。"
 
 #. placeholders: {mine}
 msgid " {mine} is your first Showboat Saturday."
-msgstr "{mine}は初めての Showboat Saturday です。"
+msgstr "{mine}は初めてのShowboat Saturdayです。"
 
 #. placeholders: {mine}, {previous}
 msgid " {mine} is a new showboat best, beating {previous}."
@@ -52625,7 +52608,7 @@ msgid " Your showboat best is {best}."
 msgstr "ショーボートのベストは{best}です。"
 
 msgid "Another Showboat Saturday night, with new dice."
-msgstr "新しいサイコロで、もう一晩 Showboat Saturday。"
+msgstr "新しいサイコロで、もう一晩Showboat Saturday。"
 
 msgid "The same dice, straight away. Only your best result is kept."
 msgstr "同じサイコロですぐにもう一度。一番いい結果だけが残ります。"
@@ -52887,27 +52870,27 @@ msgstr "一歩ごとに、プランターと育っているものを「1列目�
 msgid ""
 "Every plant grows in its own planter, and S, H and L always say where "
 "things are."
-msgstr "どの植物も自分のプランターで育ち、S、H、L でいつでも場所がわかります。"
+msgstr "どの植物も自分のプランターで育ち、S、H、Lでいつでも場所がわかります。"
 
 msgid ""
 "Space opens the seed packet on an empty planter. Up and Down choose a seed. "
 "Enter plants it. Escape plants nothing. A new seed is already a little "
 "damp. Keep it watered and it sprouts after part of a day."
 msgstr ""
-"空のプランターで Space を押すと、種の袋が開きます。Up と Down で種を選びます。Enter で植えます。Escape "
-"で何も植えません。植えたばかりの種は、もう少し湿っています。水を切らさなければ、一日のうちに芽が出ます。"
+"空のプランターでSpaceを押すと、種の袋が開きます。UpとDownで種を選びます。Enterで植えます。Escapeで何も植えません。植えたばかりの種"
+"は、もう少し湿っています。水を切らさなければ、一日のうちに芽が出ます。"
 
 msgid "Space opens the seed packet on an empty planter."
-msgstr "空のプランターで Space を押すと、種の袋が開きます。"
+msgstr "空のプランターでSpaceを押すと、種の袋が開きます。"
 
 msgid "Up and Down choose a seed."
-msgstr "Up と Down で種を選びます。"
+msgstr "UpとDownで種を選びます。"
 
 msgid "Enter plants it."
-msgstr "Enter で植えます。"
+msgstr "Enterで植えます。"
 
 msgid "Escape plants nothing."
-msgstr "Escape で何も植えません。"
+msgstr "Escapeで何も植えません。"
 
 msgid "A new seed is already a little damp."
 msgstr "植えたばかりの種は、もう少し湿っています。"
@@ -53022,8 +53005,8 @@ msgid ""
 "many kinds you have. Enter on it lists the plain seed and each variety, and "
 "Enter plants one."
 msgstr ""
-"ある種の品種を見つけると、袋のその行で、何種類持っているかがわかります。その行で Enter を押すと、ふつうの種と各品種が一覧になり、Enter "
-"で一つ植えます。"
+"ある種の品種を見つけると、袋のその行で、何種類持っているかがわかります。その行でEnterを押すと、ふつうの種と各品種が一覧になり、Enterで一つ植え"
+"ます。"
 
 msgid ""
 "Once you have found varieties of a seed, its row in the packet says how "
@@ -53032,7 +53015,7 @@ msgstr "ある種の品種を見つけると、袋のその行で、何種類持
 
 msgid ""
 "Enter on it lists the plain seed and each variety, and Enter plants one."
-msgstr "その行で Enter を押すと、ふつうの種と各品種が一覧になり、Enter で一つ植えます。"
+msgstr "その行でEnterを押すと、ふつうの種と各品種が一覧になり、Enterで一つ植えます。"
 
 msgid "How plants grow"
 msgstr "植物の育ち方"
@@ -53042,10 +53025,10 @@ msgstr "植物は、種、芽、生育中、開花中、実った、の順に育
 
 msgid ""
 "Tab harvests a ripe plant. It goes back to blooming and ripens again later."
-msgstr "Tab で実った植物を収穫します。花の時期に戻り、あとでまた実ります。"
+msgstr "Tabで実った植物を収穫します。花の時期に戻り、あとでまた実ります。"
 
 msgid "Tab harvests a ripe plant."
-msgstr "Tab で実った植物を収穫します。"
+msgstr "Tabで実った植物を収穫します。"
 
 msgid "It goes back to blooming and ripens again later."
 msgstr "花の時期に戻り、あとでまた実ります。"
@@ -53077,7 +53060,7 @@ msgstr "植物に必要なもの"
 
 msgid ""
 "Thirst. The game names a thirsty plant and its planter. Space waters it."
-msgstr "水不足。水不足の植物とそのプランターを伝えます。Space で水をやります。"
+msgstr "水不足。水不足の植物とそのプランターを伝えます。Spaceで水をやります。"
 
 msgid "Thirst."
 msgstr "水不足。"
@@ -53086,7 +53069,7 @@ msgid "The game names a thirsty plant and its planter."
 msgstr "水不足の植物とそのプランターを伝えます。"
 
 msgid "Space waters it."
-msgstr "Space で水をやります。"
+msgstr "Spaceで水をやります。"
 
 msgid ""
 "Watering moist soil waterlogs it. The plant stops growing and drops out of "
@@ -53130,15 +53113,15 @@ msgid "Nothing is lost: water it and it lifts its leaves again."
 msgstr "何も失われません。水をやれば、また葉を持ち上げます。"
 
 msgid "Aphids stop a plant growing. Tab picks them off at its planter."
-msgstr "アブラムシがつくと植物は育ちません。そのプランターで Tab を押すと取り除きます。"
+msgstr "アブラムシがつくと植物は育ちません。そのプランターでTabを押すと取り除きます。"
 
 msgid "Tab picks them off at its planter."
-msgstr "そのプランターで Tab を押すと取り除きます。"
+msgstr "そのプランターでTabを押すと取り除きます。"
 
 msgid ""
 "Pruning. A plant in bloom sometimes gets leggy and grows slowly. Tab prunes "
 "it."
-msgstr "剪定。花が咲いている植物は、ときどき徒長して育ちが遅くなります。Tab で剪定します。"
+msgstr "剪定。花が咲いている植物は、ときどき徒長して育ちが遅くなります。Tabで剪定します。"
 
 msgid "Pruning."
 msgstr "剪定。"
@@ -53147,18 +53130,18 @@ msgid "A plant in bloom sometimes gets leggy and grows slowly."
 msgstr "花が咲いている植物は、ときどき徒長して育ちが遅くなります。"
 
 msgid "Tab prunes it."
-msgstr "Tab で剪定します。"
+msgstr "Tabで剪定します。"
 
 msgid ""
 "When something needs you, the game names it and its planter. H points you "
 "straight to it."
-msgstr "世話が必要なものがあると、その名前とプランターを伝えます。H でまっすぐそこへ案内します。"
+msgstr "世話が必要なものがあると、その名前とプランターを伝えます。Hでまっすぐそこへ案内します。"
 
 msgid "When something needs you, the game names it and its planter."
 msgstr "世話が必要なものがあると、その名前とプランターを伝えます。"
 
 msgid "H points you straight to it."
-msgstr "H でまっすぐそこへ案内します。"
+msgstr "Hでまっすぐそこへ案内します。"
 
 msgid "Harmony"
 msgstr "ハーモニー"
@@ -53175,9 +53158,9 @@ msgid ""
 "evening, while the jasmine is open."
 msgstr ""
 "種類の違う植物が同時に花を咲かせ、水が足りていると、ハーモニーになります。二種類なら二声、三種類なら三声のハーモニー、という具合です。水不足、水浸し、し"
-"おれた植物はハーモニーから抜けます。水不足やしおれた植物には水をやり、水浸しの土は乾くのを待ちましょう。状況の S "
-"で、どのパートが歌っているかがわかります。六種類が同時にそろうと合唱になり、それより大きな合唱になるたびに声の数を伝えます。袋の種が全部そろうと、全員の"
-"合唱です。10種類の種がすべてそろったとき、十声の合唱は夕方近く、ジャスミンが開いている間しかできません。"
+"おれた植物はハーモニーから抜けます。水不足やしおれた植物には水をやり、水浸しの土は乾くのを待ちましょう。状況のSで、どのパートが歌っているかがわかります"
+"。六種類が同時にそろうと合唱になり、それより大きな合唱になるたびに声の数を伝えます。袋の種が全部そろうと、全員の合唱です。10種類の種がすべてそろったと"
+"き、十声の合唱は夕方近く、ジャスミンが開いている間しかできません。"
 
 msgid ""
 "Different kinds of plant that are in bloom and well watered at the same "
@@ -53192,7 +53175,7 @@ msgid "Water thirsty or wilted plants, but let waterlogged soil drain."
 msgstr "水不足やしおれた植物には水をやり、水浸しの土は乾くのを待ちましょう。"
 
 msgid "S, for status, says which parts are singing."
-msgstr "状況の S で、どのパートが歌っているかがわかります。"
+msgstr "状況のSで、どのパートが歌っているかがわかります。"
 
 msgid ""
 "Six kinds in tune at once make a chorus, and each bigger chorus after that "
@@ -53327,12 +53310,12 @@ msgid ""
 "varieties, 540 in all, and a cross of two of your varieties can turn up "
 "ones you have not found."
 msgstr ""
-"特徴の組み合わせごとに、Copper Moon "
-"トマトのような名前があります。名前の最初の言葉は水と育ち方から、二つ目の言葉は楽器と二度実りから決まります。ふつうの種にはどちらもありません。どの種類に"
-"も54の品種があり、全部で540品種です。自分の品種どうしを交配すると、まだ見つけていない品種が出ることがあります。"
+"特徴の組み合わせごとに、Copper "
+"Moonトマトのような名前があります。名前の最初の言葉は水と育ち方から、二つ目の言葉は楽器と二度実りから決まります。ふつうの種にはどちらもありません。ど"
+"の種類にも54の品種があり、全部で540品種です。自分の品種どうしを交配すると、まだ見つけていない品種が出ることがあります。"
 
 msgid "Each mix of traits has its own name, such as Copper Moon tomato."
-msgstr "特徴の組み合わせごとに、Copper Moon トマトのような名前があります。"
+msgstr "特徴の組み合わせごとに、Copper Moonトマトのような名前があります。"
 
 msgid ""
 "The name's first word comes from thirst and pace, and its second from the "
@@ -53368,8 +53351,8 @@ msgid ""
 "you start your garden over. Challenge gardens grow plain seeds only, and "
 "nothing crosses there."
 msgstr ""
-"タイトルメニューの種の小屋では、見つけた品種のところに、見つけたすべての品種が並びます。一つ選んで Enter "
-"を押すと、そのパートを演奏します。菜園をやり直しても品種は残ります。チャレンジの菜園ではふつうの種しか育てられず、交配もしません。"
+"タイトルメニューの種の小屋では、見つけた品種のところに、見つけたすべての品種が並びます。一つ選んでEnterを押すと、そのパートを演奏します。菜園をやり"
+"直しても品種は残ります。チャレンジの菜園ではふつうの種しか育てられず、交配もしません。"
 
 msgid ""
 "The seed shed, on the title menu, lists every variety you have found under "
@@ -53377,7 +53360,7 @@ msgid ""
 msgstr "タイトルメニューの種の小屋では、見つけた品種のところに、見つけたすべての品種が並びます。"
 
 msgid "Enter on one plays its part."
-msgstr "一つ選んで Enter を押すと、そのパートを演奏します。"
+msgstr "一つ選んでEnterを押すと、そのパートを演奏します。"
 
 msgid "Varieties are kept even if you start your garden over."
 msgstr "菜園をやり直しても品種は残ります。"
@@ -53441,16 +53424,16 @@ msgstr "ストリングライト、星85個：毎晩ライトがともり、朝�
 msgid ""
 "Cold frame, at 110 stars: C sets it over the planter you stand at. The soil "
 "under it never dries out. C on another planter moves it."
-msgstr "フレーム温床、星110個：C で今立っているプランターの上に置きます。その下の土は乾きません。別のプランターで C を押すと移します。"
+msgstr "フレーム温床、星110個：Cで今立っているプランターの上に置きます。その下の土は乾きません。別のプランターでCを押すと移します。"
 
 msgid "Cold frame, at 110 stars: C sets it over the planter you stand at."
-msgstr "フレーム温床、星110個：C で今立っているプランターの上に置きます。"
+msgstr "フレーム温床、星110個：Cで今立っているプランターの上に置きます。"
 
 msgid "The soil under it never dries out."
 msgstr "その下の土は乾きません。"
 
 msgid "C on another planter moves it."
-msgstr "別のプランターで C を押すと移します。"
+msgstr "別のプランターでCを押すと移します。"
 
 msgid ""
 "Swap board, at 140 stars: neighbours can ask for up to 3 things at once, "
@@ -53462,18 +53445,18 @@ msgid ""
 "or ripe to select it. Press P on a different variety in bloom or ripe to "
 "cross the two by hand and try for seeds you have not found."
 msgstr ""
-"植え替え台、星180個：菜園の一日に一回、花が咲いているか実った植物で P を押して選びます。花が咲いているか実った別の品種で P "
-"を押すと、二つを手で交配して、まだ見つけていない種を狙えます。"
+"植え替え台、星180個：菜園の一日に一回、花が咲いているか実った植物でPを押して選びます。花が咲いているか実った別の品種でPを押すと、二つを手で交配して"
+"、まだ見つけていない種を狙えます。"
 
 msgid ""
 "Potting bench, at 180 stars: once a garden day, press P on a plant in bloom "
 "or ripe to select it."
-msgstr "植え替え台、星180個：菜園の一日に一回、花が咲いているか実った植物で P を押して選びます。"
+msgstr "植え替え台、星180個：菜園の一日に一回、花が咲いているか実った植物でPを押して選びます。"
 
 msgid ""
 "Press P on a different variety in bloom or ripe to cross the two by hand "
 "and try for seeds you have not found."
-msgstr "花が咲いているか実った別の品種で P を押すと、二つを手で交配して、まだ見つけていない種を狙えます。"
+msgstr "花が咲いているか実った別の品種でPを押すと、二つを手で交配して、まだ見つけていない種を狙えます。"
 
 msgid ""
 "Keepsakes, in the seed shed, lists them all and the stars still needed. "
@@ -53497,18 +53480,17 @@ msgid ""
 "neighbour thanks you: you earn a star, and now and then they leave you "
 "seeds of a variety you have not found."
 msgstr ""
-"建物の住人が、「Rosa "
-"さんが丈夫な株のインゲン豆を欲しがっています。」のように、菜園のものを頼んできます。新しい頼みごとは菜園の日が変わると届き、一度に2つまで、交換掲示板が"
-"あれば3つまでです。合う植物を収穫するとご近所さんがお礼を言い、星が一つもらえます。ときどき、まだ見つけていない品種の種も置いていってくれます。"
+"建物の住人が、「Rosaさんが丈夫な株のインゲン豆を欲しがっています。」のように、菜園のものを頼んできます。新しい頼みごとは菜園の日が変わると届き、一度"
+"に2つまで、交換掲示板があれば3つまでです。合う植物を収穫するとご近所さんがお礼を言い、星が一つもらえます。ときどき、まだ見つけていない品種の種も置いて"
+"いってくれます。"
 
 msgid ""
 "People in your building ask for things from your garden, for example \"Rosa "
 "wants beans from a hardy plant.\" New requests come with new garden days, up "
 "to 2 at a time, or 3 with the swap board."
 msgstr ""
-"建物の住人が、「Rosa "
-"さんが丈夫な株のインゲン豆を欲しがっています。」のように、菜園のものを頼んできます。新しい頼みごとは菜園の日が変わると届き、一度に2つまで、交換掲示板が"
-"あれば3つまでです。"
+"建物の住人が、「Rosaさんが丈夫な株のインゲン豆を欲しがっています。」のように、菜園のものを頼んできます。新しい頼みごとは菜園の日が変わると届き、一度"
+"に2つまで、交換掲示板があれば3つまでです。"
 
 msgid ""
 "Harvest a plant that fits and the neighbour thanks you: you earn a star, "
@@ -53518,13 +53500,13 @@ msgstr "合う植物を収穫するとご近所さんがお礼を言い、星が
 msgid ""
 "N, in the garden, reads the open requests. S, pressed twice, says how many "
 "there are. Requests, in the seed shed, reads them too."
-msgstr "菜園で N を押すと、受けている頼みごとを読みます。S を二回押すと、いくつあるかがわかります。種の小屋の頼みごとでも読めます。"
+msgstr "菜園でNを押すと、受けている頼みごとを読みます。Sを二回押すと、いくつあるかがわかります。種の小屋の頼みごとでも読めます。"
 
 msgid "N, in the garden, reads the open requests."
-msgstr "菜園で N を押すと、受けている頼みごとを読みます。"
+msgstr "菜園でNを押すと、受けている頼みごとを読みます。"
 
 msgid "S, pressed twice, says how many there are."
-msgstr "S を二回押すと、いくつあるかがわかります。"
+msgstr "Sを二回押すと、いくつあるかがわかります。"
 
 msgid "Requests, in the seed shed, reads them too."
 msgstr "種の小屋の頼みごとでも読めます。"
@@ -53653,7 +53635,7 @@ msgstr ""
 "カボチャの種：九月22日から感謝祭まで、種の袋のほかの種のあとにハロウィンカボチャが入ります。ハロウィンカボチャはカボチャとまったく同じように育ち、歌で"
 "もカボチャのパートを受け持ちますが、低いファゴットで歌います。ハーモニーではカボチャのパートとして数えます。植えたハロウィンカボチャは季節が終わってもそ"
 "のままですが、終わると袋からハロウィンカボチャの種はなくなります。終わったときに菜園を開いていても同じです。種の袋にハロウィンカボチャの種があるときは、"
-"S で伝えます。"
+"Sで伝えます。"
 
 msgid ""
 "Pumpkin seeds: from 22 September to Thanksgiving, the seed packet has a "
@@ -53676,14 +53658,14 @@ msgstr ""
 "植えたハロウィンカボチャは季節が終わってもそのままですが、終わると袋からハロウィンカボチャの種はなくなります。終わったときに菜園を開いていても同じです。"
 
 msgid "S says when pumpkin seeds are in the packet."
-msgstr "種の袋にハロウィンカボチャの種があるときは、S で伝えます。"
+msgstr "種の袋にハロウィンカボチャの種があるときは、Sで伝えます。"
 
 msgid ""
 "Sunday bells: on the first Sunday of every month, each garden evening the "
 "church down the street rings its bells for evensong, in place of the "
 "evening tune. The first time they are named, and S mentions them."
 msgstr ""
-"日曜の鐘：毎月第一日曜日、菜園の夕方ごとに、通りの先の教会が、夕方の曲の代わりに晩祷の鐘を鳴らします。初めてのときはその名前を伝え、S でも触れます。"
+"日曜の鐘：毎月第一日曜日、菜園の夕方ごとに、通りの先の教会が、夕方の曲の代わりに晩祷の鐘を鳴らします。初めてのときはその名前を伝え、Sでも触れます。"
 
 msgid ""
 "Sunday bells: on the first Sunday of every month, each garden evening the "
@@ -53692,7 +53674,7 @@ msgid ""
 msgstr "日曜の鐘：毎月第一日曜日、菜園の夕方ごとに、通りの先の教会が、夕方の曲の代わりに晩祷の鐘を鳴らします。"
 
 msgid "The first time they are named, and S mentions them."
-msgstr "初めてのときはその名前を伝え、S でも触れます。"
+msgstr "初めてのときはその名前を伝え、Sでも触れます。"
 
 msgid "Sound check plays the pumpkin's part and the Sunday bells."
 msgstr "サウンドテストで、ハロウィンカボチャのパートと日曜の鐘を鳴らせます。"
@@ -53757,7 +53739,7 @@ msgid ""
 "far more aphids. Green thumb: faster growing, and a little more thirst."
 msgstr ""
 "変化は四つあります。猛暑：土がずっと早く乾き、雨が降りません。霧雨の日々：毎日にわか雨がありますが、育ちが遅くなります。アブラムシの季節：アブラムシがず"
-"っと多くなります。園芸名人：育ちが早くなり、水が少し多く要ります。"
+"っと多くなります。園芸の達人：育ちが早くなり、水が少し多く要ります。"
 
 msgid "There are four twists."
 msgstr "変化は四つあります。"
@@ -53772,7 +53754,7 @@ msgid "Aphid season: far more aphids."
 msgstr "アブラムシの季節：アブラムシがずっと多くなります。"
 
 msgid "Green thumb: faster growing, and a little more thirst."
-msgstr "園芸名人：育ちが早くなり、水が少し多く要ります。"
+msgstr "園芸の達人：育ちが早くなり、水が少し多く要ります。"
 
 msgid ""
 "When the goal is met, the garden celebrates and the challenge ends. If the "
@@ -53786,8 +53768,8 @@ msgid ""
 msgstr ""
 "目標を達成すると、菜園がお祝いしてチャレンジは終わります。先に日数が尽きると、菜園はその季節を終えますが、スコアは記録されます。スコア：収穫ごとに5点、"
 "取った虫ごとに2点、一番大きなハーモニーのパートごとに5点、目標達成で100点、さらに残った日ごとに10点。自己ベストと連続記録は、最後とチャレンジのメ"
-"ニューで聞けます。結果のあと、短いメニューに、このチャレンジをもう一度、結果をもう一度聞く、チャレンジに戻るがあります。Escape "
-"はチャレンジに戻ると同じです。"
+"ニューで聞けます。結果のあと、短いメニューに、このチャレンジをもう一度、結果をもう一度聞く、チャレンジに戻るがあります。Escapeはチャレンジに戻ると"
+"同じです。"
 
 msgid "When the goal is met, the garden celebrates and the challenge ends."
 msgstr "目標を達成すると、菜園がお祝いしてチャレンジは終わります。"
@@ -53813,7 +53795,7 @@ msgid ""
 msgstr "結果のあと、短いメニューに、このチャレンジをもう一度、結果をもう一度聞く、チャレンジに戻るがあります。"
 
 msgid "Escape does the same as Back to the challenges."
-msgstr "Escape はチャレンジに戻ると同じです。"
+msgstr "Escapeはチャレンジに戻ると同じです。"
 
 msgid ""
 "Sound check, on the title menu, plays the gameplay cues and each plant's "
@@ -53825,17 +53807,17 @@ msgid ""
 "change planter. Row 1 is the far row, ahead of you, and planter 1 is on the "
 "left."
 msgstr ""
-"矢印キー：プランターの間を移動します。Up と Down で列を変えます。Left と Right "
-"でプランターを変えます。1列目は一番奥、前方の列で、プランター1が左端です。"
+"矢印キー：プランターの間を移動します。UpとDownで列を変えます。LeftとRightでプランターを変えます。1列目は一番奥、前方の列で、プランター1"
+"が左端です。"
 
 msgid "Arrow keys: step between planters."
 msgstr "矢印キー：プランターの間を移動します。"
 
 msgid "Up and Down change row."
-msgstr "Up と Down で列を変えます。"
+msgstr "UpとDownで列を変えます。"
 
 msgid "Left and Right change planter."
-msgstr "Left と Right でプランターを変えます。"
+msgstr "LeftとRightでプランターを変えます。"
 
 msgid "Row 1 is the far row, ahead of you, and planter 1 is on the left."
 msgstr "1列目は一番奥、前方の列で、プランター1が左端です。"
@@ -53845,7 +53827,7 @@ msgid ""
 "waterlogs it. On empty soil, Space opens your seed packet so you can plant "
 "something."
 msgstr ""
-"Space：足もとの植物に水をやります。もう湿っている土に水をやると水浸しになります。空の土では、Space で種の袋が開き、何か植えられます。"
+"Space：足もとの植物に水をやります。もう湿っている土に水をやると水浸しになります。空の土では、Spaceで種の袋が開き、何か植えられます。"
 
 msgid "Space: water the plant under you."
 msgstr "Space：足もとの植物に水をやります。"
@@ -53855,7 +53837,7 @@ msgstr "もう湿っている土に水をやると水浸しになります。"
 
 msgid ""
 "On empty soil, Space opens your seed packet so you can plant something."
-msgstr "空の土では、Space で種の袋が開き、何か植えられます。"
+msgstr "空の土では、Spaceで種の袋が開き、何か植えられます。"
 
 msgid ""
 "Tab: tend the plant under you. It picks off aphids first, then harvests a "
@@ -53873,12 +53855,12 @@ msgstr "まずアブラムシを取り、次に実った植物を収穫し、次
 msgid ""
 "Delete or Backspace: pull the plant up and add it to the compost, to make "
 "room for something else. You are asked first."
-msgstr "Delete か Backspace：植物を引き抜いて堆肥に入れ、ほかのものを植える場所を空けます。先に確認があります。"
+msgstr "DeleteかBackspace：植物を引き抜いて堆肥に入れ、ほかのものを植える場所を空けます。先に確認があります。"
 
 msgid ""
 "Delete or Backspace: pull the plant up and add it to the compost, to make "
 "room for something else."
-msgstr "Delete か Backspace：植物を引き抜いて堆肥に入れ、ほかのものを植える場所を空けます。"
+msgstr "DeleteかBackspace：植物を引き抜いて堆肥に入れ、ほかのものを植える場所を空けます。"
 
 msgid ""
 "Enter: sit on the bench, or get up again. While you sit, time passes 6 "
@@ -54420,7 +54402,7 @@ msgid ""
 msgstr "自分の菜園で、毎月第一日曜日の夕方。通りの先の教会で晩祷の鐘が鳴ります。一日がもうすぐ終わります。"
 
 msgid "Sunday bells"
-msgstr "日曜日の鐘"
+msgstr "日曜の鐘"
 
 msgid "A kalimba arpeggio."
 msgstr "カリンバのアルペジオ。"
@@ -54492,7 +54474,7 @@ msgid "Jasmine's part"
 msgstr "ジャスミンのパート"
 
 msgid "Pumpkin seeds"
-msgstr "西洋カボチャの種"
+msgstr "カボチャの種"
 
 msgid ""
 "Until Thanksgiving, plant a pumpkin in your own garden: it grows like a "
@@ -59693,7 +59675,7 @@ msgid ""
 msgstr ""
 "祝日によっては、午後の終わりに特別なお客さんが来て、その日だけ棚に特別なお茶が並びます。旧正月にはMeiがみかんの烏龍茶を求めて来ます。バレンタインデー"
 "には老夫婦が来て、二人分のバラのお茶を一つのポットから二つのカップに。春分には桜のお茶、夏至には短く蒸らして氷に注ぐアイスミントティー、秋分には麦茶。ハ"
-"ロウィーンにはマントの見知らぬ人がスモーキーなラプサンを頼み、Lantern Jackのいつものやり方で支払います。感謝祭にはスパイスアップル。"
+"ロウィンにはマントの見知らぬ人がスモーキーなラプサンを頼み、Lantern Jackのいつものやり方で支払います。感謝祭にはスパイスアップル。"
 
 msgid ""
 "On certain holidays a special guest comes in at the end of the afternoon, "
@@ -59716,7 +59698,7 @@ msgstr "春分には桜のお茶、夏至には短く蒸らして氷に注ぐア
 msgid ""
 "On Halloween a cloaked stranger asks for a smoky lapsang, and pays the way "
 "Lantern Jack always pays."
-msgstr "ハロウィーンにはマントの見知らぬ人がスモーキーなラプサンを頼み、Lantern Jackのいつものやり方で支払います。"
+msgstr "ハロウィンにはマントの見知らぬ人がスモーキーなラプサンを頼み、Lantern Jackのいつものやり方で支払います。"
 
 msgid "Thanksgiving brings spiced apple."
 msgstr "感謝祭にはスパイスアップル。"
@@ -60015,7 +59997,7 @@ msgid "Equinox barley"
 msgstr "彼岸の麦茶"
 
 msgid "Halloween night"
-msgstr "ハロウィーンの夜"
+msgstr "ハロウィンの夜"
 
 msgid "Thanksgiving apple tea"
 msgstr "感謝祭のアップルティー"
@@ -60090,7 +60072,7 @@ msgstr "谷の農家が麦を取り入れてるよ。彼岸も近いね。"
 msgid ""
 "The lanes are full of carved pumpkins. They say a cloaked stranger takes "
 "tea somewhere in town on Halloween."
-msgstr "路地は彫ったカボチャでいっぱい。ハロウィーンには、マントの見知らぬ人が町のどこかでお茶を飲むんだって。"
+msgstr "路地は彫ったカボチャでいっぱい。ハロウィンには、マントの見知らぬ人が町のどこかでお茶を飲むんだって。"
 
 msgid ""
 "My neighbour is baking pies already, for Thanksgiving. The whole stairwell "
@@ -62871,7 +62853,7 @@ msgid ""
 msgstr ""
 "Snowfall "
 "Skateは十一月27日から冬の間、二月の終わりまで季節のゲームに並び、さらに二週間、三月14日まで残ります。その間にスケートか練習を始めれば、途中でや"
-"めてもゲームはずっと手元に残り、冬の後はほのぼのに移ります。それより前のプレイも数えられ、星で後の池も解放されます。Frost "
+"めてもゲームはずっと手元に残り、冬の後はほのぼのゲームに移ります。それより前のプレイも数えられ、星で後の池も解放されます。Frost "
 "Fairは次の冬にまた戻ってきます。"
 
 msgid ""
@@ -62883,7 +62865,7 @@ msgstr "Snowfall Skateは十一月27日から冬の間、二月の終わりま�
 msgid ""
 "Start a skate or a practice in that time and the game is yours to keep, "
 "even if you leave early: after the winter it stays in the Cozy games."
-msgstr "その間にスケートか練習を始めれば、途中でやめてもゲームはずっと手元に残り、冬の後はほのぼのに移ります。"
+msgstr "その間にスケートか練習を始めれば、途中でやめてもゲームはずっと手元に残り、冬の後はほのぼのゲームに移ります。"
 
 msgid "Earlier play counts too, and stars still open later ponds."
 msgstr "それより前のプレイも数えられ、星で後の池も解放されます。"
@@ -63100,7 +63082,7 @@ msgstr "雪の降る夜、凍った池を滑り、灯るランタンを手に入
 msgid ""
 "Snowfall Skate is yours to keep. After the winter, it moves to the Cozy "
 "games."
-msgstr "Snowfall Skateはずっと手元に残ります。冬の後は、ほのぼのに移ります。"
+msgstr "Snowfall Skateはずっと手元に残ります。冬の後は、ほのぼのゲームに移ります。"
 
 msgid ""
 "A winter special. Skate a frozen pond at night, taking lanterns as they "
@@ -64853,7 +64835,7 @@ msgid "Today's landing"
 msgstr "今日の着陸"
 
 msgid "The weekly survey"
-msgstr "週の調査"
+msgstr "ウィークリーの調査"
 
 msgid "The deep moon"
 msgstr "深い月"
@@ -66329,7 +66311,7 @@ msgstr ""
 msgid ""
 "Weekly, Long haul: up to 3 dives from dive 3, with no hull repairs between "
 "them, and a twist of its own."
-msgstr "ウィークリー、長距離の潜水：潜水3から最大3回。間に船体の修理はなく、独自の変化があります。"
+msgstr "ウィークリー、長丁場：潜水3から最大3回。間に船体の修理はなく、独自の変化があります。"
 
 msgid ""
 "Monthly, The sunken galleon: on each dive, a galleon holding 1000 coins "
@@ -68782,7 +68764,7 @@ msgid "{sentence_start}, in {name}"
 msgstr "{sentence_start}、{name}"
 
 msgid "the main action"
-msgstr ""
+msgstr "メインの操作"
 
 #. placeholders: {name}, {cname}
 msgid "{name}, in {cname}, the star you are looking for."
@@ -71666,9 +71648,9 @@ msgid ""
 "In hushed, only the pool in front of you plays."
 msgstr ""
 "デイリー：今夜の三種。Rocky "
-"Pointへの短い夕暮れの磯遊びで、見つける三種はそれぞれ100点加算、変化が一つあります。変化は、静かな水、にぎやかな海岸、早い潮、静寂のどれかです。"
-"静かな水では、臆病な生き物が二倍の速さで出てきます。にぎやかな海岸では、どの潮だまりにも何かいます。早い潮では回が短く、見つけたものがすべて二倍の点にな"
-"ります。静寂では、目の前の潮だまりだけが聞こえます。"
+"Pointへの短い夕暮れの磯遊びで、見つける三種はそれぞれ100点加算、変化が一つあります。変化は、静かな水面、にぎやかな浜、速い潮、静けさのどれかです"
+"。静かな水面では、臆病な生き物が二倍の速さで出てきます。にぎやかな浜では、どの潮だまりにも何かいます。速い潮では回が短く、見つけたものがすべて二倍の点に"
+"なります。静けさでは、目の前の潮だまりだけが聞こえます。"
 
 msgid "Daily: tonight's three species."
 msgstr "デイリー：今夜の三種。"
@@ -71679,19 +71661,19 @@ msgid ""
 msgstr "Rocky Pointへの短い夕暮れの磯遊びで、見つける三種はそれぞれ100点加算、変化が一つあります。"
 
 msgid "The twist is still water, a busy shore, a quick tide, or hushed."
-msgstr "変化は、静かな水、にぎやかな海岸、早い潮、静寂のどれかです。"
+msgstr "変化は、静かな水面、にぎやかな浜、速い潮、静けさのどれかです。"
 
 msgid "In still water, shy creatures come out twice as fast."
-msgstr "静かな水では、臆病な生き物が二倍の速さで出てきます。"
+msgstr "静かな水面では、臆病な生き物が二倍の速さで出てきます。"
 
 msgid "On a busy shore, every pool holds something."
-msgstr "にぎやかな海岸では、どの潮だまりにも何かいます。"
+msgstr "にぎやかな浜では、どの潮だまりにも何かいます。"
 
 msgid "A quick tide is a shorter trip where every find is worth double."
-msgstr "早い潮では回が短く、見つけたものがすべて二倍の点になります。"
+msgstr "速い潮では回が短く、見つけたものがすべて二倍の点になります。"
 
 msgid "In hushed, only the pool in front of you plays."
-msgstr "静寂では、目の前の潮だまりだけが聞こえます。"
+msgstr "静けさでは、目の前の潮だまりだけが聞こえます。"
 
 msgid ""
 "Weekly: this week's rare find. A long trip on the Far Reef, where one rare "
@@ -71737,15 +71719,15 @@ msgid ""
 "Play again, the game says it has ended and you go back to the title. The "
 "ordinary shores and the challenges never change."
 msgstr ""
-"浜がいつもと違う日もあります。イベントごとにタイトルメニューのPlayのすぐ下に専用の行があります。開いていない間は、ロックされていることと開く時期を伝"
-"えます。これまでに開いたいちばん遠い浜へ行き、専用のベストスコアを記録します。もう一度Playを選んだときにイベントが終わっていれば、終わったことを伝え"
-"てタイトルに戻ります。いつもの浜とチャレンジは変わりません。"
+"浜がいつもと違う日もあります。イベントごとにタイトルメニューの「プレイ」のすぐ下に専用の行があります。開いていない間は、ロックされていることと開く時期を"
+"伝えます。これまでに開いたいちばん遠い浜へ行き、専用のベストスコアを記録します。「もう一度プレイ」を選んだときにイベントが終わっていれば、終わったことを"
+"伝えてタイトルに戻ります。いつもの浜とチャレンジは変わりません。"
 
 msgid "Some days the shore is different."
 msgstr "浜がいつもと違う日もあります。"
 
 msgid "Each event has a row of its own on the title menu, just below Play."
-msgstr "イベントごとにタイトルメニューのPlayのすぐ下に専用の行があります。"
+msgstr "イベントごとにタイトルメニューの「プレイ」のすぐ下に専用の行があります。"
 
 msgid "While it is closed, the row says locked and when it opens."
 msgstr "開いていない間は、ロックされていることと開く時期を伝えます。"
@@ -71758,7 +71740,7 @@ msgstr "これまでに開いたいちばん遠い浜へ行き、専用のベス
 msgid ""
 "If the event has ended by the time you choose Play again, the game says it "
 "has ended and you go back to the title."
-msgstr "もう一度Playを選んだときにイベントが終わっていれば、終わったことを伝えてタイトルに戻ります。"
+msgstr "「もう一度プレイ」を選んだときにイベントが終わっていれば、終わったことを伝えてタイトルに戻ります。"
 
 msgid "The ordinary shores and the challenges never change."
 msgstr "いつもの浜とチャレンジは変わりません。"
@@ -73024,7 +73006,7 @@ msgid "The {name} hunt"
 msgstr "{name}探し"
 
 msgid "Still water: shy creatures come back out twice as fast."
-msgstr "静かな水：恥ずかしがりの生き物が倍の速さで出てきます。"
+msgstr "静かな水面：恥ずかしがりの生き物が倍の速さで出てきます。"
 
 msgid "A busy shore: every pool holds at least one creature."
 msgstr "にぎやかな浜：どの潮だまりにも生き物が少なくとも一匹います。"
@@ -73631,7 +73613,7 @@ msgstr "タイトルの記録で、チャレンジの結果と一緒にすべて
 msgid ""
 "Play, skyline run: all 10 crossings with 3 lives, from the bakery to the "
 "Skyline Spire."
-msgstr "Play、スカイライン走破：ライフ3で全10コース。パン屋からSkyline Spireまで。"
+msgstr "プレイ、スカイライン走破：ライフ3で全10コース。パン屋からSkyline Spireまで。"
 
 msgid ""
 "Night skyline: locked until you finish all 10 crossings. The same wires, "
@@ -73694,9 +73676,9 @@ msgid ""
 "win, Next crossing comes first. After a challenge, the last row is Back to "
 "the challenges. Escape does the same as the last row."
 msgstr ""
-"プレイが終わると、どうだったかと、出した記録を伝えます。そのあと結果メニューに、もう一度プレイ、落ちて終わったときはやり直し、結果をもう一度聞く、タイト"
-"ルに戻る、が出ます。一つのコースを渡りきったときは、次のコースがいちばん上に来ます。チャレンジのあとは、最後の行がチャレンジに戻るになります。Escap"
-"eは最後の行と同じです。"
+"プレイが終わると、どうだったかと、出した記録を伝えます。そのあと結果メニューに、もう一度プレイ、落ちて終わったときはもう一度挑戦、結果をもう一度聞く、タ"
+"イトルに戻る、が出ます。一つのコースを渡りきったときは、次のコースがいちばん上に来ます。チャレンジのあとは、最後の行がチャレンジに戻るになります。Esc"
+"apeは最後の行と同じです。"
 
 msgid "When a run ends the game reads how it went and what records it set."
 msgstr "プレイが終わると、どうだったかと、出した記録を伝えます。"
@@ -73704,7 +73686,7 @@ msgstr "プレイが終わると、どうだったかと、出した記録を伝
 msgid ""
 "Then the results menu offers Play again, or Try again after a fall ends the "
 "run, Hear the results again, and Back to the title."
-msgstr "そのあと結果メニューに、もう一度プレイ、落ちて終わったときはやり直し、結果をもう一度聞く、タイトルに戻る、が出ます。"
+msgstr "そのあと結果メニューに、もう一度プレイ、落ちて終わったときはもう一度挑戦、結果をもう一度聞く、タイトルに戻る、が出ます。"
 
 msgid "After a single crossing you win, Next crossing comes first."
 msgstr "一つのコースを渡りきったときは、次のコースがいちばん上に来ます。"
@@ -75762,18 +75744,18 @@ msgid ""
 "the results again reads them once more, and Back to the title goes back. "
 "Escape on the results menu does the same as Back to the title."
 msgstr ""
-"タイトルのプレゼント仕分け、願いのデスク、真夜中のカウントダウンの行では、選んだシフト、束、夜のベストを伝え、Play、ストーリーモードではストーリーの"
-"ベストスコアを伝えます。記録では、ストーリー、吹雪のストーリー、プレゼント仕分け、願いのデスクと各束、ごちゃまぜ郵便、真夜中のカウントダウンと各夜のベス"
-"ト、開いている数、チャレンジの結果をすべて聞けます。プレイが終わると結果を伝え、結果メニューが出ます。次の束や次の夜で次を遊びます。もう一度プレイややり"
-"直しで同じプレイを遊びます。結果をもう一度聞くでもう一度聞け、タイトルに戻るで戻ります。結果メニューでEscapeを押すと、タイトルに戻ると同じです。"
+"タイトルのプレゼント仕分け、願いのデスク、真夜中のカウントダウンの行では、選んだシフト、束、夜のベストを伝え、プレイのストーリーモードではストーリーのベ"
+"ストスコアを伝えます。記録では、ストーリー、吹雪のストーリー、プレゼント仕分け、願いのデスクと各束、ごちゃまぜ郵便、真夜中のカウントダウンと各夜のベスト"
+"、開いている数、チャレンジの結果をすべて聞けます。プレイが終わると結果を伝え、結果メニューが出ます。次の束や次の夜で次を遊びます。もう一度プレイやもう一"
+"度挑戦で同じプレイを遊びます。結果をもう一度聞くでもう一度聞け、タイトルに戻るで戻ります。結果メニューでEscapeを押すと、タイトルに戻ると同じです。"
 
 msgid ""
 "The Gift Sort, Wish Desk and Midnight Countdown rows on the title name your "
 "best for the chosen shift, stack or night, and Play, story mode names your "
 "best story score."
 msgstr ""
-"タイトルのプレゼント仕分け、願いのデスク、真夜中のカウントダウンの行では、選んだシフト、束、夜のベストを伝え、Play、ストーリーモードではストーリーの"
-"ベストスコアを伝えます。"
+"タイトルのプレゼント仕分け、願いのデスク、真夜中のカウントダウンの行では、選んだシフト、束、夜のベストを伝え、プレイのストーリーモードではストーリーのベ"
+"ストスコアを伝えます。"
 
 msgid ""
 "Records reads every best: the story, the blizzard story, Gift Sort, the "
@@ -75790,7 +75772,7 @@ msgid "Next stack or Next night plays the next one."
 msgstr "次の束や次の夜で次を遊びます。"
 
 msgid "Play again or Try again plays the same run."
-msgstr "もう一度プレイややり直しで同じプレイを遊びます。"
+msgstr "もう一度プレイやもう一度挑戦で同じプレイを遊びます。"
 
 msgid ""
 "Hear the results again reads them once more, and Back to the title goes "
@@ -75808,12 +75790,12 @@ msgid ""
 "Settings, and Back to the parlor. On your first visit the title starts on "
 "Tutorial."
 msgstr ""
-"タイトルには次の行があります。Play、ストーリーモード。吹雪のストーリー、ストーリーモードを終えるまでロック中。プレゼント仕分け、願いのデスク、真夜中"
-"のカウントダウン。LeftとRightでシフト、束、夜を選びます。ごちゃまぜ郵便。チャレンジ。リズム練習。チュートリアル、ヘルプ、サウンドテスト。記録、"
-"設定、遊戯館に戻る。初めて来たときは、タイトルはチュートリアルから始まります。"
+"タイトルには次の行があります。プレイ、ストーリーモード。吹雪のストーリー、ストーリーモードを終えるまでロック中。プレゼント仕分け、願いのデスク、真夜中の"
+"カウントダウン。LeftとRightでシフト、束、夜を選びます。ごちゃまぜ郵便。チャレンジ。リズム練習。チュートリアル、ヘルプ、サウンドテスト。記録、設"
+"定、遊戯館に戻る。初めて来たときは、タイトルはチュートリアルから始まります。"
 
 msgid "Play, story mode."
-msgstr "Play、ストーリーモード。"
+msgstr "プレイ、ストーリーモード。"
 
 msgid "Blizzard story, which says locked until you finish story mode."
 msgstr "吹雪のストーリー、ストーリーモードを終えるまでロック中。"
@@ -78403,13 +78385,13 @@ msgstr "プレゼントを振った音と合図をすべて鳴らします。"
 msgid ""
 "A daily run with a twist, the weekly holiday double and the monthly "
 "midwinter post, the same for every player."
-msgstr "変化のあるデイリー、毎週の休日のダブル、毎月の真冬の郵便。全員に同じです。"
+msgstr "変化のあるデイリー、ウィークリーの休日のダブル、マンスリーの真冬の郵便。全員に同じです。"
 
 #. placeholders: {resets}
 msgid ""
 "A daily run with a twist, the weekly holiday double and the monthly "
 "midwinter post, the same for every player. {resets}"
-msgstr "変化のあるデイリー、毎週の休日のダブル、毎月の真冬の郵便。全員に同じです。{resets}"
+msgstr "変化のあるデイリー、ウィークリーの休日のダブル、マンスリーの真冬の郵便。全員に同じです。{resets}"
 
 msgid ""
 "Up and Down choose, Left and Right choose the shift, stack or night, Enter "
@@ -78665,7 +78647,7 @@ msgid "Escape goes back"
 msgstr "Escapeで戻る"
 
 msgid "F1 is help"
-msgstr "F1 はヘルプです"
+msgstr "F1はヘルプです"
 
 msgid "F2 stops speech"
 msgstr "F2で音声を止める"
@@ -78952,7 +78934,7 @@ msgstr "コントローラー"
 #. placeholders: {title}
 msgid ""
 "{title} is available. To install it, choose Check for updates in Settings."
-msgstr "{title}が公開されています。インストールするには、設定でアップデートの確認を選びましょう。"
+msgstr "{title}が公開されています。インストールするには、設定で「アップデートを確認」を選びましょう。"
 
 #. placeholders: {name}
 msgid "{name} closed unexpectedly the last time it ran. Report the problem?"
@@ -79137,7 +79119,7 @@ msgstr "ショートカットキー"
 msgid ""
 "Up and Down pick a control, Enter then a key press moves it, Escape goes "
 "back."
-msgstr "上下で操作を選び、Enter の後にキーを押すと変わります。Escape で戻ります。"
+msgstr "UpとDownで操作を選び、Enterの後にキーを押すと変わります。Escapeで戻ります。"
 
 msgid "Controller buttons"
 msgstr "コントローラーのボタン"
@@ -79145,11 +79127,11 @@ msgstr "コントローラーのボタン"
 msgid ""
 "Up and Down pick a control, Enter then a button press moves it, Escape goes "
 "back."
-msgstr "上下で操作を選び、Enter の後にボタンを押すと変わります。Escape で戻ります。"
+msgstr "UpとDownで操作を選び、Enterの後にボタンを押すと変わります。Escapeで戻ります。"
 
 #. placeholders: {label}, {current}
 msgid "Press the new key for {label}. Escape keeps {current}."
-msgstr "{label}に使う新しいキーを押してください。Escape で{current}のままにします。"
+msgstr "{label}に使う新しいキーを押してください。Escapeで{current}のままにします。"
 
 #. placeholders: {label}, {current}
 msgid ""
@@ -79159,7 +79141,7 @@ msgstr "{label}の新しいボタンを押しましょう。二つ目の層は�
 
 #. placeholders: {current}
 msgid "Press another, or keep {current} with Escape."
-msgstr "別のものを押すか、Escape で{current}のままにしてください。"
+msgstr "別のものを押すか、Escapeで{current}のままにしてください。"
 
 #. placeholders: {current}
 msgid "Press another, or press {current} to keep it."
@@ -79189,12 +79171,12 @@ msgstr ""
 msgid ""
 "Enter, then press the key you want for this control. Escape keeps the one "
 "it has."
-msgstr "Enter を押してから、この操作に使いたいキーを押してください。Escape で今のキーのままにします。"
+msgstr "Enterを押してから、この操作に使いたいキーを押してください。Escapeで今のキーのままにします。"
 
 msgid ""
 "Enter, then press the button you want for this control, with the right "
 "bumper held for the second layer."
-msgstr "Enter を押してから、この操作に使いたいボタンを押してください。2段目は right bumper を押さえながら押します。"
+msgstr "Enterを押してから、この操作に使いたいボタンを押してください。2段目はright bumperを押さえながら押します。"
 
 msgid "Reset every keyboard shortcut"
 msgstr "キーボードのショートカットをすべてリセット"
@@ -79863,7 +79845,7 @@ msgstr "LeftとRightで、ゲームの話す速さを変えます。"
 
 #. placeholders: {speech_voice_value}
 msgid "Speech voice: {speech_voice_value}"
-msgstr "音声の声：{speech_voice_value}"
+msgstr "音声の種類：{speech_voice_value}"
 
 msgid ""
 "Automatic uses a running screen reader or an installed system voice when it "
@@ -80129,7 +80111,7 @@ msgid ""
 "Download and restart installs the update now. What's new reads the changes. "
 "Skip this version stops offering it."
 msgstr ""
-"ダウンロードして再起動で、今すぐアップデートをインストールします。新しい内容で変更点を聞けます。このバージョンをスキップで、もう案内しなくなります。"
+"ダウンロードして再起動で、今すぐアップデートをインストールします。「新機能」で変更点を聞けます。「このバージョンを飛ばす」で、もう案内しなくなります。"
 
 #. placeholders: {version}
 msgid "Skipped version {version}. Later versions are still offered."
@@ -80184,7 +80166,7 @@ msgstr "{n}行"
 msgid ""
 "What's new in {title}, {count}. Down and Up read a line, Enter reads them "
 "all, Escape goes back."
-msgstr "{title}の新しい内容、{count}。DownとUpで一行ずつ、Enterで全部読み、Escapeで戻ります。"
+msgstr "{title}の新機能、{count}。DownとUpで一行ずつ、Enterで全部読み、Escapeで戻ります。"
 
 #. placeholders: {title}
 msgid "What's new in {title}"
@@ -80301,7 +80283,7 @@ msgid "Downloading {title}"
 msgstr "{title}をダウンロード中"
 
 msgid "Escape cancels, Tab reads progress."
-msgstr "Escape で取り消し、Tab で進み具合を読み上げます。"
+msgstr "Escapeで取り消し、Tabで進み具合を読み上げます。"
 
 msgid ""
 "Tab reads how much has downloaded. Escape cancels and leaves the game as it "
