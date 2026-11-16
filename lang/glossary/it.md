@@ -14,10 +14,10 @@ English.
 | keeper | custode | How Mabel and Wicket address the player: "Ciao, custode." The same word for any gender. |
 | the lobby | l'ingresso | Masculine. |
 | the Long Hall | la Galleria Lunga | A place: capitals as shown. "nella Galleria Lunga". |
-| lamp | lanterna | Feminine. The light above a game's door. |
+| lamp | lanterna | Feminine. The light above a game's door. Never used for a lantern the player gathers. |
 | game | gioco | Masculine; plural "giochi". |
 | run | partita | Feminine. One play from start to results. |
-| practice | allenamento | "una partita di allenamento". |
+| practice | allenamento | "una partita di allenamento". A practice row or place is "X di allenamento": Sala di allenamento, Stagno di allenamento, Serata di allenamento, Infusioni di allenamento. "Practice done" is "Allenamento finito". Target practice is "Tiro al bersaglio". The sound check row stays "Prova suoni". |
 | tutorial | tutorial | Masculine. |
 | results | risultati | |
 | best, your best | record, il tuo record | "Nuovo record." |
@@ -51,7 +51,7 @@ English.
 | Quit, Exit | Esci | |
 | Resume | Riprendi | |
 | New game | Nuova partita | |
-| title, title menu | menu del titolo | A game's own first menu: "Torna al menu del titolo". |
+| title, title menu | menu del titolo | A game's own first menu: "Torna al menu del titolo". "On the title" is "nel menu del titolo", never just "nel titolo". |
 | briefing | presentazione | Feminine. What a game says before a special run: "Enter legge la presentazione". |
 | streak | serie | Feminine. "una serie di 3 giorni". |
 | hint | suggerimento | Masculine. What H gives. |
@@ -62,12 +62,13 @@ English.
 | pause menu | menu di pausa | |
 | Leave the challenge | Abbandona la sfida | Pause menu row. |
 | Back to the challenges | Torna alle sfide | Results row. |
-| the daily, the weekly, the monthly | la giornaliera, la settimanale, la mensile | A game's challenges as nouns (la sfida...). Descriptive challenge titles are translated. |
+| the daily, the weekly, the monthly | la giornaliera, la settimanale, la mensile | A game's challenges as nouns (la sfida...). |
+| challenge titles (Tonight's job, The vault of three) | Il colpo di stasera, Il caveau delle tre | Descriptive titles are translated, with their article, the same in the menu row and in help: "Il colpo di stasera, la giornaliera: ...". Tonight's is "di stasera", Today's "di oggi", This week's "della settimana". Invented proper titles (Showboat Saturday, Blackout Convoy, The Frost Fair) stay English. |
 | bonus | bonus | Masculine, invariable. |
 | twist | variante | Feminine. A challenge's rule change. |
 | keepsake | ricordo | Masculine. |
-| lantern | lanternino | Masculine. Kept apart from "lanterna", the door lamp. |
-| Firefly Meadow | lucciola, barattolo, diario | Notes C D E G A: do, re, mi, sol, la. |
+| lantern | lanternino | Masculine; plural "lanternini". A lantern the player gathers or follows (Lantern Lake, the Lantern walk: "Passeggiata dei lanternini"). Kept apart from "lanterna", the door lamp. Festival names keep "Lanterne": "Festa delle Lanterne", "Notte delle Lanterne"; Lantern Lake's own twist is "Festa dei lanternini". |
+| firefly, jar, journal (Firefly Meadow) | lucciola, barattolo, diario | Notes C D E G A: do, re, mi, sol, la. |
 | Spoken call-outs | Avvisi a voce | The setting. Values: "Una volta per sessione", "Ogni volta", "No". |
 | relaxed, normal, quick (pace values) | rilassato, normale, veloce | |
 | X select (Bike select, Floor select) | Scelta di X | "Scelta della bici", "Scelta del piano". |
@@ -92,12 +93,15 @@ English.
 | report (a problem), game log | segnalazione, registro del gioco | Feminine; masculine. |
 | Gift Sort, the Wish Desk, Midnight Countdown | Smista regali, il banco dei desideri, Conto alla rovescia di mezzanotte | Winter Wonderland's parts, also named in advent lines. |
 | Grandma (Grandma's Grudge) | la nonna | The game name stays English. |
-| Advent deals (Fireside Patience) | Smazzate dell'Avvento | A deal is "smazzata". |
+| deal (cards), Advent deals | smazzata, Smazzate dell'Avvento | Feminine. Always "smazzata", never "mano": "una smazzata a pesca tre". |
 | Unlocks (the menu) | Sblocchi | Masculine plural. |
 | Next course, Next floor, Next round, Next night (results row) | Prossima portata, Prossimo piano, Prossimo giro, Prossima notte | "Prossimo/Prossima" plus the noun. |
 | Opening the X challenge. | Apertura della sfida di X. | |
-| Practice (the practice lessons/room/hall rows) | allenamento, di allenamento | "Galleria di allenamento", "Lezioni di allenamento". The sound check row stays "Prova suoni". |
 | Back to the lobby | Torna all'ingresso | Pause menu row. |
 | Start over (reset a save) | Ricomincia | "Sì, ricomincia", "No, tieni tutto". |
 | When on, ... Off, ... (a setting's help) | Se sì, ... Se no, ... | Follows the Sì, No values. |
 | relaxed best | record a ritmo rilassato | |
+| peal, row (Belfry) | scampanio, fila | Masculine; feminine. "uno scampanio", plural "scampanii"; "10 file". Never "concerto" or "sequenza" for these. |
+| Village, Plain (Belfry modes) | Villaggio, Semplice | Always translated: "uno scampanio Villaggio", "a parte per Villaggio e Semplice". |
+| stack (the Wish Desk) | mazzo | Masculine. "il mazzo 3 al banco dei desideri". |
+| garden (Rooftop Garden) | giardino | Masculine. Never "orto". "il tuo giardino", "giorno del giardino", "i giardini delle sfide". |
