@@ -111,7 +111,7 @@ def sfx(kind: str, params: dict, gain: float = 1.0, at: float = 0, fx: list | No
 
 
 def sound(out: str, layers: list, fx: list | None = None, normalize: float = -16, **extra) -> dict:
-    s = {"genny": "blal1", "out": out, "layers": layers, "fx": fx if fx is not None else [ROOM], "normalize": normalize}
+    s = {"genny": "oriol", "out": out, "layers": layers, "fx": fx if fx is not None else [ROOM], "normalize": normalize}
     s.update(extra)
     return s
 
@@ -368,15 +368,15 @@ def cues() -> list[dict]:
 def menu() -> list[dict]:
     end = [{"type": "mono"}, {"type": "fade", "out": 0.04}]
     return [
-        {"genny": "blal1", "out": "menu/move.wav", "_about": "Menu move: one soft step on grass.", "duration": 0.2,
+        {"genny": "oriol", "out": "menu/move.wav", "_about": "Menu move: one soft step on grass.", "duration": 0.2,
          "layers": [sfx("footsteps", {"ground": "grass", "steps": 1, "weight": 0.5, "seed": 41}, 0.6)],
          "fx": [{"type": "lowpass", "cutoff": 3000}] + end, "normalize": -9, "max_loudness": -28},
-        {"genny": "blal1", "out": "menu/select.wav", "_about": "Menu select: a guitar note.",
+        {"genny": "oriol", "out": "menu/select.wav", "_about": "Menu select: a guitar note.",
          "duration": 0.45,
          "layers": [seq("guitar", "G4:1", 0.6, 0.5)],
          "fx": [{"type": "reverb", "mix": 0.12, "size": 0.3}] + end,
          "bpm": 160, "normalize": -6, "max_loudness": -22},
-        {"genny": "blal1", "out": "menu/back.wav", "_about": "Menu back: a soft rustle.", "duration": 0.3,
+        {"genny": "oriol", "out": "menu/back.wav", "_about": "Menu back: a soft rustle.", "duration": 0.3,
          "layers": [sfx("cloth", {"kind": "rustle", "dur": 0.25, "weight": 0.4, "seed": 42}, 0.6)],
          "fx": [{"type": "highpass", "cutoff": 200}, {"type": "lowpass", "cutoff": 3000}] + end,
          "normalize": -9, "max_loudness": -26},
@@ -385,7 +385,7 @@ def menu() -> list[dict]:
 
 def main() -> None:
     spec = {
-        "genny": "blal1",
+        "genny": "oriol",
         "_about": "Larkfield. Written by tools/larkfield_music.py: edit that, not this file.",
         "sounds": [title_music(), supper_music(), pause_music()] + ambience() + cues() + menu() + band(),
     }

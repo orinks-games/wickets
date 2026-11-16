@@ -118,7 +118,7 @@ def drum(kind: str, params: dict, gain: float = 0.6, at: float = 0, vel: float =
 
 def sound(out: str, layers: list, fx: list | None = None, normalize: float = -16, about: str = "",
           **extra) -> dict:
-    s = {"genny": "blal1", "out": out, "layers": layers, "fx": fx if fx is not None else [ROOM],
+    s = {"genny": "oriol", "out": out, "layers": layers, "fx": fx if fx is not None else [ROOM],
          "normalize": normalize}
     if about:
         s["_about"] = about

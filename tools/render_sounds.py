@@ -7,29 +7,34 @@ relative, such as `fireworks/boom.wav`; it renders to
 `sounds/<game id>/fireworks/boom.ogg`, which the game plays by the key
 `<game id>/fireworks/boom`. A spec must not set `out_dir`.
 
-Sounds render with blal1's genny (github.com/blal1/genny), always its
-newest commit on GitHub, which can be ahead of the PyPI release. It runs as
-`uvx --refresh-package genny --from git+https://github.com/blal1/genny genny`
-unless `GENNY_BLAL1` names another command, such as `genny-blal1`.
+Sounds render with Oriol Gomez's genny (github.com/ogomez92/genny), always
+its newest commit on GitHub. It runs as
+`uvx --refresh-package genny --from git+https://github.com/ogomez92/genny genny`
+unless `GENNY_ORIOL` names another command.
 
-The first games were made with Oriol Gomez's genny
-(github.com/ogomez92/genny). This tool no longer runs it: those sounds stay
-as they were rendered, and their committed Oggs are kept. Which build made a
-sound is the `"genny"` key on the sound, or else on its spec:
+Which build made a sound is the `"genny"` key on the sound, or else on its
+spec:
 
-- `"genny": "blal1"`: rendered by this tool. Every new spec starts with it.
-- no key, or `"genny": "ogomez"`: an Oriol's genny sound, kept as shipped
-  and never re-rendered. To change one, rewrite it for blal1's genny and
-  mark it `"genny": "blal1"` on the sound (or on the whole spec), then
-  re-audition it: the same spec renders differently, often several dB
-  louder or quieter.
+- `"genny": "oriol"`: rendered by this tool on Oriol's newest genny. Every
+  new spec starts with it.
+- `"genny": "blal1"`: made with blal1's genny (github.com/blal1/genny), which
+  Wicket's no longer uses. Kept as shipped and never re-rendered.
+- no key, or `"genny": "ogomez"`: made with an early Oriol's genny. Kept as
+  shipped and never re-rendered.
+
+To change a kept sound, rewrite it for Oriol's genny (`genny list --json`
+lists what it has; many blal1 sounds and params are not in it) and mark it
+`"genny": "oriol"` on the sound (or on the whole spec), then re-audition it:
+it will sound different.
 
 A sound's `"loudness"` key sets how loud it is, in LUFS (integrated
-loudness, measured over at least half a second, as genny does). genny masters
-blal1 sounds to it as they render. A kept Oriol's genny sound with the key is
-turned up or down to it instead: its committed Ogg is gained and re-encoded,
-never re-rendered. A sharp sound turned up has its peaks limited to -1 dBFS,
-by at most 6 dB, so a crash may stay a little under its loudness.
+loudness, measured over at least half a second). Oriol's genny has no such
+key, so this tool turns each rendered sound to it as it is encoded, and an
+early Oriol's genny sound by gaining its committed Ogg (never re-rendered).
+blal1's genny mastered its sounds to the key as they rendered, so they are
+left exactly as committed. A sharp sound
+turned up has its peaks limited to -1 dBFS, by at most 6 dB, so a crash may
+stay a little under its loudness.
 
 Also needs `ffmpeg`. Deterministic: the same specs give the same sounds.
 
@@ -63,14 +68,15 @@ LEVEL_SLACK = 0.3  # LU: a kept sound this near its loudness is left alone
 # clips (`id|...` a line, `#` comments skipped).
 OPTIONAL_RECORDINGS = {}
 
-BUILDS = ("blal1", "ogomez")  # ogomez: Oriol's genny, kept as shipped, never rendered
+RENDERED = "oriol"  # rendered here on Oriol's newest genny
+BUILDS = (RENDERED, "blal1", "ogomez")  # blal1, ogomez: kept as shipped, never rendered
 # Always the newest genny commit. A new commit may change older sounds when a
 # spec is re-rendered; that is fine.
-DEFAULT_GENNY = "uvx --refresh-package genny --from git+https://github.com/blal1/genny genny"
+DEFAULT_GENNY = "uvx --refresh-package genny --from git+https://github.com/ogomez92/genny genny"
 
 
 def genny_command() -> list[str]:
-    return shlex.split(os.environ.get("GENNY_BLAL1") or DEFAULT_GENNY)
+    return shlex.split(os.environ.get("GENNY_ORIOL") or DEFAULT_GENNY)
 
 
 def sound_builds(spec_path: Path) -> list[tuple[dict, str]]:
@@ -112,30 +118,46 @@ def measure(ogg: Path) -> tuple[float, float]:
     return loud, peak
 
 
+def gain_chain(audio: Path, loudness: float) -> str | None:
+    """The ffmpeg filter that turns `audio` to `loudness` LUFS, or None when
+    it is already near enough."""
+    loud, peak = measure(audio)
+    gain = min(float(loudness) - loud, PEAK_LIMIT - peak + SQUEEZE)
+    if abs(gain) < LEVEL_SLACK:
+        return None
+    chain = f"volume={gain:.2f}dB"
+    if peak + gain > PEAK_LIMIT:
+        limit = 10 ** (PEAK_LIMIT / 20)
+        chain += f",alimiter=limit={limit:.4f}:attack=1:release=40:level=0:latency=1"
+    return chain
+
+
+def encode(src: Path, ogg: Path, chain: str | None) -> None:
+    filters = ["-af", chain] if chain else []
+    subprocess.run(
+        ["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), *filters,
+         "-c:a", "libvorbis", "-q:a", QUALITY, "-map_metadata", "-1",
+         # Byte-identical output for the same input, so an unchanged sound
+         # never shows up as a changed file.
+         "-fflags", "+bitexact", "-flags:a", "+bitexact", "-serial_offset", "0",
+         str(ogg)],
+        check=True,
+    )
+
+
 def level(game: str, kept: list[dict]) -> None:
     """Turn each kept sound with a `loudness` key up or down to it."""
     for s in kept:
         if s.get("loudness") is None:
             continue
         ogg = SOUNDS / game / Path(s["out"]).with_suffix(".ogg")
-        loud, peak = measure(ogg)
-        gain = min(float(s["loudness"]) - loud, PEAK_LIMIT - peak + SQUEEZE)
-        if abs(gain) < LEVEL_SLACK:
+        chain = gain_chain(ogg, s["loudness"])
+        if chain is None:
             continue
-        chain = f"volume={gain:.2f}dB"
-        if peak + gain > PEAK_LIMIT:
-            limit = 10 ** (PEAK_LIMIT / 20)
-            chain += f",alimiter=limit={limit:.4f}:attack=1:release=40:level=0:latency=1"
         tmp = ogg.with_suffix(".level.ogg")
-        subprocess.run(
-            ["ffmpeg", "-y", "-loglevel", "error", "-i", str(ogg), "-af", chain,
-             "-c:a", "libvorbis", "-q:a", QUALITY, "-map_metadata", "-1",
-             "-fflags", "+bitexact", "-flags:a", "+bitexact", "-serial_offset", "0",
-             str(tmp)],
-            check=True,
-        )
+        encode(ogg, tmp, chain)
         tmp.replace(ogg)
-        print(f"{game}/{Path(s['out']).with_suffix('')}: {gain:+.1f} dB")
+        print(f"{game}/{Path(s['out']).with_suffix('')}: {chain.split(',')[0]}")
 
 
 def render(spec_path: Path) -> None:
@@ -144,35 +166,32 @@ def render(spec_path: Path) -> None:
     build.mkdir(parents=True, exist_ok=True)
     sound_outs(spec_path)  # rejects out_dir and bad out paths
     spec = json.loads(spec_path.read_text(encoding="utf-8"))
-    todo = [s for s, b in sound_builds(spec_path) if b == "blal1"]
-    kept = [s for s, b in sound_builds(spec_path) if b != "blal1"]
+    todo = [s for s, b in sound_builds(spec_path) if b == RENDERED]
+    kept = [(s, b) for s, b in sound_builds(spec_path) if b != RENDERED]
     if kept:
-        print(f"{game}: kept {len(kept)} sounds from Oriol's genny as shipped")
-        level(game, kept)
+        print(f"{game}: kept {len(kept)} sounds as shipped")
+        # blal1's genny already mastered its sounds to their loudness; only
+        # the early Oriol's genny sounds are turned to it here.
+        level(game, [s for s, b in kept if b == "ogomez"])
     if not todo:
         return
-    # Render only the blal1 sounds, as one batch with the spec's shared settings.
+    # Render only the Oriol's genny sounds, as one batch with the spec's
+    # shared settings. Loudness is this tool's key, not genny's.
     batch = {k: v for k, v in spec.items() if k not in ("sounds", "genny", "out")}
-    batch["sounds"] = [{k: v for k, v in s.items() if k != "genny"} for s in todo]
+    batch["sounds"] = [{k: v for k, v in s.items() if k not in ("genny", "loudness")} for s in todo]
     batch_path = build / "_batch.json"
     batch_path.write_text(json.dumps(batch), encoding="utf-8")
     subprocess.run(
         [*genny_command(), "render", str(batch_path), "--out-dir", str(build), "--quiet", "--strict"],
         check=True,
     )
-    for out in (s["out"] for s in todo):
+    for s in todo:
+        out = s["out"]
         wav = build / out
         ogg = SOUNDS / game / Path(out).with_suffix(".ogg")
         ogg.parent.mkdir(parents=True, exist_ok=True)
-        subprocess.run(
-            ["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav),
-             "-c:a", "libvorbis", "-q:a", QUALITY, "-map_metadata", "-1",
-             # Byte-identical output for the same WAV, so an unchanged sound
-             # never shows up as a changed file.
-             "-fflags", "+bitexact", "-flags:a", "+bitexact", "-serial_offset", "0",
-             str(ogg)],
-            check=True,
-        )
+        chain = gain_chain(wav, s["loudness"]) if s.get("loudness") is not None else None
+        encode(wav, ogg, chain)
         print(f"{game}/{Path(out).with_suffix('')}")
 
 
