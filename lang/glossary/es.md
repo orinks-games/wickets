@@ -61,4 +61,16 @@ English.
 | lantern | farolillo | Kept apart from "farol", the door lamp. |
 | Records | Récords | |
 | controller | mando | |
-| Spoken call-outs | Avisos por voz | |
+| Spoken call-outs | Avisos por voz | The row and the feature: "los avisos por voz", "Avisos por voz: sí." Never "avisos de voz" or plain "Avisos". |
+| challenge | desafío | Weekly and monthly: "desafío semanal", "desafío mensual". Row labels: Diario, Semanal, Mensual. |
+| hint | pista | "la tecla de pista". |
+| Relaxed, Normal, Quick | Relajado, Normal, Rápido | The Pace values; lowercase inside a sentence. |
+| Play again | Jugar otra vez | Results row. |
+| Try again | Reintentar | Results row, and in help that names it. "Try again later" in a message is "Vuelve a intentarlo más tarde". |
+| Hear the results again | Oír los resultados otra vez | Results row, and in help that names it. |
+| Back to the title | Volver al menú principal | |
+| Back to the challenges | Volver a los desafíos | |
+| Leave the challenge | Dejar el desafío | Pause row. |
+| Left Shift, Right Control, Left Alt... | Left Shift, Right Control, Left Alt... | Key names, kept in English like every key. |
+| Lantern Festival | Fiesta de los Farolillos | "Lantern Festival night" is "Noche de la Fiesta de los Farolillos". |
+| family words before a name | Tío Walt, Tía Marge, Abuelo Joe, Yaya Rose | As a label; inside a sentence with the article: "el tío Walt". |
