@@ -1662,7 +1662,7 @@ msgstr ""
 "Nach den Spielen hat die Liste eine Zeile Tauschen und eine Zeile "
 "Überspringen für das nächste Spiel darauf. Tauschen ersetzt dieses Spiel "
 "durch ein anderes, das zur Tageszeit passt. Ein eingetauschtes Spiel kann "
-"nicht noch mal getauscht werden, also spiel es oder überspring es. "
+"nicht nochmal getauscht werden, also spiel es oder überspring es. "
 "Überspringen nimmt das Spiel von der Liste, und nichts geht verloren."
 
 msgid ""
@@ -1678,8 +1678,8 @@ msgstr ""
 
 msgid "A game swapped in cannot be swapped again, so play it or skip it."
 msgstr ""
-"Ein eingetauschtes Spiel kann nicht noch mal getauscht werden, also spiel "
-"es oder überspring es."
+"Ein eingetauschtes Spiel kann nicht nochmal getauscht werden, also spiel es "
+"oder überspring es."
 
 msgid "Skip takes the game off the list, and nothing is lost."
 msgstr ""
@@ -1736,7 +1736,7 @@ msgstr ""
 "Herausforderung, für alle Spieler gleich. Herausforderungen in der Lobby "
 "listet sie alle, mit dem, was du geschafft hast, und deinen Serien. Die "
 "Zeile jedes Spiels liest denselben Stand wie das Menü Herausforderungen des "
-"Spiels, und Enter auf der Zeile Serie liest deine Serie noch mal. Tägliche "
+"Spiels, und Enter auf der Zeile Serie liest deine Serie nochmal. Tägliche "
 "Herausforderungen wechseln um Mitternacht UTC, wöchentliche am Montag und "
 "monatliche am Ersten des Monats."
 
@@ -1759,7 +1759,7 @@ msgid ""
 "and Enter on the streak row reads your streak again."
 msgstr ""
 "Die Zeile jedes Spiels liest denselben Stand wie das Menü Herausforderungen "
-"des Spiels, und Enter auf der Zeile Serie liest deine Serie noch mal."
+"des Spiels, und Enter auf der Zeile Serie liest deine Serie nochmal."
 
 msgid ""
 "Dailies change at midnight UTC, weeklies on Monday and monthlies on the "
@@ -1815,14 +1815,14 @@ msgid ""
 "reads how to hear it."
 msgstr ""
 "Enter auf einem Album listet seine Stücke. Enter spielt eins, und Enter "
-"noch mal stoppt es. Alle abspielen spielt jedes freigeschaltete Stück in "
+"nochmal stoppt es. Alle abspielen spielt jedes freigeschaltete Stück in "
 "zufälliger Reihenfolge. Ein gesperrtes Stück sagt, wie du es hörst."
 
 msgid "Enter on an album lists its tracks."
 msgstr "Enter auf einem Album listet seine Stücke."
 
 msgid "Enter plays one, and Enter again stops it."
-msgstr "Enter spielt eins, und Enter noch mal stoppt es."
+msgstr "Enter spielt eins, und Enter nochmal stoppt es."
 
 msgid "Play all plays every unlocked track in a random order."
 msgstr ""
@@ -1887,7 +1887,7 @@ msgid ""
 msgstr ""
 "Auch deine eigenen Songs bleiben erhalten. In einem Spiel, dessen Musik "
 "beim Spielen entsteht, etwa Rooftop Garden, Lantern Lake oder Tightrope, "
-"kommt die Musik jeder Runde in ein eigenes Album, etwa Deine Songs aus "
+"kommt die Musik jeder Runde in ein eigenes Album, etwa Deine Lieder aus "
 "Rooftop Garden, benannt nach Tageszeit und Datum. Sie spielt so ab, wie du "
 "sie gehört hast: dieselben Stimmen kommen und gehen an denselben Stellen, "
 "mit denselben Blenden, ohne Pausen oder Menüs. Die letzten 30 jedes Spiels "
@@ -1905,7 +1905,7 @@ msgid ""
 msgstr ""
 "In einem Spiel, dessen Musik beim Spielen entsteht, etwa Rooftop Garden, "
 "Lantern Lake oder Tightrope, kommt die Musik jeder Runde in ein eigenes "
-"Album, etwa Deine Songs aus Rooftop Garden, benannt nach Tageszeit und "
+"Album, etwa Deine Lieder aus Rooftop Garden, benannt nach Tageszeit und "
 "Datum."
 
 msgid ""
@@ -2044,9 +2044,9 @@ msgid ""
 "practice, to keep its ordinary game all year. You do not need a star or a "
 "high score. Earlier play counts too."
 msgstr ""
-"Feiertags-Specials erscheinen rund um ihren Feiertag unter Saisonal und "
-"bleiben dort noch zwei Wochen, damit du aufholen kannst. Fang an, eins zu "
-"spielen, auch als Übung, und du behältst sein normales Spiel das ganze "
+"Feiertags-Specials erscheinen rund um ihren Feiertag unter Saisonale Spiele "
+"und bleiben dort noch zwei Wochen, damit du aufholen kannst. Fang an, eins "
+"zu spielen, auch als Übung, und du behältst sein normales Spiel das ganze "
 "Jahr. Du brauchst keinen Stern und keine hohe Punktzahl. Früheres Spielen "
 "zählt auch."
 
@@ -2054,8 +2054,8 @@ msgid ""
 "Holiday specials appear in Seasonal games around their holiday and stay "
 "there for two more weeks, so you can catch up."
 msgstr ""
-"Feiertags-Specials erscheinen rund um ihren Feiertag unter Saisonal und "
-"bleiben dort noch zwei Wochen, damit du aufholen kannst."
+"Feiertags-Specials erscheinen rund um ihren Feiertag unter Saisonale Spiele "
+"und bleiben dort noch zwei Wochen, damit du aufholen kannst."
 
 msgid ""
 "Start playing one, even in practice, to keep its ordinary game all year."
@@ -2075,9 +2075,9 @@ msgid ""
 "Games you have played open offline."
 msgstr ""
 "Ein Special zu finden, das du noch nicht gespielt hast, braucht das Datum "
-"aus dem Internet. Offline hat Saisonal eine Zeile Nach Feiertags-Specials "
-"suchen, um es nochmal zu versuchen. Spiele, die du gespielt hast, öffnen "
-"auch offline."
+"aus dem Internet. Offline haben Saisonale Spiele eine Zeile Nach "
+"Feiertags-Specials suchen, um es nochmal zu versuchen. Spiele, die du "
+"gespielt hast, öffnen auch offline."
 
 msgid ""
 "Finding a special you have not played needs the date from the internet."
@@ -2088,8 +2088,8 @@ msgstr ""
 msgid ""
 "Offline, Seasonal games has a Check for holiday specials row to try again."
 msgstr ""
-"Offline hat Saisonal eine Zeile Nach Feiertags-Specials suchen, um es "
-"nochmal zu versuchen."
+"Offline haben Saisonale Spiele eine Zeile Nach Feiertags-Specials suchen, "
+"um es nochmal zu versuchen."
 
 msgid "Games you have played open offline."
 msgstr "Spiele, die du gespielt hast, öffnen auch offline."
@@ -2814,7 +2814,7 @@ msgid "Eta Aquariid"
 msgstr ""
 
 msgid "Lantern Festival"
-msgstr ""
+msgstr "Laternenfest"
 
 msgid "Sundae Thursday"
 msgstr ""
@@ -3241,7 +3241,7 @@ msgid "The music on the boat between dives."
 msgstr "Die Musik auf dem Boot zwischen den Tauchgängen."
 
 msgid "Meteor shower"
-msgstr "Sternschnuppen"
+msgstr "Meteorstrom"
 
 msgid "Watch a meteor shower on its peak night."
 msgstr "Sieh dir einen Sternschnuppenregen in seiner stärksten Nacht an."
@@ -3259,7 +3259,7 @@ msgid "Walk the wire."
 msgstr "Lauf über das Seil."
 
 msgid "Play Gift Sort."
-msgstr "Spiel Gift Sort."
+msgstr "Spiel Geschenkesortieren."
 
 msgid ""
 "Up and Down choose an album, Enter opens it, Escape goes back. Music "
@@ -4549,7 +4549,7 @@ msgid "Basket Run"
 msgstr "Basket Run"
 
 msgid "Opening the Basket Run challenge."
-msgstr "Die Herausforderung von Basket Run öffnet sich."
+msgstr "Die Herausforderung von Basket Run wird geöffnet."
 
 msgid "Easter morning"
 msgstr "Ostermorgen"
@@ -6800,7 +6800,7 @@ msgstr ""
 "jeden Montag fünf und jeden Monat ein Domgeläut."
 
 msgid "Opening the Belfry challenge."
-msgstr "Die Herausforderung von Belfry öffnet sich."
+msgstr "Die Herausforderung von Belfry wird geöffnet."
 
 msgid "Your first result on this challenge."
 msgstr "Dein erstes Ergebnis bei dieser Herausforderung."
@@ -9365,7 +9365,7 @@ msgstr ""
 "Zählung."
 
 msgid "Opening the Birdsong Trail challenge."
-msgstr "Die Herausforderung von Birdsong Trail öffnet sich."
+msgstr "Die Herausforderung von Birdsong Trail wird geöffnet."
 
 #. placeholders: {title}, {score}, {most}
 #. one sentence of a longer line
@@ -11677,7 +11677,7 @@ msgstr ""
 "Montag und jeden Monat eine neue."
 
 msgid "Opening the Clover Jig challenge."
-msgstr "Die Herausforderung von Clover Jig öffnet sich."
+msgstr "Die Herausforderung von Clover Jig wird geöffnet."
 
 #. placeholders: {name}, {format}
 #. one sentence of a longer line
@@ -13529,7 +13529,7 @@ msgid "Cupid's Quiver"
 msgstr "Cupid's Quiver"
 
 msgid "Opening the Cupid's Quiver challenge."
-msgstr "Die Herausforderung von Cupid's Quiver öffnet sich."
+msgstr "Die Herausforderung von Cupid's Quiver wird geöffnet."
 
 msgid "1 sweetheart pair"
 msgstr "1 Liebespaar"
@@ -14239,13 +14239,13 @@ msgstr ""
 
 #. placeholders: {keepsakes}, {else}
 msgid "The keepsake box: {keepsakes} Valentine's {else}."
-msgstr ""
+msgstr "Die Andenkenkiste: {keepsakes} {else}."
 
 msgid "Day"
-msgstr ""
+msgstr "Valentinstag"
 
 msgid "Days"
-msgstr ""
+msgstr "Valentinstage"
 
 #. placeholders: {best}
 msgid "Valentine's night best {best}"
@@ -15779,7 +15779,8 @@ msgstr ""
 
 #. placeholders: {sentence_start}
 msgid "Opening the Dragon Dance challenge: {sentence_start}."
-msgstr "Die Herausforderung von Dragon Dance öffnet sich: {sentence_start}."
+msgstr ""
+"Die Herausforderung von Dragon Dance wird geöffnet: {sentence_start}."
 
 #. placeholders: {n}
 msgid "street {n}"
@@ -18155,7 +18156,7 @@ msgstr ""
 "Jahreszeit draußen ist."
 
 msgid "Opening the Firefly Meadow challenge."
-msgstr "Die Herausforderung von Firefly Meadow öffnet sich."
+msgstr "Die Herausforderung von Firefly Meadow wird geöffnet."
 
 msgid "1 firefly"
 msgstr "1 Glühwürmchen"
@@ -18211,8 +18212,8 @@ msgid ""
 "and press {p} while it glows. It never runs out."
 msgstr ""
 "Die Übungsecke: eine kleine Sommerwiese mit einem Taucher direkt vor dir. "
-"Es blinkt einmal, lang und tief, dann wartet es im Dunkeln. Geh hin und "
-"drück {p}, während es leuchtet. Es geht nie aus."
+"Er blinkt einmal, lang und tief, dann wartet er im Dunkeln. Geh hin und "
+"drück {p}, während er leuchtet. Er geht nie aus."
 
 #. placeholders: {p}
 #. one sentence of a longer line
@@ -25497,7 +25498,7 @@ msgid ""
 "October 17 to November 1. It stays two more weeks, through November 15, so "
 "you can catch up."
 msgstr ""
-"Graveyard Shuffle taucht um Halloween bei den saisonalen Spielen auf, vom "
+"Graveyard Shuffle taucht um Halloween bei den Saisonalen Spielen auf, vom "
 "17. Oktober bis 1. November. Es bleibt zwei Wochen länger, bis 15. "
 "November, damit du aufholen kannst."
 
@@ -25505,7 +25506,7 @@ msgid ""
 "Graveyard Shuffle turns up in the Seasonal games around Halloween, from "
 "October 17 to November 1."
 msgstr ""
-"Graveyard Shuffle taucht um Halloween bei den saisonalen Spielen auf, vom "
+"Graveyard Shuffle taucht um Halloween bei den Saisonalen Spielen auf, vom "
 "17. Oktober bis 1. November."
 
 msgid "It stays two more weeks, through November 15, so you can catch up."
@@ -25520,7 +25521,7 @@ msgid ""
 msgstr ""
 "Starte in dieser Zeit einen Tanz oder eine Übung, und das Spiel gehört dir, "
 "auch wenn du früher aufhörst. Nach der Saison wandert es zu den "
-"Action-Spielen. Früheres Spielen zählt auch, und Sterne öffnen weiter "
+"Actionspielen. Früheres Spielen zählt auch, und Sterne öffnen weiter "
 "spätere Nächte. Spielst du es nie, verschwindet es bis zum nächsten "
 "Halloween aus den Listen."
 
@@ -25532,7 +25533,7 @@ msgstr ""
 "auch wenn du früher aufhörst."
 
 msgid "After the season it moves to the Action games."
-msgstr "Nach der Saison wandert es zu den Action-Spielen."
+msgstr "Nach der Saison wandert es zu den Actionspielen."
 
 msgid "Earlier play counts too, and stars still open later nights."
 msgstr ""
@@ -26050,13 +26051,13 @@ msgid ""
 "games."
 msgstr ""
 "Graveyard Shuffle gehört dir. Nach Halloween wandert es zu den "
-"Action-Spielen."
+"Actionspielen."
 
 msgid ""
 "Graveyard Shuffle is yours to keep, in the Action games. Doctor Volt's "
 "laboratory opens at Halloween."
 msgstr ""
-"Graveyard Shuffle gehört dir, bei den Action-Spielen. Doctor Volts Labor "
+"Graveyard Shuffle gehört dir, bei den Actionspielen. Doctor Volts Labor "
 "öffnet an Halloween."
 
 msgid ""
@@ -30650,14 +30651,13 @@ msgid ""
 "night keeps the pace it started at until it ends."
 msgstr ""
 "Eine Änderung gilt ab deiner nächsten Runde. Ein Aufstieg, eine "
-"Herausforderung oder eine Halloween-Nacht behält ihr Starttempo bis zum "
-"Ende."
+"Herausforderung oder eine Halloweennacht behält ihr Starttempo bis zum Ende."
 
 msgid ""
 "A climb, a challenge or a Halloween night keeps the pace it started at "
 "until it ends."
 msgstr ""
-"Ein Aufstieg, eine Herausforderung oder eine Halloween-Nacht behält ihr "
+"Ein Aufstieg, eine Herausforderung oder eine Halloweennacht behält ihr "
 "Starttempo bis zum Ende."
 
 msgid ""
@@ -31850,7 +31850,7 @@ msgstr ""
 
 #. placeholders: {NAME}
 msgid "Opening the {NAME} challenge."
-msgstr "Die Herausforderung {NAME} wird geöffnet."
+msgstr "Die Herausforderung von {NAME} wird geöffnet."
 
 #. placeholders: {clock_words}
 msgid " Wrong things cost {clock_words}."
@@ -33193,7 +33193,7 @@ msgid "intro"
 msgstr ""
 
 msgid "Arrows"
-msgstr ""
+msgstr "Pfeiltasten"
 
 #. placeholders: {sentence_start}, {keys}, {keys2}, {keys3}
 msgid "{sentence_start}, {keys}, {keys2} and {keys3}"
@@ -33418,7 +33418,7 @@ msgstr ""
 "und halt still, wenn der Geist nahe kommt."
 
 msgid "best score"
-msgstr ""
+msgstr "Bestwert"
 
 msgid "climb"
 msgstr ""
@@ -35514,7 +35514,7 @@ msgid "Every night"
 msgstr "Jede Nacht"
 
 msgid "Finish the daily challenge 7 days in a row."
-msgstr "Beende die tägliche Herausforderung an 7 Tagen in Folge."
+msgstr "Beende die Tagesherausforderung an 7 Tagen in Folge."
 
 #. placeholders: {i}
 msgid "Diary page {i}"
@@ -40368,7 +40368,7 @@ msgid "the mill, the bakery and a festival in 10 days"
 msgstr "Mühle, Bäckerei und ein Fest in 10 Tagen"
 
 msgid "Opening the Larkfield challenge."
-msgstr "Die Larkfield-Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Larkfield wird geöffnet."
 
 msgid "Sowing day"
 msgstr "Saattag"
@@ -44339,7 +44339,7 @@ msgstr ""
 "jeden Montag einen Härtetest, jeden Monat ein Festival."
 
 msgid "Opening the Liberty Lights challenge."
-msgstr "Die Liberty Lights-Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Liberty Lights wird geöffnet."
 
 #. placeholders: {sentence_start}, {digit}
 msgid "{sentence_start}, key {digit}."
@@ -47070,7 +47070,7 @@ msgid ""
 "the lobby. During a challenge, Back to the title is Leave the challenge."
 msgstr ""
 "Escape: Pause, mit Weiter, Einstellungen, Hilfe, Zurück zum Titelmenü und "
-"Zurück zur Lobby. In einer Herausforderung heißt Zurück zum Titelmenü "
+"Zurück in die Lobby. In einer Herausforderung heißt Zurück zum Titelmenü "
 "Herausforderung verlassen."
 
 msgid ""
@@ -47078,7 +47078,7 @@ msgid ""
 "the lobby."
 msgstr ""
 "Escape: Pause, mit Weiter, Einstellungen, Hilfe, Zurück zum Titelmenü und "
-"Zurück zur Lobby."
+"Zurück in die Lobby."
 
 msgid "During a challenge, Back to the title is Leave the challenge."
 msgstr ""
@@ -47128,7 +47128,7 @@ msgid "Little Rapids"
 msgstr "Little Rapids"
 
 msgid "Opening the Little Rapids challenge."
-msgstr "Die Little Rapids-Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Little Rapids wird geöffnet."
 
 msgid "Duck parade"
 msgstr "Entenparade"
@@ -49033,7 +49033,7 @@ msgstr ""
 "Monat eine neue."
 
 msgid "Opening the Midnight Lanes challenge."
-msgstr "Die Midnight Lanes-Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Midnight Lanes wird geöffnet."
 
 msgid "1 spare made"
 msgstr "1 Spare geschafft"
@@ -50009,7 +50009,7 @@ msgid "You lose if your hull reaches 0 or network stress reaches 100."
 msgstr "Du verlierst, wenn dein Rumpf 0 oder der Netzstress 100 erreicht."
 
 msgid "Arrivals and call-outs"
-msgstr "Ankünfte und Zurufe"
+msgstr "Ankünfte und Ansagen"
 
 msgid ""
 "Arrival cues mark their lanes relative to yours. Straight ahead is your "
@@ -50038,13 +50038,13 @@ msgid ""
 "title or the pause menu, to play without them. The hint key always names "
 "what is next."
 msgstr ""
-"Zurufe sind standardmäßig an. Jede Ankunft wird auch genannt, sobald sie "
-"auftaucht: \"Trümmer links.\" Schalte Zurufe in den Einstellungen, im "
+"Ansagen sind standardmäßig an. Jede Ankunft wird auch genannt, sobald sie "
+"auftaucht: \"Trümmer links.\" Schalte Ansagen in den Einstellungen, im "
 "Titelmenü oder im Pausenmenü, aus, um ohne sie zu spielen. Die Tipptaste "
 "nennt immer, was als Nächstes kommt."
 
 msgid "Spoken call-outs are on by default."
-msgstr "Zurufe sind standardmäßig an."
+msgstr "Ansagen sind standardmäßig an."
 
 msgid ""
 "Each arrival is also named as it appears: \"Debris left.\" Turn Spoken "
@@ -50052,7 +50052,7 @@ msgid ""
 "without them."
 msgstr ""
 "Jede Ankunft wird auch genannt, sobald sie auftaucht: \"Trümmer links.\" "
-"Schalte Zurufe in den Einstellungen, im Titelmenü oder im Pausenmenü, aus, "
+"Schalte Ansagen in den Einstellungen, im Titelmenü oder im Pausenmenü, aus, "
 "um ohne sie zu spielen."
 
 msgid "The hint key always names what is next."
@@ -50368,7 +50368,7 @@ msgid ""
 "still. A line you ask for again and again stops holding after a while. This "
 "holds at every pace and in every run."
 msgstr ""
-"Die Schiene hält an, solange ein Zuruf oder eine andere Zeile noch läuft: "
+"Die Schiene hält an, solange eine Ansage oder eine andere Zeile noch läuft: "
 "Ankünfte, ihr Anflug, die Timer der Werkzeuge und die Sektoruhr stehen "
 "still. Eine Zeile, die du immer wieder abfragst, hält nach einer Weile "
 "nicht mehr an. Das gilt bei jedem Tempo und in jeder Runde."
@@ -50378,7 +50378,7 @@ msgid ""
 "arrivals, their approach, the tools' timers and the sector clock stand "
 "still."
 msgstr ""
-"Die Schiene hält an, solange ein Zuruf oder eine andere Zeile noch läuft: "
+"Die Schiene hält an, solange eine Ansage oder eine andere Zeile noch läuft: "
 "Ankünfte, ihr Anflug, die Timer der Werkzeuge und die Sektoruhr stehen "
 "still."
 
@@ -51329,7 +51329,7 @@ msgstr ""
 "Herausforderungen und Übungsrunde. Tutorial, das Ziel und Steuerung Seite "
 "für Seite erklärt, Hilfe und Soundtest. Rekorde, mit jedem Bestwert, deinem "
 "Pilotenrang, Credits, Boni und Ergebnissen der Herausforderungen. Werkstatt "
-"und Geschichtsarchiv. Einstellungen, mit Zurufe und Tempo, und Zurück in "
+"und Geschichtsarchiv. Einstellungen, mit Ansagen und Tempo, und Zurück in "
 "den Salon. Beim ersten Besuch beginnt das Titelmenü bei Tutorial."
 
 msgid "The title has these rows."
@@ -51365,7 +51365,7 @@ msgstr "Werkstatt und Geschichtsarchiv."
 msgid ""
 "Settings, which also holds Spoken call-outs and Pace, and Back to the "
 "parlor."
-msgstr "Einstellungen, mit Zurufe und Tempo, und Zurück in den Salon."
+msgstr "Einstellungen, mit Ansagen und Tempo, und Zurück in den Salon."
 
 msgid "On your first visit the title starts on Tutorial."
 msgstr "Beim ersten Besuch beginnt das Titelmenü bei Tutorial."
@@ -51507,7 +51507,7 @@ msgstr ""
 "für Sektor, Restzeit, Punktzahl und Multiplikator."
 
 msgid "R: repeat the last call-out or message."
-msgstr "R: den letzten Zuruf oder die letzte Meldung wiederholen."
+msgstr "R: die letzte Ansage oder die letzte Meldung wiederholen."
 
 msgid "H: what arrives next, where, how soon, and what to do about it."
 msgstr "H: was als Nächstes kommt, wo, wie bald und was du tun solltest."
@@ -51650,7 +51650,7 @@ msgstr ""
 "Bestwert, und jede fertige Runde hält deine Serie."
 
 msgid "Opening the Neon Rail challenge."
-msgstr "Die Neon Rail-Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Neon Rail wird geöffnet."
 
 msgid "Lane shift"
 msgstr "Spurwechsel"
@@ -53966,7 +53966,7 @@ msgstr "F1 gibt Hilfe für den aktuellen Bildschirm."
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
 msgid "{sentence_start2} repeats the last call-out."
-msgstr "{sentence_start2} wiederholt den letzten Zuruf."
+msgstr "{sentence_start2} wiederholt die letzte Ansage."
 
 #. placeholders: {sentence_start3}
 #. one sentence of a longer line
@@ -53986,7 +53986,7 @@ msgid ""
 "about it. Escape opens the pause menu. F1 gives help for the current screen."
 msgstr ""
 "{sentence_start} gibt einen Überblick über den Korridor. {sentence_start2} "
-"wiederholt den letzten Zuruf. {sentence_start3} sagt, was als Nächstes "
+"wiederholt die letzte Ansage. {sentence_start3} sagt, was als Nächstes "
 "kommt und was du tun solltest. Escape öffnet das Pausenmenü. F1 gibt Hilfe "
 "für den aktuellen Bildschirm."
 
@@ -56704,7 +56704,7 @@ msgstr ""
 "und jeden Monat neue."
 
 msgid "Opening the Pantry Mouse challenge."
-msgstr "Die Pantry Mouse-Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Pantry Mouse wird geöffnet."
 
 msgid "Maze clear."
 msgstr "Labyrinth geleert."
@@ -58168,7 +58168,7 @@ msgstr ""
 "jeden Montag eine Hakenwoche und jeden Monat einen Kapitänstisch."
 
 msgid "Opening the Riverboat Dice challenge."
-msgstr "Die Riverboat Dice-Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Riverboat Dice wird geöffnet."
 
 #. placeholders: {standings}
 #. one sentence of a longer line
@@ -60560,7 +60560,7 @@ msgid ""
 "Your garden is saved when you leave."
 msgstr ""
 "Escape: Pause, mit Weiter, Einstellungen, Hilfe, Zurück zum Titelmenü und "
-"Zurück zur Lobby. In einer Herausforderung heißt Zurück zum Titelmenü "
+"Zurück in die Lobby. In einer Herausforderung heißt Zurück zum Titelmenü "
 "Herausforderung verlassen. Dein Garten wird gespeichert, wenn du gehst."
 
 msgid "Your garden is saved when you leave."
@@ -60791,13 +60791,13 @@ msgid "Ines"
 msgstr ""
 
 msgid "Mr Okafor"
-msgstr ""
+msgstr "Herr Okafor"
 
 msgid "Mrs Moreau"
-msgstr ""
+msgstr "Frau Moreau"
 
 msgid "Mrs Patel"
-msgstr ""
+msgstr "Frau Patel"
 
 msgid "Old Sam"
 msgstr ""
@@ -61197,7 +61197,7 @@ msgstr ""
 "montags einen für die Woche und jeden Monat ein Fest."
 
 msgid "Opening the Rooftop Garden challenge."
-msgstr "Rooftop Garden Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Rooftop Garden wird geöffnet."
 
 msgid "The seed shed"
 msgstr "Der Samenschuppen"
@@ -64652,7 +64652,7 @@ msgstr ""
 "montags einen neuen Tresorraum und jeden Monat einen Coup."
 
 msgid "Opening the Safecracker challenge."
-msgstr "Safecracker Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Safecracker wird geöffnet."
 
 #. placeholders: {name}
 msgid "Three strikes: the relocker fires and {name} jams shut."
@@ -65924,7 +65924,7 @@ msgstr ""
 "einen neuen Fahrplan."
 
 msgid "Opening the Signal Box challenge."
-msgstr "Signal Box Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Signal Box wird geöffnet."
 
 #. placeholders: {passed}, {total}
 msgid "{passed} of {total} trains through."
@@ -67383,7 +67383,7 @@ msgstr ""
 "Sanduhr bleibt zu Hause."
 
 msgid "Opening the Slow Kettle challenge."
-msgstr "Slow Kettle Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Slow Kettle wird geöffnet."
 
 #. placeholders: {title}, {score}, {cups_words}, {perfect}
 #. one sentence of a longer line
@@ -67530,7 +67530,7 @@ msgid "hale"
 msgstr ""
 
 msgid "Mister Hale"
-msgstr ""
+msgstr "Herr Hale"
 
 msgid "a retired postman with a walking stick"
 msgstr "ein Postbote im Ruhestand mit Spazierstock"
@@ -70629,11 +70629,11 @@ msgid ""
 "returns the next winter."
 msgstr ""
 "Snowfall Skate steht vom 27. November den Winter über bis Ende Februar "
-"unter Saisonal und bleibt zwei weitere Wochen, bis zum 14. März. Starte in "
-"dieser Zeit einen Lauf oder eine Übung, und das Spiel gehört dir, auch wenn "
-"du früh gehst: Nach dem Winter bleibt es bei den Gemütlichen Spielen. "
-"Früheres Spielen zählt auch, und Sterne schalten weiter spätere Teiche "
-"frei. Die Frost Fair kommt im nächsten Winter wieder."
+"unter Saisonale Spiele und bleibt zwei weitere Wochen, bis zum 14. März. "
+"Starte in dieser Zeit einen Lauf oder eine Übung, und das Spiel gehört dir, "
+"auch wenn du früh gehst: Nach dem Winter bleibt es bei den Gemütlichen "
+"Spielen. Früheres Spielen zählt auch, und Sterne schalten weiter spätere "
+"Teiche frei. Die Frost Fair kommt im nächsten Winter wieder."
 
 msgid ""
 "Snowfall Skate is listed in Seasonal games from 27 November through the "
@@ -70641,7 +70641,7 @@ msgid ""
 "14."
 msgstr ""
 "Snowfall Skate steht vom 27. November den Winter über bis Ende Februar "
-"unter Saisonal und bleibt zwei weitere Wochen, bis zum 14. März."
+"unter Saisonale Spiele und bleibt zwei weitere Wochen, bis zum 14. März."
 
 msgid ""
 "Start a skate or a practice in that time and the game is yours to keep, "
@@ -70883,7 +70883,7 @@ msgid "{name} over. {sentence_start}."
 msgstr "{name} vorbei. {sentence_start}."
 
 msgid "Opening the Snowfall Skate challenge."
-msgstr "Snowfall Skate Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Snowfall Skate wird geöffnet."
 
 msgid "The Frost Fair"
 msgstr "Die Frost Fair"
@@ -73001,7 +73001,7 @@ msgstr ""
 "einen neuen."
 
 msgid "Opening the Soft Landing challenge."
-msgstr "Soft Landing Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Soft Landing wird geöffnet."
 
 #. placeholders: {landed}, {n}
 msgid "{landed} of {n} moons landed."
@@ -75930,7 +75930,7 @@ msgid "A new expedition from dive 1, on a new sea."
 msgstr "Eine neue Expedition ab Tauchgang 1, in einem neuen Meer."
 
 msgid "Opening the Sonar Dive challenge."
-msgstr "Sonar Dive Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Sonar Dive wird geöffnet."
 
 msgid "Sprint dive"
 msgstr "Sprinttauchgang"
@@ -77154,7 +77154,7 @@ msgstr ""
 "{season_wonders} Wunder."
 
 msgid "Opening the Stargazer challenge."
-msgstr "Stargazer Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Stargazer wird geöffnet."
 
 #. placeholders: {hunted}, {list}
 msgid "{hunted} of {list} stars found."
@@ -79511,7 +79511,7 @@ msgstr ""
 "ein neues."
 
 msgid "Opening the challenge of The Echo."
-msgstr "The Echo Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von The Echo wird geöffnet."
 
 msgid "The Echo"
 msgstr "The Echo"
@@ -80760,7 +80760,7 @@ msgstr ""
 "Titelmenü, direkt unter Spielen. Solange es geschlossen ist, sagt die Zeile "
 "gesperrt und wann es öffnet. Sie bringt dich zur entferntesten Küste, die "
 "du geöffnet hast, und hat einen eigenen Bestwert. Ist das Event vorbei, "
-"wenn du wieder Spielen wählst, sagt das Spiel, dass es vorbei ist, und du "
+"wenn du Nochmal spielen wählst, sagt das Spiel, dass es vorbei ist, und du "
 "kommst zurück ins Titelmenü. Die normalen Küsten und die Herausforderungen "
 "ändern sich nie."
 
@@ -80786,7 +80786,7 @@ msgid ""
 "If the event has ended by the time you choose Play again, the game says it "
 "has ended and you go back to the title."
 msgstr ""
-"Ist das Event vorbei, wenn du wieder Spielen wählst, sagt das Spiel, dass "
+"Ist das Event vorbei, wenn du Nochmal spielen wählst, sagt das Spiel, dass "
 "es vorbei ist, und du kommst zurück ins Titelmenü."
 
 msgid "The ordinary shores and the challenges never change."
@@ -80862,7 +80862,7 @@ msgid ""
 "again straight away for what you have gathered and your score, and a third "
 "time for the shore and its weather."
 msgstr ""
-"S: an welchem Tümpel du bist und wann die Flut kommt. Gleich noch mal "
+"S: an welchem Tümpel du bist und wann die Flut kommt. Gleich nochmal "
 "drücken für deine Funde und deine Punktzahl, ein drittes Mal für die Küste "
 "und ihr Wetter."
 
@@ -80873,8 +80873,8 @@ msgid ""
 "Press it again straight away for what you have gathered and your score, and "
 "a third time for the shore and its weather."
 msgstr ""
-"Gleich noch mal drücken für deine Funde und deine Punktzahl, ein drittes "
-"Mal für die Küste und ihr Wetter."
+"Gleich nochmal drücken für deine Funde und deine Punktzahl, ein drittes Mal "
+"für die Küste und ihr Wetter."
 
 msgid ""
 "H: a hint: what to do at this pool, or which way the nearest creature is."
@@ -81150,7 +81150,7 @@ msgstr ""
 "Montag eine wöchentliche und jeden Monat ein Monats-Event."
 
 msgid "Opening the Tide Pools challenge."
-msgstr "Die Tide Pools-Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Tide Pools wird geöffnet."
 
 msgid "Two creatures, one in the pool on each side of you."
 msgstr "Zwei Tiere, eins im Tümpel auf jeder Seite von dir."
@@ -81242,7 +81242,7 @@ msgid ""
 "it up, {control_name5} says what is still missing, Escape goes back."
 msgstr ""
 "{sentence_start} und {control_name} gehen die Becken entlang, "
-"{control_name2} spielt eins noch mal, {control_name3} spielt das ganze "
+"{control_name2} spielt eins nochmal, {control_name3} spielt das ganze "
 "Becken, {control_name4} fasst zusammen, {control_name5} sagt, was noch "
 "fehlt, Escape geht zurück."
 
@@ -81373,7 +81373,7 @@ msgid "The same shore, straight away. Only your best score is kept."
 msgstr "Dieselbe Küste, sofort. Nur dein Bestwert zählt."
 
 msgid "The practice pools again, with no tide."
-msgstr "Noch mal die Übungstümpel, ohne Flut."
+msgstr "Nochmal die Übungstümpel, ohne Flut."
 
 msgid "The same shore, with new weather and new creatures."
 msgstr "Dieselbe Küste, mit neuem Wetter und neuen Tieren."
@@ -81772,7 +81772,7 @@ msgid ""
 "{sentence_start2} gives the pool and the tide, again for what you have "
 "gathered, a third time for the shore."
 msgstr ""
-"{sentence_start2} nennt Tümpel und Flut, noch mal deine Funde, ein drittes "
+"{sentence_start2} nennt Tümpel und Flut, nochmal deine Funde, ein drittes "
 "Mal die Küste."
 
 #. placeholders: {sentence_start}, {control_name}, {control_name2}, {control_name3}, {control_name4}
@@ -81797,7 +81797,7 @@ msgstr ""
 "{sentence_start} und {control_name} gehen zwischen den Tümpeln, "
 "{control_name2} beugt dich vor, {control_name3} tritt zurück, "
 "{control_name4} greift hinein, wenn ein Tier gerufen hat. {sentence_start2} "
-"nennt Tümpel und Flut, noch mal deine Funde, ein drittes Mal die Küste. "
+"nennt Tümpel und Flut, nochmal deine Funde, ein drittes Mal die Küste. "
 "{control_name5} gibt einen Tipp, F1 hilft, Escape pausiert."
 
 #. placeholders: {pools}
@@ -82973,11 +82973,12 @@ msgid ""
 "the challenges. Escape does the same as the last row."
 msgstr ""
 "Am Ende einer Runde sagt das Spiel, wie es lief und welche Rekorde du "
-"aufgestellt hast. Dann bietet das Ergebnismenü Nochmal spielen, oder Neuer "
-"Versuch, wenn ein Sturz die Runde beendet hat, Ergebnis noch mal hören und "
-"Zurück zum Titelmenü. Nach einer gewonnenen einzelnen Überquerung kommt "
-"zuerst Nächste Überquerung. Nach einer Herausforderung ist die letzte Zeile "
-"Zurück zu den Herausforderungen. Escape tut dasselbe wie die letzte Zeile."
+"aufgestellt hast. Dann bietet das Ergebnismenü Nochmal spielen, oder "
+"Nochmal versuchen, wenn ein Sturz die Runde beendet hat, Ergebnis nochmal "
+"hören und Zurück zum Titelmenü. Nach einer gewonnenen einzelnen Überquerung "
+"kommt zuerst Nächste Überquerung. Nach einer Herausforderung ist die letzte "
+"Zeile Zurück zu den Herausforderungen. Escape tut dasselbe wie die letzte "
+"Zeile."
 
 msgid "When a run ends the game reads how it went and what records it set."
 msgstr ""
@@ -82988,8 +82989,8 @@ msgid ""
 "Then the results menu offers Play again, or Try again after a fall ends the "
 "run, Hear the results again, and Back to the title."
 msgstr ""
-"Dann bietet das Ergebnismenü Nochmal spielen, oder Neuer Versuch, wenn ein "
-"Sturz die Runde beendet hat, Ergebnis noch mal hören und Zurück zum "
+"Dann bietet das Ergebnismenü Nochmal spielen, oder Nochmal versuchen, wenn "
+"ein Sturz die Runde beendet hat, Ergebnis nochmal hören und Zurück zum "
 "Titelmenü."
 
 msgid "After a single crossing you win, Next crossing comes first."
@@ -83123,7 +83124,7 @@ msgid ""
 "S: your step, lean, and any gust or pigeon. Press it again straight away "
 "for lives, score, time on the wire and which wire you are on."
 msgstr ""
-"S: dein Schritt, deine Neigung und jede Böe oder Taube. Gleich noch mal "
+"S: dein Schritt, deine Neigung und jede Böe oder Taube. Gleich nochmal "
 "drücken für Leben, Punktzahl, Zeit auf dem Seil und auf welchem Seil du "
 "bist."
 
@@ -83134,7 +83135,7 @@ msgid ""
 "Press it again straight away for lives, score, time on the wire and which "
 "wire you are on."
 msgstr ""
-"Gleich noch mal drücken für Leben, Punktzahl, Zeit auf dem Seil und auf "
+"Gleich nochmal drücken für Leben, Punktzahl, Zeit auf dem Seil und auf "
 "welchem Seil du bist."
 
 msgid "tightrope"
@@ -84158,7 +84159,7 @@ msgstr "{sentence_start2} geht, aber nur im Gleichgewicht."
 #. one sentence of a longer line
 msgid "{sentence_start3} says your lean; again for lives and score."
 msgstr ""
-"{sentence_start3} sagt deine Neigung; noch mal für Leben und Punktzahl."
+"{sentence_start3} sagt deine Neigung; nochmal für Leben und Punktzahl."
 
 #. placeholders: {sentence_start}, {right}
 #. one sentence of a longer line
@@ -84179,7 +84180,7 @@ msgstr ""
 "{sentence_start} und {right} verlagern dein Gewicht einmal pro Druck, gegen "
 "deine Neigung. Halten bringt keine weitere Verlagerung; lass zwischen den "
 "Drücken los. {sentence_start2} geht, aber nur im Gleichgewicht. "
-"{sentence_start3} sagt deine Neigung; noch mal für Leben und Punktzahl."
+"{sentence_start3} sagt deine Neigung; nochmal für Leben und Punktzahl."
 
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
@@ -84290,7 +84291,7 @@ msgid "This week's run"
 msgstr "Die Runde der Woche"
 
 msgid "Opening the Tightrope challenge."
-msgstr "Die Tightrope-Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Tightrope wird geöffnet."
 
 #. placeholders: {t}
 msgid " {t} seconds, par "
@@ -84360,10 +84361,10 @@ msgid "Walk the next crossing alone, for its best time."
 msgstr "Geh die nächste Überquerung allein, für ihre Bestzeit."
 
 msgid "Walk the practice wire again."
-msgstr "Geh noch mal über das Übungsseil."
+msgstr "Geh nochmal über das Übungsseil."
 
 msgid "Start the same kind of run again."
-msgstr "Starte dieselbe Art Runde noch mal."
+msgstr "Starte dieselbe Art Runde nochmal."
 
 #. one sentence of a longer line
 msgid "Holding adds no further shift."
@@ -84445,7 +84446,7 @@ msgid ""
 "wire again."
 msgstr ""
 "Lange Seile schwingen in der Mitte am stärksten. Übungsseil im Titelmenü "
-"geht dieses Seil noch mal."
+"geht dieses Seil nochmal."
 
 msgid ""
 "Winter holidays: shake and sort gifts, then answer children's letters. Gift "
@@ -84454,10 +84455,10 @@ msgid ""
 "a rhythm game for New Year's Eve, has its own row on the title."
 msgstr ""
 "Winterferien: Schüttle und sortiere Geschenke, dann beantworte "
-"Kinderbriefe. Gift Sort: Schaff die Schicht, bevor die Uhr abläuft. Das "
-"Wish Desk: Finde das Geschenk zu jedem Brief im Regal und pack es ein, ohne "
-"Uhr. Midnight Countdown, ein Rhythmusspiel für Silvester, hat eine eigene "
-"Zeile im Titelmenü."
+"Kinderbriefe. Geschenkesortieren: Schaff die Schicht, bevor die Uhr "
+"abläuft. Das Wunschpult: Finde das Geschenk zu jedem Brief im Regal und "
+"pack es ein, ohne Uhr. Mitternachts-Countdown, ein Rhythmusspiel für "
+"Silvester, hat eine eigene Zeile im Titelmenü."
 
 msgid ""
 "Winter holidays: shake and sort gifts, then answer children's letters."
@@ -84465,21 +84466,21 @@ msgstr ""
 "Winterferien: Schüttle und sortiere Geschenke, dann beantworte Kinderbriefe."
 
 msgid "Gift Sort: clear the shift before the clock runs out."
-msgstr "Gift Sort: Schaff die Schicht, bevor die Uhr abläuft."
+msgstr "Geschenkesortieren: Schaff die Schicht, bevor die Uhr abläuft."
 
 msgid ""
 "The Wish Desk: find each letter's gift on the shelf and wrap it, with no "
 "clock."
 msgstr ""
-"Das Wish Desk: Finde das Geschenk zu jedem Brief im Regal und pack es ein, "
+"Das Wunschpult: Finde das Geschenk zu jedem Brief im Regal und pack es ein, "
 "ohne Uhr."
 
 msgid ""
 "Midnight Countdown, a rhythm game for New Year's Eve, has its own row on "
 "the title."
 msgstr ""
-"Midnight Countdown, ein Rhythmusspiel für Silvester, hat eine eigene Zeile "
-"im Titelmenü."
+"Mitternachts-Countdown, ein Rhythmusspiel für Silvester, hat eine eigene "
+"Zeile im Titelmenü."
 
 msgid "The two parts"
 msgstr "Die zwei Teile"
@@ -84490,38 +84491,38 @@ msgid ""
 "letters, and a shelf of gifts with no labels. Story mode plays three Gift "
 "Sort shifts and then a stack at the Wish Desk, and scores them together."
 msgstr ""
-"Winter Wonderland hat zwei Teile. Gift Sort spielt am Band der Werkstatt, "
-"gegen die Uhr. Danach kommt das Wish Desk, ohne Uhr: Kinderbriefe und ein "
-"Regal voller Geschenke ohne Etikett. Der Geschichtsmodus spielt drei "
-"Schichten Gift Sort und dann einen Stapel am Wish Desk und wertet beide "
-"zusammen."
+"Winter Wonderland hat zwei Teile. Geschenkesortieren spielt am Band der "
+"Werkstatt, gegen die Uhr. Danach kommt das Wunschpult, ohne Uhr: "
+"Kinderbriefe und ein Regal voller Geschenke ohne Etikett. Der "
+"Geschichtsmodus spielt drei Schichten Geschenkesortieren und dann einen "
+"Stapel am Wunschpult und wertet beide zusammen."
 
 msgid "Winter Wonderland has two parts."
 msgstr "Winter Wonderland hat zwei Teile."
 
 msgid "Gift Sort happens on the workshop belt, against the clock."
-msgstr "Gift Sort spielt am Band der Werkstatt, gegen die Uhr."
+msgstr "Geschenkesortieren spielt am Band der Werkstatt, gegen die Uhr."
 
 msgid ""
 "The Wish Desk comes after, with no clock: children's letters, and a shelf "
 "of gifts with no labels."
 msgstr ""
-"Danach kommt das Wish Desk, ohne Uhr: Kinderbriefe und ein Regal voller "
+"Danach kommt das Wunschpult, ohne Uhr: Kinderbriefe und ein Regal voller "
 "Geschenke ohne Etikett."
 
 msgid ""
 "Story mode plays three Gift Sort shifts and then a stack at the Wish Desk, "
 "and scores them together."
 msgstr ""
-"Der Geschichtsmodus spielt drei Schichten Gift Sort und dann einen Stapel "
-"am Wish Desk und wertet beide zusammen."
+"Der Geschichtsmodus spielt drei Schichten Geschenkesortieren und dann einen "
+"Stapel am Wunschpult und wertet beide zusammen."
 
 msgid ""
 "Midnight Countdown is a rhythm game for New Year's Eve: the band plays a "
 "short rhythm and you answer it on the beat, all the way to midnight. It is "
 "not part of the story or the challenges."
 msgstr ""
-"Midnight Countdown ist ein Rhythmusspiel für Silvester: Die Band spielt "
+"Mitternachts-Countdown ist ein Rhythmusspiel für Silvester: Die Band spielt "
 "einen kurzen Rhythmus, und du antwortest im Takt, bis Mitternacht. Es "
 "gehört nicht zur Geschichte oder zu den Herausforderungen."
 
@@ -84529,14 +84530,14 @@ msgid ""
 "Midnight Countdown is a rhythm game for New Year's Eve: the band plays a "
 "short rhythm and you answer it on the beat, all the way to midnight."
 msgstr ""
-"Midnight Countdown ist ein Rhythmusspiel für Silvester: Die Band spielt "
+"Mitternachts-Countdown ist ein Rhythmusspiel für Silvester: Die Band spielt "
 "einen kurzen Rhythmus, und du antwortest im Takt, bis Mitternacht."
 
 msgid "It is not part of the story or the challenges."
 msgstr "Es gehört nicht zur Geschichte oder zu den Herausforderungen."
 
 msgid "Gift Sort: the belt"
-msgstr "Gift Sort: das Band"
+msgstr "Geschenkesortieren: das Band"
 
 msgid ""
 "Before each shift, the briefing covers how many gifts to sort, how long the "
@@ -84575,7 +84576,7 @@ msgid "If it falls off, it breaks and the clock loses 4 seconds."
 msgstr "Fällt es herunter, geht es kaputt, und die Uhr verliert 4 Sekunden."
 
 msgid "Gift Sort: shaking and sending"
-msgstr "Gift Sort: schütteln und schicken"
+msgstr "Geschenkesortieren: schütteln und schicken"
 
 msgid ""
 "Space shakes the gift so you can identify it. Gifts include blocks, teddy "
@@ -84633,7 +84634,7 @@ msgstr ""
 "geschüttelt hast."
 
 msgid "Gift Sort: shifts and scoring"
-msgstr "Gift Sort: Schichten und Punkte"
+msgstr "Geschenkesortieren: Schichten und Punkte"
 
 msgid ""
 "There are 8 shifts. Each one has more gifts, more kinds of sound and a "
@@ -84645,15 +84646,15 @@ msgid ""
 "time left on the clock. Shifts you reach stay open: choose a starting shift "
 "with Left and Right on the Gift Sort row of the title."
 msgstr ""
-"Es gibt 8 Schichten. Jede hat mehr Geschenke, mehr Arten von Klängen und "
-"ein schnelleres Band, und das Band wird schneller, während du sortierst. "
-"Die ersten drei Briefings sagen, wie jeder Wunsch klingt. Ab Schicht 4 "
-"musst du es selbst herausfinden. Ab Schicht 5 ändert jemand mittendrin "
-"seine Meinung: Der neue Wunsch wird angesagt. Eine Lieferung bringt mehr, "
-"je schneller sie kommt und je länger deine Serie ist, mal die Nummer der "
+"Es gibt 8 Schichten. Jede hat mehr Geschenke, mehr Arten von Sounds und ein "
+"schnelleres Band, und das Band wird schneller, während du sortierst. Die "
+"ersten drei Briefings sagen, wie jeder Wunsch klingt. Ab Schicht 4 musst du "
+"es selbst herausfinden. Ab Schicht 5 ändert jemand mittendrin seine "
+"Meinung: Der neue Wunsch wird angesagt. Eine Lieferung bringt mehr, je "
+"schneller sie kommt und je länger deine Serie ist, mal die Nummer der "
 "Schicht. Eine geschaffte Schicht bringt einen Bonus für die übrige Zeit. "
 "Erreichte Schichten bleiben offen: Wähl eine Startschicht mit Left und "
-"Right in der Zeile Gift Sort im Titelmenü."
+"Right in der Zeile Geschenkesortieren im Titelmenü."
 
 msgid "There are 8 shifts."
 msgstr "Es gibt 8 Schichten."
@@ -84662,7 +84663,7 @@ msgid ""
 "Each one has more gifts, more kinds of sound and a faster belt, and the "
 "belt speeds up as you sort."
 msgstr ""
-"Jede hat mehr Geschenke, mehr Arten von Klängen und ein schnelleres Band, "
+"Jede hat mehr Geschenke, mehr Arten von Sounds und ein schnelleres Band, "
 "und das Band wird schneller, während du sortierst."
 
 msgid "The first three briefings say what each wish sounds like."
@@ -84693,10 +84694,10 @@ msgid ""
 "the Gift Sort row of the title."
 msgstr ""
 "Erreichte Schichten bleiben offen: Wähl eine Startschicht mit Left und "
-"Right in der Zeile Gift Sort im Titelmenü."
+"Right in der Zeile Geschenkesortieren im Titelmenü."
 
 msgid "Gift Sort: pace"
-msgstr "Gift Sort: Tempo"
+msgstr "Geschenkesortieren: Tempo"
 
 msgid ""
 "The belt, each gift's ride and the shift clock hold while the wishes, a "
@@ -84708,9 +84709,9 @@ msgstr ""
 "Das Band, die Fahrt jedes Geschenks und die Schichtuhr halten an, solange "
 "die Wünsche, eine Planänderung oder ein anderer Satz noch gesprochen "
 "werden. Ein Satz, den du immer wieder abrufst, hält nach einer Weile nicht "
-"mehr an. Das gilt bei jedem Tempo und in jeder Runde Gift Sort. Die Zeit "
-"während eines Satzes geht trotzdem von der übrigen Zeit für deinen Uhrbonus "
-"ab."
+"mehr an. Das gilt bei jedem Tempo und in jeder Runde Geschenkesortieren. "
+"Die Zeit während eines Satzes geht trotzdem von der übrigen Zeit für deinen "
+"Uhrbonus ab."
 
 msgid ""
 "The belt, each gift's ride and the shift clock hold while the wishes, a "
@@ -84720,7 +84721,7 @@ msgstr ""
 "die Wünsche, eine Planänderung oder ein anderer Satz noch gesprochen werden."
 
 msgid "This holds at every pace and in every Gift Sort run."
-msgstr "Das gilt bei jedem Tempo und in jeder Runde Gift Sort."
+msgstr "Das gilt bei jedem Tempo und in jeder Runde Geschenkesortieren."
 
 msgid ""
 "Time spent while a line is spoken still comes off the time left for your "
@@ -84735,39 +84736,39 @@ msgid ""
 "quick. Quick is the fastest, and relaxed runs at half speed. The Wish Desk "
 "has no clock, and Midnight Countdown keeps the band's beat at every pace."
 msgstr ""
-"Tempo in den Einstellungen gilt nur für Gift Sort und legt fest, wie "
-"schnell es läuft: entspannt, normal oder schnell. Normal ist der Standard "
-"und etwas langsamer als schnell. Schnell ist am schnellsten, entspannt "
-"läuft mit halbem Tempo. Das Wish Desk hat keine Uhr, und Midnight Countdown "
-"hält bei jedem Tempo den Takt der Band."
+"Tempo in den Einstellungen gilt nur für Geschenkesortieren und legt fest, "
+"wie schnell es läuft: entspannt, normal oder schnell. Normal ist der "
+"Standard und etwas langsamer als schnell. Schnell ist am schnellsten, "
+"entspannt läuft mit halbem Tempo. Das Wunschpult hat keine Uhr, und "
+"Mitternachts-Countdown hält bei jedem Tempo den Takt der Band."
 
 msgid ""
 "Pace in Settings applies to Gift Sort only, and sets how fast it runs: "
 "relaxed, normal or quick."
 msgstr ""
-"Tempo in den Einstellungen gilt nur für Gift Sort und legt fest, wie "
-"schnell es läuft: entspannt, normal oder schnell."
+"Tempo in den Einstellungen gilt nur für Geschenkesortieren und legt fest, "
+"wie schnell es läuft: entspannt, normal oder schnell."
 
 msgid ""
 "The Wish Desk has no clock, and Midnight Countdown keeps the band's beat at "
 "every pace."
 msgstr ""
-"Das Wish Desk hat keine Uhr, und Midnight Countdown hält bei jedem Tempo "
-"den Takt der Band."
+"Das Wunschpult hat keine Uhr, und Mitternachts-Countdown hält bei jedem "
+"Tempo den Takt der Band."
 
 msgid ""
 "A change applies from your next run. A run keeps the pace it started at "
 "through all its shifts, and on to the Wish Desk in the story."
 msgstr ""
 "Eine Änderung gilt ab deiner nächsten Runde. Eine Runde behält ihr "
-"Starttempo in allen Schichten und in der Geschichte auch am Wish Desk."
+"Starttempo in allen Schichten und in der Geschichte auch am Wunschpult."
 
 msgid ""
 "A run keeps the pace it started at through all its shifts, and on to the "
 "Wish Desk in the story."
 msgstr ""
 "Eine Runde behält ihr Starttempo in allen Schichten und in der Geschichte "
-"auch am Wish Desk."
+"auch am Wunschpult."
 
 msgid ""
 "Shifts open at every pace. Relaxed scores are saved separately, including "
@@ -84787,7 +84788,7 @@ msgstr ""
 "und bei Herausforderungen."
 
 msgid "The Wish Desk: letters and the shelf"
-msgstr "Das Wish Desk: Briefe und das Regal"
+msgstr "Das Wunschpult: Briefe und das Regal"
 
 msgid ""
 "A stack is a pile of letters. Each child asks for one thing, in their own "
@@ -84839,7 +84840,7 @@ msgid "From stack 3 you must work it out."
 msgstr "Ab Stapel 3 musst du es selbst herausfinden."
 
 msgid "The Wish Desk: wrapping"
-msgstr "Das Wish Desk: einpacken"
+msgstr "Das Wunschpult: einpacken"
 
 msgid ""
 "When you find the box that holds the wish, hold Space to wrap it. Keep "
@@ -84874,7 +84875,7 @@ msgid "A wrapped gift leaves an empty place on the shelf."
 msgstr "Ein eingepacktes Geschenk hinterlässt einen leeren Platz im Regal."
 
 msgid "The Wish Desk: stacks and scoring"
-msgstr "Das Wish Desk: Stapel und Punkte"
+msgstr "Das Wunschpult: Stapel und Punkte"
 
 msgid ""
 "There are 5 stacks, each with more letters and more boxes. Each letter is "
@@ -84889,10 +84890,10 @@ msgstr ""
 "bringt bis zu 750 Punkte, mal die Nummer des Stapels. Jede falsche "
 "Schachtel kostet 250 davon, und jedes Schütteln über etwa das halbe Regal "
 "hinaus kostet 50. Ein Stapel ohne falsche Schachtel bringt einen Bonus. H "
-"nennt den Klang des Wunsches, für die Hälfte der Punkte des Briefs. Noch "
-"mal gedrückt sagt H, in welche Richtung du gehen sollst. Ein beantworteter "
+"nennt den Sound des Wunsches, für die Hälfte der Punkte des Briefs. Nochmal "
+"gedrückt sagt H, in welche Richtung du gehen sollst. Ein beantworteter "
 "Stapel öffnet den nächsten: Wähl einen Stapel mit Left und Right in der "
-"Zeile Wish Desk im Titelmenü."
+"Zeile Wunschpult im Titelmenü."
 
 msgid "There are 5 stacks, each with more letters and more boxes."
 msgstr "Es gibt 5 Stapel, jeder mit mehr Briefen und mehr Schachteln."
@@ -84912,17 +84913,17 @@ msgstr "Ein Stapel ohne falsche Schachtel bringt einen Bonus."
 
 msgid "H names the sound of the wish, for half the letter's points."
 msgstr ""
-"H nennt den Klang des Wunsches, für die Hälfte der Punkte des Briefs."
+"H nennt den Sound des Wunsches, für die Hälfte der Punkte des Briefs."
 
 msgid "H says which way to walk when pressed again."
-msgstr "Noch mal gedrückt sagt H, in welche Richtung du gehen sollst."
+msgstr "Nochmal gedrückt sagt H, in welche Richtung du gehen sollst."
 
 msgid ""
 "Answering a stack opens the next: choose a stack with Left and Right on the "
 "Wish Desk row of the title."
 msgstr ""
 "Ein beantworteter Stapel öffnet den nächsten: Wähl einen Stapel mit Left "
-"und Right in der Zeile Wish Desk im Titelmenü."
+"und Right in der Zeile Wunschpult im Titelmenü."
 
 msgid "Late post"
 msgstr "Spätpost"
@@ -84934,16 +84935,16 @@ msgid ""
 "says when late post is still due tonight."
 msgstr ""
 "Einmal jeden Abend, nach der Uhr deines Computers, kommt ein kleiner "
-"Extrasack Post am Wish Desk an. Der erste Stapel, den du abends aus dem "
+"Extrasack Post am Wunschpult an. Der erste Stapel, den du abends aus dem "
 "Titelmenü schaffst, bekommt zwei Briefe mehr, jeder doppelt so viel wert. "
-"Die Hilfe der Zeile Wish Desk sagt, ob heute Abend noch Spätpost kommt."
+"Die Hilfe der Zeile Wunschpult sagt, ob heute Abend noch Spätpost kommt."
 
 msgid ""
 "Once each evening, by your computer's clock, a small extra sack of post "
 "arrives at the Wish Desk."
 msgstr ""
 "Einmal jeden Abend, nach der Uhr deines Computers, kommt ein kleiner "
-"Extrasack Post am Wish Desk an."
+"Extrasack Post am Wunschpult an."
 
 msgid ""
 "The first stack you finish from the title in the evening gets two more "
@@ -84954,7 +84955,7 @@ msgstr ""
 
 msgid "The Wish Desk row's help says when late post is still due tonight."
 msgstr ""
-"Die Hilfe der Zeile Wish Desk sagt, ob heute Abend noch Spätpost kommt."
+"Die Hilfe der Zeile Wunschpult sagt, ob heute Abend noch Spätpost kommt."
 
 msgid ""
 "On the fourth Wednesday of every month, the post is muddled: the letters "
@@ -84995,7 +84996,7 @@ msgid "It plays stack 3, and keeps its own best."
 msgstr "Sie spielt Stapel 3 und hat einen eigenen Bestwert."
 
 msgid "Midnight Countdown: call and answer"
-msgstr "Midnight Countdown: Ruf und Antwort"
+msgstr "Mitternachts-Countdown: Ruf und Antwort"
 
 msgid ""
 "The countdown starts at ten minutes to midnight. Each minute, the band "
@@ -85062,7 +85063,7 @@ msgstr ""
 "zwei Takten mit allen Instrumenten, für doppelte Punkte."
 
 msgid "Midnight Countdown: scoring and energy"
-msgstr "Midnight Countdown: Punkte und Energie"
+msgstr "Mitternachts-Countdown: Punkte und Energie"
 
 msgid ""
 "A note answered right on the beat is perfect. A little early or late is "
@@ -85119,17 +85120,17 @@ msgid ""
 "at the Wish Desk. Your story score is both parts added together. Finish the "
 "story once to open the blizzard story: shifts 4 to 6, then stack 4."
 msgstr ""
-"Der Geschichtsmodus spielt die Schichten 1 bis 3 von Gift Sort, ein kurzes "
-"Zwischenstück, dann Stapel 2 am Wish Desk. Deine Punktzahl in der "
-"Geschichte ist die Summe beider Teile. Schaff die Geschichte einmal, um die "
-"Schneesturm-Geschichte zu öffnen: Schichten 4 bis 6, dann Stapel 4."
+"Der Geschichtsmodus spielt die Schichten 1 bis 3 vom Geschenkesortieren, "
+"ein kurzes Zwischenstück, dann Stapel 2 am Wunschpult. Deine Punktzahl in "
+"der Geschichte ist die Summe beider Teile. Schaff die Geschichte einmal, um "
+"die Schneesturm-Geschichte zu öffnen: Schichten 4 bis 6, dann Stapel 4."
 
 msgid ""
 "Story mode plays shifts 1 to 3 of Gift Sort, a short bridge, then stack 2 "
 "at the Wish Desk."
 msgstr ""
-"Der Geschichtsmodus spielt die Schichten 1 bis 3 von Gift Sort, ein kurzes "
-"Zwischenstück, dann Stapel 2 am Wish Desk."
+"Der Geschichtsmodus spielt die Schichten 1 bis 3 vom Geschenkesortieren, "
+"ein kurzes Zwischenstück, dann Stapel 2 am Wunschpult."
 
 msgid "Your story score is both parts added together."
 msgstr "Deine Punktzahl in der Geschichte ist die Summe beider Teile."
@@ -85160,7 +85161,7 @@ msgstr ""
 "endet, ob gewonnen oder verloren. Herausforderung verlassen im Pausenmenü "
 "zählt nicht. Escape im Briefing geht zurück, ohne zu starten. Danach sagt "
 "das Spiel deine Punktzahl, deinen Bestwert in dieser Herausforderung und "
-"deine Serie, dann bietet das Ergebnismenü dieselbe Herausforderung noch mal "
+"deine Serie, dann bietet das Ergebnismenü dieselbe Herausforderung nochmal "
 "oder Zurück zu den Herausforderungen."
 
 msgid ""
@@ -85195,7 +85196,7 @@ msgid ""
 msgstr ""
 "Danach sagt das Spiel deine Punktzahl, deinen Bestwert in dieser "
 "Herausforderung und deine Serie, dann bietet das Ergebnismenü dieselbe "
-"Herausforderung noch mal oder Zurück zu den Herausforderungen."
+"Herausforderung nochmal oder Zurück zu den Herausforderungen."
 
 msgid ""
 "The daily challenge alternates. On even days of the month it is the rush: "
@@ -85210,8 +85211,8 @@ msgid ""
 "twist."
 msgstr ""
 "Die Tagesherausforderung wechselt sich ab. An geraden Tagen des Monats ist "
-"es der Ansturm: eine Schicht Gift Sort ab Schicht 5. An ungeraden Tagen ist "
-"es die Morgenpost: Stapel 3 am Wish Desk. Jeder Tag bringt eine "
+"es der Ansturm: eine Schicht Geschenkesortieren ab Schicht 5. An ungeraden "
+"Tagen ist es die Morgenpost: Stapel 3 am Wunschpult. Jeder Tag bringt eine "
 "Besonderheit. Am Band ist sie eine von diesen. Stoßzeit: Das Band läuft ein "
 "Viertel schneller. Knappe Uhr: vier Fünftel der üblichen Zeit. Großauftrag: "
 "drei Geschenke mehr, mit etwas mehr Zeit. Wählerische Gäste: Ein falscher "
@@ -85227,11 +85228,11 @@ msgstr "Die Tagesherausforderung wechselt sich ab."
 msgid ""
 "On even days of the month it is the rush: one Gift Sort shift at shift 5."
 msgstr ""
-"An geraden Tagen des Monats ist es der Ansturm: eine Schicht Gift Sort ab "
-"Schicht 5."
+"An geraden Tagen des Monats ist es der Ansturm: eine Schicht "
+"Geschenkesortieren ab Schicht 5."
 
 msgid "On odd days it is the morning post: stack 3 at the Wish Desk."
-msgstr "An ungeraden Tagen ist es die Morgenpost: Stapel 3 am Wish Desk."
+msgstr "An ungeraden Tagen ist es die Morgenpost: Stapel 3 am Wunschpult."
 
 msgid "Each day brings one twist."
 msgstr "Jeder Tag bringt eine Besonderheit."
@@ -85277,17 +85278,18 @@ msgid ""
 "is on the belt. If the clock beats you in the workshop, the run ends there "
 "with the points you have."
 msgstr ""
-"Die Wochenherausforderung ist das Festtagsdoppel: Gift Sort Schichten 4 bis "
-"6, dann Stapel 4 am Wish Desk, zusammen gewertet wie in der Geschichte. Die "
-"Besonderheit der Woche ist am Band. Schlägt dich die Uhr in der Werkstatt, "
-"endet die Runde dort mit den Punkten, die du hast."
+"Die Wochenherausforderung ist das Festtagsdoppel: Schichten "
+"Geschenkesortieren 4 bis 6, dann Stapel 4 am Wunschpult, zusammen gewertet "
+"wie in der Geschichte. Die Besonderheit der Woche ist am Band. Schlägt dich "
+"die Uhr in der Werkstatt, endet die Runde dort mit den Punkten, die du hast."
 
 msgid ""
 "The weekly challenge is the holiday double: Gift Sort shifts 4 to 6, then "
 "stack 4 at the Wish Desk, scored together like the story."
 msgstr ""
-"Die Wochenherausforderung ist das Festtagsdoppel: Gift Sort Schichten 4 bis "
-"6, dann Stapel 4 am Wish Desk, zusammen gewertet wie in der Geschichte."
+"Die Wochenherausforderung ist das Festtagsdoppel: Schichten "
+"Geschenkesortieren 4 bis 6, dann Stapel 4 am Wunschpult, zusammen gewertet "
+"wie in der Geschichte."
 
 msgid "The week's twist is on the belt."
 msgstr "Die Besonderheit der Woche ist am Band."
@@ -85303,8 +85305,9 @@ msgid ""
 "The monthly challenge is the midwinter post: stacks 3, 4 and 5 at the Wish "
 "Desk, one after another, with every box packed in straw."
 msgstr ""
-"Die Monatsherausforderung ist die Mittwinterpost: Stapel 3, 4 und 5 am Wish "
-"Desk, einer nach dem anderen, und jede Schachtel ist in Stroh verpackt."
+"Die Monatsherausforderung ist die Mittwinterpost: Stapel 3, 4 und 5 am "
+"Wunschpult, einer nach dem anderen, und jede Schachtel ist in Stroh "
+"verpackt."
 
 msgid "Practice, tutorial and sound check"
 msgstr "Übung, Tutorial und Soundtest"
@@ -85316,18 +85319,18 @@ msgid ""
 "belt, then answers a letter at the Wish Desk. Sound check lists and plays "
 "the gameplay cues, with each gift's shake. Help is this guide."
 msgstr ""
-"Rhythmusübung ist eine Nacht Midnight Countdown, in der die Party nie "
+"Rhythmusübung ist eine Nacht Mitternachts-Countdown, in der die Party nie "
 "verpufft und nichts gespeichert wird. Wähl eine geöffnete Nacht mit Left "
 "und Right in ihrer Zeile im Titelmenü. Das Tutorial sortiert zwei Geschenke "
-"am Band und beantwortet dann einen Brief am Wish Desk. Der Soundtest listet "
-"und spielt die Spielsignale, mit dem Schütteln jedes Geschenks. Die Hilfe "
-"ist diese Anleitung."
+"am Band und beantwortet dann einen Brief am Wunschpult. Der Soundtest "
+"listet und spielt die Spielsignale, mit dem Schütteln jedes Geschenks. Die "
+"Hilfe ist diese Anleitung."
 
 msgid ""
 "Practice rhythm is a night of Midnight Countdown where the party never "
 "fizzles and nothing is saved."
 msgstr ""
-"Rhythmusübung ist eine Nacht Midnight Countdown, in der die Party nie "
+"Rhythmusübung ist eine Nacht Mitternachts-Countdown, in der die Party nie "
 "verpufft und nichts gespeichert wird."
 
 msgid ""
@@ -85341,7 +85344,7 @@ msgid ""
 "Desk."
 msgstr ""
 "Das Tutorial sortiert zwei Geschenke am Band und beantwortet dann einen "
-"Brief am Wish Desk."
+"Brief am Wunschpult."
 
 msgid ""
 "Sound check lists and plays the gameplay cues, with each gift's shake."
@@ -85360,26 +85363,27 @@ msgid ""
 "the results again reads them once more, and Back to the title goes back. "
 "Escape on the results menu does the same as Back to the title."
 msgstr ""
-"Die Zeilen Gift Sort, Wish Desk und Midnight Countdown im Titelmenü nennen "
-"deinen Bestwert für die gewählte Schicht, den Stapel oder die Nacht, und "
-"Spielen, Geschichtsmodus nennt deine beste Punktzahl in der Geschichte. "
-"Rekorde liest jeden Bestwert vor: die Geschichte, die "
-"Schneesturm-Geschichte, Gift Sort, das Wish Desk und jeden Stapel, Wirre "
-"Post, Midnight Countdown und jede Nacht, wie viele offen sind, und deine "
-"Herausforderungen. Am Ende einer Runde sagt das Spiel ihr Ergebnis, dann "
-"kommt das Ergebnismenü. Nächster Stapel oder Nächste Nacht spielt die "
-"nächste. Nochmal spielen oder Neuer Versuch spielt dieselbe Runde. Ergebnis "
-"noch mal hören liest es erneut, und Zurück zum Titelmenü geht zurück. "
-"Escape im Ergebnismenü tut dasselbe wie Zurück zum Titelmenü."
+"Die Zeilen Geschenkesortieren, Wunschpult und Mitternachts-Countdown im "
+"Titelmenü nennen deinen Bestwert für die gewählte Schicht, den Stapel oder "
+"die Nacht, und Spielen, Geschichtsmodus nennt deine beste Punktzahl in der "
+"Geschichte. Rekorde liest jeden Bestwert vor: die Geschichte, die "
+"Schneesturm-Geschichte, Geschenkesortieren, das Wunschpult und jeden "
+"Stapel, Wirre Post, Mitternachts-Countdown und jede Nacht, wie viele offen "
+"sind, und deine Herausforderungen. Am Ende einer Runde sagt das Spiel ihr "
+"Ergebnis, dann kommt das Ergebnismenü. Nächster Stapel oder Nächste Nacht "
+"spielt die nächste. Nochmal spielen oder Nochmal versuchen spielt dieselbe "
+"Runde. Ergebnis nochmal hören liest es erneut, und Zurück zum Titelmenü "
+"geht zurück. Escape im Ergebnismenü tut dasselbe wie Zurück zum Titelmenü."
 
 msgid ""
 "The Gift Sort, Wish Desk and Midnight Countdown rows on the title name your "
 "best for the chosen shift, stack or night, and Play, story mode names your "
 "best story score."
 msgstr ""
-"Die Zeilen Gift Sort, Wish Desk und Midnight Countdown im Titelmenü nennen "
-"deinen Bestwert für die gewählte Schicht, den Stapel oder die Nacht, und "
-"Spielen, Geschichtsmodus nennt deine beste Punktzahl in der Geschichte."
+"Die Zeilen Geschenkesortieren, Wunschpult und Mitternachts-Countdown im "
+"Titelmenü nennen deinen Bestwert für die gewählte Schicht, den Stapel oder "
+"die Nacht, und Spielen, Geschichtsmodus nennt deine beste Punktzahl in der "
+"Geschichte."
 
 msgid ""
 "Records reads every best: the story, the blizzard story, Gift Sort, the "
@@ -85387,9 +85391,9 @@ msgid ""
 "how many are open, and your challenge results."
 msgstr ""
 "Rekorde liest jeden Bestwert vor: die Geschichte, die "
-"Schneesturm-Geschichte, Gift Sort, das Wish Desk und jeden Stapel, Wirre "
-"Post, Midnight Countdown und jede Nacht, wie viele offen sind, und deine "
-"Herausforderungen."
+"Schneesturm-Geschichte, Geschenkesortieren, das Wunschpult und jeden "
+"Stapel, Wirre Post, Mitternachts-Countdown und jede Nacht, wie viele offen "
+"sind, und deine Herausforderungen."
 
 msgid "When a run ends the game reads its results, then the results menu."
 msgstr ""
@@ -85400,13 +85404,13 @@ msgid "Next stack or Next night plays the next one."
 msgstr "Nächster Stapel oder Nächste Nacht spielt die nächste."
 
 msgid "Play again or Try again plays the same run."
-msgstr "Nochmal spielen oder Neuer Versuch spielt dieselbe Runde."
+msgstr "Nochmal spielen oder Nochmal versuchen spielt dieselbe Runde."
 
 msgid ""
 "Hear the results again reads them once more, and Back to the title goes "
 "back."
 msgstr ""
-"Ergebnis noch mal hören liest es erneut, und Zurück zum Titelmenü geht "
+"Ergebnis nochmal hören liest es erneut, und Zurück zum Titelmenü geht "
 "zurück."
 
 msgid "Escape on the results menu does the same as Back to the title."
@@ -85422,8 +85426,8 @@ msgid ""
 msgstr ""
 "Das Titelmenü hat diese Zeilen. Spielen, Geschichtsmodus. "
 "Schneesturm-Geschichte, gesperrt, bis du den Geschichtsmodus geschafft "
-"hast. Gift Sort, Wish Desk und Midnight Countdown, wo Left und Right "
-"Schicht, Stapel oder Nacht wählen. Wirre Post. Herausforderungen. "
+"hast. Geschenkesortieren, Wunschpult und Mitternachts-Countdown, wo Left "
+"und Right Schicht, Stapel oder Nacht wählen. Wirre Post. Herausforderungen. "
 "Rhythmusübung. Tutorial, Hilfe und Soundtest. Rekorde, Einstellungen und "
 "Zurück in den Salon. Beim ersten Besuch startet das Titelmenü auf Tutorial."
 
@@ -85438,8 +85442,8 @@ msgid ""
 "Gift Sort, the Wish Desk and Midnight Countdown, where Left and Right "
 "choose the shift, stack or night."
 msgstr ""
-"Gift Sort, Wish Desk und Midnight Countdown, wo Left und Right Schicht, "
-"Stapel oder Nacht wählen."
+"Geschenkesortieren, Wunschpult und Mitternachts-Countdown, wo Left und "
+"Right Schicht, Stapel oder Nacht wählen."
 
 msgid "Muddled post."
 msgstr "Wirre Post."
@@ -85454,7 +85458,7 @@ msgid "Records, Settings, and Back to the parlor."
 msgstr "Rekorde, Einstellungen und Zurück in den Salon."
 
 msgid "In Gift Sort:"
-msgstr "In Gift Sort:"
+msgstr "Beim Geschenkesortieren:"
 
 msgid "Space: start the belt, then shake the gift."
 msgstr "Space: das Band starten, dann das Geschenk schütteln."
@@ -85478,7 +85482,7 @@ msgid ""
 "S: the gift on the belt and the clock. Press it again straight away for the "
 "shift, the gifts sorted and the score."
 msgstr ""
-"S: das Geschenk auf dem Band und die Uhr. Gleich noch mal drücken für "
+"S: das Geschenk auf dem Band und die Uhr. Gleich nochmal drücken für "
 "Schicht, sortierte Geschenke und Punktzahl."
 
 msgid "S: the gift on the belt and the clock."
@@ -85487,14 +85491,14 @@ msgstr "S: das Geschenk auf dem Band und die Uhr."
 msgid ""
 "Press it again straight away for the shift, the gifts sorted and the score."
 msgstr ""
-"Gleich noch mal drücken für Schicht, sortierte Geschenke und Punktzahl."
+"Gleich nochmal drücken für Schicht, sortierte Geschenke und Punktzahl."
 
 msgid "H: a hint about the gift you just shook, for half its points."
 msgstr ""
 "H: ein Tipp zum gerade geschüttelten Geschenk, für die Hälfte seiner Punkte."
 
 msgid "At the Wish Desk:"
-msgstr "Am Wish Desk:"
+msgstr "Am Wunschpult:"
 
 msgid "Space: open the first letter, then shake the box in front of you."
 msgstr ""
@@ -85510,26 +85514,26 @@ msgid "Up and Down arrows: jump to the first or last box."
 msgstr "Pfeile Up und Down: zur ersten oder letzten Schachtel springen."
 
 msgid "R: read the letter again."
-msgstr "R: den Brief noch mal lesen."
+msgstr "R: den Brief nochmal lesen."
 
 msgid ""
 "S: where you stand and the letter. Press it again straight away for the "
 "stack and the score."
 msgstr ""
-"S: wo du stehst und der Brief. Gleich noch mal drücken für Stapel und "
+"S: wo du stehst und der Brief. Gleich nochmal drücken für Stapel und "
 "Punktzahl."
 
 msgid "S: where you stand and the letter."
 msgstr "S: wo du stehst und der Brief."
 
 msgid "Press it again straight away for the stack and the score."
-msgstr "Gleich noch mal drücken für Stapel und Punktzahl."
+msgstr "Gleich nochmal drücken für Stapel und Punktzahl."
 
 msgid "H: a hint, for half the letter's points."
 msgstr "H: ein Tipp, für die Hälfte der Punkte des Briefs."
 
 msgid "In Midnight Countdown:"
-msgstr "In Midnight Countdown:"
+msgstr "Beim Mitternachts-Countdown:"
 
 msgid "Space: play the bell, and start the music when it is stopped."
 msgstr "Space: die Glocke spielen und die Musik starten, wenn sie steht."
@@ -85563,17 +85567,17 @@ msgid ""
 "answered stay answered."
 msgstr ""
 "Escape: Pause, mit Weiter, Einstellungen, Hilfe, Zurück zum Titelmenü und "
-"Zurück zur Lobby. In einer Herausforderung heißt Zurück zum Titelmenü "
+"Zurück in die Lobby. In einer Herausforderung heißt Zurück zum Titelmenü "
 "Herausforderung verlassen. Kommst du mitten in der Musik aus dem Pausenmenü "
 "zurück, zählt dich die Band mit einem Takt wieder ein und spielt den Ruf "
-"noch mal. Schon beantwortete Noten bleiben beantwortet."
+"nochmal. Schon beantwortete Noten bleiben beantwortet."
 
 msgid ""
 "When you come back from the pause menu in the middle of the music, the band "
 "counts you back in with a bar and plays the call again."
 msgstr ""
 "Kommst du mitten in der Musik aus dem Pausenmenü zurück, zählt dich die "
-"Band mit einem Takt wieder ein und spielt den Ruf noch mal."
+"Band mit einem Takt wieder ein und spielt den Ruf nochmal."
 
 msgid "Notes you already answered stay answered."
 msgstr "Schon beantwortete Noten bleiben beantwortet."
@@ -85643,26 +85647,26 @@ msgstr "Die Mittwinterpost"
 
 #. placeholders: {DAILY_SHIFT}, {name}
 msgid "Gift Sort, shift {DAILY_SHIFT}, {name}"
-msgstr "Gift Sort, Schicht {DAILY_SHIFT}, {name}"
+msgstr "Geschenkesortieren, Schicht {DAILY_SHIFT}, {name}"
 
 #. placeholders: {DAILY_STACK}, {name}
 msgid "the Wish Desk, stack {DAILY_STACK}, {name}"
-msgstr "das Wish Desk, Stapel {DAILY_STACK}, {name}"
+msgstr "das Wunschpult, Stapel {DAILY_STACK}, {name}"
 
 #. placeholders: {WEEKLY_SHIFTS}, {WEEKLY_SHIFTS2}, {name}
 msgid ""
 "Gift Sort shifts {WEEKLY_SHIFTS} to {WEEKLY_SHIFTS2}, then the Wish Desk, "
 "{name}"
 msgstr ""
-"Gift Sort Schichten {WEEKLY_SHIFTS} bis {WEEKLY_SHIFTS2}, dann das Wish "
-"Desk, {name}"
+"Schichten Geschenkesortieren {WEEKLY_SHIFTS} bis {WEEKLY_SHIFTS2}, dann das "
+"Wunschpult, {name}"
 
 #. placeholders: {MONTHLY_STACKS}, {MONTHLY_STACKS2}
 msgid ""
 "the Wish Desk, stacks {MONTHLY_STACKS} to {MONTHLY_STACKS2}, every box in "
 "straw"
 msgstr ""
-"das Wish Desk, Stapel {MONTHLY_STACKS} bis {MONTHLY_STACKS2}, jede "
+"das Wunschpult, Stapel {MONTHLY_STACKS} bis {MONTHLY_STACKS2}, jede "
 "Schachtel in Stroh"
 
 msgid "Today's twist"
@@ -85677,15 +85681,15 @@ msgstr "Die Regel des Monats"
 #. placeholders: {DAILY_SHIFT}
 #. one sentence of a longer line
 msgid "One Gift Sort shift at shift {DAILY_SHIFT}."
-msgstr "Eine Schicht Gift Sort ab Schicht {DAILY_SHIFT}."
+msgstr "Eine Schicht Geschenkesortieren ab Schicht {DAILY_SHIFT}."
 
 #. placeholders: {DAILY_SHIFT}
 msgid ""
 "One Gift Sort shift at shift {DAILY_SHIFT}. Sort the whole order before the "
 "clock runs out."
 msgstr ""
-"Eine Schicht Gift Sort ab Schicht {DAILY_SHIFT}. Sortier den ganzen "
-"Auftrag, bevor die Uhr abläuft."
+"Eine Schicht Geschenkesortieren ab Schicht {DAILY_SHIFT}. Sortier den "
+"ganzen Auftrag, bevor die Uhr abläuft."
 
 #. one sentence of a longer line
 msgid "Sort the whole order before the clock runs out."
@@ -85698,15 +85702,15 @@ msgstr "Weniger Schütteln und keine falsche Schachtel bringen mehr."
 #. placeholders: {DAILY_STACK}
 #. one sentence of a longer line
 msgid "One stack of letters at the Wish Desk, stack {DAILY_STACK}."
-msgstr "Ein Stapel Briefe am Wish Desk, Stapel {DAILY_STACK}."
+msgstr "Ein Stapel Briefe am Wunschpult, Stapel {DAILY_STACK}."
 
 #. placeholders: {DAILY_STACK}
 msgid ""
 "One stack of letters at the Wish Desk, stack {DAILY_STACK}. Fewer shakes "
 "and no wrong boxes score more."
 msgstr ""
-"Ein Stapel Briefe am Wish Desk, Stapel {DAILY_STACK}. Weniger Schütteln und "
-"keine falsche Schachtel bringen mehr."
+"Ein Stapel Briefe am Wunschpult, Stapel {DAILY_STACK}. Weniger Schütteln "
+"und keine falsche Schachtel bringen mehr."
 
 #. one sentence of a longer line
 msgid "Both scores add up."
@@ -85718,8 +85722,8 @@ msgid ""
 "Gift Sort shifts {WEEKLY_SHIFTS} to {WEEKLY_SHIFTS2}, then stack "
 "{WEEKLY_STACK} at the Wish Desk."
 msgstr ""
-"Gift Sort Schichten {WEEKLY_SHIFTS} bis {WEEKLY_SHIFTS2}, dann Stapel "
-"{WEEKLY_STACK} am Wish Desk."
+"Schichten Geschenkesortieren {WEEKLY_SHIFTS} bis {WEEKLY_SHIFTS2}, dann "
+"Stapel {WEEKLY_STACK} am Wunschpult."
 
 #. placeholders: {WEEKLY_SHIFTS}, {WEEKLY_SHIFTS2}, {WEEKLY_STACK}
 msgid ""
@@ -85727,8 +85731,8 @@ msgid ""
 "{WEEKLY_STACK} at the Wish Desk. Both scores add up. The twist is on the "
 "belt."
 msgstr ""
-"Gift Sort Schichten {WEEKLY_SHIFTS} bis {WEEKLY_SHIFTS2}, dann Stapel "
-"{WEEKLY_STACK} am Wish Desk. Beide Punktzahlen zählen zusammen. Die "
+"Schichten Geschenkesortieren {WEEKLY_SHIFTS} bis {WEEKLY_SHIFTS2}, dann "
+"Stapel {WEEKLY_STACK} am Wunschpult. Beide Punktzahlen zählen zusammen. Die "
 "Besonderheit ist am Band."
 
 #. one sentence of a longer line
@@ -85740,7 +85744,7 @@ msgid ""
 "Stacks {MONTHLY_STACKS} to {MONTHLY_STACKS2} at the Wish Desk, one after "
 "another."
 msgstr ""
-"Stapel {MONTHLY_STACKS} bis {MONTHLY_STACKS2} am Wish Desk, einer nach dem "
+"Stapel {MONTHLY_STACKS} bis {MONTHLY_STACKS2} am Wunschpult, einer nach dem "
 "anderen."
 
 #. placeholders: {r}, {score}
@@ -85792,7 +85796,7 @@ msgstr ""
 "jeden Montag eine wöchentliche und jeden Monat eine monatliche."
 
 msgid "Opening the Winter Wonderland challenge."
-msgstr "Die Winter Wonderland-Herausforderung wird geöffnet."
+msgstr "Die Herausforderung von Winter Wonderland wird geöffnet."
 
 #. one sentence of a longer line
 msgid "A bar counts you in."
@@ -85806,7 +85810,7 @@ msgstr "Glocken sind {primary}, die Trommel ist {key}, das Horn ist {key2}."
 #. placeholders: {name}
 #. one sentence of a longer line
 msgid "Midnight Countdown: {name}."
-msgstr "Midnight Countdown: {name}."
+msgstr "Mitternachts-Countdown: {name}."
 
 #. placeholders: {name}, {primary}, {key}, {key2}
 msgid ""
@@ -85816,7 +85820,7 @@ msgid ""
 "the horn is {key2}. The party starts at full energy; misses drain it. Press "
 "{primary} to start. A bar counts you in."
 msgstr ""
-"Midnight Countdown: {name}. Zehn Minuten vor Mitternacht, und das ganze "
+"Mitternachts-Countdown: {name}. Zehn Minuten vor Mitternacht, und das ganze "
 "Orchester ist ab dem ersten Ruf da. Die Band spielt einen Ruf von einem "
 "Takt; antworte im nächsten Takt, auf denselben Schlägen. Glocken sind "
 "{primary}, die Trommel ist {key}, das Horn ist {key2}. Die Party startet "
@@ -85876,7 +85880,7 @@ msgstr ""
 #. placeholders: {level}, {name}
 #. one sentence of a longer line
 msgid "Midnight Countdown, night {level}: {name}."
-msgstr "Midnight Countdown, Nacht {level}: {name}."
+msgstr "Mitternachts-Countdown, Nacht {level}: {name}."
 
 #. placeholders: {level}, {name}, {primary}, {practice}
 msgid ""
@@ -85885,11 +85889,11 @@ msgid ""
 "beats, with {primary}. Good answers lift the party's energy; misses drain "
 "it.{practice} Press {primary} to start. A bar counts you in."
 msgstr ""
-"Midnight Countdown, Nacht {level}: {name}. Zehn Minuten vor Mitternacht. "
-"Die Band spielt einen Ruf von einem Takt auf Glocken; antworte im nächsten "
-"Takt, auf denselben Schlägen, mit {primary}. Gute Antworten heben die "
-"Energie der Party; Fehler kosten Energie.{practice} Drück {primary} zum "
-"Starten. Ein Takt zählt dich ein."
+"Mitternachts-Countdown, Nacht {level}: {name}. Zehn Minuten vor "
+"Mitternacht. Die Band spielt einen Ruf von einem Takt auf Glocken; antworte "
+"im nächsten Takt, auf denselben Schlägen, mit {primary}. Gute Antworten "
+"heben die Energie der Party; Fehler kosten Energie.{practice} Drück "
+"{primary} zum Starten. Ein Takt zählt dich ein."
 
 #. one sentence of a longer line
 msgid "Ten minutes to midnight."
@@ -86137,12 +86141,12 @@ msgstr "Zurück zur Party."
 
 #. placeholders: {s}
 msgid "Back to the party. {s} The call plays again."
-msgstr "Zurück zur Party. {s} Der Ruf kommt noch mal."
+msgstr "Zurück zur Party. {s} Der Ruf kommt nochmal."
 
 #. placeholders: {s}
 #. one sentence of a longer line
 msgid "{s} The call plays again."
-msgstr "{s} Der Ruf kommt noch mal."
+msgstr "{s} Der Ruf kommt nochmal."
 
 #. placeholders: {s}
 msgid "Back to the party. {s}"
@@ -86173,8 +86177,8 @@ msgid ""
 "Midnight Countdown, night {level} ({name}), {minutes_left} minutes left, "
 "{stage}, energy {energy}, score {score}, combo {combo}"
 msgstr ""
-"Midnight Countdown, Nacht {level} ({name}), noch {minutes_left} Minuten, "
-"{stage}, Energie {energy}, Punktzahl {score}, Combo {combo}"
+"Mitternachts-Countdown, Nacht {level} ({name}), noch {minutes_left} "
+"Minuten, {stage}, Energie {energy}, Punktzahl {score}, Combo {combo}"
 
 #. placeholders: {describe_call}
 msgid "Last call: {describe_call}"
@@ -86188,7 +86192,7 @@ msgstr ""
 
 #. one sentence of a longer line
 msgid "Midnight Countdown, between parts."
-msgstr "Midnight Countdown, zwischen den Teilen."
+msgstr "Mitternachts-Countdown, zwischen den Teilen."
 
 #. placeholders: {sentence_start}, {sentence_start2}, {n}, {n2}, {n3}, {n4}
 msgid ""
@@ -86197,7 +86201,7 @@ msgid ""
 "energy, {n2} lists your instruments. Try the drum with {n3} and the horn "
 "with {n4}. Escape pauses."
 msgstr ""
-"Midnight Countdown, zwischen den Teilen. {sentence_start} startet die "
+"Mitternachts-Countdown, zwischen den Teilen. {sentence_start} startet die "
 "Musik. {sentence_start2} wiederholt das eben Gesagte, {n} sagt Zeit und "
 "Energie, {n2} listet deine Instrumente auf. Probier die Trommel mit {n3} "
 "und das Horn mit {n4}. Escape pausiert."
@@ -86223,7 +86227,7 @@ msgstr ""
 
 #. one sentence of a longer line
 msgid "Midnight Countdown."
-msgstr "Midnight Countdown."
+msgstr "Mitternachts-Countdown."
 
 #. placeholders: {sentence_start}, {n}, {n2}, {sentence_start2}, {sentence_start3}
 msgid ""
@@ -86232,8 +86236,8 @@ msgid ""
 "{sentence_start2} says the last call in words, {sentence_start3} speaks the "
 "time, energy and combo. Escape pauses."
 msgstr ""
-"Midnight Countdown. Nach dem Ruf der Band antwortest du im nächsten Takt "
-"auf denselben Schlägen. {sentence_start} spielt die Glocke, {n} die "
+"Mitternachts-Countdown. Nach dem Ruf der Band antwortest du im nächsten "
+"Takt auf denselben Schlägen. {sentence_start} spielt die Glocke, {n} die "
 "Trommel, {n2} das Horn. {sentence_start2} sagt den letzten Ruf in Worten, "
 "{sentence_start3} sagt Zeit, Energie und Combo. Escape pausiert."
 
@@ -86504,13 +86508,13 @@ msgstr " von {last}"
 #. placeholders: {level}, {of}
 #. one sentence of a longer line
 msgid "Wish Desk, stack {level}{of}."
-msgstr "Wish Desk, Stapel {level}{of}."
+msgstr "Wunschpult, Stapel {level}{of}."
 
 #. placeholders: {level}, {of}, {letters}, {boxes}
 msgid ""
 "Wish Desk, stack {level}{of}. {letters} letters, {boxes} boxes on the shelf."
 msgstr ""
-"Wish Desk, Stapel {level}{of}. {letters} Briefe, {boxes} Schachteln im "
+"Wunschpult, Stapel {level}{of}. {letters} Briefe, {boxes} Schachteln im "
 "Regal."
 
 #. placeholders: {letters}, {boxes}
@@ -86632,12 +86636,12 @@ msgstr "Nur Stroh."
 
 #. placeholders: {sentence_start}
 msgid "Only straw. {sentence_start} shakes it again."
-msgstr "Nur Stroh. {sentence_start} schüttelt sie noch mal."
+msgstr "Nur Stroh. {sentence_start} schüttelt sie nochmal."
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
 msgid "{sentence_start} shakes it again."
-msgstr "{sentence_start} schüttelt sie noch mal."
+msgstr "{sentence_start} schüttelt sie nochmal."
 
 msgid "Nothing here. That gift is wrapped and gone."
 msgstr "Hier ist nichts. Dieses Geschenk ist eingepackt und weg."
@@ -86664,7 +86668,7 @@ msgid ""
 "again."
 msgstr ""
 " Das kostet einige Punkte dieses Briefs. {sentence_start} liest den Brief "
-"noch mal."
+"nochmal."
 
 #. one sentence of a longer line
 msgid "That costs some of this letter's points."
@@ -86673,7 +86677,7 @@ msgstr "Das kostet einige Punkte dieses Briefs."
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
 msgid "{sentence_start} reads the letter again."
-msgstr "{sentence_start} liest den Brief noch mal."
+msgstr "{sentence_start} liest den Brief nochmal."
 
 #. placeholders: {more}
 #. one sentence of a longer line
@@ -86752,15 +86756,16 @@ msgstr " Die Schneesturm-Geschichte ist jetzt im Titelmenü offen."
 #. one sentence of a longer line
 msgid "Gift Sort {gifts} plus the Wish Desk {score}: story score {total}."
 msgstr ""
-"Gift Sort {gifts} plus Wish Desk {score}: Punktzahl der Geschichte {total}."
+"Geschenkesortieren {gifts} plus Wunschpult {score}: Punktzahl der "
+"Geschichte {total}."
 
 #. placeholders: {gifts}, {score}, {total}, {summary}, {bonus}, {line}, {extra}
 msgid ""
 "Gift Sort {gifts} plus the Wish Desk {score}: story score {total}. "
 "{summary}{bonus} {line}{extra}"
 msgstr ""
-"Gift Sort {gifts} plus Wish Desk {score}: Punktzahl der Geschichte {total}. "
-"{summary}{bonus} {line}{extra}"
+"Geschenkesortieren {gifts} plus Wunschpult {score}: Punktzahl der "
+"Geschichte {total}. {summary}{bonus} {line}{extra}"
 
 #. one sentence of a longer line
 msgid "Every letter answered."
@@ -86777,7 +86782,7 @@ msgstr "Punktzahl der Geschichte {total}"
 
 #. placeholders: {gifts}, {score}
 msgid "Gift Sort {gifts} plus the Wish Desk {score}. "
-msgstr "Gift Sort {gifts} plus Wish Desk {score}. "
+msgstr "Geschenkesortieren {gifts} plus Wunschpult {score}. "
 
 #. one sentence of a longer line
 msgid "Challenge cleared."
@@ -86923,7 +86928,7 @@ msgid ""
 "Wish Desk, stack {level} ({else}), letter {len} of {letters}, box {at} of "
 "{shelf}, score {score}"
 msgstr ""
-"Wish Desk, Stapel {level} ({else}), Brief {len} von {letters}, Schachtel "
+"Wunschpult, Stapel {level} ({else}), Brief {len} von {letters}, Schachtel "
 "{at} von {shelf}, Punktzahl {score}"
 
 #. placeholders: {from}, {item}, {name}
@@ -86945,14 +86950,14 @@ msgstr "Schachtel {i}: {what}"
 
 #. one sentence of a longer line
 msgid "Wish Desk briefing."
-msgstr "Briefing am Wish Desk."
+msgstr "Briefing am Wunschpult."
 
 #. placeholders: {sentence_start}, {sentence_start2}, {n}
 msgid ""
 "Wish Desk briefing. {sentence_start} opens the first letter. "
 "{sentence_start2} repeats the briefing, {n} speaks the stack, Escape pauses."
 msgstr ""
-"Briefing am Wish Desk. {sentence_start} öffnet den ersten Brief. "
+"Briefing am Wunschpult. {sentence_start} öffnet den ersten Brief. "
 "{sentence_start2} wiederholt das Briefing, {n} sagt den Stapel, Escape "
 "pausiert."
 
@@ -86980,7 +86985,7 @@ msgstr ""
 
 #. one sentence of a longer line
 msgid "Wish Desk."
-msgstr "Wish Desk."
+msgstr "Wunschpult."
 
 #. placeholders: {sentence_start}, {n}, {n2}, {n3}, {sentence_start2}, {n4}, {sentence_start3}, {sentence_start4}, {sentence_start5}
 msgid ""
@@ -86990,10 +86995,10 @@ msgid ""
 "{sentence_start3} reads the letter again, {sentence_start4} says where you "
 "are, {sentence_start5} gives a hint at half points. Escape pauses."
 msgstr ""
-"Wish Desk. {sentence_start} und {n} gehen am Regal entlang, {n2} und {n3} "
+"Wunschpult. {sentence_start} und {n} gehen am Regal entlang, {n2} und {n3} "
 "springen zu den Enden. {sentence_start2} schüttelt die Schachtel vor dir. "
 "Halte {n4}, um sie für den Brief einzupacken, bis sie eingepackt ist; lass "
-"früher los, um abzubrechen. {sentence_start3} liest den Brief noch mal, "
+"früher los, um abzubrechen. {sentence_start3} liest den Brief nochmal, "
 "{sentence_start4} sagt, wo du bist, {sentence_start5} gibt einen Tipp für "
 "halbe Punkte. Escape pausiert."
 
@@ -87008,7 +87013,7 @@ msgid ""
 "{sentence_start3} reads the letter again, {sentence_start4} says where you "
 "are, {sentence_start5} gives a hint at half points."
 msgstr ""
-"{sentence_start3} liest den Brief noch mal, {sentence_start4} sagt, wo du "
+"{sentence_start3} liest den Brief nochmal, {sentence_start4} sagt, wo du "
 "bist, {sentence_start5} gibt einen Tipp für halbe Punkte."
 
 #. placeholders: {sentence_start}, {n}, {n2}, {n3}
@@ -87029,7 +87034,7 @@ msgid ""
 "Letters from the youngest children at the Wish Desk, every box packed in "
 "straw."
 msgstr ""
-"Briefe der jüngsten Kinder am Wish Desk, jede Schachtel in Stroh verpackt."
+"Briefe der jüngsten Kinder am Wunschpult, jede Schachtel in Stroh verpackt."
 
 #. placeholders: {best_words}
 #. one sentence of a longer line
@@ -87134,7 +87139,7 @@ msgid "Uncle Ned"
 msgstr "Onkel Ned"
 
 msgid "Little Pip"
-msgstr ""
+msgstr "Klein Pip"
 
 msgid "Aunt Rosa"
 msgstr "Tante Rosa"
@@ -87162,7 +87167,7 @@ msgid ""
 "the Wish Desk, which nobody else can answer."
 msgstr ""
 "Du hast drei harte Schichten am Band. Dann kommen die eingeschneiten Briefe "
-"am Wish Desk, die sonst keiner beantworten kann."
+"am Wunschpult, die sonst keiner beantworten kann."
 
 msgid ""
 "The elves have wrapped every gift beautifully, and then mixed up every "
@@ -87182,7 +87187,7 @@ msgid ""
 "Three shifts stand between you and the morning. And the letters are piling "
 "up on the Wish Desk."
 msgstr ""
-"Drei Schichten trennen dich vom Morgen. Und am Wish Desk stapeln sich die "
+"Drei Schichten trennen dich vom Morgen. Und am Wunschpult stapeln sich die "
 "Briefe."
 
 msgid "The last shift is done, and the belt groans to a stop."
@@ -87201,7 +87206,7 @@ msgid ""
 "storm. Read each letter, shake the boxes, and wrap the one that answers it. "
 "There is no clock at the desk."
 msgstr ""
-"Die Geschenke stehen in den Regalen am Wish Desk, aber der Sturm hat die "
+"Die Geschenke stehen in den Regalen am Wunschpult, aber der Sturm hat die "
 "Etiketten weggeweht. Lies jeden Brief, schüttle die Schachteln und pack die "
 "ein, die zum Brief passt. Am Pult gibt es keine Uhr."
 
@@ -87215,7 +87220,7 @@ msgid ""
 "The Wish Desk is still busy. A stack of letters came too late for the belt, "
 "and their gifts sit on the shelves with no labels at all."
 msgstr ""
-"Am Wish Desk ist noch viel los. Ein Stapel Briefe kam zu spät fürs Band, "
+"Am Wunschpult ist noch viel los. Ein Stapel Briefe kam zu spät fürs Band, "
 "und ihre Geschenke stehen ganz ohne Etikett in den Regalen."
 
 msgid ""
@@ -87298,17 +87303,17 @@ msgid ""
 "Wish Desk."
 msgstr ""
 "Winterferien: Sortiere geschüttelte Geschenke, dann beantworte Kinderbriefe "
-"am Wish Desk."
+"am Wunschpult."
 
 msgid "The blizzard story again, from shift 4."
-msgstr "Noch mal die Schneesturm-Geschichte, ab Schicht 4."
+msgstr "Nochmal die Schneesturm-Geschichte, ab Schicht 4."
 
 msgid "The story again, from shift 1."
-msgstr "Noch mal die Geschichte, ab Schicht 1."
+msgstr "Nochmal die Geschichte, ab Schicht 1."
 
 #. placeholders: {first}
 msgid "Gift Sort again, from shift {first}."
-msgstr "Noch mal Gift Sort, ab Schicht {first}."
+msgstr "Nochmal Geschenkesortieren, ab Schicht {first}."
 
 #. placeholders: {next}
 msgid "Next stack: stack {next}"
@@ -87319,7 +87324,7 @@ msgstr "Mehr Briefe und mehr Schachteln im Regal."
 
 #. placeholders: {level}
 msgid "Stack {level} again, with new letters."
-msgstr "Noch mal Stapel {level}, mit neuen Briefen."
+msgstr "Nochmal Stapel {level}, mit neuen Briefen."
 
 msgid "More letters from the youngest children."
 msgstr "Mehr Briefe der jüngsten Kinder."
@@ -87333,7 +87338,7 @@ msgstr "Eine schnellere Band mit kniffligeren Rhythmen."
 
 #. placeholders: {level}, {name}
 msgid "Night {level}, {name}, again."
-msgstr "Noch mal Nacht {level}, {name}."
+msgstr "Nochmal Nacht {level}, {name}."
 
 msgid "The same run, straight away. Only your best result is kept."
 msgstr "Dieselbe Runde, sofort. Nur dein bestes Ergebnis zählt."
@@ -87579,12 +87584,13 @@ msgstr "Die letzte Schicht ist sortiert."
 #. placeholders: {summary}, {score}
 msgid "The last shift is sorted. {summary} Gift Sort score {score}."
 msgstr ""
-"Die letzte Schicht ist sortiert. {summary} Punktzahl Gift Sort {score}."
+"Die letzte Schicht ist sortiert. {summary} Punktzahl Geschenkesortieren "
+"{score}."
 
 #. placeholders: {summary}, {score}
 #. one sentence of a longer line
 msgid "{summary} Gift Sort score {score}."
-msgstr "{summary} Punktzahl Gift Sort {score}."
+msgstr "{summary} Punktzahl Geschenkesortieren {score}."
 
 #. placeholders: {head}
 #. one sentence of a longer line
@@ -87622,8 +87628,8 @@ msgid ""
 "Then a stack of letters at the Wish Desk. Your Gift Sort score comes with "
 "you."
 msgstr ""
-"Dann ein Stapel Briefe am Wish Desk. Deine Punktzahl aus Gift Sort kommt "
-"mit."
+"Dann ein Stapel Briefe am Wunschpult. Deine Punktzahl aus "
+"Geschenkesortieren kommt mit."
 
 msgid "Challenge cleared. "
 msgstr "Herausforderung geschafft. "
@@ -87761,8 +87767,8 @@ msgid ""
 "Gift Sort, shift {level} ({else}), {sorted} of {quota} sorted, clock "
 "{clock}, score {score}"
 msgstr ""
-"Gift Sort, Schicht {level} ({else}), {sorted} von {quota} sortiert, Uhr "
-"{clock}, Punktzahl {score}"
+"Geschenkesortieren, Schicht {level} ({else}), {sorted} von {quota} "
+"sortiert, Uhr {clock}, Punktzahl {score}"
 
 #. placeholders: {label}, {name}, {item}, {name2}
 msgid "{label}: {name} wants {item} ({name2})"
@@ -87810,7 +87816,7 @@ msgstr ""
 "wiederholt die Wünsche, {n} sagt {value3}, Escape pausiert."
 
 msgid "Gift Sort"
-msgstr "Gift Sort"
+msgstr "Geschenkesortieren"
 
 #. placeholders: {n}
 msgid ", and {n} drops it in the return sack behind you"
@@ -87832,7 +87838,7 @@ msgstr "{n} geradeaus"
 
 #. one sentence of a longer line
 msgid "Gift Sort."
-msgstr "Gift Sort."
+msgstr "Geschenkesortieren."
 
 #. placeholders: {sentence_start}, {sentence_start2}, {ahead}, {n}, {sack}, {sentence_start3}, {sentence_start4}, {sentence_start5}
 msgid ""
@@ -87841,10 +87847,11 @@ msgid ""
 "{sentence_start4} speaks the clock and score, {sentence_start5} gives a "
 "hint at half points. Escape pauses."
 msgstr ""
-"Gift Sort. {sentence_start} schüttelt das Geschenk. {sentence_start2} "
-"schickt es nach links{ahead}, {n} nach rechts{sack}. {sentence_start3} "
-"wiederholt die Wünsche, {sentence_start4} sagt Uhr und Punktzahl, "
-"{sentence_start5} gibt einen Tipp für halbe Punkte. Escape pausiert."
+"Geschenkesortieren. {sentence_start} schüttelt das Geschenk. "
+"{sentence_start2} schickt es nach links{ahead}, {n} nach rechts{sack}. "
+"{sentence_start3} wiederholt die Wünsche, {sentence_start4} sagt Uhr und "
+"Punktzahl, {sentence_start5} gibt einen Tipp für halbe Punkte. Escape "
+"pausiert."
 
 #. placeholders: {sentence_start2}, {ahead}, {n}, {sack}
 #. one sentence of a longer line
@@ -87868,7 +87875,7 @@ msgstr ""
 
 #. placeholders: {next}
 msgid "Wish Desk: {next}"
-msgstr "Wish Desk: {next}"
+msgstr "Wunschpult: {next}"
 
 #. placeholders: {name}, {describe}
 #. one sentence of a longer line
@@ -87929,18 +87936,18 @@ msgid ""
 "Wish Desk: a step along the shelf, heard where the box sits. This one is at "
 "the left end."
 msgstr ""
-"Wish Desk: ein Schritt am Regal entlang, dort zu hören, wo die Schachtel "
+"Wunschpult: ein Schritt am Regal entlang, dort zu hören, wo die Schachtel "
 "steht. Dieser ist am linken Ende."
 
 msgid "Wish Desk: the end of the shelf."
-msgstr "Wish Desk: das Ende des Regals."
+msgstr "Wunschpult: das Ende des Regals."
 
 msgid "Wish Desk: an empty place, where a gift was wrapped."
-msgstr "Wish Desk: ein leerer Platz, wo ein Geschenk eingepackt wurde."
+msgstr "Wunschpult: ein leerer Platz, wo ein Geschenk eingepackt wurde."
 
 msgid "Wish Desk: a shake of only straw. Shake again to hear the gift."
 msgstr ""
-"Wish Desk: Schütteln, nur Stroh. Schüttle noch mal, um das Geschenk zu "
+"Wunschpult: Schütteln, nur Stroh. Schüttle nochmal, um das Geschenk zu "
 "hören."
 
 #. one sentence of a longer line
@@ -87950,22 +87957,22 @@ msgstr "Lässt du jetzt los, wird nichts eingepackt."
 #. placeholders: {n}
 #. one sentence of a longer line
 msgid "Wish Desk: wrapping paper, while you hold {n}."
-msgstr "Wish Desk: Geschenkpapier, solange du {n} hältst."
+msgstr "Wunschpult: Geschenkpapier, solange du {n} hältst."
 
 #. placeholders: {n}
 msgid ""
 "Wish Desk: wrapping paper, while you hold {n}. Let go now and nothing is "
 "wrapped."
 msgstr ""
-"Wish Desk: Geschenkpapier, solange du {n} hältst. Lässt du jetzt los, wird "
+"Wunschpult: Geschenkpapier, solange du {n} hältst. Lässt du jetzt los, wird "
 "nichts eingepackt."
 
 msgid "Wish Desk: the wrong box, unwrapped and put back."
-msgstr "Wish Desk: die falsche Schachtel, ausgepackt und zurückgestellt."
+msgstr "Wunschpult: die falsche Schachtel, ausgepackt und zurückgestellt."
 
 #. placeholders: {n}
 msgid "Midnight Countdown bells, answered with {n}."
-msgstr "Glocken von Midnight Countdown, beantwortet mit {n}."
+msgstr "Glocken des Mitternachts-Countdowns, beantwortet mit {n}."
 
 #. placeholders: {n}
 msgid "Drum, answered with {n}."
@@ -88010,13 +88017,14 @@ msgstr "Schneesturm-Geschichte: {blizzard}."
 #. placeholders: {gifts}, {shifts_open}, {SHIFTS}
 #. one sentence of a longer line
 msgid "Gift Sort: {gifts}, {shifts_open} of {SHIFTS} shifts open."
-msgstr "Gift Sort: {gifts}, {shifts_open} von {SHIFTS} Schichten offen."
+msgstr ""
+"Geschenkesortieren: {gifts}, {shifts_open} von {SHIFTS} Schichten offen."
 
 #. placeholders: {count}, {nights_open}, {NIGHTS}
 #. one sentence of a longer line
 msgid "Midnight Countdown: {count}, {nights_open} of {NIGHTS} nights open."
 msgstr ""
-"Midnight Countdown: {count}, {nights_open} von {NIGHTS} Nächten offen."
+"Mitternachts-Countdown: {count}, {nights_open} von {NIGHTS} Nächten offen."
 
 #. placeholders: {muddled}
 #. one sentence of a longer line
@@ -88030,10 +88038,11 @@ msgid ""
 "{stacks_open} of {STACKS} stacks open. Muddled post: {muddled}. Midnight "
 "Countdown: {count}, {nights_open} of {NIGHTS} nights open."
 msgstr ""
-"Rekorde. Geschichtsmodus: {story}. Schneesturm-Geschichte: {blizzard}. Gift "
-"Sort: {gifts}, {shifts_open} von {SHIFTS} Schichten offen. Wish Desk: "
-"{desk}, {stacks_open} von {STACKS} Stapeln offen. Wirre Post: {muddled}. "
-"Midnight Countdown: {count}, {nights_open} von {NIGHTS} Nächten offen."
+"Rekorde. Geschichtsmodus: {story}. Schneesturm-Geschichte: {blizzard}. "
+"Geschenkesortieren: {gifts}, {shifts_open} von {SHIFTS} Schichten offen. "
+"Wunschpult: {desk}, {stacks_open} von {STACKS} Stapeln offen. Wirre Post: "
+"{muddled}. Mitternachts-Countdown: {count}, {nights_open} von {NIGHTS} "
+"Nächten offen."
 
 #. placeholders: {story}
 #. one sentence of a longer line
@@ -88043,7 +88052,7 @@ msgstr "Geschichtsmodus: {story}."
 #. placeholders: {desk}, {stacks_open}, {STACKS}
 #. one sentence of a longer line
 msgid "Wish Desk: {desk}, {stacks_open} of {STACKS} stacks open."
-msgstr "Wish Desk: {desk}, {stacks_open} von {STACKS} Stapeln offen."
+msgstr "Wunschpult: {desk}, {stacks_open} von {STACKS} Stapeln offen."
 
 #. placeholders: {n}, {best}
 msgid "Stack {n}: {best}."
@@ -88051,11 +88060,11 @@ msgstr "Stapel {n}: {best}."
 
 #. one sentence of a longer line
 msgid "Wish Desk by stack."
-msgstr "Wish Desk nach Stapel."
+msgstr "Wunschpult nach Stapel."
 
 #. placeholders: {join}
 msgid "Wish Desk by stack. {join}"
-msgstr "Wish Desk nach Stapel. {join}"
+msgstr "Wunschpult nach Stapel. {join}"
 
 #. placeholders: {n}, {name}, {best}
 msgid "Night {n}, {name}: {best}."
@@ -88063,11 +88072,11 @@ msgstr "Nacht {n}, {name}: {best}."
 
 #. one sentence of a longer line
 msgid "Midnight Countdown by night."
-msgstr "Midnight Countdown nach Nacht."
+msgstr "Mitternachts-Countdown nach Nacht."
 
 #. placeholders: {join}
 msgid "Midnight Countdown by night. {join}"
-msgstr "Midnight Countdown nach Nacht. {join}"
+msgstr "Mitternachts-Countdown nach Nacht. {join}"
 
 msgid " Late post tonight: two more letters after your next stack."
 msgstr ""
@@ -88080,7 +88089,7 @@ msgstr "Schneesturm-Geschichte, {blizzard}"
 msgid ""
 "The story again, harder: shifts 4 to 6, then a bigger stack at the desk."
 msgstr ""
-"Die Geschichte noch mal, schwerer: Schichten 4 bis 6, dann ein größerer "
+"Die Geschichte nochmal, schwerer: Schichten 4 bis 6, dann ein größerer "
 "Stapel am Pult."
 
 msgid "Blizzard story"
@@ -88103,12 +88112,12 @@ msgid ""
 "Three Gift Sort shifts, then a stack of letters at the Wish Desk, scored "
 "together."
 msgstr ""
-"Drei Schichten Gift Sort, dann ein Stapel Briefe am Wish Desk, zusammen "
-"gewertet."
+"Drei Schichten Geschenkesortieren, dann ein Stapel Briefe am Wunschpult, "
+"zusammen gewertet."
 
 #. placeholders: {shift}, {gifts}
 msgid "Gift Sort, shift {shift}, {gifts}"
-msgstr "Gift Sort, Schicht {shift}, {gifts}"
+msgstr "Geschenkesortieren, Schicht {shift}, {gifts}"
 
 #. one sentence of a longer line
 msgid "Left and Right choose the starting shift once later shifts are open."
@@ -88131,7 +88140,7 @@ msgstr ""
 
 #. placeholders: {stack}, {stacks_open}, {best}
 msgid "Wish Desk, stack {stack}, {stacks_open} open, {best}"
-msgstr "Wish Desk, Stapel {stack}, {stacks_open} offen, {best}"
+msgstr "Wunschpult, Stapel {stack}, {stacks_open} offen, {best}"
 
 #. placeholders: {STACKS}, {late}
 #. one sentence of a longer line
@@ -88162,7 +88171,7 @@ msgstr ""
 msgid ""
 "Midnight Countdown, night {night}: {name}, {nights_open} open, {best}"
 msgstr ""
-"Midnight Countdown, Nacht {night}: {name}, {nights_open} offen, {best}"
+"Mitternachts-Countdown, Nacht {night}: {name}, {nights_open} offen, {best}"
 
 #. one sentence of a longer line
 msgid ""
@@ -88197,16 +88206,16 @@ msgid ""
 "A night of Midnight Countdown where the party never fizzles and nothing is "
 "saved. Left and Right choose any night you have opened."
 msgstr ""
-"Eine Nacht Midnight Countdown, in der die Party nie verpufft und nichts "
+"Eine Nacht Mitternachts-Countdown, in der die Party nie verpufft und nichts "
 "gespeichert wird. Left und Right wählen eine geöffnete Nacht."
 
 msgid ""
 "Your best story, Gift Sort, Wish Desk and Midnight Countdown scores, each "
 "stack and night, your holiday keepsakes and your challenge results."
 msgstr ""
-"Deine besten Punktzahlen in Geschichte, Gift Sort, Wish Desk und Midnight "
-"Countdown, jeder Stapel und jede Nacht, deine Feiertagsandenken und deine "
-"Herausforderungen."
+"Deine besten Punktzahlen in Geschichte, Geschenkesortieren, Wunschpult und "
+"Mitternachts-Countdown, jeder Stapel und jede Nacht, deine "
+"Feiertagsandenken und deine Herausforderungen."
 
 msgid "Plays every gift's shake and every cue."
 msgstr "Spielt das Schütteln jedes Geschenks und jedes Signal."
@@ -88239,8 +88248,8 @@ msgid ""
 "Gift Sort. Here is who is waiting, and how each wish sounds in a box. "
 "{wishes} {sentence_start} starts the belt."
 msgstr ""
-"Gift Sort. Hier ist, wer wartet und wie jeder Wunsch in einer Schachtel "
-"klingt. {wishes} {sentence_start} startet das Band."
+"Geschenkesortieren. Hier ist, wer wartet und wie jeder Wunsch in einer "
+"Schachtel klingt. {wishes} {sentence_start} startet das Band."
 
 #. one sentence of a longer line
 msgid "Here is who is waiting, and how each wish sounds in a box."
@@ -88287,7 +88296,7 @@ msgstr "Sortiere {GIFTS} Geschenke."
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
 msgid "{sentence_start2} says the wishes again."
-msgstr "{sentence_start2} sagt die Wünsche noch mal."
+msgstr "{sentence_start2} sagt die Wünsche nochmal."
 
 #. placeholders: {sentence_start}, {r}
 #. one sentence of a longer line
@@ -88306,7 +88315,7 @@ msgid ""
 msgstr ""
 "{sentence_start} schickt das Geschenk zur Person links, und {r} zur Person "
 "rechts. Eine falsche Lieferung kostet Zeit auf der Uhr. {sentence_start2} "
-"sagt die Wünsche noch mal. Sortiere {GIFTS} Geschenke."
+"sagt die Wünsche nochmal. Sortiere {GIFTS} Geschenke."
 
 #. one sentence of a longer line
 msgid ""
@@ -88339,7 +88348,7 @@ msgstr ""
 
 #. one sentence of a longer line
 msgid "The Wish Desk, with no clock."
-msgstr "Das Wish Desk, ohne Uhr."
+msgstr "Das Wunschpult, ohne Uhr."
 
 #. placeholders: {sentence_start}
 msgid ""
@@ -88347,7 +88356,7 @@ msgid ""
 "gifts sit on a shelf in front of you. {sentence_start} opens the first "
 "letter."
 msgstr ""
-"Das Wish Desk, ohne Uhr. Kinder wünschen sich je eine Sache, und die "
+"Das Wunschpult, ohne Uhr. Kinder wünschen sich je eine Sache, und die "
 "Geschenke stehen vor dir im Regal. {sentence_start} öffnet den ersten Brief."
 
 msgid "The first letter is open."
@@ -88360,7 +88369,7 @@ msgstr "Finde die Schachtel mit dem Wunsch."
 #. placeholders: {sentence_start3}
 #. one sentence of a longer line
 msgid "{sentence_start3} reads the letter again."
-msgstr "{sentence_start3} liest den Brief noch mal."
+msgstr "{sentence_start3} liest den Brief nochmal."
 
 #. placeholders: {sentence_start}, {r}
 #. one sentence of a longer line
@@ -88375,7 +88384,7 @@ msgid ""
 msgstr ""
 "{sentence_start} und {r} gehen am Regal entlang. {sentence_start2} "
 "schüttelt die Schachtel vor dir. Finde die Schachtel mit dem Wunsch. "
-"{sentence_start3} liest den Brief noch mal."
+"{sentence_start3} liest den Brief nochmal."
 
 msgid "That is the one."
 msgstr "Das ist sie."
@@ -88427,26 +88436,26 @@ msgid ""
 "its first night."
 msgstr ""
 "Ab Schicht 3 schickt {d} ungewollte Geschenke in den Sack. {sentence_start} "
-"sagt den aktuellen Status. In Gift Sort nennt er Geschenk und Uhr, beim "
-"zweiten Druck Schicht, sortierte Geschenke und Punktzahl. {sentence_start2} "
-"gibt einen Tipp. Midnight Countdown, das Rhythmusspiel für Silvester, "
-"erklärt sich in seiner ersten Nacht selbst."
+"sagt den aktuellen Status. Beim Geschenkesortieren nennt er Geschenk und "
+"Uhr, beim zweiten Druck Schicht, sortierte Geschenke und Punktzahl. "
+"{sentence_start2} gibt einen Tipp. Mitternachts-Countdown, das "
+"Rhythmusspiel für Silvester, erklärt sich in seiner ersten Nacht selbst."
 
 #. one sentence of a longer line
 msgid ""
 "In Gift Sort it reads the gift and clock, then the shift, gifts sorted and "
 "score on a second press."
 msgstr ""
-"In Gift Sort nennt er Geschenk und Uhr, beim zweiten Druck Schicht, "
-"sortierte Geschenke und Punktzahl."
+"Beim Geschenkesortieren nennt er Geschenk und Uhr, beim zweiten Druck "
+"Schicht, sortierte Geschenke und Punktzahl."
 
 #. one sentence of a longer line
 msgid ""
 "Midnight Countdown, the New Year's Eve rhythm game, teaches itself on its "
 "first night."
 msgstr ""
-"Midnight Countdown, das Rhythmusspiel für Silvester, erklärt sich in seiner "
-"ersten Nacht selbst."
+"Mitternachts-Countdown, das Rhythmusspiel für Silvester, erklärt sich in "
+"seiner ersten Nacht selbst."
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
@@ -88926,7 +88935,7 @@ msgid "This run could not be sent."
 msgstr "Diese Runde konnte nicht gesendet werden."
 
 msgid "Still sending earlier runs. Try again in a moment."
-msgstr "Frühere Runden werden noch gesendet. Versuch es gleich noch mal."
+msgstr "Frühere Runden werden noch gesendet. Versuch es gleich nochmal."
 
 #. placeholders: {site}
 msgid "Could not reach {site}. Check your connection."
@@ -88940,12 +88949,12 @@ msgstr ""
 #. placeholders: {site}
 msgid "{site} is busy with your runs. Try again in a minute."
 msgstr ""
-"{site} ist mit deinen Runden beschäftigt. Versuch es in einer Minute noch "
-"mal."
+"{site} ist mit deinen Runden beschäftigt. Versuch es in einer Minute "
+"nochmal."
 
 #. placeholders: {site}
 msgid "{site} is not answering. Try again later."
-msgstr "{site} antwortet nicht. Versuch es später noch mal."
+msgstr "{site} antwortet nicht. Versuch es später nochmal."
 
 #. placeholders: {site}
 msgid "{site} did not accept this run."
@@ -89133,8 +89142,8 @@ msgstr "{name} Port {port}"
 msgid ""
 "{site} is busy. Wait a minute, then Enter asks again. Escape goes back."
 msgstr ""
-"{site} ist beschäftigt. Warte eine Minute, dann fragt Enter noch mal. "
-"Escape geht zurück."
+"{site} ist beschäftigt. Warte eine Minute, dann fragt Enter nochmal. Escape "
+"geht zurück."
 
 msgid "The code expired. Enter asks for a new one, Escape goes back."
 msgstr ""
@@ -89142,7 +89151,7 @@ msgstr ""
 
 #. placeholders: {spoken}
 msgid "{spoken} Enter tries again, Escape goes back."
-msgstr "{spoken} Enter versucht es noch mal, Escape geht zurück."
+msgstr "{spoken} Enter versucht es nochmal, Escape geht zurück."
 
 #. placeholders: {spell_code}, {place}
 msgid ""
@@ -89191,7 +89200,7 @@ msgstr "Mit {site} verbunden als {name}."
 
 #. placeholders: {name}
 msgid "You are now {name}. Enter again for another."
-msgstr "Du bist jetzt {name}. Noch mal Enter für einen anderen."
+msgstr "Du bist jetzt {name}. Nochmal Enter für einen anderen."
 
 #. placeholders: {site}
 msgid "Asking {site} for a guest name."
@@ -90067,7 +90076,7 @@ msgstr "Auf dem neuesten Stand. Du hast {name} Version {current}."
 
 #. placeholders: {end_sentence}
 msgid "{end_sentence} Try again later."
-msgstr "{end_sentence} Versuch es später noch mal."
+msgstr "{end_sentence} Versuch es später nochmal."
 
 #. placeholders: {PLANNING_LINE}
 msgid "{PLANNING_LINE} Escape stops and goes back."
@@ -90214,7 +90223,7 @@ msgstr ""
 #. placeholders: {end_sentence}, {manual}
 msgid "{end_sentence} Your game is unchanged. Try again later. {manual}"
 msgstr ""
-"{end_sentence} Dein Spiel ist unverändert. Versuch es später noch mal. "
+"{end_sentence} Dein Spiel ist unverändert. Versuch es später nochmal. "
 "{manual}"
 
 msgid "The update was canceled."
@@ -90437,7 +90446,7 @@ msgid "Playing {title}"
 msgstr "Spiele {title}"
 
 msgid "Enter plays it, and Enter again stops it."
-msgstr "Enter spielt es, noch mal Enter stoppt es."
+msgstr "Enter spielt es, nochmal Enter stoppt es."
 
 #. placeholders: {about}
 msgid "Not heard yet: Enter plays it. {about}"
@@ -90731,7 +90740,7 @@ msgid "the reply address's domain does not take email"
 msgstr "die Domain der Antwortadresse nimmt keine E-Mails an"
 
 msgid "too many reports have been sent; try again tomorrow"
-msgstr "es wurden zu viele Meldungen gesendet; versuch es morgen noch mal"
+msgstr "es wurden zu viele Meldungen gesendet; versuch es morgen nochmal"
 
 #. placeholders: {reason}
 msgid "the relay refused the report: {reason}"
@@ -90827,11 +90836,11 @@ msgid "That game cannot be played online."
 msgstr "Dieses Spiel kann nicht online gespielt werden."
 
 msgid "Still sending. Try again in a moment."
-msgstr "Wird noch gesendet. Versuch es gleich noch mal."
+msgstr "Wird noch gesendet. Versuch es gleich nochmal."
 
 #. placeholders: {site}
 msgid "{site} is busy. Try again in a minute."
-msgstr "{site} ist beschäftigt. Versuch es in einer Minute noch mal."
+msgstr "{site} ist beschäftigt. Versuch es in einer Minute nochmal."
 
 msgid "No game has that code."
 msgstr "Kein Spiel hat diesen Code."
