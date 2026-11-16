@@ -443,25 +443,12 @@ msgstr "Chó"
 msgid "Pig"
 msgstr "Lợn"
 
-#. placeholders: {label}
-msgid "{label} challenge"
-msgstr "Thử thách {label}"
-
 msgid "A new one tomorrow."
 msgstr "Ngày mai có thử thách mới."
 
 #. placeholders: {n}
 msgid "A new one in {n} days."
 msgstr "Thử thách mới sau {n} ngày."
-
-#. placeholders: {a_or_an}, {n}, {unit}
-msgid ", {a_or_an} {n} {unit} streak"
-msgstr ""
-
-#. placeholders: {a_or_an}, {n}, {unit}
-#. one clause of a longer line
-msgid "{a_or_an} {n} {unit} streak"
-msgstr ""
 
 #. placeholders: {title}, {streak}
 msgid "{title}, not played yet{streak}"
@@ -636,9 +623,14 @@ msgstr "tắt"
 msgid "on"
 msgstr "bật"
 
-#. placeholders: {label}
-msgid "Play this {label} challenge again"
-msgstr "Chơi lại thử thách {label} này"
+msgid "Play this daily challenge again"
+msgstr ""
+
+msgid "Play this weekly challenge again"
+msgstr ""
+
+msgid "Play this monthly challenge again"
+msgstr ""
 
 #. placeholders: {CHALLENGES}
 msgid "{CHALLENGES}, daily done"
@@ -741,6 +733,10 @@ msgstr "Bắt đầu bằng luyện tập."
 
 msgid "Start with the tutorial."
 msgstr "Bắt đầu bằng hướng dẫn."
+
+#. one sentence of a longer line
+msgid "New here?"
+msgstr ""
 
 #. placeholders: {end_sentence}
 #. one sentence of a longer line
@@ -896,6 +892,10 @@ msgstr "tắt 1 trò chơi"
 #. placeholders: {n}
 msgid "{n} games off"
 msgstr "tắt {n} trò chơi"
+
+#. placeholders: {summary}
+msgid "Story and event games: {summary}"
+msgstr ""
 
 msgid ""
 "Choose which games Story and events may offer. Every game remains available "
@@ -1445,9 +1445,6 @@ msgstr "Về danh sách nhóm."
 msgid "an"
 msgstr ""
 
-msgid "An"
-msgstr ""
-
 msgid "unranked"
 msgstr "không xếp hạng"
 
@@ -1459,6 +1456,93 @@ msgstr "Hằng tuần"
 
 msgid "Monthly"
 msgstr "Hằng tháng"
+
+msgid "Daily challenge"
+msgstr "Thử thách hằng ngày"
+
+msgid "Weekly challenge"
+msgstr "Thử thách tuần"
+
+msgid "Monthly challenge"
+msgstr ""
+
+msgid "Daily challenges"
+msgstr ""
+
+msgid "Weekly challenges"
+msgstr ""
+
+msgid "Monthly challenges"
+msgstr ""
+
+#. placeholders: {n}
+msgid "a {n} day streak"
+msgstr ""
+
+#. placeholders: {n}
+msgid "an {n} day streak"
+msgstr ""
+
+#. placeholders: {n}
+msgid "a {n} week streak"
+msgstr ""
+
+#. placeholders: {n}
+msgid "an {n} week streak"
+msgstr ""
+
+#. placeholders: {n}
+msgid "a {n} month streak"
+msgstr ""
+
+#. placeholders: {n}
+msgid "an {n} month streak"
+msgstr ""
+
+#. placeholders: {n}
+msgid "A {n} day streak."
+msgstr ""
+
+#. placeholders: {n}
+msgid "An {n} day streak."
+msgstr ""
+
+#. placeholders: {n}
+msgid "A {n} week streak."
+msgstr ""
+
+#. placeholders: {n}
+msgid "An {n} week streak."
+msgstr ""
+
+#. placeholders: {n}
+msgid "A {n} month streak."
+msgstr ""
+
+#. placeholders: {n}
+msgid "An {n} month streak."
+msgstr ""
+
+msgid "Daily streak: 1 day."
+msgstr ""
+
+#. placeholders: {n}
+msgid "Daily streak: {n} days."
+msgstr ""
+
+msgid "Weekly streak: 1 week."
+msgstr ""
+
+#. placeholders: {n}
+msgid "Weekly streak: {n} weeks."
+msgstr ""
+
+msgid "Monthly streak: 1 month."
+msgstr ""
+
+#. placeholders: {n}
+msgid "Monthly streak: {n} months."
+msgstr ""
 
 msgid "day"
 msgstr "ngày"
@@ -2910,10 +2994,6 @@ msgstr ""
 msgid "Days in a row with at least one challenge finished, in any game."
 msgstr ""
 "Số ngày liên tiếp có ít nhất một thử thách hoàn thành, ở trò chơi bất kỳ."
-
-#. placeholders: {label}
-msgid "{label} challenges"
-msgstr "Thử thách {label}"
 
 msgid "challenge list"
 msgstr "danh sách thử thách"
@@ -4903,9 +4983,6 @@ msgstr "bùn"
 msgid "The meadow"
 msgstr "Đồng cỏ"
 
-msgid "Daily challenge"
-msgstr "Thử thách hằng ngày"
-
 msgid "Weekly marathon"
 msgstr "Đường dài hằng tuần"
 
@@ -5582,15 +5659,6 @@ msgstr "Kết quả {title}: {score}."
 #. placeholders: {title}, {score}, {score_line}
 msgid "{title} result: {score}. {score_line}"
 msgstr "Kết quả {title}: {score}. {score_line}"
-
-#. placeholders: {label}, {streak}, {unit}, {s_ending}
-#. one sentence of a longer line
-msgid "{label} streak: {streak} {unit}{s_ending}."
-msgstr ""
-
-#. placeholders: {label}, {streak}, {unit}, {s_ending}, {resets}
-msgid "{label} streak: {streak} {unit}{s_ending}. {resets}"
-msgstr ""
 
 msgid "Practice scores are not saved."
 msgstr "Điểm luyện tập không được lưu."
@@ -6618,19 +6686,13 @@ msgid "{peal_words} {solved} of {peals} peals solved, in {rows} rows."
 msgstr ""
 "{peal_words} Giải được {solved} trên {peals} hồi chuông, trong {rows} hàng."
 
-#. placeholders: {score_line}, {streak}, {unit}
-#. one sentence of a longer line
-msgid "{score_line} A {streak} {unit} streak."
-msgstr ""
-
 #. placeholders: {title}, {points}
 #. one sentence of a longer line
 msgid "{title} result: {points}."
 msgstr "Kết quả {title}: {points}."
 
-#. placeholders: {title}, {points}, {score_line}, {streak}, {unit}, {resets}
-msgid ""
-"{title} result: {points}. {score_line} A {streak} {unit} streak. {resets}"
+#. placeholders: {title}, {points}, {score_line}, {streak_sentence}, {resets}
+msgid "{title} result: {points}. {score_line} {streak_sentence} {resets}"
 msgstr ""
 
 #. placeholders: {index}, {peals}
@@ -6833,19 +6895,17 @@ msgstr "Chuông {bell}, {bell_name}"
 msgid "None of these bells is in the peal"
 msgstr "Không quả chuông nào trong số này có trong hồi chuông"
 
-msgid "none in place"
-msgstr "không có quả nào đúng chỗ"
+#. placeholders: {m}
+msgid "None in place, {m} misplaced"
+msgstr ""
 
 #. placeholders: {i}
-msgid "{i} in place"
-msgstr "{i} đúng chỗ"
+msgid "{i} in place, none misplaced"
+msgstr ""
 
-msgid "none misplaced"
-msgstr "không có quả nào sai chỗ"
-
-#. placeholders: {m}
-msgid "{m} misplaced"
-msgstr "{m} sai chỗ"
+#. placeholders: {i}, {m}
+msgid "{i} in place, {m} misplaced"
+msgstr ""
 
 msgid "Neither bell is in the peal"
 msgstr "Cả hai quả chuông đều không có trong hồi chuông"
@@ -7214,6 +7274,11 @@ msgstr "Belfry: {name}"
 msgid "Row {rows} of {rows2}, place {place}: {row_words}"
 msgstr "Hàng {rows} trên {rows2}, vị trí {place}: {row_words}"
 
+#. placeholders: {places}, {p}
+#. one sentence of a longer line
+msgid "Build a row of {places} bells, then {p} rings it."
+msgstr ""
+
 #. one sentence of a longer line
 msgid ""
 "In place is a right bell in its place, misplaced is a right bell in the "
@@ -7234,22 +7299,20 @@ msgstr ""
 "{join} Xếp một hàng {places} quả chuông, rồi {p} để kéo. Đúng chỗ là chuông "
 "đúng ở đúng vị trí, sai chỗ là chuông đúng ở sai vị trí."
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count it."
 msgstr ""
-" Đây là thử thách {label}, {name}. Rời đi từ menu tạm dừng thì không được "
-"tính."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count it."
 msgstr "Rời đi từ menu tạm dừng thì không được tính."
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 #. one sentence of a longer line
-msgid "This is the {label} challenge, {name}."
-msgstr "Đây là thử thách {label}, {name}."
+msgid "This is the {challenge_title}, {name}."
+msgstr ""
 
 #. placeholders: {place}, {bell}
 msgid "Place {place}, bell {bell}."
@@ -9038,10 +9101,10 @@ msgstr "Đang mở thử thách Birdsong Trail."
 msgid "{title} result: {score} of {most} points."
 msgstr "Kết quả {title}: {score} trên {most} điểm."
 
-#. placeholders: {title}, {score}, {most}, {score_line}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {score}, {most}, {score_line}, {streak_sentence}, {resets}
 msgid ""
-"{title} result: {score} of {most} points. {score_line} A {streak} {unit} "
-"streak. {resets}"
+"{title} result: {score} of {most} points. {score_line} {streak_sentence} "
+"{resets}"
 msgstr ""
 
 #. placeholders: {summary}, {score}, {most}
@@ -10710,13 +10773,11 @@ msgstr "Con {bird_name} chờ bạn đáp. {answer_keys}"
 msgid "Walk toward a song to meet its bird."
 msgstr "Đi về phía tiếng hót để gặp con chim."
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the walk."
 msgstr ""
-" Đây là thử thách {label}, {name}. Rời đi từ menu tạm dừng thì cuộc dạo "
-"không được tính."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the walk."
@@ -11485,6 +11546,11 @@ msgstr ""
 "từng hình nhảy ở giữa. Mọi bước đều được hô, và cỏ ba lá ẩn trong mọi giai "
 "điệu."
 
+#. placeholders: {year}
+#. one sentence of a longer line
+msgid "Each set dance you finish goes in your keepsake for {year}."
+msgstr ""
+
 #. one sentence of a longer line
 msgid "Escape on this page goes back without dancing."
 msgstr "Escape ở trang này để quay lại mà không nhảy."
@@ -12036,13 +12102,11 @@ msgstr ""
 msgid "Every {STREAK_EVERY} in a row add {STREAK_BONUS} points."
 msgstr "Cứ {STREAK_EVERY} bước liên tiếp được thêm {STREAK_BONUS} điểm."
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the run."
 msgstr ""
-" Đây là thử thách {label}, {name}. Rời đi từ menu tạm dừng thì lượt không "
-"được tính."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the run."
@@ -13644,17 +13708,16 @@ msgstr "{name} ở {angle}, {name2}"
 msgid "Aim a little ahead of a drifting heart."
 msgstr "Ngắm hơi phía trước trái tim đang trôi."
 
-#. placeholders: {label}
+#. placeholders: {challenge_title}
 msgid ""
-" This is the {label} challenge. Leaving from the pause menu does not count "
+" This is the {challenge_title}. Leaving from the pause menu does not count "
 "it."
 msgstr ""
-" Đây là thử thách {label}. Rời đi từ menu tạm dừng thì không được tính."
 
-#. placeholders: {label}
+#. placeholders: {challenge_title}
 #. one sentence of a longer line
-msgid "This is the {label} challenge."
-msgstr "Đây là thử thách {label}."
+msgid "This is the {challenge_title}."
+msgstr ""
 
 msgid ""
 "Archery over a rooftop sky: shoot drifting paper hearts, in pairs, for "
@@ -18003,6 +18066,11 @@ msgid ""
 msgstr ""
 "Con đom đóm chớp nhiều lần cần được đáp mọi lần chớp của một lần nháy."
 
+#. placeholders: {control_name}
+#. one sentence of a longer line
+msgid "Walk toward a firefly, and press {control_name} while it glows."
+msgstr ""
+
 #. placeholders: {status}, {control_name}
 #. one sentence of a longer line
 msgid ""
@@ -18407,6 +18475,10 @@ msgid ""
 msgstr ""
 "Chớp muộn là con lạc nhịp: nhấn {control_name} cùng cả đàn để kéo nó về."
 
+#. one sentence of a longer line
+msgid "The whole meadow flashes together."
+msgstr ""
+
 #. placeholders: {status}
 #. one sentence of a longer line
 msgid "{status} The whole meadow flashes together."
@@ -18582,12 +18654,41 @@ msgstr "bên phải"
 msgid "to the left"
 msgstr "bên trái"
 
-#. placeholders: {a}, {s}
-msgid "{a} and {s}"
-msgstr "{a} và {s}"
+#. placeholders: {dist}
+msgid "{dist} ahead and to the left"
+msgstr ""
 
-msgid "close by"
-msgstr "ngay gần"
+#. placeholders: {dist}
+msgid "{dist} ahead and to the right"
+msgstr ""
+
+#. placeholders: {dist}
+msgid "{dist} ahead"
+msgstr ""
+
+#. placeholders: {dist}
+msgid "{dist} behind you and to the left"
+msgstr ""
+
+#. placeholders: {dist}
+msgid "{dist} behind you and to the right"
+msgstr ""
+
+#. placeholders: {dist}
+msgid "{dist} behind you"
+msgstr ""
+
+#. placeholders: {dist}
+msgid "{dist} to the left"
+msgstr ""
+
+#. placeholders: {dist}
+msgid "{dist} to the right"
+msgstr ""
+
+#. placeholders: {dist}
+msgid "{dist} close by"
+msgstr ""
 
 msgid "1 minute"
 msgstr "1 phút"
@@ -19619,12 +19720,6 @@ msgstr "Thắng cả {deals} ván, tổng cộng {moves_words}."
 msgid "Deal won in {moves_words}."
 msgstr "Thắng ván sau {moves_words}."
 
-#. placeholders: {title}, {score}, {score_line}, {streak}, {unit}, {resets}
-msgid ""
-"{title} result: {score} points. {score_line} A {streak} {unit} streak. "
-"{resets}"
-msgstr ""
-
 #. placeholders: {index}, {deals}
 #. one sentence of a longer line
 msgid "Deal {index} of {deals}."
@@ -19697,10 +19792,6 @@ msgstr "Có bảng xếp hạng riêng."
 #. one sentence of a longer line
 msgid "Turning the stock costs no moves."
 msgstr "Lật nọc không tốn nước đi."
-
-#. placeholders: {name}
-msgid "the {name}"
-msgstr ""
 
 #. placeholders: {sentence_start}
 msgid "{sentence_start} foundation"
@@ -19805,8 +19896,12 @@ msgstr "{t} lật nọc."
 msgid "{u} and {d} move within a pile."
 msgstr "{u} và {d} đi trong một cột."
 
-#. placeholders: {cards_words}, {the}, {the2}
-msgid "{cards_words}, {the} down to {the2}"
+#. placeholders: {name}
+msgid "the {name}"
+msgstr ""
+
+#. placeholders: {n}, {first}, {last}
+msgid "{n} cards, the {first} down to the {last}"
 msgstr ""
 
 #. placeholders: {p}
@@ -19910,32 +20005,37 @@ msgstr "{name} lên đến {rank_words}"
 msgid "Foundations: {join}."
 msgstr "Chồng đích: {join}."
 
-#. placeholders: {the}, {p}
-msgid "{the} in pile {p}"
+#. placeholders: {card}, {p}
+msgid "The {card} in pile {p} can go on its foundation."
 msgstr ""
 
-#. placeholders: {name}
-msgid "the turned-up {name}"
-msgstr "lá {name} đã lật"
-
-#. placeholders: {the}
-msgid "{the} on its foundation"
+#. placeholders: {card}, {p}, {onto}, {q}
+msgid "The {card} in pile {p} can go on the {onto} in pile {q}."
 msgstr ""
 
-msgid "go on its foundation"
-msgstr "lên chồng đích của nó"
-
-#. placeholders: {the}, {q}
-msgid "go on {the} in pile {q}"
+#. placeholders: {card}, {p}, {q}
+msgid "The {card} in pile {p} can go to the empty pile {q}."
 msgstr ""
 
-#. placeholders: {q}
-msgid "go to the empty pile {q}"
-msgstr "vào cột trống {q}"
+#. placeholders: {card}
+msgid "The turned-up {card} can go on its foundation."
+msgstr ""
 
-#. placeholders: {sentence_start}, {place}
-msgid "{sentence_start} can {place}."
-msgstr "{sentence_start} có thể {place}."
+#. placeholders: {card}, {onto}, {q}
+msgid "The turned-up {card} can go on the {onto} in pile {q}."
+msgstr ""
+
+#. placeholders: {card}, {q}
+msgid "The turned-up {card} can go to the empty pile {q}."
+msgstr ""
+
+#. placeholders: {card}, {onto}, {q}
+msgid "The {card} on its foundation can go on the {onto} in pile {q}."
+msgstr ""
+
+#. placeholders: {card}, {q}
+msgid "The {card} on its foundation can go to the empty pile {q}."
+msgstr ""
 
 msgid " That turns up a face-down card."
 msgstr " Nước này lật ngửa một lá úp."
@@ -19981,25 +20081,25 @@ msgstr "{sentence_start} và {control_name} đi trong một cột."
 msgid "Pile {p} is empty."
 msgstr "Cột {p} trống."
 
-#. placeholders: {sentence_start}
-msgid "{sentence_start} is the bottom card of the pile."
-msgstr "{sentence_start} là lá dưới cùng của cột."
+#. placeholders: {card}
+msgid "The {card} is the bottom card of the pile."
+msgstr ""
 
-#. placeholders: {sentence_start}, {n}
-msgid ""
-"{sentence_start} is the deepest face-up card, with {n} face down under it."
-msgstr "{sentence_start} là lá ngửa sâu nhất, bên dưới còn {n} lá úp."
+#. placeholders: {card}, {n}
+msgid "The {card} is the deepest face-up card, with {n} face down under it."
+msgstr ""
 
 #. placeholders: {name_and_colour}
 msgid "Top card: {name_and_colour}."
 msgstr "Lá trên cùng: {name_and_colour}."
 
-msgid "the top card"
-msgstr "lá trên cùng"
+#. placeholders: {name}
+msgid "{name}, the top card."
+msgstr ""
 
-#. placeholders: {ordinal}
-msgid "{ordinal} from the top"
-msgstr "{ordinal} từ trên xuống"
+#. placeholders: {name}, {n}
+msgid "{name}, card {n} from the top."
+msgstr ""
 
 msgid "The stock is empty, and nothing is turned up."
 msgstr "Nọc đã hết, và chưa lật lá nào."
@@ -20116,17 +20216,33 @@ msgstr "Lật nọc không tốn nước đi, cầu tháng may mắn."
 msgid "{name} won in {moves_words}"
 msgstr "Thắng {name} sau {moves_words}"
 
-#. placeholders: {what}, {name}
-msgid "{what} on the {name} foundation."
-msgstr "{what} lên chồng đích {name}."
-
-#. placeholders: {what}, {the}, {q}
-msgid "{what} on {the}, pile {q}."
+#. placeholders: {card}, {suit}
+msgid "The {card} on the {suit} foundation."
 msgstr ""
 
-#. placeholders: {what}, {q}
-msgid "{what} to pile {q}."
-msgstr "{what} vào cột {q}."
+#. placeholders: {card}, {onto}, {q}
+msgid "The {card} on the {onto}, pile {q}."
+msgstr ""
+
+#. placeholders: {n}, {onto}, {q}
+msgid "{n} cards on the {onto}, pile {q}."
+msgstr ""
+
+#. placeholders: {card}, {q}
+msgid "The {card} to pile {q}."
+msgstr ""
+
+#. placeholders: {n}, {q}
+msgid "{n} cards to pile {q}."
+msgstr ""
+
+#. placeholders: {card}
+msgid "The {card}"
+msgstr ""
+
+#. placeholders: {n}
+msgid "{n} cards"
+msgstr "{n} lá"
 
 msgid "your first win"
 msgstr "trận thắng đầu tiên của bạn"
@@ -20362,49 +20478,65 @@ msgstr "Đó là chỗ các lá vừa rời đi."
 msgid "Only a king goes there."
 msgstr "Chỉ già mới đặt vào đó."
 
-#. placeholders: {sentence_start}
+#. placeholders: {card}
 #. one sentence of a longer line
-msgid "{sentence_start} cannot go on an empty pile."
-msgstr "{sentence_start} không đặt vào cột trống được."
-
-#. placeholders: {sentence_start}
-msgid "{sentence_start} cannot go on an empty pile. Only a king goes there."
+msgid "The {card} cannot go on an empty pile."
 msgstr ""
-"{sentence_start} không đặt vào cột trống được. Chỉ già mới đặt vào đó."
 
-#. placeholders: {sentence_start}, {name}
-msgid "{sentence_start} cannot go on the {name}."
-msgstr "{sentence_start} không đặt lên {name} được."
+#. placeholders: {card}
+msgid "The {card} cannot go on an empty pile. Only a king goes there."
+msgstr ""
 
-#. placeholders: {lead}
-msgid "{lead} A king goes only on an empty pile."
-msgstr "{lead} Già chỉ đặt vào cột trống."
-
-#. placeholders: {lead}, {need}, {rank_words}
-msgid "{lead} It needs a {need} {rank_words}."
-msgstr "{lead} Cần một lá {rank_words} {need}."
-
-#. placeholders: {name}, {rank_words}
 #. one sentence of a longer line
-msgid "The {name} foundation needs the {rank_words} next."
-msgstr "Chồng đích {name} cần lá {rank_words} tiếp theo."
+msgid "A king goes only on an empty pile."
+msgstr ""
 
-#. placeholders: {sentence_start}
+#. placeholders: {name}, {onto}
 #. one sentence of a longer line
-msgid "{sentence_start} cannot go up yet."
-msgstr "{sentence_start} chưa lên được."
+msgid "The {name} cannot go on the {onto}."
+msgstr ""
 
-#. placeholders: {sentence_start}, {name}, {rank_words}
+#. placeholders: {name}, {onto}
 msgid ""
-"{sentence_start} cannot go up yet. The {name} foundation needs the "
-"{rank_words} next."
+"The {name} cannot go on the {onto}. A king goes only on an empty pile."
 msgstr ""
-"{sentence_start} chưa lên được. Chồng đích {name} cần lá {rank_words} tiếp "
-"theo."
 
-#. placeholders: {sentence_start}, {name}
-msgid "{sentence_start} goes on the {name} foundation."
-msgstr "{sentence_start} lên chồng đích {name}."
+#. placeholders: {need}
+#. one sentence of a longer line
+msgid "It needs a black {need}."
+msgstr ""
+
+#. placeholders: {name}, {onto}, {need}
+msgid "The {name} cannot go on the {onto}. It needs a black {need}."
+msgstr ""
+
+#. placeholders: {need}
+#. one sentence of a longer line
+msgid "It needs a red {need}."
+msgstr ""
+
+#. placeholders: {name}, {onto}, {need}
+msgid "The {name} cannot go on the {onto}. It needs a red {need}."
+msgstr ""
+
+#. placeholders: {name}
+#. one sentence of a longer line
+msgid "The {name} cannot go up yet."
+msgstr ""
+
+#. placeholders: {name}, {suit}, {next}
+msgid ""
+"The {name} cannot go up yet. The {suit} foundation needs the {next} next."
+msgstr ""
+
+#. placeholders: {suit}, {next}
+#. one sentence of a longer line
+msgid "The {suit} foundation needs the {next} next."
+msgstr ""
+
+#. placeholders: {name}, {suit}
+msgid "The {name} goes on the {suit} foundation."
+msgstr ""
 
 msgid "fifth"
 msgstr "thứ năm"
@@ -20435,10 +20567,6 @@ msgstr "thứ mười ba"
 
 msgid "1 card"
 msgstr "1 lá"
-
-#. placeholders: {n}
-msgid "{n} cards"
-msgstr "{n} lá"
 
 msgid "1 move"
 msgstr "1 nước"
@@ -23059,6 +23187,11 @@ msgstr "Đâm vào xe ngược chiều."
 msgid "Down for 3 seconds."
 msgstr "Nằm 3 giây."
 
+#. placeholders: {CRASH_S}
+#. one sentence of a longer line
+msgid "Lost {CRASH_S} seconds."
+msgstr ""
+
 #. placeholders: {why}, {CRASH_S}
 #. one sentence of a longer line
 msgid "{why} Lost {CRASH_S} seconds."
@@ -23583,10 +23716,6 @@ msgstr "{points} điểm chuyến."
 #. placeholders: {join}
 msgid "Ride points: {join}."
 msgstr "Điểm chuyến: {join}."
-
-#. placeholders: {streak}, {unit}, {resets}
-msgid "A {streak} {unit} streak. {resets}"
-msgstr ""
 
 #. placeholders: {title}, {points}
 msgid "{title} result: {points} ride points"
@@ -25092,12 +25221,6 @@ msgstr "{n} bài"
 msgid "Moves: {words}."
 msgstr "Động tác: {words}."
 
-#. placeholders: {title}, {points_words}, {score_line}, {streak}, {unit}, {resets}
-msgid ""
-"{title} result: {points_words}. {score_line} A {streak} {unit} streak. "
-"{resets}"
-msgstr ""
-
 msgid "Graveyard Shuffle"
 msgstr "Graveyard Shuffle"
 
@@ -25336,13 +25459,11 @@ msgstr "Nhảy ở phách sau mỗi tiếng gọi."
 msgid "Move on the beat after each call. {sentence_start}."
 msgstr "Nhảy ở phách sau mỗi tiếng gọi. {sentence_start}."
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 msgid ""
-"This is the {label} challenge, {name}. Leaving from the pause menu does not "
+"This is the {challenge_title}, {name}. Leaving from the pause menu does not "
 "count the run."
 msgstr ""
-"Đây là thử thách {label}, {name}. Rời từ menu tạm dừng thì lượt không được "
-"tính."
 
 #. placeholders: {sentence_start}, {k}, {k2}
 msgid ""
@@ -27023,20 +27144,14 @@ msgstr "khai vị và món chính"
 msgid "all three courses"
 msgstr "cả ba chặng"
 
-#. placeholders: {result_line}, {streak}, {unit}
-#. one sentence of a longer line
-msgid "{result_line} A {streak} {unit} streak."
-msgstr ""
-
 #. placeholders: {title}, {total}
 #. one sentence of a longer line
 msgid "{title} result: {total} points."
 msgstr "Kết quả {title}: {total} điểm."
 
-#. placeholders: {title}, {total}, {result_line}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {total}, {result_line}, {streak_sentence}, {resets}
 msgid ""
-"{title} result: {total} points. {result_line} A {streak} {unit} streak. "
-"{resets}"
+"{title} result: {total} points. {result_line} {streak_sentence} {resets}"
 msgstr ""
 
 #. placeholders: {title}, {total}
@@ -30659,19 +30774,13 @@ msgstr "Nhặt thứ phát ra từng tiếng, theo thứ tự."
 msgid "A new {best}, beating {previous}."
 msgstr "{best} mới, vượt {previous}."
 
-#. placeholders: {record}, {streak}, {unit}
-#. one sentence of a longer line
-msgid "{record} A {streak} {unit} streak."
-msgstr ""
-
 #. placeholders: {title}, {score}
 #. one sentence of a longer line
 msgid "{title} result: score {score}."
 msgstr "Kết quả {title}: {score} điểm."
 
-#. placeholders: {title}, {score}, {record}, {streak}, {unit}, {resets}
-msgid ""
-"{title} result: score {score}. {record} A {streak} {unit} streak. {resets}"
+#. placeholders: {title}, {score}, {record}, {streak_sentence}, {resets}
+msgid "{title} result: score {score}. {record} {streak_sentence} {resets}"
 msgstr ""
 
 msgid ""
@@ -32155,9 +32264,9 @@ msgstr " Trong phòng gọi hồn, nhặt các thứ bà đồng gọi lên, the
 msgid " Courage does not refill between floors."
 msgstr " Can đảm không hồi lại giữa các tầng."
 
-#. placeholders: {challenge_name}, {label}, {twist}, {carry}
-msgid "{challenge_name}, a {label} challenge.{twist}{carry} "
-msgstr "{challenge_name}, thử thách {label}.{twist}{carry} "
+#. placeholders: {challenge_name}, {challenge_title}, {twist}, {carry}
+msgid "{challenge_name}, the {challenge_title}.{twist}{carry} "
+msgstr ""
 
 #. placeholders: {sentence_start}, {clock_words}
 msgid "{sentence_start} gives a hint for {clock_words}."
@@ -35119,13 +35228,11 @@ msgstr "Trái: {alcove_words}"
 msgid "Right: {alcove_words}"
 msgstr "Phải: {alcove_words}"
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the hall."
 msgstr ""
-" Đây là thử thách {label}, {name}. Rời từ menu tạm dừng thì hành lang không "
-"được tính."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the hall."
@@ -36215,13 +36322,16 @@ msgstr ""
 msgid "nights"
 msgstr ""
 
-#. placeholders: {places}, {ALL}, {lanterns}, {s_ending}
+#. placeholders: {found}, {places}
 msgid ""
-"Your journal: {places} of {ALL} places found, {lanterns} lantern{s_ending} "
+"Your journal: {found} of {places} places found, 1 lantern gathered in all."
+msgstr ""
+
+#. placeholders: {found}, {places}, {lanterns}
+msgid ""
+"Your journal: {found} of {places} places found, {lanterns} lanterns "
 "gathered in all."
 msgstr ""
-"Sổ tay của bạn: đã tìm {places} trên {ALL} chốn, tổng cộng đã gom "
-"{lanterns} đèn lồng."
 
 msgid "Lantern Lake"
 msgstr "Lantern Lake"
@@ -36422,24 +36532,18 @@ msgid "Daily, weekly and monthly lakes, the same for every player. {resets}"
 msgstr ""
 "Hồ mỗi ngày, mỗi tuần và mỗi tháng, giống nhau cho mọi người chơi. {resets}"
 
-#. placeholders: {side}
-msgid "ahead and to your {side}"
-msgstr "phía trước bên {side}"
+msgid "behind you to the left"
+msgstr ""
 
-#. placeholders: {side}
-msgid "to your {side}"
-msgstr "bên {side}"
-
-#. placeholders: {side}
-msgid "behind you to the {side}"
-msgstr "phía sau bên {side}"
+msgid "behind you to the right"
+msgstr ""
 
 msgid "right behind you"
 msgstr "ngay sau lưng"
 
-#. placeholders: {words}, {clock}
-msgid "{words}, at {clock} o'clock"
-msgstr "{words}, hướng {clock} giờ"
+#. placeholders: {clock}
+msgid "at {clock} o'clock"
+msgstr ""
 
 msgid "very close"
 msgstr "rất gần"
@@ -36771,12 +36875,13 @@ msgstr "Đêm nay đã gom {gathered} đèn lồng."
 msgid "{gathered} of {lanterns} lanterns gathered."
 msgstr "Đã gom {gathered} trên {lanterns} đèn lồng."
 
-#. placeholders: {order}
-msgid "Lantern {order} is lit"
-msgstr "Đèn lồng {order} đang sáng"
+#. placeholders: {order}, {place}
+msgid "Lantern {order} is lit {place}."
+msgstr ""
 
-msgid "The nearest lantern is"
-msgstr "Chiếc đèn lồng gần nhất ở"
+#. placeholders: {place}
+msgid "The nearest lantern is {place}."
+msgstr ""
 
 msgid "The song is whole."
 msgstr "Bài hát đã trọn vẹn."
@@ -37159,23 +37264,29 @@ msgstr "Bài hát hoàn chỉnh. {gathered}"
 msgid "Home with {gathered}"
 msgstr "Về nhà với {gathered}"
 
-#. placeholders: {score}
-msgid ", score {score}"
-msgstr ", {score} điểm"
+#. placeholders: {gathered}, {score}
+msgid "Song complete. {gathered}, score {score}"
+msgstr ""
 
-#. placeholders: {name}, {gathered}, {s_ending}
-msgid "{name} gathered {gathered} lantern{s_ending}"
-msgstr "{name} đã gom {gathered} đèn lồng"
+#. placeholders: {gathered}, {score}
+#. one sentence of a longer line
+msgid "{gathered}, score {score}"
+msgstr ""
 
-#. placeholders: {found}, {else}
-msgid " and found {found} {else}"
-msgstr " và tìm thấy {found} {else}"
+#. placeholders: {gathered}, {score}
+msgid "Home with {gathered}, score {score}"
+msgstr ""
 
-msgid "place"
-msgstr "chốn"
+#. placeholders: {mode}, {gathered}
+msgid "{mode} gathered {gathered}."
+msgstr ""
 
-msgid "places"
-msgstr "chốn"
+msgid " You found 1 place."
+msgstr ""
+
+#. placeholders: {found}
+msgid " You found {found} places."
+msgstr ""
 
 #. placeholders: {title}, {score}
 msgid "{title} score: {score}."
@@ -37187,10 +37298,6 @@ msgstr " Điểm đầu tiên của bạn ở đây."
 #. placeholders: {best}
 msgid " Your best stays {best}."
 msgstr " Kỷ lục của bạn vẫn là {best}."
-
-#. placeholders: {streak}, {unit}
-msgid " A {streak} {unit} streak."
-msgstr ""
 
 msgid "Head home and end the outing?"
 msgstr "Về nhà và kết thúc chuyến đi?"
@@ -47406,10 +47513,9 @@ msgstr "Tổng {total}."
 msgid "{title} result: {score_words}."
 msgstr "Kết quả {title}: {score_words}."
 
-#. placeholders: {title}, {score_words}, {score_line}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {score_words}, {score_line}, {streak_sentence}, {resets}
 msgid ""
-"{title} result: {score_words}. {score_line} A {streak} {unit} streak. "
-"{resets}"
+"{title} result: {score_words}. {score_line} {streak_sentence} {resets}"
 msgstr ""
 
 msgid "Full game"
@@ -50295,6 +50401,10 @@ msgid "A locked strand says how its first log is recovered."
 msgstr "Mạch đã khóa nói cách thu hồi nhật ký đầu tiên của nó."
 
 #. one sentence of a longer line
+msgid "Each row is a strand of the story."
+msgstr ""
+
+#. one sentence of a longer line
 msgid "Enter opens its logs."
 msgstr "Enter mở các nhật ký của nó."
 
@@ -50349,6 +50459,10 @@ msgstr "Quay về kho lưu trữ cốt truyện."
 #. one sentence of a longer line
 msgid "Locked logs need more runs, and each says how it is recovered."
 msgstr "Nhật ký đã khóa cần thêm lượt, và mỗi cái nói cách thu hồi nó."
+
+#. one sentence of a longer line
+msgid "Recovered logs open with Enter."
+msgstr ""
 
 #. placeholders: {row}
 #. one sentence of a longer line
@@ -50755,6 +50869,11 @@ msgstr "Thưởng cấp bậc."
 #. placeholders: {rank_bonuses}
 msgid "Rank bonuses. {rank_bonuses}"
 msgstr "Thưởng cấp bậc. {rank_bonuses}"
+
+#. placeholders: {kills}, {ACE_KILLS}
+#. one sentence of a longer line
+msgid "Rail gun kills {kills} of {ACE_KILLS} for the Ace gunner licence."
+msgstr ""
 
 #. placeholders: {fitted}, {kills}, {ACE_KILLS}
 #. one sentence of a longer line
@@ -51403,9 +51522,6 @@ msgstr "Lượt có hướng dẫn"
 msgid "Black Sky Run"
 msgstr "Black Sky Run"
 
-msgid "Weekly challenge"
-msgstr "Thử thách tuần"
-
 msgid "Black Sky event"
 msgstr "Sự kiện Black Sky"
 
@@ -51722,6 +51838,10 @@ msgstr "Nhiễu động lan ra."
 msgid "Multiplier {multiplier}."
 msgstr "Hệ số nhân {multiplier}."
 
+#. one sentence of a longer line
+msgid "Shield absorbed it."
+msgstr ""
+
 #. placeholders: {left}, {s_ending}
 #. one sentence of a longer line
 msgid "{left} shield{s_ending} left."
@@ -51735,6 +51855,10 @@ msgstr "{message} Khiên đã đỡ."
 #. placeholders: {message}, {left}, {s_ending}
 msgid "{message} Shield absorbed it. {left} shield{s_ending} left."
 msgstr "{message} Khiên đã đỡ. Còn {left} khiên."
+
+#. one sentence of a longer line
+msgid "Dead man's switch."
+msgstr ""
 
 #. placeholders: {message}
 #. one sentence of a longer line
@@ -52514,15 +52638,9 @@ msgstr "Đã hoàn thành lượt."
 msgid "Run failed."
 msgstr "Lượt thất bại."
 
-#. placeholders: {challenge_result_at}, {streak}, {unit}
-#. one sentence of a longer line
-msgid "{challenge_result_at} A {streak} {unit} streak."
-msgstr ""
-
-#. placeholders: {title}, {score}, {challenge_result_at}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {score}, {challenge_result_at}, {streak_sentence}, {resets}
 msgid ""
-"{title} result: {score}. {challenge_result_at} A {streak} {unit} streak. "
-"{resets}"
+"{title} result: {score}. {challenge_result_at} {streak_sentence} {resets}"
 msgstr ""
 
 #. placeholders: {EVENT_LOG_TITLE}
@@ -52654,6 +52772,10 @@ msgid ""
 msgstr ""
 "Đã dọn sạch khu vực {sectors_cleared}. Thân tàu {hull}. Căng thẳng "
 "{stress}. Điểm {score}. Chọn một nâng cấp"
+
+#. one sentence of a longer line
+msgid "Enter fits it."
+msgstr ""
 
 #. placeholders: {blurb}
 #. one sentence of a longer line
@@ -56185,6 +56307,11 @@ msgstr "Đang mở thử thách Riverboat Dice."
 #. one sentence of a longer line
 msgid "Final totals of the last night: {standings}."
 msgstr "Tổng cuối của đêm cuối: {standings}."
+
+#. placeholders: {wins}, {nights}
+#. one sentence of a longer line
+msgid "You won {wins} of {nights} nights."
+msgstr ""
 
 #. placeholders: {outcome_words}, {wins}, {nights}
 #. one sentence of a longer line
@@ -60372,13 +60499,15 @@ msgstr ""
 " Điểm: 100 cho mục tiêu, 10 cho mỗi ngày còn dư, 5 mỗi lần thu hoạch, 5 mỗi "
 "bè hòa âm, 2 mỗi con sâu bọ."
 
-#. placeholders: {back}, {name}, {plan}, {twist_text}, {goal}, {unit}
-msgid ""
-"{back}{name}: {plan} {twist_text}{goal} Leaving from the pause menu keeps "
-"the garden until the {unit} is over."
+msgid "Leaving from the pause menu keeps the garden until the day is over."
 msgstr ""
-"{back}{name}: {plan} {twist_text}{goal} Rời đi từ menu tạm dừng sẽ giữ khu "
-"vườn đến khi hết {unit}."
+
+msgid "Leaving from the pause menu keeps the garden until the week is over."
+msgstr ""
+
+msgid ""
+"Leaving from the pause menu keeps the garden until the month is over."
+msgstr ""
 
 msgid "A fresh garden for the same challenge. Only your best score is kept."
 msgstr ""
@@ -62368,9 +62497,9 @@ msgstr " Khấc giả báo những số sai: hãy bỏ qua chúng."
 msgid " When the guard stops at the door, keep still until he leaves."
 msgstr " Khi người gác dừng ở cửa, hãy đứng yên cho đến khi hắn đi."
 
-#. placeholders: {label}, {name}, {index}, {safes}
-msgid " This is the {label} challenge, {name}: safe {index} of {safes}."
-msgstr " Đây là thử thách {label}, {name}: két {index} trên {safes}."
+#. placeholders: {challenge_title}, {name}, {index}, {safes}
+msgid " This is the {challenge_title}, {name}: safe {index} of {safes}."
+msgstr ""
 
 msgid " Strikes and hints are shared across the vault."
 msgstr " Lỗi và gợi ý dùng chung cho cả kho."
@@ -68428,15 +68557,6 @@ msgstr "Kỷ lục mới, tăng từ {points_words}."
 msgid "Your best is {points_words}."
 msgstr "Kỷ lục của bạn là {points_words}."
 
-#. placeholders: {label}, {streak}, {unit}
-#. one sentence of a longer line
-msgid "{label} streak: {streak} {unit}."
-msgstr "Chuỗi {label}: {streak} {unit}."
-
-#. placeholders: {label}, {streak}, {unit}, {resets}
-msgid "{label} streak: {streak} {unit}. {resets}"
-msgstr "Chuỗi {label}: {streak} {unit}. {resets}"
-
 #. placeholders: {name}
 #. one sentence of a longer line
 msgid "{name} over."
@@ -69416,13 +69536,11 @@ msgstr ""
 " Tuyết phủ dần khi bạn trượt, và đêm kết thúc khi tuyết phủ kín mặt băng. "
 "Mỗi đèn lồng đã lấy giữ mặt băng sạch thêm một chút."
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the skate."
 msgstr ""
-" Đây là thử thách {label}, {name}. Rời đi từ menu tạm dừng thì lượt trượt "
-"không được tính."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the skate."
@@ -70527,13 +70645,11 @@ msgstr "Đã hạ cánh cả {n} mặt trăng. Thưởng nhiên liệu {fuel_bon
 msgid "{fuel_bonus} points of fuel bonus."
 msgstr "Thưởng nhiên liệu {fuel_bonus} điểm."
 
-#. placeholders: {title}, {score}, {score_line}, {streak}, {unit}, {sentence_start}
+#. placeholders: {title}, {score}, {score_line}, {streak_sentence}, {sentence_start}
 msgid ""
-"{title} result: {score} points. {score_line} A {streak} {unit} streak. "
+"{title} result: {score} points. {score_line} {streak_sentence} "
 "{sentence_start}"
 msgstr ""
-"Kết quả {title}: {score} điểm. {score_line} Chuỗi {streak} {unit}. "
-"{sentence_start}"
 
 msgid "Full moon pad"
 msgstr "Bãi đáp trăng tròn"
@@ -73306,10 +73422,6 @@ msgid ""
 msgstr ""
 "Bạn đã tới lần lặn {DEEP_UNLOCK}. Đã mở khóa Khởi đầu sâu: giờ màn hình "
 "chính có thể bắt đầu chuyến thám hiểm ở lần lặn {DEEP_UNLOCK}."
-
-#. placeholders: {streak}, {unit}
-msgid "A {streak} {unit} streak."
-msgstr "Chuỗi {streak} {unit}."
 
 #. placeholders: {title}, {score}
 #. one sentence of a longer line
@@ -77191,13 +77303,11 @@ msgstr "Ống: {cur} trên {pipes}"
 msgid "In tune: {tuned} of {pipes}"
 msgstr "Đúng giọng: {tuned} trên {pipes}"
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the rank."
 msgstr ""
-" Đây là thử thách {label}, {name}. Rời đi từ menu tạm dừng thì hàng ống "
-"không được tính."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the rank."
@@ -78994,12 +79104,13 @@ msgstr "Bạn đã tìm thấy {found} trên ba loài của tối nay."
 msgid "Your {first} on this one."
 msgstr "{first} của bạn ở thử thách này."
 
-#. placeholders: {unit}
-msgid "The first {unit} of a streak."
+msgid "The first day of a streak."
 msgstr ""
 
-#. placeholders: {n}, {unit}
-msgid "A {n} {unit} streak."
+msgid "The first week of a streak."
+msgstr ""
+
+msgid "The first month of a streak."
 msgstr ""
 
 #. placeholders: {kinds}, {ALL}
@@ -82882,18 +82993,13 @@ msgstr ""
 msgid "Your {r}best on this challenge is {best}."
 msgstr ""
 
-#. placeholders: {line}, {streak}, {unit}
-#. one sentence of a longer line
-msgid "{line} A {streak} {unit} streak."
-msgstr ""
-
 #. placeholders: {title}, {score}
 #. one sentence of a longer line
 msgid "{title} score {score}."
 msgstr "Điểm {title}: {score}."
 
-#. placeholders: {title}, {score}, {line}, {streak}, {unit}, {resets}
-msgid "{title} score {score}. {line} A {streak} {unit} streak. {resets}"
+#. placeholders: {title}, {score}, {line}, {streak_sentence}, {resets}
+msgid "{title} score {score}. {line} {streak_sentence} {resets}"
 msgstr ""
 
 msgid "Winter Wonderland"
@@ -83187,6 +83293,11 @@ msgstr "lúc {m} phút trước nửa đêm"
 #. placeholders: {at}
 msgid "The party fizzled out {at}."
 msgstr "Bữa tiệc đã tàn {at}."
+
+#. placeholders: {score}
+#. one sentence of a longer line
+msgid "Practice score {score}."
+msgstr ""
 
 #. placeholders: {head}, {score}
 #. one sentence of a longer line
@@ -83598,9 +83709,9 @@ msgstr "Thư muộn. "
 msgid " It would {name} in its box."
 msgstr " Trong hộp nó sẽ kêu {name}."
 
-#. placeholders: {late}, {from}, {age}, {WRITES}, {words}, {sound}
-msgid "{late}{from}, age {age}, {WRITES}: {words}{sound}"
-msgstr "{late}{from}, {age} tuổi, {WRITES}: {words}{sound}"
+#. placeholders: {late}, {from}, {age}, {words}, {sound}
+msgid "{late}{from}, age {age}, writes: {words}{sound}"
+msgstr ""
 
 #. placeholders: {last}
 msgid " of {last}"
@@ -84237,9 +84348,6 @@ msgstr "Anh họ Theo"
 
 msgid "Mrs. Holly"
 msgstr "Bà Holly"
-
-msgid "writes"
-msgstr "viết"
 
 msgid ""
 "A blizzard has buried the North Pole, and the workshop is a day behind. The "
@@ -88501,3 +88609,229 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{label} challenge"
+#~ msgstr "Thử thách {label}"
+
+#~ msgid "Play this {label} challenge again"
+#~ msgstr "Chơi lại thử thách {label} này"
+
+#~ msgid "{label} challenges"
+#~ msgstr "Thử thách {label}"
+
+#~ msgid "none in place"
+#~ msgstr "không có quả nào đúng chỗ"
+
+#~ msgid "{i} in place"
+#~ msgstr "{i} đúng chỗ"
+
+#~ msgid "none misplaced"
+#~ msgstr "không có quả nào sai chỗ"
+
+#~ msgid "{m} misplaced"
+#~ msgstr "{m} sai chỗ"
+
+#~ msgid ""
+#~ " This is the {label} challenge, {name}. Leaving from the pause menu does "
+#~ "not count it."
+#~ msgstr ""
+#~ " Đây là thử thách {label}, {name}. Rời đi từ menu tạm dừng thì không được "
+#~ "tính."
+
+#~ msgid "This is the {label} challenge, {name}."
+#~ msgstr "Đây là thử thách {label}, {name}."
+
+#~ msgid ""
+#~ " This is the {label} challenge, {name}. Leaving from the pause menu does "
+#~ "not count the walk."
+#~ msgstr ""
+#~ " Đây là thử thách {label}, {name}. Rời đi từ menu tạm dừng thì cuộc dạo "
+#~ "không được tính."
+
+#~ msgid ""
+#~ " This is the {label} challenge, {name}. Leaving from the pause menu does "
+#~ "not count the run."
+#~ msgstr ""
+#~ " Đây là thử thách {label}, {name}. Rời đi từ menu tạm dừng thì lượt không "
+#~ "được tính."
+
+#~ msgid ""
+#~ " This is the {label} challenge. Leaving from the pause menu does not count "
+#~ "it."
+#~ msgstr ""
+#~ " Đây là thử thách {label}. Rời đi từ menu tạm dừng thì không được tính."
+
+#~ msgid "This is the {label} challenge."
+#~ msgstr "Đây là thử thách {label}."
+
+#~ msgid "{a} and {s}"
+#~ msgstr "{a} và {s}"
+
+#~ msgid "close by"
+#~ msgstr "ngay gần"
+
+#~ msgid "the turned-up {name}"
+#~ msgstr "lá {name} đã lật"
+
+#~ msgid "go on its foundation"
+#~ msgstr "lên chồng đích của nó"
+
+#~ msgid "go to the empty pile {q}"
+#~ msgstr "vào cột trống {q}"
+
+#~ msgid "{sentence_start} can {place}."
+#~ msgstr "{sentence_start} có thể {place}."
+
+#~ msgid "{sentence_start} is the bottom card of the pile."
+#~ msgstr "{sentence_start} là lá dưới cùng của cột."
+
+#~ msgid ""
+#~ "{sentence_start} is the deepest face-up card, with {n} face down under it."
+#~ msgstr "{sentence_start} là lá ngửa sâu nhất, bên dưới còn {n} lá úp."
+
+#~ msgid "the top card"
+#~ msgstr "lá trên cùng"
+
+#~ msgid "{ordinal} from the top"
+#~ msgstr "{ordinal} từ trên xuống"
+
+#~ msgid "{what} on the {name} foundation."
+#~ msgstr "{what} lên chồng đích {name}."
+
+#~ msgid "{what} to pile {q}."
+#~ msgstr "{what} vào cột {q}."
+
+#~ msgid "{sentence_start} cannot go on an empty pile."
+#~ msgstr "{sentence_start} không đặt vào cột trống được."
+
+#~ msgid "{sentence_start} cannot go on an empty pile. Only a king goes there."
+#~ msgstr ""
+#~ "{sentence_start} không đặt vào cột trống được. Chỉ già mới đặt vào đó."
+
+#~ msgid "{sentence_start} cannot go on the {name}."
+#~ msgstr "{sentence_start} không đặt lên {name} được."
+
+#~ msgid "{lead} A king goes only on an empty pile."
+#~ msgstr "{lead} Già chỉ đặt vào cột trống."
+
+#~ msgid "{lead} It needs a {need} {rank_words}."
+#~ msgstr "{lead} Cần một lá {rank_words} {need}."
+
+#~ msgid "The {name} foundation needs the {rank_words} next."
+#~ msgstr "Chồng đích {name} cần lá {rank_words} tiếp theo."
+
+#~ msgid "{sentence_start} cannot go up yet."
+#~ msgstr "{sentence_start} chưa lên được."
+
+#~ msgid ""
+#~ "{sentence_start} cannot go up yet. The {name} foundation needs the "
+#~ "{rank_words} next."
+#~ msgstr ""
+#~ "{sentence_start} chưa lên được. Chồng đích {name} cần lá {rank_words} tiếp "
+#~ "theo."
+
+#~ msgid "{sentence_start} goes on the {name} foundation."
+#~ msgstr "{sentence_start} lên chồng đích {name}."
+
+#~ msgid ""
+#~ "This is the {label} challenge, {name}. Leaving from the pause menu does not "
+#~ "count the run."
+#~ msgstr ""
+#~ "Đây là thử thách {label}, {name}. Rời từ menu tạm dừng thì lượt không được "
+#~ "tính."
+
+#~ msgid "{challenge_name}, a {label} challenge.{twist}{carry} "
+#~ msgstr "{challenge_name}, thử thách {label}.{twist}{carry} "
+
+#~ msgid ""
+#~ " This is the {label} challenge, {name}. Leaving from the pause menu does "
+#~ "not count the hall."
+#~ msgstr ""
+#~ " Đây là thử thách {label}, {name}. Rời từ menu tạm dừng thì hành lang không "
+#~ "được tính."
+
+#~ msgid ""
+#~ "Your journal: {places} of {ALL} places found, {lanterns} lantern{s_ending} "
+#~ "gathered in all."
+#~ msgstr ""
+#~ "Sổ tay của bạn: đã tìm {places} trên {ALL} chốn, tổng cộng đã gom "
+#~ "{lanterns} đèn lồng."
+
+#~ msgid "ahead and to your {side}"
+#~ msgstr "phía trước bên {side}"
+
+#~ msgid "to your {side}"
+#~ msgstr "bên {side}"
+
+#~ msgid "behind you to the {side}"
+#~ msgstr "phía sau bên {side}"
+
+#~ msgid "{words}, at {clock} o'clock"
+#~ msgstr "{words}, hướng {clock} giờ"
+
+#~ msgid "Lantern {order} is lit"
+#~ msgstr "Đèn lồng {order} đang sáng"
+
+#~ msgid "The nearest lantern is"
+#~ msgstr "Chiếc đèn lồng gần nhất ở"
+
+#~ msgid ", score {score}"
+#~ msgstr ", {score} điểm"
+
+#~ msgid "{name} gathered {gathered} lantern{s_ending}"
+#~ msgstr "{name} đã gom {gathered} đèn lồng"
+
+#~ msgid " and found {found} {else}"
+#~ msgstr " và tìm thấy {found} {else}"
+
+#~ msgid "place"
+#~ msgstr "chốn"
+
+#~ msgid "places"
+#~ msgstr "chốn"
+
+#~ msgid ""
+#~ "{back}{name}: {plan} {twist_text}{goal} Leaving from the pause menu keeps "
+#~ "the garden until the {unit} is over."
+#~ msgstr ""
+#~ "{back}{name}: {plan} {twist_text}{goal} Rời đi từ menu tạm dừng sẽ giữ khu "
+#~ "vườn đến khi hết {unit}."
+
+#~ msgid " This is the {label} challenge, {name}: safe {index} of {safes}."
+#~ msgstr " Đây là thử thách {label}, {name}: két {index} trên {safes}."
+
+#~ msgid "{label} streak: {streak} {unit}."
+#~ msgstr "Chuỗi {label}: {streak} {unit}."
+
+#~ msgid "{label} streak: {streak} {unit}. {resets}"
+#~ msgstr "Chuỗi {label}: {streak} {unit}. {resets}"
+
+#~ msgid ""
+#~ " This is the {label} challenge, {name}. Leaving from the pause menu does "
+#~ "not count the skate."
+#~ msgstr ""
+#~ " Đây là thử thách {label}, {name}. Rời đi từ menu tạm dừng thì lượt trượt "
+#~ "không được tính."
+
+#~ msgid ""
+#~ "{title} result: {score} points. {score_line} A {streak} {unit} streak. "
+#~ "{sentence_start}"
+#~ msgstr ""
+#~ "Kết quả {title}: {score} điểm. {score_line} Chuỗi {streak} {unit}. "
+#~ "{sentence_start}"
+
+#~ msgid "A {streak} {unit} streak."
+#~ msgstr "Chuỗi {streak} {unit}."
+
+#~ msgid ""
+#~ " This is the {label} challenge, {name}. Leaving from the pause menu does "
+#~ "not count the rank."
+#~ msgstr ""
+#~ " Đây là thử thách {label}, {name}. Rời đi từ menu tạm dừng thì hàng ống "
+#~ "không được tính."
+
+#~ msgid "{late}{from}, age {age}, {WRITES}: {words}{sound}"
+#~ msgstr "{late}{from}, {age} tuổi, {WRITES}: {words}{sound}"
+
+#~ msgid "writes"
+#~ msgstr "viết"

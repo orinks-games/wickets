@@ -574,11 +574,6 @@ msgstr ""
 msgid "Pig"
 msgstr ""
 
-#. placeholders: {label}
-#: crates/parlor-core/src/challenges.rs games/haunted-hallways/src/rules.rs games/lantern-lake/src/rules.rs games/tightrope/src/rules.rs
-msgid "{label} challenge"
-msgstr ""
-
 #: crates/parlor-core/src/challenges.rs
 msgid "A new one tomorrow."
 msgstr ""
@@ -586,17 +581,6 @@ msgstr ""
 #. placeholders: {n}
 #: crates/parlor-core/src/challenges.rs
 msgid "A new one in {n} days."
-msgstr ""
-
-#. placeholders: {a_or_an}, {n}, {unit}
-#: crates/parlor-core/src/challenges.rs
-msgid ", {a_or_an} {n} {unit} streak"
-msgstr ""
-
-#. placeholders: {a_or_an}, {n}, {unit}
-#. one clause of a longer line
-#: crates/parlor-core/src/challenges.rs
-msgid "{a_or_an} {n} {unit} streak"
 msgstr ""
 
 #. placeholders: {title}, {streak}
@@ -815,9 +799,16 @@ msgstr ""
 msgid "on"
 msgstr ""
 
-#. placeholders: {label}
 #: crates/parlor-core/src/menus/labels.rs
-msgid "Play this {label} challenge again"
+msgid "Play this daily challenge again"
+msgstr ""
+
+#: crates/parlor-core/src/menus/labels.rs
+msgid "Play this weekly challenge again"
+msgstr ""
+
+#: crates/parlor-core/src/menus/labels.rs
+msgid "Play this monthly challenge again"
 msgstr ""
 
 #. placeholders: {CHALLENGES}
@@ -941,6 +932,11 @@ msgstr ""
 
 #: crates/parlor-core/src/menus/title.rs
 msgid "Start with the tutorial."
+msgstr ""
+
+#. one sentence of a longer line
+#: crates/parlor-core/src/menus/title.rs
+msgid "New here?"
 msgstr ""
 
 #. placeholders: {end_sentence}
@@ -1129,6 +1125,11 @@ msgstr ""
 #. placeholders: {n}
 #: crates/parlor-core/src/preferences.rs
 msgid "{n} games off"
+msgstr ""
+
+#. placeholders: {summary}
+#: crates/parlor-core/src/preferences.rs
+msgid "Story and event games: {summary}"
 msgstr ""
 
 #: crates/parlor-core/src/preferences.rs
@@ -1808,10 +1809,6 @@ msgstr ""
 msgid "an"
 msgstr ""
 
-#: crates/parlor-core/src/words.rs
-msgid "An"
-msgstr ""
-
 #: crates/wickets-rules/src/lib.rs
 msgid "unranked"
 msgstr ""
@@ -1826,6 +1823,117 @@ msgstr ""
 
 #: crates/wickets-rules/src/period.rs
 msgid "Monthly"
+msgstr ""
+
+#: crates/wickets-rules/src/period.rs games/basket-run/src/rules.rs games/neon-rail/src/rules.rs
+msgid "Daily challenge"
+msgstr ""
+
+#: crates/wickets-rules/src/period.rs games/neon-rail/src/rules.rs
+msgid "Weekly challenge"
+msgstr ""
+
+#: crates/wickets-rules/src/period.rs
+msgid "Monthly challenge"
+msgstr ""
+
+#: crates/wickets-rules/src/period.rs
+msgid "Daily challenges"
+msgstr ""
+
+#: crates/wickets-rules/src/period.rs
+msgid "Weekly challenges"
+msgstr ""
+
+#: crates/wickets-rules/src/period.rs
+msgid "Monthly challenges"
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "a {n} day streak"
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "an {n} day streak"
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "a {n} week streak"
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "an {n} week streak"
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "a {n} month streak"
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "an {n} month streak"
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "A {n} day streak."
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "An {n} day streak."
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "A {n} week streak."
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "An {n} week streak."
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "A {n} month streak."
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "An {n} month streak."
+msgstr ""
+
+#: crates/wickets-rules/src/period.rs
+msgid "Daily streak: 1 day."
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "Daily streak: {n} days."
+msgstr ""
+
+#: crates/wickets-rules/src/period.rs
+msgid "Weekly streak: 1 week."
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "Weekly streak: {n} weeks."
+msgstr ""
+
+#: crates/wickets-rules/src/period.rs
+msgid "Monthly streak: 1 month."
+msgstr ""
+
+#. placeholders: {n}
+#: crates/wickets-rules/src/period.rs
+msgid "Monthly streak: {n} months."
 msgstr ""
 
 #: crates/wickets-rules/src/period.rs games/larkfield/src/rules.rs games/rooftop-garden/src/public.rs
@@ -3323,11 +3431,6 @@ msgstr ""
 
 #: crates/wickets/src/lobby.rs
 msgid "Days in a row with at least one challenge finished, in any game."
-msgstr ""
-
-#. placeholders: {label}
-#: crates/wickets/src/lobby.rs
-msgid "{label} challenges"
 msgstr ""
 
 #: crates/wickets/src/lobby.rs
@@ -5496,10 +5599,6 @@ msgstr ""
 msgid "The meadow"
 msgstr ""
 
-#: games/basket-run/src/rules.rs games/neon-rail/src/rules.rs
-msgid "Daily challenge"
-msgstr ""
-
 #: games/basket-run/src/rules.rs
 msgid "Weekly marathon"
 msgstr ""
@@ -6313,17 +6412,6 @@ msgstr ""
 #. placeholders: {title}, {score}, {score_line}
 #: games/basket-run/src/run.rs
 msgid "{title} result: {score}. {score_line}"
-msgstr ""
-
-#. placeholders: {label}, {streak}, {unit}, {s_ending}
-#. one sentence of a longer line
-#: games/basket-run/src/run.rs
-msgid "{label} streak: {streak} {unit}{s_ending}."
-msgstr ""
-
-#. placeholders: {label}, {streak}, {unit}, {s_ending}, {resets}
-#: games/basket-run/src/run.rs games/little-rapids/src/run.rs
-msgid "{label} streak: {streak} {unit}{s_ending}. {resets}"
 msgstr ""
 
 #: games/basket-run/src/run.rs
@@ -7428,22 +7516,15 @@ msgstr ""
 msgid "{peal_words} {solved} of {peals} peals solved, in {rows} rows."
 msgstr ""
 
-#. placeholders: {score_line}, {streak}, {unit}
-#. one sentence of a longer line
-#: games/belfry/src/challenge.rs
-msgid "{score_line} A {streak} {unit} streak."
-msgstr ""
-
 #. placeholders: {title}, {points}
 #. one sentence of a longer line
 #: games/belfry/src/challenge.rs
 msgid "{title} result: {points}."
 msgstr ""
 
-#. placeholders: {title}, {points}, {score_line}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {points}, {score_line}, {streak_sentence}, {resets}
 #: games/belfry/src/challenge.rs
-msgid ""
-"{title} result: {points}. {score_line} A {streak} {unit} streak. {resets}"
+msgid "{title} result: {points}. {score_line} {streak_sentence} {resets}"
 msgstr ""
 
 #. placeholders: {index}, {peals}
@@ -7686,22 +7767,19 @@ msgstr ""
 msgid "None of these bells is in the peal"
 msgstr ""
 
+#. placeholders: {m}
 #: games/belfry/src/rules.rs
-msgid "none in place"
+msgid "None in place, {m} misplaced"
 msgstr ""
 
 #. placeholders: {i}
 #: games/belfry/src/rules.rs
-msgid "{i} in place"
+msgid "{i} in place, none misplaced"
 msgstr ""
 
+#. placeholders: {i}, {m}
 #: games/belfry/src/rules.rs
-msgid "none misplaced"
-msgstr ""
-
-#. placeholders: {m}
-#: games/belfry/src/rules.rs
-msgid "{m} misplaced"
+msgid "{i} in place, {m} misplaced"
 msgstr ""
 
 #: games/belfry/src/rules.rs
@@ -8143,6 +8221,12 @@ msgstr ""
 msgid "Row {rows} of {rows2}, place {place}: {row_words}"
 msgstr ""
 
+#. placeholders: {places}, {p}
+#. one sentence of a longer line
+#: games/belfry/src/tower.rs
+msgid "Build a row of {places} bells, then {p} rings it."
+msgstr ""
+
 #. one sentence of a longer line
 #: games/belfry/src/tower.rs
 msgid ""
@@ -8163,10 +8247,10 @@ msgid ""
 "right bell in its place, misplaced is a right bell in the wrong place."
 msgstr ""
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 #: games/belfry/src/tower.rs games/fireside-patience/src/play.rs games/riverboat-dice/src/table.rs games/stargazer/src/screens.rs
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count it."
 msgstr ""
 
@@ -8175,10 +8259,10 @@ msgstr ""
 msgid "Leaving from the pause menu does not count it."
 msgstr ""
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 #. one sentence of a longer line
 #: games/belfry/src/tower.rs
-msgid "This is the {label} challenge, {name}."
+msgid "This is the {challenge_title}, {name}."
 msgstr ""
 
 #. placeholders: {place}, {bell}
@@ -10162,11 +10246,11 @@ msgstr ""
 msgid "{title} result: {score} of {most} points."
 msgstr ""
 
-#. placeholders: {title}, {score}, {most}, {score_line}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {score}, {most}, {score_line}, {streak_sentence}, {resets}
 #: games/birdsong-trail/src/challenge.rs
 msgid ""
-"{title} result: {score} of {most} points. {score_line} A {streak} {unit} "
-"streak. {resets}"
+"{title} result: {score} of {most} points. {score_line} {streak_sentence} "
+"{resets}"
 msgstr ""
 
 #. placeholders: {summary}, {score}, {most}
@@ -11136,11 +11220,11 @@ msgstr ""
 msgid "straight ahead"
 msgstr ""
 
-#: games/birdsong-trail/src/rules.rs
+#: games/birdsong-trail/src/rules.rs games/lantern-lake/src/rules.rs
 msgid "ahead and to your right"
 msgstr ""
 
-#: games/birdsong-trail/src/rules.rs games/little-rapids/src/rules.rs
+#: games/birdsong-trail/src/rules.rs games/lantern-lake/src/rules.rs games/little-rapids/src/rules.rs
 msgid "to your right"
 msgstr ""
 
@@ -11156,11 +11240,11 @@ msgstr ""
 msgid "behind you and to your left"
 msgstr ""
 
-#: games/birdsong-trail/src/rules.rs games/little-rapids/src/rules.rs
+#: games/birdsong-trail/src/rules.rs games/lantern-lake/src/rules.rs games/little-rapids/src/rules.rs
 msgid "to your left"
 msgstr ""
 
-#: games/birdsong-trail/src/rules.rs
+#: games/birdsong-trail/src/rules.rs games/lantern-lake/src/rules.rs
 msgid "ahead and to your left"
 msgstr ""
 
@@ -12124,10 +12208,10 @@ msgstr ""
 msgid "Walk toward a song to meet its bird."
 msgstr ""
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 #: games/birdsong-trail/src/walk.rs
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the walk."
 msgstr ""
 
@@ -12780,7 +12864,7 @@ msgid "{title} result: {points_words}."
 msgstr ""
 
 #. placeholders: {title}, {points_words}, {score_line}, {streak_sentence}, {resets}
-#: games/clover-jig/src/challenge.rs
+#: games/clover-jig/src/challenge.rs games/graveyard-shuffle/src/challenge.rs games/lamplighter/src/challenge.rs games/pantry-mouse/src/challenge.rs
 msgid ""
 "{title} result: {points_words}. {score_line} {streak_sentence} {resets}"
 msgstr ""
@@ -12967,6 +13051,12 @@ msgid ""
 "The band plays the set dance: four tunes in a row, and the caller names "
 "each figure between them. Every step is called, and shamrocks hide in every "
 "tune."
+msgstr ""
+
+#. placeholders: {year}
+#. one sentence of a longer line
+#: games/clover-jig/src/lib.rs
+msgid "Each set dance you finish goes in your keepsake for {year}."
 msgstr ""
 
 #. one sentence of a longer line
@@ -13623,10 +13713,10 @@ msgstr ""
 msgid "Every {STREAK_EVERY} in a row add {STREAK_BONUS} points."
 msgstr ""
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 #: games/clover-jig/src/play.rs games/midnight-lanes/src/play.rs games/pantry-mouse/src/play.rs games/signal-box/src/play.rs
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the run."
 msgstr ""
 
@@ -14770,7 +14860,7 @@ msgid "{name} done. {hearts_words} from {arrows_words}, {pairs}."
 msgstr ""
 
 #. placeholders: {title}, {score}, {score_line}, {streak_sentence}, {resets}
-#: games/cupids-quiver/src/challenge.rs games/firefly-meadow/src/challenge.rs
+#: games/cupids-quiver/src/challenge.rs games/firefly-meadow/src/challenge.rs games/fireside-patience/src/challenge.rs games/riverboat-dice/src/challenge.rs
 msgid ""
 "{title} result: {score} points. {score_line} {streak_sentence} {resets}"
 msgstr ""
@@ -15439,17 +15529,17 @@ msgstr ""
 msgid "Aim a little ahead of a drifting heart."
 msgstr ""
 
-#. placeholders: {label}
+#. placeholders: {challenge_title}
 #: games/cupids-quiver/src/field.rs games/dragon-dance/src/dance.rs games/firefly-meadow/src/evening.rs games/slow-kettle/src/play.rs
 msgid ""
-" This is the {label} challenge. Leaving from the pause menu does not count "
+" This is the {challenge_title}. Leaving from the pause menu does not count "
 "it."
 msgstr ""
 
-#. placeholders: {label}
+#. placeholders: {challenge_title}
 #. one sentence of a longer line
 #: games/cupids-quiver/src/field.rs
-msgid "This is the {label} challenge."
+msgid "This is the {challenge_title}."
 msgstr ""
 
 #: games/cupids-quiver/src/lib.rs
@@ -20382,6 +20472,12 @@ msgid ""
 "answered."
 msgstr ""
 
+#. placeholders: {control_name}
+#. one sentence of a longer line
+#: games/firefly-meadow/src/evening.rs
+msgid "Walk toward a firefly, and press {control_name} while it glows."
+msgstr ""
+
 #. placeholders: {status}, {control_name}
 #. one sentence of a longer line
 #: games/firefly-meadow/src/evening.rs
@@ -20845,6 +20941,11 @@ msgid ""
 "it back."
 msgstr ""
 
+#. one sentence of a longer line
+#: games/firefly-meadow/src/night.rs
+msgid "The whole meadow flashes together."
+msgstr ""
+
 #. placeholders: {status}
 #. one sentence of a longer line
 #: games/firefly-meadow/src/night.rs
@@ -21041,13 +21142,49 @@ msgstr ""
 msgid "to the left"
 msgstr ""
 
-#. placeholders: {a}, {s}
+#. placeholders: {dist}
 #: games/firefly-meadow/src/rules.rs
-msgid "{a} and {s}"
+msgid "{dist} ahead and to the left"
 msgstr ""
 
+#. placeholders: {dist}
 #: games/firefly-meadow/src/rules.rs
-msgid "close by"
+msgid "{dist} ahead and to the right"
+msgstr ""
+
+#. placeholders: {dist}
+#: games/firefly-meadow/src/rules.rs
+msgid "{dist} ahead"
+msgstr ""
+
+#. placeholders: {dist}
+#: games/firefly-meadow/src/rules.rs
+msgid "{dist} behind you and to the left"
+msgstr ""
+
+#. placeholders: {dist}
+#: games/firefly-meadow/src/rules.rs
+msgid "{dist} behind you and to the right"
+msgstr ""
+
+#. placeholders: {dist}
+#: games/firefly-meadow/src/rules.rs
+msgid "{dist} behind you"
+msgstr ""
+
+#. placeholders: {dist}
+#: games/firefly-meadow/src/rules.rs
+msgid "{dist} to the left"
+msgstr ""
+
+#. placeholders: {dist}
+#: games/firefly-meadow/src/rules.rs
+msgid "{dist} to the right"
+msgstr ""
+
+#. placeholders: {dist}
+#: games/firefly-meadow/src/rules.rs
+msgid "{dist} close by"
 msgstr ""
 
 #: games/firefly-meadow/src/rules.rs games/freewheel/src/progress.rs games/lamplighter/src/rules.rs games/soft-landing/src/play.rs
@@ -22168,13 +22305,6 @@ msgstr ""
 msgid "Deal won in {moves_words}."
 msgstr ""
 
-#. placeholders: {title}, {score}, {score_line}, {streak}, {unit}, {resets}
-#: games/fireside-patience/src/challenge.rs games/riverboat-dice/src/challenge.rs games/safecracker/src/heist.rs games/stargazer/src/challenge.rs
-msgid ""
-"{title} result: {score} points. {score_line} A {streak} {unit} streak. "
-"{resets}"
-msgstr ""
-
 #. placeholders: {index}, {deals}
 #. one sentence of a longer line
 #: games/fireside-patience/src/challenge.rs
@@ -22251,11 +22381,6 @@ msgstr ""
 #. one sentence of a longer line
 #: games/fireside-patience/src/events.rs
 msgid "Turning the stock costs no moves."
-msgstr ""
-
-#. placeholders: {name}
-#: games/fireside-patience/src/play.rs games/fireside-patience/src/rules.rs games/larkfield/src/menus.rs games/rooftop-garden/src/rules.rs
-msgid "the {name}"
 msgstr ""
 
 #. placeholders: {sentence_start}
@@ -22374,9 +22499,14 @@ msgstr ""
 msgid "{u} and {d} move within a pile."
 msgstr ""
 
-#. placeholders: {cards_words}, {the}, {the2}
+#. placeholders: {name}
+#: games/fireside-patience/src/play.rs games/larkfield/src/menus.rs games/rooftop-garden/src/rules.rs
+msgid "the {name}"
+msgstr ""
+
+#. placeholders: {n}, {first}, {last}
 #: games/fireside-patience/src/play.rs
-msgid "{cards_words}, {the} down to {the2}"
+msgid "{n} cards, the {first} down to the {last}"
 msgstr ""
 
 #. placeholders: {p}
@@ -22506,38 +22636,44 @@ msgstr ""
 msgid "Foundations: {join}."
 msgstr ""
 
-#. placeholders: {the}, {p}
+#. placeholders: {card}, {p}
 #: games/fireside-patience/src/play.rs
-msgid "{the} in pile {p}"
+msgid "The {card} in pile {p} can go on its foundation."
 msgstr ""
 
-#. placeholders: {name}
+#. placeholders: {card}, {p}, {onto}, {q}
 #: games/fireside-patience/src/play.rs
-msgid "the turned-up {name}"
+msgid "The {card} in pile {p} can go on the {onto} in pile {q}."
 msgstr ""
 
-#. placeholders: {the}
+#. placeholders: {card}, {p}, {q}
 #: games/fireside-patience/src/play.rs
-msgid "{the} on its foundation"
+msgid "The {card} in pile {p} can go to the empty pile {q}."
 msgstr ""
 
+#. placeholders: {card}
 #: games/fireside-patience/src/play.rs
-msgid "go on its foundation"
+msgid "The turned-up {card} can go on its foundation."
 msgstr ""
 
-#. placeholders: {the}, {q}
+#. placeholders: {card}, {onto}, {q}
 #: games/fireside-patience/src/play.rs
-msgid "go on {the} in pile {q}"
+msgid "The turned-up {card} can go on the {onto} in pile {q}."
 msgstr ""
 
-#. placeholders: {q}
+#. placeholders: {card}, {q}
 #: games/fireside-patience/src/play.rs
-msgid "go to the empty pile {q}"
+msgid "The turned-up {card} can go to the empty pile {q}."
 msgstr ""
 
-#. placeholders: {sentence_start}, {place}
+#. placeholders: {card}, {onto}, {q}
 #: games/fireside-patience/src/play.rs
-msgid "{sentence_start} can {place}."
+msgid "The {card} on its foundation can go on the {onto} in pile {q}."
+msgstr ""
+
+#. placeholders: {card}, {q}
+#: games/fireside-patience/src/play.rs
+msgid "The {card} on its foundation can go to the empty pile {q}."
 msgstr ""
 
 #: games/fireside-patience/src/play.rs
@@ -22596,15 +22732,14 @@ msgstr ""
 msgid "Pile {p} is empty."
 msgstr ""
 
-#. placeholders: {sentence_start}
+#. placeholders: {card}
 #: games/fireside-patience/src/play.rs
-msgid "{sentence_start} is the bottom card of the pile."
+msgid "The {card} is the bottom card of the pile."
 msgstr ""
 
-#. placeholders: {sentence_start}, {n}
+#. placeholders: {card}, {n}
 #: games/fireside-patience/src/play.rs
-msgid ""
-"{sentence_start} is the deepest face-up card, with {n} face down under it."
+msgid "The {card} is the deepest face-up card, with {n} face down under it."
 msgstr ""
 
 #. placeholders: {name_and_colour}
@@ -22612,13 +22747,14 @@ msgstr ""
 msgid "Top card: {name_and_colour}."
 msgstr ""
 
+#. placeholders: {name}
 #: games/fireside-patience/src/play.rs
-msgid "the top card"
+msgid "{name}, the top card."
 msgstr ""
 
-#. placeholders: {ordinal}
+#. placeholders: {name}, {n}
 #: games/fireside-patience/src/play.rs
-msgid "{ordinal} from the top"
+msgid "{name}, card {n} from the top."
 msgstr ""
 
 #: games/fireside-patience/src/play.rs games/fireside-patience/src/rules.rs
@@ -22761,19 +22897,39 @@ msgstr ""
 msgid "{name} won in {moves_words}"
 msgstr ""
 
-#. placeholders: {what}, {name}
+#. placeholders: {card}, {suit}
 #: games/fireside-patience/src/play.rs
-msgid "{what} on the {name} foundation."
+msgid "The {card} on the {suit} foundation."
 msgstr ""
 
-#. placeholders: {what}, {the}, {q}
+#. placeholders: {card}, {onto}, {q}
 #: games/fireside-patience/src/play.rs
-msgid "{what} on {the}, pile {q}."
+msgid "The {card} on the {onto}, pile {q}."
 msgstr ""
 
-#. placeholders: {what}, {q}
+#. placeholders: {n}, {onto}, {q}
 #: games/fireside-patience/src/play.rs
-msgid "{what} to pile {q}."
+msgid "{n} cards on the {onto}, pile {q}."
+msgstr ""
+
+#. placeholders: {card}, {q}
+#: games/fireside-patience/src/play.rs
+msgid "The {card} to pile {q}."
+msgstr ""
+
+#. placeholders: {n}, {q}
+#: games/fireside-patience/src/play.rs
+msgid "{n} cards to pile {q}."
+msgstr ""
+
+#. placeholders: {card}
+#: games/fireside-patience/src/play.rs
+msgid "The {card}"
+msgstr ""
+
+#. placeholders: {n}
+#: games/fireside-patience/src/play.rs games/fireside-patience/src/rules.rs
+msgid "{n} cards"
 msgstr ""
 
 #: games/fireside-patience/src/play.rs
@@ -23063,54 +23219,77 @@ msgstr ""
 msgid "Only a king goes there."
 msgstr ""
 
-#. placeholders: {sentence_start}
+#. placeholders: {card}
 #. one sentence of a longer line
 #: games/fireside-patience/src/rules.rs
-msgid "{sentence_start} cannot go on an empty pile."
+msgid "The {card} cannot go on an empty pile."
 msgstr ""
 
-#. placeholders: {sentence_start}
+#. placeholders: {card}
 #: games/fireside-patience/src/rules.rs
-msgid "{sentence_start} cannot go on an empty pile. Only a king goes there."
+msgid "The {card} cannot go on an empty pile. Only a king goes there."
 msgstr ""
 
-#. placeholders: {sentence_start}, {name}
-#: games/fireside-patience/src/rules.rs
-msgid "{sentence_start} cannot go on the {name}."
-msgstr ""
-
-#. placeholders: {lead}
-#: games/fireside-patience/src/rules.rs
-msgid "{lead} A king goes only on an empty pile."
-msgstr ""
-
-#. placeholders: {lead}, {need}, {rank_words}
-#: games/fireside-patience/src/rules.rs
-msgid "{lead} It needs a {need} {rank_words}."
-msgstr ""
-
-#. placeholders: {name}, {rank_words}
 #. one sentence of a longer line
 #: games/fireside-patience/src/rules.rs
-msgid "The {name} foundation needs the {rank_words} next."
+msgid "A king goes only on an empty pile."
 msgstr ""
 
-#. placeholders: {sentence_start}
+#. placeholders: {name}, {onto}
 #. one sentence of a longer line
 #: games/fireside-patience/src/rules.rs
-msgid "{sentence_start} cannot go up yet."
+msgid "The {name} cannot go on the {onto}."
 msgstr ""
 
-#. placeholders: {sentence_start}, {name}, {rank_words}
+#. placeholders: {name}, {onto}
 #: games/fireside-patience/src/rules.rs
 msgid ""
-"{sentence_start} cannot go up yet. The {name} foundation needs the "
-"{rank_words} next."
+"The {name} cannot go on the {onto}. A king goes only on an empty pile."
 msgstr ""
 
-#. placeholders: {sentence_start}, {name}
+#. placeholders: {need}
+#. one sentence of a longer line
 #: games/fireside-patience/src/rules.rs
-msgid "{sentence_start} goes on the {name} foundation."
+msgid "It needs a black {need}."
+msgstr ""
+
+#. placeholders: {name}, {onto}, {need}
+#: games/fireside-patience/src/rules.rs
+msgid "The {name} cannot go on the {onto}. It needs a black {need}."
+msgstr ""
+
+#. placeholders: {need}
+#. one sentence of a longer line
+#: games/fireside-patience/src/rules.rs
+msgid "It needs a red {need}."
+msgstr ""
+
+#. placeholders: {name}, {onto}, {need}
+#: games/fireside-patience/src/rules.rs
+msgid "The {name} cannot go on the {onto}. It needs a red {need}."
+msgstr ""
+
+#. placeholders: {name}
+#. one sentence of a longer line
+#: games/fireside-patience/src/rules.rs
+msgid "The {name} cannot go up yet."
+msgstr ""
+
+#. placeholders: {name}, {suit}, {next}
+#: games/fireside-patience/src/rules.rs
+msgid ""
+"The {name} cannot go up yet. The {suit} foundation needs the {next} next."
+msgstr ""
+
+#. placeholders: {suit}, {next}
+#. one sentence of a longer line
+#: games/fireside-patience/src/rules.rs
+msgid "The {suit} foundation needs the {next} next."
+msgstr ""
+
+#. placeholders: {name}, {suit}
+#: games/fireside-patience/src/rules.rs
+msgid "The {name} goes on the {suit} foundation."
 msgstr ""
 
 #: games/fireside-patience/src/rules.rs games/larkfield/src/menus.rs
@@ -23151,11 +23330,6 @@ msgstr ""
 
 #: games/fireside-patience/src/rules.rs
 msgid "1 card"
-msgstr ""
-
-#. placeholders: {n}
-#: games/fireside-patience/src/rules.rs
-msgid "{n} cards"
 msgstr ""
 
 #: games/fireside-patience/src/rules.rs games/graveyard-shuffle/src/rules.rs
@@ -26067,6 +26241,12 @@ msgstr ""
 msgid "Down for 3 seconds."
 msgstr ""
 
+#. placeholders: {CRASH_S}
+#. one sentence of a longer line
+#: games/freewheel/src/ride.rs
+msgid "Lost {CRASH_S} seconds."
+msgstr ""
+
 #. placeholders: {why}, {CRASH_S}
 #. one sentence of a longer line
 #: games/freewheel/src/ride.rs
@@ -26716,11 +26896,6 @@ msgstr ""
 #. placeholders: {join}
 #: games/freewheel/src/ride.rs
 msgid "Ride points: {join}."
-msgstr ""
-
-#. placeholders: {streak}, {unit}, {resets}
-#: games/freewheel/src/ride.rs games/slow-kettle/src/challenge.rs
-msgid "A {streak} {unit} streak. {resets}"
 msgstr ""
 
 #. placeholders: {title}, {points}
@@ -28390,13 +28565,6 @@ msgstr ""
 msgid "Moves: {words}."
 msgstr ""
 
-#. placeholders: {title}, {points_words}, {score_line}, {streak}, {unit}, {resets}
-#: games/graveyard-shuffle/src/challenge.rs games/lamplighter/src/challenge.rs games/pantry-mouse/src/challenge.rs games/signal-box/src/challenge.rs
-msgid ""
-"{title} result: {points_words}. {score_line} A {streak} {unit} streak. "
-"{resets}"
-msgstr ""
-
 #: games/graveyard-shuffle/src/lib.rs games/graveyard-shuffle/src/tutorial.rs lang/names.txt
 msgid "Graveyard Shuffle"
 msgstr ""
@@ -28647,10 +28815,10 @@ msgstr ""
 msgid "Move on the beat after each call. {sentence_start}."
 msgstr ""
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 #: games/graveyard-shuffle/src/play.rs
 msgid ""
-"This is the {label} challenge, {name}. Leaving from the pause menu does not "
+"This is the {challenge_title}, {name}. Leaving from the pause menu does not "
 "count the run."
 msgstr ""
 
@@ -30491,23 +30659,16 @@ msgstr ""
 msgid "all three courses"
 msgstr ""
 
-#. placeholders: {result_line}, {streak}, {unit}
-#. one sentence of a longer line
-#: games/harvest-feast/src/challenge.rs
-msgid "{result_line} A {streak} {unit} streak."
-msgstr ""
-
 #. placeholders: {title}, {total}
 #. one sentence of a longer line
 #: games/harvest-feast/src/challenge.rs
 msgid "{title} result: {total} points."
 msgstr ""
 
-#. placeholders: {title}, {total}, {result_line}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {total}, {result_line}, {streak_sentence}, {resets}
 #: games/harvest-feast/src/challenge.rs
 msgid ""
-"{title} result: {total} points. {result_line} A {streak} {unit} streak. "
-"{resets}"
+"{title} result: {total} points. {result_line} {streak_sentence} {resets}"
 msgstr ""
 
 #. placeholders: {title}, {total}
@@ -34484,22 +34645,15 @@ msgstr ""
 msgid "A new {best}, beating {previous}."
 msgstr ""
 
-#. placeholders: {record}, {streak}, {unit}
-#. one sentence of a longer line
-#: games/haunted-hallways/src/challenge.rs
-msgid "{record} A {streak} {unit} streak."
-msgstr ""
-
 #. placeholders: {title}, {score}
 #. one sentence of a longer line
 #: games/haunted-hallways/src/challenge.rs
 msgid "{title} result: score {score}."
 msgstr ""
 
-#. placeholders: {title}, {score}, {record}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {score}, {record}, {streak_sentence}, {resets}
 #: games/haunted-hallways/src/challenge.rs
-msgid ""
-"{title} result: score {score}. {record} A {streak} {unit} streak. {resets}"
+msgid "{title} result: score {score}. {record} {streak_sentence} {resets}"
 msgstr ""
 
 #: games/haunted-hallways/src/challenge.rs
@@ -36294,9 +36448,9 @@ msgstr ""
 msgid " Courage does not refill between floors."
 msgstr ""
 
-#. placeholders: {challenge_name}, {label}, {twist}, {carry}
+#. placeholders: {challenge_name}, {challenge_title}, {twist}, {carry}
 #: games/haunted-hallways/src/haunt.rs
-msgid "{challenge_name}, a {label} challenge.{twist}{carry} "
+msgid "{challenge_name}, the {challenge_title}.{twist}{carry} "
 msgstr ""
 
 #. placeholders: {sentence_start}, {clock_words}
@@ -39685,10 +39839,10 @@ msgstr ""
 msgid "Right: {alcove_words}"
 msgstr ""
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 #: games/lamplighter/src/play.rs
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the hall."
 msgstr ""
 
@@ -40846,10 +41000,16 @@ msgstr ""
 msgid "nights"
 msgstr ""
 
-#. placeholders: {places}, {ALL}, {lanterns}, {s_ending}
+#. placeholders: {found}, {places}
 #: games/lantern-lake/src/journal.rs
 msgid ""
-"Your journal: {places} of {ALL} places found, {lanterns} lantern{s_ending} "
+"Your journal: {found} of {places} places found, 1 lantern gathered in all."
+msgstr ""
+
+#. placeholders: {found}, {places}, {lanterns}
+#: games/lantern-lake/src/journal.rs
+msgid ""
+"Your journal: {found} of {places} places found, {lanterns} lanterns "
 "gathered in all."
 msgstr ""
 
@@ -41072,28 +41232,21 @@ msgstr ""
 msgid "Daily, weekly and monthly lakes, the same for every player. {resets}"
 msgstr ""
 
-#. placeholders: {side}
 #: games/lantern-lake/src/rules.rs
-msgid "ahead and to your {side}"
+msgid "behind you to the left"
 msgstr ""
 
-#. placeholders: {side}
 #: games/lantern-lake/src/rules.rs
-msgid "to your {side}"
-msgstr ""
-
-#. placeholders: {side}
-#: games/lantern-lake/src/rules.rs
-msgid "behind you to the {side}"
+msgid "behind you to the right"
 msgstr ""
 
 #: games/lantern-lake/src/rules.rs
 msgid "right behind you"
 msgstr ""
 
-#. placeholders: {words}, {clock}
+#. placeholders: {clock}
 #: games/lantern-lake/src/rules.rs
-msgid "{words}, at {clock} o'clock"
+msgid "at {clock} o'clock"
 msgstr ""
 
 #: games/lantern-lake/src/rules.rs
@@ -41506,13 +41659,14 @@ msgstr ""
 msgid "{gathered} of {lanterns} lanterns gathered."
 msgstr ""
 
-#. placeholders: {order}
+#. placeholders: {order}, {place}
 #: games/lantern-lake/src/rules.rs
-msgid "Lantern {order} is lit"
+msgid "Lantern {order} is lit {place}."
 msgstr ""
 
+#. placeholders: {place}
 #: games/lantern-lake/src/rules.rs
-msgid "The nearest lantern is"
+msgid "The nearest lantern is {place}."
 msgstr ""
 
 #: games/lantern-lake/src/rules.rs
@@ -41954,27 +42108,34 @@ msgstr ""
 msgid "Home with {gathered}"
 msgstr ""
 
-#. placeholders: {score}
+#. placeholders: {gathered}, {score}
 #: games/lantern-lake/src/screens.rs
-msgid ", score {score}"
+msgid "Song complete. {gathered}, score {score}"
 msgstr ""
 
-#. placeholders: {name}, {gathered}, {s_ending}
+#. placeholders: {gathered}, {score}
+#. one sentence of a longer line
 #: games/lantern-lake/src/screens.rs
-msgid "{name} gathered {gathered} lantern{s_ending}"
+msgid "{gathered}, score {score}"
 msgstr ""
 
-#. placeholders: {found}, {else}
+#. placeholders: {gathered}, {score}
 #: games/lantern-lake/src/screens.rs
-msgid " and found {found} {else}"
+msgid "Home with {gathered}, score {score}"
+msgstr ""
+
+#. placeholders: {mode}, {gathered}
+#: games/lantern-lake/src/screens.rs
+msgid "{mode} gathered {gathered}."
 msgstr ""
 
 #: games/lantern-lake/src/screens.rs
-msgid "place"
+msgid " You found 1 place."
 msgstr ""
 
+#. placeholders: {found}
 #: games/lantern-lake/src/screens.rs
-msgid "places"
+msgid " You found {found} places."
 msgstr ""
 
 #. placeholders: {title}, {score}
@@ -41989,11 +42150,6 @@ msgstr ""
 #. placeholders: {best}
 #: games/lantern-lake/src/screens.rs games/rooftop-garden/src/screens.rs
 msgid " Your best stays {best}."
-msgstr ""
-
-#. placeholders: {streak}, {unit}
-#: games/lantern-lake/src/screens.rs games/rooftop-garden/src/screens.rs games/tightrope/src/screens.rs
-msgid " A {streak} {unit} streak."
 msgstr ""
 
 #: games/lantern-lake/src/screens.rs
@@ -53544,11 +53700,10 @@ msgstr ""
 msgid "{title} result: {score_words}."
 msgstr ""
 
-#. placeholders: {title}, {score_words}, {score_line}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {score_words}, {score_line}, {streak_sentence}, {resets}
 #: games/midnight-lanes/src/challenge.rs
 msgid ""
-"{title} result: {score_words}. {score_line} A {streak} {unit} streak. "
-"{resets}"
+"{title} result: {score_words}. {score_line} {streak_sentence} {resets}"
 msgstr ""
 
 #: games/midnight-lanes/src/play.rs
@@ -56534,6 +56689,11 @@ msgstr ""
 
 #. one sentence of a longer line
 #: games/neon-rail/src/menus.rs
+msgid "Each row is a strand of the story."
+msgstr ""
+
+#. one sentence of a longer line
+#: games/neon-rail/src/menus.rs
 msgid "Enter opens its logs."
 msgstr ""
 
@@ -56597,6 +56757,11 @@ msgstr ""
 #. one sentence of a longer line
 #: games/neon-rail/src/menus.rs
 msgid "Locked logs need more runs, and each says how it is recovered."
+msgstr ""
+
+#. one sentence of a longer line
+#: games/neon-rail/src/menus.rs
+msgid "Recovered logs open with Enter."
 msgstr ""
 
 #. placeholders: {row}
@@ -57089,6 +57254,12 @@ msgstr ""
 #. placeholders: {rank_bonuses}
 #: games/neon-rail/src/profile.rs
 msgid "Rank bonuses. {rank_bonuses}"
+msgstr ""
+
+#. placeholders: {kills}, {ACE_KILLS}
+#. one sentence of a longer line
+#: games/neon-rail/src/profile.rs
+msgid "Rail gun kills {kills} of {ACE_KILLS} for the Ace gunner licence."
 msgstr ""
 
 #. placeholders: {fitted}, {kills}, {ACE_KILLS}
@@ -57827,10 +57998,6 @@ msgid "Black Sky Run"
 msgstr ""
 
 #: games/neon-rail/src/rules.rs
-msgid "Weekly challenge"
-msgstr ""
-
-#: games/neon-rail/src/rules.rs
 msgid "Black Sky event"
 msgstr ""
 
@@ -58231,6 +58398,11 @@ msgstr ""
 msgid "Multiplier {multiplier}."
 msgstr ""
 
+#. one sentence of a longer line
+#: games/neon-rail/src/rules.rs
+msgid "Shield absorbed it."
+msgstr ""
+
 #. placeholders: {left}, {s_ending}
 #. one sentence of a longer line
 #: games/neon-rail/src/rules.rs
@@ -58246,6 +58418,11 @@ msgstr ""
 #. placeholders: {message}, {left}, {s_ending}
 #: games/neon-rail/src/rules.rs
 msgid "{message} Shield absorbed it. {left} shield{s_ending} left."
+msgstr ""
+
+#. one sentence of a longer line
+#: games/neon-rail/src/rules.rs
+msgid "Dead man's switch."
 msgstr ""
 
 #. placeholders: {message}
@@ -59105,17 +59282,10 @@ msgstr ""
 msgid "Run failed."
 msgstr ""
 
-#. placeholders: {challenge_result_at}, {streak}, {unit}
-#. one sentence of a longer line
-#: games/neon-rail/src/screens.rs
-msgid "{challenge_result_at} A {streak} {unit} streak."
-msgstr ""
-
-#. placeholders: {title}, {score}, {challenge_result_at}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {score}, {challenge_result_at}, {streak_sentence}, {resets}
 #: games/neon-rail/src/screens.rs
 msgid ""
-"{title} result: {score}. {challenge_result_at} A {streak} {unit} streak. "
-"{resets}"
+"{title} result: {score}. {challenge_result_at} {streak_sentence} {resets}"
 msgstr ""
 
 #. placeholders: {EVENT_LOG_TITLE}
@@ -59268,6 +59438,11 @@ msgstr ""
 msgid ""
 "Sector {sectors_cleared} clear. Hull {hull}. Stress {stress}. Score "
 "{score}. Choose one upgrade"
+msgstr ""
+
+#. one sentence of a longer line
+#: games/neon-rail/src/screens.rs
+msgid "Enter fits it."
 msgstr ""
 
 #. placeholders: {blurb}
@@ -62915,6 +63090,12 @@ msgstr ""
 #. one sentence of a longer line
 #: games/riverboat-dice/src/challenge.rs
 msgid "Final totals of the last night: {standings}."
+msgstr ""
+
+#. placeholders: {wins}, {nights}
+#. one sentence of a longer line
+#: games/riverboat-dice/src/challenge.rs
+msgid "You won {wins} of {nights} nights."
 msgstr ""
 
 #. placeholders: {outcome_words}, {wins}, {nights}
@@ -67648,11 +67829,17 @@ msgid ""
 "2 a pest."
 msgstr ""
 
-#. placeholders: {back}, {name}, {plan}, {twist_text}, {goal}, {unit}
+#: games/rooftop-garden/src/screens.rs
+msgid "Leaving from the pause menu keeps the garden until the day is over."
+msgstr ""
+
+#: games/rooftop-garden/src/screens.rs
+msgid "Leaving from the pause menu keeps the garden until the week is over."
+msgstr ""
+
 #: games/rooftop-garden/src/screens.rs
 msgid ""
-"{back}{name}: {plan} {twist_text}{goal} Leaving from the pause menu keeps "
-"the garden until the {unit} is over."
+"Leaving from the pause menu keeps the garden until the month is over."
 msgstr ""
 
 #: games/rooftop-garden/src/screens.rs
@@ -69798,9 +69985,9 @@ msgstr ""
 msgid " When the guard stops at the door, keep still until he leaves."
 msgstr ""
 
-#. placeholders: {label}, {name}, {index}, {safes}
+#. placeholders: {challenge_title}, {name}, {index}, {safes}
 #: games/safecracker/src/crack.rs
-msgid " This is the {label} challenge, {name}: safe {index} of {safes}."
+msgid " This is the {challenge_title}, {name}: safe {index} of {safes}."
 msgstr ""
 
 #: games/safecracker/src/crack.rs
@@ -76496,17 +76683,6 @@ msgstr ""
 msgid "Your best is {points_words}."
 msgstr ""
 
-#. placeholders: {label}, {streak}, {unit}
-#. one sentence of a longer line
-#: games/snowfall-skate/src/challenge.rs
-msgid "{label} streak: {streak} {unit}."
-msgstr ""
-
-#. placeholders: {label}, {streak}, {unit}, {resets}
-#: games/snowfall-skate/src/challenge.rs
-msgid "{label} streak: {streak} {unit}. {resets}"
-msgstr ""
-
 #. placeholders: {name}
 #. one sentence of a longer line
 #: games/snowfall-skate/src/challenge.rs
@@ -77673,10 +77849,10 @@ msgid ""
 "lantern taken keeps it clear a little longer."
 msgstr ""
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 #: games/snowfall-skate/src/play.rs
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the skate."
 msgstr ""
 
@@ -78812,10 +78988,10 @@ msgstr ""
 msgid "{fuel_bonus} points of fuel bonus."
 msgstr ""
 
-#. placeholders: {title}, {score}, {score_line}, {streak}, {unit}, {sentence_start}
+#. placeholders: {title}, {score}, {score_line}, {streak_sentence}, {sentence_start}
 #: games/soft-landing/src/challenge.rs
 msgid ""
-"{title} result: {score} points. {score_line} A {streak} {unit} streak. "
+"{title} result: {score} points. {score_line} {streak_sentence} "
 "{sentence_start}"
 msgstr ""
 
@@ -81931,11 +82107,6 @@ msgstr ""
 msgid ""
 "You reached dive {DEEP_UNLOCK}. Deep start is unlocked: the title menu can "
 "now begin an expedition at dive {DEEP_UNLOCK}."
-msgstr ""
-
-#. placeholders: {streak}, {unit}
-#: games/sonar-dive/src/screens.rs
-msgid "A {streak} {unit} streak."
 msgstr ""
 
 #. placeholders: {title}, {score}
@@ -86235,10 +86406,10 @@ msgstr ""
 msgid "In tune: {tuned} of {pipes}"
 msgstr ""
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 #: games/the-echo/src/play.rs
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the rank."
 msgstr ""
 
@@ -88181,14 +88352,16 @@ msgstr ""
 msgid "Your {first} on this one."
 msgstr ""
 
-#. placeholders: {unit}
 #: games/tide-pools/src/outing.rs
-msgid "The first {unit} of a streak."
+msgid "The first day of a streak."
 msgstr ""
 
-#. placeholders: {n}, {unit}
 #: games/tide-pools/src/outing.rs
-msgid "A {n} {unit} streak."
+msgid "The first week of a streak."
+msgstr ""
+
+#: games/tide-pools/src/outing.rs
+msgid "The first month of a streak."
 msgstr ""
 
 #. placeholders: {kinds}, {ALL}
@@ -92413,21 +92586,15 @@ msgstr ""
 msgid "Your {r}best on this challenge is {best}."
 msgstr ""
 
-#. placeholders: {line}, {streak}, {unit}
-#. one sentence of a longer line
-#: games/winter-wonderland/src/challenge.rs
-msgid "{line} A {streak} {unit} streak."
-msgstr ""
-
 #. placeholders: {title}, {score}
 #. one sentence of a longer line
 #: games/winter-wonderland/src/challenge.rs
 msgid "{title} score {score}."
 msgstr ""
 
-#. placeholders: {title}, {score}, {line}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {score}, {line}, {streak_sentence}, {resets}
 #: games/winter-wonderland/src/challenge.rs
-msgid "{title} score {score}. {line} A {streak} {unit} streak. {resets}"
+msgid "{title} score {score}. {line} {streak_sentence} {resets}"
 msgstr ""
 
 #: games/winter-wonderland/src/challenge.rs games/winter-wonderland/src/public.rs games/winter-wonderland/src/title.rs games/winter-wonderland/src/tutorial.rs lang/names.txt
@@ -92744,6 +92911,12 @@ msgstr ""
 #. placeholders: {at}
 #: games/winter-wonderland/src/count_run.rs
 msgid "The party fizzled out {at}."
+msgstr ""
+
+#. placeholders: {score}
+#. one sentence of a longer line
+#: games/winter-wonderland/src/count_run.rs
+msgid "Practice score {score}."
 msgstr ""
 
 #. placeholders: {head}, {score}
@@ -93256,9 +93429,9 @@ msgstr ""
 msgid " It would {name} in its box."
 msgstr ""
 
-#. placeholders: {late}, {from}, {age}, {WRITES}, {words}, {sound}
+#. placeholders: {late}, {from}, {age}, {words}, {sound}
 #: games/winter-wonderland/src/desk_run.rs
-msgid "{late}{from}, age {age}, {WRITES}: {words}{sound}"
+msgid "{late}{from}, age {age}, writes: {words}{sound}"
 msgstr ""
 
 #. placeholders: {last}
@@ -94002,10 +94175,6 @@ msgstr ""
 
 #: games/winter-wonderland/src/gifts.rs
 msgid "Mrs. Holly"
-msgstr ""
-
-#: games/winter-wonderland/src/mode.rs
-msgid "writes"
 msgstr ""
 
 #: games/winter-wonderland/src/mode.rs

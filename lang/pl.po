@@ -443,25 +443,12 @@ msgstr "Pies"
 msgid "Pig"
 msgstr "Świnia"
 
-#. placeholders: {label}
-msgid "{label} challenge"
-msgstr "{label} wyzwanie"
-
 msgid "A new one tomorrow."
 msgstr "Nowe jutro."
 
 #. placeholders: {n}
 msgid "A new one in {n} days."
 msgstr "Nowe za {n} {n:dzień|dni|dni}."
-
-#. placeholders: {a_or_an}, {n}, {unit}
-msgid ", {a_or_an} {n} {unit} streak"
-msgstr ""
-
-#. placeholders: {a_or_an}, {n}, {unit}
-#. one clause of a longer line
-msgid "{a_or_an} {n} {unit} streak"
-msgstr ""
 
 #. placeholders: {title}, {streak}
 msgid "{title}, not played yet{streak}"
@@ -636,9 +623,14 @@ msgstr "wyłączone"
 msgid "on"
 msgstr "włączone"
 
-#. placeholders: {label}
-msgid "Play this {label} challenge again"
-msgstr "Zagraj ponownie w wyzwanie: {label}"
+msgid "Play this daily challenge again"
+msgstr ""
+
+msgid "Play this weekly challenge again"
+msgstr ""
+
+msgid "Play this monthly challenge again"
+msgstr ""
 
 #. placeholders: {CHALLENGES}
 msgid "{CHALLENGES}, daily done"
@@ -737,6 +729,10 @@ msgstr "Zacznij od treningu."
 
 msgid "Start with the tutorial."
 msgstr "Zacznij od samouczka."
+
+#. one sentence of a longer line
+msgid "New here?"
+msgstr ""
 
 #. placeholders: {end_sentence}
 #. one sentence of a longer line
@@ -892,6 +888,10 @@ msgstr "1 gra wyłączona"
 #. placeholders: {n}
 msgid "{n} games off"
 msgstr "{n} {n:gra wyłączona|gry wyłączone|gier wyłączonych}"
+
+#. placeholders: {summary}
+msgid "Story and event games: {summary}"
+msgstr ""
 
 msgid ""
 "Choose which games Story and events may offer. Every game remains available "
@@ -1286,13 +1286,13 @@ msgid "event"
 msgstr "event"
 
 msgid "daily"
-msgstr ""
+msgstr "dnia"
 
 msgid "weekly"
-msgstr ""
+msgstr "tygodnia"
 
 msgid "monthly"
-msgstr ""
+msgstr "miesiąca"
 
 msgid "play"
 msgstr ""
@@ -1448,20 +1448,104 @@ msgstr "Wróć do listy grup."
 msgid "an"
 msgstr ""
 
-msgid "An"
-msgstr ""
-
 msgid "unranked"
 msgstr "poza rankingiem"
 
 msgid "Daily"
-msgstr "Dzienne"
+msgstr "Wyzwanie dnia"
 
 msgid "Weekly"
-msgstr "Tygodniowe"
+msgstr "Wyzwanie tygodnia"
 
 msgid "Monthly"
-msgstr "Miesięczne"
+msgstr "Wyzwanie miesiąca"
+
+msgid "Daily challenge"
+msgstr "Wyzwanie dnia"
+
+msgid "Weekly challenge"
+msgstr "Wyzwanie tygodnia"
+
+msgid "Monthly challenge"
+msgstr ""
+
+msgid "Daily challenges"
+msgstr ""
+
+msgid "Weekly challenges"
+msgstr ""
+
+msgid "Monthly challenges"
+msgstr ""
+
+#. placeholders: {n}
+msgid "a {n} day streak"
+msgstr ""
+
+#. placeholders: {n}
+msgid "an {n} day streak"
+msgstr ""
+
+#. placeholders: {n}
+msgid "a {n} week streak"
+msgstr ""
+
+#. placeholders: {n}
+msgid "an {n} week streak"
+msgstr ""
+
+#. placeholders: {n}
+msgid "a {n} month streak"
+msgstr ""
+
+#. placeholders: {n}
+msgid "an {n} month streak"
+msgstr ""
+
+#. placeholders: {n}
+msgid "A {n} day streak."
+msgstr ""
+
+#. placeholders: {n}
+msgid "An {n} day streak."
+msgstr ""
+
+#. placeholders: {n}
+msgid "A {n} week streak."
+msgstr ""
+
+#. placeholders: {n}
+msgid "An {n} week streak."
+msgstr ""
+
+#. placeholders: {n}
+msgid "A {n} month streak."
+msgstr ""
+
+#. placeholders: {n}
+msgid "An {n} month streak."
+msgstr ""
+
+msgid "Daily streak: 1 day."
+msgstr ""
+
+#. placeholders: {n}
+msgid "Daily streak: {n} days."
+msgstr ""
+
+msgid "Weekly streak: 1 week."
+msgstr ""
+
+#. placeholders: {n}
+msgid "Weekly streak: {n} weeks."
+msgstr ""
+
+msgid "Monthly streak: 1 month."
+msgstr ""
+
+#. placeholders: {n}
+msgid "Monthly streak: {n} months."
+msgstr ""
 
 msgid "day"
 msgstr "dzień"
@@ -2013,7 +2097,7 @@ msgid ""
 "practice, to keep its ordinary game all year. You do not need a star or a "
 "high score. Earlier play counts too."
 msgstr ""
-"Wydania świąteczne pojawiają się w Sezonowych wokół swojego święta i "
+"Wydania świąteczne pojawiają się w Grach sezonowych wokół swojego święta i "
 "zostają tam jeszcze przez dwa tygodnie na nadrobienie. Zacznij grać w "
 "jedno, nawet na treningu, by zachować jego zwykłą grę na cały rok. Nie "
 "potrzebujesz gwiazdki ani wysokiego wyniku. Wcześniejsza gra też się liczy."
@@ -2022,7 +2106,7 @@ msgid ""
 "Holiday specials appear in Seasonal games around their holiday and stay "
 "there for two more weeks, so you can catch up."
 msgstr ""
-"Wydania świąteczne pojawiają się w Sezonowych wokół swojego święta i "
+"Wydania świąteczne pojawiają się w Grach sezonowych wokół swojego święta i "
 "zostają tam jeszcze przez dwa tygodnie na nadrobienie."
 
 msgid ""
@@ -2043,8 +2127,8 @@ msgid ""
 "Games you have played open offline."
 msgstr ""
 "Do znalezienia nowego wydania potrzebna jest data z internetu. Bez "
-"internetu Sezonowe mają pozycję Sprawdź wydania świąteczne, by spróbować "
-"ponownie. Gry, w które już grano, otwierają się bez internetu."
+"internetu Gry sezonowe mają pozycję Sprawdź wydania świąteczne, by "
+"spróbować ponownie. Gry, w które już grano, otwierają się bez internetu."
 
 msgid ""
 "Finding a special you have not played needs the date from the internet."
@@ -2053,7 +2137,7 @@ msgstr "Do znalezienia nowego wydania potrzebna jest data z internetu."
 msgid ""
 "Offline, Seasonal games has a Check for holiday specials row to try again."
 msgstr ""
-"Bez internetu Sezonowe mają pozycję Sprawdź wydania świąteczne, by "
+"Bez internetu Gry sezonowe mają pozycję Sprawdź wydania świąteczne, by "
 "spróbować ponownie."
 
 msgid "Games you have played open offline."
@@ -2738,25 +2822,25 @@ msgid "Tranquility"
 msgstr ""
 
 msgid "Geminid"
-msgstr ""
+msgstr "Geminidów"
 
 msgid "Leonid"
-msgstr ""
+msgstr "Leonidów"
 
 msgid "Lyrid"
-msgstr ""
+msgstr "Lirydów"
 
 msgid "Orionid"
-msgstr ""
+msgstr "Orionidów"
 
 msgid "Perseid"
-msgstr ""
+msgstr "Perseidów"
 
 msgid "Quadrantid"
-msgstr ""
+msgstr "Kwadrantydów"
 
 msgid "Eta Aquariid"
-msgstr ""
+msgstr "Eta Akwarydów"
 
 msgid "Lantern Festival"
 msgstr "Święto Lampionów"
@@ -2765,7 +2849,7 @@ msgid "Sundae Thursday"
 msgstr ""
 
 msgid "Ice Cream Social"
-msgstr "Spotkanie przy lodach"
+msgstr "Lodowe przyjęcie"
 
 msgid "Peanut Butter Day"
 msgstr "Dzień Masła Orzechowego"
@@ -2903,11 +2987,11 @@ msgstr "{name}, {after_comma} dziś"
 #. placeholders: {label}, {done}, {games}
 #. one sentence of a longer line
 msgid "{label} challenges, {done} of {games} done."
-msgstr "{label} wyzwania, ukończone: {done} z {games}."
+msgstr "{label}, ukończone: {done} z {games}."
 
 #. placeholders: {label}, {done}, {games}, {resets}
 msgid "{label} challenges, {done} of {games} done. {resets}"
-msgstr "{label} wyzwania, ukończone: {done} z {games}. {resets}"
+msgstr "{label}, ukończone: {done} z {games}. {resets}"
 
 msgid "A short run in each game, new every day."
 msgstr "Krótka rozgrywka w każdej grze, nowa codziennie."
@@ -2939,10 +3023,6 @@ msgstr ""
 msgid "Days in a row with at least one challenge finished, in any game."
 msgstr ""
 "Dni z rzędu z co najmniej jednym ukończonym wyzwaniem, w dowolnej grze."
-
-#. placeholders: {label}
-msgid "{label} challenges"
-msgstr "{label} wyzwania"
 
 msgid "challenge list"
 msgstr "lista wyzwań"
@@ -3176,13 +3256,13 @@ msgid "The music on the boat between dives."
 msgstr "Muzyka na łodzi między nurkowaniami."
 
 msgid "Meteor shower"
-msgstr "Deszcz meteorów"
+msgstr "Rój meteorów"
 
 msgid "Watch a meteor shower on its peak night."
-msgstr "Obejrzyj deszcz meteorów w noc jego szczytu."
+msgstr "Obejrzyj rój meteorów w noc jego maksimum."
 
 msgid "The music under a meteor shower."
-msgstr "Muzyka pod deszczem meteorów."
+msgstr "Muzyka podczas roju meteorów."
 
 msgid "the-echo"
 msgstr ""
@@ -3902,11 +3982,12 @@ msgid ""
 "starts the run. Escape goes back without starting."
 msgstr ""
 "Wyzwania na ekranie tytułowym mają trzy rozgrywki, takie same dla każdego "
-"gracza: nowe wyzwanie dnia codziennie, nowe tygodniowe w każdy poniedziałek "
-"i nowy festyn co miesiąc. Wszystkie trzy zmieniają się o północy UTC. Każda "
-"pozycja mówi, czym jest wyzwanie, potem twój rekord i serię. F1 na pozycji "
-"czyta całą zasadę i kiedy będzie następne. Wybranie wyzwania najpierw czyta "
-"jego zasadę. Enter rozpoczyna rozgrywkę. Escape wraca bez rozpoczynania."
+"gracza: nowe wyzwanie dnia codziennie, nowe wyzwanie tygodnia w każdy "
+"poniedziałek i nowy festyn co miesiąc. Wszystkie trzy zmieniają się o "
+"północy UTC. Każda pozycja mówi, czym jest wyzwanie, potem twój rekord i "
+"serię. F1 na pozycji czyta całą zasadę i kiedy będzie następne. Wybranie "
+"wyzwania najpierw czyta jego zasadę. Enter rozpoczyna rozgrywkę. Escape "
+"wraca bez rozpoczynania."
 
 msgid ""
 "Challenges on the title holds three runs that are the same for every "
@@ -3914,8 +3995,8 @@ msgid ""
 "each month."
 msgstr ""
 "Wyzwania na ekranie tytułowym mają trzy rozgrywki, takie same dla każdego "
-"gracza: nowe wyzwanie dnia codziennie, nowe tygodniowe w każdy poniedziałek "
-"i nowy festyn co miesiąc."
+"gracza: nowe wyzwanie dnia codziennie, nowe wyzwanie tygodnia w każdy "
+"poniedziałek i nowy festyn co miesiąc."
 
 msgid "All three turn over at midnight UTC."
 msgstr "Wszystkie trzy zmieniają się o północy UTC."
@@ -4983,9 +5064,6 @@ msgstr "błoto"
 msgid "The meadow"
 msgstr "Łąka"
 
-msgid "Daily challenge"
-msgstr "Wyzwanie dnia"
-
 msgid "Weekly marathon"
 msgstr "Tygodniowy maraton"
 
@@ -5682,15 +5760,6 @@ msgstr "Wynik w {title}: {score}."
 msgid "{title} result: {score}. {score_line}"
 msgstr "Wynik w {title}: {score}. {score_line}"
 
-#. placeholders: {label}, {streak}, {unit}, {s_ending}
-#. one sentence of a longer line
-msgid "{label} streak: {streak} {unit}{s_ending}."
-msgstr ""
-
-#. placeholders: {label}, {streak}, {unit}, {s_ending}, {resets}
-msgid "{label} streak: {streak} {unit}{s_ending}. {resets}"
-msgstr ""
-
 msgid "Practice scores are not saved."
 msgstr "Wyniki treningu nie są zapisywane."
 
@@ -5927,7 +5996,7 @@ msgstr "Masz na razie {banked_round}."
 
 #. placeholders: {name}, {sentence_start}
 msgid " Today's twist, {name}: {sentence_start}"
-msgstr " Dzisiejsze utrudnienie, {name}: {sentence_start}"
+msgstr " Utrudnienie dnia, {name}: {sentence_start}"
 
 #. placeholders: {patterns_done}
 msgid ""
@@ -6727,19 +6796,13 @@ msgid "{peal_words} {solved} of {peals} peals solved, in {rows} rows."
 msgstr ""
 "{peal_words} Rozwiązane kuranty: {solved} z {peals}, w {rows} rzędach."
 
-#. placeholders: {score_line}, {streak}, {unit}
-#. one sentence of a longer line
-msgid "{score_line} A {streak} {unit} streak."
-msgstr ""
-
 #. placeholders: {title}, {points}
 #. one sentence of a longer line
 msgid "{title} result: {points}."
 msgstr "Wynik w {title}: {points}."
 
-#. placeholders: {title}, {points}, {score_line}, {streak}, {unit}, {resets}
-msgid ""
-"{title} result: {points}. {score_line} A {streak} {unit} streak. {resets}"
+#. placeholders: {title}, {points}, {score_line}, {streak_sentence}, {resets}
+msgid "{title} result: {points}. {score_line} {streak_sentence} {resets}"
 msgstr ""
 
 #. placeholders: {index}, {peals}
@@ -6938,19 +7001,17 @@ msgstr "Dzwon {bell}, {bell_name}"
 msgid "None of these bells is in the peal"
 msgstr "Żadnego z tych dzwonów nie ma w kurancie"
 
-msgid "none in place"
-msgstr "żaden na miejscu"
+#. placeholders: {m}
+msgid "None in place, {m} misplaced"
+msgstr ""
 
 #. placeholders: {i}
-msgid "{i} in place"
-msgstr "{i} na miejscu"
+msgid "{i} in place, none misplaced"
+msgstr ""
 
-msgid "none misplaced"
-msgstr "żaden nie na miejscu"
-
-#. placeholders: {m}
-msgid "{m} misplaced"
-msgstr "{m} nie na miejscu"
+#. placeholders: {i}, {m}
+msgid "{i} in place, {m} misplaced"
+msgstr ""
 
 msgid "Neither bell is in the peal"
 msgstr "Żadnego z tych dwóch dzwonów nie ma w kurancie"
@@ -7320,6 +7381,11 @@ msgstr "Belfry: {name}"
 msgid "Row {rows} of {rows2}, place {place}: {row_words}"
 msgstr "Rząd {rows} z {rows2}, miejsce {place}: {row_words}"
 
+#. placeholders: {places}, {p}
+#. one sentence of a longer line
+msgid "Build a row of {places} bells, then {p} rings it."
+msgstr ""
+
 #. one sentence of a longer line
 msgid ""
 "In place is a right bell in its place, misplaced is a right bell in the "
@@ -7342,21 +7408,20 @@ msgstr ""
 "właściwy dzwon na swoim miejscu, nie na miejscu to właściwy dzwon na złym "
 "miejscu."
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count it."
 msgstr ""
-" To jest {label} wyzwanie, {name}. Wyjście z menu pauzy się nie liczy."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count it."
 msgstr "Wyjście z menu pauzy się nie liczy."
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 #. one sentence of a longer line
-msgid "This is the {label} challenge, {name}."
-msgstr "To jest {label} wyzwanie, {name}."
+msgid "This is the {challenge_title}, {name}."
+msgstr ""
 
 #. placeholders: {place}, {bell}
 msgid "Place {place}, bell {bell}."
@@ -9192,10 +9257,10 @@ msgstr "Otwieram wyzwanie Birdsong Trail."
 msgid "{title} result: {score} of {most} points."
 msgstr "Wynik w {title}: {score} z {most} punktów."
 
-#. placeholders: {title}, {score}, {most}, {score_line}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {score}, {most}, {score_line}, {streak_sentence}, {resets}
 msgid ""
-"{title} result: {score} of {most} points. {score_line} A {streak} {unit} "
-"streak. {resets}"
+"{title} result: {score} of {most} points. {score_line} {streak_sentence} "
+"{resets}"
 msgstr ""
 
 #. placeholders: {summary}, {score}, {most}
@@ -10112,7 +10177,7 @@ msgstr ""
 "każdy na swojej wysokości."
 
 msgid "Turn"
-msgstr "Obrót"
+msgstr "Turn"
 
 msgid "Turn: a soft rustle as you turn to face a new way."
 msgstr "Obrót: cichy szelest, gdy obracasz się w nową stronę."
@@ -10878,12 +10943,11 @@ msgstr "{bird_name} czeka na twoją odpowiedź. {answer_keys}"
 msgid "Walk toward a song to meet its bird."
 msgstr "Idź w stronę pieśni, by spotkać jej ptaka."
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the walk."
 msgstr ""
-" To jest {label} wyzwanie, {name}. Wyjście z menu pauzy nie zalicza spaceru."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the walk."
@@ -11114,7 +11178,7 @@ msgid "Set select dances any set you have opened."
 msgstr "Wybór zestawu tańczy dowolny otwarty zestaw."
 
 msgid "The practice room"
-msgstr "Sala prób"
+msgstr "Sala treningowa"
 
 msgid ""
 "The practice room plays one tune of any set you have opened. When a step's "
@@ -11122,13 +11186,13 @@ msgid ""
 "step and the tune goes on. A wrong step names the right key. Nothing is "
 "scored."
 msgstr ""
-"Sala prób gra jedną melodię z dowolnego otwartego zestawu. Gdy nadchodzi "
-"uderzenie kroku, muzyka czeka, a gra podaje krok i jego klawisz. Zatańcz "
-"krok, a melodia gra dalej. Zły krok podaje właściwy klawisz. Nic nie jest "
-"punktowane."
+"Sala treningowa gra jedną melodię z dowolnego otwartego zestawu. Gdy "
+"nadchodzi uderzenie kroku, muzyka czeka, a gra podaje krok i jego klawisz. "
+"Zatańcz krok, a melodia gra dalej. Zły krok podaje właściwy klawisz. Nic "
+"nie jest punktowane."
 
 msgid "The practice room plays one tune of any set you have opened."
-msgstr "Sala prób gra jedną melodię z dowolnego otwartego zestawu."
+msgstr "Sala treningowa gra jedną melodię z dowolnego otwartego zestawu."
 
 msgid ""
 "When a step's beat comes, the music holds, and the step and its key are "
@@ -11559,8 +11623,8 @@ msgid ""
 "{steps_words3}."
 msgstr ""
 "Zatańczone dotąd: {set_count}, {tunes}, w rytmie {steps_words}, z czego "
-"idealnie {spot_on}. Najdłuższa seria w rytmie: {steps_words2}. Sala prób: "
-"{steps_words3}."
+"idealnie {spot_on}. Najdłuższa seria w rytmie: {steps_words2}. Sala "
+"treningowa: {steps_words3}."
 
 #. placeholders: {steps_words2}
 #. one sentence of a longer line
@@ -11570,7 +11634,7 @@ msgstr "Najdłuższa seria w rytmie: {steps_words2}."
 #. placeholders: {steps_words3}
 #. one sentence of a longer line
 msgid "Practice room: {steps_words3}."
-msgstr "Sala prób: {steps_words3}."
+msgstr "Sala treningowa: {steps_words3}."
 
 msgid "no four-leaf clover yet"
 msgstr "jeszcze bez czterolistnej koniczyny"
@@ -11668,6 +11732,11 @@ msgstr ""
 "każdą figurę między nimi. Każdy krok jest wywoływany, a w każdej melodii "
 "chowają się koniczynki."
 
+#. placeholders: {year}
+#. one sentence of a longer line
+msgid "Each set dance you finish goes in your keepsake for {year}."
+msgstr ""
+
 #. one sentence of a longer line
 msgid "Escape on this page goes back without dancing."
 msgstr "Escape na tej stronie wraca bez tańczenia."
@@ -11700,7 +11769,7 @@ msgid "Dance any set you have opened, with the stars on each."
 msgstr "Zatańcz dowolny otwarty zestaw, z gwiazdkami przy każdym."
 
 msgid "Practice room"
-msgstr "Sala prób"
+msgstr "Sala treningowa"
 
 msgid ""
 "Any tune you have opened. The music holds at each step until you dance it."
@@ -12229,13 +12298,11 @@ msgstr ""
 msgid "Every {STREAK_EVERY} in a row add {STREAK_BONUS} points."
 msgstr "Każde {STREAK_EVERY} z rzędu dodaje {STREAK_BONUS} punkty."
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the run."
 msgstr ""
-" To jest {label} wyzwanie, {name}. Wyjście z menu pauzy nie zalicza "
-"rozgrywki."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the run."
@@ -12709,7 +12776,7 @@ msgid ""
 "practice room"
 msgstr ""
 "Tańczysz na wiejskim ceili, a wodzirej wywołuje twoje kroki. Ucz się w sali "
-"prób"
+"treningowej"
 
 #. placeholders: {h}
 #. one sentence of a longer line
@@ -13446,7 +13513,7 @@ msgstr "{sentence_start}. Traf {hearts_words}, by iść dalej."
 
 #. placeholders: {name}, {describe}
 msgid " Today's twist, {name}: {describe}."
-msgstr " Dzisiejsze utrudnienie, {name}: {describe}."
+msgstr " Utrudnienie dnia, {name}: {describe}."
 
 #. placeholders: {GOLDEN_POINTS}
 msgid " Golden hearts drift tonight, worth {GOLDEN_POINTS}."
@@ -13883,16 +13950,16 @@ msgstr "{name}, {angle}, {name2}"
 msgid "Aim a little ahead of a drifting heart."
 msgstr "Celuj trochę przed dryfujące serce."
 
-#. placeholders: {label}
+#. placeholders: {challenge_title}
 msgid ""
-" This is the {label} challenge. Leaving from the pause menu does not count "
+" This is the {challenge_title}. Leaving from the pause menu does not count "
 "it."
-msgstr " To jest {label} wyzwanie. Wyjście z menu pauzy go nie zalicza."
+msgstr ""
 
-#. placeholders: {label}
+#. placeholders: {challenge_title}
 #. one sentence of a longer line
-msgid "This is the {label} challenge."
-msgstr "To jest {label} wyzwanie."
+msgid "This is the {challenge_title}."
+msgstr ""
 
 msgid ""
 "Archery over a rooftop sky: shoot drifting paper hearts, in pairs, for "
@@ -18327,6 +18394,11 @@ msgstr ""
 "Świetlik, który błyska więcej niż raz, wymaga odpowiedzi na każdy błysk "
 "jednego mrugnięcia."
 
+#. placeholders: {control_name}
+#. one sentence of a longer line
+msgid "Walk toward a firefly, and press {control_name} while it glows."
+msgstr ""
+
 #. placeholders: {status}, {control_name}
 #. one sentence of a longer line
 msgid ""
@@ -18734,6 +18806,10 @@ msgstr ""
 "Spóźniony błysk to maruder: naciśnij {control_name} razem z chórem, by go "
 "przywrócić."
 
+#. one sentence of a longer line
+msgid "The whole meadow flashes together."
+msgstr ""
+
 #. placeholders: {status}
 #. one sentence of a longer line
 msgid "{status} The whole meadow flashes together."
@@ -18914,12 +18990,41 @@ msgstr "po prawej"
 msgid "to the left"
 msgstr "po lewej"
 
-#. placeholders: {a}, {s}
-msgid "{a} and {s}"
-msgstr "{a} i {s}"
+#. placeholders: {dist}
+msgid "{dist} ahead and to the left"
+msgstr ""
 
-msgid "close by"
-msgstr "blisko"
+#. placeholders: {dist}
+msgid "{dist} ahead and to the right"
+msgstr ""
+
+#. placeholders: {dist}
+msgid "{dist} ahead"
+msgstr ""
+
+#. placeholders: {dist}
+msgid "{dist} behind you and to the left"
+msgstr ""
+
+#. placeholders: {dist}
+msgid "{dist} behind you and to the right"
+msgstr ""
+
+#. placeholders: {dist}
+msgid "{dist} behind you"
+msgstr ""
+
+#. placeholders: {dist}
+msgid "{dist} to the left"
+msgstr ""
+
+#. placeholders: {dist}
+msgid "{dist} to the right"
+msgstr ""
+
+#. placeholders: {dist}
+msgid "{dist} close by"
+msgstr ""
 
 msgid "1 minute"
 msgstr "1 minuta"
@@ -19623,7 +19728,7 @@ msgstr ""
 "Backspace odkłada karty, gdy je trzymasz. Jeśli nie ma już ruchu, który "
 "pomaga, gra o tym mówi. Każde swobodne rozdanie da się wygrać od początku, "
 "więc cofnij dość daleko, a wyjście zawsze się znajdzie. Po nowe rozdanie "
-"naciśnij Escape, potem Powrót do tytułu, potem Graj."
+"naciśnij Escape, potem Wróć do ekranu tytułowego, potem Graj."
 
 msgid ""
 "Backspace takes back your last move, as many times as you like, face-down "
@@ -19646,7 +19751,8 @@ msgstr ""
 
 msgid "For a fresh deal, press Escape, then Back to the title, then Play."
 msgstr ""
-"Po nowe rozdanie naciśnij Escape, potem Powrót do tytułu, potem Graj."
+"Po nowe rozdanie naciśnij Escape, potem Wróć do ekranu tytułowego, potem "
+"Graj."
 
 msgid ""
 "H names the next move, such as \"The 4 of clubs in pile 2 can go on the 5 of "
@@ -19746,12 +19852,12 @@ msgid ""
 "menu, does not count, so you can try again later."
 msgstr ""
 "Każdy gracz dostaje te same karty i każde rozdanie wyzwania da się wygrać. "
-"Dzienne, Dzisiejsze rozdanie, to jedno rozdanie po jednej karcie, nowe "
-"każdego dnia. Tygodniowe, Tydzień po trzy, to jedno rozdanie po trzy karty, "
-"nowe w każdy poniedziałek. Miesięczne, Pięć przy kominku, to pięć rozdań po "
-"jednej karcie z rzędu, z wynikami zsumowanymi. Twój wynik liczy się, gdy "
-"ostatnia karta trafi na stos. Wiersz Opuść wyzwanie w menu pauzy się nie "
-"liczy, więc możesz spróbować później."
+"Wyzwanie dnia, Dzisiejsze rozdanie, to jedno rozdanie po jednej karcie, "
+"nowe każdego dnia. Wyzwanie tygodnia, Tydzień po trzy, to jedno rozdanie po "
+"trzy karty, nowe w każdy poniedziałek. Wyzwanie miesiąca, Pięć przy "
+"kominku, to pięć rozdań po jednej karcie z rzędu, z wynikami zsumowanymi. "
+"Twój wynik liczy się, gdy ostatnia karta trafi na stos. Wiersz Opuść "
+"wyzwanie w menu pauzy się nie liczy, więc możesz spróbować później."
 
 msgid ""
 "Every player gets the same cards, and every challenge deal can be won."
@@ -19760,21 +19866,21 @@ msgstr ""
 
 msgid "The daily, Tonight's deal, is one draw one deal, new each day."
 msgstr ""
-"Dzienne, Dzisiejsze rozdanie, to jedno rozdanie po jednej karcie, nowe "
-"każdego dnia."
+"Wyzwanie dnia, Dzisiejsze rozdanie, to jedno rozdanie po jednej karcie, "
+"nowe każdego dnia."
 
 msgid ""
 "The weekly, Draw three week, is one draw three deal, new each Monday."
 msgstr ""
-"Tygodniowe, Tydzień po trzy, to jedno rozdanie po trzy karty, nowe w każdy "
-"poniedziałek."
+"Wyzwanie tygodnia, Tydzień po trzy, to jedno rozdanie po trzy karty, nowe w "
+"każdy poniedziałek."
 
 msgid ""
 "The monthly, Five by the fire, is five draw one deals in a row, with the "
 "scores added."
 msgstr ""
-"Miesięczne, Pięć przy kominku, to pięć rozdań po jednej karcie z rzędu, z "
-"wynikami zsumowanymi."
+"Wyzwanie miesiąca, Pięć przy kominku, to pięć rozdań po jednej karcie z "
+"rzędu, z wynikami zsumowanymi."
 
 msgid "Your result counts when the last card goes up."
 msgstr "Twój wynik liczy się, gdy ostatnia karta trafi na stos."
@@ -19799,7 +19905,7 @@ msgstr ""
 "graczy tego dnia i zawsze da się je wygrać. Odkrywanie z talii nie kosztuje "
 "ruchów, więc wynik liczy tylko przeniesione karty, a S mówi \"odkrywanie za "
 "darmo\". Ma własny ranking. Gdy dzień minie, Zagraj ponownie w podsumowaniu "
-"mówi, że Rozdanie Rabbit rabbit się skończyło, i wraca do tytułu."
+"mówi, że Rozdanie Rabbit rabbit się skończyło, i wraca do ekranu tytułowego."
 
 msgid ""
 "Rabbit rabbit deal: on the 1st of every month, when an old charm says "
@@ -19833,7 +19939,7 @@ msgid ""
 "has ended and takes you back to the title."
 msgstr ""
 "Gdy dzień minie, Zagraj ponownie w podsumowaniu mówi, że Rozdanie Rabbit "
-"rabbit się skończyło, i wraca do tytułu."
+"rabbit się skończyło, i wraca do ekranu tytułowego."
 
 msgid "Left and Right: move along the piles, the stock and the foundations."
 msgstr "Left i Right: ruch wzdłuż kolumn, talii i stosów."
@@ -19992,12 +20098,6 @@ msgstr "Wszystkie rozdania wygrane, {deals}, łącznie {moves_words}."
 msgid "Deal won in {moves_words}."
 msgstr "Rozdanie wygrane: {moves_words}."
 
-#. placeholders: {title}, {score}, {score_line}, {streak}, {unit}, {resets}
-msgid ""
-"{title} result: {score} points. {score_line} A {streak} {unit} streak. "
-"{resets}"
-msgstr ""
-
 #. placeholders: {index}, {deals}
 #. one sentence of a longer line
 msgid "Deal {index} of {deals}."
@@ -20070,10 +20170,6 @@ msgstr "Ma własny ranking."
 #. one sentence of a longer line
 msgid "Turning the stock costs no moves."
 msgstr "Odkrywanie z talii nie kosztuje ruchów."
-
-#. placeholders: {name}
-msgid "the {name}"
-msgstr ""
 
 #. placeholders: {sentence_start}
 msgid "{sentence_start} foundation"
@@ -20179,9 +20275,13 @@ msgstr "{t} odkrywa kartę z talii."
 msgid "{u} and {d} move within a pile."
 msgstr "{u} i {d} przesuwają w obrębie kolumny."
 
-#. placeholders: {cards_words}, {the}, {the2}
-msgid "{cards_words}, {the} down to {the2}"
-msgstr "{cards_words}, od {the} do {the2}"
+#. placeholders: {name}
+msgid "the {name}"
+msgstr ""
+
+#. placeholders: {n}, {first}, {last}
+msgid "{n} cards, the {first} down to the {last}"
+msgstr ""
 
 #. placeholders: {p}
 msgid "Pile {p}, empty."
@@ -20284,32 +20384,37 @@ msgstr "{name} do {rank_words}"
 msgid "Foundations: {join}."
 msgstr "Stosy: {join}."
 
-#. placeholders: {the}, {p}
-msgid "{the} in pile {p}"
-msgstr "{the} w kolumnie {p}"
+#. placeholders: {card}, {p}
+msgid "The {card} in pile {p} can go on its foundation."
+msgstr ""
 
-#. placeholders: {name}
-msgid "the turned-up {name}"
-msgstr "odkryta karta {name}"
+#. placeholders: {card}, {p}, {onto}, {q}
+msgid "The {card} in pile {p} can go on the {onto} in pile {q}."
+msgstr ""
 
-#. placeholders: {the}
-msgid "{the} on its foundation"
-msgstr "{the} na swoim stosie"
+#. placeholders: {card}, {p}, {q}
+msgid "The {card} in pile {p} can go to the empty pile {q}."
+msgstr ""
 
-msgid "go on its foundation"
-msgstr "idzie na swój stos"
+#. placeholders: {card}
+msgid "The turned-up {card} can go on its foundation."
+msgstr ""
 
-#. placeholders: {the}, {q}
-msgid "go on {the} in pile {q}"
-msgstr "idzie na {the} w kolumnie {q}"
+#. placeholders: {card}, {onto}, {q}
+msgid "The turned-up {card} can go on the {onto} in pile {q}."
+msgstr ""
 
-#. placeholders: {q}
-msgid "go to the empty pile {q}"
-msgstr "idzie na pustą kolumnę {q}"
+#. placeholders: {card}, {q}
+msgid "The turned-up {card} can go to the empty pile {q}."
+msgstr ""
 
-#. placeholders: {sentence_start}, {place}
-msgid "{sentence_start} can {place}."
-msgstr "{sentence_start} {place}."
+#. placeholders: {card}, {onto}, {q}
+msgid "The {card} on its foundation can go on the {onto} in pile {q}."
+msgstr ""
+
+#. placeholders: {card}, {q}
+msgid "The {card} on its foundation can go to the empty pile {q}."
+msgstr ""
 
 msgid " That turns up a face-down card."
 msgstr " To odkrywa zakrytą kartę."
@@ -20331,7 +20436,7 @@ msgid "{sentence_start} turns the stock. A card further in can be played."
 msgstr "{sentence_start} odkrywa kartę z talii. Kartę głębiej można zagrać."
 
 msgid " For a fresh deal, Escape, then Back to the title."
-msgstr " Po nowe rozdanie: Escape, potem Powrót do tytułu."
+msgstr " Po nowe rozdanie: Escape, potem Wróć do ekranu tytułowego."
 
 msgid "Every card is on the foundations."
 msgstr "Wszystkie karty są na stosach."
@@ -20355,25 +20460,25 @@ msgstr "{sentence_start} i {control_name} przesuwają w obrębie kolumny."
 msgid "Pile {p} is empty."
 msgstr "Kolumna {p} jest pusta."
 
-#. placeholders: {sentence_start}
-msgid "{sentence_start} is the bottom card of the pile."
-msgstr "{sentence_start} to spodnia karta kolumny."
+#. placeholders: {card}
+msgid "The {card} is the bottom card of the pile."
+msgstr ""
 
-#. placeholders: {sentence_start}, {n}
-msgid ""
-"{sentence_start} is the deepest face-up card, with {n} face down under it."
-msgstr "{sentence_start} to najgłębsza odkryta karta, pod nią zakryte: {n}."
+#. placeholders: {card}, {n}
+msgid "The {card} is the deepest face-up card, with {n} face down under it."
+msgstr ""
 
 #. placeholders: {name_and_colour}
 msgid "Top card: {name_and_colour}."
 msgstr "Wierzchnia karta: {name_and_colour}."
 
-msgid "the top card"
-msgstr "wierzchnia karta"
+#. placeholders: {name}
+msgid "{name}, the top card."
+msgstr ""
 
-#. placeholders: {ordinal}
-msgid "{ordinal} from the top"
-msgstr "{ordinal} od góry"
+#. placeholders: {name}, {n}
+msgid "{name}, card {n} from the top."
+msgstr ""
 
 msgid "The stock is empty, and nothing is turned up."
 msgstr "Talia jest pusta i nic nie jest odkryte."
@@ -20489,17 +20594,33 @@ msgstr "Odkrywanie z talii nie kosztowało ruchów, na szczęśliwy miesiąc."
 msgid "{name} won in {moves_words}"
 msgstr "{name} wygrane: {moves_words}"
 
-#. placeholders: {what}, {name}
-msgid "{what} on the {name} foundation."
-msgstr "{what} na stosie {name}."
+#. placeholders: {card}, {suit}
+msgid "The {card} on the {suit} foundation."
+msgstr ""
 
-#. placeholders: {what}, {the}, {q}
-msgid "{what} on {the}, pile {q}."
-msgstr "{what} na {the}, kolumna {q}."
+#. placeholders: {card}, {onto}, {q}
+msgid "The {card} on the {onto}, pile {q}."
+msgstr ""
 
-#. placeholders: {what}, {q}
-msgid "{what} to pile {q}."
-msgstr "{what} do kolumny {q}."
+#. placeholders: {n}, {onto}, {q}
+msgid "{n} cards on the {onto}, pile {q}."
+msgstr ""
+
+#. placeholders: {card}, {q}
+msgid "The {card} to pile {q}."
+msgstr ""
+
+#. placeholders: {n}, {q}
+msgid "{n} cards to pile {q}."
+msgstr ""
+
+#. placeholders: {card}
+msgid "The {card}"
+msgstr ""
+
+#. placeholders: {n}
+msgid "{n} cards"
+msgstr "{n} {n:karta|karty|kart}"
 
 msgid "your first win"
 msgstr "twoja pierwsza wygrana"
@@ -20739,49 +20860,65 @@ msgstr "Stąd pochodzą te karty."
 msgid "Only a king goes there."
 msgstr "Tam pasuje tylko król."
 
-#. placeholders: {sentence_start}
+#. placeholders: {card}
 #. one sentence of a longer line
-msgid "{sentence_start} cannot go on an empty pile."
-msgstr "{sentence_start} nie może iść na pustą kolumnę."
-
-#. placeholders: {sentence_start}
-msgid "{sentence_start} cannot go on an empty pile. Only a king goes there."
+msgid "The {card} cannot go on an empty pile."
 msgstr ""
-"{sentence_start} nie może iść na pustą kolumnę. Tam pasuje tylko król."
 
-#. placeholders: {sentence_start}, {name}
-msgid "{sentence_start} cannot go on the {name}."
-msgstr "{sentence_start} nie może iść na {name}."
+#. placeholders: {card}
+msgid "The {card} cannot go on an empty pile. Only a king goes there."
+msgstr ""
 
-#. placeholders: {lead}
-msgid "{lead} A king goes only on an empty pile."
-msgstr "{lead} Król idzie tylko na pustą kolumnę."
-
-#. placeholders: {lead}, {need}, {rank_words}
-msgid "{lead} It needs a {need} {rank_words}."
-msgstr "{lead} Potrzebna {need} karta: {rank_words}."
-
-#. placeholders: {name}, {rank_words}
 #. one sentence of a longer line
-msgid "The {name} foundation needs the {rank_words} next."
-msgstr "Stos {name} potrzebuje teraz karty {rank_words}."
+msgid "A king goes only on an empty pile."
+msgstr ""
 
-#. placeholders: {sentence_start}
+#. placeholders: {name}, {onto}
 #. one sentence of a longer line
-msgid "{sentence_start} cannot go up yet."
-msgstr "{sentence_start} nie może jeszcze iść na stos."
+msgid "The {name} cannot go on the {onto}."
+msgstr ""
 
-#. placeholders: {sentence_start}, {name}, {rank_words}
+#. placeholders: {name}, {onto}
 msgid ""
-"{sentence_start} cannot go up yet. The {name} foundation needs the "
-"{rank_words} next."
+"The {name} cannot go on the {onto}. A king goes only on an empty pile."
 msgstr ""
-"{sentence_start} nie może jeszcze iść na stos. Stos {name} potrzebuje teraz "
-"karty {rank_words}."
 
-#. placeholders: {sentence_start}, {name}
-msgid "{sentence_start} goes on the {name} foundation."
-msgstr "{sentence_start} idzie na stos {name}."
+#. placeholders: {need}
+#. one sentence of a longer line
+msgid "It needs a black {need}."
+msgstr ""
+
+#. placeholders: {name}, {onto}, {need}
+msgid "The {name} cannot go on the {onto}. It needs a black {need}."
+msgstr ""
+
+#. placeholders: {need}
+#. one sentence of a longer line
+msgid "It needs a red {need}."
+msgstr ""
+
+#. placeholders: {name}, {onto}, {need}
+msgid "The {name} cannot go on the {onto}. It needs a red {need}."
+msgstr ""
+
+#. placeholders: {name}
+#. one sentence of a longer line
+msgid "The {name} cannot go up yet."
+msgstr ""
+
+#. placeholders: {name}, {suit}, {next}
+msgid ""
+"The {name} cannot go up yet. The {suit} foundation needs the {next} next."
+msgstr ""
+
+#. placeholders: {suit}, {next}
+#. one sentence of a longer line
+msgid "The {suit} foundation needs the {next} next."
+msgstr ""
+
+#. placeholders: {name}, {suit}
+msgid "The {name} goes on the {suit} foundation."
+msgstr ""
 
 msgid "fifth"
 msgstr "piąta"
@@ -20812,10 +20949,6 @@ msgstr "trzynasta"
 
 msgid "1 card"
 msgstr "1 karta"
-
-#. placeholders: {n}
-msgid "{n} cards"
-msgstr "{n} {n:karta|karty|kart}"
 
 msgid "1 move"
 msgstr "1 ruch"
@@ -23506,6 +23639,11 @@ msgstr "Zderzenie z autem z naprzeciwka."
 msgid "Down for 3 seconds."
 msgstr "Leżysz 3 sekundy."
 
+#. placeholders: {CRASH_S}
+#. one sentence of a longer line
+msgid "Lost {CRASH_S} seconds."
+msgstr ""
+
 #. placeholders: {why}, {CRASH_S}
 #. one sentence of a longer line
 msgid "{why} Lost {CRASH_S} seconds."
@@ -24034,10 +24172,6 @@ msgstr "{points} punktów jazdy."
 #. placeholders: {join}
 msgid "Ride points: {join}."
 msgstr "Punkty jazdy: {join}."
-
-#. placeholders: {streak}, {unit}, {resets}
-msgid "A {streak} {unit} streak. {resets}"
-msgstr ""
 
 #. placeholders: {title}, {points}
 msgid "{title} result: {points} ride points"
@@ -25054,7 +25188,7 @@ msgid ""
 "October 17 to November 1. It stays two more weeks, through November 15, so "
 "you can catch up."
 msgstr ""
-"Graveyard Shuffle pojawia się w grach Sezonowych w okolicy Halloween, od 17 "
+"Graveyard Shuffle pojawia się w Grach sezonowych w okolicy Halloween, od 17 "
 "października do 1 listopada. Zostaje jeszcze dwa tygodnie, do 15 listopada, "
 "by można było nadrobić."
 
@@ -25062,7 +25196,7 @@ msgid ""
 "Graveyard Shuffle turns up in the Seasonal games around Halloween, from "
 "October 17 to November 1."
 msgstr ""
-"Graveyard Shuffle pojawia się w grach Sezonowych w okolicy Halloween, od 17 "
+"Graveyard Shuffle pojawia się w Grach sezonowych w okolicy Halloween, od 17 "
 "października do 1 listopada."
 
 msgid "It stays two more weeks, through November 15, so you can catch up."
@@ -25076,7 +25210,7 @@ msgid ""
 "play it, it leaves the lists until next Halloween."
 msgstr ""
 "Zacznij w tym czasie taniec lub trening, a gra zostaje twoja na stałe, "
-"nawet jeśli wyjdziesz wcześniej. Po sezonie przenosi się do gier Akcja. "
+"nawet jeśli wyjdziesz wcześniej. Po sezonie przenosi się do Gier akcji. "
 "Wcześniejsza gra też się liczy, a gwiazdki dalej otwierają kolejne noce. "
 "Jeśli nigdy w nią nie zagrasz, znika z list do następnego Halloween."
 
@@ -25088,7 +25222,7 @@ msgstr ""
 "nawet jeśli wyjdziesz wcześniej."
 
 msgid "After the season it moves to the Action games."
-msgstr "Po sezonie przenosi się do gier Akcja."
+msgstr "Po sezonie przenosi się do Gier akcji."
 
 msgid "Earlier play counts too, and stars still open later nights."
 msgstr ""
@@ -25105,7 +25239,7 @@ msgid ""
 msgstr ""
 "Noc 4, laboratorium Doktora Volta, to miejsce, gdzie zaczął się taniec, i "
 "otwiera się tylko w okolicy Halloween. Przez resztę roku laboratorium i "
-"jego trzy piosenki w sali prób są zablokowane do 17 października."
+"jego trzy piosenki w sali treningowej są zablokowane do 17 października."
 
 msgid ""
 "Night 4, Doctor Volt's laboratory, is where the dance began, and it only "
@@ -25118,7 +25252,7 @@ msgid ""
 "The rest of the year, the laboratory and its three songs in the practice "
 "room are locked until October 17."
 msgstr ""
-"Przez resztę roku laboratorium i jego trzy piosenki w sali prób są "
+"Przez resztę roku laboratorium i jego trzy piosenki w sali treningowej są "
 "zablokowane do 17 października."
 
 msgid "The monsters and their moves"
@@ -25387,13 +25521,13 @@ msgid ""
 "Dance the move and the song goes on. A wrong move names the right key. "
 "Nothing is scored."
 msgstr ""
-"Sala prób gra jedną piosenkę z dowolnej otwartej nocy. Gdy nadchodzi "
+"Sala treningowa gra jedną piosenkę z dowolnej otwartej nocy. Gdy nadchodzi "
 "uderzenie ruchu, muzyka czeka, a gra podaje potwora i jego klawisz. Zatańcz "
 "ruch, a piosenka gra dalej. Zły ruch podaje właściwy klawisz. Nic nie jest "
 "liczone."
 
 msgid "The practice room plays one song of any night you have opened."
-msgstr "Sala prób gra jedną piosenkę z dowolnej otwartej nocy."
+msgstr "Sala treningowa gra jedną piosenkę z dowolnej otwartej nocy."
 
 msgid ""
 "When a move's beat comes, the music holds, and the monster and its key are "
@@ -25415,15 +25549,15 @@ msgid ""
 "Tonight's song, the daily: one song, with the zombie, the skeleton, the "
 "mummy and the vampire. A new one comes every day."
 msgstr ""
-"Dzisiejsza piosenka, dzienne: jedna piosenka, z zombie, szkieletem, mumią i "
-"wampirem. Nowa przychodzi codziennie."
+"Dzisiejsza piosenka, wyzwanie dnia: jedna piosenka, z zombie, szkieletem, "
+"mumią i wampirem. Nowa przychodzi codziennie."
 
 msgid ""
 "Tonight's song, the daily: one song, with the zombie, the skeleton, the "
 "mummy and the vampire."
 msgstr ""
-"Dzisiejsza piosenka, dzienne: jedna piosenka, z zombie, szkieletem, mumią i "
-"wampirem."
+"Dzisiejsza piosenka, wyzwanie dnia: jedna piosenka, z zombie, szkieletem, "
+"mumią i wampirem."
 
 msgid ""
 "The weekly haunt: three songs, with every monster. A new one comes every "
@@ -25439,15 +25573,15 @@ msgid ""
 "The long night, the monthly: five songs, with every monster and more of "
 "them. A new one comes on the first of every month."
 msgstr ""
-"Długa noc, miesięczne: pięć piosenek, ze wszystkimi potworami, i to w "
-"większej liczbie. Nowa przychodzi 1. dnia każdego miesiąca."
+"Długa noc, wyzwanie miesiąca: pięć piosenek, ze wszystkimi potworami, i to "
+"w większej liczbie. Nowa przychodzi 1. dnia każdego miesiąca."
 
 msgid ""
 "The long night, the monthly: five songs, with every monster and more of "
 "them."
 msgstr ""
-"Długa noc, miesięczne: pięć piosenek, ze wszystkimi potworami, i to w "
-"większej liczbie."
+"Długa noc, wyzwanie miesiąca: pięć piosenek, ze wszystkimi potworami, i to "
+"w większej liczbie."
 
 msgid ""
 "Your score is every point and bonus you earn. Leave the challenge, on the "
@@ -25566,12 +25700,6 @@ msgstr "{n} {n:piosenka|piosenki|piosenek}"
 msgid "Moves: {words}."
 msgstr "Ruchy: {words}."
 
-#. placeholders: {title}, {points_words}, {score_line}, {streak}, {unit}, {resets}
-msgid ""
-"{title} result: {points_words}. {score_line} A {streak} {unit} streak. "
-"{resets}"
-msgstr ""
-
 msgid "Graveyard Shuffle"
 msgstr "Graveyard Shuffle"
 
@@ -25595,14 +25723,14 @@ msgid ""
 "Graveyard Shuffle is yours to keep. After Halloween, it moves to the Action "
 "games."
 msgstr ""
-"Graveyard Shuffle zostaje twoja na stałe. Po Halloween przenosi się do gier "
-"Akcja."
+"Graveyard Shuffle zostaje twoja na stałe. Po Halloween przenosi się do Gier "
+"akcji."
 
 msgid ""
 "Graveyard Shuffle is yours to keep, in the Action games. Doctor Volt's "
 "laboratory opens at Halloween."
 msgstr ""
-"Graveyard Shuffle zostaje twoja na stałe, w grach Akcja. Laboratorium "
+"Graveyard Shuffle zostaje twoja na stałe, w Grach akcji. Laboratorium "
 "Doktora Volta otwiera się na Halloween."
 
 msgid ""
@@ -25657,7 +25785,7 @@ msgid ""
 "them spot on. Longest streak: {moves_words2}. Practice room: {moves_words3}."
 msgstr ""
 "Zatańczone dotąd: {night_count}, {songs}, {moves_words} w rytmie, w tym "
-"idealnie: {spot_on}. Najdłuższa seria: {moves_words2}. Sala prób: "
+"idealnie: {spot_on}. Najdłuższa seria: {moves_words2}. Sala treningowa: "
 "{moves_words3}."
 
 #. placeholders: {moves_words2}
@@ -25668,7 +25796,7 @@ msgstr "Najdłuższa seria: {moves_words2}."
 #. placeholders: {moves_words3}
 #. one sentence of a longer line
 msgid "Practice room: {moves_words3}."
-msgstr "Sala prób: {moves_words3}."
+msgstr "Sala treningowa: {moves_words3}."
 
 #. placeholders: {join}
 msgid "Three songs in a row: {join}."
@@ -25812,12 +25940,11 @@ msgstr "Tańcz ruch na uderzenie po każdym wezwaniu."
 msgid "Move on the beat after each call. {sentence_start}."
 msgstr "Tańcz ruch na uderzenie po każdym wezwaniu. {sentence_start}."
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 msgid ""
-"This is the {label} challenge, {name}. Leaving from the pause menu does not "
+"This is the {challenge_title}, {name}. Leaving from the pause menu does not "
 "count the run."
 msgstr ""
-"To wyzwanie {label}, {name}. Wyjście z menu pauzy nie zalicza rozgrywki."
 
 #. placeholders: {sentence_start}, {k}, {k2}
 msgid ""
@@ -26301,7 +26428,7 @@ msgid ""
 "the practice room"
 msgstr ""
 "Potwór Doktora Volta rozpętał taneczny szał, a ty go prowadzisz. Ucz się w "
-"sali prób"
+"sali treningowej"
 
 #. placeholders: {h}
 #. one sentence of a longer line
@@ -26775,9 +26902,9 @@ msgstr ""
 "danie jest pierwsze, gdy podano danie z gwiazdką, albo Następna runda w "
 "Dokładce. Potem Zagraj ponownie, albo Spróbuj jeszcze raz po posiłku bez "
 "gwiazdek, gotuje to samo danie od początku. Posłuchaj podsumowania jeszcze "
-"raz czyta wynik, potem jakość każdej potrawy. Powrót do tytułu jest "
-"ostatni, a Escape robi to samo. Po wyzwaniu menu proponuje wyzwanie jeszcze "
-"raz i kończy się wierszem Powrót do wyzwań."
+"raz czyta wynik, potem jakość każdej potrawy. Wróć do ekranu tytułowego "
+"jest ostatni, a Escape robi to samo. Po wyzwaniu menu proponuje wyzwanie "
+"jeszcze raz i kończy się wierszem Wróć do wyzwań."
 
 msgid "When a meal is scored, the results menu reads how it went."
 msgstr "Gdy posiłek zostanie oceniony, menu podsumowania mówi, jak poszło."
@@ -26801,14 +26928,14 @@ msgstr ""
 "Posłuchaj podsumowania jeszcze raz czyta wynik, potem jakość każdej potrawy."
 
 msgid "Back to the title is last, and Escape does the same."
-msgstr "Powrót do tytułu jest ostatni, a Escape robi to samo."
+msgstr "Wróć do ekranu tytułowego jest ostatni, a Escape robi to samo."
 
 msgid ""
 "After a challenge, the menu offers the challenge again and ends with Back "
 "to the challenges."
 msgstr ""
-"Po wyzwaniu menu proponuje wyzwanie jeszcze raz i kończy się wierszem "
-"Powrót do wyzwań."
+"Po wyzwaniu menu proponuje wyzwanie jeszcze raz i kończy się wierszem Wróć "
+"do wyzwań."
 
 msgid ""
 "Challenges, on the title, are menus every player cooks the same way: a new "
@@ -26822,11 +26949,11 @@ msgid ""
 "the pause menu, does not count it."
 msgstr ""
 "Wyzwania na ekranie tytułowym to menu, które każdy gracz gotuje tak samo: "
-"nowe dzienne co dzień, nowe tygodniowe w każdy poniedziałek i nowe "
-"miesięczne co miesiąc, wszystko według dat UTC. Każdy wiersz podaje "
-"wyzwanie i czym jest, potem czy w nie grano, twój rekord i serię. F1 na "
-"wierszu czyta jego pełną zasadę i kiedy przyjdzie następne. Przed startem "
-"wyzwania opis czyta jego zasadę i utrudnienie oraz ile zostało do "
+"nowe wyzwanie dnia co dzień, nowe wyzwanie tygodnia w każdy poniedziałek i "
+"nowe wyzwanie miesiąca co miesiąc, wszystko według dat UTC. Każdy wiersz "
+"podaje wyzwanie i czym jest, potem czy w nie grano, twój rekord i serię. F1 "
+"na wierszu czyta jego pełną zasadę i kiedy przyjdzie następne. Przed "
+"startem wyzwania opis czyta jego zasadę i utrudnienie oraz ile zostało do "
 "następnego. Enter na ostatniej stronie zaczyna posiłek. Escape wraca bez "
 "startu. Na koniec podsumowanie podaje twój wynik, rekord i serię. Wiersz "
 "Opuść wyzwanie w menu pauzy go nie zalicza."
@@ -26837,8 +26964,8 @@ msgid ""
 "on UTC dates."
 msgstr ""
 "Wyzwania na ekranie tytułowym to menu, które każdy gracz gotuje tak samo: "
-"nowe dzienne co dzień, nowe tygodniowe w każdy poniedziałek i nowe "
-"miesięczne co miesiąc, wszystko według dat UTC."
+"nowe wyzwanie dnia co dzień, nowe wyzwanie tygodnia w każdy poniedziałek i "
+"nowe wyzwanie miesiąca co miesiąc, wszystko według dat UTC."
 
 msgid ""
 "Each row names the challenge and what it is, then whether you have played "
@@ -26871,8 +26998,8 @@ msgid ""
 "Daily, Tonight's dinner: one seeded meal on four stations, with a twist for "
 "the day."
 msgstr ""
-"Dzienne, Dzisiejszy obiad: jeden ustalony posiłek na czterech stanowiskach, "
-"z utrudnieniem na ten dzień."
+"Wyzwanie dnia, Dzisiejszy obiad: jeden ustalony posiłek na czterech "
+"stanowiskach, z utrudnieniem na ten dzień."
 
 msgid ""
 "Weekly, Sunday dinner: three courses in a row, a starter on three stations, "
@@ -26880,19 +27007,20 @@ msgid ""
 "with the week's twist. Each course needs a star for the next one to come "
 "out. Your points add up across them."
 msgstr ""
-"Tygodniowe, Niedzielny obiad: trzy dania z rzędu, przystawka na trzech "
-"stanowiskach, danie główne na czterech i deser na wszystkich pięciu, każde "
-"szybsze od poprzedniego, z utrudnieniem tygodnia. Każde danie potrzebuje "
-"gwiazdki, by wyszło następne. Twoje punkty sumują się ze wszystkich."
+"Wyzwanie tygodnia, Niedzielny obiad: trzy dania z rzędu, przystawka na "
+"trzech stanowiskach, danie główne na czterech i deser na wszystkich pięciu, "
+"każde szybsze od poprzedniego, z utrudnieniem tygodnia. Każde danie "
+"potrzebuje gwiazdki, by wyszło następne. Twoje punkty sumują się ze "
+"wszystkich."
 
 msgid ""
 "Weekly, Sunday dinner: three courses in a row, a starter on three stations, "
 "the main course on four and dessert on all five, each faster than the last, "
 "with the week's twist."
 msgstr ""
-"Tygodniowe, Niedzielny obiad: trzy dania z rzędu, przystawka na trzech "
-"stanowiskach, danie główne na czterech i deser na wszystkich pięciu, każde "
-"szybsze od poprzedniego, z utrudnieniem tygodnia."
+"Wyzwanie tygodnia, Niedzielny obiad: trzy dania z rzędu, przystawka na "
+"trzech stanowiskach, danie główne na czterech i deser na wszystkich pięciu, "
+"każde szybsze od poprzedniego, z utrudnieniem tygodnia."
 
 msgid "Each course needs a star for the next one to come out."
 msgstr "Każde danie potrzebuje gwiazdki, by wyszło następne."
@@ -26905,16 +27033,17 @@ msgid ""
 "waiting for the first to be served. Its rule is golden plates: every dish "
 "served at quality 90 or better earns 200 bonus points."
 msgstr ""
-"Miesięczne, Bankiet dożynkowy: dziesięć potraw, dwie na każdym stanowisku, "
-"druga czeka, aż pierwsza zostanie podana. Jego zasada to złote talerze: "
-"każda potrawa podana w jakości 90 lub lepszej daje 200 punktów bonusu."
+"Wyzwanie miesiąca, Bankiet dożynkowy: dziesięć potraw, dwie na każdym "
+"stanowisku, druga czeka, aż pierwsza zostanie podana. Jego zasada to złote "
+"talerze: każda potrawa podana w jakości 90 lub lepszej daje 200 punktów "
+"bonusu."
 
 msgid ""
 "Monthly, the harvest banquet: ten dishes, two on every station, the second "
 "waiting for the first to be served."
 msgstr ""
-"Miesięczne, Bankiet dożynkowy: dziesięć potraw, dwie na każdym stanowisku, "
-"druga czeka, aż pierwsza zostanie podana."
+"Wyzwanie miesiąca, Bankiet dożynkowy: dziesięć potraw, dwie na każdym "
+"stanowisku, druga czeka, aż pierwsza zostanie podana."
 
 msgid ""
 "Its rule is golden plates: every dish served at quality 90 or better earns "
@@ -27252,7 +27381,8 @@ msgstr "H: podpowiedź, co najbardziej cię potrzebuje i jak tam dojść."
 msgid ""
 "Escape: pause, with help and a way back to the title, or out of a challenge."
 msgstr ""
-"Escape: pauza, z pomocą i powrotem do tytułu albo wyjściem z wyzwania."
+"Escape: pauza, z pomocą i powrotem do ekranu tytułowego albo wyjściem z "
+"wyzwania."
 
 msgid "rush hour"
 msgstr "godzina szczytu"
@@ -27533,20 +27663,14 @@ msgstr "przystawka i danie główne"
 msgid "all three courses"
 msgstr "wszystkie trzy dania"
 
-#. placeholders: {result_line}, {streak}, {unit}
-#. one sentence of a longer line
-msgid "{result_line} A {streak} {unit} streak."
-msgstr ""
-
 #. placeholders: {title}, {total}
 #. one sentence of a longer line
 msgid "{title} result: {total} points."
 msgstr "Wynik: {title}, {total} punktów."
 
-#. placeholders: {title}, {total}, {result_line}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {total}, {result_line}, {streak_sentence}, {resets}
 msgid ""
-"{title} result: {total} points. {result_line} A {streak} {unit} streak. "
-"{resets}"
+"{title} result: {total} points. {result_line} {streak_sentence} {resets}"
 msgstr ""
 
 #. placeholders: {title}, {total}
@@ -30539,10 +30663,10 @@ msgstr ""
 "Gdy rozgrywka się kończy, jej strony mówią, jak poszło: wynik końcowy, "
 "punkty i rekord, ominięte duchy i czasy pięter. Potem menu podsumowania "
 "proponuje Zagraj ponownie, albo Spróbuj jeszcze raz po porażce, potem "
-"Posłuchaj podsumowania jeszcze raz i Powrót do tytułu. Po zaliczeniu "
-"pojedynczego piętra pierwsze jest Następne piętro, które gra kolejne "
-"piętro. Po wyzwaniu menu proponuje wyzwanie jeszcze raz i kończy się "
-"wierszem Powrót do wyzwań. Escape robi to, co ostatni wiersz."
+"Posłuchaj podsumowania jeszcze raz i Wróć do ekranu tytułowego. Po "
+"zaliczeniu pojedynczego piętra pierwsze jest Następne piętro, które gra "
+"kolejne piętro. Po wyzwaniu menu proponuje wyzwanie jeszcze raz i kończy "
+"się wierszem Wróć do wyzwań. Escape robi to, co ostatni wiersz."
 
 msgid ""
 "When a run ends, its pages read how it went: the outcome, your score and "
@@ -30556,7 +30680,8 @@ msgid ""
 "Hear the results again and Back to the title."
 msgstr ""
 "Potem menu podsumowania proponuje Zagraj ponownie, albo Spróbuj jeszcze raz "
-"po porażce, potem Posłuchaj podsumowania jeszcze raz i Powrót do tytułu."
+"po porażce, potem Posłuchaj podsumowania jeszcze raz i Wróć do ekranu "
+"tytułowego."
 
 msgid ""
 "After a floor cleared on its own, Next floor comes first and plays the next "
@@ -30581,15 +30706,15 @@ msgid ""
 "not change your best times or open floors, but they can earn unlocks."
 msgstr ""
 "Wyzwania na ekranie tytułowym to ten sam dom dla każdego gracza na świecie: "
-"każdy, kto gra dzisiejsze dzienne, chodzi po tych samych pokojach, z tymi "
-"samymi rzeczami w tych samych miejscach. Każdy wiersz podaje wyzwanie i "
-"czym jest, potem twój rekord, czy w nie grano i twoją serię. Przed startem "
-"opis podaje zasadę lub utrudnienie wyzwania i ile zostało do następnego. "
-"Enter na ostatniej stronie zaczyna rozgrywkę. Escape wraca bez startu. Gdy "
-"rozgrywka się kończy, ucieczką, końcem zegara lub utratą odwagi, gra podaje "
-"twój wynik, rekord i serię. Wiersz Opuść wyzwanie w menu pauzy go nie "
-"zalicza. Wyzwania nie zmieniają twoich najlepszych czasów ani nie otwierają "
-"pięter, ale mogą dać odblokowania."
+"każdy, kto gra dzisiejsze wyzwanie dnia, chodzi po tych samych pokojach, z "
+"tymi samymi rzeczami w tych samych miejscach. Każdy wiersz podaje wyzwanie "
+"i czym jest, potem twój rekord, czy w nie grano i twoją serię. Przed "
+"startem opis podaje zasadę lub utrudnienie wyzwania i ile zostało do "
+"następnego. Enter na ostatniej stronie zaczyna rozgrywkę. Escape wraca bez "
+"startu. Gdy rozgrywka się kończy, ucieczką, końcem zegara lub utratą "
+"odwagi, gra podaje twój wynik, rekord i serię. Wiersz Opuść wyzwanie w menu "
+"pauzy go nie zalicza. Wyzwania nie zmieniają twoich najlepszych czasów ani "
+"nie otwierają pięter, ale mogą dać odblokowania."
 
 msgid ""
 "Challenges on the title are the same house for every player in the world: "
@@ -30597,8 +30722,8 @@ msgid ""
 "in the same places."
 msgstr ""
 "Wyzwania na ekranie tytułowym to ten sam dom dla każdego gracza na świecie: "
-"każdy, kto gra dzisiejsze dzienne, chodzi po tych samych pokojach, z tymi "
-"samymi rzeczami w tych samych miejscach."
+"każdy, kto gra dzisiejsze wyzwanie dnia, chodzi po tych samych pokojach, z "
+"tymi samymi rzeczami w tych samych miejscach."
 
 msgid ""
 "Each row names the challenge and what it is, then your best, whether you "
@@ -30635,13 +30760,13 @@ msgid ""
 "Daily, Tonight's haunting: one floor from floors 3 to 30, with a twist. A "
 "new one every day."
 msgstr ""
-"Dzienne, Dzisiejsze nawiedzenie: jedno piętro z pięter od 3 do 30, z "
+"Wyzwanie dnia, Dzisiejsze nawiedzenie: jedno piętro z pięter od 3 do 30, z "
 "utrudnieniem. Nowe co dzień."
 
 msgid ""
 "Daily, Tonight's haunting: one floor from floors 3 to 30, with a twist."
 msgstr ""
-"Dzienne, Dzisiejsze nawiedzenie: jedno piętro z pięter od 3 do 30, z "
+"Wyzwanie dnia, Dzisiejsze nawiedzenie: jedno piętro z pięter od 3 do 30, z "
 "utrudnieniem."
 
 msgid "A new one every day."
@@ -30652,8 +30777,8 @@ msgid ""
 "and 40, with a twist, and your three courage must last the whole night: it "
 "does not refill between floors. A new one every Monday."
 msgstr ""
-"Tygodniowe, Długa noc: trzy piętra z rzędu, od piętra między 10 a 40, z "
-"utrudnieniem, a trzy punkty odwagi muszą starczyć na całą noc: nie "
+"Wyzwanie tygodnia, Długa noc: trzy piętra z rzędu, od piętra między 10 a "
+"40, z utrudnieniem, a trzy punkty odwagi muszą starczyć na całą noc: nie "
 "odnawiają się między piętrami. Nowe w każdy poniedziałek."
 
 msgid ""
@@ -30661,8 +30786,8 @@ msgid ""
 "and 40, with a twist, and your three courage must last the whole night: it "
 "does not refill between floors."
 msgstr ""
-"Tygodniowe, Długa noc: trzy piętra z rzędu, od piętra między 10 a 40, z "
-"utrudnieniem, a trzy punkty odwagi muszą starczyć na całą noc: nie "
+"Wyzwanie tygodnia, Długa noc: trzy piętra z rzędu, od piętra między 10 a "
+"40, z utrudnieniem, a trzy punkty odwagi muszą starczyć na całą noc: nie "
 "odnawiają się między piętrami."
 
 msgid "A new one every Monday."
@@ -30673,16 +30798,16 @@ msgid ""
 "this event, five rooms with every ghost abroad and a longer clock. Most of "
 "its rooms are séances. A new one every month."
 msgstr ""
-"Miesięczne, Bal maskowy o północy: ukryta sala balowa, otwarta tylko na to "
-"wydarzenie, pięć pokoi ze wszystkimi duchami i dłuższym zegarem. Większość "
-"pokoi to seanse. Nowe co miesiąc."
+"Wyzwanie miesiąca, Bal maskowy o północy: ukryta sala balowa, otwarta tylko "
+"na to wydarzenie, pięć pokoi ze wszystkimi duchami i dłuższym zegarem. "
+"Większość pokoi to seanse. Nowe co miesiąc."
 
 msgid ""
 "Monthly, The midnight masquerade: a hidden ballroom that opens only for "
 "this event, five rooms with every ghost abroad and a longer clock."
 msgstr ""
-"Miesięczne, Bal maskowy o północy: ukryta sala balowa, otwarta tylko na to "
-"wydarzenie, pięć pokoi ze wszystkimi duchami i dłuższym zegarem."
+"Wyzwanie miesiąca, Bal maskowy o północy: ukryta sala balowa, otwarta tylko "
+"na to wydarzenie, pięć pokoi ze wszystkimi duchami i dłuższym zegarem."
 
 msgid "Most of its rooms are séances."
 msgstr "Większość pokoi to seanse."
@@ -30940,14 +31065,14 @@ msgid ""
 "title, or leave the challenge."
 msgstr ""
 "Escape: pauza. Wznów, zmień ustawienia, przeczytaj ten przewodnik, wróć do "
-"tytułu albo opuść wyzwanie."
+"ekranu tytułowego albo opuść wyzwanie."
 
 msgid ""
 "Resume, change settings, read this guide, go back to the title, or leave "
 "the challenge."
 msgstr ""
-"Wznów, zmień ustawienia, przeczytaj ten przewodnik, wróć do tytułu albo "
-"opuść wyzwanie."
+"Wznów, zmień ustawienia, przeczytaj ten przewodnik, wróć do ekranu "
+"tytułowego albo opuść wyzwanie."
 
 msgid "The house stirs"
 msgstr "Dom się budzi"
@@ -31270,19 +31395,13 @@ msgstr "Podnieś to, co wydało każdy, po kolei."
 msgid "A new {best}, beating {previous}."
 msgstr "Nowy {best}, lepszy niż {previous}."
 
-#. placeholders: {record}, {streak}, {unit}
-#. one sentence of a longer line
-msgid "{record} A {streak} {unit} streak."
-msgstr ""
-
 #. placeholders: {title}, {score}
 #. one sentence of a longer line
 msgid "{title} result: score {score}."
 msgstr "Wynik: {title}, {score} punktów."
 
-#. placeholders: {title}, {score}, {record}, {streak}, {unit}, {resets}
-msgid ""
-"{title} result: score {score}. {record} A {streak} {unit} streak. {resets}"
+#. placeholders: {title}, {score}, {record}, {streak_sentence}, {resets}
+msgid "{title} result: score {score}. {record} {streak_sentence} {resets}"
 msgstr ""
 
 msgid ""
@@ -31291,8 +31410,8 @@ msgid ""
 "each Monday, and a monthly event each month."
 msgstr ""
 "Up i Down wybierają wyzwanie, Enter czyta jego opis, Escape wraca. Każdy "
-"gracz dostaje ten sam nawiedzony dom: nowe dzienne co dzień, tygodniowe w "
-"każdy poniedziałek i miesięczne wydarzenie co miesiąc."
+"gracz dostaje ten sam nawiedzony dom: nowe wyzwanie dnia co dzień, wyzwanie "
+"tygodnia w każdy poniedziałek i miesięczne wydarzenie co miesiąc."
 
 #. placeholders: {NAME}
 msgid "Opening the {NAME} challenge."
@@ -32774,9 +32893,9 @@ msgstr " W pokojach seansu podnoś rzeczy przywołane przez medium, po kolei."
 msgid " Courage does not refill between floors."
 msgstr " Odwaga nie odnawia się między piętrami."
 
-#. placeholders: {challenge_name}, {label}, {twist}, {carry}
-msgid "{challenge_name}, a {label} challenge.{twist}{carry} "
-msgstr "{challenge_name}, wyzwanie {label}.{twist}{carry} "
+#. placeholders: {challenge_name}, {challenge_title}, {twist}, {carry}
+msgid "{challenge_name}, the {challenge_title}.{twist}{carry} "
+msgstr ""
 
 #. placeholders: {sentence_start}, {clock_words}
 msgid "{sentence_start} gives a hint for {clock_words}."
@@ -34781,7 +34900,7 @@ msgid "The ghostly waltz"
 msgstr "Upiorny walc"
 
 msgid "Finish a midnight masquerade, the monthly challenge."
-msgstr "Ukończ Bal maskowy o północy, wyzwanie miesięczne."
+msgstr "Ukończ Bal maskowy o północy, wyzwanie miesiąca."
 
 msgid "feat-untouched"
 msgstr ""
@@ -35238,44 +35357,46 @@ msgid ""
 "Tonight's hall, the daily: 16 steps, 8 lamps out, a taper of 1 minute 40 "
 "seconds, and 1 draught. A new one comes every day."
 msgstr ""
-"Dzisiejsza galeria, dzienne: 16 kroków, 8 zgaszonych lamp, świeczka na 1 "
-"minutę 40 sekund i 1 przeciąg. Nowa przychodzi codziennie."
+"Dzisiejsza galeria, wyzwanie dnia: 16 kroków, 8 zgaszonych lamp, świeczka "
+"na 1 minutę 40 sekund i 1 przeciąg. Nowa przychodzi codziennie."
 
 msgid ""
 "Tonight's hall, the daily: 16 steps, 8 lamps out, a taper of 1 minute 40 "
 "seconds, and 1 draught."
 msgstr ""
-"Dzisiejsza galeria, dzienne: 16 kroków, 8 zgaszonych lamp, świeczka na 1 "
-"minutę 40 sekund i 1 przeciąg."
+"Dzisiejsza galeria, wyzwanie dnia: 16 kroków, 8 zgaszonych lamp, świeczka "
+"na 1 minutę 40 sekund i 1 przeciąg."
 
 msgid ""
 "The east wing, the weekly: 24 steps, 12 lamps out, a taper of 2 minutes 30 "
 "seconds, and 2 draughts. A new one comes every Monday."
 msgstr ""
-"Wschodnie skrzydło, tygodniowe: 24 kroki, 12 zgaszonych lamp, świeczka na 2 "
-"minuty 30 sekund i 2 przeciągi. Nowe przychodzi w każdy poniedziałek."
+"Wschodnie skrzydło, wyzwanie tygodnia: 24 kroki, 12 zgaszonych lamp, "
+"świeczka na 2 minuty 30 sekund i 2 przeciągi. Nowe przychodzi w każdy "
+"poniedziałek."
 
 msgid ""
 "The east wing, the weekly: 24 steps, 12 lamps out, a taper of 2 minutes 30 "
 "seconds, and 2 draughts."
 msgstr ""
-"Wschodnie skrzydło, tygodniowe: 24 kroki, 12 zgaszonych lamp, świeczka na 2 "
-"minuty 30 sekund i 2 przeciągi."
+"Wschodnie skrzydło, wyzwanie tygodnia: 24 kroki, 12 zgaszonych lamp, "
+"świeczka na 2 minuty 30 sekund i 2 przeciągi."
 
 msgid ""
 "The grand gallery, the monthly: 32 steps, 16 lamps out, a taper of 3 "
 "minutes 30 seconds, and 3 draughts. A new one comes on the first of every "
 "month."
 msgstr ""
-"Wielka galeria, miesięczne: 32 kroki, 16 zgaszonych lamp, świeczka na 3 "
-"minuty 30 sekund i 3 przeciągi. Nowa przychodzi 1. dnia każdego miesiąca."
+"Wielka galeria, wyzwanie miesiąca: 32 kroki, 16 zgaszonych lamp, świeczka "
+"na 3 minuty 30 sekund i 3 przeciągi. Nowa przychodzi 1. dnia każdego "
+"miesiąca."
 
 msgid ""
 "The grand gallery, the monthly: 32 steps, 16 lamps out, a taper of 3 "
 "minutes 30 seconds, and 3 draughts."
 msgstr ""
-"Wielka galeria, miesięczne: 32 kroki, 16 zgaszonych lamp, świeczka na 3 "
-"minuty 30 sekund i 3 przeciągi."
+"Wielka galeria, wyzwanie miesiąca: 32 kroki, 16 zgaszonych lamp, świeczka "
+"na 3 minuty 30 sekund i 3 przeciągi."
 
 msgid ""
 "Leave the challenge, on the pause menu, stops without counting the hall. "
@@ -35764,12 +35885,11 @@ msgstr "Lewa: {alcove_words}"
 msgid "Right: {alcove_words}"
 msgstr "Prawa: {alcove_words}"
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the hall."
 msgstr ""
-" To wyzwanie {label}, {name}. Wyjście z menu pauzy nie zalicza galerii."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the hall."
@@ -36291,7 +36411,7 @@ msgid ""
 "goes back to the title."
 msgstr ""
 "Przed każdym wypłynięciem strona mówi, jakie jest jezioro. Enter to odbicie "
-"od brzegu. Escape wraca do tytułu."
+"od brzegu. Escape wraca do ekranu tytułowego."
 
 msgid "Before each outing a page says what the lake is."
 msgstr "Przed każdym wypłynięciem strona mówi, jakie jest jezioro."
@@ -36300,7 +36420,7 @@ msgid "Enter pushes off."
 msgstr "Enter to odbicie od brzegu."
 
 msgid "Escape goes back to the title."
-msgstr "Escape wraca do tytułu."
+msgstr "Escape wraca do ekranu tytułowego."
 
 msgid ""
 "Records, on the title, reads the most lanterns you have gathered in a "
@@ -36321,9 +36441,9 @@ msgid ""
 msgstr ""
 "Gdy wracasz do domu, podsumowanie mówi, jak minęła noc i co trafiło do "
 "dziennika. Potem menu podsumowania proponuje Zagraj ponownie, Posłuchaj "
-"podsumowania jeszcze raz i Powrót do tytułu. Po nocy z całą pieśnią "
-"pierwsza jest Następna noc. Po wyzwaniu ostatni wiersz to Powrót do wyzwań. "
-"Escape robi to samo, co ostatni wiersz."
+"podsumowania jeszcze raz i Wróć do ekranu tytułowego. Po nocy z całą "
+"pieśnią pierwsza jest Następna noc. Po wyzwaniu ostatni wiersz to Wróć do "
+"wyzwań. Escape robi to samo, co ostatni wiersz."
 
 msgid ""
 "When you head home, the results say how the night went and what went into "
@@ -36337,13 +36457,13 @@ msgid ""
 "to the title."
 msgstr ""
 "Potem menu podsumowania proponuje Zagraj ponownie, Posłuchaj podsumowania "
-"jeszcze raz i Powrót do tytułu."
+"jeszcze raz i Wróć do ekranu tytułowego."
 
 msgid "After a night whose song is whole, Next night comes first."
 msgstr "Po nocy z całą pieśnią pierwsza jest Następna noc."
 
 msgid "After a challenge, the last row is Back to the challenges."
-msgstr "Po wyzwaniu ostatni wiersz to Powrót do wyzwań."
+msgstr "Po wyzwaniu ostatni wiersz to Wróć do wyzwań."
 
 msgid ""
 "The Challenges menu holds 3 lakes that are the same for every player. "
@@ -36366,8 +36486,8 @@ msgid ""
 "mist, rain, still water, a breeze, or a starry night with extra places to "
 "find."
 msgstr ""
-"Dzienne: małe jezioro z 5 lampionami i utrudnieniem, które zmienia się co "
-"dzień: mgła, deszcz, stojąca woda, wietrzyk albo gwiaździsta noc z "
+"Wyzwanie dnia: małe jezioro z 5 lampionami i utrudnieniem, które zmienia "
+"się co dzień: mgła, deszcz, stojąca woda, wietrzyk albo gwiaździsta noc z "
 "dodatkowymi miejscami do znalezienia."
 
 msgid ""
@@ -36375,12 +36495,12 @@ msgid ""
 "its own cue. Gather it to light the next. Unlit lanterns are asleep and "
 "can't be gathered yet."
 msgstr ""
-"Tygodniowe: konstelacja lampionów. Naraz świeci tylko jeden lampion, z "
-"własnym sygnałem. Zbierz go, by zapalić następny. Niezapalone lampiony śpią "
-"i nie da się ich jeszcze zebrać."
+"Wyzwanie tygodnia: konstelacja lampionów. Naraz świeci tylko jeden lampion, "
+"z własnym sygnałem. Zbierz go, by zapalić następny. Niezapalone lampiony "
+"śpią i nie da się ich jeszcze zebrać."
 
 msgid "Weekly: a lantern constellation."
-msgstr "Tygodniowe: konstelacja lampionów."
+msgstr "Wyzwanie tygodnia: konstelacja lampionów."
 
 msgid "Only one lantern is lit at a time, with its own cue."
 msgstr "Naraz świeci tylko jeden lampion, z własnym sygnałem."
@@ -36396,12 +36516,12 @@ msgid ""
 "creature out, and a slow current that carries you and the lanterns around "
 "the lake."
 msgstr ""
-"Miesięczne: święto lampionów. Wielkie jezioro z 10 lampionami, wszystkimi "
-"stworzeniami i powolnym prądem, który niesie ciebie i lampiony wokół "
-"jeziora."
+"Wyzwanie miesiąca: święto lampionów. Wielkie jezioro z 10 lampionami, "
+"wszystkimi stworzeniami i powolnym prądem, który niesie ciebie i lampiony "
+"wokół jeziora."
 
 msgid "Monthly: the lantern festival."
-msgstr "Miesięczne: święto lampionów."
+msgstr "Wyzwanie miesiąca: święto lampionów."
 
 msgid ""
 "A great lake with 10 lanterns, every creature out, and a slow current that "
@@ -36452,7 +36572,7 @@ msgstr ""
 "stworzenia są na zewnątrz. Nowy głos dołącza do pieśni co drugi lampion. Ma "
 "własny rekord najwięcej zebranych lampionów. Jeśli święto się skończy, "
 "zanim wybierzesz Zagraj ponownie, usłyszysz, że się skończyło, i wrócisz do "
-"tytułu. To nie to samo co miesięczne wyzwanie święta lampionów."
+"ekranu tytułowego. To nie to samo co wyzwanie miesiąca, święto lampionów."
 
 msgid ""
 "Lantern Festival night: on the Lantern Festival, the fifteenth day of the "
@@ -36487,10 +36607,10 @@ msgid ""
 "it has ended and go back to the title."
 msgstr ""
 "Jeśli święto się skończy, zanim wybierzesz Zagraj ponownie, usłyszysz, że "
-"się skończyło, i wrócisz do tytułu."
+"się skończyło, i wrócisz do ekranu tytułowego."
 
 msgid "It is not the same as the monthly lantern festival challenge."
-msgstr "To nie to samo co miesięczne wyzwanie święta lampionów."
+msgstr "To nie to samo co wyzwanie miesiąca, święto lampionów."
 
 msgid ""
 "Full moon: on every full moon night, on an ordinary night or a free paddle, "
@@ -36879,13 +36999,16 @@ msgstr ""
 msgid "nights"
 msgstr ""
 
-#. placeholders: {places}, {ALL}, {lanterns}, {s_ending}
+#. placeholders: {found}, {places}
 msgid ""
-"Your journal: {places} of {ALL} places found, {lanterns} lantern{s_ending} "
+"Your journal: {found} of {places} places found, 1 lantern gathered in all."
+msgstr ""
+
+#. placeholders: {found}, {places}, {lanterns}
+msgid ""
+"Your journal: {found} of {places} places found, {lanterns} lanterns "
 "gathered in all."
 msgstr ""
-"Twój dziennik: znalezione miejsca {places} z {ALL}, łącznie zebrano "
-"{lanterns} {lanterns:lampion|lampiony|lampionów}."
 
 msgid "Lantern Lake"
 msgstr "Lantern Lake"
@@ -36895,7 +37018,8 @@ msgid ""
 "A new daily each day, a weekly each week, a monthly each month."
 msgstr ""
 "Up i Down wybierają wyzwanie, Enter czyta jego opis, Escape wraca. Nowe "
-"dzienne co dzień, tygodniowe co tydzień, miesięczne co miesiąc."
+"wyzwanie dnia co dzień, wyzwanie tygodnia co tydzień, wyzwanie miesiąca co "
+"miesiąc."
 
 msgid "Your journal"
 msgstr "Twój dziennik"
@@ -37086,24 +37210,18 @@ msgstr ""
 "Dzienne, tygodniowe i miesięczne jeziora, takie same dla każdego gracza. "
 "{resets}"
 
-#. placeholders: {side}
-msgid "ahead and to your {side}"
-msgstr "z przodu, strona: {side}"
+msgid "behind you to the left"
+msgstr ""
 
-#. placeholders: {side}
-msgid "to your {side}"
-msgstr "strona: {side}"
-
-#. placeholders: {side}
-msgid "behind you to the {side}"
-msgstr "z tyłu, strona: {side}"
+msgid "behind you to the right"
+msgstr ""
 
 msgid "right behind you"
 msgstr "tuż za tobą"
 
-#. placeholders: {words}, {clock}
-msgid "{words}, at {clock} o'clock"
-msgstr "{words}, na godzinie {clock}"
+#. placeholders: {clock}
+msgid "at {clock} o'clock"
+msgstr ""
 
 msgid "very close"
 msgstr "bardzo blisko"
@@ -37436,11 +37554,12 @@ msgstr "Zebrane dziś lampiony: {gathered}."
 msgid "{gathered} of {lanterns} lanterns gathered."
 msgstr "Zebrane lampiony: {gathered} z {lanterns}."
 
-#. placeholders: {order}
-msgid "Lantern {order} is lit"
-msgstr "Lampion {order} świeci"
+#. placeholders: {order}, {place}
+msgid "Lantern {order} is lit {place}."
+msgstr ""
 
-msgid "The nearest lantern is"
+#. placeholders: {place}
+msgid "The nearest lantern is {place}."
 msgstr ""
 
 msgid "The song is whole."
@@ -37824,22 +37943,28 @@ msgstr "Pieśń kompletna. {gathered}"
 msgid "Home with {gathered}"
 msgstr "Powrót do domu: {gathered}"
 
-#. placeholders: {score}
-msgid ", score {score}"
-msgstr ", wynik {score}"
-
-#. placeholders: {name}, {gathered}, {s_ending}
-msgid "{name} gathered {gathered} lantern{s_ending}"
+#. placeholders: {gathered}, {score}
+msgid "Song complete. {gathered}, score {score}"
 msgstr ""
 
-#. placeholders: {found}, {else}
-msgid " and found {found} {else}"
+#. placeholders: {gathered}, {score}
+#. one sentence of a longer line
+msgid "{gathered}, score {score}"
 msgstr ""
 
-msgid "place"
+#. placeholders: {gathered}, {score}
+msgid "Home with {gathered}, score {score}"
 msgstr ""
 
-msgid "places"
+#. placeholders: {mode}, {gathered}
+msgid "{mode} gathered {gathered}."
+msgstr ""
+
+msgid " You found 1 place."
+msgstr ""
+
+#. placeholders: {found}
+msgid " You found {found} places."
 msgstr ""
 
 #. placeholders: {title}, {score}
@@ -37852,10 +37977,6 @@ msgstr " Twój pierwszy wynik w tym wyzwaniu."
 #. placeholders: {best}
 msgid " Your best stays {best}."
 msgstr " Twój rekord zostaje: {best}."
-
-#. placeholders: {streak}, {unit}
-msgid " A {streak} {unit} streak."
-msgstr ""
 
 msgid "Head home and end the outing?"
 msgstr "Wrócić do domu i zakończyć wypłynięcie?"
@@ -38212,6 +38333,10 @@ msgid ""
 "Right give a settler a first job. When there is none of that work, they "
 "find something else."
 msgstr ""
+"Osadnicy sami wybierają pracę: rolnictwo, gotowanie, budowanie, rzemiosło, "
+"zwierzęta, łowienie, naprawy lub muzykę. J otwiera tablicę prac, gdzie Left "
+"i Right dają osadnikowi pierwszą pracę. Gdy takiej pracy nie ma, znajdują "
+"sobie coś innego."
 
 msgid ""
 "Settlers choose their own work: farming, cooking, building, crafting, "
@@ -38830,11 +38955,11 @@ msgid ""
 "Good spirits, each week: three tired newcomers. Get all three cheerful at "
 "the same supper within six days."
 msgstr ""
-"Dobry nastrój, co tydzień: trzech zmęczonych przybyszów. Spraw, by wszyscy "
+"Dobry humor, co tydzień: trzech zmęczonych przybyszów. Spraw, by wszyscy "
 "trzej byli weseli przy tej samej kolacji w sześć dni."
 
 msgid "Good spirits, each week: three tired newcomers."
-msgstr "Dobry nastrój, co tydzień: trzech zmęczonych przybyszów."
+msgstr "Dobry humor, co tydzień: trzech zmęczonych przybyszów."
 
 msgid "Get all three cheerful at the same supper within six days."
 msgstr ""
@@ -38855,7 +38980,7 @@ msgstr ""
 "zapasie."
 
 msgid "Barge fair and music night"
-msgstr "Jarmark barki i wieczór muzyki"
+msgstr "Jarmark barek i wieczór muzyki"
 
 msgid ""
 "On the third Tuesday of every month there is a barge fair: the barge comes "
@@ -42585,8 +42710,8 @@ msgstr ""
 "Menu tytułowe: Graj zaczyna kolejny niezaliczony poziom. Wielki finał "
 "otwiera się po poziomie 20. Tryb swobodny układa, zapisuje i odtwarza twoje "
 "pokazy. Wybór poziomu gra dowolny z dwudziestu poziomów. Noc Niepodległości "
-"otwiera się Czwartego Lipca. Wyzwania mają dzienne, tygodniowe i "
-"miesięczne. Sala treningowa to wyrzutnia bez punktów. Samouczek to krótki "
+"otwiera się Czwartego Lipca. Wyzwania mają wyzwanie dnia, tygodnia i "
+"miesiąca. Sala treningowa to wyrzutnia bez punktów. Samouczek to krótki "
 "przewodnik. Pomoc to ten przewodnik. Test dźwięków gra dźwięki z rozgrywki. "
 "Rekordy odczytują twoje najlepsze wyniki. Ustawienia zmieniają mowę, "
 "głośność i sterowanie."
@@ -42604,7 +42729,7 @@ msgid "Level select plays any of the twenty levels."
 msgstr "Wybór poziomu gra dowolny z dwudziestu poziomów."
 
 msgid "Challenges holds daily, weekly, and monthly."
-msgstr "Wyzwania mają dzienne, tygodniowe i miesięczne."
+msgstr "Wyzwania mają wyzwanie dnia, tygodnia i miesiąca."
 
 msgid "Practice room is an unscored launch range."
 msgstr "Sala treningowa to wyrzutnia bez punktów."
@@ -42874,7 +42999,7 @@ msgstr ""
 "tak dalej."
 
 msgid "Combo bonuses are paid only when the show clears, at 60 or more."
-msgstr "Premie za kombo liczą się tylko, gdy pokaz jest zaliczony, od 60."
+msgstr "Bonusy za kombo liczą się tylko, gdy pokaz jest zaliczony, od 60."
 
 msgid ""
 "Show points are your score times ten, plus combo bonuses. Every level keeps "
@@ -42966,15 +43091,16 @@ msgid ""
 "streak."
 msgstr ""
 "Wyzwania w menu tytułowym albo Wyzwania w holu mają trzy wyzwania, takie "
-"same dla każdego gracza, które zmieniają się same: dzienne codziennie, "
-"tygodniowe w każdy poniedziałek, miesięczne pierwszego dnia miesiąca. Każdy "
-"wiersz podaje nazwę wyzwania i czym jest, potem twój dotychczasowy wynik i "
-"serię. Wybranie wyzwania odczytuje krótki opis z utrudnieniem i czasem do "
-"następnego. Enter na ostatniej stronie zaczyna pierwszy pokaz, a Escape "
-"wraca bez startu. Wyzwanie się liczy, gdy skończy się jego ostatni pokaz. "
-"Wyjście przez Opuść wyzwanie w menu pauzy albo przez Powrót do wyzwań "
-"między pokazami go nie zalicza. Twój wynik to suma punktów wszystkich "
-"pokazów, a podsumowanie podaje twój wynik, rekord i serię."
+"same dla każdego gracza, które zmieniają się same: wyzwanie dnia "
+"codziennie, wyzwanie tygodnia w każdy poniedziałek, wyzwanie miesiąca "
+"pierwszego dnia miesiąca. Każdy wiersz podaje nazwę wyzwania i czym jest, "
+"potem twój dotychczasowy wynik i serię. Wybranie wyzwania odczytuje krótki "
+"opis z utrudnieniem i czasem do następnego. Enter na ostatniej stronie "
+"zaczyna pierwszy pokaz, a Escape wraca bez startu. Wyzwanie się liczy, gdy "
+"skończy się jego ostatni pokaz. Wyjście przez Opuść wyzwanie w menu pauzy "
+"albo przez Wróć do wyzwań między pokazami go nie zalicza. Twój wynik to "
+"suma punktów wszystkich pokazów, a podsumowanie podaje twój wynik, rekord i "
+"serię."
 
 msgid ""
 "Challenges on the title, or Challenges in the lobby, holds three challenges "
@@ -42982,8 +43108,9 @@ msgid ""
 "day, the weekly each Monday, the monthly on the first of the month."
 msgstr ""
 "Wyzwania w menu tytułowym albo Wyzwania w holu mają trzy wyzwania, takie "
-"same dla każdego gracza, które zmieniają się same: dzienne codziennie, "
-"tygodniowe w każdy poniedziałek, miesięczne pierwszego dnia miesiąca."
+"same dla każdego gracza, które zmieniają się same: wyzwanie dnia "
+"codziennie, wyzwanie tygodnia w każdy poniedziałek, wyzwanie miesiąca "
+"pierwszego dnia miesiąca."
 
 msgid ""
 "Each row names the challenge and what it is, then your result so far and "
@@ -43013,8 +43140,8 @@ msgid ""
 "Leaving by Leave the challenge on the pause menu, or by Back to the "
 "challenges between shows, does not count it."
 msgstr ""
-"Wyjście przez Opuść wyzwanie w menu pauzy albo przez Powrót do wyzwań "
-"między pokazami go nie zalicza."
+"Wyjście przez Opuść wyzwanie w menu pauzy albo przez Wróć do wyzwań między "
+"pokazami go nie zalicza."
 
 msgid ""
 "Your score is the show points of every show added up, and the results say "
@@ -43027,24 +43154,24 @@ msgid ""
 "Daily, tonight's show: one show from the harder half of the campaign, "
 "levels 11 to 20, under a twist."
 msgstr ""
-"Dzienne, dzisiejszy pokaz: jeden pokaz z trudniejszej połowy kampanii, "
-"poziomy 11 do 20, z utrudnieniem."
+"Wyzwanie dnia, dzisiejszy pokaz: jeden pokaz z trudniejszej połowy "
+"kampanii, poziomy 11 do 20, z utrudnieniem."
 
 msgid ""
 "Weekly, the five-show gauntlet: five shows in a row, each bigger than the "
 "last, under the week's twist. A show under 60 percent ends the gauntlet. "
 "Its points still count."
 msgstr ""
-"Tygodniowe, maraton pięciu pokazów: pięć pokazów pod rząd, każdy większy od "
-"poprzedniego, z utrudnieniem tygodnia. Pokaz poniżej 60 procent kończy "
-"maraton. Jego punkty wciąż się liczą."
+"Wyzwanie tygodnia, maraton pięciu pokazów: pięć pokazów pod rząd, każdy "
+"większy od poprzedniego, z utrudnieniem tygodnia. Pokaz poniżej 60 procent "
+"kończy maraton. Jego punkty wciąż się liczą."
 
 msgid ""
 "Weekly, the five-show gauntlet: five shows in a row, each bigger than the "
 "last, under the week's twist."
 msgstr ""
-"Tygodniowe, maraton pięciu pokazów: pięć pokazów pod rząd, każdy większy od "
-"poprzedniego, z utrudnieniem tygodnia."
+"Wyzwanie tygodnia, maraton pięciu pokazów: pięć pokazów pod rząd, każdy "
+"większy od poprzedniego, z utrudnieniem tygodnia."
 
 msgid "A show under 60 percent ends the gauntlet."
 msgstr "Pokaz poniżej 60 procent kończy maraton."
@@ -43060,19 +43187,19 @@ msgid ""
 "near-perfectly, with the right kind and place within 0.3 seconds, adds 100 "
 "bonus points."
 msgstr ""
-"Miesięczne, festiwal: festiwal z motywem, na przykład Dzień Niepodległości "
-"w lipcu, z dwoma aktami i finałem z 14 fajerwerków. Każdy akt jest grany "
-"bez względu na wynik. Festiwal świętuje jeden fajerwerk, swój znak "
-"rozpoznawczy, a jego pokazy są ich pełne: w zaliczonym pokazie każdy taki "
-"fajerwerk dopasowany prawie idealnie, właściwego rodzaju i w miejscu z "
-"dokładnością do 0,3 sekundy, daje 100 punktów bonusu."
+"Wyzwanie miesiąca, festiwal: festiwal z motywem, na przykład Dzień "
+"Niepodległości w lipcu, z dwoma aktami i finałem z 14 fajerwerków. Każdy "
+"akt jest grany bez względu na wynik. Festiwal świętuje jeden fajerwerk, "
+"swój znak rozpoznawczy, a jego pokazy są ich pełne: w zaliczonym pokazie "
+"każdy taki fajerwerk dopasowany prawie idealnie, właściwego rodzaju i w "
+"miejscu z dokładnością do 0,3 sekundy, daje 100 punktów bonusu."
 
 msgid ""
 "Monthly, the festival: a themed festival, such as Independence Day in July, "
 "with two acts and a 14-firework finale."
 msgstr ""
-"Miesięczne, festiwal: festiwal z motywem, na przykład Dzień Niepodległości "
-"w lipcu, z dwoma aktami i finałem z 14 fajerwerków."
+"Wyzwanie miesiąca, festiwal: festiwal z motywem, na przykład Dzień "
+"Niepodległości w lipcu, z dwoma aktami i finałem z 14 fajerwerków."
 
 msgid "Every act is played, whatever it scores."
 msgstr "Każdy akt jest grany bez względu na wynik."
@@ -43140,19 +43267,20 @@ msgid ""
 "the title does."
 msgstr ""
 "Po zaliczonym poziomie: Następny poziom, Zagraj ponownie, Posłuchaj "
-"podsumowania jeszcze raz, Porównaj i Powrót do tytułu. Zagraj ponownie gra "
-"poziom z nowym pokazem. Posłuchaj podsumowania jeszcze raz odczytuje wynik, "
-"a potem jak dobrze pasował każdy fajerwerk. Porównaj gra pokaz, a potem "
-"twoje strzały, każde po odliczaniu. Po niezaliczonym poziomie Spróbuj "
-"jeszcze raz gra nowy pokaz, a Trenuj ten poziom gra dokładnie ten sam "
-"jeszcze raz. Escape działa tak samo jak Powrót do tytułu."
+"podsumowania jeszcze raz, Porównaj i Wróć do ekranu tytułowego. Zagraj "
+"ponownie gra poziom z nowym pokazem. Posłuchaj podsumowania jeszcze raz "
+"odczytuje wynik, a potem jak dobrze pasował każdy fajerwerk. Porównaj gra "
+"pokaz, a potem twoje strzały, każde po odliczaniu. Po niezaliczonym "
+"poziomie Spróbuj jeszcze raz gra nowy pokaz, a Trenuj ten poziom gra "
+"dokładnie ten sam jeszcze raz. Escape działa tak samo jak Wróć do ekranu "
+"tytułowego."
 
 msgid ""
 "After a level that clears: Next level, Play again, Hear the results again, "
 "Compare, and Back to the title."
 msgstr ""
 "Po zaliczonym poziomie: Następny poziom, Zagraj ponownie, Posłuchaj "
-"podsumowania jeszcze raz, Porównaj i Powrót do tytułu."
+"podsumowania jeszcze raz, Porównaj i Wróć do ekranu tytułowego."
 
 msgid "Play again plays the level with a new show."
 msgstr "Zagraj ponownie gra poziom z nowym pokazem."
@@ -43176,27 +43304,26 @@ msgstr ""
 "poziom gra dokładnie ten sam jeszcze raz."
 
 msgid "Escape does what Back to the title does."
-msgstr "Escape działa tak samo jak Powrót do tytułu."
+msgstr "Escape działa tak samo jak Wróć do ekranu tytułowego."
 
 msgid ""
 "After a challenge show, the results end with Back to the challenges. "
 "Between the shows of a weekly or monthly challenge, the first row goes on "
 "to the next show."
 msgstr ""
-"Po pokazie z wyzwania podsumowanie kończy się opcją Powrót do wyzwań. "
-"Między pokazami wyzwania tygodniowego albo miesięcznego pierwszy wiersz "
-"przechodzi do następnego pokazu."
+"Po pokazie z wyzwania podsumowanie kończy się opcją Wróć do wyzwań. Między "
+"pokazami wyzwania tygodnia albo miesiąca pierwszy wiersz przechodzi do "
+"następnego pokazu."
 
 msgid "After a challenge show, the results end with Back to the challenges."
-msgstr ""
-"Po pokazie z wyzwania podsumowanie kończy się opcją Powrót do wyzwań."
+msgstr "Po pokazie z wyzwania podsumowanie kończy się opcją Wróć do wyzwań."
 
 msgid ""
 "Between the shows of a weekly or monthly challenge, the first row goes on "
 "to the next show."
 msgstr ""
-"Między pokazami wyzwania tygodniowego albo miesięcznego pierwszy wiersz "
-"przechodzi do następnego pokazu."
+"Między pokazami wyzwania tygodnia albo miesiąca pierwszy wiersz przechodzi "
+"do następnego pokazu."
 
 msgid "Freestyle"
 msgstr "Tryb swobodny"
@@ -43526,8 +43653,8 @@ msgid ""
 "each Monday, a festival each month."
 msgstr ""
 "Up i Down wybierają wyzwanie, Enter odczytuje opis, Escape wraca. Każdy "
-"gracz dostaje te same pokazy: nowe dzienne codziennie, tygodniowy maraton w "
-"każdy poniedziałek, festiwal co miesiąc."
+"gracz dostaje te same pokazy: nowe wyzwanie dnia codziennie, tygodniowy "
+"maraton w każdy poniedziałek, festiwal co miesiąc."
 
 msgid "Opening the Liberty Lights challenge."
 msgstr "Otwieram wyzwanie Liberty Lights."
@@ -45402,11 +45529,11 @@ msgid ""
 msgstr ""
 "Są cztery fajerwerki, na klawiszach 1 do 4. {join} Od poziomu 11 wzlatują "
 "też po lewej albo po prawej. 60 procent zalicza poziom, a Enter kończy "
-"pokaz. Wypróbuj każdy fajerwerk bez punktów w sali treningowej."
+"pokaz. Wypróbuj każdy fajerwerk bez punktów w Sali treningowej."
 
 #. one sentence of a longer line
 msgid "Try every firework without scoring in the Practice room."
-msgstr "Wypróbuj każdy fajerwerk bez punktów w sali treningowej."
+msgstr "Wypróbuj każdy fajerwerk bez punktów w Sali treningowej."
 
 #. placeholders: {join}
 #. one sentence of a longer line
@@ -46230,18 +46357,19 @@ msgid ""
 "Escape: pause, with Resume, Settings, Help, Back to the title and Back to "
 "the lobby. During a challenge, Back to the title is Leave the challenge."
 msgstr ""
-"Escape: pauza, z opcjami Wznów, Ustawienia, Pomoc, Powrót do tytułu i "
-"Powrót do holu. Podczas wyzwania Powrót do tytułu to Opuść wyzwanie."
+"Escape: pauza, z opcjami Wznów, Ustawienia, Pomoc, Wróć do ekranu "
+"tytułowego i Wróć do holu. Podczas wyzwania Wróć do ekranu tytułowego to "
+"Opuść wyzwanie."
 
 msgid ""
 "Escape: pause, with Resume, Settings, Help, Back to the title and Back to "
 "the lobby."
 msgstr ""
-"Escape: pauza, z opcjami Wznów, Ustawienia, Pomoc, Powrót do tytułu i "
-"Powrót do holu."
+"Escape: pauza, z opcjami Wznów, Ustawienia, Pomoc, Wróć do ekranu "
+"tytułowego i Wróć do holu."
 
 msgid "During a challenge, Back to the title is Leave the challenge."
-msgstr "Podczas wyzwania Powrót do tytułu to Opuść wyzwanie."
+msgstr "Podczas wyzwania Wróć do ekranu tytułowego to Opuść wyzwanie."
 
 msgid "Today's stream"
 msgstr "Dzisiejszy strumień"
@@ -47974,7 +48102,7 @@ msgid ""
 "your strikes and spares in all."
 msgstr ""
 "Rekordy zapisują twoją najlepszą grę, najwięcej strike'ów pod rząd, "
-"najlepszą serię gier z wyzwania miesięcznego, czy zagrano grę idealną, i "
+"najlepszą serię gier z wyzwania miesiąca, czy zagrano grę idealną, i "
 "wszystkie twoje strike'i i spare'y."
 
 msgid ""
@@ -47998,32 +48126,31 @@ msgstr ""
 
 msgid "Tonight's lane, the daily: one full game. A new one comes every day."
 msgstr ""
-"Dzisiejszy tor, wyzwanie dzienne: jedna pełna gra. Nowy przychodzi "
-"codziennie."
+"Dzisiejszy tor, wyzwanie dnia: jedna pełna gra. Nowy przychodzi codziennie."
 
 msgid "Tonight's lane, the daily: one full game."
-msgstr "Dzisiejszy tor, wyzwanie dzienne: jedna pełna gra."
+msgstr "Dzisiejszy tor, wyzwanie dnia: jedna pełna gra."
 
 msgid ""
 "Spare week, the weekly: 20 leaves, one ball at each. Your score is the "
 "spares you make. A new one comes every Monday."
 msgstr ""
-"Tydzień spare'ów, wyzwanie tygodniowe: 20 układów, jeden rzut na każdy. "
-"Twój wynik to zrobione spare'y. Nowe przychodzi w każdy poniedziałek."
+"Tydzień spare'ów, wyzwanie tygodnia: 20 układów, jeden rzut na każdy. Twój "
+"wynik to zrobione spare'y. Nowe przychodzi w każdy poniedziałek."
 
 msgid "Spare week, the weekly: 20 leaves, one ball at each."
 msgstr ""
-"Tydzień spare'ów, wyzwanie tygodniowe: 20 układów, jeden rzut na każdy."
+"Tydzień spare'ów, wyzwanie tygodnia: 20 układów, jeden rzut na każdy."
 
 msgid ""
 "The late league, the monthly: a three-game series. Your score is the series "
 "total. A new one comes on the first of every month."
 msgstr ""
-"Późna liga, wyzwanie miesięczne: seria trzech gier. Twój wynik to suma "
-"serii. Nowe przychodzi pierwszego dnia każdego miesiąca."
+"Późna liga, wyzwanie miesiąca: seria trzech gier. Twój wynik to suma serii. "
+"Nowe przychodzi pierwszego dnia każdego miesiąca."
 
 msgid "The late league, the monthly: a three-game series."
-msgstr "Późna liga, wyzwanie miesięczne: seria trzech gier."
+msgstr "Późna liga, wyzwanie miesiąca: seria trzech gier."
 
 msgid ""
 "Leave the challenge, on the pause menu, stops without counting the run. You "
@@ -48206,10 +48333,9 @@ msgstr "Suma {total}."
 msgid "{title} result: {score_words}."
 msgstr "Wynik, {title}: {score_words}."
 
-#. placeholders: {title}, {score_words}, {score_line}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {score_words}, {score_line}, {streak_sentence}, {resets}
 msgid ""
-"{title} result: {score_words}. {score_line} A {streak} {unit} streak. "
-"{resets}"
+"{title} result: {score_words}. {score_line} {streak_sentence} {resets}"
 msgstr ""
 
 msgid "Full game"
@@ -48642,7 +48768,7 @@ msgid "High series {s}."
 msgstr "Najlepsza seria gier {s}."
 
 msgid "No series yet: the monthly challenge is a three-game series."
-msgstr "Jeszcze żadnej serii: wyzwanie miesięczne to seria trzech gier."
+msgstr "Jeszcze żadnej serii: wyzwanie miesiąca to seria trzech gier."
 
 msgid "1 game"
 msgstr "1 gra"
@@ -49675,8 +49801,7 @@ msgid ""
 "Challenges: a daily, a weekly and a monthly challenge, the same rail for "
 "every pilot."
 msgstr ""
-"Wyzwania: dzienne, tygodniowe i miesięczne, ta sama trasa dla każdego "
-"pilota."
+"Wyzwania dnia, tygodnia i miesiąca, ta sama trasa dla każdego pilota."
 
 msgid ""
 "Each mode keeps its own best score, read on its title row and in Records."
@@ -49758,19 +49883,19 @@ msgid ""
 "storm rail. The run is won at the sector's end. It carries one twist, "
 "announced in the briefing and when the run goes live:"
 msgstr ""
-"Dzienne, sprint sektora: jeden 60-sekundowy sektor, trudny jak czwarty, na "
-"trasie wylosowanej na ten dzień: standardowy przelot, korytarz zasadzki "
-"albo burzowa trasa. Rozgrywka jest wygrana na końcu sektora. Ma jedno "
-"utrudnienie, podane w opisie i na starcie rozgrywki:"
+"Wyzwanie dnia, sprint sektora: jeden 60-sekundowy sektor, trudny jak "
+"czwarty, na trasie wylosowanej na ten dzień: standardowy przelot, korytarz "
+"zasadzki albo burzowa trasa. Rozgrywka jest wygrana na końcu sektora. Ma "
+"jedno utrudnienie, podane w opisie i na starcie rozgrywki:"
 
 msgid ""
 "Daily, the sector sprint: one 60-second sector, as hard as a fourth sector, "
 "along a route drawn for the day: a standard rush, an ambush corridor or the "
 "storm rail."
 msgstr ""
-"Dzienne, sprint sektora: jeden 60-sekundowy sektor, trudny jak czwarty, na "
-"trasie wylosowanej na ten dzień: standardowy przelot, korytarz zasadzki "
-"albo burzowa trasa."
+"Wyzwanie dnia, sprint sektora: jeden 60-sekundowy sektor, trudny jak "
+"czwarty, na trasie wylosowanej na ten dzień: standardowy przelot, korytarz "
+"zasadzki albo burzowa trasa."
 
 msgid "The run is won at the sector's end."
 msgstr "Rozgrywka jest wygrana na końcu sektora."
@@ -49818,17 +49943,17 @@ msgid ""
 "upgrade after each of the first two sectors. The route ahead is already "
 "set, so the route menu has one choice."
 msgstr ""
-"Tygodniowe, długi kurs: trzy sektory na stałej trasie, zakończone sprintem "
-"do ewakuacji, z własnym utrudnieniem tygodnia. Ulepszenie wybierasz po "
-"każdym z dwóch pierwszych sektorów. Dalsza trasa jest już ustalona, więc "
-"menu tras ma jedną opcję."
+"Wyzwanie tygodnia, długi kurs: trzy sektory na stałej trasie, zakończone "
+"sprintem do ewakuacji, z własnym utrudnieniem tygodnia. Ulepszenie "
+"wybierasz po każdym z dwóch pierwszych sektorów. Dalsza trasa jest już "
+"ustalona, więc menu tras ma jedną opcję."
 
 msgid ""
 "Weekly, the long haul: three sectors along a fixed route, ending in the "
 "extraction sprint, with a twist of its own for the week."
 msgstr ""
-"Tygodniowe, długi kurs: trzy sektory na stałej trasie, zakończone sprintem "
-"do ewakuacji, z własnym utrudnieniem tygodnia."
+"Wyzwanie tygodnia, długi kurs: trzy sektory na stałej trasie, zakończone "
+"sprintem do ewakuacji, z własnym utrudnieniem tygodnia."
 
 msgid "You choose an upgrade after each of the first two sectors."
 msgstr "Ulepszenie wybierasz po każdym z dwóch pierwszych sektorów."
@@ -49845,9 +49970,9 @@ msgid ""
 "own story log, and flying an event to its end keeps that log in the story "
 "archive."
 msgstr ""
-"Miesięczne, wydarzenie Black Sky, Blackout Convoy: trzy sektory konwoju "
-"ewakuacyjnego, a potem sprint do ewakuacji. Pojazdy uprzywilejowane to "
-"pociągi ewakuacyjne, zapowiadane jako „Pociąg ewakuacyjny”. Każdy "
+"Wyzwanie miesiąca, wydarzenie Black Sky, Blackout Convoy: trzy sektory "
+"konwoju ewakuacyjnego, a potem sprint do ewakuacji. Pojazdy uprzywilejowane "
+"to pociągi ewakuacyjne, zapowiadane jako „Pociąg ewakuacyjny”. Każdy "
 "przepuszczony pociąg ewakuacyjny płaci potrójnie. Każdy opóźniony kosztuje "
 "podwójne obciążenie. Obciążenie zaczyna się od 30, a masz trzy przejęcia "
 "priorytetu. Opis odczytuje własny dziennik fabuły wydarzenia, a dolecenie "
@@ -49857,8 +49982,8 @@ msgid ""
 "Monthly, the Black Sky event, Blackout Convoy: three evacuation convoy "
 "sectors, then the extraction sprint."
 msgstr ""
-"Miesięczne, wydarzenie Black Sky, Blackout Convoy: trzy sektory konwoju "
-"ewakuacyjnego, a potem sprint do ewakuacji."
+"Wyzwanie miesiąca, wydarzenie Black Sky, Blackout Convoy: trzy sektory "
+"konwoju ewakuacyjnego, a potem sprint do ewakuacji."
 
 msgid ""
 "Priority vehicles are evacuation trains, called out as \"Evacuation train\"."
@@ -49908,9 +50033,9 @@ msgstr ""
 "odczytuje wynik, czy pobił rekord, serię i kiedy przyjdzie następne. "
 "Wybranie Opuść wyzwanie w menu pauzy go nie zalicza. Tylko lepszy wynik "
 "zastępuje rekord, ale każda ukończona rozgrywka podtrzymuje serię. Wyzwania "
-"dzienne resetują się o północy UTC, tygodniowe w poniedziałek, miesięczne "
-"pierwszego dnia miesiąca. Po wyzwaniu menu podsumowania pozwala polecieć tę "
-"samą trasę jeszcze raz, a jego ostatni wiersz to Powrót do wyzwań."
+"dnia resetują się o północy UTC, wyzwania tygodnia w poniedziałek, wyzwania "
+"miesiąca pierwszego dnia miesiąca. Po wyzwaniu menu podsumowania pozwala "
+"polecieć tę samą trasę jeszcze raz, a jego ostatni wiersz to Wróć do wyzwań."
 
 msgid ""
 "A challenge counts when the run ends, won or lost: the game reads your "
@@ -49930,15 +50055,15 @@ msgid ""
 "Daily challenges reset at midnight UTC, weekly ones on Monday, monthly ones "
 "on the first of the month."
 msgstr ""
-"Wyzwania dzienne resetują się o północy UTC, tygodniowe w poniedziałek, "
-"miesięczne pierwszego dnia miesiąca."
+"Wyzwania dnia resetują się o północy UTC, wyzwania tygodnia w poniedziałek, "
+"wyzwania miesiąca pierwszego dnia miesiąca."
 
 msgid ""
 "After a challenge, the results menu can fly the same rail again, and its "
 "last row is Back to the challenges."
 msgstr ""
 "Po wyzwaniu menu podsumowania pozwala polecieć tę samą trasę jeszcze raz, a "
-"jego ostatni wiersz to Powrót do wyzwań."
+"jego ostatni wiersz to Wróć do wyzwań."
 
 msgid "Special nights"
 msgstr "Noce specjalne"
@@ -49956,8 +50081,8 @@ msgstr ""
 "wyzwań i w zimnym starcie pojazdy z ruchu stają się autami widmami. "
 "Spotykaj je jak zwykle, za te same punkty. Opis rozgrywki je wymienia, "
 "klawisz stanu podaje nazwę nocy, a klawisz podpowiedzi nazywa je autami "
-"widmami. Auta widma nie pojawiają się w wyzwaniach dziennych, tygodniowych "
-"ani miesięcznych."
+"widmami. Auta widma nie pojawiają się w wyzwaniach dnia, tygodnia ani "
+"miesiąca."
 
 msgid ""
 "Ghost cars, from 17 October to Halloween and the day after: in the guided "
@@ -49980,8 +50105,7 @@ msgstr ""
 
 msgid "Ghost cars do not appear in the daily, weekly or monthly challenges."
 msgstr ""
-"Auta widma nie pojawiają się w wyzwaniach dziennych, tygodniowych ani "
-"miesięcznych."
+"Auta widma nie pojawiają się w wyzwaniach dnia, tygodnia ani miesiąca."
 
 msgid ""
 "Friday night run, on the last Friday of every month: a row of its own on "
@@ -50407,8 +50531,8 @@ msgstr ""
 "Wyzwania i Rozgrywka treningowa. Samouczek, który uczy celu i sterowania po "
 "jednej stronie, Pomoc i Test dźwięków. Rekordy, z każdym rekordem, rangą "
 "pilota, kredytami, bonusami i wynikami wyzwań. Warsztat i Archiwum fabuły. "
-"Ustawienia, w których są też Zapowiedzi i Tempo, oraz Powrót do salonu. "
-"Przy pierwszej wizycie menu tytułowe zaczyna na Samouczku."
+"Ustawienia, w których są też Zapowiedzi i Tempo, oraz Wróć do salonu. Przy "
+"pierwszej wizycie menu tytułowe zaczyna na Samouczku."
 
 msgid "The title has these rows."
 msgstr "Menu tytułowe ma te wiersze."
@@ -50444,7 +50568,7 @@ msgid ""
 "Settings, which also holds Spoken call-outs and Pace, and Back to the "
 "parlor."
 msgstr ""
-"Ustawienia, w których są też Zapowiedzi i Tempo, oraz Powrót do salonu."
+"Ustawienia, w których są też Zapowiedzi i Tempo, oraz Wróć do salonu."
 
 msgid "On your first visit the title starts on Tutorial."
 msgstr "Przy pierwszej wizycie menu tytułowe zaczyna na Samouczku."
@@ -50458,9 +50582,9 @@ msgid ""
 msgstr ""
 "Po raporcie menu podsumowania ma Zagraj ponownie albo Spróbuj jeszcze raz, "
 "Posłuchaj podsumowania jeszcze raz, Postęp pilota, Archiwum z dziennikami "
-"fabuły i Powrót do tytułu. Po locie z przewodnikiem Dalej zaczyna Black Sky "
-"Run. Po wyzwaniu pierwszy wiersz leci to samo wyzwanie jeszcze raz, a "
-"ostatni to Powrót do wyzwań. Escape działa tak samo jak ostatni wiersz."
+"fabuły i Wróć do ekranu tytułowego. Po locie z przewodnikiem Dalej zaczyna "
+"Black Sky Run. Po wyzwaniu pierwszy wiersz leci to samo wyzwanie jeszcze "
+"raz, a ostatni to Wróć do wyzwań. Escape działa tak samo jak ostatni wiersz."
 
 msgid ""
 "After the debrief, the results menu offers Play again or Try again, Hear "
@@ -50469,7 +50593,7 @@ msgid ""
 msgstr ""
 "Po raporcie menu podsumowania ma Zagraj ponownie albo Spróbuj jeszcze raz, "
 "Posłuchaj podsumowania jeszcze raz, Postęp pilota, Archiwum z dziennikami "
-"fabuły i Powrót do tytułu."
+"fabuły i Wróć do ekranu tytułowego."
 
 msgid "After the guided run, Next starts a Black Sky Run."
 msgstr "Po locie z przewodnikiem Dalej zaczyna Black Sky Run."
@@ -50479,7 +50603,7 @@ msgid ""
 "last is Back to the challenges."
 msgstr ""
 "Po wyzwaniu pierwszy wiersz leci to samo wyzwanie jeszcze raz, a ostatni to "
-"Powrót do wyzwań."
+"Wróć do wyzwań."
 
 msgid "Pages"
 msgstr "Strony"
@@ -51160,6 +51284,10 @@ msgid "A locked strand says how its first log is recovered."
 msgstr "Zablokowany wątek mówi, jak odzyskać jego pierwszy dziennik."
 
 #. one sentence of a longer line
+msgid "Each row is a strand of the story."
+msgstr ""
+
+#. one sentence of a longer line
 msgid "Enter opens its logs."
 msgstr "Enter otwiera jego dzienniki."
 
@@ -51217,6 +51345,10 @@ msgid "Locked logs need more runs, and each says how it is recovered."
 msgstr ""
 "Zablokowane dzienniki wymagają więcej rozgrywek, a każdy mówi, jak go "
 "odzyskać."
+
+#. one sentence of a longer line
+msgid "Recovered logs open with Enter."
+msgstr ""
 
 #. placeholders: {row}
 #. one sentence of a longer line
@@ -51637,6 +51769,11 @@ msgstr "Bonusy za rangę."
 #. placeholders: {rank_bonuses}
 msgid "Rank bonuses. {rank_bonuses}"
 msgstr "Bonusy za rangę. {rank_bonuses}"
+
+#. placeholders: {kills}, {ACE_KILLS}
+#. one sentence of a longer line
+msgid "Rail gun kills {kills} of {ACE_KILLS} for the Ace gunner licence."
+msgstr ""
 
 #. placeholders: {fitted}, {kills}, {ACE_KILLS}
 #. one sentence of a longer line
@@ -52292,9 +52429,6 @@ msgstr "Lot z przewodnikiem"
 msgid "Black Sky Run"
 msgstr "Black Sky Run"
 
-msgid "Weekly challenge"
-msgstr "Wyzwanie tygodniowe"
-
 msgid "Black Sky event"
 msgstr "Wydarzenie Black Sky"
 
@@ -52610,6 +52744,10 @@ msgstr "Turbulencje się rozeszły."
 msgid "Multiplier {multiplier}."
 msgstr "Mnożnik {multiplier}."
 
+#. one sentence of a longer line
+msgid "Shield absorbed it."
+msgstr ""
+
 #. placeholders: {left}, {s_ending}
 #. one sentence of a longer line
 msgid "{left} shield{s_ending} left."
@@ -52623,6 +52761,10 @@ msgstr "{message} Osłona to pochłonęła."
 #. placeholders: {message}, {left}, {s_ending}
 msgid "{message} Shield absorbed it. {left} shield{s_ending} left."
 msgstr "{message} Osłona to pochłonęła. Zostało osłon: {left}."
+
+#. one sentence of a longer line
+msgid "Dead man's switch."
+msgstr ""
 
 #. placeholders: {message}
 #. one sentence of a longer line
@@ -53417,15 +53559,9 @@ msgstr "Rozgrywka ukończona."
 msgid "Run failed."
 msgstr "Rozgrywka nieudana."
 
-#. placeholders: {challenge_result_at}, {streak}, {unit}
-#. one sentence of a longer line
-msgid "{challenge_result_at} A {streak} {unit} streak."
-msgstr ""
-
-#. placeholders: {title}, {score}, {challenge_result_at}, {streak}, {unit}, {resets}
+#. placeholders: {title}, {score}, {challenge_result_at}, {streak_sentence}, {resets}
 msgid ""
-"{title} result: {score}. {challenge_result_at} A {streak} {unit} streak. "
-"{resets}"
+"{title} result: {score}. {challenge_result_at} {streak_sentence} {resets}"
 msgstr ""
 
 #. placeholders: {EVENT_LOG_TITLE}
@@ -53556,6 +53692,10 @@ msgid ""
 msgstr ""
 "Sektor {sectors_cleared} ukończony. Kadłub {hull}. Obciążenie {stress}. "
 "Wynik {score}. Wybierz jedno ulepszenie"
+
+#. one sentence of a longer line
+msgid "Enter fits it."
+msgstr ""
 
 #. placeholders: {blurb}
 #. one sentence of a longer line
@@ -55258,7 +55398,7 @@ msgstr ""
 "H podaje drogę do najbliższego okruszka, przy którym nie ma kota. Kierunek "
 "pada przed liczbą kroków, na przykład „Góra, 3 kroki”. „Brak bezpiecznego "
 "okruszka” oznacza, że każdy pozostały okruszek jest blisko kota. H nie "
-"działa w wyzwaniu miesięcznym."
+"działa w wyzwaniu miesiąca."
 
 msgid "H names the way to the nearest crumb that no cat is close to."
 msgstr "H podaje drogę do najbliższego okruszka, przy którym nie ma kota."
@@ -55272,7 +55412,7 @@ msgstr ""
 "kota."
 
 msgid "H does not work in the monthly challenge."
-msgstr "H nie działa w wyzwaniu miesięcznym."
+msgstr "H nie działa w wyzwaniu miesiąca."
 
 msgid "The cats"
 msgstr "Koty"
@@ -55309,7 +55449,7 @@ msgid ""
 "The grey cat wanders like the tabby cat and only joins the monthly "
 "challenge."
 msgstr ""
-"Szary kot błąka się jak pręgowany i dołącza tylko do wyzwania miesięcznego."
+"Szary kot błąka się jak pręgowany i dołącza tylko do wyzwania miesiąca."
 
 msgid ""
 "The cat-close warning means a cat is within 2 steps. The first 3 times in a "
@@ -55538,29 +55678,29 @@ msgid ""
 "Tonight's pantry, the daily: one 9 by 9 maze with the ginger cat and the "
 "tabby cat. A new one comes every day."
 msgstr ""
-"Dzisiejsza spiżarnia, wyzwanie dzienne: jeden labirynt 9 na 9 z rudym i "
+"Dzisiejsza spiżarnia, wyzwanie dnia: jeden labirynt 9 na 9 z rudym i "
 "pręgowanym kotem. Nowy przychodzi codziennie."
 
 msgid ""
 "Tonight's pantry, the daily: one 9 by 9 maze with the ginger cat and the "
 "tabby cat."
 msgstr ""
-"Dzisiejsza spiżarnia, wyzwanie dzienne: jeden labirynt 9 na 9 z rudym i "
+"Dzisiejsza spiżarnia, wyzwanie dnia: jeden labirynt 9 na 9 z rudym i "
 "pręgowanym kotem."
 
 msgid ""
 "Five pantries, the weekly: five 9 by 9 mazes in a row, the cats quicker in "
 "each. A new set comes every Monday."
 msgstr ""
-"Pięć spiżarni, wyzwanie tygodniowe: pięć labiryntów 9 na 9 pod rząd, w "
-"każdym szybsze koty. Nowy zestaw przychodzi w każdy poniedziałek."
+"Pięć spiżarni, wyzwanie tygodnia: pięć labiryntów 9 na 9 pod rząd, w każdym "
+"szybsze koty. Nowy zestaw przychodzi w każdy poniedziałek."
 
 msgid ""
 "Five pantries, the weekly: five 9 by 9 mazes in a row, the cats quicker in "
 "each."
 msgstr ""
-"Pięć spiżarni, wyzwanie tygodniowe: pięć labiryntów 9 na 9 pod rząd, w "
-"każdym szybsze koty."
+"Pięć spiżarni, wyzwanie tygodnia: pięć labiryntów 9 na 9 pod rząd, w każdym "
+"szybsze koty."
 
 msgid "A new set comes every Monday."
 msgstr "Nowy zestaw przychodzi w każdy poniedziałek."
@@ -55569,7 +55709,7 @@ msgid ""
 "The big larder, the monthly: one 13 by 13 maze with the ginger, tabby and "
 "grey cats, and no hints. A new one comes on the first of every month."
 msgstr ""
-"Wielka spiżarka, wyzwanie miesięczne: jeden labirynt 13 na 13 z rudym, "
+"Wielka spiżarka, wyzwanie miesiąca: jeden labirynt 13 na 13 z rudym, "
 "pręgowanym i szarym kotem, bez podpowiedzi. Nowy przychodzi pierwszego dnia "
 "każdego miesiąca."
 
@@ -55577,7 +55717,7 @@ msgid ""
 "The big larder, the monthly: one 13 by 13 maze with the ginger, tabby and "
 "grey cats, and no hints."
 msgstr ""
-"Wielka spiżarka, wyzwanie miesięczne: jeden labirynt 13 na 13 z rudym, "
+"Wielka spiżarka, wyzwanie miesiąca: jeden labirynt 13 na 13 z rudym, "
 "pręgowanym i szarym kotem, bez podpowiedzi."
 
 msgid ""
@@ -56469,7 +56609,7 @@ msgid ""
 "challenge."
 msgstr ""
 "Szary kot: niskie mruczenie. Błąka się jak pręgowany i dołącza w wyzwaniu "
-"miesięcznym."
+"miesiąca."
 
 msgid ""
 "Cat close: a short rising meow from the cat's side. A cat is 2 steps away "
@@ -56951,26 +57091,27 @@ msgid ""
 "the challenge, on the pause menu, does not count, so you can try again "
 "later."
 msgstr ""
-"Każdy gracz dostaje te same kości w tej samej kolejności. Dzienne to jedna "
-"noc w saloonie, nowa codziennie. Tygodniowe to tydzień pecha: trzy noce w "
-"saloonie z zasadą pecha, trzy wyniki nocy się sumują, nowy w każdy "
-"poniedziałek. Przy zasadzie pecha podwójne 1 to pech. Zeruje cały wynik "
-"nocy każdego, kto wciąż siedzi. Miesięczne to stół Kapitana: ty i Kapitan "
-"sami, przez 10 przystani. Twój wynik liczy się po końcu ostatniej nocy. "
-"Opuść wyzwanie, w menu pauzy, nie zalicza, więc możesz spróbować później."
+"Każdy gracz dostaje te same kości w tej samej kolejności. Wyzwanie dnia to "
+"jedna noc w saloonie, nowa codziennie. Wyzwanie tygodnia to tydzień pecha: "
+"trzy noce w saloonie z zasadą pecha, trzy wyniki nocy się sumują, nowy w "
+"każdy poniedziałek. Przy zasadzie pecha podwójne 1 to pech. Zeruje cały "
+"wynik nocy każdego, kto wciąż siedzi. Wyzwanie miesiąca to stół Kapitana: "
+"ty i Kapitan sami, przez 10 przystani. Twój wynik liczy się po końcu "
+"ostatniej nocy. Opuść wyzwanie, w menu pauzy, nie zalicza, więc możesz "
+"spróbować później."
 
 msgid "Every player gets the same dice in the same order."
 msgstr "Każdy gracz dostaje te same kości w tej samej kolejności."
 
 msgid "The daily is one saloon night, new each day."
-msgstr "Dzienne to jedna noc w saloonie, nowa codziennie."
+msgstr "Wyzwanie dnia to jedna noc w saloonie, nowa codziennie."
 
 msgid ""
 "The weekly is snag week: three saloon nights with the snag rule on, your "
 "three night totals added, new each Monday."
 msgstr ""
-"Tygodniowe to tydzień pecha: trzy noce w saloonie z zasadą pecha, trzy "
-"wyniki nocy się sumują, nowy w każdy poniedziałek."
+"Wyzwanie tygodnia to tydzień pecha: trzy noce w saloonie z zasadą pecha, "
+"trzy wyniki nocy się sumują, nowy w każdy poniedziałek."
 
 msgid "With the snag rule, a double 1 is the snag."
 msgstr "Przy zasadzie pecha podwójne 1 to pech."
@@ -56981,7 +57122,8 @@ msgstr "Zeruje cały wynik nocy każdego, kto wciąż siedzi."
 msgid ""
 "The monthly is the Captain's table: you and the Captain alone, for 10 "
 "landings."
-msgstr "Miesięczne to stół Kapitana: ty i Kapitan sami, przez 10 przystani."
+msgstr ""
+"Wyzwanie miesiąca to stół Kapitana: ty i Kapitan sami, przez 10 przystani."
 
 msgid "Your result counts when the last night ends."
 msgstr "Twój wynik liczy się po końcu ostatniej nocy."
@@ -57156,6 +57298,11 @@ msgstr "Otwieram wyzwanie Riverboat Dice."
 #. one sentence of a longer line
 msgid "Final totals of the last night: {standings}."
 msgstr "Końcowe wyniki ostatniej nocy: {standings}."
+
+#. placeholders: {wins}, {nights}
+#. one sentence of a longer line
+msgid "You won {wins} of {nights} nights."
+msgstr ""
 
 #. placeholders: {outcome_words}, {wins}, {nights}
 #. one sentence of a longer line
@@ -59137,7 +59284,7 @@ msgid ""
 "seeds, even if your garden was open when it closed. S says when pumpkin "
 "seeds are in the packet."
 msgstr ""
-"Pestki dyni: od 22 września do Święta Dziękczynienia w torebce nasion jest "
+"Nasiona dyni: od 22 września do Święta Dziękczynienia w torebce nasion jest "
 "dynia, po pozostałych nasionach. Dynia rośnie dokładnie jak kabaczek i "
 "przejmuje jego partię w piosence, ale śpiewa ją jako niski fagot. W "
 "harmonii liczy się jako partia kabaczka. Posadzona dynia zostaje dynią po "
@@ -59148,7 +59295,7 @@ msgid ""
 "Pumpkin seeds: from 22 September to Thanksgiving, the seed packet has a "
 "pumpkin, after your other seeds."
 msgstr ""
-"Pestki dyni: od 22 września do Święta Dziękczynienia w torebce nasion jest "
+"Nasiona dyni: od 22 września do Święta Dziękczynienia w torebce nasion jest "
 "dynia, po pozostałych nasionach."
 
 msgid ""
@@ -59230,13 +59377,13 @@ msgid ""
 "Daily: 6 planters, 4 kinds of seed and 4 days to grow a three-part harmony. "
 "Each day has its own twist."
 msgstr ""
-"Dzienne: 6 donic, 4 rodzaje nasion i 4 dni na wyhodowanie harmonii "
+"Wyzwanie dnia: 6 donic, 4 rodzaje nasion i 4 dni na wyhodowanie harmonii "
 "trzygłosowej. Każdy dzień ma własne utrudnienie."
 
 msgid ""
 "Daily: 6 planters, 4 kinds of seed and 4 days to grow a three-part harmony."
 msgstr ""
-"Dzienne: 6 donic, 4 rodzaje nasion i 4 dni na wyhodowanie harmonii "
+"Wyzwanie dnia: 6 donic, 4 rodzaje nasion i 4 dni na wyhodowanie harmonii "
 "trzygłosowej."
 
 msgid "Each day has its own twist."
@@ -59246,18 +59393,19 @@ msgid ""
 "Weekly: 9 planters and 8 days to harvest 5 tomatoes, with a twist for the "
 "week."
 msgstr ""
-"Tygodniowe: 9 donic i 8 dni na zebranie 5 pomidorów, z utrudnieniem "
+"Wyzwanie tygodnia: 9 donic i 8 dni na zebranie 5 pomidorów, z utrudnieniem "
 "tygodnia."
 
 msgid ""
 "Monthly: the rooftop festival. 12 planters, the first 6 seeds, 4 sprouts "
 "already up, and 10 days to bring all 6 voices into one full chorus."
 msgstr ""
-"Miesięczne: festiwal na dachu. 12 donic, pierwszych 6 nasion, 4 kiełki już "
-"wzeszły i 10 dni, żeby zebrać wszystkie 6 głosów w jeden pełny chór."
+"Wyzwanie miesiąca: festiwal na dachu. 12 donic, pierwszych 6 nasion, 4 "
+"kiełki już wzeszły i 10 dni, żeby zebrać wszystkie 6 głosów w jeden pełny "
+"chór."
 
 msgid "Monthly: the rooftop festival."
-msgstr "Miesięczne: festiwal na dachu."
+msgstr "Wyzwanie miesiąca: festiwal na dachu."
 
 msgid ""
 "12 planters, the first 6 seeds, 4 sprouts already up, and 10 days to bring "
@@ -59305,9 +59453,9 @@ msgstr ""
 "liczy. Wynik: 5 za każdy zbiór, 2 za każdego zebranego szkodnika, 5 za "
 "każdą partię najpełniejszej harmonii i 100 za osiągnięcie celu, plus 10 za "
 "każdy pozostały dzień. Twój rekord i serię słychać na końcu i w menu "
-"wyzwań. Po podsumowaniu krótkie menu ma Zagraj w to wyzwanie ponownie, "
-"Posłuchaj podsumowania jeszcze raz i Powrót do wyzwań. Escape działa tak "
-"samo jak Powrót do wyzwań."
+"wyzwań. Po podsumowaniu krótkie menu ma Zagraj ponownie w to wyzwanie, "
+"Posłuchaj podsumowania jeszcze raz i Wróć do wyzwań. Escape działa tak samo "
+"jak Wróć do wyzwań."
 
 msgid "When the goal is met, the garden celebrates and the challenge ends."
 msgstr "Gdy cel jest osiągnięty, ogród świętuje, a wyzwanie się kończy."
@@ -59336,11 +59484,11 @@ msgid ""
 "After the results, a short menu offers Play this challenge again, Hear the "
 "results again, and Back to the challenges."
 msgstr ""
-"Po podsumowaniu krótkie menu ma Zagraj w to wyzwanie ponownie, Posłuchaj "
-"podsumowania jeszcze raz i Powrót do wyzwań."
+"Po podsumowaniu krótkie menu ma Zagraj ponownie w to wyzwanie, Posłuchaj "
+"podsumowania jeszcze raz i Wróć do wyzwań."
 
 msgid "Escape does the same as Back to the challenges."
-msgstr "Escape działa tak samo jak Powrót do wyzwań."
+msgstr "Escape działa tak samo jak Wróć do wyzwań."
 
 msgid ""
 "Sound check, on the title menu, plays the gameplay cues and each plant's "
@@ -59476,9 +59624,9 @@ msgid ""
 "the lobby. During a challenge, Back to the title is Leave the challenge. "
 "Your garden is saved when you leave."
 msgstr ""
-"Escape: pauza, z opcjami Wznów, Ustawienia, Pomoc, Powrót do tytułu i "
-"Powrót do holu. Podczas wyzwania Powrót do tytułu to Opuść wyzwanie. Ogród "
-"zapisuje się, gdy wychodzisz."
+"Escape: pauza, z opcjami Wznów, Ustawienia, Pomoc, Wróć do ekranu "
+"tytułowego i Wróć do holu. Podczas wyzwania Wróć do ekranu tytułowego to "
+"Opuść wyzwanie. Ogród zapisuje się, gdy wychodzisz."
 
 msgid "Your garden is saved when you leave."
 msgstr "Ogród zapisuje się, gdy wychodzisz."
@@ -60098,8 +60246,8 @@ msgid ""
 "each Monday and a festival each month."
 msgstr ""
 "Up i Down wybierają wyzwanie, Enter czyta jego cel i utrudnienie, Escape "
-"wraca. Każdy gracz dostaje ten sam ogród: nowy dzienny co dzień, tygodniowy "
-"w każdy poniedziałek i festiwal co miesiąc."
+"wraca. Każdy gracz dostaje ten sam ogród: nowe wyzwanie dnia co dzień, "
+"wyzwanie tygodnia w każdy poniedziałek i festiwal co miesiąc."
 
 msgid "Opening the Rooftop Garden challenge."
 msgstr "Otwieram wyzwanie Rooftop Garden."
@@ -61381,10 +61529,14 @@ msgstr ""
 " Wynik: 100 za cel, 10 za każdy zapasowy dzień, 5 za zbiór, 5 za głos "
 "harmonii, 2 za szkodnika."
 
-#. placeholders: {back}, {name}, {plan}, {twist_text}, {goal}, {unit}
+msgid "Leaving from the pause menu keeps the garden until the day is over."
+msgstr ""
+
+msgid "Leaving from the pause menu keeps the garden until the week is over."
+msgstr ""
+
 msgid ""
-"{back}{name}: {plan} {twist_text}{goal} Leaving from the pause menu keeps "
-"the garden until the {unit} is over."
+"Leaving from the pause menu keeps the garden until the month is over."
 msgstr ""
 
 msgid "A fresh garden for the same challenge. Only your best score is kept."
@@ -62203,7 +62355,8 @@ msgid ""
 msgstr ""
 "Po sejfie menu podsumowania ma następny sejf, jeśli ten został otwarty, "
 "Zagraj ponownie albo Spróbuj jeszcze raz, Posłuchaj podsumowania jeszcze "
-"raz oraz Powrót do tytułu. Escape działa jak Powrót do tytułu."
+"raz oraz Wróć do ekranu tytułowego. Escape działa jak Wróć do ekranu "
+"tytułowego."
 
 msgid ""
 "After a safe, the results menu offers the next safe when you opened one, "
@@ -62211,10 +62364,10 @@ msgid ""
 msgstr ""
 "Po sejfie menu podsumowania ma następny sejf, jeśli ten został otwarty, "
 "Zagraj ponownie albo Spróbuj jeszcze raz, Posłuchaj podsumowania jeszcze "
-"raz oraz Powrót do tytułu."
+"raz oraz Wróć do ekranu tytułowego."
 
 msgid "Escape does the same as Back to the title."
-msgstr "Escape działa jak Powrót do tytułu."
+msgstr "Escape działa jak Wróć do ekranu tytułowego."
 
 msgid "Bonus safes"
 msgstr "Sejfy dodatkowe"
@@ -62332,7 +62485,7 @@ msgstr ""
 "otwarciem wszystkich sejfów albo porażką. Opuść wyzwanie w menu pauzy się "
 "nie liczy, więc możesz wrócić i spróbować znowu. Po robocie menu "
 "podsumowania ma tę samą robotę jeszcze raz, Posłuchaj podsumowania jeszcze "
-"raz oraz Powrót do wyzwań."
+"raz oraz Wróć do wyzwań."
 
 msgid ""
 "Challenges on the title holds three jobs that are the same for every "
@@ -62379,7 +62532,7 @@ msgid ""
 "again, and Back to the challenges."
 msgstr ""
 "Po robocie menu podsumowania ma tę samą robotę jeszcze raz, Posłuchaj "
-"podsumowania jeszcze raz oraz Powrót do wyzwań."
+"podsumowania jeszcze raz oraz Wróć do wyzwań."
 
 msgid ""
 "Tonight's job, the daily: one safe of three or four wheels, with one twist. "
@@ -62389,8 +62542,8 @@ msgid ""
 "gates. No hints means only your ears. A busy building adds distractions "
 "every few seconds. A new job comes every day."
 msgstr ""
-"Dzisiejsza robota, dzienna: jeden sejf z trzema lub czterema krążkami i "
-"jednym utrudnieniem. Ciche zapadki ściszają dźwięk zapadki jak w skarbcu "
+"Dzisiejsza robota, wyzwanie dnia: jeden sejf z trzema lub czterema krążkami "
+"i jednym utrudnieniem. Ciche zapadki ściszają dźwięk zapadki jak w skarbcu "
 "Korony. Nerwowy strażnik przychodzi często i długo nasłuchuje. Zasada "
 "kierunku włącza regułę prawdziwego zamka. Tłok zapadek daje każdemu "
 "krążkowi trzy fałszywe zapadki. Bez podpowiedzi zostaje ci tylko słuch. "
@@ -62400,13 +62553,14 @@ msgstr ""
 msgid ""
 "Tonight's job, the daily: one safe of three or four wheels, with one twist."
 msgstr ""
-"Dzisiejsza robota, dzienna: jeden sejf z trzema lub czterema krążkami i "
-"jednym utrudnieniem."
+"Dzisiejsza robota, wyzwanie dnia: jeden sejf z trzema lub czterema krążkami "
+"i jednym utrudnieniem."
 
 msgid ""
 "The Quiet tumblers twist lowers the tumbler-cue volume to match the Crown "
 "vault."
-msgstr "Ciche zapadki ściszają dźwięk zapadki jak w skarbcu Korony."
+msgstr ""
+"Utrudnienie Ciche zapadki ścisza dźwięk zapadki jak w skarbcu Korony."
 
 msgid "A nervous guard comes often and listens long."
 msgstr "Nerwowy strażnik przychodzi często i długo nasłuchuje."
@@ -62435,8 +62589,8 @@ msgid ""
 "banks its points, even if a later one beats you. A new vault comes every "
 "Monday."
 msgstr ""
-"Skarbiec trzech, tygodniowa: trzy sejfy z rzędu, sejf zewnętrzny, sejf "
-"wewnętrzny z zasadą kierunku i sejf w skarbcu ze strażnikiem, który "
+"Skarbiec trzech, wyzwanie tygodnia: trzy sejfy z rzędu, sejf zewnętrzny, "
+"sejf wewnętrzny z zasadą kierunku i sejf w skarbcu ze strażnikiem, który "
 "przychodzi bez zapowiedzi, wszystkie z utrudnieniem tygodnia. Jedna blokada "
 "strzeże całego skarbca: trzy błędy we wszystkich trzech sejfach ją "
 "zatrzaskują, a trzy podpowiedzi są wspólne. Gdy utrudnieniem jest brak "
@@ -62448,8 +62602,8 @@ msgid ""
 "inner safe under the direction rule, and the strongroom safe with a guard "
 "who comes unannounced, all with the week's twist."
 msgstr ""
-"Skarbiec trzech, tygodniowa: trzy sejfy z rzędu, sejf zewnętrzny, sejf "
-"wewnętrzny z zasadą kierunku i sejf w skarbcu ze strażnikiem, który "
+"Skarbiec trzech, wyzwanie tygodnia: trzy sejfy z rzędu, sejf zewnętrzny, "
+"sejf wewnętrzny z zasadą kierunku i sejf w skarbcu ze strażnikiem, który "
 "przychodzi bez zapowiedzi, wszystkie z utrudnieniem tygodnia."
 
 msgid ""
@@ -62476,15 +62630,15 @@ msgid ""
 "while the guard listens, and a hint costs five seconds. Open both for 3 "
 "points for every second left. A new heist comes on the first of every month."
 msgstr ""
-"Skok na Koronę, miesięczna: wydarzenie fabularne. Najpierw sejf kustosza po "
-"kartę dostępu, potem pięć krążków skarbca Korony, a między nimi strażnik na "
-"korytarzu. Jeden zegar na 5 minut odlicza cały skok. Staje, gdy strażnik "
-"nasłuchuje, a podpowiedź kosztuje pięć sekund. Otwórz oba, a dostaniesz 3 "
-"punkty za każdą pozostałą sekundę. Nowy skok jest pierwszego dnia każdego "
-"miesiąca."
+"Skok na Koronę, wyzwanie miesiąca: wydarzenie fabularne. Najpierw sejf "
+"kustosza po kartę dostępu, potem pięć krążków skarbca Korony, a między nimi "
+"strażnik na korytarzu. Jeden zegar na 5 minut odlicza cały skok. Staje, gdy "
+"strażnik nasłuchuje, a podpowiedź kosztuje pięć sekund. Otwórz oba, a "
+"dostaniesz 3 punkty za każdą pozostałą sekundę. Nowy skok jest pierwszego "
+"dnia każdego miesiąca."
 
 msgid "The Crown heist, the monthly: a story event."
-msgstr "Skok na Koronę, miesięczna: wydarzenie fabularne."
+msgstr "Skok na Koronę, wyzwanie miesiąca: wydarzenie fabularne."
 
 msgid ""
 "Through the curator's safe for the key card, then the five wheels of the "
@@ -62509,7 +62663,7 @@ msgid ""
 "and the twist. After the job you hear your score, your best and your streak."
 msgstr ""
 "W wyzwaniach jest 100 za krążek, minus 30 za błąd i 20 za podpowiedź. "
-"Dzienna i tygodniowa dodają bonus za szybkie otwarcie. Dźwięk przejścia "
+"Wyzwania dnia i tygodnia dodają bonus za szybkie otwarcie. Dźwięk przejścia "
 "oznacza, że sejf jest otwarty i czeka następny. S podaje bieżący sejf, "
 "zebrane punkty i utrudnienie. Po robocie słyszysz swój wynik, rekord i "
 "serię."
@@ -62519,7 +62673,7 @@ msgstr ""
 "W wyzwaniach jest 100 za krążek, minus 30 za błąd i 20 za podpowiedź."
 
 msgid "The daily and weekly add a bonus for a quick crack."
-msgstr "Dzienna i tygodniowa dodają bonus za szybkie otwarcie."
+msgstr "Wyzwania dnia i tygodnia dodają bonus za szybkie otwarcie."
 
 msgid "The onward cue means a safe is open and the next is waiting."
 msgstr "Dźwięk przejścia oznacza, że sejf jest otwarty i czeka następny."
@@ -63420,9 +63574,9 @@ msgid " When the guard stops at the door, keep still until he leaves."
 msgstr ""
 " Gdy strażnik stanie pod drzwiami, nie ruszaj się, dopóki nie odejdzie."
 
-#. placeholders: {label}, {name}, {index}, {safes}
-msgid " This is the {label} challenge, {name}: safe {index} of {safes}."
-msgstr " To wyzwanie {label}, {name}: sejf {index} z {safes}."
+#. placeholders: {challenge_title}, {name}, {index}, {safes}
+msgid " This is the {challenge_title}, {name}: safe {index} of {safes}."
+msgstr ""
 
 msgid " Strikes and hints are shared across the vault."
 msgstr " Błędy i podpowiedzi są wspólne dla całego skarbca."
@@ -64556,11 +64710,12 @@ msgid ""
 "seconds and shrinks every 4 trains, down to about 1.2 seconds. A new one "
 "comes every day."
 msgstr ""
-"Dzisiejszy rozkład, dzienny: 40 pociągów. Okno zaczyna się od około 2,5 "
-"sekundy i skraca co 4 pociągi, do około 1,2 sekundy. Nowy jest codziennie."
+"Dzisiejszy rozkład, wyzwanie dnia: 40 pociągów. Okno zaczyna się od około "
+"2,5 sekundy i skraca co 4 pociągi, do około 1,2 sekundy. Nowy jest "
+"codziennie."
 
 msgid "Today's timetable, the daily: 40 trains."
-msgstr "Dzisiejszy rozkład, dzienny: 40 pociągów."
+msgstr "Dzisiejszy rozkład, wyzwanie dnia: 40 pociągów."
 
 msgid ""
 "The window starts at about 2.5 seconds and shrinks every 4 trains, down to "
@@ -64574,12 +64729,12 @@ msgid ""
 "seconds and shrinks every 5 trains, down to about 0.9 seconds. A new one "
 "comes every Monday."
 msgstr ""
-"Tydzień ekspresów, tygodniowy: 60 pociągów. Okno zaczyna się od około 2,2 "
-"sekundy i skraca co 5 pociągów, do około 0,9 sekundy. Nowy jest w każdy "
-"poniedziałek."
+"Tydzień ekspresów, wyzwanie tygodnia: 60 pociągów. Okno zaczyna się od "
+"około 2,2 sekundy i skraca co 5 pociągów, do około 0,9 sekundy. Nowy jest w "
+"każdy poniedziałek."
 
 msgid "The express week, the weekly: 60 trains."
-msgstr "Tydzień ekspresów, tygodniowy: 60 pociągów."
+msgstr "Tydzień ekspresów, wyzwanie tygodnia: 60 pociągów."
 
 msgid ""
 "The window starts at about 2.2 seconds and shrinks every 5 trains, down to "
@@ -64593,12 +64748,12 @@ msgid ""
 "seconds and shrinks every 5 trains, down to about 0.7 seconds. A new one "
 "comes on the first of every month."
 msgstr ""
-"Nocna poczta, miesięczny: 100 pociągów. Okno zaczyna się od około 2,5 "
-"sekundy i skraca co 5 pociągów, do około 0,7 sekundy. Nowy jest pierwszego "
-"dnia każdego miesiąca."
+"Nocna poczta, wyzwanie miesiąca: 100 pociągów. Okno zaczyna się od około "
+"2,5 sekundy i skraca co 5 pociągów, do około 0,7 sekundy. Nowy jest "
+"pierwszego dnia każdego miesiąca."
 
 msgid "The night mail, the monthly: 100 trains."
-msgstr "Nocna poczta, miesięczny: 100 pociągów."
+msgstr "Nocna poczta, wyzwanie miesiąca: 100 pociągów."
 
 msgid ""
 "The window starts at about 2.5 seconds and shrinks every 5 trains, down to "
@@ -65974,8 +66129,8 @@ msgid ""
 "cup. Leave the challenge, on the pause menu, does not count, so you can "
 "come back later."
 msgstr ""
-"Każdy gracz dostaje tych samych gości. Dzienne wyzwanie to 3 gości, "
-"tygodniowe 6, a miesięczne to towarzystwo degustacyjne: 5 członków, z "
+"Każdy gracz dostaje tych samych gości. Wyzwanie dnia to 3 gości, wyzwanie "
+"tygodnia 6, a wyzwanie miesiąca to towarzystwo degustacyjne: 5 członków, z "
 "których każdy prosi o herbatę po nazwie. W wyzwaniu masz każdą całoroczną "
 "herbatę i każdą filiżankę, klepsydra zostaje w domu i nie zarabiasz monet. "
 "Każda filiżanka daje do 100 punktów, a wyniki się sumują. Wynik liczy się, "
@@ -65989,8 +66144,9 @@ msgid ""
 "The daily is 3 guests, the weekly 6, and the monthly is the tasting "
 "society: 5 members who each ask for a tea by name."
 msgstr ""
-"Dzienne wyzwanie to 3 gości, tygodniowe 6, a miesięczne to towarzystwo "
-"degustacyjne: 5 członków, z których każdy prosi o herbatę po nazwie."
+"Wyzwanie dnia to 3 gości, wyzwanie tygodnia 6, a wyzwanie miesiąca to "
+"towarzystwo degustacyjne: 5 członków, z których każdy prosi o herbatę po "
+"nazwie."
 
 msgid ""
 "In a challenge every year-round tea and every cup is yours, the sand timer "
@@ -69308,8 +69464,8 @@ msgid ""
 "Earlier play counts too, and stars still open later ponds. The Frost Fair "
 "returns the next winter."
 msgstr ""
-"Snowfall Skate jest w kategorii Sezonowe od 27 listopada przez całą zimę, "
-"do końca lutego, i zostaje jeszcze dwa tygodnie, do 14 marca. Zacznij w tym "
+"Snowfall Skate jest w Grach sezonowych od 27 listopada przez całą zimę, do "
+"końca lutego, i zostaje jeszcze dwa tygodnie, do 14 marca. Zacznij w tym "
 "czasie jazdę albo trening, a gra zostaje twoja na stałe, nawet jeśli "
 "wyjdziesz wcześniej: po zimie trafia do kategorii Spokojne gry. "
 "Wcześniejsza gra też się liczy, a gwiazdki nadal odblokowują kolejne stawy. "
@@ -69320,8 +69476,8 @@ msgid ""
 "winter, until the end of February, and stays two more weeks, through March "
 "14."
 msgstr ""
-"Snowfall Skate jest w kategorii Sezonowe od 27 listopada przez całą zimę, "
-"do końca lutego, i zostaje jeszcze dwa tygodnie, do 14 marca."
+"Snowfall Skate jest w Grach sezonowych od 27 listopada przez całą zimę, do "
+"końca lutego, i zostaje jeszcze dwa tygodnie, do 14 marca."
 
 msgid ""
 "Start a skate or a practice in that time and the game is yours to keep, "
@@ -69536,15 +69692,6 @@ msgstr "Nowy rekord, poprzednio {points_words}."
 #. placeholders: {points_words}
 msgid "Your best is {points_words}."
 msgstr "Twój rekord to {points_words}."
-
-#. placeholders: {label}, {streak}, {unit}
-#. one sentence of a longer line
-msgid "{label} streak: {streak} {unit}."
-msgstr ""
-
-#. placeholders: {label}, {streak}, {unit}, {resets}
-msgid "{label} streak: {streak} {unit}. {resets}"
-msgstr ""
 
 #. placeholders: {name}
 #. one sentence of a longer line
@@ -70528,12 +70675,11 @@ msgstr ""
 " Podczas jazdy śnieg osiada, a noc się kończy, gdy przykryje lód. Każdy "
 "zabrany lampion trochę dłużej utrzymuje lód czysty."
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the skate."
 msgstr ""
-" To wyzwanie {label}, {name}. Wyjście z menu pauzy nie zalicza jazdy."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the skate."
@@ -71341,30 +71487,30 @@ msgid ""
 "Today's landing, the daily: one moon made from the day's seed, with a tank "
 "twice the best burn. A new one comes every day."
 msgstr ""
-"Dzisiejsze lądowanie, dzienne: jeden księżyc z ziarna dnia, ze zbiornikiem "
-"na dwa najlepsze odpalania. Nowe jest codziennie."
+"Dzisiejsze lądowanie, wyzwanie dnia: jeden księżyc z ziarna dnia, ze "
+"zbiornikiem na dwa najlepsze odpalania. Nowe jest codziennie."
 
 msgid ""
 "Today's landing, the daily: one moon made from the day's seed, with a tank "
 "twice the best burn."
 msgstr ""
-"Dzisiejsze lądowanie, dzienne: jeden księżyc z ziarna dnia, ze zbiornikiem "
-"na dwa najlepsze odpalania."
+"Dzisiejsze lądowanie, wyzwanie dnia: jeden księżyc z ziarna dnia, ze "
+"zbiornikiem na dwa najlepsze odpalania."
 
 msgid ""
 "The weekly survey, the weekly: three moons in a row on one tank of fuel. "
 "What you burn on the first is gone for the next. The fuel bonus is paid "
 "once, at the end. A new one comes every Monday."
 msgstr ""
-"Badania tygodnia, tygodniowe: trzy księżyce z rzędu na jednym zbiorniku "
-"paliwa. Co spalisz na pierwszym, tego brak na następnym. Bonus za paliwo "
-"jest wypłacany raz, na końcu. Nowe są w każdy poniedziałek."
+"Badania tygodnia, wyzwanie tygodnia: trzy księżyce z rzędu na jednym "
+"zbiorniku paliwa. Co spalisz na pierwszym, tego brak na następnym. Bonus za "
+"paliwo jest wypłacany raz, na końcu. Nowe są w każdy poniedziałek."
 
 msgid ""
 "The weekly survey, the weekly: three moons in a row on one tank of fuel."
 msgstr ""
-"Badania tygodnia, tygodniowe: trzy księżyce z rzędu na jednym zbiorniku "
-"paliwa."
+"Badania tygodnia, wyzwanie tygodnia: trzy księżyce z rzędu na jednym "
+"zbiorniku paliwa."
 
 msgid "What you burn on the first is gone for the next."
 msgstr "Co spalisz na pierwszym, tego brak na następnym."
@@ -71377,16 +71523,16 @@ msgid ""
 "speed of 2.5 metres a second, and no hints. A new one comes on the first of "
 "every month."
 msgstr ""
-"Głęboki księżyc, miesięczne: jeden ciężki księżyc z małym zapasem paliwa, "
-"bezpieczną prędkością 2,5 metra na sekundę i bez podpowiedzi. Nowy jest "
-"pierwszego dnia każdego miesiąca."
+"Głęboki księżyc, wyzwanie miesiąca: jeden ciężki księżyc z małym zapasem "
+"paliwa, bezpieczną prędkością 2,5 metra na sekundę i bez podpowiedzi. Nowy "
+"jest pierwszego dnia każdego miesiąca."
 
 msgid ""
 "The deep moon, the monthly: one heavy moon with little spare fuel, a safe "
 "speed of 2.5 metres a second, and no hints."
 msgstr ""
-"Głęboki księżyc, miesięczne: jeden ciężki księżyc z małym zapasem paliwa, "
-"bezpieczną prędkością 2,5 metra na sekundę i bez podpowiedzi."
+"Głęboki księżyc, wyzwanie miesiąca: jeden ciężki księżyc z małym zapasem "
+"paliwa, bezpieczną prędkością 2,5 metra na sekundę i bez podpowiedzi."
 
 msgid ""
 "Full moon pad, on every full moon night. The title has a row for it. It "
@@ -71542,13 +71688,13 @@ msgid "R: repeat the last call-out."
 msgstr "R: powtórz ostatnią zapowiedź."
 
 msgid "H: a hint on what to do now. Not on the monthly challenge."
-msgstr "H: podpowiedź, co robić teraz. Nie w wyzwaniu miesięcznym."
+msgstr "H: podpowiedź, co robić teraz. Nie w wyzwaniu miesiąca."
 
 msgid "H: a hint on what to do now."
 msgstr "H: podpowiedź, co robić teraz."
 
 msgid "Not on the monthly challenge."
-msgstr "Nie w wyzwaniu miesięcznym."
+msgstr "Nie w wyzwaniu miesiąca."
 
 msgid "Today's landing"
 msgstr "Dzisiejsze lądowanie"
@@ -71652,9 +71798,9 @@ msgstr "Wszystkie lądowania udane: {n}. Bonus za paliwo: {fuel_bonus} pkt."
 msgid "{fuel_bonus} points of fuel bonus."
 msgstr "Bonus za paliwo: {fuel_bonus} pkt."
 
-#. placeholders: {title}, {score}, {score_line}, {streak}, {unit}, {sentence_start}
+#. placeholders: {title}, {score}, {score_line}, {streak_sentence}, {sentence_start}
 msgid ""
-"{title} result: {score} points. {score_line} A {streak} {unit} streak. "
+"{title} result: {score} points. {score_line} {streak_sentence} "
 "{sentence_start}"
 msgstr ""
 
@@ -72729,11 +72875,11 @@ msgid ""
 "The galleon appears in the monthly challenge. Glow pearls appear in the "
 "glow dive."
 msgstr ""
-"Galeon pojawia się w wyzwaniu miesięcznym. Świecące perły pojawiają się w "
+"Galeon pojawia się w wyzwaniu miesiąca. Świecące perły pojawiają się w "
 "nurkowaniu w poświacie."
 
 msgid "The galleon appears in the monthly challenge."
-msgstr "Galeon pojawia się w wyzwaniu miesięcznym."
+msgstr "Galeon pojawia się w wyzwaniu miesiąca."
 
 msgid "Glow pearls appear in the glow dive."
 msgstr "Świecące perły pojawiają się w nurkowaniu w poświacie."
@@ -73004,8 +73150,8 @@ msgid ""
 msgstr ""
 "Gdy wyprawa się kończy, gra podaje jej przebieg, łup i rekord. Potem menu "
 "podsumowania ma Zagraj ponownie, albo Spróbuj jeszcze raz po porażce, "
-"Posłuchaj podsumowania jeszcze raz oraz Powrót do tytułu. Po wyzwaniu "
-"ostatni wiersz to Powrót do wyzwań. Escape działa jak ostatni wiersz."
+"Posłuchaj podsumowania jeszcze raz oraz Wróć do ekranu tytułowego. Po "
+"wyzwaniu ostatni wiersz to Wróć do wyzwań. Escape działa jak ostatni wiersz."
 
 msgid ""
 "When an expedition ends, the game reads how it went, your haul and your "
@@ -73017,7 +73163,7 @@ msgid ""
 "the results again, and Back to the title."
 msgstr ""
 "Potem menu podsumowania ma Zagraj ponownie, albo Spróbuj jeszcze raz po "
-"porażce, Posłuchaj podsumowania jeszcze raz oraz Powrót do tytułu."
+"porażce, Posłuchaj podsumowania jeszcze raz oraz Wróć do ekranu tytułowego."
 
 msgid ""
 "The sea holds while a line is still being spoken. Your air, the sub, the "
@@ -73210,32 +73356,33 @@ msgid ""
 "front: murky water that halves your sonar, rich wrecks with more mines, rip "
 "currents, or thin air."
 msgstr ""
-"Dzienne, Szybkie zanurzenie: jedno zanurzenie, od 1 do 3, z utrudnieniem "
-"podanym na starcie: mętna woda, która skraca sonar o połowę, bogate wraki z "
-"większą liczbą min, prądy odpływowe albo rzadkie powietrze."
+"Wyzwanie dnia, Szybkie zanurzenie: jedno zanurzenie, od 1 do 3, z "
+"utrudnieniem podanym na starcie: mętna woda, która skraca sonar o połowę, "
+"bogate wraki z większą liczbą min, prądy odpływowe albo rzadkie powietrze."
 
 msgid ""
 "Weekly, Long haul: up to 3 dives from dive 3, with no hull repairs between "
 "them, and a twist of its own."
 msgstr ""
-"Tygodniowe, Długi rejs: do 3 zanurzeń od zanurzenia 3, bez naprawy kadłuba "
-"między nimi, z własnym utrudnieniem."
+"Wyzwanie tygodnia, Długi kurs: do 3 zanurzeń od zanurzenia 3, bez naprawy "
+"kadłuba między nimi, z własnym utrudnieniem."
 
 msgid ""
 "Monthly, The sunken galleon: on each dive, a galleon holding 1000 coins "
 "lies near the edge of the site, ringed by 6 mines. 2 dives from dive 4, and "
 "a single hull point. Salvaging the galleon takes 6 seconds of stillness."
 msgstr ""
-"Miesięczne, Zatopiony galeon: przy każdym zanurzeniu blisko krańca miejsca "
-"leży galeon z 1000 monet, otoczony 6 minami. 2 zanurzenia od zanurzenia 4 i "
-"jeden punkt kadłuba. Wydobycie z galeonu wymaga 6 sekund bezruchu."
+"Wyzwanie miesiąca, Zatopiony galeon: przy każdym zanurzeniu blisko krańca "
+"miejsca leży galeon z 1000 monet, otoczony 6 minami. 2 zanurzenia od "
+"zanurzenia 4 i jeden punkt kadłuba. Wydobycie z galeonu wymaga 6 sekund "
+"bezruchu."
 
 msgid ""
 "Monthly, The sunken galleon: on each dive, a galleon holding 1000 coins "
 "lies near the edge of the site, ringed by 6 mines."
 msgstr ""
-"Miesięczne, Zatopiony galeon: przy każdym zanurzeniu blisko krańca miejsca "
-"leży galeon z 1000 monet, otoczony 6 minami."
+"Wyzwanie miesiąca, Zatopiony galeon: przy każdym zanurzeniu blisko krańca "
+"miejsca leży galeon z 1000 monet, otoczony 6 minami."
 
 msgid "2 dives from dive 4, and a single hull point."
 msgstr "2 zanurzenia od zanurzenia 4 i jeden punkt kadłuba."
@@ -73610,8 +73757,9 @@ msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
 "A new daily each day, a weekly each Monday, a monthly each month."
 msgstr ""
-"Up i Down wybierają wyzwanie, Enter czyta opis, Escape wraca. Nowe dzienne "
-"co dzień, tygodniowe w każdy poniedziałek, miesięczne co miesiąc."
+"Up i Down wybierają wyzwanie, Enter czyta opis, Escape wraca. Nowe wyzwanie "
+"dnia co dzień, wyzwanie tygodnia w każdy poniedziałek, wyzwanie miesiąca co "
+"miesiąc."
 
 msgid ""
 "Up and Down move through the cues, Enter plays one, Escape goes back."
@@ -74472,10 +74620,6 @@ msgstr ""
 "Docierasz do zanurzenia {DEEP_UNLOCK}. Start w głębinie odblokowany: menu "
 "tytułowe może teraz zacząć wyprawę od zanurzenia {DEEP_UNLOCK}."
 
-#. placeholders: {streak}, {unit}
-msgid "A {streak} {unit} streak."
-msgstr ""
-
 #. placeholders: {title}, {score}
 #. one sentence of a longer line
 msgid "{title} result: {score} coins."
@@ -74565,8 +74709,8 @@ msgid ""
 "One dive, starting at dive {start_dive}. Today's twist, {name}: {describe}. "
 "Surface with as much treasure as you can."
 msgstr ""
-"Jedno zanurzenie, od zanurzenia {start_dive}. Dzisiejsze utrudnienie, "
-"{name}: {describe}. Wynurz się z jak największym skarbem."
+"Jedno zanurzenie, od zanurzenia {start_dive}. Utrudnienie dnia, {name}: "
+"{describe}. Wynurz się z jak największym skarbem."
 
 #. one sentence of a longer line
 msgid "Surface with as much treasure as you can."
@@ -74575,7 +74719,7 @@ msgstr "Wynurz się z jak największym skarbem."
 #. placeholders: {name}, {describe}
 #. one sentence of a longer line
 msgid "Today's twist, {name}: {describe}."
-msgstr "Dzisiejsze utrudnienie, {name}: {describe}."
+msgstr "Utrudnienie dnia, {name}: {describe}."
 
 #. placeholders: {name}, {describe}
 #. one sentence of a longer line
@@ -74881,7 +75025,7 @@ msgid ""
 "Orion\". A star that belongs to no pattern tonight is \"a faint star\". Faint "
 "stars are scattered differently each night."
 msgstr ""
-"Gdy punkt spocznie na gwieździe, gra ją nazywa, na przykład \"Betelgeuse, w "
+"Gdy punkt spocznie na gwieździe, gra ją nazywa, na przykład \"Betelgeza, w "
 "Orionie\". Gwiazda, która tej nocy nie należy do żadnego wzoru, to \"słaba "
 "gwiazda\". Słabe gwiazdy są co noc rozsiane inaczej."
 
@@ -74889,7 +75033,7 @@ msgid ""
 "When the point rests on a star, the game names it, such as \"Betelgeuse, in "
 "Orion\"."
 msgstr ""
-"Gdy punkt spocznie na gwieździe, gra ją nazywa, na przykład \"Betelgeuse, w "
+"Gdy punkt spocznie na gwieździe, gra ją nazywa, na przykład \"Betelgeza, w "
 "Orionie\"."
 
 msgid "A star that belongs to no pattern tonight is \"a faint star\"."
@@ -74908,7 +75052,7 @@ msgid ""
 "rests on the star that is next to trace, you hear \"next\", such as "
 "\"Bellatrix, next in Orion\". Space traces it."
 msgstr ""
-"Każdy gwiazdozbiór ma gwiazdy w kolejności, na przykład Orion: Betelgeuse, "
+"Każdy gwiazdozbiór ma gwiazdy w kolejności, na przykład Orion: Betelgeza, "
 "Bellatrix, Mintaka, Alnilam, Alnitak, Saiph i Rigel. Gdy punkt spocznie na "
 "gwieździe, która jest następna, słyszysz \"następna\", na przykład "
 "\"Bellatrix, następna w Orionie\". Space ją obrysowuje."
@@ -74917,7 +75061,7 @@ msgid ""
 "Each constellation has its stars in an order, such as Orion: Betelgeuse, "
 "Bellatrix, Mintaka, Alnilam, Alnitak, Saiph, then Rigel."
 msgstr ""
-"Każdy gwiazdozbiór ma gwiazdy w kolejności, na przykład Orion: Betelgeuse, "
+"Każdy gwiazdozbiór ma gwiazdy w kolejności, na przykład Orion: Betelgeza, "
 "Bellatrix, Mintaka, Alnilam, Alnitak, Saiph i Rigel."
 
 msgid ""
@@ -75258,7 +75402,7 @@ msgstr ""
 "Enter drugi raz w ciągu 4 sekund. Wszystko, co obrysujesz lub znajdziesz, "
 "jest już w dzienniku. Gra podaje, co przyniosła noc, a potem menu "
 "podsumowania ma Zagraj ponownie, Posłuchaj podsumowania jeszcze raz oraz "
-"Powrót do tytułu. Escape wraca do ekranu tytułowego."
+"Wróć do ekranu tytułowego. Escape wraca do ekranu tytułowego."
 
 msgid "Enter twice heads home and ends the night at any time."
 msgstr "Enter dwa razy to powrót do domu i koniec nocy w dowolnej chwili."
@@ -75274,7 +75418,7 @@ msgid ""
 "again, Hear the results again, and Back to the title."
 msgstr ""
 "Gra podaje, co przyniosła noc, a potem menu podsumowania ma Zagraj "
-"ponownie, Posłuchaj podsumowania jeszcze raz oraz Powrót do tytułu."
+"ponownie, Posłuchaj podsumowania jeszcze raz oraz Wróć do ekranu tytułowego."
 
 msgid "The star journal"
 msgstr "Dziennik gwiazd"
@@ -75331,13 +75475,14 @@ msgid ""
 "worth 100 points, less 25 for each hint, and 50 if the guide tone led you "
 "there."
 msgstr ""
-"Dzienne, Dzisiejsze łowy na gwiazdy: znajdź 5 nazwanych gwiazd, po jednej. "
-"Każda jest warta 100 punktów, minus 25 za każdą podpowiedź i 50, jeśli "
-"doprowadził cię do niej ton prowadzący."
+"Wyzwanie dnia, Dzisiejsze łowy na gwiazdy: znajdź 5 nazwanych gwiazd, po "
+"jednej. Każda jest warta 100 punktów, minus 25 za każdą podpowiedź i 50, "
+"jeśli doprowadził cię do niej ton prowadzący."
 
 msgid "Daily, Tonight's star hunt: find 5 named stars, one at a time."
 msgstr ""
-"Dzienne, Dzisiejsze łowy na gwiazdy: znajdź 5 nazwanych gwiazd, po jednej."
+"Wyzwanie dnia, Dzisiejsze łowy na gwiazdy: znajdź 5 nazwanych gwiazd, po "
+"jednej."
 
 msgid ""
 "Each is worth 100 points, less 25 for each hint, and 50 if the guide tone "
@@ -75350,11 +75495,12 @@ msgid ""
 "Weekly, The week's patterns: trace 3 constellations. Each star is worth 10 "
 "points, each constellation 100, and each hint costs 10."
 msgstr ""
-"Tygodniowe, Wzory tygodnia: obrysuj 3 gwiazdozbiory. Każda gwiazda jest "
-"warta 10 punktów, każdy gwiazdozbiór 100, a każda podpowiedź kosztuje 10."
+"Wyzwanie tygodnia, Wzory tygodnia: obrysuj 3 gwiazdozbiory. Każda gwiazda "
+"jest warta 10 punktów, każdy gwiazdozbiór 100, a każda podpowiedź kosztuje "
+"10."
 
 msgid "Weekly, The week's patterns: trace 3 constellations."
-msgstr "Tygodniowe, Wzory tygodnia: obrysuj 3 gwiazdozbiory."
+msgstr "Wyzwanie tygodnia, Wzory tygodnia: obrysuj 3 gwiazdozbiory."
 
 msgid ""
 "Each star is worth 10 points, each constellation 100, and each hint costs "
@@ -75367,15 +75513,15 @@ msgid ""
 "Monthly, The grand tour: trace every constellation of the season and find "
 "each wonder. Wonders are worth 150."
 msgstr ""
-"Miesięczne, Wielka wycieczka: obrysuj każdy gwiazdozbiór tej pory roku i "
-"znajdź każdą osobliwość. Osobliwości są warte 150."
+"Wyzwanie miesiąca, Wielka wycieczka: obrysuj każdy gwiazdozbiór tej pory "
+"roku i znajdź każdą osobliwość. Osobliwości są warte 150."
 
 msgid ""
 "Monthly, The grand tour: trace every constellation of the season and find "
 "each wonder."
 msgstr ""
-"Miesięczne, Wielka wycieczka: obrysuj każdy gwiazdozbiór tej pory roku i "
-"znajdź każdą osobliwość."
+"Wyzwanie miesiąca, Wielka wycieczka: obrysuj każdy gwiazdozbiór tej pory "
+"roku i znajdź każdą osobliwość."
 
 msgid "Wonders are worth 150."
 msgstr "Osobliwości są warte 150."
@@ -75516,7 +75662,7 @@ msgstr "Leonidy"
 
 #. placeholders: {adjective}
 msgid "{adjective} meteor shower"
-msgstr ""
+msgstr "Rój {adjective}"
 
 msgid "the northeast, below the handle of the Big Dipper"
 msgstr "północny wschód, pod dyszlem Wielkiego Wozu"
@@ -76734,8 +76880,7 @@ msgid ""
 "pole star."
 msgstr ""
 "Wielka niedźwiedzica. Jej siedem najjaśniejszych gwiazd tworzy Wielki Wóz, "
-"a dwie z przodu wozu, Merak i Dubhe, wskazują drogę do Polaris, Gwiazdy "
-"Polarnej."
+"a dwie z przodu wozu, Merak i Dubhe, wskazują drogę do Gwiazdy Polarnej."
 
 msgid "cassiopeia"
 msgstr ""
@@ -76776,7 +76921,7 @@ msgid "the little bear"
 msgstr "mała niedźwiedzica"
 
 msgid "Polaris"
-msgstr ""
+msgstr "Gwiazda Polarna"
 
 msgid "Yildun"
 msgstr ""
@@ -76792,9 +76937,9 @@ msgid ""
 "the North Pole, so the whole sky seems to turn around it while it stays "
 "still."
 msgstr ""
-"Mała niedźwiedzica. Polaris, na końcu jej ogona, stoi prawie dokładnie nad "
-"biegunem północnym, więc całe niebo zdaje się obracać wokół niej, a ona "
-"stoi w miejscu."
+"Mała niedźwiedzica. Gwiazda Polarna, na końcu jej ogona, stoi prawie "
+"dokładnie nad biegunem północnym, więc całe niebo zdaje się obracać wokół "
+"niej, a ona stoi w miejscu."
 
 msgid "cepheus"
 msgstr ""
@@ -76860,7 +77005,7 @@ msgid "the hunter"
 msgstr "myśliwy"
 
 msgid "Betelgeuse"
-msgstr ""
+msgstr "Betelgeza"
 
 msgid "Bellatrix"
 msgstr ""
@@ -76885,7 +77030,7 @@ msgid ""
 "white Rigel a foot, and the three stars of the belt stand almost in a "
 "perfect line."
 msgstr ""
-"Najjaśniejszy wzór zimy. Czerwona Betelgeuse to ramię, a biało-niebieski "
+"Najjaśniejszy wzór zimy. Czerwona Betelgeza to ramię, a biało-niebieski "
 "Rigel stopa, a trzy gwiazdy pasa stoją prawie w idealnej linii."
 
 msgid "taurus"
@@ -77972,36 +78117,37 @@ msgid ""
 "Tonight's rank, the daily: 6 pipes, each 3 to 10 steps out. A new one comes "
 "every day."
 msgstr ""
-"Dzisiejszy rząd, dzienny: 6 piszczałek, każda od 3 do 10 kroków od nuty. "
-"Nowy jest codziennie."
+"Dzisiejszy rząd, wyzwanie dnia: 6 piszczałek, każda od 3 do 10 kroków od "
+"nuty. Nowy jest codziennie."
 
 msgid "Tonight's rank, the daily: 6 pipes, each 3 to 10 steps out."
 msgstr ""
-"Dzisiejszy rząd, dzienny: 6 piszczałek, każda od 3 do 10 kroków od nuty."
+"Dzisiejszy rząd, wyzwanie dnia: 6 piszczałek, każda od 3 do 10 kroków od "
+"nuty."
 
 msgid ""
 "The swell organ, the weekly: 8 pipes, each 4 to 14 steps out. A new one "
 "comes every Monday."
 msgstr ""
-"Organy ekspresyjne, tygodniowe: 8 piszczałek, każda od 4 do 14 kroków od "
-"nuty. Nowe są w każdy poniedziałek."
+"Organy ekspresyjne, wyzwanie tygodnia: 8 piszczałek, każda od 4 do 14 "
+"kroków od nuty. Nowe są w każdy poniedziałek."
 
 msgid "The swell organ, the weekly: 8 pipes, each 4 to 14 steps out."
 msgstr ""
-"Organy ekspresyjne, tygodniowe: 8 piszczałek, każda od 4 do 14 kroków od "
-"nuty."
+"Organy ekspresyjne, wyzwanie tygodnia: 8 piszczałek, każda od 4 do 14 "
+"kroków od nuty."
 
 msgid ""
 "The full Echo, the monthly: all 10 pipes, each 1 to 18 steps out. A new one "
 "comes on the first of every month."
 msgstr ""
-"Całe Echo, miesięczne: wszystkie 10 piszczałek, każda od 1 do 18 kroków od "
-"nuty. Nowe jest pierwszego dnia każdego miesiąca."
+"Całe Echo, wyzwanie miesiąca: wszystkie 10 piszczałek, każda od 1 do 18 "
+"kroków od nuty. Nowe jest pierwszego dnia każdego miesiąca."
 
 msgid "The full Echo, the monthly: all 10 pipes, each 1 to 18 steps out."
 msgstr ""
-"Całe Echo, miesięczne: wszystkie 10 piszczałek, każda od 1 do 18 kroków od "
-"nuty."
+"Całe Echo, wyzwanie miesiąca: wszystkie 10 piszczałek, każda od 1 do 18 "
+"kroków od nuty."
 
 msgid ""
 "Leave the challenge, on the pause menu, stops without counting the rank, so "
@@ -78408,12 +78554,11 @@ msgstr "Piszczałka: {cur} z {pipes}"
 msgid "In tune: {tuned} of {pipes}"
 msgstr "Nastrojone: {tuned} z {pipes}"
 
-#. placeholders: {label}, {name}
+#. placeholders: {challenge_title}, {name}
 msgid ""
-" This is the {label} challenge, {name}. Leaving from the pause menu does "
+" This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the rank."
 msgstr ""
-" To wyzwanie {label}, {name}. Wyjście z menu pauzy nie zalicza rzędu."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the rank."
@@ -79007,10 +79152,10 @@ msgid ""
 msgstr ""
 "Gdy wyprawa się kończy, gra podaje, co zebrano, twój wynik i nowości w "
 "akwarium, wszystko na jednej stronie. Potem krótkie menu ma Zagraj "
-"ponownie, Posłuchaj podsumowania jeszcze raz, Twoje akwarium i Powrót do "
-"tytułu. Po wyzwaniu Zagraj ponownie zmienia się w Zagraj w to wyzwanie "
-"ponownie, a ostatni wiersz to Powrót do wyzwań. Escape działa jak ostatni "
-"wiersz."
+"ponownie, Posłuchaj podsumowania jeszcze raz, Twoje akwarium i Wróć do "
+"ekranu tytułowego. Po wyzwaniu Zagraj ponownie zmienia się w Zagraj "
+"ponownie w to wyzwanie, a ostatni wiersz to Wróć do wyzwań. Escape działa "
+"jak ostatni wiersz."
 
 msgid ""
 "When a trip ends, the game reads what you gathered, your score and what is "
@@ -79024,14 +79169,14 @@ msgid ""
 "and Back to the title."
 msgstr ""
 "Potem krótkie menu ma Zagraj ponownie, Posłuchaj podsumowania jeszcze raz, "
-"Twoje akwarium i Powrót do tytułu."
+"Twoje akwarium i Wróć do ekranu tytułowego."
 
 msgid ""
 "After a challenge, Play again becomes Play this challenge again, and the "
 "last row is Back to the challenges."
 msgstr ""
-"Po wyzwaniu Zagraj ponownie zmienia się w Zagraj w to wyzwanie ponownie, a "
-"ostatni wiersz to Powrót do wyzwań."
+"Po wyzwaniu Zagraj ponownie zmienia się w Zagraj ponownie w to wyzwanie, a "
+"ostatni wiersz to Wróć do wyzwań."
 
 msgid ""
 "Everything you gather goes home to your aquarium, which keeps growing. "
@@ -79229,16 +79374,16 @@ msgid ""
 "something. A quick tide is a shorter trip where every find is worth double. "
 "In hushed, only the pool in front of you plays."
 msgstr ""
-"Dzienne: trzy gatunki na dziś. Krótka wyprawa o zmierzchu na Skalistym "
-"Cyplu z trzema gatunkami do znalezienia, każdy wart o 100 punktów więcej, i "
-"jednym utrudnieniem. Utrudnienie to spokojna woda, ruchliwy brzeg, szybki "
-"pływ albo cisza. Przy spokojnej wodzie płochliwe stworzenia wychodzą dwa "
-"razy szybciej. Na ruchliwym brzegu w każdej sadzawce coś jest. Szybki pływ "
-"to krótsza wyprawa, na której każde znalezisko jest warte podwójnie. Przy "
-"ciszy gra tylko sadzawka przed tobą."
+"Wyzwanie dnia: trzy gatunki na dziś. Krótka wyprawa o zmierzchu na "
+"Skalistym Cyplu z trzema gatunkami do znalezienia, każdy wart o 100 punktów "
+"więcej, i jednym utrudnieniem. Utrudnienie to spokojna woda, ruchliwy "
+"brzeg, szybki pływ albo cisza. Przy spokojnej wodzie płochliwe stworzenia "
+"wychodzą dwa razy szybciej. Na ruchliwym brzegu w każdej sadzawce coś jest. "
+"Szybki pływ to krótsza wyprawa, na której każde znalezisko jest warte "
+"podwójnie. Przy ciszy gra tylko sadzawka przed tobą."
 
 msgid "Daily: tonight's three species."
-msgstr "Dzienne: trzy gatunki na dziś."
+msgstr "Wyzwanie dnia: trzy gatunki na dziś."
 
 msgid ""
 "A short dusk trip on Rocky Point with three species to find, each worth 100 "
@@ -79270,12 +79415,12 @@ msgid ""
 "Weekly: this week's rare find. A long trip on the Far Reef, where one rare "
 "creature is waiting somewhere. Finding it is worth 300 points."
 msgstr ""
-"Tygodniowe: rzadkie znalezisko tygodnia. Długa wyprawa na Dalekiej Rafie, "
-"gdzie gdzieś czeka jedno rzadkie stworzenie. Znalezienie go jest warte 300 "
-"punktów."
+"Wyzwanie tygodnia: rzadkie znalezisko tygodnia. Długa wyprawa na Dalekiej "
+"Rafie, gdzie gdzieś czeka jedno rzadkie stworzenie. Znalezienie go jest "
+"warte 300 punktów."
 
 msgid "Weekly: this week's rare find."
-msgstr "Tygodniowe: rzadkie znalezisko tygodnia."
+msgstr "Wyzwanie tygodnia: rzadkie znalezisko tygodnia."
 
 msgid ""
 "A long trip on the Far Reef, where one rare creature is waiting somewhere."
@@ -79288,13 +79433,13 @@ msgid ""
 "creature can turn up whatever the weather, and every different kind you "
 "gather is worth 40 points more. Gathering 8 different kinds meets the goal."
 msgstr ""
-"Miesięczne: Wielki odpływ. 15 sadzawek przy pływie syzygijnym, gdy każde "
-"rzadkie stworzenie może się pojawić bez względu na pogodę, a każdy inny "
-"gatunek, który zbierzesz, jest wart o 40 punktów więcej. Zebranie 8 różnych "
-"gatunków spełnia cel."
+"Wyzwanie miesiąca: Wielki odpływ. 15 sadzawek przy pływie syzygijnym, gdy "
+"każde rzadkie stworzenie może się pojawić bez względu na pogodę, a każdy "
+"inny gatunek, który zbierzesz, jest wart o 40 punktów więcej. Zebranie 8 "
+"różnych gatunków spełnia cel."
 
 msgid "Monthly: the Great Low Tide."
-msgstr "Miesięczne: Wielki odpływ."
+msgstr "Wyzwanie miesiąca: Wielki odpływ."
 
 msgid ""
 "15 pools on a spring tide, when every rare creature can turn up whatever "
@@ -79325,8 +79470,8 @@ msgstr ""
 "Niektóre dni na brzegu są inne. Każde wydarzenie ma własny wiersz w menu "
 "tytułowym, tuż pod Graj. Gdy jest zamknięte, wiersz mówi, że jest "
 "zablokowane i kiedy się otworzy. Zabiera cię na najdalszy otwarty brzeg i "
-"ma własny rekord. Jeśli wydarzenie skończy się, zanim znowu wybierzesz "
-"Graj, gra o tym powie i wrócisz do ekranu tytułowego. Zwykłe brzegi i "
+"ma własny rekord. Jeśli wydarzenie skończy się, zanim wybierzesz Zagraj "
+"ponownie, gra o tym powie i wrócisz do ekranu tytułowego. Zwykłe brzegi i "
 "wyzwania nigdy się nie zmieniają."
 
 msgid "Some days the shore is different."
@@ -79348,8 +79493,8 @@ msgid ""
 "If the event has ended by the time you choose Play again, the game says it "
 "has ended and you go back to the title."
 msgstr ""
-"Jeśli wydarzenie skończy się, zanim znowu wybierzesz Graj, gra o tym powie "
-"i wrócisz do ekranu tytułowego."
+"Jeśli wydarzenie skończy się, zanim wybierzesz Zagraj ponownie, gra o tym "
+"powie i wrócisz do ekranu tytułowego."
 
 msgid "The ordinary shores and the challenges never change."
 msgstr "Zwykłe brzegi i wyzwania nigdy się nie zmieniają."
@@ -79704,8 +79849,8 @@ msgid ""
 "Monday and a monthly event each month."
 msgstr ""
 "Up i Down wybierają wyzwanie, Enter czyta jego cel, Escape wraca. Każdy "
-"gracz dostaje ten sam brzeg: nowy dzienny co dzień, tygodniowy co "
-"poniedziałek i miesięczne wydarzenie co miesiąc."
+"gracz dostaje ten sam brzeg: nowe wyzwanie dnia co dzień, wyzwanie tygodnia "
+"co poniedziałek i miesięczne wydarzenie co miesiąc."
 
 msgid "Opening the Tide Pools challenge."
 msgstr "Otwieram wyzwanie Tide Pools."
@@ -80267,12 +80412,13 @@ msgstr "Znaleziono {found} z trzech na dziś."
 msgid "Your {first} on this one."
 msgstr "Twój {first} w tym wyzwaniu."
 
-#. placeholders: {unit}
-msgid "The first {unit} of a streak."
+msgid "The first day of a streak."
 msgstr ""
 
-#. placeholders: {n}, {unit}
-msgid "A {n} {unit} streak."
+msgid "The first week of a streak."
+msgstr ""
+
+msgid "The first month of a streak."
 msgstr ""
 
 #. placeholders: {kinds}, {ALL}
@@ -81518,9 +81664,9 @@ msgid ""
 "the challenges. Escape does the same as the last row."
 msgstr ""
 "Gdy rozgrywka się kończy, gra mówi, jak poszło i jakie rekordy padły. Potem "
-"menu podsumowania oferuje Zagraj znowu, albo Spróbuj znowu, gdy upadek "
-"zakończył rozgrywkę, Posłuchaj podsumowania znowu i Wróć do ekranu "
-"tytułowego. Po wygranym pojedynczym przejściu pierwsze jest Następne "
+"menu podsumowania oferuje Zagraj ponownie, albo Spróbuj jeszcze raz, gdy "
+"upadek zakończył rozgrywkę, Posłuchaj podsumowania jeszcze raz i Wróć do "
+"ekranu tytułowego. Po wygranym pojedynczym przejściu pierwsze jest Następne "
 "przejście. Po wyzwaniu ostatni wiersz to Wróć do wyzwań. Escape działa jak "
 "ostatni wiersz."
 
@@ -81532,9 +81678,9 @@ msgid ""
 "Then the results menu offers Play again, or Try again after a fall ends the "
 "run, Hear the results again, and Back to the title."
 msgstr ""
-"Potem menu podsumowania oferuje Zagraj znowu, albo Spróbuj znowu, gdy "
-"upadek zakończył rozgrywkę, Posłuchaj podsumowania znowu i Wróć do ekranu "
-"tytułowego."
+"Potem menu podsumowania oferuje Zagraj ponownie, albo Spróbuj jeszcze raz, "
+"gdy upadek zakończył rozgrywkę, Posłuchaj podsumowania jeszcze raz i Wróć "
+"do ekranu tytułowego."
 
 msgid "After a single crossing you win, Next crossing comes first."
 msgstr "Po wygranym pojedynczym przejściu pierwsze jest Następne przejście."
@@ -81548,13 +81694,13 @@ msgid ""
 "wire, with twice the sway, and Slick wire, where every step slips a little "
 "to one side."
 msgstr ""
-"Dzienne: jedno przejście z niespodzianką i 3 życia. Niespodzianki to Dzień "
-"wichury, z podmuchami dwa razy częściej, Parada gołębi, z 3 razy większą "
-"liczbą gołębi, Luźna lina, z podwójnym kołysaniem, i Śliska lina, na której "
-"każdy krok trochę ześlizguje się w bok."
+"Wyzwanie dnia: jedno przejście z utrudnieniem i 3 życia. Utrudnienia to "
+"Dzień wichury, z podmuchami dwa razy częściej, Parada gołębi, z 3 razy "
+"większą liczbą gołębi, Luźna lina, z podwójnym kołysaniem, i Śliska lina, "
+"na której każdy krok trochę ześlizguje się w bok."
 
 msgid "Daily: one crossing with a twist, and 3 lives."
-msgstr "Dzienne: jedno przejście z utrudnieniem i 3 życia."
+msgstr "Wyzwanie dnia: jedno przejście z utrudnieniem i 3 życia."
 
 msgid ""
 "Twists include Gale day, with gusts twice as often, Pigeon parade, with 3 "
@@ -81567,14 +81713,15 @@ msgstr ""
 
 msgid "Weekly: 3 high crossings in a row, with a twist, on only 2 lives."
 msgstr ""
-"Tygodniowe: 3 wysokie przejścia z rzędu, z utrudnieniem, tylko na 2 życiach."
+"Wyzwanie tygodnia: 3 wysokie przejścia z rzędu, z utrudnieniem, tylko na 2 "
+"życiach."
 
 msgid ""
 "Monthly: the Grand Span, one immense wire 60 floors up and 60 steps long, "
 "with a single life, and the wind changes side with every gust."
 msgstr ""
-"Miesięczne: Wielkie Przęsło, jedna ogromna lina 60 pięter w górze i 60 "
-"kroków długa, z jednym życiem, a wiatr zmienia stronę z każdym podmuchem."
+"Wyzwanie miesiąca: Wielkie Przęsło, jedna ogromna lina 60 pięter w górze i "
+"60 kroków długa, z jednym życiem, a wiatr zmienia stronę z każdym podmuchem."
 
 msgid ""
 "The rule and the time until the next challenge are read before you start, "
@@ -83061,8 +83208,8 @@ msgid ""
 "belt. Each gift rides toward the belt's edge. If it falls off, it breaks "
 "and the clock loses 4 seconds."
 msgstr ""
-"Przed każdą zmianą odprawa mówi, ile prezentów posortować, ile trwa zmiana "
-"i kto czeka. Każda osoba stoi po twojej lewej, prosto przed tobą albo po "
+"Przed każdą zmianą opis mówi, ile prezentów posortować, ile trwa zmiana i "
+"kto czeka. Każda osoba stoi po twojej lewej, prosto przed tobą albo po "
 "prawej i chce jednej rzeczy. Space uruchamia taśmę. Każdy prezent jedzie w "
 "stronę krawędzi taśmy. Jeśli spadnie, rozbija się, a zegar traci 4 sekundy."
 
@@ -83160,7 +83307,7 @@ msgid ""
 "with Left and Right on the Gift Sort row of the title."
 msgstr ""
 "Jest 8 zmian. Każda ma więcej prezentów, więcej rodzajów dźwięków i szybszą "
-"taśmę, a taśma przyspiesza, gdy sortujesz. Pierwsze trzy odprawy mówią, jak "
+"taśmę, a taśma przyspiesza, gdy sortujesz. Pierwsze trzy opisy mówią, jak "
 "brzmi każde życzenie. Od zmiany 4 musisz to rozpoznać sam. Od zmiany 5 ktoś "
 "w połowie zmienia zdanie: gra zapowiada jego nowe życzenie. Dostawa daje "
 "tym więcej, im szybsza i im dłuższa seria, razy numer zmiany. Ukończenie "
@@ -83704,15 +83851,15 @@ msgid ""
 msgstr ""
 "Wyzwanie dnia się zmienia. W parzyste dni miesiąca to pośpiech: jedna "
 "zmiana Sortowania prezentów, zmiana 5. W nieparzyste dni to poranna poczta: "
-"stos 3 przy Biurku życzeń. Każdy dzień przynosi jedną niespodziankę. Na "
-"taśmie niespodzianka to jedna z tych. Godzina szczytu: taśma jedzie o jedną "
+"stos 3 przy Biurku życzeń. Każdy dzień przynosi jedno utrudnienie. Na "
+"taśmie utrudnienie to jedno z tych. Godzina szczytu: taśma jedzie o jedną "
 "czwartą szybciej. Krótki czas: cztery piąte zwykłego czasu. Duże "
 "zamówienie: trzy dodatkowe prezenty, z odrobiną dodatkowego czasu. Wybredni "
-"goście: zły wybór kosztuje podwójny czas. Przy biurku niespodzianka to "
-"jedna z tych. W słomie: każde pudełko trzeba potrząsnąć dwa razy. Długa "
-"półka: dwa pudełka więcej. Ostrożne ręce: złe pudełko kosztuje podwójnie. "
-"Mało potrząsań: tylko dwa potrząśnięcia na list, potem kosztują punkty. "
-"Odprawa powtarza niespodziankę."
+"goście: zły wybór kosztuje podwójny czas. Przy biurku utrudnienie to jedno "
+"z tych. W słomie: każde pudełko trzeba potrząsnąć dwa razy. Długa półka: "
+"dwa pudełka więcej. Ostrożne ręce: złe pudełko kosztuje podwójnie. Mało "
+"potrząsań: tylko dwa potrząśnięcia na list, potem kosztują punkty. Opis "
+"powtarza utrudnienie."
 
 msgid "The daily challenge alternates."
 msgstr "Wyzwanie dnia się zmienia."
@@ -83772,7 +83919,7 @@ msgid ""
 msgstr ""
 "Wyzwanie tygodnia to podwójne święta: zmiany od 4 do 6 Sortowania "
 "prezentów, potem stos 4 przy Biurku życzeń, liczone razem jak w fabule. "
-"Niespodzianka tygodnia jest na taśmie. Jeśli zegar cię pokona w warsztacie, "
+"Utrudnienie tygodnia jest na taśmie. Jeśli zegar cię pokona w warsztacie, "
 "rozgrywka kończy się tam z punktami, które masz."
 
 msgid ""
@@ -83861,10 +84008,10 @@ msgstr ""
 "stos, Pomieszaną pocztę, Odliczanie do północy i każdą noc, ile jest "
 "otwartych, oraz wyniki wyzwań. Gdy rozgrywka się kończy, gra czyta "
 "podsumowanie, a potem menu podsumowania. Następny stos albo Następna noc "
-"gra kolejny. Zagraj znowu albo Spróbuj znowu gra tę samą rozgrywkę. "
-"Posłuchaj podsumowania znowu czyta je jeszcze raz, a Wróć do ekranu "
-"tytułowego wraca. Escape w menu podsumowania działa jak Wróć do ekranu "
-"tytułowego."
+"gra kolejny. Zagraj ponownie albo Spróbuj jeszcze raz gra tę samą "
+"rozgrywkę. Posłuchaj podsumowania jeszcze raz czyta je jeszcze raz, a Wróć "
+"do ekranu tytułowego wraca. Escape w menu podsumowania działa jak Wróć do "
+"ekranu tytułowego."
 
 msgid ""
 "The Gift Sort, Wish Desk and Midnight Countdown rows on the title name your "
@@ -83892,13 +84039,13 @@ msgid "Next stack or Next night plays the next one."
 msgstr "Następny stos albo Następna noc gra kolejny."
 
 msgid "Play again or Try again plays the same run."
-msgstr "Zagraj znowu albo Spróbuj znowu gra tę samą rozgrywkę."
+msgstr "Zagraj ponownie albo Spróbuj jeszcze raz gra tę samą rozgrywkę."
 
 msgid ""
 "Hear the results again reads them once more, and Back to the title goes "
 "back."
 msgstr ""
-"Posłuchaj podsumowania znowu czyta je jeszcze raz, a Wróć do ekranu "
+"Posłuchaj podsumowania jeszcze raz czyta je jeszcze raz, a Wróć do ekranu "
 "tytułowego wraca."
 
 msgid "Escape on the results menu does the same as Back to the title."
@@ -84216,8 +84363,8 @@ msgid ""
 "belt."
 msgstr ""
 "Sortowanie prezentów, zmiany od {WEEKLY_SHIFTS} do {WEEKLY_SHIFTS2}, potem "
-"stos {WEEKLY_STACK} przy Biurku życzeń. Oba wyniki się sumują. "
-"Niespodzianka jest na taśmie."
+"stos {WEEKLY_STACK} przy Biurku życzeń. Oba wyniki się sumują. Utrudnienie "
+"jest na taśmie."
 
 #. one sentence of a longer line
 msgid "The twist is on the belt."
@@ -84253,18 +84400,13 @@ msgstr ""
 msgid "Your {r}best on this challenge is {best}."
 msgstr ""
 
-#. placeholders: {line}, {streak}, {unit}
-#. one sentence of a longer line
-msgid "{line} A {streak} {unit} streak."
-msgstr ""
-
 #. placeholders: {title}, {score}
 #. one sentence of a longer line
 msgid "{title} score {score}."
 msgstr "{title}, wynik {score}."
 
-#. placeholders: {title}, {score}, {line}, {streak}, {unit}, {resets}
-msgid "{title} score {score}. {line} A {streak} {unit} streak. {resets}"
+#. placeholders: {title}, {score}, {line}, {streak_sentence}, {resets}
+msgid "{title} score {score}. {line} {streak_sentence} {resets}"
 msgstr ""
 
 msgid "Winter Wonderland"
@@ -84276,8 +84418,8 @@ msgid ""
 "and a monthly each month."
 msgstr ""
 "Up i Down wybierają wyzwanie, Enter czyta opis, Escape wraca. Każdy gracz "
-"dostaje te same rozgrywki: nowe dzienne co dzień, tygodniowe co "
-"poniedziałek i miesięczne co miesiąc."
+"dostaje te same rozgrywki: nowe wyzwanie dnia co dzień, wyzwanie tygodnia "
+"co poniedziałek i wyzwanie miesiąca co miesiąc."
 
 msgid "Opening the Winter Wonderland challenge."
 msgstr "Otwieram wyzwanie Winter Wonderland."
@@ -84561,6 +84703,11 @@ msgstr "{m} {m:minutę|minuty|minut} przed północą"
 #. placeholders: {at}
 msgid "The party fizzled out {at}."
 msgstr "Impreza zgasła {at}."
+
+#. placeholders: {score}
+#. one sentence of a longer line
+msgid "Practice score {score}."
+msgstr ""
 
 #. placeholders: {head}, {score}
 #. one sentence of a longer line
@@ -84976,9 +85123,9 @@ msgstr "Późna poczta. "
 msgid " It would {name} in its box."
 msgstr ""
 
-#. placeholders: {late}, {from}, {age}, {WRITES}, {words}, {sound}
-msgid "{late}{from}, age {age}, {WRITES}: {words}{sound}"
-msgstr "{late}{from}, lat {age}, {WRITES}: {words}{sound}"
+#. placeholders: {late}, {from}, {age}, {words}, {sound}
+msgid "{late}{from}, age {age}, writes: {words}{sound}"
+msgstr ""
 
 #. placeholders: {last}
 msgid " of {last}"
@@ -85617,9 +85764,6 @@ msgstr "Kuzyn Theo"
 
 msgid "Mrs. Holly"
 msgstr "Pani Holly"
-
-msgid "writes"
-msgstr "pisze"
 
 msgid ""
 "A blizzard has buried the North Pole, and the workshop is a day behind. The "
@@ -89934,3 +90078,197 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{label} challenge"
+#~ msgstr "wyzwanie {label}"
+
+#~ msgid "Play this {label} challenge again"
+#~ msgstr "Zagraj ponownie w to wyzwanie {label}"
+
+#~ msgid "{label} challenges"
+#~ msgstr "{label} we wszystkich grach"
+
+#~ msgid "none in place"
+#~ msgstr "żaden na miejscu"
+
+#~ msgid "{i} in place"
+#~ msgstr "{i} na miejscu"
+
+#~ msgid "none misplaced"
+#~ msgstr "żaden nie na miejscu"
+
+#~ msgid "{m} misplaced"
+#~ msgstr "{m} nie na miejscu"
+
+#~ msgid ""
+#~ " This is the {label} challenge, {name}. Leaving from the pause menu does "
+#~ "not count it."
+#~ msgstr " To wyzwanie {label}, {name}. Wyjście z menu pauzy się nie liczy."
+
+#~ msgid "This is the {label} challenge, {name}."
+#~ msgstr "To wyzwanie {label}, {name}."
+
+#~ msgid ""
+#~ " This is the {label} challenge, {name}. Leaving from the pause menu does "
+#~ "not count the walk."
+#~ msgstr ""
+#~ " To wyzwanie {label}, {name}. Wyjście z menu pauzy nie zalicza spaceru."
+
+#~ msgid ""
+#~ " This is the {label} challenge, {name}. Leaving from the pause menu does "
+#~ "not count the run."
+#~ msgstr ""
+#~ " To wyzwanie {label}, {name}. Wyjście z menu pauzy nie zalicza rozgrywki."
+
+#~ msgid ""
+#~ " This is the {label} challenge. Leaving from the pause menu does not count "
+#~ "it."
+#~ msgstr " To wyzwanie {label}. Wyjście z menu pauzy go nie zalicza."
+
+#~ msgid "This is the {label} challenge."
+#~ msgstr "To wyzwanie {label}."
+
+#~ msgid "{a} and {s}"
+#~ msgstr "{a} i {s}"
+
+#~ msgid "close by"
+#~ msgstr "blisko"
+
+#~ msgid "{cards_words}, {the} down to {the2}"
+#~ msgstr "{cards_words}, od {the} do {the2}"
+
+#~ msgid "{the} in pile {p}"
+#~ msgstr "{the} w kolumnie {p}"
+
+#~ msgid "the turned-up {name}"
+#~ msgstr "odkryta karta {name}"
+
+#~ msgid "{the} on its foundation"
+#~ msgstr "{the} na swoim stosie"
+
+#~ msgid "go on its foundation"
+#~ msgstr "idzie na swój stos"
+
+#~ msgid "go on {the} in pile {q}"
+#~ msgstr "idzie na {the} w kolumnie {q}"
+
+#~ msgid "go to the empty pile {q}"
+#~ msgstr "idzie na pustą kolumnę {q}"
+
+#~ msgid "{sentence_start} can {place}."
+#~ msgstr "{sentence_start} {place}."
+
+#~ msgid "{sentence_start} is the bottom card of the pile."
+#~ msgstr "{sentence_start} to spodnia karta kolumny."
+
+#~ msgid ""
+#~ "{sentence_start} is the deepest face-up card, with {n} face down under it."
+#~ msgstr "{sentence_start} to najgłębsza odkryta karta, pod nią zakryte: {n}."
+
+#~ msgid "the top card"
+#~ msgstr "wierzchnia karta"
+
+#~ msgid "{ordinal} from the top"
+#~ msgstr "{ordinal} od góry"
+
+#~ msgid "{what} on the {name} foundation."
+#~ msgstr "{what} na stosie {name}."
+
+#~ msgid "{what} on {the}, pile {q}."
+#~ msgstr "{what} na {the}, kolumna {q}."
+
+#~ msgid "{what} to pile {q}."
+#~ msgstr "{what} do kolumny {q}."
+
+#~ msgid "{sentence_start} cannot go on an empty pile."
+#~ msgstr "{sentence_start} nie może iść na pustą kolumnę."
+
+#~ msgid "{sentence_start} cannot go on an empty pile. Only a king goes there."
+#~ msgstr ""
+#~ "{sentence_start} nie może iść na pustą kolumnę. Tam pasuje tylko król."
+
+#~ msgid "{sentence_start} cannot go on the {name}."
+#~ msgstr "{sentence_start} nie może iść na {name}."
+
+#~ msgid "{lead} A king goes only on an empty pile."
+#~ msgstr "{lead} Król idzie tylko na pustą kolumnę."
+
+#~ msgid "{lead} It needs a {need} {rank_words}."
+#~ msgstr "{lead} Potrzebna {need} karta: {rank_words}."
+
+#~ msgid "The {name} foundation needs the {rank_words} next."
+#~ msgstr "Stos {name} potrzebuje teraz karty {rank_words}."
+
+#~ msgid "{sentence_start} cannot go up yet."
+#~ msgstr "{sentence_start} nie może jeszcze iść na stos."
+
+#~ msgid ""
+#~ "{sentence_start} cannot go up yet. The {name} foundation needs the "
+#~ "{rank_words} next."
+#~ msgstr ""
+#~ "{sentence_start} nie może jeszcze iść na stos. Stos {name} potrzebuje teraz "
+#~ "karty {rank_words}."
+
+#~ msgid "{sentence_start} goes on the {name} foundation."
+#~ msgstr "{sentence_start} idzie na stos {name}."
+
+#~ msgid ""
+#~ "This is the {label} challenge, {name}. Leaving from the pause menu does not "
+#~ "count the run."
+#~ msgstr ""
+#~ "To wyzwanie {label}, {name}. Wyjście z menu pauzy nie zalicza rozgrywki."
+
+#~ msgid "{challenge_name}, a {label} challenge.{twist}{carry} "
+#~ msgstr "{challenge_name}, wyzwanie {label}.{twist}{carry} "
+
+#~ msgid ""
+#~ " This is the {label} challenge, {name}. Leaving from the pause menu does "
+#~ "not count the hall."
+#~ msgstr ""
+#~ " To wyzwanie {label}, {name}. Wyjście z menu pauzy nie zalicza galerii."
+
+#~ msgid ""
+#~ "Your journal: {places} of {ALL} places found, {lanterns} lantern{s_ending} "
+#~ "gathered in all."
+#~ msgstr ""
+#~ "Twój dziennik: znalezione miejsca {places} z {ALL}, łącznie zebrano "
+#~ "{lanterns} {lanterns:lampion|lampiony|lampionów}."
+
+#~ msgid "ahead and to your {side}"
+#~ msgstr "z przodu, strona: {side}"
+
+#~ msgid "to your {side}"
+#~ msgstr "strona: {side}"
+
+#~ msgid "behind you to the {side}"
+#~ msgstr "z tyłu, strona: {side}"
+
+#~ msgid "{words}, at {clock} o'clock"
+#~ msgstr "{words}, na godzinie {clock}"
+
+#~ msgid "Lantern {order} is lit"
+#~ msgstr "Lampion {order} świeci"
+
+#~ msgid ", score {score}"
+#~ msgstr ", wynik {score}"
+
+#~ msgid " This is the {label} challenge, {name}: safe {index} of {safes}."
+#~ msgstr " To wyzwanie {label}, {name}: sejf {index} z {safes}."
+
+#~ msgid ""
+#~ " This is the {label} challenge, {name}. Leaving from the pause menu does "
+#~ "not count the skate."
+#~ msgstr ""
+#~ " To wyzwanie {label}, {name}. Wyjście z menu pauzy nie zalicza jazdy."
+
+#~ msgid ""
+#~ " This is the {label} challenge, {name}. Leaving from the pause menu does "
+#~ "not count the rank."
+#~ msgstr ""
+#~ " To wyzwanie {label}, {name}. Wyjście z menu pauzy nie zalicza rzędu."
+
+#~ msgid "{late}{from}, age {age}, {WRITES}: {words}{sound}"
+#~ msgstr "{late}{from}, lat {age}, {WRITES}: {words}{sound}"
+
+#~ msgid "writes"
+#~ msgstr "pisze"
