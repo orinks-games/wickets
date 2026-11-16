@@ -15,7 +15,7 @@ fn wide(code: &str) -> bool {
 /// far longer. Short lines are left alone, where a word or two is a big
 /// share.
 fn short_speech(code: &str, english: &str, translated: &str) -> Vec<String> {
-    let (en, tr) = (english.chars().count(), translated.chars().count());
+    let (en, tr) = (spoken_len(english), spoken_len(translated));
     if wide(code) || en < 30 || tr * 10 <= en * 17 {
         return Vec::new();
     }
@@ -23,6 +23,26 @@ fn short_speech(code: &str, english: &str, translated: &str) -> Vec<String> {
         "is {} percent longer than the English; say it in fewer words",
         (tr * 100 / en).saturating_sub(100)
     )]
+}
+
+/// Length as heard: a plural `{n:one|few|many}` counts as its longest form,
+/// not as all of its forms written side by side.
+fn spoken_len(line: &str) -> usize {
+    let mut total = 0;
+    let mut rest = line;
+    while let Some(open) = rest.find('{') {
+        total += rest[..open].chars().count();
+        let Some(close) = rest[open..].find('}') else {
+            return total + rest[open..].chars().count();
+        };
+        let inner = &rest[open + 1..open + close];
+        total += match inner.split_once(':') {
+            Some((_, forms)) => forms.split('|').map(|f| f.chars().count()).max().unwrap_or(0),
+            None => inner.chars().count() + 2,
+        };
+        rest = &rest[open + close + 1..];
+    }
+    total + rest.chars().count()
 }
 
 /// Symbols a screen reader reads out by name, or text that only works on a
@@ -55,6 +75,12 @@ mod tests {
         assert!(short_speech("de", english, "Drücke Enter, um die Lampe anzuzünden.").is_empty());
         assert_eq!(short_speech("de", english, &"x".repeat(80)).len(), 1);
         assert!(short_speech("ja", english, &"x".repeat(80)).is_empty());
+        assert!(short_speech(
+            "ru",
+            "Treasure chest, {value} coins.",
+            "Сундук с сокровищем, {value} {value:монета|монеты|монет}."
+        )
+        .is_empty());
         assert_eq!(
             no_new_symbols("es", "Lamps lit.", "Faroles (encendidos)."),
             ["adds parentheses"]
