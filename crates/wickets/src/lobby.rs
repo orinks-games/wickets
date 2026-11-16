@@ -255,6 +255,8 @@ impl Menu for Lobby {
     /// if the saved records had to start over, then names the events the
     /// games hold today.
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
+        // Before the lobby says anything, in the player's language.
+        parlor_core::voice_lines::follow_system_once(ctx);
         // A lobby made after the app started still gives Hearken the tracks.
         if ctx.soundtrack.tracks().is_empty() {
             parlor_core::soundtrack::refresh(ctx);
