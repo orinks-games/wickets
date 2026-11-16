@@ -52,3 +52,48 @@ English.
 | Quit, Exit | Sair | |
 | Resume | Continuar | |
 | New game | Nova partida | |
+| title, title menu | tela inicial | A game's own first menu. "Voltar à tela inicial." |
+| briefing | instruções | Feminine plural. "Enter lê as instruções." |
+| streak | sequência | Feminine. "Uma sequência de 3 dias." |
+| hint | dica | |
+| weekly, monthly challenge | desafio da semana, desafio do mês | Like "desafio do dia". |
+| pause menu | menu de pausa | |
+| Play, Play again | Jogar, Jogar de novo | Menu rows. |
+| Records | Recordes | The menu. |
+| keepsake | lembrança | |
+| deal (cards) | mão | Feminine. One deal of a card game. |
+| advent calendar | calendário do Advento | The lobby's December calendar. "atrás da porta 13 do calendário do Advento". |
+| Leave the challenge | Sair do desafio | The pause menu row. |
+| bonus | bônus | Masculine, same in plural. |
+| lantern | lanterna | |
+| level | fase | Feminine. "Fase 3", "Escolher fase". |
+| twist (challenge) | regra especial | A challenge's modifier. "com uma regra especial". |
+| combo | combo | Masculine. |
+| lane | faixa | Feminine. Where raiders, reindeer and the like come down. "na faixa da esquerda". |
+| spoken call-outs | avisos falados | The setting. "Avisos falados: ligado." |
+| ornament | enfeite | Masculine. Advent calendar and tree ornaments. |
+| errand | tarefa | A Happening errand in story mode. |
+| post (a score) | publicar | "Publicar pontuações", "Não publicar". |
+| Grandma | a vovó | The character's role in Grandma's Grudge and the advent calendar. |
+| the Echo | o Echo | Theo's machine in the cellar. A name: kept in English, masculine. |
+| the Calendar Hall | a Sala do Calendário | A room of the parlor. |
+| the Arcade Floor | o Andar dos Fliperamas | A room of the parlor. |
+| the Study | o Escritório | A room of the parlor. |
+| the Conservatory | a Estufa | A room of the parlor. |
+| the Card Room | a Sala de Cartas | A room of the parlor. |
+| From the story | Da história | The Play menu group. |
+| mince pie | tortinha de Natal | |
+| Happening (story) | Acontecimento | Masculine. The story list's errand or riddle. "o Acontecimento da história". |
+| stamp, stamp book | carimbo, álbum de carimbos | What a Happening earns. |
+| round | rodada | Feminine. "Rodada 3 de 8." |
+| Unlocks | Desbloqueios | The menu. |
+| track, album | faixa, álbum | In the Soundtrack. |
+| the Challenges board | a tela de Desafios | The lobby's Challenges screen. |
+| relaxed best | recorde no relaxado | "Seu recorde no relaxado é 40." |
+| Story mode | modo história | |
+| Swap, Skip | Trocar, Pular | The story list rows. |
+| Report a problem | Relatar um problema | The Settings row. |
+| normal, quick (pace) | normal, rápido | With Relaxado: "relaxado, normal ou rápido". |
+| Try again, Hear the results again | Tentar de novo, Ouvir os resultados de novo | Results menu rows. |
+| Back to the title, Back to the challenges | Voltar à tela inicial, Voltar aos desafios | Results menu rows. |
+| row (of a menu) | opção | Feminine. "a opção Jogar". |
