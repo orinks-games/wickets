@@ -52,3 +52,13 @@ English.
 | Quit, Exit | Salir | |
 | Resume | Seguir | |
 | New game | Nueva partida | |
+| the title, title menu | el menú principal | A game's first menu. "Volver al menú principal." |
+| briefing | resumen | What a game says before a special run. |
+| bonus | extra | "puntos extra". |
+| twist | giro | |
+| streak | racha | |
+| keepsake | recuerdo | |
+| lantern | farolillo | Kept apart from "farol", the door lamp. |
+| Records | Récords | |
+| controller | mando | |
+| Spoken call-outs | Avisos por voz | |

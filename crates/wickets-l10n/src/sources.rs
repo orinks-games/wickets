@@ -79,7 +79,12 @@ pub fn read(root: &Path, file: &Path) -> Result<Sources, String> {
             "help" => {
                 for file in files(&full, |p| p.file_name().is_some_and(|n| n == "help.md")) {
                     let rel = util::rel(&file, root);
-                    add_all(&mut out.entries, &rel, help_lines(&util::read_text(&file)?));
+                    let doc = util::read_text(&file)?;
+                    // A seasonal mark shows or hides text by the date: take
+                    // the help both ways.
+                    for open in [true, false] {
+                        add_all(&mut out.entries, &rel, help_lines(&seasons(&doc, open)));
+                    }
                 }
             }
             "story" => {
@@ -288,6 +293,74 @@ pub fn help_lines(doc: &str) -> Vec<String> {
     out
 }
 
+fn is_mark(name: &str) -> bool {
+    !name.is_empty() && name.chars().all(|c| c.is_ascii_lowercase() || c == '_')
+}
+
+/// A help document with every season shown (`open`) or none, as
+/// `parlor_core::seasonal::filter` shows it: a `## Heading {season}`
+/// section, a `{season} ` line and an inline `{season:words}` appear only
+/// in their season.
+pub fn seasons(doc: &str, open: bool) -> String {
+    let mut out = String::new();
+    let mut skipping = false;
+    for line in doc.lines() {
+        if let Some(heading) = line.strip_prefix("## ") {
+            let marked = heading.rfind(" {").filter(|&at| {
+                heading.ends_with('}') && is_mark(&heading[at + 2..heading.len() - 1])
+            });
+            skipping = marked.is_some() && !open;
+            if !skipping {
+                out.push_str("## ");
+                out.push_str(marked.map_or(heading, |at| &heading[..at]));
+                out.push('\n');
+            }
+            continue;
+        }
+        if skipping {
+            continue;
+        }
+        let (bullet, rest) = match line.strip_prefix("- ") {
+            Some(rest) => ("- ", rest),
+            None => ("", line),
+        };
+        let lead = rest
+            .strip_prefix('{')
+            .and_then(|r| r.split_once("} "))
+            .filter(|(name, _)| is_mark(name));
+        let rest = match lead {
+            Some(_) if !open => continue,
+            Some((_, words)) => words,
+            None => rest,
+        };
+        out.push_str(bullet);
+        let mut tail = rest;
+        while let Some(start) = tail.find('{') {
+            let after = &tail[start + 1..];
+            let mark = after
+                .split_once(':')
+                .filter(|(name, _)| is_mark(name))
+                .and_then(|(_, t)| t.split_once('}'));
+            match mark {
+                Some((words, t)) => {
+                    out.push_str(&tail[..start]);
+                    if open {
+                        out.push_str(words);
+                    }
+                    tail = t;
+                }
+                None => {
+                    out.push_str(&tail[..=start]);
+                    tail = after;
+                }
+            }
+        }
+        out.push_str(tail);
+        out.push('\n');
+    }
+    out
+}
+
 /// Whether a line is a `key: value` setting (`id: act1/keeper`,
 /// `lamps: 0`), not text.
 fn is_setting(line: &str) -> bool {
@@ -380,6 +453,17 @@ mod tests {
                 "Down waits."
             ]
         );
+    }
+
+    #[test]
+    fn seasonal_marks_show_both_ways() {
+        let doc =
+            "## Play\n\nRun.{winter: Or skate.}\n\n{winter} Snow.\n\n## Ice {winter}\n\nCold.\n";
+        assert_eq!(
+            seasons(doc, true),
+            "## Play\n\nRun. Or skate.\n\nSnow.\n\n## Ice\n\nCold.\n"
+        );
+        assert_eq!(seasons(doc, false), "## Play\n\nRun.\n\n\n");
     }
 
     #[test]
