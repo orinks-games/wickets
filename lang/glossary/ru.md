@@ -56,29 +56,27 @@ English.
 | challenge | испытание | Neuter. Any challenge, daily, weekly or monthly. |
 | streak | серия | Feminine. "Серия из 3 дней." |
 | Play | Играть | The menu row that starts a run. |
-| briefing | брифинг | Masculine. The short page before a run: "Брифинг перед игрой: включено." |
+| briefing | брифинг | Masculine. The short page read before a challenge or run starts: "Брифинг перед игрой: включено." |
 | Unlocks | Открытия | The menu of everything a player earns. "Открыто: ..." for a new one. |
 | Story mode | Режим сюжета | The lobby row is Сюжет. |
 | Happening (the story's) | Происшествие | Neuter. The story list's errand or riddle; earns a штамп. |
 | Swap, Skip | Заменить, Пропустить | The story list's rows. |
 | Continue | Продолжить | The lobby row that reopens the last game. |
-| Records | Статистика | Feminine. The title menu row that reads a game's tallies and bests. |
-| briefing | вводная | Feminine. The page read before a challenge or run starts. |
+| Records | Статистика | Feminine. The title menu row that reads a game's tallies and bests. Never Рекорды, even as the first word of a Records line: "Статистика. ..." |
 | bonus | бонус | Masculine. |
 | twist | особенность | Feminine. A challenge's special rule. |
-| Play again, Try again | Играть снова, Ещё раз | Results menu rows. |
+| Play again, Try again | Играть снова, Ещё раз | Results menu rows. Help names them the same way: «Играть снова». |
 | Hear the results again | Повторить итоги | Results menu row. |
 | Back to the title | В стартовое меню | Results and pause menu row. |
 | pause menu | меню паузы | Neuter. |
 | Leave the challenge | Покинуть испытание | The pause menu row. |
-| call-outs, spoken call-outs | подсказки, голосовые подсказки | Feminine plural. The setting: "Голосовые подсказки: включено." |
-| daily, weekly, monthly (challenge) | испытание дня, недели, месяца | |
+| call-out, call-outs, Spoken call-outs | оповещение, оповещения, Голосовые оповещения | Neuter. Every call the game speaks in play: "Голосовые оповещения: включено.", "R повторяет последнее оповещение." Never подсказка, which is the hint. Aim and height call-outs: оповещения прицела, оповещения высоты. |
+| daily, weekly, monthly (challenge) | испытание дня, недели, месяца | Also for "Daily:", "Weekly:", "Monthly:" at the start of a help line: "Испытание дня: ...". Not ежедневное, еженедельное, ежемесячное испытание. |
 | locked | закрыто | Agrees like "открыто": "Ночь ..., закрыто" for a menu row. |
 | keepsake, keepsake shelf | сувенир, полка сувениров | Masculine. What a game keeps for good: "Сувенир: ...". |
 | lantern | фонарик | Masculine. Kept apart from "фонарь", the door's lamp. |
 | combo | комбо | Neuter, never declined. "Самое длинное комбо." |
-| hint | подсказка | Feminine. "Подсказка снимает 15 очков." |
-| briefing (settled) | брифинг | Two workers added "briefing" at once; use брифинг, the first row. The вводная row is withdrawn. |
+| hint | подсказка | Feminine. Only the hint key and what it gives: "Подсказка снимает 15 очков." Never used for call-outs. |
 | the Echo | Эхо | Neuter. Theo's machine in the cellar: "Эхо проигрывает". |
 | Calendar Hall, Arcade Floor, Study, Conservatory, Card Room | Календарный зал, Игровой зал, Кабинет, Оранжерея, Карточная | The parlor's rooms in the story. |
 | From the story | Из сюжета | The Play menu section. |
@@ -91,3 +89,10 @@ English.
 | round | раунд | Masculine. "Раунд 2 из 8." |
 | star, stars | звезда, звёзды | Feminine. "{n} {n:звезда|звезды|звёзд}". |
 | tune | мелодия | Feminine. A piece of a game's music in play; a song kept in the Soundtrack is песня. |
+| Back to the lobby, Back to the parlor | Назад в прихожую, Назад в салон | Pause and title menu rows; help names them in full. |
+| Practice room | Репетиционный зал | Masculine. The unscored practice row, in every game that has one. |
+| Spoken aim | Называть прицел | The Settings row in Cupid's Quiver. |
+| Meteor shower | Метеорный поток | Masculine. The title row and the sky event. A shower's name is plural: Персеиды, Геминиды. |
+| star and constellation names | standard Russian names | Полярная звезда, Большая Медведица, Ковш (the Big Dipper), Вега, Орион. Never left in English. |
+| full moon names | Волчья луна, Урожайная луна, Охотничья луна... | Adjective plus луна: "Урожайная луна", never "Луна урожая". |
+| Lantern Night | Ночь фонариков | Nevermore Manor's Halloween night; lantern is фонарик. The real Lantern Festival is Праздник фонарей. |
