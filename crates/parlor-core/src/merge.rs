@@ -18,10 +18,10 @@
 //!
 //! When both sides played on from a copy they last agreed on (the base,
 //! which Hearken keeps after each sync), a Newer value only one side
-//! changed takes that side's, and one both changed is merged field by field
-//! ([`three_way`]): a count of plays adds both sides' plays, a best or a
-//! level keeps the higher, a list that only grew keeps everything either
-//! side added, and anything else goes to the copy saved later.
+//! changed takes that side's. One both changed, or one two copies hold with
+//! no base between them, still goes whole to the copy saved later, but with
+//! its counts of plays added up from both sides and the best of each best
+//! kept ([`put_together`]).
 //!
 //! A key only one side has is simply kept. Values are merged as JSON, so a
 //! field a newer version added survives a pass through an older one.
@@ -103,12 +103,7 @@ pub fn merge(local: &mut Copy, cloud: &Copy, base: Option<&Copy>) -> bool {
             _ => match was {
                 Some(was) if theirs == was => ours.clone(),
                 Some(was) if ours == was => theirs.clone(),
-                Some(was) => {
-                    let both = three_way(ours, theirs, was, newer_is_theirs, Field::Other);
-                    keep_earned(&both, if newer_is_theirs { ours } else { theirs })
-                }
-                None if newer_is_theirs => keep_earned(theirs, ours),
-                None => keep_earned(ours, theirs),
+                was => put_together(ours, theirs, was, newer_is_theirs),
             },
         };
         if &merged != ours {
@@ -122,92 +117,71 @@ pub fn merge(local: &mut Copy, cloud: &Copy, base: Option<&Copy>) -> bool {
     changed
 }
 
-/// What a number in a Newer value counts, by its field's name.
+/// What a field of a Newer value holds, by its name.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 enum Field {
-    /// Plays counted up: both sides' plays since the base add up.
+    /// Plays counted up: both sides' plays add up.
     Count,
+    /// A best: the higher stays (a number, or a map of them).
+    Best,
     /// Lower is better (a fastest time, the fewest moves).
     Lowest,
-    /// Anything else: a best, a level, a place reached. The higher stays.
-    Other,
+    /// Anything else (a level, a place, a choice) goes with the whole value.
+    Whole,
 }
 
-/// Fields that count plays, across the games. A field not named here keeps
-/// the higher number, which never loses a level or a best, though a count
-/// left off this list would only keep one side's plays.
+/// Fields that count plays, across the games.
 const COUNTS: &[&str] = &[
     "nights", "wins", "runs", "games", "rounds", "strikes", "spares", "opened", "cracked",
     "sets_danced", "tunes_danced", "steps", "hearts", "pairs", "roses", "pipes", "perfect",
-    "lamps", "practice_halls", "crumbs", "cleared_runs",
+    "lamps", "practice_halls", "crumbs",
 ];
 
-fn field(name: &str, parent: Field) -> Field {
+fn field(name: &str) -> Field {
     if COUNTS.contains(&name) {
         Field::Count
     } else if name.starts_with("fastest") || name.contains("fewest") || name.starts_with("shortest") {
         Field::Lowest
-    } else if parent == Field::Count {
-        // Inside a count's map (plays per level): still counts.
-        Field::Count
+    } else if name.starts_with("best") || name.ends_with("_best") || name.starts_with("longest") || name.starts_with("deepest") {
+        Field::Best
     } else {
-        parent
+        Field::Whole
     }
 }
 
-/// `ours` and `theirs` both changed from `was`: put them together field by
-/// field, as the module docs say.
-fn three_way(ours: &Value, theirs: &Value, was: &Value, newer_is_theirs: bool, kind: Field) -> Value {
-    if ours == theirs || theirs == was {
-        return ours.clone();
-    }
-    if ours == was {
-        return theirs.clone();
-    }
-    let newer = || if newer_is_theirs { theirs.clone() } else { ours.clone() };
-    match (ours, theirs) {
-        (Value::Object(a), Value::Object(b)) => {
-            let empty = serde_json::Map::new();
-            let w = was.as_object().unwrap_or(&empty);
-            let mut out = a.clone();
-            for (k, t) in b {
-                let next = match (a.get(k), w.get(k)) {
-                    (None, _) => t.clone(),
-                    (Some(o), Some(w)) => three_way(o, t, w, newer_is_theirs, field(k, kind)),
-                    (Some(o), None) => both_new(o, t, newer_is_theirs, field(k, kind)),
-                };
-                out.insert(k.clone(), next);
-            }
-            Value::Object(out)
+/// A value both sides changed (or that two copies with no base both hold):
+/// the newer side whole, but with both sides' plays added up and the best
+/// of each best kept. `was` is the base's value, `None` when there is none,
+/// so each side's plays all count.
+fn put_together(ours: &Value, theirs: &Value, was: Option<&Value>, newer_is_theirs: bool) -> Value {
+    let (newer, older) = if newer_is_theirs { (theirs, ours) } else { (ours, theirs) };
+    let (Value::Object(o), Value::Object(t)) = (ours, theirs) else {
+        return keep_earned(newer, older);
+    };
+    let w = was.and_then(Value::as_object);
+    let mut out = newer.as_object().cloned().unwrap_or_default();
+    for (k, mine) in o {
+        let Some(other) = t.get(k) else { continue };
+        let next = match field(k) {
+            Field::Count => match (mine.as_i64(), other.as_i64()) {
+                (Some(a), Some(b)) => {
+                    let base = w.and_then(|w| w.get(k)).and_then(Value::as_i64).unwrap_or(0);
+                    Some(Value::from((a + b - base).max(a.min(b)).max(0)))
+                }
+                _ => None,
+            },
+            Field::Best => Some(best(mine, other, newer_is_theirs)),
+            Field::Lowest => match (mine.as_f64(), other.as_f64()) {
+                (Some(a), Some(b)) => Some(if a <= b { mine.clone() } else { other.clone() }),
+                _ => None,
+            },
+            Field::Whole => None,
+        };
+        if let Some(next) = next {
+            out.insert(k.clone(), next);
         }
-        (Value::Number(_), Value::Number(_)) => match (ours.as_i64(), theirs.as_i64(), was.as_i64()) {
-            (Some(o), Some(t), Some(w)) if kind == Field::Count => Value::from((w + (o - w) + (t - w)).max(0)),
-            (Some(_), Some(_), _) => both_new(ours, theirs, newer_is_theirs, kind),
-            _ => newer(),
-        },
-        (Value::Array(a), Value::Array(b)) => {
-            let w = was.as_array().map(Vec::as_slice).unwrap_or(&[]);
-            let grew = |list: &Vec<Value>| w.iter().all(|item| list.contains(item));
-            if grew(a) && grew(b) {
-                let mut out = a.clone();
-                out.extend(b.iter().filter(|item| !a.contains(item)).cloned());
-                Value::Array(out)
-            } else {
-                newer()
-            }
-        }
-        _ => newer(),
     }
-}
-
-/// Two values with no base between them (a field both sides added).
-fn both_new(ours: &Value, theirs: &Value, newer_is_theirs: bool, kind: Field) -> Value {
-    match (ours.as_i64(), theirs.as_i64()) {
-        (Some(o), Some(t)) if kind == Field::Lowest => Value::from(o.min(t)),
-        (Some(o), Some(t)) => Value::from(o.max(t)),
-        _ if newer_is_theirs => theirs.clone(),
-        _ => ours.clone(),
-    }
+    keep_earned(&Value::Object(out), older)
 }
 
 /// `newer` whole, with the stars and played flag `older` earned kept.
@@ -357,7 +331,8 @@ mod tests {
         assert!(merge(&mut one, &two, None));
         assert_eq!(
             one.games["x/progress"],
-            json!({"played": true, "stars": {"1": 3, "2": 2, "4": 1}, "nights": 2})
+            json!({"played": true, "stars": {"1": 3, "2": 2, "4": 1}, "nights": 7}),
+            "with no base, both computers' nights count"
         );
     }
 
@@ -394,7 +369,24 @@ mod tests {
     }
 
     #[test]
-    fn levels_and_bests_keep_the_higher_and_lists_keep_both_additions() {
+    fn the_same_count_on_both_sides_still_adds_up() {
+        let was = copy(json!({"riverboat-dice/progress": {"nights": 1, "wins": 0}}), &[]);
+        let mut one = copy(json!({"riverboat-dice/progress": {"nights": 2, "wins": 0}}), &[("riverboat-dice/progress", 100)]);
+        let two = copy(json!({"riverboat-dice/progress": {"nights": 2, "wins": 1}}), &[("riverboat-dice/progress", 200)]);
+        assert!(merge(&mut one, &two, Some(&was)));
+        assert_eq!(one.games["riverboat-dice/progress"], json!({"nights": 3, "wins": 1}));
+    }
+
+    #[test]
+    fn combining_with_no_base_keeps_both_computers_plays() {
+        let mut here = copy(json!({"riverboat-dice/progress": {"nights": 1, "wins": 0}}), &[("riverboat-dice/progress", 900)]);
+        let account = copy(json!({"riverboat-dice/progress": {"nights": 2, "wins": 1}}), &[("riverboat-dice/progress", 100)]);
+        assert!(merge(&mut here, &account, None));
+        assert_eq!(here.games["riverboat-dice/progress"], json!({"nights": 3, "wins": 1}));
+    }
+
+    #[test]
+    fn levels_and_bests_keep_the_higher_and_the_rest_goes_whole() {
         let was = copy(
             json!({"x/progress": {"night": 3, "fastest": 90, "best": {"1": 10}, "songs": ["a"], "boat": "red"}}),
             &[],
@@ -410,7 +402,7 @@ mod tests {
         assert!(merge(&mut one, &two, Some(&was)));
         assert_eq!(
             one.games["x/progress"],
-            json!({"night": 4, "fastest": 80, "best": {"1": 12, "2": 5}, "songs": ["a", "b", "c"], "boat": "green"})
+            json!({"night": 4, "fastest": 80, "best": {"1": 12, "2": 5}, "songs": ["a", "c"], "boat": "green"})
         );
     }
 
