@@ -215,10 +215,10 @@ pub fn finish_job(
     vec![
         first,
         format!(
-            "{} result: {score} points. {} A {streak} {} streak. {}",
+            "{} result: {score} points. {} {} {}",
             ch.title(),
             score_line(result, pace),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ]

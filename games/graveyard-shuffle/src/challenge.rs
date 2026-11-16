@@ -249,11 +249,11 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, run: &Run) -> Vec<String> {
         ),
         format!("Moves: {}.", run.tally().words()),
         format!(
-            "{} result: {}. {} A {streak} {} streak. {}",
+            "{} result: {}. {} {} {}",
             ch.title(),
             points_words(run.score()),
             score_line(result),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ]

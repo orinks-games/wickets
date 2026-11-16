@@ -516,10 +516,10 @@ impl RunScreen {
             let result = Challenges::submit_at(ctx, &ch, pace, score);
             let streak = Challenges::streak(ctx, ID, ch.period).max(1);
             pages.push(format!(
-                "{} result: {score}. {} A {streak} {} streak. {}",
+                "{} result: {score}. {} {} {}",
                 ch.title(),
                 challenge_result_at(result, pace),
-                ch.period.unit(),
+                ch.period.streak_sentence(streak),
                 ch.resets()
             ));
             if run.mode == Mode::Monthly {

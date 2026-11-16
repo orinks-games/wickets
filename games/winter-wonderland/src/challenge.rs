@@ -325,9 +325,9 @@ pub fn result_line(ctx: &mut Ctx<Parlor>, plan: &Plan, pace: Pace, score: u64) -
     };
     let streak = Challenges::streak(ctx, ID, ch.period).max(1);
     format!(
-        "{} score {score}. {line} A {streak} {} streak. {}",
+        "{} score {score}. {line} {} {}",
         ch.title(),
-        ch.period.unit(),
+        ch.period.streak_sentence(streak),
         ch.resets()
     )
 }

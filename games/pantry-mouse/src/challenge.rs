@@ -283,11 +283,11 @@ pub fn finish(
     vec![
         format!("{} {}.", outcome_words(run), points_words(run.score)),
         format!(
-            "{} result: {}. {} A {streak} {} streak. {}",
+            "{} result: {}. {} {} {}",
             ch.title(),
             points_words(run.score),
             score_line(result, pace),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ]

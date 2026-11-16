@@ -233,8 +233,12 @@ pub fn challenge_briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
         None => String::new(),
     };
     let pages = vec![format!(
-        "{back}{name}: {plan} {twist_text}{goal} Leaving from the pause menu keeps the garden until the {} is over.",
-        period.unit(),
+        "{back}{name}: {plan} {twist_text}{goal} {}",
+        match period {
+            Period::Daily => "Leaving from the pause menu keeps the garden until the day is over.",
+            Period::Weekly => "Leaving from the pause menu keeps the garden until the week is over.",
+            Period::Monthly => "Leaving from the pause menu keeps the garden until the month is over.",
+        },
     )];
     let mut slot = Some((garden, challenge));
     Pages::briefing(pages).then(move |ctx| {
@@ -720,7 +724,7 @@ impl RunScreen {
             }
             let streak = Challenges::streak(ctx, ID, c.period);
             if streak > 0 {
-                line.push_str(&format!(" A {streak} {} streak.", c.period.unit()));
+                line.push_str(&format!(" {}", c.period.streak_sentence(streak)));
             }
             line.push(' ');
             line.push_str(&c.resets());

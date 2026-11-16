@@ -188,17 +188,9 @@ impl Answer {
     pub fn words(&self) -> String {
         match (self.in_place, self.misplaced) {
             (0, 0) => "None of these bells is in the peal".to_string(),
-            (i, m) => {
-                let place = match i {
-                    0 => "none in place".to_string(),
-                    i => format!("{i} in place"),
-                };
-                let mis = match m {
-                    0 => "none misplaced".to_string(),
-                    m => format!("{m} misplaced"),
-                };
-                hearken::text::sentence_start(&format!("{place}, {mis}"))
-            }
+            (0, m) => format!("None in place, {m} misplaced"),
+            (i, 0) => format!("{i} in place, none misplaced"),
+            (i, m) => format!("{i} in place, {m} misplaced"),
         }
     }
 

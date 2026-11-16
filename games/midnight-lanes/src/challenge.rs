@@ -260,11 +260,11 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, session: &Session) -> Vec<S
     vec![
         first,
         format!(
-            "{} result: {}. {} A {streak} {} streak. {}",
+            "{} result: {}. {} {} {}",
             ch.title(),
             score_words(ch.period, total),
             score_line(ch.period, result),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ]

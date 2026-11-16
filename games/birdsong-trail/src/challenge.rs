@@ -319,10 +319,10 @@ fn submit(ctx: &mut Ctx<Parlor>, ch: &Challenge, score: u32, most: u32) -> Vec<S
     let result = Challenges::submit(ctx, ch, score as u64);
     let streak = Challenges::streak(ctx, ID, ch.period).max(1);
     vec![format!(
-        "{} result: {score} of {most} points. {} A {streak} {} streak. {}",
+        "{} result: {score} of {most} points. {} {} {}",
         ch.title(),
         score_line(result),
-        ch.period.unit(),
+        ch.period.streak_sentence(streak),
         ch.resets()
     )]
 }

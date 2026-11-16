@@ -630,10 +630,10 @@ pub fn finish(
     let pages = vec![
         format!("{summary}{ending}"),
         format!(
-            "{} result: {total} points. {} A {streak} {} streak. {}",
+            "{} result: {total} points. {} {} {}",
             ch.title(),
             result_line(result, pace),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ];

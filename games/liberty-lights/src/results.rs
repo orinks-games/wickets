@@ -4,7 +4,6 @@
 use hearken::text::sentence_start;
 use hearken::{Bus, Ctx};
 use parlor_core::menus::{labels, Back, Results};
-use parlor_core::words::streak_sentence;
 use parlor_core::{Challenges, Parlor, Records, ScoreResult};
 
 use crate::festival::Run;
@@ -379,10 +378,7 @@ fn challenge(
                 run.total
             ));
         }
-        summary.push_str(&format!(
-            " {line} {}",
-            streak_sentence(streak, ch.period.unit())
-        ));
+        summary.push_str(&format!(" {line} {}", ch.period.streak_sentence(streak)));
         more.push_str(&format!(" {}", ch.resets()));
     } else {
         summary.push_str(&format!(" Challenge total {}.", run.total));

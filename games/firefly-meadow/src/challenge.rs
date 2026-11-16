@@ -5,7 +5,6 @@
 use hearken::{Ctx, State};
 use parlor_core::challenges::today;
 use parlor_core::menus::{self, labels, Back, ChallengeGame, Results};
-use parlor_core::words::streak_sentence;
 use parlor_core::{Challenge, Challenges, Pages, Parlor, Period, ScoreResult};
 
 use crate::evening::{self, Mode};
@@ -212,7 +211,7 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, evening: &Evening) -> Vec<S
             "{} result: {score} points. {} {} {}",
             ch.title(),
             score_line(result),
-            streak_sentence(streak, ch.period.unit()),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ]

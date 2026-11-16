@@ -234,11 +234,11 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, hall: &Hall) -> Vec<String>
     vec![
         crate::play::lit_line(hall),
         format!(
-            "{} result: {}. {} A {streak} {} streak. {}",
+            "{} result: {}. {} {} {}",
             ch.title(),
             points_words(hall.score),
             score_line(result),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ]

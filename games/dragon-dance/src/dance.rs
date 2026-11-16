@@ -4,7 +4,6 @@
 use hearken::text::{end_sentence, sentence_start};
 use hearken::{Bus, Ctx, InputEvent, Key, Sound, State};
 use parlor_core::menus::{self, labels, Back, Leave, Results};
-use parlor_core::words::streak_sentence;
 use parlor_core::{
     challenges, Challenge, Challenges, Parlor, ParlorAction, Period, Records, ScoreResult,
 };
@@ -737,7 +736,7 @@ impl DanceScreen {
                 ch.title(),
                 d.score,
                 challenge_line(r),
-                streak_sentence(streak, ch.period.unit()),
+                ch.period.streak_sentence(streak),
                 ch.resets()
             ));
         }
@@ -1009,8 +1008,8 @@ impl State<Parlor> for DanceScreen {
         );
         if let Some(period) = self.launch.mode.period() {
             now.push_str(&format!(
-                " This is the {} challenge. Leaving from the pause menu does not count it.",
-                period.label().to_lowercase()
+                " This is the {}. Leaving from the pause menu does not count it.",
+                period.challenge_title().to_lowercase()
             ));
         }
         format!("{now} {}", Self::controls(ctx))

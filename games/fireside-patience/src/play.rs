@@ -12,7 +12,7 @@ use crate::challenge::{self, Job, CHALLENGES_NAME};
 use crate::events::{self, EventDeal};
 use crate::progress::{self, Saved};
 use crate::rules::{
-    cards_words, moves_words, ordinal, points, rank_words, run_seed, Card, Game, Hint, Move,
+    cards_words, moves_words, points, rank_words, run_seed, Card, Game, Hint, Move,
     Played, Spot, Suit, Turned, DECK, KING, PILES,
 };
 use crate::{sound, HELP, ID, TITLE_NAME};
@@ -46,11 +46,6 @@ pub fn place_of(spot: Spot) -> usize {
         Spot::Waste => STOCK_PLACE,
         Spot::Foundation(f) => PILES + 1 + f,
     }
-}
-
-/// "the 6 of hearts", as it reads mid-sentence.
-fn the(card: Card) -> String {
-    format!("the {}", card.name())
 }
 
 /// "Hearts foundation".
@@ -247,13 +242,12 @@ impl PlayScreen {
         let cards = self.held_cards();
         match cards.as_slice() {
             [] => String::new(),
-            [one] => the(*one),
-            [first, .., last] => format!(
-                "{}, {} down to {}",
-                cards_words(cards.len()),
-                the(*first),
-                the(*last)
-            ),
+            [one] => format!("the {}", one.name()),
+            [first, .., last] => {
+                let n = cards.len();
+                let (first, last) = (first.name(), last.name());
+                format!("{n} cards, the {first} down to the {last}")
+            }
         }
     }
 
@@ -405,25 +399,47 @@ impl PlayScreen {
         out.join(" ")
     }
 
-    /// A move, as the hint names it.
+    /// A move, as the hint names it. Each case is a whole sentence, so a
+    /// translation never has to join pieces of one.
     fn move_words(&self, mv: Move) -> String {
         let t = &self.game.table;
         let cards = t.cards_at(mv.from);
-        let card = cards[cards.len() - mv.count];
-        let what = match mv.from {
-            Spot::Pile(p) => format!("{} in pile {}", the(card), p + 1),
-            Spot::Waste => format!("the turned-up {}", card.name()),
-            Spot::Foundation(_) => format!("{} on its foundation", the(card)),
+        let card = cards[cards.len() - mv.count].name();
+        let onto = match mv.to {
+            Spot::Pile(q) => t.piles[q].top().map(|c| (c.name(), q + 1)),
+            _ => None,
         };
-        let place = match mv.to {
-            Spot::Foundation(_) => "go on its foundation".to_string(),
-            Spot::Pile(q) => match t.piles[q].top() {
-                Some(onto) => format!("go on {} in pile {}", the(onto), q + 1),
-                None => format!("go to the empty pile {}", q + 1),
-            },
-            Spot::Waste => String::new(),
+        let q = match mv.to {
+            Spot::Pile(q) => q + 1,
+            _ => 0,
         };
-        let mut text = format!("{} can {place}.", sentence_start(&what));
+        let mut text = match (mv.from, mv.to, onto) {
+            (Spot::Pile(p), Spot::Foundation(_), _) => {
+                let p = p + 1;
+                format!("The {card} in pile {p} can go on its foundation.")
+            }
+            (Spot::Pile(p), Spot::Pile(_), Some((onto, q))) => {
+                let p = p + 1;
+                format!("The {card} in pile {p} can go on the {onto} in pile {q}.")
+            }
+            (Spot::Pile(p), _, _) => {
+                let p = p + 1;
+                format!("The {card} in pile {p} can go to the empty pile {q}.")
+            }
+            (Spot::Waste, Spot::Foundation(_), _) => {
+                format!("The turned-up {card} can go on its foundation.")
+            }
+            (Spot::Waste, Spot::Pile(_), Some((onto, q))) => {
+                format!("The turned-up {card} can go on the {onto} in pile {q}.")
+            }
+            (Spot::Waste, _, _) => format!("The turned-up {card} can go to the empty pile {q}."),
+            (Spot::Foundation(_), Spot::Pile(_), Some((onto, q))) => {
+                format!("The {card} on its foundation can go on the {onto} in pile {q}.")
+            }
+            (Spot::Foundation(_), _, _) => {
+                format!("The {card} on its foundation can go to the empty pile {q}.")
+            }
+        };
         if let Spot::Pile(p) = mv.from {
             if mv.count == cards.len() && !t.piles[p].down.is_empty() {
                 text.push_str(" That turns up a face-down card.");
@@ -539,14 +555,11 @@ impl PlayScreen {
         if deeper {
             if self.depth + 1 >= len {
                 let card = card_at(self.depth);
+                let card = card.name();
                 let text = match pile.down.len() {
-                    0 => format!(
-                        "{} is the bottom card of the pile.",
-                        sentence_start(&the(card))
-                    ),
+                    0 => format!("The {card} is the bottom card of the pile."),
                     n => format!(
-                        "{} is the deepest face-up card, with {n} face down under it.",
-                        sentence_start(&the(card))
+                        "The {card} is the deepest face-up card, with {n} face down under it."
                     ),
                 };
                 self.nope(ctx, text);
@@ -563,14 +576,11 @@ impl PlayScreen {
         }
         let card = card_at(self.depth);
         sound::card(ctx, card.suit);
-        let place = match self.depth {
-            0 => "the top card".to_string(),
-            d => format!("{} from the top", ordinal(d + 1)),
-        };
-        ctx.say(format!(
-            "{}, {place}.",
-            sentence_start(&card.name_and_colour())
-        ));
+        let name = sentence_start(&card.name_and_colour());
+        ctx.say(match self.depth + 1 {
+            1 => format!("{name}, the top card."),
+            n => format!("{name}, card {n} from the top."),
+        });
     }
 
     fn primary(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -845,21 +855,39 @@ impl Default for PlayScreen {
     }
 }
 
-/// A move made, in words.
+/// A move made, in words, each case a whole sentence.
 fn placed_words(played: &Played) -> String {
-    let what = if played.cards.len() == 1 {
-        the(played.cards[0])
-    } else {
-        cards_words(played.cards.len())
-    };
-    let what = sentence_start(&what);
-    match played.mv.to {
-        Spot::Foundation(f) => format!("{what} on the {} foundation.", Suit::from_index(f).name()),
-        Spot::Pile(q) => match played.onto {
-            Some(onto) => format!("{what} on {}, pile {}.", the(onto), q + 1),
-            None => format!("{what} to pile {}.", q + 1),
-        },
-        Spot::Waste => what,
+    let n = played.cards.len();
+    let card = played.cards[0].name();
+    match (played.mv.to, played.onto) {
+        (Spot::Foundation(f), _) => {
+            let suit = Suit::from_index(f).name();
+            format!("The {card} on the {suit} foundation.")
+        }
+        (Spot::Pile(q), Some(onto)) => {
+            let onto = onto.name();
+            let q = q + 1;
+            if n == 1 {
+                format!("The {card} on the {onto}, pile {q}.")
+            } else {
+                format!("{n} cards on the {onto}, pile {q}.")
+            }
+        }
+        (Spot::Pile(q), None) => {
+            let q = q + 1;
+            if n == 1 {
+                format!("The {card} to pile {q}.")
+            } else {
+                format!("{n} cards to pile {q}.")
+            }
+        }
+        (Spot::Waste, _) => {
+            if n == 1 {
+                format!("The {card}")
+            } else {
+                format!("{n} cards")
+            }
+        }
     }
 }
 
@@ -1104,8 +1132,8 @@ impl State<Parlor> for PlayScreen {
         );
         if let Some(job) = &self.job {
             now.push_str(&format!(
-                " This is the {} challenge, {}. Leaving from the pause menu does not count it.",
-                job.period.label().to_lowercase(),
+                " This is the {}, {}. Leaving from the pause menu does not count it.",
+                job.period.challenge_title().to_lowercase(),
                 challenge::name(job.period)
             ));
         }

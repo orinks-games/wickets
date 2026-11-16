@@ -591,13 +591,7 @@ impl RunScreen {
             );
             title = format!("{title} {result}");
             lines.push(result);
-            let streak = format!(
-                "{} streak: {streak} {}{}. {}",
-                period.label(),
-                period.unit(),
-                if streak == 1 { "" } else { "s" },
-                challenge.resets()
-            );
+            let streak = format!("{} {}", period.streak_count(streak), challenge.resets());
             title = format!("{title} {streak}");
             lines.push(streak);
         } else if let Some(board) = self.run.mode.board() {

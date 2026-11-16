@@ -164,7 +164,7 @@ pub fn row() -> SettingsRow<Parlor> {
         ROW_ID,
         MenuItem::new(
             Label::dynamic(|_s: &SettingsScreen<Parlor>, ctx: &Ctx<Parlor>| {
-                format!("{LABEL}: {}", summary(ctx))
+                format!("Story and event games: {}", summary(ctx))
             }),
             |_s: &mut SettingsScreen<Parlor>, ctx: &mut Ctx<Parlor>| {
                 ctx.push(PreferencesMenu::new())

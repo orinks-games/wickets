@@ -502,8 +502,8 @@ impl State<Parlor> for NightScreen {
         );
         if let Some(ch) = &self.challenge {
             now.push_str(&format!(
-                " This is the {} challenge, {}. Leaving from the pause menu does not count it.",
-                ch.period.label().to_lowercase(),
+                " This is the {}, {}. Leaving from the pause menu does not count it.",
+                ch.period.challenge_title().to_lowercase(),
                 challenge::name(ch.period)
             ));
         }

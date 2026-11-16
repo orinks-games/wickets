@@ -769,8 +769,12 @@ impl OutingScreen {
                 };
                 let streak = Challenges::streak(ctx, crate::ID, period);
                 let streak = match streak {
-                    0 | 1 => format!("The first {} of a streak.", period.unit()),
-                    n => format!("A {n} {} streak.", period.unit()),
+                    0 | 1 => match period {
+                        Period::Daily => "The first day of a streak.".to_string(),
+                        Period::Weekly => "The first week of a streak.".to_string(),
+                        Period::Monthly => "The first month of a streak.".to_string(),
+                    },
+                    n => period.streak_sentence(n),
                 };
                 pages.push(format!(
                     "{}: {goal} {score_line} {best} {streak} {}",

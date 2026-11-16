@@ -261,8 +261,8 @@ impl Floor {
     fn challenge_line(&self) -> Option<String> {
         self.challenge.as_ref().map(|ch| {
             format!(
-                "This is the {} challenge, {}. Leaving from the pause menu does not count the run.",
-                ch.period.label().to_lowercase(),
+                "This is the {}, {}. Leaving from the pause menu does not count the run.",
+                ch.period.challenge_title().to_lowercase(),
                 challenge::name(ch.period)
             )
         })

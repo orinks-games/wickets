@@ -61,10 +61,12 @@ pub fn call_outs(on: bool) -> String {
 
 /// Results after a challenge: "Play this daily challenge again".
 pub fn challenge_again(period: Period) -> String {
-    format!(
-        "Play this {} challenge again",
-        period.label().to_lowercase()
-    )
+    match period {
+        Period::Daily => "Play this daily challenge again",
+        Period::Weekly => "Play this weekly challenge again",
+        Period::Monthly => "Play this monthly challenge again",
+    }
+    .to_string()
 }
 
 /// The title's challenges row: "Challenges, daily done" or

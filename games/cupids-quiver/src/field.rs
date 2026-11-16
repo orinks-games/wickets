@@ -1097,8 +1097,8 @@ impl State<Parlor> for Field {
         let mut now = "Aim a little ahead of a drifting heart.".to_string();
         if let Some(ch) = &self.challenge {
             now.push_str(&format!(
-                " This is the {} challenge. Leaving from the pause menu does not count it.",
-                ch.period.label().to_lowercase()
+                " This is the {}. Leaving from the pause menu does not count it.",
+                ch.period.challenge_title().to_lowercase()
             ));
         }
         format!("{now} {}", controls_full(ctx))

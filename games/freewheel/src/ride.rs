@@ -1888,7 +1888,7 @@ impl Ride {
                         score_words(result, pace)
                     ),
                     format!("Ride points: {}.", breakdown.join(", ")),
-                    format!("A {streak} {} streak. {}", period.unit(), ch.resets()),
+                    format!("{} {}", period.streak_sentence(streak), ch.resets()),
                 ];
                 let summary = format!("{} result: {points} ride points", ch.title());
                 let results =

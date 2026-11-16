@@ -111,7 +111,6 @@ pub fn wrap(deg: f32) -> f32 {
 pub fn direction_words(rel: f32) -> String {
     let rel = wrap(rel);
     let a = rel.abs();
-    let side = if rel < 0.0 { "left" } else { "right" };
     let clock = ((rel.rem_euclid(360.0) / 30.0).round() as u32) % 12;
     // Just off straight ahead or right behind still rounds to 12 or 6:
     // name the hour on the side it is.
@@ -123,18 +122,21 @@ pub fn direction_words(rel: f32) -> String {
         (6, true) if a < 168.0 => 7,
         (c, _) => c,
     };
+    // Each piece is whole words, so a translation never joins halves.
+    let left = rel < 0.0;
     let words = if a <= 12.0 {
         return "straight ahead".to_string();
     } else if a <= 60.0 {
-        format!("ahead and to your {side}")
+        if left { "ahead and to your left" } else { "ahead and to your right" }
     } else if a <= 120.0 {
-        format!("to your {side}")
+        if left { "to your left" } else { "to your right" }
     } else if a < 168.0 {
-        format!("behind you to the {side}")
+        if left { "behind you to the left" } else { "behind you to the right" }
     } else {
         return "right behind you".to_string();
     };
-    format!("{words}, at {clock} o'clock")
+    let at = format!("at {clock} o'clock");
+    format!("{words}, {at}")
 }
 
 /// How far something is, in words.
@@ -409,7 +411,7 @@ impl Mode {
             Mode::Pond => "The practice pond".to_string(),
             Mode::Night(n) => format!("Night {n}"),
             Mode::Free => "Free paddle".to_string(),
-            Mode::Challenge(p) => format!("{} challenge", p.label()),
+            Mode::Challenge(p) => p.challenge_title().to_string(),
             Mode::Festival => crate::events::FESTIVAL.to_string(),
         }
     }
@@ -1172,19 +1174,15 @@ impl Lake {
                 } else {
                     s.feature.heard()
                 };
-                heard.push(format!(
-                    "{what} {}",
-                    direction_words(bearing(self.pos, s.pos) - self.heading)
-                ));
+                let way = direction_words(bearing(self.pos, s.pos) - self.heading);
+                heard.push(format!("{what}: {way}"));
             }
         }
         for c in &self.critters {
             if c.creature.loops() {
-                heard.push(format!(
-                    "{} {}",
-                    c.creature.name(),
-                    direction_words(bearing(self.pos, c.pos) - self.heading)
-                ));
+                let what = c.creature.name();
+                let way = direction_words(bearing(self.pos, c.pos) - self.heading);
+                heard.push(format!("{what}: {way}"));
             }
         }
         if !heard.is_empty() {
@@ -1229,12 +1227,13 @@ impl Lake {
         match self.target() {
             Some(i) => {
                 let l = &self.lanterns[i];
-                let which = if self.plan.ordered {
-                    format!("Lantern {} is lit", l.order)
+                let place = self.where_is(l.pos);
+                first.push(if self.plan.ordered {
+                    let order = l.order;
+                    format!("Lantern {order} is lit {place}.")
                 } else {
-                    "The nearest lantern is".to_string()
-                };
-                first.push(format!("{which} {}.", self.where_is(l.pos)));
+                    format!("The nearest lantern is {place}.")
+                });
             }
             None => first.push("The song is whole.".to_string()),
         }

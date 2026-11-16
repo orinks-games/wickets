@@ -795,7 +795,7 @@ impl ChallengeList {
     pub fn new(period: Period) -> Self {
         ChallengeList {
             period,
-            menu: MenuCore::new(format!("{} challenges", period.label())),
+            menu: MenuCore::new(period.challenges_title().to_string()),
         }
     }
 }

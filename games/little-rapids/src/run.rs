@@ -509,10 +509,8 @@ impl RunScreen {
             lines.push(format!("{} result: {} points.", challenge.title(), r.score));
             lines.push(score_line(result));
             lines.push(format!(
-                "{} streak: {streak} {}{}. {}",
-                period.label(),
-                period.unit(),
-                if streak == 1 { "" } else { "s" },
+                "{} {}",
+                period.streak_count(streak),
                 challenge.resets()
             ));
         } else if let Some(board) = mode.board() {

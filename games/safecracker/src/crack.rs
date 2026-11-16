@@ -1135,8 +1135,8 @@ impl State<Parlor> for Crack {
             }
             if let Some(job) = &self.job {
                 s.push_str(&format!(
-                    " This is the {} challenge, {}: safe {} of {}.",
-                    job.plan.period.label().to_lowercase(),
+                    " This is the {}, {}: safe {} of {}.",
+                    job.plan.period.challenge_title().to_lowercase(),
                     challenge::name(job.plan.period),
                     job.index + 1,
                     job.safes()

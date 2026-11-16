@@ -374,7 +374,7 @@ impl Mode {
             Mode::Skyline => "Skyline run".into(),
             Mode::Night => "Night skyline".into(),
             Mode::Single(n) => format!("Crossing {n}"),
-            Mode::Challenge(p) => format!("{} challenge", p.label()),
+            Mode::Challenge(p) => p.challenge_title().to_string(),
         }
     }
 }

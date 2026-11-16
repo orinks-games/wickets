@@ -347,11 +347,11 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, job: &Job, pace: Pace) -> V
     first
         .into_iter()
         .chain([format!(
-            "{} result: {} points. {} A {streak} {} streak. {}",
+            "{} result: {} points. {} {} {}",
             ch.title(),
             job.score(),
             score_line(result, pace),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             sentence_start(&ch.resets())
         )])
         .collect()

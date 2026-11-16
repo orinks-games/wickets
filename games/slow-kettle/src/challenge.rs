@@ -169,6 +169,6 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, sitting: &Sitting) -> Vec<S
             cups_words(n),
             score_line(result)
         ),
-        format!("A {streak} {} streak. {}", ch.period.unit(), ch.resets()),
+        format!("{} {}", ch.period.streak_sentence(streak), ch.resets()),
     ]
 }

@@ -13,7 +13,7 @@ use crate::challenge::{self, Part};
 use crate::desk::{Shake, Stack, StackSpec, Wrapped, STACKS};
 use crate::desk_music::Conductor;
 use crate::events;
-use crate::mode::{story_ending, Mode, WRITES};
+use crate::mode::{story_ending, Mode};
 use crate::progress::{self, Progress};
 use crate::sound::{self, cue, shelf_pos, stinger};
 use crate::{fresh_rng, pause, results};
@@ -165,12 +165,8 @@ impl DeskRun {
         } else {
             String::new()
         };
-        format!(
-            "{late}{}, age {}, {WRITES}: {}{sound}",
-            l.from,
-            l.age,
-            l.words()
-        )
+        let (from, age, words) = (l.from, l.age, l.words());
+        format!("{late}{from}, age {age}, writes: {words}{sound}")
     }
 
     fn briefing(&self, ctx: &Ctx<Parlor>) -> String {

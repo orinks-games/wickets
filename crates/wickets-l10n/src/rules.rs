@@ -37,7 +37,11 @@ fn spoken_len(line: &str) -> usize {
         };
         let inner = &rest[open + 1..open + close];
         total += match inner.split_once(':') {
-            Some((_, forms)) => forms.split('|').map(|f| f.chars().count()).max().unwrap_or(0),
+            Some((_, forms)) => forms
+                .split('|')
+                .map(|f| f.chars().count())
+                .max()
+                .unwrap_or(0),
             None => inner.chars().count() + 2,
         };
         rest = &rest[open + close + 1..];

@@ -1972,9 +1972,9 @@ impl State<Parlor> for Haunt {
                     ""
                 };
                 format!(
-                    "{}, a {} challenge.{twist}{carry} ",
+                    "{}, the {}.{twist}{carry} ",
                     challenge_name(e.period),
-                    e.period.label().to_lowercase()
+                    e.period.challenge_title().to_lowercase()
                 )
             }
             None => String::new(),

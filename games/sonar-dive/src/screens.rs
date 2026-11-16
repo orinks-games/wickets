@@ -1069,7 +1069,7 @@ pub fn conclude(
         (Mode::Challenge(_), Some(ch)) => {
             let result = Challenges::submit_at(ctx, ch, pace, score as u64);
             let streak = Challenges::streak(ctx, ID, ch.period);
-            let streak = format!("A {} {} streak.", streak.max(1), ch.period.unit());
+            let streak = ch.period.streak_sentence(streak.max(1));
             pages.push(format!(
                 "{} result: {score} coins. {} {streak} {}",
                 ch.title(),

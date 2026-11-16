@@ -220,11 +220,11 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, rank: &Rank) -> Vec<String>
     vec![
         crate::play::tuned_line(rank),
         format!(
-            "{} result: {}. {} A {streak} {} streak. {}",
+            "{} result: {}. {} {} {}",
             ch.title(),
             points_words(rank.score),
             score_line(result),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ]

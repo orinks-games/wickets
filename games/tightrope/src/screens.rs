@@ -97,7 +97,7 @@ fn intro_page(mode: Mode) -> String {
         Mode::Skyline => format!("The skyline run: {SKYLINE_LEN} crossings, rooftop to rooftop, each longer and higher than the last, with 3 lives. Faster crossings and crossings with no falls score more."),
         Mode::Night => "The night skyline: the same 10 crossings in the dark, with a twitchier wire, harder wind and busier pigeons. Every gust is still warned. 3 lives.".to_string(),
         Mode::Single(n) => format!("Crossing {n} on its own, for your best time. 3 lives."),
-        Mode::Challenge(p) => format!("{} challenge.", p.label()),
+        Mode::Challenge(p) => format!("{}.", p.challenge_title()),
     }
 }
 
@@ -499,7 +499,7 @@ impl RunScreen {
             }
             let streak = Challenges::streak(ctx, crate::ID, c.period);
             if streak > 0 {
-                line.push_str(&format!(" A {streak} {} streak.", c.period.unit()));
+                line.push_str(&format!(" {}", c.period.streak_sentence(streak)));
             }
             line.push(' ');
             line.push_str(&c.resets());

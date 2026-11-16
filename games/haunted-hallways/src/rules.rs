@@ -1794,7 +1794,7 @@ impl Mode {
             Mode::Nightmare => "nightmare".to_string(),
             Mode::Endless => "endless".to_string(),
             Mode::Floor(n) => format!("floor {n}"),
-            Mode::Challenge(e) => format!("{} challenge", e.period.label().to_lowercase()),
+            Mode::Challenge(e) => e.period.challenge_title().to_lowercase(),
             Mode::Stirs(_) => crate::allhallows::STIRS_BOARD.to_string(),
             Mode::LanternNight(_) => crate::allhallows::NIGHT_BOARD.to_string(),
         }

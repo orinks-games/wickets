@@ -726,8 +726,8 @@ impl State<Parlor> for Tower {
         }
         if let Some(job) = &self.job {
             now.push_str(&format!(
-                " This is the {} challenge, {}. Leaving from the pause menu does not count it.",
-                job.period.label().to_lowercase(),
+                " This is the {}, {}. Leaving from the pause menu does not count it.",
+                job.period.challenge_title().to_lowercase(),
                 challenge::name(job.period)
             ));
         }
