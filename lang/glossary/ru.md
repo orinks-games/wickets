@@ -52,3 +52,42 @@ English.
 | Quit, Exit | Выход | |
 | Resume | Продолжить | |
 | New game | Новая партия | |
+| title menu, the title | стартовое меню | Neuter. A game's own first menu: "Вернуться в стартовое меню." |
+| challenge | испытание | Neuter. Any challenge, daily, weekly or monthly. |
+| streak | серия | Feminine. "Серия из 3 дней." |
+| Play | Играть | The menu row that starts a run. |
+| briefing | брифинг | Masculine. The short page before a run: "Брифинг перед игрой: включено." |
+| Unlocks | Открытия | The menu of everything a player earns. "Открыто: ..." for a new one. |
+| Story mode | Режим сюжета | The lobby row is Сюжет. |
+| Happening (the story's) | Происшествие | Neuter. The story list's errand or riddle; earns a штамп. |
+| Swap, Skip | Заменить, Пропустить | The story list's rows. |
+| Continue | Продолжить | The lobby row that reopens the last game. |
+| Records | Статистика | Feminine. The title menu row that reads a game's tallies and bests. |
+| briefing | вводная | Feminine. The page read before a challenge or run starts. |
+| bonus | бонус | Masculine. |
+| twist | особенность | Feminine. A challenge's special rule. |
+| Play again, Try again | Играть снова, Ещё раз | Results menu rows. |
+| Hear the results again | Повторить итоги | Results menu row. |
+| Back to the title | В стартовое меню | Results and pause menu row. |
+| pause menu | меню паузы | Neuter. |
+| Leave the challenge | Покинуть испытание | The pause menu row. |
+| call-outs, spoken call-outs | подсказки, голосовые подсказки | Feminine plural. The setting: "Голосовые подсказки: включено." |
+| daily, weekly, monthly (challenge) | испытание дня, недели, месяца | |
+| locked | закрыто | Agrees like "открыто": "Ночь ..., закрыто" for a menu row. |
+| keepsake, keepsake shelf | сувенир, полка сувениров | Masculine. What a game keeps for good: "Сувенир: ...". |
+| lantern | фонарик | Masculine. Kept apart from "фонарь", the door's lamp. |
+| combo | комбо | Neuter, never declined. "Самое длинное комбо." |
+| hint | подсказка | Feminine. "Подсказка снимает 15 очков." |
+| briefing (settled) | брифинг | Two workers added "briefing" at once; use брифинг, the first row. The вводная row is withdrawn. |
+| the Echo | Эхо | Neuter. Theo's machine in the cellar: "Эхо проигрывает". |
+| Calendar Hall, Arcade Floor, Study, Conservatory, Card Room | Календарный зал, Игровой зал, Кабинет, Оранжерея, Карточная | The parlor's rooms in the story. |
+| From the story | Из сюжета | The Play menu section. |
+| relaxed, normal, quick (the Pace values) | спокойный, обычный, быстрый | Agree with "темп": "Обычный стоит по умолчанию." |
+| results menu | меню итогов | Neuter. The menu after a run ends. |
+| Back to the challenges | Назад к испытаниям | Results menu row after a challenge. |
+| Floor select, Course select, Night select, Bike select | Выбор этажа, Выбор этапа, Выбор ночи, Выбор велосипеда | Any "X select" menu is "Выбор" plus the genitive. |
+| Opening the {name} challenge. | Открываем испытание {name}. | |
+| Uncle Walt | дядя Walt | The role is translated and lowercase mid-sentence; the name stays English. |
+| round | раунд | Masculine. "Раунд 2 из 8." |
+| star, stars | звезда, звёзды | Feminine. "{n} {n:звезда|звезды|звёзд}". |
+| tune | мелодия | Feminine. A piece of a game's music in play; a song kept in the Soundtrack is песня. |
