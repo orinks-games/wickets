@@ -634,11 +634,11 @@ msgstr ""
 
 #. placeholders: {CHALLENGES}
 msgid "{CHALLENGES}, daily done"
-msgstr "{CHALLENGES}, đã xong thử thách hằng ngày"
+msgstr "{CHALLENGES}, đã xong thử thách ngày"
 
 #. placeholders: {CHALLENGES}
 msgid "{CHALLENGES}, daily not played yet"
-msgstr "{CHALLENGES}, chưa chơi thử thách hằng ngày"
+msgstr "{CHALLENGES}, chưa chơi thử thách ngày"
 
 msgid "lobby"
 msgstr "sảnh"
@@ -711,16 +711,16 @@ msgstr "Về danh sách thử thách."
 msgid ""
 "A daily, a weekly and a monthly challenge, the same for every player."
 msgstr ""
-"Một thử thách hằng ngày, một hằng tuần và một hằng tháng, giống nhau cho "
-"mọi người chơi."
+"Một thử thách ngày, một thử thách tuần và một thử thách tháng, giống nhau "
+"cho mọi người chơi."
 
 #. placeholders: {resets}
 msgid ""
 "A daily, a weekly and a monthly challenge, the same for every player. "
 "{resets}"
 msgstr ""
-"Một thử thách hằng ngày, một hằng tuần và một hằng tháng, giống nhau cho "
-"mọi người chơi. {resets}"
+"Một thử thách ngày, một thử thách tuần và một thử thách tháng, giống nhau "
+"cho mọi người chơi. {resets}"
 
 msgid "Your bests and progress, with your challenge results."
 msgstr "Kỷ lục và tiến trình của bạn, cùng kết quả thử thách."
@@ -1449,16 +1449,16 @@ msgid "unranked"
 msgstr "không xếp hạng"
 
 msgid "Daily"
-msgstr "Hằng ngày"
+msgstr "Ngày"
 
 msgid "Weekly"
-msgstr "Hằng tuần"
+msgstr "Tuần"
 
 msgid "Monthly"
-msgstr "Hằng tháng"
+msgstr "Tháng"
 
 msgid "Daily challenge"
-msgstr "Thử thách hằng ngày"
+msgstr "Thử thách ngày"
 
 msgid "Weekly challenge"
 msgstr "Thử thách tuần"
@@ -1785,19 +1785,19 @@ msgid ""
 "Dailies change at midnight UTC, weeklies on Monday and monthlies on the "
 "first of the month."
 msgstr ""
-"Mỗi trò chơi có một thử thách hằng ngày, một hằng tuần và một hằng tháng, "
-"giống nhau cho mọi người chơi. Thử thách ở sảnh liệt kê tất cả, cùng những "
-"gì bạn đã làm và các chuỗi của bạn. Dòng của mỗi trò đọc cùng hồ sơ với "
-"menu Thử thách của chính trò đó, và Enter ở dòng chuỗi đọc lại chuỗi của "
-"bạn. Thử thách ngày đổi lúc nửa đêm giờ UTC, thử thách tuần vào Thứ Hai, "
-"thử thách tháng vào ngày đầu tháng."
+"Mỗi trò chơi có một thử thách ngày, một thử thách tuần và một thử thách "
+"tháng, giống nhau cho mọi người chơi. Thử thách ở sảnh liệt kê tất cả, cùng "
+"những gì bạn đã làm và các chuỗi của bạn. Dòng của mỗi trò đọc cùng hồ sơ "
+"với menu Thử thách của chính trò đó, và Enter ở dòng chuỗi đọc lại chuỗi "
+"của bạn. Thử thách ngày đổi lúc nửa đêm giờ UTC, thử thách tuần vào Thứ "
+"Hai, thử thách tháng vào ngày đầu tháng."
 
 msgid ""
 "Every game has a daily, a weekly and a monthly challenge, the same for "
 "every player."
 msgstr ""
-"Mỗi trò chơi có một thử thách hằng ngày, một hằng tuần và một hằng tháng, "
-"giống nhau cho mọi người chơi."
+"Mỗi trò chơi có một thử thách ngày, một thử thách tuần và một thử thách "
+"tháng, giống nhau cho mọi người chơi."
 
 msgid ""
 "Challenges in the lobby lists them all, with what you have done and your "
@@ -2165,12 +2165,12 @@ msgid ""
 msgstr ""
 "Hôm nay ở tiệm nằm ngay sau Chơi ở sảnh, và dòng của nó cho biết có bao "
 "nhiêu sự kiện. Nó liệt kê mọi thứ hôm nay ở một chỗ: sự kiện của từng trò "
-"chơi, Chuyện lạ của cốt truyện, và thử thách hằng ngày, hằng tuần, hằng "
-"tháng cùng số bạn đã làm. Enter ở sự kiện của một trò mở trò đó, và bạn "
-"chọn sự kiện ở màn hình chính. Enter ở dòng cốt truyện mở Cốt truyện với "
-"con trỏ ở Chuyện lạ. Enter ở một dòng thử thách liệt kê thử thách của kỳ "
-"đó. Vào ngày không có sự kiện, dòng đầu cho biết trò nào có sự kiện kế tiếp "
-"và khi nào. Ở sảnh, H chuyển giữa Hôm nay ở tiệm và Trợ giúp."
+"chơi, Chuyện lạ của cốt truyện, và thử thách ngày, tuần, tháng cùng số bạn "
+"đã làm. Enter ở sự kiện của một trò mở trò đó, và bạn chọn sự kiện ở màn "
+"hình chính. Enter ở dòng cốt truyện mở Cốt truyện với con trỏ ở Chuyện lạ. "
+"Enter ở một dòng thử thách liệt kê thử thách của kỳ đó. Vào ngày không có "
+"sự kiện, dòng đầu cho biết trò nào có sự kiện kế tiếp và khi nào. Ở sảnh, H "
+"chuyển giữa Hôm nay ở tiệm và Trợ giúp."
 
 msgid ""
 "Happening today comes right after Play in the lobby, and its row says how "
@@ -2185,8 +2185,7 @@ msgid ""
 "have done."
 msgstr ""
 "Nó liệt kê mọi thứ hôm nay ở một chỗ: sự kiện của từng trò chơi, Chuyện lạ "
-"của cốt truyện, và thử thách hằng ngày, hằng tuần, hằng tháng cùng số bạn "
-"đã làm."
+"của cốt truyện, và thử thách ngày, tuần, tháng cùng số bạn đã làm."
 
 msgid ""
 "Enter on a game's event opens that game, and on its title you choose the "
@@ -2794,28 +2793,28 @@ msgid "Tranquility"
 msgstr ""
 
 msgid "Geminid"
-msgstr ""
+msgstr "Geminids"
 
 msgid "Leonid"
-msgstr ""
+msgstr "Leonids"
 
 msgid "Lyrid"
-msgstr ""
+msgstr "Lyrids"
 
 msgid "Orionid"
-msgstr ""
+msgstr "Orionids"
 
 msgid "Perseid"
-msgstr ""
+msgstr "Perseids"
 
 msgid "Quadrantid"
-msgstr ""
+msgstr "Quadrantids"
 
 msgid "Eta Aquariid"
-msgstr ""
+msgstr "Eta Aquariids"
 
 msgid "Lantern Festival"
-msgstr "Tết Nguyên tiêu"
+msgstr "Tết Nguyên Tiêu"
 
 msgid "Sundae Thursday"
 msgstr "Thứ Năm kem sundae"
@@ -2863,8 +2862,8 @@ msgstr "Chọn thể loại, rồi chọn trò chơi."
 msgid ""
 "Every game's daily, weekly and monthly challenge, the same for every player."
 msgstr ""
-"Thử thách hằng ngày, hằng tuần và hằng tháng của mọi trò chơi, giống nhau "
-"cho mọi người chơi."
+"Thử thách ngày, tuần và tháng của mọi trò chơi, giống nhau cho mọi người "
+"chơi."
 
 msgid ""
 "Every game's music. A track unlocks the first time it plays in a game."
@@ -3108,10 +3107,10 @@ msgid "The soft bed under the street, so the drums lead."
 msgstr "Lớp nền êm dưới tiếng phố, để trống dẫn đầu."
 
 msgid "The lantern walk"
-msgstr "Rước đèn"
+msgstr "Rước đèn lồng"
 
 msgid "The lantern walk's calm bed."
-msgstr "Lớp nền êm của Rước đèn."
+msgstr "Lớp nền êm của Rước đèn lồng."
 
 msgid "fireside-patience"
 msgstr ""
@@ -3973,19 +3972,19 @@ msgid ""
 "allows. Mud slide: no bees, three times the mud. Small basket: the basket "
 "holds only 3."
 msgstr ""
-"Hằng ngày, Điểm khác lạ trong ngày: một vòng 60 giây trên năm làn, không có "
-"chỉ tiêu trứng, nhưng cứ năm quả trứng vỡ là hỏng một giỏ. Mỗi ngày có một "
-"điểm khác lạ, được nêu tên lúc mở đầu vòng. Mưa trứng vàng: trứng vàng "
-"nhiều gấp ba. Bầy ong: không có bùn, ong gấp đôi, nhiều con ngay sau một "
-"quả trứng. Rơi nhanh: mọi thứ rơi nhanh nhất mà đồng cỏ cho phép. Lở bùn: "
-"không có ong, bùn gấp ba. Giỏ nhỏ: giỏ chỉ chứa 3."
+"Thử thách ngày, Điểm khác lạ trong ngày: một vòng 60 giây trên năm làn, "
+"không có chỉ tiêu trứng, nhưng cứ năm quả trứng vỡ là hỏng một giỏ. Mỗi "
+"ngày có một điểm khác lạ, được nêu tên lúc mở đầu vòng. Mưa trứng vàng: "
+"trứng vàng nhiều gấp ba. Bầy ong: không có bùn, ong gấp đôi, nhiều con ngay "
+"sau một quả trứng. Rơi nhanh: mọi thứ rơi nhanh nhất mà đồng cỏ cho phép. "
+"Lở bùn: không có ong, bùn gấp ba. Giỏ nhỏ: giỏ chỉ chứa 3."
 
 msgid ""
 "Daily, Twist of the day: one round of 60 seconds across five lanes, with no "
 "egg target, but every fifth cracked egg breaks a basket."
 msgstr ""
-"Hằng ngày, Điểm khác lạ trong ngày: một vòng 60 giây trên năm làn, không có "
-"chỉ tiêu trứng, nhưng cứ năm quả trứng vỡ là hỏng một giỏ."
+"Thử thách ngày, Điểm khác lạ trong ngày: một vòng 60 giây trên năm làn, "
+"không có chỉ tiêu trứng, nhưng cứ năm quả trứng vỡ là hỏng một giỏ."
 
 msgid "Each day brings one twist, named in the round's opening."
 msgstr "Mỗi ngày có một điểm khác lạ, được nêu tên lúc mở đầu vòng."
@@ -4011,16 +4010,16 @@ msgid ""
 "back, each with its egg target, and the cart swapping sides every round. "
 "Your 3 baskets have to last all five rounds."
 msgstr ""
-"Hằng tuần, Đồng cỏ dài: chạy đường dài liền một mạch qua vòng 4 đến 8 của "
-"đồng cỏ, mỗi vòng có chỉ tiêu trứng, và xe đẩy đổi bên mỗi vòng. 3 giỏ của "
-"bạn phải dùng cho cả năm vòng."
+"Thử thách tuần, Đồng cỏ dài: chạy đường dài liền một mạch qua vòng 4 đến 8 "
+"của đồng cỏ, mỗi vòng có chỉ tiêu trứng, và xe đẩy đổi bên mỗi vòng. 3 giỏ "
+"của bạn phải dùng cho cả năm vòng."
 
 msgid ""
 "Weekly, The long meadow: a marathon of the meadow's rounds 4 to 8 back to "
 "back, each with its egg target, and the cart swapping sides every round."
 msgstr ""
-"Hằng tuần, Đồng cỏ dài: chạy đường dài liền một mạch qua vòng 4 đến 8 của "
-"đồng cỏ, mỗi vòng có chỉ tiêu trứng, và xe đẩy đổi bên mỗi vòng."
+"Thử thách tuần, Đồng cỏ dài: chạy đường dài liền một mạch qua vòng 4 đến 8 "
+"của đồng cỏ, mỗi vòng có chỉ tiêu trứng, và xe đẩy đổi bên mỗi vòng."
 
 msgid "Your 3 baskets have to last all five rounds."
 msgstr "3 giỏ của bạn phải dùng cho cả năm vòng."
@@ -4029,14 +4028,15 @@ msgid ""
 "Monthly, The Easter festival: three rounds across five lanes where the "
 "drops come in patterns. A voice names each pattern as it starts:"
 msgstr ""
-"Hằng tháng, Lễ hội Phục sinh: ba vòng trên năm làn, thứ rơi đến theo mẫu. "
-"Có giọng nêu tên từng mẫu khi nó bắt đầu:"
+"Thử thách tháng, Lễ hội Phục sinh: ba vòng trên năm làn, thứ rơi đến theo "
+"mẫu. Có giọng nêu tên từng mẫu khi nó bắt đầu:"
 
 msgid ""
 "Monthly, The Easter festival: three rounds across five lanes where the "
 "drops come in patterns."
 msgstr ""
-"Hằng tháng, Lễ hội Phục sinh: ba vòng trên năm làn, thứ rơi đến theo mẫu."
+"Thử thách tháng, Lễ hội Phục sinh: ba vòng trên năm làn, thứ rơi đến theo "
+"mẫu."
 
 msgid "A voice names each pattern as it starts:"
 msgstr "Có giọng nêu tên từng mẫu khi nó bắt đầu:"
@@ -8042,16 +8042,16 @@ msgid ""
 "song. 3 points for a bird answered first time, 2 after one miss, 1 after "
 "more."
 msgstr ""
-"Hằng ngày, Dạo sáng: một lối mòn và 5 con chim ở đó, mỗi con hót bài đặc "
-"trưng. 3 điểm cho con chim đáp đúng lần đầu, 2 sau một lần trượt, 1 sau "
+"Thử thách ngày, Dạo sáng: một lối mòn và 5 con chim ở đó, mỗi con hót bài "
+"đặc trưng. 3 điểm cho con chim đáp đúng lần đầu, 2 sau một lần trượt, 1 sau "
 "nhiều hơn."
 
 msgid ""
 "Daily, Morning walk: a trail and 5 of its birds, each singing its signature "
 "song."
 msgstr ""
-"Hằng ngày, Dạo sáng: một lối mòn và 5 con chim ở đó, mỗi con hót bài đặc "
-"trưng."
+"Thử thách ngày, Dạo sáng: một lối mòn và 5 con chim ở đó, mỗi con hót bài "
+"đặc trưng."
 
 msgid ""
 "3 points for a bird answered first time, 2 after one miss, 1 after more."
@@ -8062,11 +8062,12 @@ msgid ""
 "Weekly, Chorus week: 8 birds of the season sing at once. Pick out each one: "
 "2 points first time, 1 after a miss."
 msgstr ""
-"Hằng tuần, Tuần hợp xướng: 8 con chim của mùa cùng hót một lúc. Nhận ra "
-"từng con: 2 điểm lần đầu, 1 sau một lần trượt."
+"Thử thách tuần, Tuần hợp xướng: 8 con chim của mùa cùng hót một lúc. Nhận "
+"ra từng con: 2 điểm lần đầu, 1 sau một lần trượt."
 
 msgid "Weekly, Chorus week: 8 birds of the season sing at once."
-msgstr "Hằng tuần, Tuần hợp xướng: 8 con chim của mùa cùng hót một lúc."
+msgstr ""
+"Thử thách tuần, Tuần hợp xướng: 8 con chim của mùa cùng hót một lúc."
 
 msgid "Pick out each one: 2 points first time, 1 after a miss."
 msgstr "Nhận ra từng con: 2 điểm lần đầu, 1 sau một lần trượt."
@@ -8075,11 +8076,11 @@ msgid ""
 "Monthly, The great count: 8 flocks of up to 12 birds. 3 points for an exact "
 "count, 1 for one off."
 msgstr ""
-"Hằng tháng, Cuộc đếm lớn: 8 đàn, mỗi đàn đến 12 con. 3 điểm cho số đếm "
+"Thử thách tháng, Cuộc đếm lớn: 8 đàn, mỗi đàn đến 12 con. 3 điểm cho số đếm "
 "đúng, 1 cho lệch một."
 
 msgid "Monthly, The great count: 8 flocks of up to 12 birds."
-msgstr "Hằng tháng, Cuộc đếm lớn: 8 đàn, mỗi đàn đến 12 con."
+msgstr "Thử thách tháng, Cuộc đếm lớn: 8 đàn, mỗi đàn đến 12 con."
 
 msgid "3 points for an exact count, 1 for one off."
 msgstr "3 điểm cho số đếm đúng, 1 cho lệch một."
@@ -9438,7 +9439,7 @@ msgstr "{sentence_start} và {k} để chỉnh số đếm, {k2} để đưa ra.
 #. placeholders: {size}, {plural}
 #. one sentence of a longer line
 msgid "A flock of {size} {plural}."
-msgstr ""
+msgstr "Một đàn {size} {plural}."
 
 #. placeholders: {size}
 #. one sentence of a longer line
@@ -9447,7 +9448,7 @@ msgstr "{size}, đúng chính xác."
 
 #. placeholders: {size}, {plural}
 msgid "{size}, exactly right. A flock of {size} {plural}."
-msgstr ""
+msgstr "{size}, chính xác. Một đàn {size} {plural}."
 
 #. placeholders: {size}, {guess}
 #. one sentence of a longer line
@@ -9490,7 +9491,7 @@ msgstr ""
 
 #. placeholders: {size}, {plural}, {g}
 msgid "{size} {plural}, you counted {g}"
-msgstr ""
+msgstr "{size} {plural}, bạn đếm được {g}"
 
 msgid "Your first migration count."
 msgstr "Cuộc đếm di cư đầu tiên của bạn."
@@ -10999,7 +11000,7 @@ msgid "Set select dances any set you have opened."
 msgstr "Chọn bộ để nhảy bộ bất kỳ bạn đã mở."
 
 msgid "The practice room"
-msgstr "Phòng tập"
+msgstr "Phòng luyện tập"
 
 msgid ""
 "The practice room plays one tune of any set you have opened. When a step's "
@@ -11007,12 +11008,12 @@ msgid ""
 "step and the tune goes on. A wrong step names the right key. Nothing is "
 "scored."
 msgstr ""
-"Phòng tập phát một giai điệu của bộ bất kỳ bạn đã mở. Khi đến nhịp của một "
-"bước, nhạc dừng lại, và bước cùng phím của nó được nêu tên. Nhảy bước đó "
-"thì giai điệu tiếp tục. Bước sai sẽ nêu phím đúng. Không tính điểm."
+"Phòng luyện tập phát một giai điệu của bộ bất kỳ bạn đã mở. Khi đến nhịp "
+"của một bước, nhạc dừng lại, và bước cùng phím của nó được nêu tên. Nhảy "
+"bước đó thì giai điệu tiếp tục. Bước sai sẽ nêu phím đúng. Không tính điểm."
 
 msgid "The practice room plays one tune of any set you have opened."
-msgstr "Phòng tập phát một giai điệu của bộ bất kỳ bạn đã mở."
+msgstr "Phòng luyện tập phát một giai điệu của bộ bất kỳ bạn đã mở."
 
 msgid ""
 "When a step's beat comes, the music holds, and the step and its key are "
@@ -11436,7 +11437,7 @@ msgid ""
 "{steps_words3}."
 msgstr ""
 "Đã nhảy đến giờ: {set_count}, {tunes}, {steps_words} đúng nhịp, {spot_on} "
-"bước chuẩn. Chuỗi đúng nhịp dài nhất: {steps_words2}. Phòng tập: "
+"bước chuẩn. Chuỗi đúng nhịp dài nhất: {steps_words2}. Phòng luyện tập: "
 "{steps_words3}."
 
 #. placeholders: {steps_words2}
@@ -11447,7 +11448,7 @@ msgstr "Chuỗi đúng nhịp dài nhất: {steps_words2}."
 #. placeholders: {steps_words3}
 #. one sentence of a longer line
 msgid "Practice room: {steps_words3}."
-msgstr "Phòng tập: {steps_words3}."
+msgstr "Phòng luyện tập: {steps_words3}."
 
 msgid "no four-leaf clover yet"
 msgstr "chưa có cỏ bốn lá"
@@ -11583,7 +11584,7 @@ msgid "Dance any set you have opened, with the stars on each."
 msgstr "Nhảy bộ bất kỳ bạn đã mở, kèm số sao của mỗi bộ."
 
 msgid "Practice room"
-msgstr "Phòng tập"
+msgstr "Phòng luyện tập"
 
 msgid ""
 "Any tune you have opened. The music holds at each step until you dance it."
@@ -12573,7 +12574,7 @@ msgid ""
 "practice room"
 msgstr ""
 "Bạn nhảy ở buổi ceili của làng, và người hô gọi các bước. Hãy học ở phòng "
-"tập"
+"luyện tập"
 
 #. placeholders: {h}
 #. one sentence of a longer line
@@ -12951,6 +12952,14 @@ msgid ""
 "ends. Leave the challenge, on the pause menu, does not count, so you can "
 "try again later."
 msgstr ""
+"Mọi người chơi đều nhận cùng thử thách. Thử thách ngày là bầu trời hôm nay: "
+"một vòng dài 15 mũi tên với một điểm khác lạ, như làn gió làm tim trôi "
+"nhanh, bầu trời xa, bầu trời đông đúc, hoặc cặp tình nhân được gấp đôi. Thử "
+"thách tuần là ba mái nhà, mái sau nhộn nhịp hơn mái trước. Mỗi Thứ Hai có "
+"cái mới. Thử thách tháng là năm vòng dưới trăng tròn, có hoa hồng. Vòng nào "
+"cũng được chơi và điểm được cộng lại. Kết quả được tính khi vòng cuối kết "
+"thúc. Rời thử thách, trong menu tạm dừng, thì không tính, nên lát nữa bạn "
+"có thể thử lại."
 
 msgid ""
 "The daily is today's sky: one long round of 15 arrows with a twist, such as "
@@ -14622,6 +14631,12 @@ msgid ""
 "Tab rings the pearl's chime again and names its lane. With spoken call-outs "
 "on, each move is also named, such as \"Pearl, lane 3.\""
 msgstr ""
+"Tín hiệu của viên ngọc phát từ làn của nó: bên trái, phía trước, hoặc bên "
+"phải. Khi nó di chuyển, tín hiệu di chuyển theo. Nó chỉ di chuyển vào nhịp "
+"đầu của ô nhịp, và nhịp đó được miễn: bạn có đến nhịp sau để tới đó. Tín "
+"hiệu đến nơi xác nhận đầu rồng đã tới làn của viên ngọc. Tab rung lại "
+"chuông của viên ngọc và báo làn của nó. Khi bật Lời báo, mỗi lần di chuyển "
+"cũng được báo, như \"Ngọc, làn 3.\""
 
 msgid ""
 "The pearl's cue comes from its lane: to your left, in front, or to your "
@@ -14917,8 +14932,8 @@ msgstr ""
 "Tết Nguyên đán, nên trong tháng Một và đầu tháng Hai vẫn là con giáp năm "
 "cũ. Trong 10 ngày trước Tết Nguyên đán, đèn lồng treo trên các cửa hàng và "
 "bao lì xì được tính gấp đôi. Ngày Tết Nguyên đán có từ 2024 đến 2040. Sau "
-"2040 các ngày lễ hội không mở, và các dòng Diễu hành năm mới và Rước đèn sẽ "
-"báo như vậy."
+"2040 các ngày lễ hội không mở, và các dòng Diễu hành năm mới và Rước đèn "
+"lồng sẽ báo như vậy."
 
 msgid "The parade follows the real calendar."
 msgstr "Đoàn diễu hành theo lịch thật."
@@ -14945,7 +14960,7 @@ msgid ""
 "Lantern walk rows say so."
 msgstr ""
 "Sau 2040 các ngày lễ hội không mở, và các dòng Diễu hành năm mới và Rước "
-"đèn sẽ báo như vậy."
+"đèn lồng sẽ báo như vậy."
 
 msgid "The New Year parade"
 msgstr "Diễu hành năm mới"
@@ -15030,9 +15045,9 @@ msgid ""
 "kinds of lantern, such as the rabbit lantern and the carp lantern, and each "
 "new one joins your collection."
 msgstr ""
-"Tết Nguyên tiêu là ngày rằm đầu năm mới, 14 ngày sau Tết Nguyên đán. Vào "
-"ngày đó, và một ngày trước hay sau, Rước đèn mở ở màn hình chính. Đó là "
-"cuộc dạo êm ả theo nhịp trống chậm, trên con phố tối yên tĩnh, không có "
+"Tết Nguyên Tiêu là ngày rằm đầu năm mới, 14 ngày sau Tết Nguyên đán. Vào "
+"ngày đó, và một ngày trước hay sau, Rước đèn lồng mở ở màn hình chính. Đó "
+"là cuộc dạo êm ả theo nhịp trống chậm, trên con phố tối yên tĩnh, không có "
 "pháo và không có chiêng. Đèn lồng đến theo các làn thay cho bao lì xì. Bắt "
 "chúng như bắt bao lì xì. Có 12 loại đèn lồng, như đèn lồng thỏ và đèn lồng "
 "cá chép, và mỗi cái mới sẽ vào bộ sưu tập của bạn."
@@ -15041,12 +15056,12 @@ msgid ""
 "The Lantern Festival is the fifteenth day of the new year, 14 days after "
 "Lunar New Year."
 msgstr ""
-"Tết Nguyên tiêu là ngày rằm đầu năm mới, 14 ngày sau Tết Nguyên đán."
+"Tết Nguyên Tiêu là ngày rằm đầu năm mới, 14 ngày sau Tết Nguyên đán."
 
 msgid ""
 "On that day, and the day either side, the Lantern walk opens on the title."
 msgstr ""
-"Vào ngày đó, và một ngày trước hay sau, Rước đèn mở ở màn hình chính."
+"Vào ngày đó, và một ngày trước hay sau, Rước đèn lồng mở ở màn hình chính."
 
 msgid ""
 "It is a calm walk at a slow drum, on a quiet evening street, with no "
@@ -15297,7 +15312,7 @@ msgid "new year"
 msgstr "năm mới"
 
 msgid "lantern walk"
-msgstr "rước đèn"
+msgstr "rước đèn lồng"
 
 #. placeholders: {n}, {name}
 msgid "Street {n}: {name}"
@@ -15311,7 +15326,7 @@ msgid "The New Year parade, {year_of}"
 msgstr "Diễu hành năm mới, {year_of}"
 
 msgid "The Lantern walk"
-msgstr "Rước đèn"
+msgstr "Rước đèn lồng"
 
 #. one sentence of a longer line
 msgid "Follow the pearl."
@@ -15703,7 +15718,7 @@ msgstr "Đã múa xong Diễu hành năm mới: {score} điểm"
 
 #. placeholders: {score}
 msgid "The Lantern walk is done: {score} points"
-msgstr "Đã xong Rước đèn: {score} điểm"
+msgstr "Đã xong Rước đèn lồng: {score} điểm"
 
 #. placeholders: {name}, {score}
 msgid "{name} danced: {score} points"
@@ -15915,12 +15930,12 @@ msgstr ""
 "cho năm đó."
 
 msgid "Lantern walk"
-msgstr "Rước đèn"
+msgstr "Rước đèn lồng"
 
 msgid ""
 "A calm lantern walk is open for the Lantern Festival, the fifteenth day of "
 "the new year."
-msgstr "Rước đèn êm ả đã mở dịp Tết Nguyên tiêu, ngày rằm đầu năm mới."
+msgstr "Rước đèn lồng êm ả đã mở dịp Tết Nguyên Tiêu, ngày rằm đầu năm mới."
 
 msgid "Lanterns going up"
 msgstr "Đèn lồng đang treo"
@@ -15963,7 +15978,7 @@ msgid ""
 "Opens for the Lantern Festival, the fifteenth day of the new year, on "
 "{date_words}, {days_phrase}."
 msgstr ""
-"Mở dịp Tết Nguyên tiêu, ngày rằm đầu năm mới, vào {date_words}, "
+"Mở dịp Tết Nguyên Tiêu, ngày rằm đầu năm mới, vào {date_words}, "
 "{days_phrase}."
 
 #. placeholders: {zodiac}
@@ -15971,7 +15986,7 @@ msgid "Happy New Year: the Year of the {zodiac} parade is open."
 msgstr "Chúc mừng năm mới: Diễu hành năm {zodiac} đã mở."
 
 msgid "The Lantern walk is open today."
-msgstr "Hôm nay Rước đèn đã mở."
+msgstr "Hôm nay Rước đèn lồng đã mở."
 
 #. one sentence of a longer line
 msgid "Lanterns are up and lion-dance drums play along."
@@ -16242,7 +16257,7 @@ msgid ""
 "A calm walk under the lanterns for the Lantern Festival: no firecrackers, "
 "no gongs to miss, and lanterns to collect."
 msgstr ""
-"Cuộc dạo êm ả dưới đèn lồng dịp Tết Nguyên tiêu: không có pháo, không có "
+"Cuộc dạo êm ả dưới đèn lồng dịp Tết Nguyên Tiêu: không có pháo, không có "
 "chiêng để lỡ, và có đèn lồng để sưu tầm."
 
 #. placeholders: {lantern_locked}
@@ -16327,8 +16342,8 @@ msgid ""
 "Lanterns, none yet. The Lantern walk opens on the Lantern Festival, 14 days "
 "after Lunar New Year."
 msgstr ""
-"Đèn lồng, chưa có. Rước đèn mở vào Tết Nguyên tiêu, 14 ngày sau Tết Nguyên "
-"đán."
+"Đèn lồng, chưa có. Rước đèn lồng mở vào Tết Nguyên Tiêu, 14 ngày sau Tết "
+"Nguyên đán."
 
 #. placeholders: {n}, {LANTERNS}, {join}
 msgid "Lanterns, {n} of {LANTERNS}: {join}."
@@ -16531,7 +16546,7 @@ msgstr ""
 "điểm."
 
 msgid "Lantern coming: a warm, low glow of chimes, on the Lantern walk."
-msgstr "Đèn lồng đang đến: tiếng chuông trầm, ấm, trong Rước đèn."
+msgstr "Đèn lồng đang đến: tiếng chuông trầm, ấm, trong Rước đèn lồng."
 
 msgid "Lantern caught: a soft harp run."
 msgstr "Bắt được đèn lồng: chuỗi đàn hạc nhẹ."
@@ -16773,7 +16788,7 @@ msgid "the New Year parade"
 msgstr "Diễu hành năm mới"
 
 msgid "the Lantern walk"
-msgstr "Rước đèn"
+msgstr "Rước đèn lồng"
 
 msgid "today's street"
 msgstr "con phố hôm nay"
@@ -19795,7 +19810,7 @@ msgstr "Lật nọc không tốn nước đi."
 
 #. placeholders: {sentence_start}
 msgid "{sentence_start} foundation"
-msgstr ""
+msgstr "Chồng đích {sentence_start}"
 
 #. placeholders: {p}
 msgid "Pile {p}"
@@ -20157,7 +20172,7 @@ msgstr "Lật ngửa ở cột {p}: {name}."
 
 #. placeholders: {sentence_start}
 msgid "{sentence_start} foundation complete."
-msgstr ""
+msgstr "Đã xong chồng đích {sentence_start}."
 
 msgid "All face up. The rest go up on their own."
 msgstr "Mọi lá đã ngửa. Phần còn lại tự lên."
@@ -24761,7 +24776,7 @@ msgid ""
 msgstr ""
 "Đêm 4, phòng thí nghiệm của Tiến sĩ Volt, là nơi điệu nhảy bắt đầu, và chỉ "
 "mở quanh Halloween. Thời gian còn lại trong năm, phòng thí nghiệm và ba bài "
-"của nó trong phòng tập bị khóa đến 17 tháng Mười."
+"của nó trong phòng luyện tập bị khóa đến 17 tháng Mười."
 
 msgid ""
 "Night 4, Doctor Volt's laboratory, is where the dance began, and it only "
@@ -24775,7 +24790,7 @@ msgid ""
 "room are locked until October 17."
 msgstr ""
 "Thời gian còn lại trong năm, phòng thí nghiệm và ba bài của nó trong phòng "
-"tập bị khóa đến 17 tháng Mười."
+"luyện tập bị khóa đến 17 tháng Mười."
 
 msgid "The monsters and their moves"
 msgstr "Các con quái vật và động tác"
@@ -25045,13 +25060,13 @@ msgid ""
 "Dance the move and the song goes on. A wrong move names the right key. "
 "Nothing is scored."
 msgstr ""
-"Phòng tập chơi một bài của bất kỳ đêm nào bạn đã mở. Khi đến phách của một "
-"động tác, nhạc dừng lại, và trò chơi nói tên con quái vật cùng phím của nó. "
-"Nhảy động tác đó thì bài hát chơi tiếp. Sai động tác thì trò chơi nói phím "
-"đúng. Không tính điểm."
+"Phòng luyện tập chơi một bài của bất kỳ đêm nào bạn đã mở. Khi đến phách "
+"của một động tác, nhạc dừng lại, và trò chơi nói tên con quái vật cùng phím "
+"của nó. Nhảy động tác đó thì bài hát chơi tiếp. Sai động tác thì trò chơi "
+"nói phím đúng. Không tính điểm."
 
 msgid "The practice room plays one song of any night you have opened."
-msgstr "Phòng tập chơi một bài của bất kỳ đêm nào bạn đã mở."
+msgstr "Phòng luyện tập chơi một bài của bất kỳ đêm nào bạn đã mở."
 
 msgid ""
 "When a move's beat comes, the music holds, and the monster and its key are "
@@ -25308,7 +25323,7 @@ msgid ""
 "them spot on. Longest streak: {moves_words2}. Practice room: {moves_words3}."
 msgstr ""
 "Đã nhảy: {night_count}, {songs}, {moves_words} đúng nhịp, {spot_on} động "
-"tác chuẩn. Chuỗi dài nhất: {moves_words2}. Phòng tập: {moves_words3}."
+"tác chuẩn. Chuỗi dài nhất: {moves_words2}. Phòng luyện tập: {moves_words3}."
 
 #. placeholders: {moves_words2}
 #. one sentence of a longer line
@@ -25318,7 +25333,7 @@ msgstr "Chuỗi dài nhất: {moves_words2}."
 #. placeholders: {moves_words3}
 #. one sentence of a longer line
 msgid "Practice room: {moves_words3}."
-msgstr "Phòng tập: {moves_words3}."
+msgstr "Phòng luyện tập: {moves_words3}."
 
 #. placeholders: {join}
 msgid "Three songs in a row: {join}."
@@ -25715,73 +25730,73 @@ msgid "a chain clinking as it floats up"
 msgstr "tiếng xích leng keng khi bay lên"
 
 msgid "The Graveyard Warm-up"
-msgstr ""
+msgstr "Khởi động ở nghĩa địa"
 
 msgid "warm-up"
 msgstr ""
 
 msgid "Boneyard Boogie"
-msgstr ""
+msgstr "Boogie bãi xương"
 
 msgid "boneyard"
 msgstr ""
 
 msgid "The Shallow Grave Shuffle"
-msgstr ""
+msgstr "Điệu lê chân mộ nông"
 
 msgid "shallow-grave"
 msgstr ""
 
 msgid "The Cobweb Crawl"
-msgstr ""
+msgstr "Điệu bò mạng nhện"
 
 msgid "cobweb"
 msgstr ""
 
 msgid "The Coffin Lid Clap"
-msgstr ""
+msgstr "Vỗ nắp quan tài"
 
 msgid "coffin-lid"
 msgstr ""
 
 msgid "Drip in the Crypt"
-msgstr ""
+msgstr "Giọt nước hầm mộ"
 
 msgid "drip"
 msgstr ""
 
 msgid "Bat Wing Boogie"
-msgstr ""
+msgstr "Boogie cánh dơi"
 
 msgid "bat-wing"
 msgstr ""
 
 msgid "The Full Moon Stomp"
-msgstr ""
+msgstr "Dậm chân trăng tròn"
 
 msgid "full-moon"
 msgstr ""
 
 msgid "The Bell Tower Bop"
-msgstr ""
+msgstr "Nhún nhảy tháp chuông"
 
 msgid "bell-tower"
 msgstr ""
 
 msgid "Lightning Rod Rock"
-msgstr ""
+msgstr "Rock cột thu lôi"
 
 msgid "lightning-rod"
 msgstr ""
 
 msgid "Off the Slab"
-msgstr ""
+msgstr "Rời bàn mổ"
 
 msgid "slab"
 msgstr ""
 
 msgid "The Graveyard Shuffle"
-msgstr ""
+msgstr "Điệu lê chân nghĩa địa"
 
 msgid "big-shuffle"
 msgstr ""
@@ -25945,7 +25960,7 @@ msgid ""
 "the practice room"
 msgstr ""
 "Quái vật của Tiến sĩ Volt đã khởi đầu một cơn sốt nhảy, và bạn dẫn đầu. Học "
-"trong phòng tập"
+"trong phòng luyện tập"
 
 #. placeholders: {h}
 #. one sentence of a longer line
@@ -26404,7 +26419,7 @@ msgstr ""
 "lại, hoặc Thử lại sau bữa không sao, nấu lại chặng đó từ đầu. Nghe lại kết "
 "quả đọc kết quả, rồi chất lượng từng món. Về màn hình chính ở cuối, và "
 "Escape cũng vậy. Sau thử thách, menu cho chơi lại thử thách và kết thúc "
-"bằng Về thử thách."
+"bằng Về danh sách thử thách."
 
 msgid "When a meal is scored, the results menu reads how it went."
 msgstr "Khi bữa ăn được chấm, menu kết quả đọc diễn biến."
@@ -26432,7 +26447,8 @@ msgid ""
 "After a challenge, the menu offers the challenge again and ends with Back "
 "to the challenges."
 msgstr ""
-"Sau thử thách, menu cho chơi lại thử thách và kết thúc bằng Về thử thách."
+"Sau thử thách, menu cho chơi lại thử thách và kết thúc bằng Về danh sách "
+"thử thách."
 
 msgid ""
 "Challenges, on the title, are menus every player cooks the same way: a new "
@@ -30064,8 +30080,8 @@ msgstr ""
 "lục, số hồn ma đã tránh và thời gian từng tầng. Rồi menu kết quả có Chơi "
 "lại, hoặc Thử lại sau khi thua, rồi Nghe lại kết quả và Về màn hình chính. "
 "Sau khi qua một tầng chơi riêng, Tầng tiếp theo đứng đầu và chơi tầng kế "
-"tiếp. Sau thử thách, menu cho chơi lại thử thách và kết thúc bằng Về thử "
-"thách. Escape làm như dòng cuối cùng."
+"tiếp. Sau thử thách, menu cho chơi lại thử thách và kết thúc bằng Về danh "
+"sách thử thách. Escape làm như dòng cuối cùng."
 
 msgid ""
 "When a run ends, its pages read how it went: the outcome, your score and "
@@ -30686,16 +30702,16 @@ msgid ""
 "Jack is gone with the dawn. You keep his ember, and it is in Records under "
 "Halloween."
 msgstr ""
-"Ở bậc thang cuối, bạn thấy chiếc đèn củ cải của Lantern Jack, vẫn còn ấm, "
-"và Jack đã đi cùng bình minh. Bạn giữ than hồng của hắn, nằm trong Thành "
-"tích ở mục Halloween."
+"Ở bậc thang cuối, bạn thấy chiếc đèn lồng củ cải của Lantern Jack, vẫn còn "
+"ấm, và Jack đã đi cùng bình minh. Bạn giữ than hồng của hắn, nằm trong "
+"Thành tích ở mục Halloween."
 
 msgid ""
 "On the last stair you find Lantern Jack's turnip lantern again, still warm. "
 "Jack is gone with the dawn."
 msgstr ""
-"Ở bậc thang cuối, bạn lại thấy chiếc đèn củ cải của Lantern Jack, vẫn còn "
-"ấm. Jack đã đi cùng bình minh."
+"Ở bậc thang cuối, bạn lại thấy chiếc đèn lồng củ cải của Lantern Jack, vẫn "
+"còn ấm. Jack đã đi cùng bình minh."
 
 msgid "Tonight's haunting"
 msgstr "Cuộc ám đêm nay"
@@ -33142,7 +33158,7 @@ msgstr "ban công dàn nhạc"
 
 #. placeholders: {name}
 msgid "{name} of you"
-msgstr ""
+msgstr "bên {name} bạn"
 
 #. placeholders: {way}, {name}
 msgid "{way}, then {name}"
@@ -33799,7 +33815,7 @@ msgid ""
 "give. I lost a lantern through one and never heard it land."
 msgstr ""
 "Vài tấm ván sàn đã mềm ra. Bạn nghe chúng rên trước khi sụp. Tôi đánh rơi "
-"một cây đèn qua một tấm và chẳng bao giờ nghe nó chạm đất."
+"một chiếc đèn lồng qua một tấm và chẳng bao giờ nghe nó chạm đất."
 
 msgid ""
 "The master hated noise when Ada was sick. Every footstep woke her, he said. "
@@ -35774,7 +35790,7 @@ msgstr ""
 "Khi bạn về nhà, kết quả nói đêm diễn ra thế nào và những gì được ghi vào sổ "
 "tay. Rồi menu kết quả có Chơi lại, Nghe lại kết quả, và Về màn hình chính. "
 "Sau một đêm có bài hát trọn vẹn, Đêm tiếp theo đứng đầu. Sau thử thách, "
-"dòng cuối là Về thử thách. Escape làm như dòng cuối cùng."
+"dòng cuối là Về danh sách thử thách. Escape làm như dòng cuối cùng."
 
 msgid ""
 "When you head home, the results say how the night went and what went into "
@@ -35793,7 +35809,7 @@ msgid "After a night whose song is whole, Next night comes first."
 msgstr "Sau một đêm có bài hát trọn vẹn, Đêm tiếp theo đứng đầu."
 
 msgid "After a challenge, the last row is Back to the challenges."
-msgstr "Sau thử thách, dòng cuối là Về thử thách."
+msgstr "Sau thử thách, dòng cuối là Về danh sách thử thách."
 
 msgid ""
 "The Challenges menu holds 3 lakes that are the same for every player. "
@@ -35833,7 +35849,7 @@ msgid "Weekly: a lantern constellation."
 msgstr "Thử thách tuần: một chòm đèn lồng."
 
 msgid "Only one lantern is lit at a time, with its own cue."
-msgstr "Mỗi lúc chỉ một chiếc sáng, với âm báo riêng."
+msgstr "Mỗi lúc chỉ một chiếc đèn lồng sáng, với âm báo riêng."
 
 msgid "Gather it to light the next."
 msgstr "Gom nó để thắp chiếc tiếp theo."
@@ -36787,16 +36803,16 @@ msgid "{join} and {n}"
 msgstr "{join} và {n}"
 
 msgid "the Left arrow"
-msgstr "phím mũi tên trái"
+msgstr "mũi tên Left"
 
 msgid "the Right arrow"
-msgstr "phím mũi tên phải"
+msgstr "mũi tên Right"
 
 msgid "the Up arrow"
-msgstr "phím mũi tên Lên"
+msgstr "mũi tên Up"
 
 msgid "the Down arrow"
-msgstr "phím mũi tên Xuống"
+msgstr "mũi tên Down"
 
 msgid "Space"
 msgstr "Space"
@@ -38184,9 +38200,9 @@ msgid ""
 msgstr ""
 "Một năm có bốn mùa, mỗi mùa mười ngày: xuân, hạ, thu và đông. Mỗi mùa có "
 "cây trồng riêng, và thuyền hàng bán hạt giống mùa đó. Ngày thứ mười của mỗi "
-"mùa là lễ hội: ngày gieo hạt, giữa mùa hè, hội chợ mùa gặt và rước đèn. Bữa "
-"tối là tiệc lớn, mọi người đều vui, và tiếng lành đồn xa, nên hôm sau có "
-"người mới tới."
+"mùa là lễ hội: ngày gieo hạt, giữa mùa hè, hội chợ mùa gặt và rước đèn "
+"lồng. Bữa tối là tiệc lớn, mọi người đều vui, và tiếng lành đồn xa, nên hôm "
+"sau có người mới tới."
 
 msgid ""
 "A year is four seasons of ten days: spring, summer, autumn and winter."
@@ -38200,7 +38216,7 @@ msgid ""
 "harvest fair and the lantern walk."
 msgstr ""
 "Ngày thứ mười của mỗi mùa là lễ hội: ngày gieo hạt, giữa mùa hè, hội chợ "
-"mùa gặt và rước đèn."
+"mùa gặt và rước đèn lồng."
 
 msgid ""
 "Supper is a feast, everyone is cheered, and word spreads, so someone new "
@@ -41470,19 +41486,19 @@ msgstr "Trở lại Larkfield. {where_line} {cloned}"
 
 #. placeholders: {day}, {name}, {day_of_season}, {hour}, {phase}, {name2}
 msgid "day {day} ({name} {day_of_season}), hour {hour}, {phase}, {name2}"
-msgstr ""
+msgstr "ngày {day} ({name} {day_of_season}), giờ {hour}, {phase}, {name2}"
 
 #. placeholders: {at}
 msgid "at {at}"
-msgstr ""
+msgstr "ở {at}"
 
 #. placeholders: {food_days}, {store_line}
 msgid "food days {food_days}, {store_line}"
-msgstr ""
+msgstr "đủ ăn {food_days} ngày, {store_line}"
 
 #. placeholders: {name}, {name2}, {instrument}, {name3}, {doing}
 msgid "{name}: {name2} {instrument}, at {name3}, {doing}"
-msgstr ""
+msgstr "{name}: {name2} {instrument}, ở {name3}, {doing}"
 
 #. one sentence of a longer line
 msgid "Enter talks to whoever is here."
@@ -42016,7 +42032,7 @@ msgid "Level select plays any of the twenty levels."
 msgstr "Chọn màn chơi bất kỳ màn nào trong hai mươi màn."
 
 msgid "Challenges holds daily, weekly, and monthly."
-msgstr "Thử thách gồm hằng ngày, hằng tuần và hằng tháng."
+msgstr "Thử thách gồm thử thách ngày, tuần và tháng."
 
 msgid "Practice room is an unscored launch range."
 msgstr "Phòng luyện tập là bãi bắn không tính điểm."
@@ -42375,9 +42391,9 @@ msgstr ""
 "thử thách sẽ đọc phần giới thiệu ngắn, có điểm khác lạ và thời gian tới thử "
 "thách kế tiếp. Enter ở trang cuối bắt đầu màn đầu tiên, và Escape quay lại "
 "mà không bắt đầu. Thử thách được tính khi màn cuối kết thúc. Rời đi bằng "
-"Rời thử thách ở menu tạm dừng, hoặc Quay lại thử thách giữa các màn, thì "
-"không được tính. Điểm của bạn là tổng điểm trình diễn của mọi màn, và phần "
-"kết quả nói kết quả, kỷ lục và chuỗi của bạn."
+"Rời thử thách ở menu tạm dừng, hoặc Về danh sách thử thách giữa các màn, "
+"thì không được tính. Điểm của bạn là tổng điểm trình diễn của mọi màn, và "
+"phần kết quả nói kết quả, kỷ lục và chuỗi của bạn."
 
 msgid ""
 "Challenges on the title, or Challenges in the lobby, holds three challenges "
@@ -42416,8 +42432,8 @@ msgid ""
 "Leaving by Leave the challenge on the pause menu, or by Back to the "
 "challenges between shows, does not count it."
 msgstr ""
-"Rời đi bằng Rời thử thách ở menu tạm dừng, hoặc Quay lại thử thách giữa các "
-"màn, thì không được tính."
+"Rời đi bằng Rời thử thách ở menu tạm dừng, hoặc Về danh sách thử thách giữa "
+"các màn, thì không được tính."
 
 msgid ""
 "Your score is the show points of every show added up, and the results say "
@@ -42430,24 +42446,24 @@ msgid ""
 "Daily, tonight's show: one show from the harder half of the campaign, "
 "levels 11 to 20, under a twist."
 msgstr ""
-"Hằng ngày, màn trình diễn tối nay: một màn từ nửa khó của chiến dịch, màn "
-"11 tới 20, có một điểm khác lạ."
+"Thử thách ngày, màn trình diễn tối nay: một màn từ nửa khó của chiến dịch, "
+"màn 11 tới 20, có một điểm khác lạ."
 
 msgid ""
 "Weekly, the five-show gauntlet: five shows in a row, each bigger than the "
 "last, under the week's twist. A show under 60 percent ends the gauntlet. "
 "Its points still count."
 msgstr ""
-"Hằng tuần, năm màn liên hoàn: năm màn liên tiếp, màn sau lớn hơn màn trước, "
-"với điểm khác lạ của tuần. Một màn dưới 60 phần trăm sẽ kết thúc chuỗi liên "
-"hoàn. Điểm của nó vẫn được tính."
+"Thử thách tuần, năm màn liên hoàn: năm màn liên tiếp, màn sau lớn hơn màn "
+"trước, với điểm khác lạ của tuần. Một màn dưới 60 phần trăm sẽ kết thúc "
+"chuỗi liên hoàn. Điểm của nó vẫn được tính."
 
 msgid ""
 "Weekly, the five-show gauntlet: five shows in a row, each bigger than the "
 "last, under the week's twist."
 msgstr ""
-"Hằng tuần, năm màn liên hoàn: năm màn liên tiếp, màn sau lớn hơn màn trước, "
-"với điểm khác lạ của tuần."
+"Thử thách tuần, năm màn liên hoàn: năm màn liên tiếp, màn sau lớn hơn màn "
+"trước, với điểm khác lạ của tuần."
 
 msgid "A show under 60 percent ends the gauntlet."
 msgstr "Một màn dưới 60 phần trăm sẽ kết thúc chuỗi liên hoàn."
@@ -42463,18 +42479,18 @@ msgid ""
 "near-perfectly, with the right kind and place within 0.3 seconds, adds 100 "
 "bonus points."
 msgstr ""
-"Hằng tháng, lễ hội: một lễ hội theo chủ đề, như ngày Độc lập vào tháng Bảy, "
-"với hai hồi và màn kết 14 quả pháo. Hồi nào cũng được chơi, dù điểm thế "
-"nào. Lễ hội tôn vinh một loại pháo, pháo đặc trưng, và các màn của nó đầy "
-"loại pháo này: ở màn qua được, mỗi quả pháo đặc trưng khớp gần như hoàn "
+"Thử thách tháng, lễ hội: một lễ hội theo chủ đề, như ngày Độc lập vào tháng "
+"Bảy, với hai hồi và màn kết 14 quả pháo. Hồi nào cũng được chơi, dù điểm "
+"thế nào. Lễ hội tôn vinh một loại pháo, pháo đặc trưng, và các màn của nó "
+"đầy loại pháo này: ở màn qua được, mỗi quả pháo đặc trưng khớp gần như hoàn "
 "hảo, đúng loại và đúng chỗ trong 0,3 giây, được thêm 100 điểm thưởng."
 
 msgid ""
 "Monthly, the festival: a themed festival, such as Independence Day in July, "
 "with two acts and a 14-firework finale."
 msgstr ""
-"Hằng tháng, lễ hội: một lễ hội theo chủ đề, như ngày Độc lập vào tháng Bảy, "
-"với hai hồi và màn kết 14 quả pháo."
+"Thử thách tháng, lễ hội: một lễ hội theo chủ đề, như ngày Độc lập vào tháng "
+"Bảy, với hai hồi và màn kết 14 quả pháo."
 
 msgid "Every act is played, whatever it scores."
 msgstr "Hồi nào cũng được chơi, dù điểm thế nào."
@@ -42582,12 +42598,13 @@ msgid ""
 "Between the shows of a weekly or monthly challenge, the first row goes on "
 "to the next show."
 msgstr ""
-"Sau một màn thử thách, phần kết quả kết thúc bằng Quay lại thử thách. Giữa "
-"các màn của thử thách tuần hoặc tháng, dòng đầu tiên đi tiếp tới màn sau."
+"Sau một màn thử thách, phần kết quả kết thúc bằng Về danh sách thử thách. "
+"Giữa các màn của thử thách tuần hoặc tháng, dòng đầu tiên đi tiếp tới màn "
+"sau."
 
 msgid "After a challenge show, the results end with Back to the challenges."
 msgstr ""
-"Sau một màn thử thách, phần kết quả kết thúc bằng Quay lại thử thách."
+"Sau một màn thử thách, phần kết quả kết thúc bằng Về danh sách thử thách."
 
 msgid ""
 "Between the shows of a weekly or monthly challenge, the first row goes on "
@@ -43449,7 +43466,7 @@ msgid "Independence night"
 msgstr "Đêm Độc lập"
 
 msgid "independence night"
-msgstr ""
+msgstr "đêm Độc lập"
 
 msgid ""
 "A four-act Fourth of July show ending in a 20-firework finale, open today "
@@ -43861,7 +43878,7 @@ msgstr "Phòng luyện tập: đã bắn {launched}"
 
 #. placeholders: {level}
 msgid "level {level}"
-msgstr ""
+msgstr "màn {level}"
 
 msgid "total"
 msgstr ""
@@ -43870,7 +43887,7 @@ msgid "finale"
 msgstr ""
 
 msgid "my show"
-msgstr ""
+msgstr "màn trình diễn của tôi"
 
 msgid "The show."
 msgstr "Màn trình diễn."
@@ -46573,7 +46590,7 @@ msgstr ""
 
 #. placeholders: {label}, {phase}, {beat}
 msgid "{label}, {phase}, beat {beat}"
-msgstr ""
+msgstr "{label}, {phase}, nhịp {beat}"
 
 #. placeholders: {r}, {current}, {riding}
 msgid "boat {r}, current {current}, riding {riding}"
@@ -46583,10 +46600,12 @@ msgstr ""
 msgid ""
 "score {score}, combo {combo}, caught {caught} of {offered}, bumps {bumps}"
 msgstr ""
+"điểm {score}, combo {combo}, bắt được {caught} trên {offered}, va chạm "
+"{bumps}"
 
 #. placeholders: {id}, {x_at}, {beats_left}
 msgid "coming: {id} at {x_at} in {beats_left} beats"
-msgstr ""
+msgstr "sắp tới: {id} ở {x_at} sau {beats_left} nhịp"
 
 #. one sentence of a longer line
 msgid ""
@@ -46890,7 +46909,7 @@ msgstr "Món đồ nhỏ rất hiếm. Bạn tìm thấy món mới trước nh�
 
 #. placeholders: {set}
 msgid "The {set} set, complete"
-msgstr ""
+msgstr "Bộ {set}, đã đủ"
 
 #. one sentence of a longer line
 msgid "A petal is floating toward you."
@@ -47284,8 +47303,8 @@ msgid ""
 "your strikes and spares in all."
 msgstr ""
 "Thành tích giữ trận điểm cao nhất, số strike liên tiếp nhiều nhất, loạt "
-"trận cao nhất từ thử thách hằng tháng, việc bạn đã có trận hoàn hảo hay "
-"chưa, và tổng số strike và spare của bạn."
+"trận cao nhất từ thử thách tháng, việc bạn đã có trận hoàn hảo hay chưa, và "
+"tổng số strike và spare của bạn."
 
 msgid ""
 "Every player gets the same lane for each period. The lane decides which way "
@@ -48007,7 +48026,7 @@ msgid "Pumpkin night"
 msgstr "Đêm bí ngô"
 
 msgid "pumpkin night"
-msgstr ""
+msgstr "đêm bí ngô"
 
 #. placeholders: {NAME}, {next_words}
 msgid "{NAME} opens {next_words}."
@@ -49037,8 +49056,8 @@ msgid ""
 "storm rail. The run is won at the sector's end. It carries one twist, "
 "announced in the briefing and when the run goes live:"
 msgstr ""
-"Hằng ngày, nước rút khu vực: một khu vực 60 giây, khó như khu vực thứ tư, "
-"theo tuyến chọn cho ngày đó: cao điểm thường, hành lang phục kích hoặc "
+"Thử thách ngày, nước rút khu vực: một khu vực 60 giây, khó như khu vực thứ "
+"tư, theo tuyến chọn cho ngày đó: cao điểm thường, hành lang phục kích hoặc "
 "đường ray bão. Thắng khi tới cuối khu vực. Nó có một điểm khác lạ, được báo "
 "trong phần giới thiệu và khi lượt bắt đầu:"
 
@@ -49047,8 +49066,8 @@ msgid ""
 "along a route drawn for the day: a standard rush, an ambush corridor or the "
 "storm rail."
 msgstr ""
-"Hằng ngày, nước rút khu vực: một khu vực 60 giây, khó như khu vực thứ tư, "
-"theo tuyến chọn cho ngày đó: cao điểm thường, hành lang phục kích hoặc "
+"Thử thách ngày, nước rút khu vực: một khu vực 60 giây, khó như khu vực thứ "
+"tư, theo tuyến chọn cho ngày đó: cao điểm thường, hành lang phục kích hoặc "
 "đường ray bão."
 
 msgid "The run is won at the sector's end."
@@ -49099,17 +49118,17 @@ msgid ""
 "upgrade after each of the first two sectors. The route ahead is already "
 "set, so the route menu has one choice."
 msgstr ""
-"Hằng tuần, đường dài: ba khu vực theo tuyến cố định, kết thúc bằng chặng "
-"nước rút tới điểm rút lui, với điểm khác lạ riêng của tuần. Bạn chọn một "
-"nâng cấp sau mỗi khu vực trong hai khu đầu. Tuyến phía trước đã định sẵn, "
-"nên menu tuyến chỉ có một lựa chọn."
+"Thử thách tuần, đường dài: ba khu vực theo tuyến cố định, kết thúc bằng "
+"chặng nước rút tới điểm rút lui, với điểm khác lạ riêng của tuần. Bạn chọn "
+"một nâng cấp sau mỗi khu vực trong hai khu đầu. Tuyến phía trước đã định "
+"sẵn, nên menu tuyến chỉ có một lựa chọn."
 
 msgid ""
 "Weekly, the long haul: three sectors along a fixed route, ending in the "
 "extraction sprint, with a twist of its own for the week."
 msgstr ""
-"Hằng tuần, đường dài: ba khu vực theo tuyến cố định, kết thúc bằng chặng "
-"nước rút tới điểm rút lui, với điểm khác lạ riêng của tuần."
+"Thử thách tuần, đường dài: ba khu vực theo tuyến cố định, kết thúc bằng "
+"chặng nước rút tới điểm rút lui, với điểm khác lạ riêng của tuần."
 
 msgid "You choose an upgrade after each of the first two sectors."
 msgstr "Bạn chọn một nâng cấp sau mỗi khu vực trong hai khu đầu."
@@ -49126,19 +49145,19 @@ msgid ""
 "own story log, and flying an event to its end keeps that log in the story "
 "archive."
 msgstr ""
-"Hằng tháng, sự kiện Black Sky, Blackout Convoy: ba khu vực đoàn sơ tán, rồi "
-"chặng nước rút tới điểm rút lui. Xe ưu tiên là tàu sơ tán, được báo là \"Tàu "
-"sơ tán\". Mỗi tàu sơ tán bạn cho qua được trả gấp ba. Mỗi tàu bị chậm trễ "
-"gây gấp đôi căng thẳng. Căng thẳng bắt đầu ở 30, và bạn mang ba quyền ưu "
-"tiên. Phần giới thiệu đọc nhật ký cốt truyện riêng của sự kiện, và bay một "
-"sự kiện tới cuối sẽ giữ nhật ký đó trong kho lưu trữ cốt truyện."
+"Thử thách tháng, sự kiện Black Sky, Blackout Convoy: ba khu vực đoàn sơ "
+"tán, rồi chặng nước rút tới điểm rút lui. Xe ưu tiên là tàu sơ tán, được "
+"báo là \"Tàu sơ tán\". Mỗi tàu sơ tán bạn cho qua được trả gấp ba. Mỗi tàu bị "
+"chậm trễ gây gấp đôi căng thẳng. Căng thẳng bắt đầu ở 30, và bạn mang ba "
+"quyền ưu tiên. Phần giới thiệu đọc nhật ký cốt truyện riêng của sự kiện, và "
+"bay một sự kiện tới cuối sẽ giữ nhật ký đó trong kho lưu trữ cốt truyện."
 
 msgid ""
 "Monthly, the Black Sky event, Blackout Convoy: three evacuation convoy "
 "sectors, then the extraction sprint."
 msgstr ""
-"Hằng tháng, sự kiện Black Sky, Blackout Convoy: ba khu vực đoàn sơ tán, rồi "
-"chặng nước rút tới điểm rút lui."
+"Thử thách tháng, sự kiện Black Sky, Blackout Convoy: ba khu vực đoàn sơ "
+"tán, rồi chặng nước rút tới điểm rút lui."
 
 msgid ""
 "Priority vehicles are evacuation trains, called out as \"Evacuation train\"."
@@ -49188,7 +49207,7 @@ msgstr ""
 "mới thay kỷ lục, nhưng lượt nào hoàn thành cũng giữ được chuỗi. Thử thách "
 "ngày đặt lại lúc nửa đêm UTC, thử thách tuần vào thứ Hai, thử thách tháng "
 "vào ngày đầu tháng. Sau một thử thách, menu kết quả có thể bay lại cùng "
-"đường ray, và dòng cuối là Quay lại thử thách."
+"đường ray, và dòng cuối là Về danh sách thử thách."
 
 msgid ""
 "A challenge counts when the run ends, won or lost: the game reads your "
@@ -49216,7 +49235,7 @@ msgid ""
 "last row is Back to the challenges."
 msgstr ""
 "Sau một thử thách, menu kết quả có thể bay lại cùng đường ray, và dòng cuối "
-"là Quay lại thử thách."
+"là Về danh sách thử thách."
 
 msgid "Special nights"
 msgstr "Đêm đặc biệt"
@@ -49716,7 +49735,7 @@ msgstr ""
 "Sau phần tổng kết, menu kết quả có Chơi lại hoặc Thử lại, Nghe lại kết quả, "
 "Tiến độ phi công, Kho lưu trữ, nơi giữ nhật ký cốt truyện, và Về màn hình "
 "chính. Sau lượt có hướng dẫn, Tiếp theo bắt đầu một Black Sky Run. Sau một "
-"thử thách, dòng đầu bay lại cùng thử thách và dòng cuối là Quay lại thử "
+"thử thách, dòng đầu bay lại cùng thử thách và dòng cuối là Về danh sách thử "
 "thách. Escape làm như dòng cuối."
 
 msgid ""
@@ -49735,8 +49754,8 @@ msgid ""
 "After a challenge, the first row flies the same challenge again and the "
 "last is Back to the challenges."
 msgstr ""
-"Sau một thử thách, dòng đầu bay lại cùng thử thách và dòng cuối là Quay lại "
-"thử thách."
+"Sau một thử thách, dòng đầu bay lại cùng thử thách và dòng cuối là Về danh "
+"sách thử thách."
 
 msgid "Pages"
 msgstr "Các trang"
@@ -51532,13 +51551,13 @@ msgid "tutorial"
 msgstr ""
 
 msgid "black sky"
-msgstr ""
+msgstr "Black Sky Run"
 
 msgid "full moon"
 msgstr "trăng tròn"
 
 msgid "cold start"
-msgstr ""
+msgstr "khởi đầu lạnh"
 
 msgid "dense traffic"
 msgstr "giao thông dày đặc"
@@ -52674,7 +52693,7 @@ msgstr "Kỷ lục mới trên bảng xếp hạng {board}: {score}, vượt {pr
 
 #. placeholders: {sentence_start}, {best}
 msgid "{sentence_start} best stays {best}."
-msgstr ""
+msgstr "Kỷ lục {sentence_start} vẫn là {best}."
 
 msgid "Tutorial route live. Center lane."
 msgstr "Tuyến huấn luyện đã bắt đầu. Làn giữa."
@@ -55333,11 +55352,11 @@ msgstr ""
 
 #. placeholders: {points_words}, {best_word}, {previous}
 msgid "{points_words}, a new {best_word}, beating {previous}."
-msgstr ""
+msgstr "{points_words}, {best_word} mới, vượt {previous}."
 
 #. placeholders: {points_words}, {best_word}, {best}
 msgid "{points_words}. Your {best_word} is {best}."
-msgstr ""
+msgstr "{points_words}. {best_word} của bạn là {best}."
 
 msgid "1 pantry cleared"
 msgstr "Đã dọn 1 chạn"
@@ -57025,20 +57044,20 @@ msgstr "{sentence_start} chia chiến thắng với {night}"
 #. placeholders: {place}, {mine}
 #. one sentence of a longer line
 msgid "You came {place} with {mine}."
-msgstr ""
+msgstr "Bạn về {place} với {mine}."
 
 #. placeholders: {lead}, {place}, {mine}
 msgid "{lead}. You came {place} with {mine}."
-msgstr ""
+msgstr "{lead}. Bạn về {place} với {mine}."
 
 #. placeholders: {place}, {mine}, {names}
 #. one sentence of a longer line
 msgid "You came {place} with {mine}, level with {names}."
-msgstr "Bạn về thứ {place} với {mine}, ngang với {names}."
+msgstr "Bạn về {place} với {mine}, ngang với {names}."
 
 #. placeholders: {lead}, {place}, {mine}, {names}
 msgid "{lead}. You came {place} with {mine}, level with {names}."
-msgstr ""
+msgstr "{lead}. Bạn về {place} với {mine}, ngang với {names}."
 
 #. placeholders: {mine}
 msgid " {mine} is your first saloon night."
@@ -58432,8 +58451,8 @@ msgstr ""
 "mỗi lần thu hoạch, 2 cho mỗi con sâu bọ bắt được, 5 cho mỗi bè trong hòa âm "
 "đầy đủ nhất, và 100 khi đạt mục tiêu, cộng 10 cho mỗi ngày còn dư. Kỷ lục "
 "và chuỗi của bạn được đọc ở cuối, và trong menu thử thách. Sau phần kết "
-"quả, một menu ngắn có Chơi lại thử thách này, Nghe lại kết quả, và Quay lại "
-"thử thách. Escape làm như Quay lại thử thách."
+"quả, một menu ngắn có Chơi lại thử thách này, Nghe lại kết quả, và Về danh "
+"sách thử thách. Escape làm như Về danh sách thử thách."
 
 msgid "When the goal is met, the garden celebrates and the challenge ends."
 msgstr "Khi đạt mục tiêu, khu vườn ăn mừng và thử thách kết thúc."
@@ -58462,10 +58481,10 @@ msgid ""
 "results again, and Back to the challenges."
 msgstr ""
 "Sau phần kết quả, một menu ngắn có Chơi lại thử thách này, Nghe lại kết "
-"quả, và Quay lại thử thách."
+"quả, và Về danh sách thử thách."
 
 msgid "Escape does the same as Back to the challenges."
-msgstr "Escape làm như Quay lại thử thách."
+msgstr "Escape làm như Về danh sách thử thách."
 
 msgid ""
 "Sound check, on the title menu, plays the gameplay cues and each plant's "
@@ -59391,11 +59410,11 @@ msgid "{PLAY}, tend your garden: {garden_words}"
 msgstr "{PLAY}, chăm khu vườn: {garden_words}"
 
 msgid "Records. You have not started a garden yet."
-msgstr "Kỷ lục. Bạn chưa bắt đầu khu vườn nào."
+msgstr "Thành tích. Bạn chưa bắt đầu khu vườn nào."
 
 #. placeholders: {garden_words}
 msgid "Records. Your garden: {garden_words}."
-msgstr "Kỷ lục. Khu vườn của bạn: {garden_words}."
+msgstr "Thành tích. Khu vườn của bạn: {garden_words}."
 
 #. placeholders: {garden_words}
 #. one sentence of a longer line
@@ -61154,7 +61173,8 @@ msgid ""
 msgstr ""
 "Mỗi vòng số được 100 điểm. Phá két nhanh để được thưởng thời gian. Mỗi lỗi "
 "mất 30 điểm và mỗi gợi ý mất 20. Mỗi két giữ thời gian tốt nhất và điểm cao "
-"nhất của bạn, và Kỷ lục ở màn hình chính đọc tất cả, cùng kết quả thử thách."
+"nhất của bạn, và Thành tích ở màn hình chính đọc tất cả, cùng kết quả thử "
+"thách."
 
 msgid "Every wheel is worth 100 points."
 msgstr "Mỗi vòng số được 100 điểm."
@@ -61169,8 +61189,8 @@ msgid ""
 "Each safe keeps your best time and best score, and Records on the title "
 "reads them all, with your challenge results."
 msgstr ""
-"Mỗi két giữ thời gian tốt nhất và điểm cao nhất của bạn, và Kỷ lục ở màn "
-"hình chính đọc tất cả, cùng kết quả thử thách."
+"Mỗi két giữ thời gian tốt nhất và điểm cao nhất của bạn, và Thành tích ở "
+"màn hình chính đọc tất cả, cùng kết quả thử thách."
 
 msgid ""
 "The clock and the guard stand still while a line is still being spoken. A "
@@ -61332,7 +61352,7 @@ msgstr ""
 "Hai két thưởng chỉ mở ở màn hình chính vào đêm của chúng, sau Chọn két. Vào "
 "đêm khác, hàng của chúng báo đang khóa và cho biết ngày mở. Ai cũng mở "
 "được, dù bạn đã đi tới đâu. Mỗi két giữ điểm cao nhất riêng, tách khỏi mười "
-"két, và Kỷ lục đọc chúng khi bạn đã phá."
+"két, và Thành tích đọc chúng khi bạn đã phá."
 
 msgid ""
 "Two bonus safes open on the title on their nights only, after Safe select."
@@ -61349,8 +61369,8 @@ msgid ""
 "Each keeps its own best score, apart from the ten safes, and Records reads "
 "them once you have cracked them."
 msgstr ""
-"Mỗi két giữ điểm cao nhất riêng, tách khỏi mười két, và Kỷ lục đọc chúng "
-"khi bạn đã phá."
+"Mỗi két giữ điểm cao nhất riêng, tách khỏi mười két, và Thành tích đọc "
+"chúng khi bạn đã phá."
 
 msgid ""
 "The unlucky safe is on every Friday the 13th. It has four wheels, each with "
@@ -61432,7 +61452,7 @@ msgstr ""
 "không bắt đầu. Kết quả được tính khi phi vụ kết thúc, bằng cách mở hết két "
 "hoặc thua một két. Rời thử thách, trong menu tạm dừng, không được tính, nên "
 "bạn có thể quay lại thử tiếp. Sau phi vụ, menu kết quả có lại phi vụ đó, "
-"Nghe lại kết quả, và Về thử thách."
+"Nghe lại kết quả, và Về danh sách thử thách."
 
 msgid ""
 "Challenges on the title holds three jobs that are the same for every "
@@ -61478,8 +61498,8 @@ msgid ""
 "After the job, the results menu offers the same job again, Hear the results "
 "again, and Back to the challenges."
 msgstr ""
-"Sau phi vụ, menu kết quả có lại phi vụ đó, Nghe lại kết quả, và Về thử "
-"thách."
+"Sau phi vụ, menu kết quả có lại phi vụ đó, Nghe lại kết quả, và Về danh "
+"sách thử thách."
 
 msgid ""
 "Tonight's job, the daily: one safe of three or four wheels, with one twist. "
@@ -62650,8 +62670,8 @@ msgid ""
 "Records. Safes cracked: {cracked} of {SAFES}. Safes opened in all: "
 "{opened}. Practice wheels set: {practice_sets}."
 msgstr ""
-"Kỷ lục. Két đã phá: {cracked} trên {SAFES}. Tổng số két đã mở: {opened}. "
-"Vòng luyện tập đã đặt: {practice_sets}."
+"Thành tích. Két đã phá: {cracked} trên {SAFES}. Tổng số két đã mở: "
+"{opened}. Vòng luyện tập đã đặt: {practice_sets}."
 
 #. placeholders: {cracked}, {SAFES}
 #. one sentence of a longer line
@@ -63489,8 +63509,8 @@ msgid ""
 "Records keeps your best score, your longest run of trains, the shortest "
 "window you reached, and your challenge results."
 msgstr ""
-"Kỷ lục giữ điểm cao nhất, chuỗi tàu dài nhất, khung ngắn nhất bạn đạt được, "
-"và kết quả thử thách của bạn."
+"Thành tích giữ điểm cao nhất, chuỗi tàu dài nhất, khung ngắn nhất bạn đạt "
+"được, và kết quả thử thách của bạn."
 
 msgid ""
 "The steam gala is on the last weekend of every month, Saturday and Sunday. "
@@ -63542,8 +63562,8 @@ msgid ""
 msgstr ""
 "Chuyến tàu thứ mười ba xuất hiện trong các ca đêm thường vào thứ Sáu ngày "
 "13. Hãy trả lời cuộc gọi của nó như mọi khi. Cách tính điểm không đổi. Kết "
-"quả cho biết chuyến tàu thứ mười ba đã đi qua, và Kỷ lục đếm số lần bạn đã "
-"gặp nó. Trò chơi báo sự kiện trước khi mở tuyến. S, H và F1 cho biết khi "
+"quả cho biết chuyến tàu thứ mười ba đã đi qua, và Thành tích đếm số lần bạn "
+"đã gặp nó. Trò chơi báo sự kiện trước khi mở tuyến. S, H và F1 cho biết khi "
 "nào có sự kiện."
 
 msgid ""
@@ -63562,8 +63582,8 @@ msgid ""
 "The results say the thirteenth train went by, and Records keeps count of "
 "how many you have seen."
 msgstr ""
-"Kết quả cho biết chuyến tàu thứ mười ba đã đi qua, và Kỷ lục đếm số lần bạn "
-"đã gặp nó."
+"Kết quả cho biết chuyến tàu thứ mười ba đã đi qua, và Thành tích đếm số lần "
+"bạn đã gặp nó."
 
 msgid "The game announces the event before the line opens."
 msgstr "Trò chơi báo sự kiện trước khi mở tuyến."
@@ -64142,7 +64162,7 @@ msgstr "Ca đêm: {best}, {run}, {window}.{extra}"
 
 #. placeholders: {best}, {run}, {window}, {extra}
 msgid "Records. Night shift: {best}, {run}, {window}.{extra}"
-msgstr "Kỷ lục. Ca đêm: {best}, {run}, {window}.{extra}"
+msgstr "Thành tích. Ca đêm: {best}, {run}, {window}.{extra}"
 
 #. placeholders: {shifts}, {trains_words}, {calls}
 msgid ""
@@ -65062,8 +65082,8 @@ msgid ""
 "teas discovered out of every tea there is, keepsakes, and your challenge "
 "results."
 msgstr ""
-"Kỷ lục giữ số buổi chiều và buổi tối bạn đã chơi, số chén đã phục vụ, số "
-"chén hoàn hảo, số xu kiếm được, buổi chiều và buổi tối nhiều xu nhất, số "
+"Thành tích giữ số buổi chiều và buổi tối bạn đã chơi, số chén đã phục vụ, "
+"số chén hoàn hảo, số xu kiếm được, buổi chiều và buổi tối nhiều xu nhất, số "
 "loại trà đã khám phá trên tổng số trà, kỷ vật, và kết quả thử thách của bạn."
 
 msgid "Sound check, on the title, plays the gameplay cues."
@@ -66502,15 +66522,15 @@ msgid "{name} is this season's blend."
 msgstr "{name} là trà pha của mùa này."
 
 msgid "Records. The tea house has not opened yet."
-msgstr "Kỷ lục. Quán trà chưa mở cửa."
+msgstr "Thành tích. Quán trà chưa mở cửa."
 
 #. placeholders: {plural}, {plural2}, {plural3}, {perfect}, {coins_words}
 msgid ""
 "Records. {plural} and {plural2} played. {plural3} served, {perfect} "
 "perfect, {coins_words} earned in all."
 msgstr ""
-"Kỷ lục. Đã chơi {plural} và {plural2}. Đã phục vụ {plural3}, {perfect} chén "
-"hoàn hảo, tổng cộng kiếm được {coins_words}."
+"Thành tích. Đã chơi {plural} và {plural2}. Đã phục vụ {plural3}, {perfect} "
+"chén hoàn hảo, tổng cộng kiếm được {coins_words}."
 
 #. placeholders: {plural3}, {perfect}, {coins_words}
 #. one sentence of a longer line
@@ -67454,7 +67474,7 @@ msgid "sencha"
 msgstr ""
 
 msgid "Sencha"
-msgstr ""
+msgstr "Sencha"
 
 msgid "A Japanese green tea, grassy and bright."
 msgstr "Trà xanh Nhật Bản, vị cỏ non và tươi sáng."
@@ -67493,7 +67513,7 @@ msgid "rooibos"
 msgstr ""
 
 msgid "Rooibos"
-msgstr ""
+msgstr "Rooibos"
 
 msgid "Red bush from the cape, nutty and sweet, with no caffeine."
 msgstr "Cây bụi đỏ từ vùng mũi đất, vị bùi và ngọt, không có caffeine."
@@ -67502,7 +67522,7 @@ msgid "genmaicha"
 msgstr ""
 
 msgid "Genmaicha"
-msgstr ""
+msgstr "Genmaicha"
 
 msgid "Green tea with toasted rice, like warm popcorn."
 msgstr "Trà xanh với gạo rang, như bỏng ngô ấm."
@@ -67526,13 +67546,13 @@ msgid "darjeeling"
 msgstr ""
 
 msgid "Darjeeling"
-msgstr ""
+msgstr "Darjeeling"
 
 msgid "A light black tea from the hills, with a taste of muscat grapes."
 msgstr "Một loại hồng trà nhẹ từ vùng đồi, phảng phất vị nho xạ."
 
 msgid "Earl Grey"
-msgstr ""
+msgstr "Earl Grey"
 
 msgid "Black tea scented with bergamot orange."
 msgstr "Hồng trà ướp hương cam bergamot."
@@ -67541,7 +67561,7 @@ msgid "lapsang"
 msgstr ""
 
 msgid "Lapsang souchong"
-msgstr ""
+msgstr "Lapsang souchong"
 
 msgid "Black tea dried over pine smoke."
 msgstr "Hồng trà sấy trên khói gỗ thông."
@@ -67550,7 +67570,7 @@ msgid "hojicha"
 msgstr ""
 
 msgid "Hojicha"
-msgstr ""
+msgstr "Hojicha"
 
 msgid "Green tea roasted brown, toasty and mellow."
 msgstr "Trà xanh rang nâu, ấm thơm và êm dịu."
@@ -68644,7 +68664,7 @@ msgstr "Lượt trượt đèn lồng: chưa trượt."
 
 #. placeholders: {stars_words}, {join}, {fair}, {lanterns}
 msgid "Records. {stars_words} in all. {join} {fair} {lanterns}"
-msgstr "Kỷ lục. Tổng cộng {stars_words}. {join} {fair} {lanterns}"
+msgstr "Thành tích. Tổng cộng {stars_words}. {join} {fair} {lanterns}"
 
 #. placeholders: {stars_words}
 #. one sentence of a longer line
@@ -69587,7 +69607,7 @@ msgid "frost fair"
 msgstr ""
 
 msgid "lantern skate"
-msgstr ""
+msgstr "lượt trượt đèn lồng"
 
 msgid "the middle"
 msgstr "chính giữa"
@@ -70246,8 +70266,8 @@ msgid ""
 "Records keeps your best score on each moon, your softest touchdown, how "
 "many landings and crashes you have made, and your challenge results."
 msgstr ""
-"Kỷ lục giữ điểm cao nhất ở mỗi mặt trăng, lần chạm đất êm nhất, số lần hạ "
-"cánh và rơi vỡ, và kết quả thử thách của bạn."
+"Thành tích giữ điểm cao nhất ở mỗi mặt trăng, lần chạm đất êm nhất, số lần "
+"hạ cánh và rơi vỡ, và kết quả thử thách của bạn."
 
 msgid "The tutorial"
 msgstr "Phần hướng dẫn"
@@ -70695,7 +70715,7 @@ msgstr ""
 "thấp."
 
 msgid "Tranquility Base"
-msgstr ""
+msgstr "Căn cứ Tranquility"
 
 msgid "Land at Tranquility Base in low gravity for moon landing day."
 msgstr ""
@@ -71145,7 +71165,8 @@ msgstr "Mặt trăng đã hạ cánh: {cleared} trên {MOONS}, {softest}."
 
 #. placeholders: {cleared}, {MOONS}, {softest}
 msgid "Records. Moons landed: {cleared} of {MOONS}, {softest}."
-msgstr "Kỷ lục. Mặt trăng đã hạ cánh: {cleared} trên {MOONS}, {softest}."
+msgstr ""
+"Thành tích. Mặt trăng đã hạ cánh: {cleared} trên {MOONS}, {softest}."
 
 #. placeholders: {count}, {count2}, {count3}
 msgid "Flown so far: {count}, {count2} and {count3}."
@@ -71977,8 +71998,8 @@ msgid ""
 msgstr ""
 "Khi chuyến thám hiểm kết thúc, trò chơi đọc diễn biến, chiến lợi phẩm và kỷ "
 "lục của bạn. Rồi menu kết quả có Chơi lại, hoặc Thử lại sau khi thua, Nghe "
-"lại kết quả, và Về màn hình chính. Sau thử thách, hàng cuối là Về thử "
-"thách. Escape giống như hàng cuối."
+"lại kết quả, và Về màn hình chính. Sau thử thách, hàng cuối là Về danh sách "
+"thử thách. Escape giống như hàng cuối."
 
 msgid ""
 "When an expedition ends, the game reads how it went, your haul and your "
@@ -72094,13 +72115,13 @@ msgid ""
 "the row and in Records."
 msgstr ""
 "Chơi, thám hiểm: từ lần lặn 1, sâu đến đâu tùy bạn dám. Chiến lợi phẩm tốt "
-"nhất có trên hàng và trong Kỷ lục."
+"nhất có trên hàng và trong Thành tích."
 
 msgid "Play, expedition: from dive 1, as deep as you dare."
 msgstr "Chơi, thám hiểm: từ lần lặn 1, sâu đến đâu tùy bạn dám."
 
 msgid "Your best haul is on the row and in Records."
-msgstr "Chiến lợi phẩm tốt nhất có trên hàng và trong Kỷ lục."
+msgstr "Chiến lợi phẩm tốt nhất có trên hàng và trong Thành tích."
 
 msgid ""
 "Deep start: locked until an expedition reaches dive 4. Then it begins at "
@@ -72132,8 +72153,8 @@ msgid ""
 "Records, on the title, reads both best hauls, your deepest dive and your "
 "challenge results."
 msgstr ""
-"Kỷ lục, ở màn hình chính, đọc cả hai chiến lợi phẩm tốt nhất, lần lặn sâu "
-"nhất và kết quả thử thách của bạn."
+"Thành tích, ở màn hình chính, đọc cả hai chiến lợi phẩm tốt nhất, lần lặn "
+"sâu nhất và kết quả thử thách của bạn."
 
 msgid ""
 "The challenges are the same sea for every player, and a new one comes each "
@@ -72182,32 +72203,32 @@ msgid ""
 "front: murky water that halves your sonar, rich wrecks with more mines, rip "
 "currents, or thin air."
 msgstr ""
-"Hằng ngày, Lặn nước rút: một lần lặn, từ lần lặn 1 đến 3, với một điểm khác "
-"lạ báo trước: nước đục làm sóng dò giảm một nửa, xác tàu giàu kèm nhiều "
-"thủy lôi hơn, dòng chảy xiết, hoặc dưỡng khí ít."
+"Thử thách ngày, Lặn nước rút: một lần lặn, từ lần lặn 1 đến 3, với một điểm "
+"khác lạ báo trước: nước đục làm sóng dò giảm một nửa, xác tàu giàu kèm "
+"nhiều thủy lôi hơn, dòng chảy xiết, hoặc dưỡng khí ít."
 
 msgid ""
 "Weekly, Long haul: up to 3 dives from dive 3, with no hull repairs between "
 "them, and a twist of its own."
 msgstr ""
-"Hằng tuần, Chuyến dài: tối đa 3 lần lặn từ lần lặn 3, không sửa vỏ tàu giữa "
-"các lần, và một điểm khác lạ riêng."
+"Thử thách tuần, Chuyến dài: tối đa 3 lần lặn từ lần lặn 3, không sửa vỏ tàu "
+"giữa các lần, và một điểm khác lạ riêng."
 
 msgid ""
 "Monthly, The sunken galleon: on each dive, a galleon holding 1000 coins "
 "lies near the edge of the site, ringed by 6 mines. 2 dives from dive 4, and "
 "a single hull point. Salvaging the galleon takes 6 seconds of stillness."
 msgstr ""
-"Hằng tháng, Chiến thuyền đắm: ở mỗi lần lặn, một chiến thuyền galleon chứa "
-"1000 xu nằm gần rìa khu lặn, có 6 quả thủy lôi bao quanh. 2 lần lặn từ lần "
-"lặn 4, và chỉ một điểm vỏ tàu. Trục vớt chiến thuyền cần giữ yên 6 giây."
+"Thử thách tháng, Chiến thuyền đắm: ở mỗi lần lặn, một chiến thuyền galleon "
+"chứa 1000 xu nằm gần rìa khu lặn, có 6 quả thủy lôi bao quanh. 2 lần lặn từ "
+"lần lặn 4, và chỉ một điểm vỏ tàu. Trục vớt chiến thuyền cần giữ yên 6 giây."
 
 msgid ""
 "Monthly, The sunken galleon: on each dive, a galleon holding 1000 coins "
 "lies near the edge of the site, ringed by 6 mines."
 msgstr ""
-"Hằng tháng, Chiến thuyền đắm: ở mỗi lần lặn, một chiến thuyền galleon chứa "
-"1000 xu nằm gần rìa khu lặn, có 6 quả thủy lôi bao quanh."
+"Thử thách tháng, Chiến thuyền đắm: ở mỗi lần lặn, một chiến thuyền galleon "
+"chứa 1000 xu nằm gần rìa khu lặn, có 6 quả thủy lôi bao quanh."
 
 msgid "2 dives from dive 4, and a single hull point."
 msgstr "2 lần lặn từ lần lặn 4, và chỉ một điểm vỏ tàu."
@@ -72669,8 +72690,8 @@ msgid ""
 "Records. Expedition: {best}. Deep start: {deep}. {deepest} {sentence_start} "
 "finished."
 msgstr ""
-"Kỷ lục. Thám hiểm: {best}. Khởi đầu sâu: {deep}. {deepest} Đã hoàn thành "
-"{sentence_start}."
+"Thành tích. Thám hiểm: {best}. Khởi đầu sâu: {deep}. {deepest} Đã hoàn "
+"thành {sentence_start}."
 
 #. placeholders: {deepest}, {sentence_start}
 #. one sentence of a longer line
@@ -73826,7 +73847,7 @@ msgid ""
 "stars are scattered differently each night."
 msgstr ""
 "Khi điểm nghe dừng trên một ngôi sao, trò chơi đọc tên nó, như \"Betelgeuse, "
-"trong Orion\". Ngôi sao không thuộc chòm nào đêm nay là \"một ngôi sao mờ\". "
+"trong Lạp Hộ\". Ngôi sao không thuộc chòm nào đêm nay là \"một ngôi sao mờ\". "
 "Sao mờ rải rác khác nhau mỗi đêm."
 
 msgid ""
@@ -73834,7 +73855,7 @@ msgid ""
 "Orion\"."
 msgstr ""
 "Khi điểm nghe dừng trên một ngôi sao, trò chơi đọc tên nó, như \"Betelgeuse, "
-"trong Orion\"."
+"trong Lạp Hộ\"."
 
 msgid "A star that belongs to no pattern tonight is \"a faint star\"."
 msgstr "Ngôi sao không thuộc chòm nào đêm nay là \"một ngôi sao mờ\"."
@@ -73851,16 +73872,16 @@ msgid ""
 "rests on the star that is next to trace, you hear \"next\", such as "
 "\"Bellatrix, next in Orion\". Space traces it."
 msgstr ""
-"Mỗi chòm sao có các ngôi sao theo một thứ tự, như Orion: Betelgeuse, "
+"Mỗi chòm sao có các ngôi sao theo một thứ tự, như Lạp Hộ: Betelgeuse, "
 "Bellatrix, Mintaka, Alnilam, Alnitak, Saiph, rồi Rigel. Khi điểm nghe dừng "
 "trên ngôi sao kế tiếp cần nối, bạn nghe \"kế tiếp\", như \"Bellatrix, kế tiếp "
-"trong Orion\". Space nối ngôi sao đó."
+"trong Lạp Hộ\". Space nối ngôi sao đó."
 
 msgid ""
 "Each constellation has its stars in an order, such as Orion: Betelgeuse, "
 "Bellatrix, Mintaka, Alnilam, Alnitak, Saiph, then Rigel."
 msgstr ""
-"Mỗi chòm sao có các ngôi sao theo một thứ tự, như Orion: Betelgeuse, "
+"Mỗi chòm sao có các ngôi sao theo một thứ tự, như Lạp Hộ: Betelgeuse, "
 "Bellatrix, Mintaka, Alnilam, Alnitak, Saiph, rồi Rigel."
 
 msgid ""
@@ -73868,7 +73889,7 @@ msgid ""
 "such as \"Bellatrix, next in Orion\"."
 msgstr ""
 "Khi điểm nghe dừng trên ngôi sao kế tiếp cần nối, bạn nghe \"kế tiếp\", như "
-"\"Bellatrix, kế tiếp trong Orion\"."
+"\"Bellatrix, kế tiếp trong Lạp Hộ\"."
 
 msgid "Space traces it."
 msgstr "Space nối ngôi sao đó."
@@ -73906,7 +73927,7 @@ msgid ""
 "then to the nearest."
 msgstr ""
 "H cho biết ngôi sao kế tiếp cần tìm và đường tới đó theo số bước, như "
-"\"Bellatrix, kế tiếp trong Orion: 3 bước sang phải, 1 bước lên\". Gợi ý giúp "
+"\"Bellatrix, kế tiếp trong Lạp Hộ: 3 bước sang phải, 1 bước lên\". Gợi ý giúp "
 "hoàn thành chòm bạn đã bắt đầu, rồi chỉ tới những chòm chưa có trong nhật "
 "ký, rồi tới chòm gần nhất."
 
@@ -73915,7 +73936,7 @@ msgid ""
 "\"Bellatrix, next in Orion: 3 steps right, 1 step up\"."
 msgstr ""
 "H cho biết ngôi sao kế tiếp cần tìm và đường tới đó theo số bước, như "
-"\"Bellatrix, kế tiếp trong Orion: 3 bước sang phải, 1 bước lên\"."
+"\"Bellatrix, kế tiếp trong Lạp Hộ: 3 bước sang phải, 1 bước lên\"."
 
 msgid ""
 "Hints finish a constellation you have begun, then point to ones not yet in "
@@ -73952,11 +73973,11 @@ msgid ""
 "Aries."
 msgstr ""
 "Bầu trời theo lịch thật của bầu trời buổi tối ở bán cầu bắc. Mùa xuân, từ "
-"tháng Ba đến tháng Năm, có Leo, Bootes, Virgo và Cancer. Mùa hè, từ tháng "
-"Sáu đến tháng Tám, có Lyra, Cygnus, Aquila, Scorpius và Sagittarius. Vega "
-"của Lyra, Deneb của Cygnus và Altair của Aquila tạo thành Tam giác mùa hè. "
-"Mùa thu, từ tháng Chín đến tháng Mười một, có Pegasus, Andromeda, Perseus "
-"và Aries."
+"tháng Ba đến tháng Năm, có Sư Tử, Mục Phu, Xử Nữ và Cự Giải. Mùa hè, từ "
+"tháng Sáu đến tháng Tám, có Thiên Cầm, Thiên Nga, Thiên Ưng, Thiên Yết và "
+"Nhân Mã. Chức Nữ của Thiên Cầm, Deneb của Thiên Nga và Ngưu Lang của Thiên "
+"Ưng tạo thành Tam giác mùa hè. Mùa thu, từ tháng Chín đến tháng Mười một, "
+"có Phi Mã, Tiên Nữ, Anh Tiên và Bạch Dương."
 
 msgid ""
 "The sky follows the real calendar of the northern hemisphere's evening sky."
@@ -73964,34 +73985,34 @@ msgstr "Bầu trời theo lịch thật của bầu trời buổi tối ở bán
 
 msgid "Spring, from March to May, brings Leo, Bootes, Virgo and Cancer."
 msgstr ""
-"Mùa xuân, từ tháng Ba đến tháng Năm, có Leo, Bootes, Virgo và Cancer."
+"Mùa xuân, từ tháng Ba đến tháng Năm, có Sư Tử, Mục Phu, Xử Nữ và Cự Giải."
 
 msgid ""
 "Summer, from June to August, brings Lyra, Cygnus, Aquila, Scorpius and "
 "Sagittarius."
 msgstr ""
-"Mùa hè, từ tháng Sáu đến tháng Tám, có Lyra, Cygnus, Aquila, Scorpius và "
-"Sagittarius."
+"Mùa hè, từ tháng Sáu đến tháng Tám, có Thiên Cầm, Thiên Nga, Thiên Ưng, "
+"Thiên Yết và Nhân Mã."
 
 msgid ""
 "Lyra's Vega, Cygnus's Deneb and Aquila's Altair make the Summer Triangle."
 msgstr ""
-"Vega của Lyra, Deneb của Cygnus và Altair của Aquila tạo thành Tam giác mùa "
-"hè."
+"Chức Nữ của Thiên Cầm, Deneb của Thiên Nga và Ngưu Lang của Thiên Ưng tạo "
+"thành Tam giác mùa hè."
 
 msgid ""
 "Autumn, from September to November, brings Pegasus, Andromeda, Perseus and "
 "Aries."
 msgstr ""
-"Mùa thu, từ tháng Chín đến tháng Mười một, có Pegasus, Andromeda, Perseus "
-"và Aries."
+"Mùa thu, từ tháng Chín đến tháng Mười một, có Phi Mã, Tiên Nữ, Anh Tiên và "
+"Bạch Dương."
 
 msgid ""
 "Ursa Major, Ursa Minor, Cassiopeia, Cepheus and Draco circle the pole star "
 "and are up all year, in a different place each season."
 msgstr ""
-"Ursa Major, Ursa Minor, Cassiopeia, Cepheus và Draco quay quanh sao Bắc Cực "
-"và xuất hiện quanh năm, mỗi mùa ở một chỗ khác."
+"Đại Hùng, Tiểu Hùng, Thiên Hậu, Tiên Vương và Thiên Long quay quanh sao Bắc "
+"Cực và xuất hiện quanh năm, mỗi mùa ở một chỗ khác."
 
 msgid "New constellations"
 msgstr "Chòm sao mới"
@@ -74003,17 +74024,17 @@ msgid ""
 "of a night. The game names them as they rise. To fill the whole journal, "
 "come back in every season."
 msgstr ""
-"Bạn bắt đầu với vài chòm sáng nhất: Ursa Major có Bắc Đẩu, Cassiopeia, và "
-"một hai chòm của riêng mùa đó. Khi nhật ký có 2 chòm sao, thêm chòm mọc "
-"lên, và lại thêm khi có 5. Chúng có thể mọc giữa đêm. Trò chơi đọc tên "
-"chúng khi chúng mọc. Để ghi đầy cả nhật ký, hãy quay lại vào mọi mùa."
+"Bạn bắt đầu với vài chòm sáng nhất: Đại Hùng có Bắc Đẩu, Thiên Hậu, và một "
+"hai chòm của riêng mùa đó. Khi nhật ký có 2 chòm sao, thêm chòm mọc lên, và "
+"lại thêm khi có 5. Chúng có thể mọc giữa đêm. Trò chơi đọc tên chúng khi "
+"chúng mọc. Để ghi đầy cả nhật ký, hãy quay lại vào mọi mùa."
 
 msgid ""
 "You start with the brightest few: the Big Dipper's Ursa Major, Cassiopeia, "
 "and one or two of the season's own."
 msgstr ""
-"Bạn bắt đầu với vài chòm sáng nhất: Ursa Major có Bắc Đẩu, Cassiopeia, và "
-"một hai chòm của riêng mùa đó."
+"Bạn bắt đầu với vài chòm sáng nhất: Đại Hùng có Bắc Đẩu, Thiên Hậu, và một "
+"hai chòm của riêng mùa đó."
 
 msgid ""
 "When your journal holds 2 constellations, more rise, and more again at 5."
@@ -74037,10 +74058,10 @@ msgid ""
 "Milky Way in summer, and the Andromeda Galaxy and the Double Cluster in "
 "autumn. Mizar and Alcor, in the Big Dipper's handle, are up all year."
 msgstr ""
-"Mỗi mùa giấu vài kỳ quan: Tinh vân Orion và Pleiades vào mùa đông, cụm sao "
+"Mỗi mùa giấu vài kỳ quan: Tinh vân Lạp Hộ và Pleiades vào mùa đông, cụm sao "
 "Tổ Ong vào mùa xuân, Tinh vân Chiếc Nhẫn và trái tim Dải Ngân Hà vào mùa "
-"hè, và Thiên hà Andromeda cùng Cụm sao Đôi vào mùa thu. Mizar và Alcor, ở "
-"cán Bắc Đẩu, xuất hiện quanh năm."
+"hè, và Thiên hà Tiên Nữ cùng Cụm sao Đôi vào mùa thu. Mizar và Alcor, ở cán "
+"Bắc Đẩu, xuất hiện quanh năm."
 
 msgid ""
 "Each season hides a few wonders: the Orion Nebula and the Pleiades in "
@@ -74048,9 +74069,9 @@ msgid ""
 "Milky Way in summer, and the Andromeda Galaxy and the Double Cluster in "
 "autumn."
 msgstr ""
-"Mỗi mùa giấu vài kỳ quan: Tinh vân Orion và Pleiades vào mùa đông, cụm sao "
+"Mỗi mùa giấu vài kỳ quan: Tinh vân Lạp Hộ và Pleiades vào mùa đông, cụm sao "
 "Tổ Ong vào mùa xuân, Tinh vân Chiếc Nhẫn và trái tim Dải Ngân Hà vào mùa "
-"hè, và Thiên hà Andromeda cùng Cụm sao Đôi vào mùa thu."
+"hè, và Thiên hà Tiên Nữ cùng Cụm sao Đôi vào mùa thu."
 
 msgid "Mizar and Alcor, in the Big Dipper's handle, are up all year."
 msgstr "Mizar và Alcor, ở cán Bắc Đẩu, xuất hiện quanh năm."
@@ -74226,9 +74247,9 @@ msgid ""
 "with your challenge results."
 msgstr ""
 "Nhật ký sao, ở màn hình chính, đọc mọi chòm sao bạn đã nối, kèm ngày và "
-"truyền thuyết, rồi đến kỳ quan, trăng tròn và điều ước. Kỷ lục đọc các con "
-"số tổng, số đêm bạn ở trên đồi và những lần ngắm sao băng tốt nhất, cùng "
-"kết quả thử thách."
+"truyền thuyết, rồi đến kỳ quan, trăng tròn và điều ước. Thành tích đọc các "
+"con số tổng, số đêm bạn ở trên đồi và những lần ngắm sao băng tốt nhất, "
+"cùng kết quả thử thách."
 
 msgid ""
 "Star journal, on the title, reads every constellation you have traced, with "
@@ -74241,7 +74262,7 @@ msgid ""
 "Records reads the tallies, your nights on the hill and your best meteor "
 "watches, with your challenge results."
 msgstr ""
-"Kỷ lục đọc các con số tổng, số đêm bạn ở trên đồi và những lần ngắm sao "
+"Thành tích đọc các con số tổng, số đêm bạn ở trên đồi và những lần ngắm sao "
 "băng tốt nhất, cùng kết quả thử thách."
 
 msgid ""
@@ -74271,13 +74292,13 @@ msgid ""
 "worth 100 points, less 25 for each hint, and 50 if the guide tone led you "
 "there."
 msgstr ""
-"Hằng ngày, Săn sao đêm nay: tìm 5 ngôi sao được gọi tên, từng ngôi một. Mỗi "
-"ngôi được 100 điểm, trừ 25 cho mỗi gợi ý, và 50 nếu âm dẫn đường đưa bạn "
-"tới."
+"Thử thách ngày, Săn sao đêm nay: tìm 5 ngôi sao được gọi tên, từng ngôi "
+"một. Mỗi ngôi được 100 điểm, trừ 25 cho mỗi gợi ý, và 50 nếu âm dẫn đường "
+"đưa bạn tới."
 
 msgid "Daily, Tonight's star hunt: find 5 named stars, one at a time."
 msgstr ""
-"Hằng ngày, Săn sao đêm nay: tìm 5 ngôi sao được gọi tên, từng ngôi một."
+"Thử thách ngày, Săn sao đêm nay: tìm 5 ngôi sao được gọi tên, từng ngôi một."
 
 msgid ""
 "Each is worth 100 points, less 25 for each hint, and 50 if the guide tone "
@@ -74290,11 +74311,11 @@ msgid ""
 "Weekly, The week's patterns: trace 3 constellations. Each star is worth 10 "
 "points, each constellation 100, and each hint costs 10."
 msgstr ""
-"Hằng tuần, Các chòm sao của tuần: nối 3 chòm sao. Mỗi ngôi sao được 10 "
+"Thử thách tuần, Các chòm sao của tuần: nối 3 chòm sao. Mỗi ngôi sao được 10 "
 "điểm, mỗi chòm 100, và mỗi gợi ý mất 10."
 
 msgid "Weekly, The week's patterns: trace 3 constellations."
-msgstr "Hằng tuần, Các chòm sao của tuần: nối 3 chòm sao."
+msgstr "Thử thách tuần, Các chòm sao của tuần: nối 3 chòm sao."
 
 msgid ""
 "Each star is worth 10 points, each constellation 100, and each hint costs "
@@ -74305,15 +74326,15 @@ msgid ""
 "Monthly, The grand tour: trace every constellation of the season and find "
 "each wonder. Wonders are worth 150."
 msgstr ""
-"Hằng tháng, Chuyến du ngoạn lớn: nối mọi chòm sao của mùa và tìm từng kỳ "
-"quan. Mỗi kỳ quan được 150."
+"Thử thách tháng, Chuyến du ngoạn lớn: nối mọi chòm sao của mùa và tìm từng "
+"kỳ quan. Mỗi kỳ quan được 150."
 
 msgid ""
 "Monthly, The grand tour: trace every constellation of the season and find "
 "each wonder."
 msgstr ""
-"Hằng tháng, Chuyến du ngoạn lớn: nối mọi chòm sao của mùa và tìm từng kỳ "
-"quan."
+"Thử thách tháng, Chuyến du ngoạn lớn: nối mọi chòm sao của mùa và tìm từng "
+"kỳ quan."
 
 msgid "Wonders are worth 150."
 msgstr "Mỗi kỳ quan được 150."
@@ -74430,22 +74451,22 @@ msgid "leonids"
 msgstr ""
 
 msgid "Quadrantids"
-msgstr ""
+msgstr "Quadrantids"
 
 msgid "Lyrids"
-msgstr ""
+msgstr "Lyrids"
 
 msgid "Eta Aquariids"
-msgstr ""
+msgstr "Eta Aquariids"
 
 msgid "Perseids"
-msgstr ""
+msgstr "Perseids"
 
 msgid "Orionids"
-msgstr ""
+msgstr "Orionids"
 
 msgid "Leonids"
-msgstr ""
+msgstr "Leonids"
 
 #. placeholders: {adjective}
 msgid "{adjective} meteor shower"
@@ -74455,19 +74476,19 @@ msgid "the northeast, below the handle of the Big Dipper"
 msgstr "hướng đông bắc, bên dưới cán Bắc Đẩu"
 
 msgid "the east, near bright Vega in Lyra"
-msgstr "hướng đông, gần sao Vega sáng trong Lyra"
+msgstr "hướng đông, gần sao Chức Nữ sáng trong Thiên Cầm"
 
 msgid "low in the east, in Aquarius"
 msgstr "thấp ở hướng đông, trong Aquarius"
 
 msgid "the northeast, in Perseus"
-msgstr "hướng đông bắc, trong Perseus"
+msgstr "hướng đông bắc, trong Anh Tiên"
 
 msgid "the east, beside Orion's raised club"
-msgstr "hướng đông, cạnh cây chùy giơ cao của Orion"
+msgstr "hướng đông, cạnh cây chùy giơ cao của Lạp Hộ"
 
 msgid "the east, in the Sickle of Leo"
-msgstr "hướng đông, trong Lưỡi liềm của Leo"
+msgstr "hướng đông, trong Lưỡi liềm của Sư Tử"
 
 msgid ""
 "The Quadrantids are named after a constellation that is no longer on the "
@@ -74818,7 +74839,7 @@ msgstr " {sentence_start} đã mọc."
 
 #. placeholders: {tally}
 msgid "Records. Your star journal holds {tally}."
-msgstr "Kỷ lục. Nhật ký sao của bạn có {tally}."
+msgstr "Thành tích. Nhật ký sao của bạn có {tally}."
 
 msgid "No nights on the hill yet."
 msgstr "Chưa có đêm nào trên đồi."
@@ -75611,31 +75632,31 @@ msgid "northwest"
 msgstr "tây bắc"
 
 msgid "Ursa Major"
-msgstr ""
+msgstr "Đại Hùng"
 
 msgid "the great bear"
 msgstr "con gấu lớn"
 
 msgid "Dubhe"
-msgstr ""
+msgstr "Dubhe"
 
 msgid "Merak"
-msgstr ""
+msgstr "Merak"
 
 msgid "Phecda"
-msgstr ""
+msgstr "Phecda"
 
 msgid "Megrez"
-msgstr ""
+msgstr "Megrez"
 
 msgid "Alioth"
-msgstr ""
+msgstr "Alioth"
 
 msgid "Mizar"
-msgstr ""
+msgstr "Mizar"
 
 msgid "Alkaid"
-msgstr ""
+msgstr "Alkaid"
 
 msgid ""
 "The great bear. Its seven brightest stars make the Big Dipper, and the two "
@@ -75649,25 +75670,25 @@ msgid "cassiopeia"
 msgstr ""
 
 msgid "Cassiopeia"
-msgstr ""
+msgstr "Thiên Hậu"
 
 msgid "the seated queen"
 msgstr "nữ hoàng ngồi"
 
 msgid "Caph"
-msgstr ""
+msgstr "Caph"
 
 msgid "Schedar"
-msgstr ""
+msgstr "Schedar"
 
 msgid "Navi"
-msgstr ""
+msgstr "Navi"
 
 msgid "Ruchbah"
-msgstr ""
+msgstr "Ruchbah"
 
 msgid "Segin"
-msgstr ""
+msgstr "Segin"
 
 msgid ""
 "From Greek myth, a W of stars across the Milky Way. She circles the pole "
@@ -75677,22 +75698,22 @@ msgstr ""
 "quanh cực đối diện Bắc Đẩu, nên khi một bên xuống thấp, bên kia lên cao."
 
 msgid "Ursa Minor"
-msgstr ""
+msgstr "Tiểu Hùng"
 
 msgid "the little bear"
 msgstr "con gấu nhỏ"
 
 msgid "Polaris"
-msgstr ""
+msgstr "Polaris"
 
 msgid "Yildun"
-msgstr ""
+msgstr "Yildun"
 
 msgid "Kochab"
-msgstr ""
+msgstr "Kochab"
 
 msgid "Pherkad"
-msgstr ""
+msgstr "Pherkad"
 
 msgid ""
 "The little bear. Polaris, at the tip of its tail, sits almost exactly above "
@@ -75706,48 +75727,48 @@ msgid "cepheus"
 msgstr ""
 
 msgid "Cepheus"
-msgstr ""
+msgstr "Tiên Vương"
 
 msgid "the king"
 msgstr "nhà vua"
 
 msgid "Alderamin"
-msgstr ""
+msgstr "Alderamin"
 
 msgid "Alfirk"
-msgstr ""
+msgstr "Alfirk"
 
 msgid "Errai"
-msgstr ""
+msgstr "Errai"
 
 msgid ""
 "Husband of Cassiopeia, drawn like a little house with a pointed roof. The "
 "slow wobble of the Earth will make Errai the pole star in about two "
 "thousand years."
 msgstr ""
-"Chồng của Cassiopeia, vẽ như một ngôi nhà nhỏ mái nhọn. Sự lắc lư chậm của "
+"Chồng của Thiên Hậu, vẽ như một ngôi nhà nhỏ mái nhọn. Sự lắc lư chậm của "
 "Trái Đất sẽ khiến Errai thành sao Bắc Cực trong khoảng hai nghìn năm nữa."
 
 msgid "draco"
 msgstr ""
 
 msgid "Draco"
-msgstr ""
+msgstr "Thiên Long"
 
 msgid "the dragon"
 msgstr "con rồng"
 
 msgid "Eltanin"
-msgstr ""
+msgstr "Eltanin"
 
 msgid "Rastaban"
-msgstr ""
+msgstr "Rastaban"
 
 msgid "Edasich"
-msgstr ""
+msgstr "Edasich"
 
 msgid "Thuban"
-msgstr ""
+msgstr "Thuban"
 
 msgid ""
 "It winds between the two bears. Thuban, near its tail, was the pole star "
@@ -75760,31 +75781,31 @@ msgid "orion"
 msgstr ""
 
 msgid "Orion"
-msgstr ""
+msgstr "Lạp Hộ"
 
 msgid "the hunter"
 msgstr "người thợ săn"
 
 msgid "Betelgeuse"
-msgstr ""
+msgstr "Betelgeuse"
 
 msgid "Bellatrix"
-msgstr ""
+msgstr "Bellatrix"
 
 msgid "Mintaka"
-msgstr ""
+msgstr "Mintaka"
 
 msgid "Alnilam"
-msgstr ""
+msgstr "Alnilam"
 
 msgid "Alnitak"
-msgstr ""
+msgstr "Alnitak"
 
 msgid "Saiph"
-msgstr ""
+msgstr "Saiph"
 
 msgid "Rigel"
-msgstr ""
+msgstr "Rigel"
 
 msgid ""
 "The brightest pattern of winter. Red Betelgeuse marks a shoulder and blue "
@@ -75799,22 +75820,22 @@ msgid "taurus"
 msgstr ""
 
 msgid "Taurus"
-msgstr ""
+msgstr "Kim Ngưu"
 
 msgid "the bull"
 msgstr "con bò tót"
 
 msgid "Aldebaran"
-msgstr ""
+msgstr "Aldebaran"
 
 msgid "Ain"
-msgstr ""
+msgstr "Ain"
 
 msgid "Elnath"
-msgstr ""
+msgstr "Elnath"
 
 msgid "Tianguan"
-msgstr ""
+msgstr "Tianguan"
 
 msgid ""
 "It charges across the sky. Orange Aldebaran is its fiery eye, and the "
@@ -75827,25 +75848,25 @@ msgid "gemini"
 msgstr ""
 
 msgid "Gemini"
-msgstr ""
+msgstr "Song Tử"
 
 msgid "the twins"
 msgstr "cặp song sinh"
 
 msgid "Castor"
-msgstr ""
+msgstr "Castor"
 
 msgid "Pollux"
-msgstr ""
+msgstr "Pollux"
 
 msgid "Wasat"
-msgstr ""
+msgstr "Wasat"
 
 msgid "Alhena"
-msgstr ""
+msgstr "Alhena"
 
 msgid "Mebsuta"
-msgstr ""
+msgstr "Mebsuta"
 
 msgid ""
 "Castor and Pollux, side by side. Pollux is the brighter and a little "
@@ -75856,53 +75877,53 @@ msgstr ""
 "như một ngôi nhưng thật ra là sáu, gắn với nhau bằng lực hấp dẫn."
 
 msgid "Canis Major"
-msgstr ""
+msgstr "Đại Khuyển"
 
 msgid "the great dog"
 msgstr "con chó lớn"
 
 msgid "Sirius"
-msgstr ""
+msgstr "Thiên Lang"
 
 msgid "Mirzam"
-msgstr ""
+msgstr "Mirzam"
 
 msgid "Wezen"
-msgstr ""
+msgstr "Wezen"
 
 msgid "Adhara"
-msgstr ""
+msgstr "Adhara"
 
 msgid "Aludra"
-msgstr ""
+msgstr "Aludra"
 
 msgid ""
 "It follows at Orion's heel. Its star Sirius is the brightest in the whole "
 "night sky, and one of the nearest, under 9 light years away."
 msgstr ""
-"Nó theo sát gót Orion. Ngôi Sirius của nó sáng nhất cả bầu trời đêm, và là "
-"một trong những ngôi gần nhất, cách chưa tới 9 năm ánh sáng."
+"Nó theo sát gót Lạp Hộ. Ngôi sao Thiên Lang của nó sáng nhất cả bầu trời "
+"đêm, và là một trong những ngôi gần nhất, cách chưa tới 9 năm ánh sáng."
 
 msgid "perseus"
 msgstr ""
 
 msgid "Perseus"
-msgstr ""
+msgstr "Anh Tiên"
 
 msgid "the hero"
 msgstr "người anh hùng"
 
 msgid "Mirfak"
-msgstr ""
+msgstr "Mirfak"
 
 msgid "Algol"
-msgstr ""
+msgstr "Algol"
 
 msgid "Atik"
-msgstr ""
+msgstr "Atik"
 
 msgid "Miram"
-msgstr ""
+msgstr "Miram"
 
 msgid ""
 "He holds the head of Medusa, whose eye is the star Algol. It fades for a "
@@ -75916,25 +75937,25 @@ msgid "leo"
 msgstr ""
 
 msgid "Leo"
-msgstr ""
+msgstr "Sư Tử"
 
 msgid "the lion"
 msgstr "con sư tử"
 
 msgid "Regulus"
-msgstr ""
+msgstr "Regulus"
 
 msgid "Algieba"
-msgstr ""
+msgstr "Algieba"
 
 msgid "Zosma"
-msgstr ""
+msgstr "Zosma"
 
 msgid "Denebola"
-msgstr ""
+msgstr "Denebola"
 
 msgid "Chertan"
-msgstr ""
+msgstr "Chertan"
 
 msgid ""
 "A pattern of spring. A backwards question mark of stars, called the Sickle, "
@@ -75948,25 +75969,25 @@ msgid "bootes"
 msgstr ""
 
 msgid "Bootes"
-msgstr ""
+msgstr "Mục Phu"
 
 msgid "the herdsman"
 msgstr "người chăn gia súc"
 
 msgid "Muphrid"
-msgstr ""
+msgstr "Muphrid"
 
 msgid "Arcturus"
-msgstr ""
+msgstr "Arcturus"
 
 msgid "Izar"
-msgstr ""
+msgstr "Izar"
 
 msgid "Nekkar"
-msgstr ""
+msgstr "Nekkar"
 
 msgid "Seginus"
-msgstr ""
+msgstr "Seginus"
 
 msgid ""
 "Shaped like a kite. Follow the curve of the Big Dipper's handle and you arc "
@@ -75979,22 +76000,22 @@ msgid "virgo"
 msgstr ""
 
 msgid "Virgo"
-msgstr ""
+msgstr "Xử Nữ"
 
 msgid "the maiden"
 msgstr "trinh nữ"
 
 msgid "Spica"
-msgstr ""
+msgstr "Spica"
 
 msgid "Porrima"
-msgstr ""
+msgstr "Porrima"
 
 msgid "Minelauva"
-msgstr ""
+msgstr "Minelauva"
 
 msgid "Vindemiatrix"
-msgstr ""
+msgstr "Vindemiatrix"
 
 msgid ""
 "The largest constellation of the zodiac. Spica, her brightest star, is "
@@ -76007,22 +76028,22 @@ msgid "cancer"
 msgstr ""
 
 msgid "Cancer"
-msgstr ""
+msgstr "Cự Giải"
 
 msgid "the crab"
 msgstr "con cua"
 
 msgid "Tarf"
-msgstr ""
+msgstr "Tarf"
 
 msgid "Asellus Australis"
-msgstr ""
+msgstr "Asellus Australis"
 
 msgid "Asellus Borealis"
-msgstr ""
+msgstr "Asellus Borealis"
 
 msgid "Acubens"
-msgstr ""
+msgstr "Acubens"
 
 msgid ""
 "Faint and gentle. Its two donkey stars, the Aselli, stand either side of "
@@ -76035,53 +76056,54 @@ msgid "lyra"
 msgstr ""
 
 msgid "Lyra"
-msgstr ""
+msgstr "Thiên Cầm"
 
 msgid "the lyre"
 msgstr "đàn lia"
 
 msgid "Vega"
-msgstr ""
+msgstr "Chức Nữ"
 
 msgid "the Double Double"
 msgstr "Đôi Kép"
 
 msgid "Sulafat"
-msgstr ""
+msgstr "Sulafat"
 
 msgid "Sheliak"
-msgstr ""
+msgstr "Sheliak"
 
 msgid ""
 "It belonged to Orpheus in the old myth. Vega, one of the brightest stars of "
 "all, was the pole star about 12 thousand years ago, and will be again."
 msgstr ""
-"Nó thuộc về Orpheus trong thần thoại xưa. Vega, một trong những ngôi sáng "
-"nhất, từng là sao Bắc Cực khoảng 12 nghìn năm trước, và sẽ lại là như vậy."
+"Nó thuộc về Orpheus trong thần thoại xưa. Chức Nữ, một trong những ngôi "
+"sáng nhất, từng là sao Bắc Cực khoảng 12 nghìn năm trước, và sẽ lại là như "
+"vậy."
 
 msgid "cygnus"
 msgstr ""
 
 msgid "Cygnus"
-msgstr ""
+msgstr "Thiên Nga"
 
 msgid "the swan"
 msgstr "thiên nga"
 
 msgid "Deneb"
-msgstr ""
+msgstr "Deneb"
 
 msgid "Sadr"
-msgstr ""
+msgstr "Sadr"
 
 msgid "Albireo"
-msgstr ""
+msgstr "Albireo"
 
 msgid "Gienah"
-msgstr ""
+msgstr "Gienah"
 
 msgid "Fawaris"
-msgstr ""
+msgstr "Fawaris"
 
 msgid ""
 "It flies down the Milky Way, and is also called the Northern Cross. "
@@ -76096,53 +76118,53 @@ msgid "aquila"
 msgstr ""
 
 msgid "Aquila"
-msgstr ""
+msgstr "Thiên Ưng"
 
 msgid "the eagle"
 msgstr "đại bàng"
 
 msgid "Tarazed"
-msgstr ""
+msgstr "Tarazed"
 
 msgid "Altair"
-msgstr ""
+msgstr "Ngưu Lang"
 
 msgid "Alshain"
-msgstr ""
+msgstr "Alshain"
 
 msgid ""
 "The eagle. Altair spins so fast, about once every 9 hours, that it bulges "
 "at its middle. With Vega and Deneb it makes the Summer Triangle."
 msgstr ""
-"Đại bàng. Altair quay nhanh đến mức, khoảng 9 giờ một vòng, nó phình ra ở "
-"giữa. Cùng Vega và Deneb, nó tạo thành Tam giác mùa hè."
+"Đại bàng. Ngưu Lang quay nhanh đến mức, khoảng 9 giờ một vòng, nó phình ra "
+"ở giữa. Cùng Chức Nữ và Deneb, nó tạo thành Tam giác mùa hè."
 
 msgid "scorpius"
 msgstr ""
 
 msgid "Scorpius"
-msgstr ""
+msgstr "Thiên Yết"
 
 msgid "the scorpion"
 msgstr "con bọ cạp"
 
 msgid "Acrab"
-msgstr ""
+msgstr "Acrab"
 
 msgid "Dschubba"
-msgstr ""
+msgstr "Dschubba"
 
 msgid "Antares"
-msgstr ""
+msgstr "Antares"
 
 msgid "Sargas"
-msgstr ""
+msgstr "Sargas"
 
 msgid "Shaula"
-msgstr ""
+msgstr "Shaula"
 
 msgid "Lesath"
-msgstr ""
+msgstr "Lesath"
 
 msgid ""
 "It hangs low in the summer south. Antares, its red heart, is so huge that "
@@ -76157,25 +76179,25 @@ msgid "sagittarius"
 msgstr ""
 
 msgid "Sagittarius"
-msgstr ""
+msgstr "Nhân Mã"
 
 msgid "the archer"
 msgstr "người cung thủ"
 
 msgid "Kaus Borealis"
-msgstr ""
+msgstr "Kaus Borealis"
 
 msgid "Kaus Media"
-msgstr ""
+msgstr "Kaus Media"
 
 msgid "Kaus Australis"
-msgstr ""
+msgstr "Kaus Australis"
 
 msgid "Ascella"
-msgstr ""
+msgstr "Ascella"
 
 msgid "Nunki"
-msgstr ""
+msgstr "Nunki"
 
 msgid ""
 "Its brightest stars make the shape of a teapot. The centre of our galaxy "
@@ -76188,22 +76210,22 @@ msgid "pegasus"
 msgstr ""
 
 msgid "Pegasus"
-msgstr ""
+msgstr "Phi Mã"
 
 msgid "the winged horse"
 msgstr "con ngựa có cánh"
 
 msgid "Algenib"
-msgstr ""
+msgstr "Algenib"
 
 msgid "Markab"
-msgstr ""
+msgstr "Markab"
 
 msgid "Scheat"
-msgstr ""
+msgstr "Scheat"
 
 msgid "Enif"
-msgstr ""
+msgstr "Enif"
 
 msgid ""
 "The winged horse. Its Great Square is so wide and empty that stargazers "
@@ -76216,44 +76238,44 @@ msgid "andromeda"
 msgstr ""
 
 msgid "Andromeda"
-msgstr ""
+msgstr "Tiên Nữ"
 
 msgid "the chained princess"
 msgstr "công chúa bị xiềng"
 
 msgid "Alpheratz"
-msgstr ""
+msgstr "Alpheratz"
 
 msgid "Mirach"
-msgstr ""
+msgstr "Mirach"
 
 msgid "Almach"
-msgstr ""
+msgstr "Almach"
 
 msgid ""
 "She stretches from a corner of the Great Square. Near Mirach glows the "
 "Andromeda Galaxy, our great neighbour in space."
 msgstr ""
-"Nàng trải dài từ một góc của Hình Vuông Lớn. Gần Mirach có Thiên hà "
-"Andromeda tỏa sáng, người hàng xóm lớn của chúng ta trong vũ trụ."
+"Nàng trải dài từ một góc của Hình Vuông Lớn. Gần Mirach có Thiên hà Tiên Nữ "
+"tỏa sáng, người hàng xóm lớn của chúng ta trong vũ trụ."
 
 msgid "aries"
 msgstr ""
 
 msgid "Aries"
-msgstr ""
+msgstr "Bạch Dương"
 
 msgid "the ram"
 msgstr "con cừu đực"
 
 msgid "Hamal"
-msgstr ""
+msgstr "Hamal"
 
 msgid "Sheratan"
-msgstr ""
+msgstr "Sheratan"
 
 msgid "Mesarthim"
-msgstr ""
+msgstr "Mesarthim"
 
 msgid ""
 "A short crooked line of stars. Over two thousand years ago the Sun crossed "
@@ -76262,7 +76284,7 @@ msgid ""
 msgstr ""
 "Một đường sao ngắn, cong queo. Hơn hai nghìn năm trước Mặt Trời đi qua điểm "
 "xuân phân ở đây, và các nhà thiên văn vẫn gọi điểm đó là Điểm Đầu Tiên của "
-"Aries."
+"Bạch Dương."
 
 msgid "Mizar and Alcor"
 msgstr "Mizar và Alcor"
@@ -76275,14 +76297,14 @@ msgstr ""
 "hai từng được xem là phép thử mắt tinh."
 
 msgid "the Orion Nebula"
-msgstr "Tinh vân Orion"
+msgstr "Tinh vân Lạp Hộ"
 
 msgid ""
 "A glowing cloud where new stars are being born, hanging below Orion's belt "
 "like a sword."
 msgstr ""
 "Một đám mây phát sáng nơi những ngôi sao mới đang ra đời, treo bên dưới "
-"thắt lưng Orion như một thanh gươm."
+"thắt lưng Lạp Hộ như một thanh gươm."
 
 msgid "pleiades"
 msgstr ""
@@ -76305,7 +76327,7 @@ msgid ""
 "donkey stars of Cancer."
 msgstr ""
 "Một đàn mềm mại gồm hàng trăm ngôi sao, như đám mây mờ giữa hai ngôi sao "
-"con lừa của Cancer."
+"con lừa của Cự Giải."
 
 msgid "the Ring Nebula"
 msgstr "Tinh vân Chiếc Nhẫn"
@@ -76328,7 +76350,7 @@ msgstr ""
 "vòi Ấm Trà."
 
 msgid "the Andromeda Galaxy"
-msgstr "Thiên hà Andromeda"
+msgstr "Thiên hà Tiên Nữ"
 
 msgid ""
 "The farthest thing most people can see by eye. The light reaching you "
@@ -76342,7 +76364,7 @@ msgstr "Cụm sao Đôi"
 
 msgid ""
 "Two crowds of young stars side by side, between Perseus and Cassiopeia."
-msgstr "Hai đám đông sao trẻ cạnh nhau, giữa Perseus và Cassiopeia."
+msgstr "Hai đám đông sao trẻ cạnh nhau, giữa Anh Tiên và Thiên Hậu."
 
 msgid "one of the brightest stars"
 msgstr "một trong những ngôi sáng nhất"
@@ -76383,8 +76405,8 @@ msgid ""
 "One of the brightest stars of all, such as Sirius or Vega: a fuller, "
 "ringing chime."
 msgstr ""
-"Một trong những ngôi sáng nhất, như Sirius hay Vega: tiếng chuông đầy và "
-"vang hơn."
+"Một trong những ngôi sáng nhất, như Thiên Lang hay Chức Nữ: tiếng chuông "
+"đầy và vang hơn."
 
 msgid "A faint star in no pattern: a tiny, soft tick of a chime."
 msgstr "Một ngôi sao mờ không thuộc chòm nào: tiếng chuông tích nhỏ, khẽ."
@@ -76795,8 +76817,8 @@ msgstr ""
 "Mỗi ống cố định đúng giọng được 10 điểm. Mỗi lần thử cố định khi nó vẫn "
 "rung mất 2. Mỗi gợi ý mất 3. Ống đúng giọng luôn được ít nhất 2 điểm. Ống "
 "cố định ngay lần đầu không cần gợi ý được tính vào tổng số lần trúng ngay. "
-"Kỷ lục giữ điểm cao nhất, số hàng và ống bạn đã chỉnh, và kết quả thử thách "
-"của bạn."
+"Thành tích giữ điểm cao nhất, số hàng và ống bạn đã chỉnh, và kết quả thử "
+"thách của bạn."
 
 msgid "Each pipe set in tune is worth 10 points."
 msgstr "Mỗi ống cố định đúng giọng được 10 điểm."
@@ -76820,8 +76842,8 @@ msgid ""
 "Records keeps your best score, the ranks and pipes you have tuned, and your "
 "challenge results."
 msgstr ""
-"Kỷ lục giữ điểm cao nhất, số hàng và ống bạn đã chỉnh, và kết quả thử thách "
-"của bạn."
+"Thành tích giữ điểm cao nhất, số hàng và ống bạn đã chỉnh, và kết quả thử "
+"thách của bạn."
 
 msgid ""
 "H says whether the pipe is sharp or flat and how many steps out it is. In "
@@ -77014,7 +77036,7 @@ msgstr "Chỉnh âm buổi tối: {best}, đã chỉnh {ranks}."
 
 #. placeholders: {best}, {ranks}
 msgid "Records. Evening tuning: {best}, {ranks} tuned."
-msgstr "Kỷ lục. Chỉnh âm buổi tối: {best}, đã chỉnh {ranks}."
+msgstr "Thành tích. Chỉnh âm buổi tối: {best}, đã chỉnh {ranks}."
 
 #. placeholders: {pipes_words}, {perfect}, {practice}
 msgid ""
@@ -77865,8 +77887,8 @@ msgstr ""
 "Khi chuyến đi kết thúc, trò chơi đọc những gì bạn đã nhặt, điểm của bạn và "
 "những gì mới trong bể cá, tất cả trên một trang. Rồi một menu ngắn có Chơi "
 "lại, Nghe lại kết quả, Bể cá của bạn, và Về màn hình chính. Sau thử thách, "
-"Chơi lại thành Chơi lại thử thách này, và hàng cuối là Về thử thách. Escape "
-"giống như hàng cuối."
+"Chơi lại thành Chơi lại thử thách này, và hàng cuối là Về danh sách thử "
+"thách. Escape giống như hàng cuối."
 
 msgid ""
 "When a trip ends, the game reads what you gathered, your score and what is "
@@ -77887,7 +77909,7 @@ msgid ""
 "last row is Back to the challenges."
 msgstr ""
 "Sau thử thách, Chơi lại thành Chơi lại thử thách này, và hàng cuối là Về "
-"thử thách."
+"danh sách thử thách."
 
 msgid ""
 "Everything you gather goes home to your aquarium, which keeps growing. "
@@ -78008,8 +78030,8 @@ msgstr ""
 "Hàng Chơi ở màn hình chính bắt đầu một chuyến đi. Left và Right trên hàng "
 "đó chọn bờ biển, và nó đọc điểm cao nhất của bờ biển đó. Bờ biển bạn chưa "
 "mở được đọc là đang khóa, và Enter trên đó cho biết cần bao nhiêu loài để "
-"mở. Kỷ lục, ở màn hình chính, đọc mọi điểm cao nhất và kết quả thử thách "
-"của bạn."
+"mở. Thành tích, ở màn hình chính, đọc mọi điểm cao nhất và kết quả thử "
+"thách của bạn."
 
 msgid "The Play row on the title menu starts a trip."
 msgstr "Hàng Chơi ở màn hình chính bắt đầu một chuyến đi."
@@ -78031,8 +78053,8 @@ msgid ""
 "Records, on the title menu, reads every best score and your challenge "
 "results."
 msgstr ""
-"Kỷ lục, ở màn hình chính, đọc mọi điểm cao nhất và kết quả thử thách của "
-"bạn."
+"Thành tích, ở màn hình chính, đọc mọi điểm cao nhất và kết quả thử thách "
+"của bạn."
 
 msgid ""
 "Three sheltered pools close to home, with no tide: an anemone, a shy shore "
@@ -78171,7 +78193,7 @@ msgstr ""
 "Có những ngày bờ biển khác thường. Mỗi sự kiện có một dòng riêng trên màn "
 "hình chính, ngay dưới Chơi. Khi chưa mở, dòng đó báo đã khóa và khi nào mở. "
 "Nó đưa bạn tới bờ xa nhất bạn đã mở, và có kỷ lục riêng. Nếu sự kiện đã kết "
-"thúc khi bạn chọn Chơi lần nữa, trò chơi báo đã kết thúc và bạn quay về màn "
+"thúc khi bạn chọn Chơi lại, trò chơi báo đã kết thúc và bạn quay về màn "
 "hình chính. Các bờ thường và thử thách không bao giờ thay đổi."
 
 msgid "Some days the shore is different."
@@ -78192,8 +78214,8 @@ msgid ""
 "If the event has ended by the time you choose Play again, the game says it "
 "has ended and you go back to the title."
 msgstr ""
-"Nếu sự kiện đã kết thúc khi bạn chọn Chơi lần nữa, trò chơi báo đã kết thúc "
-"và bạn quay về màn hình chính."
+"Nếu sự kiện đã kết thúc khi bạn chọn Chơi lại, trò chơi báo đã kết thúc và "
+"bạn quay về màn hình chính."
 
 msgid "The ordinary shores and the challenges never change."
 msgstr "Các bờ thường và thử thách không bao giờ thay đổi."
@@ -79527,7 +79549,7 @@ msgstr ""
 "gặp món hiếm nhất."
 
 msgid "No twist"
-msgstr "Không có gì đặc biệt"
+msgstr "Không có điểm khác lạ"
 
 msgid "A busy shore"
 msgstr "Bờ đông vui"
@@ -80358,8 +80380,9 @@ msgid ""
 "times the pigeons, Loose wire, with twice the sway, and Slick wire, where "
 "every step slips a little to one side."
 msgstr ""
-"Có Ngày gió lớn, gió giật thường gấp đôi, Đoàn bồ câu, gấp 3 số bồ câu, Dây "
-"chùng, đung đưa gấp đôi, và Dây trơn, mỗi bước trượt nhẹ sang một bên."
+"Các điểm khác lạ gồm Ngày gió lớn, gió giật thường gấp đôi, Đoàn bồ câu, "
+"gấp 3 số bồ câu, Dây chùng, đung đưa gấp đôi, và Dây trơn, mỗi bước trượt "
+"nhẹ sang một bên."
 
 msgid "Weekly: 3 high crossings in a row, with a twist, on only 2 lives."
 msgstr ""
@@ -80936,7 +80959,7 @@ msgid "Changing winds"
 msgstr "Gió đổi chiều"
 
 msgid "No twist: the standard skyline wires."
-msgstr "Không có gì đặc biệt: các dây đường chân trời thông thường."
+msgstr "Không có điểm khác lạ: các dây đường chân trời thông thường."
 
 msgid ""
 "Gale day: gusts come twice as often. Every one is still warned in time."
@@ -82463,19 +82486,19 @@ msgid ""
 "two shakes a letter before shakes cost points. The briefing repeats the "
 "twist."
 msgstr ""
-"Thử thách hằng ngày thay phiên nhau. Ngày chẵn trong tháng là giờ cao điểm: "
-"một ca Phân loại quà ở ca 5. Ngày lẻ là thư buổi sáng: chồng thư 3 ở Bàn "
-"Điều Ước. Mỗi ngày có một điểm khác lạ. Trên băng chuyền, điểm khác lạ là "
-"một trong những thứ sau. Giờ cao điểm: băng chuyền nhanh hơn một phần tư. "
-"Đồng hồ ngắn: bốn phần năm thời gian thường lệ. Đơn hàng lớn: thêm ba món "
-"quà, kèm thêm chút thời gian. Khách khó tính: đoán sai mất gấp đôi thời "
-"gian. Ở bàn, điểm khác lạ là một trong những thứ sau. Lót rơm: hộp nào cũng "
-"phải lắc hai lần. Kệ dài: thêm hai hộp. Cẩn thận: hộp sai mất gấp đôi. Ít "
-"lần lắc: mỗi lá thư chỉ được lắc hai lần trước khi bị trừ điểm. Phần giới "
-"thiệu nhắc lại điểm khác lạ."
+"Thử thách ngày thay phiên nhau. Ngày chẵn trong tháng là giờ cao điểm: một "
+"ca Phân loại quà ở ca 5. Ngày lẻ là thư buổi sáng: chồng thư 3 ở Bàn Điều "
+"Ước. Mỗi ngày có một điểm khác lạ. Trên băng chuyền, điểm khác lạ là một "
+"trong những thứ sau. Giờ cao điểm: băng chuyền nhanh hơn một phần tư. Đồng "
+"hồ ngắn: bốn phần năm thời gian thường lệ. Đơn hàng lớn: thêm ba món quà, "
+"kèm thêm chút thời gian. Khách khó tính: đoán sai mất gấp đôi thời gian. Ở "
+"bàn, điểm khác lạ là một trong những thứ sau. Lót rơm: hộp nào cũng phải "
+"lắc hai lần. Kệ dài: thêm hai hộp. Cẩn thận: hộp sai mất gấp đôi. Ít lần "
+"lắc: mỗi lá thư chỉ được lắc hai lần trước khi bị trừ điểm. Phần giới thiệu "
+"nhắc lại điểm khác lạ."
 
 msgid "The daily challenge alternates."
-msgstr "Thử thách hằng ngày thay phiên nhau."
+msgstr "Thử thách ngày thay phiên nhau."
 
 msgid ""
 "On even days of the month it is the rush: one Gift Sort shift at shift 5."
@@ -82526,17 +82549,17 @@ msgid ""
 "is on the belt. If the clock beats you in the workshop, the run ends there "
 "with the points you have."
 msgstr ""
-"Thử thách hằng tuần là cú đúp mùa lễ: ca 4 đến 6 của Phân loại quà, rồi "
-"chồng thư 4 ở Bàn Điều Ước, tính điểm chung như cốt truyện. Điểm khác lạ "
-"của tuần nằm ở băng chuyền. Nếu hết giờ ở xưởng, lượt kết thúc ở đó với số "
-"điểm bạn có."
+"Thử thách tuần là cú đúp mùa lễ: ca 4 đến 6 của Phân loại quà, rồi chồng "
+"thư 4 ở Bàn Điều Ước, tính điểm chung như cốt truyện. Điểm khác lạ của tuần "
+"nằm ở băng chuyền. Nếu hết giờ ở xưởng, lượt kết thúc ở đó với số điểm bạn "
+"có."
 
 msgid ""
 "The weekly challenge is the holiday double: Gift Sort shifts 4 to 6, then "
 "stack 4 at the Wish Desk, scored together like the story."
 msgstr ""
-"Thử thách hằng tuần là cú đúp mùa lễ: ca 4 đến 6 của Phân loại quà, rồi "
-"chồng thư 4 ở Bàn Điều Ước, tính điểm chung như cốt truyện."
+"Thử thách tuần là cú đúp mùa lễ: ca 4 đến 6 của Phân loại quà, rồi chồng "
+"thư 4 ở Bàn Điều Ước, tính điểm chung như cốt truyện."
 
 msgid "The week's twist is on the belt."
 msgstr "Điểm khác lạ của tuần nằm ở băng chuyền."
@@ -82550,8 +82573,8 @@ msgid ""
 "The monthly challenge is the midwinter post: stacks 3, 4 and 5 at the Wish "
 "Desk, one after another, with every box packed in straw."
 msgstr ""
-"Thử thách hằng tháng là thư giữa đông: chồng thư 3, 4 và 5 ở Bàn Điều Ước, "
-"nối tiếp nhau, hộp nào cũng lót rơm."
+"Thử thách tháng là thư giữa đông: chồng thư 3, 4 và 5 ở Bàn Điều Ước, nối "
+"tiếp nhau, hộp nào cũng lót rơm."
 
 msgid "Practice, tutorial and sound check"
 msgstr "Luyện tập, hướng dẫn và thử âm thanh"
@@ -84466,11 +84489,11 @@ msgid "blizzard"
 msgstr ""
 
 msgid "wish desk"
-msgstr ""
+msgstr "Bàn Điều Ước"
 
 #. placeholders: {night}
 msgid "countdown night {night}"
-msgstr ""
+msgstr "Đếm ngược nửa đêm, đêm {night}"
 
 #. placeholders: {r}
 msgid "Your first {r}score here is saved."
@@ -84485,7 +84508,7 @@ msgstr "Chưa chơi"
 
 #. placeholders: {stack}
 msgid "wish desk stack {stack}"
-msgstr ""
+msgstr "Bàn Điều Ước, chồng thư {stack}"
 
 msgid ""
 "Winter holidays: sort shaken gifts, then answer children's letters at the "
@@ -86110,7 +86133,7 @@ msgid "name"
 msgstr ""
 
 msgid "your account"
-msgstr ""
+msgstr "tài khoản của bạn"
 
 msgid "token"
 msgstr ""
@@ -86144,8 +86167,8 @@ msgid ""
 "Up and Down pick a control, Enter then a key press moves it, Escape goes "
 "back."
 msgstr ""
-"Dùng phím Lên và Xuống để chọn chức năng, nhấn Enter rồi bấm phím mới để "
-"gán lại, nhấn Escape để quay lại."
+"Dùng Up và Down để chọn chức năng, nhấn Enter rồi bấm phím mới để gán lại, "
+"nhấn Escape để quay lại."
 
 msgid "Controller buttons"
 msgstr "Nút tay cầm"
@@ -86154,8 +86177,8 @@ msgid ""
 "Up and Down pick a control, Enter then a button press moves it, Escape goes "
 "back."
 msgstr ""
-"Dùng phím Lên và Xuống để chọn chức năng, nhấn Enter rồi bấm nút mới để gán "
-"lại, nhấn Escape để quay lại."
+"Dùng Up và Down để chọn chức năng, nhấn Enter rồi bấm nút mới để gán lại, "
+"nhấn Escape để quay lại."
 
 #. placeholders: {label}, {current}
 msgid "Press the new key for {label}. Escape keeps {current}."
@@ -87974,11 +87997,11 @@ msgid "builtin-voice-output"
 msgstr ""
 
 msgid "no sound device"
-msgstr ""
+msgstr "không có thiết bị âm thanh"
 
 #. placeholders: {err}
 msgid "no output format: {err}"
-msgstr ""
+msgstr "không có định dạng đầu ra: {err}"
 
 msgid "main"
 msgstr ""
@@ -88305,75 +88328,75 @@ msgstr ""
 
 #. placeholders: {rel}
 msgid "{rel} would be written through a link"
-msgstr ""
+msgstr "{rel} sẽ bị ghi qua một liên kết"
 
 msgid "the archive has too many entries"
 msgstr "tệp lưu trữ có quá nhiều mục"
 
 #. placeholders: {name}
 msgid "unsafe entry name {name}"
-msgstr ""
+msgstr "tên mục không an toàn {name}"
 
 #. placeholders: {name}
 msgid "{name} is a folder and a file"
-msgstr ""
+msgstr "{name} vừa là thư mục vừa là tệp"
 
 #. placeholders: {name}
 msgid "{name} is larger than its index says"
-msgstr ""
+msgstr "{name} lớn hơn chỉ mục ghi"
 
 msgid "the archive unpacks to more than allowed"
 msgstr "tệp lưu trữ giải nén ra quá dung lượng cho phép"
 
 #. placeholders: {name}
 msgid "{name} links outside the update"
-msgstr ""
+msgstr "{name} liên kết ra ngoài bản cập nhật"
 
 #. placeholders: {name}
 msgid "{name} is in the archive twice"
-msgstr ""
+msgstr "{name} có hai lần trong kho nén"
 
 #. placeholders: {path}
 msgid "{path} is a link, which this system's updates do not hold"
-msgstr ""
+msgstr "{path} là liên kết, thứ mà bản cập nhật của hệ thống này không chứa"
 
 #. placeholders: {name}
 msgid "{name} is not an archive this updater unpacks"
-msgstr ""
+msgstr "{name} không phải kho nén mà trình cập nhật này giải nén được"
 
 msgid "the archive is not the one its index describes"
 msgstr "tệp lưu trữ không phải tệp mà chỉ mục mô tả"
 
 #. placeholders: {name}
 msgid "{name} is not where its index says"
-msgstr ""
+msgstr "{name} không nằm ở chỗ chỉ mục ghi"
 
 #. placeholders: {name}
 msgid "{name} is a link, not a file to reuse"
-msgstr ""
+msgstr "{name} là liên kết, không phải tệp để dùng lại"
 
 #. placeholders: {name}
 msgid "{name} does not match its index"
-msgstr ""
+msgstr "{name} không khớp với chỉ mục"
 
 #. placeholders: {name}
 msgid "{name} is not a file, folder or link"
-msgstr ""
+msgstr "{name} không phải tệp, thư mục hay liên kết"
 
 #. placeholders: {name}
 msgid "{name} is not a file to reuse"
-msgstr ""
+msgstr "{name} không phải tệp để dùng lại"
 
 #. placeholders: {installed}
 msgid "{installed} changed"
-msgstr ""
+msgstr "{installed} đã thay đổi"
 
 msgid "an entry's name is not UTF-8"
-msgstr ""
+msgstr "tên một mục không phải UTF-8"
 
 #. placeholders: {name}, {other}
 msgid "{name} is not a file, folder or link ({other})"
-msgstr ""
+msgstr "{name} không phải tệp, thư mục hay liên kết ({other})"
 
 #. placeholders: {code}
 msgid "the server answered {code}"
@@ -88406,7 +88429,7 @@ msgid "cookie"
 msgstr ""
 
 msgid "an empty range"
-msgstr ""
+msgstr "một khoảng rỗng"
 
 msgid "Range"
 msgstr ""
@@ -88419,7 +88442,7 @@ msgstr ""
 
 #. placeholders: {format}
 msgid "unknown index format {format}"
-msgstr ""
+msgstr "định dạng chỉ mục lạ {format}"
 
 msgid "archive size"
 msgstr ""
@@ -88428,7 +88451,7 @@ msgid "central directory"
 msgstr ""
 
 msgid "too many entries"
-msgstr ""
+msgstr "quá nhiều mục"
 
 #. placeholders: {path}
 msgid "entry {path}"
@@ -88436,11 +88459,11 @@ msgstr ""
 
 #. placeholders: {path}
 msgid "entry {path} is out of place"
-msgstr ""
+msgstr "mục {path} nằm sai chỗ"
 
 msgid ""
 "the zip starts part-way into its file, which the index does not describe"
-msgstr ""
+msgstr "tệp zip bắt đầu giữa chừng tệp chứa nó, điều chỉ mục không mô tả"
 
 msgid "could not make a folder for the update"
 msgstr "không tạo được thư mục cho bản cập nhật"
@@ -88450,17 +88473,17 @@ msgstr ""
 
 #. placeholders: {exe}
 msgid "the update's app has no {exe}"
-msgstr ""
+msgstr "ứng dụng trong bản cập nhật không có {exe}"
 
 #. placeholders: {exe}
 msgid "the update has no {exe}"
-msgstr ""
+msgstr "bản cập nhật không có {exe}"
 
 msgid "the update holds no single app"
 msgstr "bản cập nhật không chứa một ứng dụng duy nhất"
 
 msgid "cannot copy a link"
-msgstr ""
+msgstr "không sao chép được liên kết"
 
 #. placeholders: {public}
 msgid "SecretKey(hidden, public {public})"
@@ -88471,14 +88494,14 @@ msgstr "không phải tệp kê khai cập nhật"
 
 #. placeholders: {n}
 msgid "unknown manifest format {n}"
-msgstr ""
+msgstr "định dạng bản kê lạ {n}"
 
 msgid "the manifest is not signed"
 msgstr "tệp kê khai chưa được ký"
 
 #. placeholders: {k}
 msgid "the manifest is signed by another key ({k})"
-msgstr ""
+msgstr "bản kê được ký bằng khóa khác ({k})"
 
 msgid "the manifest's signature does not match this game's key"
 msgstr "chữ ký của tệp kê khai không khớp với khóa của trò chơi này"
@@ -88515,14 +88538,14 @@ msgid "the check was canceled"
 msgstr "đã hủy việc kiểm tra"
 
 msgid "a kept file's path is not text"
-msgstr ""
+msgstr "đường dẫn của một tệp giữ lại không phải văn bản"
 
 msgid "an unsafe kept path"
-msgstr ""
+msgstr "một đường dẫn giữ lại không an toàn"
 
 #. placeholders: {status}
 msgid "the server answered {status} to a range"
-msgstr ""
+msgstr "máy chủ trả lời {status} cho một khoảng"
 
 msgid "no Content-Range"
 msgstr ""
@@ -88533,32 +88556,32 @@ msgstr ""
 
 #. placeholders: {length}
 msgid "a range declared {length} bytes"
-msgstr ""
+msgstr "một khoảng khai báo {length} byte"
 
 msgid "the plan is for another archive"
-msgstr ""
+msgstr "kế hoạch này dành cho kho nén khác"
 
 msgid "a range outside the archive"
-msgstr ""
+msgstr "một khoảng nằm ngoài kho nén"
 
 msgid "this connection does not ask for ranges"
-msgstr ""
+msgstr "kết nối này không yêu cầu theo khoảng"
 
 #. placeholders: {got}, {len}
 msgid "a range sent {got} of {len} bytes"
-msgstr ""
+msgstr "một khoảng gửi {got} trên {len} byte"
 
 msgid "a kept file is not in the index"
-msgstr ""
+msgstr "một tệp giữ lại không có trong chỉ mục"
 
 msgid "a kept file's header does not fit"
-msgstr ""
+msgstr "phần đầu của một tệp giữ lại không khớp"
 
 msgid "a kept file is past the central directory"
-msgstr ""
+msgstr "một tệp giữ lại nằm sau thư mục trung tâm"
 
 msgid "the central directory is not the signed one"
-msgstr ""
+msgstr "thư mục trung tâm không phải bản đã ký"
 
 msgid "macos"
 msgstr ""
@@ -88592,7 +88615,7 @@ msgid "assets"
 msgstr ""
 
 msgid "the query is not plain names"
-msgstr ""
+msgstr "truy vấn không chỉ gồm tên thường"
 
 #. A menu row's position, said after whichever row has focus (Hearken).
 msgid "{position} of {count}."
