@@ -12,7 +12,7 @@ corner: slow, swung and warm. The set:
 - a kit played with brushes: a brushed snare swinging with its accent on
   two and four, and the hi-hat's foot.
 
-Like all of Wicket's newer music it is made for blal1's genny from short
+Like all of Wicket's newer music it is made for Oriol's genny from short
 chord and tune tables, with a light room (reverb mix 0.12) and the parts
 panned apart. The pieces and their tunes are original.
 
@@ -256,7 +256,7 @@ STRINGS = {"attack": 0.8, "release": 1.2}
 def title() -> dict:
     return {
         "out": "music/title.wav",
-        "genny": "blal1",
+        "genny": "oriol",
         "loudness": -26.5,
         "bpm": 76,
         "beats": 96,
@@ -313,7 +313,7 @@ def score(stem: str) -> dict:
         at += BEATS * len(chords)
     return {
         "out": f"score/{stem}.wav",
-        "genny": "blal1",
+        "genny": "oriol",
         "bpm": 72,
         "beats": at,
         "loop": "fold",
@@ -328,7 +328,7 @@ def score(stem: str) -> dict:
 def pause() -> dict:
     return {
         "out": "music/pause.wav",
-        "genny": "blal1",
+        "genny": "oriol",
         "loudness": -30,
         "bpm": 66,
         "beats": 64,

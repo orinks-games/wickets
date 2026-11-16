@@ -67,7 +67,7 @@ def freehub(out: str, rate: float, tone: float, gain: float, jitter: float,
         # Two pawls a little apart in strength, as real hubs have.
         g = gain * (1.0 if i % 2 == 0 else 0.82) * rng.uniform(0.88, 1.0)
         layers.append(tick(max(at, 0.0), g, tone * rng.uniform(0.97, 1.03), seed * 1000 + i))
-    return {"genny": "blal1", "out": out, "layers": layers, "fx": fx(),
+    return {"genny": "oriol", "out": out, "layers": layers, "fx": fx(),
             "duration": LOOP, "loop": "fold", "loudness": loudness}
 
 
@@ -98,7 +98,7 @@ def chain(out: str, rate: float, tone: float, gain: float, swell: float,
                 "params": {"dur": 0.22, "color": "pink", "attack": 0.06},
                 "fx": [{"type": "bandpass", "center": 700, "q": 1.2}],
             })
-    return {"genny": "blal1", "out": out, "layers": layers, "fx": fx(cutoff),
+    return {"genny": "oriol", "out": out, "layers": layers, "fx": fx(cutoff),
             "duration": LOOP, "loop": "fold", "loudness": loudness}
 
 

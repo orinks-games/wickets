@@ -13,7 +13,7 @@ the racing and arcade games of the time. The set is chosen for that:
 - brass, synth brass stabs that push into the section turns;
 - a kit: kick, snare, clap, hats and an open hat.
 
-Like all of Wicket's newer music it is made for blal1's genny from short
+Like all of Wicket's newer music it is made for Oriol's genny from short
 chord and tune tables, with a light room (reverb mix 0.1) and the parts
 panned apart. The piece and its tune are original.
 
@@ -214,7 +214,7 @@ def band(chords: list[str], n_bars: int) -> list[dict]:
 def title() -> dict:
     return {
         "out": "music/title.wav",
-        "genny": "blal1",
+        "genny": "oriol",
         "loudness": -26.5,
         "bpm": 124,
         "beats": 96,
