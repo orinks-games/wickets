@@ -10,10 +10,10 @@ msgstr ""
 "X-Language-Name: Turkish\n"
 
 msgid "left"
-msgstr ""
+msgstr "sol"
 
 msgid "right"
-msgstr ""
+msgstr "sağ"
 
 msgid "up"
 msgstr ""
@@ -205,7 +205,7 @@ msgid "April"
 msgstr ""
 
 msgid "May"
-msgstr ""
+msgstr "Mayıs"
 
 msgid "June"
 msgstr ""
@@ -474,20 +474,20 @@ msgid "beta"
 msgstr ""
 
 msgid "stable"
-msgstr ""
+msgstr "kararlı"
 
 msgid "dev"
 msgstr ""
 
 msgid "Help"
-msgstr ""
+msgstr "Yardım"
 
 msgid ""
 "Up and Down move between help topics, Enter reads one, Escape goes back."
 msgstr ""
 
 msgid "help"
-msgstr ""
+msgstr "yardım"
 
 msgid "Enter reads this topic a page at a time."
 msgstr ""
@@ -540,7 +540,7 @@ msgid "back"
 msgstr ""
 
 msgid "open"
-msgstr ""
+msgstr "açık"
 
 msgid "page"
 msgstr ""
@@ -573,7 +573,7 @@ msgid "Challenges"
 msgstr ""
 
 msgid "Back"
-msgstr ""
+msgstr "Geri"
 
 msgid "Back to the parlor"
 msgstr ""
@@ -621,10 +621,10 @@ msgid "Spoken call-outs: {else}"
 msgstr ""
 
 msgid "off"
-msgstr ""
+msgstr "kapalı"
 
 msgid "on"
-msgstr ""
+msgstr "açık"
 
 #. placeholders: {label}
 msgid "Play this {label} challenge again"
@@ -657,13 +657,13 @@ msgid "Stop without counting this challenge, so you can try it again later."
 msgstr ""
 
 msgid "Paused"
-msgstr ""
+msgstr "Duraklatıldı"
 
 msgid "Up and Down move, Enter chooses, Escape goes back to the game."
 msgstr ""
 
 msgid "pause"
-msgstr ""
+msgstr "duraklat"
 
 msgid "Go back to where you were."
 msgstr ""
@@ -792,7 +792,7 @@ msgid "{meaning} Applies from the next run."
 msgstr ""
 
 msgid "running"
-msgstr ""
+msgstr "çalışıyor"
 
 msgid "held"
 msgstr ""
@@ -1241,7 +1241,7 @@ msgid "lesson"
 msgstr ""
 
 msgid "event"
-msgstr ""
+msgstr "olay"
 
 msgid "daily"
 msgstr ""
@@ -2503,7 +2503,7 @@ msgid "What Wicket's is, its version and who made it."
 msgstr ""
 
 msgid "Quit"
-msgstr ""
+msgstr "Çık"
 
 msgid "Close Wicket's."
 msgstr ""
@@ -5184,7 +5184,7 @@ msgid "between"
 msgstr ""
 
 msgid "over"
-msgstr ""
+msgstr "üstünde"
 
 #. placeholders: {label}, {r}, {phase}
 msgid "{label}, round {r}, {phase}"
@@ -11728,7 +11728,7 @@ msgid "The same sky, straight away. Only your best result is kept."
 msgstr ""
 
 msgid "full"
-msgstr ""
+msgstr "tam"
 
 msgid "heart"
 msgstr ""
@@ -18191,7 +18191,7 @@ msgid "{marker}Pile {p}: {down} face down, {join}"
 msgstr ""
 
 msgid "empty"
-msgstr ""
+msgstr "boş"
 
 #. placeholders: {on_foundations}, {DECK}, {moves_words}
 msgid "{on_foundations} of {DECK} on the foundations, {moves_words}"
@@ -32938,22 +32938,22 @@ msgid "{join} and {n}"
 msgstr ""
 
 msgid "the Left arrow"
-msgstr ""
+msgstr "Left ok tuşu"
 
 msgid "the Right arrow"
-msgstr ""
+msgstr "Right ok tuşu"
 
 msgid "the Up arrow"
-msgstr ""
+msgstr "Up ok tuşu"
 
 msgid "the Down arrow"
-msgstr ""
+msgstr "Down ok tuşu"
 
 msgid "Space"
-msgstr ""
+msgstr "Space"
 
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 msgid "A handpan"
 msgstr ""
@@ -35321,7 +35321,7 @@ msgid "{name} moves into a cottage. That makes {mouths} to feed at supper."
 msgstr ""
 
 msgid "Not now"
-msgstr ""
+msgstr "Şimdi değil"
 
 msgid "They walk on, and someone else may come another day."
 msgstr ""
@@ -43123,7 +43123,7 @@ msgid ""
 msgstr ""
 
 msgid "none"
-msgstr ""
+msgstr "none"
 
 #. placeholders: {board}
 msgid "Board {board}, left of centre."
@@ -52799,7 +52799,7 @@ msgid "{sentence}, locked: {n} more {else}"
 msgstr ""
 
 msgid "star"
-msgstr ""
+msgstr "yıldız"
 
 msgid "stars"
 msgstr ""
@@ -76162,32 +76162,32 @@ msgstr ""
 
 #. placeholders: {short}
 msgid "right bumper plus {short}"
-msgstr ""
+msgstr "sağ omuz tuşu artı {short}"
 
 #. placeholders: {short}
 msgid "the {short} button"
-msgstr ""
+msgstr "{short} düğmesi"
 
 msgid "Escape goes back"
 msgstr ""
 
 msgid "F1 is help"
-msgstr ""
+msgstr "F1 yardımı açar"
 
 msgid "F2 stops speech"
 msgstr ""
 
 msgid "a modifier key on its own cannot be a shortcut"
-msgstr ""
+msgstr "değiştirici tuş tek başına kısayol olamaz"
 
 msgid "that key cannot be used"
-msgstr ""
+msgstr "bu tuş kullanılamaz"
 
 msgid "Enter chooses"
 msgstr ""
 
 msgid "the guide button belongs to the system"
-msgstr ""
+msgstr "rehber düğmesi sisteme aittir"
 
 msgid "Back reads help"
 msgstr ""
@@ -76196,58 +76196,58 @@ msgid "Start pauses and goes back"
 msgstr ""
 
 msgid "the right bumper is the second layer"
-msgstr ""
+msgstr "sağ omuz tuşu ikinci katmandır"
 
 msgid "keypad 0"
-msgstr ""
+msgstr "tuş takımı 0"
 
 msgid "keypad 1"
-msgstr ""
+msgstr "tuş takımı 1"
 
 msgid "keypad 2"
-msgstr ""
+msgstr "tuş takımı 2"
 
 msgid "keypad 3"
-msgstr ""
+msgstr "tuş takımı 3"
 
 msgid "keypad 4"
-msgstr ""
+msgstr "tuş takımı 4"
 
 msgid "keypad 5"
-msgstr ""
+msgstr "tuş takımı 5"
 
 msgid "keypad 6"
-msgstr ""
+msgstr "tuş takımı 6"
 
 msgid "keypad 7"
-msgstr ""
+msgstr "tuş takımı 7"
 
 msgid "keypad 8"
-msgstr ""
+msgstr "tuş takımı 8"
 
 msgid "keypad 9"
-msgstr ""
+msgstr "tuş takımı 9"
 
 msgid "keypad Enter"
-msgstr ""
+msgstr "tuş takımı Enter"
 
 msgid "keypad plus"
-msgstr ""
+msgstr "tuş takımı plus"
 
 msgid "keypad minus"
-msgstr ""
+msgstr "tuş takımı minus"
 
 msgid "enter"
 msgstr ""
 
 msgid "Enter"
-msgstr ""
+msgstr "Enter"
 
 msgid "escape"
 msgstr ""
 
 msgid "Escape"
-msgstr ""
+msgstr "Escape"
 
 msgid "space"
 msgstr ""
@@ -76259,7 +76259,7 @@ msgid "backspace"
 msgstr ""
 
 msgid "Backspace"
-msgstr ""
+msgstr "Backspace"
 
 msgid "Home"
 msgstr ""
@@ -76271,10 +76271,10 @@ msgid "End"
 msgstr ""
 
 msgid "Page Up"
-msgstr ""
+msgstr "Page Up"
 
 msgid "Page Down"
-msgstr ""
+msgstr "Page Down"
 
 msgid "insert"
 msgstr ""
@@ -76283,7 +76283,7 @@ msgid "Insert"
 msgstr ""
 
 msgid "delete"
-msgstr ""
+msgstr "silme"
 
 msgid "Delete"
 msgstr ""
@@ -76328,100 +76328,100 @@ msgid "right bracket"
 msgstr ""
 
 msgid "Left Control"
-msgstr ""
+msgstr "Sol Control"
 
 msgid "Right Control"
-msgstr ""
+msgstr "Sağ Control"
 
 msgid "Left Shift"
-msgstr ""
+msgstr "Left Shift"
 
 msgid "Right Shift"
-msgstr ""
+msgstr "Sağ Shift"
 
 msgid "Left Alt"
-msgstr ""
+msgstr "Sol Alt"
 
 msgid "Right Alt"
-msgstr ""
+msgstr "Sağ Alt"
 
 msgid "an unnamed key"
-msgstr ""
+msgstr "adı olmayan bir tuş"
 
 msgid "guide"
 msgstr ""
 
 msgid "the guide button"
-msgstr ""
+msgstr "guide düğmesi"
 
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 msgid "the left stick click"
-msgstr ""
+msgstr "sol analog çubuğa basma"
 
 msgid "the right stick click"
-msgstr ""
+msgstr "sağ analog çubuğa basma"
 
 msgid "the left bumper"
-msgstr ""
+msgstr "left bumper"
 
 msgid "the right bumper"
-msgstr ""
+msgstr "sağ omuz tuşu"
 
 msgid "D-pad up"
-msgstr ""
+msgstr "D-pad yukarı"
 
 msgid "D-pad down"
-msgstr ""
+msgstr "D-pad aşağı"
 
 msgid "D-pad left"
-msgstr ""
+msgstr "D-pad sol"
 
 msgid "D-pad right"
-msgstr ""
+msgstr "D-pad sağ"
 
 msgid "misc"
 msgstr ""
 
 msgid "the extra button"
-msgstr ""
+msgstr "ek düğme"
 
 msgid "paddle 1"
-msgstr ""
+msgstr "kanatçık 1"
 
 msgid "paddle 2"
-msgstr ""
+msgstr "kanatçık 2"
 
 msgid "paddle 3"
-msgstr ""
+msgstr "kanatçık 3"
 
 msgid "paddle 4"
-msgstr ""
+msgstr "kanatçık 4"
 
 msgid "touchpad"
 msgstr ""
 
 msgid "the touchpad"
-msgstr ""
+msgstr "dokunmatik yüzey"
 
 msgid "right stick up"
-msgstr ""
+msgstr "sağ çubuk yukarı"
 
 msgid "right stick down"
-msgstr ""
+msgstr "sağ çubuk aşağı"
 
 msgid "right stick left"
-msgstr ""
+msgstr "sağ çubuk sola"
 
 msgid "right stick right"
-msgstr ""
+msgstr "sağ çubuk sağa"
 
 msgid "unknown"
-msgstr ""
+msgstr "unknown"
 
 msgid "an unnamed button"
-msgstr ""
+msgstr "adı olmayan bir düğme"
 
 msgid "hearken-clock-sync"
 msgstr ""
@@ -76441,6 +76441,8 @@ msgid ""
 "Controller disconnected. You can keep playing with the keyboard, or "
 "reconnect your controller."
 msgstr ""
+"Oyun kumandasının bağlantısı kesildi. Klavyeyle oynamaya devam edebilir ya "
+"da kumandanızı yeniden bağlayabilirsiniz."
 
 msgid "unbound"
 msgstr ""
@@ -76454,7 +76456,7 @@ msgid "bound (instance {id})"
 msgstr ""
 
 msgid "controller"
-msgstr ""
+msgstr "oyun kumandası"
 
 #. placeholders: {title}
 msgid ""
@@ -76509,10 +76511,10 @@ msgid "Up and Down move, Enter chooses, Escape goes back, F2 stops speech."
 msgstr ""
 
 msgid "Menu"
-msgstr ""
+msgstr "Menü"
 
 msgid "No options available."
-msgstr ""
+msgstr "Seçenek yok."
 
 #. placeholders: {label}, {index}, {items}
 msgid "{label} {index} of {items}."
@@ -76553,7 +76555,7 @@ msgid "rate-limited"
 msgstr ""
 
 msgid "unavailable"
-msgstr ""
+msgstr "yok"
 
 msgid "code-expired"
 msgstr ""
@@ -76602,13 +76604,13 @@ msgid "error"
 msgstr ""
 
 msgid "message"
-msgstr ""
+msgstr "mesaj"
 
 msgid "ok"
 msgstr ""
 
 msgid "name"
-msgstr ""
+msgstr "ad"
 
 msgid "your account"
 msgstr ""
@@ -76630,7 +76632,7 @@ msgid "{TITLE} is already running."
 msgstr ""
 
 msgid "silent"
-msgstr ""
+msgstr "sessiz"
 
 msgid "agent-sandbox"
 msgstr ""
@@ -76639,24 +76641,28 @@ msgid "The game window could not be opened."
 msgstr ""
 
 msgid "Keyboard shortcuts"
-msgstr ""
+msgstr "Klavye kısayolları"
 
 msgid ""
 "Up and Down pick a control, Enter then a key press moves it, Escape goes "
 "back."
 msgstr ""
+"Yukarı ve Aşağı kontrol seçer, Enter ve ardından bir tuşa basmak onu taşır, "
+"Escape geri döner."
 
 msgid "Controller buttons"
-msgstr ""
+msgstr "Oyun kumandası düğmeleri"
 
 msgid ""
 "Up and Down pick a control, Enter then a button press moves it, Escape goes "
 "back."
 msgstr ""
+"Yukarı ve Aşağı kontrol seçer, Enter ve ardından bir düğmeye basmak onu "
+"taşır, Escape geri döner."
 
 #. placeholders: {label}, {current}
 msgid "Press the new key for {label}. Escape keeps {current}."
-msgstr ""
+msgstr "Yeni tuşa basın: {label}. Escape mevcut olanı korur: {current}."
 
 #. placeholders: {label}, {current}
 msgid ""
@@ -76666,7 +76672,7 @@ msgstr ""
 
 #. placeholders: {current}
 msgid "Press another, or keep {current} with Escape."
-msgstr ""
+msgstr "Başka birine basın ya da Escape ile {current} korunsun."
 
 #. placeholders: {current}
 msgid "Press another, or press {current} to keep it."
@@ -76674,21 +76680,21 @@ msgstr ""
 
 #. placeholders: {current}
 msgid "Kept {current}."
-msgstr ""
+msgstr "Korundu: {current}."
 
 #. placeholders: {label}, {now}
 msgid "{label} is now {now}."
-msgstr ""
+msgstr "{label} artık {now}."
 
 #. placeholders: {sentence_start}, {label}, {hint}
 msgid "{sentence_start} is already used for {label}. {hint}"
 msgstr ""
 
 msgid "Every keyboard shortcut is back to its default."
-msgstr ""
+msgstr "Tüm klavye kısayolları varsayılana döndü."
 
 msgid "Every controller button is back to its default."
-msgstr ""
+msgstr "Tüm oyun kumandası düğmeleri varsayılana döndü."
 
 msgid "bindings"
 msgstr ""
@@ -76697,11 +76703,15 @@ msgid ""
 "Enter, then press the key you want for this control. Escape keeps the one "
 "it has."
 msgstr ""
+"Enter'a basın, sonra bu kontrol için istediğiniz tuşa basın. Escape mevcut "
+"tuşu korur."
 
 msgid ""
 "Enter, then press the button you want for this control, with the right "
 "bumper held for the second layer."
 msgstr ""
+"Enter'a basın, sonra bu kontrol için istediğiniz düğmeye basın; ikinci "
+"katman için sağ omuz tuşunu basılı tutun."
 
 msgid "Reset every keyboard shortcut"
 msgstr ""
@@ -76710,7 +76720,7 @@ msgid "Reset every controller button"
 msgstr ""
 
 msgid "Puts every control on this screen back where it started."
-msgstr ""
+msgstr "Bu ekrandaki her kontrolü başlangıçtaki yerine döndürür."
 
 msgid "No"
 msgstr ""
@@ -76720,7 +76730,7 @@ msgid "Up and Down move, Enter chooses, Escape chooses {cancel}."
 msgstr ""
 
 msgid "confirm"
-msgstr ""
+msgstr "onay"
 
 msgid "Press Enter to hear this topic."
 msgstr ""
@@ -76738,7 +76748,7 @@ msgid "code"
 msgstr ""
 
 msgid "failed"
-msgstr ""
+msgstr "başarısız"
 
 msgid "Play as a guest"
 msgstr ""
@@ -76911,7 +76921,7 @@ msgid "sending"
 msgstr ""
 
 msgid "Report a problem"
-msgstr ""
+msgstr "Sorun bildir"
 
 msgid "Up and Down move, Enter chooses, Escape goes back."
 msgstr ""
@@ -77313,10 +77323,10 @@ msgid "Speech rate: {i64} percent"
 msgstr ""
 
 msgid "automatic"
-msgstr ""
+msgstr "otomatik"
 
 msgid "Speech"
-msgstr ""
+msgstr "Konuşma"
 
 msgid "Sound"
 msgstr ""
@@ -77325,10 +77335,10 @@ msgid "Display"
 msgstr ""
 
 msgid "Online"
-msgstr ""
+msgstr "Çevrim içi"
 
 msgid "Updates"
-msgstr ""
+msgstr "Güncellemeler"
 
 msgid ""
 "Up and Down move, Left and Right change the setting, Escape saves and goes "
@@ -77456,7 +77466,7 @@ msgid "Use white text on black with yellow keyboard focus."
 msgstr ""
 
 msgid "keyboard"
-msgstr ""
+msgstr "klavye"
 
 msgid "Move any control to another key."
 msgstr ""
@@ -77518,7 +77528,7 @@ msgid "Install version {version}"
 msgstr ""
 
 msgid "Check for updates"
-msgstr ""
+msgstr "Güncellemeleri denetle"
 
 msgid ""
 "Looks for a newer version of the game, and installs it if you choose."
@@ -77560,18 +77570,18 @@ msgid ""
 msgstr ""
 
 msgid "Empty."
-msgstr ""
+msgstr "Boş."
 
 msgid "The field is full."
 msgstr ""
 
 #. placeholders: {char}, {rest}
 msgid "Deleted {char}. {rest}"
-msgstr ""
+msgstr "Silindi: {char}. {rest}"
 
 #. placeholders: {remaining}
 msgid "Ready in {remaining} seconds."
-msgstr ""
+msgstr "{remaining} saniye içinde hazır."
 
 msgid "less than 1 megabyte"
 msgstr ""
@@ -77597,7 +77607,7 @@ msgid "Found an update. Checking which files you already have."
 msgstr ""
 
 msgid "Checking for updates."
-msgstr ""
+msgstr "Güncellemeler denetleniyor."
 
 #. placeholders: {name}, {current}
 msgid "Up to date. You have {name} version {current}."
@@ -77619,7 +77629,7 @@ msgid "{message} Escape goes back."
 msgstr ""
 
 msgid "Update available"
-msgstr ""
+msgstr "Güncelleme var"
 
 msgid ""
 "Download and restart installs the update now. What's new reads the changes. "
@@ -77639,26 +77649,26 @@ msgid "Update available: {title}, {download_size}.{current}"
 msgstr ""
 
 msgid "Download and restart"
-msgstr ""
+msgstr "İndir ve yeniden başlat"
 
 msgid ""
 "Downloads the update, then closes the game and starts the new version."
 msgstr ""
 
 msgid "What's new"
-msgstr ""
+msgstr "Yenilikler"
 
 msgid "The changes in this update, a line at a time."
 msgstr ""
 
 msgid "Remind me later"
-msgstr ""
+msgstr "Daha sonra hatırlat"
 
 msgid "Offers it again the next time the game starts."
 msgstr ""
 
 msgid "Skip this version"
-msgstr ""
+msgstr "Bu sürümü atla"
 
 msgid ""
 "Stops offering this version when the game starts. Later versions are still "
@@ -77683,7 +77693,7 @@ msgstr ""
 
 #. placeholders: {title}
 msgid "What's new in {title}"
-msgstr ""
+msgstr "{title} yenilikleri"
 
 msgid "Down and Up read a line, Enter reads them all, Escape goes back."
 msgstr ""
@@ -77701,17 +77711,17 @@ msgid "update-download"
 msgstr ""
 
 msgid "The download could not start."
-msgstr ""
+msgstr "İndirme başlatılamadı."
 
 msgid "Download complete. Unpacking the update."
-msgstr ""
+msgstr "İndirme tamamlandı. Güncelleme açılıyor."
 
 msgid "Unpacking the update took too long."
-msgstr ""
+msgstr "Güncellemeyi açmak çok uzun sürdü."
 
 #. placeholders: {STALL_TIMEOUT_S}
 msgid "The download stopped. Nothing arrived for {STALL_TIMEOUT_S} seconds."
-msgstr ""
+msgstr "İndirme durdu. {STALL_TIMEOUT_S} saniyedir hiçbir şey gelmedi."
 
 msgid "The download did not finish."
 msgstr ""
@@ -77740,7 +77750,7 @@ msgstr ""
 
 #. placeholders: {as_secs}
 msgid "The download stopped. Nothing arrived for {as_secs} seconds."
-msgstr ""
+msgstr "İndirme durdu. {as_secs} saniyedir hiçbir şey gelmedi."
 
 msgid ""
 "The download did not match the update it was signed for, so it was not "
@@ -77771,17 +77781,17 @@ msgid "Downloading the whole update instead, {megabytes}."
 msgstr ""
 
 msgid "Update canceled."
-msgstr ""
+msgstr "Güncelleme iptal edildi."
 
 msgid "Unpacking the update."
-msgstr ""
+msgstr "Güncelleme açılıyor."
 
 #. placeholders: {percent}
 msgid "{percent} percent downloaded."
 msgstr ""
 
 msgid "Unpacking"
-msgstr ""
+msgstr "Açılıyor"
 
 #. placeholders: {percent}
 msgid "{percent} percent"
@@ -77789,10 +77799,10 @@ msgstr ""
 
 #. placeholders: {title}
 msgid "Downloading {title}"
-msgstr ""
+msgstr "İndiriliyor: {title}"
 
 msgid "Escape cancels, Tab reads progress."
-msgstr ""
+msgstr "Escape iptal eder, Tab ilerlemeyi okur."
 
 msgid ""
 "Tab reads how much has downloaded. Escape cancels and leaves the game as it "
@@ -77925,7 +77935,7 @@ msgid "{title}, not heard yet"
 msgstr ""
 
 msgid "Keep playing to unlock it."
-msgstr ""
+msgstr "Açmak için oynamaya devam edin."
 
 #. placeholders: {end_sentence}
 msgid "Locked. {end_sentence}"
@@ -78005,50 +78015,50 @@ msgid "test pad"
 msgstr ""
 
 msgid "colon"
-msgstr ""
+msgstr "iki nokta üst üste"
 
 msgid "dot"
-msgstr ""
+msgstr "nokta"
 
 msgid "dash"
-msgstr ""
+msgstr "tire"
 
 msgid "underscore"
-msgstr ""
+msgstr "alt çizgi"
 
 msgid "question mark"
-msgstr ""
+msgstr "soru işareti"
 
 msgid "exclamation mark"
-msgstr ""
+msgstr "ünlem işareti"
 
 msgid "and"
-msgstr ""
+msgstr "and"
 
 msgid "percent"
-msgstr ""
+msgstr "yüzde"
 
 msgid "number sign"
-msgstr ""
+msgstr "diyez"
 
 msgid "at"
-msgstr ""
+msgstr "et işareti"
 
 msgid "tilde"
-msgstr ""
+msgstr "tilde"
 
 msgid "quote"
-msgstr ""
+msgstr "tırnak"
 
 msgid "left paren"
-msgstr ""
+msgstr "sol parantez"
 
 msgid "right paren"
-msgstr ""
+msgstr "sağ parantez"
 
 #. placeholders: {ch}
 msgid "cap {ch}"
-msgstr ""
+msgstr "büyük {ch}"
 
 msgid "source"
 msgstr ""
@@ -78150,7 +78160,7 @@ msgid "yes"
 msgstr ""
 
 msgid "no"
-msgstr ""
+msgstr "hiç"
 
 #. placeholders: {reply_to}
 msgid "Reply to: {reply_to}"

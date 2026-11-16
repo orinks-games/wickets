@@ -10,16 +10,16 @@ msgstr ""
 "X-Language-Name: Simplified Chinese\n"
 
 msgid "left"
-msgstr ""
+msgstr "左"
 
 msgid "right"
-msgstr ""
+msgstr "右"
 
 msgid "up"
-msgstr ""
+msgstr "松开"
 
 msgid "down"
-msgstr ""
+msgstr "按下"
 
 msgid "primary"
 msgstr ""
@@ -28,7 +28,7 @@ msgid "secondary"
 msgstr ""
 
 msgid "status"
-msgstr ""
+msgstr "status"
 
 msgid "repeat"
 msgstr ""
@@ -205,7 +205,7 @@ msgid "April"
 msgstr ""
 
 msgid "May"
-msgstr ""
+msgstr "五月"
 
 msgid "June"
 msgstr ""
@@ -277,7 +277,7 @@ msgid "skipping"
 msgstr ""
 
 msgid "ready"
-msgstr ""
+msgstr "ready"
 
 msgid "naming"
 msgstr ""
@@ -474,20 +474,20 @@ msgid "beta"
 msgstr ""
 
 msgid "stable"
-msgstr ""
+msgstr "稳定版"
 
 msgid "dev"
 msgstr ""
 
 msgid "Help"
-msgstr ""
+msgstr "帮助"
 
 msgid ""
 "Up and Down move between help topics, Enter reads one, Escape goes back."
 msgstr ""
 
 msgid "help"
-msgstr ""
+msgstr "帮助"
 
 msgid "Enter reads this topic a page at a time."
 msgstr ""
@@ -537,10 +537,10 @@ msgid "select"
 msgstr ""
 
 msgid "back"
-msgstr ""
+msgstr "back"
 
 msgid "open"
-msgstr ""
+msgstr "open"
 
 msgid "page"
 msgstr ""
@@ -573,7 +573,7 @@ msgid "Challenges"
 msgstr ""
 
 msgid "Back"
-msgstr ""
+msgstr "Back"
 
 msgid "Back to the parlor"
 msgstr ""
@@ -621,10 +621,10 @@ msgid "Spoken call-outs: {else}"
 msgstr ""
 
 msgid "off"
-msgstr ""
+msgstr "关闭"
 
 msgid "on"
-msgstr ""
+msgstr "开启"
 
 #. placeholders: {label}
 msgid "Play this {label} challenge again"
@@ -657,13 +657,13 @@ msgid "Stop without counting this challenge, so you can try it again later."
 msgstr ""
 
 msgid "Paused"
-msgstr ""
+msgstr "已暂停"
 
 msgid "Up and Down move, Enter chooses, Escape goes back to the game."
 msgstr ""
 
 msgid "pause"
-msgstr ""
+msgstr "暂停"
 
 msgid "Go back to where you were."
 msgstr ""
@@ -792,7 +792,7 @@ msgid "{meaning} Applies from the next run."
 msgstr ""
 
 msgid "running"
-msgstr ""
+msgstr "运转中"
 
 msgid "held"
 msgstr ""
@@ -1241,7 +1241,7 @@ msgid "lesson"
 msgstr ""
 
 msgid "event"
-msgstr ""
+msgstr "event"
 
 msgid "daily"
 msgstr ""
@@ -2503,7 +2503,7 @@ msgid "What Wicket's is, its version and who made it."
 msgstr ""
 
 msgid "Quit"
-msgstr ""
+msgstr "退出"
 
 msgid "Close Wicket's."
 msgstr ""
@@ -5184,7 +5184,7 @@ msgid "between"
 msgstr ""
 
 msgid "over"
-msgstr ""
+msgstr "超出"
 
 #. placeholders: {label}, {r}, {phase}
 msgid "{label}, round {r}, {phase}"
@@ -11012,7 +11012,7 @@ msgid "hop"
 msgstr ""
 
 msgid "turn"
-msgstr ""
+msgstr "转弯"
 
 msgid "forward"
 msgstr ""
@@ -11728,7 +11728,7 @@ msgid "The same sky, straight away. Only your best result is kept."
 msgstr ""
 
 msgid "full"
-msgstr ""
+msgstr "完全"
 
 msgid "heart"
 msgstr ""
@@ -16298,7 +16298,7 @@ msgid "the practice patch"
 msgstr ""
 
 msgid "home"
-msgstr ""
+msgstr "home"
 
 msgid "orchard"
 msgstr ""
@@ -18191,7 +18191,7 @@ msgid "{marker}Pile {p}: {down} face down, {join}"
 msgstr ""
 
 msgid "empty"
-msgstr ""
+msgstr "empty"
 
 #. placeholders: {on_foundations}, {DECK}, {moves_words}
 msgid "{on_foundations} of {DECK} on the foundations, {moves_words}"
@@ -24425,7 +24425,7 @@ msgid "act"
 msgstr ""
 
 msgid "start"
-msgstr ""
+msgstr "start"
 
 #. placeholders: {sentence_start}, {what}, {direction}
 msgid "{sentence_start}: {what} now, {direction}."
@@ -32938,22 +32938,22 @@ msgid "{join} and {n}"
 msgstr ""
 
 msgid "the Left arrow"
-msgstr ""
+msgstr "Left arrow"
 
 msgid "the Right arrow"
-msgstr ""
+msgstr "Right arrow"
 
 msgid "the Up arrow"
-msgstr ""
+msgstr "Up arrow"
 
 msgid "the Down arrow"
-msgstr ""
+msgstr "Down arrow"
 
 msgid "Space"
-msgstr ""
+msgstr "Space"
 
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 msgid "A handpan"
 msgstr ""
@@ -34585,7 +34585,7 @@ msgid "The walker rests at the gate for a while, then goes on."
 msgstr ""
 
 msgid "seed"
-msgstr ""
+msgstr "seed"
 
 #. placeholders: {name}, {name2}
 msgid "The seed seller gives you 2 {name} seeds for {name2}."
@@ -35321,7 +35321,7 @@ msgid "{name} moves into a cottage. That makes {mouths} to feed at supper."
 msgstr ""
 
 msgid "Not now"
-msgstr ""
+msgstr "暂不"
 
 msgid "They walk on, and someone else may come another day."
 msgstr ""
@@ -43123,7 +43123,7 @@ msgid ""
 msgstr ""
 
 msgid "none"
-msgstr ""
+msgstr "none"
 
 #. placeholders: {board}
 msgid "Board {board}, left of centre."
@@ -52799,7 +52799,7 @@ msgid "{sentence}, locked: {n} more {else}"
 msgstr ""
 
 msgid "star"
-msgstr ""
+msgstr "星号"
 
 msgid "stars"
 msgstr ""
@@ -76152,42 +76152,42 @@ msgid "{name} resumes with \"{result}\""
 msgstr ""
 
 msgid "Control "
-msgstr ""
+msgstr "Control "
 
 msgid "Alt "
-msgstr ""
+msgstr "Alt "
 
 msgid "Shift "
-msgstr ""
+msgstr "Shift "
 
 #. placeholders: {short}
 msgid "right bumper plus {short}"
-msgstr ""
+msgstr "right bumper加{short}"
 
 #. placeholders: {short}
 msgid "the {short} button"
-msgstr ""
+msgstr "{short}键"
 
 msgid "Escape goes back"
 msgstr ""
 
 msgid "F1 is help"
-msgstr ""
+msgstr "F1是帮助"
 
 msgid "F2 stops speech"
 msgstr ""
 
 msgid "a modifier key on its own cannot be a shortcut"
-msgstr ""
+msgstr "单独一个修饰键不能作为快捷键"
 
 msgid "that key cannot be used"
-msgstr ""
+msgstr "那个键不能用"
 
 msgid "Enter chooses"
 msgstr ""
 
 msgid "the guide button belongs to the system"
-msgstr ""
+msgstr "guide键归系统使用"
 
 msgid "Back reads help"
 msgstr ""
@@ -76196,232 +76196,232 @@ msgid "Start pauses and goes back"
 msgstr ""
 
 msgid "the right bumper is the second layer"
-msgstr ""
+msgstr "right bumper是第二层"
 
 msgid "keypad 0"
-msgstr ""
+msgstr "小键盘0"
 
 msgid "keypad 1"
-msgstr ""
+msgstr "小键盘1"
 
 msgid "keypad 2"
-msgstr ""
+msgstr "小键盘2"
 
 msgid "keypad 3"
-msgstr ""
+msgstr "小键盘3"
 
 msgid "keypad 4"
-msgstr ""
+msgstr "小键盘4"
 
 msgid "keypad 5"
-msgstr ""
+msgstr "小键盘5"
 
 msgid "keypad 6"
-msgstr ""
+msgstr "小键盘6"
 
 msgid "keypad 7"
-msgstr ""
+msgstr "小键盘7"
 
 msgid "keypad 8"
-msgstr ""
+msgstr "小键盘8"
 
 msgid "keypad 9"
-msgstr ""
+msgstr "小键盘9"
 
 msgid "keypad Enter"
-msgstr ""
+msgstr "小键盘Enter"
 
 msgid "keypad plus"
-msgstr ""
+msgstr "小键盘加号"
 
 msgid "keypad minus"
-msgstr ""
+msgstr "小键盘减号"
 
 msgid "enter"
-msgstr ""
+msgstr "enter"
 
 msgid "Enter"
-msgstr ""
+msgstr "Enter"
 
 msgid "escape"
-msgstr ""
+msgstr "escape"
 
 msgid "Escape"
-msgstr ""
+msgstr "Escape"
 
 msgid "space"
-msgstr ""
+msgstr "space"
 
 msgid "tab"
-msgstr ""
+msgstr "tab"
 
 msgid "backspace"
-msgstr ""
+msgstr "backspace"
 
 msgid "Backspace"
-msgstr ""
+msgstr "Backspace"
 
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 msgid "end"
-msgstr ""
+msgstr "end"
 
 msgid "End"
-msgstr ""
+msgstr "End"
 
 msgid "Page Up"
-msgstr ""
+msgstr "Page Up"
 
 msgid "Page Down"
-msgstr ""
+msgstr "Page Down"
 
 msgid "insert"
-msgstr ""
+msgstr "insert"
 
 msgid "Insert"
-msgstr ""
+msgstr "Insert"
 
 msgid "delete"
-msgstr ""
+msgstr "删除"
 
 msgid "Delete"
-msgstr ""
+msgstr "Delete"
 
 msgid "comma"
-msgstr ""
+msgstr "逗号"
 
 msgid "period"
-msgstr ""
+msgstr "句号"
 
 msgid "slash"
-msgstr ""
+msgstr "斜杠"
 
 msgid "backslash"
-msgstr ""
+msgstr "反斜杠"
 
 msgid "grave"
-msgstr ""
+msgstr "grave"
 
 msgid "grave accent"
-msgstr ""
+msgstr "反引号"
 
 msgid "equals"
-msgstr ""
+msgstr "等号"
 
 msgid "plus"
-msgstr ""
+msgstr "加号"
 
 msgid "minus"
-msgstr ""
+msgstr "减号"
 
 msgid "semicolon"
-msgstr ""
+msgstr "分号"
 
 msgid "apostrophe"
-msgstr ""
+msgstr "单引号"
 
 msgid "left bracket"
-msgstr ""
+msgstr "左方括号"
 
 msgid "right bracket"
-msgstr ""
+msgstr "右方括号"
 
 msgid "Left Control"
-msgstr ""
+msgstr "Left Control"
 
 msgid "Right Control"
-msgstr ""
+msgstr "Right Control"
 
 msgid "Left Shift"
-msgstr ""
+msgstr "Left Shift"
 
 msgid "Right Shift"
-msgstr ""
+msgstr "Right Shift"
 
 msgid "Left Alt"
-msgstr ""
+msgstr "Left Alt"
 
 msgid "Right Alt"
-msgstr ""
+msgstr "Right Alt"
 
 msgid "an unnamed key"
-msgstr ""
+msgstr "一个没有名字的键"
 
 msgid "guide"
-msgstr ""
+msgstr "guide"
 
 msgid "the guide button"
-msgstr ""
+msgstr "guide键"
 
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 msgid "the left stick click"
-msgstr ""
+msgstr "按下left stick"
 
 msgid "the right stick click"
-msgstr ""
+msgstr "按下right stick"
 
 msgid "the left bumper"
-msgstr ""
+msgstr "left bumper"
 
 msgid "the right bumper"
-msgstr ""
+msgstr "right bumper"
 
 msgid "D-pad up"
-msgstr ""
+msgstr "D-pad up"
 
 msgid "D-pad down"
-msgstr ""
+msgstr "D-pad down"
 
 msgid "D-pad left"
-msgstr ""
+msgstr "D-pad left"
 
 msgid "D-pad right"
-msgstr ""
+msgstr "D-pad right"
 
 msgid "misc"
-msgstr ""
+msgstr "misc"
 
 msgid "the extra button"
-msgstr ""
+msgstr "额外按键"
 
 msgid "paddle 1"
-msgstr ""
+msgstr "paddle 1"
 
 msgid "paddle 2"
-msgstr ""
+msgstr "paddle 2"
 
 msgid "paddle 3"
-msgstr ""
+msgstr "paddle 3"
 
 msgid "paddle 4"
-msgstr ""
+msgstr "paddle 4"
 
 msgid "touchpad"
-msgstr ""
+msgstr "touchpad"
 
 msgid "the touchpad"
-msgstr ""
+msgstr "touchpad"
 
 msgid "right stick up"
-msgstr ""
+msgstr "右摇杆向上"
 
 msgid "right stick down"
-msgstr ""
+msgstr "右摇杆向下"
 
 msgid "right stick left"
-msgstr ""
+msgstr "右摇杆向左"
 
 msgid "right stick right"
-msgstr ""
+msgstr "右摇杆向右"
 
 msgid "unknown"
-msgstr ""
+msgstr "unknown"
 
 msgid "an unnamed button"
-msgstr ""
+msgstr "一个没有名字的按键"
 
 msgid "hearken-clock-sync"
 msgstr ""
@@ -76440,7 +76440,7 @@ msgstr ""
 msgid ""
 "Controller disconnected. You can keep playing with the keyboard, or "
 "reconnect your controller."
-msgstr ""
+msgstr "手柄已断开。你可以继续用键盘玩，或者重新连接手柄。"
 
 msgid "unbound"
 msgstr ""
@@ -76454,7 +76454,7 @@ msgid "bound (instance {id})"
 msgstr ""
 
 msgid "controller"
-msgstr ""
+msgstr "手柄"
 
 #. placeholders: {title}
 msgid ""
@@ -76466,7 +76466,7 @@ msgid "{name} closed unexpectedly the last time it ran. Report the problem?"
 msgstr ""
 
 msgid "Yes"
-msgstr ""
+msgstr "Yes"
 
 msgid "Describe what you were doing and send it, with the game log."
 msgstr ""
@@ -76491,7 +76491,7 @@ msgid "the test server"
 msgstr ""
 
 msgid "English"
-msgstr ""
+msgstr "English"
 
 #. placeholders: {name}
 msgid "Automatic, {name}"
@@ -76509,10 +76509,10 @@ msgid "Up and Down move, Enter chooses, Escape goes back, F2 stops speech."
 msgstr ""
 
 msgid "Menu"
-msgstr ""
+msgstr "菜单"
 
 msgid "No options available."
-msgstr ""
+msgstr "没有可用的选项。"
 
 #. placeholders: {label}, {index}, {items}
 msgid "{label} {index} of {items}."
@@ -76553,7 +76553,7 @@ msgid "rate-limited"
 msgstr ""
 
 msgid "unavailable"
-msgstr ""
+msgstr "不可用"
 
 msgid "code-expired"
 msgstr ""
@@ -76599,16 +76599,16 @@ msgid "The code expired."
 msgstr ""
 
 msgid "error"
-msgstr ""
+msgstr "error"
 
 msgid "message"
-msgstr ""
+msgstr "message"
 
 msgid "ok"
-msgstr ""
+msgstr "ok"
 
 msgid "name"
-msgstr ""
+msgstr "name"
 
 msgid "your account"
 msgstr ""
@@ -76617,7 +76617,7 @@ msgid "token"
 msgstr ""
 
 msgid "interval"
-msgstr ""
+msgstr "interval"
 
 msgid "this game takes no reports"
 msgstr ""
@@ -76630,7 +76630,7 @@ msgid "{TITLE} is already running."
 msgstr ""
 
 msgid "silent"
-msgstr ""
+msgstr "静音"
 
 msgid "agent-sandbox"
 msgstr ""
@@ -76639,24 +76639,24 @@ msgid "The game window could not be opened."
 msgstr ""
 
 msgid "Keyboard shortcuts"
-msgstr ""
+msgstr "快捷键"
 
 msgid ""
 "Up and Down pick a control, Enter then a key press moves it, Escape goes "
 "back."
-msgstr ""
+msgstr "Up和Down选择一个控制项，按Enter再按一个键就能移过去，Escape返回。"
 
 msgid "Controller buttons"
-msgstr ""
+msgstr "手柄按键"
 
 msgid ""
 "Up and Down pick a control, Enter then a button press moves it, Escape goes "
 "back."
-msgstr ""
+msgstr "Up和Down选择一个控制项，按Enter再按一个按键就能移过去，Escape返回。"
 
 #. placeholders: {label}, {current}
 msgid "Press the new key for {label}. Escape keeps {current}."
-msgstr ""
+msgstr "为{label}按下新的键。按Escape保留{current}。"
 
 #. placeholders: {label}, {current}
 msgid ""
@@ -76666,7 +76666,7 @@ msgstr ""
 
 #. placeholders: {current}
 msgid "Press another, or keep {current} with Escape."
-msgstr ""
+msgstr "请按另一个，或者按Escape保留{current}。"
 
 #. placeholders: {current}
 msgid "Press another, or press {current} to keep it."
@@ -76674,21 +76674,21 @@ msgstr ""
 
 #. placeholders: {current}
 msgid "Kept {current}."
-msgstr ""
+msgstr "保留了{current}。"
 
 #. placeholders: {label}, {now}
 msgid "{label} is now {now}."
-msgstr ""
+msgstr "{label}现在是{now}。"
 
 #. placeholders: {sentence_start}, {label}, {hint}
 msgid "{sentence_start} is already used for {label}. {hint}"
 msgstr ""
 
 msgid "Every keyboard shortcut is back to its default."
-msgstr ""
+msgstr "所有快捷键都已恢复默认。"
 
 msgid "Every controller button is back to its default."
-msgstr ""
+msgstr "所有手柄按键都已恢复默认。"
 
 msgid "bindings"
 msgstr ""
@@ -76696,12 +76696,12 @@ msgstr ""
 msgid ""
 "Enter, then press the key you want for this control. Escape keeps the one "
 "it has."
-msgstr ""
+msgstr "按Enter，然后按你想给这个控制项用的键。按Escape保留原来的键。"
 
 msgid ""
 "Enter, then press the button you want for this control, with the right "
 "bumper held for the second layer."
-msgstr ""
+msgstr "按Enter，然后按你想给这个控制项用的按键，按住right bumper可设置第二层。"
 
 msgid "Reset every keyboard shortcut"
 msgstr ""
@@ -76710,7 +76710,7 @@ msgid "Reset every controller button"
 msgstr ""
 
 msgid "Puts every control on this screen back where it started."
-msgstr ""
+msgstr "把这个界面上的每个控制项都恢复到最初的位置。"
 
 msgid "No"
 msgstr ""
@@ -76720,7 +76720,7 @@ msgid "Up and Down move, Enter chooses, Escape chooses {cancel}."
 msgstr ""
 
 msgid "confirm"
-msgstr ""
+msgstr "确认"
 
 msgid "Press Enter to hear this topic."
 msgstr ""
@@ -76738,7 +76738,7 @@ msgid "code"
 msgstr ""
 
 msgid "failed"
-msgstr ""
+msgstr "failed"
 
 msgid "Play as a guest"
 msgstr ""
@@ -76911,7 +76911,7 @@ msgid "sending"
 msgstr ""
 
 msgid "Report a problem"
-msgstr ""
+msgstr "报告问题"
 
 msgid "Up and Down move, Enter chooses, Escape goes back."
 msgstr ""
@@ -76955,7 +76955,7 @@ msgid "The report could not be saved: {e}."
 msgstr ""
 
 msgid "description"
-msgstr ""
+msgstr "description"
 
 msgid "What happened is too long to send. Shorten it."
 msgstr ""
@@ -77313,10 +77313,10 @@ msgid "Speech rate: {i64} percent"
 msgstr ""
 
 msgid "automatic"
-msgstr ""
+msgstr "自动"
 
 msgid "Speech"
-msgstr ""
+msgstr "语音"
 
 msgid "Sound"
 msgstr ""
@@ -77325,10 +77325,10 @@ msgid "Display"
 msgstr ""
 
 msgid "Online"
-msgstr ""
+msgstr "在线"
 
 msgid "Updates"
-msgstr ""
+msgstr "更新"
 
 msgid ""
 "Up and Down move, Left and Right change the setting, Escape saves and goes "
@@ -77344,7 +77344,7 @@ msgid "{name} settings."
 msgstr ""
 
 msgid "settings"
-msgstr ""
+msgstr "settings"
 
 msgid "language"
 msgstr ""
@@ -77456,7 +77456,7 @@ msgid "Use white text on black with yellow keyboard focus."
 msgstr ""
 
 msgid "keyboard"
-msgstr ""
+msgstr "键盘"
 
 msgid "Move any control to another key."
 msgstr ""
@@ -77511,14 +77511,14 @@ msgid "Connect"
 msgstr ""
 
 msgid "updates"
-msgstr ""
+msgstr "updates"
 
 #. placeholders: {version}
 msgid "Install version {version}"
 msgstr ""
 
 msgid "Check for updates"
-msgstr ""
+msgstr "检查更新"
 
 msgid ""
 "Looks for a newer version of the game, and installs it if you choose."
@@ -77560,18 +77560,18 @@ msgid ""
 msgstr ""
 
 msgid "Empty."
-msgstr ""
+msgstr "空。"
 
 msgid "The field is full."
 msgstr ""
 
 #. placeholders: {char}, {rest}
 msgid "Deleted {char}. {rest}"
-msgstr ""
+msgstr "已删除{char}。{rest}"
 
 #. placeholders: {remaining}
 msgid "Ready in {remaining} seconds."
-msgstr ""
+msgstr "{remaining}秒后就绪。"
 
 msgid "less than 1 megabyte"
 msgstr ""
@@ -77597,7 +77597,7 @@ msgid "Found an update. Checking which files you already have."
 msgstr ""
 
 msgid "Checking for updates."
-msgstr ""
+msgstr "正在检查更新。"
 
 #. placeholders: {name}, {current}
 msgid "Up to date. You have {name} version {current}."
@@ -77619,7 +77619,7 @@ msgid "{message} Escape goes back."
 msgstr ""
 
 msgid "Update available"
-msgstr ""
+msgstr "有可用更新"
 
 msgid ""
 "Download and restart installs the update now. What's new reads the changes. "
@@ -77639,26 +77639,26 @@ msgid "Update available: {title}, {download_size}.{current}"
 msgstr ""
 
 msgid "Download and restart"
-msgstr ""
+msgstr "下载并重启"
 
 msgid ""
 "Downloads the update, then closes the game and starts the new version."
 msgstr ""
 
 msgid "What's new"
-msgstr ""
+msgstr "更新内容"
 
 msgid "The changes in this update, a line at a time."
 msgstr ""
 
 msgid "Remind me later"
-msgstr ""
+msgstr "以后提醒我"
 
 msgid "Offers it again the next time the game starts."
 msgstr ""
 
 msgid "Skip this version"
-msgstr ""
+msgstr "跳过这个版本"
 
 msgid ""
 "Stops offering this version when the game starts. Later versions are still "
@@ -77683,7 +77683,7 @@ msgstr ""
 
 #. placeholders: {title}
 msgid "What's new in {title}"
-msgstr ""
+msgstr "{title}的更新内容"
 
 msgid "Down and Up read a line, Enter reads them all, Escape goes back."
 msgstr ""
@@ -77698,20 +77698,20 @@ msgid "hearken"
 msgstr ""
 
 msgid "update-download"
-msgstr ""
+msgstr "update-download"
 
 msgid "The download could not start."
-msgstr ""
+msgstr "无法开始下载。"
 
 msgid "Download complete. Unpacking the update."
-msgstr ""
+msgstr "下载完成。正在解压更新。"
 
 msgid "Unpacking the update took too long."
-msgstr ""
+msgstr "解压更新的时间太长了。"
 
 #. placeholders: {STALL_TIMEOUT_S}
 msgid "The download stopped. Nothing arrived for {STALL_TIMEOUT_S} seconds."
-msgstr ""
+msgstr "下载停止了。已经{STALL_TIMEOUT_S}秒没有收到任何数据。"
 
 msgid "The download did not finish."
 msgstr ""
@@ -77740,7 +77740,7 @@ msgstr ""
 
 #. placeholders: {as_secs}
 msgid "The download stopped. Nothing arrived for {as_secs} seconds."
-msgstr ""
+msgstr "下载停止了。已经{as_secs}秒没有收到任何数据。"
 
 msgid ""
 "The download did not match the update it was signed for, so it was not "
@@ -77771,17 +77771,17 @@ msgid "Downloading the whole update instead, {megabytes}."
 msgstr ""
 
 msgid "Update canceled."
-msgstr ""
+msgstr "更新已取消。"
 
 msgid "Unpacking the update."
-msgstr ""
+msgstr "正在解压更新。"
 
 #. placeholders: {percent}
 msgid "{percent} percent downloaded."
 msgstr ""
 
 msgid "Unpacking"
-msgstr ""
+msgstr "正在解压"
 
 #. placeholders: {percent}
 msgid "{percent} percent"
@@ -77789,10 +77789,10 @@ msgstr ""
 
 #. placeholders: {title}
 msgid "Downloading {title}"
-msgstr ""
+msgstr "正在下载{title}"
 
 msgid "Escape cancels, Tab reads progress."
-msgstr ""
+msgstr "Escape取消，Tab读出进度。"
 
 msgid ""
 "Tab reads how much has downloaded. Escape cancels and leaves the game as it "
@@ -77925,7 +77925,7 @@ msgid "{title}, not heard yet"
 msgstr ""
 
 msgid "Keep playing to unlock it."
-msgstr ""
+msgstr "继续玩就能解锁。"
 
 #. placeholders: {end_sentence}
 msgid "Locked. {end_sentence}"
@@ -77996,62 +77996,62 @@ msgid "flowing"
 msgstr ""
 
 msgid "holding"
-msgstr ""
+msgstr "holding"
 
 msgid "expired"
-msgstr ""
+msgstr "expired"
 
 msgid "test pad"
 msgstr ""
 
 msgid "colon"
-msgstr ""
+msgstr "冒号"
 
 msgid "dot"
-msgstr ""
+msgstr "点"
 
 msgid "dash"
-msgstr ""
+msgstr "横杠"
 
 msgid "underscore"
-msgstr ""
+msgstr "下划线"
 
 msgid "question mark"
-msgstr ""
+msgstr "问号"
 
 msgid "exclamation mark"
-msgstr ""
+msgstr "感叹号"
 
 msgid "and"
-msgstr ""
+msgstr "and"
 
 msgid "percent"
-msgstr ""
+msgstr "百分号"
 
 msgid "number sign"
-msgstr ""
+msgstr "井号"
 
 msgid "at"
-msgstr ""
+msgstr "at符号"
 
 msgid "tilde"
-msgstr ""
+msgstr "波浪号"
 
 msgid "quote"
-msgstr ""
+msgstr "引号"
 
 msgid "left paren"
-msgstr ""
+msgstr "左括号"
 
 msgid "right paren"
-msgstr ""
+msgstr "右括号"
 
 #. placeholders: {ch}
 msgid "cap {ch}"
-msgstr ""
+msgstr "大写{ch}"
 
 msgid "source"
-msgstr ""
+msgstr "source"
 
 msgid "channels"
 msgstr ""
@@ -78123,7 +78123,7 @@ msgid "The update check could not start."
 msgstr ""
 
 msgid "update-check"
-msgstr ""
+msgstr "update-check"
 
 #. placeholders: {place}
 msgid "To update by hand, download it from {place}."
@@ -78150,7 +78150,7 @@ msgid "yes"
 msgstr ""
 
 msgid "no"
-msgstr ""
+msgstr "零"
 
 #. placeholders: {reply_to}
 msgid "Reply to: {reply_to}"
@@ -78172,7 +78172,7 @@ msgid "detail name"
 msgstr ""
 
 msgid "detail"
-msgstr ""
+msgstr "detail"
 
 msgid "attachments"
 msgstr ""
@@ -78254,7 +78254,7 @@ msgid "chat"
 msgstr ""
 
 msgid "text"
-msgstr ""
+msgstr "text"
 
 msgid "leave"
 msgstr ""
@@ -78393,7 +78393,7 @@ msgid "Genny"
 msgstr ""
 
 msgid "rate"
-msgstr ""
+msgstr "rate"
 
 msgid "pitch"
 msgstr ""
@@ -78402,7 +78402,7 @@ msgid "volume"
 msgstr ""
 
 msgid "speech"
-msgstr ""
+msgstr "speech"
 
 #. placeholders: {id}
 msgid "level {id} appears twice"
@@ -78685,7 +78685,7 @@ msgid "this copy's version {v} is not valid"
 msgstr ""
 
 msgid "version"
-msgstr ""
+msgstr "version"
 
 msgid "the update was canceled"
 msgstr ""
@@ -78903,7 +78903,7 @@ msgid "built"
 msgstr ""
 
 msgid "notes"
-msgstr ""
+msgstr "notes"
 
 msgid "index"
 msgstr ""
@@ -78977,7 +78977,7 @@ msgid "the update source answered oddly: {why}"
 msgstr ""
 
 msgid "Accept"
-msgstr ""
+msgstr "Accept"
 
 msgid "the release list is not JSON"
 msgstr ""

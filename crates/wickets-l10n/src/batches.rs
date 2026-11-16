@@ -27,6 +27,14 @@ fn language_file(project: &Project, code: &str) -> Result<std::path::PathBuf, St
 pub fn export(project: &Project, code: &str, dir: &Path, size: usize) -> Result<(), String> {
     let path = language_file(project, code)?;
     let entries = parse_po(&util::read_text(&path)?)?;
+    // A language file carries no references; the template does.
+    let template = parse_po(&util::read_text(
+        &project.lang_dir.join(&project.template_name),
+    )?)?;
+    let refs: std::collections::HashMap<&str, &Vec<String>> = template
+        .iter()
+        .map(|e| (e.msgid.as_str(), &e.refs))
+        .collect();
     let live: Vec<_> = entries
         .iter()
         .filter(|e| !e.msgid.is_empty() && !e.obsolete)
@@ -40,7 +48,7 @@ pub fn export(project: &Project, code: &str, dir: &Path, size: usize) -> Result<
         todo.push(json!({
             "msgid": e.msgid,
             "notes": e.comments,
-            "refs": e.refs,
+            "refs": refs.get(e.msgid.as_str()).copied().cloned().unwrap_or_default(),
             "before": near(i.checked_sub(1)),
             "after": near(Some(i + 1)),
         }));

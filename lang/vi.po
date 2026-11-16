@@ -16,10 +16,10 @@ msgid "right"
 msgstr ""
 
 msgid "up"
-msgstr ""
+msgstr "đã thả"
 
 msgid "down"
-msgstr ""
+msgstr "đang nhấn"
 
 msgid "primary"
 msgstr ""
@@ -205,7 +205,7 @@ msgid "April"
 msgstr ""
 
 msgid "May"
-msgstr ""
+msgstr "Tháng Năm"
 
 msgid "June"
 msgstr ""
@@ -480,7 +480,7 @@ msgid "dev"
 msgstr ""
 
 msgid "Help"
-msgstr ""
+msgstr "Trợ giúp"
 
 msgid ""
 "Up and Down move between help topics, Enter reads one, Escape goes back."
@@ -537,7 +537,7 @@ msgid "select"
 msgstr ""
 
 msgid "back"
-msgstr ""
+msgstr "back"
 
 msgid "open"
 msgstr ""
@@ -573,7 +573,7 @@ msgid "Challenges"
 msgstr ""
 
 msgid "Back"
-msgstr ""
+msgstr "Quay lại"
 
 msgid "Back to the parlor"
 msgstr ""
@@ -621,10 +621,10 @@ msgid "Spoken call-outs: {else}"
 msgstr ""
 
 msgid "off"
-msgstr ""
+msgstr "tắt"
 
 msgid "on"
-msgstr ""
+msgstr "bật"
 
 #. placeholders: {label}
 msgid "Play this {label} challenge again"
@@ -657,7 +657,7 @@ msgid "Stop without counting this challenge, so you can try it again later."
 msgstr ""
 
 msgid "Paused"
-msgstr ""
+msgstr "Tạm dừng"
 
 msgid "Up and Down move, Enter chooses, Escape goes back to the game."
 msgstr ""
@@ -792,7 +792,7 @@ msgid "{meaning} Applies from the next run."
 msgstr ""
 
 msgid "running"
-msgstr ""
+msgstr "đang nổ máy"
 
 msgid "held"
 msgstr ""
@@ -2503,7 +2503,7 @@ msgid "What Wicket's is, its version and who made it."
 msgstr ""
 
 msgid "Quit"
-msgstr ""
+msgstr "Thoát"
 
 msgid "Close Wicket's."
 msgstr ""
@@ -5184,7 +5184,7 @@ msgid "between"
 msgstr ""
 
 msgid "over"
-msgstr ""
+msgstr "vượt"
 
 #. placeholders: {label}, {r}, {phase}
 msgid "{label}, round {r}, {phase}"
@@ -16298,7 +16298,7 @@ msgid "the practice patch"
 msgstr ""
 
 msgid "home"
-msgstr ""
+msgstr "home"
 
 msgid "orchard"
 msgstr ""
@@ -32938,22 +32938,22 @@ msgid "{join} and {n}"
 msgstr ""
 
 msgid "the Left arrow"
-msgstr ""
+msgstr "phím mũi tên trái"
 
 msgid "the Right arrow"
-msgstr ""
+msgstr "phím mũi tên phải"
 
 msgid "the Up arrow"
-msgstr ""
+msgstr "phím mũi tên Lên"
 
 msgid "the Down arrow"
-msgstr ""
+msgstr "phím mũi tên Xuống"
 
 msgid "Space"
-msgstr ""
+msgstr "Space"
 
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 msgid "A handpan"
 msgstr ""
@@ -35321,7 +35321,7 @@ msgid "{name} moves into a cottage. That makes {mouths} to feed at supper."
 msgstr ""
 
 msgid "Not now"
-msgstr ""
+msgstr "Để sau"
 
 msgid "They walk on, and someone else may come another day."
 msgstr ""
@@ -52799,7 +52799,7 @@ msgid "{sentence}, locked: {n} more {else}"
 msgstr ""
 
 msgid "star"
-msgstr ""
+msgstr "dấu sao"
 
 msgid "stars"
 msgstr ""
@@ -76152,42 +76152,42 @@ msgid "{name} resumes with \"{result}\""
 msgstr ""
 
 msgid "Control "
-msgstr ""
+msgstr "Control "
 
 msgid "Alt "
-msgstr ""
+msgstr "Alt "
 
 msgid "Shift "
-msgstr ""
+msgstr "Shift "
 
 #. placeholders: {short}
 msgid "right bumper plus {short}"
-msgstr ""
+msgstr "nút vai phải cộng {short}"
 
 #. placeholders: {short}
 msgid "the {short} button"
-msgstr ""
+msgstr "nút {short}"
 
 msgid "Escape goes back"
 msgstr ""
 
 msgid "F1 is help"
-msgstr ""
+msgstr "phím F1 là trợ giúp"
 
 msgid "F2 stops speech"
 msgstr ""
 
 msgid "a modifier key on its own cannot be a shortcut"
-msgstr ""
+msgstr "không thể dùng riêng một phím bổ trợ làm phím tắt"
 
 msgid "that key cannot be used"
-msgstr ""
+msgstr "không thể dùng phím đó"
 
 msgid "Enter chooses"
 msgstr ""
 
 msgid "the guide button belongs to the system"
-msgstr ""
+msgstr "nút Guide thuộc quyền điều khiển của hệ thống"
 
 msgid "Back reads help"
 msgstr ""
@@ -76196,232 +76196,232 @@ msgid "Start pauses and goes back"
 msgstr ""
 
 msgid "the right bumper is the second layer"
-msgstr ""
+msgstr "nút vai phải là nút chuyển lớp lệnh thứ hai"
 
 msgid "keypad 0"
-msgstr ""
+msgstr "phím số 0"
 
 msgid "keypad 1"
-msgstr ""
+msgstr "phím số 1"
 
 msgid "keypad 2"
-msgstr ""
+msgstr "phím số 2"
 
 msgid "keypad 3"
-msgstr ""
+msgstr "phím số 3"
 
 msgid "keypad 4"
-msgstr ""
+msgstr "phím số 4"
 
 msgid "keypad 5"
-msgstr ""
+msgstr "phím số 5"
 
 msgid "keypad 6"
-msgstr ""
+msgstr "phím số 6"
 
 msgid "keypad 7"
-msgstr ""
+msgstr "phím số 7"
 
 msgid "keypad 8"
-msgstr ""
+msgstr "phím số 8"
 
 msgid "keypad 9"
-msgstr ""
+msgstr "phím số 9"
 
 msgid "keypad Enter"
-msgstr ""
+msgstr "phím Enter cụm phím số"
 
 msgid "keypad plus"
-msgstr ""
+msgstr "dấu cộng cụm phím số"
 
 msgid "keypad minus"
-msgstr ""
+msgstr "dấu trừ cụm phím số"
 
 msgid "enter"
-msgstr ""
+msgstr "enter"
 
 msgid "Enter"
-msgstr ""
+msgstr "Enter"
 
 msgid "escape"
-msgstr ""
+msgstr "escape"
 
 msgid "Escape"
-msgstr ""
+msgstr "Escape"
 
 msgid "space"
-msgstr ""
+msgstr "space"
 
 msgid "tab"
-msgstr ""
+msgstr "tab"
 
 msgid "backspace"
-msgstr ""
+msgstr "backspace"
 
 msgid "Backspace"
-msgstr ""
+msgstr "Backspace"
 
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 msgid "end"
-msgstr ""
+msgstr "end"
 
 msgid "End"
-msgstr ""
+msgstr "Cuối"
 
 msgid "Page Up"
-msgstr ""
+msgstr "Page Up"
 
 msgid "Page Down"
-msgstr ""
+msgstr "Page Down"
 
 msgid "insert"
-msgstr ""
+msgstr "insert"
 
 msgid "Insert"
-msgstr ""
+msgstr "Insert"
 
 msgid "delete"
-msgstr ""
+msgstr "xóa"
 
 msgid "Delete"
-msgstr ""
+msgstr "Delete"
 
 msgid "comma"
-msgstr ""
+msgstr "dấu phẩy"
 
 msgid "period"
-msgstr ""
+msgstr "dấu chấm"
 
 msgid "slash"
-msgstr ""
+msgstr "dấu gạch chéo"
 
 msgid "backslash"
-msgstr ""
+msgstr "dấu gạch chéo ngược"
 
 msgid "grave"
-msgstr ""
+msgstr "dấu huyền"
 
 msgid "grave accent"
-msgstr ""
+msgstr "dấu huyền"
 
 msgid "equals"
-msgstr ""
+msgstr "dấu bằng"
 
 msgid "plus"
-msgstr ""
+msgstr "dấu cộng"
 
 msgid "minus"
-msgstr ""
+msgstr "dấu trừ"
 
 msgid "semicolon"
-msgstr ""
+msgstr "dấu chấm phẩy"
 
 msgid "apostrophe"
-msgstr ""
+msgstr "dấu nháy đơn"
 
 msgid "left bracket"
-msgstr ""
+msgstr "ngoặc vuông mở"
 
 msgid "right bracket"
-msgstr ""
+msgstr "ngoặc vuông đóng"
 
 msgid "Left Control"
-msgstr ""
+msgstr "Control trái"
 
 msgid "Right Control"
-msgstr ""
+msgstr "Control phải"
 
 msgid "Left Shift"
-msgstr ""
+msgstr "Shift trái"
 
 msgid "Right Shift"
-msgstr ""
+msgstr "Shift phải"
 
 msgid "Left Alt"
-msgstr ""
+msgstr "Alt trái"
 
 msgid "Right Alt"
-msgstr ""
+msgstr "Alt phải"
 
 msgid "an unnamed key"
-msgstr ""
+msgstr "một phím chưa đặt tên"
 
 msgid "guide"
-msgstr ""
+msgstr "guide"
 
 msgid "the guide button"
-msgstr ""
+msgstr "nút Guide"
 
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 msgid "the left stick click"
-msgstr ""
+msgstr "nhấn cần gạt trái"
 
 msgid "the right stick click"
-msgstr ""
+msgstr "nhấn cần gạt phải"
 
 msgid "the left bumper"
-msgstr ""
+msgstr "nút vai trái"
 
 msgid "the right bumper"
-msgstr ""
+msgstr "nút vai phải"
 
 msgid "D-pad up"
-msgstr ""
+msgstr "D-pad lên"
 
 msgid "D-pad down"
-msgstr ""
+msgstr "D-pad xuống"
 
 msgid "D-pad left"
-msgstr ""
+msgstr "D-pad trái"
 
 msgid "D-pad right"
-msgstr ""
+msgstr "D-pad phải"
 
 msgid "misc"
-msgstr ""
+msgstr "misc"
 
 msgid "the extra button"
-msgstr ""
+msgstr "nút phụ"
 
 msgid "paddle 1"
-msgstr ""
+msgstr "lẫy phụ 1"
 
 msgid "paddle 2"
-msgstr ""
+msgstr "lẫy phụ 2"
 
 msgid "paddle 3"
-msgstr ""
+msgstr "lẫy phụ 3"
 
 msgid "paddle 4"
-msgstr ""
+msgstr "lẫy phụ 4"
 
 msgid "touchpad"
-msgstr ""
+msgstr "bàn di cảm ứng"
 
 msgid "the touchpad"
-msgstr ""
+msgstr "bàn di cảm ứng"
 
 msgid "right stick up"
-msgstr ""
+msgstr "cần phải đẩy lên"
 
 msgid "right stick down"
-msgstr ""
+msgstr "cần phải đẩy xuống"
 
 msgid "right stick left"
-msgstr ""
+msgstr "cần phải gạt trái"
 
 msgid "right stick right"
-msgstr ""
+msgstr "cần phải gạt phải"
 
 msgid "unknown"
 msgstr ""
 
 msgid "an unnamed button"
-msgstr ""
+msgstr "một nút chưa đặt tên"
 
 msgid "hearken-clock-sync"
 msgstr ""
@@ -76441,6 +76441,8 @@ msgid ""
 "Controller disconnected. You can keep playing with the keyboard, or "
 "reconnect your controller."
 msgstr ""
+"Tay cầm đã ngắt kết nối. Bạn vẫn có thể chơi tiếp bằng bàn phím, hoặc kết "
+"nối lại tay cầm."
 
 msgid "unbound"
 msgstr ""
@@ -76491,7 +76493,7 @@ msgid "the test server"
 msgstr ""
 
 msgid "English"
-msgstr ""
+msgstr "Tiếng Anh"
 
 #. placeholders: {name}
 msgid "Automatic, {name}"
@@ -76509,10 +76511,10 @@ msgid "Up and Down move, Enter chooses, Escape goes back, F2 stops speech."
 msgstr ""
 
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 msgid "No options available."
-msgstr ""
+msgstr "Không có tùy chọn nào."
 
 #. placeholders: {label}, {index}, {items}
 msgid "{label} {index} of {items}."
@@ -76553,7 +76555,7 @@ msgid "rate-limited"
 msgstr ""
 
 msgid "unavailable"
-msgstr ""
+msgstr "không có dữ liệu"
 
 msgid "code-expired"
 msgstr ""
@@ -76602,7 +76604,7 @@ msgid "error"
 msgstr ""
 
 msgid "message"
-msgstr ""
+msgstr "tin nhắn"
 
 msgid "ok"
 msgstr ""
@@ -76639,24 +76641,28 @@ msgid "The game window could not be opened."
 msgstr ""
 
 msgid "Keyboard shortcuts"
-msgstr ""
+msgstr "Phím tắt"
 
 msgid ""
 "Up and Down pick a control, Enter then a key press moves it, Escape goes "
 "back."
 msgstr ""
+"Dùng phím Lên và Xuống để chọn chức năng, nhấn Enter rồi bấm phím mới để "
+"gán lại, nhấn Escape để quay lại."
 
 msgid "Controller buttons"
-msgstr ""
+msgstr "Nút tay cầm"
 
 msgid ""
 "Up and Down pick a control, Enter then a button press moves it, Escape goes "
 "back."
 msgstr ""
+"Dùng phím Lên và Xuống để chọn chức năng, nhấn Enter rồi bấm nút mới để gán "
+"lại, nhấn Escape để quay lại."
 
 #. placeholders: {label}, {current}
 msgid "Press the new key for {label}. Escape keeps {current}."
-msgstr ""
+msgstr "Nhấn phím mới cho {label}. Nhấn Escape để giữ nguyên {current}."
 
 #. placeholders: {label}, {current}
 msgid ""
@@ -76666,7 +76672,7 @@ msgstr ""
 
 #. placeholders: {current}
 msgid "Press another, or keep {current} with Escape."
-msgstr ""
+msgstr "Nhấn phím khác, hoặc giữ nguyên {current} bằng Escape."
 
 #. placeholders: {current}
 msgid "Press another, or press {current} to keep it."
@@ -76674,21 +76680,21 @@ msgstr ""
 
 #. placeholders: {current}
 msgid "Kept {current}."
-msgstr ""
+msgstr "Đã giữ nguyên {current}."
 
 #. placeholders: {label}, {now}
 msgid "{label} is now {now}."
-msgstr ""
+msgstr "{label} hiện được gán là {now}."
 
 #. placeholders: {sentence_start}, {label}, {hint}
 msgid "{sentence_start} is already used for {label}. {hint}"
 msgstr ""
 
 msgid "Every keyboard shortcut is back to its default."
-msgstr ""
+msgstr "Mọi phím tắt bàn phím đã được khôi phục về mặc định."
 
 msgid "Every controller button is back to its default."
-msgstr ""
+msgstr "Mọi nút tay cầm đã được khôi phục về mặc định."
 
 msgid "bindings"
 msgstr ""
@@ -76697,11 +76703,15 @@ msgid ""
 "Enter, then press the key you want for this control. Escape keeps the one "
 "it has."
 msgstr ""
+"Nhấn Enter, rồi bấm phím bạn muốn gán cho chức năng này. Nhấn Escape để giữ "
+"phím hiện tại."
 
 msgid ""
 "Enter, then press the button you want for this control, with the right "
 "bumper held for the second layer."
 msgstr ""
+"Nhấn Enter, rồi bấm nút bạn muốn gán cho chức năng này, giữ nút vai phải để "
+"dùng lớp nút thứ hai."
 
 msgid "Reset every keyboard shortcut"
 msgstr ""
@@ -76710,7 +76720,7 @@ msgid "Reset every controller button"
 msgstr ""
 
 msgid "Puts every control on this screen back where it started."
-msgstr ""
+msgstr "Đưa mọi phím điều khiển trên màn hình này về trạng thái ban đầu."
 
 msgid "No"
 msgstr ""
@@ -76911,7 +76921,7 @@ msgid "sending"
 msgstr ""
 
 msgid "Report a problem"
-msgstr ""
+msgstr "Báo lỗi"
 
 msgid "Up and Down move, Enter chooses, Escape goes back."
 msgstr ""
@@ -77313,10 +77323,10 @@ msgid "Speech rate: {i64} percent"
 msgstr ""
 
 msgid "automatic"
-msgstr ""
+msgstr "số tự động"
 
 msgid "Speech"
-msgstr ""
+msgstr "Giọng nói"
 
 msgid "Sound"
 msgstr ""
@@ -77325,10 +77335,10 @@ msgid "Display"
 msgstr ""
 
 msgid "Online"
-msgstr ""
+msgstr "Trực tuyến"
 
 msgid "Updates"
-msgstr ""
+msgstr "Cập nhật"
 
 msgid ""
 "Up and Down move, Left and Right change the setting, Escape saves and goes "
@@ -77518,7 +77528,7 @@ msgid "Install version {version}"
 msgstr ""
 
 msgid "Check for updates"
-msgstr ""
+msgstr "Kiểm tra cập nhật"
 
 msgid ""
 "Looks for a newer version of the game, and installs it if you choose."
@@ -77560,18 +77570,18 @@ msgid ""
 msgstr ""
 
 msgid "Empty."
-msgstr ""
+msgstr "Trống."
 
 msgid "The field is full."
 msgstr ""
 
 #. placeholders: {char}, {rest}
 msgid "Deleted {char}. {rest}"
-msgstr ""
+msgstr "Đã xóa {char}. {rest}"
 
 #. placeholders: {remaining}
 msgid "Ready in {remaining} seconds."
-msgstr ""
+msgstr "Sẵn sàng sau {remaining} giây."
 
 msgid "less than 1 megabyte"
 msgstr ""
@@ -77597,7 +77607,7 @@ msgid "Found an update. Checking which files you already have."
 msgstr ""
 
 msgid "Checking for updates."
-msgstr ""
+msgstr "Đang kiểm tra bản cập nhật."
 
 #. placeholders: {name}, {current}
 msgid "Up to date. You have {name} version {current}."
@@ -77619,7 +77629,7 @@ msgid "{message} Escape goes back."
 msgstr ""
 
 msgid "Update available"
-msgstr ""
+msgstr "Có bản cập nhật mới"
 
 msgid ""
 "Download and restart installs the update now. What's new reads the changes. "
@@ -77639,26 +77649,26 @@ msgid "Update available: {title}, {download_size}.{current}"
 msgstr ""
 
 msgid "Download and restart"
-msgstr ""
+msgstr "Tải về và khởi động lại"
 
 msgid ""
 "Downloads the update, then closes the game and starts the new version."
 msgstr ""
 
 msgid "What's new"
-msgstr ""
+msgstr "Có gì mới"
 
 msgid "The changes in this update, a line at a time."
 msgstr ""
 
 msgid "Remind me later"
-msgstr ""
+msgstr "Nhắc tôi sau"
 
 msgid "Offers it again the next time the game starts."
 msgstr ""
 
 msgid "Skip this version"
-msgstr ""
+msgstr "Bỏ qua phiên bản này"
 
 msgid ""
 "Stops offering this version when the game starts. Later versions are still "
@@ -77683,7 +77693,7 @@ msgstr ""
 
 #. placeholders: {title}
 msgid "What's new in {title}"
-msgstr ""
+msgstr "Có gì mới trong {title}"
 
 msgid "Down and Up read a line, Enter reads them all, Escape goes back."
 msgstr ""
@@ -77701,17 +77711,19 @@ msgid "update-download"
 msgstr ""
 
 msgid "The download could not start."
-msgstr ""
+msgstr "Không thể bắt đầu tải về."
 
 msgid "Download complete. Unpacking the update."
-msgstr ""
+msgstr "Đã tải xong. Đang giải nén bản cập nhật."
 
 msgid "Unpacking the update took too long."
-msgstr ""
+msgstr "Quá trình giải nén bản cập nhật mất quá nhiều thời gian."
 
 #. placeholders: {STALL_TIMEOUT_S}
 msgid "The download stopped. Nothing arrived for {STALL_TIMEOUT_S} seconds."
 msgstr ""
+"Quá trình tải về đã dừng. Không nhận được dữ liệu nào trong "
+"{STALL_TIMEOUT_S} giây."
 
 msgid "The download did not finish."
 msgstr ""
@@ -77741,6 +77753,7 @@ msgstr ""
 #. placeholders: {as_secs}
 msgid "The download stopped. Nothing arrived for {as_secs} seconds."
 msgstr ""
+"Quá trình tải về đã dừng. Không nhận được dữ liệu nào trong {as_secs} giây."
 
 msgid ""
 "The download did not match the update it was signed for, so it was not "
@@ -77771,17 +77784,17 @@ msgid "Downloading the whole update instead, {megabytes}."
 msgstr ""
 
 msgid "Update canceled."
-msgstr ""
+msgstr "Đã hủy cập nhật."
 
 msgid "Unpacking the update."
-msgstr ""
+msgstr "Đang giải nén bản cập nhật."
 
 #. placeholders: {percent}
 msgid "{percent} percent downloaded."
 msgstr ""
 
 msgid "Unpacking"
-msgstr ""
+msgstr "Đang giải nén"
 
 #. placeholders: {percent}
 msgid "{percent} percent"
@@ -77789,10 +77802,10 @@ msgstr ""
 
 #. placeholders: {title}
 msgid "Downloading {title}"
-msgstr ""
+msgstr "Đang tải {title}"
 
 msgid "Escape cancels, Tab reads progress."
-msgstr ""
+msgstr "Escape để hủy, Tab để nghe tiến độ."
 
 msgid ""
 "Tab reads how much has downloaded. Escape cancels and leaves the game as it "
@@ -77925,7 +77938,7 @@ msgid "{title}, not heard yet"
 msgstr ""
 
 msgid "Keep playing to unlock it."
-msgstr ""
+msgstr "Chơi tiếp để mở khóa thành tích này."
 
 #. placeholders: {end_sentence}
 msgid "Locked. {end_sentence}"
@@ -78005,50 +78018,50 @@ msgid "test pad"
 msgstr ""
 
 msgid "colon"
-msgstr ""
+msgstr "dấu hai chấm"
 
 msgid "dot"
-msgstr ""
+msgstr "dấu chấm"
 
 msgid "dash"
-msgstr ""
+msgstr "gạch ngang"
 
 msgid "underscore"
-msgstr ""
+msgstr "dấu gạch dưới"
 
 msgid "question mark"
-msgstr ""
+msgstr "dấu chấm hỏi"
 
 msgid "exclamation mark"
-msgstr ""
+msgstr "dấu chấm than"
 
 msgid "and"
 msgstr ""
 
 msgid "percent"
-msgstr ""
+msgstr "dấu phần trăm"
 
 msgid "number sign"
-msgstr ""
+msgstr "dấu thăng"
 
 msgid "at"
-msgstr ""
+msgstr "a còng"
 
 msgid "tilde"
-msgstr ""
+msgstr "dấu ngã"
 
 msgid "quote"
-msgstr ""
+msgstr "dấu ngoặc kép"
 
 msgid "left paren"
-msgstr ""
+msgstr "mở ngoặc đơn"
 
 msgid "right paren"
-msgstr ""
+msgstr "đóng ngoặc đơn"
 
 #. placeholders: {ch}
 msgid "cap {ch}"
-msgstr ""
+msgstr "chữ hoa {ch}"
 
 msgid "source"
 msgstr ""
@@ -78120,7 +78133,7 @@ msgid "update-plan"
 msgstr ""
 
 msgid "The update check could not start."
-msgstr ""
+msgstr "Không thể bắt đầu kiểm tra bản cập nhật."
 
 msgid "update-check"
 msgstr ""
@@ -78150,7 +78163,7 @@ msgid "yes"
 msgstr ""
 
 msgid "no"
-msgstr ""
+msgstr "không"
 
 #. placeholders: {reply_to}
 msgid "Reply to: {reply_to}"
