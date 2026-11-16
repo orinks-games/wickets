@@ -54,3 +54,33 @@ English.
 | Quit, Exit | Thoát | |
 | Resume | Tiếp tục | |
 | New game | Lượt mới | |
+| the title, title menu | màn hình chính | A game's own first menu: "quay về màn hình chính". |
+| Play again | Chơi lại | |
+| challenge | thử thách | |
+| record | kỷ lục | Same word as best. |
+| streak | chuỗi | "chuỗi ngày", "chuỗi trúng". |
+| pause menu | menu tạm dừng | |
+| advent calendar | lịch Mùa Vọng | "cửa lịch Mùa Vọng". |
+| lantern | đèn lồng | Not the door lamp, which is "đèn". |
+| Grandma | Bà | The character; "Bà" capitalised. |
+| bonus | thưởng | "Thưởng {bonus}." |
+| star | sao | The 1 to 3 stars a run earns. |
+| {a} of {b} | {a} trên {b} | Never a slash. |
+| briefing | phần giới thiệu | What Enter reads before a run or challenge: "Enter đọc phần giới thiệu". |
+| keepsake | kỷ vật | |
+| twist | điểm khác lạ | A challenge's extra rule: "Điểm khác lạ, {name}: ...". |
+| Records | Thành tích | The title row and its page: "Thành tích. ..."; a single best stays "kỷ lục". |
+| Spoken call-outs | Lời báo | The setting: "Lời báo: bật." Values: "Một lần mỗi lần ghé", "Mọi lần", "Tắt". |
+| Gift Sort, the Wish Desk, Midnight Countdown | Phân loại quà, Bàn Điều Ước, Đếm ngược nửa đêm | Winter Wonderland parts; also shift "ca", stack "chồng thư". |
+| Happening (the story's errand or riddle) | Chuyện lạ | "Mỗi danh sách cũng có một Chuyện lạ." Not the lobby row Hôm nay ở tiệm. |
+| stamp, stamp book | con dấu, sổ con dấu | "Một con dấu cho {book}." |
+| Continue (the lobby row) | Chơi tiếp | Not Resume, which is Tiếp tục. |
+| story mode | chế độ cốt truyện | |
+| track, album | bản nhạc, album | In the Soundtrack; a kept run's music is "bài nhạc": "Giữ bài nhạc: bật." |
+| hint | gợi ý | |
+| Leave the challenge | Rời thử thách | The pause menu row. |
+| the Calendar Hall, the Arcade Floor, the Study, the Conservatory, the Card Room | Phòng Lịch, Tầng Máy Chơi, Phòng Đọc, Nhà Kính, Phòng Bài | The parlor's rooms in the story: capitals as shown. |
+| the Echo | Echo | Theo's machine in the cellar: a name, kept in English. |
+| From the story | Từ cốt truyện | The Play menu section. |
+| combo | combo | "Combo dài nhất {best_combo}." |
+| multiplier | hệ số nhân | "Combo {combo}, nhân {multiplier}." |
