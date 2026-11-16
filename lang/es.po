@@ -4481,7 +4481,7 @@ msgstr ""
 "uno atrapado limpio da {PATTERN_BONUS} puntos."
 
 msgid "Basket Run"
-msgstr ""
+msgstr "Basket Run"
 
 msgid "Opening the Basket Run challenge."
 msgstr "Abriendo el desafío de Basket Run."
@@ -6718,7 +6718,7 @@ msgid "The cathedral tower: {describe}. No hints."
 msgstr "La torre de la catedral: {describe}. Sin pistas."
 
 msgid "Belfry"
-msgstr ""
+msgstr "Belfry"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -9956,7 +9956,7 @@ msgid "in the dawn chorus"
 msgstr "en el coro del amanecer"
 
 msgid "Birdsong Trail"
-msgstr ""
+msgstr "Birdsong Trail"
 
 msgid ""
 "Walk a trail at dawn, and befriend the birds by answering their songs."
@@ -11627,7 +11627,7 @@ msgstr ""
 "{resets}"
 
 msgid "Clover Jig"
-msgstr ""
+msgstr "Clover Jig"
 
 msgid ""
 "Dance a jig or reel on the beat after each call, and join the village ceili."
@@ -13439,7 +13439,7 @@ msgstr ""
 "cielo que valen 25 más. Se juegan todas las rondas."
 
 msgid "Cupid's Quiver"
-msgstr ""
+msgstr "Cupid's Quiver"
 
 msgid "Opening the Cupid's Quiver challenge."
 msgstr "Abriendo el desafío de Cupid's Quiver."
@@ -15664,7 +15664,7 @@ msgid "One street: {describe}."
 msgstr "Una calle: {describe}."
 
 msgid "Dragon Dance"
-msgstr ""
+msgstr "Dragon Dance"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -18016,7 +18016,7 @@ msgstr ""
 "apague la luz."
 
 msgid "Firefly Meadow"
-msgstr ""
+msgstr "Firefly Meadow"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -20208,7 +20208,7 @@ msgstr ""
 "repartos."
 
 msgid "Fireside Patience"
-msgstr ""
+msgstr "Fireside Patience"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -22905,7 +22905,7 @@ msgid "freewheel"
 msgstr ""
 
 msgid "Freewheel"
-msgstr ""
+msgstr "Freewheel"
 
 msgid "Ride a bike through city traffic, as fast as you dare."
 msgstr "Pedalea entre el tráfico de la ciudad, tan rápido como te atrevas."
@@ -25899,7 +25899,7 @@ msgstr ""
 "{unit}. {resets}"
 
 msgid "Graveyard Shuffle"
-msgstr ""
+msgstr "Graveyard Shuffle"
 
 msgid ""
 "A Halloween special. Lead the monsters' new dance craze: dance each "
@@ -27919,7 +27919,7 @@ msgstr ""
 "El mismo menú otra vez, desde su resumen. Solo se guarda tu mejor resultado."
 
 msgid "Harvest Feast"
-msgstr ""
+msgstr "Harvest Feast"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -33243,7 +33243,7 @@ msgstr ""
 "lo que llevas."
 
 msgid "Nevermore Manor"
-msgstr ""
+msgstr "Nevermore Manor"
 
 msgid ""
 "Halloween: find your way down a haunted house of a hundred floors, and "
@@ -35829,7 +35829,7 @@ msgid "lamplighter"
 msgstr ""
 
 msgid "Lamplighter"
-msgstr ""
+msgstr "Lamplighter"
 
 msgid "Walk the Long Hall and light its lamps."
 msgstr "Recorre el Pasillo Largo y enciende sus faroles."
@@ -37352,7 +37352,7 @@ msgstr ""
 "{lanterns:farolillo recogido|farolillos recogidos} en total."
 
 msgid "Lantern Lake"
-msgstr ""
+msgstr "Lantern Lake"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -40115,7 +40115,7 @@ msgstr ""
 "contenta."
 
 msgid "Larkfield"
-msgstr ""
+msgstr "Larkfield"
 
 msgid "fill the barge's order in 5 days"
 msgstr "completar el pedido de la barcaza en 5 días"
@@ -41122,7 +41122,7 @@ msgid "Lewis"
 msgstr ""
 
 msgid "Mabel"
-msgstr ""
+msgstr "Mabel"
 
 msgid "Owen"
 msgstr ""
@@ -44057,7 +44057,7 @@ msgstr ""
 "terminar."
 
 msgid "Liberty Lights"
-msgstr ""
+msgstr "Liberty Lights"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -46849,7 +46849,7 @@ msgstr ""
 "El arroyo más largo, todos los giros, y se llena más hasta la desembocadura."
 
 msgid "Little Rapids"
-msgstr ""
+msgstr "Little Rapids"
 
 msgid "Opening the Little Rapids challenge."
 msgstr "Abriendo el desafío de Little Rapids."
@@ -49189,7 +49189,7 @@ msgid "Ball rolling."
 msgstr "La bola rueda."
 
 msgid "Midnight Lanes"
-msgstr ""
+msgstr "Midnight Lanes"
 
 msgid "Bowl ten frames on lane nine after the alley closes."
 msgstr ""
@@ -51330,7 +51330,7 @@ msgstr ""
 "rango. Paga créditos y piezas."
 
 msgid "Neon Rail"
-msgstr ""
+msgstr "Neon Rail"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back "
@@ -56953,7 +56953,7 @@ msgid "pantry"
 msgstr ""
 
 msgid "Pantry Mouse"
-msgstr ""
+msgstr "Pantry Mouse"
 
 msgid "Eat every crumb in the pantry while the cats prowl."
 msgstr "Cómete cada miga de la despensa mientras los gatos rondan."
@@ -57843,7 +57843,7 @@ msgid "Your score is your night total."
 msgstr "Tu puntuación es tu total de la noche."
 
 msgid "Riverboat Dice"
-msgstr ""
+msgstr "Riverboat Dice"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -60848,7 +60848,7 @@ msgid "harvest {n} {plural}"
 msgstr "cosechar {n} {plural}"
 
 msgid "Rooftop Garden"
-msgstr ""
+msgstr "Rooftop Garden"
 
 msgid "Today's garden"
 msgstr "El jardín de hoy"
@@ -64284,7 +64284,7 @@ msgid " It stays while the moon is dark."
 msgstr " Sigue mientras la luna está oscura."
 
 msgid "Safecracker"
-msgstr ""
+msgstr "Safecracker"
 
 msgid ""
 "Up and Down choose a job, Enter reads its briefing, Escape goes back. Every "
@@ -65856,7 +65856,7 @@ msgid "shift"
 msgstr "turno"
 
 msgid "Signal Box"
-msgstr ""
+msgstr "Signal Box"
 
 msgid "Answer the dispatcher's calls before each train reaches the points."
 msgstr ""
@@ -66962,7 +66962,7 @@ msgstr ""
 "año y todas las tazas. Cada taza puntúa hasta 100."
 
 msgid "Slow Kettle"
-msgstr ""
+msgstr "Slow Kettle"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -70457,7 +70457,7 @@ msgid "Midnight skate"
 msgstr "Patinaje de medianoche"
 
 msgid "Snowfall Skate"
-msgstr ""
+msgstr "Snowfall Skate"
 
 msgid ""
 "A winter special. Skate a frozen pond at night, taking lanterns as they "
@@ -73048,7 +73048,7 @@ msgstr ""
 "Velocidad segura."
 
 msgid "Soft Landing"
-msgstr ""
+msgstr "Soft Landing"
 
 msgid "Set a small lander down on the moons of the outer planets."
 msgstr "Posa un pequeño módulo en las lunas de los planetas exteriores."
@@ -74554,7 +74554,7 @@ msgid "{WHALE_ROAD} and the glow dive"
 msgstr "{WHALE_ROAD} y la inmersión luminosa"
 
 msgid "Sonar Dive"
-msgstr ""
+msgstr "Sonar Dive"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -76667,7 +76667,7 @@ msgstr ""
 "maravilla, menos 10 por pista."
 
 msgid "Stargazer"
-msgstr ""
+msgstr "Stargazer"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -79053,7 +79053,7 @@ msgid "Opening the challenge of The Echo."
 msgstr "Abriendo el desafío de The Echo."
 
 msgid "The Echo"
-msgstr ""
+msgstr "The Echo"
 
 msgid "Tune the Echo's pipes until the wobble is still."
 msgstr "Afina los tubos del Echo hasta que la oscilación se calme."
@@ -80520,7 +80520,7 @@ msgstr ""
 "llena.{left}"
 
 msgid "Tide Pools"
-msgstr ""
+msgstr "Tide Pools"
 
 msgid ""
 "Wander the beach at low tide, gather shells and creatures, and stock your "
@@ -82863,7 +82863,7 @@ msgid "Return to the Tightrope title."
 msgstr "Volver al menú principal de Tightrope."
 
 msgid "Tightrope"
-msgstr ""
+msgstr "Tightrope"
 
 msgid "Balance tone"
 msgstr "Tono de equilibrio"
@@ -85286,7 +85286,7 @@ msgstr ""
 "{resets}"
 
 msgid "Winter Wonderland"
-msgstr ""
+msgstr "Winter Wonderland"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -90989,3 +90989,19 @@ msgstr ""
 
 msgid "the query is not plain names"
 msgstr "la consulta no son nombres simples"
+
+#. A menu row's position, said after whichever row has focus (Hearken).
+msgid "{position} of {count}."
+msgstr "{position} de {count}."
+
+#. a name: keep it as it is
+msgid "Wicket's"
+msgstr "Wicket's"
+
+#. a name: keep it as it is
+msgid "Wicket"
+msgstr "Wicket"
+
+#. a name: keep it as it is
+msgid "Theo"
+msgstr "Theo"

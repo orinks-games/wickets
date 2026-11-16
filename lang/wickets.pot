@@ -4878,7 +4878,7 @@ msgid ""
 "caught cleanly earns {PATTERN_BONUS} points."
 msgstr ""
 
-#: games/basket-run/src/challenge.rs games/basket-run/src/lib.rs games/basket-run/src/tutorial.rs
+#: games/basket-run/src/challenge.rs games/basket-run/src/lib.rs games/basket-run/src/tutorial.rs lang/names.txt
 msgid "Basket Run"
 msgstr ""
 
@@ -7359,7 +7359,7 @@ msgstr ""
 msgid "The cathedral tower: {describe}. No hints."
 msgstr ""
 
-#: games/belfry/src/challenge.rs games/belfry/src/public.rs games/belfry/src/tutorial.rs
+#: games/belfry/src/challenge.rs games/belfry/src/public.rs games/belfry/src/tutorial.rs lang/names.txt
 msgid "Belfry"
 msgstr ""
 
@@ -10915,7 +10915,7 @@ msgstr ""
 msgid "in the dawn chorus"
 msgstr ""
 
-#: games/birdsong-trail/src/public.rs games/birdsong-trail/src/tutorial.rs
+#: games/birdsong-trail/src/public.rs games/birdsong-trail/src/tutorial.rs lang/names.txt
 msgid "Birdsong Trail"
 msgstr ""
 
@@ -12785,7 +12785,7 @@ msgid ""
 "{title} result: {points_words}. {score_line} {streak_sentence} {resets}"
 msgstr ""
 
-#: games/clover-jig/src/lib.rs games/clover-jig/src/tutorial.rs
+#: games/clover-jig/src/lib.rs games/clover-jig/src/tutorial.rs lang/names.txt
 msgid "Clover Jig"
 msgstr ""
 
@@ -14735,7 +14735,7 @@ msgid ""
 "worth 25 more. Every round is played."
 msgstr ""
 
-#: games/cupids-quiver/src/challenge.rs games/cupids-quiver/src/lib.rs games/cupids-quiver/src/tutorial.rs
+#: games/cupids-quiver/src/challenge.rs games/cupids-quiver/src/lib.rs games/cupids-quiver/src/tutorial.rs lang/names.txt
 msgid "Cupid's Quiver"
 msgstr ""
 
@@ -17151,7 +17151,7 @@ msgstr ""
 msgid "One street: {describe}."
 msgstr ""
 
-#: games/dragon-dance/src/challenge.rs games/dragon-dance/src/lib.rs games/dragon-dance/src/tutorial.rs
+#: games/dragon-dance/src/challenge.rs games/dragon-dance/src/lib.rs games/dragon-dance/src/tutorial.rs lang/names.txt
 msgid "Dragon Dance"
 msgstr ""
 
@@ -19766,7 +19766,7 @@ msgid ""
 "fades."
 msgstr ""
 
-#: games/firefly-meadow/src/challenge.rs games/firefly-meadow/src/public.rs games/firefly-meadow/src/tutorial.rs
+#: games/firefly-meadow/src/challenge.rs games/firefly-meadow/src/public.rs games/firefly-meadow/src/tutorial.rs lang/names.txt
 msgid "Firefly Meadow"
 msgstr ""
 
@@ -22143,7 +22143,7 @@ msgstr ""
 msgid "{score} Your total is the sum of the {MONTHLY_DEALS} deal scores."
 msgstr ""
 
-#: games/fireside-patience/src/challenge.rs games/fireside-patience/src/public.rs games/fireside-patience/src/tutorial.rs
+#: games/fireside-patience/src/challenge.rs games/fireside-patience/src/public.rs games/fireside-patience/src/tutorial.rs lang/names.txt
 msgid "Fireside Patience"
 msgstr ""
 
@@ -25010,7 +25010,7 @@ msgstr ""
 msgid "freewheel"
 msgstr ""
 
-#: games/freewheel/src/public.rs games/freewheel/src/rides.rs games/freewheel/src/tutorial.rs
+#: games/freewheel/src/public.rs games/freewheel/src/rides.rs games/freewheel/src/tutorial.rs lang/names.txt
 msgid "Freewheel"
 msgstr ""
 
@@ -28397,7 +28397,7 @@ msgid ""
 "{resets}"
 msgstr ""
 
-#: games/graveyard-shuffle/src/lib.rs games/graveyard-shuffle/src/tutorial.rs
+#: games/graveyard-shuffle/src/lib.rs games/graveyard-shuffle/src/tutorial.rs lang/names.txt
 msgid "Graveyard Shuffle"
 msgstr ""
 
@@ -30520,7 +30520,7 @@ msgid ""
 "The same menu again, from its briefing. Only your best result is kept."
 msgstr ""
 
-#: games/harvest-feast/src/challenge.rs games/harvest-feast/src/public.rs games/harvest-feast/src/tutorial.rs
+#: games/harvest-feast/src/challenge.rs games/harvest-feast/src/public.rs games/harvest-feast/src/tutorial.rs lang/names.txt
 msgid "Harvest Feast"
 msgstr ""
 
@@ -36349,7 +36349,7 @@ msgid ""
 "what you carry."
 msgstr ""
 
-#: games/haunted-hallways/src/lib.rs games/haunted-hallways/src/tutorial.rs
+#: games/haunted-hallways/src/lib.rs games/haunted-hallways/src/tutorial.rs lang/names.txt
 msgid "Nevermore Manor"
 msgstr ""
 
@@ -39234,7 +39234,7 @@ msgstr ""
 msgid "lamplighter"
 msgstr ""
 
-#: games/lamplighter/src/lib.rs games/lamplighter/src/tutorial.rs
+#: games/lamplighter/src/lib.rs games/lamplighter/src/tutorial.rs lang/names.txt
 msgid "Lamplighter"
 msgstr ""
 
@@ -40853,7 +40853,7 @@ msgid ""
 "gathered in all."
 msgstr ""
 
-#: games/lantern-lake/src/menus.rs games/lantern-lake/src/public.rs games/lantern-lake/src/soundtrack.rs games/lantern-lake/src/tutorial.rs
+#: games/lantern-lake/src/menus.rs games/lantern-lake/src/public.rs games/lantern-lake/src/soundtrack.rs games/lantern-lake/src/tutorial.rs lang/names.txt
 msgid "Lantern Lake"
 msgstr ""
 
@@ -43876,7 +43876,7 @@ msgid ""
 "day 10. Points for everything made and everyone cheerful."
 msgstr ""
 
-#: games/larkfield/src/challenge.rs games/larkfield/src/lib.rs games/larkfield/src/soundtrack.rs games/larkfield/src/tutorial.rs
+#: games/larkfield/src/challenge.rs games/larkfield/src/lib.rs games/larkfield/src/soundtrack.rs games/larkfield/src/tutorial.rs lang/names.txt
 msgid "Larkfield"
 msgstr ""
 
@@ -45080,7 +45080,7 @@ msgstr ""
 msgid "Lewis"
 msgstr ""
 
-#: games/larkfield/src/people.rs
+#: games/larkfield/src/people.rs lang/names.txt
 msgid "Mabel"
 msgstr ""
 
@@ -48347,7 +48347,7 @@ msgid ""
 "back, or finish."
 msgstr ""
 
-#: games/liberty-lights/src/challenge_menu.rs games/liberty-lights/src/lib.rs games/liberty-lights/src/tutorial.rs
+#: games/liberty-lights/src/challenge_menu.rs games/liberty-lights/src/lib.rs games/liberty-lights/src/tutorial.rs lang/names.txt
 msgid "Liberty Lights"
 msgstr ""
 
@@ -51346,7 +51346,7 @@ msgid ""
 "mouth."
 msgstr ""
 
-#: games/little-rapids/src/challenge.rs games/little-rapids/src/lib.rs games/little-rapids/src/soundtrack.rs games/little-rapids/src/tutorial.rs
+#: games/little-rapids/src/challenge.rs games/little-rapids/src/lib.rs games/little-rapids/src/soundtrack.rs games/little-rapids/src/tutorial.rs lang/names.txt
 msgid "Little Rapids"
 msgstr ""
 
@@ -54030,7 +54030,7 @@ msgstr ""
 msgid "Ball rolling."
 msgstr ""
 
-#: games/midnight-lanes/src/public.rs
+#: games/midnight-lanes/src/public.rs lang/names.txt
 msgid "Midnight Lanes"
 msgstr ""
 
@@ -56035,7 +56035,7 @@ msgid ""
 "credits and parts."
 msgstr ""
 
-#: games/neon-rail/src/challenge.rs games/neon-rail/src/tutorial.rs
+#: games/neon-rail/src/challenge.rs games/neon-rail/src/tutorial.rs lang/names.txt
 msgid "Neon Rail"
 msgstr ""
 
@@ -57325,7 +57325,7 @@ msgstr ""
 msgid "{n} parts"
 msgstr ""
 
-#: games/neon-rail/src/public.rs
+#: games/neon-rail/src/public.rs lang/names.txt
 msgid "Neon Rail: Black Sky Run"
 msgstr ""
 
@@ -61995,7 +61995,7 @@ msgstr ""
 msgid "pantry"
 msgstr ""
 
-#: games/pantry-mouse/src/public.rs games/pantry-mouse/src/tutorial.rs
+#: games/pantry-mouse/src/public.rs games/pantry-mouse/src/tutorial.rs lang/names.txt
 msgid "Pantry Mouse"
 msgstr ""
 
@@ -62896,7 +62896,7 @@ msgstr ""
 msgid "Your score is your night total."
 msgstr ""
 
-#: games/riverboat-dice/src/challenge.rs games/riverboat-dice/src/public.rs games/riverboat-dice/src/tutorial.rs
+#: games/riverboat-dice/src/challenge.rs games/riverboat-dice/src/public.rs games/riverboat-dice/src/tutorial.rs lang/names.txt
 msgid "Riverboat Dice"
 msgstr ""
 
@@ -66095,7 +66095,7 @@ msgstr ""
 msgid "harvest {n} {plural}"
 msgstr ""
 
-#: games/rooftop-garden/src/menus.rs games/rooftop-garden/src/public.rs games/rooftop-garden/src/soundtrack.rs games/rooftop-garden/src/tutorial.rs
+#: games/rooftop-garden/src/menus.rs games/rooftop-garden/src/public.rs games/rooftop-garden/src/soundtrack.rs games/rooftop-garden/src/tutorial.rs lang/names.txt
 msgid "Rooftop Garden"
 msgstr ""
 
@@ -69858,7 +69858,7 @@ msgstr ""
 msgid " It stays while the moon is dark."
 msgstr ""
 
-#: games/safecracker/src/heist.rs games/safecracker/src/public.rs games/safecracker/src/tutorial.rs
+#: games/safecracker/src/heist.rs games/safecracker/src/public.rs games/safecracker/src/tutorial.rs lang/names.txt
 msgid "Safecracker"
 msgstr ""
 
@@ -71559,7 +71559,7 @@ msgstr ""
 msgid "shift"
 msgstr ""
 
-#: games/signal-box/src/public.rs games/signal-box/src/tutorial.rs
+#: games/signal-box/src/public.rs games/signal-box/src/tutorial.rs lang/names.txt
 msgid "Signal Box"
 msgstr ""
 
@@ -72656,7 +72656,7 @@ msgid ""
 "the day. Each cup scores up to 100."
 msgstr ""
 
-#: games/slow-kettle/src/challenge.rs games/slow-kettle/src/public.rs games/slow-kettle/src/tutorial.rs
+#: games/slow-kettle/src/challenge.rs games/slow-kettle/src/public.rs games/slow-kettle/src/tutorial.rs lang/names.txt
 msgid "Slow Kettle"
 msgstr ""
 
@@ -76538,7 +76538,7 @@ msgstr ""
 msgid "Midnight skate"
 msgstr ""
 
-#: games/snowfall-skate/src/lib.rs
+#: games/snowfall-skate/src/lib.rs lang/names.txt
 msgid "Snowfall Skate"
 msgstr ""
 
@@ -79369,7 +79369,7 @@ msgid ""
 "Hold the engine when the game says Too fast, and let go at Safe speed."
 msgstr ""
 
-#: games/soft-landing/src/public.rs games/soft-landing/src/tutorial.rs
+#: games/soft-landing/src/public.rs games/soft-landing/src/tutorial.rs lang/names.txt
 msgid "Soft Landing"
 msgstr ""
 
@@ -80933,7 +80933,7 @@ msgstr ""
 msgid "{WHALE_ROAD} and the glow dive"
 msgstr ""
 
-#: games/sonar-dive/src/menus.rs games/sonar-dive/src/public.rs games/sonar-dive/src/tutorial.rs
+#: games/sonar-dive/src/menus.rs games/sonar-dive/src/public.rs games/sonar-dive/src/tutorial.rs lang/names.txt
 msgid "Sonar Dive"
 msgstr ""
 
@@ -83158,7 +83158,7 @@ msgid ""
 "points a star, 100 a constellation and 150 a wonder, less 10 a hint."
 msgstr ""
 
-#: games/stargazer/src/challenge.rs games/stargazer/src/public.rs games/stargazer/src/tutorial.rs
+#: games/stargazer/src/challenge.rs games/stargazer/src/public.rs games/stargazer/src/tutorial.rs lang/names.txt
 msgid "Stargazer"
 msgstr ""
 
@@ -85863,7 +85863,7 @@ msgstr ""
 msgid "Opening the challenge of The Echo."
 msgstr ""
 
-#: games/the-echo/src/lib.rs games/the-echo/src/tutorial.rs
+#: games/the-echo/src/lib.rs games/the-echo/src/tutorial.rs lang/names.txt
 msgid "The Echo"
 msgstr ""
 
@@ -87360,7 +87360,7 @@ msgid ""
 "moon.{left}"
 msgstr ""
 
-#: games/tide-pools/src/lib.rs games/tide-pools/src/menus.rs games/tide-pools/src/tutorial.rs
+#: games/tide-pools/src/lib.rs games/tide-pools/src/menus.rs games/tide-pools/src/tutorial.rs lang/names.txt
 msgid "Tide Pools"
 msgstr ""
 
@@ -89913,7 +89913,7 @@ msgstr ""
 msgid "Return to the Tightrope title."
 msgstr ""
 
-#: games/tightrope/src/menus.rs games/tightrope/src/public.rs games/tightrope/src/tutorial.rs
+#: games/tightrope/src/menus.rs games/tightrope/src/public.rs games/tightrope/src/tutorial.rs lang/names.txt
 msgid "Tightrope"
 msgstr ""
 
@@ -92430,7 +92430,7 @@ msgstr ""
 msgid "{title} score {score}. {line} A {streak} {unit} streak. {resets}"
 msgstr ""
 
-#: games/winter-wonderland/src/challenge.rs games/winter-wonderland/src/public.rs games/winter-wonderland/src/title.rs games/winter-wonderland/src/tutorial.rs
+#: games/winter-wonderland/src/challenge.rs games/winter-wonderland/src/public.rs games/winter-wonderland/src/title.rs games/winter-wonderland/src/tutorial.rs lang/names.txt
 msgid "Winter Wonderland"
 msgstr ""
 
@@ -99081,4 +99081,24 @@ msgstr ""
 
 #: hearken/crates/hearken-update/src/source.rs
 msgid "the query is not plain names"
+msgstr ""
+
+#. A menu row's position, said after whichever row has focus (Hearken).
+#: lang/extra.pot
+msgid "{position} of {count}."
+msgstr ""
+
+#. a name: keep it as it is
+#: lang/names.txt
+msgid "Wicket's"
+msgstr ""
+
+#. a name: keep it as it is
+#: lang/names.txt
+msgid "Wicket"
+msgstr ""
+
+#. a name: keep it as it is
+#: lang/names.txt
+msgid "Theo"
 msgstr ""

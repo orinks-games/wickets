@@ -1,0 +1,41 @@
+# Names every language keeps as they are: the app, the games and the people.
+# Each is also a translation of itself in every language file, so a name is
+# never translated word by word inside a longer line.
+Wicket's
+Wicket
+Mabel
+Theo
+Nevermore Manor
+Neon Rail
+Neon Rail: Black Sky Run
+Liberty Lights
+Harvest Feast
+Winter Wonderland
+Basket Run
+Cupid's Quiver
+Clover Jig
+Dragon Dance
+Firefly Meadow
+Safecracker
+Belfry
+Sonar Dive
+Tightrope
+Signal Box
+Midnight Lanes
+Soft Landing
+Pantry Mouse
+Freewheel
+Lantern Lake
+Tide Pools
+Rooftop Garden
+Stargazer
+Slow Kettle
+Birdsong Trail
+Riverboat Dice
+Fireside Patience
+Lamplighter
+The Echo
+Graveyard Shuffle
+Little Rapids
+Larkfield
+Snowfall Skate

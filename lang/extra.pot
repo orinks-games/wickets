@@ -1,0 +1,6 @@
+# Lines the source never spells out whole, added by hand. Each is a template
+# like the others; see README.md.
+
+#. A menu row's position, said after whichever row has focus (Hearken).
+msgid "{position} of {count}."
+msgstr ""

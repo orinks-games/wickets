@@ -3846,7 +3846,7 @@ msgid ""
 msgstr ""
 
 msgid "Basket Run"
-msgstr ""
+msgstr "Basket Run"
 
 msgid "Opening the Basket Run challenge."
 msgstr ""
@@ -5826,7 +5826,7 @@ msgid "The cathedral tower: {describe}. No hints."
 msgstr ""
 
 msgid "Belfry"
-msgstr ""
+msgstr "Belfry"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -8650,7 +8650,7 @@ msgid "in the dawn chorus"
 msgstr ""
 
 msgid "Birdsong Trail"
-msgstr ""
+msgstr "Birdsong Trail"
 
 msgid ""
 "Walk a trail at dawn, and befriend the birds by answering their songs."
@@ -10134,7 +10134,7 @@ msgid ""
 msgstr ""
 
 msgid "Clover Jig"
-msgstr ""
+msgstr "Clover Jig"
 
 msgid ""
 "Dance a jig or reel on the beat after each call, and join the village ceili."
@@ -11693,7 +11693,7 @@ msgid ""
 msgstr ""
 
 msgid "Cupid's Quiver"
-msgstr ""
+msgstr "Cupid's Quiver"
 
 msgid "Opening the Cupid's Quiver challenge."
 msgstr ""
@@ -13619,7 +13619,7 @@ msgid "One street: {describe}."
 msgstr ""
 
 msgid "Dragon Dance"
-msgstr ""
+msgstr "Dragon Dance"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -15692,7 +15692,7 @@ msgid ""
 msgstr ""
 
 msgid "Firefly Meadow"
-msgstr ""
+msgstr "Firefly Meadow"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -17593,7 +17593,7 @@ msgid "{score} Your total is the sum of the {MONTHLY_DEALS} deal scores."
 msgstr ""
 
 msgid "Fireside Patience"
-msgstr ""
+msgstr "Fireside Patience"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -19888,7 +19888,7 @@ msgid "freewheel"
 msgstr ""
 
 msgid "Freewheel"
-msgstr ""
+msgstr "Freewheel"
 
 msgid "Ride a bike through city traffic, as fast as you dare."
 msgstr ""
@@ -22601,7 +22601,7 @@ msgid ""
 msgstr ""
 
 msgid "Graveyard Shuffle"
-msgstr ""
+msgstr "Graveyard Shuffle"
 
 msgid ""
 "A Halloween special. Lead the monsters' new dance craze: dance each "
@@ -24298,7 +24298,7 @@ msgid ""
 msgstr ""
 
 msgid "Harvest Feast"
-msgstr ""
+msgstr "Harvest Feast"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -28954,7 +28954,7 @@ msgid ""
 msgstr ""
 
 msgid "Nevermore Manor"
-msgstr ""
+msgstr "Nevermore Manor"
 
 msgid ""
 "Halloween: find your way down a haunted house of a hundred floors, and "
@@ -31223,7 +31223,7 @@ msgid "lamplighter"
 msgstr ""
 
 msgid "Lamplighter"
-msgstr ""
+msgstr "Lamplighter"
 
 msgid "Walk the Long Hall and light its lamps."
 msgstr ""
@@ -32516,7 +32516,7 @@ msgid ""
 msgstr ""
 
 msgid "Lantern Lake"
-msgstr ""
+msgstr "Lantern Lake"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -34920,7 +34920,7 @@ msgid ""
 msgstr ""
 
 msgid "Larkfield"
-msgstr ""
+msgstr "Larkfield"
 
 msgid "fill the barge's order in 5 days"
 msgstr ""
@@ -35858,7 +35858,7 @@ msgid "Lewis"
 msgstr ""
 
 msgid "Mabel"
-msgstr ""
+msgstr "Mabel"
 
 msgid "Owen"
 msgstr ""
@@ -38469,7 +38469,7 @@ msgid ""
 msgstr ""
 
 msgid "Liberty Lights"
-msgstr ""
+msgstr "Liberty Lights"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -40877,7 +40877,7 @@ msgid ""
 msgstr ""
 
 msgid "Little Rapids"
-msgstr ""
+msgstr "Little Rapids"
 
 msgid "Opening the Little Rapids challenge."
 msgstr ""
@@ -43000,7 +43000,7 @@ msgid "Ball rolling."
 msgstr ""
 
 msgid "Midnight Lanes"
-msgstr ""
+msgstr "Midnight Lanes"
 
 msgid "Bowl ten frames on lane nine after the alley closes."
 msgstr ""
@@ -44632,7 +44632,7 @@ msgid ""
 msgstr ""
 
 msgid "Neon Rail"
-msgstr ""
+msgstr "Neon Rail"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back "
@@ -45651,7 +45651,7 @@ msgid "{n} parts"
 msgstr ""
 
 msgid "Neon Rail: Black Sky Run"
-msgstr ""
+msgstr "Neon Rail: Black Sky Run"
 
 msgid ""
 "A three-lane sci-fi rail run: weave through traffic, clear jams and survive "
@@ -49406,7 +49406,7 @@ msgid "pantry"
 msgstr ""
 
 msgid "Pantry Mouse"
-msgstr ""
+msgstr "Pantry Mouse"
 
 msgid "Eat every crumb in the pantry while the cats prowl."
 msgstr ""
@@ -50133,7 +50133,7 @@ msgid "Your score is your night total."
 msgstr ""
 
 msgid "Riverboat Dice"
-msgstr ""
+msgstr "Riverboat Dice"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -52681,7 +52681,7 @@ msgid "harvest {n} {plural}"
 msgstr ""
 
 msgid "Rooftop Garden"
-msgstr ""
+msgstr "Rooftop Garden"
 
 msgid "Today's garden"
 msgstr ""
@@ -55693,7 +55693,7 @@ msgid " It stays while the moon is dark."
 msgstr ""
 
 msgid "Safecracker"
-msgstr ""
+msgstr "Safecracker"
 
 msgid ""
 "Up and Down choose a job, Enter reads its briefing, Escape goes back. Every "
@@ -57058,7 +57058,7 @@ msgid "shift"
 msgstr ""
 
 msgid "Signal Box"
-msgstr ""
+msgstr "Signal Box"
 
 msgid "Answer the dispatcher's calls before each train reaches the points."
 msgstr ""
@@ -57944,7 +57944,7 @@ msgid ""
 msgstr ""
 
 msgid "Slow Kettle"
-msgstr ""
+msgstr "Slow Kettle"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -61019,7 +61019,7 @@ msgid "Midnight skate"
 msgstr ""
 
 msgid "Snowfall Skate"
-msgstr ""
+msgstr "Snowfall Skate"
 
 msgid ""
 "A winter special. Skate a frozen pond at night, taking lanterns as they "
@@ -63276,7 +63276,7 @@ msgid ""
 msgstr ""
 
 msgid "Soft Landing"
-msgstr ""
+msgstr "Soft Landing"
 
 msgid "Set a small lander down on the moons of the outer planets."
 msgstr ""
@@ -64519,7 +64519,7 @@ msgid "{WHALE_ROAD} and the glow dive"
 msgstr ""
 
 msgid "Sonar Dive"
-msgstr ""
+msgstr "Sonar Dive"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -66310,7 +66310,7 @@ msgid ""
 msgstr ""
 
 msgid "Stargazer"
-msgstr ""
+msgstr "Stargazer"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -68446,7 +68446,7 @@ msgid "Opening the challenge of The Echo."
 msgstr ""
 
 msgid "The Echo"
-msgstr ""
+msgstr "The Echo"
 
 msgid "Tune the Echo's pipes until the wobble is still."
 msgstr ""
@@ -69648,7 +69648,7 @@ msgid ""
 msgstr ""
 
 msgid "Tide Pools"
-msgstr ""
+msgstr "Tide Pools"
 
 msgid ""
 "Wander the beach at low tide, gather shells and creatures, and stock your "
@@ -71677,7 +71677,7 @@ msgid "Return to the Tightrope title."
 msgstr ""
 
 msgid "Tightrope"
-msgstr ""
+msgstr "Tightrope"
 
 msgid "Balance tone"
 msgstr ""
@@ -73703,7 +73703,7 @@ msgid "{title} score {score}. {line} A {streak} {unit} streak. {resets}"
 msgstr ""
 
 msgid "Winter Wonderland"
-msgstr ""
+msgstr "Winter Wonderland"
 
 msgid ""
 "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. "
@@ -79003,3 +79003,19 @@ msgstr ""
 
 msgid "the query is not plain names"
 msgstr ""
+
+#. A menu row's position, said after whichever row has focus (Hearken).
+msgid "{position} of {count}."
+msgstr "{position} trên {count}."
+
+#. a name: keep it as it is
+msgid "Wicket's"
+msgstr "Wicket's"
+
+#. a name: keep it as it is
+msgid "Wicket"
+msgstr "Wicket"
+
+#. a name: keep it as it is
+msgid "Theo"
+msgstr "Theo"

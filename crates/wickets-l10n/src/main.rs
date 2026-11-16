@@ -19,6 +19,7 @@
 //! the full build merges the two for each language.
 
 mod batches;
+mod names;
 mod rules;
 mod sources;
 
@@ -40,7 +41,7 @@ fn workspace_root() -> PathBuf {
 fn project(root: &Path, name: &str, template: &str) -> Result<Project, String> {
     let lang_dir = root.join("lang");
     let listed = sources::read(root, &lang_dir.join("sources.txt"))?;
-    Ok(Project {
+    let mut project = Project {
         root: root.to_path_buf(),
         lang_dir,
         template_name: template.to_string(),
@@ -50,7 +51,10 @@ fn project(root: &Path, name: &str, template: &str) -> Result<Project, String> {
         entries: listed.entries,
         rules: rules::ALL.to_vec(),
         ..Project::default()
-    })
+    };
+    let names = names::entries(&project)?;
+    project.entries.extend(names);
+    Ok(project)
 }
 
 /// The public project, then the private one when the overlay is present.
@@ -76,7 +80,7 @@ fn run(args: &[String]) -> Result<i32, String> {
     match args.first().map(String::as_str) {
         Some("extract") => {
             for project in projects()? {
-                code |= extract::run(&project, flag("--check"), COMMAND)?;
+                code |= names::extract(&project, flag("--check"), COMMAND)?;
             }
         }
         Some("check") => {
