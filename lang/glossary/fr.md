@@ -14,7 +14,8 @@ English.
 | keeper | gardien | How Mabel and Wicket address the player: "Bonsoir, gardien." No article when addressing. |
 | the lobby | l'entrée | Feminine. The parlor's front room and the main menu. |
 | the Long Hall | la Longue Galerie | A place: capitals as shown. "dans la Longue Galerie". |
-| lamp | lanterne | Feminine. The light above a game's door. |
+| lamp | lampe | Feminine. The light above a game's door: "sa lampe s'allume pour de bon". Not "lanterne", which is lantern. |
+| lantern | lanterne | Feminine. Lantern Lake's lanterns, the lantern festival, a carried lantern. Never for a game's lamp. |
 | game | jeu | Masculine; plural "jeux". |
 | run | partie | Feminine. One play from start to results. |
 | practice | entraînement | "une partie d'entraînement". |
@@ -22,7 +23,7 @@ English.
 | results | résultats | |
 | best, your best | record, ton record | "Nouveau record." |
 | score | score | Masculine. "points" is "points". |
-| board, leaderboard | classement | Masculine. Always this word. |
+| board, leaderboard | classement | Masculine. Always this word for a scores board. Other boards keep their own word: cutting board "planche à découper", menu board "ardoise", the Challenges board "tableau des Défis". |
 | daily challenge | défi du jour | |
 | Challenges | Défis | The menu. |
 | event, special event | événement, événement spécial | Masculine. |
@@ -34,7 +35,7 @@ English.
 | Cozy games | Jeux tranquilles | |
 | Table | Jeux de table | |
 | Story | Histoire | |
-| Relaxed | Détente | The pace: "Rythme : Détente". |
+| Relaxed, relaxed | Détente, en Détente | The pace, always with a capital D: "Rythme : Détente". As a qualifier: "score en Détente", "record en Détente". The piece "relaxed " is "en Détente ", placed after the noun. |
 | pace | rythme | Masculine. |
 | status | état | Masculine. |
 | help | aide | Feminine. |
@@ -52,21 +53,20 @@ English.
 | Resume | Reprendre | |
 | New game | Nouvelle partie | |
 | keepsake | souvenir | Masculine. "L'étagère à souvenirs". |
-| the title, title menu | l'écran titre | "te ramène à l'écran titre". |
 | Play again | Rejouer | The results row. |
 | streak | série | Feminine. |
 | Grandma | Mamie | No article: "Mamie lève son verre." |
 | advent calendar | calendrier de l'Avent | "derrière la porte 13 du calendrier de l'Avent". |
 | pause menu | menu pause | |
 | briefing | briefing | Masculine. The short talk before a run: "réentendre le briefing". |
-| title, title menu | écran titre | A game's own menu: "Retour à l'écran titre". |
+| the title, title menu | écran titre | Masculine. A game's own menu: "Retour à l'écran titre", "te ramène à l'écran titre". |
 | help topic | rubrique | Feminine: "rubrique d'aide". |
 | Happening (the story's errand or riddle) | Imprévu | Masculine: "l'Imprévu de l'histoire". Not "Happening today". |
 | stamp | tampon | Masculine. What a Happening earns. |
 | song, track | morceau | Masculine. "Garder tes morceaux", "Tes morceaux de {game_name}". |
 | Unlocks | Déblocages | The menu. |
 | twist | variante | Feminine. A challenge's rule change: "sous une variante". |
-| Records (the menu) | Bilan | The title row that reads every best: "Bilan, sur l'écran titre". |
+| Records (the menu) | Bilan | The title row that reads every best, and its opening line "Bilan.": "Bilan, sur l'écran titre", "Le Bilan garde ton meilleur score". Lowercase records (your saved scores) are "records". |
 | Try again | Réessayer | The results row after a lost run. |
 | Hear the results again | Réécouter les résultats | The results row. |
 | Leave the challenge | Quitter le défi | The pause menu row. |
@@ -89,8 +89,15 @@ English.
 | errand | course | Feminine. A Happening errand: "Course faite." |
 | hint | indice | Masculine. What H gives: "H donne un indice." |
 | Play (title row) | Jouer | "Jouer lance la première nuit." |
-| the daily, the weekly, the monthly | le quotidien, l'hebdomadaire, le mensuel | A game's challenges as nouns: "Le quotidien, Tonight's deal, est…". Descriptive challenge titles are translated. |
+| the daily, the weekly, the monthly | le quotidien, l'hebdomadaire, le mensuel | A game's challenges as nouns: "Le quotidien, La donne de ce soir, est…", "La salle des trois, l'hebdomadaire :". A line starting "Daily," or "Weekly:" starts "Quotidien,", "Hebdomadaire :", "Mensuel :". Descriptive challenge titles are translated, the same in their row and in help. |
 | Back to the challenges | Retour aux défis | The results row after a challenge. |
-| relaxed, normal, quick (pace values) | Détente, normal, rapide | "Rythme : Détente, normal ou rapide." |
+| relaxed, normal, quick (pace values) | Détente, normal, rapide | Détente keeps its capital; normal and rapide are lowercase mid-sentence: "Rythme : Détente, normal ou rapide." |
 | X select (Floor select, Bike select…) | Choix de X | "Choix de l'étage", "Choix du vélo", "Choix de la nuit". |
 | Events (a game's title row) | Événements | |
+| Free paddle (Lantern Lake) | Pagaie libre | The title row and every mention of it. |
+| Hear the results again | Réécouter les résultats | The results row; help uses the same words. |
+| the lantern festival, Lantern Festival night | la fête des lanternes, Nuit de la fête des lanternes | Lowercase inside a sentence. |
+| Midnight Countdown, Gift Sort, Wish Desk | Compte à rebours de minuit, Tri des cadeaux, Bureau des vœux | Winter Wonderland's modes, no article: "Tri des cadeaux, Bureau des vœux et Compte à rebours de minuit". |
+| Thanksgiving dinner | Dîner de Thanksgiving | Harvest Feast's holiday row. |
+| family roles | Papi, Mamie, Oncle, Tante, Cousin, Cousine, Grand-tante | Given names stay: "Papi Joe", "Mamie Rose", "Oncle Walt". |
+| decimals | 1,5 | French decimal comma: "1,5 seconde". |
