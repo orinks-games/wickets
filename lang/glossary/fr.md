@@ -20,7 +20,7 @@ English.
 | practice | entraînement | "une partie d'entraînement". |
 | tutorial | tutoriel | Masculine. |
 | results | résultats | |
-| best, your best | record, votre record | "Nouveau record." |
+| best, your best | record, ton record | "Nouveau record." |
 | score | score | Masculine. "points" is "points". |
 | board, leaderboard | classement | Masculine. Always this word. |
 | daily challenge | défi du jour | |
@@ -51,3 +51,46 @@ English.
 | Quit, Exit | Quitter | |
 | Resume | Reprendre | |
 | New game | Nouvelle partie | |
+| keepsake | souvenir | Masculine. "L'étagère à souvenirs". |
+| the title, title menu | l'écran titre | "te ramène à l'écran titre". |
+| Play again | Rejouer | The results row. |
+| streak | série | Feminine. |
+| Grandma | Mamie | No article: "Mamie lève son verre." |
+| advent calendar | calendrier de l'Avent | "derrière la porte 13 du calendrier de l'Avent". |
+| pause menu | menu pause | |
+| briefing | briefing | Masculine. The short talk before a run: "réentendre le briefing". |
+| title, title menu | écran titre | A game's own menu: "Retour à l'écran titre". |
+| help topic | rubrique | Feminine: "rubrique d'aide". |
+| Happening (the story's errand or riddle) | Imprévu | Masculine: "l'Imprévu de l'histoire". Not "Happening today". |
+| stamp | tampon | Masculine. What a Happening earns. |
+| song, track | morceau | Masculine. "Garder tes morceaux", "Tes morceaux de {game_name}". |
+| Unlocks | Déblocages | The menu. |
+| twist | variante | Feminine. A challenge's rule change: "sous une variante". |
+| Records (the menu) | Bilan | The title row that reads every best: "Bilan, sur l'écran titre". |
+| Try again | Réessayer | The results row after a lost run. |
+| Hear the results again | Réécouter les résultats | The results row. |
+| Leave the challenge | Quitter le défi | The pause menu row. |
+| Spoken call-outs | Annonces | The setting: "Annonces : activé." |
+| lane | couloir | Masculine. A game's lane (traffic, drops, rails). Bowling lane is "piste". |
+| the Echo | l'Écho | Masculine, capital É. The parlor's machine in the story. |
+| Santa | le père Noël | |
+| Christmas Eve | le soir de Noël | "Le soir de Noël à l'atelier." |
+| New Year's Eve | le réveillon du Nouvel An | |
+| the Calendar Hall | la Salle du Calendrier | A room of the parlor in the story. |
+| the Arcade Floor | la Salle d'Arcade | |
+| the Study | le Cabinet | |
+| the Conservatory | la Serre | |
+| the Card Room | la Salle des Cartes | |
+| From the story (Play menu group) | De l'histoire | "dans Jouer, sous De l'histoire". |
+| firefly, jar (Firefly Meadow) | luciole, bocal | Feminine, masculine. Species: Dipper "la Plongeuse", Twin Spark "la Double Étincelle", Triple Twinkle "la Triple Scintille". Chord names: "la Triade d'été". Notes C D E G A: do, ré, mi, sol, la. |
+| Firefly Meadow places | le pré de la maison, le verger, la rive du ruisseau, le champ de foin | The four meadows. Journal is "Carnet". Midsummer night is "Nuit de la Saint-Jean". |
+| ornament | décoration | Feminine. What an advent door or a win hangs on the tree: "accroche une décoration au sapin". |
+| tree (holiday) | sapin | Masculine. "le sapin de l'entrée". |
+| errand | course | Feminine. A Happening errand: "Course faite." |
+| hint | indice | Masculine. What H gives: "H donne un indice." |
+| Play (title row) | Jouer | "Jouer lance la première nuit." |
+| the daily, the weekly, the monthly | le quotidien, l'hebdomadaire, le mensuel | A game's challenges as nouns: "Le quotidien, Tonight's deal, est…". Challenge titles stay English. |
+| Back to the challenges | Retour aux défis | The results row after a challenge. |
+| relaxed, normal, quick (pace values) | Détente, normal, rapide | "Rythme : Détente, normal ou rapide." |
+| X select (Floor select, Bike select…) | Choix de X | "Choix de l'étage", "Choix du vélo", "Choix de la nuit". |
+| Events (a game's title row) | Événements | |
