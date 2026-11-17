@@ -4,3 +4,15 @@
 #. A menu row's position, said after whichever row has focus (Hearken).
 msgid "{position} of {count}."
 msgstr ""
+
+#. Settings: the category for the games' own settings (parlor-core public.rs).
+msgid "Games"
+msgstr ""
+
+#. Said after a page of help when more pages follow; Enter is the key name.
+msgid "Enter for more."
+msgstr ""
+
+#. Said after the last page of a briefing; Enter is the key name.
+msgid "Enter to start."
+msgstr ""
