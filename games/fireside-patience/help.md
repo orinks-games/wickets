@@ -22,7 +22,7 @@ Tab turns one card up from the stock. Space picks up the turned-up card at the s
 
 ## Foundations
 
-Each suit has its own foundation, built up one card at a time from the ace to the king. Space on any foundation sends a single card to its own suit. Once every card is face up and the stock is used, the rest go up on their own.
+Each suit has its own foundation, built up one card at a time from the ace to the king. Turn up cards in the piles and the stock to find the aces. Space on any foundation sends a single card to its own suit. Once every card is face up and the stock is used, the rest go up on their own.
 
 ## Undo and getting stuck
 

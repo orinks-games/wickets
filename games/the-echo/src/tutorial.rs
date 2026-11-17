@@ -22,38 +22,44 @@ fn speech_secs(text: &str) -> f64 {
     0.4 + text.chars().count() as f64 / 15.0
 }
 
-/// Waits for what the game says to be heard before a step ends, so the
-/// lesson's next words do not cut it off.
+/// Waits for what the game says about the move that finished a step, so
+/// the lesson's next words do not cut it off. Only that move's lines are
+/// waited for: a key pressed after it has already cut them off, so the
+/// next step comes at once, and the player's presses never hold it back.
 #[derive(Default)]
 struct Heard {
-    /// `ctx.said` when last looked.
-    said: u64,
-    /// When the lines said so far should be done.
-    until: f64,
-    /// Whether it has looked yet: what was said before the step began is
-    /// the last step's business.
-    started: bool,
+    /// `ctx.said` when last looked; none before the step's first frame.
+    said: Option<u64>,
+    /// When the finishing move's lines should be done, once it is made.
+    until: Option<f64>,
 }
 
 impl Heard {
-    /// Whether everything said since `armed` first held has been heard.
-    /// Lines said in the frame that arms it count.
-    fn after(&mut self, armed: bool, ctx: &Ctx<Parlor>) -> bool {
-        // On the first look, what was said before the step began is the
-        // last step's business; a step armed from the start is done.
-        if !armed || !self.started {
-            self.started = true;
-            self.said = ctx.said;
-            self.until = ctx.clock;
-            return armed;
+    /// Whether the step can end: `done` holds, and what the move that made
+    /// it hold said has been heard or cut off by a later key.
+    fn after(&mut self, done: bool, ctx: &Ctx<Parlor>) -> bool {
+        if !done {
+            self.said = Some(ctx.said);
+            self.until = None;
+            return false;
         }
-        let new = ((ctx.said - self.said) as usize).min(ctx.transcript.len());
-        let lines = &ctx.transcript[ctx.transcript.len() - new..];
-        for line in lines.iter().filter(|l| !l.starts_with("[event]")) {
-            self.until = self.until.max(ctx.clock) + speech_secs(line);
+        match self.until {
+            None => {
+                // The frame of the move: its lines start now. A step that
+                // begins already done waits for its own prompt instead.
+                let since = self.said.unwrap_or(ctx.said.saturating_sub(1));
+                let new = ((ctx.said - since) as usize).min(ctx.transcript.len());
+                let lines = &ctx.transcript[ctx.transcript.len() - new..];
+                let until = lines
+                    .iter()
+                    .filter(|l| !l.starts_with("[event]"))
+                    .fold(ctx.clock, |t, line| t + speech_secs(line));
+                self.said = Some(ctx.said);
+                self.until = Some(until);
+                ctx.clock >= until
+            }
+            Some(until) => self.said.is_some_and(|s| ctx.said > s) || ctx.clock >= until,
         }
-        self.said = ctx.said;
-        ctx.clock >= self.until
     }
 }
 
