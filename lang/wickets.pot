@@ -7854,10 +7854,26 @@ msgstr ""
 msgid "{n} points"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid "Knock"
+msgstr ""
+
 #: games/belfry/src/sound.rs
 msgid ""
 "Knock: a firm knock on the beam. One bell of your row is right and in its "
 "place."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid ""
+"a firm knock on the beam. One bell of your row is right and in its place."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid "Tap"
 msgstr ""
 
 #: games/belfry/src/sound.rs
@@ -7866,12 +7882,44 @@ msgid ""
 "another place."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid ""
+"a soft tap on the beam. One bell of your row is in the peal, in another "
+"place."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid "Rope pull"
+msgstr ""
+
 #: games/belfry/src/sound.rs
 msgid "Rope pull: your row is rung and the answer follows."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid "your row is rung and the answer follows."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid "Peal found"
+msgstr ""
+
 #: games/belfry/src/sound.rs
 msgid "Peal found: every bell rings out three times. The peal is solved."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid "every bell rings out three times. The peal is solved."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid "Out of rows"
 msgstr ""
 
 #: games/belfry/src/sound.rs
@@ -7880,20 +7928,59 @@ msgid ""
 "read out."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid ""
+"a single low bell. The tower's rows are spent and the peal is read out."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid "Next peal"
+msgstr ""
+
 #: games/belfry/src/sound.rs
 msgid ""
 "Next peal: a short rising run. In the weekly challenge, the next peal is "
 "waiting."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid ""
+"a short rising run. In the weekly challenge, the next peal is waiting."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid "Dull thud"
+msgstr ""
+
 #: games/belfry/src/sound.rs
 msgid "Dull thud: nothing to do, or no hint to give."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid "nothing to do, or no hint to give."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid "Called place"
 msgstr ""
 
 #: games/belfry/src/sound.rs
 msgid ""
 "Called place: a short, quiet glassy shimmer, just after a bell. On Practice "
 "night, the place the tower captain called, whose bell is already set."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/belfry/src/sound.rs
+msgid ""
+"a short, quiet glassy shimmer, just after a bell. On Practice night, the "
+"place the tower captain called, whose bell is already set."
 msgstr ""
 
 #: games/belfry/src/soundcheck.rs games/birdsong-trail/src/soundcheck.rs games/clover-jig/src/soundcheck.rs games/cupids-quiver/src/soundcheck.rs
@@ -11324,6 +11411,11 @@ msgstr ""
 msgid "Your whistle: the notes you answer with, low, middle and high."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/birdsong-trail/src/soundcheck.rs
+msgid "the notes you answer with, low, middle and high."
+msgstr ""
+
 #. placeholders: {slug}
 #: games/birdsong-trail/src/soundcheck.rs
 msgid "Flock call, {slug}"
@@ -11366,6 +11458,11 @@ msgstr ""
 msgid "Turn: a soft rustle as you turn to face a new way."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/birdsong-trail/src/soundcheck.rs
+msgid "a soft rustle as you turn to face a new way."
+msgstr ""
+
 #: games/birdsong-trail/src/soundcheck.rs
 msgid "Edge of the trail"
 msgstr ""
@@ -11374,6 +11471,11 @@ msgstr ""
 msgid ""
 "Edge of the trail: a rustle and a soft thud. Brambles, a hedge or water "
 "stop the step."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/birdsong-trail/src/soundcheck.rs
+msgid "a rustle and a soft thud. Brambles, a hedge or water stop the step."
 msgstr ""
 
 #: games/birdsong-trail/src/soundcheck.rs
@@ -11386,6 +11488,12 @@ msgid ""
 "friend."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/birdsong-trail/src/soundcheck.rs
+msgid ""
+"a warm rising chime. Your answer matched, and the bird is your friend."
+msgstr ""
+
 #: games/birdsong-trail/src/soundcheck.rs
 msgid "New song"
 msgstr ""
@@ -11394,6 +11502,12 @@ msgstr ""
 msgid ""
 "New song: a soft page turn and a bell. Something new went into your field "
 "guide."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/birdsong-trail/src/soundcheck.rs
+msgid ""
+"a soft page turn and a bell. Something new went into your field guide."
 msgstr ""
 
 #: games/birdsong-trail/src/soundcheck.rs
@@ -11406,6 +11520,12 @@ msgid ""
 "sings again."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/birdsong-trail/src/soundcheck.rs
+msgid ""
+"two soft, low notes. Your answer did not match, and the bird sings again."
+msgstr ""
+
 #: games/birdsong-trail/src/soundcheck.rs
 msgid "Found"
 msgstr ""
@@ -11414,6 +11534,13 @@ msgstr ""
 msgid ""
 "Found: a bright two-note chime. You picked out the right bird, or counted a "
 "flock exactly."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/birdsong-trail/src/soundcheck.rs
+msgid ""
+"a bright two-note chime. You picked out the right bird, or counted a flock "
+"exactly."
 msgstr ""
 
 #: games/birdsong-trail/src/soundcheck.rs
@@ -11426,12 +11553,24 @@ msgid ""
 "the last flock has gone."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/birdsong-trail/src/soundcheck.rs
+msgid ""
+"a gentle rising chord. You reached the end of the trail, or the last flock "
+"has gone."
+msgstr ""
+
 #: games/birdsong-trail/src/soundcheck.rs
 msgid "Wingbeats"
 msgstr ""
 
 #: games/birdsong-trail/src/soundcheck.rs
 msgid "Wingbeats: a soft rush of wings. A migrating flock is coming."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/birdsong-trail/src/soundcheck.rs
+msgid "a soft rush of wings. A migrating flock is coming."
 msgstr ""
 
 #. placeholders: {name}
@@ -13955,9 +14094,31 @@ msgid ""
 "three after a pause."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid ""
+"a deep bodhran beat. Four of them count you in before each tune, and three "
+"after a pause."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "Spot on"
+msgstr ""
+
 #: games/clover-jig/src/sound.rs
 msgid ""
 "Spot on: a small bright chime with your step. It landed right on the beat."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "a small bright chime with your step. It landed right on the beat."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "Close"
 msgstr ""
 
 #: games/clover-jig/src/sound.rs
@@ -13966,10 +14127,32 @@ msgid ""
 "early or late."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid ""
+"a soft dull tick with your step. It landed in time, but a little early or "
+"late."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "Stumble"
+msgstr ""
+
 #: games/clover-jig/src/sound.rs
 msgid ""
 "Stumble: a scuff and a thud. A step was missed, or the wrong step was "
 "danced."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "a scuff and a thud. A step was missed, or the wrong step was danced."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "Claps"
 msgstr ""
 
 #: games/clover-jig/src/sound.rs
@@ -13977,8 +14160,28 @@ msgid ""
 "Claps: the crowd claps three times. Another 8 steps in a row, for a bonus."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "the crowd claps three times. Another 8 steps in a row, for a bonus."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "Applause"
+msgstr ""
+
 #: games/clover-jig/src/sound.rs
 msgid "Applause: the end of a tune."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "the end of a tune."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "Shamrock"
 msgstr ""
 
 #: games/clover-jig/src/sound.rs
@@ -13987,8 +14190,30 @@ msgid ""
 "step good or better for a luck point."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid ""
+"two high chimes with a call, in Saint Patrick's week. Dance that step good "
+"or better for a luck point."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "Luck point"
+msgstr ""
+
 #: games/clover-jig/src/sound.rs
 msgid "Luck point: a quick music box run up. You caught a shamrock."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "a quick music box run up. You caught a shamrock."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "Clover call"
 msgstr ""
 
 #: games/clover-jig/src/sound.rs
@@ -13997,8 +14222,25 @@ msgid ""
 "Dance that step to find the four-leaf clover."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid ""
+"three sparkling notes with a call, once a night at the ceili. Dance that "
+"step to find the four-leaf clover."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "Four-leaf clover"
+msgstr ""
+
 #: games/clover-jig/src/sound.rs
 msgid "Four-leaf clover: a harp sweep and a shimmer. You found it."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/clover-jig/src/sound.rs
+msgid "a harp sweep and a shimmer. You found it."
 msgstr ""
 
 #. placeholders: {sentence_start}
@@ -16326,15 +16568,42 @@ msgstr ""
 msgid "{n} hearts"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Rose"
+msgstr ""
+
 #: games/cupids-quiver/src/sound.rs
 msgid ""
 "Rose: a soft music box tune with a rustle of petals. A rose drifting in the "
 "Valentine's season, worth 25 more than a heart."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid ""
+"a soft music box tune with a rustle of petals. A rose drifting in the "
+"Valentine's season, worth 25 more than a heart."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Golden heart"
+msgstr ""
+
 #: games/cupids-quiver/src/sound.rs
 msgid ""
 "Golden heart: a shimmer of tiny bells. Only on Valentine's night, worth 100."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "a shimmer of tiny bells. Only on Valentine's night, worth 100."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Love note"
 msgstr ""
 
 #: games/cupids-quiver/src/sound.rs
@@ -16343,16 +16612,58 @@ msgid ""
 "to keep the note."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid ""
+"a slow flutter of paper. A folded note drifting slowly. Hit it to keep the "
+"note."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "String creak"
+msgstr ""
+
 #: games/cupids-quiver/src/sound.rs
 msgid "String creak: the bow drawing, rising as the string comes back."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "the bow drawing, rising as the string comes back."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Full draw"
 msgstr ""
 
 #: games/cupids-quiver/src/sound.rs
 msgid "Full draw: a soft wooden click. Let go now to shoot."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "a soft wooden click. Let go now to shoot."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Arrow loosed"
+msgstr ""
+
 #: games/cupids-quiver/src/sound.rs
 msgid "Arrow loosed: a twang and a whoosh."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "a twang and a whoosh."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Slack string"
 msgstr ""
 
 #: games/cupids-quiver/src/sound.rs
@@ -16360,20 +16671,65 @@ msgid ""
 "Slack string: a dull flop. Let go too soon, so the arrow stays in your hand."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "a dull flop. Let go too soon, so the arrow stays in your hand."
+msgstr ""
+
 #: games/cupids-quiver/src/sound.rs
 msgid "Aim tick: the bow turns one step."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "the bow turns one step."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Edge knock"
 msgstr ""
 
 #: games/cupids-quiver/src/sound.rs
 msgid "Edge knock: the bow is turned as far as it goes."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "the bow is turned as far as it goes."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Empty quiver"
+msgstr ""
+
 #: games/cupids-quiver/src/sound.rs
 msgid "Empty quiver: a hollow tap of wood."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "a hollow tap of wood."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Pop"
+msgstr ""
+
 #: games/cupids-quiver/src/sound.rs
 msgid "Pop: a paper heart bursts."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "a paper heart bursts."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Sweetheart chord"
 msgstr ""
 
 #: games/cupids-quiver/src/sound.rs
@@ -16382,20 +16738,72 @@ msgid ""
 "one after the other."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid ""
+"rising chimes that end in a chord. Both hearts of a pair, one after the "
+"other."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Rose caught"
+msgstr ""
+
 #: games/cupids-quiver/src/sound.rs
 msgid "Rose caught: a rustle and a bright harp run."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "a rustle and a bright harp run."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Golden heart caught"
 msgstr ""
 
 #: games/cupids-quiver/src/sound.rs
 msgid "Golden heart caught: a burst of bells, high and bright."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "a burst of bells, high and bright."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Note caught"
+msgstr ""
+
 #: games/cupids-quiver/src/sound.rs
 msgid "Note caught: paper unfolding, and a soft chord. A love note to keep."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "paper unfolding, and a soft chord. A love note to keep."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Miss"
+msgstr ""
+
 #: games/cupids-quiver/src/sound.rs
 msgid "Miss: a far tap on roof tiles. The arrow met nothing."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "a far tap on roof tiles. The arrow met nothing."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Sights ping"
 msgstr ""
 
 #: games/cupids-quiver/src/sound.rs
@@ -16403,16 +16811,51 @@ msgid ""
 "Sights ping: a small glassy ping. Let go now and the arrow meets a target."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "a small glassy ping. Let go now and the arrow meets a target."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Rooftop bell"
+msgstr ""
+
 #: games/cupids-quiver/src/sound.rs
 msgid "Rooftop bell: a round begins."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "a round begins."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Quiver spent"
 msgstr ""
 
 #: games/cupids-quiver/src/sound.rs
 msgid "Quiver spent: three falling notes. The round is over."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "three falling notes. The round is over."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "Dull tap"
+msgstr ""
+
 #: games/cupids-quiver/src/sound.rs
 msgid "Dull tap: nothing to do."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/cupids-quiver/src/sound.rs
+msgid "nothing to do."
 msgstr ""
 
 #: games/cupids-quiver/src/soundcheck.rs
@@ -18680,24 +19123,79 @@ msgstr ""
 msgid "Return to the Dragon Dance title."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Drum"
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid "Drum: a deep drum on every beat. The dragon dances on each one."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a deep drum on every beat. The dragon dances on each one."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "First beat"
 msgstr ""
 
 #: games/dragon-dance/src/sound.rs
 msgid "First beat: the drum with a cymbal, on the first beat of each bar."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "the drum with a cymbal, on the first beat of each bar."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Count-in"
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid "Count-in: wooden clicks before the street begins."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "wooden clicks before the street begins."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Drum roll"
 msgstr ""
 
 #: games/dragon-dance/src/sound.rs
 msgid "Drum roll: a gong strikes in 2 beats. Get ready to rear up."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a gong strikes in 2 beats. Get ready to rear up."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Gong"
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid "Gong: rear up as it strikes."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "rear up as it strikes."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Midnight gong"
 msgstr ""
 
 #: games/dragon-dance/src/sound.rs
@@ -18706,17 +19204,47 @@ msgid ""
 "double."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "the great gong at the end of the New Year parade, worth double."
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid ""
 "Perfect rear: a whoosh and a bright cymbal. You reared right on the gong."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a whoosh and a bright cymbal. You reared right on the gong."
 msgstr ""
 
 #: games/dragon-dance/src/sound.rs
 msgid "Good rear: a whoosh. You reared close to the gong."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a whoosh. You reared close to the gong."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Missed gong"
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid "Missed gong: a dull wooden knock. The gong passed without a rear."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a dull wooden knock. The gong passed without a rear."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Stray rear"
 msgstr ""
 
 #: games/dragon-dance/src/sound.rs
@@ -18724,17 +19252,52 @@ msgid ""
 "Stray rear: a soft thud. You reared with no gong near, and the combo breaks."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a soft thud. You reared with no gong near, and the combo breaks."
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid "Pearl: a soft shimmer ahead of you, in the pearl's lane. Follow it."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a soft shimmer ahead of you, in the pearl's lane. Follow it."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Pearl moves"
 msgstr ""
 
 #: games/dragon-dance/src/sound.rs
 msgid "Pearl moves: a bright chime from the pearl's new lane."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a bright chime from the pearl's new lane."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "On the pearl"
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid ""
 "On the pearl: a soft high ping as your head reaches the pearl's lane."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a soft high ping as your head reaches the pearl's lane."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Off the pearl"
 msgstr ""
 
 #: games/dragon-dance/src/sound.rs
@@ -18743,12 +19306,38 @@ msgid ""
 "the combo breaks."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid ""
+"a falling tone. You were away from the pearl too long, and the combo breaks."
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid "Step: the head moves one lane."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "the head moves one lane."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Street edge"
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid "Street edge: a wooden bump. You are in the last lane on that side."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a wooden bump. You are in the last lane on that side."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Red envelope coming"
 msgstr ""
 
 #: games/dragon-dance/src/sound.rs
@@ -18757,12 +19346,42 @@ msgid ""
 "lane."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a papery rustle with little bells, coming down its lane."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Envelope caught"
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid "Envelope caught: coins and a chime. The dragon grows one segment."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "coins and a chime. The dragon grows one segment."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Envelope missed"
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid "Envelope missed: a soft flutter as it drifts past."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a soft flutter as it drifts past."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Firecrackers coming"
 msgstr ""
 
 #: games/dragon-dance/src/sound.rs
@@ -18771,8 +19390,23 @@ msgid ""
 "it."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a fizzing crackle in their lane. Keep your head out of it."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Firecrackers burst"
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid "Firecrackers burst: a crackle in another lane. You are safe."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a crackle in another lane. You are safe."
 msgstr ""
 
 #: games/dragon-dance/src/sound.rs
@@ -18781,16 +19415,58 @@ msgid ""
 "you lose points."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid ""
+"firecrackers right under you and a clatter. The tail stumbles and you lose "
+"points."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Lantern coming"
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid "Lantern coming: a warm, low glow of chimes, on the Lantern walk."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a warm, low glow of chimes, on the Lantern walk."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Lantern caught"
 msgstr ""
 
 #: games/dragon-dance/src/sound.rs
 msgid "Lantern caught: a soft harp run."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a soft harp run."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Crowd cheers"
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid "Crowd cheers: a shop's crowd cheers as you dance past."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a shop's crowd cheers as you dance past."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Polite clapping"
 msgstr ""
 
 #: games/dragon-dance/src/sound.rs
@@ -18798,17 +19474,47 @@ msgid ""
 "Polite clapping: a shop's crowd claps. Keep a combo going and they cheer."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a shop's crowd claps. Keep a combo going and they cheer."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Combo cheer"
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid ""
 "Combo cheer: a big cheer and a cymbal for every 16 beats on the pearl."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a big cheer and a cymbal for every 16 beats on the pearl."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "Countdown"
 msgstr ""
 
 #: games/dragon-dance/src/sound.rs
 msgid "Countdown: a ticking wood block, the beats before midnight."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "a ticking wood block, the beats before midnight."
+msgstr ""
+
 #: games/dragon-dance/src/sound.rs
 msgid "Dull tap: nothing to do there."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/dragon-dance/src/sound.rs
+msgid "nothing to do there."
 msgstr ""
 
 #: games/dragon-dance/src/soundcheck.rs games/liberty-lights/src/rules.rs
@@ -21293,6 +21999,11 @@ msgstr ""
 msgid "The edge of the meadow. Turn back the other way."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "A soft hum"
+msgstr ""
+
 #: games/firefly-meadow/src/sound.rs
 msgid ""
 "A soft hum: a firefly is close enough to catch. Press the main action as it "
@@ -21301,6 +22012,17 @@ msgstr ""
 
 #: games/firefly-meadow/src/sound.rs
 msgid "Firefly in reach"
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid ""
+"a firefly is close enough to catch. Press the main action as it glows."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "A light tick"
 msgstr ""
 
 #: games/firefly-meadow/src/sound.rs
@@ -21313,12 +22035,33 @@ msgstr ""
 msgid "Flash answered"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid ""
+"you answered one flash of a blink with several flashes. Answer the rest."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "A glassy clink"
+msgstr ""
+
 #: games/firefly-meadow/src/sound.rs
 msgid "A glassy clink: the firefly is safe in your jar."
 msgstr ""
 
 #: games/firefly-meadow/src/sound.rs
 msgid "Caught"
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "the firefly is safe in your jar."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "A rising chime"
 msgstr ""
 
 #: games/firefly-meadow/src/sound.rs
@@ -21330,12 +22073,32 @@ msgstr ""
 msgid "New species"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "a firefly you have never caught. It goes in your journal."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "A soft puff"
+msgstr ""
+
 #: games/firefly-meadow/src/sound.rs
 msgid "A soft puff: the firefly is dark just now. Wait for its glow."
 msgstr ""
 
 #: games/firefly-meadow/src/sound.rs
 msgid "Not glowing yet"
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "the firefly is dark just now. Wait for its glow."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "A falling sigh"
 msgstr ""
 
 #: games/firefly-meadow/src/sound.rs
@@ -21348,12 +22111,22 @@ msgstr ""
 msgid "Drifted on"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "a blink ended before you answered every flash. Try its next blink."
+msgstr ""
+
 #: games/firefly-meadow/src/sound.rs
 msgid "A tap on the glass: the jar is full. Let them go to make room."
 msgstr ""
 
 #: games/firefly-meadow/src/sound.rs
 msgid "Jar full"
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "A dull hush"
 msgstr ""
 
 #: games/firefly-meadow/src/sound.rs
@@ -21364,6 +22137,16 @@ msgstr ""
 msgid "Nothing in reach"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "no firefly is close enough."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "A rising shimmer"
+msgstr ""
+
 #: games/firefly-meadow/src/sound.rs
 msgid ""
 "A rising shimmer: the jar opens, the fireflies fly up and their notes ring "
@@ -21372,6 +22155,11 @@ msgstr ""
 
 #: games/firefly-meadow/src/sound.rs
 msgid "Release"
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "the jar opens, the fireflies fly up and their notes ring as a chord."
 msgstr ""
 
 #: games/firefly-meadow/src/sound.rs
@@ -21432,6 +22220,11 @@ msgstr ""
 msgid "The chorus flash"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "the whole meadow flashes at once."
+msgstr ""
+
 #: games/firefly-meadow/src/sound.rs
 msgid "In step"
 msgstr ""
@@ -21442,12 +22235,22 @@ msgid ""
 "chorus."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "you pressed with the flash, and a straggler joins the chorus."
+msgstr ""
+
 #: games/firefly-meadow/src/sound.rs
 msgid "Midsummer night: that press missed the flash. Press with the chorus."
 msgstr ""
 
 #: games/firefly-meadow/src/sound.rs
 msgid "Off the beat"
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/firefly-meadow/src/sound.rs
+msgid "that press missed the flash. Press with the chorus."
 msgstr ""
 
 #: games/firefly-meadow/src/soundcheck.rs games/lantern-lake/src/menus.rs
@@ -23418,30 +24221,96 @@ msgstr ""
 msgid "{n} moves"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "Hearts card"
+msgstr ""
+
 #: games/fireside-patience/src/sound.rs
 msgid ""
 "Hearts card: a paper slide with a warm low bell. Every hearts card you "
 "reach or pick up."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid ""
+"a paper slide with a warm low bell. Every hearts card you reach or pick up."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "Diamonds card"
+msgstr ""
+
 #: games/fireside-patience/src/sound.rs
 msgid "Diamonds card: a paper slide with a bright high bell."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "a paper slide with a bright high bell."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "Clubs card"
 msgstr ""
 
 #: games/fireside-patience/src/sound.rs
 msgid "Clubs card: a paper slide with a soft wooden knock."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "a paper slide with a soft wooden knock."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "Spades card"
+msgstr ""
+
 #: games/fireside-patience/src/sound.rs
 msgid "Spades card: a paper slide with a deep wooden knock."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "a paper slide with a deep wooden knock."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "Card flip"
 msgstr ""
 
 #: games/fireside-patience/src/sound.rs
 msgid "Card flip: a face-down card turns face up. Its name follows."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "a face-down card turns face up. Its name follows."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "Soft tap"
+msgstr ""
+
 #: games/fireside-patience/src/sound.rs
 msgid "Soft tap: the cards you held are placed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "the cards you held are placed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "Muffled thud"
 msgstr ""
 
 #: games/fireside-patience/src/sound.rs
@@ -23450,13 +24319,44 @@ msgid ""
 "holding them."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid ""
+"the cards cannot go there. The reason follows, and you keep holding them."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "Stock turn"
+msgstr ""
+
 #: games/fireside-patience/src/sound.rs
 msgid ""
 "Stock turn: a card is turned up from the stock, or the stock is refilled."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "a card is turned up from the stock, or the stock is refilled."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "Foundation chime"
+msgstr ""
+
 #: games/fireside-patience/src/sound.rs
 msgid "Foundation chime: a suit is complete, ace to king."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "a suit is complete, ace to king."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "Row chime"
 msgstr ""
 
 #: games/fireside-patience/src/sound.rs
@@ -23465,12 +24365,33 @@ msgid ""
 "foundations."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid ""
+"you cross from the piles to the stock, or from the stock to the foundations."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "Undo swish"
+msgstr ""
+
 #: games/fireside-patience/src/sound.rs
 msgid "Undo swish: the last move is taken back."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "the last move is taken back."
+msgstr ""
+
 #: games/fireside-patience/src/sound.rs
 msgid "Dull tap: nothing to do there just now."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/fireside-patience/src/sound.rs
+msgid "nothing to do there just now."
 msgstr ""
 
 #: games/fireside-patience/src/soundcheck.rs
@@ -27351,8 +28272,23 @@ msgstr ""
 msgid "Endless ride in {name}"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Road bike tyres"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Road bike tyres: a thin hiss that rises with your speed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a thin hiss that rises with your speed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Road bike freewheel"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
@@ -27361,24 +28297,84 @@ msgid ""
 "slow."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a fast, light ticking while you coast. It slows as you slow."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Road bike chain"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Road bike chain: a fine, soft purr while you pedal."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a fine, soft purr while you pedal."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "BMX tyres"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
 msgid "BMX tyres: a chunky buzz that rises with your speed."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a chunky buzz that rises with your speed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "BMX freewheel"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "BMX freewheel: a loud, slower clatter while you coast."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a loud, slower clatter while you coast."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "BMX chain"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
 msgid "BMX chain: a chunky rattle while you pedal."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a chunky rattle while you pedal."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Mountain bike tyres"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Mountain bike tyres: a knobbly hum that rises with your speed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a knobbly hum that rises with your speed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Mountain bike freewheel"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
@@ -27387,16 +28383,56 @@ msgid ""
 "you slow."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a deep, fast ticking while you coast. It slows as you slow."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Mountain bike chain"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Mountain bike chain: a gritty purr while you pedal."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a gritty purr while you pedal."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "E-bike tyres"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
 msgid "E-bike tyres: a soft hiss that rises with your speed."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a soft hiss that rises with your speed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "E-bike freewheel"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "E-bike freewheel: a quiet tick while you coast."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a quiet tick while you coast."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "E-bike motor"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
@@ -27405,52 +28441,178 @@ msgid ""
 "kilometres an hour."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid ""
+"a high electric whine while you pedal. It fades above 25 kilometres an hour."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Moped tyres"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Moped tyres: a low road roar that rises with your speed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a low road roar that rises with your speed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Moped idle"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
 msgid "Moped idle: a putter while you let go of the throttle."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a putter while you let go of the throttle."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Moped throttle"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Moped throttle: a two-stroke buzz that climbs as you speed up."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a two-stroke buzz that climbs as you speed up."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs games/tightrope/help.md
+msgid "Wind"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
 msgid "Wind: a rush in your ears that grows as you go faster."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a rush in your ears that grows as you go faster."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Brakes"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Brakes: a short squeal as the brakes bite."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a short squeal as the brakes bite."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Steer"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
 msgid "Steer: a soft swish as you lean left or right."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a soft swish as you lean left or right."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Sprint"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Sprint: a hard breath as you stand on the pedals."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a hard breath as you stand on the pedals."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Out of breath"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
 msgid "Out of breath: a long gasp. Sprint is spent until you rest."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a long gasp. Sprint is spent until you rest."
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Hop: a spring and a rattle as both wheels leave the road."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a spring and a rattle as both wheels leave the road."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Clean landing"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
 msgid "Clean landing: a light double thump."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a light double thump."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Hard landing"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Hard landing: a heavy crunch that costs you speed."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a heavy crunch that costs you speed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Pothole jolt"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Pothole jolt: a deep thud as a wide tyre drops through a pothole."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a deep thud as a wide tyre drops through a pothole."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Flat tyre"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
@@ -27459,24 +28621,85 @@ msgid ""
 "tube."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid ""
+"a pop and a hiss. Stop and stand still for 3 seconds to swap the tube."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Tube swapped"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Tube swapped: a pump and a click. The tyre is fixed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a pump and a click. The tyre is fixed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Curb strike"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
 msgid "Curb strike: a hard metal bang as a wheel hits a curb."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a hard metal bang as a wheel hits a curb."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Crash"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Crash: a clatter and a scrape. You are down for 3 seconds."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a clatter and a scrape. You are down for 3 seconds."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Back up"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
 msgid "Back up: a click into the pedals. Ride on."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a click into the pedals. Ride on."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Running wide"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Running wide: a long tyre skid at a turn taken too fast."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a long tyre skid at a turn taken too fast."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Edge rumble"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
@@ -27485,15 +28708,49 @@ msgid ""
 "cars or the centre line."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid ""
+"a low rumble from the edge you are pressed against, the parked cars or the "
+"centre line."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Lane line"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid ""
 "Lane line: a short thrum as you cross the line between the bike lane and "
 "the traffic lane."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid ""
+"a short thrum as you cross the line between the bike lane and the traffic "
+"lane."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Door zone"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid ""
 "Door zone: a faint murmur of parked cars beside you. A door could open here."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a faint murmur of parked cars beside you. A door could open here."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Hazard tick"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
@@ -27502,10 +28759,34 @@ msgid ""
 "faster and higher as you get closer."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid ""
+"a pothole or an open door ahead, from its side. It ticks faster and higher "
+"as you get closer."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Curb tone"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid ""
 "Curb tone: a low, hard tick from a raised curb across the bike lane. Ride "
 "around it, or hop it on a BMX."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid ""
+"a low, hard tick from a raised curb across the bike lane. Ride around it, "
+"or hop it on a BMX."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Ramp tone"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
@@ -27514,8 +28795,29 @@ msgid ""
 "a jump."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid ""
+"a bright rising tick from a ramp ahead. Press hop at its lip for a jump."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Car"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Car: an engine hum. Muffled behind you, clearer as it draws level."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "an engine hum. Muffled behind you, clearer as it draws level."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Oncoming car"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
@@ -27524,8 +28826,24 @@ msgid ""
 "bike lane."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid ""
+"an engine coming toward you in the traffic lane. Get into the bike lane."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Oncoming horn"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Oncoming horn: a long blast from ahead. An oncoming car is coming."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a long blast from ahead. An oncoming car is coming."
 msgstr ""
 
 #: games/freewheel/src/sound.rs
@@ -27534,12 +28852,44 @@ msgid ""
 "slowly to grab it."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid ""
+"a shop doorbell ahead, from the side the parcel is on. Ride over it slowly "
+"to grab it."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Parcel grabbed"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Parcel grabbed: a cardboard thump."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a cardboard thump."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Cobbles"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Cobbles: a rattling rumble under your wheels in Old Town."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a rattling rumble under your wheels in Old Town."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Door handle"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
@@ -27547,12 +28897,42 @@ msgid ""
 "Door handle: a sharp click from a parked car. Its door opens in a moment."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a sharp click from a parked car. Its door opens in a moment."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Door open"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Door open: a creak as the door swings into the door zone."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a creak as the door swings into the door zone."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Horn"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Horn: a car stuck behind you. Move right to let it pass."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a car stuck behind you. Move right to let it pass."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Thank-you toot"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
@@ -27561,24 +28941,84 @@ msgid ""
 "tip."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "two short beeps as a car you let by passes. That earns a tip."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Left turn chime"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Left turn chime: from your left, a junction turn is coming."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "from your left, a junction turn is coming."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Right turn chime"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
 msgid "Right turn chime: from your right, a junction turn is coming."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "from your right, a junction turn is coming."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Turn made"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Turn made: a bright chime as you take a junction turn cleanly."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a bright chime as you take a junction turn cleanly."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Finish bell"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
 msgid "Finish bell: a bell from the finish line ahead."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a bell from the finish line ahead."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Finish"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Finish: a cheer and a bell as you cross the line."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a cheer and a bell as you cross the line."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Act now"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
@@ -27587,20 +29027,61 @@ msgid ""
 "steer now."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid ""
+"a sharp double beep. The hazard is in your line: hop, brake or steer now."
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Dull tap: nothing happens, such as a hop while stopped."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "nothing happens, such as a hop while stopped."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Countdown beep"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
 msgid "Countdown beep: the ride starts after three."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "the ride starts after three."
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Go: a high beep. The ride has started."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a high beep. The ride has started."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Lesson passed"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid "Lesson passed: a rising chime in training."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "a rising chime in training."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Leaf pile"
 msgstr ""
 
 #: games/freewheel/src/sound.rs
@@ -27609,16 +29090,47 @@ msgid ""
 "the Leaf season ride. It is not a hazard."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid ""
+"a dry rustle from a pile of leaves ahead in the bike lane, in the Leaf "
+"season ride. It is not a hazard."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Leaf crunch"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid ""
 "Leaf crunch: a crackle as you ride through a leaf pile, for 1000 ride "
 "points. The freewheel goes quiet for a moment."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid ""
+"a crackle as you ride through a leaf pile, for 1000 ride points. The "
+"freewheel goes quiet for a moment."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid "Clock tick"
+msgstr ""
+
 #: games/freewheel/src/sound.rs
 msgid ""
 "Clock tick: against the clock, under 15 seconds left. It ticks twice as "
 "fast in the last 5."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/freewheel/src/sound.rs
+msgid ""
+"against the clock, under 15 seconds left. It ticks twice as fast in the "
+"last 5."
 msgstr ""
 
 #: games/freewheel/src/soundcheck.rs games/haunted-hallways/src/soundcheck.rs games/tide-pools/src/menus.rs
@@ -29385,9 +30897,21 @@ msgid ""
 "three after a pause."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/graveyard-shuffle/src/sound.rs
+msgid ""
+"a coffin lid knock. Four of them count you in before each song, and three "
+"after a pause."
+msgstr ""
+
 #: games/graveyard-shuffle/src/sound.rs
 msgid ""
 "Spot on: a small spooky chime with your move. It landed right on the beat."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/graveyard-shuffle/src/sound.rs
+msgid "a small spooky chime with your move. It landed right on the beat."
 msgstr ""
 
 #: games/graveyard-shuffle/src/sound.rs
@@ -29396,10 +30920,29 @@ msgid ""
 "early or late."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/graveyard-shuffle/src/sound.rs
+msgid ""
+"a soft dull tick with your move. It landed in time, but a little early or "
+"late."
+msgstr ""
+
 #: games/graveyard-shuffle/src/sound.rs
 msgid ""
 "Stumble: a thud and a clatter of bones. A move was missed, or the wrong "
 "move was danced."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/graveyard-shuffle/src/sound.rs
+msgid ""
+"a thud and a clatter of bones. A move was missed, or the wrong move was "
+"danced."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/graveyard-shuffle/src/sound.rs
+msgid "Bony claps"
 msgstr ""
 
 #: games/graveyard-shuffle/src/sound.rs
@@ -29408,8 +30951,18 @@ msgid ""
 "bonus."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/graveyard-shuffle/src/sound.rs
+msgid "the crowd claps three times. Another 8 moves in a row, for a bonus."
+msgstr ""
+
 #: games/graveyard-shuffle/src/sound.rs
 msgid "Applause: the end of a song, with howls and rattles."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/graveyard-shuffle/src/sound.rs
+msgid "the end of a song, with howls and rattles."
 msgstr ""
 
 #. placeholders: {word}, {call_words}, {dance}, {move_words}
@@ -37771,8 +39324,23 @@ msgstr ""
 msgid "{m} minutes {seconds}"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Footstep on floorboards"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Footstep on floorboards: you moved one step, in the upper wings."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "you moved one step, in the upper wings."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Footstep on stone"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
@@ -37780,8 +39348,28 @@ msgid ""
 "Footstep on stone: you moved one step, from the flooded cellars down."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "you moved one step, from the flooded cellars down."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Wall thud"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Wall thud: you walked into a wall, or a hole, and did not move."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "you walked into a wall, or a hole, and did not move."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Rattling handle"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
@@ -37789,17 +39377,57 @@ msgid ""
 "Rattling handle: the exit door is still locked. Solve the room first."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "the exit door is still locked. Solve the room first."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Heavy slam"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid ""
 "Heavy slam: the door you came in by is shut fast. There is no going back."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "the door you came in by is shut fast. There is no going back."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Bolt sliding back"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
 msgid "Bolt sliding back: the room is solved and its exit door unlocks."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "the room is solved and its exit door unlocks."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Cold draught"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Cold draught: an open exit door. Follow it to leave the room."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "an open exit door. Follow it to leave the room."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Spirit's whisper"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
@@ -37808,12 +39436,42 @@ msgid ""
 "it."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "a spirit seals the exit door and wants an offering. Go to it."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Creaking door"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Creaking door: you pass through into the next room."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "you pass through into the next room."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Stairs"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Stairs: you leave the floor."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "you leave the floor."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Phonograph crackle"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
@@ -37822,14 +39480,41 @@ msgid ""
 "follow are the clue."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid ""
+"a matching puzzle, or a missing sound. The sounds that follow are the clue."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Medium's gong"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid ""
 "Medium's gong: a séance. Two to four sounds follow; take their things in "
 "that order."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid ""
+"a séance. Two to four sounds follow; take their things in that order."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Medium's hum"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Medium's hum: you took the séance's next thing in the right order."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "you took the séance's next thing in the right order."
 msgstr ""
 
 #. placeholders: {name}, {sound}
@@ -37837,17 +39522,52 @@ msgstr ""
 msgid "The {name}: {sound}."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Grab"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Grab: you picked up the right thing."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "you picked up the right thing."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Chime"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
 msgid "Chime: the room's puzzle is solved."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "the room's puzzle is solved."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Mocking laugh"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid ""
 "Mocking laugh: not what the room wants. You lose time on the haunt clock."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "not what the room wants. You lose time on the haunt clock."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Warped shriek"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
@@ -37856,24 +39576,84 @@ msgid ""
 "away."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "a mimic, a copy of the answer. You lose time, and it hops away."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Dust"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Dust: there is nothing to pick up here."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "there is nothing to pick up here."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Rustle"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
 msgid "Rustle: you chose another thing you carry."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "you chose another thing you carry."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "The spirit sighs"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "The spirit sighs: it accepts your offering."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "it accepts your offering."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "The spirit shrieks"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
 msgid "The spirit shrieks: wrong offering. You lose time."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "wrong offering. You lose time."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Bell toll"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Bell toll: the haunt clock is running low."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "the haunt clock is running low."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Groaning board"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
@@ -37882,12 +39662,38 @@ msgid ""
 "Do not step on it."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid ""
+"a rotten board next to you, in the direction you hear it. Do not step on it."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Crash of boards"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Crash of boards: you fell through a rotten board and lost courage."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "you fell through a rotten board and lost courage."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Rising chord"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Rising chord: a landing. You get one courage back."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "a landing. You get one courage back."
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
@@ -37909,10 +39715,25 @@ msgstr ""
 msgid "A ghost, {name}: {voice}. {what}"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Freeze stab"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid ""
 "Freeze stab: a ghost is passing right by you. Do not move until it has "
 "passed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "a ghost is passing right by you. Do not move until it has passed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Howl"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
@@ -37921,13 +39742,39 @@ msgid ""
 "passed."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid ""
+"the blind hound is passing right by you. Keep walking until it has passed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Long breath out"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Long breath out: the ghost has passed without finding you."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "the ghost has passed without finding you."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Scream"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
 msgid ""
 "Scream: something caught you. You lose courage and flee to the room's door."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "something caught you. You lose courage and flee to the room's door."
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
@@ -37936,18 +39783,60 @@ msgid ""
 "footsteps. Do not let it reach you."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid ""
+"a low breathing drone that walks the room, following your footsteps. Do not "
+"let it reach you."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Soft glass chime"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid ""
 "Soft glass chime: a charm lying in the room. Walk onto it to take it."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "a charm lying in the room. Walk onto it to take it."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Bright pluck"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
 msgid "Bright pluck: you took a charm."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "you took a charm."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Hiss of salt"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid ""
 "Hiss of salt: your salt warded something off. You stay where you are."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "your salt warded something off. You stay where you are."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Swish"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
@@ -37956,13 +39845,45 @@ msgid ""
 "after it passes."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid ""
+"the pendulum's blade, sweeping along its row. Cross that row just after it "
+"passes."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Splash"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid ""
 "Splash: you waded into deep water. Wading is slow and brings ghosts sooner."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "you waded into deep water. Wading is slow and brings ghosts sooner."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Lapping water"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Lapping water: deep water next to you, in the direction you hear it."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "deep water next to you, in the direction you hear it."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Trickling dust"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
@@ -37970,8 +39891,28 @@ msgid ""
 "Trickling dust: a stone is about to fall where you stand. Step off at once."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "a stone is about to fall where you stand. Step off at once."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Crash of stone"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Crash of stone: a stone hit the floor."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "a stone hit the floor."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Deep rumble"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
@@ -37979,8 +39920,28 @@ msgid ""
 "Deep rumble: the house shifted, and the exit door moved to another wall."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "the house shifted, and the exit door moved to another wall."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Heavy footstep"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Heavy footstep: the founder, coming after you."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "the founder, coming after you."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Rising scrape"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
@@ -37989,21 +39950,68 @@ msgid ""
 "ringing note, or step away."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid ""
+"the founder winds up a blow beside you. Strike at the ringing note, or step "
+"away."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Ringing note"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Ringing note: the founder's blow is at its height. Strike now."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "the founder's blow is at its height. Strike now."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Iron clang"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
 msgid "Iron clang: your candlestick hit the founder."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "your candlestick hit the founder."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Dull knock"
+msgstr ""
+
 #: games/haunted-hallways/src/sound.rs
 msgid "Dull knock: you struck too soon and the founder blocked. Step away."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "you struck too soon and the founder blocked. Step away."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "Crumbling stone"
 msgstr ""
 
 #: games/haunted-hallways/src/sound.rs
 msgid ""
 "Crumbling stone: the founder falls to dust for the rest of the floor."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/haunted-hallways/src/sound.rs
+msgid "the founder falls to dust for the rest of the floor."
 msgstr ""
 
 #: games/haunted-hallways/src/soundcheck.rs games/tide-pools/src/menus.rs
@@ -40042,10 +42050,27 @@ msgstr ""
 msgid "lamp burning"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "Lamp out"
+msgstr ""
+
 #: games/lamplighter/src/sound.rs
 msgid ""
 "Lamp out: a thin whistle of draught across empty glass. It pulses from the "
 "wall where a lamp needs lighting, louder as you come near."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid ""
+"a thin whistle of draught across empty glass. It pulses from the wall where "
+"a lamp needs lighting, louder as you come near."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "Lamp burning"
 msgstr ""
 
 #: games/lamplighter/src/sound.rs
@@ -40054,10 +42079,33 @@ msgid ""
 "wall as you pass a lamp that is lit."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid ""
+"the small flutter of a candle flame. You hear it from the wall as you pass "
+"a lamp that is lit."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "Lighting"
+msgstr ""
+
 #: games/lamplighter/src/sound.rs
 msgid ""
 "Lighting: a match strike flaring into a glass ting. The lamp you reached "
 "for is lit."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid ""
+"a match strike flaring into a glass ting. The lamp you reached for is lit."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "Bare wall"
 msgstr ""
 
 #: games/lamplighter/src/sound.rs
@@ -40065,12 +42113,37 @@ msgid ""
 "Bare wall: one dull knock. There is no lamp on that wall at this step."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "one dull knock. There is no lamp on that wall at this step."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "Already burning"
+msgstr ""
+
 #: games/lamplighter/src/sound.rs
 msgid "Already burning: a soft felt knock. That lamp is lit already."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "a soft felt knock. That lamp is lit already."
+msgstr ""
+
 #: games/lamplighter/src/sound.rs
 msgid "Footstep: a soft step on wooden boards, one step along the hall."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "a soft step on wooden boards, one step along the hall."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "Lobby door"
 msgstr ""
 
 #: games/lamplighter/src/sound.rs
@@ -40079,12 +42152,42 @@ msgid ""
 "hall."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "a door creaking on its hinges. You are at the lobby end of the hall."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "Far wall"
+msgstr ""
+
 #: games/lamplighter/src/sound.rs
 msgid "Far wall: two hollow knocks. You are at the far end of the hall."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "two hollow knocks. You are at the far end of the hall."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "Taper low"
+msgstr ""
+
 #: games/lamplighter/src/sound.rs
 msgid "Taper low: a low, muted bell. The taper has 20 seconds left."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "a low, muted bell. The taper has 20 seconds left."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "Taper out"
 msgstr ""
 
 #: games/lamplighter/src/sound.rs
@@ -40092,9 +42195,29 @@ msgid ""
 "Taper out: a short puff. The taper burned down, and the taper bonus is gone."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "a short puff. The taper burned down, and the taper bonus is gone."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "Fresh taper"
+msgstr ""
+
 #: games/lamplighter/src/sound.rs
 msgid ""
 "Fresh taper: a quick match. Mabel lit you a new taper, so you can carry on."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "a quick match. Mabel lit you a new taper, so you can carry on."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "Draught"
 msgstr ""
 
 #: games/lamplighter/src/sound.rs
@@ -40103,10 +42226,26 @@ msgid ""
 "hall."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid ""
+"a long gust through a doorway. It blew a lamp out somewhere in the hall."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "Hall lit"
+msgstr ""
+
 #: games/lamplighter/src/sound.rs
 msgid ""
 "Hall lit: a rising run of glass. Every lamp is burning, and the round is "
 "over."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/lamplighter/src/sound.rs
+msgid "a rising run of glass. Every lamp is burning, and the round is over."
 msgstr ""
 
 #: games/lamplighter/src/soundcheck.rs
@@ -54582,10 +56721,34 @@ msgid ""
 "where you stand."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid ""
+"a soft shoe on the approach. You moved one board, and it sounds from where "
+"you stand."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "Aim tone"
+msgstr ""
+
 #: games/midnight-lanes/src/sound.rs
 msgid ""
 "Aim tone: a soft high tone. It sounds from where the ball would cross the "
 "pins with a clean release."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid ""
+"a soft high tone. It sounds from where the ball would cross the pins with a "
+"clean release."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "Swing tone"
 msgstr ""
 
 #: games/midnight-lanes/src/sound.rs
@@ -54594,8 +56757,24 @@ msgid ""
 "the top."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid ""
+"a hum that rises to the top of the swing, then falls. Let go at the top."
+msgstr ""
+
 #: games/midnight-lanes/src/sound.rs
 msgid "Release: a thump as the ball meets the lane."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "a thump as the ball meets the lane."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "Rolling ball"
 msgstr ""
 
 #: games/midnight-lanes/src/sound.rs
@@ -54604,17 +56783,59 @@ msgid ""
 "as it nears the pins."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid ""
+"a low rumble that moves across with the ball and grows louder as it nears "
+"the pins."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "Gutter"
+msgstr ""
+
 #: games/midnight-lanes/src/sound.rs
 msgid ""
 "Gutter: a hollow rattle. The ball left the lane and will hit no pins."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "a hollow rattle. The ball left the lane and will hit no pins."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "Light clatter"
 msgstr ""
 
 #: games/midnight-lanes/src/sound.rs
 msgid "Light clatter: a few pins falling."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "a few pins falling."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "Heavy clatter"
+msgstr ""
+
 #: games/midnight-lanes/src/sound.rs
 msgid "Heavy clatter: most of the rack falling at once."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "most of the rack falling at once."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "Pinsetter"
 msgstr ""
 
 #: games/midnight-lanes/src/sound.rs
@@ -54623,10 +56844,31 @@ msgid ""
 "set."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid ""
+"a mechanical sweep and clunk as the deck is cleared and pins are set."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "Ball return"
+msgstr ""
+
 #: games/midnight-lanes/src/sound.rs
 msgid ""
 "Ball return: a rolling rumble and a knock. Your ball is back and you can "
 "roll."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "a rolling rumble and a knock. Your ball is back and you can roll."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "Strike sting"
 msgstr ""
 
 #: games/midnight-lanes/src/sound.rs
@@ -54634,8 +56876,28 @@ msgid ""
 "Strike sting: a short jukebox flourish. All ten pins with the first ball."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "a short jukebox flourish. All ten pins with the first ball."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "Spare bell"
+msgstr ""
+
 #: games/midnight-lanes/src/sound.rs
 msgid "Spare bell: a bright bell. The second ball cleared the rest."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "a bright bell. The second ball cleared the rest."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "Pumpkins falling, light"
 msgstr ""
 
 #: games/midnight-lanes/src/sound.rs
@@ -54644,15 +56906,40 @@ msgid ""
 "went down."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "a hollow squash. On Pumpkin night, a few pumpkins went down."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "Pumpkins falling, heavy"
+msgstr ""
+
 #: games/midnight-lanes/src/sound.rs
 msgid ""
 "Pumpkins falling, heavy: a long hollow tumble. On Pumpkin night, five or "
 "more went down."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "a long hollow tumble. On Pumpkin night, five or more went down."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "Grin carved"
+msgstr ""
+
 #: games/midnight-lanes/src/sound.rs
 msgid ""
 "Grin carved: a knife scrape and a low chord. A strike on Pumpkin night."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/midnight-lanes/src/sound.rs
+msgid "a knife scrape and a low chord. A strike on Pumpkin night."
 msgstr ""
 
 #: games/midnight-lanes/src/soundcheck.rs
@@ -62582,13 +64869,43 @@ msgstr ""
 msgid "Step: a soft tap on wooden boards. You moved one cell."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "a soft tap on wooden boards. You moved one cell."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "Nibble"
+msgstr ""
+
 #: games/pantry-mouse/src/sound.rs
 msgid "Nibble: a quick crunch. You ate a crumb, for 10 points."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "a quick crunch. You ate a crumb, for 10 points."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "Wall"
 msgstr ""
 
 #: games/pantry-mouse/src/sound.rs
 msgid ""
 "Wall: a dull thud. A wall is in the way, and the open ways are spoken."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "a dull thud. A wall is in the way, and the open ways are spoken."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "Sniff tick"
 msgstr ""
 
 #: games/pantry-mouse/src/sound.rs
@@ -62597,8 +64914,29 @@ msgid ""
 "nearest first."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid ""
+"a tiny bright tick. Each one is a crumb, from its direction, nearest first."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "Ginger cat"
+msgstr ""
+
 #: games/pantry-mouse/src/sound.rs
 msgid "Ginger cat: a bell on its collar. It heads straight for you."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "a bell on its collar. It heads straight for you."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "Tabby cat"
 msgstr ""
 
 #: games/pantry-mouse/src/sound.rs
@@ -62607,10 +64945,31 @@ msgid ""
 "chases."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "soft padding paws. It wanders until it is 4 steps away, then chases."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "Grey cat"
+msgstr ""
+
 #: games/pantry-mouse/src/sound.rs
 msgid ""
 "Grey cat: a low purr. It wanders like the tabby, and joins in the monthly "
 "challenge."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid ""
+"a low purr. It wanders like the tabby, and joins in the monthly challenge."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "Cat close"
 msgstr ""
 
 #: games/pantry-mouse/src/sound.rs
@@ -62619,9 +64978,25 @@ msgid ""
 "or nearer."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid ""
+"a short rising meow from the cat's side. A cat is 2 steps away or nearer."
+msgstr ""
+
 #: games/pantry-mouse/src/sound.rs
 msgid ""
 "Caught: a pounce and a squeak. A cat caught you and you lose a whisker."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "a pounce and a squeak. A cat caught you and you lose a whisker."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "Freeze"
 msgstr ""
 
 #: games/pantry-mouse/src/sound.rs
@@ -62630,12 +65005,43 @@ msgid ""
 "of you."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid ""
+"an indrawn breath. You keep still and the nearest cat loses track of you."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "Thaw"
+msgstr ""
+
 #: games/pantry-mouse/src/sound.rs
 msgid "Thaw: a soft breath out. You can move again."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "a soft breath out. You can move again."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "Pantry clear"
+msgstr ""
+
 #: games/pantry-mouse/src/sound.rs
 msgid "Pantry clear: a bright rising run of notes. Every crumb is gone."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "a bright rising run of notes. Every crumb is gone."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "Turkey scrap"
 msgstr ""
 
 #: games/pantry-mouse/src/sound.rs
@@ -62645,11 +65051,31 @@ msgid ""
 "hides."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid ""
+"a juicy chew. In the Leftovers pantry at Thanksgiving, a turkey scrap, for "
+"50 points. A sniff plays it from where the nearest one hides."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid "Cheese rind"
+msgstr ""
+
 #: games/pantry-mouse/src/sound.rs
 msgid ""
 "Cheese rind: a soft glassy chime. On Bin night, the first Tuesday of every "
 "month, a cheese rind in every pantry, for 100 points. A sniff plays it from "
 "where it hides."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/pantry-mouse/src/sound.rs
+msgid ""
+"a soft glassy chime. On Bin night, the first Tuesday of every month, a "
+"cheese rind in every pantry, for 100 points. A sniff plays it from where it "
+"hides."
 msgstr ""
 
 #: games/pantry-mouse/src/soundcheck.rs
@@ -63750,9 +66176,24 @@ msgstr ""
 msgid "across the table"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "Cup rattle"
+msgstr ""
+
 #: games/riverboat-dice/src/sound.rs
 msgid ""
 "Cup rattle: the dealer shakes two dice in a leather cup. A roll is coming."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "the dealer shakes two dice in a leather cup. A roll is coming."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "Dice landing"
 msgstr ""
 
 #: games/riverboat-dice/src/sound.rs
@@ -63761,10 +66202,33 @@ msgid ""
 "the sum."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid ""
+"two dice tumble onto the felt. The dealer calls the faces and the sum."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "One thud"
+msgstr ""
+
 #: games/riverboat-dice/src/sound.rs
 msgid ""
 "One thud: a dull wooden thud. A die shows 1, and the landing is over for "
 "everyone still seated."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid ""
+"a dull wooden thud. A die shows 1, and the landing is over for everyone "
+"still seated."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "Snag crash"
 msgstr ""
 
 #: games/riverboat-dice/src/sound.rs
@@ -63773,26 +66237,84 @@ msgid ""
 "wipes the night total of everyone seated."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid ""
+"a crash of glass and wood. A double 1 with the snag rule on wipes the night "
+"total of everyone seated."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "Chair scrape"
+msgstr ""
+
 #: games/riverboat-dice/src/sound.rs
 msgid ""
 "Chair scrape: a player stands and banks. It comes from their seat, left, "
 "across or right."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid ""
+"a player stands and banks. It comes from their seat, left, across or right."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "Coin stack"
+msgstr ""
+
 #: games/riverboat-dice/src/sound.rs
 msgid "Coin stack: you bank the table's total into your night total."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "you bank the table's total into your night total."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "Table groan"
 msgstr ""
 
 #: games/riverboat-dice/src/sound.rs
 msgid "Table groan: the table groans at a 1."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "the table groans at a 1."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "Table cheer"
+msgstr ""
+
 #: games/riverboat-dice/src/sound.rs
 msgid "Table cheer: you win the night."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "you win the night."
+msgstr ""
+
 #: games/riverboat-dice/src/sound.rs
 msgid "Dull tap: nothing to do just now."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "nothing to do just now."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "Showboat chime"
 msgstr ""
 
 #: games/riverboat-dice/src/sound.rs
@@ -63800,8 +66322,23 @@ msgid ""
 "Showboat chime: on Showboat Saturday, doubles double what the table holds."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/sound.rs
+msgid "on Showboat Saturday, doubles double what the table holds."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/soundcheck.rs
+msgid "Seats"
+msgstr ""
+
 #: games/riverboat-dice/src/soundcheck.rs
 msgid "Seats: Widow left, Gambler ahead, Captain right"
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/riverboat-dice/src/soundcheck.rs
+msgid "Widow left, Gambler ahead, Captain right"
 msgstr ""
 
 #: games/riverboat-dice/src/soundcheck.rs
@@ -70815,8 +73352,23 @@ msgstr ""
 msgid "several"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Dial click"
+msgstr ""
+
 #: games/safecracker/src/sound.rs
 msgid "Dial click: the dial moved one number."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "the dial moved one number."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Ten detent"
 msgstr ""
 
 #: games/safecracker/src/sound.rs
@@ -70825,13 +73377,45 @@ msgid ""
 "to help you count."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid ""
+"a firmer double click at every tenth number, 10, 20 and so on, to help you "
+"count."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Zero notch"
+msgstr ""
+
 #: games/safecracker/src/sound.rs
 msgid ""
 "Zero notch: a deep notch as the dial reaches zero, the top of the dial."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "a deep notch as the dial reaches zero, the top of the dial."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Spin"
+msgstr ""
+
 #: games/safecracker/src/sound.rs
 msgid "Spin: a quick ratchet as the dial spins ten numbers at once."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "a quick ratchet as the dial spins ten numbers at once."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Tumbler clunk"
 msgstr ""
 
 #: games/safecracker/src/sound.rs
@@ -70841,15 +73425,43 @@ msgid ""
 "quieter."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid ""
+"the dial passed or reached this wheel's number. Deep and solid. Stop, step "
+"back to it, and set the wheel. On later safes it is quieter."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "False gate"
+msgstr ""
+
 #: games/safecracker/src/sound.rs
 msgid ""
 "False gate: a hollow, rattling tick at a wrong number. Ignore it: it is not "
 "the tumbler."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid ""
+"a hollow, rattling tick at a wrong number. Ignore it: it is not the tumbler."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Wheel set"
+msgstr ""
+
 #: games/safecracker/src/sound.rs
 msgid ""
 "Wheel set: a latch and a rising chime. The wheel is set, on to the next."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "a latch and a rising chime. The wheel is set, on to the next."
 msgstr ""
 
 #: games/safecracker/src/sound.rs
@@ -70858,8 +73470,30 @@ msgid ""
 "strikes and the safe jams."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid ""
+"a wrong set. The wheel springs back and you take a strike. Three strikes "
+"and the safe jams."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Safe open"
+msgstr ""
+
 #: games/safecracker/src/sound.rs
 msgid "Safe open: the handle turns and the bolts slide back."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "the handle turns and the bolts slide back."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Onward"
 msgstr ""
 
 #: games/safecracker/src/sound.rs
@@ -70868,8 +73502,30 @@ msgid ""
 "next one is waiting."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid ""
+"a heavy door and a bell. In a challenge, this safe is open and the next one "
+"is waiting."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Relocker"
+msgstr ""
+
 #: games/safecracker/src/sound.rs
 msgid "Relocker: the safe jams and the alarm rings. The safe is lost."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "the safe jams and the alarm rings. The safe is lost."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Footsteps"
 msgstr ""
 
 #: games/safecracker/src/sound.rs
@@ -70878,10 +73534,32 @@ msgid ""
 "still."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "the guard is coming down the corridor. When they stop, keep still."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Guard at the door"
+msgstr ""
+
 #: games/safecracker/src/sound.rs
 msgid ""
 "Guard at the door: the footsteps stop and his keys jingle. Keep still: do "
 "not turn or set until he walks away."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid ""
+"the footsteps stop and his keys jingle. Keep still: do not turn or set "
+"until he walks away."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Who's there"
 msgstr ""
 
 #: games/safecracker/src/sound.rs
@@ -70890,34 +73568,92 @@ msgid ""
 "are caught."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid ""
+"the guard heard you. One more noise while he listens and you are caught."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Whistle"
+msgstr ""
+
 #: games/safecracker/src/sound.rs
 msgid "Whistle: the guard caught you. The safe is lost."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "the guard caught you. The safe is lost."
 msgstr ""
 
 #: games/safecracker/src/sound.rs
 msgid "Clock tick: time attack is running low."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "time attack is running low."
+msgstr ""
+
 #: games/safecracker/src/sound.rs
 msgid "Dull tap: nothing to do, or no hints left."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "nothing to do, or no hints left."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Knocking pipe"
 msgstr ""
 
 #: games/safecracker/src/sound.rs
 msgid "Knocking pipe: a building noise, off to one side. Not the safe."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "a building noise, off to one side. Not the safe."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Creaking floor"
+msgstr ""
+
 #: games/safecracker/src/sound.rs
 msgid "Creaking floor: a building noise, off to one side. Not the safe."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Distant clock"
 msgstr ""
 
 #: games/safecracker/src/sound.rs
 msgid "Distant clock: a building noise, off to one side. Not the safe."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid "Cat yowl"
+msgstr ""
+
 #: games/safecracker/src/sound.rs
 msgid ""
 "Cat yowl: a soft, short yowl just after a clunk. On Friday the 13th, the "
 "unlucky safe's cat: this wheel's number is 13."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/safecracker/src/sound.rs
+msgid ""
+"a soft, short yowl just after a clunk. On Friday the 13th, the unlucky "
+"safe's cat: this wheel's number is 13."
 msgstr ""
 
 #: games/safecracker/src/soundcheck.rs
@@ -72224,10 +74960,26 @@ msgstr ""
 msgid "Derailed after {trains_words}."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/signal-box/src/sound.rs
+msgid "Tick"
+msgstr ""
+
 #: games/signal-box/src/sound.rs
 msgid ""
 "Tick: a dry, quiet tap that keeps the tempo. It quickens as the window "
 "shrinks."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/signal-box/src/sound.rs
+msgid ""
+"a dry, quiet tap that keeps the tempo. It quickens as the window shrinks."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/signal-box/src/sound.rs
+msgid "Train passing"
 msgstr ""
 
 #: games/signal-box/src/sound.rs
@@ -72236,10 +74988,33 @@ msgid ""
 "train is through."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/signal-box/src/sound.rs
+msgid ""
+"a rush from left to right. Your answer was right and the train is through."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/signal-box/src/sound.rs
+msgid "Steam special"
+msgstr ""
+
 #: games/signal-box/src/sound.rs
 msgid ""
 "Steam special: steam chuffs and a two-note whistle as the train rushes by. "
 "At the steam gala, every fifth train is the special, worth 3 points."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/signal-box/src/sound.rs
+msgid ""
+"steam chuffs and a two-note whistle as the train rushes by. At the steam "
+"gala, every fifth train is the special, worth 3 points."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/signal-box/src/sound.rs
+msgid "Ghost train"
 msgstr ""
 
 #: games/signal-box/src/sound.rs
@@ -72248,16 +75023,46 @@ msgid ""
 "13th, the thirteenth train of the night shift went through."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/signal-box/src/sound.rs
+msgid ""
+"the rush with a long, falling, ghostly whistle. On Friday the 13th, the "
+"thirteenth train of the night shift went through."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/signal-box/src/sound.rs
+msgid "Streak chime"
+msgstr ""
+
 #: games/signal-box/src/sound.rs
 msgid ""
 "Streak chime: a bright rising run. Another 10 trains in a row, for a bonus "
 "of 5 points."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/signal-box/src/sound.rs
+msgid ""
+"a bright rising run. Another 10 trains in a row, for a bonus of 5 points."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/signal-box/src/sound.rs
+msgid "Brake screech"
+msgstr ""
+
 #: games/signal-box/src/sound.rs
 msgid ""
 "Brake screech: a long squeal and a crash. A wrong or late answer derailed "
 "the train, and the shift is over."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/signal-box/src/sound.rs
+msgid ""
+"a long squeal and a crash. A wrong or late answer derailed the train, and "
+"the shift is over."
 msgstr ""
 
 #. placeholders: {word}, {sound_words}
@@ -75081,12 +77886,32 @@ msgstr ""
 msgid "Part {told} of {story}."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Door bell"
+msgstr ""
+
 #: games/slow-kettle/src/sound.rs
 msgid "Door bell: a small brass bell. A guest comes in."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "a small brass bell. A guest comes in."
+msgstr ""
+
 #: games/slow-kettle/src/sound.rs
 msgid "Footsteps: soft steps on the wooden floor, coming to the counter."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "soft steps on the wooden floor, coming to the counter."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Shelf tick"
 msgstr ""
 
 #: games/slow-kettle/src/sound.rs
@@ -75094,17 +77919,57 @@ msgid ""
 "Shelf tick: a soft wooden tick as you move along the shelf or the cups."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "a soft wooden tick as you move along the shelf or the cups."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Tin lid"
+msgstr ""
+
 #: games/slow-kettle/src/sound.rs
 msgid "Tin lid: a tea tin opens. Your tea goes in the pot."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "a tea tin opens. Your tea goes in the pot."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Kettle switch"
 msgstr ""
 
 #: games/slow-kettle/src/sound.rs
 msgid "Kettle switch: a click. The kettle is on."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "a click. The kettle is on."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Rumble"
+msgstr ""
+
 #: games/slow-kettle/src/sound.rs
 msgid ""
 "Rumble: the kettle's low song as it starts to warm, up to about 65 degrees."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "the kettle's low song as it starts to warm, up to about 65 degrees."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Hiss"
 msgstr ""
 
 #: games/slow-kettle/src/sound.rs
@@ -75113,16 +77978,47 @@ msgid ""
 "boil."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid ""
+"the kettle's rushing song from about 80 degrees, rising toward the boil."
+msgstr ""
+
 #: games/slow-kettle/src/sound.rs
 msgid "Whistle: a gentle whistle. The kettle is at the boil, 100 degrees."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "a gentle whistle. The kettle is at the boil, 100 degrees."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Pour"
 msgstr ""
 
 #: games/slow-kettle/src/sound.rs
 msgid "Pour: water from the kettle onto the leaves. The steep begins."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "water from the kettle onto the leaves. The steep begins."
+msgstr ""
+
 #: games/slow-kettle/src/sound.rs
 msgid "Clock tick: one second of steeping."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "one second of steeping."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Sand timer chime"
 msgstr ""
 
 #: games/slow-kettle/src/sound.rs
@@ -75131,32 +78027,113 @@ msgid ""
 "own the sand timer."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid ""
+"the steep has reached what the tea wants. Only once you own the sand timer."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Leaves lifted"
+msgstr ""
+
 #: games/slow-kettle/src/sound.rs
 msgid "Leaves lifted: a drip and a swish. The steep is over."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "a drip and a swish. The steep is over."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Cup filled"
 msgstr ""
 
 #: games/slow-kettle/src/sound.rs
 msgid "Cup filled: tea poured from the pot into one cup."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "tea poured from the pot into one cup."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Ice"
+msgstr ""
+
 #: games/slow-kettle/src/sound.rs
 msgid "Ice: cubes clink in the glass, for an iced tea."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "cubes clink in the glass, for an iced tea."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Perfect cup"
 msgstr ""
 
 #: games/slow-kettle/src/sound.rs
 msgid "Perfect cup: three warm rising notes."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "three warm rising notes."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Lovely cup"
+msgstr ""
+
 #: games/slow-kettle/src/sound.rs
 msgid "Lovely cup: two warm notes."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "two warm notes."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Kind cup"
 msgstr ""
 
 #: games/slow-kettle/src/sound.rs
 msgid "Kind cup: one soft note. The guest is still pleased."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "one soft note. The guest is still pleased."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Coins"
+msgstr ""
+
 #: games/slow-kettle/src/sound.rs
 msgid "Coins: coins on the counter, for the cup and any tip."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "coins on the counter, for the cup and any tip."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/slow-kettle/src/sound.rs
+msgid "Soft thud"
 msgstr ""
 
 #: games/slow-kettle/src/sound.rs
@@ -78232,6 +81209,11 @@ msgid ""
 "A low falling note behind you: a lantern you missed. Your line starts again."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/snowfall-skate/src/soundcheck.rs
+msgid "A flat clink"
+msgstr ""
+
 #: games/snowfall-skate/src/soundcheck.rs
 msgid ""
 "A flat clink: on the lantern skate, the second lit of a pair. Your line "
@@ -78240,6 +81222,12 @@ msgstr ""
 
 #: games/snowfall-skate/src/soundcheck.rs
 msgid "The wrong lantern"
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/snowfall-skate/src/soundcheck.rs
+msgid ""
+"on the lantern skate, the second lit of a pair. Your line starts again."
 msgstr ""
 
 #: games/snowfall-skate/src/soundcheck.rs
@@ -78307,6 +81295,11 @@ msgstr ""
 msgid "A spin landed"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/snowfall-skate/src/soundcheck.rs
+msgid "A scuffing stagger"
+msgstr ""
+
 #: games/snowfall-skate/src/soundcheck.rs
 msgid ""
 "A scuffing stagger: the spin was held too long. It scores nothing, and your "
@@ -78315,6 +81308,12 @@ msgstr ""
 
 #: games/snowfall-skate/src/soundcheck.rs
 msgid "A wobble"
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/snowfall-skate/src/soundcheck.rs
+msgid ""
+"the spin was held too long. It scores nothing, and your line starts again."
 msgstr ""
 
 #: games/snowfall-skate/src/soundtrack.rs
@@ -80052,14 +83051,45 @@ msgid ""
 "burns fuel."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/soft-landing/src/sound.rs
+msgid ""
+"a low roar while you hold the engine key. It slows your fall and burns fuel."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/soft-landing/src/sound.rs
+msgid "Pad beacon"
+msgstr ""
+
 #: games/soft-landing/src/sound.rs
 msgid ""
 "Pad beacon: a soft ping from the pad below you. It quickens as you get "
 "closer."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/soft-landing/src/sound.rs
+msgid "a soft ping from the pad below you. It quickens as you get closer."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/soft-landing/src/sound.rs
+msgid "Radio click"
+msgstr ""
+
 #: games/soft-landing/src/sound.rs
 msgid "Radio click: mission control is about to give a call-out."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/soft-landing/src/sound.rs
+msgid "mission control is about to give a call-out."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/soft-landing/src/sound.rs
+msgid "Quindar tone"
 msgstr ""
 
 #: games/soft-landing/src/sound.rs
@@ -80068,18 +83098,51 @@ msgid ""
 "radio click: a call-out follows."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/soft-landing/src/sound.rs
+msgid ""
+"a short high beep on the Tranquility pad. It stands for the radio click: a "
+"call-out follows."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/soft-landing/src/sound.rs
+msgid "Fuel alarm"
+msgstr ""
+
 #: games/soft-landing/src/sound.rs
 msgid ""
 "Fuel alarm: two soft beeps. Fuel is down to 25 percent, then again at 10 "
 "percent."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/soft-landing/src/sound.rs
+msgid ""
+"two soft beeps. Fuel is down to 25 percent, then again at 10 percent."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/soft-landing/src/sound.rs
+msgid "Touchdown"
+msgstr ""
+
 #: games/soft-landing/src/sound.rs
 msgid "Touchdown: a thud and a creak of the legs. You landed safely."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/soft-landing/src/sound.rs
+msgid "a thud and a creak of the legs. You landed safely."
+msgstr ""
+
 #: games/soft-landing/src/sound.rs
 msgid "Crash: a heavy crunch. You touched down faster than the safe speed."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/soft-landing/src/sound.rs
+msgid "a heavy crunch. You touched down faster than the safe speed."
 msgstr ""
 
 #: games/soft-landing/src/soundcheck.rs
@@ -80092,6 +83155,11 @@ msgid ""
 "safe speed."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/soft-landing/src/soundcheck.rs
+msgid "a low, steady tone. You are falling slower than the safe speed."
+msgstr ""
+
 #: games/soft-landing/src/soundcheck.rs
 msgid "Descent tone, too fast"
 msgstr ""
@@ -80101,6 +83169,13 @@ msgid ""
 "Descent tone, too fast: the same tone, higher. The faster you fall, the "
 "higher it goes. You hear Too fast as it crosses the safe speed, and Safe "
 "speed as it comes back."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/soft-landing/src/soundcheck.rs
+msgid ""
+"the same tone, higher. The faster you fall, the higher it goes. You hear "
+"Too fast as it crosses the safe speed, and Safe speed as it comes back."
 msgstr ""
 
 #: games/soft-landing/src/tutorial.rs
@@ -85763,10 +88838,22 @@ msgstr ""
 msgid "Shimmer"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/stargazer/src/sound.rs
+msgid "Something hidden is near"
+msgstr ""
+
 #: games/stargazer/src/sound.rs
 msgid ""
 "Something hidden is near: a wonder such as a nebula or a cluster. Rest on "
 "it and press the main action."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/stargazer/src/sound.rs
+msgid ""
+"a wonder such as a nebula or a cluster. Rest on it and press the main "
+"action."
 msgstr ""
 
 #: games/stargazer/src/sound.rs
@@ -86711,11 +89798,29 @@ msgstr ""
 msgid "G sharp"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/the-echo/src/sound.rs
+msgid "Pipe"
+msgstr ""
+
 #: games/the-echo/src/sound.rs
 msgid ""
 "Pipe: a steady, soft organ tone. While you tune, two of these play "
 "together, the pipe and its true note. Out of tune, they wobble; in tune, "
 "the wobble goes still."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/the-echo/src/sound.rs
+msgid ""
+"a steady, soft organ tone. While you tune, two of these play together, the "
+"pipe and its true note. Out of tune, they wobble; in tune, the wobble goes "
+"still."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/the-echo/src/sound.rs
+msgid "Echo note"
 msgstr ""
 
 #: games/the-echo/src/sound.rs
@@ -86724,26 +89829,74 @@ msgid ""
 "rank is tuned."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/the-echo/src/sound.rs
+msgid ""
+"one short organ note. The Echo plays these back as a tune once a rank is "
+"tuned."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/the-echo/src/sound.rs
+msgid "Slide"
+msgstr ""
+
 #: games/the-echo/src/sound.rs
 msgid "Slide: a tiny brass tick. The pipe moved up or down a step."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/the-echo/src/sound.rs
+msgid "a tiny brass tick. The pipe moved up or down a step."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/the-echo/src/sound.rs
+msgid "In tune"
 msgstr ""
 
 #: games/the-echo/src/sound.rs
 msgid "In tune: a clear bell. You set the pipe, and it holds its note."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/the-echo/src/sound.rs
+msgid "a clear bell. You set the pipe, and it holds its note."
+msgstr ""
+
 #: games/the-echo/src/sound.rs
 msgid "Hint: a soft felt knock. H told you which way the pipe is out."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/the-echo/src/sound.rs
+msgid "a soft felt knock. H told you which way the pipe is out."
 msgstr ""
 
 #: games/the-echo/src/sound.rs
 msgid "Not yet: a dull thud. The pipe still wobbles, so it did not set."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/the-echo/src/sound.rs
+msgid "a dull thud. The pipe still wobbles, so it did not set."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/the-echo/src/sound.rs
+msgid "Rank tuned"
+msgstr ""
+
 #: games/the-echo/src/sound.rs
 msgid ""
 "Rank tuned: rising tubular bells over an organ chord. Every pipe in the "
 "rank is in tune."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/the-echo/src/sound.rs
+msgid ""
+"rising tubular bells over an organ chord. Every pipe in the rank is in tune."
 msgstr ""
 
 #: games/the-echo/src/soundcheck.rs
@@ -89245,10 +92398,21 @@ msgstr ""
 msgid "Creeping out"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/tide-pools/src/sound.rs
+msgid "Two soft rising notes"
+msgstr ""
+
 #: games/tide-pools/src/sound.rs
 msgid ""
 "Two soft rising notes: something shy has come back out. Listen for its "
 "sound, then reach in."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/tide-pools/src/sound.rs
+msgid ""
+"something shy has come back out. Listen for its sound, then reach in."
 msgstr ""
 
 #: games/tide-pools/src/sound.rs
@@ -89309,6 +92473,11 @@ msgstr ""
 msgid "End of the rocks"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/tide-pools/src/sound.rs
+msgid "One distant bell buoy"
+msgstr ""
+
 #: games/tide-pools/src/sound.rs
 msgid ""
 "One distant bell buoy: half the trip is gone and the sea starts back."
@@ -89318,12 +92487,27 @@ msgstr ""
 msgid "The tide turns"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/tide-pools/src/sound.rs
+msgid "half the trip is gone and the sea starts back."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/tide-pools/src/sound.rs
+msgid "The bell buoy twice"
+msgstr ""
+
 #: games/tide-pools/src/sound.rs
 msgid "The bell buoy twice: the tide will soon cover the pools."
 msgstr ""
 
 #: games/tide-pools/src/sound.rs
 msgid "The tide is near"
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/tide-pools/src/sound.rs
+msgid "the tide will soon cover the pools."
 msgstr ""
 
 #: games/tide-pools/src/sound.rs
@@ -89338,8 +92522,23 @@ msgstr ""
 msgid "A rare find"
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/tide-pools/src/sound.rs
+msgid "A shimmer"
+msgstr ""
+
 #: games/tide-pools/src/sound.rs
 msgid "A shimmer: what you gathered is rare."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/tide-pools/src/sound.rs
+msgid "what you gathered is rare."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/tide-pools/src/sound.rs
+msgid "A little rising arpeggio"
 msgstr ""
 
 #: games/tide-pools/src/sound.rs
@@ -89348,6 +92547,11 @@ msgstr ""
 
 #: games/tide-pools/src/sound.rs
 msgid "New for the aquarium"
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/tide-pools/src/sound.rs
+msgid "a kind you have never gathered before."
 msgstr ""
 
 #: games/tide-pools/src/sound.rs
@@ -89603,10 +92807,6 @@ msgstr ""
 
 #: games/tightrope/help.md
 msgid "The game says when you are halfway, 3 steps out and 1 step out."
-msgstr ""
-
-#: games/tightrope/help.md
-msgid "Wind"
 msgstr ""
 
 #: games/tightrope/help.md
@@ -95246,6 +98446,11 @@ msgstr ""
 msgid "Up and Down move between sounds, Enter plays one, Escape goes back."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "Wish Desk"
+msgstr ""
+
 #. placeholders: {next}
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "Wish Desk: {next}"
@@ -95272,13 +98477,28 @@ msgstr ""
 msgid "Gift lands on the belt: a soft thump and a rustle of paper."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "Right recipient"
+msgstr ""
+
 #: games/winter-wonderland/src/soundcheck.rs
 msgid ""
 "Right recipient: rising bells from their side. This one is on your left."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "rising bells from their side. This one is on your left."
+msgstr ""
+
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "A gift sliding to a recipient. This one goes right."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "Wrong guess"
 msgstr ""
 
 #: games/winter-wonderland/src/soundcheck.rs
@@ -95287,28 +98507,74 @@ msgid ""
 "straight ahead."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid ""
+"a low buzz from that side. It costs clock time. This one is straight ahead."
+msgstr ""
+
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "Into the return sack, behind you."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "Near the edge"
 msgstr ""
 
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "Near the edge: quick beeping. Send the gift fast."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "quick beeping. Send the gift fast."
+msgstr ""
+
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "A gift falls off the belt and breaks."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "Clock running low"
 msgstr ""
 
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "Clock running low: a tick each second near the end."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "a tick each second near the end."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "Change of plans"
+msgstr ""
+
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "Change of plans: a doorbell, when someone changes their wish."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "a doorbell, when someone changes their wish."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "Nothing there"
+msgstr ""
+
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "Nothing there: a dull knock."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "a dull knock."
 msgstr ""
 
 #: games/winter-wonderland/src/soundcheck.rs
@@ -95321,16 +98587,38 @@ msgid ""
 "the left end."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid ""
+"a step along the shelf, heard where the box sits. This one is at the left "
+"end."
+msgstr ""
+
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "Wish Desk: the end of the shelf."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "the end of the shelf."
 msgstr ""
 
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "Wish Desk: an empty place, where a gift was wrapped."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "an empty place, where a gift was wrapped."
+msgstr ""
+
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "Wish Desk: a shake of only straw. Shake again to hear the gift."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "a shake of only straw. Shake again to hear the gift."
 msgstr ""
 
 #. one sentence of a longer line
@@ -95351,8 +98639,26 @@ msgid ""
 "wrapped."
 msgstr ""
 
+#. placeholders: {n}
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "wrapping paper, while you hold {n}."
+msgstr ""
+
+#. placeholders: {n}
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid ""
+"wrapping paper, while you hold {n}. Let go now and nothing is wrapped."
+msgstr ""
+
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "Wish Desk: the wrong box, unwrapped and put back."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "the wrong box, unwrapped and put back."
 msgstr ""
 
 #. placeholders: {n}
@@ -95378,28 +98684,78 @@ msgstr ""
 msgid "Tock, on the first beat of each bar."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "Missed note"
+msgstr ""
+
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "Missed note: a deflating party blower."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "a deflating party blower."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "Wrong instrument"
 msgstr ""
 
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "Wrong instrument: a short buzz."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "a short buzz."
+msgstr ""
+
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "A press with nothing to answer: a soft tap."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "Score multiplier up"
 msgstr ""
 
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "Score multiplier up: rising chimes."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "rising chimes."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "A call answered perfectly"
+msgstr ""
+
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "A call answered perfectly: sparkles."
 msgstr ""
 
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "sparkles."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "Party energy low"
+msgstr ""
+
 #: games/winter-wonderland/src/soundcheck.rs
 msgid "Party energy low: a heartbeat."
+msgstr ""
+
+#. the name or the meaning of a longer line
+#: games/winter-wonderland/src/soundcheck.rs
+msgid "a heartbeat."
 msgstr ""
 
 #: games/winter-wonderland/src/soundcheck.rs

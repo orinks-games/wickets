@@ -6965,12 +6965,26 @@ msgstr "1 điểm"
 msgid "{n} points"
 msgstr "{n} điểm"
 
+#. the name or the meaning of a longer line
+msgid "Knock"
+msgstr "Cốc"
+
 msgid ""
 "Knock: a firm knock on the beam. One bell of your row is right and in its "
 "place."
 msgstr ""
 "Cốc: tiếng gõ chắc lên xà. Một quả chuông trong hàng của bạn đúng và đúng "
 "chỗ."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a firm knock on the beam. One bell of your row is right and in its place."
+msgstr ""
+"tiếng gõ chắc lên xà. Một quả chuông trong hàng của bạn đúng và đúng chỗ."
+
+#. the name or the meaning of a longer line
+msgid "Tap"
+msgstr "Tách"
 
 msgid ""
 "Tap: a soft tap on the beam. One bell of your row is in the peal, in "
@@ -6979,12 +6993,40 @@ msgstr ""
 "Tách: tiếng gõ nhẹ lên xà. Một quả chuông trong hàng của bạn có trong hồi "
 "chuông, ở chỗ khác."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft tap on the beam. One bell of your row is in the peal, in another "
+"place."
+msgstr ""
+"tiếng gõ nhẹ lên xà. Một quả chuông trong hàng của bạn có trong hồi chuông, "
+"ở chỗ khác."
+
+#. the name or the meaning of a longer line
+msgid "Rope pull"
+msgstr "Kéo dây"
+
 msgid "Rope pull: your row is rung and the answer follows."
 msgstr "Kéo dây: hàng của bạn reo lên và câu trả lời theo sau."
+
+#. the name or the meaning of a longer line
+msgid "your row is rung and the answer follows."
+msgstr "hàng của bạn reo lên và câu trả lời theo sau."
+
+#. the name or the meaning of a longer line
+msgid "Peal found"
+msgstr "Tìm ra hồi chuông"
 
 msgid "Peal found: every bell rings out three times. The peal is solved."
 msgstr ""
 "Tìm ra hồi chuông: mọi quả chuông reo ba lần. Hồi chuông đã được giải."
+
+#. the name or the meaning of a longer line
+msgid "every bell rings out three times. The peal is solved."
+msgstr "mọi quả chuông reo ba lần. Hồi chuông đã được giải."
+
+#. the name or the meaning of a longer line
+msgid "Out of rows"
+msgstr "Hết hàng"
 
 msgid ""
 "Out of rows: a single low bell. The tower's rows are spent and the peal is "
@@ -6993,6 +7035,16 @@ msgstr ""
 "Hết hàng: một tiếng chuông trầm. Tháp đã dùng hết hàng và hồi chuông được "
 "đọc ra."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a single low bell. The tower's rows are spent and the peal is read out."
+msgstr ""
+"một tiếng chuông trầm. Tháp đã dùng hết hàng và hồi chuông được đọc ra."
+
+#. the name or the meaning of a longer line
+msgid "Next peal"
+msgstr "Hồi chuông kế"
+
 msgid ""
 "Next peal: a short rising run. In the weekly challenge, the next peal is "
 "waiting."
@@ -7000,8 +7052,26 @@ msgstr ""
 "Hồi chuông kế: một chuỗi nốt ngắn đi lên. Trong thử thách tuần, hồi chuông "
 "kế đang chờ."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short rising run. In the weekly challenge, the next peal is waiting."
+msgstr ""
+"một chuỗi nốt ngắn đi lên. Trong thử thách tuần, hồi chuông kế đang chờ."
+
+#. the name or the meaning of a longer line
+msgid "Dull thud"
+msgstr "Tiếng phịch đục"
+
 msgid "Dull thud: nothing to do, or no hint to give."
 msgstr "Tiếng phịch đục: không có gì để làm, hoặc không có gợi ý nào."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do, or no hint to give."
+msgstr "không có gì để làm, hoặc không có gợi ý nào."
+
+#. the name or the meaning of a longer line
+msgid "Called place"
+msgstr "Vị trí được gọi"
 
 msgid ""
 "Called place: a short, quiet glassy shimmer, just after a bell. On Practice "
@@ -7010,6 +7080,14 @@ msgstr ""
 "Vị trí được gọi: tiếng lấp lánh như thủy tinh, ngắn và khẽ, ngay sau một "
 "quả chuông. Vào Đêm tập chuông, đó là vị trí trưởng tháp đã gọi, chuông đã "
 "đặt sẵn."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a short, quiet glassy shimmer, just after a bell. On Practice night, the "
+"place the tower captain called, whose bell is already set."
+msgstr ""
+"tiếng lấp lánh như thủy tinh, ngắn và khẽ, ngay sau một quả chuông. Vào Đêm "
+"tập chuông, đó là vị trí trưởng tháp đã gọi, chuông đã đặt sẵn."
 
 msgid "Up and Down choose a sound, Enter plays it, Escape goes back."
 msgstr "Up và Down để chọn âm thanh, Enter để phát, Escape để quay lại."
@@ -10021,6 +10099,10 @@ msgstr "Tiếng huýt của bạn"
 msgid "Your whistle: the notes you answer with, low, middle and high."
 msgstr "Tiếng huýt của bạn: các nốt bạn dùng để đáp, trầm, giữa và cao."
 
+#. the name or the meaning of a longer line
+msgid "the notes you answer with, low, middle and high."
+msgstr "các nốt bạn dùng để đáp, trầm, giữa và cao."
+
 #. placeholders: {slug}
 msgid "Flock call, {slug}"
 msgstr "Tiếng kêu của đàn, {slug}"
@@ -10057,6 +10139,10 @@ msgstr "Xoay"
 msgid "Turn: a soft rustle as you turn to face a new way."
 msgstr "Xoay: tiếng sột soạt nhẹ khi bạn xoay sang hướng mới."
 
+#. the name or the meaning of a longer line
+msgid "a soft rustle as you turn to face a new way."
+msgstr "tiếng sột soạt nhẹ khi bạn xoay sang hướng mới."
+
 msgid "Edge of the trail"
 msgstr "Mép lối mòn"
 
@@ -10066,6 +10152,12 @@ msgid ""
 msgstr ""
 "Mép lối mòn: tiếng sột soạt và tiếng phịch nhẹ. Bụi gai, hàng rào cây hay "
 "nước chặn bước chân."
+
+#. the name or the meaning of a longer line
+msgid "a rustle and a soft thud. Brambles, a hedge or water stop the step."
+msgstr ""
+"tiếng sột soạt và tiếng phịch nhẹ. Bụi gai, hàng rào cây hay nước chặn bước "
+"chân."
 
 msgid "Befriended"
 msgstr "Đã kết bạn"
@@ -10077,6 +10169,11 @@ msgstr ""
 "Đã kết bạn: tiếng chuông ấm đi lên. Bạn đáp đúng, và con chim là bạn của "
 "bạn."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a warm rising chime. Your answer matched, and the bird is your friend."
+msgstr "tiếng chuông ấm đi lên. Bạn đáp đúng, và con chim là bạn của bạn."
+
 msgid "New song"
 msgstr "Bài hót mới"
 
@@ -10087,6 +10184,11 @@ msgstr ""
 "Bài hót mới: tiếng lật trang nhẹ và tiếng chuông. Có thứ mới vào sổ tay "
 "chim."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft page turn and a bell. Something new went into your field guide."
+msgstr "tiếng lật trang nhẹ và tiếng chuông. Có thứ mới vào sổ tay chim."
+
 msgid "Not quite"
 msgstr "Chưa đúng"
 
@@ -10095,6 +10197,11 @@ msgid ""
 "sings again."
 msgstr ""
 "Chưa đúng: hai nốt nhẹ, trầm. Bạn đáp chưa khớp, và con chim hót lại."
+
+#. the name or the meaning of a longer line
+msgid ""
+"two soft, low notes. Your answer did not match, and the bird sings again."
+msgstr "hai nốt nhẹ, trầm. Bạn đáp chưa khớp, và con chim hót lại."
 
 msgid "Found"
 msgstr "Tìm được"
@@ -10106,6 +10213,14 @@ msgstr ""
 "Tìm được: tiếng chuông sáng hai nốt. Bạn đã nhận ra đúng con chim, hoặc đếm "
 "đúng một đàn."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a bright two-note chime. You picked out the right bird, or counted a flock "
+"exactly."
+msgstr ""
+"tiếng chuông sáng hai nốt. Bạn đã nhận ra đúng con chim, hoặc đếm đúng một "
+"đàn."
+
 msgid "Trail's end"
 msgstr "Cuối lối mòn"
 
@@ -10116,11 +10231,22 @@ msgstr ""
 "Cuối lối mòn: hợp âm nhẹ đi lên. Bạn đã đến cuối lối mòn, hoặc đàn cuối đã "
 "bay qua."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a gentle rising chord. You reached the end of the trail, or the last flock "
+"has gone."
+msgstr ""
+"hợp âm nhẹ đi lên. Bạn đã đến cuối lối mòn, hoặc đàn cuối đã bay qua."
+
 msgid "Wingbeats"
 msgstr "Tiếng vỗ cánh"
 
 msgid "Wingbeats: a soft rush of wings. A migrating flock is coming."
 msgstr "Tiếng vỗ cánh: tiếng cánh vụt qua nhẹ. Một đàn di cư đang đến."
+
+#. the name or the meaning of a longer line
+msgid "a soft rush of wings. A migrating flock is coming."
+msgstr "tiếng cánh vụt qua nhẹ. Một đàn di cư đang đến."
 
 #. placeholders: {name}
 msgid "End of the {name}"
@@ -12305,10 +12431,30 @@ msgstr ""
 "Đếm: tiếng trống bodhran trầm. Bốn tiếng đếm bạn vào trước mỗi giai điệu, "
 "và ba tiếng sau khi tạm dừng."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a deep bodhran beat. Four of them count you in before each tune, and three "
+"after a pause."
+msgstr ""
+"tiếng trống bodhran trầm. Bốn tiếng đếm bạn vào trước mỗi giai điệu, và ba "
+"tiếng sau khi tạm dừng."
+
+#. the name or the meaning of a longer line
+msgid "Spot on"
+msgstr "Chuẩn"
+
 msgid ""
 "Spot on: a small bright chime with your step. It landed right on the beat."
 msgstr ""
 "Chuẩn: tiếng chuông nhỏ sáng cùng bước của bạn. Bước rơi đúng vào nhịp."
+
+#. the name or the meaning of a longer line
+msgid "a small bright chime with your step. It landed right on the beat."
+msgstr "tiếng chuông nhỏ sáng cùng bước của bạn. Bước rơi đúng vào nhịp."
+
+#. the name or the meaning of a longer line
+msgid "Close"
+msgstr "Gần đúng"
 
 msgid ""
 "Close: a soft dull tick with your step. It landed in time, but a little "
@@ -12317,18 +12463,54 @@ msgstr ""
 "Gần: tiếng tích đục nhẹ cùng bước của bạn. Bước đúng nhịp, nhưng hơi sớm "
 "hoặc hơi muộn."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft dull tick with your step. It landed in time, but a little early or "
+"late."
+msgstr ""
+"tiếng tích đục nhẹ cùng bước của bạn. Bước đúng nhịp, nhưng hơi sớm hoặc "
+"hơi muộn."
+
+#. the name or the meaning of a longer line
+msgid "Stumble"
+msgstr "Vấp"
+
 msgid ""
 "Stumble: a scuff and a thud. A step was missed, or the wrong step was "
 "danced."
 msgstr ""
 "Vấp: tiếng quẹt và tiếng phịch. Một bước bị trượt, hoặc nhảy sai bước."
 
+#. the name or the meaning of a longer line
+msgid "a scuff and a thud. A step was missed, or the wrong step was danced."
+msgstr "tiếng quẹt và tiếng phịch. Một bước bị trượt, hoặc nhảy sai bước."
+
+#. the name or the meaning of a longer line
+msgid "Claps"
+msgstr "Vỗ tay"
+
 msgid ""
 "Claps: the crowd claps three times. Another 8 steps in a row, for a bonus."
 msgstr "Vỗ tay: đám đông vỗ tay ba lần. Thêm 8 bước liên tiếp, được thưởng."
 
+#. the name or the meaning of a longer line
+msgid "the crowd claps three times. Another 8 steps in a row, for a bonus."
+msgstr "đám đông vỗ tay ba lần. Thêm 8 bước liên tiếp, được thưởng."
+
+#. the name or the meaning of a longer line
+msgid "Applause"
+msgstr "Tràng pháo tay"
+
 msgid "Applause: the end of a tune."
 msgstr "Tràng pháo tay: hết một giai điệu."
+
+#. the name or the meaning of a longer line
+msgid "the end of a tune."
+msgstr "hết một giai điệu."
+
+#. the name or the meaning of a longer line
+msgid "Shamrock"
+msgstr "Cỏ ba lá"
 
 msgid ""
 "Shamrock: two high chimes with a call, in Saint Patrick's week. Dance that "
@@ -12337,9 +12519,29 @@ msgstr ""
 "Cỏ ba lá: hai tiếng chuông cao cùng một lời hô, trong tuần Thánh Patrick. "
 "Nhảy bước đó từ tốt trở lên để được một điểm may mắn."
 
+#. the name or the meaning of a longer line
+msgid ""
+"two high chimes with a call, in Saint Patrick's week. Dance that step good "
+"or better for a luck point."
+msgstr ""
+"hai tiếng chuông cao cùng một lời hô, trong tuần Thánh Patrick. Nhảy bước "
+"đó từ tốt trở lên để được một điểm may mắn."
+
+#. the name or the meaning of a longer line
+msgid "Luck point"
+msgstr "Điểm may mắn"
+
 msgid "Luck point: a quick music box run up. You caught a shamrock."
 msgstr ""
 "Điểm may mắn: chuỗi nốt hộp nhạc đi lên nhanh. Bạn đã bắt được một cỏ ba lá."
+
+#. the name or the meaning of a longer line
+msgid "a quick music box run up. You caught a shamrock."
+msgstr "chuỗi nốt hộp nhạc đi lên nhanh. Bạn đã bắt được một cỏ ba lá."
+
+#. the name or the meaning of a longer line
+msgid "Clover call"
+msgstr "Lời hô cỏ bốn lá"
 
 msgid ""
 "Clover call: three sparkling notes with a call, once a night at the ceili. "
@@ -12348,9 +12550,25 @@ msgstr ""
 "Lời hô cỏ bốn lá: ba nốt lấp lánh cùng một lời hô, mỗi đêm một lần ở buổi "
 "ceili. Nhảy bước đó để tìm cỏ bốn lá."
 
+#. the name or the meaning of a longer line
+msgid ""
+"three sparkling notes with a call, once a night at the ceili. Dance that "
+"step to find the four-leaf clover."
+msgstr ""
+"ba nốt lấp lánh cùng một lời hô, mỗi đêm một lần ở buổi ceili. Nhảy bước đó "
+"để tìm cỏ bốn lá."
+
+#. the name or the meaning of a longer line
+msgid "Four-leaf clover"
+msgstr "Cỏ bốn lá"
+
 msgid "Four-leaf clover: a harp sweep and a shimmer. You found it."
 msgstr ""
 "Cỏ bốn lá: tiếng đàn hạc lướt và tiếng lấp lánh. Bạn đã tìm thấy nó."
+
+#. the name or the meaning of a longer line
+msgid "a harp sweep and a shimmer. You found it."
+msgstr "tiếng đàn hạc lướt và tiếng lấp lánh. Bạn đã tìm thấy nó."
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
@@ -14377,6 +14595,10 @@ msgstr "1 trái tim"
 msgid "{n} hearts"
 msgstr "{n} trái tim"
 
+#. the name or the meaning of a longer line
+msgid "Rose"
+msgstr "Hoa hồng"
+
 msgid ""
 "Rose: a soft music box tune with a rustle of petals. A rose drifting in the "
 "Valentine's season, worth 25 more than a heart."
@@ -14384,10 +14606,30 @@ msgstr ""
 "Hoa hồng: giai điệu hộp nhạc nhẹ kèm tiếng cánh hoa xào xạc. Một bông hồng "
 "trôi trong mùa Lễ Tình nhân, được hơn một trái tim 25 điểm."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft music box tune with a rustle of petals. A rose drifting in the "
+"Valentine's season, worth 25 more than a heart."
+msgstr ""
+"giai điệu hộp nhạc nhẹ kèm tiếng cánh hoa xào xạc. Một bông hồng trôi trong "
+"mùa Lễ Tình nhân, được hơn một trái tim 25 điểm."
+
+#. the name or the meaning of a longer line
+msgid "Golden heart"
+msgstr "Tim vàng"
+
 msgid ""
 "Golden heart: a shimmer of tiny bells. Only on Valentine's night, worth 100."
 msgstr ""
 "Tim vàng: tiếng chuông tí hon lấp lánh. Chỉ có vào Đêm Tình nhân, được 100."
+
+#. the name or the meaning of a longer line
+msgid "a shimmer of tiny bells. Only on Valentine's night, worth 100."
+msgstr "tiếng chuông tí hon lấp lánh. Chỉ có vào Đêm Tình nhân, được 100."
+
+#. the name or the meaning of a longer line
+msgid "Love note"
+msgstr "Thư tình"
 
 msgid ""
 "Love note: a slow flutter of paper. A folded note drifting slowly. Hit it "
@@ -14396,31 +14638,103 @@ msgstr ""
 "Thư tình: tiếng giấy phất phơ chậm. Một lá thư gấp đang trôi chậm. Bắn "
 "trúng để giữ lá thư."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a slow flutter of paper. A folded note drifting slowly. Hit it to keep the "
+"note."
+msgstr ""
+"tiếng giấy phất phơ chậm. Một lá thư gấp đang trôi chậm. Bắn trúng để giữ "
+"lá thư."
+
+#. the name or the meaning of a longer line
+msgid "String creak"
+msgstr "Dây cung kẽo kẹt"
+
 msgid "String creak: the bow drawing, rising as the string comes back."
 msgstr "Dây cung kẽo kẹt: cung đang kéo, cao dần khi dây căng về."
+
+#. the name or the meaning of a longer line
+msgid "the bow drawing, rising as the string comes back."
+msgstr "cung đang kéo, cao dần khi dây căng về."
+
+#. the name or the meaning of a longer line
+msgid "Full draw"
+msgstr "Căng hết cỡ"
 
 msgid "Full draw: a soft wooden click. Let go now to shoot."
 msgstr "Căng hết cỡ: tiếng gỗ tách nhẹ. Buông ngay để bắn."
 
+#. the name or the meaning of a longer line
+msgid "a soft wooden click. Let go now to shoot."
+msgstr "tiếng gỗ tách nhẹ. Buông ngay để bắn."
+
+#. the name or the meaning of a longer line
+msgid "Arrow loosed"
+msgstr "Tên bay"
+
 msgid "Arrow loosed: a twang and a whoosh."
 msgstr "Tên bay: tiếng bật dây và tiếng vút."
+
+#. the name or the meaning of a longer line
+msgid "a twang and a whoosh."
+msgstr "tiếng bật dây và tiếng vút."
+
+#. the name or the meaning of a longer line
+msgid "Slack string"
+msgstr "Dây chùng"
 
 msgid ""
 "Slack string: a dull flop. Let go too soon, so the arrow stays in your hand."
 msgstr ""
 "Dây chùng: tiếng phịch đục. Buông quá sớm, nên mũi tên vẫn trong tay."
 
+#. the name or the meaning of a longer line
+msgid "a dull flop. Let go too soon, so the arrow stays in your hand."
+msgstr "tiếng phịch đục. Buông quá sớm, nên mũi tên vẫn trong tay."
+
 msgid "Aim tick: the bow turns one step."
 msgstr "Tích ngắm: cung xoay một nấc."
+
+#. the name or the meaning of a longer line
+msgid "the bow turns one step."
+msgstr "cung xoay một nấc."
+
+#. the name or the meaning of a longer line
+msgid "Edge knock"
+msgstr "Chạm mép"
 
 msgid "Edge knock: the bow is turned as far as it goes."
 msgstr "Chạm mép: cung đã xoay hết cỡ."
 
+#. the name or the meaning of a longer line
+msgid "the bow is turned as far as it goes."
+msgstr "cung đã xoay hết cỡ."
+
+#. the name or the meaning of a longer line
+msgid "Empty quiver"
+msgstr "Ống tên rỗng"
+
 msgid "Empty quiver: a hollow tap of wood."
 msgstr "Ống tên rỗng: tiếng gõ gỗ rỗng."
 
+#. the name or the meaning of a longer line
+msgid "a hollow tap of wood."
+msgstr "tiếng gõ gỗ rỗng."
+
+#. the name or the meaning of a longer line
+msgid "Pop"
+msgstr "Bốp"
+
 msgid "Pop: a paper heart bursts."
 msgstr "Bốp: một trái tim giấy vỡ."
+
+#. the name or the meaning of a longer line
+msgid "a paper heart bursts."
+msgstr "một trái tim giấy vỡ."
+
+#. the name or the meaning of a longer line
+msgid "Sweetheart chord"
+msgstr "Hợp âm tình nhân"
 
 msgid ""
 "Sweetheart chord: rising chimes that end in a chord. Both hearts of a pair, "
@@ -14429,18 +14743,62 @@ msgstr ""
 "Hợp âm tình nhân: tiếng chuông đi lên kết thúc bằng một hợp âm. Trúng cả "
 "hai trái tim của một cặp, liền nhau."
 
+#. the name or the meaning of a longer line
+msgid ""
+"rising chimes that end in a chord. Both hearts of a pair, one after the "
+"other."
+msgstr ""
+"tiếng chuông đi lên kết thúc bằng một hợp âm. Trúng cả hai trái tim của một "
+"cặp, liền nhau."
+
+#. the name or the meaning of a longer line
+msgid "Rose caught"
+msgstr "Trúng hoa hồng"
+
 msgid "Rose caught: a rustle and a bright harp run."
 msgstr "Trúng hoa hồng: tiếng xào xạc và chuỗi đàn hạc sáng."
 
+#. the name or the meaning of a longer line
+msgid "a rustle and a bright harp run."
+msgstr "tiếng xào xạc và chuỗi đàn hạc sáng."
+
+#. the name or the meaning of a longer line
+msgid "Golden heart caught"
+msgstr "Trúng tim vàng"
+
 msgid "Golden heart caught: a burst of bells, high and bright."
 msgstr "Trúng tim vàng: tràng chuông, cao và sáng."
+
+#. the name or the meaning of a longer line
+msgid "a burst of bells, high and bright."
+msgstr "tràng chuông, cao và sáng."
+
+#. the name or the meaning of a longer line
+msgid "Note caught"
+msgstr "Trúng thư"
 
 msgid "Note caught: paper unfolding, and a soft chord. A love note to keep."
 msgstr ""
 "Trúng thư: tiếng giấy mở ra, và một hợp âm nhẹ. Một lá thư tình để giữ."
 
+#. the name or the meaning of a longer line
+msgid "paper unfolding, and a soft chord. A love note to keep."
+msgstr "tiếng giấy mở ra, và một hợp âm nhẹ. Một lá thư tình để giữ."
+
+#. the name or the meaning of a longer line
+msgid "Miss"
+msgstr "Trượt"
+
 msgid "Miss: a far tap on roof tiles. The arrow met nothing."
 msgstr "Trượt: tiếng gõ xa trên ngói. Mũi tên không trúng gì."
+
+#. the name or the meaning of a longer line
+msgid "a far tap on roof tiles. The arrow met nothing."
+msgstr "tiếng gõ xa trên ngói. Mũi tên không trúng gì."
+
+#. the name or the meaning of a longer line
+msgid "Sights ping"
+msgstr "Tín hiệu điểm ngắm"
 
 msgid ""
 "Sights ping: a small glassy ping. Let go now and the arrow meets a target."
@@ -14448,14 +14806,43 @@ msgstr ""
 "Tín hiệu điểm ngắm: tiếng ping nhỏ như thủy tinh. Buông ngay thì mũi tên "
 "trúng mục tiêu."
 
+#. the name or the meaning of a longer line
+msgid "a small glassy ping. Let go now and the arrow meets a target."
+msgstr ""
+"tiếng ping nhỏ như thủy tinh. Buông ngay thì mũi tên trúng mục tiêu."
+
+#. the name or the meaning of a longer line
+msgid "Rooftop bell"
+msgstr "Chuông mái nhà"
+
 msgid "Rooftop bell: a round begins."
 msgstr "Chuông mái nhà: một vòng bắt đầu."
+
+#. the name or the meaning of a longer line
+msgid "a round begins."
+msgstr "một vòng bắt đầu."
+
+#. the name or the meaning of a longer line
+msgid "Quiver spent"
+msgstr "Hết tên"
 
 msgid "Quiver spent: three falling notes. The round is over."
 msgstr "Hết tên: ba nốt đi xuống. Vòng đã kết thúc."
 
+#. the name or the meaning of a longer line
+msgid "three falling notes. The round is over."
+msgstr "ba nốt đi xuống. Vòng đã kết thúc."
+
+#. the name or the meaning of a longer line
+msgid "Dull tap"
+msgstr "Tiếng gõ đục"
+
 msgid "Dull tap: nothing to do."
 msgstr "Tiếng gõ đục: không có gì để làm."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do."
+msgstr "không có gì để làm."
 
 msgid "A heart's hum, then the chime it makes when hit."
 msgstr "Tiếng ngân của trái tim, rồi tiếng chuông khi nó bị trúng."
@@ -16512,20 +16899,64 @@ msgstr "Chưa múa."
 msgid "Return to the Dragon Dance title."
 msgstr "Về màn hình chính của Dragon Dance."
 
+#. the name or the meaning of a longer line
+msgid "Drum"
+msgstr "Trống"
+
 msgid "Drum: a deep drum on every beat. The dragon dances on each one."
 msgstr "Trống: tiếng trống trầm mỗi nhịp. Rồng múa theo từng nhịp."
+
+#. the name or the meaning of a longer line
+msgid "a deep drum on every beat. The dragon dances on each one."
+msgstr "tiếng trống trầm mỗi nhịp. Rồng múa theo từng nhịp."
+
+#. the name or the meaning of a longer line
+msgid "First beat"
+msgstr "Nhịp đầu"
 
 msgid "First beat: the drum with a cymbal, on the first beat of each bar."
 msgstr "Nhịp đầu: trống kèm chũm chọe, ở nhịp đầu mỗi ô nhịp."
 
+#. the name or the meaning of a longer line
+msgid "the drum with a cymbal, on the first beat of each bar."
+msgstr "trống kèm chũm chọe, ở nhịp đầu mỗi ô nhịp."
+
+#. the name or the meaning of a longer line
+msgid "Count-in"
+msgstr "Đếm vào"
+
 msgid "Count-in: wooden clicks before the street begins."
 msgstr "Đếm vào: tiếng gõ gỗ trước khi con phố bắt đầu."
+
+#. the name or the meaning of a longer line
+msgid "wooden clicks before the street begins."
+msgstr "tiếng gõ gỗ trước khi con phố bắt đầu."
+
+#. the name or the meaning of a longer line
+msgid "Drum roll"
+msgstr "Hồi trống"
 
 msgid "Drum roll: a gong strikes in 2 beats. Get ready to rear up."
 msgstr "Hồi trống: chiêng sẽ vang sau 2 nhịp. Sẵn sàng chồm lên."
 
+#. the name or the meaning of a longer line
+msgid "a gong strikes in 2 beats. Get ready to rear up."
+msgstr "chiêng sẽ vang sau 2 nhịp. Sẵn sàng chồm lên."
+
+#. the name or the meaning of a longer line
+msgid "Gong"
+msgstr "Chiêng"
+
 msgid "Gong: rear up as it strikes."
 msgstr "Chiêng: chồm lên khi nó vang."
+
+#. the name or the meaning of a longer line
+msgid "rear up as it strikes."
+msgstr "chồm lên khi nó vang."
+
+#. the name or the meaning of a longer line
+msgid "Midnight gong"
+msgstr "Chiêng nửa đêm"
 
 msgid ""
 "Midnight gong: the great gong at the end of the New Year parade, worth "
@@ -16533,17 +16964,41 @@ msgid ""
 msgstr ""
 "Chiêng nửa đêm: tiếng chiêng lớn cuối Diễu hành năm mới, được gấp đôi."
 
+#. the name or the meaning of a longer line
+msgid "the great gong at the end of the New Year parade, worth double."
+msgstr "tiếng chiêng lớn cuối Diễu hành năm mới, được gấp đôi."
+
 msgid ""
 "Perfect rear: a whoosh and a bright cymbal. You reared right on the gong."
 msgstr ""
 "Chồm lên hoàn hảo: tiếng vút và chũm chọe sáng. Bạn chồm đúng lúc chiêng "
 "vang."
 
+#. the name or the meaning of a longer line
+msgid "a whoosh and a bright cymbal. You reared right on the gong."
+msgstr "tiếng vút và chũm chọe sáng. Bạn chồm đúng lúc chiêng vang."
+
 msgid "Good rear: a whoosh. You reared close to the gong."
 msgstr "Chồm lên tốt: tiếng vút. Bạn chồm gần lúc chiêng vang."
 
+#. the name or the meaning of a longer line
+msgid "a whoosh. You reared close to the gong."
+msgstr "tiếng vút. Bạn chồm gần lúc chiêng vang."
+
+#. the name or the meaning of a longer line
+msgid "Missed gong"
+msgstr "Lỡ chiêng"
+
 msgid "Missed gong: a dull wooden knock. The gong passed without a rear."
 msgstr "Lỡ chiêng: tiếng gõ gỗ đục. Chiêng qua mà không chồm lên."
+
+#. the name or the meaning of a longer line
+msgid "a dull wooden knock. The gong passed without a rear."
+msgstr "tiếng gõ gỗ đục. Chiêng qua mà không chồm lên."
+
+#. the name or the meaning of a longer line
+msgid "Stray rear"
+msgstr "Chồm lạc nhịp"
 
 msgid ""
 "Stray rear: a soft thud. You reared with no gong near, and the combo breaks."
@@ -16551,16 +17006,44 @@ msgstr ""
 "Chồm lạc nhịp: tiếng phịch nhẹ. Bạn chồm lên khi không có chiêng, và combo "
 "bị đứt."
 
+#. the name or the meaning of a longer line
+msgid "a soft thud. You reared with no gong near, and the combo breaks."
+msgstr "tiếng phịch nhẹ. Bạn chồm lên khi không có chiêng, và combo bị đứt."
+
 msgid "Pearl: a soft shimmer ahead of you, in the pearl's lane. Follow it."
 msgstr ""
 "Ngọc: tiếng lấp lánh nhẹ phía trước, ở làn của viên ngọc. Đi theo nó."
 
+#. the name or the meaning of a longer line
+msgid "a soft shimmer ahead of you, in the pearl's lane. Follow it."
+msgstr "tiếng lấp lánh nhẹ phía trước, ở làn của viên ngọc. Đi theo nó."
+
+#. the name or the meaning of a longer line
+msgid "Pearl moves"
+msgstr "Ngọc di chuyển"
+
 msgid "Pearl moves: a bright chime from the pearl's new lane."
 msgstr "Ngọc di chuyển: tiếng chuông sáng từ làn mới của viên ngọc."
+
+#. the name or the meaning of a longer line
+msgid "a bright chime from the pearl's new lane."
+msgstr "tiếng chuông sáng từ làn mới của viên ngọc."
+
+#. the name or the meaning of a longer line
+msgid "On the pearl"
+msgstr "Ở viên ngọc"
 
 msgid ""
 "On the pearl: a soft high ping as your head reaches the pearl's lane."
 msgstr "Ở viên ngọc: tiếng ping cao nhẹ khi đầu rồng tới làn của viên ngọc."
+
+#. the name or the meaning of a longer line
+msgid "a soft high ping as your head reaches the pearl's lane."
+msgstr "tiếng ping cao nhẹ khi đầu rồng tới làn của viên ngọc."
+
+#. the name or the meaning of a longer line
+msgid "Off the pearl"
+msgstr "Rời viên ngọc"
 
 msgid ""
 "Off the pearl: a falling tone. You were away from the pearl too long, and "
@@ -16568,11 +17051,32 @@ msgid ""
 msgstr ""
 "Rời viên ngọc: tiếng đi xuống. Bạn rời viên ngọc quá lâu, và combo bị đứt."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a falling tone. You were away from the pearl too long, and the combo breaks."
+msgstr "tiếng đi xuống. Bạn rời viên ngọc quá lâu, và combo bị đứt."
+
 msgid "Step: the head moves one lane."
 msgstr "Bước: đầu rồng đi một làn."
 
+#. the name or the meaning of a longer line
+msgid "the head moves one lane."
+msgstr "đầu rồng đi một làn."
+
+#. the name or the meaning of a longer line
+msgid "Street edge"
+msgstr "Mép phố"
+
 msgid "Street edge: a wooden bump. You are in the last lane on that side."
 msgstr "Mép phố: tiếng va gỗ. Bạn đang ở làn cuối bên đó."
+
+#. the name or the meaning of a longer line
+msgid "a wooden bump. You are in the last lane on that side."
+msgstr "tiếng va gỗ. Bạn đang ở làn cuối bên đó."
+
+#. the name or the meaning of a longer line
+msgid "Red envelope coming"
+msgstr "Bao lì xì đang đến"
 
 msgid ""
 "Red envelope coming: a papery rustle with little bells, coming down its "
@@ -16580,12 +17084,36 @@ msgid ""
 msgstr ""
 "Bao lì xì đang đến: tiếng giấy sột soạt với chuông nhỏ, đến theo làn của nó."
 
+#. the name or the meaning of a longer line
+msgid "a papery rustle with little bells, coming down its lane."
+msgstr "tiếng giấy sột soạt với chuông nhỏ, đến theo làn của nó."
+
+#. the name or the meaning of a longer line
+msgid "Envelope caught"
+msgstr "Bắt được bao lì xì"
+
 msgid "Envelope caught: coins and a chime. The dragon grows one segment."
 msgstr ""
 "Bắt được bao lì xì: tiếng xu và tiếng chuông. Rồng dài thêm một đốt."
 
+#. the name or the meaning of a longer line
+msgid "coins and a chime. The dragon grows one segment."
+msgstr "tiếng xu và tiếng chuông. Rồng dài thêm một đốt."
+
+#. the name or the meaning of a longer line
+msgid "Envelope missed"
+msgstr "Lỡ bao lì xì"
+
 msgid "Envelope missed: a soft flutter as it drifts past."
 msgstr "Lỡ bao lì xì: tiếng phất phơ nhẹ khi nó trôi qua."
+
+#. the name or the meaning of a longer line
+msgid "a soft flutter as it drifts past."
+msgstr "tiếng phất phơ nhẹ khi nó trôi qua."
+
+#. the name or the meaning of a longer line
+msgid "Firecrackers coming"
+msgstr "Pháo đang đến"
 
 msgid ""
 "Firecrackers coming: a fizzing crackle in their lane. Keep your head out of "
@@ -16594,8 +17122,20 @@ msgstr ""
 "Pháo đang đến: tiếng lách tách xèo xèo ở làn của nó. Giữ đầu rồng ngoài làn "
 "đó."
 
+#. the name or the meaning of a longer line
+msgid "a fizzing crackle in their lane. Keep your head out of it."
+msgstr "tiếng lách tách xèo xèo ở làn của nó. Giữ đầu rồng ngoài làn đó."
+
+#. the name or the meaning of a longer line
+msgid "Firecrackers burst"
+msgstr "Pháo nổ"
+
 msgid "Firecrackers burst: a crackle in another lane. You are safe."
 msgstr "Pháo nổ: tiếng lách tách ở làn khác. Bạn an toàn."
+
+#. the name or the meaning of a longer line
+msgid "a crackle in another lane. You are safe."
+msgstr "tiếng lách tách ở làn khác. Bạn an toàn."
 
 msgid ""
 "Stumble: firecrackers right under you and a clatter. The tail stumbles and "
@@ -16604,30 +17144,89 @@ msgstr ""
 "Vấp: pháo nổ ngay dưới chân và tiếng loảng xoảng. Đuôi rồng vấp và bạn mất "
 "điểm."
 
+#. the name or the meaning of a longer line
+msgid ""
+"firecrackers right under you and a clatter. The tail stumbles and you lose "
+"points."
+msgstr ""
+"pháo nổ ngay dưới chân và tiếng loảng xoảng. Đuôi rồng vấp và bạn mất điểm."
+
+#. the name or the meaning of a longer line
+msgid "Lantern coming"
+msgstr "Đèn lồng đang đến"
+
 msgid "Lantern coming: a warm, low glow of chimes, on the Lantern walk."
 msgstr "Đèn lồng đang đến: tiếng chuông trầm, ấm, trong Rước đèn lồng."
+
+#. the name or the meaning of a longer line
+msgid "a warm, low glow of chimes, on the Lantern walk."
+msgstr "tiếng chuông trầm, ấm, trong Rước đèn lồng."
+
+#. the name or the meaning of a longer line
+msgid "Lantern caught"
+msgstr "Bắt được đèn lồng"
 
 msgid "Lantern caught: a soft harp run."
 msgstr "Bắt được đèn lồng: chuỗi đàn hạc nhẹ."
 
+#. the name or the meaning of a longer line
+msgid "a soft harp run."
+msgstr "chuỗi đàn hạc nhẹ."
+
+#. the name or the meaning of a longer line
+msgid "Crowd cheers"
+msgstr "Đám đông reo hò"
+
 msgid "Crowd cheers: a shop's crowd cheers as you dance past."
 msgstr "Đám đông reo hò: đám đông ở cửa hàng reo hò khi bạn múa qua."
+
+#. the name or the meaning of a longer line
+msgid "a shop's crowd cheers as you dance past."
+msgstr "đám đông ở cửa hàng reo hò khi bạn múa qua."
+
+#. the name or the meaning of a longer line
+msgid "Polite clapping"
+msgstr "Vỗ tay lịch sự"
 
 msgid ""
 "Polite clapping: a shop's crowd claps. Keep a combo going and they cheer."
 msgstr ""
 "Vỗ tay lịch sự: đám đông ở cửa hàng vỗ tay. Giữ combo thì họ sẽ reo hò."
 
+#. the name or the meaning of a longer line
+msgid "a shop's crowd claps. Keep a combo going and they cheer."
+msgstr "đám đông ở cửa hàng vỗ tay. Giữ combo thì họ sẽ reo hò."
+
+#. the name or the meaning of a longer line
+msgid "Combo cheer"
+msgstr "Reo hò combo"
+
 msgid ""
 "Combo cheer: a big cheer and a cymbal for every 16 beats on the pearl."
 msgstr ""
 "Reo hò combo: tiếng reo lớn và chũm chọe cho mỗi 16 nhịp ở viên ngọc."
 
+#. the name or the meaning of a longer line
+msgid "a big cheer and a cymbal for every 16 beats on the pearl."
+msgstr "tiếng reo lớn và chũm chọe cho mỗi 16 nhịp ở viên ngọc."
+
+#. the name or the meaning of a longer line
+msgid "Countdown"
+msgstr "Đếm ngược"
+
 msgid "Countdown: a ticking wood block, the beats before midnight."
 msgstr "Đếm ngược: tiếng mõ gỗ tích tắc, các nhịp trước nửa đêm."
 
+#. the name or the meaning of a longer line
+msgid "a ticking wood block, the beats before midnight."
+msgstr "tiếng mõ gỗ tích tắc, các nhịp trước nửa đêm."
+
 msgid "Dull tap: nothing to do there."
 msgstr "Tiếng gõ đục: không có gì để làm ở đó."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do there."
+msgstr "không có gì để làm ở đó."
 
 msgid "on the left"
 msgstr "bên trái"
@@ -18790,6 +19389,10 @@ msgstr "Cỏ cao"
 msgid "The edge of the meadow. Turn back the other way."
 msgstr "Mép đồng cỏ. Quay lại hướng kia."
 
+#. the name or the meaning of a longer line
+msgid "A soft hum"
+msgstr "Tiếng ngân nhẹ"
+
 msgid ""
 "A soft hum: a firefly is close enough to catch. Press the main action as it "
 "glows."
@@ -18799,6 +19402,15 @@ msgstr ""
 
 msgid "Firefly in reach"
 msgstr "Đom đóm trong tầm tay"
+
+#. the name or the meaning of a longer line
+msgid ""
+"a firefly is close enough to catch. Press the main action as it glows."
+msgstr "một con đom đóm đủ gần để bắt. Nhấn hành động chính khi nó sáng."
+
+#. the name or the meaning of a longer line
+msgid "A light tick"
+msgstr "Tiếng tích nhẹ"
 
 msgid ""
 "A light tick: you answered one flash of a blink with several flashes. "
@@ -18810,11 +19422,29 @@ msgstr ""
 msgid "Flash answered"
 msgstr "Đã đáp một chớp"
 
+#. the name or the meaning of a longer line
+msgid ""
+"you answered one flash of a blink with several flashes. Answer the rest."
+msgstr ""
+"bạn đã đáp một lần chớp của lần nháy có nhiều chớp. Đáp nốt phần còn lại."
+
+#. the name or the meaning of a longer line
+msgid "A glassy clink"
+msgstr "Tiếng leng keng như thủy tinh"
+
 msgid "A glassy clink: the firefly is safe in your jar."
 msgstr "Tiếng leng keng như thủy tinh: con đom đóm đã an toàn trong hũ."
 
 msgid "Caught"
 msgstr "Bắt được"
+
+#. the name or the meaning of a longer line
+msgid "the firefly is safe in your jar."
+msgstr "con đom đóm đã an toàn trong hũ."
+
+#. the name or the meaning of a longer line
+msgid "A rising chime"
+msgstr "Tiếng chuông đi lên"
 
 msgid ""
 "A rising chime: a firefly you have never caught. It goes in your journal."
@@ -18825,11 +19455,27 @@ msgstr ""
 msgid "New species"
 msgstr "Loài mới"
 
+#. the name or the meaning of a longer line
+msgid "a firefly you have never caught. It goes in your journal."
+msgstr "một con đom đóm bạn chưa từng bắt. Nó được ghi vào nhật ký."
+
+#. the name or the meaning of a longer line
+msgid "A soft puff"
+msgstr "Tiếng phù nhẹ"
+
 msgid "A soft puff: the firefly is dark just now. Wait for its glow."
 msgstr "Tiếng phù nhẹ: con đom đóm đang tối. Chờ nó sáng."
 
 msgid "Not glowing yet"
 msgstr "Chưa sáng"
+
+#. the name or the meaning of a longer line
+msgid "the firefly is dark just now. Wait for its glow."
+msgstr "con đom đóm đang tối. Chờ nó sáng."
+
+#. the name or the meaning of a longer line
+msgid "A falling sigh"
+msgstr "Tiếng thở dài đi xuống"
 
 msgid ""
 "A falling sigh: a blink ended before you answered every flash. Try its next "
@@ -18841,17 +19487,33 @@ msgstr ""
 msgid "Drifted on"
 msgstr "Đã bay đi"
 
+#. the name or the meaning of a longer line
+msgid "a blink ended before you answered every flash. Try its next blink."
+msgstr "lần nháy kết thúc trước khi bạn đáp đủ các chớp. Thử lần nháy sau."
+
 msgid "A tap on the glass: the jar is full. Let them go to make room."
 msgstr "Tiếng gõ lên thủy tinh: hũ đã đầy. Thả chúng ra để có chỗ."
 
 msgid "Jar full"
 msgstr "Hũ đầy"
 
+#. the name or the meaning of a longer line
+msgid "A dull hush"
+msgstr "Tiếng lặng đục"
+
 msgid "A dull hush: no firefly is close enough."
 msgstr "Tiếng lặng đục: không có con đom đóm nào đủ gần."
 
 msgid "Nothing in reach"
 msgstr "Không có gì trong tầm tay"
+
+#. the name or the meaning of a longer line
+msgid "no firefly is close enough."
+msgstr "không có con đom đóm nào đủ gần."
+
+#. the name or the meaning of a longer line
+msgid "A rising shimmer"
+msgstr "Tiếng lấp lánh đi lên"
 
 msgid ""
 "A rising shimmer: the jar opens, the fireflies fly up and their notes ring "
@@ -18862,6 +19524,10 @@ msgstr ""
 
 msgid "Release"
 msgstr "Thả"
+
+#. the name or the meaning of a longer line
+msgid "the jar opens, the fireflies fly up and their notes ring as a chord."
+msgstr "hũ mở, đom đóm bay lên và các nốt của chúng vang thành hợp âm."
 
 msgid ""
 "A glittering shimmer after you set a jar free, while the meadow glows and "
@@ -18909,6 +19575,10 @@ msgstr "Đêm giữa hạ: cả đồng cỏ cùng chớp một lúc."
 msgid "The chorus flash"
 msgstr "Cả đàn chớp"
 
+#. the name or the meaning of a longer line
+msgid "the whole meadow flashes at once."
+msgstr "cả đồng cỏ cùng chớp một lúc."
+
 msgid "In step"
 msgstr "Đúng nhịp"
 
@@ -18919,11 +19589,19 @@ msgstr ""
 "Đêm giữa hạ: bạn nhấn cùng lần chớp, và một con lạc nhịp hòa vào dàn hợp "
 "xướng."
 
+#. the name or the meaning of a longer line
+msgid "you pressed with the flash, and a straggler joins the chorus."
+msgstr "bạn nhấn cùng lần chớp, và một con lạc nhịp hòa vào dàn hợp xướng."
+
 msgid "Midsummer night: that press missed the flash. Press with the chorus."
 msgstr "Đêm giữa hạ: lần nhấn đó lỡ lần chớp. Nhấn cùng cả đàn."
 
 msgid "Off the beat"
 msgstr "Lệch nhịp"
+
+#. the name or the meaning of a longer line
+msgid "that press missed the flash. Press with the chorus."
+msgstr "lần nhấn đó lỡ lần chớp. Nhấn cùng cả đàn."
 
 msgid ""
 "Up and Down move through the sounds you need in play. Enter plays the "
@@ -20654,26 +21332,80 @@ msgstr "1 nước"
 msgid "{n} moves"
 msgstr "{n} nước"
 
+#. the name or the meaning of a longer line
+msgid "Hearts card"
+msgstr "Lá cơ"
+
 msgid ""
 "Hearts card: a paper slide with a warm low bell. Every hearts card you "
 "reach or pick up."
 msgstr ""
 "Lá cơ: tiếng giấy trượt với chuông trầm ấm. Mỗi lá cơ bạn tới hoặc nhặt lên."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a paper slide with a warm low bell. Every hearts card you reach or pick up."
+msgstr ""
+"tiếng giấy trượt với chuông trầm ấm. Mỗi lá cơ bạn tới hoặc nhặt lên."
+
+#. the name or the meaning of a longer line
+msgid "Diamonds card"
+msgstr "Lá rô"
+
 msgid "Diamonds card: a paper slide with a bright high bell."
 msgstr "Lá rô: tiếng giấy trượt với chuông cao trong."
+
+#. the name or the meaning of a longer line
+msgid "a paper slide with a bright high bell."
+msgstr "tiếng giấy trượt với chuông cao trong."
+
+#. the name or the meaning of a longer line
+msgid "Clubs card"
+msgstr "Lá chuồn"
 
 msgid "Clubs card: a paper slide with a soft wooden knock."
 msgstr "Lá chuồn: tiếng giấy trượt với tiếng gõ gỗ nhẹ."
 
+#. the name or the meaning of a longer line
+msgid "a paper slide with a soft wooden knock."
+msgstr "tiếng giấy trượt với tiếng gõ gỗ nhẹ."
+
+#. the name or the meaning of a longer line
+msgid "Spades card"
+msgstr "Lá bích"
+
 msgid "Spades card: a paper slide with a deep wooden knock."
 msgstr "Lá bích: tiếng giấy trượt với tiếng gõ gỗ trầm."
+
+#. the name or the meaning of a longer line
+msgid "a paper slide with a deep wooden knock."
+msgstr "tiếng giấy trượt với tiếng gõ gỗ trầm."
+
+#. the name or the meaning of a longer line
+msgid "Card flip"
+msgstr "Lật bài"
 
 msgid "Card flip: a face-down card turns face up. Its name follows."
 msgstr "Lật bài: một lá úp lật ngửa lên. Tên lá đọc tiếp theo."
 
+#. the name or the meaning of a longer line
+msgid "a face-down card turns face up. Its name follows."
+msgstr "một lá úp lật ngửa lên. Tên lá đọc tiếp theo."
+
+#. the name or the meaning of a longer line
+msgid "Soft tap"
+msgstr "Gõ nhẹ"
+
 msgid "Soft tap: the cards you held are placed."
 msgstr "Gõ nhẹ: các lá bạn cầm đã được đặt."
+
+#. the name or the meaning of a longer line
+msgid "the cards you held are placed."
+msgstr "các lá bạn cầm đã được đặt."
+
+#. the name or the meaning of a longer line
+msgid "Muffled thud"
+msgstr "Tiếng thịch nghẹt"
 
 msgid ""
 "Muffled thud: the cards cannot go there. The reason follows, and you keep "
@@ -20682,12 +21414,37 @@ msgstr ""
 "Tiếng thịch nghẹt: không đặt bài vào đó được. Lý do nói tiếp theo, và bạn "
 "vẫn cầm bài."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the cards cannot go there. The reason follows, and you keep holding them."
+msgstr "không đặt bài vào đó được. Lý do nói tiếp theo, và bạn vẫn cầm bài."
+
+#. the name or the meaning of a longer line
+msgid "Stock turn"
+msgstr "Lật nọc"
+
 msgid ""
 "Stock turn: a card is turned up from the stock, or the stock is refilled."
 msgstr "Lật nọc: một lá được lật từ nọc, hoặc nọc đầy lại."
 
+#. the name or the meaning of a longer line
+msgid "a card is turned up from the stock, or the stock is refilled."
+msgstr "một lá được lật từ nọc, hoặc nọc đầy lại."
+
+#. the name or the meaning of a longer line
+msgid "Foundation chime"
+msgstr "Chuông chồng đích"
+
 msgid "Foundation chime: a suit is complete, ace to king."
 msgstr "Chuông chồng đích: một chất đã đủ, từ át đến già."
+
+#. the name or the meaning of a longer line
+msgid "a suit is complete, ace to king."
+msgstr "một chất đã đủ, từ át đến già."
+
+#. the name or the meaning of a longer line
+msgid "Row chime"
+msgstr "Chuông hàng"
 
 msgid ""
 "Row chime: you cross from the piles to the stock, or from the stock to the "
@@ -20695,11 +21452,28 @@ msgid ""
 msgstr ""
 "Chuông hàng: bạn đi từ các cột sang nọc, hoặc từ nọc sang chồng đích."
 
+#. the name or the meaning of a longer line
+msgid ""
+"you cross from the piles to the stock, or from the stock to the foundations."
+msgstr "bạn đi từ các cột sang nọc, hoặc từ nọc sang chồng đích."
+
+#. the name or the meaning of a longer line
+msgid "Undo swish"
+msgstr "Tiếng vút hoàn tác"
+
 msgid "Undo swish: the last move is taken back."
 msgstr "Tiếng vút hoàn tác: nước vừa đi được lấy lại."
 
+#. the name or the meaning of a longer line
+msgid "the last move is taken back."
+msgstr "nước vừa đi được lấy lại."
+
 msgid "Dull tap: nothing to do there just now."
 msgstr "Gõ đục: lúc này ở đó không có gì để làm."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do there just now."
+msgstr "lúc này ở đó không có gì để làm."
 
 msgid "Return to the Fireside Patience title."
 msgstr "Về màn hình chính của Fireside Patience."
@@ -24102,8 +24876,20 @@ msgstr "Đạp ở {name}"
 msgid "Endless ride in {name}"
 msgstr "Chuyến bất tận ở {name}"
 
+#. the name or the meaning of a longer line
+msgid "Road bike tyres"
+msgstr "Lốp xe đạp đua"
+
 msgid "Road bike tyres: a thin hiss that rises with your speed."
 msgstr "Lốp xe đạp đua: tiếng xì mỏng tăng theo tốc độ."
+
+#. the name or the meaning of a longer line
+msgid "a thin hiss that rises with your speed."
+msgstr "tiếng xì mỏng tăng theo tốc độ."
+
+#. the name or the meaning of a longer line
+msgid "Road bike freewheel"
+msgstr "Líp xe đạp đua"
 
 msgid ""
 "Road bike freewheel: a fast, light ticking while you coast. It slows as you "
@@ -24112,20 +24898,68 @@ msgstr ""
 "Líp xe đạp đua: tiếng tích tắc nhanh, nhẹ khi thả trôi. Chậm dần khi bạn "
 "chậm lại."
 
+#. the name or the meaning of a longer line
+msgid "a fast, light ticking while you coast. It slows as you slow."
+msgstr "tiếng tích tắc nhanh, nhẹ khi thả trôi. Chậm dần khi bạn chậm lại."
+
+#. the name or the meaning of a longer line
+msgid "Road bike chain"
+msgstr "Xích xe đạp đua"
+
 msgid "Road bike chain: a fine, soft purr while you pedal."
 msgstr "Xích xe đạp đua: tiếng rì rì nhỏ, êm khi đạp."
+
+#. the name or the meaning of a longer line
+msgid "a fine, soft purr while you pedal."
+msgstr "tiếng rì rì nhỏ, êm khi đạp."
+
+#. the name or the meaning of a longer line
+msgid "BMX tyres"
+msgstr "Lốp BMX"
 
 msgid "BMX tyres: a chunky buzz that rises with your speed."
 msgstr "Lốp BMX: tiếng ù dày tăng theo tốc độ."
 
+#. the name or the meaning of a longer line
+msgid "a chunky buzz that rises with your speed."
+msgstr "tiếng ù dày tăng theo tốc độ."
+
+#. the name or the meaning of a longer line
+msgid "BMX freewheel"
+msgstr "Líp BMX"
+
 msgid "BMX freewheel: a loud, slower clatter while you coast."
 msgstr "Líp BMX: tiếng lạch cạch to, chậm hơn khi thả trôi."
+
+#. the name or the meaning of a longer line
+msgid "a loud, slower clatter while you coast."
+msgstr "tiếng lạch cạch to, chậm hơn khi thả trôi."
+
+#. the name or the meaning of a longer line
+msgid "BMX chain"
+msgstr "Xích BMX"
 
 msgid "BMX chain: a chunky rattle while you pedal."
 msgstr "Xích BMX: tiếng lọc xọc dày khi đạp."
 
+#. the name or the meaning of a longer line
+msgid "a chunky rattle while you pedal."
+msgstr "tiếng lọc xọc dày khi đạp."
+
+#. the name or the meaning of a longer line
+msgid "Mountain bike tyres"
+msgstr "Lốp xe đạp địa hình"
+
 msgid "Mountain bike tyres: a knobbly hum that rises with your speed."
 msgstr "Lốp xe đạp địa hình: tiếng ù gai góc tăng theo tốc độ."
+
+#. the name or the meaning of a longer line
+msgid "a knobbly hum that rises with your speed."
+msgstr "tiếng ù gai góc tăng theo tốc độ."
+
+#. the name or the meaning of a longer line
+msgid "Mountain bike freewheel"
+msgstr "Líp xe đạp địa hình"
 
 msgid ""
 "Mountain bike freewheel: a deep, fast ticking while you coast. It slows as "
@@ -24134,14 +24968,46 @@ msgstr ""
 "Líp xe đạp địa hình: tiếng tích tắc trầm, nhanh khi thả trôi. Chậm dần khi "
 "bạn chậm lại."
 
+#. the name or the meaning of a longer line
+msgid "a deep, fast ticking while you coast. It slows as you slow."
+msgstr "tiếng tích tắc trầm, nhanh khi thả trôi. Chậm dần khi bạn chậm lại."
+
+#. the name or the meaning of a longer line
+msgid "Mountain bike chain"
+msgstr "Xích xe đạp địa hình"
+
 msgid "Mountain bike chain: a gritty purr while you pedal."
 msgstr "Xích xe đạp địa hình: tiếng rì rì sạn khi đạp."
+
+#. the name or the meaning of a longer line
+msgid "a gritty purr while you pedal."
+msgstr "tiếng rì rì sạn khi đạp."
+
+#. the name or the meaning of a longer line
+msgid "E-bike tyres"
+msgstr "Lốp xe đạp điện"
 
 msgid "E-bike tyres: a soft hiss that rises with your speed."
 msgstr "Lốp xe đạp điện: tiếng xì nhẹ tăng theo tốc độ."
 
+#. the name or the meaning of a longer line
+msgid "a soft hiss that rises with your speed."
+msgstr "tiếng xì nhẹ tăng theo tốc độ."
+
+#. the name or the meaning of a longer line
+msgid "E-bike freewheel"
+msgstr "Líp xe đạp điện"
+
 msgid "E-bike freewheel: a quiet tick while you coast."
 msgstr "Líp xe đạp điện: tiếng tích nhỏ khi thả trôi."
+
+#. the name or the meaning of a longer line
+msgid "a quiet tick while you coast."
+msgstr "tiếng tích nhỏ khi thả trôi."
+
+#. the name or the meaning of a longer line
+msgid "E-bike motor"
+msgstr "Động cơ xe đạp điện"
 
 msgid ""
 "E-bike motor: a high electric whine while you pedal. It fades above 25 "
@@ -24150,41 +25016,142 @@ msgstr ""
 "Động cơ xe đạp điện: tiếng rít điện cao khi đạp. Tắt dần trên 25 ki-lô-mét "
 "một giờ."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a high electric whine while you pedal. It fades above 25 kilometres an hour."
+msgstr "tiếng rít điện cao khi đạp. Tắt dần trên 25 ki-lô-mét một giờ."
+
+#. the name or the meaning of a longer line
+msgid "Moped tyres"
+msgstr "Lốp xe gắn máy"
+
 msgid "Moped tyres: a low road roar that rises with your speed."
 msgstr "Lốp xe gắn máy: tiếng ầm thấp trên đường tăng theo tốc độ."
+
+#. the name or the meaning of a longer line
+msgid "a low road roar that rises with your speed."
+msgstr "tiếng ầm thấp trên đường tăng theo tốc độ."
+
+#. the name or the meaning of a longer line
+msgid "Moped idle"
+msgstr "Xe gắn máy chạy không"
 
 msgid "Moped idle: a putter while you let go of the throttle."
 msgstr "Xe gắn máy chạy không: tiếng phành phạch khi bạn nhả ga."
 
+#. the name or the meaning of a longer line
+msgid "a putter while you let go of the throttle."
+msgstr "tiếng phành phạch khi bạn nhả ga."
+
+#. the name or the meaning of a longer line
+msgid "Moped throttle"
+msgstr "Ga xe gắn máy"
+
 msgid "Moped throttle: a two-stroke buzz that climbs as you speed up."
 msgstr "Ga xe gắn máy: tiếng máy hai thì rền lên khi tăng tốc."
+
+#. the name or the meaning of a longer line
+msgid "a two-stroke buzz that climbs as you speed up."
+msgstr "tiếng máy hai thì rền lên khi tăng tốc."
+
+#. the name or the meaning of a longer line
+msgid "Wind"
+msgstr "Gió"
 
 msgid "Wind: a rush in your ears that grows as you go faster."
 msgstr "Gió: tiếng ù bên tai mạnh dần khi bạn đi nhanh hơn."
 
+#. the name or the meaning of a longer line
+msgid "a rush in your ears that grows as you go faster."
+msgstr "tiếng ù bên tai mạnh dần khi bạn đi nhanh hơn."
+
+#. the name or the meaning of a longer line
+msgid "Brakes"
+msgstr "Phanh"
+
 msgid "Brakes: a short squeal as the brakes bite."
 msgstr "Phanh: tiếng rít ngắn khi phanh ăn."
+
+#. the name or the meaning of a longer line
+msgid "a short squeal as the brakes bite."
+msgstr "tiếng rít ngắn khi phanh ăn."
+
+#. the name or the meaning of a longer line
+msgid "Steer"
+msgstr "Lái"
 
 msgid "Steer: a soft swish as you lean left or right."
 msgstr "Lái: tiếng vút nhẹ khi bạn nghiêng trái hay phải."
 
+#. the name or the meaning of a longer line
+msgid "a soft swish as you lean left or right."
+msgstr "tiếng vút nhẹ khi bạn nghiêng trái hay phải."
+
+#. the name or the meaning of a longer line
+msgid "Sprint"
+msgstr "Tăng tốc"
+
 msgid "Sprint: a hard breath as you stand on the pedals."
 msgstr "Tăng tốc: hơi thở mạnh khi bạn đứng lên bàn đạp."
+
+#. the name or the meaning of a longer line
+msgid "a hard breath as you stand on the pedals."
+msgstr "hơi thở mạnh khi bạn đứng lên bàn đạp."
+
+#. the name or the meaning of a longer line
+msgid "Out of breath"
+msgstr "Hết hơi"
 
 msgid "Out of breath: a long gasp. Sprint is spent until you rest."
 msgstr "Hết hơi: tiếng thở hắt dài. Không tăng tốc được đến khi nghỉ."
 
+#. the name or the meaning of a longer line
+msgid "a long gasp. Sprint is spent until you rest."
+msgstr "tiếng thở hắt dài. Không tăng tốc được đến khi nghỉ."
+
 msgid "Hop: a spring and a rattle as both wheels leave the road."
 msgstr "Nhảy: tiếng bật và tiếng lạch cạch khi cả hai bánh rời mặt đường."
+
+#. the name or the meaning of a longer line
+msgid "a spring and a rattle as both wheels leave the road."
+msgstr "tiếng bật và tiếng lạch cạch khi cả hai bánh rời mặt đường."
+
+#. the name or the meaning of a longer line
+msgid "Clean landing"
+msgstr "Tiếp đất gọn"
 
 msgid "Clean landing: a light double thump."
 msgstr "Tiếp đất gọn: hai tiếng thịch nhẹ."
 
+#. the name or the meaning of a longer line
+msgid "a light double thump."
+msgstr "hai tiếng thịch nhẹ."
+
+#. the name or the meaning of a longer line
+msgid "Hard landing"
+msgstr "Tiếp đất mạnh"
+
 msgid "Hard landing: a heavy crunch that costs you speed."
 msgstr "Tiếp đất mạnh: tiếng rắc nặng làm bạn mất tốc độ."
 
+#. the name or the meaning of a longer line
+msgid "a heavy crunch that costs you speed."
+msgstr "tiếng rắc nặng làm bạn mất tốc độ."
+
+#. the name or the meaning of a longer line
+msgid "Pothole jolt"
+msgstr "Xóc ổ gà"
+
 msgid "Pothole jolt: a deep thud as a wide tyre drops through a pothole."
 msgstr "Xóc ổ gà: tiếng thịch trầm khi lốp to sụt qua ổ gà."
+
+#. the name or the meaning of a longer line
+msgid "a deep thud as a wide tyre drops through a pothole."
+msgstr "tiếng thịch trầm khi lốp to sụt qua ổ gà."
+
+#. the name or the meaning of a longer line
+msgid "Flat tyre"
+msgstr "Thủng lốp"
 
 msgid ""
 "Flat tyre: a pop and a hiss. Stop and stand still for 3 seconds to swap the "
@@ -24192,20 +25159,69 @@ msgid ""
 msgstr ""
 "Thủng lốp: tiếng bụp và tiếng xì. Dừng lại và đứng yên 3 giây để thay săm."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a pop and a hiss. Stop and stand still for 3 seconds to swap the tube."
+msgstr "tiếng bụp và tiếng xì. Dừng lại và đứng yên 3 giây để thay săm."
+
+#. the name or the meaning of a longer line
+msgid "Tube swapped"
+msgstr "Đã thay săm"
+
 msgid "Tube swapped: a pump and a click. The tyre is fixed."
 msgstr "Đã thay săm: tiếng bơm và tiếng tách. Lốp đã sửa xong."
+
+#. the name or the meaning of a longer line
+msgid "a pump and a click. The tyre is fixed."
+msgstr "tiếng bơm và tiếng tách. Lốp đã sửa xong."
+
+#. the name or the meaning of a longer line
+msgid "Curb strike"
+msgstr "Đâm lề"
 
 msgid "Curb strike: a hard metal bang as a wheel hits a curb."
 msgstr "Đâm lề: tiếng kim loại va mạnh khi bánh xe đâm vào lề."
 
+#. the name or the meaning of a longer line
+msgid "a hard metal bang as a wheel hits a curb."
+msgstr "tiếng kim loại va mạnh khi bánh xe đâm vào lề."
+
+#. the name or the meaning of a longer line
+msgid "Crash"
+msgstr "Ngã"
+
 msgid "Crash: a clatter and a scrape. You are down for 3 seconds."
 msgstr "Ngã: tiếng loảng xoảng và tiếng cào. Bạn nằm 3 giây."
+
+#. the name or the meaning of a longer line
+msgid "a clatter and a scrape. You are down for 3 seconds."
+msgstr "tiếng loảng xoảng và tiếng cào. Bạn nằm 3 giây."
+
+#. the name or the meaning of a longer line
+msgid "Back up"
+msgstr "Dậy"
 
 msgid "Back up: a click into the pedals. Ride on."
 msgstr "Dậy: tiếng tách vào bàn đạp. Đạp tiếp."
 
+#. the name or the meaning of a longer line
+msgid "a click into the pedals. Ride on."
+msgstr "tiếng tách vào bàn đạp. Đạp tiếp."
+
+#. the name or the meaning of a longer line
+msgid "Running wide"
+msgstr "Văng rộng"
+
 msgid "Running wide: a long tyre skid at a turn taken too fast."
 msgstr "Văng rộng: tiếng lốp trượt dài khi rẽ quá nhanh."
+
+#. the name or the meaning of a longer line
+msgid "a long tyre skid at a turn taken too fast."
+msgstr "tiếng lốp trượt dài khi rẽ quá nhanh."
+
+#. the name or the meaning of a longer line
+msgid "Edge rumble"
+msgstr "Rung mép đường"
 
 msgid ""
 "Edge rumble: a low rumble from the edge you are pressed against, the parked "
@@ -24214,6 +25230,16 @@ msgstr ""
 "Rung mép đường: tiếng rung trầm từ mép bạn đang sát, hàng xe đỗ hoặc vạch "
 "giữa."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low rumble from the edge you are pressed against, the parked cars or the "
+"centre line."
+msgstr "tiếng rung trầm từ mép bạn đang sát, hàng xe đỗ hoặc vạch giữa."
+
+#. the name or the meaning of a longer line
+msgid "Lane line"
+msgstr "Vạch làn"
+
 msgid ""
 "Lane line: a short thrum as you cross the line between the bike lane and "
 "the traffic lane."
@@ -24221,10 +25247,29 @@ msgstr ""
 "Vạch làn: tiếng rền ngắn khi bạn băng qua vạch giữa làn xe đạp và làn xe "
 "chạy."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short thrum as you cross the line between the bike lane and the traffic "
+"lane."
+msgstr ""
+"tiếng rền ngắn khi bạn băng qua vạch giữa làn xe đạp và làn xe chạy."
+
+#. the name or the meaning of a longer line
+msgid "Door zone"
+msgstr "Vùng cửa xe"
+
 msgid ""
 "Door zone: a faint murmur of parked cars beside you. A door could open here."
 msgstr ""
 "Vùng cửa xe: tiếng rì rầm khẽ của xe đỗ bên cạnh. Cửa có thể mở ở đây."
+
+#. the name or the meaning of a longer line
+msgid "a faint murmur of parked cars beside you. A door could open here."
+msgstr "tiếng rì rầm khẽ của xe đỗ bên cạnh. Cửa có thể mở ở đây."
+
+#. the name or the meaning of a longer line
+msgid "Hazard tick"
+msgstr "Tiếng báo chướng ngại"
 
 msgid ""
 "Hazard tick: a pothole or an open door ahead, from its side. It ticks "
@@ -24233,6 +25278,18 @@ msgstr ""
 "Tiếng báo chướng ngại: ổ gà hoặc cửa mở phía trước, từ phía nó nằm. Nhanh "
 "và cao dần khi bạn tới gần."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a pothole or an open door ahead, from its side. It ticks faster and higher "
+"as you get closer."
+msgstr ""
+"ổ gà hoặc cửa mở phía trước, từ phía nó nằm. Nhanh và cao dần khi bạn tới "
+"gần."
+
+#. the name or the meaning of a longer line
+msgid "Curb tone"
+msgstr "Âm lề đường"
+
 msgid ""
 "Curb tone: a low, hard tick from a raised curb across the bike lane. Ride "
 "around it, or hop it on a BMX."
@@ -24240,14 +25297,44 @@ msgstr ""
 "Âm lề đường: tiếng tích trầm, cứng từ lề nhô cao chắn ngang làn xe đạp. Đi "
 "vòng qua, hoặc nhảy qua nếu đi BMX."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low, hard tick from a raised curb across the bike lane. Ride around it, "
+"or hop it on a BMX."
+msgstr ""
+"tiếng tích trầm, cứng từ lề nhô cao chắn ngang làn xe đạp. Đi vòng qua, "
+"hoặc nhảy qua nếu đi BMX."
+
+#. the name or the meaning of a longer line
+msgid "Ramp tone"
+msgstr "Âm dốc"
+
 msgid ""
 "Ramp tone: a bright rising tick from a ramp ahead. Press hop at its lip for "
 "a jump."
 msgstr ""
 "Âm dốc: tiếng tích sáng đi lên từ dốc phía trước. Bấm nhảy ở mép dốc để bay."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a bright rising tick from a ramp ahead. Press hop at its lip for a jump."
+msgstr ""
+"tiếng tích sáng đi lên từ dốc phía trước. Bấm nhảy ở mép dốc để bay."
+
+#. the name or the meaning of a longer line
+msgid "Car"
+msgstr "Ô tô"
+
 msgid "Car: an engine hum. Muffled behind you, clearer as it draws level."
 msgstr "Ô tô: tiếng máy ù. Nghẹt phía sau bạn, rõ dần khi ngang hàng."
+
+#. the name or the meaning of a longer line
+msgid "an engine hum. Muffled behind you, clearer as it draws level."
+msgstr "tiếng máy ù. Nghẹt phía sau bạn, rõ dần khi ngang hàng."
+
+#. the name or the meaning of a longer line
+msgid "Oncoming car"
+msgstr "Xe ngược chiều"
 
 msgid ""
 "Oncoming car: an engine coming toward you in the traffic lane. Get into the "
@@ -24255,9 +25342,22 @@ msgid ""
 msgstr ""
 "Xe ngược chiều: tiếng máy tiến về phía bạn trên làn xe chạy. Vào làn xe đạp."
 
+#. the name or the meaning of a longer line
+msgid ""
+"an engine coming toward you in the traffic lane. Get into the bike lane."
+msgstr "tiếng máy tiến về phía bạn trên làn xe chạy. Vào làn xe đạp."
+
+#. the name or the meaning of a longer line
+msgid "Oncoming horn"
+msgstr "Còi ngược chiều"
+
 msgid "Oncoming horn: a long blast from ahead. An oncoming car is coming."
 msgstr ""
 "Còi ngược chiều: tiếng còi dài từ phía trước. Có xe ngược chiều đang tới."
+
+#. the name or the meaning of a longer line
+msgid "a long blast from ahead. An oncoming car is coming."
+msgstr "tiếng còi dài từ phía trước. Có xe ngược chiều đang tới."
 
 msgid ""
 "Parcel: a shop doorbell ahead, from the side the parcel is on. Ride over it "
@@ -24266,21 +25366,73 @@ msgstr ""
 "Bưu kiện: tiếng chuông cửa tiệm phía trước, từ phía bưu kiện nằm. Đạp chậm "
 "qua để nhặt."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a shop doorbell ahead, from the side the parcel is on. Ride over it slowly "
+"to grab it."
+msgstr ""
+"tiếng chuông cửa tiệm phía trước, từ phía bưu kiện nằm. Đạp chậm qua để "
+"nhặt."
+
+#. the name or the meaning of a longer line
+msgid "Parcel grabbed"
+msgstr "Đã nhặt bưu kiện"
+
 msgid "Parcel grabbed: a cardboard thump."
 msgstr "Đã nhặt bưu kiện: tiếng thùng giấy thịch."
 
+#. the name or the meaning of a longer line
+msgid "a cardboard thump."
+msgstr "tiếng thùng giấy thịch."
+
+#. the name or the meaning of a longer line
+msgid "Cobbles"
+msgstr "Đường đá"
+
 msgid "Cobbles: a rattling rumble under your wheels in Old Town."
 msgstr "Đường đá: tiếng rung lạch cạch dưới bánh xe ở Old Town."
+
+#. the name or the meaning of a longer line
+msgid "a rattling rumble under your wheels in Old Town."
+msgstr "tiếng rung lạch cạch dưới bánh xe ở Old Town."
+
+#. the name or the meaning of a longer line
+msgid "Door handle"
+msgstr "Tay nắm cửa"
 
 msgid ""
 "Door handle: a sharp click from a parked car. Its door opens in a moment."
 msgstr "Tay nắm cửa: tiếng tách sắc từ xe đỗ. Cửa sẽ mở ngay sau đó."
 
+#. the name or the meaning of a longer line
+msgid "a sharp click from a parked car. Its door opens in a moment."
+msgstr "tiếng tách sắc từ xe đỗ. Cửa sẽ mở ngay sau đó."
+
+#. the name or the meaning of a longer line
+msgid "Door open"
+msgstr "Cửa mở"
+
 msgid "Door open: a creak as the door swings into the door zone."
 msgstr "Cửa mở: tiếng cót két khi cửa bật vào vùng cửa xe."
 
+#. the name or the meaning of a longer line
+msgid "a creak as the door swings into the door zone."
+msgstr "tiếng cót két khi cửa bật vào vùng cửa xe."
+
+#. the name or the meaning of a longer line
+msgid "Horn"
+msgstr "Còi"
+
 msgid "Horn: a car stuck behind you. Move right to let it pass."
 msgstr "Còi: một ô tô kẹt phía sau bạn. Sang phải để nó qua."
+
+#. the name or the meaning of a longer line
+msgid "a car stuck behind you. Move right to let it pass."
+msgstr "một ô tô kẹt phía sau bạn. Sang phải để nó qua."
+
+#. the name or the meaning of a longer line
+msgid "Thank-you toot"
+msgstr "Còi cảm ơn"
 
 msgid ""
 "Thank-you toot: two short beeps as a car you let by passes. That earns a "
@@ -24288,20 +25440,68 @@ msgid ""
 msgstr ""
 "Còi cảm ơn: hai tiếng bíp ngắn khi xe bạn nhường đi qua. Được tiền boa."
 
+#. the name or the meaning of a longer line
+msgid "two short beeps as a car you let by passes. That earns a tip."
+msgstr "hai tiếng bíp ngắn khi xe bạn nhường đi qua. Được tiền boa."
+
+#. the name or the meaning of a longer line
+msgid "Left turn chime"
+msgstr "Chuông rẽ trái"
+
 msgid "Left turn chime: from your left, a junction turn is coming."
 msgstr "Chuông rẽ trái: từ bên trái, sắp có chỗ rẽ ở ngã tư."
+
+#. the name or the meaning of a longer line
+msgid "from your left, a junction turn is coming."
+msgstr "từ bên trái, sắp có chỗ rẽ ở ngã tư."
+
+#. the name or the meaning of a longer line
+msgid "Right turn chime"
+msgstr "Chuông rẽ phải"
 
 msgid "Right turn chime: from your right, a junction turn is coming."
 msgstr "Chuông rẽ phải: từ bên phải, sắp có chỗ rẽ ở ngã tư."
 
+#. the name or the meaning of a longer line
+msgid "from your right, a junction turn is coming."
+msgstr "từ bên phải, sắp có chỗ rẽ ở ngã tư."
+
+#. the name or the meaning of a longer line
+msgid "Turn made"
+msgstr "Rẽ xong"
+
 msgid "Turn made: a bright chime as you take a junction turn cleanly."
 msgstr "Rẽ xong: chuông sáng khi bạn rẽ gọn ở ngã tư."
+
+#. the name or the meaning of a longer line
+msgid "a bright chime as you take a junction turn cleanly."
+msgstr "chuông sáng khi bạn rẽ gọn ở ngã tư."
+
+#. the name or the meaning of a longer line
+msgid "Finish bell"
+msgstr "Chuông đích"
 
 msgid "Finish bell: a bell from the finish line ahead."
 msgstr "Chuông đích: tiếng chuông từ vạch đích phía trước."
 
+#. the name or the meaning of a longer line
+msgid "a bell from the finish line ahead."
+msgstr "tiếng chuông từ vạch đích phía trước."
+
+#. the name or the meaning of a longer line
+msgid "Finish"
+msgstr "Về đích"
+
 msgid "Finish: a cheer and a bell as you cross the line."
 msgstr "Về đích: tiếng hò reo và chuông khi bạn qua vạch."
+
+#. the name or the meaning of a longer line
+msgid "a cheer and a bell as you cross the line."
+msgstr "tiếng hò reo và chuông khi bạn qua vạch."
+
+#. the name or the meaning of a longer line
+msgid "Act now"
+msgstr "Làm ngay"
 
 msgid ""
 "Act now: a sharp double beep. The hazard is in your line: hop, brake or "
@@ -24310,17 +25510,52 @@ msgstr ""
 "Làm ngay: hai tiếng bíp gắt. Chướng ngại ngay trên đường bạn đi: nhảy, "
 "phanh hoặc lái ngay."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a sharp double beep. The hazard is in your line: hop, brake or steer now."
+msgstr ""
+"hai tiếng bíp gắt. Chướng ngại ngay trên đường bạn đi: nhảy, phanh hoặc lái "
+"ngay."
+
 msgid "Dull tap: nothing happens, such as a hop while stopped."
 msgstr "Gõ đục: không có gì xảy ra, như nhảy khi đang đứng yên."
+
+#. the name or the meaning of a longer line
+msgid "nothing happens, such as a hop while stopped."
+msgstr "không có gì xảy ra, như nhảy khi đang đứng yên."
+
+#. the name or the meaning of a longer line
+msgid "Countdown beep"
+msgstr "Bíp đếm ngược"
 
 msgid "Countdown beep: the ride starts after three."
 msgstr "Bíp đếm ngược: chuyến bắt đầu sau tiếng thứ ba."
 
+#. the name or the meaning of a longer line
+msgid "the ride starts after three."
+msgstr "chuyến bắt đầu sau tiếng thứ ba."
+
 msgid "Go: a high beep. The ride has started."
 msgstr "Đi: tiếng bíp cao. Chuyến đã bắt đầu."
 
+#. the name or the meaning of a longer line
+msgid "a high beep. The ride has started."
+msgstr "tiếng bíp cao. Chuyến đã bắt đầu."
+
+#. the name or the meaning of a longer line
+msgid "Lesson passed"
+msgstr "Qua bài"
+
 msgid "Lesson passed: a rising chime in training."
 msgstr "Qua bài: chuông đi lên trong lúc tập luyện."
+
+#. the name or the meaning of a longer line
+msgid "a rising chime in training."
+msgstr "chuông đi lên trong lúc tập luyện."
+
+#. the name or the meaning of a longer line
+msgid "Leaf pile"
+msgstr "Đống lá"
 
 msgid ""
 "Leaf pile: a dry rustle from a pile of leaves ahead in the bike lane, in "
@@ -24329,6 +25564,18 @@ msgstr ""
 "Đống lá: tiếng xào xạc khô từ đống lá phía trước trên làn xe đạp, trong "
 "Chuyến mùa lá rụng. Đó không phải chướng ngại."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a dry rustle from a pile of leaves ahead in the bike lane, in the Leaf "
+"season ride. It is not a hazard."
+msgstr ""
+"tiếng xào xạc khô từ đống lá phía trước trên làn xe đạp, trong Chuyến mùa "
+"lá rụng. Đó không phải chướng ngại."
+
+#. the name or the meaning of a longer line
+msgid "Leaf crunch"
+msgstr "Lá vỡ vụn"
+
 msgid ""
 "Leaf crunch: a crackle as you ride through a leaf pile, for 1000 ride "
 "points. The freewheel goes quiet for a moment."
@@ -24336,12 +25583,31 @@ msgstr ""
 "Lá vỡ vụn: tiếng lạo xạo khi bạn đạp xuyên đống lá, được 1000 điểm chuyến. "
 "Líp xe im một lúc."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a crackle as you ride through a leaf pile, for 1000 ride points. The "
+"freewheel goes quiet for a moment."
+msgstr ""
+"tiếng lạo xạo khi bạn đạp xuyên đống lá, được 1000 điểm chuyến. Líp xe im "
+"một lúc."
+
+#. the name or the meaning of a longer line
+msgid "Clock tick"
+msgstr "Tích tắc đồng hồ"
+
 msgid ""
 "Clock tick: against the clock, under 15 seconds left. It ticks twice as "
 "fast in the last 5."
 msgstr ""
 "Tích tắc đồng hồ: khi đua với đồng hồ, còn dưới 15 giây. Nhanh gấp đôi "
 "trong 5 giây cuối."
+
+#. the name or the meaning of a longer line
+msgid ""
+"against the clock, under 15 seconds left. It ticks twice as fast in the "
+"last 5."
+msgstr ""
+"khi đua với đồng hồ, còn dưới 15 giây. Nhanh gấp đôi trong 5 giây cuối."
 
 msgid "Left and right"
 msgstr "Trái và phải"
@@ -25936,9 +27202,21 @@ msgstr ""
 "Đếm nhịp: tiếng gõ nắp quan tài. Bốn tiếng đếm vào trước mỗi bài, và ba "
 "tiếng sau khi tạm dừng."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a coffin lid knock. Four of them count you in before each song, and three "
+"after a pause."
+msgstr ""
+"tiếng gõ nắp quan tài. Bốn tiếng đếm vào trước mỗi bài, và ba tiếng sau khi "
+"tạm dừng."
+
 msgid ""
 "Spot on: a small spooky chime with your move. It landed right on the beat."
 msgstr "Chuẩn: tiếng chuông rùng rợn nhỏ cùng động tác. Nó rơi đúng phách."
+
+#. the name or the meaning of a longer line
+msgid "a small spooky chime with your move. It landed right on the beat."
+msgstr "tiếng chuông rùng rợn nhỏ cùng động tác. Nó rơi đúng phách."
 
 msgid ""
 "Close: a soft dull tick with your move. It landed in time, but a little "
@@ -25947,6 +27225,13 @@ msgstr ""
 "Gần: tiếng tích đục nhẹ cùng động tác. Đúng nhịp, nhưng sớm hoặc trễ một "
 "chút."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft dull tick with your move. It landed in time, but a little early or "
+"late."
+msgstr ""
+"tiếng tích đục nhẹ cùng động tác. Đúng nhịp, nhưng sớm hoặc trễ một chút."
+
 msgid ""
 "Stumble: a thud and a clatter of bones. A move was missed, or the wrong "
 "move was danced."
@@ -25954,14 +27239,34 @@ msgstr ""
 "Vấp: tiếng thịch và tiếng xương lách cách. Một động tác bị trượt, hoặc nhảy "
 "sai động tác."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a thud and a clatter of bones. A move was missed, or the wrong move was "
+"danced."
+msgstr ""
+"tiếng thịch và tiếng xương lách cách. Một động tác bị trượt, hoặc nhảy sai "
+"động tác."
+
+#. the name or the meaning of a longer line
+msgid "Bony claps"
+msgstr "Vỗ tay xương"
+
 msgid ""
 "Bony claps: the crowd claps three times. Another 8 moves in a row, for a "
 "bonus."
 msgstr ""
 "Vỗ tay xương: đám đông vỗ ba lần. Thêm 8 động tác liên tiếp, được thưởng."
 
+#. the name or the meaning of a longer line
+msgid "the crowd claps three times. Another 8 moves in a row, for a bonus."
+msgstr "đám đông vỗ ba lần. Thêm 8 động tác liên tiếp, được thưởng."
+
 msgid "Applause: the end of a song, with howls and rattles."
 msgstr "Vỗ tay: hết một bài, với tiếng tru và tiếng lách cách."
+
+#. the name or the meaning of a longer line
+msgid "the end of a song, with howls and rattles."
+msgstr "hết một bài, với tiếng tru và tiếng lách cách."
 
 #. placeholders: {word}, {call_words}, {dance}, {move_words}
 #. one sentence of a longer line
@@ -33360,30 +34665,90 @@ msgstr "1 phút {seconds}"
 msgid "{m} minutes {seconds}"
 msgstr "{m} phút {seconds}"
 
+#. the name or the meaning of a longer line
+msgid "Footstep on floorboards"
+msgstr "Bước chân trên ván sàn"
+
 msgid "Footstep on floorboards: you moved one step, in the upper wings."
 msgstr "Bước chân trên ván sàn: bạn đi một bước, ở các cánh trên."
+
+#. the name or the meaning of a longer line
+msgid "you moved one step, in the upper wings."
+msgstr "bạn đi một bước, ở các cánh trên."
+
+#. the name or the meaning of a longer line
+msgid "Footstep on stone"
+msgstr "Bước chân trên đá"
 
 msgid ""
 "Footstep on stone: you moved one step, from the flooded cellars down."
 msgstr "Bước chân trên đá: bạn đi một bước, từ hầm ngập nước trở xuống."
 
+#. the name or the meaning of a longer line
+msgid "you moved one step, from the flooded cellars down."
+msgstr "bạn đi một bước, từ hầm ngập nước trở xuống."
+
+#. the name or the meaning of a longer line
+msgid "Wall thud"
+msgstr "Tiếng thịch vào tường"
+
 msgid "Wall thud: you walked into a wall, or a hole, and did not move."
 msgstr ""
 "Tiếng thịch vào tường: bạn đi vào tường, hoặc lỗ, và không di chuyển."
+
+#. the name or the meaning of a longer line
+msgid "you walked into a wall, or a hole, and did not move."
+msgstr "bạn đi vào tường, hoặc lỗ, và không di chuyển."
+
+#. the name or the meaning of a longer line
+msgid "Rattling handle"
+msgstr "Tay nắm lạch cạch"
 
 msgid ""
 "Rattling handle: the exit door is still locked. Solve the room first."
 msgstr "Tay nắm lạch cạch: cửa ra vẫn khóa. Giải câu đố của phòng trước."
 
+#. the name or the meaning of a longer line
+msgid "the exit door is still locked. Solve the room first."
+msgstr "cửa ra vẫn khóa. Giải câu đố của phòng trước."
+
+#. the name or the meaning of a longer line
+msgid "Heavy slam"
+msgstr "Tiếng sập mạnh"
+
 msgid ""
 "Heavy slam: the door you came in by is shut fast. There is no going back."
 msgstr "Tiếng sập mạnh: cửa bạn đi vào đã đóng chặt. Không quay lại được."
 
+#. the name or the meaning of a longer line
+msgid "the door you came in by is shut fast. There is no going back."
+msgstr "cửa bạn đi vào đã đóng chặt. Không quay lại được."
+
+#. the name or the meaning of a longer line
+msgid "Bolt sliding back"
+msgstr "Chốt trượt ra"
+
 msgid "Bolt sliding back: the room is solved and its exit door unlocks."
 msgstr "Chốt trượt ra: phòng đã giải và cửa ra mở khóa."
 
+#. the name or the meaning of a longer line
+msgid "the room is solved and its exit door unlocks."
+msgstr "phòng đã giải và cửa ra mở khóa."
+
+#. the name or the meaning of a longer line
+msgid "Cold draught"
+msgstr "Luồng gió lạnh"
+
 msgid "Cold draught: an open exit door. Follow it to leave the room."
 msgstr "Luồng gió lạnh: một cửa ra đang mở. Theo nó để rời phòng."
+
+#. the name or the meaning of a longer line
+msgid "an open exit door. Follow it to leave the room."
+msgstr "một cửa ra đang mở. Theo nó để rời phòng."
+
+#. the name or the meaning of a longer line
+msgid "Spirit's whisper"
+msgstr "Tiếng hồn thì thầm"
 
 msgid ""
 "Spirit's whisper: a spirit seals the exit door and wants an offering. Go to "
@@ -33391,11 +34756,35 @@ msgid ""
 msgstr ""
 "Tiếng hồn thì thầm: một hồn niêm phong cửa ra và muốn lễ vật. Hãy tới đó."
 
+#. the name or the meaning of a longer line
+msgid "a spirit seals the exit door and wants an offering. Go to it."
+msgstr "một hồn niêm phong cửa ra và muốn lễ vật. Hãy tới đó."
+
+#. the name or the meaning of a longer line
+msgid "Creaking door"
+msgstr "Cửa kẽo kẹt"
+
 msgid "Creaking door: you pass through into the next room."
 msgstr "Cửa kẽo kẹt: bạn đi qua sang phòng kế tiếp."
 
+#. the name or the meaning of a longer line
+msgid "you pass through into the next room."
+msgstr "bạn đi qua sang phòng kế tiếp."
+
+#. the name or the meaning of a longer line
+msgid "Stairs"
+msgstr "Cầu thang"
+
 msgid "Stairs: you leave the floor."
 msgstr "Cầu thang: bạn rời tầng."
+
+#. the name or the meaning of a longer line
+msgid "you leave the floor."
+msgstr "bạn rời tầng."
+
+#. the name or the meaning of a longer line
+msgid "Phonograph crackle"
+msgstr "Tiếng rè máy hát"
 
 msgid ""
 "Phonograph crackle: a matching puzzle, or a missing sound. The sounds that "
@@ -33404,6 +34793,15 @@ msgstr ""
 "Tiếng rè máy hát: câu đố ghép, hoặc tiếng bị thiếu. Các tiếng theo sau là "
 "manh mối."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a matching puzzle, or a missing sound. The sounds that follow are the clue."
+msgstr "câu đố ghép, hoặc tiếng bị thiếu. Các tiếng theo sau là manh mối."
+
+#. the name or the meaning of a longer line
+msgid "Medium's gong"
+msgstr "Tiếng cồng của bà đồng"
+
 msgid ""
 "Medium's gong: a séance. Two to four sounds follow; take their things in "
 "that order."
@@ -33411,25 +34809,68 @@ msgstr ""
 "Tiếng cồng của bà đồng: buổi gọi hồn. Hai đến bốn tiếng theo sau; lấy đồ "
 "vật của chúng theo thứ tự đó."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a séance. Two to four sounds follow; take their things in that order."
+msgstr ""
+"buổi gọi hồn. Hai đến bốn tiếng theo sau; lấy đồ vật của chúng theo thứ tự "
+"đó."
+
+#. the name or the meaning of a longer line
+msgid "Medium's hum"
+msgstr "Tiếng ngân của bà đồng"
+
 msgid "Medium's hum: you took the séance's next thing in the right order."
 msgstr ""
 "Tiếng ngân của bà đồng: bạn lấy đúng thứ tiếp theo của buổi gọi hồn."
+
+#. the name or the meaning of a longer line
+msgid "you took the séance's next thing in the right order."
+msgstr "bạn lấy đúng thứ tiếp theo của buổi gọi hồn."
 
 #. placeholders: {name}, {sound}
 msgid "The {name}: {sound}."
 msgstr "{name}: {sound}."
 
+#. the name or the meaning of a longer line
+msgid "Grab"
+msgstr "Nhặt"
+
 msgid "Grab: you picked up the right thing."
 msgstr "Nhặt: bạn nhặt đúng thứ."
 
+#. the name or the meaning of a longer line
+msgid "you picked up the right thing."
+msgstr "bạn nhặt đúng thứ."
+
+#. the name or the meaning of a longer line
+msgid "Chime"
+msgstr "Chuông"
+
 msgid "Chime: the room's puzzle is solved."
 msgstr "Chuông: câu đố của phòng đã giải."
+
+#. the name or the meaning of a longer line
+msgid "the room's puzzle is solved."
+msgstr "câu đố của phòng đã giải."
+
+#. the name or the meaning of a longer line
+msgid "Mocking laugh"
+msgstr "Tiếng cười chế nhạo"
 
 msgid ""
 "Mocking laugh: not what the room wants. You lose time on the haunt clock."
 msgstr ""
 "Tiếng cười chế nhạo: không phải thứ phòng cần. Bạn mất thời gian trên đồng "
 "hồ ma ám."
+
+#. the name or the meaning of a longer line
+msgid "not what the room wants. You lose time on the haunt clock."
+msgstr "không phải thứ phòng cần. Bạn mất thời gian trên đồng hồ ma ám."
+
+#. the name or the meaning of a longer line
+msgid "Warped shriek"
+msgstr "Tiếng rít méo mó"
 
 msgid ""
 "Warped shriek: a mimic, a copy of the answer. You lose time, and it hops "
@@ -33438,20 +34879,68 @@ msgstr ""
 "Tiếng rít méo mó: đồ giả, bản sao của đáp án. Bạn mất thời gian, và nó nhảy "
 "đi."
 
+#. the name or the meaning of a longer line
+msgid "a mimic, a copy of the answer. You lose time, and it hops away."
+msgstr "đồ giả, bản sao của đáp án. Bạn mất thời gian, và nó nhảy đi."
+
+#. the name or the meaning of a longer line
+msgid "Dust"
+msgstr "Bụi"
+
 msgid "Dust: there is nothing to pick up here."
 msgstr "Bụi: ở đây không có gì để nhặt."
+
+#. the name or the meaning of a longer line
+msgid "there is nothing to pick up here."
+msgstr "ở đây không có gì để nhặt."
+
+#. the name or the meaning of a longer line
+msgid "Rustle"
+msgstr "Sột soạt"
 
 msgid "Rustle: you chose another thing you carry."
 msgstr "Sột soạt: bạn chọn thứ khác đang mang."
 
+#. the name or the meaning of a longer line
+msgid "you chose another thing you carry."
+msgstr "bạn chọn thứ khác đang mang."
+
+#. the name or the meaning of a longer line
+msgid "The spirit sighs"
+msgstr "Hồn thở dài"
+
 msgid "The spirit sighs: it accepts your offering."
 msgstr "Hồn thở dài: nó nhận lễ vật của bạn."
+
+#. the name or the meaning of a longer line
+msgid "it accepts your offering."
+msgstr "nó nhận lễ vật của bạn."
+
+#. the name or the meaning of a longer line
+msgid "The spirit shrieks"
+msgstr "Hồn thét lên"
 
 msgid "The spirit shrieks: wrong offering. You lose time."
 msgstr "Hồn thét lên: dâng sai lễ vật. Bạn mất thời gian."
 
+#. the name or the meaning of a longer line
+msgid "wrong offering. You lose time."
+msgstr "dâng sai lễ vật. Bạn mất thời gian."
+
+#. the name or the meaning of a longer line
+msgid "Bell toll"
+msgstr "Chuông ngân"
+
 msgid "Bell toll: the haunt clock is running low."
 msgstr "Chuông ngân: đồng hồ ma ám sắp hết."
+
+#. the name or the meaning of a longer line
+msgid "the haunt clock is running low."
+msgstr "đồng hồ ma ám sắp hết."
+
+#. the name or the meaning of a longer line
+msgid "Groaning board"
+msgstr "Ván rên rỉ"
 
 msgid ""
 "Groaning board: a rotten board next to you, in the direction you hear it. "
@@ -33459,11 +34948,32 @@ msgid ""
 msgstr ""
 "Ván rên rỉ: một tấm ván mục cạnh bạn, theo hướng bạn nghe. Đừng bước lên."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a rotten board next to you, in the direction you hear it. Do not step on it."
+msgstr "một tấm ván mục cạnh bạn, theo hướng bạn nghe. Đừng bước lên."
+
+#. the name or the meaning of a longer line
+msgid "Crash of boards"
+msgstr "Tiếng ván sập"
+
 msgid "Crash of boards: you fell through a rotten board and lost courage."
 msgstr "Tiếng ván sập: bạn rơi xuyên ván mục và mất can đảm."
 
+#. the name or the meaning of a longer line
+msgid "you fell through a rotten board and lost courage."
+msgstr "bạn rơi xuyên ván mục và mất can đảm."
+
+#. the name or the meaning of a longer line
+msgid "Rising chord"
+msgstr "Hợp âm đi lên"
+
 msgid "Rising chord: a landing. You get one courage back."
 msgstr "Hợp âm đi lên: một chiếu nghỉ. Bạn hồi một điểm can đảm."
+
+#. the name or the meaning of a longer line
+msgid "a landing. You get one courage back."
+msgstr "một chiếu nghỉ. Bạn hồi một điểm can đảm."
 
 msgid "When you hear it, the hound is coming: be ready to walk."
 msgstr "Khi bạn nghe tiếng này, chó săn đang tới: sẵn sàng đi tiếp."
@@ -33480,11 +34990,23 @@ msgstr "Một hồn ma, {name}: {voice}."
 msgid "A ghost, {name}: {voice}. {what}"
 msgstr "Một hồn ma, {name}: {voice}. {what}"
 
+#. the name or the meaning of a longer line
+msgid "Freeze stab"
+msgstr "Nhát đứng yên"
+
 msgid ""
 "Freeze stab: a ghost is passing right by you. Do not move until it has "
 "passed."
 msgstr ""
 "Nhát đứng yên: một hồn ma đang đi sát bạn. Đừng cử động cho đến khi nó qua."
+
+#. the name or the meaning of a longer line
+msgid "a ghost is passing right by you. Do not move until it has passed."
+msgstr "một hồn ma đang đi sát bạn. Đừng cử động cho đến khi nó qua."
+
+#. the name or the meaning of a longer line
+msgid "Howl"
+msgstr "Tiếng tru"
 
 msgid ""
 "Howl: the blind hound is passing right by you. Keep walking until it has "
@@ -33492,13 +35014,34 @@ msgid ""
 msgstr ""
 "Tiếng tru: chó săn mù đang đi sát bạn. Cứ đi tiếp cho đến khi nó qua."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the blind hound is passing right by you. Keep walking until it has passed."
+msgstr "chó săn mù đang đi sát bạn. Cứ đi tiếp cho đến khi nó qua."
+
+#. the name or the meaning of a longer line
+msgid "Long breath out"
+msgstr "Thở ra dài"
+
 msgid "Long breath out: the ghost has passed without finding you."
 msgstr "Thở ra dài: hồn ma đã qua mà không tìm thấy bạn."
+
+#. the name or the meaning of a longer line
+msgid "the ghost has passed without finding you."
+msgstr "hồn ma đã qua mà không tìm thấy bạn."
+
+#. the name or the meaning of a longer line
+msgid "Scream"
+msgstr "Tiếng thét"
 
 msgid ""
 "Scream: something caught you. You lose courage and flee to the room's door."
 msgstr ""
 "Tiếng thét: thứ gì đó bắt được bạn. Bạn mất can đảm và chạy về cửa phòng."
+
+#. the name or the meaning of a longer line
+msgid "something caught you. You lose courage and flee to the room's door."
+msgstr "thứ gì đó bắt được bạn. Bạn mất can đảm và chạy về cửa phòng."
 
 msgid ""
 "The shadow: a low breathing drone that walks the room, following your "
@@ -33507,17 +35050,53 @@ msgstr ""
 "Cái bóng: tiếng thở trầm rền đi khắp phòng, theo tiếng bước chân bạn. Đừng "
 "để nó tới chỗ bạn."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low breathing drone that walks the room, following your footsteps. Do not "
+"let it reach you."
+msgstr ""
+"tiếng thở trầm rền đi khắp phòng, theo tiếng bước chân bạn. Đừng để nó tới "
+"chỗ bạn."
+
+#. the name or the meaning of a longer line
+msgid "Soft glass chime"
+msgstr "Chuông thủy tinh nhẹ"
+
 msgid ""
 "Soft glass chime: a charm lying in the room. Walk onto it to take it."
 msgstr "Chuông thủy tinh nhẹ: một lá bùa nằm trong phòng. Bước lên để lấy."
 
+#. the name or the meaning of a longer line
+msgid "a charm lying in the room. Walk onto it to take it."
+msgstr "một lá bùa nằm trong phòng. Bước lên để lấy."
+
+#. the name or the meaning of a longer line
+msgid "Bright pluck"
+msgstr "Tiếng gảy sáng"
+
 msgid "Bright pluck: you took a charm."
 msgstr "Tiếng gảy sáng: bạn đã lấy bùa."
+
+#. the name or the meaning of a longer line
+msgid "you took a charm."
+msgstr "bạn đã lấy bùa."
+
+#. the name or the meaning of a longer line
+msgid "Hiss of salt"
+msgstr "Tiếng muối xì"
 
 msgid ""
 "Hiss of salt: your salt warded something off. You stay where you are."
 msgstr ""
 "Tiếng muối xì: muối của bạn đã chặn được thứ gì đó. Bạn đứng nguyên chỗ."
+
+#. the name or the meaning of a longer line
+msgid "your salt warded something off. You stay where you are."
+msgstr "muối của bạn đã chặn được thứ gì đó. Bạn đứng nguyên chỗ."
+
+#. the name or the meaning of a longer line
+msgid "Swish"
+msgstr "Tiếng vút"
 
 msgid ""
 "Swish: the pendulum's blade, sweeping along its row. Cross that row just "
@@ -33526,28 +35105,88 @@ msgstr ""
 "Tiếng vút: lưỡi dao con lắc, quét dọc hàng của nó. Băng qua hàng đó ngay "
 "sau khi nó qua."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the pendulum's blade, sweeping along its row. Cross that row just after it "
+"passes."
+msgstr ""
+"lưỡi dao con lắc, quét dọc hàng của nó. Băng qua hàng đó ngay sau khi nó "
+"qua."
+
+#. the name or the meaning of a longer line
+msgid "Splash"
+msgstr "Tiếng bì bõm"
+
 msgid ""
 "Splash: you waded into deep water. Wading is slow and brings ghosts sooner."
 msgstr ""
 "Tiếng bì bõm: bạn lội vào nước sâu. Lội chậm và khiến hồn ma tới sớm hơn."
 
+#. the name or the meaning of a longer line
+msgid "you waded into deep water. Wading is slow and brings ghosts sooner."
+msgstr "bạn lội vào nước sâu. Lội chậm và khiến hồn ma tới sớm hơn."
+
+#. the name or the meaning of a longer line
+msgid "Lapping water"
+msgstr "Nước vỗ"
+
 msgid "Lapping water: deep water next to you, in the direction you hear it."
 msgstr "Nước vỗ: nước sâu cạnh bạn, theo hướng bạn nghe."
+
+#. the name or the meaning of a longer line
+msgid "deep water next to you, in the direction you hear it."
+msgstr "nước sâu cạnh bạn, theo hướng bạn nghe."
+
+#. the name or the meaning of a longer line
+msgid "Trickling dust"
+msgstr "Bụi rơi lả tả"
 
 msgid ""
 "Trickling dust: a stone is about to fall where you stand. Step off at once."
 msgstr "Bụi rơi lả tả: một hòn đá sắp rơi chỗ bạn đứng. Bước đi ngay."
 
+#. the name or the meaning of a longer line
+msgid "a stone is about to fall where you stand. Step off at once."
+msgstr "một hòn đá sắp rơi chỗ bạn đứng. Bước đi ngay."
+
+#. the name or the meaning of a longer line
+msgid "Crash of stone"
+msgstr "Tiếng đá đổ"
+
 msgid "Crash of stone: a stone hit the floor."
 msgstr "Tiếng đá đổ: một hòn đá rơi xuống sàn."
+
+#. the name or the meaning of a longer line
+msgid "a stone hit the floor."
+msgstr "một hòn đá rơi xuống sàn."
+
+#. the name or the meaning of a longer line
+msgid "Deep rumble"
+msgstr "Tiếng ầm trầm"
 
 msgid ""
 "Deep rumble: the house shifted, and the exit door moved to another wall."
 msgstr ""
 "Tiếng ầm trầm: ngôi nhà dịch chuyển, và cửa ra đã sang bức tường khác."
 
+#. the name or the meaning of a longer line
+msgid "the house shifted, and the exit door moved to another wall."
+msgstr "ngôi nhà dịch chuyển, và cửa ra đã sang bức tường khác."
+
+#. the name or the meaning of a longer line
+msgid "Heavy footstep"
+msgstr "Bước chân nặng nề"
+
 msgid "Heavy footstep: the founder, coming after you."
 msgstr "Bước chân nặng nề: ông tổ, đang đuổi theo bạn."
+
+#. the name or the meaning of a longer line
+msgid "the founder, coming after you."
+msgstr "ông tổ, đang đuổi theo bạn."
+
+#. the name or the meaning of a longer line
+msgid "Rising scrape"
+msgstr "Tiếng cào đi lên"
 
 msgid ""
 "Rising scrape: the founder winds up a blow beside you. Strike at the "
@@ -33556,18 +35195,56 @@ msgstr ""
 "Tiếng cào đi lên: ông tổ lấy đà đánh cạnh bạn. Đánh khi có nốt vang, hoặc "
 "bước tránh."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the founder winds up a blow beside you. Strike at the ringing note, or step "
+"away."
+msgstr "ông tổ lấy đà đánh cạnh bạn. Đánh khi có nốt vang, hoặc bước tránh."
+
+#. the name or the meaning of a longer line
+msgid "Ringing note"
+msgstr "Nốt vang"
+
 msgid "Ringing note: the founder's blow is at its height. Strike now."
 msgstr "Nốt vang: đòn của ông tổ lên đến đỉnh. Đánh ngay."
+
+#. the name or the meaning of a longer line
+msgid "the founder's blow is at its height. Strike now."
+msgstr "đòn của ông tổ lên đến đỉnh. Đánh ngay."
+
+#. the name or the meaning of a longer line
+msgid "Iron clang"
+msgstr "Tiếng sắt keng"
 
 msgid "Iron clang: your candlestick hit the founder."
 msgstr "Tiếng sắt keng: chân nến của bạn trúng ông tổ."
 
+#. the name or the meaning of a longer line
+msgid "your candlestick hit the founder."
+msgstr "chân nến của bạn trúng ông tổ."
+
+#. the name or the meaning of a longer line
+msgid "Dull knock"
+msgstr "Tiếng gõ đục"
+
 msgid "Dull knock: you struck too soon and the founder blocked. Step away."
 msgstr "Tiếng gõ đục: bạn đánh quá sớm và ông tổ đỡ được. Bước tránh."
+
+#. the name or the meaning of a longer line
+msgid "you struck too soon and the founder blocked. Step away."
+msgstr "bạn đánh quá sớm và ông tổ đỡ được. Bước tránh."
+
+#. the name or the meaning of a longer line
+msgid "Crumbling stone"
+msgstr "Đá vụn"
 
 msgid ""
 "Crumbling stone: the founder falls to dust for the rest of the floor."
 msgstr "Đá vụn: ông tổ tan thành bụi đến hết tầng."
+
+#. the name or the meaning of a longer line
+msgid "the founder falls to dust for the rest of the floor."
+msgstr "ông tổ tan thành bụi đến hết tầng."
 
 msgid ""
 "Up and Down move through the game's sounds, Enter plays one, Escape goes "
@@ -35409,12 +37086,28 @@ msgstr "đèn tắt"
 msgid "lamp burning"
 msgstr "đèn đang cháy"
 
+#. the name or the meaning of a longer line
+msgid "Lamp out"
+msgstr "Đèn tắt"
+
 msgid ""
 "Lamp out: a thin whistle of draught across empty glass. It pulses from the "
 "wall where a lamp needs lighting, louder as you come near."
 msgstr ""
 "Đèn tắt: tiếng gió lùa rít mảnh qua ống thủy tinh trống. Nó phát nhịp từ "
 "bức tường có đèn cần thắp, to dần khi bạn tới gần."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a thin whistle of draught across empty glass. It pulses from the wall where "
+"a lamp needs lighting, louder as you come near."
+msgstr ""
+"tiếng gió lùa rít mảnh qua ống thủy tinh trống. Nó phát nhịp từ bức tường "
+"có đèn cần thắp, to dần khi bạn tới gần."
+
+#. the name or the meaning of a longer line
+msgid "Lamp burning"
+msgstr "Đèn đang cháy"
 
 msgid ""
 "Lamp burning: the small flutter of a candle flame. You hear it from the "
@@ -35423,6 +37116,18 @@ msgstr ""
 "Đèn đang cháy: tiếng ngọn nến lay nhẹ. Bạn nghe nó từ bức tường khi đi "
 "ngang ngọn đèn đã thắp."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the small flutter of a candle flame. You hear it from the wall as you pass "
+"a lamp that is lit."
+msgstr ""
+"tiếng ngọn nến lay nhẹ. Bạn nghe nó từ bức tường khi đi ngang ngọn đèn đã "
+"thắp."
+
+#. the name or the meaning of a longer line
+msgid "Lighting"
+msgstr "Thắp đèn"
+
 msgid ""
 "Lighting: a match strike flaring into a glass ting. The lamp you reached "
 "for is lit."
@@ -35430,16 +37135,47 @@ msgstr ""
 "Thắp đèn: tiếng quẹt diêm bùng lên thành tiếng thủy tinh ting. Ngọn đèn bạn "
 "với tới đã được thắp."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a match strike flaring into a glass ting. The lamp you reached for is lit."
+msgstr ""
+"tiếng quẹt diêm bùng lên thành tiếng thủy tinh ting. Ngọn đèn bạn với tới "
+"đã được thắp."
+
+#. the name or the meaning of a longer line
+msgid "Bare wall"
+msgstr "Tường trống"
+
 msgid ""
 "Bare wall: one dull knock. There is no lamp on that wall at this step."
 msgstr ""
 "Tường trống: một tiếng gõ đục. Ở bước này không có đèn trên bức tường đó."
 
+#. the name or the meaning of a longer line
+msgid "one dull knock. There is no lamp on that wall at this step."
+msgstr "một tiếng gõ đục. Ở bước này không có đèn trên bức tường đó."
+
+#. the name or the meaning of a longer line
+msgid "Already burning"
+msgstr "Đã cháy rồi"
+
 msgid "Already burning: a soft felt knock. That lamp is lit already."
 msgstr "Đã cháy rồi: tiếng gõ nỉ nhẹ. Ngọn đèn đó đã thắp rồi."
 
+#. the name or the meaning of a longer line
+msgid "a soft felt knock. That lamp is lit already."
+msgstr "tiếng gõ nỉ nhẹ. Ngọn đèn đó đã thắp rồi."
+
 msgid "Footstep: a soft step on wooden boards, one step along the hall."
 msgstr "Bước chân: tiếng bước nhẹ trên ván gỗ, một bước dọc hành lang."
+
+#. the name or the meaning of a longer line
+msgid "a soft step on wooden boards, one step along the hall."
+msgstr "tiếng bước nhẹ trên ván gỗ, một bước dọc hành lang."
+
+#. the name or the meaning of a longer line
+msgid "Lobby door"
+msgstr "Cửa sảnh"
 
 msgid ""
 "Lobby door: a door creaking on its hinges. You are at the lobby end of the "
@@ -35447,22 +37183,63 @@ msgid ""
 msgstr ""
 "Cửa sảnh: tiếng cửa kẽo kẹt trên bản lề. Bạn đang ở đầu sảnh của hành lang."
 
+#. the name or the meaning of a longer line
+msgid "a door creaking on its hinges. You are at the lobby end of the hall."
+msgstr "tiếng cửa kẽo kẹt trên bản lề. Bạn đang ở đầu sảnh của hành lang."
+
+#. the name or the meaning of a longer line
+msgid "Far wall"
+msgstr "Bức tường cuối"
+
 msgid "Far wall: two hollow knocks. You are at the far end of the hall."
 msgstr "Bức tường cuối: hai tiếng gõ rỗng. Bạn đang ở cuối hành lang."
 
+#. the name or the meaning of a longer line
+msgid "two hollow knocks. You are at the far end of the hall."
+msgstr "hai tiếng gõ rỗng. Bạn đang ở cuối hành lang."
+
+#. the name or the meaning of a longer line
+msgid "Taper low"
+msgstr "Que mồi sắp hết"
+
 msgid "Taper low: a low, muted bell. The taper has 20 seconds left."
 msgstr "Que mồi sắp hết: tiếng chuông trầm, nghẹt. Que mồi còn 20 giây."
+
+#. the name or the meaning of a longer line
+msgid "a low, muted bell. The taper has 20 seconds left."
+msgstr "tiếng chuông trầm, nghẹt. Que mồi còn 20 giây."
+
+#. the name or the meaning of a longer line
+msgid "Taper out"
+msgstr "Que mồi tắt"
 
 msgid ""
 "Taper out: a short puff. The taper burned down, and the taper bonus is gone."
 msgstr ""
 "Que mồi tắt: một tiếng phù ngắn. Que mồi đã cháy hết, và mất thưởng que mồi."
 
+#. the name or the meaning of a longer line
+msgid "a short puff. The taper burned down, and the taper bonus is gone."
+msgstr "một tiếng phù ngắn. Que mồi đã cháy hết, và mất thưởng que mồi."
+
+#. the name or the meaning of a longer line
+msgid "Fresh taper"
+msgstr "Que mồi mới"
+
 msgid ""
 "Fresh taper: a quick match. Mabel lit you a new taper, so you can carry on."
 msgstr ""
 "Que mồi mới: tiếng quẹt diêm nhanh. Mabel đã thắp cho bạn que mới, để bạn "
 "làm tiếp."
+
+#. the name or the meaning of a longer line
+msgid "a quick match. Mabel lit you a new taper, so you can carry on."
+msgstr ""
+"tiếng quẹt diêm nhanh. Mabel đã thắp cho bạn que mới, để bạn làm tiếp."
+
+#. the name or the meaning of a longer line
+msgid "Draught"
+msgstr "Gió lùa"
 
 msgid ""
 "Draught: a long gust through a doorway. It blew a lamp out somewhere in the "
@@ -35471,12 +37248,28 @@ msgstr ""
 "Gió lùa: một cơn gió dài qua khung cửa. Nó thổi tắt một ngọn đèn đâu đó "
 "trong hành lang."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a long gust through a doorway. It blew a lamp out somewhere in the hall."
+msgstr ""
+"một cơn gió dài qua khung cửa. Nó thổi tắt một ngọn đèn đâu đó trong hành "
+"lang."
+
+#. the name or the meaning of a longer line
+msgid "Hall lit"
+msgstr "Hành lang sáng"
+
 msgid ""
 "Hall lit: a rising run of glass. Every lamp is burning, and the round is "
 "over."
 msgstr ""
 "Hành lang sáng: chuỗi tiếng thủy tinh đi lên. Mọi ngọn đèn đều cháy, và "
 "vòng chơi kết thúc."
+
+#. the name or the meaning of a longer line
+msgid "a rising run of glass. Every lamp is burning, and the round is over."
+msgstr ""
+"chuỗi tiếng thủy tinh đi lên. Mọi ngọn đèn đều cháy, và vòng chơi kết thúc."
 
 msgid "Return to the Lamplighter title."
 msgstr "Về màn hình chính của Lamplighter."
@@ -48264,6 +50057,18 @@ msgstr ""
 "Bước chân: tiếng giày nhẹ trên đường chạy đà. Bạn đã đi một ván, và tiếng "
 "phát ra từ chỗ bạn đứng."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft shoe on the approach. You moved one board, and it sounds from where "
+"you stand."
+msgstr ""
+"tiếng giày nhẹ trên đường chạy đà. Bạn đã đi một ván, và tiếng phát ra từ "
+"chỗ bạn đứng."
+
+#. the name or the meaning of a longer line
+msgid "Aim tone"
+msgstr "Âm ngắm"
+
 msgid ""
 "Aim tone: a soft high tone. It sounds from where the ball would cross the "
 "pins with a clean release."
@@ -48271,14 +50076,38 @@ msgstr ""
 "Âm ngắm: tiếng cao nhẹ. Nó phát ra từ chỗ bóng sẽ đi qua hàng ky khi thả "
 "gọn."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft high tone. It sounds from where the ball would cross the pins with a "
+"clean release."
+msgstr ""
+"tiếng cao nhẹ. Nó phát ra từ chỗ bóng sẽ đi qua hàng ky khi thả gọn."
+
+#. the name or the meaning of a longer line
+msgid "Swing tone"
+msgstr "Âm vung tay"
+
 msgid ""
 "Swing tone: a hum that rises to the top of the swing, then falls. Let go at "
 "the top."
 msgstr ""
 "Âm vung tay: tiếng ù cao dần tới đỉnh cú vung, rồi hạ xuống. Thả ở đỉnh."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a hum that rises to the top of the swing, then falls. Let go at the top."
+msgstr "tiếng ù cao dần tới đỉnh cú vung, rồi hạ xuống. Thả ở đỉnh."
+
 msgid "Release: a thump as the ball meets the lane."
 msgstr "Thả bóng: tiếng thịch khi bóng chạm đường lăn."
+
+#. the name or the meaning of a longer line
+msgid "a thump as the ball meets the lane."
+msgstr "tiếng thịch khi bóng chạm đường lăn."
+
+#. the name or the meaning of a longer line
+msgid "Rolling ball"
+msgstr "Bóng lăn"
 
 msgid ""
 "Rolling ball: a low rumble that moves across with the ball and grows louder "
@@ -48286,16 +50115,51 @@ msgid ""
 msgstr ""
 "Bóng lăn: tiếng ầm trầm di chuyển theo bóng và to dần khi tới gần hàng ky."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low rumble that moves across with the ball and grows louder as it nears "
+"the pins."
+msgstr "tiếng ầm trầm di chuyển theo bóng và to dần khi tới gần hàng ky."
+
+#. the name or the meaning of a longer line
+msgid "Gutter"
+msgstr "Rãnh"
+
 msgid ""
 "Gutter: a hollow rattle. The ball left the lane and will hit no pins."
 msgstr ""
 "Rãnh: tiếng lạch cạch rỗng. Bóng đã rời đường lăn và sẽ không trúng ky nào."
 
+#. the name or the meaning of a longer line
+msgid "a hollow rattle. The ball left the lane and will hit no pins."
+msgstr ""
+"tiếng lạch cạch rỗng. Bóng đã rời đường lăn và sẽ không trúng ky nào."
+
+#. the name or the meaning of a longer line
+msgid "Light clatter"
+msgstr "Tiếng đổ nhẹ"
+
 msgid "Light clatter: a few pins falling."
 msgstr "Tiếng đổ nhẹ: vài ky đổ."
 
+#. the name or the meaning of a longer line
+msgid "a few pins falling."
+msgstr "vài ky đổ."
+
+#. the name or the meaning of a longer line
+msgid "Heavy clatter"
+msgstr "Tiếng đổ mạnh"
+
 msgid "Heavy clatter: most of the rack falling at once."
 msgstr "Tiếng đổ mạnh: gần hết hàng ky đổ cùng lúc."
+
+#. the name or the meaning of a longer line
+msgid "most of the rack falling at once."
+msgstr "gần hết hàng ky đổ cùng lúc."
+
+#. the name or the meaning of a longer line
+msgid "Pinsetter"
+msgstr "Máy dựng ky"
 
 msgid ""
 "Pinsetter: a mechanical sweep and clunk as the deck is cleared and pins are "
@@ -48303,24 +50167,65 @@ msgid ""
 msgstr ""
 "Máy dựng ky: tiếng quét và tiếng cạch máy móc khi dọn sàn và dựng ky."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a mechanical sweep and clunk as the deck is cleared and pins are set."
+msgstr "tiếng quét và tiếng cạch máy móc khi dọn sàn và dựng ky."
+
+#. the name or the meaning of a longer line
+msgid "Ball return"
+msgstr "Bóng trả về"
+
 msgid ""
 "Ball return: a rolling rumble and a knock. Your ball is back and you can "
 "roll."
 msgstr ""
 "Bóng trả về: tiếng lăn ầm và tiếng gõ. Bóng của bạn đã về và bạn có thể lăn."
 
+#. the name or the meaning of a longer line
+msgid "a rolling rumble and a knock. Your ball is back and you can roll."
+msgstr "tiếng lăn ầm và tiếng gõ. Bóng của bạn đã về và bạn có thể lăn."
+
+#. the name or the meaning of a longer line
+msgid "Strike sting"
+msgstr "Nhạc strike"
+
 msgid ""
 "Strike sting: a short jukebox flourish. All ten pins with the first ball."
 msgstr "Nhạc strike: đoạn nhạc ngắn kiểu máy hát. Cả mười ky bằng quả đầu."
+
+#. the name or the meaning of a longer line
+msgid "a short jukebox flourish. All ten pins with the first ball."
+msgstr "đoạn nhạc ngắn kiểu máy hát. Cả mười ky bằng quả đầu."
+
+#. the name or the meaning of a longer line
+msgid "Spare bell"
+msgstr "Chuông spare"
 
 msgid "Spare bell: a bright bell. The second ball cleared the rest."
 msgstr ""
 "Chuông spare: tiếng chuông trong. Quả thứ hai đã dọn sạch số ky còn lại."
 
+#. the name or the meaning of a longer line
+msgid "a bright bell. The second ball cleared the rest."
+msgstr "tiếng chuông trong. Quả thứ hai đã dọn sạch số ky còn lại."
+
+#. the name or the meaning of a longer line
+msgid "Pumpkins falling, light"
+msgstr "Bí ngô đổ, nhẹ"
+
 msgid ""
 "Pumpkins falling, light: a hollow squash. On Pumpkin night, a few pumpkins "
 "went down."
 msgstr "Bí ngô đổ, nhẹ: tiếng bẹp rỗng. Vào Đêm bí ngô, vài quả bí đã đổ."
+
+#. the name or the meaning of a longer line
+msgid "a hollow squash. On Pumpkin night, a few pumpkins went down."
+msgstr "tiếng bẹp rỗng. Vào Đêm bí ngô, vài quả bí đã đổ."
+
+#. the name or the meaning of a longer line
+msgid "Pumpkins falling, heavy"
+msgstr "Bí ngô đổ, mạnh"
 
 msgid ""
 "Pumpkins falling, heavy: a long hollow tumble. On Pumpkin night, five or "
@@ -48329,10 +50234,22 @@ msgstr ""
 "Bí ngô đổ, mạnh: tiếng lăn rỗng kéo dài. Vào Đêm bí ngô, năm quả trở lên đã "
 "đổ."
 
+#. the name or the meaning of a longer line
+msgid "a long hollow tumble. On Pumpkin night, five or more went down."
+msgstr "tiếng lăn rỗng kéo dài. Vào Đêm bí ngô, năm quả trở lên đã đổ."
+
+#. the name or the meaning of a longer line
+msgid "Grin carved"
+msgstr "Khắc nụ cười"
+
 msgid ""
 "Grin carved: a knife scrape and a low chord. A strike on Pumpkin night."
 msgstr ""
 "Khắc nụ cười: tiếng dao cạo và một hợp âm trầm. Một strike vào Đêm bí ngô."
+
+#. the name or the meaning of a longer line
+msgid "a knife scrape and a low chord. A strike on Pumpkin night."
+msgstr "tiếng dao cạo và một hợp âm trầm. Một strike vào Đêm bí ngô."
 
 msgid "Return to the Midnight Lanes title."
 msgstr "Quay về màn hình chính của Midnight Lanes."
@@ -55786,13 +57703,37 @@ msgstr "tiếng gừ gừ trầm"
 msgid "Step: a soft tap on wooden boards. You moved one cell."
 msgstr "Bước chân: tiếng gõ nhẹ trên sàn gỗ. Bạn đã đi một ô."
 
+#. the name or the meaning of a longer line
+msgid "a soft tap on wooden boards. You moved one cell."
+msgstr "tiếng gõ nhẹ trên sàn gỗ. Bạn đã đi một ô."
+
+#. the name or the meaning of a longer line
+msgid "Nibble"
+msgstr "Gặm"
+
 msgid "Nibble: a quick crunch. You ate a crumb, for 10 points."
 msgstr "Gặm: tiếng giòn nhanh. Bạn đã ăn một mẩu vụn, được 10 điểm."
+
+#. the name or the meaning of a longer line
+msgid "a quick crunch. You ate a crumb, for 10 points."
+msgstr "tiếng giòn nhanh. Bạn đã ăn một mẩu vụn, được 10 điểm."
+
+#. the name or the meaning of a longer line
+msgid "Wall"
+msgstr "Tường"
 
 msgid ""
 "Wall: a dull thud. A wall is in the way, and the open ways are spoken."
 msgstr ""
 "Tường: tiếng thịch đục. Có tường chắn đường, và các lối mở được đọc ra."
+
+#. the name or the meaning of a longer line
+msgid "a dull thud. A wall is in the way, and the open ways are spoken."
+msgstr "tiếng thịch đục. Có tường chắn đường, và các lối mở được đọc ra."
+
+#. the name or the meaning of a longer line
+msgid "Sniff tick"
+msgstr "Tiếng tích đánh hơi"
 
 msgid ""
 "Sniff tick: a tiny bright tick. Each one is a crumb, from its direction, "
@@ -55801,8 +57742,27 @@ msgstr ""
 "Tiếng tích đánh hơi: tiếng tích nhỏ trong. Mỗi tiếng là một mẩu vụn, từ "
 "hướng của nó, gần nhất trước."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a tiny bright tick. Each one is a crumb, from its direction, nearest first."
+msgstr ""
+"tiếng tích nhỏ trong. Mỗi tiếng là một mẩu vụn, từ hướng của nó, gần nhất "
+"trước."
+
+#. the name or the meaning of a longer line
+msgid "Ginger cat"
+msgstr "Mèo vàng"
+
 msgid "Ginger cat: a bell on its collar. It heads straight for you."
 msgstr "Mèo vàng: chiếc chuông trên vòng cổ. Nó lao thẳng về phía bạn."
+
+#. the name or the meaning of a longer line
+msgid "a bell on its collar. It heads straight for you."
+msgstr "chiếc chuông trên vòng cổ. Nó lao thẳng về phía bạn."
+
+#. the name or the meaning of a longer line
+msgid "Tabby cat"
+msgstr "Mèo mướp"
 
 msgid ""
 "Tabby cat: soft padding paws. It wanders until it is 4 steps away, then "
@@ -55811,12 +57771,32 @@ msgstr ""
 "Mèo mướp: tiếng chân đệm khẽ. Nó đi lang thang tới khi cách bạn 4 bước, rồi "
 "đuổi theo."
 
+#. the name or the meaning of a longer line
+msgid "soft padding paws. It wanders until it is 4 steps away, then chases."
+msgstr ""
+"tiếng chân đệm khẽ. Nó đi lang thang tới khi cách bạn 4 bước, rồi đuổi theo."
+
+#. the name or the meaning of a longer line
+msgid "Grey cat"
+msgstr "Mèo xám"
+
 msgid ""
 "Grey cat: a low purr. It wanders like the tabby, and joins in the monthly "
 "challenge."
 msgstr ""
 "Mèo xám: tiếng gừ gừ trầm. Nó đi lang thang như mèo mướp, và có trong thử "
 "thách tháng."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a low purr. It wanders like the tabby, and joins in the monthly challenge."
+msgstr ""
+"tiếng gừ gừ trầm. Nó đi lang thang như mèo mướp, và có trong thử thách "
+"tháng."
+
+#. the name or the meaning of a longer line
+msgid "Cat close"
+msgstr "Mèo gần"
 
 msgid ""
 "Cat close: a short rising meow from the cat's side. A cat is 2 steps away "
@@ -55825,10 +57805,24 @@ msgstr ""
 "Mèo gần: tiếng meo ngắn cao dần từ phía con mèo. Có mèo cách 2 bước hoặc "
 "gần hơn."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short rising meow from the cat's side. A cat is 2 steps away or nearer."
+msgstr ""
+"tiếng meo ngắn cao dần từ phía con mèo. Có mèo cách 2 bước hoặc gần hơn."
+
 msgid ""
 "Caught: a pounce and a squeak. A cat caught you and you lose a whisker."
 msgstr ""
 "Bị bắt: tiếng vồ và tiếng chít. Mèo đã bắt được bạn và bạn mất một sợi râu."
+
+#. the name or the meaning of a longer line
+msgid "a pounce and a squeak. A cat caught you and you lose a whisker."
+msgstr "tiếng vồ và tiếng chít. Mèo đã bắt được bạn và bạn mất một sợi râu."
+
+#. the name or the meaning of a longer line
+msgid "Freeze"
+msgstr "Đứng yên"
 
 msgid ""
 "Freeze: an indrawn breath. You keep still and the nearest cat loses track "
@@ -55836,11 +57830,36 @@ msgid ""
 msgstr ""
 "Đứng im: tiếng hít vào. Bạn đứng yên và con mèo gần nhất mất dấu bạn."
 
+#. the name or the meaning of a longer line
+msgid ""
+"an indrawn breath. You keep still and the nearest cat loses track of you."
+msgstr "tiếng hít vào. Bạn đứng yên và con mèo gần nhất mất dấu bạn."
+
+#. the name or the meaning of a longer line
+msgid "Thaw"
+msgstr "Tan băng"
+
 msgid "Thaw: a soft breath out. You can move again."
 msgstr "Tan băng: tiếng thở ra nhẹ. Bạn lại đi được rồi."
 
+#. the name or the meaning of a longer line
+msgid "a soft breath out. You can move again."
+msgstr "tiếng thở ra nhẹ. Bạn lại đi được rồi."
+
+#. the name or the meaning of a longer line
+msgid "Pantry clear"
+msgstr "Dọn sạch chạn"
+
 msgid "Pantry clear: a bright rising run of notes. Every crumb is gone."
 msgstr "Dọn sạch chạn: chuỗi nốt nhạc sáng cao dần. Mọi mẩu vụn đã hết."
+
+#. the name or the meaning of a longer line
+msgid "a bright rising run of notes. Every crumb is gone."
+msgstr "chuỗi nốt nhạc sáng cao dần. Mọi mẩu vụn đã hết."
+
+#. the name or the meaning of a longer line
+msgid "Turkey scrap"
+msgstr "Mẩu gà tây"
 
 msgid ""
 "Turkey scrap: a juicy chew. In the Leftovers pantry at Thanksgiving, a "
@@ -55850,6 +57869,18 @@ msgstr ""
 "Mẩu gà tây: tiếng nhai ngon lành. Ở Chạn đồ thừa dịp Lễ Tạ ơn, một mẩu gà "
 "tây, được 50 điểm. Đánh hơi phát nó từ chỗ mẩu gần nhất trốn."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a juicy chew. In the Leftovers pantry at Thanksgiving, a turkey scrap, for "
+"50 points. A sniff plays it from where the nearest one hides."
+msgstr ""
+"tiếng nhai ngon lành. Ở Chạn đồ thừa dịp Lễ Tạ ơn, một mẩu gà tây, được 50 "
+"điểm. Đánh hơi phát nó từ chỗ mẩu gần nhất trốn."
+
+#. the name or the meaning of a longer line
+msgid "Cheese rind"
+msgstr "Vỏ phô mai"
+
 msgid ""
 "Cheese rind: a soft glassy chime. On Bin night, the first Tuesday of every "
 "month, a cheese rind in every pantry, for 100 points. A sniff plays it from "
@@ -55858,6 +57889,16 @@ msgstr ""
 "Vỏ phô mai: tiếng chuông nhẹ trong như thủy tinh. Vào Đêm đổ rác, thứ Ba "
 "đầu tiên của mỗi tháng, mỗi chạn có một miếng vỏ phô mai, được 100 điểm. "
 "Đánh hơi phát nó từ chỗ nó trốn."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a soft glassy chime. On Bin night, the first Tuesday of every month, a "
+"cheese rind in every pantry, for 100 points. A sniff plays it from where it "
+"hides."
+msgstr ""
+"tiếng chuông nhẹ trong như thủy tinh. Vào Đêm đổ rác, thứ Ba đầu tiên của "
+"mỗi tháng, mỗi chạn có một miếng vỏ phô mai, được 100 điểm. Đánh hơi phát "
+"nó từ chỗ nó trốn."
 
 msgid "Return to the Pantry Mouse title."
 msgstr "Quay về màn hình chính của Pantry Mouse."
@@ -56904,10 +58945,22 @@ msgstr "Bạn có {night}."
 msgid "across the table"
 msgstr "đối diện"
 
+#. the name or the meaning of a longer line
+msgid "Cup rattle"
+msgstr "Tiếng lắc cốc"
+
 msgid ""
 "Cup rattle: the dealer shakes two dice in a leather cup. A roll is coming."
 msgstr ""
 "Tiếng lắc cốc: người chia lắc hai con xúc xắc trong cốc da. Sắp có lần đổ."
+
+#. the name or the meaning of a longer line
+msgid "the dealer shakes two dice in a leather cup. A roll is coming."
+msgstr "người chia lắc hai con xúc xắc trong cốc da. Sắp có lần đổ."
+
+#. the name or the meaning of a longer line
+msgid "Dice landing"
+msgstr "Xúc xắc rơi"
 
 msgid ""
 "Dice landing: two dice tumble onto the felt. The dealer calls the faces and "
@@ -56916,12 +58969,32 @@ msgstr ""
 "Xúc xắc rơi: hai con xúc xắc lăn trên mặt nỉ. Người chia đọc các mặt và "
 "tổng."
 
+#. the name or the meaning of a longer line
+msgid ""
+"two dice tumble onto the felt. The dealer calls the faces and the sum."
+msgstr "hai con xúc xắc lăn trên mặt nỉ. Người chia đọc các mặt và tổng."
+
+#. the name or the meaning of a longer line
+msgid "One thud"
+msgstr "Tiếng thịch"
+
 msgid ""
 "One thud: a dull wooden thud. A die shows 1, and the landing is over for "
 "everyone still seated."
 msgstr ""
 "Tiếng thịch: tiếng gỗ đục. Một con ra mặt 1, và chặng kết thúc với mọi "
 "người còn ngồi."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a dull wooden thud. A die shows 1, and the landing is over for everyone "
+"still seated."
+msgstr ""
+"tiếng gỗ đục. Một con ra mặt 1, và chặng kết thúc với mọi người còn ngồi."
+
+#. the name or the meaning of a longer line
+msgid "Snag crash"
+msgstr "Tiếng vỡ cú xui"
 
 msgid ""
 "Snag crash: a crash of glass and wood. A double 1 with the snag rule on "
@@ -56930,6 +59003,18 @@ msgstr ""
 "Tiếng vỡ cú xui: tiếng thủy tinh và gỗ vỡ. Đôi 1 khi bật luật cú xui xóa "
 "sạch tổng đêm của mọi người còn ngồi."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a crash of glass and wood. A double 1 with the snag rule on wipes the night "
+"total of everyone seated."
+msgstr ""
+"tiếng thủy tinh và gỗ vỡ. Đôi 1 khi bật luật cú xui xóa sạch tổng đêm của "
+"mọi người còn ngồi."
+
+#. the name or the meaning of a longer line
+msgid "Chair scrape"
+msgstr "Tiếng kéo ghế"
+
 msgid ""
 "Chair scrape: a player stands and banks. It comes from their seat, left, "
 "across or right."
@@ -56937,25 +59022,76 @@ msgstr ""
 "Tiếng kéo ghế: một người đứng dậy và chốt. Tiếng phát ra từ ghế của họ, bên "
 "trái, đối diện hoặc bên phải."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a player stands and banks. It comes from their seat, left, across or right."
+msgstr ""
+"một người đứng dậy và chốt. Tiếng phát ra từ ghế của họ, bên trái, đối diện "
+"hoặc bên phải."
+
+#. the name or the meaning of a longer line
+msgid "Coin stack"
+msgstr "Tiếng xếp xu"
+
 msgid "Coin stack: you bank the table's total into your night total."
 msgstr "Tiếng xếp xu: bạn chốt tổng trên bàn vào tổng đêm của bạn."
+
+#. the name or the meaning of a longer line
+msgid "you bank the table's total into your night total."
+msgstr "bạn chốt tổng trên bàn vào tổng đêm của bạn."
+
+#. the name or the meaning of a longer line
+msgid "Table groan"
+msgstr "Bàn rên rỉ"
 
 msgid "Table groan: the table groans at a 1."
 msgstr "Bàn rên rỉ: cả bàn than thở khi ra mặt 1."
 
+#. the name or the meaning of a longer line
+msgid "the table groans at a 1."
+msgstr "cả bàn than thở khi ra mặt 1."
+
+#. the name or the meaning of a longer line
+msgid "Table cheer"
+msgstr "Bàn reo hò"
+
 msgid "Table cheer: you win the night."
 msgstr "Bàn reo hò: bạn thắng đêm đó."
 
+#. the name or the meaning of a longer line
+msgid "you win the night."
+msgstr "bạn thắng đêm đó."
+
 msgid "Dull tap: nothing to do just now."
 msgstr "Tiếng gõ đục: lúc này chưa có gì để làm."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do just now."
+msgstr "lúc này chưa có gì để làm."
+
+#. the name or the meaning of a longer line
+msgid "Showboat chime"
+msgstr "Chuông thuyền hát"
 
 msgid ""
 "Showboat chime: on Showboat Saturday, doubles double what the table holds."
 msgstr "Chuông thuyền hát: vào Showboat Saturday, đôi nhân đôi số trên bàn."
 
+#. the name or the meaning of a longer line
+msgid "on Showboat Saturday, doubles double what the table holds."
+msgstr "vào Showboat Saturday, đôi nhân đôi số trên bàn."
+
+#. the name or the meaning of a longer line
+msgid "Seats"
+msgstr "Chỗ ngồi"
+
 msgid "Seats: Widow left, Gambler ahead, Captain right"
 msgstr ""
 "Chỗ ngồi: Bà góa bên trái, Tay cờ bạc phía trước, Thuyền trưởng bên phải"
+
+#. the name or the meaning of a longer line
+msgid "Widow left, Gambler ahead, Captain right"
+msgstr ""
 
 msgid "Where each player sits, by the sound of their chair."
 msgstr "Chỗ mỗi người ngồi, theo tiếng ghế của họ."
@@ -63233,8 +65369,20 @@ msgstr "phút"
 msgid "several"
 msgstr "vài"
 
+#. the name or the meaning of a longer line
+msgid "Dial click"
+msgstr "Tiếng tách của núm"
+
 msgid "Dial click: the dial moved one number."
 msgstr "Tiếng tách của núm: núm đã xoay một số."
+
+#. the name or the meaning of a longer line
+msgid "the dial moved one number."
+msgstr "núm đã xoay một số."
+
+#. the name or the meaning of a longer line
+msgid "Ten detent"
+msgstr "Nấc hàng chục"
 
 msgid ""
 "Ten detent: a firmer double click at every tenth number, 10, 20 and so on, "
@@ -63243,12 +65391,39 @@ msgstr ""
 "Nấc hàng chục: tiếng tách đôi chắc hơn ở mỗi số tròn chục, 10, 20 và cứ "
 "thế, giúp bạn đếm."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a firmer double click at every tenth number, 10, 20 and so on, to help you "
+"count."
+msgstr ""
+"tiếng tách đôi chắc hơn ở mỗi số tròn chục, 10, 20 và cứ thế, giúp bạn đếm."
+
+#. the name or the meaning of a longer line
+msgid "Zero notch"
+msgstr "Khấc số không"
+
 msgid ""
 "Zero notch: a deep notch as the dial reaches zero, the top of the dial."
 msgstr "Khấc số không: tiếng khấc trầm khi núm tới số không, đỉnh của núm."
 
+#. the name or the meaning of a longer line
+msgid "a deep notch as the dial reaches zero, the top of the dial."
+msgstr "tiếng khấc trầm khi núm tới số không, đỉnh của núm."
+
+#. the name or the meaning of a longer line
+msgid "Spin"
+msgstr "Quay"
+
 msgid "Spin: a quick ratchet as the dial spins ten numbers at once."
 msgstr "Quay: tiếng lách cách nhanh khi núm quay mười số một lúc."
+
+#. the name or the meaning of a longer line
+msgid "a quick ratchet as the dial spins ten numbers at once."
+msgstr "tiếng lách cách nhanh khi núm quay mười số một lúc."
+
+#. the name or the meaning of a longer line
+msgid "Tumbler clunk"
+msgstr "Tiếng cạch của chốt khóa"
 
 msgid ""
 "Tumbler clunk: the dial passed or reached this wheel's number. Deep and "
@@ -63259,6 +65434,18 @@ msgstr ""
 "chắc. Dừng lại, lùi về số đó, và đặt vòng số. Ở các két sau, tiếng này khẽ "
 "hơn."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the dial passed or reached this wheel's number. Deep and solid. Stop, step "
+"back to it, and set the wheel. On later safes it is quieter."
+msgstr ""
+"núm đã đi qua hoặc tới số của vòng này. Trầm và chắc. Dừng lại, lùi về số "
+"đó, và đặt vòng số. Ở các két sau, tiếng này khẽ hơn."
+
+#. the name or the meaning of a longer line
+msgid "False gate"
+msgstr "Khấc giả"
+
 msgid ""
 "False gate: a hollow, rattling tick at a wrong number. Ignore it: it is not "
 "the tumbler."
@@ -63266,11 +65453,27 @@ msgstr ""
 "Khấc giả: tiếng tích rỗng, lạch cạch ở một số sai. Hãy bỏ qua: đó không "
 "phải chốt khóa."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a hollow, rattling tick at a wrong number. Ignore it: it is not the tumbler."
+msgstr ""
+"tiếng tích rỗng, lạch cạch ở một số sai. Hãy bỏ qua: đó không phải chốt "
+"khóa."
+
+#. the name or the meaning of a longer line
+msgid "Wheel set"
+msgstr "Đặt vòng số"
+
 msgid ""
 "Wheel set: a latch and a rising chime. The wheel is set, on to the next."
 msgstr ""
 "Đặt vòng số: tiếng chốt và tiếng chuông vút lên. Vòng số đã đặt, sang vòng "
 "kế tiếp."
+
+#. the name or the meaning of a longer line
+msgid "a latch and a rising chime. The wheel is set, on to the next."
+msgstr ""
+"tiếng chốt và tiếng chuông vút lên. Vòng số đã đặt, sang vòng kế tiếp."
 
 msgid ""
 "Spring: a wrong set. The wheel springs back and you take a strike. Three "
@@ -63278,8 +65481,26 @@ msgid ""
 msgstr ""
 "Lò xo: đặt sai. Vòng số bật lại và bạn bị một lỗi. Ba lỗi là két bị kẹt."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a wrong set. The wheel springs back and you take a strike. Three strikes "
+"and the safe jams."
+msgstr "đặt sai. Vòng số bật lại và bạn bị một lỗi. Ba lỗi là két bị kẹt."
+
+#. the name or the meaning of a longer line
+msgid "Safe open"
+msgstr "Két mở"
+
 msgid "Safe open: the handle turns and the bolts slide back."
 msgstr "Két mở: tay nắm xoay và then cửa trượt ra."
+
+#. the name or the meaning of a longer line
+msgid "the handle turns and the bolts slide back."
+msgstr "tay nắm xoay và then cửa trượt ra."
+
+#. the name or the meaning of a longer line
+msgid "Onward"
+msgstr "Tiếp tục"
 
 msgid ""
 "Onward: a heavy door and a bell. In a challenge, this safe is open and the "
@@ -63288,8 +65509,28 @@ msgstr ""
 "Tiếp tục: tiếng cửa nặng và tiếng chuông. Trong thử thách, két này đã mở và "
 "két kế tiếp đang chờ."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a heavy door and a bell. In a challenge, this safe is open and the next one "
+"is waiting."
+msgstr ""
+"tiếng cửa nặng và tiếng chuông. Trong thử thách, két này đã mở và két kế "
+"tiếp đang chờ."
+
+#. the name or the meaning of a longer line
+msgid "Relocker"
+msgstr "Khóa chặn"
+
 msgid "Relocker: the safe jams and the alarm rings. The safe is lost."
 msgstr "Khóa chặn: két bị kẹt và chuông báo động reo. Mất két này."
+
+#. the name or the meaning of a longer line
+msgid "the safe jams and the alarm rings. The safe is lost."
+msgstr "két bị kẹt và chuông báo động reo. Mất két này."
+
+#. the name or the meaning of a longer line
+msgid "Footsteps"
+msgstr "Tiếng bước chân"
 
 msgid ""
 "Footsteps: the guard is coming down the corridor. When they stop, keep "
@@ -63298,12 +65539,32 @@ msgstr ""
 "Tiếng bước chân: người gác đang đi dọc hành lang. Khi tiếng chân dừng, hãy "
 "đứng yên."
 
+#. the name or the meaning of a longer line
+msgid "the guard is coming down the corridor. When they stop, keep still."
+msgstr "người gác đang đi dọc hành lang. Khi tiếng chân dừng, hãy đứng yên."
+
+#. the name or the meaning of a longer line
+msgid "Guard at the door"
+msgstr "Người gác ở cửa"
+
 msgid ""
 "Guard at the door: the footsteps stop and his keys jingle. Keep still: do "
 "not turn or set until he walks away."
 msgstr ""
 "Người gác ở cửa: tiếng chân dừng và chùm chìa khóa leng keng. Đứng yên: "
 "đừng xoay hay đặt số cho đến khi hắn đi xa."
+
+#. the name or the meaning of a longer line
+msgid ""
+"the footsteps stop and his keys jingle. Keep still: do not turn or set "
+"until he walks away."
+msgstr ""
+"tiếng chân dừng và chùm chìa khóa leng keng. Đứng yên: đừng xoay hay đặt số "
+"cho đến khi hắn đi xa."
+
+#. the name or the meaning of a longer line
+msgid "Who's there"
+msgstr "Ai đó"
 
 msgid ""
 "Who's there: the guard heard you. One more noise while he listens and you "
@@ -63312,23 +65573,66 @@ msgstr ""
 "Ai đó: người gác đã nghe thấy bạn. Thêm một tiếng động khi hắn đang nghe là "
 "bạn bị bắt."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the guard heard you. One more noise while he listens and you are caught."
+msgstr ""
+"người gác đã nghe thấy bạn. Thêm một tiếng động khi hắn đang nghe là bạn bị "
+"bắt."
+
+#. the name or the meaning of a longer line
+msgid "Whistle"
+msgstr "Tiếng còi"
+
 msgid "Whistle: the guard caught you. The safe is lost."
 msgstr "Tiếng còi: người gác đã bắt được bạn. Mất két này."
+
+#. the name or the meaning of a longer line
+msgid "the guard caught you. The safe is lost."
+msgstr "người gác đã bắt được bạn. Mất két này."
 
 msgid "Clock tick: time attack is running low."
 msgstr "Tiếng đồng hồ tích tắc: đua giờ sắp hết thời gian."
 
+#. the name or the meaning of a longer line
+msgid "time attack is running low."
+msgstr "đua giờ sắp hết thời gian."
+
 msgid "Dull tap: nothing to do, or no hints left."
 msgstr "Tiếng gõ đục: không có gì để làm, hoặc đã hết gợi ý."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do, or no hints left."
+msgstr "không có gì để làm, hoặc đã hết gợi ý."
+
+#. the name or the meaning of a longer line
+msgid "Knocking pipe"
+msgstr "Ống nước gõ"
 
 msgid "Knocking pipe: a building noise, off to one side. Not the safe."
 msgstr "Ống nước gõ: tiếng động tòa nhà, ở một bên. Không phải két."
 
+#. the name or the meaning of a longer line
+msgid "a building noise, off to one side. Not the safe."
+msgstr "tiếng động tòa nhà, ở một bên. Không phải két."
+
+#. the name or the meaning of a longer line
+msgid "Creaking floor"
+msgstr "Sàn kêu cót két"
+
 msgid "Creaking floor: a building noise, off to one side. Not the safe."
 msgstr "Sàn kêu cót két: tiếng động tòa nhà, ở một bên. Không phải két."
 
+#. the name or the meaning of a longer line
+msgid "Distant clock"
+msgstr "Đồng hồ xa"
+
 msgid "Distant clock: a building noise, off to one side. Not the safe."
 msgstr "Đồng hồ xa: tiếng động tòa nhà, ở một bên. Không phải két."
+
+#. the name or the meaning of a longer line
+msgid "Cat yowl"
+msgstr "Mèo kêu ngoao"
 
 msgid ""
 "Cat yowl: a soft, short yowl just after a clunk. On Friday the 13th, the "
@@ -63336,6 +65640,14 @@ msgid ""
 msgstr ""
 "Mèo kêu ngoao: tiếng kêu khẽ, ngắn ngay sau tiếng cạch. Vào thứ Sáu ngày "
 "13, con mèo của két xui xẻo: số của vòng này là 13."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a soft, short yowl just after a clunk. On Friday the 13th, the unlucky "
+"safe's cat: this wheel's number is 13."
+msgstr ""
+"tiếng kêu khẽ, ngắn ngay sau tiếng cạch. Vào thứ Sáu ngày 13, con mèo của "
+"két xui xẻo: số của vòng này là 13."
 
 msgid "Click and clunk"
 msgstr "Tiếng tách và tiếng cạch"
@@ -64511,16 +66823,38 @@ msgstr "Trật bánh ngay chuyến đầu tiên."
 msgid "Derailed after {trains_words}."
 msgstr "Trật bánh sau {trains_words}."
 
+#. the name or the meaning of a longer line
+msgid "Tick"
+msgstr "Tích"
+
 msgid ""
 "Tick: a dry, quiet tap that keeps the tempo. It quickens as the window "
 "shrinks."
 msgstr "Tích: tiếng gõ khô, khẽ giữ nhịp. Nó nhanh dần khi khung ngắn lại."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a dry, quiet tap that keeps the tempo. It quickens as the window shrinks."
+msgstr "tiếng gõ khô, khẽ giữ nhịp. Nó nhanh dần khi khung ngắn lại."
+
+#. the name or the meaning of a longer line
+msgid "Train passing"
+msgstr "Tàu chạy qua"
 
 msgid ""
 "Train passing: a rush from left to right. Your answer was right and the "
 "train is through."
 msgstr ""
 "Tàu chạy qua: tiếng ầm từ trái sang phải. Bạn trả lời đúng và tàu đã qua."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a rush from left to right. Your answer was right and the train is through."
+msgstr "tiếng ầm từ trái sang phải. Bạn trả lời đúng và tàu đã qua."
+
+#. the name or the meaning of a longer line
+msgid "Steam special"
+msgstr "Tàu hơi nước đặc biệt"
 
 msgid ""
 "Steam special: steam chuffs and a two-note whistle as the train rushes by. "
@@ -64529,12 +66863,36 @@ msgstr ""
 "Tàu hơi nước đặc biệt: tiếng xình xịch và tiếng còi hai nốt khi tàu lao "
 "qua. Ở Hội tàu hơi nước, cứ chuyến thứ năm là tàu đặc biệt, được 3 điểm."
 
+#. the name or the meaning of a longer line
+msgid ""
+"steam chuffs and a two-note whistle as the train rushes by. At the steam "
+"gala, every fifth train is the special, worth 3 points."
+msgstr ""
+"tiếng xình xịch và tiếng còi hai nốt khi tàu lao qua. Ở Hội tàu hơi nước, "
+"cứ chuyến thứ năm là tàu đặc biệt, được 3 điểm."
+
+#. the name or the meaning of a longer line
+msgid "Ghost train"
+msgstr "Tàu ma"
+
 msgid ""
 "Ghost train: the rush with a long, falling, ghostly whistle. On Friday the "
 "13th, the thirteenth train of the night shift went through."
 msgstr ""
 "Tàu ma: tiếng ầm kèm tiếng còi ma quái dài, trầm dần. Vào thứ Sáu ngày 13, "
 "chuyến tàu thứ mười ba của ca đêm đã đi qua."
+
+#. the name or the meaning of a longer line
+msgid ""
+"the rush with a long, falling, ghostly whistle. On Friday the 13th, the "
+"thirteenth train of the night shift went through."
+msgstr ""
+"tiếng ầm kèm tiếng còi ma quái dài, trầm dần. Vào thứ Sáu ngày 13, chuyến "
+"tàu thứ mười ba của ca đêm đã đi qua."
+
+#. the name or the meaning of a longer line
+msgid "Streak chime"
+msgstr "Chuông chuỗi"
 
 msgid ""
 "Streak chime: a bright rising run. Another 10 trains in a row, for a bonus "
@@ -64543,12 +66901,30 @@ msgstr ""
 "Chuông chuỗi: một chuỗi nốt sáng đi lên. Thêm 10 chuyến liên tiếp, được "
 "thưởng 5 điểm."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a bright rising run. Another 10 trains in a row, for a bonus of 5 points."
+msgstr ""
+"một chuỗi nốt sáng đi lên. Thêm 10 chuyến liên tiếp, được thưởng 5 điểm."
+
+#. the name or the meaning of a longer line
+msgid "Brake screech"
+msgstr "Tiếng phanh rít"
+
 msgid ""
 "Brake screech: a long squeal and a crash. A wrong or late answer derailed "
 "the train, and the shift is over."
 msgstr ""
 "Tiếng phanh rít: tiếng rít dài và tiếng va chạm. Câu trả lời sai hoặc muộn "
 "làm tàu trật bánh, và ca đã hết."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a long squeal and a crash. A wrong or late answer derailed the train, and "
+"the shift is over."
+msgstr ""
+"tiếng rít dài và tiếng va chạm. Câu trả lời sai hoặc muộn làm tàu trật "
+"bánh, và ca đã hết."
 
 #. placeholders: {word}, {sound_words}
 msgid "The {word} call: {sound_words}."
@@ -67113,40 +69489,113 @@ msgstr "Câu chuyện của họ đã kể xong."
 msgid "Part {told} of {story}."
 msgstr "Đoạn {told} trên {story}."
 
+#. the name or the meaning of a longer line
+msgid "Door bell"
+msgstr "Chuông cửa"
+
 msgid "Door bell: a small brass bell. A guest comes in."
 msgstr "Chuông cửa: chiếc chuông đồng nhỏ. Có khách bước vào."
 
+#. the name or the meaning of a longer line
+msgid "a small brass bell. A guest comes in."
+msgstr "chiếc chuông đồng nhỏ. Có khách bước vào."
+
 msgid "Footsteps: soft steps on the wooden floor, coming to the counter."
 msgstr "Tiếng bước chân: bước nhẹ trên sàn gỗ, đi tới quầy."
+
+#. the name or the meaning of a longer line
+msgid "soft steps on the wooden floor, coming to the counter."
+msgstr "bước nhẹ trên sàn gỗ, đi tới quầy."
+
+#. the name or the meaning of a longer line
+msgid "Shelf tick"
+msgstr "Tiếng tích kệ"
 
 msgid ""
 "Shelf tick: a soft wooden tick as you move along the shelf or the cups."
 msgstr "Tiếng tích kệ: tiếng gỗ khẽ khi bạn đi dọc kệ trà hay các chén."
 
+#. the name or the meaning of a longer line
+msgid "a soft wooden tick as you move along the shelf or the cups."
+msgstr "tiếng gỗ khẽ khi bạn đi dọc kệ trà hay các chén."
+
+#. the name or the meaning of a longer line
+msgid "Tin lid"
+msgstr "Nắp hộp thiếc"
+
 msgid "Tin lid: a tea tin opens. Your tea goes in the pot."
 msgstr "Nắp hộp thiếc: một hộp trà mở ra. Trà của bạn vào ấm."
 
+#. the name or the meaning of a longer line
+msgid "a tea tin opens. Your tea goes in the pot."
+msgstr "một hộp trà mở ra. Trà của bạn vào ấm."
+
+#. the name or the meaning of a longer line
+msgid "Kettle switch"
+msgstr "Công tắc ấm"
+
 msgid "Kettle switch: a click. The kettle is on."
 msgstr "Công tắc ấm: tiếng tách. Ấm đã bật."
+
+#. the name or the meaning of a longer line
+msgid "a click. The kettle is on."
+msgstr "tiếng tách. Ấm đã bật."
+
+#. the name or the meaning of a longer line
+msgid "Rumble"
+msgstr "Tiếng ù"
 
 msgid ""
 "Rumble: the kettle's low song as it starts to warm, up to about 65 degrees."
 msgstr ""
 "Tiếng ù: tiếng reo trầm của ấm khi bắt đầu ấm lên, đến khoảng 65 độ."
 
+#. the name or the meaning of a longer line
+msgid "the kettle's low song as it starts to warm, up to about 65 degrees."
+msgstr "tiếng reo trầm của ấm khi bắt đầu ấm lên, đến khoảng 65 độ."
+
+#. the name or the meaning of a longer line
+msgid "Hiss"
+msgstr "Tiếng xì"
+
 msgid ""
 "Hiss: the kettle's rushing song from about 80 degrees, rising toward the "
 "boil."
 msgstr "Tiếng xì: tiếng reo ào ào của ấm từ khoảng 80 độ, lên dần đến sôi."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the kettle's rushing song from about 80 degrees, rising toward the boil."
+msgstr "tiếng reo ào ào của ấm từ khoảng 80 độ, lên dần đến sôi."
+
 msgid "Whistle: a gentle whistle. The kettle is at the boil, 100 degrees."
 msgstr "Tiếng huýt: tiếng huýt khẽ. Ấm đã sôi, 100 độ."
+
+#. the name or the meaning of a longer line
+msgid "a gentle whistle. The kettle is at the boil, 100 degrees."
+msgstr "tiếng huýt khẽ. Ấm đã sôi, 100 độ."
+
+#. the name or the meaning of a longer line
+msgid "Pour"
+msgstr "Rót"
 
 msgid "Pour: water from the kettle onto the leaves. The steep begins."
 msgstr "Rót: nước từ ấm rót lên lá trà. Bắt đầu ủ."
 
+#. the name or the meaning of a longer line
+msgid "water from the kettle onto the leaves. The steep begins."
+msgstr "nước từ ấm rót lên lá trà. Bắt đầu ủ."
+
 msgid "Clock tick: one second of steeping."
 msgstr "Tiếng đồng hồ: một giây ủ trà."
+
+#. the name or the meaning of a longer line
+msgid "one second of steeping."
+msgstr "một giây ủ trà."
+
+#. the name or the meaning of a longer line
+msgid "Sand timer chime"
+msgstr "Chuông đồng hồ cát"
 
 msgid ""
 "Sand timer chime: the steep has reached what the tea wants. Only once you "
@@ -67155,26 +69604,91 @@ msgstr ""
 "Chuông đồng hồ cát: trà đã ủ đủ thời gian nó cần. Chỉ khi bạn đã có đồng hồ "
 "cát."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the steep has reached what the tea wants. Only once you own the sand timer."
+msgstr "trà đã ủ đủ thời gian nó cần. Chỉ khi bạn đã có đồng hồ cát."
+
+#. the name or the meaning of a longer line
+msgid "Leaves lifted"
+msgstr "Nhấc lá"
+
 msgid "Leaves lifted: a drip and a swish. The steep is over."
 msgstr "Nhấc lá: tiếng nhỏ giọt và tiếng sột soạt. Đã ủ xong."
+
+#. the name or the meaning of a longer line
+msgid "a drip and a swish. The steep is over."
+msgstr "tiếng nhỏ giọt và tiếng sột soạt. Đã ủ xong."
+
+#. the name or the meaning of a longer line
+msgid "Cup filled"
+msgstr "Rót chén"
 
 msgid "Cup filled: tea poured from the pot into one cup."
 msgstr "Rót chén: trà rót từ ấm vào một chén."
 
+#. the name or the meaning of a longer line
+msgid "tea poured from the pot into one cup."
+msgstr "trà rót từ ấm vào một chén."
+
+#. the name or the meaning of a longer line
+msgid "Ice"
+msgstr "Đá"
+
 msgid "Ice: cubes clink in the glass, for an iced tea."
 msgstr "Đá: những viên đá leng keng trong cốc, cho trà đá."
+
+#. the name or the meaning of a longer line
+msgid "cubes clink in the glass, for an iced tea."
+msgstr "những viên đá leng keng trong cốc, cho trà đá."
+
+#. the name or the meaning of a longer line
+msgid "Perfect cup"
+msgstr "Chén hoàn hảo"
 
 msgid "Perfect cup: three warm rising notes."
 msgstr "Chén hoàn hảo: ba nốt ấm áp đi lên."
 
+#. the name or the meaning of a longer line
+msgid "three warm rising notes."
+msgstr "ba nốt ấm áp đi lên."
+
+#. the name or the meaning of a longer line
+msgid "Lovely cup"
+msgstr "Chén tuyệt"
+
 msgid "Lovely cup: two warm notes."
 msgstr "Chén tuyệt: hai nốt ấm áp."
+
+#. the name or the meaning of a longer line
+msgid "two warm notes."
+msgstr "hai nốt ấm áp."
+
+#. the name or the meaning of a longer line
+msgid "Kind cup"
+msgstr "Chén ấm lòng"
 
 msgid "Kind cup: one soft note. The guest is still pleased."
 msgstr "Chén ấm lòng: một nốt khẽ. Khách vẫn hài lòng."
 
+#. the name or the meaning of a longer line
+msgid "one soft note. The guest is still pleased."
+msgstr "một nốt khẽ. Khách vẫn hài lòng."
+
+#. the name or the meaning of a longer line
+msgid "Coins"
+msgstr "Tiền xu"
+
 msgid "Coins: coins on the counter, for the cup and any tip."
 msgstr "Tiền xu: tiếng xu trên quầy, cho chén trà và tiền boa."
+
+#. the name or the meaning of a longer line
+msgid "coins on the counter, for the cup and any tip."
+msgstr "tiếng xu trên quầy, cho chén trà và tiền boa."
+
+#. the name or the meaning of a longer line
+msgid "Soft thud"
+msgstr "Tiếng thịch khẽ"
 
 msgid "Soft thud: nothing to do just now."
 msgstr "Tiếng thịch khẽ: lúc này không có gì để làm."
@@ -69879,6 +72393,10 @@ msgstr ""
 "Một nốt trầm đi xuống sau lưng bạn: một đèn lồng bạn đã bỏ lỡ. Chuỗi của "
 "bạn bắt đầu lại."
 
+#. the name or the meaning of a longer line
+msgid "A flat clink"
+msgstr "Tiếng leng keng đục"
+
 msgid ""
 "A flat clink: on the lantern skate, the second lit of a pair. Your line "
 "starts again."
@@ -69888,6 +72406,13 @@ msgstr ""
 
 msgid "The wrong lantern"
 msgstr "Sai đèn lồng"
+
+#. the name or the meaning of a longer line
+msgid ""
+"on the lantern skate, the second lit of a pair. Your line starts again."
+msgstr ""
+"ở lượt trượt đèn lồng, chiếc sáng sau trong một cặp. Chuỗi của bạn bắt đầu "
+"lại."
 
 msgid "A drift ahead"
 msgstr "Đống tuyết phía trước"
@@ -69953,6 +72478,10 @@ msgstr ""
 msgid "A spin landed"
 msgstr "Cú xoay tiếp đất"
 
+#. the name or the meaning of a longer line
+msgid "A scuffing stagger"
+msgstr "Tiếng loạng choạng cọ quẹt"
+
 msgid ""
 "A scuffing stagger: the spin was held too long. It scores nothing, and your "
 "line starts again."
@@ -69962,6 +72491,12 @@ msgstr ""
 
 msgid "A wobble"
 msgstr "Chao đảo"
+
+#. the name or the meaning of a longer line
+msgid ""
+"the spin was held too long. It scores nothing, and your line starts again."
+msgstr ""
+"cú xoay giữ quá lâu. Nó không được điểm, và chuỗi của bạn bắt đầu lại."
 
 msgid "A night on the ice"
 msgstr "Một đêm trên băng"
@@ -71551,6 +74086,17 @@ msgstr ""
 "Động cơ: tiếng gầm trầm khi bạn giữ phím động cơ. Nó làm bạn rơi chậm lại "
 "và đốt nhiên liệu."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low roar while you hold the engine key. It slows your fall and burns fuel."
+msgstr ""
+"tiếng gầm trầm khi bạn giữ phím động cơ. Nó làm bạn rơi chậm lại và đốt "
+"nhiên liệu."
+
+#. the name or the meaning of a longer line
+msgid "Pad beacon"
+msgstr "Đèn hiệu bãi đáp"
+
 msgid ""
 "Pad beacon: a soft ping from the pad below you. It quickens as you get "
 "closer."
@@ -71558,8 +74104,24 @@ msgstr ""
 "Đèn hiệu bãi đáp: tiếng ping khẽ từ bãi đáp bên dưới. Nó nhanh dần khi bạn "
 "tới gần."
 
+#. the name or the meaning of a longer line
+msgid "a soft ping from the pad below you. It quickens as you get closer."
+msgstr "tiếng ping khẽ từ bãi đáp bên dưới. Nó nhanh dần khi bạn tới gần."
+
+#. the name or the meaning of a longer line
+msgid "Radio click"
+msgstr "Tiếng tách radio"
+
 msgid "Radio click: mission control is about to give a call-out."
 msgstr "Tiếng tách radio: trung tâm điều khiển sắp đọc lời báo."
+
+#. the name or the meaning of a longer line
+msgid "mission control is about to give a call-out."
+msgstr "trung tâm điều khiển sắp đọc lời báo."
+
+#. the name or the meaning of a longer line
+msgid "Quindar tone"
+msgstr "Âm Quindar"
 
 msgid ""
 "Quindar tone: a short high beep on the Tranquility pad. It stands for the "
@@ -71568,6 +74130,18 @@ msgstr ""
 "Âm Quindar: tiếng bíp ngắn, cao ở bãi đáp Tranquility. Nó thay cho tiếng "
 "tách radio: sau đó là lời báo."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short high beep on the Tranquility pad. It stands for the radio click: a "
+"call-out follows."
+msgstr ""
+"tiếng bíp ngắn, cao ở bãi đáp Tranquility. Nó thay cho tiếng tách radio: "
+"sau đó là lời báo."
+
+#. the name or the meaning of a longer line
+msgid "Fuel alarm"
+msgstr "Báo động nhiên liệu"
+
 msgid ""
 "Fuel alarm: two soft beeps. Fuel is down to 25 percent, then again at 10 "
 "percent."
@@ -71575,13 +74149,32 @@ msgstr ""
 "Báo động nhiên liệu: hai tiếng bíp khẽ. Nhiên liệu xuống còn 25 phần trăm, "
 "rồi lại báo ở 10 phần trăm."
 
+#. the name or the meaning of a longer line
+msgid ""
+"two soft beeps. Fuel is down to 25 percent, then again at 10 percent."
+msgstr ""
+"hai tiếng bíp khẽ. Nhiên liệu xuống còn 25 phần trăm, rồi lại báo ở 10 phần "
+"trăm."
+
+#. the name or the meaning of a longer line
+msgid "Touchdown"
+msgstr "Chạm đất"
+
 msgid "Touchdown: a thud and a creak of the legs. You landed safely."
 msgstr ""
 "Chạm đất: tiếng thịch và tiếng chân tàu cọt kẹt. Bạn đã hạ cánh an toàn."
 
+#. the name or the meaning of a longer line
+msgid "a thud and a creak of the legs. You landed safely."
+msgstr "tiếng thịch và tiếng chân tàu cọt kẹt. Bạn đã hạ cánh an toàn."
+
 msgid "Crash: a heavy crunch. You touched down faster than the safe speed."
 msgstr ""
 "Rơi vỡ: tiếng va chạm nặng nề. Bạn chạm đất nhanh hơn tốc độ an toàn."
+
+#. the name or the meaning of a longer line
+msgid "a heavy crunch. You touched down faster than the safe speed."
+msgstr "tiếng va chạm nặng nề. Bạn chạm đất nhanh hơn tốc độ an toàn."
 
 msgid "Descent tone, safe"
 msgstr "Âm hạ độ cao, an toàn"
@@ -71592,6 +74185,10 @@ msgid ""
 msgstr ""
 "Âm hạ độ cao, an toàn: một âm trầm, đều. Bạn đang rơi chậm hơn tốc độ an "
 "toàn."
+
+#. the name or the meaning of a longer line
+msgid "a low, steady tone. You are falling slower than the safe speed."
+msgstr "một âm trầm, đều. Bạn đang rơi chậm hơn tốc độ an toàn."
 
 msgid "Descent tone, too fast"
 msgstr "Âm hạ độ cao, quá nhanh"
@@ -71604,6 +74201,14 @@ msgstr ""
 "Âm hạ độ cao, quá nhanh: cùng âm đó, cao hơn. Bạn rơi càng nhanh, âm càng "
 "cao. Bạn nghe Quá nhanh khi nó vượt tốc độ an toàn, và Tốc độ an toàn khi "
 "nó trở lại."
+
+#. the name or the meaning of a longer line
+msgid ""
+"the same tone, higher. The faster you fall, the higher it goes. You hear "
+"Too fast as it crosses the safe speed, and Safe speed as it comes back."
+msgstr ""
+"cùng âm đó, cao hơn. Bạn rơi càng nhanh, âm càng cao. Bạn nghe Quá nhanh "
+"khi nó vượt tốc độ an toàn, và Tốc độ an toàn khi nó trở lại."
 
 msgid "prompts"
 msgstr ""
@@ -76716,12 +79321,23 @@ msgstr "Đã nối mọi chòm sao"
 msgid "Shimmer"
 msgstr "Lấp lánh"
 
+#. the name or the meaning of a longer line
+msgid "Something hidden is near"
+msgstr "Có thứ gì đó ẩn giấu ở gần"
+
 msgid ""
 "Something hidden is near: a wonder such as a nebula or a cluster. Rest on "
 "it and press the main action."
 msgstr ""
 "Có thứ gì đó ẩn giấu ở gần: một kỳ quan như tinh vân hay cụm sao. Dừng trên "
 "nó và nhấn thao tác chính."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a wonder such as a nebula or a cluster. Rest on it and press the main "
+"action."
+msgstr ""
+"một kỳ quan như tinh vân hay cụm sao. Dừng trên nó và nhấn thao tác chính."
 
 msgid "A wonder is found and written in your journal."
 msgstr "Một kỳ quan đã được tìm thấy và ghi vào nhật ký."
@@ -77579,6 +80195,10 @@ msgstr "F thăng"
 msgid "G sharp"
 msgstr "G thăng"
 
+#. the name or the meaning of a longer line
+msgid "Pipe"
+msgstr "Ống"
+
 msgid ""
 "Pipe: a steady, soft organ tone. While you tune, two of these play "
 "together, the pipe and its true note. Out of tune, they wobble; in tune, "
@@ -77588,6 +80208,19 @@ msgstr ""
 "nốt đúng của nó. Lạc giọng thì chúng rung; đúng giọng thì tiếng rung lặng "
 "đi."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a steady, soft organ tone. While you tune, two of these play together, the "
+"pipe and its true note. Out of tune, they wobble; in tune, the wobble goes "
+"still."
+msgstr ""
+"tiếng đàn ống đều, khẽ. Khi bạn chỉnh, hai tiếng này cùng kêu, ống và nốt "
+"đúng của nó. Lạc giọng thì chúng rung; đúng giọng thì tiếng rung lặng đi."
+
+#. the name or the meaning of a longer line
+msgid "Echo note"
+msgstr "Nốt Echo"
+
 msgid ""
 "Echo note: one short organ note. The Echo plays these back as a tune once a "
 "rank is tuned."
@@ -77595,19 +80228,55 @@ msgstr ""
 "Nốt Echo: một nốt đàn ống ngắn. Echo chơi lại chúng thành giai điệu khi một "
 "hàng ống đã chỉnh xong."
 
+#. the name or the meaning of a longer line
+msgid ""
+"one short organ note. The Echo plays these back as a tune once a rank is "
+"tuned."
+msgstr ""
+"một nốt đàn ống ngắn. Echo chơi lại chúng thành giai điệu khi một hàng ống "
+"đã chỉnh xong."
+
+#. the name or the meaning of a longer line
+msgid "Slide"
+msgstr "Trượt"
+
 msgid "Slide: a tiny brass tick. The pipe moved up or down a step."
 msgstr "Trượt: tiếng tích đồng nhỏ. Ống đã lên hoặc xuống một bước."
+
+#. the name or the meaning of a longer line
+msgid "a tiny brass tick. The pipe moved up or down a step."
+msgstr "tiếng tích đồng nhỏ. Ống đã lên hoặc xuống một bước."
+
+#. the name or the meaning of a longer line
+msgid "In tune"
+msgstr "Đúng giọng"
 
 msgid "In tune: a clear bell. You set the pipe, and it holds its note."
 msgstr ""
 "Đúng giọng: tiếng chuông trong. Bạn đã cố định ống, và nó giữ được nốt."
 
+#. the name or the meaning of a longer line
+msgid "a clear bell. You set the pipe, and it holds its note."
+msgstr "tiếng chuông trong. Bạn đã cố định ống, và nó giữ được nốt."
+
 msgid "Hint: a soft felt knock. H told you which way the pipe is out."
 msgstr "Gợi ý: tiếng gõ nỉ khẽ. H đã cho bạn biết ống lệch chiều nào."
+
+#. the name or the meaning of a longer line
+msgid "a soft felt knock. H told you which way the pipe is out."
+msgstr "tiếng gõ nỉ khẽ. H đã cho bạn biết ống lệch chiều nào."
 
 msgid "Not yet: a dull thud. The pipe still wobbles, so it did not set."
 msgstr ""
 "Chưa được: tiếng thịch đục. Ống vẫn còn rung, nên chưa cố định được."
+
+#. the name or the meaning of a longer line
+msgid "a dull thud. The pipe still wobbles, so it did not set."
+msgstr "tiếng thịch đục. Ống vẫn còn rung, nên chưa cố định được."
+
+#. the name or the meaning of a longer line
+msgid "Rank tuned"
+msgstr "Đã chỉnh xong hàng ống"
 
 msgid ""
 "Rank tuned: rising tubular bells over an organ chord. Every pipe in the "
@@ -77615,6 +80284,13 @@ msgid ""
 msgstr ""
 "Chỉnh xong hàng ống: tiếng chuông ống vút lên trên một hợp âm đàn ống. Mọi "
 "ống trong hàng đã đúng giọng."
+
+#. the name or the meaning of a longer line
+msgid ""
+"rising tubular bells over an organ chord. Every pipe in the rank is in tune."
+msgstr ""
+"tiếng chuông ống vút lên trên một hợp âm đàn ống. Mọi ống trong hàng đã "
+"đúng giọng."
 
 msgid "Return to the title of The Echo."
 msgstr "Quay về màn hình chính của The Echo."
@@ -79876,12 +82552,21 @@ msgstr "Đang trốn"
 msgid "Creeping out"
 msgstr "Đang bò ra"
 
+#. the name or the meaning of a longer line
+msgid "Two soft rising notes"
+msgstr "Hai nốt nhẹ đi lên"
+
 msgid ""
 "Two soft rising notes: something shy has come back out. Listen for its "
 "sound, then reach in."
 msgstr ""
 "Hai nốt nhẹ đi lên: thứ nhút nhát đã ra lại. Chờ tiếng của nó, rồi thò tay "
 "vào."
+
+#. the name or the meaning of a longer line
+msgid ""
+"something shy has come back out. Listen for its sound, then reach in."
+msgstr "thứ nhút nhát đã ra lại. Chờ tiếng của nó, rồi thò tay vào."
 
 msgid ""
 "A scoop of water and a rising chime: you gathered a creature for your "
@@ -79933,6 +82618,10 @@ msgstr "Một tiếng bịch nhẹ vào cát: phía đó không còn vũng nào.
 msgid "End of the rocks"
 msgstr "Hết bãi đá"
 
+#. the name or the meaning of a longer line
+msgid "One distant bell buoy"
+msgstr "Một tiếng chuông phao xa"
+
 msgid ""
 "One distant bell buoy: half the trip is gone and the sea starts back."
 msgstr ""
@@ -79941,11 +82630,23 @@ msgstr ""
 msgid "The tide turns"
 msgstr "Triều đổi chiều"
 
+#. the name or the meaning of a longer line
+msgid "half the trip is gone and the sea starts back."
+msgstr "đã hết nửa chuyến và nước bắt đầu quay lại."
+
+#. the name or the meaning of a longer line
+msgid "The bell buoy twice"
+msgstr "Chuông phao hai lần"
+
 msgid "The bell buoy twice: the tide will soon cover the pools."
 msgstr "Chuông phao hai lần: thủy triều sắp phủ kín các vũng."
 
 msgid "The tide is near"
 msgstr "Triều sắp lên"
+
+#. the name or the meaning of a longer line
+msgid "the tide will soon cover the pools."
+msgstr "thủy triều sắp phủ kín các vũng."
 
 msgid "A big wave washing over the rocks: the trip is over."
 msgstr "Một con sóng lớn tràn qua đá: chuyến đi đã kết thúc."
@@ -79956,14 +82657,30 @@ msgstr "Triều lên"
 msgid "A rare find"
 msgstr "Một món hiếm"
 
+#. the name or the meaning of a longer line
+msgid "A shimmer"
+msgstr "Tiếng lấp lánh"
+
 msgid "A shimmer: what you gathered is rare."
 msgstr "Tiếng lấp lánh: thứ bạn nhặt là món hiếm."
+
+#. the name or the meaning of a longer line
+msgid "what you gathered is rare."
+msgstr "thứ bạn nhặt là món hiếm."
+
+#. the name or the meaning of a longer line
+msgid "A little rising arpeggio"
+msgstr "Một chuỗi nốt nhỏ đi lên"
 
 msgid "A little rising arpeggio: a kind you have never gathered before."
 msgstr "Một chuỗi nốt nhỏ đi lên: một loài bạn chưa từng nhặt."
 
 msgid "New for the aquarium"
 msgstr "Món mới cho bể thủy sinh"
+
+#. the name or the meaning of a longer line
+msgid "a kind you have never gathered before."
+msgstr "một loài bạn chưa từng nhặt."
 
 msgid ""
 "The sea, ahead of you beyond the pools. It grows louder and nearer as the "
@@ -80215,9 +82932,6 @@ msgstr ""
 
 msgid "The game says when you are halfway, 3 steps out and 1 step out."
 msgstr "Trò chơi báo khi bạn đi được nửa đường, còn 3 bước và còn 1 bước."
-
-msgid "Wind"
-msgstr "Gió"
 
 msgid ""
 "Each gust is announced with its direction at least 2 seconds before it "
@@ -85293,6 +88007,10 @@ msgstr ""
 msgid "Up and Down move between sounds, Enter plays one, Escape goes back."
 msgstr "Up và Down chuyển giữa các âm, Enter phát âm đó, Escape quay lại."
 
+#. the name or the meaning of a longer line
+msgid "Wish Desk"
+msgstr "Bàn Điều Ước"
+
 #. placeholders: {next}
 msgid "Wish Desk: {next}"
 msgstr "Bàn Điều Ước: {next}"
@@ -85314,13 +88032,25 @@ msgstr "Những điều ước như {join}."
 msgid "Gift lands on the belt: a soft thump and a rustle of paper."
 msgstr "Quà rơi lên băng chuyền: một tiếng bịch nhẹ và tiếng giấy sột soạt."
 
+#. the name or the meaning of a longer line
+msgid "Right recipient"
+msgstr "Đúng người nhận"
+
 msgid ""
 "Right recipient: rising bells from their side. This one is on your left."
 msgstr ""
 "Đúng người nhận: tiếng chuông đi lên từ phía họ. Người này ở bên trái bạn."
 
+#. the name or the meaning of a longer line
+msgid "rising bells from their side. This one is on your left."
+msgstr "tiếng chuông đi lên từ phía họ. Người này ở bên trái bạn."
+
 msgid "A gift sliding to a recipient. This one goes right."
 msgstr "Một món quà trượt tới người nhận. Món này đi sang phải."
+
+#. the name or the meaning of a longer line
+msgid "Wrong guess"
+msgstr "Đoán sai"
 
 msgid ""
 "Wrong guess: a low buzz from that side. It costs clock time. This one is "
@@ -85329,23 +88059,62 @@ msgstr ""
 "Đoán sai: tiếng rè trầm từ phía đó. Mất thời gian trên đồng hồ. Người này ở "
 "thẳng phía trước."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low buzz from that side. It costs clock time. This one is straight ahead."
+msgstr ""
+"tiếng rè trầm từ phía đó. Mất thời gian trên đồng hồ. Người này ở thẳng "
+"phía trước."
+
 msgid "Into the return sack, behind you."
 msgstr "Vào bao trả lại, sau lưng bạn."
+
+#. the name or the meaning of a longer line
+msgid "Near the edge"
+msgstr "Gần tới mép"
 
 msgid "Near the edge: quick beeping. Send the gift fast."
 msgstr "Gần tới mép: tiếng bíp nhanh. Gửi quà thật nhanh."
 
+#. the name or the meaning of a longer line
+msgid "quick beeping. Send the gift fast."
+msgstr "tiếng bíp nhanh. Gửi quà thật nhanh."
+
 msgid "A gift falls off the belt and breaks."
 msgstr "Một món quà rơi khỏi băng chuyền và vỡ."
+
+#. the name or the meaning of a longer line
+msgid "Clock running low"
+msgstr "Đồng hồ sắp hết"
 
 msgid "Clock running low: a tick each second near the end."
 msgstr "Đồng hồ sắp hết: mỗi giây một tiếng tích gần cuối."
 
+#. the name or the meaning of a longer line
+msgid "a tick each second near the end."
+msgstr "mỗi giây một tiếng tích gần cuối."
+
+#. the name or the meaning of a longer line
+msgid "Change of plans"
+msgstr "Đổi kế hoạch"
+
 msgid "Change of plans: a doorbell, when someone changes their wish."
 msgstr "Đổi kế hoạch: tiếng chuông cửa, khi có người đổi điều ước."
 
+#. the name or the meaning of a longer line
+msgid "a doorbell, when someone changes their wish."
+msgstr "tiếng chuông cửa, khi có người đổi điều ước."
+
+#. the name or the meaning of a longer line
+msgid "Nothing there"
+msgstr "Không có gì"
+
 msgid "Nothing there: a dull knock."
 msgstr "Không có gì: một tiếng gõ đục."
+
+#. the name or the meaning of a longer line
+msgid "a dull knock."
+msgstr "một tiếng gõ đục."
 
 msgid "Shift complete."
 msgstr "Xong ca."
@@ -85357,14 +88126,32 @@ msgstr ""
 "Bàn Điều Ước: một bước dọc kệ, phát ra ở chỗ đặt hộp. Bước này ở đầu bên "
 "trái."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a step along the shelf, heard where the box sits. This one is at the left "
+"end."
+msgstr "một bước dọc kệ, phát ra ở chỗ đặt hộp. Bước này ở đầu bên trái."
+
 msgid "Wish Desk: the end of the shelf."
 msgstr "Bàn Điều Ước: cuối kệ."
+
+#. the name or the meaning of a longer line
+msgid "the end of the shelf."
+msgstr "cuối kệ."
 
 msgid "Wish Desk: an empty place, where a gift was wrapped."
 msgstr "Bàn Điều Ước: một chỗ trống, nơi một món quà đã được gói."
 
+#. the name or the meaning of a longer line
+msgid "an empty place, where a gift was wrapped."
+msgstr "một chỗ trống, nơi một món quà đã được gói."
+
 msgid "Wish Desk: a shake of only straw. Shake again to hear the gift."
 msgstr "Bàn Điều Ước: lắc chỉ nghe rơm. Lắc lại để nghe món quà."
+
+#. the name or the meaning of a longer line
+msgid "a shake of only straw. Shake again to hear the gift."
+msgstr "lắc chỉ nghe rơm. Lắc lại để nghe món quà."
 
 #. one sentence of a longer line
 msgid "Let go now and nothing is wrapped."
@@ -85383,8 +88170,23 @@ msgstr ""
 "Bàn Điều Ước: giấy gói, khi bạn giữ {n}. Thả ngay bây giờ thì không gói "
 "được gì."
 
+#. placeholders: {n}
+#. the name or the meaning of a longer line
+msgid "wrapping paper, while you hold {n}."
+msgstr "giấy gói, khi bạn giữ {n}."
+
+#. placeholders: {n}
+#. the name or the meaning of a longer line
+msgid ""
+"wrapping paper, while you hold {n}. Let go now and nothing is wrapped."
+msgstr "giấy gói, khi bạn giữ {n}. Thả ngay bây giờ thì không gói được gì."
+
 msgid "Wish Desk: the wrong box, unwrapped and put back."
 msgstr "Bàn Điều Ước: hộp sai, được mở ra và đặt lại."
+
+#. the name or the meaning of a longer line
+msgid "the wrong box, unwrapped and put back."
+msgstr "hộp sai, được mở ra và đặt lại."
 
 #. placeholders: {n}
 msgid "Midnight Countdown bells, answered with {n}."
@@ -85404,23 +88206,63 @@ msgstr "Tiếng tích tắc, ở mỗi phách."
 msgid "Tock, on the first beat of each bar."
 msgstr "Tiếng tắc, ở phách đầu mỗi ô nhịp."
 
+#. the name or the meaning of a longer line
+msgid "Missed note"
+msgstr "Lỡ nốt"
+
 msgid "Missed note: a deflating party blower."
 msgstr "Lỡ nốt: tiếng kèn tiệc xì hơi."
+
+#. the name or the meaning of a longer line
+msgid "a deflating party blower."
+msgstr "tiếng kèn tiệc xì hơi."
+
+#. the name or the meaning of a longer line
+msgid "Wrong instrument"
+msgstr "Sai nhạc cụ"
 
 msgid "Wrong instrument: a short buzz."
 msgstr "Sai nhạc cụ: một tiếng rè ngắn."
 
+#. the name or the meaning of a longer line
+msgid "a short buzz."
+msgstr "một tiếng rè ngắn."
+
 msgid "A press with nothing to answer: a soft tap."
 msgstr "Bấm khi không có gì để đáp: một tiếng gõ nhẹ."
+
+#. the name or the meaning of a longer line
+msgid "Score multiplier up"
+msgstr "Hệ số điểm tăng"
 
 msgid "Score multiplier up: rising chimes."
 msgstr "Hệ số điểm tăng: tiếng chuông đi lên."
 
+#. the name or the meaning of a longer line
+msgid "rising chimes."
+msgstr "tiếng chuông đi lên."
+
+#. the name or the meaning of a longer line
+msgid "A call answered perfectly"
+msgstr "Đáp hoàn hảo một câu gọi"
+
 msgid "A call answered perfectly: sparkles."
 msgstr "Đáp hoàn hảo một câu gọi: tiếng lấp lánh."
 
+#. the name or the meaning of a longer line
+msgid "sparkles."
+msgstr "tiếng lấp lánh."
+
+#. the name or the meaning of a longer line
+msgid "Party energy low"
+msgstr "Năng lượng bữa tiệc thấp"
+
 msgid "Party energy low: a heartbeat."
 msgstr "Năng lượng bữa tiệc thấp: tiếng tim đập."
+
+#. the name or the meaning of a longer line
+msgid "a heartbeat."
+msgstr "tiếng tim đập."
 
 msgid "Back to the title."
 msgstr "Về màn hình chính."

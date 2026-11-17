@@ -7017,10 +7017,23 @@ msgstr "1 puan"
 msgid "{n} points"
 msgstr "{n} puan"
 
+#. the name or the meaning of a longer line
+msgid "Knock"
+msgstr "Vuruş"
+
 msgid ""
 "Knock: a firm knock on the beam. One bell of your row is right and in its "
 "place."
 msgstr "Vuruş: kirişe sert bir vuruş. Sıranızdaki bir çan doğru ve yerinde."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a firm knock on the beam. One bell of your row is right and in its place."
+msgstr "kirişe sert bir vuruş. Sıranızdaki bir çan doğru ve yerinde."
+
+#. the name or the meaning of a longer line
+msgid "Tap"
+msgstr "Tık"
 
 msgid ""
 "Tap: a soft tap on the beam. One bell of your row is in the peal, in "
@@ -7029,17 +7042,53 @@ msgstr ""
 "Tık: kirişe hafif bir tık. Sıranızdaki bir çan dizide var, ama başka bir "
 "yerde."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft tap on the beam. One bell of your row is in the peal, in another "
+"place."
+msgstr ""
+"kirişe hafif bir tık. Sıranızdaki bir çan dizide var, ama başka bir yerde."
+
+#. the name or the meaning of a longer line
+msgid "Rope pull"
+msgstr "İp çekme"
+
 msgid "Rope pull: your row is rung and the answer follows."
 msgstr "İp çekme: sıranız çalınır ve ardından yanıt gelir."
 
+#. the name or the meaning of a longer line
+msgid "your row is rung and the answer follows."
+msgstr "sıranız çalınır ve ardından yanıt gelir."
+
+#. the name or the meaning of a longer line
+msgid "Peal found"
+msgstr "Dizi bulundu"
+
 msgid "Peal found: every bell rings out three times. The peal is solved."
 msgstr "Dizi bulundu: her çan üç kez çalar. Dizi çözüldü."
+
+#. the name or the meaning of a longer line
+msgid "every bell rings out three times. The peal is solved."
+msgstr "her çan üç kez çalar. Dizi çözüldü."
+
+#. the name or the meaning of a longer line
+msgid "Out of rows"
+msgstr "Sıralar bitti"
 
 msgid ""
 "Out of rows: a single low bell. The tower's rows are spent and the peal is "
 "read out."
 msgstr ""
 "Sıralar bitti: tek bir alçak çan. Kulenin sıraları bitti ve dizi okunur."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a single low bell. The tower's rows are spent and the peal is read out."
+msgstr "tek bir alçak çan. Kulenin sıraları bitti ve dizi okunur."
+
+#. the name or the meaning of a longer line
+msgid "Next peal"
+msgstr "Sonraki dizi"
 
 msgid ""
 "Next peal: a short rising run. In the weekly challenge, the next peal is "
@@ -7048,8 +7097,26 @@ msgstr ""
 "Sonraki dizi: kısa, yükselen bir dizi nota. Haftalık görevde sıradaki dizi "
 "bekliyor."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short rising run. In the weekly challenge, the next peal is waiting."
+msgstr ""
+"kısa, yükselen bir dizi nota. Haftalık görevde sıradaki dizi bekliyor."
+
+#. the name or the meaning of a longer line
+msgid "Dull thud"
+msgstr "Boğuk güm"
+
 msgid "Dull thud: nothing to do, or no hint to give."
 msgstr "Boğuk güm: yapacak bir şey ya da verilecek ipucu yok."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do, or no hint to give."
+msgstr "yapacak bir şey ya da verilecek ipucu yok."
+
+#. the name or the meaning of a longer line
+msgid "Called place"
+msgstr "Söylenen yer"
 
 msgid ""
 "Called place: a short, quiet glassy shimmer, just after a bell. On Practice "
@@ -7057,6 +7124,14 @@ msgid ""
 msgstr ""
 "Söylenen yer: bir çanın hemen ardından kısa, sessiz, cam gibi bir pırıltı. "
 "Prova gecesinde kule başının söylediği, çanı zaten konmuş yer."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a short, quiet glassy shimmer, just after a bell. On Practice night, the "
+"place the tower captain called, whose bell is already set."
+msgstr ""
+"bir çanın hemen ardından kısa, sessiz, cam gibi bir pırıltı. Prova "
+"gecesinde kule başının söylediği, çanı zaten konmuş yer."
 
 msgid "Up and Down choose a sound, Enter plays it, Escape goes back."
 msgstr "Up ve Down bir ses seçer, Enter çalar, Escape geri döner."
@@ -10105,6 +10180,10 @@ msgstr "Islığınız"
 msgid "Your whistle: the notes you answer with, low, middle and high."
 msgstr "Islığınız: yanıt verdiğiniz notalar, alçak, orta ve yüksek."
 
+#. the name or the meaning of a longer line
+msgid "the notes you answer with, low, middle and high."
+msgstr "yanıt verdiğiniz notalar, alçak, orta ve yüksek."
+
 #. placeholders: {slug}
 msgid "Flock call, {slug}"
 msgstr "Sürü ötüşü, {slug}"
@@ -10142,6 +10221,10 @@ msgstr "Dönüş"
 msgid "Turn: a soft rustle as you turn to face a new way."
 msgstr "Dönüş: yeni bir yöne dönerken hafif bir hışırtı."
 
+#. the name or the meaning of a longer line
+msgid "a soft rustle as you turn to face a new way."
+msgstr "yeni bir yöne dönerken hafif bir hışırtı."
+
 msgid "Edge of the trail"
 msgstr "Patikanın kenarı"
 
@@ -10151,6 +10234,11 @@ msgid ""
 msgstr ""
 "Patikanın kenarı: bir hışırtı ve hafif bir güm. Böğürtlenler, bir çit ya da "
 "su adımı durdurur."
+
+#. the name or the meaning of a longer line
+msgid "a rustle and a soft thud. Brambles, a hedge or water stop the step."
+msgstr ""
+"bir hışırtı ve hafif bir güm. Böğürtlenler, bir çit ya da su adımı durdurur."
 
 msgid "Befriended"
 msgstr "Dost oldunuz"
@@ -10162,6 +10250,11 @@ msgstr ""
 "Dost oldunuz: sıcak, yükselen bir çın. Yanıtınız tuttu ve kuş artık "
 "dostunuz."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a warm rising chime. Your answer matched, and the bird is your friend."
+msgstr "sıcak, yükselen bir çın. Yanıtınız tuttu ve kuş artık dostunuz."
+
 msgid "New song"
 msgstr "Yeni ötüş"
 
@@ -10172,6 +10265,12 @@ msgstr ""
 "Yeni ötüş: hafif bir sayfa çevirme ve bir çan. Kuş rehberinize yeni bir şey "
 "girdi."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft page turn and a bell. Something new went into your field guide."
+msgstr ""
+"hafif bir sayfa çevirme ve bir çan. Kuş rehberinize yeni bir şey girdi."
+
 msgid "Not quite"
 msgstr "Tam değil"
 
@@ -10180,6 +10279,11 @@ msgid ""
 "sings again."
 msgstr ""
 "Tam değil: iki yumuşak, alçak nota. Yanıtınız tutmadı ve kuş yeniden öter."
+
+#. the name or the meaning of a longer line
+msgid ""
+"two soft, low notes. Your answer did not match, and the bird sings again."
+msgstr "iki yumuşak, alçak nota. Yanıtınız tutmadı ve kuş yeniden öter."
 
 msgid "Found"
 msgstr "Bulundu"
@@ -10191,6 +10295,14 @@ msgstr ""
 "Bulundu: parlak, iki notalı bir çın. Doğru kuşu seçtiniz ya da bir sürüyü "
 "tam saydınız."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a bright two-note chime. You picked out the right bird, or counted a flock "
+"exactly."
+msgstr ""
+"parlak, iki notalı bir çın. Doğru kuşu seçtiniz ya da bir sürüyü tam "
+"saydınız."
+
 msgid "Trail's end"
 msgstr "Patikanın sonu"
 
@@ -10201,12 +10313,24 @@ msgstr ""
 "Patikanın sonu: yumuşak, yükselen bir akor. Patikanın sonuna vardınız ya da "
 "son sürü de gitti."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a gentle rising chord. You reached the end of the trail, or the last flock "
+"has gone."
+msgstr ""
+"yumuşak, yükselen bir akor. Patikanın sonuna vardınız ya da son sürü de "
+"gitti."
+
 msgid "Wingbeats"
 msgstr "Kanat çırpışları"
 
 msgid "Wingbeats: a soft rush of wings. A migrating flock is coming."
 msgstr ""
 "Kanat çırpışları: hafif bir kanat hışırtısı. Göç eden bir sürü geliyor."
+
+#. the name or the meaning of a longer line
+msgid "a soft rush of wings. A migrating flock is coming."
+msgstr "hafif bir kanat hışırtısı. Göç eden bir sürü geliyor."
 
 #. placeholders: {name}
 msgid "End of the {name}"
@@ -12401,10 +12525,30 @@ msgstr ""
 "Sayım: derin bir bodhran vuruşu. Her ezgiden önce dördü, duraklatmadan "
 "sonra üçü sizi dansa sokar."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a deep bodhran beat. Four of them count you in before each tune, and three "
+"after a pause."
+msgstr ""
+"derin bir bodhran vuruşu. Her ezgiden önce dördü, duraklatmadan sonra üçü "
+"sizi dansa sokar."
+
+#. the name or the meaning of a longer line
+msgid "Spot on"
+msgstr "Tam isabet"
+
 msgid ""
 "Spot on: a small bright chime with your step. It landed right on the beat."
 msgstr ""
 "Tam isabet: adımınızla birlikte küçük, parlak bir çın. Tam vuruşa düştü."
+
+#. the name or the meaning of a longer line
+msgid "a small bright chime with your step. It landed right on the beat."
+msgstr "adımınızla birlikte küçük, parlak bir çın. Tam vuruşa düştü."
+
+#. the name or the meaning of a longer line
+msgid "Close"
+msgstr "Yakın"
 
 msgid ""
 "Close: a soft dull tick with your step. It landed in time, but a little "
@@ -12413,6 +12557,18 @@ msgstr ""
 "Yakın: adımınızla birlikte yumuşak, boğuk bir tık. Zamanında düştü, ama "
 "biraz erken ya da geç."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft dull tick with your step. It landed in time, but a little early or "
+"late."
+msgstr ""
+"adımınızla birlikte yumuşak, boğuk bir tık. Zamanında düştü, ama biraz "
+"erken ya da geç."
+
+#. the name or the meaning of a longer line
+msgid "Stumble"
+msgstr "Tökezleme"
+
 msgid ""
 "Stumble: a scuff and a thud. A step was missed, or the wrong step was "
 "danced."
@@ -12420,13 +12576,38 @@ msgstr ""
 "Tökezleme: bir sürtünme ve bir güm. Bir adım kaçırıldı ya da yanlış adım "
 "dans edildi."
 
+#. the name or the meaning of a longer line
+msgid "a scuff and a thud. A step was missed, or the wrong step was danced."
+msgstr ""
+"bir sürtünme ve bir güm. Bir adım kaçırıldı ya da yanlış adım dans edildi."
+
+#. the name or the meaning of a longer line
+msgid "Claps"
+msgstr "Alkış"
+
 msgid ""
 "Claps: the crowd claps three times. Another 8 steps in a row, for a bonus."
 msgstr ""
 "Alkış: kalabalık üç kez el çırpar. Art arda 8 adım daha, bonus için."
 
+#. the name or the meaning of a longer line
+msgid "the crowd claps three times. Another 8 steps in a row, for a bonus."
+msgstr "kalabalık üç kez el çırpar. Art arda 8 adım daha, bonus için."
+
+#. the name or the meaning of a longer line
+msgid "Applause"
+msgstr "Alkış"
+
 msgid "Applause: the end of a tune."
 msgstr "Alkış: bir ezginin sonu."
+
+#. the name or the meaning of a longer line
+msgid "the end of a tune."
+msgstr "bir ezginin sonu."
+
+#. the name or the meaning of a longer line
+msgid "Shamrock"
+msgstr "Yonca"
 
 msgid ""
 "Shamrock: two high chimes with a call, in Saint Patrick's week. Dance that "
@@ -12435,9 +12616,29 @@ msgstr ""
 "Yonca: Aziz Patrick haftasında bir çağrıyla birlikte iki yüksek çın. Şans "
 "puanı için o adımı iyi ya da daha iyi dans edin."
 
+#. the name or the meaning of a longer line
+msgid ""
+"two high chimes with a call, in Saint Patrick's week. Dance that step good "
+"or better for a luck point."
+msgstr ""
+"Aziz Patrick haftasında bir çağrıyla birlikte iki yüksek çın. Şans puanı "
+"için o adımı iyi ya da daha iyi dans edin."
+
+#. the name or the meaning of a longer line
+msgid "Luck point"
+msgstr "Şans puanı"
+
 msgid "Luck point: a quick music box run up. You caught a shamrock."
 msgstr ""
 "Şans puanı: hızlı, yükselen bir müzik kutusu dizisi. Bir yonca yakaladınız."
+
+#. the name or the meaning of a longer line
+msgid "a quick music box run up. You caught a shamrock."
+msgstr "hızlı, yükselen bir müzik kutusu dizisi. Bir yonca yakaladınız."
+
+#. the name or the meaning of a longer line
+msgid "Clover call"
+msgstr "Dört yapraklı yonca çağrısı"
 
 msgid ""
 "Clover call: three sparkling notes with a call, once a night at the ceili. "
@@ -12446,9 +12647,25 @@ msgstr ""
 "Dört yapraklı yonca çağrısı: ceilide gecede bir kez, bir çağrıyla birlikte "
 "üç pırıltılı nota. Dört yapraklı yoncayı bulmak için o adımı dans edin."
 
+#. the name or the meaning of a longer line
+msgid ""
+"three sparkling notes with a call, once a night at the ceili. Dance that "
+"step to find the four-leaf clover."
+msgstr ""
+"ceilide gecede bir kez, bir çağrıyla birlikte üç pırıltılı nota. Dört "
+"yapraklı yoncayı bulmak için o adımı dans edin."
+
+#. the name or the meaning of a longer line
+msgid "Four-leaf clover"
+msgstr "Dört yapraklı yonca"
+
 msgid "Four-leaf clover: a harp sweep and a shimmer. You found it."
 msgstr ""
 "Dört yapraklı yonca: bir arp süpürmesi ve bir pırıltı. Onu buldunuz."
+
+#. the name or the meaning of a longer line
+msgid "a harp sweep and a shimmer. You found it."
+msgstr "bir arp süpürmesi ve bir pırıltı. Onu buldunuz."
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
@@ -14497,6 +14714,10 @@ msgstr "1 kalp"
 msgid "{n} hearts"
 msgstr "{n} kalp"
 
+#. the name or the meaning of a longer line
+msgid "Rose"
+msgstr "Gül"
+
 msgid ""
 "Rose: a soft music box tune with a rustle of petals. A rose drifting in the "
 "Valentine's season, worth 25 more than a heart."
@@ -14504,11 +14725,33 @@ msgstr ""
 "Gül: yaprak hışırtılı, yumuşak bir müzik kutusu ezgisi. Sevgililer Günü "
 "sezonunda süzülen, bir kalpten 25 puan fazla değerli bir gül."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft music box tune with a rustle of petals. A rose drifting in the "
+"Valentine's season, worth 25 more than a heart."
+msgstr ""
+"yaprak hışırtılı, yumuşak bir müzik kutusu ezgisi. Sevgililer Günü "
+"sezonunda süzülen, bir kalpten 25 puan fazla değerli bir gül."
+
+#. the name or the meaning of a longer line
+msgid "Golden heart"
+msgstr "Altın kalp"
+
 msgid ""
 "Golden heart: a shimmer of tiny bells. Only on Valentine's night, worth 100."
 msgstr ""
 "Altın kalp: minik çanlardan bir pırıltı. Yalnızca Sevgililer gecesinde, 100 "
 "puan değerinde."
+
+#. the name or the meaning of a longer line
+msgid "a shimmer of tiny bells. Only on Valentine's night, worth 100."
+msgstr ""
+"minik çanlardan bir pırıltı. Yalnızca Sevgililer gecesinde, 100 puan "
+"değerinde."
+
+#. the name or the meaning of a longer line
+msgid "Love note"
+msgstr "Aşk notu"
 
 msgid ""
 "Love note: a slow flutter of paper. A folded note drifting slowly. Hit it "
@@ -14517,31 +14760,103 @@ msgstr ""
 "Aşk notu: kâğıdın ağır bir hışırtısı. Ağır ağır süzülen katlanmış bir not. "
 "Notu saklamak için vurun."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a slow flutter of paper. A folded note drifting slowly. Hit it to keep the "
+"note."
+msgstr ""
+"kâğıdın ağır bir hışırtısı. Ağır ağır süzülen katlanmış bir not. Notu "
+"saklamak için vurun."
+
+#. the name or the meaning of a longer line
+msgid "String creak"
+msgstr "İp gıcırtısı"
+
 msgid "String creak: the bow drawing, rising as the string comes back."
 msgstr "İp gıcırtısı: yay geriliyor, ip geri geldikçe yükseliyor."
+
+#. the name or the meaning of a longer line
+msgid "the bow drawing, rising as the string comes back."
+msgstr "yay geriliyor, ip geri geldikçe yükseliyor."
+
+#. the name or the meaning of a longer line
+msgid "Full draw"
+msgstr "Tam gerilme"
 
 msgid "Full draw: a soft wooden click. Let go now to shoot."
 msgstr "Tam gerilme: yumuşak bir tahta tık. Atmak için şimdi bırakın."
 
+#. the name or the meaning of a longer line
+msgid "a soft wooden click. Let go now to shoot."
+msgstr "yumuşak bir tahta tık. Atmak için şimdi bırakın."
+
+#. the name or the meaning of a longer line
+msgid "Arrow loosed"
+msgstr "Ok atıldı"
+
 msgid "Arrow loosed: a twang and a whoosh."
 msgstr "Ok atıldı: bir tıngırtı ve bir vınlama."
+
+#. the name or the meaning of a longer line
+msgid "a twang and a whoosh."
+msgstr "bir tıngırtı ve bir vınlama."
+
+#. the name or the meaning of a longer line
+msgid "Slack string"
+msgstr "Gevşek ip"
 
 msgid ""
 "Slack string: a dull flop. Let go too soon, so the arrow stays in your hand."
 msgstr ""
 "Gevşek ip: boğuk bir pat. Çok erken bırakıldı, bu yüzden ok elinizde kalır."
 
+#. the name or the meaning of a longer line
+msgid "a dull flop. Let go too soon, so the arrow stays in your hand."
+msgstr "boğuk bir pat. Çok erken bırakıldı, bu yüzden ok elinizde kalır."
+
 msgid "Aim tick: the bow turns one step."
 msgstr "Nişan tıkı: yay bir adım döner."
+
+#. the name or the meaning of a longer line
+msgid "the bow turns one step."
+msgstr "yay bir adım döner."
+
+#. the name or the meaning of a longer line
+msgid "Edge knock"
+msgstr "Kenar vuruşu"
 
 msgid "Edge knock: the bow is turned as far as it goes."
 msgstr "Kenar vuruşu: yay gidebildiği kadar döndü."
 
+#. the name or the meaning of a longer line
+msgid "the bow is turned as far as it goes."
+msgstr "yay gidebildiği kadar döndü."
+
+#. the name or the meaning of a longer line
+msgid "Empty quiver"
+msgstr "Boş sadak"
+
 msgid "Empty quiver: a hollow tap of wood."
 msgstr "Boş sadak: tahtaya boğuk bir vuruş."
 
+#. the name or the meaning of a longer line
+msgid "a hollow tap of wood."
+msgstr "tahtaya boğuk bir vuruş."
+
+#. the name or the meaning of a longer line
+msgid "Pop"
+msgstr "Pat"
+
 msgid "Pop: a paper heart bursts."
 msgstr "Pat: bir kâğıt kalp patlar."
+
+#. the name or the meaning of a longer line
+msgid "a paper heart bursts."
+msgstr "bir kâğıt kalp patlar."
+
+#. the name or the meaning of a longer line
+msgid "Sweetheart chord"
+msgstr "Sevgili akoru"
 
 msgid ""
 "Sweetheart chord: rising chimes that end in a chord. Both hearts of a pair, "
@@ -14550,32 +14865,103 @@ msgstr ""
 "Sevgili akoru: bir akorla biten yükselen çınlamalar. Bir çiftin iki kalbi, "
 "art arda."
 
+#. the name or the meaning of a longer line
+msgid ""
+"rising chimes that end in a chord. Both hearts of a pair, one after the "
+"other."
+msgstr ""
+"bir akorla biten yükselen çınlamalar. Bir çiftin iki kalbi, art arda."
+
+#. the name or the meaning of a longer line
+msgid "Rose caught"
+msgstr "Gül vuruldu"
+
 msgid "Rose caught: a rustle and a bright harp run."
 msgstr "Gül vuruldu: bir hışırtı ve parlak bir arp dizisi."
 
+#. the name or the meaning of a longer line
+msgid "a rustle and a bright harp run."
+msgstr "bir hışırtı ve parlak bir arp dizisi."
+
+#. the name or the meaning of a longer line
+msgid "Golden heart caught"
+msgstr "Altın kalp vuruldu"
+
 msgid "Golden heart caught: a burst of bells, high and bright."
 msgstr "Altın kalp vuruldu: yüksek ve parlak bir çan patlaması."
+
+#. the name or the meaning of a longer line
+msgid "a burst of bells, high and bright."
+msgstr "yüksek ve parlak bir çan patlaması."
+
+#. the name or the meaning of a longer line
+msgid "Note caught"
+msgstr "Not vuruldu"
 
 msgid "Note caught: paper unfolding, and a soft chord. A love note to keep."
 msgstr ""
 "Not vuruldu: açılan kâğıt ve yumuşak bir akor. Saklanacak bir aşk notu."
 
+#. the name or the meaning of a longer line
+msgid "paper unfolding, and a soft chord. A love note to keep."
+msgstr "açılan kâğıt ve yumuşak bir akor. Saklanacak bir aşk notu."
+
+#. the name or the meaning of a longer line
+msgid "Miss"
+msgstr "Iska"
+
 msgid "Miss: a far tap on roof tiles. The arrow met nothing."
 msgstr "Iska: kiremitlere uzak bir vuruş. Ok hiçbir şeye değmedi."
+
+#. the name or the meaning of a longer line
+msgid "a far tap on roof tiles. The arrow met nothing."
+msgstr "kiremitlere uzak bir vuruş. Ok hiçbir şeye değmedi."
+
+#. the name or the meaning of a longer line
+msgid "Sights ping"
+msgstr "Nişan çını"
 
 msgid ""
 "Sights ping: a small glassy ping. Let go now and the arrow meets a target."
 msgstr ""
 "Nişan çını: küçük, cam gibi bir çın. Şimdi bırakırsanız ok bir hedefe varır."
 
+#. the name or the meaning of a longer line
+msgid "a small glassy ping. Let go now and the arrow meets a target."
+msgstr "küçük, cam gibi bir çın. Şimdi bırakırsanız ok bir hedefe varır."
+
+#. the name or the meaning of a longer line
+msgid "Rooftop bell"
+msgstr "Çatı zili"
+
 msgid "Rooftop bell: a round begins."
 msgstr "Çatı zili: bir bölüm başlıyor."
+
+#. the name or the meaning of a longer line
+msgid "a round begins."
+msgstr "bir bölüm başlıyor."
+
+#. the name or the meaning of a longer line
+msgid "Quiver spent"
+msgstr "Sadak bitti"
 
 msgid "Quiver spent: three falling notes. The round is over."
 msgstr "Sadak bitti: inen üç nota. Bölüm bitti."
 
+#. the name or the meaning of a longer line
+msgid "three falling notes. The round is over."
+msgstr "inen üç nota. Bölüm bitti."
+
+#. the name or the meaning of a longer line
+msgid "Dull tap"
+msgstr "Boğuk vuruş"
+
 msgid "Dull tap: nothing to do."
 msgstr "Boğuk vuruş: yapacak bir şey yok."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do."
+msgstr "yapacak bir şey yok."
 
 msgid "A heart's hum, then the chime it makes when hit."
 msgstr "Bir kalbin uğultusu, sonra vurulunca çıkardığı çın."
@@ -16671,20 +17057,64 @@ msgstr "Henüz dans edilmedi."
 msgid "Return to the Dragon Dance title."
 msgstr "Dragon Dance başlangıç ekranına döner."
 
+#. the name or the meaning of a longer line
+msgid "Drum"
+msgstr "Davul"
+
 msgid "Drum: a deep drum on every beat. The dragon dances on each one."
 msgstr "Davul: her vuruşta derin bir davul. Ejderha her birinde dans eder."
+
+#. the name or the meaning of a longer line
+msgid "a deep drum on every beat. The dragon dances on each one."
+msgstr "her vuruşta derin bir davul. Ejderha her birinde dans eder."
+
+#. the name or the meaning of a longer line
+msgid "First beat"
+msgstr "İlk vuruş"
 
 msgid "First beat: the drum with a cymbal, on the first beat of each bar."
 msgstr "İlk vuruş: her ölçünün ilk vuruşunda zille birlikte davul."
 
+#. the name or the meaning of a longer line
+msgid "the drum with a cymbal, on the first beat of each bar."
+msgstr "her ölçünün ilk vuruşunda zille birlikte davul."
+
+#. the name or the meaning of a longer line
+msgid "Count-in"
+msgstr "Sayım"
+
 msgid "Count-in: wooden clicks before the street begins."
 msgstr "Sayım: sokak başlamadan önce tahta tıkırtılar."
+
+#. the name or the meaning of a longer line
+msgid "wooden clicks before the street begins."
+msgstr "sokak başlamadan önce tahta tıkırtılar."
+
+#. the name or the meaning of a longer line
+msgid "Drum roll"
+msgstr "Davul gümbürtüsü"
 
 msgid "Drum roll: a gong strikes in 2 beats. Get ready to rear up."
 msgstr "Davul gümbürtüsü: 2 vuruş sonra gong vurur. Şahlanmaya hazır olun."
 
+#. the name or the meaning of a longer line
+msgid "a gong strikes in 2 beats. Get ready to rear up."
+msgstr "2 vuruş sonra gong vurur. Şahlanmaya hazır olun."
+
+#. the name or the meaning of a longer line
+msgid "Gong"
+msgstr "Gong"
+
 msgid "Gong: rear up as it strikes."
 msgstr "Gong: vurduğu anda şahlanın."
+
+#. the name or the meaning of a longer line
+msgid "rear up as it strikes."
+msgstr "vurduğu anda şahlanın."
+
+#. the name or the meaning of a longer line
+msgid "Midnight gong"
+msgstr "Gece yarısı gongu"
 
 msgid ""
 "Midnight gong: the great gong at the end of the New Year parade, worth "
@@ -16692,16 +17122,40 @@ msgid ""
 msgstr ""
 "Gece yarısı gongu: Yeni Yıl alayının sonundaki büyük gong, iki kat değerli."
 
+#. the name or the meaning of a longer line
+msgid "the great gong at the end of the New Year parade, worth double."
+msgstr "Yeni Yıl alayının sonundaki büyük gong, iki kat değerli."
+
 msgid ""
 "Perfect rear: a whoosh and a bright cymbal. You reared right on the gong."
 msgstr ""
 "Kusursuz şahlanma: bir vınlama ve parlak bir zil. Tam gongda şahlandınız."
 
+#. the name or the meaning of a longer line
+msgid "a whoosh and a bright cymbal. You reared right on the gong."
+msgstr "bir vınlama ve parlak bir zil. Tam gongda şahlandınız."
+
 msgid "Good rear: a whoosh. You reared close to the gong."
 msgstr "İyi şahlanma: bir vınlama. Gonga yakın şahlandınız."
 
+#. the name or the meaning of a longer line
+msgid "a whoosh. You reared close to the gong."
+msgstr "bir vınlama. Gonga yakın şahlandınız."
+
+#. the name or the meaning of a longer line
+msgid "Missed gong"
+msgstr "Kaçan gong"
+
 msgid "Missed gong: a dull wooden knock. The gong passed without a rear."
 msgstr "Kaçan gong: boğuk bir tahta vuruşu. Gong şahlanmadan geçti."
+
+#. the name or the meaning of a longer line
+msgid "a dull wooden knock. The gong passed without a rear."
+msgstr "boğuk bir tahta vuruşu. Gong şahlanmadan geçti."
+
+#. the name or the meaning of a longer line
+msgid "Stray rear"
+msgstr "Boşa şahlanma"
 
 msgid ""
 "Stray rear: a soft thud. You reared with no gong near, and the combo breaks."
@@ -16709,16 +17163,44 @@ msgstr ""
 "Boşa şahlanma: yumuşak bir güm. Yakında gong yokken şahlandınız ve kombo "
 "bozulur."
 
+#. the name or the meaning of a longer line
+msgid "a soft thud. You reared with no gong near, and the combo breaks."
+msgstr "yumuşak bir güm. Yakında gong yokken şahlandınız ve kombo bozulur."
+
 msgid "Pearl: a soft shimmer ahead of you, in the pearl's lane. Follow it."
 msgstr "İnci: önünüzde, incinin şeridinde hafif bir pırıltı. Onu izleyin."
 
+#. the name or the meaning of a longer line
+msgid "a soft shimmer ahead of you, in the pearl's lane. Follow it."
+msgstr "önünüzde, incinin şeridinde hafif bir pırıltı. Onu izleyin."
+
+#. the name or the meaning of a longer line
+msgid "Pearl moves"
+msgstr "İnci hareket ediyor"
+
 msgid "Pearl moves: a bright chime from the pearl's new lane."
 msgstr "İnci hareket ediyor: incinin yeni şeridinden parlak bir çın."
+
+#. the name or the meaning of a longer line
+msgid "a bright chime from the pearl's new lane."
+msgstr "incinin yeni şeridinden parlak bir çın."
+
+#. the name or the meaning of a longer line
+msgid "On the pearl"
+msgstr "İncinin üstünde"
 
 msgid ""
 "On the pearl: a soft high ping as your head reaches the pearl's lane."
 msgstr ""
 "İncinin üstünde: başınız incinin şeridine ulaşınca hafif, yüksek bir çın."
+
+#. the name or the meaning of a longer line
+msgid "a soft high ping as your head reaches the pearl's lane."
+msgstr "başınız incinin şeridine ulaşınca hafif, yüksek bir çın."
+
+#. the name or the meaning of a longer line
+msgid "Off the pearl"
+msgstr "İnciden uzak"
 
 msgid ""
 "Off the pearl: a falling tone. You were away from the pearl too long, and "
@@ -16727,11 +17209,32 @@ msgstr ""
 "İnciden uzak: inen bir ses. İnciden çok uzun süre uzak kaldınız ve kombo "
 "bozulur."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a falling tone. You were away from the pearl too long, and the combo breaks."
+msgstr "inen bir ses. İnciden çok uzun süre uzak kaldınız ve kombo bozulur."
+
 msgid "Step: the head moves one lane."
 msgstr "Adım: baş bir şerit hareket eder."
 
+#. the name or the meaning of a longer line
+msgid "the head moves one lane."
+msgstr "baş bir şerit hareket eder."
+
+#. the name or the meaning of a longer line
+msgid "Street edge"
+msgstr "Sokak kenarı"
+
 msgid "Street edge: a wooden bump. You are in the last lane on that side."
 msgstr "Sokak kenarı: tahta bir çarpma. O taraftaki son şerittesiniz."
+
+#. the name or the meaning of a longer line
+msgid "a wooden bump. You are in the last lane on that side."
+msgstr "tahta bir çarpma. O taraftaki son şerittesiniz."
+
+#. the name or the meaning of a longer line
+msgid "Red envelope coming"
+msgstr "Kırmızı zarf geliyor"
 
 msgid ""
 "Red envelope coming: a papery rustle with little bells, coming down its "
@@ -16740,11 +17243,35 @@ msgstr ""
 "Kırmızı zarf geliyor: küçük çanlı, kâğıt gibi bir hışırtı, şeridinden "
 "geliyor."
 
+#. the name or the meaning of a longer line
+msgid "a papery rustle with little bells, coming down its lane."
+msgstr "küçük çanlı, kâğıt gibi bir hışırtı, şeridinden geliyor."
+
+#. the name or the meaning of a longer line
+msgid "Envelope caught"
+msgstr "Zarf yakalandı"
+
 msgid "Envelope caught: coins and a chime. The dragon grows one segment."
 msgstr "Zarf yakalandı: bozuk paralar ve bir çın. Ejderha bir parça uzar."
 
+#. the name or the meaning of a longer line
+msgid "coins and a chime. The dragon grows one segment."
+msgstr "bozuk paralar ve bir çın. Ejderha bir parça uzar."
+
+#. the name or the meaning of a longer line
+msgid "Envelope missed"
+msgstr "Zarf kaçtı"
+
 msgid "Envelope missed: a soft flutter as it drifts past."
 msgstr "Zarf kaçtı: süzülüp geçerken hafif bir pırpır."
+
+#. the name or the meaning of a longer line
+msgid "a soft flutter as it drifts past."
+msgstr "süzülüp geçerken hafif bir pırpır."
+
+#. the name or the meaning of a longer line
+msgid "Firecrackers coming"
+msgstr "Fişekler geliyor"
 
 msgid ""
 "Firecrackers coming: a fizzing crackle in their lane. Keep your head out of "
@@ -16753,8 +17280,20 @@ msgstr ""
 "Fişekler geliyor: şeritlerinde cızırtılı bir çatırtı. Başınızı oradan uzak "
 "tutun."
 
+#. the name or the meaning of a longer line
+msgid "a fizzing crackle in their lane. Keep your head out of it."
+msgstr "şeritlerinde cızırtılı bir çatırtı. Başınızı oradan uzak tutun."
+
+#. the name or the meaning of a longer line
+msgid "Firecrackers burst"
+msgstr "Fişekler patladı"
+
 msgid "Firecrackers burst: a crackle in another lane. You are safe."
 msgstr "Fişekler patladı: başka bir şeritte çatırtı. Güvendesiniz."
+
+#. the name or the meaning of a longer line
+msgid "a crackle in another lane. You are safe."
+msgstr "başka bir şeritte çatırtı. Güvendesiniz."
 
 msgid ""
 "Stumble: firecrackers right under you and a clatter. The tail stumbles and "
@@ -16763,32 +17302,92 @@ msgstr ""
 "Tökezleme: tam altınızda fişekler ve bir takırtı. Kuyruk tökezler ve puan "
 "kaybedersiniz."
 
+#. the name or the meaning of a longer line
+msgid ""
+"firecrackers right under you and a clatter. The tail stumbles and you lose "
+"points."
+msgstr ""
+"tam altınızda fişekler ve bir takırtı. Kuyruk tökezler ve puan "
+"kaybedersiniz."
+
+#. the name or the meaning of a longer line
+msgid "Lantern coming"
+msgstr "Fener geliyor"
+
 msgid "Lantern coming: a warm, low glow of chimes, on the Lantern walk."
 msgstr "Fener geliyor: Fener alayında sıcak, alçak bir çan ışıltısı."
+
+#. the name or the meaning of a longer line
+msgid "a warm, low glow of chimes, on the Lantern walk."
+msgstr "Fener alayında sıcak, alçak bir çan ışıltısı."
+
+#. the name or the meaning of a longer line
+msgid "Lantern caught"
+msgstr "Fener yakalandı"
 
 msgid "Lantern caught: a soft harp run."
 msgstr "Fener yakalandı: yumuşak bir arp dizisi."
 
+#. the name or the meaning of a longer line
+msgid "a soft harp run."
+msgstr "yumuşak bir arp dizisi."
+
+#. the name or the meaning of a longer line
+msgid "Crowd cheers"
+msgstr "Kalabalık coşuyor"
+
 msgid "Crowd cheers: a shop's crowd cheers as you dance past."
 msgstr ""
 "Kalabalık coşuyor: siz dans ederek geçerken bir dükkânın kalabalığı coşar."
+
+#. the name or the meaning of a longer line
+msgid "a shop's crowd cheers as you dance past."
+msgstr "siz dans ederek geçerken bir dükkânın kalabalığı coşar."
+
+#. the name or the meaning of a longer line
+msgid "Polite clapping"
+msgstr "Kibar alkış"
 
 msgid ""
 "Polite clapping: a shop's crowd claps. Keep a combo going and they cheer."
 msgstr ""
 "Kibar alkış: bir dükkânın kalabalığı alkışlar. Komboyu sürdürün, coşsunlar."
 
+#. the name or the meaning of a longer line
+msgid "a shop's crowd claps. Keep a combo going and they cheer."
+msgstr "bir dükkânın kalabalığı alkışlar. Komboyu sürdürün, coşsunlar."
+
+#. the name or the meaning of a longer line
+msgid "Combo cheer"
+msgstr "Kombo coşkusu"
+
 msgid ""
 "Combo cheer: a big cheer and a cymbal for every 16 beats on the pearl."
 msgstr ""
 "Kombo coşkusu: inci üzerindeki her 16 vuruş için büyük bir coşku ve zil."
 
+#. the name or the meaning of a longer line
+msgid "a big cheer and a cymbal for every 16 beats on the pearl."
+msgstr "inci üzerindeki her 16 vuruş için büyük bir coşku ve zil."
+
+#. the name or the meaning of a longer line
+msgid "Countdown"
+msgstr "Geri sayım"
+
 msgid "Countdown: a ticking wood block, the beats before midnight."
 msgstr ""
 "Geri sayım: tıkırdayan bir tahta blok, gece yarısından önceki vuruşlar."
 
+#. the name or the meaning of a longer line
+msgid "a ticking wood block, the beats before midnight."
+msgstr "tıkırdayan bir tahta blok, gece yarısından önceki vuruşlar."
+
 msgid "Dull tap: nothing to do there."
 msgstr "Boğuk vuruş: orada yapacak bir şey yok."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do there."
+msgstr "orada yapacak bir şey yok."
 
 msgid "on the left"
 msgstr "solda"
@@ -18987,6 +19586,10 @@ msgstr "Uzun otlar"
 msgid "The edge of the meadow. Turn back the other way."
 msgstr "Çayırın kenarı. Öbür yana dönün."
 
+#. the name or the meaning of a longer line
+msgid "A soft hum"
+msgstr "Hafif bir uğultu"
+
 msgid ""
 "A soft hum: a firefly is close enough to catch. Press the main action as it "
 "glows."
@@ -18996,6 +19599,16 @@ msgstr ""
 
 msgid "Firefly in reach"
 msgstr "Erişimde ateş böceği"
+
+#. the name or the meaning of a longer line
+msgid ""
+"a firefly is close enough to catch. Press the main action as it glows."
+msgstr ""
+"bir ateş böceği yakalanacak kadar yakın. Işıldarken ana eylem tuşuna basın."
+
+#. the name or the meaning of a longer line
+msgid "A light tick"
+msgstr "Hafif bir tık"
 
 msgid ""
 "A light tick: you answered one flash of a blink with several flashes. "
@@ -19007,11 +19620,30 @@ msgstr ""
 msgid "Flash answered"
 msgstr "Parlama yanıtlandı"
 
+#. the name or the meaning of a longer line
+msgid ""
+"you answered one flash of a blink with several flashes. Answer the rest."
+msgstr ""
+"birkaç parlamalı bir yanıp sönmenin bir parlamasını yanıtladınız. Kalanını "
+"yanıtlayın."
+
+#. the name or the meaning of a longer line
+msgid "A glassy clink"
+msgstr "Camsı bir şıngırtı"
+
 msgid "A glassy clink: the firefly is safe in your jar."
 msgstr "Camsı bir şıngırtı: ateş böceği kavanozunuzda güvende."
 
 msgid "Caught"
 msgstr "Yakalandı"
+
+#. the name or the meaning of a longer line
+msgid "the firefly is safe in your jar."
+msgstr "ateş böceği kavanozunuzda güvende."
+
+#. the name or the meaning of a longer line
+msgid "A rising chime"
+msgstr "Yükselen bir çan"
 
 msgid ""
 "A rising chime: a firefly you have never caught. It goes in your journal."
@@ -19021,11 +19653,27 @@ msgstr ""
 msgid "New species"
 msgstr "Yeni tür"
 
+#. the name or the meaning of a longer line
+msgid "a firefly you have never caught. It goes in your journal."
+msgstr "hiç yakalamadığınız bir ateş böceği. Defterinize girer."
+
+#. the name or the meaning of a longer line
+msgid "A soft puff"
+msgstr "Hafif bir püf"
+
 msgid "A soft puff: the firefly is dark just now. Wait for its glow."
 msgstr "Hafif bir püf: ateş böceği şu an karanlık. Işımasını bekleyin."
 
 msgid "Not glowing yet"
 msgstr "Henüz ışıldamıyor"
+
+#. the name or the meaning of a longer line
+msgid "the firefly is dark just now. Wait for its glow."
+msgstr "ateş böceği şu an karanlık. Işımasını bekleyin."
+
+#. the name or the meaning of a longer line
+msgid "A falling sigh"
+msgstr "Alçalan bir iç çekiş"
 
 msgid ""
 "A falling sigh: a blink ended before you answered every flash. Try its next "
@@ -19037,17 +19685,34 @@ msgstr ""
 msgid "Drifted on"
 msgstr "Uçup gitti"
 
+#. the name or the meaning of a longer line
+msgid "a blink ended before you answered every flash. Try its next blink."
+msgstr ""
+"siz her parlamayı yanıtlamadan yanıp sönme bitti. Sonrakini deneyin."
+
 msgid "A tap on the glass: the jar is full. Let them go to make room."
 msgstr "Cama bir tıklama: kavanoz dolu. Yer açmak için onları salın."
 
 msgid "Jar full"
 msgstr "Kavanoz dolu"
 
+#. the name or the meaning of a longer line
+msgid "A dull hush"
+msgstr "Boğuk bir hışırtı"
+
 msgid "A dull hush: no firefly is close enough."
 msgstr "Boğuk bir hışırtı: yeterince yakın ateş böceği yok."
 
 msgid "Nothing in reach"
 msgstr "Erişimde bir şey yok"
+
+#. the name or the meaning of a longer line
+msgid "no firefly is close enough."
+msgstr "yeterince yakın ateş böceği yok."
+
+#. the name or the meaning of a longer line
+msgid "A rising shimmer"
+msgstr "Yükselen bir pırıltı"
 
 msgid ""
 "A rising shimmer: the jar opens, the fireflies fly up and their notes ring "
@@ -19058,6 +19723,11 @@ msgstr ""
 
 msgid "Release"
 msgstr "Salma"
+
+#. the name or the meaning of a longer line
+msgid "the jar opens, the fireflies fly up and their notes ring as a chord."
+msgstr ""
+"kavanoz açılır, ateş böcekleri uçar ve notaları bir akor olarak çalar."
 
 msgid ""
 "A glittering shimmer after you set a jar free, while the meadow glows and "
@@ -19106,6 +19776,10 @@ msgstr "Yaz ortası gecesi: bütün çayır bir anda parlar."
 msgid "The chorus flash"
 msgstr "Koro parlaması"
 
+#. the name or the meaning of a longer line
+msgid "the whole meadow flashes at once."
+msgstr "bütün çayır bir anda parlar."
+
 msgid "In step"
 msgstr "Ritimde"
 
@@ -19116,12 +19790,20 @@ msgstr ""
 "Yaz ortası gecesi: parlamayla birlikte bastınız ve bir geri kalan koroya "
 "katılır."
 
+#. the name or the meaning of a longer line
+msgid "you pressed with the flash, and a straggler joins the chorus."
+msgstr "parlamayla birlikte bastınız ve bir geri kalan koroya katılır."
+
 msgid "Midsummer night: that press missed the flash. Press with the chorus."
 msgstr ""
 "Yaz ortası gecesi: o basış parlamayı kaçırdı. Koroyla birlikte basın."
 
 msgid "Off the beat"
 msgstr "Vuruş dışı"
+
+#. the name or the meaning of a longer line
+msgid "that press missed the flash. Press with the chorus."
+msgstr "o basış parlamayı kaçırdı. Koroyla birlikte basın."
 
 msgid ""
 "Up and Down move through the sounds you need in play. Enter plays the "
@@ -20880,6 +21562,10 @@ msgstr "1 hamle"
 msgid "{n} moves"
 msgstr "{n} hamle"
 
+#. the name or the meaning of a longer line
+msgid "Hearts card"
+msgstr "Kupa kartı"
+
 msgid ""
 "Hearts card: a paper slide with a warm low bell. Every hearts card you "
 "reach or pick up."
@@ -20887,20 +21573,71 @@ msgstr ""
 "Kupa kartı: sıcak, pes bir çanla kâğıt kayması. Ulaştığınız ya da aldığınız "
 "her kupa kartı."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a paper slide with a warm low bell. Every hearts card you reach or pick up."
+msgstr ""
+"sıcak, pes bir çanla kâğıt kayması. Ulaştığınız ya da aldığınız her kupa "
+"kartı."
+
+#. the name or the meaning of a longer line
+msgid "Diamonds card"
+msgstr "Karo kartı"
+
 msgid "Diamonds card: a paper slide with a bright high bell."
 msgstr "Karo kartı: parlak, tiz bir çanla kâğıt kayması."
+
+#. the name or the meaning of a longer line
+msgid "a paper slide with a bright high bell."
+msgstr "parlak, tiz bir çanla kâğıt kayması."
+
+#. the name or the meaning of a longer line
+msgid "Clubs card"
+msgstr "Sinek kartı"
 
 msgid "Clubs card: a paper slide with a soft wooden knock."
 msgstr "Sinek kartı: yumuşak bir tahta vuruşla kâğıt kayması."
 
+#. the name or the meaning of a longer line
+msgid "a paper slide with a soft wooden knock."
+msgstr "yumuşak bir tahta vuruşla kâğıt kayması."
+
+#. the name or the meaning of a longer line
+msgid "Spades card"
+msgstr "Maça kartı"
+
 msgid "Spades card: a paper slide with a deep wooden knock."
 msgstr "Maça kartı: derin bir tahta vuruşla kâğıt kayması."
+
+#. the name or the meaning of a longer line
+msgid "a paper slide with a deep wooden knock."
+msgstr "derin bir tahta vuruşla kâğıt kayması."
+
+#. the name or the meaning of a longer line
+msgid "Card flip"
+msgstr "Kart çevirme"
 
 msgid "Card flip: a face-down card turns face up. Its name follows."
 msgstr "Kart çevirme: kapalı bir kart açılır. Ardından adı gelir."
 
+#. the name or the meaning of a longer line
+msgid "a face-down card turns face up. Its name follows."
+msgstr "kapalı bir kart açılır. Ardından adı gelir."
+
+#. the name or the meaning of a longer line
+msgid "Soft tap"
+msgstr "Hafif tık"
+
 msgid "Soft tap: the cards you held are placed."
 msgstr "Hafif tık: elinizdeki kartlar bırakıldı."
+
+#. the name or the meaning of a longer line
+msgid "the cards you held are placed."
+msgstr "elinizdeki kartlar bırakıldı."
+
+#. the name or the meaning of a longer line
+msgid "Muffled thud"
+msgstr "Boğuk gümleme"
 
 msgid ""
 "Muffled thud: the cards cannot go there. The reason follows, and you keep "
@@ -20909,23 +21646,66 @@ msgstr ""
 "Boğuk gümleme: kartlar oraya gidemez. Ardından nedeni gelir, kartlar "
 "elinizde kalır."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the cards cannot go there. The reason follows, and you keep holding them."
+msgstr ""
+"kartlar oraya gidemez. Ardından nedeni gelir, kartlar elinizde kalır."
+
+#. the name or the meaning of a longer line
+msgid "Stock turn"
+msgstr "Deste çevirme"
+
 msgid ""
 "Stock turn: a card is turned up from the stock, or the stock is refilled."
 msgstr "Deste çevirme: desteden bir kart açıldı ya da deste yeniden doldu."
 
+#. the name or the meaning of a longer line
+msgid "a card is turned up from the stock, or the stock is refilled."
+msgstr "desteden bir kart açıldı ya da deste yeniden doldu."
+
+#. the name or the meaning of a longer line
+msgid "Foundation chime"
+msgstr "Temel çanı"
+
 msgid "Foundation chime: a suit is complete, ace to king."
 msgstr "Temel çanı: bir renk astan papaza tamamlandı."
+
+#. the name or the meaning of a longer line
+msgid "a suit is complete, ace to king."
+msgstr "bir renk astan papaza tamamlandı."
+
+#. the name or the meaning of a longer line
+msgid "Row chime"
+msgstr "Sıra çanı"
 
 msgid ""
 "Row chime: you cross from the piles to the stock, or from the stock to the "
 "foundations."
 msgstr "Sıra çanı: sütunlardan desteye ya da desteden temellere geçtiniz."
 
+#. the name or the meaning of a longer line
+msgid ""
+"you cross from the piles to the stock, or from the stock to the foundations."
+msgstr "sütunlardan desteye ya da desteden temellere geçtiniz."
+
+#. the name or the meaning of a longer line
+msgid "Undo swish"
+msgstr "Geri alma hışırtısı"
+
 msgid "Undo swish: the last move is taken back."
 msgstr "Geri alma hışırtısı: son hamle geri alındı."
 
+#. the name or the meaning of a longer line
+msgid "the last move is taken back."
+msgstr "son hamle geri alındı."
+
 msgid "Dull tap: nothing to do there just now."
 msgstr "Donuk tık: orada şimdilik yapılacak bir şey yok."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do there just now."
+msgstr "orada şimdilik yapılacak bir şey yok."
 
 msgid "Return to the Fireside Patience title."
 msgstr "Fireside Patience başlangıç ekranına dönün."
@@ -24402,8 +25182,20 @@ msgstr "Sürülen semt: {name}"
 msgid "Endless ride in {name}"
 msgstr "Sonsuz sürüş: {name}"
 
+#. the name or the meaning of a longer line
+msgid "Road bike tyres"
+msgstr "Yol bisikleti lastikleri"
+
 msgid "Road bike tyres: a thin hiss that rises with your speed."
 msgstr "Yol bisikleti lastikleri: hızınızla yükselen ince bir hışırtı."
+
+#. the name or the meaning of a longer line
+msgid "a thin hiss that rises with your speed."
+msgstr "hızınızla yükselen ince bir hışırtı."
+
+#. the name or the meaning of a longer line
+msgid "Road bike freewheel"
+msgstr "Yol bisikleti serbest dişlisi"
 
 msgid ""
 "Road bike freewheel: a fast, light ticking while you coast. It slows as you "
@@ -24412,21 +25204,70 @@ msgstr ""
 "Yol bisikleti serbest dişlisi: serbest giderken hızlı, hafif bir tıkırtı. "
 "Siz yavaşladıkça yavaşlar."
 
+#. the name or the meaning of a longer line
+msgid "a fast, light ticking while you coast. It slows as you slow."
+msgstr ""
+"serbest giderken hızlı, hafif bir tıkırtı. Siz yavaşladıkça yavaşlar."
+
+#. the name or the meaning of a longer line
+msgid "Road bike chain"
+msgstr "Yol bisikleti zinciri"
+
 msgid "Road bike chain: a fine, soft purr while you pedal."
 msgstr "Yol bisikleti zinciri: pedal çevirirken ince, yumuşak bir mırıltı."
 
+#. the name or the meaning of a longer line
+msgid "a fine, soft purr while you pedal."
+msgstr "pedal çevirirken ince, yumuşak bir mırıltı."
+
+#. the name or the meaning of a longer line
+msgid "BMX tyres"
+msgstr "BMX lastikleri"
+
 msgid "BMX tyres: a chunky buzz that rises with your speed."
 msgstr "BMX lastikleri: hızınızla yükselen kalın bir vızıltı."
+
+#. the name or the meaning of a longer line
+msgid "a chunky buzz that rises with your speed."
+msgstr "hızınızla yükselen kalın bir vızıltı."
+
+#. the name or the meaning of a longer line
+msgid "BMX freewheel"
+msgstr "BMX serbest dişlisi"
 
 msgid "BMX freewheel: a loud, slower clatter while you coast."
 msgstr ""
 "BMX serbest dişlisi: serbest giderken yüksek, daha yavaş bir takırtı."
 
+#. the name or the meaning of a longer line
+msgid "a loud, slower clatter while you coast."
+msgstr "serbest giderken yüksek, daha yavaş bir takırtı."
+
+#. the name or the meaning of a longer line
+msgid "BMX chain"
+msgstr "BMX zinciri"
+
 msgid "BMX chain: a chunky rattle while you pedal."
 msgstr "BMX zinciri: pedal çevirirken kalın bir tıngırtı."
 
+#. the name or the meaning of a longer line
+msgid "a chunky rattle while you pedal."
+msgstr "pedal çevirirken kalın bir tıngırtı."
+
+#. the name or the meaning of a longer line
+msgid "Mountain bike tyres"
+msgstr "Dağ bisikleti lastikleri"
+
 msgid "Mountain bike tyres: a knobbly hum that rises with your speed."
 msgstr "Dağ bisikleti lastikleri: hızınızla yükselen pürüzlü bir uğultu."
+
+#. the name or the meaning of a longer line
+msgid "a knobbly hum that rises with your speed."
+msgstr "hızınızla yükselen pürüzlü bir uğultu."
+
+#. the name or the meaning of a longer line
+msgid "Mountain bike freewheel"
+msgstr "Dağ bisikleti serbest dişlisi"
 
 msgid ""
 "Mountain bike freewheel: a deep, fast ticking while you coast. It slows as "
@@ -24435,16 +25276,49 @@ msgstr ""
 "Dağ bisikleti serbest dişlisi: serbest giderken derin, hızlı bir tıkırtı. "
 "Siz yavaşladıkça yavaşlar."
 
+#. the name or the meaning of a longer line
+msgid "a deep, fast ticking while you coast. It slows as you slow."
+msgstr ""
+"serbest giderken derin, hızlı bir tıkırtı. Siz yavaşladıkça yavaşlar."
+
+#. the name or the meaning of a longer line
+msgid "Mountain bike chain"
+msgstr "Dağ bisikleti zinciri"
+
 msgid "Mountain bike chain: a gritty purr while you pedal."
 msgstr "Dağ bisikleti zinciri: pedal çevirirken pürüzlü bir mırıltı."
+
+#. the name or the meaning of a longer line
+msgid "a gritty purr while you pedal."
+msgstr "pedal çevirirken pürüzlü bir mırıltı."
+
+#. the name or the meaning of a longer line
+msgid "E-bike tyres"
+msgstr "Elektrikli bisiklet lastikleri"
 
 msgid "E-bike tyres: a soft hiss that rises with your speed."
 msgstr ""
 "Elektrikli bisiklet lastikleri: hızınızla yükselen yumuşak bir hışırtı."
 
+#. the name or the meaning of a longer line
+msgid "a soft hiss that rises with your speed."
+msgstr "hızınızla yükselen yumuşak bir hışırtı."
+
+#. the name or the meaning of a longer line
+msgid "E-bike freewheel"
+msgstr "Elektrikli bisiklet serbest dişlisi"
+
 msgid "E-bike freewheel: a quiet tick while you coast."
 msgstr ""
 "Elektrikli bisiklet serbest dişlisi: serbest giderken hafif bir tıkırtı."
+
+#. the name or the meaning of a longer line
+msgid "a quiet tick while you coast."
+msgstr "serbest giderken hafif bir tıkırtı."
+
+#. the name or the meaning of a longer line
+msgid "E-bike motor"
+msgstr "Elektrikli bisiklet motoru"
 
 msgid ""
 "E-bike motor: a high electric whine while you pedal. It fades above 25 "
@@ -24453,41 +25327,144 @@ msgstr ""
 "Elektrikli bisiklet motoru: pedal çevirirken tiz bir elektrik vınlaması. "
 "Saatte 25 kilometrenin üstünde kaybolur."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a high electric whine while you pedal. It fades above 25 kilometres an hour."
+msgstr ""
+"pedal çevirirken tiz bir elektrik vınlaması. Saatte 25 kilometrenin üstünde "
+"kaybolur."
+
+#. the name or the meaning of a longer line
+msgid "Moped tyres"
+msgstr "Mopet lastikleri"
+
 msgid "Moped tyres: a low road roar that rises with your speed."
 msgstr "Mopet lastikleri: hızınızla yükselen pes bir yol gürültüsü."
+
+#. the name or the meaning of a longer line
+msgid "a low road roar that rises with your speed."
+msgstr "hızınızla yükselen pes bir yol gürültüsü."
+
+#. the name or the meaning of a longer line
+msgid "Moped idle"
+msgstr "Mopet rölantisi"
 
 msgid "Moped idle: a putter while you let go of the throttle."
 msgstr "Mopet rölantisi: gazı bırakınca bir patpat sesi."
 
+#. the name or the meaning of a longer line
+msgid "a putter while you let go of the throttle."
+msgstr "gazı bırakınca bir patpat sesi."
+
+#. the name or the meaning of a longer line
+msgid "Moped throttle"
+msgstr "Mopet gazı"
+
 msgid "Moped throttle: a two-stroke buzz that climbs as you speed up."
 msgstr "Mopet gazı: hızlandıkça yükselen iki zamanlı bir vızıltı."
+
+#. the name or the meaning of a longer line
+msgid "a two-stroke buzz that climbs as you speed up."
+msgstr "hızlandıkça yükselen iki zamanlı bir vızıltı."
+
+#. the name or the meaning of a longer line
+msgid "Wind"
+msgstr "Rüzgâr"
 
 msgid "Wind: a rush in your ears that grows as you go faster."
 msgstr "Rüzgâr: hızlandıkça artan bir uğultu."
 
+#. the name or the meaning of a longer line
+msgid "a rush in your ears that grows as you go faster."
+msgstr "hızlandıkça artan bir uğultu."
+
+#. the name or the meaning of a longer line
+msgid "Brakes"
+msgstr "Frenler"
+
 msgid "Brakes: a short squeal as the brakes bite."
 msgstr "Frenler: frenler tutarken kısa bir gıcırtı."
+
+#. the name or the meaning of a longer line
+msgid "a short squeal as the brakes bite."
+msgstr "frenler tutarken kısa bir gıcırtı."
+
+#. the name or the meaning of a longer line
+msgid "Steer"
+msgstr "Direksiyon"
 
 msgid "Steer: a soft swish as you lean left or right."
 msgstr "Direksiyon: sola ya da sağa yatarken yumuşak bir hışırtı."
 
+#. the name or the meaning of a longer line
+msgid "a soft swish as you lean left or right."
+msgstr "sola ya da sağa yatarken yumuşak bir hışırtı."
+
+#. the name or the meaning of a longer line
+msgid "Sprint"
+msgstr "Depar"
+
 msgid "Sprint: a hard breath as you stand on the pedals."
 msgstr "Depar: pedallara kalkarken sert bir nefes."
+
+#. the name or the meaning of a longer line
+msgid "a hard breath as you stand on the pedals."
+msgstr "pedallara kalkarken sert bir nefes."
+
+#. the name or the meaning of a longer line
+msgid "Out of breath"
+msgstr "Nefes tükendi"
 
 msgid "Out of breath: a long gasp. Sprint is spent until you rest."
 msgstr "Nefes tükendi: uzun bir soluk. Dinlenene kadar depar yok."
 
+#. the name or the meaning of a longer line
+msgid "a long gasp. Sprint is spent until you rest."
+msgstr "uzun bir soluk. Dinlenene kadar depar yok."
+
 msgid "Hop: a spring and a rattle as both wheels leave the road."
 msgstr "Zıplama: iki tekerlek yoldan kalkarken bir yay sesi ve takırtı."
+
+#. the name or the meaning of a longer line
+msgid "a spring and a rattle as both wheels leave the road."
+msgstr "iki tekerlek yoldan kalkarken bir yay sesi ve takırtı."
+
+#. the name or the meaning of a longer line
+msgid "Clean landing"
+msgstr "Temiz iniş"
 
 msgid "Clean landing: a light double thump."
 msgstr "Temiz iniş: hafif, çift bir güm."
 
+#. the name or the meaning of a longer line
+msgid "a light double thump."
+msgstr "hafif, çift bir güm."
+
+#. the name or the meaning of a longer line
+msgid "Hard landing"
+msgstr "Sert iniş"
+
 msgid "Hard landing: a heavy crunch that costs you speed."
 msgstr "Sert iniş: size hız kaybettiren ağır bir çatırtı."
 
+#. the name or the meaning of a longer line
+msgid "a heavy crunch that costs you speed."
+msgstr "size hız kaybettiren ağır bir çatırtı."
+
+#. the name or the meaning of a longer line
+msgid "Pothole jolt"
+msgstr "Çukur sarsıntısı"
+
 msgid "Pothole jolt: a deep thud as a wide tyre drops through a pothole."
 msgstr "Çukur sarsıntısı: kalın bir lastik çukura düşerken derin bir güm."
+
+#. the name or the meaning of a longer line
+msgid "a deep thud as a wide tyre drops through a pothole."
+msgstr "kalın bir lastik çukura düşerken derin bir güm."
+
+#. the name or the meaning of a longer line
+msgid "Flat tyre"
+msgstr "Lastik patlaması"
 
 msgid ""
 "Flat tyre: a pop and a hiss. Stop and stand still for 3 seconds to swap the "
@@ -24496,21 +25473,72 @@ msgstr ""
 "Lastik patlaması: bir pat ve bir fıs. İç lastiği değiştirmek için durun ve "
 "3 saniye kıpırdamayın."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a pop and a hiss. Stop and stand still for 3 seconds to swap the tube."
+msgstr ""
+"bir pat ve bir fıs. İç lastiği değiştirmek için durun ve 3 saniye "
+"kıpırdamayın."
+
+#. the name or the meaning of a longer line
+msgid "Tube swapped"
+msgstr "İç lastik değişti"
+
 msgid "Tube swapped: a pump and a click. The tyre is fixed."
 msgstr "İç lastik değişti: bir pompa ve bir tık. Lastik onarıldı."
+
+#. the name or the meaning of a longer line
+msgid "a pump and a click. The tyre is fixed."
+msgstr "bir pompa ve bir tık. Lastik onarıldı."
+
+#. the name or the meaning of a longer line
+msgid "Curb strike"
+msgstr "Kaldırıma çarpma"
 
 msgid "Curb strike: a hard metal bang as a wheel hits a curb."
 msgstr ""
 "Kaldırıma çarpma: tekerlek kaldırıma çarparken sert bir metal çarpması."
 
+#. the name or the meaning of a longer line
+msgid "a hard metal bang as a wheel hits a curb."
+msgstr "tekerlek kaldırıma çarparken sert bir metal çarpması."
+
+#. the name or the meaning of a longer line
+msgid "Crash"
+msgstr "Kaza"
+
 msgid "Crash: a clatter and a scrape. You are down for 3 seconds."
 msgstr "Kaza: bir takırtı ve sürtünme. 3 saniye yerdesiniz."
+
+#. the name or the meaning of a longer line
+msgid "a clatter and a scrape. You are down for 3 seconds."
+msgstr "bir takırtı ve sürtünme. 3 saniye yerdesiniz."
+
+#. the name or the meaning of a longer line
+msgid "Back up"
+msgstr "Kalkış"
 
 msgid "Back up: a click into the pedals. Ride on."
 msgstr "Kalkış: pedallara bir tık. Sürmeye devam."
 
+#. the name or the meaning of a longer line
+msgid "a click into the pedals. Ride on."
+msgstr "pedallara bir tık. Sürmeye devam."
+
+#. the name or the meaning of a longer line
+msgid "Running wide"
+msgstr "Geniş dönüş"
+
 msgid "Running wide: a long tyre skid at a turn taken too fast."
 msgstr "Geniş dönüş: çok hızlı alınan bir dönüşte uzun bir lastik kayması."
+
+#. the name or the meaning of a longer line
+msgid "a long tyre skid at a turn taken too fast."
+msgstr "çok hızlı alınan bir dönüşte uzun bir lastik kayması."
+
+#. the name or the meaning of a longer line
+msgid "Edge rumble"
+msgstr "Kenar gürültüsü"
 
 msgid ""
 "Edge rumble: a low rumble from the edge you are pressed against, the parked "
@@ -24519,6 +25547,18 @@ msgstr ""
 "Kenar gürültüsü: dayandığınız kenardan, park etmiş arabalardan ya da orta "
 "çizgiden pes bir gürültü."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low rumble from the edge you are pressed against, the parked cars or the "
+"centre line."
+msgstr ""
+"dayandığınız kenardan, park etmiş arabalardan ya da orta çizgiden pes bir "
+"gürültü."
+
+#. the name or the meaning of a longer line
+msgid "Lane line"
+msgstr "Şerit çizgisi"
+
 msgid ""
 "Lane line: a short thrum as you cross the line between the bike lane and "
 "the traffic lane."
@@ -24526,11 +25566,33 @@ msgstr ""
 "Şerit çizgisi: bisiklet yolu ile trafik şeridi arasındaki çizgiyi geçerken "
 "kısa bir titreşim."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short thrum as you cross the line between the bike lane and the traffic "
+"lane."
+msgstr ""
+"bisiklet yolu ile trafik şeridi arasındaki çizgiyi geçerken kısa bir "
+"titreşim."
+
+#. the name or the meaning of a longer line
+msgid "Door zone"
+msgstr "Kapı bölgesi"
+
 msgid ""
 "Door zone: a faint murmur of parked cars beside you. A door could open here."
 msgstr ""
 "Kapı bölgesi: yanınızdaki park etmiş arabalardan hafif bir uğultu. Burada "
 "bir kapı açılabilir."
+
+#. the name or the meaning of a longer line
+msgid "a faint murmur of parked cars beside you. A door could open here."
+msgstr ""
+"yanınızdaki park etmiş arabalardan hafif bir uğultu. Burada bir kapı "
+"açılabilir."
+
+#. the name or the meaning of a longer line
+msgid "Hazard tick"
+msgstr "Tehlike tıkırtısı"
 
 msgid ""
 "Hazard tick: a pothole or an open door ahead, from its side. It ticks "
@@ -24539,12 +25601,36 @@ msgstr ""
 "Tehlike tıkırtısı: önde bir çukur ya da açık kapı, bulunduğu taraftan. "
 "Yaklaştıkça hızlanır ve incelir."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a pothole or an open door ahead, from its side. It ticks faster and higher "
+"as you get closer."
+msgstr ""
+"önde bir çukur ya da açık kapı, bulunduğu taraftan. Yaklaştıkça hızlanır ve "
+"incelir."
+
+#. the name or the meaning of a longer line
+msgid "Curb tone"
+msgstr "Kaldırım sesi"
+
 msgid ""
 "Curb tone: a low, hard tick from a raised curb across the bike lane. Ride "
 "around it, or hop it on a BMX."
 msgstr ""
 "Kaldırım sesi: bisiklet yolunu kesen yüksek bir kaldırımdan pes, sert bir "
 "tık. Çevresinden dolaşın ya da BMX ile üstünden zıplayın."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a low, hard tick from a raised curb across the bike lane. Ride around it, "
+"or hop it on a BMX."
+msgstr ""
+"bisiklet yolunu kesen yüksek bir kaldırımdan pes, sert bir tık. Çevresinden "
+"dolaşın ya da BMX ile üstünden zıplayın."
+
+#. the name or the meaning of a longer line
+msgid "Ramp tone"
+msgstr "Rampa sesi"
 
 msgid ""
 "Ramp tone: a bright rising tick from a ramp ahead. Press hop at its lip for "
@@ -24553,9 +25639,29 @@ msgstr ""
 "Rampa sesi: öndeki bir rampadan parlak, yükselen bir tık. Atlamak için "
 "ucunda zıplama tuşuna basın."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a bright rising tick from a ramp ahead. Press hop at its lip for a jump."
+msgstr ""
+"öndeki bir rampadan parlak, yükselen bir tık. Atlamak için ucunda zıplama "
+"tuşuna basın."
+
+#. the name or the meaning of a longer line
+msgid "Car"
+msgstr "Araba"
+
 msgid "Car: an engine hum. Muffled behind you, clearer as it draws level."
 msgstr ""
 "Araba: bir motor uğultusu. Arkanızdayken boğuk, yanınıza geldikçe netleşir."
+
+#. the name or the meaning of a longer line
+msgid "an engine hum. Muffled behind you, clearer as it draws level."
+msgstr ""
+"bir motor uğultusu. Arkanızdayken boğuk, yanınıza geldikçe netleşir."
+
+#. the name or the meaning of a longer line
+msgid "Oncoming car"
+msgstr "Karşıdan gelen araba"
 
 msgid ""
 "Oncoming car: an engine coming toward you in the traffic lane. Get into the "
@@ -24564,8 +25670,21 @@ msgstr ""
 "Karşıdan gelen araba: trafik şeridinde size doğru gelen bir motor. Bisiklet "
 "yoluna geçin."
 
+#. the name or the meaning of a longer line
+msgid ""
+"an engine coming toward you in the traffic lane. Get into the bike lane."
+msgstr "trafik şeridinde size doğru gelen bir motor. Bisiklet yoluna geçin."
+
+#. the name or the meaning of a longer line
+msgid "Oncoming horn"
+msgstr "Karşıdan korna"
+
 msgid "Oncoming horn: a long blast from ahead. An oncoming car is coming."
 msgstr "Karşıdan korna: önden uzun bir korna. Karşıdan bir araba geliyor."
+
+#. the name or the meaning of a longer line
+msgid "a long blast from ahead. An oncoming car is coming."
+msgstr "önden uzun bir korna. Karşıdan bir araba geliyor."
 
 msgid ""
 "Parcel: a shop doorbell ahead, from the side the parcel is on. Ride over it "
@@ -24574,23 +25693,75 @@ msgstr ""
 "Paket: önde, paketin olduğu taraftan bir dükkân kapısı zili. Almak için "
 "üstünden yavaşça geçin."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a shop doorbell ahead, from the side the parcel is on. Ride over it slowly "
+"to grab it."
+msgstr ""
+"önde, paketin olduğu taraftan bir dükkân kapısı zili. Almak için üstünden "
+"yavaşça geçin."
+
+#. the name or the meaning of a longer line
+msgid "Parcel grabbed"
+msgstr "Paket alındı"
+
 msgid "Parcel grabbed: a cardboard thump."
 msgstr "Paket alındı: bir karton gümlemesi."
+
+#. the name or the meaning of a longer line
+msgid "a cardboard thump."
+msgstr "bir karton gümlemesi."
+
+#. the name or the meaning of a longer line
+msgid "Cobbles"
+msgstr "Parke taşı"
 
 msgid "Cobbles: a rattling rumble under your wheels in Old Town."
 msgstr ""
 "Parke taşı: Old Town'da tekerleklerinizin altında takırdayan bir gürültü."
+
+#. the name or the meaning of a longer line
+msgid "a rattling rumble under your wheels in Old Town."
+msgstr "Old Town'da tekerleklerinizin altında takırdayan bir gürültü."
+
+#. the name or the meaning of a longer line
+msgid "Door handle"
+msgstr "Kapı kolu"
 
 msgid ""
 "Door handle: a sharp click from a parked car. Its door opens in a moment."
 msgstr ""
 "Kapı kolu: park etmiş bir arabadan keskin bir tık. Kapısı birazdan açılır."
 
+#. the name or the meaning of a longer line
+msgid "a sharp click from a parked car. Its door opens in a moment."
+msgstr "park etmiş bir arabadan keskin bir tık. Kapısı birazdan açılır."
+
+#. the name or the meaning of a longer line
+msgid "Door open"
+msgstr "Kapı açık"
+
 msgid "Door open: a creak as the door swings into the door zone."
 msgstr "Kapı açık: kapı kapı bölgesine açılırken bir gıcırtı."
 
+#. the name or the meaning of a longer line
+msgid "a creak as the door swings into the door zone."
+msgstr "kapı kapı bölgesine açılırken bir gıcırtı."
+
+#. the name or the meaning of a longer line
+msgid "Horn"
+msgstr "Korna"
+
 msgid "Horn: a car stuck behind you. Move right to let it pass."
 msgstr "Korna: arkanızda sıkışmış bir araba. Geçmesi için sağa çekilin."
+
+#. the name or the meaning of a longer line
+msgid "a car stuck behind you. Move right to let it pass."
+msgstr "arkanızda sıkışmış bir araba. Geçmesi için sağa çekilin."
+
+#. the name or the meaning of a longer line
+msgid "Thank-you toot"
+msgstr "Teşekkür kornası"
 
 msgid ""
 "Thank-you toot: two short beeps as a car you let by passes. That earns a "
@@ -24599,20 +25770,68 @@ msgstr ""
 "Teşekkür kornası: yol verdiğiniz araba geçerken iki kısa bip. Bahşiş "
 "kazandırır."
 
+#. the name or the meaning of a longer line
+msgid "two short beeps as a car you let by passes. That earns a tip."
+msgstr "yol verdiğiniz araba geçerken iki kısa bip. Bahşiş kazandırır."
+
+#. the name or the meaning of a longer line
+msgid "Left turn chime"
+msgstr "Sola dönüş çanı"
+
 msgid "Left turn chime: from your left, a junction turn is coming."
 msgstr "Sola dönüş çanı: solunuzdan, bir kavşak dönüşü geliyor."
+
+#. the name or the meaning of a longer line
+msgid "from your left, a junction turn is coming."
+msgstr "solunuzdan, bir kavşak dönüşü geliyor."
+
+#. the name or the meaning of a longer line
+msgid "Right turn chime"
+msgstr "Sağa dönüş çanı"
 
 msgid "Right turn chime: from your right, a junction turn is coming."
 msgstr "Sağa dönüş çanı: sağınızdan, bir kavşak dönüşü geliyor."
 
+#. the name or the meaning of a longer line
+msgid "from your right, a junction turn is coming."
+msgstr "sağınızdan, bir kavşak dönüşü geliyor."
+
+#. the name or the meaning of a longer line
+msgid "Turn made"
+msgstr "Dönüş yapıldı"
+
 msgid "Turn made: a bright chime as you take a junction turn cleanly."
 msgstr "Dönüş yapıldı: bir kavşak dönüşünü temiz alınca parlak bir çan."
+
+#. the name or the meaning of a longer line
+msgid "a bright chime as you take a junction turn cleanly."
+msgstr "bir kavşak dönüşünü temiz alınca parlak bir çan."
+
+#. the name or the meaning of a longer line
+msgid "Finish bell"
+msgstr "Bitiş zili"
 
 msgid "Finish bell: a bell from the finish line ahead."
 msgstr "Bitiş zili: öndeki bitiş çizgisinden bir zil."
 
+#. the name or the meaning of a longer line
+msgid "a bell from the finish line ahead."
+msgstr "öndeki bitiş çizgisinden bir zil."
+
+#. the name or the meaning of a longer line
+msgid "Finish"
+msgstr "Bitiş"
+
 msgid "Finish: a cheer and a bell as you cross the line."
 msgstr "Bitiş: çizgiyi geçerken bir tezahürat ve bir zil."
+
+#. the name or the meaning of a longer line
+msgid "a cheer and a bell as you cross the line."
+msgstr "çizgiyi geçerken bir tezahürat ve bir zil."
+
+#. the name or the meaning of a longer line
+msgid "Act now"
+msgstr "Hemen davranın"
 
 msgid ""
 "Act now: a sharp double beep. The hazard is in your line: hop, brake or "
@@ -24621,17 +25840,52 @@ msgstr ""
 "Hemen davranın: keskin, çift bir bip. Tehlike tam yolunuzda: hemen "
 "zıplayın, fren yapın ya da kırın."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a sharp double beep. The hazard is in your line: hop, brake or steer now."
+msgstr ""
+"keskin, çift bir bip. Tehlike tam yolunuzda: hemen zıplayın, fren yapın ya "
+"da kırın."
+
 msgid "Dull tap: nothing happens, such as a hop while stopped."
 msgstr "Donuk tık: hiçbir şey olmuyor, örneğin dururken zıplamak."
+
+#. the name or the meaning of a longer line
+msgid "nothing happens, such as a hop while stopped."
+msgstr "hiçbir şey olmuyor, örneğin dururken zıplamak."
+
+#. the name or the meaning of a longer line
+msgid "Countdown beep"
+msgstr "Geri sayım bibi"
 
 msgid "Countdown beep: the ride starts after three."
 msgstr "Geri sayım bibi: sürüş üçten sonra başlar."
 
+#. the name or the meaning of a longer line
+msgid "the ride starts after three."
+msgstr "sürüş üçten sonra başlar."
+
 msgid "Go: a high beep. The ride has started."
 msgstr "Başla: tiz bir bip. Sürüş başladı."
 
+#. the name or the meaning of a longer line
+msgid "a high beep. The ride has started."
+msgstr "tiz bir bip. Sürüş başladı."
+
+#. the name or the meaning of a longer line
+msgid "Lesson passed"
+msgstr "Ders geçildi"
+
 msgid "Lesson passed: a rising chime in training."
 msgstr "Ders geçildi: derslerde yükselen bir çan."
+
+#. the name or the meaning of a longer line
+msgid "a rising chime in training."
+msgstr "derslerde yükselen bir çan."
+
+#. the name or the meaning of a longer line
+msgid "Leaf pile"
+msgstr "Yaprak yığını"
 
 msgid ""
 "Leaf pile: a dry rustle from a pile of leaves ahead in the bike lane, in "
@@ -24640,6 +25894,18 @@ msgstr ""
 "Yaprak yığını: Yaprak mevsimi sürüşünde, bisiklet yolunda öndeki bir yaprak "
 "yığınından kuru bir hışırtı. Tehlike değildir."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a dry rustle from a pile of leaves ahead in the bike lane, in the Leaf "
+"season ride. It is not a hazard."
+msgstr ""
+"Yaprak mevsimi sürüşünde, bisiklet yolunda öndeki bir yaprak yığınından "
+"kuru bir hışırtı. Tehlike değildir."
+
+#. the name or the meaning of a longer line
+msgid "Leaf crunch"
+msgstr "Yaprak çatırtısı"
+
 msgid ""
 "Leaf crunch: a crackle as you ride through a leaf pile, for 1000 ride "
 "points. The freewheel goes quiet for a moment."
@@ -24647,12 +25913,32 @@ msgstr ""
 "Yaprak çatırtısı: bir yaprak yığınının içinden geçerken çıtırtı, 1000 sürüş "
 "puanı. Serbest dişli bir an susar."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a crackle as you ride through a leaf pile, for 1000 ride points. The "
+"freewheel goes quiet for a moment."
+msgstr ""
+"bir yaprak yığınının içinden geçerken çıtırtı, 1000 sürüş puanı. Serbest "
+"dişli bir an susar."
+
+#. the name or the meaning of a longer line
+msgid "Clock tick"
+msgstr "Saat tıkırtısı"
+
 msgid ""
 "Clock tick: against the clock, under 15 seconds left. It ticks twice as "
 "fast in the last 5."
 msgstr ""
 "Saat tıkırtısı: saate karşı sürüşte 15 saniyeden az kalınca. Son 5 saniyede "
 "iki kat hızlı tıklar."
+
+#. the name or the meaning of a longer line
+msgid ""
+"against the clock, under 15 seconds left. It ticks twice as fast in the "
+"last 5."
+msgstr ""
+"saate karşı sürüşte 15 saniyeden az kalınca. Son 5 saniyede iki kat hızlı "
+"tıklar."
 
 msgid "Left and right"
 msgstr "Sol ve sağ"
@@ -26258,10 +27544,22 @@ msgstr ""
 "Sayım: bir tabut kapağı vuruşu. Her şarkıdan önce dördü, duraklamadan sonra "
 "üçü sizi sayar."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a coffin lid knock. Four of them count you in before each song, and three "
+"after a pause."
+msgstr ""
+"bir tabut kapağı vuruşu. Her şarkıdan önce dördü, duraklamadan sonra üçü "
+"sizi sayar."
+
 msgid ""
 "Spot on: a small spooky chime with your move. It landed right on the beat."
 msgstr ""
 "Tam yerinde: hareketinizle küçük, ürkütücü bir çan. Tam vuruşa denk geldi."
+
+#. the name or the meaning of a longer line
+msgid "a small spooky chime with your move. It landed right on the beat."
+msgstr "hareketinizle küçük, ürkütücü bir çan. Tam vuruşa denk geldi."
 
 msgid ""
 "Close: a soft dull tick with your move. It landed in time, but a little "
@@ -26270,12 +27568,31 @@ msgstr ""
 "Yakın: hareketinizle yumuşak, donuk bir tık. Zamanında ama biraz erken ya "
 "da geç."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft dull tick with your move. It landed in time, but a little early or "
+"late."
+msgstr ""
+"hareketinizle yumuşak, donuk bir tık. Zamanında ama biraz erken ya da geç."
+
 msgid ""
 "Stumble: a thud and a clatter of bones. A move was missed, or the wrong "
 "move was danced."
 msgstr ""
 "Tökezleme: bir güm ve kemik takırtısı. Bir hareket kaçtı ya da yanlış "
 "hareket dans edildi."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a thud and a clatter of bones. A move was missed, or the wrong move was "
+"danced."
+msgstr ""
+"bir güm ve kemik takırtısı. Bir hareket kaçtı ya da yanlış hareket dans "
+"edildi."
+
+#. the name or the meaning of a longer line
+msgid "Bony claps"
+msgstr "Kemikli alkış"
 
 msgid ""
 "Bony claps: the crowd claps three times. Another 8 moves in a row, for a "
@@ -26284,8 +27601,16 @@ msgstr ""
 "Kemikli alkış: kalabalık üç kez alkışlar. Art arda 8 hareket daha, bonus "
 "için."
 
+#. the name or the meaning of a longer line
+msgid "the crowd claps three times. Another 8 moves in a row, for a bonus."
+msgstr "kalabalık üç kez alkışlar. Art arda 8 hareket daha, bonus için."
+
 msgid "Applause: the end of a song, with howls and rattles."
 msgstr "Alkış: şarkının sonu, ulumalar ve takırtılarla."
+
+#. the name or the meaning of a longer line
+msgid "the end of a song, with howls and rattles."
+msgstr "şarkının sonu, ulumalar ve takırtılarla."
 
 #. placeholders: {word}, {call_words}, {dance}, {move_words}
 #. one sentence of a longer line
@@ -33783,31 +35108,91 @@ msgstr "1 dakika {seconds}"
 msgid "{m} minutes {seconds}"
 msgstr "{m} dakika {seconds}"
 
+#. the name or the meaning of a longer line
+msgid "Footstep on floorboards"
+msgstr "Döşeme tahtasında ayak sesi"
+
 msgid "Footstep on floorboards: you moved one step, in the upper wings."
 msgstr "Döşeme tahtasında ayak sesi: üst kanatlarda bir adım attınız."
+
+#. the name or the meaning of a longer line
+msgid "you moved one step, in the upper wings."
+msgstr "üst kanatlarda bir adım attınız."
+
+#. the name or the meaning of a longer line
+msgid "Footstep on stone"
+msgstr "Taşta ayak sesi"
 
 msgid ""
 "Footstep on stone: you moved one step, from the flooded cellars down."
 msgstr "Taşta ayak sesi: su basmış mahzenlerden aşağıda bir adım attınız."
 
+#. the name or the meaning of a longer line
+msgid "you moved one step, from the flooded cellars down."
+msgstr "su basmış mahzenlerden aşağıda bir adım attınız."
+
+#. the name or the meaning of a longer line
+msgid "Wall thud"
+msgstr "Duvar gümlemesi"
+
 msgid "Wall thud: you walked into a wall, or a hole, and did not move."
 msgstr ""
 "Duvar gümlemesi: bir duvara ya da deliğe yürüdünüz ve kıpırdamadınız."
+
+#. the name or the meaning of a longer line
+msgid "you walked into a wall, or a hole, and did not move."
+msgstr "bir duvara ya da deliğe yürüdünüz ve kıpırdamadınız."
+
+#. the name or the meaning of a longer line
+msgid "Rattling handle"
+msgstr "Takırdayan kol"
 
 msgid ""
 "Rattling handle: the exit door is still locked. Solve the room first."
 msgstr "Takırdayan kol: çıkış kapısı hâlâ kilitli. Önce odayı çözün."
 
+#. the name or the meaning of a longer line
+msgid "the exit door is still locked. Solve the room first."
+msgstr "çıkış kapısı hâlâ kilitli. Önce odayı çözün."
+
+#. the name or the meaning of a longer line
+msgid "Heavy slam"
+msgstr "Ağır çarpma"
+
 msgid ""
 "Heavy slam: the door you came in by is shut fast. There is no going back."
 msgstr "Ağır çarpma: girdiğiniz kapı sıkıca kapandı. Geri dönüş yok."
 
+#. the name or the meaning of a longer line
+msgid "the door you came in by is shut fast. There is no going back."
+msgstr "girdiğiniz kapı sıkıca kapandı. Geri dönüş yok."
+
+#. the name or the meaning of a longer line
+msgid "Bolt sliding back"
+msgstr "Geri kayan sürgü"
+
 msgid "Bolt sliding back: the room is solved and its exit door unlocks."
 msgstr "Geri kayan sürgü: oda çözüldü, çıkış kapısının kilidi açılıyor."
+
+#. the name or the meaning of a longer line
+msgid "the room is solved and its exit door unlocks."
+msgstr "oda çözüldü, çıkış kapısının kilidi açılıyor."
+
+#. the name or the meaning of a longer line
+msgid "Cold draught"
+msgstr "Soğuk esinti"
 
 msgid "Cold draught: an open exit door. Follow it to leave the room."
 msgstr ""
 "Soğuk esinti: açık bir çıkış kapısı. Odadan çıkmak için onu izleyin."
+
+#. the name or the meaning of a longer line
+msgid "an open exit door. Follow it to leave the room."
+msgstr "açık bir çıkış kapısı. Odadan çıkmak için onu izleyin."
+
+#. the name or the meaning of a longer line
+msgid "Spirit's whisper"
+msgstr "Ruhun fısıltısı"
 
 msgid ""
 "Spirit's whisper: a spirit seals the exit door and wants an offering. Go to "
@@ -33816,11 +35201,35 @@ msgstr ""
 "Ruhun fısıltısı: bir ruh çıkış kapısını mühürlüyor ve adak istiyor. Ona "
 "gidin."
 
+#. the name or the meaning of a longer line
+msgid "a spirit seals the exit door and wants an offering. Go to it."
+msgstr "bir ruh çıkış kapısını mühürlüyor ve adak istiyor. Ona gidin."
+
+#. the name or the meaning of a longer line
+msgid "Creaking door"
+msgstr "Gıcırdayan kapı"
+
 msgid "Creaking door: you pass through into the next room."
 msgstr "Gıcırdayan kapı: sonraki odaya geçiyorsunuz."
 
+#. the name or the meaning of a longer line
+msgid "you pass through into the next room."
+msgstr "sonraki odaya geçiyorsunuz."
+
+#. the name or the meaning of a longer line
+msgid "Stairs"
+msgstr "Merdivenler"
+
 msgid "Stairs: you leave the floor."
 msgstr "Merdivenler: kattan çıkıyorsunuz."
+
+#. the name or the meaning of a longer line
+msgid "you leave the floor."
+msgstr "kattan çıkıyorsunuz."
+
+#. the name or the meaning of a longer line
+msgid "Phonograph crackle"
+msgstr "Gramofon cızırtısı"
 
 msgid ""
 "Phonograph crackle: a matching puzzle, or a missing sound. The sounds that "
@@ -33829,6 +35238,17 @@ msgstr ""
 "Gramofon cızırtısı: bir eşleştirme bulmacası ya da eksik bir ses. Ardından "
 "gelen sesler ipucudur."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a matching puzzle, or a missing sound. The sounds that follow are the clue."
+msgstr ""
+"bir eşleştirme bulmacası ya da eksik bir ses. Ardından gelen sesler "
+"ipucudur."
+
+#. the name or the meaning of a longer line
+msgid "Medium's gong"
+msgstr "Medyumun gongu"
+
 msgid ""
 "Medium's gong: a séance. Two to four sounds follow; take their things in "
 "that order."
@@ -33836,25 +35256,67 @@ msgstr ""
 "Medyumun gongu: bir seans. Ardından iki ila dört ses gelir; eşyalarını bu "
 "sırayla alın."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a séance. Two to four sounds follow; take their things in that order."
+msgstr ""
+"bir seans. Ardından iki ila dört ses gelir; eşyalarını bu sırayla alın."
+
+#. the name or the meaning of a longer line
+msgid "Medium's hum"
+msgstr "Medyumun mırıltısı"
+
 msgid "Medium's hum: you took the séance's next thing in the right order."
 msgstr ""
 "Medyumun mırıltısı: seansın sıradaki eşyasını doğru sırayla aldınız."
+
+#. the name or the meaning of a longer line
+msgid "you took the séance's next thing in the right order."
+msgstr "seansın sıradaki eşyasını doğru sırayla aldınız."
 
 #. placeholders: {name}, {sound}
 msgid "The {name}: {sound}."
 msgstr "{name}: {sound}."
 
+#. the name or the meaning of a longer line
+msgid "Grab"
+msgstr "Kapma"
+
 msgid "Grab: you picked up the right thing."
 msgstr "Kapma: doğru eşyayı aldınız."
 
+#. the name or the meaning of a longer line
+msgid "you picked up the right thing."
+msgstr "doğru eşyayı aldınız."
+
+#. the name or the meaning of a longer line
+msgid "Chime"
+msgstr "Çan"
+
 msgid "Chime: the room's puzzle is solved."
 msgstr "Çan: odanın bulmacası çözüldü."
+
+#. the name or the meaning of a longer line
+msgid "the room's puzzle is solved."
+msgstr "odanın bulmacası çözüldü."
+
+#. the name or the meaning of a longer line
+msgid "Mocking laugh"
+msgstr "Alaycı kahkaha"
 
 msgid ""
 "Mocking laugh: not what the room wants. You lose time on the haunt clock."
 msgstr ""
 "Alaycı kahkaha: odanın istediği bu değil. Lanet saatinden zaman "
 "kaybedersiniz."
+
+#. the name or the meaning of a longer line
+msgid "not what the room wants. You lose time on the haunt clock."
+msgstr "odanın istediği bu değil. Lanet saatinden zaman kaybedersiniz."
+
+#. the name or the meaning of a longer line
+msgid "Warped shriek"
+msgstr "Çarpık çığlık"
 
 msgid ""
 "Warped shriek: a mimic, a copy of the answer. You lose time, and it hops "
@@ -33863,20 +35325,69 @@ msgstr ""
 "Çarpık çığlık: bir taklitçi, cevabın kopyası. Zaman kaybedersiniz, o da "
 "sıçrayıp gider."
 
+#. the name or the meaning of a longer line
+msgid "a mimic, a copy of the answer. You lose time, and it hops away."
+msgstr ""
+"bir taklitçi, cevabın kopyası. Zaman kaybedersiniz, o da sıçrayıp gider."
+
+#. the name or the meaning of a longer line
+msgid "Dust"
+msgstr "Toz"
+
 msgid "Dust: there is nothing to pick up here."
 msgstr "Toz: burada alınacak bir şey yok."
+
+#. the name or the meaning of a longer line
+msgid "there is nothing to pick up here."
+msgstr "burada alınacak bir şey yok."
+
+#. the name or the meaning of a longer line
+msgid "Rustle"
+msgstr "Hışırtı"
 
 msgid "Rustle: you chose another thing you carry."
 msgstr "Hışırtı: taşıdığınız başka bir eşyayı seçtiniz."
 
+#. the name or the meaning of a longer line
+msgid "you chose another thing you carry."
+msgstr "taşıdığınız başka bir eşyayı seçtiniz."
+
+#. the name or the meaning of a longer line
+msgid "The spirit sighs"
+msgstr "Ruh iç çekiyor"
+
 msgid "The spirit sighs: it accepts your offering."
 msgstr "Ruh iç çekiyor: adağınızı kabul ediyor."
+
+#. the name or the meaning of a longer line
+msgid "it accepts your offering."
+msgstr "adağınızı kabul ediyor."
+
+#. the name or the meaning of a longer line
+msgid "The spirit shrieks"
+msgstr "Ruh çığlık atıyor"
 
 msgid "The spirit shrieks: wrong offering. You lose time."
 msgstr "Ruh çığlık atıyor: yanlış adak. Zaman kaybedersiniz."
 
+#. the name or the meaning of a longer line
+msgid "wrong offering. You lose time."
+msgstr "yanlış adak. Zaman kaybedersiniz."
+
+#. the name or the meaning of a longer line
+msgid "Bell toll"
+msgstr "Çan sesi"
+
 msgid "Bell toll: the haunt clock is running low."
 msgstr "Çan sesi: lanet saati azalıyor."
+
+#. the name or the meaning of a longer line
+msgid "the haunt clock is running low."
+msgstr "lanet saati azalıyor."
+
+#. the name or the meaning of a longer line
+msgid "Groaning board"
+msgstr "İnleyen tahta"
 
 msgid ""
 "Groaning board: a rotten board next to you, in the direction you hear it. "
@@ -33885,12 +35396,33 @@ msgstr ""
 "İnleyen tahta: yanınızda, sesin geldiği yönde çürük bir tahta. Üstüne "
 "basmayın."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a rotten board next to you, in the direction you hear it. Do not step on it."
+msgstr "yanınızda, sesin geldiği yönde çürük bir tahta. Üstüne basmayın."
+
+#. the name or the meaning of a longer line
+msgid "Crash of boards"
+msgstr "Tahta çatırtısı"
+
 msgid "Crash of boards: you fell through a rotten board and lost courage."
 msgstr ""
 "Tahta çatırtısı: çürük bir tahtadan düştünüz ve cesaret kaybettiniz."
 
+#. the name or the meaning of a longer line
+msgid "you fell through a rotten board and lost courage."
+msgstr "çürük bir tahtadan düştünüz ve cesaret kaybettiniz."
+
+#. the name or the meaning of a longer line
+msgid "Rising chord"
+msgstr "Yükselen akor"
+
 msgid "Rising chord: a landing. You get one courage back."
 msgstr "Yükselen akor: bir sahanlık. Bir cesaret geri kazanırsınız."
+
+#. the name or the meaning of a longer line
+msgid "a landing. You get one courage back."
+msgstr "bir sahanlık. Bir cesaret geri kazanırsınız."
 
 msgid "When you hear it, the hound is coming: be ready to walk."
 msgstr "Bunu duyunca tazı geliyor demektir: yürümeye hazır olun."
@@ -33907,11 +35439,23 @@ msgstr "Bir hayalet, {name}: {voice}."
 msgid "A ghost, {name}: {voice}. {what}"
 msgstr "Bir hayalet, {name}: {voice}. {what}"
 
+#. the name or the meaning of a longer line
+msgid "Freeze stab"
+msgstr "Donma vuruşu"
+
 msgid ""
 "Freeze stab: a ghost is passing right by you. Do not move until it has "
 "passed."
 msgstr ""
 "Donma vuruşu: bir hayalet tam yanınızdan geçiyor. Geçene kadar kıpırdamayın."
+
+#. the name or the meaning of a longer line
+msgid "a ghost is passing right by you. Do not move until it has passed."
+msgstr "bir hayalet tam yanınızdan geçiyor. Geçene kadar kıpırdamayın."
+
+#. the name or the meaning of a longer line
+msgid "Howl"
+msgstr "Uluma"
 
 msgid ""
 "Howl: the blind hound is passing right by you. Keep walking until it has "
@@ -33919,14 +35463,36 @@ msgid ""
 msgstr ""
 "Uluma: kör tazı tam yanınızdan geçiyor. Geçene kadar yürümeye devam edin."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the blind hound is passing right by you. Keep walking until it has passed."
+msgstr "kör tazı tam yanınızdan geçiyor. Geçene kadar yürümeye devam edin."
+
+#. the name or the meaning of a longer line
+msgid "Long breath out"
+msgstr "Uzun bir nefes verme"
+
 msgid "Long breath out: the ghost has passed without finding you."
 msgstr "Uzun bir nefes verme: hayalet sizi bulamadan geçti."
+
+#. the name or the meaning of a longer line
+msgid "the ghost has passed without finding you."
+msgstr "hayalet sizi bulamadan geçti."
+
+#. the name or the meaning of a longer line
+msgid "Scream"
+msgstr "Çığlık"
 
 msgid ""
 "Scream: something caught you. You lose courage and flee to the room's door."
 msgstr ""
 "Çığlık: bir şey sizi yakaladı. Cesaret kaybeder ve odanın kapısına "
 "kaçarsınız."
+
+#. the name or the meaning of a longer line
+msgid "something caught you. You lose courage and flee to the room's door."
+msgstr ""
+"bir şey sizi yakaladı. Cesaret kaybeder ve odanın kapısına kaçarsınız."
 
 msgid ""
 "The shadow: a low breathing drone that walks the room, following your "
@@ -33935,18 +35501,54 @@ msgstr ""
 "Gölge: odada dolaşan, ayak seslerinizi izleyen pes, soluyan bir uğultu. "
 "Size ulaşmasına izin vermeyin."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low breathing drone that walks the room, following your footsteps. Do not "
+"let it reach you."
+msgstr ""
+"odada dolaşan, ayak seslerinizi izleyen pes, soluyan bir uğultu. Size "
+"ulaşmasına izin vermeyin."
+
+#. the name or the meaning of a longer line
+msgid "Soft glass chime"
+msgstr "Hafif cam çınlaması"
+
 msgid ""
 "Soft glass chime: a charm lying in the room. Walk onto it to take it."
 msgstr ""
 "Hafif cam çınlaması: odada duran bir muska. Almak için üstüne yürüyün."
 
+#. the name or the meaning of a longer line
+msgid "a charm lying in the room. Walk onto it to take it."
+msgstr "odada duran bir muska. Almak için üstüne yürüyün."
+
+#. the name or the meaning of a longer line
+msgid "Bright pluck"
+msgstr "Parlak bir çekiş"
+
 msgid "Bright pluck: you took a charm."
 msgstr "Parlak bir çekiş: bir muska aldınız."
+
+#. the name or the meaning of a longer line
+msgid "you took a charm."
+msgstr "bir muska aldınız."
+
+#. the name or the meaning of a longer line
+msgid "Hiss of salt"
+msgstr "Tuz tıslaması"
 
 msgid ""
 "Hiss of salt: your salt warded something off. You stay where you are."
 msgstr ""
 "Tuz tıslaması: tuzunuz bir şeyi savuşturdu. Olduğunuz yerde kalırsınız."
+
+#. the name or the meaning of a longer line
+msgid "your salt warded something off. You stay where you are."
+msgstr "tuzunuz bir şeyi savuşturdu. Olduğunuz yerde kalırsınız."
+
+#. the name or the meaning of a longer line
+msgid "Swish"
+msgstr "Hışırtı"
 
 msgid ""
 "Swish: the pendulum's blade, sweeping along its row. Cross that row just "
@@ -33955,28 +35557,90 @@ msgstr ""
 "Hışırtı: sarkacın bıçağı, sırası boyunca süpürüyor. O sırayı geçtikten "
 "hemen sonra geçin."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the pendulum's blade, sweeping along its row. Cross that row just after it "
+"passes."
+msgstr ""
+"sarkacın bıçağı, sırası boyunca süpürüyor. O sırayı geçtikten hemen sonra "
+"geçin."
+
+#. the name or the meaning of a longer line
+msgid "Splash"
+msgstr "Sıçrama"
+
 msgid ""
 "Splash: you waded into deep water. Wading is slow and brings ghosts sooner."
 msgstr ""
 "Sıçrama: derin suya girdiniz. Suda yürümek yavaştır ve hayaletleri daha "
 "erken getirir."
 
+#. the name or the meaning of a longer line
+msgid "you waded into deep water. Wading is slow and brings ghosts sooner."
+msgstr ""
+"derin suya girdiniz. Suda yürümek yavaştır ve hayaletleri daha erken "
+"getirir."
+
+#. the name or the meaning of a longer line
+msgid "Lapping water"
+msgstr "Şıpırdayan su"
+
 msgid "Lapping water: deep water next to you, in the direction you hear it."
 msgstr "Şıpırdayan su: yanınızda, sesin geldiği yönde derin su."
+
+#. the name or the meaning of a longer line
+msgid "deep water next to you, in the direction you hear it."
+msgstr "yanınızda, sesin geldiği yönde derin su."
+
+#. the name or the meaning of a longer line
+msgid "Trickling dust"
+msgstr "Dökülen toz"
 
 msgid ""
 "Trickling dust: a stone is about to fall where you stand. Step off at once."
 msgstr "Dökülen toz: durduğunuz yere bir taş düşmek üzere. Hemen çekilin."
 
+#. the name or the meaning of a longer line
+msgid "a stone is about to fall where you stand. Step off at once."
+msgstr "durduğunuz yere bir taş düşmek üzere. Hemen çekilin."
+
+#. the name or the meaning of a longer line
+msgid "Crash of stone"
+msgstr "Taş çarpması"
+
 msgid "Crash of stone: a stone hit the floor."
 msgstr "Taş çarpması: bir taş yere düştü."
+
+#. the name or the meaning of a longer line
+msgid "a stone hit the floor."
+msgstr "bir taş yere düştü."
+
+#. the name or the meaning of a longer line
+msgid "Deep rumble"
+msgstr "Derin gürleme"
 
 msgid ""
 "Deep rumble: the house shifted, and the exit door moved to another wall."
 msgstr "Derin gürleme: ev değişti, çıkış kapısı başka bir duvara geçti."
 
+#. the name or the meaning of a longer line
+msgid "the house shifted, and the exit door moved to another wall."
+msgstr "ev değişti, çıkış kapısı başka bir duvara geçti."
+
+#. the name or the meaning of a longer line
+msgid "Heavy footstep"
+msgstr "Ağır ayak sesi"
+
 msgid "Heavy footstep: the founder, coming after you."
 msgstr "Ağır ayak sesi: kurucu peşinizde."
+
+#. the name or the meaning of a longer line
+msgid "the founder, coming after you."
+msgstr "kurucu peşinizde."
+
+#. the name or the meaning of a longer line
+msgid "Rising scrape"
+msgstr "Yükselen sürtünme"
 
 msgid ""
 "Rising scrape: the founder winds up a blow beside you. Strike at the "
@@ -33985,18 +35649,58 @@ msgstr ""
 "Yükselen sürtünme: kurucu yanınızda darbe için kol kaldırıyor. Çınlayan "
 "notada vurun ya da uzaklaşın."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the founder winds up a blow beside you. Strike at the ringing note, or step "
+"away."
+msgstr ""
+"kurucu yanınızda darbe için kol kaldırıyor. Çınlayan notada vurun ya da "
+"uzaklaşın."
+
+#. the name or the meaning of a longer line
+msgid "Ringing note"
+msgstr "Çınlayan nota"
+
 msgid "Ringing note: the founder's blow is at its height. Strike now."
 msgstr "Çınlayan nota: kurucunun darbesi en yüksek noktada. Şimdi vurun."
+
+#. the name or the meaning of a longer line
+msgid "the founder's blow is at its height. Strike now."
+msgstr "kurucunun darbesi en yüksek noktada. Şimdi vurun."
+
+#. the name or the meaning of a longer line
+msgid "Iron clang"
+msgstr "Demir çınlaması"
 
 msgid "Iron clang: your candlestick hit the founder."
 msgstr "Demir çınlaması: şamdanınız kurucuya çarptı."
 
+#. the name or the meaning of a longer line
+msgid "your candlestick hit the founder."
+msgstr "şamdanınız kurucuya çarptı."
+
+#. the name or the meaning of a longer line
+msgid "Dull knock"
+msgstr "Donuk vuruş"
+
 msgid "Dull knock: you struck too soon and the founder blocked. Step away."
 msgstr "Donuk vuruş: erken vurdunuz, kurucu savuşturdu. Uzaklaşın."
+
+#. the name or the meaning of a longer line
+msgid "you struck too soon and the founder blocked. Step away."
+msgstr "erken vurdunuz, kurucu savuşturdu. Uzaklaşın."
+
+#. the name or the meaning of a longer line
+msgid "Crumbling stone"
+msgstr "Ufalanan taş"
 
 msgid ""
 "Crumbling stone: the founder falls to dust for the rest of the floor."
 msgstr "Ufalanan taş: kurucu katın geri kalanı için toza dönüşüyor."
+
+#. the name or the meaning of a longer line
+msgid "the founder falls to dust for the rest of the floor."
+msgstr "kurucu katın geri kalanı için toza dönüşüyor."
 
 msgid ""
 "Up and Down move through the game's sounds, Enter plays one, Escape goes "
@@ -35845,12 +37549,28 @@ msgstr "sönük lamba"
 msgid "lamp burning"
 msgstr "yanan lamba"
 
+#. the name or the meaning of a longer line
+msgid "Lamp out"
+msgstr "Sönük lamba"
+
 msgid ""
 "Lamp out: a thin whistle of draught across empty glass. It pulses from the "
 "wall where a lamp needs lighting, louder as you come near."
 msgstr ""
 "Sönük lamba: boş camda ince bir cereyan ıslığı. Yakılması gereken bir "
 "lambanın duvarından atar, yaklaştıkça yükselir."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a thin whistle of draught across empty glass. It pulses from the wall where "
+"a lamp needs lighting, louder as you come near."
+msgstr ""
+"boş camda ince bir cereyan ıslığı. Yakılması gereken bir lambanın "
+"duvarından atar, yaklaştıkça yükselir."
+
+#. the name or the meaning of a longer line
+msgid "Lamp burning"
+msgstr "Yanan lamba"
 
 msgid ""
 "Lamp burning: the small flutter of a candle flame. You hear it from the "
@@ -35859,6 +37579,18 @@ msgstr ""
 "Yanan lamba: küçük bir mum alevinin titreşi. Yanan bir lambanın yanından "
 "geçerken duvardan gelir."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the small flutter of a candle flame. You hear it from the wall as you pass "
+"a lamp that is lit."
+msgstr ""
+"küçük bir mum alevinin titreşi. Yanan bir lambanın yanından geçerken "
+"duvardan gelir."
+
+#. the name or the meaning of a longer line
+msgid "Lighting"
+msgstr "Yakma"
+
 msgid ""
 "Lighting: a match strike flaring into a glass ting. The lamp you reached "
 "for is lit."
@@ -35866,15 +37598,45 @@ msgstr ""
 "Yakma: parlayıp cam çınlamasına dönen bir kibrit çakışı. Uzandığınız lamba "
 "yandı."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a match strike flaring into a glass ting. The lamp you reached for is lit."
+msgstr ""
+"parlayıp cam çınlamasına dönen bir kibrit çakışı. Uzandığınız lamba yandı."
+
+#. the name or the meaning of a longer line
+msgid "Bare wall"
+msgstr "Çıplak duvar"
+
 msgid ""
 "Bare wall: one dull knock. There is no lamp on that wall at this step."
 msgstr "Çıplak duvar: tek, donuk bir vuruş. Bu adımda o duvarda lamba yok."
 
+#. the name or the meaning of a longer line
+msgid "one dull knock. There is no lamp on that wall at this step."
+msgstr "tek, donuk bir vuruş. Bu adımda o duvarda lamba yok."
+
+#. the name or the meaning of a longer line
+msgid "Already burning"
+msgstr "Zaten yanıyor"
+
 msgid "Already burning: a soft felt knock. That lamp is lit already."
 msgstr "Zaten yanıyor: hafif, keçe gibi bir vuruş. O lamba zaten yanıyor."
 
+#. the name or the meaning of a longer line
+msgid "a soft felt knock. That lamp is lit already."
+msgstr "hafif, keçe gibi bir vuruş. O lamba zaten yanıyor."
+
 msgid "Footstep: a soft step on wooden boards, one step along the hall."
 msgstr "Ayak sesi: tahta döşemede hafif bir adım, koridor boyunca bir adım."
+
+#. the name or the meaning of a longer line
+msgid "a soft step on wooden boards, one step along the hall."
+msgstr "tahta döşemede hafif bir adım, koridor boyunca bir adım."
+
+#. the name or the meaning of a longer line
+msgid "Lobby door"
+msgstr "Lobi kapısı"
 
 msgid ""
 "Lobby door: a door creaking on its hinges. You are at the lobby end of the "
@@ -35882,21 +37644,62 @@ msgid ""
 msgstr ""
 "Lobi kapısı: menteşelerinde gıcırdayan bir kapı. Koridorun lobi ucundasınız."
 
+#. the name or the meaning of a longer line
+msgid "a door creaking on its hinges. You are at the lobby end of the hall."
+msgstr "menteşelerinde gıcırdayan bir kapı. Koridorun lobi ucundasınız."
+
+#. the name or the meaning of a longer line
+msgid "Far wall"
+msgstr "Uzak duvar"
+
 msgid "Far wall: two hollow knocks. You are at the far end of the hall."
 msgstr "Uzak duvar: iki boş vuruş. Koridorun uzak ucundasınız."
+
+#. the name or the meaning of a longer line
+msgid "two hollow knocks. You are at the far end of the hall."
+msgstr "iki boş vuruş. Koridorun uzak ucundasınız."
+
+#. the name or the meaning of a longer line
+msgid "Taper low"
+msgstr "Fitil azaldı"
 
 msgid "Taper low: a low, muted bell. The taper has 20 seconds left."
 msgstr "Fitil azaldı: pes, boğuk bir çan. Fitilin 20 saniyesi kaldı."
 
+#. the name or the meaning of a longer line
+msgid "a low, muted bell. The taper has 20 seconds left."
+msgstr "pes, boğuk bir çan. Fitilin 20 saniyesi kaldı."
+
+#. the name or the meaning of a longer line
+msgid "Taper out"
+msgstr "Fitil bitti"
+
 msgid ""
 "Taper out: a short puff. The taper burned down, and the taper bonus is gone."
 msgstr "Fitil bitti: kısa bir püf. Fitil yanıp bitti, fitil bonusu gitti."
+
+#. the name or the meaning of a longer line
+msgid "a short puff. The taper burned down, and the taper bonus is gone."
+msgstr "kısa bir püf. Fitil yanıp bitti, fitil bonusu gitti."
+
+#. the name or the meaning of a longer line
+msgid "Fresh taper"
+msgstr "Yeni fitil"
 
 msgid ""
 "Fresh taper: a quick match. Mabel lit you a new taper, so you can carry on."
 msgstr ""
 "Yeni fitil: hızlı bir kibrit. Mabel size yeni bir fitil yaktı, devam "
 "edebilirsiniz."
+
+#. the name or the meaning of a longer line
+msgid "a quick match. Mabel lit you a new taper, so you can carry on."
+msgstr ""
+"hızlı bir kibrit. Mabel size yeni bir fitil yaktı, devam edebilirsiniz."
+
+#. the name or the meaning of a longer line
+msgid "Draught"
+msgstr "Cereyan"
 
 msgid ""
 "Draught: a long gust through a doorway. It blew a lamp out somewhere in the "
@@ -35905,11 +37708,25 @@ msgstr ""
 "Cereyan: bir kapıdan gelen uzun bir esinti. Koridorda bir yerde bir lambayı "
 "söndürdü."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a long gust through a doorway. It blew a lamp out somewhere in the hall."
+msgstr ""
+"bir kapıdan gelen uzun bir esinti. Koridorda bir yerde bir lambayı söndürdü."
+
+#. the name or the meaning of a longer line
+msgid "Hall lit"
+msgstr "Koridor yandı"
+
 msgid ""
 "Hall lit: a rising run of glass. Every lamp is burning, and the round is "
 "over."
 msgstr ""
 "Koridor yandı: yükselen bir cam dizisi. Bütün lambalar yanıyor, tur bitti."
+
+#. the name or the meaning of a longer line
+msgid "a rising run of glass. Every lamp is burning, and the round is over."
+msgstr "yükselen bir cam dizisi. Bütün lambalar yanıyor, tur bitti."
 
 msgid "Return to the Lamplighter title."
 msgstr "Lamplighter başlangıç ekranına dönün."
@@ -48815,12 +50632,36 @@ msgstr ""
 "Adım: yaklaşma alanında yumuşak bir ayakkabı sesi. Bir tahta kaydınız, ses "
 "durduğunuz yerden gelir."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft shoe on the approach. You moved one board, and it sounds from where "
+"you stand."
+msgstr ""
+"yaklaşma alanında yumuşak bir ayakkabı sesi. Bir tahta kaydınız, ses "
+"durduğunuz yerden gelir."
+
+#. the name or the meaning of a longer line
+msgid "Aim tone"
+msgstr "Nişan tonu"
+
 msgid ""
 "Aim tone: a soft high tone. It sounds from where the ball would cross the "
 "pins with a clean release."
 msgstr ""
 "Nişan tonu: yumuşak, tiz bir ton. Temiz bir bırakışta topun lobutları "
 "geçeceği yerden gelir."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a soft high tone. It sounds from where the ball would cross the pins with a "
+"clean release."
+msgstr ""
+"yumuşak, tiz bir ton. Temiz bir bırakışta topun lobutları geçeceği yerden "
+"gelir."
+
+#. the name or the meaning of a longer line
+msgid "Swing tone"
+msgstr "Savuruş tonu"
 
 msgid ""
 "Swing tone: a hum that rises to the top of the swing, then falls. Let go at "
@@ -48829,8 +50670,22 @@ msgstr ""
 "Savuruş tonu: savuruşun tepesine kadar yükselip sonra alçalan bir uğultu. "
 "Tepede bırakın."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a hum that rises to the top of the swing, then falls. Let go at the top."
+msgstr ""
+"savuruşun tepesine kadar yükselip sonra alçalan bir uğultu. Tepede bırakın."
+
 msgid "Release: a thump as the ball meets the lane."
 msgstr "Bırakış: top piste değerken bir gümleme."
+
+#. the name or the meaning of a longer line
+msgid "a thump as the ball meets the lane."
+msgstr "top piste değerken bir gümleme."
+
+#. the name or the meaning of a longer line
+msgid "Rolling ball"
+msgstr "Yuvarlanan top"
 
 msgid ""
 "Rolling ball: a low rumble that moves across with the ball and grows louder "
@@ -48839,16 +50694,52 @@ msgstr ""
 "Yuvarlanan top: topla birlikte ilerleyen ve lobutlara yaklaştıkça yükselen "
 "alçak bir gürleme."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low rumble that moves across with the ball and grows louder as it nears "
+"the pins."
+msgstr ""
+"topla birlikte ilerleyen ve lobutlara yaklaştıkça yükselen alçak bir "
+"gürleme."
+
+#. the name or the meaning of a longer line
+msgid "Gutter"
+msgstr "Oluk"
+
 msgid ""
 "Gutter: a hollow rattle. The ball left the lane and will hit no pins."
 msgstr ""
 "Oluk: boş bir takırtı. Top pistten çıktı ve hiçbir lobuta değmeyecek."
 
+#. the name or the meaning of a longer line
+msgid "a hollow rattle. The ball left the lane and will hit no pins."
+msgstr "boş bir takırtı. Top pistten çıktı ve hiçbir lobuta değmeyecek."
+
+#. the name or the meaning of a longer line
+msgid "Light clatter"
+msgstr "Hafif takırtı"
+
 msgid "Light clatter: a few pins falling."
 msgstr "Hafif takırtı: birkaç lobut düşüyor."
 
+#. the name or the meaning of a longer line
+msgid "a few pins falling."
+msgstr "birkaç lobut düşüyor."
+
+#. the name or the meaning of a longer line
+msgid "Heavy clatter"
+msgstr "Ağır takırtı"
+
 msgid "Heavy clatter: most of the rack falling at once."
 msgstr "Ağır takırtı: dizilimin çoğu birden düşüyor."
+
+#. the name or the meaning of a longer line
+msgid "most of the rack falling at once."
+msgstr "dizilimin çoğu birden düşüyor."
+
+#. the name or the meaning of a longer line
+msgid "Pinsetter"
+msgstr "Lobut dizici"
 
 msgid ""
 "Pinsetter: a mechanical sweep and clunk as the deck is cleared and pins are "
@@ -48857,6 +50748,16 @@ msgstr ""
 "Lobut dizici: zemin temizlenip lobutlar dizilirken mekanik bir süpürme ve "
 "tok bir ses."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a mechanical sweep and clunk as the deck is cleared and pins are set."
+msgstr ""
+"zemin temizlenip lobutlar dizilirken mekanik bir süpürme ve tok bir ses."
+
+#. the name or the meaning of a longer line
+msgid "Ball return"
+msgstr "Top dönüşü"
+
 msgid ""
 "Ball return: a rolling rumble and a knock. Your ball is back and you can "
 "roll."
@@ -48864,14 +50765,39 @@ msgstr ""
 "Top dönüşü: yuvarlanan bir gürleme ve bir vuruş. Topunuz geri geldi, "
 "atabilirsiniz."
 
+#. the name or the meaning of a longer line
+msgid "a rolling rumble and a knock. Your ball is back and you can roll."
+msgstr ""
+"yuvarlanan bir gürleme ve bir vuruş. Topunuz geri geldi, atabilirsiniz."
+
+#. the name or the meaning of a longer line
+msgid "Strike sting"
+msgstr "Strike müziği"
+
 msgid ""
 "Strike sting: a short jukebox flourish. All ten pins with the first ball."
 msgstr ""
 "Strike müziği: kısa bir müzik makinesi süslemesi. İlk atışta on lobutun "
 "hepsi."
 
+#. the name or the meaning of a longer line
+msgid "a short jukebox flourish. All ten pins with the first ball."
+msgstr "kısa bir müzik makinesi süslemesi. İlk atışta on lobutun hepsi."
+
+#. the name or the meaning of a longer line
+msgid "Spare bell"
+msgstr "Spare zili"
+
 msgid "Spare bell: a bright bell. The second ball cleared the rest."
 msgstr "Spare zili: parlak bir zil. İkinci atış kalanları devirdi."
+
+#. the name or the meaning of a longer line
+msgid "a bright bell. The second ball cleared the rest."
+msgstr "parlak bir zil. İkinci atış kalanları devirdi."
+
+#. the name or the meaning of a longer line
+msgid "Pumpkins falling, light"
+msgstr "Balkabakları düşüyor, hafif"
 
 msgid ""
 "Pumpkins falling, light: a hollow squash. On Pumpkin night, a few pumpkins "
@@ -48880,6 +50806,14 @@ msgstr ""
 "Balkabakları düşüyor, hafif: boş bir ezilme sesi. Balkabağı gecesinde "
 "birkaç balkabağı devrildi."
 
+#. the name or the meaning of a longer line
+msgid "a hollow squash. On Pumpkin night, a few pumpkins went down."
+msgstr "boş bir ezilme sesi. Balkabağı gecesinde birkaç balkabağı devrildi."
+
+#. the name or the meaning of a longer line
+msgid "Pumpkins falling, heavy"
+msgstr "Balkabakları düşüyor, ağır"
+
 msgid ""
 "Pumpkins falling, heavy: a long hollow tumble. On Pumpkin night, five or "
 "more went down."
@@ -48887,10 +50821,24 @@ msgstr ""
 "Balkabakları düşüyor, ağır: uzun, boş bir yuvarlanma. Balkabağı gecesinde "
 "beş ya da daha fazlası devrildi."
 
+#. the name or the meaning of a longer line
+msgid "a long hollow tumble. On Pumpkin night, five or more went down."
+msgstr ""
+"uzun, boş bir yuvarlanma. Balkabağı gecesinde beş ya da daha fazlası "
+"devrildi."
+
+#. the name or the meaning of a longer line
+msgid "Grin carved"
+msgstr "Sırıtış oyuldu"
+
 msgid ""
 "Grin carved: a knife scrape and a low chord. A strike on Pumpkin night."
 msgstr ""
 "Sırıtış oyuldu: bıçak sürtmesi ve pes bir akor. Balkabağı gecesinde strike."
+
+#. the name or the meaning of a longer line
+msgid "a knife scrape and a low chord. A strike on Pumpkin night."
+msgstr "bıçak sürtmesi ve pes bir akor. Balkabağı gecesinde strike."
 
 msgid "Return to the Midnight Lanes title."
 msgstr "Midnight Lanes başlangıç ekranına dön."
@@ -56359,12 +58307,36 @@ msgstr "alçak bir mırlama"
 msgid "Step: a soft tap on wooden boards. You moved one cell."
 msgstr "Adım: tahta döşemede yumuşak bir tıkırtı. Bir hücre ilerlediniz."
 
+#. the name or the meaning of a longer line
+msgid "a soft tap on wooden boards. You moved one cell."
+msgstr "tahta döşemede yumuşak bir tıkırtı. Bir hücre ilerlediniz."
+
+#. the name or the meaning of a longer line
+msgid "Nibble"
+msgstr "Kemirme"
+
 msgid "Nibble: a quick crunch. You ate a crumb, for 10 points."
 msgstr "Kemirme: hızlı bir çıtırtı. 10 puanlık bir kırıntı yediniz."
+
+#. the name or the meaning of a longer line
+msgid "a quick crunch. You ate a crumb, for 10 points."
+msgstr "hızlı bir çıtırtı. 10 puanlık bir kırıntı yediniz."
+
+#. the name or the meaning of a longer line
+msgid "Wall"
+msgstr "Duvar"
 
 msgid ""
 "Wall: a dull thud. A wall is in the way, and the open ways are spoken."
 msgstr "Duvar: boğuk bir güm. Önünüzde duvar var, açık yönler söylenir."
+
+#. the name or the meaning of a longer line
+msgid "a dull thud. A wall is in the way, and the open ways are spoken."
+msgstr "boğuk bir güm. Önünüzde duvar var, açık yönler söylenir."
+
+#. the name or the meaning of a longer line
+msgid "Sniff tick"
+msgstr "Koklama tıkırtısı"
 
 msgid ""
 "Sniff tick: a tiny bright tick. Each one is a crumb, from its direction, "
@@ -56373,8 +58345,27 @@ msgstr ""
 "Koklama tıkırtısı: minik, parlak bir tıkırtı. Her biri kendi yönünden bir "
 "kırıntıdır, en yakından başlayarak."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a tiny bright tick. Each one is a crumb, from its direction, nearest first."
+msgstr ""
+"minik, parlak bir tıkırtı. Her biri kendi yönünden bir kırıntıdır, en "
+"yakından başlayarak."
+
+#. the name or the meaning of a longer line
+msgid "Ginger cat"
+msgstr "Sarman kedi"
+
 msgid "Ginger cat: a bell on its collar. It heads straight for you."
 msgstr "Sarman kedi: tasmasında bir çıngırak. Doğrudan size gelir."
+
+#. the name or the meaning of a longer line
+msgid "a bell on its collar. It heads straight for you."
+msgstr "tasmasında bir çıngırak. Doğrudan size gelir."
+
+#. the name or the meaning of a longer line
+msgid "Tabby cat"
+msgstr "Tekir kedi"
 
 msgid ""
 "Tabby cat: soft padding paws. It wanders until it is 4 steps away, then "
@@ -56383,11 +58374,29 @@ msgstr ""
 "Tekir kedi: yumuşak pati sesleri. 4 adım uzağa gelene kadar dolaşır, sonra "
 "kovalar."
 
+#. the name or the meaning of a longer line
+msgid "soft padding paws. It wanders until it is 4 steps away, then chases."
+msgstr ""
+"yumuşak pati sesleri. 4 adım uzağa gelene kadar dolaşır, sonra kovalar."
+
+#. the name or the meaning of a longer line
+msgid "Grey cat"
+msgstr "Gri kedi"
+
 msgid ""
 "Grey cat: a low purr. It wanders like the tabby, and joins in the monthly "
 "challenge."
 msgstr ""
 "Gri kedi: alçak bir mırlama. Tekir gibi dolaşır, aylık göreve katılır."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a low purr. It wanders like the tabby, and joins in the monthly challenge."
+msgstr "alçak bir mırlama. Tekir gibi dolaşır, aylık göreve katılır."
+
+#. the name or the meaning of a longer line
+msgid "Cat close"
+msgstr "Kedi yakın"
 
 msgid ""
 "Cat close: a short rising meow from the cat's side. A cat is 2 steps away "
@@ -56396,11 +58405,28 @@ msgstr ""
 "Kedi yakın: kedinin tarafından kısa, yükselen bir miyav. Bir kedi 2 adım ya "
 "da daha yakında."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short rising meow from the cat's side. A cat is 2 steps away or nearer."
+msgstr ""
+"kedinin tarafından kısa, yükselen bir miyav. Bir kedi 2 adım ya da daha "
+"yakında."
+
 msgid ""
 "Caught: a pounce and a squeak. A cat caught you and you lose a whisker."
 msgstr ""
 "Yakalandınız: bir sıçrayış ve bir cıyaklama. Bir kedi sizi yakaladı, bir "
 "bıyık kaybedersiniz."
+
+#. the name or the meaning of a longer line
+msgid "a pounce and a squeak. A cat caught you and you lose a whisker."
+msgstr ""
+"bir sıçrayış ve bir cıyaklama. Bir kedi sizi yakaladı, bir bıyık "
+"kaybedersiniz."
+
+#. the name or the meaning of a longer line
+msgid "Freeze"
+msgstr "Donun"
 
 msgid ""
 "Freeze: an indrawn breath. You keep still and the nearest cat loses track "
@@ -56409,12 +58435,38 @@ msgstr ""
 "Donma: içe çekilen bir nefes. Kıpırdamazsınız, en yakın kedi izinizi "
 "kaybeder."
 
+#. the name or the meaning of a longer line
+msgid ""
+"an indrawn breath. You keep still and the nearest cat loses track of you."
+msgstr ""
+"içe çekilen bir nefes. Kıpırdamazsınız, en yakın kedi izinizi kaybeder."
+
+#. the name or the meaning of a longer line
+msgid "Thaw"
+msgstr "Çözülme"
+
 msgid "Thaw: a soft breath out. You can move again."
 msgstr "Çözülme: yumuşak bir nefes verme. Yeniden hareket edebilirsiniz."
+
+#. the name or the meaning of a longer line
+msgid "a soft breath out. You can move again."
+msgstr "yumuşak bir nefes verme. Yeniden hareket edebilirsiniz."
+
+#. the name or the meaning of a longer line
+msgid "Pantry clear"
+msgstr "Kiler temizlendi"
 
 msgid "Pantry clear: a bright rising run of notes. Every crumb is gone."
 msgstr ""
 "Kiler temizlendi: parlak, yükselen bir dizi nota. Tek kırıntı kalmadı."
+
+#. the name or the meaning of a longer line
+msgid "a bright rising run of notes. Every crumb is gone."
+msgstr "parlak, yükselen bir dizi nota. Tek kırıntı kalmadı."
+
+#. the name or the meaning of a longer line
+msgid "Turkey scrap"
+msgstr "Hindi artığı"
 
 msgid ""
 "Turkey scrap: a juicy chew. In the Leftovers pantry at Thanksgiving, a "
@@ -56424,6 +58476,18 @@ msgstr ""
 "Hindi artığı: sulu bir çiğneme. Şükran Günü'nde Artıklar kilerinde bir "
 "hindi artığı, 50 puan. Koklayınca en yakını saklandığı yerden çalar."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a juicy chew. In the Leftovers pantry at Thanksgiving, a turkey scrap, for "
+"50 points. A sniff plays it from where the nearest one hides."
+msgstr ""
+"sulu bir çiğneme. Şükran Günü'nde Artıklar kilerinde bir hindi artığı, 50 "
+"puan. Koklayınca en yakını saklandığı yerden çalar."
+
+#. the name or the meaning of a longer line
+msgid "Cheese rind"
+msgstr "Peynir kabuğu"
+
 msgid ""
 "Cheese rind: a soft glassy chime. On Bin night, the first Tuesday of every "
 "month, a cheese rind in every pantry, for 100 points. A sniff plays it from "
@@ -56432,6 +58496,15 @@ msgstr ""
 "Peynir kabuğu: yumuşak, cam gibi bir çınlama. Her ayın ilk salısı olan Çöp "
 "gecesinde her kilerde bir peynir kabuğu, 100 puan. Koklayınca saklandığı "
 "yerden çalar."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a soft glassy chime. On Bin night, the first Tuesday of every month, a "
+"cheese rind in every pantry, for 100 points. A sniff plays it from where it "
+"hides."
+msgstr ""
+"yumuşak, cam gibi bir çınlama. Her ayın ilk salısı olan Çöp gecesinde her "
+"kilerde bir peynir kabuğu, 100 puan. Koklayınca saklandığı yerden çalar."
 
 msgid "Return to the Pantry Mouse title."
 msgstr "Pantry Mouse başlangıç ekranına dönün."
@@ -57487,10 +59560,22 @@ msgstr "Sizde {night} var."
 msgid "across the table"
 msgstr "masanın karşısında"
 
+#. the name or the meaning of a longer line
+msgid "Cup rattle"
+msgstr "Zar kabı sesi"
+
 msgid ""
 "Cup rattle: the dealer shakes two dice in a leather cup. A roll is coming."
 msgstr ""
 "Zar kabı sesi: krupiye iki zarı deri bir kapta sallıyor. Bir atış geliyor."
+
+#. the name or the meaning of a longer line
+msgid "the dealer shakes two dice in a leather cup. A roll is coming."
+msgstr "krupiye iki zarı deri bir kapta sallıyor. Bir atış geliyor."
+
+#. the name or the meaning of a longer line
+msgid "Dice landing"
+msgstr "Zarların düşüşü"
 
 msgid ""
 "Dice landing: two dice tumble onto the felt. The dealer calls the faces and "
@@ -57499,12 +59584,33 @@ msgstr ""
 "Zarların düşüşü: iki zar çuhaya yuvarlanır. Krupiye yüzleri ve toplamı "
 "söyler."
 
+#. the name or the meaning of a longer line
+msgid ""
+"two dice tumble onto the felt. The dealer calls the faces and the sum."
+msgstr "iki zar çuhaya yuvarlanır. Krupiye yüzleri ve toplamı söyler."
+
+#. the name or the meaning of a longer line
+msgid "One thud"
+msgstr "Tek güm"
+
 msgid ""
 "One thud: a dull wooden thud. A die shows 1, and the landing is over for "
 "everyone still seated."
 msgstr ""
 "Tek güm: boğuk, tahta bir güm. Bir zarda 1 var ve hâlâ masada olan herkes "
 "için iskele bitti."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a dull wooden thud. A die shows 1, and the landing is over for everyone "
+"still seated."
+msgstr ""
+"boğuk, tahta bir güm. Bir zarda 1 var ve hâlâ masada olan herkes için "
+"iskele bitti."
+
+#. the name or the meaning of a longer line
+msgid "Snag crash"
+msgstr "Çengel çarpması"
 
 msgid ""
 "Snag crash: a crash of glass and wood. A double 1 with the snag rule on "
@@ -57513,6 +59619,18 @@ msgstr ""
 "Çengel çarpması: cam ve tahta şangırtısı. Çengel kuralı açıkken çift 1, "
 "masadaki herkesin gece toplamını siler."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a crash of glass and wood. A double 1 with the snag rule on wipes the night "
+"total of everyone seated."
+msgstr ""
+"cam ve tahta şangırtısı. Çengel kuralı açıkken çift 1, masadaki herkesin "
+"gece toplamını siler."
+
+#. the name or the meaning of a longer line
+msgid "Chair scrape"
+msgstr "Sandalye gıcırtısı"
+
 msgid ""
 "Chair scrape: a player stands and banks. It comes from their seat, left, "
 "across or right."
@@ -57520,25 +59638,76 @@ msgstr ""
 "Sandalye gıcırtısı: bir oyuncu kalkar ve cebe koyar. Ses onun yerinden "
 "gelir: sol, karşı ya da sağ."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a player stands and banks. It comes from their seat, left, across or right."
+msgstr ""
+"bir oyuncu kalkar ve cebe koyar. Ses onun yerinden gelir: sol, karşı ya da "
+"sağ."
+
+#. the name or the meaning of a longer line
+msgid "Coin stack"
+msgstr "Sikke yığını"
+
 msgid "Coin stack: you bank the table's total into your night total."
 msgstr "Sikke yığını: masa toplamını gece toplamınıza koyarsınız."
+
+#. the name or the meaning of a longer line
+msgid "you bank the table's total into your night total."
+msgstr "masa toplamını gece toplamınıza koyarsınız."
+
+#. the name or the meaning of a longer line
+msgid "Table groan"
+msgstr "Masa inlemesi"
 
 msgid "Table groan: the table groans at a 1."
 msgstr "Masa inlemesi: 1 gelince masa inler."
 
+#. the name or the meaning of a longer line
+msgid "the table groans at a 1."
+msgstr "1 gelince masa inler."
+
+#. the name or the meaning of a longer line
+msgid "Table cheer"
+msgstr "Masa tezahüratı"
+
 msgid "Table cheer: you win the night."
 msgstr "Masa tezahüratı: geceyi kazandınız."
 
+#. the name or the meaning of a longer line
+msgid "you win the night."
+msgstr "geceyi kazandınız."
+
 msgid "Dull tap: nothing to do just now."
 msgstr "Boğuk tıkırtı: şu an yapacak bir şey yok."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do just now."
+msgstr "şu an yapacak bir şey yok."
+
+#. the name or the meaning of a longer line
+msgid "Showboat chime"
+msgstr "Showboat çanı"
 
 msgid ""
 "Showboat chime: on Showboat Saturday, doubles double what the table holds."
 msgstr ""
 "Showboat çanı: Showboat Saturday'de çiftler masadakini ikiye katlar."
 
+#. the name or the meaning of a longer line
+msgid "on Showboat Saturday, doubles double what the table holds."
+msgstr "Showboat Saturday'de çiftler masadakini ikiye katlar."
+
+#. the name or the meaning of a longer line
+msgid "Seats"
+msgstr "Yerler"
+
 msgid "Seats: Widow left, Gambler ahead, Captain right"
 msgstr "Yerler: Dul solda, Kumarbaz karşıda, Kaptan sağda"
+
+#. the name or the meaning of a longer line
+msgid "Widow left, Gambler ahead, Captain right"
+msgstr ""
 
 msgid "Where each player sits, by the sound of their chair."
 msgstr "Her oyuncunun oturduğu yer, sandalyesinin sesinden."
@@ -63889,8 +66058,20 @@ msgstr "dakika"
 msgid "several"
 msgstr "birkaç"
 
+#. the name or the meaning of a longer line
+msgid "Dial click"
+msgstr "Kadran tıkı"
+
 msgid "Dial click: the dial moved one number."
 msgstr "Kadran tıkı: kadran bir sayı ilerledi."
+
+#. the name or the meaning of a longer line
+msgid "the dial moved one number."
+msgstr "kadran bir sayı ilerledi."
+
+#. the name or the meaning of a longer line
+msgid "Ten detent"
+msgstr "Onluk çentik"
 
 msgid ""
 "Ten detent: a firmer double click at every tenth number, 10, 20 and so on, "
@@ -63899,13 +66080,41 @@ msgstr ""
 "Onluk çentik: her onuncu sayıda, 10, 20 ve böyle, saymanıza yardım eden "
 "daha sert bir çift tık."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a firmer double click at every tenth number, 10, 20 and so on, to help you "
+"count."
+msgstr ""
+"her onuncu sayıda, 10, 20 ve böyle, saymanıza yardım eden daha sert bir "
+"çift tık."
+
+#. the name or the meaning of a longer line
+msgid "Zero notch"
+msgstr "Sıfır çentiği"
+
 msgid ""
 "Zero notch: a deep notch as the dial reaches zero, the top of the dial."
 msgstr ""
 "Sıfır çentiği: kadran sıfıra, kadranın tepesine varınca derin bir çentik."
 
+#. the name or the meaning of a longer line
+msgid "a deep notch as the dial reaches zero, the top of the dial."
+msgstr "kadran sıfıra, kadranın tepesine varınca derin bir çentik."
+
+#. the name or the meaning of a longer line
+msgid "Spin"
+msgstr "Dönüş"
+
 msgid "Spin: a quick ratchet as the dial spins ten numbers at once."
 msgstr "Dönüş: kadran bir seferde on sayı dönerken hızlı bir cırcır."
+
+#. the name or the meaning of a longer line
+msgid "a quick ratchet as the dial spins ten numbers at once."
+msgstr "kadran bir seferde on sayı dönerken hızlı bir cırcır."
+
+#. the name or the meaning of a longer line
+msgid "Tumbler clunk"
+msgstr "Pim düşmesi"
 
 msgid ""
 "Tumbler clunk: the dial passed or reached this wheel's number. Deep and "
@@ -63916,6 +66125,18 @@ msgstr ""
 "sağlam. Durun, ona geri gidin ve çarkı sabitleyin. Sonraki kasalarda daha "
 "kısıktır."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the dial passed or reached this wheel's number. Deep and solid. Stop, step "
+"back to it, and set the wheel. On later safes it is quieter."
+msgstr ""
+"kadran bu çarkın sayısını geçti ya da ona ulaştı. Derin ve sağlam. Durun, "
+"ona geri gidin ve çarkı sabitleyin. Sonraki kasalarda daha kısıktır."
+
+#. the name or the meaning of a longer line
+msgid "False gate"
+msgstr "Sahte kapı"
+
 msgid ""
 "False gate: a hollow, rattling tick at a wrong number. Ignore it: it is not "
 "the tumbler."
@@ -63923,11 +66144,25 @@ msgstr ""
 "Sahte kapı: yanlış bir sayıda boş, takırdayan bir tık. Duymazdan gelin: o "
 "pim değil."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a hollow, rattling tick at a wrong number. Ignore it: it is not the tumbler."
+msgstr ""
+"yanlış bir sayıda boş, takırdayan bir tık. Duymazdan gelin: o pim değil."
+
+#. the name or the meaning of a longer line
+msgid "Wheel set"
+msgstr "Çark sabitlendi"
+
 msgid ""
 "Wheel set: a latch and a rising chime. The wheel is set, on to the next."
 msgstr ""
 "Çark sabitlendi: bir mandal ve yükselen bir çan. Çark sabitlendi, "
 "sıradakine."
+
+#. the name or the meaning of a longer line
+msgid "a latch and a rising chime. The wheel is set, on to the next."
+msgstr "bir mandal ve yükselen bir çan. Çark sabitlendi, sıradakine."
 
 msgid ""
 "Spring: a wrong set. The wheel springs back and you take a strike. Three "
@@ -63936,8 +66171,28 @@ msgstr ""
 "Yay: yanlış bir sabitleme. Çark geri fırlar ve bir hata alırsınız. Üç "
 "hatada kasa kilitlenir."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a wrong set. The wheel springs back and you take a strike. Three strikes "
+"and the safe jams."
+msgstr ""
+"yanlış bir sabitleme. Çark geri fırlar ve bir hata alırsınız. Üç hatada "
+"kasa kilitlenir."
+
+#. the name or the meaning of a longer line
+msgid "Safe open"
+msgstr "Kasa açık"
+
 msgid "Safe open: the handle turns and the bolts slide back."
 msgstr "Kasa açık: kol döner ve sürgüler geri kayar."
+
+#. the name or the meaning of a longer line
+msgid "the handle turns and the bolts slide back."
+msgstr "kol döner ve sürgüler geri kayar."
+
+#. the name or the meaning of a longer line
+msgid "Onward"
+msgstr "İlerleme"
 
 msgid ""
 "Onward: a heavy door and a bell. In a challenge, this safe is open and the "
@@ -63946,15 +66201,42 @@ msgstr ""
 "İlerleme: ağır bir kapı ve bir zil. Görevde bu kasa açıldı ve sıradaki "
 "bekliyor."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a heavy door and a bell. In a challenge, this safe is open and the next one "
+"is waiting."
+msgstr ""
+"ağır bir kapı ve bir zil. Görevde bu kasa açıldı ve sıradaki bekliyor."
+
+#. the name or the meaning of a longer line
+msgid "Relocker"
+msgstr "Kilitleme düzeneği"
+
 msgid "Relocker: the safe jams and the alarm rings. The safe is lost."
 msgstr ""
 "Kilitleme düzeneği: kasa kilitlenir ve alarm çalar. Kasa kaybedildi."
+
+#. the name or the meaning of a longer line
+msgid "the safe jams and the alarm rings. The safe is lost."
+msgstr "kasa kilitlenir ve alarm çalar. Kasa kaybedildi."
+
+#. the name or the meaning of a longer line
+msgid "Footsteps"
+msgstr "Ayak sesleri"
 
 msgid ""
 "Footsteps: the guard is coming down the corridor. When they stop, keep "
 "still."
 msgstr ""
 "Ayak sesleri: nöbetçi koridordan geliyor. Durduklarında kıpırdamayın."
+
+#. the name or the meaning of a longer line
+msgid "the guard is coming down the corridor. When they stop, keep still."
+msgstr "nöbetçi koridordan geliyor. Durduklarında kıpırdamayın."
+
+#. the name or the meaning of a longer line
+msgid "Guard at the door"
+msgstr "Kapıda nöbetçi"
 
 msgid ""
 "Guard at the door: the footsteps stop and his keys jingle. Keep still: do "
@@ -63963,6 +66245,18 @@ msgstr ""
 "Kapıda nöbetçi: ayak sesleri durur ve anahtarları şıngırdar. Kıpırdamayın: "
 "o uzaklaşana kadar çevirmeyin, sabitlemeyin."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the footsteps stop and his keys jingle. Keep still: do not turn or set "
+"until he walks away."
+msgstr ""
+"ayak sesleri durur ve anahtarları şıngırdar. Kıpırdamayın: o uzaklaşana "
+"kadar çevirmeyin, sabitlemeyin."
+
+#. the name or the meaning of a longer line
+msgid "Who's there"
+msgstr "Kim var orada"
+
 msgid ""
 "Who's there: the guard heard you. One more noise while he listens and you "
 "are caught."
@@ -63970,23 +66264,65 @@ msgstr ""
 "Kim var orada: nöbetçi sizi duydu. O dinlerken bir ses daha çıkarırsanız "
 "yakalanırsınız."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the guard heard you. One more noise while he listens and you are caught."
+msgstr ""
+"nöbetçi sizi duydu. O dinlerken bir ses daha çıkarırsanız yakalanırsınız."
+
+#. the name or the meaning of a longer line
+msgid "Whistle"
+msgstr "Düdük"
+
 msgid "Whistle: the guard caught you. The safe is lost."
 msgstr "Düdük: nöbetçi sizi yakaladı. Kasa kaybedildi."
+
+#. the name or the meaning of a longer line
+msgid "the guard caught you. The safe is lost."
+msgstr "nöbetçi sizi yakaladı. Kasa kaybedildi."
 
 msgid "Clock tick: time attack is running low."
 msgstr "Saat tik takı: zamana karşıda süre azalıyor."
 
+#. the name or the meaning of a longer line
+msgid "time attack is running low."
+msgstr "zamana karşıda süre azalıyor."
+
 msgid "Dull tap: nothing to do, or no hints left."
 msgstr "Boğuk tık: yapılacak bir şey yok ya da ipucu kalmadı."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do, or no hints left."
+msgstr "yapılacak bir şey yok ya da ipucu kalmadı."
+
+#. the name or the meaning of a longer line
+msgid "Knocking pipe"
+msgstr "Takırdayan boru"
 
 msgid "Knocking pipe: a building noise, off to one side. Not the safe."
 msgstr "Takırdayan boru: bir yandan gelen bina sesi. Kasa değil."
 
+#. the name or the meaning of a longer line
+msgid "a building noise, off to one side. Not the safe."
+msgstr "bir yandan gelen bina sesi. Kasa değil."
+
+#. the name or the meaning of a longer line
+msgid "Creaking floor"
+msgstr "Gıcırdayan döşeme"
+
 msgid "Creaking floor: a building noise, off to one side. Not the safe."
 msgstr "Gıcırdayan döşeme: bir yandan gelen bina sesi. Kasa değil."
 
+#. the name or the meaning of a longer line
+msgid "Distant clock"
+msgstr "Uzak saat"
+
 msgid "Distant clock: a building noise, off to one side. Not the safe."
 msgstr "Uzak saat: bir yandan gelen bina sesi. Kasa değil."
+
+#. the name or the meaning of a longer line
+msgid "Cat yowl"
+msgstr "Kedi miyavlaması"
 
 msgid ""
 "Cat yowl: a soft, short yowl just after a clunk. On Friday the 13th, the "
@@ -63994,6 +66330,14 @@ msgid ""
 msgstr ""
 "Kedi miyavlaması: pim düşmesinden hemen sonra yumuşak, kısa bir miyavlama. "
 "13'ü cuma günü uğursuz kasanın kedisi: bu çarkın sayısı 13."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a soft, short yowl just after a clunk. On Friday the 13th, the unlucky "
+"safe's cat: this wheel's number is 13."
+msgstr ""
+"pim düşmesinden hemen sonra yumuşak, kısa bir miyavlama. 13'ü cuma günü "
+"uğursuz kasanın kedisi: bu çarkın sayısı 13."
 
 msgid "Click and clunk"
 msgstr "Tık ve pim düşmesi"
@@ -65163,17 +67507,39 @@ msgstr "İlk trende raydan çıktı."
 msgid "Derailed after {trains_words}."
 msgstr "Raydan çıktı, geçen: {trains_words}."
 
+#. the name or the meaning of a longer line
+msgid "Tick"
+msgstr "Tik"
+
 msgid ""
 "Tick: a dry, quiet tap that keeps the tempo. It quickens as the window "
 "shrinks."
 msgstr ""
 "Tik: tempoyu tutan kuru, sessiz bir vuruş. Süre kısaldıkça hızlanır."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a dry, quiet tap that keeps the tempo. It quickens as the window shrinks."
+msgstr "tempoyu tutan kuru, sessiz bir vuruş. Süre kısaldıkça hızlanır."
+
+#. the name or the meaning of a longer line
+msgid "Train passing"
+msgstr "Tren geçişi"
+
 msgid ""
 "Train passing: a rush from left to right. Your answer was right and the "
 "train is through."
 msgstr ""
 "Tren geçişi: soldan sağa bir uğultu. Cevabınız doğruydu ve tren geçti."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a rush from left to right. Your answer was right and the train is through."
+msgstr "soldan sağa bir uğultu. Cevabınız doğruydu ve tren geçti."
+
+#. the name or the meaning of a longer line
+msgid "Steam special"
+msgstr "Buharlı özel tren"
 
 msgid ""
 "Steam special: steam chuffs and a two-note whistle as the train rushes by. "
@@ -65182,12 +67548,36 @@ msgstr ""
 "Buharlı özel tren: tren hızla geçerken buhar puflamaları ve iki notalı bir "
 "düdük. Buhar şenliğinde her beşinci tren özel trendir, 3 puan değerindedir."
 
+#. the name or the meaning of a longer line
+msgid ""
+"steam chuffs and a two-note whistle as the train rushes by. At the steam "
+"gala, every fifth train is the special, worth 3 points."
+msgstr ""
+"tren hızla geçerken buhar puflamaları ve iki notalı bir düdük. Buhar "
+"şenliğinde her beşinci tren özel trendir, 3 puan değerindedir."
+
+#. the name or the meaning of a longer line
+msgid "Ghost train"
+msgstr "Hayalet tren"
+
 msgid ""
 "Ghost train: the rush with a long, falling, ghostly whistle. On Friday the "
 "13th, the thirteenth train of the night shift went through."
 msgstr ""
 "Hayalet tren: uzun, alçalan, hayaletimsi bir düdükle uğultu. 13'ü cuma günü "
 "gece vardiyasının on üçüncü treni geçti."
+
+#. the name or the meaning of a longer line
+msgid ""
+"the rush with a long, falling, ghostly whistle. On Friday the 13th, the "
+"thirteenth train of the night shift went through."
+msgstr ""
+"uzun, alçalan, hayaletimsi bir düdükle uğultu. 13'ü cuma günü gece "
+"vardiyasının on üçüncü treni geçti."
+
+#. the name or the meaning of a longer line
+msgid "Streak chime"
+msgstr "Seri çanı"
 
 msgid ""
 "Streak chime: a bright rising run. Another 10 trains in a row, for a bonus "
@@ -65196,12 +67586,29 @@ msgstr ""
 "Seri çanı: parlak, yükselen bir dizi. Art arda 10 tren daha, 5 puanlık "
 "bonus."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a bright rising run. Another 10 trains in a row, for a bonus of 5 points."
+msgstr "parlak, yükselen bir dizi. Art arda 10 tren daha, 5 puanlık bonus."
+
+#. the name or the meaning of a longer line
+msgid "Brake screech"
+msgstr "Fren çığlığı"
+
 msgid ""
 "Brake screech: a long squeal and a crash. A wrong or late answer derailed "
 "the train, and the shift is over."
 msgstr ""
 "Fren çığlığı: uzun bir ciyaklama ve bir çarpışma. Yanlış ya da geç bir "
 "cevap treni raydan çıkardı ve vardiya bitti."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a long squeal and a crash. A wrong or late answer derailed the train, and "
+"the shift is over."
+msgstr ""
+"uzun bir ciyaklama ve bir çarpışma. Yanlış ya da geç bir cevap treni raydan "
+"çıkardı ve vardiya bitti."
 
 #. placeholders: {word}, {sound_words}
 msgid "The {word} call: {sound_words}."
@@ -67772,28 +70179,77 @@ msgstr "Hikâyeleri anlatıldı."
 msgid "Part {told} of {story}."
 msgstr "Bölüm {told}, toplam {story}."
 
+#. the name or the meaning of a longer line
+msgid "Door bell"
+msgstr "Kapı zili"
+
 msgid "Door bell: a small brass bell. A guest comes in."
 msgstr "Kapı zili: küçük pirinç bir zil. Bir misafir geliyor."
 
+#. the name or the meaning of a longer line
+msgid "a small brass bell. A guest comes in."
+msgstr "küçük pirinç bir zil. Bir misafir geliyor."
+
 msgid "Footsteps: soft steps on the wooden floor, coming to the counter."
 msgstr "Ayak sesleri: ahşap zeminde tezgâha gelen yumuşak adımlar."
+
+#. the name or the meaning of a longer line
+msgid "soft steps on the wooden floor, coming to the counter."
+msgstr "ahşap zeminde tezgâha gelen yumuşak adımlar."
+
+#. the name or the meaning of a longer line
+msgid "Shelf tick"
+msgstr "Raf tıkı"
 
 msgid ""
 "Shelf tick: a soft wooden tick as you move along the shelf or the cups."
 msgstr ""
 "Raf tıkı: rafta ya da fincanlarda gezinirken yumuşak bir tahta tıkırtısı."
 
+#. the name or the meaning of a longer line
+msgid "a soft wooden tick as you move along the shelf or the cups."
+msgstr "rafta ya da fincanlarda gezinirken yumuşak bir tahta tıkırtısı."
+
+#. the name or the meaning of a longer line
+msgid "Tin lid"
+msgstr "Teneke kapak"
+
 msgid "Tin lid: a tea tin opens. Your tea goes in the pot."
 msgstr "Teneke kapak: bir çay tenekesi açılır. Çayınız demliğe girer."
 
+#. the name or the meaning of a longer line
+msgid "a tea tin opens. Your tea goes in the pot."
+msgstr "bir çay tenekesi açılır. Çayınız demliğe girer."
+
+#. the name or the meaning of a longer line
+msgid "Kettle switch"
+msgstr "Çaydanlık düğmesi"
+
 msgid "Kettle switch: a click. The kettle is on."
 msgstr "Çaydanlık düğmesi: bir tık. Çaydanlık açık."
+
+#. the name or the meaning of a longer line
+msgid "a click. The kettle is on."
+msgstr "bir tık. Çaydanlık açık."
+
+#. the name or the meaning of a longer line
+msgid "Rumble"
+msgstr "Gürleme"
 
 msgid ""
 "Rumble: the kettle's low song as it starts to warm, up to about 65 degrees."
 msgstr ""
 "Gürleme: çaydanlığın ısınmaya başlarken, yaklaşık 65 dereceye kadar çıkan "
 "pes sesi."
+
+#. the name or the meaning of a longer line
+msgid "the kettle's low song as it starts to warm, up to about 65 degrees."
+msgstr ""
+"çaydanlığın ısınmaya başlarken, yaklaşık 65 dereceye kadar çıkan pes sesi."
+
+#. the name or the meaning of a longer line
+msgid "Hiss"
+msgstr "Tıslama"
 
 msgid ""
 "Hiss: the kettle's rushing song from about 80 degrees, rising toward the "
@@ -67802,14 +70258,40 @@ msgstr ""
 "Tıslama: çaydanlığın yaklaşık 80 dereceden kaynamaya doğru yükselen "
 "hışırtılı sesi."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the kettle's rushing song from about 80 degrees, rising toward the boil."
+msgstr ""
+"çaydanlığın yaklaşık 80 dereceden kaynamaya doğru yükselen hışırtılı sesi."
+
 msgid "Whistle: a gentle whistle. The kettle is at the boil, 100 degrees."
 msgstr "Islık: hafif bir ıslık. Çaydanlık kaynıyor, 100 derece."
+
+#. the name or the meaning of a longer line
+msgid "a gentle whistle. The kettle is at the boil, 100 degrees."
+msgstr "hafif bir ıslık. Çaydanlık kaynıyor, 100 derece."
+
+#. the name or the meaning of a longer line
+msgid "Pour"
+msgstr "Dökme"
 
 msgid "Pour: water from the kettle onto the leaves. The steep begins."
 msgstr "Dökme: çaydanlıktan yaprakların üstüne su. Demleme başlar."
 
+#. the name or the meaning of a longer line
+msgid "water from the kettle onto the leaves. The steep begins."
+msgstr "çaydanlıktan yaprakların üstüne su. Demleme başlar."
+
 msgid "Clock tick: one second of steeping."
 msgstr "Saat tıkı: demlemenin bir saniyesi."
+
+#. the name or the meaning of a longer line
+msgid "one second of steeping."
+msgstr "demlemenin bir saniyesi."
+
+#. the name or the meaning of a longer line
+msgid "Sand timer chime"
+msgstr "Kum saati çanı"
 
 msgid ""
 "Sand timer chime: the steep has reached what the tea wants. Only once you "
@@ -67818,26 +70300,91 @@ msgstr ""
 "Kum saati çanı: demleme çayın istediğine ulaştı. Yalnızca kum saatiniz "
 "varsa."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the steep has reached what the tea wants. Only once you own the sand timer."
+msgstr "demleme çayın istediğine ulaştı. Yalnızca kum saatiniz varsa."
+
+#. the name or the meaning of a longer line
+msgid "Leaves lifted"
+msgstr "Yapraklar çıktı"
+
 msgid "Leaves lifted: a drip and a swish. The steep is over."
 msgstr "Yapraklar çıktı: bir damla ve bir hışırtı. Demleme bitti."
+
+#. the name or the meaning of a longer line
+msgid "a drip and a swish. The steep is over."
+msgstr "bir damla ve bir hışırtı. Demleme bitti."
+
+#. the name or the meaning of a longer line
+msgid "Cup filled"
+msgstr "Fincan doldu"
 
 msgid "Cup filled: tea poured from the pot into one cup."
 msgstr "Fincan doldu: demlikten bir fincana dökülen çay."
 
+#. the name or the meaning of a longer line
+msgid "tea poured from the pot into one cup."
+msgstr "demlikten bir fincana dökülen çay."
+
+#. the name or the meaning of a longer line
+msgid "Ice"
+msgstr "Buz"
+
 msgid "Ice: cubes clink in the glass, for an iced tea."
 msgstr "Buz: buzlu çay için bardakta şıngırdayan küpler."
+
+#. the name or the meaning of a longer line
+msgid "cubes clink in the glass, for an iced tea."
+msgstr "buzlu çay için bardakta şıngırdayan küpler."
+
+#. the name or the meaning of a longer line
+msgid "Perfect cup"
+msgstr "Kusursuz fincan"
 
 msgid "Perfect cup: three warm rising notes."
 msgstr "Kusursuz fincan: yükselen üç sıcak nota."
 
+#. the name or the meaning of a longer line
+msgid "three warm rising notes."
+msgstr "yükselen üç sıcak nota."
+
+#. the name or the meaning of a longer line
+msgid "Lovely cup"
+msgstr "Çok güzel fincan"
+
 msgid "Lovely cup: two warm notes."
 msgstr "Çok güzel fincan: iki sıcak nota."
+
+#. the name or the meaning of a longer line
+msgid "two warm notes."
+msgstr "iki sıcak nota."
+
+#. the name or the meaning of a longer line
+msgid "Kind cup"
+msgstr "Nazik fincan"
 
 msgid "Kind cup: one soft note. The guest is still pleased."
 msgstr "Nazik fincan: tek yumuşak nota. Misafir yine de memnun."
 
+#. the name or the meaning of a longer line
+msgid "one soft note. The guest is still pleased."
+msgstr "tek yumuşak nota. Misafir yine de memnun."
+
+#. the name or the meaning of a longer line
+msgid "Coins"
+msgstr "Sikkeler"
+
 msgid "Coins: coins on the counter, for the cup and any tip."
 msgstr "Sikkeler: fincan ve bahşiş için tezgâha konan sikkeler."
+
+#. the name or the meaning of a longer line
+msgid "coins on the counter, for the cup and any tip."
+msgstr "fincan ve bahşiş için tezgâha konan sikkeler."
+
+#. the name or the meaning of a longer line
+msgid "Soft thud"
+msgstr "Boğuk tık"
 
 msgid "Soft thud: nothing to do just now."
 msgstr "Boğuk tık: şu an yapılacak bir şey yok."
@@ -70551,6 +73098,10 @@ msgstr ""
 "Arkanızda pes, alçalan bir nota: kaçırdığınız bir fener. Zinciriniz baştan "
 "başlar."
 
+#. the name or the meaning of a longer line
+msgid "A flat clink"
+msgstr "Yavan bir şıngırtı"
+
 msgid ""
 "A flat clink: on the lantern skate, the second lit of a pair. Your line "
 "starts again."
@@ -70560,6 +73111,11 @@ msgstr ""
 
 msgid "The wrong lantern"
 msgstr "Yanlış fener"
+
+#. the name or the meaning of a longer line
+msgid ""
+"on the lantern skate, the second lit of a pair. Your line starts again."
+msgstr "fener pateninde bir çiftin ikinci yananı. Zinciriniz baştan başlar."
 
 msgid "A drift ahead"
 msgstr "Önde bir kar yığını"
@@ -70622,6 +73178,10 @@ msgstr ""
 msgid "A spin landed"
 msgstr "Piruet indirildi"
 
+#. the name or the meaning of a longer line
+msgid "A scuffing stagger"
+msgstr "Sürtünerek bir sendeleme"
+
 msgid ""
 "A scuffing stagger: the spin was held too long. It scores nothing, and your "
 "line starts again."
@@ -70631,6 +73191,11 @@ msgstr ""
 
 msgid "A wobble"
 msgstr "Sallanma"
+
+#. the name or the meaning of a longer line
+msgid ""
+"the spin was held too long. It scores nothing, and your line starts again."
+msgstr "piruet çok uzun tutuldu. Puan getirmez ve zinciriniz baştan başlar."
 
 msgid "A night on the ice"
 msgstr "Buzda bir gece"
@@ -72208,14 +74773,41 @@ msgstr ""
 "Motor: motor tuşunu basılı tuttuğunuz sürece pes bir gürleme. Düşüşünüzü "
 "yavaşlatır ve yakıt yakar."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low roar while you hold the engine key. It slows your fall and burns fuel."
+msgstr ""
+"motor tuşunu basılı tuttuğunuz sürece pes bir gürleme. Düşüşünüzü "
+"yavaşlatır ve yakıt yakar."
+
+#. the name or the meaning of a longer line
+msgid "Pad beacon"
+msgstr "Pist işareti"
+
 msgid ""
 "Pad beacon: a soft ping from the pad below you. It quickens as you get "
 "closer."
 msgstr ""
 "Pist işareti: aşağıdaki pistten yumuşak bir ping. Yaklaştıkça hızlanır."
 
+#. the name or the meaning of a longer line
+msgid "a soft ping from the pad below you. It quickens as you get closer."
+msgstr "aşağıdaki pistten yumuşak bir ping. Yaklaştıkça hızlanır."
+
+#. the name or the meaning of a longer line
+msgid "Radio click"
+msgstr "Telsiz tıkı"
+
 msgid "Radio click: mission control is about to give a call-out."
 msgstr "Telsiz tıkı: görev kontrol bir bildirim yapmak üzere."
+
+#. the name or the meaning of a longer line
+msgid "mission control is about to give a call-out."
+msgstr "görev kontrol bir bildirim yapmak üzere."
+
+#. the name or the meaning of a longer line
+msgid "Quindar tone"
+msgstr "Quindar sesi"
 
 msgid ""
 "Quindar tone: a short high beep on the Tranquility pad. It stands for the "
@@ -72224,6 +74816,18 @@ msgstr ""
 "Quindar sesi: Tranquility pistinde kısa, tiz bir bip. Telsiz tıkının yerine "
 "geçer: ardından bir bildirim gelir."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short high beep on the Tranquility pad. It stands for the radio click: a "
+"call-out follows."
+msgstr ""
+"Tranquility pistinde kısa, tiz bir bip. Telsiz tıkının yerine geçer: "
+"ardından bir bildirim gelir."
+
+#. the name or the meaning of a longer line
+msgid "Fuel alarm"
+msgstr "Yakıt alarmı"
+
 msgid ""
 "Fuel alarm: two soft beeps. Fuel is down to 25 percent, then again at 10 "
 "percent."
@@ -72231,11 +74835,28 @@ msgstr ""
 "Yakıt alarmı: iki yumuşak bip. Yakıt yüzde 25'e, sonra yeniden yüzde 10'a "
 "indi."
 
+#. the name or the meaning of a longer line
+msgid ""
+"two soft beeps. Fuel is down to 25 percent, then again at 10 percent."
+msgstr "iki yumuşak bip. Yakıt yüzde 25'e, sonra yeniden yüzde 10'a indi."
+
+#. the name or the meaning of a longer line
+msgid "Touchdown"
+msgstr "Konuş"
+
 msgid "Touchdown: a thud and a creak of the legs. You landed safely."
 msgstr "Konuş: bir gümleme ve bacakların gıcırtısı. Güvenle indiniz."
 
+#. the name or the meaning of a longer line
+msgid "a thud and a creak of the legs. You landed safely."
+msgstr "bir gümleme ve bacakların gıcırtısı. Güvenle indiniz."
+
 msgid "Crash: a heavy crunch. You touched down faster than the safe speed."
 msgstr "Düşüş: ağır bir ezilme sesi. Güvenli hızdan hızlı kondunuz."
+
+#. the name or the meaning of a longer line
+msgid "a heavy crunch. You touched down faster than the safe speed."
+msgstr "ağır bir ezilme sesi. Güvenli hızdan hızlı kondunuz."
 
 msgid "Descent tone, safe"
 msgstr "İniş sesi, güvenli"
@@ -72245,6 +74866,10 @@ msgid ""
 "safe speed."
 msgstr ""
 "İniş sesi, güvenli: pes, sabit bir ton. Güvenli hızdan yavaş düşüyorsunuz."
+
+#. the name or the meaning of a longer line
+msgid "a low, steady tone. You are falling slower than the safe speed."
+msgstr "pes, sabit bir ton. Güvenli hızdan yavaş düşüyorsunuz."
 
 msgid "Descent tone, too fast"
 msgstr "İniş sesi, çok hızlı"
@@ -72256,6 +74881,14 @@ msgid ""
 msgstr ""
 "İniş sesi, çok hızlı: aynı ton, daha tiz. Ne kadar hızlı düşerseniz o kadar "
 "tizleşir. Güvenli hızı aşınca Çok hızlı, geri dönünce Güvenli hız duyulur."
+
+#. the name or the meaning of a longer line
+msgid ""
+"the same tone, higher. The faster you fall, the higher it goes. You hear "
+"Too fast as it crosses the safe speed, and Safe speed as it comes back."
+msgstr ""
+"aynı ton, daha tiz. Ne kadar hızlı düşerseniz o kadar tizleşir. Güvenli "
+"hızı aşınca Çok hızlı, geri dönünce Güvenli hız duyulur."
 
 msgid "prompts"
 msgstr ""
@@ -77394,12 +80027,23 @@ msgstr "Her takımyıldız çizildi"
 msgid "Shimmer"
 msgstr "Pırıltı"
 
+#. the name or the meaning of a longer line
+msgid "Something hidden is near"
+msgstr "Yakında gizli bir şey var"
+
 msgid ""
 "Something hidden is near: a wonder such as a nebula or a cluster. Rest on "
 "it and press the main action."
 msgstr ""
 "Yakında gizli bir şey var: bulutsu ya da küme gibi bir harika. Üstünde "
 "durun ve ana eylem tuşuna basın."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a wonder such as a nebula or a cluster. Rest on it and press the main "
+"action."
+msgstr ""
+"bulutsu ya da küme gibi bir harika. Üstünde durun ve ana eylem tuşuna basın."
 
 msgid "A wonder is found and written in your journal."
 msgstr "Bir harika bulundu ve günlüğünüze yazıldı."
@@ -78254,6 +80898,10 @@ msgstr "F diyez"
 msgid "G sharp"
 msgstr "G diyez"
 
+#. the name or the meaning of a longer line
+msgid "Pipe"
+msgstr "Boru"
+
 msgid ""
 "Pipe: a steady, soft organ tone. While you tune, two of these play "
 "together, the pipe and its true note. Out of tune, they wobble; in tune, "
@@ -78263,6 +80911,20 @@ msgstr ""
 "çalar: boru ve gerçek notası. Akortsuzken dalgalanırlar; akortluyken "
 "dalgalanma durur."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a steady, soft organ tone. While you tune, two of these play together, the "
+"pipe and its true note. Out of tune, they wobble; in tune, the wobble goes "
+"still."
+msgstr ""
+"sabit, yumuşak bir org tonu. Akort ederken bunlardan ikisi birlikte çalar: "
+"boru ve gerçek notası. Akortsuzken dalgalanırlar; akortluyken dalgalanma "
+"durur."
+
+#. the name or the meaning of a longer line
+msgid "Echo note"
+msgstr "Echo notası"
+
 msgid ""
 "Echo note: one short organ note. The Echo plays these back as a tune once a "
 "rank is tuned."
@@ -78270,21 +80932,58 @@ msgstr ""
 "Echo notası: kısa bir org notası. Bir sıra akort edilince The Echo bunları "
 "bir ezgi olarak geri çalar."
 
+#. the name or the meaning of a longer line
+msgid ""
+"one short organ note. The Echo plays these back as a tune once a rank is "
+"tuned."
+msgstr ""
+"kısa bir org notası. Bir sıra akort edilince The Echo bunları bir ezgi "
+"olarak geri çalar."
+
+#. the name or the meaning of a longer line
+msgid "Slide"
+msgstr "Kayma"
+
 msgid "Slide: a tiny brass tick. The pipe moved up or down a step."
 msgstr ""
 "Kayma: minicik bir pirinç tıkırtısı. Boru bir adım yukarı ya da aşağı gitti."
 
+#. the name or the meaning of a longer line
+msgid "a tiny brass tick. The pipe moved up or down a step."
+msgstr ""
+"minicik bir pirinç tıkırtısı. Boru bir adım yukarı ya da aşağı gitti."
+
+#. the name or the meaning of a longer line
+msgid "In tune"
+msgstr "Akortlu"
+
 msgid "In tune: a clear bell. You set the pipe, and it holds its note."
 msgstr "Akortlu: berrak bir çan. Boruyu sabitlediniz ve notasını tutuyor."
+
+#. the name or the meaning of a longer line
+msgid "a clear bell. You set the pipe, and it holds its note."
+msgstr "berrak bir çan. Boruyu sabitlediniz ve notasını tutuyor."
 
 msgid "Hint: a soft felt knock. H told you which way the pipe is out."
 msgstr ""
 "İpucu: yumuşak bir keçe vuruşu. H borunun hangi yöne saptığını söyledi."
 
+#. the name or the meaning of a longer line
+msgid "a soft felt knock. H told you which way the pipe is out."
+msgstr "yumuşak bir keçe vuruşu. H borunun hangi yöne saptığını söyledi."
+
 msgid "Not yet: a dull thud. The pipe still wobbles, so it did not set."
 msgstr ""
 "Henüz değil: boğuk bir gümleme. Boru hâlâ dalgalanıyor, bu yüzden "
 "sabitlenmedi."
+
+#. the name or the meaning of a longer line
+msgid "a dull thud. The pipe still wobbles, so it did not set."
+msgstr "boğuk bir gümleme. Boru hâlâ dalgalanıyor, bu yüzden sabitlenmedi."
+
+#. the name or the meaning of a longer line
+msgid "Rank tuned"
+msgstr "Sıra akort edildi"
 
 msgid ""
 "Rank tuned: rising tubular bells over an organ chord. Every pipe in the "
@@ -78292,6 +80991,12 @@ msgid ""
 msgstr ""
 "Sıra akort edildi: bir org akorunun üstünde yükselen boru çanlar. Sıradaki "
 "her boru akortlu."
+
+#. the name or the meaning of a longer line
+msgid ""
+"rising tubular bells over an organ chord. Every pipe in the rank is in tune."
+msgstr ""
+"bir org akorunun üstünde yükselen boru çanlar. Sıradaki her boru akortlu."
 
 msgid "Return to the title of The Echo."
 msgstr "The Echo başlangıç ekranına döner."
@@ -80570,12 +83275,21 @@ msgstr "Saklanma"
 msgid "Creeping out"
 msgstr "Dışarı süzülme"
 
+#. the name or the meaning of a longer line
+msgid "Two soft rising notes"
+msgstr "Yükselen iki yumuşak nota"
+
 msgid ""
 "Two soft rising notes: something shy has come back out. Listen for its "
 "sound, then reach in."
 msgstr ""
 "Yükselen iki yumuşak nota: ürkek bir şey yeniden dışarı çıktı. Sesini "
 "bekleyin, sonra uzanın."
+
+#. the name or the meaning of a longer line
+msgid ""
+"something shy has come back out. Listen for its sound, then reach in."
+msgstr "ürkek bir şey yeniden dışarı çıktı. Sesini bekleyin, sonra uzanın."
 
 msgid ""
 "A scoop of water and a rising chime: you gathered a creature for your "
@@ -80626,6 +83340,10 @@ msgstr "Kuma düşen yumuşak bir gümbürtü: o yönde başka havuz yok."
 msgid "End of the rocks"
 msgstr "Kayaların sonu"
 
+#. the name or the meaning of a longer line
+msgid "One distant bell buoy"
+msgstr "Uzakta tek bir şamandıra çanı"
+
 msgid ""
 "One distant bell buoy: half the trip is gone and the sea starts back."
 msgstr ""
@@ -80635,11 +83353,23 @@ msgstr ""
 msgid "The tide turns"
 msgstr "Gelgit dönüyor"
 
+#. the name or the meaning of a longer line
+msgid "half the trip is gone and the sea starts back."
+msgstr "gezinin yarısı geçti, deniz geri dönmeye başlıyor."
+
+#. the name or the meaning of a longer line
+msgid "The bell buoy twice"
+msgstr "Şamandıra çanı iki kez"
+
 msgid "The bell buoy twice: the tide will soon cover the pools."
 msgstr "Şamandıra çanı iki kez: gelgit yakında havuzları örtecek."
 
 msgid "The tide is near"
 msgstr "Gelgit yakın"
+
+#. the name or the meaning of a longer line
+msgid "the tide will soon cover the pools."
+msgstr "gelgit yakında havuzları örtecek."
 
 msgid "A big wave washing over the rocks: the trip is over."
 msgstr "Kayaların üstünden geçen büyük bir dalga: gezi bitti."
@@ -80650,14 +83380,30 @@ msgstr "Gelgit geliyor"
 msgid "A rare find"
 msgstr "Nadir bir bulgu"
 
+#. the name or the meaning of a longer line
+msgid "A shimmer"
+msgstr "Bir parıltı"
+
 msgid "A shimmer: what you gathered is rare."
 msgstr "Bir parıltı: topladığınız şey nadir."
+
+#. the name or the meaning of a longer line
+msgid "what you gathered is rare."
+msgstr "topladığınız şey nadir."
+
+#. the name or the meaning of a longer line
+msgid "A little rising arpeggio"
+msgstr "Yükselen küçük bir arpej"
 
 msgid "A little rising arpeggio: a kind you have never gathered before."
 msgstr "Yükselen küçük bir arpej: daha önce hiç toplamadığınız bir tür."
 
 msgid "New for the aquarium"
 msgstr "Akvaryum için yeni"
+
+#. the name or the meaning of a longer line
+msgid "a kind you have never gathered before."
+msgstr "daha önce hiç toplamadığınız bir tür."
 
 msgid ""
 "The sea, ahead of you beyond the pools. It grows louder and nearer as the "
@@ -80909,9 +83655,6 @@ msgstr ""
 
 msgid "The game says when you are halfway, 3 steps out and 1 step out."
 msgstr "Oyun yarı yolda, 3 adım kala ve 1 adım kala söyler."
-
-msgid "Wind"
-msgstr "Rüzgâr"
 
 msgid ""
 "Each gust is announced with its direction at least 2 seconds before it "
@@ -86043,6 +88786,10 @@ msgid "Up and Down move between sounds, Enter plays one, Escape goes back."
 msgstr ""
 "Up ve Down sesler arasında gezer, Enter birini çalar, Escape geri döner."
 
+#. the name or the meaning of a longer line
+msgid "Wish Desk"
+msgstr "Dilek Masası"
+
 #. placeholders: {next}
 msgid "Wish Desk: {next}"
 msgstr "Dilek Masası: {next}"
@@ -86064,12 +88811,24 @@ msgstr "Şu dilekler gibi: {join}."
 msgid "Gift lands on the belt: a soft thump and a rustle of paper."
 msgstr "Hediye banda düşüyor: yumuşak bir gümbürtü ve kâğıt hışırtısı."
 
+#. the name or the meaning of a longer line
+msgid "Right recipient"
+msgstr "Doğru alıcı"
+
 msgid ""
 "Right recipient: rising bells from their side. This one is on your left."
 msgstr "Doğru alıcı: onun yanından yükselen çanlar. Bu solunuzda."
 
+#. the name or the meaning of a longer line
+msgid "rising bells from their side. This one is on your left."
+msgstr "onun yanından yükselen çanlar. Bu solunuzda."
+
 msgid "A gift sliding to a recipient. This one goes right."
 msgstr "Bir alıcıya kayan bir hediye. Bu sağa gidiyor."
+
+#. the name or the meaning of a longer line
+msgid "Wrong guess"
+msgstr "Yanlış tahmin"
 
 msgid ""
 "Wrong guess: a low buzz from that side. It costs clock time. This one is "
@@ -86078,23 +88837,60 @@ msgstr ""
 "Yanlış tahmin: o yandan alçak bir vızıltı. Saatten süre götürür. Bu tam "
 "önde."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low buzz from that side. It costs clock time. This one is straight ahead."
+msgstr "o yandan alçak bir vızıltı. Saatten süre götürür. Bu tam önde."
+
 msgid "Into the return sack, behind you."
 msgstr "Arkanızdaki iade çuvalına."
+
+#. the name or the meaning of a longer line
+msgid "Near the edge"
+msgstr "Kenara yakın"
 
 msgid "Near the edge: quick beeping. Send the gift fast."
 msgstr "Kenara yakın: hızlı bipler. Hediyeyi çabuk gönderin."
 
+#. the name or the meaning of a longer line
+msgid "quick beeping. Send the gift fast."
+msgstr "hızlı bipler. Hediyeyi çabuk gönderin."
+
 msgid "A gift falls off the belt and breaks."
 msgstr "Bir hediye banttan düşüp kırılıyor."
+
+#. the name or the meaning of a longer line
+msgid "Clock running low"
+msgstr "Saat azalıyor"
 
 msgid "Clock running low: a tick each second near the end."
 msgstr "Saat azalıyor: sona doğru her saniye bir tik."
 
+#. the name or the meaning of a longer line
+msgid "a tick each second near the end."
+msgstr "sona doğru her saniye bir tik."
+
+#. the name or the meaning of a longer line
+msgid "Change of plans"
+msgstr "Plan değişikliği"
+
 msgid "Change of plans: a doorbell, when someone changes their wish."
 msgstr "Plan değişikliği: biri dileğini değiştirince bir kapı zili."
 
+#. the name or the meaning of a longer line
+msgid "a doorbell, when someone changes their wish."
+msgstr "biri dileğini değiştirince bir kapı zili."
+
+#. the name or the meaning of a longer line
+msgid "Nothing there"
+msgstr "Orada bir şey yok"
+
 msgid "Nothing there: a dull knock."
 msgstr "Orada bir şey yok: boğuk bir vuruş."
+
+#. the name or the meaning of a longer line
+msgid "a dull knock."
+msgstr "boğuk bir vuruş."
 
 msgid "Shift complete."
 msgstr "Vardiya tamamlandı."
@@ -86106,16 +88902,34 @@ msgstr ""
 "Dilek Masası: rafta bir adım, kutunun olduğu yerden duyulur. Bu rafın sol "
 "ucunda."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a step along the shelf, heard where the box sits. This one is at the left "
+"end."
+msgstr "rafta bir adım, kutunun olduğu yerden duyulur. Bu rafın sol ucunda."
+
 msgid "Wish Desk: the end of the shelf."
 msgstr "Dilek Masası: rafın sonu."
 
+#. the name or the meaning of a longer line
+msgid "the end of the shelf."
+msgstr "rafın sonu."
+
 msgid "Wish Desk: an empty place, where a gift was wrapped."
 msgstr "Dilek Masası: bir hediyenin paketlendiği boş bir yer."
+
+#. the name or the meaning of a longer line
+msgid "an empty place, where a gift was wrapped."
+msgstr "bir hediyenin paketlendiği boş bir yer."
 
 msgid "Wish Desk: a shake of only straw. Shake again to hear the gift."
 msgstr ""
 "Dilek Masası: yalnızca samanın sallanışı. Hediyeyi duymak için yeniden "
 "sallayın."
+
+#. the name or the meaning of a longer line
+msgid "a shake of only straw. Shake again to hear the gift."
+msgstr "yalnızca samanın sallanışı. Hediyeyi duymak için yeniden sallayın."
 
 #. one sentence of a longer line
 msgid "Let go now and nothing is wrapped."
@@ -86134,8 +88948,24 @@ msgstr ""
 "Dilek Masası: {n} basılıyken paket kâğıdı. Şimdi bırakırsanız hiçbir şey "
 "paketlenmez."
 
+#. placeholders: {n}
+#. the name or the meaning of a longer line
+msgid "wrapping paper, while you hold {n}."
+msgstr "{n} basılıyken paket kâğıdı."
+
+#. placeholders: {n}
+#. the name or the meaning of a longer line
+msgid ""
+"wrapping paper, while you hold {n}. Let go now and nothing is wrapped."
+msgstr ""
+"{n} basılıyken paket kâğıdı. Şimdi bırakırsanız hiçbir şey paketlenmez."
+
 msgid "Wish Desk: the wrong box, unwrapped and put back."
 msgstr "Dilek Masası: yanlış kutu, paketi açılıp geri konuyor."
+
+#. the name or the meaning of a longer line
+msgid "the wrong box, unwrapped and put back."
+msgstr "yanlış kutu, paketi açılıp geri konuyor."
 
 #. placeholders: {n}
 msgid "Midnight Countdown bells, answered with {n}."
@@ -86155,23 +88985,63 @@ msgstr "Her vuruşta saat tikı."
 msgid "Tock, on the first beat of each bar."
 msgstr "Her ölçünün ilk vuruşunda tak."
 
+#. the name or the meaning of a longer line
+msgid "Missed note"
+msgstr "Kaçan nota"
+
 msgid "Missed note: a deflating party blower."
 msgstr "Kaçan nota: sönen bir parti düdüğü."
+
+#. the name or the meaning of a longer line
+msgid "a deflating party blower."
+msgstr "sönen bir parti düdüğü."
+
+#. the name or the meaning of a longer line
+msgid "Wrong instrument"
+msgstr "Yanlış çalgı"
 
 msgid "Wrong instrument: a short buzz."
 msgstr "Yanlış çalgı: kısa bir vızıltı."
 
+#. the name or the meaning of a longer line
+msgid "a short buzz."
+msgstr "kısa bir vızıltı."
+
 msgid "A press with nothing to answer: a soft tap."
 msgstr "Yanıtlanacak bir şey yokken basış: yumuşak bir tıp."
+
+#. the name or the meaning of a longer line
+msgid "Score multiplier up"
+msgstr "Puan çarpanı arttı"
 
 msgid "Score multiplier up: rising chimes."
 msgstr "Puan çarpanı arttı: yükselen çanlar."
 
+#. the name or the meaning of a longer line
+msgid "rising chimes."
+msgstr "yükselen çanlar."
+
+#. the name or the meaning of a longer line
+msgid "A call answered perfectly"
+msgstr "Kusursuz yanıtlanan çağrı"
+
 msgid "A call answered perfectly: sparkles."
 msgstr "Kusursuz yanıtlanan çağrı: pırıltılar."
 
+#. the name or the meaning of a longer line
+msgid "sparkles."
+msgstr "pırıltılar."
+
+#. the name or the meaning of a longer line
+msgid "Party energy low"
+msgstr "Parti enerjisi düşük"
+
 msgid "Party energy low: a heartbeat."
 msgstr "Parti enerjisi düşük: bir kalp atışı."
+
+#. the name or the meaning of a longer line
+msgid "a heartbeat."
+msgstr "bir kalp atışı."
 
 msgid "Back to the title."
 msgstr "Başlangıç ekranına dönün."

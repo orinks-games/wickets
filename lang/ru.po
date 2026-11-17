@@ -7049,12 +7049,27 @@ msgstr "1 очко"
 msgid "{n} points"
 msgstr "{n} {n:очко|очка|очков}"
 
+#. the name or the meaning of a longer line
+msgid "Knock"
+msgstr "Стук"
+
 msgid ""
 "Knock: a firm knock on the beam. One bell of your row is right and in its "
 "place."
 msgstr ""
 "Стук: твёрдый стук по балке. Один колокол вашего ряда верен и стоит на "
 "своём месте."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a firm knock on the beam. One bell of your row is right and in its place."
+msgstr ""
+"твёрдый стук по балке. Один колокол вашего ряда верен и стоит на своём "
+"месте."
+
+#. the name or the meaning of a longer line
+msgid "Tap"
+msgstr "Постукивание"
 
 msgid ""
 "Tap: a soft tap on the beam. One bell of your row is in the peal, in "
@@ -7063,11 +7078,39 @@ msgstr ""
 "Постукивание: лёгкий стук по балке. Один колокол вашего ряда есть в "
 "перезвоне, но на другом месте."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft tap on the beam. One bell of your row is in the peal, in another "
+"place."
+msgstr ""
+"лёгкий стук по балке. Один колокол вашего ряда есть в перезвоне, но на "
+"другом месте."
+
+#. the name or the meaning of a longer line
+msgid "Rope pull"
+msgstr "Рывок верёвки"
+
 msgid "Rope pull: your row is rung and the answer follows."
 msgstr "Рывок верёвки: ваш ряд звонит, а за ним идёт ответ."
 
+#. the name or the meaning of a longer line
+msgid "your row is rung and the answer follows."
+msgstr "ваш ряд звонит, а за ним идёт ответ."
+
+#. the name or the meaning of a longer line
+msgid "Peal found"
+msgstr "Перезвон найден"
+
 msgid "Peal found: every bell rings out three times. The peal is solved."
 msgstr "Перезвон найден: каждый колокол звенит трижды. Перезвон разгадан."
+
+#. the name or the meaning of a longer line
+msgid "every bell rings out three times. The peal is solved."
+msgstr "каждый колокол звенит трижды. Перезвон разгадан."
+
+#. the name or the meaning of a longer line
+msgid "Out of rows"
+msgstr "Ряды кончились"
 
 msgid ""
 "Out of rows: a single low bell. The tower's rows are spent and the peal is "
@@ -7076,6 +7119,16 @@ msgstr ""
 "Ряды кончились: один низкий колокол. Ряды колокольни исчерпаны, и перезвон "
 "называется."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a single low bell. The tower's rows are spent and the peal is read out."
+msgstr ""
+"один низкий колокол. Ряды колокольни исчерпаны, и перезвон называется."
+
+#. the name or the meaning of a longer line
+msgid "Next peal"
+msgstr "Следующий перезвон"
+
 msgid ""
 "Next peal: a short rising run. In the weekly challenge, the next peal is "
 "waiting."
@@ -7083,8 +7136,26 @@ msgstr ""
 "Следующий перезвон: короткий восходящий пассаж. В испытании недели ждёт "
 "следующий перезвон."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short rising run. In the weekly challenge, the next peal is waiting."
+msgstr ""
+"короткий восходящий пассаж. В испытании недели ждёт следующий перезвон."
+
+#. the name or the meaning of a longer line
+msgid "Dull thud"
+msgstr "Глухой удар"
+
 msgid "Dull thud: nothing to do, or no hint to give."
 msgstr "Глухой удар: делать нечего или подсказки нет."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do, or no hint to give."
+msgstr "делать нечего или подсказки нет."
+
+#. the name or the meaning of a longer line
+msgid "Called place"
+msgstr "Названное место"
 
 msgid ""
 "Called place: a short, quiet glassy shimmer, just after a bell. On Practice "
@@ -7093,6 +7164,14 @@ msgstr ""
 "Названное место: короткое тихое стеклянное мерцание сразу после колокола. "
 "На вечере репетиций это место, названное капитаном колокольни, его колокол "
 "уже стоит."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a short, quiet glassy shimmer, just after a bell. On Practice night, the "
+"place the tower captain called, whose bell is already set."
+msgstr ""
+"короткое тихое стеклянное мерцание сразу после колокола. На вечере "
+"репетиций это место, названное капитаном колокольни, его колокол уже стоит."
 
 msgid "Up and Down choose a sound, Enter plays it, Escape goes back."
 msgstr "Up и Down выбирают звук, Enter играет его, Escape возвращает назад."
@@ -10127,6 +10206,10 @@ msgstr "Ваш свист"
 msgid "Your whistle: the notes you answer with, low, middle and high."
 msgstr "Ваш свист: ноты, которыми вы отвечаете, низкая, средняя и высокая."
 
+#. the name or the meaning of a longer line
+msgid "the notes you answer with, low, middle and high."
+msgstr "ноты, которыми вы отвечаете, низкая, средняя и высокая."
+
 #. placeholders: {slug}
 msgid "Flock call, {slug}"
 msgstr "Крик стаи, {slug}"
@@ -10163,6 +10246,10 @@ msgstr "Поворот"
 msgid "Turn: a soft rustle as you turn to face a new way."
 msgstr "Поворот: тихий шорох, когда вы поворачиваетесь в новую сторону."
 
+#. the name or the meaning of a longer line
+msgid "a soft rustle as you turn to face a new way."
+msgstr "тихий шорох, когда вы поворачиваетесь в новую сторону."
+
 msgid "Edge of the trail"
 msgstr "Край тропы"
 
@@ -10172,6 +10259,10 @@ msgid ""
 msgstr ""
 "Край тропы: шорох и мягкий удар. Ежевика, изгородь или вода не пускают "
 "дальше."
+
+#. the name or the meaning of a longer line
+msgid "a rustle and a soft thud. Brambles, a hedge or water stop the step."
+msgstr "шорох и мягкий удар. Ежевика, изгородь или вода не пускают дальше."
 
 msgid "Befriended"
 msgstr "Подружились"
@@ -10183,6 +10274,12 @@ msgstr ""
 "Подружились: тёплый восходящий перезвон. Ваш ответ совпал, и птица стала "
 "вам другом."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a warm rising chime. Your answer matched, and the bird is your friend."
+msgstr ""
+"тёплый восходящий перезвон. Ваш ответ совпал, и птица стала вам другом."
+
 msgid "New song"
 msgstr "Новая песня"
 
@@ -10193,6 +10290,12 @@ msgstr ""
 "Новая песня: тихий шелест страницы и колокольчик. В определитель добавилось "
 "новое."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft page turn and a bell. Something new went into your field guide."
+msgstr ""
+"тихий шелест страницы и колокольчик. В определитель добавилось новое."
+
 msgid "Not quite"
 msgstr "Не совсем"
 
@@ -10201,6 +10304,11 @@ msgid ""
 "sings again."
 msgstr ""
 "Не совсем: две тихие низкие ноты. Ответ не совпал, и птица поёт снова."
+
+#. the name or the meaning of a longer line
+msgid ""
+"two soft, low notes. Your answer did not match, and the bird sings again."
+msgstr "две тихие низкие ноты. Ответ не совпал, и птица поёт снова."
 
 msgid "Found"
 msgstr "Найдено"
@@ -10212,6 +10320,14 @@ msgstr ""
 "Найдено: яркий перезвон из двух нот. Вы выделили верную птицу или точно "
 "посчитали стаю."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a bright two-note chime. You picked out the right bird, or counted a flock "
+"exactly."
+msgstr ""
+"яркий перезвон из двух нот. Вы выделили верную птицу или точно посчитали "
+"стаю."
+
 msgid "Trail's end"
 msgstr "Конец тропы"
 
@@ -10222,11 +10338,23 @@ msgstr ""
 "Конец тропы: мягкий восходящий аккорд. Вы дошли до конца тропы, или "
 "последняя стая улетела."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a gentle rising chord. You reached the end of the trail, or the last flock "
+"has gone."
+msgstr ""
+"мягкий восходящий аккорд. Вы дошли до конца тропы, или последняя стая "
+"улетела."
+
 msgid "Wingbeats"
 msgstr "Взмахи крыльев"
 
 msgid "Wingbeats: a soft rush of wings. A migrating flock is coming."
 msgstr "Взмахи крыльев: тихий шум крыльев. Летит перелётная стая."
+
+#. the name or the meaning of a longer line
+msgid "a soft rush of wings. A migrating flock is coming."
+msgstr "тихий шум крыльев. Летит перелётная стая."
 
 #. placeholders: {name}
 msgid "End of the {name}"
@@ -12431,10 +12559,30 @@ msgstr ""
 "Отсчёт: глубокий удар бойрана. Четыре таких вводят вас перед каждой "
 "мелодией, и три после паузы."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a deep bodhran beat. Four of them count you in before each tune, and three "
+"after a pause."
+msgstr ""
+"глубокий удар бойрана. Четыре таких вводят вас перед каждой мелодией, и три "
+"после паузы."
+
+#. the name or the meaning of a longer line
+msgid "Spot on"
+msgstr "В точку"
+
 msgid ""
 "Spot on: a small bright chime with your step. It landed right on the beat."
 msgstr ""
 "В точку: маленький яркий перезвон с шагом. Шаг пришёлся точно в бит."
+
+#. the name or the meaning of a longer line
+msgid "a small bright chime with your step. It landed right on the beat."
+msgstr "маленький яркий перезвон с шагом. Шаг пришёлся точно в бит."
+
+#. the name or the meaning of a longer line
+msgid "Close"
+msgstr "Близко"
 
 msgid ""
 "Close: a soft dull tick with your step. It landed in time, but a little "
@@ -12442,17 +12590,51 @@ msgid ""
 msgstr ""
 "Близко: тихий глухой щелчок с шагом. Шаг в такт, но чуть рано или поздно."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft dull tick with your step. It landed in time, but a little early or "
+"late."
+msgstr "тихий глухой щелчок с шагом. Шаг в такт, но чуть рано или поздно."
+
+#. the name or the meaning of a longer line
+msgid "Stumble"
+msgstr "Спотыкание"
+
 msgid ""
 "Stumble: a scuff and a thud. A step was missed, or the wrong step was "
 "danced."
 msgstr "Спотыкание: шарканье и удар. Шаг пропущен, или станцован не тот."
 
+#. the name or the meaning of a longer line
+msgid "a scuff and a thud. A step was missed, or the wrong step was danced."
+msgstr "шарканье и удар. Шаг пропущен, или станцован не тот."
+
+#. the name or the meaning of a longer line
+msgid "Claps"
+msgstr "Хлопки"
+
 msgid ""
 "Claps: the crowd claps three times. Another 8 steps in a row, for a bonus."
 msgstr "Хлопки: публика хлопает трижды. Ещё 8 шагов подряд, это бонус."
 
+#. the name or the meaning of a longer line
+msgid "the crowd claps three times. Another 8 steps in a row, for a bonus."
+msgstr "публика хлопает трижды. Ещё 8 шагов подряд, это бонус."
+
+#. the name or the meaning of a longer line
+msgid "Applause"
+msgstr "Аплодисменты"
+
 msgid "Applause: the end of a tune."
 msgstr "Аплодисменты: конец мелодии."
+
+#. the name or the meaning of a longer line
+msgid "the end of a tune."
+msgstr "конец мелодии."
+
+#. the name or the meaning of a longer line
+msgid "Shamrock"
+msgstr "Трилистник"
 
 msgid ""
 "Shamrock: two high chimes with a call, in Saint Patrick's week. Dance that "
@@ -12461,10 +12643,30 @@ msgstr ""
 "Трилистник: два высоких перезвона с командой, в неделю святого Патрика. "
 "Станцуйте этот шаг хорошо или лучше ради очка удачи."
 
+#. the name or the meaning of a longer line
+msgid ""
+"two high chimes with a call, in Saint Patrick's week. Dance that step good "
+"or better for a luck point."
+msgstr ""
+"два высоких перезвона с командой, в неделю святого Патрика. Станцуйте этот "
+"шаг хорошо или лучше ради очка удачи."
+
+#. the name or the meaning of a longer line
+msgid "Luck point"
+msgstr "Очко удачи"
+
 msgid "Luck point: a quick music box run up. You caught a shamrock."
 msgstr ""
 "Очко удачи: быстрый пассаж музыкальной шкатулки вверх. Вы поймали "
 "трилистник."
+
+#. the name or the meaning of a longer line
+msgid "a quick music box run up. You caught a shamrock."
+msgstr "быстрый пассаж музыкальной шкатулки вверх. Вы поймали трилистник."
+
+#. the name or the meaning of a longer line
+msgid "Clover call"
+msgstr "Команда клевера"
 
 msgid ""
 "Clover call: three sparkling notes with a call, once a night at the ceili. "
@@ -12473,8 +12675,24 @@ msgstr ""
 "Команда клевера: три искрящиеся ноты с командой, раз за вечер на кейли. "
 "Станцуйте этот шаг, чтобы найти четырёхлистный клевер."
 
+#. the name or the meaning of a longer line
+msgid ""
+"three sparkling notes with a call, once a night at the ceili. Dance that "
+"step to find the four-leaf clover."
+msgstr ""
+"три искрящиеся ноты с командой, раз за вечер на кейли. Станцуйте этот шаг, "
+"чтобы найти четырёхлистный клевер."
+
+#. the name or the meaning of a longer line
+msgid "Four-leaf clover"
+msgstr "Четырёхлистный клевер"
+
 msgid "Four-leaf clover: a harp sweep and a shimmer. You found it."
 msgstr "Четырёхлистный клевер: глиссандо арфы и мерцание. Вы нашли его."
+
+#. the name or the meaning of a longer line
+msgid "a harp sweep and a shimmer. You found it."
+msgstr "глиссандо арфы и мерцание. Вы нашли его."
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
@@ -14537,6 +14755,10 @@ msgstr "1 сердечко"
 msgid "{n} hearts"
 msgstr "{n} {n:сердечко|сердечка|сердечек}"
 
+#. the name or the meaning of a longer line
+msgid "Rose"
+msgstr "Роза"
+
 msgid ""
 "Rose: a soft music box tune with a rustle of petals. A rose drifting in the "
 "Valentine's season, worth 25 more than a heart."
@@ -14544,11 +14766,32 @@ msgstr ""
 "Роза: тихая мелодия шкатулки с шелестом лепестков. Роза в сезон Валентинова "
 "дня, стоит на 25 больше сердечка."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft music box tune with a rustle of petals. A rose drifting in the "
+"Valentine's season, worth 25 more than a heart."
+msgstr ""
+"тихая мелодия шкатулки с шелестом лепестков. Роза в сезон Валентинова дня, "
+"стоит на 25 больше сердечка."
+
+#. the name or the meaning of a longer line
+msgid "Golden heart"
+msgstr "Золотое сердечко"
+
 msgid ""
 "Golden heart: a shimmer of tiny bells. Only on Valentine's night, worth 100."
 msgstr ""
 "Золотое сердечко: мерцание крошечных колокольчиков. Только в Валентинову "
 "ночь, стоит 100."
+
+#. the name or the meaning of a longer line
+msgid "a shimmer of tiny bells. Only on Valentine's night, worth 100."
+msgstr ""
+"мерцание крошечных колокольчиков. Только в Валентинову ночь, стоит 100."
+
+#. the name or the meaning of a longer line
+msgid "Love note"
+msgstr "Любовная записка"
 
 msgid ""
 "Love note: a slow flutter of paper. A folded note drifting slowly. Hit it "
@@ -14557,15 +14800,51 @@ msgstr ""
 "Любовная записка: медленный шелест бумаги. Сложенная записка медленно "
 "плывёт. Попадите в неё, чтобы сохранить."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a slow flutter of paper. A folded note drifting slowly. Hit it to keep the "
+"note."
+msgstr ""
+"медленный шелест бумаги. Сложенная записка медленно плывёт. Попадите в неё, "
+"чтобы сохранить."
+
+#. the name or the meaning of a longer line
+msgid "String creak"
+msgstr "Скрип тетивы"
+
 msgid "String creak: the bow drawing, rising as the string comes back."
 msgstr "Скрип тетивы: лук натягивается, звук растёт вместе с тетивой."
+
+#. the name or the meaning of a longer line
+msgid "the bow drawing, rising as the string comes back."
+msgstr "лук натягивается, звук растёт вместе с тетивой."
+
+#. the name or the meaning of a longer line
+msgid "Full draw"
+msgstr "Полное натяжение"
 
 msgid "Full draw: a soft wooden click. Let go now to shoot."
 msgstr ""
 "Полное натяжение: мягкий деревянный щелчок. Отпускайте, чтобы выстрелить."
 
+#. the name or the meaning of a longer line
+msgid "a soft wooden click. Let go now to shoot."
+msgstr "мягкий деревянный щелчок. Отпускайте, чтобы выстрелить."
+
+#. the name or the meaning of a longer line
+msgid "Arrow loosed"
+msgstr "Выстрел"
+
 msgid "Arrow loosed: a twang and a whoosh."
 msgstr "Выстрел: звон тетивы и свист."
+
+#. the name or the meaning of a longer line
+msgid "a twang and a whoosh."
+msgstr "звон тетивы и свист."
+
+#. the name or the meaning of a longer line
+msgid "Slack string"
+msgstr "Слабая тетива"
 
 msgid ""
 "Slack string: a dull flop. Let go too soon, so the arrow stays in your hand."
@@ -14573,17 +14852,53 @@ msgstr ""
 "Слабая тетива: глухой шлепок. Отпустили слишком рано, стрела осталась в "
 "руке."
 
+#. the name or the meaning of a longer line
+msgid "a dull flop. Let go too soon, so the arrow stays in your hand."
+msgstr "глухой шлепок. Отпустили слишком рано, стрела осталась в руке."
+
 msgid "Aim tick: the bow turns one step."
 msgstr "Щелчок прицела: лук поворачивается на шаг."
+
+#. the name or the meaning of a longer line
+msgid "the bow turns one step."
+msgstr "лук поворачивается на шаг."
+
+#. the name or the meaning of a longer line
+msgid "Edge knock"
+msgstr "Стук края"
 
 msgid "Edge knock: the bow is turned as far as it goes."
 msgstr "Стук края: лук повёрнут до предела."
 
+#. the name or the meaning of a longer line
+msgid "the bow is turned as far as it goes."
+msgstr "лук повёрнут до предела."
+
+#. the name or the meaning of a longer line
+msgid "Empty quiver"
+msgstr "Пустой колчан"
+
 msgid "Empty quiver: a hollow tap of wood."
 msgstr "Пустой колчан: гулкий стук дерева."
 
+#. the name or the meaning of a longer line
+msgid "a hollow tap of wood."
+msgstr "гулкий стук дерева."
+
+#. the name or the meaning of a longer line
+msgid "Pop"
+msgstr "Хлопок"
+
 msgid "Pop: a paper heart bursts."
 msgstr "Хлопок: лопается бумажное сердечко."
+
+#. the name or the meaning of a longer line
+msgid "a paper heart bursts."
+msgstr "лопается бумажное сердечко."
+
+#. the name or the meaning of a longer line
+msgid "Sweetheart chord"
+msgstr "Аккорд влюблённых"
 
 msgid ""
 "Sweetheart chord: rising chimes that end in a chord. Both hearts of a pair, "
@@ -14592,19 +14907,65 @@ msgstr ""
 "Аккорд влюблённых: восходящий перезвон, завершённый аккордом. Оба сердечка "
 "пары, одно за другим."
 
+#. the name or the meaning of a longer line
+msgid ""
+"rising chimes that end in a chord. Both hearts of a pair, one after the "
+"other."
+msgstr ""
+"восходящий перезвон, завершённый аккордом. Оба сердечка пары, одно за "
+"другим."
+
+#. the name or the meaning of a longer line
+msgid "Rose caught"
+msgstr "Роза поймана"
+
 msgid "Rose caught: a rustle and a bright harp run."
 msgstr "Роза поймана: шелест и яркий пассаж арфы."
 
+#. the name or the meaning of a longer line
+msgid "a rustle and a bright harp run."
+msgstr "шелест и яркий пассаж арфы."
+
+#. the name or the meaning of a longer line
+msgid "Golden heart caught"
+msgstr "Золотое сердечко поймано"
+
 msgid "Golden heart caught: a burst of bells, high and bright."
 msgstr "Золотое сердечко поймано: всплеск колокольчиков, высокий и яркий."
+
+#. the name or the meaning of a longer line
+msgid "a burst of bells, high and bright."
+msgstr "всплеск колокольчиков, высокий и яркий."
+
+#. the name or the meaning of a longer line
+msgid "Note caught"
+msgstr "Записка поймана"
 
 msgid "Note caught: paper unfolding, and a soft chord. A love note to keep."
 msgstr ""
 "Записка поймана: бумага разворачивается, и звучит мягкий аккорд. Любовная "
 "записка останется у вас."
 
+#. the name or the meaning of a longer line
+msgid "paper unfolding, and a soft chord. A love note to keep."
+msgstr ""
+"бумага разворачивается, и звучит мягкий аккорд. Любовная записка останется "
+"у вас."
+
+#. the name or the meaning of a longer line
+msgid "Miss"
+msgstr "Промах"
+
 msgid "Miss: a far tap on roof tiles. The arrow met nothing."
 msgstr "Промах: далёкий стук по черепице. Стрела ни во что не попала."
+
+#. the name or the meaning of a longer line
+msgid "a far tap on roof tiles. The arrow met nothing."
+msgstr "далёкий стук по черепице. Стрела ни во что не попала."
+
+#. the name or the meaning of a longer line
+msgid "Sights ping"
+msgstr "Сигнал прицела"
 
 msgid ""
 "Sights ping: a small glassy ping. Let go now and the arrow meets a target."
@@ -14612,14 +14973,43 @@ msgstr ""
 "Сигнал прицела: маленький стеклянный звон. Отпустите сейчас, и стрела "
 "попадёт в цель."
 
+#. the name or the meaning of a longer line
+msgid "a small glassy ping. Let go now and the arrow meets a target."
+msgstr ""
+"маленький стеклянный звон. Отпустите сейчас, и стрела попадёт в цель."
+
+#. the name or the meaning of a longer line
+msgid "Rooftop bell"
+msgstr "Колокол на крыше"
+
 msgid "Rooftop bell: a round begins."
 msgstr "Колокол на крыше: раунд начинается."
+
+#. the name or the meaning of a longer line
+msgid "a round begins."
+msgstr "раунд начинается."
+
+#. the name or the meaning of a longer line
+msgid "Quiver spent"
+msgstr "Колчан пуст"
 
 msgid "Quiver spent: three falling notes. The round is over."
 msgstr "Колчан пуст: три нисходящие ноты. Раунд окончен."
 
+#. the name or the meaning of a longer line
+msgid "three falling notes. The round is over."
+msgstr "три нисходящие ноты. Раунд окончен."
+
+#. the name or the meaning of a longer line
+msgid "Dull tap"
+msgstr "Глухой стук"
+
 msgid "Dull tap: nothing to do."
 msgstr "Глухой стук: делать нечего."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do."
+msgstr "делать нечего."
 
 msgid "A heart's hum, then the chime it makes when hit."
 msgstr "Гудение сердечка, затем звон, когда в него попадают."
@@ -16704,21 +17094,65 @@ msgstr "Ещё не станцовано."
 msgid "Return to the Dragon Dance title."
 msgstr "Вернуться в стартовое меню Dragon Dance."
 
+#. the name or the meaning of a longer line
+msgid "Drum"
+msgstr "Барабан"
+
 msgid "Drum: a deep drum on every beat. The dragon dances on each one."
 msgstr "Барабан: глубокий удар на каждый бит. Дракон танцует на каждом."
+
+#. the name or the meaning of a longer line
+msgid "a deep drum on every beat. The dragon dances on each one."
+msgstr "глубокий удар на каждый бит. Дракон танцует на каждом."
+
+#. the name or the meaning of a longer line
+msgid "First beat"
+msgstr "Первый бит"
 
 msgid "First beat: the drum with a cymbal, on the first beat of each bar."
 msgstr "Первый бит: барабан с тарелкой, на первый бит каждого такта."
 
+#. the name or the meaning of a longer line
+msgid "the drum with a cymbal, on the first beat of each bar."
+msgstr "барабан с тарелкой, на первый бит каждого такта."
+
+#. the name or the meaning of a longer line
+msgid "Count-in"
+msgstr "Отсчёт"
+
 msgid "Count-in: wooden clicks before the street begins."
 msgstr "Отсчёт: деревянные щелчки перед началом улицы."
+
+#. the name or the meaning of a longer line
+msgid "wooden clicks before the street begins."
+msgstr "деревянные щелчки перед началом улицы."
+
+#. the name or the meaning of a longer line
+msgid "Drum roll"
+msgstr "Барабанная дробь"
 
 msgid "Drum roll: a gong strikes in 2 beats. Get ready to rear up."
 msgstr ""
 "Барабанная дробь: через 2 бита ударит гонг. Готовьтесь встать на дыбы."
 
+#. the name or the meaning of a longer line
+msgid "a gong strikes in 2 beats. Get ready to rear up."
+msgstr "через 2 бита ударит гонг. Готовьтесь встать на дыбы."
+
+#. the name or the meaning of a longer line
+msgid "Gong"
+msgstr "Гонг"
+
 msgid "Gong: rear up as it strikes."
 msgstr "Гонг: вставайте на дыбы, когда он бьёт."
+
+#. the name or the meaning of a longer line
+msgid "rear up as it strikes."
+msgstr "вставайте на дыбы, когда он бьёт."
+
+#. the name or the meaning of a longer line
+msgid "Midnight gong"
+msgstr "Полуночный гонг"
 
 msgid ""
 "Midnight gong: the great gong at the end of the New Year parade, worth "
@@ -16727,33 +17161,85 @@ msgstr ""
 "Полуночный гонг: большой гонг в конце Новогоднего парада, стоит вдвое "
 "больше."
 
+#. the name or the meaning of a longer line
+msgid "the great gong at the end of the New Year parade, worth double."
+msgstr "большой гонг в конце Новогоднего парада, стоит вдвое больше."
+
 msgid ""
 "Perfect rear: a whoosh and a bright cymbal. You reared right on the gong."
 msgstr ""
 "Идеальные дыбы: свист и яркая тарелка. Вы встали на дыбы точно на гонг."
 
+#. the name or the meaning of a longer line
+msgid "a whoosh and a bright cymbal. You reared right on the gong."
+msgstr "свист и яркая тарелка. Вы встали на дыбы точно на гонг."
+
 msgid "Good rear: a whoosh. You reared close to the gong."
 msgstr "Хорошие дыбы: свист. Вы встали на дыбы рядом с гонгом."
 
+#. the name or the meaning of a longer line
+msgid "a whoosh. You reared close to the gong."
+msgstr "свист. Вы встали на дыбы рядом с гонгом."
+
+#. the name or the meaning of a longer line
+msgid "Missed gong"
+msgstr "Пропущенный гонг"
+
 msgid "Missed gong: a dull wooden knock. The gong passed without a rear."
 msgstr "Пропущенный гонг: глухой деревянный стук. Гонг прошёл без дыб."
+
+#. the name or the meaning of a longer line
+msgid "a dull wooden knock. The gong passed without a rear."
+msgstr "глухой деревянный стук. Гонг прошёл без дыб."
+
+#. the name or the meaning of a longer line
+msgid "Stray rear"
+msgstr "Лишние дыбы"
 
 msgid ""
 "Stray rear: a soft thud. You reared with no gong near, and the combo breaks."
 msgstr ""
 "Лишние дыбы: мягкий удар. Вы встали на дыбы без гонга, и комбо прерывается."
 
+#. the name or the meaning of a longer line
+msgid "a soft thud. You reared with no gong near, and the combo breaks."
+msgstr "мягкий удар. Вы встали на дыбы без гонга, и комбо прерывается."
+
 msgid "Pearl: a soft shimmer ahead of you, in the pearl's lane. Follow it."
 msgstr ""
 "Жемчужина: тихое мерцание впереди, на полосе жемчужины. Следуйте за ним."
 
+#. the name or the meaning of a longer line
+msgid "a soft shimmer ahead of you, in the pearl's lane. Follow it."
+msgstr "тихое мерцание впереди, на полосе жемчужины. Следуйте за ним."
+
+#. the name or the meaning of a longer line
+msgid "Pearl moves"
+msgstr "Жемчужина сдвинулась"
+
 msgid "Pearl moves: a bright chime from the pearl's new lane."
 msgstr "Жемчужина сдвинулась: яркий перезвон с её новой полосы."
+
+#. the name or the meaning of a longer line
+msgid "a bright chime from the pearl's new lane."
+msgstr "яркий перезвон с её новой полосы."
+
+#. the name or the meaning of a longer line
+msgid "On the pearl"
+msgstr "На жемчужине"
 
 msgid ""
 "On the pearl: a soft high ping as your head reaches the pearl's lane."
 msgstr ""
 "На жемчужине: тихий высокий звон, когда голова доходит до полосы жемчужины."
+
+#. the name or the meaning of a longer line
+msgid "a soft high ping as your head reaches the pearl's lane."
+msgstr "тихий высокий звон, когда голова доходит до полосы жемчужины."
+
+#. the name or the meaning of a longer line
+msgid "Off the pearl"
+msgstr "Вне жемчужины"
 
 msgid ""
 "Off the pearl: a falling tone. You were away from the pearl too long, and "
@@ -16762,11 +17248,34 @@ msgstr ""
 "Вне жемчужины: нисходящий тон. Вы слишком долго были вдали от жемчужины, и "
 "комбо прерывается."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a falling tone. You were away from the pearl too long, and the combo breaks."
+msgstr ""
+"нисходящий тон. Вы слишком долго были вдали от жемчужины, и комбо "
+"прерывается."
+
 msgid "Step: the head moves one lane."
 msgstr "Шаг: голова сдвигается на одну полосу."
 
+#. the name or the meaning of a longer line
+msgid "the head moves one lane."
+msgstr "голова сдвигается на одну полосу."
+
+#. the name or the meaning of a longer line
+msgid "Street edge"
+msgstr "Край улицы"
+
 msgid "Street edge: a wooden bump. You are in the last lane on that side."
 msgstr "Край улицы: деревянный удар. Вы на крайней полосе с этой стороны."
+
+#. the name or the meaning of a longer line
+msgid "a wooden bump. You are in the last lane on that side."
+msgstr "деревянный удар. Вы на крайней полосе с этой стороны."
+
+#. the name or the meaning of a longer line
+msgid "Red envelope coming"
+msgstr "Летит красный конверт"
 
 msgid ""
 "Red envelope coming: a papery rustle with little bells, coming down its "
@@ -16774,20 +17283,56 @@ msgid ""
 msgstr ""
 "Летит красный конверт: бумажный шорох с колокольчиками, по своей полосе."
 
+#. the name or the meaning of a longer line
+msgid "a papery rustle with little bells, coming down its lane."
+msgstr "бумажный шорох с колокольчиками, по своей полосе."
+
+#. the name or the meaning of a longer line
+msgid "Envelope caught"
+msgstr "Конверт пойман"
+
 msgid "Envelope caught: coins and a chime. The dragon grows one segment."
 msgstr ""
 "Конверт пойман: монеты и перезвон. Дракон вырастает на один сегмент."
 
+#. the name or the meaning of a longer line
+msgid "coins and a chime. The dragon grows one segment."
+msgstr "монеты и перезвон. Дракон вырастает на один сегмент."
+
+#. the name or the meaning of a longer line
+msgid "Envelope missed"
+msgstr "Конверт пропущен"
+
 msgid "Envelope missed: a soft flutter as it drifts past."
 msgstr "Конверт пропущен: тихий шелест, когда он пролетает мимо."
+
+#. the name or the meaning of a longer line
+msgid "a soft flutter as it drifts past."
+msgstr "тихий шелест, когда он пролетает мимо."
+
+#. the name or the meaning of a longer line
+msgid "Firecrackers coming"
+msgstr "Летят петарды"
 
 msgid ""
 "Firecrackers coming: a fizzing crackle in their lane. Keep your head out of "
 "it."
 msgstr "Летят петарды: шипящий треск на их полосе. Уберите оттуда голову."
 
+#. the name or the meaning of a longer line
+msgid "a fizzing crackle in their lane. Keep your head out of it."
+msgstr "шипящий треск на их полосе. Уберите оттуда голову."
+
+#. the name or the meaning of a longer line
+msgid "Firecrackers burst"
+msgstr "Петарды взрываются"
+
 msgid "Firecrackers burst: a crackle in another lane. You are safe."
 msgstr "Петарды взрываются: треск на другой полосе. Вы в безопасности."
+
+#. the name or the meaning of a longer line
+msgid "a crackle in another lane. You are safe."
+msgstr "треск на другой полосе. Вы в безопасности."
 
 msgid ""
 "Stumble: firecrackers right under you and a clatter. The tail stumbles and "
@@ -16796,20 +17341,63 @@ msgstr ""
 "Спотыкание: петарды прямо под вами и грохот. Хвост спотыкается, и вы "
 "теряете очки."
 
+#. the name or the meaning of a longer line
+msgid ""
+"firecrackers right under you and a clatter. The tail stumbles and you lose "
+"points."
+msgstr ""
+"петарды прямо под вами и грохот. Хвост спотыкается, и вы теряете очки."
+
+#. the name or the meaning of a longer line
+msgid "Lantern coming"
+msgstr "Летит фонарик"
+
 msgid "Lantern coming: a warm, low glow of chimes, on the Lantern walk."
 msgstr ""
 "Летит фонарик: тёплое низкое сияние колокольчиков, в Шествии с фонариками."
 
+#. the name or the meaning of a longer line
+msgid "a warm, low glow of chimes, on the Lantern walk."
+msgstr "тёплое низкое сияние колокольчиков, в Шествии с фонариками."
+
+#. the name or the meaning of a longer line
+msgid "Lantern caught"
+msgstr "Фонарик пойман"
+
 msgid "Lantern caught: a soft harp run."
 msgstr "Фонарик пойман: мягкий пассаж арфы."
 
+#. the name or the meaning of a longer line
+msgid "a soft harp run."
+msgstr "мягкий пассаж арфы."
+
+#. the name or the meaning of a longer line
+msgid "Crowd cheers"
+msgstr "Толпа ликует"
+
 msgid "Crowd cheers: a shop's crowd cheers as you dance past."
 msgstr "Толпа ликует: толпа у лавки ликует, когда вы проходите в танце."
+
+#. the name or the meaning of a longer line
+msgid "a shop's crowd cheers as you dance past."
+msgstr "толпа у лавки ликует, когда вы проходите в танце."
+
+#. the name or the meaning of a longer line
+msgid "Polite clapping"
+msgstr "Вежливые хлопки"
 
 msgid ""
 "Polite clapping: a shop's crowd claps. Keep a combo going and they cheer."
 msgstr ""
 "Вежливые хлопки: толпа у лавки хлопает. Держите комбо, и они будут ликовать."
+
+#. the name or the meaning of a longer line
+msgid "a shop's crowd claps. Keep a combo going and they cheer."
+msgstr "толпа у лавки хлопает. Держите комбо, и они будут ликовать."
+
+#. the name or the meaning of a longer line
+msgid "Combo cheer"
+msgstr "Ликование за комбо"
 
 msgid ""
 "Combo cheer: a big cheer and a cymbal for every 16 beats on the pearl."
@@ -16817,11 +17405,27 @@ msgstr ""
 "Ликование за комбо: громкое ликование и тарелка за каждые 16 битов на "
 "жемчужине."
 
+#. the name or the meaning of a longer line
+msgid "a big cheer and a cymbal for every 16 beats on the pearl."
+msgstr "громкое ликование и тарелка за каждые 16 битов на жемчужине."
+
+#. the name or the meaning of a longer line
+msgid "Countdown"
+msgstr "Обратный отсчёт"
+
 msgid "Countdown: a ticking wood block, the beats before midnight."
 msgstr "Обратный отсчёт: тикающий деревянный брусок, биты до полуночи."
 
+#. the name or the meaning of a longer line
+msgid "a ticking wood block, the beats before midnight."
+msgstr "тикающий деревянный брусок, биты до полуночи."
+
 msgid "Dull tap: nothing to do there."
 msgstr "Глухой стук: здесь делать нечего."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do there."
+msgstr "здесь делать нечего."
 
 msgid "on the left"
 msgstr "слева"
@@ -19017,6 +19621,10 @@ msgstr "Высокая трава"
 msgid "The edge of the meadow. Turn back the other way."
 msgstr "Край луга. Повернитесь обратно."
 
+#. the name or the meaning of a longer line
+msgid "A soft hum"
+msgstr "Тихое гудение"
+
 msgid ""
 "A soft hum: a firefly is close enough to catch. Press the main action as it "
 "glows."
@@ -19026,6 +19634,17 @@ msgstr ""
 
 msgid "Firefly in reach"
 msgstr "Светлячок в досягаемости"
+
+#. the name or the meaning of a longer line
+msgid ""
+"a firefly is close enough to catch. Press the main action as it glows."
+msgstr ""
+"светлячок достаточно близко, чтобы поймать. Нажмите основное действие, "
+"когда он светится."
+
+#. the name or the meaning of a longer line
+msgid "A light tick"
+msgstr "Лёгкий щелчок"
 
 msgid ""
 "A light tick: you answered one flash of a blink with several flashes. "
@@ -19037,11 +19656,29 @@ msgstr ""
 msgid "Flash answered"
 msgstr "Вспышка отвечена"
 
+#. the name or the meaning of a longer line
+msgid ""
+"you answered one flash of a blink with several flashes. Answer the rest."
+msgstr ""
+"вы ответили на одну вспышку мигания из нескольких. Ответьте на остальные."
+
+#. the name or the meaning of a longer line
+msgid "A glassy clink"
+msgstr "Стеклянный звон"
+
 msgid "A glassy clink: the firefly is safe in your jar."
 msgstr "Стеклянный звон: светлячок в банке."
 
 msgid "Caught"
 msgstr "Пойман"
+
+#. the name or the meaning of a longer line
+msgid "the firefly is safe in your jar."
+msgstr "светлячок в банке."
+
+#. the name or the meaning of a longer line
+msgid "A rising chime"
+msgstr "Восходящий перезвон"
 
 msgid ""
 "A rising chime: a firefly you have never caught. It goes in your journal."
@@ -19052,11 +19689,27 @@ msgstr ""
 msgid "New species"
 msgstr "Новый вид"
 
+#. the name or the meaning of a longer line
+msgid "a firefly you have never caught. It goes in your journal."
+msgstr "светлячок, которого вы ещё не ловили. Он попадёт в дневник."
+
+#. the name or the meaning of a longer line
+msgid "A soft puff"
+msgstr "Мягкий выдох"
+
 msgid "A soft puff: the firefly is dark just now. Wait for its glow."
 msgstr "Мягкий выдох: светлячок сейчас погас. Дождитесь свечения."
 
 msgid "Not glowing yet"
 msgstr "Пока не светится"
+
+#. the name or the meaning of a longer line
+msgid "the firefly is dark just now. Wait for its glow."
+msgstr "светлячок сейчас погас. Дождитесь свечения."
+
+#. the name or the meaning of a longer line
+msgid "A falling sigh"
+msgstr "Нисходящий вздох"
 
 msgid ""
 "A falling sigh: a blink ended before you answered every flash. Try its next "
@@ -19068,17 +19721,35 @@ msgstr ""
 msgid "Drifted on"
 msgstr "Улетел дальше"
 
+#. the name or the meaning of a longer line
+msgid "a blink ended before you answered every flash. Try its next blink."
+msgstr ""
+"мигание кончилось раньше, чем вы ответили на все вспышки. Попробуйте на "
+"следующем."
+
 msgid "A tap on the glass: the jar is full. Let them go to make room."
 msgstr "Стук по стеклу: банка полна. Выпустите их, чтобы освободить место."
 
 msgid "Jar full"
 msgstr "Банка полна"
 
+#. the name or the meaning of a longer line
+msgid "A dull hush"
+msgstr "Глухая тишина"
+
 msgid "A dull hush: no firefly is close enough."
 msgstr "Глухая тишина: рядом нет светлячков."
 
 msgid "Nothing in reach"
 msgstr "В досягаемости никого"
+
+#. the name or the meaning of a longer line
+msgid "no firefly is close enough."
+msgstr "рядом нет светлячков."
+
+#. the name or the meaning of a longer line
+msgid "A rising shimmer"
+msgstr "Восходящее мерцание"
 
 msgid ""
 "A rising shimmer: the jar opens, the fireflies fly up and their notes ring "
@@ -19089,6 +19760,10 @@ msgstr ""
 
 msgid "Release"
 msgstr "Выпуск"
+
+#. the name or the meaning of a longer line
+msgid "the jar opens, the fireflies fly up and their notes ring as a chord."
+msgstr "банка открывается, светлячки взлетают, и их ноты звучат аккордом."
 
 msgid ""
 "A glittering shimmer after you set a jar free, while the meadow glows and "
@@ -19136,6 +19811,10 @@ msgstr "Ночь середины лета: весь луг вспыхивает
 msgid "The chorus flash"
 msgstr "Общая вспышка"
 
+#. the name or the meaning of a longer line
+msgid "the whole meadow flashes at once."
+msgstr "весь луг вспыхивает разом."
+
 msgid "In step"
 msgstr "В такт"
 
@@ -19145,11 +19824,19 @@ msgid ""
 msgstr ""
 "Ночь середины лета: вы нажали со вспышкой, и отставший вернулся в хор."
 
+#. the name or the meaning of a longer line
+msgid "you pressed with the flash, and a straggler joins the chorus."
+msgstr "вы нажали со вспышкой, и отставший вернулся в хор."
+
 msgid "Midsummer night: that press missed the flash. Press with the chorus."
 msgstr "Ночь середины лета: нажатие мимо вспышки. Нажимайте вместе с хором."
 
 msgid "Off the beat"
 msgstr "Мимо такта"
+
+#. the name or the meaning of a longer line
+msgid "that press missed the flash. Press with the chorus."
+msgstr "нажатие мимо вспышки. Нажимайте вместе с хором."
 
 msgid ""
 "Up and Down move through the sounds you need in play. Enter plays the "
@@ -20936,6 +21623,10 @@ msgstr "1 ход"
 msgid "{n} moves"
 msgstr "{n} {n:ход|хода|ходов}"
 
+#. the name or the meaning of a longer line
+msgid "Hearts card"
+msgstr "Карта червей"
+
 msgid ""
 "Hearts card: a paper slide with a warm low bell. Every hearts card you "
 "reach or pick up."
@@ -20943,21 +21634,72 @@ msgstr ""
 "Карта червей: шорох бумаги с тёплым низким колокольчиком. Каждая карта "
 "червей, к которой вы подходите или которую берёте."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a paper slide with a warm low bell. Every hearts card you reach or pick up."
+msgstr ""
+"шорох бумаги с тёплым низким колокольчиком. Каждая карта червей, к которой "
+"вы подходите или которую берёте."
+
+#. the name or the meaning of a longer line
+msgid "Diamonds card"
+msgstr "Карта бубен"
+
 msgid "Diamonds card: a paper slide with a bright high bell."
 msgstr "Карта бубен: шорох бумаги с ярким высоким колокольчиком."
+
+#. the name or the meaning of a longer line
+msgid "a paper slide with a bright high bell."
+msgstr "шорох бумаги с ярким высоким колокольчиком."
+
+#. the name or the meaning of a longer line
+msgid "Clubs card"
+msgstr "Карта треф"
 
 msgid "Clubs card: a paper slide with a soft wooden knock."
 msgstr "Карта треф: шорох бумаги с мягким деревянным стуком."
 
+#. the name or the meaning of a longer line
+msgid "a paper slide with a soft wooden knock."
+msgstr "шорох бумаги с мягким деревянным стуком."
+
+#. the name or the meaning of a longer line
+msgid "Spades card"
+msgstr "Карта пик"
+
 msgid "Spades card: a paper slide with a deep wooden knock."
 msgstr "Карта пик: шорох бумаги с глубоким деревянным стуком."
+
+#. the name or the meaning of a longer line
+msgid "a paper slide with a deep wooden knock."
+msgstr "шорох бумаги с глубоким деревянным стуком."
+
+#. the name or the meaning of a longer line
+msgid "Card flip"
+msgstr "Переворот карты"
 
 msgid "Card flip: a face-down card turns face up. Its name follows."
 msgstr ""
 "Переворот карты: закрытая карта открывается. Затем звучит её название."
 
+#. the name or the meaning of a longer line
+msgid "a face-down card turns face up. Its name follows."
+msgstr "закрытая карта открывается. Затем звучит её название."
+
+#. the name or the meaning of a longer line
+msgid "Soft tap"
+msgstr "Мягкий стук"
+
 msgid "Soft tap: the cards you held are placed."
 msgstr "Мягкий стук: карты из руки положены."
+
+#. the name or the meaning of a longer line
+msgid "the cards you held are placed."
+msgstr "карты из руки положены."
+
+#. the name or the meaning of a longer line
+msgid "Muffled thud"
+msgstr "Глухой удар"
 
 msgid ""
 "Muffled thud: the cards cannot go there. The reason follows, and you keep "
@@ -20966,23 +21708,66 @@ msgstr ""
 "Глухой удар: карты туда не кладутся. Затем звучит причина, а карты остаются "
 "у вас."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the cards cannot go there. The reason follows, and you keep holding them."
+msgstr ""
+"карты туда не кладутся. Затем звучит причина, а карты остаются у вас."
+
+#. the name or the meaning of a longer line
+msgid "Stock turn"
+msgstr "Колода"
+
 msgid ""
 "Stock turn: a card is turned up from the stock, or the stock is refilled."
 msgstr "Колода: из колоды открыта карта, или колода снова полна."
 
+#. the name or the meaning of a longer line
+msgid "a card is turned up from the stock, or the stock is refilled."
+msgstr "из колоды открыта карта, или колода снова полна."
+
+#. the name or the meaning of a longer line
+msgid "Foundation chime"
+msgstr "Звон базы"
+
 msgid "Foundation chime: a suit is complete, ace to king."
 msgstr "Звон базы: масть собрана от туза до короля."
+
+#. the name or the meaning of a longer line
+msgid "a suit is complete, ace to king."
+msgstr "масть собрана от туза до короля."
+
+#. the name or the meaning of a longer line
+msgid "Row chime"
+msgstr "Звон ряда"
 
 msgid ""
 "Row chime: you cross from the piles to the stock, or from the stock to the "
 "foundations."
 msgstr "Звон ряда: вы переходите от стопок к колоде или от колоды к базам."
 
+#. the name or the meaning of a longer line
+msgid ""
+"you cross from the piles to the stock, or from the stock to the foundations."
+msgstr "вы переходите от стопок к колоде или от колоды к базам."
+
+#. the name or the meaning of a longer line
+msgid "Undo swish"
+msgstr "Шелест отмены"
+
 msgid "Undo swish: the last move is taken back."
 msgstr "Шелест отмены: последний ход отменён."
 
+#. the name or the meaning of a longer line
+msgid "the last move is taken back."
+msgstr "последний ход отменён."
+
 msgid "Dull tap: nothing to do there just now."
 msgstr "Тусклый стук: здесь сейчас нечего делать."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do there just now."
+msgstr "здесь сейчас нечего делать."
 
 msgid "Return to the Fireside Patience title."
 msgstr "Вернуться в стартовое меню Fireside Patience."
@@ -24501,9 +25286,21 @@ msgstr "Вы ездите в районе {name}"
 msgid "Endless ride in {name}"
 msgstr "Бесконечная поездка в районе {name}"
 
+#. the name or the meaning of a longer line
+msgid "Road bike tyres"
+msgstr "Шины шоссейного велосипеда"
+
 msgid "Road bike tyres: a thin hiss that rises with your speed."
 msgstr ""
 "Шины шоссейного велосипеда: тонкое шипение, которое растёт со скоростью."
+
+#. the name or the meaning of a longer line
+msgid "a thin hiss that rises with your speed."
+msgstr "тонкое шипение, которое растёт со скоростью."
+
+#. the name or the meaning of a longer line
+msgid "Road bike freewheel"
+msgstr "Свободный ход шоссейного велосипеда"
 
 msgid ""
 "Road bike freewheel: a fast, light ticking while you coast. It slows as you "
@@ -24512,22 +25309,72 @@ msgstr ""
 "Свободный ход шоссейного велосипеда: быстрое лёгкое тиканье, пока вы "
 "катитесь накатом. Оно замедляется вместе с вами."
 
+#. the name or the meaning of a longer line
+msgid "a fast, light ticking while you coast. It slows as you slow."
+msgstr ""
+"быстрое лёгкое тиканье, пока вы катитесь накатом. Оно замедляется вместе с "
+"вами."
+
+#. the name or the meaning of a longer line
+msgid "Road bike chain"
+msgstr "Цепь шоссейного велосипеда"
+
 msgid "Road bike chain: a fine, soft purr while you pedal."
 msgstr ""
 "Цепь шоссейного велосипеда: тонкое мягкое урчание, пока вы крутите педали."
 
+#. the name or the meaning of a longer line
+msgid "a fine, soft purr while you pedal."
+msgstr "тонкое мягкое урчание, пока вы крутите педали."
+
+#. the name or the meaning of a longer line
+msgid "BMX tyres"
+msgstr "Шины BMX"
+
 msgid "BMX tyres: a chunky buzz that rises with your speed."
 msgstr "Шины BMX: плотное жужжание, которое растёт со скоростью."
+
+#. the name or the meaning of a longer line
+msgid "a chunky buzz that rises with your speed."
+msgstr "плотное жужжание, которое растёт со скоростью."
+
+#. the name or the meaning of a longer line
+msgid "BMX freewheel"
+msgstr "Свободный ход BMX"
 
 msgid "BMX freewheel: a loud, slower clatter while you coast."
 msgstr ""
 "Свободный ход BMX: громкий, более медленный треск, пока вы катитесь накатом."
 
+#. the name or the meaning of a longer line
+msgid "a loud, slower clatter while you coast."
+msgstr "громкий, более медленный треск, пока вы катитесь накатом."
+
+#. the name or the meaning of a longer line
+msgid "BMX chain"
+msgstr "Цепь BMX"
+
 msgid "BMX chain: a chunky rattle while you pedal."
 msgstr "Цепь BMX: плотное дребезжание, пока вы крутите педали."
 
+#. the name or the meaning of a longer line
+msgid "a chunky rattle while you pedal."
+msgstr "плотное дребезжание, пока вы крутите педали."
+
+#. the name or the meaning of a longer line
+msgid "Mountain bike tyres"
+msgstr "Шины горного велосипеда"
+
 msgid "Mountain bike tyres: a knobbly hum that rises with your speed."
 msgstr "Шины горного велосипеда: шипастый гул, который растёт со скоростью."
+
+#. the name or the meaning of a longer line
+msgid "a knobbly hum that rises with your speed."
+msgstr "шипастый гул, который растёт со скоростью."
+
+#. the name or the meaning of a longer line
+msgid "Mountain bike freewheel"
+msgstr "Свободный ход горного велосипеда"
 
 msgid ""
 "Mountain bike freewheel: a deep, fast ticking while you coast. It slows as "
@@ -24536,16 +25383,50 @@ msgstr ""
 "Свободный ход горного велосипеда: глубокое быстрое тиканье, пока вы "
 "катитесь накатом. Оно замедляется вместе с вами."
 
+#. the name or the meaning of a longer line
+msgid "a deep, fast ticking while you coast. It slows as you slow."
+msgstr ""
+"глубокое быстрое тиканье, пока вы катитесь накатом. Оно замедляется вместе "
+"с вами."
+
+#. the name or the meaning of a longer line
+msgid "Mountain bike chain"
+msgstr "Цепь горного велосипеда"
+
 msgid "Mountain bike chain: a gritty purr while you pedal."
 msgstr "Цепь горного велосипеда: зернистое урчание, пока вы крутите педали."
+
+#. the name or the meaning of a longer line
+msgid "a gritty purr while you pedal."
+msgstr "зернистое урчание, пока вы крутите педали."
+
+#. the name or the meaning of a longer line
+msgid "E-bike tyres"
+msgstr "Шины электровелосипеда"
 
 msgid "E-bike tyres: a soft hiss that rises with your speed."
 msgstr ""
 "Шины электровелосипеда: мягкое шипение, которое растёт со скоростью."
 
+#. the name or the meaning of a longer line
+msgid "a soft hiss that rises with your speed."
+msgstr "мягкое шипение, которое растёт со скоростью."
+
+#. the name or the meaning of a longer line
+msgid "E-bike freewheel"
+msgstr "Свободный ход электровелосипеда"
+
 msgid "E-bike freewheel: a quiet tick while you coast."
 msgstr ""
 "Свободный ход электровелосипеда: тихое тиканье, пока вы катитесь накатом."
+
+#. the name or the meaning of a longer line
+msgid "a quiet tick while you coast."
+msgstr "тихое тиканье, пока вы катитесь накатом."
+
+#. the name or the meaning of a longer line
+msgid "E-bike motor"
+msgstr "Мотор электровелосипеда"
 
 msgid ""
 "E-bike motor: a high electric whine while you pedal. It fades above 25 "
@@ -24554,42 +25435,145 @@ msgstr ""
 "Мотор электровелосипеда: высокий электрический вой, пока вы крутите педали. "
 "Он стихает выше 25 километров в час."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a high electric whine while you pedal. It fades above 25 kilometres an hour."
+msgstr ""
+"высокий электрический вой, пока вы крутите педали. Он стихает выше 25 "
+"километров в час."
+
+#. the name or the meaning of a longer line
+msgid "Moped tyres"
+msgstr "Шины мопеда"
+
 msgid "Moped tyres: a low road roar that rises with your speed."
 msgstr "Шины мопеда: низкий рёв дороги, который растёт со скоростью."
 
+#. the name or the meaning of a longer line
+msgid "a low road roar that rises with your speed."
+msgstr "низкий рёв дороги, который растёт со скоростью."
+
+#. the name or the meaning of a longer line
+msgid "Moped idle"
+msgstr "Холостой ход мопеда"
+
 msgid "Moped idle: a putter while you let go of the throttle."
 msgstr "Холостой ход мопеда: тарахтение, когда вы отпускаете газ."
+
+#. the name or the meaning of a longer line
+msgid "a putter while you let go of the throttle."
+msgstr "тарахтение, когда вы отпускаете газ."
+
+#. the name or the meaning of a longer line
+msgid "Moped throttle"
+msgstr "Газ мопеда"
 
 msgid "Moped throttle: a two-stroke buzz that climbs as you speed up."
 msgstr ""
 "Газ мопеда: жужжание двухтактного мотора, которое растёт при разгоне."
 
+#. the name or the meaning of a longer line
+msgid "a two-stroke buzz that climbs as you speed up."
+msgstr "жужжание двухтактного мотора, которое растёт при разгоне."
+
+#. the name or the meaning of a longer line
+msgid "Wind"
+msgstr "Ветер"
+
 msgid "Wind: a rush in your ears that grows as you go faster."
 msgstr "Ветер: шум в ушах, который растёт с вашей скоростью."
+
+#. the name or the meaning of a longer line
+msgid "a rush in your ears that grows as you go faster."
+msgstr "шум в ушах, который растёт с вашей скоростью."
+
+#. the name or the meaning of a longer line
+msgid "Brakes"
+msgstr "Тормоза"
 
 msgid "Brakes: a short squeal as the brakes bite."
 msgstr "Тормоза: короткий визг, когда тормоза схватывают."
 
+#. the name or the meaning of a longer line
+msgid "a short squeal as the brakes bite."
+msgstr "короткий визг, когда тормоза схватывают."
+
+#. the name or the meaning of a longer line
+msgid "Steer"
+msgstr "Руль"
+
 msgid "Steer: a soft swish as you lean left or right."
 msgstr "Руль: мягкий шорох, когда вы наклоняетесь влево или вправо."
+
+#. the name or the meaning of a longer line
+msgid "a soft swish as you lean left or right."
+msgstr "мягкий шорох, когда вы наклоняетесь влево или вправо."
+
+#. the name or the meaning of a longer line
+msgid "Sprint"
+msgstr "Рывок"
 
 msgid "Sprint: a hard breath as you stand on the pedals."
 msgstr "Рывок: тяжёлый вдох, когда вы встаёте на педали."
 
+#. the name or the meaning of a longer line
+msgid "a hard breath as you stand on the pedals."
+msgstr "тяжёлый вдох, когда вы встаёте на педали."
+
+#. the name or the meaning of a longer line
+msgid "Out of breath"
+msgstr "Дыхание кончилось"
+
 msgid "Out of breath: a long gasp. Sprint is spent until you rest."
 msgstr "Дыхание кончилось: долгий выдох. Рывка нет, пока вы не отдохнёте."
+
+#. the name or the meaning of a longer line
+msgid "a long gasp. Sprint is spent until you rest."
+msgstr "долгий выдох. Рывка нет, пока вы не отдохнёте."
 
 msgid "Hop: a spring and a rattle as both wheels leave the road."
 msgstr "Прыжок: пружина и дребезг, когда оба колеса отрываются от дороги."
 
+#. the name or the meaning of a longer line
+msgid "a spring and a rattle as both wheels leave the road."
+msgstr "пружина и дребезг, когда оба колеса отрываются от дороги."
+
+#. the name or the meaning of a longer line
+msgid "Clean landing"
+msgstr "Чистое приземление"
+
 msgid "Clean landing: a light double thump."
 msgstr "Чистое приземление: лёгкий двойной стук."
+
+#. the name or the meaning of a longer line
+msgid "a light double thump."
+msgstr "лёгкий двойной стук."
+
+#. the name or the meaning of a longer line
+msgid "Hard landing"
+msgstr "Жёсткое приземление"
 
 msgid "Hard landing: a heavy crunch that costs you speed."
 msgstr "Жёсткое приземление: тяжёлый хруст, который стоит вам скорости."
 
+#. the name or the meaning of a longer line
+msgid "a heavy crunch that costs you speed."
+msgstr "тяжёлый хруст, который стоит вам скорости."
+
+#. the name or the meaning of a longer line
+msgid "Pothole jolt"
+msgstr "Удар ямы"
+
 msgid "Pothole jolt: a deep thud as a wide tyre drops through a pothole."
 msgstr "Удар ямы: глубокий стук, когда широкая шина проваливается в яму."
+
+#. the name or the meaning of a longer line
+msgid "a deep thud as a wide tyre drops through a pothole."
+msgstr "глубокий стук, когда широкая шина проваливается в яму."
+
+#. the name or the meaning of a longer line
+msgid "Flat tyre"
+msgstr "Прокол"
 
 msgid ""
 "Flat tyre: a pop and a hiss. Stop and stand still for 3 seconds to swap the "
@@ -24598,21 +25582,71 @@ msgstr ""
 "Прокол: хлопок и шипение. Остановитесь и постойте 3 секунды, чтобы сменить "
 "камеру."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a pop and a hiss. Stop and stand still for 3 seconds to swap the tube."
+msgstr ""
+"хлопок и шипение. Остановитесь и постойте 3 секунды, чтобы сменить камеру."
+
+#. the name or the meaning of a longer line
+msgid "Tube swapped"
+msgstr "Камера заменена"
+
 msgid "Tube swapped: a pump and a click. The tyre is fixed."
 msgstr "Камера заменена: насос и щелчок. Шина в порядке."
+
+#. the name or the meaning of a longer line
+msgid "a pump and a click. The tyre is fixed."
+msgstr "насос и щелчок. Шина в порядке."
+
+#. the name or the meaning of a longer line
+msgid "Curb strike"
+msgstr "Удар о бордюр"
 
 msgid "Curb strike: a hard metal bang as a wheel hits a curb."
 msgstr ""
 "Удар о бордюр: жёсткий металлический лязг, когда колесо бьётся о бордюр."
 
+#. the name or the meaning of a longer line
+msgid "a hard metal bang as a wheel hits a curb."
+msgstr "жёсткий металлический лязг, когда колесо бьётся о бордюр."
+
+#. the name or the meaning of a longer line
+msgid "Crash"
+msgstr "Авария"
+
 msgid "Crash: a clatter and a scrape. You are down for 3 seconds."
 msgstr "Авария: грохот и скрежет. Вы на земле 3 секунды."
+
+#. the name or the meaning of a longer line
+msgid "a clatter and a scrape. You are down for 3 seconds."
+msgstr "грохот и скрежет. Вы на земле 3 секунды."
+
+#. the name or the meaning of a longer line
+msgid "Back up"
+msgstr "Снова в седле"
 
 msgid "Back up: a click into the pedals. Ride on."
 msgstr "Снова в седле: щелчок педалей. Езжайте дальше."
 
+#. the name or the meaning of a longer line
+msgid "a click into the pedals. Ride on."
+msgstr "щелчок педалей. Езжайте дальше."
+
+#. the name or the meaning of a longer line
+msgid "Running wide"
+msgstr "Занос"
+
 msgid "Running wide: a long tyre skid at a turn taken too fast."
 msgstr "Занос: долгий визг шин на повороте, взятом слишком быстро."
+
+#. the name or the meaning of a longer line
+msgid "a long tyre skid at a turn taken too fast."
+msgstr "долгий визг шин на повороте, взятом слишком быстро."
+
+#. the name or the meaning of a longer line
+msgid "Edge rumble"
+msgstr "Гул края"
 
 msgid ""
 "Edge rumble: a low rumble from the edge you are pressed against, the parked "
@@ -24621,6 +25655,18 @@ msgstr ""
 "Гул края: низкий гул с того края, к которому вы прижаты, от припаркованных "
 "машин или от осевой линии."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low rumble from the edge you are pressed against, the parked cars or the "
+"centre line."
+msgstr ""
+"низкий гул с того края, к которому вы прижаты, от припаркованных машин или "
+"от осевой линии."
+
+#. the name or the meaning of a longer line
+msgid "Lane line"
+msgstr "Линия полосы"
+
 msgid ""
 "Lane line: a short thrum as you cross the line between the bike lane and "
 "the traffic lane."
@@ -24628,11 +25674,32 @@ msgstr ""
 "Линия полосы: короткое гудение, когда вы пересекаете линию между "
 "велодорожкой и полосой движения."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short thrum as you cross the line between the bike lane and the traffic "
+"lane."
+msgstr ""
+"короткое гудение, когда вы пересекаете линию между велодорожкой и полосой "
+"движения."
+
+#. the name or the meaning of a longer line
+msgid "Door zone"
+msgstr "Зона дверей"
+
 msgid ""
 "Door zone: a faint murmur of parked cars beside you. A door could open here."
 msgstr ""
 "Зона дверей: слабый гомон припаркованных машин рядом. Здесь может открыться "
 "дверь."
+
+#. the name or the meaning of a longer line
+msgid "a faint murmur of parked cars beside you. A door could open here."
+msgstr ""
+"слабый гомон припаркованных машин рядом. Здесь может открыться дверь."
+
+#. the name or the meaning of a longer line
+msgid "Hazard tick"
+msgstr "Тиканье опасности"
 
 msgid ""
 "Hazard tick: a pothole or an open door ahead, from its side. It ticks "
@@ -24641,12 +25708,36 @@ msgstr ""
 "Тиканье опасности: впереди яма или открытая дверь, с её стороны. Тиканье "
 "чаще и выше по мере приближения."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a pothole or an open door ahead, from its side. It ticks faster and higher "
+"as you get closer."
+msgstr ""
+"впереди яма или открытая дверь, с её стороны. Тиканье чаще и выше по мере "
+"приближения."
+
+#. the name or the meaning of a longer line
+msgid "Curb tone"
+msgstr "Тон бордюра"
+
 msgid ""
 "Curb tone: a low, hard tick from a raised curb across the bike lane. Ride "
 "around it, or hop it on a BMX."
 msgstr ""
 "Тон бордюра: низкое жёсткое тиканье от высокого бордюра поперёк "
 "велодорожки. Объезжайте его или перепрыгните на BMX."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a low, hard tick from a raised curb across the bike lane. Ride around it, "
+"or hop it on a BMX."
+msgstr ""
+"низкое жёсткое тиканье от высокого бордюра поперёк велодорожки. Объезжайте "
+"его или перепрыгните на BMX."
+
+#. the name or the meaning of a longer line
+msgid "Ramp tone"
+msgstr "Тон трамплина"
 
 msgid ""
 "Ramp tone: a bright rising tick from a ramp ahead. Press hop at its lip for "
@@ -24655,8 +25746,27 @@ msgstr ""
 "Тон трамплина: яркое растущее тиканье от трамплина впереди. Нажмите прыжок "
 "у края, чтобы прыгнуть."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a bright rising tick from a ramp ahead. Press hop at its lip for a jump."
+msgstr ""
+"яркое растущее тиканье от трамплина впереди. Нажмите прыжок у края, чтобы "
+"прыгнуть."
+
+#. the name or the meaning of a longer line
+msgid "Car"
+msgstr "Машина"
+
 msgid "Car: an engine hum. Muffled behind you, clearer as it draws level."
 msgstr "Машина: гул мотора. Глухой сзади, яснее, когда она поравняется."
+
+#. the name or the meaning of a longer line
+msgid "an engine hum. Muffled behind you, clearer as it draws level."
+msgstr "гул мотора. Глухой сзади, яснее, когда она поравняется."
+
+#. the name or the meaning of a longer line
+msgid "Oncoming car"
+msgstr "Встречная машина"
 
 msgid ""
 "Oncoming car: an engine coming toward you in the traffic lane. Get into the "
@@ -24665,8 +25775,21 @@ msgstr ""
 "Встречная машина: мотор едет к вам по полосе движения. Уходите на "
 "велодорожку."
 
+#. the name or the meaning of a longer line
+msgid ""
+"an engine coming toward you in the traffic lane. Get into the bike lane."
+msgstr "мотор едет к вам по полосе движения. Уходите на велодорожку."
+
+#. the name or the meaning of a longer line
+msgid "Oncoming horn"
+msgstr "Встречный сигнал"
+
 msgid "Oncoming horn: a long blast from ahead. An oncoming car is coming."
 msgstr "Встречный сигнал: долгий гудок спереди. Едет встречная машина."
+
+#. the name or the meaning of a longer line
+msgid "a long blast from ahead. An oncoming car is coming."
+msgstr "долгий гудок спереди. Едет встречная машина."
 
 msgid ""
 "Parcel: a shop doorbell ahead, from the side the parcel is on. Ride over it "
@@ -24675,11 +25798,39 @@ msgstr ""
 "Посылка: дверной колокольчик магазина впереди, с той стороны, где посылка. "
 "Проезжайте по ней медленно, чтобы подобрать."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a shop doorbell ahead, from the side the parcel is on. Ride over it slowly "
+"to grab it."
+msgstr ""
+"дверной колокольчик магазина впереди, с той стороны, где посылка. "
+"Проезжайте по ней медленно, чтобы подобрать."
+
+#. the name or the meaning of a longer line
+msgid "Parcel grabbed"
+msgstr "Посылка подобрана"
+
 msgid "Parcel grabbed: a cardboard thump."
 msgstr "Посылка подобрана: картонный стук."
 
+#. the name or the meaning of a longer line
+msgid "a cardboard thump."
+msgstr "картонный стук."
+
+#. the name or the meaning of a longer line
+msgid "Cobbles"
+msgstr "Брусчатка"
+
 msgid "Cobbles: a rattling rumble under your wheels in Old Town."
 msgstr "Брусчатка: дребезжащий гул под колёсами в Old Town."
+
+#. the name or the meaning of a longer line
+msgid "a rattling rumble under your wheels in Old Town."
+msgstr "дребезжащий гул под колёсами в Old Town."
+
+#. the name or the meaning of a longer line
+msgid "Door handle"
+msgstr "Дверная ручка"
 
 msgid ""
 "Door handle: a sharp click from a parked car. Its door opens in a moment."
@@ -24687,12 +25838,36 @@ msgstr ""
 "Дверная ручка: резкий щелчок у припаркованной машины. Её дверь сейчас "
 "откроется."
 
+#. the name or the meaning of a longer line
+msgid "a sharp click from a parked car. Its door opens in a moment."
+msgstr "резкий щелчок у припаркованной машины. Её дверь сейчас откроется."
+
+#. the name or the meaning of a longer line
+msgid "Door open"
+msgstr "Дверь открыта"
+
 msgid "Door open: a creak as the door swings into the door zone."
 msgstr "Дверь открыта: скрип, когда дверь распахивается в зону дверей."
+
+#. the name or the meaning of a longer line
+msgid "a creak as the door swings into the door zone."
+msgstr "скрип, когда дверь распахивается в зону дверей."
+
+#. the name or the meaning of a longer line
+msgid "Horn"
+msgstr "Сигнал"
 
 msgid "Horn: a car stuck behind you. Move right to let it pass."
 msgstr ""
 "Сигнал: машина застряла позади вас. Сместитесь вправо, чтобы пропустить её."
+
+#. the name or the meaning of a longer line
+msgid "a car stuck behind you. Move right to let it pass."
+msgstr "машина застряла позади вас. Сместитесь вправо, чтобы пропустить её."
+
+#. the name or the meaning of a longer line
+msgid "Thank-you toot"
+msgstr "Гудок в благодарность"
 
 msgid ""
 "Thank-you toot: two short beeps as a car you let by passes. That earns a "
@@ -24701,20 +25876,70 @@ msgstr ""
 "Гудок в благодарность: два коротких сигнала, когда пропущенная машина "
 "проезжает. Это приносит чаевые."
 
+#. the name or the meaning of a longer line
+msgid "two short beeps as a car you let by passes. That earns a tip."
+msgstr ""
+"два коротких сигнала, когда пропущенная машина проезжает. Это приносит "
+"чаевые."
+
+#. the name or the meaning of a longer line
+msgid "Left turn chime"
+msgstr "Звон левого поворота"
+
 msgid "Left turn chime: from your left, a junction turn is coming."
 msgstr "Звон левого поворота: слева приближается поворот на перекрёстке."
+
+#. the name or the meaning of a longer line
+msgid "from your left, a junction turn is coming."
+msgstr "слева приближается поворот на перекрёстке."
+
+#. the name or the meaning of a longer line
+msgid "Right turn chime"
+msgstr "Звон правого поворота"
 
 msgid "Right turn chime: from your right, a junction turn is coming."
 msgstr "Звон правого поворота: справа приближается поворот на перекрёстке."
 
+#. the name or the meaning of a longer line
+msgid "from your right, a junction turn is coming."
+msgstr "справа приближается поворот на перекрёстке."
+
+#. the name or the meaning of a longer line
+msgid "Turn made"
+msgstr "Поворот выполнен"
+
 msgid "Turn made: a bright chime as you take a junction turn cleanly."
 msgstr "Поворот выполнен: яркий звон, когда вы чисто проходите поворот."
+
+#. the name or the meaning of a longer line
+msgid "a bright chime as you take a junction turn cleanly."
+msgstr "яркий звон, когда вы чисто проходите поворот."
+
+#. the name or the meaning of a longer line
+msgid "Finish bell"
+msgstr "Колокол финиша"
 
 msgid "Finish bell: a bell from the finish line ahead."
 msgstr "Колокол финиша: колокол с линии финиша впереди."
 
+#. the name or the meaning of a longer line
+msgid "a bell from the finish line ahead."
+msgstr "колокол с линии финиша впереди."
+
+#. the name or the meaning of a longer line
+msgid "Finish"
+msgstr "Финиш"
+
 msgid "Finish: a cheer and a bell as you cross the line."
 msgstr "Финиш: радостный крик и колокол, когда вы пересекаете линию."
+
+#. the name or the meaning of a longer line
+msgid "a cheer and a bell as you cross the line."
+msgstr "радостный крик и колокол, когда вы пересекаете линию."
+
+#. the name or the meaning of a longer line
+msgid "Act now"
+msgstr "Действуйте сейчас"
 
 msgid ""
 "Act now: a sharp double beep. The hazard is in your line: hop, brake or "
@@ -24723,17 +25948,52 @@ msgstr ""
 "Действуйте сейчас: резкий двойной сигнал. Опасность на вашем пути: "
 "прыгайте, тормозите или рулите сейчас."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a sharp double beep. The hazard is in your line: hop, brake or steer now."
+msgstr ""
+"резкий двойной сигнал. Опасность на вашем пути: прыгайте, тормозите или "
+"рулите сейчас."
+
 msgid "Dull tap: nothing happens, such as a hop while stopped."
 msgstr "Тусклый стук: ничего не происходит, например прыжок на месте."
+
+#. the name or the meaning of a longer line
+msgid "nothing happens, such as a hop while stopped."
+msgstr "ничего не происходит, например прыжок на месте."
+
+#. the name or the meaning of a longer line
+msgid "Countdown beep"
+msgstr "Сигналы отсчёта"
 
 msgid "Countdown beep: the ride starts after three."
 msgstr "Сигналы отсчёта: поездка начинается после трёх."
 
+#. the name or the meaning of a longer line
+msgid "the ride starts after three."
+msgstr "поездка начинается после трёх."
+
 msgid "Go: a high beep. The ride has started."
 msgstr "Старт: высокий сигнал. Поездка началась."
 
+#. the name or the meaning of a longer line
+msgid "a high beep. The ride has started."
+msgstr "высокий сигнал. Поездка началась."
+
+#. the name or the meaning of a longer line
+msgid "Lesson passed"
+msgstr "Урок пройден"
+
 msgid "Lesson passed: a rising chime in training."
 msgstr "Урок пройден: восходящий звон на тренировке."
+
+#. the name or the meaning of a longer line
+msgid "a rising chime in training."
+msgstr "восходящий звон на тренировке."
+
+#. the name or the meaning of a longer line
+msgid "Leaf pile"
+msgstr "Куча листьев"
 
 msgid ""
 "Leaf pile: a dry rustle from a pile of leaves ahead in the bike lane, in "
@@ -24742,6 +26002,18 @@ msgstr ""
 "Куча листьев: сухой шелест кучи листьев впереди на велодорожке, в поездке в "
 "листопад. Это не опасность."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a dry rustle from a pile of leaves ahead in the bike lane, in the Leaf "
+"season ride. It is not a hazard."
+msgstr ""
+"сухой шелест кучи листьев впереди на велодорожке, в поездке в листопад. Это "
+"не опасность."
+
+#. the name or the meaning of a longer line
+msgid "Leaf crunch"
+msgstr "Хруст листьев"
+
 msgid ""
 "Leaf crunch: a crackle as you ride through a leaf pile, for 1000 ride "
 "points. The freewheel goes quiet for a moment."
@@ -24749,12 +26021,32 @@ msgstr ""
 "Хруст листьев: треск, когда вы проезжаете сквозь кучу листьев, за 1000 "
 "очков поездки. Свободный ход на миг затихает."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a crackle as you ride through a leaf pile, for 1000 ride points. The "
+"freewheel goes quiet for a moment."
+msgstr ""
+"треск, когда вы проезжаете сквозь кучу листьев, за 1000 очков поездки. "
+"Свободный ход на миг затихает."
+
+#. the name or the meaning of a longer line
+msgid "Clock tick"
+msgstr "Тиканье часов"
+
 msgid ""
 "Clock tick: against the clock, under 15 seconds left. It ticks twice as "
 "fast in the last 5."
 msgstr ""
 "Тиканье часов: наперегонки со временем, когда осталось меньше 15 секунд. В "
 "последние 5 оно тикает вдвое чаще."
+
+#. the name or the meaning of a longer line
+msgid ""
+"against the clock, under 15 seconds left. It ticks twice as fast in the "
+"last 5."
+msgstr ""
+"наперегонки со временем, когда осталось меньше 15 секунд. В последние 5 оно "
+"тикает вдвое чаще."
 
 msgid "Left and right"
 msgstr "Слева и справа"
@@ -26374,10 +27666,22 @@ msgstr ""
 "Отсчёт: стук крышки гроба. Четыре удара отсчитывают начало перед каждой "
 "песней и три после паузы."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a coffin lid knock. Four of them count you in before each song, and three "
+"after a pause."
+msgstr ""
+"стук крышки гроба. Четыре удара отсчитывают начало перед каждой песней и "
+"три после паузы."
+
 msgid ""
 "Spot on: a small spooky chime with your move. It landed right on the beat."
 msgstr ""
 "Точно: маленький жуткий звон с вашим движением. Оно попало ровно в бит."
+
+#. the name or the meaning of a longer line
+msgid "a small spooky chime with your move. It landed right on the beat."
+msgstr "маленький жуткий звон с вашим движением. Оно попало ровно в бит."
 
 msgid ""
 "Close: a soft dull tick with your move. It landed in time, but a little "
@@ -26386,11 +27690,29 @@ msgstr ""
 "Близко: мягкое глухое тиканье с вашим движением. Оно в такт, но чуть рано "
 "или поздно."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft dull tick with your move. It landed in time, but a little early or "
+"late."
+msgstr ""
+"мягкое глухое тиканье с вашим движением. Оно в такт, но чуть рано или "
+"поздно."
+
 msgid ""
 "Stumble: a thud and a clatter of bones. A move was missed, or the wrong "
 "move was danced."
 msgstr ""
 "Спотыкание: удар и стук костей. Движение пропущено или станцовано не то."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a thud and a clatter of bones. A move was missed, or the wrong move was "
+"danced."
+msgstr "удар и стук костей. Движение пропущено или станцовано не то."
+
+#. the name or the meaning of a longer line
+msgid "Bony claps"
+msgstr "Костяные хлопки"
 
 msgid ""
 "Bony claps: the crowd claps three times. Another 8 moves in a row, for a "
@@ -26398,8 +27720,16 @@ msgid ""
 msgstr ""
 "Костяные хлопки: толпа хлопает три раза. Ещё 8 движений подряд, это бонус."
 
+#. the name or the meaning of a longer line
+msgid "the crowd claps three times. Another 8 moves in a row, for a bonus."
+msgstr "толпа хлопает три раза. Ещё 8 движений подряд, это бонус."
+
 msgid "Applause: the end of a song, with howls and rattles."
 msgstr "Аплодисменты: конец песни, с воем и стуком костей."
+
+#. the name or the meaning of a longer line
+msgid "the end of a song, with howls and rattles."
+msgstr "конец песни, с воем и стуком костей."
 
 #. placeholders: {word}, {call_words}, {dance}, {move_words}
 #. one sentence of a longer line
@@ -33954,20 +35284,56 @@ msgstr "1 минута {seconds}"
 msgid "{m} minutes {seconds}"
 msgstr "{m} {m:минута|минуты|минут} {seconds}"
 
+#. the name or the meaning of a longer line
+msgid "Footstep on floorboards"
+msgstr "Шаг по половицам"
+
 msgid "Footstep on floorboards: you moved one step, in the upper wings."
 msgstr "Шаг по половицам: вы сделали шаг, в верхних крыльях."
+
+#. the name or the meaning of a longer line
+msgid "you moved one step, in the upper wings."
+msgstr "вы сделали шаг, в верхних крыльях."
+
+#. the name or the meaning of a longer line
+msgid "Footstep on stone"
+msgstr "Шаг по камню"
 
 msgid ""
 "Footstep on stone: you moved one step, from the flooded cellars down."
 msgstr "Шаг по камню: вы сделали шаг, от затопленных погребов и ниже."
 
+#. the name or the meaning of a longer line
+msgid "you moved one step, from the flooded cellars down."
+msgstr "вы сделали шаг, от затопленных погребов и ниже."
+
+#. the name or the meaning of a longer line
+msgid "Wall thud"
+msgstr "Удар о стену"
+
 msgid "Wall thud: you walked into a wall, or a hole, and did not move."
 msgstr "Удар о стену: вы шли в стену или в дыру и остались на месте."
+
+#. the name or the meaning of a longer line
+msgid "you walked into a wall, or a hole, and did not move."
+msgstr "вы шли в стену или в дыру и остались на месте."
+
+#. the name or the meaning of a longer line
+msgid "Rattling handle"
+msgstr "Дёргается ручка"
 
 msgid ""
 "Rattling handle: the exit door is still locked. Solve the room first."
 msgstr ""
 "Дёргается ручка: дверь выхода ещё заперта. Сначала решите загадку комнаты."
+
+#. the name or the meaning of a longer line
+msgid "the exit door is still locked. Solve the room first."
+msgstr "дверь выхода ещё заперта. Сначала решите загадку комнаты."
+
+#. the name or the meaning of a longer line
+msgid "Heavy slam"
+msgstr "Тяжёлый хлопок"
 
 msgid ""
 "Heavy slam: the door you came in by is shut fast. There is no going back."
@@ -33975,14 +35341,38 @@ msgstr ""
 "Тяжёлый хлопок: дверь, через которую вы вошли, крепко закрыта. Назад пути "
 "нет."
 
+#. the name or the meaning of a longer line
+msgid "the door you came in by is shut fast. There is no going back."
+msgstr "дверь, через которую вы вошли, крепко закрыта. Назад пути нет."
+
+#. the name or the meaning of a longer line
+msgid "Bolt sliding back"
+msgstr "Отодвигается засов"
+
 msgid "Bolt sliding back: the room is solved and its exit door unlocks."
 msgstr ""
 "Отодвигается засов: загадка комнаты решена, и дверь выхода отпирается."
+
+#. the name or the meaning of a longer line
+msgid "the room is solved and its exit door unlocks."
+msgstr "загадка комнаты решена, и дверь выхода отпирается."
+
+#. the name or the meaning of a longer line
+msgid "Cold draught"
+msgstr "Холодный сквозняк"
 
 msgid "Cold draught: an open exit door. Follow it to leave the room."
 msgstr ""
 "Холодный сквозняк: открытая дверь выхода. Идите на него, чтобы выйти из "
 "комнаты."
+
+#. the name or the meaning of a longer line
+msgid "an open exit door. Follow it to leave the room."
+msgstr "открытая дверь выхода. Идите на него, чтобы выйти из комнаты."
+
+#. the name or the meaning of a longer line
+msgid "Spirit's whisper"
+msgstr "Шёпот духа"
 
 msgid ""
 "Spirit's whisper: a spirit seals the exit door and wants an offering. Go to "
@@ -33990,11 +35380,35 @@ msgid ""
 msgstr ""
 "Шёпот духа: дух запечатывает дверь выхода и хочет подношения. Идите к нему."
 
+#. the name or the meaning of a longer line
+msgid "a spirit seals the exit door and wants an offering. Go to it."
+msgstr "дух запечатывает дверь выхода и хочет подношения. Идите к нему."
+
+#. the name or the meaning of a longer line
+msgid "Creaking door"
+msgstr "Скрип двери"
+
 msgid "Creaking door: you pass through into the next room."
 msgstr "Скрип двери: вы проходите в следующую комнату."
 
+#. the name or the meaning of a longer line
+msgid "you pass through into the next room."
+msgstr "вы проходите в следующую комнату."
+
+#. the name or the meaning of a longer line
+msgid "Stairs"
+msgstr "Лестница"
+
 msgid "Stairs: you leave the floor."
 msgstr "Лестница: вы уходите с этажа."
+
+#. the name or the meaning of a longer line
+msgid "you leave the floor."
+msgstr "вы уходите с этажа."
+
+#. the name or the meaning of a longer line
+msgid "Phonograph crackle"
+msgstr "Треск фонографа"
 
 msgid ""
 "Phonograph crackle: a matching puzzle, or a missing sound. The sounds that "
@@ -34003,6 +35417,16 @@ msgstr ""
 "Треск фонографа: загадка на совпадение или пропавший звук. Звуки после него "
 "и есть подсказка."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a matching puzzle, or a missing sound. The sounds that follow are the clue."
+msgstr ""
+"загадка на совпадение или пропавший звук. Звуки после него и есть подсказка."
+
+#. the name or the meaning of a longer line
+msgid "Medium's gong"
+msgstr "Гонг медиума"
+
 msgid ""
 "Medium's gong: a séance. Two to four sounds follow; take their things in "
 "that order."
@@ -34010,23 +35434,66 @@ msgstr ""
 "Гонг медиума: сеанс. Дальше звучат от двух до четырёх звуков; берите их "
 "вещи в этом порядке."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a séance. Two to four sounds follow; take their things in that order."
+msgstr ""
+"сеанс. Дальше звучат от двух до четырёх звуков; берите их вещи в этом "
+"порядке."
+
+#. the name or the meaning of a longer line
+msgid "Medium's hum"
+msgstr "Гул медиума"
+
 msgid "Medium's hum: you took the séance's next thing in the right order."
 msgstr "Гул медиума: вы взяли следующую вещь сеанса в верном порядке."
+
+#. the name or the meaning of a longer line
+msgid "you took the séance's next thing in the right order."
+msgstr "вы взяли следующую вещь сеанса в верном порядке."
 
 #. placeholders: {name}, {sound}
 msgid "The {name}: {sound}."
 msgstr "{name}: {sound}."
 
+#. the name or the meaning of a longer line
+msgid "Grab"
+msgstr "Хват"
+
 msgid "Grab: you picked up the right thing."
 msgstr "Хват: вы подобрали нужную вещь."
 
+#. the name or the meaning of a longer line
+msgid "you picked up the right thing."
+msgstr "вы подобрали нужную вещь."
+
+#. the name or the meaning of a longer line
+msgid "Chime"
+msgstr "Звон"
+
 msgid "Chime: the room's puzzle is solved."
 msgstr "Звон: загадка комнаты решена."
+
+#. the name or the meaning of a longer line
+msgid "the room's puzzle is solved."
+msgstr "загадка комнаты решена."
+
+#. the name or the meaning of a longer line
+msgid "Mocking laugh"
+msgstr "Насмешливый смех"
 
 msgid ""
 "Mocking laugh: not what the room wants. You lose time on the haunt clock."
 msgstr ""
 "Насмешливый смех: комнате нужно не это. Вы теряете время на часах призраков."
+
+#. the name or the meaning of a longer line
+msgid "not what the room wants. You lose time on the haunt clock."
+msgstr "комнате нужно не это. Вы теряете время на часах призраков."
+
+#. the name or the meaning of a longer line
+msgid "Warped shriek"
+msgstr "Искажённый визг"
 
 msgid ""
 "Warped shriek: a mimic, a copy of the answer. You lose time, and it hops "
@@ -34035,20 +35502,68 @@ msgstr ""
 "Искажённый визг: двойник, копия ответа. Вы теряете время, а он "
 "перескакивает прочь."
 
+#. the name or the meaning of a longer line
+msgid "a mimic, a copy of the answer. You lose time, and it hops away."
+msgstr "двойник, копия ответа. Вы теряете время, а он перескакивает прочь."
+
+#. the name or the meaning of a longer line
+msgid "Dust"
+msgstr "Пыль"
+
 msgid "Dust: there is nothing to pick up here."
 msgstr "Пыль: здесь нечего подбирать."
+
+#. the name or the meaning of a longer line
+msgid "there is nothing to pick up here."
+msgstr "здесь нечего подбирать."
+
+#. the name or the meaning of a longer line
+msgid "Rustle"
+msgstr "Шорох"
 
 msgid "Rustle: you chose another thing you carry."
 msgstr "Шорох: вы выбрали другую вещь из тех, что несёте."
 
+#. the name or the meaning of a longer line
+msgid "you chose another thing you carry."
+msgstr "вы выбрали другую вещь из тех, что несёте."
+
+#. the name or the meaning of a longer line
+msgid "The spirit sighs"
+msgstr "Дух вздыхает"
+
 msgid "The spirit sighs: it accepts your offering."
 msgstr "Дух вздыхает: он принимает ваше подношение."
+
+#. the name or the meaning of a longer line
+msgid "it accepts your offering."
+msgstr "он принимает ваше подношение."
+
+#. the name or the meaning of a longer line
+msgid "The spirit shrieks"
+msgstr "Дух визжит"
 
 msgid "The spirit shrieks: wrong offering. You lose time."
 msgstr "Дух визжит: не то подношение. Вы теряете время."
 
+#. the name or the meaning of a longer line
+msgid "wrong offering. You lose time."
+msgstr "не то подношение. Вы теряете время."
+
+#. the name or the meaning of a longer line
+msgid "Bell toll"
+msgstr "Удар колокола"
+
 msgid "Bell toll: the haunt clock is running low."
 msgstr "Удар колокола: часы призраков на исходе."
+
+#. the name or the meaning of a longer line
+msgid "the haunt clock is running low."
+msgstr "часы призраков на исходе."
+
+#. the name or the meaning of a longer line
+msgid "Groaning board"
+msgstr "Стонущая доска"
 
 msgid ""
 "Groaning board: a rotten board next to you, in the direction you hear it. "
@@ -34057,12 +35572,34 @@ msgstr ""
 "Стонущая доска: гнилая доска рядом с вами, с той стороны, откуда звук. Не "
 "наступайте на неё."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a rotten board next to you, in the direction you hear it. Do not step on it."
+msgstr ""
+"гнилая доска рядом с вами, с той стороны, откуда звук. Не наступайте на неё."
+
+#. the name or the meaning of a longer line
+msgid "Crash of boards"
+msgstr "Треск досок"
+
 msgid "Crash of boards: you fell through a rotten board and lost courage."
 msgstr ""
 "Треск досок: вы провалились сквозь гнилую доску и потеряли смелость."
 
+#. the name or the meaning of a longer line
+msgid "you fell through a rotten board and lost courage."
+msgstr "вы провалились сквозь гнилую доску и потеряли смелость."
+
+#. the name or the meaning of a longer line
+msgid "Rising chord"
+msgstr "Восходящий аккорд"
+
 msgid "Rising chord: a landing. You get one courage back."
 msgstr "Восходящий аккорд: площадка. Вам возвращается одно очко смелости."
+
+#. the name or the meaning of a longer line
+msgid "a landing. You get one courage back."
+msgstr "площадка. Вам возвращается одно очко смелости."
 
 msgid "When you hear it, the hound is coming: be ready to walk."
 msgstr "Когда вы это слышите, идёт гончая: будьте готовы идти."
@@ -34079,6 +35616,10 @@ msgstr "Призрак, {name}: {voice}."
 msgid "A ghost, {name}: {voice}. {what}"
 msgstr "Призрак, {name}: {voice}. {what}"
 
+#. the name or the meaning of a longer line
+msgid "Freeze stab"
+msgstr "Резкий удар «замри»"
+
 msgid ""
 "Freeze stab: a ghost is passing right by you. Do not move until it has "
 "passed."
@@ -34086,19 +35627,50 @@ msgstr ""
 "Резкий удар «замри»: призрак проходит прямо рядом с вами. Не двигайтесь, "
 "пока он не пройдёт."
 
+#. the name or the meaning of a longer line
+msgid "a ghost is passing right by you. Do not move until it has passed."
+msgstr ""
+"призрак проходит прямо рядом с вами. Не двигайтесь, пока он не пройдёт."
+
+#. the name or the meaning of a longer line
+msgid "Howl"
+msgstr "Вой"
+
 msgid ""
 "Howl: the blind hound is passing right by you. Keep walking until it has "
 "passed."
 msgstr ""
 "Вой: слепая гончая проходит прямо рядом с вами. Идите, пока она не пройдёт."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the blind hound is passing right by you. Keep walking until it has passed."
+msgstr ""
+"слепая гончая проходит прямо рядом с вами. Идите, пока она не пройдёт."
+
+#. the name or the meaning of a longer line
+msgid "Long breath out"
+msgstr "Долгий выдох"
+
 msgid "Long breath out: the ghost has passed without finding you."
 msgstr "Долгий выдох: призрак прошёл и не нашёл вас."
+
+#. the name or the meaning of a longer line
+msgid "the ghost has passed without finding you."
+msgstr "призрак прошёл и не нашёл вас."
+
+#. the name or the meaning of a longer line
+msgid "Scream"
+msgstr "Крик"
 
 msgid ""
 "Scream: something caught you. You lose courage and flee to the room's door."
 msgstr ""
 "Крик: вас что-то поймало. Вы теряете смелость и бежите к двери комнаты."
+
+#. the name or the meaning of a longer line
+msgid "something caught you. You lose courage and flee to the room's door."
+msgstr "вас что-то поймало. Вы теряете смелость и бежите к двери комнаты."
 
 msgid ""
 "The shadow: a low breathing drone that walks the room, following your "
@@ -34107,18 +35679,54 @@ msgstr ""
 "Тень: низкий дышащий гул, который бродит по комнате, идя на звук ваших "
 "шагов. Не дайте ей дойти до вас."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low breathing drone that walks the room, following your footsteps. Do not "
+"let it reach you."
+msgstr ""
+"низкий дышащий гул, который бродит по комнате, идя на звук ваших шагов. Не "
+"дайте ей дойти до вас."
+
+#. the name or the meaning of a longer line
+msgid "Soft glass chime"
+msgstr "Мягкий стеклянный звон"
+
 msgid ""
 "Soft glass chime: a charm lying in the room. Walk onto it to take it."
 msgstr ""
 "Мягкий стеклянный звон: в комнате лежит оберег. Встаньте на него, чтобы "
 "взять."
 
+#. the name or the meaning of a longer line
+msgid "a charm lying in the room. Walk onto it to take it."
+msgstr "в комнате лежит оберег. Встаньте на него, чтобы взять."
+
+#. the name or the meaning of a longer line
+msgid "Bright pluck"
+msgstr "Яркий щипок"
+
 msgid "Bright pluck: you took a charm."
 msgstr "Яркий щипок: вы взяли оберег."
+
+#. the name or the meaning of a longer line
+msgid "you took a charm."
+msgstr "вы взяли оберег."
+
+#. the name or the meaning of a longer line
+msgid "Hiss of salt"
+msgstr "Шипение соли"
 
 msgid ""
 "Hiss of salt: your salt warded something off. You stay where you are."
 msgstr "Шипение соли: соль что-то отвела. Вы остаётесь на месте."
+
+#. the name or the meaning of a longer line
+msgid "your salt warded something off. You stay where you are."
+msgstr "соль что-то отвела. Вы остаётесь на месте."
+
+#. the name or the meaning of a longer line
+msgid "Swish"
+msgstr "Свист"
 
 msgid ""
 "Swish: the pendulum's blade, sweeping along its row. Cross that row just "
@@ -34127,30 +35735,91 @@ msgstr ""
 "Свист: лезвие маятника, которое проносится вдоль своего ряда. Переходите "
 "этот ряд сразу после того, как оно пройдёт."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the pendulum's blade, sweeping along its row. Cross that row just after it "
+"passes."
+msgstr ""
+"лезвие маятника, которое проносится вдоль своего ряда. Переходите этот ряд "
+"сразу после того, как оно пройдёт."
+
+#. the name or the meaning of a longer line
+msgid "Splash"
+msgstr "Всплеск"
+
 msgid ""
 "Splash: you waded into deep water. Wading is slow and brings ghosts sooner."
 msgstr ""
 "Всплеск: вы забрели в глубокую воду. Брести медленно, и призраки приходят "
 "раньше."
 
+#. the name or the meaning of a longer line
+msgid "you waded into deep water. Wading is slow and brings ghosts sooner."
+msgstr ""
+"вы забрели в глубокую воду. Брести медленно, и призраки приходят раньше."
+
+#. the name or the meaning of a longer line
+msgid "Lapping water"
+msgstr "Плеск воды"
+
 msgid "Lapping water: deep water next to you, in the direction you hear it."
 msgstr "Плеск воды: глубокая вода рядом с вами, с той стороны, откуда звук."
+
+#. the name or the meaning of a longer line
+msgid "deep water next to you, in the direction you hear it."
+msgstr "глубокая вода рядом с вами, с той стороны, откуда звук."
+
+#. the name or the meaning of a longer line
+msgid "Trickling dust"
+msgstr "Сыплется пыль"
 
 msgid ""
 "Trickling dust: a stone is about to fall where you stand. Step off at once."
 msgstr ""
 "Сыплется пыль: там, где вы стоите, сейчас упадёт камень. Сразу отойдите."
 
+#. the name or the meaning of a longer line
+msgid "a stone is about to fall where you stand. Step off at once."
+msgstr "там, где вы стоите, сейчас упадёт камень. Сразу отойдите."
+
+#. the name or the meaning of a longer line
+msgid "Crash of stone"
+msgstr "Грохот камня"
+
 msgid "Crash of stone: a stone hit the floor."
 msgstr "Грохот камня: камень ударился об пол."
+
+#. the name or the meaning of a longer line
+msgid "a stone hit the floor."
+msgstr "камень ударился об пол."
+
+#. the name or the meaning of a longer line
+msgid "Deep rumble"
+msgstr "Глубокий гул"
 
 msgid ""
 "Deep rumble: the house shifted, and the exit door moved to another wall."
 msgstr ""
 "Глубокий гул: дом сдвинулся, и дверь выхода перешла на другую стену."
 
+#. the name or the meaning of a longer line
+msgid "the house shifted, and the exit door moved to another wall."
+msgstr "дом сдвинулся, и дверь выхода перешла на другую стену."
+
+#. the name or the meaning of a longer line
+msgid "Heavy footstep"
+msgstr "Тяжёлый шаг"
+
 msgid "Heavy footstep: the founder, coming after you."
 msgstr "Тяжёлый шаг: основатель идёт за вами."
+
+#. the name or the meaning of a longer line
+msgid "the founder, coming after you."
+msgstr "основатель идёт за вами."
+
+#. the name or the meaning of a longer line
+msgid "Rising scrape"
+msgstr "Нарастающий скрежет"
 
 msgid ""
 "Rising scrape: the founder winds up a blow beside you. Strike at the "
@@ -34159,19 +35828,58 @@ msgstr ""
 "Нарастающий скрежет: основатель замахивается рядом с вами. Бейте на "
 "звенящей ноте или отойдите."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the founder winds up a blow beside you. Strike at the ringing note, or step "
+"away."
+msgstr ""
+"основатель замахивается рядом с вами. Бейте на звенящей ноте или отойдите."
+
+#. the name or the meaning of a longer line
+msgid "Ringing note"
+msgstr "Звенящая нота"
+
 msgid "Ringing note: the founder's blow is at its height. Strike now."
 msgstr "Звенящая нота: замах основателя на пике. Бейте сейчас."
 
+#. the name or the meaning of a longer line
+msgid "the founder's blow is at its height. Strike now."
+msgstr "замах основателя на пике. Бейте сейчас."
+
+#. the name or the meaning of a longer line
+msgid "Iron clang"
+msgstr "Железный лязг"
+
 msgid "Iron clang: your candlestick hit the founder."
 msgstr "Железный лязг: ваш подсвечник попал в основателя."
+
+#. the name or the meaning of a longer line
+msgid "your candlestick hit the founder."
+msgstr "ваш подсвечник попал в основателя."
+
+#. the name or the meaning of a longer line
+msgid "Dull knock"
+msgstr "Глухой стук"
 
 msgid "Dull knock: you struck too soon and the founder blocked. Step away."
 msgstr ""
 "Глухой стук: вы ударили слишком рано, и основатель закрылся. Отойдите."
 
+#. the name or the meaning of a longer line
+msgid "you struck too soon and the founder blocked. Step away."
+msgstr "вы ударили слишком рано, и основатель закрылся. Отойдите."
+
+#. the name or the meaning of a longer line
+msgid "Crumbling stone"
+msgstr "Осыпается камень"
+
 msgid ""
 "Crumbling stone: the founder falls to dust for the rest of the floor."
 msgstr "Осыпается камень: основатель рассыпается в прах до конца этажа."
+
+#. the name or the meaning of a longer line
+msgid "the founder falls to dust for the rest of the floor."
+msgstr "основатель рассыпается в прах до конца этажа."
 
 msgid ""
 "Up and Down move through the game's sounds, Enter plays one, Escape goes "
@@ -36026,12 +37734,28 @@ msgstr "фонарь погас"
 msgid "lamp burning"
 msgstr "фонарь горит"
 
+#. the name or the meaning of a longer line
+msgid "Lamp out"
+msgstr "Погасший фонарь"
+
 msgid ""
 "Lamp out: a thin whistle of draught across empty glass. It pulses from the "
 "wall where a lamp needs lighting, louder as you come near."
 msgstr ""
 "Погасший фонарь: тонкий свист сквозняка по пустому стеклу. Он пульсирует со "
 "стены, где фонарь нужно зажечь, и громче, когда вы ближе."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a thin whistle of draught across empty glass. It pulses from the wall where "
+"a lamp needs lighting, louder as you come near."
+msgstr ""
+"тонкий свист сквозняка по пустому стеклу. Он пульсирует со стены, где "
+"фонарь нужно зажечь, и громче, когда вы ближе."
+
+#. the name or the meaning of a longer line
+msgid "Lamp burning"
+msgstr "Горящий фонарь"
 
 msgid ""
 "Lamp burning: the small flutter of a candle flame. You hear it from the "
@@ -36040,6 +37764,18 @@ msgstr ""
 "Горящий фонарь: лёгкое трепетание пламени свечи. Его слышно со стены, когда "
 "вы проходите мимо зажжённого фонаря."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the small flutter of a candle flame. You hear it from the wall as you pass "
+"a lamp that is lit."
+msgstr ""
+"лёгкое трепетание пламени свечи. Его слышно со стены, когда вы проходите "
+"мимо зажжённого фонаря."
+
+#. the name or the meaning of a longer line
+msgid "Lighting"
+msgstr "Зажигание"
+
 msgid ""
 "Lighting: a match strike flaring into a glass ting. The lamp you reached "
 "for is lit."
@@ -36047,16 +37783,46 @@ msgstr ""
 "Зажигание: чиркает спичка и звенит стекло. Фонарь, к которому вы "
 "потянулись, зажжён."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a match strike flaring into a glass ting. The lamp you reached for is lit."
+msgstr ""
+"чиркает спичка и звенит стекло. Фонарь, к которому вы потянулись, зажжён."
+
+#. the name or the meaning of a longer line
+msgid "Bare wall"
+msgstr "Голая стена"
+
 msgid ""
 "Bare wall: one dull knock. There is no lamp on that wall at this step."
 msgstr ""
 "Голая стена: один глухой стук. На этой стене на этом шаге фонаря нет."
 
+#. the name or the meaning of a longer line
+msgid "one dull knock. There is no lamp on that wall at this step."
+msgstr "один глухой стук. На этой стене на этом шаге фонаря нет."
+
+#. the name or the meaning of a longer line
+msgid "Already burning"
+msgstr "Уже горит"
+
 msgid "Already burning: a soft felt knock. That lamp is lit already."
 msgstr "Уже горит: мягкий войлочный стук. Этот фонарь уже зажжён."
 
+#. the name or the meaning of a longer line
+msgid "a soft felt knock. That lamp is lit already."
+msgstr "мягкий войлочный стук. Этот фонарь уже зажжён."
+
 msgid "Footstep: a soft step on wooden boards, one step along the hall."
 msgstr "Шаг: мягкий шаг по деревянным доскам, один шаг по залу."
+
+#. the name or the meaning of a longer line
+msgid "a soft step on wooden boards, one step along the hall."
+msgstr "мягкий шаг по деревянным доскам, один шаг по залу."
+
+#. the name or the meaning of a longer line
+msgid "Lobby door"
+msgstr "Дверь в прихожую"
 
 msgid ""
 "Lobby door: a door creaking on its hinges. You are at the lobby end of the "
@@ -36065,23 +37831,64 @@ msgstr ""
 "Дверь в прихожую: дверь скрипит на петлях. Вы у того конца зала, где "
 "прихожая."
 
+#. the name or the meaning of a longer line
+msgid "a door creaking on its hinges. You are at the lobby end of the hall."
+msgstr "дверь скрипит на петлях. Вы у того конца зала, где прихожая."
+
+#. the name or the meaning of a longer line
+msgid "Far wall"
+msgstr "Дальняя стена"
+
 msgid "Far wall: two hollow knocks. You are at the far end of the hall."
 msgstr "Дальняя стена: два гулких стука. Вы в дальнем конце зала."
+
+#. the name or the meaning of a longer line
+msgid "two hollow knocks. You are at the far end of the hall."
+msgstr "два гулких стука. Вы в дальнем конце зала."
+
+#. the name or the meaning of a longer line
+msgid "Taper low"
+msgstr "Лучина догорает"
 
 msgid "Taper low: a low, muted bell. The taper has 20 seconds left."
 msgstr ""
 "Лучина догорает: низкий приглушённый колокол. Лучине осталось 20 секунд."
+
+#. the name or the meaning of a longer line
+msgid "a low, muted bell. The taper has 20 seconds left."
+msgstr "низкий приглушённый колокол. Лучине осталось 20 секунд."
+
+#. the name or the meaning of a longer line
+msgid "Taper out"
+msgstr "Лучина погасла"
 
 msgid ""
 "Taper out: a short puff. The taper burned down, and the taper bonus is gone."
 msgstr ""
 "Лучина погасла: короткий выдох. Лучина догорела, и бонус за лучину пропал."
 
+#. the name or the meaning of a longer line
+msgid "a short puff. The taper burned down, and the taper bonus is gone."
+msgstr "короткий выдох. Лучина догорела, и бонус за лучину пропал."
+
+#. the name or the meaning of a longer line
+msgid "Fresh taper"
+msgstr "Новая лучина"
+
 msgid ""
 "Fresh taper: a quick match. Mabel lit you a new taper, so you can carry on."
 msgstr ""
 "Новая лучина: быстрая спичка. Mabel зажгла вам новую лучину, так что можно "
 "продолжать."
+
+#. the name or the meaning of a longer line
+msgid "a quick match. Mabel lit you a new taper, so you can carry on."
+msgstr ""
+"быстрая спичка. Mabel зажгла вам новую лучину, так что можно продолжать."
+
+#. the name or the meaning of a longer line
+msgid "Draught"
+msgstr "Сквозняк"
 
 msgid ""
 "Draught: a long gust through a doorway. It blew a lamp out somewhere in the "
@@ -36090,11 +37897,25 @@ msgstr ""
 "Сквозняк: долгий порыв ветра из дверного проёма. Он задул фонарь где-то в "
 "зале."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a long gust through a doorway. It blew a lamp out somewhere in the hall."
+msgstr ""
+"долгий порыв ветра из дверного проёма. Он задул фонарь где-то в зале."
+
+#. the name or the meaning of a longer line
+msgid "Hall lit"
+msgstr "Зал зажжён"
+
 msgid ""
 "Hall lit: a rising run of glass. Every lamp is burning, and the round is "
 "over."
 msgstr ""
 "Зал зажжён: восходящий перебор стекла. Все фонари горят, и раунд окончен."
+
+#. the name or the meaning of a longer line
+msgid "a rising run of glass. Every lamp is burning, and the round is over."
+msgstr "восходящий перебор стекла. Все фонари горят, и раунд окончен."
 
 msgid "Return to the Lamplighter title."
 msgstr "Вернуться в стартовое меню Lamplighter."
@@ -48969,12 +50790,36 @@ msgstr ""
 "Шаг: мягкая обувь на разбеге. Вы сдвинулись на одну доску, и звук идёт "
 "оттуда, где вы стоите."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft shoe on the approach. You moved one board, and it sounds from where "
+"you stand."
+msgstr ""
+"мягкая обувь на разбеге. Вы сдвинулись на одну доску, и звук идёт оттуда, "
+"где вы стоите."
+
+#. the name or the meaning of a longer line
+msgid "Aim tone"
+msgstr "Тон прицела"
+
 msgid ""
 "Aim tone: a soft high tone. It sounds from where the ball would cross the "
 "pins with a clean release."
 msgstr ""
 "Тон прицела: мягкий высокий тон. Звучит оттуда, где шар пройдёт у кеглей "
 "при чистом броске."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a soft high tone. It sounds from where the ball would cross the pins with a "
+"clean release."
+msgstr ""
+"мягкий высокий тон. Звучит оттуда, где шар пройдёт у кеглей при чистом "
+"броске."
+
+#. the name or the meaning of a longer line
+msgid "Swing tone"
+msgstr "Тон замаха"
 
 msgid ""
 "Swing tone: a hum that rises to the top of the swing, then falls. Let go at "
@@ -48983,8 +50828,23 @@ msgstr ""
 "Тон замаха: гул, который поднимается к верхней точке замаха и затем падает. "
 "Отпускайте в верхней точке."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a hum that rises to the top of the swing, then falls. Let go at the top."
+msgstr ""
+"гул, который поднимается к верхней точке замаха и затем падает. Отпускайте "
+"в верхней точке."
+
 msgid "Release: a thump as the ball meets the lane."
 msgstr "Бросок: глухой стук, когда шар касается дорожки."
+
+#. the name or the meaning of a longer line
+msgid "a thump as the ball meets the lane."
+msgstr "глухой стук, когда шар касается дорожки."
+
+#. the name or the meaning of a longer line
+msgid "Rolling ball"
+msgstr "Катящийся шар"
 
 msgid ""
 "Rolling ball: a low rumble that moves across with the ball and grows louder "
@@ -48993,16 +50853,50 @@ msgstr ""
 "Катящийся шар: низкий рокот, который движется вместе с шаром и громче у "
 "кеглей."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low rumble that moves across with the ball and grows louder as it nears "
+"the pins."
+msgstr "низкий рокот, который движется вместе с шаром и громче у кеглей."
+
+#. the name or the meaning of a longer line
+msgid "Gutter"
+msgstr "Жёлоб"
+
 msgid ""
 "Gutter: a hollow rattle. The ball left the lane and will hit no pins."
 msgstr ""
 "Жёлоб: глухое дребезжание. Шар ушёл с дорожки и не собьёт ни одной кегли."
 
+#. the name or the meaning of a longer line
+msgid "a hollow rattle. The ball left the lane and will hit no pins."
+msgstr "глухое дребезжание. Шар ушёл с дорожки и не собьёт ни одной кегли."
+
+#. the name or the meaning of a longer line
+msgid "Light clatter"
+msgstr "Лёгкий грохот"
+
 msgid "Light clatter: a few pins falling."
 msgstr "Лёгкий грохот: падают несколько кеглей."
 
+#. the name or the meaning of a longer line
+msgid "a few pins falling."
+msgstr "падают несколько кеглей."
+
+#. the name or the meaning of a longer line
+msgid "Heavy clatter"
+msgstr "Тяжёлый грохот"
+
 msgid "Heavy clatter: most of the rack falling at once."
 msgstr "Тяжёлый грохот: падает почти вся расстановка разом."
+
+#. the name or the meaning of a longer line
+msgid "most of the rack falling at once."
+msgstr "падает почти вся расстановка разом."
+
+#. the name or the meaning of a longer line
+msgid "Pinsetter"
+msgstr "Кеглеставка"
 
 msgid ""
 "Pinsetter: a mechanical sweep and clunk as the deck is cleared and pins are "
@@ -49011,10 +50905,27 @@ msgstr ""
 "Кеглеставка: механический взмах и лязг, когда площадку очищают и ставят "
 "кегли."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a mechanical sweep and clunk as the deck is cleared and pins are set."
+msgstr "механический взмах и лязг, когда площадку очищают и ставят кегли."
+
+#. the name or the meaning of a longer line
+msgid "Ball return"
+msgstr "Возврат шара"
+
 msgid ""
 "Ball return: a rolling rumble and a knock. Your ball is back and you can "
 "roll."
 msgstr "Возврат шара: рокот и стук. Шар вернулся, можно бросать."
+
+#. the name or the meaning of a longer line
+msgid "a rolling rumble and a knock. Your ball is back and you can roll."
+msgstr "рокот и стук. Шар вернулся, можно бросать."
+
+#. the name or the meaning of a longer line
+msgid "Strike sting"
+msgstr "Сигнал страйка"
 
 msgid ""
 "Strike sting: a short jukebox flourish. All ten pins with the first ball."
@@ -49022,14 +50933,39 @@ msgstr ""
 "Сигнал страйка: короткая трель музыкального автомата. Все десять кеглей "
 "первым шаром."
 
+#. the name or the meaning of a longer line
+msgid "a short jukebox flourish. All ten pins with the first ball."
+msgstr ""
+"короткая трель музыкального автомата. Все десять кеглей первым шаром."
+
+#. the name or the meaning of a longer line
+msgid "Spare bell"
+msgstr "Колокол спэра"
+
 msgid "Spare bell: a bright bell. The second ball cleared the rest."
 msgstr "Колокол спэра: звонкий колокол. Второй шар снял остальные."
+
+#. the name or the meaning of a longer line
+msgid "a bright bell. The second ball cleared the rest."
+msgstr "звонкий колокол. Второй шар снял остальные."
+
+#. the name or the meaning of a longer line
+msgid "Pumpkins falling, light"
+msgstr "Тыквы падают, лёгкое"
 
 msgid ""
 "Pumpkins falling, light: a hollow squash. On Pumpkin night, a few pumpkins "
 "went down."
 msgstr ""
 "Тыквы падают, лёгкое: глухой шлепок. В Тыквенную ночь упало несколько тыкв."
+
+#. the name or the meaning of a longer line
+msgid "a hollow squash. On Pumpkin night, a few pumpkins went down."
+msgstr "глухой шлепок. В Тыквенную ночь упало несколько тыкв."
+
+#. the name or the meaning of a longer line
+msgid "Pumpkins falling, heavy"
+msgstr "Тыквы падают, тяжёлое"
 
 msgid ""
 "Pumpkins falling, heavy: a long hollow tumble. On Pumpkin night, five or "
@@ -49038,10 +50974,22 @@ msgstr ""
 "Тыквы падают, тяжёлое: долгий глухой обвал. В Тыквенную ночь упало пять и "
 "больше."
 
+#. the name or the meaning of a longer line
+msgid "a long hollow tumble. On Pumpkin night, five or more went down."
+msgstr "долгий глухой обвал. В Тыквенную ночь упало пять и больше."
+
+#. the name or the meaning of a longer line
+msgid "Grin carved"
+msgstr "Вырезана улыбка"
+
 msgid ""
 "Grin carved: a knife scrape and a low chord. A strike on Pumpkin night."
 msgstr ""
 "Вырезана улыбка: скрежет ножа и низкий аккорд. Страйк в Тыквенную ночь."
+
+#. the name or the meaning of a longer line
+msgid "a knife scrape and a low chord. A strike on Pumpkin night."
+msgstr "скрежет ножа и низкий аккорд. Страйк в Тыквенную ночь."
 
 msgid "Return to the Midnight Lanes title."
 msgstr "Вернуться в стартовое меню Midnight Lanes."
@@ -56586,12 +58534,36 @@ msgid "Step: a soft tap on wooden boards. You moved one cell."
 msgstr ""
 "Шаг: мягкий стук по деревянным доскам. Вы сдвинулись на одну клетку."
 
+#. the name or the meaning of a longer line
+msgid "a soft tap on wooden boards. You moved one cell."
+msgstr "мягкий стук по деревянным доскам. Вы сдвинулись на одну клетку."
+
+#. the name or the meaning of a longer line
+msgid "Nibble"
+msgstr "Хруст"
+
 msgid "Nibble: a quick crunch. You ate a crumb, for 10 points."
 msgstr "Хруст: быстрое хрумканье. Вы съели крошку, 10 очков."
+
+#. the name or the meaning of a longer line
+msgid "a quick crunch. You ate a crumb, for 10 points."
+msgstr "быстрое хрумканье. Вы съели крошку, 10 очков."
+
+#. the name or the meaning of a longer line
+msgid "Wall"
+msgstr "Стена"
 
 msgid ""
 "Wall: a dull thud. A wall is in the way, and the open ways are spoken."
 msgstr "Стена: глухой удар. На пути стена, и открытые пути называются."
+
+#. the name or the meaning of a longer line
+msgid "a dull thud. A wall is in the way, and the open ways are spoken."
+msgstr "глухой удар. На пути стена, и открытые пути называются."
+
+#. the name or the meaning of a longer line
+msgid "Sniff tick"
+msgstr "Щелчок нюха"
 
 msgid ""
 "Sniff tick: a tiny bright tick. Each one is a crumb, from its direction, "
@@ -56600,8 +58572,27 @@ msgstr ""
 "Щелчок нюха: крошечный яркий щелчок. Каждый это крошка, со своего "
 "направления, сначала ближайшая."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a tiny bright tick. Each one is a crumb, from its direction, nearest first."
+msgstr ""
+"крошечный яркий щелчок. Каждый это крошка, со своего направления, сначала "
+"ближайшая."
+
+#. the name or the meaning of a longer line
+msgid "Ginger cat"
+msgstr "Рыжий кот"
+
 msgid "Ginger cat: a bell on its collar. It heads straight for you."
 msgstr "Рыжий кот: колокольчик на ошейнике. Он идёт прямо к вам."
+
+#. the name or the meaning of a longer line
+msgid "a bell on its collar. It heads straight for you."
+msgstr "колокольчик на ошейнике. Он идёт прямо к вам."
+
+#. the name or the meaning of a longer line
+msgid "Tabby cat"
+msgstr "Полосатый кот"
 
 msgid ""
 "Tabby cat: soft padding paws. It wanders until it is 4 steps away, then "
@@ -56610,12 +58601,32 @@ msgstr ""
 "Полосатый кот: мягкая поступь лап. Он бродит, пока не окажется в 4 шагах, "
 "потом гонится."
 
+#. the name or the meaning of a longer line
+msgid "soft padding paws. It wanders until it is 4 steps away, then chases."
+msgstr ""
+"мягкая поступь лап. Он бродит, пока не окажется в 4 шагах, потом гонится."
+
+#. the name or the meaning of a longer line
+msgid "Grey cat"
+msgstr "Серый кот"
+
 msgid ""
 "Grey cat: a low purr. It wanders like the tabby, and joins in the monthly "
 "challenge."
 msgstr ""
 "Серый кот: низкое мурлыканье. Он бродит, как полосатый, и появляется в "
 "испытании месяца."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a low purr. It wanders like the tabby, and joins in the monthly challenge."
+msgstr ""
+"низкое мурлыканье. Он бродит, как полосатый, и появляется в испытании "
+"месяца."
+
+#. the name or the meaning of a longer line
+msgid "Cat close"
+msgstr "Кот рядом"
 
 msgid ""
 "Cat close: a short rising meow from the cat's side. A cat is 2 steps away "
@@ -56624,9 +58635,23 @@ msgstr ""
 "Кот рядом: короткое нарастающее мяуканье со стороны кота. Кот в 2 шагах или "
 "ближе."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short rising meow from the cat's side. A cat is 2 steps away or nearer."
+msgstr ""
+"короткое нарастающее мяуканье со стороны кота. Кот в 2 шагах или ближе."
+
 msgid ""
 "Caught: a pounce and a squeak. A cat caught you and you lose a whisker."
 msgstr "Поймали: прыжок и писк. Кот поймал вас, и вы теряете ус."
+
+#. the name or the meaning of a longer line
+msgid "a pounce and a squeak. A cat caught you and you lose a whisker."
+msgstr "прыжок и писк. Кот поймал вас, и вы теряете ус."
+
+#. the name or the meaning of a longer line
+msgid "Freeze"
+msgstr "Замрите"
 
 msgid ""
 "Freeze: an indrawn breath. You keep still and the nearest cat loses track "
@@ -56635,11 +58660,36 @@ msgstr ""
 "Замирание: затаённый вдох. Вы не двигаетесь, и ближайший кот теряет ваш "
 "след."
 
+#. the name or the meaning of a longer line
+msgid ""
+"an indrawn breath. You keep still and the nearest cat loses track of you."
+msgstr "затаённый вдох. Вы не двигаетесь, и ближайший кот теряет ваш след."
+
+#. the name or the meaning of a longer line
+msgid "Thaw"
+msgstr "Оттаивание"
+
 msgid "Thaw: a soft breath out. You can move again."
 msgstr "Оттаивание: тихий выдох. Можно снова двигаться."
 
+#. the name or the meaning of a longer line
+msgid "a soft breath out. You can move again."
+msgstr "тихий выдох. Можно снова двигаться."
+
+#. the name or the meaning of a longer line
+msgid "Pantry clear"
+msgstr "Кладовая очищена"
+
 msgid "Pantry clear: a bright rising run of notes. Every crumb is gone."
 msgstr "Кладовая очищена: яркий восходящий пассаж. Крошек больше нет."
+
+#. the name or the meaning of a longer line
+msgid "a bright rising run of notes. Every crumb is gone."
+msgstr "яркий восходящий пассаж. Крошек больше нет."
+
+#. the name or the meaning of a longer line
+msgid "Turkey scrap"
+msgstr "Кусочек индейки"
 
 msgid ""
 "Turkey scrap: a juicy chew. In the Leftovers pantry at Thanksgiving, a "
@@ -56650,6 +58700,18 @@ msgstr ""
 "кусочек индейки, 50 очков. Принюхивание играет его оттуда, где прячется "
 "ближайший."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a juicy chew. In the Leftovers pantry at Thanksgiving, a turkey scrap, for "
+"50 points. A sniff plays it from where the nearest one hides."
+msgstr ""
+"сочное чавканье. В Остатках пира на День благодарения кусочек индейки, 50 "
+"очков. Принюхивание играет его оттуда, где прячется ближайший."
+
+#. the name or the meaning of a longer line
+msgid "Cheese rind"
+msgstr "Корка сыра"
+
 msgid ""
 "Cheese rind: a soft glassy chime. On Bin night, the first Tuesday of every "
 "month, a cheese rind in every pantry, for 100 points. A sniff plays it from "
@@ -56658,6 +58720,16 @@ msgstr ""
 "Корка сыра: мягкий стеклянный звон. В Ночь мусорного ведра, первый вторник "
 "каждого месяца, корка сыра в каждой кладовой, 100 очков. Принюхивание "
 "играет её оттуда, где она прячется."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a soft glassy chime. On Bin night, the first Tuesday of every month, a "
+"cheese rind in every pantry, for 100 points. A sniff plays it from where it "
+"hides."
+msgstr ""
+"мягкий стеклянный звон. В Ночь мусорного ведра, первый вторник каждого "
+"месяца, корка сыра в каждой кладовой, 100 очков. Принюхивание играет её "
+"оттуда, где она прячется."
 
 msgid "Return to the Pantry Mouse title."
 msgstr "Вернуться в стартовое меню Pantry Mouse."
@@ -57722,17 +59794,38 @@ msgstr "У вас {night}."
 msgid "across the table"
 msgstr "напротив"
 
+#. the name or the meaning of a longer line
+msgid "Cup rattle"
+msgstr "Стук стакана"
+
 msgid ""
 "Cup rattle: the dealer shakes two dice in a leather cup. A roll is coming."
 msgstr ""
 "Стук стакана: крупье трясёт две кости в кожаном стакане. Сейчас будет "
 "бросок."
 
+#. the name or the meaning of a longer line
+msgid "the dealer shakes two dice in a leather cup. A roll is coming."
+msgstr "крупье трясёт две кости в кожаном стакане. Сейчас будет бросок."
+
+#. the name or the meaning of a longer line
+msgid "Dice landing"
+msgstr "Кости падают"
+
 msgid ""
 "Dice landing: two dice tumble onto the felt. The dealer calls the faces and "
 "the sum."
 msgstr ""
 "Кости падают: две кости катятся по сукну. Крупье называет грани и сумму."
+
+#. the name or the meaning of a longer line
+msgid ""
+"two dice tumble onto the felt. The dealer calls the faces and the sum."
+msgstr "две кости катятся по сукну. Крупье называет грани и сумму."
+
+#. the name or the meaning of a longer line
+msgid "One thud"
+msgstr "Глухой стук"
 
 msgid ""
 "One thud: a dull wooden thud. A die shows 1, and the landing is over for "
@@ -57741,12 +59834,36 @@ msgstr ""
 "Глухой стук: тупой деревянный удар. На кости 1, и пристань окончена для "
 "всех, кто ещё сидит."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a dull wooden thud. A die shows 1, and the landing is over for everyone "
+"still seated."
+msgstr ""
+"тупой деревянный удар. На кости 1, и пристань окончена для всех, кто ещё "
+"сидит."
+
+#. the name or the meaning of a longer line
+msgid "Snag crash"
+msgstr "Грохот коряги"
+
 msgid ""
 "Snag crash: a crash of glass and wood. A double 1 with the snag rule on "
 "wipes the night total of everyone seated."
 msgstr ""
 "Грохот коряги: звон стекла и треск дерева. Дубль 1 с правилом коряги "
 "стирает сумму за вечер у всех, кто сидит."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a crash of glass and wood. A double 1 with the snag rule on wipes the night "
+"total of everyone seated."
+msgstr ""
+"звон стекла и треск дерева. Дубль 1 с правилом коряги стирает сумму за "
+"вечер у всех, кто сидит."
+
+#. the name or the meaning of a longer line
+msgid "Chair scrape"
+msgstr "Скрип стула"
 
 msgid ""
 "Chair scrape: a player stands and banks. It comes from their seat, left, "
@@ -57755,25 +59872,75 @@ msgstr ""
 "Скрип стула: игрок встаёт и забирает. Звучит с его места: слева, напротив "
 "или справа."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a player stands and banks. It comes from their seat, left, across or right."
+msgstr ""
+"игрок встаёт и забирает. Звучит с его места: слева, напротив или справа."
+
+#. the name or the meaning of a longer line
+msgid "Coin stack"
+msgstr "Стопка монет"
+
 msgid "Coin stack: you bank the table's total into your night total."
 msgstr "Стопка монет: вы забираете сумму со стола в свою сумму за вечер."
+
+#. the name or the meaning of a longer line
+msgid "you bank the table's total into your night total."
+msgstr "вы забираете сумму со стола в свою сумму за вечер."
+
+#. the name or the meaning of a longer line
+msgid "Table groan"
+msgstr "Стон стола"
 
 msgid "Table groan: the table groans at a 1."
 msgstr "Стон стола: стол стонет, когда выпала 1."
 
+#. the name or the meaning of a longer line
+msgid "the table groans at a 1."
+msgstr "стол стонет, когда выпала 1."
+
+#. the name or the meaning of a longer line
+msgid "Table cheer"
+msgstr "Ликование стола"
+
 msgid "Table cheer: you win the night."
 msgstr "Ликование стола: вы выиграли вечер."
 
+#. the name or the meaning of a longer line
+msgid "you win the night."
+msgstr "вы выиграли вечер."
+
 msgid "Dull tap: nothing to do just now."
 msgstr "Глухой стук: сейчас делать нечего."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do just now."
+msgstr "сейчас делать нечего."
+
+#. the name or the meaning of a longer line
+msgid "Showboat chime"
+msgstr "Звон плавучего театра"
 
 msgid ""
 "Showboat chime: on Showboat Saturday, doubles double what the table holds."
 msgstr ""
 "Звон плавучего театра: в Showboat Saturday дубли удваивают то, что на столе."
 
+#. the name or the meaning of a longer line
+msgid "on Showboat Saturday, doubles double what the table holds."
+msgstr "в Showboat Saturday дубли удваивают то, что на столе."
+
+#. the name or the meaning of a longer line
+msgid "Seats"
+msgstr "Места"
+
 msgid "Seats: Widow left, Gambler ahead, Captain right"
 msgstr "Места: Вдова слева, Картёжник впереди, Капитан справа"
+
+#. the name or the meaning of a longer line
+msgid "Widow left, Gambler ahead, Captain right"
+msgstr ""
 
 msgid "Where each player sits, by the sound of their chair."
 msgstr "Где сидит каждый игрок, по звуку его стула."
@@ -64114,8 +66281,20 @@ msgstr ""
 msgid "several"
 msgstr ""
 
+#. the name or the meaning of a longer line
+msgid "Dial click"
+msgstr "Щелчок лимба"
+
 msgid "Dial click: the dial moved one number."
 msgstr "Щелчок лимба: лимб сдвинулся на одно число."
+
+#. the name or the meaning of a longer line
+msgid "the dial moved one number."
+msgstr "лимб сдвинулся на одно число."
+
+#. the name or the meaning of a longer line
+msgid "Ten detent"
+msgstr "Отметка десятка"
 
 msgid ""
 "Ten detent: a firmer double click at every tenth number, 10, 20 and so on, "
@@ -64124,15 +66303,43 @@ msgstr ""
 "Отметка десятка: более твёрдый двойной щелчок на каждом десятом числе, 10, "
 "20 и так далее, чтобы легче считать."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a firmer double click at every tenth number, 10, 20 and so on, to help you "
+"count."
+msgstr ""
+"более твёрдый двойной щелчок на каждом десятом числе, 10, 20 и так далее, "
+"чтобы легче считать."
+
+#. the name or the meaning of a longer line
+msgid "Zero notch"
+msgstr "Засечка нуля"
+
 msgid ""
 "Zero notch: a deep notch as the dial reaches zero, the top of the dial."
 msgstr ""
 "Засечка нуля: глубокая засечка, когда лимб доходит до нуля, верха лимба."
 
+#. the name or the meaning of a longer line
+msgid "a deep notch as the dial reaches zero, the top of the dial."
+msgstr "глубокая засечка, когда лимб доходит до нуля, верха лимба."
+
+#. the name or the meaning of a longer line
+msgid "Spin"
+msgstr "Поворот на десять"
+
 msgid "Spin: a quick ratchet as the dial spins ten numbers at once."
 msgstr ""
 "Поворот на десять: быстрый треск храповика, когда лимб сразу проходит "
 "десять чисел."
+
+#. the name or the meaning of a longer line
+msgid "a quick ratchet as the dial spins ten numbers at once."
+msgstr "быстрый треск храповика, когда лимб сразу проходит десять чисел."
+
+#. the name or the meaning of a longer line
+msgid "Tumbler clunk"
+msgstr "Стук сувальды"
 
 msgid ""
 "Tumbler clunk: the dial passed or reached this wheel's number. Deep and "
@@ -64143,6 +66350,18 @@ msgstr ""
 "плотный. Остановитесь, вернитесь к нему и ставьте диск. На поздних сейфах "
 "он тише."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the dial passed or reached this wheel's number. Deep and solid. Stop, step "
+"back to it, and set the wheel. On later safes it is quieter."
+msgstr ""
+"лимб прошёл или достиг числа этого диска. Глубокий и плотный. Остановитесь, "
+"вернитесь к нему и ставьте диск. На поздних сейфах он тише."
+
+#. the name or the meaning of a longer line
+msgid "False gate"
+msgstr "Ложный зацеп"
+
 msgid ""
 "False gate: a hollow, rattling tick at a wrong number. Ignore it: it is not "
 "the tumbler."
@@ -64150,11 +66369,26 @@ msgstr ""
 "Ложный зацеп: глухое дребезжащее тиканье на неверном числе. Не обращайте "
 "внимания: это не сувальда."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a hollow, rattling tick at a wrong number. Ignore it: it is not the tumbler."
+msgstr ""
+"глухое дребезжащее тиканье на неверном числе. Не обращайте внимания: это не "
+"сувальда."
+
+#. the name or the meaning of a longer line
+msgid "Wheel set"
+msgstr "Диск поставлен"
+
 msgid ""
 "Wheel set: a latch and a rising chime. The wheel is set, on to the next."
 msgstr ""
 "Диск поставлен: защёлка и восходящий звон. Диск стоит, переходите к "
 "следующему."
+
+#. the name or the meaning of a longer line
+msgid "a latch and a rising chime. The wheel is set, on to the next."
+msgstr "защёлка и восходящий звон. Диск стоит, переходите к следующему."
 
 msgid ""
 "Spring: a wrong set. The wheel springs back and you take a strike. Three "
@@ -64163,8 +66397,28 @@ msgstr ""
 "Пружина: неверное число. Диск отскакивает, и вы получаете промах. Три "
 "промаха, и сейф заклинивает."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a wrong set. The wheel springs back and you take a strike. Three strikes "
+"and the safe jams."
+msgstr ""
+"неверное число. Диск отскакивает, и вы получаете промах. Три промаха, и "
+"сейф заклинивает."
+
+#. the name or the meaning of a longer line
+msgid "Safe open"
+msgstr "Сейф открыт"
+
 msgid "Safe open: the handle turns and the bolts slide back."
 msgstr "Сейф открыт: ручка поворачивается, засовы отходят."
+
+#. the name or the meaning of a longer line
+msgid "the handle turns and the bolts slide back."
+msgstr "ручка поворачивается, засовы отходят."
+
+#. the name or the meaning of a longer line
+msgid "Onward"
+msgstr "Дальше"
 
 msgid ""
 "Onward: a heavy door and a bell. In a challenge, this safe is open and the "
@@ -64173,13 +66427,40 @@ msgstr ""
 "Дальше: тяжёлая дверь и колокольчик. В испытании этот сейф открыт и ждёт "
 "следующий."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a heavy door and a bell. In a challenge, this safe is open and the next one "
+"is waiting."
+msgstr ""
+"тяжёлая дверь и колокольчик. В испытании этот сейф открыт и ждёт следующий."
+
+#. the name or the meaning of a longer line
+msgid "Relocker"
+msgstr "Блокиратор"
+
 msgid "Relocker: the safe jams and the alarm rings. The safe is lost."
 msgstr "Блокиратор: сейф заклинило, звенит сигнализация. Сейф проигран."
+
+#. the name or the meaning of a longer line
+msgid "the safe jams and the alarm rings. The safe is lost."
+msgstr "сейф заклинило, звенит сигнализация. Сейф проигран."
+
+#. the name or the meaning of a longer line
+msgid "Footsteps"
+msgstr "Шаги"
 
 msgid ""
 "Footsteps: the guard is coming down the corridor. When they stop, keep "
 "still."
 msgstr "Шаги: охранник идёт по коридору. Когда они стихнут, замрите."
+
+#. the name or the meaning of a longer line
+msgid "the guard is coming down the corridor. When they stop, keep still."
+msgstr "охранник идёт по коридору. Когда они стихнут, замрите."
+
+#. the name or the meaning of a longer line
+msgid "Guard at the door"
+msgstr "Охранник у двери"
 
 msgid ""
 "Guard at the door: the footsteps stop and his keys jingle. Keep still: do "
@@ -64188,29 +66469,82 @@ msgstr ""
 "Охранник у двери: шаги стихают, звенят ключи. Замрите: не крутите и не "
 "ставьте, пока он не уйдёт."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the footsteps stop and his keys jingle. Keep still: do not turn or set "
+"until he walks away."
+msgstr ""
+"шаги стихают, звенят ключи. Замрите: не крутите и не ставьте, пока он не "
+"уйдёт."
+
+#. the name or the meaning of a longer line
+msgid "Who's there"
+msgstr "Кто там"
+
 msgid ""
 "Who's there: the guard heard you. One more noise while he listens and you "
 "are caught."
 msgstr ""
 "Кто там: охранник вас услышал. Ещё один шум, пока он слушает, и вас поймают."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the guard heard you. One more noise while he listens and you are caught."
+msgstr "охранник вас услышал. Ещё один шум, пока он слушает, и вас поймают."
+
+#. the name or the meaning of a longer line
+msgid "Whistle"
+msgstr "Свисток"
+
 msgid "Whistle: the guard caught you. The safe is lost."
 msgstr "Свисток: охранник вас поймал. Сейф проигран."
+
+#. the name or the meaning of a longer line
+msgid "the guard caught you. The safe is lost."
+msgstr "охранник вас поймал. Сейф проигран."
 
 msgid "Clock tick: time attack is running low."
 msgstr "Тиканье часов: время в режиме на время на исходе."
 
+#. the name or the meaning of a longer line
+msgid "time attack is running low."
+msgstr "время в режиме на время на исходе."
+
 msgid "Dull tap: nothing to do, or no hints left."
 msgstr "Глухой стук: делать нечего или подсказок не осталось."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do, or no hints left."
+msgstr "делать нечего или подсказок не осталось."
+
+#. the name or the meaning of a longer line
+msgid "Knocking pipe"
+msgstr "Стук трубы"
 
 msgid "Knocking pipe: a building noise, off to one side. Not the safe."
 msgstr "Стук трубы: шум здания, сбоку. Не сейф."
 
+#. the name or the meaning of a longer line
+msgid "a building noise, off to one side. Not the safe."
+msgstr "шум здания, сбоку. Не сейф."
+
+#. the name or the meaning of a longer line
+msgid "Creaking floor"
+msgstr "Скрип пола"
+
 msgid "Creaking floor: a building noise, off to one side. Not the safe."
 msgstr "Скрип пола: шум здания, сбоку. Не сейф."
 
+#. the name or the meaning of a longer line
+msgid "Distant clock"
+msgstr "Далёкие часы"
+
 msgid "Distant clock: a building noise, off to one side. Not the safe."
 msgstr "Далёкие часы: шум здания, сбоку. Не сейф."
+
+#. the name or the meaning of a longer line
+msgid "Cat yowl"
+msgstr "Мяуканье"
 
 msgid ""
 "Cat yowl: a soft, short yowl just after a clunk. On Friday the 13th, the "
@@ -64218,6 +66552,14 @@ msgid ""
 msgstr ""
 "Мяуканье: тихое короткое мяуканье сразу после стука. В пятницу 13-е это "
 "кошка несчастливого сейфа: число этого диска 13."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a soft, short yowl just after a clunk. On Friday the 13th, the unlucky "
+"safe's cat: this wheel's number is 13."
+msgstr ""
+"тихое короткое мяуканье сразу после стука. В пятницу 13-е это кошка "
+"несчастливого сейфа: число этого диска 13."
 
 msgid "Click and clunk"
 msgstr "Щелчок и стук"
@@ -65398,16 +67740,39 @@ msgstr "Сход с рельсов на первом же поезде."
 msgid "Derailed after {trains_words}."
 msgstr "Сход с рельсов после: {trains_words}."
 
+#. the name or the meaning of a longer line
+msgid "Tick"
+msgstr "Ритм"
+
 msgid ""
 "Tick: a dry, quiet tap that keeps the tempo. It quickens as the window "
 "shrinks."
 msgstr ""
 "Ритм: сухой тихий стук, держащий темп. Он ускоряется, когда окно сужается."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a dry, quiet tap that keeps the tempo. It quickens as the window shrinks."
+msgstr ""
+"сухой тихий стук, держащий темп. Он ускоряется, когда окно сужается."
+
+#. the name or the meaning of a longer line
+msgid "Train passing"
+msgstr "Проходящий поезд"
+
 msgid ""
 "Train passing: a rush from left to right. Your answer was right and the "
 "train is through."
 msgstr "Проходящий поезд: гул слева направо. Ответ верный, поезд прошёл."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a rush from left to right. Your answer was right and the train is through."
+msgstr "гул слева направо. Ответ верный, поезд прошёл."
+
+#. the name or the meaning of a longer line
+msgid "Steam special"
+msgstr "Паровоз"
 
 msgid ""
 "Steam special: steam chuffs and a two-note whistle as the train rushes by. "
@@ -65416,6 +67781,18 @@ msgstr ""
 "Паровоз: пыхтение пара и двухтоновый свисток, пока поезд проносится мимо. "
 "На празднике паровозов каждый пятый поезд паровоз, он стоит 3 очка."
 
+#. the name or the meaning of a longer line
+msgid ""
+"steam chuffs and a two-note whistle as the train rushes by. At the steam "
+"gala, every fifth train is the special, worth 3 points."
+msgstr ""
+"пыхтение пара и двухтоновый свисток, пока поезд проносится мимо. На "
+"празднике паровозов каждый пятый поезд паровоз, он стоит 3 очка."
+
+#. the name or the meaning of a longer line
+msgid "Ghost train"
+msgstr "Призрачный поезд"
+
 msgid ""
 "Ghost train: the rush with a long, falling, ghostly whistle. On Friday the "
 "13th, the thirteenth train of the night shift went through."
@@ -65423,11 +67800,32 @@ msgstr ""
 "Призрачный поезд: гул с долгим нисходящим призрачным свистком. В пятницу "
 "13-е прошёл тринадцатый поезд ночной смены."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the rush with a long, falling, ghostly whistle. On Friday the 13th, the "
+"thirteenth train of the night shift went through."
+msgstr ""
+"гул с долгим нисходящим призрачным свистком. В пятницу 13-е прошёл "
+"тринадцатый поезд ночной смены."
+
+#. the name or the meaning of a longer line
+msgid "Streak chime"
+msgstr "Звон серии"
+
 msgid ""
 "Streak chime: a bright rising run. Another 10 trains in a row, for a bonus "
 "of 5 points."
 msgstr ""
 "Звон серии: яркий восходящий пассаж. Ещё 10 поездов подряд, бонус 5 очков."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a bright rising run. Another 10 trains in a row, for a bonus of 5 points."
+msgstr "яркий восходящий пассаж. Ещё 10 поездов подряд, бонус 5 очков."
+
+#. the name or the meaning of a longer line
+msgid "Brake screech"
+msgstr "Визг тормозов"
 
 msgid ""
 "Brake screech: a long squeal and a crash. A wrong or late answer derailed "
@@ -65435,6 +67833,14 @@ msgid ""
 msgstr ""
 "Визг тормозов: долгий скрежет и грохот. Неверный или поздний ответ пустил "
 "поезд под откос, смена окончена."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a long squeal and a crash. A wrong or late answer derailed the train, and "
+"the shift is over."
+msgstr ""
+"долгий скрежет и грохот. Неверный или поздний ответ пустил поезд под откос, "
+"смена окончена."
 
 #. placeholders: {word}, {sound_words}
 msgid "The {word} call: {sound_words}."
@@ -68003,11 +70409,27 @@ msgstr "Их история рассказана."
 msgid "Part {told} of {story}."
 msgstr "Часть {told} из {story}."
 
+#. the name or the meaning of a longer line
+msgid "Door bell"
+msgstr "Дверной колокольчик"
+
 msgid "Door bell: a small brass bell. A guest comes in."
 msgstr "Дверной колокольчик: маленький латунный колокольчик. Входит гость."
 
+#. the name or the meaning of a longer line
+msgid "a small brass bell. A guest comes in."
+msgstr "маленький латунный колокольчик. Входит гость."
+
 msgid "Footsteps: soft steps on the wooden floor, coming to the counter."
 msgstr "Шаги: мягкие шаги по деревянному полу к стойке."
+
+#. the name or the meaning of a longer line
+msgid "soft steps on the wooden floor, coming to the counter."
+msgstr "мягкие шаги по деревянному полу к стойке."
+
+#. the name or the meaning of a longer line
+msgid "Shelf tick"
+msgstr "Стук полки"
 
 msgid ""
 "Shelf tick: a soft wooden tick as you move along the shelf or the cups."
@@ -68015,11 +70437,35 @@ msgstr ""
 "Стук полки: тихий деревянный стук, когда вы двигаетесь вдоль полки или "
 "чашек."
 
+#. the name or the meaning of a longer line
+msgid "a soft wooden tick as you move along the shelf or the cups."
+msgstr "тихий деревянный стук, когда вы двигаетесь вдоль полки или чашек."
+
+#. the name or the meaning of a longer line
+msgid "Tin lid"
+msgstr "Жестяная крышка"
+
 msgid "Tin lid: a tea tin opens. Your tea goes in the pot."
 msgstr "Жестяная крышка: открывается банка чая. Чай идёт в чайник."
 
+#. the name or the meaning of a longer line
+msgid "a tea tin opens. Your tea goes in the pot."
+msgstr "открывается банка чая. Чай идёт в чайник."
+
+#. the name or the meaning of a longer line
+msgid "Kettle switch"
+msgstr "Кнопка чайника"
+
 msgid "Kettle switch: a click. The kettle is on."
 msgstr "Кнопка чайника: щелчок. Чайник поставлен."
+
+#. the name or the meaning of a longer line
+msgid "a click. The kettle is on."
+msgstr "щелчок. Чайник поставлен."
+
+#. the name or the meaning of a longer line
+msgid "Rumble"
+msgstr "Гул"
 
 msgid ""
 "Rumble: the kettle's low song as it starts to warm, up to about 65 degrees."
@@ -68027,20 +70473,54 @@ msgstr ""
 "Гул: низкая песня чайника, когда он начинает греться, примерно до 65 "
 "градусов."
 
+#. the name or the meaning of a longer line
+msgid "the kettle's low song as it starts to warm, up to about 65 degrees."
+msgstr ""
+"низкая песня чайника, когда он начинает греться, примерно до 65 градусов."
+
+#. the name or the meaning of a longer line
+msgid "Hiss"
+msgstr "Шипение"
+
 msgid ""
 "Hiss: the kettle's rushing song from about 80 degrees, rising toward the "
 "boil."
 msgstr ""
 "Шипение: шумная песня чайника примерно с 80 градусов, нарастающая к кипению."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the kettle's rushing song from about 80 degrees, rising toward the boil."
+msgstr "шумная песня чайника примерно с 80 градусов, нарастающая к кипению."
+
 msgid "Whistle: a gentle whistle. The kettle is at the boil, 100 degrees."
 msgstr "Свист: мягкий свист. Чайник кипит, 100 градусов."
+
+#. the name or the meaning of a longer line
+msgid "a gentle whistle. The kettle is at the boil, 100 degrees."
+msgstr "мягкий свист. Чайник кипит, 100 градусов."
+
+#. the name or the meaning of a longer line
+msgid "Pour"
+msgstr "Налив"
 
 msgid "Pour: water from the kettle onto the leaves. The steep begins."
 msgstr "Налив: вода из чайника на листья. Заварка начинается."
 
+#. the name or the meaning of a longer line
+msgid "water from the kettle onto the leaves. The steep begins."
+msgstr "вода из чайника на листья. Заварка начинается."
+
 msgid "Clock tick: one second of steeping."
 msgstr "Тиканье часов: одна секунда заварки."
+
+#. the name or the meaning of a longer line
+msgid "one second of steeping."
+msgstr "одна секунда заварки."
+
+#. the name or the meaning of a longer line
+msgid "Sand timer chime"
+msgstr "Звон песочных часов"
 
 msgid ""
 "Sand timer chime: the steep has reached what the tea wants. Only once you "
@@ -68049,26 +70529,92 @@ msgstr ""
 "Звон песочных часов: заварка дошла до нужного чаю времени. Только если у "
 "вас есть песочные часы."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the steep has reached what the tea wants. Only once you own the sand timer."
+msgstr ""
+"заварка дошла до нужного чаю времени. Только если у вас есть песочные часы."
+
+#. the name or the meaning of a longer line
+msgid "Leaves lifted"
+msgstr "Листья вынуты"
+
 msgid "Leaves lifted: a drip and a swish. The steep is over."
 msgstr "Листья вынуты: капля и шорох. Заварка окончена."
+
+#. the name or the meaning of a longer line
+msgid "a drip and a swish. The steep is over."
+msgstr "капля и шорох. Заварка окончена."
+
+#. the name or the meaning of a longer line
+msgid "Cup filled"
+msgstr "Чашка налита"
 
 msgid "Cup filled: tea poured from the pot into one cup."
 msgstr "Чашка налита: чай из чайника в одну чашку."
 
+#. the name or the meaning of a longer line
+msgid "tea poured from the pot into one cup."
+msgstr "чай из чайника в одну чашку."
+
+#. the name or the meaning of a longer line
+msgid "Ice"
+msgstr "Лёд"
+
 msgid "Ice: cubes clink in the glass, for an iced tea."
 msgstr "Лёд: кубики звенят в стакане, для холодного чая."
+
+#. the name or the meaning of a longer line
+msgid "cubes clink in the glass, for an iced tea."
+msgstr "кубики звенят в стакане, для холодного чая."
+
+#. the name or the meaning of a longer line
+msgid "Perfect cup"
+msgstr "Идеальная чашка"
 
 msgid "Perfect cup: three warm rising notes."
 msgstr "Идеальная чашка: три тёплые восходящие ноты."
 
+#. the name or the meaning of a longer line
+msgid "three warm rising notes."
+msgstr "три тёплые восходящие ноты."
+
+#. the name or the meaning of a longer line
+msgid "Lovely cup"
+msgstr "Чудесная чашка"
+
 msgid "Lovely cup: two warm notes."
 msgstr "Чудесная чашка: две тёплые ноты."
+
+#. the name or the meaning of a longer line
+msgid "two warm notes."
+msgstr "две тёплые ноты."
+
+#. the name or the meaning of a longer line
+msgid "Kind cup"
+msgstr "Милая чашка"
 
 msgid "Kind cup: one soft note. The guest is still pleased."
 msgstr "Милая чашка: одна тихая нота. Гость всё равно доволен."
 
+#. the name or the meaning of a longer line
+msgid "one soft note. The guest is still pleased."
+msgstr "одна тихая нота. Гость всё равно доволен."
+
+#. the name or the meaning of a longer line
+msgid "Coins"
+msgstr "Монеты"
+
 msgid "Coins: coins on the counter, for the cup and any tip."
 msgstr "Монеты: монеты на стойке, за чашку и чаевые."
+
+#. the name or the meaning of a longer line
+msgid "coins on the counter, for the cup and any tip."
+msgstr "монеты на стойке, за чашку и чаевые."
+
+#. the name or the meaning of a longer line
+msgid "Soft thud"
+msgstr "Мягкий стук"
 
 msgid "Soft thud: nothing to do just now."
 msgstr "Мягкий стук: сейчас делать нечего."
@@ -70778,6 +73324,10 @@ msgstr ""
 "Низкая нисходящая нота позади: пропущенный фонарик. Цепочка начинается "
 "заново."
 
+#. the name or the meaning of a longer line
+msgid "A flat clink"
+msgstr "Плоский звяк"
+
 msgid ""
 "A flat clink: on the lantern skate, the second lit of a pair. Your line "
 "starts again."
@@ -70787,6 +73337,13 @@ msgstr ""
 
 msgid "The wrong lantern"
 msgstr "Не тот фонарик"
+
+#. the name or the meaning of a longer line
+msgid ""
+"on the lantern skate, the second lit of a pair. Your line starts again."
+msgstr ""
+"на катании с фонариками второй загоревшийся в паре. Цепочка начинается "
+"заново."
 
 msgid "A drift ahead"
 msgstr "Сугроб впереди"
@@ -70850,6 +73407,10 @@ msgstr ""
 msgid "A spin landed"
 msgstr "Вращение приземлено"
 
+#. the name or the meaning of a longer line
+msgid "A scuffing stagger"
+msgstr "Шаркающий сбой"
+
 msgid ""
 "A scuffing stagger: the spin was held too long. It scores nothing, and your "
 "line starts again."
@@ -70859,6 +73420,12 @@ msgstr ""
 
 msgid "A wobble"
 msgstr "Вас качнуло"
+
+#. the name or the meaning of a longer line
+msgid ""
+"the spin was held too long. It scores nothing, and your line starts again."
+msgstr ""
+"вращение держали слишком долго. Очков нет, и цепочка начинается заново."
 
 msgid "A night on the ice"
 msgstr "Ночь на льду"
@@ -72472,6 +75039,17 @@ msgstr ""
 "Двигатель: низкий рёв, пока вы держите клавишу двигателя. Он замедляет "
 "падение и тратит топливо."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low roar while you hold the engine key. It slows your fall and burns fuel."
+msgstr ""
+"низкий рёв, пока вы держите клавишу двигателя. Он замедляет падение и "
+"тратит топливо."
+
+#. the name or the meaning of a longer line
+msgid "Pad beacon"
+msgstr "Маяк площадки"
+
 msgid ""
 "Pad beacon: a soft ping from the pad below you. It quickens as you get "
 "closer."
@@ -72479,8 +75057,24 @@ msgstr ""
 "Маяк площадки: тихий писк с площадки внизу. Он учащается по мере "
 "приближения."
 
+#. the name or the meaning of a longer line
+msgid "a soft ping from the pad below you. It quickens as you get closer."
+msgstr "тихий писк с площадки внизу. Он учащается по мере приближения."
+
+#. the name or the meaning of a longer line
+msgid "Radio click"
+msgstr "Щелчок рации"
+
 msgid "Radio click: mission control is about to give a call-out."
 msgstr "Щелчок рации: центр управления сейчас даст оповещение."
+
+#. the name or the meaning of a longer line
+msgid "mission control is about to give a call-out."
+msgstr "центр управления сейчас даст оповещение."
+
+#. the name or the meaning of a longer line
+msgid "Quindar tone"
+msgstr "Тон Quindar"
 
 msgid ""
 "Quindar tone: a short high beep on the Tranquility pad. It stands for the "
@@ -72489,6 +75083,18 @@ msgstr ""
 "Тон Quindar: короткий высокий писк на Площадке Спокойствия. Он заменяет "
 "щелчок рации: следом идёт оповещение."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short high beep on the Tranquility pad. It stands for the radio click: a "
+"call-out follows."
+msgstr ""
+"короткий высокий писк на Площадке Спокойствия. Он заменяет щелчок рации: "
+"следом идёт оповещение."
+
+#. the name or the meaning of a longer line
+msgid "Fuel alarm"
+msgstr "Сигнал топлива"
+
 msgid ""
 "Fuel alarm: two soft beeps. Fuel is down to 25 percent, then again at 10 "
 "percent."
@@ -72496,11 +75102,30 @@ msgstr ""
 "Сигнал топлива: два тихих писка. Топлива осталось 25 процентов, а потом "
 "снова на 10 процентах."
 
+#. the name or the meaning of a longer line
+msgid ""
+"two soft beeps. Fuel is down to 25 percent, then again at 10 percent."
+msgstr ""
+"два тихих писка. Топлива осталось 25 процентов, а потом снова на 10 "
+"процентах."
+
+#. the name or the meaning of a longer line
+msgid "Touchdown"
+msgstr "Касание"
+
 msgid "Touchdown: a thud and a creak of the legs. You landed safely."
 msgstr "Касание: глухой удар и скрип опор. Вы сели благополучно."
 
+#. the name or the meaning of a longer line
+msgid "a thud and a creak of the legs. You landed safely."
+msgstr "глухой удар и скрип опор. Вы сели благополучно."
+
 msgid "Crash: a heavy crunch. You touched down faster than the safe speed."
 msgstr "Крушение: тяжёлый хруст. Вы коснулись быстрее безопасной скорости."
+
+#. the name or the meaning of a longer line
+msgid "a heavy crunch. You touched down faster than the safe speed."
+msgstr "тяжёлый хруст. Вы коснулись быстрее безопасной скорости."
 
 msgid "Descent tone, safe"
 msgstr "Тон спуска, безопасно"
@@ -72511,6 +75136,10 @@ msgid ""
 msgstr ""
 "Тон спуска, безопасно: низкий ровный тон. Вы падаете медленнее безопасной "
 "скорости."
+
+#. the name or the meaning of a longer line
+msgid "a low, steady tone. You are falling slower than the safe speed."
+msgstr "низкий ровный тон. Вы падаете медленнее безопасной скорости."
 
 msgid "Descent tone, too fast"
 msgstr "Тон спуска, слишком быстро"
@@ -72523,6 +75152,15 @@ msgstr ""
 "Тон спуска, слишком быстро: тот же тон, но выше. Чем быстрее падение, тем "
 "он выше. Вы слышите Слишком быстро, когда он превышает безопасную скорость, "
 "и Безопасная скорость, когда возвращается."
+
+#. the name or the meaning of a longer line
+msgid ""
+"the same tone, higher. The faster you fall, the higher it goes. You hear "
+"Too fast as it crosses the safe speed, and Safe speed as it comes back."
+msgstr ""
+"тот же тон, но выше. Чем быстрее падение, тем он выше. Вы слышите Слишком "
+"быстро, когда он превышает безопасную скорость, и Безопасная скорость, "
+"когда возвращается."
 
 msgid "prompts"
 msgstr ""
@@ -77664,12 +80302,24 @@ msgstr "Все созвездия пройдены"
 msgid "Shimmer"
 msgstr "Мерцание"
 
+#. the name or the meaning of a longer line
+msgid "Something hidden is near"
+msgstr "Рядом что-то скрытое"
+
 msgid ""
 "Something hidden is near: a wonder such as a nebula or a cluster. Rest on "
 "it and press the main action."
 msgstr ""
 "Рядом что-то скрытое: чудо, например туманность или скопление. Остановитесь "
 "на нём и нажмите клавишу действия."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a wonder such as a nebula or a cluster. Rest on it and press the main "
+"action."
+msgstr ""
+"чудо, например туманность или скопление. Остановитесь на нём и нажмите "
+"клавишу действия."
 
 msgid "A wonder is found and written in your journal."
 msgstr "Чудо найдено и записано в дневник."
@@ -78522,6 +81172,10 @@ msgstr ""
 msgid "G sharp"
 msgstr ""
 
+#. the name or the meaning of a longer line
+msgid "Pipe"
+msgstr "Труба"
+
 msgid ""
 "Pipe: a steady, soft organ tone. While you tune, two of these play "
 "together, the pipe and its true note. Out of tune, they wobble; in tune, "
@@ -78531,6 +81185,20 @@ msgstr ""
 "труба и её верная нота. Если расстроено, они дают биение; если настроено, "
 "биение затихает."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a steady, soft organ tone. While you tune, two of these play together, the "
+"pipe and its true note. Out of tune, they wobble; in tune, the wobble goes "
+"still."
+msgstr ""
+"ровный мягкий органный тон. Во время настройки звучат два таких: труба и её "
+"верная нота. Если расстроено, они дают биение; если настроено, биение "
+"затихает."
+
+#. the name or the meaning of a longer line
+msgid "Echo note"
+msgstr "Нота Echo"
+
 msgid ""
 "Echo note: one short organ note. The Echo plays these back as a tune once a "
 "rank is tuned."
@@ -78538,18 +81206,54 @@ msgstr ""
 "Нота Echo: одна короткая органная нота. Когда ряд настроен, The Echo играет "
 "такие ноты как мелодию."
 
+#. the name or the meaning of a longer line
+msgid ""
+"one short organ note. The Echo plays these back as a tune once a rank is "
+"tuned."
+msgstr ""
+"одна короткая органная нота. Когда ряд настроен, The Echo играет такие ноты "
+"как мелодию."
+
+#. the name or the meaning of a longer line
+msgid "Slide"
+msgstr "Сдвиг"
+
 msgid "Slide: a tiny brass tick. The pipe moved up or down a step."
 msgstr ""
 "Сдвиг: крошечный латунный щелчок. Труба сдвинулась на шаг вверх или вниз."
 
+#. the name or the meaning of a longer line
+msgid "a tiny brass tick. The pipe moved up or down a step."
+msgstr "крошечный латунный щелчок. Труба сдвинулась на шаг вверх или вниз."
+
+#. the name or the meaning of a longer line
+msgid "In tune"
+msgstr "Настроено"
+
 msgid "In tune: a clear bell. You set the pipe, and it holds its note."
 msgstr "Настроена: чистый колокол. Вы поставили трубу, и она держит ноту."
+
+#. the name or the meaning of a longer line
+msgid "a clear bell. You set the pipe, and it holds its note."
+msgstr "чистый колокол. Вы поставили трубу, и она держит ноту."
 
 msgid "Hint: a soft felt knock. H told you which way the pipe is out."
 msgstr "Подсказка: мягкий войлочный стук. H сказала, куда отклонена труба."
 
+#. the name or the meaning of a longer line
+msgid "a soft felt knock. H told you which way the pipe is out."
+msgstr "мягкий войлочный стук. H сказала, куда отклонена труба."
+
 msgid "Not yet: a dull thud. The pipe still wobbles, so it did not set."
 msgstr "Ещё нет: глухой стук. У трубы всё ещё биение, и она не встала."
+
+#. the name or the meaning of a longer line
+msgid "a dull thud. The pipe still wobbles, so it did not set."
+msgstr "глухой стук. У трубы всё ещё биение, и она не встала."
+
+#. the name or the meaning of a longer line
+msgid "Rank tuned"
+msgstr "Ряд настроен"
 
 msgid ""
 "Rank tuned: rising tubular bells over an organ chord. Every pipe in the "
@@ -78557,6 +81261,13 @@ msgid ""
 msgstr ""
 "Ряд настроен: восходящие трубчатые колокола над органным аккордом. Все "
 "трубы ряда настроены."
+
+#. the name or the meaning of a longer line
+msgid ""
+"rising tubular bells over an organ chord. Every pipe in the rank is in tune."
+msgstr ""
+"восходящие трубчатые колокола над органным аккордом. Все трубы ряда "
+"настроены."
 
 msgid "Return to the title of The Echo."
 msgstr "Вернуться в стартовое меню The Echo."
@@ -80864,12 +83575,22 @@ msgstr "Прячется"
 msgid "Creeping out"
 msgstr "Выползает"
 
+#. the name or the meaning of a longer line
+msgid "Two soft rising notes"
+msgstr "Две мягкие восходящие ноты"
+
 msgid ""
 "Two soft rising notes: something shy has come back out. Listen for its "
 "sound, then reach in."
 msgstr ""
 "Две мягкие восходящие ноты: что-то пугливое снова вышло. Послушайте, как "
 "оно звучит, и опускайте руку."
+
+#. the name or the meaning of a longer line
+msgid ""
+"something shy has come back out. Listen for its sound, then reach in."
+msgstr ""
+"что-то пугливое снова вышло. Послушайте, как оно звучит, и опускайте руку."
 
 msgid ""
 "A scoop of water and a rising chime: you gathered a creature for your "
@@ -80921,6 +83642,10 @@ msgstr "Мягкий удар о песок: дальше в эту сторон
 msgid "End of the rocks"
 msgstr "Конец камней"
 
+#. the name or the meaning of a longer line
+msgid "One distant bell buoy"
+msgstr "Один далёкий колокол буя"
+
 msgid ""
 "One distant bell buoy: half the trip is gone and the sea starts back."
 msgstr ""
@@ -80929,11 +83654,23 @@ msgstr ""
 msgid "The tide turns"
 msgstr "Прилив повернул"
 
+#. the name or the meaning of a longer line
+msgid "half the trip is gone and the sea starts back."
+msgstr "половина похода прошла, и море пошло обратно."
+
+#. the name or the meaning of a longer line
+msgid "The bell buoy twice"
+msgstr "Колокол буя дважды"
+
 msgid "The bell buoy twice: the tide will soon cover the pools."
 msgstr "Колокол буя дважды: скоро прилив накроет заводи."
 
 msgid "The tide is near"
 msgstr "Прилив близко"
+
+#. the name or the meaning of a longer line
+msgid "the tide will soon cover the pools."
+msgstr "скоро прилив накроет заводи."
 
 msgid "A big wave washing over the rocks: the trip is over."
 msgstr "Большая волна накрывает камни: поход окончен."
@@ -80944,14 +83681,30 @@ msgstr "Прилив пришёл"
 msgid "A rare find"
 msgstr "Редкая находка"
 
+#. the name or the meaning of a longer line
+msgid "A shimmer"
+msgstr "Мерцание"
+
 msgid "A shimmer: what you gathered is rare."
 msgstr "Мерцание: вы поймали редкое существо."
+
+#. the name or the meaning of a longer line
+msgid "what you gathered is rare."
+msgstr "вы поймали редкое существо."
+
+#. the name or the meaning of a longer line
+msgid "A little rising arpeggio"
+msgstr "Короткое восходящее арпеджио"
 
 msgid "A little rising arpeggio: a kind you have never gathered before."
 msgstr "Короткое восходящее арпеджио: этот вид вы ещё никогда не ловили."
 
 msgid "New for the aquarium"
 msgstr "Новинка для аквариума"
+
+#. the name or the meaning of a longer line
+msgid "a kind you have never gathered before."
+msgstr "этот вид вы ещё никогда не ловили."
 
 msgid ""
 "The sea, ahead of you beyond the pools. It grows louder and nearer as the "
@@ -81210,9 +83963,6 @@ msgstr ""
 
 msgid "The game says when you are halfway, 3 steps out and 1 step out."
 msgstr "Игра говорит, когда вы на полпути, за 3 шага и за 1 шаг до конца."
-
-msgid "Wind"
-msgstr "Ветер"
 
 msgid ""
 "Each gust is announced with its direction at least 2 seconds before it "
@@ -86349,6 +89099,10 @@ msgstr ""
 "Up и Down переходят между звуками, Enter играет звук, Escape возвращает "
 "назад."
 
+#. the name or the meaning of a longer line
+msgid "Wish Desk"
+msgstr "Стол желаний"
+
 #. placeholders: {next}
 msgid "Wish Desk: {next}"
 msgstr "Стол желаний: {next}"
@@ -86370,13 +89124,25 @@ msgstr "Желания вроде таких: {join}."
 msgid "Gift lands on the belt: a soft thump and a rustle of paper."
 msgstr "Подарок падает на ленту: мягкий стук и шорох бумаги."
 
+#. the name or the meaning of a longer line
+msgid "Right recipient"
+msgstr "Верный получатель"
+
 msgid ""
 "Right recipient: rising bells from their side. This one is on your left."
 msgstr ""
 "Верный получатель: восходящие колокольчики с его стороны. Этот слева от вас."
 
+#. the name or the meaning of a longer line
+msgid "rising bells from their side. This one is on your left."
+msgstr "восходящие колокольчики с его стороны. Этот слева от вас."
+
 msgid "A gift sliding to a recipient. This one goes right."
 msgstr "Подарок скользит к получателю. Этот едет вправо."
+
+#. the name or the meaning of a longer line
+msgid "Wrong guess"
+msgstr "Ошибка"
 
 msgid ""
 "Wrong guess: a low buzz from that side. It costs clock time. This one is "
@@ -86384,23 +89150,60 @@ msgid ""
 msgstr ""
 "Ошибка: низкое жужжание с той стороны. Стоит времени. Этот прямо впереди."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low buzz from that side. It costs clock time. This one is straight ahead."
+msgstr "низкое жужжание с той стороны. Стоит времени. Этот прямо впереди."
+
 msgid "Into the return sack, behind you."
 msgstr "В мешок возврата, позади вас."
+
+#. the name or the meaning of a longer line
+msgid "Near the edge"
+msgstr "У края"
 
 msgid "Near the edge: quick beeping. Send the gift fast."
 msgstr "У края: быстрый писк. Отправляйте подарок скорее."
 
+#. the name or the meaning of a longer line
+msgid "quick beeping. Send the gift fast."
+msgstr "быстрый писк. Отправляйте подарок скорее."
+
 msgid "A gift falls off the belt and breaks."
 msgstr "Подарок падает с ленты и разбивается."
+
+#. the name or the meaning of a longer line
+msgid "Clock running low"
+msgstr "Время на исходе"
 
 msgid "Clock running low: a tick each second near the end."
 msgstr "Время на исходе: в конце тикает каждую секунду."
 
+#. the name or the meaning of a longer line
+msgid "a tick each second near the end."
+msgstr "в конце тикает каждую секунду."
+
+#. the name or the meaning of a longer line
+msgid "Change of plans"
+msgstr "Планы меняются"
+
 msgid "Change of plans: a doorbell, when someone changes their wish."
 msgstr "Планы меняются: дверной звонок, когда кто-то меняет желание."
 
+#. the name or the meaning of a longer line
+msgid "a doorbell, when someone changes their wish."
+msgstr "дверной звонок, когда кто-то меняет желание."
+
+#. the name or the meaning of a longer line
+msgid "Nothing there"
+msgstr "Там пусто"
+
 msgid "Nothing there: a dull knock."
 msgstr "Там пусто: глухой стук."
+
+#. the name or the meaning of a longer line
+msgid "a dull knock."
+msgstr "глухой стук."
 
 msgid "Shift complete."
 msgstr "Смена пройдена."
@@ -86412,16 +89215,35 @@ msgstr ""
 "Стол желаний: шаг вдоль полки, слышен там, где стоит коробка. Этот у левого "
 "края."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a step along the shelf, heard where the box sits. This one is at the left "
+"end."
+msgstr "шаг вдоль полки, слышен там, где стоит коробка. Этот у левого края."
+
 msgid "Wish Desk: the end of the shelf."
 msgstr "Стол желаний: конец полки."
 
+#. the name or the meaning of a longer line
+msgid "the end of the shelf."
+msgstr "конец полки."
+
 msgid "Wish Desk: an empty place, where a gift was wrapped."
 msgstr "Стол желаний: пустое место, где был завёрнутый подарок."
+
+#. the name or the meaning of a longer line
+msgid "an empty place, where a gift was wrapped."
+msgstr "пустое место, где был завёрнутый подарок."
 
 msgid "Wish Desk: a shake of only straw. Shake again to hear the gift."
 msgstr ""
 "Стол желаний: встряска, а внутри только солома. Потрясите ещё раз, чтобы "
 "услышать подарок."
+
+#. the name or the meaning of a longer line
+msgid "a shake of only straw. Shake again to hear the gift."
+msgstr ""
+"встряска, а внутри только солома. Потрясите ещё раз, чтобы услышать подарок."
 
 #. one sentence of a longer line
 msgid "Let go now and nothing is wrapped."
@@ -86440,8 +89262,25 @@ msgstr ""
 "Стол желаний: обёрточная бумага, пока вы держите {n}. Отпустите сейчас, и "
 "ничего не завернётся."
 
+#. placeholders: {n}
+#. the name or the meaning of a longer line
+msgid "wrapping paper, while you hold {n}."
+msgstr "обёрточная бумага, пока вы держите {n}."
+
+#. placeholders: {n}
+#. the name or the meaning of a longer line
+msgid ""
+"wrapping paper, while you hold {n}. Let go now and nothing is wrapped."
+msgstr ""
+"обёрточная бумага, пока вы держите {n}. Отпустите сейчас, и ничего не "
+"завернётся."
+
 msgid "Wish Desk: the wrong box, unwrapped and put back."
 msgstr "Стол желаний: не та коробка, её развернули и поставили обратно."
+
+#. the name or the meaning of a longer line
+msgid "the wrong box, unwrapped and put back."
+msgstr "не та коробка, её развернули и поставили обратно."
 
 #. placeholders: {n}
 msgid "Midnight Countdown bells, answered with {n}."
@@ -86461,23 +89300,63 @@ msgstr "Тиканье часов, на каждую долю."
 msgid "Tock, on the first beat of each bar."
 msgstr "Так, на первую долю каждого такта."
 
+#. the name or the meaning of a longer line
+msgid "Missed note"
+msgstr "Пропущенная нота"
+
 msgid "Missed note: a deflating party blower."
 msgstr "Пропущенная нота: сдувается праздничная дудка."
+
+#. the name or the meaning of a longer line
+msgid "a deflating party blower."
+msgstr "сдувается праздничная дудка."
+
+#. the name or the meaning of a longer line
+msgid "Wrong instrument"
+msgstr "Не тот инструмент"
 
 msgid "Wrong instrument: a short buzz."
 msgstr "Не тот инструмент: короткое жужжание."
 
+#. the name or the meaning of a longer line
+msgid "a short buzz."
+msgstr "короткое жужжание."
+
 msgid "A press with nothing to answer: a soft tap."
 msgstr "Нажатие, когда отвечать не на что: тихий стук."
+
+#. the name or the meaning of a longer line
+msgid "Score multiplier up"
+msgstr "Множитель вырос"
 
 msgid "Score multiplier up: rising chimes."
 msgstr "Множитель вырос: восходящий перезвон."
 
+#. the name or the meaning of a longer line
+msgid "rising chimes."
+msgstr "восходящий перезвон."
+
+#. the name or the meaning of a longer line
+msgid "A call answered perfectly"
+msgstr "Идеальный ответ на зов"
+
 msgid "A call answered perfectly: sparkles."
 msgstr "Идеальный ответ на зов: блёстки."
 
+#. the name or the meaning of a longer line
+msgid "sparkles."
+msgstr "блёстки."
+
+#. the name or the meaning of a longer line
+msgid "Party energy low"
+msgstr "Энергия праздника на исходе"
+
 msgid "Party energy low: a heartbeat."
 msgstr "Энергия праздника на исходе: стук сердца."
+
+#. the name or the meaning of a longer line
+msgid "a heartbeat."
+msgstr "стук сердца."
 
 msgid "Back to the title."
 msgstr "В стартовое меню."

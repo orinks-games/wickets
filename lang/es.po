@@ -7128,12 +7128,27 @@ msgstr "1 punto"
 msgid "{n} points"
 msgstr "{n} puntos"
 
+#. the name or the meaning of a longer line
+msgid "Knock"
+msgstr "Golpe"
+
 msgid ""
 "Knock: a firm knock on the beam. One bell of your row is right and in its "
 "place."
 msgstr ""
 "Golpe: un golpe firme en la viga. Una campana de tu fila es correcta y está "
 "en su sitio."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a firm knock on the beam. One bell of your row is right and in its place."
+msgstr ""
+"un golpe firme en la viga. Una campana de tu fila es correcta y está en su "
+"sitio."
+
+#. the name or the meaning of a longer line
+msgid "Tap"
+msgstr "Toque"
 
 msgid ""
 "Tap: a soft tap on the beam. One bell of your row is in the peal, in "
@@ -7142,12 +7157,40 @@ msgstr ""
 "Toque: un toque suave en la viga. Una campana de tu fila está en el "
 "repique, en otra posición."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft tap on the beam. One bell of your row is in the peal, in another "
+"place."
+msgstr ""
+"un toque suave en la viga. Una campana de tu fila está en el repique, en "
+"otra posición."
+
+#. the name or the meaning of a longer line
+msgid "Rope pull"
+msgstr "Tirón de cuerda"
+
 msgid "Rope pull: your row is rung and the answer follows."
 msgstr "Tirón de cuerda: tu fila suena y llega la respuesta."
+
+#. the name or the meaning of a longer line
+msgid "your row is rung and the answer follows."
+msgstr "tu fila suena y llega la respuesta."
+
+#. the name or the meaning of a longer line
+msgid "Peal found"
+msgstr "Repique encontrado"
 
 msgid "Peal found: every bell rings out three times. The peal is solved."
 msgstr ""
 "Repique encontrado: cada campana suena tres veces. El repique está resuelto."
+
+#. the name or the meaning of a longer line
+msgid "every bell rings out three times. The peal is solved."
+msgstr "cada campana suena tres veces. El repique está resuelto."
+
+#. the name or the meaning of a longer line
+msgid "Out of rows"
+msgstr "Sin filas"
 
 msgid ""
 "Out of rows: a single low bell. The tower's rows are spent and the peal is "
@@ -7156,6 +7199,17 @@ msgstr ""
 "Sin filas: una sola campana grave. Las filas de la torre se han gastado y "
 "se lee el repique."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a single low bell. The tower's rows are spent and the peal is read out."
+msgstr ""
+"una sola campana grave. Las filas de la torre se han gastado y se lee el "
+"repique."
+
+#. the name or the meaning of a longer line
+msgid "Next peal"
+msgstr "Siguiente repique"
+
 msgid ""
 "Next peal: a short rising run. In the weekly challenge, the next peal is "
 "waiting."
@@ -7163,8 +7217,27 @@ msgstr ""
 "Siguiente repique: una escala corta que sube. En el desafío semanal, el "
 "siguiente repique te espera."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short rising run. In the weekly challenge, the next peal is waiting."
+msgstr ""
+"una escala corta que sube. En el desafío semanal, el siguiente repique te "
+"espera."
+
+#. the name or the meaning of a longer line
+msgid "Dull thud"
+msgstr "Golpe sordo"
+
 msgid "Dull thud: nothing to do, or no hint to give."
 msgstr "Golpe sordo: no hay nada que hacer, o no hay pista que dar."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do, or no hint to give."
+msgstr "no hay nada que hacer, o no hay pista que dar."
+
+#. the name or the meaning of a longer line
+msgid "Called place"
+msgstr "Posición cantada"
 
 msgid ""
 "Called place: a short, quiet glassy shimmer, just after a bell. On Practice "
@@ -7173,6 +7246,15 @@ msgstr ""
 "Posición cantada: un brillo cristalino corto y suave, justo tras una "
 "campana. En la Noche de ensayo, la posición que cantó el capitán de la "
 "torre, cuya campana ya está puesta."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a short, quiet glassy shimmer, just after a bell. On Practice night, the "
+"place the tower captain called, whose bell is already set."
+msgstr ""
+"un brillo cristalino corto y suave, justo tras una campana. En la Noche de "
+"ensayo, la posición que cantó el capitán de la torre, cuya campana ya está "
+"puesta."
 
 msgid "Up and Down choose a sound, Enter plays it, Escape goes back."
 msgstr "Up y Down eligen un sonido, Enter lo toca, Escape vuelve."
@@ -10300,6 +10382,10 @@ msgstr "Tu silbido"
 msgid "Your whistle: the notes you answer with, low, middle and high."
 msgstr "Tu silbido: las notas con las que respondes, grave, media y aguda."
 
+#. the name or the meaning of a longer line
+msgid "the notes you answer with, low, middle and high."
+msgstr "las notas con las que respondes, grave, media y aguda."
+
 #. placeholders: {slug}
 msgid "Flock call, {slug}"
 msgstr "Llamada de bandada, {slug}"
@@ -10336,6 +10422,10 @@ msgstr "Giro"
 msgid "Turn: a soft rustle as you turn to face a new way."
 msgstr "Giro: un roce suave al girarte hacia otro lado."
 
+#. the name or the meaning of a longer line
+msgid "a soft rustle as you turn to face a new way."
+msgstr "un roce suave al girarte hacia otro lado."
+
 msgid "Edge of the trail"
 msgstr "Borde del sendero"
 
@@ -10345,6 +10435,10 @@ msgid ""
 msgstr ""
 "Borde del sendero: un roce y un golpe suave. Zarzas, un seto o agua paran "
 "el paso."
+
+#. the name or the meaning of a longer line
+msgid "a rustle and a soft thud. Brambles, a hedge or water stop the step."
+msgstr "un roce y un golpe suave. Zarzas, un seto o agua paran el paso."
 
 msgid "Befriended"
 msgstr "Amigo"
@@ -10356,6 +10450,13 @@ msgstr ""
 "Amigo: un tintineo cálido que sube. Tu respuesta coincidió, y el pájaro es "
 "tu amigo."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a warm rising chime. Your answer matched, and the bird is your friend."
+msgstr ""
+"un tintineo cálido que sube. Tu respuesta coincidió, y el pájaro es tu "
+"amigo."
+
 msgid "New song"
 msgstr "Canto nuevo"
 
@@ -10365,6 +10466,12 @@ msgid ""
 msgstr ""
 "Canto nuevo: una página que pasa y una campana. Algo nuevo entró en tu guía "
 "de campo."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a soft page turn and a bell. Something new went into your field guide."
+msgstr ""
+"una página que pasa y una campana. Algo nuevo entró en tu guía de campo."
 
 msgid "Not quite"
 msgstr "Casi"
@@ -10376,6 +10483,13 @@ msgstr ""
 "Casi: dos notas suaves y graves. Tu respuesta no coincidió, y el pájaro "
 "canta otra vez."
 
+#. the name or the meaning of a longer line
+msgid ""
+"two soft, low notes. Your answer did not match, and the bird sings again."
+msgstr ""
+"dos notas suaves y graves. Tu respuesta no coincidió, y el pájaro canta "
+"otra vez."
+
 msgid "Found"
 msgstr "Encontrado"
 
@@ -10385,6 +10499,14 @@ msgid ""
 msgstr ""
 "Encontrado: un tintineo brillante de dos notas. Elegiste el pájaro "
 "correcto, o contaste una bandada exacta."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a bright two-note chime. You picked out the right bird, or counted a flock "
+"exactly."
+msgstr ""
+"un tintineo brillante de dos notas. Elegiste el pájaro correcto, o contaste "
+"una bandada exacta."
 
 msgid "Trail's end"
 msgstr "Final del sendero"
@@ -10396,11 +10518,23 @@ msgstr ""
 "Final del sendero: un acorde suave que sube. Llegaste al final del sendero, "
 "o se fue la última bandada."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a gentle rising chord. You reached the end of the trail, or the last flock "
+"has gone."
+msgstr ""
+"un acorde suave que sube. Llegaste al final del sendero, o se fue la última "
+"bandada."
+
 msgid "Wingbeats"
 msgstr "Aleteos"
 
 msgid "Wingbeats: a soft rush of wings. A migrating flock is coming."
 msgstr "Aleteos: un batir suave de alas. Viene una bandada migratoria."
+
+#. the name or the meaning of a longer line
+msgid "a soft rush of wings. A migrating flock is coming."
+msgstr "un batir suave de alas. Viene una bandada migratoria."
 
 #. placeholders: {name}
 msgid "End of the {name}"
@@ -12639,11 +12773,32 @@ msgstr ""
 "Cuenta: un golpe grave de bodhrán. Cuatro te dan la entrada antes de cada "
 "melodía, y tres tras una pausa."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a deep bodhran beat. Four of them count you in before each tune, and three "
+"after a pause."
+msgstr ""
+"un golpe grave de bodhrán. Cuatro te dan la entrada antes de cada melodía, "
+"y tres tras una pausa."
+
+#. the name or the meaning of a longer line
+msgid "Spot on"
+msgstr "Perfecto"
+
 msgid ""
 "Spot on: a small bright chime with your step. It landed right on the beat."
 msgstr ""
 "Perfecto: un tintineo pequeño y brillante con tu paso. Cayó justo en el "
 "tiempo."
+
+#. the name or the meaning of a longer line
+msgid "a small bright chime with your step. It landed right on the beat."
+msgstr ""
+"un tintineo pequeño y brillante con tu paso. Cayó justo en el tiempo."
+
+#. the name or the meaning of a longer line
+msgid "Close"
+msgstr "Cerca"
 
 msgid ""
 "Close: a soft dull tick with your step. It landed in time, but a little "
@@ -12652,6 +12807,18 @@ msgstr ""
 "Cerca: un tic suave y sordo con tu paso. Cayó a tiempo, pero un poco antes "
 "o después."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft dull tick with your step. It landed in time, but a little early or "
+"late."
+msgstr ""
+"un tic suave y sordo con tu paso. Cayó a tiempo, pero un poco antes o "
+"después."
+
+#. the name or the meaning of a longer line
+msgid "Stumble"
+msgstr "Tropiezo"
+
 msgid ""
 "Stumble: a scuff and a thud. A step was missed, or the wrong step was "
 "danced."
@@ -12659,13 +12826,38 @@ msgstr ""
 "Tropiezo: un roce y un golpe. Se falló un paso, o se bailó el paso "
 "equivocado."
 
+#. the name or the meaning of a longer line
+msgid "a scuff and a thud. A step was missed, or the wrong step was danced."
+msgstr ""
+"un roce y un golpe. Se falló un paso, o se bailó el paso equivocado."
+
+#. the name or the meaning of a longer line
+msgid "Claps"
+msgstr "Palmas"
+
 msgid ""
 "Claps: the crowd claps three times. Another 8 steps in a row, for a bonus."
 msgstr ""
 "Palmas: el público aplaude tres veces. Otros 8 pasos seguidos, con extra."
 
+#. the name or the meaning of a longer line
+msgid "the crowd claps three times. Another 8 steps in a row, for a bonus."
+msgstr "el público aplaude tres veces. Otros 8 pasos seguidos, con extra."
+
+#. the name or the meaning of a longer line
+msgid "Applause"
+msgstr "Aplausos"
+
 msgid "Applause: the end of a tune."
 msgstr "Aplausos: el final de una melodía."
+
+#. the name or the meaning of a longer line
+msgid "the end of a tune."
+msgstr "el final de una melodía."
+
+#. the name or the meaning of a longer line
+msgid "Shamrock"
+msgstr "Trébol"
 
 msgid ""
 "Shamrock: two high chimes with a call, in Saint Patrick's week. Dance that "
@@ -12674,9 +12866,29 @@ msgstr ""
 "Trébol: dos tintineos agudos con una llamada, en la semana de San Patricio. "
 "Baila ese paso bien o mejor para un punto de suerte."
 
+#. the name or the meaning of a longer line
+msgid ""
+"two high chimes with a call, in Saint Patrick's week. Dance that step good "
+"or better for a luck point."
+msgstr ""
+"dos tintineos agudos con una llamada, en la semana de San Patricio. Baila "
+"ese paso bien o mejor para un punto de suerte."
+
+#. the name or the meaning of a longer line
+msgid "Luck point"
+msgstr "Punto de suerte"
+
 msgid "Luck point: a quick music box run up. You caught a shamrock."
 msgstr ""
 "Punto de suerte: una escala rápida de caja de música. Atrapaste un trébol."
+
+#. the name or the meaning of a longer line
+msgid "a quick music box run up. You caught a shamrock."
+msgstr "una escala rápida de caja de música. Atrapaste un trébol."
+
+#. the name or the meaning of a longer line
+msgid "Clover call"
+msgstr "Llamada del trébol"
 
 msgid ""
 "Clover call: three sparkling notes with a call, once a night at the ceili. "
@@ -12685,9 +12897,25 @@ msgstr ""
 "Llamada del trébol: tres notas brillantes con una llamada, una vez por "
 "noche en el ceili. Baila ese paso para encontrar el trébol de cuatro hojas."
 
+#. the name or the meaning of a longer line
+msgid ""
+"three sparkling notes with a call, once a night at the ceili. Dance that "
+"step to find the four-leaf clover."
+msgstr ""
+"tres notas brillantes con una llamada, una vez por noche en el ceili. Baila "
+"ese paso para encontrar el trébol de cuatro hojas."
+
+#. the name or the meaning of a longer line
+msgid "Four-leaf clover"
+msgstr "Trébol de cuatro hojas"
+
 msgid "Four-leaf clover: a harp sweep and a shimmer. You found it."
 msgstr ""
 "Trébol de cuatro hojas: un barrido de arpa y un brillo. Lo encontraste."
+
+#. the name or the meaning of a longer line
+msgid "a harp sweep and a shimmer. You found it."
+msgstr "un barrido de arpa y un brillo. Lo encontraste."
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
@@ -14780,6 +15008,10 @@ msgstr "1 corazón"
 msgid "{n} hearts"
 msgstr "{n} corazones"
 
+#. the name or the meaning of a longer line
+msgid "Rose"
+msgstr "Rosa"
+
 msgid ""
 "Rose: a soft music box tune with a rustle of petals. A rose drifting in the "
 "Valentine's season, worth 25 more than a heart."
@@ -14787,11 +15019,31 @@ msgstr ""
 "Rosa: una melodía suave de caja de música con un roce de pétalos. Una rosa "
 "que flota en la temporada de San Valentín, vale 25 más que un corazón."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft music box tune with a rustle of petals. A rose drifting in the "
+"Valentine's season, worth 25 more than a heart."
+msgstr ""
+"una melodía suave de caja de música con un roce de pétalos. Una rosa que "
+"flota en la temporada de San Valentín, vale 25 más que un corazón."
+
+#. the name or the meaning of a longer line
+msgid "Golden heart"
+msgstr "Corazón de oro"
+
 msgid ""
 "Golden heart: a shimmer of tiny bells. Only on Valentine's night, worth 100."
 msgstr ""
 "Corazón de oro: un brillo de campanitas. Solo en Noche de San Valentín, "
 "vale 100."
+
+#. the name or the meaning of a longer line
+msgid "a shimmer of tiny bells. Only on Valentine's night, worth 100."
+msgstr "un brillo de campanitas. Solo en Noche de San Valentín, vale 100."
+
+#. the name or the meaning of a longer line
+msgid "Love note"
+msgstr "Nota de amor"
 
 msgid ""
 "Love note: a slow flutter of paper. A folded note drifting slowly. Hit it "
@@ -14800,15 +15052,51 @@ msgstr ""
 "Nota de amor: un aleteo lento de papel. Una nota doblada que flota "
 "despacio. Acierta para quedarte la nota."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a slow flutter of paper. A folded note drifting slowly. Hit it to keep the "
+"note."
+msgstr ""
+"un aleteo lento de papel. Una nota doblada que flota despacio. Acierta para "
+"quedarte la nota."
+
+#. the name or the meaning of a longer line
+msgid "String creak"
+msgstr "Crujido de cuerda"
+
 msgid "String creak: the bow drawing, rising as the string comes back."
 msgstr ""
 "Crujido de cuerda: el arco tensándose, más agudo según vuelve la cuerda."
 
+#. the name or the meaning of a longer line
+msgid "the bow drawing, rising as the string comes back."
+msgstr "el arco tensándose, más agudo según vuelve la cuerda."
+
+#. the name or the meaning of a longer line
+msgid "Full draw"
+msgstr "Tensión máxima"
+
 msgid "Full draw: a soft wooden click. Let go now to shoot."
 msgstr "Tensión máxima: un clic suave de madera. Suelta ya para disparar."
 
+#. the name or the meaning of a longer line
+msgid "a soft wooden click. Let go now to shoot."
+msgstr "un clic suave de madera. Suelta ya para disparar."
+
+#. the name or the meaning of a longer line
+msgid "Arrow loosed"
+msgstr "Flecha suelta"
+
 msgid "Arrow loosed: a twang and a whoosh."
 msgstr "Flecha suelta: un tañido y un silbido."
+
+#. the name or the meaning of a longer line
+msgid "a twang and a whoosh."
+msgstr "un tañido y un silbido."
+
+#. the name or the meaning of a longer line
+msgid "Slack string"
+msgstr "Cuerda floja"
 
 msgid ""
 "Slack string: a dull flop. Let go too soon, so the arrow stays in your hand."
@@ -14816,17 +15104,55 @@ msgstr ""
 "Cuerda floja: un golpe flojo. Soltaste demasiado pronto, así que la flecha "
 "sigue en tu mano."
 
+#. the name or the meaning of a longer line
+msgid "a dull flop. Let go too soon, so the arrow stays in your hand."
+msgstr ""
+"un golpe flojo. Soltaste demasiado pronto, así que la flecha sigue en tu "
+"mano."
+
 msgid "Aim tick: the bow turns one step."
 msgstr "Tic de puntería: el arco gira un paso."
+
+#. the name or the meaning of a longer line
+msgid "the bow turns one step."
+msgstr "el arco gira un paso."
+
+#. the name or the meaning of a longer line
+msgid "Edge knock"
+msgstr "Golpe de borde"
 
 msgid "Edge knock: the bow is turned as far as it goes."
 msgstr "Golpe de borde: el arco está girado al máximo."
 
+#. the name or the meaning of a longer line
+msgid "the bow is turned as far as it goes."
+msgstr "el arco está girado al máximo."
+
+#. the name or the meaning of a longer line
+msgid "Empty quiver"
+msgstr "Carcaj vacío"
+
 msgid "Empty quiver: a hollow tap of wood."
 msgstr "Carcaj vacío: un toque hueco de madera."
 
+#. the name or the meaning of a longer line
+msgid "a hollow tap of wood."
+msgstr "un toque hueco de madera."
+
+#. the name or the meaning of a longer line
+msgid "Pop"
+msgstr "Pop"
+
 msgid "Pop: a paper heart bursts."
 msgstr "Pop: revienta un corazón de papel."
+
+#. the name or the meaning of a longer line
+msgid "a paper heart bursts."
+msgstr "revienta un corazón de papel."
+
+#. the name or the meaning of a longer line
+msgid "Sweetheart chord"
+msgstr "Acorde de enamorados"
 
 msgid ""
 "Sweetheart chord: rising chimes that end in a chord. Both hearts of a pair, "
@@ -14835,19 +15161,64 @@ msgstr ""
 "Acorde de enamorados: tintineos que suben y acaban en un acorde. Los dos "
 "corazones de una pareja, uno tras otro."
 
+#. the name or the meaning of a longer line
+msgid ""
+"rising chimes that end in a chord. Both hearts of a pair, one after the "
+"other."
+msgstr ""
+"tintineos que suben y acaban en un acorde. Los dos corazones de una pareja, "
+"uno tras otro."
+
+#. the name or the meaning of a longer line
+msgid "Rose caught"
+msgstr "Rosa atrapada"
+
 msgid "Rose caught: a rustle and a bright harp run."
 msgstr "Rosa atrapada: un roce y una escala alegre de arpa."
 
+#. the name or the meaning of a longer line
+msgid "a rustle and a bright harp run."
+msgstr "un roce y una escala alegre de arpa."
+
+#. the name or the meaning of a longer line
+msgid "Golden heart caught"
+msgstr "Corazón de oro atrapado"
+
 msgid "Golden heart caught: a burst of bells, high and bright."
 msgstr "Corazón de oro atrapado: una ráfaga de campanas, aguda y brillante."
+
+#. the name or the meaning of a longer line
+msgid "a burst of bells, high and bright."
+msgstr "una ráfaga de campanas, aguda y brillante."
+
+#. the name or the meaning of a longer line
+msgid "Note caught"
+msgstr "Nota atrapada"
 
 msgid "Note caught: paper unfolding, and a soft chord. A love note to keep."
 msgstr ""
 "Nota atrapada: papel que se despliega y un acorde suave. Una nota de amor "
 "para guardar."
 
+#. the name or the meaning of a longer line
+msgid "paper unfolding, and a soft chord. A love note to keep."
+msgstr ""
+"papel que se despliega y un acorde suave. Una nota de amor para guardar."
+
+#. the name or the meaning of a longer line
+msgid "Miss"
+msgstr "Fallo"
+
 msgid "Miss: a far tap on roof tiles. The arrow met nothing."
 msgstr "Fallo: un toque lejano en las tejas. La flecha no dio a nada."
+
+#. the name or the meaning of a longer line
+msgid "a far tap on roof tiles. The arrow met nothing."
+msgstr "un toque lejano en las tejas. La flecha no dio a nada."
+
+#. the name or the meaning of a longer line
+msgid "Sights ping"
+msgstr "Aviso de mira"
 
 msgid ""
 "Sights ping: a small glassy ping. Let go now and the arrow meets a target."
@@ -14855,14 +15226,43 @@ msgstr ""
 "Aviso de mira: un pequeño ping cristalino. Suelta ya y la flecha alcanza un "
 "objetivo."
 
+#. the name or the meaning of a longer line
+msgid "a small glassy ping. Let go now and the arrow meets a target."
+msgstr ""
+"un pequeño ping cristalino. Suelta ya y la flecha alcanza un objetivo."
+
+#. the name or the meaning of a longer line
+msgid "Rooftop bell"
+msgstr "Campana del tejado"
+
 msgid "Rooftop bell: a round begins."
 msgstr "Campana del tejado: empieza una ronda."
+
+#. the name or the meaning of a longer line
+msgid "a round begins."
+msgstr "empieza una ronda."
+
+#. the name or the meaning of a longer line
+msgid "Quiver spent"
+msgstr "Carcaj gastado"
 
 msgid "Quiver spent: three falling notes. The round is over."
 msgstr "Carcaj gastado: tres notas que bajan. La ronda ha terminado."
 
+#. the name or the meaning of a longer line
+msgid "three falling notes. The round is over."
+msgstr "tres notas que bajan. La ronda ha terminado."
+
+#. the name or the meaning of a longer line
+msgid "Dull tap"
+msgstr "Toque sordo"
+
 msgid "Dull tap: nothing to do."
 msgstr "Toque sordo: no hay nada que hacer."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do."
+msgstr "no hay nada que hacer."
 
 msgid "A heart's hum, then the chime it makes when hit."
 msgstr ""
@@ -16978,23 +17378,67 @@ msgstr "Sin bailar todavía."
 msgid "Return to the Dragon Dance title."
 msgstr "Volver al menú principal de Dragon Dance."
 
+#. the name or the meaning of a longer line
+msgid "Drum"
+msgstr "Tambor"
+
 msgid "Drum: a deep drum on every beat. The dragon dances on each one."
 msgstr ""
 "Tambor: un tambor grave en cada tiempo. El dragón baila en cada uno."
+
+#. the name or the meaning of a longer line
+msgid "a deep drum on every beat. The dragon dances on each one."
+msgstr "un tambor grave en cada tiempo. El dragón baila en cada uno."
+
+#. the name or the meaning of a longer line
+msgid "First beat"
+msgstr "Primer tiempo"
 
 msgid "First beat: the drum with a cymbal, on the first beat of each bar."
 msgstr ""
 "Primer tiempo: el tambor con un platillo, en el primer tiempo de cada "
 "compás."
 
+#. the name or the meaning of a longer line
+msgid "the drum with a cymbal, on the first beat of each bar."
+msgstr "el tambor con un platillo, en el primer tiempo de cada compás."
+
+#. the name or the meaning of a longer line
+msgid "Count-in"
+msgstr "Entrada"
+
 msgid "Count-in: wooden clicks before the street begins."
 msgstr "Entrada: golpes de madera antes de que empiece la calle."
+
+#. the name or the meaning of a longer line
+msgid "wooden clicks before the street begins."
+msgstr "golpes de madera antes de que empiece la calle."
+
+#. the name or the meaning of a longer line
+msgid "Drum roll"
+msgstr "Redoble"
 
 msgid "Drum roll: a gong strikes in 2 beats. Get ready to rear up."
 msgstr "Redoble: un gong sonará en 2 tiempos. Prepárate para alzarte."
 
+#. the name or the meaning of a longer line
+msgid "a gong strikes in 2 beats. Get ready to rear up."
+msgstr "un gong sonará en 2 tiempos. Prepárate para alzarte."
+
+#. the name or the meaning of a longer line
+msgid "Gong"
+msgstr "Gong"
+
 msgid "Gong: rear up as it strikes."
 msgstr "Gong: álzate cuando suene."
+
+#. the name or the meaning of a longer line
+msgid "rear up as it strikes."
+msgstr "álzate cuando suene."
+
+#. the name or the meaning of a longer line
+msgid "Midnight gong"
+msgstr "Gong de medianoche"
 
 msgid ""
 "Midnight gong: the great gong at the end of the New Year parade, worth "
@@ -17003,17 +17447,41 @@ msgstr ""
 "Gong de medianoche: el gran gong al final del Desfile de Año Nuevo, vale el "
 "doble."
 
+#. the name or the meaning of a longer line
+msgid "the great gong at the end of the New Year parade, worth double."
+msgstr "el gran gong al final del Desfile de Año Nuevo, vale el doble."
+
 msgid ""
 "Perfect rear: a whoosh and a bright cymbal. You reared right on the gong."
 msgstr ""
 "Alzada perfecta: un silbido y un platillo brillante. Te alzaste justo con "
 "el gong."
 
+#. the name or the meaning of a longer line
+msgid "a whoosh and a bright cymbal. You reared right on the gong."
+msgstr "un silbido y un platillo brillante. Te alzaste justo con el gong."
+
 msgid "Good rear: a whoosh. You reared close to the gong."
 msgstr "Buena alzada: un silbido. Te alzaste cerca del gong."
 
+#. the name or the meaning of a longer line
+msgid "a whoosh. You reared close to the gong."
+msgstr "un silbido. Te alzaste cerca del gong."
+
+#. the name or the meaning of a longer line
+msgid "Missed gong"
+msgstr "Gong fallado"
+
 msgid "Missed gong: a dull wooden knock. The gong passed without a rear."
 msgstr "Gong fallado: un golpe de madera sordo. El gong pasó sin alzada."
+
+#. the name or the meaning of a longer line
+msgid "a dull wooden knock. The gong passed without a rear."
+msgstr "un golpe de madera sordo. El gong pasó sin alzada."
+
+#. the name or the meaning of a longer line
+msgid "Stray rear"
+msgstr "Alzada suelta"
 
 msgid ""
 "Stray rear: a soft thud. You reared with no gong near, and the combo breaks."
@@ -17021,19 +17489,47 @@ msgstr ""
 "Alzada suelta: un golpe suave. Te alzaste sin un gong cerca, y el combo se "
 "rompe."
 
+#. the name or the meaning of a longer line
+msgid "a soft thud. You reared with no gong near, and the combo breaks."
+msgstr "un golpe suave. Te alzaste sin un gong cerca, y el combo se rompe."
+
 msgid "Pearl: a soft shimmer ahead of you, in the pearl's lane. Follow it."
 msgstr ""
 "Perla: un brillo suave delante de ti, en el carril de la perla. Síguelo."
 
+#. the name or the meaning of a longer line
+msgid "a soft shimmer ahead of you, in the pearl's lane. Follow it."
+msgstr "un brillo suave delante de ti, en el carril de la perla. Síguelo."
+
+#. the name or the meaning of a longer line
+msgid "Pearl moves"
+msgstr "La perla se mueve"
+
 msgid "Pearl moves: a bright chime from the pearl's new lane."
 msgstr ""
 "La perla se mueve: un tintineo brillante desde el carril nuevo de la perla."
+
+#. the name or the meaning of a longer line
+msgid "a bright chime from the pearl's new lane."
+msgstr "un tintineo brillante desde el carril nuevo de la perla."
+
+#. the name or the meaning of a longer line
+msgid "On the pearl"
+msgstr "En la perla"
 
 msgid ""
 "On the pearl: a soft high ping as your head reaches the pearl's lane."
 msgstr ""
 "En la perla: un ping agudo y suave cuando tu cabeza llega al carril de la "
 "perla."
+
+#. the name or the meaning of a longer line
+msgid "a soft high ping as your head reaches the pearl's lane."
+msgstr "un ping agudo y suave cuando tu cabeza llega al carril de la perla."
+
+#. the name or the meaning of a longer line
+msgid "Off the pearl"
+msgstr "Fuera de la perla"
 
 msgid ""
 "Off the pearl: a falling tone. You were away from the pearl too long, and "
@@ -17042,13 +17538,36 @@ msgstr ""
 "Fuera de la perla: un tono que baja. Estuviste lejos de la perla demasiado "
 "tiempo, y el combo se rompe."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a falling tone. You were away from the pearl too long, and the combo breaks."
+msgstr ""
+"un tono que baja. Estuviste lejos de la perla demasiado tiempo, y el combo "
+"se rompe."
+
 msgid "Step: the head moves one lane."
 msgstr "Paso: la cabeza se mueve un carril."
+
+#. the name or the meaning of a longer line
+msgid "the head moves one lane."
+msgstr "la cabeza se mueve un carril."
+
+#. the name or the meaning of a longer line
+msgid "Street edge"
+msgstr "Borde de la calle"
 
 msgid "Street edge: a wooden bump. You are in the last lane on that side."
 msgstr ""
 "Borde de la calle: un golpe de madera. Estás en el último carril de ese "
 "lado."
+
+#. the name or the meaning of a longer line
+msgid "a wooden bump. You are in the last lane on that side."
+msgstr "un golpe de madera. Estás en el último carril de ese lado."
+
+#. the name or the meaning of a longer line
+msgid "Red envelope coming"
+msgstr "Viene un sobre rojo"
 
 msgid ""
 "Red envelope coming: a papery rustle with little bells, coming down its "
@@ -17056,11 +17575,35 @@ msgid ""
 msgstr ""
 "Viene un sobre rojo: un roce de papel con campanitas, bajando por su carril."
 
+#. the name or the meaning of a longer line
+msgid "a papery rustle with little bells, coming down its lane."
+msgstr "un roce de papel con campanitas, bajando por su carril."
+
+#. the name or the meaning of a longer line
+msgid "Envelope caught"
+msgstr "Sobre atrapado"
+
 msgid "Envelope caught: coins and a chime. The dragon grows one segment."
 msgstr "Sobre atrapado: monedas y un tintineo. El dragón crece un segmento."
 
+#. the name or the meaning of a longer line
+msgid "coins and a chime. The dragon grows one segment."
+msgstr "monedas y un tintineo. El dragón crece un segmento."
+
+#. the name or the meaning of a longer line
+msgid "Envelope missed"
+msgstr "Sobre perdido"
+
 msgid "Envelope missed: a soft flutter as it drifts past."
 msgstr "Sobre perdido: un aleteo suave al pasar de largo."
+
+#. the name or the meaning of a longer line
+msgid "a soft flutter as it drifts past."
+msgstr "un aleteo suave al pasar de largo."
+
+#. the name or the meaning of a longer line
+msgid "Firecrackers coming"
+msgstr "Vienen petardos"
 
 msgid ""
 "Firecrackers coming: a fizzing crackle in their lane. Keep your head out of "
@@ -17068,8 +17611,20 @@ msgid ""
 msgstr ""
 "Vienen petardos: un chisporroteo en su carril. Saca la cabeza de ahí."
 
+#. the name or the meaning of a longer line
+msgid "a fizzing crackle in their lane. Keep your head out of it."
+msgstr "un chisporroteo en su carril. Saca la cabeza de ahí."
+
+#. the name or the meaning of a longer line
+msgid "Firecrackers burst"
+msgstr "Estallan petardos"
+
 msgid "Firecrackers burst: a crackle in another lane. You are safe."
 msgstr "Estallan petardos: un chisporroteo en otro carril. Estás a salvo."
+
+#. the name or the meaning of a longer line
+msgid "a crackle in another lane. You are safe."
+msgstr "un chisporroteo en otro carril. Estás a salvo."
 
 msgid ""
 "Stumble: firecrackers right under you and a clatter. The tail stumbles and "
@@ -17078,17 +17633,54 @@ msgstr ""
 "Tropiezo: petardos justo debajo de ti y un estrépito. La cola tropieza y "
 "pierdes puntos."
 
+#. the name or the meaning of a longer line
+msgid ""
+"firecrackers right under you and a clatter. The tail stumbles and you lose "
+"points."
+msgstr ""
+"petardos justo debajo de ti y un estrépito. La cola tropieza y pierdes "
+"puntos."
+
+#. the name or the meaning of a longer line
+msgid "Lantern coming"
+msgstr "Viene un farolillo"
+
 msgid "Lantern coming: a warm, low glow of chimes, on the Lantern walk."
 msgstr ""
 "Viene un farolillo: un brillo cálido y grave de campanillas, en el Paseo de "
 "los farolillos."
 
+#. the name or the meaning of a longer line
+msgid "a warm, low glow of chimes, on the Lantern walk."
+msgstr ""
+"un brillo cálido y grave de campanillas, en el Paseo de los farolillos."
+
+#. the name or the meaning of a longer line
+msgid "Lantern caught"
+msgstr "Farolillo atrapado"
+
 msgid "Lantern caught: a soft harp run."
 msgstr "Farolillo atrapado: una escala suave de arpa."
+
+#. the name or the meaning of a longer line
+msgid "a soft harp run."
+msgstr "una escala suave de arpa."
+
+#. the name or the meaning of a longer line
+msgid "Crowd cheers"
+msgstr "El público vitorea"
 
 msgid "Crowd cheers: a shop's crowd cheers as you dance past."
 msgstr ""
 "El público vitorea: el público de una tienda vitorea cuando pasas bailando."
+
+#. the name or the meaning of a longer line
+msgid "a shop's crowd cheers as you dance past."
+msgstr "el público de una tienda vitorea cuando pasas bailando."
+
+#. the name or the meaning of a longer line
+msgid "Polite clapping"
+msgstr "Aplauso educado"
 
 msgid ""
 "Polite clapping: a shop's crowd claps. Keep a combo going and they cheer."
@@ -17096,18 +17688,42 @@ msgstr ""
 "Aplauso educado: el público de una tienda aplaude. Mantén un combo y "
 "vitorearán."
 
+#. the name or the meaning of a longer line
+msgid "a shop's crowd claps. Keep a combo going and they cheer."
+msgstr "el público de una tienda aplaude. Mantén un combo y vitorearán."
+
+#. the name or the meaning of a longer line
+msgid "Combo cheer"
+msgstr "Vítores de combo"
+
 msgid ""
 "Combo cheer: a big cheer and a cymbal for every 16 beats on the pearl."
 msgstr ""
 "Vítores de combo: un gran vítor y un platillo cada 16 tiempos en la perla."
+
+#. the name or the meaning of a longer line
+msgid "a big cheer and a cymbal for every 16 beats on the pearl."
+msgstr "un gran vítor y un platillo cada 16 tiempos en la perla."
+
+#. the name or the meaning of a longer line
+msgid "Countdown"
+msgstr "Cuenta atrás"
 
 msgid "Countdown: a ticking wood block, the beats before midnight."
 msgstr ""
 "Cuenta atrás: un bloque de madera que hace tic, los tiempos antes de "
 "medianoche."
 
+#. the name or the meaning of a longer line
+msgid "a ticking wood block, the beats before midnight."
+msgstr "un bloque de madera que hace tic, los tiempos antes de medianoche."
+
 msgid "Dull tap: nothing to do there."
 msgstr "Toque sordo: ahí no hay nada que hacer."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do there."
+msgstr "ahí no hay nada que hacer."
 
 msgid "on the left"
 msgstr "a la izquierda"
@@ -19332,6 +19948,10 @@ msgstr "Hierba alta"
 msgid "The edge of the meadow. Turn back the other way."
 msgstr "El borde del prado. Vuelve hacia el otro lado."
 
+#. the name or the meaning of a longer line
+msgid "A soft hum"
+msgstr "Un zumbido suave"
+
 msgid ""
 "A soft hum: a firefly is close enough to catch. Press the main action as it "
 "glows."
@@ -19341,6 +19961,17 @@ msgstr ""
 
 msgid "Firefly in reach"
 msgstr "Luciérnaga a tu alcance"
+
+#. the name or the meaning of a longer line
+msgid ""
+"a firefly is close enough to catch. Press the main action as it glows."
+msgstr ""
+"una luciérnaga está lo bastante cerca para atraparla. Pulsa la acción "
+"principal cuando brille."
+
+#. the name or the meaning of a longer line
+msgid "A light tick"
+msgstr "Un tic ligero"
 
 msgid ""
 "A light tick: you answered one flash of a blink with several flashes. "
@@ -19352,11 +19983,29 @@ msgstr ""
 msgid "Flash answered"
 msgstr "Destello respondido"
 
+#. the name or the meaning of a longer line
+msgid ""
+"you answered one flash of a blink with several flashes. Answer the rest."
+msgstr ""
+"respondiste a un destello de un parpadeo de varios. Responde al resto."
+
+#. the name or the meaning of a longer line
+msgid "A glassy clink"
+msgstr "Un tintineo de cristal"
+
 msgid "A glassy clink: the firefly is safe in your jar."
 msgstr "Un tintineo de cristal: la luciérnaga está a salvo en tu frasco."
 
 msgid "Caught"
 msgstr "Atrapada"
+
+#. the name or the meaning of a longer line
+msgid "the firefly is safe in your jar."
+msgstr "la luciérnaga está a salvo en tu frasco."
+
+#. the name or the meaning of a longer line
+msgid "A rising chime"
+msgstr "Un tintineo que sube"
 
 msgid ""
 "A rising chime: a firefly you have never caught. It goes in your journal."
@@ -19367,12 +20016,28 @@ msgstr ""
 msgid "New species"
 msgstr "Especie nueva"
 
+#. the name or the meaning of a longer line
+msgid "a firefly you have never caught. It goes in your journal."
+msgstr "una luciérnaga que nunca habías atrapado. Va a tu cuaderno."
+
+#. the name or the meaning of a longer line
+msgid "A soft puff"
+msgstr "Un soplido suave"
+
 msgid "A soft puff: the firefly is dark just now. Wait for its glow."
 msgstr ""
 "Un soplido suave: la luciérnaga está apagada ahora. Espera a que brille."
 
 msgid "Not glowing yet"
 msgstr "Aún no brilla"
+
+#. the name or the meaning of a longer line
+msgid "the firefly is dark just now. Wait for its glow."
+msgstr "la luciérnaga está apagada ahora. Espera a que brille."
+
+#. the name or the meaning of a longer line
+msgid "A falling sigh"
+msgstr "Un suspiro que baja"
 
 msgid ""
 "A falling sigh: a blink ended before you answered every flash. Try its next "
@@ -19384,6 +20049,12 @@ msgstr ""
 msgid "Drifted on"
 msgstr "Se ha ido flotando"
 
+#. the name or the meaning of a longer line
+msgid "a blink ended before you answered every flash. Try its next blink."
+msgstr ""
+"un parpadeo terminó antes de que respondieras a cada destello. Prueba con "
+"su siguiente parpadeo."
+
 msgid "A tap on the glass: the jar is full. Let them go to make room."
 msgstr ""
 "Un toque en el cristal: el frasco está lleno. Suéltalas para hacer sitio."
@@ -19391,11 +20062,23 @@ msgstr ""
 msgid "Jar full"
 msgstr "Frasco lleno"
 
+#. the name or the meaning of a longer line
+msgid "A dull hush"
+msgstr "Un silencio sordo"
+
 msgid "A dull hush: no firefly is close enough."
 msgstr "Un silencio sordo: ninguna luciérnaga está lo bastante cerca."
 
 msgid "Nothing in reach"
 msgstr "Nada a tu alcance"
+
+#. the name or the meaning of a longer line
+msgid "no firefly is close enough."
+msgstr "ninguna luciérnaga está lo bastante cerca."
+
+#. the name or the meaning of a longer line
+msgid "A rising shimmer"
+msgstr "Un brillo que sube"
 
 msgid ""
 "A rising shimmer: the jar opens, the fireflies fly up and their notes ring "
@@ -19406,6 +20089,12 @@ msgstr ""
 
 msgid "Release"
 msgstr "Liberar"
+
+#. the name or the meaning of a longer line
+msgid "the jar opens, the fireflies fly up and their notes ring as a chord."
+msgstr ""
+"el frasco se abre, las luciérnagas salen volando y sus notas suenan como un "
+"acorde."
 
 msgid ""
 "A glittering shimmer after you set a jar free, while the meadow glows and "
@@ -19458,6 +20147,10 @@ msgstr "Noche de pleno verano: todo el prado destella a la vez."
 msgid "The chorus flash"
 msgstr "El destello del coro"
 
+#. the name or the meaning of a longer line
+msgid "the whole meadow flashes at once."
+msgstr "todo el prado destella a la vez."
+
 msgid "In step"
 msgstr "Acompasada"
 
@@ -19468,6 +20161,10 @@ msgstr ""
 "Noche de pleno verano: pulsaste con el destello, y una rezagada se une al "
 "coro."
 
+#. the name or the meaning of a longer line
+msgid "you pressed with the flash, and a straggler joins the chorus."
+msgstr "pulsaste con el destello, y una rezagada se une al coro."
+
 msgid "Midsummer night: that press missed the flash. Press with the chorus."
 msgstr ""
 "Noche de pleno verano: esa pulsación no coincidió con el destello. Pulsa "
@@ -19475,6 +20172,10 @@ msgstr ""
 
 msgid "Off the beat"
 msgstr "Fuera de tiempo"
+
+#. the name or the meaning of a longer line
+msgid "that press missed the flash. Press with the chorus."
+msgstr "esa pulsación no coincidió con el destello. Pulsa con el coro."
 
 msgid ""
 "Up and Down move through the sounds you need in play. Enter plays the "
@@ -21268,6 +21969,10 @@ msgstr "1 movimiento"
 msgid "{n} moves"
 msgstr "{n} movimientos"
 
+#. the name or the meaning of a longer line
+msgid "Hearts card"
+msgstr "Carta de corazones"
+
 msgid ""
 "Hearts card: a paper slide with a warm low bell. Every hearts card you "
 "reach or pick up."
@@ -21275,22 +21980,73 @@ msgstr ""
 "Carta de corazones: un roce de papel con una campana cálida y grave. Cada "
 "carta de corazones que alcanzas o coges."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a paper slide with a warm low bell. Every hearts card you reach or pick up."
+msgstr ""
+"un roce de papel con una campana cálida y grave. Cada carta de corazones "
+"que alcanzas o coges."
+
+#. the name or the meaning of a longer line
+msgid "Diamonds card"
+msgstr "Carta de diamantes"
+
 msgid "Diamonds card: a paper slide with a bright high bell."
 msgstr "Carta de diamantes: un roce de papel con una campana viva y aguda."
+
+#. the name or the meaning of a longer line
+msgid "a paper slide with a bright high bell."
+msgstr "un roce de papel con una campana viva y aguda."
+
+#. the name or the meaning of a longer line
+msgid "Clubs card"
+msgstr "Carta de tréboles"
 
 msgid "Clubs card: a paper slide with a soft wooden knock."
 msgstr "Carta de tréboles: un roce de papel con un golpe suave de madera."
 
+#. the name or the meaning of a longer line
+msgid "a paper slide with a soft wooden knock."
+msgstr "un roce de papel con un golpe suave de madera."
+
+#. the name or the meaning of a longer line
+msgid "Spades card"
+msgstr "Carta de picas"
+
 msgid "Spades card: a paper slide with a deep wooden knock."
 msgstr "Carta de picas: un roce de papel con un golpe hondo de madera."
+
+#. the name or the meaning of a longer line
+msgid "a paper slide with a deep wooden knock."
+msgstr "un roce de papel con un golpe hondo de madera."
+
+#. the name or the meaning of a longer line
+msgid "Card flip"
+msgstr "Giro de carta"
 
 msgid "Card flip: a face-down card turns face up. Its name follows."
 msgstr ""
 "Giro de carta: una carta boca abajo se pone boca arriba. Luego oyes su "
 "nombre."
 
+#. the name or the meaning of a longer line
+msgid "a face-down card turns face up. Its name follows."
+msgstr "una carta boca abajo se pone boca arriba. Luego oyes su nombre."
+
+#. the name or the meaning of a longer line
+msgid "Soft tap"
+msgstr "Toque suave"
+
 msgid "Soft tap: the cards you held are placed."
 msgstr "Toque suave: las cartas que tenías quedan colocadas."
+
+#. the name or the meaning of a longer line
+msgid "the cards you held are placed."
+msgstr "las cartas que tenías quedan colocadas."
+
+#. the name or the meaning of a longer line
+msgid "Muffled thud"
+msgstr "Golpe sordo"
 
 msgid ""
 "Muffled thud: the cards cannot go there. The reason follows, and you keep "
@@ -21299,13 +22055,40 @@ msgstr ""
 "Golpe sordo: las cartas no pueden ir ahí. Luego oyes el motivo, y sigues "
 "con ellas en la mano."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the cards cannot go there. The reason follows, and you keep holding them."
+msgstr ""
+"las cartas no pueden ir ahí. Luego oyes el motivo, y sigues con ellas en la "
+"mano."
+
+#. the name or the meaning of a longer line
+msgid "Stock turn"
+msgstr "Giro del mazo"
+
 msgid ""
 "Stock turn: a card is turned up from the stock, or the stock is refilled."
 msgstr ""
 "Giro del mazo: se descubre una carta del mazo, o el mazo se rellena."
 
+#. the name or the meaning of a longer line
+msgid "a card is turned up from the stock, or the stock is refilled."
+msgstr "se descubre una carta del mazo, o el mazo se rellena."
+
+#. the name or the meaning of a longer line
+msgid "Foundation chime"
+msgstr "Campanilla de base"
+
 msgid "Foundation chime: a suit is complete, ace to king."
 msgstr "Campanilla de base: un palo está completo, del as al rey."
+
+#. the name or the meaning of a longer line
+msgid "a suit is complete, ace to king."
+msgstr "un palo está completo, del as al rey."
+
+#. the name or the meaning of a longer line
+msgid "Row chime"
+msgstr "Campanilla de fila"
 
 msgid ""
 "Row chime: you cross from the piles to the stock, or from the stock to the "
@@ -21313,11 +22096,28 @@ msgid ""
 msgstr ""
 "Campanilla de fila: pasas de las pilas al mazo, o del mazo a las bases."
 
+#. the name or the meaning of a longer line
+msgid ""
+"you cross from the piles to the stock, or from the stock to the foundations."
+msgstr "pasas de las pilas al mazo, o del mazo a las bases."
+
+#. the name or the meaning of a longer line
+msgid "Undo swish"
+msgstr "Silbido de deshacer"
+
 msgid "Undo swish: the last move is taken back."
 msgstr "Silbido de deshacer: se deshace el último movimiento."
 
+#. the name or the meaning of a longer line
+msgid "the last move is taken back."
+msgstr "se deshace el último movimiento."
+
 msgid "Dull tap: nothing to do there just now."
 msgstr "Toque apagado: ahí no hay nada que hacer ahora."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do there just now."
+msgstr "ahí no hay nada que hacer ahora."
 
 msgid "Return to the Fireside Patience title."
 msgstr "Volver al menú principal de Fireside Patience."
@@ -24835,9 +25635,21 @@ msgstr "Pedaleas en {name}"
 msgid "Endless ride in {name}"
 msgstr "Paseo sin fin en {name}"
 
+#. the name or the meaning of a longer line
+msgid "Road bike tyres"
+msgstr "Ruedas de la bici de carretera"
+
 msgid "Road bike tyres: a thin hiss that rises with your speed."
 msgstr ""
 "Ruedas de la bici de carretera: un siseo fino que sube con tu velocidad."
+
+#. the name or the meaning of a longer line
+msgid "a thin hiss that rises with your speed."
+msgstr "un siseo fino que sube con tu velocidad."
+
+#. the name or the meaning of a longer line
+msgid "Road bike freewheel"
+msgstr "Piñón libre de la bici de carretera"
 
 msgid ""
 "Road bike freewheel: a fast, light ticking while you coast. It slows as you "
@@ -24846,24 +25658,73 @@ msgstr ""
 "Piñón libre de la bici de carretera: un tictac rápido y ligero mientras vas "
 "por inercia. Se frena cuando frenas."
 
+#. the name or the meaning of a longer line
+msgid "a fast, light ticking while you coast. It slows as you slow."
+msgstr ""
+"un tictac rápido y ligero mientras vas por inercia. Se frena cuando frenas."
+
+#. the name or the meaning of a longer line
+msgid "Road bike chain"
+msgstr "Cadena de la bici de carretera"
+
 msgid "Road bike chain: a fine, soft purr while you pedal."
 msgstr ""
 "Cadena de la bici de carretera: un ronroneo fino y suave mientras pedaleas."
 
+#. the name or the meaning of a longer line
+msgid "a fine, soft purr while you pedal."
+msgstr "un ronroneo fino y suave mientras pedaleas."
+
+#. the name or the meaning of a longer line
+msgid "BMX tyres"
+msgstr "Ruedas de la BMX"
+
 msgid "BMX tyres: a chunky buzz that rises with your speed."
 msgstr "Ruedas de la BMX: un zumbido grueso que sube con tu velocidad."
+
+#. the name or the meaning of a longer line
+msgid "a chunky buzz that rises with your speed."
+msgstr "un zumbido grueso que sube con tu velocidad."
+
+#. the name or the meaning of a longer line
+msgid "BMX freewheel"
+msgstr "Piñón libre de la BMX"
 
 msgid "BMX freewheel: a loud, slower clatter while you coast."
 msgstr ""
 "Piñón libre de la BMX: un traqueteo fuerte y más lento mientras vas por "
 "inercia."
 
+#. the name or the meaning of a longer line
+msgid "a loud, slower clatter while you coast."
+msgstr "un traqueteo fuerte y más lento mientras vas por inercia."
+
+#. the name or the meaning of a longer line
+msgid "BMX chain"
+msgstr "Cadena de la BMX"
+
 msgid "BMX chain: a chunky rattle while you pedal."
 msgstr "Cadena de la BMX: un traqueteo grueso mientras pedaleas."
+
+#. the name or the meaning of a longer line
+msgid "a chunky rattle while you pedal."
+msgstr "un traqueteo grueso mientras pedaleas."
+
+#. the name or the meaning of a longer line
+msgid "Mountain bike tyres"
+msgstr "Ruedas de la bici de montaña"
 
 msgid "Mountain bike tyres: a knobbly hum that rises with your speed."
 msgstr ""
 "Ruedas de la bici de montaña: un zumbido de tacos que sube con tu velocidad."
+
+#. the name or the meaning of a longer line
+msgid "a knobbly hum that rises with your speed."
+msgstr "un zumbido de tacos que sube con tu velocidad."
+
+#. the name or the meaning of a longer line
+msgid "Mountain bike freewheel"
+msgstr "Piñón libre de la bici de montaña"
 
 msgid ""
 "Mountain bike freewheel: a deep, fast ticking while you coast. It slows as "
@@ -24872,16 +25733,49 @@ msgstr ""
 "Piñón libre de la bici de montaña: un tictac grave y rápido mientras vas "
 "por inercia. Se frena cuando frenas."
 
+#. the name or the meaning of a longer line
+msgid "a deep, fast ticking while you coast. It slows as you slow."
+msgstr ""
+"un tictac grave y rápido mientras vas por inercia. Se frena cuando frenas."
+
+#. the name or the meaning of a longer line
+msgid "Mountain bike chain"
+msgstr "Cadena de la bici de montaña"
+
 msgid "Mountain bike chain: a gritty purr while you pedal."
 msgstr "Cadena de la bici de montaña: un ronroneo áspero mientras pedaleas."
+
+#. the name or the meaning of a longer line
+msgid "a gritty purr while you pedal."
+msgstr "un ronroneo áspero mientras pedaleas."
+
+#. the name or the meaning of a longer line
+msgid "E-bike tyres"
+msgstr "Ruedas de la bici eléctrica"
 
 msgid "E-bike tyres: a soft hiss that rises with your speed."
 msgstr ""
 "Ruedas de la bici eléctrica: un siseo suave que sube con tu velocidad."
 
+#. the name or the meaning of a longer line
+msgid "a soft hiss that rises with your speed."
+msgstr "un siseo suave que sube con tu velocidad."
+
+#. the name or the meaning of a longer line
+msgid "E-bike freewheel"
+msgstr "Piñón libre de la bici eléctrica"
+
 msgid "E-bike freewheel: a quiet tick while you coast."
 msgstr ""
 "Piñón libre de la bici eléctrica: un tictac suave mientras vas por inercia."
+
+#. the name or the meaning of a longer line
+msgid "a quiet tick while you coast."
+msgstr "un tictac suave mientras vas por inercia."
+
+#. the name or the meaning of a longer line
+msgid "E-bike motor"
+msgstr "Motor de la bici eléctrica"
 
 msgid ""
 "E-bike motor: a high electric whine while you pedal. It fades above 25 "
@@ -24890,47 +25784,150 @@ msgstr ""
 "Motor de la bici eléctrica: un zumbido eléctrico agudo mientras pedaleas. "
 "Se apaga por encima de 25 kilómetros por hora."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a high electric whine while you pedal. It fades above 25 kilometres an hour."
+msgstr ""
+"un zumbido eléctrico agudo mientras pedaleas. Se apaga por encima de 25 "
+"kilómetros por hora."
+
+#. the name or the meaning of a longer line
+msgid "Moped tyres"
+msgstr "Ruedas del ciclomotor"
+
 msgid "Moped tyres: a low road roar that rises with your speed."
 msgstr ""
 "Ruedas del ciclomotor: un rugido grave de carretera que sube con tu "
 "velocidad."
 
+#. the name or the meaning of a longer line
+msgid "a low road roar that rises with your speed."
+msgstr "un rugido grave de carretera que sube con tu velocidad."
+
+#. the name or the meaning of a longer line
+msgid "Moped idle"
+msgstr "Ralentí del ciclomotor"
+
 msgid "Moped idle: a putter while you let go of the throttle."
 msgstr "Ralentí del ciclomotor: un petardeo cuando sueltas el acelerador."
+
+#. the name or the meaning of a longer line
+msgid "a putter while you let go of the throttle."
+msgstr "un petardeo cuando sueltas el acelerador."
+
+#. the name or the meaning of a longer line
+msgid "Moped throttle"
+msgstr "Acelerador del ciclomotor"
 
 msgid "Moped throttle: a two-stroke buzz that climbs as you speed up."
 msgstr ""
 "Acelerador del ciclomotor: un zumbido de dos tiempos que sube al acelerar."
 
+#. the name or the meaning of a longer line
+msgid "a two-stroke buzz that climbs as you speed up."
+msgstr "un zumbido de dos tiempos que sube al acelerar."
+
+#. the name or the meaning of a longer line
+msgid "Wind"
+msgstr "Viento"
+
 msgid "Wind: a rush in your ears that grows as you go faster."
 msgstr "Viento: un soplo en los oídos que crece al ir más rápido."
+
+#. the name or the meaning of a longer line
+msgid "a rush in your ears that grows as you go faster."
+msgstr "un soplo en los oídos que crece al ir más rápido."
+
+#. the name or the meaning of a longer line
+msgid "Brakes"
+msgstr "Frenos"
 
 msgid "Brakes: a short squeal as the brakes bite."
 msgstr "Frenos: un chirrido corto cuando muerden los frenos."
 
+#. the name or the meaning of a longer line
+msgid "a short squeal as the brakes bite."
+msgstr "un chirrido corto cuando muerden los frenos."
+
+#. the name or the meaning of a longer line
+msgid "Steer"
+msgstr "Giro"
+
 msgid "Steer: a soft swish as you lean left or right."
 msgstr "Giro: un susurro suave al inclinarte a izquierda o derecha."
 
+#. the name or the meaning of a longer line
+msgid "a soft swish as you lean left or right."
+msgstr "un susurro suave al inclinarte a izquierda o derecha."
+
+#. the name or the meaning of a longer line
+msgid "Sprint"
+msgstr "Esprint"
+
 msgid "Sprint: a hard breath as you stand on the pedals."
 msgstr "Esprint: una respiración fuerte al ponerte de pie en los pedales."
+
+#. the name or the meaning of a longer line
+msgid "a hard breath as you stand on the pedals."
+msgstr "una respiración fuerte al ponerte de pie en los pedales."
+
+#. the name or the meaning of a longer line
+msgid "Out of breath"
+msgstr "Sin aliento"
 
 msgid "Out of breath: a long gasp. Sprint is spent until you rest."
 msgstr ""
 "Sin aliento: un jadeo largo. El esprint se agota hasta que descansas."
 
+#. the name or the meaning of a longer line
+msgid "a long gasp. Sprint is spent until you rest."
+msgstr "un jadeo largo. El esprint se agota hasta que descansas."
+
 msgid "Hop: a spring and a rattle as both wheels leave the road."
 msgstr ""
 "Saltito: un muelle y un traqueteo cuando las dos ruedas dejan el suelo."
 
+#. the name or the meaning of a longer line
+msgid "a spring and a rattle as both wheels leave the road."
+msgstr "un muelle y un traqueteo cuando las dos ruedas dejan el suelo."
+
+#. the name or the meaning of a longer line
+msgid "Clean landing"
+msgstr "Aterrizaje limpio"
+
 msgid "Clean landing: a light double thump."
 msgstr "Aterrizaje limpio: un doble golpe ligero."
+
+#. the name or the meaning of a longer line
+msgid "a light double thump."
+msgstr "un doble golpe ligero."
+
+#. the name or the meaning of a longer line
+msgid "Hard landing"
+msgstr "Aterrizaje duro"
 
 msgid "Hard landing: a heavy crunch that costs you speed."
 msgstr "Aterrizaje duro: un crujido pesado que te quita velocidad."
 
+#. the name or the meaning of a longer line
+msgid "a heavy crunch that costs you speed."
+msgstr "un crujido pesado que te quita velocidad."
+
+#. the name or the meaning of a longer line
+msgid "Pothole jolt"
+msgstr "Sacudida de bache"
+
 msgid "Pothole jolt: a deep thud as a wide tyre drops through a pothole."
 msgstr ""
 "Sacudida de bache: un golpe hondo cuando una rueda ancha cae en un bache."
+
+#. the name or the meaning of a longer line
+msgid "a deep thud as a wide tyre drops through a pothole."
+msgstr "un golpe hondo cuando una rueda ancha cae en un bache."
+
+#. the name or the meaning of a longer line
+msgid "Flat tyre"
+msgstr "Rueda pinchada"
 
 msgid ""
 "Flat tyre: a pop and a hiss. Stop and stand still for 3 seconds to swap the "
@@ -24939,22 +25936,73 @@ msgstr ""
 "Rueda pinchada: un estallido y un siseo. Para y quédate quieto 3 segundos "
 "para cambiar la cámara."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a pop and a hiss. Stop and stand still for 3 seconds to swap the tube."
+msgstr ""
+"un estallido y un siseo. Para y quédate quieto 3 segundos para cambiar la "
+"cámara."
+
+#. the name or the meaning of a longer line
+msgid "Tube swapped"
+msgstr "Cámara cambiada"
+
 msgid "Tube swapped: a pump and a click. The tyre is fixed."
 msgstr "Cámara cambiada: un bombeo y un clic. La rueda está arreglada."
+
+#. the name or the meaning of a longer line
+msgid "a pump and a click. The tyre is fixed."
+msgstr "un bombeo y un clic. La rueda está arreglada."
+
+#. the name or the meaning of a longer line
+msgid "Curb strike"
+msgstr "Golpe con bordillo"
 
 msgid "Curb strike: a hard metal bang as a wheel hits a curb."
 msgstr ""
 "Golpe con bordillo: un golpe metálico fuerte cuando una rueda da contra un "
 "bordillo."
 
+#. the name or the meaning of a longer line
+msgid "a hard metal bang as a wheel hits a curb."
+msgstr "un golpe metálico fuerte cuando una rueda da contra un bordillo."
+
+#. the name or the meaning of a longer line
+msgid "Crash"
+msgstr "Choque"
+
 msgid "Crash: a clatter and a scrape. You are down for 3 seconds."
 msgstr "Choque: un estrépito y un arrastre. Estás en el suelo 3 segundos."
+
+#. the name or the meaning of a longer line
+msgid "a clatter and a scrape. You are down for 3 seconds."
+msgstr "un estrépito y un arrastre. Estás en el suelo 3 segundos."
+
+#. the name or the meaning of a longer line
+msgid "Back up"
+msgstr "De pie otra vez"
 
 msgid "Back up: a click into the pedals. Ride on."
 msgstr "De pie otra vez: un clic en los pedales. Sigue."
 
+#. the name or the meaning of a longer line
+msgid "a click into the pedals. Ride on."
+msgstr "un clic en los pedales. Sigue."
+
+#. the name or the meaning of a longer line
+msgid "Running wide"
+msgstr "Abrirse"
+
 msgid "Running wide: a long tyre skid at a turn taken too fast."
 msgstr "Abrirse: un derrape largo en un giro tomado demasiado rápido."
+
+#. the name or the meaning of a longer line
+msgid "a long tyre skid at a turn taken too fast."
+msgstr "un derrape largo en un giro tomado demasiado rápido."
+
+#. the name or the meaning of a longer line
+msgid "Edge rumble"
+msgstr "Retumbo del borde"
 
 msgid ""
 "Edge rumble: a low rumble from the edge you are pressed against, the parked "
@@ -24963,6 +26011,18 @@ msgstr ""
 "Retumbo del borde: un retumbo grave del borde contra el que vas, los coches "
 "aparcados o la línea central."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low rumble from the edge you are pressed against, the parked cars or the "
+"centre line."
+msgstr ""
+"un retumbo grave del borde contra el que vas, los coches aparcados o la "
+"línea central."
+
+#. the name or the meaning of a longer line
+msgid "Lane line"
+msgstr "Línea del carril"
+
 msgid ""
 "Lane line: a short thrum as you cross the line between the bike lane and "
 "the traffic lane."
@@ -24970,11 +26030,33 @@ msgstr ""
 "Línea del carril: un zumbido corto al cruzar la línea entre el carril bici "
 "y el carril de tráfico."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short thrum as you cross the line between the bike lane and the traffic "
+"lane."
+msgstr ""
+"un zumbido corto al cruzar la línea entre el carril bici y el carril de "
+"tráfico."
+
+#. the name or the meaning of a longer line
+msgid "Door zone"
+msgstr "Zona de puertas"
+
 msgid ""
 "Door zone: a faint murmur of parked cars beside you. A door could open here."
 msgstr ""
 "Zona de puertas: un leve murmullo de coches aparcados a tu lado. Aquí "
 "podría abrirse una puerta."
+
+#. the name or the meaning of a longer line
+msgid "a faint murmur of parked cars beside you. A door could open here."
+msgstr ""
+"un leve murmullo de coches aparcados a tu lado. Aquí podría abrirse una "
+"puerta."
+
+#. the name or the meaning of a longer line
+msgid "Hazard tick"
+msgstr "Tic de peligro"
 
 msgid ""
 "Hazard tick: a pothole or an open door ahead, from its side. It ticks "
@@ -24983,12 +26065,36 @@ msgstr ""
 "Tic de peligro: un bache o una puerta abierta delante, desde su lado. Suena "
 "más rápido y agudo al acercarte."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a pothole or an open door ahead, from its side. It ticks faster and higher "
+"as you get closer."
+msgstr ""
+"un bache o una puerta abierta delante, desde su lado. Suena más rápido y "
+"agudo al acercarte."
+
+#. the name or the meaning of a longer line
+msgid "Curb tone"
+msgstr "Tono de bordillo"
+
 msgid ""
 "Curb tone: a low, hard tick from a raised curb across the bike lane. Ride "
 "around it, or hop it on a BMX."
 msgstr ""
 "Tono de bordillo: un tic grave y seco de un bordillo alto que cruza el "
 "carril bici. Rodéalo, o sáltalo con una BMX."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a low, hard tick from a raised curb across the bike lane. Ride around it, "
+"or hop it on a BMX."
+msgstr ""
+"un tic grave y seco de un bordillo alto que cruza el carril bici. Rodéalo, "
+"o sáltalo con una BMX."
+
+#. the name or the meaning of a longer line
+msgid "Ramp tone"
+msgstr "Tono de rampa"
 
 msgid ""
 "Ramp tone: a bright rising tick from a ramp ahead. Press hop at its lip for "
@@ -24997,10 +26103,31 @@ msgstr ""
 "Tono de rampa: un tic vivo que sube de una rampa delante. Pulsa saltar en "
 "su borde para dar un salto."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a bright rising tick from a ramp ahead. Press hop at its lip for a jump."
+msgstr ""
+"un tic vivo que sube de una rampa delante. Pulsa saltar en su borde para "
+"dar un salto."
+
+#. the name or the meaning of a longer line
+msgid "Car"
+msgstr "Coche"
+
 msgid "Car: an engine hum. Muffled behind you, clearer as it draws level."
 msgstr ""
 "Coche: el zumbido de un motor. Apagado detrás de ti, más claro cuando se "
 "pone a tu altura."
+
+#. the name or the meaning of a longer line
+msgid "an engine hum. Muffled behind you, clearer as it draws level."
+msgstr ""
+"el zumbido de un motor. Apagado detrás de ti, más claro cuando se pone a tu "
+"altura."
+
+#. the name or the meaning of a longer line
+msgid "Oncoming car"
+msgstr "Coche de frente"
 
 msgid ""
 "Oncoming car: an engine coming toward you in the traffic lane. Get into the "
@@ -25009,9 +26136,24 @@ msgstr ""
 "Coche de frente: un motor que viene hacia ti por el carril de tráfico. "
 "Ponte en el carril bici."
 
+#. the name or the meaning of a longer line
+msgid ""
+"an engine coming toward you in the traffic lane. Get into the bike lane."
+msgstr ""
+"un motor que viene hacia ti por el carril de tráfico. Ponte en el carril "
+"bici."
+
+#. the name or the meaning of a longer line
+msgid "Oncoming horn"
+msgstr "Bocina de frente"
+
 msgid "Oncoming horn: a long blast from ahead. An oncoming car is coming."
 msgstr ""
 "Bocina de frente: un bocinazo largo de delante. Viene un coche de frente."
+
+#. the name or the meaning of a longer line
+msgid "a long blast from ahead. An oncoming car is coming."
+msgstr "un bocinazo largo de delante. Viene un coche de frente."
 
 msgid ""
 "Parcel: a shop doorbell ahead, from the side the parcel is on. Ride over it "
@@ -25020,11 +26162,39 @@ msgstr ""
 "Paquete: un timbre de tienda delante, del lado donde está el paquete. Pasa "
 "por encima despacio para cogerlo."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a shop doorbell ahead, from the side the parcel is on. Ride over it slowly "
+"to grab it."
+msgstr ""
+"un timbre de tienda delante, del lado donde está el paquete. Pasa por "
+"encima despacio para cogerlo."
+
+#. the name or the meaning of a longer line
+msgid "Parcel grabbed"
+msgstr "Paquete cogido"
+
 msgid "Parcel grabbed: a cardboard thump."
 msgstr "Paquete cogido: un golpe de cartón."
 
+#. the name or the meaning of a longer line
+msgid "a cardboard thump."
+msgstr "un golpe de cartón."
+
+#. the name or the meaning of a longer line
+msgid "Cobbles"
+msgstr "Adoquines"
+
 msgid "Cobbles: a rattling rumble under your wheels in Old Town."
 msgstr "Adoquines: un retumbo traqueteante bajo tus ruedas en Old Town."
+
+#. the name or the meaning of a longer line
+msgid "a rattling rumble under your wheels in Old Town."
+msgstr "un retumbo traqueteante bajo tus ruedas en Old Town."
+
+#. the name or the meaning of a longer line
+msgid "Door handle"
+msgstr "Manilla de puerta"
 
 msgid ""
 "Door handle: a sharp click from a parked car. Its door opens in a moment."
@@ -25032,13 +26202,37 @@ msgstr ""
 "Manilla de puerta: un clic seco de un coche aparcado. Su puerta se abre "
 "enseguida."
 
+#. the name or the meaning of a longer line
+msgid "a sharp click from a parked car. Its door opens in a moment."
+msgstr "un clic seco de un coche aparcado. Su puerta se abre enseguida."
+
+#. the name or the meaning of a longer line
+msgid "Door open"
+msgstr "Puerta abierta"
+
 msgid "Door open: a creak as the door swings into the door zone."
 msgstr ""
 "Puerta abierta: un crujido cuando la puerta se abre a la zona de puertas."
 
+#. the name or the meaning of a longer line
+msgid "a creak as the door swings into the door zone."
+msgstr "un crujido cuando la puerta se abre a la zona de puertas."
+
+#. the name or the meaning of a longer line
+msgid "Horn"
+msgstr "Bocina"
+
 msgid "Horn: a car stuck behind you. Move right to let it pass."
 msgstr ""
 "Bocina: un coche atascado detrás de ti. Ve a la derecha para dejarlo pasar."
+
+#. the name or the meaning of a longer line
+msgid "a car stuck behind you. Move right to let it pass."
+msgstr "un coche atascado detrás de ti. Ve a la derecha para dejarlo pasar."
+
+#. the name or the meaning of a longer line
+msgid "Thank-you toot"
+msgstr "Pitido de gracias"
 
 msgid ""
 "Thank-you toot: two short beeps as a car you let by passes. That earns a "
@@ -25047,25 +26241,75 @@ msgstr ""
 "Pitido de gracias: dos pitidos cortos cuando pasa un coche al que dejaste "
 "pasar. Eso da una propina."
 
+#. the name or the meaning of a longer line
+msgid "two short beeps as a car you let by passes. That earns a tip."
+msgstr ""
+"dos pitidos cortos cuando pasa un coche al que dejaste pasar. Eso da una "
+"propina."
+
+#. the name or the meaning of a longer line
+msgid "Left turn chime"
+msgstr "Campanilla de giro a la izquierda"
+
 msgid "Left turn chime: from your left, a junction turn is coming."
 msgstr ""
 "Campanilla de giro a la izquierda: desde tu izquierda, se acerca un giro en "
 "un cruce."
+
+#. the name or the meaning of a longer line
+msgid "from your left, a junction turn is coming."
+msgstr "desde tu izquierda, se acerca un giro en un cruce."
+
+#. the name or the meaning of a longer line
+msgid "Right turn chime"
+msgstr "Campanilla de giro a la derecha"
 
 msgid "Right turn chime: from your right, a junction turn is coming."
 msgstr ""
 "Campanilla de giro a la derecha: desde tu derecha, se acerca un giro en un "
 "cruce."
 
+#. the name or the meaning of a longer line
+msgid "from your right, a junction turn is coming."
+msgstr "desde tu derecha, se acerca un giro en un cruce."
+
+#. the name or the meaning of a longer line
+msgid "Turn made"
+msgstr "Giro hecho"
+
 msgid "Turn made: a bright chime as you take a junction turn cleanly."
 msgstr ""
 "Giro hecho: una campanilla viva cuando tomas bien un giro en un cruce."
 
+#. the name or the meaning of a longer line
+msgid "a bright chime as you take a junction turn cleanly."
+msgstr "una campanilla viva cuando tomas bien un giro en un cruce."
+
+#. the name or the meaning of a longer line
+msgid "Finish bell"
+msgstr "Campana de meta"
+
 msgid "Finish bell: a bell from the finish line ahead."
 msgstr "Campana de meta: una campana desde la línea de meta delante."
 
+#. the name or the meaning of a longer line
+msgid "a bell from the finish line ahead."
+msgstr "una campana desde la línea de meta delante."
+
+#. the name or the meaning of a longer line
+msgid "Finish"
+msgstr "Meta"
+
 msgid "Finish: a cheer and a bell as you cross the line."
 msgstr "Meta: vítores y una campana al cruzar la línea."
+
+#. the name or the meaning of a longer line
+msgid "a cheer and a bell as you cross the line."
+msgstr "vítores y una campana al cruzar la línea."
+
+#. the name or the meaning of a longer line
+msgid "Act now"
+msgstr "Actúa ya"
 
 msgid ""
 "Act now: a sharp double beep. The hazard is in your line: hop, brake or "
@@ -25074,17 +26318,52 @@ msgstr ""
 "Actúa ya: un doble pitido agudo. El peligro está en tu trayectoria: salta, "
 "frena o gira ya."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a sharp double beep. The hazard is in your line: hop, brake or steer now."
+msgstr ""
+"un doble pitido agudo. El peligro está en tu trayectoria: salta, frena o "
+"gira ya."
+
 msgid "Dull tap: nothing happens, such as a hop while stopped."
 msgstr "Toque apagado: no pasa nada, como un saltito estando parado."
+
+#. the name or the meaning of a longer line
+msgid "nothing happens, such as a hop while stopped."
+msgstr "no pasa nada, como un saltito estando parado."
+
+#. the name or the meaning of a longer line
+msgid "Countdown beep"
+msgstr "Pitido de cuenta atrás"
 
 msgid "Countdown beep: the ride starts after three."
 msgstr "Pitido de cuenta atrás: el recorrido empieza después de tres."
 
+#. the name or the meaning of a longer line
+msgid "the ride starts after three."
+msgstr "el recorrido empieza después de tres."
+
 msgid "Go: a high beep. The ride has started."
 msgstr "Salida: un pitido agudo. El recorrido ha empezado."
 
+#. the name or the meaning of a longer line
+msgid "a high beep. The ride has started."
+msgstr "un pitido agudo. El recorrido ha empezado."
+
+#. the name or the meaning of a longer line
+msgid "Lesson passed"
+msgstr "Lección superada"
+
 msgid "Lesson passed: a rising chime in training."
 msgstr "Lección superada: una campanilla que sube en el entrenamiento."
+
+#. the name or the meaning of a longer line
+msgid "a rising chime in training."
+msgstr "una campanilla que sube en el entrenamiento."
+
+#. the name or the meaning of a longer line
+msgid "Leaf pile"
+msgstr "Montón de hojas"
 
 msgid ""
 "Leaf pile: a dry rustle from a pile of leaves ahead in the bike lane, in "
@@ -25093,6 +26372,18 @@ msgstr ""
 "Montón de hojas: un susurro seco de un montón de hojas delante en el carril "
 "bici, en la Ruta de las hojas. No es un peligro."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a dry rustle from a pile of leaves ahead in the bike lane, in the Leaf "
+"season ride. It is not a hazard."
+msgstr ""
+"un susurro seco de un montón de hojas delante en el carril bici, en la Ruta "
+"de las hojas. No es un peligro."
+
+#. the name or the meaning of a longer line
+msgid "Leaf crunch"
+msgstr "Crujido de hojas"
+
 msgid ""
 "Leaf crunch: a crackle as you ride through a leaf pile, for 1000 ride "
 "points. The freewheel goes quiet for a moment."
@@ -25100,12 +26391,32 @@ msgstr ""
 "Crujido de hojas: un chasquido al atravesar un montón de hojas, por 1000 "
 "puntos de recorrido. El piñón libre calla un momento."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a crackle as you ride through a leaf pile, for 1000 ride points. The "
+"freewheel goes quiet for a moment."
+msgstr ""
+"un chasquido al atravesar un montón de hojas, por 1000 puntos de recorrido. "
+"El piñón libre calla un momento."
+
+#. the name or the meaning of a longer line
+msgid "Clock tick"
+msgstr "Tic del reloj"
+
 msgid ""
 "Clock tick: against the clock, under 15 seconds left. It ticks twice as "
 "fast in the last 5."
 msgstr ""
 "Tic del reloj: contra el reloj, con menos de 15 segundos. Va el doble de "
 "rápido en los últimos 5."
+
+#. the name or the meaning of a longer line
+msgid ""
+"against the clock, under 15 seconds left. It ticks twice as fast in the "
+"last 5."
+msgstr ""
+"contra el reloj, con menos de 15 segundos. Va el doble de rápido en los "
+"últimos 5."
 
 msgid "Left and right"
 msgstr "Izquierda y derecha"
@@ -26739,11 +28050,24 @@ msgstr ""
 "Cuenta: un golpe en una tapa de ataúd. Cuatro te dan la entrada antes de "
 "cada canción, y tres tras una pausa."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a coffin lid knock. Four of them count you in before each song, and three "
+"after a pause."
+msgstr ""
+"un golpe en una tapa de ataúd. Cuatro te dan la entrada antes de cada "
+"canción, y tres tras una pausa."
+
 msgid ""
 "Spot on: a small spooky chime with your move. It landed right on the beat."
 msgstr ""
 "Perfecto: una campanilla pequeña y siniestra con tu paso. Cayó justo en el "
 "tiempo."
+
+#. the name or the meaning of a longer line
+msgid "a small spooky chime with your move. It landed right on the beat."
+msgstr ""
+"una campanilla pequeña y siniestra con tu paso. Cayó justo en el tiempo."
 
 msgid ""
 "Close: a soft dull tick with your move. It landed in time, but a little "
@@ -26752,12 +28076,32 @@ msgstr ""
 "Casi: un tic suave y apagado con tu paso. Cayó a tiempo, pero un poco "
 "pronto o tarde."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft dull tick with your move. It landed in time, but a little early or "
+"late."
+msgstr ""
+"un tic suave y apagado con tu paso. Cayó a tiempo, pero un poco pronto o "
+"tarde."
+
 msgid ""
 "Stumble: a thud and a clatter of bones. A move was missed, or the wrong "
 "move was danced."
 msgstr ""
 "Tropiezo: un golpe y un estrépito de huesos. Fallaste un paso, o bailaste "
 "el equivocado."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a thud and a clatter of bones. A move was missed, or the wrong move was "
+"danced."
+msgstr ""
+"un golpe y un estrépito de huesos. Fallaste un paso, o bailaste el "
+"equivocado."
+
+#. the name or the meaning of a longer line
+msgid "Bony claps"
+msgstr "Palmas huesudas"
 
 msgid ""
 "Bony claps: the crowd claps three times. Another 8 moves in a row, for a "
@@ -26766,8 +28110,17 @@ msgstr ""
 "Palmas huesudas: el público aplaude tres veces. Otros 8 pasos seguidos, con "
 "puntos extra."
 
+#. the name or the meaning of a longer line
+msgid "the crowd claps three times. Another 8 moves in a row, for a bonus."
+msgstr ""
+"el público aplaude tres veces. Otros 8 pasos seguidos, con puntos extra."
+
 msgid "Applause: the end of a song, with howls and rattles."
 msgstr "Aplausos: el final de una canción, con aullidos y traqueteos."
+
+#. the name or the meaning of a longer line
+msgid "the end of a song, with howls and rattles."
+msgstr "el final de una canción, con aullidos y traqueteos."
 
 #. placeholders: {word}, {call_words}, {dance}, {move_words}
 #. one sentence of a longer line
@@ -34386,17 +35739,45 @@ msgstr "1 minuto {seconds}"
 msgid "{m} minutes {seconds}"
 msgstr "{m} minutos {seconds}"
 
+#. the name or the meaning of a longer line
+msgid "Footstep on floorboards"
+msgstr "Paso en tablas"
+
 msgid "Footstep on floorboards: you moved one step, in the upper wings."
 msgstr "Paso en tablas: te moviste un paso, en las alas de arriba."
+
+#. the name or the meaning of a longer line
+msgid "you moved one step, in the upper wings."
+msgstr "te moviste un paso, en las alas de arriba."
+
+#. the name or the meaning of a longer line
+msgid "Footstep on stone"
+msgstr "Paso en piedra"
 
 msgid ""
 "Footstep on stone: you moved one step, from the flooded cellars down."
 msgstr ""
 "Paso en piedra: te moviste un paso, de los sótanos inundados hacia abajo."
 
+#. the name or the meaning of a longer line
+msgid "you moved one step, from the flooded cellars down."
+msgstr "te moviste un paso, de los sótanos inundados hacia abajo."
+
+#. the name or the meaning of a longer line
+msgid "Wall thud"
+msgstr "Golpe en la pared"
+
 msgid "Wall thud: you walked into a wall, or a hole, and did not move."
 msgstr ""
 "Golpe en la pared: chocaste con una pared, o un agujero, y no te moviste."
+
+#. the name or the meaning of a longer line
+msgid "you walked into a wall, or a hole, and did not move."
+msgstr "chocaste con una pared, o un agujero, y no te moviste."
+
+#. the name or the meaning of a longer line
+msgid "Rattling handle"
+msgstr "Manilla que traquetea"
 
 msgid ""
 "Rattling handle: the exit door is still locked. Solve the room first."
@@ -34404,21 +35785,54 @@ msgstr ""
 "Manilla que traquetea: la puerta de salida sigue cerrada. Resuelve primero "
 "la habitación."
 
+#. the name or the meaning of a longer line
+msgid "the exit door is still locked. Solve the room first."
+msgstr "la puerta de salida sigue cerrada. Resuelve primero la habitación."
+
+#. the name or the meaning of a longer line
+msgid "Heavy slam"
+msgstr "Portazo fuerte"
+
 msgid ""
 "Heavy slam: the door you came in by is shut fast. There is no going back."
 msgstr ""
 "Portazo fuerte: la puerta por la que entraste está bien cerrada. No hay "
 "vuelta atrás."
 
+#. the name or the meaning of a longer line
+msgid "the door you came in by is shut fast. There is no going back."
+msgstr ""
+"la puerta por la que entraste está bien cerrada. No hay vuelta atrás."
+
+#. the name or the meaning of a longer line
+msgid "Bolt sliding back"
+msgstr "Cerrojo que se abre"
+
 msgid "Bolt sliding back: the room is solved and its exit door unlocks."
 msgstr ""
 "Cerrojo que se abre: la habitación está resuelta y su puerta de salida se "
 "abre."
 
+#. the name or the meaning of a longer line
+msgid "the room is solved and its exit door unlocks."
+msgstr "la habitación está resuelta y su puerta de salida se abre."
+
+#. the name or the meaning of a longer line
+msgid "Cold draught"
+msgstr "Corriente fría"
+
 msgid "Cold draught: an open exit door. Follow it to leave the room."
 msgstr ""
 "Corriente fría: una puerta de salida abierta. Síguela para salir de la "
 "habitación."
+
+#. the name or the meaning of a longer line
+msgid "an open exit door. Follow it to leave the room."
+msgstr "una puerta de salida abierta. Síguela para salir de la habitación."
+
+#. the name or the meaning of a longer line
+msgid "Spirit's whisper"
+msgstr "Susurro de espíritu"
 
 msgid ""
 "Spirit's whisper: a spirit seals the exit door and wants an offering. Go to "
@@ -34427,11 +35841,36 @@ msgstr ""
 "Susurro de espíritu: un espíritu sella la puerta de salida y quiere una "
 "ofrenda. Ve hacia él."
 
+#. the name or the meaning of a longer line
+msgid "a spirit seals the exit door and wants an offering. Go to it."
+msgstr ""
+"un espíritu sella la puerta de salida y quiere una ofrenda. Ve hacia él."
+
+#. the name or the meaning of a longer line
+msgid "Creaking door"
+msgstr "Puerta que cruje"
+
 msgid "Creaking door: you pass through into the next room."
 msgstr "Puerta que cruje: pasas a la siguiente habitación."
 
+#. the name or the meaning of a longer line
+msgid "you pass through into the next room."
+msgstr "pasas a la siguiente habitación."
+
+#. the name or the meaning of a longer line
+msgid "Stairs"
+msgstr "Escalera"
+
 msgid "Stairs: you leave the floor."
 msgstr "Escalera: dejas la planta."
+
+#. the name or the meaning of a longer line
+msgid "you leave the floor."
+msgstr "dejas la planta."
+
+#. the name or the meaning of a longer line
+msgid "Phonograph crackle"
+msgstr "Crujido de fonógrafo"
 
 msgid ""
 "Phonograph crackle: a matching puzzle, or a missing sound. The sounds that "
@@ -34440,6 +35879,17 @@ msgstr ""
 "Crujido de fonógrafo: un acertijo de emparejar, o un sonido que falta. Los "
 "sonidos que siguen son la pista."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a matching puzzle, or a missing sound. The sounds that follow are the clue."
+msgstr ""
+"un acertijo de emparejar, o un sonido que falta. Los sonidos que siguen son "
+"la pista."
+
+#. the name or the meaning of a longer line
+msgid "Medium's gong"
+msgstr "Gong de la médium"
+
 msgid ""
 "Medium's gong: a séance. Two to four sounds follow; take their things in "
 "that order."
@@ -34447,26 +35897,70 @@ msgstr ""
 "Gong de la médium: una sesión de espiritismo. Siguen de dos a cuatro "
 "sonidos; coge sus cosas en ese orden."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a séance. Two to four sounds follow; take their things in that order."
+msgstr ""
+"una sesión de espiritismo. Siguen de dos a cuatro sonidos; coge sus cosas "
+"en ese orden."
+
+#. the name or the meaning of a longer line
+msgid "Medium's hum"
+msgstr "Murmullo de la médium"
+
 msgid "Medium's hum: you took the séance's next thing in the right order."
 msgstr ""
 "Murmullo de la médium: cogiste la siguiente cosa de la sesión en el orden "
 "correcto."
 
+#. the name or the meaning of a longer line
+msgid "you took the séance's next thing in the right order."
+msgstr "cogiste la siguiente cosa de la sesión en el orden correcto."
+
 #. placeholders: {name}, {sound}
 msgid "The {name}: {sound}."
 msgstr "{name}: {sound}."
 
+#. the name or the meaning of a longer line
+msgid "Grab"
+msgstr "Coger"
+
 msgid "Grab: you picked up the right thing."
 msgstr "Coger: cogiste la cosa correcta."
 
+#. the name or the meaning of a longer line
+msgid "you picked up the right thing."
+msgstr "cogiste la cosa correcta."
+
+#. the name or the meaning of a longer line
+msgid "Chime"
+msgstr "Campanilla"
+
 msgid "Chime: the room's puzzle is solved."
 msgstr "Campanilla: el acertijo de la habitación está resuelto."
+
+#. the name or the meaning of a longer line
+msgid "the room's puzzle is solved."
+msgstr "el acertijo de la habitación está resuelto."
+
+#. the name or the meaning of a longer line
+msgid "Mocking laugh"
+msgstr "Risa burlona"
 
 msgid ""
 "Mocking laugh: not what the room wants. You lose time on the haunt clock."
 msgstr ""
 "Risa burlona: no es lo que quiere la habitación. Pierdes tiempo del reloj "
 "del embrujo."
+
+#. the name or the meaning of a longer line
+msgid "not what the room wants. You lose time on the haunt clock."
+msgstr ""
+"no es lo que quiere la habitación. Pierdes tiempo del reloj del embrujo."
+
+#. the name or the meaning of a longer line
+msgid "Warped shriek"
+msgstr "Chillido deformado"
 
 msgid ""
 "Warped shriek: a mimic, a copy of the answer. You lose time, and it hops "
@@ -34475,20 +35969,69 @@ msgstr ""
 "Chillido deformado: una imitación, una copia de la respuesta. Pierdes "
 "tiempo, y salta lejos."
 
+#. the name or the meaning of a longer line
+msgid "a mimic, a copy of the answer. You lose time, and it hops away."
+msgstr ""
+"una imitación, una copia de la respuesta. Pierdes tiempo, y salta lejos."
+
+#. the name or the meaning of a longer line
+msgid "Dust"
+msgstr "Polvo"
+
 msgid "Dust: there is nothing to pick up here."
 msgstr "Polvo: aquí no hay nada que coger."
+
+#. the name or the meaning of a longer line
+msgid "there is nothing to pick up here."
+msgstr "aquí no hay nada que coger."
+
+#. the name or the meaning of a longer line
+msgid "Rustle"
+msgstr "Roce"
 
 msgid "Rustle: you chose another thing you carry."
 msgstr "Roce: elegiste otra cosa de las que llevas."
 
+#. the name or the meaning of a longer line
+msgid "you chose another thing you carry."
+msgstr "elegiste otra cosa de las que llevas."
+
+#. the name or the meaning of a longer line
+msgid "The spirit sighs"
+msgstr "El espíritu suspira"
+
 msgid "The spirit sighs: it accepts your offering."
 msgstr "El espíritu suspira: acepta tu ofrenda."
+
+#. the name or the meaning of a longer line
+msgid "it accepts your offering."
+msgstr "acepta tu ofrenda."
+
+#. the name or the meaning of a longer line
+msgid "The spirit shrieks"
+msgstr "El espíritu chilla"
 
 msgid "The spirit shrieks: wrong offering. You lose time."
 msgstr "El espíritu chilla: ofrenda equivocada. Pierdes tiempo."
 
+#. the name or the meaning of a longer line
+msgid "wrong offering. You lose time."
+msgstr "ofrenda equivocada. Pierdes tiempo."
+
+#. the name or the meaning of a longer line
+msgid "Bell toll"
+msgstr "Toque de campana"
+
 msgid "Bell toll: the haunt clock is running low."
 msgstr "Toque de campana: al reloj del embrujo le queda poco."
+
+#. the name or the meaning of a longer line
+msgid "the haunt clock is running low."
+msgstr "al reloj del embrujo le queda poco."
+
+#. the name or the meaning of a longer line
+msgid "Groaning board"
+msgstr "Tabla que gime"
 
 msgid ""
 "Groaning board: a rotten board next to you, in the direction you hear it. "
@@ -34497,11 +36040,33 @@ msgstr ""
 "Tabla que gime: una tabla podrida a tu lado, en la dirección donde la oyes. "
 "No la pises."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a rotten board next to you, in the direction you hear it. Do not step on it."
+msgstr ""
+"una tabla podrida a tu lado, en la dirección donde la oyes. No la pises."
+
+#. the name or the meaning of a longer line
+msgid "Crash of boards"
+msgstr "Estrépito de tablas"
+
 msgid "Crash of boards: you fell through a rotten board and lost courage."
 msgstr "Estrépito de tablas: caíste por una tabla podrida y perdiste valor."
 
+#. the name or the meaning of a longer line
+msgid "you fell through a rotten board and lost courage."
+msgstr "caíste por una tabla podrida y perdiste valor."
+
+#. the name or the meaning of a longer line
+msgid "Rising chord"
+msgstr "Acorde que sube"
+
 msgid "Rising chord: a landing. You get one courage back."
 msgstr "Acorde que sube: un rellano. Recuperas un valor."
+
+#. the name or the meaning of a longer line
+msgid "a landing. You get one courage back."
+msgstr "un rellano. Recuperas un valor."
 
 msgid "When you hear it, the hound is coming: be ready to walk."
 msgstr "Cuando lo oigas, viene el sabueso: prepárate para andar."
@@ -34518,12 +36083,25 @@ msgstr "Un fantasma, {name}: {voice}."
 msgid "A ghost, {name}: {voice}. {what}"
 msgstr "Un fantasma, {name}: {voice}. {what}"
 
+#. the name or the meaning of a longer line
+msgid "Freeze stab"
+msgstr "Golpe de quieto"
+
 msgid ""
 "Freeze stab: a ghost is passing right by you. Do not move until it has "
 "passed."
 msgstr ""
 "Golpe de quieto: un fantasma pasa justo a tu lado. No te muevas hasta que "
 "haya pasado."
+
+#. the name or the meaning of a longer line
+msgid "a ghost is passing right by you. Do not move until it has passed."
+msgstr ""
+"un fantasma pasa justo a tu lado. No te muevas hasta que haya pasado."
+
+#. the name or the meaning of a longer line
+msgid "Howl"
+msgstr "Aullido"
 
 msgid ""
 "Howl: the blind hound is passing right by you. Keep walking until it has "
@@ -34532,13 +36110,35 @@ msgstr ""
 "Aullido: el sabueso ciego pasa justo a tu lado. Sigue andando hasta que "
 "haya pasado."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the blind hound is passing right by you. Keep walking until it has passed."
+msgstr ""
+"el sabueso ciego pasa justo a tu lado. Sigue andando hasta que haya pasado."
+
+#. the name or the meaning of a longer line
+msgid "Long breath out"
+msgstr "Largo suspiro"
+
 msgid "Long breath out: the ghost has passed without finding you."
 msgstr "Largo suspiro: el fantasma pasó sin encontrarte."
+
+#. the name or the meaning of a longer line
+msgid "the ghost has passed without finding you."
+msgstr "el fantasma pasó sin encontrarte."
+
+#. the name or the meaning of a longer line
+msgid "Scream"
+msgstr "Grito"
 
 msgid ""
 "Scream: something caught you. You lose courage and flee to the room's door."
 msgstr ""
 "Grito: algo te atrapó. Pierdes valor y huyes a la puerta de la habitación."
+
+#. the name or the meaning of a longer line
+msgid "something caught you. You lose courage and flee to the room's door."
+msgstr "algo te atrapó. Pierdes valor y huyes a la puerta de la habitación."
 
 msgid ""
 "The shadow: a low breathing drone that walks the room, following your "
@@ -34547,18 +36147,54 @@ msgstr ""
 "La sombra: un zumbido grave que respira y recorre la habitación, siguiendo "
 "tus pasos. No dejes que te alcance."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low breathing drone that walks the room, following your footsteps. Do not "
+"let it reach you."
+msgstr ""
+"un zumbido grave que respira y recorre la habitación, siguiendo tus pasos. "
+"No dejes que te alcance."
+
+#. the name or the meaning of a longer line
+msgid "Soft glass chime"
+msgstr "Campanilla suave de cristal"
+
 msgid ""
 "Soft glass chime: a charm lying in the room. Walk onto it to take it."
 msgstr ""
 "Campanilla suave de cristal: un amuleto en la habitación. Písalo para "
 "cogerlo."
 
+#. the name or the meaning of a longer line
+msgid "a charm lying in the room. Walk onto it to take it."
+msgstr "un amuleto en la habitación. Písalo para cogerlo."
+
+#. the name or the meaning of a longer line
+msgid "Bright pluck"
+msgstr "Pulsación viva"
+
 msgid "Bright pluck: you took a charm."
 msgstr "Pulsación viva: cogiste un amuleto."
+
+#. the name or the meaning of a longer line
+msgid "you took a charm."
+msgstr "cogiste un amuleto."
+
+#. the name or the meaning of a longer line
+msgid "Hiss of salt"
+msgstr "Siseo de sal"
 
 msgid ""
 "Hiss of salt: your salt warded something off. You stay where you are."
 msgstr "Siseo de sal: tu sal te libró de algo. Te quedas donde estás."
+
+#. the name or the meaning of a longer line
+msgid "your salt warded something off. You stay where you are."
+msgstr "tu sal te libró de algo. Te quedas donde estás."
+
+#. the name or the meaning of a longer line
+msgid "Swish"
+msgstr "Silbido"
 
 msgid ""
 "Swish: the pendulum's blade, sweeping along its row. Cross that row just "
@@ -34567,31 +36203,92 @@ msgstr ""
 "Silbido: la cuchilla del péndulo, barriendo su fila. Cruza esa fila justo "
 "después de que pase."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the pendulum's blade, sweeping along its row. Cross that row just after it "
+"passes."
+msgstr ""
+"la cuchilla del péndulo, barriendo su fila. Cruza esa fila justo después de "
+"que pase."
+
+#. the name or the meaning of a longer line
+msgid "Splash"
+msgstr "Chapoteo"
+
 msgid ""
 "Splash: you waded into deep water. Wading is slow and brings ghosts sooner."
 msgstr ""
 "Chapoteo: entraste en agua profunda. Vadear es lento y trae antes a los "
 "fantasmas."
 
+#. the name or the meaning of a longer line
+msgid "you waded into deep water. Wading is slow and brings ghosts sooner."
+msgstr ""
+"entraste en agua profunda. Vadear es lento y trae antes a los fantasmas."
+
+#. the name or the meaning of a longer line
+msgid "Lapping water"
+msgstr "Agua que lame"
+
 msgid "Lapping water: deep water next to you, in the direction you hear it."
 msgstr ""
 "Agua que lame: agua profunda a tu lado, en la dirección donde la oyes."
+
+#. the name or the meaning of a longer line
+msgid "deep water next to you, in the direction you hear it."
+msgstr "agua profunda a tu lado, en la dirección donde la oyes."
+
+#. the name or the meaning of a longer line
+msgid "Trickling dust"
+msgstr "Polvo que cae"
 
 msgid ""
 "Trickling dust: a stone is about to fall where you stand. Step off at once."
 msgstr ""
 "Polvo que cae: una piedra va a caer donde estás. Apártate enseguida."
 
+#. the name or the meaning of a longer line
+msgid "a stone is about to fall where you stand. Step off at once."
+msgstr "una piedra va a caer donde estás. Apártate enseguida."
+
+#. the name or the meaning of a longer line
+msgid "Crash of stone"
+msgstr "Estrépito de piedra"
+
 msgid "Crash of stone: a stone hit the floor."
 msgstr "Estrépito de piedra: una piedra cayó al suelo."
+
+#. the name or the meaning of a longer line
+msgid "a stone hit the floor."
+msgstr "una piedra cayó al suelo."
+
+#. the name or the meaning of a longer line
+msgid "Deep rumble"
+msgstr "Retumbo hondo"
 
 msgid ""
 "Deep rumble: the house shifted, and the exit door moved to another wall."
 msgstr ""
 "Retumbo hondo: la casa cambió, y la puerta de salida pasó a otra pared."
 
+#. the name or the meaning of a longer line
+msgid "the house shifted, and the exit door moved to another wall."
+msgstr "la casa cambió, y la puerta de salida pasó a otra pared."
+
+#. the name or the meaning of a longer line
+msgid "Heavy footstep"
+msgstr "Paso pesado"
+
 msgid "Heavy footstep: the founder, coming after you."
 msgstr "Paso pesado: el fundador, que viene a por ti."
+
+#. the name or the meaning of a longer line
+msgid "the founder, coming after you."
+msgstr "el fundador, que viene a por ti."
+
+#. the name or the meaning of a longer line
+msgid "Rising scrape"
+msgstr "Roce que sube"
 
 msgid ""
 "Rising scrape: the founder winds up a blow beside you. Strike at the "
@@ -34600,22 +36297,62 @@ msgstr ""
 "Roce que sube: el fundador prepara un golpe a tu lado. Golpea con la nota "
 "que suena, o apártate."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the founder winds up a blow beside you. Strike at the ringing note, or step "
+"away."
+msgstr ""
+"el fundador prepara un golpe a tu lado. Golpea con la nota que suena, o "
+"apártate."
+
+#. the name or the meaning of a longer line
+msgid "Ringing note"
+msgstr "Nota que suena"
+
 msgid "Ringing note: the founder's blow is at its height. Strike now."
 msgstr ""
 "Nota que suena: el golpe del fundador está en lo más alto. Golpea ya."
 
+#. the name or the meaning of a longer line
+msgid "the founder's blow is at its height. Strike now."
+msgstr "el golpe del fundador está en lo más alto. Golpea ya."
+
+#. the name or the meaning of a longer line
+msgid "Iron clang"
+msgstr "Golpe de hierro"
+
 msgid "Iron clang: your candlestick hit the founder."
 msgstr "Golpe de hierro: tu candelabro le dio al fundador."
+
+#. the name or the meaning of a longer line
+msgid "your candlestick hit the founder."
+msgstr "tu candelabro le dio al fundador."
+
+#. the name or the meaning of a longer line
+msgid "Dull knock"
+msgstr "Golpe sordo"
 
 msgid "Dull knock: you struck too soon and the founder blocked. Step away."
 msgstr ""
 "Golpe sordo: golpeaste demasiado pronto y el fundador lo bloqueó. Apártate."
+
+#. the name or the meaning of a longer line
+msgid "you struck too soon and the founder blocked. Step away."
+msgstr "golpeaste demasiado pronto y el fundador lo bloqueó. Apártate."
+
+#. the name or the meaning of a longer line
+msgid "Crumbling stone"
+msgstr "Piedra que se desmorona"
 
 msgid ""
 "Crumbling stone: the founder falls to dust for the rest of the floor."
 msgstr ""
 "Piedra que se desmorona: el fundador se convierte en polvo el resto de la "
 "planta."
+
+#. the name or the meaning of a longer line
+msgid "the founder falls to dust for the rest of the floor."
+msgstr "el fundador se convierte en polvo el resto de la planta."
 
 msgid ""
 "Up and Down move through the game's sounds, Enter plays one, Escape goes "
@@ -36492,12 +38229,28 @@ msgstr "farol apagado"
 msgid "lamp burning"
 msgstr "farol encendido"
 
+#. the name or the meaning of a longer line
+msgid "Lamp out"
+msgstr "Farol apagado"
+
 msgid ""
 "Lamp out: a thin whistle of draught across empty glass. It pulses from the "
 "wall where a lamp needs lighting, louder as you come near."
 msgstr ""
 "Farol apagado: un silbido fino de corriente por un cristal vacío. Late "
 "desde la pared donde hay que encender un farol, más fuerte al acercarte."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a thin whistle of draught across empty glass. It pulses from the wall where "
+"a lamp needs lighting, louder as you come near."
+msgstr ""
+"un silbido fino de corriente por un cristal vacío. Late desde la pared "
+"donde hay que encender un farol, más fuerte al acercarte."
+
+#. the name or the meaning of a longer line
+msgid "Lamp burning"
+msgstr "Farol encendido"
 
 msgid ""
 "Lamp burning: the small flutter of a candle flame. You hear it from the "
@@ -36506,6 +38259,18 @@ msgstr ""
 "Farol encendido: el leve aleteo de la llama de una vela. Lo oyes desde la "
 "pared al pasar junto a un farol encendido."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the small flutter of a candle flame. You hear it from the wall as you pass "
+"a lamp that is lit."
+msgstr ""
+"el leve aleteo de la llama de una vela. Lo oyes desde la pared al pasar "
+"junto a un farol encendido."
+
+#. the name or the meaning of a longer line
+msgid "Lighting"
+msgstr "Encender"
+
 msgid ""
 "Lighting: a match strike flaring into a glass ting. The lamp you reached "
 "for is lit."
@@ -36513,17 +38278,48 @@ msgstr ""
 "Encender: una cerilla que prende y un tintineo de cristal. El farol que "
 "tocaste está encendido."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a match strike flaring into a glass ting. The lamp you reached for is lit."
+msgstr ""
+"una cerilla que prende y un tintineo de cristal. El farol que tocaste está "
+"encendido."
+
+#. the name or the meaning of a longer line
+msgid "Bare wall"
+msgstr "Pared desnuda"
+
 msgid ""
 "Bare wall: one dull knock. There is no lamp on that wall at this step."
 msgstr ""
 "Pared desnuda: un golpe sordo. No hay farol en esa pared en este paso."
 
+#. the name or the meaning of a longer line
+msgid "one dull knock. There is no lamp on that wall at this step."
+msgstr "un golpe sordo. No hay farol en esa pared en este paso."
+
+#. the name or the meaning of a longer line
+msgid "Already burning"
+msgstr "Ya encendido"
+
 msgid "Already burning: a soft felt knock. That lamp is lit already."
 msgstr ""
 "Ya encendido: un golpe suave de fieltro. Ese farol ya está encendido."
 
+#. the name or the meaning of a longer line
+msgid "a soft felt knock. That lamp is lit already."
+msgstr "un golpe suave de fieltro. Ese farol ya está encendido."
+
 msgid "Footstep: a soft step on wooden boards, one step along the hall."
 msgstr "Paso: un paso suave sobre tablas de madera, un paso por el pasillo."
+
+#. the name or the meaning of a longer line
+msgid "a soft step on wooden boards, one step along the hall."
+msgstr "un paso suave sobre tablas de madera, un paso por el pasillo."
+
+#. the name or the meaning of a longer line
+msgid "Lobby door"
+msgstr "Puerta del vestíbulo"
 
 msgid ""
 "Lobby door: a door creaking on its hinges. You are at the lobby end of the "
@@ -36532,12 +38328,37 @@ msgstr ""
 "Puerta del vestíbulo: una puerta que cruje en sus bisagras. Estás en el "
 "extremo del vestíbulo."
 
+#. the name or the meaning of a longer line
+msgid "a door creaking on its hinges. You are at the lobby end of the hall."
+msgstr ""
+"una puerta que cruje en sus bisagras. Estás en el extremo del vestíbulo."
+
+#. the name or the meaning of a longer line
+msgid "Far wall"
+msgstr "Pared del fondo"
+
 msgid "Far wall: two hollow knocks. You are at the far end of the hall."
 msgstr "Pared del fondo: dos golpes huecos. Estás al fondo del pasillo."
+
+#. the name or the meaning of a longer line
+msgid "two hollow knocks. You are at the far end of the hall."
+msgstr "dos golpes huecos. Estás al fondo del pasillo."
+
+#. the name or the meaning of a longer line
+msgid "Taper low"
+msgstr "Mecha baja"
 
 msgid "Taper low: a low, muted bell. The taper has 20 seconds left."
 msgstr ""
 "Mecha baja: una campana grave y apagada. A la mecha le quedan 20 segundos."
+
+#. the name or the meaning of a longer line
+msgid "a low, muted bell. The taper has 20 seconds left."
+msgstr "una campana grave y apagada. A la mecha le quedan 20 segundos."
+
+#. the name or the meaning of a longer line
+msgid "Taper out"
+msgstr "Mecha consumida"
 
 msgid ""
 "Taper out: a short puff. The taper burned down, and the taper bonus is gone."
@@ -36545,11 +38366,29 @@ msgstr ""
 "Mecha consumida: un soplido corto. La mecha se consumió, y se fue el extra "
 "de mecha."
 
+#. the name or the meaning of a longer line
+msgid "a short puff. The taper burned down, and the taper bonus is gone."
+msgstr "un soplido corto. La mecha se consumió, y se fue el extra de mecha."
+
+#. the name or the meaning of a longer line
+msgid "Fresh taper"
+msgstr "Mecha nueva"
+
 msgid ""
 "Fresh taper: a quick match. Mabel lit you a new taper, so you can carry on."
 msgstr ""
 "Mecha nueva: una cerilla rápida. Mabel te encendió una mecha nueva, así que "
 "puedes seguir."
+
+#. the name or the meaning of a longer line
+msgid "a quick match. Mabel lit you a new taper, so you can carry on."
+msgstr ""
+"una cerilla rápida. Mabel te encendió una mecha nueva, así que puedes "
+"seguir."
+
+#. the name or the meaning of a longer line
+msgid "Draught"
+msgstr "Corriente"
 
 msgid ""
 "Draught: a long gust through a doorway. It blew a lamp out somewhere in the "
@@ -36558,12 +38397,28 @@ msgstr ""
 "Corriente: una ráfaga larga por una puerta. Apagó un farol en algún lugar "
 "del pasillo."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a long gust through a doorway. It blew a lamp out somewhere in the hall."
+msgstr ""
+"una ráfaga larga por una puerta. Apagó un farol en algún lugar del pasillo."
+
+#. the name or the meaning of a longer line
+msgid "Hall lit"
+msgstr "Pasillo encendido"
+
 msgid ""
 "Hall lit: a rising run of glass. Every lamp is burning, and the round is "
 "over."
 msgstr ""
 "Pasillo encendido: una escala de cristal que sube. Todos los faroles arden, "
 "y la ronda ha terminado."
+
+#. the name or the meaning of a longer line
+msgid "a rising run of glass. Every lamp is burning, and the round is over."
+msgstr ""
+"una escala de cristal que sube. Todos los faroles arden, y la ronda ha "
+"terminado."
 
 msgid "Return to the Lamplighter title."
 msgstr "Volver al menú principal de Lamplighter."
@@ -49636,12 +51491,36 @@ msgstr ""
 "Paso: un zapato suave en la zona de aproximación. Te moviste una tabla, y "
 "suena desde donde estás."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a soft shoe on the approach. You moved one board, and it sounds from where "
+"you stand."
+msgstr ""
+"un zapato suave en la zona de aproximación. Te moviste una tabla, y suena "
+"desde donde estás."
+
+#. the name or the meaning of a longer line
+msgid "Aim tone"
+msgstr "Tono de puntería"
+
 msgid ""
 "Aim tone: a soft high tone. It sounds from where the ball would cross the "
 "pins with a clean release."
 msgstr ""
 "Tono de puntería: un tono agudo y suave. Suena desde donde la bola cruzaría "
 "los bolos con una suelta limpia."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a soft high tone. It sounds from where the ball would cross the pins with a "
+"clean release."
+msgstr ""
+"un tono agudo y suave. Suena desde donde la bola cruzaría los bolos con una "
+"suelta limpia."
+
+#. the name or the meaning of a longer line
+msgid "Swing tone"
+msgstr "Tono de balanceo"
 
 msgid ""
 "Swing tone: a hum that rises to the top of the swing, then falls. Let go at "
@@ -49650,8 +51529,23 @@ msgstr ""
 "Tono de balanceo: un zumbido que sube hasta lo alto del balanceo y luego "
 "baja. Suelta en lo alto."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a hum that rises to the top of the swing, then falls. Let go at the top."
+msgstr ""
+"un zumbido que sube hasta lo alto del balanceo y luego baja. Suelta en lo "
+"alto."
+
 msgid "Release: a thump as the ball meets the lane."
 msgstr "Suelta: un golpe cuando la bola toca la pista."
+
+#. the name or the meaning of a longer line
+msgid "a thump as the ball meets the lane."
+msgstr "un golpe cuando la bola toca la pista."
+
+#. the name or the meaning of a longer line
+msgid "Rolling ball"
+msgstr "Bola rodando"
 
 msgid ""
 "Rolling ball: a low rumble that moves across with the ball and grows louder "
@@ -49660,17 +51554,54 @@ msgstr ""
 "Bola rodando: un retumbar grave que se mueve con la bola y suena más fuerte "
 "al acercarse a los bolos."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low rumble that moves across with the ball and grows louder as it nears "
+"the pins."
+msgstr ""
+"un retumbar grave que se mueve con la bola y suena más fuerte al acercarse "
+"a los bolos."
+
+#. the name or the meaning of a longer line
+msgid "Gutter"
+msgstr "Canal"
+
 msgid ""
 "Gutter: a hollow rattle. The ball left the lane and will hit no pins."
 msgstr ""
 "Canal: un traqueteo hueco. La bola salió de la pista y no tocará ningún "
 "bolo."
 
+#. the name or the meaning of a longer line
+msgid "a hollow rattle. The ball left the lane and will hit no pins."
+msgstr ""
+"un traqueteo hueco. La bola salió de la pista y no tocará ningún bolo."
+
+#. the name or the meaning of a longer line
+msgid "Light clatter"
+msgstr "Estruendo ligero"
+
 msgid "Light clatter: a few pins falling."
 msgstr "Estruendo ligero: caen unos pocos bolos."
 
+#. the name or the meaning of a longer line
+msgid "a few pins falling."
+msgstr "caen unos pocos bolos."
+
+#. the name or the meaning of a longer line
+msgid "Heavy clatter"
+msgstr "Estruendo fuerte"
+
 msgid "Heavy clatter: most of the rack falling at once."
 msgstr "Estruendo fuerte: cae casi todo a la vez."
+
+#. the name or the meaning of a longer line
+msgid "most of the rack falling at once."
+msgstr "cae casi todo a la vez."
+
+#. the name or the meaning of a longer line
+msgid "Pinsetter"
+msgstr "Colocabolos"
 
 msgid ""
 "Pinsetter: a mechanical sweep and clunk as the deck is cleared and pins are "
@@ -49679,11 +51610,29 @@ msgstr ""
 "Colocabolos: un barrido mecánico y un golpe al limpiar la pista y colocar "
 "los bolos."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a mechanical sweep and clunk as the deck is cleared and pins are set."
+msgstr ""
+"un barrido mecánico y un golpe al limpiar la pista y colocar los bolos."
+
+#. the name or the meaning of a longer line
+msgid "Ball return"
+msgstr "Retorno de bola"
+
 msgid ""
 "Ball return: a rolling rumble and a knock. Your ball is back and you can "
 "roll."
 msgstr ""
 "Retorno de bola: un retumbar y un golpe. Tu bola ha vuelto y puedes tirar."
+
+#. the name or the meaning of a longer line
+msgid "a rolling rumble and a knock. Your ball is back and you can roll."
+msgstr "un retumbar y un golpe. Tu bola ha vuelto y puedes tirar."
+
+#. the name or the meaning of a longer line
+msgid "Strike sting"
+msgstr "Fanfarria de pleno"
 
 msgid ""
 "Strike sting: a short jukebox flourish. All ten pins with the first ball."
@@ -49691,10 +51640,26 @@ msgstr ""
 "Fanfarria de pleno: un floreo corto de gramola. Los diez bolos con el "
 "primer tiro."
 
+#. the name or the meaning of a longer line
+msgid "a short jukebox flourish. All ten pins with the first ball."
+msgstr "un floreo corto de gramola. Los diez bolos con el primer tiro."
+
+#. the name or the meaning of a longer line
+msgid "Spare bell"
+msgstr "Campana de semipleno"
+
 msgid "Spare bell: a bright bell. The second ball cleared the rest."
 msgstr ""
 "Campana de semipleno: una campana brillante. El segundo tiro derribó el "
 "resto."
+
+#. the name or the meaning of a longer line
+msgid "a bright bell. The second ball cleared the rest."
+msgstr "una campana brillante. El segundo tiro derribó el resto."
+
+#. the name or the meaning of a longer line
+msgid "Pumpkins falling, light"
+msgstr "Calabazas cayendo, ligero"
 
 msgid ""
 "Pumpkins falling, light: a hollow squash. On Pumpkin night, a few pumpkins "
@@ -49703,6 +51668,14 @@ msgstr ""
 "Calabazas cayendo, ligero: un aplastamiento hueco. En Noche de calabazas, "
 "cayeron unas pocas."
 
+#. the name or the meaning of a longer line
+msgid "a hollow squash. On Pumpkin night, a few pumpkins went down."
+msgstr "un aplastamiento hueco. En Noche de calabazas, cayeron unas pocas."
+
+#. the name or the meaning of a longer line
+msgid "Pumpkins falling, heavy"
+msgstr "Calabazas cayendo, fuerte"
+
 msgid ""
 "Pumpkins falling, heavy: a long hollow tumble. On Pumpkin night, five or "
 "more went down."
@@ -49710,11 +51683,25 @@ msgstr ""
 "Calabazas cayendo, fuerte: un largo derrumbe hueco. En Noche de calabazas, "
 "cayeron cinco o más."
 
+#. the name or the meaning of a longer line
+msgid "a long hollow tumble. On Pumpkin night, five or more went down."
+msgstr ""
+"un largo derrumbe hueco. En Noche de calabazas, cayeron cinco o más."
+
+#. the name or the meaning of a longer line
+msgid "Grin carved"
+msgstr "Sonrisa tallada"
+
 msgid ""
 "Grin carved: a knife scrape and a low chord. A strike on Pumpkin night."
 msgstr ""
 "Sonrisa tallada: un raspado de cuchillo y un acorde grave. Un pleno en "
 "Noche de calabazas."
+
+#. the name or the meaning of a longer line
+msgid "a knife scrape and a low chord. A strike on Pumpkin night."
+msgstr ""
+"un raspado de cuchillo y un acorde grave. Un pleno en Noche de calabazas."
 
 msgid "Return to the Midnight Lanes title."
 msgstr "Volver al menú principal de Midnight Lanes."
@@ -57424,14 +59411,39 @@ msgid "Step: a soft tap on wooden boards. You moved one cell."
 msgstr ""
 "Paso: un golpecito suave en tablas de madera. Te moviste una casilla."
 
+#. the name or the meaning of a longer line
+msgid "a soft tap on wooden boards. You moved one cell."
+msgstr "un golpecito suave en tablas de madera. Te moviste una casilla."
+
+#. the name or the meaning of a longer line
+msgid "Nibble"
+msgstr "Mordisco"
+
 msgid "Nibble: a quick crunch. You ate a crumb, for 10 points."
 msgstr "Mordisco: un crujido rápido. Te comiste una miga, por 10 puntos."
+
+#. the name or the meaning of a longer line
+msgid "a quick crunch. You ate a crumb, for 10 points."
+msgstr "un crujido rápido. Te comiste una miga, por 10 puntos."
+
+#. the name or the meaning of a longer line
+msgid "Wall"
+msgstr "Pared"
 
 msgid ""
 "Wall: a dull thud. A wall is in the way, and the open ways are spoken."
 msgstr ""
 "Pared: un golpe sordo. Hay una pared en medio, y se dicen las salidas "
 "abiertas."
+
+#. the name or the meaning of a longer line
+msgid "a dull thud. A wall is in the way, and the open ways are spoken."
+msgstr ""
+"un golpe sordo. Hay una pared en medio, y se dicen las salidas abiertas."
+
+#. the name or the meaning of a longer line
+msgid "Sniff tick"
+msgstr "Tic de olfato"
 
 msgid ""
 "Sniff tick: a tiny bright tick. Each one is a crumb, from its direction, "
@@ -57440,8 +59452,27 @@ msgstr ""
 "Tic de olfato: un tic diminuto y brillante. Cada uno es una miga, desde su "
 "dirección, de la más cercana a la más lejana."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a tiny bright tick. Each one is a crumb, from its direction, nearest first."
+msgstr ""
+"un tic diminuto y brillante. Cada uno es una miga, desde su dirección, de "
+"la más cercana a la más lejana."
+
+#. the name or the meaning of a longer line
+msgid "Ginger cat"
+msgstr "Gato pelirrojo"
+
 msgid "Ginger cat: a bell on its collar. It heads straight for you."
 msgstr "Gato pelirrojo: un cascabel en el collar. Va directo hacia ti."
+
+#. the name or the meaning of a longer line
+msgid "a bell on its collar. It heads straight for you."
+msgstr "un cascabel en el collar. Va directo hacia ti."
+
+#. the name or the meaning of a longer line
+msgid "Tabby cat"
+msgstr "Gato atigrado"
 
 msgid ""
 "Tabby cat: soft padding paws. It wanders until it is 4 steps away, then "
@@ -57450,12 +59481,31 @@ msgstr ""
 "Gato atigrado: patas suaves y acolchadas. Vaga hasta estar a 4 pasos, y "
 "luego persigue."
 
+#. the name or the meaning of a longer line
+msgid "soft padding paws. It wanders until it is 4 steps away, then chases."
+msgstr ""
+"patas suaves y acolchadas. Vaga hasta estar a 4 pasos, y luego persigue."
+
+#. the name or the meaning of a longer line
+msgid "Grey cat"
+msgstr "Gato gris"
+
 msgid ""
 "Grey cat: a low purr. It wanders like the tabby, and joins in the monthly "
 "challenge."
 msgstr ""
 "Gato gris: un ronroneo grave. Vaga como el atigrado, y aparece en el "
 "desafío mensual."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a low purr. It wanders like the tabby, and joins in the monthly challenge."
+msgstr ""
+"un ronroneo grave. Vaga como el atigrado, y aparece en el desafío mensual."
+
+#. the name or the meaning of a longer line
+msgid "Cat close"
+msgstr "Gato cerca"
 
 msgid ""
 "Cat close: a short rising meow from the cat's side. A cat is 2 steps away "
@@ -57464,10 +59514,25 @@ msgstr ""
 "Gato cerca: un maullido corto que sube, desde el lado del gato. Hay un gato "
 "a 2 pasos o menos."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short rising meow from the cat's side. A cat is 2 steps away or nearer."
+msgstr ""
+"un maullido corto que sube, desde el lado del gato. Hay un gato a 2 pasos o "
+"menos."
+
 msgid ""
 "Caught: a pounce and a squeak. A cat caught you and you lose a whisker."
 msgstr ""
 "Atrapado: un salto y un chillido. Un gato te atrapó y pierdes un bigote."
+
+#. the name or the meaning of a longer line
+msgid "a pounce and a squeak. A cat caught you and you lose a whisker."
+msgstr "un salto y un chillido. Un gato te atrapó y pierdes un bigote."
+
+#. the name or the meaning of a longer line
+msgid "Freeze"
+msgstr "Quieto"
 
 msgid ""
 "Freeze: an indrawn breath. You keep still and the nearest cat loses track "
@@ -57476,12 +59541,38 @@ msgstr ""
 "Parada: una inspiración. Te quedas quieto y el gato más cercano te pierde "
 "la pista."
 
+#. the name or the meaning of a longer line
+msgid ""
+"an indrawn breath. You keep still and the nearest cat loses track of you."
+msgstr ""
+"una inspiración. Te quedas quieto y el gato más cercano te pierde la pista."
+
+#. the name or the meaning of a longer line
+msgid "Thaw"
+msgstr "Deshielo"
+
 msgid "Thaw: a soft breath out. You can move again."
 msgstr "Deshielo: una espiración suave. Puedes moverte otra vez."
+
+#. the name or the meaning of a longer line
+msgid "a soft breath out. You can move again."
+msgstr "una espiración suave. Puedes moverte otra vez."
+
+#. the name or the meaning of a longer line
+msgid "Pantry clear"
+msgstr "Despensa despejada"
 
 msgid "Pantry clear: a bright rising run of notes. Every crumb is gone."
 msgstr ""
 "Despensa despejada: una escala brillante que sube. No queda ni una miga."
+
+#. the name or the meaning of a longer line
+msgid "a bright rising run of notes. Every crumb is gone."
+msgstr "una escala brillante que sube. No queda ni una miga."
+
+#. the name or the meaning of a longer line
+msgid "Turkey scrap"
+msgstr "Resto de pavo"
 
 msgid ""
 "Turkey scrap: a juicy chew. In the Leftovers pantry at Thanksgiving, a "
@@ -57492,6 +59583,19 @@ msgstr ""
 "Gracias, un resto de pavo, por 50 puntos. Al olfatear suena desde donde se "
 "esconde el más cercano."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a juicy chew. In the Leftovers pantry at Thanksgiving, a turkey scrap, for "
+"50 points. A sniff plays it from where the nearest one hides."
+msgstr ""
+"un mordisco jugoso. En la Despensa de sobras por Acción de Gracias, un "
+"resto de pavo, por 50 puntos. Al olfatear suena desde donde se esconde el "
+"más cercano."
+
+#. the name or the meaning of a longer line
+msgid "Cheese rind"
+msgstr "Corteza de queso"
+
 msgid ""
 "Cheese rind: a soft glassy chime. On Bin night, the first Tuesday of every "
 "month, a cheese rind in every pantry, for 100 points. A sniff plays it from "
@@ -57500,6 +59604,16 @@ msgstr ""
 "Corteza de queso: un tintineo suave de cristal. En Noche de basura, el "
 "primer martes de cada mes, una corteza de queso en cada despensa, por 100 "
 "puntos. Al olfatear suena desde donde se esconde."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a soft glassy chime. On Bin night, the first Tuesday of every month, a "
+"cheese rind in every pantry, for 100 points. A sniff plays it from where it "
+"hides."
+msgstr ""
+"un tintineo suave de cristal. En Noche de basura, el primer martes de cada "
+"mes, una corteza de queso en cada despensa, por 100 puntos. Al olfatear "
+"suena desde donde se esconde."
 
 msgid "Return to the Pantry Mouse title."
 msgstr "Volver al menú principal de Pantry Mouse."
@@ -58576,11 +60690,24 @@ msgstr "Tienes {night}."
 msgid "across the table"
 msgstr "enfrente"
 
+#. the name or the meaning of a longer line
+msgid "Cup rattle"
+msgstr "Cubilete"
+
 msgid ""
 "Cup rattle: the dealer shakes two dice in a leather cup. A roll is coming."
 msgstr ""
 "Cubilete: el crupier agita dos dados en un cubilete de cuero. Viene una "
 "tirada."
+
+#. the name or the meaning of a longer line
+msgid "the dealer shakes two dice in a leather cup. A roll is coming."
+msgstr ""
+"el crupier agita dos dados en un cubilete de cuero. Viene una tirada."
+
+#. the name or the meaning of a longer line
+msgid "Dice landing"
+msgstr "Dados en la mesa"
 
 msgid ""
 "Dice landing: two dice tumble onto the felt. The dealer calls the faces and "
@@ -58589,12 +60716,34 @@ msgstr ""
 "Dados en la mesa: dos dados ruedan sobre el tapete. El crupier dice las "
 "caras y la suma."
 
+#. the name or the meaning of a longer line
+msgid ""
+"two dice tumble onto the felt. The dealer calls the faces and the sum."
+msgstr ""
+"dos dados ruedan sobre el tapete. El crupier dice las caras y la suma."
+
+#. the name or the meaning of a longer line
+msgid "One thud"
+msgstr "Golpe del uno"
+
 msgid ""
 "One thud: a dull wooden thud. A die shows 1, and the landing is over for "
 "everyone still seated."
 msgstr ""
 "Golpe del uno: un golpe sordo de madera. Un dado muestra un 1, y la parada "
 "termina para todos los que siguen sentados."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a dull wooden thud. A die shows 1, and the landing is over for everyone "
+"still seated."
+msgstr ""
+"un golpe sordo de madera. Un dado muestra un 1, y la parada termina para "
+"todos los que siguen sentados."
+
+#. the name or the meaning of a longer line
+msgid "Snag crash"
+msgstr "Estrépito del tropiezo"
 
 msgid ""
 "Snag crash: a crash of glass and wood. A double 1 with the snag rule on "
@@ -58603,6 +60752,18 @@ msgstr ""
 "Estrépito del tropiezo: un estrépito de cristal y madera. Un doble 1 con la "
 "regla del tropiezo borra el total de la noche de todos los sentados."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a crash of glass and wood. A double 1 with the snag rule on wipes the night "
+"total of everyone seated."
+msgstr ""
+"un estrépito de cristal y madera. Un doble 1 con la regla del tropiezo "
+"borra el total de la noche de todos los sentados."
+
+#. the name or the meaning of a longer line
+msgid "Chair scrape"
+msgstr "Silla que se arrastra"
+
 msgid ""
 "Chair scrape: a player stands and banks. It comes from their seat, left, "
 "across or right."
@@ -58610,17 +60771,56 @@ msgstr ""
 "Silla que se arrastra: un jugador se levanta y cobra. Suena desde su "
 "asiento, izquierda, enfrente o derecha."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a player stands and banks. It comes from their seat, left, across or right."
+msgstr ""
+"un jugador se levanta y cobra. Suena desde su asiento, izquierda, enfrente "
+"o derecha."
+
+#. the name or the meaning of a longer line
+msgid "Coin stack"
+msgstr "Pila de monedas"
+
 msgid "Coin stack: you bank the table's total into your night total."
 msgstr "Pila de monedas: cobras el total de la mesa a tu total de la noche."
+
+#. the name or the meaning of a longer line
+msgid "you bank the table's total into your night total."
+msgstr "cobras el total de la mesa a tu total de la noche."
+
+#. the name or the meaning of a longer line
+msgid "Table groan"
+msgstr "Queja de la mesa"
 
 msgid "Table groan: the table groans at a 1."
 msgstr "Queja de la mesa: la mesa se lamenta por un 1."
 
+#. the name or the meaning of a longer line
+msgid "the table groans at a 1."
+msgstr "la mesa se lamenta por un 1."
+
+#. the name or the meaning of a longer line
+msgid "Table cheer"
+msgstr "Ovación de la mesa"
+
 msgid "Table cheer: you win the night."
 msgstr "Ovación de la mesa: ganas la noche."
 
+#. the name or the meaning of a longer line
+msgid "you win the night."
+msgstr "ganas la noche."
+
 msgid "Dull tap: nothing to do just now."
 msgstr "Golpecito sordo: ahora no hay nada que hacer."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do just now."
+msgstr "ahora no hay nada que hacer."
+
+#. the name or the meaning of a longer line
+msgid "Showboat chime"
+msgstr "Tintineo de gala"
 
 msgid ""
 "Showboat chime: on Showboat Saturday, doubles double what the table holds."
@@ -58628,10 +60828,22 @@ msgstr ""
 "Tintineo de gala: en el Sábado de gala, los dobles doblan lo que tiene la "
 "mesa."
 
+#. the name or the meaning of a longer line
+msgid "on Showboat Saturday, doubles double what the table holds."
+msgstr "en el Sábado de gala, los dobles doblan lo que tiene la mesa."
+
+#. the name or the meaning of a longer line
+msgid "Seats"
+msgstr "Asientos"
+
 msgid "Seats: Widow left, Gambler ahead, Captain right"
 msgstr ""
 "Asientos: la Viuda a la izquierda, el Tahúr enfrente, el Capitán a la "
 "derecha"
+
+#. the name or the meaning of a longer line
+msgid "Widow left, Gambler ahead, Captain right"
+msgstr ""
 
 msgid "Where each player sits, by the sound of their chair."
 msgstr "Dónde se sienta cada jugador, por el sonido de su silla."
@@ -65096,8 +67308,20 @@ msgstr "minutos"
 msgid "several"
 msgstr "varios"
 
+#. the name or the meaning of a longer line
+msgid "Dial click"
+msgstr "Clic del dial"
+
 msgid "Dial click: the dial moved one number."
 msgstr "Clic del dial: el dial se movió un número."
+
+#. the name or the meaning of a longer line
+msgid "the dial moved one number."
+msgstr "el dial se movió un número."
+
+#. the name or the meaning of a longer line
+msgid "Ten detent"
+msgstr "Muesca de decena"
 
 msgid ""
 "Ten detent: a firmer double click at every tenth number, 10, 20 and so on, "
@@ -65106,15 +67330,43 @@ msgstr ""
 "Muesca de decena: un doble clic más firme en cada décimo número, 10, 20 y "
 "así, para ayudarte a contar."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a firmer double click at every tenth number, 10, 20 and so on, to help you "
+"count."
+msgstr ""
+"un doble clic más firme en cada décimo número, 10, 20 y así, para ayudarte "
+"a contar."
+
+#. the name or the meaning of a longer line
+msgid "Zero notch"
+msgstr "Muesca del cero"
+
 msgid ""
 "Zero notch: a deep notch as the dial reaches zero, the top of the dial."
 msgstr ""
 "Muesca del cero: una muesca profunda cuando el dial llega a cero, arriba "
 "del todo."
 
+#. the name or the meaning of a longer line
+msgid "a deep notch as the dial reaches zero, the top of the dial."
+msgstr "una muesca profunda cuando el dial llega a cero, arriba del todo."
+
+#. the name or the meaning of a longer line
+msgid "Spin"
+msgstr "Giro"
+
 msgid "Spin: a quick ratchet as the dial spins ten numbers at once."
 msgstr ""
 "Giro: un trinquete rápido cuando el dial gira diez números de golpe."
+
+#. the name or the meaning of a longer line
+msgid "a quick ratchet as the dial spins ten numbers at once."
+msgstr "un trinquete rápido cuando el dial gira diez números de golpe."
+
+#. the name or the meaning of a longer line
+msgid "Tumbler clunk"
+msgstr "Golpe del pestillo"
 
 msgid ""
 "Tumbler clunk: the dial passed or reached this wheel's number. Deep and "
@@ -65125,6 +67377,18 @@ msgstr ""
 "sólido. Para, vuelve a él y fija la rueda. En cajas posteriores suena más "
 "bajo."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the dial passed or reached this wheel's number. Deep and solid. Stop, step "
+"back to it, and set the wheel. On later safes it is quieter."
+msgstr ""
+"el dial pasó o llegó al número de esta rueda. Grave y sólido. Para, vuelve "
+"a él y fija la rueda. En cajas posteriores suena más bajo."
+
+#. the name or the meaning of a longer line
+msgid "False gate"
+msgstr "Falso pestillo"
+
 msgid ""
 "False gate: a hollow, rattling tick at a wrong number. Ignore it: it is not "
 "the tumbler."
@@ -65132,11 +67396,28 @@ msgstr ""
 "Falso pestillo: un tic hueco y traqueteante en un número equivocado. "
 "Ignóralo: no es el pestillo."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a hollow, rattling tick at a wrong number. Ignore it: it is not the tumbler."
+msgstr ""
+"un tic hueco y traqueteante en un número equivocado. Ignóralo: no es el "
+"pestillo."
+
+#. the name or the meaning of a longer line
+msgid "Wheel set"
+msgstr "Rueda fijada"
+
 msgid ""
 "Wheel set: a latch and a rising chime. The wheel is set, on to the next."
 msgstr ""
 "Rueda fijada: un cerrojo y una campanita que sube. La rueda está fijada, a "
 "por la siguiente."
+
+#. the name or the meaning of a longer line
+msgid "a latch and a rising chime. The wheel is set, on to the next."
+msgstr ""
+"un cerrojo y una campanita que sube. La rueda está fijada, a por la "
+"siguiente."
 
 msgid ""
 "Spring: a wrong set. The wheel springs back and you take a strike. Three "
@@ -65145,8 +67426,28 @@ msgstr ""
 "Resorte: un número equivocado. La rueda salta atrás y te llevas un fallo. "
 "Con tres fallos la caja se atasca."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a wrong set. The wheel springs back and you take a strike. Three strikes "
+"and the safe jams."
+msgstr ""
+"un número equivocado. La rueda salta atrás y te llevas un fallo. Con tres "
+"fallos la caja se atasca."
+
+#. the name or the meaning of a longer line
+msgid "Safe open"
+msgstr "Caja abierta"
+
 msgid "Safe open: the handle turns and the bolts slide back."
 msgstr "Caja abierta: la manilla gira y los cerrojos se deslizan."
+
+#. the name or the meaning of a longer line
+msgid "the handle turns and the bolts slide back."
+msgstr "la manilla gira y los cerrojos se deslizan."
+
+#. the name or the meaning of a longer line
+msgid "Onward"
+msgstr "Adelante"
 
 msgid ""
 "Onward: a heavy door and a bell. In a challenge, this safe is open and the "
@@ -65155,16 +67456,44 @@ msgstr ""
 "Adelante: una puerta pesada y una campana. En un desafío, esta caja está "
 "abierta y la siguiente espera."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a heavy door and a bell. In a challenge, this safe is open and the next one "
+"is waiting."
+msgstr ""
+"una puerta pesada y una campana. En un desafío, esta caja está abierta y la "
+"siguiente espera."
+
+#. the name or the meaning of a longer line
+msgid "Relocker"
+msgstr "Cierre de seguridad"
+
 msgid "Relocker: the safe jams and the alarm rings. The safe is lost."
 msgstr ""
 "Cierre de seguridad: la caja se atasca y suena la alarma. La caja está "
 "perdida."
+
+#. the name or the meaning of a longer line
+msgid "the safe jams and the alarm rings. The safe is lost."
+msgstr "la caja se atasca y suena la alarma. La caja está perdida."
+
+#. the name or the meaning of a longer line
+msgid "Footsteps"
+msgstr "Pasos"
 
 msgid ""
 "Footsteps: the guard is coming down the corridor. When they stop, keep "
 "still."
 msgstr ""
 "Pasos: el vigilante viene por el pasillo. Cuando se paren, quédate quieto."
+
+#. the name or the meaning of a longer line
+msgid "the guard is coming down the corridor. When they stop, keep still."
+msgstr "el vigilante viene por el pasillo. Cuando se paren, quédate quieto."
+
+#. the name or the meaning of a longer line
+msgid "Guard at the door"
+msgstr "Vigilante en la puerta"
 
 msgid ""
 "Guard at the door: the footsteps stop and his keys jingle. Keep still: do "
@@ -65173,6 +67502,18 @@ msgstr ""
 "Vigilante en la puerta: los pasos se paran y tintinean sus llaves. Quédate "
 "quieto: no gires ni fijes hasta que se aleje."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the footsteps stop and his keys jingle. Keep still: do not turn or set "
+"until he walks away."
+msgstr ""
+"los pasos se paran y tintinean sus llaves. Quédate quieto: no gires ni "
+"fijes hasta que se aleje."
+
+#. the name or the meaning of a longer line
+msgid "Who's there"
+msgstr "¿Quién anda ahí?"
+
 msgid ""
 "Who's there: the guard heard you. One more noise while he listens and you "
 "are caught."
@@ -65180,24 +67521,65 @@ msgstr ""
 "¿Quién anda ahí?: el vigilante te oyó. Un ruido más mientras escucha y te "
 "pilla."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the guard heard you. One more noise while he listens and you are caught."
+msgstr "el vigilante te oyó. Un ruido más mientras escucha y te pilla."
+
+#. the name or the meaning of a longer line
+msgid "Whistle"
+msgstr "Silbato"
+
 msgid "Whistle: the guard caught you. The safe is lost."
 msgstr "Silbato: el vigilante te pilló. La caja está perdida."
+
+#. the name or the meaning of a longer line
+msgid "the guard caught you. The safe is lost."
+msgstr "el vigilante te pilló. La caja está perdida."
 
 msgid "Clock tick: time attack is running low."
 msgstr "Tictac del reloj: al contrarreloj le queda poco."
 
+#. the name or the meaning of a longer line
+msgid "time attack is running low."
+msgstr "al contrarreloj le queda poco."
+
 msgid "Dull tap: nothing to do, or no hints left."
 msgstr "Toque sordo: nada que hacer, o no quedan pistas."
+
+#. the name or the meaning of a longer line
+msgid "nothing to do, or no hints left."
+msgstr "nada que hacer, o no quedan pistas."
+
+#. the name or the meaning of a longer line
+msgid "Knocking pipe"
+msgstr "Tubería que golpea"
 
 msgid "Knocking pipe: a building noise, off to one side. Not the safe."
 msgstr ""
 "Tubería que golpea: un ruido del edificio, a un lado. No es la caja."
 
+#. the name or the meaning of a longer line
+msgid "a building noise, off to one side. Not the safe."
+msgstr "un ruido del edificio, a un lado. No es la caja."
+
+#. the name or the meaning of a longer line
+msgid "Creaking floor"
+msgstr "Suelo que cruje"
+
 msgid "Creaking floor: a building noise, off to one side. Not the safe."
 msgstr "Suelo que cruje: un ruido del edificio, a un lado. No es la caja."
 
+#. the name or the meaning of a longer line
+msgid "Distant clock"
+msgstr "Reloj lejano"
+
 msgid "Distant clock: a building noise, off to one side. Not the safe."
 msgstr "Reloj lejano: un ruido del edificio, a un lado. No es la caja."
+
+#. the name or the meaning of a longer line
+msgid "Cat yowl"
+msgstr "Maullido"
 
 msgid ""
 "Cat yowl: a soft, short yowl just after a clunk. On Friday the 13th, the "
@@ -65205,6 +67587,14 @@ msgid ""
 msgstr ""
 "Maullido: un maullido corto y suave justo después de un golpe. El viernes "
 "13, el gato de la caja de la mala suerte: el número de esta rueda es 13."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a soft, short yowl just after a clunk. On Friday the 13th, the unlucky "
+"safe's cat: this wheel's number is 13."
+msgstr ""
+"un maullido corto y suave justo después de un golpe. El viernes 13, el gato "
+"de la caja de la mala suerte: el número de esta rueda es 13."
 
 msgid "Click and clunk"
 msgstr "Clic y golpe"
@@ -66397,6 +68787,10 @@ msgstr "Descarrilaste en el primer tren."
 msgid "Derailed after {trains_words}."
 msgstr "Descarrilaste tras {trains_words}."
 
+#. the name or the meaning of a longer line
+msgid "Tick"
+msgstr "Tictac"
+
 msgid ""
 "Tick: a dry, quiet tap that keeps the tempo. It quickens as the window "
 "shrinks."
@@ -66404,12 +68798,34 @@ msgstr ""
 "Tictac: un toque seco y suave que marca el tempo. Se acelera según se "
 "acorta el margen."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a dry, quiet tap that keeps the tempo. It quickens as the window shrinks."
+msgstr ""
+"un toque seco y suave que marca el tempo. Se acelera según se acorta el "
+"margen."
+
+#. the name or the meaning of a longer line
+msgid "Train passing"
+msgstr "Tren pasando"
+
 msgid ""
 "Train passing: a rush from left to right. Your answer was right and the "
 "train is through."
 msgstr ""
 "Tren pasando: una ráfaga de izquierda a derecha. Tu respuesta fue correcta "
 "y el tren ha pasado."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a rush from left to right. Your answer was right and the train is through."
+msgstr ""
+"una ráfaga de izquierda a derecha. Tu respuesta fue correcta y el tren ha "
+"pasado."
+
+#. the name or the meaning of a longer line
+msgid "Steam special"
+msgstr "Especial de vapor"
 
 msgid ""
 "Steam special: steam chuffs and a two-note whistle as the train rushes by. "
@@ -66419,12 +68835,36 @@ msgstr ""
 "pasa el tren. En la gala del vapor, cada quinto tren es el especial y vale "
 "3 puntos."
 
+#. the name or the meaning of a longer line
+msgid ""
+"steam chuffs and a two-note whistle as the train rushes by. At the steam "
+"gala, every fifth train is the special, worth 3 points."
+msgstr ""
+"resoplidos de vapor y un silbato de dos notas mientras pasa el tren. En la "
+"gala del vapor, cada quinto tren es el especial y vale 3 puntos."
+
+#. the name or the meaning of a longer line
+msgid "Ghost train"
+msgstr "Tren fantasma"
+
 msgid ""
 "Ghost train: the rush with a long, falling, ghostly whistle. On Friday the "
 "13th, the thirteenth train of the night shift went through."
 msgstr ""
 "Tren fantasma: la ráfaga con un silbato largo, fantasmal y descendente. El "
 "viernes 13, pasó el tren trece del turno de noche."
+
+#. the name or the meaning of a longer line
+msgid ""
+"the rush with a long, falling, ghostly whistle. On Friday the 13th, the "
+"thirteenth train of the night shift went through."
+msgstr ""
+"la ráfaga con un silbato largo, fantasmal y descendente. El viernes 13, "
+"pasó el tren trece del turno de noche."
+
+#. the name or the meaning of a longer line
+msgid "Streak chime"
+msgstr "Campana de racha"
 
 msgid ""
 "Streak chime: a bright rising run. Another 10 trains in a row, for a bonus "
@@ -66433,12 +68873,30 @@ msgstr ""
 "Campana de racha: una escala brillante que sube. Otros 10 trenes seguidos, "
 "por 5 puntos extra."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a bright rising run. Another 10 trains in a row, for a bonus of 5 points."
+msgstr ""
+"una escala brillante que sube. Otros 10 trenes seguidos, por 5 puntos extra."
+
+#. the name or the meaning of a longer line
+msgid "Brake screech"
+msgstr "Chirrido de frenos"
+
 msgid ""
 "Brake screech: a long squeal and a crash. A wrong or late answer derailed "
 "the train, and the shift is over."
 msgstr ""
 "Chirrido de frenos: un chillido largo y un choque. Una respuesta errónea o "
 "tardía descarriló el tren y el turno ha terminado."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a long squeal and a crash. A wrong or late answer derailed the train, and "
+"the shift is over."
+msgstr ""
+"un chillido largo y un choque. Una respuesta errónea o tardía descarriló el "
+"tren y el turno ha terminado."
 
 #. placeholders: {word}, {sound_words}
 msgid "The {word} call: {sound_words}."
@@ -69045,11 +71503,27 @@ msgstr "Su historia está contada."
 msgid "Part {told} of {story}."
 msgstr "Parte {told} de {story}."
 
+#. the name or the meaning of a longer line
+msgid "Door bell"
+msgstr "Campanilla de la puerta"
+
 msgid "Door bell: a small brass bell. A guest comes in."
 msgstr "Campanilla de la puerta: una campanita de latón. Entra un cliente."
 
+#. the name or the meaning of a longer line
+msgid "a small brass bell. A guest comes in."
+msgstr "una campanita de latón. Entra un cliente."
+
 msgid "Footsteps: soft steps on the wooden floor, coming to the counter."
 msgstr "Pasos: pasos suaves en el suelo de madera, hacia el mostrador."
+
+#. the name or the meaning of a longer line
+msgid "soft steps on the wooden floor, coming to the counter."
+msgstr "pasos suaves en el suelo de madera, hacia el mostrador."
+
+#. the name or the meaning of a longer line
+msgid "Shelf tick"
+msgstr "Tic de estantería"
 
 msgid ""
 "Shelf tick: a soft wooden tick as you move along the shelf or the cups."
@@ -69057,17 +71531,50 @@ msgstr ""
 "Tic de estantería: un tic suave de madera al recorrer la estantería o las "
 "tazas."
 
+#. the name or the meaning of a longer line
+msgid "a soft wooden tick as you move along the shelf or the cups."
+msgstr "un tic suave de madera al recorrer la estantería o las tazas."
+
+#. the name or the meaning of a longer line
+msgid "Tin lid"
+msgstr "Tapa de lata"
+
 msgid "Tin lid: a tea tin opens. Your tea goes in the pot."
 msgstr "Tapa de lata: se abre una lata de té. Tu té va a la tetera."
 
+#. the name or the meaning of a longer line
+msgid "a tea tin opens. Your tea goes in the pot."
+msgstr "se abre una lata de té. Tu té va a la tetera."
+
+#. the name or the meaning of a longer line
+msgid "Kettle switch"
+msgstr "Interruptor del hervidor"
+
 msgid "Kettle switch: a click. The kettle is on."
 msgstr "Interruptor del hervidor: un clic. El hervidor está puesto."
+
+#. the name or the meaning of a longer line
+msgid "a click. The kettle is on."
+msgstr "un clic. El hervidor está puesto."
+
+#. the name or the meaning of a longer line
+msgid "Rumble"
+msgstr "Rumor"
 
 msgid ""
 "Rumble: the kettle's low song as it starts to warm, up to about 65 degrees."
 msgstr ""
 "Rumor: el canto grave del hervidor al empezar a calentar, hasta unos 65 "
 "grados."
+
+#. the name or the meaning of a longer line
+msgid "the kettle's low song as it starts to warm, up to about 65 degrees."
+msgstr ""
+"el canto grave del hervidor al empezar a calentar, hasta unos 65 grados."
+
+#. the name or the meaning of a longer line
+msgid "Hiss"
+msgstr "Siseo"
 
 msgid ""
 "Hiss: the kettle's rushing song from about 80 degrees, rising toward the "
@@ -69076,15 +71583,42 @@ msgstr ""
 "Siseo: el canto agitado del hervidor desde unos 80 grados, subiendo hacia "
 "el hervor."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the kettle's rushing song from about 80 degrees, rising toward the boil."
+msgstr ""
+"el canto agitado del hervidor desde unos 80 grados, subiendo hacia el "
+"hervor."
+
 msgid "Whistle: a gentle whistle. The kettle is at the boil, 100 degrees."
 msgstr ""
 "Silbido: un silbido suave. El hervidor está hirviendo, a 100 grados."
 
+#. the name or the meaning of a longer line
+msgid "a gentle whistle. The kettle is at the boil, 100 degrees."
+msgstr "un silbido suave. El hervidor está hirviendo, a 100 grados."
+
+#. the name or the meaning of a longer line
+msgid "Pour"
+msgstr "Vertido"
+
 msgid "Pour: water from the kettle onto the leaves. The steep begins."
 msgstr "Vertido: agua del hervidor sobre las hojas. Empieza la infusión."
 
+#. the name or the meaning of a longer line
+msgid "water from the kettle onto the leaves. The steep begins."
+msgstr "agua del hervidor sobre las hojas. Empieza la infusión."
+
 msgid "Clock tick: one second of steeping."
 msgstr "Tictac: un segundo de infusión."
+
+#. the name or the meaning of a longer line
+msgid "one second of steeping."
+msgstr "un segundo de infusión."
+
+#. the name or the meaning of a longer line
+msgid "Sand timer chime"
+msgstr "Campanita del reloj de arena"
 
 msgid ""
 "Sand timer chime: the steep has reached what the tea wants. Only once you "
@@ -69093,26 +71627,93 @@ msgstr ""
 "Campanita del reloj de arena: la infusión ha llegado a lo que quiere el té. "
 "Solo si tienes el reloj de arena."
 
+#. the name or the meaning of a longer line
+msgid ""
+"the steep has reached what the tea wants. Only once you own the sand timer."
+msgstr ""
+"la infusión ha llegado a lo que quiere el té. Solo si tienes el reloj de "
+"arena."
+
+#. the name or the meaning of a longer line
+msgid "Leaves lifted"
+msgstr "Hojas fuera"
+
 msgid "Leaves lifted: a drip and a swish. The steep is over."
 msgstr "Hojas fuera: un goteo y un roce. La infusión ha terminado."
+
+#. the name or the meaning of a longer line
+msgid "a drip and a swish. The steep is over."
+msgstr "un goteo y un roce. La infusión ha terminado."
+
+#. the name or the meaning of a longer line
+msgid "Cup filled"
+msgstr "Taza llena"
 
 msgid "Cup filled: tea poured from the pot into one cup."
 msgstr "Taza llena: té servido de la tetera en una taza."
 
+#. the name or the meaning of a longer line
+msgid "tea poured from the pot into one cup."
+msgstr "té servido de la tetera en una taza."
+
+#. the name or the meaning of a longer line
+msgid "Ice"
+msgstr "Hielo"
+
 msgid "Ice: cubes clink in the glass, for an iced tea."
 msgstr "Hielo: cubitos que tintinean en el vaso, para un té helado."
+
+#. the name or the meaning of a longer line
+msgid "cubes clink in the glass, for an iced tea."
+msgstr "cubitos que tintinean en el vaso, para un té helado."
+
+#. the name or the meaning of a longer line
+msgid "Perfect cup"
+msgstr "Taza perfecta"
 
 msgid "Perfect cup: three warm rising notes."
 msgstr "Taza perfecta: tres notas cálidas que suben."
 
+#. the name or the meaning of a longer line
+msgid "three warm rising notes."
+msgstr "tres notas cálidas que suben."
+
+#. the name or the meaning of a longer line
+msgid "Lovely cup"
+msgstr "Taza deliciosa"
+
 msgid "Lovely cup: two warm notes."
 msgstr "Taza deliciosa: dos notas cálidas."
+
+#. the name or the meaning of a longer line
+msgid "two warm notes."
+msgstr "dos notas cálidas."
+
+#. the name or the meaning of a longer line
+msgid "Kind cup"
+msgstr "Taza amable"
 
 msgid "Kind cup: one soft note. The guest is still pleased."
 msgstr "Taza amable: una nota suave. El cliente sigue contento."
 
+#. the name or the meaning of a longer line
+msgid "one soft note. The guest is still pleased."
+msgstr "una nota suave. El cliente sigue contento."
+
+#. the name or the meaning of a longer line
+msgid "Coins"
+msgstr "Monedas"
+
 msgid "Coins: coins on the counter, for the cup and any tip."
 msgstr "Monedas: monedas en el mostrador, por la taza y la propina."
+
+#. the name or the meaning of a longer line
+msgid "coins on the counter, for the cup and any tip."
+msgstr "monedas en el mostrador, por la taza y la propina."
+
+#. the name or the meaning of a longer line
+msgid "Soft thud"
+msgstr "Golpe suave"
 
 msgid "Soft thud: nothing to do just now."
 msgstr "Golpe suave: ahora no hay nada que hacer."
@@ -71888,6 +74489,10 @@ msgstr ""
 "Una nota grave que baja detrás de ti: un farolillo que fallaste. Tu cadena "
 "vuelve a empezar."
 
+#. the name or the meaning of a longer line
+msgid "A flat clink"
+msgstr "Un tintineo apagado"
+
 msgid ""
 "A flat clink: on the lantern skate, the second lit of a pair. Your line "
 "starts again."
@@ -71897,6 +74502,13 @@ msgstr ""
 
 msgid "The wrong lantern"
 msgstr "El farolillo equivocado"
+
+#. the name or the meaning of a longer line
+msgid ""
+"on the lantern skate, the second lit of a pair. Your line starts again."
+msgstr ""
+"en el patinaje de farolillos, el segundo encendido de una pareja. Tu cadena "
+"vuelve a empezar."
 
 msgid "A drift ahead"
 msgstr "Un montón de nieve delante"
@@ -71961,6 +74573,10 @@ msgstr ""
 msgid "A spin landed"
 msgstr "Una pirueta clavada"
 
+#. the name or the meaning of a longer line
+msgid "A scuffing stagger"
+msgstr "Un traspiés arrastrado"
+
 msgid ""
 "A scuffing stagger: the spin was held too long. It scores nothing, and your "
 "line starts again."
@@ -71970,6 +74586,12 @@ msgstr ""
 
 msgid "A wobble"
 msgstr "Un tambaleo"
+
+#. the name or the meaning of a longer line
+msgid ""
+"the spin was held too long. It scores nothing, and your line starts again."
+msgstr ""
+"mantuviste la pirueta demasiado. No puntúa, y tu cadena vuelve a empezar."
 
 msgid "A night on the ice"
 msgstr "Una noche en el hielo"
@@ -73599,6 +76221,17 @@ msgstr ""
 "Motor: un rugido grave mientras mantienes la tecla del motor. Frena tu "
 "caída y gasta combustible."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low roar while you hold the engine key. It slows your fall and burns fuel."
+msgstr ""
+"un rugido grave mientras mantienes la tecla del motor. Frena tu caída y "
+"gasta combustible."
+
+#. the name or the meaning of a longer line
+msgid "Pad beacon"
+msgstr "Baliza de la plataforma"
+
 msgid ""
 "Pad beacon: a soft ping from the pad below you. It quickens as you get "
 "closer."
@@ -73606,8 +76239,25 @@ msgstr ""
 "Baliza de la plataforma: un ping suave desde la plataforma bajo ti. Se "
 "acelera según te acercas."
 
+#. the name or the meaning of a longer line
+msgid "a soft ping from the pad below you. It quickens as you get closer."
+msgstr ""
+"un ping suave desde la plataforma bajo ti. Se acelera según te acercas."
+
+#. the name or the meaning of a longer line
+msgid "Radio click"
+msgstr "Clic de radio"
+
 msgid "Radio click: mission control is about to give a call-out."
 msgstr "Clic de radio: el control de la misión va a dar un aviso."
+
+#. the name or the meaning of a longer line
+msgid "mission control is about to give a call-out."
+msgstr "el control de la misión va a dar un aviso."
+
+#. the name or the meaning of a longer line
+msgid "Quindar tone"
+msgstr "Tono Quindar"
 
 msgid ""
 "Quindar tone: a short high beep on the Tranquility pad. It stands for the "
@@ -73616,6 +76266,18 @@ msgstr ""
 "Tono Quindar: un pitido corto y agudo en la plataforma Tranquilidad. "
 "Sustituye al clic de radio: le sigue un aviso."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a short high beep on the Tranquility pad. It stands for the radio click: a "
+"call-out follows."
+msgstr ""
+"un pitido corto y agudo en la plataforma Tranquilidad. Sustituye al clic de "
+"radio: le sigue un aviso."
+
+#. the name or the meaning of a longer line
+msgid "Fuel alarm"
+msgstr "Alarma de combustible"
+
 msgid ""
 "Fuel alarm: two soft beeps. Fuel is down to 25 percent, then again at 10 "
 "percent."
@@ -73623,13 +76285,33 @@ msgstr ""
 "Alarma de combustible: dos pitidos suaves. El combustible ha bajado al 25 "
 "por ciento, y otra vez al 10 por ciento."
 
+#. the name or the meaning of a longer line
+msgid ""
+"two soft beeps. Fuel is down to 25 percent, then again at 10 percent."
+msgstr ""
+"dos pitidos suaves. El combustible ha bajado al 25 por ciento, y otra vez "
+"al 10 por ciento."
+
+#. the name or the meaning of a longer line
+msgid "Touchdown"
+msgstr "Aterrizaje"
+
 msgid "Touchdown: a thud and a creak of the legs. You landed safely."
 msgstr ""
 "Aterrizaje: un golpe sordo y un crujido de las patas. Has aterrizado bien."
 
+#. the name or the meaning of a longer line
+msgid "a thud and a creak of the legs. You landed safely."
+msgstr "un golpe sordo y un crujido de las patas. Has aterrizado bien."
+
 msgid "Crash: a heavy crunch. You touched down faster than the safe speed."
 msgstr ""
 "Choque: un crujido fuerte. Tocaste suelo más rápido que la velocidad segura."
+
+#. the name or the meaning of a longer line
+msgid "a heavy crunch. You touched down faster than the safe speed."
+msgstr ""
+"un crujido fuerte. Tocaste suelo más rápido que la velocidad segura."
 
 msgid "Descent tone, safe"
 msgstr "Tono de descenso, seguro"
@@ -73640,6 +76322,10 @@ msgid ""
 msgstr ""
 "Tono de descenso, seguro: un tono grave y estable. Caes más despacio que la "
 "velocidad segura."
+
+#. the name or the meaning of a longer line
+msgid "a low, steady tone. You are falling slower than the safe speed."
+msgstr "un tono grave y estable. Caes más despacio que la velocidad segura."
 
 msgid "Descent tone, too fast"
 msgstr "Tono de descenso, demasiado rápido"
@@ -73652,6 +76338,14 @@ msgstr ""
 "Tono de descenso, demasiado rápido: el mismo tono, más agudo. Cuanto más "
 "rápido caes, más sube. Oyes Demasiado rápido cuando supera la velocidad "
 "segura, y Velocidad segura cuando vuelve."
+
+#. the name or the meaning of a longer line
+msgid ""
+"the same tone, higher. The faster you fall, the higher it goes. You hear "
+"Too fast as it crosses the safe speed, and Safe speed as it comes back."
+msgstr ""
+"el mismo tono, más agudo. Cuanto más rápido caes, más sube. Oyes Demasiado "
+"rápido cuando supera la velocidad segura, y Velocidad segura cuando vuelve."
 
 msgid "prompts"
 msgstr ""
@@ -78877,12 +81571,24 @@ msgstr "Todas las constelaciones trazadas"
 msgid "Shimmer"
 msgstr "Destello"
 
+#. the name or the meaning of a longer line
+msgid "Something hidden is near"
+msgstr "Hay algo escondido cerca"
+
 msgid ""
 "Something hidden is near: a wonder such as a nebula or a cluster. Rest on "
 "it and press the main action."
 msgstr ""
 "Hay algo escondido cerca: una maravilla como una nebulosa o un cúmulo. "
 "Pósate en ella y pulsa la acción principal."
+
+#. the name or the meaning of a longer line
+msgid ""
+"a wonder such as a nebula or a cluster. Rest on it and press the main "
+"action."
+msgstr ""
+"una maravilla como una nebulosa o un cúmulo. Pósate en ella y pulsa la "
+"acción principal."
 
 msgid "A wonder is found and written in your journal."
 msgstr "Una maravilla encontrada y anotada en tu diario."
@@ -79750,6 +82456,10 @@ msgstr "F sostenido"
 msgid "G sharp"
 msgstr "G sostenido"
 
+#. the name or the meaning of a longer line
+msgid "Pipe"
+msgstr "Tubo"
+
 msgid ""
 "Pipe: a steady, soft organ tone. While you tune, two of these play "
 "together, the pipe and its true note. Out of tune, they wobble; in tune, "
@@ -79759,6 +82469,20 @@ msgstr ""
 "vez, el tubo y su nota verdadera. Desafinados, oscilan; afinados, la "
 "oscilación se calma."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a steady, soft organ tone. While you tune, two of these play together, the "
+"pipe and its true note. Out of tune, they wobble; in tune, the wobble goes "
+"still."
+msgstr ""
+"un tono de órgano suave y estable. Mientras afinas, suenan dos a la vez, el "
+"tubo y su nota verdadera. Desafinados, oscilan; afinados, la oscilación se "
+"calma."
+
+#. the name or the meaning of a longer line
+msgid "Echo note"
+msgstr "Nota del Echo"
+
 msgid ""
 "Echo note: one short organ note. The Echo plays these back as a tune once a "
 "rank is tuned."
@@ -79766,19 +82490,56 @@ msgstr ""
 "Nota del Echo: una nota corta de órgano. El Echo las toca como melodía "
 "cuando un registro está afinado."
 
+#. the name or the meaning of a longer line
+msgid ""
+"one short organ note. The Echo plays these back as a tune once a rank is "
+"tuned."
+msgstr ""
+"una nota corta de órgano. El Echo las toca como melodía cuando un registro "
+"está afinado."
+
+#. the name or the meaning of a longer line
+msgid "Slide"
+msgstr "Corredera"
+
 msgid "Slide: a tiny brass tick. The pipe moved up or down a step."
 msgstr "Corredera: un tic diminuto de latón. El tubo subió o bajó un paso."
 
+#. the name or the meaning of a longer line
+msgid "a tiny brass tick. The pipe moved up or down a step."
+msgstr "un tic diminuto de latón. El tubo subió o bajó un paso."
+
+#. the name or the meaning of a longer line
+msgid "In tune"
+msgstr "Afinados"
+
 msgid "In tune: a clear bell. You set the pipe, and it holds its note."
 msgstr "Afinado: una campana clara. Fijaste el tubo, y mantiene su nota."
+
+#. the name or the meaning of a longer line
+msgid "a clear bell. You set the pipe, and it holds its note."
+msgstr "una campana clara. Fijaste el tubo, y mantiene su nota."
 
 msgid "Hint: a soft felt knock. H told you which way the pipe is out."
 msgstr ""
 "Pista: un golpe suave de fieltro. H te dijo hacia dónde está desafinado el "
 "tubo."
 
+#. the name or the meaning of a longer line
+msgid "a soft felt knock. H told you which way the pipe is out."
+msgstr ""
+"un golpe suave de fieltro. H te dijo hacia dónde está desafinado el tubo."
+
 msgid "Not yet: a dull thud. The pipe still wobbles, so it did not set."
 msgstr "Todavía no: un golpe sordo. El tubo aún oscila, así que no se fijó."
+
+#. the name or the meaning of a longer line
+msgid "a dull thud. The pipe still wobbles, so it did not set."
+msgstr "un golpe sordo. El tubo aún oscila, así que no se fijó."
+
+#. the name or the meaning of a longer line
+msgid "Rank tuned"
+msgstr "Registro afinado"
 
 msgid ""
 "Rank tuned: rising tubular bells over an organ chord. Every pipe in the "
@@ -79786,6 +82547,13 @@ msgid ""
 msgstr ""
 "Registro afinado: campanas tubulares que suben sobre un acorde de órgano. "
 "Todos los tubos del registro están afinados."
+
+#. the name or the meaning of a longer line
+msgid ""
+"rising tubular bells over an organ chord. Every pipe in the rank is in tune."
+msgstr ""
+"campanas tubulares que suben sobre un acorde de órgano. Todos los tubos del "
+"registro están afinados."
 
 msgid "Return to the title of The Echo."
 msgstr "Volver al menú principal de The Echo."
@@ -82120,12 +84888,21 @@ msgstr "Escondido"
 msgid "Creeping out"
 msgstr "Saliendo"
 
+#. the name or the meaning of a longer line
+msgid "Two soft rising notes"
+msgstr "Dos notas suaves que suben"
+
 msgid ""
 "Two soft rising notes: something shy has come back out. Listen for its "
 "sound, then reach in."
 msgstr ""
 "Dos notas suaves que suben: algo tímido ha vuelto a salir. Escucha su "
 "sonido y mete la mano."
+
+#. the name or the meaning of a longer line
+msgid ""
+"something shy has come back out. Listen for its sound, then reach in."
+msgstr "algo tímido ha vuelto a salir. Escucha su sonido y mete la mano."
 
 msgid ""
 "A scoop of water and a rising chime: you gathered a creature for your "
@@ -82178,6 +84955,10 @@ msgstr "Un golpe sordo en la arena: no hay más pozas por ahí."
 msgid "End of the rocks"
 msgstr "Fin de las rocas"
 
+#. the name or the meaning of a longer line
+msgid "One distant bell buoy"
+msgstr "Una boya de campana a lo lejos"
+
 msgid ""
 "One distant bell buoy: half the trip is gone and the sea starts back."
 msgstr ""
@@ -82187,11 +84968,23 @@ msgstr ""
 msgid "The tide turns"
 msgstr "La marea cambia"
 
+#. the name or the meaning of a longer line
+msgid "half the trip is gone and the sea starts back."
+msgstr "ha pasado media salida y el mar empieza a volver."
+
+#. the name or the meaning of a longer line
+msgid "The bell buoy twice"
+msgstr "La boya de campana dos veces"
+
 msgid "The bell buoy twice: the tide will soon cover the pools."
 msgstr "La boya de campana dos veces: la marea pronto cubrirá las pozas."
 
 msgid "The tide is near"
 msgstr "La marea está cerca"
+
+#. the name or the meaning of a longer line
+msgid "the tide will soon cover the pools."
+msgstr "la marea pronto cubrirá las pozas."
 
 msgid "A big wave washing over the rocks: the trip is over."
 msgstr "Una gran ola baña las rocas: la salida ha terminado."
@@ -82202,14 +84995,30 @@ msgstr "Sube la marea"
 msgid "A rare find"
 msgstr "Un hallazgo raro"
 
+#. the name or the meaning of a longer line
+msgid "A shimmer"
+msgstr "Un destello"
+
 msgid "A shimmer: what you gathered is rare."
 msgstr "Un destello: lo que has recogido es raro."
+
+#. the name or the meaning of a longer line
+msgid "what you gathered is rare."
+msgstr "lo que has recogido es raro."
+
+#. the name or the meaning of a longer line
+msgid "A little rising arpeggio"
+msgstr "Un pequeño arpegio que sube"
 
 msgid "A little rising arpeggio: a kind you have never gathered before."
 msgstr "Un pequeño arpegio que sube: un tipo que nunca habías recogido."
 
 msgid "New for the aquarium"
 msgstr "Nuevo para el acuario"
+
+#. the name or the meaning of a longer line
+msgid "a kind you have never gathered before."
+msgstr "un tipo que nunca habías recogido."
 
 msgid ""
 "The sea, ahead of you beyond the pools. It grows louder and nearer as the "
@@ -82470,9 +85279,6 @@ msgstr ""
 
 msgid "The game says when you are halfway, 3 steps out and 1 step out."
 msgstr "El juego te dice cuándo vas por la mitad, a 3 pasos y a 1 paso."
-
-msgid "Wind"
-msgstr "Viento"
 
 msgid ""
 "Each gust is announced with its direction at least 2 seconds before it "
@@ -87717,6 +90523,10 @@ msgid "Up and Down move between sounds, Enter plays one, Escape goes back."
 msgstr ""
 "Up y Down te mueven entre sonidos, Enter reproduce uno, Escape vuelve."
 
+#. the name or the meaning of a longer line
+msgid "Wish Desk"
+msgstr "Mesa de los Deseos"
+
 #. placeholders: {next}
 msgid "Wish Desk: {next}"
 msgstr "Mesa de los Deseos: {next}"
@@ -87738,14 +90548,26 @@ msgstr "Deseos como {join}."
 msgid "Gift lands on the belt: a soft thump and a rustle of paper."
 msgstr "Un regalo cae en la cinta: un golpe suave y un roce de papel."
 
+#. the name or the meaning of a longer line
+msgid "Right recipient"
+msgstr "Destinatario correcto"
+
 msgid ""
 "Right recipient: rising bells from their side. This one is on your left."
 msgstr ""
 "Destinatario correcto: campanas que suben desde su lado. Este está a tu "
 "izquierda."
 
+#. the name or the meaning of a longer line
+msgid "rising bells from their side. This one is on your left."
+msgstr "campanas que suben desde su lado. Este está a tu izquierda."
+
 msgid "A gift sliding to a recipient. This one goes right."
 msgstr "Un regalo se desliza hacia un destinatario. Este va a la derecha."
+
+#. the name or the meaning of a longer line
+msgid "Wrong guess"
+msgstr "Error"
 
 msgid ""
 "Wrong guess: a low buzz from that side. It costs clock time. This one is "
@@ -87754,24 +90576,63 @@ msgstr ""
 "Error: un zumbido grave desde ese lado. Cuesta tiempo de reloj. Este está "
 "justo delante."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a low buzz from that side. It costs clock time. This one is straight ahead."
+msgstr ""
+"un zumbido grave desde ese lado. Cuesta tiempo de reloj. Este está justo "
+"delante."
+
 msgid "Into the return sack, behind you."
 msgstr "Al saco de devoluciones, detrás de ti."
+
+#. the name or the meaning of a longer line
+msgid "Near the edge"
+msgstr "Cerca del borde"
 
 msgid "Near the edge: quick beeping. Send the gift fast."
 msgstr "Cerca del borde: pitidos rápidos. Envía el regalo deprisa."
 
+#. the name or the meaning of a longer line
+msgid "quick beeping. Send the gift fast."
+msgstr "pitidos rápidos. Envía el regalo deprisa."
+
 msgid "A gift falls off the belt and breaks."
 msgstr "Un regalo se cae de la cinta y se rompe."
 
+#. the name or the meaning of a longer line
+msgid "Clock running low"
+msgstr "Se acaba el reloj"
+
 msgid "Clock running low: a tick each second near the end."
 msgstr "Se acaba el reloj: un tic cada segundo cerca del final."
+
+#. the name or the meaning of a longer line
+msgid "a tick each second near the end."
+msgstr "un tic cada segundo cerca del final."
+
+#. the name or the meaning of a longer line
+msgid "Change of plans"
+msgstr "Cambio de planes"
 
 msgid "Change of plans: a doorbell, when someone changes their wish."
 msgstr ""
 "Cambio de planes: un timbre de puerta, cuando alguien cambia su deseo."
 
+#. the name or the meaning of a longer line
+msgid "a doorbell, when someone changes their wish."
+msgstr "un timbre de puerta, cuando alguien cambia su deseo."
+
+#. the name or the meaning of a longer line
+msgid "Nothing there"
+msgstr "Nada ahí"
+
 msgid "Nothing there: a dull knock."
 msgstr "Nada ahí: un golpe apagado."
+
+#. the name or the meaning of a longer line
+msgid "a dull knock."
+msgstr "un golpe apagado."
 
 msgid "Shift complete."
 msgstr "Turno completado."
@@ -87783,16 +90644,36 @@ msgstr ""
 "Mesa de los Deseos: un paso por el estante, que se oye donde está la caja. "
 "Este está en el extremo izquierdo."
 
+#. the name or the meaning of a longer line
+msgid ""
+"a step along the shelf, heard where the box sits. This one is at the left "
+"end."
+msgstr ""
+"un paso por el estante, que se oye donde está la caja. Este está en el "
+"extremo izquierdo."
+
 msgid "Wish Desk: the end of the shelf."
 msgstr "Mesa de los Deseos: el final del estante."
 
+#. the name or the meaning of a longer line
+msgid "the end of the shelf."
+msgstr "el final del estante."
+
 msgid "Wish Desk: an empty place, where a gift was wrapped."
 msgstr "Mesa de los Deseos: un hueco vacío, donde se envolvió un regalo."
+
+#. the name or the meaning of a longer line
+msgid "an empty place, where a gift was wrapped."
+msgstr "un hueco vacío, donde se envolvió un regalo."
 
 msgid "Wish Desk: a shake of only straw. Shake again to hear the gift."
 msgstr ""
 "Mesa de los Deseos: una agitada de solo paja. Agita otra vez para oír el "
 "regalo."
+
+#. the name or the meaning of a longer line
+msgid "a shake of only straw. Shake again to hear the gift."
+msgstr "una agitada de solo paja. Agita otra vez para oír el regalo."
 
 #. one sentence of a longer line
 msgid "Let go now and nothing is wrapped."
@@ -87811,8 +90692,25 @@ msgstr ""
 "Mesa de los Deseos: papel de regalo, mientras mantienes {n}. Si sueltas "
 "ahora, no se envuelve nada."
 
+#. placeholders: {n}
+#. the name or the meaning of a longer line
+msgid "wrapping paper, while you hold {n}."
+msgstr "papel de regalo, mientras mantienes {n}."
+
+#. placeholders: {n}
+#. the name or the meaning of a longer line
+msgid ""
+"wrapping paper, while you hold {n}. Let go now and nothing is wrapped."
+msgstr ""
+"papel de regalo, mientras mantienes {n}. Si sueltas ahora, no se envuelve "
+"nada."
+
 msgid "Wish Desk: the wrong box, unwrapped and put back."
 msgstr "Mesa de los Deseos: la caja equivocada, desenvuelta y devuelta."
+
+#. the name or the meaning of a longer line
+msgid "the wrong box, unwrapped and put back."
+msgstr "la caja equivocada, desenvuelta y devuelta."
 
 #. placeholders: {n}
 msgid "Midnight Countdown bells, answered with {n}."
@@ -87832,23 +90730,63 @@ msgstr "Tictac del reloj, en cada tiempo."
 msgid "Tock, on the first beat of each bar."
 msgstr "Tac, en el primer tiempo de cada compás."
 
+#. the name or the meaning of a longer line
+msgid "Missed note"
+msgstr "Nota fallada"
+
 msgid "Missed note: a deflating party blower."
 msgstr "Nota fallada: un matasuegras que se desinfla."
+
+#. the name or the meaning of a longer line
+msgid "a deflating party blower."
+msgstr "un matasuegras que se desinfla."
+
+#. the name or the meaning of a longer line
+msgid "Wrong instrument"
+msgstr "Instrumento equivocado"
 
 msgid "Wrong instrument: a short buzz."
 msgstr "Instrumento equivocado: un zumbido corto."
 
+#. the name or the meaning of a longer line
+msgid "a short buzz."
+msgstr "un zumbido corto."
+
 msgid "A press with nothing to answer: a soft tap."
 msgstr "Una pulsación sin nada que responder: un toque suave."
+
+#. the name or the meaning of a longer line
+msgid "Score multiplier up"
+msgstr "Sube el multiplicador"
 
 msgid "Score multiplier up: rising chimes."
 msgstr "Sube el multiplicador: campanillas que suben."
 
+#. the name or the meaning of a longer line
+msgid "rising chimes."
+msgstr "campanillas que suben."
+
+#. the name or the meaning of a longer line
+msgid "A call answered perfectly"
+msgstr "Una llamada respondida a la perfección"
+
 msgid "A call answered perfectly: sparkles."
 msgstr "Una llamada respondida a la perfección: destellos."
 
+#. the name or the meaning of a longer line
+msgid "sparkles."
+msgstr "destellos."
+
+#. the name or the meaning of a longer line
+msgid "Party energy low"
+msgstr "Energía de la fiesta baja"
+
 msgid "Party energy low: a heartbeat."
 msgstr "Energía de la fiesta baja: un latido."
+
+#. the name or the meaning of a longer line
+msgid "a heartbeat."
+msgstr "un latido."
 
 msgid "Back to the title."
 msgstr "Volver al menú principal."
