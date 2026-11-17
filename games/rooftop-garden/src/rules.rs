@@ -1190,13 +1190,13 @@ impl Garden {
     }
 
     pub fn describe(&self, i: usize) -> String {
-        let place = sentence(&self.place(i));
+        let spot = sentence(&self.place(i));
         let mut s = match &self.plots[i] {
             Some(p) if p.species == Species::Jasmine && p.voiced() && !self.jasmine_open() => {
-                format!("{place}: {}, closed until late afternoon.", p.describe())
+                format!("{spot}: {}, closed until late afternoon.", p.describe())
             }
-            Some(p) => format!("{place}: {}.", p.describe()),
-            None => format!("{place}: empty soil."),
+            Some(p) => format!("{spot}: {}.", p.describe()),
+            None => format!("{spot}: empty soil."),
         };
         if self.covered(i) {
             s.push_str(" Under the cold frame.");
@@ -1226,11 +1226,10 @@ impl Garden {
                 )
             }
         };
+        let here = self.describe_here();
+        let (status_key, hint_key) = (sentence(&self.keys.status), &self.keys.hint);
         s.push_str(&format!(
-            " {} {} for status, {} for a hint, F1 for controls.",
-            self.describe_here(),
-            sentence(&self.keys.status),
-            self.keys.hint
+            " {here} {status_key} for status, {hint_key} for a hint, F1 for controls."
         ));
         s
     }
@@ -1360,81 +1359,81 @@ impl Garden {
             (
                 &|p| p.wilted,
                 "has wilted",
-                format!("{} waters it back to life.", sentence(&self.keys.water)),
+                format!("{pressed} waters it back to life.", pressed = sentence(&self.keys.water)),
             ),
             (
                 &|p| p.pest,
                 "has aphids",
-                format!("{} picks them off.", sentence(&self.keys.tend)),
+                format!("{pressed} picks them off.", pressed = sentence(&self.keys.tend)),
             ),
             (
                 &|p| p.thirsty(),
                 "is thirsty",
-                format!("{} waters it.", sentence(&self.keys.water)),
+                format!("{pressed} waters it.", pressed = sentence(&self.keys.water)),
             ),
             (
                 &|p| p.stage == Stage::Ripe,
                 "is ready to harvest",
-                format!("{} harvests it.", sentence(&self.keys.tend)),
+                format!("{pressed} harvests it.", pressed = sentence(&self.keys.tend)),
             ),
             (
                 &|p| p.leggy,
                 "is leggy",
-                format!("{} prunes it.", sentence(&self.keys.tend)),
+                format!("{pressed} prunes it.", pressed = sentence(&self.keys.tend)),
             ),
         ];
         for (test, what, how) in jobs.iter() {
             if let Some(i) = self.nearest(|p| p.as_ref().is_some_and(test)) {
                 let name = self.plots[i].as_ref().map(|p| p.name()).unwrap_or_default();
-                return format!("{} {how}", self.pointer(i, &format!("the {name}"), what));
+                let pointer = self.pointer(i, &format!("the {name}"), what);
+                return format!("{pointer} {how}");
             }
         }
         if let Some(i) = self.nearest(|p| p.is_none()) {
-            return format!(
-                "{} {} plants a seed there.",
-                self.pointer(i, "an empty planter", ""),
-                sentence(&self.keys.water)
-            );
+            let pointer = self.pointer(i, "an empty planter", "");
+            let pressed = sentence(&self.keys.water);
+            let plants = format!("{pressed} plants a seed there.");
+            return format!("{pointer} {plants}");
         }
         if let Some(i) = self.nearest(|p| p.as_ref().is_some_and(|p| p.water < 0.6)) {
             let name = self.plots[i].as_ref().map(|p| p.name()).unwrap_or_default();
-            return format!(
-                "All content. {}",
-                self.pointer(i, &format!("the {name}"), "needs water soon")
-            );
+            let pointer = self.pointer(i, &format!("the {name}"), "needs water soon");
+            return format!("All content. {pointer}");
         }
         "All content. Enter sits on the bench to pass time.".to_string()
     }
 
-    /// "The squash 1 up and 2 to the right has aphids." or "Right here, the squash has aphids."
+    /// "1 up and 2 to the right, the squash has aphids." or "Right here, the squash has aphids."
     fn pointer(&self, i: usize, who: &str, what: &str) -> String {
         let (r, c) = self.cell(i);
         let dr = r as i32 - self.row as i32;
         let dc = c as i32 - self.col as i32;
-        let mut way = Vec::new();
-        if dr != 0 {
-            way.push(format!(
-                "{} {}",
-                dr.abs(),
-                if dr < 0 { "up" } else { "down" }
-            ));
-        }
-        if dc != 0 {
-            way.push(format!(
-                "{} to the {}",
-                dc.abs(),
-                if dc < 0 { "left" } else { "right" }
-            ));
-        }
-        let what = if what.is_empty() {
-            String::new()
-        } else {
-            format!(" {what}")
+        let (rows, cols) = (dr.abs(), dc.abs());
+        let way = match (dr.signum(), dc.signum()) {
+            (0, 0) => String::new(),
+            (-1, 0) => format!("{rows} up"),
+            (1, 0) => format!("{rows} down"),
+            (0, -1) => format!("{cols} to the left"),
+            (0, _) => format!("{cols} to the right"),
+            (-1, -1) => format!("{rows} up and {cols} to the left"),
+            (-1, _) => format!("{rows} up and {cols} to the right"),
+            (_, -1) => format!("{rows} down and {cols} to the left"),
+            _ => format!("{rows} down and {cols} to the right"),
+        };
+        let clause = match what {
+            "" => who.to_string(),
+            "has wilted" => format!("{who} has wilted"),
+            "has aphids" => format!("{who} has aphids"),
+            "is thirsty" => format!("{who} is thirsty"),
+            "is ready to harvest" => format!("{who} is ready to harvest"),
+            "is leggy" => format!("{who} is leggy"),
+            "needs water soon" => format!("{who} needs water soon"),
+            other => format!("{who} {other}"),
         };
         if way.is_empty() {
-            format!("Right here, {who}{what}.")
+            format!("Right here, {clause}.")
         } else {
-            format!("{} {}{what}.", sentence(who), way.join(" and "))
+            format!("{way}, {clause}.")
         }
     }
 
@@ -1509,7 +1508,7 @@ impl Garden {
             p.wilted = false;
             self.at(cues::WATER, i);
             self.at(cues::REVIVE, i);
-            self.say(format!("{} revived.", sentence(&name)));
+            self.say(format!("{plant} revived.", plant = sentence(&name)));
         } else {
             self.at(cues::WATER, i);
             self.say("Watered.");
@@ -1899,7 +1898,8 @@ impl Garden {
         }
         self.plots[i] = Some(Plant::of(variety));
         self.at(cues::PLANT, i);
-        self.say(format!("{} planted.", sentence(&variety.name())));
+        let plant = sentence(&variety.name());
+        self.say(format!("{plant} planted."));
     }
 
     /// Plants a pumpkin seed in the empty planter under you.
@@ -1932,7 +1932,7 @@ impl Garden {
         let i = self.here();
         if let Some(p) = self.plots[i].take() {
             self.at(cues::COMPOST, i);
-            self.say(format!("{} composted.", sentence(&p.name())));
+            self.say(format!("{plant} composted.", plant = sentence(&p.name())));
         }
     }
 
@@ -2051,7 +2051,7 @@ impl Garden {
                 continue;
             };
             let name = p.name();
-            let place = self.place(i);
+            let spot = self.place(i);
             let was_thirsty = p.thirsty();
             let was_soggy = p.waterlogged();
             if raining {
@@ -2061,7 +2061,7 @@ impl Garden {
                 if p.wilted && !p.thirsty() {
                     p.wilted = false;
                     self.at(cues::REVIVE, i);
-                    self.queue(format!("Rain revived the {name}, {place}."));
+                    self.queue(format!("Rain revived the {name}, {spot}."));
                 }
             } else {
                 let floor = if self.covered(i) { COLD_FRAME_FLOOR.min(p.water) } else { 0.0 };
@@ -2070,7 +2070,7 @@ impl Garden {
             }
             if was_soggy && !p.waterlogged() {
                 self.at(cues::DRIP, i);
-                self.queue(format!("{} drained, {place}.", sentence(&name)));
+                self.queue(format!("{} drained, {spot}.", sentence(&name)));
             }
             // One meaning of thirsty everywhere: the dry-soil crackle, S, H
             // and this call all count a seed too, since a dry seed grows
@@ -2081,7 +2081,7 @@ impl Garden {
                 p.water = 1.0;
                 p.dry = 0.0;
                 self.at(cues::WATER, i);
-                self.queue(format!("Rain barrel watered the {name}, {place}."));
+                self.queue(format!("Rain barrel watered the {name}, {spot}."));
             } else if !was_thirsty && p.thirsty() {
                 let what = if p.stage == Stage::Seed {
                     format!("{name} seed")
@@ -2091,7 +2091,7 @@ impl Garden {
                 self.need(
                     cues::THIRSTY,
                     i,
-                    format!("{} thirsty, {place}.", sentence(&what)),
+                    format!("{} thirsty, {spot}.", sentence(&what)),
                 );
             }
             if p.water <= 0.0 {
@@ -2103,7 +2103,7 @@ impl Garden {
                     self.need(
                         cues::WILT,
                         i,
-                        format!("{} wilted, {place}. {water} revives it.", sentence(&name)),
+                        format!("{} wilted, {spot}. {water} revives it.", sentence(&name)),
                     );
                 }
             } else {
@@ -2149,7 +2149,7 @@ impl Garden {
                 self.need(
                     cues::PEST_ARRIVE,
                     i,
-                    format!("Aphids on the {name}, {place}. {tend} picks them off."),
+                    format!("Aphids on the {name}, {spot}. {tend} picks them off."),
                 );
             }
             if p.stage == Stage::Blooming
@@ -2167,7 +2167,7 @@ impl Garden {
                 self.need(
                     cues::LEGGY,
                     i,
-                    format!("{} leggy, {place}. {tend} prunes it.", sentence(&name)),
+                    format!("{} leggy, {spot}. {tend} prunes it.", sentence(&name)),
                 );
             }
             self.plots[i] = Some(p);
@@ -2299,9 +2299,9 @@ impl Garden {
             sprout.stage = Stage::Sprout;
             self.plots[j] = Some(sprout);
             self.at(cues::SPROUT, j);
-            let place = self.place(j);
+            let spot = self.place(j);
             self.queue(format!(
-                "{} runner rooted, {place}.",
+                "{} runner rooted, {spot}.",
                 sentence(&variety.name())
             ));
         }
@@ -2309,31 +2309,31 @@ impl Garden {
 
     fn grew(&mut self, i: usize, p: &Plant) {
         let name = p.name();
-        let place = self.place(i);
+        let spot = self.place(i);
         match p.stage {
             Stage::Seed => {}
             Stage::Sprout => {
                 self.at(cues::SPROUT, i);
-                self.queue(format!("{} sprouted, {place}.", sentence(&name)));
+                self.queue(format!("{} sprouted, {spot}.", sentence(&name)));
             }
             Stage::Growing => {
                 self.at(cues::GROW, i);
                 self.queue(format!(
-                    "{} growing, {place}: {}.",
+                    "{} growing, {spot}: {}.",
                     sentence(&name),
                     p.voice()
                 ));
             }
             Stage::Blooming => {
                 self.at(cues::BLOOM, i);
-                self.queue(format!("{} in bloom, {place}.", sentence(&name)));
+                self.queue(format!("{} in bloom, {spot}.", sentence(&name)));
             }
             Stage::Ripe => {
                 let tend = self.keys.tend.clone();
                 self.need(
                     cues::RIPE,
                     i,
-                    format!("{} ripe, {place}. {tend} harvests it.", sentence(&name)),
+                    format!("{} ripe, {spot}. {tend} harvests it.", sentence(&name)),
                 );
             }
         }

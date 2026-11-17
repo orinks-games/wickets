@@ -448,13 +448,11 @@ impl Ride {
                 self.go_words(ctx)
             ),
             Mode::Delivery(d) => match &self.job {
-                Some(job) => format!(
-                    "Delivery, {}, {}, on the {bike}. {}, deadline {}.",
-                    job.title(),
-                    d.name(),
-                    units::route(job.length),
-                    span_words(job.deadline())
-                ),
+                Some(job) => {
+                    let (title, district) = (job.title(), d.name());
+                    let (length, deadline) = (units::route(job.length), span_words(job.deadline()));
+                    format!("Delivery, {title}, {district}, on the {bike}. {length}, deadline {deadline}.")
+                }
                 None => format!("Delivery in {}, on the {bike}.", d.name()),
             },
             Mode::Endless(d) => format!(
@@ -520,11 +518,7 @@ impl Ride {
             speed_words(r.v)
         };
         let (lane, gap) = if r.x < BIKE_LANE_LINE {
-            let lane = if w.in_door_zone {
-                "bike lane, in the door zone"
-            } else {
-                "bike lane"
-            };
+            let lane = if w.in_door_zone { "door zone" } else { "bike lane" };
             (
                 lane,
                 format!(
@@ -541,12 +535,17 @@ impl Ride {
                 ),
             )
         };
+        let lane_line = match lane {
+            "door zone" => format!("{speed}, bike lane, in the door zone."),
+            "bike lane" => format!("{speed}, bike lane."),
+            _ => format!("{speed}, traffic lane."),
+        };
         first.push(match &w.drop_clock {
-            Some(c) => format!(
-                "{} left. {speed}, {lane}.",
-                sentence_start(&secs_words(c.left.ceil()))
-            ),
-            None => format!("{speed}, {lane}."),
+            Some(c) => {
+                let left = sentence_start(&secs_words(c.left.ceil()));
+                format!("{left} left. {lane_line}")
+            }
+            None => lane_line,
         });
         let mut more = Vec::new();
         if !danger {
@@ -811,7 +810,7 @@ impl Ride {
             let d = j.s - r.s;
             if d <= 150.0 {
                 let (lo, hi) = j.turn.band();
-                let placed = if r.x >= lo && r.x <= hi {
+                let position = if r.x >= lo && r.x <= hi {
                     "You are on the right side."
                 } else if j.turn == crate::course::Turn::Left {
                     "Steer left to get there."
@@ -823,13 +822,10 @@ impl Ride {
                 } else {
                     String::new()
                 };
-                return format!(
-                    "{} turn in {}. Be in {}, under {}. {placed}{speed}",
-                    sentence_start(j.turn.word()),
-                    metres_words(d),
-                    j.turn.place(),
-                    speed_words(TURN_SPEED)
-                );
+                let turn = sentence_start(j.turn.word());
+                let distance = metres_words(d);
+                let be_in = be_in_line(j.turn);
+                return format!("{turn} turn in {distance}. {be_in} {position}{speed}");
             }
         }
         if let Some(i) = w.next_leaves() {
@@ -855,12 +851,15 @@ impl Ride {
                 } else {
                     "Grab it"
                 };
-                return format!(
-                    "{} {side}, {} ahead. {verb} under {}.",
-                    self.parcel_word(),
-                    metres_words(d),
-                    speed_words(crate::world::GRAB_SPEED)
-                );
+                let parcel = self.parcel_word();
+                let distance = metres_words(d);
+                let limit = speed_words(crate::world::GRAB_SPEED);
+                let grab = if verb == "Make it" {
+                    format!("Make it under {limit}.")
+                } else {
+                    format!("Grab it under {limit}.")
+                };
+                return format!("{parcel} {side}, {distance} ahead. {grab}");
             }
         }
         if w.bike.motor() {
@@ -1107,11 +1106,10 @@ impl Ride {
                 self.call(
                     ctx,
                     "turn",
-                    format!(
-                        "{head} Be in {}, under {}.",
-                        j.turn.place(),
-                        speed_words(TURN_SPEED)
-                    ),
+                    {
+                        let be_in = be_in_line(j.turn);
+                        format!("{head} {be_in}")
+                    },
                     head,
                 );
             }
@@ -1278,10 +1276,11 @@ impl Ride {
                 self.call_queued(
                     ctx,
                     cue,
-                    format!(
-                        "{word}, {side}. Ride over it under {}.",
-                        speed_words(crate::world::GRAB_SPEED)
-                    ),
+                    {
+                        let limit = speed_words(crate::world::GRAB_SPEED);
+                        let ride = format!("Ride over it under {limit}.");
+                        format!("{word}, {side}. {ride}")
+                    },
                     format!("{word}, {side}."),
                 );
             }
@@ -1296,7 +1295,7 @@ impl Ride {
                     ctx,
                     "parcel_grab",
                     format!("Parcel grabbed, {}.", dollar_words(value)),
-                    format!("{} dollars.", value),
+                    format!("{value} dollars.", value = value),
                 );
             }
             WorldEvent::ParcelTooFast(_) => {
@@ -2083,6 +2082,13 @@ pub fn ride_points(par: f64, time: f64, stats: &crate::world::Stats) -> (u64, Ve
         ));
     }
     (total.max(0) as u64, parts)
+}
+
+/// "Be in the bike lane, under 22 kilometres an hour.", for a turn.
+fn be_in_line(turn: crate::course::Turn) -> String {
+    let limit = speed_words(TURN_SPEED);
+    let lane = turn.place();
+    format!("Be in {lane}, under {limit}.")
 }
 
 fn parcel_words(n: usize) -> String {

@@ -139,23 +139,78 @@ impl Species {
         }
     }
 
+    /// "a shore crab".
+    pub fn a_name(self) -> &'static str {
+        match self {
+            Species::Crab => "a shore crab",
+            Species::Periwinkle => "a periwinkle shell",
+            Species::Starfish => "a starfish",
+            Species::Anemone => "a sea anemone",
+            Species::Goby => "a little goby fish",
+            Species::Hermit => "a hermit crab",
+            Species::Shrimp => "a rock shrimp",
+            Species::Mussel => "a mussel",
+            Species::Cowrie => "a cowrie shell",
+            Species::Seahorse => "a seahorse",
+            Species::Octopus => "a baby octopus",
+            Species::Jelly => "a moon jellyfish",
+            Species::SandDollar => "a sand dollar",
+            Species::SeaSlug => "a sea slug",
+        }
+    }
+
     /// "shore crabs", for counts above one.
     pub fn plural(self) -> String {
-        match self {
-            Species::Starfish => "starfish".to_string(),
-            Species::Goby => "little goby fish".to_string(),
-            Species::Octopus => "baby octopuses".to_string(),
-            Species::Jelly => "moon jellyfish".to_string(),
-            other => format!("{}s", other.name()),
-        }
+        let text = match self {
+            Species::Crab => "shore crabs",
+            Species::Periwinkle => "periwinkle shells",
+            Species::Starfish => "starfish",
+            Species::Anemone => "sea anemones",
+            Species::Goby => "little goby fish",
+            Species::Hermit => "hermit crabs",
+            Species::Shrimp => "rock shrimps",
+            Species::Mussel => "mussels",
+            Species::Cowrie => "cowrie shells",
+            Species::Seahorse => "seahorses",
+            Species::Octopus => "baby octopuses",
+            Species::Jelly => "moon jellyfish",
+            Species::SandDollar => "sand dollars",
+            Species::SeaSlug => "sea slugs",
+        };
+        text.to_string()
     }
 
     /// "1 shore crab", "3 starfish".
     pub fn count_words(self, n: u32) -> String {
-        if n == 1 {
-            format!("1 {}", self.name())
-        } else {
-            format!("{n} {}", self.plural())
+        match (self, n) {
+            (Species::Crab, 1) => "1 shore crab".to_string(),
+            (Species::Crab, n) => format!("{n} shore crabs"),
+            (Species::Periwinkle, 1) => "1 periwinkle shell".to_string(),
+            (Species::Periwinkle, n) => format!("{n} periwinkle shells"),
+            (Species::Starfish, 1) => "1 starfish".to_string(),
+            (Species::Starfish, n) => format!("{n} starfish"),
+            (Species::Anemone, 1) => "1 sea anemone".to_string(),
+            (Species::Anemone, n) => format!("{n} sea anemones"),
+            (Species::Goby, 1) => "1 little goby fish".to_string(),
+            (Species::Goby, n) => format!("{n} little goby fish"),
+            (Species::Hermit, 1) => "1 hermit crab".to_string(),
+            (Species::Hermit, n) => format!("{n} hermit crabs"),
+            (Species::Shrimp, 1) => "1 rock shrimp".to_string(),
+            (Species::Shrimp, n) => format!("{n} rock shrimps"),
+            (Species::Mussel, 1) => "1 mussel".to_string(),
+            (Species::Mussel, n) => format!("{n} mussels"),
+            (Species::Cowrie, 1) => "1 cowrie shell".to_string(),
+            (Species::Cowrie, n) => format!("{n} cowrie shells"),
+            (Species::Seahorse, 1) => "1 seahorse".to_string(),
+            (Species::Seahorse, n) => format!("{n} seahorses"),
+            (Species::Octopus, 1) => "1 baby octopus".to_string(),
+            (Species::Octopus, n) => format!("{n} baby octopuses"),
+            (Species::Jelly, 1) => "1 moon jellyfish".to_string(),
+            (Species::Jelly, n) => format!("{n} moon jellyfish"),
+            (Species::SandDollar, 1) => "1 sand dollar".to_string(),
+            (Species::SandDollar, n) => format!("{n} sand dollars"),
+            (Species::SeaSlug, 1) => "1 sea slug".to_string(),
+            (Species::SeaSlug, n) => format!("{n} sea slugs"),
         }
     }
 
@@ -330,19 +385,30 @@ impl Conditions {
 
     /// "A sunny afternoon, on an ordinary low tide."
     pub fn describe(&self) -> String {
-        if self.time == TimeOfDay::Night {
-            return format!(
-                "A {} night under the full moon, on {}.",
-                self.weather.night_word(),
-                self.tide.words()
-            );
+        let tide = self.tide.words();
+        let sky = match (self.time, self.weather) {
+            (TimeOfDay::Night, Weather::Sunny) => "A clear night under the full moon",
+            (TimeOfDay::Night, Weather::Breezy) => "A breezy night under the full moon",
+            (TimeOfDay::Night, Weather::Foggy) => "A foggy night under the full moon",
+            (TimeOfDay::Night, Weather::Drizzle) => "A drizzly night under the full moon",
+            (TimeOfDay::Morning, Weather::Sunny) => "A sunny morning",
+            (TimeOfDay::Morning, Weather::Breezy) => "A breezy morning",
+            (TimeOfDay::Morning, Weather::Foggy) => "A foggy morning",
+            (TimeOfDay::Morning, Weather::Drizzle) => "A drizzly morning",
+            (TimeOfDay::Afternoon, Weather::Sunny) => "A sunny afternoon",
+            (TimeOfDay::Afternoon, Weather::Breezy) => "A breezy afternoon",
+            (TimeOfDay::Afternoon, Weather::Foggy) => "A foggy afternoon",
+            (TimeOfDay::Afternoon, Weather::Drizzle) => "A drizzly afternoon",
+            (TimeOfDay::Dusk, Weather::Sunny) => "A sunny evening at dusk",
+            (TimeOfDay::Dusk, Weather::Breezy) => "A breezy evening at dusk",
+            (TimeOfDay::Dusk, Weather::Foggy) => "A foggy evening at dusk",
+            (TimeOfDay::Dusk, Weather::Drizzle) => "A drizzly evening at dusk",
+        };
+        // The spring tide's words hold a comma, so they are part of the line.
+        match self.tide {
+            Tide::Spring => format!("{sky}, on a spring tide, the lowest of the month."),
+            _ => format!("{sky}, on {tide}."),
         }
-        format!(
-            "A {} {}, on {}.",
-            self.weather.word(),
-            self.time.word(),
-            self.tide.words()
-        )
     }
 
     /// "sunny afternoon", for the aquarium's notes.
@@ -728,16 +794,12 @@ impl Plan {
 
     /// "7 pools, about 2 minutes. Tonight's three: ..."
     pub fn summary(&self) -> String {
-        let mut text = format!(
-            "{} pools, about {} before the tide returns.",
-            self.pools,
-            minutes_words(self.tide_secs)
-        );
+        let pools = self.pools;
+        let time = minutes_words(self.tide_secs);
+        let mut text = format!("{pools} pools, about {time} before the tide returns.");
         if !self.targets.is_empty() {
-            text.push_str(&format!(
-                " Tonight's three species: {}.",
-                list_words(&self.targets.iter().map(|s| s.name()).collect::<Vec<_>>())
-            ));
+            let species = list_words(&self.targets.iter().map(|s| s.name()).collect::<Vec<_>>());
+            text.push_str(&format!(" Tonight's three species: {species}."));
         }
         text
     }

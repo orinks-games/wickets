@@ -558,18 +558,18 @@ impl Floor {
                     return;
                 };
                 let line = if self.run.practice() {
-                    format!("{} danced.", r.tune.name)
+                    format!("{tune} danced.", tune = r.tune.name)
                 } else {
                     Self::tune_line(&r)
                 };
                 if let Some(next) = self.run.plans.get(i + 1) {
+                    let title = next.tune.title();
                     let next = match self.mode {
-                        Mode::Ceili => format!(
-                            "Next figure, {}: {}.",
-                            FIGURES[(i + 1).min(FIGURES.len() - 1)].to_lowercase(),
-                            next.tune.title()
-                        ),
-                        _ => format!("Next, {}.", next.tune.title()),
+                        Mode::Ceili => {
+                            let figure = FIGURES[(i + 1).min(FIGURES.len() - 1)].to_lowercase();
+                            format!("Next figure, {figure}: {title}.")
+                        }
+                        _ => format!("Next, {title}."),
                     };
                     ctx.say(format!("{line} {next}"));
                 } else {

@@ -2006,13 +2006,15 @@ impl Hamlet {
             } => {
                 let c = crop(id);
                 let name = c.map_or("a crop", |c| c.name);
-                let mut s = if p.ripe() {
-                    format!("{name}, ripe")
+                // Each part is its own words, so each translates alone.
+                let stage = if p.ripe() {
+                    "ripe"
                 } else if *growth == 0 {
-                    format!("{name}, sown")
+                    "sown"
                 } else {
-                    format!("{name}, growing")
+                    "growing"
                 };
+                let mut s = format!("{name}, {stage}");
                 if !p.ripe() {
                     s.push_str(if *watered { ", watered" } else { ", dry" });
                 }
@@ -2023,7 +2025,10 @@ impl Hamlet {
             }
         };
         // Rows count from the lane: the first row you step into is row 1.
-        format!("Row {}, plot {}: {state}.", ROWS - r, c + 1)
+        let (row, plot) = (ROWS - r, c + 1);
+        let (row, plot) = (format!("Row {row}"), format!("plot {plot}"));
+        let crop = state;
+        format!("{row}, {plot}: {crop}.")
     }
 
     fn plot_at(&self) -> Option<usize> {
@@ -2110,7 +2115,7 @@ impl Hamlet {
         };
         self.events.push(Event::Cue("sow", Place::Fields));
         let name = crop(id).map_or("Seed", |c| c.name);
-        let mut line = format!("{} sown.", sentence_case(name));
+        let mut line = format!("{crop} sown.", crop = sentence_case(name));
         if let Some(c) = crop(id) {
             if c.season != self.season() {
                 line.push_str(&format!(" It grows slowly out of {}.", c.season.name()));
@@ -2168,7 +2173,10 @@ impl Hamlet {
                     self.eggs_waiting = 0;
                     self.add("eggs", n);
                     self.events.push(Event::Cue("hens", place));
-                    self.say(format!("{} gathered.", crate::buildings::count("eggs", n)));
+                    self.say(format!(
+                        "{eggs} gathered.",
+                        eggs = crate::buildings::count("eggs", n)
+                    ));
                 } else if !self.fed_hens {
                     self.fed_hens = true;
                     self.events.push(Event::Cue("feed", place));

@@ -645,16 +645,17 @@ impl Plan {
 
     /// "5 lanterns, 2 places to discover"
     pub fn summary(&self) -> String {
-        let places = match self.features.len() {
+        let discover = match self.features.len() {
             1 => "1 place to discover".to_string(),
             n => format!("{n} places to discover"),
         };
         let lanterns = if self.respawn {
             "lanterns that never run out".to_string()
         } else {
-            format!("{} lanterns", self.lanterns)
+            let n = self.lanterns;
+            format!("{n} lanterns")
         };
-        format!("{lanterns}, {places}")
+        format!("{lanterns}, {discover}")
     }
 
     /// "frogs, crickets and a loon"
@@ -1227,12 +1228,12 @@ impl Lake {
         match self.target() {
             Some(i) => {
                 let l = &self.lanterns[i];
-                let place = self.where_is(l.pos);
+                let spot = self.where_is(l.pos);
                 first.push(if self.plan.ordered {
                     let order = l.order;
-                    format!("Lantern {order} is lit {place}.")
+                    format!("Lantern {order} is lit {spot}.")
                 } else {
-                    format!("The nearest lantern is {place}.")
+                    format!("The nearest lantern is {spot}.")
                 });
             }
             None => first.push("The song is whole.".to_string()),

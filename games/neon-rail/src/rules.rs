@@ -1705,8 +1705,8 @@ impl Run {
         self.lane = next as usize;
         self.cue(cues::SHIFT);
         self.say(format!(
-            "{} lane.",
-            sentence(Lane::from_index(self.lane).name())
+            "{lane} lane.",
+            lane = sentence(Lane::from_index(self.lane).name())
         ));
     }
 
@@ -2062,8 +2062,8 @@ impl Run {
         }];
         match self.length() {
             Some(length) => run.push(format!(
-                "{} remaining.",
-                seconds((length - self.t).max(0.0))
+                "{left} remaining.",
+                left = seconds((length - self.t).max(0.0))
             )),
             None => {
                 if let Some(sector) = self.sector() {

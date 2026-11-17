@@ -256,10 +256,12 @@ pub fn catalog() -> Vec<(&'static str, String)> {
         } else {
             "When you hear it, a ghost is coming."
         };
-        v.push((
-            ghost(g),
-            format!("A ghost, {}: {}. {what}", g.name(), g.voice()),
-        ));
+        v.push((ghost(g), {
+            let ghost = g.name();
+            let label = format!("A ghost, {ghost}");
+            let voice = g.voice();
+            format!("{label}: {voice}. {what}")
+        }));
     }
     v.extend([
         (

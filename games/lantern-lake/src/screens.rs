@@ -134,14 +134,10 @@ pub fn challenge_run(ctx: &Ctx<Parlor>, period: Period) -> RunScreen {
 pub fn briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
     let (challenge, plan) = challenge_plan(ctx, period);
     let twist = plan.twist.expect("a challenge has a twist");
-    let pages = vec![format!(
-        "{}: {}. {}: {} Score: 1 a lantern, 2 a place. {}",
-        challenge.title(),
-        plan.summary(),
-        twist.name(),
-        twist.describe(),
-        challenge.resets()
-    )];
+    let score = "Score: 1 a lantern, 2 a place.";
+    let (title, summary) = (challenge.title(), plan.summary());
+    let (name, describe, resets) = (twist.name(), twist.describe(), challenge.resets());
+    let pages = vec![format!("{title}: {summary}. {name}: {describe} {score} {resets}")];
     let mut run = Some(challenge_run(ctx, period));
     Pages::briefing(pages).then(move |ctx| {
         if let Some(run) = run.take() {

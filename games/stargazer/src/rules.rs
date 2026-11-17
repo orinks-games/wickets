@@ -146,9 +146,12 @@ pub fn place_words(at: (i32, i32)) -> String {
     if at.1 >= ZENITH {
         "straight overhead".to_string()
     } else if at.1 == 0 {
-        format!("{}, on the horizon", compass(at.0))
+        let way = compass(at.0);
+        format!("{way}, on the horizon")
     } else {
-        format!("{}, {} degrees up", compass(at.0), at.1 * STEP_DEGREES)
+        let (way, degrees) = (compass(at.0), at.1 * STEP_DEGREES);
+        let up = format!("{degrees} degrees up");
+        format!("{way}, {up}")
     }
 }
 

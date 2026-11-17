@@ -1360,7 +1360,7 @@ impl Run {
         } else if self.lives == 0 {
             "No lives left.".to_string()
         } else {
-            format!("{} left.", lives(self.lives))
+            format!("{lives} left.", lives = lives(self.lives))
         };
         self.say(format!("Fell {}, into the net. {lives}", side.name()));
         if self.lives == 0 && !self.training() {

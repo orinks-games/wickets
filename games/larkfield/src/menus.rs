@@ -61,7 +61,10 @@ impl Menu for SeedMenu {
             .into_iter()
             .map(|(c, n)| {
                 let when = if c.season == season {
-                    format!("ripe in {} days", c.days)
+                    match c.days {
+                        1 => "ripe in 1 day".to_string(),
+                        days => format!("ripe in {days} days"),
+                    }
                 } else {
                     format!("a {} crop, slow now", c.season.name())
                 };
@@ -72,11 +75,14 @@ impl Menu for SeedMenu {
                 };
                 let id = c.id;
                 MenuItem::new(
-                    format!(
-                        "{}, {n} {}, {when}{again}",
-                        sentence_case(c.name),
-                        if n == 1 { "seed" } else { "seeds" }
-                    ),
+                    {
+                        let crop = sentence_case(c.name);
+                        let seeds = match n {
+                            1 => "1 seed".to_string(),
+                            n => format!("{n} seeds"),
+                        };
+                        format!("{crop}, {seeds}, {when}{again}")
+                    },
                     move |s: &mut SeedMenu, ctx: &mut Ctx<Parlor>| {
                         s.h.borrow_mut().sow(id);
                         ctx.pop();

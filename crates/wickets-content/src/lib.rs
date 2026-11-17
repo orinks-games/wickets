@@ -78,7 +78,7 @@ pub fn write_catalogs(full: bool) {
         if full {
             println!("cargo:rerun-if-changed={}", extra.display());
             if let Ok(more) = std::fs::read_to_string(&extra) {
-                text.push_str("\n");
+                text.push('\n');
                 text.push_str(without_header(&more));
             }
         }

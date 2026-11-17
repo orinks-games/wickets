@@ -104,13 +104,14 @@ impl Counter {
         self.challenge.is_some()
     }
 
-    /// What the main action does once a cup is served: the next guest,
-    /// or, after the last one, closing up.
-    fn next_words(&self) -> &'static str {
+    /// "Space welcomes the next guest.": the key, then what it does once a
+    /// cup is served: the next guest, or, after the last one, closing up.
+    fn next_line(&self, key: &str) -> String {
+        let pressed = sentence_start(key);
         if self.sitting.last() {
-            "closes the tea house"
+            format!("{pressed} closes the tea house.")
         } else {
-            "welcomes the next guest"
+            format!("{pressed} welcomes the next guest.")
         }
     }
 
@@ -236,13 +237,8 @@ impl Counter {
     /// "Shelf: Sencha. A Japanese green tea, grassy and bright."
     fn shelf_words(&self) -> String {
         let t = self.tea();
-        format!(
-            "Shelf: {}, {} of {}. {}",
-            t.name,
-            self.shelf_at + 1,
-            self.shelf.len(),
-            t.about
-        )
+        let (tea, at, of, about) = (t.name, self.shelf_at + 1, self.shelf.len(), t.about);
+        format!("Shelf: {tea}, {at} of {of}. {about}")
     }
 
     fn move_shelf(&mut self, ctx: &mut Ctx<Parlor>, down: bool) {
@@ -403,7 +399,7 @@ impl Counter {
             first.push_str(slip.words());
         }
         let mut money = if self.is_challenge() {
-            format!("{} points.", verdict.points)
+            format!("{points} points.", points = verdict.points)
         } else if tip > 0 {
             format!(
                 "{} and a tip of {}.",
@@ -420,7 +416,8 @@ impl Counter {
         let tail = self.save_cup(ctx, &v, tea, &verdict, pay + tip);
         if self.taught.insert(TAUGHT_NEXT) {
             let p = ctx.control_name(ParlorAction::Primary);
-            money.push_str(&format!(" {} {}.", sentence_start(&p), self.next_words()));
+            let next = self.next_line(&p);
+            money.push_str(&format!(" {next}"));
         }
         ctx.say(first.clone());
         ctx.say_queued(money.clone());
@@ -641,8 +638,9 @@ impl Counter {
         match s.phase {
             Phase::Arriving => first.push("a guest is coming in".to_string()),
             Phase::Choosing => {
-                first.push(format!("shelf: {}", self.tea().name));
-                first.push(format!("cup: {}", self.cup().name.to_lowercase()));
+                let (tea, cup) = (self.tea().name, self.cup().name);
+                first.push(format!("{tea} on the shelf"));
+                first.push(format!("{cup} ready"));
                 if !self.practice() {
                     first.push(format!(
                         "{} would like {}",
@@ -654,8 +652,12 @@ impl Counter {
             }
             Phase::Ready => {
                 let t = s.tea.unwrap_or(self.tea());
-                first.push(format!("{} in the pot, kettle cold", t.name));
-                first.push(format!("it wants {}", t.heat_words()));
+                let tea = t.name;
+                first.push(format!("{tea} in the pot"));
+                first.push("kettle cold".to_string());
+                let degrees = t.heat;
+                first.push(format!("it wants {degrees} degrees"));
+                first.push(t.when_words().to_string());
             }
             Phase::Heating => {
                 let t = s.tea.unwrap_or(self.tea());
@@ -678,7 +680,9 @@ impl Counter {
             Phase::Pouring => first.push(format!("{} of {} cups poured", s.poured, s.cups)),
             Phase::Served => {
                 let p = ctx.control_name(ParlorAction::Primary);
-                first.push(format!("cup served, {p} {}", self.next_words()));
+                first.push("cup served".to_string());
+                let next = self.next_line(&p);
+                first.push(next.trim_end_matches('.').to_string());
             }
         }
         if !self.is_challenge() && !self.practice() {
@@ -765,7 +769,7 @@ impl Counter {
                 )
             }
             Phase::Pouring => format!("{} pours the next cup.", sentence_start(&p)),
-            Phase::Served => format!("{} {}.", sentence_start(&p), self.next_words()),
+            Phase::Served => self.next_line(&p),
         };
         ctx.say(text);
     }
@@ -838,12 +842,13 @@ impl Counter {
             _ => {
                 sound::play(ctx, sound::NOPE);
                 let p = ctx.control_name(ParlorAction::Primary);
+                let pressed = sentence_start(&p);
                 let what = match self.service.phase {
-                    Phase::Ready => "puts the kettle on",
-                    Phase::Heating => "pours",
-                    Phase::Steeping => "lifts the leaves",
-                    Phase::Pouring => "pours the next cup",
-                    _ => self.next_words(),
+                    Phase::Ready => format!("{pressed} puts the kettle on."),
+                    Phase::Heating => format!("{pressed} pours."),
+                    Phase::Steeping => format!("{pressed} lifts the leaves."),
+                    Phase::Pouring => format!("{pressed} pours the next cup."),
+                    _ => self.next_line(&p),
                 };
                 // Once the cup is served, the tea is no longer on its way.
                 let lead = match self.service.phase {
@@ -852,7 +857,7 @@ impl Counter {
                     }
                     _ => "",
                 };
-                ctx.say(format!("{lead}{} {what}.", sentence_start(&p)));
+                ctx.say(format!("{lead}{what}"));
             }
         }
     }
@@ -1057,7 +1062,11 @@ impl State<Parlor> for Counter {
             Phase::Served => String::new(),
         };
         let mut text =
-            format!("{} {now} Nothing here can go wrong.", self.status(ctx)).replace("  ", " ");
+            {
+                let status = self.status(ctx);
+                let calm = "Nothing here can go wrong.";
+                format!("{status} {now} {calm}").replace("  ", " ")
+            };
         if let Some(ch) = &self.challenge {
             text.push_str(&format!(
                 " This is the {}. Leaving from the pause menu does not count it.",

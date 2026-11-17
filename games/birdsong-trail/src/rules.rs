@@ -89,6 +89,34 @@ pub fn sector_words(sector: u8) -> &'static str {
     }
 }
 
+/// "a wren ahead and to your right": who or what, and where it is.
+pub fn at_words(who: &str, sector: u8) -> String {
+    match sector % WAYS {
+        0 => format!("{who} straight ahead"),
+        1 => format!("{who} ahead and to your right"),
+        2 => format!("{who} to your right"),
+        3 => format!("{who} behind you and to your right"),
+        4 => format!("{who} behind you"),
+        5 => format!("{who} behind you and to your left"),
+        6 => format!("{who} to your left"),
+        _ => format!("{who} ahead and to your left"),
+    }
+}
+
+/// "A wren is ahead and to your right": who or what, and where it is.
+pub fn is_at_words(who: &str, sector: u8) -> String {
+    match sector % WAYS {
+        0 => format!("{who} is straight ahead"),
+        1 => format!("{who} is ahead and to your right"),
+        2 => format!("{who} is to your right"),
+        3 => format!("{who} is behind you and to your right"),
+        4 => format!("{who} is behind you"),
+        5 => format!("{who} is behind you and to your left"),
+        6 => format!("{who} is to your left"),
+        _ => format!("{who} is ahead and to your left"),
+    }
+}
+
 /// How to turn to face a sector: "Turn right once." or "" when ahead.
 pub fn turn_words(sector: u8) -> String {
     let times = |n: u8| match n {
@@ -109,7 +137,8 @@ pub fn distance_words(metres: f32) -> String {
     if metres.round() <= 1.0 {
         return "right beside you".to_string();
     }
-    format!("about {}", parlor_core::units::length(f64::from(metres)))
+    let length = parlor_core::units::length(f64::from(metres));
+    format!("about {length}")
 }
 
 fn dist(a: (f32, f32), b: (f32, f32)) -> f32 {

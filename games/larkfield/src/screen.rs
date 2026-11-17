@@ -184,10 +184,10 @@ impl HamletScreen {
         self.h.borrow_mut().start_work();
         let line = {
             let h = self.h.borrow();
-            let where_ = h.where_line();
+            let at = h.where_line();
             let need = h.needs_you();
             let mut parts: Vec<String> = lead.into_iter().collect();
-            parts.push(format!("Work starts. {where_}"));
+            parts.push(format!("Work starts. {at}"));
             if let Some(first) = need.first() {
                 parts.push(first.clone());
             }

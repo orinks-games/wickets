@@ -1447,7 +1447,7 @@ impl Run {
                 self.multiplier()
             ));
         } else {
-            first.push(format!("{} caught.", self.caught));
+            first.push(format!("{count} caught.", count = self.caught));
         }
         let mut second = Vec::new();
         if self.course.mode.scored() {

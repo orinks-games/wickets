@@ -578,8 +578,8 @@ impl Crack {
                     self.clock.reset();
                     sound::play(ctx, sound::TICK);
                     ctx.say(format!(
-                        "{} left.",
-                        sentence_start(&time_words(secs as f64))
+                        "{time} left.",
+                        time = sentence_start(&time_words(secs as f64))
                     ));
                 }
                 Ev::Noise { kind, x } => {

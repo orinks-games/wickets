@@ -436,7 +436,8 @@ impl Treat {
     /// The name with a count: "1 turkey scrap", "3 turkey scraps".
     pub fn count_words(self, n: u32) -> String {
         match (self, n) {
-            (t, 1) => format!("1 {}", t.name()),
+            (Treat::Turkey, 1) => "1 turkey scrap".to_string(),
+            (Treat::CheeseRind, 1) => "1 cheese rind".to_string(),
             (Treat::Turkey, n) => format!("{n} turkey scraps"),
             (Treat::CheeseRind, n) => format!("{n} cheese rinds"),
         }
@@ -1155,20 +1156,29 @@ pub fn points_words(n: u32) -> String {
 /// Where something is from the mouse, in cells: "3 cells left and 1 up",
 /// "2 cells right", "on your cell".
 pub fn offset_words(dx: i32, dy: i32) -> String {
-    let cells = |n: i32| {
-        if n == 1 {
-            "1 cell".to_string()
-        } else {
-            format!("{n} cells")
-        }
-    };
-    let h = if dx < 0 { "left" } else { "right" };
-    let v = if dy < 0 { "up" } else { "down" };
+    let (left, up) = (dx < 0, dy < 0);
     match (dx.abs(), dy.abs()) {
         (0, 0) => "on your cell".to_string(),
-        (a, 0) => format!("{} {h}", cells(a)),
-        (0, b) => format!("{} {v}", cells(b)),
-        (a, b) => format!("{} {h} and {b} {v}", cells(a)),
+        (1, 0) if left => "1 cell left".to_string(),
+        (1, 0) => "1 cell right".to_string(),
+        (a, 0) if left => format!("{a} cells left"),
+        (a, 0) => format!("{a} cells right"),
+        (0, 1) if up => "1 cell up".to_string(),
+        (0, 1) => "1 cell down".to_string(),
+        (0, b) if up => format!("{b} cells up"),
+        (0, b) => format!("{b} cells down"),
+        (1, b) => match (left, up) {
+            (true, true) => format!("1 cell left and {b} up"),
+            (true, false) => format!("1 cell left and {b} down"),
+            (false, true) => format!("1 cell right and {b} up"),
+            (false, false) => format!("1 cell right and {b} down"),
+        },
+        (a, b) => match (left, up) {
+            (true, true) => format!("{a} cells left and {b} up"),
+            (true, false) => format!("{a} cells left and {b} down"),
+            (false, true) => format!("{a} cells right and {b} up"),
+            (false, false) => format!("{a} cells right and {b} down"),
+        },
     }
 }
 

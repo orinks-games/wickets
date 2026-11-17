@@ -189,11 +189,10 @@ pub fn rule(ch: &Challenge) -> String {
 
 /// The pages read before a challenge run.
 pub fn briefing_pages(_ctx: &mut Ctx<Parlor>, ch: &Challenge) -> Vec<String> {
-    let mut pages = vec![format!(
-        "{}: {} Standard skimmer, no workshop parts or rank bonuses. Pays credits and parts.",
-        name(ch.period),
-        rule(ch)
-    )];
+    let (name, rule) = (name(ch.period), rule(ch));
+    let skimmer = "Standard skimmer, no workshop parts or rank bonuses.";
+    let pays = "Pays credits and parts.";
+    let mut pages = vec![format!("{name}: {rule} {skimmer} {pays}")];
     if ch.period == Period::Monthly {
         pages.extend(EVENT_LOG.iter().map(|p| p.to_string()));
     }

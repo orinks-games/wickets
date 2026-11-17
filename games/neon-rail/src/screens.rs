@@ -637,8 +637,8 @@ impl State<Parlor> for RunScreen {
                 ctx.say("Run live. Center lane.");
             }
         } else {
-            let route = self.route.map_or("Route", |r| r.name());
-            ctx.say(format!("{route} locked in. {lane} lane."));
+            let corridor = self.route.map_or("Route", |r| r.name());
+            ctx.say(format!("{corridor} locked in. {lane} lane."));
         }
     }
 

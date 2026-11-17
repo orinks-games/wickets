@@ -524,7 +524,14 @@ impl Night {
         order.sort_by(|&a, &b| self.seats[b].night.cmp(&self.seats[a].night));
         order
             .iter()
-            .map(|&i| format!("{} {}", self.seats[i].who.name(), self.seats[i].night))
+            .map(|&i| {
+                let (name, night) = (self.seats[i].who.name(), self.seats[i].night);
+                if name == "you" {
+                    format!("you have {night}")
+                } else {
+                    format!("{name} has {night}")
+                }
+            })
             .collect::<Vec<_>>()
             .join(", ")
     }
@@ -908,11 +915,11 @@ impl Table {
                 if !losers.is_empty() && report.pot > 0 {
                     cues.push((
                         0.0,
-                        Cue::Queue(format!(
-                            "{} lost {}.",
-                            sentence_start(&night_names(night, &losers)),
-                            report.pot
-                        )),
+                        Cue::Queue({
+                            let who = sentence_start(&night_names(night, &losers));
+                            let pot = report.pot;
+                            format!("{who} lost {pot}.")
+                        }),
                     ));
                 }
             }

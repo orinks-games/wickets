@@ -48,7 +48,15 @@ fn ring(ctx: &mut Ctx<Parlor>, peal: &mut Peal, ringer: &mut Ringer) -> Answer {
     sound::play(ctx, sound::ROPE);
     let bells = peal.row.clone();
     let answer = peal.ring().unwrap_or_default();
-    let words = format!("{}: {}.", row_words(&bells), answer.words_for(SMALL.places));
+    let row = row_words(&bells);
+    // The answer is part of the line, so the line translates whole.
+    let words = match (answer.in_place, answer.misplaced) {
+        (0, 0) if SMALL.places == 2 => format!("Bells {row}: Neither bell is in the peal."),
+        (0, 0) => format!("Bells {row}: None of these bells is in the peal."),
+        (0, m) => format!("Bells {row}: None in place, {m} misplaced."),
+        (i, 0) => format!("Bells {row}: {i} in place, none misplaced."),
+        (i, m) => format!("Bells {row}: {i} in place, {m} misplaced."),
+    };
     ringer.row(&bells, Some(answer), Some(words));
     let due = ringer.due();
     play_cues(ctx, due);

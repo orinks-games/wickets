@@ -220,8 +220,8 @@ impl RunScreen {
             }
         }
         parts.push(format!(
-            "{} starts.",
-            sentence_start(&ctx.control_name(ParlorAction::Primary))
+            "{pressed} starts.",
+            pressed = sentence_start(&ctx.control_name(ParlorAction::Primary))
         ));
         let mut text = parts.join(" ");
         if !text.ends_with('.') {

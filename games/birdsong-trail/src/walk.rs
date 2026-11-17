@@ -12,7 +12,8 @@ use crate::birds::{notes_words, Note};
 use crate::challenge::{self, CHALLENGES_NAME};
 use crate::guide::{self, Guide, Learned};
 use crate::rules::{
-    compass, distance_words, run_seed, sector, sector_words, turn_words, Ev, Phase, Walk,
+    at_words, compass, distance_words, is_at_words, run_seed, sector, turn_words,
+    Ev, Phase, Walk,
 };
 use crate::trails::Trail;
 use crate::{days, sound, HELP, ID, TITLE_NAME};
@@ -180,20 +181,21 @@ impl WalkScreen {
 
     fn intro(&self) -> String {
         let n = self.walk.birds.len();
-        let birds = if n == 1 {
-            "1 bird is".to_string()
+        let singing = if n == 1 {
+            "1 bird is singing.".to_string()
         } else {
-            format!("{n} birds are")
+            format!("{n} birds are singing.")
         };
         match self.mode {
             Mode::Practice => "Practice glade. A chickadee sings just ahead of you, and a wagtail off to the right. Walk toward the chickadee.".to_string(),
-            _ => format!(
-                "{}, {}. {} {birds} singing. {} is at the trail's end, straight ahead.",
-                sentence_start(self.walk.trail.name()),
-                self.walk.season.name(),
-                self.walk.trail.opening(self.walk.season),
-                sentence_start(self.walk.trail.end_name()),
-            ),
+            _ => {
+                let trail = sentence_start(self.walk.trail.name());
+                let season = self.walk.season.name();
+                let opening = self.walk.trail.opening(self.walk.season);
+                let end = sentence_start(self.walk.trail.end_name());
+                let ahead = format!("{end} is at the trail's end, straight ahead.");
+                format!("{trail}, {season}. {opening} {singing} {ahead}")
+            }
         }
     }
 
@@ -253,18 +255,18 @@ impl WalkScreen {
         }
         parts.push(format!("facing {}", compass(w.facing)));
         let (sector, d) = w.end_whereabouts();
-        parts.push(format!(
-            "the trail's end {}, {}",
-            sector_words(sector),
-            distance_words(d)
-        ));
-        let place = match self.mode {
+        let at = at_words("the trail's end", sector);
+        let distance = distance_words(d);
+        parts.push(format!("{at}, {distance}"));
+        let outing = match self.mode {
             Mode::Trail(_) | Mode::Challenge(_) => {
-                format!("{}, {}", w.trail.name(), w.season.name())
+                let (trail, season) = (w.trail.name(), w.season.name());
+                format!("{trail}, {season}")
             }
             Mode::Practice => "the practice glade".to_string(),
         };
-        let more = format!("{place}, {} of {} befriended", w.friends(), w.birds.len());
+        let (friends, birds) = (w.friends(), w.birds.len());
+        let more = format!("{outing}, {friends} of {birds} befriended");
         let _ = ctx;
         vec![
             end_sentence(&sentence_start(&parts.join(", "))),
@@ -291,20 +293,16 @@ impl WalkScreen {
                     format!("{turn} Then walk toward it.")
                 };
                 let _ = ctx;
-                format!(
-                    "{name} is {}, {}. {walk}",
-                    sector_words(s),
-                    distance_words(d)
-                )
+                let at = is_at_words(&name, s);
+                let distance = distance_words(d);
+                format!("{at}, {distance}. {walk}")
             }
             None => {
                 let (s, d) = self.walk.end_whereabouts();
-                format!(
-                    "Every bird here is a friend. The trail's end is {}, {}. {}",
-                    sector_words(s),
-                    distance_words(d),
-                    turn_words(s)
-                )
+                let at = is_at_words("The trail's end", s);
+                let distance = distance_words(d);
+                let turn = turn_words(s);
+                format!("Every bird here is a friend. {at}, {distance}. {turn}")
                 .trim_end()
                 .to_string()
             }
@@ -322,16 +320,16 @@ impl WalkScreen {
             } else {
                 b.species.a_name()
             };
-            lines.push(format!("{who} {}, {}", sector_words(s), distance_words(d)));
+            let at = at_words(&who, s);
+            let distance = distance_words(d);
+            lines.push(format!("{at}, {distance}"));
         }
         let (s, d) = self.walk.end_whereabouts();
-        lines.push(format!(
-            "{} {}, {}",
-            self.walk.trail.end_name(),
-            sector_words(s),
-            distance_words(d)
-        ));
-        format!("Nearby: {}.", lines.join("; "))
+        let at = at_words(self.walk.trail.end_name(), s);
+        let distance = distance_words(d);
+        lines.push(format!("{at}, {distance}"));
+        let lines = lines.join("; ");
+        format!("Nearby: {lines}.")
     }
 
     fn key_lines(&mut self, ctx: &mut Ctx<Parlor>, i: usize, missed: bool) -> String {
@@ -474,8 +472,10 @@ impl WalkScreen {
                     } else {
                         // Which way the path lies, from where you face.
                         let w = &self.walk;
-                        let path = sector_words(sector(w.facing, (w.x, w.y), (0.0, w.y)));
-                        lines.push(format!("{} The path is {path}.", w.trail.edge()));
+                        let s_path = sector(w.facing, (w.x, w.y), (0.0, w.y));
+                        let edge = w.trail.edge();
+                        let path = is_at_words("The path", s_path);
+                        lines.push(format!("{edge} {path}."));
                     }
                 }
                 Ev::Turned(f) => {
@@ -593,11 +593,11 @@ impl WalkScreen {
             1 => ", 1 new in your field guide".to_string(),
             n => format!(", {n} new in your field guide"),
         };
-        let place = w.trail.name().to_string();
+        let outing = w.trail.name().to_string();
         let done = if home {
-            format!("Home from {place}")
+            format!("Home from {outing}")
         } else {
-            format!("Walk done: {place}")
+            format!("Walk done: {outing}")
         };
         format!(
             "{done}. {} of {} birds befriended{new}.",
@@ -617,12 +617,13 @@ impl WalkScreen {
             .collect();
         let songs = self.learned.iter().filter(|(_, l)| l.new_verse).count();
         if !friends.is_empty() {
-            let songs = match songs {
+            let verses = match songs {
                 0 => "No new songs this time.".to_string(),
                 1 => "1 new song for your guide.".to_string(),
                 n => format!("{n} new songs for your guide."),
             };
-            pages.push(format!("Befriended: {}. {songs}", friends.join(", ")));
+            let friends = friends.join(", ");
+            pages.push(format!("Befriended: {friends}. {verses}"));
         }
         let open: Vec<&str> = Trail::ALL
             .iter()

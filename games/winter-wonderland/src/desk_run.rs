@@ -166,7 +166,7 @@ impl DeskRun {
             String::new()
         };
         let (from, age, words) = (l.from, l.age, l.words());
-        format!("{late}{from}, age {age}, writes: {words}{sound}")
+        format!("{late}{from}, age {age}, writes. {words}{sound}")
     }
 
     fn briefing(&self, ctx: &Ctx<Parlor>) -> String {
@@ -220,7 +220,7 @@ impl DeskRun {
             ];
         }
         let here = s.here();
-        let place = if here.gone {
+        let spot = if here.gone {
             "wrapped and gone"
         } else if here.shakes == 0 {
             "not shaken yet"
@@ -237,7 +237,7 @@ impl DeskRun {
             None => "Every letter is answered.".to_string(),
         };
         vec![
-            format!("Box {} of {}, {place}. {letter}", s.at + 1, s.shelf.len()),
+            format!("Box {} of {}, {spot}. {letter}", s.at + 1, s.shelf.len()),
             format!(
                 "Stack {}. {} answered. Score {}.",
                 s.spec.level,

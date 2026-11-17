@@ -807,8 +807,60 @@ impl Species {
     }
 
     /// "a robin", "an eastern screech owl".
+    /// "a chickadee", "an indigo bunting": the name with its article, as one phrase.
     pub fn a_name(&self) -> String {
-        a(self.name)
+        let phrase = match self.id {
+            "robin" => "a robin",
+            "wren" => "a wren",
+            "blackbird" => "a blackbird",
+            "song-thrush" => "a song thrush",
+            "chickadee" => "a chickadee",
+            "cardinal" => "a cardinal",
+            "great-tit" => "a great tit",
+            "nuthatch" => "a nuthatch",
+            "woodpecker" => "a great spotted woodpecker",
+            "chiffchaff" => "a chiffchaff",
+            "blackcap" => "a blackcap",
+            "willow-warbler" => "a willow warbler",
+            "wood-thrush" => "a wood thrush",
+            "cuckoo" => "a cuckoo",
+            "redwing" => "a redwing",
+            "junco" => "a dark-eyed junco",
+            "waxwing" => "a waxwing",
+            "skylark" => "a skylark",
+            "meadowlark" => "a meadowlark",
+            "goldfinch" => "a goldfinch",
+            "yellowhammer" => "a yellowhammer",
+            "swallow" => "a barn swallow",
+            "bobolink" => "a bobolink",
+            "indigo-bunting" => "an indigo bunting",
+            "song-sparrow" => "a song sparrow",
+            "mourning-dove" => "a mourning dove",
+            "snow-bunting" => "a snow bunting",
+            "fieldfare" => "a fieldfare",
+            "red-winged-blackbird" => "a red-winged blackbird",
+            "reed-warbler" => "a reed warbler",
+            "sedge-warbler" => "a sedge warbler",
+            "marsh-wren" => "a marsh wren",
+            "yellowthroat" => "a common yellowthroat",
+            "reed-bunting" => "a reed bunting",
+            "bittern" => "a bittern",
+            "water-rail" => "a water rail",
+            "kingfisher" => "a kingfisher",
+            "dipper" => "a dipper",
+            "grey-wagtail" => "a grey wagtail",
+            "sand-martin" => "a sand martin",
+            "sandpiper" => "a common sandpiper",
+            "yellow-warbler" => "a yellow warbler",
+            "oriole" => "a Baltimore oriole",
+            "siskin" => "a siskin",
+            "canada-goose" => "a Canada goose",
+            "sandhill-crane" => "a sandhill crane",
+            "whooper-swan" => "a whooper swan",
+            "pink-footed-goose" => "a pink-footed goose",
+            _ => return a(self.name),
+        };
+        phrase.to_string()
     }
 
     pub fn sings_in(&self, season: Season) -> bool {

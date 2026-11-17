@@ -30,12 +30,23 @@ impl Default for SoundCheck {
     }
 }
 
+/// A sound's name, as its row says it.
+fn gift_label(kind: Kind) -> &'static str {
+    match kind {
+        Kind::Rattle => "Gift that would rattle",
+        Kind::Squish => "Gift that would squish",
+        Kind::Clink => "Gift that would clink",
+        Kind::Jingle => "Gift that would jingle",
+        Kind::Crinkle => "Gift that would crinkle",
+        Kind::Slosh => "Gift that would slosh",
+        Kind::Tick => "Gift that would tick",
+        Kind::Squeak => "Gift that would squeak",
+        Kind::Thump => "Gift that would thump",
+        Kind::Chime => "Gift that would chime",
+    }
+}
+
 fn item(label: String, key: &'static str, pos: Option<Vec3>) -> MenuItem<SoundCheck, Parlor> {
-    // Desk cues share a "Wish Desk: " prefix, so their names run to the first full stop.
-    let label = match label.strip_prefix("Wish Desk: ") {
-        Some(rest) => format!("Wish Desk: {}", rest.split('.').next().unwrap_or(rest)),
-        None => label.split([':', '.']).next().unwrap_or(&label).to_string(),
-    };
     MenuItem::new(label, move |s: &mut SoundCheck, ctx: &mut Ctx<Parlor>| {
         ctx.stop_speech();
         ctx.audio.stop(s.playing, 100);
@@ -78,46 +89,41 @@ impl Menu for SoundCheck {
             .iter()
             .map(|&k| {
                 item(
-                    format!(
-                        "Gift that would {}: {}. Wishes like {}.",
-                        k.name(),
-                        k.describe(),
-                        k.items().join(", ")
-                    ),
+                    gift_label(k).to_string(),
                     sound::gift(k),
                     Some(sound::GIFT_POS),
                 )
             })
             .collect();
         let cues: Vec<(String, &'static str, Option<Vec3>)> = vec![
-            ("Gift lands on the belt: a soft thump and a rustle of paper.".into(), sound::ARRIVE, None),
-            ("Right recipient: rising bells from their side. This one is on your left.".into(), sound::CORRECT, Some(spot_pos(Spot::Left))),
-            ("A gift sliding to a recipient. This one goes right.".into(), sound::SEND, Some(spot_pos(Spot::Right))),
-            ("Wrong guess: a low buzz from that side. It costs clock time. This one is straight ahead.".into(), sound::WRONG, Some(spot_pos(Spot::Ahead))),
-            ("Into the return sack, behind you.".into(), sound::SACK, Some(spot_pos(Spot::Sack))),
-            ("Near the edge: quick beeping. Send the gift fast.".into(), sound::WARN, None),
-            ("A gift falls off the belt and breaks.".into(), sound::FALL, None),
-            ("Clock running low: a tick each second near the end.".into(), sound::CLOCK, None),
-            ("Change of plans: a doorbell, when someone changes their wish.".into(), sound::CHANGE, None),
-            ("Nothing there: a dull knock.".into(), sound::EMPTY, None),
-            ("Shift complete.".into(), sound::CLEAR, None),
-            ("Wish Desk: a step along the shelf, heard where the box sits. This one is at the left end.".into(), sound::DESK_STEP, Some(sound::shelf_pos(0, 5))),
-            ("Wish Desk: the end of the shelf.".into(), sound::DESK_END, None),
-            ("Wish Desk: an empty place, where a gift was wrapped.".into(), sound::DESK_EMPTY, None),
-            ("Wish Desk: a shake of only straw. Shake again to hear the gift.".into(), sound::DESK_STRAW, None),
-            (format!("Wish Desk: wrapping paper, while you hold {}. Let go now and nothing is wrapped.", n(ParlorAction::Primary)), sound::DESK_WRAP, None),
-            ("Wish Desk: the wrong box, unwrapped and put back.".into(), sound::DESK_WRONG, None),
-            (format!("Midnight Countdown bells, answered with {}.", n(ParlorAction::Primary)), sound::inst(Inst::Bell), None),
-            (format!("Drum, answered with {}.", n(ParlorAction::Down)), sound::inst(Inst::Drum), None),
-            (format!("Horn, answered with {}.", n(ParlorAction::Up)), sound::inst(Inst::Horn), None),
-            ("Clock tick, on every beat.".into(), sound::TICK, None),
-            ("Tock, on the first beat of each bar.".into(), sound::TOCK, None),
-            ("Missed note: a deflating party blower.".into(), sound::MISS, None),
-            ("Wrong instrument: a short buzz.".into(), sound::OOPS, None),
-            ("A press with nothing to answer: a soft tap.".into(), sound::STRAY, None),
-            ("Score multiplier up: rising chimes.".into(), sound::COMBO, None),
-            ("A call answered perfectly: sparkles.".into(), sound::CLEAN, None),
-            ("Party energy low: a heartbeat.".into(), sound::LOW, None),
+            ("Gift lands on the belt".into(), sound::ARRIVE, None),
+            ("Right recipient".into(), sound::CORRECT, Some(spot_pos(Spot::Left))),
+            ("A gift sliding to a recipient".into(), sound::SEND, Some(spot_pos(Spot::Right))),
+            ("Wrong guess".into(), sound::WRONG, Some(spot_pos(Spot::Ahead))),
+            ("Into the return sack, behind you".into(), sound::SACK, Some(spot_pos(Spot::Sack))),
+            ("Near the edge".into(), sound::WARN, None),
+            ("A gift falls off the belt and breaks".into(), sound::FALL, None),
+            ("Clock running low".into(), sound::CLOCK, None),
+            ("Change of plans".into(), sound::CHANGE, None),
+            ("Nothing there".into(), sound::EMPTY, None),
+            ("Shift complete".into(), sound::CLEAR, None),
+            ("Wish Desk: a step along the shelf, heard where the box sits".into(), sound::DESK_STEP, Some(sound::shelf_pos(0, 5))),
+            ("Wish Desk: the end of the shelf".into(), sound::DESK_END, None),
+            ("Wish Desk: an empty place, where a gift was wrapped".into(), sound::DESK_EMPTY, None),
+            ("Wish Desk: a shake of only straw".into(), sound::DESK_STRAW, None),
+            ({ let pressed = n(ParlorAction::Primary); format!("Wish Desk: wrapping paper, while you hold {pressed}") }, sound::DESK_WRAP, None),
+            ("Wish Desk: the wrong box, unwrapped and put back".into(), sound::DESK_WRONG, None),
+            ({ let pressed = n(ParlorAction::Primary); format!("Midnight Countdown bells, answered with {pressed}") }, sound::inst(Inst::Bell), None),
+            ({ let pressed = n(ParlorAction::Down); format!("Drum, answered with {pressed}") }, sound::inst(Inst::Drum), None),
+            ({ let pressed = n(ParlorAction::Up); format!("Horn, answered with {pressed}") }, sound::inst(Inst::Horn), None),
+            ("Clock tick, on every beat".into(), sound::TICK, None),
+            ("Tock, on the first beat of each bar".into(), sound::TOCK, None),
+            ("Missed note".into(), sound::MISS, None),
+            ("Wrong instrument".into(), sound::OOPS, None),
+            ("A press with nothing to answer".into(), sound::STRAY, None),
+            ("Score multiplier up".into(), sound::COMBO, None),
+            ("A call answered perfectly".into(), sound::CLEAN, None),
+            ("Party energy low".into(), sound::LOW, None),
         ];
         items.extend(cues.into_iter().map(|(l, k, p)| item(l, k, p)));
         items.push(

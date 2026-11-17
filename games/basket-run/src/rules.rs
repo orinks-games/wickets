@@ -1413,20 +1413,24 @@ impl Run {
             ),
         };
         let cart = self.cart_lane();
-        let side = if cart == 0 { "left" } else { "right" };
+        let seconds = self.spec.duration as u32;
         let goal = match self.needed() {
-            0 => format!("{} seconds.", self.spec.duration as u32),
-            n => format!(
-                "Bank {n} of {} eggs in {} seconds.",
-                self.eggs_planned, self.spec.duration as u32
-            ),
+            0 => format!("{seconds} seconds."),
+            n => {
+                let planned = self.eggs_planned;
+                format!("Bank {n} of {planned} eggs in {seconds} seconds.")
+            }
         };
-        format!(
-            "{round} {} lanes, the cart in lane {} on the {side}. {goal} The basket holds {}. You are at the cart. Starting.",
-            self.spec.lanes,
-            cart + 1,
-            self.spec.capacity
-        )
+        let (lanes, lane) = (self.spec.lanes, cart + 1);
+        let field = if cart == 0 {
+            format!("{lanes} lanes, the cart in lane {lane} on the left.")
+        } else {
+            format!("{lanes} lanes, the cart in lane {lane} on the right.")
+        };
+        let capacity = self.spec.capacity;
+        let basket = format!("The basket holds {capacity}.");
+        let start = "You are at the cart. Starting.";
+        format!("{round} {field} {goal} {basket} {start}")
     }
 
     /// The next thing to land, if any.

@@ -152,7 +152,7 @@ impl Bowl {
     /// standing, the score, then the board and aim.
     pub fn status(&self) -> Vec<String> {
         let s = &self.session;
-        let place = match (&s.kind, s.position()) {
+        let spot = match (&s.kind, s.position()) {
             (_, None) => "Game over.".to_string(),
             (Kind::Leaves(l), Some((n, _))) => {
                 format!("Leave {n} of {}, {} made.", l.len(), s.made)
@@ -179,7 +179,7 @@ impl Bowl {
         };
         vec![
             format!(
-                "{place} {} Board {}, {}.",
+                "{spot} {} Board {}, {}.",
                 self.rack_line(),
                 s.stand,
                 aim_words(s.aim)

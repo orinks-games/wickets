@@ -175,9 +175,20 @@ fn files(path: &Path, keep: impl Fn(&Path) -> bool) -> Vec<PathBuf> {
 fn add_all(entries: &mut Vec<Entry>, reference: &str, lines: Vec<String>) {
     for line in lines {
         let mut pieces = vec![line.clone()];
-        let sentences = sentences(&line);
-        if sentences.len() > 1 {
-            pieces.extend(sentences.into_iter().map(str::to_string));
+        let cut = sentences(&line);
+        if cut.len() > 1 {
+            pieces.extend(cut.iter().map(|s| s.to_string()));
+        }
+        // A help page also stops after a quoted sentence, as in
+        // `such as "It needs a red 10." You keep holding the cards`.
+        for sentence in cut {
+            let quoted = after_quotes(sentence);
+            if quoted.len() > 1 {
+                for piece in quoted {
+                    pieces.push(piece.to_string());
+                    pieces.extend(sentences(piece).into_iter().map(str::to_string));
+                }
+            }
         }
         for piece in pieces {
             let piece = piece.trim().to_string();
@@ -222,6 +233,26 @@ pub fn sentences(text: &str) -> Vec<&str> {
     if !rest.is_empty() {
         out.push(rest);
     }
+    out
+}
+
+/// `text` cut after a closing quote that ends a sentence (`."`, `!"`,
+/// `?"`), at a space before a capital.
+fn after_quotes(text: &str) -> Vec<&str> {
+    let mut out = Vec::new();
+    let mut start = 0;
+    let chars: Vec<(usize, char)> = text.char_indices().collect();
+    for i in 2..chars.len() {
+        if chars[i - 1].1 == '"'
+            && matches!(chars[i - 2].1, '.' | '!' | '?')
+            && chars[i].1 == ' '
+            && chars.get(i + 1).is_some_and(|c| c.1.is_uppercase())
+        {
+            out.push(text[start..chars[i].0].trim());
+            start = chars[i + 1].0;
+        }
+    }
+    out.push(text[start..].trim());
     out
 }
 
@@ -487,6 +518,14 @@ mod tests {
                 "Walls say \"Open: up.\" Then you move.",
                 "1.5 seconds pass."
             ]
+        );
+    }
+
+    #[test]
+    fn quoted_sentences_also_stand_alone() {
+        assert_eq!(
+            after_quotes("It says \"Go.\" You keep it. Then \"no\" again."),
+            ["It says \"Go.\"", "You keep it. Then \"no\" again."]
         );
     }
 

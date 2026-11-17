@@ -206,10 +206,10 @@ impl Tower {
             ));
         }
         match p.hints_used {
-            0 if p.rules.hints && p.rows_left() >= 2 => parts.push(format!(
-                "{} trades a row for a hint",
-                ctx.control_name(ParlorAction::Hint)
-            )),
+            0 if p.rules.hints && p.rows_left() >= 2 => {
+                let pressed = ctx.control_name(ParlorAction::Hint);
+                parts.push(format!("{pressed} trades a row for a hint"));
+            }
             0 => {}
             1 => parts.push("1 hint used".to_string()),
             n => parts.push(format!("{n} hints used")),
@@ -241,11 +241,15 @@ impl Tower {
     /// meaning of knocks and taps the first time each is heard.
     fn answer_words(&mut self, answer: Answer) -> String {
         let n = self.peal.rows_used();
-        let mut text = format!(
-            "Row {n}: {}. {}.",
-            answer.words(),
-            sentence_start(&self.rows_left_words())
-        );
+        let left = sentence_start(&self.rows_left_words());
+        // The answer is part of the row's line, so the line translates whole.
+        let row = match (answer.in_place, answer.misplaced) {
+            (0, 0) => format!("Row {n}: None of these bells is in the peal."),
+            (0, m) => format!("Row {n}: None in place, {m} misplaced."),
+            (i, 0) => format!("Row {n}: {i} in place, none misplaced."),
+            (i, m) => format!("Row {n}: {i} in place, {m} misplaced."),
+        };
+        let mut text = format!("{row} {left}.");
         if answer.in_place > 0 && self.taught.insert(TAUGHT_KNOCK) {
             text.push_str(" In place means a right bell in its place.");
         }

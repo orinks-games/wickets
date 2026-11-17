@@ -40,7 +40,10 @@ pub fn rule(period: Period) -> String {
     match period {
         Period::Daily => format!("One draw one deal that can always be won. {score}"),
         Period::Weekly => format!("One draw three deal: the stock turns 3 cards at a time, and only the top one plays. It can always be won. {score}"),
-        Period::Monthly => format!("{MONTHLY_DEALS} draw one deals in a row, each one winnable. {score} Your total is the sum of the {MONTHLY_DEALS} deal scores."),
+        Period::Monthly => {
+            let total = format!("Your total is the sum of the {MONTHLY_DEALS} deal scores.");
+            format!("{MONTHLY_DEALS} draw one deals in a row, each one winnable. {score} {total}")
+        }
     }
 }
 

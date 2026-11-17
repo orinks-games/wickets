@@ -278,7 +278,9 @@ impl Play {
     /// One cat, for the status line: "ginger cat 3 cells left and 1 up".
     fn cat_line(&self, i: usize) -> String {
         let (dx, dy) = self.run.cat_offset(i);
-        format!("{} {}", self.run.cats[i].name, offset_words(dx, dy))
+        let cat = self.run.cats[i].name;
+        let offset = offset_words(dx, dy);
+        format!("{cat}, {offset}")
     }
 
     /// The status key, in layers. First: each cat, then crumbs and
@@ -992,10 +994,9 @@ impl State<Parlor> for Play {
                 self.open_line()
             )
         };
-        let mut text = format!(
-            "{now} {} Each crumb is {CRUMB_POINTS} points and a cleared pantry {CLEAR_BONUS}.",
-            self.controls(ctx)
-        );
+        let controls = self.controls(ctx);
+        let points = format!("Each crumb is {CRUMB_POINTS} points and a cleared pantry {CLEAR_BONUS}.");
+        let mut text = format!("{now} {controls} {points}");
         for c in &self.run.cats {
             text.push_str(&format!(" The {}: {}", c.name, cat_rule(c.kind)));
         }

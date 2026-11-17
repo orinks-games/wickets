@@ -180,7 +180,13 @@ pub fn per_hour_unit() -> &'static str {
 /// A road speed from kilometres an hour: "29 kilometres an hour" or
 /// "18 miles an hour".
 pub fn per_hour(kmh: f64) -> String {
-    format!("{} {}", per_hour_value(kmh), per_hour_unit())
+    let n = per_hour_value(kmh);
+    match (us(), n) {
+        (false, 1) => "1 kilometre an hour".to_string(),
+        (false, n) => format!("{n} kilometres an hour"),
+        (true, 1) => "1 mile an hour".to_string(),
+        (true, n) => format!("{n} miles an hour"),
+    }
 }
 
 /// A speed from metres a second as a road speed, as [`per_hour`].
@@ -191,12 +197,13 @@ pub fn speed(m_per_s: f64) -> String {
 /// A slow speed in metres or feet a second, with `decimals` places:
 /// "2.4 metres a second", "7.9 feet a second".
 pub fn per_second(m_per_s: f64, decimals: usize) -> String {
-    format!(
-        "{:.*} {} a second",
-        decimals,
-        from_metres(m_per_s),
-        plural()
-    )
+    let n = format!("{:.*}", decimals, from_metres(m_per_s));
+    match (us(), n.as_str()) {
+        (false, "1") => "1 metre a second".to_string(),
+        (false, _) => format!("{n} metres a second"),
+        (true, "1") => "1 foot a second".to_string(),
+        (true, _) => format!("{n} feet a second"),
+    }
 }
 
 /// The Units row for the Settings screen.

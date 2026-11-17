@@ -324,7 +324,16 @@ pub struct CourseInfo {
 impl CourseInfo {
     /// "600 metres from the station to the post office.", in the player's units.
     pub fn about(&self) -> String {
-        format!("{} {}.", parlor_core::units::route(self.length), self.way)
+        let length = parlor_core::units::route(self.length);
+        match self.id {
+            "station" => format!("{length} from the station to the post office."),
+            "market" => format!("{length} down Market Street, past the shops."),
+            "bank" => format!("{length} through the business district to Bank Square."),
+            _ => {
+                let way = self.way;
+                format!("{length} {way}.")
+            }
+        }
     }
 }
 

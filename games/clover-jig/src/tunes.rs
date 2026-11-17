@@ -94,6 +94,14 @@ impl Kind {
             Kind::Reel => "reel",
         }
     }
+
+    /// "a jig", for a tune's title.
+    pub fn phrase(self) -> &'static str {
+        match self {
+            Kind::Jig => "a jig",
+            Kind::Reel => "a reel",
+        }
+    }
 }
 
 /// One tune.
@@ -112,7 +120,9 @@ pub struct Tune {
 impl Tune {
     /// "The Turf Fire, a reel".
     pub fn title(&self) -> String {
-        format!("{}, a {}", self.name, self.kind.word())
+        let tune = self.name;
+        let kind = self.kind.phrase();
+        format!("{tune}, {kind}")
     }
 
     /// The sound key of part A (`b == false`) or part B.

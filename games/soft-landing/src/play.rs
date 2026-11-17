@@ -234,13 +234,10 @@ impl Descent {
             return vec![self.down_words(outcome)];
         }
         let first = if !f.started() {
-            format!(
-                "{}, waiting at {}, {}. {}",
-                self.where_words(),
-                units::length(f.altitude),
-                self.fuel_words(),
-                self.start_prompt(ctx)
-            )
+            let (moon, height) = (self.where_words(), units::length(f.altitude));
+            let (fuel, prompt) = (self.fuel_words(), self.start_prompt(ctx));
+            let waiting = format!("waiting at {height}");
+            format!("{moon}, {waiting}, {fuel}. {prompt}")
         } else {
             let s = f.speed();
             let motion = if s < -0.2 {

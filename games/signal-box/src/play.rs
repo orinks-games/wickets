@@ -350,12 +350,10 @@ impl Signal {
                 Ev::Wrong { call, got } => {
                     ctx.play_ui(UiSound::Error);
                     let key = Self::key(ctx, call.action());
-                    ctx.say(format!(
-                        "Not {}. {}: {}",
-                        got.word().to_lowercase(),
-                        call.word(),
-                        answer_words(&key, call)
-                    ));
+                    let wrong = got.word().to_lowercase();
+                    let right = call.word();
+                    let answer = answer_words(&key, call);
+                    ctx.say(format!("Not {wrong}. {right}: {answer}"));
                 }
                 Ev::Derailed(miss) => {
                     sound::play(ctx, sound::BRAKE);
@@ -553,7 +551,7 @@ pub fn gala_pages(shift: &Shift, saved: Option<ScoreResult>, pace: Pace) -> Vec<
     };
     vec![
         sentence_start(&score),
-        format!("{} through.", sentence_start(&specials)),
+        format!("{trains} through.", trains = sentence_start(&specials)),
     ]
 }
 

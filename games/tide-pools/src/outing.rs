@@ -91,11 +91,16 @@ fn rare_line(plan: &Plan) -> String {
     if rares.is_empty() || plan.rare_chance <= 0.0 {
         return String::new();
     }
-    let names: Vec<&str> = rares.iter().map(|s| s.name()).collect();
-    format!(
-        " On a day like this, you might find a {}.",
-        list_words(&names).replace(" and ", " or a ")
-    )
+    let names: Vec<&str> = rares.iter().map(|s| s.a_name()).collect();
+    match names.as_slice() {
+        [one] => format!(" On a day like this, you might find {one}."),
+        [first, second] => format!(" On a day like this, you might find {first} or {second}."),
+        [rest @ .., last] => {
+            let rest = rest.join(", ");
+            format!(" On a day like this, you might find {rest} or {last}.")
+        }
+        [] => String::new(),
+    }
 }
 
 /// The pages before an ordinary trip, then the trip.
@@ -154,23 +159,22 @@ pub fn challenge_briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
     let challenge = Challenge::current(ctx, crate::ID, period);
     let outing = challenge_outing(&challenge);
     let plan = &outing.plan;
-    let trip = format!(
-        "{} {} pools, about {}.",
-        plan.conditions.describe(),
-        plan.pools,
-        minutes_words(plan.tide_secs)
-    );
+    let conditions = plan.conditions.describe();
+    let pools = plan.pools;
+    let time = minutes_words(plan.tide_secs);
+    let trip = format!("{pools} pools, about {time}.");
+    let trip = format!("{conditions} {trip}");
     let page = match period {
         Period::Daily => {
             let names: Vec<String> = plan
                 .targets
                 .iter()
-                .map(|s| format!("a {}", s.name()))
+                .map(|s| s.a_name().to_string())
                 .collect();
+            let species = list_words(&names.iter().map(String::as_str).collect::<Vec<_>>());
+            let twist = plan.modifier.describe();
             format!(
-                "Tonight's three species: find {} on Rocky Point, worth 100 points more each. {} {trip}",
-                list_words(&names.iter().map(String::as_str).collect::<Vec<_>>()),
-                plan.modifier.describe()
+                "Tonight's three species: find {species} on Rocky Point, worth 100 points more each. {twist} {trip}"
             )
         }
         Period::Weekly => format!(
@@ -524,11 +528,9 @@ impl OutingScreen {
                     sound::play_at(ctx, sound::creature(species), sound::pool_at(offset, lean));
                     if offset == 0 {
                         if self.named.insert(species) {
-                            let text = format!(
-                                "{}: a {}.",
-                                sentence_start(species.sound_words()),
-                                species.name()
-                            );
+                            let sound = sentence_start(species.sound_words());
+                            let creature = species.a_name();
+                            let text = format!("{sound}: {creature}.");
                             ctx.say_queued(text);
                         }
                     } else if !self.lesson && self.first("neighbour") {
@@ -585,14 +587,12 @@ impl OutingScreen {
                     sound::play(ctx, sound::GATHER);
                     sound::play_at(ctx, sound::creature(species), Vec3::new(0.0, 0.4, 0.0));
                     if self.lesson {
-                        let text = sentence_start(&format!("a {}.", species.name()));
+                        let text = sentence_start(&format!("{}.", species.a_name()));
                         self.prompt(ctx, text);
                         continue;
                     }
-                    let mut text = format!(
-                        "{}. {points} points.",
-                        sentence_start(&format!("a {}", species.name()))
-                    );
+                    let creature = sentence_start(species.a_name());
+                    let mut text = format!("{creature}. {points} points.");
                     if species.rare() {
                         sound::play(ctx, sound::RARE);
                         text.push_str(" A rare find.");

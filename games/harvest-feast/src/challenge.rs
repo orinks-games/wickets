@@ -437,11 +437,9 @@ impl ChallengePlan {
             Period::Weekly => "Three courses on three, four, then five stations, each faster. Each course needs a star for the next.".to_string(),
             Period::Monthly => "Ten dishes, two on every station, the second waiting for the first.".to_string(),
         };
-        let what = match self.period {
-            Period::Monthly => "Rule",
-            _ => "Twist",
-        };
-        format!("{shape} {what}, {twist}")
+        // The twist names itself ("Rush hour: ..."), and stays a sentence of
+        // its own so it translates whole.
+        format!("{shape} {twist}")
     }
 
     /// A reminder of the twist for the kitchen's status and help.

@@ -530,7 +530,7 @@ impl Floor {
                     return;
                 };
                 let line = if self.run.practice() {
-                    format!("{} danced.", r.tune.name)
+                    format!("{tune} danced.", tune = r.tune.name)
                 } else {
                     Self::tune_line(&r)
                 };

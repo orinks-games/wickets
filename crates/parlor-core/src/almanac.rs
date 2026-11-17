@@ -412,12 +412,16 @@ pub fn month_name(month: u32) -> &'static str {
 
 /// "Tuesday 3 November".
 pub fn date_words(date: Date) -> String {
-    format!(
-        "{} {} {}",
-        weekday_name(date.weekday()),
-        date.day,
-        month_name(date.month)
-    )
+    let (day, month) = (date.day, month_name(date.month));
+    match date.weekday() % 7 {
+        0 => format!("Monday {day} {month}"),
+        1 => format!("Tuesday {day} {month}"),
+        2 => format!("Wednesday {day} {month}"),
+        3 => format!("Thursday {day} {month}"),
+        4 => format!("Friday {day} {month}"),
+        5 => format!("Saturday {day} {month}"),
+        _ => format!("Sunday {day} {month}"),
+    }
 }
 
 /// "1st", "2nd", "23rd".

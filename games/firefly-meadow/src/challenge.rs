@@ -107,11 +107,9 @@ impl ChallengeGame for Almanac {
 pub fn briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
     let ch = Challenge::current(ctx, ID, period);
     let plan = plan(ctx, period);
-    let pages = vec![format!(
-        "{}: {} Challenges are always summer evenings, whatever the season outside.",
-        name(period),
-        rule(period, &plan)
-    )];
+    let (name, rule) = (name(period), rule(period, &plan));
+    let summer = "Challenges are always summer evenings, whatever the season outside.";
+    let pages = vec![format!("{name}: {rule} {summer}")];
     let seed = ch.seed;
     let mut plan = Some(plan);
     Pages::briefing(pages).then(move |ctx| {

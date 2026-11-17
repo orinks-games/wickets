@@ -130,8 +130,8 @@ impl Menu for MoreRides {
                 ctx.push(Ride::free_ride(c.bike, Rng::from_time().next_u64()))
             })
             .help(format!(
-                "{} of Downtown with no clock, to learn the street.",
-                parlor_core::units::route(ride::FREE_LENGTH)
+                "{length} of Downtown with no clock, to learn the street.",
+                length = parlor_core::units::route(ride::FREE_LENGTH)
             )),
         );
         items.push(back());

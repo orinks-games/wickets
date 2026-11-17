@@ -109,11 +109,11 @@ pub fn save_outing(ctx: &mut Ctx<Parlor>, lake: &Lake) -> Vec<String> {
             Records::record(ctx, ID, "nights", j.nights as u64);
         }
     }
-    let (found, places, lanterns) = (j.places(), Feature::ALL.len(), j.lanterns);
+    let (found, total, lanterns) = (j.places(), Feature::ALL.len(), j.lanterns);
     lines.push(if lanterns == 1 {
-        format!("Your journal: {found} of {places} places found, 1 lantern gathered in all.")
+        format!("Your journal: {found} of {total} places found, 1 lantern gathered in all.")
     } else {
-        format!("Your journal: {found} of {places} places found, {lanterns} lanterns gathered in all.")
+        format!("Your journal: {found} of {total} places found, {lanterns} lanterns gathered in all.")
     });
     lines
 }

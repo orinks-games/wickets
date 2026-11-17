@@ -343,13 +343,20 @@ impl PlayScreen {
             first.push(format!("holding {}", self.held_words()));
         }
         first.push(match spot_of(self.cursor) {
-            Spot::Pile(_) => format!("on {}", place_name(self.cursor).to_lowercase()),
-            _ => format!("on the {}", place_name(self.cursor).to_lowercase()),
+            Spot::Pile(p) => {
+                let pile = p + 1;
+                format!("on pile {pile}")
+            }
+            Spot::Waste => "on the stock".to_string(),
+            _ => {
+                let foundation = place_name(self.cursor).to_lowercase();
+                format!("on the {foundation}")
+            }
         });
         let mut more = vec![
-            format!("{} of {DECK} on the foundations", t.on_foundations()),
+            format!("{up} of {DECK} on the foundations", up = t.on_foundations()),
             to_turn(t.stock.len()),
-            format!("{} face down", t.face_down()),
+            format!("{down} face down", down = t.face_down()),
             moves_words(self.game.moves),
         ];
         if self.game.free_turns {
@@ -357,7 +364,8 @@ impl PlayScreen {
         }
         if let Some(job) = &self.job {
             if job.deals() > 1 {
-                more.push(format!("deal {} of {}", job.index + 1, job.deals()));
+                let (deal, of) = (job.index + 1, job.deals());
+                more.push(format!("deal {deal} of {of}"));
             }
         }
         vec![

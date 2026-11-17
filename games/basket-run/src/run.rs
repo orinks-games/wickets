@@ -241,11 +241,10 @@ impl RunScreen {
         self.score.start(ctx, &sound::SCORE, mood);
         sound::listen_from(ctx, self.run.lane, self.lanes());
         self.beacon_in = 0.5;
-        let intro = format!(
-            "{} {} skips the wait.",
-            self.run.round_intro(),
-            sentence_start(&ctx.control_name(ParlorAction::Primary))
-        );
+        let round = self.run.round_intro();
+        let pressed = sentence_start(&ctx.control_name(ParlorAction::Primary));
+        let skip = format!("{pressed} skips the wait.");
+        let intro = format!("{round} {skip}");
         // Nothing falls until the announcement has been heard.
         if matches!(self.run.phase, Phase::LeadIn(_)) {
             self.run.phase = Phase::LeadIn(lead_in_for(&intro));
@@ -437,7 +436,7 @@ impl RunScreen {
                 ctx.audio.play(sound::BELL, Bus::EFFECTS);
                 if lost > 0 {
                     ctx.audio.play(sound::SPILL, Bus::EFFECTS);
-                    let note = format!("{} lost.", sentence_start(&eggs_phrase(lost)));
+                    let note = format!("{eggs} lost.", eggs = sentence_start(&eggs_phrase(lost)));
                     self.tell(ctx, format!("Time. {note}"));
                     self.time_note = Some(note);
                 } else {
@@ -539,7 +538,13 @@ impl RunScreen {
             }
             Event::PatternBroken { pattern } => {
                 ctx.audio.play(sound::PATTERN_BROKEN, Bus::EFFECTS);
-                self.chatter(ctx, format!("{} broken.", sentence_start(pattern.name())));
+                self.chatter(
+                    ctx,
+                    format!(
+                        "{pattern} broken.",
+                        pattern = sentence_start(pattern.name())
+                    ),
+                );
             }
         }
     }

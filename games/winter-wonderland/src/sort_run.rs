@@ -342,10 +342,9 @@ impl SortRun {
                 } else {
                     cue_at(ctx, sound::SEND, spot);
                     cue_at(ctx, sound::CORRECT, spot);
-                    ctx.say(format!(
-                        "{} is delighted. Plus {points}.{rest}",
-                        self.who(spot)
-                    ));
+                    let who = self.who(spot);
+                    let plus = format!("Plus {points}.");
+                    ctx.say(format!("{who} is delighted. {plus}{rest}"));
                 }
             }
             SortEvent::Wrong { spot, penalty } => {
@@ -361,8 +360,11 @@ impl SortRun {
                 cue(ctx, sound::CLOCK);
                 if !self.told_low {
                     self.told_low = true;
-                    let unit = if n == 1 { "second" } else { "seconds" };
-                    ctx.say_queued(format!("{n} {unit} left!"));
+                    if n == 1 {
+                        ctx.say_queued("1 second left!");
+                    } else {
+                        ctx.say_queued(format!("{n} seconds left!"));
+                    }
                 }
             }
             SortEvent::MindChanged { who } => {
