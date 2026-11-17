@@ -62,8 +62,6 @@ English, in Latin letters. Chinese has no plural forms; write one form.
 | Play again | 再来一局 | The results row. |
 | Records (the menu) | 纪录 | The title row that reads every best. |
 | streak | 连胜 | Days or runs in a row, as challenges count them: “连胜3天”. A streak of catches or hits inside one run is 连击, like combo. |
-| advent calendar | 降临节日历 | “降临节日历的第13扇门后”. |
-| ornament | 挂饰 | What an advent door or a win hangs on the tree. |
 | bonus | 奖励分 | “奖励分{bonus}。” |
 | pause menu | 暂停菜单 | |
 | keepsake | 纪念品 | Something a game gives you to keep: “新纪念品：{name}。” |

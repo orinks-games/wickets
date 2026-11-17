@@ -75,7 +75,6 @@ English.
 | Hear the results again | Riascolta i risultati | Results row. |
 | the story's Happening | Fuori programma | Masculine. The errand or riddle on each story list: "il Fuori programma della storia". Happening today stays "Oggi nel salone". |
 | stamp, stamp book | timbro, album dei timbri | What a Happening earns. |
-| advent calendar | calendario dell'Avvento | Masculine. The lobby's December calendar: "dietro la porta 13 del calendario dell'Avvento". |
 | cue | segnale | Masculine. A sound that tells the player when to act: "al segnale". |
 | Back to the parlor | Torna al salone | A title row. |
 | the Echo | l'Eco | Masculine. The story's machine in the cellar: "sentire l'Eco". |
@@ -85,15 +84,10 @@ English.
 | the Conservatory | la Serra | A room of the parlor in the story. |
 | the Card Room | la Sala delle Carte | A room of the parlor in the story. |
 | From the story (Play section) | Dalla storia | The Play menu section for story games. |
-| ornament | decorazione | Feminine. What an advent door hangs on the lobby tree: "appende una decorazione all'albero". |
-| the lobby tree, Trim the tree | l'albero dell'ingresso, Addobba l'albero | Its rows: Cima, Alta, Centrale, Bassa, Fondo. |
 | post (a score), Post scores | inviare, Invia i punteggi | Values: chiedi, sempre, mai. |
 | rank, place (on a board) | posto | "posto 3 su 40". |
 | guest | ospite | "Gioca come ospite". |
 | report (a problem), game log | segnalazione, registro del gioco | Feminine; masculine. |
-| Gift Sort, the Wish Desk, Midnight Countdown | Smista regali, il banco dei desideri, Conto alla rovescia di mezzanotte | Winter Wonderland's parts, also named in advent lines. |
-| Grandma (Grandma's Grudge) | la nonna | The game name stays English. |
-| deal (cards), Advent deals | smazzata, Smazzate dell'Avvento | Feminine. Always "smazzata", never "mano": "una smazzata a pesca tre". |
 | Unlocks (the menu) | Sblocchi | Masculine plural. |
 | Next course, Next floor, Next round, Next night (results row) | Prossima portata, Prossimo piano, Prossimo giro, Prossima notte | "Prossimo/Prossima" plus the noun. |
 | Opening the X challenge. | Apertura della sfida di X. | |

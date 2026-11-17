@@ -77,7 +77,6 @@ Clover Jig's caller words (Left, Right, Hop, Turn, Forward, Back) stay English. 
 | journal | 日記 | Firefly Meadow, Stargazer and Lantern Lake: 「星の日記」. |
 | stamp, stamp book | スタンプ、スタンプ帳 |  |
 | ornament | オーナメント | 「オーナメントを飾ります」. |
-| advent calendar | アドベントカレンダー | Door N is 「N番の扉」. |
 | life, lives | ライフ | 「ライフ3」「ライフを一つ失います」. |
 | From the story | ストーリーから | The Play submenu. |
 | the Calendar Hall, the Arcade Floor, the Study, the Conservatory, the Card Room | 暦の間、アーケードフロア、書斎、温室、カードの間 | The story's rooms. |

@@ -62,7 +62,6 @@ English.
 | Records | Recordes | The menu. |
 | keepsake | lembrança | |
 | deal (cards) | mão | Feminine. One deal of a card game. |
-| advent calendar | calendário do Advento | The lobby's December calendar. "atrás da porta 13 do calendário do Advento". |
 | Leave the challenge | Sair do desafio | The pause menu row. |
 | bonus | bônus | Masculine, same in plural. |
 | lantern | lanterna | |
@@ -71,10 +70,8 @@ English.
 | combo | combo | Masculine. |
 | lane | faixa | Feminine. Where raiders, reindeer, eggs and the like come down. "na faixa da esquerda". Only for lanes: a music track is "música". |
 | spoken call-outs | avisos falados | The setting. "Avisos falados: ligado." |
-| ornament | enfeite | Masculine. Advent calendar and tree ornaments. |
 | errand | tarefa | A Happening errand in story mode. |
 | post (a score) | publicar | "Publicar pontuações", "Não publicar". |
-| Grandma | a vovó | The character's role in Grandma's Grudge and the advent calendar. |
 | the Echo | o Echo | Theo's machine in the cellar. A name: kept in English, masculine. |
 | the Calendar Hall | a Sala do Calendário | A room of the parlor. |
 | the Arcade Floor | o Andar dos Fliperamas | A room of the parlor. |

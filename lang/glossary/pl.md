@@ -65,7 +65,6 @@ English.
 | lantern | lampion | Masculine. A light in a game (skating, festivals, Lantern Lake). Not "lampa", which is the door light. A lantern carried by hand in a story is "latarnia". |
 | the Lantern Night (Haunted Hallways), Lantern Night (Liberty Lights) | Noc Latarni, Noc lampionów | Two different events: Lantern Jack's night is "Noc Latarni" in the game and the story alike. |
 | twist (a challenge's extra rule) | utrudnienie | Neuter. "Utrudnienie: nerwowy strażnik." |
-| Advent calendar, its door | Kalendarz adwentowy, okienko | Neuter "okienko", not "drzwi": "okienko 5 jest otwarte". |
 | ornament, the lobby tree | ozdoba, choinka w holu | Feminine. |
 | Records | Rekordy | The title menu row. "Rekordy odczytują je wszystkie." |
 | pause menu | menu pauzy | Neuter. "Escape włącza pauzę." |

@@ -69,10 +69,8 @@ English.
 | record | kỷ lục | Same word as best. |
 | streak | chuỗi | "chuỗi ngày", "chuỗi trúng". |
 | pause menu | menu tạm dừng | |
-| advent calendar | lịch Mùa Vọng | "cửa lịch Mùa Vọng". |
 | lantern | đèn lồng | Not the door lamp, which is "đèn": always the full "đèn lồng". The lantern walk is "Rước đèn lồng". |
 | Lunar New Year, Lantern Festival | Tết Nguyên đán, Tết Nguyên Tiêu | The night: "Đêm Nguyên Tiêu". Not "Tết Âm lịch". |
-| Grandma | Bà | The character; "Bà" capitalised. |
 | bonus | thưởng | "Thưởng {bonus}." |
 | star | sao | The 1 to 3 stars a run earns. |
 | {a} of {b} | {a} trên {b} | Never a slash. |

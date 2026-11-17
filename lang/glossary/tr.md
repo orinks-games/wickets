@@ -78,16 +78,12 @@ English.
 | in a row | art arda | "Art arda en çok isabet". |
 | twist | sürpriz kural | A challenge's changed rule: "haftanın sürpriz kuralıyla". |
 | bonus | bonus | "100 bonus puan". |
-| Advent calendar | Advent takvimi | The lobby row; doors are "kapı 1", "kapı 25". |
 | ornament | süs | What a door hangs on the lobby tree. |
-| Grandma | Büyükanne | Character role, capitalised: "Büyükanne'nin". |
-| Santa | Noel Baba |  |
 | the Echo | The Echo | Theo's machine: a name, kept in English: "The Echo'nun". |
 | Calendar Hall, Arcade Floor, the Study, the Conservatory, the Card Room | Takvim Odası, Atari Katı, Çalışma Odası, Limonluk, Kart Odası | The parlor's rooms in the story. |
 | From the story | Hikâyeden | The Play menu group: "Oyna'da, Hikâyeden altında". |
 | lantern | fener | Lantern Lake's and the skating ponds' lanterns, and the Lantern Festival ("Fener Festivali"). Not the same word as lamp. |
 | mince pie | Noel turtası |  |
-| Christmas Eve, New Year's Eve | Noel arifesi, Yılbaşı gecesi |  |
 | night (numbered) | gece {n} | "Gece 3", "gece 4'ten itibaren", like level: no "3. gece". |
 | Gift Sort, the Wish Desk, Midnight Countdown | Hediye Ayırma, Dilek Masası, Gece Yarısı Geri Sayımı | Winter Wonderland's modes, translated: "Gece Yarısı Geri Sayımı'nda". |
 | constellations | Büyükayı, Küçükayı, Kassiopeia, Kefeus, Ejderha, Orion, Boğa, İkizler, Büyük Köpek, Perseus, Aslan, Çoban, Başak, Yengeç, Çalgı, Kuğu, Kartal, Akrep, Yay, Pegasus, Andromeda, Koç | Stargazer. Star names (Vega, Sirius, Polaris...) stay as written. |

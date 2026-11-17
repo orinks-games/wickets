@@ -54,8 +54,6 @@ English.
 | bonus | Bonus | Masculine. |
 | record | Rekord | Masculine. "Neuer Rekord." |
 | star (rating) | Stern | Masculine. |
-| advent calendar | Adventskalender | Masculine. "hinter Tür 13 des Adventskalenders". |
-| Grandma | Oma | Without article, like a name: "Oma hat ...". |
 | title, title menu | Titelmenü | Neuter. A game's title screen. "on the title" is "im Titelmenü": "Zurück zum Titelmenü". |
 | briefing | Briefing | Neuter. The short page before a run. |
 | Records | Rekorde | The menu. |
@@ -71,17 +69,12 @@ English.
 | sound file | Sounddatei | Feminine. |
 | row (a menu row) | Zeile | Feminine. "eine Zeile Tauschen". |
 | round (a stage inside a run) | Durchgang | Masculine. Keeps "Runde" free for a run: "Durchgang 3". |
-| Santa | der Weihnachtsmann | |
-| Christmas Eve, New Year's Eve | Heiligabend, Silvester | |
 | the Calendar Hall | die Kalenderhalle | A room of the parlor. "in der Kalenderhalle". |
 | the Arcade Floor | die Spielhalle | A room of the parlor. |
 | the Study | das Arbeitszimmer | A room of the parlor. |
-| the Conservatory | das Gewächshaus | A room of the parlor. Not "Wintergarten", which is Rooftop Garden's December event. |
 | the Card Room | das Kartenzimmer | A room of the parlor. |
 | From the story (Play submenu) | Aus der Geschichte | |
 | the Echo (Theo's machine in the story) | The Echo | A game name, kept English and neuter: "The Echo spielt etwas ab." |
-| ornament (advent calendar, lobby tree) | Schmuckstück | Neuter. "hängt ein Schmuckstück an den Baum". |
-| Christmas Day | erster Weihnachtstag | "am ersten Weihnachtstag". The day after is "zweiter Weihnachtstag". |
 | lane (where things come down) | Bahn | Feminine. "in der Bahn links". |
 | report (Report a problem) | Meldung | Feminine. "Ein Problem melden", "Die Meldung wurde gesendet." |
 | game log | Spielprotokoll | Neuter. |

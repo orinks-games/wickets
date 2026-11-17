@@ -55,8 +55,6 @@ English.
 | keepsake | souvenir | Masculine. "L'étagère à souvenirs". |
 | Play again | Rejouer | The results row. |
 | streak | série | Feminine. |
-| Grandma | Mamie | No article: "Mamie lève son verre." |
-| advent calendar | calendrier de l'Avent | "derrière la porte 13 du calendrier de l'Avent". |
 | pause menu | menu pause | |
 | briefing | briefing | Masculine. The short talk before a run: "réentendre le briefing". |
 | the title, title menu | écran titre | Masculine. A game's own menu: "Retour à l'écran titre", "te ramène à l'écran titre". |
@@ -73,8 +71,6 @@ English.
 | Spoken call-outs | Annonces | The setting: "Annonces : activé." |
 | lane | couloir | Masculine. A game's lane (traffic, drops, rails). Bowling lane is "piste". |
 | the Echo | l'Écho | Masculine, capital É. The parlor's machine in the story. |
-| Santa | le père Noël | |
-| Christmas Eve | le soir de Noël | "Le soir de Noël à l'atelier." |
 | New Year's Eve | le réveillon du Nouvel An | |
 | the Calendar Hall | la Salle du Calendrier | A room of the parlor in the story. |
 | the Arcade Floor | la Salle d'Arcade | |
@@ -84,7 +80,6 @@ English.
 | From the story (Play menu group) | De l'histoire | "dans Jouer, sous De l'histoire". |
 | firefly, jar (Firefly Meadow) | luciole, bocal | Feminine, masculine. Species: Dipper "la Plongeuse", Twin Spark "la Double Étincelle", Triple Twinkle "la Triple Scintille". Chord names: "la Triade d'été". Notes C D E G A: do, ré, mi, sol, la. |
 | Firefly Meadow places | le pré de la maison, le verger, la rive du ruisseau, le champ de foin | The four meadows. Journal is "Carnet". Midsummer night is "Nuit de la Saint-Jean". |
-| ornament | décoration | Feminine. What an advent door or a win hangs on the tree: "accroche une décoration au sapin". |
 | tree (holiday) | sapin | Masculine. "le sapin de l'entrée". |
 | errand | course | Feminine. A Happening errand: "Course faite." |
 | hint | indice | Masculine. What H gives: "H donne un indice." |
