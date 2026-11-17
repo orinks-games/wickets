@@ -25444,23 +25444,36 @@ msgstr "Sürüş bitti."
 msgid "Ride over. {sentence_start} in {name}. {record}"
 msgstr "Sürüş bitti. {name} semtinde {sentence_start}. {record}"
 
-#. placeholders: {dollar_words2}
-#. one sentence of a longer line
-msgid "You have {dollar_words2} to spend in the bike shop."
-msgstr "Bisiklet dükkânında harcayacak {dollar_words2} paranız var."
+#. placeholders: {wallet}
+msgid "You have {wallet} to spend in the bike shop."
+msgstr "Bisiklet dükkânında harcanacak para: {wallet}."
 
-#. placeholders: {parcel_words}, {dollar_words}
+#. placeholders: {cash}
 #. one sentence of a longer line
-msgid "{parcel_words} grabbed, {dollar_words}."
-msgstr "{parcel_words} alındı, {dollar_words}."
+msgid "No parcels grabbed, {cash}."
+msgstr "Paket alınmadı, {cash}."
 
-#. placeholders: {parcel_words}, {dollar_words}, {dollar_words2}
-msgid ""
-"{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
-"in the bike shop."
-msgstr ""
-"{parcel_words} alındı, {dollar_words}. Bisiklet dükkânında harcayacak "
-"{dollar_words2} paranız var."
+#. placeholders: {cash}, {spend}
+msgid "No parcels grabbed, {cash}. {spend}"
+msgstr "Paket alınmadı, {cash}. {spend}"
+
+#. placeholders: {cash}
+#. one sentence of a longer line
+msgid "1 parcel grabbed, {cash}."
+msgstr "1 paket alındı, {cash}."
+
+#. placeholders: {cash}, {spend}
+msgid "1 parcel grabbed, {cash}. {spend}"
+msgstr "1 paket alındı, {cash}. {spend}"
+
+#. placeholders: {n}, {cash}
+#. one sentence of a longer line
+msgid "{n} parcels grabbed, {cash}."
+msgstr "{n} paket alındı, {cash}."
+
+#. placeholders: {n}, {cash}, {spend}
+msgid "{n} parcels grabbed, {cash}. {spend}"
+msgstr "{n} paket alındı, {cash}. {spend}"
 
 #. placeholders: {distance_words}, {dollar_words}
 msgid "Endless ride: {distance_words}, {dollar_words}"
@@ -25517,11 +25530,6 @@ msgstr ""
 #. one sentence of a longer line
 msgid "Quick drops: {quick}."
 msgstr "Hızlı teslimatlar: {quick}."
-
-#. placeholders: {wallet}
-#. one sentence of a longer line
-msgid "You have {wallet} to spend in the bike shop."
-msgstr "Bisiklet dükkânında harcanacak para: {wallet}."
 
 #. placeholders: {crash_time}
 #. one sentence of a longer line
@@ -25705,9 +25713,13 @@ msgstr "bahşişlerden {tips}"
 msgid "{leaves} for leaf piles"
 msgstr "yaprak yığınları için {leaves}"
 
-#. placeholders: {cost}, {trim_end_matches}
-msgid "{cost} lost for {trim_end_matches}"
-msgstr ""
+#. placeholders: {cost}
+msgid "{cost} lost for 1 crash"
+msgstr "1 kaza için {cost} kayıp"
+
+#. placeholders: {cost}, {n}
+msgid "{cost} lost for {n} crashes"
+msgstr "{n} kaza için {cost} kayıp"
 
 #. placeholders: {limit}
 msgid "Be in the bike lane, under {limit}."
@@ -25726,16 +25738,6 @@ msgstr "{distance} sonra sola dönüş."
 #. placeholders: {distance}
 msgid "Right turn in {distance}."
 msgstr "{distance} sonra sağa dönüş."
-
-msgid "No parcels"
-msgstr "Paket yok"
-
-msgid "1 parcel"
-msgstr "1 paket"
-
-#. placeholders: {n}
-msgid "{n} parcels"
-msgstr "{n} paket"
 
 msgid "No crashes."
 msgstr "Kaza yok."
@@ -51323,6 +51325,14 @@ msgstr "Hiçbir lobuta değmedi.{left}"
 msgid "{count} down, a split.{left}"
 msgstr "{count} lobut düştü, ayrık.{left}"
 
+#. placeholders: {left}
+msgid "1 pin down.{left}"
+msgstr "1 lobut devrildi.{left}"
+
+#. placeholders: {n}, {left}
+msgid "{n} pins down.{left}"
+msgstr "{n} lobut devrildi.{left}"
+
 #. placeholders: {line}, {made}, {total}
 msgid "{line} {made} of {total} made."
 msgstr "{line} {total} dizilimden {made} tanesi yapıldı."
@@ -51416,33 +51426,45 @@ msgstr "1 spare"
 msgid "Angle into the pocket: board {stand}, {aim_words}."
 msgstr "Açıyla cebe yönelin: tahta {stand}, {aim_words}."
 
-msgid "the pin"
-msgstr "lobut"
+#. one sentence of a longer line
+msgid "A clean release there should take the pin."
+msgstr "Oradan temiz bir bırakış lobutu devirmeli."
+
+#. placeholders: {stand}, {aim}
+#. one sentence of a longer line
+msgid "Try board {stand}, {aim}."
+msgstr "Tahta {stand} deneyin, {aim}."
+
+#. placeholders: {stand}, {aim}
+msgid "Try board {stand}, {aim}. A clean release there should take the pin."
+msgstr ""
+"Tahta {stand} deneyin, {aim}. Oradan temiz bir bırakış lobutu devirmeli."
 
 #. placeholders: {down}
-msgid "all {down}"
-msgstr "{down} lobutun hepsi"
+#. one sentence of a longer line
+msgid "A clean release there should take all {down}."
+msgstr "Oradan temiz bir bırakış {down} lobutun hepsini devirmeli."
+
+#. placeholders: {stand}, {aim}, {down}
+msgid ""
+"Try board {stand}, {aim}. A clean release there should take all {down}."
+msgstr ""
+"Tahta {stand} deneyin, {aim}. Oradan temiz bir bırakış {down} lobutun "
+"hepsini devirmeli."
 
 #. placeholders: {down}, {count}
-msgid "{down} of {count}"
-msgstr "{down} lobut, toplam {count}"
-
-#. placeholders: {all}
 #. one sentence of a longer line
-msgid "A clean release there should take {all}."
-msgstr "Oradan temiz bir bırakış {all} devirmeli."
-
-#. placeholders: {stand}, {aim_words}
-#. one sentence of a longer line
-msgid "Try board {stand}, {aim_words}."
-msgstr "Tahta {stand} deneyin, {aim_words}."
-
-#. placeholders: {stand}, {aim_words}, {all}
-msgid ""
-"Try board {stand}, {aim_words}. A clean release there should take {all}."
+msgid "A clean release there should take {down} of {count}."
 msgstr ""
-"Tahta {stand} deneyin, {aim_words}. Oradan temiz bir bırakış {all} "
-"devirmeli."
+"Oradan temiz bir bırakış {count} lobuttan {down} tanesini devirmeli."
+
+#. placeholders: {stand}, {aim}, {down}, {count}
+msgid ""
+"Try board {stand}, {aim}. A clean release there should take {down} of "
+"{count}."
+msgstr ""
+"Tahta {stand} deneyin, {aim}. Oradan temiz bir bırakış {count} lobuttan "
+"{down} tanesini devirmeli."
 
 msgid "strike"
 msgstr "strike"
@@ -94135,6 +94157,49 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "You have {dollar_words2} to spend in the bike shop."
+#~ msgstr "Bisiklet dükkânında harcayacak {dollar_words2} paranız var."
+
+#~ msgid "{parcel_words} grabbed, {dollar_words}."
+#~ msgstr "{parcel_words} alındı, {dollar_words}."
+
+#~ msgid ""
+#~ "{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
+#~ "in the bike shop."
+#~ msgstr ""
+#~ "{parcel_words} alındı, {dollar_words}. Bisiklet dükkânında harcayacak "
+#~ "{dollar_words2} paranız var."
+
+#~ msgid "No parcels"
+#~ msgstr "Paket yok"
+
+#~ msgid "1 parcel"
+#~ msgstr "1 paket"
+
+#~ msgid "{n} parcels"
+#~ msgstr "{n} paket"
+
+#~ msgid "the pin"
+#~ msgstr "lobut"
+
+#~ msgid "all {down}"
+#~ msgstr "{down} lobutun hepsi"
+
+#~ msgid "{down} of {count}"
+#~ msgstr "{down} lobut, toplam {count}"
+
+#~ msgid "A clean release there should take {all}."
+#~ msgstr "Oradan temiz bir bırakış {all} devirmeli."
+
+#~ msgid "Try board {stand}, {aim_words}."
+#~ msgstr "Tahta {stand} deneyin, {aim_words}."
+
+#~ msgid ""
+#~ "Try board {stand}, {aim_words}. A clean release there should take {all}."
+#~ msgstr ""
+#~ "Tahta {stand} deneyin, {aim_words}. Oradan temiz bir bırakış {all} "
+#~ "devirmeli."
 
 #~ msgid "{n} cards, the {first} down to the {last}"
 #~ msgstr "{n} kart, {first} kartından {last} kartına kadar"

@@ -23083,21 +23083,36 @@ msgstr "骑行结束。"
 msgid "Ride over. {sentence_start} in {name}. {record}"
 msgstr "骑行结束。{name}，{sentence_start}。{record}"
 
-#. placeholders: {dollar_words2}
-#. one sentence of a longer line
-msgid "You have {dollar_words2} to spend in the bike shop."
-msgstr "你有{dollar_words2}可以在车行花。"
+#. placeholders: {wallet}
+msgid "You have {wallet} to spend in the bike shop."
+msgstr "你有{wallet}可以在车行花。"
 
-#. placeholders: {parcel_words}, {dollar_words}
+#. placeholders: {cash}
 #. one sentence of a longer line
-msgid "{parcel_words} grabbed, {dollar_words}."
-msgstr "拿到{parcel_words}，{dollar_words}。"
+msgid "No parcels grabbed, {cash}."
+msgstr "没有拿到包裹，{cash}。"
 
-#. placeholders: {parcel_words}, {dollar_words}, {dollar_words2}
-msgid ""
-"{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
-"in the bike shop."
-msgstr "拿到{parcel_words}，{dollar_words}。你有{dollar_words2}可以在车行花。"
+#. placeholders: {cash}, {spend}
+msgid "No parcels grabbed, {cash}. {spend}"
+msgstr "没有拿到包裹，{cash}。{spend}"
+
+#. placeholders: {cash}
+#. one sentence of a longer line
+msgid "1 parcel grabbed, {cash}."
+msgstr "拿到1个包裹，{cash}。"
+
+#. placeholders: {cash}, {spend}
+msgid "1 parcel grabbed, {cash}. {spend}"
+msgstr "拿到1个包裹，{cash}。{spend}"
+
+#. placeholders: {n}, {cash}
+#. one sentence of a longer line
+msgid "{n} parcels grabbed, {cash}."
+msgstr "拿到{n}个包裹，{cash}。"
+
+#. placeholders: {n}, {cash}, {spend}
+msgid "{n} parcels grabbed, {cash}. {spend}"
+msgstr "拿到{n}个包裹，{cash}。{spend}"
 
 #. placeholders: {distance_words}, {dollar_words}
 msgid "Endless ride: {distance_words}, {dollar_words}"
@@ -23152,11 +23167,6 @@ msgstr ""
 #. one sentence of a longer line
 msgid "Quick drops: {quick}."
 msgstr "快速投递：{quick}次。"
-
-#. placeholders: {wallet}
-#. one sentence of a longer line
-msgid "You have {wallet} to spend in the bike shop."
-msgstr "你有{wallet}可以在车行花。"
 
 #. placeholders: {crash_time}
 #. one sentence of a longer line
@@ -23336,9 +23346,13 @@ msgstr "小费{tips}"
 msgid "{leaves} for leaf piles"
 msgstr "落叶堆{leaves}"
 
-#. placeholders: {cost}, {trim_end_matches}
-msgid "{cost} lost for {trim_end_matches}"
-msgstr "{trim_end_matches}扣{cost}"
+#. placeholders: {cost}
+msgid "{cost} lost for 1 crash"
+msgstr "1次撞车扣{cost}"
+
+#. placeholders: {cost}, {n}
+msgid "{cost} lost for {n} crashes"
+msgstr "{n}次撞车扣{cost}"
 
 #. placeholders: {limit}
 msgid "Be in the bike lane, under {limit}."
@@ -23356,16 +23370,6 @@ msgstr "{distance}后左转。"
 #. placeholders: {distance}
 msgid "Right turn in {distance}."
 msgstr "{distance}后右转。"
-
-msgid "No parcels"
-msgstr "没有包裹"
-
-msgid "1 parcel"
-msgstr "1个包裹"
-
-#. placeholders: {n}
-msgid "{n} parcels"
-msgstr "{n}个包裹"
 
 msgid "No crashes."
 msgstr "没有撞车。"
@@ -46465,6 +46469,14 @@ msgstr "所有瓶都没打到。{left}"
 msgid "{count} down, a split.{left}"
 msgstr "倒了{count}个，分瓶。{left}"
 
+#. placeholders: {left}
+msgid "1 pin down.{left}"
+msgstr "倒了1个瓶。{left}"
+
+#. placeholders: {n}, {left}
+msgid "{n} pins down.{left}"
+msgstr "倒了{n}个瓶。{left}"
+
 #. placeholders: {line}, {made}, {total}
 msgid "{line} {made} of {total} made."
 msgstr "{line}{total}组补中{made}组。"
@@ -46558,31 +46570,39 @@ msgstr "1个补中"
 msgid "Angle into the pocket: board {stand}, {aim_words}."
 msgstr "斜进球袋：第{stand}板，{aim_words}。"
 
-msgid "the pin"
-msgstr "这个瓶"
+#. one sentence of a longer line
+msgid "A clean release there should take the pin."
+msgstr "在那里干净出手应该能打倒这个瓶。"
+
+#. placeholders: {stand}, {aim}
+#. one sentence of a longer line
+msgid "Try board {stand}, {aim}."
+msgstr "试试第{stand}板，{aim}。"
+
+#. placeholders: {stand}, {aim}
+msgid "Try board {stand}, {aim}. A clean release there should take the pin."
+msgstr "试试第{stand}板，{aim}。在那里干净出手应该能打倒这个瓶。"
 
 #. placeholders: {down}
-msgid "all {down}"
-msgstr "全部{down}个"
+#. one sentence of a longer line
+msgid "A clean release there should take all {down}."
+msgstr "在那里干净出手应该能全部打倒{down}个。"
+
+#. placeholders: {stand}, {aim}, {down}
+msgid ""
+"Try board {stand}, {aim}. A clean release there should take all {down}."
+msgstr "试试第{stand}板，{aim}。在那里干净出手应该能全部打倒{down}个。"
 
 #. placeholders: {down}, {count}
-msgid "{down} of {count}"
-msgstr "{count}个中的{down}个"
-
-#. placeholders: {all}
 #. one sentence of a longer line
-msgid "A clean release there should take {all}."
-msgstr "在那里干净出手应该能打倒{all}。"
+msgid "A clean release there should take {down} of {count}."
+msgstr "在那里干净出手应该能打倒{count}个中的{down}个。"
 
-#. placeholders: {stand}, {aim_words}
-#. one sentence of a longer line
-msgid "Try board {stand}, {aim_words}."
-msgstr "试试第{stand}板，{aim_words}。"
-
-#. placeholders: {stand}, {aim_words}, {all}
+#. placeholders: {stand}, {aim}, {down}, {count}
 msgid ""
-"Try board {stand}, {aim_words}. A clean release there should take {all}."
-msgstr "试试第{stand}板，{aim_words}。在那里干净出手应该能打倒{all}。"
+"Try board {stand}, {aim}. A clean release there should take {down} of "
+"{count}."
+msgstr "试试第{stand}板，{aim}。在那里干净出手应该能打倒{count}个中的{down}个。"
 
 msgid "strike"
 msgstr "全中"
@@ -84945,6 +84965,48 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "You have {dollar_words2} to spend in the bike shop."
+#~ msgstr "你有{dollar_words2}可以在车行花。"
+
+#~ msgid "{parcel_words} grabbed, {dollar_words}."
+#~ msgstr "拿到{parcel_words}，{dollar_words}。"
+
+#~ msgid ""
+#~ "{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
+#~ "in the bike shop."
+#~ msgstr "拿到{parcel_words}，{dollar_words}。你有{dollar_words2}可以在车行花。"
+
+#~ msgid "{cost} lost for {trim_end_matches}"
+#~ msgstr "{trim_end_matches}扣{cost}"
+
+#~ msgid "No parcels"
+#~ msgstr "没有包裹"
+
+#~ msgid "1 parcel"
+#~ msgstr "1个包裹"
+
+#~ msgid "{n} parcels"
+#~ msgstr "{n}个包裹"
+
+#~ msgid "the pin"
+#~ msgstr "这个瓶"
+
+#~ msgid "all {down}"
+#~ msgstr "全部{down}个"
+
+#~ msgid "{down} of {count}"
+#~ msgstr "{count}个中的{down}个"
+
+#~ msgid "A clean release there should take {all}."
+#~ msgstr "在那里干净出手应该能打倒{all}。"
+
+#~ msgid "Try board {stand}, {aim_words}."
+#~ msgstr "试试第{stand}板，{aim_words}。"
+
+#~ msgid ""
+#~ "Try board {stand}, {aim_words}. A clean release there should take {all}."
+#~ msgstr "试试第{stand}板，{aim_words}。在那里干净出手应该能打倒{all}。"
 
 #~ msgid "{n} cards, the {first} down to the {last}"
 #~ msgstr "{n}张牌，从{first}往下到{last}"

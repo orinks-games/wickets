@@ -23985,19 +23985,19 @@ msgstr "Через весь город"
 
 #. placeholders: {length}, {bike}
 msgid "{length} on the {bike}"
-msgstr "{length}, велосипед: {bike}"
+msgstr "{length}, {bike}"
 
 #. placeholders: {length}, {bike}
 msgid "{length} on the {bike}, in heavy traffic"
-msgstr "{length}, велосипед: {bike}, в плотном движении"
+msgstr "{length}, {bike}, в плотном движении"
 
 #. placeholders: {length}, {bike}
 msgid "{length} on the {bike}, with 3 turns"
-msgstr "{length}, велосипед: {bike}, с 3 поворотами"
+msgstr "{length}, {bike}, с 3 поворотами"
 
 #. placeholders: {length}, {bike}
 msgid "{length} of Downtown on the {bike}."
-msgstr "{length} по Downtown, велосипед: {bike}."
+msgstr "{length} по Downtown, {bike}."
 
 msgid "Ride points count: speed, clean riding, jumps and tips."
 msgstr "Засчитываются очки поездки: скорость, чистая езда, прыжки и чаевые."
@@ -24378,11 +24378,11 @@ msgstr "Пройдено уроков: {lessons} из {LESSONS}."
 
 #. placeholders: {name}, {t}
 msgid "on the {name}, {t}"
-msgstr "велосипед {name}, {t}"
+msgstr "{name}, {t}"
 
 #. placeholders: {name}
 msgid "on the {name}, no time yet"
-msgstr "велосипед {name}, времени пока нет"
+msgstr "{name}, времени пока нет"
 
 #. placeholders: {i}, {name}, {join}
 msgid "Course {i}, {name}: {join}."
@@ -24428,7 +24428,7 @@ msgstr "{NAME}. Рекорды: {join}."
 
 #. placeholders: {name}, {name2}, {t}
 msgid "{name} on the {name2}, {t}."
-msgstr "{name}, велосипед {name2}, {t}."
+msgstr "{name}, {name2}, {t}."
 
 #. one sentence of a longer line
 msgid "Special rides."
@@ -24440,7 +24440,7 @@ msgstr "Особые поездки. {join}"
 
 #. placeholders: {PLAY}, {name}, {name2}
 msgid "{PLAY}, endless ride: {name} on the {name2}"
-msgstr "{PLAY}, бесконечная поездка: {name}, велосипед: {name2}"
+msgstr "{PLAY}, бесконечная поездка: {name}, {name2}"
 
 #. placeholders: {best}
 #. one sentence of a longer line
@@ -24597,31 +24597,30 @@ msgstr "{near_words} справа"
 #. placeholders: {course}, {bike}
 #. one sentence of a longer line
 msgid "Time trial, {course}, on the {bike}."
-msgstr "Заезд на время, {course}, велосипед: {bike}."
+msgstr "Заезд на время, {course}, {bike}."
 
 #. placeholders: {course}, {bike}, {about}
 msgid "Time trial, {course}, on the {bike}. {about}"
-msgstr "Заезд на время, {course}, велосипед: {bike}. {about}"
+msgstr "Заезд на время, {course}, {bike}. {about}"
 
 #. placeholders: {bike}, {length}
 #. one sentence of a longer line
 msgid "Free ride on the {bike}, {length}, no clock."
-msgstr "Свободная поездка, велосипед: {bike}, {length}, без часов."
+msgstr "Свободная поездка, {bike}, {length}, без часов."
 
 #. placeholders: {bike}, {length}, {go}
 msgid "Free ride on the {bike}, {length}, no clock. {go}"
-msgstr "Свободная поездка, велосипед: {bike}, {length}, без часов. {go}"
+msgstr "Свободная поездка, {bike}, {length}, без часов. {go}"
 
 #. placeholders: {title}, {district}, {bike}
 #. one sentence of a longer line
 msgid "Delivery, {title}, {district}, on the {bike}."
-msgstr "Доставка, {title}, {district}, велосипед: {bike}."
+msgstr "Доставка, {title}, {district}, {bike}."
 
 #. placeholders: {title}, {district}, {bike}, {length}, {deadline}
 msgid ""
 "Delivery, {title}, {district}, on the {bike}. {length}, deadline {deadline}."
-msgstr ""
-"Доставка, {title}, {district}, велосипед: {bike}. {length}, срок {deadline}."
+msgstr "Доставка, {title}, {district}, {bike}. {length}, срок {deadline}."
 
 #. placeholders: {length}, {deadline}
 #. one sentence of a longer line
@@ -24630,19 +24629,19 @@ msgstr "{length}, срок {deadline}."
 
 #. placeholders: {district}, {bike}
 msgid "Delivery in {district}, on the {bike}."
-msgstr "Доставка, район {district}, велосипед: {bike}."
+msgstr "Доставка, район {district}, {bike}."
 
 #. placeholders: {district}, {bike}
 #. one sentence of a longer line
 msgid "Endless ride, {district}, on the {bike}."
-msgstr "Бесконечная поездка, {district}, велосипед: {bike}."
+msgstr "Бесконечная поездка, {district}, {bike}."
 
 #. placeholders: {district}, {bike}, {ENDLESS_CRASHES}
 msgid ""
 "Endless ride, {district}, on the {bike}. {ENDLESS_CRASHES} crashes end it."
 msgstr ""
-"Бесконечная поездка, {district}, велосипед: {bike}. Аварий до конца "
-"поездки: {ENDLESS_CRASHES}."
+"Бесконечная поездка, {district}, {bike}. Аварий до конца поездки: "
+"{ENDLESS_CRASHES}."
 
 #. placeholders: {ENDLESS_CRASHES}
 #. one sentence of a longer line
@@ -24656,26 +24655,25 @@ msgstr "Сдачи посылок добавляют время."
 #. placeholders: {clock_name}, {district}, {bike}
 #. one sentence of a longer line
 msgid "{clock_name}, {district}, on the {bike}."
-msgstr "{clock_name}, {district}, велосипед: {bike}."
+msgstr "{clock_name}, {district}, {bike}."
 
 #. placeholders: {clock_name}, {district}, {bike}, {time}
 msgid "{clock_name}, {district}, on the {bike}. {time}. Drops add time."
 msgstr ""
-"{clock_name}, {district}, велосипед: {bike}. {time}. Сданные посылки "
-"добавляют время."
+"{clock_name}, {district}, {bike}. {time}. Сданные посылки добавляют время."
 
 #. placeholders: {bike}, {length}
 #. one sentence of a longer line
 msgid "Leaf season ride, on the {bike}, {length}."
-msgstr "Поездка в листопад, велосипед: {bike}, {length}."
+msgstr "Поездка в листопад, {bike}, {length}."
 
 #. placeholders: {bike}, {length}, {points}
 msgid ""
 "Leaf season ride, on the {bike}, {length}. Ride through leaf piles for "
 "{points} points each."
 msgstr ""
-"Поездка в листопад, велосипед: {bike}, {length}. Проезжайте по кучам "
-"листьев: {points} {points:очко|очка|очков} за каждую."
+"Поездка в листопад, {bike}, {length}. Проезжайте по кучам листьев: {points} "
+"{points:очко|очка|очков} за каждую."
 
 #. placeholders: {points}
 #. one sentence of a longer line
@@ -24686,12 +24684,11 @@ msgstr ""
 #. placeholders: {bike}, {length}
 #. one sentence of a longer line
 msgid "Car-free Sunday, on the {bike}, {length}."
-msgstr "Воскресенье без машин, велосипед: {bike}, {length}."
+msgstr "Воскресенье без машин, {bike}, {length}."
 
 #. placeholders: {bike}, {length}
 msgid "Car-free Sunday, on the {bike}, {length}. No cars today."
-msgstr ""
-"Воскресенье без машин, велосипед: {bike}, {length}. Сегодня машин нет."
+msgstr "Воскресенье без машин, {bike}, {length}. Сегодня машин нет."
 
 #. one sentence of a longer line
 msgid "No cars today."
@@ -25573,23 +25570,36 @@ msgstr "Поездка окончена."
 msgid "Ride over. {sentence_start} in {name}. {record}"
 msgstr "Поездка окончена. {sentence_start} в районе {name}. {record}"
 
-#. placeholders: {dollar_words2}
-#. one sentence of a longer line
-msgid "You have {dollar_words2} to spend in the bike shop."
-msgstr "В веломагазине можно потратить {dollar_words2}."
+#. placeholders: {wallet}
+msgid "You have {wallet} to spend in the bike shop."
+msgstr "В веломагазине можно потратить {wallet}."
 
-#. placeholders: {parcel_words}, {dollar_words}
+#. placeholders: {cash}
 #. one sentence of a longer line
-msgid "{parcel_words} grabbed, {dollar_words}."
-msgstr "Подобрано: {parcel_words}, {dollar_words}."
+msgid "No parcels grabbed, {cash}."
+msgstr "Ни одной посылки, {cash}."
 
-#. placeholders: {parcel_words}, {dollar_words}, {dollar_words2}
-msgid ""
-"{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
-"in the bike shop."
-msgstr ""
-"Подобрано: {parcel_words}, {dollar_words}. В веломагазине можно потратить "
-"{dollar_words2}."
+#. placeholders: {cash}, {spend}
+msgid "No parcels grabbed, {cash}. {spend}"
+msgstr "Ни одной посылки, {cash}. {spend}"
+
+#. placeholders: {cash}
+#. one sentence of a longer line
+msgid "1 parcel grabbed, {cash}."
+msgstr "Подобрана 1 посылка, {cash}."
+
+#. placeholders: {cash}, {spend}
+msgid "1 parcel grabbed, {cash}. {spend}"
+msgstr "Подобрана 1 посылка, {cash}. {spend}"
+
+#. placeholders: {n}, {cash}
+#. one sentence of a longer line
+msgid "{n} parcels grabbed, {cash}."
+msgstr "Подобрано посылок: {n}, {cash}."
+
+#. placeholders: {n}, {cash}, {spend}
+msgid "{n} parcels grabbed, {cash}. {spend}"
+msgstr "Подобрано посылок: {n}, {cash}. {spend}"
 
 #. placeholders: {distance_words}, {dollar_words}
 msgid "Endless ride: {distance_words}, {dollar_words}"
@@ -25646,11 +25656,6 @@ msgstr ""
 #. one sentence of a longer line
 msgid "Quick drops: {quick}."
 msgstr "Быстрые сдачи: {quick}."
-
-#. placeholders: {wallet}
-#. one sentence of a longer line
-msgid "You have {wallet} to spend in the bike shop."
-msgstr "В веломагазине можно потратить {wallet}."
 
 #. placeholders: {crash_time}
 #. one sentence of a longer line
@@ -25790,11 +25795,11 @@ msgstr "{sentence_start} медленнее, чем ваш {best_word}, {time_wo
 #. placeholders: {name}, {name2}, {time_words}
 #. one sentence of a longer line
 msgid "{name} done on the {name2} in {time_words}."
-msgstr "{name}, велосипед {name2}, пройдено за {time_words}."
+msgstr "{name}, {name2}, пройдено за {time_words}."
 
 #. placeholders: {name}, {name2}, {time_words}, {record}
 msgid "{name} done on the {name2} in {time_words}. {record}"
-msgstr "{name}, велосипед {name2}, пройдено за {time_words}. {record}"
+msgstr "{name}, {name2}, пройдено за {time_words}. {record}"
 
 #. placeholders: {leaves}, {leaves2}
 msgid " Leaf piles: {leaves} of {leaves2}."
@@ -25835,9 +25840,13 @@ msgstr "{tips} чаевыми"
 msgid "{leaves} for leaf piles"
 msgstr "{leaves} за кучи листьев"
 
-#. placeholders: {cost}, {trim_end_matches}
-msgid "{cost} lost for {trim_end_matches}"
-msgstr ""
+#. placeholders: {cost}
+msgid "{cost} lost for 1 crash"
+msgstr "{cost} потеряно за 1 аварию"
+
+#. placeholders: {cost}, {n}
+msgid "{cost} lost for {n} crashes"
+msgstr "{cost} потеряно за аварии: {n}"
 
 #. placeholders: {limit}
 msgid "Be in the bike lane, under {limit}."
@@ -25857,16 +25866,6 @@ msgstr "Поворот налево через {distance}."
 msgid "Right turn in {distance}."
 msgstr "Поворот направо через {distance}."
 
-msgid "No parcels"
-msgstr "Ни одной посылки"
-
-msgid "1 parcel"
-msgstr "1 посылка"
-
-#. placeholders: {n}
-msgid "{n} parcels"
-msgstr "{n} {n:посылка|посылки|посылок}"
-
 msgid "No crashes."
 msgstr "Без аварий."
 
@@ -25885,20 +25884,20 @@ msgstr "Ваш первый результат здесь."
 
 #. placeholders: {name}, {name2}
 msgid "Your first relaxed time on {name} on the {name2}."
-msgstr "Впервые в спокойном темпе: {name}, велосипед {name2}."
+msgstr "Впервые в спокойном темпе: {name}, {name2}."
 
 #. placeholders: {name}, {name2}
 msgid "Your first time on {name} on the {name2}."
-msgstr "Впервые: {name}, велосипед {name2}."
+msgstr "Впервые: {name}, {name2}."
 
 #. placeholders: {name}, {name2}, {time_words}
 #. one sentence of a longer line
 msgid "Finished {name} on the {name2} in {time_words}."
-msgstr "{name} пройдена за {time_words}, велосипед: {name2}."
+msgstr "{name} пройдена за {time_words}, {name2}."
 
 #. placeholders: {name}, {name2}, {time_words}, {record}
 msgid "Finished {name} on the {name2} in {time_words}. {record}"
-msgstr "{name} пройдена за {time_words}, велосипед: {name2}. {record}"
+msgstr "{name} пройдена за {time_words}, {name2}. {record}"
 
 #. placeholders: {name}
 msgid "Next course: {name}"
@@ -51526,6 +51525,14 @@ msgstr "Мимо всех кеглей.{left}"
 msgid "{count} down, a split.{left}"
 msgstr "Сбито {count}, сплит.{left}"
 
+#. placeholders: {left}
+msgid "1 pin down.{left}"
+msgstr "Сбита 1 кегля.{left}"
+
+#. placeholders: {n}, {left}
+msgid "{n} pins down.{left}"
+msgstr "Сбито кеглей: {n}.{left}"
+
 #. placeholders: {line}, {made}, {total}
 msgid "{line} {made} of {total} made."
 msgstr "{line} Сделано {made} из {total}."
@@ -51619,33 +51626,44 @@ msgstr "1 спэр"
 msgid "Angle into the pocket: board {stand}, {aim_words}."
 msgstr "Под углом в карман: доска {stand}, {aim_words}."
 
-msgid "the pin"
-msgstr "кеглю"
+#. one sentence of a longer line
+msgid "A clean release there should take the pin."
+msgstr "Чистый бросок оттуда должен снять кеглю."
+
+#. placeholders: {stand}, {aim}
+#. one sentence of a longer line
+msgid "Try board {stand}, {aim}."
+msgstr "Попробуйте доску {stand}, {aim}."
+
+#. placeholders: {stand}, {aim}
+msgid "Try board {stand}, {aim}. A clean release there should take the pin."
+msgstr ""
+"Попробуйте доску {stand}, {aim}. Чистый бросок оттуда должен снять кеглю."
 
 #. placeholders: {down}
-msgid "all {down}"
-msgstr "все {down}"
+#. one sentence of a longer line
+msgid "A clean release there should take all {down}."
+msgstr "Чистый бросок оттуда должен снять все {down}."
+
+#. placeholders: {stand}, {aim}, {down}
+msgid ""
+"Try board {stand}, {aim}. A clean release there should take all {down}."
+msgstr ""
+"Попробуйте доску {stand}, {aim}. Чистый бросок оттуда должен снять все "
+"{down}."
 
 #. placeholders: {down}, {count}
-msgid "{down} of {count}"
-msgstr "{down} из {count}"
-
-#. placeholders: {all}
 #. one sentence of a longer line
-msgid "A clean release there should take {all}."
-msgstr "Чистый бросок оттуда должен снять {all}."
+msgid "A clean release there should take {down} of {count}."
+msgstr "Чистый бросок оттуда должен снять {down} из {count}."
 
-#. placeholders: {stand}, {aim_words}
-#. one sentence of a longer line
-msgid "Try board {stand}, {aim_words}."
-msgstr "Попробуйте доску {stand}, {aim_words}."
-
-#. placeholders: {stand}, {aim_words}, {all}
+#. placeholders: {stand}, {aim}, {down}, {count}
 msgid ""
-"Try board {stand}, {aim_words}. A clean release there should take {all}."
+"Try board {stand}, {aim}. A clean release there should take {down} of "
+"{count}."
 msgstr ""
-"Попробуйте доску {stand}, {aim_words}. Чистый бросок оттуда должен снять "
-"{all}."
+"Попробуйте доску {stand}, {aim}. Чистый бросок оттуда должен снять {down} "
+"из {count}."
 
 msgid "strike"
 msgstr "страйк"
@@ -94539,6 +94557,49 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "You have {dollar_words2} to spend in the bike shop."
+#~ msgstr "В веломагазине можно потратить {dollar_words2}."
+
+#~ msgid "{parcel_words} grabbed, {dollar_words}."
+#~ msgstr "Подобрано: {parcel_words}, {dollar_words}."
+
+#~ msgid ""
+#~ "{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
+#~ "in the bike shop."
+#~ msgstr ""
+#~ "Подобрано: {parcel_words}, {dollar_words}. В веломагазине можно потратить "
+#~ "{dollar_words2}."
+
+#~ msgid "No parcels"
+#~ msgstr "Ни одной посылки"
+
+#~ msgid "1 parcel"
+#~ msgstr "1 посылка"
+
+#~ msgid "{n} parcels"
+#~ msgstr "{n} {n:посылка|посылки|посылок}"
+
+#~ msgid "the pin"
+#~ msgstr "кеглю"
+
+#~ msgid "all {down}"
+#~ msgstr "все {down}"
+
+#~ msgid "{down} of {count}"
+#~ msgstr "{down} из {count}"
+
+#~ msgid "A clean release there should take {all}."
+#~ msgstr "Чистый бросок оттуда должен снять {all}."
+
+#~ msgid "Try board {stand}, {aim_words}."
+#~ msgstr "Попробуйте доску {stand}, {aim_words}."
+
+#~ msgid ""
+#~ "Try board {stand}, {aim_words}. A clean release there should take {all}."
+#~ msgstr ""
+#~ "Попробуйте доску {stand}, {aim_words}. Чистый бросок оттуда должен снять "
+#~ "{all}."
 
 #~ msgid "{n} cards, the {first} down to the {last}"
 #~ msgstr "{n} {n:карта|карты|карт}, от карты {first} до карты {last}"

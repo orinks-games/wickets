@@ -28594,23 +28594,42 @@ msgstr ""
 msgid "Ride over. {sentence_start} in {name}. {record}"
 msgstr ""
 
-#. placeholders: {dollar_words2}
-#. one sentence of a longer line
+#. placeholders: {wallet}
 #: games/freewheel/src/ride.rs
-msgid "You have {dollar_words2} to spend in the bike shop."
+msgid "You have {wallet} to spend in the bike shop."
 msgstr ""
 
-#. placeholders: {parcel_words}, {dollar_words}
+#. placeholders: {cash}
 #. one sentence of a longer line
 #: games/freewheel/src/ride.rs
-msgid "{parcel_words} grabbed, {dollar_words}."
+msgid "No parcels grabbed, {cash}."
 msgstr ""
 
-#. placeholders: {parcel_words}, {dollar_words}, {dollar_words2}
+#. placeholders: {cash}, {spend}
 #: games/freewheel/src/ride.rs
-msgid ""
-"{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
-"in the bike shop."
+msgid "No parcels grabbed, {cash}. {spend}"
+msgstr ""
+
+#. placeholders: {cash}
+#. one sentence of a longer line
+#: games/freewheel/src/ride.rs
+msgid "1 parcel grabbed, {cash}."
+msgstr ""
+
+#. placeholders: {cash}, {spend}
+#: games/freewheel/src/ride.rs
+msgid "1 parcel grabbed, {cash}. {spend}"
+msgstr ""
+
+#. placeholders: {n}, {cash}
+#. one sentence of a longer line
+#: games/freewheel/src/ride.rs
+msgid "{n} parcels grabbed, {cash}."
+msgstr ""
+
+#. placeholders: {n}, {cash}, {spend}
+#: games/freewheel/src/ride.rs
+msgid "{n} parcels grabbed, {cash}. {spend}"
 msgstr ""
 
 #. placeholders: {distance_words}, {dollar_words}
@@ -28675,12 +28694,6 @@ msgstr ""
 #. one sentence of a longer line
 #: games/freewheel/src/ride.rs
 msgid "Quick drops: {quick}."
-msgstr ""
-
-#. placeholders: {wallet}
-#. one sentence of a longer line
-#: games/freewheel/src/ride.rs
-msgid "You have {wallet} to spend in the bike shop."
 msgstr ""
 
 #. placeholders: {crash_time}
@@ -28903,9 +28916,14 @@ msgstr ""
 msgid "{leaves} for leaf piles"
 msgstr ""
 
-#. placeholders: {cost}, {trim_end_matches}
+#. placeholders: {cost}
 #: games/freewheel/src/ride.rs
-msgid "{cost} lost for {trim_end_matches}"
+msgid "{cost} lost for 1 crash"
+msgstr ""
+
+#. placeholders: {cost}, {n}
+#: games/freewheel/src/ride.rs
+msgid "{cost} lost for {n} crashes"
 msgstr ""
 
 #. placeholders: {limit}
@@ -28927,19 +28945,6 @@ msgstr ""
 #. placeholders: {distance}
 #: games/freewheel/src/ride.rs
 msgid "Right turn in {distance}."
-msgstr ""
-
-#: games/freewheel/src/ride.rs
-msgid "No parcels"
-msgstr ""
-
-#: games/freewheel/src/ride.rs
-msgid "1 parcel"
-msgstr ""
-
-#. placeholders: {n}
-#: games/freewheel/src/ride.rs
-msgid "{n} parcels"
 msgstr ""
 
 #: games/freewheel/src/ride.rs
@@ -57577,6 +57582,16 @@ msgstr ""
 msgid "{count} down, a split.{left}"
 msgstr ""
 
+#. placeholders: {left}
+#: games/midnight-lanes/src/play.rs
+msgid "1 pin down.{left}"
+msgstr ""
+
+#. placeholders: {n}, {left}
+#: games/midnight-lanes/src/play.rs
+msgid "{n} pins down.{left}"
+msgstr ""
+
 #. placeholders: {line}, {made}, {total}
 #: games/midnight-lanes/src/play.rs
 msgid "{line} {made} of {total} made."
@@ -57695,36 +57710,45 @@ msgstr ""
 msgid "Angle into the pocket: board {stand}, {aim_words}."
 msgstr ""
 
+#. one sentence of a longer line
 #: games/midnight-lanes/src/play.rs
-msgid "the pin"
+msgid "A clean release there should take the pin."
+msgstr ""
+
+#. placeholders: {stand}, {aim}
+#. one sentence of a longer line
+#: games/midnight-lanes/src/play.rs
+msgid "Try board {stand}, {aim}."
+msgstr ""
+
+#. placeholders: {stand}, {aim}
+#: games/midnight-lanes/src/play.rs
+msgid "Try board {stand}, {aim}. A clean release there should take the pin."
 msgstr ""
 
 #. placeholders: {down}
+#. one sentence of a longer line
 #: games/midnight-lanes/src/play.rs
-msgid "all {down}"
+msgid "A clean release there should take all {down}."
+msgstr ""
+
+#. placeholders: {stand}, {aim}, {down}
+#: games/midnight-lanes/src/play.rs
+msgid ""
+"Try board {stand}, {aim}. A clean release there should take all {down}."
 msgstr ""
 
 #. placeholders: {down}, {count}
-#: games/midnight-lanes/src/play.rs
-msgid "{down} of {count}"
-msgstr ""
-
-#. placeholders: {all}
 #. one sentence of a longer line
 #: games/midnight-lanes/src/play.rs
-msgid "A clean release there should take {all}."
+msgid "A clean release there should take {down} of {count}."
 msgstr ""
 
-#. placeholders: {stand}, {aim_words}
-#. one sentence of a longer line
-#: games/midnight-lanes/src/play.rs
-msgid "Try board {stand}, {aim_words}."
-msgstr ""
-
-#. placeholders: {stand}, {aim_words}, {all}
+#. placeholders: {stand}, {aim}, {down}, {count}
 #: games/midnight-lanes/src/play.rs
 msgid ""
-"Try board {stand}, {aim_words}. A clean release there should take {all}."
+"Try board {stand}, {aim}. A clean release there should take {down} of "
+"{count}."
 msgstr ""
 
 #: games/midnight-lanes/src/play.rs

@@ -1723,12 +1723,15 @@ impl Ride {
                     sentence_start(&distance_words(metres)),
                     district.name()
                 ),
-                format!(
-                    "{} grabbed, {}. You have {} to spend in the bike shop.",
-                    parcel_words(grabbed),
-                    dollar_words(cash),
-                    dollar_words(wallet)
-                ),
+                {
+                    let (cash, wallet) = (dollar_words(cash), dollar_words(wallet));
+                    let spend = format!("You have {wallet} to spend in the bike shop.");
+                    match grabbed {
+                        0 => format!("No parcels grabbed, {cash}. {spend}"),
+                        1 => format!("1 parcel grabbed, {cash}. {spend}"),
+                        n => format!("{n} parcels grabbed, {cash}. {spend}"),
+                    }
+                },
             ];
             let summary = format!(
                 "Endless ride: {}, {}",
@@ -2085,12 +2088,10 @@ pub fn ride_points(par: f64, time: f64, stats: &crate::world::Stats) -> (u64, Ve
     if stats.crashes > 0 {
         let cost = stats.crashes as i64 * 3000;
         total -= cost;
-        parts.push(format!(
-            "{cost} lost for {}",
-            crash_words(stats.crashes)
-                .trim_end_matches('.')
-                .to_lowercase()
-        ));
+        parts.push(match stats.crashes {
+            1 => format!("{cost} lost for 1 crash"),
+            n => format!("{cost} lost for {n} crashes"),
+        });
     }
     (total.max(0) as u64, parts)
 }
@@ -2112,14 +2113,6 @@ fn turn_head(turn: crate::course::Turn, d: f64) -> String {
     match turn {
         crate::course::Turn::Left => format!("Left turn in {distance}."),
         crate::course::Turn::Right => format!("Right turn in {distance}."),
-    }
-}
-
-fn parcel_words(n: usize) -> String {
-    match n {
-        0 => "No parcels".to_string(),
-        1 => "1 parcel".to_string(),
-        n => format!("{n} parcels"),
     }
 }
 

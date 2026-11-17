@@ -25149,23 +25149,36 @@ msgstr "Hết chuyến."
 msgid "Ride over. {sentence_start} in {name}. {record}"
 msgstr "Hết chuyến. {sentence_start} ở {name}. {record}"
 
-#. placeholders: {dollar_words2}
-#. one sentence of a longer line
-msgid "You have {dollar_words2} to spend in the bike shop."
-msgstr "Bạn có {dollar_words2} để tiêu ở tiệm xe."
+#. placeholders: {wallet}
+msgid "You have {wallet} to spend in the bike shop."
+msgstr "Bạn có {wallet} để tiêu ở tiệm xe."
 
-#. placeholders: {parcel_words}, {dollar_words}
+#. placeholders: {cash}
 #. one sentence of a longer line
-msgid "{parcel_words} grabbed, {dollar_words}."
-msgstr "Đã nhặt {parcel_words}, {dollar_words}."
+msgid "No parcels grabbed, {cash}."
+msgstr "Không nhặt được bưu kiện nào, {cash}."
 
-#. placeholders: {parcel_words}, {dollar_words}, {dollar_words2}
-msgid ""
-"{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
-"in the bike shop."
-msgstr ""
-"Đã nhặt {parcel_words}, {dollar_words}. Bạn có {dollar_words2} để tiêu ở "
-"tiệm xe."
+#. placeholders: {cash}, {spend}
+msgid "No parcels grabbed, {cash}. {spend}"
+msgstr "Không nhặt được bưu kiện nào, {cash}. {spend}"
+
+#. placeholders: {cash}
+#. one sentence of a longer line
+msgid "1 parcel grabbed, {cash}."
+msgstr "Đã nhặt 1 bưu kiện, {cash}."
+
+#. placeholders: {cash}, {spend}
+msgid "1 parcel grabbed, {cash}. {spend}"
+msgstr "Đã nhặt 1 bưu kiện, {cash}. {spend}"
+
+#. placeholders: {n}, {cash}
+#. one sentence of a longer line
+msgid "{n} parcels grabbed, {cash}."
+msgstr "Đã nhặt {n} bưu kiện, {cash}."
+
+#. placeholders: {n}, {cash}, {spend}
+msgid "{n} parcels grabbed, {cash}. {spend}"
+msgstr "Đã nhặt {n} bưu kiện, {cash}. {spend}"
 
 #. placeholders: {distance_words}, {dollar_words}
 msgid "Endless ride: {distance_words}, {dollar_words}"
@@ -25220,11 +25233,6 @@ msgstr ""
 #. one sentence of a longer line
 msgid "Quick drops: {quick}."
 msgstr "Giao nhanh: {quick}."
-
-#. placeholders: {wallet}
-#. one sentence of a longer line
-msgid "You have {wallet} to spend in the bike shop."
-msgstr "Bạn có {wallet} để tiêu ở tiệm xe."
 
 #. placeholders: {crash_time}
 #. one sentence of a longer line
@@ -25408,9 +25416,13 @@ msgstr "{tips} tiền boa"
 msgid "{leaves} for leaf piles"
 msgstr "{leaves} cho đống lá"
 
-#. placeholders: {cost}, {trim_end_matches}
-msgid "{cost} lost for {trim_end_matches}"
-msgstr "mất {cost} vì {trim_end_matches}"
+#. placeholders: {cost}
+msgid "{cost} lost for 1 crash"
+msgstr "mất {cost} vì 1 lần ngã"
+
+#. placeholders: {cost}, {n}
+msgid "{cost} lost for {n} crashes"
+msgstr "mất {cost} vì {n} lần ngã"
 
 #. placeholders: {limit}
 msgid "Be in the bike lane, under {limit}."
@@ -25428,16 +25440,6 @@ msgstr "Rẽ trái sau {distance}."
 #. placeholders: {distance}
 msgid "Right turn in {distance}."
 msgstr "Rẽ phải sau {distance}."
-
-msgid "No parcels"
-msgstr "Không có bưu kiện"
-
-msgid "1 parcel"
-msgstr "1 bưu kiện"
-
-#. placeholders: {n}
-msgid "{n} parcels"
-msgstr "{n} bưu kiện"
 
 msgid "No crashes."
 msgstr "Không ngã lần nào."
@@ -50759,6 +50761,14 @@ msgstr "Trượt hết mọi ky.{left}"
 msgid "{count} down, a split.{left}"
 msgstr "Đổ {count}, thế tách.{left}"
 
+#. placeholders: {left}
+msgid "1 pin down.{left}"
+msgstr "Đổ 1 ky.{left}"
+
+#. placeholders: {n}, {left}
+msgid "{n} pins down.{left}"
+msgstr "Đổ {n} ky.{left}"
+
 #. placeholders: {line}, {made}, {total}
 msgid "{line} {made} of {total} made."
 msgstr "{line} Làm được {made} trên {total}."
@@ -50852,31 +50862,40 @@ msgstr "1 spare"
 msgid "Angle into the pocket: board {stand}, {aim_words}."
 msgstr "Ném chéo vào vùng túi: ván {stand}, {aim_words}."
 
-msgid "the pin"
-msgstr "ky đó"
+#. one sentence of a longer line
+msgid "A clean release there should take the pin."
+msgstr "Thả bóng gọn ở đó sẽ đổ ky đó."
+
+#. placeholders: {stand}, {aim}
+#. one sentence of a longer line
+msgid "Try board {stand}, {aim}."
+msgstr "Thử ván {stand}, {aim}."
+
+#. placeholders: {stand}, {aim}
+msgid "Try board {stand}, {aim}. A clean release there should take the pin."
+msgstr "Thử ván {stand}, {aim}. Thả bóng gọn ở đó sẽ đổ ky đó."
 
 #. placeholders: {down}
-msgid "all {down}"
-msgstr "cả {down}"
+#. one sentence of a longer line
+msgid "A clean release there should take all {down}."
+msgstr "Thả bóng gọn ở đó sẽ đổ cả {down}."
+
+#. placeholders: {stand}, {aim}, {down}
+msgid ""
+"Try board {stand}, {aim}. A clean release there should take all {down}."
+msgstr "Thử ván {stand}, {aim}. Thả bóng gọn ở đó sẽ đổ cả {down}."
 
 #. placeholders: {down}, {count}
-msgid "{down} of {count}"
-msgstr "{down} trên {count}"
-
-#. placeholders: {all}
 #. one sentence of a longer line
-msgid "A clean release there should take {all}."
-msgstr "Thả bóng gọn ở đó sẽ đổ {all}."
+msgid "A clean release there should take {down} of {count}."
+msgstr "Thả bóng gọn ở đó sẽ đổ {down} trên {count}."
 
-#. placeholders: {stand}, {aim_words}
-#. one sentence of a longer line
-msgid "Try board {stand}, {aim_words}."
-msgstr "Thử ván {stand}, {aim_words}."
-
-#. placeholders: {stand}, {aim_words}, {all}
+#. placeholders: {stand}, {aim}, {down}, {count}
 msgid ""
-"Try board {stand}, {aim_words}. A clean release there should take {all}."
-msgstr "Thử ván {stand}, {aim_words}. Thả bóng gọn ở đó sẽ đổ {all}."
+"Try board {stand}, {aim}. A clean release there should take {down} of "
+"{count}."
+msgstr ""
+"Thử ván {stand}, {aim}. Thả bóng gọn ở đó sẽ đổ {down} trên {count}."
 
 msgid "strike"
 msgstr "strike"
@@ -93349,6 +93368,50 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "You have {dollar_words2} to spend in the bike shop."
+#~ msgstr "Bạn có {dollar_words2} để tiêu ở tiệm xe."
+
+#~ msgid "{parcel_words} grabbed, {dollar_words}."
+#~ msgstr "Đã nhặt {parcel_words}, {dollar_words}."
+
+#~ msgid ""
+#~ "{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
+#~ "in the bike shop."
+#~ msgstr ""
+#~ "Đã nhặt {parcel_words}, {dollar_words}. Bạn có {dollar_words2} để tiêu ở "
+#~ "tiệm xe."
+
+#~ msgid "{cost} lost for {trim_end_matches}"
+#~ msgstr "mất {cost} vì {trim_end_matches}"
+
+#~ msgid "No parcels"
+#~ msgstr "Không có bưu kiện"
+
+#~ msgid "1 parcel"
+#~ msgstr "1 bưu kiện"
+
+#~ msgid "{n} parcels"
+#~ msgstr "{n} bưu kiện"
+
+#~ msgid "the pin"
+#~ msgstr "ky đó"
+
+#~ msgid "all {down}"
+#~ msgstr "cả {down}"
+
+#~ msgid "{down} of {count}"
+#~ msgstr "{down} trên {count}"
+
+#~ msgid "A clean release there should take {all}."
+#~ msgstr "Thả bóng gọn ở đó sẽ đổ {all}."
+
+#~ msgid "Try board {stand}, {aim_words}."
+#~ msgstr "Thử ván {stand}, {aim_words}."
+
+#~ msgid ""
+#~ "Try board {stand}, {aim_words}. A clean release there should take {all}."
+#~ msgstr "Thử ván {stand}, {aim_words}. Thả bóng gọn ở đó sẽ đổ {all}."
 
 #~ msgid "{n} cards, the {first} down to the {last}"
 #~ msgstr "{n} lá, từ {first} xuống đến {last}"

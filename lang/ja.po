@@ -23356,21 +23356,36 @@ msgstr "ライド終了。"
 msgid "Ride over. {sentence_start} in {name}. {record}"
 msgstr "ライド終了。{name}で{sentence_start}。{record}"
 
-#. placeholders: {dollar_words2}
-#. one sentence of a longer line
-msgid "You have {dollar_words2} to spend in the bike shop."
-msgstr "自転車屋で使えるお金は{dollar_words2}です。"
+#. placeholders: {wallet}
+msgid "You have {wallet} to spend in the bike shop."
+msgstr "自転車屋で使えるお金は{wallet}です。"
 
-#. placeholders: {parcel_words}, {dollar_words}
+#. placeholders: {cash}
 #. one sentence of a longer line
-msgid "{parcel_words} grabbed, {dollar_words}."
-msgstr "{parcel_words}拾いました、{dollar_words}。"
+msgid "No parcels grabbed, {cash}."
+msgstr "荷物は拾えませんでした、{cash}。"
 
-#. placeholders: {parcel_words}, {dollar_words}, {dollar_words2}
-msgid ""
-"{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
-"in the bike shop."
-msgstr "{parcel_words}拾いました、{dollar_words}。自転車屋で使えるお金は{dollar_words2}です。"
+#. placeholders: {cash}, {spend}
+msgid "No parcels grabbed, {cash}. {spend}"
+msgstr "荷物は拾えませんでした、{cash}。{spend}"
+
+#. placeholders: {cash}
+#. one sentence of a longer line
+msgid "1 parcel grabbed, {cash}."
+msgstr "荷物を1個拾いました、{cash}。"
+
+#. placeholders: {cash}, {spend}
+msgid "1 parcel grabbed, {cash}. {spend}"
+msgstr "荷物を1個拾いました、{cash}。{spend}"
+
+#. placeholders: {n}, {cash}
+#. one sentence of a longer line
+msgid "{n} parcels grabbed, {cash}."
+msgstr "荷物を{n}個拾いました、{cash}。"
+
+#. placeholders: {n}, {cash}, {spend}
+msgid "{n} parcels grabbed, {cash}. {spend}"
+msgstr "荷物を{n}個拾いました、{cash}。{spend}"
 
 #. placeholders: {distance_words}, {dollar_words}
 msgid "Endless ride: {distance_words}, {dollar_words}"
@@ -23425,11 +23440,6 @@ msgstr ""
 #. one sentence of a longer line
 msgid "Quick drops: {quick}."
 msgstr "スピード配達：{quick}。"
-
-#. placeholders: {wallet}
-#. one sentence of a longer line
-msgid "You have {wallet} to spend in the bike shop."
-msgstr "自転車屋で使えるお金は{wallet}です。"
 
 #. placeholders: {crash_time}
 #. one sentence of a longer line
@@ -23612,9 +23622,13 @@ msgstr "チップで{tips}"
 msgid "{leaves} for leaf piles"
 msgstr "落ち葉の山で{leaves}"
 
-#. placeholders: {cost}, {trim_end_matches}
-msgid "{cost} lost for {trim_end_matches}"
-msgstr ""
+#. placeholders: {cost}
+msgid "{cost} lost for 1 crash"
+msgstr "転倒1回で{cost}減点"
+
+#. placeholders: {cost}, {n}
+msgid "{cost} lost for {n} crashes"
+msgstr "転倒{n}回で{cost}減点"
 
 #. placeholders: {limit}
 msgid "Be in the bike lane, under {limit}."
@@ -23632,16 +23646,6 @@ msgstr "{distance}先で左折。"
 #. placeholders: {distance}
 msgid "Right turn in {distance}."
 msgstr "{distance}先で右折。"
-
-msgid "No parcels"
-msgstr "荷物なし"
-
-msgid "1 parcel"
-msgstr "荷物1個"
-
-#. placeholders: {n}
-msgid "{n} parcels"
-msgstr "荷物{n}個"
 
 msgid "No crashes."
 msgstr "転倒なし。"
@@ -47013,6 +47017,14 @@ msgstr "全部のピンを外しました。{left}"
 msgid "{count} down, a split.{left}"
 msgstr "{count}本倒れて、スプリット。{left}"
 
+#. placeholders: {left}
+msgid "1 pin down.{left}"
+msgstr "1本倒れました。{left}"
+
+#. placeholders: {n}, {left}
+msgid "{n} pins down.{left}"
+msgstr "{n}本倒れました。{left}"
+
 #. placeholders: {line}, {made}, {total}
 msgid "{line} {made} of {total} made."
 msgstr "{line}{total}回中{made}回成功。"
@@ -47106,31 +47118,39 @@ msgstr "スペア1回"
 msgid "Angle into the pocket: board {stand}, {aim_words}."
 msgstr "角度をつけてポケットへ：ボード{stand}、{aim_words}。"
 
-msgid "the pin"
-msgstr "そのピン"
+#. one sentence of a longer line
+msgid "A clean release there should take the pin."
+msgstr "そこからきれいに投げればそのピンが倒れるはずです。"
+
+#. placeholders: {stand}, {aim}
+#. one sentence of a longer line
+msgid "Try board {stand}, {aim}."
+msgstr "ボード{stand}、{aim}を試しましょう。"
+
+#. placeholders: {stand}, {aim}
+msgid "Try board {stand}, {aim}. A clean release there should take the pin."
+msgstr "ボード{stand}、{aim}を試しましょう。そこからきれいに投げればそのピンが倒れるはずです。"
 
 #. placeholders: {down}
-msgid "all {down}"
-msgstr "{down}本全部"
+#. one sentence of a longer line
+msgid "A clean release there should take all {down}."
+msgstr "そこからきれいに投げれば{down}本全部倒れるはずです。"
+
+#. placeholders: {stand}, {aim}, {down}
+msgid ""
+"Try board {stand}, {aim}. A clean release there should take all {down}."
+msgstr "ボード{stand}、{aim}を試しましょう。そこからきれいに投げれば{down}本全部倒れるはずです。"
 
 #. placeholders: {down}, {count}
-msgid "{down} of {count}"
-msgstr "{count}本中{down}本"
-
-#. placeholders: {all}
 #. one sentence of a longer line
-msgid "A clean release there should take {all}."
-msgstr "そこからきれいに投げれば{all}倒れるはずです。"
+msgid "A clean release there should take {down} of {count}."
+msgstr "そこからきれいに投げれば{count}本中{down}本倒れるはずです。"
 
-#. placeholders: {stand}, {aim_words}
-#. one sentence of a longer line
-msgid "Try board {stand}, {aim_words}."
-msgstr "ボード{stand}、{aim_words}を試しましょう。"
-
-#. placeholders: {stand}, {aim_words}, {all}
+#. placeholders: {stand}, {aim}, {down}, {count}
 msgid ""
-"Try board {stand}, {aim_words}. A clean release there should take {all}."
-msgstr "ボード{stand}、{aim_words}を試しましょう。そこからきれいに投げれば{all}倒れるはずです。"
+"Try board {stand}, {aim}. A clean release there should take {down} of "
+"{count}."
+msgstr "ボード{stand}、{aim}を試しましょう。そこからきれいに投げれば{count}本中{down}本倒れるはずです。"
 
 msgid "strike"
 msgstr "ストライク"
@@ -86011,6 +86031,45 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "You have {dollar_words2} to spend in the bike shop."
+#~ msgstr "自転車屋で使えるお金は{dollar_words2}です。"
+
+#~ msgid "{parcel_words} grabbed, {dollar_words}."
+#~ msgstr "{parcel_words}拾いました、{dollar_words}。"
+
+#~ msgid ""
+#~ "{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
+#~ "in the bike shop."
+#~ msgstr "{parcel_words}拾いました、{dollar_words}。自転車屋で使えるお金は{dollar_words2}です。"
+
+#~ msgid "No parcels"
+#~ msgstr "荷物なし"
+
+#~ msgid "1 parcel"
+#~ msgstr "荷物1個"
+
+#~ msgid "{n} parcels"
+#~ msgstr "荷物{n}個"
+
+#~ msgid "the pin"
+#~ msgstr "そのピン"
+
+#~ msgid "all {down}"
+#~ msgstr "{down}本全部"
+
+#~ msgid "{down} of {count}"
+#~ msgstr "{count}本中{down}本"
+
+#~ msgid "A clean release there should take {all}."
+#~ msgstr "そこからきれいに投げれば{all}倒れるはずです。"
+
+#~ msgid "Try board {stand}, {aim_words}."
+#~ msgstr "ボード{stand}、{aim_words}を試しましょう。"
+
+#~ msgid ""
+#~ "Try board {stand}, {aim_words}. A clean release there should take {all}."
+#~ msgstr "ボード{stand}、{aim_words}を試しましょう。そこからきれいに投げれば{all}倒れるはずです。"
 
 #~ msgid "{n} cards, the {first} down to the {last}"
 #~ msgstr "{n}枚、{first}から{last}まで"

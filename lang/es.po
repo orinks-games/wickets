@@ -24667,7 +24667,7 @@ msgstr "{h} metros"
 
 #. placeholders: {h}
 msgid "{h}.5 metres"
-msgstr "{h}.5 metros"
+msgstr "{h},5 metros"
 
 msgid "freewheel"
 msgstr ""
@@ -25909,23 +25909,36 @@ msgstr "Recorrido terminado."
 msgid "Ride over. {sentence_start} in {name}. {record}"
 msgstr "Recorrido terminado. {sentence_start} en {name}. {record}"
 
-#. placeholders: {dollar_words2}
-#. one sentence of a longer line
-msgid "You have {dollar_words2} to spend in the bike shop."
-msgstr "Tienes {dollar_words2} para gastar en la tienda de bicis."
+#. placeholders: {wallet}
+msgid "You have {wallet} to spend in the bike shop."
+msgstr "Tienes {wallet} para gastar en la tienda de bicis."
 
-#. placeholders: {parcel_words}, {dollar_words}
+#. placeholders: {cash}
 #. one sentence of a longer line
-msgid "{parcel_words} grabbed, {dollar_words}."
-msgstr "{parcel_words} cogidos, {dollar_words}."
+msgid "No parcels grabbed, {cash}."
+msgstr "Ningún paquete cogido, {cash}."
 
-#. placeholders: {parcel_words}, {dollar_words}, {dollar_words2}
-msgid ""
-"{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
-"in the bike shop."
-msgstr ""
-"{parcel_words} cogidos, {dollar_words}. Tienes {dollar_words2} para gastar "
-"en la tienda de bicis."
+#. placeholders: {cash}, {spend}
+msgid "No parcels grabbed, {cash}. {spend}"
+msgstr "Ningún paquete cogido, {cash}. {spend}"
+
+#. placeholders: {cash}
+#. one sentence of a longer line
+msgid "1 parcel grabbed, {cash}."
+msgstr "1 paquete cogido, {cash}."
+
+#. placeholders: {cash}, {spend}
+msgid "1 parcel grabbed, {cash}. {spend}"
+msgstr "1 paquete cogido, {cash}. {spend}"
+
+#. placeholders: {n}, {cash}
+#. one sentence of a longer line
+msgid "{n} parcels grabbed, {cash}."
+msgstr "{n} paquetes cogidos, {cash}."
+
+#. placeholders: {n}, {cash}, {spend}
+msgid "{n} parcels grabbed, {cash}. {spend}"
+msgstr "{n} paquetes cogidos, {cash}. {spend}"
 
 #. placeholders: {distance_words}, {dollar_words}
 msgid "Endless ride: {distance_words}, {dollar_words}"
@@ -25982,11 +25995,6 @@ msgstr ""
 #. one sentence of a longer line
 msgid "Quick drops: {quick}."
 msgstr "Entregas rápidas: {quick}."
-
-#. placeholders: {wallet}
-#. one sentence of a longer line
-msgid "You have {wallet} to spend in the bike shop."
-msgstr "Tienes {wallet} para gastar en la tienda de bicis."
 
 #. placeholders: {crash_time}
 #. one sentence of a longer line
@@ -26172,9 +26180,13 @@ msgstr "{tips} en propinas"
 msgid "{leaves} for leaf piles"
 msgstr "{leaves} por montones de hojas"
 
-#. placeholders: {cost}, {trim_end_matches}
-msgid "{cost} lost for {trim_end_matches}"
-msgstr "{cost} perdidos por {trim_end_matches}"
+#. placeholders: {cost}
+msgid "{cost} lost for 1 crash"
+msgstr "{cost} perdidos por 1 choque"
+
+#. placeholders: {cost}, {n}
+msgid "{cost} lost for {n} crashes"
+msgstr "{cost} perdidos por {n} choques"
 
 #. placeholders: {limit}
 msgid "Be in the bike lane, under {limit}."
@@ -26194,16 +26206,6 @@ msgstr "Giro a la izquierda en {distance}."
 #. placeholders: {distance}
 msgid "Right turn in {distance}."
 msgstr "Giro a la derecha en {distance}."
-
-msgid "No parcels"
-msgstr "Ningún paquete"
-
-msgid "1 parcel"
-msgstr "1 paquete"
-
-#. placeholders: {n}
-msgid "{n} parcels"
-msgstr "{n} paquetes"
 
 msgid "No crashes."
 msgstr "Sin choques."
@@ -52198,6 +52200,14 @@ msgstr "No tocaste ningún bolo.{left}"
 msgid "{count} down, a split.{left}"
 msgstr "{count} derribados, un split.{left}"
 
+#. placeholders: {left}
+msgid "1 pin down.{left}"
+msgstr "1 bolo derribado.{left}"
+
+#. placeholders: {n}, {left}
+msgid "{n} pins down.{left}"
+msgstr "{n} bolos derribados.{left}"
+
 #. placeholders: {line}, {made}, {total}
 msgid "{line} {made} of {total} made."
 msgstr "{line} {made} de {total} hechos."
@@ -52291,33 +52301,45 @@ msgstr "1 semipleno"
 msgid "Angle into the pocket: board {stand}, {aim_words}."
 msgstr "Entra en ángulo al bolsillo: tabla {stand}, {aim_words}."
 
-msgid "the pin"
-msgstr "el bolo"
+#. one sentence of a longer line
+msgid "A clean release there should take the pin."
+msgstr "Una suelta limpia ahí debería llevarse el bolo."
+
+#. placeholders: {stand}, {aim}
+#. one sentence of a longer line
+msgid "Try board {stand}, {aim}."
+msgstr "Prueba la tabla {stand}, {aim}."
+
+#. placeholders: {stand}, {aim}
+msgid "Try board {stand}, {aim}. A clean release there should take the pin."
+msgstr ""
+"Prueba la tabla {stand}, {aim}. Una suelta limpia ahí debería llevarse el "
+"bolo."
 
 #. placeholders: {down}
-msgid "all {down}"
-msgstr "los {down}"
+#. one sentence of a longer line
+msgid "A clean release there should take all {down}."
+msgstr "Una suelta limpia ahí debería llevarse los {down}."
+
+#. placeholders: {stand}, {aim}, {down}
+msgid ""
+"Try board {stand}, {aim}. A clean release there should take all {down}."
+msgstr ""
+"Prueba la tabla {stand}, {aim}. Una suelta limpia ahí debería llevarse los "
+"{down}."
 
 #. placeholders: {down}, {count}
-msgid "{down} of {count}"
-msgstr "{down} de {count}"
-
-#. placeholders: {all}
 #. one sentence of a longer line
-msgid "A clean release there should take {all}."
-msgstr "Una suelta limpia ahí debería llevarse {all}."
+msgid "A clean release there should take {down} of {count}."
+msgstr "Una suelta limpia ahí debería llevarse {down} de {count}."
 
-#. placeholders: {stand}, {aim_words}
-#. one sentence of a longer line
-msgid "Try board {stand}, {aim_words}."
-msgstr "Prueba la tabla {stand}, {aim_words}."
-
-#. placeholders: {stand}, {aim_words}, {all}
+#. placeholders: {stand}, {aim}, {down}, {count}
 msgid ""
-"Try board {stand}, {aim_words}. A clean release there should take {all}."
+"Try board {stand}, {aim}. A clean release there should take {down} of "
+"{count}."
 msgstr ""
-"Prueba la tabla {stand}, {aim_words}. Una suelta limpia ahí debería "
-"llevarse {all}."
+"Prueba la tabla {stand}, {aim}. Una suelta limpia ahí debería llevarse "
+"{down} de {count}."
 
 msgid "strike"
 msgstr "pleno"
@@ -60651,7 +60673,7 @@ msgstr "{w} segundos"
 
 #. placeholders: {w}, {p}
 msgid "{w}.{p} seconds"
-msgstr "{w}.{p} segundos"
+msgstr "{w},{p} segundos"
 
 msgid "a juicy chew"
 msgstr "un mordisco jugoso"
@@ -95945,6 +95967,52 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "You have {dollar_words2} to spend in the bike shop."
+#~ msgstr "Tienes {dollar_words2} para gastar en la tienda de bicis."
+
+#~ msgid "{parcel_words} grabbed, {dollar_words}."
+#~ msgstr "{parcel_words} cogidos, {dollar_words}."
+
+#~ msgid ""
+#~ "{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
+#~ "in the bike shop."
+#~ msgstr ""
+#~ "{parcel_words} cogidos, {dollar_words}. Tienes {dollar_words2} para gastar "
+#~ "en la tienda de bicis."
+
+#~ msgid "{cost} lost for {trim_end_matches}"
+#~ msgstr "{cost} perdidos por {trim_end_matches}"
+
+#~ msgid "No parcels"
+#~ msgstr "Ningún paquete"
+
+#~ msgid "1 parcel"
+#~ msgstr "1 paquete"
+
+#~ msgid "{n} parcels"
+#~ msgstr "{n} paquetes"
+
+#~ msgid "the pin"
+#~ msgstr "el bolo"
+
+#~ msgid "all {down}"
+#~ msgstr "los {down}"
+
+#~ msgid "{down} of {count}"
+#~ msgstr "{down} de {count}"
+
+#~ msgid "A clean release there should take {all}."
+#~ msgstr "Una suelta limpia ahí debería llevarse {all}."
+
+#~ msgid "Try board {stand}, {aim_words}."
+#~ msgstr "Prueba la tabla {stand}, {aim_words}."
+
+#~ msgid ""
+#~ "Try board {stand}, {aim_words}. A clean release there should take {all}."
+#~ msgstr ""
+#~ "Prueba la tabla {stand}, {aim_words}. Una suelta limpia ahí debería "
+#~ "llevarse {all}."
 
 #~ msgid "{n} cards, the {first} down to the {last}"
 #~ msgstr "{n} cartas, desde {first} hasta {last}"

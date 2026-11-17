@@ -26062,23 +26062,36 @@ msgstr "Fahrt vorbei."
 msgid "Ride over. {sentence_start} in {name}. {record}"
 msgstr "Fahrt vorbei. {sentence_start} in {name}. {record}"
 
-#. placeholders: {dollar_words2}
-#. one sentence of a longer line
-msgid "You have {dollar_words2} to spend in the bike shop."
-msgstr "Du hast {dollar_words2} für den Fahrradladen."
+#. placeholders: {wallet}
+msgid "You have {wallet} to spend in the bike shop."
+msgstr "Du hast {wallet} für den Fahrradladen."
 
-#. placeholders: {parcel_words}, {dollar_words}
+#. placeholders: {cash}
 #. one sentence of a longer line
-msgid "{parcel_words} grabbed, {dollar_words}."
-msgstr "{parcel_words} geschnappt, {dollar_words}."
+msgid "No parcels grabbed, {cash}."
+msgstr "Keine Pakete geschnappt, {cash}."
 
-#. placeholders: {parcel_words}, {dollar_words}, {dollar_words2}
-msgid ""
-"{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
-"in the bike shop."
-msgstr ""
-"{parcel_words} geschnappt, {dollar_words}. Du hast {dollar_words2} für den "
-"Fahrradladen."
+#. placeholders: {cash}, {spend}
+msgid "No parcels grabbed, {cash}. {spend}"
+msgstr "Keine Pakete geschnappt, {cash}. {spend}"
+
+#. placeholders: {cash}
+#. one sentence of a longer line
+msgid "1 parcel grabbed, {cash}."
+msgstr "1 Paket geschnappt, {cash}."
+
+#. placeholders: {cash}, {spend}
+msgid "1 parcel grabbed, {cash}. {spend}"
+msgstr "1 Paket geschnappt, {cash}. {spend}"
+
+#. placeholders: {n}, {cash}
+#. one sentence of a longer line
+msgid "{n} parcels grabbed, {cash}."
+msgstr "{n} Pakete geschnappt, {cash}."
+
+#. placeholders: {n}, {cash}, {spend}
+msgid "{n} parcels grabbed, {cash}. {spend}"
+msgstr "{n} Pakete geschnappt, {cash}. {spend}"
 
 #. placeholders: {distance_words}, {dollar_words}
 msgid "Endless ride: {distance_words}, {dollar_words}"
@@ -26134,11 +26147,6 @@ msgstr ""
 #. one sentence of a longer line
 msgid "Quick drops: {quick}."
 msgstr "Schnelle Abgaben: {quick}."
-
-#. placeholders: {wallet}
-#. one sentence of a longer line
-msgid "You have {wallet} to spend in the bike shop."
-msgstr "Du hast {wallet} für den Fahrradladen."
 
 #. placeholders: {crash_time}
 #. one sentence of a longer line
@@ -26323,9 +26331,13 @@ msgstr "{tips} an Trinkgeld"
 msgid "{leaves} for leaf piles"
 msgstr "{leaves} für Laubhaufen"
 
-#. placeholders: {cost}, {trim_end_matches}
-msgid "{cost} lost for {trim_end_matches}"
-msgstr ""
+#. placeholders: {cost}
+msgid "{cost} lost for 1 crash"
+msgstr "{cost} weg für 1 Sturz"
+
+#. placeholders: {cost}, {n}
+msgid "{cost} lost for {n} crashes"
+msgstr "{cost} weg für {n} Stürze"
 
 #. placeholders: {limit}
 msgid "Be in the bike lane, under {limit}."
@@ -26343,16 +26355,6 @@ msgstr "Links abbiegen in {distance}."
 #. placeholders: {distance}
 msgid "Right turn in {distance}."
 msgstr "Rechts abbiegen in {distance}."
-
-msgid "No parcels"
-msgstr "Keine Pakete"
-
-msgid "1 parcel"
-msgstr "1 Paket"
-
-#. placeholders: {n}
-msgid "{n} parcels"
-msgstr "{n} Pakete"
 
 msgid "No crashes."
 msgstr "Keine Stürze."
@@ -52530,6 +52532,14 @@ msgstr "Alle Pins verfehlt.{left}"
 msgid "{count} down, a split.{left}"
 msgstr "{count} umgeworfen, ein Split.{left}"
 
+#. placeholders: {left}
+msgid "1 pin down.{left}"
+msgstr "1 Pin gefallen.{left}"
+
+#. placeholders: {n}, {left}
+msgid "{n} pins down.{left}"
+msgstr "{n} Pins gefallen.{left}"
+
 #. placeholders: {line}, {made}, {total}
 msgid "{line} {made} of {total} made."
 msgstr "{line} {made} von {total} geschafft."
@@ -52623,33 +52633,44 @@ msgstr "1 Spare"
 msgid "Angle into the pocket: board {stand}, {aim_words}."
 msgstr "Schräg in die Tasche: Brett {stand}, {aim_words}."
 
-msgid "the pin"
-msgstr "den Pin"
+#. one sentence of a longer line
+msgid "A clean release there should take the pin."
+msgstr "Sauberes Loslassen dort sollte den Pin nehmen."
+
+#. placeholders: {stand}, {aim}
+#. one sentence of a longer line
+msgid "Try board {stand}, {aim}."
+msgstr "Versuch Brett {stand}, {aim}."
+
+#. placeholders: {stand}, {aim}
+msgid "Try board {stand}, {aim}. A clean release there should take the pin."
+msgstr ""
+"Versuch Brett {stand}, {aim}. Sauberes Loslassen dort sollte den Pin nehmen."
 
 #. placeholders: {down}
-msgid "all {down}"
-msgstr "alle {down}"
+#. one sentence of a longer line
+msgid "A clean release there should take all {down}."
+msgstr "Sauberes Loslassen dort sollte alle {down} nehmen."
+
+#. placeholders: {stand}, {aim}, {down}
+msgid ""
+"Try board {stand}, {aim}. A clean release there should take all {down}."
+msgstr ""
+"Versuch Brett {stand}, {aim}. Sauberes Loslassen dort sollte alle {down} "
+"nehmen."
 
 #. placeholders: {down}, {count}
-msgid "{down} of {count}"
-msgstr "{down} von {count}"
-
-#. placeholders: {all}
 #. one sentence of a longer line
-msgid "A clean release there should take {all}."
-msgstr "Sauberes Loslassen dort sollte {all} nehmen."
+msgid "A clean release there should take {down} of {count}."
+msgstr "Sauberes Loslassen dort sollte {down} von {count} nehmen."
 
-#. placeholders: {stand}, {aim_words}
-#. one sentence of a longer line
-msgid "Try board {stand}, {aim_words}."
-msgstr "Versuch Brett {stand}, {aim_words}."
-
-#. placeholders: {stand}, {aim_words}, {all}
+#. placeholders: {stand}, {aim}, {down}, {count}
 msgid ""
-"Try board {stand}, {aim_words}. A clean release there should take {all}."
+"Try board {stand}, {aim}. A clean release there should take {down} of "
+"{count}."
 msgstr ""
-"Versuch Brett {stand}, {aim_words}. Sauberes Loslassen dort sollte {all} "
-"nehmen."
+"Versuch Brett {stand}, {aim}. Sauberes Loslassen dort sollte {down} von "
+"{count} nehmen."
 
 msgid "strike"
 msgstr "Strike"
@@ -96533,6 +96554,49 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "You have {dollar_words2} to spend in the bike shop."
+#~ msgstr "Du hast {dollar_words2} für den Fahrradladen."
+
+#~ msgid "{parcel_words} grabbed, {dollar_words}."
+#~ msgstr "{parcel_words} geschnappt, {dollar_words}."
+
+#~ msgid ""
+#~ "{parcel_words} grabbed, {dollar_words}. You have {dollar_words2} to spend "
+#~ "in the bike shop."
+#~ msgstr ""
+#~ "{parcel_words} geschnappt, {dollar_words}. Du hast {dollar_words2} für den "
+#~ "Fahrradladen."
+
+#~ msgid "No parcels"
+#~ msgstr "Keine Pakete"
+
+#~ msgid "1 parcel"
+#~ msgstr "1 Paket"
+
+#~ msgid "{n} parcels"
+#~ msgstr "{n} Pakete"
+
+#~ msgid "the pin"
+#~ msgstr "den Pin"
+
+#~ msgid "all {down}"
+#~ msgstr "alle {down}"
+
+#~ msgid "{down} of {count}"
+#~ msgstr "{down} von {count}"
+
+#~ msgid "A clean release there should take {all}."
+#~ msgstr "Sauberes Loslassen dort sollte {all} nehmen."
+
+#~ msgid "Try board {stand}, {aim_words}."
+#~ msgstr "Versuch Brett {stand}, {aim_words}."
+
+#~ msgid ""
+#~ "Try board {stand}, {aim_words}. A clean release there should take {all}."
+#~ msgstr ""
+#~ "Versuch Brett {stand}, {aim_words}. Sauberes Loslassen dort sollte {all} "
+#~ "nehmen."
 
 #~ msgid "{n} cards, the {first} down to the {last}"
 #~ msgstr "{n} Karten, von {first} abwärts bis {last}"
