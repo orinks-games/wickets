@@ -19751,12 +19751,20 @@ msgid "{u} and {d} move within a pile."
 msgstr "{u}と{d}で列の中を移動します。"
 
 #. placeholders: {name}
-msgid "the {name}"
-msgstr "{name}"
+msgid "Holding the {name}."
+msgstr "{name}を持っています。"
+
+#. placeholders: {name}
+msgid "Put back: the {name}."
+msgstr "戻しました：{name}。"
 
 #. placeholders: {n}, {first}, {last}
-msgid "{n} cards, the {first} down to the {last}"
-msgstr "{n}枚、{first}から{last}まで"
+msgid "Put back: {n} cards, the {first} down to the {last}."
+msgstr "戻しました：{n}枚、{first}から{last}まで。"
+
+#. placeholders: {n}, {first}, {last}
+msgid "Holding {n} cards, the {first} down to the {last}."
+msgstr "{n}枚、{first}から{last}までを持っています。"
 
 #. placeholders: {p}
 msgid "Pile {p}, empty."
@@ -19823,10 +19831,6 @@ msgstr "山札：めくった札なし、{to_turn}。"
 #. placeholders: {name_and_colour}, {to_turn}
 msgid "Stock: {name_and_colour}, turned up, {to_turn}."
 msgstr "山札：{name_and_colour}がめくれています、{to_turn}。"
-
-#. placeholders: {held_words}
-msgid "Holding {held_words}."
-msgstr "{held_words}を持っています。"
 
 #. placeholders: {pile}
 msgid "On pile {pile}."
@@ -20042,10 +20046,6 @@ msgid ""
 "Move to a pile or a foundation, and {drop_keys} places them. Backspace puts "
 "them back."
 msgstr "列か組札へ移動して、{drop_keys}でまとめて置きます。Backspaceで戻します。"
-
-#. placeholders: {words}
-msgid "Put back: {words}."
-msgstr "戻しました：{words}。"
 
 msgid "Not on the stock."
 msgstr "山札には置けません。"
@@ -31160,10 +31160,6 @@ msgstr "謎：{kind_name}、解けました。"
 msgid "Puzzle: {kind_name}."
 msgstr "謎：{kind_name}。"
 
-#. placeholders: {name}
-msgid "Holding the {name}."
-msgstr "{name}を持っています。"
-
 #. placeholders: {w}
 msgid "The pendulum swings {w}."
 msgstr "振り子が揺れています、{w}。"
@@ -39422,6 +39418,10 @@ msgstr "キツネ"
 msgid ""
 "A sharp yelp at the hen house. Chase the fox off before it takes a hen."
 msgstr "鶏小屋で鋭い鳴き声。キツネがニワトリを取る前に追い払いましょう。"
+
+#. placeholders: {name}
+msgid "the {name}"
+msgstr "{name}"
 
 #. placeholders: {order}, {name}
 msgid ""
@@ -81123,17 +81123,12 @@ msgstr ""
 msgid "Every letter is answered."
 msgstr "手紙にすべて返事をしました。"
 
-msgid "Late post. "
+msgid "Late post."
 msgstr "夜の追加便。"
 
-#. placeholders: {late}, {from}, {age}
-#. one sentence of a longer line
-msgid "{late}{from}, age {age}, writes."
-msgstr "{late}{from}、{age}歳からの手紙です。"
-
-#. placeholders: {late}, {from}, {age}, {words}, {sound}
-msgid "{late}{from}, age {age}, writes. {words}{sound}"
-msgstr "{late}{from}、{age}歳からの手紙です。{words}{sound}"
+#. placeholders: {from}, {age}
+msgid "{from}, age {age}, writes."
+msgstr "{from}、{age}歳からの手紙です。"
 
 #. placeholders: {last}
 msgid " of {last}"
@@ -86016,6 +86011,24 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{n} cards, the {first} down to the {last}"
+#~ msgstr "{n}枚、{first}から{last}まで"
+
+#~ msgid "Holding {held_words}."
+#~ msgstr "{held_words}を持っています。"
+
+#~ msgid "Put back: {words}."
+#~ msgstr "戻しました：{words}。"
+
+#~ msgid "Late post. "
+#~ msgstr "夜の追加便。"
+
+#~ msgid "{late}{from}, age {age}, writes."
+#~ msgstr "{late}{from}、{age}歳からの手紙です。"
+
+#~ msgid "{late}{from}, age {age}, writes. {words}{sound}"
+#~ msgstr "{late}{from}、{age}歳からの手紙です。{words}{sound}"
 
 #~ msgid ": waits"
 #~ msgstr "：待機中"

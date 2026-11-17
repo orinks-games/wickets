@@ -21554,12 +21554,20 @@ msgid "{u} and {d} move within a pile."
 msgstr "{u} ve {d} sütun içinde gezinir."
 
 #. placeholders: {name}
-msgid "the {name}"
-msgstr "{name}"
+msgid "Holding the {name}."
+msgstr "Elinizde: {name}."
+
+#. placeholders: {name}
+msgid "Put back: the {name}."
+msgstr "Geri konuldu: {name}."
 
 #. placeholders: {n}, {first}, {last}
-msgid "{n} cards, the {first} down to the {last}"
-msgstr "{n} kart, {first} kartından {last} kartına kadar"
+msgid "Put back: {n} cards, the {first} down to the {last}."
+msgstr "Geri konuldu: {n} kart, {first} kartından {last} kartına kadar."
+
+#. placeholders: {n}, {first}, {last}
+msgid "Holding {n} cards, the {first} down to the {last}."
+msgstr "Elinizde {n} kart, {first} kartından {last} kartına kadar."
 
 #. placeholders: {p}
 msgid "Pile {p}, empty."
@@ -21626,10 +21634,6 @@ msgstr "Deste: açılan kart yok, {to_turn}."
 #. placeholders: {name_and_colour}, {to_turn}
 msgid "Stock: {name_and_colour}, turned up, {to_turn}."
 msgstr "Deste: {name_and_colour} açık, {to_turn}."
-
-#. placeholders: {held_words}
-msgid "Holding {held_words}."
-msgstr "Elinizde {held_words}."
 
 #. placeholders: {pile}
 msgid "On pile {pile}."
@@ -21854,10 +21858,6 @@ msgid ""
 msgstr ""
 "Bir sütuna ya da temele gidin, {drop_keys} onları yerleştirir. Backspace "
 "onları geri koyar."
-
-#. placeholders: {words}
-msgid "Put back: {words}."
-msgstr "Geri konuldu: {words}."
 
 msgid "Not on the stock."
 msgstr "Desteye olmaz."
@@ -34080,10 +34080,6 @@ msgstr "Bulmaca: {kind_name}, çözüldü."
 msgid "Puzzle: {kind_name}."
 msgstr "Bulmaca: {kind_name}."
 
-#. placeholders: {name}
-msgid "Holding the {name}."
-msgstr "Elinizde: {name}."
-
 #. placeholders: {w}
 msgid "The pendulum swings {w}."
 msgstr "Sarkaç {w} sallanıyor."
@@ -43061,6 +43057,10 @@ msgstr "Tilki"
 msgid ""
 "A sharp yelp at the hen house. Chase the fox off before it takes a hen."
 msgstr "Kümeste keskin bir havlama. Tilki bir tavuk kapmadan onu kovalayın."
+
+#. placeholders: {name}
+msgid "the {name}"
+msgstr "{name}"
 
 #. placeholders: {order}, {name}
 msgid ""
@@ -89009,17 +89009,12 @@ msgstr ""
 msgid "Every letter is answered."
 msgstr "Her mektup yanıtlandı."
 
-msgid "Late post. "
-msgstr "Geç posta. "
+msgid "Late post."
+msgstr "Geç posta."
 
-#. placeholders: {late}, {from}, {age}
-#. one sentence of a longer line
-msgid "{late}{from}, age {age}, writes."
-msgstr "{late}{from}, {age} yaşında, yazıyor."
-
-#. placeholders: {late}, {from}, {age}, {words}, {sound}
-msgid "{late}{from}, age {age}, writes. {words}{sound}"
-msgstr "{late}{from}, {age} yaşında, yazıyor. {words}{sound}"
+#. placeholders: {from}, {age}
+msgid "{from}, age {age}, writes."
+msgstr "{from}, {age} yaşında, yazıyor."
 
 #. placeholders: {last}
 msgid " of {last}"
@@ -94140,6 +94135,24 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{n} cards, the {first} down to the {last}"
+#~ msgstr "{n} kart, {first} kartından {last} kartına kadar"
+
+#~ msgid "Holding {held_words}."
+#~ msgstr "Elinizde {held_words}."
+
+#~ msgid "Put back: {words}."
+#~ msgstr "Geri konuldu: {words}."
+
+#~ msgid "Late post. "
+#~ msgstr "Geç posta. "
+
+#~ msgid "{late}{from}, age {age}, writes."
+#~ msgstr "{late}{from}, {age} yaşında, yazıyor."
+
+#~ msgid "{late}{from}, age {age}, writes. {words}{sound}"
+#~ msgstr "{late}{from}, {age} yaşında, yazıyor. {words}{sound}"
 
 #~ msgid ": waits"
 #~ msgstr ": bekliyor"

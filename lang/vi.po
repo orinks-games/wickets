@@ -21334,12 +21334,20 @@ msgid "{u} and {d} move within a pile."
 msgstr "{u} và {d} đi trong một cột."
 
 #. placeholders: {name}
-msgid "the {name}"
-msgstr "{name}"
+msgid "Holding the {name}."
+msgstr "Đang cầm {name}."
+
+#. placeholders: {name}
+msgid "Put back: the {name}."
+msgstr "Đã trả về: {name}."
 
 #. placeholders: {n}, {first}, {last}
-msgid "{n} cards, the {first} down to the {last}"
-msgstr "{n} lá, từ {first} xuống đến {last}"
+msgid "Put back: {n} cards, the {first} down to the {last}."
+msgstr "Đã trả về: {n} lá, từ {first} xuống đến {last}."
+
+#. placeholders: {n}, {first}, {last}
+msgid "Holding {n} cards, the {first} down to the {last}."
+msgstr "Đang cầm {n} lá, từ {first} xuống đến {last}."
 
 #. placeholders: {p}
 msgid "Pile {p}, empty."
@@ -21406,10 +21414,6 @@ msgstr "Nọc: chưa lật lá nào, {to_turn}."
 #. placeholders: {name_and_colour}, {to_turn}
 msgid "Stock: {name_and_colour}, turned up, {to_turn}."
 msgstr "Nọc: {name_and_colour}, đã lật, {to_turn}."
-
-#. placeholders: {held_words}
-msgid "Holding {held_words}."
-msgstr "Đang cầm {held_words}."
 
 #. placeholders: {pile}
 msgid "On pile {pile}."
@@ -21631,10 +21635,6 @@ msgid ""
 msgstr ""
 "Đi tới một cột hoặc chồng đích, rồi {drop_keys} để đặt các lá bài xuống. "
 "Backspace trả các lá bài về."
-
-#. placeholders: {words}
-msgid "Put back: {words}."
-msgstr "Đã trả về: {words}."
 
 msgid "Not on the stock."
 msgstr "Không đặt lên nọc được."
@@ -33648,10 +33648,6 @@ msgstr "Câu đố: {kind_name}, đã giải."
 msgid "Puzzle: {kind_name}."
 msgstr "Câu đố: {kind_name}."
 
-#. placeholders: {name}
-msgid "Holding the {name}."
-msgstr "Đang cầm {name}."
-
 #. placeholders: {w}
 msgid "The pendulum swings {w}."
 msgstr "Con lắc đung đưa {w}."
@@ -42598,6 +42594,10 @@ msgid ""
 "A sharp yelp at the hen house. Chase the fox off before it takes a hen."
 msgstr ""
 "Tiếng kêu ăng ẳng ở chuồng gà. Đuổi cáo đi trước khi nó bắt mất một con gà."
+
+#. placeholders: {name}
+msgid "the {name}"
+msgstr "{name}"
 
 #. placeholders: {order}, {name}
 msgid ""
@@ -88263,17 +88263,12 @@ msgstr ""
 msgid "Every letter is answered."
 msgstr "Mọi lá thư đã được trả lời."
 
-msgid "Late post. "
-msgstr "Thư muộn. "
+msgid "Late post."
+msgstr "Thư muộn."
 
-#. placeholders: {late}, {from}, {age}
-#. one sentence of a longer line
-msgid "{late}{from}, age {age}, writes."
-msgstr "{late}{from}, {age} tuổi, viết thư."
-
-#. placeholders: {late}, {from}, {age}, {words}, {sound}
-msgid "{late}{from}, age {age}, writes. {words}{sound}"
-msgstr "{late}{from}, {age} tuổi, viết thư. {words}{sound}"
+#. placeholders: {from}, {age}
+msgid "{from}, age {age}, writes."
+msgstr "{from}, {age} tuổi, viết thư."
 
 #. placeholders: {last}
 msgid " of {last}"
@@ -93354,6 +93349,24 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{n} cards, the {first} down to the {last}"
+#~ msgstr "{n} lá, từ {first} xuống đến {last}"
+
+#~ msgid "Holding {held_words}."
+#~ msgstr "Đang cầm {held_words}."
+
+#~ msgid "Put back: {words}."
+#~ msgstr "Đã trả về: {words}."
+
+#~ msgid "Late post. "
+#~ msgstr "Thư muộn. "
+
+#~ msgid "{late}{from}, age {age}, writes."
+#~ msgstr "{late}{from}, {age} tuổi, viết thư."
+
+#~ msgid "{late}{from}, age {age}, writes. {words}{sound}"
+#~ msgstr "{late}{from}, {age} tuổi, viết thư. {words}{sound}"
 
 #~ msgid ": waits"
 #~ msgstr ": đang chờ"

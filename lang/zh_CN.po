@@ -19516,12 +19516,20 @@ msgid "{u} and {d} move within a pile."
 msgstr "{u}和{d}在一列里移动。"
 
 #. placeholders: {name}
-msgid "the {name}"
-msgstr "{name}"
+msgid "Holding the {name}."
+msgstr "拿着{name}。"
+
+#. placeholders: {name}
+msgid "Put back: the {name}."
+msgstr "放回：{name}。"
 
 #. placeholders: {n}, {first}, {last}
-msgid "{n} cards, the {first} down to the {last}"
-msgstr "{n}张牌，从{first}往下到{last}"
+msgid "Put back: {n} cards, the {first} down to the {last}."
+msgstr "放回：{n}张牌，从{first}往下到{last}。"
+
+#. placeholders: {n}, {first}, {last}
+msgid "Holding {n} cards, the {first} down to the {last}."
+msgstr "拿着{n}张牌，从{first}往下到{last}。"
 
 #. placeholders: {p}
 msgid "Pile {p}, empty."
@@ -19588,10 +19596,6 @@ msgstr "牌库：没有翻开的牌，{to_turn}。"
 #. placeholders: {name_and_colour}, {to_turn}
 msgid "Stock: {name_and_colour}, turned up, {to_turn}."
 msgstr "牌库：翻开的是{name_and_colour}，{to_turn}。"
-
-#. placeholders: {held_words}
-msgid "Holding {held_words}."
-msgstr "拿着{held_words}。"
 
 #. placeholders: {pile}
 msgid "On pile {pile}."
@@ -19807,10 +19811,6 @@ msgid ""
 "Move to a pile or a foundation, and {drop_keys} places them. Backspace puts "
 "them back."
 msgstr "移到一列或收牌堆，按{drop_keys}把它们放下。按Backspace把它们放回去。"
-
-#. placeholders: {words}
-msgid "Put back: {words}."
-msgstr "放回：{words}。"
 
 msgid "Not on the stock."
 msgstr "不能放在牌库上。"
@@ -30782,10 +30782,6 @@ msgstr "谜题：{kind_name}，已解开。"
 msgid "Puzzle: {kind_name}."
 msgstr "谜题：{kind_name}。"
 
-#. placeholders: {name}
-msgid "Holding the {name}."
-msgstr "拿着{name}。"
-
 #. placeholders: {w}
 msgid "The pendulum swings {w}."
 msgstr "钟摆在{w}摆动。"
@@ -38961,6 +38957,10 @@ msgstr "狐狸"
 msgid ""
 "A sharp yelp at the hen house. Chase the fox off before it takes a hen."
 msgstr "鸡舍那边传来一声尖叫。在狐狸叼走母鸡之前把它赶跑。"
+
+#. placeholders: {name}
+msgid "the {name}"
+msgstr "{name}"
 
 #. placeholders: {order}, {name}
 msgid ""
@@ -80092,17 +80092,12 @@ msgstr ""
 msgid "Every letter is answered."
 msgstr "每封信都回复了。"
 
-msgid "Late post. "
+msgid "Late post."
 msgstr "晚班邮件。"
 
-#. placeholders: {late}, {from}, {age}
-#. one sentence of a longer line
-msgid "{late}{from}, age {age}, writes."
-msgstr "{late}{from}，{age}岁，来信了。"
-
-#. placeholders: {late}, {from}, {age}, {words}, {sound}
-msgid "{late}{from}, age {age}, writes. {words}{sound}"
-msgstr "{late}{from}，{age}岁，来信了。{words}{sound}"
+#. placeholders: {from}, {age}
+msgid "{from}, age {age}, writes."
+msgstr "{from}，{age}岁，来信了。"
 
 #. placeholders: {last}
 msgid " of {last}"
@@ -84950,6 +84945,24 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{n} cards, the {first} down to the {last}"
+#~ msgstr "{n}张牌，从{first}往下到{last}"
+
+#~ msgid "Holding {held_words}."
+#~ msgstr "拿着{held_words}。"
+
+#~ msgid "Put back: {words}."
+#~ msgstr "放回：{words}。"
+
+#~ msgid "Late post. "
+#~ msgstr "晚班邮件。"
+
+#~ msgid "{late}{from}, age {age}, writes."
+#~ msgstr "{late}{from}，{age}岁，来信了。"
+
+#~ msgid "{late}{from}, age {age}, writes. {words}{sound}"
+#~ msgstr "{late}{from}，{age}岁，来信了。{words}{sound}"
 
 #~ msgid ": waits"
 #~ msgstr "：等待中"

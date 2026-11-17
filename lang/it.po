@@ -21949,12 +21949,20 @@ msgid "{u} and {d} move within a pile."
 msgstr "{u} e {d} si muovono in una pila."
 
 #. placeholders: {name}
-msgid "the {name}"
-msgstr ""
+msgid "Holding the {name}."
+msgstr "Tieni: {name}."
+
+#. placeholders: {name}
+msgid "Put back: the {name}."
+msgstr "Rimessa a posto: {name}."
 
 #. placeholders: {n}, {first}, {last}
-msgid "{n} cards, the {first} down to the {last}"
-msgstr "{n} carte, da {first} giù fino a {last}"
+msgid "Put back: {n} cards, the {first} down to the {last}."
+msgstr "Rimesse a posto: {n} carte, da {first} giù fino a {last}."
+
+#. placeholders: {n}, {first}, {last}
+msgid "Holding {n} cards, the {first} down to the {last}."
+msgstr "Tieni {n} carte, da {first} giù fino a {last}."
 
 #. placeholders: {p}
 msgid "Pile {p}, empty."
@@ -22021,10 +22029,6 @@ msgstr "Mazzo: niente scoperto, {to_turn}."
 #. placeholders: {name_and_colour}, {to_turn}
 msgid "Stock: {name_and_colour}, turned up, {to_turn}."
 msgstr "Mazzo: {name_and_colour}, scoperta, {to_turn}."
-
-#. placeholders: {held_words}
-msgid "Holding {held_words}."
-msgstr "Tieni {held_words}."
 
 #. placeholders: {pile}
 msgid "On pile {pile}."
@@ -22245,10 +22249,6 @@ msgid ""
 msgstr ""
 "Vai su una pila o una base, e {drop_keys} le posa. Backspace le rimette "
 "dov'erano."
-
-#. placeholders: {words}
-msgid "Put back: {words}."
-msgstr "Rimesse a posto: {words}."
 
 msgid "Not on the stock."
 msgstr "Non sul mazzo."
@@ -34657,10 +34657,6 @@ msgstr "Enigma: {kind_name}, risolto."
 msgid "Puzzle: {kind_name}."
 msgstr "Enigma: {kind_name}."
 
-#. placeholders: {name}
-msgid "Holding the {name}."
-msgstr "Tieni: {name}."
-
 #. placeholders: {w}
 msgid "The pendulum swings {w}."
 msgstr "Il pendolo oscilla {w}."
@@ -43810,6 +43806,10 @@ msgstr "Una volpe"
 msgid ""
 "A sharp yelp at the hen house. Chase the fox off before it takes a hen."
 msgstr "Un guaito al pollaio. Caccia la volpe prima che prenda una gallina."
+
+#. placeholders: {name}
+msgid "the {name}"
+msgstr ""
 
 #. placeholders: {order}, {name}
 msgid ""
@@ -90845,17 +90845,12 @@ msgstr ""
 msgid "Every letter is answered."
 msgstr "Ogni lettera ha la sua risposta."
 
-msgid "Late post. "
-msgstr "Posta tardiva. "
+msgid "Late post."
+msgstr "Posta tardiva."
 
-#. placeholders: {late}, {from}, {age}
-#. one sentence of a longer line
-msgid "{late}{from}, age {age}, writes."
-msgstr "{late}{from}, {age} anni, scrive."
-
-#. placeholders: {late}, {from}, {age}, {words}, {sound}
-msgid "{late}{from}, age {age}, writes. {words}{sound}"
-msgstr "{late}{from}, {age} anni, scrive. {words}{sound}"
+#. placeholders: {from}, {age}
+msgid "{from}, age {age}, writes."
+msgstr "{from}, {age} anni, scrive."
 
 #. placeholders: {last}
 msgid " of {last}"
@@ -96043,6 +96038,24 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{n} cards, the {first} down to the {last}"
+#~ msgstr "{n} carte, da {first} giù fino a {last}"
+
+#~ msgid "Holding {held_words}."
+#~ msgstr "Tieni {held_words}."
+
+#~ msgid "Put back: {words}."
+#~ msgstr "Rimesse a posto: {words}."
+
+#~ msgid "Late post. "
+#~ msgstr "Posta tardiva. "
+
+#~ msgid "{late}{from}, age {age}, writes."
+#~ msgstr "{late}{from}, {age} anni, scrive."
+
+#~ msgid "{late}{from}, age {age}, writes. {words}{sound}"
+#~ msgstr "{late}{from}, {age} anni, scrive. {words}{sound}"
 
 #~ msgid ": waits"
 #~ msgstr ": in attesa"

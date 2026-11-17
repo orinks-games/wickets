@@ -244,15 +244,22 @@ impl PlayScreen {
         }
     }
 
-    fn held_words(&self) -> String {
+    /// "Holding the 7 of hearts." or "Put back: 3 cards, the 9 of clubs
+    /// down to the 7 of hearts.", each a whole line.
+    fn held_line(&self, put_back: bool) -> String {
         let cards = self.held_cards();
-        match cards.as_slice() {
-            [] => String::new(),
-            [one] => format!("the {}", one.name()),
-            [first, .., last] => {
+        match (cards.as_slice(), put_back) {
+            ([], _) => String::new(),
+            ([one], false) => format!("Holding the {}.", one.name()),
+            ([one], true) => format!("Put back: the {}.", one.name()),
+            ([first, .., last], put_back) => {
                 let n = cards.len();
                 let (first, last) = (first.name(), last.name());
-                format!("{n} cards, the {first} down to the {last}")
+                if put_back {
+                    format!("Put back: {n} cards, the {first} down to the {last}.")
+                } else {
+                    format!("Holding {n} cards, the {first} down to the {last}.")
+                }
             }
         }
     }
@@ -356,8 +363,7 @@ impl PlayScreen {
         let t = &self.game.table;
         let mut first = Vec::new();
         if self.held.is_some() {
-            let held_words = self.held_words();
-            first.push(format!("Holding {held_words}."));
+            first.push(self.held_line(false));
         }
         first.push(match spot_of(self.cursor) {
             Spot::Pile(p) => {
@@ -653,8 +659,7 @@ impl PlayScreen {
         self.held = Some((spot, count));
         let first = cards[cards.len() - count];
         sound::card(ctx, first.suit);
-        let held_words = self.held_words();
-        ctx.say(format!("Holding {held_words}."));
+        ctx.say(self.held_line(false));
         if !self.told_hold {
             self.told_hold = true;
             let drop_keys = ctx.control_name(ParlorAction::Primary);
@@ -671,10 +676,10 @@ impl PlayScreen {
     }
 
     fn put_back(&mut self, ctx: &mut Ctx<Parlor>) {
-        let words = self.held_words();
+        let line = self.held_line(true);
         self.held = None;
         sound::play(ctx, sound::PLACE_OK);
-        ctx.say(format!("Put back: {words}."));
+        ctx.say(line);
     }
 
     fn place(&mut self, ctx: &mut Ctx<Parlor>) {

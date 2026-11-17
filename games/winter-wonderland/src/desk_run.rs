@@ -159,14 +159,18 @@ impl DeskRun {
         let Some(l) = self.stack.letter() else {
             return "Every letter is answered.".to_string();
         };
-        let late = if l.late { "Late post. " } else { "" };
-        let sound = if self.stack.spec.say_sounds && !l.little {
-            format!(" {}", l.wish.would_sentence())
-        } else {
-            String::new()
-        };
-        let (from, age, words) = (l.from, l.age, l.words());
-        format!("{late}{from}, age {age}, writes. {words}{sound}")
+        // Whole sentences one after another, so each translates on its own.
+        let mut sentences = Vec::new();
+        if l.late {
+            sentences.push("Late post.".to_string());
+        }
+        let (from, age) = (l.from, l.age);
+        sentences.push(format!("{from}, age {age}, writes."));
+        sentences.push(l.words());
+        if self.stack.spec.say_sounds && !l.little {
+            sentences.push(l.wish.would_sentence().to_string());
+        }
+        sentences.join(" ")
     }
 
     fn briefing(&self, ctx: &Ctx<Parlor>) -> String {

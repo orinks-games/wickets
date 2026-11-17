@@ -21631,12 +21631,21 @@ msgid "{u} and {d} move within a pile."
 msgstr "{u} и {d} двигают внутри стопки."
 
 #. placeholders: {name}
-msgid "the {name}"
-msgstr "{name}"
+msgid "Holding the {name}."
+msgstr "В руках: {name}."
+
+#. placeholders: {name}
+msgid "Put back: the {name}."
+msgstr "Возвращено: {name}."
 
 #. placeholders: {n}, {first}, {last}
-msgid "{n} cards, the {first} down to the {last}"
-msgstr "{n} {n:карта|карты|карт}, от карты {first} до карты {last}"
+msgid "Put back: {n} cards, the {first} down to the {last}."
+msgstr ""
+"Возвращено: {n} {n:карта|карты|карт}, от карты {first} до карты {last}."
+
+#. placeholders: {n}, {first}, {last}
+msgid "Holding {n} cards, the {first} down to the {last}."
+msgstr "В руке: {n} {n:карта|карты|карт}, от карты {first} до карты {last}."
 
 #. placeholders: {p}
 msgid "Pile {p}, empty."
@@ -21703,10 +21712,6 @@ msgstr "Колода: ничего не открыто, {to_turn}."
 #. placeholders: {name_and_colour}, {to_turn}
 msgid "Stock: {name_and_colour}, turned up, {to_turn}."
 msgstr "Колода: {name_and_colour}, открыта, {to_turn}."
-
-#. placeholders: {held_words}
-msgid "Holding {held_words}."
-msgstr "В руке: {held_words}."
 
 #. placeholders: {pile}
 msgid "On pile {pile}."
@@ -21929,10 +21934,6 @@ msgid ""
 msgstr ""
 "Перейдите к стопке или базе, и {drop_keys} положит их. Backspace возвращает "
 "их."
-
-#. placeholders: {words}
-msgid "Put back: {words}."
-msgstr "Возвращено: {words}."
 
 msgid "Not on the stock."
 msgstr "Не на колоду."
@@ -24439,7 +24440,7 @@ msgstr "Особые поездки. {join}"
 
 #. placeholders: {PLAY}, {name}, {name2}
 msgid "{PLAY}, endless ride: {name} on the {name2}"
-msgstr "{PLAY}, бесконечная поездка: {name}, велосипед {name2}"
+msgstr "{PLAY}, бесконечная поездка: {name}, велосипед: {name2}"
 
 #. placeholders: {best}
 #. one sentence of a longer line
@@ -24596,20 +24597,20 @@ msgstr "{near_words} справа"
 #. placeholders: {course}, {bike}
 #. one sentence of a longer line
 msgid "Time trial, {course}, on the {bike}."
-msgstr "Заезд на время, {course}, на велосипеде {bike}."
+msgstr "Заезд на время, {course}, велосипед: {bike}."
 
 #. placeholders: {course}, {bike}, {about}
 msgid "Time trial, {course}, on the {bike}. {about}"
-msgstr "Заезд на время, {course}, на велосипеде {bike}. {about}"
+msgstr "Заезд на время, {course}, велосипед: {bike}. {about}"
 
 #. placeholders: {bike}, {length}
 #. one sentence of a longer line
 msgid "Free ride on the {bike}, {length}, no clock."
-msgstr "Свободная поездка на велосипеде {bike}, {length}, без часов."
+msgstr "Свободная поездка, велосипед: {bike}, {length}, без часов."
 
 #. placeholders: {bike}, {length}, {go}
 msgid "Free ride on the {bike}, {length}, no clock. {go}"
-msgstr "Свободная поездка на велосипеде {bike}, {length}, без часов. {go}"
+msgstr "Свободная поездка, велосипед: {bike}, {length}, без часов. {go}"
 
 #. placeholders: {title}, {district}, {bike}
 #. one sentence of a longer line
@@ -24629,18 +24630,18 @@ msgstr "{length}, срок {deadline}."
 
 #. placeholders: {district}, {bike}
 msgid "Delivery in {district}, on the {bike}."
-msgstr "Доставка, район {district}, на велосипеде {bike}."
+msgstr "Доставка, район {district}, велосипед: {bike}."
 
 #. placeholders: {district}, {bike}
 #. one sentence of a longer line
 msgid "Endless ride, {district}, on the {bike}."
-msgstr "Бесконечная поездка, {district}, на велосипеде {bike}."
+msgstr "Бесконечная поездка, {district}, велосипед: {bike}."
 
 #. placeholders: {district}, {bike}, {ENDLESS_CRASHES}
 msgid ""
 "Endless ride, {district}, on the {bike}. {ENDLESS_CRASHES} crashes end it."
 msgstr ""
-"Бесконечная поездка, {district}, на велосипеде {bike}. Аварий до конца "
+"Бесконечная поездка, {district}, велосипед: {bike}. Аварий до конца "
 "поездки: {ENDLESS_CRASHES}."
 
 #. placeholders: {ENDLESS_CRASHES}
@@ -24655,25 +24656,25 @@ msgstr "Сдачи посылок добавляют время."
 #. placeholders: {clock_name}, {district}, {bike}
 #. one sentence of a longer line
 msgid "{clock_name}, {district}, on the {bike}."
-msgstr "{clock_name}, {district}, на велосипеде {bike}."
+msgstr "{clock_name}, {district}, велосипед: {bike}."
 
 #. placeholders: {clock_name}, {district}, {bike}, {time}
 msgid "{clock_name}, {district}, on the {bike}. {time}. Drops add time."
 msgstr ""
-"{clock_name}, {district}, на велосипеде {bike}. {time}. Сданные посылки "
+"{clock_name}, {district}, велосипед: {bike}. {time}. Сданные посылки "
 "добавляют время."
 
 #. placeholders: {bike}, {length}
 #. one sentence of a longer line
 msgid "Leaf season ride, on the {bike}, {length}."
-msgstr "Поездка в листопад, на велосипеде {bike}, {length}."
+msgstr "Поездка в листопад, велосипед: {bike}, {length}."
 
 #. placeholders: {bike}, {length}, {points}
 msgid ""
 "Leaf season ride, on the {bike}, {length}. Ride through leaf piles for "
 "{points} points each."
 msgstr ""
-"Поездка в листопад, на велосипеде {bike}, {length}. Проезжайте по кучам "
+"Поездка в листопад, велосипед: {bike}, {length}. Проезжайте по кучам "
 "листьев: {points} {points:очко|очка|очков} за каждую."
 
 #. placeholders: {points}
@@ -24685,12 +24686,12 @@ msgstr ""
 #. placeholders: {bike}, {length}
 #. one sentence of a longer line
 msgid "Car-free Sunday, on the {bike}, {length}."
-msgstr "Воскресенье без машин, на велосипеде {bike}, {length}."
+msgstr "Воскресенье без машин, велосипед: {bike}, {length}."
 
 #. placeholders: {bike}, {length}
 msgid "Car-free Sunday, on the {bike}, {length}. No cars today."
 msgstr ""
-"Воскресенье без машин, на велосипеде {bike}, {length}. Сегодня машин нет."
+"Воскресенье без машин, велосипед: {bike}, {length}. Сегодня машин нет."
 
 #. one sentence of a longer line
 msgid "No cars today."
@@ -25893,11 +25894,11 @@ msgstr "Впервые: {name}, велосипед {name2}."
 #. placeholders: {name}, {name2}, {time_words}
 #. one sentence of a longer line
 msgid "Finished {name} on the {name2} in {time_words}."
-msgstr "{name} пройдена на велосипеде {name2} за {time_words}."
+msgstr "{name} пройдена за {time_words}, велосипед: {name2}."
 
 #. placeholders: {name}, {name2}, {time_words}, {record}
 msgid "Finished {name} on the {name2} in {time_words}. {record}"
-msgstr "{name} пройдена на велосипеде {name2} за {time_words}. {record}"
+msgstr "{name} пройдена за {time_words}, велосипед: {name2}. {record}"
 
 #. placeholders: {name}
 msgid "Next course: {name}"
@@ -34271,10 +34272,6 @@ msgstr "Загадка: {kind_name}, решена."
 #. placeholders: {kind_name}
 msgid "Puzzle: {kind_name}."
 msgstr "Загадка: {kind_name}."
-
-#. placeholders: {name}
-msgid "Holding the {name}."
-msgstr "В руках: {name}."
 
 #. placeholders: {w}
 msgid "The pendulum swings {w}."
@@ -43299,6 +43296,10 @@ msgid ""
 "A sharp yelp at the hen house. Chase the fox off before it takes a hen."
 msgstr ""
 "Резкий визг у курятника. Прогоните лису, пока она не утащила курицу."
+
+#. placeholders: {name}
+msgid "the {name}"
+msgstr "{name}"
 
 #. placeholders: {order}, {name}
 msgid ""
@@ -89398,17 +89399,12 @@ msgstr ""
 msgid "Every letter is answered."
 msgstr "На все письма даны ответы."
 
-msgid "Late post. "
-msgstr "Поздняя почта. "
+msgid "Late post."
+msgstr "Поздняя почта."
 
-#. placeholders: {late}, {from}, {age}
-#. one sentence of a longer line
-msgid "{late}{from}, age {age}, writes."
-msgstr "{late}{from}, {age} {age:год|года|лет}, пишет."
-
-#. placeholders: {late}, {from}, {age}, {words}, {sound}
-msgid "{late}{from}, age {age}, writes. {words}{sound}"
-msgstr "{late}{from}, {age} {age:год|года|лет}, пишет. {words}{sound}"
+#. placeholders: {from}, {age}
+msgid "{from}, age {age}, writes."
+msgstr "{from}, {age} {age:год|года|лет}, пишет."
 
 #. placeholders: {last}
 msgid " of {last}"
@@ -94543,6 +94539,24 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{n} cards, the {first} down to the {last}"
+#~ msgstr "{n} {n:карта|карты|карт}, от карты {first} до карты {last}"
+
+#~ msgid "Holding {held_words}."
+#~ msgstr "В руке: {held_words}."
+
+#~ msgid "Put back: {words}."
+#~ msgstr "Возвращено: {words}."
+
+#~ msgid "Late post. "
+#~ msgstr "Поздняя почта. "
+
+#~ msgid "{late}{from}, age {age}, writes."
+#~ msgstr "{late}{from}, {age} {age:год|года|лет}, пишет."
+
+#~ msgid "{late}{from}, age {age}, writes. {words}{sound}"
+#~ msgstr "{late}{from}, {age} {age:год|года|лет}, пишет. {words}{sound}"
 
 #~ msgid ": waits"
 #~ msgstr ": ждёт"

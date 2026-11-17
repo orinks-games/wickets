@@ -24192,13 +24192,23 @@ msgid "{u} and {d} move within a pile."
 msgstr ""
 
 #. placeholders: {name}
-#: games/fireside-patience/src/play.rs games/larkfield/src/menus.rs games/rooftop-garden/src/rules.rs
-msgid "the {name}"
+#: games/fireside-patience/src/play.rs games/haunted-hallways/src/haunt.rs
+msgid "Holding the {name}."
+msgstr ""
+
+#. placeholders: {name}
+#: games/fireside-patience/src/play.rs
+msgid "Put back: the {name}."
 msgstr ""
 
 #. placeholders: {n}, {first}, {last}
 #: games/fireside-patience/src/play.rs
-msgid "{n} cards, the {first} down to the {last}"
+msgid "Put back: {n} cards, the {first} down to the {last}."
+msgstr ""
+
+#. placeholders: {n}, {first}, {last}
+#: games/fireside-patience/src/play.rs
+msgid "Holding {n} cards, the {first} down to the {last}."
 msgstr ""
 
 #. placeholders: {p}
@@ -24284,11 +24294,6 @@ msgstr ""
 #. placeholders: {name_and_colour}, {to_turn}
 #: games/fireside-patience/src/play.rs
 msgid "Stock: {name_and_colour}, turned up, {to_turn}."
-msgstr ""
-
-#. placeholders: {held_words}
-#: games/fireside-patience/src/play.rs
-msgid "Holding {held_words}."
 msgstr ""
 
 #. placeholders: {pile}
@@ -24560,11 +24565,6 @@ msgstr ""
 msgid ""
 "Move to a pile or a foundation, and {drop_keys} places them. Backspace puts "
 "them back."
-msgstr ""
-
-#. placeholders: {words}
-#: games/fireside-patience/src/play.rs
-msgid "Put back: {words}."
 msgstr ""
 
 #: games/fireside-patience/src/play.rs
@@ -38074,11 +38074,6 @@ msgstr ""
 msgid "Puzzle: {kind_name}."
 msgstr ""
 
-#. placeholders: {name}
-#: games/haunted-hallways/src/haunt.rs
-msgid "Holding the {name}."
-msgstr ""
-
 #. placeholders: {w}
 #: games/haunted-hallways/src/haunt.rs
 msgid "The pendulum swings {w}."
@@ -48267,6 +48262,11 @@ msgstr ""
 #: games/larkfield/src/menus.rs
 msgid ""
 "A sharp yelp at the hen house. Chase the fox off before it takes a hen."
+msgstr ""
+
+#. placeholders: {name}
+#: games/larkfield/src/menus.rs games/rooftop-garden/src/rules.rs
+msgid "the {name}"
 msgstr ""
 
 #. placeholders: {order}, {name}
@@ -98875,18 +98875,12 @@ msgid "Every letter is answered."
 msgstr ""
 
 #: games/winter-wonderland/src/desk_run.rs
-msgid "Late post. "
+msgid "Late post."
 msgstr ""
 
-#. placeholders: {late}, {from}, {age}
-#. one sentence of a longer line
+#. placeholders: {from}, {age}
 #: games/winter-wonderland/src/desk_run.rs
-msgid "{late}{from}, age {age}, writes."
-msgstr ""
-
-#. placeholders: {late}, {from}, {age}, {words}, {sound}
-#: games/winter-wonderland/src/desk_run.rs
-msgid "{late}{from}, age {age}, writes. {words}{sound}"
+msgid "{from}, age {age}, writes."
 msgstr ""
 
 #. placeholders: {last}

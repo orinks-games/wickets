@@ -21726,12 +21726,22 @@ msgid "{u} and {d} move within a pile."
 msgstr "{u} i {d} przesuwają w obrębie kolumny."
 
 #. placeholders: {name}
-msgid "the {name}"
-msgstr "{name}"
+msgid "Holding the {name}."
+msgstr "Trzymasz: {name}."
+
+#. placeholders: {name}
+msgid "Put back: the {name}."
+msgstr "Odłożono: {name}."
 
 #. placeholders: {n}, {first}, {last}
-msgid "{n} cards, the {first} down to the {last}"
-msgstr "{n} {n:karta|karty|kart}, od karty {first} w dół do karty {last}"
+msgid "Put back: {n} cards, the {first} down to the {last}."
+msgstr ""
+"Odłożono: {n} {n:karta|karty|kart}, od karty {first} w dół do karty {last}."
+
+#. placeholders: {n}, {first}, {last}
+msgid "Holding {n} cards, the {first} down to the {last}."
+msgstr ""
+"Trzymasz: {n} {n:karta|karty|kart}, od karty {first} w dół do karty {last}."
 
 #. placeholders: {p}
 msgid "Pile {p}, empty."
@@ -21798,10 +21808,6 @@ msgstr "Talia: nic nie odkryto, {to_turn}."
 #. placeholders: {name_and_colour}, {to_turn}
 msgid "Stock: {name_and_colour}, turned up, {to_turn}."
 msgstr "Talia: {name_and_colour}, odkryta, {to_turn}."
-
-#. placeholders: {held_words}
-msgid "Holding {held_words}."
-msgstr "Trzymasz: {held_words}."
 
 #. placeholders: {pile}
 msgid "On pile {pile}."
@@ -22022,10 +22028,6 @@ msgid ""
 msgstr ""
 "Przejdź do kolumny lub stosu, a {drop_keys} je położy. Backspace odkłada je "
 "z powrotem."
-
-#. placeholders: {words}
-msgid "Put back: {words}."
-msgstr "Odłożono: {words}."
 
 msgid "Not on the stock."
 msgstr "Nie na talię."
@@ -34306,10 +34308,6 @@ msgstr "Zagadka: {kind_name}, rozwiązana."
 msgid "Puzzle: {kind_name}."
 msgstr "Zagadka: {kind_name}."
 
-#. placeholders: {name}
-msgid "Holding the {name}."
-msgstr "Trzymasz: {name}."
-
 #. placeholders: {w}
 msgid "The pendulum swings {w}."
 msgstr "Wahadło kołysze się {w}."
@@ -43332,6 +43330,10 @@ msgstr "Lis"
 msgid ""
 "A sharp yelp at the hen house. Chase the fox off before it takes a hen."
 msgstr "Ostre skomlenie przy kurniku. Przegoń lisa, zanim porwie kurę."
+
+#. placeholders: {name}
+msgid "the {name}"
+msgstr "{name}"
 
 #. placeholders: {order}, {name}
 msgid ""
@@ -89744,17 +89746,12 @@ msgstr ""
 msgid "Every letter is answered."
 msgstr "Na każdy list jest odpowiedź."
 
-msgid "Late post. "
-msgstr "Późna poczta. "
+msgid "Late post."
+msgstr "Późna poczta."
 
-#. placeholders: {late}, {from}, {age}
-#. one sentence of a longer line
-msgid "{late}{from}, age {age}, writes."
-msgstr "{late}{from}, {age} {age:rok|lata|lat}, pisze."
-
-#. placeholders: {late}, {from}, {age}, {words}, {sound}
-msgid "{late}{from}, age {age}, writes. {words}{sound}"
-msgstr "{late}{from}, {age} {age:rok|lata|lat}, pisze. {words}{sound}"
+#. placeholders: {from}, {age}
+msgid "{from}, age {age}, writes."
+msgstr "{from}, {age} {age:rok|lata|lat}, pisze."
 
 #. placeholders: {last}
 msgid " of {last}"
@@ -94890,6 +94887,24 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{n} cards, the {first} down to the {last}"
+#~ msgstr "{n} {n:karta|karty|kart}, od karty {first} w dół do karty {last}"
+
+#~ msgid "Holding {held_words}."
+#~ msgstr "Trzymasz: {held_words}."
+
+#~ msgid "Put back: {words}."
+#~ msgstr "Odłożono: {words}."
+
+#~ msgid "Late post. "
+#~ msgstr "Późna poczta. "
+
+#~ msgid "{late}{from}, age {age}, writes."
+#~ msgstr "{late}{from}, {age} {age:rok|lata|lat}, pisze."
+
+#~ msgid "{late}{from}, age {age}, writes. {words}{sound}"
+#~ msgstr "{late}{from}, {age} {age:rok|lata|lat}, pisze. {words}{sound}"
 
 #~ msgid ": waits"
 #~ msgstr ": czeka"
