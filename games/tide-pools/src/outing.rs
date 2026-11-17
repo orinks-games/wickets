@@ -1051,11 +1051,14 @@ impl State<Parlor> for OutingScreen {
             Some(ParlorAction::Primary) => self.outing.gather(),
             Some(ParlorAction::Secondary) => {
                 let text = match self.outing.last_heard {
-                    Some(s) => format!(
-                        "That last call was the {}.{}",
-                        s.name(),
-                        if s.shy().is_some() { " It is shy." } else { "" }
-                    ),
+                    Some(s) => {
+                        let name = s.name();
+                        if s.shy().is_some() {
+                            format!("That last call was the {name}. It is shy.")
+                        } else {
+                            format!("That last call was the {name}.")
+                        }
+                    }
                     None => "Nothing has called here yet.".to_string(),
                 };
                 ctx.say(text);

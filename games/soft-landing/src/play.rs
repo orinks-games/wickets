@@ -972,7 +972,11 @@ impl State<Parlor> for Descent {
             ),
             format!("Speed: {}", self.velocity_words()),
             format!("Fuel: {}", self.fuel_words()),
-            format!("Engine: {}", if f.engine { "on" } else { "off" }),
+            if f.engine {
+                "Engine: on".to_string()
+            } else {
+                "Engine: off".to_string()
+            },
             format!(
                 "Call-outs every {}",
                 units::count(shown_call_every(f.call_every, f.feet).into())

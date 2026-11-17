@@ -608,11 +608,12 @@ impl Haunt {
             (false, true) => "Mirrored.",
             _ => "",
         };
-        let puzzle = format!(
-            "Puzzle: {}{}.",
-            room.puzzle.kind_name(),
-            if room.solved { ", solved" } else { "" }
-        );
+        let kind_name = room.puzzle.kind_name();
+        let puzzle = if room.solved {
+            format!("Puzzle: {kind_name}, solved.")
+        } else {
+            format!("Puzzle: {kind_name}.")
+        };
         let held = run
             .inventory
             .get(run.selected)
@@ -1603,17 +1604,29 @@ fn floor_page(number: u32, time: f64, bonus: u64, score: u64, saved: FloorSaved)
         time_short(time)
     );
     // A relaxed time goes on its own list, and says so.
-    let relaxed = if saved.relaxed { " relaxed" } else { "" };
+    let relaxed = saved.relaxed;
     match (saved.record, saved.previous) {
-        (true, Some(prev)) => line.push_str(&format!(
-            " A new{relaxed} best time for this floor, beating {}.",
-            time_short(prev)
-        )),
-        (true, None) => line.push_str(&format!(" Your first{relaxed} time on this floor.")),
-        (false, Some(prev)) => line.push_str(&format!(
-            " Your{relaxed} best here is {}.",
-            time_short(prev)
-        )),
+        (true, Some(prev)) => {
+            let previous = time_short(prev);
+            line.push_str(&if relaxed {
+                format!(" A new relaxed best time for this floor, beating {previous}.")
+            } else {
+                format!(" A new best time for this floor, beating {previous}.")
+            })
+        }
+        (true, None) => line.push_str(if relaxed {
+            " Your first relaxed time on this floor."
+        } else {
+            " Your first time on this floor."
+        }),
+        (false, Some(prev)) => {
+            let best = time_short(prev);
+            line.push_str(&if relaxed {
+                format!(" Your relaxed best here is {best}.")
+            } else {
+                format!(" Your best here is {best}.")
+            })
+        }
         _ => {}
     }
     if let Some(next) = saved.opened {

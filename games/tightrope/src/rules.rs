@@ -1455,13 +1455,16 @@ impl Run {
             Phase::Crossed { .. } => format!("On the rooftop of {}.", level.to),
             Phase::Over { won: true } => "Run complete.".to_string(),
             Phase::Over { won: false } => "Run over.".to_string(),
-            Phase::Walking => format!(
-                "Step {} of {}, {}{}.",
-                self.pos,
-                level.steps,
-                lean_words(self.lean),
-                if self.crouched { ", crouching" } else { "" }
-            ),
+            Phase::Walking => {
+                let pos = self.pos;
+                let steps = level.steps;
+                let lean_words = lean_words(self.lean);
+                if self.crouched {
+                    format!("Step {pos} of {steps}, {lean_words}, crouching.")
+                } else {
+                    format!("Step {pos} of {steps}, {lean_words}.")
+                }
+            }
         }];
         if self.phase == Phase::Walking {
             if let Some(g) = &self.gust {

@@ -184,9 +184,13 @@ impl Show {
                 };
                 let twist = match (run.plan.twist, run.plan.festival) {
                     (Some(t), _) => format!(" Twist: {}.", t.name()),
-                    (None, Some(f)) => {
-                        format!(" {}s pay a bonus.", sentence_start(f.signature.name()))
+                    (None, Some(f)) => match f.signature {
+                        Kind::Boom => " Booms pay a bonus.",
+                        Kind::Crackle => " Crackles pay a bonus.",
+                        Kind::Whistle => " Whistles pay a bonus.",
+                        Kind::Sparkle => " Sparkles pay a bonus.",
                     }
+                    .to_string(),
                     _ => String::new(),
                 };
                 let total = if run.stage > 0 {

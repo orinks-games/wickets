@@ -199,16 +199,19 @@ impl Crack {
                 .trim_end()
                 .to_string()
             }
-            Mode::TimeAttack(n) => format!(
-                "Time attack, safe {n}: {}. {} on the clock. Hints cost five seconds.{}",
-                spec.name,
-                sentence_start(&time_words(spec.limit)),
+            Mode::TimeAttack(n) => {
+                let name = spec.name;
+                let time_limit = sentence_start(&time_words(spec.limit));
                 if spec.guard.is_some() {
-                    " The clock stops while the guard listens at the door."
+                    format!(
+                        "Time attack, safe {n}: {name}. {time_limit} on the clock. Hints cost five seconds. The clock stops while the guard listens at the door."
+                    )
                 } else {
-                    ""
+                    format!(
+                        "Time attack, safe {n}: {name}. {time_limit} on the clock. Hints cost five seconds."
+                    )
                 }
-            ),
+            }
             Mode::Challenge { period, .. } => {
                 let Some(job) = &self.job else {
                     return String::new();
@@ -280,11 +283,12 @@ impl Crack {
             out.push_str(&format!(", found {}", sequence_words(spec)));
         }
         if spec.decoys > 0 {
-            out.push_str(&format!(
-                ", {} false gate{} a wheel",
-                spec.decoys,
-                if spec.decoys == 1 { "" } else { "s" }
-            ));
+            let decoys = spec.decoys;
+            out.push_str(&if decoys == 1 {
+                ", 1 false gate a wheel".to_string()
+            } else {
+                format!(", {decoys} false gates a wheel")
+            });
         }
         out.push('.');
         if spec.guard.is_some() {
@@ -407,9 +411,7 @@ impl Crack {
             Mode::Unlucky => {
                 more.push("One wheel is 13, and the cat yowls when you find it.".to_string())
             }
-            Mode::Blackout => {
-                more.push("The power is cut, so count from zero.".to_string())
-            }
+            Mode::Blackout => more.push("The power is cut, so count from zero.".to_string()),
             _ => {}
         }
         if let Some(job) = &self.job {
@@ -506,7 +508,9 @@ impl Crack {
                     sound::play(ctx, sound::SPRING);
                     let text = if self.run.practice() {
                         match why {
-                            Wrong::Number => "Wrong number. Set when the tumbler falls.".to_string(),
+                            Wrong::Number => {
+                                "Wrong number. Set when the tumbler falls.".to_string()
+                            }
                             Wrong::Direction => "Wrong way.".to_string(),
                         }
                     } else {
@@ -787,11 +791,7 @@ pub fn result_pages(run: &Run, outcome: Outcome, saved: &Saved) -> Vec<String> {
         Outcome::TimeUp => format!("Time's up. {} stays shut.", sentence_start(name)),
     };
     if outcome.won() {
-        let relaxed = if saved.pace.separate() {
-            "relaxed "
-        } else {
-            ""
-        };
+        let relaxed = saved.pace.separate();
         let best = saved.pace.best_word();
         first.push_str(&match saved.score {
             Some(ScoreResult::First) if saved.pace.separate() => {
@@ -816,7 +816,11 @@ pub fn result_pages(run: &Run, outcome: Outcome, saved: &Saved) -> Vec<String> {
             )),
             // A first score has said it is the first.
             (true, None) if !matches!(saved.score, Some(ScoreResult::First)) => {
-                first.push_str(&format!(" Your first {relaxed}time on the board."))
+                first.push_str(&if relaxed {
+                    " Your first relaxed time on the board.".to_string()
+                } else {
+                    " Your first time on the board.".to_string()
+                })
             }
             (false, Some(prev)) => {
                 first.push_str(&format!(" Your {best} time is {}.", time_words(prev)))
@@ -851,10 +855,7 @@ pub fn result_pages(run: &Run, outcome: Outcome, saved: &Saved) -> Vec<String> {
             crate::rules::safe_spec(next).name
         ));
     } else if outcome.won() && run.mode == Mode::Safe(SAFES) && saved.previous.is_none() {
-        news.push(
-            "You have cracked every safe in the city."
-                .to_string(),
-        );
+        news.push("You have cracked every safe in the city.".to_string());
     }
     if saved.attack {
         news.push("Time attack is open on the title.".to_string());
@@ -1113,8 +1114,7 @@ impl State<Parlor> for Crack {
         let now = if run.guard_listening() {
             "The guard is at the door, listening: keep still! Do not turn or set until he walks away. Status and hints are silent and safe.".to_string()
         } else if run.practice() {
-            "Practice: turn until the tumbler falls, then set. Nothing here is scored."
-                .to_string()
+            "Practice: turn until the tumbler falls, then set. Nothing here is scored.".to_string()
         } else {
             let mut s = self.wheel_prompt();
             if let Some(words) = self.spin_back_words(ctx) {
@@ -1129,9 +1129,7 @@ impl State<Parlor> for Crack {
                 s.push_str(&words);
             }
             if run.spec.guard.is_some() {
-                s.push_str(
-                    " When the guard stops at the door, keep still until he leaves.",
-                );
+                s.push_str(" When the guard stops at the door, keep still until he leaves.");
             }
             if let Some(job) = &self.job {
                 s.push_str(&format!(

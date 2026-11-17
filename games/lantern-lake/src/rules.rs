@@ -1217,13 +1217,12 @@ impl Lake {
     /// next one is. A second press: which way you face and move, the
     /// weather, and the night's discoveries.
     pub fn status_layers(&self) -> Vec<String> {
-        let mut first = vec![if self.plan.respawn {
-            format!("{} lanterns gathered tonight.", self.gathered)
-        } else {
-            format!(
-                "{} of {} lanterns gathered.",
-                self.gathered, self.plan.lanterns
-            )
+        let (gathered, lanterns) = (self.gathered, self.plan.lanterns);
+        let mut first = vec![match (self.plan.respawn, gathered) {
+            (true, 1) => "1 lantern gathered tonight.".to_string(),
+            (true, _) => format!("{gathered} lanterns gathered tonight."),
+            (false, 1) => format!("1 of {lanterns} lanterns gathered."),
+            (false, _) => format!("{gathered} of {lanterns} lanterns gathered."),
         }];
         match self.target() {
             Some(i) => {

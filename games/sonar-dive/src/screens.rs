@@ -1025,17 +1025,21 @@ pub fn conclude(
     let lost = exp.dive.carried;
     let head = match end {
         ExpeditionEnd::Banked if score == 0 => {
-            format!(
-                "Expedition over after {} {}, no coins.",
-                exp.surfaced,
-                if exp.surfaced == 1 { "dive" } else { "dives" }
-            )
+            let surfaced = exp.surfaced;
+            if surfaced == 1 {
+                "Expedition over after 1 dive, no coins.".to_string()
+            } else {
+                format!("Expedition over after {surfaced} dives, no coins.")
+            }
         }
-        ExpeditionEnd::Banked => format!(
-            "Expedition over. Surfaced {} {}, {score} coins banked.",
-            exp.surfaced,
-            if exp.surfaced == 1 { "time" } else { "times" }
-        ),
+        ExpeditionEnd::Banked => {
+            let surfaced = exp.surfaced;
+            if surfaced == 1 {
+                format!("Expedition over. Surfaced 1 time, {score} coins banked.")
+            } else {
+                format!("Expedition over. Surfaced {surfaced} times, {score} coins banked.")
+            }
+        }
         ExpeditionEnd::Drowned => {
             format!("Out of air on dive {n}. {lost} coins aboard lost, {score} banked.")
         }

@@ -733,16 +733,16 @@ pub fn result_summary(run: &Run) -> String {
 
 /// The pages after a pantry run.
 pub fn result_pages(run: &Run, saved: &Saved) -> Vec<String> {
-    let relaxed = if saved.pace.separate() {
-        "relaxed "
-    } else {
-        ""
-    };
+    let relaxed = saved.pace.separate();
     let best_word = saved.pace.best_word();
     let score = match saved.score {
         None => format!("{}, so nothing goes on the board.", points_words(run.score)),
         Some(ScoreResult::First) => {
-            format!("{}, your first {relaxed}score.", points_words(run.score))
+            if relaxed {
+                format!("{}, your first relaxed score.", points_words(run.score))
+            } else {
+                format!("{}, your first score.", points_words(run.score))
+            }
         }
         Some(ScoreResult::NewBest { previous }) => {
             format!(
@@ -995,7 +995,8 @@ impl State<Parlor> for Play {
             )
         };
         let controls = self.controls(ctx);
-        let points = format!("Each crumb is {CRUMB_POINTS} points and a cleared pantry {CLEAR_BONUS}.");
+        let points =
+            format!("Each crumb is {CRUMB_POINTS} points and a cleared pantry {CLEAR_BONUS}.");
         let mut text = format!("{now} {controls} {points}");
         for c in &self.run.cats {
             text.push_str(&format!(" The {}: {}", c.name, cat_rule(c.kind)));

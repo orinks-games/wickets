@@ -95,11 +95,12 @@ pub fn safe_summary(n: u32) -> String {
         sentence_start(count_word(spec.wheels))
     )];
     if spec.decoys > 0 {
-        parts.push(format!(
-            "{} false gate{} a wheel",
-            spec.decoys,
-            if spec.decoys == 1 { "" } else { "s" }
-        ));
+        let decoys = spec.decoys;
+        parts.push(if decoys == 1 {
+            "1 false gate a wheel".to_string()
+        } else {
+            format!("{decoys} false gates a wheel")
+        });
     }
     if spec.alternate {
         parts.push("direction rule".to_string());
@@ -120,8 +121,13 @@ pub fn safe_summary(n: u32) -> String {
 /// An event safe's features, in a few words.
 pub fn event_summary(mode: Mode) -> String {
     match mode {
-        Mode::Unlucky => "Four wheels, one always 13, a false gate a wheel, and a black cat who yowls at 13".to_string(),
-        Mode::Blackout => "Three wheels, a false gate a wheel, and the power cut, so count from zero".to_string(),
+        Mode::Unlucky => {
+            "Four wheels, one always 13, a false gate a wheel, and a black cat who yowls at 13"
+                .to_string()
+        }
+        Mode::Blackout => {
+            "Three wheels, a false gate a wheel, and the power cut, so count from zero".to_string()
+        }
         _ => String::new(),
     }
 }

@@ -159,11 +159,15 @@ pub fn tag(plan: &Plan) -> String {
         Plan::Chorus { season, birds, .. } => {
             format!("{} birds of {} singing at once", birds.len(), season.name())
         }
-        Plan::Count { flocks, north } => format!(
-            "{} flocks flying {}",
-            flocks.len(),
-            if *north { "north" } else { "south" }
-        ),
+        Plan::Count { flocks, north } => {
+            let flocks = flocks.len();
+            match (flocks, *north) {
+                (1, true) => "1 flock flying north".to_string(),
+                (1, false) => "1 flock flying south".to_string(),
+                (_, true) => format!("{flocks} flocks flying north"),
+                (_, false) => format!("{flocks} flocks flying south"),
+            }
+        }
     }
 }
 

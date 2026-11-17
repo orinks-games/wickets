@@ -518,7 +518,11 @@ impl Ride {
             speed_words(r.v)
         };
         let (lane, gap) = if r.x < BIKE_LANE_LINE {
-            let lane = if w.in_door_zone { "door zone" } else { "bike lane" };
+            let lane = if w.in_door_zone {
+                "door zone"
+            } else {
+                "bike lane"
+            };
             (
                 lane,
                 format!(
@@ -553,10 +557,7 @@ impl Ride {
         }
         more.push(gap);
         match self.mode {
-            Mode::TimeTrial(_)
-            | Mode::Challenge(_)
-            | Mode::LeafSeason
-            | Mode::Sunday => {
+            Mode::TimeTrial(_) | Mode::Challenge(_) | Mode::LeafSeason | Mode::Sunday => {
                 more.push(time_words(w.clock));
             }
             Mode::Delivery(_) => {
@@ -822,10 +823,9 @@ impl Ride {
                 } else {
                     String::new()
                 };
-                let turn = sentence_start(j.turn.word());
-                let distance = metres_words(d);
+                let head = turn_head(j.turn, d);
                 let be_in = be_in_line(j.turn);
-                return format!("{turn} turn in {distance}. {be_in} {position}{speed}");
+                return format!("{head} {be_in} {position}{speed}");
             }
         }
         if let Some(i) = w.next_leaves() {
@@ -1098,11 +1098,7 @@ impl Ride {
                     crate::course::Turn::Right => (sound::TURN_RIGHT, -3.0),
                 };
                 sound::play_at(ctx, key, place(-side, 6.0));
-                let head = format!(
-                    "{} turn in {}.",
-                    sentence_start(j.turn.word()),
-                    metres_words(d)
-                );
+                let head = turn_head(j.turn, d);
                 self.call(
                     ctx,
                     "turn",
@@ -1115,13 +1111,11 @@ impl Ride {
             }
             WorldEvent::Turned(i) => {
                 sound::play(ctx, sound::TURNED);
-                let word = self.world.course.junctions[i].turn.word();
-                self.call(
-                    ctx,
-                    "turned",
-                    format!("Turned {word}."),
-                    format!("Turned {word}."),
-                );
+                let line = match self.world.course.junctions[i].turn {
+                    crate::course::Turn::Left => "Turned left.",
+                    crate::course::Turn::Right => "Turned right.",
+                };
+                self.call(ctx, "turned", line.to_string(), line.to_string());
             }
             WorldEvent::TurnWide(i) => {
                 sound::play(ctx, sound::SKID);
@@ -1134,11 +1128,10 @@ impl Ride {
                         speed_words(TURN_SPEED)
                     )
                 } else {
-                    format!(
-                        "Ran wide, wrong side for a {} turn. Be in {}.",
-                        j.turn.word(),
-                        j.turn.place()
-                    )
+                    match j.turn {
+                        crate::course::Turn::Left => "Ran wide, wrong side for a left turn. Be in the left of the traffic lane, near the centre line.".to_string(),
+                        crate::course::Turn::Right => "Ran wide, wrong side for a right turn. Be in the bike lane.".to_string(),
+                    }
                 };
                 self.tell(ctx, line);
             }
@@ -1581,10 +1574,7 @@ impl Ride {
                     self.lesson.fast = true;
                     self.tell(
                         ctx,
-                        format!(
-                            "{}. Now let go and coast.",
-                            units::per_hour(20.0)
-                        ),
+                        format!("{}. Now let go and coast.", units::per_hour(20.0)),
                     );
                 }
                 if self.lesson.fast && !r.pedalling && r.v > 1.0 {
@@ -1677,7 +1667,7 @@ impl Ride {
         let time = w.finished.unwrap_or(w.clock) + self.held;
         let stats = w.stats;
         let pace = self.run_clock.pace();
-        let relaxed = if pace.separate() { "relaxed " } else { "" };
+        let relaxed = pace.separate();
         let best_word = pace.best_word();
         let bike = w.bike;
         if let Mode::Training(n) = self.mode {
@@ -1713,7 +1703,13 @@ impl Ride {
             let result = parlor_core::pace::record(ctx, crate::ID, &board, metres as u64);
             let record = match result {
                 None => "Nothing goes on the board.".to_string(),
-                Some(ScoreResult::First) => format!("Your first {relaxed}endless ride here."),
+                Some(ScoreResult::First) => {
+                    if relaxed {
+                        "Your first relaxed endless ride here.".to_string()
+                    } else {
+                        "Your first endless ride here.".to_string()
+                    }
+                }
                 Some(ScoreResult::NewBest { previous }) => format!(
                     "A new {best_word}, beating {}.",
                     distance_words(previous as f64)
@@ -1763,10 +1759,16 @@ impl Ride {
             );
             let record = match result {
                 None => "Nothing goes on the board.".to_string(),
-                Some(ScoreResult::First) => format!(
-                    "Your first {relaxed}ride {} here.",
-                    clock::NAME.to_lowercase()
-                ),
+                Some(ScoreResult::First) => {
+                    if relaxed {
+                        format!(
+                            "Your first relaxed ride {} here.",
+                            clock::NAME.to_lowercase()
+                        )
+                    } else {
+                        format!("Your first ride {} here.", clock::NAME.to_lowercase())
+                    }
+                }
                 Some(ScoreResult::NewBest { previous }) => {
                     format!("A new {best_word}, beating {previous}.")
                 }
@@ -1779,18 +1781,22 @@ impl Ride {
                     district.name(),
                     span_words(time)
                 ),
-                format!(
-                    "Locker drops: {}. Quick drops: {}. {} {} earned. You have {} to spend in the bike shop.",
-                    c.lockers,
-                    c.quick,
+                {
+                    let lockers = c.lockers;
+                    let quick = c.quick;
+                    let dollars = sentence_start(&dollar_words(cash));
+                    let wallet = dollar_words(wallet);
                     if c.lost > 0.0 {
-                        format!("{} lost to crashes.", sentence_start(&secs_words(c.lost)))
+                        let crash_time = sentence_start(&secs_words(c.lost));
+                        format!(
+                            "Locker drops: {lockers}. Quick drops: {quick}. {crash_time} lost to crashes. {dollars} earned. You have {wallet} to spend in the bike shop."
+                        )
                     } else {
-                        "No crashes.".to_string()
-                    },
-                    sentence_start(&dollar_words(cash)),
-                    dollar_words(wallet)
-                ),
+                        format!(
+                            "Locker drops: {lockers}. Quick drops: {quick}. No crashes. {dollars} earned. You have {wallet} to spend in the bike shop."
+                        )
+                    }
+                },
             ];
             let summary = format!(
                 "{}: {}, {}",
@@ -1908,7 +1914,13 @@ impl Ride {
                 let board = events::board(stem, bike);
                 let saved = progress::save_time(ctx, &board, time, points, pace);
                 let record = match saved.previous {
-                    None => format!("Your first {relaxed}{name}."),
+                    None => {
+                        if relaxed {
+                            format!("Your first relaxed {name}.")
+                        } else {
+                            format!("Your first {name}.")
+                        }
+                    }
                     Some(p) if saved.record => {
                         format!("A new {best_word} time, {} faster.", time_words(p - time))
                     }
@@ -2087,8 +2099,21 @@ pub fn ride_points(par: f64, time: f64, stats: &crate::world::Stats) -> (u64, Ve
 /// "Be in the bike lane, under 22 kilometres an hour.", for a turn.
 fn be_in_line(turn: crate::course::Turn) -> String {
     let limit = speed_words(TURN_SPEED);
-    let lane = turn.place();
-    format!("Be in {lane}, under {limit}.")
+    match turn {
+        crate::course::Turn::Right => format!("Be in the bike lane, under {limit}."),
+        crate::course::Turn::Left => {
+            format!("Be in the left of the traffic lane, near the centre line, under {limit}.")
+        }
+    }
+}
+
+/// "Left turn in 50 metres.", for a turn `d` metres ahead.
+fn turn_head(turn: crate::course::Turn, d: f64) -> String {
+    let distance = metres_words(d);
+    match turn {
+        crate::course::Turn::Left => format!("Left turn in {distance}."),
+        crate::course::Turn::Right => format!("Right turn in {distance}."),
+    }
 }
 
 fn parcel_words(n: usize) -> String {
@@ -2127,18 +2152,20 @@ pub fn trial_pages(
     breakdown: &[String],
     saved: &Saved,
 ) -> Vec<String> {
-    let relaxed = if saved.pace.separate() {
-        "relaxed "
-    } else {
-        ""
-    };
+    let relaxed = saved.pace.separate();
     let best_word = saved.pace.best_word();
     let record = match saved.previous {
-        None => format!(
-            "Your first {relaxed}time on {} on the {}.",
-            info.name,
-            bike.name()
-        ),
+        None => {
+            if relaxed {
+                format!(
+                    "Your first relaxed time on {} on the {}.",
+                    info.name,
+                    bike.name()
+                )
+            } else {
+                format!("Your first time on {} on the {}.", info.name, bike.name())
+            }
+        }
         Some(p) if saved.record => {
             format!("A new {best_word} time, {} faster.", time_words(p - time))
         }

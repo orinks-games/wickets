@@ -26,8 +26,13 @@ pub fn day_words(date: Date) -> String {
 
 /// "a winter night", "an autumn night".
 fn a_night(season: Season) -> String {
-    let article = if season == Season::Autumn { "an" } else { "a" };
-    format!("{article} {} night", season.name())
+    match season {
+        Season::Spring => "a spring night",
+        Season::Summer => "a summer night",
+        Season::Autumn => "an autumn night",
+        Season::Winter => "a winter night",
+    }
+    .to_string()
 }
 
 /// A seed that changes from night to night but is the same for the same
@@ -676,11 +681,11 @@ impl ShowerScreen {
         } else {
             almanac::next_shower_words_after(Date::from_days(self.tonight.peak.days() + 2), now)
         };
-        let second = format!(
-            "That makes {total} {} on the {name} in {year}. {}",
-            if total == 1 { "wish" } else { "wishes" },
-            coming
-        );
+        let second = if total == 1 {
+            format!("That makes 1 wish on the {name} in {year}. {coming}")
+        } else {
+            format!("That makes {total} wishes on the {name} in {year}. {coming}")
+        };
         let pages = vec![first, second];
         let summary = format!("Watch over. {}", sentence_start(&count));
         let results = Results::new(summary, pages.clone(), Back::Title(TITLE_NAME)).again(

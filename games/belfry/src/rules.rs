@@ -62,17 +62,16 @@ pub const CATHEDRAL: Rules = Rules {
 impl Rules {
     /// "4 bells from 6, repeats allowed, 10 rows".
     pub fn describe(&self) -> String {
-        format!(
-            "{} places, {} bells to choose from, {}, {} rows",
-            self.places,
-            self.bells,
-            if self.repeats {
-                "a bell may come twice"
-            } else {
-                "no bell twice"
-            },
-            self.rows
-        )
+        let places = self.places;
+        let bells = self.bells;
+        let rows = self.rows;
+        if self.repeats {
+            format!(
+                "{places} places, {bells} bells to choose from, a bell may come twice, {rows} rows"
+            )
+        } else {
+            format!("{places} places, {bells} bells to choose from, no bell twice, {rows} rows")
+        }
     }
 }
 

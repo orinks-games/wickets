@@ -420,9 +420,17 @@ msgstr "domani"
 msgid "in {n} days"
 msgstr "tra {n} giorni"
 
-#. placeholders: {name}, {days_phrase}
-msgid "{name} is {days_phrase}."
-msgstr "{name} è {days_phrase}."
+#. placeholders: {holiday}
+msgid "{holiday} is today."
+msgstr "{holiday} è oggi."
+
+#. placeholders: {holiday}
+msgid "{holiday} is tomorrow."
+msgstr "{holiday} è domani."
+
+#. placeholders: {holiday}, {days}
+msgid "{holiday} is in {days} days."
+msgstr "{holiday} è tra {days} giorni."
 
 msgid "spring"
 msgstr "primavera"
@@ -642,15 +650,11 @@ msgstr "{name}, bloccato"
 msgid "{UNLOCKS}, {earned} of {of}"
 msgstr "{UNLOCKS}, {earned} di {of}"
 
-#. placeholders: {else}
-msgid "Spoken call-outs: {else}"
-msgstr "Avvisi a voce: {else}"
+msgid "Spoken call-outs: on"
+msgstr "Avvisi a voce: sì"
 
-msgid "off"
-msgstr "spento"
-
-msgid "on"
-msgstr "acceso"
+msgid "Spoken call-outs: off"
+msgstr "Avvisi a voce: no"
 
 msgid "Play this daily challenge again"
 msgstr "Gioca ancora questa sfida del giorno"
@@ -1048,6 +1052,12 @@ msgstr ""
 "Scegli quali giochi possono offrire storia ed eventi. Ogni gioco resta "
 "disponibile in Gioca."
 
+msgid "off"
+msgstr "spento"
+
+msgid "on"
+msgstr "acceso"
+
 #. placeholders: {on}, {all}
 msgid "{on} of {all} on"
 msgstr "{on} di {all} sì"
@@ -1351,9 +1361,11 @@ msgstr "venti"
 msgid "Your {game_name} songs"
 msgstr "Le tue canzoni di {game_name}"
 
-#. placeholders: {else}
-msgid "Keep your songs: {else}"
-msgstr "Tieni le tue canzoni: {else}"
+msgid "Keep your songs: on"
+msgstr "Tieni le tue canzoni: sì"
+
+msgid "Keep your songs: off"
+msgstr "Tieni le tue canzoni: no"
 
 msgid "Keep your songs: on. Each run's music is kept in the Soundtrack."
 msgstr ""
@@ -3119,27 +3131,25 @@ msgstr "Scegli un tipo di gioco"
 msgid "categories"
 msgstr ""
 
-msgid "game"
-msgstr ""
+#. placeholders: {category_label}
+msgid "{category_label}, 1 game"
+msgstr "{category_label}, 1 gioco"
 
-msgid "games"
-msgstr ""
+#. placeholders: {category_label}
+msgid "{category_label}, 1 game, 1 event today"
+msgstr "{category_label}, 1 gioco, 1 evento oggi"
 
-msgid ", 1 event today"
-msgstr ", 1 evento oggi"
+#. placeholders: {category_label}, {count}
+msgid "{category_label}, {count} games"
+msgstr "{category_label}, {count} giochi"
 
-#. one clause of a longer line
-msgid "1 event today"
-msgstr "1 evento oggi"
+#. placeholders: {category_label}, {count}
+msgid "{category_label}, {count} games, 1 event today"
+msgstr "{category_label}, {count} giochi, 1 evento oggi"
 
-#. placeholders: {n}
-msgid ", {n} events today"
-msgstr ", {n} eventi oggi"
-
-#. placeholders: {n}
-#. one clause of a longer line
-msgid "{n} events today"
-msgstr "{n} eventi oggi"
+#. placeholders: {category_label}, {count}, {on}
+msgid "{category_label}, {count} games, {on} events today"
+msgstr "{category_label}, {count} giochi, {on} eventi oggi"
 
 msgid "Holiday games, one for each celebration."
 msgstr "Giochi delle feste, uno per ogni ricorrenza."
@@ -3159,6 +3169,12 @@ msgstr "Giochi di carte e dadi, al tuo ritmo."
 msgid "Return to the lobby."
 msgstr "Torna all'ingresso."
 
+msgid "game"
+msgstr ""
+
+msgid "games"
+msgstr ""
+
 msgid "Games that story mode has opened for you, played here at any time."
 msgstr ""
 "Giochi che la modalità storia ti ha aperto, da giocare qui quando vuoi."
@@ -3175,9 +3191,9 @@ msgstr "Speciali delle feste controllati."
 msgid "No internet date. Try again later."
 msgstr "Nessuna data dalla rete. Riprova più tardi."
 
-#. placeholders: {name}, {after_comma}
-msgid "{name}, {after_comma} today"
-msgstr "{name}, {after_comma} oggi"
+#. placeholders: {game}, {event}
+msgid "{game}, today: {event}"
+msgstr "{game}, oggi: {event}"
 
 #. placeholders: {label}, {done}, {games}
 #. one sentence of a longer line
@@ -5424,16 +5440,14 @@ msgstr "{d} corsie a destra"
 msgid "{d} lanes left"
 msgstr "{d} corsie a sinistra"
 
-#. placeholders: {lane}, {lanes}, {else}, {basket}, {capacity}
-msgid "Lane {lane} of {lanes}{else}, basket {basket} of {capacity}."
-msgstr "Corsia {lane} di {lanes}{else}, cestino {basket} di {capacity}."
+#. placeholders: {lane}, {lanes}, {basket}, {capacity}
+msgid "Lane {lane} of {lanes}, at the cart, basket {basket} of {capacity}."
+msgstr ""
+"Corsia {lane} di {lanes}, al carretto, cestino {basket} di {capacity}."
 
-msgid ", at the cart"
-msgstr ", al carretto"
-
-#. one clause of a longer line
-msgid "at the cart"
-msgstr "al carretto"
+#. placeholders: {lane}, {lanes}, {basket}, {capacity}
+msgid "Lane {lane} of {lanes}, basket {basket} of {capacity}."
+msgstr "Corsia {lane} di {lanes}, cestino {basket} di {capacity}."
 
 #. placeholders: {sentence_start}, {lane}, {relative}, {left}
 msgid ""
@@ -5833,30 +5847,38 @@ msgstr "Round di allenamento {round} finito. Hai depositato {eggs_phrase}."
 msgid "You banked {eggs_phrase}."
 msgstr "Hai depositato {eggs_phrase}."
 
-#. placeholders: {bonus}, {else}
+#. placeholders: {bonus}
 #. one sentence of a longer line
-msgid "Round bonus {bonus}{else}."
-msgstr "Bonus del round {bonus}{else}."
+msgid ""
+"Round bonus {bonus}, with the perfect round bonus for no cracked eggs."
+msgstr ""
 
 #. placeholders: {round}
 #. one sentence of a longer line
 msgid "Round {round} cleared."
 msgstr "Round {round} superato."
 
-#. placeholders: {round}, {eggs_phrase}, {bonus}, {else}, {score}
+#. placeholders: {round}, {eggs}, {bonus}, {score}
 msgid ""
-"Round {round} cleared. You banked {eggs_phrase}. Round bonus {bonus}{else}. "
-"Score {score}."
+"Round {round} cleared. You banked {eggs}. Round bonus {bonus}, with the "
+"perfect round bonus for no cracked eggs. Score {score}."
 msgstr ""
-"Round {round} superato. Hai depositato {eggs_phrase}. Bonus del round "
-"{bonus}{else}. Punteggio {score}."
 
-msgid ", with the perfect round bonus for no cracked eggs"
-msgstr ", con il bonus del round perfetto senza uova incrinate"
+#. placeholders: {eggs}
+#. one sentence of a longer line
+msgid "You banked {eggs}."
+msgstr "Hai depositato {eggs}."
 
-#. one clause of a longer line
-msgid "with the perfect round bonus for no cracked eggs"
-msgstr "con il bonus del round perfetto senza uova incrinate"
+#. placeholders: {bonus}
+#. one sentence of a longer line
+msgid "Round bonus {bonus}."
+msgstr "Bonus del round {bonus}."
+
+#. placeholders: {round}, {eggs}, {bonus}, {score}
+msgid ""
+"Round {round} cleared. You banked {eggs}. Round bonus {bonus}. Score "
+"{score}."
+msgstr ""
 
 #. placeholders: {round}, {round_news}
 msgid " Next, round {round}: {round_news}"
@@ -6084,11 +6106,6 @@ msgstr ""
 "Di nuovo nel prato. Corsia {lane} di {lanes}, cestino {basket} di "
 "{capacity}."
 
-#. placeholders: {lane}, {lanes}, {basket}, {capacity}
-#. one sentence of a longer line
-msgid "Lane {lane} of {lanes}, basket {basket} of {capacity}."
-msgstr "Corsia {lane} di {lanes}, cestino {basket} di {capacity}."
-
 #. placeholders: {lane}
 msgid "Lane {lane}, the cart."
 msgstr "Corsia {lane}, il carretto."
@@ -6109,21 +6126,27 @@ msgstr "Lo steccato a {side}. Corsia {lane}."
 msgid "Wait for the next round."
 msgstr "Aspetta il prossimo round."
 
-#. placeholders: {eggs_phrase}, {points}, {else}
+#. placeholders: {eggs_phrase}, {points}
 #. one sentence of a longer line
-msgid "Banked {eggs_phrase}, {points} points{else}."
-msgstr "Depositate {eggs_phrase}, {points} punti{else}."
+msgid "Banked {eggs_phrase}, {points} points, with the full basket bonus."
+msgstr ""
+"Hai depositato {eggs_phrase}, {points} punti, con il bonus del cestino "
+"pieno."
 
-#. placeholders: {eggs_phrase}, {points}, {else}, {score}
-msgid "Banked {eggs_phrase}, {points} points{else}. Score {score}."
-msgstr "Depositate {eggs_phrase}, {points} punti{else}. Punteggio {score}."
+#. placeholders: {eggs_phrase}, {points}, {score}
+msgid ""
+"Banked {eggs_phrase}, {points} points, with the full basket bonus. Score "
+"{score}."
+msgstr ""
 
-msgid ", with the full basket bonus"
-msgstr ", con il bonus del cestino pieno"
+#. placeholders: {eggs_phrase}, {points}
+#. one sentence of a longer line
+msgid "Banked {eggs_phrase}, {points} points."
+msgstr "Hai depositato {eggs_phrase}, {points} punti."
 
-#. one clause of a longer line
-msgid "with the full basket bonus"
-msgstr "con il bonus del cestino pieno"
+#. placeholders: {eggs_phrase}, {points}, {score}
+msgid "Banked {eggs_phrase}, {points} points. Score {score}."
+msgstr "Hai depositato {eggs_phrase}, {points} punti. Punteggio {score}."
 
 msgid " That is enough to clear the round."
 msgstr " Basta per superare il round."
@@ -7000,20 +7023,22 @@ msgstr "Nuovo record, batte {previous}."
 msgid "Your best is {best}."
 msgstr "Il tuo record è {best}."
 
-#. placeholders: {rows}, {else}
 #. one sentence of a longer line
-msgid "Solved in {rows} {else}."
-msgstr "Risolto in {rows} {else}."
+msgid "Solved in 1 row."
+msgstr "Risolto in 1 fila."
 
-#. placeholders: {rows}, {else}, {points}
-msgid "Solved in {rows} {else}. {points}."
-msgstr "Risolto in {rows} {else}. {points}."
+#. placeholders: {points}
+msgid "Solved in 1 row. {points}."
+msgstr "Risolto in 1 fila. {points}."
 
-msgid "row"
-msgstr "fila"
+#. placeholders: {rows}
+#. one sentence of a longer line
+msgid "Solved in {rows} rows."
+msgstr "Risolto in {rows} file."
 
-msgid "rows"
-msgstr "file"
+#. placeholders: {rows}, {points}
+msgid "Solved in {rows} rows. {points}."
+msgstr "Risolto in {rows} file. {points}."
 
 #. one sentence of a longer line
 msgid "Out of rows."
@@ -7181,16 +7206,16 @@ msgstr ""
 "Uno scampanio giornaliero, cinque ogni settimana e uno mensile della "
 "cattedrale, uguali per tutti i giocatori. {resets}"
 
-#. placeholders: {places}, {bells}, {else}, {rows}
-msgid "{places} places, {bells} bells to choose from, {else}, {rows} rows"
+#. placeholders: {places}, {bells}, {rows}
+msgid ""
+"{places} places, {bells} bells to choose from, a bell may come twice, "
+"{rows} rows"
 msgstr ""
-"{places} posti, {bells} campane fra cui scegliere, {else}, {rows} file"
 
-msgid "a bell may come twice"
-msgstr "una campana può comparire due volte"
-
-msgid "no bell twice"
-msgstr "nessuna campana due volte"
+#. placeholders: {places}, {bells}, {rows}
+msgid ""
+"{places} places, {bells} bells to choose from, no bell twice, {rows} rows"
+msgstr ""
 
 msgid "Village"
 msgstr "Villaggio"
@@ -7610,9 +7635,13 @@ msgstr "Niente suggerimento: userebbe la tua ultima fila."
 msgid "No hint: every bell has had its hint."
 msgstr "Niente suggerimento: ogni campana ha già avuto il suo."
 
-#. placeholders: {rows}, {else}, {points}
-msgid "Solved in {rows} {else}. {points}"
-msgstr "Risolto in {rows} {else}. {points}"
+#. placeholders: {points}
+msgid "Solved in 1 row. {points}"
+msgstr "Risolto in 1 fila. {points}"
+
+#. placeholders: {rows}, {points}
+msgid "Solved in {rows} rows. {points}"
+msgstr "Risolto in {rows} file. {points}"
 
 #. placeholders: {row_words}
 msgid "Out of rows. The peal was {row_words}"
@@ -7623,17 +7652,24 @@ msgstr "File finite. Lo scampanio era {row_words}"
 msgid "The peal was {row_words}"
 msgstr "Lo scampanio era {row_words}"
 
-#. placeholders: {rows}, {else}, {row_words}
+#. placeholders: {peal_words}
 msgid ""
-"Solved in {rows} {else}. The peal is {row_words}, and the bells ring it out."
+"Solved in 1 row. The peal is {peal_words}, and the bells ring it out."
 msgstr ""
-"Risolto in {rows} {else}. Lo scampanio è {row_words}, e le campane lo "
-"suonano."
+"Risolto in 1 fila. Lo scampanio è {peal_words}, e le campane lo suonano "
+"tutto."
 
-#. placeholders: {row_words}
+#. placeholders: {peal_words}
 #. one sentence of a longer line
-msgid "The peal is {row_words}, and the bells ring it out."
-msgstr "Lo scampanio è {row_words}, e le campane lo suonano."
+msgid "The peal is {peal_words}, and the bells ring it out."
+msgstr "Lo scampanio è {peal_words}, e le campane lo suonano tutto."
+
+#. placeholders: {rows}, {peal_words}
+msgid ""
+"Solved in {rows} rows. The peal is {peal_words}, and the bells ring it out."
+msgstr ""
+"Risolto in {rows} file. Lo scampanio è {peal_words}, e le campane lo "
+"suonano tutto."
 
 #. placeholders: {row_words}, {words}
 msgid "Out of rows. The peal was {row_words}. Your last row had {words}."
@@ -7748,6 +7784,8 @@ msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count it."
 msgstr ""
+" Questa è la {challenge_title}, {name}. Uscire dal menu di pausa non la "
+"conta."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count it."
@@ -9712,15 +9750,19 @@ msgstr "{name} in {name2}, {birds} uccelli"
 msgid "{birds} birds of {name} singing at once"
 msgstr "{birds} uccelli di {name} che cantano insieme"
 
-#. placeholders: {flocks}, {else}
-msgid "{flocks} flocks flying {else}"
-msgstr "{flocks} stormi in volo verso {else}"
+msgid "1 flock flying north"
+msgstr "1 stormo in volo verso nord"
 
-msgid "north"
-msgstr "nord"
+msgid "1 flock flying south"
+msgstr "1 stormo in volo verso sud"
 
-msgid "south"
-msgstr "sud"
+#. placeholders: {flocks}
+msgid "{flocks} flocks flying north"
+msgstr "{flocks} stormi in volo verso nord"
+
+#. placeholders: {flocks}
+msgid "{flocks} flocks flying south"
+msgstr "{flocks} stormi in volo verso sud"
 
 #. one sentence of a longer line
 msgid ""
@@ -9808,6 +9850,8 @@ msgid ""
 "{title} result: {score} of {most} points. {score_line} {streak_sentence} "
 "{resets}"
 msgstr ""
+"Risultato di {title}: {score} su {most} punti. {score_line} "
+"{streak_sentence} {resets}"
 
 #. placeholders: {score}, {most}
 #. one sentence of a longer line
@@ -10229,6 +10273,12 @@ msgstr ""
 
 msgid "The same flocks, straight away. Only your best result is kept."
 msgstr "Gli stessi stormi, subito. Si tiene solo il tuo risultato migliore."
+
+msgid "north"
+msgstr "nord"
+
+msgid "south"
+msgstr "sud"
 
 msgid "from behind you to ahead"
 msgstr "da dietro di te verso davanti"
@@ -11633,6 +11683,8 @@ msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the walk."
 msgstr ""
+" Questa è la {challenge_title}, {name}. Uscire dal menu di pausa non conta "
+"la passeggiata."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the walk."
@@ -13005,6 +13057,8 @@ msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the run."
 msgstr ""
+" Questa è la {challenge_title}, {name}. Uscire dal menu di pausa non conta "
+"la partita."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the run."
@@ -14642,6 +14696,8 @@ msgstr "La serata finisce a {spot}: {hearts_words} di {goal} richiesti."
 msgid ""
 "The evening ends at {spot}: {hearts_words} of {goal} needed. {score} points."
 msgstr ""
+"La serata finisce a {spot}: {hearts_words} su {goal} necessari. {score} "
+"punti."
 
 #. placeholders: {name}, {score}
 msgid "{name} done. {score} points."
@@ -14780,6 +14836,7 @@ msgid ""
 " This is the {challenge_title}. Leaving from the pause menu does not count "
 "it."
 msgstr ""
+" Questa è la {challenge_title}. Uscire dal menu di pausa non la conta."
 
 #. placeholders: {challenge_title}
 #. one sentence of a longer line
@@ -14898,15 +14955,12 @@ msgstr ""
 "due nel giorno di San Valentino, e un ricordo di quell'anno va nella "
 "scatola. {countdown}"
 
-#. placeholders: {keepsakes}, {else}
-msgid "The keepsake box: {keepsakes} Valentine's {else}."
-msgstr ""
+msgid "The keepsake box: 1 Valentine's Day."
+msgstr "La scatola dei ricordi: 1 San Valentino."
 
-msgid "Day"
-msgstr ""
-
-msgid "Days"
-msgstr ""
+#. placeholders: {keepsakes}
+msgid "The keepsake box: {keepsakes} Valentine's Days."
+msgstr "La scatola dei ricordi: {keepsakes} San Valentino."
 
 #. placeholders: {best}
 msgid "Valentine's night best {best}"
@@ -14936,6 +14990,26 @@ msgstr "Mira a voce"
 
 msgid "Spoken targets"
 msgstr "Bersagli a voce"
+
+msgid "Spoken aim: on"
+msgstr "Mira a voce: sì"
+
+msgid "Spoken aim: off"
+msgstr "Mira a voce: no"
+
+msgid "Spoken targets: on"
+msgstr "Bersagli a voce: sì"
+
+msgid "Spoken targets: off"
+msgstr "Bersagli a voce: no"
+
+#. placeholders: {name}
+msgid "{name}: on"
+msgstr "{name}: sì"
+
+#. placeholders: {name}
+msgid "{name}: off"
+msgstr "{name}: no"
 
 msgid ""
 "Four rooftops under a full moon, with golden hearts and roses, and a "
@@ -17540,6 +17614,7 @@ msgstr "Ogni strada della sfilata, con le tue stelle."
 msgid ""
 "Every street of the parade, with your stars. {opened} of {STREETS} open."
 msgstr ""
+"Ogni via della parata, con le tue stelle. {opened} su {STREETS} aperte."
 
 #. placeholders: {opened}, {STREETS}
 #. one sentence of a longer line
@@ -19389,29 +19464,28 @@ msgstr "L'ultima luce svanisce. Il tempo è finito."
 msgid "Tall grass: the {edge_words} edge of the meadow."
 msgstr "Erba alta: il bordo {edge_words} del prato."
 
-#. placeholders: {a_or_an}, {name}
+#. placeholders: {firefly}
 #. one sentence of a longer line
-msgid "Caught {a_or_an} {name}."
-msgstr ""
+msgid "Caught {firefly}."
+msgstr "Hai preso {firefly}."
 
-#. placeholders: {a_or_an}, {name}, {in_jar}
-msgid "Caught {a_or_an} {name}. {in_jar} in the jar."
-msgstr ""
+#. placeholders: {firefly}, {in_jar}
+msgid "Caught {firefly}. {in_jar} in the jar."
+msgstr "Hai preso {firefly}. {in_jar} nel barattolo."
 
 #. placeholders: {in_jar}
 #. one sentence of a longer line
 msgid "{in_jar} in the jar."
 msgstr "{in_jar} nel barattolo."
 
-#. placeholders: {a_or_an}, {name}, {blink_words}
+#. placeholders: {firefly}, {blink_words}
 #. one sentence of a longer line
-msgid "Caught {a_or_an} {name}, new in your journal: {blink_words}."
-msgstr ""
+msgid "Caught {firefly}, new in your journal: {blink_words}."
+msgstr "Hai preso {firefly}, una novità nel diario: {blink_words}."
 
-#. placeholders: {a_or_an}, {name}, {blink_words}, {in_jar}
+#. placeholders: {firefly}, {blink_words}, {in_jar}
 msgid ""
-"Caught {a_or_an} {name}, new in your journal: {blink_words}. {in_jar} in "
-"the jar."
+"Caught {firefly}, new in your journal: {blink_words}. {in_jar} in the jar."
 msgstr ""
 
 #. placeholders: {sentence_start}
@@ -20628,6 +20702,36 @@ msgstr "Brace Tardiva"
 msgid "Midsummer Chorus"
 msgstr "Coro di Mezza Estate"
 
+msgid "a Dipper"
+msgstr "un Tuffatore"
+
+msgid "a Twin Spark"
+msgstr "una Doppia Scintilla"
+
+msgid "a Slow Ember"
+msgstr "una Brace Lenta"
+
+msgid "a Triple Twinkle"
+msgstr "un Triplo Luccichio"
+
+msgid "an Orchard Lantern"
+msgstr "un Lume del Frutteto"
+
+msgid "a Creek Glimmer"
+msgstr "un Barlume del Ruscello"
+
+msgid "a Hay Flicker"
+msgstr "un Guizzo del Fieno"
+
+msgid "a Blue Ghost"
+msgstr "un Fantasma Blu"
+
+msgid "a Late Ember"
+msgstr "una Brace Tardiva"
+
+msgid "a Midsummer Chorus"
+msgstr "un Coro di Mezza Estate"
+
 msgid "one long flash, low and golden"
 msgstr "un lampo lungo, basso e dorato"
 
@@ -21749,19 +21853,19 @@ msgid "Stock: {name_and_colour}, turned up, {to_turn}."
 msgstr "Mazzo: {name_and_colour}, scoperta, {to_turn}."
 
 #. placeholders: {held_words}
-msgid "holding {held_words}"
-msgstr "tieni {held_words}"
+msgid "Holding {held_words}."
+msgstr "Tieni {held_words}."
 
 #. placeholders: {pile}
-msgid "on pile {pile}"
-msgstr "sulla pila {pile}"
+msgid "On pile {pile}."
+msgstr "Sulla pila {pile}."
 
-msgid "on the stock"
-msgstr "sul mazzo"
+msgid "On the stock."
+msgstr "Sul mazzo."
 
 #. placeholders: {foundation}
-msgid "on the {foundation}"
-msgstr "sulla {foundation}"
+msgid "On the {foundation}."
+msgstr "Su {foundation}."
 
 #. placeholders: {up}, {DECK}
 msgid "{up} of {DECK} on the foundations"
@@ -21909,10 +22013,6 @@ msgstr "Niente di scoperto. {sentence_start} gira il mazzo."
 #. placeholders: {sentence_start}
 msgid "{sentence_start} is empty."
 msgstr "{sentence_start} è vuota."
-
-#. placeholders: {held_words}
-msgid "Holding {held_words}."
-msgstr "Tieni {held_words}."
 
 msgid "it"
 msgstr ""
@@ -23987,12 +24087,6 @@ msgstr "cordolo"
 msgid "ramp"
 msgstr "rampa"
 
-msgid "the bike lane"
-msgstr "la pista ciclabile"
-
-msgid "the left of the traffic lane, near the centre line"
-msgstr "la sinistra della corsia, vicino alla linea di mezzeria"
-
 msgid "downtown"
 msgstr ""
 
@@ -24586,6 +24680,7 @@ msgstr "Consegna, {title}, {district}, con la {bike}."
 msgid ""
 "Delivery, {title}, {district}, on the {bike}. {length}, deadline {deadline}."
 msgstr ""
+"Consegna, {title}, {district}, bici {bike}. {length}, scadenza {deadline}."
 
 #. placeholders: {length}, {deadline}
 #. one sentence of a longer line
@@ -24672,11 +24767,11 @@ msgstr "A terra, in piedi tra {secs_words}"
 msgid "Stopped"
 msgstr "Fermo"
 
-msgid "bike lane"
-msgstr "pista ciclabile"
-
 msgid "door zone"
 msgstr "zona portiere"
+
+msgid "bike lane"
+msgstr "pista ciclabile"
 
 #. placeholders: {near_words}
 msgid "{near_words} from the parked cars"
@@ -24986,15 +25081,6 @@ msgstr "Sterza a destra per arrivarci."
 msgid " Brake with {down} before the line."
 msgstr " Frena con {down} prima della linea."
 
-#. placeholders: {turn}, {distance}
-#. one sentence of a longer line
-msgid "{turn} turn in {distance}."
-msgstr "{turn}, svolta tra {distance}."
-
-#. placeholders: {turn}, {distance}, {be_in}, {position}, {speed}
-msgid "{turn} turn in {distance}. {be_in} {position}{speed}"
-msgstr "{turn}, svolta tra {distance}. {be_in} {position}{speed}"
-
 #. placeholders: {side}, {metres_words}, {LEAF_POINTS}
 msgid "Leaf pile {side}, {metres_words} ahead, {LEAF_POINTS} points."
 msgstr ""
@@ -25240,16 +25326,14 @@ msgstr "Camera d'aria cambiata."
 msgid "Tube swapped. {go}"
 msgstr "Camera d'aria cambiata. {go}"
 
-#. placeholders: {sentence_start}, {metres_words}
-msgid "{sentence_start} turn in {metres_words}."
-msgstr "{sentence_start}, svolta tra {metres_words}."
+msgid "Turned left."
+msgstr "Hai girato a sinistra."
+
+msgid "Turned right."
+msgstr "Hai girato a destra."
 
 msgid "turned"
 msgstr ""
-
-#. placeholders: {word}
-msgid "Turned {word}."
-msgstr "Svoltato {word}."
 
 #. one sentence of a longer line
 msgid "Ran wide, too fast."
@@ -25264,19 +25348,17 @@ msgstr "Largo, troppo veloce. Sotto {speed_words} per le svolte."
 msgid "Under {speed_words} for turns."
 msgstr "Sotto {speed_words} per le svolte."
 
-#. placeholders: {place}
-#. one sentence of a longer line
-msgid "Be in {place}."
-msgstr "Stai {place}."
+msgid ""
+"Ran wide, wrong side for a left turn. Be in the left of the traffic lane, "
+"near the centre line."
+msgstr ""
+"Troppo larga, lato sbagliato per svoltare a sinistra. Stai a sinistra nella "
+"corsia delle auto, vicino alla linea di mezzeria."
 
-#. placeholders: {word}
-#. one sentence of a longer line
-msgid "Ran wide, wrong side for a {word} turn."
-msgstr "Largo, lato sbagliato per una svolta a {word}."
-
-#. placeholders: {word}, {place}
-msgid "Ran wide, wrong side for a {word} turn. Be in {place}."
-msgstr "Largo, lato sbagliato per una svolta a {word}. Stai {place}."
+msgid "Ran wide, wrong side for a right turn. Be in the bike lane."
+msgstr ""
+"Troppo larga, lato sbagliato per svoltare a destra. Stai nella pista "
+"ciclabile."
 
 msgid "car"
 msgstr ""
@@ -25507,18 +25589,17 @@ msgstr "Prossima: prova a cronometro, {name}"
 msgid "All five lessons again, from the first."
 msgstr "Di nuovo tutte e cinque le lezioni, dalla prima."
 
-msgid "relaxed "
-msgstr ""
-
 msgid "End of the street. The lesson starts again."
 msgstr "Fine della strada. La lezione ricomincia."
 
 msgid "Nothing goes on the board."
 msgstr "Niente va in classifica."
 
-#. placeholders: {relaxed}
-msgid "Your first {relaxed}endless ride here."
-msgstr ""
+msgid "Your first relaxed endless ride here."
+msgstr "La tua prima corsa infinita a ritmo rilassato qui."
+
+msgid "Your first endless ride here."
+msgstr "La tua prima corsa infinita qui."
 
 #. placeholders: {best_word}, {distance_words}
 msgid "A new {best_word}, beating {distance_words}."
@@ -25562,9 +25643,13 @@ msgid "A new endless ride in the same district, on the same bike."
 msgstr ""
 "Una nuova corsa infinita nello stesso quartiere, con la stessa bici."
 
-#. placeholders: {relaxed}, {NAME}
-msgid "Your first {relaxed}ride {NAME} here."
-msgstr ""
+#. placeholders: {NAME}
+msgid "Your first relaxed ride {NAME} here."
+msgstr "La tua prima corsa {NAME} a ritmo rilassato qui."
+
+#. placeholders: {NAME}
+msgid "Your first ride {NAME} here."
+msgstr "La tua prima corsa {NAME} qui."
 
 #. placeholders: {best_word}, {previous}
 msgid "A new {best_word}, beating {previous}."
@@ -25592,36 +25677,37 @@ msgstr "{sentence_start} a {name}, in {span_words}."
 msgid "Locker drops: {lockers}."
 msgstr "Tappe agli armadietti: {lockers}."
 
-#. placeholders: {lockers}, {quick}, {else}, {sentence_start}, {dollar_words}
+#. placeholders: {lockers}, {quick}, {crash_time}, {dollars}, {wallet}
 msgid ""
-"Locker drops: {lockers}. Quick drops: {quick}. {else} {sentence_start} "
-"earned. You have {dollar_words} to spend in the bike shop."
+"Locker drops: {lockers}. Quick drops: {quick}. {crash_time} lost to "
+"crashes. {dollars} earned. You have {wallet} to spend in the bike shop."
 msgstr ""
-"Tappe agli armadietti: {lockers}. Tappe veloci: {quick}. {else} "
-"{sentence_start} guadagnati. Hai {dollar_words} da spendere al negozio di "
-"bici."
 
 #. placeholders: {quick}
 #. one sentence of a longer line
 msgid "Quick drops: {quick}."
 msgstr "Tappe veloci: {quick}."
 
-#. placeholders: {dollar_words}
+#. placeholders: {wallet}
 #. one sentence of a longer line
-msgid "You have {dollar_words} to spend in the bike shop."
-msgstr "Hai {dollar_words} da spendere al negozio di bici."
+msgid "You have {wallet} to spend in the bike shop."
+msgstr "Hai {wallet} da spendere nel negozio di bici."
 
-#. placeholders: {else}, {sentence_start}
+#. placeholders: {crash_time}
 #. one sentence of a longer line
-msgid "{else} {sentence_start} earned."
-msgstr "{else} {sentence_start} guadagnati."
+msgid "{crash_time} lost to crashes."
+msgstr "{crash_time} persi negli incidenti."
 
-#. placeholders: {sentence_start}
-msgid "{sentence_start} lost to crashes."
-msgstr "{sentence_start} persi negli incidenti."
+#. placeholders: {dollars}
+#. one sentence of a longer line
+msgid "{dollars} earned."
+msgstr "{dollars} guadagnati."
 
-msgid "No crashes."
-msgstr "Nessun incidente."
+#. placeholders: {lockers}, {quick}, {dollars}, {wallet}
+msgid ""
+"Locker drops: {lockers}. Quick drops: {quick}. No crashes. {dollars} "
+"earned. You have {wallet} to spend in the bike shop."
+msgstr ""
 
 msgid "A new street in the same district, on the same bike."
 msgstr "Una nuova strada nello stesso quartiere, con la stessa bici."
@@ -25723,9 +25809,13 @@ msgstr "Risultato di {title}: {points} punti corsa"
 msgid "The same course straight away. Only your best result is kept."
 msgstr "Lo stesso percorso, subito. Resta solo il tuo miglior risultato."
 
-#. placeholders: {relaxed}, {name}
-msgid "Your first {relaxed}{name}."
-msgstr ""
+#. placeholders: {name}
+msgid "Your first relaxed {name}."
+msgstr "La tua prima {name} a ritmo rilassato."
+
+#. placeholders: {name}
+msgid "Your first {name}."
+msgstr "La tua prima {name}."
 
 #. placeholders: {best_word}, {time_words}
 msgid "A new {best_word} time, {time_words} faster."
@@ -25787,9 +25877,24 @@ msgstr "{leaves} per i mucchi di foglie"
 msgid "{cost} lost for {trim_end_matches}"
 msgstr ""
 
-#. placeholders: {lane}, {limit}
-msgid "Be in {lane}, under {limit}."
-msgstr "Stai {lane}, sotto {limit}."
+#. placeholders: {limit}
+msgid "Be in the bike lane, under {limit}."
+msgstr "Stai nella pista ciclabile, sotto {limit}."
+
+#. placeholders: {limit}
+msgid ""
+"Be in the left of the traffic lane, near the centre line, under {limit}."
+msgstr ""
+"Stai a sinistra nella corsia delle auto, vicino alla linea di mezzeria, "
+"sotto {limit}."
+
+#. placeholders: {distance}
+msgid "Left turn in {distance}."
+msgstr "Svolta a sinistra tra {distance}."
+
+#. placeholders: {distance}
+msgid "Right turn in {distance}."
+msgstr "Svolta a destra tra {distance}."
 
 msgid "No parcels"
 msgstr "Nessun pacco"
@@ -25800,6 +25905,9 @@ msgstr "1 pacco"
 #. placeholders: {n}
 msgid "{n} parcels"
 msgstr "{n} pacchi"
+
+msgid "No crashes."
+msgstr "Nessun incidente."
 
 msgid "1 crash."
 msgstr "1 incidente."
@@ -25814,9 +25922,13 @@ msgstr "Il tuo primo risultato rilassato qui."
 msgid "Your first result here."
 msgstr "Il tuo primo risultato qui."
 
-#. placeholders: {relaxed}, {name}, {name2}
-msgid "Your first {relaxed}time on {name} on the {name2}."
-msgstr ""
+#. placeholders: {name}, {name2}
+msgid "Your first relaxed time on {name} on the {name2}."
+msgstr "Il tuo primo tempo a ritmo rilassato su {name} con la {name2}."
+
+#. placeholders: {name}, {name2}
+msgid "Your first time on {name} on the {name2}."
+msgstr "Il tuo primo tempo su {name} con la {name2}."
 
 #. placeholders: {name}, {name2}, {time_words}
 #. one sentence of a longer line
@@ -26900,13 +27012,14 @@ msgstr "Scegli la tua bici. Ora usi la {name}."
 msgid "Riding the {name} now."
 msgstr "Ora usi la {name}."
 
-#. placeholders: {else}
 #. one sentence of a longer line
-msgid "Choose where the endless ride{else}."
-msgstr ""
+msgid "Choose where the endless ride and the ride against the clock go."
+msgstr "Scegli dove vanno la corsa infinita e la corsa contro il tempo."
 
-#. placeholders: {else}, {name}
-msgid "Choose where the endless ride{else}. Riding in {name} now."
+#. placeholders: {name}
+msgid ""
+"Choose where the endless ride and the ride against the clock go. Riding in "
+"{name} now."
 msgstr ""
 
 #. placeholders: {name}
@@ -26914,11 +27027,13 @@ msgstr ""
 msgid "Riding in {name} now."
 msgstr "Ora pedali a {name}."
 
-msgid " and the ride against the clock go"
-msgstr ""
+#. one sentence of a longer line
+msgid "Choose where the endless ride goes."
+msgstr "Scegli dove va la corsa infinita."
 
-msgid " goes"
-msgstr ""
+#. placeholders: {name}
+msgid "Choose where the endless ride goes. Riding in {name} now."
+msgstr "Scegli dove va la corsa infinita. Ora pedali a {name}."
 
 #. one sentence of a longer line
 msgid "Spend cash on bikes and districts."
@@ -27878,12 +27993,17 @@ msgid ""
 "Danced so far: {night_count}, {tunes}, {moves_words} in time, {spot_on} of "
 "them spot on."
 msgstr ""
+"Ballati finora: {night_count}, {tunes}, {moves_words} a tempo, {spot_on} "
+"perfetti."
 
 #. placeholders: {night_count}, {tunes}, {moves_words}, {spot_on}, {moves_words2}, {moves_words3}
 msgid ""
 "Danced so far: {night_count}, {tunes}, {moves_words} in time, {spot_on} of "
 "them spot on. Longest streak: {moves_words2}. Practice room: {moves_words3}."
 msgstr ""
+"Ballati finora: {night_count}, {tunes}, {moves_words} a tempo, {spot_on} "
+"perfetti. Serie più lunga: {moves_words2}. Sala di allenamento: "
+"{moves_words3}."
 
 #. placeholders: {moves_words2}
 #. one sentence of a longer line
@@ -28044,6 +28164,8 @@ msgid ""
 "This is the {challenge_title}, {name}. Leaving from the pause menu does not "
 "count the run."
 msgstr ""
+"Questa è la {challenge_title}, {name}. Uscire dal menu di pausa non conta "
+"la partita."
 
 #. placeholders: {sentence_start}, {k}, {k2}
 msgid ""
@@ -29805,15 +29927,13 @@ msgstr " Zio Walt ha rimandato indietro questo: {name}."
 msgid " Uncle Walt loved the {name}: double points."
 msgstr " A zio Walt è piaciuto tanto questo: {name}. Punti doppi."
 
-#. placeholders: {plates}, {else}, {GOLDEN_POINTS}
-msgid " {plates} golden {else}, {GOLDEN_POINTS} points."
-msgstr ""
+#. placeholders: {points}
+msgid " 1 golden plate, {points} points."
+msgstr " 1 piatto d'oro, {points} punti."
 
-msgid "plate"
-msgstr ""
-
-msgid "plates"
-msgstr ""
+#. placeholders: {plates}, {points}
+msgid " {plates} golden plates, {points} points."
+msgstr " {plates} piatti d'oro, {points} punti."
 
 #. placeholders: {points}
 msgid " {points} points"
@@ -29858,6 +29978,8 @@ msgstr "Risultato di {title}: {total} punti."
 msgid ""
 "{title} result: {total} points. {result_line} {streak_sentence} {resets}"
 msgstr ""
+"Risultato di {title}: {total} punti. {result_line} {streak_sentence} "
+"{resets}"
 
 #. placeholders: {title}, {total}
 msgid "{title} result: {total} points"
@@ -30216,6 +30338,13 @@ msgid ""
 "every station, {r} repeats the last call, {h} says what needs you most. "
 "Escape pauses."
 msgstr ""
+"{title}.{rule} {head}: {keyed}. {left} e {right} ti spostano tra le "
+"postazioni, oppure premi il numero di una postazione. {p} avvia, mescola, "
+"gira, bagna col sugo o tira fuori il piatto davanti a te: aspetta che abbia "
+"bisogno di te, poi agisci subito. {up} descrive il piatto davanti a te, "
+"{down} legge la ricetta, {t} dice cosa succede in quella postazione. {s} "
+"dice cosa ha bisogno di te ora, di nuovo per ogni postazione, {r} ripete "
+"l'ultimo avviso, {h} dice cosa ha più bisogno di te. Escape mette in pausa."
 
 #. placeholders: {up}, {down}, {t}
 #. one sentence of a longer line
@@ -31020,6 +31149,9 @@ msgstr "scola"
 msgid "chop"
 msgstr ""
 
+msgid "plate"
+msgstr ""
+
 msgid "starting"
 msgstr ""
 
@@ -31036,7 +31168,7 @@ msgid "basting"
 msgstr ""
 
 msgid "its tray turned"
-msgstr ""
+msgstr "con il vassoio girato"
 
 msgid "their tray turned"
 msgstr "la loro teglia girata"
@@ -31045,7 +31177,7 @@ msgid "pulling out"
 msgstr ""
 
 msgid "taking off the heat"
-msgstr ""
+msgstr "da togliere dal fuoco"
 
 msgid "draining"
 msgstr ""
@@ -34250,16 +34382,13 @@ msgstr "Buia."
 msgid "Mirrored."
 msgstr "A specchio."
 
-#. placeholders: {kind_name}, {else}
-msgid "Puzzle: {kind_name}{else}."
-msgstr "Enigma: {kind_name}{else}."
+#. placeholders: {kind_name}
+msgid "Puzzle: {kind_name}, solved."
+msgstr "Enigma: {kind_name}, risolto."
 
-msgid ", solved"
-msgstr ", risolto"
-
-#. one clause of a longer line
-msgid "solved"
-msgstr "risolto"
+#. placeholders: {kind_name}
+msgid "Puzzle: {kind_name}."
+msgstr "Enigma: {kind_name}."
 
 #. placeholders: {name}
 msgid "Holding the {name}."
@@ -34502,6 +34631,11 @@ msgstr " Segui la corrente fredda."
 #. one sentence of a longer line
 msgid "Exit open in {prompt_door}.{follow}"
 msgstr "Uscita aperta {prompt_door}.{follow}"
+
+#. placeholders: {points}
+#. one sentence of a longer line
+msgid "Plus {points}."
+msgstr "Più {points}."
 
 #. one sentence of a longer line
 msgid "Solved."
@@ -34941,6 +35075,8 @@ msgstr "L'orologio stregato arriva a zero {floor}, in {room}."
 msgid ""
 "The haunt clock strikes zero {floor}, in {room}. The house keeps you."
 msgstr ""
+"L'orologio stregato arriva a zero {floor}, in {room}. La casa ti tiene con "
+"sé."
 
 #. one sentence of a longer line
 msgid "The house keeps you."
@@ -34950,6 +35086,7 @@ msgstr "La casa ti tiene."
 msgid ""
 "Out of courage, you run screaming from {room} {floor}, and out of the house."
 msgstr ""
+"Senza più coraggio, scappi urlando da {room} {floor}, e fuori dalla casa."
 
 #. placeholders: {from}, {deepest}
 msgid " This climb cleared floors {from} to {deepest}."
@@ -35084,20 +35221,28 @@ msgstr ""
 msgid "Time bonus and courage: plus {bonus}."
 msgstr "Bonus tempo e coraggio: più {bonus}."
 
-msgid " relaxed"
+#. placeholders: {previous}
+msgid " A new relaxed best time for this floor, beating {previous}."
 msgstr ""
+" Nuovo record di tempo a ritmo rilassato su questo piano, batte {previous}."
 
-#. placeholders: {relaxed}, {time_short}
-msgid " A new{relaxed} best time for this floor, beating {time_short}."
-msgstr ""
+#. placeholders: {previous}
+msgid " A new best time for this floor, beating {previous}."
+msgstr " Nuovo record di tempo su questo piano, batte {previous}."
 
-#. placeholders: {relaxed}
-msgid " Your first{relaxed} time on this floor."
-msgstr ""
+msgid " Your first relaxed time on this floor."
+msgstr " Il tuo primo tempo a ritmo rilassato su questo piano."
 
-#. placeholders: {relaxed}, {time_short}
-msgid " Your{relaxed} best here is {time_short}."
-msgstr ""
+msgid " Your first time on this floor."
+msgstr " Il tuo primo tempo su questo piano."
+
+#. placeholders: {best}
+msgid " Your relaxed best here is {best}."
+msgstr " Il tuo record a ritmo rilassato qui è {best}."
+
+#. placeholders: {best}
+msgid " Your best here is {best}."
+msgstr " Il tuo record qui è {best}."
 
 #. placeholders: {next}
 msgid " Floor {next} is open."
@@ -38280,6 +38425,8 @@ msgid ""
 "A hall of {steps} steps with {lamps} out. The taper burns for "
 "{taper}.{draughts}"
 msgstr ""
+"Una galleria di {steps} passi con {lamps} spente. Lo stoppino dura "
+"{taper}.{draughts}"
 
 #. placeholders: {taper}, {draughts}
 #. one sentence of a longer line
@@ -38693,6 +38840,8 @@ msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the hall."
 msgstr ""
+" Questa è la {challenge_title}, {name}. Uscire dal menu di pausa non conta "
+"la galleria."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the hall."
@@ -39943,12 +40092,16 @@ msgstr ""
 msgid ""
 "Your journal: {found} of {total} places found, 1 lantern gathered in all."
 msgstr ""
+"Il tuo diario: {found} su {total} posti trovati, 1 lanternino raccolto in "
+"tutto."
 
 #. placeholders: {found}, {total}, {lanterns}
 msgid ""
 "Your journal: {found} of {total} places found, {lanterns} lanterns gathered "
 "in all."
 msgstr ""
+"Il tuo diario: {found} su {total} posti trovati, {lanterns} lanternini "
+"raccolti in tutto."
 
 msgid "Lantern Lake"
 msgstr "Lantern Lake"
@@ -40060,27 +40213,23 @@ msgstr ""
 "{outings}. Lanternini raccolti in tutto: {lanterns}. Posti trovati: "
 "{places} su {ALL}."
 
-#. placeholders: {n}
-msgid ", most lanterns in a night {n}"
-msgstr ", massimo di lanternini in una notte {n}"
+#. placeholders: {next}, {most}
+msgid "Play, night {next}, most lanterns in a night {most}"
+msgstr "Gioca, notte {next}, più lanternini in una notte {most}"
 
-#. placeholders: {n}
-#. one clause of a longer line
-msgid "most lanterns in a night {n}"
-msgstr "massimo di lanternini in una notte {n}"
+#. placeholders: {next}
+msgid "Play, night {next}"
+msgstr "Gioca, notte {next}"
 
-#. placeholders: {n}
-msgid ", best {n} lanterns"
-msgstr ", record {n} lanternini"
-
-#. placeholders: {n}
-#. one clause of a longer line
-msgid "best {n} lanterns"
-msgstr "record {n} lanternini"
+msgid "Free paddle, best 1 lantern"
+msgstr "Pagaiata libera, record 1 lanternino"
 
 #. placeholders: {best}
-msgid "Free paddle{best}"
-msgstr "Pagaiata libera{best}"
+msgid "Free paddle, best {best} lanterns"
+msgstr "Pagaiata libera, record {best} lanternini"
+
+msgid "Free paddle"
+msgstr "Pagaiata libera"
 
 msgid ""
 "A wide lake where a new lantern appears whenever you gather one. Stay as "
@@ -40089,18 +40238,11 @@ msgstr ""
 "Un lago largo dove appare un nuovo lanternino ogni volta che ne raccogli "
 "uno. Resta quanto vuoi."
 
-msgid "Free paddle"
-msgstr "Pagaiata libera"
-
 msgid "Free paddle opens once you finish your first night."
 msgstr "Pagaiata libera si apre quando finisci la prima notte."
 
 msgid "Finish night 1 to open free paddle."
 msgstr "Finisci la notte 1 per aprire Pagaiata libera."
-
-#. placeholders: {PLAY}, {next}, {most}
-msgid "{PLAY}, night {next}{most}"
-msgstr "{PLAY}, notte {next}{most}"
 
 #. one sentence of a longer line
 msgid ""
@@ -40490,9 +40632,16 @@ msgstr " Suona il lanternino acceso."
 msgid " Each lantern rings once, nearest first."
 msgstr " Ogni lanternino suona una volta, dal più vicino."
 
+msgid "1 lantern gathered tonight."
+msgstr "1 lanternino raccolto stanotte."
+
 #. placeholders: {gathered}
 msgid "{gathered} lanterns gathered tonight."
 msgstr "{gathered} lanternini raccolti stanotte."
+
+#. placeholders: {lanterns}
+msgid "1 of {lanterns} lanterns gathered."
+msgstr "1 lanternino raccolto su {lanterns}."
 
 #. placeholders: {gathered}, {lanterns}
 msgid "{gathered} of {lanterns} lanterns gathered."
@@ -42930,18 +43079,21 @@ msgstr "Primati. {hamlet} {years}"
 msgid "{PLAY}, day {day_of_season} of {name}, year {year}"
 msgstr "{PLAY}, giorno {day_of_season} di {name}, anno {year}"
 
+msgid "Back to your hamlet. 1 settler lives there."
+msgstr "Torni al tuo borgo. Ci vive 1 abitante."
+
 #. one sentence of a longer line
 msgid "Back to your hamlet."
 msgstr "Torni al tuo borgo."
 
-#. placeholders: {settlers}, {else}
-msgid "Back to your hamlet. {settlers} {else} live there."
-msgstr "Torni al tuo borgo. {settlers} {else} ci vivono."
+#. placeholders: {settlers}
+msgid "Back to your hamlet. {settlers} settlers live there."
+msgstr "Torni al tuo borgo. Ci vivono {settlers} abitanti."
 
-#. placeholders: {settlers}, {else}
+#. placeholders: {settlers}
 #. one sentence of a longer line
-msgid "{settlers} {else} live there."
-msgstr "{settlers} {else} ci vivono."
+msgid "{settlers} settlers live there."
+msgstr "Ci vivono {settlers} abitanti."
 
 #. placeholders: {PLAY}
 msgid "{PLAY}, a new hamlet"
@@ -43014,9 +43166,11 @@ msgstr ""
 "Quanto dura un giorno, dal mattino alla campana della cena. Giorni più "
 "lunghi danno più tempo per camminare e lavorare."
 
-#. placeholders: {else}
-msgid "Settlers' tune: {else}"
-msgstr "Musica degli abitanti: {else}"
+msgid "Settlers' tune: off"
+msgstr "Musica degli abitanti: no"
+
+msgid "Settlers' tune: on"
+msgstr "Musica degli abitanti: sì"
 
 msgid ""
 "When on, every settler plays their instrument from where they are working. "
@@ -43025,9 +43179,11 @@ msgstr ""
 "Se sì, ogni abitante suona il suo strumento da dove lavora. Se no, solo gli "
 "uccelli e il fiume."
 
-#. placeholders: {else}
-msgid "Work from along the lane: {else}"
-msgstr "Lavori lungo il viottolo: {else}"
+msgid "Work from along the lane: off"
+msgstr "Lavoro lungo il viottolo: no"
+
+msgid "Work from along the lane: on"
+msgstr "Lavoro lungo il viottolo: sì"
 
 msgid ""
 "When on, the sounds of settlers chopping, hammering and fishing play from "
@@ -43177,15 +43333,13 @@ msgstr "Vendi dalla dispensa{fair}"
 msgid "Everything in the larder the barge will buy, and what it pays."
 msgstr "Tutto ciò che la chiatta compra dalla dispensa, e quanto paga."
 
-#. placeholders: {what}, {price}, {else}
-msgid "Buy {what}, {price} {else}"
-msgstr "Compra {what}, {price} {else}"
+#. placeholders: {what}
+msgid "Buy {what}, 1 coin"
+msgstr "Compra {what}, 1 moneta"
 
-msgid "coin"
-msgstr "moneta"
-
-msgid "coins"
-msgstr "monete"
+#. placeholders: {what}, {price}
+msgid "Buy {what}, {price} coins"
+msgstr "Compra {what}, {price} monete"
 
 msgid "Done"
 msgstr "Fatto"
@@ -43200,9 +43354,13 @@ msgstr ""
 "Up e Down scelgono una merce, Enter ne vende metà, Escape torna alla "
 "chiatta."
 
-#. placeholders: {sentence_case}, {n}, {price}, {else}
-msgid "{sentence_case}, {n}, {price} {else} each"
-msgstr "{sentence_case}, {n}, {price} {else} l'uno"
+#. placeholders: {goods}, {n}
+msgid "{goods}, {n}, 1 coin each"
+msgstr "{goods}, {n}, 1 moneta l'uno"
+
+#. placeholders: {goods}, {n}, {price}
+msgid "{goods}, {n}, {price} coins each"
+msgstr "{goods}, {n}, {price} monete l'uno"
 
 #. placeholders: {sold}, {name}
 #. one sentence of a longer line
@@ -44087,9 +44245,13 @@ msgstr "1 giorno di cibo."
 msgid "{n} days of food."
 msgstr "{n} giorni di cibo."
 
-#. placeholders: {has}, {has2}, {count}, {coins}, {else}
-msgid "{has} wood, {has2} stone, {count}, {coins} {else}."
-msgstr "{has} legno, {has2} pietra, {count}, {coins} {else}."
+#. placeholders: {wood}, {stone}, {nails}
+msgid "{wood} wood, {stone} stone, {nails}, 1 coin."
+msgstr "{wood} di legna, {stone} di pietra, {nails}, 1 moneta."
+
+#. placeholders: {wood}, {stone}, {nails}, {coins}
+msgid "{wood} wood, {stone} stone, {nails}, {coins} coins."
+msgstr "{wood} di legna, {stone} di pietra, {nails}, {coins} monete."
 
 msgid "back from the next village"
 msgstr "di ritorno dal villaggio vicino"
@@ -44382,25 +44544,27 @@ msgstr ", servono {join}"
 msgid "needs {join}"
 msgstr "servono {join}"
 
-#. placeholders: {left}, {else}
 #. one sentence of a longer line
-msgid "{left} {else} of work left."
-msgstr "{left} {else} di lavoro rimaste."
+msgid "1 hour of work left."
+msgstr "Manca 1 ora di lavoro."
 
-#. placeholders: {sentence_case}
+#. placeholders: {building}
 #. one sentence of a longer line
-msgid "{sentence_case}, going up."
-msgstr "{sentence_case}, in costruzione."
+msgid "{building}, going up."
+msgstr "{building}, in costruzione."
 
-#. placeholders: {sentence_case}, {left}, {else}
-msgid "{sentence_case}, going up. {left} {else} of work left."
-msgstr "{sentence_case}, in costruzione. {left} {else} di lavoro rimaste."
+#. placeholders: {building}
+msgid "{building}, going up. 1 hour of work left."
+msgstr "{building}, in costruzione. Manca 1 ora di lavoro."
 
-msgid "hour"
-msgstr "ora"
+#. placeholders: {building}, {hours}
+msgid "{building}, going up. {hours} hours of work left."
+msgstr "{building}, in costruzione. Mancano {hours} ore di lavoro."
 
-msgid "hours"
-msgstr "ore"
+#. placeholders: {hours}
+#. one sentence of a longer line
+msgid "{hours} hours of work left."
+msgstr "Mancano {hours} ore di lavoro."
 
 #. placeholders: {name}
 msgid "A free spot for {name}."
@@ -44924,22 +45088,24 @@ msgstr "{goods} per {goods2} merci in dispensa"
 msgid "{cheerful} for {cheerful2} cheerful"
 msgstr "{cheerful} per {cheerful2} allegri"
 
-#. placeholders: {n}, {n2}, {else}
-msgid "{n} for {n2} {else}"
-msgstr "{n} per {n2} {else}"
+#. placeholders: {points}
+msgid "{points} for 1 building"
+msgstr "{points} per 1 edificio"
 
-msgid "buildings"
-msgstr "edifici"
+#. placeholders: {points}, {n}
+msgid "{points} for {n} buildings"
+msgstr "{points} per {n} edifici"
 
 msgid "100 for the goal"
 msgstr "100 per l'obiettivo"
 
-#. placeholders: {spare}, {spare2}, {else}
-msgid "{spare} for {spare2} {else} to spare"
-msgstr "{spare} per {spare2} {else} di margine"
+#. placeholders: {points}
+msgid "{points} for 1 day to spare"
+msgstr "{points} per 1 giorno d'anticipo"
 
-msgid "days"
-msgstr "giorni"
+#. placeholders: {points}, {spare}
+msgid "{points} for {spare} days to spare"
+msgstr "{points} per {spare} giorni d'anticipo"
 
 #. placeholders: {list_words}
 msgid "Points: {list_words}."
@@ -44983,9 +45149,20 @@ msgstr ""
 "Giorno {day_of_season} di {name}, anno {year}, {time_words}. "
 "{sentence_case}."
 
-#. placeholders: {sentence_case}, {left}, {else}
-msgid "{sentence_case} is going up, {left} {else} of work left."
-msgstr "{sentence_case} in costruzione, {left} {else} di lavoro rimaste."
+msgid "1 day left."
+msgstr "Manca 1 giorno."
+
+#. placeholders: {left}
+msgid "{left} days left."
+msgstr "Mancano {left} giorni."
+
+#. placeholders: {building}
+msgid "{building} is going up, 1 hour of work left."
+msgstr "{building} è in costruzione, manca 1 ora di lavoro."
+
+#. placeholders: {building}, {hours}
+msgid "{building} is going up, {hours} hours of work left."
+msgstr "{building} è in costruzione, mancano {hours} ore di lavoro."
 
 msgid "Nobody lives here yet."
 msgstr "Qui non vive ancora nessuno."
@@ -47145,19 +47322,21 @@ msgstr ""
 msgid "Last firework removed: {name}."
 msgstr "Ultimo fuoco tolto: {name}."
 
+msgid "Freestyle show complete. You launched 1 firework."
+msgstr "Spettacolo a stile libero completo. Hai lanciato 1 fuoco."
+
 #. one sentence of a longer line
 msgid "Freestyle show complete."
 msgstr "Spettacolo a stile libero completo."
 
-#. placeholders: {n}, {s_ending}
-msgid "Freestyle show complete. You launched {n} firework{s_ending}."
-msgstr ""
-"Spettacolo a stile libero completo. Hai lanciato {n} {n:fuoco|fuochi}."
+#. placeholders: {n}
+msgid "Freestyle show complete. You launched {n} fireworks."
+msgstr "Spettacolo a stile libero completo. Hai lanciato {n} fuochi."
 
-#. placeholders: {n}, {s_ending}
+#. placeholders: {n}
 #. one sentence of a longer line
-msgid "You launched {n} firework{s_ending}."
-msgstr "Hai lanciato {n} {n:fuoco|fuochi}."
+msgid "You launched {n} fireworks."
+msgstr "Hai lanciato {n} fuochi."
 
 #. one sentence of a longer line
 msgid "Compose your own show."
@@ -47929,9 +48108,21 @@ msgstr "Spettacolo superato"
 msgid "Show not cleared"
 msgstr "Spettacolo non superato"
 
-#. placeholders: {sentence_start}, {signature_bonus}, {name}
-msgid " {sentence_start} {signature_bonus} bonus points for your {name}s."
-msgstr ""
+#. placeholders: {festival}, {bonus}
+msgid " {festival} {bonus} bonus points for your booms."
+msgstr " {festival}: {bonus} punti bonus per i tuoi botti."
+
+#. placeholders: {festival}, {bonus}
+msgid " {festival} {bonus} bonus points for your crackles."
+msgstr " {festival}: {bonus} punti bonus per i tuoi crepitii."
+
+#. placeholders: {festival}, {bonus}
+msgid " {festival} {bonus} bonus points for your whistles."
+msgstr " {festival}: {bonus} punti bonus per i tuoi fischi."
+
+#. placeholders: {festival}, {bonus}
+msgid " {festival} {bonus} bonus points for your sparkles."
+msgstr " {festival}: {bonus} punti bonus per le tue scintille."
 
 #. placeholders: {stage}, {acts}
 msgid " The gauntlet ends after {stage} of {acts} shows."
@@ -48189,9 +48380,17 @@ msgstr ""
 msgid " Twist: {name}."
 msgstr " Variante: {name}."
 
-#. placeholders: {sentence_start}
-msgid " {sentence_start}s pay a bonus."
-msgstr ""
+msgid " Booms pay a bonus."
+msgstr " I botti danno un bonus."
+
+msgid " Crackles pay a bonus."
+msgstr " I crepitii danno un bonus."
+
+msgid " Whistles pay a bonus."
+msgstr " I fischi danno un bonus."
+
+msgid " Sparkles pay a bonus."
+msgstr " Le scintille danno un bonus."
 
 #. placeholders: {total}
 msgid " {total} show points so far."
@@ -49722,9 +49921,11 @@ msgstr ""
 "Quanto vicino al centro esatto deve essere una presa per essere pulita e "
 "valere il doppio."
 
-#. placeholders: {else}
-msgid "Gentle streams: {else}"
-msgstr "Ruscelli tranquilli: {else}"
+msgid "Gentle streams: off"
+msgstr "Ruscelli tranquilli: no"
+
+msgid "Gentle streams: on"
+msgstr "Ruscelli tranquilli: sì"
 
 msgid ""
 "Gentle streams: on. Fewer things float down, and the current swings less."
@@ -49741,9 +49942,11 @@ msgstr ""
 "Se sì, ogni ruscello e il fiume infinito restano al livello più facile. Le "
 "sfide non cambiano."
 
-#. placeholders: {else}
-msgid "Say trinket names: {else}"
-msgstr "Nomi dei ninnoli: {else}"
+msgid "Say trinket names: off"
+msgstr "Nomi dei ninnoli: no"
+
+msgid "Say trinket names: on"
+msgstr "Nomi dei ninnoli: sì"
 
 msgid ""
 "When on, a trinket's name is said as you catch it. Off, the results name "
@@ -49752,9 +49955,11 @@ msgstr ""
 "Se sì, il nome di un ninnolo viene detto quando lo prendi. Se no, li "
 "nominano i risultati."
 
-#. placeholders: {else}
-msgid "Banks louder up close: {else}"
-msgstr "Rive più forti da vicino: {else}"
+msgid "Banks louder up close: off"
+msgstr "Rive più forti da vicino: no"
+
+msgid "Banks louder up close: on"
+msgstr "Rive più forti da vicino: sì"
 
 msgid ""
 "When on, the lapping at each bank gets louder as you near it. Off, both "
@@ -50200,9 +50405,11 @@ msgstr "un po' a destra"
 msgid "Soggy, {soggy} of {SOGGY_SINKS}."
 msgstr "Inzuppata, {soggy} su {SOGGY_SINKS}."
 
-#. placeholders: {else}
-msgid "Bank close on your {else}."
-msgstr "Riva vicina: {else}."
+msgid "Bank close on your left."
+msgstr "Riva vicina alla tua sinistra."
+
+msgid "Bank close on your right."
+msgstr "Riva vicina alla tua destra."
 
 #. placeholders: {combo}, {multiplier}
 msgid "Combo {combo}, times {multiplier}."
@@ -50236,9 +50443,11 @@ msgstr "Corrente {side_words}."
 msgid "Nothing coming yet."
 msgstr "Ancora niente in arrivo."
 
-#. placeholders: {else}, {else2}
-msgid "Mill wheel on the {else} side: keep {else2}."
-msgstr "Ruota di mulino a {else}: stai a {else2}."
+msgid "Mill wheel on the left side: keep right."
+msgstr "Ruota del mulino sul lato sinistro: tieni la destra."
+
+msgid "Mill wheel on the right side: keep left."
+msgstr "Ruota del mulino sul lato destro: tieni la sinistra."
 
 #. placeholders: {side_words}
 msgid "Stone {side_words}: steer clear."
@@ -50428,22 +50637,27 @@ msgstr "{RIBBON_SCRAPS} pezzetti di carta."
 msgid " Ribbon: {name}."
 msgstr " Nastro: {name}."
 
-#. placeholders: {scraps2}
 #. one sentence of a longer line
-msgid "{scraps2} in all."
-msgstr "{scraps2} in tutto."
+msgid "1 paper scrap picked up."
+msgstr "1 pezzetto di carta raccolto."
 
-#. placeholders: {scraps}, {else}
+#. placeholders: {in_all}
+msgid "1 paper scrap picked up. {in_all} in all."
+msgstr "1 pezzetto di carta raccolto. {in_all} in tutto."
+
+#. placeholders: {in_all}
 #. one sentence of a longer line
-msgid "{scraps} paper {else} picked up."
-msgstr "{scraps} {else} di carta raccolti."
+msgid "{in_all} in all."
+msgstr "{in_all} in tutto."
 
-#. placeholders: {scraps}, {else}, {scraps2}
-msgid "{scraps} paper {else} picked up. {scraps2} in all."
-msgstr "{scraps} {else} di carta raccolti. {scraps2} in tutto."
+#. placeholders: {scraps}
+#. one sentence of a longer line
+msgid "{scraps} paper scraps picked up."
+msgstr "{scraps} pezzetti di carta raccolti."
 
-msgid "scraps"
-msgstr "pezzetti"
+#. placeholders: {scraps}, {in_all}
+msgid "{scraps} paper scraps picked up. {in_all} in all."
+msgstr "{scraps} pezzetti di carta raccolti. {in_all} in tutto."
 
 #. placeholders: {new}
 msgid "New on your shelf: {new}."
@@ -51494,6 +51708,7 @@ msgstr "Risultato di {title}: {score_words}."
 msgid ""
 "{title} result: {score_words}. {score_line} {streak_sentence} {resets}"
 msgstr ""
+"Risultato di {title}: {score_words}. {score_line} {streak_sentence} {resets}"
 
 msgid "Full game"
 msgstr "Partita completa"
@@ -54746,9 +54961,13 @@ msgstr "{name}, montato"
 msgid "{name}, {credits} credits and {parts} parts, needs rank {rank}"
 msgstr "{name}, {credits} crediti e {parts} pezzi, richiede grado {rank}"
 
-#. placeholders: {name}, {credits}, {parts}, {s_ending}
-msgid "{name}, {credits} credits and {parts} part{s_ending}"
-msgstr "{name}, {credits} crediti e {parts} {parts:pezzo|pezzi}"
+#. placeholders: {name}, {credits}
+msgid "{name}, {credits} credits and 1 part"
+msgstr "{name}, {credits} crediti e 1 pezzo"
+
+#. placeholders: {name}, {credits}, {parts}
+msgid "{name}, {credits} credits and {parts} parts"
+msgstr "{name}, {credits} crediti e {parts} pezzi"
 
 #. placeholders: {name}, {credits}
 msgid "{name}, {credits} credits"
@@ -55098,14 +55317,18 @@ msgstr "Partite iniziate {runs_started}."
 msgid "Story logs recovered {logs_recovered} of {total_logs}."
 msgstr "Registri della storia recuperati {logs_recovered} su {total_logs}."
 
-#. placeholders: {logs_recovered}, {total_logs}, {else}
-msgid "Story logs recovered {logs_recovered} of {total_logs}. {else}"
+#. placeholders: {logs_recovered}, {total_logs}
+msgid ""
+"Story logs recovered {logs_recovered} of {total_logs}. Tutorial complete."
 msgstr ""
-"Registri della storia recuperati {logs_recovered} su {total_logs}. {else}"
 
-msgid "Tutorial complete."
-msgstr "Tutorial completato."
+#. placeholders: {logs_recovered}, {total_logs}
+msgid ""
+"Story logs recovered {logs_recovered} of {total_logs}. Tutorial not "
+"complete."
+msgstr ""
 
+#. one sentence of a longer line
 msgid "Tutorial not complete."
 msgstr "Tutorial non completato."
 
@@ -55194,6 +55417,9 @@ msgstr "Nuovo record personale a ritmo rilassato."
 
 msgid "New personal best."
 msgstr "Nuovo record personale."
+
+msgid "Tutorial complete."
+msgstr "Tutorial completato."
 
 msgid "Ace gunner licence earned: the rail gun cools faster."
 msgstr "Licenza da cannoniere asso ottenuta: il railgun si raffredda prima."
@@ -56102,24 +56328,30 @@ msgid "Multiplier {multiplier}."
 msgstr "Moltiplicatore {multiplier}."
 
 #. one sentence of a longer line
+msgid "1 shield left."
+msgstr "Resta 1 scudo."
+
+#. one sentence of a longer line
 msgid "Shield absorbed it."
 msgstr "Lo scudo l'ha assorbito."
-
-#. placeholders: {left}, {s_ending}
-#. one sentence of a longer line
-msgid "{left} shield{s_ending} left."
-msgstr "{left} {left:scudo rimasto|scudi rimasti}."
 
 #. placeholders: {message}
 #. one sentence of a longer line
 msgid "{message} Shield absorbed it."
 msgstr "{message} Lo scudo l'ha assorbito."
 
-#. placeholders: {message}, {left}, {s_ending}
-msgid "{message} Shield absorbed it. {left} shield{s_ending} left."
-msgstr ""
-"{message} Lo scudo l'ha assorbito. {left} {left:scudo rimasto|scudi "
-"rimasti}."
+#. placeholders: {message}
+msgid "{message} Shield absorbed it. 1 shield left."
+msgstr "{message} Lo scudo l'ha assorbito. Resta 1 scudo."
+
+#. placeholders: {left}
+#. one sentence of a longer line
+msgid "{left} shields left."
+msgstr "Restano {left} scudi."
+
+#. placeholders: {message}, {left}
+msgid "{message} Shield absorbed it. {left} shields left."
+msgstr "{message} Lo scudo l'ha assorbito. Restano {left} scudi."
 
 #. one sentence of a longer line
 msgid "Dead man's switch."
@@ -56935,39 +57167,68 @@ msgstr "Partita fallita."
 msgid ""
 "{title} result: {score}. {challenge_result_at} {streak_sentence} {resets}"
 msgstr ""
+"Risultato di {title}: {score}. {challenge_result_at} {streak_sentence} "
+"{resets}"
 
 #. placeholders: {EVENT_LOG_TITLE}
 msgid "Event log {EVENT_LOG_TITLE} saved to the story archive."
 msgstr ""
 "Registro dell'evento {EVENT_LOG_TITLE} salvato nell'archivio della storia."
 
-#. placeholders: {r}
-msgid "Your first recorded {r}result."
+msgid "Your first recorded relaxed result."
+msgstr "Il tuo primo risultato registrato a ritmo rilassato."
+
+msgid "Your first recorded result."
+msgstr "Il tuo primo risultato registrato."
+
+#. placeholders: {previous}
+msgid "A new relaxed best, beating {previous}."
+msgstr "Nuovo record a ritmo rilassato, batte {previous}."
+
+#. placeholders: {best}
+msgid "Your relaxed best stays {best}."
+msgstr "Il tuo record a ritmo rilassato resta {best}."
+
+#. placeholders: {best}
+msgid "Your best stays {best}."
+msgstr "Il tuo record resta {best}."
+
+#. placeholders: {mode_name}
+msgid "Score 0, so nothing goes on the relaxed {mode_name} board."
+msgstr ""
+"Punteggio 0, quindi niente va nella classifica {mode_name} a ritmo "
+"rilassato."
+
+#. placeholders: {mode_name}
+msgid "Score 0, so nothing goes on the {mode_name} board."
+msgstr "Punteggio 0, quindi niente va nella classifica {mode_name}."
+
+#. placeholders: {mode_name}, {score}
+msgid "First score on the relaxed {mode_name} board: {score}."
+msgstr ""
+"Primo punteggio nella classifica {mode_name} a ritmo rilassato: {score}."
+
+#. placeholders: {mode_name}, {score}
+msgid "First score on the {mode_name} board: {score}."
+msgstr "Primo punteggio nella classifica {mode_name}: {score}."
+
+#. placeholders: {mode_name}, {score}, {previous}
+msgid ""
+"New best on the relaxed {mode_name} board: {score}, beating {previous}."
 msgstr ""
 
-#. placeholders: {r}, {previous}
-msgid "A new {r}best, beating {previous}."
+#. placeholders: {mode_name}, {score}, {previous}
+msgid "New best on the {mode_name} board: {score}, beating {previous}."
 msgstr ""
+"Nuovo record nella classifica {mode_name}: {score}, batte {previous}."
 
-#. placeholders: {r}, {best}
-msgid "Your {r}best stays {best}."
-msgstr ""
+#. placeholders: {mode_name}, {best}
+msgid "Relaxed {mode_name} best stays {best}."
+msgstr "Il record {mode_name} a ritmo rilassato resta {best}."
 
-#. placeholders: {board}
-msgid "Score 0, so nothing goes on the {board} board."
-msgstr "Punteggio 0, quindi niente va nella classifica {board}."
-
-#. placeholders: {board}, {score}
-msgid "First score on the {board} board: {score}."
-msgstr "Primo punteggio nella classifica {board}: {score}."
-
-#. placeholders: {board}, {score}, {previous}
-msgid "New best on the {board} board: {score}, beating {previous}."
-msgstr "Nuovo record nella classifica {board}: {score}, batte {previous}."
-
-#. placeholders: {sentence_start}, {best}
-msgid "{sentence_start} best stays {best}."
-msgstr "{sentence_start}: il record resta {best}."
+#. placeholders: {mode_title}, {best}
+msgid "{mode_title} best stays {best}."
+msgstr "Il record {mode_title} resta {best}."
 
 msgid "Tutorial route live. Center lane."
 msgstr "Percorso del tutorial attivo. Corsia centrale."
@@ -59757,9 +60018,9 @@ msgstr "Baffi finiti nella dispensa {pantry}."
 msgid "{points_words}, so nothing goes on the board."
 msgstr "{points_words}, quindi niente va in classifica."
 
-#. placeholders: {points_words}, {relaxed}
-msgid "{points_words}, your first {relaxed}score."
-msgstr ""
+#. placeholders: {points_words}
+msgid "{points_words}, your first relaxed score."
+msgstr "{points_words}, il tuo primo punteggio a ritmo rilassato."
 
 #. placeholders: {points_words}, {best_word}, {previous}
 msgid "{points_words}, a new {best_word}, beating {previous}."
@@ -59843,6 +60104,8 @@ msgstr "{sentence_start} rimasti."
 msgid ""
 "Each crumb is {CRUMB_POINTS} points and a cleared pantry {CLEAR_BONUS}."
 msgstr ""
+"Ogni briciola vale {CRUMB_POINTS} punti e una dispensa ripulita "
+"{CLEAR_BONUS}."
 
 #. placeholders: {name}, {cat_rule}
 msgid " The {name}: {cat_rule}"
@@ -60110,6 +60373,8 @@ msgstr "Muro"
 msgid ""
 "A tiny bright tick. Each one is a crumb, from its direction, nearest first."
 msgstr ""
+"Un ticchettio minuscolo e chiaro. Ognuno è una briciola, dalla sua "
+"direzione, dalla più vicina."
 
 msgid "Sniff tick"
 msgstr "Tic dell'annusata"
@@ -60130,6 +60395,8 @@ msgstr "Gatto tigrato"
 msgid ""
 "A low purr. It wanders like the tabby, and joins in the monthly challenge."
 msgstr ""
+"Le fusa basse. Si aggira come il gatto tigrato, e partecipa alla sfida del "
+"mese."
 
 msgid "Grey cat"
 msgstr "Gatto grigio"
@@ -60137,6 +60404,7 @@ msgstr "Gatto grigio"
 msgid ""
 "A short rising meow from the cat's side. A cat is 2 steps away or nearer."
 msgstr ""
+"Un miagolio breve che sale, dal lato del gatto. Un gatto è a 2 passi o meno."
 
 msgid "Cat close"
 msgstr "Gatto vicino"
@@ -60147,6 +60415,8 @@ msgstr "Un balzo e uno squittio. Un gatto ti ha preso e perdi un baffo."
 msgid ""
 "An indrawn breath. You keep still and the nearest cat loses track of you."
 msgstr ""
+"Un respiro trattenuto. Resti immobile e il gatto più vicino ti perde di "
+"vista."
 
 msgid "Freeze"
 msgstr "Immobile"
@@ -60179,6 +60449,9 @@ msgid ""
 "cheese rind in every pantry, for 100 points. A sniff plays it from where it "
 "hides."
 msgstr ""
+"Un tintinnio morbido di vetro. Nella Notte del bidone, il primo martedì di "
+"ogni mese, una crosta di formaggio in ogni dispensa, per 100 punti. "
+"Un'annusata lo fa sentire da dove si nasconde."
 
 msgid "Cheese rind"
 msgstr "Crosta di formaggio"
@@ -61451,7 +61724,7 @@ msgstr "Posti: Vedova a sinistra, Scommettitore davanti, Capitano a destra"
 
 #. the name or the meaning of a longer line
 msgid "Widow left, Gambler ahead, Captain right"
-msgstr ""
+msgstr "Vedova a sinistra, Scommettitore davanti, Capitano a destra"
 
 msgid "Where each player sits, by the sound of their chair."
 msgstr "Dove siede ogni giocatore, dal suono della sua sedia."
@@ -63590,22 +63863,22 @@ msgstr ""
 "Una volta per giorno del giardino, usa P per scegliere due varietà diverse "
 "in fiore o mature e prova a ottenere nuovi semi."
 
-msgid "Dev"
-msgstr ""
-
-msgid "Ines"
+msgid "Mrs Patel"
 msgstr ""
 
 msgid "Mr Okafor"
 msgstr ""
 
-msgid "Mrs Moreau"
-msgstr ""
-
-msgid "Mrs Patel"
-msgstr ""
-
 msgid "Old Sam"
+msgstr ""
+
+msgid "Ines"
+msgstr ""
+
+msgid "Dev"
+msgstr ""
+
+msgid "Mrs Moreau"
 msgstr ""
 
 msgid "a tomato"
@@ -64105,15 +64378,13 @@ msgstr ""
 "Up e Down leggono i ricordi, Escape torna indietro. Nuove varietà, varietà "
 "antiche e richieste esaudite valgono una stella ciascuna."
 
-#. placeholders: {sentence}, {n}, {else}
-msgid "{sentence}, locked: {n} more {else}"
-msgstr "{sentence}, bloccato: ancora {n} {else}"
+#. placeholders: {keepsake}
+msgid "{keepsake}, locked: 1 more star"
+msgstr "{keepsake}, bloccato: manca 1 stella"
 
-msgid "star"
-msgstr "asterisco"
-
-msgid "stars"
-msgstr "stelle"
+#. placeholders: {keepsake}, {n}
+msgid "{keepsake}, locked: {n} more stars"
+msgstr "{keepsake}, bloccato: mancano {n} stelle"
 
 #. placeholders: {stars}
 msgid "Stars: {stars}"
@@ -64135,18 +64406,21 @@ msgid "Tend a rooftop garden, where each plant grows into a layer of music."
 msgstr ""
 "Cura un giardino sul tetto, dove ogni pianta diventa uno strato di musica."
 
-#. placeholders: {day}, {plants}, {else}, {harvests}, {else2}
-msgid "day {day}, {plants} {else}, {harvests} {else2}"
-msgstr "giorno {day}, {plants} {else}, {harvests} {else2}"
+#. placeholders: {day}
+msgid "day {day}, 1 plant, 1 harvest"
+msgstr "giorno {day}, 1 pianta, 1 raccolto"
 
-msgid "plant"
-msgstr "pianta"
+#. placeholders: {day}, {harvests}
+msgid "day {day}, 1 plant, {harvests} harvests"
+msgstr "giorno {day}, 1 pianta, {harvests} raccolti"
 
-msgid "plants"
-msgstr "piante"
+#. placeholders: {day}, {plants}
+msgid "day {day}, {plants} plants, 1 harvest"
+msgstr "giorno {day}, {plants} piante, 1 raccolto"
 
-msgid "harvests"
-msgstr "raccolti"
+#. placeholders: {day}, {plants}, {harvests}
+msgid "day {day}, {plants} plants, {harvests} harvests"
+msgstr "giorno {day}, {plants} piante, {harvests} raccolti"
 
 msgid "harmony"
 msgstr "armonia"
@@ -64180,43 +64454,45 @@ msgstr "Primati. Il tuo giardino: {garden_words}."
 msgid "Your garden: {garden_words}."
 msgstr "Il tuo giardino: {garden_words}."
 
+msgid "harvests"
+msgstr "raccolti"
+
+msgid "days"
+msgstr "giorni"
+
+msgid "Fullest harmony: 1 part."
+msgstr "Armonia più piena: 1 parte."
+
+#. placeholders: {harmony}
+msgid "Fullest harmony: {harmony} parts."
+msgstr "Armonia più piena: {harmony} parti."
+
+msgid "Longest garden: 1 day."
+msgstr "Giardino più lungo: 1 giorno."
+
+#. placeholders: {days}
+msgid "Longest garden: {days} days."
+msgstr "Giardino più lungo: {days} giorni."
+
 #. one sentence of a longer line
 msgid "Bests."
 msgstr "Record."
 
-#. placeholders: {harvests}, {harmony}, {else}, {days}, {else2}, {seeds_open}, {ALL}
+#. placeholders: {harvests}, {fullest}, {longest}, {seeds}, {kinds}
 msgid ""
-"Bests. Most harvests: {harvests}. Fullest harmony: {harmony} {else}. "
-"Longest garden: {days} {else2}. Seeds unlocked: {seeds_open} of {ALL}."
+"Bests. Most harvests: {harvests}. {fullest} {longest} Seeds unlocked: "
+"{seeds} of {kinds}."
 msgstr ""
-"Record. Più raccolti: {harvests}. Armonia più piena: {harmony} {else}. "
-"Giardino più lungo: {days} {else2}. Semi sbloccati: {seeds_open} di {ALL}."
-
-#. placeholders: {harmony}, {else}
-#. one sentence of a longer line
-msgid "Fullest harmony: {harmony} {else}."
-msgstr "Armonia più piena: {harmony} {else}."
-
-#. placeholders: {days}, {else2}
-#. one sentence of a longer line
-msgid "Longest garden: {days} {else2}."
-msgstr "Giardino più lungo: {days} {else2}."
 
 #. placeholders: {harvests}
 #. one sentence of a longer line
 msgid "Most harvests: {harvests}."
 msgstr "Più raccolti: {harvests}."
 
-#. placeholders: {seeds_open}, {ALL}
+#. placeholders: {fullest}, {longest}, {seeds}, {kinds}
 #. one sentence of a longer line
-msgid "Seeds unlocked: {seeds_open} of {ALL}."
-msgstr "Semi sbloccati: {seeds_open} di {ALL}."
-
-msgid "part"
-msgstr "parte"
-
-msgid "parts"
-msgstr "parti"
+msgid "{fullest} {longest} Seeds unlocked: {seeds} of {kinds}."
+msgstr "{fullest} {longest} Semi sbloccati: {seeds} di {kinds}."
 
 #. one sentence of a longer line
 msgid "Collection."
@@ -64417,19 +64693,19 @@ msgstr "una rosa recisa"
 msgid "a spray of jasmine"
 msgstr "un rametto di gelsomino"
 
-#. placeholders: {n}, {else}
-msgid "{n} more {else} to unlock"
-msgstr "ancora {n} {else} per sbloccare"
+msgid "1 more harvest to unlock"
+msgstr "manca 1 raccolto per sbloccarlo"
 
-#. placeholders: {n}, {else}
-msgid "fill {n} more {else}"
-msgstr "esaudisci ancora {n} {else}"
+#. placeholders: {n}
+msgid "{n} more harvests to unlock"
+msgstr "mancano {n} raccolti per sbloccarlo"
 
-msgid "request"
-msgstr "richiesta"
+msgid "fill 1 more request"
+msgstr "soddisfa ancora 1 richiesta"
 
-msgid "requests"
-msgstr "richieste"
+#. placeholders: {n}
+msgid "fill {n} more requests"
+msgstr "soddisfa ancora {n} richieste"
 
 #. placeholders: {name}
 msgid "comes with the {name}"
@@ -64625,6 +64901,8 @@ msgstr "{twist}. {map} Giorno {day} di {day_limit}, {name}."
 msgid ""
 " {here} {status_key} for status, {hint_key} for a hint, F1 for controls."
 msgstr ""
+" {here} {status_key} per lo stato, {hint_key} per un suggerimento, F1 per i "
+"comandi."
 
 #. placeholders: {n}
 msgid "{n} wilted"
@@ -64663,9 +64941,20 @@ msgstr "Giorno {day}, {phase}, {name}."
 msgid " No harmony yet."
 msgstr " Ancora nessuna armonia."
 
-#. placeholders: {parts}, {else}, {list}
-msgid " Harmony: {parts} {else}, {list}."
-msgstr " Armonia: {parts} {else}, {list}."
+#. placeholders: {part_names}
+msgid " Harmony: 1 part, {part_names}."
+msgstr " Armonia: 1 parte, {part_names}."
+
+#. placeholders: {count}, {part_names}
+msgid " Harmony: {count} parts, {part_names}."
+msgstr " Armonia: {count} parti, {part_names}."
+
+msgid " 1 harvest."
+msgstr " 1 raccolto."
+
+#. placeholders: {harvests}
+msgid " {harvests} harvests."
+msgstr " {harvests} raccolti."
 
 msgid "harmony parts"
 msgstr "parti dell'armonia"
@@ -65372,7 +65661,7 @@ msgstr ""
 
 msgid ""
 "Leaving from the pause menu keeps the garden until the month is over."
-msgstr ""
+msgstr "Uscire dal menu di pausa tiene il giardino fino alla fine del mese."
 
 msgid "A fresh garden for the same challenge. Only your best score is kept."
 msgstr ""
@@ -65452,6 +65741,9 @@ msgstr "Di nuovo nel giardino."
 #. placeholders: {here}
 msgid "Back in the garden. {here}"
 msgstr "Di nuovo nel giardino. {here}"
+
+msgid "plant"
+msgstr "pianta"
 
 #. placeholders: {name}
 msgid "Pull up the {name} and add it to the compost?"
@@ -66204,9 +66496,6 @@ msgid "The clock warning plays at 1 minute, 30 seconds and 10 seconds left."
 msgstr ""
 "L'avviso dell'orologio suona a 1 minuto, 30 secondi e 10 secondi dalla fine."
 
-msgid "The clock stops while the guard listens at the door."
-msgstr "L'orologio si ferma mentre la guardia ascolta alla porta."
-
 msgid ""
 "Practice dial gives you endless single wheels with nothing to lose, so you "
 "can practise finding the tumbler."
@@ -66896,31 +67185,35 @@ msgstr ""
 msgid "{sentence_start} wheels{rule}."
 msgstr "Ruote: {sentence_start}{rule}."
 
-#. placeholders: {else}
 #. one sentence of a longer line
-msgid "Hints cost five seconds.{else}"
-msgstr "I suggerimenti costano cinque secondi.{else}"
+msgid "Hints cost five seconds."
+msgstr "I suggerimenti costano cinque secondi."
+
+#. one sentence of a longer line
+msgid "The clock stops while the guard listens at the door."
+msgstr "L'orologio si ferma mentre la guardia ascolta alla porta."
 
 #. placeholders: {n}, {name}
 #. one sentence of a longer line
 msgid "Time attack, safe {n}: {name}."
 msgstr "Gara a tempo, cassaforte {n}: {name}."
 
-#. placeholders: {n}, {name}, {sentence_start}, {else}
+#. placeholders: {n}, {name}, {time_limit}
 msgid ""
-"Time attack, safe {n}: {name}. {sentence_start} on the clock. Hints cost "
-"five seconds.{else}"
+"Time attack, safe {n}: {name}. {time_limit} on the clock. Hints cost five "
+"seconds. The clock stops while the guard listens at the door."
 msgstr ""
-"Gara a tempo, cassaforte {n}: {name}. {sentence_start} sull'orologio. I "
-"suggerimenti costano cinque secondi.{else}"
 
-#. placeholders: {sentence_start}
+#. placeholders: {time_limit}
 #. one sentence of a longer line
-msgid "{sentence_start} on the clock."
-msgstr "{sentence_start} sull'orologio."
+msgid "{time_limit} on the clock."
+msgstr "{time_limit} sull'orologio."
 
-msgid " The clock stops while the guard listens at the door."
-msgstr " L'orologio si ferma mentre la guardia ascolta alla porta."
+#. placeholders: {n}, {name}, {time_limit}
+msgid ""
+"Time attack, safe {n}: {name}. {time_limit} on the clock. Hints cost five "
+"seconds."
+msgstr ""
 
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
@@ -66944,9 +67237,12 @@ msgstr " Cassaforte {index} di {safes}:"
 msgid " {name}. {sentence_start} wheels"
 msgstr " {name}. Ruote: {sentence_start}"
 
-#. placeholders: {decoys}, {s_ending}
-msgid ", {decoys} false gate{s_ending} a wheel"
-msgstr ", {decoys} {decoys:falso incastro|falsi incastri} per ruota"
+msgid ", 1 false gate a wheel"
+msgstr ", 1 falso incastro per ruota"
+
+#. placeholders: {decoys}
+msgid ", {decoys} false gates a wheel"
+msgstr ", {decoys} falsi incastri per ruota"
 
 msgid " A guard walks the corridor, and you are told when he comes."
 msgstr " Una guardia percorre il corridoio, e ti avvisano quando arriva."
@@ -67370,9 +67666,11 @@ msgstr " Punteggio {score}. Il tuo {best} è {b}."
 msgid " A new {best} time, beating {time_words}."
 msgstr " Nuovo {best} di tempo, batte {time_words}."
 
-#. placeholders: {relaxed}
-msgid " Your first {relaxed}time on the board."
-msgstr " Il tuo primo tempo {relaxed}in classifica."
+msgid " Your first relaxed time on the board."
+msgstr " Il tuo primo tempo a ritmo rilassato in classifica."
+
+msgid " Your first time on the board."
+msgstr " Il tuo primo tempo in classifica."
 
 #. placeholders: {best}, {time_words}
 msgid " Your {best} time is {time_words}."
@@ -67575,9 +67873,12 @@ msgstr "non ancora aperta"
 msgid "{sentence_start} wheels"
 msgstr "Ruote: {sentence_start}"
 
-#. placeholders: {decoys}, {s_ending}
-msgid "{decoys} false gate{s_ending} a wheel"
-msgstr "{decoys} {decoys:falso incastro|falsi incastri} per ruota"
+msgid "1 false gate a wheel"
+msgstr "1 falso incastro per ruota"
+
+#. placeholders: {decoys}
+msgid "{decoys} false gates a wheel"
+msgstr "{decoys} falsi incastri per ruota"
 
 msgid "direction rule"
 msgstr "regola del verso"
@@ -69176,21 +69477,17 @@ msgstr "Niente suggerimenti a linea aperta."
 msgid " The thirteenth train went by."
 msgstr " È passato il tredicesimo treno."
 
-#. placeholders: {points_words}, {r}
-msgid "{points_words}, your first {r}score."
-msgstr "{points_words}, il tuo primo punteggio {r}registrato."
+#. placeholders: {points_words}, {previous}
+msgid "{points_words}, a new relaxed best, beating {previous}."
+msgstr ""
+"{points_words}, un nuovo record a ritmo rilassato, batte {previous}."
 
-#. placeholders: {points_words}, {r}, {previous}
-msgid "{points_words}, a new {r}best, beating {previous}."
-msgstr "{points_words}, nuovo record {r}, batte {previous}."
+#. placeholders: {points_words}, {best}
+msgid "{points_words}. Your relaxed best is {best}."
+msgstr "{points_words}. Il tuo record a ritmo rilassato è {best}."
 
-#. placeholders: {points_words}, {r}, {best}
-msgid "{points_words}. Your {r}best is {best}."
-msgstr "{points_words}. Il tuo record {r}è {best}."
-
-#. placeholders: {r}
-msgid "longest {r}run"
-msgstr "serie più lunga {r}"
+msgid "longest relaxed run"
+msgstr "serie più lunga a ritmo rilassato"
 
 #. placeholders: {longest}, {trains_words}
 msgid "{longest}: {trains_words}, your first on the board."
@@ -69200,32 +69497,60 @@ msgstr "{longest}: {trains_words}, il tuo primo in classifica."
 msgid "{longest}: {trains_words}, a new record, beating {previous}."
 msgstr "{longest}: {trains_words}, nuovo record, batte {previous}."
 
-#. placeholders: {window_words}, {r}
-msgid "Window reached: {window_words}, your shortest {r}window yet."
+#. placeholders: {window_words}
+msgid "Window reached: {window_words}, your shortest relaxed window yet."
 msgstr ""
-"Finestra raggiunta: {window_words}, la tua finestra {r}più corta finora."
+"Finestra raggiunta: {window_words}, la tua finestra più corta a ritmo "
+"rilassato finora."
+
+#. placeholders: {window_words}
+msgid "Window reached: {window_words}, your shortest window yet."
+msgstr ""
+"Finestra raggiunta: {window_words}, la tua finestra più corta finora."
 
 #. placeholders: {window_words}
 msgid "Window reached: {window_words}."
 msgstr "Finestra raggiunta: {window_words}."
 
-#. placeholders: {points_words}, {r}
-msgid "{points_words}, your first {r}steam gala score."
-msgstr "{points_words}, il tuo primo punteggio {r}al gala del vapore."
-
-#. placeholders: {points_words}, {r}, {previous}
-msgid "{points_words}, a new {r}steam gala best, beating {previous}."
+#. placeholders: {points_words}
+msgid "{points_words}, your first relaxed steam gala score."
 msgstr ""
-"{points_words}, nuovo record {r}al gala del vapore, batte {previous}."
+"{points_words}, il tuo primo punteggio al gala del vapore a ritmo rilassato."
 
-#. placeholders: {r}, {best}
+#. placeholders: {points_words}
+msgid "{points_words}, your first steam gala score."
+msgstr "{points_words}, il tuo primo punteggio al gala del vapore."
+
+#. placeholders: {points_words}, {previous}
+msgid "{points_words}, a new relaxed steam gala best, beating {previous}."
+msgstr ""
+"{points_words}, un nuovo record del gala del vapore a ritmo rilassato, "
+"batte {previous}."
+
+#. placeholders: {points_words}, {previous}
+msgid "{points_words}, a new steam gala best, beating {previous}."
+msgstr ""
+"{points_words}, un nuovo record del gala del vapore, batte {previous}."
+
+#. placeholders: {best}
 #. one sentence of a longer line
-msgid "Your {r}steam gala best is {best}."
-msgstr "Il tuo record {r}al gala del vapore è {best}."
+msgid "Your relaxed steam gala best is {best}."
+msgstr "Il tuo record del gala del vapore a ritmo rilassato è {best}."
 
-#. placeholders: {points_words}, {r}, {best}
-msgid "{points_words}. Your {r}steam gala best is {best}."
-msgstr "{points_words}. Il tuo record {r}al gala del vapore è {best}."
+#. placeholders: {points_words}, {best}
+msgid "{points_words}. Your relaxed steam gala best is {best}."
+msgstr ""
+"{points_words}. Il tuo record del gala del vapore a ritmo rilassato è "
+"{best}."
+
+#. placeholders: {best}
+#. one sentence of a longer line
+msgid "Your steam gala best is {best}."
+msgstr "Il tuo record del gala del vapore è {best}."
+
+#. placeholders: {points_words}, {best}
+msgid "{points_words}. Your steam gala best is {best}."
+msgstr "{points_words}. Il tuo record del gala del vapore è {best}."
 
 msgid "1 steam special"
 msgstr "1 speciale a vapore"
@@ -75160,6 +75485,8 @@ msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the skate."
 msgstr ""
+" Questa è la {challenge_title}, {name}. Uscire dal menu di pausa non conta "
+"il pattinaggio."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the skate."
@@ -76329,6 +76656,8 @@ msgid ""
 "{title} result: {score} points. {score_line} {streak_sentence} "
 "{sentence_start}"
 msgstr ""
+"Risultato di {title}: {score} punti. {score_line} {streak_sentence} "
+"{sentence_start}"
 
 msgid "Full moon pad"
 msgstr "Piazzola della luna piena"
@@ -76783,9 +77112,11 @@ msgstr "Velocità: {velocity_words}"
 msgid "Fuel: {fuel_words}"
 msgstr "Carburante: {fuel_words}"
 
-#. placeholders: {else}
-msgid "Engine: {else}"
-msgstr "Motore: {else}"
+msgid "Engine: on"
+msgstr "Motore: sì"
+
+msgid "Engine: off"
+msgstr "Motore: no"
 
 #. placeholders: {count}
 msgid "Call-outs every {count}"
@@ -77059,12 +77390,16 @@ msgid ""
 "Quindar tone: a short high beep on the Tranquility pad. It stands for the "
 "radio click, and a call-out follows."
 msgstr ""
+"Tono Quindar: un bip breve e acuto sulla Piazzola della Tranquillità. Sta "
+"per il clic della radio, e poi arriva un avviso."
 
 #. the name or the meaning of a longer line
 msgid ""
 "a short high beep on the Tranquility pad. It stands for the radio click, "
 "and a call-out follows."
 msgstr ""
+"un bip breve e acuto sulla Piazzola della Tranquillità. Sta per il clic "
+"della radio, e poi arriva un avviso."
 
 #. the name or the meaning of a longer line
 msgid "Fuel alarm"
@@ -79143,35 +79478,34 @@ msgstr "Il {best} precedente era {previous}."
 msgid "Your {best} {noun} is {b}."
 msgstr "Il tuo {best} di {noun} è {b}."
 
-#. placeholders: {surfaced}, {else}
-msgid "Expedition over after {surfaced} {else}, no coins."
-msgstr "Spedizione finita dopo {surfaced} {else}, nessuna moneta."
+msgid "Expedition over after 1 dive, no coins."
+msgstr "Spedizione finita dopo 1 immersione, niente monete."
 
-msgid "dive"
-msgstr "immersione"
-
-msgid "dives"
-msgstr "immersioni"
+#. placeholders: {surfaced}
+msgid "Expedition over after {surfaced} dives, no coins."
+msgstr "Spedizione finita dopo {surfaced} immersioni, niente monete."
 
 #. one sentence of a longer line
 msgid "Expedition over."
 msgstr "Spedizione finita."
 
-#. placeholders: {surfaced}, {else}, {score}
-msgid "Expedition over. Surfaced {surfaced} {else}, {score} coins banked."
-msgstr ""
-"Spedizione finita. Risalito {surfaced} {else}, {score} monete al sicuro."
+#. placeholders: {score}
+msgid "Expedition over. Surfaced 1 time, {score} coins banked."
+msgstr "Spedizione finita. 1 risalita, {score} monete al sicuro."
 
-#. placeholders: {surfaced}, {else}, {score}
+#. placeholders: {score}
 #. one sentence of a longer line
-msgid "Surfaced {surfaced} {else}, {score} coins banked."
-msgstr "Risalito {surfaced} {else}, {score} monete al sicuro."
+msgid "Surfaced 1 time, {score} coins banked."
+msgstr "1 risalita, {score} monete al sicuro."
 
-msgid "time"
-msgstr "volta"
+#. placeholders: {surfaced}, {score}
+msgid "Expedition over. Surfaced {surfaced} times, {score} coins banked."
+msgstr "Spedizione finita. {surfaced} risalite, {score} monete al sicuro."
 
-msgid "times"
-msgstr "volte"
+#. placeholders: {surfaced}, {score}
+#. one sentence of a longer line
+msgid "Surfaced {surfaced} times, {score} coins banked."
+msgstr "{surfaced} risalite, {score} monete al sicuro."
 
 #. placeholders: {n}
 #. one sentence of a longer line
@@ -80784,7 +81118,7 @@ msgid "{sentence_start}, in {name}"
 msgstr "{sentence_start}, in {name}"
 
 msgid "the main action"
-msgstr ""
+msgstr "l'azione principale"
 
 #. placeholders: {name}, {cname}
 msgid "{name}, in {cname}, the star you are looking for."
@@ -81063,9 +81397,17 @@ msgstr ""
 msgid "The "
 msgstr ""
 
-#. placeholders: {article}, {name}
-msgid "{article} {name} night"
-msgstr ""
+msgid "a spring night"
+msgstr "una notte di primavera"
+
+msgid "a summer night"
+msgstr "una notte d'estate"
+
+msgid "an autumn night"
+msgstr "una notte d'autunno"
+
+msgid "a winter night"
+msgstr "una notte d'inverno"
 
 msgid "Enter again heads home."
 msgstr "Enter di nuovo ti fa tornare a casa."
@@ -81389,17 +81731,23 @@ msgstr " La tua miglior osservazione delle {name}, batte {previous}."
 msgid "The peak is {days_phrase}."
 msgstr "Il picco è {days_phrase}."
 
-#. placeholders: {total}, {else}, {name}, {year}
+#. placeholders: {name}, {year}
 #. one sentence of a longer line
-msgid "That makes {total} {else} on the {name} in {year}."
-msgstr "Fanno {total} {else} sulle {name} nel {year}."
+msgid "That makes 1 wish on the {name} in {year}."
+msgstr "Siamo a 1 desiderio sulle {name} del {year}."
 
-#. placeholders: {total}, {else}, {name}, {year}, {coming}
-msgid "That makes {total} {else} on the {name} in {year}. {coming}"
-msgstr "Fanno {total} {else} sulle {name} nel {year}. {coming}"
+#. placeholders: {name}, {year}, {coming}
+msgid "That makes 1 wish on the {name} in {year}. {coming}"
+msgstr "Siamo a 1 desiderio sulle {name} del {year}. {coming}"
 
-msgid "wishes"
-msgstr "desideri"
+#. placeholders: {total}, {name}, {year}
+#. one sentence of a longer line
+msgid "That makes {total} wishes on the {name} in {year}."
+msgstr "Siamo a {total} desideri sulle {name} del {year}."
+
+#. placeholders: {total}, {name}, {year}, {coming}
+msgid "That makes {total} wishes on the {name} in {year}. {coming}"
+msgstr "Siamo a {total} desideri sulle {name} del {year}. {coming}"
 
 #. one sentence of a longer line
 msgid "Watch over."
@@ -84657,11 +85005,11 @@ msgstr "Compare solo {when}."
 #. placeholders: {name}
 #. one sentence of a longer line
 msgid "You have not found a {name} yet."
-msgstr ""
+msgstr "Non hai ancora trovato {name}."
 
 #. placeholders: {name}, {when}
 msgid "You have not found a {name} yet. It only turns up {when}."
-msgstr ""
+msgstr "Non hai ancora trovato {name}. Compare solo {when}."
 
 #. placeholders: {list_words}
 #. one sentence of a longer line
@@ -84670,7 +85018,7 @@ msgstr "Vive a {list_words}."
 
 #. placeholders: {name}, {list_words}
 msgid "You have not found a {name} yet. It lives at {list_words}."
-msgstr ""
+msgstr "Non hai ancora trovato {name}. Vive a {list_words}."
 
 #. placeholders: {sentence_start}, {count}
 #. one sentence of a longer line
@@ -84746,7 +85094,7 @@ msgstr "La Grande Bassa Marea"
 
 #. placeholders: {name}
 msgid "the {name}, on the Far Reef"
-msgstr ""
+msgstr "{name}, sul Far Reef"
 
 msgid "a rare creature, on the Far Reef"
 msgstr "una creatura rara, sul Far Reef"
@@ -84804,12 +85152,16 @@ msgid ""
 "Tonight's three species: find {species} on Rocky Point, worth 100 points "
 "more each."
 msgstr ""
+"Le tre specie di stanotte: trova {species} a Rocky Point, ognuna vale 100 "
+"punti in più."
 
 #. placeholders: {species}, {twist}, {trip}
 msgid ""
 "Tonight's three species: find {species} on Rocky Point, worth 100 points "
 "more each. {twist} {trip}"
 msgstr ""
+"Le tre specie di stanotte: trova {species} a Rocky Point, ognuna vale 100 "
+"punti in più. {twist} {trip}"
 
 #. placeholders: {describe}, {trip}
 msgid "This week's rare find, on the Far Reef: {describe} {trip}"
@@ -84855,7 +85207,7 @@ msgstr ""
 
 #. placeholders: {name}
 msgid "the {name}, still to find"
-msgstr ""
+msgstr "{name}, ancora da trovare"
 
 #. placeholders: {join}
 msgid "Tonight's three: {join}."
@@ -84863,11 +85215,11 @@ msgstr "Le tre di stanotte: {join}."
 
 #. placeholders: {name}
 msgid "You have this week's {name}."
-msgstr ""
+msgstr "Hai già {name} di questa settimana."
 
 #. placeholders: {name}
 msgid "The {name} is still out there."
-msgstr ""
+msgstr "{name} è ancora là fuori."
 
 #. placeholders: {kinds}
 msgid "{kinds} of 8 different kinds so far."
@@ -85121,11 +85473,11 @@ msgstr " Il tuo {best_word} per {the} è {best}."
 
 #. placeholders: {name}
 msgid "You found this week's {name}."
-msgstr ""
+msgstr "Hai trovato {name} di questa settimana."
 
 #. placeholders: {name}
 msgid "The {name} stayed hidden this time."
-msgstr ""
+msgstr "Stavolta niente {name}."
 
 #. placeholders: {kinds}
 msgid "You found {kinds} different kinds, enough for the Great Low Tide."
@@ -85258,12 +85610,17 @@ msgstr " La marea torna tra circa {minutes_words}."
 msgid "Back at pool {at}, {words}.{tide}"
 msgstr "Di nuovo alla pozza {at}, {words}.{tide}"
 
-#. placeholders: {name}, {else}
-msgid "That last call was the {name}.{else}"
-msgstr ""
+#. one sentence of a longer line
+msgid "It is shy."
+msgstr "È timido."
 
-msgid " It is shy."
-msgstr " È timida."
+#. placeholders: {name}
+msgid "That last call was the {name}. It is shy."
+msgstr "L'ultimo richiamo: {name}. È timido."
+
+#. placeholders: {name}
+msgid "That last call was the {name}."
+msgstr "L'ultimo richiamo: {name}."
 
 msgid "Nothing has called here yet."
 msgstr "Qui non si è ancora fatto sentire nulla."
@@ -85764,7 +86121,7 @@ msgid "Rocky Point"
 msgstr ""
 
 msgid "the Far Reef"
-msgstr ""
+msgstr "il Far Reef"
 
 msgid "cove"
 msgstr ""
@@ -85817,7 +86174,7 @@ msgstr "Silenzio"
 
 #. placeholders: {name}
 msgid "The {name} hunt"
-msgstr ""
+msgstr "Caccia a {name}"
 
 msgid "Still water: shy creatures come back out twice as fast."
 msgstr ""
@@ -85844,12 +86201,16 @@ msgstr "Trovarla vale 300 punti."
 #. one sentence of a longer line
 msgid "Somewhere along the reef is one {name}: {sound_words}."
 msgstr ""
+"Da qualche parte lungo la scogliera c'è un esemplare di {name}: "
+"{sound_words}."
 
 #. placeholders: {name}, {sound_words}
 msgid ""
 "Somewhere along the reef is one {name}: {sound_words}. Finding it is worth "
 "300 points."
 msgstr ""
+"Da qualche parte lungo la scogliera c'è un esemplare di {name}: "
+"{sound_words}. Trovarlo vale 300 punti."
 
 msgid ""
 "The Great Low Tide: the sea draws back further than on any other day this "
@@ -85899,7 +86260,7 @@ msgstr " Una scoperta rara: compare solo {w}."
 
 #. placeholders: {name}, {sound_words}, {shy}, {rare}, {points}
 msgid "The {name}: {sound_words}.{shy}{rare} Worth {points} points."
-msgstr ""
+msgstr "{name}: {sound_words}.{shy}{rare} Vale {points} punti."
 
 msgid ""
 "A quick falling swish and a plop: something shy darted out of sight as you "
@@ -87063,17 +87424,29 @@ msgstr "più lontana"
 msgid "training"
 msgstr "allenamento"
 
-#. placeholders: {relaxed}, {name}, {score}
-msgid "First {relaxed}{name} score saved: {score}."
-msgstr ""
+#. placeholders: {name}, {score}
+msgid "First relaxed {name} score saved: {score}."
+msgstr "Primo punteggio {name} a ritmo rilassato salvato: {score}."
 
-#. placeholders: {relaxed}, {name}, {score}, {previous}
-msgid "New {relaxed}best {name} score: {score}, beating {previous}."
-msgstr ""
+#. placeholders: {name}, {score}
+msgid "First {name} score saved: {score}."
+msgstr "Primo punteggio {name} salvato: {score}."
 
-#. placeholders: {relaxed}, {name}, {best}
-msgid "Your {relaxed}best {name} score stays {best}."
-msgstr ""
+#. placeholders: {name}, {score}, {previous}
+msgid "New relaxed best {name} score: {score}, beating {previous}."
+msgstr "Nuovo record {name} a ritmo rilassato: {score}, batte {previous}."
+
+#. placeholders: {name}, {score}, {previous}
+msgid "New best {name} score: {score}, beating {previous}."
+msgstr "Nuovo record {name}: {score}, batte {previous}."
+
+#. placeholders: {name}, {best}
+msgid "Your relaxed best {name} score stays {best}."
+msgstr "Il tuo record {name} a ritmo rilassato resta {best}."
+
+#. placeholders: {name}, {best}
+msgid "Your best {name} score stays {best}."
+msgstr "Il tuo record {name} resta {best}."
 
 #. placeholders: {number}
 msgid "night crossing {number}"
@@ -87083,14 +87456,23 @@ msgstr "traversata notturna {number}"
 msgid "crossing {number}"
 msgstr "traversata {number}"
 
-#. placeholders: {relaxed}, {name}, {secs}
-msgid "First {relaxed}time on {name}: {secs} seconds."
-msgstr ""
+#. placeholders: {name}, {secs}
+msgid "First relaxed time on {name}: {secs} seconds."
+msgstr "Primo tempo a ritmo rilassato su {name}: {secs} secondi."
 
-#. placeholders: {relaxed}, {name}, {secs}, {previous}
-msgid ""
-"New {relaxed}best time on {name}: {secs} seconds, beating {previous}."
+#. placeholders: {name}, {secs}
+msgid "First time on {name}: {secs} seconds."
+msgstr "Primo tempo su {name}: {secs} secondi."
+
+#. placeholders: {name}, {secs}, {previous}
+msgid "New relaxed best time on {name}: {secs} seconds, beating {previous}."
 msgstr ""
+"Nuovo record di tempo a ritmo rilassato su {name}: {secs} secondi, batte "
+"{previous}."
+
+#. placeholders: {name}, {secs}, {previous}
+msgid "New best time on {name}: {secs} seconds, beating {previous}."
+msgstr "Nuovo record di tempo su {name}: {secs} secondi, batte {previous}."
 
 #. placeholders: {reached}, {SKYLINE_LEN}
 msgid "Furthest crossing: {reached} of {SKYLINE_LEN}."
@@ -87473,7 +87855,7 @@ msgstr "Addosso al piccione!"
 
 #. placeholders: {away}
 msgid "Into the pigeon! Knocked {away}."
-msgstr ""
+msgstr "Addosso al piccione! Spinto verso {away}."
 
 #. placeholders: {away}
 #. one sentence of a longer line
@@ -87712,16 +88094,13 @@ msgstr "Sul tetto: {to}."
 msgid "Run over."
 msgstr "Partita finita."
 
-#. placeholders: {pos}, {steps}, {lean_words}, {else}
-msgid "Step {pos} of {steps}, {lean_words}{else}."
-msgstr "Passo {pos} di {steps}, {lean_words}{else}."
+#. placeholders: {pos}, {steps}, {lean_words}
+msgid "Step {pos} of {steps}, {lean_words}, crouching."
+msgstr "Passo {pos} di {steps}, {lean_words}, accovacciato."
 
-msgid ", crouching"
-msgstr ", accovacciato"
-
-#. one clause of a longer line
-msgid "crouching"
-msgstr "accovacciato"
+#. placeholders: {pos}, {steps}, {lean_words}
+msgid "Step {pos} of {steps}, {lean_words}."
+msgstr "Passo {pos} di {steps}, {lean_words}."
 
 #. placeholders: {name}
 msgid "Wind blowing from the {name}."
@@ -89427,27 +89806,36 @@ msgstr ""
 "Mazzi da {MONTHLY_STACKS} a {MONTHLY_STACKS2} al banco dei desideri, uno "
 "dopo l'altro."
 
-#. placeholders: {r}, {score}
-msgid "Your first {r}result on this challenge: {score}."
-msgstr ""
+#. placeholders: {score}
+msgid "Your first relaxed result on this challenge: {score}."
+msgstr "Il tuo primo risultato a ritmo rilassato in questa sfida: {score}."
 
-#. placeholders: {r}
+#. placeholders: {score}
+msgid "Your first result on this challenge: {score}."
+msgstr "Il tuo primo risultato in questa sfida: {score}."
+
 #. one sentence of a longer line
-msgid "A new {r}best."
-msgstr ""
+msgid "A new relaxed best."
+msgstr "Nuovo record a ritmo rilassato."
 
-#. placeholders: {r}, {previous}
-msgid "A new {r}best. The old {r}best was {previous}."
+#. placeholders: {previous}
+msgid "A new relaxed best. The old relaxed best was {previous}."
 msgstr ""
+"Nuovo record a ritmo rilassato. Il vecchio record a ritmo rilassato era "
+"{previous}."
 
-#. placeholders: {r}, {previous}
+#. placeholders: {previous}
 #. one sentence of a longer line
-msgid "The old {r}best was {previous}."
-msgstr ""
+msgid "The old relaxed best was {previous}."
+msgstr "Il vecchio record a ritmo rilassato era {previous}."
 
-#. placeholders: {r}, {best}
-msgid "Your {r}best on this challenge is {best}."
-msgstr ""
+#. placeholders: {best}
+msgid "Your relaxed best on this challenge is {best}."
+msgstr "Il tuo record a ritmo rilassato in questa sfida è {best}."
+
+#. placeholders: {best}
+msgid "Your best on this challenge is {best}."
+msgstr "Il tuo record in questa sfida è {best}."
 
 #. placeholders: {title}, {score}
 #. one sentence of a longer line
@@ -90539,7 +90927,7 @@ msgstr "In una scatola, il desiderio di {from} suonerebbe come {sound}."
 
 #. placeholders: {name}, {answer}
 msgid "Walk {name} to box {answer}."
-msgstr ""
+msgstr "Porta {name} alla scatola {answer}."
 
 msgid "It is the box in front of you."
 msgstr "È la scatola davanti a te."
@@ -90967,13 +91355,9 @@ msgstr "banco dei desideri"
 msgid "countdown night {night}"
 msgstr "notte del conto alla rovescia {night}"
 
-#. placeholders: {r}
-msgid "Your first {r}score here is saved."
-msgstr ""
-
-#. placeholders: {r}, {best}
-msgid "Your {r}best is {best}."
-msgstr ""
+#. placeholders: {best}
+msgid "Your relaxed best is {best}."
+msgstr "Il tuo record a ritmo rilassato è {best}."
 
 msgid "Not played yet"
 msgstr "Non ancora giocato"
@@ -91031,18 +91415,64 @@ msgstr "La stessa partita, subito. Si tiene solo il tuo risultato migliore."
 msgid "Shift {level}"
 msgstr "Turno {level}"
 
-#. placeholders: {name}
-msgid ", a {name} in the box"
-msgstr ""
+#. placeholders: {who}, {gift}
+msgid "{who}, on your left, wishes for {gift}."
+msgstr "{who}, alla tua sinistra, desidera {gift}."
 
-#. placeholders: {name}
-#. one clause of a longer line
-msgid "a {name} in the box"
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, on your left, wishes for {gift}, a {sound} in the box."
 msgstr ""
+"{who}, alla tua sinistra, desidera {gift}, un suono di {sound} nella "
+"scatola."
 
-#. placeholders: {name}, {place}, {item}, {which}
-msgid "{name}, {place}, wishes for {item}{which}."
-msgstr "{name}, {place}, desidera {item}{which}."
+#. placeholders: {who}, {gift}
+msgid "{who}, on your left, now wishes for {gift}."
+msgstr "{who}, alla tua sinistra, ora desidera {gift}."
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, on your left, now wishes for {gift}, a {sound} in the box."
+msgstr ""
+"{who}, alla tua sinistra, ora desidera {gift}, un suono di {sound} nella "
+"scatola."
+
+#. placeholders: {who}, {gift}
+msgid "{who}, on your right, wishes for {gift}."
+msgstr "{who}, alla tua destra, desidera {gift}."
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, on your right, wishes for {gift}, a {sound} in the box."
+msgstr ""
+"{who}, alla tua destra, desidera {gift}, un suono di {sound} nella scatola."
+
+#. placeholders: {who}, {gift}
+msgid "{who}, on your right, now wishes for {gift}."
+msgstr "{who}, alla tua destra, ora desidera {gift}."
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, on your right, now wishes for {gift}, a {sound} in the box."
+msgstr ""
+"{who}, alla tua destra, ora desidera {gift}, un suono di {sound} nella "
+"scatola."
+
+#. placeholders: {who}, {gift}
+msgid "{who}, straight ahead, wishes for {gift}."
+msgstr "{who}, dritto davanti a te, desidera {gift}."
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, straight ahead, wishes for {gift}, a {sound} in the box."
+msgstr ""
+"{who}, dritto davanti a te, desidera {gift}, un suono di {sound} nella "
+"scatola."
+
+#. placeholders: {who}, {gift}
+msgid "{who}, straight ahead, now wishes for {gift}."
+msgstr "{who}, dritto davanti a te, ora desidera {gift}."
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, straight ahead, now wishes for {gift}, a {sound} in the box."
+msgstr ""
+"{who}, dritto davanti a te, ora desidera {gift}, un suono di {sound} nella "
+"scatola."
 
 #. placeholders: {name}
 msgid ""
@@ -91186,29 +91616,36 @@ msgstr "Nel sacco dei resi. Più {points}.{rest}"
 msgid "Plus {points}.{rest}"
 msgstr "Più {points}.{rest}"
 
-#. placeholders: {points}
-msgid "Plus {points}."
-msgstr "Più {points}."
-
 #. placeholders: {who}
 #. one sentence of a longer line
 msgid "{who} is delighted."
 msgstr "Che gioia per {who}."
 
-#. placeholders: {who}, {plus}, {rest}
-msgid "{who} is delighted. {plus}{rest}"
-msgstr "Che gioia per {who}. {plus}{rest}"
+#. placeholders: {who}, {points}, {rest}
+msgid "{who} is delighted. Plus {points}.{rest}"
+msgstr "Che gioia per {who}. Più {points}.{rest}"
 
+#. placeholders: {penalty}
+#. one sentence of a longer line
+msgid "Minus {penalty}."
+msgstr "Meno {penalty}."
+
+#. one sentence of a longer line
 msgid "Someone wished for that."
 msgstr "Qualcuno l'aveva chiesto."
 
+#. placeholders: {penalty}
+msgid "Someone wished for that. Minus {penalty}."
+msgstr "Qualcuno lo desiderava. Meno {penalty}."
+
 #. placeholders: {who}
+#. one sentence of a longer line
 msgid "{who} didn't wish for that."
 msgstr "{who} non aveva chiesto questo."
 
-#. placeholders: {who}, {secs}
-msgid "{who} Minus {secs}."
-msgstr "{who} Meno {secs}."
+#. placeholders: {who}, {penalty}
+msgid "{who} didn't wish for that. Minus {penalty}."
+msgstr "{who} non lo desiderava. Meno {penalty}."
 
 msgid "1 second left!"
 msgstr "Manca 1 secondo!"
@@ -91221,14 +91658,9 @@ msgstr "Mancano {n} secondi!"
 msgid "Change of plans."
 msgstr "Cambio di programma."
 
-#. placeholders: {name}, {place}, {item}, {which}
-msgid "Change of plans. {name}, {place}, now wishes for {item}{which}."
-msgstr "Cambio di programma. {name}, {place}, ora desidera {item}{which}."
-
-#. placeholders: {name}, {place}, {item}, {which}
-#. one sentence of a longer line
-msgid "{name}, {place}, now wishes for {item}{which}."
-msgstr "{name}, {place}, ora desidera {item}{which}."
+#. placeholders: {wish}
+msgid "Change of plans. {wish}"
+msgstr "Cambio di programma. {wish}"
 
 #. placeholders: {done}
 #. one sentence of a longer line
@@ -91369,9 +91801,14 @@ msgstr "Ancora niente sul nastro da mandare."
 msgid "No return sack this shift."
 msgstr "In questo turno non c'è il sacco dei resi."
 
-#. placeholders: {place}
-msgid "Nobody is standing {place}."
-msgstr "Non c'è nessuno {place}."
+msgid "Nobody is standing on your left."
+msgstr "Non c'è nessuno alla tua sinistra."
+
+msgid "Nobody is standing on your right."
+msgstr "Non c'è nessuno alla tua destra."
+
+msgid "Nobody is standing straight ahead."
+msgstr "Non c'è nessuno davanti a te."
 
 msgid "No gift on the belt yet."
 msgstr "Ancora nessun regalo sul nastro."
@@ -91380,25 +91817,43 @@ msgstr "Ancora nessun regalo sul nastro."
 msgid "Shake it first with {primary}."
 msgstr "Prima scuotilo con {primary}."
 
-#. placeholders: {name}, {item}, {name2}, {place}, {spot_key}
+#. placeholders: {sound}, {item}, {who}, {key_send}
 msgid ""
-"That was a {name}, {item} for {name2}: send it {place} with {spot_key}."
+"That was a {sound}, {item} for {who}: send it on your left with {key_send}."
 msgstr ""
+"Era un suono di {sound}, {item} per {who}: mandalo a sinistra con "
+"{key_send}."
 
-#. placeholders: {spot_key}
-#. one sentence of a longer line
-msgid "Nobody wished for it: return sack, with {spot_key}."
-msgstr "Nessuno l'ha chiesto: sacco dei resi, con {spot_key}."
-
-#. placeholders: {name}
-#. one sentence of a longer line
-msgid "That was a {name}."
-msgstr ""
-
-#. placeholders: {name}, {spot_key}
+#. placeholders: {sound}, {item}, {who}, {key_send}
 msgid ""
-"That was a {name}. Nobody wished for it: return sack, with {spot_key}."
+"That was a {sound}, {item} for {who}: send it on your right with {key_send}."
 msgstr ""
+"Era un suono di {sound}, {item} per {who}: mandalo a destra con {key_send}."
+
+#. placeholders: {sound}, {item}, {who}, {key_send}
+msgid ""
+"That was a {sound}, {item} for {who}: send it straight ahead with "
+"{key_send}."
+msgstr ""
+"Era un suono di {sound}, {item} per {who}: mandalo dritto davanti con "
+"{key_send}."
+
+#. placeholders: {key_send}
+#. one sentence of a longer line
+msgid "Nobody wished for it: return sack, with {key_send}."
+msgstr "Nessuno lo desiderava: sacco dei resi, con {key_send}."
+
+#. placeholders: {sound}
+#. one sentence of a longer line
+msgid "That was a {sound}."
+msgstr "Era un suono di {sound}."
+
+#. placeholders: {sound}, {key_send}
+msgid ""
+"That was a {sound}. Nobody wished for it: return sack, with {key_send}."
+msgstr ""
+"Era un suono di {sound}. Nessuno lo desiderava: sacco dei resi, con "
+"{key_send}."
 
 #. one sentence of a longer line
 msgid "Half points for this gift."
@@ -91408,29 +91863,39 @@ msgstr "Metà punti per questo regalo."
 msgid "{text} Half points for this gift."
 msgstr "{text} Metà punti per questo regalo."
 
-#. placeholders: {sentence_start}, {value}, {name}
-msgid "{sentence_start} starts the {value}, {name} repeats the wishes."
-msgstr "{sentence_start} avvia il {value}, {name} ripete i desideri."
+#. placeholders: {key_start}, {key_repeat}
+msgid "{key_start} starts the belt, {key_repeat} repeats the wishes."
+msgstr "{key_start} fa partire il nastro, {key_repeat} ripete i desideri."
 
-msgid "belt"
-msgstr "nastro"
-
-#. placeholders: {sentence_start2}, {ahead}, {name}
+#. placeholders: {key_left}, {key_right}
 #. one sentence of a longer line
-msgid "{sentence_start2}{ahead} and {name} send it."
-msgstr "{sentence_start2}{ahead} e {name} lo mandano."
+msgid "{key_left} and {key_right} send it."
+msgstr "{key_left} e {key_right} lo mandano."
 
-#. placeholders: {sentence_start}
+#. placeholders: {key_shake}
 #. one sentence of a longer line
-msgid "{sentence_start} shakes the gift."
-msgstr "{sentence_start} scuote il regalo."
+msgid "{key_shake} shakes the gift."
+msgstr "{key_shake} scuote il regalo."
 
-#. placeholders: {sentence_start}, {sentence_start2}, {ahead}, {name}
+#. placeholders: {key_shake}, {key_left}, {key_right}
 msgid ""
-"{sentence_start} shakes the gift. {sentence_start2}{ahead} and {name} send "
+"{key_shake} shakes the gift. {key_left} and {key_right} send it. F1 "
+"explains the keys."
+msgstr ""
+"{key_shake} scuote il regalo. {key_left} e {key_right} lo mandano. F1 "
+"spiega i tasti."
+
+#. placeholders: {key_left}, {key_ahead}, {key_right}
+#. one sentence of a longer line
+msgid "{key_left}, {key_ahead} and {key_right} send it."
+msgstr "{key_left}, {key_ahead} e {key_right} lo mandano."
+
+#. placeholders: {key_shake}, {key_left}, {key_ahead}, {key_right}
+msgid ""
+"{key_shake} shakes the gift. {key_left}, {key_ahead} and {key_right} send "
 "it. F1 explains the keys."
 msgstr ""
-"{sentence_start} scuote il regalo. {sentence_start2}{ahead} e {name} lo "
+"{key_shake} scuote il regalo. {key_left}, {key_ahead} e {key_right} lo "
 "mandano. F1 spiega i tasti."
 
 #. one sentence of a longer line
@@ -91483,31 +91948,27 @@ msgstr "Regalo: non scosso, {left} secondi al bordo"
 msgid "Gift: sounds like {name}, {left} seconds to the edge"
 msgstr "Regalo: suona come {name}, {left} secondi al bordo"
 
-#. placeholders: {sentence_start2}, {n}, {value3}
+#. one sentence of a longer line
+msgid "Gift Sort briefing."
+msgstr "Presentazione di Smista regali."
+
+#. placeholders: {start_key}, {repeat_key}, {status_key}
+msgid ""
+"Gift Sort briefing. {start_key} starts the belt. {repeat_key} repeats the "
+"wishes, {status_key} speaks the shift, Escape pauses."
+msgstr ""
+
+#. placeholders: {repeat_key}, {status_key}
 #. one sentence of a longer line
 msgid ""
-"{sentence_start2} repeats the wishes, {n} speaks the {value3}, Escape "
+"{repeat_key} repeats the wishes, {status_key} speaks the shift, Escape "
 "pauses."
 msgstr ""
 
-#. placeholders: {sentence_start}, {value2}
+#. placeholders: {start_key}
 #. one sentence of a longer line
-msgid "{sentence_start} starts the {value2}."
-msgstr "{sentence_start} avvia il {value2}."
-
-#. placeholders: {value}
-#. one sentence of a longer line
-msgid "{value} briefing."
-msgstr "Presentazione: {value}."
-
-#. placeholders: {value}, {sentence_start}, {value2}, {sentence_start2}, {n}, {value3}
-msgid ""
-"{value} briefing. {sentence_start} starts the {value2}. {sentence_start2} "
-"repeats the wishes, {n} speaks the {value3}, Escape pauses."
-msgstr ""
-
-msgid "Gift Sort"
-msgstr "Smista regali"
+msgid "{start_key} starts the belt."
+msgstr "{start_key} avvia il nastro."
 
 #. placeholders: {n}
 msgid ", and {n} drops it in the return sack behind you"
@@ -91556,6 +92017,11 @@ msgid ""
 msgstr ""
 "{sentence_start3} ripete i desideri, {sentence_start4} dice tempo e "
 "punteggio, {sentence_start5} dà un suggerimento a metà punti."
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid "{sentence_start} shakes the gift."
+msgstr "{sentence_start} scuote il regalo."
 
 msgid "Up and Down move between sounds, Enter plays one, Escape goes back."
 msgstr ""
@@ -91784,6 +92250,9 @@ msgstr "Conto alla rovescia di mezzanotte per notte."
 #. placeholders: {join}
 msgid "Midnight Countdown by night. {join}"
 msgstr "Conto alla rovescia di mezzanotte per notte. {join}"
+
+msgid "Gift Sort"
+msgstr "Smista regali"
 
 msgid " Late post tonight: two more letters after your next stack."
 msgstr ""
@@ -94240,6 +94709,9 @@ msgstr "chiocciola"
 msgid "tilde"
 msgstr "tilde"
 
+msgid "star"
+msgstr "asterisco"
+
 msgid "quote"
 msgstr "virgolette"
 
@@ -95233,6 +95705,497 @@ msgstr "Wicket"
 msgid "Theo"
 msgstr "Theo"
 
+#~ msgid "Spoken call-outs: {else}"
+#~ msgstr "Avvisi a voce: {else}"
+
+#~ msgid "Keep your songs: {else}"
+#~ msgstr "Tieni le tue canzoni: {else}"
+
+#~ msgid "Lane {lane} of {lanes}{else}, basket {basket} of {capacity}."
+#~ msgstr "Corsia {lane} di {lanes}{else}, cestino {basket} di {capacity}."
+
+#~ msgid ", at the cart"
+#~ msgstr ", al carretto"
+
+#~ msgid "at the cart"
+#~ msgstr "al carretto"
+
+#~ msgid "Round bonus {bonus}{else}."
+#~ msgstr "Bonus del round {bonus}{else}."
+
+#~ msgid ""
+#~ "Round {round} cleared. You banked {eggs_phrase}. Round bonus {bonus}{else}. "
+#~ "Score {score}."
+#~ msgstr ""
+#~ "Round {round} superato. Hai depositato {eggs_phrase}. Bonus del round "
+#~ "{bonus}{else}. Punteggio {score}."
+
+#~ msgid ", with the perfect round bonus for no cracked eggs"
+#~ msgstr ", con il bonus del round perfetto senza uova incrinate"
+
+#~ msgid "with the perfect round bonus for no cracked eggs"
+#~ msgstr "con il bonus del round perfetto senza uova incrinate"
+
+#~ msgid "Banked {eggs_phrase}, {points} points{else}."
+#~ msgstr "Depositate {eggs_phrase}, {points} punti{else}."
+
+#~ msgid "Banked {eggs_phrase}, {points} points{else}. Score {score}."
+#~ msgstr "Depositate {eggs_phrase}, {points} punti{else}. Punteggio {score}."
+
+#~ msgid ", with the full basket bonus"
+#~ msgstr ", con il bonus del cestino pieno"
+
+#~ msgid "with the full basket bonus"
+#~ msgstr "con il bonus del cestino pieno"
+
+#~ msgid "Solved in {rows} {else}."
+#~ msgstr "Risolto in {rows} {else}."
+
+#~ msgid "Solved in {rows} {else}. {points}."
+#~ msgstr "Risolto in {rows} {else}. {points}."
+
+#~ msgid "row"
+#~ msgstr "fila"
+
+#~ msgid "rows"
+#~ msgstr "file"
+
+#~ msgid "{places} places, {bells} bells to choose from, {else}, {rows} rows"
+#~ msgstr ""
+#~ "{places} posti, {bells} campane fra cui scegliere, {else}, {rows} file"
+
+#~ msgid "a bell may come twice"
+#~ msgstr "una campana può comparire due volte"
+
+#~ msgid "no bell twice"
+#~ msgstr "nessuna campana due volte"
+
+#~ msgid "{flocks} flocks flying {else}"
+#~ msgstr "{flocks} stormi in volo verso {else}"
+
+#~ msgid ""
+#~ "Locker drops: {lockers}. Quick drops: {quick}. {else} {sentence_start} "
+#~ "earned. You have {dollar_words} to spend in the bike shop."
+#~ msgstr ""
+#~ "Tappe agli armadietti: {lockers}. Tappe veloci: {quick}. {else} "
+#~ "{sentence_start} guadagnati. Hai {dollar_words} da spendere al negozio di "
+#~ "bici."
+
+#~ msgid "You have {dollar_words} to spend in the bike shop."
+#~ msgstr "Hai {dollar_words} da spendere al negozio di bici."
+
+#~ msgid "{else} {sentence_start} earned."
+#~ msgstr "{else} {sentence_start} guadagnati."
+
+#~ msgid "{sentence_start} lost to crashes."
+#~ msgstr "{sentence_start} persi negli incidenti."
+
+#~ msgid "Puzzle: {kind_name}{else}."
+#~ msgstr "Enigma: {kind_name}{else}."
+
+#~ msgid ", solved"
+#~ msgstr ", risolto"
+
+#~ msgid "solved"
+#~ msgstr "risolto"
+
+#~ msgid "Back to your hamlet. {settlers} {else} live there."
+#~ msgstr "Torni al tuo borgo. {settlers} {else} ci vivono."
+
+#~ msgid "{settlers} {else} live there."
+#~ msgstr "{settlers} {else} ci vivono."
+
+#~ msgid "Settlers' tune: {else}"
+#~ msgstr "Musica degli abitanti: {else}"
+
+#~ msgid "Work from along the lane: {else}"
+#~ msgstr "Lavori lungo il viottolo: {else}"
+
+#~ msgid "Buy {what}, {price} {else}"
+#~ msgstr "Compra {what}, {price} {else}"
+
+#~ msgid "coin"
+#~ msgstr "moneta"
+
+#~ msgid "coins"
+#~ msgstr "monete"
+
+#~ msgid "{sentence_case}, {n}, {price} {else} each"
+#~ msgstr "{sentence_case}, {n}, {price} {else} l'uno"
+
+#~ msgid "{has} wood, {has2} stone, {count}, {coins} {else}."
+#~ msgstr "{has} legno, {has2} pietra, {count}, {coins} {else}."
+
+#~ msgid "{left} {else} of work left."
+#~ msgstr "{left} {else} di lavoro rimaste."
+
+#~ msgid "{sentence_case}, going up."
+#~ msgstr "{sentence_case}, in costruzione."
+
+#~ msgid "{sentence_case}, going up. {left} {else} of work left."
+#~ msgstr "{sentence_case}, in costruzione. {left} {else} di lavoro rimaste."
+
+#~ msgid "hour"
+#~ msgstr "ora"
+
+#~ msgid "hours"
+#~ msgstr "ore"
+
+#~ msgid "{n} for {n2} {else}"
+#~ msgstr "{n} per {n2} {else}"
+
+#~ msgid "buildings"
+#~ msgstr "edifici"
+
+#~ msgid "{spare} for {spare2} {else} to spare"
+#~ msgstr "{spare} per {spare2} {else} di margine"
+
+#~ msgid "{sentence_case} is going up, {left} {else} of work left."
+#~ msgstr "{sentence_case} in costruzione, {left} {else} di lavoro rimaste."
+
+#~ msgid "Freestyle show complete. You launched {n} firework{s_ending}."
+#~ msgstr ""
+#~ "Spettacolo a stile libero completo. Hai lanciato {n} {n:fuoco|fuochi}."
+
+#~ msgid "You launched {n} firework{s_ending}."
+#~ msgstr "Hai lanciato {n} {n:fuoco|fuochi}."
+
+#~ msgid "Gentle streams: {else}"
+#~ msgstr "Ruscelli tranquilli: {else}"
+
+#~ msgid "Say trinket names: {else}"
+#~ msgstr "Nomi dei ninnoli: {else}"
+
+#~ msgid "Banks louder up close: {else}"
+#~ msgstr "Rive più forti da vicino: {else}"
+
+#~ msgid "Bank close on your {else}."
+#~ msgstr "Riva vicina: {else}."
+
+#~ msgid "Mill wheel on the {else} side: keep {else2}."
+#~ msgstr "Ruota di mulino a {else}: stai a {else2}."
+
+#~ msgid "{scraps2} in all."
+#~ msgstr "{scraps2} in tutto."
+
+#~ msgid "{scraps} paper {else} picked up."
+#~ msgstr "{scraps} {else} di carta raccolti."
+
+#~ msgid "{scraps} paper {else} picked up. {scraps2} in all."
+#~ msgstr "{scraps} {else} di carta raccolti. {scraps2} in tutto."
+
+#~ msgid "scraps"
+#~ msgstr "pezzetti"
+
+#~ msgid "{name}, {credits} credits and {parts} part{s_ending}"
+#~ msgstr "{name}, {credits} crediti e {parts} {parts:pezzo|pezzi}"
+
+#~ msgid "Story logs recovered {logs_recovered} of {total_logs}. {else}"
+#~ msgstr ""
+#~ "Registri della storia recuperati {logs_recovered} su {total_logs}. {else}"
+
+#~ msgid "{left} shield{s_ending} left."
+#~ msgstr "{left} {left:scudo rimasto|scudi rimasti}."
+
+#~ msgid "{message} Shield absorbed it. {left} shield{s_ending} left."
+#~ msgstr ""
+#~ "{message} Lo scudo l'ha assorbito. {left} {left:scudo rimasto|scudi "
+#~ "rimasti}."
+
+#~ msgid "Score 0, so nothing goes on the {board} board."
+#~ msgstr "Punteggio 0, quindi niente va nella classifica {board}."
+
+#~ msgid "First score on the {board} board: {score}."
+#~ msgstr "Primo punteggio nella classifica {board}: {score}."
+
+#~ msgid "New best on the {board} board: {score}, beating {previous}."
+#~ msgstr "Nuovo record nella classifica {board}: {score}, batte {previous}."
+
+#~ msgid "{sentence_start} best stays {best}."
+#~ msgstr "{sentence_start}: il record resta {best}."
+
+#~ msgid "{sentence}, locked: {n} more {else}"
+#~ msgstr "{sentence}, bloccato: ancora {n} {else}"
+
+#~ msgid "stars"
+#~ msgstr "stelle"
+
+#~ msgid "day {day}, {plants} {else}, {harvests} {else2}"
+#~ msgstr "giorno {day}, {plants} {else}, {harvests} {else2}"
+
+#~ msgid "plants"
+#~ msgstr "piante"
+
+#~ msgid ""
+#~ "Bests. Most harvests: {harvests}. Fullest harmony: {harmony} {else}. "
+#~ "Longest garden: {days} {else2}. Seeds unlocked: {seeds_open} of {ALL}."
+#~ msgstr ""
+#~ "Record. Più raccolti: {harvests}. Armonia più piena: {harmony} {else}. "
+#~ "Giardino più lungo: {days} {else2}. Semi sbloccati: {seeds_open} di {ALL}."
+
+#~ msgid "Fullest harmony: {harmony} {else}."
+#~ msgstr "Armonia più piena: {harmony} {else}."
+
+#~ msgid "Longest garden: {days} {else2}."
+#~ msgstr "Giardino più lungo: {days} {else2}."
+
+#~ msgid "Seeds unlocked: {seeds_open} of {ALL}."
+#~ msgstr "Semi sbloccati: {seeds_open} di {ALL}."
+
+#~ msgid "part"
+#~ msgstr "parte"
+
+#~ msgid "parts"
+#~ msgstr "parti"
+
+#~ msgid "{n} more {else} to unlock"
+#~ msgstr "ancora {n} {else} per sbloccare"
+
+#~ msgid "fill {n} more {else}"
+#~ msgstr "esaudisci ancora {n} {else}"
+
+#~ msgid "request"
+#~ msgstr "richiesta"
+
+#~ msgid "requests"
+#~ msgstr "richieste"
+
+#~ msgid " Harmony: {parts} {else}, {list}."
+#~ msgstr " Armonia: {parts} {else}, {list}."
+
+#~ msgid "Hints cost five seconds.{else}"
+#~ msgstr "I suggerimenti costano cinque secondi.{else}"
+
+#~ msgid ""
+#~ "Time attack, safe {n}: {name}. {sentence_start} on the clock. Hints cost "
+#~ "five seconds.{else}"
+#~ msgstr ""
+#~ "Gara a tempo, cassaforte {n}: {name}. {sentence_start} sull'orologio. I "
+#~ "suggerimenti costano cinque secondi.{else}"
+
+#~ msgid "{sentence_start} on the clock."
+#~ msgstr "{sentence_start} sull'orologio."
+
+#~ msgid " The clock stops while the guard listens at the door."
+#~ msgstr " L'orologio si ferma mentre la guardia ascolta alla porta."
+
+#~ msgid ", {decoys} false gate{s_ending} a wheel"
+#~ msgstr ", {decoys} {decoys:falso incastro|falsi incastri} per ruota"
+
+#~ msgid " Your first {relaxed}time on the board."
+#~ msgstr " Il tuo primo tempo {relaxed}in classifica."
+
+#~ msgid "{decoys} false gate{s_ending} a wheel"
+#~ msgstr "{decoys} {decoys:falso incastro|falsi incastri} per ruota"
+
+#~ msgid "{points_words}, your first {r}score."
+#~ msgstr "{points_words}, il tuo primo punteggio {r}registrato."
+
+#~ msgid "{points_words}, a new {r}best, beating {previous}."
+#~ msgstr "{points_words}, nuovo record {r}, batte {previous}."
+
+#~ msgid "{points_words}. Your {r}best is {best}."
+#~ msgstr "{points_words}. Il tuo record {r}è {best}."
+
+#~ msgid "longest {r}run"
+#~ msgstr "serie più lunga {r}"
+
+#~ msgid "Window reached: {window_words}, your shortest {r}window yet."
+#~ msgstr ""
+#~ "Finestra raggiunta: {window_words}, la tua finestra {r}più corta finora."
+
+#~ msgid "{points_words}, your first {r}steam gala score."
+#~ msgstr "{points_words}, il tuo primo punteggio {r}al gala del vapore."
+
+#~ msgid "{points_words}, a new {r}steam gala best, beating {previous}."
+#~ msgstr ""
+#~ "{points_words}, nuovo record {r}al gala del vapore, batte {previous}."
+
+#~ msgid "Your {r}steam gala best is {best}."
+#~ msgstr "Il tuo record {r}al gala del vapore è {best}."
+
+#~ msgid "{points_words}. Your {r}steam gala best is {best}."
+#~ msgstr "{points_words}. Il tuo record {r}al gala del vapore è {best}."
+
+#~ msgid "Engine: {else}"
+#~ msgstr "Motore: {else}"
+
+#~ msgid "Expedition over after {surfaced} {else}, no coins."
+#~ msgstr "Spedizione finita dopo {surfaced} {else}, nessuna moneta."
+
+#~ msgid "dive"
+#~ msgstr "immersione"
+
+#~ msgid "dives"
+#~ msgstr "immersioni"
+
+#~ msgid "Expedition over. Surfaced {surfaced} {else}, {score} coins banked."
+#~ msgstr ""
+#~ "Spedizione finita. Risalito {surfaced} {else}, {score} monete al sicuro."
+
+#~ msgid "Surfaced {surfaced} {else}, {score} coins banked."
+#~ msgstr "Risalito {surfaced} {else}, {score} monete al sicuro."
+
+#~ msgid "time"
+#~ msgstr "volta"
+
+#~ msgid "times"
+#~ msgstr "volte"
+
+#~ msgid "That makes {total} {else} on the {name} in {year}."
+#~ msgstr "Fanno {total} {else} sulle {name} nel {year}."
+
+#~ msgid "That makes {total} {else} on the {name} in {year}. {coming}"
+#~ msgstr "Fanno {total} {else} sulle {name} nel {year}. {coming}"
+
+#~ msgid "wishes"
+#~ msgstr "desideri"
+
+#~ msgid " It is shy."
+#~ msgstr " È timida."
+
+#~ msgid "Step {pos} of {steps}, {lean_words}{else}."
+#~ msgstr "Passo {pos} di {steps}, {lean_words}{else}."
+
+#~ msgid ", crouching"
+#~ msgstr ", accovacciato"
+
+#~ msgid "crouching"
+#~ msgstr "accovacciato"
+
+#~ msgid "{sentence_start} starts the {value2}."
+#~ msgstr "{sentence_start} avvia il {value2}."
+
+#~ msgid "{value} briefing."
+#~ msgstr "Presentazione: {value}."
+
+#~ msgid "belt"
+#~ msgstr "nastro"
+
+#~ msgid "{name} is {days_phrase}."
+#~ msgstr "{name} è {days_phrase}."
+
+#~ msgid ", 1 event today"
+#~ msgstr ", 1 evento oggi"
+
+#~ msgid "1 event today"
+#~ msgstr "1 evento oggi"
+
+#~ msgid ", {n} events today"
+#~ msgstr ", {n} eventi oggi"
+
+#~ msgid "{n} events today"
+#~ msgstr "{n} eventi oggi"
+
+#~ msgid "{name}, {after_comma} today"
+#~ msgstr "{name}, {after_comma} oggi"
+
+#~ msgid "Solved in {rows} {else}. {points}"
+#~ msgstr "Risolto in {rows} {else}. {points}"
+
+#~ msgid ""
+#~ "Solved in {rows} {else}. The peal is {row_words}, and the bells ring it out."
+#~ msgstr ""
+#~ "Risolto in {rows} {else}. Lo scampanio è {row_words}, e le campane lo "
+#~ "suonano."
+
+#~ msgid "The peal is {row_words}, and the bells ring it out."
+#~ msgstr "Lo scampanio è {row_words}, e le campane lo suonano."
+
+#~ msgid "holding {held_words}"
+#~ msgstr "tieni {held_words}"
+
+#~ msgid "on pile {pile}"
+#~ msgstr "sulla pila {pile}"
+
+#~ msgid "on the stock"
+#~ msgstr "sul mazzo"
+
+#~ msgid "on the {foundation}"
+#~ msgstr "sulla {foundation}"
+
+#~ msgid "the bike lane"
+#~ msgstr "la pista ciclabile"
+
+#~ msgid "the left of the traffic lane, near the centre line"
+#~ msgstr "la sinistra della corsia, vicino alla linea di mezzeria"
+
+#~ msgid "{turn} turn in {distance}."
+#~ msgstr "{turn}, svolta tra {distance}."
+
+#~ msgid "{turn} turn in {distance}. {be_in} {position}{speed}"
+#~ msgstr "{turn}, svolta tra {distance}. {be_in} {position}{speed}"
+
+#~ msgid "{sentence_start} turn in {metres_words}."
+#~ msgstr "{sentence_start}, svolta tra {metres_words}."
+
+#~ msgid "Turned {word}."
+#~ msgstr "Svoltato {word}."
+
+#~ msgid "Be in {place}."
+#~ msgstr "Stai {place}."
+
+#~ msgid "Ran wide, wrong side for a {word} turn."
+#~ msgstr "Largo, lato sbagliato per una svolta a {word}."
+
+#~ msgid "Ran wide, wrong side for a {word} turn. Be in {place}."
+#~ msgstr "Largo, lato sbagliato per una svolta a {word}. Stai {place}."
+
+#~ msgid "Be in {lane}, under {limit}."
+#~ msgstr "Stai {lane}, sotto {limit}."
+
+#~ msgid ", most lanterns in a night {n}"
+#~ msgstr ", massimo di lanternini in una notte {n}"
+
+#~ msgid "most lanterns in a night {n}"
+#~ msgstr "massimo di lanternini in una notte {n}"
+
+#~ msgid ", best {n} lanterns"
+#~ msgstr ", record {n} lanternini"
+
+#~ msgid "best {n} lanterns"
+#~ msgstr "record {n} lanternini"
+
+#~ msgid "Free paddle{best}"
+#~ msgstr "Pagaiata libera{best}"
+
+#~ msgid "{PLAY}, night {next}{most}"
+#~ msgstr "{PLAY}, notte {next}{most}"
+
+#~ msgid "{name}, {place}, wishes for {item}{which}."
+#~ msgstr "{name}, {place}, desidera {item}{which}."
+
+#~ msgid "{who} is delighted. {plus}{rest}"
+#~ msgstr "Che gioia per {who}. {plus}{rest}"
+
+#~ msgid "{who} Minus {secs}."
+#~ msgstr "{who} Meno {secs}."
+
+#~ msgid "Change of plans. {name}, {place}, now wishes for {item}{which}."
+#~ msgstr "Cambio di programma. {name}, {place}, ora desidera {item}{which}."
+
+#~ msgid "{name}, {place}, now wishes for {item}{which}."
+#~ msgstr "{name}, {place}, ora desidera {item}{which}."
+
+#~ msgid "Nobody is standing {place}."
+#~ msgstr "Non c'è nessuno {place}."
+
+#~ msgid "Nobody wished for it: return sack, with {spot_key}."
+#~ msgstr "Nessuno l'ha chiesto: sacco dei resi, con {spot_key}."
+
+#~ msgid "{sentence_start} starts the {value}, {name} repeats the wishes."
+#~ msgstr "{sentence_start} avvia il {value}, {name} ripete i desideri."
+
+#~ msgid "{sentence_start2}{ahead} and {name} send it."
+#~ msgstr "{sentence_start2}{ahead} e {name} lo mandano."
+
+#~ msgid ""
+#~ "{sentence_start} shakes the gift. {sentence_start2}{ahead} and {name} send "
+#~ "it. F1 explains the keys."
+#~ msgstr ""
+#~ "{sentence_start} scuote il regalo. {sentence_start2}{ahead} e {name} lo "
+#~ "mandano. F1 spiega i tasti."
+
 #~ msgid "Next: {name}, {lower_first}"
 #~ msgstr "Prossimo: {name}, {lower_first}"
 
@@ -95374,9 +96337,6 @@ msgstr "Theo"
 #~ msgstr ""
 #~ "un breve bip acuto sulla piazzola della Tranquillità. Sostituisce il clic "
 #~ "della radio: segue un avviso."
-
-#~ msgid "{who} is delighted. Plus {points}.{rest}"
-#~ msgstr "Che gioia per {who}. Più {points}.{rest}"
 
 #~ msgid "relaxed {word} {v}"
 #~ msgstr "{word} rilassato {v}"

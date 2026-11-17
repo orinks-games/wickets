@@ -93,16 +93,19 @@ impl Menu for MoreRides {
 
     fn build_items(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
         let c = Choices::load(ctx);
-        let mut items = vec![MenuItem::new("Time trial", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
-            ctx.push(CourseSelect::new())
-        })
-        .help(format!(
-            "Race the clock on one of {} Downtown courses, on the {}. Opens on {}, {}.",
-            COURSES.len(),
-            c.bike.name(),
-            COURSES[c.course].name,
-            crate::best_words(ctx, c.course, c.bike)
-        ))];
+        let mut items =
+            vec![
+                MenuItem::new("Time trial", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                    ctx.push(CourseSelect::new())
+                })
+                .help(format!(
+                    "Race the clock on one of {} Downtown courses, on the {}. Opens on {}, {}.",
+                    COURSES.len(),
+                    c.bike.name(),
+                    COURSES[c.course].name,
+                    crate::best_words(ctx, c.course, c.bike)
+                )),
+            ];
         if clock::offered() {
             let district = c.district;
             let best = crate::row_best(ctx, &clock::board(district), |n| {
@@ -186,10 +189,13 @@ impl Menu for Events {
                 crate::event_best(ctx, &events::board(events::LEAF_BOARD, c.bike))
             );
             items.push(
-                MenuItem::new(events::LEAF_SEASON, move |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                    let today = parlor_core::challenges::today(ctx);
-                    ctx.push(Ride::leaf_season(c.bike, today))
-                })
+                MenuItem::new(
+                    events::LEAF_SEASON,
+                    move |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        let today = parlor_core::challenges::today(ctx);
+                        ctx.push(Ride::leaf_season(c.bike, today))
+                    },
+                )
                 .help(help),
             );
         } else {
@@ -213,9 +219,12 @@ impl Menu for Events {
                 crate::event_best(ctx, &events::board(events::SUNDAY_BOARD, c.bike))
             );
             items.push(
-                MenuItem::new(events::SUNDAY, move |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
-                    ctx.push(Ride::sunday(c.bike, course.clone()))
-                })
+                MenuItem::new(
+                    events::SUNDAY,
+                    move |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
+                        ctx.push(Ride::sunday(c.bike, course.clone()))
+                    },
+                )
                 .help(help),
             );
         } else {
@@ -281,15 +290,16 @@ impl Menu for Garage {
             MenuItem::new("District select", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(shop::DistrictSelect::new())
             })
-            .help(format!(
-                "Choose where the endless ride{}. Riding in {} now.",
+            .help({
+                let name = c.district.name();
                 if clock::offered() {
-                    " and the ride against the clock go"
+                    format!(
+                        "Choose where the endless ride and the ride against the clock go. Riding in {name} now."
+                    )
                 } else {
-                    " goes"
-                },
-                c.district.name()
-            )),
+                    format!("Choose where the endless ride goes. Riding in {name} now.")
+                }
+            }),
             MenuItem::new("Bike shop", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(shop::Shop::new())
             })

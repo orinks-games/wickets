@@ -474,13 +474,14 @@ impl Menu for Workshop {
                     part.name, part.credits, part.parts, part.rank
                 )
             } else if part.parts > 0 {
-                format!(
-                    "{}, {} credits and {} part{}",
-                    part.name,
-                    part.credits,
-                    part.parts,
-                    if part.parts == 1 { "" } else { "s" }
-                )
+                let name = &part.name;
+                let credits = part.credits;
+                let parts = part.parts;
+                if parts == 1 {
+                    format!("{name}, {credits} credits and 1 part")
+                } else {
+                    format!("{name}, {credits} credits and {parts} parts")
+                }
             } else {
                 format!("{}, {} credits", part.name, part.credits)
             };

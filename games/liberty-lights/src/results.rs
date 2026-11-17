@@ -10,7 +10,7 @@ use crate::festival::Run;
 use crate::independence::{self, Keepsakes, Kept, NightRun};
 use crate::progress::{self, Progress};
 use crate::replay::Replay;
-use crate::rules::{Judgement, Launch, PASS_PERCENT, TOTAL_LEVELS};
+use crate::rules::{Judgement, Kind, Launch, PASS_PERCENT, TOTAL_LEVELS};
 use crate::show::{Mode, Show};
 use crate::sound;
 use crate::{CHALLENGES_NAME, ID, TITLE_NAME};
@@ -336,12 +336,14 @@ fn challenge(
     let mut more = more(j, true);
     if let Some(f) = run.plan.festival {
         if j.signature_bonus > 0 {
-            more.push_str(&format!(
-                " {} {} bonus points for your {}s.",
-                hearken::text::sentence_start(f.name),
-                j.signature_bonus,
-                f.signature.name()
-            ));
+            let festival = hearken::text::sentence_start(f.name);
+            let bonus = j.signature_bonus;
+            more.push_str(&match f.signature {
+                Kind::Boom => format!(" {festival} {bonus} bonus points for your booms."),
+                Kind::Crackle => format!(" {festival} {bonus} bonus points for your crackles."),
+                Kind::Whistle => format!(" {festival} {bonus} bonus points for your whistles."),
+                Kind::Sparkle => format!(" {festival} {bonus} bonus points for your sparkles."),
+            });
         }
     }
     if j.hint_used {

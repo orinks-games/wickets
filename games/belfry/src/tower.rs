@@ -460,11 +460,12 @@ pub fn result_summary(peal: &Peal) -> String {
     match peal.outcome {
         Some(Outcome::Solved) => {
             let rows = peal.rows_used();
-            format!(
-                "Solved in {rows} {}. {}",
-                if rows == 1 { "row" } else { "rows" },
-                points(peal.score())
-            )
+            let points = points(peal.score());
+            if rows == 1 {
+                format!("Solved in 1 row. {points}")
+            } else {
+                format!("Solved in {rows} rows. {points}")
+            }
         }
         _ => format!("Out of rows. The peal was {}", row_words(&peal.code)),
     }
@@ -474,11 +475,12 @@ pub fn result_summary(peal: &Peal) -> String {
 pub fn result_pages(peal: &Peal, saved: &Saved) -> Vec<String> {
     let rows = peal.rows_used();
     let mut first = if peal.solved() {
-        format!(
-            "Solved in {rows} {}. The peal is {}, and the bells ring it out.",
-            if rows == 1 { "row" } else { "rows" },
-            row_words(&peal.code)
-        )
+        let peal_words = row_words(&peal.code);
+        if rows == 1 {
+            format!("Solved in 1 row. The peal is {peal_words}, and the bells ring it out.")
+        } else {
+            format!("Solved in {rows} rows. The peal is {peal_words}, and the bells ring it out.")
+        }
     } else {
         format!(
             "Out of rows. The peal was {}. Your last row had {}.",

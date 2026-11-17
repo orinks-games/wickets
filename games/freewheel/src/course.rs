@@ -130,13 +130,6 @@ impl Turn {
         }
     }
 
-    /// Where in the road that is, in words.
-    pub fn place(self) -> &'static str {
-        match self {
-            Turn::Right => "the bike lane",
-            Turn::Left => "the left of the traffic lane, near the centre line",
-        }
-    }
 }
 
 /// Take a junction turn at this speed or under, metres a second.

@@ -582,12 +582,13 @@ impl RunScreen {
         if mode != Mode::Practice {
             if r.scraps > 0 {
                 progress.scraps += r.scraps;
-                lines.push(format!(
-                    "{} paper {} picked up. {} in all.",
-                    r.scraps,
-                    if r.scraps == 1 { "scrap" } else { "scraps" },
-                    progress.scraps
-                ));
+                let scraps = r.scraps;
+                let in_all = progress.scraps;
+                lines.push(if scraps == 1 {
+                    format!("1 paper scrap picked up. {in_all} in all.")
+                } else {
+                    format!("{scraps} paper scraps picked up. {in_all} in all.")
+                });
             }
             let before = progress.trinkets.clone();
             let mut new = Vec::new();

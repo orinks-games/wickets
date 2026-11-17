@@ -196,12 +196,7 @@ impl Variety {
 
     /// Its traits for a list: "hardy, quick, on a marimba".
     pub fn describe(self) -> String {
-        let mut parts: Vec<String> = self
-            .traits
-            .habits()
-            .into_iter()
-            .map(String::from)
-            .collect();
+        let mut parts: Vec<String> = self.traits.habits().into_iter().map(String::from).collect();
         parts.push(format!("on {}", self.tone()));
         parts.join(", ")
     }
@@ -385,7 +380,14 @@ impl Want {
 
 /// The neighbours who ask for things.
 pub const NEIGHBOURS: [&str; 8] = [
-    "Mrs Patel", "Mr Okafor", "Rosa", "Old Sam", "Ines", "Dev", "Mrs Moreau", "Tomas",
+    "Mrs Patel",
+    "Mr Okafor",
+    "Rosa",
+    "Old Sam",
+    "Ines",
+    "Dev",
+    "Mrs Moreau",
+    "Tomas",
 ];
 
 /// One neighbour's request.

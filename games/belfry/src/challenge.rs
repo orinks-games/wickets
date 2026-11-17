@@ -230,11 +230,12 @@ fn score_line(result: ScoreResult) -> String {
 pub fn peal_words(peal: &Peal) -> String {
     if peal.solved() {
         let rows = peal.rows_used();
-        format!(
-            "Solved in {rows} {}. {}.",
-            if rows == 1 { "row" } else { "rows" },
-            points(peal.score())
-        )
+        let points = points(peal.score());
+        if rows == 1 {
+            format!("Solved in 1 row. {points}.")
+        } else {
+            format!("Solved in {rows} rows. {points}.")
+        }
     } else {
         format!("Out of rows. The peal was {}.", row_words(&peal.code))
     }

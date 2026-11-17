@@ -1051,14 +1051,15 @@ impl Hamlet {
 
     /// The store, for S: materials and coins.
     pub fn store_line(&self) -> String {
-        format!(
-            "{} wood, {} stone, {}, {} {}.",
-            self.has("wood"),
-            self.has("stone"),
-            crate::buildings::count(NAILS, self.has(NAILS)),
-            self.coins,
-            if self.coins == 1 { "coin" } else { "coins" }
-        )
+        let wood = self.has("wood");
+        let stone = self.has("stone");
+        let nails = crate::buildings::count(NAILS, self.has(NAILS));
+        let coins = self.coins;
+        if coins == 1 {
+            format!("{wood} wood, {stone} stone, {nails}, 1 coin.")
+        } else {
+            format!("{wood} wood, {stone} stone, {nails}, {coins} coins.")
+        }
     }
 
     pub fn is_built(&self, b: Building) -> bool {
@@ -1949,16 +1950,13 @@ impl Hamlet {
             line
         } else if let Some((ob, left)) = self.building {
             if ob == b {
-                return format!(
-                    "{}, going up. {} {} of work left.",
-                    sentence_case(b.name()),
-                    left.ceil() as u32,
-                    if left.ceil() as u32 == 1 {
-                        "hour"
-                    } else {
-                        "hours"
-                    }
-                );
+                let building = sentence_case(b.name());
+                let hours = left.ceil() as u32;
+                return if hours == 1 {
+                    format!("{building}, going up. 1 hour of work left.")
+                } else {
+                    format!("{building}, going up. {hours} hours of work left.")
+                };
             }
             format!("A free spot for {}.", b.name())
         } else {
@@ -3197,22 +3195,24 @@ impl Hamlet {
         }
         if !self.built.is_empty() {
             let n = self.built.len();
-            parts.push(format!(
-                "{} for {n} {}",
-                n * 30,
-                if n == 1 { "building" } else { "buildings" }
-            ));
+            let points = n * 30;
+            parts.push(if n == 1 {
+                format!("{points} for 1 building")
+            } else {
+                format!("{points} for {n} buildings")
+            });
         }
         if self.goal_met {
             parts.push("100 for the goal".to_string());
             if let Some(limit) = self.day_limit {
                 let spare = (limit + 1).saturating_sub(self.day);
                 if spare > 0 {
-                    parts.push(format!(
-                        "{} for {spare} {} to spare",
-                        spare * 10,
-                        if spare == 1 { "day" } else { "days" }
-                    ));
+                    let points = spare * 10;
+                    parts.push(if spare == 1 {
+                        format!("{points} for 1 day to spare")
+                    } else {
+                        format!("{points} for {spare} days to spare")
+                    });
                 }
             }
         }
@@ -3284,23 +3284,21 @@ impl Hamlet {
         )];
         if let Some(limit) = self.day_limit {
             let left = (limit + 1).saturating_sub(self.day);
-            second.push(format!(
-                "{left} {} left.",
-                if left == 1 { "day" } else { "days" }
-            ));
+            second.push(if left == 1 {
+                "1 day left.".to_string()
+            } else {
+                format!("{left} days left.")
+            });
         }
         second.push(self.where_line());
         if let Some((b, left)) = self.building {
-            second.push(format!(
-                "{} is going up, {} {} of work left.",
-                sentence_case(b.name()),
-                left.ceil() as u32,
-                if left.ceil() as u32 == 1 {
-                    "hour"
-                } else {
-                    "hours"
-                }
-            ));
+            let building = sentence_case(b.name());
+            let hours = left.ceil() as u32;
+            second.push(if hours == 1 {
+                format!("{building} is going up, 1 hour of work left.")
+            } else {
+                format!("{building} is going up, {hours} hours of work left.")
+            });
         }
         second.push(self.store_line());
         let mut third = Vec::new();

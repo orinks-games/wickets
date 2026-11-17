@@ -278,7 +278,7 @@ msgstr "{month_name}的{name}{weekday_name}"
 
 #. placeholders: {ordinal}
 msgid "on the {ordinal} of every month"
-msgstr ""
+msgstr "每月{ordinal}"
 
 msgid "on the last weekend of every month"
 msgstr "每月最后一个周末"
@@ -415,9 +415,17 @@ msgstr "明天"
 msgid "in {n} days"
 msgstr "{n}天后"
 
-#. placeholders: {name}, {days_phrase}
-msgid "{name} is {days_phrase}."
-msgstr "{name}就在{days_phrase}。"
+#. placeholders: {holiday}
+msgid "{holiday} is today."
+msgstr "今天是{holiday}。"
+
+#. placeholders: {holiday}
+msgid "{holiday} is tomorrow."
+msgstr "明天是{holiday}。"
+
+#. placeholders: {holiday}, {days}
+msgid "{holiday} is in {days} days."
+msgstr "还有{days}天就是{holiday}。"
 
 msgid "spring"
 msgstr "春天"
@@ -520,7 +528,7 @@ msgstr "帮助主题"
 
 #. placeholders: {title}, {topic}, {topics}
 msgid "Help - {title} ({topic}/{topics})"
-msgstr ""
+msgstr "帮助 - {title} ({topic}/{topics})"
 
 #. one sentence of a longer line
 msgid "Enter reads the rest."
@@ -632,15 +640,11 @@ msgstr "{name}，未解锁"
 msgid "{UNLOCKS}, {earned} of {of}"
 msgstr "{UNLOCKS}，已获得{earned}个，共{of}个"
 
-#. placeholders: {else}
-msgid "Spoken call-outs: {else}"
-msgstr "语音播报：{else}"
+msgid "Spoken call-outs: on"
+msgstr "语音播报：开"
 
-msgid "off"
-msgstr "关闭"
-
-msgid "on"
-msgstr "开启"
+msgid "Spoken call-outs: off"
+msgstr "语音播报：关"
 
 msgid "Play this daily challenge again"
 msgstr "再玩一次这个每日挑战"
@@ -1022,6 +1026,12 @@ msgid ""
 "in Play."
 msgstr "选择故事和活动可以推荐哪些游戏。所有游戏仍然可以在“开始”里玩。"
 
+msgid "off"
+msgstr "关闭"
+
+msgid "on"
+msgstr "开启"
+
 #. placeholders: {on}, {all}
 msgid "{on} of {all} on"
 msgstr "{on}个开启，共{all}个"
@@ -1311,9 +1321,11 @@ msgstr "二十"
 msgid "Your {game_name} songs"
 msgstr "你的{game_name}歌曲"
 
-#. placeholders: {else}
-msgid "Keep your songs: {else}"
-msgstr "保存歌曲：{else}"
+msgid "Keep your songs: on"
+msgstr "保存歌曲：开"
+
+msgid "Keep your songs: off"
+msgstr "保存歌曲：关"
 
 msgid "Keep your songs: on. Each run's music is kept in the Soundtrack."
 msgstr "保存歌曲：开。每一局的音乐都会保存在原声音乐里。"
@@ -2832,27 +2844,25 @@ msgstr "选择游戏类别"
 msgid "categories"
 msgstr ""
 
-msgid "game"
-msgstr ""
+#. placeholders: {category_label}
+msgid "{category_label}, 1 game"
+msgstr "{category_label}，1个游戏"
 
-msgid "games"
-msgstr ""
+#. placeholders: {category_label}
+msgid "{category_label}, 1 game, 1 event today"
+msgstr "{category_label}，1个游戏，今天1个活动"
 
-msgid ", 1 event today"
-msgstr "，今天1个活动"
+#. placeholders: {category_label}, {count}
+msgid "{category_label}, {count} games"
+msgstr "{category_label}，{count}个游戏"
 
-#. one clause of a longer line
-msgid "1 event today"
-msgstr "今天1个活动"
+#. placeholders: {category_label}, {count}
+msgid "{category_label}, {count} games, 1 event today"
+msgstr "{category_label}，{count}个游戏，今天1个活动"
 
-#. placeholders: {n}
-msgid ", {n} events today"
-msgstr "，今天{n}个活动"
-
-#. placeholders: {n}
-#. one clause of a longer line
-msgid "{n} events today"
-msgstr "今天{n}个活动"
+#. placeholders: {category_label}, {count}, {on}
+msgid "{category_label}, {count} games, {on} events today"
+msgstr "{category_label}，{count}个游戏，今天{on}个活动"
 
 msgid "Holiday games, one for each celebration."
 msgstr "节日游戏，每个节日一个。"
@@ -2872,6 +2882,12 @@ msgstr "纸牌和骰子游戏，按你自己的节奏玩。"
 msgid "Return to the lobby."
 msgstr "回到大厅。"
 
+msgid "game"
+msgstr ""
+
+msgid "games"
+msgstr ""
+
 msgid "Games that story mode has opened for you, played here at any time."
 msgstr "故事模式为你开放的游戏，随时可以在这里玩。"
 
@@ -2887,9 +2903,9 @@ msgstr "节日特别篇检查完毕。"
 msgid "No internet date. Try again later."
 msgstr "没有网络日期。请稍后再试。"
 
-#. placeholders: {name}, {after_comma}
-msgid "{name}, {after_comma} today"
-msgstr "{name}，今天{after_comma}"
+#. placeholders: {game}, {event}
+msgid "{game}, today: {event}"
+msgstr "{game}，今天：{event}"
 
 #. placeholders: {label}, {done}, {games}
 #. one sentence of a longer line
@@ -4812,16 +4828,13 @@ msgstr "右边{d}条道"
 msgid "{d} lanes left"
 msgstr "左边{d}条道"
 
-#. placeholders: {lane}, {lanes}, {else}, {basket}, {capacity}
-msgid "Lane {lane} of {lanes}{else}, basket {basket} of {capacity}."
-msgstr "第{lane}道，共{lanes}道{else}，篮子里{basket}个，能装{capacity}个。"
+#. placeholders: {lane}, {lanes}, {basket}, {capacity}
+msgid "Lane {lane} of {lanes}, at the cart, basket {basket} of {capacity}."
+msgstr "第{lane}道，共{lanes}道，在推车旁，篮子里{basket}个，能装{capacity}个。"
 
-msgid ", at the cart"
-msgstr "，在推车旁"
-
-#. one clause of a longer line
-msgid "at the cart"
-msgstr "在推车旁"
+#. placeholders: {lane}, {lanes}, {basket}, {capacity}
+msgid "Lane {lane} of {lanes}, basket {basket} of {capacity}."
+msgstr "第{lane}道，共{lanes}道，篮子里{basket}个，能装{capacity}个。"
 
 #. placeholders: {sentence_start}, {lane}, {relative}, {left}
 msgid ""
@@ -5202,28 +5215,38 @@ msgstr "练习第{round}轮完成。你存了{eggs_phrase}。"
 msgid "You banked {eggs_phrase}."
 msgstr "你存了{eggs_phrase}。"
 
-#. placeholders: {bonus}, {else}
+#. placeholders: {bonus}
 #. one sentence of a longer line
-msgid "Round bonus {bonus}{else}."
-msgstr "本轮奖励{bonus}{else}。"
+msgid ""
+"Round bonus {bonus}, with the perfect round bonus for no cracked eggs."
+msgstr ""
 
 #. placeholders: {round}
 #. one sentence of a longer line
 msgid "Round {round} cleared."
 msgstr "第{round}轮过关。"
 
-#. placeholders: {round}, {eggs_phrase}, {bonus}, {else}, {score}
+#. placeholders: {round}, {eggs}, {bonus}, {score}
 msgid ""
-"Round {round} cleared. You banked {eggs_phrase}. Round bonus {bonus}{else}. "
-"Score {score}."
-msgstr "第{round}轮过关。你存了{eggs_phrase}。本轮奖励{bonus}{else}。得分{score}。"
+"Round {round} cleared. You banked {eggs}. Round bonus {bonus}, with the "
+"perfect round bonus for no cracked eggs. Score {score}."
+msgstr ""
 
-msgid ", with the perfect round bonus for no cracked eggs"
-msgstr "，含没有碎蛋的完美奖励"
+#. placeholders: {eggs}
+#. one sentence of a longer line
+msgid "You banked {eggs}."
+msgstr "你存了{eggs}。"
 
-#. one clause of a longer line
-msgid "with the perfect round bonus for no cracked eggs"
-msgstr "含没有碎蛋的完美奖励"
+#. placeholders: {bonus}
+#. one sentence of a longer line
+msgid "Round bonus {bonus}."
+msgstr "本轮奖励分{bonus}。"
+
+#. placeholders: {round}, {eggs}, {bonus}, {score}
+msgid ""
+"Round {round} cleared. You banked {eggs}. Round bonus {bonus}. Score "
+"{score}."
+msgstr ""
 
 #. placeholders: {round}, {round_news}
 msgid " Next, round {round}: {round_news}"
@@ -5444,11 +5467,6 @@ msgid ""
 "Back in the meadow. Lane {lane} of {lanes}, basket {basket} of {capacity}."
 msgstr "回到草地。第{lane}道，共{lanes}道，篮子里{basket}个，能装{capacity}个。"
 
-#. placeholders: {lane}, {lanes}, {basket}, {capacity}
-#. one sentence of a longer line
-msgid "Lane {lane} of {lanes}, basket {basket} of {capacity}."
-msgstr "第{lane}道，共{lanes}道，篮子里{basket}个，能装{capacity}个。"
-
 #. placeholders: {lane}
 msgid "Lane {lane}, the cart."
 msgstr "第{lane}道，推车。"
@@ -5469,21 +5487,25 @@ msgstr "{side}边的栅栏。第{lane}道。"
 msgid "Wait for the next round."
 msgstr "等下一轮。"
 
-#. placeholders: {eggs_phrase}, {points}, {else}
+#. placeholders: {eggs_phrase}, {points}
 #. one sentence of a longer line
-msgid "Banked {eggs_phrase}, {points} points{else}."
-msgstr "存入{eggs_phrase}，{points}分{else}。"
+msgid "Banked {eggs_phrase}, {points} points, with the full basket bonus."
+msgstr "存入{eggs_phrase}，{points}分，含满篮奖励。"
 
-#. placeholders: {eggs_phrase}, {points}, {else}, {score}
-msgid "Banked {eggs_phrase}, {points} points{else}. Score {score}."
-msgstr "存入{eggs_phrase}，{points}分{else}。得分{score}。"
+#. placeholders: {eggs_phrase}, {points}, {score}
+msgid ""
+"Banked {eggs_phrase}, {points} points, with the full basket bonus. Score "
+"{score}."
+msgstr ""
 
-msgid ", with the full basket bonus"
-msgstr "，含满篮奖励"
+#. placeholders: {eggs_phrase}, {points}
+#. one sentence of a longer line
+msgid "Banked {eggs_phrase}, {points} points."
+msgstr "存入{eggs_phrase}，{points}分。"
 
-#. one clause of a longer line
-msgid "with the full basket bonus"
-msgstr "含满篮奖励"
+#. placeholders: {eggs_phrase}, {points}, {score}
+msgid "Banked {eggs_phrase}, {points} points. Score {score}."
+msgstr "存入{eggs_phrase}，{points}分。得分{score}。"
 
 msgid " That is enough to clear the round."
 msgstr " 这些足够过这一轮了。"
@@ -6229,20 +6251,22 @@ msgstr "新的最高分，超过了{previous}。"
 msgid "Your best is {best}."
 msgstr "你的最高分是{best}。"
 
-#. placeholders: {rows}, {else}
 #. one sentence of a longer line
-msgid "Solved in {rows} {else}."
-msgstr "用{rows}{else}解开。"
+msgid "Solved in 1 row."
+msgstr "用1排解开了。"
 
-#. placeholders: {rows}, {else}, {points}
-msgid "Solved in {rows} {else}. {points}."
-msgstr "用{rows}{else}解开。{points}。"
+#. placeholders: {points}
+msgid "Solved in 1 row. {points}."
+msgstr "用1排解开了。{points}。"
 
-msgid "row"
-msgstr "排"
+#. placeholders: {rows}
+#. one sentence of a longer line
+msgid "Solved in {rows} rows."
+msgstr "用{rows}排解开了。"
 
-msgid "rows"
-msgstr "排"
+#. placeholders: {rows}, {points}
+msgid "Solved in {rows} rows. {points}."
+msgstr "用{rows}排解开了。{points}。"
 
 #. one sentence of a longer line
 msgid "Out of rows."
@@ -6396,15 +6420,16 @@ msgid ""
 "for every player. {resets}"
 msgstr "每天一个钟序，每周五个，每月一个大教堂钟序，所有玩家都一样。{resets}"
 
-#. placeholders: {places}, {bells}, {else}, {rows}
-msgid "{places} places, {bells} bells to choose from, {else}, {rows} rows"
-msgstr "{places}个位置，从{bells}口钟里选，{else}，{rows}排"
+#. placeholders: {places}, {bells}, {rows}
+msgid ""
+"{places} places, {bells} bells to choose from, a bell may come twice, "
+"{rows} rows"
+msgstr ""
 
-msgid "a bell may come twice"
-msgstr "一口钟可能出现两次"
-
-msgid "no bell twice"
-msgstr "没有钟出现两次"
+#. placeholders: {places}, {bells}, {rows}
+msgid ""
+"{places} places, {bells} bells to choose from, no bell twice, {rows} rows"
+msgstr ""
 
 msgid "Village"
 msgstr "乡村"
@@ -6799,9 +6824,13 @@ msgstr "没有提示：那会用掉你的最后一排。"
 msgid "No hint: every bell has had its hint."
 msgstr "没有提示：每口钟都已经提示过了。"
 
-#. placeholders: {rows}, {else}, {points}
-msgid "Solved in {rows} {else}. {points}"
-msgstr "用{rows}{else}解开。{points}"
+#. placeholders: {points}
+msgid "Solved in 1 row. {points}"
+msgstr "用1排解开了。{points}"
+
+#. placeholders: {rows}, {points}
+msgid "Solved in {rows} rows. {points}"
+msgstr "用{rows}排解开了。{points}"
 
 #. placeholders: {row_words}
 msgid "Out of rows. The peal was {row_words}"
@@ -6812,15 +6841,20 @@ msgstr "排数用完了。钟序是{row_words}"
 msgid "The peal was {row_words}"
 msgstr "钟序是{row_words}"
 
-#. placeholders: {rows}, {else}, {row_words}
+#. placeholders: {peal_words}
 msgid ""
-"Solved in {rows} {else}. The peal is {row_words}, and the bells ring it out."
-msgstr "用{rows}{else}解开。钟序是{row_words}，钟声把它敲了出来。"
+"Solved in 1 row. The peal is {peal_words}, and the bells ring it out."
+msgstr "用1排解开了。钟序是{peal_words}，钟声把它敲响。"
 
-#. placeholders: {row_words}
+#. placeholders: {peal_words}
 #. one sentence of a longer line
-msgid "The peal is {row_words}, and the bells ring it out."
-msgstr "钟序是{row_words}，钟声把它敲了出来。"
+msgid "The peal is {peal_words}, and the bells ring it out."
+msgstr "钟序是{peal_words}，钟声把它敲响。"
+
+#. placeholders: {rows}, {peal_words}
+msgid ""
+"Solved in {rows} rows. The peal is {peal_words}, and the bells ring it out."
+msgstr "用{rows}排解开了。钟序是{peal_words}，钟声把它敲响。"
 
 #. placeholders: {row_words}, {words}
 msgid "Out of rows. The peal was {row_words}. Your last row had {words}."
@@ -6927,7 +6961,7 @@ msgstr "{join}排出一排{places}口钟，然后{p}敲响它。位置对是一�
 msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count it."
-msgstr ""
+msgstr "这是{challenge_title}，{name}。从暂停菜单离开不计入。"
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count it."
@@ -8613,15 +8647,19 @@ msgstr "{name2}的{name}，{birds}只鸟"
 msgid "{birds} birds of {name} singing at once"
 msgstr "{name}的{birds}只鸟一起唱"
 
-#. placeholders: {flocks}, {else}
-msgid "{flocks} flocks flying {else}"
-msgstr "{flocks}群鸟往{else}飞"
+msgid "1 flock flying north"
+msgstr "1群鸟往北飞"
 
-msgid "north"
-msgstr "北"
+msgid "1 flock flying south"
+msgstr "1群鸟往南飞"
 
-msgid "south"
-msgstr "南"
+#. placeholders: {flocks}
+msgid "{flocks} flocks flying north"
+msgstr "{flocks}群鸟往北飞"
+
+#. placeholders: {flocks}
+msgid "{flocks} flocks flying south"
+msgstr "{flocks}群鸟往南飞"
 
 #. one sentence of a longer line
 msgid ""
@@ -8692,7 +8730,7 @@ msgstr "{title}成绩：{score}分，满分{most}分。"
 msgid ""
 "{title} result: {score} of {most} points. {score_line} {streak_sentence} "
 "{resets}"
-msgstr ""
+msgstr "{title}成绩：{score}分，满分{most}分。{score_line}{streak_sentence}{resets}"
 
 #. placeholders: {score}, {most}
 #. one sentence of a longer line
@@ -9092,6 +9130,12 @@ msgstr ""
 
 msgid "The same flocks, straight away. Only your best result is kept."
 msgstr "同样的鸟群，马上再来。只保留你的最好成绩。"
+
+msgid "north"
+msgstr "北"
+
+msgid "south"
+msgstr "南"
 
 msgid "from behind you to ahead"
 msgstr "从你身后飞向前方"
@@ -10401,7 +10445,7 @@ msgstr "朝歌声走过去，就能遇见唱歌的鸟。"
 msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the walk."
-msgstr ""
+msgstr "这是{challenge_title}，{name}。从暂停菜单离开，这次散步不计入。"
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the walk."
@@ -11618,7 +11662,7 @@ msgstr "每连续{STREAK_EVERY}步加{STREAK_BONUS}分。"
 msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the run."
-msgstr ""
+msgstr "这是{challenge_title}，{name}。从暂停菜单离开，这一局不计入。"
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the run."
@@ -12653,7 +12697,7 @@ msgstr "{name}完成。{arrows_words}射中{hearts_words}，{pairs}。"
 #. placeholders: {title}, {score}, {score_line}, {streak_sentence}, {resets}
 msgid ""
 "{title} result: {score} points. {score_line} {streak_sentence} {resets}"
-msgstr ""
+msgstr "{title}成绩：{score}分。{score_line}{streak_sentence}{resets}"
 
 msgid "The same sky, straight away. Only your best result is kept."
 msgstr "同样的天空，马上再来。只保留你的最好成绩。"
@@ -13063,7 +13107,7 @@ msgstr "夜晚在{spot}结束：{hearts_words}，需要{goal}个。"
 #. placeholders: {spot}, {hearts_words}, {goal}, {score}
 msgid ""
 "The evening ends at {spot}: {hearts_words} of {goal} needed. {score} points."
-msgstr ""
+msgstr "夜晚在{spot}结束：{hearts_words}，需要{goal}个。{score}分。"
 
 #. placeholders: {name}, {score}
 msgid "{name} done. {score} points."
@@ -13195,7 +13239,7 @@ msgstr "瞄准飘动的纸心时要稍微提前一点。"
 msgid ""
 " This is the {challenge_title}. Leaving from the pause menu does not count "
 "it."
-msgstr ""
+msgstr "这是{challenge_title}。从暂停菜单离开不计入。"
 
 #. placeholders: {challenge_title}
 #. one sentence of a longer line
@@ -13303,15 +13347,12 @@ msgid ""
 "Valentine's Day, and a keepsake for that year goes in the box. {countdown}"
 msgstr "纪念品盒是空的。在情人节玩情人节之夜或双人模式，那一年的纪念品就会放进盒子里。{countdown}"
 
-#. placeholders: {keepsakes}, {else}
-msgid "The keepsake box: {keepsakes} Valentine's {else}."
-msgstr ""
+msgid "The keepsake box: 1 Valentine's Day."
+msgstr "纪念品盒：1个情人节。"
 
-msgid "Day"
-msgstr ""
-
-msgid "Days"
-msgstr ""
+#. placeholders: {keepsakes}
+msgid "The keepsake box: {keepsakes} Valentine's Days."
+msgstr "纪念品盒：{keepsakes}个情人节。"
 
 #. placeholders: {best}
 msgid "Valentine's night best {best}"
@@ -13341,6 +13382,26 @@ msgstr "瞄准播报"
 
 msgid "Spoken targets"
 msgstr "目标播报"
+
+msgid "Spoken aim: on"
+msgstr "瞄准播报：开"
+
+msgid "Spoken aim: off"
+msgstr "瞄准播报：关"
+
+msgid "Spoken targets: on"
+msgstr "目标播报：开"
+
+msgid "Spoken targets: off"
+msgstr "目标播报：关"
+
+#. placeholders: {name}
+msgid "{name}: on"
+msgstr "{name}：开"
+
+#. placeholders: {name}
+msgid "{name}: off"
+msgstr "{name}：关"
 
 msgid ""
 "Four rooftops under a full moon, with golden hearts and roses, and a "
@@ -15287,7 +15348,7 @@ msgstr "{n}个灯笼"
 #. placeholders: {title}, {score}, {challenge_line}, {streak_sentence}, {resets}
 msgid ""
 "{title} result: {score} points. {challenge_line} {streak_sentence} {resets}"
-msgstr ""
+msgstr "{title}成绩：{score}分。{challenge_line}{streak_sentence}{resets}"
 
 msgid "Your first score here."
 msgstr "你在这里的第一个得分。"
@@ -15649,7 +15710,7 @@ msgstr "游行的每条街，带着你的星星。"
 #. placeholders: {opened}, {STREETS}
 msgid ""
 "Every street of the parade, with your stars. {opened} of {STREETS} open."
-msgstr ""
+msgstr "游行的每条街，带着你的星星。开放了{opened}条，共{STREETS}条。"
 
 #. placeholders: {opened}, {STREETS}
 #. one sentence of a longer line
@@ -17283,29 +17344,28 @@ msgstr "最后的天光消失了。时间到。"
 msgid "Tall grass: the {edge_words} edge of the meadow."
 msgstr "高高的草：草地的{edge_words}边缘。"
 
-#. placeholders: {a_or_an}, {name}
+#. placeholders: {firefly}
 #. one sentence of a longer line
-msgid "Caught {a_or_an} {name}."
-msgstr ""
+msgid "Caught {firefly}."
+msgstr "抓到了{firefly}。"
 
-#. placeholders: {a_or_an}, {name}, {in_jar}
-msgid "Caught {a_or_an} {name}. {in_jar} in the jar."
-msgstr ""
+#. placeholders: {firefly}, {in_jar}
+msgid "Caught {firefly}. {in_jar} in the jar."
+msgstr "抓到了{firefly}。罐子里有{in_jar}。"
 
 #. placeholders: {in_jar}
 #. one sentence of a longer line
 msgid "{in_jar} in the jar."
 msgstr "罐子里有{in_jar}。"
 
-#. placeholders: {a_or_an}, {name}, {blink_words}
+#. placeholders: {firefly}, {blink_words}
 #. one sentence of a longer line
-msgid "Caught {a_or_an} {name}, new in your journal: {blink_words}."
-msgstr ""
+msgid "Caught {firefly}, new in your journal: {blink_words}."
+msgstr "抓到了{firefly}，日志新收录：{blink_words}。"
 
-#. placeholders: {a_or_an}, {name}, {blink_words}, {in_jar}
+#. placeholders: {firefly}, {blink_words}, {in_jar}
 msgid ""
-"Caught {a_or_an} {name}, new in your journal: {blink_words}. {in_jar} in "
-"the jar."
+"Caught {firefly}, new in your journal: {blink_words}. {in_jar} in the jar."
 msgstr ""
 
 #. placeholders: {sentence_start}
@@ -18423,6 +18483,36 @@ msgstr "晚烬萤"
 msgid "Midsummer Chorus"
 msgstr "仲夏合唱萤"
 
+msgid "a Dipper"
+msgstr "一只单闪萤"
+
+msgid "a Twin Spark"
+msgstr "一只双星萤"
+
+msgid "a Slow Ember"
+msgstr "一只慢烬萤"
+
+msgid "a Triple Twinkle"
+msgstr "一只三闪萤"
+
+msgid "an Orchard Lantern"
+msgstr "一只果园灯萤"
+
+msgid "a Creek Glimmer"
+msgstr "一只溪光萤"
+
+msgid "a Hay Flicker"
+msgstr "一只草闪萤"
+
+msgid "a Blue Ghost"
+msgstr "一只蓝幽灵"
+
+msgid "a Late Ember"
+msgstr "一只晚烬萤"
+
+msgid "a Midsummer Chorus"
+msgstr "一只仲夏合唱萤"
+
 msgid "one long flash, low and golden"
 msgstr "一下长长的闪光，低沉而金黄"
 
@@ -19376,19 +19466,19 @@ msgid "Stock: {name_and_colour}, turned up, {to_turn}."
 msgstr "牌库：翻开的是{name_and_colour}，{to_turn}。"
 
 #. placeholders: {held_words}
-msgid "holding {held_words}"
-msgstr "拿着{held_words}"
+msgid "Holding {held_words}."
+msgstr "拿着{held_words}。"
 
 #. placeholders: {pile}
-msgid "on pile {pile}"
-msgstr "在第{pile}列上"
+msgid "On pile {pile}."
+msgstr "在第{pile}列。"
 
-msgid "on the stock"
-msgstr "在牌库上"
+msgid "On the stock."
+msgstr "在牌库。"
 
 #. placeholders: {foundation}
-msgid "on the {foundation}"
-msgstr "在{foundation}上"
+msgid "On the {foundation}."
+msgstr "在{foundation}。"
 
 #. placeholders: {up}, {DECK}
 msgid "{up} of {DECK} on the foundations"
@@ -19535,10 +19625,6 @@ msgstr "没有翻开的牌。{sentence_start}翻牌库。"
 #. placeholders: {sentence_start}
 msgid "{sentence_start} is empty."
 msgstr "{sentence_start}是空的。"
-
-#. placeholders: {held_words}
-msgid "Holding {held_words}."
-msgstr "拿着{held_words}。"
 
 msgid "it"
 msgstr "它"
@@ -19941,7 +20027,7 @@ msgstr "{name}还不能收上去。"
 #. placeholders: {name}, {suit}, {next}
 msgid ""
 "The {name} cannot go up yet. The {suit} foundation needs the {next} next."
-msgstr ""
+msgstr "{name}还不能收上去。{suit}收牌堆下一张需要{next}。"
 
 #. placeholders: {suit}, {next}
 #. one sentence of a longer line
@@ -21325,12 +21411,6 @@ msgstr "路缘"
 msgid "ramp"
 msgstr "跳台"
 
-msgid "the bike lane"
-msgstr "自行车道"
-
-msgid "the left of the traffic lane, near the centre line"
-msgstr "行车道左侧，靠近中线"
-
 msgid "downtown"
 msgstr ""
 
@@ -21882,7 +21962,7 @@ msgstr "送货，{title}，{district}，骑{bike}。"
 #. placeholders: {title}, {district}, {bike}, {length}, {deadline}
 msgid ""
 "Delivery, {title}, {district}, on the {bike}. {length}, deadline {deadline}."
-msgstr ""
+msgstr "送货，{title}，{district}，骑{bike}。{length}，期限{deadline}。"
 
 #. placeholders: {length}, {deadline}
 #. one sentence of a longer line
@@ -21964,11 +22044,11 @@ msgstr "倒地，{secs_words}后起来"
 msgid "Stopped"
 msgstr "停下了"
 
-msgid "bike lane"
-msgstr "自行车道"
-
 msgid "door zone"
 msgstr "开门区"
+
+msgid "bike lane"
+msgstr "自行车道"
 
 #. placeholders: {near_words}
 msgid "{near_words} from the parked cars"
@@ -22273,15 +22353,6 @@ msgstr "往右转过去。"
 msgid " Brake with {down} before the line."
 msgstr "在路口线前用{down}刹车。"
 
-#. placeholders: {turn}, {distance}
-#. one sentence of a longer line
-msgid "{turn} turn in {distance}."
-msgstr "{distance}后{turn}转。"
-
-#. placeholders: {turn}, {distance}, {be_in}, {position}, {speed}
-msgid "{turn} turn in {distance}. {be_in} {position}{speed}"
-msgstr "{distance}后{turn}转。{be_in}{position}{speed}"
-
 #. placeholders: {side}, {metres_words}, {LEAF_POINTS}
 msgid "Leaf pile {side}, {metres_words} ahead, {LEAF_POINTS} points."
 msgstr "落叶堆在{side}，前方{metres_words}，{LEAF_POINTS}分。"
@@ -22525,16 +22596,14 @@ msgstr "内胎换好了。"
 msgid "Tube swapped. {go}"
 msgstr "内胎换好了。{go}"
 
-#. placeholders: {sentence_start}, {metres_words}
-msgid "{sentence_start} turn in {metres_words}."
-msgstr "{metres_words}后{sentence_start}转弯。"
+msgid "Turned left."
+msgstr "向左转了。"
+
+msgid "Turned right."
+msgstr "向右转了。"
 
 msgid "turned"
 msgstr ""
-
-#. placeholders: {word}
-msgid "Turned {word}."
-msgstr "{word}转了。"
 
 #. one sentence of a longer line
 msgid "Ran wide, too fast."
@@ -22549,19 +22618,13 @@ msgstr "太快了，转得太大。转弯要低于{speed_words}。"
 msgid "Under {speed_words} for turns."
 msgstr "转弯要低于{speed_words}。"
 
-#. placeholders: {place}
-#. one sentence of a longer line
-msgid "Be in {place}."
-msgstr "要在{place}。"
+msgid ""
+"Ran wide, wrong side for a left turn. Be in the left of the traffic lane, "
+"near the centre line."
+msgstr "转得太大，左转时站错了边。要在行车道左侧，靠近中线。"
 
-#. placeholders: {word}
-#. one sentence of a longer line
-msgid "Ran wide, wrong side for a {word} turn."
-msgstr "转得太大，{word}转弯走错了一侧。"
-
-#. placeholders: {word}, {place}
-msgid "Ran wide, wrong side for a {word} turn. Be in {place}."
-msgstr "转得太大，{word}转弯走错了一侧。要在{place}。"
+msgid "Ran wide, wrong side for a right turn. Be in the bike lane."
+msgstr "转得太大，右转时站错了边。要在自行车道上。"
 
 msgid "car"
 msgstr ""
@@ -22788,18 +22851,17 @@ msgstr "下一项：计时赛，{name}"
 msgid "All five lessons again, from the first."
 msgstr "五节课全部重来，从第一节开始。"
 
-msgid "relaxed "
-msgstr "轻松"
-
 msgid "End of the street. The lesson starts again."
 msgstr "街道到头了。课程重新开始。"
 
 msgid "Nothing goes on the board."
 msgstr "不会上排行榜。"
 
-#. placeholders: {relaxed}
-msgid "Your first {relaxed}endless ride here."
-msgstr "你在这里的第一次{relaxed}无尽骑行。"
+msgid "Your first relaxed endless ride here."
+msgstr "你在这里的第一次轻松无尽骑行。"
+
+msgid "Your first endless ride here."
+msgstr "你在这里的第一次无尽骑行。"
 
 #. placeholders: {best_word}, {distance_words}
 msgid "A new {best_word}, beating {distance_words}."
@@ -22840,9 +22902,13 @@ msgstr "无尽骑行：{distance_words}，{dollar_words}"
 msgid "A new endless ride in the same district, on the same bike."
 msgstr "同一个街区、同一辆车，再来一次无尽骑行。"
 
-#. placeholders: {relaxed}, {NAME}
-msgid "Your first {relaxed}ride {NAME} here."
-msgstr "你在这里的第一次{relaxed}{NAME}骑行。"
+#. placeholders: {NAME}
+msgid "Your first relaxed ride {NAME} here."
+msgstr "你在这里的第一次轻松{NAME}。"
+
+#. placeholders: {NAME}
+msgid "Your first ride {NAME} here."
+msgstr "你在这里的第一次{NAME}。"
 
 #. placeholders: {best_word}, {previous}
 msgid "A new {best_word}, beating {previous}."
@@ -22870,35 +22936,37 @@ msgstr "{name}，{span_words}内{sentence_start}。"
 msgid "Locker drops: {lockers}."
 msgstr "快递柜投递：{lockers}次。"
 
-#. placeholders: {lockers}, {quick}, {else}, {sentence_start}, {dollar_words}
+#. placeholders: {lockers}, {quick}, {crash_time}, {dollars}, {wallet}
 msgid ""
-"Locker drops: {lockers}. Quick drops: {quick}. {else} {sentence_start} "
-"earned. You have {dollar_words} to spend in the bike shop."
+"Locker drops: {lockers}. Quick drops: {quick}. {crash_time} lost to "
+"crashes. {dollars} earned. You have {wallet} to spend in the bike shop."
 msgstr ""
-"快递柜投递：{lockers}次。快速投递：{quick}次。{else}赚了{sentence_start}。你有{dollar_words}可以在车"
-"行花。"
 
 #. placeholders: {quick}
 #. one sentence of a longer line
 msgid "Quick drops: {quick}."
 msgstr "快速投递：{quick}次。"
 
-#. placeholders: {dollar_words}
+#. placeholders: {wallet}
 #. one sentence of a longer line
-msgid "You have {dollar_words} to spend in the bike shop."
-msgstr "你有{dollar_words}可以在车行花。"
+msgid "You have {wallet} to spend in the bike shop."
+msgstr "你有{wallet}可以在车行花。"
 
-#. placeholders: {else}, {sentence_start}
+#. placeholders: {crash_time}
 #. one sentence of a longer line
-msgid "{else} {sentence_start} earned."
-msgstr "{else}赚了{sentence_start}。"
+msgid "{crash_time} lost to crashes."
+msgstr "撞车损失了{crash_time}。"
 
-#. placeholders: {sentence_start}
-msgid "{sentence_start} lost to crashes."
-msgstr "撞车损失了{sentence_start}。"
+#. placeholders: {dollars}
+#. one sentence of a longer line
+msgid "{dollars} earned."
+msgstr "赚了{dollars}。"
 
-msgid "No crashes."
-msgstr "没有撞车。"
+#. placeholders: {lockers}, {quick}, {dollars}, {wallet}
+msgid ""
+"Locker drops: {lockers}. Quick drops: {quick}. No crashes. {dollars} "
+"earned. You have {wallet} to spend in the bike shop."
+msgstr ""
 
 msgid "A new street in the same district, on the same bike."
 msgstr "同一个街区、同一辆车，换一条新街。"
@@ -22998,9 +23066,13 @@ msgstr "{title}成绩：{points}骑行分"
 msgid "The same course straight away. Only your best result is kept."
 msgstr "马上再骑同一条赛道。只保留你最好的成绩。"
 
-#. placeholders: {relaxed}, {name}
-msgid "Your first {relaxed}{name}."
-msgstr "你的第一次{relaxed}{name}。"
+#. placeholders: {name}
+msgid "Your first relaxed {name}."
+msgstr "你的第一次轻松{name}。"
+
+#. placeholders: {name}
+msgid "Your first {name}."
+msgstr "你的第一次{name}。"
 
 #. placeholders: {best_word}, {time_words}
 msgid "A new {best_word} time, {time_words} faster."
@@ -23062,9 +23134,22 @@ msgstr "落叶堆{leaves}"
 msgid "{cost} lost for {trim_end_matches}"
 msgstr "{trim_end_matches}扣{cost}"
 
-#. placeholders: {lane}, {limit}
-msgid "Be in {lane}, under {limit}."
-msgstr "要在{lane}，低于{limit}。"
+#. placeholders: {limit}
+msgid "Be in the bike lane, under {limit}."
+msgstr "要在自行车道上，低于{limit}。"
+
+#. placeholders: {limit}
+msgid ""
+"Be in the left of the traffic lane, near the centre line, under {limit}."
+msgstr "要在行车道左侧，靠近中线，低于{limit}。"
+
+#. placeholders: {distance}
+msgid "Left turn in {distance}."
+msgstr "{distance}后左转。"
+
+#. placeholders: {distance}
+msgid "Right turn in {distance}."
+msgstr "{distance}后右转。"
 
 msgid "No parcels"
 msgstr "没有包裹"
@@ -23075,6 +23160,9 @@ msgstr "1个包裹"
 #. placeholders: {n}
 msgid "{n} parcels"
 msgstr "{n}个包裹"
+
+msgid "No crashes."
+msgstr "没有撞车。"
 
 msgid "1 crash."
 msgstr "撞车1次。"
@@ -23089,9 +23177,13 @@ msgstr "你在这里的第一个轻松成绩。"
 msgid "Your first result here."
 msgstr "你在这里的第一个成绩。"
 
-#. placeholders: {relaxed}, {name}, {name2}
-msgid "Your first {relaxed}time on {name} on the {name2}."
-msgstr "你第一次{relaxed}骑{name2}跑{name}的时间。"
+#. placeholders: {name}, {name2}
+msgid "Your first relaxed time on {name} on the {name2}."
+msgstr "你第一次骑{name2}轻松跑{name}。"
+
+#. placeholders: {name}, {name2}
+msgid "Your first time on {name} on the {name2}."
+msgstr "你第一次骑{name2}跑{name}。"
 
 #. placeholders: {name}, {name2}, {time_words}
 #. one sentence of a longer line
@@ -24070,13 +24162,14 @@ msgstr "选择你的车子。现在骑的是{name}。"
 msgid "Riding the {name} now."
 msgstr "现在骑的是{name}。"
 
-#. placeholders: {else}
 #. one sentence of a longer line
-msgid "Choose where the endless ride{else}."
-msgstr ""
+msgid "Choose where the endless ride and the ride against the clock go."
+msgstr "选择无尽骑行和抢时赛去哪个街区。"
 
-#. placeholders: {else}, {name}
-msgid "Choose where the endless ride{else}. Riding in {name} now."
+#. placeholders: {name}
+msgid ""
+"Choose where the endless ride and the ride against the clock go. Riding in "
+"{name} now."
 msgstr ""
 
 #. placeholders: {name}
@@ -24084,11 +24177,13 @@ msgstr ""
 msgid "Riding in {name} now."
 msgstr "现在在{name}骑。"
 
-msgid " and the ride against the clock go"
-msgstr ""
+#. one sentence of a longer line
+msgid "Choose where the endless ride goes."
+msgstr "选择无尽骑行去哪个街区。"
 
-msgid " goes"
-msgstr ""
+#. placeholders: {name}
+msgid "Choose where the endless ride goes. Riding in {name} now."
+msgstr "选择无尽骑行去哪个街区。现在在{name}骑行。"
 
 #. one sentence of a longer line
 msgid "Spend cash on bikes and districts."
@@ -24893,13 +24988,15 @@ msgstr "纪录。星星：36颗中的{total_stars}颗。已开启夜晚：{NIGHT
 msgid ""
 "Danced so far: {night_count}, {tunes}, {moves_words} in time, {spot_on} of "
 "them spot on."
-msgstr ""
+msgstr "目前跳过：{night_count}，{tunes}，踩准节拍{moves_words}，其中{spot_on}步正中。"
 
 #. placeholders: {night_count}, {tunes}, {moves_words}, {spot_on}, {moves_words2}, {moves_words3}
 msgid ""
 "Danced so far: {night_count}, {tunes}, {moves_words} in time, {spot_on} of "
 "them spot on. Longest streak: {moves_words2}. Practice room: {moves_words3}."
 msgstr ""
+"目前跳过：{night_count}，{tunes}，踩准节拍{moves_words}，其中{spot_on}步正中。最长连击：{moves_word"
+"s2}。练习室：{moves_words3}。"
 
 #. placeholders: {moves_words2}
 #. one sentence of a longer line
@@ -25038,7 +25135,7 @@ msgstr "每次召唤后，在下一拍跳。{sentence_start}。"
 msgid ""
 "This is the {challenge_title}, {name}. Leaving from the pause menu does not "
 "count the run."
-msgstr ""
+msgstr "这是{challenge_title}，{name}。从暂停菜单离开，这一局不计入。"
 
 #. placeholders: {sentence_start}, {k}, {k2}
 msgid ""
@@ -26530,15 +26627,13 @@ msgstr "Walt叔叔退回了{name}。"
 msgid " Uncle Walt loved the {name}: double points."
 msgstr "Walt叔叔很喜欢{name}：分数翻倍。"
 
-#. placeholders: {plates}, {else}, {GOLDEN_POINTS}
-msgid " {plates} golden {else}, {GOLDEN_POINTS} points."
-msgstr ""
+#. placeholders: {points}
+msgid " 1 golden plate, {points} points."
+msgstr "1个金盘子，{points}分。"
 
-msgid "plate"
-msgstr ""
-
-msgid "plates"
-msgstr ""
+#. placeholders: {plates}, {points}
+msgid " {plates} golden plates, {points} points."
+msgstr "{plates}个金盘子，{points}分。"
 
 #. placeholders: {points}
 msgid " {points} points"
@@ -26582,7 +26677,7 @@ msgstr "{title}成绩：{total}分。"
 #. placeholders: {title}, {total}, {result_line}, {streak_sentence}, {resets}
 msgid ""
 "{title} result: {total} points. {result_line} {streak_sentence} {resets}"
-msgstr ""
+msgstr "{title}成绩：{total}分。{result_line}{streak_sentence}{resets}"
 
 #. placeholders: {title}, {total}
 msgid "{title} result: {total} points"
@@ -26747,7 +26842,7 @@ msgstr "下一样，{dish}：大约{wait}后{what}。"
 #. placeholders: {dish}, {what}, {wait}
 msgid ""
 "Nothing needs you right now. Next, the {dish}: {what} in about {wait}."
-msgstr ""
+msgstr "现在没有需要你的。下一样，{dish}：大约{wait}后{what}。"
 
 msgid "Nothing needs you right now."
 msgstr "现在没有需要你的。"
@@ -26929,6 +27024,9 @@ msgid ""
 "every station, {r} repeats the last call, {h} says what needs you most. "
 "Escape pauses."
 msgstr ""
+"{title}。{rule}{head}：{keyed}。{left}和{right}在灶台之间移动，也可以按灶台的数字。{p}对你面前的菜开始做、搅拌"
+"、翻面、淋汁或取出：等它需要你，再马上动手。{up}描述你面前的菜，{down}读菜谱卡，{t}说出那个灶台正在发生什么。{s}说出现在需要你的，再按一"
+"次报每个灶台，{r}重复上一次报菜，{h}说出最需要你的。Escape暂停。"
 
 #. placeholders: {up}, {down}, {t}
 #. one sentence of a longer line
@@ -27699,6 +27797,9 @@ msgstr "沥水"
 
 msgid "chop"
 msgstr "切"
+
+msgid "plate"
+msgstr ""
 
 msgid "starting"
 msgstr "开始做"
@@ -30461,16 +30562,13 @@ msgstr "黑暗。"
 msgid "Mirrored."
 msgstr "镜像。"
 
-#. placeholders: {kind_name}, {else}
-msgid "Puzzle: {kind_name}{else}."
-msgstr "谜题：{kind_name}{else}。"
+#. placeholders: {kind_name}
+msgid "Puzzle: {kind_name}, solved."
+msgstr "谜题：{kind_name}，已解开。"
 
-msgid ", solved"
-msgstr "，已解开"
-
-#. one clause of a longer line
-msgid "solved"
-msgstr "已解开"
+#. placeholders: {kind_name}
+msgid "Puzzle: {kind_name}."
+msgstr "谜题：{kind_name}。"
 
 #. placeholders: {name}
 msgid "Holding the {name}."
@@ -30707,6 +30805,11 @@ msgstr "跟着那股冷风走。"
 #. one sentence of a longer line
 msgid "Exit open in {prompt_door}.{follow}"
 msgstr "出口在{prompt_door}开了。{follow}"
+
+#. placeholders: {points}
+#. one sentence of a longer line
+msgid "Plus {points}."
+msgstr "加{points}分。"
 
 #. one sentence of a longer line
 msgid "Solved."
@@ -31132,7 +31235,7 @@ msgstr "闹鬼时钟归零了，{floor}，在{room}。"
 #. placeholders: {floor}, {room}
 msgid ""
 "The haunt clock strikes zero {floor}, in {room}. The house keeps you."
-msgstr ""
+msgstr "闹鬼时钟归零了，{floor}，在{room}。宅子把你留下了。"
 
 #. one sentence of a longer line
 msgid "The house keeps you."
@@ -31141,7 +31244,7 @@ msgstr "宅子把你留下了。"
 #. placeholders: {room}, {floor}
 msgid ""
 "Out of courage, you run screaming from {room} {floor}, and out of the house."
-msgstr ""
+msgstr "勇气耗尽，你尖叫着逃出{floor}的{room}，逃出了宅子。"
 
 #. placeholders: {from}, {deepest}
 msgid " This climb cleared floors {from} to {deepest}."
@@ -31266,20 +31369,27 @@ msgstr "第{number}层通过，用时{time_short}。时间奖励分和勇气：�
 msgid "Time bonus and courage: plus {bonus}."
 msgstr "时间奖励分和勇气：加{bonus}分。"
 
-msgid " relaxed"
-msgstr "轻松"
+#. placeholders: {previous}
+msgid " A new relaxed best time for this floor, beating {previous}."
+msgstr "这一层新的轻松最快时间，超过了{previous}。"
 
-#. placeholders: {relaxed}, {time_short}
-msgid " A new{relaxed} best time for this floor, beating {time_short}."
-msgstr "这一层新的{relaxed}最佳时间，超过了{time_short}。"
+#. placeholders: {previous}
+msgid " A new best time for this floor, beating {previous}."
+msgstr "这一层新的最快时间，超过了{previous}。"
 
-#. placeholders: {relaxed}
-msgid " Your first{relaxed} time on this floor."
-msgstr "你在这一层的第一个{relaxed}时间。"
+msgid " Your first relaxed time on this floor."
+msgstr "你在这一层的第一个轻松时间。"
 
-#. placeholders: {relaxed}, {time_short}
-msgid " Your{relaxed} best here is {time_short}."
-msgstr "你在这里的{relaxed}最佳时间是{time_short}。"
+msgid " Your first time on this floor."
+msgstr "你在这一层的第一个时间。"
+
+#. placeholders: {best}
+msgid " Your relaxed best here is {best}."
+msgstr "你在这里的轻松最快时间是{best}。"
+
+#. placeholders: {best}
+msgid " Your best here is {best}."
+msgstr "你在这里的最快时间是{best}。"
 
 #. placeholders: {next}
 msgid " Floor {next} is open."
@@ -34119,7 +34229,7 @@ msgstr "一条{steps}步的长廊，灭了{lamps}。"
 msgid ""
 "A hall of {steps} steps with {lamps} out. The taper burns for "
 "{taper}.{draughts}"
-msgstr ""
+msgstr "一条{steps}步的长廊，灭了{lamps}。引火烛能烧{taper}。{draughts}"
 
 #. placeholders: {taper}, {draughts}
 #. one sentence of a longer line
@@ -34508,7 +34618,7 @@ msgstr "右边：{alcove_words}"
 msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the hall."
-msgstr ""
+msgstr "这是{challenge_title}，{name}。从暂停菜单离开，这条长廊不算。"
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the hall."
@@ -35552,13 +35662,13 @@ msgstr ""
 #. placeholders: {found}, {total}
 msgid ""
 "Your journal: {found} of {total} places found, 1 lantern gathered in all."
-msgstr ""
+msgstr "你的日志：找到{found}个地方，共{total}个，一共收集了1盏灯笼。"
 
 #. placeholders: {found}, {total}, {lanterns}
 msgid ""
 "Your journal: {found} of {total} places found, {lanterns} lanterns gathered "
 "in all."
-msgstr ""
+msgstr "你的日志：找到{found}个地方，共{total}个，一共收集了{lanterns}盏灯笼。"
 
 msgid "Lantern Lake"
 msgstr "Lantern Lake"
@@ -35658,45 +35768,34 @@ msgstr ""
 "纪录。一夜最多灯笼：{most}盏。{festival}自由划船，最多灯笼：{free}盏。完成的夜晚：{nights}夜。出游：{outings}次。"
 "一共收集的灯笼：{lanterns}盏。找到的地方：{ALL}个中的{places}个。"
 
-#. placeholders: {n}
-msgid ", most lanterns in a night {n}"
-msgstr "，一夜最多灯笼{n}盏"
+#. placeholders: {next}, {most}
+msgid "Play, night {next}, most lanterns in a night {most}"
+msgstr "开始，第{next}夜，一夜最多灯笼{most}"
 
-#. placeholders: {n}
-#. one clause of a longer line
-msgid "most lanterns in a night {n}"
-msgstr "一夜最多灯笼{n}盏"
+#. placeholders: {next}
+msgid "Play, night {next}"
+msgstr "开始，第{next}夜"
 
-#. placeholders: {n}
-msgid ", best {n} lanterns"
-msgstr "，最多{n}盏灯笼"
-
-#. placeholders: {n}
-#. one clause of a longer line
-msgid "best {n} lanterns"
-msgstr "最多{n}盏灯笼"
+msgid "Free paddle, best 1 lantern"
+msgstr "自由划船，最佳1盏灯笼"
 
 #. placeholders: {best}
-msgid "Free paddle{best}"
-msgstr "自由划船{best}"
+msgid "Free paddle, best {best} lanterns"
+msgstr "自由划船，最佳{best}盏灯笼"
+
+msgid "Free paddle"
+msgstr "自由划船"
 
 msgid ""
 "A wide lake where a new lantern appears whenever you gather one. Stay as "
 "long as you like."
 msgstr "一片宽阔的湖，你每收集一盏灯笼，就会出现一盏新的。想待多久就待多久。"
 
-msgid "Free paddle"
-msgstr "自由划船"
-
 msgid "Free paddle opens once you finish your first night."
 msgstr "完成第一夜后，自由划船就会开启。"
 
 msgid "Finish night 1 to open free paddle."
 msgstr "完成第1夜来开启自由划船。"
-
-#. placeholders: {PLAY}, {next}, {most}
-msgid "{PLAY}, night {next}{most}"
-msgstr "{PLAY}，第{next}夜{most}"
 
 #. one sentence of a longer line
 msgid ""
@@ -36055,9 +36154,16 @@ msgstr "亮着的灯笼响了。"
 msgid " Each lantern rings once, nearest first."
 msgstr "每盏灯笼都会响一次，最近的先响。"
 
+msgid "1 lantern gathered tonight."
+msgstr "今夜收集了1盏灯笼。"
+
 #. placeholders: {gathered}
 msgid "{gathered} lanterns gathered tonight."
 msgstr "今夜收集了{gathered}盏灯笼。"
+
+#. placeholders: {lanterns}
+msgid "1 of {lanterns} lanterns gathered."
+msgstr "收集了1盏灯笼，共{lanterns}盏。"
 
 #. placeholders: {gathered}, {lanterns}
 msgid "{gathered} of {lanterns} lanterns gathered."
@@ -38219,18 +38325,21 @@ msgstr "纪录。{hamlet}{years}"
 msgid "{PLAY}, day {day_of_season} of {name}, year {year}"
 msgstr "{PLAY}，{year}年{name}第{day_of_season}天"
 
+msgid "Back to your hamlet. 1 settler lives there."
+msgstr "回到你的小村。村里住着1个村民。"
+
 #. one sentence of a longer line
 msgid "Back to your hamlet."
 msgstr "回到你的小村。"
 
-#. placeholders: {settlers}, {else}
-msgid "Back to your hamlet. {settlers} {else} live there."
-msgstr "回到你的小村。这里住着{settlers}位{else}。"
+#. placeholders: {settlers}
+msgid "Back to your hamlet. {settlers} settlers live there."
+msgstr "回到你的小村。村里住着{settlers}个村民。"
 
-#. placeholders: {settlers}, {else}
+#. placeholders: {settlers}
 #. one sentence of a longer line
-msgid "{settlers} {else} live there."
-msgstr "这里住着{settlers}位{else}。"
+msgid "{settlers} settlers live there."
+msgstr "村里住着{settlers}个村民。"
 
 #. placeholders: {PLAY}
 msgid "{PLAY}, a new hamlet"
@@ -38291,18 +38400,22 @@ msgid ""
 "more time to walk and work."
 msgstr "从清晨到晚饭铃响，一天有多长。白天越长，走动干活的时间越多。"
 
-#. placeholders: {else}
-msgid "Settlers' tune: {else}"
-msgstr "村民的乐曲：{else}"
+msgid "Settlers' tune: off"
+msgstr "村民的曲子：关"
+
+msgid "Settlers' tune: on"
+msgstr "村民的曲子：开"
 
 msgid ""
 "When on, every settler plays their instrument from where they are working. "
 "Off, only the birds and the river."
 msgstr "开启时，每位村民都在干活的地方演奏自己的乐器。关闭时，只有鸟声和河水声。"
 
-#. placeholders: {else}
-msgid "Work from along the lane: {else}"
-msgstr "小路上的干活声：{else}"
+msgid "Work from along the lane: off"
+msgstr "小路上的干活声：关"
+
+msgid "Work from along the lane: on"
+msgstr "小路上的干活声：开"
 
 msgid ""
 "When on, the sounds of settlers chopping, hammering and fishing play from "
@@ -38442,15 +38555,13 @@ msgstr "从储藏室出售{fair}"
 msgid "Everything in the larder the barge will buy, and what it pays."
 msgstr "储藏室里货船会收的东西，以及它出的价。"
 
-#. placeholders: {what}, {price}, {else}
-msgid "Buy {what}, {price} {else}"
-msgstr "买{what}，{price}枚{else}"
+#. placeholders: {what}
+msgid "Buy {what}, 1 coin"
+msgstr "买{what}，1枚硬币"
 
-msgid "coin"
-msgstr "硬币"
-
-msgid "coins"
-msgstr "硬币"
+#. placeholders: {what}, {price}
+msgid "Buy {what}, {price} coins"
+msgstr "买{what}，{price}枚硬币"
 
 msgid "Done"
 msgstr "完成"
@@ -38463,9 +38574,13 @@ msgid ""
 "barge."
 msgstr "Up和Down选货物，Enter卖掉一半，Escape回到货船。"
 
-#. placeholders: {sentence_case}, {n}, {price}, {else}
-msgid "{sentence_case}, {n}, {price} {else} each"
-msgstr "{sentence_case}，{n}，每件{price}枚{else}"
+#. placeholders: {goods}, {n}
+msgid "{goods}, {n}, 1 coin each"
+msgstr "{goods}，{n}，每份1枚硬币"
+
+#. placeholders: {goods}, {n}, {price}
+msgid "{goods}, {n}, {price} coins each"
+msgstr "{goods}，{n}，每份{price}枚硬币"
 
 #. placeholders: {sold}, {name}
 #. one sentence of a longer line
@@ -38634,7 +38749,7 @@ msgstr "鸡舍那边传来一声尖叫。在狐狸叼走母鸡之前把它赶跑
 msgid ""
 "The {order} settler to arrive plays the {name}, from wherever they are "
 "working."
-msgstr ""
+msgstr "{order}来到的村民，无论在哪里干活，都会演奏{name}。"
 
 msgid "em"
 msgstr ""
@@ -39313,9 +39428,13 @@ msgstr "粮食够1天。"
 msgid "{n} days of food."
 msgstr "粮食够{n}天。"
 
-#. placeholders: {has}, {has2}, {count}, {coins}, {else}
-msgid "{has} wood, {has2} stone, {count}, {coins} {else}."
-msgstr "木头{has}，石头{has2}，{count}，{coins}枚{else}。"
+#. placeholders: {wood}, {stone}, {nails}
+msgid "{wood} wood, {stone} stone, {nails}, 1 coin."
+msgstr "{wood}木头，{stone}石头，{nails}，1枚硬币。"
+
+#. placeholders: {wood}, {stone}, {nails}, {coins}
+msgid "{wood} wood, {stone} stone, {nails}, {coins} coins."
+msgstr "{wood}木头，{stone}石头，{nails}，{coins}枚硬币。"
 
 msgid "back from the next village"
 msgstr "从邻村回来了"
@@ -39608,25 +39727,27 @@ msgstr "，需要{join}"
 msgid "needs {join}"
 msgstr "需要{join}"
 
-#. placeholders: {left}, {else}
 #. one sentence of a longer line
-msgid "{left} {else} of work left."
-msgstr "还剩{left}{else}的活。"
+msgid "1 hour of work left."
+msgstr "还剩1小时的活。"
 
-#. placeholders: {sentence_case}
+#. placeholders: {building}
 #. one sentence of a longer line
-msgid "{sentence_case}, going up."
-msgstr "{sentence_case}，正在盖。"
+msgid "{building}, going up."
+msgstr "{building}，正在盖。"
 
-#. placeholders: {sentence_case}, {left}, {else}
-msgid "{sentence_case}, going up. {left} {else} of work left."
-msgstr "{sentence_case}，正在盖。还剩{left}{else}的活。"
+#. placeholders: {building}
+msgid "{building}, going up. 1 hour of work left."
+msgstr "{building}，正在盖。还剩1小时的活。"
 
-msgid "hour"
-msgstr "小时"
+#. placeholders: {building}, {hours}
+msgid "{building}, going up. {hours} hours of work left."
+msgstr "{building}，正在盖。还剩{hours}小时的活。"
 
-msgid "hours"
-msgstr "小时"
+#. placeholders: {hours}
+#. one sentence of a longer line
+msgid "{hours} hours of work left."
+msgstr "还剩{hours}小时的活。"
 
 #. placeholders: {name}
 msgid "A free spot for {name}."
@@ -40144,22 +40265,24 @@ msgstr "储藏室{goods2}件货物，得{goods}分"
 msgid "{cheerful} for {cheerful2} cheerful"
 msgstr "{cheerful2}人开心，得{cheerful}分"
 
-#. placeholders: {n}, {n2}, {else}
-msgid "{n} for {n2} {else}"
-msgstr "{n2}{else}，得{n}分"
+#. placeholders: {points}
+msgid "{points} for 1 building"
+msgstr "1座建筑得{points}"
 
-msgid "buildings"
-msgstr "座建筑"
+#. placeholders: {points}, {n}
+msgid "{points} for {n} buildings"
+msgstr "{n}座建筑得{points}"
 
 msgid "100 for the goal"
 msgstr "达成目标得100分"
 
-#. placeholders: {spare}, {spare2}, {else}
-msgid "{spare} for {spare2} {else} to spare"
-msgstr "{spare2}{else}富余，得{spare}分"
+#. placeholders: {points}
+msgid "{points} for 1 day to spare"
+msgstr "提前1天得{points}"
 
-msgid "days"
-msgstr "天"
+#. placeholders: {points}, {spare}
+msgid "{points} for {spare} days to spare"
+msgstr "提前{spare}天得{points}"
 
 #. placeholders: {list_words}
 msgid "Points: {list_words}."
@@ -40201,9 +40324,20 @@ msgid ""
 "Day {day_of_season} of {name}, year {year}, {time_words}. {sentence_case}."
 msgstr "{year}年{name}第{day_of_season}天，{time_words}。{sentence_case}。"
 
-#. placeholders: {sentence_case}, {left}, {else}
-msgid "{sentence_case} is going up, {left} {else} of work left."
-msgstr "{sentence_case}正在盖，还剩{left}{else}的活。"
+msgid "1 day left."
+msgstr "还剩1天。"
+
+#. placeholders: {left}
+msgid "{left} days left."
+msgstr "还剩{left}天。"
+
+#. placeholders: {building}
+msgid "{building} is going up, 1 hour of work left."
+msgstr "{building}正在盖，还剩1小时的活。"
+
+#. placeholders: {building}, {hours}
+msgid "{building} is going up, {hours} hours of work left."
+msgstr "{building}正在盖，还剩{hours}小时的活。"
 
 msgid "Nobody lives here yet."
 msgstr "这里还没人住。"
@@ -40473,7 +40607,7 @@ msgstr "回到Larkfield。{where_line}{cloned}"
 
 #. placeholders: {day}, {name}, {day_of_season}, {hour}, {phase}, {name2}
 msgid "day {day} ({name} {day_of_season}), hour {hour}, {phase}, {name2}"
-msgstr ""
+msgstr "第{day}天({name}第{day_of_season}天)，{hour}点，{phase}，{name2}"
 
 #. placeholders: {at}
 msgid "at {at}"
@@ -42074,17 +42208,20 @@ msgstr "你的表演已满，共{FREESTYLE_CAP}枚烟花。按Enter结束。"
 msgid "Last firework removed: {name}."
 msgstr "已移除上一枚烟花：{name}。"
 
+msgid "Freestyle show complete. You launched 1 firework."
+msgstr "自由编排表演完成。你发射了1枚烟花。"
+
 #. one sentence of a longer line
 msgid "Freestyle show complete."
 msgstr "自由编排表演完成。"
 
-#. placeholders: {n}, {s_ending}
-msgid "Freestyle show complete. You launched {n} firework{s_ending}."
+#. placeholders: {n}
+msgid "Freestyle show complete. You launched {n} fireworks."
 msgstr "自由编排表演完成。你发射了{n}枚烟花。"
 
-#. placeholders: {n}, {s_ending}
+#. placeholders: {n}
 #. one sentence of a longer line
-msgid "You launched {n} firework{s_ending}."
+msgid "You launched {n} fireworks."
 msgstr "你发射了{n}枚烟花。"
 
 #. one sentence of a longer line
@@ -42782,9 +42919,21 @@ msgstr "表演通过"
 msgid "Show not cleared"
 msgstr "表演未通过"
 
-#. placeholders: {sentence_start}, {signature_bonus}, {name}
-msgid " {sentence_start} {signature_bonus} bonus points for your {name}s."
-msgstr ""
+#. placeholders: {festival}, {bonus}
+msgid " {festival} {bonus} bonus points for your booms."
+msgstr "{festival}你的轰鸣得到{bonus}奖励分。"
+
+#. placeholders: {festival}, {bonus}
+msgid " {festival} {bonus} bonus points for your crackles."
+msgstr "{festival}你的噼啪得到{bonus}奖励分。"
+
+#. placeholders: {festival}, {bonus}
+msgid " {festival} {bonus} bonus points for your whistles."
+msgstr "{festival}你的哨音得到{bonus}奖励分。"
+
+#. placeholders: {festival}, {bonus}
+msgid " {festival} {bonus} bonus points for your sparkles."
+msgstr "{festival}你的闪光得到{bonus}奖励分。"
 
 #. placeholders: {stage}, {acts}
 msgid " The gauntlet ends after {stage} of {acts} shows."
@@ -43024,9 +43173,17 @@ msgstr "你保存的表演，{n}枚烟花。先听，再发射还原。{p}播放
 msgid " Twist: {name}."
 msgstr "变化：{name}。"
 
-#. placeholders: {sentence_start}
-msgid " {sentence_start}s pay a bonus."
-msgstr ""
+msgid " Booms pay a bonus."
+msgstr "轰鸣有奖励分。"
+
+msgid " Crackles pay a bonus."
+msgstr "噼啪有奖励分。"
+
+msgid " Whistles pay a bonus."
+msgstr "哨音有奖励分。"
+
+msgid " Sparkles pay a bonus."
+msgstr "闪光有奖励分。"
 
 #. placeholders: {total}
 msgid " {total} show points so far."
@@ -44317,9 +44474,11 @@ msgid ""
 "points."
 msgstr "接住时要离正中多近才算完美接住并得双倍分。"
 
-#. placeholders: {else}
-msgid "Gentle streams: {else}"
-msgstr "平缓溪流：{else}"
+msgid "Gentle streams: off"
+msgstr "平缓溪流：关"
+
+msgid "Gentle streams: on"
+msgstr "平缓溪流：开"
 
 msgid ""
 "Gentle streams: on. Fewer things float down, and the current swings less."
@@ -44333,18 +44492,22 @@ msgid ""
 "Challenges are not changed."
 msgstr "开启时，每条溪流和无尽长河都保持最简单。挑战不受影响。"
 
-#. placeholders: {else}
-msgid "Say trinket names: {else}"
-msgstr "说出小物件名称：{else}"
+msgid "Say trinket names: off"
+msgstr "说出小物件名称：关"
+
+msgid "Say trinket names: on"
+msgstr "说出小物件名称：开"
 
 msgid ""
 "When on, a trinket's name is said as you catch it. Off, the results name "
 "them."
 msgstr "开启时，接住小物件时会说出它的名字。关闭时，结算里会说出名字。"
 
-#. placeholders: {else}
-msgid "Banks louder up close: {else}"
-msgstr "靠近时河岸更响：{else}"
+msgid "Banks louder up close: off"
+msgstr "靠近时河岸更响：关"
+
+msgid "Banks louder up close: on"
+msgstr "靠近时河岸更响：开"
 
 msgid ""
 "When on, the lapping at each bank gets louder as you near it. Off, both "
@@ -44762,9 +44925,11 @@ msgstr "稍微偏右"
 msgid "Soggy, {soggy} of {SOGGY_SINKS}."
 msgstr "湿了，{soggy}，共{SOGGY_SINKS}。"
 
-#. placeholders: {else}
-msgid "Bank close on your {else}."
-msgstr "河岸靠近你的{else}边。"
+msgid "Bank close on your left."
+msgstr "左边河岸很近。"
+
+msgid "Bank close on your right."
+msgstr "右边河岸很近。"
 
 #. placeholders: {combo}, {multiplier}
 msgid "Combo {combo}, times {multiplier}."
@@ -44798,9 +44963,11 @@ msgstr "水流在{side_words}。"
 msgid "Nothing coming yet."
 msgstr "还没有东西漂来。"
 
-#. placeholders: {else}, {else2}
-msgid "Mill wheel on the {else} side: keep {else2}."
-msgstr "水车在{else}侧：靠{else2}。"
+msgid "Mill wheel on the left side: keep right."
+msgstr "水车在左边：靠右。"
+
+msgid "Mill wheel on the right side: keep left."
+msgstr "水车在右边：靠左。"
 
 #. placeholders: {side_words}
 msgid "Stone {side_words}: steer clear."
@@ -44981,22 +45148,27 @@ msgstr "{RIBBON_SCRAPS}张纸片。"
 msgid " Ribbon: {name}."
 msgstr "绶带：{name}。"
 
-#. placeholders: {scraps2}
 #. one sentence of a longer line
-msgid "{scraps2} in all."
-msgstr "总共{scraps2}。"
+msgid "1 paper scrap picked up."
+msgstr "捡到1张纸片。"
 
-#. placeholders: {scraps}, {else}
+#. placeholders: {in_all}
+msgid "1 paper scrap picked up. {in_all} in all."
+msgstr "捡到1张纸片。一共{in_all}。"
+
+#. placeholders: {in_all}
 #. one sentence of a longer line
-msgid "{scraps} paper {else} picked up."
-msgstr ""
+msgid "{in_all} in all."
+msgstr "一共{in_all}。"
 
-#. placeholders: {scraps}, {else}, {scraps2}
-msgid "{scraps} paper {else} picked up. {scraps2} in all."
-msgstr ""
+#. placeholders: {scraps}
+#. one sentence of a longer line
+msgid "{scraps} paper scraps picked up."
+msgstr "捡到{scraps}张纸片。"
 
-msgid "scraps"
-msgstr ""
+#. placeholders: {scraps}, {in_all}
+msgid "{scraps} paper scraps picked up. {in_all} in all."
+msgstr "捡到{scraps}张纸片。一共{in_all}。"
 
 #. placeholders: {new}
 msgid "New on your shelf: {new}."
@@ -45917,7 +46089,7 @@ msgstr "{title}成绩：{score_words}。"
 #. placeholders: {title}, {score_words}, {score_line}, {streak_sentence}, {resets}
 msgid ""
 "{title} result: {score_words}. {score_line} {streak_sentence} {resets}"
-msgstr ""
+msgstr "{title}成绩：{score_words}。{score_line}{streak_sentence}{resets}"
 
 msgid "Full game"
 msgstr "完整一局"
@@ -48607,9 +48779,13 @@ msgstr "{name}，已装上"
 msgid "{name}, {credits} credits and {parts} parts, needs rank {rank}"
 msgstr "{name}，{credits}信用点和{parts}零件，需要等级{rank}"
 
-#. placeholders: {name}, {credits}, {parts}, {s_ending}
-msgid "{name}, {credits} credits and {parts} part{s_ending}"
-msgstr "{name}，{credits}信用点和{parts}零件"
+#. placeholders: {name}, {credits}
+msgid "{name}, {credits} credits and 1 part"
+msgstr "{name}，{credits}信用点和1个零件"
+
+#. placeholders: {name}, {credits}, {parts}
+msgid "{name}, {credits} credits and {parts} parts"
+msgstr "{name}，{credits}信用点和{parts}个零件"
 
 #. placeholders: {name}, {credits}
 msgid "{name}, {credits} credits"
@@ -48949,13 +49125,18 @@ msgstr "开始局数{runs_started}。"
 msgid "Story logs recovered {logs_recovered} of {total_logs}."
 msgstr "找回故事日志{logs_recovered}，共{total_logs}。"
 
-#. placeholders: {logs_recovered}, {total_logs}, {else}
-msgid "Story logs recovered {logs_recovered} of {total_logs}. {else}"
-msgstr "找回故事日志{logs_recovered}，共{total_logs}。{else}"
+#. placeholders: {logs_recovered}, {total_logs}
+msgid ""
+"Story logs recovered {logs_recovered} of {total_logs}. Tutorial complete."
+msgstr ""
 
-msgid "Tutorial complete."
-msgstr "教程已完成。"
+#. placeholders: {logs_recovered}, {total_logs}
+msgid ""
+"Story logs recovered {logs_recovered} of {total_logs}. Tutorial not "
+"complete."
+msgstr ""
 
+#. one sentence of a longer line
 msgid "Tutorial not complete."
 msgstr "教程未完成。"
 
@@ -49031,6 +49212,9 @@ msgstr "新的轻松节奏个人最高分。"
 
 msgid "New personal best."
 msgstr "新的个人最高分。"
+
+msgid "Tutorial complete."
+msgstr "教程已完成。"
 
 msgid "Ace gunner licence earned: the rail gun cools faster."
 msgstr "获得王牌炮手执照：轨道炮冷却更快。"
@@ -49870,21 +50054,29 @@ msgid "Multiplier {multiplier}."
 msgstr "倍数{multiplier}。"
 
 #. one sentence of a longer line
+msgid "1 shield left."
+msgstr "还剩1个护盾。"
+
+#. one sentence of a longer line
 msgid "Shield absorbed it."
 msgstr "护盾挡住了。"
-
-#. placeholders: {left}, {s_ending}
-#. one sentence of a longer line
-msgid "{left} shield{s_ending} left."
-msgstr "还剩{left}个护盾。"
 
 #. placeholders: {message}
 #. one sentence of a longer line
 msgid "{message} Shield absorbed it."
 msgstr "{message}护盾挡住了。"
 
-#. placeholders: {message}, {left}, {s_ending}
-msgid "{message} Shield absorbed it. {left} shield{s_ending} left."
+#. placeholders: {message}
+msgid "{message} Shield absorbed it. 1 shield left."
+msgstr "{message}护盾挡住了。还剩1个护盾。"
+
+#. placeholders: {left}
+#. one sentence of a longer line
+msgid "{left} shields left."
+msgstr "还剩{left}个护盾。"
+
+#. placeholders: {message}, {left}
+msgid "{message} Shield absorbed it. {left} shields left."
 msgstr "{message}护盾挡住了。还剩{left}个护盾。"
 
 #. one sentence of a longer line
@@ -50613,39 +50805,62 @@ msgstr "一局失败。"
 #. placeholders: {title}, {score}, {challenge_result_at}, {streak_sentence}, {resets}
 msgid ""
 "{title} result: {score}. {challenge_result_at} {streak_sentence} {resets}"
-msgstr ""
+msgstr "{title}成绩：{score}。{challenge_result_at}{streak_sentence}{resets}"
 
 #. placeholders: {EVENT_LOG_TITLE}
 msgid "Event log {EVENT_LOG_TITLE} saved to the story archive."
 msgstr "活动日志{EVENT_LOG_TITLE}已保存到故事档案。"
 
-#. placeholders: {r}
-msgid "Your first recorded {r}result."
+msgid "Your first recorded relaxed result."
+msgstr "你第一个记录下的轻松成绩。"
+
+msgid "Your first recorded result."
+msgstr "你第一个记录下的成绩。"
+
+#. placeholders: {previous}
+msgid "A new relaxed best, beating {previous}."
+msgstr "新的轻松最高分，超过了{previous}。"
+
+#. placeholders: {best}
+msgid "Your relaxed best stays {best}."
+msgstr "你的轻松最高分仍是{best}。"
+
+#. placeholders: {best}
+msgid "Your best stays {best}."
+msgstr "你的最高分仍是{best}。"
+
+#. placeholders: {mode_name}
+msgid "Score 0, so nothing goes on the relaxed {mode_name} board."
+msgstr "得分0，所以不会上轻松{mode_name}排行榜。"
+
+#. placeholders: {mode_name}
+msgid "Score 0, so nothing goes on the {mode_name} board."
+msgstr "得分0，所以不会上{mode_name}排行榜。"
+
+#. placeholders: {mode_name}, {score}
+msgid "First score on the relaxed {mode_name} board: {score}."
+msgstr "轻松{mode_name}排行榜上的第一个得分：{score}。"
+
+#. placeholders: {mode_name}, {score}
+msgid "First score on the {mode_name} board: {score}."
+msgstr "{mode_name}排行榜上的第一个得分：{score}。"
+
+#. placeholders: {mode_name}, {score}, {previous}
+msgid ""
+"New best on the relaxed {mode_name} board: {score}, beating {previous}."
 msgstr ""
 
-#. placeholders: {r}, {previous}
-msgid "A new {r}best, beating {previous}."
-msgstr ""
+#. placeholders: {mode_name}, {score}, {previous}
+msgid "New best on the {mode_name} board: {score}, beating {previous}."
+msgstr "{mode_name}排行榜上的新最高分：{score}，超过了{previous}。"
 
-#. placeholders: {r}, {best}
-msgid "Your {r}best stays {best}."
-msgstr ""
+#. placeholders: {mode_name}, {best}
+msgid "Relaxed {mode_name} best stays {best}."
+msgstr "轻松{mode_name}最高分仍是{best}。"
 
-#. placeholders: {board}
-msgid "Score 0, so nothing goes on the {board} board."
-msgstr "得分为0，所以不会上{board}排行榜。"
-
-#. placeholders: {board}, {score}
-msgid "First score on the {board} board: {score}."
-msgstr "{board}排行榜上的第一个得分：{score}。"
-
-#. placeholders: {board}, {score}, {previous}
-msgid "New best on the {board} board: {score}, beating {previous}."
-msgstr "{board}排行榜上的新最高分：{score}，超过了{previous}。"
-
-#. placeholders: {sentence_start}, {best}
-msgid "{sentence_start} best stays {best}."
-msgstr "{sentence_start}最高分仍是{best}。"
+#. placeholders: {mode_title}, {best}
+msgid "{mode_title} best stays {best}."
+msgstr "{mode_title}最高分仍是{best}。"
 
 msgid "Tutorial route live. Center lane."
 msgstr "教程路线开始。中间航道。"
@@ -52951,17 +53166,17 @@ msgstr "在第{pantry}个食品间胡须用完了。"
 msgid "{points_words}, so nothing goes on the board."
 msgstr "{points_words}，所以不会上排行榜。"
 
-#. placeholders: {points_words}, {relaxed}
-msgid "{points_words}, your first {relaxed}score."
-msgstr ""
+#. placeholders: {points_words}
+msgid "{points_words}, your first relaxed score."
+msgstr "{points_words}，你的第一个轻松得分。"
 
 #. placeholders: {points_words}, {best_word}, {previous}
 msgid "{points_words}, a new {best_word}, beating {previous}."
-msgstr ""
+msgstr "{points_words}，新的{best_word}，超过了{previous}。"
 
 #. placeholders: {points_words}, {best_word}, {best}
 msgid "{points_words}. Your {best_word} is {best}."
-msgstr ""
+msgstr "{points_words}。你的{best_word}是{best}。"
 
 msgid "1 pantry cleared"
 msgstr "清空1个食品间"
@@ -53034,7 +53249,7 @@ msgstr "还剩{sentence_start}。"
 #. placeholders: {CRUMB_POINTS}, {CLEAR_BONUS}
 msgid ""
 "Each crumb is {CRUMB_POINTS} points and a cleared pantry {CLEAR_BONUS}."
-msgstr ""
+msgstr "每块面包屑{CRUMB_POINTS}分，清空一个食品间{CLEAR_BONUS}分。"
 
 #. placeholders: {name}, {cat_rule}
 msgid " The {name}: {cat_rule}"
@@ -53290,7 +53505,7 @@ msgstr "墙"
 
 msgid ""
 "A tiny bright tick. Each one is a crumb, from its direction, nearest first."
-msgstr ""
+msgstr "一声细小清脆的嘀嗒。每一声都是一块面包屑，从它的方向传来，由近到远。"
 
 msgid "Sniff tick"
 msgstr "嗅探嗒声"
@@ -53309,14 +53524,14 @@ msgstr "虎斑猫"
 
 msgid ""
 "A low purr. It wanders like the tabby, and joins in the monthly challenge."
-msgstr ""
+msgstr "一阵低沉的呼噜声。它像虎斑猫一样游荡，会加入每月挑战。"
 
 msgid "Grey cat"
 msgstr "灰猫"
 
 msgid ""
 "A short rising meow from the cat's side. A cat is 2 steps away or nearer."
-msgstr ""
+msgstr "从猫那一侧传来一声短促上扬的喵。有只猫离你2步或更近。"
 
 msgid "Cat close"
 msgstr "猫靠近"
@@ -53326,7 +53541,7 @@ msgstr "一扑加一声吱。猫抓住了你，你丢了一根胡须。"
 
 msgid ""
 "An indrawn breath. You keep still and the nearest cat loses track of you."
-msgstr ""
+msgstr "一声吸气。你保持不动，最近的猫就跟丢了你。"
 
 msgid "Freeze"
 msgstr "定住"
@@ -53355,7 +53570,7 @@ msgid ""
 "A soft glassy chime. On Bin night, the first Tuesday of every month, a "
 "cheese rind in every pantry, for 100 points. A sniff plays it from where it "
 "hides."
-msgstr ""
+msgstr "一声柔和的玻璃般叮当。垃圾桶之夜，也就是每月第一个星期二，每个食品间都有一块奶酪皮，值100分。嗅一嗅，它会从藏身处响起。"
 
 msgid "Cheese rind"
 msgstr "奶酪皮"
@@ -54441,7 +54656,7 @@ msgstr "座位：寡妇在左，赌徒在前，船长在右"
 
 #. the name or the meaning of a longer line
 msgid "Widow left, Gambler ahead, Captain right"
-msgstr ""
+msgstr "寡妇在左，赌徒在前，船长在右"
 
 msgid "Where each player sits, by the sound of their chair."
 msgstr "每个玩家坐在哪里，听他们椅子的声音。"
@@ -56251,22 +56466,22 @@ msgid ""
 "and try for new seeds."
 msgstr "每个花园日一次，用P选两种正在开花或已成熟的不同品种，试着培育新种子。"
 
-msgid "Dev"
-msgstr ""
-
-msgid "Ines"
+msgid "Mrs Patel"
 msgstr ""
 
 msgid "Mr Okafor"
 msgstr ""
 
-msgid "Mrs Moreau"
-msgstr ""
-
-msgid "Mrs Patel"
-msgstr ""
-
 msgid "Old Sam"
+msgstr ""
+
+msgid "Ines"
+msgstr ""
+
+msgid "Dev"
+msgstr ""
+
+msgid "Mrs Moreau"
 msgstr ""
 
 msgid "a tomato"
@@ -56730,15 +56945,13 @@ msgid ""
 "and filled requests each earn a star."
 msgstr "Up和Down读出纪念品，Escape返回。新品种、传家品种和完成的请求各得一颗星。"
 
-#. placeholders: {sentence}, {n}, {else}
-msgid "{sentence}, locked: {n} more {else}"
-msgstr "{sentence}，未解锁：还差{n}{else}"
+#. placeholders: {keepsake}
+msgid "{keepsake}, locked: 1 more star"
+msgstr "{keepsake}，未解锁：还差1颗星"
 
-msgid "star"
-msgstr "星号"
-
-msgid "stars"
-msgstr "颗星"
+#. placeholders: {keepsake}, {n}
+msgid "{keepsake}, locked: {n} more stars"
+msgstr "{keepsake}，未解锁：还差{n}颗星"
 
 #. placeholders: {stars}
 msgid "Stars: {stars}"
@@ -56755,18 +56968,21 @@ msgstr "Up和Down浏览游戏中需要的声音。Enter播放所选声音。Esca
 msgid "Tend a rooftop garden, where each plant grows into a layer of music."
 msgstr "照料一座屋顶花园，每株植物都会长成音乐中的一层。"
 
-#. placeholders: {day}, {plants}, {else}, {harvests}, {else2}
-msgid "day {day}, {plants} {else}, {harvests} {else2}"
-msgstr "第{day}天，{plants}{else}，{harvests}{else2}"
+#. placeholders: {day}
+msgid "day {day}, 1 plant, 1 harvest"
+msgstr "第{day}天，1株植物，1次收获"
 
-msgid "plant"
-msgstr "株植物"
+#. placeholders: {day}, {harvests}
+msgid "day {day}, 1 plant, {harvests} harvests"
+msgstr "第{day}天，1株植物，{harvests}次收获"
 
-msgid "plants"
-msgstr "株植物"
+#. placeholders: {day}, {plants}
+msgid "day {day}, {plants} plants, 1 harvest"
+msgstr "第{day}天，{plants}株植物，1次收获"
 
-msgid "harvests"
-msgstr "次收获"
+#. placeholders: {day}, {plants}, {harvests}
+msgid "day {day}, {plants} plants, {harvests} harvests"
+msgstr "第{day}天，{plants}株植物，{harvests}次收获"
 
 msgid "harmony"
 msgstr "和声"
@@ -56800,43 +57016,45 @@ msgstr "纪录。你的花园：{garden_words}。"
 msgid "Your garden: {garden_words}."
 msgstr "你的花园：{garden_words}。"
 
+msgid "harvests"
+msgstr "次收获"
+
+msgid "days"
+msgstr "天"
+
+msgid "Fullest harmony: 1 part."
+msgstr "最丰满的和声：1个声部。"
+
+#. placeholders: {harmony}
+msgid "Fullest harmony: {harmony} parts."
+msgstr "最丰满的和声：{harmony}个声部。"
+
+msgid "Longest garden: 1 day."
+msgstr "最长的花园：1天。"
+
+#. placeholders: {days}
+msgid "Longest garden: {days} days."
+msgstr "最长的花园：{days}天。"
+
 #. one sentence of a longer line
 msgid "Bests."
 msgstr "最高纪录。"
 
-#. placeholders: {harvests}, {harmony}, {else}, {days}, {else2}, {seeds_open}, {ALL}
+#. placeholders: {harvests}, {fullest}, {longest}, {seeds}, {kinds}
 msgid ""
-"Bests. Most harvests: {harvests}. Fullest harmony: {harmony} {else}. "
-"Longest garden: {days} {else2}. Seeds unlocked: {seeds_open} of {ALL}."
+"Bests. Most harvests: {harvests}. {fullest} {longest} Seeds unlocked: "
+"{seeds} of {kinds}."
 msgstr ""
-"最高纪录。最多收获：{harvests}。最丰满的和声：{harmony}{else}。最长的花园：{days}{else2}。已解锁种子：{seeds"
-"_open}种，共{ALL}种。"
-
-#. placeholders: {harmony}, {else}
-#. one sentence of a longer line
-msgid "Fullest harmony: {harmony} {else}."
-msgstr "最丰满的和声：{harmony}{else}。"
-
-#. placeholders: {days}, {else2}
-#. one sentence of a longer line
-msgid "Longest garden: {days} {else2}."
-msgstr "最长的花园：{days}{else2}。"
 
 #. placeholders: {harvests}
 #. one sentence of a longer line
 msgid "Most harvests: {harvests}."
 msgstr "最多收获：{harvests}。"
 
-#. placeholders: {seeds_open}, {ALL}
+#. placeholders: {fullest}, {longest}, {seeds}, {kinds}
 #. one sentence of a longer line
-msgid "Seeds unlocked: {seeds_open} of {ALL}."
-msgstr "已解锁种子：{seeds_open}种，共{ALL}种。"
-
-msgid "part"
-msgstr "个声部"
-
-msgid "parts"
-msgstr "个声部"
+msgid "{fullest} {longest} Seeds unlocked: {seeds} of {kinds}."
+msgstr "{fullest}{longest}已解锁种子：{seeds}种，共{kinds}种。"
 
 #. one sentence of a longer line
 msgid "Collection."
@@ -57024,19 +57242,19 @@ msgstr "一枝剪下的玫瑰"
 msgid "a spray of jasmine"
 msgstr "一枝茉莉"
 
-#. placeholders: {n}, {else}
-msgid "{n} more {else} to unlock"
-msgstr "还差{n}{else}解锁"
+msgid "1 more harvest to unlock"
+msgstr "再收获1次解锁"
 
-#. placeholders: {n}, {else}
-msgid "fill {n} more {else}"
-msgstr "再完成{n}{else}"
+#. placeholders: {n}
+msgid "{n} more harvests to unlock"
+msgstr "再收获{n}次解锁"
 
-msgid "request"
-msgstr "个请求"
+msgid "fill 1 more request"
+msgstr "再完成1个请求"
 
-msgid "requests"
-msgstr "个请求"
+#. placeholders: {n}
+msgid "fill {n} more requests"
+msgstr "再完成{n}个请求"
 
 #. placeholders: {name}
 msgid "comes with the {name}"
@@ -57216,7 +57434,7 @@ msgstr "{twist}。{map}第{day}天，共{day_limit}天，{name}。"
 #. placeholders: {here}, {status_key}, {hint_key}
 msgid ""
 " {here} {status_key} for status, {hint_key} for a hint, F1 for controls."
-msgstr ""
+msgstr "{here}{status_key}看状态，{hint_key}要提示，F1看操作。"
 
 #. placeholders: {n}
 msgid "{n} wilted"
@@ -57255,9 +57473,20 @@ msgstr "第{day}天，{phase}，{name}。"
 msgid " No harmony yet."
 msgstr "还没有和声。"
 
-#. placeholders: {parts}, {else}, {list}
-msgid " Harmony: {parts} {else}, {list}."
-msgstr "和声：{parts}{else}，{list}。"
+#. placeholders: {part_names}
+msgid " Harmony: 1 part, {part_names}."
+msgstr "和声：1个声部，{part_names}。"
+
+#. placeholders: {count}, {part_names}
+msgid " Harmony: {count} parts, {part_names}."
+msgstr "和声：{count}个声部，{part_names}。"
+
+msgid " 1 harvest."
+msgstr "1次收获。"
+
+#. placeholders: {harvests}
+msgid " {harvests} harvests."
+msgstr "{harvests}次收获。"
 
 msgid "harmony parts"
 msgstr "个和声声部"
@@ -57935,7 +58164,7 @@ msgstr "从暂停菜单离开，花园会保留到这一周结束。"
 
 msgid ""
 "Leaving from the pause menu keeps the garden until the month is over."
-msgstr ""
+msgstr "从暂停菜单离开，花园会保留到这个月结束。"
 
 msgid "A fresh garden for the same challenge. Only your best score is kept."
 msgstr "同一个挑战的全新花园。只保留你的最高得分。"
@@ -58014,6 +58243,9 @@ msgstr "回到花园。"
 #. placeholders: {here}
 msgid "Back in the garden. {here}"
 msgstr "回到花园。{here}"
+
+msgid "plant"
+msgstr "株植物"
 
 #. placeholders: {name}
 msgid "Pull up the {name} and add it to the compost?"
@@ -58623,9 +58855,6 @@ msgstr "破解第3个保险柜后解锁计时挑战，你破解过的每个保�
 msgid "The clock warning plays at 1 minute, 30 seconds and 10 seconds left."
 msgstr "剩1分钟、30秒和10秒时会响起时钟警告。"
 
-msgid "The clock stops while the guard listens at the door."
-msgstr "保安在门口听的时候，时钟会停下。"
-
 msgid ""
 "Practice dial gives you endless single wheels with nothing to lose, so you "
 "can practise finding the tumbler."
@@ -59199,29 +59428,35 @@ msgstr "第{n}个保险柜，共{SAFES}个：{name}。{sentence_start}个转轮{
 msgid "{sentence_start} wheels{rule}."
 msgstr "{sentence_start}个转轮{rule}。"
 
-#. placeholders: {else}
 #. one sentence of a longer line
-msgid "Hints cost five seconds.{else}"
-msgstr "每次提示扣五秒。{else}"
+msgid "Hints cost five seconds."
+msgstr "提示要花五秒。"
+
+#. one sentence of a longer line
+msgid "The clock stops while the guard listens at the door."
+msgstr "保安在门口听的时候，时钟会停下。"
 
 #. placeholders: {n}, {name}
 #. one sentence of a longer line
 msgid "Time attack, safe {n}: {name}."
 msgstr "计时挑战，第{n}个保险柜：{name}。"
 
-#. placeholders: {n}, {name}, {sentence_start}, {else}
+#. placeholders: {n}, {name}, {time_limit}
 msgid ""
-"Time attack, safe {n}: {name}. {sentence_start} on the clock. Hints cost "
-"five seconds.{else}"
-msgstr "计时挑战，第{n}个保险柜：{name}。时钟上有{sentence_start}。每次提示扣五秒。{else}"
+"Time attack, safe {n}: {name}. {time_limit} on the clock. Hints cost five "
+"seconds. The clock stops while the guard listens at the door."
+msgstr ""
 
-#. placeholders: {sentence_start}
+#. placeholders: {time_limit}
 #. one sentence of a longer line
-msgid "{sentence_start} on the clock."
-msgstr "时钟上有{sentence_start}。"
+msgid "{time_limit} on the clock."
+msgstr "时钟上有{time_limit}。"
 
-msgid " The clock stops while the guard listens at the door."
-msgstr "保安在门口听的时候，时钟会停下。"
+#. placeholders: {n}, {name}, {time_limit}
+msgid ""
+"Time attack, safe {n}: {name}. {time_limit} on the clock. Hints cost five "
+"seconds."
+msgstr ""
 
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
@@ -59245,8 +59480,11 @@ msgstr "第{index}个保险柜，共{safes}个："
 msgid " {name}. {sentence_start} wheels"
 msgstr "{name}。{sentence_start}个转轮"
 
-#. placeholders: {decoys}, {s_ending}
-msgid ", {decoys} false gate{s_ending} a wheel"
+msgid ", 1 false gate a wheel"
+msgstr "，每个转轮1个假锁口"
+
+#. placeholders: {decoys}
+msgid ", {decoys} false gates a wheel"
 msgstr "，每个转轮{decoys}个假锁口"
 
 msgid " A guard walks the corridor, and you are told when he comes."
@@ -59654,9 +59892,11 @@ msgstr "得分{score}。你的{best}是{b}。"
 msgid " A new {best} time, beating {time_words}."
 msgstr "新的{best}时间，超过了{time_words}。"
 
-#. placeholders: {relaxed}
-msgid " Your first {relaxed}time on the board."
-msgstr "你第一次有{relaxed}时间上了排行榜。"
+msgid " Your first relaxed time on the board."
+msgstr "你在排行榜上的第一个轻松时间。"
+
+msgid " Your first time on the board."
+msgstr "你在排行榜上的第一个时间。"
 
 #. placeholders: {best}, {time_words}
 msgid " Your {best} time is {time_words}."
@@ -59713,7 +59953,7 @@ msgstr "拨盘：{dial}"
 #. placeholders: {wheels}, {wheels2}, {strikes}, {STRIKES}, {hints_left}
 msgid ""
 "Wheel {wheels} of {wheels2}  Strikes {strikes}/{STRIKES}  Hints {hints_left}"
-msgstr ""
+msgstr "第{wheels}个转轮，共{wheels2}个  失误{strikes}/{STRIKES}  提示{hints_left}"
 
 #. placeholders: {time_words}
 msgid "Time left {time_words}"
@@ -59843,8 +60083,11 @@ msgstr "还没破解"
 msgid "{sentence_start} wheels"
 msgstr "{sentence_start}个转轮"
 
-#. placeholders: {decoys}, {s_ending}
-msgid "{decoys} false gate{s_ending} a wheel"
+msgid "1 false gate a wheel"
+msgstr "每个转轮1个假锁口"
+
+#. placeholders: {decoys}
+msgid "{decoys} false gates a wheel"
 msgstr "每个转轮{decoys}个假锁口"
 
 msgid "direction rule"
@@ -61212,21 +61455,16 @@ msgstr "线路开通后就没有提示了。"
 msgid " The thirteenth train went by."
 msgstr "第十三列火车开过去了。"
 
-#. placeholders: {points_words}, {r}
-msgid "{points_words}, your first {r}score."
-msgstr "{points_words}，你的第一个{r}得分。"
+#. placeholders: {points_words}, {previous}
+msgid "{points_words}, a new relaxed best, beating {previous}."
+msgstr "{points_words}，新的轻松最高分，超过了{previous}。"
 
-#. placeholders: {points_words}, {r}, {previous}
-msgid "{points_words}, a new {r}best, beating {previous}."
-msgstr "{points_words}，新的{r}最高分，超过了{previous}。"
+#. placeholders: {points_words}, {best}
+msgid "{points_words}. Your relaxed best is {best}."
+msgstr "{points_words}。你的轻松最高分是{best}。"
 
-#. placeholders: {points_words}, {r}, {best}
-msgid "{points_words}. Your {r}best is {best}."
-msgstr "{points_words}。你的{r}最高分是{best}。"
-
-#. placeholders: {r}
-msgid "longest {r}run"
-msgstr "{r}最长连续"
+msgid "longest relaxed run"
+msgstr "轻松最长连续"
 
 #. placeholders: {longest}, {trains_words}
 msgid "{longest}: {trains_words}, your first on the board."
@@ -61236,30 +61474,51 @@ msgstr "{longest}：{trains_words}，你第一次上排行榜。"
 msgid "{longest}: {trains_words}, a new record, beating {previous}."
 msgstr "{longest}：{trains_words}，新纪录，超过了{previous}。"
 
-#. placeholders: {window_words}, {r}
-msgid "Window reached: {window_words}, your shortest {r}window yet."
-msgstr "达到的窗口：{window_words}，你目前最短的{r}窗口。"
+#. placeholders: {window_words}
+msgid "Window reached: {window_words}, your shortest relaxed window yet."
+msgstr "达到的窗口：{window_words}，你目前最短的轻松窗口。"
+
+#. placeholders: {window_words}
+msgid "Window reached: {window_words}, your shortest window yet."
+msgstr "达到的窗口：{window_words}，你目前最短的窗口。"
 
 #. placeholders: {window_words}
 msgid "Window reached: {window_words}."
 msgstr "达到的窗口：{window_words}。"
 
-#. placeholders: {points_words}, {r}
-msgid "{points_words}, your first {r}steam gala score."
-msgstr "{points_words}，你的第一个{r}蒸汽节得分。"
+#. placeholders: {points_words}
+msgid "{points_words}, your first relaxed steam gala score."
+msgstr "{points_words}，你的第一个轻松蒸汽节得分。"
 
-#. placeholders: {points_words}, {r}, {previous}
-msgid "{points_words}, a new {r}steam gala best, beating {previous}."
-msgstr "{points_words}，新的{r}蒸汽节最高分，超过了{previous}。"
+#. placeholders: {points_words}
+msgid "{points_words}, your first steam gala score."
+msgstr "{points_words}，你的第一个蒸汽节得分。"
 
-#. placeholders: {r}, {best}
+#. placeholders: {points_words}, {previous}
+msgid "{points_words}, a new relaxed steam gala best, beating {previous}."
+msgstr "{points_words}，新的轻松蒸汽节最高分，超过了{previous}。"
+
+#. placeholders: {points_words}, {previous}
+msgid "{points_words}, a new steam gala best, beating {previous}."
+msgstr "{points_words}，新的蒸汽节最高分，超过了{previous}。"
+
+#. placeholders: {best}
 #. one sentence of a longer line
-msgid "Your {r}steam gala best is {best}."
-msgstr "你的{r}蒸汽节最高分是{best}。"
+msgid "Your relaxed steam gala best is {best}."
+msgstr "你的轻松蒸汽节最高分是{best}。"
 
-#. placeholders: {points_words}, {r}, {best}
-msgid "{points_words}. Your {r}steam gala best is {best}."
-msgstr "{points_words}。你的{r}蒸汽节最高分是{best}。"
+#. placeholders: {points_words}, {best}
+msgid "{points_words}. Your relaxed steam gala best is {best}."
+msgstr "{points_words}。你的轻松蒸汽节最高分是{best}。"
+
+#. placeholders: {best}
+#. one sentence of a longer line
+msgid "Your steam gala best is {best}."
+msgstr "你的蒸汽节最高分是{best}。"
+
+#. placeholders: {points_words}, {best}
+msgid "{points_words}. Your steam gala best is {best}."
+msgstr "{points_words}。你的蒸汽节最高分是{best}。"
 
 msgid "1 steam special"
 msgstr "1列蒸汽专列"
@@ -66495,7 +66754,7 @@ msgstr "你滑冰时雪会落在冰面上，雪盖满冰面时，这一夜就结
 msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the skate."
-msgstr ""
+msgstr "这是{challenge_title}，{name}。从暂停菜单离开，这次滑冰不算数。"
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the skate."
@@ -67449,7 +67708,7 @@ msgstr "燃料奖励分{fuel_bonus}。"
 msgid ""
 "{title} result: {score} points. {score_line} {streak_sentence} "
 "{sentence_start}"
-msgstr ""
+msgstr "{title}成绩：{score}分。{score_line}{streak_sentence}{sentence_start}"
 
 msgid "Full moon pad"
 msgstr "满月着陆台"
@@ -67879,9 +68138,11 @@ msgstr "速度：{velocity_words}"
 msgid "Fuel: {fuel_words}"
 msgstr "燃料：{fuel_words}"
 
-#. placeholders: {else}
-msgid "Engine: {else}"
-msgstr "引擎：{else}"
+msgid "Engine: on"
+msgstr "引擎：开"
+
+msgid "Engine: off"
+msgstr "引擎：关"
 
 #. placeholders: {count}
 msgid "Call-outs every {count}"
@@ -68132,13 +68393,13 @@ msgstr "Quindar提示音"
 msgid ""
 "Quindar tone: a short high beep on the Tranquility pad. It stands for the "
 "radio click, and a call-out follows."
-msgstr ""
+msgstr "Quindar提示音：静海着陆台上一声短促的高音哔。它代表无线电的咔嗒声，后面跟着一条播报。"
 
 #. the name or the meaning of a longer line
 msgid ""
 "a short high beep on the Tranquility pad. It stands for the radio click, "
 "and a call-out follows."
-msgstr ""
+msgstr "静海着陆台上一声短促的高音哔。它代表无线电的咔嗒声，后面跟着一条播报。"
 
 #. the name or the meaning of a longer line
 msgid "Fuel alarm"
@@ -69940,34 +70201,34 @@ msgstr "原来的{best}是{previous}。"
 msgid "Your {best} {noun} is {b}."
 msgstr "你的{best}{noun}是{b}。"
 
-#. placeholders: {surfaced}, {else}
-msgid "Expedition over after {surfaced} {else}, no coins."
-msgstr "探险在{surfaced}{else}后结束，没有硬币。"
+msgid "Expedition over after 1 dive, no coins."
+msgstr "下潜1次后探险结束，没有硬币。"
 
-msgid "dive"
-msgstr "次下潜"
-
-msgid "dives"
-msgstr "次下潜"
+#. placeholders: {surfaced}
+msgid "Expedition over after {surfaced} dives, no coins."
+msgstr "下潜{surfaced}次后探险结束，没有硬币。"
 
 #. one sentence of a longer line
 msgid "Expedition over."
 msgstr "探险结束。"
 
-#. placeholders: {surfaced}, {else}, {score}
-msgid "Expedition over. Surfaced {surfaced} {else}, {score} coins banked."
-msgstr "探险结束。浮出水面{surfaced}{else}，存入{score}枚硬币。"
+#. placeholders: {score}
+msgid "Expedition over. Surfaced 1 time, {score} coins banked."
+msgstr "探险结束。浮出水面1次，存入{score}枚硬币。"
 
-#. placeholders: {surfaced}, {else}, {score}
+#. placeholders: {score}
 #. one sentence of a longer line
-msgid "Surfaced {surfaced} {else}, {score} coins banked."
-msgstr "浮出水面{surfaced}{else}，存入{score}枚硬币。"
+msgid "Surfaced 1 time, {score} coins banked."
+msgstr "浮出水面1次，存入{score}枚硬币。"
 
-msgid "time"
-msgstr "次"
+#. placeholders: {surfaced}, {score}
+msgid "Expedition over. Surfaced {surfaced} times, {score} coins banked."
+msgstr "探险结束。浮出水面{surfaced}次，存入{score}枚硬币。"
 
-msgid "times"
-msgstr "次"
+#. placeholders: {surfaced}, {score}
+#. one sentence of a longer line
+msgid "Surfaced {surfaced} times, {score} coins banked."
+msgstr "浮出水面{surfaced}次，存入{score}枚硬币。"
 
 #. placeholders: {n}
 #. one sentence of a longer line
@@ -71569,9 +71830,17 @@ msgstr ""
 msgid "The "
 msgstr ""
 
-#. placeholders: {article}, {name}
-msgid "{article} {name} night"
-msgstr ""
+msgid "a spring night"
+msgstr "一个春天的夜晚"
+
+msgid "a summer night"
+msgstr "一个夏天的夜晚"
+
+msgid "an autumn night"
+msgstr "一个秋天的夜晚"
+
+msgid "a winter night"
+msgstr "一个冬天的夜晚"
 
 msgid "Enter again heads home."
 msgstr "再按一次Enter回家。"
@@ -71876,17 +72145,23 @@ msgstr "你对{name}最好的一次观测，超过了{previous}。"
 msgid "The peak is {days_phrase}."
 msgstr "极大期在{days_phrase}。"
 
-#. placeholders: {total}, {else}, {name}, {year}
+#. placeholders: {name}, {year}
 #. one sentence of a longer line
-msgid "That makes {total} {else} on the {name} in {year}."
-msgstr "{year}年你对{name}一共许了{total}{else}。"
+msgid "That makes 1 wish on the {name} in {year}."
+msgstr "这样{year}年你对{name}许了1个愿。"
 
-#. placeholders: {total}, {else}, {name}, {year}, {coming}
-msgid "That makes {total} {else} on the {name} in {year}. {coming}"
-msgstr "{year}年你对{name}一共许了{total}{else}。{coming}"
+#. placeholders: {name}, {year}, {coming}
+msgid "That makes 1 wish on the {name} in {year}. {coming}"
+msgstr "这样{year}年你对{name}许了1个愿。{coming}"
 
-msgid "wishes"
-msgstr "个愿望"
+#. placeholders: {total}, {name}, {year}
+#. one sentence of a longer line
+msgid "That makes {total} wishes on the {name} in {year}."
+msgstr "这样{year}年你对{name}许了{total}个愿。"
+
+#. placeholders: {total}, {name}, {year}, {coming}
+msgid "That makes {total} wishes on the {name} in {year}. {coming}"
+msgstr "这样{year}年你对{name}许了{total}个愿。{coming}"
 
 #. one sentence of a longer line
 msgid "Watch over."
@@ -73513,7 +73788,7 @@ msgstr "已调准：{tuned}根，共{pipes}根"
 msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the rank."
-msgstr ""
+msgstr "这是{challenge_title}，{name}。从暂停菜单离开，这排音管不算数。"
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the rank."
@@ -74815,13 +75090,13 @@ msgstr "{pools}个潮池，大约{time}。"
 msgid ""
 "Tonight's three species: find {species} on Rocky Point, worth 100 points "
 "more each."
-msgstr ""
+msgstr "今晚的三个物种：在岩石岬找到{species}，每个多值100分。"
 
 #. placeholders: {species}, {twist}, {trip}
 msgid ""
 "Tonight's three species: find {species} on Rocky Point, worth 100 points "
 "more each. {twist} {trip}"
-msgstr ""
+msgstr "今晚的三个物种：在岩石岬找到{species}，每个多值100分。{twist}{trip}"
 
 #. placeholders: {describe}, {trip}
 msgid "This week's rare find, on the Far Reef: {describe} {trip}"
@@ -75263,12 +75538,17 @@ msgstr "大约{minutes_words}后涨潮。"
 msgid "Back at pool {at}, {words}.{tide}"
 msgstr "回到第{at}个潮池，{words}。{tide}"
 
-#. placeholders: {name}, {else}
-msgid "That last call was the {name}.{else}"
-msgstr "刚才叫的是{name}。{else}"
-
-msgid " It is shy."
+#. one sentence of a longer line
+msgid "It is shy."
 msgstr "它很害羞。"
+
+#. placeholders: {name}
+msgid "That last call was the {name}. It is shy."
+msgstr "刚才的叫声是{name}。它很害羞。"
+
+#. placeholders: {name}
+msgid "That last call was the {name}."
+msgstr "刚才的叫声是{name}。"
 
 msgid "Nothing has called here yet."
 msgstr "这里还没有东西叫过。"
@@ -76836,17 +77116,29 @@ msgstr "最远"
 msgid "training"
 msgstr "练习"
 
-#. placeholders: {relaxed}, {name}, {score}
-msgid "First {relaxed}{name} score saved: {score}."
-msgstr "首个{relaxed}{name}得分已保存：{score}。"
+#. placeholders: {name}, {score}
+msgid "First relaxed {name} score saved: {score}."
+msgstr "{name}的第一个轻松得分已保存：{score}。"
 
-#. placeholders: {relaxed}, {name}, {score}, {previous}
-msgid "New {relaxed}best {name} score: {score}, beating {previous}."
-msgstr "新的{relaxed}{name}最高分：{score}，超过了{previous}。"
+#. placeholders: {name}, {score}
+msgid "First {name} score saved: {score}."
+msgstr "{name}的第一个得分已保存：{score}。"
 
-#. placeholders: {relaxed}, {name}, {best}
-msgid "Your {relaxed}best {name} score stays {best}."
-msgstr "你的{relaxed}{name}最高分仍是{best}。"
+#. placeholders: {name}, {score}, {previous}
+msgid "New relaxed best {name} score: {score}, beating {previous}."
+msgstr "{name}新的轻松最高分：{score}，超过了{previous}。"
+
+#. placeholders: {name}, {score}, {previous}
+msgid "New best {name} score: {score}, beating {previous}."
+msgstr "{name}新的最高分：{score}，超过了{previous}。"
+
+#. placeholders: {name}, {best}
+msgid "Your relaxed best {name} score stays {best}."
+msgstr "你的{name}轻松最高分仍是{best}。"
+
+#. placeholders: {name}, {best}
+msgid "Your best {name} score stays {best}."
+msgstr "你的{name}最高分仍是{best}。"
 
 #. placeholders: {number}
 msgid "night crossing {number}"
@@ -76856,14 +77148,21 @@ msgstr "夜间第{number}次横越"
 msgid "crossing {number}"
 msgstr "第{number}次横越"
 
-#. placeholders: {relaxed}, {name}, {secs}
-msgid "First {relaxed}time on {name}: {secs} seconds."
-msgstr "首次{relaxed}走完{name}：{secs}秒。"
+#. placeholders: {name}, {secs}
+msgid "First relaxed time on {name}: {secs} seconds."
+msgstr "{name}的第一个轻松时间：{secs}秒。"
 
-#. placeholders: {relaxed}, {name}, {secs}, {previous}
-msgid ""
-"New {relaxed}best time on {name}: {secs} seconds, beating {previous}."
-msgstr "{name}新的{relaxed}最佳时间：{secs}秒，超过了{previous}。"
+#. placeholders: {name}, {secs}
+msgid "First time on {name}: {secs} seconds."
+msgstr "{name}的第一个时间：{secs}秒。"
+
+#. placeholders: {name}, {secs}, {previous}
+msgid "New relaxed best time on {name}: {secs} seconds, beating {previous}."
+msgstr "{name}新的轻松最快时间：{secs}秒，超过了{previous}。"
+
+#. placeholders: {name}, {secs}, {previous}
+msgid "New best time on {name}: {secs} seconds, beating {previous}."
+msgstr "{name}新的最快时间：{secs}秒，超过了{previous}。"
 
 #. placeholders: {reached}, {SKYLINE_LEN}
 msgid "Furthest crossing: {reached} of {SKYLINE_LEN}."
@@ -77453,16 +77752,13 @@ msgstr "在{to}的屋顶上。"
 msgid "Run over."
 msgstr "这一局结束。"
 
-#. placeholders: {pos}, {steps}, {lean_words}, {else}
-msgid "Step {pos} of {steps}, {lean_words}{else}."
-msgstr "第{pos}步，共{steps}步，{lean_words}{else}。"
+#. placeholders: {pos}, {steps}, {lean_words}
+msgid "Step {pos} of {steps}, {lean_words}, crouching."
+msgstr "第{pos}步，共{steps}步，{lean_words}，蹲着。"
 
-msgid ", crouching"
-msgstr "，蹲着"
-
-#. one clause of a longer line
-msgid "crouching"
-msgstr "蹲着"
+#. placeholders: {pos}, {steps}, {lean_words}
+msgid "Step {pos} of {steps}, {lean_words}."
+msgstr "第{pos}步，共{steps}步，{lean_words}。"
 
 #. placeholders: {name}
 msgid "Wind blowing from the {name}."
@@ -78874,27 +79170,34 @@ msgid ""
 "another."
 msgstr "心愿桌的第{MONTHLY_STACKS}到{MONTHLY_STACKS2}摞，一摞接一摞。"
 
-#. placeholders: {r}, {score}
-msgid "Your first {r}result on this challenge: {score}."
-msgstr "你在这个挑战的第一个{r}成绩：{score}。"
+#. placeholders: {score}
+msgid "Your first relaxed result on this challenge: {score}."
+msgstr "你在这个挑战上的第一个轻松成绩：{score}。"
 
-#. placeholders: {r}
+#. placeholders: {score}
+msgid "Your first result on this challenge: {score}."
+msgstr "你在这个挑战上的第一个成绩：{score}。"
+
 #. one sentence of a longer line
-msgid "A new {r}best."
-msgstr "新的{r}最高分。"
+msgid "A new relaxed best."
+msgstr "新的轻松最高分。"
 
-#. placeholders: {r}, {previous}
-msgid "A new {r}best. The old {r}best was {previous}."
-msgstr "新的{r}最高分。原来的{r}最高分是{previous}。"
+#. placeholders: {previous}
+msgid "A new relaxed best. The old relaxed best was {previous}."
+msgstr "新的轻松最高分。之前的轻松最高分是{previous}。"
 
-#. placeholders: {r}, {previous}
+#. placeholders: {previous}
 #. one sentence of a longer line
-msgid "The old {r}best was {previous}."
-msgstr "原来的{r}最高分是{previous}。"
+msgid "The old relaxed best was {previous}."
+msgstr "之前的轻松最高分是{previous}。"
 
-#. placeholders: {r}, {best}
-msgid "Your {r}best on this challenge is {best}."
-msgstr "你在这个挑战的{r}最高分是{best}。"
+#. placeholders: {best}
+msgid "Your relaxed best on this challenge is {best}."
+msgstr "你在这个挑战上的轻松最高分是{best}。"
+
+#. placeholders: {best}
+msgid "Your best on this challenge is {best}."
+msgstr "你在这个挑战上的最高分是{best}。"
 
 #. placeholders: {title}, {score}
 #. one sentence of a longer line
@@ -80298,13 +80601,9 @@ msgstr "心愿桌"
 msgid "countdown night {night}"
 msgstr "倒计时第{night}夜"
 
-#. placeholders: {r}
-msgid "Your first {r}score here is saved."
-msgstr "你在这里的第一个{r}得分已保存。"
-
-#. placeholders: {r}, {best}
-msgid "Your {r}best is {best}."
-msgstr "你的{r}最高分是{best}。"
+#. placeholders: {best}
+msgid "Your relaxed best is {best}."
+msgstr "你的轻松最高分是{best}。"
 
 msgid "Not played yet"
 msgstr "还没玩过"
@@ -80360,18 +80659,53 @@ msgstr "同样的一局，马上开始。只保留你的最好成绩。"
 msgid "Shift {level}"
 msgstr "第{level}班"
 
-#. placeholders: {name}
-msgid ", a {name} in the box"
-msgstr "，盒子里是{name}"
+#. placeholders: {who}, {gift}
+msgid "{who}, on your left, wishes for {gift}."
+msgstr "{who}在你左边，想要{gift}。"
 
-#. placeholders: {name}
-#. one clause of a longer line
-msgid "a {name} in the box"
-msgstr "盒子里是{name}"
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, on your left, wishes for {gift}, a {sound} in the box."
+msgstr "{who}在你左边，想要{gift}，盒子里会发出{sound}。"
 
-#. placeholders: {name}, {place}, {item}, {which}
-msgid "{name}, {place}, wishes for {item}{which}."
-msgstr "{name}在{place}，想要{item}{which}。"
+#. placeholders: {who}, {gift}
+msgid "{who}, on your left, now wishes for {gift}."
+msgstr "{who}在你左边，现在想要{gift}。"
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, on your left, now wishes for {gift}, a {sound} in the box."
+msgstr "{who}在你左边，现在想要{gift}，盒子里会发出{sound}。"
+
+#. placeholders: {who}, {gift}
+msgid "{who}, on your right, wishes for {gift}."
+msgstr "{who}在你右边，想要{gift}。"
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, on your right, wishes for {gift}, a {sound} in the box."
+msgstr "{who}在你右边，想要{gift}，盒子里会发出{sound}。"
+
+#. placeholders: {who}, {gift}
+msgid "{who}, on your right, now wishes for {gift}."
+msgstr "{who}在你右边，现在想要{gift}。"
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, on your right, now wishes for {gift}, a {sound} in the box."
+msgstr "{who}在你右边，现在想要{gift}，盒子里会发出{sound}。"
+
+#. placeholders: {who}, {gift}
+msgid "{who}, straight ahead, wishes for {gift}."
+msgstr "{who}在正前方，想要{gift}。"
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, straight ahead, wishes for {gift}, a {sound} in the box."
+msgstr "{who}在正前方，想要{gift}，盒子里会发出{sound}。"
+
+#. placeholders: {who}, {gift}
+msgid "{who}, straight ahead, now wishes for {gift}."
+msgstr "{who}在正前方，现在想要{gift}。"
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, straight ahead, now wishes for {gift}, a {sound} in the box."
+msgstr "{who}在正前方，现在想要{gift}，盒子里会发出{sound}。"
 
 #. placeholders: {name}
 msgid ""
@@ -80507,29 +80841,36 @@ msgstr "放进退货袋。加{points}分。{rest}"
 msgid "Plus {points}.{rest}"
 msgstr "加{points}分。{rest}"
 
-#. placeholders: {points}
-msgid "Plus {points}."
-msgstr "加{points}分。"
-
 #. placeholders: {who}
 #. one sentence of a longer line
 msgid "{who} is delighted."
 msgstr "{who}高兴极了。"
 
-#. placeholders: {who}, {plus}, {rest}
-msgid "{who} is delighted. {plus}{rest}"
-msgstr "{who}高兴极了。{plus}{rest}"
+#. placeholders: {who}, {points}, {rest}
+msgid "{who} is delighted. Plus {points}.{rest}"
+msgstr "{who}高兴极了。加{points}分。{rest}"
 
+#. placeholders: {penalty}
+#. one sentence of a longer line
+msgid "Minus {penalty}."
+msgstr "扣{penalty}。"
+
+#. one sentence of a longer line
 msgid "Someone wished for that."
 msgstr "有人想要这个。"
 
+#. placeholders: {penalty}
+msgid "Someone wished for that. Minus {penalty}."
+msgstr "有人想要这个。减{penalty}。"
+
 #. placeholders: {who}
+#. one sentence of a longer line
 msgid "{who} didn't wish for that."
 msgstr "{who}没想要这个。"
 
-#. placeholders: {who}, {secs}
-msgid "{who} Minus {secs}."
-msgstr "{who}减{secs}。"
+#. placeholders: {who}, {penalty}
+msgid "{who} didn't wish for that. Minus {penalty}."
+msgstr "{who}没想要这个。减{penalty}。"
 
 msgid "1 second left!"
 msgstr "还剩1秒！"
@@ -80542,14 +80883,9 @@ msgstr "还剩{n}秒！"
 msgid "Change of plans."
 msgstr "改主意了。"
 
-#. placeholders: {name}, {place}, {item}, {which}
-msgid "Change of plans. {name}, {place}, now wishes for {item}{which}."
-msgstr "改主意了。{name}在{place}，现在想要{item}{which}。"
-
-#. placeholders: {name}, {place}, {item}, {which}
-#. one sentence of a longer line
-msgid "{name}, {place}, now wishes for {item}{which}."
-msgstr "{name}在{place}，现在想要{item}{which}。"
+#. placeholders: {wish}
+msgid "Change of plans. {wish}"
+msgstr "改主意了。{wish}"
 
 #. placeholders: {done}
 #. one sentence of a longer line
@@ -80680,9 +81016,14 @@ msgstr "传送带上还没有东西可送。"
 msgid "No return sack this shift."
 msgstr "这一班没有退货袋。"
 
-#. placeholders: {place}
-msgid "Nobody is standing {place}."
-msgstr "{place}没有人。"
+msgid "Nobody is standing on your left."
+msgstr "你左边没有人。"
+
+msgid "Nobody is standing on your right."
+msgstr "你右边没有人。"
+
+msgid "Nobody is standing straight ahead."
+msgstr "正前方没有人。"
 
 msgid "No gift on the belt yet."
 msgstr "传送带上还没有礼物。"
@@ -80691,25 +81032,36 @@ msgstr "传送带上还没有礼物。"
 msgid "Shake it first with {primary}."
 msgstr "先用{primary}摇一摇。"
 
-#. placeholders: {name}, {item}, {name2}, {place}, {spot_key}
+#. placeholders: {sound}, {item}, {who}, {key_send}
 msgid ""
-"That was a {name}, {item} for {name2}: send it {place} with {spot_key}."
-msgstr "那是{name}，是{name2}要的{item}：用{spot_key}送往{place}。"
+"That was a {sound}, {item} for {who}: send it on your left with {key_send}."
+msgstr "刚才是{sound}，是给{who}的{item}：用{key_send}送到你左边。"
 
-#. placeholders: {spot_key}
-#. one sentence of a longer line
-msgid "Nobody wished for it: return sack, with {spot_key}."
-msgstr "没人想要它：用{spot_key}放进退货袋。"
-
-#. placeholders: {name}
-#. one sentence of a longer line
-msgid "That was a {name}."
-msgstr "那是{name}。"
-
-#. placeholders: {name}, {spot_key}
+#. placeholders: {sound}, {item}, {who}, {key_send}
 msgid ""
-"That was a {name}. Nobody wished for it: return sack, with {spot_key}."
-msgstr "那是{name}。没人想要它：用{spot_key}放进退货袋。"
+"That was a {sound}, {item} for {who}: send it on your right with {key_send}."
+msgstr "刚才是{sound}，是给{who}的{item}：用{key_send}送到你右边。"
+
+#. placeholders: {sound}, {item}, {who}, {key_send}
+msgid ""
+"That was a {sound}, {item} for {who}: send it straight ahead with "
+"{key_send}."
+msgstr "刚才是{sound}，是给{who}的{item}：用{key_send}送往正前方。"
+
+#. placeholders: {key_send}
+#. one sentence of a longer line
+msgid "Nobody wished for it: return sack, with {key_send}."
+msgstr "没人想要它：用{key_send}放进退货袋。"
+
+#. placeholders: {sound}
+#. one sentence of a longer line
+msgid "That was a {sound}."
+msgstr "刚才是{sound}。"
+
+#. placeholders: {sound}, {key_send}
+msgid ""
+"That was a {sound}. Nobody wished for it: return sack, with {key_send}."
+msgstr "刚才是{sound}。没人想要它：用{key_send}放进退货袋。"
 
 #. one sentence of a longer line
 msgid "Half points for this gift."
@@ -80719,28 +81071,36 @@ msgstr "这件礼物只得一半分数。"
 msgid "{text} Half points for this gift."
 msgstr "{text}这件礼物只得一半分数。"
 
-#. placeholders: {sentence_start}, {value}, {name}
-msgid "{sentence_start} starts the {value}, {name} repeats the wishes."
-msgstr "{sentence_start}启动{value}，{name}重复心愿。"
+#. placeholders: {key_start}, {key_repeat}
+msgid "{key_start} starts the belt, {key_repeat} repeats the wishes."
+msgstr "{key_start}启动传送带，{key_repeat}重复心愿。"
 
-msgid "belt"
-msgstr "传送带"
-
-#. placeholders: {sentence_start2}, {ahead}, {name}
+#. placeholders: {key_left}, {key_right}
 #. one sentence of a longer line
-msgid "{sentence_start2}{ahead} and {name} send it."
-msgstr "{sentence_start2}{ahead}和{name}送出它。"
+msgid "{key_left} and {key_right} send it."
+msgstr "{key_left}和{key_right}送出。"
 
-#. placeholders: {sentence_start}
+#. placeholders: {key_shake}
 #. one sentence of a longer line
-msgid "{sentence_start} shakes the gift."
-msgstr "{sentence_start}摇一摇礼物。"
+msgid "{key_shake} shakes the gift."
+msgstr "{key_shake}摇一摇礼物。"
 
-#. placeholders: {sentence_start}, {sentence_start2}, {ahead}, {name}
+#. placeholders: {key_shake}, {key_left}, {key_right}
 msgid ""
-"{sentence_start} shakes the gift. {sentence_start2}{ahead} and {name} send "
+"{key_shake} shakes the gift. {key_left} and {key_right} send it. F1 "
+"explains the keys."
+msgstr "{key_shake}摇一摇礼物。{key_left}和{key_right}送出。F1讲解按键。"
+
+#. placeholders: {key_left}, {key_ahead}, {key_right}
+#. one sentence of a longer line
+msgid "{key_left}, {key_ahead} and {key_right} send it."
+msgstr "{key_left}、{key_ahead}和{key_right}送出。"
+
+#. placeholders: {key_shake}, {key_left}, {key_ahead}, {key_right}
+msgid ""
+"{key_shake} shakes the gift. {key_left}, {key_ahead} and {key_right} send "
 "it. F1 explains the keys."
-msgstr "{sentence_start}摇一摇礼物。{sentence_start2}{ahead}和{name}送出它。F1讲解按键。"
+msgstr "{key_shake}摇一摇礼物。{key_left}、{key_ahead}和{key_right}送出。F1讲解按键。"
 
 #. one sentence of a longer line
 msgid "Back on the belt."
@@ -80788,33 +81148,27 @@ msgstr "礼物：没摇过，离边缘{left}秒"
 msgid "Gift: sounds like {name}, {left} seconds to the edge"
 msgstr "礼物：听起来像{name}，离边缘{left}秒"
 
-#. placeholders: {sentence_start2}, {n}, {value3}
 #. one sentence of a longer line
+msgid "Gift Sort briefing."
+msgstr "礼物分拣简报。"
+
+#. placeholders: {start_key}, {repeat_key}, {status_key}
 msgid ""
-"{sentence_start2} repeats the wishes, {n} speaks the {value3}, Escape "
-"pauses."
-msgstr "{sentence_start2}重复心愿，{n}说出{value3}，Escape暂停。"
-
-#. placeholders: {sentence_start}, {value2}
-#. one sentence of a longer line
-msgid "{sentence_start} starts the {value2}."
-msgstr "{sentence_start}启动{value2}。"
-
-#. placeholders: {value}
-#. one sentence of a longer line
-msgid "{value} briefing."
-msgstr "{value}简报。"
-
-#. placeholders: {value}, {sentence_start}, {value2}, {sentence_start2}, {n}, {value3}
-msgid ""
-"{value} briefing. {sentence_start} starts the {value2}. {sentence_start2} "
-"repeats the wishes, {n} speaks the {value3}, Escape pauses."
+"Gift Sort briefing. {start_key} starts the belt. {repeat_key} repeats the "
+"wishes, {status_key} speaks the shift, Escape pauses."
 msgstr ""
-"{value}简报。{sentence_start}启动{value2}。{sentence_start2}重复心愿，{n}说出{value3}，Esc"
-"ape暂停。"
 
-msgid "Gift Sort"
-msgstr "礼物分拣"
+#. placeholders: {repeat_key}, {status_key}
+#. one sentence of a longer line
+msgid ""
+"{repeat_key} repeats the wishes, {status_key} speaks the shift, Escape "
+"pauses."
+msgstr ""
+
+#. placeholders: {start_key}
+#. one sentence of a longer line
+msgid "{start_key} starts the belt."
+msgstr "{start_key}启动传送带。"
 
 #. placeholders: {n}
 msgid ", and {n} drops it in the return sack behind you"
@@ -80861,6 +81215,11 @@ msgid ""
 "and score, {sentence_start5} gives a hint at half points."
 msgstr ""
 "{sentence_start3}重复心愿，{sentence_start4}说时钟和得分，{sentence_start5}给出提示，只得一半分数。"
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid "{sentence_start} shakes the gift."
+msgstr "{sentence_start}摇一摇礼物。"
 
 msgid "Up and Down move between sounds, Enter plays one, Escape goes back."
 msgstr "Up和Down在声音之间移动，Enter播放，Escape返回。"
@@ -81079,6 +81438,9 @@ msgstr "午夜倒计时各夜。"
 #. placeholders: {join}
 msgid "Midnight Countdown by night. {join}"
 msgstr "午夜倒计时各夜。{join}"
+
+msgid "Gift Sort"
+msgstr "礼物分拣"
 
 msgid " Late post tonight: two more letters after your next stack."
 msgstr "今晚有晚班邮件：下一摞之后多两封信。"
@@ -83331,6 +83693,9 @@ msgstr "at符号"
 msgid "tilde"
 msgstr "波浪号"
 
+msgid "star"
+msgstr "星号"
+
 msgid "quote"
 msgstr "引号"
 
@@ -83996,75 +84361,75 @@ msgstr ""
 
 #. placeholders: {rel}
 msgid "{rel} would be written through a link"
-msgstr ""
+msgstr "{rel}会经由链接写入"
 
 msgid "the archive has too many entries"
 msgstr "压缩包的条目太多"
 
 #. placeholders: {name}
 msgid "unsafe entry name {name}"
-msgstr ""
+msgstr "不安全的条目名{name}"
 
 #. placeholders: {name}
 msgid "{name} is a folder and a file"
-msgstr ""
+msgstr "{name}既是文件夹又是文件"
 
 #. placeholders: {name}
 msgid "{name} is larger than its index says"
-msgstr ""
+msgstr "{name}比它的索引说的大"
 
 msgid "the archive unpacks to more than allowed"
 msgstr "压缩包解压后超出允许的大小"
 
 #. placeholders: {name}
 msgid "{name} links outside the update"
-msgstr ""
+msgstr "{name}链接到了更新之外"
 
 #. placeholders: {name}
 msgid "{name} is in the archive twice"
-msgstr ""
+msgstr "{name}在压缩包里出现了两次"
 
 #. placeholders: {path}
 msgid "{path} is a link, which this system's updates do not hold"
-msgstr ""
+msgstr "{path}是一个链接，这个系统的更新不包含链接"
 
 #. placeholders: {name}
 msgid "{name} is not an archive this updater unpacks"
-msgstr ""
+msgstr "{name}不是这个更新程序能解压的压缩包"
 
 msgid "the archive is not the one its index describes"
 msgstr "压缩包与它的索引描述的不一致"
 
 #. placeholders: {name}
 msgid "{name} is not where its index says"
-msgstr ""
+msgstr "{name}不在它的索引说的位置"
 
 #. placeholders: {name}
 msgid "{name} is a link, not a file to reuse"
-msgstr ""
+msgstr "{name}是一个链接，不是可以重用的文件"
 
 #. placeholders: {name}
 msgid "{name} does not match its index"
-msgstr ""
+msgstr "{name}和它的索引不符"
 
 #. placeholders: {name}
 msgid "{name} is not a file, folder or link"
-msgstr ""
+msgstr "{name}不是文件、文件夹或链接"
 
 #. placeholders: {name}
 msgid "{name} is not a file to reuse"
-msgstr ""
+msgstr "{name}不是可以重用的文件"
 
 #. placeholders: {installed}
 msgid "{installed} changed"
 msgstr ""
 
 msgid "an entry's name is not UTF-8"
-msgstr ""
+msgstr "某个条目的名称不是UTF-8"
 
 #. placeholders: {name}, {other}
 msgid "{name} is not a file, folder or link ({other})"
-msgstr ""
+msgstr "{name}不是文件、文件夹或链接({other})"
 
 #. placeholders: {code}
 msgid "the server answered {code}"
@@ -84097,7 +84462,7 @@ msgid "cookie"
 msgstr ""
 
 msgid "an empty range"
-msgstr ""
+msgstr "一个空范围"
 
 msgid "Range"
 msgstr ""
@@ -84119,7 +84484,7 @@ msgid "central directory"
 msgstr ""
 
 msgid "too many entries"
-msgstr ""
+msgstr "条目太多"
 
 #. placeholders: {path}
 msgid "entry {path}"
@@ -84127,11 +84492,11 @@ msgstr ""
 
 #. placeholders: {path}
 msgid "entry {path} is out of place"
-msgstr ""
+msgstr "条目{path}位置不对"
 
 msgid ""
 "the zip starts part-way into its file, which the index does not describe"
-msgstr ""
+msgstr "zip从文件中途开始，索引没有描述这种情况"
 
 msgid "could not make a folder for the update"
 msgstr "无法为更新创建文件夹"
@@ -84141,17 +84506,17 @@ msgstr ""
 
 #. placeholders: {exe}
 msgid "the update's app has no {exe}"
-msgstr ""
+msgstr "更新里的应用没有{exe}"
 
 #. placeholders: {exe}
 msgid "the update has no {exe}"
-msgstr ""
+msgstr "更新里没有{exe}"
 
 msgid "the update holds no single app"
 msgstr "更新里没有单个应用"
 
 msgid "cannot copy a link"
-msgstr ""
+msgstr "无法复制链接"
 
 #. placeholders: {public}
 msgid "SecretKey(hidden, public {public})"
@@ -84169,7 +84534,7 @@ msgstr "清单没有签名"
 
 #. placeholders: {k}
 msgid "the manifest is signed by another key ({k})"
-msgstr ""
+msgstr "清单由另一把密钥签名({k})"
 
 msgid "the manifest's signature does not match this game's key"
 msgstr "清单的签名与这个游戏的密钥不符"
@@ -84206,50 +84571,50 @@ msgid "the check was canceled"
 msgstr "检查已取消"
 
 msgid "a kept file's path is not text"
-msgstr ""
+msgstr "某个保留文件的路径不是文本"
 
 msgid "an unsafe kept path"
-msgstr ""
+msgstr "不安全的保留路径"
 
 #. placeholders: {status}
 msgid "the server answered {status} to a range"
-msgstr ""
+msgstr "服务器对范围请求返回了{status}"
 
 msgid "no Content-Range"
 msgstr ""
 
 #. placeholders: {start}, {end}, {size}, {header}
 msgid "asked for bytes {start}-{end} of {size}, got {header}"
-msgstr ""
+msgstr "请求了{size}字节中的第{start}-{end}字节，收到的是{header}"
 
 #. placeholders: {length}
 msgid "a range declared {length} bytes"
-msgstr ""
+msgstr "一个声明为{length}字节的范围"
 
 msgid "the plan is for another archive"
-msgstr ""
+msgstr "这个计划是给另一个压缩包的"
 
 msgid "a range outside the archive"
-msgstr ""
+msgstr "超出压缩包的范围"
 
 msgid "this connection does not ask for ranges"
-msgstr ""
+msgstr "这个连接不请求范围"
 
 #. placeholders: {got}, {len}
 msgid "a range sent {got} of {len} bytes"
-msgstr ""
+msgstr "一个范围发送了{len}字节中的{got}字节"
 
 msgid "a kept file is not in the index"
-msgstr ""
+msgstr "某个保留文件不在索引里"
 
 msgid "a kept file's header does not fit"
-msgstr ""
+msgstr "某个保留文件的文件头对不上"
 
 msgid "a kept file is past the central directory"
-msgstr ""
+msgstr "某个保留文件在中央目录之后"
 
 msgid "the central directory is not the signed one"
-msgstr ""
+msgstr "中央目录不是签过名的那个"
 
 msgid "macos"
 msgstr ""
@@ -84283,7 +84648,7 @@ msgid "assets"
 msgstr ""
 
 msgid "the query is not plain names"
-msgstr ""
+msgstr "查询不是纯名称"
 
 #. A menu row's position, said after whichever row has focus (Hearken).
 msgid "{position} of {count}."
@@ -84304,6 +84669,579 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "Spoken call-outs: {else}"
+#~ msgstr "语音播报：{else}"
+
+#~ msgid "Keep your songs: {else}"
+#~ msgstr "保存歌曲：{else}"
+
+#~ msgid "Lane {lane} of {lanes}{else}, basket {basket} of {capacity}."
+#~ msgstr "第{lane}道，共{lanes}道{else}，篮子里{basket}个，能装{capacity}个。"
+
+#~ msgid ", at the cart"
+#~ msgstr "，在推车旁"
+
+#~ msgid "at the cart"
+#~ msgstr "在推车旁"
+
+#~ msgid "Round bonus {bonus}{else}."
+#~ msgstr "本轮奖励{bonus}{else}。"
+
+#~ msgid ""
+#~ "Round {round} cleared. You banked {eggs_phrase}. Round bonus {bonus}{else}. "
+#~ "Score {score}."
+#~ msgstr "第{round}轮过关。你存了{eggs_phrase}。本轮奖励{bonus}{else}。得分{score}。"
+
+#~ msgid ", with the perfect round bonus for no cracked eggs"
+#~ msgstr "，含没有碎蛋的完美奖励"
+
+#~ msgid "with the perfect round bonus for no cracked eggs"
+#~ msgstr "含没有碎蛋的完美奖励"
+
+#~ msgid "Banked {eggs_phrase}, {points} points{else}."
+#~ msgstr "存入{eggs_phrase}，{points}分{else}。"
+
+#~ msgid "Banked {eggs_phrase}, {points} points{else}. Score {score}."
+#~ msgstr "存入{eggs_phrase}，{points}分{else}。得分{score}。"
+
+#~ msgid ", with the full basket bonus"
+#~ msgstr "，含满篮奖励"
+
+#~ msgid "with the full basket bonus"
+#~ msgstr "含满篮奖励"
+
+#~ msgid "Solved in {rows} {else}."
+#~ msgstr "用{rows}{else}解开。"
+
+#~ msgid "Solved in {rows} {else}. {points}."
+#~ msgstr "用{rows}{else}解开。{points}。"
+
+#~ msgid "row"
+#~ msgstr "排"
+
+#~ msgid "rows"
+#~ msgstr "排"
+
+#~ msgid "{places} places, {bells} bells to choose from, {else}, {rows} rows"
+#~ msgstr "{places}个位置，从{bells}口钟里选，{else}，{rows}排"
+
+#~ msgid "a bell may come twice"
+#~ msgstr "一口钟可能出现两次"
+
+#~ msgid "no bell twice"
+#~ msgstr "没有钟出现两次"
+
+#~ msgid "{flocks} flocks flying {else}"
+#~ msgstr "{flocks}群鸟往{else}飞"
+
+#~ msgid "relaxed "
+#~ msgstr "轻松"
+
+#~ msgid "Your first {relaxed}endless ride here."
+#~ msgstr "你在这里的第一次{relaxed}无尽骑行。"
+
+#~ msgid "Your first {relaxed}ride {NAME} here."
+#~ msgstr "你在这里的第一次{relaxed}{NAME}骑行。"
+
+#~ msgid ""
+#~ "Locker drops: {lockers}. Quick drops: {quick}. {else} {sentence_start} "
+#~ "earned. You have {dollar_words} to spend in the bike shop."
+#~ msgstr ""
+#~ "快递柜投递：{lockers}次。快速投递：{quick}次。{else}赚了{sentence_start}。你有{dollar_words}可以在车"
+#~ "行花。"
+
+#~ msgid "You have {dollar_words} to spend in the bike shop."
+#~ msgstr "你有{dollar_words}可以在车行花。"
+
+#~ msgid "{else} {sentence_start} earned."
+#~ msgstr "{else}赚了{sentence_start}。"
+
+#~ msgid "{sentence_start} lost to crashes."
+#~ msgstr "撞车损失了{sentence_start}。"
+
+#~ msgid "Your first {relaxed}{name}."
+#~ msgstr "你的第一次{relaxed}{name}。"
+
+#~ msgid "Your first {relaxed}time on {name} on the {name2}."
+#~ msgstr "你第一次{relaxed}骑{name2}跑{name}的时间。"
+
+#~ msgid "Puzzle: {kind_name}{else}."
+#~ msgstr "谜题：{kind_name}{else}。"
+
+#~ msgid ", solved"
+#~ msgstr "，已解开"
+
+#~ msgid "solved"
+#~ msgstr "已解开"
+
+#~ msgid " relaxed"
+#~ msgstr "轻松"
+
+#~ msgid " A new{relaxed} best time for this floor, beating {time_short}."
+#~ msgstr "这一层新的{relaxed}最佳时间，超过了{time_short}。"
+
+#~ msgid " Your first{relaxed} time on this floor."
+#~ msgstr "你在这一层的第一个{relaxed}时间。"
+
+#~ msgid " Your{relaxed} best here is {time_short}."
+#~ msgstr "你在这里的{relaxed}最佳时间是{time_short}。"
+
+#~ msgid "Back to your hamlet. {settlers} {else} live there."
+#~ msgstr "回到你的小村。这里住着{settlers}位{else}。"
+
+#~ msgid "{settlers} {else} live there."
+#~ msgstr "这里住着{settlers}位{else}。"
+
+#~ msgid "Settlers' tune: {else}"
+#~ msgstr "村民的乐曲：{else}"
+
+#~ msgid "Work from along the lane: {else}"
+#~ msgstr "小路上的干活声：{else}"
+
+#~ msgid "Buy {what}, {price} {else}"
+#~ msgstr "买{what}，{price}枚{else}"
+
+#~ msgid "coin"
+#~ msgstr "硬币"
+
+#~ msgid "coins"
+#~ msgstr "硬币"
+
+#~ msgid "{sentence_case}, {n}, {price} {else} each"
+#~ msgstr "{sentence_case}，{n}，每件{price}枚{else}"
+
+#~ msgid "{has} wood, {has2} stone, {count}, {coins} {else}."
+#~ msgstr "木头{has}，石头{has2}，{count}，{coins}枚{else}。"
+
+#~ msgid "{left} {else} of work left."
+#~ msgstr "还剩{left}{else}的活。"
+
+#~ msgid "{sentence_case}, going up."
+#~ msgstr "{sentence_case}，正在盖。"
+
+#~ msgid "{sentence_case}, going up. {left} {else} of work left."
+#~ msgstr "{sentence_case}，正在盖。还剩{left}{else}的活。"
+
+#~ msgid "hour"
+#~ msgstr "小时"
+
+#~ msgid "hours"
+#~ msgstr "小时"
+
+#~ msgid "{n} for {n2} {else}"
+#~ msgstr "{n2}{else}，得{n}分"
+
+#~ msgid "buildings"
+#~ msgstr "座建筑"
+
+#~ msgid "{spare} for {spare2} {else} to spare"
+#~ msgstr "{spare2}{else}富余，得{spare}分"
+
+#~ msgid "{sentence_case} is going up, {left} {else} of work left."
+#~ msgstr "{sentence_case}正在盖，还剩{left}{else}的活。"
+
+#~ msgid "Freestyle show complete. You launched {n} firework{s_ending}."
+#~ msgstr "自由编排表演完成。你发射了{n}枚烟花。"
+
+#~ msgid "You launched {n} firework{s_ending}."
+#~ msgstr "你发射了{n}枚烟花。"
+
+#~ msgid "Gentle streams: {else}"
+#~ msgstr "平缓溪流：{else}"
+
+#~ msgid "Say trinket names: {else}"
+#~ msgstr "说出小物件名称：{else}"
+
+#~ msgid "Banks louder up close: {else}"
+#~ msgstr "靠近时河岸更响：{else}"
+
+#~ msgid "Bank close on your {else}."
+#~ msgstr "河岸靠近你的{else}边。"
+
+#~ msgid "Mill wheel on the {else} side: keep {else2}."
+#~ msgstr "水车在{else}侧：靠{else2}。"
+
+#~ msgid "{scraps2} in all."
+#~ msgstr "总共{scraps2}。"
+
+#~ msgid "{name}, {credits} credits and {parts} part{s_ending}"
+#~ msgstr "{name}，{credits}信用点和{parts}零件"
+
+#~ msgid "Story logs recovered {logs_recovered} of {total_logs}. {else}"
+#~ msgstr "找回故事日志{logs_recovered}，共{total_logs}。{else}"
+
+#~ msgid "{left} shield{s_ending} left."
+#~ msgstr "还剩{left}个护盾。"
+
+#~ msgid "{message} Shield absorbed it. {left} shield{s_ending} left."
+#~ msgstr "{message}护盾挡住了。还剩{left}个护盾。"
+
+#~ msgid "Your first recorded {r}result."
+#~ msgstr "你第一次记录的{r}成绩。"
+
+#~ msgid "A new {r}best, beating {previous}."
+#~ msgstr "新的{r}最高分，超过了{previous}。"
+
+#~ msgid "Your {r}best stays {best}."
+#~ msgstr "你的{r}最高分仍是{best}。"
+
+#~ msgid "Score 0, so nothing goes on the {board} board."
+#~ msgstr "得分为0，所以不会上{board}排行榜。"
+
+#~ msgid "First score on the {board} board: {score}."
+#~ msgstr "{board}排行榜上的第一个得分：{score}。"
+
+#~ msgid "New best on the {board} board: {score}, beating {previous}."
+#~ msgstr "{board}排行榜上的新最高分：{score}，超过了{previous}。"
+
+#~ msgid "{sentence_start} best stays {best}."
+#~ msgstr "{sentence_start}最高分仍是{best}。"
+
+#~ msgid "{points_words}, your first {relaxed}score."
+#~ msgstr "{points_words}，你的第一个{relaxed}得分。"
+
+#~ msgid "{sentence}, locked: {n} more {else}"
+#~ msgstr "{sentence}，未解锁：还差{n}{else}"
+
+#~ msgid "stars"
+#~ msgstr "颗星"
+
+#~ msgid "day {day}, {plants} {else}, {harvests} {else2}"
+#~ msgstr "第{day}天，{plants}{else}，{harvests}{else2}"
+
+#~ msgid "plants"
+#~ msgstr "株植物"
+
+#~ msgid ""
+#~ "Bests. Most harvests: {harvests}. Fullest harmony: {harmony} {else}. "
+#~ "Longest garden: {days} {else2}. Seeds unlocked: {seeds_open} of {ALL}."
+#~ msgstr ""
+#~ "最高纪录。最多收获：{harvests}。最丰满的和声：{harmony}{else}。最长的花园：{days}{else2}。已解锁种子：{seeds"
+#~ "_open}种，共{ALL}种。"
+
+#~ msgid "Fullest harmony: {harmony} {else}."
+#~ msgstr "最丰满的和声：{harmony}{else}。"
+
+#~ msgid "Longest garden: {days} {else2}."
+#~ msgstr "最长的花园：{days}{else2}。"
+
+#~ msgid "Seeds unlocked: {seeds_open} of {ALL}."
+#~ msgstr "已解锁种子：{seeds_open}种，共{ALL}种。"
+
+#~ msgid "part"
+#~ msgstr "个声部"
+
+#~ msgid "parts"
+#~ msgstr "个声部"
+
+#~ msgid "{n} more {else} to unlock"
+#~ msgstr "还差{n}{else}解锁"
+
+#~ msgid "fill {n} more {else}"
+#~ msgstr "再完成{n}{else}"
+
+#~ msgid "request"
+#~ msgstr "个请求"
+
+#~ msgid "requests"
+#~ msgstr "个请求"
+
+#~ msgid " Harmony: {parts} {else}, {list}."
+#~ msgstr "和声：{parts}{else}，{list}。"
+
+#~ msgid "Hints cost five seconds.{else}"
+#~ msgstr "每次提示扣五秒。{else}"
+
+#~ msgid ""
+#~ "Time attack, safe {n}: {name}. {sentence_start} on the clock. Hints cost "
+#~ "five seconds.{else}"
+#~ msgstr "计时挑战，第{n}个保险柜：{name}。时钟上有{sentence_start}。每次提示扣五秒。{else}"
+
+#~ msgid "{sentence_start} on the clock."
+#~ msgstr "时钟上有{sentence_start}。"
+
+#~ msgid " The clock stops while the guard listens at the door."
+#~ msgstr "保安在门口听的时候，时钟会停下。"
+
+#~ msgid ", {decoys} false gate{s_ending} a wheel"
+#~ msgstr "，每个转轮{decoys}个假锁口"
+
+#~ msgid " Your first {relaxed}time on the board."
+#~ msgstr "你第一次有{relaxed}时间上了排行榜。"
+
+#~ msgid "{decoys} false gate{s_ending} a wheel"
+#~ msgstr "每个转轮{decoys}个假锁口"
+
+#~ msgid "{points_words}, your first {r}score."
+#~ msgstr "{points_words}，你的第一个{r}得分。"
+
+#~ msgid "{points_words}, a new {r}best, beating {previous}."
+#~ msgstr "{points_words}，新的{r}最高分，超过了{previous}。"
+
+#~ msgid "{points_words}. Your {r}best is {best}."
+#~ msgstr "{points_words}。你的{r}最高分是{best}。"
+
+#~ msgid "longest {r}run"
+#~ msgstr "{r}最长连续"
+
+#~ msgid "Window reached: {window_words}, your shortest {r}window yet."
+#~ msgstr "达到的窗口：{window_words}，你目前最短的{r}窗口。"
+
+#~ msgid "{points_words}, your first {r}steam gala score."
+#~ msgstr "{points_words}，你的第一个{r}蒸汽节得分。"
+
+#~ msgid "{points_words}, a new {r}steam gala best, beating {previous}."
+#~ msgstr "{points_words}，新的{r}蒸汽节最高分，超过了{previous}。"
+
+#~ msgid "Your {r}steam gala best is {best}."
+#~ msgstr "你的{r}蒸汽节最高分是{best}。"
+
+#~ msgid "{points_words}. Your {r}steam gala best is {best}."
+#~ msgstr "{points_words}。你的{r}蒸汽节最高分是{best}。"
+
+#~ msgid "Engine: {else}"
+#~ msgstr "引擎：{else}"
+
+#~ msgid "Expedition over after {surfaced} {else}, no coins."
+#~ msgstr "探险在{surfaced}{else}后结束，没有硬币。"
+
+#~ msgid "dive"
+#~ msgstr "次下潜"
+
+#~ msgid "dives"
+#~ msgstr "次下潜"
+
+#~ msgid "Expedition over. Surfaced {surfaced} {else}, {score} coins banked."
+#~ msgstr "探险结束。浮出水面{surfaced}{else}，存入{score}枚硬币。"
+
+#~ msgid "Surfaced {surfaced} {else}, {score} coins banked."
+#~ msgstr "浮出水面{surfaced}{else}，存入{score}枚硬币。"
+
+#~ msgid "time"
+#~ msgstr "次"
+
+#~ msgid "times"
+#~ msgstr "次"
+
+#~ msgid "That makes {total} {else} on the {name} in {year}."
+#~ msgstr "{year}年你对{name}一共许了{total}{else}。"
+
+#~ msgid "That makes {total} {else} on the {name} in {year}. {coming}"
+#~ msgstr "{year}年你对{name}一共许了{total}{else}。{coming}"
+
+#~ msgid "wishes"
+#~ msgstr "个愿望"
+
+#~ msgid "That last call was the {name}.{else}"
+#~ msgstr "刚才叫的是{name}。{else}"
+
+#~ msgid " It is shy."
+#~ msgstr "它很害羞。"
+
+#~ msgid "First {relaxed}{name} score saved: {score}."
+#~ msgstr "首个{relaxed}{name}得分已保存：{score}。"
+
+#~ msgid "New {relaxed}best {name} score: {score}, beating {previous}."
+#~ msgstr "新的{relaxed}{name}最高分：{score}，超过了{previous}。"
+
+#~ msgid "Your {relaxed}best {name} score stays {best}."
+#~ msgstr "你的{relaxed}{name}最高分仍是{best}。"
+
+#~ msgid "First {relaxed}time on {name}: {secs} seconds."
+#~ msgstr "首次{relaxed}走完{name}：{secs}秒。"
+
+#~ msgid ""
+#~ "New {relaxed}best time on {name}: {secs} seconds, beating {previous}."
+#~ msgstr "{name}新的{relaxed}最佳时间：{secs}秒，超过了{previous}。"
+
+#~ msgid "Step {pos} of {steps}, {lean_words}{else}."
+#~ msgstr "第{pos}步，共{steps}步，{lean_words}{else}。"
+
+#~ msgid ", crouching"
+#~ msgstr "，蹲着"
+
+#~ msgid "crouching"
+#~ msgstr "蹲着"
+
+#~ msgid "Your first {r}result on this challenge: {score}."
+#~ msgstr "你在这个挑战的第一个{r}成绩：{score}。"
+
+#~ msgid "A new {r}best."
+#~ msgstr "新的{r}最高分。"
+
+#~ msgid "A new {r}best. The old {r}best was {previous}."
+#~ msgstr "新的{r}最高分。原来的{r}最高分是{previous}。"
+
+#~ msgid "The old {r}best was {previous}."
+#~ msgstr "原来的{r}最高分是{previous}。"
+
+#~ msgid "Your {r}best on this challenge is {best}."
+#~ msgstr "你在这个挑战的{r}最高分是{best}。"
+
+#~ msgid "Your first {r}score here is saved."
+#~ msgstr "你在这里的第一个{r}得分已保存。"
+
+#~ msgid "Your {r}best is {best}."
+#~ msgstr "你的{r}最高分是{best}。"
+
+#~ msgid ""
+#~ "{sentence_start2} repeats the wishes, {n} speaks the {value3}, Escape "
+#~ "pauses."
+#~ msgstr "{sentence_start2}重复心愿，{n}说出{value3}，Escape暂停。"
+
+#~ msgid "{sentence_start} starts the {value2}."
+#~ msgstr "{sentence_start}启动{value2}。"
+
+#~ msgid "{value} briefing."
+#~ msgstr "{value}简报。"
+
+#~ msgid ""
+#~ "{value} briefing. {sentence_start} starts the {value2}. {sentence_start2} "
+#~ "repeats the wishes, {n} speaks the {value3}, Escape pauses."
+#~ msgstr ""
+#~ "{value}简报。{sentence_start}启动{value2}。{sentence_start2}重复心愿，{n}说出{value3}，Esc"
+#~ "ape暂停。"
+
+#~ msgid "belt"
+#~ msgstr "传送带"
+
+#~ msgid "{name} is {days_phrase}."
+#~ msgstr "{name}就在{days_phrase}。"
+
+#~ msgid ", 1 event today"
+#~ msgstr "，今天1个活动"
+
+#~ msgid "1 event today"
+#~ msgstr "今天1个活动"
+
+#~ msgid ", {n} events today"
+#~ msgstr "，今天{n}个活动"
+
+#~ msgid "{n} events today"
+#~ msgstr "今天{n}个活动"
+
+#~ msgid "{name}, {after_comma} today"
+#~ msgstr "{name}，今天{after_comma}"
+
+#~ msgid "Solved in {rows} {else}. {points}"
+#~ msgstr "用{rows}{else}解开。{points}"
+
+#~ msgid ""
+#~ "Solved in {rows} {else}. The peal is {row_words}, and the bells ring it out."
+#~ msgstr "用{rows}{else}解开。钟序是{row_words}，钟声把它敲了出来。"
+
+#~ msgid "The peal is {row_words}, and the bells ring it out."
+#~ msgstr "钟序是{row_words}，钟声把它敲了出来。"
+
+#~ msgid "holding {held_words}"
+#~ msgstr "拿着{held_words}"
+
+#~ msgid "on pile {pile}"
+#~ msgstr "在第{pile}列上"
+
+#~ msgid "on the stock"
+#~ msgstr "在牌库上"
+
+#~ msgid "on the {foundation}"
+#~ msgstr "在{foundation}上"
+
+#~ msgid "the bike lane"
+#~ msgstr "自行车道"
+
+#~ msgid "the left of the traffic lane, near the centre line"
+#~ msgstr "行车道左侧，靠近中线"
+
+#~ msgid "{turn} turn in {distance}."
+#~ msgstr "{distance}后{turn}转。"
+
+#~ msgid "{turn} turn in {distance}. {be_in} {position}{speed}"
+#~ msgstr "{distance}后{turn}转。{be_in}{position}{speed}"
+
+#~ msgid "{sentence_start} turn in {metres_words}."
+#~ msgstr "{metres_words}后{sentence_start}转弯。"
+
+#~ msgid "Turned {word}."
+#~ msgstr "{word}转了。"
+
+#~ msgid "Be in {place}."
+#~ msgstr "要在{place}。"
+
+#~ msgid "Ran wide, wrong side for a {word} turn."
+#~ msgstr "转得太大，{word}转弯走错了一侧。"
+
+#~ msgid "Ran wide, wrong side for a {word} turn. Be in {place}."
+#~ msgstr "转得太大，{word}转弯走错了一侧。要在{place}。"
+
+#~ msgid "Be in {lane}, under {limit}."
+#~ msgstr "要在{lane}，低于{limit}。"
+
+#~ msgid ", most lanterns in a night {n}"
+#~ msgstr "，一夜最多灯笼{n}盏"
+
+#~ msgid "most lanterns in a night {n}"
+#~ msgstr "一夜最多灯笼{n}盏"
+
+#~ msgid ", best {n} lanterns"
+#~ msgstr "，最多{n}盏灯笼"
+
+#~ msgid "best {n} lanterns"
+#~ msgstr "最多{n}盏灯笼"
+
+#~ msgid "Free paddle{best}"
+#~ msgstr "自由划船{best}"
+
+#~ msgid "{PLAY}, night {next}{most}"
+#~ msgstr "{PLAY}，第{next}夜{most}"
+
+#~ msgid ", a {name} in the box"
+#~ msgstr "，盒子里是{name}"
+
+#~ msgid "a {name} in the box"
+#~ msgstr "盒子里是{name}"
+
+#~ msgid "{name}, {place}, wishes for {item}{which}."
+#~ msgstr "{name}在{place}，想要{item}{which}。"
+
+#~ msgid "{who} is delighted. {plus}{rest}"
+#~ msgstr "{who}高兴极了。{plus}{rest}"
+
+#~ msgid "{who} Minus {secs}."
+#~ msgstr "{who}减{secs}。"
+
+#~ msgid "Change of plans. {name}, {place}, now wishes for {item}{which}."
+#~ msgstr "改主意了。{name}在{place}，现在想要{item}{which}。"
+
+#~ msgid "{name}, {place}, now wishes for {item}{which}."
+#~ msgstr "{name}在{place}，现在想要{item}{which}。"
+
+#~ msgid "Nobody is standing {place}."
+#~ msgstr "{place}没有人。"
+
+#~ msgid ""
+#~ "That was a {name}, {item} for {name2}: send it {place} with {spot_key}."
+#~ msgstr "那是{name}，是{name2}要的{item}：用{spot_key}送往{place}。"
+
+#~ msgid "Nobody wished for it: return sack, with {spot_key}."
+#~ msgstr "没人想要它：用{spot_key}放进退货袋。"
+
+#~ msgid "That was a {name}."
+#~ msgstr "那是{name}。"
+
+#~ msgid ""
+#~ "That was a {name}. Nobody wished for it: return sack, with {spot_key}."
+#~ msgstr "那是{name}。没人想要它：用{spot_key}放进退货袋。"
+
+#~ msgid "{sentence_start} starts the {value}, {name} repeats the wishes."
+#~ msgstr "{sentence_start}启动{value}，{name}重复心愿。"
+
+#~ msgid "{sentence_start2}{ahead} and {name} send it."
+#~ msgstr "{sentence_start2}{ahead}和{name}送出它。"
+
+#~ msgid ""
+#~ "{sentence_start} shakes the gift. {sentence_start2}{ahead} and {name} send "
+#~ "it. F1 explains the keys."
+#~ msgstr "{sentence_start}摇一摇礼物。{sentence_start2}{ahead}和{name}送出它。F1讲解按键。"
 
 #~ msgid "Next: {name}, {lower_first}"
 #~ msgstr "下一个：{name}，{lower_first}"
@@ -84421,9 +85359,6 @@ msgstr "Theo"
 #~ "a short high beep on the Tranquility pad. It stands for the radio click: a "
 #~ "call-out follows."
 #~ msgstr "静海着陆台上一声短促的高音哔。它代替无线电咔嗒声：后面跟着一条播报。"
-
-#~ msgid "{who} is delighted. Plus {points}.{rest}"
-#~ msgstr "{who}高兴极了。加{points}分。{rest}"
 
 #~ msgid "relaxed {word} {v}"
 #~ msgstr "轻松{word}{v}"

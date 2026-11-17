@@ -340,17 +340,18 @@ impl PlayScreen {
         let t = &self.game.table;
         let mut first = Vec::new();
         if self.held.is_some() {
-            first.push(format!("holding {}", self.held_words()));
+            let held_words = self.held_words();
+            first.push(format!("Holding {held_words}."));
         }
         first.push(match spot_of(self.cursor) {
             Spot::Pile(p) => {
                 let pile = p + 1;
-                format!("on pile {pile}")
+                format!("On pile {pile}.")
             }
-            Spot::Waste => "on the stock".to_string(),
+            Spot::Waste => "On the stock.".to_string(),
             _ => {
                 let foundation = place_name(self.cursor).to_lowercase();
-                format!("on the {foundation}")
+                format!("On the {foundation}.")
             }
         });
         let mut more = vec![
@@ -369,7 +370,7 @@ impl PlayScreen {
             }
         }
         vec![
-            format!("{}.", sentence_start(&first.join(", "))),
+            first.join(" "),
             format!("{}.", sentence_start(&more.join(", "))),
         ]
     }
@@ -624,7 +625,8 @@ impl PlayScreen {
         self.held = Some((spot, count));
         let first = cards[cards.len() - count];
         sound::card(ctx, first.suit);
-        ctx.say(format!("Holding {}.", self.held_words()));
+        let held_words = self.held_words();
+        ctx.say(format!("Holding {held_words}."));
         if !self.told_hold {
             self.told_hold = true;
             let p = ctx.control_name(ParlorAction::Primary);

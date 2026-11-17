@@ -1435,10 +1435,11 @@ impl Run {
         }
         let (side, d) = self.nearest_bank();
         if d <= BANK_CLOSE {
-            first.push(format!(
-                "Bank close on your {}.",
-                if side < 0 { "left" } else { "right" }
-            ));
+            first.push(if side < 0 {
+                "Bank close on your left.".to_string()
+            } else {
+                "Bank close on your right.".to_string()
+            });
         }
         if self.course.mode.scored() {
             first.push(format!(
@@ -1483,11 +1484,10 @@ impl Run {
             Some(t) => {
                 let x = t.x_at(self.beat_pos());
                 match t.kind {
-                    Kind::Mill => format!(
-                        "Mill wheel on the {} side: keep {}.",
-                        if t.side < 0 { "left" } else { "right" },
-                        if t.side < 0 { "right" } else { "left" }
-                    ),
+                    Kind::Mill if t.side < 0 => {
+                        "Mill wheel on the left side: keep right.".to_string()
+                    }
+                    Kind::Mill => "Mill wheel on the right side: keep left.".to_string(),
                     Kind::Stone => format!("Stone {}: steer clear.", self.side_words(x)),
                     Kind::Duck => format!("Duck {}: steer clear.", self.side_words(x)),
                     Kind::Falls => format!("Waterfall {}: aim for the rush.", self.side_words(x)),

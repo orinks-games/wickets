@@ -217,7 +217,7 @@ fn a_kind_left_out_in_preferences_leaves_events_but_not_play() {
     assert!(
         games
             .iter()
-            .any(|r| r == "Cupid's Quiver, Valentine's night today"),
+            .any(|r| r == "Cupid's Quiver, today: Valentine's night"),
         "{games:?}"
     );
 }

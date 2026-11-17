@@ -152,17 +152,18 @@ impl TitleGame for LanternLake {
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
         let j = Journal::load(ctx);
         let next = j.next_night();
-        let most = match Records::best(ctx, ID, "lanterns") {
-            Some(n) => format!(", most lanterns in a night {n}"),
-            None => String::new(),
+        let play = match Records::best(ctx, ID, "lanterns") {
+            Some(most) => format!("Play, night {next}, most lanterns in a night {most}"),
+            None => format!("Play, night {next}"),
         };
         let free = if j.free_open() {
-            let best = match Records::best(ctx, ID, "free") {
-                Some(n) => format!(", best {n} lanterns"),
-                None => String::new(),
+            let label = match Records::best(ctx, ID, "free") {
+                Some(1) => "Free paddle, best 1 lantern".to_string(),
+                Some(best) => format!("Free paddle, best {best} lanterns"),
+                None => "Free paddle".to_string(),
             };
             MenuItem::new(
-                format!("Free paddle{best}"),
+                label,
                 |s: &mut Title, ctx: &mut Ctx<Parlor>| start(ctx, s.game.launch(Mode::Free), false),
             )
             .help("A wide lake where a new lantern appears whenever you gather one. Stay as long as you like.")
@@ -197,7 +198,7 @@ impl TitleGame for LanternLake {
         };
         let mut rows = vec![
             MenuItem::new(
-                format!("{}, night {next}{most}", labels::PLAY),
+                play,
                 move |s: &mut Title, ctx: &mut Ctx<Parlor>| {
                     start(ctx, s.game.launch(Mode::Night(next)), false)
                 },

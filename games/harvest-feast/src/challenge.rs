@@ -567,12 +567,13 @@ pub fn finish(
         }
     }
     if plan.twist.is_none() {
-        summary.push_str(&format!(
-            " {} golden {}, {} points.",
-            score.plates,
-            if score.plates == 1 { "plate" } else { "plates" },
-            score.plates as u64 * GOLDEN_POINTS
-        ));
+        let plates = score.plates;
+        let points = plates as u64 * GOLDEN_POINTS;
+        summary.push_str(&if plates == 1 {
+            format!(" 1 golden plate, {points} points.")
+        } else {
+            format!(" {plates} golden plates, {points} points.")
+        });
     }
     summary.push_str(&format!(" {} points", score.points));
     if by_ear {

@@ -123,7 +123,11 @@ impl Entry {
     /// twelve minutes, as you heard it."
     pub fn about(&self, game_name: &str) -> String {
         let when = part_of_day(self.hour).to_lowercase();
-        let cut = if self.cut { " The first hour of it." } else { "" };
+        let cut = if self.cut {
+            " The first hour of it."
+        } else {
+            ""
+        };
         format!(
             "Your {game_name} run on the {when} of {}, {}, as you heard it.{cut}",
             crate::soundtrack::date_words(self.date()),
@@ -412,7 +416,13 @@ pub fn tracks_for(ctx: &mut Ctx<Parlor>, games: &[(&str, &str)]) -> Vec<Track> {
 pub fn row() -> SettingsRow<Parlor> {
     crate::menus::settings::toggle(
         ROW_ID,
-        |on| format!("Keep your songs: {}", if on { "on" } else { "off" }),
+        |on| {
+            if on {
+                "Keep your songs: on".to_string()
+            } else {
+                "Keep your songs: off".to_string()
+            }
+        },
         keeping,
         set_keeping,
         |_ctx, on| {
@@ -462,7 +472,11 @@ mod tests {
     /// A run of `seconds` with one loop on the music bus.
     fn run(h: &mut Headless<Parlor>, seconds: f64) {
         begin(&mut h.app.ctx);
-        let s = h.app.ctx.audio.start_loop("tide-pools/score/base", None, Bus::MUSIC);
+        let s = h
+            .app
+            .ctx
+            .audio
+            .start_loop("tide-pools/score/base", None, Bus::MUSIC);
         h.frame(seconds);
         h.app.ctx.audio.stop(s, 300);
     }
@@ -472,7 +486,13 @@ mod tests {
         let mut h = open();
         run(&mut h, 25.0);
         let kept = end(&mut h.app.ctx, "tide-pools").expect("kept");
-        assert_eq!(kept, Kept { game: "tide-pools".into(), n: 1 });
+        assert_eq!(
+            kept,
+            Kept {
+                game: "tide-pools".into(),
+                n: 1
+            }
+        );
         assert!(end(&mut h.app.ctx, "tide-pools").is_none(), "ended twice");
         let path = file(&h.app.ctx, "tide-pools", 1);
         assert!(path.is_file(), "{}", path.display());
@@ -483,7 +503,10 @@ mod tests {
             entries[0].about("Tide Pools"),
             "Your Tide Pools run on the evening of 9 November 2026, under a minute, as you heard it."
         );
-        assert_eq!(fresh_for(&h.app.ctx, "tide-pools_results"), Some(kept.clone()));
+        assert_eq!(
+            fresh_for(&h.app.ctx, "tide-pools_results"),
+            Some(kept.clone())
+        );
         assert_eq!(fresh_for(&h.app.ctx, "tightrope_results"), None);
         // The same take comes back as a track, read from its file once.
         h.app.ctx.game.songs.loaded.clear();
@@ -492,7 +515,13 @@ mod tests {
         assert_eq!(tracks[0].id, "tide-pools/song/1");
         assert_eq!(tracks[0].album, "Your Tide Pools songs");
         assert!(tracks[0].open);
-        assert!(h.app.ctx.game.songs.loaded.contains_key(&("tide-pools".to_string(), 1)));
+        assert!(h
+            .app
+            .ctx
+            .game
+            .songs
+            .loaded
+            .contains_key(&("tide-pools".to_string(), 1)));
     }
 
     #[test]

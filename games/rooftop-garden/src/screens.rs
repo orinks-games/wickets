@@ -235,8 +235,10 @@ pub fn challenge_briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
         "{back}{name}: {plan} {twist_text}{goal} {}",
         match period {
             Period::Daily => "Leaving from the pause menu keeps the garden until the day is over.",
-            Period::Weekly => "Leaving from the pause menu keeps the garden until the week is over.",
-            Period::Monthly => "Leaving from the pause menu keeps the garden until the month is over.",
+            Period::Weekly =>
+                "Leaving from the pause menu keeps the garden until the week is over.",
+            Period::Monthly =>
+                "Leaving from the pause menu keeps the garden until the month is over.",
         },
     )];
     let mut slot = Some((garden, challenge));

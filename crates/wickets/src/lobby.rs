@@ -445,19 +445,21 @@ impl Menu for CategoryList {
                 if count == 0 {
                     return None;
                 }
-                let noun = if count == 1 { "game" } else { "games" };
                 let on = events
                     .iter()
                     .filter(|(g, _)| g.category == category)
                     .count();
-                let on = match on {
-                    0 => String::new(),
-                    1 => ", 1 event today".to_string(),
-                    n => format!(", {n} events today"),
+                let category_label = category.label();
+                let label = match (count, on) {
+                    (1, 0) => format!("{category_label}, 1 game"),
+                    (1, _) => format!("{category_label}, 1 game, 1 event today"),
+                    (_, 0) => format!("{category_label}, {count} games"),
+                    (_, 1) => format!("{category_label}, {count} games, 1 event today"),
+                    (_, _) => format!("{category_label}, {count} games, {on} events today"),
                 };
                 Some(
                     MenuItem::new(
-                        format!("{}, {count} {noun}{on}", category.label()),
+                        label,
                         move |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                             ctx.push(GameList::new(category))
                         },
@@ -661,7 +663,10 @@ impl Menu for GameList {
             .map(|g: GameInfo| {
                 let (label, help) = match happening(ctx, &g) {
                     Some(h) => (
-                        format!("{}, {} today", g.name, after_comma(&h.title)),
+                        {
+                            let (game, event) = (g.name, &h.title);
+                            format!("{game}, today: {event}")
+                        },
                         format!("{} {}", g.blurb, h.line),
                     ),
                     None => (g.name.to_string(), g.blurb.to_string()),

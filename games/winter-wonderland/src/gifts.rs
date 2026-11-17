@@ -111,16 +111,6 @@ pub enum Spot {
 impl Spot {
     pub const PEOPLE: [Spot; 3] = [Spot::Left, Spot::Ahead, Spot::Right];
 
-    /// "on your left", for sentences.
-    pub fn place(self) -> &'static str {
-        match self {
-            Spot::Left => "on your left",
-            Spot::Ahead => "straight ahead",
-            Spot::Right => "on your right",
-            Spot::Sack => "behind you",
-        }
-    }
-
     /// "Left", for the status line and the sighted helper.
     pub fn label(self) -> &'static str {
         match self {

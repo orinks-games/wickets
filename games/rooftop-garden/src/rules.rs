@@ -270,17 +270,19 @@ impl Species {
         match self.unlock() {
             Unlock::Harvests(n) => {
                 let n = n.saturating_sub(harvests);
-                format!(
-                    "{n} more {} to unlock",
-                    if n == 1 { "harvest" } else { "harvests" }
-                )
+                if n == 1 {
+                    "1 more harvest to unlock".to_string()
+                } else {
+                    format!("{n} more harvests to unlock")
+                }
             }
             Unlock::Requests(n) => {
                 let n = n.saturating_sub(book.thanks);
-                format!(
-                    "fill {n} more {}",
-                    if n == 1 { "request" } else { "requests" }
-                )
+                if n == 1 {
+                    "fill 1 more request".to_string()
+                } else {
+                    format!("fill {n} more requests")
+                }
             }
             Unlock::Keepsake(k) => format!("comes with the {}", k.name()),
             Unlock::Chorus => "grow a six-voice chorus".into(),
@@ -296,10 +298,18 @@ impl Species {
             Species::Sunflower => "Tall and patient; it sings the melody.",
             Species::Lavender => "Happy in dry soil and slow to grow; it rings the chimes.",
             Species::Mint => "The thirstiest of all, with a cool pad over the top.",
-            Species::Strawberry => "Sends runners into empty planters beside it; it strums the off-beats.",
-            Species::Chilli => "Quick in the sun, slow under cloud or rain, and thirsty; it plays the beat.",
-            Species::Rose => "Slow, and few aphids, but often leggy; it sings a cello line under the flute.",
-            Species::Jasmine => "Its flowers open late in the afternoon, so it sings only toward evening.",
+            Species::Strawberry => {
+                "Sends runners into empty planters beside it; it strums the off-beats."
+            }
+            Species::Chilli => {
+                "Quick in the sun, slow under cloud or rain, and thirsty; it plays the beat."
+            }
+            Species::Rose => {
+                "Slow, and few aphids, but often leggy; it sings a cello line under the flute."
+            }
+            Species::Jasmine => {
+                "Its flowers open late in the afternoon, so it sings only toward evening."
+            }
         }
     }
 }
@@ -1287,22 +1297,20 @@ impl Garden {
             s.push_str(" No harmony yet.");
         } else {
             let names: Vec<_> = parts.iter().map(|p| self.part_name(*p)).collect();
-            s.push_str(&format!(
-                " Harmony: {} {}, {}.",
-                parts.len(),
-                if parts.len() == 1 { "part" } else { "parts" },
-                list(&names)
-            ));
-        }
-        s.push_str(&format!(
-            " {} {}.",
-            self.harvests,
-            if self.harvests == 1 {
-                "harvest"
+            let part_names = list(&names);
+            let count = parts.len();
+            s.push_str(&if count == 1 {
+                format!(" Harmony: 1 part, {part_names}.")
             } else {
-                "harvests"
-            }
-        ));
+                format!(" Harmony: {count} parts, {part_names}.")
+            });
+        }
+        let harvests = self.harvests;
+        s.push_str(&if harvests == 1 {
+            " 1 harvest.".to_string()
+        } else {
+            format!(" {harvests} harvests.")
+        });
         if let (Some(goal), Some((now, target))) = (self.goal, self.progress()) {
             let what = match goal {
                 Goal::Harmony(_) => "harmony parts".to_string(),
@@ -1359,12 +1367,18 @@ impl Garden {
             (
                 &|p| p.wilted,
                 "has wilted",
-                format!("{pressed} waters it back to life.", pressed = sentence(&self.keys.water)),
+                format!(
+                    "{pressed} waters it back to life.",
+                    pressed = sentence(&self.keys.water)
+                ),
             ),
             (
                 &|p| p.pest,
                 "has aphids",
-                format!("{pressed} picks them off.", pressed = sentence(&self.keys.tend)),
+                format!(
+                    "{pressed} picks them off.",
+                    pressed = sentence(&self.keys.tend)
+                ),
             ),
             (
                 &|p| p.thirsty(),
@@ -1374,7 +1388,10 @@ impl Garden {
             (
                 &|p| p.stage == Stage::Ripe,
                 "is ready to harvest",
-                format!("{pressed} harvests it.", pressed = sentence(&self.keys.tend)),
+                format!(
+                    "{pressed} harvests it.",
+                    pressed = sentence(&self.keys.tend)
+                ),
             ),
             (
                 &|p| p.leggy,
@@ -1738,9 +1755,9 @@ impl Garden {
 
     /// A plant the potting bench can use: in bloom and well.
     fn pottable(&self, i: usize) -> bool {
-        self.plots[i].as_ref().is_some_and(|p| {
-            p.stage >= Stage::Blooming && !p.wilted && !p.pumpkin
-        })
+        self.plots[i]
+            .as_ref()
+            .is_some_and(|p| p.stage >= Stage::Blooming && !p.wilted && !p.pumpkin)
     }
 
     /// P: picks a plant in bloom at the potting bench; a second plant
@@ -2064,7 +2081,11 @@ impl Garden {
                     self.queue(format!("Rain revived the {name}, {spot}."));
                 }
             } else {
-                let floor = if self.covered(i) { COLD_FRAME_FLOOR.min(p.water) } else { 0.0 };
+                let floor = if self.covered(i) {
+                    COLD_FRAME_FLOOR.min(p.water)
+                } else {
+                    0.0
+                };
                 p.water = (p.water - p.species.thirst() * p.traits.thirst_rate() * thirst * days)
                     .max(floor);
             }
@@ -2155,12 +2176,9 @@ impl Garden {
             if p.stage == Stage::Blooming
                 && !p.leggy
                 && !p.wilted
-                && self
-                    .rng
-                    .chance(
-                        (LEGGY_RATE * p.species.leggy_rate() * self.mods.leggy * trellis * days)
-                            as f64,
-                    )
+                && self.rng.chance(
+                    (LEGGY_RATE * p.species.leggy_rate() * self.mods.leggy * trellis * days) as f64,
+                )
             {
                 p.leggy = true;
                 let tend = self.keys.tend.clone();

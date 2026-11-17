@@ -56,7 +56,11 @@ pub fn unlocks(earned: usize, of: usize) -> String {
 
 /// The spoken cue toggle: "Spoken call-outs: on" or "Spoken call-outs: off".
 pub fn call_outs(on: bool) -> String {
-    format!("Spoken call-outs: {}", if on { "on" } else { "off" })
+    if on {
+        "Spoken call-outs: on".to_string()
+    } else {
+        "Spoken call-outs: off".to_string()
+    }
 }
 
 /// Results after a challenge: "Play this daily challenge again".

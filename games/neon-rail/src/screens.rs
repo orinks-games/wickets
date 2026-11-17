@@ -550,22 +550,31 @@ pub fn challenge_result(result: ScoreResult) -> String {
     challenge_result_at(result, Pace::Normal)
 }
 
-/// "relaxed " for a relaxed run, whose results are kept apart.
-fn relaxed_word(pace: Pace) -> &'static str {
-    if pace.separate() {
-        "relaxed "
-    } else {
-        ""
-    }
-}
-
 /// What a challenge's record for `pace` said about this run.
 pub fn challenge_result_at(result: ScoreResult, pace: Pace) -> String {
-    let r = relaxed_word(pace);
+    let relaxed = pace.separate();
     match result {
-        ScoreResult::First => format!("Your first recorded {r}result."),
-        ScoreResult::NewBest { previous } => format!("A new {r}best, beating {previous}."),
-        ScoreResult::Short { best } => format!("Your {r}best stays {best}."),
+        ScoreResult::First => {
+            if relaxed {
+                "Your first recorded relaxed result.".to_string()
+            } else {
+                "Your first recorded result.".to_string()
+            }
+        }
+        ScoreResult::NewBest { previous } => {
+            if relaxed {
+                format!("A new relaxed best, beating {previous}.")
+            } else {
+                format!("A new best, beating {previous}.")
+            }
+        }
+        ScoreResult::Short { best } => {
+            if relaxed {
+                format!("Your relaxed best stays {best}.")
+            } else {
+                format!("Your best stays {best}.")
+            }
+        }
     }
 }
 
@@ -576,20 +585,42 @@ pub fn board_text(mode: Mode, result: ScoreResult, score: u64) -> String {
 
 /// A run that scored 0, which goes on no board.
 pub fn no_board_text(mode: Mode, pace: Pace) -> String {
-    let board = format!("{}{}", relaxed_word(pace), mode.name());
-    format!("Score 0, so nothing goes on the {board} board.")
+    let mode_name = mode.name();
+    if pace.separate() {
+        format!("Score 0, so nothing goes on the relaxed {mode_name} board.")
+    } else {
+        format!("Score 0, so nothing goes on the {mode_name} board.")
+    }
 }
 
 /// What the best-score board for `pace` said about this run: relaxed runs
 /// have boards of their own.
 pub fn board_text_at(mode: Mode, result: ScoreResult, score: u64, pace: Pace) -> String {
-    let board = format!("{}{}", relaxed_word(pace), mode.name());
+    let mode_name = mode.name();
+    let relaxed = pace.separate();
     match result {
-        ScoreResult::First => format!("First score on the {board} board: {score}."),
-        ScoreResult::NewBest { previous } => {
-            format!("New best on the {board} board: {score}, beating {previous}.")
+        ScoreResult::First => {
+            if relaxed {
+                format!("First score on the relaxed {mode_name} board: {score}.")
+            } else {
+                format!("First score on the {mode_name} board: {score}.")
+            }
         }
-        ScoreResult::Short { best } => format!("{} best stays {best}.", sentence_start(&board)),
+        ScoreResult::NewBest { previous } => {
+            if relaxed {
+                format!("New best on the relaxed {mode_name} board: {score}, beating {previous}.")
+            } else {
+                format!("New best on the {mode_name} board: {score}, beating {previous}.")
+            }
+        }
+        ScoreResult::Short { best } => {
+            if relaxed {
+                format!("Relaxed {mode_name} best stays {best}.")
+            } else {
+                let mode_title = sentence_start(mode_name);
+                format!("{mode_title} best stays {best}.")
+            }
+        }
     }
 }
 

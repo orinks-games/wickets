@@ -1455,14 +1455,15 @@ impl Run {
     /// basket is and what lands next. Second: the round's clock and what
     /// it costs. Third: score and the mode's extras.
     pub fn status_layers(&self) -> Vec<String> {
-        let mut first = vec![format!(
-            "Lane {} of {}{}, basket {} of {}.",
-            self.lane + 1,
-            self.spec.lanes,
-            if self.at_cart() { ", at the cart" } else { "" },
-            self.basket.len(),
-            self.spec.capacity
-        )];
+        let lane = self.lane + 1;
+        let lanes = self.spec.lanes;
+        let basket = self.basket.len();
+        let capacity = self.spec.capacity;
+        let mut first = vec![if self.at_cart() {
+            format!("Lane {lane} of {lanes}, at the cart, basket {basket} of {capacity}.")
+        } else {
+            format!("Lane {lane} of {lanes}, basket {basket} of {capacity}.")
+        }];
         let mut falling: Vec<&Falling> = self.falling.iter().collect();
         falling.sort_by(|a, b| a.left.total_cmp(&b.left));
         for f in falling.iter().take(2) {

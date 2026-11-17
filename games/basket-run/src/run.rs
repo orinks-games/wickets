@@ -461,16 +461,19 @@ impl RunScreen {
                         "Practice round {round} done. You banked {}.",
                         eggs_phrase(banked as usize)
                     ),
-                    _ => format!(
-                        "Round {round} cleared. You banked {}. Round bonus {bonus}{}. Score {}.",
-                        eggs_phrase(banked as usize),
+                    _ => {
+                        let eggs = eggs_phrase(banked as usize);
+                        let score = self.run.score;
                         if perfect {
-                            ", with the perfect round bonus for no cracked eggs"
+                            format!(
+                                "Round {round} cleared. You banked {eggs}. Round bonus {bonus}, with the perfect round bonus for no cracked eggs. Score {score}."
+                            )
                         } else {
-                            ""
-                        },
-                        self.run.score
-                    ),
+                            format!(
+                                "Round {round} cleared. You banked {eggs}. Round bonus {bonus}. Score {score}."
+                            )
+                        }
+                    }
                 };
                 if self.run.phase == Phase::Between {
                     ctx.audio.play_music(Some(sound::ROUND_CLEAR), false);
@@ -819,16 +822,15 @@ impl State<Parlor> for RunScreen {
             ParlorAction::Primary => match self.run.bank() {
                 Bank::Banked { eggs, points, full } => {
                     ctx.audio.play(sound::BANK, Bus::EFFECTS);
-                    let mut text = format!(
-                        "Banked {}, {points} points{}. Score {}.",
-                        eggs_phrase(eggs),
-                        if full {
-                            ", with the full basket bonus"
-                        } else {
-                            ""
-                        },
-                        self.run.score
-                    );
+                    let eggs_phrase = eggs_phrase(eggs);
+                    let score = self.run.score;
+                    let mut text = if full {
+                        format!(
+                            "Banked {eggs_phrase}, {points} points, with the full basket bonus. Score {score}."
+                        )
+                    } else {
+                        format!("Banked {eggs_phrase}, {points} points. Score {score}.")
+                    };
                     let needed = self.run.needed();
                     if needed > 0 {
                         let had = self.run.banked_round - eggs as u32;

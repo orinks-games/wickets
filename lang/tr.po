@@ -419,9 +419,17 @@ msgstr "yarın"
 msgid "in {n} days"
 msgstr "{n} gün sonra"
 
-#. placeholders: {name}, {days_phrase}
-msgid "{name} is {days_phrase}."
-msgstr "{name} {days_phrase}."
+#. placeholders: {holiday}
+msgid "{holiday} is today."
+msgstr "{holiday} bugün."
+
+#. placeholders: {holiday}
+msgid "{holiday} is tomorrow."
+msgstr "{holiday} yarın."
+
+#. placeholders: {holiday}, {days}
+msgid "{holiday} is in {days} days."
+msgstr "{holiday} için {days} gün var."
 
 msgid "spring"
 msgstr "ilkbahar"
@@ -641,15 +649,11 @@ msgstr "{name}, kilitli"
 msgid "{UNLOCKS}, {earned} of {of}"
 msgstr "{UNLOCKS}, {earned}, toplam {of}"
 
-#. placeholders: {else}
-msgid "Spoken call-outs: {else}"
-msgstr "Sesli bildirimler: {else}"
+msgid "Spoken call-outs: on"
+msgstr "Sesli bildirimler: açık"
 
-msgid "off"
-msgstr "kapalı"
-
-msgid "on"
-msgstr "açık"
+msgid "Spoken call-outs: off"
+msgstr "Sesli bildirimler: kapalı"
 
 msgid "Play this daily challenge again"
 msgstr "Bu günlük görevi yeniden oyna"
@@ -1044,6 +1048,12 @@ msgstr ""
 "Hikâye ve etkinliklerin hangi oyunları sunacağını seçin. Tüm oyunlar Oyna "
 "menüsünde kalır."
 
+msgid "off"
+msgstr "kapalı"
+
+msgid "on"
+msgstr "açık"
+
 #. placeholders: {on}, {all}
 msgid "{on} of {all} on"
 msgstr "{all} içinden {on} açık"
@@ -1345,9 +1355,11 @@ msgstr "yirmi"
 msgid "Your {game_name} songs"
 msgstr "{game_name} şarkılarınız"
 
-#. placeholders: {else}
-msgid "Keep your songs: {else}"
-msgstr "Şarkıları sakla: {else}"
+msgid "Keep your songs: on"
+msgstr "Şarkıları sakla: açık"
+
+msgid "Keep your songs: off"
+msgstr "Şarkıları sakla: kapalı"
 
 msgid "Keep your songs: on. Each run's music is kept in the Soundtrack."
 msgstr ""
@@ -3096,27 +3108,25 @@ msgstr "Bir oyun türü seçin"
 msgid "categories"
 msgstr ""
 
-msgid "game"
-msgstr ""
+#. placeholders: {category_label}
+msgid "{category_label}, 1 game"
+msgstr "{category_label}, 1 oyun"
 
-msgid "games"
-msgstr ""
+#. placeholders: {category_label}
+msgid "{category_label}, 1 game, 1 event today"
+msgstr "{category_label}, 1 oyun, bugün 1 etkinlik"
 
-msgid ", 1 event today"
-msgstr ", bugün 1 etkinlik"
+#. placeholders: {category_label}, {count}
+msgid "{category_label}, {count} games"
+msgstr "{category_label}, {count} oyun"
 
-#. one clause of a longer line
-msgid "1 event today"
-msgstr "bugün 1 etkinlik"
+#. placeholders: {category_label}, {count}
+msgid "{category_label}, {count} games, 1 event today"
+msgstr "{category_label}, {count} oyun, bugün 1 etkinlik"
 
-#. placeholders: {n}
-msgid ", {n} events today"
-msgstr ", bugün {n} etkinlik"
-
-#. placeholders: {n}
-#. one clause of a longer line
-msgid "{n} events today"
-msgstr "bugün {n} etkinlik"
+#. placeholders: {category_label}, {count}, {on}
+msgid "{category_label}, {count} games, {on} events today"
+msgstr "{category_label}, {count} oyun, bugün {on} etkinlik"
 
 msgid "Holiday games, one for each celebration."
 msgstr "Bayram oyunları, her kutlama için bir tane."
@@ -3136,6 +3146,12 @@ msgstr "Kendi hızınızda oynanan kart ve zar oyunları."
 msgid "Return to the lobby."
 msgstr "Lobiye döner."
 
+msgid "game"
+msgstr ""
+
+msgid "games"
+msgstr ""
+
 msgid "Games that story mode has opened for you, played here at any time."
 msgstr ""
 "Hikâye modunun sizin için açtığı oyunlar, burada her zaman oynanabilir."
@@ -3152,9 +3168,9 @@ msgstr "Sezon özelleri denetlendi."
 msgid "No internet date. Try again later."
 msgstr "İnternet tarihi yok. Sonra yeniden deneyin."
 
-#. placeholders: {name}, {after_comma}
-msgid "{name}, {after_comma} today"
-msgstr "{name}, {after_comma}, bugün"
+#. placeholders: {game}, {event}
+msgid "{game}, today: {event}"
+msgstr "{game}, bugün: {event}"
 
 #. placeholders: {label}, {done}, {games}
 #. one sentence of a longer line
@@ -5353,17 +5369,15 @@ msgstr "{d} şerit sağda"
 msgid "{d} lanes left"
 msgstr "{d} şerit solda"
 
-#. placeholders: {lane}, {lanes}, {else}, {basket}, {capacity}
-msgid "Lane {lane} of {lanes}{else}, basket {basket} of {capacity}."
+#. placeholders: {lane}, {lanes}, {basket}, {capacity}
+msgid "Lane {lane} of {lanes}, at the cart, basket {basket} of {capacity}."
 msgstr ""
-"Şerit {lane}, toplam {lanes}{else}, sepette {basket}, en çok {capacity}."
+"Şerit {lane}, toplam {lanes}, arabanın yanında, sepette {basket}, en çok "
+"{capacity}."
 
-msgid ", at the cart"
-msgstr ", arabanın yanında"
-
-#. one clause of a longer line
-msgid "at the cart"
-msgstr "arabanın yanında"
+#. placeholders: {lane}, {lanes}, {basket}, {capacity}
+msgid "Lane {lane} of {lanes}, basket {basket} of {capacity}."
+msgstr "Şerit {lane}, toplam {lanes}, sepette {basket}, en çok {capacity}."
 
 #. placeholders: {sentence_start}, {lane}, {relative}, {left}
 msgid ""
@@ -5758,30 +5772,38 @@ msgstr "Alıştırma bölümü {round} bitti. {eggs_phrase} boşalttınız."
 msgid "You banked {eggs_phrase}."
 msgstr "{eggs_phrase} boşalttınız."
 
-#. placeholders: {bonus}, {else}
+#. placeholders: {bonus}
 #. one sentence of a longer line
-msgid "Round bonus {bonus}{else}."
-msgstr "Bölüm bonusu {bonus}{else}."
+msgid ""
+"Round bonus {bonus}, with the perfect round bonus for no cracked eggs."
+msgstr ""
 
 #. placeholders: {round}
 #. one sentence of a longer line
 msgid "Round {round} cleared."
 msgstr "Bölüm {round} geçildi."
 
-#. placeholders: {round}, {eggs_phrase}, {bonus}, {else}, {score}
+#. placeholders: {round}, {eggs}, {bonus}, {score}
 msgid ""
-"Round {round} cleared. You banked {eggs_phrase}. Round bonus {bonus}{else}. "
-"Score {score}."
+"Round {round} cleared. You banked {eggs}. Round bonus {bonus}, with the "
+"perfect round bonus for no cracked eggs. Score {score}."
 msgstr ""
-"Bölüm {round} geçildi. {eggs_phrase} boşalttınız. Bölüm bonusu "
-"{bonus}{else}. Puan {score}."
 
-msgid ", with the perfect round bonus for no cracked eggs"
-msgstr ", hiç yumurta çatlamadığı için kusursuz bölüm bonusuyla"
+#. placeholders: {eggs}
+#. one sentence of a longer line
+msgid "You banked {eggs}."
+msgstr "{eggs} boşalttınız."
 
-#. one clause of a longer line
-msgid "with the perfect round bonus for no cracked eggs"
-msgstr "hiç yumurta çatlamadığı için kusursuz bölüm bonusuyla"
+#. placeholders: {bonus}
+#. one sentence of a longer line
+msgid "Round bonus {bonus}."
+msgstr "Bölüm bonusu {bonus}."
+
+#. placeholders: {round}, {eggs}, {bonus}, {score}
+msgid ""
+"Round {round} cleared. You banked {eggs}. Round bonus {bonus}. Score "
+"{score}."
+msgstr ""
 
 #. placeholders: {round}, {round_news}
 msgid " Next, round {round}: {round_news}"
@@ -6013,11 +6035,6 @@ msgstr ""
 "Yeniden çayırdasınız. Şerit {lane}, toplam {lanes}, sepette {basket}, en "
 "çok {capacity}."
 
-#. placeholders: {lane}, {lanes}, {basket}, {capacity}
-#. one sentence of a longer line
-msgid "Lane {lane} of {lanes}, basket {basket} of {capacity}."
-msgstr "Şerit {lane}, toplam {lanes}, sepette {basket}, en çok {capacity}."
-
 #. placeholders: {lane}
 msgid "Lane {lane}, the cart."
 msgstr "Şerit {lane}, araba."
@@ -6038,21 +6055,25 @@ msgstr "{side} tarafta çit. Şerit {lane}."
 msgid "Wait for the next round."
 msgstr "Sıradaki bölümü bekleyin."
 
-#. placeholders: {eggs_phrase}, {points}, {else}
+#. placeholders: {eggs_phrase}, {points}
 #. one sentence of a longer line
-msgid "Banked {eggs_phrase}, {points} points{else}."
-msgstr "{eggs_phrase} boşaltıldı, {points} puan{else}."
+msgid "Banked {eggs_phrase}, {points} points, with the full basket bonus."
+msgstr "{eggs_phrase} boşaltıldı, {points} puan, dolu sepet bonusuyla."
 
-#. placeholders: {eggs_phrase}, {points}, {else}, {score}
-msgid "Banked {eggs_phrase}, {points} points{else}. Score {score}."
-msgstr "{eggs_phrase} boşaltıldı, {points} puan{else}. Puan {score}."
+#. placeholders: {eggs_phrase}, {points}, {score}
+msgid ""
+"Banked {eggs_phrase}, {points} points, with the full basket bonus. Score "
+"{score}."
+msgstr ""
 
-msgid ", with the full basket bonus"
-msgstr ", dolu sepet bonusuyla"
+#. placeholders: {eggs_phrase}, {points}
+#. one sentence of a longer line
+msgid "Banked {eggs_phrase}, {points} points."
+msgstr "{eggs_phrase} boşaltıldı, {points} puan."
 
-#. one clause of a longer line
-msgid "with the full basket bonus"
-msgstr "dolu sepet bonusuyla"
+#. placeholders: {eggs_phrase}, {points}, {score}
+msgid "Banked {eggs_phrase}, {points} points. Score {score}."
+msgstr "{eggs_phrase} boşaltıldı, {points} puan. Puan {score}."
 
 msgid " That is enough to clear the round."
 msgstr " Bu, bölümü geçmeye yeter."
@@ -6905,20 +6926,22 @@ msgstr "Yeni rekor, {previous} geçildi."
 msgid "Your best is {best}."
 msgstr "Rekorunuz {best}."
 
-#. placeholders: {rows}, {else}
 #. one sentence of a longer line
-msgid "Solved in {rows} {else}."
-msgstr "{rows} {else} içinde çözüldü."
+msgid "Solved in 1 row."
+msgstr "1 sırada çözüldü."
 
-#. placeholders: {rows}, {else}, {points}
-msgid "Solved in {rows} {else}. {points}."
-msgstr "{rows} {else} içinde çözüldü. {points}."
+#. placeholders: {points}
+msgid "Solved in 1 row. {points}."
+msgstr "1 sırada çözüldü. {points}."
 
-msgid "row"
-msgstr "sıra"
+#. placeholders: {rows}
+#. one sentence of a longer line
+msgid "Solved in {rows} rows."
+msgstr "{rows} sırada çözüldü."
 
-msgid "rows"
-msgstr "sıra"
+#. placeholders: {rows}, {points}
+msgid "Solved in {rows} rows. {points}."
+msgstr "{rows} sırada çözüldü. {points}."
 
 #. one sentence of a longer line
 msgid "Out of rows."
@@ -7081,15 +7104,16 @@ msgstr ""
 "Günlük bir dizi, her hafta beş dizi ve aylık bir katedral dizisi, her "
 "oyuncu için aynı. {resets}"
 
-#. placeholders: {places}, {bells}, {else}, {rows}
-msgid "{places} places, {bells} bells to choose from, {else}, {rows} rows"
-msgstr "{places} yer, seçilecek {bells} çan, {else}, {rows} sıra"
+#. placeholders: {places}, {bells}, {rows}
+msgid ""
+"{places} places, {bells} bells to choose from, a bell may come twice, "
+"{rows} rows"
+msgstr ""
 
-msgid "a bell may come twice"
-msgstr "bir çan iki kez gelebilir"
-
-msgid "no bell twice"
-msgstr "hiçbir çan iki kez gelmez"
+#. placeholders: {places}, {bells}, {rows}
+msgid ""
+"{places} places, {bells} bells to choose from, no bell twice, {rows} rows"
+msgstr ""
 
 msgid "Village"
 msgstr "Köy"
@@ -7496,9 +7520,13 @@ msgstr "İpucu yok: son sıranızı harcardı."
 msgid "No hint: every bell has had its hint."
 msgstr "İpucu yok: her çanın ipucu verildi."
 
-#. placeholders: {rows}, {else}, {points}
-msgid "Solved in {rows} {else}. {points}"
-msgstr "{rows} {else} içinde çözüldü. {points}"
+#. placeholders: {points}
+msgid "Solved in 1 row. {points}"
+msgstr "1 sırada çözüldü. {points}"
+
+#. placeholders: {rows}, {points}
+msgid "Solved in {rows} rows. {points}"
+msgstr "{rows} sırada çözüldü. {points}"
 
 #. placeholders: {row_words}
 msgid "Out of rows. The peal was {row_words}"
@@ -7509,15 +7537,21 @@ msgstr "Sıralar bitti. Dizi şuydu: {row_words}"
 msgid "The peal was {row_words}"
 msgstr "Dizi şuydu: {row_words}"
 
-#. placeholders: {rows}, {else}, {row_words}
+#. placeholders: {peal_words}
 msgid ""
-"Solved in {rows} {else}. The peal is {row_words}, and the bells ring it out."
-msgstr "{rows} {else} içinde çözüldü. Dizi {row_words}, çanlar onu çalıyor."
+"Solved in 1 row. The peal is {peal_words}, and the bells ring it out."
+msgstr "1 sırada çözüldü. Dizi {peal_words}, çanlar onu baştan sona çalar."
 
-#. placeholders: {row_words}
+#. placeholders: {peal_words}
 #. one sentence of a longer line
-msgid "The peal is {row_words}, and the bells ring it out."
-msgstr "Dizi {row_words}, çanlar onu çalıyor."
+msgid "The peal is {peal_words}, and the bells ring it out."
+msgstr "Dizi {peal_words}, çanlar onu baştan sona çalar."
+
+#. placeholders: {rows}, {peal_words}
+msgid ""
+"Solved in {rows} rows. The peal is {peal_words}, and the bells ring it out."
+msgstr ""
+"{rows} sırada çözüldü. Dizi {peal_words}, çanlar onu baştan sona çalar."
 
 #. placeholders: {row_words}, {words}
 msgid "Out of rows. The peal was {row_words}. Your last row had {words}."
@@ -7630,6 +7664,7 @@ msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count it."
 msgstr ""
+" Bu {challenge_title}, {name}. Duraklatma menüsünden çıkarsanız sayılmaz."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count it."
@@ -9538,15 +9573,19 @@ msgstr "{name}, {name2}, {birds} kuş"
 msgid "{birds} birds of {name} singing at once"
 msgstr "{name} kuşlarından aynı anda öten {birds} kuş"
 
-#. placeholders: {flocks}, {else}
-msgid "{flocks} flocks flying {else}"
-msgstr "{else} yönüne uçan {flocks} sürü"
+msgid "1 flock flying north"
+msgstr "1 sürü kuzeye uçuyor"
 
-msgid "north"
-msgstr "kuzey"
+msgid "1 flock flying south"
+msgstr "1 sürü güneye uçuyor"
 
-msgid "south"
-msgstr "güney"
+#. placeholders: {flocks}
+msgid "{flocks} flocks flying north"
+msgstr "{flocks} sürü kuzeye uçuyor"
+
+#. placeholders: {flocks}
+msgid "{flocks} flocks flying south"
+msgstr "{flocks} sürü güneye uçuyor"
 
 #. one sentence of a longer line
 msgid ""
@@ -9633,6 +9672,8 @@ msgid ""
 "{title} result: {score} of {most} points. {score_line} {streak_sentence} "
 "{resets}"
 msgstr ""
+"{title} sonucu: {score} puan, toplam {most}. {score_line} {streak_sentence} "
+"{resets}"
 
 #. placeholders: {score}, {most}
 #. one sentence of a longer line
@@ -10053,6 +10094,12 @@ msgstr ""
 
 msgid "The same flocks, straight away. Only your best result is kept."
 msgstr "Aynı sürüler, hemen. Yalnızca en iyi sonucunuz saklanır."
+
+msgid "north"
+msgstr "kuzey"
+
+msgid "south"
+msgstr "güney"
 
 msgid "from behind you to ahead"
 msgstr "arkanızdan önünüze"
@@ -11441,6 +11488,8 @@ msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the walk."
 msgstr ""
+" Bu {challenge_title}, {name}. Duraklatma menüsünden çıkarsanız yürüyüş "
+"sayılmaz."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the walk."
@@ -12782,6 +12831,8 @@ msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the run."
 msgstr ""
+" Bu {challenge_title}, {name}. Duraklatma menüsünden çıkarsanız tur "
+"sayılmaz."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the run."
@@ -14387,6 +14438,8 @@ msgstr ""
 msgid ""
 "The evening ends at {spot}: {hearts_words} of {goal} needed. {score} points."
 msgstr ""
+"Akşam {spot} noktasında bitiyor: {hearts_words}, gereken {goal}. {score} "
+"puan."
 
 #. placeholders: {name}, {score}
 msgid "{name} done. {score} points."
@@ -14524,7 +14577,7 @@ msgstr "Süzülen bir kalbin biraz önüne nişan alın."
 msgid ""
 " This is the {challenge_title}. Leaving from the pause menu does not count "
 "it."
-msgstr ""
+msgstr " Bu {challenge_title}. Duraklatma menüsünden çıkarsanız sayılmaz."
 
 #. placeholders: {challenge_title}
 #. one sentence of a longer line
@@ -14641,15 +14694,12 @@ msgstr ""
 "Hatıra kutusu boş. Sevgililer Günü'nde Sevgililer gecesini ya da iki "
 "kişilik oyunu oynayın, o yılın hatırası kutuya girer. {countdown}"
 
-#. placeholders: {keepsakes}, {else}
-msgid "The keepsake box: {keepsakes} Valentine's {else}."
-msgstr ""
+msgid "The keepsake box: 1 Valentine's Day."
+msgstr "Hatıra kutusu: 1 Sevgililer Günü."
 
-msgid "Day"
-msgstr ""
-
-msgid "Days"
-msgstr ""
+#. placeholders: {keepsakes}
+msgid "The keepsake box: {keepsakes} Valentine's Days."
+msgstr "Hatıra kutusu: {keepsakes} Sevgililer Günü."
 
 #. placeholders: {best}
 msgid "Valentine's night best {best}"
@@ -14679,6 +14729,26 @@ msgstr "Sesli nişan"
 
 msgid "Spoken targets"
 msgstr "Sesli hedefler"
+
+msgid "Spoken aim: on"
+msgstr "Sesli nişan: açık"
+
+msgid "Spoken aim: off"
+msgstr "Sesli nişan: kapalı"
+
+msgid "Spoken targets: on"
+msgstr "Sesli hedefler: açık"
+
+msgid "Spoken targets: off"
+msgstr "Sesli hedefler: kapalı"
+
+#. placeholders: {name}
+msgid "{name}: on"
+msgstr "{name}: açık"
+
+#. placeholders: {name}
+msgid "{name}: off"
+msgstr "{name}: kapalı"
 
 msgid ""
 "Four rooftops under a full moon, with golden hearts and roses, and a "
@@ -17243,6 +17313,8 @@ msgstr "Alayın her sokağı, yıldızlarınızla."
 msgid ""
 "Every street of the parade, with your stars. {opened} of {STREETS} open."
 msgstr ""
+"Geçit töreninin her sokağı, yıldızlarınızla. Açık: {opened}, toplam "
+"{STREETS}."
 
 #. placeholders: {opened}, {STREETS}
 #. one sentence of a longer line
@@ -19050,29 +19122,28 @@ msgstr "Son ışık da söndü. Süre doldu."
 msgid "Tall grass: the {edge_words} edge of the meadow."
 msgstr "Uzun otlar: çayırın {edge_words} kenarı."
 
-#. placeholders: {a_or_an}, {name}
+#. placeholders: {firefly}
 #. one sentence of a longer line
-msgid "Caught {a_or_an} {name}."
-msgstr ""
+msgid "Caught {firefly}."
+msgstr "{firefly} yakalandı."
 
-#. placeholders: {a_or_an}, {name}, {in_jar}
-msgid "Caught {a_or_an} {name}. {in_jar} in the jar."
-msgstr ""
+#. placeholders: {firefly}, {in_jar}
+msgid "Caught {firefly}. {in_jar} in the jar."
+msgstr "{firefly} yakalandı. Kavanozda {in_jar}."
 
 #. placeholders: {in_jar}
 #. one sentence of a longer line
 msgid "{in_jar} in the jar."
 msgstr "Kavanozda {in_jar}."
 
-#. placeholders: {a_or_an}, {name}, {blink_words}
+#. placeholders: {firefly}, {blink_words}
 #. one sentence of a longer line
-msgid "Caught {a_or_an} {name}, new in your journal: {blink_words}."
-msgstr ""
+msgid "Caught {firefly}, new in your journal: {blink_words}."
+msgstr "{firefly} yakalandı, defterinizde yeni: {blink_words}."
 
-#. placeholders: {a_or_an}, {name}, {blink_words}, {in_jar}
+#. placeholders: {firefly}, {blink_words}, {in_jar}
 msgid ""
-"Caught {a_or_an} {name}, new in your journal: {blink_words}. {in_jar} in "
-"the jar."
+"Caught {firefly}, new in your journal: {blink_words}. {in_jar} in the jar."
 msgstr ""
 
 #. placeholders: {sentence_start}
@@ -20274,6 +20345,36 @@ msgstr "Geç Kor"
 msgid "Midsummer Chorus"
 msgstr "Yaz Ortası Korosu"
 
+msgid "a Dipper"
+msgstr "bir Kepçe"
+
+msgid "a Twin Spark"
+msgstr "bir İkiz Kıvılcım"
+
+msgid "a Slow Ember"
+msgstr "bir Ağır Kor"
+
+msgid "a Triple Twinkle"
+msgstr "bir Üçlü Pırıltı"
+
+msgid "an Orchard Lantern"
+msgstr "bir Bahçe Feneri"
+
+msgid "a Creek Glimmer"
+msgstr "bir Dere Işıltısı"
+
+msgid "a Hay Flicker"
+msgstr "bir Saman Kıpırtısı"
+
+msgid "a Blue Ghost"
+msgstr "bir Mavi Hayalet"
+
+msgid "a Late Ember"
+msgstr "bir Geç Kor"
+
+msgid "a Midsummer Chorus"
+msgstr "bir Yaz Ortası Korosu"
+
 msgid "one long flash, low and golden"
 msgstr "alçak ve altın renkli, uzun bir parlama"
 
@@ -21369,19 +21470,19 @@ msgid "Stock: {name_and_colour}, turned up, {to_turn}."
 msgstr "Deste: {name_and_colour} açık, {to_turn}."
 
 #. placeholders: {held_words}
-msgid "holding {held_words}"
-msgstr "elinizde {held_words}"
+msgid "Holding {held_words}."
+msgstr "Elinizde {held_words}."
 
 #. placeholders: {pile}
-msgid "on pile {pile}"
-msgstr "sütun {pile} üzerinde"
+msgid "On pile {pile}."
+msgstr "Sütun {pile}."
 
-msgid "on the stock"
-msgstr "destede"
+msgid "On the stock."
+msgstr "Destede."
 
 #. placeholders: {foundation}
-msgid "on the {foundation}"
-msgstr "{foundation} üzerinde"
+msgid "On the {foundation}."
+msgstr "Yer: {foundation}."
 
 #. placeholders: {up}, {DECK}
 msgid "{up} of {DECK} on the foundations"
@@ -21533,10 +21634,6 @@ msgstr "Açılmış kart yok. {sentence_start} desteyi çevirir."
 #. placeholders: {sentence_start}
 msgid "{sentence_start} is empty."
 msgstr "{sentence_start} boş."
-
-#. placeholders: {held_words}
-msgid "Holding {held_words}."
-msgstr "Elinizde {held_words}."
 
 msgid "it"
 msgstr ""
@@ -23575,12 +23672,6 @@ msgstr "kaldırım"
 msgid "ramp"
 msgstr "rampa"
 
-msgid "the bike lane"
-msgstr "bisiklet yolu"
-
-msgid "the left of the traffic lane, near the centre line"
-msgstr "trafik şeridinin solu, orta çizginin yakını"
-
 msgid "downtown"
 msgstr ""
 
@@ -24171,6 +24262,8 @@ msgstr "Teslimat, {title}, {district}, {bike} ile."
 msgid ""
 "Delivery, {title}, {district}, on the {bike}. {length}, deadline {deadline}."
 msgstr ""
+"Teslimat, {title}, {district}, bisiklet: {bike}. {length}, son süre "
+"{deadline}."
 
 #. placeholders: {length}, {deadline}
 #. one sentence of a longer line
@@ -24256,11 +24349,11 @@ msgstr "Yerdesiniz, {secs_words} sonra kalkıyorsunuz"
 msgid "Stopped"
 msgstr "Durdunuz"
 
-msgid "bike lane"
-msgstr "bisiklet yolu"
-
 msgid "door zone"
 msgstr "kapı bölgesi"
+
+msgid "bike lane"
+msgstr "bisiklet yolu"
 
 #. placeholders: {near_words}
 msgid "{near_words} from the parked cars"
@@ -24575,15 +24668,6 @@ msgstr "Oraya varmak için sağa kırın."
 msgid " Brake with {down} before the line."
 msgstr " Çizgiden önce {down} ile fren yapın."
 
-#. placeholders: {turn}, {distance}
-#. one sentence of a longer line
-msgid "{turn} turn in {distance}."
-msgstr "{turn} dönüş, {distance} sonra."
-
-#. placeholders: {turn}, {distance}, {be_in}, {position}, {speed}
-msgid "{turn} turn in {distance}. {be_in} {position}{speed}"
-msgstr "{turn} dönüş, {distance} sonra. {be_in} {position}{speed}"
-
 #. placeholders: {side}, {metres_words}, {LEAF_POINTS}
 msgid "Leaf pile {side}, {metres_words} ahead, {LEAF_POINTS} points."
 msgstr "Yaprak yığını {side}, {metres_words} ileride, {LEAF_POINTS} puan."
@@ -24828,16 +24912,14 @@ msgstr "İç lastik değişti."
 msgid "Tube swapped. {go}"
 msgstr "İç lastik değişti. {go}"
 
-#. placeholders: {sentence_start}, {metres_words}
-msgid "{sentence_start} turn in {metres_words}."
-msgstr "{metres_words} sonra {sentence_start} dönüş."
+msgid "Turned left."
+msgstr "Sola dönüldü."
+
+msgid "Turned right."
+msgstr "Sağa dönüldü."
 
 msgid "turned"
 msgstr ""
-
-#. placeholders: {word}
-msgid "Turned {word}."
-msgstr "Döndünüz: {word}."
 
 #. one sentence of a longer line
 msgid "Ran wide, too fast."
@@ -24853,20 +24935,16 @@ msgstr ""
 msgid "Under {speed_words} for turns."
 msgstr "Dönüşlerde hız {speed_words} altında olsun."
 
-#. placeholders: {place}
-#. one sentence of a longer line
-msgid "Be in {place}."
-msgstr "Yeriniz: {place}."
-
-#. placeholders: {word}
-#. one sentence of a longer line
-msgid "Ran wide, wrong side for a {word} turn."
-msgstr "Geniş döndünüz, {word} dönüş için yanlış taraftaydınız."
-
-#. placeholders: {word}, {place}
-msgid "Ran wide, wrong side for a {word} turn. Be in {place}."
+msgid ""
+"Ran wide, wrong side for a left turn. Be in the left of the traffic lane, "
+"near the centre line."
 msgstr ""
-"Geniş döndünüz, {word} dönüş için yanlış taraftaydınız. Yeriniz: {place}."
+"Fazla açıldınız, sola dönüş için yanlış taraf. Trafik şeridinin solunda, "
+"orta çizgiye yakın durun."
+
+msgid "Ran wide, wrong side for a right turn. Be in the bike lane."
+msgstr ""
+"Fazla açıldınız, sağa dönüş için yanlış taraf. Bisiklet yolunda durun."
 
 msgid "car"
 msgstr ""
@@ -25096,18 +25174,17 @@ msgstr "Sıradaki: zamana karşı, {name}"
 msgid "All five lessons again, from the first."
 msgstr "Beş dersin hepsi yeniden, ilkinden."
 
-msgid "relaxed "
-msgstr "rahat"
-
 msgid "End of the street. The lesson starts again."
 msgstr "Sokağın sonu. Ders yeniden başlıyor."
 
 msgid "Nothing goes on the board."
 msgstr "Sıralamaya hiçbir şey gitmez."
 
-#. placeholders: {relaxed}
-msgid "Your first {relaxed}endless ride here."
-msgstr "Burada ilk {relaxed}sonsuz sürüşünüz."
+msgid "Your first relaxed endless ride here."
+msgstr "Burada ilk rahat sonsuz sürüşünüz."
+
+msgid "Your first endless ride here."
+msgstr "Burada ilk sonsuz sürüşünüz."
 
 #. placeholders: {best_word}, {distance_words}
 msgid "A new {best_word}, beating {distance_words}."
@@ -25150,9 +25227,13 @@ msgstr "Sonsuz sürüş: {distance_words}, {dollar_words}"
 msgid "A new endless ride in the same district, on the same bike."
 msgstr "Aynı semtte, aynı bisikletle yeni bir sonsuz sürüş."
 
-#. placeholders: {relaxed}, {NAME}
-msgid "Your first {relaxed}ride {NAME} here."
-msgstr "Burada ilk {relaxed}{NAME} sürüşünüz."
+#. placeholders: {NAME}
+msgid "Your first relaxed ride {NAME} here."
+msgstr "Burada ilk rahat {NAME} sürüşünüz."
+
+#. placeholders: {NAME}
+msgid "Your first ride {NAME} here."
+msgstr "Burada ilk {NAME} sürüşünüz."
 
 #. placeholders: {best_word}, {previous}
 msgid "A new {best_word}, beating {previous}."
@@ -25181,36 +25262,37 @@ msgstr "{name} semtinde {span_words} içinde {sentence_start}."
 msgid "Locker drops: {lockers}."
 msgstr "Dolap teslimatları: {lockers}."
 
-#. placeholders: {lockers}, {quick}, {else}, {sentence_start}, {dollar_words}
+#. placeholders: {lockers}, {quick}, {crash_time}, {dollars}, {wallet}
 msgid ""
-"Locker drops: {lockers}. Quick drops: {quick}. {else} {sentence_start} "
-"earned. You have {dollar_words} to spend in the bike shop."
+"Locker drops: {lockers}. Quick drops: {quick}. {crash_time} lost to "
+"crashes. {dollars} earned. You have {wallet} to spend in the bike shop."
 msgstr ""
-"Dolap teslimatları: {lockers}. Hızlı teslimatlar: {quick}. {else} "
-"{sentence_start} kazandınız. Bisiklet dükkânında harcayacak {dollar_words} "
-"paranız var."
 
 #. placeholders: {quick}
 #. one sentence of a longer line
 msgid "Quick drops: {quick}."
 msgstr "Hızlı teslimatlar: {quick}."
 
-#. placeholders: {dollar_words}
+#. placeholders: {wallet}
 #. one sentence of a longer line
-msgid "You have {dollar_words} to spend in the bike shop."
-msgstr "Bisiklet dükkânında harcayacak {dollar_words} paranız var."
+msgid "You have {wallet} to spend in the bike shop."
+msgstr "Bisiklet dükkânında harcanacak para: {wallet}."
 
-#. placeholders: {else}, {sentence_start}
+#. placeholders: {crash_time}
 #. one sentence of a longer line
-msgid "{else} {sentence_start} earned."
-msgstr "{else} {sentence_start} kazandınız."
+msgid "{crash_time} lost to crashes."
+msgstr "Kazalarda kaybedilen: {crash_time}."
 
-#. placeholders: {sentence_start}
-msgid "{sentence_start} lost to crashes."
-msgstr "Kazalarda {sentence_start} kaybedildi."
+#. placeholders: {dollars}
+#. one sentence of a longer line
+msgid "{dollars} earned."
+msgstr "Kazanılan: {dollars}."
 
-msgid "No crashes."
-msgstr "Kaza yok."
+#. placeholders: {lockers}, {quick}, {dollars}, {wallet}
+msgid ""
+"Locker drops: {lockers}. Quick drops: {quick}. No crashes. {dollars} "
+"earned. You have {wallet} to spend in the bike shop."
+msgstr ""
 
 msgid "A new street in the same district, on the same bike."
 msgstr "Aynı semtte, aynı bisikletle yeni bir sokak."
@@ -25312,9 +25394,13 @@ msgstr "{title} sonucu: {points} sürüş puanı"
 msgid "The same course straight away. Only your best result is kept."
 msgstr "Hemen aynı parkur. Yalnızca en iyi sonucunuz saklanır."
 
-#. placeholders: {relaxed}, {name}
-msgid "Your first {relaxed}{name}."
-msgstr "İlk {relaxed}{name} sürüşünüz."
+#. placeholders: {name}
+msgid "Your first relaxed {name}."
+msgstr "İlk rahat tempo sonucunuz: {name}."
+
+#. placeholders: {name}
+msgid "Your first {name}."
+msgstr "İlk sonucunuz: {name}."
 
 #. placeholders: {best_word}, {time_words}
 msgid "A new {best_word} time, {time_words} faster."
@@ -25376,9 +25462,23 @@ msgstr "yaprak yığınları için {leaves}"
 msgid "{cost} lost for {trim_end_matches}"
 msgstr ""
 
-#. placeholders: {lane}, {limit}
-msgid "Be in {lane}, under {limit}."
-msgstr "Yeriniz: {lane}, hız {limit} altında."
+#. placeholders: {limit}
+msgid "Be in the bike lane, under {limit}."
+msgstr "Bisiklet yolunda durun, {limit} altında."
+
+#. placeholders: {limit}
+msgid ""
+"Be in the left of the traffic lane, near the centre line, under {limit}."
+msgstr ""
+"Trafik şeridinin solunda, orta çizgiye yakın durun, {limit} altında."
+
+#. placeholders: {distance}
+msgid "Left turn in {distance}."
+msgstr "{distance} sonra sola dönüş."
+
+#. placeholders: {distance}
+msgid "Right turn in {distance}."
+msgstr "{distance} sonra sağa dönüş."
 
 msgid "No parcels"
 msgstr "Paket yok"
@@ -25389,6 +25489,9 @@ msgstr "1 paket"
 #. placeholders: {n}
 msgid "{n} parcels"
 msgstr "{n} paket"
+
+msgid "No crashes."
+msgstr "Kaza yok."
 
 msgid "1 crash."
 msgstr "1 kaza."
@@ -25403,9 +25506,13 @@ msgstr "Burada ilk rahat tempo sonucunuz."
 msgid "Your first result here."
 msgstr "Burada ilk sonucunuz."
 
-#. placeholders: {relaxed}, {name}, {name2}
-msgid "Your first {relaxed}time on {name} on the {name2}."
-msgstr "{name2} ile {name} parkurunda ilk {relaxed}süreniz."
+#. placeholders: {name}, {name2}
+msgid "Your first relaxed time on {name} on the {name2}."
+msgstr "Rahat tempoda ilk süreniz: {name}, {name2} ile."
+
+#. placeholders: {name}, {name2}
+msgid "Your first time on {name} on the {name2}."
+msgstr "İlk süreniz: {name}, {name2} ile."
 
 #. placeholders: {name}, {name2}, {time_words}
 #. one sentence of a longer line
@@ -26462,13 +26569,14 @@ msgstr "Bisikletinizi seçin. Şu an {name} sürüyorsunuz."
 msgid "Riding the {name} now."
 msgstr "Şu an {name} sürüyorsunuz."
 
-#. placeholders: {else}
 #. one sentence of a longer line
-msgid "Choose where the endless ride{else}."
-msgstr ""
+msgid "Choose where the endless ride and the ride against the clock go."
+msgstr "Sonsuz sürüşün ve saate karşı sürüşün nereye gideceğini seçin."
 
-#. placeholders: {else}, {name}
-msgid "Choose where the endless ride{else}. Riding in {name} now."
+#. placeholders: {name}
+msgid ""
+"Choose where the endless ride and the ride against the clock go. Riding in "
+"{name} now."
 msgstr ""
 
 #. placeholders: {name}
@@ -26476,11 +26584,14 @@ msgstr ""
 msgid "Riding in {name} now."
 msgstr "Şu an sürdüğünüz semt: {name}."
 
-msgid " and the ride against the clock go"
-msgstr ""
+#. one sentence of a longer line
+msgid "Choose where the endless ride goes."
+msgstr "Sonsuz sürüşün nereye gideceğini seçin."
 
-msgid " goes"
+#. placeholders: {name}
+msgid "Choose where the endless ride goes. Riding in {name} now."
 msgstr ""
+"Sonsuz sürüşün nereye gideceğini seçin. Şu an sürdüğünüz semt: {name}."
 
 #. one sentence of a longer line
 msgid "Spend cash on bikes and districts."
@@ -27417,12 +27528,17 @@ msgid ""
 "Danced so far: {night_count}, {tunes}, {moves_words} in time, {spot_on} of "
 "them spot on."
 msgstr ""
+"Şimdiye kadar dans edilen: {night_count}, {tunes}, zamanında {moves_words}, "
+"bunların {spot_on} tanesi tam isabet."
 
 #. placeholders: {night_count}, {tunes}, {moves_words}, {spot_on}, {moves_words2}, {moves_words3}
 msgid ""
 "Danced so far: {night_count}, {tunes}, {moves_words} in time, {spot_on} of "
 "them spot on. Longest streak: {moves_words2}. Practice room: {moves_words3}."
 msgstr ""
+"Şimdiye kadar dans edilen: {night_count}, {tunes}, zamanında {moves_words}, "
+"bunların {spot_on} tanesi tam isabet. En uzun seri: {moves_words2}. "
+"Alıştırma odası: {moves_words3}."
 
 #. placeholders: {moves_words2}
 #. one sentence of a longer line
@@ -27582,6 +27698,7 @@ msgid ""
 "This is the {challenge_title}, {name}. Leaving from the pause menu does not "
 "count the run."
 msgstr ""
+"Bu {challenge_title}, {name}. Duraklatma menüsünden çıkarsanız tur sayılmaz."
 
 #. placeholders: {sentence_start}, {k}, {k2}
 msgid ""
@@ -29300,15 +29417,13 @@ msgstr " Walt Amca geri gönderdi: {name}."
 msgid " Uncle Walt loved the {name}: double points."
 msgstr " Walt Amca bayıldı: {name}, iki kat puan."
 
-#. placeholders: {plates}, {else}, {GOLDEN_POINTS}
-msgid " {plates} golden {else}, {GOLDEN_POINTS} points."
-msgstr ""
+#. placeholders: {points}
+msgid " 1 golden plate, {points} points."
+msgstr " 1 altın tabak, {points} puan."
 
-msgid "plate"
-msgstr ""
-
-msgid "plates"
-msgstr ""
+#. placeholders: {plates}, {points}
+msgid " {plates} golden plates, {points} points."
+msgstr " {plates} altın tabak, {points} puan."
 
 #. placeholders: {points}
 msgid " {points} points"
@@ -29353,6 +29468,7 @@ msgstr "{title} sonucu: {total} puan."
 msgid ""
 "{title} result: {total} points. {result_line} {streak_sentence} {resets}"
 msgstr ""
+"{title} sonucu: {total} puan. {result_line} {streak_sentence} {resets}"
 
 #. placeholders: {title}, {total}
 msgid "{title} result: {total} points"
@@ -29712,6 +29828,13 @@ msgid ""
 "every station, {r} repeats the last call, {h} says what needs you most. "
 "Escape pauses."
 msgstr ""
+"{title}.{rule} {head}: {keyed}. {left} ve {right} istasyonlar arasında "
+"gezdirir, ya da bir istasyonun numarasına basın. {p} önünüzdeki yemeği "
+"başlatır, karıştırır, çevirir, sosla yağlar ya da çıkarır: sizi gerektirene "
+"kadar bekleyin, sonra hemen harekete geçin. {up} önünüzdeki yemeği anlatır, "
+"{down} tarif kartını okur, {t} o istasyonda ne olduğunu söyler. {s} şu an "
+"sizi neyin beklediğini söyler, her istasyon için yeniden, {r} son bildirimi "
+"yineler, {h} sizi en çok neyin beklediğini söyler. Escape duraklatır."
 
 #. placeholders: {up}, {down}, {t}
 #. one sentence of a longer line
@@ -30511,6 +30634,9 @@ msgstr "süzün"
 msgid "chop"
 msgstr "doğrayın"
 
+msgid "plate"
+msgstr ""
+
 msgid "starting"
 msgstr ""
 
@@ -30527,7 +30653,7 @@ msgid "basting"
 msgstr ""
 
 msgid "its tray turned"
-msgstr ""
+msgstr "tepsisi çevrilmiş"
 
 msgid "their tray turned"
 msgstr "tepsinin çevrilmesi"
@@ -30536,7 +30662,7 @@ msgid "pulling out"
 msgstr ""
 
 msgid "taking off the heat"
-msgstr ""
+msgstr "ateşten alınacak"
 
 msgid "draining"
 msgstr ""
@@ -33691,16 +33817,13 @@ msgstr "Karanlık."
 msgid "Mirrored."
 msgstr "Aynalı."
 
-#. placeholders: {kind_name}, {else}
-msgid "Puzzle: {kind_name}{else}."
-msgstr "Bulmaca: {kind_name}{else}."
+#. placeholders: {kind_name}
+msgid "Puzzle: {kind_name}, solved."
+msgstr "Bulmaca: {kind_name}, çözüldü."
 
-msgid ", solved"
-msgstr ", çözüldü"
-
-#. one clause of a longer line
-msgid "solved"
-msgstr "çözüldü"
+#. placeholders: {kind_name}
+msgid "Puzzle: {kind_name}."
+msgstr "Bulmaca: {kind_name}."
 
 #. placeholders: {name}
 msgid "Holding the {name}."
@@ -33941,6 +34064,11 @@ msgstr " Soğuk esintiyi izleyin."
 #. one sentence of a longer line
 msgid "Exit open in {prompt_door}.{follow}"
 msgstr "Çıkış açık: {prompt_door}.{follow}"
+
+#. placeholders: {points}
+#. one sentence of a longer line
+msgid "Plus {points}."
+msgstr "Artı {points}."
 
 #. one sentence of a longer line
 msgid "Solved."
@@ -34376,7 +34504,7 @@ msgstr "Lanet saati sıfıra vurdu, {floor}, {room} içinde."
 #. placeholders: {floor}, {room}
 msgid ""
 "The haunt clock strikes zero {floor}, in {room}. The house keeps you."
-msgstr ""
+msgstr "Lanet saati sıfırı vuruyor, {floor}, {room}. Ev sizi bırakmıyor."
 
 #. one sentence of a longer line
 msgid "The house keeps you."
@@ -34516,20 +34644,27 @@ msgstr ""
 msgid "Time bonus and courage: plus {bonus}."
 msgstr "Zaman bonusu ve cesaret: artı {bonus}."
 
-msgid " relaxed"
-msgstr " rahat tempoda"
+#. placeholders: {previous}
+msgid " A new relaxed best time for this floor, beating {previous}."
+msgstr " Bu katta yeni rahat süre rekoru, önceki {previous}."
 
-#. placeholders: {relaxed}, {time_short}
-msgid " A new{relaxed} best time for this floor, beating {time_short}."
-msgstr " Bu katta{relaxed} yeni en iyi süre, önceki {time_short}."
+#. placeholders: {previous}
+msgid " A new best time for this floor, beating {previous}."
+msgstr " Bu katta yeni süre rekoru, önceki {previous}."
 
-#. placeholders: {relaxed}
-msgid " Your first{relaxed} time on this floor."
-msgstr " Bu katta{relaxed} ilk süreniz."
+msgid " Your first relaxed time on this floor."
+msgstr " Bu katta ilk rahat süreniz."
 
-#. placeholders: {relaxed}, {time_short}
-msgid " Your{relaxed} best here is {time_short}."
-msgstr " Burada{relaxed} en iyi süreniz {time_short}."
+msgid " Your first time on this floor."
+msgstr " Bu katta ilk süreniz."
+
+#. placeholders: {best}
+msgid " Your relaxed best here is {best}."
+msgstr " Buradaki rahat rekorunuz {best}."
+
+#. placeholders: {best}
+msgid " Your best here is {best}."
+msgstr " Buradaki rekorunuz {best}."
 
 #. placeholders: {next}
 msgid " Floor {next} is open."
@@ -37650,6 +37785,7 @@ msgid ""
 "A hall of {steps} steps with {lamps} out. The taper burns for "
 "{taper}.{draughts}"
 msgstr ""
+"{steps} adımlık bir koridor, {lamps} sönük. Fitil {taper} yanar.{draughts}"
 
 #. placeholders: {taper}, {draughts}
 #. one sentence of a longer line
@@ -38055,6 +38191,8 @@ msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the hall."
 msgstr ""
+" Bu {challenge_title}, {name}. Duraklatma menüsünden çıkarsanız koridor "
+"sayılmaz."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the hall."
@@ -39253,12 +39391,15 @@ msgstr ""
 msgid ""
 "Your journal: {found} of {total} places found, 1 lantern gathered in all."
 msgstr ""
+"Defteriniz: {found} yer bulundu, toplam {total}, toplamda 1 fener toplandı."
 
 #. placeholders: {found}, {total}, {lanterns}
 msgid ""
 "Your journal: {found} of {total} places found, {lanterns} lanterns gathered "
 "in all."
 msgstr ""
+"Defteriniz: {found} yer bulundu, toplam {total}, toplamda {lanterns} fener "
+"toplandı."
 
 msgid "Lantern Lake"
 msgstr "Lantern Lake"
@@ -39368,27 +39509,23 @@ msgstr ""
 "fener: {free}. Bitirilen geceler: {nights}. Gezintiler: {outings}. Toplam "
 "toplanan fener: {lanterns}. Bulunan yerler: {ALL} yerin {places} tanesi."
 
-#. placeholders: {n}
-msgid ", most lanterns in a night {n}"
-msgstr ", bir gecede en çok fener {n}"
+#. placeholders: {next}, {most}
+msgid "Play, night {next}, most lanterns in a night {most}"
+msgstr "Oyna, gece {next}, bir gecede en çok fener {most}"
 
-#. placeholders: {n}
-#. one clause of a longer line
-msgid "most lanterns in a night {n}"
-msgstr "bir gecede en çok fener {n}"
+#. placeholders: {next}
+msgid "Play, night {next}"
+msgstr "Oyna, gece {next}"
 
-#. placeholders: {n}
-msgid ", best {n} lanterns"
-msgstr ", rekor {n} fener"
-
-#. placeholders: {n}
-#. one clause of a longer line
-msgid "best {n} lanterns"
-msgstr "rekor {n} fener"
+msgid "Free paddle, best 1 lantern"
+msgstr "Serbest kürek, rekor 1 fener"
 
 #. placeholders: {best}
-msgid "Free paddle{best}"
-msgstr "Serbest kürek{best}"
+msgid "Free paddle, best {best} lanterns"
+msgstr "Serbest kürek, rekor {best} fener"
+
+msgid "Free paddle"
+msgstr "Serbest kürek"
 
 msgid ""
 "A wide lake where a new lantern appears whenever you gather one. Stay as "
@@ -39397,18 +39534,11 @@ msgstr ""
 "Her fener topladığınızda yenisinin çıktığı geniş bir göl. İstediğiniz kadar "
 "kalın."
 
-msgid "Free paddle"
-msgstr "Serbest kürek"
-
 msgid "Free paddle opens once you finish your first night."
 msgstr "Serbest kürek ilk gecenizi bitirince açılır."
 
 msgid "Finish night 1 to open free paddle."
 msgstr "Serbest küreği açmak için gece 1'i bitirin."
-
-#. placeholders: {PLAY}, {next}, {most}
-msgid "{PLAY}, night {next}{most}"
-msgstr "{PLAY}, gece {next}{most}"
 
 #. one sentence of a longer line
 msgid ""
@@ -39788,9 +39918,16 @@ msgstr " Yanan fener çalıyor."
 msgid " Each lantern rings once, nearest first."
 msgstr " Her fener en yakından başlayarak bir kez çalar."
 
+msgid "1 lantern gathered tonight."
+msgstr "Bu gece 1 fener toplandı."
+
 #. placeholders: {gathered}
 msgid "{gathered} lanterns gathered tonight."
 msgstr "Bu gece {gathered} fener toplandı."
+
+#. placeholders: {lanterns}
+msgid "1 of {lanterns} lanterns gathered."
+msgstr "1 fener toplandı, toplam {lanterns}."
 
 #. placeholders: {gathered}, {lanterns}
 msgid "{gathered} of {lanterns} lanterns gathered."
@@ -42211,18 +42348,21 @@ msgstr "Kayıtlar. {hamlet} {years}"
 msgid "{PLAY}, day {day_of_season} of {name}, year {year}"
 msgstr "{PLAY}, {name}, gün {day_of_season}, yıl {year}"
 
+msgid "Back to your hamlet. 1 settler lives there."
+msgstr "Köyünüze dönüş. Orada 1 yerleşimci yaşıyor."
+
 #. one sentence of a longer line
 msgid "Back to your hamlet."
 msgstr "Köyünüze dönüş."
 
-#. placeholders: {settlers}, {else}
-msgid "Back to your hamlet. {settlers} {else} live there."
-msgstr "Köyünüze dönüş. Orada {settlers} {else} yaşıyor."
+#. placeholders: {settlers}
+msgid "Back to your hamlet. {settlers} settlers live there."
+msgstr "Köyünüze dönüş. Orada {settlers} yerleşimci yaşıyor."
 
-#. placeholders: {settlers}, {else}
+#. placeholders: {settlers}
 #. one sentence of a longer line
-msgid "{settlers} {else} live there."
-msgstr "Orada {settlers} {else} yaşıyor."
+msgid "{settlers} settlers live there."
+msgstr "Orada {settlers} yerleşimci yaşıyor."
 
 #. placeholders: {PLAY}
 msgid "{PLAY}, a new hamlet"
@@ -42294,9 +42434,11 @@ msgstr ""
 "Bir günün sabahtan akşam yemeği zilinedek ne kadar sürdüğü. Uzun günler "
 "yürümeye ve çalışmaya daha çok zaman bırakır."
 
-#. placeholders: {else}
-msgid "Settlers' tune: {else}"
-msgstr "Yerleşimcilerin ezgisi: {else}"
+msgid "Settlers' tune: off"
+msgstr "Yerleşimci ezgisi: kapalı"
+
+msgid "Settlers' tune: on"
+msgstr "Yerleşimci ezgisi: açık"
 
 msgid ""
 "When on, every settler plays their instrument from where they are working. "
@@ -42305,9 +42447,11 @@ msgstr ""
 "Açıkken her yerleşimci çalıştığı yerden çalgısını çalar. Kapalıyken "
 "yalnızca kuşlar ve nehir."
 
-#. placeholders: {else}
-msgid "Work from along the lane: {else}"
-msgstr "Yol boyunca iş sesleri: {else}"
+msgid "Work from along the lane: off"
+msgstr "Yol boyunca iş sesleri: kapalı"
+
+msgid "Work from along the lane: on"
+msgstr "Yol boyunca iş sesleri: açık"
 
 msgid ""
 "When on, the sounds of settlers chopping, hammering and fishing play from "
@@ -42454,15 +42598,13 @@ msgstr "Kilerden sat{fair}"
 msgid "Everything in the larder the barge will buy, and what it pays."
 msgstr "Kilerde mavnanın aldığı her şey ve ödediği fiyat."
 
-#. placeholders: {what}, {price}, {else}
-msgid "Buy {what}, {price} {else}"
-msgstr "Satın al: {what}, {price} {else}"
+#. placeholders: {what}
+msgid "Buy {what}, 1 coin"
+msgstr "{what} satın al, 1 sikke"
 
-msgid "coin"
-msgstr "sikke"
-
-msgid "coins"
-msgstr "sikke"
+#. placeholders: {what}, {price}
+msgid "Buy {what}, {price} coins"
+msgstr "{what} satın al, {price} sikke"
 
 msgid "Done"
 msgstr "Tamam"
@@ -42475,9 +42617,13 @@ msgid ""
 "barge."
 msgstr "Up ve Down ürün seçer, Enter yarısını satar, Escape mavnaya döner."
 
-#. placeholders: {sentence_case}, {n}, {price}, {else}
-msgid "{sentence_case}, {n}, {price} {else} each"
-msgstr "{sentence_case}, {n}, tanesi {price} {else}"
+#. placeholders: {goods}, {n}
+msgid "{goods}, {n}, 1 coin each"
+msgstr "{goods}, {n}, tanesi 1 sikke"
+
+#. placeholders: {goods}, {n}, {price}
+msgid "{goods}, {n}, {price} coins each"
+msgstr "{goods}, {n}, tanesi {price} sikke"
 
 #. placeholders: {sold}, {name}
 #. one sentence of a longer line
@@ -43349,9 +43495,13 @@ msgstr "1 günlük yiyecek."
 msgid "{n} days of food."
 msgstr "{n} günlük yiyecek."
 
-#. placeholders: {has}, {has2}, {count}, {coins}, {else}
-msgid "{has} wood, {has2} stone, {count}, {coins} {else}."
-msgstr "{has} odun, {has2} taş, {count}, {coins} {else}."
+#. placeholders: {wood}, {stone}, {nails}
+msgid "{wood} wood, {stone} stone, {nails}, 1 coin."
+msgstr "{wood} odun, {stone} taş, {nails}, 1 sikke."
+
+#. placeholders: {wood}, {stone}, {nails}, {coins}
+msgid "{wood} wood, {stone} stone, {nails}, {coins} coins."
+msgstr "{wood} odun, {stone} taş, {nails}, {coins} sikke."
 
 msgid "back from the next village"
 msgstr "komşu köyden döndü"
@@ -43644,25 +43794,27 @@ msgstr ", gerekenler: {join}"
 msgid "needs {join}"
 msgstr "gerekenler: {join}"
 
-#. placeholders: {left}, {else}
 #. one sentence of a longer line
-msgid "{left} {else} of work left."
-msgstr "{left} {else} iş kaldı."
+msgid "1 hour of work left."
+msgstr "1 saatlik iş kaldı."
 
-#. placeholders: {sentence_case}
+#. placeholders: {building}
 #. one sentence of a longer line
-msgid "{sentence_case}, going up."
-msgstr "{sentence_case}, yapılıyor."
+msgid "{building}, going up."
+msgstr "{building}, yapılıyor."
 
-#. placeholders: {sentence_case}, {left}, {else}
-msgid "{sentence_case}, going up. {left} {else} of work left."
-msgstr "{sentence_case}, yapılıyor. {left} {else} iş kaldı."
+#. placeholders: {building}
+msgid "{building}, going up. 1 hour of work left."
+msgstr "{building}, yapılıyor. 1 saatlik iş kaldı."
 
-msgid "hour"
-msgstr "saat"
+#. placeholders: {building}, {hours}
+msgid "{building}, going up. {hours} hours of work left."
+msgstr "{building}, yapılıyor. {hours} saatlik iş kaldı."
 
-msgid "hours"
-msgstr "saat"
+#. placeholders: {hours}
+#. one sentence of a longer line
+msgid "{hours} hours of work left."
+msgstr "{hours} saatlik iş kaldı."
 
 #. placeholders: {name}
 msgid "A free spot for {name}."
@@ -44183,22 +44335,24 @@ msgstr "kilerdeki {goods2} ürün için {goods}"
 msgid "{cheerful} for {cheerful2} cheerful"
 msgstr "{cheerful2} neşeli kişi için {cheerful}"
 
-#. placeholders: {n}, {n2}, {else}
-msgid "{n} for {n2} {else}"
-msgstr "{n2} {else} için {n}"
+#. placeholders: {points}
+msgid "{points} for 1 building"
+msgstr "1 bina için {points}"
 
-msgid "buildings"
-msgstr "bina"
+#. placeholders: {points}, {n}
+msgid "{points} for {n} buildings"
+msgstr "{n} bina için {points}"
 
 msgid "100 for the goal"
 msgstr "hedef için 100"
 
-#. placeholders: {spare}, {spare2}, {else}
-msgid "{spare} for {spare2} {else} to spare"
-msgstr "artan {spare2} {else} için {spare}"
+#. placeholders: {points}
+msgid "{points} for 1 day to spare"
+msgstr "artan 1 gün için {points}"
 
-msgid "days"
-msgstr "gün"
+#. placeholders: {points}, {spare}
+msgid "{points} for {spare} days to spare"
+msgstr "artan {spare} gün için {points}"
 
 #. placeholders: {list_words}
 msgid "Points: {list_words}."
@@ -44241,9 +44395,20 @@ msgid ""
 msgstr ""
 "{name}, gün {day_of_season}, yıl {year}, {time_words}. {sentence_case}."
 
-#. placeholders: {sentence_case}, {left}, {else}
-msgid "{sentence_case} is going up, {left} {else} of work left."
-msgstr "{sentence_case} yapılıyor, {left} {else} iş kaldı."
+msgid "1 day left."
+msgstr "1 gün kaldı."
+
+#. placeholders: {left}
+msgid "{left} days left."
+msgstr "{left} gün kaldı."
+
+#. placeholders: {building}
+msgid "{building} is going up, 1 hour of work left."
+msgstr "{building} yapılıyor, 1 saatlik iş kaldı."
+
+#. placeholders: {building}, {hours}
+msgid "{building} is going up, {hours} hours of work left."
+msgstr "{building} yapılıyor, {hours} saatlik iş kaldı."
 
 msgid "Nobody lives here yet."
 msgstr "Burada henüz kimse yaşamıyor."
@@ -46410,17 +46575,20 @@ msgstr ""
 msgid "Last firework removed: {name}."
 msgstr "Son havai fişek kaldırıldı: {name}."
 
+msgid "Freestyle show complete. You launched 1 firework."
+msgstr "Serbest gösteri tamam. 1 havai fişek fırlattınız."
+
 #. one sentence of a longer line
 msgid "Freestyle show complete."
 msgstr "Serbest gösteri tamam."
 
-#. placeholders: {n}, {s_ending}
-msgid "Freestyle show complete. You launched {n} firework{s_ending}."
+#. placeholders: {n}
+msgid "Freestyle show complete. You launched {n} fireworks."
 msgstr "Serbest gösteri tamam. {n} havai fişek fırlattınız."
 
-#. placeholders: {n}, {s_ending}
+#. placeholders: {n}
 #. one sentence of a longer line
-msgid "You launched {n} firework{s_ending}."
+msgid "You launched {n} fireworks."
 msgstr "{n} havai fişek fırlattınız."
 
 #. one sentence of a longer line
@@ -47188,9 +47356,21 @@ msgstr "Gösteri geçildi"
 msgid "Show not cleared"
 msgstr "Gösteri geçilemedi"
 
-#. placeholders: {sentence_start}, {signature_bonus}, {name}
-msgid " {sentence_start} {signature_bonus} bonus points for your {name}s."
-msgstr ""
+#. placeholders: {festival}, {bonus}
+msgid " {festival} {bonus} bonus points for your booms."
+msgstr " {festival}: patlamalarınız için {bonus} bonus puan."
+
+#. placeholders: {festival}, {bonus}
+msgid " {festival} {bonus} bonus points for your crackles."
+msgstr " {festival}: çatırtılarınız için {bonus} bonus puan."
+
+#. placeholders: {festival}, {bonus}
+msgid " {festival} {bonus} bonus points for your whistles."
+msgstr " {festival}: ıslıklarınız için {bonus} bonus puan."
+
+#. placeholders: {festival}, {bonus}
+msgid " {festival} {bonus} bonus points for your sparkles."
+msgstr " {festival}: ışıltılarınız için {bonus} bonus puan."
 
 #. placeholders: {stage}, {acts}
 msgid " The gauntlet ends after {stage} of {acts} shows."
@@ -47444,9 +47624,17 @@ msgstr ""
 msgid " Twist: {name}."
 msgstr " Sürpriz kural: {name}."
 
-#. placeholders: {sentence_start}
-msgid " {sentence_start}s pay a bonus."
-msgstr ""
+msgid " Booms pay a bonus."
+msgstr " Patlamalar bonus kazandırır."
+
+msgid " Crackles pay a bonus."
+msgstr " Çatırtılar bonus kazandırır."
+
+msgid " Whistles pay a bonus."
+msgstr " Islıklar bonus kazandırır."
+
+msgid " Sparkles pay a bonus."
+msgstr " Işıltılar bonus kazandırır."
 
 #. placeholders: {total}
 msgid " {total} show points so far."
@@ -48949,9 +49137,11 @@ msgstr ""
 "Temiz yakalama ve iki kat puan için bir yakalamanın tam ortaya ne kadar "
 "yakın olması gerektiği."
 
-#. placeholders: {else}
-msgid "Gentle streams: {else}"
-msgstr "Sakin dereler: {else}"
+msgid "Gentle streams: off"
+msgstr "Sakin dereler: kapalı"
+
+msgid "Gentle streams: on"
+msgstr "Sakin dereler: açık"
 
 msgid ""
 "Gentle streams: on. Fewer things float down, and the current swings less."
@@ -48966,9 +49156,11 @@ msgid ""
 msgstr ""
 "Açıkken her dere ve sonsuz nehir en kolay hâlinde kalır. Görevler değişmez."
 
-#. placeholders: {else}
-msgid "Say trinket names: {else}"
-msgstr "Biblo adlarını söyle: {else}"
+msgid "Say trinket names: off"
+msgstr "Biblo adlarını söyle: kapalı"
+
+msgid "Say trinket names: on"
+msgstr "Biblo adlarını söyle: açık"
 
 msgid ""
 "When on, a trinket's name is said as you catch it. Off, the results name "
@@ -48977,9 +49169,11 @@ msgstr ""
 "Açıkken yakaladığınız biblonun adı söylenir. Kapalıyken sonuçlar onları "
 "sayar."
 
-#. placeholders: {else}
-msgid "Banks louder up close: {else}"
-msgstr "Yakın kıyı daha yüksek: {else}"
+msgid "Banks louder up close: off"
+msgstr "Yakın kıyı daha yüksek: kapalı"
+
+msgid "Banks louder up close: on"
+msgstr "Yakın kıyı daha yüksek: açık"
 
 msgid ""
 "When on, the lapping at each bank gets louder as you near it. Off, both "
@@ -49422,9 +49616,11 @@ msgstr "biraz sağda"
 msgid "Soggy, {soggy} of {SOGGY_SINKS}."
 msgstr "Islaklık {soggy}, toplam {SOGGY_SINKS}."
 
-#. placeholders: {else}
-msgid "Bank close on your {else}."
-msgstr "Kıyı yakın, {else} tarafınızda."
+msgid "Bank close on your left."
+msgstr "Kıyı solunuzda, yakın."
+
+msgid "Bank close on your right."
+msgstr "Kıyı sağınızda, yakın."
 
 #. placeholders: {combo}, {multiplier}
 msgid "Combo {combo}, times {multiplier}."
@@ -49458,9 +49654,11 @@ msgstr "Akıntı {side_words}."
 msgid "Nothing coming yet."
 msgstr "Henüz bir şey gelmiyor."
 
-#. placeholders: {else}, {else2}
-msgid "Mill wheel on the {else} side: keep {else2}."
-msgstr "Değirmen çarkı {else} tarafta: {else2} tarafta kalın."
+msgid "Mill wheel on the left side: keep right."
+msgstr "Değirmen çarkı sol tarafta: sağda kalın."
+
+msgid "Mill wheel on the right side: keep left."
+msgstr "Değirmen çarkı sağ tarafta: solda kalın."
 
 #. placeholders: {side_words}
 msgid "Stone {side_words}: steer clear."
@@ -49649,22 +49847,27 @@ msgstr "{RIBBON_SCRAPS} kâğıt parçası."
 msgid " Ribbon: {name}."
 msgstr " Kurdele: {name}."
 
-#. placeholders: {scraps2}
 #. one sentence of a longer line
-msgid "{scraps2} in all."
-msgstr "Toplam {scraps2}."
+msgid "1 paper scrap picked up."
+msgstr "1 kâğıt parçası toplandı."
 
-#. placeholders: {scraps}, {else}
+#. placeholders: {in_all}
+msgid "1 paper scrap picked up. {in_all} in all."
+msgstr "1 kâğıt parçası toplandı. Toplam {in_all}."
+
+#. placeholders: {in_all}
 #. one sentence of a longer line
-msgid "{scraps} paper {else} picked up."
-msgstr ""
+msgid "{in_all} in all."
+msgstr "Toplam {in_all}."
 
-#. placeholders: {scraps}, {else}, {scraps2}
-msgid "{scraps} paper {else} picked up. {scraps2} in all."
-msgstr ""
+#. placeholders: {scraps}
+#. one sentence of a longer line
+msgid "{scraps} paper scraps picked up."
+msgstr "{scraps} kâğıt parçası toplandı."
 
-msgid "scraps"
-msgstr "parça"
+#. placeholders: {scraps}, {in_all}
+msgid "{scraps} paper scraps picked up. {in_all} in all."
+msgstr "{scraps} kâğıt parçası toplandı. Toplam {in_all}."
 
 #. placeholders: {new}
 msgid "New on your shelf: {new}."
@@ -50693,6 +50896,7 @@ msgstr "{title} sonucu: {score_words}."
 msgid ""
 "{title} result: {score_words}. {score_line} {streak_sentence} {resets}"
 msgstr ""
+"{title} sonucu: {score_words}. {score_line} {streak_sentence} {resets}"
 
 msgid "Full game"
 msgstr "Tam oyun"
@@ -53833,8 +54037,12 @@ msgstr "{name}, takılı"
 msgid "{name}, {credits} credits and {parts} parts, needs rank {rank}"
 msgstr "{name}, {credits} kredi ve {parts} parça, rütbe {rank} gerekir"
 
-#. placeholders: {name}, {credits}, {parts}, {s_ending}
-msgid "{name}, {credits} credits and {parts} part{s_ending}"
+#. placeholders: {name}, {credits}
+msgid "{name}, {credits} credits and 1 part"
+msgstr "{name}, {credits} kredi ve 1 parça"
+
+#. placeholders: {name}, {credits}, {parts}
+msgid "{name}, {credits} credits and {parts} parts"
 msgstr "{name}, {credits} kredi ve {parts} parça"
 
 #. placeholders: {name}, {credits}
@@ -54183,14 +54391,18 @@ msgstr "Başlanan turlar {runs_started}."
 msgid "Story logs recovered {logs_recovered} of {total_logs}."
 msgstr "Kurtarılan hikâye güncesi {logs_recovered}, toplam {total_logs}."
 
-#. placeholders: {logs_recovered}, {total_logs}, {else}
-msgid "Story logs recovered {logs_recovered} of {total_logs}. {else}"
+#. placeholders: {logs_recovered}, {total_logs}
+msgid ""
+"Story logs recovered {logs_recovered} of {total_logs}. Tutorial complete."
 msgstr ""
-"Kurtarılan hikâye güncesi {logs_recovered}, toplam {total_logs}. {else}"
 
-msgid "Tutorial complete."
-msgstr "Eğitim tamamlandı."
+#. placeholders: {logs_recovered}, {total_logs}
+msgid ""
+"Story logs recovered {logs_recovered} of {total_logs}. Tutorial not "
+"complete."
+msgstr ""
 
+#. one sentence of a longer line
 msgid "Tutorial not complete."
 msgstr "Eğitim tamamlanmadı."
 
@@ -54278,6 +54490,9 @@ msgstr "Yeni rahat rekor."
 
 msgid "New personal best."
 msgstr "Yeni rekor."
+
+msgid "Tutorial complete."
+msgstr "Eğitim tamamlandı."
 
 msgid "Ace gunner licence earned: the rail gun cools faster."
 msgstr "As nişancı lisansı kazanıldı: ray topu daha hızlı soğur."
@@ -55169,21 +55384,29 @@ msgid "Multiplier {multiplier}."
 msgstr "Çarpan {multiplier}."
 
 #. one sentence of a longer line
+msgid "1 shield left."
+msgstr "1 kalkan kaldı."
+
+#. one sentence of a longer line
 msgid "Shield absorbed it."
 msgstr "Kalkan emdi."
-
-#. placeholders: {left}, {s_ending}
-#. one sentence of a longer line
-msgid "{left} shield{s_ending} left."
-msgstr "{left} kalkan kaldı."
 
 #. placeholders: {message}
 #. one sentence of a longer line
 msgid "{message} Shield absorbed it."
 msgstr "{message} Kalkan emdi."
 
-#. placeholders: {message}, {left}, {s_ending}
-msgid "{message} Shield absorbed it. {left} shield{s_ending} left."
+#. placeholders: {message}
+msgid "{message} Shield absorbed it. 1 shield left."
+msgstr "{message} Kalkan emdi. 1 kalkan kaldı."
+
+#. placeholders: {left}
+#. one sentence of a longer line
+msgid "{left} shields left."
+msgstr "{left} kalkan kaldı."
+
+#. placeholders: {message}, {left}
+msgid "{message} Shield absorbed it. {left} shields left."
 msgstr "{message} Kalkan emdi. {left} kalkan kaldı."
 
 #. one sentence of a longer line
@@ -55983,38 +56206,62 @@ msgstr "Tur başarısız."
 msgid ""
 "{title} result: {score}. {challenge_result_at} {streak_sentence} {resets}"
 msgstr ""
+"{title} sonucu: {score}. {challenge_result_at} {streak_sentence} {resets}"
 
 #. placeholders: {EVENT_LOG_TITLE}
 msgid "Event log {EVENT_LOG_TITLE} saved to the story archive."
 msgstr "Etkinlik güncesi {EVENT_LOG_TITLE} hikâye arşivine kaydedildi."
 
-#. placeholders: {r}
-msgid "Your first recorded {r}result."
+msgid "Your first recorded relaxed result."
+msgstr "İlk kayıtlı rahat sonucunuz."
+
+msgid "Your first recorded result."
+msgstr "İlk kayıtlı sonucunuz."
+
+#. placeholders: {previous}
+msgid "A new relaxed best, beating {previous}."
+msgstr "Yeni rahat rekor, önceki {previous}."
+
+#. placeholders: {best}
+msgid "Your relaxed best stays {best}."
+msgstr "Rahat rekorunuz {best} olarak kalıyor."
+
+#. placeholders: {best}
+msgid "Your best stays {best}."
+msgstr "Rekorunuz {best} olarak kalıyor."
+
+#. placeholders: {mode_name}
+msgid "Score 0, so nothing goes on the relaxed {mode_name} board."
+msgstr "Puan 0, bu yüzden rahat {mode_name} sıralamasına bir şey girmiyor."
+
+#. placeholders: {mode_name}
+msgid "Score 0, so nothing goes on the {mode_name} board."
+msgstr "Puan 0, bu yüzden {mode_name} sıralamasına bir şey girmiyor."
+
+#. placeholders: {mode_name}, {score}
+msgid "First score on the relaxed {mode_name} board: {score}."
+msgstr "Rahat {mode_name} sıralamasında ilk puan: {score}."
+
+#. placeholders: {mode_name}, {score}
+msgid "First score on the {mode_name} board: {score}."
+msgstr "{mode_name} sıralamasında ilk puan: {score}."
+
+#. placeholders: {mode_name}, {score}, {previous}
+msgid ""
+"New best on the relaxed {mode_name} board: {score}, beating {previous}."
 msgstr ""
 
-#. placeholders: {r}, {previous}
-msgid "A new {r}best, beating {previous}."
-msgstr ""
+#. placeholders: {mode_name}, {score}, {previous}
+msgid "New best on the {mode_name} board: {score}, beating {previous}."
+msgstr "{mode_name} sıralamasında yeni rekor: {score}, önceki {previous}."
 
-#. placeholders: {r}, {best}
-msgid "Your {r}best stays {best}."
-msgstr ""
+#. placeholders: {mode_name}, {best}
+msgid "Relaxed {mode_name} best stays {best}."
+msgstr "Rahat {mode_name} rekoru {best} olarak kalıyor."
 
-#. placeholders: {board}
-msgid "Score 0, so nothing goes on the {board} board."
-msgstr ""
-
-#. placeholders: {board}, {score}
-msgid "First score on the {board} board: {score}."
-msgstr ""
-
-#. placeholders: {board}, {score}, {previous}
-msgid "New best on the {board} board: {score}, beating {previous}."
-msgstr ""
-
-#. placeholders: {sentence_start}, {best}
-msgid "{sentence_start} best stays {best}."
-msgstr ""
+#. placeholders: {mode_title}, {best}
+msgid "{mode_title} best stays {best}."
+msgstr "{mode_title} rekoru {best} olarak kalıyor."
 
 msgid "Tutorial route live. Center lane."
 msgstr "Eğitim rotası başladı. Orta şerit."
@@ -58696,17 +58943,17 @@ msgstr "Kiler {pantry} içinde bıyık kalmadı."
 msgid "{points_words}, so nothing goes on the board."
 msgstr "{points_words}, bu yüzden sıralamaya bir şey girmiyor."
 
-#. placeholders: {points_words}, {relaxed}
-msgid "{points_words}, your first {relaxed}score."
-msgstr ""
+#. placeholders: {points_words}
+msgid "{points_words}, your first relaxed score."
+msgstr "{points_words}, ilk rahat puanınız."
 
 #. placeholders: {points_words}, {best_word}, {previous}
 msgid "{points_words}, a new {best_word}, beating {previous}."
-msgstr ""
+msgstr "{points_words}, yeni {best_word}, {previous} geçildi."
 
 #. placeholders: {points_words}, {best_word}, {best}
 msgid "{points_words}. Your {best_word} is {best}."
-msgstr ""
+msgstr "{points_words}. Şu anki {best_word}: {best}."
 
 msgid "1 pantry cleared"
 msgstr "1 kiler temizlendi"
@@ -58780,6 +59027,7 @@ msgstr "{sentence_start} kaldı."
 msgid ""
 "Each crumb is {CRUMB_POINTS} points and a cleared pantry {CLEAR_BONUS}."
 msgstr ""
+"Her kırıntı {CRUMB_POINTS} puan, temizlenen bir kiler {CLEAR_BONUS}."
 
 #. placeholders: {name}, {cat_rule}
 msgid " The {name}: {cat_rule}"
@@ -59044,6 +59292,8 @@ msgstr "Duvar"
 msgid ""
 "A tiny bright tick. Each one is a crumb, from its direction, nearest first."
 msgstr ""
+"Minicik, parlak bir tık. Her biri bir kırıntı, kendi yönünden, en yakından "
+"başlayarak."
 
 msgid "Sniff tick"
 msgstr "Koklama tıkırtısı"
@@ -59063,7 +59313,7 @@ msgstr "Tekir kedi"
 
 msgid ""
 "A low purr. It wanders like the tabby, and joins in the monthly challenge."
-msgstr ""
+msgstr "Alçak bir mırıltı. Tekir gibi dolaşır ve aylık göreve katılır."
 
 msgid "Grey cat"
 msgstr "Gri kedi"
@@ -59071,6 +59321,8 @@ msgstr "Gri kedi"
 msgid ""
 "A short rising meow from the cat's side. A cat is 2 steps away or nearer."
 msgstr ""
+"Kedinin tarafından kısa, yükselen bir miyav. Bir kedi 2 adım ya da daha "
+"yakında."
 
 msgid "Cat close"
 msgstr "Kedi yakın"
@@ -59083,6 +59335,7 @@ msgstr ""
 msgid ""
 "An indrawn breath. You keep still and the nearest cat loses track of you."
 msgstr ""
+"İçe çekilen bir nefes. Kıpırdamazsınız ve en yakın kedi izinizi kaybeder."
 
 msgid "Freeze"
 msgstr "Donun"
@@ -59114,6 +59367,8 @@ msgid ""
 "cheese rind in every pantry, for 100 points. A sniff plays it from where it "
 "hides."
 msgstr ""
+"Yumuşak, camsı bir çınlama. Çöp gecesinde, her ayın ilk salısı, her kilerde "
+"100 puanlık bir peynir kabuğu. Koklamak onu saklandığı yerden çalar."
 
 msgid "Cheese rind"
 msgstr "Peynir kabuğu"
@@ -60349,7 +60604,7 @@ msgstr "Yerler: Dul solda, Kumarbaz karşıda, Kaptan sağda"
 
 #. the name or the meaning of a longer line
 msgid "Widow left, Gambler ahead, Captain right"
-msgstr ""
+msgstr "Dul solda, Kumarbaz karşıda, Kaptan sağda"
 
 msgid "Where each player sits, by the sound of their chair."
 msgstr "Her oyuncunun oturduğu yer, sandalyesinin sesinden."
@@ -62442,23 +62697,23 @@ msgstr ""
 "Bahçe gününde bir kez, P ile çiçekte ya da olgun iki farklı çeşit seçin ve "
 "yeni tohum deneyin."
 
-msgid "Dev"
-msgstr ""
-
-msgid "Ines"
-msgstr ""
+msgid "Mrs Patel"
+msgstr "Bayan Patel"
 
 msgid "Mr Okafor"
 msgstr "Bay Okafor"
 
-msgid "Mrs Moreau"
-msgstr "Bayan Moreau"
-
-msgid "Mrs Patel"
-msgstr "Bayan Patel"
-
 msgid "Old Sam"
 msgstr "Yaşlı Sam"
+
+msgid "Ines"
+msgstr ""
+
+msgid "Dev"
+msgstr ""
+
+msgid "Mrs Moreau"
+msgstr "Bayan Moreau"
 
 msgid "a tomato"
 msgstr "bir domates"
@@ -62952,15 +63207,13 @@ msgstr ""
 "Up ve Down hatıraları okur, Escape geri döner. Yeni çeşitler, atadan kalma "
 "çeşitler ve karşılanan istekler birer yıldız kazandırır."
 
-#. placeholders: {sentence}, {n}, {else}
-msgid "{sentence}, locked: {n} more {else}"
-msgstr "{sentence}, kilitli: {n} {else} daha"
+#. placeholders: {keepsake}
+msgid "{keepsake}, locked: 1 more star"
+msgstr "{keepsake}, kilitli: 1 yıldız daha"
 
-msgid "star"
-msgstr "yıldız"
-
-msgid "stars"
-msgstr "yıldız"
+#. placeholders: {keepsake}, {n}
+msgid "{keepsake}, locked: {n} more stars"
+msgstr "{keepsake}, kilitli: {n} yıldız daha"
 
 #. placeholders: {stars}
 msgid "Stars: {stars}"
@@ -62982,18 +63235,21 @@ msgid "Tend a rooftop garden, where each plant grows into a layer of music."
 msgstr ""
 "Bir çatı bahçesine bakın; her bitki büyüyüp müziğin bir katmanı olur."
 
-#. placeholders: {day}, {plants}, {else}, {harvests}, {else2}
-msgid "day {day}, {plants} {else}, {harvests} {else2}"
-msgstr "gün {day}, {plants} {else}, {harvests} {else2}"
+#. placeholders: {day}
+msgid "day {day}, 1 plant, 1 harvest"
+msgstr "gün {day}, 1 bitki, 1 hasat"
 
-msgid "plant"
-msgstr "bitki"
+#. placeholders: {day}, {harvests}
+msgid "day {day}, 1 plant, {harvests} harvests"
+msgstr "gün {day}, 1 bitki, {harvests} hasat"
 
-msgid "plants"
-msgstr "bitki"
+#. placeholders: {day}, {plants}
+msgid "day {day}, {plants} plants, 1 harvest"
+msgstr "gün {day}, {plants} bitki, 1 hasat"
 
-msgid "harvests"
-msgstr "hasat"
+#. placeholders: {day}, {plants}, {harvests}
+msgid "day {day}, {plants} plants, {harvests} harvests"
+msgstr "gün {day}, {plants} bitki, {harvests} hasat"
 
 msgid "harmony"
 msgstr "armoni"
@@ -63027,43 +63283,46 @@ msgstr "Kayıtlar. Bahçeniz: {garden_words}."
 msgid "Your garden: {garden_words}."
 msgstr "Bahçeniz: {garden_words}."
 
+msgid "harvests"
+msgstr "hasat"
+
+msgid "days"
+msgstr "gün"
+
+msgid "Fullest harmony: 1 part."
+msgstr "En dolu armoni: 1 parti."
+
+#. placeholders: {harmony}
+msgid "Fullest harmony: {harmony} parts."
+msgstr "En dolu armoni: {harmony} parti."
+
+msgid "Longest garden: 1 day."
+msgstr "En uzun bahçe: 1 gün."
+
+#. placeholders: {days}
+msgid "Longest garden: {days} days."
+msgstr "En uzun bahçe: {days} gün."
+
 #. one sentence of a longer line
 msgid "Bests."
 msgstr "Rekorlar."
 
-#. placeholders: {harvests}, {harmony}, {else}, {days}, {else2}, {seeds_open}, {ALL}
+#. placeholders: {harvests}, {fullest}, {longest}, {seeds}, {kinds}
 msgid ""
-"Bests. Most harvests: {harvests}. Fullest harmony: {harmony} {else}. "
-"Longest garden: {days} {else2}. Seeds unlocked: {seeds_open} of {ALL}."
+"Bests. Most harvests: {harvests}. {fullest} {longest} Seeds unlocked: "
+"{seeds} of {kinds}."
 msgstr ""
-"Rekorlar. En çok hasat: {harvests}. En dolu armoni: {harmony} {else}. En "
-"uzun bahçe: {days} {else2}. Açılan tohumlar: {seeds_open}, toplam {ALL}."
-
-#. placeholders: {harmony}, {else}
-#. one sentence of a longer line
-msgid "Fullest harmony: {harmony} {else}."
-msgstr "En dolu armoni: {harmony} {else}."
-
-#. placeholders: {days}, {else2}
-#. one sentence of a longer line
-msgid "Longest garden: {days} {else2}."
-msgstr "En uzun bahçe: {days} {else2}."
 
 #. placeholders: {harvests}
 #. one sentence of a longer line
 msgid "Most harvests: {harvests}."
 msgstr "En çok hasat: {harvests}."
 
-#. placeholders: {seeds_open}, {ALL}
+#. placeholders: {fullest}, {longest}, {seeds}, {kinds}
 #. one sentence of a longer line
-msgid "Seeds unlocked: {seeds_open} of {ALL}."
-msgstr "Açılan tohumlar: {seeds_open}, toplam {ALL}."
-
-msgid "part"
-msgstr "parti"
-
-msgid "parts"
-msgstr "parti"
+msgid "{fullest} {longest} Seeds unlocked: {seeds} of {kinds}."
+msgstr ""
+"{fullest} {longest} Kilidi açılan tohumlar: {seeds}, toplam {kinds}."
 
 #. one sentence of a longer line
 msgid "Collection."
@@ -63262,19 +63521,19 @@ msgstr "kesilmiş bir gül"
 msgid "a spray of jasmine"
 msgstr "bir dal yasemin"
 
-#. placeholders: {n}, {else}
-msgid "{n} more {else} to unlock"
-msgstr "kilidin açılmasına {n} {else} daha"
+msgid "1 more harvest to unlock"
+msgstr "kilidi açmak için 1 hasat daha"
 
-#. placeholders: {n}, {else}
-msgid "fill {n} more {else}"
-msgstr "{n} {else} daha karşılayın"
+#. placeholders: {n}
+msgid "{n} more harvests to unlock"
+msgstr "kilidi açmak için {n} hasat daha"
 
-msgid "request"
-msgstr "istek"
+msgid "fill 1 more request"
+msgstr "1 istek daha karşılayın"
 
-msgid "requests"
-msgstr "istek"
+#. placeholders: {n}
+msgid "fill {n} more requests"
+msgstr "{n} istek daha karşılayın"
 
 #. placeholders: {name}
 msgid "comes with the {name}"
@@ -63466,6 +63725,7 @@ msgstr "{twist}. {map} Gün {day}, toplam {day_limit}, {name}."
 msgid ""
 " {here} {status_key} for status, {hint_key} for a hint, F1 for controls."
 msgstr ""
+" {here} Durum için {status_key}, ipucu için {hint_key}, kontroller için F1."
 
 #. placeholders: {n}
 msgid "{n} wilted"
@@ -63504,9 +63764,20 @@ msgstr "Gün {day}, {phase}, {name}."
 msgid " No harmony yet."
 msgstr " Henüz armoni yok."
 
-#. placeholders: {parts}, {else}, {list}
-msgid " Harmony: {parts} {else}, {list}."
-msgstr " Armoni: {parts} {else}, {list}."
+#. placeholders: {part_names}
+msgid " Harmony: 1 part, {part_names}."
+msgstr " Armoni: 1 parti, {part_names}."
+
+#. placeholders: {count}, {part_names}
+msgid " Harmony: {count} parts, {part_names}."
+msgstr " Armoni: {count} parti, {part_names}."
+
+msgid " 1 harvest."
+msgstr " 1 hasat."
+
+#. placeholders: {harvests}
+msgid " {harvests} harvests."
+msgstr " {harvests} hasat."
 
 msgid "harmony parts"
 msgstr "armoni partisi"
@@ -64207,7 +64478,7 @@ msgstr "Duraklatma menüsünden çıkarsanız bahçe hafta bitene kadar kalır."
 
 msgid ""
 "Leaving from the pause menu keeps the garden until the month is over."
-msgstr ""
+msgstr "Duraklatma menüsünden çıkarsanız bahçe ay bitene kadar kalır."
 
 msgid "A fresh garden for the same challenge. Only your best score is kept."
 msgstr "Aynı görev için yeni bir bahçe. Yalnızca en iyi puanınız kalır."
@@ -64286,6 +64557,9 @@ msgstr "Bahçeye döndünüz."
 #. placeholders: {here}
 msgid "Back in the garden. {here}"
 msgstr "Bahçeye döndünüz. {here}"
+
+msgid "plant"
+msgstr "bitki"
 
 #. placeholders: {name}
 msgid "Pull up the {name} and add it to the compost?"
@@ -65011,9 +65285,6 @@ msgstr ""
 msgid "The clock warning plays at 1 minute, 30 seconds and 10 seconds left."
 msgstr "Saat uyarısı 1 dakika, 30 saniye ve 10 saniye kala çalar."
 
-msgid "The clock stops while the guard listens at the door."
-msgstr "Nöbetçi kapıda dinlerken saat durur."
-
 msgid ""
 "Practice dial gives you endless single wheels with nothing to lose, so you "
 "can practise finding the tumbler."
@@ -65683,31 +65954,35 @@ msgstr ""
 msgid "{sentence_start} wheels{rule}."
 msgstr "{sentence_start} çark{rule}."
 
-#. placeholders: {else}
 #. one sentence of a longer line
-msgid "Hints cost five seconds.{else}"
-msgstr "İpuçları beş saniyeye mal olur.{else}"
+msgid "Hints cost five seconds."
+msgstr "İpuçları beş saniyeye mal olur."
+
+#. one sentence of a longer line
+msgid "The clock stops while the guard listens at the door."
+msgstr "Nöbetçi kapıda dinlerken saat durur."
 
 #. placeholders: {n}, {name}
 #. one sentence of a longer line
 msgid "Time attack, safe {n}: {name}."
 msgstr "Zamana karşı, kasa {n}: {name}."
 
-#. placeholders: {n}, {name}, {sentence_start}, {else}
+#. placeholders: {n}, {name}, {time_limit}
 msgid ""
-"Time attack, safe {n}: {name}. {sentence_start} on the clock. Hints cost "
-"five seconds.{else}"
+"Time attack, safe {n}: {name}. {time_limit} on the clock. Hints cost five "
+"seconds. The clock stops while the guard listens at the door."
 msgstr ""
-"Zamana karşı, kasa {n}: {name}. Saatte {sentence_start}. İpuçları beş "
-"saniyeye mal olur.{else}"
 
-#. placeholders: {sentence_start}
+#. placeholders: {time_limit}
 #. one sentence of a longer line
-msgid "{sentence_start} on the clock."
-msgstr "Saatte {sentence_start}."
+msgid "{time_limit} on the clock."
+msgstr "Saatte {time_limit}."
 
-msgid " The clock stops while the guard listens at the door."
-msgstr " Nöbetçi kapıda dinlerken saat durur."
+#. placeholders: {n}, {name}, {time_limit}
+msgid ""
+"Time attack, safe {n}: {name}. {time_limit} on the clock. Hints cost five "
+"seconds."
+msgstr ""
 
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
@@ -65731,8 +66006,11 @@ msgstr " Kasa {index}, toplam {safes}:"
 msgid " {name}. {sentence_start} wheels"
 msgstr " {name}. {sentence_start} çark"
 
-#. placeholders: {decoys}, {s_ending}
-msgid ", {decoys} false gate{s_ending} a wheel"
+msgid ", 1 false gate a wheel"
+msgstr ", çark başına 1 sahte kapı"
+
+#. placeholders: {decoys}
+msgid ", {decoys} false gates a wheel"
 msgstr ", çark başına {decoys} sahte kapı"
 
 msgid " A guard walks the corridor, and you are told when he comes."
@@ -66153,9 +66431,11 @@ msgstr " Puan {score}. Şimdiki {best}: {b}."
 msgid " A new {best} time, beating {time_words}."
 msgstr " Yeni {best} süresi, önceki {time_words}."
 
-#. placeholders: {relaxed}
-msgid " Your first {relaxed}time on the board."
-msgstr ""
+msgid " Your first relaxed time on the board."
+msgstr " Sıralamada ilk rahat süreniz."
+
+msgid " Your first time on the board."
+msgstr " Sıralamada ilk süreniz."
 
 #. placeholders: {best}, {time_words}
 msgid " Your {best} time is {time_words}."
@@ -66355,8 +66635,11 @@ msgstr "henüz açılmadı"
 msgid "{sentence_start} wheels"
 msgstr "{sentence_start} çark"
 
-#. placeholders: {decoys}, {s_ending}
-msgid "{decoys} false gate{s_ending} a wheel"
+msgid "1 false gate a wheel"
+msgstr "çark başına 1 sahte kapı"
+
+#. placeholders: {decoys}
+msgid "{decoys} false gates a wheel"
 msgstr "çark başına {decoys} sahte kapı"
 
 msgid "direction rule"
@@ -67902,21 +68185,16 @@ msgstr "Hat açıldıktan sonra ipucu yok."
 msgid " The thirteenth train went by."
 msgstr " On üçüncü tren geçti."
 
-#. placeholders: {points_words}, {r}
-msgid "{points_words}, your first {r}score."
-msgstr ""
+#. placeholders: {points_words}, {previous}
+msgid "{points_words}, a new relaxed best, beating {previous}."
+msgstr "{points_words}, yeni rahat rekor, önceki {previous}."
 
-#. placeholders: {points_words}, {r}, {previous}
-msgid "{points_words}, a new {r}best, beating {previous}."
-msgstr ""
+#. placeholders: {points_words}, {best}
+msgid "{points_words}. Your relaxed best is {best}."
+msgstr "{points_words}. Rahat rekorunuz {best}."
 
-#. placeholders: {points_words}, {r}, {best}
-msgid "{points_words}. Your {r}best is {best}."
-msgstr ""
-
-#. placeholders: {r}
-msgid "longest {r}run"
-msgstr ""
+msgid "longest relaxed run"
+msgstr "en uzun rahat seri"
 
 #. placeholders: {longest}, {trains_words}
 msgid "{longest}: {trains_words}, your first on the board."
@@ -67926,30 +68204,52 @@ msgstr "{longest}: {trains_words}, sıralamadaki ilk kaydınız."
 msgid "{longest}: {trains_words}, a new record, beating {previous}."
 msgstr "{longest}: {trains_words}, yeni rekor, önceki {previous}."
 
-#. placeholders: {window_words}, {r}
-msgid "Window reached: {window_words}, your shortest {r}window yet."
+#. placeholders: {window_words}
+msgid "Window reached: {window_words}, your shortest relaxed window yet."
 msgstr ""
+"Ulaşılan süre: {window_words}, şimdiye kadarki en kısa rahat süreniz."
+
+#. placeholders: {window_words}
+msgid "Window reached: {window_words}, your shortest window yet."
+msgstr "Ulaşılan süre: {window_words}, şimdiye kadarki en kısa süreniz."
 
 #. placeholders: {window_words}
 msgid "Window reached: {window_words}."
 msgstr "Ulaşılan süre: {window_words}."
 
-#. placeholders: {points_words}, {r}
-msgid "{points_words}, your first {r}steam gala score."
-msgstr ""
+#. placeholders: {points_words}
+msgid "{points_words}, your first relaxed steam gala score."
+msgstr "{points_words}, ilk rahat buhar şenliği puanınız."
 
-#. placeholders: {points_words}, {r}, {previous}
-msgid "{points_words}, a new {r}steam gala best, beating {previous}."
-msgstr ""
+#. placeholders: {points_words}
+msgid "{points_words}, your first steam gala score."
+msgstr "{points_words}, ilk buhar şenliği puanınız."
 
-#. placeholders: {r}, {best}
+#. placeholders: {points_words}, {previous}
+msgid "{points_words}, a new relaxed steam gala best, beating {previous}."
+msgstr "{points_words}, yeni rahat buhar şenliği rekoru, önceki {previous}."
+
+#. placeholders: {points_words}, {previous}
+msgid "{points_words}, a new steam gala best, beating {previous}."
+msgstr "{points_words}, yeni buhar şenliği rekoru, önceki {previous}."
+
+#. placeholders: {best}
 #. one sentence of a longer line
-msgid "Your {r}steam gala best is {best}."
-msgstr ""
+msgid "Your relaxed steam gala best is {best}."
+msgstr "Rahat buhar şenliği rekorunuz {best}."
 
-#. placeholders: {points_words}, {r}, {best}
-msgid "{points_words}. Your {r}steam gala best is {best}."
-msgstr ""
+#. placeholders: {points_words}, {best}
+msgid "{points_words}. Your relaxed steam gala best is {best}."
+msgstr "{points_words}. Rahat buhar şenliği rekorunuz {best}."
+
+#. placeholders: {best}
+#. one sentence of a longer line
+msgid "Your steam gala best is {best}."
+msgstr "Buhar şenliği rekorunuz {best}."
+
+#. placeholders: {points_words}, {best}
+msgid "{points_words}. Your steam gala best is {best}."
+msgstr "{points_words}. Buhar şenliği rekorunuz {best}."
 
 msgid "1 steam special"
 msgstr "1 buharlı özel tren"
@@ -73735,6 +74035,8 @@ msgid ""
 " This is the {challenge_title}, {name}. Leaving from the pause menu does "
 "not count the skate."
 msgstr ""
+" Bu {challenge_title}, {name}. Duraklatma menüsünden çıkarsanız paten "
+"sayılmaz."
 
 #. one sentence of a longer line
 msgid "Leaving from the pause menu does not count the skate."
@@ -74852,6 +75154,8 @@ msgid ""
 "{title} result: {score} points. {score_line} {streak_sentence} "
 "{sentence_start}"
 msgstr ""
+"{title} sonucu: {score} puan. {score_line} {streak_sentence} "
+"{sentence_start}"
 
 msgid "Full moon pad"
 msgstr "Dolunay pisti"
@@ -75294,9 +75598,11 @@ msgstr "Hız: {velocity_words}"
 msgid "Fuel: {fuel_words}"
 msgstr "Yakıt: {fuel_words}"
 
-#. placeholders: {else}
-msgid "Engine: {else}"
-msgstr "Motor: {else}"
+msgid "Engine: on"
+msgstr "Motor: açık"
+
+msgid "Engine: off"
+msgstr "Motor: kapalı"
 
 #. placeholders: {count}
 msgid "Call-outs every {count}"
@@ -75558,12 +75864,16 @@ msgid ""
 "Quindar tone: a short high beep on the Tranquility pad. It stands for the "
 "radio click, and a call-out follows."
 msgstr ""
+"Quindar tonu: Tranquility pistinde kısa, tiz bir bip. Telsiz tıkırtısını "
+"temsil eder, ardından bir bildirim gelir."
 
 #. the name or the meaning of a longer line
 msgid ""
 "a short high beep on the Tranquility pad. It stands for the radio click, "
 "and a call-out follows."
 msgstr ""
+"Tranquility pistinde kısa, tiz bir bip. Telsiz tıkırtısını temsil eder, "
+"ardından bir bildirim gelir."
 
 #. the name or the meaning of a longer line
 msgid "Fuel alarm"
@@ -77588,35 +77898,34 @@ msgstr "Önceki {best}: {previous}."
 msgid "Your {best} {noun} is {b}."
 msgstr ""
 
-#. placeholders: {surfaced}, {else}
-msgid "Expedition over after {surfaced} {else}, no coins."
-msgstr "Sefer {surfaced} {else} sonunda bitti, sikke yok."
+msgid "Expedition over after 1 dive, no coins."
+msgstr "1 dalıştan sonra sefer bitti, sikke yok."
 
-msgid "dive"
-msgstr "dalış"
-
-msgid "dives"
-msgstr "dalış"
+#. placeholders: {surfaced}
+msgid "Expedition over after {surfaced} dives, no coins."
+msgstr "{surfaced} dalıştan sonra sefer bitti, sikke yok."
 
 #. one sentence of a longer line
 msgid "Expedition over."
 msgstr "Sefer bitti."
 
-#. placeholders: {surfaced}, {else}, {score}
-msgid "Expedition over. Surfaced {surfaced} {else}, {score} coins banked."
-msgstr ""
-"Sefer bitti. {surfaced} {else} yüzeye çıkıldı, kasada {score} sikke."
+#. placeholders: {score}
+msgid "Expedition over. Surfaced 1 time, {score} coins banked."
+msgstr "Sefer bitti. 1 kez yüzeye çıkıldı, kasada {score} sikke."
 
-#. placeholders: {surfaced}, {else}, {score}
+#. placeholders: {score}
 #. one sentence of a longer line
-msgid "Surfaced {surfaced} {else}, {score} coins banked."
-msgstr "{surfaced} {else} yüzeye çıkıldı, kasada {score} sikke."
+msgid "Surfaced 1 time, {score} coins banked."
+msgstr "1 kez yüzeye çıkıldı, kasada {score} sikke."
 
-msgid "time"
-msgstr "kez"
+#. placeholders: {surfaced}, {score}
+msgid "Expedition over. Surfaced {surfaced} times, {score} coins banked."
+msgstr "Sefer bitti. {surfaced} kez yüzeye çıkıldı, kasada {score} sikke."
 
-msgid "times"
-msgstr "kez"
+#. placeholders: {surfaced}, {score}
+#. one sentence of a longer line
+msgid "Surfaced {surfaced} times, {score} coins banked."
+msgstr "{surfaced} kez yüzeye çıkıldı, kasada {score} sikke."
 
 #. placeholders: {n}
 #. one sentence of a longer line
@@ -79464,9 +79773,17 @@ msgstr ""
 msgid "The "
 msgstr ""
 
-#. placeholders: {article}, {name}
-msgid "{article} {name} night"
-msgstr ""
+msgid "a spring night"
+msgstr "bir ilkbahar gecesi"
+
+msgid "a summer night"
+msgstr "bir yaz gecesi"
+
+msgid "an autumn night"
+msgstr "bir sonbahar gecesi"
+
+msgid "a winter night"
+msgstr "bir kış gecesi"
 
 msgid "Enter again heads home."
 msgstr "Bir kez daha Enter eve döndürür."
@@ -79789,18 +80106,23 @@ msgstr " {name} için en iyi gözleminiz, önceki {previous}."
 msgid "The peak is {days_phrase}."
 msgstr "Zirve: {days_phrase}."
 
-#. placeholders: {total}, {else}, {name}, {year}
+#. placeholders: {name}, {year}
 #. one sentence of a longer line
-msgid "That makes {total} {else} on the {name} in {year}."
-msgstr "Böylece {year} yılında {name} için toplam {total} {else} oldu."
+msgid "That makes 1 wish on the {name} in {year}."
+msgstr "Böylece {year} {name} için 1 dilek oldu."
 
-#. placeholders: {total}, {else}, {name}, {year}, {coming}
-msgid "That makes {total} {else} on the {name} in {year}. {coming}"
-msgstr ""
-"Böylece {year} yılında {name} için toplam {total} {else} oldu. {coming}"
+#. placeholders: {name}, {year}, {coming}
+msgid "That makes 1 wish on the {name} in {year}. {coming}"
+msgstr "Böylece {year} {name} için 1 dilek oldu. {coming}"
 
-msgid "wishes"
-msgstr ""
+#. placeholders: {total}, {name}, {year}
+#. one sentence of a longer line
+msgid "That makes {total} wishes on the {name} in {year}."
+msgstr "Böylece {year} {name} için {total} dilek oldu."
+
+#. placeholders: {total}, {name}, {year}, {coming}
+msgid "That makes {total} wishes on the {name} in {year}. {coming}"
+msgstr "Böylece {year} {name} için {total} dilek oldu. {coming}"
 
 #. one sentence of a longer line
 msgid "Watch over."
@@ -83124,12 +83446,16 @@ msgid ""
 "Tonight's three species: find {species} on Rocky Point, worth 100 points "
 "more each."
 msgstr ""
+"Bu gecenin üç türü: Kayalık Burun'da {species} bulun, her biri 100 puan "
+"daha değerli."
 
 #. placeholders: {species}, {twist}, {trip}
 msgid ""
 "Tonight's three species: find {species} on Rocky Point, worth 100 points "
 "more each. {twist} {trip}"
 msgstr ""
+"Bu gecenin üç türü: Kayalık Burun'da {species} bulun, her biri 100 puan "
+"daha değerli. {twist} {trip}"
 
 #. placeholders: {describe}, {trip}
 msgid "This week's rare find, on the Far Reef: {describe} {trip}"
@@ -83576,12 +83902,17 @@ msgstr " Gelgit yaklaşık {minutes_words} içinde dönüyor."
 msgid "Back at pool {at}, {words}.{tide}"
 msgstr "Yine havuz {at}, {words}.{tide}"
 
-#. placeholders: {name}, {else}
-msgid "That last call was the {name}.{else}"
-msgstr "Son ses veren: {name}.{else}"
+#. one sentence of a longer line
+msgid "It is shy."
+msgstr "Ürkek bir canlı."
 
-msgid " It is shy."
-msgstr " Ürkektir."
+#. placeholders: {name}
+msgid "That last call was the {name}. It is shy."
+msgstr "Son ses veren: {name}. Ürkek bir canlı."
+
+#. placeholders: {name}
+msgid "That last call was the {name}."
+msgstr "Son ses veren: {name}."
 
 msgid "Nothing has called here yet."
 msgstr "Burada henüz bir şey ses vermedi."
@@ -85332,17 +85663,29 @@ msgstr ""
 msgid "training"
 msgstr ""
 
-#. placeholders: {relaxed}, {name}, {score}
-msgid "First {relaxed}{name} score saved: {score}."
-msgstr ""
+#. placeholders: {name}, {score}
+msgid "First relaxed {name} score saved: {score}."
+msgstr "İlk rahat {name} puanı kaydedildi: {score}."
 
-#. placeholders: {relaxed}, {name}, {score}, {previous}
-msgid "New {relaxed}best {name} score: {score}, beating {previous}."
-msgstr ""
+#. placeholders: {name}, {score}
+msgid "First {name} score saved: {score}."
+msgstr "İlk {name} puanı kaydedildi: {score}."
 
-#. placeholders: {relaxed}, {name}, {best}
-msgid "Your {relaxed}best {name} score stays {best}."
-msgstr ""
+#. placeholders: {name}, {score}, {previous}
+msgid "New relaxed best {name} score: {score}, beating {previous}."
+msgstr "Yeni rahat {name} rekoru: {score}, önceki {previous}."
+
+#. placeholders: {name}, {score}, {previous}
+msgid "New best {name} score: {score}, beating {previous}."
+msgstr "Yeni {name} rekoru: {score}, önceki {previous}."
+
+#. placeholders: {name}, {best}
+msgid "Your relaxed best {name} score stays {best}."
+msgstr "Rahat {name} rekorunuz {best} olarak kalıyor."
+
+#. placeholders: {name}, {best}
+msgid "Your best {name} score stays {best}."
+msgstr "{name} rekorunuz {best} olarak kalıyor."
 
 #. placeholders: {number}
 msgid "night crossing {number}"
@@ -85352,14 +85695,22 @@ msgstr "gece geçişi {number}"
 msgid "crossing {number}"
 msgstr "geçiş {number}"
 
-#. placeholders: {relaxed}, {name}, {secs}
-msgid "First {relaxed}time on {name}: {secs} seconds."
-msgstr ""
+#. placeholders: {name}, {secs}
+msgid "First relaxed time on {name}: {secs} seconds."
+msgstr "{name} için ilk rahat süre: {secs} saniye."
 
-#. placeholders: {relaxed}, {name}, {secs}, {previous}
-msgid ""
-"New {relaxed}best time on {name}: {secs} seconds, beating {previous}."
+#. placeholders: {name}, {secs}
+msgid "First time on {name}: {secs} seconds."
+msgstr "{name} için ilk süre: {secs} saniye."
+
+#. placeholders: {name}, {secs}, {previous}
+msgid "New relaxed best time on {name}: {secs} seconds, beating {previous}."
 msgstr ""
+"{name} için yeni rahat süre rekoru: {secs} saniye, önceki {previous}."
+
+#. placeholders: {name}, {secs}, {previous}
+msgid "New best time on {name}: {secs} seconds, beating {previous}."
+msgstr "{name} için yeni süre rekoru: {secs} saniye, önceki {previous}."
 
 #. placeholders: {reached}, {SKYLINE_LEN}
 msgid "Furthest crossing: {reached} of {SKYLINE_LEN}."
@@ -85973,16 +86324,13 @@ msgstr "{to} çatısındasınız."
 msgid "Run over."
 msgstr "Tur bitti."
 
-#. placeholders: {pos}, {steps}, {lean_words}, {else}
-msgid "Step {pos} of {steps}, {lean_words}{else}."
-msgstr "Adım {pos}, toplam {steps}, {lean_words}{else}."
+#. placeholders: {pos}, {steps}, {lean_words}
+msgid "Step {pos} of {steps}, {lean_words}, crouching."
+msgstr "Adım {pos}, toplam {steps}, {lean_words}, çömelmiş."
 
-msgid ", crouching"
-msgstr ", çömelmiş"
-
-#. one clause of a longer line
-msgid "crouching"
-msgstr "çömelmiş"
+#. placeholders: {pos}, {steps}, {lean_words}
+msgid "Step {pos} of {steps}, {lean_words}."
+msgstr "Adım {pos}, toplam {steps}, {lean_words}."
 
 #. placeholders: {name}
 msgid "Wind blowing from the {name}."
@@ -87645,27 +87993,34 @@ msgstr ""
 "Dilek Masası'nda art arda desteler {MONTHLY_STACKS} ile {MONTHLY_STACKS2} "
 "arası."
 
-#. placeholders: {r}, {score}
-msgid "Your first {r}result on this challenge: {score}."
-msgstr ""
+#. placeholders: {score}
+msgid "Your first relaxed result on this challenge: {score}."
+msgstr "Bu görevde ilk rahat tempo sonucunuz: {score}."
 
-#. placeholders: {r}
+#. placeholders: {score}
+msgid "Your first result on this challenge: {score}."
+msgstr "Bu görevde ilk sonucunuz: {score}."
+
 #. one sentence of a longer line
-msgid "A new {r}best."
-msgstr ""
+msgid "A new relaxed best."
+msgstr "Yeni rahat rekor."
 
-#. placeholders: {r}, {previous}
-msgid "A new {r}best. The old {r}best was {previous}."
-msgstr ""
+#. placeholders: {previous}
+msgid "A new relaxed best. The old relaxed best was {previous}."
+msgstr "Yeni rahat rekor. Önceki rahat rekor {previous} idi."
 
-#. placeholders: {r}, {previous}
+#. placeholders: {previous}
 #. one sentence of a longer line
-msgid "The old {r}best was {previous}."
-msgstr ""
+msgid "The old relaxed best was {previous}."
+msgstr "Önceki rahat rekor {previous} idi."
 
-#. placeholders: {r}, {best}
-msgid "Your {r}best on this challenge is {best}."
-msgstr ""
+#. placeholders: {best}
+msgid "Your relaxed best on this challenge is {best}."
+msgstr "Bu görevdeki rahat rekorunuz {best}."
+
+#. placeholders: {best}
+msgid "Your best on this challenge is {best}."
+msgstr "Bu görevdeki rekorunuz {best}."
 
 #. placeholders: {title}, {score}
 #. one sentence of a longer line
@@ -89160,13 +89515,9 @@ msgstr ""
 msgid "countdown night {night}"
 msgstr ""
 
-#. placeholders: {r}
-msgid "Your first {r}score here is saved."
-msgstr ""
-
-#. placeholders: {r}, {best}
-msgid "Your {r}best is {best}."
-msgstr ""
+#. placeholders: {best}
+msgid "Your relaxed best is {best}."
+msgstr "Rahat rekorunuz {best}."
 
 msgid "Not played yet"
 msgstr "Henüz oynanmadı"
@@ -89224,18 +89575,53 @@ msgstr "Aynı tur, hemen. Yalnızca en iyi sonucunuz tutulur."
 msgid "Shift {level}"
 msgstr "Vardiya {level}"
 
-#. placeholders: {name}
-msgid ", a {name} in the box"
-msgstr ", kutuda {name}"
+#. placeholders: {who}, {gift}
+msgid "{who}, on your left, wishes for {gift}."
+msgstr "{who}, solunuzda, {gift} istiyor."
 
-#. placeholders: {name}
-#. one clause of a longer line
-msgid "a {name} in the box"
-msgstr "kutuda {name}"
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, on your left, wishes for {gift}, a {sound} in the box."
+msgstr "{who}, solunuzda, {gift} istiyor, kutuda {sound} sesi."
 
-#. placeholders: {name}, {place}, {item}, {which}
-msgid "{name}, {place}, wishes for {item}{which}."
-msgstr "{name}, {place}, {item} diliyor{which}."
+#. placeholders: {who}, {gift}
+msgid "{who}, on your left, now wishes for {gift}."
+msgstr "{who}, solunuzda, artık {gift} istiyor."
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, on your left, now wishes for {gift}, a {sound} in the box."
+msgstr "{who}, solunuzda, artık {gift} istiyor, kutuda {sound} sesi."
+
+#. placeholders: {who}, {gift}
+msgid "{who}, on your right, wishes for {gift}."
+msgstr "{who}, sağınızda, {gift} istiyor."
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, on your right, wishes for {gift}, a {sound} in the box."
+msgstr "{who}, sağınızda, {gift} istiyor, kutuda {sound} sesi."
+
+#. placeholders: {who}, {gift}
+msgid "{who}, on your right, now wishes for {gift}."
+msgstr "{who}, sağınızda, artık {gift} istiyor."
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, on your right, now wishes for {gift}, a {sound} in the box."
+msgstr "{who}, sağınızda, artık {gift} istiyor, kutuda {sound} sesi."
+
+#. placeholders: {who}, {gift}
+msgid "{who}, straight ahead, wishes for {gift}."
+msgstr "{who}, tam karşınızda, {gift} istiyor."
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, straight ahead, wishes for {gift}, a {sound} in the box."
+msgstr "{who}, tam karşınızda, {gift} istiyor, kutuda {sound} sesi."
+
+#. placeholders: {who}, {gift}
+msgid "{who}, straight ahead, now wishes for {gift}."
+msgstr "{who}, tam karşınızda, artık {gift} istiyor."
+
+#. placeholders: {who}, {gift}, {sound}
+msgid "{who}, straight ahead, now wishes for {gift}, a {sound} in the box."
+msgstr "{who}, tam karşınızda, artık {gift} istiyor, kutuda {sound} sesi."
 
 #. placeholders: {name}
 msgid ""
@@ -89379,29 +89765,36 @@ msgstr "İade çuvalına. Artı {points}.{rest}"
 msgid "Plus {points}.{rest}"
 msgstr "Artı {points}.{rest}"
 
-#. placeholders: {points}
-msgid "Plus {points}."
-msgstr "Artı {points}."
-
 #. placeholders: {who}
 #. one sentence of a longer line
 msgid "{who} is delighted."
 msgstr "{who} çok sevindi."
 
-#. placeholders: {who}, {plus}, {rest}
-msgid "{who} is delighted. {plus}{rest}"
-msgstr "{who} çok sevindi. {plus}{rest}"
+#. placeholders: {who}, {points}, {rest}
+msgid "{who} is delighted. Plus {points}.{rest}"
+msgstr "{who} çok sevindi. Artı {points}.{rest}"
 
+#. placeholders: {penalty}
+#. one sentence of a longer line
+msgid "Minus {penalty}."
+msgstr "Eksi {penalty}."
+
+#. one sentence of a longer line
 msgid "Someone wished for that."
 msgstr "Bunu biri diledi."
 
+#. placeholders: {penalty}
+msgid "Someone wished for that. Minus {penalty}."
+msgstr "Bunu biri istemişti. Eksi {penalty}."
+
 #. placeholders: {who}
+#. one sentence of a longer line
 msgid "{who} didn't wish for that."
 msgstr "{who} bunu dilememişti."
 
-#. placeholders: {who}, {secs}
-msgid "{who} Minus {secs}."
-msgstr "{who} Eksi {secs}."
+#. placeholders: {who}, {penalty}
+msgid "{who} didn't wish for that. Minus {penalty}."
+msgstr "{who} bunu istememişti. Eksi {penalty}."
 
 msgid "1 second left!"
 msgstr "1 saniye kaldı!"
@@ -89414,14 +89807,9 @@ msgstr "{n} saniye kaldı!"
 msgid "Change of plans."
 msgstr "Plan değişikliği."
 
-#. placeholders: {name}, {place}, {item}, {which}
-msgid "Change of plans. {name}, {place}, now wishes for {item}{which}."
-msgstr "Plan değişikliği. {name}, {place}, artık {item} diliyor{which}."
-
-#. placeholders: {name}, {place}, {item}, {which}
-#. one sentence of a longer line
-msgid "{name}, {place}, now wishes for {item}{which}."
-msgstr "{name}, {place}, artık {item} diliyor{which}."
+#. placeholders: {wish}
+msgid "Change of plans. {wish}"
+msgstr "Plan değişikliği. {wish}"
 
 #. placeholders: {done}
 #. one sentence of a longer line
@@ -89560,9 +89948,14 @@ msgstr "Bantta henüz gönderilecek bir şey yok."
 msgid "No return sack this shift."
 msgstr "Bu vardiyada iade çuvalı yok."
 
-#. placeholders: {place}
-msgid "Nobody is standing {place}."
-msgstr "{place} kimse durmuyor."
+msgid "Nobody is standing on your left."
+msgstr "Solunuzda kimse yok."
+
+msgid "Nobody is standing on your right."
+msgstr "Sağınızda kimse yok."
+
+msgid "Nobody is standing straight ahead."
+msgstr "Tam karşınızda kimse yok."
 
 msgid "No gift on the belt yet."
 msgstr "Bantta henüz hediye yok."
@@ -89571,27 +89964,37 @@ msgstr "Bantta henüz hediye yok."
 msgid "Shake it first with {primary}."
 msgstr "Önce {primary} ile sallayın."
 
-#. placeholders: {name}, {item}, {name2}, {place}, {spot_key}
+#. placeholders: {sound}, {item}, {who}, {key_send}
 msgid ""
-"That was a {name}, {item} for {name2}: send it {place} with {spot_key}."
+"That was a {sound}, {item} for {who}: send it on your left with {key_send}."
+msgstr "{sound} sesiydi, {item}, alıcı {who}: {key_send} ile sola gönderin."
+
+#. placeholders: {sound}, {item}, {who}, {key_send}
+msgid ""
+"That was a {sound}, {item} for {who}: send it on your right with {key_send}."
+msgstr "{sound} sesiydi, {item}, alıcı {who}: {key_send} ile sağa gönderin."
+
+#. placeholders: {sound}, {item}, {who}, {key_send}
+msgid ""
+"That was a {sound}, {item} for {who}: send it straight ahead with "
+"{key_send}."
 msgstr ""
-"Bu bir {name}, {name2} için {item}: {place} duran kişiye {spot_key} ile "
-"gönderin."
+"{sound} sesiydi, {item}, alıcı {who}: {key_send} ile tam karşıya gönderin."
 
-#. placeholders: {spot_key}
+#. placeholders: {key_send}
 #. one sentence of a longer line
-msgid "Nobody wished for it: return sack, with {spot_key}."
-msgstr "Kimse dilemedi: {spot_key} ile iade çuvalına."
+msgid "Nobody wished for it: return sack, with {key_send}."
+msgstr "Bunu kimse istemedi: iade çuvalı, {key_send} ile."
 
-#. placeholders: {name}
+#. placeholders: {sound}
 #. one sentence of a longer line
-msgid "That was a {name}."
-msgstr "Bu bir {name}."
+msgid "That was a {sound}."
+msgstr "{sound} sesiydi."
 
-#. placeholders: {name}, {spot_key}
+#. placeholders: {sound}, {key_send}
 msgid ""
-"That was a {name}. Nobody wished for it: return sack, with {spot_key}."
-msgstr "Bu bir {name}. Kimse dilemedi: {spot_key} ile iade çuvalına."
+"That was a {sound}. Nobody wished for it: return sack, with {key_send}."
+msgstr "{sound} sesiydi. Bunu kimse istemedi: iade çuvalı, {key_send} ile."
 
 #. one sentence of a longer line
 msgid "Half points for this gift."
@@ -89601,29 +90004,39 @@ msgstr "Bu hediye için yarım puan."
 msgid "{text} Half points for this gift."
 msgstr "{text} Bu hediye için yarım puan."
 
-#. placeholders: {sentence_start}, {value}, {name}
-msgid "{sentence_start} starts the {value}, {name} repeats the wishes."
-msgstr "{sentence_start} ile {value} başlar, {name} dilekleri yineler."
+#. placeholders: {key_start}, {key_repeat}
+msgid "{key_start} starts the belt, {key_repeat} repeats the wishes."
+msgstr "{key_start} bandı başlatır, {key_repeat} dilekleri yineler."
 
-msgid "belt"
-msgstr "bant"
-
-#. placeholders: {sentence_start2}, {ahead}, {name}
+#. placeholders: {key_left}, {key_right}
 #. one sentence of a longer line
-msgid "{sentence_start2}{ahead} and {name} send it."
-msgstr "{sentence_start2}{ahead} ve {name} onu gönderir."
+msgid "{key_left} and {key_right} send it."
+msgstr "{key_left} ve {key_right} onu gönderir."
 
-#. placeholders: {sentence_start}
+#. placeholders: {key_shake}
 #. one sentence of a longer line
-msgid "{sentence_start} shakes the gift."
-msgstr "{sentence_start} hediyeyi sallar."
+msgid "{key_shake} shakes the gift."
+msgstr "{key_shake} hediyeyi sallar."
 
-#. placeholders: {sentence_start}, {sentence_start2}, {ahead}, {name}
+#. placeholders: {key_shake}, {key_left}, {key_right}
 msgid ""
-"{sentence_start} shakes the gift. {sentence_start2}{ahead} and {name} send "
+"{key_shake} shakes the gift. {key_left} and {key_right} send it. F1 "
+"explains the keys."
+msgstr ""
+"{key_shake} hediyeyi sallar. {key_left} ve {key_right} onu gönderir. F1 "
+"tuşları açıklar."
+
+#. placeholders: {key_left}, {key_ahead}, {key_right}
+#. one sentence of a longer line
+msgid "{key_left}, {key_ahead} and {key_right} send it."
+msgstr "{key_left}, {key_ahead} ve {key_right} onu gönderir."
+
+#. placeholders: {key_shake}, {key_left}, {key_ahead}, {key_right}
+msgid ""
+"{key_shake} shakes the gift. {key_left}, {key_ahead} and {key_right} send "
 "it. F1 explains the keys."
 msgstr ""
-"{sentence_start} hediyeyi sallar. {sentence_start2}{ahead} ve {name} onu "
+"{key_shake} hediyeyi sallar. {key_left}, {key_ahead} ve {key_right} onu "
 "gönderir. F1 tuşları açıklar."
 
 #. one sentence of a longer line
@@ -89676,36 +90089,27 @@ msgstr "Hediye: sallanmadı, kenara {left} saniye"
 msgid "Gift: sounds like {name}, {left} seconds to the edge"
 msgstr "Hediye: sesi {name}, kenara {left} saniye"
 
-#. placeholders: {sentence_start2}, {n}, {value3}
+#. one sentence of a longer line
+msgid "Gift Sort briefing."
+msgstr "Hediye Ayırma görev özeti."
+
+#. placeholders: {start_key}, {repeat_key}, {status_key}
+msgid ""
+"Gift Sort briefing. {start_key} starts the belt. {repeat_key} repeats the "
+"wishes, {status_key} speaks the shift, Escape pauses."
+msgstr ""
+
+#. placeholders: {repeat_key}, {status_key}
 #. one sentence of a longer line
 msgid ""
-"{sentence_start2} repeats the wishes, {n} speaks the {value3}, Escape "
+"{repeat_key} repeats the wishes, {status_key} speaks the shift, Escape "
 "pauses."
 msgstr ""
-"{sentence_start2} dilekleri yineler, {n} şunu söyler: {value3}. Escape "
-"duraklatır."
 
-#. placeholders: {sentence_start}, {value2}
+#. placeholders: {start_key}
 #. one sentence of a longer line
-msgid "{sentence_start} starts the {value2}."
-msgstr "{sentence_start} ile {value2} başlar."
-
-#. placeholders: {value}
-#. one sentence of a longer line
-msgid "{value} briefing."
-msgstr "{value} görev özeti."
-
-#. placeholders: {value}, {sentence_start}, {value2}, {sentence_start2}, {n}, {value3}
-msgid ""
-"{value} briefing. {sentence_start} starts the {value2}. {sentence_start2} "
-"repeats the wishes, {n} speaks the {value3}, Escape pauses."
-msgstr ""
-"{value} görev özeti. {sentence_start} ile {value2} başlar. "
-"{sentence_start2} dilekleri yineler, {n} şunu söyler: {value3}. Escape "
-"duraklatır."
-
-msgid "Gift Sort"
-msgstr "Hediye Ayırma"
+msgid "{start_key} starts the belt."
+msgstr "{start_key} bandı başlatır."
 
 #. placeholders: {n}
 msgid ", and {n} drops it in the return sack behind you"
@@ -89754,6 +90158,11 @@ msgid ""
 msgstr ""
 "{sentence_start3} dilekleri yineler, {sentence_start4} saati ve puanı "
 "söyler, {sentence_start5} yarım puana ipucu verir."
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid "{sentence_start} shakes the gift."
+msgstr "{sentence_start} hediyeyi sallar."
 
 msgid "Up and Down move between sounds, Enter plays one, Escape goes back."
 msgstr ""
@@ -89978,6 +90387,9 @@ msgstr "Geceye göre Gece Yarısı Geri Sayımı."
 #. placeholders: {join}
 msgid "Midnight Countdown by night. {join}"
 msgstr "Geceye göre Gece Yarısı Geri Sayımı. {join}"
+
+msgid "Gift Sort"
+msgstr "Hediye Ayırma"
 
 msgid " Late post tonight: two more letters after your next stack."
 msgstr " Bu gece geç posta var: sonraki destenizden sonra iki mektup daha."
@@ -92394,6 +92806,9 @@ msgstr "et işareti"
 msgid "tilde"
 msgstr "tilde"
 
+msgid "star"
+msgstr "yıldız"
+
 msgid "quote"
 msgstr "tırnak"
 
@@ -93381,6 +93796,505 @@ msgstr "Wicket"
 msgid "Theo"
 msgstr "Theo"
 
+#~ msgid "Spoken call-outs: {else}"
+#~ msgstr "Sesli bildirimler: {else}"
+
+#~ msgid "Keep your songs: {else}"
+#~ msgstr "Şarkıları sakla: {else}"
+
+#~ msgid "Lane {lane} of {lanes}{else}, basket {basket} of {capacity}."
+#~ msgstr ""
+#~ "Şerit {lane}, toplam {lanes}{else}, sepette {basket}, en çok {capacity}."
+
+#~ msgid ", at the cart"
+#~ msgstr ", arabanın yanında"
+
+#~ msgid "at the cart"
+#~ msgstr "arabanın yanında"
+
+#~ msgid "Round bonus {bonus}{else}."
+#~ msgstr "Bölüm bonusu {bonus}{else}."
+
+#~ msgid ""
+#~ "Round {round} cleared. You banked {eggs_phrase}. Round bonus {bonus}{else}. "
+#~ "Score {score}."
+#~ msgstr ""
+#~ "Bölüm {round} geçildi. {eggs_phrase} boşalttınız. Bölüm bonusu "
+#~ "{bonus}{else}. Puan {score}."
+
+#~ msgid ", with the perfect round bonus for no cracked eggs"
+#~ msgstr ", hiç yumurta çatlamadığı için kusursuz bölüm bonusuyla"
+
+#~ msgid "with the perfect round bonus for no cracked eggs"
+#~ msgstr "hiç yumurta çatlamadığı için kusursuz bölüm bonusuyla"
+
+#~ msgid "Banked {eggs_phrase}, {points} points{else}."
+#~ msgstr "{eggs_phrase} boşaltıldı, {points} puan{else}."
+
+#~ msgid "Banked {eggs_phrase}, {points} points{else}. Score {score}."
+#~ msgstr "{eggs_phrase} boşaltıldı, {points} puan{else}. Puan {score}."
+
+#~ msgid ", with the full basket bonus"
+#~ msgstr ", dolu sepet bonusuyla"
+
+#~ msgid "with the full basket bonus"
+#~ msgstr "dolu sepet bonusuyla"
+
+#~ msgid "Solved in {rows} {else}."
+#~ msgstr "{rows} {else} içinde çözüldü."
+
+#~ msgid "Solved in {rows} {else}. {points}."
+#~ msgstr "{rows} {else} içinde çözüldü. {points}."
+
+#~ msgid "row"
+#~ msgstr "sıra"
+
+#~ msgid "rows"
+#~ msgstr "sıra"
+
+#~ msgid "{places} places, {bells} bells to choose from, {else}, {rows} rows"
+#~ msgstr "{places} yer, seçilecek {bells} çan, {else}, {rows} sıra"
+
+#~ msgid "a bell may come twice"
+#~ msgstr "bir çan iki kez gelebilir"
+
+#~ msgid "no bell twice"
+#~ msgstr "hiçbir çan iki kez gelmez"
+
+#~ msgid "{flocks} flocks flying {else}"
+#~ msgstr "{else} yönüne uçan {flocks} sürü"
+
+#~ msgid "relaxed "
+#~ msgstr "rahat"
+
+#~ msgid "Your first {relaxed}endless ride here."
+#~ msgstr "Burada ilk {relaxed}sonsuz sürüşünüz."
+
+#~ msgid "Your first {relaxed}ride {NAME} here."
+#~ msgstr "Burada ilk {relaxed}{NAME} sürüşünüz."
+
+#~ msgid ""
+#~ "Locker drops: {lockers}. Quick drops: {quick}. {else} {sentence_start} "
+#~ "earned. You have {dollar_words} to spend in the bike shop."
+#~ msgstr ""
+#~ "Dolap teslimatları: {lockers}. Hızlı teslimatlar: {quick}. {else} "
+#~ "{sentence_start} kazandınız. Bisiklet dükkânında harcayacak {dollar_words} "
+#~ "paranız var."
+
+#~ msgid "You have {dollar_words} to spend in the bike shop."
+#~ msgstr "Bisiklet dükkânında harcayacak {dollar_words} paranız var."
+
+#~ msgid "{else} {sentence_start} earned."
+#~ msgstr "{else} {sentence_start} kazandınız."
+
+#~ msgid "{sentence_start} lost to crashes."
+#~ msgstr "Kazalarda {sentence_start} kaybedildi."
+
+#~ msgid "Your first {relaxed}{name}."
+#~ msgstr "İlk {relaxed}{name} sürüşünüz."
+
+#~ msgid "Your first {relaxed}time on {name} on the {name2}."
+#~ msgstr "{name2} ile {name} parkurunda ilk {relaxed}süreniz."
+
+#~ msgid "Puzzle: {kind_name}{else}."
+#~ msgstr "Bulmaca: {kind_name}{else}."
+
+#~ msgid ", solved"
+#~ msgstr ", çözüldü"
+
+#~ msgid "solved"
+#~ msgstr "çözüldü"
+
+#~ msgid " relaxed"
+#~ msgstr " rahat tempoda"
+
+#~ msgid " A new{relaxed} best time for this floor, beating {time_short}."
+#~ msgstr " Bu katta{relaxed} yeni en iyi süre, önceki {time_short}."
+
+#~ msgid " Your first{relaxed} time on this floor."
+#~ msgstr " Bu katta{relaxed} ilk süreniz."
+
+#~ msgid " Your{relaxed} best here is {time_short}."
+#~ msgstr " Burada{relaxed} en iyi süreniz {time_short}."
+
+#~ msgid "Back to your hamlet. {settlers} {else} live there."
+#~ msgstr "Köyünüze dönüş. Orada {settlers} {else} yaşıyor."
+
+#~ msgid "{settlers} {else} live there."
+#~ msgstr "Orada {settlers} {else} yaşıyor."
+
+#~ msgid "Settlers' tune: {else}"
+#~ msgstr "Yerleşimcilerin ezgisi: {else}"
+
+#~ msgid "Work from along the lane: {else}"
+#~ msgstr "Yol boyunca iş sesleri: {else}"
+
+#~ msgid "Buy {what}, {price} {else}"
+#~ msgstr "Satın al: {what}, {price} {else}"
+
+#~ msgid "coin"
+#~ msgstr "sikke"
+
+#~ msgid "coins"
+#~ msgstr "sikke"
+
+#~ msgid "{sentence_case}, {n}, {price} {else} each"
+#~ msgstr "{sentence_case}, {n}, tanesi {price} {else}"
+
+#~ msgid "{has} wood, {has2} stone, {count}, {coins} {else}."
+#~ msgstr "{has} odun, {has2} taş, {count}, {coins} {else}."
+
+#~ msgid "{left} {else} of work left."
+#~ msgstr "{left} {else} iş kaldı."
+
+#~ msgid "{sentence_case}, going up."
+#~ msgstr "{sentence_case}, yapılıyor."
+
+#~ msgid "{sentence_case}, going up. {left} {else} of work left."
+#~ msgstr "{sentence_case}, yapılıyor. {left} {else} iş kaldı."
+
+#~ msgid "hour"
+#~ msgstr "saat"
+
+#~ msgid "hours"
+#~ msgstr "saat"
+
+#~ msgid "{n} for {n2} {else}"
+#~ msgstr "{n2} {else} için {n}"
+
+#~ msgid "buildings"
+#~ msgstr "bina"
+
+#~ msgid "{spare} for {spare2} {else} to spare"
+#~ msgstr "artan {spare2} {else} için {spare}"
+
+#~ msgid "{sentence_case} is going up, {left} {else} of work left."
+#~ msgstr "{sentence_case} yapılıyor, {left} {else} iş kaldı."
+
+#~ msgid "Freestyle show complete. You launched {n} firework{s_ending}."
+#~ msgstr "Serbest gösteri tamam. {n} havai fişek fırlattınız."
+
+#~ msgid "You launched {n} firework{s_ending}."
+#~ msgstr "{n} havai fişek fırlattınız."
+
+#~ msgid "Gentle streams: {else}"
+#~ msgstr "Sakin dereler: {else}"
+
+#~ msgid "Say trinket names: {else}"
+#~ msgstr "Biblo adlarını söyle: {else}"
+
+#~ msgid "Banks louder up close: {else}"
+#~ msgstr "Yakın kıyı daha yüksek: {else}"
+
+#~ msgid "Bank close on your {else}."
+#~ msgstr "Kıyı yakın, {else} tarafınızda."
+
+#~ msgid "Mill wheel on the {else} side: keep {else2}."
+#~ msgstr "Değirmen çarkı {else} tarafta: {else2} tarafta kalın."
+
+#~ msgid "{scraps2} in all."
+#~ msgstr "Toplam {scraps2}."
+
+#~ msgid "scraps"
+#~ msgstr "parça"
+
+#~ msgid "{name}, {credits} credits and {parts} part{s_ending}"
+#~ msgstr "{name}, {credits} kredi ve {parts} parça"
+
+#~ msgid "Story logs recovered {logs_recovered} of {total_logs}. {else}"
+#~ msgstr ""
+#~ "Kurtarılan hikâye güncesi {logs_recovered}, toplam {total_logs}. {else}"
+
+#~ msgid "{left} shield{s_ending} left."
+#~ msgstr "{left} kalkan kaldı."
+
+#~ msgid "{message} Shield absorbed it. {left} shield{s_ending} left."
+#~ msgstr "{message} Kalkan emdi. {left} kalkan kaldı."
+
+#~ msgid "{sentence}, locked: {n} more {else}"
+#~ msgstr "{sentence}, kilitli: {n} {else} daha"
+
+#~ msgid "stars"
+#~ msgstr "yıldız"
+
+#~ msgid "day {day}, {plants} {else}, {harvests} {else2}"
+#~ msgstr "gün {day}, {plants} {else}, {harvests} {else2}"
+
+#~ msgid "plants"
+#~ msgstr "bitki"
+
+#~ msgid ""
+#~ "Bests. Most harvests: {harvests}. Fullest harmony: {harmony} {else}. "
+#~ "Longest garden: {days} {else2}. Seeds unlocked: {seeds_open} of {ALL}."
+#~ msgstr ""
+#~ "Rekorlar. En çok hasat: {harvests}. En dolu armoni: {harmony} {else}. En "
+#~ "uzun bahçe: {days} {else2}. Açılan tohumlar: {seeds_open}, toplam {ALL}."
+
+#~ msgid "Fullest harmony: {harmony} {else}."
+#~ msgstr "En dolu armoni: {harmony} {else}."
+
+#~ msgid "Longest garden: {days} {else2}."
+#~ msgstr "En uzun bahçe: {days} {else2}."
+
+#~ msgid "Seeds unlocked: {seeds_open} of {ALL}."
+#~ msgstr "Açılan tohumlar: {seeds_open}, toplam {ALL}."
+
+#~ msgid "part"
+#~ msgstr "parti"
+
+#~ msgid "parts"
+#~ msgstr "parti"
+
+#~ msgid "{n} more {else} to unlock"
+#~ msgstr "kilidin açılmasına {n} {else} daha"
+
+#~ msgid "fill {n} more {else}"
+#~ msgstr "{n} {else} daha karşılayın"
+
+#~ msgid "request"
+#~ msgstr "istek"
+
+#~ msgid "requests"
+#~ msgstr "istek"
+
+#~ msgid " Harmony: {parts} {else}, {list}."
+#~ msgstr " Armoni: {parts} {else}, {list}."
+
+#~ msgid "Hints cost five seconds.{else}"
+#~ msgstr "İpuçları beş saniyeye mal olur.{else}"
+
+#~ msgid ""
+#~ "Time attack, safe {n}: {name}. {sentence_start} on the clock. Hints cost "
+#~ "five seconds.{else}"
+#~ msgstr ""
+#~ "Zamana karşı, kasa {n}: {name}. Saatte {sentence_start}. İpuçları beş "
+#~ "saniyeye mal olur.{else}"
+
+#~ msgid "{sentence_start} on the clock."
+#~ msgstr "Saatte {sentence_start}."
+
+#~ msgid " The clock stops while the guard listens at the door."
+#~ msgstr " Nöbetçi kapıda dinlerken saat durur."
+
+#~ msgid ", {decoys} false gate{s_ending} a wheel"
+#~ msgstr ", çark başına {decoys} sahte kapı"
+
+#~ msgid "{decoys} false gate{s_ending} a wheel"
+#~ msgstr "çark başına {decoys} sahte kapı"
+
+#~ msgid "Engine: {else}"
+#~ msgstr "Motor: {else}"
+
+#~ msgid "Expedition over after {surfaced} {else}, no coins."
+#~ msgstr "Sefer {surfaced} {else} sonunda bitti, sikke yok."
+
+#~ msgid "dive"
+#~ msgstr "dalış"
+
+#~ msgid "dives"
+#~ msgstr "dalış"
+
+#~ msgid "Expedition over. Surfaced {surfaced} {else}, {score} coins banked."
+#~ msgstr ""
+#~ "Sefer bitti. {surfaced} {else} yüzeye çıkıldı, kasada {score} sikke."
+
+#~ msgid "Surfaced {surfaced} {else}, {score} coins banked."
+#~ msgstr "{surfaced} {else} yüzeye çıkıldı, kasada {score} sikke."
+
+#~ msgid "time"
+#~ msgstr "kez"
+
+#~ msgid "times"
+#~ msgstr "kez"
+
+#~ msgid "That makes {total} {else} on the {name} in {year}."
+#~ msgstr "Böylece {year} yılında {name} için toplam {total} {else} oldu."
+
+#~ msgid "That makes {total} {else} on the {name} in {year}. {coming}"
+#~ msgstr ""
+#~ "Böylece {year} yılında {name} için toplam {total} {else} oldu. {coming}"
+
+#~ msgid "That last call was the {name}.{else}"
+#~ msgstr "Son ses veren: {name}.{else}"
+
+#~ msgid " It is shy."
+#~ msgstr " Ürkektir."
+
+#~ msgid "Step {pos} of {steps}, {lean_words}{else}."
+#~ msgstr "Adım {pos}, toplam {steps}, {lean_words}{else}."
+
+#~ msgid ", crouching"
+#~ msgstr ", çömelmiş"
+
+#~ msgid "crouching"
+#~ msgstr "çömelmiş"
+
+#~ msgid ""
+#~ "{sentence_start2} repeats the wishes, {n} speaks the {value3}, Escape "
+#~ "pauses."
+#~ msgstr ""
+#~ "{sentence_start2} dilekleri yineler, {n} şunu söyler: {value3}. Escape "
+#~ "duraklatır."
+
+#~ msgid "{sentence_start} starts the {value2}."
+#~ msgstr "{sentence_start} ile {value2} başlar."
+
+#~ msgid "{value} briefing."
+#~ msgstr "{value} görev özeti."
+
+#~ msgid ""
+#~ "{value} briefing. {sentence_start} starts the {value2}. {sentence_start2} "
+#~ "repeats the wishes, {n} speaks the {value3}, Escape pauses."
+#~ msgstr ""
+#~ "{value} görev özeti. {sentence_start} ile {value2} başlar. "
+#~ "{sentence_start2} dilekleri yineler, {n} şunu söyler: {value3}. Escape "
+#~ "duraklatır."
+
+#~ msgid "belt"
+#~ msgstr "bant"
+
+#~ msgid "{name} is {days_phrase}."
+#~ msgstr "{name} {days_phrase}."
+
+#~ msgid ", 1 event today"
+#~ msgstr ", bugün 1 etkinlik"
+
+#~ msgid "1 event today"
+#~ msgstr "bugün 1 etkinlik"
+
+#~ msgid ", {n} events today"
+#~ msgstr ", bugün {n} etkinlik"
+
+#~ msgid "{n} events today"
+#~ msgstr "bugün {n} etkinlik"
+
+#~ msgid "{name}, {after_comma} today"
+#~ msgstr "{name}, {after_comma}, bugün"
+
+#~ msgid "Solved in {rows} {else}. {points}"
+#~ msgstr "{rows} {else} içinde çözüldü. {points}"
+
+#~ msgid ""
+#~ "Solved in {rows} {else}. The peal is {row_words}, and the bells ring it out."
+#~ msgstr "{rows} {else} içinde çözüldü. Dizi {row_words}, çanlar onu çalıyor."
+
+#~ msgid "The peal is {row_words}, and the bells ring it out."
+#~ msgstr "Dizi {row_words}, çanlar onu çalıyor."
+
+#~ msgid "holding {held_words}"
+#~ msgstr "elinizde {held_words}"
+
+#~ msgid "on pile {pile}"
+#~ msgstr "sütun {pile} üzerinde"
+
+#~ msgid "on the stock"
+#~ msgstr "destede"
+
+#~ msgid "on the {foundation}"
+#~ msgstr "{foundation} üzerinde"
+
+#~ msgid "the bike lane"
+#~ msgstr "bisiklet yolu"
+
+#~ msgid "the left of the traffic lane, near the centre line"
+#~ msgstr "trafik şeridinin solu, orta çizginin yakını"
+
+#~ msgid "{turn} turn in {distance}."
+#~ msgstr "{turn} dönüş, {distance} sonra."
+
+#~ msgid "{turn} turn in {distance}. {be_in} {position}{speed}"
+#~ msgstr "{turn} dönüş, {distance} sonra. {be_in} {position}{speed}"
+
+#~ msgid "{sentence_start} turn in {metres_words}."
+#~ msgstr "{metres_words} sonra {sentence_start} dönüş."
+
+#~ msgid "Turned {word}."
+#~ msgstr "Döndünüz: {word}."
+
+#~ msgid "Be in {place}."
+#~ msgstr "Yeriniz: {place}."
+
+#~ msgid "Ran wide, wrong side for a {word} turn."
+#~ msgstr "Geniş döndünüz, {word} dönüş için yanlış taraftaydınız."
+
+#~ msgid "Ran wide, wrong side for a {word} turn. Be in {place}."
+#~ msgstr ""
+#~ "Geniş döndünüz, {word} dönüş için yanlış taraftaydınız. Yeriniz: {place}."
+
+#~ msgid "Be in {lane}, under {limit}."
+#~ msgstr "Yeriniz: {lane}, hız {limit} altında."
+
+#~ msgid ", most lanterns in a night {n}"
+#~ msgstr ", bir gecede en çok fener {n}"
+
+#~ msgid "most lanterns in a night {n}"
+#~ msgstr "bir gecede en çok fener {n}"
+
+#~ msgid ", best {n} lanterns"
+#~ msgstr ", rekor {n} fener"
+
+#~ msgid "best {n} lanterns"
+#~ msgstr "rekor {n} fener"
+
+#~ msgid "Free paddle{best}"
+#~ msgstr "Serbest kürek{best}"
+
+#~ msgid "{PLAY}, night {next}{most}"
+#~ msgstr "{PLAY}, gece {next}{most}"
+
+#~ msgid ", a {name} in the box"
+#~ msgstr ", kutuda {name}"
+
+#~ msgid "a {name} in the box"
+#~ msgstr "kutuda {name}"
+
+#~ msgid "{name}, {place}, wishes for {item}{which}."
+#~ msgstr "{name}, {place}, {item} diliyor{which}."
+
+#~ msgid "{who} is delighted. {plus}{rest}"
+#~ msgstr "{who} çok sevindi. {plus}{rest}"
+
+#~ msgid "{who} Minus {secs}."
+#~ msgstr "{who} Eksi {secs}."
+
+#~ msgid "Change of plans. {name}, {place}, now wishes for {item}{which}."
+#~ msgstr "Plan değişikliği. {name}, {place}, artık {item} diliyor{which}."
+
+#~ msgid "{name}, {place}, now wishes for {item}{which}."
+#~ msgstr "{name}, {place}, artık {item} diliyor{which}."
+
+#~ msgid "Nobody is standing {place}."
+#~ msgstr "{place} kimse durmuyor."
+
+#~ msgid ""
+#~ "That was a {name}, {item} for {name2}: send it {place} with {spot_key}."
+#~ msgstr ""
+#~ "Bu bir {name}, {name2} için {item}: {place} duran kişiye {spot_key} ile "
+#~ "gönderin."
+
+#~ msgid "Nobody wished for it: return sack, with {spot_key}."
+#~ msgstr "Kimse dilemedi: {spot_key} ile iade çuvalına."
+
+#~ msgid "That was a {name}."
+#~ msgstr "Bu bir {name}."
+
+#~ msgid ""
+#~ "That was a {name}. Nobody wished for it: return sack, with {spot_key}."
+#~ msgstr "Bu bir {name}. Kimse dilemedi: {spot_key} ile iade çuvalına."
+
+#~ msgid "{sentence_start} starts the {value}, {name} repeats the wishes."
+#~ msgstr "{sentence_start} ile {value} başlar, {name} dilekleri yineler."
+
+#~ msgid "{sentence_start2}{ahead} and {name} send it."
+#~ msgstr "{sentence_start2}{ahead} ve {name} onu gönderir."
+
+#~ msgid ""
+#~ "{sentence_start} shakes the gift. {sentence_start2}{ahead} and {name} send "
+#~ "it. F1 explains the keys."
+#~ msgstr ""
+#~ "{sentence_start} hediyeyi sallar. {sentence_start2}{ahead} ve {name} onu "
+#~ "gönderir. F1 tuşları açıklar."
+
 #~ msgid "Next: {name}, {lower_first}"
 #~ msgstr "Sıradaki: {name}, {lower_first}"
 
@@ -93523,9 +94437,6 @@ msgstr "Theo"
 #~ msgstr ""
 #~ "Tranquility pistinde kısa, tiz bir bip. Telsiz tıkının yerine geçer: "
 #~ "ardından bir bildirim gelir."
-
-#~ msgid "{who} is delighted. Plus {points}.{rest}"
-#~ msgstr "{who} çok sevindi. Artı {points}.{rest}"
 
 #~ msgid "relaxed {word} {v}"
 #~ msgstr "rahat {word} {v}"
