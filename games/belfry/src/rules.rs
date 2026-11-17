@@ -60,17 +60,29 @@ pub const CATHEDRAL: Rules = Rules {
 };
 
 impl Rules {
-    /// "4 bells from 6, repeats allowed, 10 rows".
-    pub fn describe(&self) -> String {
-        let places = self.places;
-        let bells = self.bells;
-        let rows = self.rows;
+    /// "4 places, 6 bells to choose from, a bell may come twice, 10 rows."
+    pub fn sentence(&self) -> String {
+        let (places, bells, rows) = (self.places, self.bells, self.rows);
         if self.repeats {
             format!(
-                "{places} places, {bells} bells to choose from, a bell may come twice, {rows} rows"
+                "{places} places, {bells} bells to choose from, a bell may come twice, {rows} rows."
             )
         } else {
-            format!("{places} places, {bells} bells to choose from, no bell twice, {rows} rows")
+            format!("{places} places, {bells} bells to choose from, no bell twice, {rows} rows.")
+        }
+    }
+
+    /// "Find the peal: 4 places, 6 bells to choose from, ..., 10 rows."
+    pub fn find_sentence(&self) -> String {
+        let (places, bells, rows) = (self.places, self.bells, self.rows);
+        if self.repeats {
+            format!(
+                "Find the peal: {places} places, {bells} bells to choose from, a bell may come twice, {rows} rows."
+            )
+        } else {
+            format!(
+                "Find the peal: {places} places, {bells} bells to choose from, no bell twice, {rows} rows."
+            )
         }
     }
 }
@@ -190,6 +202,17 @@ impl Answer {
             (0, m) => format!("None in place, {m} misplaced"),
             (i, 0) => format!("{i} in place, none misplaced"),
             (i, m) => format!("{i} in place, {m} misplaced"),
+        }
+    }
+
+    /// The last row's answer as a whole sentence, after a lost peal.
+    pub fn last_row_sentence(&self) -> String {
+        let (in_place, misplaced) = (self.in_place, self.misplaced);
+        match (in_place, misplaced) {
+            (0, 0) => "None of the bells in your last row is in the peal.".to_string(),
+            (0, _) => format!("Your last row had none in place, {misplaced} misplaced."),
+            (_, 0) => format!("Your last row had {in_place} in place, none misplaced."),
+            _ => format!("Your last row had {in_place} in place, {misplaced} misplaced."),
         }
     }
 

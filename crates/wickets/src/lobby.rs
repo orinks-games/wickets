@@ -83,15 +83,21 @@ pub fn all_happenings(ctx: &mut Ctx<Parlor>) -> Vec<(GameInfo, Happening)> {
 }
 
 /// The first time the lobby opens, a word on today's events, or `None`:
-/// "Happening today: Nevermore Manor, the house stirs." for one, and
+/// "Happening today in Nevermore Manor: The house stirs." for one, and
 /// "6 events today, Nevermore Manor first." for more, so the line stays
 /// short on busy days. Happening today lists them all.
 pub fn happenings_line(ctx: &mut Ctx<Parlor>) -> Option<String> {
     let all = happenings(ctx);
     let (g, h) = all.first()?;
     Some(match all.len() {
-        1 => format!("Happening today: {}, {}.", g.name, after_comma(&h.title)),
-        n => format!("{n} events today, {} first.", g.name),
+        1 => {
+            let (game, event) = (g.name, &h.title);
+            format!("Happening today in {game}: {event}.")
+        }
+        n => {
+            let game = g.name;
+            format!("{n} events today, {game} first.")
+        }
     })
 }
 
@@ -721,11 +727,13 @@ pub(crate) fn period_label(ctx: &mut Ctx<Parlor>, period: Period) -> String {
         .filter(|g| Challenges::done(ctx, &Challenge::current(ctx, g.id, period)))
         .count();
     let resets = Challenge::current(ctx, NAME, period).resets();
-    format!(
-        "{} challenges, {done} of {} done. {resets}",
-        period.label(),
-        games.len()
-    )
+    let total = games.len();
+    let count = match period {
+        Period::Daily => format!("Daily challenges, {done} of {total} done."),
+        Period::Weekly => format!("Weekly challenges, {done} of {total} done."),
+        Period::Monthly => format!("Monthly challenges, {done} of {total} done."),
+    };
+    format!("{count} {resets}")
 }
 
 /// What one period's challenges are.

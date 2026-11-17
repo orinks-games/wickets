@@ -50,7 +50,13 @@ pub fn place_of(spot: Spot) -> usize {
 
 /// "Hearts foundation".
 fn foundation_name(f: usize) -> String {
-    format!("{} foundation", sentence_start(Suit::from_index(f).name()))
+    match Suit::from_index(f) {
+        Suit::Hearts => "Hearts foundation",
+        Suit::Diamonds => "Diamonds foundation",
+        Suit::Clubs => "Clubs foundation",
+        Suit::Spades => "Spades foundation",
+    }
+    .to_string()
 }
 
 /// A place's name: "Pile 3", "Stock", "Hearts foundation".
@@ -301,14 +307,24 @@ impl PlayScreen {
             if let Some(mv) = self.target() {
                 if let (Spot::Foundation(here), Spot::Foundation(to)) = (spot_of(place), mv.from) {
                     if mv.from == mv.to && here != to {
-                        text.push_str(&format!(" Goes back to {}.", Suit::from_index(to).name()));
+                        text.push_str(match Suit::from_index(to) {
+                            Suit::Hearts => " Goes back to hearts.",
+                            Suit::Diamonds => " Goes back to diamonds.",
+                            Suit::Clubs => " Goes back to clubs.",
+                            Suit::Spades => " Goes back to spades.",
+                        });
                     }
                 }
                 if mv.from != mv.to && self.game.check(mv).is_ok() {
                     // On a foundation, a single card goes to its own suit's.
                     match (spot_of(place), mv.to) {
                         (Spot::Foundation(here), Spot::Foundation(to)) if here != to => {
-                            text.push_str(&format!(" Goes to {}.", Suit::from_index(to).name()));
+                            text.push_str(match Suit::from_index(to) {
+                                Suit::Hearts => " Goes to hearts.",
+                                Suit::Diamonds => " Goes to diamonds.",
+                                Suit::Clubs => " Goes to clubs.",
+                                Suit::Spades => " Goes to spades.",
+                            });
                         }
                         _ => text.push_str(" Fits here."),
                     }
@@ -349,10 +365,12 @@ impl PlayScreen {
                 format!("On pile {pile}.")
             }
             Spot::Waste => "On the stock.".to_string(),
-            _ => {
-                let foundation = place_name(self.cursor).to_lowercase();
-                format!("On the {foundation}.")
-            }
+            Spot::Foundation(f) => match Suit::from_index(f) {
+                Suit::Hearts => "On the hearts foundation.".to_string(),
+                Suit::Diamonds => "On the diamonds foundation.".to_string(),
+                Suit::Clubs => "On the clubs foundation.".to_string(),
+                Suit::Spades => "On the spades foundation.".to_string(),
+            },
         });
         let mut more = vec![
             format!("{up} of {DECK} on the foundations", up = t.on_foundations()),
@@ -399,9 +417,19 @@ impl PlayScreen {
         out.push(self.stock_words());
         let founds: Vec<String> = Suit::ALL
             .into_iter()
-            .map(|s| match t.foundations[s.index()] {
-                0 => format!("{} empty", s.name()),
-                r => format!("{} up to {}", s.name(), rank_words(r)),
+            .map(|s| {
+                let r = t.foundations[s.index()];
+                let rank = rank_words(r);
+                match (s, r) {
+                    (Suit::Hearts, 0) => "hearts empty".to_string(),
+                    (Suit::Diamonds, 0) => "diamonds empty".to_string(),
+                    (Suit::Clubs, 0) => "clubs empty".to_string(),
+                    (Suit::Spades, 0) => "spades empty".to_string(),
+                    (Suit::Hearts, _) => format!("hearts up to {rank}"),
+                    (Suit::Diamonds, _) => format!("diamonds up to {rank}"),
+                    (Suit::Clubs, _) => format!("clubs up to {rank}"),
+                    (Suit::Spades, _) => format!("spades up to {rank}"),
+                }
             })
             .collect();
         out.push(format!("Foundations: {}.", founds.join(", ")));
@@ -629,11 +657,16 @@ impl PlayScreen {
         ctx.say(format!("Holding {held_words}."));
         if !self.told_hold {
             self.told_hold = true;
-            let p = ctx.control_name(ParlorAction::Primary);
-            let them = if count == 1 { "it" } else { "them" };
-            ctx.say_queued(format!(
-                "Move to a pile or a foundation, and {p} places {them}. Backspace puts {them} back."
-            ));
+            let drop_keys = ctx.control_name(ParlorAction::Primary);
+            ctx.say_queued(if count == 1 {
+                format!(
+                    "Move to a pile or a foundation, and {drop_keys} places it. Backspace puts it back."
+                )
+            } else {
+                format!(
+                    "Move to a pile or a foundation, and {drop_keys} places them. Backspace puts them back."
+                )
+            });
         }
     }
 
@@ -694,10 +727,12 @@ impl PlayScreen {
         }
         if let Some(suit) = played.completed {
             sound::play(ctx, sound::FOUNDATION_DONE);
-            ctx.say_queued(format!(
-                "{} foundation complete.",
-                sentence_start(suit.name())
-            ));
+            ctx.say_queued(match suit {
+                Suit::Hearts => "Hearts foundation complete.",
+                Suit::Diamonds => "Diamonds foundation complete.",
+                Suit::Clubs => "Clubs foundation complete.",
+                Suit::Spades => "Spades foundation complete.",
+            });
         }
         if self.game.can_finish() {
             self.game.finish();
@@ -871,8 +906,12 @@ fn placed_words(played: &Played) -> String {
     let card = played.cards[0].name();
     match (played.mv.to, played.onto) {
         (Spot::Foundation(f), _) => {
-            let suit = Suit::from_index(f).name();
-            format!("The {card} on the {suit} foundation.")
+            match Suit::from_index(f) {
+                Suit::Hearts => format!("The {card} on the hearts foundation."),
+                Suit::Diamonds => format!("The {card} on the diamonds foundation."),
+                Suit::Clubs => format!("The {card} on the clubs foundation."),
+                Suit::Spades => format!("The {card} on the spades foundation."),
+            }
         }
         (Spot::Pile(q), Some(onto)) => {
             let onto = onto.name();

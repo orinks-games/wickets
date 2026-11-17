@@ -149,7 +149,8 @@ impl SortRun {
 
     /// "Shift 3".
     fn shift_name(&self) -> String {
-        format!("Shift {}", self.shift.spec.level)
+        let shift = self.shift.spec.level;
+        format!("Shift {shift}")
     }
 
     /// The shift on the belt, for the tutorial and tests.
@@ -181,31 +182,31 @@ impl SortRun {
     fn wish_sentence(&self, i: usize, now: bool) -> String {
         let r = &self.shift.recipients[i];
         let (who, gift) = (r.name, r.item);
-        let sound = self.shift.spec.say_sounds.then(|| r.wish.name());
+        let sound = self.shift.spec.say_sounds.then(|| r.wish.with_article());
         match (r.spot, sound, now) {
             (Spot::Left, None, false) => format!("{who}, on your left, wishes for {gift}."),
             (Spot::Left, Some(sound), false) => {
-                format!("{who}, on your left, wishes for {gift}, a {sound} in the box.")
+                format!("{who}, on your left, wishes for {gift}, {sound} in the box.")
             }
             (Spot::Left, None, true) => format!("{who}, on your left, now wishes for {gift}."),
             (Spot::Left, Some(sound), true) => {
-                format!("{who}, on your left, now wishes for {gift}, a {sound} in the box.")
+                format!("{who}, on your left, now wishes for {gift}, {sound} in the box.")
             }
             (Spot::Right, None, false) => format!("{who}, on your right, wishes for {gift}."),
             (Spot::Right, Some(sound), false) => {
-                format!("{who}, on your right, wishes for {gift}, a {sound} in the box.")
+                format!("{who}, on your right, wishes for {gift}, {sound} in the box.")
             }
             (Spot::Right, None, true) => format!("{who}, on your right, now wishes for {gift}."),
             (Spot::Right, Some(sound), true) => {
-                format!("{who}, on your right, now wishes for {gift}, a {sound} in the box.")
+                format!("{who}, on your right, now wishes for {gift}, {sound} in the box.")
             }
             (_, None, false) => format!("{who}, straight ahead, wishes for {gift}."),
             (_, Some(sound), false) => {
-                format!("{who}, straight ahead, wishes for {gift}, a {sound} in the box.")
+                format!("{who}, straight ahead, wishes for {gift}, {sound} in the box.")
             }
             (_, None, true) => format!("{who}, straight ahead, now wishes for {gift}."),
             (_, Some(sound), true) => {
-                format!("{who}, straight ahead, now wishes for {gift}, a {sound} in the box.")
+                format!("{who}, straight ahead, now wishes for {gift}, {sound} in the box.")
             }
         }
     }
@@ -216,9 +217,9 @@ impl SortRun {
             .map(|i| self.wish_line(i))
             .collect();
         if self.shift.spec.sack {
+            let sack_keys = Self::name(ctx, ParlorAction::Down);
             parts.push(format!(
-                "Gifts nobody wished for go in the return sack behind you, with {}.",
-                Self::name(ctx, ParlorAction::Down)
+                "Gifts nobody wished for go in the return sack behind you, with {sack_keys}."
             ));
         }
         parts.join(" ")
@@ -227,29 +228,29 @@ impl SortRun {
     fn briefing(&self, ctx: &Ctx<Parlor>) -> String {
         let spec = &self.shift.spec;
         let primary = Self::name(ctx, ParlorAction::Primary);
-        let of = if self.last > self.level || self.mode.is_story() {
-            format!(" of {}", self.last)
+        let (level, last, quota) = (spec.level, self.last, spec.quota);
+        let time = secs(spec.time.round());
+        let wishes = self.wishes(ctx);
+        let mut text = if self.last > self.level || self.mode.is_story() {
+            format!("Shift {level} of {last}. Sort {quota} gifts in {time}. {wishes}")
         } else {
-            String::new()
+            format!("Shift {level}. Sort {quota} gifts in {time}. {wishes}")
         };
-        let mut text = format!(
-            "Shift {}{of}. Sort {} gifts in {}. {}",
-            spec.level,
-            spec.quota,
-            secs(spec.time.round()),
-            self.wishes(ctx)
-        );
         if spec.level == 1 {
+            let shake_keys = &primary;
+            let left_keys = Self::name(ctx, ParlorAction::Left);
+            let right_keys = Self::name(ctx, ParlorAction::Right);
+            text.push(' ');
+            text.push_str(&format!("Shake each gift with {shake_keys}."));
+            text.push(' ');
             text.push_str(&format!(
-                " Shake each gift with {primary}. Then send it with {} or {} to the person who wished for it, before it rides off the end of the belt. A wrong guess costs time, but the gift stays on the belt.",
-                Self::name(ctx, ParlorAction::Left),
-                Self::name(ctx, ParlorAction::Right)
+                "Then send it with {left_keys} or {right_keys} to the person who wished for it, before it rides off the end of the belt."
             ));
+            text.push_str(" A wrong guess costs time, but the gift stays on the belt.");
         } else if spec.level == 2 {
-            text.push_str(&format!(
-                " {} sends a gift straight ahead.",
-                sentence_start(&Self::name(ctx, ParlorAction::Up))
-            ));
+            let ahead_keys = sentence_start(&Self::name(ctx, ParlorAction::Up));
+            text.push(' ');
+            text.push_str(&format!("{ahead_keys} sends a gift straight ahead."));
         }
         if spec.level == 4 {
             text.push_str(" From now on, the wishes do not say what they sound like. Think about what each one would sound like in a box.");
@@ -263,7 +264,9 @@ impl SortRun {
                 text.push_str(&plan.twist_line());
             }
         }
-        text.push_str(&format!(" {} starts the belt.", sentence_start(&primary)));
+        let start_keys = sentence_start(&primary);
+        text.push(' ');
+        text.push_str(&format!("{start_keys} starts the belt."));
         text
     }
 
@@ -275,27 +278,21 @@ impl SortRun {
             (_, Phase::Briefing) => "The belt has not started.".to_string(),
             (None, _) => "Belt empty. A gift is coming.".to_string(),
             (Some(g), _) => {
-                let shaken = if g.shakes == 0 {
-                    "not shaken yet"
+                let time = secs(g.left().ceil());
+                if g.shakes == 0 {
+                    format!("A gift is on the belt, not shaken yet, {time} from the edge.")
                 } else {
-                    "shaken"
-                };
-                format!(
-                    "A gift is on the belt, {shaken}, {} from the edge.",
-                    secs(g.left().ceil())
-                )
+                    format!("A gift is on the belt, shaken, {time} from the edge.")
+                }
             }
         };
         let _ = ctx;
+        let clock = secs(s.clock.ceil());
+        let (shift_name, sorted, quota, score) =
+            (self.shift_name(), s.sorted, s.spec.quota, self.score());
         vec![
-            format!("{gift} {} on the clock.", secs(s.clock.ceil())),
-            format!(
-                "{}. {} of {} sorted. Score {}.",
-                self.shift_name(),
-                s.sorted,
-                s.spec.quota,
-                self.score()
-            ),
+            format!("{gift} {clock} on the clock."),
+            format!("{shift_name}. {sorted} of {quota} sorted. Score {score}."),
         ]
     }
 
@@ -354,19 +351,23 @@ impl SortRun {
             SortEvent::Correct { spot, points, .. } => {
                 self.pending = None;
                 let to_go = self.shift.spec.quota.saturating_sub(self.shift.sorted);
-                let rest = if to_go > 0 && !self.lesson {
-                    format!(" {to_go} to go.")
-                } else {
-                    String::new()
-                };
+                let more = to_go > 0 && !self.lesson;
                 if spot == Spot::Sack {
                     cue_at(ctx, sound::SACK, spot);
-                    ctx.say(format!("Into the return sack. Plus {points}.{rest}"));
+                    ctx.say(if more {
+                        format!("Into the return sack. Plus {points}. {to_go} to go.")
+                    } else {
+                        format!("Into the return sack. Plus {points}.")
+                    });
                 } else {
                     cue_at(ctx, sound::SEND, spot);
                     cue_at(ctx, sound::CORRECT, spot);
                     let who = self.who(spot);
-                    ctx.say(format!("{who} is delighted. Plus {points}.{rest}"));
+                    ctx.say(if more {
+                        format!("{who} is delighted. Plus {points}. {to_go} to go.")
+                    } else {
+                        format!("{who} is delighted. Plus {points}.")
+                    });
                 }
             }
             SortEvent::Wrong { spot, penalty } => {
@@ -451,22 +452,28 @@ impl SortRun {
         self.start_waiting = false;
         self.shift_held = 0.0;
         self.told_low = false;
+        let (bonus, score) = (self.bonus, self.score());
         ctx.say_queued(format!(
-            "Shift {done} complete. {} bonus points for the time left. Score {}.",
-            self.bonus,
-            self.score()
+            "Shift {done} complete. {bonus} bonus points for the time left. Score {score}."
         ));
         let brief = self.briefing(ctx);
         ctx.say_queued(brief);
     }
 
     fn summary(&self) -> String {
-        let gifts = if self.sorted == 1 { "gift" } else { "gifts" };
-        let guesses = if self.wrongs == 1 { "guess" } else { "guesses" };
-        format!(
-            "{} {gifts} delivered, {} broken, {} wrong {guesses}.",
-            self.sorted, self.broken, self.wrongs
-        )
+        let (sorted, broken, wrongs) = (self.sorted, self.broken, self.wrongs);
+        let gifts = if sorted == 1 {
+            "1 gift delivered".to_string()
+        } else {
+            format!("{sorted} gifts delivered")
+        };
+        let broken = format!("{broken} broken");
+        let guesses = if wrongs == 1 {
+            "1 wrong guess".to_string()
+        } else {
+            format!("{wrongs} wrong guesses")
+        };
+        format!("{gifts}, {broken}, {guesses}.")
     }
 
     fn finish(&mut self, ctx: &mut Ctx<Parlor>, success: bool) {
@@ -557,7 +564,8 @@ impl SortRun {
                 } else {
                     head
                 };
-                text.push_str(&format!("{} Final score {score}. {line}", self.summary()));
+                let summary = self.summary();
+                text.push_str(&format!("{summary} Final score {score}. {line}"));
                 let open = Progress::load(ctx).shifts_open();
                 if !success && open > 1 {
                     text.push_str(&format!(
@@ -585,7 +593,8 @@ impl SortRun {
                 ctx.audio
                     .play_at(sound::gift(kind), sound::GIFT_POS, Bus::EFFECTS);
                 if self.shift.spec.level <= 2 {
-                    self.pending = Some((1.1, format!("It sounds like a {}.", kind.name())));
+                    let sound = kind.with_article();
+                    self.pending = Some((1.1, format!("It sounds like {sound}.")));
                 }
             }
             None => {
@@ -630,25 +639,24 @@ impl SortRun {
         self.shift.take_hint();
         cue(ctx, sound::HINT);
         let home = self.shift.home_of(gift.kind);
-        let sound = gift.kind.name();
-        let key_send = Self::spot_key(ctx, home);
+        let sound = gift.kind.with_article();
+        let send_keys = Self::spot_key(ctx, home);
         let text = match self.shift.at(home) {
             Some(r) => {
                 let (who, item) = (r.name, r.item);
-                match r.spot {
-                    Spot::Left => format!(
-                        "That was a {sound}, {item} for {who}: send it on your left with {key_send}."
-                    ),
-                    Spot::Right => format!(
-                        "That was a {sound}, {item} for {who}: send it on your right with {key_send}."
-                    ),
-                    _ => format!(
-                        "That was a {sound}, {item} for {who}: send it straight ahead with {key_send}."
-                    ),
-                }
+                let send = match r.spot {
+                    Spot::Left => {
+                        format!("{who} wished for it: send it on your left with {send_keys}.")
+                    }
+                    Spot::Right => {
+                        format!("{who} wished for it: send it on your right with {send_keys}.")
+                    }
+                    _ => format!("{who} wished for it: send it straight ahead with {send_keys}."),
+                };
+                format!("That was {sound}: {item}. {send}")
             }
             None => {
-                format!("That was a {sound}. Nobody wished for it: return sack, with {key_send}.")
+                format!("That was {sound}. Nobody wished for it: return sack, with {send_keys}.")
             }
         };
         ctx.say(format!("{text} Half points for this gift."));
@@ -669,22 +677,22 @@ impl SortRun {
     fn reminder(&self, ctx: &Ctx<Parlor>) -> String {
         match self.phase {
             Phase::Briefing => {
-                let key_start = sentence_start(&Self::name(ctx, ParlorAction::Primary));
-                let key_repeat = Self::name(ctx, ParlorAction::Repeat);
-                format!("{key_start} starts the belt, {key_repeat} repeats the wishes.")
+                let start_keys = sentence_start(&Self::name(ctx, ParlorAction::Primary));
+                let repeat_keys = Self::name(ctx, ParlorAction::Repeat);
+                format!("{start_keys} starts the belt, {repeat_keys} repeats the wishes.")
             }
             Phase::Playing => {
-                let key_shake = sentence_start(&Self::name(ctx, ParlorAction::Primary));
-                let key_left = sentence_start(&Self::name(ctx, ParlorAction::Left));
-                let key_right = Self::name(ctx, ParlorAction::Right);
+                let shake_keys = sentence_start(&Self::name(ctx, ParlorAction::Primary));
+                let left_keys = sentence_start(&Self::name(ctx, ParlorAction::Left));
+                let right_keys = Self::name(ctx, ParlorAction::Right);
                 if self.shift.spec.recipients == 2 {
                     format!(
-                        "{key_shake} shakes the gift. {key_left} and {key_right} send it. F1 explains the keys."
+                        "{shake_keys} shakes the gift. {left_keys} and {right_keys} send it. F1 explains the keys."
                     )
                 } else {
-                    let key_ahead = Self::name(ctx, ParlorAction::Up);
+                    let ahead_keys = Self::name(ctx, ParlorAction::Up);
                     format!(
-                        "{key_shake} shakes the gift. {key_left}, {key_ahead} and {key_right} send it. F1 explains the keys."
+                        "{shake_keys} shakes the gift. {left_keys}, {ahead_keys} and {right_keys} send it. F1 explains the keys."
                     )
                 }
             }
@@ -891,27 +899,29 @@ impl State<Parlor> for SortRun {
                 )
             }
             Phase::Playing => {
-                let sack = if self.shift.spec.sack {
-                    format!(
-                        ", and {} drops it in the return sack behind you",
-                        n(ParlorAction::Down)
-                    )
-                } else {
-                    String::new()
+                let shake_keys = sentence_start(&n(ParlorAction::Primary));
+                let left_keys = sentence_start(&n(ParlorAction::Left));
+                let right_keys = n(ParlorAction::Right);
+                let ahead_keys = n(ParlorAction::Up);
+                let sack_keys = n(ParlorAction::Down);
+                let three = self.shift.spec.recipients != 2;
+                let send = match (three, self.shift.spec.sack) {
+                    (false, false) => format!("{left_keys} sends it left, {right_keys} right."),
+                    (true, false) => format!(
+                        "{left_keys} sends it left, {ahead_keys} straight ahead, {right_keys} right."
+                    ),
+                    (false, true) => format!(
+                        "{left_keys} sends it left, {right_keys} right, and {sack_keys} drops it in the return sack behind you."
+                    ),
+                    (true, true) => format!(
+                        "{left_keys} sends it left, {ahead_keys} straight ahead, {right_keys} right, and {sack_keys} drops it in the return sack behind you."
+                    ),
                 };
-                let ahead = if self.shift.spec.recipients == 2 {
-                    String::new()
-                } else {
-                    format!(", {} straight ahead", n(ParlorAction::Up))
-                };
+                let repeat_keys = sentence_start(&n(ParlorAction::Repeat));
+                let status_keys = sentence_start(&n(ParlorAction::Status));
+                let hint_keys = sentence_start(&n(ParlorAction::Hint));
                 format!(
-                    "Gift Sort. {} shakes the gift. {} sends it left{ahead}, {} right{sack}. {} repeats the wishes, {} speaks the clock and score, {} gives a hint at half points. Escape pauses.",
-                    sentence_start(&n(ParlorAction::Primary)),
-                    sentence_start(&n(ParlorAction::Left)),
-                    n(ParlorAction::Right),
-                    sentence_start(&n(ParlorAction::Repeat)),
-                    sentence_start(&n(ParlorAction::Status)),
-                    sentence_start(&n(ParlorAction::Hint))
+                    "Gift Sort. {shake_keys} shakes the gift. {send} {repeat_keys} repeats the wishes, {status_keys} speaks the clock and score, {hint_keys} gives a hint at half points. Escape pauses."
                 )
             }
         }

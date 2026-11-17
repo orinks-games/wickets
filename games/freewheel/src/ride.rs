@@ -437,46 +437,45 @@ impl Ride {
     fn start_line(&self, ctx: &Ctx<Parlor>) -> String {
         let bike = self.world.bike.name();
         match self.mode {
-            Mode::TimeTrial(c) => format!(
-                "Time trial, {}, on the {bike}. {}",
-                COURSES[c].name,
-                COURSES[c].about()
-            ),
-            Mode::FreeRide => format!(
-                "Free ride on the {bike}, {}, no clock. {}",
-                units::route(FREE_LENGTH),
-                self.go_words(ctx)
-            ),
+            Mode::TimeTrial(c) => {
+                let (course, about) = (COURSES[c].name, COURSES[c].about());
+                format!("Time trial, {course}, on the {bike}. {about}")
+            }
+            Mode::FreeRide => {
+                let (length, go) = (units::route(FREE_LENGTH), self.go_words(ctx));
+                format!("Free ride on the {bike}, {length}, no clock. {go}")
+            }
             Mode::Delivery(d) => match &self.job {
                 Some(job) => {
                     let (title, district) = (job.title(), d.name());
                     let (length, deadline) = (units::route(job.length), span_words(job.deadline()));
                     format!("Delivery, {title}, {district}, on the {bike}. {length}, deadline {deadline}.")
                 }
-                None => format!("Delivery in {}, on the {bike}.", d.name()),
+                None => {
+                    let district = d.name();
+                    format!("Delivery in {district}, on the {bike}.")
+                }
             },
-            Mode::Endless(d) => format!(
-                "Endless ride, {}, on the {bike}. {ENDLESS_CRASHES} crashes end it.",
-                d.name()
-            ),
-            Mode::Clock(d) => format!(
-                "{}, {}, on the {bike}. {}. Drops add time.",
-                clock::NAME,
-                d.name(),
-                sentence_start(&secs_words(clock::START_S))
-            ),
+            Mode::Endless(d) => {
+                let district = d.name();
+                format!("Endless ride, {district}, on the {bike}. {ENDLESS_CRASHES} crashes end it.")
+            }
+            Mode::Clock(d) => {
+                let (clock_name, district) = (clock::NAME, d.name());
+                let time = sentence_start(&secs_words(clock::START_S));
+                format!("{clock_name}, {district}, on the {bike}. {time}. Drops add time.")
+            }
             Mode::Training(n) => training::goal(ctx, n),
-            Mode::LeafSeason => format!(
-                "{}, on the {bike}, {}. Ride through leaf piles for {} points each.",
-                events::LEAF_SEASON,
-                units::route(self.world.course.length),
-                events::LEAF_POINTS
-            ),
-            Mode::Sunday => format!(
-                "{}, on the {bike}, {}. No cars today.",
-                events::SUNDAY,
-                units::route(self.world.course.length)
-            ),
+            Mode::LeafSeason => {
+                let (length, points) = (units::route(self.world.course.length), events::LEAF_POINTS);
+                format!(
+                    "Leaf season ride, on the {bike}, {length}. Ride through leaf piles for {points} points each."
+                )
+            }
+            Mode::Sunday => {
+                let length = units::route(self.world.course.length);
+                format!("Car-free Sunday, on the {bike}, {length}. No cars today.")
+            }
             Mode::Challenge(p) => {
                 let plan = self.challenge.as_ref().map(Plan::for_challenge);
                 format!(

@@ -1283,26 +1283,33 @@ impl Lake {
                 let l = self.lanterns[i].pos;
                 let rel = wrap(bearing(self.pos, l) - self.heading);
                 let turn = if rel.abs() <= 12.0 {
-                    format!("It is straight ahead: paddle with {}.", self.keys.paddle)
+                    let paddle_keys = &self.keys.paddle;
+                    format!("It is straight ahead: paddle with {paddle_keys}.")
                 } else if rel.abs() >= 150.0 {
-                    format!(
-                        "It is behind you: hold {} or {} to turn around.",
-                        self.keys.left, self.keys.right
-                    )
+                    let (left_keys, right_keys) = (&self.keys.left, &self.keys.right);
+                    format!("It is behind you: hold {left_keys} or {right_keys} to turn around.")
                 } else {
-                    let (key, amount) = if rel < 0.0 {
+                    let (turn_keys, amount) = if rel < 0.0 {
                         (&self.keys.left, -rel)
                     } else {
                         (&self.keys.right, rel)
                     };
-                    let how = if amount < 45.0 { "a little" } else { "well" };
-                    format!("Turn {how} with {key} until it is straight ahead, then paddle.")
+                    if amount < 45.0 {
+                        format!(
+                            "Turn a little with {turn_keys} until it is straight ahead, then paddle."
+                        )
+                    } else {
+                        format!("Turn well with {turn_keys} until it is straight ahead, then paddle.")
+                    }
                 };
                 self.lanterns[i].chime_in = 0.3;
                 let near = distance_words(self.pos.dist(l));
                 format!("{turn} The lantern is {near}.")
             }
-            None => format!("Every lantern in. {} heads home.", self.keys.home),
+            None => {
+                let finish_keys = &self.keys.home;
+                format!("Every lantern in. {finish_keys} heads home.")
+            }
         };
         self.last = text.clone();
         text

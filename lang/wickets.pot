@@ -3392,14 +3392,14 @@ msgstr ""
 msgid "Return."
 msgstr ""
 
-#. placeholders: {name}, {after_comma}
+#. placeholders: {game}, {event}
 #: crates/wickets/src/lobby.rs
-msgid "Happening today: {name}, {after_comma}."
+msgid "Happening today in {game}: {event}."
 msgstr ""
 
-#. placeholders: {n}, {name}
+#. placeholders: {n}, {game}
 #: crates/wickets/src/lobby.rs
-msgid "{n} events today, {name} first."
+msgid "{n} events today, {game} first."
 msgstr ""
 
 #: crates/wickets/src/lobby.rs
@@ -3631,19 +3631,23 @@ msgid "No internet date. Try again later."
 msgstr ""
 
 #. placeholders: {game}, {event}
-#: crates/wickets/src/lobby.rs
+#: crates/wickets/src/lobby.rs crates/wickets/src/today.rs
 msgid "{game}, today: {event}"
 msgstr ""
 
-#. placeholders: {label}, {done}, {games}
-#. one sentence of a longer line
+#. placeholders: {done}, {total}
 #: crates/wickets/src/lobby.rs
-msgid "{label} challenges, {done} of {games} done."
+msgid "Daily challenges, {done} of {total} done."
 msgstr ""
 
-#. placeholders: {label}, {done}, {games}, {resets}
+#. placeholders: {done}, {total}
 #: crates/wickets/src/lobby.rs
-msgid "{label} challenges, {done} of {games} done. {resets}"
+msgid "Weekly challenges, {done} of {total} done."
+msgstr ""
+
+#. placeholders: {done}, {total}
+#: crates/wickets/src/lobby.rs
+msgid "Monthly challenges, {done} of {total} done."
 msgstr ""
 
 #: crates/wickets/src/lobby.rs
@@ -4079,15 +4083,15 @@ msgid ""
 "your selection."
 msgstr ""
 
-#. placeholders: {name}, {after_comma}, {days_phrase}
+#. placeholders: {event}, {game}, {days}
 #. one sentence of a longer line
 #: crates/wickets/src/today.rs
-msgid "Next: {name}, {after_comma}, {days_phrase}."
+msgid "Next: {event} in {game}, {days}."
 msgstr ""
 
-#. placeholders: {name}, {after_comma}, {days_phrase}
+#. placeholders: {event}, {game}, {days}
 #: crates/wickets/src/today.rs
-msgid "No events today. Next: {name}, {after_comma}, {days_phrase}."
+msgid "No events today. Next: {event} in {game}, {days}."
 msgstr ""
 
 #: crates/wickets/src/today.rs
@@ -7675,27 +7679,49 @@ msgstr ""
 msgid "Hints halve the score."
 msgstr ""
 
-#. placeholders: {describe}
+#. placeholders: {places}, {bells}, {rows}
 #. one sentence of a longer line
-#: games/belfry/src/challenge.rs
-msgid "One peal: {describe}."
-msgstr ""
-
-#. placeholders: {describe}
-#: games/belfry/src/challenge.rs
-msgid "One peal: {describe}. Hints halve the score."
-msgstr ""
-
-#. placeholders: {describe}
-#. one sentence of a longer line
-#: games/belfry/src/challenge.rs
-msgid "Five peals in a row, each with {describe}."
-msgstr ""
-
-#. placeholders: {describe}
 #: games/belfry/src/challenge.rs
 msgid ""
-"Five peals in a row, each with {describe}. The five scores are added. Hints "
+"One peal: {places} places, {bells} bells to choose from, a bell may come "
+"twice, {rows} rows."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+#: games/belfry/src/challenge.rs
+msgid ""
+"One peal: {places} places, {bells} bells to choose from, a bell may come "
+"twice, {rows} rows. Hints halve the score."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+#. one sentence of a longer line
+#: games/belfry/src/challenge.rs
+msgid ""
+"One peal: {places} places, {bells} bells to choose from, no bell twice, "
+"{rows} rows."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+#: games/belfry/src/challenge.rs
+msgid ""
+"One peal: {places} places, {bells} bells to choose from, no bell twice, "
+"{rows} rows. Hints halve the score."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+#. one sentence of a longer line
+#: games/belfry/src/challenge.rs
+msgid ""
+"Five peals in a row, each with {places} places, {bells} bells to choose "
+"from, a bell may come twice, {rows} rows."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+#: games/belfry/src/challenge.rs
+msgid ""
+"Five peals in a row, each with {places} places, {bells} bells to choose "
+"from, a bell may come twice, {rows} rows. The five scores are added. Hints "
 "halve a score."
 msgstr ""
 
@@ -7709,20 +7735,55 @@ msgstr ""
 msgid "The five scores are added."
 msgstr ""
 
+#. placeholders: {places}, {bells}, {rows}
+#. one sentence of a longer line
+#: games/belfry/src/challenge.rs
+msgid ""
+"Five peals in a row, each with {places} places, {bells} bells to choose "
+"from, no bell twice, {rows} rows."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+#: games/belfry/src/challenge.rs
+msgid ""
+"Five peals in a row, each with {places} places, {bells} bells to choose "
+"from, no bell twice, {rows} rows. The five scores are added. Hints halve a "
+"score."
+msgstr ""
+
 #. one sentence of a longer line
 #: games/belfry/src/challenge.rs
 msgid "No hints."
 msgstr ""
 
-#. placeholders: {describe}
+#. placeholders: {places}, {bells}, {rows}
 #. one sentence of a longer line
 #: games/belfry/src/challenge.rs
-msgid "The cathedral tower: {describe}."
+msgid ""
+"The cathedral tower: {places} places, {bells} bells to choose from, a bell "
+"may come twice, {rows} rows."
 msgstr ""
 
-#. placeholders: {describe}
+#. placeholders: {places}, {bells}, {rows}
 #: games/belfry/src/challenge.rs
-msgid "The cathedral tower: {describe}. No hints."
+msgid ""
+"The cathedral tower: {places} places, {bells} bells to choose from, a bell "
+"may come twice, {rows} rows. No hints."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+#. one sentence of a longer line
+#: games/belfry/src/challenge.rs
+msgid ""
+"The cathedral tower: {places} places, {bells} bells to choose from, no bell "
+"twice, {rows} rows."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+#: games/belfry/src/challenge.rs
+msgid ""
+"The cathedral tower: {places} places, {bells} bells to choose from, no bell "
+"twice, {rows} rows. No hints."
 msgstr ""
 
 #: games/belfry/src/challenge.rs games/belfry/src/public.rs games/belfry/src/tutorial.rs lang/names.txt
@@ -7807,15 +7868,15 @@ msgstr ""
 msgid "{title} result: {points}. {score_line} {streak_sentence} {resets}"
 msgstr ""
 
-#. placeholders: {index}, {peals}
+#. placeholders: {peal}, {peals}
 #. one sentence of a longer line
 #: games/belfry/src/challenge.rs
-msgid "Peal {index} of {peals}."
+msgid "Peal {peal} of {peals}."
 msgstr ""
 
-#. placeholders: {index}, {peals}, {sentence_start}
+#. placeholders: {peal}, {peals}, {rules}
 #: games/belfry/src/challenge.rs
-msgid "Peal {index} of {peals}. {sentence_start}."
+msgid "Peal {peal} of {peals}. {rules}"
 msgstr ""
 
 #: games/belfry/src/events.rs
@@ -7968,13 +8029,27 @@ msgstr ""
 #: games/belfry/src/rules.rs
 msgid ""
 "{places} places, {bells} bells to choose from, a bell may come twice, "
-"{rows} rows"
+"{rows} rows."
 msgstr ""
 
 #. placeholders: {places}, {bells}, {rows}
 #: games/belfry/src/rules.rs
 msgid ""
-"{places} places, {bells} bells to choose from, no bell twice, {rows} rows"
+"{places} places, {bells} bells to choose from, no bell twice, {rows} rows."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+#: games/belfry/src/rules.rs
+msgid ""
+"Find the peal: {places} places, {bells} bells to choose from, a bell may "
+"come twice, {rows} rows."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+#: games/belfry/src/rules.rs
+msgid ""
+"Find the peal: {places} places, {bells} bells to choose from, no bell "
+"twice, {rows} rows."
 msgstr ""
 
 #: games/belfry/src/rules.rs
@@ -8060,6 +8135,25 @@ msgstr ""
 #. placeholders: {i}, {m}
 #: games/belfry/src/rules.rs
 msgid "{i} in place, {m} misplaced"
+msgstr ""
+
+#: games/belfry/src/rules.rs
+msgid "None of the bells in your last row is in the peal."
+msgstr ""
+
+#. placeholders: {misplaced}
+#: games/belfry/src/rules.rs
+msgid "Your last row had none in place, {misplaced} misplaced."
+msgstr ""
+
+#. placeholders: {in_place}
+#: games/belfry/src/rules.rs
+msgid "Your last row had {in_place} in place, none misplaced."
+msgstr ""
+
+#. placeholders: {in_place}, {misplaced}
+#: games/belfry/src/rules.rs
+msgid "Your last row had {in_place} in place, {misplaced} misplaced."
 msgstr ""
 
 #: games/belfry/src/rules.rs
@@ -8290,17 +8384,6 @@ msgstr ""
 msgid "{n} rows left"
 msgstr ""
 
-#. placeholders: {rules}
-#. one sentence of a longer line
-#: games/belfry/src/tower.rs
-msgid "Find the peal: {rules}."
-msgstr ""
-
-#. placeholders: {name}, {rules}
-#: games/belfry/src/tower.rs
-msgid "{name}. Find the peal: {rules}."
-msgstr ""
-
 #. placeholders: {h}
 #: games/belfry/src/tower.rs
 msgid ", {h} a hint"
@@ -8440,21 +8523,32 @@ msgstr ""
 msgid "{sentence_start} rings your row."
 msgstr ""
 
-#. placeholders: {words}
+#. placeholders: {bell}
 #. one sentence of a longer line
 #: games/belfry/src/tower.rs
-msgid "Hint: {words}."
+msgid "Hint: bell {bell} is in the peal."
 msgstr ""
 
-#. placeholders: {words}, {rows_left_words}
+#. placeholders: {bell}, {rows_left}
 #: games/belfry/src/tower.rs
-msgid "Hint: {words}. It used a row: {rows_left_words}."
+msgid "Hint: bell {bell} is in the peal. It used a row: {rows_left}."
 msgstr ""
 
-#. placeholders: {rows_left_words}
+#. placeholders: {rows_left}
 #. one sentence of a longer line
 #: games/belfry/src/tower.rs
-msgid "It used a row: {rows_left_words}."
+msgid "It used a row: {rows_left}."
+msgstr ""
+
+#. placeholders: {bell}
+#. one sentence of a longer line
+#: games/belfry/src/tower.rs
+msgid "Hint: bell {bell} is not in the peal."
+msgstr ""
+
+#. placeholders: {bell}, {rows_left}
+#: games/belfry/src/tower.rs
+msgid "Hint: bell {bell} is not in the peal. It used a row: {rows_left}."
 msgstr ""
 
 #: games/belfry/src/tower.rs
@@ -8508,15 +8602,15 @@ msgid ""
 "Solved in {rows} rows. The peal is {peal_words}, and the bells ring it out."
 msgstr ""
 
-#. placeholders: {row_words}, {words}
+#. placeholders: {peal_words}, {last_row}
 #: games/belfry/src/tower.rs
-msgid "Out of rows. The peal was {row_words}. Your last row had {words}."
+msgid "Out of rows. The peal was {peal_words}. {last_row}"
 msgstr ""
 
-#. placeholders: {words}
+#. placeholders: {peal_words}
 #. one sentence of a longer line
 #: games/belfry/src/tower.rs
-msgid "Your last row had {words}."
+msgid "The peal was {peal_words}."
 msgstr ""
 
 #. placeholders: {points}
@@ -23949,9 +24043,20 @@ msgstr ""
 msgid "Turning the stock costs no moves."
 msgstr ""
 
-#. placeholders: {sentence_start}
 #: games/fireside-patience/src/play.rs
-msgid "{sentence_start} foundation"
+msgid "Hearts foundation"
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid "Diamonds foundation"
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid "Clubs foundation"
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid "Spades foundation"
 msgstr ""
 
 #. placeholders: {p}
@@ -24110,14 +24215,36 @@ msgstr ""
 msgid "{foundation_name}: up to the {rank_words}."
 msgstr ""
 
-#. placeholders: {name}
 #: games/fireside-patience/src/play.rs
-msgid " Goes back to {name}."
+msgid " Goes back to hearts."
 msgstr ""
 
-#. placeholders: {name}
 #: games/fireside-patience/src/play.rs
-msgid " Goes to {name}."
+msgid " Goes back to diamonds."
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid " Goes back to clubs."
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid " Goes back to spades."
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid " Goes to hearts."
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid " Goes to diamonds."
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid " Goes to clubs."
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid " Goes to spades."
 msgstr ""
 
 #: games/fireside-patience/src/play.rs
@@ -24152,9 +24279,20 @@ msgstr ""
 msgid "On the stock."
 msgstr ""
 
-#. placeholders: {foundation}
 #: games/fireside-patience/src/play.rs
-msgid "On the {foundation}."
+msgid "On the hearts foundation."
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid "On the diamonds foundation."
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid "On the clubs foundation."
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid "On the spades foundation."
 msgstr ""
 
 #. placeholders: {up}, {DECK}
@@ -24186,14 +24324,40 @@ msgstr ""
 msgid "Pile {p}: {name}, {down} face down."
 msgstr ""
 
-#. placeholders: {name}
 #: games/fireside-patience/src/play.rs
-msgid "{name} empty"
+msgid "hearts empty"
 msgstr ""
 
-#. placeholders: {name}, {rank_words}
 #: games/fireside-patience/src/play.rs
-msgid "{name} up to {rank_words}"
+msgid "diamonds empty"
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid "clubs empty"
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid "spades empty"
+msgstr ""
+
+#. placeholders: {rank}
+#: games/fireside-patience/src/play.rs
+msgid "hearts up to {rank}"
+msgstr ""
+
+#. placeholders: {rank}
+#: games/fireside-patience/src/play.rs
+msgid "diamonds up to {rank}"
+msgstr ""
+
+#. placeholders: {rank}
+#: games/fireside-patience/src/play.rs
+msgid "clubs up to {rank}"
+msgstr ""
+
+#. placeholders: {rank}
+#: games/fireside-patience/src/play.rs
+msgid "spades up to {rank}"
 msgstr ""
 
 #. placeholders: {join}
@@ -24341,31 +24505,40 @@ msgstr ""
 msgid "{sentence_start} is empty."
 msgstr ""
 
-#: games/fireside-patience/src/play.rs games/harvest-feast/src/rules.rs games/haunted-hallways/src/unlocks.rs
-msgid "it"
-msgstr ""
-
-#: games/fireside-patience/src/play.rs games/harvest-feast/src/rules.rs games/haunted-hallways/src/unlocks.rs games/larkfield/src/menus.rs
-msgid "them"
-msgstr ""
-
-#. placeholders: {them}
 #. one sentence of a longer line
 #: games/fireside-patience/src/play.rs
-msgid "Backspace puts {them} back."
+msgid "Backspace puts it back."
 msgstr ""
 
-#. placeholders: {p}, {them}
+#. placeholders: {drop_keys}
 #. one sentence of a longer line
 #: games/fireside-patience/src/play.rs
-msgid "Move to a pile or a foundation, and {p} places {them}."
+msgid "Move to a pile or a foundation, and {drop_keys} places it."
 msgstr ""
 
-#. placeholders: {p}, {them}
+#. placeholders: {drop_keys}
 #: games/fireside-patience/src/play.rs
 msgid ""
-"Move to a pile or a foundation, and {p} places {them}. Backspace puts "
-"{them} back."
+"Move to a pile or a foundation, and {drop_keys} places it. Backspace puts "
+"it back."
+msgstr ""
+
+#. one sentence of a longer line
+#: games/fireside-patience/src/play.rs
+msgid "Backspace puts them back."
+msgstr ""
+
+#. placeholders: {drop_keys}
+#. one sentence of a longer line
+#: games/fireside-patience/src/play.rs
+msgid "Move to a pile or a foundation, and {drop_keys} places them."
+msgstr ""
+
+#. placeholders: {drop_keys}
+#: games/fireside-patience/src/play.rs
+msgid ""
+"Move to a pile or a foundation, and {drop_keys} places them. Backspace puts "
+"them back."
 msgstr ""
 
 #. placeholders: {words}
@@ -24382,9 +24555,20 @@ msgstr ""
 msgid "Turned up in pile {p}: {name}."
 msgstr ""
 
-#. placeholders: {sentence_start}
 #: games/fireside-patience/src/play.rs
-msgid "{sentence_start} foundation complete."
+msgid "Hearts foundation complete."
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid "Diamonds foundation complete."
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid "Clubs foundation complete."
+msgstr ""
+
+#: games/fireside-patience/src/play.rs
+msgid "Spades foundation complete."
 msgstr ""
 
 #: games/fireside-patience/src/play.rs
@@ -24457,9 +24641,24 @@ msgstr ""
 msgid "{name} won in {moves_words}"
 msgstr ""
 
-#. placeholders: {card}, {suit}
+#. placeholders: {card}
 #: games/fireside-patience/src/play.rs
-msgid "The {card} on the {suit} foundation."
+msgid "The {card} on the hearts foundation."
+msgstr ""
+
+#. placeholders: {card}
+#: games/fireside-patience/src/play.rs
+msgid "The {card} on the diamonds foundation."
+msgstr ""
+
+#. placeholders: {card}
+#: games/fireside-patience/src/play.rs
+msgid "The {card} on the clubs foundation."
+msgstr ""
+
+#. placeholders: {card}
+#: games/fireside-patience/src/play.rs
+msgid "The {card} on the spades foundation."
 msgstr ""
 
 #. placeholders: {card}, {onto}, {q}
@@ -24753,14 +24952,44 @@ msgstr ""
 msgid "king"
 msgstr ""
 
-#. placeholders: {rank_words}, {name}
+#. placeholders: {rank_words}
 #: games/fireside-patience/src/rules.rs
-msgid "{rank_words} of {name}"
+msgid "{rank_words} of hearts"
 msgstr ""
 
-#. placeholders: {rank_words}, {name}, {colour}
+#. placeholders: {rank_words}
 #: games/fireside-patience/src/rules.rs
-msgid "{rank_words} of {name}, {colour}"
+msgid "{rank_words} of diamonds"
+msgstr ""
+
+#. placeholders: {rank_words}
+#: games/fireside-patience/src/rules.rs
+msgid "{rank_words} of clubs"
+msgstr ""
+
+#. placeholders: {rank_words}
+#: games/fireside-patience/src/rules.rs
+msgid "{rank_words} of spades"
+msgstr ""
+
+#. placeholders: {rank_words}
+#: games/fireside-patience/src/rules.rs
+msgid "{rank_words} of hearts, red"
+msgstr ""
+
+#. placeholders: {rank_words}
+#: games/fireside-patience/src/rules.rs
+msgid "{rank_words} of diamonds, red"
+msgstr ""
+
+#. placeholders: {rank_words}
+#: games/fireside-patience/src/rules.rs
+msgid "{rank_words} of clubs, black"
+msgstr ""
+
+#. placeholders: {rank_words}
+#: games/fireside-patience/src/rules.rs
+msgid "{rank_words} of spades, black"
 msgstr ""
 
 #: games/fireside-patience/src/rules.rs
@@ -27159,26 +27388,26 @@ msgstr ""
 msgid "{near_words} to your right"
 msgstr ""
 
-#. placeholders: {name}, {bike}
+#. placeholders: {course}, {bike}
 #. one sentence of a longer line
 #: games/freewheel/src/ride.rs
-msgid "Time trial, {name}, on the {bike}."
+msgid "Time trial, {course}, on the {bike}."
 msgstr ""
 
-#. placeholders: {name}, {bike}, {about}
+#. placeholders: {course}, {bike}, {about}
 #: games/freewheel/src/ride.rs
-msgid "Time trial, {name}, on the {bike}. {about}"
+msgid "Time trial, {course}, on the {bike}. {about}"
 msgstr ""
 
-#. placeholders: {bike}, {route}
+#. placeholders: {bike}, {length}
 #. one sentence of a longer line
 #: games/freewheel/src/ride.rs
-msgid "Free ride on the {bike}, {route}, no clock."
+msgid "Free ride on the {bike}, {length}, no clock."
 msgstr ""
 
-#. placeholders: {bike}, {route}, {go_words}
+#. placeholders: {bike}, {length}, {go}
 #: games/freewheel/src/ride.rs
-msgid "Free ride on the {bike}, {route}, no clock. {go_words}"
+msgid "Free ride on the {bike}, {length}, no clock. {go}"
 msgstr ""
 
 #. placeholders: {title}, {district}, {bike}
@@ -27199,21 +27428,21 @@ msgstr ""
 msgid "{length}, deadline {deadline}."
 msgstr ""
 
-#. placeholders: {name}, {bike}
+#. placeholders: {district}, {bike}
 #: games/freewheel/src/ride.rs
-msgid "Delivery in {name}, on the {bike}."
+msgid "Delivery in {district}, on the {bike}."
 msgstr ""
 
-#. placeholders: {name}, {bike}
+#. placeholders: {district}, {bike}
 #. one sentence of a longer line
 #: games/freewheel/src/ride.rs
-msgid "Endless ride, {name}, on the {bike}."
+msgid "Endless ride, {district}, on the {bike}."
 msgstr ""
 
-#. placeholders: {name}, {bike}, {ENDLESS_CRASHES}
+#. placeholders: {district}, {bike}, {ENDLESS_CRASHES}
 #: games/freewheel/src/ride.rs
 msgid ""
-"Endless ride, {name}, on the {bike}. {ENDLESS_CRASHES} crashes end it."
+"Endless ride, {district}, on the {bike}. {ENDLESS_CRASHES} crashes end it."
 msgstr ""
 
 #. placeholders: {ENDLESS_CRASHES}
@@ -27227,50 +27456,50 @@ msgstr ""
 msgid "Drops add time."
 msgstr ""
 
-#. placeholders: {NAME}, {name}, {bike}
+#. placeholders: {clock_name}, {district}, {bike}
 #. one sentence of a longer line
 #: games/freewheel/src/ride.rs
-msgid "{NAME}, {name}, on the {bike}."
+msgid "{clock_name}, {district}, on the {bike}."
 msgstr ""
 
-#. placeholders: {NAME}, {name}, {bike}, {sentence_start}
+#. placeholders: {clock_name}, {district}, {bike}, {time}
 #: games/freewheel/src/ride.rs
-msgid "{NAME}, {name}, on the {bike}. {sentence_start}. Drops add time."
+msgid "{clock_name}, {district}, on the {bike}. {time}. Drops add time."
 msgstr ""
 
-#. placeholders: {LEAF_POINTS}
+#. placeholders: {bike}, {length}
 #. one sentence of a longer line
 #: games/freewheel/src/ride.rs
-msgid "Ride through leaf piles for {LEAF_POINTS} points each."
+msgid "Leaf season ride, on the {bike}, {length}."
 msgstr ""
 
-#. placeholders: {LEAF_SEASON}, {bike}, {route}
-#. one sentence of a longer line
-#: games/freewheel/src/ride.rs
-msgid "{LEAF_SEASON}, on the {bike}, {route}."
-msgstr ""
-
-#. placeholders: {LEAF_SEASON}, {bike}, {route}, {LEAF_POINTS}
+#. placeholders: {bike}, {length}, {points}
 #: games/freewheel/src/ride.rs
 msgid ""
-"{LEAF_SEASON}, on the {bike}, {route}. Ride through leaf piles for "
-"{LEAF_POINTS} points each."
+"Leaf season ride, on the {bike}, {length}. Ride through leaf piles for "
+"{points} points each."
+msgstr ""
+
+#. placeholders: {points}
+#. one sentence of a longer line
+#: games/freewheel/src/ride.rs
+msgid "Ride through leaf piles for {points} points each."
+msgstr ""
+
+#. placeholders: {bike}, {length}
+#. one sentence of a longer line
+#: games/freewheel/src/ride.rs
+msgid "Car-free Sunday, on the {bike}, {length}."
+msgstr ""
+
+#. placeholders: {bike}, {length}
+#: games/freewheel/src/ride.rs
+msgid "Car-free Sunday, on the {bike}, {length}. No cars today."
 msgstr ""
 
 #. one sentence of a longer line
 #: games/freewheel/src/ride.rs
 msgid "No cars today."
-msgstr ""
-
-#. placeholders: {SUNDAY}, {bike}, {route}
-#. one sentence of a longer line
-#: games/freewheel/src/ride.rs
-msgid "{SUNDAY}, on the {bike}, {route}."
-msgstr ""
-
-#. placeholders: {SUNDAY}, {bike}, {route}
-#: games/freewheel/src/ride.rs
-msgid "{SUNDAY}, on the {bike}, {route}. No cars today."
 msgstr ""
 
 #. placeholders: {secs_words}
@@ -34580,6 +34809,14 @@ msgstr ""
 
 #: games/harvest-feast/src/rules.rs
 msgid "pecan pie"
+msgstr ""
+
+#: games/harvest-feast/src/rules.rs games/haunted-hallways/src/unlocks.rs games/larkfield/src/menus.rs
+msgid "them"
+msgstr ""
+
+#: games/harvest-feast/src/rules.rs games/haunted-hallways/src/unlocks.rs
+msgid "it"
 msgstr ""
 
 #: games/harvest-feast/src/rules.rs
@@ -44879,27 +45116,25 @@ msgstr ""
 msgid "Discoveries tonight: {found} of {spots}."
 msgstr ""
 
-#. placeholders: {paddle}
+#. placeholders: {paddle_keys}
 #: games/lantern-lake/src/rules.rs
-msgid "It is straight ahead: paddle with {paddle}."
+msgid "It is straight ahead: paddle with {paddle_keys}."
 msgstr ""
 
-#. placeholders: {left}, {right}
+#. placeholders: {left_keys}, {right_keys}
 #: games/lantern-lake/src/rules.rs
-msgid "It is behind you: hold {left} or {right} to turn around."
+msgid "It is behind you: hold {left_keys} or {right_keys} to turn around."
 msgstr ""
 
+#. placeholders: {turn_keys}
 #: games/lantern-lake/src/rules.rs
-msgid "a little"
+msgid ""
+"Turn a little with {turn_keys} until it is straight ahead, then paddle."
 msgstr ""
 
-#: games/lantern-lake/src/rules.rs games/larkfield/src/buildings.rs
-msgid "well"
-msgstr ""
-
-#. placeholders: {how}, {key}
+#. placeholders: {turn_keys}
 #: games/lantern-lake/src/rules.rs
-msgid "Turn {how} with {key} until it is straight ahead, then paddle."
+msgid "Turn well with {turn_keys} until it is straight ahead, then paddle."
 msgstr ""
 
 #. placeholders: {near}
@@ -44918,15 +45153,15 @@ msgstr ""
 msgid "Every lantern in."
 msgstr ""
 
-#. placeholders: {home}
+#. placeholders: {finish_keys}
 #: games/lantern-lake/src/rules.rs
-msgid "Every lantern in. {home} heads home."
+msgid "Every lantern in. {finish_keys} heads home."
 msgstr ""
 
-#. placeholders: {home}
+#. placeholders: {finish_keys}
 #. one sentence of a longer line
 #: games/lantern-lake/src/rules.rs
-msgid "{home} heads home."
+msgid "{finish_keys} heads home."
 msgstr ""
 
 #: games/lantern-lake/src/rules.rs
@@ -46852,6 +47087,10 @@ msgstr ""
 #. placeholders: {name}, {doing}, {where_at}
 #: games/larkfield/src/almanac.rs
 msgid "{name} is {doing}, {where_at}."
+msgstr ""
+
+#: games/larkfield/src/buildings.rs
+msgid "well"
 msgstr ""
 
 #: games/larkfield/src/buildings.rs games/little-rapids/src/rules.rs
@@ -98614,11 +98853,6 @@ msgstr ""
 msgid "Late post. "
 msgstr ""
 
-#. placeholders: {name}
-#: games/winter-wonderland/src/desk_run.rs
-msgid " It would {name} in its box."
-msgstr ""
-
 #. placeholders: {late}, {from}, {age}
 #. one sentence of a longer line
 #: games/winter-wonderland/src/desk_run.rs
@@ -98631,7 +98865,7 @@ msgid "{late}{from}, age {age}, writes. {words}{sound}"
 msgstr ""
 
 #. placeholders: {last}
-#: games/winter-wonderland/src/desk_run.rs games/winter-wonderland/src/sort_run.rs
+#: games/winter-wonderland/src/desk_run.rs
 msgid " of {last}"
 msgstr ""
 
@@ -98710,11 +98944,11 @@ msgstr ""
 msgid "wrapped and gone"
 msgstr ""
 
-#: games/winter-wonderland/src/desk_run.rs games/winter-wonderland/src/sort_run.rs
+#: games/winter-wonderland/src/desk_run.rs
 msgid "not shaken yet"
 msgstr ""
 
-#: games/winter-wonderland/src/desk_run.rs games/winter-wonderland/src/sort_run.rs
+#: games/winter-wonderland/src/desk_run.rs
 msgid "shaken"
 msgstr ""
 
@@ -98780,9 +99014,9 @@ msgstr ""
 msgid "Box {at}."
 msgstr ""
 
-#. placeholders: {name}
+#. placeholders: {sound}
 #: games/winter-wonderland/src/desk_run.rs games/winter-wonderland/src/sort_run.rs
-msgid "It sounds like a {name}."
+msgid "It sounds like {sound}."
 msgstr ""
 
 #. one sentence of a longer line
@@ -99038,9 +99272,14 @@ msgstr ""
 msgid "{from}'s wish would sound like {sound} in its box."
 msgstr ""
 
-#. placeholders: {name}, {answer}
+#. placeholders: {left_keys}, {number}
 #: games/winter-wonderland/src/desk_run.rs
-msgid "Walk {name} to box {answer}."
+msgid "Walk {left_keys} to box {number}."
+msgstr ""
+
+#. placeholders: {right_keys}, {number}
+#: games/winter-wonderland/src/desk_run.rs
+msgid "Walk {right_keys} to box {number}."
 msgstr ""
 
 #: games/winter-wonderland/src/desk_run.rs
@@ -99295,6 +99534,86 @@ msgstr ""
 
 #: games/winter-wonderland/src/gifts.rs
 msgid "chime"
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "a rattle"
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "a squish"
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "a clink"
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "a jingle"
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "a crinkle"
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "a slosh"
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "a tick"
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "a squeak"
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "a thump"
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "a chime"
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "It would rattle in its box."
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "It would squish in its box."
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "It would clink in its box."
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "It would jingle in its box."
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "It would crinkle in its box."
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "It would slosh in its box."
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "It would tick in its box."
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "It would squeak in its box."
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "It would thump in its box."
+msgstr ""
+
+#: games/winter-wonderland/src/gifts.rs
+msgid "It would chime in its box."
 msgstr ""
 
 #: games/winter-wonderland/src/gifts.rs
@@ -99573,9 +99892,9 @@ msgstr ""
 msgid "The same run, straight away. Only your best result is kept."
 msgstr ""
 
-#. placeholders: {level}
+#. placeholders: {shift}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "Shift {level}"
+msgid "Shift {shift}"
 msgstr ""
 
 #. placeholders: {who}, {gift}
@@ -99585,7 +99904,7 @@ msgstr ""
 
 #. placeholders: {who}, {gift}, {sound}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "{who}, on your left, wishes for {gift}, a {sound} in the box."
+msgid "{who}, on your left, wishes for {gift}, {sound} in the box."
 msgstr ""
 
 #. placeholders: {who}, {gift}
@@ -99595,7 +99914,7 @@ msgstr ""
 
 #. placeholders: {who}, {gift}, {sound}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "{who}, on your left, now wishes for {gift}, a {sound} in the box."
+msgid "{who}, on your left, now wishes for {gift}, {sound} in the box."
 msgstr ""
 
 #. placeholders: {who}, {gift}
@@ -99605,7 +99924,7 @@ msgstr ""
 
 #. placeholders: {who}, {gift}, {sound}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "{who}, on your right, wishes for {gift}, a {sound} in the box."
+msgid "{who}, on your right, wishes for {gift}, {sound} in the box."
 msgstr ""
 
 #. placeholders: {who}, {gift}
@@ -99615,7 +99934,7 @@ msgstr ""
 
 #. placeholders: {who}, {gift}, {sound}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "{who}, on your right, now wishes for {gift}, a {sound} in the box."
+msgid "{who}, on your right, now wishes for {gift}, {sound} in the box."
 msgstr ""
 
 #. placeholders: {who}, {gift}
@@ -99625,7 +99944,7 @@ msgstr ""
 
 #. placeholders: {who}, {gift}, {sound}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "{who}, straight ahead, wishes for {gift}, a {sound} in the box."
+msgid "{who}, straight ahead, wishes for {gift}, {sound} in the box."
 msgstr ""
 
 #. placeholders: {who}, {gift}
@@ -99635,62 +99954,62 @@ msgstr ""
 
 #. placeholders: {who}, {gift}, {sound}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "{who}, straight ahead, now wishes for {gift}, a {sound} in the box."
+msgid "{who}, straight ahead, now wishes for {gift}, {sound} in the box."
 msgstr ""
 
-#. placeholders: {name}
+#. placeholders: {sack_keys}
 #: games/winter-wonderland/src/sort_run.rs
 msgid ""
-"Gifts nobody wished for go in the return sack behind you, with {name}."
+"Gifts nobody wished for go in the return sack behind you, with {sack_keys}."
 msgstr ""
 
-#. placeholders: {level}, {of}
+#. placeholders: {level}, {last}
 #. one sentence of a longer line
 #: games/winter-wonderland/src/sort_run.rs
-msgid "Shift {level}{of}."
+msgid "Shift {level} of {last}."
 msgstr ""
 
-#. placeholders: {level}, {of}, {quota}, {secs}, {wishes}
+#. placeholders: {level}, {last}, {quota}, {time}, {wishes}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "Shift {level}{of}. Sort {quota} gifts in {secs}. {wishes}"
+msgid "Shift {level} of {last}. Sort {quota} gifts in {time}. {wishes}"
 msgstr ""
 
-#. placeholders: {quota}, {secs}
+#. placeholders: {quota}, {time}
 #. one sentence of a longer line
 #: games/winter-wonderland/src/sort_run.rs
-msgid "Sort {quota} gifts in {secs}."
+msgid "Sort {quota} gifts in {time}."
 msgstr ""
 
-#. placeholders: {primary}, {name}, {name2}
+#. placeholders: {level}
+#. one sentence of a longer line
+#: games/winter-wonderland/src/sort_run.rs
+msgid "Shift {level}."
+msgstr ""
+
+#. placeholders: {level}, {quota}, {time}, {wishes}
+#: games/winter-wonderland/src/sort_run.rs
+msgid "Shift {level}. Sort {quota} gifts in {time}. {wishes}"
+msgstr ""
+
+#. placeholders: {shake_keys}
+#: games/winter-wonderland/src/sort_run.rs
+msgid "Shake each gift with {shake_keys}."
+msgstr ""
+
+#. placeholders: {left_keys}, {right_keys}
 #: games/winter-wonderland/src/sort_run.rs
 msgid ""
-" Shake each gift with {primary}. Then send it with {name} or {name2} to the "
-"person who wished for it, before it rides off the end of the belt. A wrong "
-"guess costs time, but the gift stays on the belt."
+"Then send it with {left_keys} or {right_keys} to the person who wished for "
+"it, before it rides off the end of the belt."
 msgstr ""
 
-#. one sentence of a longer line
 #: games/winter-wonderland/src/sort_run.rs
-msgid "A wrong guess costs time, but the gift stays on the belt."
+msgid " A wrong guess costs time, but the gift stays on the belt."
 msgstr ""
 
-#. placeholders: {primary}
-#. one sentence of a longer line
+#. placeholders: {ahead_keys}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "Shake each gift with {primary}."
-msgstr ""
-
-#. placeholders: {name}, {name2}
-#. one sentence of a longer line
-#: games/winter-wonderland/src/sort_run.rs
-msgid ""
-"Then send it with {name} or {name2} to the person who wished for it, before "
-"it rides off the end of the belt."
-msgstr ""
-
-#. placeholders: {sentence_start}
-#: games/winter-wonderland/src/sort_run.rs
-msgid " {sentence_start} sends a gift straight ahead."
+msgid "{ahead_keys} sends a gift straight ahead."
 msgstr ""
 
 #: games/winter-wonderland/src/sort_run.rs
@@ -99703,9 +100022,9 @@ msgstr ""
 msgid " Someone may change their mind half way through."
 msgstr ""
 
-#. placeholders: {sentence_start}
+#. placeholders: {start_keys}
 #: games/winter-wonderland/src/sort_run.rs
-msgid " {sentence_start} starts the belt."
+msgid "{start_keys} starts the belt."
 msgstr ""
 
 #: games/winter-wonderland/src/sort_run.rs
@@ -99716,14 +100035,19 @@ msgstr ""
 msgid "Belt empty. A gift is coming."
 msgstr ""
 
-#. placeholders: {shaken}, {secs}
+#. placeholders: {time}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "A gift is on the belt, {shaken}, {secs} from the edge."
+msgid "A gift is on the belt, not shaken yet, {time} from the edge."
 msgstr ""
 
-#. placeholders: {gift}, {secs}
+#. placeholders: {time}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "{gift} {secs} on the clock."
+msgid "A gift is on the belt, shaken, {time} from the edge."
+msgstr ""
+
+#. placeholders: {gift}, {clock}
+#: games/winter-wonderland/src/sort_run.rs
+msgid "{gift} {clock} on the clock."
 msgstr ""
 
 #. placeholders: {shift_name}, {sorted}, {quota}, {score}
@@ -99781,25 +100105,25 @@ msgstr ""
 msgid "Minus {secs}."
 msgstr ""
 
-#. placeholders: {to_go}
-#: games/winter-wonderland/src/sort_run.rs
-msgid " {to_go} to go."
-msgstr ""
-
 #. one sentence of a longer line
 #: games/winter-wonderland/src/sort_run.rs
 msgid "Into the return sack."
 msgstr ""
 
-#. placeholders: {points}, {rest}
+#. placeholders: {points}, {to_go}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "Into the return sack. Plus {points}.{rest}"
+msgid "Into the return sack. Plus {points}. {to_go} to go."
 msgstr ""
 
-#. placeholders: {points}, {rest}
+#. placeholders: {to_go}
 #. one sentence of a longer line
 #: games/winter-wonderland/src/sort_run.rs
-msgid "Plus {points}.{rest}"
+msgid "{to_go} to go."
+msgstr ""
+
+#. placeholders: {points}
+#: games/winter-wonderland/src/sort_run.rs
+msgid "Into the return sack. Plus {points}."
 msgstr ""
 
 #. placeholders: {who}
@@ -99808,9 +100132,14 @@ msgstr ""
 msgid "{who} is delighted."
 msgstr ""
 
-#. placeholders: {who}, {points}, {rest}
+#. placeholders: {who}, {points}, {to_go}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "{who} is delighted. Plus {points}.{rest}"
+msgid "{who} is delighted. Plus {points}. {to_go} to go."
+msgstr ""
+
+#. placeholders: {who}, {points}
+#: games/winter-wonderland/src/sort_run.rs
+msgid "{who} is delighted. Plus {points}."
 msgstr ""
 
 #. placeholders: {penalty}
@@ -99879,25 +100208,26 @@ msgid "{bonus} bonus points for the time left."
 msgstr ""
 
 #: games/winter-wonderland/src/sort_run.rs
-msgid "gift"
+msgid "1 gift delivered"
+msgstr ""
+
+#. placeholders: {sorted}
+#: games/winter-wonderland/src/sort_run.rs
+msgid "{sorted} gifts delivered"
+msgstr ""
+
+#. placeholders: {broken}
+#: games/winter-wonderland/src/sort_run.rs
+msgid "{broken} broken"
 msgstr ""
 
 #: games/winter-wonderland/src/sort_run.rs
-msgid "gifts"
+msgid "1 wrong guess"
 msgstr ""
 
+#. placeholders: {wrongs}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "guess"
-msgstr ""
-
-#: games/winter-wonderland/src/sort_run.rs
-msgid "guesses"
-msgstr ""
-
-#. placeholders: {sorted}, {gifts}, {broken}, {wrongs}, {guesses}
-#: games/winter-wonderland/src/sort_run.rs
-msgid ""
-"{sorted} {gifts} delivered, {broken} broken, {wrongs} wrong {guesses}."
+msgid "{wrongs} wrong guesses"
 msgstr ""
 
 #. placeholders: {level}
@@ -100040,41 +100370,48 @@ msgstr ""
 msgid "Shake it first with {primary}."
 msgstr ""
 
-#. placeholders: {sound}, {item}, {who}, {key_send}
+#. placeholders: {who}, {send_keys}
 #: games/winter-wonderland/src/sort_run.rs
-msgid ""
-"That was a {sound}, {item} for {who}: send it on your left with {key_send}."
+msgid "{who} wished for it: send it on your left with {send_keys}."
 msgstr ""
 
-#. placeholders: {sound}, {item}, {who}, {key_send}
+#. placeholders: {who}, {send_keys}
 #: games/winter-wonderland/src/sort_run.rs
-msgid ""
-"That was a {sound}, {item} for {who}: send it on your right with {key_send}."
+msgid "{who} wished for it: send it on your right with {send_keys}."
 msgstr ""
 
-#. placeholders: {sound}, {item}, {who}, {key_send}
+#. placeholders: {who}, {send_keys}
 #: games/winter-wonderland/src/sort_run.rs
-msgid ""
-"That was a {sound}, {item} for {who}: send it straight ahead with "
-"{key_send}."
+msgid "{who} wished for it: send it straight ahead with {send_keys}."
 msgstr ""
 
-#. placeholders: {key_send}
+#. placeholders: {sound}, {item}
 #. one sentence of a longer line
 #: games/winter-wonderland/src/sort_run.rs
-msgid "Nobody wished for it: return sack, with {key_send}."
+msgid "That was {sound}: {item}."
+msgstr ""
+
+#. placeholders: {sound}, {item}, {send}
+#: games/winter-wonderland/src/sort_run.rs
+msgid "That was {sound}: {item}. {send}"
+msgstr ""
+
+#. placeholders: {send_keys}
+#. one sentence of a longer line
+#: games/winter-wonderland/src/sort_run.rs
+msgid "Nobody wished for it: return sack, with {send_keys}."
 msgstr ""
 
 #. placeholders: {sound}
 #. one sentence of a longer line
 #: games/winter-wonderland/src/sort_run.rs
-msgid "That was a {sound}."
+msgid "That was {sound}."
 msgstr ""
 
-#. placeholders: {sound}, {key_send}
+#. placeholders: {sound}, {send_keys}
 #: games/winter-wonderland/src/sort_run.rs
 msgid ""
-"That was a {sound}. Nobody wished for it: return sack, with {key_send}."
+"That was {sound}. Nobody wished for it: return sack, with {send_keys}."
 msgstr ""
 
 #. one sentence of a longer line
@@ -100087,41 +100424,41 @@ msgstr ""
 msgid "{text} Half points for this gift."
 msgstr ""
 
-#. placeholders: {key_start}, {key_repeat}
+#. placeholders: {start_keys}, {repeat_keys}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "{key_start} starts the belt, {key_repeat} repeats the wishes."
+msgid "{start_keys} starts the belt, {repeat_keys} repeats the wishes."
 msgstr ""
 
-#. placeholders: {key_left}, {key_right}
+#. placeholders: {left_keys}, {right_keys}
 #. one sentence of a longer line
 #: games/winter-wonderland/src/sort_run.rs
-msgid "{key_left} and {key_right} send it."
+msgid "{left_keys} and {right_keys} send it."
 msgstr ""
 
-#. placeholders: {key_shake}
+#. placeholders: {shake_keys}
 #. one sentence of a longer line
 #: games/winter-wonderland/src/sort_run.rs
-msgid "{key_shake} shakes the gift."
+msgid "{shake_keys} shakes the gift."
 msgstr ""
 
-#. placeholders: {key_shake}, {key_left}, {key_right}
+#. placeholders: {shake_keys}, {left_keys}, {right_keys}
 #: games/winter-wonderland/src/sort_run.rs
 msgid ""
-"{key_shake} shakes the gift. {key_left} and {key_right} send it. F1 "
+"{shake_keys} shakes the gift. {left_keys} and {right_keys} send it. F1 "
 "explains the keys."
 msgstr ""
 
-#. placeholders: {key_left}, {key_ahead}, {key_right}
+#. placeholders: {left_keys}, {ahead_keys}, {right_keys}
 #. one sentence of a longer line
 #: games/winter-wonderland/src/sort_run.rs
-msgid "{key_left}, {key_ahead} and {key_right} send it."
+msgid "{left_keys}, {ahead_keys} and {right_keys} send it."
 msgstr ""
 
-#. placeholders: {key_shake}, {key_left}, {key_ahead}, {key_right}
+#. placeholders: {shake_keys}, {left_keys}, {ahead_keys}, {right_keys}
 #: games/winter-wonderland/src/sort_run.rs
 msgid ""
-"{key_shake} shakes the gift. {key_left}, {key_ahead} and {key_right} send "
-"it. F1 explains the keys."
+"{shake_keys} shakes the gift. {left_keys}, {ahead_keys} and {right_keys} "
+"send it. F1 explains the keys."
 msgstr ""
 
 #. one sentence of a longer line
@@ -100207,26 +100544,29 @@ msgstr ""
 msgid "{start_key} starts the belt."
 msgstr ""
 
-#. placeholders: {n}
+#. placeholders: {left_keys}, {right_keys}
 #: games/winter-wonderland/src/sort_run.rs
-msgid ", and {n} drops it in the return sack behind you"
+msgid "{left_keys} sends it left, {right_keys} right."
 msgstr ""
 
-#. placeholders: {n}
-#. one clause of a longer line
+#. placeholders: {left_keys}, {ahead_keys}, {right_keys}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "and {n} drops it in the return sack behind you"
+msgid ""
+"{left_keys} sends it left, {ahead_keys} straight ahead, {right_keys} right."
 msgstr ""
 
-#. placeholders: {n}
+#. placeholders: {left_keys}, {right_keys}, {sack_keys}
 #: games/winter-wonderland/src/sort_run.rs
-msgid ", {n} straight ahead"
+msgid ""
+"{left_keys} sends it left, {right_keys} right, and {sack_keys} drops it in "
+"the return sack behind you."
 msgstr ""
 
-#. placeholders: {n}
-#. one clause of a longer line
+#. placeholders: {left_keys}, {ahead_keys}, {right_keys}, {sack_keys}
 #: games/winter-wonderland/src/sort_run.rs
-msgid "{n} straight ahead"
+msgid ""
+"{left_keys} sends it left, {ahead_keys} straight ahead, {right_keys} right, "
+"and {sack_keys} drops it in the return sack behind you."
 msgstr ""
 
 #. one sentence of a longer line
@@ -100234,33 +100574,20 @@ msgstr ""
 msgid "Gift Sort."
 msgstr ""
 
-#. placeholders: {sentence_start}, {sentence_start2}, {ahead}, {n}, {sack}, {sentence_start3}, {sentence_start4}, {sentence_start5}
+#. placeholders: {shake_keys}, {send}, {repeat_keys}, {status_keys}, {hint_keys}
 #: games/winter-wonderland/src/sort_run.rs
 msgid ""
-"Gift Sort. {sentence_start} shakes the gift. {sentence_start2} sends it "
-"left{ahead}, {n} right{sack}. {sentence_start3} repeats the wishes, "
-"{sentence_start4} speaks the clock and score, {sentence_start5} gives a "
-"hint at half points. Escape pauses."
+"Gift Sort. {shake_keys} shakes the gift. {send} {repeat_keys} repeats the "
+"wishes, {status_keys} speaks the clock and score, {hint_keys} gives a hint "
+"at half points. Escape pauses."
 msgstr ""
 
-#. placeholders: {sentence_start2}, {ahead}, {n}, {sack}
-#. one sentence of a longer line
-#: games/winter-wonderland/src/sort_run.rs
-msgid "{sentence_start2} sends it left{ahead}, {n} right{sack}."
-msgstr ""
-
-#. placeholders: {sentence_start3}, {sentence_start4}, {sentence_start5}
+#. placeholders: {send}, {repeat_keys}, {status_keys}, {hint_keys}
 #. one sentence of a longer line
 #: games/winter-wonderland/src/sort_run.rs
 msgid ""
-"{sentence_start3} repeats the wishes, {sentence_start4} speaks the clock "
-"and score, {sentence_start5} gives a hint at half points."
-msgstr ""
-
-#. placeholders: {sentence_start}
-#. one sentence of a longer line
-#: games/winter-wonderland/src/sort_run.rs
-msgid "{sentence_start} shakes the gift."
+"{send} {repeat_keys} repeats the wishes, {status_keys} speaks the clock and "
+"score, {hint_keys} gives a hint at half points."
 msgstr ""
 
 #: games/winter-wonderland/src/soundcheck.rs

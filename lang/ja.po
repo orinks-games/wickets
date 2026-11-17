@@ -2768,13 +2768,13 @@ msgstr "{label}を答える。"
 msgid "Return."
 msgstr "戻ります。"
 
-#. placeholders: {name}, {after_comma}
-msgid "Happening today: {name}, {after_comma}."
-msgstr "今日のイベント：{name}、{after_comma}。"
+#. placeholders: {game}, {event}
+msgid "Happening today in {game}: {event}."
+msgstr "今日の{game}のイベント：{event}。"
 
-#. placeholders: {n}, {name}
-msgid "{n} events today, {name} first."
-msgstr "今日のイベントは{n}件、まず{name}。"
+#. placeholders: {n}, {game}
+msgid "{n} events today, {game} first."
+msgstr "今日のイベントは{n}件、まず{game}です。"
 
 msgid "Independence"
 msgstr ""
@@ -2954,14 +2954,17 @@ msgstr "インターネットの日付がありません。あとでもう一度
 msgid "{game}, today: {event}"
 msgstr "{game}、今日：{event}"
 
-#. placeholders: {label}, {done}, {games}
-#. one sentence of a longer line
-msgid "{label} challenges, {done} of {games} done."
-msgstr "{label}チャレンジ、{games}中{done}完了。"
+#. placeholders: {done}, {total}
+msgid "Daily challenges, {done} of {total} done."
+msgstr "デイリーチャレンジ、{total}中{done}完了。"
 
-#. placeholders: {label}, {done}, {games}, {resets}
-msgid "{label} challenges, {done} of {games} done. {resets}"
-msgstr "{label}チャレンジ、{games}中{done}完了。{resets}"
+#. placeholders: {done}, {total}
+msgid "Weekly challenges, {done} of {total} done."
+msgstr "ウィークリーチャレンジ、{total}中{done}完了。"
+
+#. placeholders: {done}, {total}
+msgid "Monthly challenges, {done} of {total} done."
+msgstr "マンスリーチャレンジ、{total}中{done}完了。"
 
 msgid "A short run in each game, new every day."
 msgstr "各ゲームの短いプレイで、毎日変わります。"
@@ -3293,14 +3296,14 @@ msgid ""
 "your selection."
 msgstr "今日のゲームのイベント、ストーリーのハプニング、チャレンジです。Enterで選んだものを開きます。"
 
-#. placeholders: {name}, {after_comma}, {days_phrase}
+#. placeholders: {event}, {game}, {days}
 #. one sentence of a longer line
-msgid "Next: {name}, {after_comma}, {days_phrase}."
-msgstr "次：{name}、{after_comma}、{days_phrase}。"
+msgid "Next: {event} in {game}, {days}."
+msgstr "次：{game}の{event}、{days}。"
 
-#. placeholders: {name}, {after_comma}, {days_phrase}
-msgid "No events today. Next: {name}, {after_comma}, {days_phrase}."
-msgstr "今日はイベントがありません。次：{name}、{after_comma}、{days_phrase}。"
+#. placeholders: {event}, {game}, {days}
+msgid "No events today. Next: {event} in {game}, {days}."
+msgstr "今日はイベントがありません。次：{game}の{event}、{days}。"
 
 msgid "No events today."
 msgstr "今日はイベントがありません。"
@@ -6293,25 +6296,45 @@ msgstr "8個から5個の鐘、ヒントなし"
 msgid "Hints halve the score."
 msgstr "ヒントでスコアが半分になります。"
 
-#. placeholders: {describe}
+#. placeholders: {places}, {bells}, {rows}
 #. one sentence of a longer line
-msgid "One peal: {describe}."
-msgstr "鳴らし順ひとつ：{describe}。"
-
-#. placeholders: {describe}
-msgid "One peal: {describe}. Hints halve the score."
-msgstr "鳴らし順ひとつ：{describe}。ヒントでスコアが半分になります。"
-
-#. placeholders: {describe}
-#. one sentence of a longer line
-msgid "Five peals in a row, each with {describe}."
-msgstr "鳴らし順を五つ続けて、どれも{describe}。"
-
-#. placeholders: {describe}
 msgid ""
-"Five peals in a row, each with {describe}. The five scores are added. Hints "
+"One peal: {places} places, {bells} bells to choose from, a bell may come "
+"twice, {rows} rows."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+msgid ""
+"One peal: {places} places, {bells} bells to choose from, a bell may come "
+"twice, {rows} rows. Hints halve the score."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+#. one sentence of a longer line
+msgid ""
+"One peal: {places} places, {bells} bells to choose from, no bell twice, "
+"{rows} rows."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+msgid ""
+"One peal: {places} places, {bells} bells to choose from, no bell twice, "
+"{rows} rows. Hints halve the score."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+#. one sentence of a longer line
+msgid ""
+"Five peals in a row, each with {places} places, {bells} bells to choose "
+"from, a bell may come twice, {rows} rows."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+msgid ""
+"Five peals in a row, each with {places} places, {bells} bells to choose "
+"from, a bell may come twice, {rows} rows. The five scores are added. Hints "
 "halve a score."
-msgstr "鳴らし順を五つ続けて、どれも{describe}。五つのスコアを合計します。ヒントでそのスコアが半分になります。"
+msgstr ""
 
 #. one sentence of a longer line
 msgid "Hints halve a score."
@@ -6321,18 +6344,49 @@ msgstr "ヒントでそのスコアが半分になります。"
 msgid "The five scores are added."
 msgstr "五つのスコアを合計します。"
 
+#. placeholders: {places}, {bells}, {rows}
+#. one sentence of a longer line
+msgid ""
+"Five peals in a row, each with {places} places, {bells} bells to choose "
+"from, no bell twice, {rows} rows."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+msgid ""
+"Five peals in a row, each with {places} places, {bells} bells to choose "
+"from, no bell twice, {rows} rows. The five scores are added. Hints halve a "
+"score."
+msgstr ""
+
 #. one sentence of a longer line
 msgid "No hints."
 msgstr "ヒントなし。"
 
-#. placeholders: {describe}
+#. placeholders: {places}, {bells}, {rows}
 #. one sentence of a longer line
-msgid "The cathedral tower: {describe}."
-msgstr "大聖堂の塔：{describe}。"
+msgid ""
+"The cathedral tower: {places} places, {bells} bells to choose from, a bell "
+"may come twice, {rows} rows."
+msgstr ""
 
-#. placeholders: {describe}
-msgid "The cathedral tower: {describe}. No hints."
-msgstr "大聖堂の塔：{describe}。ヒントなし。"
+#. placeholders: {places}, {bells}, {rows}
+msgid ""
+"The cathedral tower: {places} places, {bells} bells to choose from, a bell "
+"may come twice, {rows} rows. No hints."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+#. one sentence of a longer line
+msgid ""
+"The cathedral tower: {places} places, {bells} bells to choose from, no bell "
+"twice, {rows} rows."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+msgid ""
+"The cathedral tower: {places} places, {bells} bells to choose from, no bell "
+"twice, {rows} rows. No hints."
+msgstr ""
 
 msgid "Belfry"
 msgstr "Belfry"
@@ -6402,14 +6456,14 @@ msgstr "{title}の結果：{points}。"
 msgid "{title} result: {points}. {score_line} {streak_sentence} {resets}"
 msgstr "{title}の結果：{points}。{score_line}{streak_sentence}{resets}"
 
-#. placeholders: {index}, {peals}
+#. placeholders: {peal}, {peals}
 #. one sentence of a longer line
-msgid "Peal {index} of {peals}."
-msgstr "鳴らし順{index}、全{peals}個。"
+msgid "Peal {peal} of {peals}."
+msgstr "鳴らし順{peal}、全{peals}個。"
 
-#. placeholders: {index}, {peals}, {sentence_start}
-msgid "Peal {index} of {peals}. {sentence_start}."
-msgstr "鳴らし順{index}、全{peals}個。{sentence_start}。"
+#. placeholders: {peal}, {peals}, {rules}
+msgid "Peal {peal} of {peals}. {rules}"
+msgstr "鳴らし順{peal}、全{peals}個。{rules}"
 
 msgid "Practice night"
 msgstr "練習の夜"
@@ -6531,12 +6585,24 @@ msgstr "全員共通の、デイリーの鳴らし順、毎週五つの鳴らし
 #. placeholders: {places}, {bells}, {rows}
 msgid ""
 "{places} places, {bells} bells to choose from, a bell may come twice, "
-"{rows} rows"
+"{rows} rows."
 msgstr ""
 
 #. placeholders: {places}, {bells}, {rows}
 msgid ""
-"{places} places, {bells} bells to choose from, no bell twice, {rows} rows"
+"{places} places, {bells} bells to choose from, no bell twice, {rows} rows."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+msgid ""
+"Find the peal: {places} places, {bells} bells to choose from, a bell may "
+"come twice, {rows} rows."
+msgstr ""
+
+#. placeholders: {places}, {bells}, {rows}
+msgid ""
+"Find the peal: {places} places, {bells} bells to choose from, no bell "
+"twice, {rows} rows."
 msgstr ""
 
 msgid "Village"
@@ -6603,6 +6669,21 @@ msgstr "位置どおり{i}、位置違いなし"
 #. placeholders: {i}, {m}
 msgid "{i} in place, {m} misplaced"
 msgstr "位置どおり{i}、位置違い{m}"
+
+msgid "None of the bells in your last row is in the peal."
+msgstr "直前の列の鐘は、どれも鳴らし順にありません。"
+
+#. placeholders: {misplaced}
+msgid "Your last row had none in place, {misplaced} misplaced."
+msgstr "直前の列は、位置どおりなし、位置違い{misplaced}でした。"
+
+#. placeholders: {in_place}
+msgid "Your last row had {in_place} in place, none misplaced."
+msgstr "直前の列は、位置どおり{in_place}、位置違いなしでした。"
+
+#. placeholders: {in_place}, {misplaced}
+msgid "Your last row had {in_place} in place, {misplaced} misplaced."
+msgstr "直前の列は、位置どおり{in_place}、位置違い{misplaced}でした。"
 
 msgid "Neither bell is in the peal"
 msgstr "どちらの鐘も鳴らし順にありません"
@@ -6786,15 +6867,6 @@ msgstr "残り1列"
 msgid "{n} rows left"
 msgstr "残り{n}列"
 
-#. placeholders: {rules}
-#. one sentence of a longer line
-msgid "Find the peal: {rules}."
-msgstr "鳴らし順を見つけましょう：{rules}。"
-
-#. placeholders: {name}, {rules}
-msgid "{name}. Find the peal: {rules}."
-msgstr "{name}。鳴らし順を見つけましょう：{rules}。"
-
 #. placeholders: {h}
 msgid ", {h} a hint"
 msgstr "、{h}でヒント"
@@ -6909,19 +6981,28 @@ msgstr "まだ列を鳴らしていません。{sentence_start}で列を鳴ら�
 msgid "{sentence_start} rings your row."
 msgstr "{sentence_start}で列を鳴らします。"
 
-#. placeholders: {words}
+#. placeholders: {bell}
 #. one sentence of a longer line
-msgid "Hint: {words}."
-msgstr "ヒント：{words}。"
+msgid "Hint: bell {bell} is in the peal."
+msgstr "ヒント：{bell}番の鐘は鳴らし順にあります。"
 
-#. placeholders: {words}, {rows_left_words}
-msgid "Hint: {words}. It used a row: {rows_left_words}."
-msgstr "ヒント：{words}。列をひとつ使いました：{rows_left_words}。"
+#. placeholders: {bell}, {rows_left}
+msgid "Hint: bell {bell} is in the peal. It used a row: {rows_left}."
+msgstr "ヒント：{bell}番の鐘は鳴らし順にあります。列をひとつ使いました：{rows_left}。"
 
-#. placeholders: {rows_left_words}
+#. placeholders: {rows_left}
 #. one sentence of a longer line
-msgid "It used a row: {rows_left_words}."
-msgstr "列をひとつ使いました：{rows_left_words}。"
+msgid "It used a row: {rows_left}."
+msgstr "列をひとつ使いました：{rows_left}。"
+
+#. placeholders: {bell}
+#. one sentence of a longer line
+msgid "Hint: bell {bell} is not in the peal."
+msgstr "ヒント：{bell}番の鐘は鳴らし順にありません。"
+
+#. placeholders: {bell}, {rows_left}
+msgid "Hint: bell {bell} is not in the peal. It used a row: {rows_left}."
+msgstr "ヒント：{bell}番の鐘は鳴らし順にありません。列をひとつ使いました：{rows_left}。"
 
 msgid "No hints in the cathedral."
 msgstr "大聖堂ではヒントはありません。"
@@ -6964,14 +7045,14 @@ msgid ""
 "Solved in {rows} rows. The peal is {peal_words}, and the bells ring it out."
 msgstr "{rows}列で解けました。鳴らし順は{peal_words}、鐘がそれを鳴り響かせます。"
 
-#. placeholders: {row_words}, {words}
-msgid "Out of rows. The peal was {row_words}. Your last row had {words}."
-msgstr "列を使い切りました。鳴らし順は{row_words}でした。最後の列は{words}でした。"
+#. placeholders: {peal_words}, {last_row}
+msgid "Out of rows. The peal was {peal_words}. {last_row}"
+msgstr "列を使い切りました。鳴らし順は{peal_words}でした。{last_row}"
 
-#. placeholders: {words}
+#. placeholders: {peal_words}
 #. one sentence of a longer line
-msgid "Your last row had {words}."
-msgstr "最後の列は{words}でした。"
+msgid "The peal was {peal_words}."
+msgstr "鳴らし順は{peal_words}でした。"
 
 #. placeholders: {points}
 msgid " {points}: your first score here."
@@ -19540,9 +19621,17 @@ msgstr "専用のランキングで競います。"
 msgid "Turning the stock costs no moves."
 msgstr "山札をめくっても手数になりません。"
 
-#. placeholders: {sentence_start}
-msgid "{sentence_start} foundation"
-msgstr "{sentence_start}の組札"
+msgid "Hearts foundation"
+msgstr "ハートの組札"
+
+msgid "Diamonds foundation"
+msgstr "ダイヤの組札"
+
+msgid "Clubs foundation"
+msgstr "クラブの組札"
+
+msgid "Spades foundation"
+msgstr "スペードの組札"
 
 #. placeholders: {p}
 msgid "Pile {p}"
@@ -19674,13 +19763,29 @@ msgstr "{foundation_name}、完成。"
 msgid "{foundation_name}: up to the {rank_words}."
 msgstr "{foundation_name}：{rank_words}まで。"
 
-#. placeholders: {name}
-msgid " Goes back to {name}."
-msgstr " {name}に戻ります。"
+msgid " Goes back to hearts."
+msgstr "ハートへ戻します。"
 
-#. placeholders: {name}
-msgid " Goes to {name}."
-msgstr " {name}へ。"
+msgid " Goes back to diamonds."
+msgstr "ダイヤへ戻します。"
+
+msgid " Goes back to clubs."
+msgstr "クラブへ戻します。"
+
+msgid " Goes back to spades."
+msgstr "スペードへ戻します。"
+
+msgid " Goes to hearts."
+msgstr "ハートへ。"
+
+msgid " Goes to diamonds."
+msgstr "ダイヤへ。"
+
+msgid " Goes to clubs."
+msgstr "クラブへ。"
+
+msgid " Goes to spades."
+msgstr "スペードへ。"
 
 msgid " Fits here."
 msgstr " ここに置けます。"
@@ -19707,9 +19812,17 @@ msgstr "列{pile}にいます。"
 msgid "On the stock."
 msgstr "山札にいます。"
 
-#. placeholders: {foundation}
-msgid "On the {foundation}."
-msgstr "{foundation}にいます。"
+msgid "On the hearts foundation."
+msgstr "ハートの組札の上です。"
+
+msgid "On the diamonds foundation."
+msgstr "ダイヤの組札の上です。"
+
+msgid "On the clubs foundation."
+msgstr "クラブの組札の上です。"
+
+msgid "On the spades foundation."
+msgstr "スペードの組札の上です。"
 
 #. placeholders: {up}, {DECK}
 msgid "{up} of {DECK} on the foundations"
@@ -19734,13 +19847,33 @@ msgstr "列{p}：{name}。"
 msgid "Pile {p}: {name}, {down} face down."
 msgstr "列{p}：{name}、裏向き{down}。"
 
-#. placeholders: {name}
-msgid "{name} empty"
-msgstr "{name}は空"
+msgid "hearts empty"
+msgstr "ハートは空"
 
-#. placeholders: {name}, {rank_words}
-msgid "{name} up to {rank_words}"
-msgstr "{name}は{rank_words}まで"
+msgid "diamonds empty"
+msgstr "ダイヤは空"
+
+msgid "clubs empty"
+msgstr "クラブは空"
+
+msgid "spades empty"
+msgstr "スペードは空"
+
+#. placeholders: {rank}
+msgid "hearts up to {rank}"
+msgstr "ハートは{rank}まで"
+
+#. placeholders: {rank}
+msgid "diamonds up to {rank}"
+msgstr "ダイヤは{rank}まで"
+
+#. placeholders: {rank}
+msgid "clubs up to {rank}"
+msgstr "クラブは{rank}まで"
+
+#. placeholders: {rank}
+msgid "spades up to {rank}"
+msgstr "スペードは{rank}まで"
 
 #. placeholders: {join}
 msgid "Foundations: {join}."
@@ -19857,27 +19990,35 @@ msgstr "めくったカードはありません。{sentence_start}で山札を�
 msgid "{sentence_start} is empty."
 msgstr "{sentence_start}は空です。"
 
-msgid "it"
-msgstr "それ"
-
-msgid "them"
-msgstr "それ"
-
-#. placeholders: {them}
 #. one sentence of a longer line
-msgid "Backspace puts {them} back."
-msgstr "Backspaceで{them}を戻します。"
+msgid "Backspace puts it back."
+msgstr "Backspaceで戻します。"
 
-#. placeholders: {p}, {them}
+#. placeholders: {drop_keys}
 #. one sentence of a longer line
-msgid "Move to a pile or a foundation, and {p} places {them}."
-msgstr "列か組札へ移動して、{p}で{them}を置きます。"
+msgid "Move to a pile or a foundation, and {drop_keys} places it."
+msgstr "列か組札へ移動して、{drop_keys}で置きます。"
 
-#. placeholders: {p}, {them}
+#. placeholders: {drop_keys}
 msgid ""
-"Move to a pile or a foundation, and {p} places {them}. Backspace puts "
-"{them} back."
-msgstr "列か組札へ移動して、{p}で{them}を置きます。Backspaceで{them}を戻します。"
+"Move to a pile or a foundation, and {drop_keys} places it. Backspace puts "
+"it back."
+msgstr ""
+
+#. one sentence of a longer line
+msgid "Backspace puts them back."
+msgstr "Backspaceで戻します。"
+
+#. placeholders: {drop_keys}
+#. one sentence of a longer line
+msgid "Move to a pile or a foundation, and {drop_keys} places them."
+msgstr "列か組札へ移動して、{drop_keys}でまとめて置きます。"
+
+#. placeholders: {drop_keys}
+msgid ""
+"Move to a pile or a foundation, and {drop_keys} places them. Backspace puts "
+"them back."
+msgstr ""
 
 #. placeholders: {words}
 msgid "Put back: {words}."
@@ -19890,9 +20031,17 @@ msgstr "山札には置けません。"
 msgid "Turned up in pile {p}: {name}."
 msgstr "列{p}で表になりました：{name}。"
 
-#. placeholders: {sentence_start}
-msgid "{sentence_start} foundation complete."
-msgstr "{sentence_start}の組札が完成しました。"
+msgid "Hearts foundation complete."
+msgstr "ハートの組札が完成しました。"
+
+msgid "Diamonds foundation complete."
+msgstr "ダイヤの組札が完成しました。"
+
+msgid "Clubs foundation complete."
+msgstr "クラブの組札が完成しました。"
+
+msgid "Spades foundation complete."
+msgstr "スペードの組札が完成しました。"
 
 msgid "All face up. The rest go up on their own."
 msgstr "すべて表になりました。残りは自動で上がります。"
@@ -19950,9 +20099,21 @@ msgstr "幸運な月のため、山札をめくっても手数になりません
 msgid "{name} won in {moves_words}"
 msgstr "{name}を{moves_words}で解きました"
 
-#. placeholders: {card}, {suit}
-msgid "The {card} on the {suit} foundation."
-msgstr "{card}を{suit}の組札へ。"
+#. placeholders: {card}
+msgid "The {card} on the hearts foundation."
+msgstr "ハートの組札の{card}。"
+
+#. placeholders: {card}
+msgid "The {card} on the diamonds foundation."
+msgstr "ダイヤの組札の{card}。"
+
+#. placeholders: {card}
+msgid "The {card} on the clubs foundation."
+msgstr "クラブの組札の{card}。"
+
+#. placeholders: {card}
+msgid "The {card} on the spades foundation."
+msgstr "スペードの組札の{card}。"
 
 #. placeholders: {card}, {onto}, {q}
 msgid "The {card} on the {onto}, pile {q}."
@@ -20185,13 +20346,37 @@ msgstr "クイーン"
 msgid "king"
 msgstr "キング"
 
-#. placeholders: {rank_words}, {name}
-msgid "{rank_words} of {name}"
-msgstr "{name}の{rank_words}"
+#. placeholders: {rank_words}
+msgid "{rank_words} of hearts"
+msgstr "ハートの{rank_words}"
 
-#. placeholders: {rank_words}, {name}, {colour}
-msgid "{rank_words} of {name}, {colour}"
-msgstr "{name}の{rank_words}、{colour}"
+#. placeholders: {rank_words}
+msgid "{rank_words} of diamonds"
+msgstr "ダイヤの{rank_words}"
+
+#. placeholders: {rank_words}
+msgid "{rank_words} of clubs"
+msgstr "クラブの{rank_words}"
+
+#. placeholders: {rank_words}
+msgid "{rank_words} of spades"
+msgstr "スペードの{rank_words}"
+
+#. placeholders: {rank_words}
+msgid "{rank_words} of hearts, red"
+msgstr "ハートの{rank_words}、赤"
+
+#. placeholders: {rank_words}
+msgid "{rank_words} of diamonds, red"
+msgstr "ダイヤの{rank_words}、赤"
+
+#. placeholders: {rank_words}
+msgid "{rank_words} of clubs, black"
+msgstr "クラブの{rank_words}、黒"
+
+#. placeholders: {rank_words}
+msgid "{rank_words} of spades, black"
+msgstr "スペードの{rank_words}、黒"
 
 msgid "Nothing there to move."
 msgstr "ここに動かせるカードはありません。"
@@ -22205,23 +22390,23 @@ msgstr "左に{near_words}"
 msgid "{near_words} to your right"
 msgstr "右に{near_words}"
 
-#. placeholders: {name}, {bike}
+#. placeholders: {course}, {bike}
 #. one sentence of a longer line
-msgid "Time trial, {name}, on the {bike}."
-msgstr "タイムトライアル、{name}、{bike}で。"
+msgid "Time trial, {course}, on the {bike}."
+msgstr "タイムトライアル、{course}、{bike}で。"
 
-#. placeholders: {name}, {bike}, {about}
-msgid "Time trial, {name}, on the {bike}. {about}"
-msgstr "タイムトライアル、{name}、{bike}で。{about}"
+#. placeholders: {course}, {bike}, {about}
+msgid "Time trial, {course}, on the {bike}. {about}"
+msgstr "タイムトライアル、{course}、{bike}で。{about}"
 
-#. placeholders: {bike}, {route}
+#. placeholders: {bike}, {length}
 #. one sentence of a longer line
-msgid "Free ride on the {bike}, {route}, no clock."
-msgstr "{bike}でフリーライド、{route}、時計なし。"
+msgid "Free ride on the {bike}, {length}, no clock."
+msgstr "{bike}でフリーライド、{length}、時計なし。"
 
-#. placeholders: {bike}, {route}, {go_words}
-msgid "Free ride on the {bike}, {route}, no clock. {go_words}"
-msgstr "{bike}でフリーライド、{route}、時計なし。{go_words}"
+#. placeholders: {bike}, {length}, {go}
+msgid "Free ride on the {bike}, {length}, no clock. {go}"
+msgstr "{bike}でフリーライド、{length}、時計なし。{go}"
 
 #. placeholders: {title}, {district}, {bike}
 #. one sentence of a longer line
@@ -22238,19 +22423,19 @@ msgstr "配達、{title}、{district}、{bike}で。{length}、期限は{deadlin
 msgid "{length}, deadline {deadline}."
 msgstr "{length}、期限は{deadline}。"
 
-#. placeholders: {name}, {bike}
-msgid "Delivery in {name}, on the {bike}."
-msgstr "{name}で配達、{bike}で。"
+#. placeholders: {district}, {bike}
+msgid "Delivery in {district}, on the {bike}."
+msgstr "配達、{district}、{bike}で。"
 
-#. placeholders: {name}, {bike}
+#. placeholders: {district}, {bike}
 #. one sentence of a longer line
-msgid "Endless ride, {name}, on the {bike}."
-msgstr "エンドレスライド、{name}、{bike}で。"
+msgid "Endless ride, {district}, on the {bike}."
+msgstr "エンドレスライド、{district}、{bike}で。"
 
-#. placeholders: {name}, {bike}, {ENDLESS_CRASHES}
+#. placeholders: {district}, {bike}, {ENDLESS_CRASHES}
 msgid ""
-"Endless ride, {name}, on the {bike}. {ENDLESS_CRASHES} crashes end it."
-msgstr "エンドレスライド、{name}、{bike}で。{ENDLESS_CRASHES}回転倒すると終わりです。"
+"Endless ride, {district}, on the {bike}. {ENDLESS_CRASHES} crashes end it."
+msgstr ""
 
 #. placeholders: {ENDLESS_CRASHES}
 #. one sentence of a longer line
@@ -22261,43 +22446,43 @@ msgstr "{ENDLESS_CRASHES}回転倒すると終わりです。"
 msgid "Drops add time."
 msgstr "届けると時間が増えます。"
 
-#. placeholders: {NAME}, {name}, {bike}
+#. placeholders: {clock_name}, {district}, {bike}
 #. one sentence of a longer line
-msgid "{NAME}, {name}, on the {bike}."
-msgstr "{NAME}、{name}、{bike}で。"
+msgid "{clock_name}, {district}, on the {bike}."
+msgstr "{clock_name}、{district}、{bike}で。"
 
-#. placeholders: {NAME}, {name}, {bike}, {sentence_start}
-msgid "{NAME}, {name}, on the {bike}. {sentence_start}. Drops add time."
-msgstr "{NAME}、{name}、{bike}で。{sentence_start}。届けると時間が増えます。"
+#. placeholders: {clock_name}, {district}, {bike}, {time}
+msgid "{clock_name}, {district}, on the {bike}. {time}. Drops add time."
+msgstr "{clock_name}、{district}、{bike}で。{time}。届けると時間が増えます。"
 
-#. placeholders: {LEAF_POINTS}
+#. placeholders: {bike}, {length}
 #. one sentence of a longer line
-msgid "Ride through leaf piles for {LEAF_POINTS} points each."
-msgstr "落ち葉の山を通り抜けると、一つごとに{LEAF_POINTS}点。"
+msgid "Leaf season ride, on the {bike}, {length}."
+msgstr "落ち葉のライド、{bike}で、{length}。"
 
-#. placeholders: {LEAF_SEASON}, {bike}, {route}
-#. one sentence of a longer line
-msgid "{LEAF_SEASON}, on the {bike}, {route}."
-msgstr "{LEAF_SEASON}、{bike}で、{route}。"
-
-#. placeholders: {LEAF_SEASON}, {bike}, {route}, {LEAF_POINTS}
+#. placeholders: {bike}, {length}, {points}
 msgid ""
-"{LEAF_SEASON}, on the {bike}, {route}. Ride through leaf piles for "
-"{LEAF_POINTS} points each."
-msgstr "{LEAF_SEASON}、{bike}で、{route}。落ち葉の山を通り抜けると、一つごとに{LEAF_POINTS}点。"
+"Leaf season ride, on the {bike}, {length}. Ride through leaf piles for "
+"{points} points each."
+msgstr ""
+
+#. placeholders: {points}
+#. one sentence of a longer line
+msgid "Ride through leaf piles for {points} points each."
+msgstr "落ち葉の山を通り抜けると、ひとつ{points}点です。"
+
+#. placeholders: {bike}, {length}
+#. one sentence of a longer line
+msgid "Car-free Sunday, on the {bike}, {length}."
+msgstr "車のない日曜、{bike}で、{length}。"
+
+#. placeholders: {bike}, {length}
+msgid "Car-free Sunday, on the {bike}, {length}. No cars today."
+msgstr "車のない日曜、{bike}で、{length}。今日は車が走っていません。"
 
 #. one sentence of a longer line
 msgid "No cars today."
 msgstr "今日は車がいません。"
-
-#. placeholders: {SUNDAY}, {bike}, {route}
-#. one sentence of a longer line
-msgid "{SUNDAY}, on the {bike}, {route}."
-msgstr "{SUNDAY}、{bike}で、{route}。"
-
-#. placeholders: {SUNDAY}, {bike}, {route}
-msgid "{SUNDAY}, on the {bike}, {route}. No cars today."
-msgstr "{SUNDAY}、{bike}で、{route}。今日は車がいません。"
 
 #. placeholders: {secs_words}
 msgid "Starting in {secs_words}."
@@ -28227,6 +28412,12 @@ msgstr "七面鳥の切り分け"
 
 msgid "pecan pie"
 msgstr "ピーカンパイ"
+
+msgid "them"
+msgstr "それ"
+
+msgid "it"
+msgstr "それ"
 
 msgid "they"
 msgstr ""
@@ -36643,23 +36834,22 @@ msgstr "{sentence}は満月です。ときどき遠くでオオカミが遠吠�
 msgid "Discoveries tonight: {found} of {spots}."
 msgstr "今夜の発見：{spots}中{found}。"
 
-#. placeholders: {paddle}
-msgid "It is straight ahead: paddle with {paddle}."
-msgstr "真正面です。{paddle}で漕ぎましょう。"
+#. placeholders: {paddle_keys}
+msgid "It is straight ahead: paddle with {paddle_keys}."
+msgstr "真正面です：{paddle_keys}で漕ぎましょう。"
 
-#. placeholders: {left}, {right}
-msgid "It is behind you: hold {left} or {right} to turn around."
-msgstr "後ろです。{left}か{right}を押し続けて向きを変えましょう。"
+#. placeholders: {left_keys}, {right_keys}
+msgid "It is behind you: hold {left_keys} or {right_keys} to turn around."
+msgstr "後ろです：{left_keys}か{right_keys}を押し続けて向きを変えましょう。"
 
-msgid "a little"
-msgstr "少し"
-
-msgid "well"
+#. placeholders: {turn_keys}
+msgid ""
+"Turn a little with {turn_keys} until it is straight ahead, then paddle."
 msgstr ""
 
-#. placeholders: {how}, {key}
-msgid "Turn {how} with {key} until it is straight ahead, then paddle."
-msgstr "正面に来るまで{key}で{how}に向きを変え、それから漕ぎましょう。"
+#. placeholders: {turn_keys}
+msgid "Turn well with {turn_keys} until it is straight ahead, then paddle."
+msgstr "真正面に来るまで{turn_keys}で大きく向きを変えて、それから漕ぎましょう。"
 
 #. placeholders: {near}
 #. one sentence of a longer line
@@ -36674,14 +36864,14 @@ msgstr "{turn}ランタンは{near}です。"
 msgid "Every lantern in."
 msgstr "ランタンを全部集めました。"
 
-#. placeholders: {home}
-msgid "Every lantern in. {home} heads home."
-msgstr "ランタンを全部集めました。{home}で帰ります。"
+#. placeholders: {finish_keys}
+msgid "Every lantern in. {finish_keys} heads home."
+msgstr "ランタンを全部集めました。{finish_keys}で帰ります。"
 
-#. placeholders: {home}
+#. placeholders: {finish_keys}
 #. one sentence of a longer line
-msgid "{home} heads home."
-msgstr "{home}で帰ります。"
+msgid "{finish_keys} heads home."
+msgstr "{finish_keys}で帰ります。"
 
 msgid "Lantern 1 is ringing. "
 msgstr "ランタン1が鳴っています。"
@@ -38298,6 +38488,9 @@ msgstr "{name}は元気をもらいに、今夜は隣の村へ出かけていま
 #. placeholders: {name}, {doing}, {where_at}
 msgid "{name} is {doing}, {where_at}."
 msgstr "{name}は{where_at}で{doing}。"
+
+msgid "well"
+msgstr ""
 
 msgid "mill"
 msgstr "製粉所"
@@ -80902,10 +81095,6 @@ msgstr "手紙にすべて返事をしました。"
 msgid "Late post. "
 msgstr "夜の追加便。"
 
-#. placeholders: {name}
-msgid " It would {name} in its box."
-msgstr "箱の中で{name}と鳴るはずです。"
-
 #. placeholders: {late}, {from}, {age}
 #. one sentence of a longer line
 msgid "{late}{from}, age {age}, writes."
@@ -81038,9 +81227,9 @@ msgstr "箱{at}、空き。"
 msgid "Box {at}."
 msgstr "箱{at}。"
 
-#. placeholders: {name}
-msgid "It sounds like a {name}."
-msgstr "{name}という音がします。"
+#. placeholders: {sound}
+msgid "It sounds like {sound}."
+msgstr "{sound}という音がします。"
 
 #. one sentence of a longer line
 msgid "Only straw."
@@ -81249,9 +81438,13 @@ msgstr "束{level}に返事完了。スコア{score}"
 msgid "{from}'s wish would sound like {sound} in its box."
 msgstr "{from}の願いの品は、箱の中で{sound}がするはずです。"
 
-#. placeholders: {name}, {answer}
-msgid "Walk {name} to box {answer}."
-msgstr "{name}へ歩いて箱{answer}まで。"
+#. placeholders: {left_keys}, {number}
+msgid "Walk {left_keys} to box {number}."
+msgstr "{left_keys}で{number}番の箱へ歩きましょう。"
+
+#. placeholders: {right_keys}, {number}
+msgid "Walk {right_keys} to box {number}."
+msgstr "{right_keys}で{number}番の箱へ歩きましょう。"
 
 msgid "It is the box in front of you."
 msgstr "目の前の箱です。"
@@ -81469,6 +81662,66 @@ msgstr "ドスン"
 
 msgid "chime"
 msgstr "ポロロン"
+
+msgid "a rattle"
+msgstr "ガラガラ"
+
+msgid "a squish"
+msgstr "グニュッ"
+
+msgid "a clink"
+msgstr "カチン"
+
+msgid "a jingle"
+msgstr "チリンチリン"
+
+msgid "a crinkle"
+msgstr "カサカサ"
+
+msgid "a slosh"
+msgstr "チャプチャプ"
+
+msgid "a tick"
+msgstr "チクタク"
+
+msgid "a squeak"
+msgstr "キュッキュッ"
+
+msgid "a thump"
+msgstr "ドスン"
+
+msgid "a chime"
+msgstr "リーン"
+
+msgid "It would rattle in its box."
+msgstr "箱の中でガラガラ鳴りそうです。"
+
+msgid "It would squish in its box."
+msgstr "箱の中でグニュッとしそうです。"
+
+msgid "It would clink in its box."
+msgstr "箱の中でカチンと鳴りそうです。"
+
+msgid "It would jingle in its box."
+msgstr "箱の中でチリンチリン鳴りそうです。"
+
+msgid "It would crinkle in its box."
+msgstr "箱の中でカサカサ鳴りそうです。"
+
+msgid "It would slosh in its box."
+msgstr "箱の中でチャプチャプ鳴りそうです。"
+
+msgid "It would tick in its box."
+msgstr "箱の中でチクタク鳴りそうです。"
+
+msgid "It would squeak in its box."
+msgstr "箱の中でキュッキュッと鳴りそうです。"
+
+msgid "It would thump in its box."
+msgstr "箱の中でドスンと鳴りそうです。"
+
+msgid "It would chime in its box."
+msgstr "箱の中でリーンと鳴りそうです。"
 
 msgid "dry wooden knocks, like blocks tumbling in a box"
 msgstr "箱の中で積み木が転がるような、乾いた木のコツコツという音"
@@ -81689,105 +81942,102 @@ msgstr "夜{level}、{name}をもう一度。"
 msgid "The same run, straight away. Only your best result is kept."
 msgstr "同じプレイをすぐもう一度。ベストの結果だけが残ります。"
 
-#. placeholders: {level}
-msgid "Shift {level}"
-msgstr "シフト{level}"
+#. placeholders: {shift}
+msgid "Shift {shift}"
+msgstr "勤務{shift}"
 
 #. placeholders: {who}, {gift}
 msgid "{who}, on your left, wishes for {gift}."
 msgstr "左の{who}が欲しいのは{gift}です。"
 
 #. placeholders: {who}, {gift}, {sound}
-msgid "{who}, on your left, wishes for {gift}, a {sound} in the box."
-msgstr "左の{who}が欲しいのは{gift}、箱の中で{sound}がするものです。"
+msgid "{who}, on your left, wishes for {gift}, {sound} in the box."
+msgstr "左の{who}の願いは{gift}、箱の中で{sound}と鳴ります。"
 
 #. placeholders: {who}, {gift}
 msgid "{who}, on your left, now wishes for {gift}."
 msgstr "左の{who}が今度欲しいのは{gift}です。"
 
 #. placeholders: {who}, {gift}, {sound}
-msgid "{who}, on your left, now wishes for {gift}, a {sound} in the box."
-msgstr "左の{who}が今度欲しいのは{gift}、箱の中で{sound}がするものです。"
+msgid "{who}, on your left, now wishes for {gift}, {sound} in the box."
+msgstr "左の{who}の願いは今度は{gift}、箱の中で{sound}と鳴ります。"
 
 #. placeholders: {who}, {gift}
 msgid "{who}, on your right, wishes for {gift}."
 msgstr "右の{who}が欲しいのは{gift}です。"
 
 #. placeholders: {who}, {gift}, {sound}
-msgid "{who}, on your right, wishes for {gift}, a {sound} in the box."
-msgstr "右の{who}が欲しいのは{gift}、箱の中で{sound}がするものです。"
+msgid "{who}, on your right, wishes for {gift}, {sound} in the box."
+msgstr "右の{who}の願いは{gift}、箱の中で{sound}と鳴ります。"
 
 #. placeholders: {who}, {gift}
 msgid "{who}, on your right, now wishes for {gift}."
 msgstr "右の{who}が今度欲しいのは{gift}です。"
 
 #. placeholders: {who}, {gift}, {sound}
-msgid "{who}, on your right, now wishes for {gift}, a {sound} in the box."
-msgstr "右の{who}が今度欲しいのは{gift}、箱の中で{sound}がするものです。"
+msgid "{who}, on your right, now wishes for {gift}, {sound} in the box."
+msgstr "右の{who}の願いは今度は{gift}、箱の中で{sound}と鳴ります。"
 
 #. placeholders: {who}, {gift}
 msgid "{who}, straight ahead, wishes for {gift}."
 msgstr "正面の{who}が欲しいのは{gift}です。"
 
 #. placeholders: {who}, {gift}, {sound}
-msgid "{who}, straight ahead, wishes for {gift}, a {sound} in the box."
-msgstr "正面の{who}が欲しいのは{gift}、箱の中で{sound}がするものです。"
+msgid "{who}, straight ahead, wishes for {gift}, {sound} in the box."
+msgstr "正面の{who}の願いは{gift}、箱の中で{sound}と鳴ります。"
 
 #. placeholders: {who}, {gift}
 msgid "{who}, straight ahead, now wishes for {gift}."
 msgstr "正面の{who}が今度欲しいのは{gift}です。"
 
 #. placeholders: {who}, {gift}, {sound}
-msgid "{who}, straight ahead, now wishes for {gift}, a {sound} in the box."
-msgstr "正面の{who}が今度欲しいのは{gift}、箱の中で{sound}がするものです。"
+msgid "{who}, straight ahead, now wishes for {gift}, {sound} in the box."
+msgstr "正面の{who}の願いは今度は{gift}、箱の中で{sound}と鳴ります。"
 
-#. placeholders: {name}
+#. placeholders: {sack_keys}
 msgid ""
-"Gifts nobody wished for go in the return sack behind you, with {name}."
-msgstr "誰も欲しがらなかったプレゼントは、{name}で後ろの返品袋へ入れます。"
-
-#. placeholders: {level}, {of}
-#. one sentence of a longer line
-msgid "Shift {level}{of}."
-msgstr "シフト{level}{of}。"
-
-#. placeholders: {level}, {of}, {quota}, {secs}, {wishes}
-msgid "Shift {level}{of}. Sort {quota} gifts in {secs}. {wishes}"
-msgstr "シフト{level}{of}。{secs}でプレゼントを{quota}個仕分けます。{wishes}"
-
-#. placeholders: {quota}, {secs}
-#. one sentence of a longer line
-msgid "Sort {quota} gifts in {secs}."
-msgstr "{secs}でプレゼントを{quota}個仕分けます。"
-
-#. placeholders: {primary}, {name}, {name2}
-msgid ""
-" Shake each gift with {primary}. Then send it with {name} or {name2} to the "
-"person who wished for it, before it rides off the end of the belt. A wrong "
-"guess costs time, but the gift stays on the belt."
+"Gifts nobody wished for go in the return sack behind you, with {sack_keys}."
 msgstr ""
-"{primary}でプレゼントを振りましょう。それから、ベルトの端から落ちる前に、{name}か{name2}で欲しがっている人に届けます。外れると時間"
-"が減りますが、プレゼントはベルトに残ります。"
 
+#. placeholders: {level}, {last}
 #. one sentence of a longer line
-msgid "A wrong guess costs time, but the gift stays on the belt."
+msgid "Shift {level} of {last}."
+msgstr "勤務{level}、全{last}回。"
+
+#. placeholders: {level}, {last}, {quota}, {time}, {wishes}
+msgid "Shift {level} of {last}. Sort {quota} gifts in {time}. {wishes}"
+msgstr "勤務{level}、全{last}回。{time}でプレゼントを{quota}個仕分けましょう。{wishes}"
+
+#. placeholders: {quota}, {time}
+#. one sentence of a longer line
+msgid "Sort {quota} gifts in {time}."
+msgstr "{time}でプレゼントを{quota}個仕分けましょう。"
+
+#. placeholders: {level}
+#. one sentence of a longer line
+msgid "Shift {level}."
+msgstr "勤務{level}。"
+
+#. placeholders: {level}, {quota}, {time}, {wishes}
+msgid "Shift {level}. Sort {quota} gifts in {time}. {wishes}"
+msgstr "勤務{level}。{time}でプレゼントを{quota}個仕分けましょう。{wishes}"
+
+#. placeholders: {shake_keys}
+msgid "Shake each gift with {shake_keys}."
+msgstr "{shake_keys}でプレゼントを一つずつ振りましょう。"
+
+#. placeholders: {left_keys}, {right_keys}
+msgid ""
+"Then send it with {left_keys} or {right_keys} to the person who wished for "
+"it, before it rides off the end of the belt."
+msgstr ""
+
+msgid " A wrong guess costs time, but the gift stays on the belt."
 msgstr "外れると時間が減りますが、プレゼントはベルトに残ります。"
 
-#. placeholders: {primary}
-#. one sentence of a longer line
-msgid "Shake each gift with {primary}."
-msgstr "{primary}でプレゼントを振りましょう。"
-
-#. placeholders: {name}, {name2}
-#. one sentence of a longer line
-msgid ""
-"Then send it with {name} or {name2} to the person who wished for it, before "
-"it rides off the end of the belt."
-msgstr "それから、ベルトの端から落ちる前に、{name}か{name2}で欲しがっている人に届けます。"
-
-#. placeholders: {sentence_start}
-msgid " {sentence_start} sends a gift straight ahead."
-msgstr "{sentence_start}で正面へ届けます。"
+#. placeholders: {ahead_keys}
+msgid "{ahead_keys} sends a gift straight ahead."
+msgstr "{ahead_keys}でプレゼントを正面へ送ります。"
 
 msgid ""
 " From now on, the wishes do not say what they sound like. Think about what "
@@ -81797,9 +82047,9 @@ msgstr "ここからは、願いがどんな音かは伝えません。箱の中
 msgid " Someone may change their mind half way through."
 msgstr "途中で誰かが気を変えるかもしれません。"
 
-#. placeholders: {sentence_start}
-msgid " {sentence_start} starts the belt."
-msgstr "{sentence_start}でベルトが動き出します。"
+#. placeholders: {start_keys}
+msgid "{start_keys} starts the belt."
+msgstr "{start_keys}でベルトが動き出します。"
 
 msgid "The belt has not started."
 msgstr "ベルトはまだ動いていません。"
@@ -81807,13 +82057,17 @@ msgstr "ベルトはまだ動いていません。"
 msgid "Belt empty. A gift is coming."
 msgstr "ベルトは空です。プレゼントが来ます。"
 
-#. placeholders: {shaken}, {secs}
-msgid "A gift is on the belt, {shaken}, {secs} from the edge."
-msgstr "ベルトにプレゼントが一つ、{shaken}、端まで{secs}。"
+#. placeholders: {time}
+msgid "A gift is on the belt, not shaken yet, {time} from the edge."
+msgstr "ベルトにまだ振っていないプレゼントがあり、端まで{time}です。"
 
-#. placeholders: {gift}, {secs}
-msgid "{gift} {secs} on the clock."
-msgstr "{gift}時計は残り{secs}。"
+#. placeholders: {time}
+msgid "A gift is on the belt, shaken, {time} from the edge."
+msgstr "ベルトに振ったプレゼントがあり、端まで{time}です。"
+
+#. placeholders: {gift}, {clock}
+msgid "{gift} {clock} on the clock."
+msgstr "{gift}残り時間{clock}。"
 
 #. placeholders: {shift_name}, {sorted}, {quota}, {score}
 msgid "{shift_name}. {sorted} of {quota} sorted. Score {score}."
@@ -81859,31 +82113,35 @@ msgstr "ガシャン。マイナス{secs}。"
 msgid "Minus {secs}."
 msgstr "マイナス{secs}。"
 
-#. placeholders: {to_go}
-msgid " {to_go} to go."
-msgstr "あと{to_go}。"
-
 #. one sentence of a longer line
 msgid "Into the return sack."
 msgstr "返品袋へ。"
 
-#. placeholders: {points}, {rest}
-msgid "Into the return sack. Plus {points}.{rest}"
-msgstr "返品袋へ。{points}点。{rest}"
+#. placeholders: {points}, {to_go}
+msgid "Into the return sack. Plus {points}. {to_go} to go."
+msgstr "返品袋へ。{points}点追加。あと{to_go}。"
 
-#. placeholders: {points}, {rest}
+#. placeholders: {to_go}
 #. one sentence of a longer line
-msgid "Plus {points}.{rest}"
-msgstr "{points}点。{rest}"
+msgid "{to_go} to go."
+msgstr "あと{to_go}。"
+
+#. placeholders: {points}
+msgid "Into the return sack. Plus {points}."
+msgstr "返品袋へ。{points}点追加。"
 
 #. placeholders: {who}
 #. one sentence of a longer line
 msgid "{who} is delighted."
 msgstr "{who}は大喜びです。"
 
-#. placeholders: {who}, {points}, {rest}
-msgid "{who} is delighted. Plus {points}.{rest}"
-msgstr "{who}は大喜びです。{points}点。{rest}"
+#. placeholders: {who}, {points}, {to_go}
+msgid "{who} is delighted. Plus {points}. {to_go} to go."
+msgstr "{who}は大喜びです。{points}点追加。あと{to_go}。"
+
+#. placeholders: {who}, {points}
+msgid "{who} is delighted. Plus {points}."
+msgstr "{who}は大喜びです。{points}点追加。"
 
 #. placeholders: {penalty}
 #. one sentence of a longer line
@@ -81938,22 +82196,23 @@ msgstr "シフト{done}、完了。残り時間のボーナス{bonus}点。ス�
 msgid "{bonus} bonus points for the time left."
 msgstr "残り時間のボーナス{bonus}点。"
 
-msgid "gift"
-msgstr "個"
+msgid "1 gift delivered"
+msgstr "配達したプレゼント1個"
 
-msgid "gifts"
-msgstr "個"
+#. placeholders: {sorted}
+msgid "{sorted} gifts delivered"
+msgstr "配達したプレゼント{sorted}個"
 
-msgid "guess"
-msgstr "回"
+#. placeholders: {broken}
+msgid "{broken} broken"
+msgstr "壊れたもの{broken}個"
 
-msgid "guesses"
-msgstr "回"
+msgid "1 wrong guess"
+msgstr "外れ1回"
 
-#. placeholders: {sorted}, {gifts}, {broken}, {wrongs}, {guesses}
-msgid ""
-"{sorted} {gifts} delivered, {broken} broken, {wrongs} wrong {guesses}."
-msgstr "{sorted}{gifts}届け、{broken}個壊れ、外れ{wrongs}{guesses}。"
+#. placeholders: {wrongs}
+msgid "{wrongs} wrong guesses"
+msgstr "外れ{wrongs}回"
 
 #. placeholders: {level}
 msgid "Time's up on shift {level}. "
@@ -82067,36 +82326,41 @@ msgstr "まだベルトにプレゼントがありません。"
 msgid "Shake it first with {primary}."
 msgstr "まず{primary}で振りましょう。"
 
-#. placeholders: {sound}, {item}, {who}, {key_send}
-msgid ""
-"That was a {sound}, {item} for {who}: send it on your left with {key_send}."
-msgstr "今のは{sound}、{who}への{item}です。{key_send}で左へ送りましょう。"
+#. placeholders: {who}, {send_keys}
+msgid "{who} wished for it: send it on your left with {send_keys}."
+msgstr "{who}の願いです：{send_keys}で左へ送りましょう。"
 
-#. placeholders: {sound}, {item}, {who}, {key_send}
-msgid ""
-"That was a {sound}, {item} for {who}: send it on your right with {key_send}."
-msgstr "今のは{sound}、{who}への{item}です。{key_send}で右へ送りましょう。"
+#. placeholders: {who}, {send_keys}
+msgid "{who} wished for it: send it on your right with {send_keys}."
+msgstr "{who}の願いです：{send_keys}で右へ送りましょう。"
 
-#. placeholders: {sound}, {item}, {who}, {key_send}
-msgid ""
-"That was a {sound}, {item} for {who}: send it straight ahead with "
-"{key_send}."
-msgstr "今のは{sound}、{who}への{item}です。{key_send}で正面へ送りましょう。"
+#. placeholders: {who}, {send_keys}
+msgid "{who} wished for it: send it straight ahead with {send_keys}."
+msgstr "{who}の願いです：{send_keys}で正面へ送りましょう。"
 
-#. placeholders: {key_send}
+#. placeholders: {sound}, {item}
 #. one sentence of a longer line
-msgid "Nobody wished for it: return sack, with {key_send}."
-msgstr "誰も欲しがっていません。{key_send}で返品袋へ。"
+msgid "That was {sound}: {item}."
+msgstr "今のは{sound}：{item}。"
+
+#. placeholders: {sound}, {item}, {send}
+msgid "That was {sound}: {item}. {send}"
+msgstr "今のは{sound}：{item}。{send}"
+
+#. placeholders: {send_keys}
+#. one sentence of a longer line
+msgid "Nobody wished for it: return sack, with {send_keys}."
+msgstr "誰の願いでもありません：{send_keys}で返品袋へ。"
 
 #. placeholders: {sound}
 #. one sentence of a longer line
-msgid "That was a {sound}."
+msgid "That was {sound}."
 msgstr "今のは{sound}でした。"
 
-#. placeholders: {sound}, {key_send}
+#. placeholders: {sound}, {send_keys}
 msgid ""
-"That was a {sound}. Nobody wished for it: return sack, with {key_send}."
-msgstr "今のは{sound}でした。誰も欲しがっていません。{key_send}で返品袋へ。"
+"That was {sound}. Nobody wished for it: return sack, with {send_keys}."
+msgstr ""
 
 #. one sentence of a longer line
 msgid "Half points for this gift."
@@ -82106,37 +82370,36 @@ msgstr "このプレゼントは点数が半分です。"
 msgid "{text} Half points for this gift."
 msgstr "{text}このプレゼントは点数が半分です。"
 
-#. placeholders: {key_start}, {key_repeat}
-msgid "{key_start} starts the belt, {key_repeat} repeats the wishes."
-msgstr "{key_start}でベルトが動き出し、{key_repeat}で願いをくり返します。"
+#. placeholders: {start_keys}, {repeat_keys}
+msgid "{start_keys} starts the belt, {repeat_keys} repeats the wishes."
+msgstr "{start_keys}でベルトが動き出し、{repeat_keys}で願いをもう一度聞けます。"
 
-#. placeholders: {key_left}, {key_right}
+#. placeholders: {left_keys}, {right_keys}
 #. one sentence of a longer line
-msgid "{key_left} and {key_right} send it."
-msgstr "{key_left}と{key_right}で送ります。"
+msgid "{left_keys} and {right_keys} send it."
+msgstr "{left_keys}と{right_keys}で送ります。"
 
-#. placeholders: {key_shake}
+#. placeholders: {shake_keys}
 #. one sentence of a longer line
-msgid "{key_shake} shakes the gift."
-msgstr "{key_shake}でプレゼントを振ります。"
+msgid "{shake_keys} shakes the gift."
+msgstr "{shake_keys}でプレゼントを振ります。"
 
-#. placeholders: {key_shake}, {key_left}, {key_right}
+#. placeholders: {shake_keys}, {left_keys}, {right_keys}
 msgid ""
-"{key_shake} shakes the gift. {key_left} and {key_right} send it. F1 "
+"{shake_keys} shakes the gift. {left_keys} and {right_keys} send it. F1 "
 "explains the keys."
-msgstr "{key_shake}でプレゼントを振ります。{key_left}と{key_right}で送ります。F1でキーの説明。"
-
-#. placeholders: {key_left}, {key_ahead}, {key_right}
-#. one sentence of a longer line
-msgid "{key_left}, {key_ahead} and {key_right} send it."
-msgstr "{key_left}、{key_ahead}、{key_right}で送ります。"
-
-#. placeholders: {key_shake}, {key_left}, {key_ahead}, {key_right}
-msgid ""
-"{key_shake} shakes the gift. {key_left}, {key_ahead} and {key_right} send "
-"it. F1 explains the keys."
 msgstr ""
-"{key_shake}でプレゼントを振ります。{key_left}、{key_ahead}、{key_right}で送ります。F1でキーの説明。"
+
+#. placeholders: {left_keys}, {ahead_keys}, {right_keys}
+#. one sentence of a longer line
+msgid "{left_keys}, {ahead_keys} and {right_keys} send it."
+msgstr "{left_keys}、{ahead_keys}、{right_keys}で送ります。"
+
+#. placeholders: {shake_keys}, {left_keys}, {ahead_keys}, {right_keys}
+msgid ""
+"{shake_keys} shakes the gift. {left_keys}, {ahead_keys} and {right_keys} "
+"send it. F1 explains the keys."
+msgstr ""
 
 #. one sentence of a longer line
 msgid "Back on the belt."
@@ -82208,57 +82471,44 @@ msgstr ""
 msgid "{start_key} starts the belt."
 msgstr "{start_key}でベルトが動き出します。"
 
-#. placeholders: {n}
-msgid ", and {n} drops it in the return sack behind you"
-msgstr "、{n}で後ろの返品袋へ"
+#. placeholders: {left_keys}, {right_keys}
+msgid "{left_keys} sends it left, {right_keys} right."
+msgstr "{left_keys}で左へ、{right_keys}で右へ送ります。"
 
-#. placeholders: {n}
-#. one clause of a longer line
-msgid "and {n} drops it in the return sack behind you"
-msgstr "{n}で後ろの返品袋へ"
+#. placeholders: {left_keys}, {ahead_keys}, {right_keys}
+msgid ""
+"{left_keys} sends it left, {ahead_keys} straight ahead, {right_keys} right."
+msgstr ""
 
-#. placeholders: {n}
-msgid ", {n} straight ahead"
-msgstr "、{n}で正面"
+#. placeholders: {left_keys}, {right_keys}, {sack_keys}
+msgid ""
+"{left_keys} sends it left, {right_keys} right, and {sack_keys} drops it in "
+"the return sack behind you."
+msgstr ""
 
-#. placeholders: {n}
-#. one clause of a longer line
-msgid "{n} straight ahead"
-msgstr "{n}で正面"
+#. placeholders: {left_keys}, {ahead_keys}, {right_keys}, {sack_keys}
+msgid ""
+"{left_keys} sends it left, {ahead_keys} straight ahead, {right_keys} right, "
+"and {sack_keys} drops it in the return sack behind you."
+msgstr ""
 
 #. one sentence of a longer line
 msgid "Gift Sort."
 msgstr "プレゼント仕分け。"
 
-#. placeholders: {sentence_start}, {sentence_start2}, {ahead}, {n}, {sack}, {sentence_start3}, {sentence_start4}, {sentence_start5}
+#. placeholders: {shake_keys}, {send}, {repeat_keys}, {status_keys}, {hint_keys}
 msgid ""
-"Gift Sort. {sentence_start} shakes the gift. {sentence_start2} sends it "
-"left{ahead}, {n} right{sack}. {sentence_start3} repeats the wishes, "
-"{sentence_start4} speaks the clock and score, {sentence_start5} gives a "
-"hint at half points. Escape pauses."
+"Gift Sort. {shake_keys} shakes the gift. {send} {repeat_keys} repeats the "
+"wishes, {status_keys} speaks the clock and score, {hint_keys} gives a hint "
+"at half points. Escape pauses."
 msgstr ""
-"プレゼント仕分け。{sentence_start}でプレゼントを振ります。{sentence_start2}で左へ{ahead}、{n}で右へ{sack"
-"}届けます。{sentence_start3}で願いをくり返し、{sentence_start4}で時計とスコア、{sentence_start5}で点"
-"数半分のヒント。Escapeで一時停止。"
 
-#. placeholders: {sentence_start2}, {ahead}, {n}, {sack}
-#. one sentence of a longer line
-msgid "{sentence_start2} sends it left{ahead}, {n} right{sack}."
-msgstr "{sentence_start2}で左へ{ahead}、{n}で右へ{sack}届けます。"
-
-#. placeholders: {sentence_start3}, {sentence_start4}, {sentence_start5}
+#. placeholders: {send}, {repeat_keys}, {status_keys}, {hint_keys}
 #. one sentence of a longer line
 msgid ""
-"{sentence_start3} repeats the wishes, {sentence_start4} speaks the clock "
-"and score, {sentence_start5} gives a hint at half points."
+"{send} {repeat_keys} repeats the wishes, {status_keys} speaks the clock and "
+"score, {hint_keys} gives a hint at half points."
 msgstr ""
-"{sentence_start3}で願いをくり返し、{sentence_start4}で時計とスコア、{sentence_start5}で点数半分のヒン"
-"ト。"
-
-#. placeholders: {sentence_start}
-#. one sentence of a longer line
-msgid "{sentence_start} shakes the gift."
-msgstr "{sentence_start}でプレゼントを振ります。"
 
 msgid "Up and Down move between sounds, Enter plays one, Escape goes back."
 msgstr "UpとDownで音を選び、Enterで鳴らし、Escapeで戻ります。"
@@ -85728,6 +85978,358 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "Happening today: {name}, {after_comma}."
+#~ msgstr "今日のイベント：{name}、{after_comma}。"
+
+#~ msgid "{n} events today, {name} first."
+#~ msgstr "今日のイベントは{n}件、まず{name}。"
+
+#~ msgid "{label} challenges, {done} of {games} done."
+#~ msgstr "{label}チャレンジ、{games}中{done}完了。"
+
+#~ msgid "{label} challenges, {done} of {games} done. {resets}"
+#~ msgstr "{label}チャレンジ、{games}中{done}完了。{resets}"
+
+#~ msgid "Next: {name}, {after_comma}, {days_phrase}."
+#~ msgstr "次：{name}、{after_comma}、{days_phrase}。"
+
+#~ msgid "No events today. Next: {name}, {after_comma}, {days_phrase}."
+#~ msgstr "今日はイベントがありません。次：{name}、{after_comma}、{days_phrase}。"
+
+#~ msgid "One peal: {describe}."
+#~ msgstr "鳴らし順ひとつ：{describe}。"
+
+#~ msgid "One peal: {describe}. Hints halve the score."
+#~ msgstr "鳴らし順ひとつ：{describe}。ヒントでスコアが半分になります。"
+
+#~ msgid "Five peals in a row, each with {describe}."
+#~ msgstr "鳴らし順を五つ続けて、どれも{describe}。"
+
+#~ msgid ""
+#~ "Five peals in a row, each with {describe}. The five scores are added. Hints "
+#~ "halve a score."
+#~ msgstr "鳴らし順を五つ続けて、どれも{describe}。五つのスコアを合計します。ヒントでそのスコアが半分になります。"
+
+#~ msgid "The cathedral tower: {describe}."
+#~ msgstr "大聖堂の塔：{describe}。"
+
+#~ msgid "The cathedral tower: {describe}. No hints."
+#~ msgstr "大聖堂の塔：{describe}。ヒントなし。"
+
+#~ msgid "Peal {index} of {peals}."
+#~ msgstr "鳴らし順{index}、全{peals}個。"
+
+#~ msgid "Peal {index} of {peals}. {sentence_start}."
+#~ msgstr "鳴らし順{index}、全{peals}個。{sentence_start}。"
+
+#~ msgid "Find the peal: {rules}."
+#~ msgstr "鳴らし順を見つけましょう：{rules}。"
+
+#~ msgid "{name}. Find the peal: {rules}."
+#~ msgstr "{name}。鳴らし順を見つけましょう：{rules}。"
+
+#~ msgid "Hint: {words}."
+#~ msgstr "ヒント：{words}。"
+
+#~ msgid "Hint: {words}. It used a row: {rows_left_words}."
+#~ msgstr "ヒント：{words}。列をひとつ使いました：{rows_left_words}。"
+
+#~ msgid "It used a row: {rows_left_words}."
+#~ msgstr "列をひとつ使いました：{rows_left_words}。"
+
+#~ msgid "Out of rows. The peal was {row_words}. Your last row had {words}."
+#~ msgstr "列を使い切りました。鳴らし順は{row_words}でした。最後の列は{words}でした。"
+
+#~ msgid "Your last row had {words}."
+#~ msgstr "最後の列は{words}でした。"
+
+#~ msgid "{sentence_start} foundation"
+#~ msgstr "{sentence_start}の組札"
+
+#~ msgid " Goes back to {name}."
+#~ msgstr " {name}に戻ります。"
+
+#~ msgid " Goes to {name}."
+#~ msgstr " {name}へ。"
+
+#~ msgid "On the {foundation}."
+#~ msgstr "{foundation}にいます。"
+
+#~ msgid "{name} empty"
+#~ msgstr "{name}は空"
+
+#~ msgid "{name} up to {rank_words}"
+#~ msgstr "{name}は{rank_words}まで"
+
+#~ msgid "Backspace puts {them} back."
+#~ msgstr "Backspaceで{them}を戻します。"
+
+#~ msgid "Move to a pile or a foundation, and {p} places {them}."
+#~ msgstr "列か組札へ移動して、{p}で{them}を置きます。"
+
+#~ msgid ""
+#~ "Move to a pile or a foundation, and {p} places {them}. Backspace puts "
+#~ "{them} back."
+#~ msgstr "列か組札へ移動して、{p}で{them}を置きます。Backspaceで{them}を戻します。"
+
+#~ msgid "{sentence_start} foundation complete."
+#~ msgstr "{sentence_start}の組札が完成しました。"
+
+#~ msgid "The {card} on the {suit} foundation."
+#~ msgstr "{card}を{suit}の組札へ。"
+
+#~ msgid "{rank_words} of {name}"
+#~ msgstr "{name}の{rank_words}"
+
+#~ msgid "{rank_words} of {name}, {colour}"
+#~ msgstr "{name}の{rank_words}、{colour}"
+
+#~ msgid "Time trial, {name}, on the {bike}."
+#~ msgstr "タイムトライアル、{name}、{bike}で。"
+
+#~ msgid "Time trial, {name}, on the {bike}. {about}"
+#~ msgstr "タイムトライアル、{name}、{bike}で。{about}"
+
+#~ msgid "Free ride on the {bike}, {route}, no clock."
+#~ msgstr "{bike}でフリーライド、{route}、時計なし。"
+
+#~ msgid "Free ride on the {bike}, {route}, no clock. {go_words}"
+#~ msgstr "{bike}でフリーライド、{route}、時計なし。{go_words}"
+
+#~ msgid "Delivery in {name}, on the {bike}."
+#~ msgstr "{name}で配達、{bike}で。"
+
+#~ msgid "Endless ride, {name}, on the {bike}."
+#~ msgstr "エンドレスライド、{name}、{bike}で。"
+
+#~ msgid ""
+#~ "Endless ride, {name}, on the {bike}. {ENDLESS_CRASHES} crashes end it."
+#~ msgstr "エンドレスライド、{name}、{bike}で。{ENDLESS_CRASHES}回転倒すると終わりです。"
+
+#~ msgid "{NAME}, {name}, on the {bike}."
+#~ msgstr "{NAME}、{name}、{bike}で。"
+
+#~ msgid "{NAME}, {name}, on the {bike}. {sentence_start}. Drops add time."
+#~ msgstr "{NAME}、{name}、{bike}で。{sentence_start}。届けると時間が増えます。"
+
+#~ msgid "Ride through leaf piles for {LEAF_POINTS} points each."
+#~ msgstr "落ち葉の山を通り抜けると、一つごとに{LEAF_POINTS}点。"
+
+#~ msgid "{LEAF_SEASON}, on the {bike}, {route}."
+#~ msgstr "{LEAF_SEASON}、{bike}で、{route}。"
+
+#~ msgid ""
+#~ "{LEAF_SEASON}, on the {bike}, {route}. Ride through leaf piles for "
+#~ "{LEAF_POINTS} points each."
+#~ msgstr "{LEAF_SEASON}、{bike}で、{route}。落ち葉の山を通り抜けると、一つごとに{LEAF_POINTS}点。"
+
+#~ msgid "{SUNDAY}, on the {bike}, {route}."
+#~ msgstr "{SUNDAY}、{bike}で、{route}。"
+
+#~ msgid "{SUNDAY}, on the {bike}, {route}. No cars today."
+#~ msgstr "{SUNDAY}、{bike}で、{route}。今日は車がいません。"
+
+#~ msgid "It is straight ahead: paddle with {paddle}."
+#~ msgstr "真正面です。{paddle}で漕ぎましょう。"
+
+#~ msgid "It is behind you: hold {left} or {right} to turn around."
+#~ msgstr "後ろです。{left}か{right}を押し続けて向きを変えましょう。"
+
+#~ msgid "a little"
+#~ msgstr "少し"
+
+#~ msgid "Turn {how} with {key} until it is straight ahead, then paddle."
+#~ msgstr "正面に来るまで{key}で{how}に向きを変え、それから漕ぎましょう。"
+
+#~ msgid "Every lantern in. {home} heads home."
+#~ msgstr "ランタンを全部集めました。{home}で帰ります。"
+
+#~ msgid "{home} heads home."
+#~ msgstr "{home}で帰ります。"
+
+#~ msgid " It would {name} in its box."
+#~ msgstr "箱の中で{name}と鳴るはずです。"
+
+#~ msgid "It sounds like a {name}."
+#~ msgstr "{name}という音がします。"
+
+#~ msgid "Walk {name} to box {answer}."
+#~ msgstr "{name}へ歩いて箱{answer}まで。"
+
+#~ msgid "Shift {level}"
+#~ msgstr "シフト{level}"
+
+#~ msgid "{who}, on your left, wishes for {gift}, a {sound} in the box."
+#~ msgstr "左の{who}が欲しいのは{gift}、箱の中で{sound}がするものです。"
+
+#~ msgid "{who}, on your left, now wishes for {gift}, a {sound} in the box."
+#~ msgstr "左の{who}が今度欲しいのは{gift}、箱の中で{sound}がするものです。"
+
+#~ msgid "{who}, on your right, wishes for {gift}, a {sound} in the box."
+#~ msgstr "右の{who}が欲しいのは{gift}、箱の中で{sound}がするものです。"
+
+#~ msgid "{who}, on your right, now wishes for {gift}, a {sound} in the box."
+#~ msgstr "右の{who}が今度欲しいのは{gift}、箱の中で{sound}がするものです。"
+
+#~ msgid "{who}, straight ahead, wishes for {gift}, a {sound} in the box."
+#~ msgstr "正面の{who}が欲しいのは{gift}、箱の中で{sound}がするものです。"
+
+#~ msgid "{who}, straight ahead, now wishes for {gift}, a {sound} in the box."
+#~ msgstr "正面の{who}が今度欲しいのは{gift}、箱の中で{sound}がするものです。"
+
+#~ msgid ""
+#~ "Gifts nobody wished for go in the return sack behind you, with {name}."
+#~ msgstr "誰も欲しがらなかったプレゼントは、{name}で後ろの返品袋へ入れます。"
+
+#~ msgid "Shift {level}{of}."
+#~ msgstr "シフト{level}{of}。"
+
+#~ msgid "Shift {level}{of}. Sort {quota} gifts in {secs}. {wishes}"
+#~ msgstr "シフト{level}{of}。{secs}でプレゼントを{quota}個仕分けます。{wishes}"
+
+#~ msgid "Sort {quota} gifts in {secs}."
+#~ msgstr "{secs}でプレゼントを{quota}個仕分けます。"
+
+#~ msgid ""
+#~ " Shake each gift with {primary}. Then send it with {name} or {name2} to the "
+#~ "person who wished for it, before it rides off the end of the belt. A wrong "
+#~ "guess costs time, but the gift stays on the belt."
+#~ msgstr ""
+#~ "{primary}でプレゼントを振りましょう。それから、ベルトの端から落ちる前に、{name}か{name2}で欲しがっている人に届けます。外れると時間"
+#~ "が減りますが、プレゼントはベルトに残ります。"
+
+#~ msgid "A wrong guess costs time, but the gift stays on the belt."
+#~ msgstr "外れると時間が減りますが、プレゼントはベルトに残ります。"
+
+#~ msgid "Shake each gift with {primary}."
+#~ msgstr "{primary}でプレゼントを振りましょう。"
+
+#~ msgid ""
+#~ "Then send it with {name} or {name2} to the person who wished for it, before "
+#~ "it rides off the end of the belt."
+#~ msgstr "それから、ベルトの端から落ちる前に、{name}か{name2}で欲しがっている人に届けます。"
+
+#~ msgid " {sentence_start} sends a gift straight ahead."
+#~ msgstr "{sentence_start}で正面へ届けます。"
+
+#~ msgid " {sentence_start} starts the belt."
+#~ msgstr "{sentence_start}でベルトが動き出します。"
+
+#~ msgid "A gift is on the belt, {shaken}, {secs} from the edge."
+#~ msgstr "ベルトにプレゼントが一つ、{shaken}、端まで{secs}。"
+
+#~ msgid "{gift} {secs} on the clock."
+#~ msgstr "{gift}時計は残り{secs}。"
+
+#~ msgid " {to_go} to go."
+#~ msgstr "あと{to_go}。"
+
+#~ msgid "Into the return sack. Plus {points}.{rest}"
+#~ msgstr "返品袋へ。{points}点。{rest}"
+
+#~ msgid "Plus {points}.{rest}"
+#~ msgstr "{points}点。{rest}"
+
+#~ msgid "{who} is delighted. Plus {points}.{rest}"
+#~ msgstr "{who}は大喜びです。{points}点。{rest}"
+
+#~ msgid "gift"
+#~ msgstr "個"
+
+#~ msgid "gifts"
+#~ msgstr "個"
+
+#~ msgid "guess"
+#~ msgstr "回"
+
+#~ msgid "guesses"
+#~ msgstr "回"
+
+#~ msgid ""
+#~ "{sorted} {gifts} delivered, {broken} broken, {wrongs} wrong {guesses}."
+#~ msgstr "{sorted}{gifts}届け、{broken}個壊れ、外れ{wrongs}{guesses}。"
+
+#~ msgid ""
+#~ "That was a {sound}, {item} for {who}: send it on your left with {key_send}."
+#~ msgstr "今のは{sound}、{who}への{item}です。{key_send}で左へ送りましょう。"
+
+#~ msgid ""
+#~ "That was a {sound}, {item} for {who}: send it on your right with {key_send}."
+#~ msgstr "今のは{sound}、{who}への{item}です。{key_send}で右へ送りましょう。"
+
+#~ msgid ""
+#~ "That was a {sound}, {item} for {who}: send it straight ahead with "
+#~ "{key_send}."
+#~ msgstr "今のは{sound}、{who}への{item}です。{key_send}で正面へ送りましょう。"
+
+#~ msgid "Nobody wished for it: return sack, with {key_send}."
+#~ msgstr "誰も欲しがっていません。{key_send}で返品袋へ。"
+
+#~ msgid "That was a {sound}."
+#~ msgstr "今のは{sound}でした。"
+
+#~ msgid ""
+#~ "That was a {sound}. Nobody wished for it: return sack, with {key_send}."
+#~ msgstr "今のは{sound}でした。誰も欲しがっていません。{key_send}で返品袋へ。"
+
+#~ msgid "{key_start} starts the belt, {key_repeat} repeats the wishes."
+#~ msgstr "{key_start}でベルトが動き出し、{key_repeat}で願いをくり返します。"
+
+#~ msgid "{key_left} and {key_right} send it."
+#~ msgstr "{key_left}と{key_right}で送ります。"
+
+#~ msgid "{key_shake} shakes the gift."
+#~ msgstr "{key_shake}でプレゼントを振ります。"
+
+#~ msgid ""
+#~ "{key_shake} shakes the gift. {key_left} and {key_right} send it. F1 "
+#~ "explains the keys."
+#~ msgstr "{key_shake}でプレゼントを振ります。{key_left}と{key_right}で送ります。F1でキーの説明。"
+
+#~ msgid "{key_left}, {key_ahead} and {key_right} send it."
+#~ msgstr "{key_left}、{key_ahead}、{key_right}で送ります。"
+
+#~ msgid ""
+#~ "{key_shake} shakes the gift. {key_left}, {key_ahead} and {key_right} send "
+#~ "it. F1 explains the keys."
+#~ msgstr ""
+#~ "{key_shake}でプレゼントを振ります。{key_left}、{key_ahead}、{key_right}で送ります。F1でキーの説明。"
+
+#~ msgid ", and {n} drops it in the return sack behind you"
+#~ msgstr "、{n}で後ろの返品袋へ"
+
+#~ msgid "and {n} drops it in the return sack behind you"
+#~ msgstr "{n}で後ろの返品袋へ"
+
+#~ msgid ", {n} straight ahead"
+#~ msgstr "、{n}で正面"
+
+#~ msgid "{n} straight ahead"
+#~ msgstr "{n}で正面"
+
+#~ msgid ""
+#~ "Gift Sort. {sentence_start} shakes the gift. {sentence_start2} sends it "
+#~ "left{ahead}, {n} right{sack}. {sentence_start3} repeats the wishes, "
+#~ "{sentence_start4} speaks the clock and score, {sentence_start5} gives a "
+#~ "hint at half points. Escape pauses."
+#~ msgstr ""
+#~ "プレゼント仕分け。{sentence_start}でプレゼントを振ります。{sentence_start2}で左へ{ahead}、{n}で右へ{sack"
+#~ "}届けます。{sentence_start3}で願いをくり返し、{sentence_start4}で時計とスコア、{sentence_start5}で点"
+#~ "数半分のヒント。Escapeで一時停止。"
+
+#~ msgid "{sentence_start2} sends it left{ahead}, {n} right{sack}."
+#~ msgstr "{sentence_start2}で左へ{ahead}、{n}で右へ{sack}届けます。"
+
+#~ msgid ""
+#~ "{sentence_start3} repeats the wishes, {sentence_start4} speaks the clock "
+#~ "and score, {sentence_start5} gives a hint at half points."
+#~ msgstr ""
+#~ "{sentence_start3}で願いをくり返し、{sentence_start4}で時計とスコア、{sentence_start5}で点数半分のヒン"
+#~ "ト。"
+
+#~ msgid "{sentence_start} shakes the gift."
+#~ msgstr "{sentence_start}でプレゼントを振ります。"
 
 #~ msgid "Spoken call-outs: {else}"
 #~ msgstr "音声の案内：{else}"

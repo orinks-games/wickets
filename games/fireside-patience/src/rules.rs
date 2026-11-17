@@ -116,17 +116,24 @@ impl Card {
 
     /// "6 of hearts", "ace of spades", as it reads mid-sentence.
     pub fn name(self) -> String {
-        format!("{} of {}", rank_words(self.rank), self.suit.name())
+        let rank_words = rank_words(self.rank);
+        match self.suit {
+            Suit::Hearts => format!("{rank_words} of hearts"),
+            Suit::Diamonds => format!("{rank_words} of diamonds"),
+            Suit::Clubs => format!("{rank_words} of clubs"),
+            Suit::Spades => format!("{rank_words} of spades"),
+        }
     }
 
     /// "6 of hearts, red", as navigation reads a card.
     pub fn name_and_colour(self) -> String {
-        format!(
-            "{} of {}, {}",
-            rank_words(self.rank),
-            self.suit.name(),
-            self.suit.colour()
-        )
+        let rank_words = rank_words(self.rank);
+        match self.suit {
+            Suit::Hearts => format!("{rank_words} of hearts, red"),
+            Suit::Diamonds => format!("{rank_words} of diamonds, red"),
+            Suit::Clubs => format!("{rank_words} of clubs, black"),
+            Suit::Spades => format!("{rank_words} of spades, black"),
+        }
     }
 
     /// Whether this card may go on `under` in a pile: one lower, in the

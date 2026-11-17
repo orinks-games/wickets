@@ -151,7 +151,7 @@ impl DeskRun {
 
     /// "a squish": what the current letter's wish would sound like.
     fn wish_sound(&self) -> Option<String> {
-        self.stack.letter().map(|l| format!("a {}", l.wish.name()))
+        self.stack.letter().map(|l| l.wish.with_article().to_string())
     }
 
     /// The current letter, as R reads it.
@@ -161,7 +161,7 @@ impl DeskRun {
         };
         let late = if l.late { "Late post. " } else { "" };
         let sound = if self.stack.spec.say_sounds && !l.little {
-            format!(" It would {} in its box.", l.wish.name())
+            format!(" {}", l.wish.would_sentence())
         } else {
             String::new()
         };
@@ -299,7 +299,8 @@ impl DeskRun {
             Shake::Gift(kind) => {
                 ctx.audio.play_at(sound::gift(kind), pos, Bus::EFFECTS);
                 if self.stack.spec.level == 1 {
-                    self.pending = Some((1.1, format!("It sounds like a {}.", kind.name())));
+                    let sound = kind.with_article();
+                    self.pending = Some((1.1, format!("It sounds like {sound}.")));
                 }
             }
             Shake::Straw => {
@@ -578,26 +579,23 @@ impl DeskRun {
         cue(ctx, sound::HINT);
         let sound = self.wish_sound().unwrap_or_default();
         let named = self.stack.spec.say_sounds && !letter.little;
+        let from = letter.from;
         let text = if first && !named {
-            format!(
-                "{}'s wish would sound like {sound} in its box.",
-                letter.from
-            )
+            format!("{from}'s wish would sound like {sound} in its box.")
         } else {
+            let number = answer + 1;
             let way = match answer.cmp(&self.stack.at) {
-                std::cmp::Ordering::Less => format!(
-                    "Walk {} to box {}.",
-                    Self::name(ctx, ParlorAction::Left),
-                    answer + 1
-                ),
-                std::cmp::Ordering::Greater => format!(
-                    "Walk {} to box {}.",
-                    Self::name(ctx, ParlorAction::Right),
-                    answer + 1
-                ),
+                std::cmp::Ordering::Less => {
+                    let left_keys = Self::name(ctx, ParlorAction::Left);
+                    format!("Walk {left_keys} to box {number}.")
+                }
+                std::cmp::Ordering::Greater => {
+                    let right_keys = Self::name(ctx, ParlorAction::Right);
+                    format!("Walk {right_keys} to box {number}.")
+                }
                 std::cmp::Ordering::Equal => "It is the box in front of you.".to_string(),
             };
-            format!("{}'s gift sounds like {sound}. {way}", letter.from)
+            format!("{from}'s gift sounds like {sound}. {way}")
         };
         let half = if first {
             " Half points for this letter."

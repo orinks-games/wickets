@@ -148,15 +148,20 @@ impl Tower {
 
     /// What the tower is, as play starts.
     fn intro(&self) -> String {
-        let rules = self.peal.rules.describe();
+        let find = self.peal.rules.find_sentence();
         match &self.job {
-            Some(job) if job.peals() > 1 => format!(
-                "{}. {}",
-                challenge::name(job.period),
-                challenge::next_words(job)
-            ),
-            Some(job) => format!("{}. Find the peal: {rules}.", challenge::name(job.period)),
-            None => format!("{}. Find the peal: {rules}.", self.mode.name()),
+            Some(job) if job.peals() > 1 => {
+                let (name, next) = (challenge::name(job.period), challenge::next_words(job));
+                format!("{name}. {next}")
+            }
+            Some(job) => {
+                let name = challenge::name(job.period);
+                format!("{name}. {find}")
+            }
+            None => {
+                let name = self.mode.name();
+                format!("{name}. {find}")
+            }
         }
     }
 
@@ -346,11 +351,12 @@ impl Tower {
         match self.peal.hint() {
             Ok(hint) => {
                 sound::play(ctx, sound::HINT);
-                let text = format!(
-                    "Hint: {}. It used a row: {}.",
-                    hint.words().to_lowercase(),
-                    self.rows_left_words()
-                );
+                let (bell, rows_left) = (hint.bell, self.rows_left_words());
+                let text = if hint.inside {
+                    format!("Hint: bell {bell} is in the peal. It used a row: {rows_left}.")
+                } else {
+                    format!("Hint: bell {bell} is not in the peal. It used a row: {rows_left}.")
+                };
                 ctx.say(text.clone());
                 self.last_prompt = text;
             }
@@ -482,14 +488,9 @@ pub fn result_pages(peal: &Peal, saved: &Saved) -> Vec<String> {
             format!("Solved in {rows} rows. The peal is {peal_words}, and the bells ring it out.")
         }
     } else {
-        format!(
-            "Out of rows. The peal was {}. Your last row had {}.",
-            row_words(&peal.code),
-            peal.last_answer()
-                .unwrap_or_default()
-                .words()
-                .to_lowercase()
-        )
+        let peal_words = row_words(&peal.code);
+        let last_row = peal.last_answer().unwrap_or_default().last_row_sentence();
+        format!("Out of rows. The peal was {peal_words}. {last_row}")
     };
     match saved.score {
         Some(ScoreResult::First) => first.push_str(&format!(
