@@ -3590,12 +3590,21 @@ msgstr "Se acabó por esta visita. Con la próxima llega un Suceso nuevo."
 msgid "Its game was skipped, so this errand waits for another day."
 msgstr "Su juego se saltó, así que este recado espera a otro día."
 
-msgid ": waits"
-msgstr ": espera"
+#. placeholders: {what}
+msgid "Story, {what}: waits"
+msgstr "Historia, {what}: espera"
 
-#. placeholders: {what}, {status}
-msgid "Story, {what}{status}"
-msgstr "Historia, {what}{status}"
+#. placeholders: {what}
+msgid "Story, {what}: done"
+msgstr "Historia, {what}: hecho"
+
+#. placeholders: {what}
+msgid "Story, {what}: missed"
+msgstr "Historia, {what}: perdido"
+
+#. placeholders: {what}
+msgid "Story, {what}"
+msgstr "Historia, {what}"
 
 msgid "About the game"
 msgstr "Sobre el juego"
@@ -24382,13 +24391,13 @@ msgid "oldtown"
 msgstr ""
 
 msgid "Downtown"
-msgstr ""
+msgstr "Downtown"
 
 msgid "Riverside"
-msgstr ""
+msgstr "Riverside"
 
 msgid "Old Town"
-msgstr ""
+msgstr "Old Town"
 
 msgid "Dry streets, doors, potholes and ramps."
 msgstr "Calles secas, puertas, baches y rampas."
@@ -95941,6 +95950,12 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid ": waits"
+#~ msgstr ": espera"
+
+#~ msgid "Story, {what}{status}"
+#~ msgstr "Historia, {what}{status}"
 
 #~ msgid "Happening: {what}{state}"
 #~ msgstr "Suceso: {what}{state}"

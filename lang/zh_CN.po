@@ -3287,12 +3287,21 @@ msgstr "这次来访到此为止。下次来访会有新的奇遇。"
 msgid "Its game was skipped, so this errand waits for another day."
 msgstr "它的游戏被跳过了，所以这件差事改天再做。"
 
-msgid ": waits"
-msgstr "：等待中"
+#. placeholders: {what}
+msgid "Story, {what}: waits"
+msgstr "故事，{what}：等待中"
 
-#. placeholders: {what}, {status}
-msgid "Story, {what}{status}"
-msgstr "故事，{what}{status}"
+#. placeholders: {what}
+msgid "Story, {what}: done"
+msgstr "故事，{what}：已完成"
+
+#. placeholders: {what}
+msgid "Story, {what}: missed"
+msgstr "故事，{what}：已错过"
+
+#. placeholders: {what}
+msgid "Story, {what}"
+msgstr "故事，{what}"
 
 msgid "About the game"
 msgstr "关于游戏"
@@ -21613,13 +21622,13 @@ msgid "oldtown"
 msgstr ""
 
 msgid "Downtown"
-msgstr ""
+msgstr "Downtown"
 
 msgid "Riverside"
-msgstr ""
+msgstr "Riverside"
 
 msgid "Old Town"
-msgstr ""
+msgstr "Old Town"
 
 msgid "Dry streets, doors, potholes and ramps."
 msgstr "街道干燥，有车门、坑洞和跳台。"
@@ -84941,6 +84950,12 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid ": waits"
+#~ msgstr "：等待中"
+
+#~ msgid "Story, {what}{status}"
+#~ msgstr "故事，{what}{status}"
 
 #~ msgid "Happening: {what}{state}"
 #~ msgstr "奇遇：{what}{state}"

@@ -3646,12 +3646,21 @@ msgstr ""
 "Sein Spiel wurde übersprungen, also bleibt diese Besorgung für einen "
 "anderen Tag."
 
-msgid ": waits"
-msgstr ": offen"
+#. placeholders: {what}
+msgid "Story, {what}: waits"
+msgstr "Geschichte, {what}: offen"
 
-#. placeholders: {what}, {status}
-msgid "Story, {what}{status}"
-msgstr "Geschichte, {what}{status}"
+#. placeholders: {what}
+msgid "Story, {what}: done"
+msgstr "Geschichte, {what}: erledigt"
+
+#. placeholders: {what}
+msgid "Story, {what}: missed"
+msgstr "Geschichte, {what}: verpasst"
+
+#. placeholders: {what}
+msgid "Story, {what}"
+msgstr "Geschichte, {what}"
 
 msgid "About the game"
 msgstr "Über das Spiel"
@@ -24529,13 +24538,13 @@ msgid "oldtown"
 msgstr ""
 
 msgid "Downtown"
-msgstr ""
+msgstr "Downtown"
 
 msgid "Riverside"
-msgstr ""
+msgstr "Riverside"
 
 msgid "Old Town"
-msgstr ""
+msgstr "Old Town"
 
 msgid "Dry streets, doors, potholes and ramps."
 msgstr "Trockene Straßen, Türen, Schlaglöcher und Rampen."
@@ -96529,6 +96538,12 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid ": waits"
+#~ msgstr ": offen"
+
+#~ msgid "Story, {what}{status}"
+#~ msgstr "Geschichte, {what}{status}"
 
 #~ msgid "Happening: {what}{state}"
 #~ msgstr "Begebenheit: {what}{state}"

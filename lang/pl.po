@@ -3576,12 +3576,21 @@ msgstr "Koniec na tę wizytę. Nowa Atrakcja przyjdzie z następną."
 msgid "Its game was skipped, so this errand waits for another day."
 msgstr "Jej gra została pominięta, więc to zlecenie poczeka na inny dzień."
 
-msgid ": waits"
-msgstr ": czeka"
+#. placeholders: {what}
+msgid "Story, {what}: waits"
+msgstr "Fabuła, {what}: czeka"
 
-#. placeholders: {what}, {status}
-msgid "Story, {what}{status}"
-msgstr "Fabuła, {what}{status}"
+#. placeholders: {what}
+msgid "Story, {what}: done"
+msgstr "Fabuła, {what}: zaliczone"
+
+#. placeholders: {what}
+msgid "Story, {what}: missed"
+msgstr "Fabuła, {what}: przegapione"
+
+#. placeholders: {what}
+msgid "Story, {what}"
+msgstr "Fabuła, {what}"
 
 msgid "About the game"
 msgstr "O grze"
@@ -94881,6 +94890,12 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid ": waits"
+#~ msgstr ": czeka"
+
+#~ msgid "Story, {what}{status}"
+#~ msgstr "Fabuła, {what}{status}"
 
 #~ msgid "Happening: {what}{state}"
 #~ msgstr "Atrakcja: {what}{state}"

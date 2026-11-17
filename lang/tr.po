@@ -3566,12 +3566,21 @@ msgstr "Bu ziyaret için bitti. Bir sonrakiyle yeni bir Olay gelir."
 msgid "Its game was skipped, so this errand waits for another day."
 msgstr "Oyunu atlandı, bu yüzden bu iş başka bir güne kaldı."
 
-msgid ": waits"
-msgstr ": bekliyor"
+#. placeholders: {what}
+msgid "Story, {what}: waits"
+msgstr "Hikâye, {what}: bekliyor"
 
-#. placeholders: {what}, {status}
-msgid "Story, {what}{status}"
-msgstr "Hikâye, {what}{status}"
+#. placeholders: {what}
+msgid "Story, {what}: done"
+msgstr "Hikâye, {what}: tamamlandı"
+
+#. placeholders: {what}
+msgid "Story, {what}: missed"
+msgstr "Hikâye, {what}: kaçırıldı"
+
+#. placeholders: {what}
+msgid "Story, {what}"
+msgstr "Hikâye, {what}"
 
 msgid "About the game"
 msgstr "Oyun hakkında"
@@ -23912,13 +23921,13 @@ msgid "oldtown"
 msgstr ""
 
 msgid "Downtown"
-msgstr ""
+msgstr "Downtown"
 
 msgid "Riverside"
-msgstr ""
+msgstr "Riverside"
 
 msgid "Old Town"
-msgstr ""
+msgstr "Old Town"
 
 msgid "Dry streets, doors, potholes and ramps."
 msgstr "Kuru sokaklar, kapılar, çukurlar ve rampalar."
@@ -94131,6 +94140,12 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid ": waits"
+#~ msgstr ": bekliyor"
+
+#~ msgid "Story, {what}{status}"
+#~ msgstr "Hikâye, {what}{status}"
 
 #~ msgid "Happening: {what}{state}"
 #~ msgstr "Olay: {what}{state}"

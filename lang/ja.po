@@ -3334,12 +3334,21 @@ msgstr "この来館ではもう終わりです。次の来館で新しいハプ
 msgid "Its game was skipped, so this errand waits for another day."
 msgstr "そのゲームがスキップされたので、このおつかいは別の日まで待ちます。"
 
-msgid ": waits"
-msgstr "：待機中"
+#. placeholders: {what}
+msgid "Story, {what}: waits"
+msgstr "ストーリー、{what}：待機中"
 
-#. placeholders: {what}, {status}
-msgid "Story, {what}{status}"
-msgstr "ストーリー、{what}{status}"
+#. placeholders: {what}
+msgid "Story, {what}: done"
+msgstr "ストーリー、{what}：達成"
+
+#. placeholders: {what}
+msgid "Story, {what}: missed"
+msgstr "ストーリー、{what}：見逃し"
+
+#. placeholders: {what}
+msgid "Story, {what}"
+msgstr "ストーリー、{what}"
 
 msgid "About the game"
 msgstr "ゲームについて"
@@ -78439,7 +78448,7 @@ msgstr "ベストタイム。{join}"
 
 #. placeholders: {n}
 msgid "night {n}"
-msgstr "夜{n}"
+msgstr "第{n}夜"
 
 #. placeholders: {n}, {time_text}
 msgid "Night crossing {n}, {time_text}."
@@ -81952,7 +81961,7 @@ msgstr "いちばん小さな子どもたちからの手紙がもっと。"
 
 #. placeholders: {next}, {name}
 msgid "Next night: night {next}, {name}"
-msgstr "次の夜：夜{next}、{name}"
+msgstr "次の夜：第{next}夜、{name}"
 
 msgid "A faster band with trickier rhythms."
 msgstr "バンドが速くなり、リズムも難しくなります。"
@@ -86007,6 +86016,12 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid ": waits"
+#~ msgstr "：待機中"
+
+#~ msgid "Story, {what}{status}"
+#~ msgstr "ストーリー、{what}{status}"
 
 #~ msgid "Happening: {what}{state}"
 #~ msgstr "ハプニング：{what}{state}"

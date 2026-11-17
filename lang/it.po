@@ -3592,12 +3592,21 @@ msgstr ""
 "Il suo gioco è stato saltato, quindi questa commissione resta per un altro "
 "giorno."
 
-msgid ": waits"
-msgstr ": in attesa"
+#. placeholders: {what}
+msgid "Story, {what}: waits"
+msgstr "Storia, {what}: in attesa"
 
-#. placeholders: {what}, {status}
-msgid "Story, {what}{status}"
-msgstr "Storia, {what}{status}"
+#. placeholders: {what}
+msgid "Story, {what}: done"
+msgstr "Storia, {what}: fatto"
+
+#. placeholders: {what}
+msgid "Story, {what}: missed"
+msgstr "Storia, {what}: perso"
+
+#. placeholders: {what}
+msgid "Story, {what}"
+msgstr "Storia, {what}"
 
 msgid "About the game"
 msgstr "Il gioco"
@@ -24339,13 +24348,13 @@ msgid "oldtown"
 msgstr ""
 
 msgid "Downtown"
-msgstr ""
+msgstr "Downtown"
 
 msgid "Riverside"
-msgstr ""
+msgstr "Riverside"
 
 msgid "Old Town"
-msgstr ""
+msgstr "Old Town"
 
 msgid "Dry streets, doors, potholes and ramps."
 msgstr "Strade asciutte, portiere, buche e rampe."
@@ -96034,6 +96043,12 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid ": waits"
+#~ msgstr ": in attesa"
+
+#~ msgid "Story, {what}{status}"
+#~ msgstr "Storia, {what}{status}"
 
 #~ msgid "Happening: {what}{state}"
 #~ msgstr "Fuori programma: {what}{state}"

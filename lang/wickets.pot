@@ -3326,11 +3326,11 @@ msgstr ""
 msgid "an event"
 msgstr ""
 
-#: crates/wickets/src/happening.rs
+#: crates/wickets/src/happening.rs crates/wickets/src/today.rs
 msgid ": done"
 msgstr ""
 
-#: crates/wickets/src/happening.rs
+#: crates/wickets/src/happening.rs crates/wickets/src/today.rs
 msgid ": missed"
 msgstr ""
 
@@ -4131,13 +4131,24 @@ msgstr ""
 msgid "Its game was skipped, so this errand waits for another day."
 msgstr ""
 
+#. placeholders: {what}
 #: crates/wickets/src/today.rs
-msgid ": waits"
+msgid "Story, {what}: waits"
 msgstr ""
 
-#. placeholders: {what}, {status}
+#. placeholders: {what}
 #: crates/wickets/src/today.rs
-msgid "Story, {what}{status}"
+msgid "Story, {what}: done"
+msgstr ""
+
+#. placeholders: {what}
+#: crates/wickets/src/today.rs
+msgid "Story, {what}: missed"
+msgstr ""
+
+#. placeholders: {what}
+#: crates/wickets/src/today.rs
+msgid "Story, {what}"
 msgstr ""
 
 #: games/basket-run/help.md

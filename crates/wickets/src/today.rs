@@ -177,14 +177,18 @@ impl Menu for TodayList {
             } else {
                 h.text.clone()
             };
-            let status = if waits {
-                ": waits"
+            let label = if waits {
+                format!("Story, {what}: waits")
             } else {
-                story_happening::state(&h)
+                match story_happening::state(&h) {
+                    ": done" => format!("Story, {what}: done"),
+                    ": missed" => format!("Story, {what}: missed"),
+                    _ => format!("Story, {what}"),
+                }
             };
             items.push(
                 MenuItem::new(
-                    format!("Story, {what}{status}"),
+                    label,
                     |_s: &mut Self, ctx: &mut Ctx<Parlor>| crate::story::open_at_happening(ctx),
                 )
                 .help(help),

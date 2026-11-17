@@ -502,7 +502,7 @@ msgid "beta"
 msgstr ""
 
 msgid "stable"
-msgstr "stable"
+msgstr "стабильный"
 
 msgid "dev"
 msgstr ""
@@ -3572,12 +3572,21 @@ msgstr "На этот визит всё. Новое Происшествие п�
 msgid "Its game was skipped, so this errand waits for another day."
 msgstr "Его игру пропустили, так что поручение подождёт другого дня."
 
-msgid ": waits"
-msgstr ": ждёт"
+#. placeholders: {what}
+msgid "Story, {what}: waits"
+msgstr "Сюжет, {what}: ждёт"
 
-#. placeholders: {what}, {status}
-msgid "Story, {what}{status}"
-msgstr "Сюжет, {what}{status}"
+#. placeholders: {what}
+msgid "Story, {what}: done"
+msgstr "Сюжет, {what}: выполнено"
+
+#. placeholders: {what}
+msgid "Story, {what}: missed"
+msgstr "Сюжет, {what}: пропущено"
+
+#. placeholders: {what}
+msgid "Story, {what}"
+msgstr "Сюжет, {what}"
 
 msgid "About the game"
 msgstr "Об игре"
@@ -24025,13 +24034,13 @@ msgid "oldtown"
 msgstr ""
 
 msgid "Downtown"
-msgstr ""
+msgstr "Downtown"
 
 msgid "Riverside"
-msgstr ""
+msgstr "Riverside"
 
 msgid "Old Town"
-msgstr ""
+msgstr "Old Town"
 
 msgid "Dry streets, doors, potholes and ramps."
 msgstr "Сухие улицы, двери, ямы и трамплины."
@@ -94534,6 +94543,12 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid ": waits"
+#~ msgstr ": ждёт"
+
+#~ msgid "Story, {what}{status}"
+#~ msgstr "Сюжет, {what}{status}"
 
 #~ msgid "Happening: {what}{state}"
 #~ msgstr "Происшествие: {what}{state}"
