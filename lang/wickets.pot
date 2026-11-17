@@ -3334,9 +3334,19 @@ msgstr ""
 msgid ": missed"
 msgstr ""
 
-#. placeholders: {what}, {state}
+#. placeholders: {what}
 #: crates/wickets/src/happening.rs
-msgid "Happening: {what}{state}"
+msgid "Happening: {what}: done"
+msgstr ""
+
+#. placeholders: {what}
+#: crates/wickets/src/happening.rs
+msgid "Happening: {what}: missed"
+msgstr ""
+
+#. placeholders: {what}
+#: crates/wickets/src/happening.rs
+msgid "Happening: {what}"
 msgstr ""
 
 #: crates/wickets/src/happening.rs
@@ -14252,7 +14262,7 @@ msgstr ""
 msgid "good"
 msgstr ""
 
-#: games/clover-jig/src/play.rs games/graveyard-shuffle/src/play.rs games/lantern-lake/src/rules.rs
+#: games/clover-jig/src/play.rs games/graveyard-shuffle/src/play.rs
 msgid "close"
 msgstr ""
 
@@ -44653,6 +44663,10 @@ msgstr ""
 
 #: games/lantern-lake/src/rules.rs
 msgid "very close"
+msgstr ""
+
+#: games/lantern-lake/src/rules.rs
+msgid "nearby"
 msgstr ""
 
 #: games/lantern-lake/src/rules.rs
@@ -99689,7 +99703,7 @@ msgid "Cousin Theo"
 msgstr ""
 
 #: games/winter-wonderland/src/gifts.rs
-msgid "Mrs. Holly"
+msgid "Mrs Holly"
 msgstr ""
 
 #: games/winter-wonderland/src/mode.rs

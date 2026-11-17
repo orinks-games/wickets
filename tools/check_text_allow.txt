@@ -6,3 +6,7 @@
 # strings are code, never heard.
 crates/wickets-content/src/lib.rs | parentheses | *
 crates/wickets-content/src/lib.rs | all-caps | CATALOGS
+
+# The translation tool's usage line is for developers at a terminal, never
+# heard in the game.
+crates/wickets-l10n/src/main.rs | all-caps | usage: wickets-l10n

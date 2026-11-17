@@ -2939,9 +2939,17 @@ msgstr ": пройдено"
 msgid ": missed"
 msgstr ": пропущено"
 
-#. placeholders: {what}, {state}
-msgid "Happening: {what}{state}"
-msgstr "Происшествие: {what}{state}"
+#. placeholders: {what}
+msgid "Happening: {what}: done"
+msgstr "Происшествие: {what}: выполнено"
+
+#. placeholders: {what}
+msgid "Happening: {what}: missed"
+msgstr "Происшествие: {what}: пропущено"
+
+#. placeholders: {what}
+msgid "Happening: {what}"
+msgstr "Происшествие: {what}"
 
 msgid "the parlor's stamp book"
 msgstr "книгу штампов салона"
@@ -5810,6 +5818,7 @@ msgstr "Вы сдали {eggs_phrase}."
 msgid ""
 "Round bonus {bonus}, with the perfect round bonus for no cracked eggs."
 msgstr ""
+"Бонус раунда {bonus}, с бонусом за идеальный раунд без треснувших яиц."
 
 #. placeholders: {round}
 #. one sentence of a longer line
@@ -5821,6 +5830,8 @@ msgid ""
 "Round {round} cleared. You banked {eggs}. Round bonus {bonus}, with the "
 "perfect round bonus for no cracked eggs. Score {score}."
 msgstr ""
+"Раунд {round} пройден. Вы сдали {eggs}. Бонус раунда {bonus}, с бонусом за "
+"идеальный раунд без треснувших яиц. Счёт {score}."
 
 #. placeholders: {eggs}
 #. one sentence of a longer line
@@ -5837,6 +5848,7 @@ msgid ""
 "Round {round} cleared. You banked {eggs}. Round bonus {bonus}. Score "
 "{score}."
 msgstr ""
+"Раунд {round} пройден. Вы сдали {eggs}. Бонус раунда {bonus}. Счёт {score}."
 
 #. placeholders: {round}, {round_news}
 msgid " Next, round {round}: {round_news}"
@@ -6091,6 +6103,8 @@ msgid ""
 "Banked {eggs_phrase}, {points} points, with the full basket bonus. Score "
 "{score}."
 msgstr ""
+"Сдано {eggs_phrase}, {points} {points:очко|очка|очков}, с бонусом за полную "
+"корзину. Счёт {score}."
 
 #. placeholders: {eggs_phrase}, {points}
 #. one sentence of a longer line
@@ -6903,12 +6917,17 @@ msgid ""
 "One peal: {places} places, {bells} bells to choose from, a bell may come "
 "twice, {rows} rows."
 msgstr ""
+"Один перезвон: {places} {places:место|места|мест}, колоколов на выбор: "
+"{bells}, колокол может повторяться, {rows} {rows:ряд|ряда|рядов}."
 
 #. placeholders: {places}, {bells}, {rows}
 msgid ""
 "One peal: {places} places, {bells} bells to choose from, a bell may come "
 "twice, {rows} rows. Hints halve the score."
 msgstr ""
+"Один перезвон: {places} {places:место|места|мест}, колоколов на выбор: "
+"{bells}, колокол может повторяться, {rows} {rows:ряд|ряда|рядов}. Подсказки "
+"уменьшают счёт вдвое."
 
 #. placeholders: {places}, {bells}, {rows}
 #. one sentence of a longer line
@@ -6916,12 +6935,17 @@ msgid ""
 "One peal: {places} places, {bells} bells to choose from, no bell twice, "
 "{rows} rows."
 msgstr ""
+"Один перезвон: {places} {places:место|места|мест}, колоколов на выбор: "
+"{bells}, без повторов, {rows} {rows:ряд|ряда|рядов}."
 
 #. placeholders: {places}, {bells}, {rows}
 msgid ""
 "One peal: {places} places, {bells} bells to choose from, no bell twice, "
 "{rows} rows. Hints halve the score."
 msgstr ""
+"Один перезвон: {places} {places:место|места|мест}, колоколов на выбор: "
+"{bells}, без повторов, {rows} {rows:ряд|ряда|рядов}. Подсказки уменьшают "
+"счёт вдвое."
 
 #. placeholders: {places}, {bells}, {rows}
 #. one sentence of a longer line
@@ -6929,6 +6953,9 @@ msgid ""
 "Five peals in a row, each with {places} places, {bells} bells to choose "
 "from, a bell may come twice, {rows} rows."
 msgstr ""
+"Пять перезвонов подряд, в каждом {places} {places:место|места|мест}, "
+"колоколов на выбор: {bells}, колокол может повторяться, {rows} "
+"{rows:ряд|ряда|рядов}."
 
 #. placeholders: {places}, {bells}, {rows}
 msgid ""
@@ -6936,6 +6963,10 @@ msgid ""
 "from, a bell may come twice, {rows} rows. The five scores are added. Hints "
 "halve a score."
 msgstr ""
+"Пять перезвонов подряд, в каждом {places} {places:место|места|мест}, "
+"колоколов на выбор: {bells}, колокол может повторяться, {rows} "
+"{rows:ряд|ряда|рядов}. Пять результатов складываются. Подсказка уменьшает "
+"счёт вдвое."
 
 #. one sentence of a longer line
 msgid "Hints halve a score."
@@ -6951,6 +6982,8 @@ msgid ""
 "Five peals in a row, each with {places} places, {bells} bells to choose "
 "from, no bell twice, {rows} rows."
 msgstr ""
+"Пять перезвонов подряд, в каждом {places} {places:место|места|мест}, "
+"колоколов на выбор: {bells}, без повторов, {rows} {rows:ряд|ряда|рядов}."
 
 #. placeholders: {places}, {bells}, {rows}
 msgid ""
@@ -6958,6 +6991,9 @@ msgid ""
 "from, no bell twice, {rows} rows. The five scores are added. Hints halve a "
 "score."
 msgstr ""
+"Пять перезвонов подряд, в каждом {places} {places:место|места|мест}, "
+"колоколов на выбор: {bells}, без повторов, {rows} {rows:ряд|ряда|рядов}. "
+"Пять результатов складываются. Подсказка уменьшает счёт вдвое."
 
 #. one sentence of a longer line
 msgid "No hints."
@@ -6969,12 +7005,17 @@ msgid ""
 "The cathedral tower: {places} places, {bells} bells to choose from, a bell "
 "may come twice, {rows} rows."
 msgstr ""
+"Соборная колокольня: {places} {places:место|места|мест}, колоколов на "
+"выбор: {bells}, колокол может повторяться, {rows} {rows:ряд|ряда|рядов}."
 
 #. placeholders: {places}, {bells}, {rows}
 msgid ""
 "The cathedral tower: {places} places, {bells} bells to choose from, a bell "
 "may come twice, {rows} rows. No hints."
 msgstr ""
+"Соборная колокольня: {places} {places:место|места|мест}, колоколов на "
+"выбор: {bells}, колокол может повторяться, {rows} {rows:ряд|ряда|рядов}. "
+"Без подсказок."
 
 #. placeholders: {places}, {bells}, {rows}
 #. one sentence of a longer line
@@ -6982,12 +7023,16 @@ msgid ""
 "The cathedral tower: {places} places, {bells} bells to choose from, no bell "
 "twice, {rows} rows."
 msgstr ""
+"Соборная колокольня: {places} {places:место|места|мест}, колоколов на "
+"выбор: {bells}, без повторов, {rows} {rows:ряд|ряда|рядов}."
 
 #. placeholders: {places}, {bells}, {rows}
 msgid ""
 "The cathedral tower: {places} places, {bells} bells to choose from, no bell "
 "twice, {rows} rows. No hints."
 msgstr ""
+"Соборная колокольня: {places} {places:место|места|мест}, колоколов на "
+"выбор: {bells}, без повторов, {rows} {rows:ряд|ряда|рядов}. Без подсказок."
 
 msgid "Belfry"
 msgstr "Belfry"
@@ -7202,23 +7247,31 @@ msgid ""
 "{places} places, {bells} bells to choose from, a bell may come twice, "
 "{rows} rows."
 msgstr ""
+"{places} {places:место|места|мест}, колоколов на выбор: {bells}, колокол "
+"может повторяться, {rows} {rows:ряд|ряда|рядов}."
 
 #. placeholders: {places}, {bells}, {rows}
 msgid ""
 "{places} places, {bells} bells to choose from, no bell twice, {rows} rows."
 msgstr ""
+"{places} {places:место|места|мест}, колоколов на выбор: {bells}, без "
+"повторов, {rows} {rows:ряд|ряда|рядов}."
 
 #. placeholders: {places}, {bells}, {rows}
 msgid ""
 "Find the peal: {places} places, {bells} bells to choose from, a bell may "
 "come twice, {rows} rows."
 msgstr ""
+"Найдите перезвон: {places} {places:место|места|мест}, колоколов на выбор: "
+"{bells}, колокол может повторяться, {rows} {rows:ряд|ряда|рядов}."
 
 #. placeholders: {places}, {bells}, {rows}
 msgid ""
 "Find the peal: {places} places, {bells} bells to choose from, no bell "
 "twice, {rows} rows."
 msgstr ""
+"Найдите перезвон: {places} {places:место|места|мест}, колоколов на выбор: "
+"{bells}, без повторов, {rows} {rows:ряд|ряда|рядов}."
 
 msgid "Village"
 msgstr "Деревенский"
@@ -19282,6 +19335,7 @@ msgstr "Поймано: {firefly}, новое в дневнике: {blink_words}
 msgid ""
 "Caught {firefly}, new in your journal: {blink_words}. {in_jar} in the jar."
 msgstr ""
+"Поймано: {firefly}, новое в дневнике: {blink_words}. В банке: {in_jar}."
 
 #. placeholders: {sentence_start}
 msgid " The jar is full. {sentence_start} sets them free."
@@ -21847,6 +21901,8 @@ msgid ""
 "Move to a pile or a foundation, and {drop_keys} places it. Backspace puts "
 "it back."
 msgstr ""
+"Перейдите к стопке или базе, и {drop_keys} положит её. Backspace возвращает "
+"её."
 
 #. one sentence of a longer line
 msgid "Backspace puts them back."
@@ -21862,6 +21918,8 @@ msgid ""
 "Move to a pile or a foundation, and {drop_keys} places them. Backspace puts "
 "them back."
 msgstr ""
+"Перейдите к стопке или базе, и {drop_keys} положит их. Backspace возвращает "
+"их."
 
 #. placeholders: {words}
 msgid "Put back: {words}."
@@ -24573,6 +24631,8 @@ msgstr "Бесконечная поездка, {district}, на велосипе
 msgid ""
 "Endless ride, {district}, on the {bike}. {ENDLESS_CRASHES} crashes end it."
 msgstr ""
+"Бесконечная поездка, {district}, на велосипеде {bike}. Аварий до конца "
+"поездки: {ENDLESS_CRASHES}."
 
 #. placeholders: {ENDLESS_CRASHES}
 #. one sentence of a longer line
@@ -24604,6 +24664,8 @@ msgid ""
 "Leaf season ride, on the {bike}, {length}. Ride through leaf piles for "
 "{points} points each."
 msgstr ""
+"Поездка в листопад, на велосипеде {bike}, {length}. Проезжайте по кучам "
+"листьев: {points} {points:очко|очка|очков} за каждую."
 
 #. placeholders: {points}
 #. one sentence of a longer line
@@ -25566,6 +25628,9 @@ msgid ""
 "Locker drops: {lockers}. Quick drops: {quick}. {crash_time} lost to "
 "crashes. {dollars} earned. You have {wallet} to spend in the bike shop."
 msgstr ""
+"Сдачи у почтоматов: {lockers}. Быстрые сдачи: {quick}. Потеряно на авариях: "
+"{crash_time}. Заработано: {dollars}. В веломагазине можно потратить "
+"{wallet}."
 
 #. placeholders: {quick}
 #. one sentence of a longer line
@@ -25592,6 +25657,8 @@ msgid ""
 "Locker drops: {lockers}. Quick drops: {quick}. No crashes. {dollars} "
 "earned. You have {wallet} to spend in the bike shop."
 msgstr ""
+"Сдачи у почтоматов: {lockers}. Быстрые сдачи: {quick}. Без аварий. "
+"Заработано: {dollars}. В веломагазине можно потратить {wallet}."
 
 msgid "A new street in the same district, on the same bike."
 msgstr "Новая улица в том же районе, на том же велосипеде."
@@ -26888,6 +26955,8 @@ msgid ""
 "Choose where the endless ride and the ride against the clock go. Riding in "
 "{name} now."
 msgstr ""
+"Выберите, где пройдут бесконечная поездка и поездка наперегонки со "
+"временем. Сейчас вы ездите в районе {name}."
 
 #. placeholders: {name}
 #. one sentence of a longer line
@@ -40021,6 +40090,9 @@ msgstr "на {clock} {clock:час|часа|часов}"
 msgid "very close"
 msgstr "совсем близко"
 
+msgid "nearby"
+msgstr "близко"
+
 msgid "a little way off"
 msgstr "чуть поодаль"
 
@@ -40405,6 +40477,8 @@ msgstr ""
 msgid ""
 "Turn a little with {turn_keys} until it is straight ahead, then paddle."
 msgstr ""
+"Немного поверните, {turn_keys}, пока цель не окажется прямо впереди, затем "
+"гребите."
 
 #. placeholders: {turn_keys}
 msgid "Turn well with {turn_keys} until it is straight ahead, then paddle."
@@ -54798,12 +54872,15 @@ msgstr "Найдено журналов сюжета {logs_recovered} из {tota
 msgid ""
 "Story logs recovered {logs_recovered} of {total_logs}. Tutorial complete."
 msgstr ""
+"Найдено журналов сюжета {logs_recovered} из {total_logs}. Обучение пройдено."
 
 #. placeholders: {logs_recovered}, {total_logs}
 msgid ""
 "Story logs recovered {logs_recovered} of {total_logs}. Tutorial not "
 "complete."
 msgstr ""
+"Найдено журналов сюжета {logs_recovered} из {total_logs}. Обучение не "
+"пройдено."
 
 #. one sentence of a longer line
 msgid "Tutorial not complete."
@@ -56670,6 +56747,8 @@ msgstr "Первый счёт в рейтинге {mode_name}: {score}."
 msgid ""
 "New best on the relaxed {mode_name} board: {score}, beating {previous}."
 msgstr ""
+"Новый рекорд в рейтинге {mode_name} в спокойном темпе: {score}, прежний "
+"{previous}."
 
 #. placeholders: {mode_name}, {score}, {previous}
 msgid "New best on the {mode_name} board: {score}, beating {previous}."
@@ -63772,6 +63851,8 @@ msgid ""
 "Bests. Most harvests: {harvests}. {fullest} {longest} Seeds unlocked: "
 "{seeds} of {kinds}."
 msgstr ""
+"Рекорды. Больше всего урожая: {harvests}. {fullest} {longest} Открыто "
+"семян: {seeds} из {kinds}."
 
 #. placeholders: {harvests}
 #. one sentence of a longer line
@@ -66424,6 +66505,8 @@ msgid ""
 "Time attack, safe {n}: {name}. {time_limit} on the clock. Hints cost five "
 "seconds. The clock stops while the guard listens at the door."
 msgstr ""
+"На время, сейф {n}: {name}. {time_limit} на часах. Подсказка стоит пять "
+"секунд. Часы стоят, пока охранник слушает у двери."
 
 #. placeholders: {time_limit}
 #. one sentence of a longer line
@@ -66435,6 +66518,8 @@ msgid ""
 "Time attack, safe {n}: {name}. {time_limit} on the clock. Hints cost five "
 "seconds."
 msgstr ""
+"На время, сейф {n}: {name}. {time_limit} на часах. Подсказка стоит пять "
+"секунд."
 
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
@@ -90016,7 +90101,7 @@ msgstr "Тётя Rosa"
 msgid "Cousin Theo"
 msgstr "Кузен Theo"
 
-msgid "Mrs. Holly"
+msgid "Mrs Holly"
 msgstr "Миссис Holly"
 
 msgid ""
@@ -90256,6 +90341,8 @@ msgstr "{who}, прямо впереди, теперь загадывает: {gi
 msgid ""
 "Gifts nobody wished for go in the return sack behind you, with {sack_keys}."
 msgstr ""
+"Подарки, которые никто не загадал, бросайте в мешок возврата позади вас: "
+"{sack_keys}."
 
 #. placeholders: {level}, {last}
 #. one sentence of a longer line
@@ -90293,6 +90380,8 @@ msgid ""
 "Then send it with {left_keys} or {right_keys} to the person who wished for "
 "it, before it rides off the end of the belt."
 msgstr ""
+"Затем отправьте его тому, кто его загадал, пока он не уехал с конца ленты: "
+"{left_keys} или {right_keys}."
 
 msgid " A wrong guess costs time, but the gift stays on the belt."
 msgstr " Ошибка стоит времени, но подарок остаётся на ленте."
@@ -90630,6 +90719,7 @@ msgstr "Звук: {sound}."
 msgid ""
 "That was {sound}. Nobody wished for it: return sack, with {send_keys}."
 msgstr ""
+"Звук: {sound}. Это никто не загадывал: в мешок возврата, {send_keys}."
 
 #. one sentence of a longer line
 msgid "Half points for this gift."
@@ -90658,6 +90748,8 @@ msgid ""
 "{shake_keys} shakes the gift. {left_keys} and {right_keys} send it. F1 "
 "explains the keys."
 msgstr ""
+"{shake_keys} трясёт подарок. {left_keys} и {right_keys} отправляют его. F1 "
+"объясняет клавиши."
 
 #. placeholders: {left_keys}, {ahead_keys}, {right_keys}
 #. one sentence of a longer line
@@ -90669,6 +90761,8 @@ msgid ""
 "{shake_keys} shakes the gift. {left_keys}, {ahead_keys} and {right_keys} "
 "send it. F1 explains the keys."
 msgstr ""
+"{shake_keys} трясёт подарок. {left_keys}, {ahead_keys} и {right_keys} "
+"отправляют его. F1 объясняет клавиши."
 
 #. one sentence of a longer line
 msgid "Back on the belt."
@@ -90730,6 +90824,8 @@ msgid ""
 "Gift Sort briefing. {start_key} starts the belt. {repeat_key} repeats the "
 "wishes, {status_key} speaks the shift, Escape pauses."
 msgstr ""
+"Брифинг: Сортировка подарков. {start_key} запускает ленту. {repeat_key} "
+"повторяет желания, {status_key} называет смену, Escape ставит паузу."
 
 #. placeholders: {repeat_key}, {status_key}
 #. one sentence of a longer line
@@ -90737,6 +90833,8 @@ msgid ""
 "{repeat_key} repeats the wishes, {status_key} speaks the shift, Escape "
 "pauses."
 msgstr ""
+"{repeat_key} повторяет желания, {status_key} называет смену, Escape ставит "
+"паузу."
 
 #. placeholders: {start_key}
 #. one sentence of a longer line
@@ -90751,18 +90849,24 @@ msgstr "{left_keys} отправляет его влево, {right_keys} впр�
 msgid ""
 "{left_keys} sends it left, {ahead_keys} straight ahead, {right_keys} right."
 msgstr ""
+"{left_keys} отправляет его влево, {ahead_keys} прямо вперёд, {right_keys} "
+"вправо."
 
 #. placeholders: {left_keys}, {right_keys}, {sack_keys}
 msgid ""
 "{left_keys} sends it left, {right_keys} right, and {sack_keys} drops it in "
 "the return sack behind you."
 msgstr ""
+"{left_keys} отправляет его влево, {right_keys} вправо, а {sack_keys} "
+"бросает его в мешок возврата позади вас."
 
 #. placeholders: {left_keys}, {ahead_keys}, {right_keys}, {sack_keys}
 msgid ""
 "{left_keys} sends it left, {ahead_keys} straight ahead, {right_keys} right, "
 "and {sack_keys} drops it in the return sack behind you."
 msgstr ""
+"{left_keys} отправляет его влево, {ahead_keys} прямо вперёд, {right_keys} "
+"вправо, а {sack_keys} бросает его в мешок возврата позади вас."
 
 #. one sentence of a longer line
 msgid "Gift Sort."
@@ -90774,6 +90878,9 @@ msgid ""
 "wishes, {status_keys} speaks the clock and score, {hint_keys} gives a hint "
 "at half points. Escape pauses."
 msgstr ""
+"Сортировка подарков. {shake_keys} трясёт подарок. {send} {repeat_keys} "
+"повторяет желания, {status_keys} называет время и счёт, {hint_keys} даёт "
+"подсказку за половину очков. Escape ставит паузу."
 
 #. placeholders: {send}, {repeat_keys}, {status_keys}, {hint_keys}
 #. one sentence of a longer line
@@ -90781,6 +90888,8 @@ msgid ""
 "{send} {repeat_keys} repeats the wishes, {status_keys} speaks the clock and "
 "score, {hint_keys} gives a hint at half points."
 msgstr ""
+"{send} {repeat_keys} повторяет желания, {status_keys} называет время и "
+"счёт, {hint_keys} даёт подсказку за половину очков."
 
 msgid "Up and Down move between sounds, Enter plays one, Escape goes back."
 msgstr ""
@@ -94425,6 +94534,12 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "Happening: {what}{state}"
+#~ msgstr "Происшествие: {what}{state}"
+
+#~ msgid "Mrs. Holly"
+#~ msgstr "Миссис Holly"
 
 #~ msgid "Happening today: {name}, {after_comma}."
 #~ msgstr "Сегодня в салоне: {name}, {after_comma}."

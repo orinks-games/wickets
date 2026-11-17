@@ -144,7 +144,7 @@ pub fn distance_words(d: f32) -> &'static str {
     if d < 5.0 {
         "very close"
     } else if d < 12.0 {
-        "close"
+        "nearby"
     } else if d < 25.0 {
         "a little way off"
     } else {

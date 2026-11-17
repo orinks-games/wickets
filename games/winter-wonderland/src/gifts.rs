@@ -161,7 +161,7 @@ pub const NAMES: [&str; 6] = [
     "Little Pip",
     "Aunt Rosa",
     "Cousin Theo",
-    "Mrs. Holly",
+    "Mrs Holly",
 ];
 
 /// One person waiting for a gift.
