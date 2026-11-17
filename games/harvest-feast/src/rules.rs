@@ -1261,7 +1261,7 @@ pub fn ruined_line(d: &Dish, action: Action) -> String {
             d.name()
         )
     } else {
-        let ruined = d.station().ruined(&d.name());
+        let ruined = d.station().ruined(d.name());
         if d.kind.plural() {
             format!("{ruined} Someone rescued them, for no points.")
         } else {

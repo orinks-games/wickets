@@ -12,7 +12,6 @@ use std::cell::Cell;
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 
-use hearken::text::sentence_start;
 use parlor_core::Rng;
 
 thread_local! {
