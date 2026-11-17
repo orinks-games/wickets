@@ -23459,10 +23459,6 @@ msgid ""
 msgstr ""
 
 #: games/fireside-patience/help.md
-msgid "Only a king goes on an empty pile."
-msgstr ""
-
-#: games/fireside-patience/help.md
 msgid ""
 "When a pile's last face-up card leaves, the card under it turns face up, "
 "and you hear its name."
@@ -23585,15 +23581,19 @@ msgstr ""
 #: games/fireside-patience/help.md
 msgid ""
 "Each suit has its own foundation, built up one card at a time from the ace "
-"to the king. Space on any foundation sends a single card to its own suit. "
-"Once every card is face up and the stock is used, the rest go up on their "
-"own."
+"to the king. Turn up cards in the piles and the stock to find the aces. "
+"Space on any foundation sends a single card to its own suit. Once every "
+"card is face up and the stock is used, the rest go up on their own."
 msgstr ""
 
 #: games/fireside-patience/help.md
 msgid ""
 "Each suit has its own foundation, built up one card at a time from the ace "
 "to the king."
+msgstr ""
+
+#: games/fireside-patience/help.md
+msgid "Turn up cards in the piles and the stock to find the aces."
 msgstr ""
 
 #: games/fireside-patience/help.md
@@ -25402,7 +25402,7 @@ msgid ""
 msgstr ""
 
 #: games/fireside-patience/src/tutorial.rs
-msgid "The flip means a hidden card turned up."
+msgid "A face-down card turns up when you move the cards off it."
 msgstr ""
 
 #. placeholders: {p}
@@ -25429,6 +25429,49 @@ msgid ""
 "picks it up. Turn up the 2 of hearts and put it on its foundation."
 msgstr ""
 
+#. placeholders: {t}
+#. one sentence of a longer line
+#: games/fireside-patience/src/tutorial.rs
+msgid "Press {t} until the ace of clubs turns up."
+msgstr ""
+
+#. one sentence of a longer line
+#: games/fireside-patience/src/tutorial.rs
+msgid "Put it on its foundation."
+msgstr ""
+
+#. one sentence of a longer line
+#: games/fireside-patience/src/tutorial.rs
+msgid "The other aces are face down in the piles or deeper in the stock."
+msgstr ""
+
+#. placeholders: {t}
+#: games/fireside-patience/src/tutorial.rs
+msgid ""
+"The other aces are face down in the piles or deeper in the stock. Press {t} "
+"until the ace of clubs turns up. Put it on its foundation."
+msgstr ""
+
+#. one sentence of a longer line
+#: games/fireside-patience/src/tutorial.rs
+msgid "Turn it over now."
+msgstr ""
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+#: games/fireside-patience/src/tutorial.rs
+msgid ""
+"{sentence_start} turns the stock back over when it is empty, as often as "
+"you like."
+msgstr ""
+
+#. placeholders: {sentence_start}
+#: games/fireside-patience/src/tutorial.rs
+msgid ""
+"{sentence_start} turns the stock back over when it is empty, as often as "
+"you like. Turn it over now."
+msgstr ""
+
 #: games/fireside-patience/src/tutorial.rs
 msgid ""
 "Backspace takes back your last move, as many times as you like. Press it "
@@ -25443,21 +25486,25 @@ msgid ""
 msgstr ""
 
 #. one sentence of a longer line
-#: games/fireside-patience/src/tutorial.rs
-msgid ""
-"Only a king goes on an empty pile, and every relaxed deal can be won."
-msgstr ""
-
-#. placeholders: {sentence_start}
-#: games/fireside-patience/src/tutorial.rs
-msgid ""
-"Only a king goes on an empty pile, and every relaxed deal can be won. "
-"{sentence_start} gives a useful move. Play deals a full game."
+#: games/fireside-patience/src/tutorial.rs games/fireside-patience/help.md
+msgid "Only a king goes on an empty pile."
 msgstr ""
 
 #. one sentence of a longer line
 #: games/fireside-patience/src/tutorial.rs
 msgid "Play deals a full game."
+msgstr ""
+
+#. one sentence of a longer line
+#: games/fireside-patience/src/tutorial.rs
+msgid "To win, build all 4 foundations from ace to king."
+msgstr ""
+
+#. placeholders: {sentence_start}
+#: games/fireside-patience/src/tutorial.rs
+msgid ""
+"To win, build all 4 foundations from ace to king. Only a king goes on an "
+"empty pile. {sentence_start} gives a useful move. Play deals a full game."
 msgstr ""
 
 #. placeholders: {sentence_start}

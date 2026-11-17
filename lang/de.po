@@ -21369,9 +21369,6 @@ msgstr ""
 "Ein Stapel wird abwärts in wechselnden Farben gebaut: eine schwarze 7 auf "
 "eine rote 8, eine rote Dame auf einen schwarzen König."
 
-msgid "Only a king goes on an empty pile."
-msgstr "Auf einen leeren Stapel darf nur ein König."
-
 msgid ""
 "When a pile's last face-up card leaves, the card under it turns face up, "
 "and you hear its name."
@@ -21501,14 +21498,15 @@ msgstr "Ablagen"
 
 msgid ""
 "Each suit has its own foundation, built up one card at a time from the ace "
-"to the king. Space on any foundation sends a single card to its own suit. "
-"Once every card is face up and the stock is used, the rest go up on their "
-"own."
+"to the king. Turn up cards in the piles and the stock to find the aces. "
+"Space on any foundation sends a single card to its own suit. Once every "
+"card is face up and the stock is used, the rest go up on their own."
 msgstr ""
 "Jede Farbe hat ihre eigene Ablage, Karte für Karte vom Ass bis zum König "
-"gebaut. Space auf einer beliebigen Ablage schickt eine einzelne Karte zu "
-"ihrer Farbe. Sind alle Karten offen und der Talon verbraucht, wandert der "
-"Rest von selbst hinauf."
+"gebaut. Deck Karten in den Stapeln und im Talon auf, um die Asse zu finden. "
+"Space auf einer beliebigen Ablage schickt eine einzelne Karte zu ihrer "
+"Farbe. Sind alle Karten offen und der Talon verbraucht, wandert der Rest "
+"von selbst hinauf."
 
 msgid ""
 "Each suit has its own foundation, built up one card at a time from the ace "
@@ -21516,6 +21514,9 @@ msgid ""
 msgstr ""
 "Jede Farbe hat ihre eigene Ablage, Karte für Karte vom Ass bis zum König "
 "gebaut."
+
+msgid "Turn up cards in the piles and the stock to find the aces."
+msgstr "Deck Karten in den Stapeln und im Talon auf, um die Asse zu finden."
 
 msgid "Space on any foundation sends a single card to its own suit."
 msgstr ""
@@ -23129,8 +23130,9 @@ msgstr ""
 "Ein Stapel wird abwärts in wechselnden Farben gebaut: eine schwarze 7 kommt "
 "auf eine rote 8. Leg die Pik 7 von Stapel 3 auf die Karo 8 auf Stapel 2."
 
-msgid "The flip means a hidden card turned up."
-msgstr "Das Umblättern heißt, eine verdeckte Karte wurde aufgedeckt."
+msgid "A face-down card turns up when you move the cards off it."
+msgstr ""
+"Eine verdeckte Karte wird aufgedeckt, wenn du die Karten darauf wegziehst."
 
 #. placeholders: {p}
 #. one sentence of a longer line
@@ -23154,6 +23156,49 @@ msgstr ""
 "{sentence_start} deckt eine Karte vom Talon auf. Am Platz des Talons nimmt "
 "{p} sie auf. Deck die Herz 2 auf und leg sie auf ihre Ablage."
 
+#. placeholders: {t}
+#. one sentence of a longer line
+msgid "Press {t} until the ace of clubs turns up."
+msgstr "Drück {t}, bis das Kreuz-Ass erscheint."
+
+#. one sentence of a longer line
+msgid "Put it on its foundation."
+msgstr "Leg es auf seine Ablage."
+
+#. one sentence of a longer line
+msgid "The other aces are face down in the piles or deeper in the stock."
+msgstr ""
+"Die anderen Asse liegen verdeckt in den Stapeln oder tiefer im Talon."
+
+#. placeholders: {t}
+msgid ""
+"The other aces are face down in the piles or deeper in the stock. Press {t} "
+"until the ace of clubs turns up. Put it on its foundation."
+msgstr ""
+"Die anderen Asse liegen verdeckt in den Stapeln oder tiefer im Talon. Drück "
+"{t}, bis das Kreuz-Ass erscheint. Leg es auf seine Ablage."
+
+#. one sentence of a longer line
+msgid "Turn it over now."
+msgstr "Dreh ihn jetzt um."
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid ""
+"{sentence_start} turns the stock back over when it is empty, as often as "
+"you like."
+msgstr ""
+"{sentence_start} dreht den Talon wieder um, wenn er leer ist, so oft du "
+"willst."
+
+#. placeholders: {sentence_start}
+msgid ""
+"{sentence_start} turns the stock back over when it is empty, as often as "
+"you like. Turn it over now."
+msgstr ""
+"{sentence_start} dreht den Talon wieder um, wenn er leer ist, so oft du "
+"willst. Dreh ihn jetzt um."
+
 msgid ""
 "Backspace takes back your last move, as many times as you like. Press it "
 "now."
@@ -23170,24 +23215,25 @@ msgstr ""
 "verlieren. Übe an einem kleinen Tisch"
 
 #. one sentence of a longer line
-msgid ""
-"Only a king goes on an empty pile, and every relaxed deal can be won."
-msgstr ""
-"Auf einen leeren Stapel darf nur ein König, und jede entspannte Partie ist "
-"lösbar."
-
-#. placeholders: {sentence_start}
-msgid ""
-"Only a king goes on an empty pile, and every relaxed deal can be won. "
-"{sentence_start} gives a useful move. Play deals a full game."
-msgstr ""
-"Auf einen leeren Stapel darf nur ein König, und jede entspannte Partie ist "
-"lösbar. {sentence_start} gibt einen nützlichen Zug. Spielen teilt eine "
-"ganze Partie aus."
+msgid "Only a king goes on an empty pile."
+msgstr "Auf einen leeren Stapel darf nur ein König."
 
 #. one sentence of a longer line
 msgid "Play deals a full game."
 msgstr "Spielen teilt eine ganze Partie aus."
+
+#. one sentence of a longer line
+msgid "To win, build all 4 foundations from ace to king."
+msgstr "Um zu gewinnen, baue alle 4 Ablagen vom Ass bis zum König."
+
+#. placeholders: {sentence_start}
+msgid ""
+"To win, build all 4 foundations from ace to king. Only a king goes on an "
+"empty pile. {sentence_start} gives a useful move. Play deals a full game."
+msgstr ""
+"Um zu gewinnen, baue alle 4 Ablagen vom Ass bis zum König. Auf einen leeren "
+"Stapel darf nur ein König. {sentence_start} gibt einen nützlichen Zug. "
+"Spielen teilt eine ganze Partie aus."
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
@@ -96554,6 +96600,34 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid ""
+#~ "Each suit has its own foundation, built up one card at a time from the ace "
+#~ "to the king. Space on any foundation sends a single card to its own suit. "
+#~ "Once every card is face up and the stock is used, the rest go up on their "
+#~ "own."
+#~ msgstr ""
+#~ "Jede Farbe hat ihre eigene Ablage, Karte für Karte vom Ass bis zum König "
+#~ "gebaut. Space auf einer beliebigen Ablage schickt eine einzelne Karte zu "
+#~ "ihrer Farbe. Sind alle Karten offen und der Talon verbraucht, wandert der "
+#~ "Rest von selbst hinauf."
+
+#~ msgid "The flip means a hidden card turned up."
+#~ msgstr "Das Umblättern heißt, eine verdeckte Karte wurde aufgedeckt."
+
+#~ msgid ""
+#~ "Only a king goes on an empty pile, and every relaxed deal can be won."
+#~ msgstr ""
+#~ "Auf einen leeren Stapel darf nur ein König, und jede entspannte Partie ist "
+#~ "lösbar."
+
+#~ msgid ""
+#~ "Only a king goes on an empty pile, and every relaxed deal can be won. "
+#~ "{sentence_start} gives a useful move. Play deals a full game."
+#~ msgstr ""
+#~ "Auf einen leeren Stapel darf nur ein König, und jede entspannte Partie ist "
+#~ "lösbar. {sentence_start} gibt einen nützlichen Zug. Spielen teilt eine "
+#~ "ganze Partie aus."
 
 #~ msgid "You have {dollar_words2} to spend in the bike shop."
 #~ msgstr "Du hast {dollar_words2} für den Fahrradladen."

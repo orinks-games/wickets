@@ -21208,9 +21208,6 @@ msgstr ""
 "Una pila scende a colori alterni: un 7 nero va su un 8 rosso, e una regina "
 "rossa su un re nero."
 
-msgid "Only a king goes on an empty pile."
-msgstr "Su una pila vuota va solo un re."
-
 msgid ""
 "When a pile's last face-up card leaves, the card under it turns face up, "
 "and you hear its name."
@@ -21337,19 +21334,23 @@ msgstr "Basi"
 
 msgid ""
 "Each suit has its own foundation, built up one card at a time from the ace "
-"to the king. Space on any foundation sends a single card to its own suit. "
-"Once every card is face up and the stock is used, the rest go up on their "
-"own."
+"to the king. Turn up cards in the piles and the stock to find the aces. "
+"Space on any foundation sends a single card to its own suit. Once every "
+"card is face up and the stock is used, the rest go up on their own."
 msgstr ""
 "Ogni seme ha la sua base, costruita una carta alla volta dall'asso al re. "
-"Space su una base qualsiasi manda una carta singola al suo seme. Quando "
-"tutte le carte sono scoperte e il mazzo è usato, le altre salgono da sole."
+"Scopri carte nelle pile e nel mazzo per trovare gli assi. Space su una base "
+"qualsiasi manda una carta singola al suo seme. Quando tutte le carte sono "
+"scoperte e il mazzo è usato, le altre salgono da sole."
 
 msgid ""
 "Each suit has its own foundation, built up one card at a time from the ace "
 "to the king."
 msgstr ""
 "Ogni seme ha la sua base, costruita una carta alla volta dall'asso al re."
+
+msgid "Turn up cards in the piles and the stock to find the aces."
+msgstr "Scopri carte nelle pile e nel mazzo per trovare gli assi."
 
 msgid "Space on any foundation sends a single card to its own suit."
 msgstr "Space su una base qualsiasi manda una carta singola al suo seme."
@@ -22943,8 +22944,8 @@ msgstr ""
 "Una pila scende a colori alterni: un 7 nero va su un 8 rosso. Sposta il 7 "
 "di picche dalla pila 3 sull'8 di quadri della pila 2."
 
-msgid "The flip means a hidden card turned up."
-msgstr "Quel suono vuol dire che una carta nascosta si è scoperta."
+msgid "A face-down card turns up when you move the cards off it."
+msgstr "Una carta coperta si scopre quando sposti le carte che ha sopra."
 
 #. placeholders: {p}
 #. one sentence of a longer line
@@ -22968,6 +22969,47 @@ msgstr ""
 "{sentence_start} scopre una carta dal mazzo. Al posto del mazzo, {p} la "
 "prende. Scopri il 2 di cuori e mettilo sulla sua base."
 
+#. placeholders: {t}
+#. one sentence of a longer line
+msgid "Press {t} until the ace of clubs turns up."
+msgstr "Premi {t} finché non esce l'asso di fiori."
+
+#. one sentence of a longer line
+msgid "Put it on its foundation."
+msgstr "Mettilo sulla sua base."
+
+#. one sentence of a longer line
+msgid "The other aces are face down in the piles or deeper in the stock."
+msgstr "Gli altri assi sono coperti nelle pile o più in fondo nel mazzo."
+
+#. placeholders: {t}
+msgid ""
+"The other aces are face down in the piles or deeper in the stock. Press {t} "
+"until the ace of clubs turns up. Put it on its foundation."
+msgstr ""
+"Gli altri assi sono coperti nelle pile o più in fondo nel mazzo. Premi {t} "
+"finché non esce l'asso di fiori. Mettilo sulla sua base."
+
+#. one sentence of a longer line
+msgid "Turn it over now."
+msgstr "Giralo adesso."
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid ""
+"{sentence_start} turns the stock back over when it is empty, as often as "
+"you like."
+msgstr ""
+"{sentence_start} rigira il mazzo quando è vuoto, tutte le volte che vuoi."
+
+#. placeholders: {sentence_start}
+msgid ""
+"{sentence_start} turns the stock back over when it is empty, as often as "
+"you like. Turn it over now."
+msgstr ""
+"{sentence_start} rigira il mazzo quando è vuoto, tutte le volte che vuoi. "
+"Giralo adesso."
+
 msgid ""
 "Backspace takes back your last move, as many times as you like. Press it "
 "now."
@@ -22984,23 +23026,25 @@ msgstr ""
 "un tavolo piccolo"
 
 #. one sentence of a longer line
-msgid ""
-"Only a king goes on an empty pile, and every relaxed deal can be won."
-msgstr ""
-"Su una pila vuota va solo un re, e ogni smazzata rilassata si può vincere."
-
-#. placeholders: {sentence_start}
-msgid ""
-"Only a king goes on an empty pile, and every relaxed deal can be won. "
-"{sentence_start} gives a useful move. Play deals a full game."
-msgstr ""
-"Su una pila vuota va solo un re, e ogni smazzata rilassata si può vincere. "
-"{sentence_start} dà una mossa utile. Gioca distribuisce una partita "
-"completa."
+msgid "Only a king goes on an empty pile."
+msgstr "Su una pila vuota va solo un re."
 
 #. one sentence of a longer line
 msgid "Play deals a full game."
 msgstr "Gioca distribuisce una partita completa."
+
+#. one sentence of a longer line
+msgid "To win, build all 4 foundations from ace to king."
+msgstr "Per vincere, costruisci tutte e 4 le basi dall'asso al re."
+
+#. placeholders: {sentence_start}
+msgid ""
+"To win, build all 4 foundations from ace to king. Only a king goes on an "
+"empty pile. {sentence_start} gives a useful move. Play deals a full game."
+msgstr ""
+"Per vincere, costruisci tutte e 4 le basi dall'asso al re. Su una pila "
+"vuota va solo un re. {sentence_start} dà una mossa utile. Gioca "
+"distribuisce una partita completa."
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
@@ -96060,6 +96104,32 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid ""
+#~ "Each suit has its own foundation, built up one card at a time from the ace "
+#~ "to the king. Space on any foundation sends a single card to its own suit. "
+#~ "Once every card is face up and the stock is used, the rest go up on their "
+#~ "own."
+#~ msgstr ""
+#~ "Ogni seme ha la sua base, costruita una carta alla volta dall'asso al re. "
+#~ "Space su una base qualsiasi manda una carta singola al suo seme. Quando "
+#~ "tutte le carte sono scoperte e il mazzo è usato, le altre salgono da sole."
+
+#~ msgid "The flip means a hidden card turned up."
+#~ msgstr "Quel suono vuol dire che una carta nascosta si è scoperta."
+
+#~ msgid ""
+#~ "Only a king goes on an empty pile, and every relaxed deal can be won."
+#~ msgstr ""
+#~ "Su una pila vuota va solo un re, e ogni smazzata rilassata si può vincere."
+
+#~ msgid ""
+#~ "Only a king goes on an empty pile, and every relaxed deal can be won. "
+#~ "{sentence_start} gives a useful move. Play deals a full game."
+#~ msgstr ""
+#~ "Su una pila vuota va solo un re, e ogni smazzata rilassata si può vincere. "
+#~ "{sentence_start} dà una mossa utile. Gioca distribuisce una partita "
+#~ "completa."
 
 #~ msgid "You have {dollar_words2} to spend in the bike shop."
 #~ msgstr "Hai {dollar_words2} da spendere al negozio di bici."

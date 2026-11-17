@@ -20894,9 +20894,6 @@ msgstr ""
 "Стопка строится вниз с чередованием цветов: чёрная 7 на красную 8, красная "
 "дама на чёрного короля."
 
-msgid "Only a king goes on an empty pile."
-msgstr "На пустую стопку кладётся только король."
-
 msgid ""
 "When a pile's last face-up card leaves, the card under it turns face up, "
 "and you hear its name."
@@ -21023,19 +21020,23 @@ msgstr "Базы"
 
 msgid ""
 "Each suit has its own foundation, built up one card at a time from the ace "
-"to the king. Space on any foundation sends a single card to its own suit. "
-"Once every card is face up and the stock is used, the rest go up on their "
-"own."
+"to the king. Turn up cards in the piles and the stock to find the aces. "
+"Space on any foundation sends a single card to its own suit. Once every "
+"card is face up and the stock is used, the rest go up on their own."
 msgstr ""
 "У каждой масти своя база, она строится по одной карте от туза до короля. "
-"Space на любой базе отправляет одну карту на базу её масти. Когда все карты "
-"открыты и колода пройдена, остальные уходят на базы сами."
+"Открывайте карты в стопках и в колоде, чтобы найти тузов. Space на любой "
+"базе отправляет одну карту на базу её масти. Когда все карты открыты и "
+"колода пройдена, остальные уходят на базы сами."
 
 msgid ""
 "Each suit has its own foundation, built up one card at a time from the ace "
 "to the king."
 msgstr ""
 "У каждой масти своя база, она строится по одной карте от туза до короля."
+
+msgid "Turn up cards in the piles and the stock to find the aces."
+msgstr "Открывайте карты в стопках и в колоде, чтобы найти тузов."
 
 msgid "Space on any foundation sends a single card to its own suit."
 msgstr "Space на любой базе отправляет одну карту на базу её масти."
@@ -22640,8 +22641,8 @@ msgstr ""
 "Стопка строится вниз с чередованием цветов: чёрная 7 на красную 8. "
 "Перенесите 7 пик из стопки 3 на 8 бубен в стопке 2."
 
-msgid "The flip means a hidden card turned up."
-msgstr "Шорох переворота значит, что скрытая карта открылась."
+msgid "A face-down card turns up when you move the cards off it."
+msgstr "Закрытая карта открывается, когда вы снимаете с неё карты."
 
 #. placeholders: {p}
 #. one sentence of a longer line
@@ -22665,6 +22666,48 @@ msgstr ""
 "{sentence_start} открывает карту из колоды. На месте колоды {p} берёт её. "
 "Откройте 2 червей и положите её на базу."
 
+#. placeholders: {t}
+#. one sentence of a longer line
+msgid "Press {t} until the ace of clubs turns up."
+msgstr "Нажимайте {t}, пока не откроется туз треф."
+
+#. one sentence of a longer line
+msgid "Put it on its foundation."
+msgstr "Положите его на его базу."
+
+#. one sentence of a longer line
+msgid "The other aces are face down in the piles or deeper in the stock."
+msgstr "Остальные тузы лежат закрытыми в стопках или глубже в колоде."
+
+#. placeholders: {t}
+msgid ""
+"The other aces are face down in the piles or deeper in the stock. Press {t} "
+"until the ace of clubs turns up. Put it on its foundation."
+msgstr ""
+"Остальные тузы лежат закрытыми в стопках или глубже в колоде. Нажимайте "
+"{t}, пока не откроется туз треф. Положите его на его базу."
+
+#. one sentence of a longer line
+msgid "Turn it over now."
+msgstr "Переверните её сейчас."
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid ""
+"{sentence_start} turns the stock back over when it is empty, as often as "
+"you like."
+msgstr ""
+"{sentence_start} снова переворачивает колоду, когда она пуста, сколько "
+"угодно раз."
+
+#. placeholders: {sentence_start}
+msgid ""
+"{sentence_start} turns the stock back over when it is empty, as often as "
+"you like. Turn it over now."
+msgstr ""
+"{sentence_start} снова переворачивает колоду, когда она пуста, сколько "
+"угодно раз. Переверните её сейчас."
+
 msgid ""
 "Backspace takes back your last move, as many times as you like. Press it "
 "now."
@@ -22680,24 +22723,25 @@ msgstr ""
 "до короля. Часов нет, и проиграть нельзя. Учитесь на маленьком столе"
 
 #. one sentence of a longer line
-msgid ""
-"Only a king goes on an empty pile, and every relaxed deal can be won."
-msgstr ""
-"Только король кладётся на пустую стопку, и любую спокойную раздачу можно "
-"выиграть."
-
-#. placeholders: {sentence_start}
-msgid ""
-"Only a king goes on an empty pile, and every relaxed deal can be won. "
-"{sentence_start} gives a useful move. Play deals a full game."
-msgstr ""
-"Только король кладётся на пустую стопку, и любую спокойную раздачу можно "
-"выиграть. {sentence_start} подсказывает полезный ход. «Играть» раздаёт "
-"полную партию."
+msgid "Only a king goes on an empty pile."
+msgstr "На пустую стопку кладётся только король."
 
 #. one sentence of a longer line
 msgid "Play deals a full game."
 msgstr "«Играть» раздаёт полную партию."
+
+#. one sentence of a longer line
+msgid "To win, build all 4 foundations from ace to king."
+msgstr "Чтобы выиграть, соберите все 4 базы от туза до короля."
+
+#. placeholders: {sentence_start}
+msgid ""
+"To win, build all 4 foundations from ace to king. Only a king goes on an "
+"empty pile. {sentence_start} gives a useful move. Play deals a full game."
+msgstr ""
+"Чтобы выиграть, соберите все 4 базы от туза до короля. На пустую стопку "
+"кладётся только король. {sentence_start} подсказывает полезный ход. "
+"«Играть» раздаёт полную партию."
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
@@ -94557,6 +94601,33 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid ""
+#~ "Each suit has its own foundation, built up one card at a time from the ace "
+#~ "to the king. Space on any foundation sends a single card to its own suit. "
+#~ "Once every card is face up and the stock is used, the rest go up on their "
+#~ "own."
+#~ msgstr ""
+#~ "У каждой масти своя база, она строится по одной карте от туза до короля. "
+#~ "Space на любой базе отправляет одну карту на базу её масти. Когда все карты "
+#~ "открыты и колода пройдена, остальные уходят на базы сами."
+
+#~ msgid "The flip means a hidden card turned up."
+#~ msgstr "Шорох переворота значит, что скрытая карта открылась."
+
+#~ msgid ""
+#~ "Only a king goes on an empty pile, and every relaxed deal can be won."
+#~ msgstr ""
+#~ "Только король кладётся на пустую стопку, и любую спокойную раздачу можно "
+#~ "выиграть."
+
+#~ msgid ""
+#~ "Only a king goes on an empty pile, and every relaxed deal can be won. "
+#~ "{sentence_start} gives a useful move. Play deals a full game."
+#~ msgstr ""
+#~ "Только король кладётся на пустую стопку, и любую спокойную раздачу можно "
+#~ "выиграть. {sentence_start} подсказывает полезный ход. «Играть» раздаёт "
+#~ "полную партию."
 
 #~ msgid "You have {dollar_words2} to spend in the bike shop."
 #~ msgstr "В веломагазине можно потратить {dollar_words2}."

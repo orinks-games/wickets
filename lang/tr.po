@@ -20833,9 +20833,6 @@ msgstr ""
 "Sütunlar renkler değişerek aşağı doğru dizilir: siyah 7 kırmızı 8'in, "
 "kırmızı kız siyah papazın üstüne gider."
 
-msgid "Only a king goes on an empty pile."
-msgstr "Boş sütuna yalnızca papaz gider."
-
 msgid ""
 "When a pile's last face-up card leaves, the card under it turns face up, "
 "and you hear its name."
@@ -20958,18 +20955,22 @@ msgstr "Temeller"
 
 msgid ""
 "Each suit has its own foundation, built up one card at a time from the ace "
-"to the king. Space on any foundation sends a single card to its own suit. "
-"Once every card is face up and the stock is used, the rest go up on their "
-"own."
+"to the king. Turn up cards in the piles and the stock to find the aces. "
+"Space on any foundation sends a single card to its own suit. Once every "
+"card is face up and the stock is used, the rest go up on their own."
 msgstr ""
-"Her rengin kendi temeli vardır, astan papaza birer kart dizilir. Herhangi "
-"bir temelde Space tek bir kartı kendi rengine gönderir. Bütün kartlar "
-"açılıp deste bitince kalanlar kendiliğinden temellere çıkar."
+"Her rengin kendi temeli vardır, astan papaza birer kart dizilir. Asları "
+"bulmak için sütunlardaki ve destedeki kartları açın. Herhangi bir temelde "
+"Space tek bir kartı kendi rengine gönderir. Bütün kartlar açılıp deste "
+"bitince kalanlar kendiliğinden temellere çıkar."
 
 msgid ""
 "Each suit has its own foundation, built up one card at a time from the ace "
 "to the king."
 msgstr "Her rengin kendi temeli vardır, astan papaza birer kart dizilir."
+
+msgid "Turn up cards in the piles and the stock to find the aces."
+msgstr "Asları bulmak için sütunlardaki ve destedeki kartları açın."
 
 msgid "Space on any foundation sends a single card to its own suit."
 msgstr "Herhangi bir temelde Space tek bir kartı kendi rengine gönderir."
@@ -22548,8 +22549,8 @@ msgstr ""
 "Sütunlar renkler değişerek aşağı doğru dizilir: siyah 7 kırmızı 8'in üstüne "
 "gider. Maça 7'yi sütun 3'ten sütun 2'deki karo 8'in üstüne taşıyın."
 
-msgid "The flip means a hidden card turned up."
-msgstr "Çevirme sesi, gizli bir kartın açıldığı anlamına gelir."
+msgid "A face-down card turns up when you move the cards off it."
+msgstr "Kapalı bir kart, üstündeki kartları taşıdığınızda açılır."
 
 #. placeholders: {p}
 #. one sentence of a longer line
@@ -22573,6 +22574,47 @@ msgstr ""
 "{sentence_start} desteden bir kart açar. Destenin yerinde {p} onu alır. "
 "Kupa 2'yi açın ve kendi temeline koyun."
 
+#. placeholders: {t}
+#. one sentence of a longer line
+msgid "Press {t} until the ace of clubs turns up."
+msgstr "Sinek ası çıkana kadar {t} tuşuna basın."
+
+#. one sentence of a longer line
+msgid "Put it on its foundation."
+msgstr "Onu kendi temeline koyun."
+
+#. one sentence of a longer line
+msgid "The other aces are face down in the piles or deeper in the stock."
+msgstr "Diğer aslar sütunlarda kapalı ya da destenin daha derininde."
+
+#. placeholders: {t}
+msgid ""
+"The other aces are face down in the piles or deeper in the stock. Press {t} "
+"until the ace of clubs turns up. Put it on its foundation."
+msgstr ""
+"Diğer aslar sütunlarda kapalı ya da destenin daha derininde. Sinek ası "
+"çıkana kadar {t} tuşuna basın. Onu kendi temeline koyun."
+
+#. one sentence of a longer line
+msgid "Turn it over now."
+msgstr "Şimdi çevirin."
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid ""
+"{sentence_start} turns the stock back over when it is empty, as often as "
+"you like."
+msgstr ""
+"{sentence_start} deste boşalınca onu yeniden çevirir, istediğiniz kadar."
+
+#. placeholders: {sentence_start}
+msgid ""
+"{sentence_start} turns the stock back over when it is empty, as often as "
+"you like. Turn it over now."
+msgstr ""
+"{sentence_start} deste boşalınca onu yeniden çevirir, istediğiniz kadar. "
+"Şimdi çevirin."
+
 msgid ""
 "Backspace takes back your last move, as many times as you like. Press it "
 "now."
@@ -22588,21 +22630,25 @@ msgstr ""
 "öğrenin"
 
 #. one sentence of a longer line
-msgid ""
-"Only a king goes on an empty pile, and every relaxed deal can be won."
-msgstr "Boş sütuna yalnızca papaz gider ve her rahat el kazanılabilir."
-
-#. placeholders: {sentence_start}
-msgid ""
-"Only a king goes on an empty pile, and every relaxed deal can be won. "
-"{sentence_start} gives a useful move. Play deals a full game."
-msgstr ""
-"Boş sütuna yalnızca papaz gider ve her rahat el kazanılabilir. "
-"{sentence_start} işe yarar bir hamle söyler. Oyna tam bir el dağıtır."
+msgid "Only a king goes on an empty pile."
+msgstr "Boş sütuna yalnızca papaz gider."
 
 #. one sentence of a longer line
 msgid "Play deals a full game."
 msgstr "Oyna tam bir el dağıtır."
+
+#. one sentence of a longer line
+msgid "To win, build all 4 foundations from ace to king."
+msgstr "Kazanmak için 4 temelin hepsini astan papaza kadar dizin."
+
+#. placeholders: {sentence_start}
+msgid ""
+"To win, build all 4 foundations from ace to king. Only a king goes on an "
+"empty pile. {sentence_start} gives a useful move. Play deals a full game."
+msgstr ""
+"Kazanmak için 4 temelin hepsini astan papaza kadar dizin. Boş sütuna "
+"yalnızca papaz gider. {sentence_start} işe yarar bir hamle söyler. Oyna tam "
+"bir el dağıtır."
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
@@ -94157,6 +94203,30 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid ""
+#~ "Each suit has its own foundation, built up one card at a time from the ace "
+#~ "to the king. Space on any foundation sends a single card to its own suit. "
+#~ "Once every card is face up and the stock is used, the rest go up on their "
+#~ "own."
+#~ msgstr ""
+#~ "Her rengin kendi temeli vardır, astan papaza birer kart dizilir. Herhangi "
+#~ "bir temelde Space tek bir kartı kendi rengine gönderir. Bütün kartlar "
+#~ "açılıp deste bitince kalanlar kendiliğinden temellere çıkar."
+
+#~ msgid "The flip means a hidden card turned up."
+#~ msgstr "Çevirme sesi, gizli bir kartın açıldığı anlamına gelir."
+
+#~ msgid ""
+#~ "Only a king goes on an empty pile, and every relaxed deal can be won."
+#~ msgstr "Boş sütuna yalnızca papaz gider ve her rahat el kazanılabilir."
+
+#~ msgid ""
+#~ "Only a king goes on an empty pile, and every relaxed deal can be won. "
+#~ "{sentence_start} gives a useful move. Play deals a full game."
+#~ msgstr ""
+#~ "Boş sütuna yalnızca papaz gider ve her rahat el kazanılabilir. "
+#~ "{sentence_start} işe yarar bir hamle söyler. Oyna tam bir el dağıtır."
 
 #~ msgid "You have {dollar_words2} to spend in the bike shop."
 #~ msgstr "Bisiklet dükkânında harcayacak {dollar_words2} paranız var."

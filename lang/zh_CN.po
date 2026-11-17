@@ -18898,9 +18898,6 @@ msgid ""
 "red queen on a black king."
 msgstr "牌列按红黑交替往下接：黑7接在红8上，红Q接在黑K上。"
 
-msgid "Only a king goes on an empty pile."
-msgstr "只有K能放到空列上。"
-
 msgid ""
 "When a pile's last face-up card leaves, the card under it turns face up, "
 "and you hear its name."
@@ -19005,17 +19002,20 @@ msgstr "收牌堆"
 
 msgid ""
 "Each suit has its own foundation, built up one card at a time from the ace "
-"to the king. Space on any foundation sends a single card to its own suit. "
-"Once every card is face up and the stock is used, the rest go up on their "
-"own."
+"to the king. Turn up cards in the piles and the stock to find the aces. "
+"Space on any foundation sends a single card to its own suit. Once every "
+"card is face up and the stock is used, the rest go up on their own."
 msgstr ""
-"每个花色有自己的收牌堆，从A到K一张一张往上叠。在任何收牌堆上按Space，都会把一张牌送到它自己花色的收牌堆。所有牌都翻开、牌库也用完后，剩下的牌会自"
-"己收上去。"
+"每个花色有自己的收牌堆，从A到K一张一张往上叠。翻开各列和牌库里的牌来找A。在任何收牌堆上按Space，都会把一张牌送到它自己花色的收牌堆。所有牌都翻开"
+"、牌库也用完后，剩下的牌会自己收上去。"
 
 msgid ""
 "Each suit has its own foundation, built up one card at a time from the ace "
 "to the king."
 msgstr "每个花色有自己的收牌堆，从A到K一张一张往上叠。"
+
+msgid "Turn up cards in the piles and the stock to find the aces."
+msgstr "翻开各列和牌库里的牌来找A。"
 
 msgid "Space on any foundation sends a single card to its own suit."
 msgstr "在任何收牌堆上按Space，都会把一张牌送到它自己花色的收牌堆。"
@@ -20477,8 +20477,8 @@ msgid ""
 "the 7 of spades from pile 3 onto the 8 of diamonds on pile 2."
 msgstr "牌列按红黑交替往下接：黑7接在红8上。把第3列的黑桃7移到第2列的方块8上。"
 
-msgid "The flip means a hidden card turned up."
-msgstr "翻牌声表示一张暗牌翻开了。"
+msgid "A face-down card turns up when you move the cards off it."
+msgstr "把压在暗牌上的牌移走，暗牌就会翻开。"
 
 #. placeholders: {p}
 #. one sentence of a longer line
@@ -20500,6 +20500,42 @@ msgid ""
 "picks it up. Turn up the 2 of hearts and put it on its foundation."
 msgstr "{sentence_start}从牌库翻开一张牌。在牌库的位置，{p}把它拿起来。翻出红桃2，把它放到收牌堆上。"
 
+#. placeholders: {t}
+#. one sentence of a longer line
+msgid "Press {t} until the ace of clubs turns up."
+msgstr "按{t}，直到梅花A翻出来。"
+
+#. one sentence of a longer line
+msgid "Put it on its foundation."
+msgstr "把它放到它的收牌堆上。"
+
+#. one sentence of a longer line
+msgid "The other aces are face down in the piles or deeper in the stock."
+msgstr "其他A扣在各列里，或者在牌库更深处。"
+
+#. placeholders: {t}
+msgid ""
+"The other aces are face down in the piles or deeper in the stock. Press {t} "
+"until the ace of clubs turns up. Put it on its foundation."
+msgstr "其他A扣在各列里，或者在牌库更深处。按{t}，直到梅花A翻出来。把它放到它的收牌堆上。"
+
+#. one sentence of a longer line
+msgid "Turn it over now."
+msgstr "现在把它翻过来。"
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid ""
+"{sentence_start} turns the stock back over when it is empty, as often as "
+"you like."
+msgstr "牌库空了以后，{sentence_start}会把它翻回来，想翻几次都行。"
+
+#. placeholders: {sentence_start}
+msgid ""
+"{sentence_start} turns the stock back over when it is empty, as often as "
+"you like. Turn it over now."
+msgstr "牌库空了以后，{sentence_start}会把它翻回来，想翻几次都行。现在把它翻过来。"
+
 msgid ""
 "Backspace takes back your last move, as many times as you like. Press it "
 "now."
@@ -20512,19 +20548,22 @@ msgid ""
 msgstr "炉火旁的接龙游戏：把全部52张牌按花色放到四个收牌堆上，从A到K。没有时钟，也不会输。在一张小牌桌上学一学"
 
 #. one sentence of a longer line
-msgid ""
-"Only a king goes on an empty pile, and every relaxed deal can be won."
-msgstr "只有K能放到空列上，每一局轻松牌都能赢。"
-
-#. placeholders: {sentence_start}
-msgid ""
-"Only a king goes on an empty pile, and every relaxed deal can be won. "
-"{sentence_start} gives a useful move. Play deals a full game."
-msgstr "只有K能放到空列上，每一局轻松牌都能赢。{sentence_start}给出一步有用的走法。选开始会发一整局牌。"
+msgid "Only a king goes on an empty pile."
+msgstr "只有K能放到空列上。"
 
 #. one sentence of a longer line
 msgid "Play deals a full game."
 msgstr "选开始会发一整局牌。"
+
+#. one sentence of a longer line
+msgid "To win, build all 4 foundations from ace to king."
+msgstr "要赢，就把4个收牌堆都从A叠到K。"
+
+#. placeholders: {sentence_start}
+msgid ""
+"To win, build all 4 foundations from ace to king. Only a king goes on an "
+"empty pile. {sentence_start} gives a useful move. Play deals a full game."
+msgstr "要赢，就把4个收牌堆都从A叠到K。只有K能放到空列上。{sentence_start}给出一步有用的走法。选开始会发一整局牌。"
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
@@ -84965,6 +85004,27 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid ""
+#~ "Each suit has its own foundation, built up one card at a time from the ace "
+#~ "to the king. Space on any foundation sends a single card to its own suit. "
+#~ "Once every card is face up and the stock is used, the rest go up on their "
+#~ "own."
+#~ msgstr ""
+#~ "每个花色有自己的收牌堆，从A到K一张一张往上叠。在任何收牌堆上按Space，都会把一张牌送到它自己花色的收牌堆。所有牌都翻开、牌库也用完后，剩下的牌会自"
+#~ "己收上去。"
+
+#~ msgid "The flip means a hidden card turned up."
+#~ msgstr "翻牌声表示一张暗牌翻开了。"
+
+#~ msgid ""
+#~ "Only a king goes on an empty pile, and every relaxed deal can be won."
+#~ msgstr "只有K能放到空列上，每一局轻松牌都能赢。"
+
+#~ msgid ""
+#~ "Only a king goes on an empty pile, and every relaxed deal can be won. "
+#~ "{sentence_start} gives a useful move. Play deals a full game."
+#~ msgstr "只有K能放到空列上，每一局轻松牌都能赢。{sentence_start}给出一步有用的走法。选开始会发一整局牌。"
 
 #~ msgid "You have {dollar_words2} to spend in the bike shop."
 #~ msgstr "你有{dollar_words2}可以在车行花。"

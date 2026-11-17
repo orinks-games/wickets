@@ -21396,9 +21396,6 @@ msgstr ""
 "Une colonne se construit en descendant, en alternant les couleurs : un 7 "
 "noir va sur un 8 rouge, et une dame rouge sur un roi noir."
 
-msgid "Only a king goes on an empty pile."
-msgstr "Seul un roi va sur une colonne vide."
-
 msgid ""
 "When a pile's last face-up card leaves, the card under it turns face up, "
 "and you hear its name."
@@ -21528,11 +21525,12 @@ msgstr "Fondations"
 
 msgid ""
 "Each suit has its own foundation, built up one card at a time from the ace "
-"to the king. Space on any foundation sends a single card to its own suit. "
-"Once every card is face up and the stock is used, the rest go up on their "
-"own."
+"to the king. Turn up cards in the piles and the stock to find the aces. "
+"Space on any foundation sends a single card to its own suit. Once every "
+"card is face up and the stock is used, the rest go up on their own."
 msgstr ""
 "Chaque couleur a sa fondation, montée une carte à la fois de l'as au roi. "
+"Retourne des cartes dans les colonnes et la pioche pour trouver les as. "
 "Space sur n'importe quelle fondation envoie une seule carte sur sa propre "
 "couleur. Quand toutes les cartes sont visibles et la pioche utilisée, le "
 "reste monte tout seul."
@@ -21542,6 +21540,10 @@ msgid ""
 "to the king."
 msgstr ""
 "Chaque couleur a sa fondation, montée une carte à la fois de l'as au roi."
+
+msgid "Turn up cards in the piles and the stock to find the aces."
+msgstr ""
+"Retourne des cartes dans les colonnes et la pioche pour trouver les as."
 
 msgid "Space on any foundation sends a single card to its own suit."
 msgstr ""
@@ -23169,8 +23171,10 @@ msgstr ""
 "noir va sur un 8 rouge. Déplace le 7 de pique de la colonne 3 sur le 8 de "
 "carreau de la colonne 2."
 
-msgid "The flip means a hidden card turned up."
-msgstr "Le retournement veut dire qu'une carte cachée s'est retournée."
+msgid "A face-down card turns up when you move the cards off it."
+msgstr ""
+"Une carte face cachée se retourne quand tu déplaces les cartes posées "
+"dessus."
 
 #. placeholders: {p}
 #. one sentence of a longer line
@@ -23194,6 +23198,51 @@ msgstr ""
 "{sentence_start} retourne une carte de la pioche. À la place de la pioche, "
 "{p} la prend. Retourne le 2 de cœur et pose-le sur sa fondation."
 
+#. placeholders: {t}
+#. one sentence of a longer line
+msgid "Press {t} until the ace of clubs turns up."
+msgstr "Appuie sur {t} jusqu'à ce que l'as de trèfle apparaisse."
+
+#. one sentence of a longer line
+msgid "Put it on its foundation."
+msgstr "Pose-le sur sa fondation."
+
+#. one sentence of a longer line
+msgid "The other aces are face down in the piles or deeper in the stock."
+msgstr ""
+"Les autres as sont face cachée dans les colonnes ou plus loin dans la "
+"pioche."
+
+#. placeholders: {t}
+msgid ""
+"The other aces are face down in the piles or deeper in the stock. Press {t} "
+"until the ace of clubs turns up. Put it on its foundation."
+msgstr ""
+"Les autres as sont face cachée dans les colonnes ou plus loin dans la "
+"pioche. Appuie sur {t} jusqu'à ce que l'as de trèfle apparaisse. Pose-le "
+"sur sa fondation."
+
+#. one sentence of a longer line
+msgid "Turn it over now."
+msgstr "Retourne-la maintenant."
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid ""
+"{sentence_start} turns the stock back over when it is empty, as often as "
+"you like."
+msgstr ""
+"{sentence_start} retourne la pioche quand elle est vide, autant de fois que "
+"tu veux."
+
+#. placeholders: {sentence_start}
+msgid ""
+"{sentence_start} turns the stock back over when it is empty, as often as "
+"you like. Turn it over now."
+msgstr ""
+"{sentence_start} retourne la pioche quand elle est vide, autant de fois que "
+"tu veux. Retourne-la maintenant."
+
 msgid ""
 "Backspace takes back your last move, as many times as you like. Press it "
 "now."
@@ -23211,24 +23260,25 @@ msgstr ""
 "Apprends sur une petite table"
 
 #. one sentence of a longer line
-msgid ""
-"Only a king goes on an empty pile, and every relaxed deal can be won."
-msgstr ""
-"Seul un roi va sur une colonne vide, et toute donne en Détente peut être "
-"gagnée."
-
-#. placeholders: {sentence_start}
-msgid ""
-"Only a king goes on an empty pile, and every relaxed deal can be won. "
-"{sentence_start} gives a useful move. Play deals a full game."
-msgstr ""
-"Seul un roi va sur une colonne vide, et toute donne en Détente peut être "
-"gagnée. {sentence_start} donne un coup utile. Jouer distribue une partie "
-"complète."
+msgid "Only a king goes on an empty pile."
+msgstr "Seul un roi va sur une colonne vide."
 
 #. one sentence of a longer line
 msgid "Play deals a full game."
 msgstr "Jouer distribue une partie complète."
+
+#. one sentence of a longer line
+msgid "To win, build all 4 foundations from ace to king."
+msgstr "Pour gagner, monte les 4 fondations de l'as au roi."
+
+#. placeholders: {sentence_start}
+msgid ""
+"To win, build all 4 foundations from ace to king. Only a king goes on an "
+"empty pile. {sentence_start} gives a useful move. Play deals a full game."
+msgstr ""
+"Pour gagner, monte les 4 fondations de l'as au roi. Seul un roi va sur une "
+"colonne vide. {sentence_start} donne un coup utile. Jouer distribue une "
+"partie complète."
 
 #. placeholders: {sentence_start}
 #. one sentence of a longer line
@@ -96806,6 +96856,34 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid ""
+#~ "Each suit has its own foundation, built up one card at a time from the ace "
+#~ "to the king. Space on any foundation sends a single card to its own suit. "
+#~ "Once every card is face up and the stock is used, the rest go up on their "
+#~ "own."
+#~ msgstr ""
+#~ "Chaque couleur a sa fondation, montée une carte à la fois de l'as au roi. "
+#~ "Space sur n'importe quelle fondation envoie une seule carte sur sa propre "
+#~ "couleur. Quand toutes les cartes sont visibles et la pioche utilisée, le "
+#~ "reste monte tout seul."
+
+#~ msgid "The flip means a hidden card turned up."
+#~ msgstr "Le retournement veut dire qu'une carte cachée s'est retournée."
+
+#~ msgid ""
+#~ "Only a king goes on an empty pile, and every relaxed deal can be won."
+#~ msgstr ""
+#~ "Seul un roi va sur une colonne vide, et toute donne en Détente peut être "
+#~ "gagnée."
+
+#~ msgid ""
+#~ "Only a king goes on an empty pile, and every relaxed deal can be won. "
+#~ "{sentence_start} gives a useful move. Play deals a full game."
+#~ msgstr ""
+#~ "Seul un roi va sur une colonne vide, et toute donne en Détente peut être "
+#~ "gagnée. {sentence_start} donne un coup utile. Jouer distribue une partie "
+#~ "complète."
 
 #~ msgid "You have {dollar_words2} to spend in the bike shop."
 #~ msgstr "Tu as {dollar_words2} à dépenser au magasin de vélos."
