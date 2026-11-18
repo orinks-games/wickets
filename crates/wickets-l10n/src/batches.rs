@@ -82,7 +82,10 @@ pub fn import(project: &Project, code: &str, dir: &Path) -> Result<i32, String> 
     for file in &done {
         let value: Value = serde_json::from_str(&util::read_text(file)?)
             .map_err(|e| format!("{}: {e}", file.display()))?;
-        for item in value.as_array().cloned().unwrap_or_default() {
+        let items = value
+            .as_array()
+            .ok_or_else(|| format!("{}: expected a JSON array", file.display()))?;
+        for item in items {
             let (Some(msgid), Some(msgstr)) = (
                 item.get("msgid").and_then(Value::as_str),
                 item.get("msgstr").and_then(Value::as_str),
