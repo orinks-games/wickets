@@ -148,15 +148,20 @@ impl Tower {
 
     /// What the tower is, as play starts.
     fn intro(&self) -> String {
-        let rules = self.peal.rules.describe();
+        let find = self.peal.rules.find_sentence();
         match &self.job {
-            Some(job) if job.peals() > 1 => format!(
-                "{}. {}",
-                challenge::name(job.period),
-                challenge::next_words(job)
-            ),
-            Some(job) => format!("{}. Find the peal: {rules}.", challenge::name(job.period)),
-            None => format!("{}. Find the peal: {rules}.", self.mode.name()),
+            Some(job) if job.peals() > 1 => {
+                let (name, next) = (challenge::name(job.period), challenge::next_words(job));
+                format!("{name}. {next}")
+            }
+            Some(job) => {
+                let name = challenge::name(job.period);
+                format!("{name}. {find}")
+            }
+            None => {
+                let name = self.mode.name();
+                format!("{name}. {find}")
+            }
         }
     }
 
@@ -206,10 +211,10 @@ impl Tower {
             ));
         }
         match p.hints_used {
-            0 if p.rules.hints && p.rows_left() >= 2 => parts.push(format!(
-                "{} trades a row for a hint",
-                ctx.control_name(ParlorAction::Hint)
-            )),
+            0 if p.rules.hints && p.rows_left() >= 2 => {
+                let pressed = ctx.control_name(ParlorAction::Hint);
+                parts.push(format!("{pressed} trades a row for a hint"));
+            }
             0 => {}
             1 => parts.push("1 hint used".to_string()),
             n => parts.push(format!("{n} hints used")),
@@ -241,11 +246,15 @@ impl Tower {
     /// meaning of knocks and taps the first time each is heard.
     fn answer_words(&mut self, answer: Answer) -> String {
         let n = self.peal.rows_used();
-        let mut text = format!(
-            "Row {n}: {}. {}.",
-            answer.words(),
-            sentence_start(&self.rows_left_words())
-        );
+        let left = sentence_start(&self.rows_left_words());
+        // The answer is part of the row's line, so the line translates whole.
+        let row = match (answer.in_place, answer.misplaced) {
+            (0, 0) => format!("Row {n}: None of these bells is in the peal."),
+            (0, m) => format!("Row {n}: None in place, {m} misplaced."),
+            (i, 0) => format!("Row {n}: {i} in place, none misplaced."),
+            (i, m) => format!("Row {n}: {i} in place, {m} misplaced."),
+        };
+        let mut text = format!("{row} {left}.");
         if answer.in_place > 0 && self.taught.insert(TAUGHT_KNOCK) {
             text.push_str(" In place means a right bell in its place.");
         }
@@ -342,11 +351,12 @@ impl Tower {
         match self.peal.hint() {
             Ok(hint) => {
                 sound::play(ctx, sound::HINT);
-                let text = format!(
-                    "Hint: {}. It used a row: {}.",
-                    hint.words().to_lowercase(),
-                    self.rows_left_words()
-                );
+                let (bell, rows_left) = (hint.bell, self.rows_left_words());
+                let text = if hint.inside {
+                    format!("Hint: bell {bell} is in the peal. It used a row: {rows_left}.")
+                } else {
+                    format!("Hint: bell {bell} is not in the peal. It used a row: {rows_left}.")
+                };
                 ctx.say(text.clone());
                 self.last_prompt = text;
             }
@@ -456,11 +466,12 @@ pub fn result_summary(peal: &Peal) -> String {
     match peal.outcome {
         Some(Outcome::Solved) => {
             let rows = peal.rows_used();
-            format!(
-                "Solved in {rows} {}. {}",
-                if rows == 1 { "row" } else { "rows" },
-                points(peal.score())
-            )
+            let points = points(peal.score());
+            if rows == 1 {
+                format!("Solved in 1 row. {points}")
+            } else {
+                format!("Solved in {rows} rows. {points}")
+            }
         }
         _ => format!("Out of rows. The peal was {}", row_words(&peal.code)),
     }
@@ -470,20 +481,16 @@ pub fn result_summary(peal: &Peal) -> String {
 pub fn result_pages(peal: &Peal, saved: &Saved) -> Vec<String> {
     let rows = peal.rows_used();
     let mut first = if peal.solved() {
-        format!(
-            "Solved in {rows} {}. The peal is {}, and the bells ring it out.",
-            if rows == 1 { "row" } else { "rows" },
-            row_words(&peal.code)
-        )
+        let peal_words = row_words(&peal.code);
+        if rows == 1 {
+            format!("Solved in 1 row. The peal is {peal_words}, and the bells ring it out.")
+        } else {
+            format!("Solved in {rows} rows. The peal is {peal_words}, and the bells ring it out.")
+        }
     } else {
-        format!(
-            "Out of rows. The peal was {}. Your last row had {}.",
-            row_words(&peal.code),
-            peal.last_answer()
-                .unwrap_or_default()
-                .words()
-                .to_lowercase()
-        )
+        let peal_words = row_words(&peal.code);
+        let last_row = peal.last_answer().unwrap_or_default().last_row_sentence();
+        format!("Out of rows. The peal was {peal_words}. {last_row}")
     };
     match saved.score {
         Some(ScoreResult::First) => first.push_str(&format!(
@@ -726,8 +733,8 @@ impl State<Parlor> for Tower {
         }
         if let Some(job) = &self.job {
             now.push_str(&format!(
-                " This is the {} challenge, {}. Leaving from the pause menu does not count it.",
-                job.period.label().to_lowercase(),
+                " This is the {}, {}. Leaving from the pause menu does not count it.",
+                job.period.challenge_title().to_lowercase(),
                 challenge::name(job.period)
             ));
         }

@@ -61,7 +61,10 @@ impl Menu for SeedMenu {
             .into_iter()
             .map(|(c, n)| {
                 let when = if c.season == season {
-                    format!("ripe in {} days", c.days)
+                    match c.days {
+                        1 => "ripe in 1 day".to_string(),
+                        days => format!("ripe in {days} days"),
+                    }
                 } else {
                     format!("a {} crop, slow now", c.season.name())
                 };
@@ -72,11 +75,14 @@ impl Menu for SeedMenu {
                 };
                 let id = c.id;
                 MenuItem::new(
-                    format!(
-                        "{}, {n} {}, {when}{again}",
-                        sentence_case(c.name),
-                        if n == 1 { "seed" } else { "seeds" }
-                    ),
+                    {
+                        let crop = sentence_case(c.name);
+                        let seeds = match n {
+                            1 => "1 seed".to_string(),
+                            n => format!("{n} seeds"),
+                        };
+                        format!("{crop}, {seeds}, {when}{again}")
+                    },
                     move |s: &mut SeedMenu, ctx: &mut Ctx<Parlor>| {
                         s.h.borrow_mut().sow(id);
                         ctx.pop();
@@ -199,10 +205,11 @@ impl Menu for BargeMenu {
         for (id, what, price) in h.barge_stock() {
             rows.push(
                 MenuItem::new(
-                    format!(
-                        "Buy {what}, {price} {}",
-                        if price == 1 { "coin" } else { "coins" }
-                    ),
+                    if price == 1 {
+                        format!("Buy {what}, 1 coin")
+                    } else {
+                        format!("Buy {what}, {price} coins")
+                    },
                     move |s: &mut BargeMenu, ctx: &mut Ctx<Parlor>| {
                         let line = match s.h.borrow_mut().buy(&id) {
                             Ok(line) | Err(line) => line,
@@ -262,11 +269,14 @@ impl Menu for SellMenu {
             let price = g.sells + bonus;
             let id = g.id;
             rows.push(MenuItem::new(
-                format!(
-                    "{}, {n}, {price} {} each",
-                    sentence_case(g.name),
-                    if price == 1 { "coin" } else { "coins" }
-                ),
+                {
+                    let goods = sentence_case(g.name);
+                    if price == 1 {
+                        format!("{goods}, {n}, 1 coin each")
+                    } else {
+                        format!("{goods}, {n}, {price} coins each")
+                    }
+                },
                 move |s: &mut SellMenu, ctx: &mut Ctx<Parlor>| {
                     let sold = {
                         let mut h = s.h.borrow_mut();

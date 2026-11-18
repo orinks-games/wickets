@@ -350,12 +350,10 @@ impl Signal {
                 Ev::Wrong { call, got } => {
                     ctx.play_ui(UiSound::Error);
                     let key = Self::key(ctx, call.action());
-                    ctx.say(format!(
-                        "Not {}. {}: {}",
-                        got.word().to_lowercase(),
-                        call.word(),
-                        answer_words(&key, call)
-                    ));
+                    let wrong = got.word().to_lowercase();
+                    let right = call.word();
+                    let answer = answer_words(&key, call);
+                    ctx.say(format!("Not {wrong}. {right}: {answer}"));
                 }
                 Ev::Derailed(miss) => {
                     sound::play(ctx, sound::BRAKE);
@@ -467,15 +465,6 @@ pub fn result_summary(shift: &Shift) -> String {
     )
 }
 
-/// "relaxed " on a relaxed run's records, which are kept apart.
-fn relaxed_word(pace: Pace) -> &'static str {
-    if pace.separate() {
-        "relaxed "
-    } else {
-        ""
-    }
-}
-
 /// A shift that scored nothing: no board takes a 0.
 fn no_board(shift: &Shift) -> String {
     format!(
@@ -486,26 +475,48 @@ fn no_board(shift: &Shift) -> String {
 
 /// The pages after a night shift played at `pace`.
 pub fn result_pages(shift: &Shift, saved: &Saved, pace: Pace) -> Vec<String> {
-    let r = relaxed_word(pace);
+    let relaxed = pace.separate();
     let score = match saved.score {
         None => no_board(shift),
         Some(ScoreResult::First) => {
-            format!("{}, your first {r}score.", points_words(shift.score))
+            if relaxed {
+                format!("{}, your first relaxed score.", points_words(shift.score))
+            } else {
+                format!("{}, your first score.", points_words(shift.score))
+            }
         }
         Some(ScoreResult::NewBest { previous }) => {
-            format!(
-                "{}, a new {r}best, beating {previous}.",
-                points_words(shift.score)
-            )
+            if relaxed {
+                format!(
+                    "{}, a new relaxed best, beating {previous}.",
+                    points_words(shift.score)
+                )
+            } else {
+                format!(
+                    "{}, a new best, beating {previous}.",
+                    points_words(shift.score)
+                )
+            }
         }
         Some(ScoreResult::Short { best }) => {
-            format!("{}. Your {r}best is {best}.", points_words(shift.score))
+            if relaxed {
+                format!(
+                    "{}. Your relaxed best is {best}.",
+                    points_words(shift.score)
+                )
+            } else {
+                format!("{}. Your best is {best}.", points_words(shift.score))
+            }
         }
     };
     // The derailment was said as it happened: the pages lead with the
     // score.
     let first = sentence_start(&score);
-    let longest = sentence_start(&format!("longest {r}run"));
+    let longest = sentence_start(&if relaxed {
+        "longest relaxed run".to_string()
+    } else {
+        "longest run".to_string()
+    });
     let run = match saved.run_record {
         Some(0) => format!(
             "{longest}: {}, your first on the board.",
@@ -518,10 +529,17 @@ pub fn result_pages(shift: &Shift, saved: &Saved, pace: Pace) -> Vec<String> {
         None => format!("{longest}: {}.", trains_words(saved.best_run)),
     };
     let window = if saved.window_record {
-        format!(
-            "Window reached: {}, your shortest {r}window yet.",
-            window_words(shift.window)
-        )
+        if relaxed {
+            format!(
+                "Window reached: {}, your shortest relaxed window yet.",
+                window_words(shift.window)
+            )
+        } else {
+            format!(
+                "Window reached: {}, your shortest window yet.",
+                window_words(shift.window)
+            )
+        }
     } else {
         format!("Window reached: {}.", window_words(shift.window))
     };
@@ -531,21 +549,48 @@ pub fn result_pages(shift: &Shift, saved: &Saved, pace: Pace) -> Vec<String> {
 /// The pages after a steam gala shift played at `pace`: its score on its
 /// own board, and the specials through.
 pub fn gala_pages(shift: &Shift, saved: Option<ScoreResult>, pace: Pace) -> Vec<String> {
-    let r = relaxed_word(pace);
+    let relaxed = pace.separate();
     let score = match saved {
         None => no_board(shift),
-        Some(ScoreResult::First) => format!(
-            "{}, your first {r}steam gala score.",
-            points_words(shift.score)
-        ),
-        Some(ScoreResult::NewBest { previous }) => format!(
-            "{}, a new {r}steam gala best, beating {previous}.",
-            points_words(shift.score)
-        ),
-        Some(ScoreResult::Short { best }) => format!(
-            "{}. Your {r}steam gala best is {best}.",
-            points_words(shift.score)
-        ),
+        Some(ScoreResult::First) => {
+            if relaxed {
+                format!(
+                    "{}, your first relaxed steam gala score.",
+                    points_words(shift.score)
+                )
+            } else {
+                format!(
+                    "{}, your first steam gala score.",
+                    points_words(shift.score)
+                )
+            }
+        }
+        Some(ScoreResult::NewBest { previous }) => {
+            if relaxed {
+                format!(
+                    "{}, a new relaxed steam gala best, beating {previous}.",
+                    points_words(shift.score)
+                )
+            } else {
+                format!(
+                    "{}, a new steam gala best, beating {previous}.",
+                    points_words(shift.score)
+                )
+            }
+        }
+        Some(ScoreResult::Short { best }) => {
+            if relaxed {
+                format!(
+                    "{}. Your relaxed steam gala best is {best}.",
+                    points_words(shift.score)
+                )
+            } else {
+                format!(
+                    "{}. Your steam gala best is {best}.",
+                    points_words(shift.score)
+                )
+            }
+        }
     };
     let specials = match shift.specials {
         1 => "1 steam special".to_string(),
@@ -553,7 +598,7 @@ pub fn gala_pages(shift: &Shift, saved: Option<ScoreResult>, pace: Pace) -> Vec<
     };
     vec![
         sentence_start(&score),
-        format!("{} through.", sentence_start(&specials)),
+        format!("{trains} through.", trains = sentence_start(&specials)),
     ]
 }
 
@@ -740,8 +785,8 @@ impl State<Parlor> for Signal {
         let mut text = self.with_event(format!("{now} {}", self.controls(ctx)));
         if let Some(ch) = &self.challenge {
             text.push_str(&format!(
-                " This is the {} challenge, {}. Leaving from the pause menu does not count the run.",
-                ch.period.label().to_lowercase(),
+                " This is the {}, {}. Leaving from the pause menu does not count the run.",
+                ch.period.challenge_title().to_lowercase(),
                 challenge::name(ch.period)
             ));
         }

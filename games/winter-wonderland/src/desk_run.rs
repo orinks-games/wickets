@@ -13,7 +13,7 @@ use crate::challenge::{self, Part};
 use crate::desk::{Shake, Stack, StackSpec, Wrapped, STACKS};
 use crate::desk_music::Conductor;
 use crate::events;
-use crate::mode::{story_ending, Mode, WRITES};
+use crate::mode::{story_ending, Mode};
 use crate::progress::{self, Progress};
 use crate::sound::{self, cue, shelf_pos, stinger};
 use crate::{fresh_rng, pause, results};
@@ -151,7 +151,7 @@ impl DeskRun {
 
     /// "a squish": what the current letter's wish would sound like.
     fn wish_sound(&self) -> Option<String> {
-        self.stack.letter().map(|l| format!("a {}", l.wish.name()))
+        self.stack.letter().map(|l| l.wish.with_article().to_string())
     }
 
     /// The current letter, as R reads it.
@@ -159,18 +159,18 @@ impl DeskRun {
         let Some(l) = self.stack.letter() else {
             return "Every letter is answered.".to_string();
         };
-        let late = if l.late { "Late post. " } else { "" };
-        let sound = if self.stack.spec.say_sounds && !l.little {
-            format!(" It would {} in its box.", l.wish.name())
-        } else {
-            String::new()
-        };
-        format!(
-            "{late}{}, age {}, {WRITES}: {}{sound}",
-            l.from,
-            l.age,
-            l.words()
-        )
+        // Whole sentences one after another, so each translates on its own.
+        let mut sentences = Vec::new();
+        if l.late {
+            sentences.push("Late post.".to_string());
+        }
+        let (from, age) = (l.from, l.age);
+        sentences.push(format!("{from}, age {age}, writes."));
+        sentences.push(l.words());
+        if self.stack.spec.say_sounds && !l.little {
+            sentences.push(l.wish.would_sentence().to_string());
+        }
+        sentences.join(" ")
     }
 
     fn briefing(&self, ctx: &Ctx<Parlor>) -> String {
@@ -224,7 +224,7 @@ impl DeskRun {
             ];
         }
         let here = s.here();
-        let place = if here.gone {
+        let spot = if here.gone {
             "wrapped and gone"
         } else if here.shakes == 0 {
             "not shaken yet"
@@ -241,7 +241,7 @@ impl DeskRun {
             None => "Every letter is answered.".to_string(),
         };
         vec![
-            format!("Box {} of {}, {place}. {letter}", s.at + 1, s.shelf.len()),
+            format!("Box {} of {}, {spot}. {letter}", s.at + 1, s.shelf.len()),
             format!(
                 "Stack {}. {} answered. Score {}.",
                 s.spec.level,
@@ -303,7 +303,8 @@ impl DeskRun {
             Shake::Gift(kind) => {
                 ctx.audio.play_at(sound::gift(kind), pos, Bus::EFFECTS);
                 if self.stack.spec.level == 1 {
-                    self.pending = Some((1.1, format!("It sounds like a {}.", kind.name())));
+                    let sound = kind.with_article();
+                    self.pending = Some((1.1, format!("It sounds like {sound}.")));
                 }
             }
             Shake::Straw => {
@@ -582,26 +583,23 @@ impl DeskRun {
         cue(ctx, sound::HINT);
         let sound = self.wish_sound().unwrap_or_default();
         let named = self.stack.spec.say_sounds && !letter.little;
+        let from = letter.from;
         let text = if first && !named {
-            format!(
-                "{}'s wish would sound like {sound} in its box.",
-                letter.from
-            )
+            format!("{from}'s wish would sound like {sound} in its box.")
         } else {
+            let number = answer + 1;
             let way = match answer.cmp(&self.stack.at) {
-                std::cmp::Ordering::Less => format!(
-                    "Walk {} to box {}.",
-                    Self::name(ctx, ParlorAction::Left),
-                    answer + 1
-                ),
-                std::cmp::Ordering::Greater => format!(
-                    "Walk {} to box {}.",
-                    Self::name(ctx, ParlorAction::Right),
-                    answer + 1
-                ),
+                std::cmp::Ordering::Less => {
+                    let left_keys = Self::name(ctx, ParlorAction::Left);
+                    format!("Walk {left_keys} to box {number}.")
+                }
+                std::cmp::Ordering::Greater => {
+                    let right_keys = Self::name(ctx, ParlorAction::Right);
+                    format!("Walk {right_keys} to box {number}.")
+                }
                 std::cmp::Ordering::Equal => "It is the box in front of you.".to_string(),
             };
-            format!("{}'s gift sounds like {sound}. {way}", letter.from)
+            format!("{from}'s gift sounds like {sound}. {way}")
         };
         let half = if first {
             " Half points for this letter."

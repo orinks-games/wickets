@@ -34,6 +34,7 @@ pub mod tutorial;
 pub mod units;
 pub mod unlocks;
 pub mod visuals;
+pub mod voice_lines;
 pub mod words;
 
 pub use actions::ParlorAction;
@@ -102,6 +103,11 @@ pub const DATA_DIR: &str = "Wickets";
 /// (see `wickets`' main).
 pub const OLD_DATA_DIR: &str = "EchoParlor";
 
+/// `CATALOGS`, written by the build script.
+mod catalogs {
+    include!(concat!(env!("OUT_DIR"), "/catalogs.rs"));
+}
+
 impl hearken::Game for Parlor {
     const TITLE: &'static str = NAME;
     const DATA_DIR: &'static str = DATA_DIR;
@@ -163,6 +169,17 @@ impl hearken::Game for Parlor {
 
     fn presence(ctx: &Ctx<Self>) -> Option<hearken::Presence> {
         Some(presence::outside_story(&ctx.game))
+    }
+
+    /// Every language Wicket's speaks: `lang/<code>.po`, merged with the
+    /// overlay's own lines in the full build (see `wickets_content`).
+    fn translation_catalogs() -> &'static [(&'static str, &'static str)] {
+        catalogs::CATALOGS
+    }
+
+    /// A first launch follows the computer's language.
+    fn default_language() -> &'static str {
+        hearken::l10n::AUTO
     }
 
     /// Settings opens on categories: the open game's own options first,

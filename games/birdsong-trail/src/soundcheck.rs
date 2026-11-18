@@ -65,14 +65,15 @@ pub fn rows() -> Vec<Row> {
                 .map(|n| (sound::voice_key(voice, *n), 1.0))
                 .collect()
         };
+        let heard = voice_sentence(voice);
         let meaning = if voice.is_call() {
-            format!("{label}: {}, heard in the migration flocks.", voice.words())
+            format!("{label}: {heard}")
         } else {
-            format!(
-                "{label}: {}, low, middle and high. Sung by the {} and others, each at its own pitch.",
-                voice.words(),
-                singers(voice)
-            )
+            let sung = format!(
+                "Sung by the {singers} and others, each at its own pitch.",
+                singers = singers(voice)
+            );
+            format!("{label}: {heard} {sung}")
         };
         out.push(Row {
             label,
@@ -221,5 +222,24 @@ impl Menu for SoundCheck {
             .help("Return to the Birdsong Trail title."),
         );
         items
+    }
+}
+
+/// The voice as one whole sentence for the sound check, so it translates
+/// whole: "Clear, sliding whistles, low, middle and high."
+fn voice_sentence(voice: Voice) -> &'static str {
+    match voice {
+        Voice::Whistle => "Clear, sliding whistles, low, middle and high.",
+        Voice::Flute => "Soft, breathy fluting, low, middle and high.",
+        Voice::Trill => "Quick, rattling trills, low, middle and high.",
+        Voice::Piping => "Round, piping notes, low, middle and high.",
+        Voice::Reed => "Buzzy, reedy notes, low, middle and high.",
+        Voice::Tinkle => "Thin, tinkling notes, low, middle and high.",
+        Voice::Coo => "Soft, low cooing, low, middle and high.",
+        Voice::Hoot => "Deep, hollow hoots, low, middle and high.",
+        Voice::Drum => "A drumroll on hollow wood, low, middle and high.",
+        Voice::Honk => "A goose's honk, heard in the migration flocks.",
+        Voice::Bugle => "A crane's rolling bugle, heard in the migration flocks.",
+        Voice::Whoop => "A swan's whooping call, heard in the migration flocks.",
     }
 }

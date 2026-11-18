@@ -169,8 +169,12 @@ pub fn days_phrase(days: i64) -> String {
 /// help line when the event is not on.
 pub fn countdown(holiday: Holiday, today: Date) -> Option<String> {
     let (_, days) = holiday.next(today)?;
-    let name = hearken::text::sentence_start(holiday.name());
-    Some(format!("{name} is {}.", days_phrase(days.max(0))))
+    let holiday = hearken::text::sentence_start(holiday.name());
+    Some(match days {
+        i64::MIN..=0 => format!("{holiday} is today."),
+        1 => format!("{holiday} is tomorrow."),
+        days => format!("{holiday} is in {days} days."),
+    })
 }
 
 /// The four seasons, by the meteorological calendar of the northern

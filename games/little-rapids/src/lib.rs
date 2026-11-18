@@ -260,7 +260,7 @@ impl TitleGame for LittleRapids {
             ),
             pm::settings::toggle(
                 "little_rapids_gentle",
-                |on| format!("Gentle streams: {}", if on { "on" } else { "off" }),
+                |on| if on { "Gentle streams: on".to_string() } else { "Gentle streams: off".to_string() },
                 |ctx| Progress::peek(ctx).gentle,
                 |ctx, on| {
                     let mut p = Progress::load(ctx);
@@ -279,7 +279,7 @@ impl TitleGame for LittleRapids {
             ),
             pm::settings::toggle(
                 "little_rapids_trinket_names",
-                |on| format!("Say trinket names: {}", if on { "on" } else { "off" }),
+                |on| if on { "Say trinket names: on".to_string() } else { "Say trinket names: off".to_string() },
                 |ctx| Progress::peek(ctx).trinket_names,
                 |ctx, on| {
                     let mut p = Progress::load(ctx);
@@ -291,7 +291,7 @@ impl TitleGame for LittleRapids {
             ),
             pm::settings::toggle(
                 "little_rapids_bank_lapping",
-                |on| format!("Banks louder up close: {}", if on { "on" } else { "off" }),
+                |on| if on { "Banks louder up close: on".to_string() } else { "Banks louder up close: off".to_string() },
                 |ctx| Progress::peek(ctx).bank_lapping,
                 |ctx, on| {
                     let mut p = Progress::load(ctx);

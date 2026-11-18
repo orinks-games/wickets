@@ -431,7 +431,13 @@ pub fn tracks_for(ctx: &mut Ctx<Parlor>, games: &[(&str, &str)]) -> Vec<Track> {
 pub fn row() -> SettingsRow<Parlor> {
     crate::menus::settings::toggle(
         ROW_ID,
-        |on| format!("Keep your songs: {}", if on { "on" } else { "off" }),
+        |on| {
+            if on {
+                "Keep your songs: on".to_string()
+            } else {
+                "Keep your songs: off".to_string()
+            }
+        },
         keeping,
         set_keeping,
         |_ctx, on| {

@@ -1051,14 +1051,15 @@ impl Hamlet {
 
     /// The store, for S: materials and coins.
     pub fn store_line(&self) -> String {
-        format!(
-            "{} wood, {} stone, {}, {} {}.",
-            self.has("wood"),
-            self.has("stone"),
-            crate::buildings::count(NAILS, self.has(NAILS)),
-            self.coins,
-            if self.coins == 1 { "coin" } else { "coins" }
-        )
+        let wood = self.has("wood");
+        let stone = self.has("stone");
+        let nails = crate::buildings::count(NAILS, self.has(NAILS));
+        let coins = self.coins;
+        if coins == 1 {
+            format!("{wood} wood, {stone} stone, {nails}, 1 coin.")
+        } else {
+            format!("{wood} wood, {stone} stone, {nails}, {coins} coins.")
+        }
     }
 
     pub fn is_built(&self, b: Building) -> bool {
@@ -1949,16 +1950,13 @@ impl Hamlet {
             line
         } else if let Some((ob, left)) = self.building {
             if ob == b {
-                return format!(
-                    "{}, going up. {} {} of work left.",
-                    sentence_case(b.name()),
-                    left.ceil() as u32,
-                    if left.ceil() as u32 == 1 {
-                        "hour"
-                    } else {
-                        "hours"
-                    }
-                );
+                let building = sentence_case(b.name());
+                let hours = left.ceil() as u32;
+                return if hours == 1 {
+                    format!("{building}, going up. 1 hour of work left.")
+                } else {
+                    format!("{building}, going up. {hours} hours of work left.")
+                };
             }
             format!("A free spot for {}.", b.name())
         } else {
@@ -2006,13 +2004,15 @@ impl Hamlet {
             } => {
                 let c = crop(id);
                 let name = c.map_or("a crop", |c| c.name);
-                let mut s = if p.ripe() {
-                    format!("{name}, ripe")
+                // Each part is its own words, so each translates alone.
+                let stage = if p.ripe() {
+                    "ripe"
                 } else if *growth == 0 {
-                    format!("{name}, sown")
+                    "sown"
                 } else {
-                    format!("{name}, growing")
+                    "growing"
                 };
+                let mut s = format!("{name}, {stage}");
                 if !p.ripe() {
                     s.push_str(if *watered { ", watered" } else { ", dry" });
                 }
@@ -2023,7 +2023,10 @@ impl Hamlet {
             }
         };
         // Rows count from the lane: the first row you step into is row 1.
-        format!("Row {}, plot {}: {state}.", ROWS - r, c + 1)
+        let (row, plot) = (ROWS - r, c + 1);
+        let (row, plot) = (format!("Row {row}"), format!("plot {plot}"));
+        let crop = state;
+        format!("{row}, {plot}: {crop}.")
     }
 
     fn plot_at(&self) -> Option<usize> {
@@ -2110,7 +2113,7 @@ impl Hamlet {
         };
         self.events.push(Event::Cue("sow", Place::Fields));
         let name = crop(id).map_or("Seed", |c| c.name);
-        let mut line = format!("{} sown.", sentence_case(name));
+        let mut line = format!("{crop} sown.", crop = sentence_case(name));
         if let Some(c) = crop(id) {
             if c.season != self.season() {
                 line.push_str(&format!(" It grows slowly out of {}.", c.season.name()));
@@ -2168,7 +2171,10 @@ impl Hamlet {
                     self.eggs_waiting = 0;
                     self.add("eggs", n);
                     self.events.push(Event::Cue("hens", place));
-                    self.say(format!("{} gathered.", crate::buildings::count("eggs", n)));
+                    self.say(format!(
+                        "{eggs} gathered.",
+                        eggs = crate::buildings::count("eggs", n)
+                    ));
                 } else if !self.fed_hens {
                     self.fed_hens = true;
                     self.events.push(Event::Cue("feed", place));
@@ -3189,22 +3195,24 @@ impl Hamlet {
         }
         if !self.built.is_empty() {
             let n = self.built.len();
-            parts.push(format!(
-                "{} for {n} {}",
-                n * 30,
-                if n == 1 { "building" } else { "buildings" }
-            ));
+            let points = n * 30;
+            parts.push(if n == 1 {
+                format!("{points} for 1 building")
+            } else {
+                format!("{points} for {n} buildings")
+            });
         }
         if self.goal_met {
             parts.push("100 for the goal".to_string());
             if let Some(limit) = self.day_limit {
                 let spare = (limit + 1).saturating_sub(self.day);
                 if spare > 0 {
-                    parts.push(format!(
-                        "{} for {spare} {} to spare",
-                        spare * 10,
-                        if spare == 1 { "day" } else { "days" }
-                    ));
+                    let points = spare * 10;
+                    parts.push(if spare == 1 {
+                        format!("{points} for 1 day to spare")
+                    } else {
+                        format!("{points} for {spare} days to spare")
+                    });
                 }
             }
         }
@@ -3276,23 +3284,21 @@ impl Hamlet {
         )];
         if let Some(limit) = self.day_limit {
             let left = (limit + 1).saturating_sub(self.day);
-            second.push(format!(
-                "{left} {} left.",
-                if left == 1 { "day" } else { "days" }
-            ));
+            second.push(if left == 1 {
+                "1 day left.".to_string()
+            } else {
+                format!("{left} days left.")
+            });
         }
         second.push(self.where_line());
         if let Some((b, left)) = self.building {
-            second.push(format!(
-                "{} is going up, {} {} of work left.",
-                sentence_case(b.name()),
-                left.ceil() as u32,
-                if left.ceil() as u32 == 1 {
-                    "hour"
-                } else {
-                    "hours"
-                }
-            ));
+            let building = sentence_case(b.name());
+            let hours = left.ceil() as u32;
+            second.push(if hours == 1 {
+                format!("{building} is going up, 1 hour of work left.")
+            } else {
+                format!("{building} is going up, {hours} hours of work left.")
+            });
         }
         second.push(self.store_line());
         let mut third = Vec::new();

@@ -64,17 +64,14 @@ pub fn open_challenge(ctx: &mut Ctx<Parlor>, period: Period) {
 /// Your own garden in a few words: "day 4, 2 plants, 1 harvest".
 fn garden_words(ctx: &mut Ctx<Parlor>, g: &Garden) -> String {
     let plants = g.plants().count();
-    let mut s = format!(
-        "day {}, {plants} {}, {} {}",
-        g.day,
-        if plants == 1 { "plant" } else { "plants" },
-        g.harvests,
-        if g.harvests == 1 {
-            "harvest"
-        } else {
-            "harvests"
-        }
-    );
+    let day = g.day;
+    let harvests = g.harvests;
+    let mut s = match (plants == 1, harvests == 1) {
+        (true, true) => format!("day {day}, 1 plant, 1 harvest"),
+        (true, false) => format!("day {day}, 1 plant, {harvests} harvests"),
+        (false, true) => format!("day {day}, {plants} plants, 1 harvest"),
+        (false, false) => format!("day {day}, {plants} plants, {harvests} harvests"),
+    };
     if let Some(h) = Records::best(ctx, ID, "harmony").filter(|&h| h > 0) {
         s.push_str(&format!(", fullest harmony {h} parts"));
     }
@@ -114,12 +111,20 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
     let harvests = best(ctx, "harvests");
     let harmony = best(ctx, "harmony");
     let days = best(ctx, "days");
+    let fullest = if harmony == 1 {
+        "Fullest harmony: 1 part.".to_string()
+    } else {
+        format!("Fullest harmony: {harmony} parts.")
+    };
+    let longest = if days == 1 {
+        "Longest garden: 1 day.".to_string()
+    } else {
+        format!("Longest garden: {days} days.")
+    };
+    let seeds = seeds_open(ctx, &saved);
+    let kinds = Species::ALL.len();
     let bests = format!(
-        "Bests. Most harvests: {harvests}. Fullest harmony: {harmony} {}. Longest garden: {days} {}. Seeds unlocked: {} of {}.",
-        if harmony == 1 { "part" } else { "parts" },
-        if days == 1 { "day" } else { "days" },
-        seeds_open(ctx, &saved),
-        Species::ALL.len()
+        "Bests. Most harvests: {harvests}. {fullest} {longest} Seeds unlocked: {seeds} of {kinds}."
     );
     let challenges: Vec<String> = Period::ALL
         .into_iter()

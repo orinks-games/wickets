@@ -103,6 +103,23 @@ impl Species {
         }
     }
 
+    /// The name with its article, for a whole phrase: "a Dipper",
+    /// "an Orchard Lantern".
+    pub fn a_name(self) -> &'static str {
+        match self {
+            Species::Dipper => "a Dipper",
+            Species::TwinSpark => "a Twin Spark",
+            Species::SlowEmber => "a Slow Ember",
+            Species::TripleTwinkle => "a Triple Twinkle",
+            Species::OrchardLantern => "an Orchard Lantern",
+            Species::CreekGlimmer => "a Creek Glimmer",
+            Species::HayFlicker => "a Hay Flicker",
+            Species::BlueGhost => "a Blue Ghost",
+            Species::LateEmber => "a Late Ember",
+            Species::MidsummerChorus => "a Midsummer Chorus",
+        }
+    }
+
     /// The saved name, which never changes.
     pub fn slug(self) -> &'static str {
         match self {

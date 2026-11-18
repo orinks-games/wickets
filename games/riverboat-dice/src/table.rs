@@ -236,18 +236,16 @@ impl TableScreen {
         let Who::Ai(o) = s.who else {
             return String::new();
         };
-        let state = match (s.seated, s.banked) {
+        let standing = match (s.seated, s.banked) {
             (true, _) => "seated".to_string(),
-            (false, Some(b)) if !n.over => format!("standing, banked {b}"),
+            (false, Some(b)) if !n.over => format!("standing with {b} banked"),
             _ => "standing".to_string(),
         };
-        format!(
-            "{}, {}: {}, {state}. {}",
-            o.title(),
-            sound::side_words(seat, self.opponents()),
-            s.night,
-            o.rule()
-        )
+        let who = o.title();
+        let side = sound::side_words(seat, self.opponents());
+        let night = s.night;
+        let rule = o.rule();
+        format!("{who}, {side}: {night}, {standing}. {rule}")
     }
 
     /// The last roll and what it did, for Repeat.
@@ -527,11 +525,9 @@ pub fn roll_story(n: &Night, report: &RollReport) -> String {
             text.push_str(" A one ended the landing.");
             let losers: Vec<usize> = report.lost.iter().map(|&(i, _)| i).collect();
             if !losers.is_empty() && report.pot > 0 {
-                text.push_str(&format!(
-                    " {} lost {}.",
-                    sentence_start(&n.names(&losers)),
-                    report.pot
-                ));
+                let who = sentence_start(&n.names(&losers));
+                let pot = report.pot;
+                text.push_str(&format!(" {who} lost {pot}."));
             }
         }
         Some(LandingEnd::Snag) => {
@@ -561,8 +557,8 @@ pub fn roll_story(n: &Night, report: &RollReport) -> String {
 }
 
 /// "first", "second"...
-pub fn place_word(place: usize) -> &'static str {
-    match place {
+pub fn place_word(spot: usize) -> &'static str {
+    match spot {
         1 => "first",
         2 => "second",
         3 => "third",
@@ -598,20 +594,20 @@ pub fn outcome_words(night: &Night) -> String {
             night.seats[top].night
         )
     };
-    let place = night.place();
-    let place = if place == night.seats.len() {
+    let spot = night.place();
+    let spot = if spot == night.seats.len() {
         "last"
     } else {
-        place_word(place)
+        place_word(spot)
     };
     let level: Vec<usize> = (0..night.seats.len())
         .filter(|&i| i != YOU && night.seats[i].night == mine)
         .collect();
     if level.is_empty() {
-        format!("{lead}. You came {place} with {mine}.")
+        format!("{lead}. You came {spot} with {mine}.")
     } else {
         format!(
-            "{lead}. You came {place} with {mine}, level with {}.",
+            "{lead}. You came {spot} with {mine}, level with {}.",
             night.names(&level)
         )
     }
@@ -864,8 +860,8 @@ impl State<Parlor> for TableScreen {
         );
         if let Some(job) = &self.job {
             now.push_str(&format!(
-                " This is the {} challenge, {}. Leaving from the pause menu does not count it.",
-                job.period.label().to_lowercase(),
+                " This is the {}, {}. Leaving from the pause menu does not count it.",
+                job.period.challenge_title().to_lowercase(),
                 challenge::name(job.period)
             ));
         }

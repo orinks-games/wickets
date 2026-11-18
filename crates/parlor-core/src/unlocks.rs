@@ -249,7 +249,11 @@ impl<G: UnlockGame> Menu for UnlocksMenu<G> {
                     .iter()
                     .find(|u| u.group == group && !earned.contains(u.id));
                 let help = match next {
-                    Some(u) => format!("Next: {}, {}", u.name, lower_first(&u.rule)),
+                    // The rule stays a sentence of its own, so it translates.
+                    Some(u) => {
+                        let (name, rule) = (&u.name, &u.rule);
+                        format!("Next: {name}. {rule}")
+                    }
                     None => "Every one earned.".to_string(),
                 };
                 MenuItem::new(
@@ -268,15 +272,6 @@ impl<G: UnlockGame> Menu for UnlocksMenu<G> {
             .help(format!("Return to the {} title.", G::NAME)),
         );
         items
-    }
-}
-
-/// "clear floor 15." from "Clear floor 15.", to follow a comma.
-fn lower_first(s: &str) -> String {
-    let mut chars = s.chars();
-    match chars.next() {
-        Some(c) => c.to_lowercase().collect::<String>() + chars.as_str(),
-        None => String::new(),
     }
 }
 
@@ -328,7 +323,7 @@ impl<G: UnlockGame> Menu for UnlockGroup<G> {
         for u in list {
             if earned.contains(u.id) {
                 let label = match G::state(ctx, &u) {
-                    Some(state) => format!("{}: {state}", u.name),
+                    Some(status) => format!("{}: {status}", u.name),
                     None => u.name.clone(),
                 };
                 let help = u.about.clone();
@@ -462,7 +457,7 @@ mod tests {
         assert_eq!(rows(&h), ["Diary pages, 0 of 2", "Curses, 0 of 1", "Back"]);
         h.clear();
         h.press(Key::F1);
-        assert_eq!(h.spoken(), ["Next: Diary page 1, clear floor 5."]);
+        assert_eq!(h.spoken(), ["Next: Diary page 1. Clear floor 5."]);
         h.press(Key::Return);
         assert_eq!(
             rows(&h),

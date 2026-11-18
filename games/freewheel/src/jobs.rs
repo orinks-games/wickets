@@ -2,7 +2,6 @@
 //! timed ride paid in dollars. Full pay on time, half pay late.
 
 use hearken::menu::{Menu, MenuCore, MenuItem};
-use hearken::text::sentence_start;
 use hearken::Ctx;
 use parlor_core::menus::labels;
 use parlor_core::{Parlor, Rng};
@@ -97,9 +96,10 @@ impl Job {
         }
     }
 
-    /// "The bakery to the library".
+    /// "From the bakery to the library".
     pub fn title(&self) -> String {
-        sentence_start(&format!("{} to {}", self.from, self.to))
+        let (from, to) = (self.from, self.to);
+        format!("From {from} to {to}")
     }
 }
 

@@ -318,7 +318,9 @@ impl Haunt {
                 } else {
                     String::new()
                 };
-                format!("A séance, {n} sounds in order.{which} {r} replays them.{decoys}")
+                let head = format!("A séance, {n} sounds in order.");
+                let replay = format!("{r} replays them.");
+                format!("{head}{which} {replay}{decoys}")
             }
         }
     }
@@ -410,7 +412,8 @@ impl Haunt {
         }
         if room.mimics() > 0 {
             if self.first("mimic") {
-                out.push_str(" Mimics here: copies that hop about. The real thing keeps still.");
+                out.push_str(" Mimics here: copies that hop about.");
+                out.push_str(" The real thing keeps still.");
             } else if room.mimics() == 1 {
                 out.push_str(" A mimic is here.");
             } else {
@@ -605,11 +608,12 @@ impl Haunt {
             (false, true) => "Mirrored.",
             _ => "",
         };
-        let puzzle = format!(
-            "Puzzle: {}{}.",
-            room.puzzle.kind_name(),
-            if room.solved { ", solved" } else { "" }
-        );
+        let kind_name = room.puzzle.kind_name();
+        let puzzle = if room.solved {
+            format!("Puzzle: {kind_name}, solved.")
+        } else {
+            format!("Puzzle: {kind_name}.")
+        };
         let held = run
             .inventory
             .get(run.selected)
@@ -797,7 +801,7 @@ impl Haunt {
                             sentence_start(&st)
                         ));
                     } else {
-                        ctx.say(format!("{} wall.", sentence_start(side.name())));
+                        ctx.say(format!("{side} wall.", side = sentence_start(side.name())));
                     }
                 }
                 Ev::Hole(side) => {
@@ -978,10 +982,9 @@ impl Haunt {
                 }
                 Ev::Hint(text) => {
                     sound::play(ctx, sound::HINT);
-                    ctx.say(format!(
-                        "{text} {} spent.",
-                        sentence_start(&clock_words(self.run.spec.hint_cost))
-                    ));
+                    let cost = sentence_start(&clock_words(self.run.spec.hint_cost));
+                    let spent = format!("{cost} spent.");
+                    ctx.say(format!("{text} {spent}"));
                 }
                 Ev::Emit { item, dx, dy } => {
                     let s = self.play_at(ctx, sound::item(item), dx, dy);
@@ -1238,7 +1241,10 @@ impl Haunt {
                 }
                 Ev::Warning(secs) => {
                     sound::play(ctx, sound::TOLL);
-                    ctx.say(format!("{} left.", sentence_start(&clock_words(secs))));
+                    ctx.say(format!(
+                        "{time} left.",
+                        time = sentence_start(&clock_words(secs))
+                    ));
                 }
                 Ev::FloorCleared {
                     number,
@@ -1327,7 +1333,7 @@ impl Haunt {
             pages.push(page);
         }
         let room = run.current().name;
-        let where_ = if run.spec.seance {
+        let floor = if run.spec.seance {
             "in the hidden wing".to_string()
         } else {
             format!("on floor {}", run.spec.number)
@@ -1336,7 +1342,8 @@ impl Haunt {
             Outcome::Escaped => match run.mode {
                 // One floor: its page just gave the time.
                 Mode::Challenge(e) if timed && e.first == e.last => {
-                    format!("{} survived.", challenge_name(e.period))
+                    let challenge = challenge_name(e.period);
+                    format!("{challenge} survived.")
                 }
                 Mode::Challenge(e) => format!(
                     "{} survived in {}.",
@@ -1371,10 +1378,10 @@ impl Haunt {
                 ),
             },
             Outcome::TimeUp => {
-                format!("The haunt clock strikes zero {where_}, in {room}. The house keeps you.")
+                format!("The haunt clock strikes zero {floor}, in {room}. The house keeps you.")
             }
             Outcome::ChasedOut => format!(
-                "Out of courage, you run screaming from {room} {where_}, and out of the house."
+                "Out of courage, you run screaming from {room} {floor}, and out of the house."
             ),
         };
         let depth = match run.mode {
@@ -1421,9 +1428,14 @@ impl Haunt {
             1 => " 1 curse on, a quarter more score.".to_string(),
             n => format!(" {n} curses on, {n} quarters more score."),
         };
+        let evaded = run.ghosts_evaded;
+        let evaded = format!("Ghosts evaded: {evaded}.");
+        let caught = run.times_caught;
+        let caught = format!("Caught: {caught}.");
+        let hints = run.hints;
+        let hints = format!("Hints: {hints}.");
         pages.push(format!(
-            "{first}{depth}{halloween} {score}{curses} Ghosts evaded: {}. Caught: {}. Hints: {}.",
-            run.ghosts_evaded, run.times_caught, run.hints
+            "{first}{depth}{halloween} {score}{curses} {evaded} {caught} {hints}"
         ));
         if run.floor_times.len() > 1 {
             let times: Vec<String> = run
@@ -1592,17 +1604,29 @@ fn floor_page(number: u32, time: f64, bonus: u64, score: u64, saved: FloorSaved)
         time_short(time)
     );
     // A relaxed time goes on its own list, and says so.
-    let relaxed = if saved.relaxed { " relaxed" } else { "" };
+    let relaxed = saved.relaxed;
     match (saved.record, saved.previous) {
-        (true, Some(prev)) => line.push_str(&format!(
-            " A new{relaxed} best time for this floor, beating {}.",
-            time_short(prev)
-        )),
-        (true, None) => line.push_str(&format!(" Your first{relaxed} time on this floor.")),
-        (false, Some(prev)) => line.push_str(&format!(
-            " Your{relaxed} best here is {}.",
-            time_short(prev)
-        )),
+        (true, Some(prev)) => {
+            let previous = time_short(prev);
+            line.push_str(&if relaxed {
+                format!(" A new relaxed best time for this floor, beating {previous}.")
+            } else {
+                format!(" A new best time for this floor, beating {previous}.")
+            })
+        }
+        (true, None) => line.push_str(if relaxed {
+            " Your first relaxed time on this floor."
+        } else {
+            " Your first time on this floor."
+        }),
+        (false, Some(prev)) => {
+            let best = time_short(prev);
+            line.push_str(&if relaxed {
+                format!(" Your relaxed best here is {best}.")
+            } else {
+                format!(" Your best here is {best}.")
+            })
+        }
         _ => {}
     }
     if let Some(next) = saved.opened {
@@ -1972,9 +1996,9 @@ impl State<Parlor> for Haunt {
                     ""
                 };
                 format!(
-                    "{}, a {} challenge.{twist}{carry} ",
+                    "{}, the {}.{twist}{carry} ",
                     challenge_name(e.period),
-                    e.period.label().to_lowercase()
+                    e.period.challenge_title().to_lowercase()
                 )
             }
             None => String::new(),

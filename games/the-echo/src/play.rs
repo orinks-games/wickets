@@ -144,13 +144,12 @@ impl Tuning {
     pub fn pipe_words(&self) -> String {
         let r = &self.rank;
         let p = r.pipe();
-        let state = if p.tuned { ", in tune" } else { "" };
-        format!(
-            "Pipe {} of {}, {}{state}.",
-            r.cur + 1,
-            r.pipes.len(),
-            note_name(p.note)
-        )
+        let (pipe, of, note) = (r.cur + 1, r.pipes.len(), note_name(p.note));
+        if p.tuned {
+            format!("Pipe {pipe} of {of}, {note}, in tune.")
+        } else {
+            format!("Pipe {pipe} of {of}, {note}.")
+        }
     }
 
     /// The status key, in layers. First: the pipe, whether it wobbles,
@@ -158,14 +157,9 @@ impl Tuning {
     pub fn status_layers(&self) -> Vec<String> {
         let r = &self.rank;
         let p = r.pipe();
-        let state = if p.tuned { "in tune" } else { "wobbling" };
-        let first = format!(
-            "Pipe {} of {}, {state}, {} of {} in tune.",
-            r.cur + 1,
-            r.pipes.len(),
-            r.tuned(),
-            r.pipes.len()
-        );
+        let tuning = if p.tuned { "in tune" } else { "wobbling" };
+        let (pipe, of, tuned) = (r.cur + 1, r.pipes.len(), r.tuned());
+        let first = format!("Pipe {pipe} of {of}, {tuning}, {tuned} of {of} in tune.");
         let more = if self.mode == Mode::Practice {
             format!("{}, no score kept.", self.mode.name())
         } else {
@@ -562,8 +556,8 @@ impl State<Parlor> for Tuning {
         let mut text = format!("{} {}", self.pipe_words(), self.controls(ctx));
         if let Some(ch) = &self.challenge {
             text.push_str(&format!(
-                " This is the {} challenge, {}. Leaving from the pause menu does not count the rank.",
-                ch.period.label().to_lowercase(),
+                " This is the {}, {}. Leaving from the pause menu does not count the rank.",
+                ch.period.challenge_title().to_lowercase(),
                 challenge::name(ch.period)
             ));
         }

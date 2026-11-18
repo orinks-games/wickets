@@ -64,7 +64,12 @@ pub fn state(h: &SavedHappening) -> &'static str {
 }
 
 pub fn label(h: &SavedHappening) -> String {
-    format!("Happening: {}{}", what(h), state(h))
+    let what = what(h);
+    match state(h) {
+        ": done" => format!("Happening: {what}: done"),
+        ": missed" => format!("Happening: {what}: missed"),
+        _ => format!("Happening: {what}"),
+    }
 }
 
 pub fn stamp_line(stamps: u32, _met_host: bool) -> String {

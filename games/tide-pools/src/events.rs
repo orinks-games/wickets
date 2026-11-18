@@ -72,22 +72,22 @@ impl Event {
     /// When it next opens: "Tuesday 24 November, in 26 days".
     fn next_words(self, date: Date) -> String {
         match almanac::next_day(date, 800, |d| self.is_open(d)) {
-            Some((day, days)) => format!(
-                "{}, {}",
-                almanac::date_words(day),
-                parlor_core::calendar::days_phrase(days)
-            ),
+            Some((day, days)) => {
+                let date = almanac::date_words(day);
+                let days = parlor_core::calendar::days_phrase(days);
+                format!("{date}, {days}")
+            }
             None => "later".to_string(),
         }
     }
 
     /// What Enter on its locked row says.
     pub fn locked_line(self, date: Date) -> String {
-        let verb = match self {
-            Event::KingTide => "opens",
-            Event::Moonlit => "open",
-        };
-        format!("{} {verb} {}.", self.name(), self.next_words(date))
+        let when = self.next_words(date);
+        match self {
+            Event::KingTide => format!("King tide opens {when}."),
+            Event::Moonlit => format!("Moonlit pools open {when}."),
+        }
     }
 
     /// Its locked row's help.

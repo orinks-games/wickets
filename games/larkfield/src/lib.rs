@@ -186,11 +186,14 @@ impl TitleGame for Larkfield {
                     h.season().name(),
                     h.year()
                 ),
-                format!(
-                    "Back to your hamlet. {} {} live there.",
-                    h.settlers.len(),
-                    if h.settlers.len() == 1 { "settler" } else { "settlers" }
-                ),
+                {
+                    let settlers = h.settlers.len();
+                    if settlers == 1 {
+                        "Back to your hamlet. 1 settler lives there.".to_string()
+                    } else {
+                        format!("Back to your hamlet. {settlers} settlers live there.")
+                    }
+                },
             ),
             None => (
                 format!("{}, a new hamlet", pm::labels::PLAY),
@@ -275,7 +278,7 @@ impl TitleGame for Larkfield {
             ),
             pm::settings::toggle(
                 "larkfield_band",
-                |on| format!("Settlers' tune: {}", if on { "on" } else { "off" }),
+                |on| if on { "Settlers' tune: on".to_string() } else { "Settlers' tune: off".to_string() },
                 |ctx| Progress::peek(ctx).band,
                 |ctx, on| {
                     let mut p = Progress::load(ctx);
@@ -287,7 +290,7 @@ impl TitleGame for Larkfield {
             ),
             pm::settings::toggle(
                 "larkfield_work_sounds",
-                |on| format!("Work from along the lane: {}", if on { "on" } else { "off" }),
+                |on| if on { "Work from along the lane: on".to_string() } else { "Work from along the lane: off".to_string() },
                 |ctx| Progress::peek(ctx).work_sounds,
                 |ctx, on| {
                     let mut p = Progress::load(ctx);

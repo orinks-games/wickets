@@ -242,10 +242,10 @@ pub fn finish_job(ctx: &mut Ctx<Parlor>, ch: &Challenge, job: &Job, last: &Night
     vec![
         first,
         format!(
-            "{} result: {score} points. {} A {streak} {} streak. {}",
+            "{} result: {score} points. {} {} {}",
             ch.title(),
             score_line(result),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ]

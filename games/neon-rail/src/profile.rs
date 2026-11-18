@@ -491,16 +491,19 @@ impl Profile {
                 self.extractions,
                 self.next_rank_line()
             ),
-            format!(
-                "Story logs recovered {} of {}. {}",
-                self.logs_recovered(),
-                total_logs(),
+            {
+                let logs_recovered = self.logs_recovered();
+                let total_logs = total_logs();
                 if self.tutorial_complete {
-                    "Tutorial complete."
+                    format!(
+                        "Story logs recovered {logs_recovered} of {total_logs}. Tutorial complete."
+                    )
                 } else {
-                    "Tutorial not complete."
+                    format!(
+                        "Story logs recovered {logs_recovered} of {total_logs}. Tutorial not complete."
+                    )
                 }
-            ),
+            },
             format!("Rank bonuses. {}", self.rank_bonuses()),
             format!(
                 "{fitted} Rail gun kills {} of {ACE_KILLS} for the Ace gunner licence. {modes}",

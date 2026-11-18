@@ -12,7 +12,7 @@ use parlor_core::{challenges, Challenge, Pages, Parlor, ParlorAction, Period, Re
 use crate::birds::Kind;
 use crate::challenge::{self, CHALLENGES_NAME};
 use crate::guide::{self, Guide};
-use crate::rules::{compass, run_seed, sector_words, turn_words, Chorus, ChorusEv};
+use crate::rules::{compass, is_at_words, run_seed, turn_words, Chorus, ChorusEv};
 use crate::walk::END_PAUSE;
 use crate::{days, sound, HELP, ID, TITLE_NAME};
 
@@ -115,7 +115,11 @@ impl ChorusScreen {
                 if turn.is_empty() {
                     format!("The {} is straight ahead. Pick it now.", t.name)
                 } else {
-                    format!("The {} is {}. {turn}", t.name, sector_words(s))
+                    {
+                        let bird = format!("The {}", t.name);
+                        let at = is_at_words(&bird, s);
+                        format!("{at}. {turn}")
+                    }
                 }
             }
             _ => "Every bird is found.".to_string(),

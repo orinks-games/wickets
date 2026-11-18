@@ -201,7 +201,11 @@ impl CountScreen {
             .flocks
             .iter()
             .zip(&self.count.guesses)
-            .map(|(f, g)| format!("{} {}, you counted {g}", f.size, plural(f.species.name)))
+            .map(|(f, g)| {
+                let size = f.size;
+                let birds = plural(f.species.name);
+                format!("{size} {birds}, you counted {g}")
+            })
             .collect();
         let mut pages = vec![summary.clone()];
         if !tally.is_empty() {
@@ -263,6 +267,16 @@ impl CountScreen {
 
 /// "Canada geese", "sandhill cranes", "whooper swans".
 pub fn plural(name: &str) -> String {
+    let whole = match name {
+        "Canada goose" => "Canada geese",
+        "sandhill crane" => "sandhill cranes",
+        "whooper swan" => "whooper swans",
+        "pink-footed goose" => "pink-footed geese",
+        _ => "",
+    };
+    if !whole.is_empty() {
+        return whole.to_string();
+    }
     if let Some(stem) = name.strip_suffix("goose") {
         format!("{stem}geese")
     } else {

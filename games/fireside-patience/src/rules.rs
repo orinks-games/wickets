@@ -12,7 +12,6 @@ use std::cell::Cell;
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 
-use hearken::text::sentence_start;
 use parlor_core::Rng;
 
 thread_local! {
@@ -117,17 +116,24 @@ impl Card {
 
     /// "6 of hearts", "ace of spades", as it reads mid-sentence.
     pub fn name(self) -> String {
-        format!("{} of {}", rank_words(self.rank), self.suit.name())
+        let rank_words = rank_words(self.rank);
+        match self.suit {
+            Suit::Hearts => format!("{rank_words} of hearts"),
+            Suit::Diamonds => format!("{rank_words} of diamonds"),
+            Suit::Clubs => format!("{rank_words} of clubs"),
+            Suit::Spades => format!("{rank_words} of spades"),
+        }
     }
 
     /// "6 of hearts, red", as navigation reads a card.
     pub fn name_and_colour(self) -> String {
-        format!(
-            "{} of {}, {}",
-            rank_words(self.rank),
-            self.suit.name(),
-            self.suit.colour()
-        )
+        let rank_words = rank_words(self.rank);
+        match self.suit {
+            Suit::Hearts => format!("{rank_words} of hearts, red"),
+            Suit::Diamonds => format!("{rank_words} of diamonds, red"),
+            Suit::Clubs => format!("{rank_words} of clubs, black"),
+            Suit::Spades => format!("{rank_words} of spades, black"),
+        }
     }
 
     /// Whether this card may go on `under` in a pile: one lower, in the
@@ -221,34 +227,31 @@ impl Refusal {
             Refusal::TooMany => "Only face-up cards move.".to_string(),
             Refusal::OneAtATime => "Only one card at a time goes on a foundation.".to_string(),
             Refusal::SameSpot => "That is where the cards came from.".to_string(),
-            Refusal::KingOnly(card) => format!(
-                "{} cannot go on an empty pile. Only a king goes there.",
-                sentence_start(&format!("the {}", card.name()))
-            ),
+            Refusal::KingOnly(card) => {
+                let card = card.name();
+                format!("The {card} cannot go on an empty pile. Only a king goes there.")
+            }
             Refusal::Mismatch { card, onto } => {
-                let lead = format!(
-                    "{} cannot go on the {}.",
-                    sentence_start(&format!("the {}", card.name())),
-                    onto.name()
-                );
+                let (name, onto) = (card.name(), onto.name());
                 if card.rank == KING {
-                    format!("{lead} A king goes only on an empty pile.")
+                    format!("The {name} cannot go on the {onto}. A king goes only on an empty pile.")
                 } else {
-                    let need = if card.red() { "black" } else { "red" };
-                    format!("{lead} It needs a {need} {}.", rank_words(card.rank + 1))
+                    let need = rank_words(card.rank + 1);
+                    if card.red() {
+                        format!("The {name} cannot go on the {onto}. It needs a black {need}.")
+                    } else {
+                        format!("The {name} cannot go on the {onto}. It needs a red {need}.")
+                    }
                 }
             }
-            Refusal::NotNext { card, next } => format!(
-                "{} cannot go up yet. The {} foundation needs the {} next.",
-                sentence_start(&format!("the {}", card.name())),
-                card.suit.name(),
-                rank_words(next)
-            ),
-            Refusal::WrongSuit { card } => format!(
-                "{} goes on the {} foundation.",
-                sentence_start(&format!("the {}", card.name())),
-                card.suit.name()
-            ),
+            Refusal::NotNext { card, next } => {
+                let (name, suit, next) = (card.name(), card.suit.name(), rank_words(next));
+                format!("The {name} cannot go up yet. The {suit} foundation needs the {next} next.")
+            }
+            Refusal::WrongSuit { card } => {
+                let (name, suit) = (card.name(), card.suit.name());
+                format!("The {name} goes on the {suit} foundation.")
+            }
             Refusal::StockEmpty => "The stock is empty, and nothing is turned up.".to_string(),
             Refusal::Won => "Every card is on the foundations.".to_string(),
         }

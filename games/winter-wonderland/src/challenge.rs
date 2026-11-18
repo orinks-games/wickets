@@ -315,19 +315,35 @@ pub fn briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
 pub fn result_line(ctx: &mut Ctx<Parlor>, plan: &Plan, pace: Pace, score: u64) -> String {
     let ch = &plan.challenge;
     let result = Challenges::submit_at(ctx, ch, pace, score);
-    let r = crate::progress::relaxed_word(pace);
+    let relaxed = pace.separate();
     let line = match result {
-        ScoreResult::First => format!("Your first {r}result on this challenge: {score}."),
-        ScoreResult::NewBest { previous } => {
-            format!("A new {r}best. The old {r}best was {previous}.")
+        ScoreResult::First => {
+            if relaxed {
+                format!("Your first relaxed result on this challenge: {score}.")
+            } else {
+                format!("Your first result on this challenge: {score}.")
+            }
         }
-        ScoreResult::Short { best } => format!("Your {r}best on this challenge is {best}."),
+        ScoreResult::NewBest { previous } => {
+            if relaxed {
+                format!("A new relaxed best. The old relaxed best was {previous}.")
+            } else {
+                format!("A new best. The old best was {previous}.")
+            }
+        }
+        ScoreResult::Short { best } => {
+            if relaxed {
+                format!("Your relaxed best on this challenge is {best}.")
+            } else {
+                format!("Your best on this challenge is {best}.")
+            }
+        }
     };
     let streak = Challenges::streak(ctx, ID, ch.period).max(1);
     format!(
-        "{} score {score}. {line} A {streak} {} streak. {}",
+        "{} score {score}. {line} {} {}",
         ch.title(),
-        ch.period.unit(),
+        ch.period.streak_sentence(streak),
         ch.resets()
     )
 }

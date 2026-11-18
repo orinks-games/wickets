@@ -175,7 +175,9 @@ pub fn total_songs() -> u32 {
 
 /// "on the woodland trail in autumn".
 pub fn where_when(trail: Trail, season: Season) -> String {
-    format!("on the {} in {}", trail.name(), season.name())
+    let trail = trail.name();
+    let season = season.name();
+    format!("on the {trail} in {season}")
 }
 
 /// Where a bird that is not on any trail is met.

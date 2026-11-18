@@ -96,12 +96,10 @@ pub fn rule(plan: &Plan) -> String {
         1 => " One draught blows a lamp out on the way.".to_string(),
         n => format!(" {n} draughts blow lamps out on the way."),
     };
-    format!(
-        "A hall of {} steps with {} out. The taper burns for {}.{draughts}",
-        l.length,
-        lamps_words(l.out),
-        time_words(plan.taper_secs())
-    )
+    let steps = l.length;
+    let lamps = lamps_words(l.out);
+    let taper = time_words(plan.taper_secs());
+    format!("A hall of {steps} steps with {lamps} out. The taper burns for {taper}.{draughts}")
 }
 
 /// The game's side of the shared challenges menu.
@@ -145,11 +143,10 @@ impl ChallengeGame for Halls {
 pub fn briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
     let ch = Challenge::current(ctx, ID, period);
     let plan = Plan::for_challenge(&ch);
-    let pages = vec![format!(
-        "{}: {} Light them all on the first taper for a bonus.",
-        name(period),
-        rule(&plan)
-    )];
+    let name = name(period);
+    let rule = rule(&plan);
+    let bonus = "Light them all on the first taper for a bonus.";
+    let pages = vec![format!("{name}: {rule} {bonus}")];
     let mut ch = Some(ch);
     Pages::briefing(pages).then(move |ctx| {
         if let Some(ch) = ch.take() {
@@ -234,11 +231,11 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, hall: &Hall) -> Vec<String>
     vec![
         crate::play::lit_line(hall),
         format!(
-            "{} result: {}. {} A {streak} {} streak. {}",
+            "{} result: {}. {} {} {}",
             ch.title(),
             points_words(hall.score),
             score_line(result),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ]

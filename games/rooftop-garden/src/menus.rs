@@ -5,10 +5,12 @@ use hearken::{Bus, Ctx, Sound, State, Vec3};
 use parlor_core::menus::{self, labels, ChallengeGame};
 use parlor_core::{Challenge, Parlor, Period};
 
+use crate::breeding::{self, Keepsake, Variety};
 use crate::cues::{self, Play, SOUND_CHECK};
 use crate::rules::{number, sentence, Garden, Goal, Species};
-use crate::breeding::{self, Keepsake, Variety};
-use crate::screens::{challenge_briefing, challenge_twist, load_collection, period_text, GARDEN_KEY};
+use crate::screens::{
+    challenge_briefing, challenge_twist, load_collection, period_text, GARDEN_KEY,
+};
 use crate::song::{Chord, Part};
 use crate::ID;
 
@@ -241,7 +243,9 @@ impl Menu for SeedShed {
                 }
             })
             .select_sound(None)
-            .help("What your neighbours would like from your harvests. Each one filled earns a star."),
+            .help(
+                "What your neighbours would like from your harvests. Each one filled earns a star.",
+            ),
         );
         items.push(
             MenuItem::new(labels::BACK, |_m: &mut Self, ctx: &mut Ctx<Parlor>| {
@@ -395,11 +399,12 @@ impl Menu for Keepsakes {
                     format!("{}: {}", sentence(k.name()), k.about())
                 } else {
                     let n = k.stars().saturating_sub(stars).max(1);
-                    format!(
-                        "{}, locked: {n} more {}",
-                        sentence(k.name()),
-                        if n == 1 { "star" } else { "stars" }
-                    )
+                    let keepsake = sentence(k.name());
+                    if n == 1 {
+                        format!("{keepsake}, locked: 1 more star")
+                    } else {
+                        format!("{keepsake}, locked: {n} more stars")
+                    }
                 };
                 MenuItem::new(label, move |_m: &mut Self, ctx: &mut Ctx<Parlor>| {
                     ctx.say(k.about())

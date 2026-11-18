@@ -69,8 +69,6 @@ impl Mode {
     }
 }
 
-/// How a letter's writer is named: "Milo, age 6, writes".
-pub const WRITES: &str = "writes";
 
 /// The story's opening pages.
 pub fn story_intro(blizzard: bool) -> Vec<String> {

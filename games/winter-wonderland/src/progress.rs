@@ -131,26 +131,33 @@ pub fn record(ctx: &mut Ctx<Parlor>, board: &str, score: u64) -> String {
     record_at(ctx, board, Pace::Normal, score)
 }
 
-/// "relaxed " for a relaxed run, whose scores are kept apart.
-pub fn relaxed_word(pace: Pace) -> &'static str {
-    if pace.separate() {
-        "relaxed "
-    } else {
-        ""
-    }
-}
-
 /// Records `score` from a run at `pace` on `base`'s board for that pace,
 /// and says how it went. A score of 0 goes on no board.
 pub fn record_at(ctx: &mut Ctx<Parlor>, base: &str, pace: Pace, score: u64) -> String {
-    let r = relaxed_word(pace);
+    let relaxed = pace.separate();
     match parlor_core::pace::record(ctx, ID, &pace.board(base), score) {
         None => NO_BOARD.to_string(),
-        Some(ScoreResult::First) => format!("Your first {r}score here is saved."),
-        Some(ScoreResult::NewBest { previous }) => {
-            format!("A new {r}best. The old {r}best was {previous}.")
+        Some(ScoreResult::First) => {
+            if relaxed {
+                "Your first relaxed score here is saved.".to_string()
+            } else {
+                "Your first score here is saved.".to_string()
+            }
         }
-        Some(ScoreResult::Short { best }) => format!("Your {r}best is {best}."),
+        Some(ScoreResult::NewBest { previous }) => {
+            if relaxed {
+                format!("A new relaxed best. The old relaxed best was {previous}.")
+            } else {
+                format!("A new best. The old best was {previous}.")
+            }
+        }
+        Some(ScoreResult::Short { best }) => {
+            if relaxed {
+                format!("Your relaxed best is {best}.")
+            } else {
+                format!("Your best is {best}.")
+            }
+        }
     }
 }
 

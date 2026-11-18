@@ -211,17 +211,16 @@ pub fn challenge_briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
         Period::Weekly => "This week's garden",
         Period::Monthly => "The rooftop festival",
     };
-    let plan = period_text(period).trim_start_matches("A festival garden: ");
+    let plan = match period {
+        Period::Monthly => "12 planters, 10 days to bring all 6 voices into a full chorus.",
+        _ => period_text(period),
+    };
     let twist_text = match twist {
         Twist::Festival => twist.describe().to_string(),
         _ => {
-            let d = twist.describe();
-            let mut c = d.chars();
-            let first = c
-                .next()
-                .map(|f| f.to_lowercase().collect::<String>())
-                .unwrap_or_default();
-            format!("Twist, {}: {first}{}", twist.name(), c.as_str())
+            // The description stays as written, so it translates whole.
+            let (name, describe) = (twist.name(), twist.describe());
+            format!("Twist, {name}. {describe}")
         }
     };
     let goal = match garden.goal {
@@ -233,8 +232,14 @@ pub fn challenge_briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
         None => String::new(),
     };
     let pages = vec![format!(
-        "{back}{name}: {plan} {twist_text}{goal} Leaving from the pause menu keeps the garden until the {} is over.",
-        period.unit(),
+        "{back}{name}: {plan} {twist_text}{goal} {}",
+        match period {
+            Period::Daily => "Leaving from the pause menu keeps the garden until the day is over.",
+            Period::Weekly =>
+                "Leaving from the pause menu keeps the garden until the week is over.",
+            Period::Monthly =>
+                "Leaving from the pause menu keeps the garden until the month is over.",
+        },
     )];
     let mut slot = Some((garden, challenge));
     Pages::briefing(pages).then(move |ctx| {
@@ -720,7 +725,7 @@ impl RunScreen {
             }
             let streak = Challenges::streak(ctx, ID, c.period);
             if streak > 0 {
-                line.push_str(&format!(" A {streak} {} streak.", c.period.unit()));
+                line.push_str(&format!(" {}", c.period.streak_sentence(streak)));
             }
             line.push(' ');
             line.push_str(&c.resets());
@@ -783,14 +788,14 @@ impl RunScreen {
                 self.seed.set(None);
                 self.pumpkin.set(false);
                 ctx.audio.pause_all();
-                let place = self.garden.place(self.garden.here());
+                let spot = self.garden.place(self.garden.here());
                 let choices = self
                     .garden
                     .seeds
                     .iter()
                     .map(|&s| self.garden.book.varieties(s))
                     .collect();
-                let mut menu = SeedMenu::new(choices, place, self.seed.clone());
+                let mut menu = SeedMenu::new(choices, spot, self.seed.clone());
                 if self.garden.kind == Kind::Home {
                     // The season may have closed since the garden opened:
                     // no pumpkin seeds off their window.
@@ -1051,11 +1056,11 @@ pub struct SeedMenu {
 impl SeedMenu {
     pub fn new(
         seeds: Vec<Vec<Variety>>,
-        place: String,
+        spot: String,
         chosen: Rc<Cell<Option<Variety>>>,
     ) -> SeedMenu {
         SeedMenu {
-            menu: MenuCore::new(format!("Seeds for {place}")).with_intro_help(
+            menu: MenuCore::new(format!("Seeds for {spot}")).with_intro_help(
                 "Up and Down choose a seed, Enter plants it, Escape plants nothing.",
             ),
             seeds,

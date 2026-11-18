@@ -83,15 +83,21 @@ pub fn all_happenings(ctx: &mut Ctx<Parlor>) -> Vec<(GameInfo, Happening)> {
 }
 
 /// The first time the lobby opens, a word on today's events, or `None`:
-/// "Happening today: Nevermore Manor, the house stirs." for one, and
+/// "Happening today in Nevermore Manor: The house stirs." for one, and
 /// "6 events today, Nevermore Manor first." for more, so the line stays
 /// short on busy days. Happening today lists them all.
 pub fn happenings_line(ctx: &mut Ctx<Parlor>) -> Option<String> {
     let all = happenings(ctx);
     let (g, h) = all.first()?;
     Some(match all.len() {
-        1 => format!("Happening today: {}, {}.", g.name, after_comma(&h.title)),
-        n => format!("{n} events today, {} first.", g.name),
+        1 => {
+            let (game, event) = (g.name, &h.title);
+            format!("Happening today in {game}: {event}.")
+        }
+        n => {
+            let game = g.name;
+            format!("{n} events today, {game} first.")
+        }
     })
 }
 
@@ -255,6 +261,8 @@ impl Menu for Lobby {
     /// if the saved records had to start over, then names the events the
     /// games hold today.
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
+        // Before the lobby says anything, in the player's language.
+        parlor_core::voice_lines::follow_system_once(ctx);
         // A lobby made after the app started still gives Hearken the tracks.
         if ctx.soundtrack.tracks().is_empty() {
             parlor_core::soundtrack::refresh(ctx);
@@ -443,19 +451,21 @@ impl Menu for CategoryList {
                 if count == 0 {
                     return None;
                 }
-                let noun = if count == 1 { "game" } else { "games" };
                 let on = events
                     .iter()
                     .filter(|(g, _)| g.category == category)
                     .count();
-                let on = match on {
-                    0 => String::new(),
-                    1 => ", 1 event today".to_string(),
-                    n => format!(", {n} events today"),
+                let category_label = category.label();
+                let label = match (count, on) {
+                    (1, 0) => format!("{category_label}, 1 game"),
+                    (1, _) => format!("{category_label}, 1 game, 1 event today"),
+                    (_, 0) => format!("{category_label}, {count} games"),
+                    (_, 1) => format!("{category_label}, {count} games, 1 event today"),
+                    (_, _) => format!("{category_label}, {count} games, {on} events today"),
                 };
                 Some(
                     MenuItem::new(
-                        format!("{}, {count} {noun}{on}", category.label()),
+                        label,
                         move |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                             ctx.push(GameList::new(category))
                         },
@@ -659,7 +669,10 @@ impl Menu for GameList {
             .map(|g: GameInfo| {
                 let (label, help) = match happening(ctx, &g) {
                     Some(h) => (
-                        format!("{}, {} today", g.name, after_comma(&h.title)),
+                        {
+                            let (game, event) = (g.name, &h.title);
+                            format!("{game}, today: {event}")
+                        },
                         format!("{} {}", g.blurb, h.line),
                     ),
                     None => (g.name.to_string(), g.blurb.to_string()),
@@ -714,11 +727,13 @@ pub(crate) fn period_label(ctx: &mut Ctx<Parlor>, period: Period) -> String {
         .filter(|g| Challenges::done(ctx, &Challenge::current(ctx, g.id, period)))
         .count();
     let resets = Challenge::current(ctx, NAME, period).resets();
-    format!(
-        "{} challenges, {done} of {} done. {resets}",
-        period.label(),
-        games.len()
-    )
+    let total = games.len();
+    let count = match period {
+        Period::Daily => format!("Daily challenges, {done} of {total} done."),
+        Period::Weekly => format!("Weekly challenges, {done} of {total} done."),
+        Period::Monthly => format!("Monthly challenges, {done} of {total} done."),
+    };
+    format!("{count} {resets}")
 }
 
 /// What one period's challenges are.
@@ -793,7 +808,7 @@ impl ChallengeList {
     pub fn new(period: Period) -> Self {
         ChallengeList {
             period,
-            menu: MenuCore::new(format!("{} challenges", period.label())),
+            menu: MenuCore::new(period.challenges_title().to_string()),
         }
     }
 }

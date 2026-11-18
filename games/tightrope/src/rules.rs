@@ -374,7 +374,7 @@ impl Mode {
             Mode::Skyline => "Skyline run".into(),
             Mode::Night => "Night skyline".into(),
             Mode::Single(n) => format!("Crossing {n}"),
-            Mode::Challenge(p) => format!("{} challenge", p.label()),
+            Mode::Challenge(p) => p.challenge_title().to_string(),
         }
     }
 }
@@ -1360,7 +1360,7 @@ impl Run {
         } else if self.lives == 0 {
             "No lives left.".to_string()
         } else {
-            format!("{} left.", lives(self.lives))
+            format!("{lives} left.", lives = lives(self.lives))
         };
         self.say(format!("Fell {}, into the net. {lives}", side.name()));
         if self.lives == 0 && !self.training() {
@@ -1455,13 +1455,16 @@ impl Run {
             Phase::Crossed { .. } => format!("On the rooftop of {}.", level.to),
             Phase::Over { won: true } => "Run complete.".to_string(),
             Phase::Over { won: false } => "Run over.".to_string(),
-            Phase::Walking => format!(
-                "Step {} of {}, {}{}.",
-                self.pos,
-                level.steps,
-                lean_words(self.lean),
-                if self.crouched { ", crouching" } else { "" }
-            ),
+            Phase::Walking => {
+                let pos = self.pos;
+                let steps = level.steps;
+                let lean_words = lean_words(self.lean);
+                if self.crouched {
+                    format!("Step {pos} of {steps}, {lean_words}, crouching.")
+                } else {
+                    format!("Step {pos} of {steps}, {lean_words}.")
+                }
+            }
         }];
         if self.phase == Phase::Walking {
             if let Some(g) = &self.gust {

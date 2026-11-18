@@ -153,10 +153,11 @@ impl Freestyle {
     fn finish(&mut self, ctx: &mut Ctx<Parlor>) {
         let n = self.composer.launches.len();
         sound::react(ctx, if n == 0 { 30 } else { 100 });
-        let summary = format!(
-            "Freestyle show complete. You launched {n} firework{}.",
-            if n == 1 { "" } else { "s" }
-        );
+        let summary = if n == 1 {
+            "Freestyle show complete. You launched 1 firework.".to_string()
+        } else {
+            format!("Freestyle show complete. You launched {n} fireworks.")
+        };
         ctx.replace(FreestyleDone::new(summary, self.composer.launches.clone()));
     }
 }

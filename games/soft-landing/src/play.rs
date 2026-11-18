@@ -234,13 +234,10 @@ impl Descent {
             return vec![self.down_words(outcome)];
         }
         let first = if !f.started() {
-            format!(
-                "{}, waiting at {}, {}. {}",
-                self.where_words(),
-                units::length(f.altitude),
-                self.fuel_words(),
-                self.start_prompt(ctx)
-            )
+            let (moon, height) = (self.where_words(), units::length(f.altitude));
+            let (fuel, prompt) = (self.fuel_words(), self.start_prompt(ctx));
+            let waiting = format!("waiting at {height}");
+            format!("{moon}, {waiting}, {fuel}. {prompt}")
         } else {
             let s = f.speed();
             let motion = if s < -0.2 {
@@ -975,7 +972,11 @@ impl State<Parlor> for Descent {
             ),
             format!("Speed: {}", self.velocity_words()),
             format!("Fuel: {}", self.fuel_words()),
-            format!("Engine: {}", if f.engine { "on" } else { "off" }),
+            if f.engine {
+                "Engine: on".to_string()
+            } else {
+                "Engine: off".to_string()
+            },
             format!(
                 "Call-outs every {}",
                 units::count(shown_call_every(f.call_every, f.feet).into())
@@ -994,8 +995,8 @@ impl State<Parlor> for Descent {
         let mut text = format!("{now} {}", self.controls(ctx));
         if let Some(ch) = &self.challenge {
             text.push_str(&format!(
-                " This is the {} challenge, {}. Leaving from the pause menu does not count the run.",
-                ch.period.label().to_lowercase(),
+                " This is the {}, {}. Leaving from the pause menu does not count the run.",
+                ch.period.challenge_title().to_lowercase(),
                 challenge::name(ch.period)
             ));
         }

@@ -152,7 +152,7 @@ impl Bowl {
     /// standing, the score, then the board and aim.
     pub fn status(&self) -> Vec<String> {
         let s = &self.session;
-        let place = match (&s.kind, s.position()) {
+        let spot = match (&s.kind, s.position()) {
             (_, None) => "Game over.".to_string(),
             (Kind::Leaves(l), Some((n, _))) => {
                 format!("Leave {n} of {}, {} made.", l.len(), s.made)
@@ -179,7 +179,7 @@ impl Bowl {
         };
         vec![
             format!(
-                "{place} {} Board {}, {}.",
+                "{spot} {} Board {}, {}.",
                 self.rack_line(),
                 s.stand,
                 aim_words(s.aim)
@@ -222,7 +222,10 @@ impl Bowl {
             _ if roll.gutter => format!("Gutter ball. No pins.{left}"),
             _ if roll.knocked.is_empty() => format!("Missed every pin.{left}"),
             Mark::Split => format!("{} down, a split.{left}", roll.knocked.count()),
-            Mark::Open => format!("{} down.{left}", roll.knocked.count()),
+            Mark::Open => match roll.knocked.count() {
+                1 => format!("1 pin down.{left}"),
+                n => format!("{n} pins down.{left}"),
+            },
         };
         if leaves {
             let total = self.session.leaves().map_or(0, <[Rack]>::len);
@@ -435,19 +438,15 @@ pub fn hint_words(rack: Rack, stand: i32) -> String {
         return format!("Angle into the pocket: board {stand}, {}.", aim_words(aim));
     }
     let down = pinfall(rack, &Line::new(stand, aim, 0.0)).count();
-    let all = if down == rack.count() {
-        if down == 1 {
-            "the pin".to_string()
-        } else {
-            format!("all {down}")
-        }
+    let (aim, count) = (aim_words(aim), rack.count());
+    // Whole sentences, so each one translates.
+    if down == count && down == 1 {
+        format!("Try board {stand}, {aim}. A clean release there should take the pin.")
+    } else if down == count {
+        format!("Try board {stand}, {aim}. A clean release there should take all {down}.")
     } else {
-        format!("{} of {}", down, rack.count())
-    };
-    format!(
-        "Try board {stand}, {}. A clean release there should take {all}.",
-        aim_words(aim)
-    )
+        format!("Try board {stand}, {aim}. A clean release there should take {down} of {count}.")
+    }
 }
 
 /// A frame as the debrief reads it: "strike", "7, spare", "7 and 2".
@@ -737,8 +736,8 @@ impl State<Parlor> for Bowl {
         let mut text = format!("{now} {}", self.controls(ctx));
         if let Some(ch) = &self.challenge {
             text.push_str(&format!(
-                " This is the {} challenge, {}. Leaving from the pause menu does not count the run.",
-                ch.period.label().to_lowercase(),
+                " This is the {}, {}. Leaving from the pause menu does not count the run.",
+                ch.period.challenge_title().to_lowercase(),
                 challenge::name(ch.period)
             ));
         }

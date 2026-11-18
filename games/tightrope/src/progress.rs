@@ -91,23 +91,36 @@ pub fn save_run(ctx: &mut Ctx<Parlor>, run: &Run, pace: Pace) -> Vec<String> {
         return lines;
     }
     let board = pace.board(&run.mode.board());
-    let relaxed = if pace.separate() { "relaxed " } else { "" };
+    let relaxed = pace.separate();
     match parlor_core::pace::record(ctx, ID, &board, run.score) {
         None => lines.push("Score 0, so nothing goes on the board.".to_string()),
-        Some(ScoreResult::First) => lines.push(format!(
-            "First {relaxed}{} score saved: {}.",
-            run.mode.name(),
-            run.score
-        )),
-        Some(ScoreResult::NewBest { previous }) => lines.push(format!(
-            "New {relaxed}best {} score: {}, beating {previous}.",
-            run.mode.name(),
-            run.score
-        )),
-        Some(ScoreResult::Short { best }) => lines.push(format!(
-            "Your {relaxed}best {} score stays {best}.",
-            run.mode.name()
-        )),
+        Some(ScoreResult::First) => lines.push(if relaxed {
+            format!(
+                "First relaxed {} score saved: {}.",
+                run.mode.name(),
+                run.score
+            )
+        } else {
+            format!("First {} score saved: {}.", run.mode.name(), run.score)
+        }),
+        Some(ScoreResult::NewBest { previous }) => lines.push(if relaxed {
+            format!(
+                "New relaxed best {} score: {}, beating {previous}.",
+                run.mode.name(),
+                run.score
+            )
+        } else {
+            format!(
+                "New best {} score: {}, beating {previous}.",
+                run.mode.name(),
+                run.score
+            )
+        }),
+        Some(ScoreResult::Short { best }) => lines.push(if relaxed {
+            format!("Your relaxed best {} score stays {best}.", run.mode.name())
+        } else {
+            format!("Your best {} score stays {best}.", run.mode.name())
+        }),
     }
     for &(number, secs) in &run.times {
         if number == 0 {
@@ -122,12 +135,18 @@ pub fn save_run(ctx: &mut Ctx<Parlor>, run: &Run, pace: Pace) -> Vec<String> {
             (format!("crossing {number}"), format!("crossing {number}"))
         };
         match record_time(ctx, &pace.board(&board), secs) {
-            TimeResult::First => {
-                lines.push(format!("First {relaxed}time on {name}: {secs:.1} seconds."))
-            }
-            TimeResult::NewBest { previous } => lines.push(format!(
-                "New {relaxed}best time on {name}: {secs:.1} seconds, beating {previous:.1}."
-            )),
+            TimeResult::First => lines.push(if relaxed {
+                format!("First relaxed time on {name}: {secs:.1} seconds.")
+            } else {
+                format!("First time on {name}: {secs:.1} seconds.")
+            }),
+            TimeResult::NewBest { previous } => lines.push(if relaxed {
+                format!(
+                    "New relaxed best time on {name}: {secs:.1} seconds, beating {previous:.1}."
+                )
+            } else {
+                format!("New best time on {name}: {secs:.1} seconds, beating {previous:.1}.")
+            }),
             TimeResult::Short { .. } => {}
         }
     }

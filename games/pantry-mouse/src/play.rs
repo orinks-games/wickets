@@ -278,7 +278,9 @@ impl Play {
     /// One cat, for the status line: "ginger cat 3 cells left and 1 up".
     fn cat_line(&self, i: usize) -> String {
         let (dx, dy) = self.run.cat_offset(i);
-        format!("{} {}", self.run.cats[i].name, offset_words(dx, dy))
+        let cat = self.run.cats[i].name;
+        let offset = offset_words(dx, dy);
+        format!("{cat}, {offset}")
     }
 
     /// The status key, in layers. First: each cat, then crumbs and
@@ -731,16 +733,16 @@ pub fn result_summary(run: &Run) -> String {
 
 /// The pages after a pantry run.
 pub fn result_pages(run: &Run, saved: &Saved) -> Vec<String> {
-    let relaxed = if saved.pace.separate() {
-        "relaxed "
-    } else {
-        ""
-    };
+    let relaxed = saved.pace.separate();
     let best_word = saved.pace.best_word();
     let score = match saved.score {
         None => format!("{}, so nothing goes on the board.", points_words(run.score)),
         Some(ScoreResult::First) => {
-            format!("{}, your first {relaxed}score.", points_words(run.score))
+            if relaxed {
+                format!("{}, your first relaxed score.", points_words(run.score))
+            } else {
+                format!("{}, your first score.", points_words(run.score))
+            }
         }
         Some(ScoreResult::NewBest { previous }) => {
             format!(
@@ -992,10 +994,10 @@ impl State<Parlor> for Play {
                 self.open_line()
             )
         };
-        let mut text = format!(
-            "{now} {} Each crumb is {CRUMB_POINTS} points and a cleared pantry {CLEAR_BONUS}.",
-            self.controls(ctx)
-        );
+        let controls = self.controls(ctx);
+        let points =
+            format!("Each crumb is {CRUMB_POINTS} points and a cleared pantry {CLEAR_BONUS}.");
+        let mut text = format!("{now} {controls} {points}");
         for c in &self.run.cats {
             text.push_str(&format!(" The {}: {}", c.name, cat_rule(c.kind)));
         }
@@ -1005,8 +1007,8 @@ impl State<Parlor> for Play {
         }
         if let Some(ch) = &self.challenge {
             text.push_str(&format!(
-                " This is the {} challenge, {}. Leaving from the pause menu does not count the run.",
-                ch.period.label().to_lowercase(),
+                " This is the {}, {}. Leaving from the pause menu does not count the run.",
+                ch.period.challenge_title().to_lowercase(),
                 challenge::name(ch.period)
             ));
         }

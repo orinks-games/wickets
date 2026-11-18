@@ -64,15 +64,15 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, plot: Live<RunScreen>) -> Lesson {
     );
 
     let water = plot.step(
-        format!(
-            "{} also waters. Water your seed.",
-            sentence_start(&w)
-        ),
+        format!("{} also waters. Water your seed.", sentence_start(&w)),
         |s: &RunScreen, _| {
             s.garden()
                 .plant_here()
                 .is_some_and(|p| p.water >= 1.0)
-                .then(|| "Water again only when it is thirsty: too much stops growth for a while.".to_string())
+                .then(|| {
+                    "Water again only when it is thirsty: too much stops growth for a while."
+                        .to_string()
+                })
         },
     );
 

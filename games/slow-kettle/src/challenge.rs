@@ -82,11 +82,10 @@ impl ChallengeGame for Tastings {
 /// The pages read before a challenge, which then start it.
 pub fn briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
     let ch = Challenge::current(ctx, ID, period);
-    let pages = vec![format!(
-        "{}: {} Challenge cups earn no coins, and your sand timer stays at home.",
-        name(period),
-        rule(period)
-    )];
+    let name = name(period);
+    let rule = rule(period);
+    let cups = "Challenge cups earn no coins, and your sand timer stays at home.";
+    let pages = vec![format!("{name}: {rule} {cups}")];
     let mut ch = Some(ch);
     Pages::briefing(pages).then(move |ctx| {
         if let Some(ch) = ch.take() {
@@ -169,6 +168,6 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, sitting: &Sitting) -> Vec<S
             cups_words(n),
             score_line(result)
         ),
-        format!("A {streak} {} streak. {}", ch.period.unit(), ch.resets()),
+        format!("{} {}", ch.period.streak_sentence(streak), ch.resets()),
     ]
 }

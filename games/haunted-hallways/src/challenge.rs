@@ -87,10 +87,9 @@ pub fn result_line(
         ScoreResult::Short { best: b } => format!("Your {best} is {b}."),
     };
     format!(
-        "{} result: score {score}. {record} A {} {} streak. {}",
+        "{} result: score {score}. {record} {} {}",
         ch.title(),
-        streak.max(1),
-        ch.period.unit(),
+        ch.period.streak_sentence(streak.max(1)),
         ch.resets()
     )
 }

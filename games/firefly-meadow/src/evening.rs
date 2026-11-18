@@ -7,7 +7,6 @@ use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, InputEvent, Key, Sound, State, Vec3};
 use parlor_core::challenges::today;
 use parlor_core::menus::{self, labels, Back, Leave, Results};
-use parlor_core::words::a_or_an;
 use parlor_core::{Challenge, Pages, Parlor, ParlorAction, Period, ScoreResult};
 
 use crate::almanac;
@@ -374,19 +373,14 @@ impl EveningScreen {
                 } else {
                     !self.known(ctx, species)
                 };
-                let mut text = format!(
-                    "Caught {} {}. {in_jar} in the jar.",
-                    a_or_an(species.name()),
-                    species.name()
-                );
+                let firefly = species.a_name();
+                let mut text = format!("Caught {firefly}. {in_jar} in the jar.");
                 if new && self.counts() {
                     sound::play(ctx, sound::NEW_SPECIES);
                     self.new_species.push(species);
+                    let blink_words = species.blink_words();
                     text = format!(
-                        "Caught {} {}, new in your journal: {}. {in_jar} in the jar.",
-                        a_or_an(species.name()),
-                        species.name(),
-                        species.blink_words()
+                        "Caught {firefly}, new in your journal: {blink_words}. {in_jar} in the jar."
                     );
                 }
                 if full {
@@ -842,8 +836,8 @@ impl State<Parlor> for EveningScreen {
         );
         if let Mode::Challenge(period) = self.mode {
             now.push_str(&format!(
-                " This is the {} challenge. Leaving from the pause menu does not count it.",
-                period.label().to_lowercase()
+                " This is the {}. Leaving from the pause menu does not count it.",
+                period.challenge_title().to_lowercase()
             ));
         }
         format!("{now} {}", self.controls(ctx))

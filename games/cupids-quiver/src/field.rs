@@ -318,12 +318,12 @@ impl Field {
 
     /// What the round is, as it starts.
     fn round_intro(&self) -> String {
-        let (place, line) = self.run.round_place();
+        let (spot, line) = self.run.round_place();
         let mut text = if self.run.mode == Mode::Practice {
-            format!("{place}. {line}")
+            format!("{spot}. {line}")
         } else {
             format!(
-                "{}, {}: {place}. {line} {}",
+                "{}, {}: {spot}. {line} {}",
                 self.run.mode.name(),
                 self.round_words(),
                 self.goal_words()
@@ -735,15 +735,12 @@ impl Field {
         );
         let mut peek = self.run.clone();
         peek.next_round();
-        let (place, _) = peek.round_place();
+        let (spot, _) = peek.round_place();
         let p = ctx.control_name(ParlorAction::Primary);
         self.tell(ctx, summary);
         self.tell_queued(
             ctx,
-            format!(
-                "{} climbs to the next rooftop: {place}.",
-                sentence_start(&p)
-            ),
+            format!("{} climbs to the next rooftop: {spot}.", sentence_start(&p)),
         );
     }
 
@@ -800,8 +797,8 @@ pub fn result_summary(run: &Run) -> String {
             format!("All {} rooftops cleared. {} points", run.round, run.score)
         }
         Mode::Rooftops | Mode::Moonlight => {
-            let (place, _) = run.round_place();
-            format!("The evening ends at {place}. {} points", run.score)
+            let (spot, _) = run.round_place();
+            format!("The evening ends at {spot}. {} points", run.score)
         }
         _ => format!("{} done. {} points", run.mode.name(), run.score),
     }
@@ -818,14 +815,14 @@ fn score_words(result: Option<ScoreResult>) -> String {
 
 /// The pages after a run.
 pub fn result_pages(run: &Run, saved: &Saved) -> Vec<String> {
-    let (place, _) = run.round_place();
+    let (spot, _) = run.round_place();
     let mut first = match run.mode {
         Mode::Rooftops if run.cleared() => format!(
             "Evening done: all {} rooftops cleared. {} points.",
             run.round, run.score
         ),
         Mode::Rooftops | Mode::Moonlight => format!(
-            "The evening ends at {place}: {} of {} needed. {} points.",
+            "The evening ends at {spot}: {} of {} needed. {} points.",
             hearts_words(run.round_hits),
             run.plan.goal,
             run.score
@@ -1097,8 +1094,8 @@ impl State<Parlor> for Field {
         let mut now = "Aim a little ahead of a drifting heart.".to_string();
         if let Some(ch) = &self.challenge {
             now.push_str(&format!(
-                " This is the {} challenge. Leaving from the pause menu does not count it.",
-                ch.period.label().to_lowercase()
+                " This is the {}. Leaving from the pause menu does not count it.",
+                ch.period.challenge_title().to_lowercase()
             ));
         }
         format!("{now} {}", controls_full(ctx))
