@@ -82587,6 +82587,18 @@ msgstr "error"
 msgid "message"
 msgstr "message"
 
+msgid "format"
+msgstr ""
+
+msgid "hash"
+msgstr ""
+
+msgid "content"
+msgstr ""
+
+msgid "card"
+msgstr ""
+
 msgid "ok"
 msgstr "ok"
 
@@ -82729,9 +82741,9 @@ msgstr "以访客身份玩"
 msgid "New guest name"
 msgstr "新的访客名字"
 
-#. placeholders: {site}
-msgid "Connect a {site} account"
-msgstr "连接{site}账号"
+#. placeholders: {article}, {site}
+msgid "Connect {article} {site} account"
+msgstr ""
 
 msgid "Stop playing online on this computer"
 msgstr "在这台电脑上停止联网玩"
@@ -83095,9 +83107,9 @@ msgstr "正在加入"
 msgid "Play online: connect an account or play as a guest"
 msgstr "联网玩：连接账号或以访客身份玩"
 
-#. placeholders: {site}
-msgid "Connect a {site} account to play online"
-msgstr "连接{site}账号来联网玩"
+#. placeholders: {article}, {site}
+msgid "Connect {article} {site} account to play online"
+msgstr ""
 
 msgid ""
 "Online play needs an account, so other players know who they are playing."
@@ -83992,6 +84004,72 @@ msgstr "holding"
 msgid "expired"
 msgstr "expired"
 
+msgid "needs-account"
+msgstr ""
+
+msgid "exporting"
+msgstr ""
+
+msgid "uploading"
+msgstr ""
+
+msgid "merging"
+msgstr ""
+
+msgid "needs-choice"
+msgstr ""
+
+msgid "up-to-date"
+msgstr ""
+
+msgid "local-newer"
+msgstr ""
+
+msgid "blocked-newer-format"
+msgstr ""
+
+msgid "blocked-too-large"
+msgstr ""
+
+msgid "blocked-unreadable"
+msgstr ""
+
+msgid "seal"
+msgstr ""
+
+msgid "too-large"
+msgstr ""
+
+msgid "account-needed"
+msgstr ""
+
+msgid "head"
+msgstr ""
+
+msgid "account"
+msgstr ""
+
+msgid "save"
+msgstr ""
+
+msgid "revision"
+msgstr ""
+
+msgid "bytes"
+msgstr ""
+
+msgid "no-save"
+msgstr ""
+
+msgid "bad-save"
+msgstr ""
+
+msgid "stale"
+msgstr ""
+
+msgid "not-found"
+msgstr ""
+
 msgid "test pad"
 msgstr ""
 
@@ -84358,6 +84436,29 @@ msgstr "已放弃"
 msgid "nothing scripted"
 msgstr ""
 
+msgid "Clipboard"
+msgstr ""
+
+msgid "No Speech"
+msgstr ""
+
+#. placeholders: {name}
+msgid ""
+"Requested speech backend {name} needs Narrator, which is not running; "
+"falling back to automatic choice"
+msgstr ""
+
+#. placeholders: {name}
+msgid ""
+"Requested speech backend {name} is not usable; falling back to automatic "
+"choice"
+msgstr ""
+
+#. placeholders: {name}
+msgid ""
+"Requested speech backend {name} not found; falling back to automatic choice"
+msgstr ""
+
 msgid "builtin-voice"
 msgstr ""
 
@@ -84374,6 +84475,9 @@ msgstr "没有输出格式：{err}"
 msgid "main"
 msgstr ""
 
+msgid "Genny"
+msgstr ""
+
 msgid "David"
 msgstr ""
 
@@ -84381,9 +84485,6 @@ msgid "Zira"
 msgstr ""
 
 msgid "Default"
-msgstr ""
-
-msgid "Genny"
 msgstr ""
 
 msgid "rate"
@@ -85004,6 +85105,12 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "Connect a {site} account"
+#~ msgstr "连接{site}账号"
+
+#~ msgid "Connect a {site} account to play online"
+#~ msgstr "连接{site}账号来联网玩"
 
 #~ msgid ""
 #~ "Each suit has its own foundation, built up one card at a time from the ace "

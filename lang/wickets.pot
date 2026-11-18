@@ -34,7 +34,7 @@ msgstr ""
 msgid "status"
 msgstr ""
 
-#: crates/parlor-core/src/actions.rs
+#: crates/parlor-core/src/actions.rs hearken/crates/hearken-app/src/sync/testing.rs
 msgid "repeat"
 msgstr ""
 
@@ -2048,7 +2048,7 @@ msgstr ""
 msgid "Return to the list of groups."
 msgstr ""
 
-#: crates/parlor-core/src/words.rs
+#: crates/parlor-core/src/words.rs hearken/crates/hearken-app/src/online.rs
 msgid "an"
 msgstr ""
 
@@ -34748,7 +34748,7 @@ msgstr ""
 msgid "plate"
 msgstr ""
 
-#: games/harvest-feast/src/rules.rs
+#: games/harvest-feast/src/rules.rs hearken/crates/hearken-app/src/sync.rs
 msgid "starting"
 msgstr ""
 
@@ -72412,7 +72412,7 @@ msgstr ""
 msgid "Plain {name}, on {tone}"
 msgstr ""
 
-#: games/rooftop-garden/src/song.rs
+#: games/rooftop-garden/src/song.rs hearken/crates/hearken-app/src/online.rs
 msgid "base"
 msgstr ""
 
@@ -101980,6 +101980,22 @@ msgid "message"
 msgstr ""
 
 #: hearken/crates/hearken-app/src/online.rs
+msgid "format"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/online.rs
+msgid "hash"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/online.rs
+msgid "content"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/online.rs
+msgid "card"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/online.rs
 msgid "ok"
 msgstr ""
 
@@ -102162,9 +102178,9 @@ msgstr ""
 msgid "New guest name"
 msgstr ""
 
-#. placeholders: {site}
+#. placeholders: {article}, {site}
 #: hearken/crates/hearken-app/src/screens/online.rs
-msgid "Connect a {site} account"
+msgid "Connect {article} {site} account"
 msgstr ""
 
 #: hearken/crates/hearken-app/src/screens/online.rs
@@ -102622,9 +102638,9 @@ msgstr ""
 msgid "Play online: connect an account or play as a guest"
 msgstr ""
 
-#. placeholders: {site}
+#. placeholders: {article}, {site}
 #: hearken/crates/hearken-app/src/screens/rooms.rs
-msgid "Connect a {site} account to play online"
+msgid "Connect {article} {site} account to play online"
 msgstr ""
 
 #: hearken/crates/hearken-app/src/screens/rooms.rs
@@ -103764,6 +103780,94 @@ msgstr ""
 msgid "expired"
 msgstr ""
 
+#: hearken/crates/hearken-app/src/sync.rs
+msgid "needs-account"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync.rs
+msgid "exporting"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync.rs
+msgid "uploading"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync.rs
+msgid "merging"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync.rs
+msgid "needs-choice"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync.rs
+msgid "up-to-date"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync.rs
+msgid "local-newer"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync.rs
+msgid "blocked-newer-format"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync.rs
+msgid "blocked-too-large"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync.rs
+msgid "blocked-unreadable"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync.rs
+msgid "seal"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync.rs
+msgid "too-large"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync/testing.rs
+msgid "account-needed"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync/testing.rs
+msgid "head"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync/testing.rs
+msgid "account"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync/testing.rs
+msgid "save"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync/testing.rs
+msgid "revision"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync/testing.rs
+msgid "bytes"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync/testing.rs
+msgid "no-save"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync/testing.rs
+msgid "bad-save"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync/testing.rs
+msgid "stale"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/sync/testing.rs
+msgid "not-found"
+msgstr ""
+
 #: hearken/crates/hearken-app/src/testing.rs
 msgid "test pad"
 msgstr ""
@@ -104239,6 +104343,34 @@ msgstr ""
 msgid "nothing scripted"
 msgstr ""
 
+#: hearken/crates/hearken-speech/src/backend.rs
+msgid "Clipboard"
+msgstr ""
+
+#: hearken/crates/hearken-speech/src/backend.rs
+msgid "No Speech"
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-speech/src/backend.rs
+msgid ""
+"Requested speech backend {name} needs Narrator, which is not running; "
+"falling back to automatic choice"
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-speech/src/backend.rs
+msgid ""
+"Requested speech backend {name} is not usable; falling back to automatic "
+"choice"
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-speech/src/backend.rs
+msgid ""
+"Requested speech backend {name} not found; falling back to automatic choice"
+msgstr ""
+
 #: hearken/crates/hearken-speech/src/builtin.rs
 msgid "builtin-voice"
 msgstr ""
@@ -104261,6 +104393,10 @@ msgid "main"
 msgstr ""
 
 #: hearken/crates/hearken-speech/src/capture.rs
+msgid "Genny"
+msgstr ""
+
+#: hearken/crates/hearken-speech/src/capture.rs
 msgid "David"
 msgstr ""
 
@@ -104270,10 +104406,6 @@ msgstr ""
 
 #: hearken/crates/hearken-speech/src/fakes.rs
 msgid "Default"
-msgstr ""
-
-#: hearken/crates/hearken-speech/src/lib.rs
-msgid "Genny"
 msgstr ""
 
 #: hearken/crates/hearken-speech/src/live.rs
