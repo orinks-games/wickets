@@ -84,7 +84,7 @@ pub fn import(project: &Project, code: &str, dir: &Path) -> Result<i32, String> 
             .map_err(|e| format!("{}: {e}", file.display()))?;
         let items = value
             .as_array()
-            .ok_or_else(|| format!("{}: expected a JSON array", file.display()))?;
+            .ok_or_else(|| format!("{}: expected a list of entries", file.display()))?;
         for item in items {
             let (Some(msgid), Some(msgstr)) = (
                 item.get("msgid").and_then(Value::as_str),
@@ -170,7 +170,7 @@ mod tests {
             assert_eq!(
                 import(&project, "es", &dir),
                 Err(format!(
-                    "{}: expected a JSON array",
+                    "{}: expected a list of entries",
                     dir.join("batch-0001.done.json").display()
                 ))
             );
