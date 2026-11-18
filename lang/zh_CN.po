@@ -84437,10 +84437,10 @@ msgid "nothing scripted"
 msgstr ""
 
 msgid "Clipboard"
-msgstr ""
+msgstr "剪贴板"
 
 msgid "No Speech"
-msgstr ""
+msgstr "无语音"
 
 #. placeholders: {name}
 msgid ""

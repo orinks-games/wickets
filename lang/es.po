@@ -95445,10 +95445,10 @@ msgid "nothing scripted"
 msgstr ""
 
 msgid "Clipboard"
-msgstr ""
+msgstr "Portapapeles"
 
 msgid "No Speech"
-msgstr ""
+msgstr "Sin voz"
 
 #. placeholders: {name}
 msgid ""

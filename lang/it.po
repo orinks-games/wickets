@@ -95533,10 +95533,10 @@ msgid "nothing scripted"
 msgstr ""
 
 msgid "Clipboard"
-msgstr ""
+msgstr "Appunti"
 
 msgid "No Speech"
-msgstr ""
+msgstr "Nessuna voce"
 
 #. placeholders: {name}
 msgid ""

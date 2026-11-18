@@ -93636,10 +93636,10 @@ msgid "nothing scripted"
 msgstr ""
 
 msgid "Clipboard"
-msgstr ""
+msgstr "Pano"
 
 msgid "No Speech"
-msgstr ""
+msgstr "Konuşma yok"
 
 #. placeholders: {name}
 msgid ""

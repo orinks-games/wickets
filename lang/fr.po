@@ -96284,10 +96284,10 @@ msgid "nothing scripted"
 msgstr ""
 
 msgid "Clipboard"
-msgstr ""
+msgstr "Presse-papiers"
 
 msgid "No Speech"
-msgstr ""
+msgstr "Pas de voix"
 
 #. placeholders: {name}
 msgid ""
