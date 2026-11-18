@@ -213,6 +213,18 @@ pub struct Songs {
     loaded: HashMap<(String, u32), Rc<Take>>,
     /// The song kept most recently this session, for the results menu.
     fresh: Option<Kept>,
+    /// Tutorials open: a tutorial's music is never kept as a song.
+    lessons: u32,
+}
+
+/// A tutorial opens: its runs keep no songs until it closes.
+pub fn lesson_opened(ctx: &mut Ctx<Parlor>) {
+    ctx.game.songs.lessons += 1;
+}
+
+/// A tutorial closes.
+pub fn lesson_closed(ctx: &mut Ctx<Parlor>) {
+    ctx.game.songs.lessons = ctx.game.songs.lessons.saturating_sub(1);
 }
 
 /// The track id of a game's song `n`.
@@ -238,13 +250,16 @@ fn file(ctx: &Ctx<Parlor>, game: &str, n: u32) -> PathBuf {
     dir(ctx, game).join(format!("{n}.json"))
 }
 
-/// Starts keeping the run's music, if the player keeps songs and nothing
-/// is recording yet. The take belongs to the screen on top: call it as
+/// Starts keeping the run's music, if the player keeps songs, nothing is
+/// recording yet and no tutorial is open. The take belongs to the screen on top: call it as
 /// the run screen arrives. A new run also puts the last run's song out
 /// of reach of the results menu, so it never offers an older song as
 /// this run's.
 pub fn begin(ctx: &mut Ctx<Parlor>) {
     ctx.game.songs.fresh = None;
+    if ctx.game.songs.lessons > 0 {
+        return;
+    }
     if keeping(ctx) && ctx.take_state() == TakeState::Idle {
         ctx.begin_take(&[Bus::MUSIC]);
     }
@@ -479,6 +494,23 @@ mod tests {
             .start_loop("tide-pools/score/base", None, Bus::MUSIC);
         h.frame(seconds);
         h.app.ctx.audio.stop(s, 300);
+    }
+
+    #[test]
+    fn a_run_inside_a_tutorial_keeps_no_song() {
+        let mut h = open();
+        h.app.ctx.push(
+            crate::Lesson::new("tide-pools", "Tide Pools", "Hi").step(crate::Step::note("A rule.")),
+        );
+        h.frame(0.0);
+        run(&mut h, 25.0);
+        assert!(end(&mut h.app.ctx, "tide-pools").is_none());
+        assert!(entries(&mut h.app.ctx, "tide-pools").is_empty());
+        // Once the tutorial closes, runs keep their songs again.
+        h.app.ctx.pop();
+        h.frame(0.0);
+        run(&mut h, 25.0);
+        assert!(end(&mut h.app.ctx, "tide-pools").is_some());
     }
 
     #[test]

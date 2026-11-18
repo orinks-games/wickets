@@ -93541,6 +93541,18 @@ msgstr "error"
 msgid "message"
 msgstr "message"
 
+msgid "format"
+msgstr ""
+
+msgid "hash"
+msgstr ""
+
+msgid "content"
+msgstr ""
+
+msgid "card"
+msgstr ""
+
 msgid "ok"
 msgstr "ok"
 
@@ -93693,9 +93705,9 @@ msgstr "Gioca come ospite"
 msgid "New guest name"
 msgstr "Nuovo nome da ospite"
 
-#. placeholders: {site}
-msgid "Connect a {site} account"
-msgstr "Collega un account {site}"
+#. placeholders: {article}, {site}
+msgid "Connect {article} {site} account"
+msgstr ""
 
 msgid "Stop playing online on this computer"
 msgstr "Smetti di giocare online su questo computer"
@@ -94096,9 +94108,9 @@ msgstr "Ingresso nella partita"
 msgid "Play online: connect an account or play as a guest"
 msgstr "Gioca online: collega un account o gioca come ospite"
 
-#. placeholders: {site}
-msgid "Connect a {site} account to play online"
-msgstr "Collega un account {site} per giocare online"
+#. placeholders: {article}, {site}
+msgid "Connect {article} {site} account to play online"
+msgstr ""
 
 msgid ""
 "Online play needs an account, so other players know who they are playing."
@@ -95073,6 +95085,72 @@ msgstr "holding"
 msgid "expired"
 msgstr "expired"
 
+msgid "needs-account"
+msgstr ""
+
+msgid "exporting"
+msgstr ""
+
+msgid "uploading"
+msgstr ""
+
+msgid "merging"
+msgstr ""
+
+msgid "needs-choice"
+msgstr ""
+
+msgid "up-to-date"
+msgstr ""
+
+msgid "local-newer"
+msgstr ""
+
+msgid "blocked-newer-format"
+msgstr ""
+
+msgid "blocked-too-large"
+msgstr ""
+
+msgid "blocked-unreadable"
+msgstr ""
+
+msgid "seal"
+msgstr ""
+
+msgid "too-large"
+msgstr ""
+
+msgid "account-needed"
+msgstr ""
+
+msgid "head"
+msgstr ""
+
+msgid "account"
+msgstr ""
+
+msgid "save"
+msgstr ""
+
+msgid "revision"
+msgstr ""
+
+msgid "bytes"
+msgstr ""
+
+msgid "no-save"
+msgstr ""
+
+msgid "bad-save"
+msgstr ""
+
+msgid "stale"
+msgstr ""
+
+msgid "not-found"
+msgstr ""
+
 msgid "test pad"
 msgstr ""
 
@@ -95454,6 +95532,29 @@ msgstr "abbandonata"
 msgid "nothing scripted"
 msgstr ""
 
+msgid "Clipboard"
+msgstr ""
+
+msgid "No Speech"
+msgstr ""
+
+#. placeholders: {name}
+msgid ""
+"Requested speech backend {name} needs Narrator, which is not running; "
+"falling back to automatic choice"
+msgstr ""
+
+#. placeholders: {name}
+msgid ""
+"Requested speech backend {name} is not usable; falling back to automatic "
+"choice"
+msgstr ""
+
+#. placeholders: {name}
+msgid ""
+"Requested speech backend {name} not found; falling back to automatic choice"
+msgstr ""
+
 msgid "builtin-voice"
 msgstr ""
 
@@ -95470,6 +95571,9 @@ msgstr "nessun formato di uscita: {err}"
 msgid "main"
 msgstr ""
 
+msgid "Genny"
+msgstr ""
+
 msgid "David"
 msgstr ""
 
@@ -95477,9 +95581,6 @@ msgid "Zira"
 msgstr ""
 
 msgid "Default"
-msgstr ""
-
-msgid "Genny"
 msgstr ""
 
 msgid "rate"
@@ -96104,6 +96205,12 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "Connect a {site} account"
+#~ msgstr "Collega un account {site}"
+
+#~ msgid "Connect a {site} account to play online"
+#~ msgstr "Collega un account {site} per giocare online"
 
 #~ msgid ""
 #~ "Each suit has its own foundation, built up one card at a time from the ace "
