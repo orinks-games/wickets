@@ -527,6 +527,7 @@ impl State<Parlor> for Lesson {
             return self.resume(ctx);
         }
         self.begun = true;
+        crate::songs::lesson_opened(ctx);
         ctx.audio.play(PAGE_SOUND, Bus::UI);
         let intro = match &self.lead {
             Some(lead) => format!("{} {}", end_sentence(lead), end_sentence(&self.intro)),
@@ -546,6 +547,9 @@ impl State<Parlor> for Lesson {
 
     fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
         self.end_live(ctx);
+        if self.begun {
+            crate::songs::lesson_closed(ctx);
+        }
         if let Some(cleanup) = self.cleanup.as_mut() {
             cleanup(ctx);
         }
