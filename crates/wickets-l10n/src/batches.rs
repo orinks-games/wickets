@@ -82,7 +82,10 @@ pub fn import(project: &Project, code: &str, dir: &Path) -> Result<i32, String> 
     for file in &done {
         let value: Value = serde_json::from_str(&util::read_text(file)?)
             .map_err(|e| format!("{}: {e}", file.display()))?;
-        for item in value.as_array().cloned().unwrap_or_default() {
+        let items = value
+            .as_array()
+            .ok_or_else(|| format!("{}: expected a JSON array", file.display()))?;
+        for item in items {
             let (Some(msgid), Some(msgstr)) = (
                 item.get("msgid").and_then(Value::as_str),
                 item.get("msgstr").and_then(Value::as_str),
@@ -109,4 +112,70 @@ pub fn import(project: &Project, code: &str, dir: &Path) -> Result<i32, String> 
         done.len()
     );
     Ok(i32::from(bad > 0))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::sync::atomic::{AtomicU64, Ordering};
+
+    fn fixture(batch: &str) -> (Project, std::path::PathBuf) {
+        static NEXT: AtomicU64 = AtomicU64::new(0);
+        let dir = std::env::temp_dir().join(format!(
+            "wickets-l10n-import-{}-{}",
+            std::process::id(),
+            NEXT.fetch_add(1, Ordering::Relaxed)
+        ));
+        std::fs::create_dir_all(&dir).unwrap();
+        std::fs::write(dir.join("es.po"), "msgid \"Hello\"\nmsgstr \"\"\n").unwrap();
+        std::fs::write(dir.join("batch-0001.done.json"), batch).unwrap();
+        let project = Project {
+            lang_dir: dir.clone(),
+            ..Project::default()
+        };
+        (project, dir)
+    }
+
+    #[test]
+    fn imports_an_array() {
+        let (project, dir) = fixture(r#"[{"msgid":"Hello","msgstr":"Hola"}]"#);
+        assert_eq!(import(&project, "es", &dir), Ok(0));
+        let entries = parse_po(&util::read_text(&dir.join("es.po")).unwrap()).unwrap();
+        assert_eq!(
+            entries.iter().find(|e| e.msgid == "Hello").unwrap().msgstr,
+            "Hola"
+        );
+        std::fs::remove_dir_all(dir).unwrap();
+    }
+
+    #[test]
+    fn accepts_an_empty_array() {
+        let (project, dir) = fixture("[]");
+        assert_eq!(import(&project, "es", &dir), Ok(0));
+        let entries = parse_po(&util::read_text(&dir.join("es.po")).unwrap()).unwrap();
+        assert!(entries
+            .iter()
+            .find(|e| e.msgid == "Hello")
+            .unwrap()
+            .msgstr
+            .is_empty());
+        std::fs::remove_dir_all(dir).unwrap();
+    }
+
+    #[test]
+    fn rejects_non_arrays_without_writing_the_language_file() {
+        for batch in ["{}", "null", "true", "42", r#""text""#] {
+            let (project, dir) = fixture(batch);
+            let before = std::fs::read(dir.join("es.po")).unwrap();
+            assert_eq!(
+                import(&project, "es", &dir),
+                Err(format!(
+                    "{}: expected a JSON array",
+                    dir.join("batch-0001.done.json").display()
+                ))
+            );
+            assert_eq!(std::fs::read(dir.join("es.po")).unwrap(), before);
+            std::fs::remove_dir_all(dir).unwrap();
+        }
+    }
 }
