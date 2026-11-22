@@ -1,0 +1,154 @@
+{
+ "name": "sonar-dive",
+ "tempo": [
+  60,
+  76
+ ],
+ "scales": [
+  "minor",
+  "dorian",
+  "lydian",
+  "pentatonic"
+ ],
+ "swing": [
+  0,
+  0
+ ],
+ "busy": [
+  0.2,
+  0.45
+ ],
+ "phrase_bars": 4,
+ "volume": 0.78,
+ "parts": [
+  {
+   "role": "base",
+   "play": {
+    "kind": "bass",
+    "patterns": [
+     "whole",
+     "root_fifth",
+     "dub"
+    ]
+   },
+   "instruments": [
+    "moog_bass",
+    "bass808",
+    "reese"
+   ],
+   "volume": 0.5,
+   "pan": 0.0,
+   "range": [
+    26,
+    48
+   ]
+  },
+  {
+   "role": "base",
+   "play": {
+    "kind": "pad"
+   },
+   "instruments": [
+    "glass_pad",
+    "warm_pad",
+    "choir"
+   ],
+   "volume": 0.26,
+   "pan": -0.15
+  },
+  {
+   "role": "pulse",
+   "play": {
+    "kind": "drums",
+    "grooves": [
+     "half",
+     "break"
+    ]
+   },
+   "instruments": [
+    "eight",
+    "world"
+   ],
+   "volume": 0.36,
+   "pan": 0.0
+  },
+  {
+   "role": "melody",
+   "play": {
+    "kind": "lead"
+   },
+   "instruments": [
+    "handpan",
+    "vibraphone",
+    "soft_lead",
+    "kalimba"
+   ],
+   "volume": 0.42,
+   "pan": 0.3,
+   "range": [
+    57,
+    81
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "arp"
+   },
+   "instruments": [
+    "kalimba",
+    "celesta",
+    "synth_pluck"
+   ],
+   "volume": 0.22,
+   "pan": -0.4,
+   "range": [
+    60,
+    86
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "counter"
+   },
+   "instruments": [
+    "strings",
+    "cello"
+   ],
+   "volume": 0.22,
+   "pan": 0.15,
+   "range": [
+    50,
+    70
+   ]
+  },
+  {
+   "role": "hurry",
+   "play": {
+    "kind": "rush"
+   },
+   "instruments": [
+    "electro"
+   ],
+   "volume": 0.22,
+   "pan": 0.2
+  },
+  {
+   "role": "danger",
+   "play": {
+    "kind": "drone"
+   },
+   "instruments": [
+    "cello",
+    "choir"
+   ],
+   "volume": 0.36,
+   "pan": 0,
+   "range": [
+    38,
+    58
+   ]
+  }
+ ]
+}

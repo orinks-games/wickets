@@ -1,0 +1,1264 @@
+{
+ "prefix": "band",
+ "instruments": [
+  {
+   "name": "fm_bass",
+   "low": 28,
+   "high": 55,
+   "samples": [
+    29,
+    32,
+    35,
+    38,
+    41,
+    44,
+    47,
+    50,
+    53,
+    54
+   ],
+   "length_s": 2.2,
+   "release_ms": 80
+  },
+  {
+   "name": "moog_bass",
+   "low": 28,
+   "high": 55,
+   "samples": [
+    29,
+    32,
+    35,
+    38,
+    41,
+    44,
+    47,
+    50,
+    53,
+    54
+   ],
+   "length_s": 2.2,
+   "release_ms": 80
+  },
+  {
+   "name": "reese",
+   "low": 28,
+   "high": 48,
+   "samples": [
+    29,
+    32,
+    35,
+    38,
+    41,
+    44,
+    47
+   ],
+   "length_s": 2.2,
+   "release_ms": 80
+  },
+  {
+   "name": "bass808",
+   "low": 24,
+   "high": 43,
+   "samples": [
+    25,
+    28,
+    31,
+    34,
+    37,
+    40,
+    42
+   ],
+   "length_s": 2.2,
+   "release_ms": 80
+  },
+  {
+   "name": "upright_bass",
+   "low": 28,
+   "high": 52,
+   "samples": [
+    29,
+    32,
+    35,
+    38,
+    41,
+    44,
+    47,
+    50,
+    51
+   ],
+   "length_s": 2.2,
+   "release_ms": 80
+  },
+  {
+   "name": "finger_bass",
+   "low": 28,
+   "high": 52,
+   "samples": [
+    29,
+    32,
+    35,
+    38,
+    41,
+    44,
+    47,
+    50,
+    51
+   ],
+   "length_s": 2.2,
+   "release_ms": 80
+  },
+  {
+   "name": "tuba",
+   "low": 29,
+   "high": 53,
+   "samples": [
+    30,
+    33,
+    36,
+    39,
+    42,
+    45,
+    48,
+    51,
+    52
+   ],
+   "length_s": 2.2,
+   "release_ms": 80
+  },
+  {
+   "name": "epiano",
+   "low": 48,
+   "high": 79,
+   "samples": [
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    76,
+    78
+   ],
+   "length_s": 2.5,
+   "release_ms": 140
+  },
+  {
+   "name": "wurli",
+   "low": 48,
+   "high": 79,
+   "samples": [
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    76,
+    78
+   ],
+   "length_s": 2.5,
+   "release_ms": 140
+  },
+  {
+   "name": "felt_piano",
+   "low": 45,
+   "high": 81,
+   "samples": [
+    46,
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    76,
+    79,
+    80
+   ],
+   "length_s": 2.5,
+   "release_ms": 140
+  },
+  {
+   "name": "organ",
+   "low": 45,
+   "high": 76,
+   "samples": [
+    46,
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    75
+   ],
+   "length_s": 2.5,
+   "release_ms": 140
+  },
+  {
+   "name": "clav",
+   "low": 48,
+   "high": 76,
+   "samples": [
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    75
+   ],
+   "length_s": 2.5,
+   "release_ms": 140
+  },
+  {
+   "name": "harpsichord",
+   "low": 48,
+   "high": 79,
+   "samples": [
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    76,
+    78
+   ],
+   "length_s": 2.5,
+   "release_ms": 140
+  },
+  {
+   "name": "accordion",
+   "low": 50,
+   "high": 79,
+   "samples": [
+    51,
+    54,
+    57,
+    60,
+    63,
+    66,
+    69,
+    72,
+    75,
+    78
+   ],
+   "length_s": 2.5,
+   "release_ms": 140
+  },
+  {
+   "name": "warm_pad",
+   "low": 40,
+   "high": 72,
+   "samples": [
+    41,
+    44,
+    47,
+    50,
+    53,
+    56,
+    59,
+    62,
+    65,
+    68,
+    71
+   ],
+   "length_s": 4.5,
+   "release_ms": 320
+  },
+  {
+   "name": "glass_pad",
+   "low": 52,
+   "high": 79,
+   "samples": [
+    53,
+    56,
+    59,
+    62,
+    65,
+    68,
+    71,
+    74,
+    77,
+    78
+   ],
+   "length_s": 4.5,
+   "release_ms": 320
+  },
+  {
+   "name": "string_machine",
+   "low": 43,
+   "high": 76,
+   "samples": [
+    44,
+    47,
+    50,
+    53,
+    56,
+    59,
+    62,
+    65,
+    68,
+    71,
+    74,
+    75
+   ],
+   "length_s": 4.5,
+   "release_ms": 320
+  },
+  {
+   "name": "strings",
+   "low": 43,
+   "high": 79,
+   "samples": [
+    44,
+    47,
+    50,
+    53,
+    56,
+    59,
+    62,
+    65,
+    68,
+    71,
+    74,
+    77,
+    78
+   ],
+   "length_s": 4.5,
+   "release_ms": 320
+  },
+  {
+   "name": "choir",
+   "low": 48,
+   "high": 76,
+   "samples": [
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    75
+   ],
+   "length_s": 4.5,
+   "release_ms": 320
+  },
+  {
+   "name": "cello",
+   "low": 38,
+   "high": 67,
+   "samples": [
+    39,
+    42,
+    45,
+    48,
+    51,
+    54,
+    57,
+    60,
+    63,
+    66
+   ],
+   "length_s": 4.5,
+   "release_ms": 220
+  },
+  {
+   "name": "vibraphone",
+   "low": 53,
+   "high": 84,
+   "samples": [
+    54,
+    57,
+    60,
+    63,
+    66,
+    69,
+    72,
+    75,
+    78,
+    81,
+    83
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "marimba",
+   "low": 48,
+   "high": 84,
+   "samples": [
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    76,
+    79,
+    82,
+    83
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "celesta",
+   "low": 60,
+   "high": 91,
+   "samples": [
+    61,
+    64,
+    67,
+    70,
+    73,
+    76,
+    79,
+    82,
+    85,
+    88,
+    90
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "music_box",
+   "low": 72,
+   "high": 96,
+   "samples": [
+    73,
+    76,
+    79,
+    82,
+    85,
+    88,
+    91,
+    94,
+    95
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "kalimba",
+   "low": 55,
+   "high": 86,
+   "samples": [
+    56,
+    59,
+    62,
+    65,
+    68,
+    71,
+    74,
+    77,
+    80,
+    83,
+    85
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "glockenspiel",
+   "low": 79,
+   "high": 96,
+   "samples": [
+    80,
+    83,
+    86,
+    89,
+    92,
+    95
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "steel_drum",
+   "low": 52,
+   "high": 81,
+   "samples": [
+    53,
+    56,
+    59,
+    62,
+    65,
+    68,
+    71,
+    74,
+    77,
+    80
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "xylophone",
+   "low": 65,
+   "high": 93,
+   "samples": [
+    66,
+    69,
+    72,
+    75,
+    78,
+    81,
+    84,
+    87,
+    90,
+    92
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "harp",
+   "low": 48,
+   "high": 86,
+   "samples": [
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    76,
+    79,
+    82,
+    85
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "synth_pluck",
+   "low": 45,
+   "high": 81,
+   "samples": [
+    46,
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    76,
+    79,
+    80
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "guitar",
+   "low": 45,
+   "high": 76,
+   "samples": [
+    46,
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    75
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "mandolin",
+   "low": 55,
+   "high": 81,
+   "samples": [
+    56,
+    59,
+    62,
+    65,
+    68,
+    71,
+    74,
+    77,
+    80
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "banjo",
+   "low": 50,
+   "high": 79,
+   "samples": [
+    51,
+    54,
+    57,
+    60,
+    63,
+    66,
+    69,
+    72,
+    75,
+    78
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "pizzicato",
+   "low": 45,
+   "high": 79,
+   "samples": [
+    46,
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    76,
+    78
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "handpan",
+   "low": 48,
+   "high": 72,
+   "samples": [
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    71
+   ],
+   "length_s": 2.0,
+   "release_ms": 160
+  },
+  {
+   "name": "square_lead",
+   "low": 55,
+   "high": 84,
+   "samples": [
+    56,
+    59,
+    62,
+    65,
+    68,
+    71,
+    74,
+    77,
+    80,
+    83
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "soft_lead",
+   "low": 55,
+   "high": 86,
+   "samples": [
+    56,
+    59,
+    62,
+    65,
+    68,
+    71,
+    74,
+    77,
+    80,
+    83,
+    85
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "sync_lead",
+   "low": 55,
+   "high": 84,
+   "samples": [
+    56,
+    59,
+    62,
+    65,
+    68,
+    71,
+    74,
+    77,
+    80,
+    83
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "chip",
+   "low": 57,
+   "high": 88,
+   "samples": [
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    76,
+    79,
+    82,
+    85,
+    87
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "sax",
+   "low": 50,
+   "high": 77,
+   "samples": [
+    51,
+    54,
+    57,
+    60,
+    63,
+    66,
+    69,
+    72,
+    75,
+    76
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "flute",
+   "low": 62,
+   "high": 91,
+   "samples": [
+    63,
+    66,
+    69,
+    72,
+    75,
+    78,
+    81,
+    84,
+    87,
+    90
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "clarinet",
+   "low": 52,
+   "high": 81,
+   "samples": [
+    53,
+    56,
+    59,
+    62,
+    65,
+    68,
+    71,
+    74,
+    77,
+    80
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "trumpet",
+   "low": 55,
+   "high": 81,
+   "samples": [
+    56,
+    59,
+    62,
+    65,
+    68,
+    71,
+    74,
+    77,
+    80
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "flugelhorn",
+   "low": 52,
+   "high": 79,
+   "samples": [
+    53,
+    56,
+    59,
+    62,
+    65,
+    68,
+    71,
+    74,
+    77,
+    78
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "violin",
+   "low": 57,
+   "high": 88,
+   "samples": [
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    76,
+    79,
+    82,
+    85,
+    87
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "whistle",
+   "low": 72,
+   "high": 93,
+   "samples": [
+    73,
+    76,
+    79,
+    82,
+    85,
+    88,
+    91,
+    92
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "pan_flute",
+   "low": 62,
+   "high": 88,
+   "samples": [
+    63,
+    66,
+    69,
+    72,
+    75,
+    78,
+    81,
+    84,
+    87
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "oboe",
+   "low": 58,
+   "high": 86,
+   "samples": [
+    59,
+    62,
+    65,
+    68,
+    71,
+    74,
+    77,
+    80,
+    83,
+    85
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "theremin",
+   "low": 55,
+   "high": 84,
+   "samples": [
+    56,
+    59,
+    62,
+    65,
+    68,
+    71,
+    74,
+    77,
+    80,
+    83
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "french_horn",
+   "low": 45,
+   "high": 72,
+   "samples": [
+    46,
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    71
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "brass",
+   "low": 45,
+   "high": 76,
+   "samples": [
+    46,
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    75
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  },
+  {
+   "name": "pwm",
+   "low": 48,
+   "high": 79,
+   "samples": [
+    49,
+    52,
+    55,
+    58,
+    61,
+    64,
+    67,
+    70,
+    73,
+    76,
+    78
+   ],
+   "length_s": 2.5,
+   "release_ms": 110
+  }
+ ],
+ "kits": [
+  {
+   "name": "acoustic",
+   "hits": [
+    [
+     "kick",
+     "kick"
+    ],
+    [
+     "snare",
+     "snare"
+    ],
+    [
+     "hat",
+     "hihat"
+    ],
+    [
+     "open",
+     "openhat"
+    ],
+    [
+     "crash",
+     "crash"
+    ],
+    [
+     "perc",
+     "tom"
+    ],
+    [
+     "rim",
+     "rim"
+    ]
+   ]
+  },
+  {
+   "name": "electro",
+   "hits": [
+    [
+     "kick",
+     "kick909"
+    ],
+    [
+     "snare",
+     "clap"
+    ],
+    [
+     "hat",
+     "hihat"
+    ],
+    [
+     "open",
+     "openhat"
+    ],
+    [
+     "crash",
+     "splash"
+    ],
+    [
+     "perc",
+     "rimshot"
+    ],
+    [
+     "rim",
+     "rimshot"
+    ]
+   ]
+  },
+  {
+   "name": "eight",
+   "hits": [
+    [
+     "kick",
+     "kick808"
+    ],
+    [
+     "snare",
+     "snare808"
+    ],
+    [
+     "hat",
+     "hihat"
+    ],
+    [
+     "open",
+     "openhat"
+    ],
+    [
+     "crash",
+     "splash"
+    ],
+    [
+     "perc",
+     "cowbell"
+    ],
+    [
+     "rim",
+     "rim"
+    ]
+   ]
+  },
+  {
+   "name": "brush",
+   "hits": [
+    [
+     "kick",
+     "kick"
+    ],
+    [
+     "snare",
+     "brush"
+    ],
+    [
+     "hat",
+     "pedal_hat"
+    ],
+    [
+     "open",
+     "hihat"
+    ],
+    [
+     "crash",
+     "splash"
+    ],
+    [
+     "perc",
+     "shaker"
+    ],
+    [
+     "rim",
+     "rim"
+    ]
+   ]
+  },
+  {
+   "name": "world",
+   "hits": [
+    [
+     "kick",
+     "frame_drum"
+    ],
+    [
+     "snare",
+     "conga"
+    ],
+    [
+     "hat",
+     "shaker"
+    ],
+    [
+     "open",
+     "tambourine"
+    ],
+    [
+     "crash",
+     "finger_cymbals"
+    ],
+    [
+     "perc",
+     "bongo"
+    ],
+    [
+     "rim",
+     "clave"
+    ]
+   ]
+  },
+  {
+   "name": "march",
+   "hits": [
+    [
+     "kick",
+     "kick"
+    ],
+    [
+     "snare",
+     "snare"
+    ],
+    [
+     "crash",
+     "crash"
+    ],
+    [
+     "perc",
+     "triangle"
+    ],
+    [
+     "rim",
+     "rim"
+    ]
+   ]
+  },
+  {
+   "name": "sleigh",
+   "hits": [
+    [
+     "kick",
+     "kick"
+    ],
+    [
+     "snare",
+     "brush"
+    ],
+    [
+     "hat",
+     "sleigh"
+    ],
+    [
+     "open",
+     "tambourine"
+    ],
+    [
+     "crash",
+     "finger_cymbals"
+    ],
+    [
+     "perc",
+     "triangle"
+    ],
+    [
+     "rim",
+     "woodblock"
+    ]
+   ]
+  },
+  {
+   "name": "chip",
+   "hits": [
+    [
+     "kick",
+     "zap_kick"
+    ],
+    [
+     "snare",
+     "snare808"
+    ],
+    [
+     "hat",
+     "hihat"
+    ],
+    [
+     "open",
+     "openhat"
+    ],
+    [
+     "crash",
+     "splash"
+    ],
+    [
+     "perc",
+     "clap"
+    ],
+    [
+     "rim",
+     "rimshot"
+    ]
+   ]
+  }
+ ]
+}

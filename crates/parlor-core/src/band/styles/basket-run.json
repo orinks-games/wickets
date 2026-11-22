@@ -1,0 +1,154 @@
+{
+ "name": "basket-run",
+ "tempo": [
+  96,
+  116
+ ],
+ "scales": [
+  "major",
+  "pentatonic",
+  "mixolydian"
+ ],
+ "swing": [
+  0,
+  0
+ ],
+ "busy": [
+  0.45,
+  0.75
+ ],
+ "phrase_bars": 4,
+ "volume": 0.62,
+ "parts": [
+  {
+   "role": "base",
+   "play": {
+    "kind": "bass",
+    "patterns": [
+     "root_fifth",
+     "rock",
+     "walk"
+    ]
+   },
+   "instruments": [
+    "finger_bass",
+    "upright_bass"
+   ],
+   "volume": 0.5,
+   "pan": 0.0,
+   "range": [
+    28,
+    50
+   ]
+  },
+  {
+   "role": "base",
+   "play": {
+    "kind": "comp"
+   },
+   "instruments": [
+    "guitar",
+    "banjo",
+    "accordion"
+   ],
+   "volume": 0.26,
+   "pan": -0.35
+  },
+  {
+   "role": "pulse",
+   "play": {
+    "kind": "drums",
+    "grooves": [
+     "backbeat",
+     "bossa"
+    ]
+   },
+   "instruments": [
+    "acoustic",
+    "world"
+   ],
+   "volume": 0.45,
+   "pan": 0.0
+  },
+  {
+   "role": "melody",
+   "play": {
+    "kind": "lead"
+   },
+   "instruments": [
+    "flute",
+    "clarinet",
+    "whistle",
+    "marimba",
+    "steel_drum"
+   ],
+   "volume": 0.42,
+   "pan": 0.3,
+   "range": [
+    62,
+    86
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "arp"
+   },
+   "instruments": [
+    "marimba",
+    "kalimba",
+    "xylophone"
+   ],
+   "volume": 0.24,
+   "pan": -0.4,
+   "range": [
+    60,
+    84
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "counter"
+   },
+   "instruments": [
+    "clarinet",
+    "strings"
+   ],
+   "volume": 0.22,
+   "pan": 0.15,
+   "range": [
+    55,
+    74
+   ],
+   "chance": 0.6
+  },
+  {
+   "role": "hurry",
+   "play": {
+    "kind": "rush"
+   },
+   "instruments": [
+    "acoustic"
+   ],
+   "volume": 0.26,
+   "pan": 0.2
+  },
+  {
+   "role": "danger",
+   "play": {
+    "kind": "drone"
+   },
+   "instruments": [
+    "cello",
+    "strings"
+   ],
+   "volume": 0.3,
+   "pan": 0,
+   "range": [
+    40,
+    62
+   ]
+  }
+ ]
+}

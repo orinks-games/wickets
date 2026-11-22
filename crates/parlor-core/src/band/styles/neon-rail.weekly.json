@@ -1,0 +1,157 @@
+{
+ "name": "neon-rail/weekly",
+ "tempo": [
+  112,
+  124
+ ],
+ "scales": [
+  "minor",
+  "dorian",
+  "phrygian",
+  "harmonic_minor",
+  "minor_pentatonic"
+ ],
+ "swing": [
+  0,
+  0
+ ],
+ "busy": [
+  0.4,
+  0.8
+ ],
+ "phrase_bars": 8,
+ "volume": 0.62,
+ "parts": [
+  {
+   "role": "base",
+   "play": {
+    "kind": "bass",
+    "patterns": [
+     "synth",
+     "pulse",
+     "rock",
+     "dub"
+    ]
+   },
+   "instruments": [
+    "fm_bass",
+    "moog_bass",
+    "reese"
+   ],
+   "volume": 0.5,
+   "range": [
+    28,
+    50
+   ]
+  },
+  {
+   "role": "base",
+   "play": {
+    "kind": "pad"
+   },
+   "instruments": [
+    "string_machine",
+    "warm_pad",
+    "glass_pad"
+   ],
+   "pan": -0.15,
+   "volume": 0.22
+  },
+  {
+   "role": "pulse",
+   "play": {
+    "kind": "drums",
+    "grooves": [
+     "train",
+     "four",
+     "break",
+     "backbeat"
+    ]
+   },
+   "instruments": [
+    "electro",
+    "eight"
+   ],
+   "volume": 0.5
+  },
+  {
+   "role": "melody",
+   "play": {
+    "kind": "lead"
+   },
+   "instruments": [
+    "square_lead",
+    "sync_lead",
+    "soft_lead",
+    "chip",
+    "pwm"
+   ],
+   "pan": 0.3,
+   "volume": 0.42,
+   "range": [
+    60,
+    84
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "arp"
+   },
+   "instruments": [
+    "synth_pluck",
+    "epiano",
+    "clav"
+   ],
+   "pan": -0.4,
+   "volume": 0.26,
+   "range": [
+    57,
+    81
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "counter"
+   },
+   "instruments": [
+    "strings",
+    "brass"
+   ],
+   "pan": 0.15,
+   "volume": 0.24,
+   "range": [
+    52,
+    72
+   ],
+   "chance": 0.6
+  },
+  {
+   "role": "hurry",
+   "play": {
+    "kind": "rush"
+   },
+   "instruments": [
+    "electro"
+   ],
+   "pan": 0.2,
+   "volume": 0.3
+  },
+  {
+   "role": "danger",
+   "play": {
+    "kind": "drone"
+   },
+   "instruments": [
+    "cello",
+    "warm_pad"
+   ],
+   "volume": 0.35,
+   "range": [
+    38,
+    60
+   ]
+  }
+ ]
+}

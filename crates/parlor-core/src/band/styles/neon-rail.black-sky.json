@@ -1,0 +1,151 @@
+{
+ "name": "neon-rail/black-sky",
+ "tempo": [
+  96,
+  108
+ ],
+ "scales": [
+  "phrygian",
+  "harmonic_minor",
+  "minor"
+ ],
+ "swing": [
+  0,
+  0
+ ],
+ "busy": [
+  0.25,
+  0.5
+ ],
+ "phrase_bars": 4,
+ "volume": 0.62,
+ "parts": [
+  {
+   "role": "base",
+   "play": {
+    "kind": "bass",
+    "patterns": [
+     "whole",
+     "dub",
+     "pulse"
+    ]
+   },
+   "instruments": [
+    "reese",
+    "bass808",
+    "moog_bass"
+   ],
+   "volume": 0.55,
+   "pan": 0.0,
+   "range": [
+    26,
+    48
+   ]
+  },
+  {
+   "role": "base",
+   "play": {
+    "kind": "pad"
+   },
+   "instruments": [
+    "warm_pad",
+    "choir",
+    "string_machine"
+   ],
+   "volume": 0.24,
+   "pan": -0.15
+  },
+  {
+   "role": "pulse",
+   "play": {
+    "kind": "drums",
+    "grooves": [
+     "half",
+     "break"
+    ]
+   },
+   "instruments": [
+    "eight",
+    "electro"
+   ],
+   "volume": 0.5,
+   "pan": 0.0
+  },
+  {
+   "role": "melody",
+   "play": {
+    "kind": "lead"
+   },
+   "instruments": [
+    "theremin",
+    "soft_lead",
+    "pwm"
+   ],
+   "volume": 0.4,
+   "pan": 0.3,
+   "range": [
+    57,
+    81
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "counter"
+   },
+   "instruments": [
+    "cello",
+    "strings"
+   ],
+   "volume": 0.26,
+   "pan": 0.15,
+   "range": [
+    45,
+    67
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "arp"
+   },
+   "instruments": [
+    "synth_pluck",
+    "glass_pad"
+   ],
+   "volume": 0.2,
+   "pan": -0.4,
+   "range": [
+    57,
+    79
+   ]
+  },
+  {
+   "role": "hurry",
+   "play": {
+    "kind": "rush"
+   },
+   "instruments": [
+    "electro"
+   ],
+   "volume": 0.28,
+   "pan": 0.2
+  },
+  {
+   "role": "danger",
+   "play": {
+    "kind": "drone"
+   },
+   "instruments": [
+    "cello",
+    "choir"
+   ],
+   "volume": 0.36,
+   "pan": 0,
+   "range": [
+    38,
+    60
+   ]
+  }
+ ]
+}

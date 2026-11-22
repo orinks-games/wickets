@@ -7,6 +7,7 @@
 
 mod actions;
 pub mod almanac;
+pub mod band;
 pub mod briefing;
 pub mod calendar;
 pub mod challenges;

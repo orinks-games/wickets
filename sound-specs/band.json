@@ -1,0 +1,11152 @@
+{
+ "_about": "The band's recorded notes and drum hits, written by tools/band_notes.py: one genny note every three semitones across each instrument's range, with a light room, levelled alike. Hearken's band plays them in the game as each run's own song.",
+ "genny": "oriol",
+ "sounds": [
+  {
+   "out": "fm_bass/29.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "fm_bass",
+     "notes": "F1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "fm_bass/32.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "fm_bass",
+     "notes": "G#1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "fm_bass/35.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "fm_bass",
+     "notes": "B1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "fm_bass/38.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "fm_bass",
+     "notes": "D2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "fm_bass/41.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "fm_bass",
+     "notes": "F2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "fm_bass/44.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "fm_bass",
+     "notes": "G#2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "fm_bass/47.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "fm_bass",
+     "notes": "B2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "fm_bass/50.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "fm_bass",
+     "notes": "D3",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "fm_bass/53.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "fm_bass",
+     "notes": "F3",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "fm_bass/54.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "fm_bass",
+     "notes": "F#3",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "moog_bass/29.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "moog_bass",
+     "notes": "F1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "moog_bass/32.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "moog_bass",
+     "notes": "G#1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "moog_bass/35.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "moog_bass",
+     "notes": "B1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "moog_bass/38.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "moog_bass",
+     "notes": "D2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "moog_bass/41.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "moog_bass",
+     "notes": "F2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "moog_bass/44.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "moog_bass",
+     "notes": "G#2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "moog_bass/47.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "moog_bass",
+     "notes": "B2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "moog_bass/50.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "moog_bass",
+     "notes": "D3",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "moog_bass/53.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "moog_bass",
+     "notes": "F3",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "moog_bass/54.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "moog_bass",
+     "notes": "F#3",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "reese/29.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "reese",
+     "notes": "F1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "reese/32.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "reese",
+     "notes": "G#1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "reese/35.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "reese",
+     "notes": "B1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "reese/38.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "reese",
+     "notes": "D2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "reese/41.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "reese",
+     "notes": "F2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "reese/44.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "reese",
+     "notes": "G#2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "reese/47.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "reese",
+     "notes": "B2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "bass808/25.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "bass808",
+     "notes": "C#1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "bass808/28.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "bass808",
+     "notes": "E1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "bass808/31.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "bass808",
+     "notes": "G1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "bass808/34.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "bass808",
+     "notes": "A#1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "bass808/37.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "bass808",
+     "notes": "C#2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "bass808/40.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "bass808",
+     "notes": "E2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "bass808/42.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "bass808",
+     "notes": "F#2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "upright_bass/29.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "upright_bass",
+     "notes": "F1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "upright_bass/32.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "upright_bass",
+     "notes": "G#1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "upright_bass/35.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "upright_bass",
+     "notes": "B1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "upright_bass/38.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "upright_bass",
+     "notes": "D2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "upright_bass/41.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "upright_bass",
+     "notes": "F2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "upright_bass/44.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "upright_bass",
+     "notes": "G#2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "upright_bass/47.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "upright_bass",
+     "notes": "B2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "upright_bass/50.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "upright_bass",
+     "notes": "D3",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "upright_bass/51.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "upright_bass",
+     "notes": "D#3",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "finger_bass/29.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "finger_bass",
+     "notes": "F1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "finger_bass/32.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "finger_bass",
+     "notes": "G#1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "finger_bass/35.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "finger_bass",
+     "notes": "B1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "finger_bass/38.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "finger_bass",
+     "notes": "D2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "finger_bass/41.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "finger_bass",
+     "notes": "F2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "finger_bass/44.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "finger_bass",
+     "notes": "G#2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "finger_bass/47.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "finger_bass",
+     "notes": "B2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "finger_bass/50.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "finger_bass",
+     "notes": "D3",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "finger_bass/51.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "finger_bass",
+     "notes": "D#3",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "tuba/30.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "tuba",
+     "notes": "F#1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "tuba/33.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "tuba",
+     "notes": "A1",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "tuba/36.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "tuba",
+     "notes": "C2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "tuba/39.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "tuba",
+     "notes": "D#2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "tuba/42.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "tuba",
+     "notes": "F#2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "tuba/45.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "tuba",
+     "notes": "A2",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "tuba/48.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "tuba",
+     "notes": "C3",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "tuba/51.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "tuba",
+     "notes": "D#3",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "tuba/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "tuba",
+     "notes": "E3",
+     "dur": 2.2,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "epiano/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "epiano",
+     "notes": "C#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "epiano/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "epiano",
+     "notes": "E3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "epiano/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "epiano",
+     "notes": "G3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "epiano/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "epiano",
+     "notes": "A#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "epiano/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "epiano",
+     "notes": "C#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "epiano/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "epiano",
+     "notes": "E4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "epiano/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "epiano",
+     "notes": "G4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "epiano/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "epiano",
+     "notes": "A#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "epiano/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "epiano",
+     "notes": "C#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "epiano/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "epiano",
+     "notes": "E5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "epiano/78.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "epiano",
+     "notes": "F#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "wurli/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "wurli",
+     "notes": "C#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "wurli/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "wurli",
+     "notes": "E3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "wurli/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "wurli",
+     "notes": "G3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "wurli/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "wurli",
+     "notes": "A#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "wurli/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "wurli",
+     "notes": "C#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "wurli/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "wurli",
+     "notes": "E4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "wurli/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "wurli",
+     "notes": "G4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "wurli/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "wurli",
+     "notes": "A#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "wurli/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "wurli",
+     "notes": "C#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "wurli/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "wurli",
+     "notes": "E5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "wurli/78.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "wurli",
+     "notes": "F#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "felt_piano/46.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "felt_piano",
+     "notes": "A#2",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "felt_piano/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "felt_piano",
+     "notes": "C#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "felt_piano/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "felt_piano",
+     "notes": "E3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "felt_piano/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "felt_piano",
+     "notes": "G3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "felt_piano/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "felt_piano",
+     "notes": "A#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "felt_piano/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "felt_piano",
+     "notes": "C#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "felt_piano/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "felt_piano",
+     "notes": "E4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "felt_piano/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "felt_piano",
+     "notes": "G4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "felt_piano/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "felt_piano",
+     "notes": "A#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "felt_piano/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "felt_piano",
+     "notes": "C#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "felt_piano/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "felt_piano",
+     "notes": "E5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "felt_piano/79.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "felt_piano",
+     "notes": "G5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "felt_piano/80.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "felt_piano",
+     "notes": "G#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "organ/46.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "organ",
+     "notes": "A#2",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "organ/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "organ",
+     "notes": "C#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "organ/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "organ",
+     "notes": "E3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "organ/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "organ",
+     "notes": "G3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "organ/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "organ",
+     "notes": "A#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "organ/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "organ",
+     "notes": "C#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "organ/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "organ",
+     "notes": "E4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "organ/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "organ",
+     "notes": "G4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "organ/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "organ",
+     "notes": "A#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "organ/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "organ",
+     "notes": "C#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "organ/75.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "organ",
+     "notes": "D#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clav/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clav",
+     "notes": "C#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clav/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clav",
+     "notes": "E3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clav/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clav",
+     "notes": "G3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clav/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clav",
+     "notes": "A#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clav/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clav",
+     "notes": "C#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clav/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clav",
+     "notes": "E4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clav/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clav",
+     "notes": "G4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clav/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clav",
+     "notes": "A#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clav/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clav",
+     "notes": "C#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clav/75.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clav",
+     "notes": "D#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harpsichord/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harpsichord",
+     "notes": "C#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harpsichord/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harpsichord",
+     "notes": "E3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harpsichord/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harpsichord",
+     "notes": "G3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harpsichord/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harpsichord",
+     "notes": "A#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harpsichord/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harpsichord",
+     "notes": "C#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harpsichord/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harpsichord",
+     "notes": "E4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harpsichord/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harpsichord",
+     "notes": "G4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harpsichord/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harpsichord",
+     "notes": "A#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harpsichord/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harpsichord",
+     "notes": "C#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harpsichord/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harpsichord",
+     "notes": "E5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harpsichord/78.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harpsichord",
+     "notes": "F#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "accordion/51.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "accordion",
+     "notes": "D#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "accordion/54.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "accordion",
+     "notes": "F#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "accordion/57.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "accordion",
+     "notes": "A3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "accordion/60.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "accordion",
+     "notes": "C4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "accordion/63.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "accordion",
+     "notes": "D#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "accordion/66.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "accordion",
+     "notes": "F#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "accordion/69.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "accordion",
+     "notes": "A4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "accordion/72.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "accordion",
+     "notes": "C5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "accordion/75.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "accordion",
+     "notes": "D#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "accordion/78.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "accordion",
+     "notes": "F#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "warm_pad/41.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "warm_pad",
+     "notes": "F2",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "warm_pad/44.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "warm_pad",
+     "notes": "G#2",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "warm_pad/47.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "warm_pad",
+     "notes": "B2",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "warm_pad/50.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "warm_pad",
+     "notes": "D3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "warm_pad/53.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "warm_pad",
+     "notes": "F3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "warm_pad/56.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "warm_pad",
+     "notes": "G#3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "warm_pad/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "warm_pad",
+     "notes": "B3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "warm_pad/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "warm_pad",
+     "notes": "D4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "warm_pad/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "warm_pad",
+     "notes": "F4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "warm_pad/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "warm_pad",
+     "notes": "G#4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "warm_pad/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "warm_pad",
+     "notes": "B4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glass_pad/53.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glass_pad",
+     "notes": "F3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glass_pad/56.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glass_pad",
+     "notes": "G#3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glass_pad/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glass_pad",
+     "notes": "B3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glass_pad/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glass_pad",
+     "notes": "D4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glass_pad/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glass_pad",
+     "notes": "F4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glass_pad/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glass_pad",
+     "notes": "G#4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glass_pad/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glass_pad",
+     "notes": "B4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glass_pad/74.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glass_pad",
+     "notes": "D5",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glass_pad/77.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glass_pad",
+     "notes": "F5",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glass_pad/78.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glass_pad",
+     "notes": "F#5",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "string_machine/44.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "string_machine",
+     "notes": "G#2",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "string_machine/47.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "string_machine",
+     "notes": "B2",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "string_machine/50.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "string_machine",
+     "notes": "D3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "string_machine/53.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "string_machine",
+     "notes": "F3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "string_machine/56.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "string_machine",
+     "notes": "G#3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "string_machine/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "string_machine",
+     "notes": "B3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "string_machine/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "string_machine",
+     "notes": "D4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "string_machine/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "string_machine",
+     "notes": "F4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "string_machine/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "string_machine",
+     "notes": "G#4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "string_machine/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "string_machine",
+     "notes": "B4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "string_machine/74.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "string_machine",
+     "notes": "D5",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "string_machine/75.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "string_machine",
+     "notes": "D#5",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "strings/44.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "strings",
+     "notes": "G#2",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "strings/47.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "strings",
+     "notes": "B2",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "strings/50.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "strings",
+     "notes": "D3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "strings/53.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "strings",
+     "notes": "F3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "strings/56.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "strings",
+     "notes": "G#3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "strings/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "strings",
+     "notes": "B3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "strings/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "strings",
+     "notes": "D4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "strings/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "strings",
+     "notes": "F4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "strings/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "strings",
+     "notes": "G#4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "strings/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "strings",
+     "notes": "B4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "strings/74.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "strings",
+     "notes": "D5",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "strings/77.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "strings",
+     "notes": "F5",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "strings/78.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "strings",
+     "notes": "F#5",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "choir/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "choir",
+     "notes": "C#3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "choir/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "choir",
+     "notes": "E3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "choir/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "choir",
+     "notes": "G3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "choir/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "choir",
+     "notes": "A#3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "choir/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "choir",
+     "notes": "C#4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "choir/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "choir",
+     "notes": "E4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "choir/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "choir",
+     "notes": "G4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "choir/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "choir",
+     "notes": "A#4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "choir/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "choir",
+     "notes": "C#5",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "choir/75.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "choir",
+     "notes": "D#5",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "cello/39.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "cello",
+     "notes": "D#2",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "cello/42.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "cello",
+     "notes": "F#2",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "cello/45.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "cello",
+     "notes": "A2",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "cello/48.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "cello",
+     "notes": "C3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "cello/51.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "cello",
+     "notes": "D#3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "cello/54.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "cello",
+     "notes": "F#3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "cello/57.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "cello",
+     "notes": "A3",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "cello/60.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "cello",
+     "notes": "C4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "cello/63.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "cello",
+     "notes": "D#4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "cello/66.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "cello",
+     "notes": "F#4",
+     "dur": 4.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "vibraphone/54.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "vibraphone",
+     "notes": "F#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "vibraphone/57.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "vibraphone",
+     "notes": "A3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "vibraphone/60.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "vibraphone",
+     "notes": "C4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "vibraphone/63.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "vibraphone",
+     "notes": "D#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "vibraphone/66.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "vibraphone",
+     "notes": "F#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "vibraphone/69.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "vibraphone",
+     "notes": "A4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "vibraphone/72.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "vibraphone",
+     "notes": "C5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "vibraphone/75.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "vibraphone",
+     "notes": "D#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "vibraphone/78.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "vibraphone",
+     "notes": "F#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "vibraphone/81.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "vibraphone",
+     "notes": "A5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "vibraphone/83.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "vibraphone",
+     "notes": "B5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "marimba/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "marimba",
+     "notes": "C#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "marimba/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "marimba",
+     "notes": "E3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "marimba/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "marimba",
+     "notes": "G3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "marimba/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "marimba",
+     "notes": "A#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "marimba/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "marimba",
+     "notes": "C#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "marimba/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "marimba",
+     "notes": "E4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "marimba/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "marimba",
+     "notes": "G4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "marimba/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "marimba",
+     "notes": "A#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "marimba/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "marimba",
+     "notes": "C#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "marimba/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "marimba",
+     "notes": "E5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "marimba/79.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "marimba",
+     "notes": "G5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "marimba/82.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "marimba",
+     "notes": "A#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "marimba/83.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "marimba",
+     "notes": "B5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "celesta/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "celesta",
+     "notes": "C#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "celesta/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "celesta",
+     "notes": "E4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "celesta/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "celesta",
+     "notes": "G4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "celesta/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "celesta",
+     "notes": "A#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "celesta/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "celesta",
+     "notes": "C#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "celesta/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "celesta",
+     "notes": "E5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "celesta/79.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "celesta",
+     "notes": "G5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "celesta/82.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "celesta",
+     "notes": "A#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "celesta/85.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "celesta",
+     "notes": "C#6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "celesta/88.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "celesta",
+     "notes": "E6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "celesta/90.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "celesta",
+     "notes": "F#6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "music_box/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "music_box",
+     "notes": "C#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "music_box/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "music_box",
+     "notes": "E5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "music_box/79.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "music_box",
+     "notes": "G5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "music_box/82.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "music_box",
+     "notes": "A#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "music_box/85.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "music_box",
+     "notes": "C#6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "music_box/88.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "music_box",
+     "notes": "E6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "music_box/91.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "music_box",
+     "notes": "G6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "music_box/94.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "music_box",
+     "notes": "A#6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "music_box/95.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "music_box",
+     "notes": "B6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "kalimba/56.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "kalimba",
+     "notes": "G#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "kalimba/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "kalimba",
+     "notes": "B3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "kalimba/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "kalimba",
+     "notes": "D4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "kalimba/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "kalimba",
+     "notes": "F4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "kalimba/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "kalimba",
+     "notes": "G#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "kalimba/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "kalimba",
+     "notes": "B4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "kalimba/74.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "kalimba",
+     "notes": "D5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "kalimba/77.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "kalimba",
+     "notes": "F5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "kalimba/80.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "kalimba",
+     "notes": "G#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "kalimba/83.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "kalimba",
+     "notes": "B5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "kalimba/85.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "kalimba",
+     "notes": "C#6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glockenspiel/80.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glockenspiel",
+     "notes": "G#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glockenspiel/83.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glockenspiel",
+     "notes": "B5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glockenspiel/86.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glockenspiel",
+     "notes": "D6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glockenspiel/89.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glockenspiel",
+     "notes": "F6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glockenspiel/92.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glockenspiel",
+     "notes": "G#6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "glockenspiel/95.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "glockenspiel",
+     "notes": "B6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "steel_drum/53.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "steel_drum",
+     "notes": "F3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "steel_drum/56.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "steel_drum",
+     "notes": "G#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "steel_drum/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "steel_drum",
+     "notes": "B3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "steel_drum/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "steel_drum",
+     "notes": "D4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "steel_drum/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "steel_drum",
+     "notes": "F4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "steel_drum/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "steel_drum",
+     "notes": "G#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "steel_drum/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "steel_drum",
+     "notes": "B4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "steel_drum/74.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "steel_drum",
+     "notes": "D5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "steel_drum/77.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "steel_drum",
+     "notes": "F5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "steel_drum/80.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "steel_drum",
+     "notes": "G#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "xylophone/66.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "xylophone",
+     "notes": "F#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "xylophone/69.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "xylophone",
+     "notes": "A4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "xylophone/72.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "xylophone",
+     "notes": "C5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "xylophone/75.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "xylophone",
+     "notes": "D#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "xylophone/78.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "xylophone",
+     "notes": "F#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "xylophone/81.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "xylophone",
+     "notes": "A5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "xylophone/84.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "xylophone",
+     "notes": "C6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "xylophone/87.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "xylophone",
+     "notes": "D#6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "xylophone/90.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "xylophone",
+     "notes": "F#6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "xylophone/92.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "xylophone",
+     "notes": "G#6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harp/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harp",
+     "notes": "C#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harp/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harp",
+     "notes": "E3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harp/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harp",
+     "notes": "G3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harp/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harp",
+     "notes": "A#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harp/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harp",
+     "notes": "C#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harp/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harp",
+     "notes": "E4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harp/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harp",
+     "notes": "G4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harp/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harp",
+     "notes": "A#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harp/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harp",
+     "notes": "C#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harp/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harp",
+     "notes": "E5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harp/79.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harp",
+     "notes": "G5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harp/82.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harp",
+     "notes": "A#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "harp/85.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "harp",
+     "notes": "C#6",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "synth_pluck/46.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "synth_pluck",
+     "notes": "A#2",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "synth_pluck/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "synth_pluck",
+     "notes": "C#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "synth_pluck/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "synth_pluck",
+     "notes": "E3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "synth_pluck/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "synth_pluck",
+     "notes": "G3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "synth_pluck/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "synth_pluck",
+     "notes": "A#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "synth_pluck/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "synth_pluck",
+     "notes": "C#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "synth_pluck/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "synth_pluck",
+     "notes": "E4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "synth_pluck/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "synth_pluck",
+     "notes": "G4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "synth_pluck/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "synth_pluck",
+     "notes": "A#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "synth_pluck/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "synth_pluck",
+     "notes": "C#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "synth_pluck/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "synth_pluck",
+     "notes": "E5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "synth_pluck/79.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "synth_pluck",
+     "notes": "G5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "synth_pluck/80.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "synth_pluck",
+     "notes": "G#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "guitar/46.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "guitar",
+     "notes": "A#2",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "guitar/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "guitar",
+     "notes": "C#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "guitar/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "guitar",
+     "notes": "E3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "guitar/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "guitar",
+     "notes": "G3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "guitar/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "guitar",
+     "notes": "A#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "guitar/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "guitar",
+     "notes": "C#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "guitar/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "guitar",
+     "notes": "E4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "guitar/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "guitar",
+     "notes": "G4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "guitar/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "guitar",
+     "notes": "A#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "guitar/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "guitar",
+     "notes": "C#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "guitar/75.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "guitar",
+     "notes": "D#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "mandolin/56.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "mandolin",
+     "notes": "G#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "mandolin/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "mandolin",
+     "notes": "B3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "mandolin/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "mandolin",
+     "notes": "D4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "mandolin/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "mandolin",
+     "notes": "F4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "mandolin/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "mandolin",
+     "notes": "G#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "mandolin/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "mandolin",
+     "notes": "B4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "mandolin/74.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "mandolin",
+     "notes": "D5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "mandolin/77.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "mandolin",
+     "notes": "F5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "mandolin/80.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "mandolin",
+     "notes": "G#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "banjo/51.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "banjo",
+     "notes": "D#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "banjo/54.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "banjo",
+     "notes": "F#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "banjo/57.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "banjo",
+     "notes": "A3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "banjo/60.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "banjo",
+     "notes": "C4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "banjo/63.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "banjo",
+     "notes": "D#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "banjo/66.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "banjo",
+     "notes": "F#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "banjo/69.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "banjo",
+     "notes": "A4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "banjo/72.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "banjo",
+     "notes": "C5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "banjo/75.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "banjo",
+     "notes": "D#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "banjo/78.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "banjo",
+     "notes": "F#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pizzicato/46.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pizzicato",
+     "notes": "A#2",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pizzicato/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pizzicato",
+     "notes": "C#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pizzicato/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pizzicato",
+     "notes": "E3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pizzicato/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pizzicato",
+     "notes": "G3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pizzicato/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pizzicato",
+     "notes": "A#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pizzicato/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pizzicato",
+     "notes": "C#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pizzicato/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pizzicato",
+     "notes": "E4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pizzicato/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pizzicato",
+     "notes": "G4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pizzicato/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pizzicato",
+     "notes": "A#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pizzicato/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pizzicato",
+     "notes": "C#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pizzicato/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pizzicato",
+     "notes": "E5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pizzicato/78.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pizzicato",
+     "notes": "F#5",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "handpan/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "handpan",
+     "notes": "C#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "handpan/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "handpan",
+     "notes": "E3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "handpan/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "handpan",
+     "notes": "G3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "handpan/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "handpan",
+     "notes": "A#3",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "handpan/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "handpan",
+     "notes": "C#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "handpan/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "handpan",
+     "notes": "E4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "handpan/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "handpan",
+     "notes": "G4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "handpan/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "handpan",
+     "notes": "A#4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "handpan/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "handpan",
+     "notes": "B4",
+     "dur": 2.0,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "square_lead/56.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "square_lead",
+     "notes": "G#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "square_lead/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "square_lead",
+     "notes": "B3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "square_lead/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "square_lead",
+     "notes": "D4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "square_lead/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "square_lead",
+     "notes": "F4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "square_lead/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "square_lead",
+     "notes": "G#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "square_lead/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "square_lead",
+     "notes": "B4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "square_lead/74.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "square_lead",
+     "notes": "D5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "square_lead/77.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "square_lead",
+     "notes": "F5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "square_lead/80.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "square_lead",
+     "notes": "G#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "square_lead/83.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "square_lead",
+     "notes": "B5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "soft_lead/56.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "soft_lead",
+     "notes": "G#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "soft_lead/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "soft_lead",
+     "notes": "B3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "soft_lead/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "soft_lead",
+     "notes": "D4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "soft_lead/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "soft_lead",
+     "notes": "F4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "soft_lead/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "soft_lead",
+     "notes": "G#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "soft_lead/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "soft_lead",
+     "notes": "B4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "soft_lead/74.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "soft_lead",
+     "notes": "D5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "soft_lead/77.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "soft_lead",
+     "notes": "F5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "soft_lead/80.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "soft_lead",
+     "notes": "G#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "soft_lead/83.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "soft_lead",
+     "notes": "B5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "soft_lead/85.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "soft_lead",
+     "notes": "C#6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sync_lead/56.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sync_lead",
+     "notes": "G#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sync_lead/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sync_lead",
+     "notes": "B3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sync_lead/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sync_lead",
+     "notes": "D4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sync_lead/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sync_lead",
+     "notes": "F4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sync_lead/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sync_lead",
+     "notes": "G#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sync_lead/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sync_lead",
+     "notes": "B4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sync_lead/74.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sync_lead",
+     "notes": "D5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sync_lead/77.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sync_lead",
+     "notes": "F5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sync_lead/80.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sync_lead",
+     "notes": "G#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sync_lead/83.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sync_lead",
+     "notes": "B5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "chip/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "chip",
+     "notes": "A#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "chip/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "chip",
+     "notes": "C#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "chip/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "chip",
+     "notes": "E4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "chip/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "chip",
+     "notes": "G4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "chip/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "chip",
+     "notes": "A#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "chip/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "chip",
+     "notes": "C#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "chip/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "chip",
+     "notes": "E5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "chip/79.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "chip",
+     "notes": "G5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "chip/82.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "chip",
+     "notes": "A#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "chip/85.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "chip",
+     "notes": "C#6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "chip/87.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "chip",
+     "notes": "D#6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sax/51.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sax",
+     "notes": "D#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sax/54.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sax",
+     "notes": "F#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sax/57.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sax",
+     "notes": "A3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sax/60.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sax",
+     "notes": "C4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sax/63.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sax",
+     "notes": "D#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sax/66.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sax",
+     "notes": "F#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sax/69.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sax",
+     "notes": "A4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sax/72.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sax",
+     "notes": "C5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sax/75.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sax",
+     "notes": "D#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "sax/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "sax",
+     "notes": "E5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flute/63.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flute",
+     "notes": "D#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flute/66.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flute",
+     "notes": "F#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flute/69.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flute",
+     "notes": "A4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flute/72.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flute",
+     "notes": "C5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flute/75.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flute",
+     "notes": "D#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flute/78.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flute",
+     "notes": "F#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flute/81.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flute",
+     "notes": "A5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flute/84.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flute",
+     "notes": "C6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flute/87.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flute",
+     "notes": "D#6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flute/90.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flute",
+     "notes": "F#6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clarinet/53.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clarinet",
+     "notes": "F3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clarinet/56.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clarinet",
+     "notes": "G#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clarinet/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clarinet",
+     "notes": "B3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clarinet/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clarinet",
+     "notes": "D4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clarinet/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clarinet",
+     "notes": "F4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clarinet/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clarinet",
+     "notes": "G#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clarinet/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clarinet",
+     "notes": "B4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clarinet/74.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clarinet",
+     "notes": "D5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clarinet/77.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clarinet",
+     "notes": "F5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "clarinet/80.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "clarinet",
+     "notes": "G#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "trumpet/56.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "trumpet",
+     "notes": "G#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "trumpet/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "trumpet",
+     "notes": "B3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "trumpet/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "trumpet",
+     "notes": "D4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "trumpet/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "trumpet",
+     "notes": "F4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "trumpet/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "trumpet",
+     "notes": "G#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "trumpet/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "trumpet",
+     "notes": "B4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "trumpet/74.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "trumpet",
+     "notes": "D5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "trumpet/77.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "trumpet",
+     "notes": "F5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "trumpet/80.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "trumpet",
+     "notes": "G#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flugelhorn/53.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flugelhorn",
+     "notes": "F3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flugelhorn/56.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flugelhorn",
+     "notes": "G#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flugelhorn/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flugelhorn",
+     "notes": "B3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flugelhorn/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flugelhorn",
+     "notes": "D4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flugelhorn/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flugelhorn",
+     "notes": "F4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flugelhorn/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flugelhorn",
+     "notes": "G#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flugelhorn/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flugelhorn",
+     "notes": "B4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flugelhorn/74.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flugelhorn",
+     "notes": "D5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flugelhorn/77.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flugelhorn",
+     "notes": "F5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "flugelhorn/78.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "flugelhorn",
+     "notes": "F#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "violin/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "violin",
+     "notes": "A#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "violin/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "violin",
+     "notes": "C#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "violin/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "violin",
+     "notes": "E4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "violin/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "violin",
+     "notes": "G4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "violin/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "violin",
+     "notes": "A#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "violin/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "violin",
+     "notes": "C#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "violin/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "violin",
+     "notes": "E5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "violin/79.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "violin",
+     "notes": "G5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "violin/82.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "violin",
+     "notes": "A#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "violin/85.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "violin",
+     "notes": "C#6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "violin/87.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "violin",
+     "notes": "D#6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "whistle/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "whistle",
+     "notes": "C#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "whistle/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "whistle",
+     "notes": "E5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "whistle/79.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "whistle",
+     "notes": "G5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "whistle/82.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "whistle",
+     "notes": "A#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "whistle/85.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "whistle",
+     "notes": "C#6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "whistle/88.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "whistle",
+     "notes": "E6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "whistle/91.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "whistle",
+     "notes": "G6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "whistle/92.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "whistle",
+     "notes": "G#6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pan_flute/63.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pan_flute",
+     "notes": "D#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pan_flute/66.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pan_flute",
+     "notes": "F#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pan_flute/69.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pan_flute",
+     "notes": "A4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pan_flute/72.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pan_flute",
+     "notes": "C5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pan_flute/75.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pan_flute",
+     "notes": "D#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pan_flute/78.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pan_flute",
+     "notes": "F#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pan_flute/81.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pan_flute",
+     "notes": "A5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pan_flute/84.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pan_flute",
+     "notes": "C6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pan_flute/87.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pan_flute",
+     "notes": "D#6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "oboe/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "oboe",
+     "notes": "B3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "oboe/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "oboe",
+     "notes": "D4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "oboe/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "oboe",
+     "notes": "F4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "oboe/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "oboe",
+     "notes": "G#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "oboe/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "oboe",
+     "notes": "B4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "oboe/74.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "oboe",
+     "notes": "D5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "oboe/77.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "oboe",
+     "notes": "F5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "oboe/80.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "oboe",
+     "notes": "G#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "oboe/83.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "oboe",
+     "notes": "B5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "oboe/85.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "oboe",
+     "notes": "C#6",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "theremin/56.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "theremin",
+     "notes": "G#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "theremin/59.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "theremin",
+     "notes": "B3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "theremin/62.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "theremin",
+     "notes": "D4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "theremin/65.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "theremin",
+     "notes": "F4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "theremin/68.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "theremin",
+     "notes": "G#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "theremin/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "theremin",
+     "notes": "B4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "theremin/74.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "theremin",
+     "notes": "D5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "theremin/77.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "theremin",
+     "notes": "F5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "theremin/80.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "theremin",
+     "notes": "G#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "theremin/83.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "theremin",
+     "notes": "B5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "french_horn/46.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "french_horn",
+     "notes": "A#2",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "french_horn/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "french_horn",
+     "notes": "C#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "french_horn/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "french_horn",
+     "notes": "E3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "french_horn/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "french_horn",
+     "notes": "G3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "french_horn/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "french_horn",
+     "notes": "A#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "french_horn/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "french_horn",
+     "notes": "C#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "french_horn/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "french_horn",
+     "notes": "E4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "french_horn/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "french_horn",
+     "notes": "G4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "french_horn/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "french_horn",
+     "notes": "A#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "french_horn/71.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "french_horn",
+     "notes": "B4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "brass/46.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "brass",
+     "notes": "A#2",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "brass/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "brass",
+     "notes": "C#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "brass/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "brass",
+     "notes": "E3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "brass/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "brass",
+     "notes": "G3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "brass/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "brass",
+     "notes": "A#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "brass/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "brass",
+     "notes": "C#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "brass/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "brass",
+     "notes": "E4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "brass/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "brass",
+     "notes": "G4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "brass/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "brass",
+     "notes": "A#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "brass/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "brass",
+     "notes": "C#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "brass/75.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "brass",
+     "notes": "D#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pwm/49.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pwm",
+     "notes": "C#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pwm/52.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pwm",
+     "notes": "E3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pwm/55.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pwm",
+     "notes": "G3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pwm/58.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pwm",
+     "notes": "A#3",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pwm/61.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pwm",
+     "notes": "C#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pwm/64.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pwm",
+     "notes": "E4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pwm/67.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pwm",
+     "notes": "G4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pwm/70.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pwm",
+     "notes": "A#4",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pwm/73.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pwm",
+     "notes": "C#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pwm/76.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pwm",
+     "notes": "E5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "pwm/78.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "note",
+     "inst": "pwm",
+     "notes": "F#5",
+     "dur": 2.5,
+     "vel": 0.75
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/bongo.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "bongo",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/brush.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "brush",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/clap.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "clap",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/clave.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "clave",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/conga.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "conga",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/cowbell.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "cowbell",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/crash.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "crash",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/finger_cymbals.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "finger_cymbals",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/frame_drum.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "frame_drum",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/hihat.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "hihat",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/kick.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "kick",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/kick808.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "kick808",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/kick909.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "kick909",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/openhat.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "openhat",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/pedal_hat.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "pedal_hat",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/rim.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "rim",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/rimshot.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "rimshot",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/shaker.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "shaker",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/sleigh.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "sleigh",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/snare.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "snare",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/snare808.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "snare808",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/splash.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "splash",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/tambourine.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "tambourine",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/tom.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "tom",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/triangle.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "triangle",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/woodblock.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "woodblock",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  },
+  {
+   "out": "drums/zap_kick.wav",
+   "loudness": -22,
+   "layers": [
+    {
+     "type": "drum",
+     "kind": "zap_kick",
+     "vel": 0.9
+    }
+   ],
+   "fx": [
+    {
+     "type": "reverb",
+     "mix": 0.1,
+     "size": 0.4
+    }
+   ]
+  }
+ ]
+}

@@ -266,6 +266,7 @@ impl RunScreen {
             profile.loadout()
         };
         let rng = launch.rng(profile.runs_started);
+        let song_draw = rng.clone().next_u64();
         let mut run = match (launch.mode, launch.challenge()) {
             (_, Some(ch)) => {
                 crate::challenge::Spec::for_challenge(&ch).build(&ch, profile.story_stage)
@@ -285,6 +286,9 @@ impl RunScreen {
             run.ghost_named = true;
             run.event_rule = crate::rules::GHOST_RULE.to_string();
         }
+        let (seed, dated) = song_seed(&launch, &run, ctx, song_draw);
+        run.song_seed = seed;
+        run.song_dated = dated;
         run.callouts = !profile.quiet_callouts;
         run.earned = profile.earned_upgrades();
         profile.runs_started += 1;
@@ -644,7 +648,7 @@ impl State<Parlor> for RunScreen {
         } else {
             &cues::SCORE
         };
-        self.score.start(ctx, stems, mood(run));
+        self.score.start_song(ctx, stems, mood(run), song_plan(run));
         let lane = crate::rules::sentence(Lane::from_index(run.lane).name());
         if self.fresh {
             if run.mode == Mode::Tutorial {
@@ -844,9 +848,61 @@ pub fn mood(run: &Run) -> Mood {
     let stress = (run.stress as f32 / MAX_STRESS as f32).clamp(0.0, 1.0);
     let sectors = run.sectors.len().max(1) as f32;
     let along = (run.sectors_cleared as f32 / sectors).min(1.0);
-    Mood::new(0.2 + 0.45 * stress + 0.35 * along)
+    let mut intensity = 0.2 + 0.45 * stress + 0.35 * along;
+    if run.mode == Mode::ColdStart {
+        // A cold start's band starts with the bass alone and gains a part
+        // for each sector survived.
+        intensity = intensity.min(0.05 + 0.2 * run.sectors_cleared as f32);
+    }
+    Mood::new(intensity)
         .with_flag(HURRY, run.pressure == Pressure::High)
         .with_flag(DANGER, run.hull * 3 < run.loadout.max_hull)
+}
+
+/// Where a run's song seed comes from: the challenge's own seed for a
+/// dated challenge and the Friday night run (one song for every pilot that
+/// day, week or month, the same on a retry), and a new one otherwise,
+/// from the launch's random source so a test's fixed seed gives a fixed
+/// song. True when dated.
+fn song_seed(launch: &Launch, run: &Run, ctx: &Ctx<Parlor>, fresh: u64) -> (u64, bool) {
+    if let Some(ch) = launch.challenge() {
+        return (parlor_core::band::Seed::dated(&format!("{ID}/{}/{}", run.mode.name(), ch.key)).value(), true);
+    }
+    if run.mode == Mode::FridayNight {
+        let day = launch.day.unwrap_or_else(|| parlor_core::challenges::today(ctx));
+        return (parlor_core::band::Seed::dated(&format!("{ID}/friday/{}", day.days())).value(), true);
+    }
+    (fresh, false)
+}
+
+/// The run's song: each mode in its own style, each sector the next
+/// section. The tutorial plays the written score. The corridor quickens a
+/// little each sector.
+pub fn song_plan(run: &Run) -> Option<parlor_core::band::SongPlan> {
+    use parlor_core::band::{Seed, SongPlan};
+    let style = match run.mode {
+        Mode::Tutorial => return None,
+        Mode::Challenge => "neon-rail/corridor",
+        Mode::Daily => "neon-rail/daily",
+        Mode::Weekly => "neon-rail/weekly",
+        Mode::Monthly => "neon-rail/black-sky",
+        Mode::FridayNight => "neon-rail/friday",
+        Mode::BlackSky | Mode::Endless | Mode::ColdStart => "neon-rail/run",
+    };
+    let seed = if run.song_dated {
+        Seed::Dated(run.song_seed)
+    } else {
+        Seed::Fresh(run.song_seed)
+    };
+    let sector = run.current_sector.unwrap_or(run.sectors_cleared);
+    let speed = if run.mode == Mode::Challenge {
+        // 112 to about 130 a minute over the corridor's six sectors.
+        1.0 + 0.032 * sector.min(5) as f32
+    } else {
+        1.0
+    };
+    // Each sector opens a new section: past the intro, round the form.
+    Some(SongPlan::new(style, seed).section(sector + usize::from(sector > 0)).speed(speed))
 }
 
 /// Speaks the run's status from a menu between sectors.
