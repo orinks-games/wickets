@@ -313,6 +313,18 @@ impl Score {
         }
     }
 
+    /// Fades every stem out between a run's rounds, and lends the run's
+    /// song to `screens`, the game's own screens between rounds, so the
+    /// next round's score carries on the same song (see
+    /// [`hearken::Ctx::lend_take`]). A screen there that ends the run
+    /// keeps the song with [`crate::songs::end`].
+    pub fn stop_for_break(&mut self, ctx: &mut Ctx<Parlor>, screens: &'static [&'static str]) {
+        self.silence(ctx);
+        if self.game.take().is_some() {
+            ctx.lend_take(screens);
+        }
+    }
+
     fn silence(&mut self, ctx: &mut Ctx<Parlor>) {
         for (_, sound, _) in self.stems.drain(..) {
             ctx.audio.stop(sound, STOP_MS);

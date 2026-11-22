@@ -798,7 +798,11 @@ impl State<Parlor> for RunScreen {
         match phase {
             Phase::Driving => {}
             Phase::Intermission => {
-                self.stop_sounds(ctx);
+                // The run's song waits through the menus between sectors.
+                for (_, sound) in self.sounds.drain() {
+                    ctx.audio.stop(sound, 60);
+                }
+                self.score.stop_for_break(ctx, &BREAK_SCREENS);
                 if let Some(run) = self.run.take() {
                     let launch = self.launch;
                     ctx.replace(UpgradeMenu::new(run, launch).at_pace(self.clock.pace()));
@@ -974,7 +978,20 @@ fn intermission_input<S: Menu<Game = Parlor>>(
 }
 
 /// Between sectors, first: one upgrade of three.
+/// The screens between sectors, where the run's song waits.
+const BREAK_SCREENS: [&str; 2] = ["neon_rail_upgrade", "neon_rail_route"];
+
+/// Keeps the run's song when a screen between sectors closes any way but
+/// on to the next one: the run ended there, or was left.
+fn song_ends_here(ctx: &mut Ctx<Parlor>, onward: bool) {
+    if !onward {
+        parlor_core::songs::end(ctx, ID);
+    }
+}
+
 pub struct UpgradeMenu {
+    /// Set as the menu hands the run on to the route menu.
+    onward: bool,
     menu: MenuCore<Self, Parlor>,
     run: Option<Run>,
     launch: Launch,
@@ -999,6 +1016,7 @@ impl UpgradeMenu {
             run.sectors_cleared, run.hull, run.stress, run.score
         );
         UpgradeMenu {
+            onward: false,
             menu: MenuCore::new(title),
             run: Some(run),
             launch,
@@ -1073,6 +1091,10 @@ impl Menu for UpgradeMenu {
         }
     }
 
+    fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
+        song_ends_here(ctx, self.onward);
+    }
+
     fn on_escape(&mut self, ctx: &mut Ctx<Parlor>) {
         pause(ctx, &self.launch);
     }
@@ -1103,6 +1125,7 @@ impl Menu for UpgradeMenu {
                         let launch = s.launch;
                         let mut menu = RouteMenu::new(run, launch, u.name());
                         menu.pace = s.pace;
+                        s.onward = true;
                         ctx.replace(menu);
                     },
                 )
@@ -1140,6 +1163,8 @@ impl Menu for UpgradeMenu {
 
 /// Between sectors, second: the route ahead.
 pub struct RouteMenu {
+    /// Set as the menu hands the run on to its next sector.
+    onward: bool,
     menu: MenuCore<Self, Parlor>,
     run: Option<Run>,
     launch: Launch,
@@ -1158,6 +1183,7 @@ impl RouteMenu {
             format!("{fitted} fitted. Choose your route")
         };
         RouteMenu {
+            onward: false,
             options: Vec::new(),
             menu: MenuCore::new(title),
             run: Some(run),
@@ -1210,6 +1236,10 @@ impl Menu for RouteMenu {
         }
     }
 
+    fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
+        song_ends_here(ctx, self.onward);
+    }
+
     fn on_escape(&mut self, ctx: &mut Ctx<Parlor>) {
         pause(ctx, &self.launch);
     }
@@ -1231,6 +1261,7 @@ impl Menu for RouteMenu {
                         };
                         run.choose_route(r);
                         let launch = s.launch;
+                        s.onward = true;
                         ctx.replace(RunScreen::continuing(run, launch, r, s.pace));
                     },
                 )
