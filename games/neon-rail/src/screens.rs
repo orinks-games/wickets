@@ -791,6 +791,7 @@ impl State<Parlor> for RunScreen {
         if phase == Phase::Driving {
             let mood = mood(run);
             self.score.follow(ctx, mood, dt);
+            self.score.set_speed(song_speed(run));
         }
         self.play_notes(ctx);
         self.move_sounds(ctx);
@@ -894,15 +895,25 @@ pub fn song_plan(run: &Run) -> Option<parlor_core::band::SongPlan> {
     } else {
         Seed::Fresh(run.song_seed)
     };
-    let sector = run.current_sector.unwrap_or(run.sectors_cleared);
-    let speed = if run.mode == Mode::Challenge {
-        // 112 to about 130 a minute over the corridor's six sectors.
-        1.0 + 0.032 * sector.min(5) as f32
+    let sector = song_sector(run);
+    // Each sector opens a new section: past the intro, round the form.
+    Some(SongPlan::new(style, seed).section(sector + usize::from(sector > 0)).speed(song_speed(run)))
+}
+
+/// The sector the song is on. Between sectors `current_sector` still names
+/// the one just cleared, so the count of cleared sectors leads.
+fn song_sector(run: &Run) -> usize {
+    run.sectors_cleared.max(run.current_sector.unwrap_or(0))
+}
+
+/// The song's speed: the corridor quickens from 112 to about 130 a minute
+/// over its six sectors, which run without a break; the rest keep theirs.
+fn song_speed(run: &Run) -> f32 {
+    if run.mode == Mode::Challenge {
+        1.0 + 0.032 * song_sector(run).min(5) as f32
     } else {
         1.0
-    };
-    // Each sector opens a new section: past the intro, round the form.
-    Some(SongPlan::new(style, seed).section(sector + usize::from(sector > 0)).speed(speed))
+    }
 }
 
 /// Speaks the run's status from a menu between sectors.
@@ -1308,3 +1319,37 @@ pub fn help_screen(ctx: &Ctx<Parlor>) -> parlor_core::Help {
 }
 
 mod visuals_runscreen;
+
+#[cfg(test)]
+mod song_tests {
+    use super::*;
+
+    #[test]
+    fn each_sector_after_a_break_opens_the_next_section() {
+        let mut run = Run::roguelite(Mode::BlackSky, Loadout::default(), 0, Rng::seeded(2));
+        assert_eq!(song_plan(&run).unwrap().section, 0);
+        // Back from the route menu: the cleared sector is still current.
+        run.sectors_cleared = 1;
+        run.current_sector = Some(0);
+        assert_eq!(song_plan(&run).unwrap().section, 2);
+        run.sectors_cleared = 2;
+        run.current_sector = Some(1);
+        assert_eq!(song_plan(&run).unwrap().section, 3);
+    }
+
+    #[test]
+    fn the_corridor_quickens_each_sector_and_other_runs_keep_their_speed() {
+        let mut run = Run::challenge(Loadout::default(), 0);
+        assert_eq!(song_speed(&run), 1.0);
+        run.current_sector = Some(3);
+        assert!((song_speed(&run) - 1.096).abs() < 1e-4);
+        run.current_sector = Some(5);
+        let top = song_speed(&run);
+        run.current_sector = Some(9);
+        assert_eq!(song_speed(&run), top);
+        let other = Run::roguelite(Mode::Endless, Loadout::default(), 0, Rng::seeded(4));
+        assert_eq!(song_speed(&other), 1.0);
+        assert_eq!(Run::tutorial(Loadout::default(), 0).mode, Mode::Tutorial);
+        assert!(song_plan(&Run::tutorial(Loadout::default(), 0)).is_none());
+    }
+}
