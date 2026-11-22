@@ -1,0 +1,154 @@
+{
+ "name": "winter-wonderland",
+ "tempo": [
+  100,
+  116
+ ],
+ "scales": [
+  "major",
+  "lydian",
+  "mixolydian",
+  "pentatonic"
+ ],
+ "swing": [
+  0,
+  0.25
+ ],
+ "busy": [
+  0.35,
+  0.65
+ ],
+ "phrase_bars": 4,
+ "volume": 0.8,
+ "parts": [
+  {
+   "role": "base",
+   "play": {
+    "kind": "bass",
+    "patterns": [
+     "root_fifth",
+     "walk",
+     "whole"
+    ]
+   },
+   "instruments": [
+    "upright_bass",
+    "pizzicato"
+   ],
+   "volume": 0.48,
+   "pan": 0.0,
+   "range": [
+    33,
+    55
+   ]
+  },
+  {
+   "role": "base",
+   "play": {
+    "kind": "pad"
+   },
+   "instruments": [
+    "strings",
+    "choir",
+    "warm_pad"
+   ],
+   "volume": 0.22,
+   "pan": -0.15
+  },
+  {
+   "role": "pulse",
+   "play": {
+    "kind": "drums",
+    "grooves": [
+     "backbeat",
+     "brush"
+    ]
+   },
+   "instruments": [
+    "bells",
+    "brush"
+   ],
+   "volume": 0.4,
+   "pan": 0.0
+  },
+  {
+   "role": "melody",
+   "play": {
+    "kind": "lead"
+   },
+   "instruments": [
+    "celesta",
+    "flute",
+    "music_box",
+    "glockenspiel",
+    "clarinet"
+   ],
+   "volume": 0.42,
+   "pan": 0.3,
+   "range": [
+    62,
+    91
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "arp"
+   },
+   "instruments": [
+    "harp",
+    "celesta",
+    "felt_piano"
+   ],
+   "volume": 0.22,
+   "pan": -0.4,
+   "range": [
+    60,
+    86
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "counter"
+   },
+   "instruments": [
+    "strings",
+    "french_horn"
+   ],
+   "volume": 0.22,
+   "pan": 0.15,
+   "range": [
+    50,
+    72
+   ]
+  },
+  {
+   "role": "hurry",
+   "play": {
+    "kind": "rush"
+   },
+   "instruments": [
+    "bells"
+   ],
+   "volume": 0.24,
+   "pan": 0.2
+  },
+  {
+   "role": "danger",
+   "play": {
+    "kind": "drone"
+   },
+   "instruments": [
+    "cello",
+    "choir"
+   ],
+   "volume": 0.32,
+   "pan": 0,
+   "range": [
+    40,
+    62
+   ]
+  }
+ ]
+}

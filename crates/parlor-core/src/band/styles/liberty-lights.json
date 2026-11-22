@@ -1,0 +1,152 @@
+{
+ "name": "liberty-lights",
+ "tempo": [
+  112,
+  128
+ ],
+ "scales": [
+  "major",
+  "mixolydian",
+  "lydian"
+ ],
+ "swing": [
+  0,
+  0
+ ],
+ "busy": [
+  0.45,
+  0.75
+ ],
+ "phrase_bars": 4,
+ "volume": 0.76,
+ "parts": [
+  {
+   "role": "base",
+   "play": {
+    "kind": "bass",
+    "patterns": [
+     "root_fifth",
+     "rock",
+     "pulse"
+    ]
+   },
+   "instruments": [
+    "tuba",
+    "finger_bass"
+   ],
+   "volume": 0.5,
+   "pan": 0.0,
+   "range": [
+    29,
+    52
+   ]
+  },
+  {
+   "role": "base",
+   "play": {
+    "kind": "pad"
+   },
+   "instruments": [
+    "strings",
+    "string_machine"
+   ],
+   "volume": 0.22,
+   "pan": -0.15
+  },
+  {
+   "role": "pulse",
+   "play": {
+    "kind": "drums",
+    "grooves": [
+     "march",
+     "backbeat",
+     "four"
+    ]
+   },
+   "instruments": [
+    "march",
+    "acoustic"
+   ],
+   "volume": 0.46,
+   "pan": 0.0
+  },
+  {
+   "role": "melody",
+   "play": {
+    "kind": "lead"
+   },
+   "instruments": [
+    "trumpet",
+    "flute",
+    "brass",
+    "french_horn"
+   ],
+   "volume": 0.42,
+   "pan": 0.3,
+   "range": [
+    60,
+    84
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "arp"
+   },
+   "instruments": [
+    "glockenspiel",
+    "xylophone",
+    "harp"
+   ],
+   "volume": 0.22,
+   "pan": -0.4,
+   "range": [
+    67,
+    93
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "counter"
+   },
+   "instruments": [
+    "french_horn",
+    "strings"
+   ],
+   "volume": 0.24,
+   "pan": 0.15,
+   "range": [
+    50,
+    72
+   ]
+  },
+  {
+   "role": "hurry",
+   "play": {
+    "kind": "rush"
+   },
+   "instruments": [
+    "acoustic"
+   ],
+   "volume": 0.26,
+   "pan": 0.2
+  },
+  {
+   "role": "danger",
+   "play": {
+    "kind": "drone"
+   },
+   "instruments": [
+    "cello",
+    "strings"
+   ],
+   "volume": 0.32,
+   "pan": 0,
+   "range": [
+    40,
+    62
+   ]
+  }
+ ]
+}

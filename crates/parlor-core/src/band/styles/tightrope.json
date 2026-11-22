@@ -1,0 +1,151 @@
+{
+ "name": "tightrope",
+ "tempo": [
+  112,
+  128
+ ],
+ "scales": [
+  "major",
+  "mixolydian",
+  "harmonic_minor"
+ ],
+ "swing": [
+  0,
+  0
+ ],
+ "busy": [
+  0.45,
+  0.8
+ ],
+ "phrase_bars": 4,
+ "volume": 0.8,
+ "parts": [
+  {
+   "role": "base",
+   "play": {
+    "kind": "bass",
+    "patterns": [
+     "root_fifth",
+     "root_fifth",
+     "walk"
+    ]
+   },
+   "instruments": [
+    "tuba"
+   ],
+   "volume": 0.5,
+   "pan": 0.0,
+   "range": [
+    29,
+    50
+   ]
+  },
+  {
+   "role": "base",
+   "play": {
+    "kind": "comp"
+   },
+   "instruments": [
+    "accordion",
+    "organ"
+   ],
+   "volume": 0.26,
+   "pan": -0.35
+  },
+  {
+   "role": "pulse",
+   "play": {
+    "kind": "drums",
+    "grooves": [
+     "march",
+     "backbeat"
+    ]
+   },
+   "instruments": [
+    "march",
+    "acoustic"
+   ],
+   "volume": 0.44,
+   "pan": 0.0
+  },
+  {
+   "role": "melody",
+   "play": {
+    "kind": "lead"
+   },
+   "instruments": [
+    "clarinet",
+    "accordion",
+    "whistle",
+    "trumpet",
+    "music_box"
+   ],
+   "volume": 0.42,
+   "pan": 0.3,
+   "range": [
+    60,
+    88
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "arp"
+   },
+   "instruments": [
+    "xylophone",
+    "glockenspiel",
+    "celesta"
+   ],
+   "volume": 0.22,
+   "pan": -0.4,
+   "range": [
+    67,
+    93
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "counter"
+   },
+   "instruments": [
+    "brass",
+    "clarinet"
+   ],
+   "volume": 0.22,
+   "pan": 0.15,
+   "range": [
+    52,
+    72
+   ]
+  },
+  {
+   "role": "hurry",
+   "play": {
+    "kind": "rush"
+   },
+   "instruments": [
+    "acoustic"
+   ],
+   "volume": 0.26,
+   "pan": 0.2
+  },
+  {
+   "role": "danger",
+   "play": {
+    "kind": "drone"
+   },
+   "instruments": [
+    "cello",
+    "organ"
+   ],
+   "volume": 0.32,
+   "pan": 0,
+   "range": [
+    40,
+    62
+   ]
+  }
+ ]
+}

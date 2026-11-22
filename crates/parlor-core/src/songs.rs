@@ -222,6 +222,12 @@ pub fn lesson_opened(ctx: &mut Ctx<Parlor>) {
     ctx.game.songs.lessons += 1;
 }
 
+/// Whether a tutorial is open: its music is the game's written score, the
+/// same every time, and is never kept.
+pub fn in_lesson(ctx: &Ctx<Parlor>) -> bool {
+    ctx.game.songs.lessons > 0
+}
+
 /// A tutorial closes.
 pub fn lesson_closed(ctx: &mut Ctx<Parlor>) {
     ctx.game.songs.lessons = ctx.game.songs.lessons.saturating_sub(1);

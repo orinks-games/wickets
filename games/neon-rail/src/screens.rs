@@ -266,6 +266,7 @@ impl RunScreen {
             profile.loadout()
         };
         let rng = launch.rng(profile.runs_started);
+        let song_draw = rng.clone().next_u64();
         let mut run = match (launch.mode, launch.challenge()) {
             (_, Some(ch)) => {
                 crate::challenge::Spec::for_challenge(&ch).build(&ch, profile.story_stage)
@@ -285,6 +286,9 @@ impl RunScreen {
             run.ghost_named = true;
             run.event_rule = crate::rules::GHOST_RULE.to_string();
         }
+        let (seed, dated) = song_seed(&launch, &run, ctx, song_draw);
+        run.song_seed = seed;
+        run.song_dated = dated;
         run.callouts = !profile.quiet_callouts;
         run.earned = profile.earned_upgrades();
         profile.runs_started += 1;
@@ -644,7 +648,7 @@ impl State<Parlor> for RunScreen {
         } else {
             &cues::SCORE
         };
-        self.score.start(ctx, stems, mood(run));
+        self.score.start_song(ctx, stems, mood(run), song_plan(run));
         let lane = crate::rules::sentence(Lane::from_index(run.lane).name());
         if self.fresh {
             if run.mode == Mode::Tutorial {
@@ -787,13 +791,18 @@ impl State<Parlor> for RunScreen {
         if phase == Phase::Driving {
             let mood = mood(run);
             self.score.follow(ctx, mood, dt);
+            self.score.set_speed(song_speed(run));
         }
         self.play_notes(ctx);
         self.move_sounds(ctx);
         match phase {
             Phase::Driving => {}
             Phase::Intermission => {
-                self.stop_sounds(ctx);
+                // The run's song waits through the menus between sectors.
+                for (_, sound) in self.sounds.drain() {
+                    ctx.audio.stop(sound, 60);
+                }
+                self.score.stop_for_break(ctx, &BREAK_SCREENS);
                 if let Some(run) = self.run.take() {
                     let launch = self.launch;
                     ctx.replace(UpgradeMenu::new(run, launch).at_pace(self.clock.pace()));
@@ -844,9 +853,71 @@ pub fn mood(run: &Run) -> Mood {
     let stress = (run.stress as f32 / MAX_STRESS as f32).clamp(0.0, 1.0);
     let sectors = run.sectors.len().max(1) as f32;
     let along = (run.sectors_cleared as f32 / sectors).min(1.0);
-    Mood::new(0.2 + 0.45 * stress + 0.35 * along)
+    let mut intensity = 0.2 + 0.45 * stress + 0.35 * along;
+    if run.mode == Mode::ColdStart {
+        // A cold start's band starts with the bass alone and gains a part
+        // for each sector survived.
+        intensity = intensity.min(0.05 + 0.2 * run.sectors_cleared as f32);
+    }
+    Mood::new(intensity)
         .with_flag(HURRY, run.pressure == Pressure::High)
         .with_flag(DANGER, run.hull * 3 < run.loadout.max_hull)
+}
+
+/// Where a run's song seed comes from: the challenge's own seed for a
+/// dated challenge and the Friday night run (one song for every pilot that
+/// day, week or month, the same on a retry), and a new one otherwise,
+/// from the launch's random source so a test's fixed seed gives a fixed
+/// song. True when dated.
+fn song_seed(launch: &Launch, run: &Run, ctx: &Ctx<Parlor>, fresh: u64) -> (u64, bool) {
+    if let Some(ch) = launch.challenge() {
+        return (parlor_core::band::Seed::dated(&format!("{ID}/{}/{}", run.mode.name(), ch.key)).value(), true);
+    }
+    if run.mode == Mode::FridayNight {
+        let day = launch.day.unwrap_or_else(|| parlor_core::challenges::today(ctx));
+        return (parlor_core::band::Seed::dated(&format!("{ID}/friday/{}", day.days())).value(), true);
+    }
+    (fresh, false)
+}
+
+/// The run's song: each mode in its own style, each sector the next
+/// section. The tutorial plays the written score. The corridor quickens a
+/// little each sector.
+pub fn song_plan(run: &Run) -> Option<parlor_core::band::SongPlan> {
+    use parlor_core::band::{Seed, SongPlan};
+    let style = match run.mode {
+        Mode::Tutorial => return None,
+        Mode::Challenge => "neon-rail/corridor",
+        Mode::Daily => "neon-rail/daily",
+        Mode::Weekly => "neon-rail/weekly",
+        Mode::Monthly => "neon-rail/black-sky",
+        Mode::FridayNight => "neon-rail/friday",
+        Mode::BlackSky | Mode::Endless | Mode::ColdStart => "neon-rail/run",
+    };
+    let seed = if run.song_dated {
+        Seed::Dated(run.song_seed)
+    } else {
+        Seed::Fresh(run.song_seed)
+    };
+    let sector = song_sector(run);
+    // Each sector opens a new section: past the intro, round the form.
+    Some(SongPlan::new(style, seed).section(sector + usize::from(sector > 0)).speed(song_speed(run)))
+}
+
+/// The sector the song is on. Between sectors `current_sector` still names
+/// the one just cleared, so the count of cleared sectors leads.
+pub fn song_sector(run: &Run) -> usize {
+    run.sectors_cleared.max(run.current_sector.unwrap_or(0))
+}
+
+/// The song's speed: the corridor quickens from 112 to about 130 a minute
+/// over its six sectors, which run without a break; the rest keep theirs.
+pub fn song_speed(run: &Run) -> f32 {
+    if run.mode == Mode::Challenge {
+        1.0 + 0.032 * song_sector(run).min(5) as f32
+    } else {
+        1.0
+    }
 }
 
 /// Speaks the run's status from a menu between sectors.
@@ -907,7 +978,20 @@ fn intermission_input<S: Menu<Game = Parlor>>(
 }
 
 /// Between sectors, first: one upgrade of three.
+/// The screens between sectors, where the run's song waits.
+const BREAK_SCREENS: [&str; 2] = ["neon_rail_upgrade", "neon_rail_route"];
+
+/// Keeps the run's song when a screen between sectors closes any way but
+/// on to the next one: the run ended there, or was left.
+fn song_ends_here(ctx: &mut Ctx<Parlor>, onward: bool) {
+    if !onward {
+        parlor_core::songs::end(ctx, ID);
+    }
+}
+
 pub struct UpgradeMenu {
+    /// Set as the menu hands the run on to the route menu.
+    onward: bool,
     menu: MenuCore<Self, Parlor>,
     run: Option<Run>,
     launch: Launch,
@@ -932,6 +1016,7 @@ impl UpgradeMenu {
             run.sectors_cleared, run.hull, run.stress, run.score
         );
         UpgradeMenu {
+            onward: false,
             menu: MenuCore::new(title),
             run: Some(run),
             launch,
@@ -1006,6 +1091,10 @@ impl Menu for UpgradeMenu {
         }
     }
 
+    fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
+        song_ends_here(ctx, self.onward);
+    }
+
     fn on_escape(&mut self, ctx: &mut Ctx<Parlor>) {
         pause(ctx, &self.launch);
     }
@@ -1036,6 +1125,7 @@ impl Menu for UpgradeMenu {
                         let launch = s.launch;
                         let mut menu = RouteMenu::new(run, launch, u.name());
                         menu.pace = s.pace;
+                        s.onward = true;
                         ctx.replace(menu);
                     },
                 )
@@ -1073,6 +1163,8 @@ impl Menu for UpgradeMenu {
 
 /// Between sectors, second: the route ahead.
 pub struct RouteMenu {
+    /// Set as the menu hands the run on to its next sector.
+    onward: bool,
     menu: MenuCore<Self, Parlor>,
     run: Option<Run>,
     launch: Launch,
@@ -1091,6 +1183,7 @@ impl RouteMenu {
             format!("{fitted} fitted. Choose your route")
         };
         RouteMenu {
+            onward: false,
             options: Vec::new(),
             menu: MenuCore::new(title),
             run: Some(run),
@@ -1143,6 +1236,10 @@ impl Menu for RouteMenu {
         }
     }
 
+    fn exit(&mut self, ctx: &mut Ctx<Parlor>) {
+        song_ends_here(ctx, self.onward);
+    }
+
     fn on_escape(&mut self, ctx: &mut Ctx<Parlor>) {
         pause(ctx, &self.launch);
     }
@@ -1164,6 +1261,7 @@ impl Menu for RouteMenu {
                         };
                         run.choose_route(r);
                         let launch = s.launch;
+                        s.onward = true;
                         ctx.replace(RunScreen::continuing(run, launch, r, s.pace));
                     },
                 )

@@ -1,0 +1,150 @@
+{
+ "name": "harvest-feast",
+ "tempo": [
+  96,
+  116
+ ],
+ "scales": [
+  "major",
+  "mixolydian",
+  "dorian"
+ ],
+ "swing": [
+  0,
+  0.35
+ ],
+ "busy": [
+  0.35,
+  0.65
+ ],
+ "phrase_bars": 4,
+ "volume": 0.66,
+ "parts": [
+  {
+   "role": "base",
+   "play": {
+    "kind": "bass",
+    "patterns": [
+     "root_fifth",
+     "walk"
+    ]
+   },
+   "instruments": [
+    "upright_bass",
+    "tuba"
+   ],
+   "volume": 0.5,
+   "pan": 0.0,
+   "range": [
+    29,
+    50
+   ]
+  },
+  {
+   "role": "base",
+   "play": {
+    "kind": "comp"
+   },
+   "instruments": [
+    "guitar",
+    "banjo",
+    "mandolin"
+   ],
+   "volume": 0.28,
+   "pan": -0.35
+  },
+  {
+   "role": "pulse",
+   "play": {
+    "kind": "drums",
+    "grooves": [
+     "backbeat",
+     "march"
+    ]
+   },
+   "instruments": [
+    "acoustic",
+    "brush"
+   ],
+   "volume": 0.42,
+   "pan": 0.0
+  },
+  {
+   "role": "melody",
+   "play": {
+    "kind": "lead"
+   },
+   "instruments": [
+    "violin",
+    "mandolin",
+    "accordion",
+    "clarinet"
+   ],
+   "volume": 0.42,
+   "pan": 0.3,
+   "range": [
+    60,
+    84
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "counter"
+   },
+   "instruments": [
+    "accordion",
+    "cello",
+    "strings"
+   ],
+   "volume": 0.24,
+   "pan": 0.15,
+   "range": [
+    52,
+    72
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "arp"
+   },
+   "instruments": [
+    "banjo",
+    "harp"
+   ],
+   "volume": 0.22,
+   "pan": -0.4,
+   "range": [
+    55,
+    79
+   ]
+  },
+  {
+   "role": "hurry",
+   "play": {
+    "kind": "rush"
+   },
+   "instruments": [
+    "acoustic"
+   ],
+   "volume": 0.26,
+   "pan": 0.2
+  },
+  {
+   "role": "danger",
+   "play": {
+    "kind": "drone"
+   },
+   "instruments": [
+    "cello"
+   ],
+   "volume": 0.32,
+   "pan": 0,
+   "range": [
+    38,
+    58
+   ]
+  }
+ ]
+}

@@ -21,9 +21,9 @@ log = "0.4"
 # against a local checkout, add to .cargo/config.toml (or ~/.cargo/config.toml):
 #   [patch."https://github.com/orinks-games/hearken"]
 #   hearken = { path = "../hearken/crates/hearken" }
-hearken = { git = "https://github.com/orinks-games/hearken", rev = "8d45658704f2adc43c95d67c22186874fa96736f", features = ["visuals", "online", "report"] }
-hearken-l10n-tools = { git = "https://github.com/orinks-games/hearken", rev = "8d45658704f2adc43c95d67c22186874fa96736f" }
-hearken-replay = { git = "https://github.com/orinks-games/hearken", rev = "8d45658704f2adc43c95d67c22186874fa96736f" }
+hearken = { git = "https://github.com/orinks-games/hearken", rev = "059b59d31c01e4578fd9fb3e37d67bac04df6476", features = ["visuals", "online", "report"] }
+hearken-l10n-tools = { git = "https://github.com/orinks-games/hearken", rev = "059b59d31c01e4578fd9fb3e37d67bac04df6476" }
+hearken-replay = { git = "https://github.com/orinks-games/hearken", rev = "059b59d31c01e4578fd9fb3e37d67bac04df6476" }
 parlor-core = { path = "crates/parlor-core" }
 wickets-rules = { path = "crates/wickets-rules" }
 

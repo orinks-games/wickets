@@ -769,6 +769,11 @@ pub struct Stats {
 /// One run in progress.
 pub struct Run {
     pub mode: Mode,
+    /// The seed of the run's song (see `parlor_core::band`), set as the run
+    /// launches and kept through every sector, so the song carries on.
+    pub song_seed: u64,
+    /// Whether the song is tied to a date, the same for every pilot.
+    pub song_dated: bool,
     rng: Rng,
     pub loadout: Loadout,
     pub t: f64,
@@ -843,6 +848,8 @@ impl Run {
     fn blank(mode: Mode, loadout: Loadout, story_stage: usize, rng: Rng) -> Run {
         Run {
             mode,
+            song_seed: 0,
+            song_dated: false,
             rng,
             hull: loadout.max_hull,
             multiplier: loadout.start_multiplier,

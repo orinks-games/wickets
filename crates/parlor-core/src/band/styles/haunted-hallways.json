@@ -1,0 +1,156 @@
+{
+ "name": "haunted-hallways",
+ "tempo": [
+  76,
+  92
+ ],
+ "scales": [
+  "minor",
+  "harmonic_minor",
+  "phrygian"
+ ],
+ "swing": [
+  0,
+  0.2
+ ],
+ "busy": [
+  0.25,
+  0.55
+ ],
+ "phrase_bars": 4,
+ "volume": 0.87,
+ "parts": [
+  {
+   "role": "base",
+   "play": {
+    "kind": "bass",
+    "patterns": [
+     "whole",
+     "walk",
+     "root_fifth"
+    ]
+   },
+   "instruments": [
+    "upright_bass",
+    "cello"
+   ],
+   "volume": 0.5,
+   "pan": 0.0,
+   "range": [
+    33,
+    55
+   ]
+  },
+  {
+   "role": "base",
+   "play": {
+    "kind": "pad"
+   },
+   "instruments": [
+    "choir",
+    "organ",
+    "warm_pad"
+   ],
+   "volume": 0.22,
+   "pan": -0.15
+  },
+  {
+   "role": "pulse",
+   "play": {
+    "kind": "drums",
+    "grooves": [
+     "half",
+     "brush",
+     "march"
+    ]
+   },
+   "instruments": [
+    "brush",
+    "march"
+   ],
+   "volume": 0.4,
+   "pan": 0.0
+  },
+  {
+   "role": "melody",
+   "play": {
+    "kind": "lead"
+   },
+   "instruments": [
+    "theremin",
+    "celesta",
+    "music_box",
+    "oboe",
+    "harpsichord"
+   ],
+   "volume": 0.42,
+   "pan": 0.3,
+   "range": [
+    60,
+    88
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "arp"
+   },
+   "instruments": [
+    "harpsichord",
+    "celesta",
+    "harp"
+   ],
+   "volume": 0.22,
+   "pan": -0.4,
+   "range": [
+    57,
+    84
+   ]
+  },
+  {
+   "role": "lift",
+   "play": {
+    "kind": "counter"
+   },
+   "instruments": [
+    "cello",
+    "strings",
+    "choir"
+   ],
+   "volume": 0.24,
+   "pan": 0.15,
+   "range": [
+    50,
+    70
+   ]
+  },
+  {
+   "role": "hurry",
+   "play": {
+    "kind": "rush"
+   },
+   "instruments": [
+    "brush"
+   ],
+   "volume": 0.24,
+   "pan": 0.2
+  },
+  {
+   "role": "danger",
+   "play": {
+    "kind": "drone"
+   },
+   "instruments": [
+    "choir",
+    "cello",
+    "organ"
+   ],
+   "volume": 0.36,
+   "pan": 0,
+   "range": [
+    38,
+    60
+   ]
+  }
+ ]
+}
