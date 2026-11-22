@@ -65,7 +65,7 @@
     ]
    },
    "instruments": [
-    "sleigh",
+    "bells",
     "brush"
    ],
    "volume": 0.4,
@@ -129,7 +129,7 @@
     "kind": "rush"
    },
    "instruments": [
-    "sleigh"
+    "bells"
    ],
    "volume": 0.24,
    "pan": 0.2

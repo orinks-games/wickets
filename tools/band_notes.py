@@ -73,7 +73,7 @@ KITS = {
     "brush": {"kick": "kick", "snare": "brush", "hat": "pedal_hat", "open": "hihat", "crash": "splash", "perc": "shaker", "rim": "rim"},
     "world": {"kick": "frame_drum", "snare": "conga", "hat": "shaker", "open": "tambourine", "crash": "finger_cymbals", "perc": "bongo", "rim": "clave"},
     "march": {"kick": "kick", "snare": "snare", "crash": "crash", "perc": "triangle", "rim": "rim"},
-    "sleigh": {"kick": "kick", "snare": "brush", "hat": "sleigh", "open": "tambourine", "crash": "finger_cymbals", "perc": "triangle", "rim": "woodblock"},
+    "bells": {"kick": "kick", "snare": "brush", "hat": "shaker", "open": "tambourine", "crash": "finger_cymbals", "perc": "triangle", "rim": "woodblock"},
     "chip": {"kick": "zap_kick", "snare": "snare808", "hat": "hihat", "open": "openhat", "crash": "splash", "perc": "clap", "rim": "rimshot"},
 }
 

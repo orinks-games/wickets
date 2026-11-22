@@ -10987,24 +10987,6 @@
    ]
   },
   {
-   "out": "drums/sleigh.wav",
-   "loudness": -22,
-   "layers": [
-    {
-     "type": "drum",
-     "kind": "sleigh",
-     "vel": 0.9
-    }
-   ],
-   "fx": [
-    {
-     "type": "reverb",
-     "mix": 0.1,
-     "size": 0.4
-    }
-   ]
-  },
-  {
    "out": "drums/snare.wav",
    "loudness": -22,
    "layers": [
