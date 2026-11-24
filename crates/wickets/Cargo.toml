@@ -113,6 +113,7 @@ wickets-slot-d = { path = "../../extras/slot-d" }
 wickets-slot-e = { path = "../../extras/slot-e" }
 wickets-slot-f = { path = "../../extras/slot-f" }
 wickets-slot-g = { path = "../../extras/slot-g" }
+wickets-slot-h = { path = "../../extras/slot-h" }
 
 [build-dependencies]
 wickets-content = { path = "../wickets-content" }

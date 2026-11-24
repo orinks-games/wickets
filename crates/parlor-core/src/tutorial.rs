@@ -653,7 +653,18 @@ impl State<Parlor> for Lesson {
         if let Some((live, _)) = &step.live {
             let live = Rc::clone(live);
             live.update(ctx, dt);
+            let at = self.at;
             self.check_live(ctx);
+            // A live step's tick runs too, while the step stands: it can
+            // put the practice field right when the player goes off the
+            // script.
+            if self.at == at {
+                if let Some(tick) = self.steps[at].on_tick.as_mut() {
+                    if let Some(reply) = tick(ctx, dt) {
+                        self.reply(ctx, reply);
+                    }
+                }
+            }
             return;
         }
         let Some(tick) = step.on_tick.as_mut() else {
