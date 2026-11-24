@@ -55,6 +55,9 @@ type Check = Box<dyn FnMut(&mut Ctx<Parlor>) -> Option<String>>;
 /// What a control answers with in [`Step::each`].
 pub type Reaction = Box<dyn FnMut(&mut Ctx<Parlor>) -> String>;
 
+/// Whether the player is already past a step.
+type Skip = Box<dyn FnMut(&mut Ctx<Parlor>) -> bool>;
+
 /// One thing the player learns by doing it.
 pub struct Step {
     prompt: String,
@@ -68,6 +71,8 @@ pub struct Step {
     live: Option<(Rc<dyn LiveScreen>, Check)>,
     /// The step answers the repeat control itself, so F1 says the step.
     own_repeat: bool,
+    /// The player is already past it, so the lesson goes straight on.
+    skip: Option<Skip>,
 }
 
 impl Step {
@@ -86,6 +91,7 @@ impl Step {
             on_enter: None,
             live: None,
             own_repeat: false,
+            skip: None,
         }
     }
 
@@ -168,6 +174,14 @@ impl Step {
     /// rows rung: help then names F1, not repeat, for hearing the step again.
     pub fn own_repeat(mut self) -> Step {
         self.own_repeat = true;
+        self
+    }
+
+    /// Leaves the step out when `f` holds as the lesson reaches it: a
+    /// player who went off script and is already past it does not hear an
+    /// order that no longer fits.
+    pub fn skip_when(mut self, f: impl FnMut(&mut Ctx<Parlor>) -> bool + 'static) -> Step {
+        self.skip = Some(Box::new(f));
         self
     }
 
@@ -460,6 +474,12 @@ impl Lesson {
     fn advance(&mut self, ctx: &mut Ctx<Parlor>, line: String) {
         let was = self.steps[self.at].live.as_ref().map(|(l, _)| Rc::clone(l));
         self.at += 1;
+        while let Some(skip) = self.steps.get_mut(self.at).and_then(|s| s.skip.as_mut()) {
+            if !skip(ctx) {
+                break;
+            }
+            self.at += 1;
+        }
         let next = self
             .steps
             .get(self.at)
@@ -849,6 +869,18 @@ mod tests {
         assert_eq!(h.app.top_name(), "base");
         assert!(tutorial_done(&mut h.app.ctx, "dummy"));
         assert!(!needs_lesson(&mut h.app.ctx, "dummy"));
+    }
+
+    #[test]
+    fn a_step_the_player_is_past_is_left_out() {
+        let l = Lesson::new("dummy", "Dummy", "Intro.")
+            .step(Step::press("Press Left.", ParlorAction::Left, |_| String::new()))
+            .step(Step::press("Press Up.", ParlorAction::Up, |_| String::new()).skip_when(|_| true))
+            .step(Step::press("Press Right.", ParlorAction::Right, |_| String::new()));
+        let mut h = open(l);
+        h.clear();
+        press_action(&mut h, ParlorAction::Left);
+        assert_eq!(h.spoken(), ["Press Right."]);
     }
 
     #[test]
