@@ -72,6 +72,12 @@ pub fn kept(ctx: &mut Ctx<Parlor>) -> bool {
     Progress::load(ctx).kept()
 }
 
+/// Whether the player has beaten the special: a star on its last pond.
+pub fn beaten(ctx: &mut Ctx<Parlor>) -> bool {
+    let last = ponds::PONDS[ponds::PONDS.len() - 1].number;
+    Progress::load(ctx).stars_for(last) > 0
+}
+
 /// Whether `date` is in the game's listing season: 27 November to the end
 /// of February.
 pub fn in_season(date: parlor_core::Date) -> bool {

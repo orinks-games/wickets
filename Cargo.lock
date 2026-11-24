@@ -3160,6 +3160,7 @@ dependencies = [
  "rooftop-garden",
  "safecracker",
  "serde",
+ "serde_json",
  "signal-box",
  "slow-kettle",
  "snowfall-skate",
