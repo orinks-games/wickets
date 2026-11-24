@@ -5,13 +5,33 @@ from __future__ import annotations
 
 import argparse
 import shutil
+import subprocess
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "secrets" / "sounds"
 DESTINATION = ROOT / "sounds"
-EXCLUDE = ROOT / ".git" / "info" / "exclude"
+
+
+def git_exclude() -> Path:
+    """The checkout's info/exclude. In a worktree `.git` is a file naming
+    the real git folder, so ask git rather than build the path."""
+    try:
+        found = subprocess.run(
+            ["git", "rev-parse", "--git-path", "info/exclude"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=True,
+        ).stdout.strip()
+    except (OSError, subprocess.CalledProcessError):
+        return ROOT / ".git" / "info" / "exclude"
+    path = Path(found)
+    return path if path.is_absolute() else ROOT / path
+
+
+EXCLUDE = git_exclude()
 BEGIN = "# wickets overlay begin"
 END = "# wickets overlay end"
 
