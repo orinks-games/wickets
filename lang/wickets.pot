@@ -93421,17 +93421,14 @@ msgid ""
 "Score {score}: {points} for your finds and {bonus} for the challenge."
 msgstr ""
 
+#. placeholders: {name}
 #: games/tide-pools/src/outing.rs
-msgid "first relaxed score"
+msgid "Your first relaxed score at {name}."
 msgstr ""
 
+#. placeholders: {name}
 #: games/tide-pools/src/outing.rs
-msgid "first score"
-msgstr ""
-
-#. placeholders: {first}, {name}
-#: games/tide-pools/src/outing.rs
-msgid " Your {first} at {name}."
+msgid "Your first score at {name}."
 msgstr ""
 
 #. placeholders: {best_word}, {name}, {previous}
@@ -93444,9 +93441,14 @@ msgstr ""
 msgid " Your {best_word} at {name} is {best}."
 msgstr ""
 
-#. placeholders: {first}, {the}
+#. placeholders: {the}
 #: games/tide-pools/src/outing.rs
-msgid " Your {first} on {the}."
+msgid "Your first relaxed score on {the}."
+msgstr ""
+
+#. placeholders: {the}
+#: games/tide-pools/src/outing.rs
+msgid "Your first score on {the}."
 msgstr ""
 
 #. placeholders: {best_word}, {the}, {previous}
@@ -93499,9 +93501,12 @@ msgstr ""
 msgid "You found {found} of tonight's three."
 msgstr ""
 
-#. placeholders: {first}
 #: games/tide-pools/src/outing.rs
-msgid "Your {first} on this one."
+msgid "Your first relaxed score on this one."
+msgstr ""
+
+#: games/tide-pools/src/outing.rs
+msgid "Your first score on this one."
 msgstr ""
 
 #: games/tide-pools/src/outing.rs
@@ -95831,6 +95836,14 @@ msgid ""
 "Plays each sound you need on the wire, starting with the balance tone."
 msgstr ""
 
+#: games/tightrope/src/rules.rs
+msgid "from the left"
+msgstr ""
+
+#: games/tightrope/src/rules.rs
+msgid "from the right"
+msgstr ""
+
 #. placeholders: {from}, {to}
 #: games/tightrope/src/rules.rs
 msgid "from {from} to {to}"
@@ -96202,9 +96215,9 @@ msgstr ""
 msgid "On the last roof."
 msgstr ""
 
-#. placeholders: {name}
+#. placeholders: {from_words}
 #: games/tightrope/src/rules.rs
-msgid "Gust from the {name}!"
+msgid "Gust {from_words}!"
 msgstr ""
 
 #. placeholders: {right}, {crouch}
@@ -96407,14 +96420,14 @@ msgstr ""
 msgid "Step {pos} of {steps}, {lean_words}."
 msgstr ""
 
-#. placeholders: {name}
+#. placeholders: {from_words}
 #: games/tightrope/src/rules.rs
-msgid "Wind blowing from the {name}."
+msgid "Wind blowing {from_words}."
 msgstr ""
 
-#. placeholders: {name}, {plural}
+#. placeholders: {from_words}, {plural}
 #: games/tightrope/src/rules.rs
-msgid "Gust from the {name} in {plural}."
+msgid "Gust {from_words} in {plural}."
 msgstr ""
 
 #. placeholders: {plural}, {name}
@@ -96459,16 +96472,16 @@ msgstr ""
 msgid "Lean into it with {into}, or crouch with {crouch}."
 msgstr ""
 
-#. placeholders: {name}, {plural}
+#. placeholders: {from_words}, {plural}
 #. one sentence of a longer line
 #: games/tightrope/src/rules.rs
-msgid "Wind from the {name} in {plural}."
+msgid "Wind {from_words} in {plural}."
 msgstr ""
 
-#. placeholders: {name}, {plural}, {into}, {crouch}
+#. placeholders: {from_words}, {plural}, {into}, {crouch}
 #: games/tightrope/src/rules.rs
 msgid ""
-"Wind from the {name} in {plural}. Lean into it with {into}, or crouch with "
+"Wind {from_words} in {plural}. Lean into it with {into}, or crouch with "
 "{crouch}."
 msgstr ""
 
@@ -105143,6 +105156,17 @@ msgstr ""
 #. Settings: the category for the games' own settings (parlor-core public.rs).
 #: lang/extra.pot
 msgid "Games"
+msgstr ""
+
+#. Tightrope: a wire's height, made by its plural() helper.
+#: lang/extra.pot
+msgid "1 floor"
+msgstr ""
+
+#. Tightrope: a wire's height, made by its plural() helper.
+#. placeholders: {n}
+#: lang/extra.pot
+msgid "{n} floors"
 msgstr ""
 
 #. a name: keep it as it is

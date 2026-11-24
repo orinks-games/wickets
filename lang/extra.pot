@@ -16,3 +16,12 @@ msgstr ""
 #. Said after the last page of a briefing; Enter is the key name.
 msgid "Enter to start."
 msgstr ""
+
+#. Tightrope: a wire's height, made by its plural() helper.
+msgid "1 floor"
+msgstr ""
+
+#. Tightrope: a wire's height, made by its plural() helper.
+#. placeholders: {n}
+msgid "{n} floors"
+msgstr ""

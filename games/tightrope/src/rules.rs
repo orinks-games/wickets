@@ -71,6 +71,15 @@ impl Side {
         }
     }
 
+    /// Where a gust comes from, as words of their own: each language
+    /// has them whole, as "from" can change the side's own word.
+    pub fn from_words(self) -> &'static str {
+        match self {
+            Side::Left => "from the left",
+            Side::Right => "from the right",
+        }
+    }
+
     pub fn other(self) -> Side {
         match self {
             Side::Left => Side::Right,
@@ -1186,7 +1195,7 @@ impl Run {
                     });
                     self.notes
                         .push(Note::At(cues::GUST_ALERT, (side.sign() * 4.0) as f32));
-                    let mut text = format!("Gust from the {}!", side.name());
+                    let mut text = format!("Gust {}!", side.from_words());
                     if self.taught & TAUGHT_GUST == 0 {
                         self.taught |= TAUGHT_GUST;
                         if teach {
@@ -1469,11 +1478,11 @@ impl Run {
         if self.phase == Phase::Walking {
             if let Some(g) = &self.gust {
                 if g.blowing() {
-                    first.push(format!("Wind blowing from the {}.", g.side.name()));
+                    first.push(format!("Wind blowing {}.", g.side.from_words()));
                 } else {
                     first.push(format!(
-                        "Gust from the {} in {}.",
-                        g.side.name(),
+                        "Gust {} in {}.",
+                        g.side.from_words(),
                         plural(g.warn_left.ceil() as u32, "second")
                     ));
                 }
@@ -1538,8 +1547,8 @@ impl Run {
                 return format!("Wind pushing you {}: press {into}.", g.side.other().name());
             }
             return format!(
-                "Wind from the {} in {}. Lean into it with {into}, or crouch with {}.",
-                g.side.name(),
+                "Wind {} in {}. Lean into it with {into}, or crouch with {}.",
+                g.side.from_words(),
                 plural(g.warn_left.ceil() as u32, "second"),
                 k.crouch
             );

@@ -84752,15 +84752,13 @@ msgid ""
 "Score {score}: {points} for your finds and {bonus} for the challenge."
 msgstr "Wynik {score}: {points} za znaleziska i {bonus} za wyzwanie."
 
-msgid "first relaxed score"
-msgstr "pierwszy wynik w swobodnym tempie"
+#. placeholders: {name}
+msgid "Your first relaxed score at {name}."
+msgstr "{name}: twój pierwszy wynik w swobodnym tempie."
 
-msgid "first score"
-msgstr "pierwszy wynik"
-
-#. placeholders: {first}, {name}
-msgid " Your {first} at {name}."
-msgstr " {name}: twój {first}."
+#. placeholders: {name}
+msgid "Your first score at {name}."
+msgstr "{name}: twój pierwszy wynik."
 
 #. placeholders: {best_word}, {name}, {previous}
 msgid " A new {best_word} at {name}, beating {previous}."
@@ -84770,9 +84768,13 @@ msgstr " {name}: nowy {best_word}, lepszy niż {previous}."
 msgid " Your {best_word} at {name} is {best}."
 msgstr " {name}: twój {best_word} to {best}."
 
-#. placeholders: {first}, {the}
-msgid " Your {first} on {the}."
-msgstr " {the}: twój {first}."
+#. placeholders: {the}
+msgid "Your first relaxed score on {the}."
+msgstr "{the}: twój pierwszy wynik w swobodnym tempie."
+
+#. placeholders: {the}
+msgid "Your first score on {the}."
+msgstr "{the}: twój pierwszy wynik."
 
 #. placeholders: {best_word}, {the}, {previous}
 msgid " A new {best_word} on {the}, beating {previous}."
@@ -84814,9 +84816,11 @@ msgstr "Znaleziono wszystkie trzy na dziś."
 msgid "You found {found} of tonight's three."
 msgstr "Znaleziono {found} z trzech na dziś."
 
-#. placeholders: {first}
-msgid "Your {first} on this one."
-msgstr "Twój {first} w tym wyzwaniu."
+msgid "Your first relaxed score on this one."
+msgstr "Twój pierwszy wynik w swobodnym tempie w tym wyzwaniu."
+
+msgid "Your first score on this one."
+msgstr "Twój pierwszy wynik w tym wyzwaniu."
 
 msgid "The first day of a streak."
 msgstr "Pierwszy dzień serii."
@@ -86932,6 +86936,12 @@ msgid ""
 msgstr ""
 "Odtwarza każdy dźwięk potrzebny na linie, zaczynając od tonu równowagi."
 
+msgid "from the left"
+msgstr "z lewej"
+
+msgid "from the right"
+msgstr "z prawej"
+
 #. placeholders: {from}, {to}
 msgid "from {from} to {to}"
 msgstr "start: {from}, meta: {to}"
@@ -87034,9 +87044,10 @@ msgstr "{n} {n:życie|życia|żyć}"
 #. placeholders: {route}, {plural}, {plural2}, {lives}
 msgid "One crossing {route}, {plural} up, {plural2}, with {lives}."
 msgstr ""
+"Jedno przejście: {route}, wysokość: {plural}, {plural2}, zapas: {lives}."
 
 msgid "floor"
-msgstr ""
+msgstr "piętro"
 
 #. placeholders: {many}, {from}, {to}, {lives}
 msgid "{many} crossings, {from} to {to}, with {lives}."
@@ -87049,19 +87060,19 @@ msgstr "w równowadze"
 
 #. placeholders: {side}
 msgid "leaning slightly {side}"
-msgstr ""
+msgstr "lekko przechylony na {side} bok"
 
 #. placeholders: {side}
 msgid "leaning {side}"
-msgstr ""
+msgstr "przechylony na {side} bok"
 
 #. placeholders: {side}
 msgid "leaning hard {side}"
-msgstr ""
+msgstr "mocno przechylony na {side} bok"
 
 #. placeholders: {side}
 msgid "about to fall {side}"
-msgstr ""
+msgstr "zaraz spadniesz na {side} bok"
 
 msgid "1 life"
 msgstr "1 życie"
@@ -87082,7 +87093,7 @@ msgstr "Lina wyzwania {index} z {levels}"
 
 #. placeholders: {head}, {route}, {plural}, {plural2}
 msgid "{head}: {route}. {plural} up, {plural2}."
-msgstr ""
+msgstr "{head}: {route}. Wysokość: {plural}, {plural2}."
 
 msgid " Pigeons roost on this wire."
 msgstr " Na tej linie przesiadują gołębie."
@@ -87152,12 +87163,12 @@ msgstr "Wpadasz na gołębia!"
 
 #. placeholders: {away}
 msgid "Into the pigeon! Knocked {away}."
-msgstr ""
+msgstr "Wpadasz na gołębia! Odrzuca cię na {away} bok."
 
 #. placeholders: {away}
 #. one sentence of a longer line
 msgid "Knocked {away}."
-msgstr ""
+msgstr "Odrzuca cię na {away} bok."
 
 #. one sentence of a longer line
 msgid "Wobble!"
@@ -87165,12 +87176,12 @@ msgstr "Zachwianie!"
 
 #. placeholders: {side}
 msgid "Wobble! You stepped leaning {side}."
-msgstr ""
+msgstr "Chwiejesz się! Krok z przechyłem na {side} bok."
 
 #. placeholders: {side}
 #. one sentence of a longer line
 msgid "You stepped leaning {side}."
-msgstr ""
+msgstr "Krok z przechyłem na {side} bok."
 
 msgid "Halfway."
 msgstr "Połowa."
@@ -87230,9 +87241,9 @@ msgstr "Na dachu. Zaraz następna lina."
 msgid "On the last roof."
 msgstr "Na ostatnim dachu."
 
-#. placeholders: {name}
-msgid "Gust from the {name}!"
-msgstr ""
+#. placeholders: {from_words}
+msgid "Gust {from_words}!"
+msgstr "Podmuch {from_words}!"
 
 #. placeholders: {right}, {crouch}
 msgid " Lean into it with {right}, or crouch with {crouch}."
@@ -87240,7 +87251,7 @@ msgstr " Przechyl się pod wiatr przez {right} albo kucnij przez {crouch}."
 
 #. placeholders: {plural}, {name}
 msgid "A pigeon lands {plural} ahead, on your {name}."
-msgstr ""
+msgstr "Gołąb siada {plural} przed tobą, z boku: {name}."
 
 #. placeholders: {sentence_start}
 msgid " {sentence_start} shoos it from 2 steps."
@@ -87251,7 +87262,7 @@ msgstr "Gołąb odlatuje."
 
 #. placeholders: {name}
 msgid "Leaning hard {name}!"
-msgstr ""
+msgstr "Mocny przechył na {name} bok!"
 
 #. placeholders: {sentence_start}
 msgid " Near falling. {sentence_start} shifts back."
@@ -87283,11 +87294,11 @@ msgstr "Zostało: {lives}."
 #. placeholders: {name}
 #. one sentence of a longer line
 msgid "Fell {name}, into the net."
-msgstr ""
+msgstr "Spadasz na {name} bok, do siatki."
 
 #. placeholders: {name}, {lives}
 msgid "Fell {name}, into the net. {lives}"
-msgstr ""
+msgstr "Spadasz na {name} bok, do siatki. {lives}"
 
 #. placeholders: {pos}, {steps}
 #. one sentence of a longer line
@@ -87400,25 +87411,25 @@ msgstr "Krok {pos} z {steps}, {lean_words}, w przysiadzie."
 msgid "Step {pos} of {steps}, {lean_words}."
 msgstr "Krok {pos} z {steps}, {lean_words}."
 
-#. placeholders: {name}
-msgid "Wind blowing from the {name}."
-msgstr ""
+#. placeholders: {from_words}
+msgid "Wind blowing {from_words}."
+msgstr "Wiatr wieje {from_words}."
 
-#. placeholders: {name}, {plural}
-msgid "Gust from the {name} in {plural}."
-msgstr ""
+#. placeholders: {from_words}, {plural}
+msgid "Gust {from_words} in {plural}."
+msgstr "Podmuch {from_words} za {plural}."
 
 #. placeholders: {plural}, {name}
 msgid "Pigeon {plural} ahead on the {name}."
-msgstr ""
+msgstr "Gołąb {plural} przed tobą, z boku: {name}."
 
 #. placeholders: {plural}
 msgid "{plural} on this wire."
-msgstr ""
+msgstr "Na tej linie: {plural}."
 
 #. placeholders: {index}, {levels}, {plural}
 msgid "Wire {index} of {levels}, {plural} up."
-msgstr ""
+msgstr "Lina {index} z {levels}, wysokość: {plural}."
 
 msgid "Wait: climbing back on."
 msgstr "Czekaj: wspinasz się z powrotem."
@@ -87434,23 +87445,25 @@ msgstr "Rozgrywka skończona."
 
 #. placeholders: {name}, {into}
 msgid "Wind pushing you {name}: press {into}."
-msgstr ""
+msgstr "Wiatr spycha cię na {name} bok: naciśnij {into}."
 
 #. placeholders: {into}, {crouch}
 #. one sentence of a longer line
 msgid "Lean into it with {into}, or crouch with {crouch}."
 msgstr "Przechyl się pod wiatr przez {into} albo kucnij przez {crouch}."
 
-#. placeholders: {name}, {plural}
+#. placeholders: {from_words}, {plural}
 #. one sentence of a longer line
-msgid "Wind from the {name} in {plural}."
-msgstr ""
+msgid "Wind {from_words} in {plural}."
+msgstr "Wiatr {from_words} za {plural}."
 
-#. placeholders: {name}, {plural}, {into}, {crouch}
+#. placeholders: {from_words}, {plural}, {into}, {crouch}
 msgid ""
-"Wind from the {name} in {plural}. Lean into it with {into}, or crouch with "
+"Wind {from_words} in {plural}. Lean into it with {into}, or crouch with "
 "{crouch}."
 msgstr ""
+"Wiatr {from_words} za {plural}. Pochyl się pod wiatr klawiszem {into} albo "
+"przykucnij klawiszem {crouch}."
 
 #. placeholders: {fix}
 #. one sentence of a longer line
@@ -87460,13 +87473,15 @@ msgstr "Naciśnij {fix}, a potem poczekaj na równowagę."
 #. placeholders: {sentence_start}, {name}
 #. one sentence of a longer line
 msgid "{sentence_start} and drifting {name}."
-msgstr ""
+msgstr "{sentence_start} i znosi cię na {name} bok."
 
 #. placeholders: {sentence_start}, {name}, {fix}
 msgid ""
 "{sentence_start} and drifting {name}. Press {fix}, then wait until you are "
 "balanced."
 msgstr ""
+"{sentence_start} i znosi cię na {name} bok. Naciśnij {fix}, potem poczekaj, "
+"aż złapiesz równowagę."
 
 #. placeholders: {plural}
 #. one sentence of a longer line
@@ -95045,6 +95060,15 @@ msgstr "{position} z {count}."
 msgid "Games"
 msgstr "Gry"
 
+#. Tightrope: a wire's height, made by its plural() helper.
+msgid "1 floor"
+msgstr "1 piętro"
+
+#. Tightrope: a wire's height, made by its plural() helper.
+#. placeholders: {n}
+msgid "{n} floors"
+msgstr "{n} {n:piętro|piętra|pięter}"
+
 #. a name: keep it as it is
 msgid "Wicket's"
 msgstr "Wicket's"
@@ -95056,6 +95080,21 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "first relaxed score"
+#~ msgstr "pierwszy wynik w swobodnym tempie"
+
+#~ msgid "first score"
+#~ msgstr "pierwszy wynik"
+
+#~ msgid " Your {first} at {name}."
+#~ msgstr " {name}: twój {first}."
+
+#~ msgid " Your {first} on {the}."
+#~ msgstr " {the}: twój {first}."
+
+#~ msgid "Your {first} on this one."
+#~ msgstr "Twój {first} w tym wyzwaniu."
 
 #~ msgid "Connect a {site} account"
 #~ msgstr "Połącz konto {site}"
