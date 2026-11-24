@@ -39,6 +39,9 @@ pub enum Rule {
     Newer,
 }
 
+/// Why a merge could not go ahead, for the log.
+pub const NOT_WRITABLE: &str = "the records here cannot be saved";
+
 /// Keys that never leave this computer.
 const LOCAL: &[&str] = &["parlor/tester", "parlor.last_game"];
 

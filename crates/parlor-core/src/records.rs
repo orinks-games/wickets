@@ -288,7 +288,7 @@ impl Records {
         records.file(&mut ctx.vault);
         let loaded = records.loaded.as_mut().expect("just loaded");
         if !loaded.writable {
-            return Err("the records here cannot be saved".into());
+            return Err(crate::merge::NOT_WRITABLE.into());
         }
         let mut ours = crate::merge::Copy {
             games: std::mem::take(&mut loaded.file.games),
