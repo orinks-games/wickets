@@ -59,8 +59,6 @@ jobs:
         uses: actions/checkout@v5
         with:
           repository: orinks-games/wickets-secrets
-          # 1.8.0 builds the overlay's release commit, not its main.
-          ref: ecbaa1f594e4f095c280b64475a67649be05f9bd
           path: secrets
           ssh-key: ${{ secrets.WICKETS_SECRETS_DEPLOY_KEY }}
           persist-credentials: false

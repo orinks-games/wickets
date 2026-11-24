@@ -231,16 +231,14 @@ impl Kitchen {
         }
     }
 
-    /// "Left burner, far left. Gravy, cooking, next: whisk." Two
-    /// sentences, so each language has the station and its dish whole.
+    /// "Left burner, far left: gravy, cooking, next: whisk."
     fn station_line(&self, station: Station) -> String {
-        let dish = rules::describe_station(&self.meal, station);
-        let mut chars = dish.chars();
-        let dish = match chars.next() {
-            Some(first) => first.to_uppercase().chain(chars).collect(),
-            None => dish,
-        };
-        format!("{}, {}. {dish}.", station.title(), station.place())
+        format!(
+            "{}, {}: {}.",
+            station.title(),
+            station.place(),
+            rules::describe_station(&self.meal, station)
+        )
     }
 
     /// The status key, in layers. First: any station that needs you now,
