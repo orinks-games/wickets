@@ -173,9 +173,10 @@ impl Kitchen {
             .meal
             .dishes
             .iter()
-            .map(|d| format!("{} {}", d.name(), d.station().on()))
+            .map(|d| d.station().with(d.name()))
             .collect();
-        format!("On the menu: {}.", join(&dishes))
+        let dishes = join(&dishes);
+        format!("On the menu: {dishes}.")
     }
 
     fn intro(&self, ctx: &Ctx<Parlor>) -> String {
@@ -268,13 +269,15 @@ impl Kitchen {
         } else {
             first.extend(stations.iter().copied().filter(|&s| urgent(s)).map(line));
         }
-        first.push(format!("You are at the {}.", self.focus.name()));
+        let spot = self.focus.name();
+        first.push(format!("You are at the {spot}."));
         if self.phase != Phase::Ready {
-            first.push(format!("{} of {n} dishes served.", self.meal.served()));
-            more.push(format!(
-                "{} in.",
-                sentence_start(&rules::seconds(self.meal.elapsed))
-            ));
+            let served = self.meal.served();
+            first.push(format!("{served} of {n} dishes served."));
+            more.push(match self.meal.elapsed.max(0.0).round() as i64 {
+                1 => "1 second in.".to_string(),
+                n => format!("{n} seconds in."),
+            });
         }
         more.extend(stations.iter().copied().filter(|&s| !urgent(s)).map(line));
         let outcome = self.meal.outcome();
@@ -299,14 +302,17 @@ impl Kitchen {
             .iter()
             .enumerate()
             .map(|(i, d)| {
-                let state = if d.done() {
+                let progress = if d.done() {
                     format!("served, quality {}", d.quality())
                 } else if d.stage == Stage::Queued {
                     let first = d.after.map(|j| self.meal.dishes[j].name()).unwrap_or("");
                     format!("after the {first}")
                 } else if !d.started() {
                     match d.stage {
-                        Stage::Due | Stage::Burning => format!("called: start {} now", d.kind.it()),
+                        Stage::Due | Stage::Burning if d.kind.plural() => {
+                            "called: start them now".to_string()
+                        }
+                        Stage::Due | Stage::Burning => "called: start it now".to_string(),
                         _ => "not called yet".to_string(),
                     }
                 } else {
@@ -315,12 +321,9 @@ impl Kitchen {
                         _ => "cooking".to_string(),
                     }
                 };
-                format!(
-                    "{}, {} {}: {state}.",
-                    i + 1,
-                    d.kind.start_phrase(),
-                    d.station().on()
-                )
+                let number = i + 1;
+                let step = d.station().with(d.kind.start_phrase());
+                format!("{number}, {step}: {progress}.")
             })
             .collect();
         format!("Recipe card. {}", lines.join(" "))
@@ -368,12 +371,9 @@ impl Kitchen {
             } else {
                 "start it".to_string()
             };
-            format!(
-                "Nothing needs you right now. Next, the {} {}: {what} in about {}.",
-                d.name(),
-                d.station().on(),
-                rules::seconds(secs)
-            )
+            let dish = d.station().with(d.name());
+            let wait = rules::seconds(secs);
+            format!("Nothing needs you right now. Next, the {dish}: {what} in about {wait}.")
         } else {
             "Nothing needs you right now.".to_string()
         };
@@ -383,42 +383,33 @@ impl Kitchen {
     /// What the focused station is doing now.
     fn listen(&self, ctx: &mut Ctx<Parlor>) {
         let st = self.focus;
+        let spot = st.name();
         let line = match self.meal.active_at(st).map(|i| &self.meal.dishes[i]) {
-            None => format!("Nothing on the {}.", st.name()),
-            Some(d) if !d.started() => match d.stage {
-                Stage::Due => format!("The {}: start the {}.", st.name(), d.name()),
-                Stage::Burning => {
-                    format!("The {}: start the {} now!", st.name(), d.name())
+            None => format!("Nothing on the {spot}."),
+            Some(d) => {
+                let dish = d.name();
+                let plural = d.kind.plural();
+                let doing = d
+                    .current()
+                    .map(|s| s.action.gerund(plural))
+                    .unwrap_or_default();
+                match (d.started(), d.stage, plural) {
+                    (false, Stage::Due, _) => format!("The {spot}: start the {dish}."),
+                    (false, Stage::Burning, _) => format!("The {spot}: start the {dish} now!"),
+                    (false, _, false) => format!("The {spot}: the {dish} is not called for yet."),
+                    (false, _, true) => format!("The {spot}: the {dish} are not called for yet."),
+                    (true, Stage::Due, false) => format!("The {spot}: the {dish} needs {doing}."),
+                    (true, Stage::Due, true) => format!("The {spot}: the {dish} need {doing}."),
+                    (true, Stage::Burning, false) => {
+                        format!("The {spot}: the {dish} is burning. Act now.")
+                    }
+                    (true, Stage::Burning, true) => {
+                        format!("The {spot}: the {dish} are burning. Act now.")
+                    }
+                    (true, _, false) => format!("The {spot}: the {dish} is cooking."),
+                    (true, _, true) => format!("The {spot}: the {dish} are cooking."),
                 }
-                _ => format!(
-                    "The {}: the {} {} not called for yet.",
-                    st.name(),
-                    d.name(),
-                    d.kind.is()
-                ),
-            },
-            Some(d) => match d.stage {
-                Stage::Due => format!(
-                    "The {}: the {} {} {}.",
-                    st.name(),
-                    d.name(),
-                    d.kind.needs(),
-                    d.current()
-                        .map_or("you".to_string(), |s| s.action.gerund(d.kind.plural()))
-                ),
-                Stage::Burning => format!(
-                    "The {}: the {} {} burning. Act now.",
-                    st.name(),
-                    d.name(),
-                    d.kind.is()
-                ),
-                _ => format!(
-                    "The {}: the {} {} cooking.",
-                    st.name(),
-                    d.name(),
-                    d.kind.is()
-                ),
-            },
+            }
         };
         ctx.say(line);
     }
@@ -478,10 +469,12 @@ impl Kitchen {
                 if let Some(s) = d.current() {
                     if d.clock < s.wait - rules::EARLY_GRACE {
                         sound::at(ctx, sound::EARLY, d.station());
-                        let line = if s.action == rules::Action::Start {
-                            format!("Not yet: the {} {} not called.", d.name(), d.kind.is())
-                        } else {
-                            format!("Not yet: the {} {} time.", d.name(), d.kind.needs())
+                        let dish = d.name();
+                        let line = match (s.action == rules::Action::Start, d.kind.plural()) {
+                            (true, false) => format!("Not yet: the {dish} is not called."),
+                            (true, true) => format!("Not yet: the {dish} are not called."),
+                            (false, false) => format!("Not yet: the {dish} needs time."),
+                            (false, true) => format!("Not yet: the {dish} need time."),
                         };
                         ctx.say(line);
                         return;
@@ -541,7 +534,10 @@ impl Kitchen {
                     if action == rules::Action::Start {
                         // In the lesson, the step's own line says it.
                         if !self.lesson {
-                            lines.push(format!("{} started. {}", sentence(d.name()), grade.word()));
+                            let dish = sentence(d.name());
+                            let word = grade.word();
+                            let started = format!("{dish} started.");
+                            lines.push(format!("{started} {word}"));
                         }
                     } else if self.lesson && d.done() {
                         // The lesson's closing line names the finished dish.
@@ -560,21 +556,13 @@ impl Kitchen {
                 Event::Fumble { dish, action } => {
                     let d = &self.meal.dishes[dish];
                     sound::at(ctx, sound::EARLY, d.station());
-                    if action == rules::Action::Start {
-                        lines.push(format!(
-                            "Not yet: the {} {} not called. Minus {}.",
-                            d.name(),
-                            d.kind.is(),
-                            d.fumble_cost
-                        ));
-                    } else {
-                        lines.push(format!(
-                            "Not yet: the {} {} time. Minus {}.",
-                            d.name(),
-                            d.kind.needs(),
-                            d.fumble_cost
-                        ));
-                    }
+                    let (dish, cost) = (d.name(), d.fumble_cost);
+                    lines.push(match (action == rules::Action::Start, d.kind.plural()) {
+                        (true, false) => format!("Not yet: the {dish} is not called. Minus {cost}."),
+                        (true, true) => format!("Not yet: the {dish} are not called. Minus {cost}."),
+                        (false, false) => format!("Not yet: the {dish} needs time. Minus {cost}."),
+                        (false, true) => format!("Not yet: the {dish} need time. Minus {cost}."),
+                    });
                 }
                 // The lesson closes as its dish is done, before the meal is
                 // served and the dinner bell rings.
@@ -720,13 +708,9 @@ impl Kitchen {
     }
 }
 
+/// A list of whole phrases, each one translated on its own.
 fn join(items: &[String]) -> String {
-    match items.len() {
-        0 => String::new(),
-        1 => items[0].clone(),
-        2 => format!("{} and {}", items[0], items[1]),
-        n => format!("{}, and {}", items[..n - 1].join(", "), items[n - 1]),
-    }
+    items.join(", ")
 }
 
 /// Keys a player presses for their screen reader or as a modifier.
@@ -952,17 +936,18 @@ impl State<Parlor> for Kitchen {
             .meal
             .stations()
             .into_iter()
-            .map(|s| format!("{} {}", s.number(), s.name()))
+            .map(|s| s.keyed().to_string())
             .collect();
         let rule = self
             .plan
             .as_ref()
             .map(|p| format!(" {}", p.reminder()))
             .unwrap_or_default();
+        let title = self.mode.title();
+        let head = "Stations this meal";
+        let keyed = join(&stations);
         format!(
-            "{}.{rule} Stations this meal: {}. {left} and {right} move between them, or press a station's number. {p} starts, stirs, flips, bastes or pulls out the dish in front of you: wait until it needs you, then act at once. {up} describes the dish in front of you, {down} reads the recipe card, {t} says what is happening at that station. {s} says what needs you now, again for every station, {r} repeats the last call, {h} says what needs you most. Escape pauses.",
-            self.mode.title(),
-            join(&stations),
+            "{title}.{rule} {head}: {keyed}. {left} and {right} move between them, or press a station's number. {p} starts, stirs, flips, bastes or pulls out the dish in front of you: wait until it needs you, then act at once. {up} describes the dish in front of you, {down} reads the recipe card, {t} says what is happening at that station. {s} says what needs you now, again for every station, {r} repeats the last call, {h} says what needs you most. Escape pauses.",
             left = sentence_start(&left),
             up = sentence_start(&up),
         )

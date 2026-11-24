@@ -357,9 +357,9 @@ pub fn list() -> Vec<Unlock> {
             CURSES,
             t.name(),
             format!(
-                "Clear a floor that carries the {} twist, from floor {}.",
-                t.name(),
-                t.from_floor()
+                "Clear a floor that carries the {twist} twist, from floor {floor}.",
+                twist = t.name(),
+                floor = t.from_floor()
             ),
             format!(
                 "A curse you can switch on: {}. Each curse on adds a quarter to your score in Play, Floor select, Nightmare and Endless night. Enter switches it.",
@@ -600,6 +600,6 @@ pub fn on_end(ctx: &mut Ctx<Parlor>, run: &Run, won: bool) -> Vec<String> {
 
 /// "Unlocked: Diary page 3. Find it in Unlocks on the title." or None.
 pub fn announce(names: &[String]) -> Option<String> {
-    let where_ = if names.len() == 1 { "it" } else { "them" };
-    earned_line(names).map(|l| format!("{l} Find {where_} in Unlocks on the title."))
+    let them = if names.len() == 1 { "it" } else { "them" };
+    earned_line(names).map(|l| format!("{l} Find {them} in Unlocks on the title."))
 }

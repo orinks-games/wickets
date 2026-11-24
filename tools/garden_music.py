@@ -225,7 +225,7 @@ def phrase(part: str, chord_name: str, n: int, inst: str, steps_text: str, gain:
     if layer_fx:
         layer["fx"] = layer_fx
     return {
-        "genny": "blal1",
+        "genny": "oriol",
         "out": f"{PREFIX}{part}/{chord_name}-{n}.wav",
         "bpm": BPM,
         "beats": 4,

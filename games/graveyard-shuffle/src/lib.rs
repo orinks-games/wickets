@@ -160,7 +160,7 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
             format!("{}: {best}, {stars} of 9 stars.", s.title())
         })
         .collect();
-    let songs = match p.tunes_danced {
+    let tunes = match p.tunes_danced {
         1 => "1 song".to_string(),
         n => format!("{n} songs"),
     };
@@ -183,7 +183,7 @@ pub fn records_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
         ),
         nights.join(" "),
         format!(
-            "Danced so far: {night_count}, {songs}, {} in time, {} of them spot on. Longest streak: {}. Practice room: {}.",
+            "Danced so far: {night_count}, {tunes}, {} in time, {} of them spot on. Longest streak: {}. Practice room: {}.",
             moves_words(p.steps),
             p.spot_on,
             moves_words(p.best_streak),

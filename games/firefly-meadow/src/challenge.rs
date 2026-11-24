@@ -5,7 +5,6 @@
 use hearken::{Ctx, State};
 use parlor_core::challenges::today;
 use parlor_core::menus::{self, labels, Back, ChallengeGame, Results};
-use parlor_core::words::streak_sentence;
 use parlor_core::{Challenge, Challenges, Pages, Parlor, Period, ScoreResult};
 
 use crate::evening::{self, Mode};
@@ -108,11 +107,9 @@ impl ChallengeGame for Almanac {
 pub fn briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
     let ch = Challenge::current(ctx, ID, period);
     let plan = plan(ctx, period);
-    let pages = vec![format!(
-        "{}: {} Challenges are always summer evenings, whatever the season outside.",
-        name(period),
-        rule(period, &plan)
-    )];
+    let (name, rule) = (name(period), rule(period, &plan));
+    let summer = "Challenges are always summer evenings, whatever the season outside.";
+    let pages = vec![format!("{name}: {rule} {summer}")];
     let seed = ch.seed;
     let mut plan = Some(plan);
     Pages::briefing(pages).then(move |ctx| {
@@ -212,7 +209,7 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, evening: &Evening) -> Vec<S
             "{} result: {score} points. {} {} {}",
             ch.title(),
             score_line(result),
-            streak_sentence(streak, ch.period.unit()),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ]

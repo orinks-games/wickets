@@ -39,18 +39,19 @@ pub fn entry_text(species: &Species, e: &Entry) -> String {
         2 => "twice".to_string(),
         n => format!("{n} times"),
     };
-    let songs = match species.kind {
+    let verses = match species.kind {
         Kind::Flock => "Counted on migration.".to_string(),
         _ => format!("Songs in your guide: {} of {}.", e.verses, species.verses()),
     };
-    format!(
-        "{}. Its song: {}. {} {} First met {}, met {met}.",
+    let (name, sounds, about, first) = (
         sentence_start(species.name),
         species.sounds_like,
-        songs,
         species.about,
-        e.first
-    )
+        e.first.clone(),
+    );
+    let its = format!("Its song: {sounds}.");
+    let met_line = format!("First met {first}, met {met}.");
+    format!("{name}. {its} {verses} {about} {met_line}")
 }
 
 /// Where the birds still to meet might be, for the last row's help.

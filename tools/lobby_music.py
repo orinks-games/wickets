@@ -3,7 +3,7 @@
 The launcher's lobby plays a different set of pieces at each part of the
 day (see `crates/wickets/src/music.rs`). The first three, the lounge, the
 bossa and the rag, were made with Oriol's genny and stay as shipped. This
-script builds the rest for blal1's genny from short chord and tune tables,
+script builds the rest for Oriol's genny from short chord and tune tables,
 in the same way as the story mode's soundtrack: a light room, instruments
 spread across the stereo field (accompaniment a little left, tunes a
 little right, bass and pads in the middle) and no heavy effects. It
@@ -83,7 +83,7 @@ def piece(out: str, bpm: int, beats: int, normalize: float, about: str,
           sections: list[dict], fx: list[dict]) -> dict:
     return {
         "out": f"music/{out}.wav",
-        "genny": "blal1",
+        "genny": "oriol",
         "bpm": bpm,
         "beats": beats,
         "loop": "fold",

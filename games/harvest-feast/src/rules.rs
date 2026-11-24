@@ -109,6 +109,28 @@ impl Station {
         }
     }
 
+    /// "gravy on the left burner": a dish or a recipe step at the station.
+    pub fn with(self, what: &str) -> String {
+        match self {
+            Station::LeftBurner => format!("{what} on the left burner"),
+            Station::Board => format!("{what} on the cutting board"),
+            Station::Oven => format!("{what} in the oven"),
+            Station::Griddle => format!("{what} on the griddle"),
+            Station::RightBurner => format!("{what} on the right burner"),
+        }
+    }
+
+    /// "1 left burner": the station with its number key, for the station list.
+    pub fn keyed(self) -> &'static str {
+        match self {
+            Station::LeftBurner => "1 left burner",
+            Station::Board => "2 cutting board",
+            Station::Oven => "3 oven",
+            Station::Griddle => "4 griddle",
+            Station::RightBurner => "5 right burner",
+        }
+    }
+
     /// Where it is around you.
     pub fn place(self) -> &'static str {
         match self {
@@ -172,13 +194,13 @@ impl Station {
         }
     }
 
-    fn ruined_word(self) -> &'static str {
+    /// "The gravy scorched.": what too long here does to `dish`.
+    fn ruined(self, dish: &str) -> String {
         match self {
-            Station::LeftBurner => "scorched",
-            Station::Board => "went limp waiting",
-            Station::Oven => "burned",
-            Station::Griddle => "burned",
-            Station::RightBurner => "boiled over",
+            Station::LeftBurner => format!("The {dish} scorched."),
+            Station::Board => format!("The {dish} went limp waiting."),
+            Station::Oven | Station::Griddle => format!("The {dish} burned."),
+            Station::RightBurner => format!("The {dish} boiled over."),
         }
     }
 }
@@ -202,81 +224,70 @@ pub enum Action {
 impl Action {
     /// "Stir it", the call-out's command; "them" for a plural dish.
     pub fn command(self, plural: bool) -> String {
-        pronoun(self.command_one(), plural)
-    }
-
-    fn command_one(self) -> &'static str {
-        match self {
-            Action::Start => "Start it",
-            Action::Stir => "Stir it",
-            Action::Whisk => "Whisk it",
-            Action::Flip => "Flip it",
-            Action::Baste => "Baste it",
-            Action::Rotate => "Turn the tray",
-            Action::Pull => "Pull it out",
-            Action::TakeOff => "Take it off the heat",
-            Action::Drain => "Drain it",
-            Action::Chop => "Chop it",
-            Action::Plate => "Plate it",
-        }
+        let text = match (self, plural) {
+            (Action::Start, false) => "Start it",
+            (Action::Start, true) => "Start them",
+            (Action::Stir, false) => "Stir it",
+            (Action::Stir, true) => "Stir them",
+            (Action::Whisk, false) => "Whisk it",
+            (Action::Whisk, true) => "Whisk them",
+            (Action::Flip, false) => "Flip it",
+            (Action::Flip, true) => "Flip them",
+            (Action::Baste, false) => "Baste it",
+            (Action::Baste, true) => "Baste them",
+            (Action::Rotate, _) => "Turn the tray",
+            (Action::Pull, false) => "Pull it out",
+            (Action::Pull, true) => "Pull them out",
+            (Action::TakeOff, false) => "Take it off the heat",
+            (Action::TakeOff, true) => "Take them off the heat",
+            (Action::Drain, false) => "Drain it",
+            (Action::Drain, true) => "Drain them",
+            (Action::Chop, false) => "Chop it",
+            (Action::Chop, true) => "Chop them",
+            (Action::Plate, false) => "Plate it",
+            (Action::Plate, true) => "Plate them",
+        };
+        text.to_string()
     }
 
     /// "stir", for "next: stir"; "them" for a plural dish.
     pub fn verb(self, plural: bool) -> String {
-        pronoun(self.verb_one(), plural)
-    }
-
-    fn verb_one(self) -> &'static str {
-        match self {
-            Action::Start => "start",
-            Action::Stir => "stir",
-            Action::Whisk => "whisk",
-            Action::Flip => "flip",
-            Action::Baste => "baste",
-            Action::Rotate => "turn the tray",
-            Action::Pull => "pull it out",
-            Action::TakeOff => "take it off the heat",
-            Action::Drain => "drain",
-            Action::Chop => "chop",
-            Action::Plate => "plate",
-        }
+        let text = match (self, plural) {
+            (Action::Start, _) => "start",
+            (Action::Stir, _) => "stir",
+            (Action::Whisk, _) => "whisk",
+            (Action::Flip, _) => "flip",
+            (Action::Baste, _) => "baste",
+            (Action::Rotate, _) => "turn the tray",
+            (Action::Pull, false) => "pull it out",
+            (Action::Pull, true) => "pull them out",
+            (Action::TakeOff, false) => "take it off the heat",
+            (Action::TakeOff, true) => "take them off the heat",
+            (Action::Drain, _) => "drain",
+            (Action::Chop, _) => "chop",
+            (Action::Plate, _) => "plate",
+        };
+        text.to_string()
     }
 
     /// "stirring", for "needs stirring"; "their" for a plural dish.
     pub fn gerund(self, plural: bool) -> String {
-        pronoun(self.gerund_one(), plural)
+        let text = match (self, plural) {
+            (Action::Start, _) => "starting",
+            (Action::Stir, _) => "stirring",
+            (Action::Whisk, _) => "whisking",
+            (Action::Flip, _) => "flipping",
+            (Action::Baste, _) => "basting",
+            (Action::Rotate, false) => "its tray turned",
+            (Action::Rotate, true) => "their tray turned",
+            (Action::Pull, _) => "pulling out",
+            (Action::TakeOff, _) => "taking off the heat",
+            (Action::Drain, _) => "draining",
+            (Action::Chop, _) => "chopping",
+            (Action::Plate, _) => "plating",
+        };
+        text.to_string()
     }
-
-    fn gerund_one(self) -> &'static str {
-        match self {
-            Action::Start => "starting",
-            Action::Stir => "stirring",
-            Action::Whisk => "whisking",
-            Action::Flip => "flipping",
-            Action::Baste => "basting",
-            Action::Rotate => "its tray turned",
-            Action::Pull => "pulling out",
-            Action::TakeOff => "taking off the heat",
-            Action::Drain => "draining",
-            Action::Chop => "chopping",
-            Action::Plate => "plating",
-        }
-    }
-}
-
-/// `text` with "it" and "its" as "them" and "their" for a plural dish.
-fn pronoun(text: &str, plural: bool) -> String {
-    if !plural {
-        return text.to_string();
-    }
-    text.split(' ')
-        .map(|w| match w {
-            "it" => "them",
-            "its" => "their",
-            w => w,
-        })
-        .collect::<Vec<_>>()
-        .join(" ")
 }
 
 /// One step of a dish after it is started.
@@ -1214,7 +1225,8 @@ impl Outcome {
 
 /// What the kitchen says about a dish's stage change.
 pub fn called_line(kind: DishKind) -> String {
-    format!("Recipe: {} {}.", kind.start_phrase(), kind.station().on())
+    let step = kind.station().with(kind.start_phrase());
+    format!("Recipe: {step}.")
 }
 
 pub fn due_line(d: &Dish) -> String {
@@ -1222,21 +1234,21 @@ pub fn due_line(d: &Dish) -> String {
         return String::new();
     };
     let plural = d.kind.plural();
+    let command = s.action.command(plural);
     let command = if s.strokes > 1 {
-        format!("{}: {} strokes", s.action.command(plural), s.strokes)
+        let strokes = s.strokes;
+        format!("{command}: {strokes} strokes")
     } else {
-        s.action.command(plural)
+        command
     };
-    format!("{} {command}.", d.station().due_line(d.name()))
+    let due = d.station().due_line(d.name());
+    format!("{due} {command}.")
 }
 
 pub fn burning_line(d: &Dish) -> String {
     if d.step == 0 {
-        format!(
-            "Hurry: the recipe called for the {} {}.",
-            d.name(),
-            d.station().on()
-        )
+        let dish = d.station().with(d.name());
+        format!("Hurry: the recipe called for the {dish}.")
     } else {
         d.station().burning_line(d.name())
     }
@@ -1249,12 +1261,12 @@ pub fn ruined_line(d: &Dish, action: Action) -> String {
             d.name()
         )
     } else {
-        format!(
-            "The {} {}. Someone rescued {}, for no points.",
-            d.name(),
-            d.station().ruined_word(),
-            d.kind.it()
-        )
+        let ruined = d.station().ruined(d.name());
+        if d.kind.plural() {
+            format!("{ruined} Someone rescued them, for no points.")
+        } else {
+            format!("{ruined} Someone rescued it, for no points.")
+        }
     }
 }
 
@@ -1267,78 +1279,101 @@ pub fn describe_station(meal: &Meal, station: Station) -> String {
         return "everything here is served".to_string();
     };
     let d = &meal.dishes[i];
+    let dish = d.name();
     let Some(s) = d.current() else {
-        return format!("{}, served", d.name());
+        return format!("{dish}, served");
     };
     if d.step == 0 {
         return match d.stage {
-            Stage::Due => format!("{}, start now", d.name()),
-            Stage::Burning => format!("{}, late: start now", d.name()),
-            _ => format!("{}, not called for yet", d.name()),
+            Stage::Due => format!("{dish}, start now"),
+            Stage::Burning => format!("{dish}, late: start now"),
+            _ => format!("{dish}, not called for yet"),
         };
     }
-    let (plural, needs) = (d.kind.plural(), d.kind.needs());
-    match d.stage {
-        Stage::Due => format!("{}, {needs} {} now", d.name(), s.action.gerund(plural)),
-        Stage::Burning => format!("{}, burning, {needs} {}", d.name(), s.action.gerund(plural)),
-        _ => format!("{}, cooking, next: {}", d.name(), s.action.verb(plural)),
+    let plural = d.kind.plural();
+    let doing = s.action.gerund(plural);
+    let next = s.action.verb(plural);
+    match (d.stage, plural) {
+        (Stage::Due, false) => format!("{dish}, needs {doing} now"),
+        (Stage::Due, true) => format!("{dish}, need {doing} now"),
+        (Stage::Burning, false) => format!("{dish}, burning, needs {doing}"),
+        (Stage::Burning, true) => format!("{dish}, burning, need {doing}"),
+        _ => format!("{dish}, cooking, next: {next}"),
     }
 }
 
 /// "Gravy: step 2 of 4, cooking, next whisk in about 3 seconds."
 pub fn detail(meal: &Meal, station: Station) -> String {
+    let spot = station.name();
     if !meal.uses(station) {
-        return format!("The {} is not in use this course.", station.name());
+        return format!("The {spot} is not in use this course.");
     }
     let Some(i) = meal.active_at(station) else {
-        return format!("Everything {} is served.", station.on());
+        let on = station.on();
+        return format!("Everything {on} is served.");
     };
     let d = &meal.dishes[i];
+    let dish = d.name();
+    let plural = d.kind.plural();
     let Some(s) = d.current() else {
-        return format!("The {} {} served.", d.name(), d.kind.is());
+        return if plural {
+            format!("The {dish} are served.")
+        } else {
+            format!("The {dish} is served.")
+        };
     };
     let queued = meal
         .queued_at(station)
-        .map(|j| format!(" After {}, the {}.", d.kind.it(), meal.dishes[j].name()))
+        .map(|j| {
+            let next = meal.dishes[j].name();
+            if plural {
+                format!(" After them, the {next}.")
+            } else {
+                format!(" After it, the {next}.")
+            }
+        })
         .unwrap_or_default();
     let quality = if d.scores.is_empty() && d.fumbles == 0 {
         String::new()
     } else {
-        format!(" Quality so far {}.", d.quality())
+        let quality = d.quality();
+        format!(" Quality so far {quality}.")
     };
-    let head = format!("{}, {}.", sentence(d.name()), station.on());
+    let head = station.with(&sentence(dish));
+    let head = format!("{head}.");
     let body = if d.step == 0 {
-        match d.stage {
-            Stage::Due | Stage::Burning => {
-                format!(
-                    " The recipe calls for {}: {} {}.",
-                    d.kind.it(),
-                    d.kind.start_phrase(),
-                    station.on()
-                )
+        match (d.stage, plural) {
+            (Stage::Due | Stage::Burning, _) => {
+                let step = station.with(d.kind.start_phrase());
+                if plural {
+                    format!(" The recipe calls for them: {step}.")
+                } else {
+                    format!(" The recipe calls for it: {step}.")
+                }
             }
-            _ => format!(
-                " Not started; wait for the recipe to call for {}.",
-                d.kind.it()
-            ),
+            (_, true) => " Not started; wait for the recipe to call for them.".to_string(),
+            _ => " Not started; wait for the recipe to call for it.".to_string(),
         }
     } else {
         let of = d.cooking_steps();
-        let when = match d.stage {
-            Stage::Due => "now".to_string(),
-            Stage::Burning => format!("now, {} {} burning", d.kind.it_subject(), d.kind.is()),
-            _ => format!("in about {}", seconds(d.due_in())),
+        let when = match (d.stage, plural) {
+            (Stage::Due, _) => "now".to_string(),
+            (Stage::Burning, false) => "now, it is burning".to_string(),
+            (Stage::Burning, true) => "now, they are burning".to_string(),
+            _ => {
+                let wait = seconds(d.due_in());
+                format!("in about {wait}")
+            }
         };
         let strokes = if s.strokes > 1 {
-            format!(", {} strokes, {} done", s.strokes, d.strokes)
+            let (strokes, done) = (s.strokes, d.strokes);
+            format!(", {strokes} strokes, {done} done")
         } else {
             String::new()
         };
-        format!(
-            " Step {} of {of}: {}{strokes}, {when}.",
-            d.step,
-            s.action.verb(d.kind.plural())
-        )
+        let step = d.step;
+        let next = s.action.verb(plural);
+        format!(" Step {step} of {of}: {next}{strokes}, {when}.")
     };
     format!("{head}{body}{quality}{queued}")
 }

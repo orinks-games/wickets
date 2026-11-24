@@ -437,11 +437,9 @@ impl ChallengePlan {
             Period::Weekly => "Three courses on three, four, then five stations, each faster. Each course needs a star for the next.".to_string(),
             Period::Monthly => "Ten dishes, two on every station, the second waiting for the first.".to_string(),
         };
-        let what = match self.period {
-            Period::Monthly => "Rule",
-            _ => "Twist",
-        };
-        format!("{shape} {what}, {twist}")
+        // The twist names itself ("Rush hour: ..."), and stays a sentence of
+        // its own so it translates whole.
+        format!("{shape} {twist}")
     }
 
     /// A reminder of the twist for the kitchen's status and help.
@@ -569,12 +567,13 @@ pub fn finish(
         }
     }
     if plan.twist.is_none() {
-        summary.push_str(&format!(
-            " {} golden {}, {} points.",
-            score.plates,
-            if score.plates == 1 { "plate" } else { "plates" },
-            score.plates as u64 * GOLDEN_POINTS
-        ));
+        let plates = score.plates;
+        let points = plates as u64 * GOLDEN_POINTS;
+        summary.push_str(&if plates == 1 {
+            format!(" 1 golden plate, {points} points.")
+        } else {
+            format!(" {plates} golden plates, {points} points.")
+        });
     }
     summary.push_str(&format!(" {} points", score.points));
     if by_ear {
@@ -630,10 +629,10 @@ pub fn finish(
     let pages = vec![
         format!("{summary}{ending}"),
         format!(
-            "{} result: {total} points. {} A {streak} {} streak. {}",
+            "{} result: {total} points. {} {} {}",
             ch.title(),
             result_line(result, pace),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ];

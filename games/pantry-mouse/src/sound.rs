@@ -95,60 +95,23 @@ pub fn pantry_bed(ctx: &mut Ctx<Parlor>) {
 }
 
 /// Every sound of the game with its name and meaning, for the sound check,
-/// in the order a player meets them. The name is the text before the
-/// colon.
-pub fn catalog() -> Vec<(&'static str, &'static str)> {
+/// in the order a player meets them.
+pub fn catalog() -> Vec<(&'static str, &'static str, &'static str)> {
     vec![
-        (STEP, "Step: a soft tap on wooden boards. You moved one cell."),
-        (
-            NIBBLE,
-            "Nibble: a quick crunch. You ate a crumb, for 10 points.",
-        ),
-        (
-            WALL,
-            "Wall: a dull thud. A wall is in the way, and the open ways are spoken.",
-        ),
-        (
-            SNIFF_TICK,
-            "Sniff tick: a tiny bright tick. Each one is a crumb, from its direction, nearest first.",
-        ),
-        (
-            CAT_BELL,
-            "Ginger cat: a bell on its collar. It heads straight for you.",
-        ),
-        (
-            CAT_PAD,
-            "Tabby cat: soft padding paws. It wanders until it is 4 steps away, then chases.",
-        ),
-        (
-            CAT_PURR,
-            "Grey cat: a low purr. It wanders like the tabby, and joins in the monthly challenge.",
-        ),
-        (
-            CAT_CLOSE,
-            "Cat close: a short rising meow from the cat's side. A cat is 2 steps away or nearer.",
-        ),
-        (
-            CAUGHT,
-            "Caught: a pounce and a squeak. A cat caught you and you lose a whisker.",
-        ),
-        (
-            FREEZE,
-            "Freeze: an indrawn breath. You keep still and the nearest cat loses track of you.",
-        ),
-        (THAW, "Thaw: a soft breath out. You can move again."),
-        (
-            CLEAR,
-            "Pantry clear: a bright rising run of notes. Every crumb is gone.",
-        ),
-        (
-            TURKEY,
-            "Turkey scrap: a juicy chew. In the Leftovers pantry at Thanksgiving, a turkey scrap, for 50 points. A sniff plays it from where the nearest one hides.",
-        ),
-        (
-            CHEESE_RIND,
-            "Cheese rind: a soft glassy chime. On Bin night, the first Tuesday of every month, a cheese rind in every pantry, for 100 points. A sniff plays it from where it hides.",
-        ),
+        (STEP, "Step", "A soft tap on wooden boards. You moved one cell."),
+        (NIBBLE, "Nibble", "A quick crunch. You ate a crumb, for 10 points."),
+        (WALL, "Wall", "A dull thud. A wall is in the way, and the open ways are spoken."),
+        (SNIFF_TICK, "Sniff tick", "A tiny bright tick. Each one is a crumb, from its direction, nearest first."),
+        (CAT_BELL, "Ginger cat", "A bell on its collar. It heads straight for you."),
+        (CAT_PAD, "Tabby cat", "Soft padding paws. It wanders until it is 4 steps away, then chases."),
+        (CAT_PURR, "Grey cat", "A low purr. It wanders like the tabby, and joins in the monthly challenge."),
+        (CAT_CLOSE, "Cat close", "A short rising meow from the cat's side. A cat is 2 steps away or nearer."),
+        (CAUGHT, "Caught", "A pounce and a squeak. A cat caught you and you lose a whisker."),
+        (FREEZE, "Freeze", "An indrawn breath. You keep still and the nearest cat loses track of you."),
+        (THAW, "Thaw", "A soft breath out. You can move again."),
+        (CLEAR, "Pantry clear", "A bright rising run of notes. Every crumb is gone."),
+        (TURKEY, "Turkey scrap", "A juicy chew. In the Leftovers pantry at Thanksgiving, a turkey scrap, for 50 points. A sniff plays it from where the nearest one hides."),
+        (CHEESE_RIND, "Cheese rind", "A soft glassy chime. On Bin night, the first Tuesday of every month, a cheese rind in every pantry, for 100 points. A sniff plays it from where it hides."),
     ]
 }
 

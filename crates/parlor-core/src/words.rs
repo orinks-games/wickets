@@ -26,22 +26,9 @@ pub fn a_or_an(next: &str) -> &'static str {
     }
 }
 
-/// "A 3 day streak." or "An 8 day streak.", for challenge results.
-pub fn streak_sentence(n: u32, unit: &str) -> String {
-    let n = n.to_string();
-    let article = if a_or_an(&n) == "an" { "An" } else { "A" };
-    format!("{article} {n} {unit} streak.")
-}
-
 #[cfg(test)]
 mod tests {
-    use super::{a_or_an, streak_sentence};
-
-    #[test]
-    fn streak_sentences() {
-        assert_eq!(streak_sentence(3, "day"), "A 3 day streak.");
-        assert_eq!(streak_sentence(8, "day"), "An 8 day streak.");
-    }
+    use super::a_or_an;
 
     #[test]
     fn picks_an_before_a_vowel_sound() {

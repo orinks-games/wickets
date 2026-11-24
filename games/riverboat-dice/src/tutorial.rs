@@ -59,34 +59,50 @@ fn speech_secs(text: &str) -> f64 {
     0.4 + text.chars().count() as f64 / 15.0
 }
 
-/// Waits for what the table says to be heard before a step ends, so the
-/// lesson's next words do not cut off the dealer.
+/// Waits for what the table says about the move that finished a step, so
+/// the lesson's next words do not cut off the dealer. His lines are waited
+/// for as they come, until he is quiet. After that, only a key can say
+/// more, and a key ends the wait at once: the player's presses never hold
+/// the next step back.
 #[derive(Default)]
 struct Heard {
     /// `ctx.said` when last looked.
     said: u64,
     /// When the lines said so far should be done.
     until: f64,
+    /// Whether the step's move has been made.
     armed: bool,
+    /// `ctx.said` when the table went quiet after the move.
+    quiet_at: Option<u64>,
 }
 
 impl Heard {
-    /// Whether everything said since `armed` first held has been heard.
-    /// Lines said in the frame that arms it count.
-    fn after(&mut self, armed: bool, ctx: &Ctx<Parlor>) -> bool {
-        if !armed {
-            self.said = ctx.said;
-            self.until = ctx.clock;
+    /// Whether the step can end: `done` holds, the table is `quiet`, and
+    /// what was said since the move has been heard or cut off by a later
+    /// key. Lines said in the frame of the move count.
+    fn after(&mut self, done: bool, quiet: bool, ctx: &Ctx<Parlor>) -> bool {
+        if !done {
+            *self = Heard {
+                said: ctx.said,
+                until: ctx.clock,
+                ..Heard::default()
+            };
             return false;
         }
         self.armed = true;
+        if self.quiet_at.is_some_and(|s| ctx.said > s) {
+            return true;
+        }
         let new = ((ctx.said - self.said) as usize).min(ctx.transcript.len());
         let lines = &ctx.transcript[ctx.transcript.len() - new..];
         for line in lines.iter().filter(|l| !l.starts_with("[event]")) {
             self.until = self.until.max(ctx.clock) + speech_secs(line);
         }
         self.said = ctx.said;
-        ctx.clock >= self.until
+        if quiet && self.quiet_at.is_none() {
+            self.quiet_at = Some(ctx.said);
+        }
+        quiet && ctx.clock >= self.until
     }
 }
 
@@ -120,7 +136,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, table: Live<TableScreen>) -> Lesson {
         ),
         move |s: &TableScreen, ctx| {
             let rolled = !s.table.night.history.is_empty();
-            (heard.after(rolled, ctx) && !s.table.busy()).then(String::new)
+            heard.after(rolled, !s.table.busy(), ctx).then(String::new)
         },
     );
 
@@ -138,7 +154,8 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, table: Live<TableScreen>) -> Lesson {
                 // step has been read.
                 s.hold(f64::INFINITY);
             }
-            heard.after(banked, ctx).then(String::new)
+            // The held table says nothing more by itself.
+            heard.after(banked, true, ctx).then(String::new)
         },
     )
     .start(move |_ctx| first.set(false));
@@ -153,7 +170,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, table: Live<TableScreen>) -> Lesson {
         .step(one_prompt, move |s: &TableScreen, ctx| {
             let n = &s.table.night;
             let ended = n.last.as_ref().is_some_and(|r| r.end.is_some());
-            (heard.after(ended, ctx) && !s.table.busy()).then(|| {
+            heard.after(ended, !s.table.busy(), ctx).then(|| {
                 let kept = n.you().night;
                 if kept > 0 {
                     format!("Your banked {kept} is safe.")

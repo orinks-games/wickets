@@ -84,12 +84,10 @@ pub fn mode_help(ctx: &mut Ctx<Parlor>, mode: Mode) -> String {
         Mode::Plain => "For beginners".to_string(),
         Mode::PracticeNight => events::lead(mode, today),
     };
-    format!(
-        "{lead}. {}. {}.{}",
-        sentence_start(&mode.rules().describe()),
-        sentence_start(&bests(ctx, mode)),
-        events::stays(mode, today)
-    )
+    let rules = mode.rules().sentence();
+    let bests = sentence_start(&bests(ctx, mode));
+    let stays = events::stays(mode, today);
+    format!("{lead}. {rules} {bests}.{stays}")
 }
 
 /// Records: each mode's bests and streak, then the challenges.

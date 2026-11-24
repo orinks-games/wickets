@@ -84,7 +84,7 @@ fn intro_page(mode: Mode) -> String {
         Mode::Pond => "Practice pond: 2 lanterns, one ahead, one to your right. Sound check on the title plays the cues you need.".to_string(),
         Mode::Night(n) => format!("Night {n}. The canoe slides out from the south shore."),
         Mode::Free => "Free paddle: a wide lake where a new lantern appears whenever you gather one. Stay as long as you like, and head home when you are ready.".to_string(),
-        Mode::Challenge(p) => format!("{} challenge.", p.label()),
+        Mode::Challenge(p) => format!("{}.", p.challenge_title()),
         Mode::Festival => format!("Lantern Festival night. {} lanterns float on a wide, clear lake, and every creature is out. A voice joins the song with every second lantern, and temple bells ring in the last.", crate::events::FESTIVAL_LANTERNS),
     }
 }
@@ -134,14 +134,10 @@ pub fn challenge_run(ctx: &Ctx<Parlor>, period: Period) -> RunScreen {
 pub fn briefing(ctx: &mut Ctx<Parlor>, period: Period) -> Pages {
     let (challenge, plan) = challenge_plan(ctx, period);
     let twist = plan.twist.expect("a challenge has a twist");
-    let pages = vec![format!(
-        "{}: {}. {}: {} Score: 1 a lantern, 2 a place. {}",
-        challenge.title(),
-        plan.summary(),
-        twist.name(),
-        twist.describe(),
-        challenge.resets()
-    )];
+    let score = "Score: 1 a lantern, 2 a place.";
+    let (title, summary) = (challenge.title(), plan.summary());
+    let (name, describe, resets) = (twist.name(), twist.describe(), challenge.resets());
+    let pages = vec![format!("{title}: {summary}. {name}: {describe} {score} {resets}")];
     let mut run = Some(challenge_run(ctx, period));
     Pages::briefing(pages).then(move |ctx| {
         if let Some(run) = run.take() {
@@ -530,22 +526,20 @@ impl RunScreen {
             format!("Home with {gathered}")
         };
         if self.challenge.is_some() {
-            summary.push_str(&format!(", score {}", lake.score()));
+            let score = lake.score();
+            summary = if complete {
+                format!("Song complete. {gathered}, score {score}")
+            } else {
+                format!("Home with {gathered}, score {score}")
+            };
         }
-        let mut tally = format!(
-            "{} gathered {} lantern{}",
-            lake.plan.mode.name(),
-            lake.gathered,
-            if lake.gathered == 1 { "" } else { "s" }
-        );
-        let found = lake.found();
-        if found > 0 {
-            tally.push_str(&format!(
-                " and found {found} {}",
-                if found == 1 { "place" } else { "places" }
-            ));
+        let mode = lake.plan.mode.name();
+        let mut tally = format!("{mode} gathered {gathered}.");
+        match lake.found() {
+            0 => {}
+            1 => tally.push_str(" You found 1 place."),
+            found => tally.push_str(&format!(" You found {found} places.")),
         }
-        tally.push('.');
         pages.push(format!("{opening} {tally}"));
         if let Some(c) = self.challenge.clone() {
             let score = self.lake.score();
@@ -559,7 +553,7 @@ impl RunScreen {
             }
             let streak = Challenges::streak(ctx, crate::ID, c.period);
             if streak > 0 {
-                line.push_str(&format!(" A {streak} {} streak.", c.period.unit()));
+                line.push_str(&format!(" {}", c.period.streak_sentence(streak)));
             }
             line.push(' ');
             line.push_str(&c.resets());

@@ -1,3 +1,12 @@
 # Exceptions to tools/check_text.py, as `path | rule | text`. `text` is part
 # of the flagged line, or * for every finding of that rule in the file. Each
 # entry sits under a comment that says why it is allowed and when it goes.
+
+# The build script writes Rust source for the translation catalogs; these
+# strings are code, never heard.
+crates/wickets-content/src/lib.rs | parentheses | *
+crates/wickets-content/src/lib.rs | all-caps | CATALOGS
+
+# The translation tool's usage line is for developers at a terminal, never
+# heard in the game.
+crates/wickets-l10n/src/main.rs | all-caps | usage: wickets-l10n

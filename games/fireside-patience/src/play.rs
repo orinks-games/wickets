@@ -12,7 +12,7 @@ use crate::challenge::{self, Job, CHALLENGES_NAME};
 use crate::events::{self, EventDeal};
 use crate::progress::{self, Saved};
 use crate::rules::{
-    cards_words, moves_words, ordinal, points, rank_words, run_seed, Card, Game, Hint, Move,
+    cards_words, moves_words, points, rank_words, run_seed, Card, Game, Hint, Move,
     Played, Spot, Suit, Turned, DECK, KING, PILES,
 };
 use crate::{sound, HELP, ID, TITLE_NAME};
@@ -48,14 +48,15 @@ pub fn place_of(spot: Spot) -> usize {
     }
 }
 
-/// "the 6 of hearts", as it reads mid-sentence.
-fn the(card: Card) -> String {
-    format!("the {}", card.name())
-}
-
 /// "Hearts foundation".
 fn foundation_name(f: usize) -> String {
-    format!("{} foundation", sentence_start(Suit::from_index(f).name()))
+    match Suit::from_index(f) {
+        Suit::Hearts => "Hearts foundation",
+        Suit::Diamonds => "Diamonds foundation",
+        Suit::Clubs => "Clubs foundation",
+        Suit::Spades => "Spades foundation",
+    }
+    .to_string()
 }
 
 /// A place's name: "Pile 3", "Stock", "Hearts foundation".
@@ -243,17 +244,23 @@ impl PlayScreen {
         }
     }
 
-    fn held_words(&self) -> String {
+    /// "Holding the 7 of hearts." or "Put back: 3 cards, the 9 of clubs
+    /// down to the 7 of hearts.", each a whole line.
+    fn held_line(&self, put_back: bool) -> String {
         let cards = self.held_cards();
-        match cards.as_slice() {
-            [] => String::new(),
-            [one] => the(*one),
-            [first, .., last] => format!(
-                "{}, {} down to {}",
-                cards_words(cards.len()),
-                the(*first),
-                the(*last)
-            ),
+        match (cards.as_slice(), put_back) {
+            ([], _) => String::new(),
+            ([one], false) => format!("Holding the {}.", one.name()),
+            ([one], true) => format!("Put back: the {}.", one.name()),
+            ([first, .., last], put_back) => {
+                let n = cards.len();
+                let (first, last) = (first.name(), last.name());
+                if put_back {
+                    format!("Put back: {n} cards, the {first} down to the {last}.")
+                } else {
+                    format!("Holding {n} cards, the {first} down to the {last}.")
+                }
+            }
         }
     }
 
@@ -307,14 +314,24 @@ impl PlayScreen {
             if let Some(mv) = self.target() {
                 if let (Spot::Foundation(here), Spot::Foundation(to)) = (spot_of(place), mv.from) {
                     if mv.from == mv.to && here != to {
-                        text.push_str(&format!(" Goes back to {}.", Suit::from_index(to).name()));
+                        text.push_str(match Suit::from_index(to) {
+                            Suit::Hearts => " Goes back to hearts.",
+                            Suit::Diamonds => " Goes back to diamonds.",
+                            Suit::Clubs => " Goes back to clubs.",
+                            Suit::Spades => " Goes back to spades.",
+                        });
                     }
                 }
                 if mv.from != mv.to && self.game.check(mv).is_ok() {
                     // On a foundation, a single card goes to its own suit's.
                     match (spot_of(place), mv.to) {
                         (Spot::Foundation(here), Spot::Foundation(to)) if here != to => {
-                            text.push_str(&format!(" Goes to {}.", Suit::from_index(to).name()));
+                            text.push_str(match Suit::from_index(to) {
+                                Suit::Hearts => " Goes to hearts.",
+                                Suit::Diamonds => " Goes to diamonds.",
+                                Suit::Clubs => " Goes to clubs.",
+                                Suit::Spades => " Goes to spades.",
+                            });
                         }
                         _ => text.push_str(" Fits here."),
                     }
@@ -346,16 +363,25 @@ impl PlayScreen {
         let t = &self.game.table;
         let mut first = Vec::new();
         if self.held.is_some() {
-            first.push(format!("holding {}", self.held_words()));
+            first.push(self.held_line(false));
         }
         first.push(match spot_of(self.cursor) {
-            Spot::Pile(_) => format!("on {}", place_name(self.cursor).to_lowercase()),
-            _ => format!("on the {}", place_name(self.cursor).to_lowercase()),
+            Spot::Pile(p) => {
+                let pile = p + 1;
+                format!("On pile {pile}.")
+            }
+            Spot::Waste => "On the stock.".to_string(),
+            Spot::Foundation(f) => match Suit::from_index(f) {
+                Suit::Hearts => "On the hearts foundation.".to_string(),
+                Suit::Diamonds => "On the diamonds foundation.".to_string(),
+                Suit::Clubs => "On the clubs foundation.".to_string(),
+                Suit::Spades => "On the spades foundation.".to_string(),
+            },
         });
         let mut more = vec![
-            format!("{} of {DECK} on the foundations", t.on_foundations()),
+            format!("{up} of {DECK} on the foundations", up = t.on_foundations()),
             to_turn(t.stock.len()),
-            format!("{} face down", t.face_down()),
+            format!("{down} face down", down = t.face_down()),
             moves_words(self.game.moves),
         ];
         if self.game.free_turns {
@@ -363,11 +389,12 @@ impl PlayScreen {
         }
         if let Some(job) = &self.job {
             if job.deals() > 1 {
-                more.push(format!("deal {} of {}", job.index + 1, job.deals()));
+                let (deal, of) = (job.index + 1, job.deals());
+                more.push(format!("deal {deal} of {of}"));
             }
         }
         vec![
-            format!("{}.", sentence_start(&first.join(", "))),
+            first.join(" "),
             format!("{}.", sentence_start(&more.join(", "))),
         ]
     }
@@ -396,34 +423,66 @@ impl PlayScreen {
         out.push(self.stock_words());
         let founds: Vec<String> = Suit::ALL
             .into_iter()
-            .map(|s| match t.foundations[s.index()] {
-                0 => format!("{} empty", s.name()),
-                r => format!("{} up to {}", s.name(), rank_words(r)),
+            .map(|s| {
+                let r = t.foundations[s.index()];
+                let rank = rank_words(r);
+                match (s, r) {
+                    (Suit::Hearts, 0) => "hearts empty".to_string(),
+                    (Suit::Diamonds, 0) => "diamonds empty".to_string(),
+                    (Suit::Clubs, 0) => "clubs empty".to_string(),
+                    (Suit::Spades, 0) => "spades empty".to_string(),
+                    (Suit::Hearts, _) => format!("hearts up to {rank}"),
+                    (Suit::Diamonds, _) => format!("diamonds up to {rank}"),
+                    (Suit::Clubs, _) => format!("clubs up to {rank}"),
+                    (Suit::Spades, _) => format!("spades up to {rank}"),
+                }
             })
             .collect();
         out.push(format!("Foundations: {}.", founds.join(", ")));
         out.join(" ")
     }
 
-    /// A move, as the hint names it.
+    /// A move, as the hint names it. Each case is a whole sentence, so a
+    /// translation never has to join pieces of one.
     fn move_words(&self, mv: Move) -> String {
         let t = &self.game.table;
         let cards = t.cards_at(mv.from);
-        let card = cards[cards.len() - mv.count];
-        let what = match mv.from {
-            Spot::Pile(p) => format!("{} in pile {}", the(card), p + 1),
-            Spot::Waste => format!("the turned-up {}", card.name()),
-            Spot::Foundation(_) => format!("{} on its foundation", the(card)),
+        let card = cards[cards.len() - mv.count].name();
+        let onto = match mv.to {
+            Spot::Pile(q) => t.piles[q].top().map(|c| (c.name(), q + 1)),
+            _ => None,
         };
-        let place = match mv.to {
-            Spot::Foundation(_) => "go on its foundation".to_string(),
-            Spot::Pile(q) => match t.piles[q].top() {
-                Some(onto) => format!("go on {} in pile {}", the(onto), q + 1),
-                None => format!("go to the empty pile {}", q + 1),
-            },
-            Spot::Waste => String::new(),
+        let q = match mv.to {
+            Spot::Pile(q) => q + 1,
+            _ => 0,
         };
-        let mut text = format!("{} can {place}.", sentence_start(&what));
+        let mut text = match (mv.from, mv.to, onto) {
+            (Spot::Pile(p), Spot::Foundation(_), _) => {
+                let p = p + 1;
+                format!("The {card} in pile {p} can go on its foundation.")
+            }
+            (Spot::Pile(p), Spot::Pile(_), Some((onto, q))) => {
+                let p = p + 1;
+                format!("The {card} in pile {p} can go on the {onto} in pile {q}.")
+            }
+            (Spot::Pile(p), _, _) => {
+                let p = p + 1;
+                format!("The {card} in pile {p} can go to the empty pile {q}.")
+            }
+            (Spot::Waste, Spot::Foundation(_), _) => {
+                format!("The turned-up {card} can go on its foundation.")
+            }
+            (Spot::Waste, Spot::Pile(_), Some((onto, q))) => {
+                format!("The turned-up {card} can go on the {onto} in pile {q}.")
+            }
+            (Spot::Waste, _, _) => format!("The turned-up {card} can go to the empty pile {q}."),
+            (Spot::Foundation(_), Spot::Pile(_), Some((onto, q))) => {
+                format!("The {card} on its foundation can go on the {onto} in pile {q}.")
+            }
+            (Spot::Foundation(_), _, _) => {
+                format!("The {card} on its foundation can go to the empty pile {q}.")
+            }
+        };
         if let Spot::Pile(p) = mv.from {
             if mv.count == cards.len() && !t.piles[p].down.is_empty() {
                 text.push_str(" That turns up a face-down card.");
@@ -539,14 +598,11 @@ impl PlayScreen {
         if deeper {
             if self.depth + 1 >= len {
                 let card = card_at(self.depth);
+                let card = card.name();
                 let text = match pile.down.len() {
-                    0 => format!(
-                        "{} is the bottom card of the pile.",
-                        sentence_start(&the(card))
-                    ),
+                    0 => format!("The {card} is the bottom card of the pile."),
                     n => format!(
-                        "{} is the deepest face-up card, with {n} face down under it.",
-                        sentence_start(&the(card))
+                        "The {card} is the deepest face-up card, with {n} face down under it."
                     ),
                 };
                 self.nope(ctx, text);
@@ -563,14 +619,11 @@ impl PlayScreen {
         }
         let card = card_at(self.depth);
         sound::card(ctx, card.suit);
-        let place = match self.depth {
-            0 => "the top card".to_string(),
-            d => format!("{} from the top", ordinal(d + 1)),
-        };
-        ctx.say(format!(
-            "{}, {place}.",
-            sentence_start(&card.name_and_colour())
-        ));
+        let name = sentence_start(&card.name_and_colour());
+        ctx.say(match self.depth + 1 {
+            1 => format!("{name}, the top card."),
+            n => format!("{name}, card {n} from the top."),
+        });
     }
 
     fn primary(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -606,22 +659,27 @@ impl PlayScreen {
         self.held = Some((spot, count));
         let first = cards[cards.len() - count];
         sound::card(ctx, first.suit);
-        ctx.say(format!("Holding {}.", self.held_words()));
+        ctx.say(self.held_line(false));
         if !self.told_hold {
             self.told_hold = true;
-            let p = ctx.control_name(ParlorAction::Primary);
-            let them = if count == 1 { "it" } else { "them" };
-            ctx.say_queued(format!(
-                "Move to a pile or a foundation, and {p} places {them}. Backspace puts {them} back."
-            ));
+            let drop_keys = ctx.control_name(ParlorAction::Primary);
+            ctx.say_queued(if count == 1 {
+                format!(
+                    "Move to a pile or a foundation, and {drop_keys} places it. Backspace puts it back."
+                )
+            } else {
+                format!(
+                    "Move to a pile or a foundation, and {drop_keys} places them. Backspace puts them back."
+                )
+            });
         }
     }
 
     fn put_back(&mut self, ctx: &mut Ctx<Parlor>) {
-        let words = self.held_words();
+        let line = self.held_line(true);
         self.held = None;
         sound::play(ctx, sound::PLACE_OK);
-        ctx.say(format!("Put back: {words}."));
+        ctx.say(line);
     }
 
     fn place(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -674,10 +732,12 @@ impl PlayScreen {
         }
         if let Some(suit) = played.completed {
             sound::play(ctx, sound::FOUNDATION_DONE);
-            ctx.say_queued(format!(
-                "{} foundation complete.",
-                sentence_start(suit.name())
-            ));
+            ctx.say_queued(match suit {
+                Suit::Hearts => "Hearts foundation complete.",
+                Suit::Diamonds => "Diamonds foundation complete.",
+                Suit::Clubs => "Clubs foundation complete.",
+                Suit::Spades => "Spades foundation complete.",
+            });
         }
         if self.game.can_finish() {
             self.game.finish();
@@ -845,21 +905,43 @@ impl Default for PlayScreen {
     }
 }
 
-/// A move made, in words.
+/// A move made, in words, each case a whole sentence.
 fn placed_words(played: &Played) -> String {
-    let what = if played.cards.len() == 1 {
-        the(played.cards[0])
-    } else {
-        cards_words(played.cards.len())
-    };
-    let what = sentence_start(&what);
-    match played.mv.to {
-        Spot::Foundation(f) => format!("{what} on the {} foundation.", Suit::from_index(f).name()),
-        Spot::Pile(q) => match played.onto {
-            Some(onto) => format!("{what} on {}, pile {}.", the(onto), q + 1),
-            None => format!("{what} to pile {}.", q + 1),
-        },
-        Spot::Waste => what,
+    let n = played.cards.len();
+    let card = played.cards[0].name();
+    match (played.mv.to, played.onto) {
+        (Spot::Foundation(f), _) => {
+            match Suit::from_index(f) {
+                Suit::Hearts => format!("The {card} on the hearts foundation."),
+                Suit::Diamonds => format!("The {card} on the diamonds foundation."),
+                Suit::Clubs => format!("The {card} on the clubs foundation."),
+                Suit::Spades => format!("The {card} on the spades foundation."),
+            }
+        }
+        (Spot::Pile(q), Some(onto)) => {
+            let onto = onto.name();
+            let q = q + 1;
+            if n == 1 {
+                format!("The {card} on the {onto}, pile {q}.")
+            } else {
+                format!("{n} cards on the {onto}, pile {q}.")
+            }
+        }
+        (Spot::Pile(q), None) => {
+            let q = q + 1;
+            if n == 1 {
+                format!("The {card} to pile {q}.")
+            } else {
+                format!("{n} cards to pile {q}.")
+            }
+        }
+        (Spot::Waste, _) => {
+            if n == 1 {
+                format!("The {card}")
+            } else {
+                format!("{n} cards")
+            }
+        }
     }
 }
 
@@ -1104,8 +1186,8 @@ impl State<Parlor> for PlayScreen {
         );
         if let Some(job) = &self.job {
             now.push_str(&format!(
-                " This is the {} challenge, {}. Leaving from the pause menu does not count it.",
-                job.period.label().to_lowercase(),
+                " This is the {}, {}. Leaving from the pause menu does not count it.",
+                job.period.challenge_title().to_lowercase(),
                 challenge::name(job.period)
             ));
         }

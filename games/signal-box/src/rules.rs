@@ -536,7 +536,14 @@ pub fn derailed_words(passed: u32) -> String {
 
 /// The key and what it does: "The Left arrow throws the points left."
 pub fn answer_words(key: &str, call: Call) -> String {
-    format!("{} {}.", sentence_start(key), call.deed())
+    let pressed = sentence_start(key);
+    match call {
+        Call::PointsLeft => format!("{pressed} throws the points left."),
+        Call::PointsRight => format!("{pressed} throws the points right."),
+        Call::SignalUp => format!("{pressed} raises the signal."),
+        Call::SignalDown => format!("{pressed} lowers the signal."),
+        Call::RingBack => format!("{pressed} rings the bell back."),
+    }
 }
 
 thread_local! {

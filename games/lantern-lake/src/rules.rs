@@ -111,7 +111,6 @@ pub fn wrap(deg: f32) -> f32 {
 pub fn direction_words(rel: f32) -> String {
     let rel = wrap(rel);
     let a = rel.abs();
-    let side = if rel < 0.0 { "left" } else { "right" };
     let clock = ((rel.rem_euclid(360.0) / 30.0).round() as u32) % 12;
     // Just off straight ahead or right behind still rounds to 12 or 6:
     // name the hour on the side it is.
@@ -123,18 +122,21 @@ pub fn direction_words(rel: f32) -> String {
         (6, true) if a < 168.0 => 7,
         (c, _) => c,
     };
+    // Each piece is whole words, so a translation never joins halves.
+    let left = rel < 0.0;
     let words = if a <= 12.0 {
         return "straight ahead".to_string();
     } else if a <= 60.0 {
-        format!("ahead and to your {side}")
+        if left { "ahead and to your left" } else { "ahead and to your right" }
     } else if a <= 120.0 {
-        format!("to your {side}")
+        if left { "to your left" } else { "to your right" }
     } else if a < 168.0 {
-        format!("behind you to the {side}")
+        if left { "behind you to the left" } else { "behind you to the right" }
     } else {
         return "right behind you".to_string();
     };
-    format!("{words}, at {clock} o'clock")
+    let at = format!("at {clock} o'clock");
+    format!("{words}, {at}")
 }
 
 /// How far something is, in words.
@@ -142,7 +144,7 @@ pub fn distance_words(d: f32) -> &'static str {
     if d < 5.0 {
         "very close"
     } else if d < 12.0 {
-        "close"
+        "nearby"
     } else if d < 25.0 {
         "a little way off"
     } else {
@@ -409,7 +411,7 @@ impl Mode {
             Mode::Pond => "The practice pond".to_string(),
             Mode::Night(n) => format!("Night {n}"),
             Mode::Free => "Free paddle".to_string(),
-            Mode::Challenge(p) => format!("{} challenge", p.label()),
+            Mode::Challenge(p) => p.challenge_title().to_string(),
             Mode::Festival => crate::events::FESTIVAL.to_string(),
         }
     }
@@ -643,16 +645,17 @@ impl Plan {
 
     /// "5 lanterns, 2 places to discover"
     pub fn summary(&self) -> String {
-        let places = match self.features.len() {
+        let discover = match self.features.len() {
             1 => "1 place to discover".to_string(),
             n => format!("{n} places to discover"),
         };
         let lanterns = if self.respawn {
             "lanterns that never run out".to_string()
         } else {
-            format!("{} lanterns", self.lanterns)
+            let n = self.lanterns;
+            format!("{n} lanterns")
         };
-        format!("{lanterns}, {places}")
+        format!("{lanterns}, {discover}")
     }
 
     /// "frogs, crickets and a loon"
@@ -1172,19 +1175,15 @@ impl Lake {
                 } else {
                     s.feature.heard()
                 };
-                heard.push(format!(
-                    "{what} {}",
-                    direction_words(bearing(self.pos, s.pos) - self.heading)
-                ));
+                let way = direction_words(bearing(self.pos, s.pos) - self.heading);
+                heard.push(format!("{what}: {way}"));
             }
         }
         for c in &self.critters {
             if c.creature.loops() {
-                heard.push(format!(
-                    "{} {}",
-                    c.creature.name(),
-                    direction_words(bearing(self.pos, c.pos) - self.heading)
-                ));
+                let what = c.creature.name();
+                let way = direction_words(bearing(self.pos, c.pos) - self.heading);
+                heard.push(format!("{what}: {way}"));
             }
         }
         if !heard.is_empty() {
@@ -1218,23 +1217,23 @@ impl Lake {
     /// next one is. A second press: which way you face and move, the
     /// weather, and the night's discoveries.
     pub fn status_layers(&self) -> Vec<String> {
-        let mut first = vec![if self.plan.respawn {
-            format!("{} lanterns gathered tonight.", self.gathered)
-        } else {
-            format!(
-                "{} of {} lanterns gathered.",
-                self.gathered, self.plan.lanterns
-            )
+        let (gathered, lanterns) = (self.gathered, self.plan.lanterns);
+        let mut first = vec![match (self.plan.respawn, gathered) {
+            (true, 1) => "1 lantern gathered tonight.".to_string(),
+            (true, _) => format!("{gathered} lanterns gathered tonight."),
+            (false, 1) => format!("1 of {lanterns} lanterns gathered."),
+            (false, _) => format!("{gathered} of {lanterns} lanterns gathered."),
         }];
         match self.target() {
             Some(i) => {
                 let l = &self.lanterns[i];
-                let which = if self.plan.ordered {
-                    format!("Lantern {} is lit", l.order)
+                let spot = self.where_is(l.pos);
+                first.push(if self.plan.ordered {
+                    let order = l.order;
+                    format!("Lantern {order} is lit {spot}.")
                 } else {
-                    "The nearest lantern is".to_string()
-                };
-                first.push(format!("{which} {}.", self.where_is(l.pos)));
+                    format!("The nearest lantern is {spot}.")
+                });
             }
             None => first.push("The song is whole.".to_string()),
         }
@@ -1284,26 +1283,33 @@ impl Lake {
                 let l = self.lanterns[i].pos;
                 let rel = wrap(bearing(self.pos, l) - self.heading);
                 let turn = if rel.abs() <= 12.0 {
-                    format!("It is straight ahead: paddle with {}.", self.keys.paddle)
+                    let paddle_keys = &self.keys.paddle;
+                    format!("It is straight ahead: paddle with {paddle_keys}.")
                 } else if rel.abs() >= 150.0 {
-                    format!(
-                        "It is behind you: hold {} or {} to turn around.",
-                        self.keys.left, self.keys.right
-                    )
+                    let (left_keys, right_keys) = (&self.keys.left, &self.keys.right);
+                    format!("It is behind you: hold {left_keys} or {right_keys} to turn around.")
                 } else {
-                    let (key, amount) = if rel < 0.0 {
+                    let (turn_keys, amount) = if rel < 0.0 {
                         (&self.keys.left, -rel)
                     } else {
                         (&self.keys.right, rel)
                     };
-                    let how = if amount < 45.0 { "a little" } else { "well" };
-                    format!("Turn {how} with {key} until it is straight ahead, then paddle.")
+                    if amount < 45.0 {
+                        format!(
+                            "Turn a little with {turn_keys} until it is straight ahead, then paddle."
+                        )
+                    } else {
+                        format!("Turn well with {turn_keys} until it is straight ahead, then paddle.")
+                    }
                 };
                 self.lanterns[i].chime_in = 0.3;
                 let near = distance_words(self.pos.dist(l));
                 format!("{turn} The lantern is {near}.")
             }
-            None => format!("Every lantern in. {} heads home.", self.keys.home),
+            None => {
+                let finish_keys = &self.keys.home;
+                format!("Every lantern in. {finish_keys} heads home.")
+            }
         };
         self.last = text.clone();
         text

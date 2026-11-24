@@ -160,49 +160,63 @@ pub fn name(period: Period) -> &'static str {
     }
 }
 
-/// A moon in a few words: "Saffron, medium gravity, 450 metres up".
+/// A moon in a few words: "Saffron, medium gravity, height 450 metres".
 pub fn moon_words(moon: &Moon) -> String {
-    format!(
-        "{}, {}, {} up",
-        moon.name,
-        moon.gravity_words(),
-        parlor_core::units::length(moon.height)
-    )
+    let name = moon.name;
+    let gravity = moon.gravity_words();
+    let length = parlor_core::units::length(moon.height);
+    let height = format!("height {length}");
+    format!("{name}, {gravity}, {height}")
 }
 
 /// A few words on what the challenge is this time, for its row.
 pub fn tag(plan: &Plan) -> String {
     match plan.period {
-        Period::Daily => format!("one moon, {}", moon_words(&plan.moons[0])),
-        Period::Weekly => {
-            let names: Vec<&str> = plan.moons.iter().map(|m| m.name).collect();
-            format!("{} on one tank", names.join(", "))
+        Period::Daily => {
+            let one = "one moon";
+            let moon = moon_words(&plan.moons[0]);
+            format!("{one}, {moon}")
         }
-        Period::Monthly => format!("{}, no hints", moon_words(&plan.moons[0])),
+        Period::Weekly => match plan.moons.as_slice() {
+            [a, b, c] => {
+                let (first, second, third) = (a.name, b.name, c.name);
+                format!("{first}, {second} and {third} on one tank")
+            }
+            _ => "three moons on one tank".to_string(),
+        },
+        Period::Monthly => {
+            let moon = moon_words(&plan.moons[0]);
+            let hints = "no hints";
+            format!("{moon}, {hints}")
+        }
     }
 }
 
 /// What the challenge asks, in a sentence or two.
 pub fn rule(plan: &Plan) -> String {
     match plan.period {
-        Period::Daily => format!(
-            "One landing on {}. Safe speed {}.",
-            moon_words(&plan.moons[0]),
-            speed_words(plan.moons[0].safe)
-        ),
-        Period::Weekly => format!(
-            "Three landings in a row on one tank of fuel: {}. A crash ends the run, and the landings before it still count.",
-            plan.moons
-                .iter()
-                .map(|m| m.name)
-                .collect::<Vec<_>>()
-                .join(", then ")
-        ),
-        Period::Monthly => format!(
-            "One hard landing on {}, with little spare fuel and no hints. Safe speed {}.",
-            moon_words(&plan.moons[0]),
-            speed_words(plan.moons[0].safe)
-        ),
+        Period::Daily => {
+            let moon = moon_words(&plan.moons[0]);
+            let safe = speed_words(plan.moons[0].safe);
+            format!("One landing on {moon}. Safe speed {safe}.")
+        }
+        Period::Weekly => {
+            let order = match plan.moons.as_slice() {
+                [a, b, c] => {
+                    let (first, second, third) = (a.name, b.name, c.name);
+                    format!("Three landings in a row on one tank of fuel: {first}, then {second}, then {third}.")
+                }
+                _ => "Three landings in a row on one tank of fuel.".to_string(),
+            };
+            let crash = "A crash ends the run, and the landings before it still count.";
+            format!("{order} {crash}")
+        }
+        Period::Monthly => {
+            let moon = moon_words(&plan.moons[0]);
+            let safe = speed_words(plan.moons[0].safe);
+            let hard = "Little spare fuel and no hints.";
+            format!("One hard landing on {moon}. {hard} Safe speed {safe}.")
+        }
     }
 }
 
@@ -347,11 +361,11 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, job: &Job, pace: Pace) -> V
     first
         .into_iter()
         .chain([format!(
-            "{} result: {} points. {} A {streak} {} streak. {}",
+            "{} result: {} points. {} {} {}",
             ch.title(),
             job.score(),
             score_line(result, pace),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             sentence_start(&ch.resets())
         )])
         .collect()

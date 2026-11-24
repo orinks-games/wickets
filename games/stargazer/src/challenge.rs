@@ -253,10 +253,10 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, night: &Night) -> Vec<Strin
     vec![
         format!("{} {hints}", sentence_start(&outcome_words(night))),
         format!(
-            "{} result: {score} points. {} A {streak} {} streak. {}",
+            "{} result: {score} points. {} {} {}",
             ch.title(),
             score_line(result),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ]

@@ -50,7 +50,7 @@ fn the_list_holds_events_then_the_challenges() {
     select(&mut h, "Happening today");
     assert_eq!(h.app.top_name(), "today");
     let rows = rows(&h);
-    assert_eq!(rows[0], "Cupid's Quiver, Valentine's night", "{rows:?}");
+    assert_eq!(rows[0], "Cupid's Quiver, today: Valentine's night", "{rows:?}");
     assert!(rows[1].starts_with("Slow Kettle, "), "{rows:?}");
     assert!(rows[2].starts_with("Daily challenges, 0 of "), "{rows:?}");
     assert!(rows[3].starts_with("Weekly challenges, "), "{rows:?}");
@@ -68,7 +68,7 @@ fn every_busy_day_event_is_listed() {
     h.frame(0.0);
     let rows = rows(&h);
     for (g, e) in all {
-        let label = format!("{}, {}", g.name, wickets::after_comma(&e.title));
+        let label = format!("{}, today: {}", g.name, e.title);
         assert!(rows.contains(&label), "{label} not in {rows:?}");
     }
 }
@@ -99,7 +99,7 @@ fn a_quiet_day_names_the_next_event() {
     assert!(said.contains("No events today. Next: "), "{said}");
     let (g, title, days) =
         wickets::today::next_event(&mut h.app.ctx, QUIET_DAY).expect("an event soon");
-    let named = format!("{}, {}", g.name, wickets::after_comma(&title));
+    let named = format!("{title} in {}", g.name);
     assert!(said.contains(&named), "{said}");
     assert!(days > 0);
 }
@@ -118,7 +118,7 @@ fn an_event_opens_its_title_on_the_event_row() {
     let mut h = start_on(Date::new(2026, 10, 24));
     parlor_core::menus::mark_tutorial_read(&mut h.app.ctx, "haunted-hallways");
     select(&mut h, "Happening today");
-    select(&mut h, "Nevermore Manor, the house stirs");
+    select(&mut h, "Nevermore Manor, today: The house stirs");
     assert_eq!(h.app.top_name(), "haunted_hallways");
     let lines = h.app.top_lines();
     let current = lines
@@ -217,7 +217,7 @@ fn a_kind_left_out_in_preferences_leaves_events_but_not_play() {
     assert!(
         games
             .iter()
-            .any(|r| r == "Cupid's Quiver, Valentine's night today"),
+            .any(|r| r == "Cupid's Quiver, today: Valentine's night"),
         "{games:?}"
     );
 }
@@ -270,7 +270,7 @@ fn a_single_game_left_out_leaves_happening_today() {
     h.app.ctx.push(TodayList::new());
     h.frame(0.0);
     let today = rows(&h);
-    assert_eq!(today[0], "Cupid's Quiver, Valentine's night", "{today:?}");
+    assert_eq!(today[0], "Cupid's Quiver, today: Valentine's night", "{today:?}");
     assert!(today[1].starts_with("Daily challenges, "), "{today:?}");
 }
 

@@ -131,12 +131,18 @@ impl Tea {
 
     /// "75 degrees, just before the boil" or "100 degrees, at the boil".
     pub fn heat_words(&self) -> String {
-        let when = match self.heat {
+        let when = self.when_words();
+        let degrees = self.heat;
+        format!("{degrees} degrees, {when}")
+    }
+
+    /// "at the boil", "just before the boil".
+    pub fn when_words(&self) -> &'static str {
+        match self.heat {
             0..=79 => "well before the boil",
             80..=94 => "just before the boil",
             _ => "at the boil",
-        };
-        format!("{} degrees, {when}", self.heat)
+        }
     }
 
     /// "Sencha wants water at 75 degrees, well before the boil, and a

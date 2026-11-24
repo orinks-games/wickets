@@ -70,12 +70,15 @@ impl Menu for CrossingSelect {
                             start(ctx, launch, false)
                         },
                     )
-                    .help(format!(
-                        "{} floors up, {} steps. Par {:.0} seconds.",
-                        level.floors,
-                        level.steps,
-                        level.par()
-                    )),
+                    .help({
+                        let (floors, steps) = (level.floors, level.steps);
+                        let par = format!("{:.0}", level.par());
+                        let height = match floors {
+                            1 => format!("1 floor up, {steps} steps."),
+                            _ => format!("{floors} floors up, {steps} steps."),
+                        };
+                        format!("{height} Par {par} seconds.")
+                    }),
                 );
             } else {
                 items.push(

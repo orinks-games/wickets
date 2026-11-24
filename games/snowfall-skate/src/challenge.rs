@@ -94,11 +94,6 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, skate: &Skate) -> Vec<Strin
     progress::save_challenge(ctx, skate);
     let result = Challenges::submit(ctx, ch, u64::from(skate.score));
     let streak = Challenges::streak(ctx, ID, ch.period);
-    let unit = if streak == 1 {
-        ch.period.unit().to_string()
-    } else {
-        format!("{}s", ch.period.unit())
-    };
     vec![
         format!(
             "{}: {}. {}",
@@ -107,11 +102,7 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, skate: &Skate) -> Vec<Strin
             result_words(result)
         ),
         crate::play::tally_words(skate),
-        format!(
-            "{} streak: {streak} {unit}. {}",
-            ch.period.label(),
-            ch.resets()
-        ),
+        format!("{} {}", ch.period.streak_count(streak), ch.resets()),
     ]
 }
 

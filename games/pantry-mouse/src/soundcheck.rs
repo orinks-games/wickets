@@ -1,7 +1,6 @@
 //! The sound check: gameplay cues, by name.
 
 use hearken::menu::{Menu, MenuCore, MenuItem};
-use hearken::text::sentence_start;
 use hearken::{Bus, Ctx, Sound};
 use parlor_core::menus::labels;
 use parlor_core::Parlor;
@@ -73,10 +72,10 @@ impl Menu for SoundCheck {
 
     fn build_items(&mut self, _ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
         let mut items: Vec<MenuItem<Self, Parlor>> = Vec::new();
-        for (key, meaning) in sound::catalog() {
+        for (key, name, meaning) in sound::catalog() {
             items.push(
                 MenuItem::new(
-                    label(meaning),
+                    name,
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
                         ctx.stop_speech();
                         let played = if key == sound::TITLE_MUSIC || key == sound::AMBIENCE {
@@ -90,9 +89,7 @@ impl Menu for SoundCheck {
                     },
                 )
                 .select_sound(None)
-                .help(sentence_start(
-                    meaning.split(": ").nth(1).unwrap_or(meaning),
-                )),
+                .help(meaning),
             );
         }
         items.push(

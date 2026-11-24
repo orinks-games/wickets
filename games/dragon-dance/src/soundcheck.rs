@@ -72,14 +72,14 @@ impl Menu for SoundCheck {
 
     fn build_items(&mut self, _ctx: &mut Ctx<Parlor>) -> Vec<MenuItem<Self, Parlor>> {
         let mut items: Vec<MenuItem<Self, Parlor>> = Vec::new();
-        for (lane, place) in [
+        for (lane, spot) in [
             (0, "on the left"),
             (1, "in the middle"),
             (2, "on the right"),
         ] {
             items.push(
                 MenuItem::new(
-                    format!("Pearl {place}"),
+                    format!("Pearl {spot}"),
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
                         ctx.stop_speech();
                         s.hush(ctx);

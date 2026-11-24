@@ -11,7 +11,6 @@
 
 use hearken::{Ctx, State};
 use parlor_core::menus::{self, ChallengeGame};
-use parlor_core::words::streak_sentence;
 use parlor_core::{Challenge, Challenges, Pages, Parlor, Period, Rng, ScoreResult};
 
 use crate::play::Floor;
@@ -261,7 +260,7 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, run: &Run) -> Vec<String> {
             ch.title(),
             points_words(run.score()),
             score_line(result),
-            streak_sentence(streak, ch.period.unit()),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ]

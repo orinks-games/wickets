@@ -168,12 +168,44 @@ pub fn both<T: std::fmt::Display>(
     normal: Option<T>,
     relaxed: Option<T>,
 ) -> Option<String> {
-    let parts: Vec<String> = [normal.map(|v| format!("{word} {v}"))]
+    let parts: Vec<String> = [normal.map(|v| normal_words(word, v))]
         .into_iter()
-        .chain([relaxed.map(|v| format!("relaxed {word} {v}"))])
+        .chain([relaxed.map(|v| relaxed_words(word, v))])
         .flatten()
         .collect();
     (!parts.is_empty()).then(|| parts.join(", "))
+}
+
+/// "best score 30": each word as a whole line, so it translates.
+fn normal_words(word: &str, value: impl std::fmt::Display) -> String {
+    match word {
+        "best" => format!("best {value}"),
+        "best score" => format!("best score {value}"),
+        "best run" => format!("best run {value}"),
+        "best time" => format!("best time {value}"),
+        "best haul" => format!("best haul {value}"),
+        "longest run" => format!("longest run {value}"),
+        "shortest window" => format!("shortest window {value}"),
+        "softest touchdown" => format!("softest touchdown {value}"),
+        "steam gala best" => format!("steam gala best {value}"),
+        _ => format!("{word} {value}"),
+    }
+}
+
+/// "relaxed best score 41", as [`normal_words`].
+fn relaxed_words(word: &str, value: impl std::fmt::Display) -> String {
+    match word {
+        "best" => format!("relaxed best {value}"),
+        "best score" => format!("relaxed best score {value}"),
+        "best run" => format!("relaxed best run {value}"),
+        "best time" => format!("relaxed best time {value}"),
+        "best haul" => format!("relaxed best haul {value}"),
+        "longest run" => format!("relaxed longest run {value}"),
+        "shortest window" => format!("relaxed shortest window {value}"),
+        "softest touchdown" => format!("relaxed softest touchdown {value}"),
+        "steam gala best" => format!("relaxed steam gala best {value}"),
+        _ => format!("relaxed {word} {value}"),
+    }
 }
 
 /// The bests on board `base` of game `id` and on its relaxed board, as

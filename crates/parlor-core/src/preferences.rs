@@ -164,7 +164,7 @@ pub fn row() -> SettingsRow<Parlor> {
         ROW_ID,
         MenuItem::new(
             Label::dynamic(|_s: &SettingsScreen<Parlor>, ctx: &Ctx<Parlor>| {
-                format!("{LABEL}: {}", summary(ctx))
+                format!("Story and event games: {}", summary(ctx))
             }),
             |_s: &mut SettingsScreen<Parlor>, ctx: &mut Ctx<Parlor>| {
                 ctx.push(PreferencesMenu::new())
@@ -290,13 +290,11 @@ impl CategoryMenu {
         }
         self.refresh(ctx, true);
         if speak {
+            let games = category.label().to_lowercase();
             let line = if on {
-                format!("All {}: on.", category.label().to_lowercase())
+                format!("All {games}: on.")
             } else {
-                format!(
-                    "All {}: off. Still in Play.",
-                    category.label().to_lowercase()
-                )
+                format!("All {games}: off. Still in Play.")
             };
             ctx.say(line);
         }
@@ -312,10 +310,11 @@ impl CategoryMenu {
         }
         self.refresh(ctx, true);
         if speak {
+            let game = g.name;
             let line = if on {
-                format!("{}: on.", g.name)
+                format!("{game}: on.")
             } else {
-                format!("{}: off. Still in Play.", g.name)
+                format!("{game}: off. Still in Play.")
             };
             ctx.say(line);
         }
@@ -349,10 +348,15 @@ impl Menu for CategoryMenu {
         ))
         .adjustable(|s: &mut Self, ctx: &mut Ctx<Parlor>, _delta| s.flip_all(ctx, false))];
         for g in games_in(category) {
-            let state = if shows(ctx, &g) { "on" } else { "off" };
+            let game = g.name;
+            let label = if shows(ctx, &g) {
+                format!("{game}: on")
+            } else {
+                format!("{game}: off")
+            };
             items.push(
                 MenuItem::new(
-                    format!("{}: {state}", g.name),
+                    label,
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| s.flip(ctx, g, true),
                 )
                 .help(format!(

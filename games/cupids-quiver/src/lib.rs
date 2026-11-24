@@ -168,15 +168,12 @@ pub fn keepsake_pages(ctx: &mut Ctx<Parlor>) -> Vec<String> {
             valentine::countdown(today)
         )];
     }
-    let mut pages = vec![format!(
-        "The keepsake box: {} Valentine's {}.",
-        progress.keepsakes.len(),
-        if progress.keepsakes.len() == 1 {
-            "Day"
-        } else {
-            "Days"
-        }
-    )];
+    let keepsakes = progress.keepsakes.len();
+    let mut pages = vec![if keepsakes == 1 {
+        "The keepsake box: 1 Valentine's Day.".to_string()
+    } else {
+        format!("The keepsake box: {keepsakes} Valentine's Days.")
+    }];
     for (year, k) in &progress.keepsakes {
         let mut parts = vec![format!("{year}: {}", valentine::keepsake_item(*year))];
         if let Some(best) = k.night_best {
@@ -208,7 +205,14 @@ pub const TARGET_CALLS: &str = "Spoken targets";
 
 /// "Spoken aim: on".
 pub fn call_out_label(name: &str, on: bool) -> String {
-    format!("{name}: {}", if on { "on" } else { "off" })
+    match (name, on) {
+        (AIM_CALLS, true) => "Spoken aim: on".to_string(),
+        (AIM_CALLS, false) => "Spoken aim: off".to_string(),
+        (TARGET_CALLS, true) => "Spoken targets: on".to_string(),
+        (TARGET_CALLS, false) => "Spoken targets: off".to_string(),
+        (_, true) => format!("{name}: on"),
+        (_, false) => format!("{name}: off"),
+    }
 }
 
 /// A Settings row for one call-out: Enter, Left or Right flips it.

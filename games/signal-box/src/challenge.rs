@@ -263,11 +263,11 @@ pub fn finish(ctx: &mut Ctx<Parlor>, ch: &Challenge, shift: &Shift, speed: Speed
     first
         .into_iter()
         .chain([format!(
-            "{} result: {}. {} A {streak} {} streak. {}",
+            "{} result: {}. {} {} {}",
             ch.title(),
             points_words(shift.score),
             score_line(result, speed),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             ch.resets()
         )])
         .collect()

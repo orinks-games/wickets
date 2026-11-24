@@ -159,11 +159,15 @@ pub fn tag(plan: &Plan) -> String {
         Plan::Chorus { season, birds, .. } => {
             format!("{} birds of {} singing at once", birds.len(), season.name())
         }
-        Plan::Count { flocks, north } => format!(
-            "{} flocks flying {}",
-            flocks.len(),
-            if *north { "north" } else { "south" }
-        ),
+        Plan::Count { flocks, north } => {
+            let flocks = flocks.len();
+            match (flocks, *north) {
+                (1, true) => "1 flock flying north".to_string(),
+                (1, false) => "1 flock flying south".to_string(),
+                (_, true) => format!("{flocks} flocks flying north"),
+                (_, false) => format!("{flocks} flocks flying south"),
+            }
+        }
     }
 }
 
@@ -319,10 +323,10 @@ fn submit(ctx: &mut Ctx<Parlor>, ch: &Challenge, score: u32, most: u32) -> Vec<S
     let result = Challenges::submit(ctx, ch, score as u64);
     let streak = Challenges::streak(ctx, ID, ch.period).max(1);
     vec![format!(
-        "{} result: {score} of {most} points. {} A {streak} {} streak. {}",
+        "{} result: {score} of {most} points. {} {} {}",
         ch.title(),
         score_line(result),
-        ch.period.unit(),
+        ch.period.streak_sentence(streak),
         ch.resets()
     )]
 }

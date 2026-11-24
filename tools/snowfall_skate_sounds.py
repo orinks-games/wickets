@@ -1,6 +1,6 @@
 """Write Snowfall Skate's sounds into `sound-specs/snowfall-skate.json`.
 
-Every sound the skate plays, its menu sounds, and its music, on blal1's
+Every sound the skate plays, its menu sounds, and its music, on Oriol's
 genny. Then render with:
 
     python tools/snowfall_skate_sounds.py
@@ -535,8 +535,8 @@ def pause() -> dict:
 
 def main() -> None:
     spec = {
-        "genny": "blal1",
-        "_about": "Snowfall Skate sounds, on blal1's genny, written by tools/snowfall_skate_sounds.py. A frozen "
+        "genny": "oriol",
+        "_about": "Snowfall Skate sounds, on Oriol's genny, written by tools/snowfall_skate_sounds.py. A frozen "
                   "pond at night: your blades and your partner's, lanterns burning and chiming, drifts and thin "
                   "ice, spins, the snow coming down, and the Frost Fair's stalls. Music is a live medley of an "
                   "original waltz and public-domain tunes, with fixed renders for the title and pause.",

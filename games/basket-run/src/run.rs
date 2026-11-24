@@ -241,11 +241,10 @@ impl RunScreen {
         self.score.start(ctx, &sound::SCORE, mood);
         sound::listen_from(ctx, self.run.lane, self.lanes());
         self.beacon_in = 0.5;
-        let intro = format!(
-            "{} {} skips the wait.",
-            self.run.round_intro(),
-            sentence_start(&ctx.control_name(ParlorAction::Primary))
-        );
+        let round = self.run.round_intro();
+        let pressed = sentence_start(&ctx.control_name(ParlorAction::Primary));
+        let skip = format!("{pressed} skips the wait.");
+        let intro = format!("{round} {skip}");
         // Nothing falls until the announcement has been heard.
         if matches!(self.run.phase, Phase::LeadIn(_)) {
             self.run.phase = Phase::LeadIn(lead_in_for(&intro));
@@ -437,7 +436,7 @@ impl RunScreen {
                 ctx.audio.play(sound::BELL, Bus::EFFECTS);
                 if lost > 0 {
                     ctx.audio.play(sound::SPILL, Bus::EFFECTS);
-                    let note = format!("{} lost.", sentence_start(&eggs_phrase(lost)));
+                    let note = format!("{eggs} lost.", eggs = sentence_start(&eggs_phrase(lost)));
                     self.tell(ctx, format!("Time. {note}"));
                     self.time_note = Some(note);
                 } else {
@@ -462,16 +461,19 @@ impl RunScreen {
                         "Practice round {round} done. You banked {}.",
                         eggs_phrase(banked as usize)
                     ),
-                    _ => format!(
-                        "Round {round} cleared. You banked {}. Round bonus {bonus}{}. Score {}.",
-                        eggs_phrase(banked as usize),
+                    _ => {
+                        let eggs = eggs_phrase(banked as usize);
+                        let score = self.run.score;
                         if perfect {
-                            ", with the perfect round bonus for no cracked eggs"
+                            format!(
+                                "Round {round} cleared. You banked {eggs}. Round bonus {bonus}, with the perfect round bonus for no cracked eggs. Score {score}."
+                            )
                         } else {
-                            ""
-                        },
-                        self.run.score
-                    ),
+                            format!(
+                                "Round {round} cleared. You banked {eggs}. Round bonus {bonus}. Score {score}."
+                            )
+                        }
+                    }
                 };
                 if self.run.phase == Phase::Between {
                     ctx.audio.play_music(Some(sound::ROUND_CLEAR), false);
@@ -539,7 +541,13 @@ impl RunScreen {
             }
             Event::PatternBroken { pattern } => {
                 ctx.audio.play(sound::PATTERN_BROKEN, Bus::EFFECTS);
-                self.chatter(ctx, format!("{} broken.", sentence_start(pattern.name())));
+                self.chatter(
+                    ctx,
+                    format!(
+                        "{pattern} broken.",
+                        pattern = sentence_start(pattern.name())
+                    ),
+                );
             }
         }
     }
@@ -591,13 +599,7 @@ impl RunScreen {
             );
             title = format!("{title} {result}");
             lines.push(result);
-            let streak = format!(
-                "{} streak: {streak} {}{}. {}",
-                period.label(),
-                period.unit(),
-                if streak == 1 { "" } else { "s" },
-                challenge.resets()
-            );
+            let streak = format!("{} {}", period.streak_count(streak), challenge.resets());
             title = format!("{title} {streak}");
             lines.push(streak);
         } else if let Some(board) = self.run.mode.board() {
@@ -820,16 +822,15 @@ impl State<Parlor> for RunScreen {
             ParlorAction::Primary => match self.run.bank() {
                 Bank::Banked { eggs, points, full } => {
                     ctx.audio.play(sound::BANK, Bus::EFFECTS);
-                    let mut text = format!(
-                        "Banked {}, {points} points{}. Score {}.",
-                        eggs_phrase(eggs),
-                        if full {
-                            ", with the full basket bonus"
-                        } else {
-                            ""
-                        },
-                        self.run.score
-                    );
+                    let eggs_phrase = eggs_phrase(eggs);
+                    let score = self.run.score;
+                    let mut text = if full {
+                        format!(
+                            "Banked {eggs_phrase}, {points} points, with the full basket bonus. Score {score}."
+                        )
+                    } else {
+                        format!("Banked {eggs_phrase}, {points} points. Score {score}.")
+                    };
                     let needed = self.run.needed();
                     if needed > 0 {
                         let had = self.run.banked_round - eggs as u32;

@@ -220,8 +220,8 @@ impl RunScreen {
             }
         }
         parts.push(format!(
-            "{} starts.",
-            sentence_start(&ctx.control_name(ParlorAction::Primary))
+            "{pressed} starts.",
+            pressed = sentence_start(&ctx.control_name(ParlorAction::Primary))
         ));
         let mut text = parts.join(" ");
         if !text.ends_with('.') {
@@ -509,10 +509,8 @@ impl RunScreen {
             lines.push(format!("{} result: {} points.", challenge.title(), r.score));
             lines.push(score_line(result));
             lines.push(format!(
-                "{} streak: {streak} {}{}. {}",
-                period.label(),
-                period.unit(),
-                if streak == 1 { "" } else { "s" },
+                "{} {}",
+                period.streak_count(streak),
                 challenge.resets()
             ));
         } else if let Some(board) = mode.board() {
@@ -584,12 +582,13 @@ impl RunScreen {
         if mode != Mode::Practice {
             if r.scraps > 0 {
                 progress.scraps += r.scraps;
-                lines.push(format!(
-                    "{} paper {} picked up. {} in all.",
-                    r.scraps,
-                    if r.scraps == 1 { "scrap" } else { "scraps" },
-                    progress.scraps
-                ));
+                let scraps = r.scraps;
+                let in_all = progress.scraps;
+                lines.push(if scraps == 1 {
+                    format!("1 paper scrap picked up. {in_all} in all.")
+                } else {
+                    format!("{scraps} paper scraps picked up. {in_all} in all.")
+                });
             }
             let before = progress.trinkets.clone();
             let mut new = Vec::new();

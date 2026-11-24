@@ -399,7 +399,7 @@ fn the_daily_briefing_states_its_floor_and_twist_on_one_page() {
     ));
     h.clear();
     h.press(Key::F1);
-    assert!(spoke(&h, "Tonight's haunting, a daily challenge."));
+    assert!(spoke(&h, "Tonight's haunting, the daily challenge."));
 }
 
 #[test]

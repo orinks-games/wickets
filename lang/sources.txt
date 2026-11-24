@@ -1,0 +1,14 @@
+# Where Wicket's spoken lines come from (see crates/wickets-l10n/src/sources.rs).
+# After changing any player text, run: cargo run -p wickets-l10n -- extract
+rust crates/parlor-core/src
+rust crates/wickets/src
+rust crates/wickets-rules/src
+rust games
+help crates
+help games
+# Hearken's own menus, Settings rows, prompts and notices.
+engine crates/hearken-app/src
+engine crates/hearken-update/src
+engine crates/hearken-speech/src
+engine crates/hearken-report/src
+engine crates/hearken-rooms/src

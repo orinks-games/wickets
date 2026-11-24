@@ -7,4 +7,5 @@ __pycache__/
 # Local tester packages
 /dist/
 /secrets/
+/secrets
 /target-stub/

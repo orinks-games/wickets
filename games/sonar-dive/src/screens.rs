@@ -116,7 +116,9 @@ pub fn readout(returns: &[Return]) -> String {
                 (true, _) => "empty wreck",
                 (false, kind) => kind.name(),
             };
-            format!("{name} {} {}", metres(r.dist), clock_phrase(r.clock))
+            let distance = metres(r.dist);
+            let clock = clock_phrase(r.clock);
+            format!("{name}, {distance}, {clock}")
         })
         .collect();
     format!("Echoes: {}.", parts.join("; "))
@@ -346,13 +348,16 @@ impl DiveScreen {
                 Keys::of(ctx).summary()
             ));
         } else {
-            text.push_str(&format!(
-                " {} mines.",
-                d.objects
-                    .iter()
-                    .filter(|o| o.kind == Kind::Mine && o.active)
-                    .count()
-            ));
+            let mines = d
+                .objects
+                .iter()
+                .filter(|o| o.kind == Kind::Mine && o.active)
+                .count();
+            if mines == 1 {
+                text.push_str(" 1 mine.");
+            } else {
+                text.push_str(&format!(" {mines} mines."));
+            }
         }
         text
     }
@@ -1020,17 +1025,21 @@ pub fn conclude(
     let lost = exp.dive.carried;
     let head = match end {
         ExpeditionEnd::Banked if score == 0 => {
-            format!(
-                "Expedition over after {} {}, no coins.",
-                exp.surfaced,
-                if exp.surfaced == 1 { "dive" } else { "dives" }
-            )
+            let surfaced = exp.surfaced;
+            if surfaced == 1 {
+                "Expedition over after 1 dive, no coins.".to_string()
+            } else {
+                format!("Expedition over after {surfaced} dives, no coins.")
+            }
         }
-        ExpeditionEnd::Banked => format!(
-            "Expedition over. Surfaced {} {}, {score} coins banked.",
-            exp.surfaced,
-            if exp.surfaced == 1 { "time" } else { "times" }
-        ),
+        ExpeditionEnd::Banked => {
+            let surfaced = exp.surfaced;
+            if surfaced == 1 {
+                format!("Expedition over. Surfaced 1 time, {score} coins banked.")
+            } else {
+                format!("Expedition over. Surfaced {surfaced} times, {score} coins banked.")
+            }
+        }
         ExpeditionEnd::Drowned => {
             format!("Out of air on dive {n}. {lost} coins aboard lost, {score} banked.")
         }
@@ -1069,7 +1078,7 @@ pub fn conclude(
         (Mode::Challenge(_), Some(ch)) => {
             let result = Challenges::submit_at(ctx, ch, pace, score as u64);
             let streak = Challenges::streak(ctx, ID, ch.period);
-            let streak = format!("A {} {} streak.", streak.max(1), ch.period.unit());
+            let streak = ch.period.streak_sentence(streak.max(1));
             pages.push(format!(
                 "{} result: {score} coins. {} {streak} {}",
                 ch.title(),
@@ -1280,14 +1289,15 @@ pub fn challenge_brief(ch: &Challenge) -> String {
         "" => String::new(),
         d => format!(" Twist: {}.", sentence_start(d)),
     };
-    let name = challenge_name(ch.period);
-    match ch.period {
-        Period::Daily => format!("{name}: one dive.{twist} Most treasure wins."),
-        Period::Weekly => format!("{name}: 3 dives, no hull repairs.{twist} Most treasure wins."),
-        Period::Monthly => format!(
-            "{name}: a 1000-coin galleon each dive, ringed by mines. 2 dives, one hull point. Most treasure wins."
-        ),
-    }
+    let head = match ch.period {
+        Period::Daily => "Sprint dive: one dive.",
+        Period::Weekly => "Long haul: 3 dives, no hull repairs.",
+        Period::Monthly => {
+            "The sunken galleon: a 1000-coin galleon each dive, ringed by mines. 2 dives, one hull point."
+        }
+    };
+    let wins = "Most treasure wins.";
+    format!("{head}{twist} {wins}")
 }
 
 /// The pages read before a challenge run, which then start it.

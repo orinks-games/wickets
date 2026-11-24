@@ -72,24 +72,21 @@ impl Plan {
 
     /// "700 metres on the BMX".
     pub fn tag(&self) -> String {
-        let extra = match self.period {
-            Period::Daily => "",
-            Period::Weekly => ", in heavy traffic",
-            Period::Monthly => ", with 3 turns",
-        };
-        format!(
-            "{} on the {}{extra}",
-            parlor_core::units::route(self.course.length),
-            self.bike.name()
-        )
+        let length = parlor_core::units::route(self.course.length);
+        let bike = self.bike.name();
+        match self.period {
+            Period::Daily => format!("{length} on the {bike}"),
+            Period::Weekly => format!("{length} on the {bike}, in heavy traffic"),
+            Period::Monthly => format!("{length} on the {bike}, with 3 turns"),
+        }
     }
 
     /// The rule in a sentence or two.
     pub fn rule(&self) -> String {
-        format!(
-            "{} of Downtown on the {}. Ride points count: speed, clean riding, jumps and tips.",
-            parlor_core::units::route(self.course.length),
-            self.bike.name()
-        )
+        let length = parlor_core::units::route(self.course.length);
+        let bike = self.bike.name();
+        let ride = format!("{length} of Downtown on the {bike}.");
+        let points = "Ride points count: speed, clean riding, jumps and tips.";
+        format!("{ride} {points}")
     }
 }

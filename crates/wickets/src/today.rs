@@ -10,7 +10,7 @@ use parlor_core::calendar::days_phrase;
 use parlor_core::{challenges, Date, GameInfo, Parlor, Period};
 
 use crate::lobby::{
-    after_comma, back_row, happening, happenings, open_listed, period_help, period_label,
+    back_row, happening, happenings, open_listed, period_help, period_label,
 };
 use crate::{games, happening as story_happening, music, ChallengeList};
 
@@ -55,12 +55,10 @@ pub fn next_event(ctx: &mut Ctx<Parlor>, today: Date) -> Option<(GameInfo, Strin
 fn quiet_line(ctx: &mut Ctx<Parlor>) -> String {
     let today = challenges::today(ctx);
     match next_event(ctx, today) {
-        Some((g, title, days)) => format!(
-            "No events today. Next: {}, {}, {}.",
-            g.name,
-            after_comma(&title),
-            days_phrase(days)
-        ),
+        Some((g, event, days)) => {
+            let (game, days) = (g.name, days_phrase(days));
+            format!("No events today. Next: {event} in {game}, {days}.")
+        }
         None => "No events today.".to_string(),
     }
 }
@@ -147,7 +145,10 @@ impl Menu for TodayList {
         for (g, h) in events {
             items.push(
                 MenuItem::new(
-                    format!("{}, {}", g.name, after_comma(&h.title)),
+                    {
+                        let (game, event) = (g.name, &h.title);
+                        format!("{game}, today: {event}")
+                    },
                     move |s: &mut Self, ctx: &mut Ctx<Parlor>| {
                         // Checked again, in case midnight passed.
                         match happening(ctx, &g) {
@@ -176,14 +177,18 @@ impl Menu for TodayList {
             } else {
                 h.text.clone()
             };
-            let state = if waits {
-                ": waits"
+            let label = if waits {
+                format!("Story, {what}: waits")
             } else {
-                story_happening::state(&h)
+                match story_happening::state(&h) {
+                    ": done" => format!("Story, {what}: done"),
+                    ": missed" => format!("Story, {what}: missed"),
+                    _ => format!("Story, {what}"),
+                }
             };
             items.push(
                 MenuItem::new(
-                    format!("Story, {what}{state}"),
+                    label,
                     |_s: &mut Self, ctx: &mut Ctx<Parlor>| crate::story::open_at_happening(ctx),
                 )
                 .help(help),

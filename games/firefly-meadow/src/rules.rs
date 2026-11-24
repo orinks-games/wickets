@@ -587,13 +587,20 @@ pub fn direction_words(from: P2, to: P2) -> String {
     } else {
         None
     };
-    let way = match (ahead, side) {
-        (Some(a), Some(s)) => format!("{a} and {s}"),
-        (Some(a), None) => a.to_string(),
-        (None, Some(s)) => s.to_string(),
-        (None, None) => "close by".to_string(),
-    };
-    format!("{} {way}", metres(d))
+    // Whole phrases around the distance, so a translation never joins
+    // halves.
+    let dist = metres(d);
+    match (ahead, side) {
+        (Some("ahead"), Some("to the left")) => format!("{dist} ahead and to the left"),
+        (Some("ahead"), Some(_)) => format!("{dist} ahead and to the right"),
+        (Some("ahead"), None) => format!("{dist} ahead"),
+        (Some(_), Some("to the left")) => format!("{dist} behind you and to the left"),
+        (Some(_), Some(_)) => format!("{dist} behind you and to the right"),
+        (Some(_), None) => format!("{dist} behind you"),
+        (None, Some("to the left")) => format!("{dist} to the left"),
+        (None, Some(_)) => format!("{dist} to the right"),
+        (None, None) => format!("{dist} close by"),
+    }
 }
 
 /// "1 metre", "4 metres"; "3 feet", "13 feet" with US units.

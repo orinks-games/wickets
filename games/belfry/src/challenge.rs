@@ -2,7 +2,6 @@
 //! the three, the briefing read before a challenge, the stand-in screen
 //! the launcher opens one from, and the result read after it.
 
-use hearken::text::sentence_start;
 use hearken::{Ctx, State};
 use parlor_core::menus::{self, ChallengeGame};
 use parlor_core::{Challenge, Challenges, Pages, Parlor, Period, ScoreResult};
@@ -53,13 +52,26 @@ pub fn tag(period: Period) -> &'static str {
 /// The rule, in a sentence or two.
 pub fn rule(period: Period) -> String {
     let r = rules(period);
-    match period {
-        Period::Daily => format!("One peal: {}. Hints halve the score.", r.describe()),
-        Period::Weekly => format!(
-            "Five peals in a row, each with {}. The five scores are added. Hints halve a score.",
-            r.describe()
+    let (places, bells, rows) = (r.places, r.bells, r.rows);
+    match (period, r.repeats) {
+        (Period::Daily, true) => format!(
+            "One peal: {places} places, {bells} bells to choose from, a bell may come twice, {rows} rows. Hints halve the score."
         ),
-        Period::Monthly => format!("The cathedral tower: {}. No hints.", r.describe()),
+        (Period::Daily, false) => format!(
+            "One peal: {places} places, {bells} bells to choose from, no bell twice, {rows} rows. Hints halve the score."
+        ),
+        (Period::Weekly, true) => format!(
+            "Five peals in a row, each with {places} places, {bells} bells to choose from, a bell may come twice, {rows} rows. The five scores are added. Hints halve a score."
+        ),
+        (Period::Weekly, false) => format!(
+            "Five peals in a row, each with {places} places, {bells} bells to choose from, no bell twice, {rows} rows. The five scores are added. Hints halve a score."
+        ),
+        (Period::Monthly, true) => format!(
+            "The cathedral tower: {places} places, {bells} bells to choose from, a bell may come twice, {rows} rows. No hints."
+        ),
+        (Period::Monthly, false) => format!(
+            "The cathedral tower: {places} places, {bells} bells to choose from, no bell twice, {rows} rows. No hints."
+        ),
     }
 }
 
@@ -230,11 +242,12 @@ fn score_line(result: ScoreResult) -> String {
 pub fn peal_words(peal: &Peal) -> String {
     if peal.solved() {
         let rows = peal.rows_used();
-        format!(
-            "Solved in {rows} {}. {}.",
-            if rows == 1 { "row" } else { "rows" },
-            points(peal.score())
-        )
+        let points = points(peal.score());
+        if rows == 1 {
+            format!("Solved in 1 row. {points}.")
+        } else {
+            format!("Solved in {rows} rows. {points}.")
+        }
     } else {
         format!("Out of rows. The peal was {}.", row_words(&peal.code))
     }
@@ -258,11 +271,11 @@ pub fn finish_job(ctx: &mut Ctx<Parlor>, ch: &Challenge, job: &Job, last: &Peal)
     vec![
         first,
         format!(
-            "{} result: {}. {} A {streak} {} streak. {}",
+            "{} result: {}. {} {} {}",
             ch.title(),
             points(score),
             score_line(result),
-            ch.period.unit(),
+            ch.period.streak_sentence(streak),
             ch.resets()
         ),
     ]
@@ -270,10 +283,7 @@ pub fn finish_job(ctx: &mut Ctx<Parlor>, ch: &Challenge, job: &Job, last: &Peal)
 
 /// "Peal 2 of 5" and what it is, as a new weekly peal starts.
 pub fn next_words(job: &Job) -> String {
-    format!(
-        "Peal {} of {}. {}.",
-        job.index + 1,
-        job.peals(),
-        sentence_start(&rules(job.period).describe())
-    )
+    let (peal, peals) = (job.index + 1, job.peals());
+    let rules = rules(job.period).sentence();
+    format!("Peal {peal} of {peals}. {rules}")
 }

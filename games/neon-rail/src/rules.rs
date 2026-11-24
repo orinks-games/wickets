@@ -50,7 +50,8 @@ pub const BLACK_SKY_SECTORS: usize = 5;
 /// the extraction sprint.
 pub const COLD_START_SECTORS: usize = 9;
 /// Said the first time a ghost car comes in a run.
-pub const GHOST_LINE: &str = "Ghost cars tonight: flow vehicles come in costume. Meet them as usual.";
+pub const GHOST_LINE: &str =
+    "Ghost cars tonight: flow vehicles come in costume. Meet them as usual.";
 /// The status key's line while ghost cars run.
 pub const GHOST_RULE: &str = "Ghost cars: flow vehicles come in costume. Meet them as usual.";
 
@@ -1518,10 +1519,11 @@ impl Run {
             self.cue(cues::SHIELD);
             self.add_stress(stress / 2, message);
             let left = self.loadout.shields;
-            self.say(format!(
-                "{message} Shield absorbed it. {left} shield{} left.",
-                if left == 1 { "" } else { "s" }
-            ));
+            self.say(if left == 1 {
+                format!("{message} Shield absorbed it. 1 shield left.")
+            } else {
+                format!("{message} Shield absorbed it. {left} shields left.")
+            });
             return;
         }
         self.stats.hits += 1;
@@ -1705,8 +1707,8 @@ impl Run {
         self.lane = next as usize;
         self.cue(cues::SHIFT);
         self.say(format!(
-            "{} lane.",
-            sentence(Lane::from_index(self.lane).name())
+            "{lane} lane.",
+            lane = sentence(Lane::from_index(self.lane).name())
         ));
     }
 
@@ -2062,8 +2064,8 @@ impl Run {
         }];
         match self.length() {
             Some(length) => run.push(format!(
-                "{} remaining.",
-                seconds((length - self.t).max(0.0))
+                "{left} remaining.",
+                left = seconds((length - self.t).max(0.0))
             )),
             None => {
                 if let Some(sector) = self.sector() {

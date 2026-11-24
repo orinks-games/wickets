@@ -293,63 +293,152 @@ pub fn good(id: &str) -> Option<&'static Good> {
 
 /// A number of a good, as said: "1 turnip", "3 turnips", "2 loaves of bread".
 pub fn count(id: &str, n: u32) -> String {
-    let one = match id {
-        "turnip" => "turnip",
-        "radish" => "radish",
-        "pea" => "pea",
-        "potato" => "potato",
-        "strawberry" => "strawberry",
-        "bean" => "bean",
-        "tomato" => "tomato",
-        "pumpkin" => "pumpkin",
-        "cabbage" => "cabbage",
-        "carrot" => "carrot",
-        "eggs" => "egg",
-        "pie" => "pie",
-        "berries" => "berry",
-        "mushrooms" => "mushroom",
-        NAILS => "nail",
+    // Each count is a whole line, so it translates as one.
+    match id {
+        "turnip" => {
+            if n == 1 {
+                "1 turnip".into()
+            } else {
+                format!("{n} turnips")
+            }
+        }
+        "radish" => {
+            if n == 1 {
+                "1 radish".into()
+            } else {
+                format!("{n} radishes")
+            }
+        }
+        "pea" => {
+            if n == 1 {
+                "1 pea".into()
+            } else {
+                format!("{n} peas")
+            }
+        }
+        "potato" => {
+            if n == 1 {
+                "1 potato".into()
+            } else {
+                format!("{n} potatoes")
+            }
+        }
+        "strawberry" => {
+            if n == 1 {
+                "1 strawberry".into()
+            } else {
+                format!("{n} strawberries")
+            }
+        }
+        "bean" => {
+            if n == 1 {
+                "1 bean".into()
+            } else {
+                format!("{n} beans")
+            }
+        }
+        "tomato" => {
+            if n == 1 {
+                "1 tomato".into()
+            } else {
+                format!("{n} tomatoes")
+            }
+        }
+        "pumpkin" => {
+            if n == 1 {
+                "1 pumpkin".into()
+            } else {
+                format!("{n} pumpkins")
+            }
+        }
+        "cabbage" => {
+            if n == 1 {
+                "1 cabbage".into()
+            } else {
+                format!("{n} cabbages")
+            }
+        }
+        "carrot" => {
+            if n == 1 {
+                "1 carrot".into()
+            } else {
+                format!("{n} carrots")
+            }
+        }
+        "eggs" => {
+            if n == 1 {
+                "1 egg".into()
+            } else {
+                format!("{n} eggs")
+            }
+        }
+        "pie" => {
+            if n == 1 {
+                "1 pie".into()
+            } else {
+                format!("{n} pies")
+            }
+        }
+        "berries" => {
+            if n == 1 {
+                "1 berry".into()
+            } else {
+                format!("{n} berries")
+            }
+        }
+        "mushrooms" => {
+            if n == 1 {
+                "1 mushroom".into()
+            } else {
+                format!("{n} mushrooms")
+            }
+        }
+        NAILS => {
+            if n == 1 {
+                "1 nail".into()
+            } else {
+                format!("{n} nails")
+            }
+        }
         "bread" => {
-            return if n == 1 {
+            if n == 1 {
                 "1 loaf of bread".into()
             } else {
                 format!("{n} loaves of bread")
             }
         }
         "milk" => {
-            return if n == 1 {
+            if n == 1 {
                 "1 jug of milk".into()
             } else {
                 format!("{n} jugs of milk")
             }
         }
         "flour" => {
-            return if n == 1 {
+            if n == 1 {
                 "1 sack of flour".into()
             } else {
                 format!("{n} sacks of flour")
             }
         }
         "cheese" => {
-            return if n == 1 {
+            if n == 1 {
                 "1 cheese".into()
             } else {
                 format!("{n} cheeses")
             }
         }
         FURNITURE => {
-            return if n == 1 {
+            if n == 1 {
                 "1 piece of furniture".into()
             } else {
                 format!("{n} pieces of furniture")
             }
         }
-        _ => return format!("{n} {}", good_name(id)),
-    };
-    if n == 1 {
-        format!("1 {one}")
-    } else {
-        format!("{n} {}", good_name(id))
+        _ => {
+            let goods = good_name(id);
+            format!("{n} {goods}")
+        }
     }
 }
 

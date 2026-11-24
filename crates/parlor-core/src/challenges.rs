@@ -201,7 +201,7 @@ impl Challenge {
 
     /// "Daily challenge", "Weekly challenge"...
     pub fn title(&self) -> String {
-        format!("{} challenge", self.period.label())
+        self.period.challenge_title().to_string()
     }
 
     /// "A new one tomorrow.", "A new one in 3 days."
@@ -330,11 +330,7 @@ impl Challenges {
         let streak = Self::streak(ctx, challenge.game, challenge.period);
         let streak = match streak {
             0 => String::new(),
-            n => format!(
-                ", {} {n} {} streak",
-                crate::words::a_or_an(&n.to_string()),
-                challenge.period.unit()
-            ),
+            n => format!(", {}", challenge.period.streak_phrase(n)),
         };
         let bests: Vec<String> = [Pace::Normal, Pace::Relaxed]
             .into_iter()

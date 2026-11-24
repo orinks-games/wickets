@@ -223,7 +223,7 @@ impl TitleGame for DragonDance {
         let gate = festival::gate(today);
         let n = progress.next_street();
         let play_help = play_help(ctx, n);
-        let open_streets = (1..=STREETS.len()).filter(|&s| progress.opened(s)).count();
+        let opened = (1..=STREETS.len()).filter(|&s| progress.opened(s)).count();
         let new_year = match gate {
             Gate::NewYear { year } => Some(Mode::NewYear(year)),
             _ => None,
@@ -253,7 +253,7 @@ impl TitleGame for DragonDance {
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(StreetSelect::new()),
             )
             .help(format!(
-                "Every street of the parade, with your stars. {open_streets} of {} open.",
+                "Every street of the parade, with your stars. {opened} of {} open.",
                 STREETS.len()
             )),
             festival_row(

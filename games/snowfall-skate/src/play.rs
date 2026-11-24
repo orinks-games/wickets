@@ -1626,8 +1626,8 @@ impl State<Parlor> for SkateScreen {
         }
         if let Some(ch) = &self.challenge {
             text.push_str(&format!(
-                " This is the {} challenge, {}. Leaving from the pause menu does not count the skate.",
-                ch.period.label().to_lowercase(),
+                " This is the {}, {}. Leaving from the pause menu does not count the skate.",
+                ch.period.challenge_title().to_lowercase(),
                 challenge::name(ch.period)
             ));
         }

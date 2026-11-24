@@ -57,6 +57,38 @@ impl Kind {
         }
     }
 
+    /// The sound as a whole phrase with its article: "a rattle".
+    pub fn with_article(self) -> &'static str {
+        match self {
+            Kind::Rattle => "a rattle",
+            Kind::Squish => "a squish",
+            Kind::Clink => "a clink",
+            Kind::Jingle => "a jingle",
+            Kind::Crinkle => "a crinkle",
+            Kind::Slosh => "a slosh",
+            Kind::Tick => "a tick",
+            Kind::Squeak => "a squeak",
+            Kind::Thump => "a thump",
+            Kind::Chime => "a chime",
+        }
+    }
+
+    /// "It would rattle in its box.", whole, for a letter.
+    pub fn would_sentence(self) -> &'static str {
+        match self {
+            Kind::Rattle => "It would rattle in its box.",
+            Kind::Squish => "It would squish in its box.",
+            Kind::Clink => "It would clink in its box.",
+            Kind::Jingle => "It would jingle in its box.",
+            Kind::Crinkle => "It would crinkle in its box.",
+            Kind::Slosh => "It would slosh in its box.",
+            Kind::Tick => "It would tick in its box.",
+            Kind::Squeak => "It would squeak in its box.",
+            Kind::Thump => "It would thump in its box.",
+            Kind::Chime => "It would chime in its box.",
+        }
+    }
+
     /// How the sound check describes the shake.
     pub fn describe(self) -> &'static str {
         match self {
@@ -111,16 +143,6 @@ pub enum Spot {
 impl Spot {
     pub const PEOPLE: [Spot; 3] = [Spot::Left, Spot::Ahead, Spot::Right];
 
-    /// "on your left", for sentences.
-    pub fn place(self) -> &'static str {
-        match self {
-            Spot::Left => "on your left",
-            Spot::Ahead => "straight ahead",
-            Spot::Right => "on your right",
-            Spot::Sack => "behind you",
-        }
-    }
-
     /// "Left", for the status line and the sighted helper.
     pub fn label(self) -> &'static str {
         match self {
@@ -139,7 +161,7 @@ pub const NAMES: [&str; 6] = [
     "Little Pip",
     "Aunt Rosa",
     "Cousin Theo",
-    "Mrs. Holly",
+    "Mrs Holly",
 ];
 
 /// One person waiting for a gift.

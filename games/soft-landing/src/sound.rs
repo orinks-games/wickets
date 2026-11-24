@@ -70,7 +70,7 @@ pub fn catalog() -> Vec<(&'static str, &'static str)> {
         ),
         (
             QUINDAR,
-            "Quindar tone: a short high beep on the Tranquility pad. It stands for the radio click: a call-out follows.",
+            "Quindar tone: a short high beep on the Tranquility pad. It stands for the radio click, and a call-out follows.",
         ),
         (
             FUEL_LOW,
