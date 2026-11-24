@@ -89,9 +89,12 @@ pub fn write_catalogs(full: bool) {
             merged.display().to_string()
         ));
     }
+    // A `static`, never a `const`: a const is pasted in at every use, and
+    // each crate that inlined `Game::translation_catalogs` kept its own
+    // copy of every catalog (wickets.exe grew from 39 MB to 1 GB).
     let source = format!(
         "/// Each language's catalog, written by `wickets_content::write_catalogs`.\n\
-         pub const CATALOGS: &[(&str, &str)] = &[\n{rows}];\n"
+         pub static CATALOGS: &[(&str, &str)] = &[\n{rows}];\n"
     );
     std::fs::write(out.join("catalogs.rs"), source).expect("OUT_DIR is writable");
 }
