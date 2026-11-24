@@ -206,7 +206,8 @@ pub fn finish_job(
     if job.clock_bonus > 0 {
         first.push_str(&format!(
             " {} left on the clock: {} bonus points.",
-            sentence_start(&time_words(last.time_left)),
+            // The bonus is 3 points a second of the time left after speech holds.
+            sentence_start(&time_words(job.clock_bonus as f64 / 3.0)),
             job.clock_bonus
         ));
     }
