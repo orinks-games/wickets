@@ -76,6 +76,9 @@ pub struct Keeper {
     pub home: Category,
     /// Whether the player has started playing it, or has older saved progress.
     pub kept: fn(&mut Ctx<Parlor>) -> bool,
+    /// Whether the player has beaten it: its holiday finale cleared. What
+    /// the player's orinks.net page lists.
+    pub beaten: fn(&mut Ctx<Parlor>) -> bool,
     /// The blurb in season until it is kept, saying how to keep it.
     pub keep_blurb: &'static str,
     /// The blurb out of season, saying what still waits for the holiday.
@@ -176,6 +179,7 @@ fn every_keeper() -> Vec<Keeper> {
             in_season: |d| calendar::nearness(graveyard_shuffle::HOLIDAY, d).is_some(),
             home: graveyard_shuffle::HOME,
             kept: graveyard_shuffle::kept,
+            beaten: graveyard_shuffle::beaten,
             keep_blurb: graveyard_shuffle::KEEP_BLURB,
             year_round_blurb: graveyard_shuffle::YEAR_ROUND_BLURB,
         },
@@ -185,6 +189,7 @@ fn every_keeper() -> Vec<Keeper> {
             in_season: snowfall_skate::in_season,
             home: snowfall_skate::HOME,
             kept: snowfall_skate::kept,
+            beaten: snowfall_skate::beaten,
             keep_blurb: snowfall_skate::KEEP_BLURB,
             year_round_blurb: snowfall_skate::YEAR_ROUND_BLURB,
         },

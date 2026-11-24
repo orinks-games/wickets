@@ -1,6 +1,8 @@
 # Where Wicket's spoken lines come from (see crates/wickets-l10n/src/sources.rs).
 # After changing any player text, run: cargo run -p wickets-l10n -- extract
 rust crates/parlor-core/src
+# How two copies of the records merge: save keys and field names, never spoken.
+skip crates/parlor-core/src/merge.rs
 rust crates/wickets/src
 rust crates/wickets-rules/src
 rust games
