@@ -75652,15 +75652,13 @@ msgid ""
 "Score {score}: {points} for your finds and {bonus} for the challenge."
 msgstr "得分{score}：发现得{points}分，挑战奖励分{bonus}。"
 
-msgid "first relaxed score"
-msgstr "第一个轻松节奏得分"
+#. placeholders: {name}
+msgid "Your first relaxed score at {name}."
+msgstr "这是你在{name}的第一个轻松节奏得分。"
 
-msgid "first score"
-msgstr "第一个得分"
-
-#. placeholders: {first}, {name}
-msgid " Your {first} at {name}."
-msgstr "这是你在{name}的{first}。"
+#. placeholders: {name}
+msgid "Your first score at {name}."
+msgstr "这是你在{name}的第一个得分。"
 
 #. placeholders: {best_word}, {name}, {previous}
 msgid " A new {best_word} at {name}, beating {previous}."
@@ -75670,9 +75668,13 @@ msgstr "{name}的新{best_word}，超过了{previous}。"
 msgid " Your {best_word} at {name} is {best}."
 msgstr "你在{name}的{best_word}是{best}。"
 
-#. placeholders: {first}, {the}
-msgid " Your {first} on {the}."
-msgstr "这是你在{the}的{first}。"
+#. placeholders: {the}
+msgid "Your first relaxed score on {the}."
+msgstr "这是你在{the}的第一个轻松节奏得分。"
+
+#. placeholders: {the}
+msgid "Your first score on {the}."
+msgstr "这是你在{the}的第一个得分。"
 
 #. placeholders: {best_word}, {the}, {previous}
 msgid " A new {best_word} on {the}, beating {previous}."
@@ -75714,9 +75716,11 @@ msgstr "今晚的三种你全找到了。"
 msgid "You found {found} of tonight's three."
 msgstr "今晚的三种你找到了{found}种。"
 
-#. placeholders: {first}
-msgid "Your {first} on this one."
-msgstr "这是你在这里的{first}。"
+msgid "Your first relaxed score on this one."
+msgstr "这是你在这里的第一个轻松节奏得分。"
+
+msgid "Your first score on this one."
+msgstr "这是你在这里的第一个得分。"
 
 msgid "The first day of a streak."
 msgstr "连胜的第一天。"
@@ -77581,6 +77585,12 @@ msgid ""
 "Plays each sound you need on the wire, starting with the balance tone."
 msgstr "播放你在钢丝上需要的每个声音，从平衡音开始。"
 
+msgid "from the left"
+msgstr "从左边"
+
+msgid "from the right"
+msgstr "从右边"
+
 #. placeholders: {from}, {to}
 msgid "from {from} to {to}"
 msgstr "从{from}到{to}"
@@ -77872,9 +77882,9 @@ msgstr "到屋顶了。下一根钢丝马上开始。"
 msgid "On the last roof."
 msgstr "到了最后一个屋顶。"
 
-#. placeholders: {name}
-msgid "Gust from the {name}!"
-msgstr "阵风从{name}来！"
+#. placeholders: {from_words}
+msgid "Gust {from_words}!"
+msgstr "阵风{from_words}来！"
 
 #. placeholders: {right}, {crouch}
 msgid " Lean into it with {right}, or crouch with {crouch}."
@@ -78036,13 +78046,13 @@ msgstr "第{pos}步，共{steps}步，{lean_words}，蹲着。"
 msgid "Step {pos} of {steps}, {lean_words}."
 msgstr "第{pos}步，共{steps}步，{lean_words}。"
 
-#. placeholders: {name}
-msgid "Wind blowing from the {name}."
-msgstr "风从{name}吹来。"
+#. placeholders: {from_words}
+msgid "Wind blowing {from_words}."
+msgstr "风{from_words}吹来。"
 
-#. placeholders: {name}, {plural}
-msgid "Gust from the {name} in {plural}."
-msgstr "{plural}后阵风从{name}来。"
+#. placeholders: {from_words}, {plural}
+msgid "Gust {from_words} in {plural}."
+msgstr "{plural}后阵风{from_words}来。"
 
 #. placeholders: {plural}, {name}
 msgid "Pigeon {plural} ahead on the {name}."
@@ -78077,16 +78087,16 @@ msgstr "风把你推向{name}：按{into}。"
 msgid "Lean into it with {into}, or crouch with {crouch}."
 msgstr "用{into}迎风倾斜，或者用{crouch}蹲下。"
 
-#. placeholders: {name}, {plural}
+#. placeholders: {from_words}, {plural}
 #. one sentence of a longer line
-msgid "Wind from the {name} in {plural}."
-msgstr "{plural}后风从{name}来。"
+msgid "Wind {from_words} in {plural}."
+msgstr "{plural}后风{from_words}来。"
 
-#. placeholders: {name}, {plural}, {into}, {crouch}
+#. placeholders: {from_words}, {plural}, {into}, {crouch}
 msgid ""
-"Wind from the {name} in {plural}. Lean into it with {into}, or crouch with "
+"Wind {from_words} in {plural}. Lean into it with {into}, or crouch with "
 "{crouch}."
-msgstr "{plural}后风从{name}来。用{into}迎风倾斜，或者用{crouch}蹲下。"
+msgstr "{plural}后风{from_words}来。用{into}迎风倾斜，或者用{crouch}蹲下。"
 
 #. placeholders: {fix}
 #. one sentence of a longer line
@@ -85094,6 +85104,15 @@ msgstr "第 {position} 项，共 {count} 项。"
 msgid "Games"
 msgstr "游戏"
 
+#. Tightrope: a wire's height, made by its plural() helper.
+msgid "1 floor"
+msgstr "1层"
+
+#. Tightrope: a wire's height, made by its plural() helper.
+#. placeholders: {n}
+msgid "{n} floors"
+msgstr "{n}层"
+
 #. a name: keep it as it is
 msgid "Wicket's"
 msgstr "Wicket's"
@@ -85105,6 +85124,38 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "first relaxed score"
+#~ msgstr "第一个轻松节奏得分"
+
+#~ msgid "first score"
+#~ msgstr "第一个得分"
+
+#~ msgid " Your {first} at {name}."
+#~ msgstr "这是你在{name}的{first}。"
+
+#~ msgid " Your {first} on {the}."
+#~ msgstr "这是你在{the}的{first}。"
+
+#~ msgid "Your {first} on this one."
+#~ msgstr "这是你在这里的{first}。"
+
+#~ msgid "Gust from the {name}!"
+#~ msgstr "阵风从{name}来！"
+
+#~ msgid "Wind blowing from the {name}."
+#~ msgstr "风从{name}吹来。"
+
+#~ msgid "Gust from the {name} in {plural}."
+#~ msgstr "{plural}后阵风从{name}来。"
+
+#~ msgid "Wind from the {name} in {plural}."
+#~ msgstr "{plural}后风从{name}来。"
+
+#~ msgid ""
+#~ "Wind from the {name} in {plural}. Lean into it with {into}, or crouch with "
+#~ "{crouch}."
+#~ msgstr "{plural}后风从{name}来。用{into}迎风倾斜，或者用{crouch}蹲下。"
 
 #~ msgid "Connect a {site} account"
 #~ msgstr "连接{site}账号"

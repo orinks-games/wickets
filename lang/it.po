@@ -85792,15 +85792,13 @@ msgid ""
 "Score {score}: {points} for your finds and {bonus} for the challenge."
 msgstr "Punteggio {score}: {points} per le scoperte e {bonus} per la sfida."
 
-msgid "first relaxed score"
-msgstr "primo punteggio rilassato"
+#. placeholders: {name}
+msgid "Your first relaxed score at {name}."
+msgstr "Il tuo primo punteggio rilassato a {name}."
 
-msgid "first score"
-msgstr "primo punteggio"
-
-#. placeholders: {first}, {name}
-msgid " Your {first} at {name}."
-msgstr " Il tuo {first} a {name}."
+#. placeholders: {name}
+msgid "Your first score at {name}."
+msgstr "Il tuo primo punteggio a {name}."
 
 #. placeholders: {best_word}, {name}, {previous}
 msgid " A new {best_word} at {name}, beating {previous}."
@@ -85810,9 +85808,13 @@ msgstr " Nuovo {best_word} a {name}, battuto {previous}."
 msgid " Your {best_word} at {name} is {best}."
 msgstr " Il tuo {best_word} a {name} è {best}."
 
-#. placeholders: {first}, {the}
-msgid " Your {first} on {the}."
-msgstr " Il tuo {first} per {the}."
+#. placeholders: {the}
+msgid "Your first relaxed score on {the}."
+msgstr "Il tuo primo punteggio rilassato per {the}."
+
+#. placeholders: {the}
+msgid "Your first score on {the}."
+msgstr "Il tuo primo punteggio per {the}."
 
 #. placeholders: {best_word}, {the}, {previous}
 msgid " A new {best_word} on {the}, beating {previous}."
@@ -85855,9 +85857,11 @@ msgstr "Hai trovato tutte e tre le specie di stanotte."
 msgid "You found {found} of tonight's three."
 msgstr "Hai trovato {found} delle tre di stanotte."
 
-#. placeholders: {first}
-msgid "Your {first} on this one."
-msgstr "Il tuo {first} in questa."
+msgid "Your first relaxed score on this one."
+msgstr "Il tuo primo punteggio rilassato in questa."
+
+msgid "Your first score on this one."
+msgstr "Il tuo primo punteggio in questa."
 
 msgid "The first day of a streak."
 msgstr "Il primo giorno di una serie."
@@ -87987,6 +87991,12 @@ msgid ""
 msgstr ""
 "Riproduce ogni suono che serve sul filo, a partire dal tono dell'equilibrio."
 
+msgid "from the left"
+msgstr "da sinistra"
+
+msgid "from the right"
+msgstr "da destra"
+
 #. placeholders: {from}, {to}
 msgid "from {from} to {to}"
 msgstr "tra {from} e {to}"
@@ -88211,7 +88221,7 @@ msgstr "Addosso al piccione! Spinto verso {away}."
 #. placeholders: {away}
 #. one sentence of a longer line
 msgid "Knocked {away}."
-msgstr ""
+msgstr "Spinto a {away}."
 
 #. one sentence of a longer line
 msgid "Wobble!"
@@ -88284,9 +88294,9 @@ msgstr "Sul tetto. Presto il prossimo filo."
 msgid "On the last roof."
 msgstr "Sull'ultimo tetto."
 
-#. placeholders: {name}
-msgid "Gust from the {name}!"
-msgstr "Raffica da {name}!"
+#. placeholders: {from_words}
+msgid "Gust {from_words}!"
+msgstr "Raffica {from_words}!"
 
 #. placeholders: {right}, {crouch}
 msgid " Lean into it with {right}, or crouch with {crouch}."
@@ -88453,13 +88463,13 @@ msgstr "Passo {pos} di {steps}, {lean_words}, accovacciato."
 msgid "Step {pos} of {steps}, {lean_words}."
 msgstr "Passo {pos} di {steps}, {lean_words}."
 
-#. placeholders: {name}
-msgid "Wind blowing from the {name}."
-msgstr "Vento da {name}."
+#. placeholders: {from_words}
+msgid "Wind blowing {from_words}."
+msgstr "Vento {from_words}."
 
-#. placeholders: {name}, {plural}
-msgid "Gust from the {name} in {plural}."
-msgstr "Raffica da {name} tra {plural}."
+#. placeholders: {from_words}, {plural}
+msgid "Gust {from_words} in {plural}."
+msgstr "Raffica {from_words} tra {plural}."
 
 #. placeholders: {plural}, {name}
 msgid "Pigeon {plural} ahead on the {name}."
@@ -88494,17 +88504,17 @@ msgstr "Il vento ti spinge a {name}: premi {into}."
 msgid "Lean into it with {into}, or crouch with {crouch}."
 msgstr "Inclinati verso il vento con {into}, o accovacciati con {crouch}."
 
-#. placeholders: {name}, {plural}
+#. placeholders: {from_words}, {plural}
 #. one sentence of a longer line
-msgid "Wind from the {name} in {plural}."
-msgstr "Vento da {name} tra {plural}."
+msgid "Wind {from_words} in {plural}."
+msgstr "Vento {from_words} tra {plural}."
 
-#. placeholders: {name}, {plural}, {into}, {crouch}
+#. placeholders: {from_words}, {plural}, {into}, {crouch}
 msgid ""
-"Wind from the {name} in {plural}. Lean into it with {into}, or crouch with "
+"Wind {from_words} in {plural}. Lean into it with {into}, or crouch with "
 "{crouch}."
 msgstr ""
-"Vento da {name} tra {plural}. Inclinati verso il vento con {into}, o "
+"Vento {from_words} tra {plural}. Inclinati verso il vento con {into}, o "
 "accovacciati con {crouch}."
 
 #. placeholders: {fix}
@@ -96194,6 +96204,15 @@ msgstr "{position} di {count}."
 msgid "Games"
 msgstr "Giochi"
 
+#. Tightrope: a wire's height, made by its plural() helper.
+msgid "1 floor"
+msgstr "1 piano"
+
+#. Tightrope: a wire's height, made by its plural() helper.
+#. placeholders: {n}
+msgid "{n} floors"
+msgstr "{n} piani"
+
 #. a name: keep it as it is
 msgid "Wicket's"
 msgstr "Wicket's"
@@ -96205,6 +96224,40 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "first relaxed score"
+#~ msgstr "primo punteggio rilassato"
+
+#~ msgid "first score"
+#~ msgstr "primo punteggio"
+
+#~ msgid " Your {first} at {name}."
+#~ msgstr " Il tuo {first} a {name}."
+
+#~ msgid " Your {first} on {the}."
+#~ msgstr " Il tuo {first} per {the}."
+
+#~ msgid "Your {first} on this one."
+#~ msgstr "Il tuo {first} in questa."
+
+#~ msgid "Gust from the {name}!"
+#~ msgstr "Raffica da {name}!"
+
+#~ msgid "Wind blowing from the {name}."
+#~ msgstr "Vento da {name}."
+
+#~ msgid "Gust from the {name} in {plural}."
+#~ msgstr "Raffica da {name} tra {plural}."
+
+#~ msgid "Wind from the {name} in {plural}."
+#~ msgstr "Vento da {name} tra {plural}."
+
+#~ msgid ""
+#~ "Wind from the {name} in {plural}. Lean into it with {into}, or crouch with "
+#~ "{crouch}."
+#~ msgstr ""
+#~ "Vento da {name} tra {plural}. Inclinati verso il vento con {into}, o "
+#~ "accovacciati con {crouch}."
 
 #~ msgid "Connect a {site} account"
 #~ msgstr "Collega un account {site}"

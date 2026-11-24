@@ -695,11 +695,6 @@ impl OutingScreen {
         let mut won = !new.is_empty();
         let pace = self.clock.pace();
         // A relaxed trip's scores are its relaxed ones.
-        let first = if pace.separate() {
-            "first relaxed score"
-        } else {
-            "first score"
-        };
         let best_word = pace.best_word();
         match (o.plan.mode, self.challenge.clone()) {
             (Mode::Beach(place), _) => {
@@ -707,7 +702,14 @@ impl OutingScreen {
                 match parlor_core::pace::record(ctx, crate::ID, &pace.board(place.board()), score) {
                     None => score_line = "Score 0, so nothing goes on the board.".to_string(),
                     Some(ScoreResult::First) => {
-                        score_line.push_str(&format!(" Your {first} at {}.", place.name()))
+                        // Whole sentences, so each language has the line
+                        // whole rather than "Your first {name}." around it.
+                        score_line.push(' ');
+                        score_line.push_str(&if pace.separate() {
+                            format!("Your first relaxed score at {}.", place.name())
+                        } else {
+                            format!("Your first score at {}.", place.name())
+                        });
                     }
                     Some(ScoreResult::NewBest { previous }) => score_line.push_str(&format!(
                         " A new {best_word} at {}, beating {previous}.",
@@ -723,7 +725,12 @@ impl OutingScreen {
                 match parlor_core::pace::record(ctx, crate::ID, &pace.board(event.board()), score) {
                     None => score_line = "Score 0, so nothing goes on the board.".to_string(),
                     Some(ScoreResult::First) => {
-                        score_line.push_str(&format!(" Your {first} on {}.", event.the()))
+                        score_line.push(' ');
+                        score_line.push_str(&if pace.separate() {
+                            format!("Your first relaxed score on {}.", event.the())
+                        } else {
+                            format!("Your first score on {}.", event.the())
+                        });
                     }
                     Some(ScoreResult::NewBest { previous }) => score_line.push_str(&format!(
                         " A new {best_word} on {}, beating {previous}.",
@@ -761,7 +768,10 @@ impl OutingScreen {
                 };
                 let result = Challenges::submit_at(ctx, &challenge, pace, score);
                 let best = match result {
-                    ScoreResult::First => format!("Your {first} on this one."),
+                    ScoreResult::First if pace.separate() => {
+                        "Your first relaxed score on this one.".to_string()
+                    }
+                    ScoreResult::First => "Your first score on this one.".to_string(),
                     ScoreResult::NewBest { previous } => {
                         format!("A new {best_word}, beating {previous}.")
                     }
