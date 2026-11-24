@@ -3265,6 +3265,7 @@ dependencies = [
  "serde",
  "serde_json",
  "wickets-content",
+ "wickets-rules",
 ]
 
 [[package]]
