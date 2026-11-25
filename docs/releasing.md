@@ -96,7 +96,8 @@ It checks the tag against Cargo.toml at that commit, and for a stable tag
 that `docs/release-notes/<tag>.md` is there. Then it pushes the tag and
 starts the Release workflow on it. Set `dry_run` to only run the checks.
 It doesn't tag wickets-secrets: the Release workflow builds the overlay
-commit that release.yml names (its main when none is named).
+commit named in `.github/overlay-ref` (its main when there is no such
+file).
 
 ## Commands (Windows, PowerShell or cmd)
 
@@ -134,9 +135,10 @@ set the workspace version to the patch version, and update Cargo.lock with
 patch needs an engine fix. Run the normal checks on this release branch.
 
 When branching from an older tag, copy main's `.github/workflows/`
-unchanged, with `tools/release_channels.py` and
-`tools/check_channel_manifests.py`: the cloud tag workflow can only tag a
-commit whose workflows match main's.
+over unchanged, with `tools/release_channels.py` and
+`tools/check_channel_manifests.py`. The tag workflow can't tag a commit
+whose workflow files differ from main's, so pin the tested overlay commit
+in `.github/overlay-ref` (one full SHA) instead of editing release.yml.
 
 Add notes in `docs/release-notes/v1.3.1.md`, then push the branch and its
 matching tag. The Release workflow uses the tagged branch's workspace
