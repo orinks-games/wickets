@@ -1191,12 +1191,59 @@ msgstr ""
 msgid "{meaning} Applies from the next run."
 msgstr ""
 
+#: crates/parlor-core/src/pace.rs
+msgid "Wait for speech: on"
+msgstr ""
+
+#: crates/parlor-core/src/pace.rs
+msgid "Wait for speech: off"
+msgstr ""
+
+#: crates/parlor-core/src/pace.rs
+msgid ""
+"On, timed play waits while speech plays. Off, it keeps going. A change "
+"applies from the next run. Scores share the same boards. Tutorials always "
+"wait."
+msgstr ""
+
+#. one sentence of a longer line
+#: crates/parlor-core/src/pace.rs
+msgid "Applies from the next run."
+msgstr ""
+
+#. one sentence of a longer line
+#: crates/parlor-core/src/pace.rs
+msgid "The clock waits while speech plays."
+msgstr ""
+
+#. placeholders: {wait_label}
+#: crates/parlor-core/src/pace.rs
+msgid ""
+"{wait_label}. The clock waits while speech plays. Applies from the next run."
+msgstr ""
+
+#. one sentence of a longer line
+#: crates/parlor-core/src/pace.rs
+msgid "The clock keeps going through speech."
+msgstr ""
+
+#. placeholders: {wait_label}
+#: crates/parlor-core/src/pace.rs
+msgid ""
+"{wait_label}. The clock keeps going through speech. Applies from the next "
+"run."
+msgstr ""
+
 #: crates/parlor-core/src/pace.rs hearken/crates/hearken-report/src/session.rs
 msgid "running"
 msgstr ""
 
 #: crates/parlor-core/src/pace.rs
 msgid "held"
+msgstr ""
+
+#: crates/parlor-core/src/pace.rs
+msgid "unheld"
 msgstr ""
 
 #: crates/parlor-core/src/pace.rs
@@ -4569,6 +4616,34 @@ msgstr ""
 
 #: games/basket-run/help.md
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the meadow keeps going while a line plays. A change applies from "
+"your next run. Tutorials always wait. Scores go on the same boards either "
+"way."
+msgstr ""
+
+#: games/basket-run/help.md
+msgid "Wait for speech sits next to Pace in Settings and is on by default."
+msgstr ""
+
+#: games/basket-run/help.md
+msgid "Turn it off and the meadow keeps going while a line plays."
+msgstr ""
+
+#: games/basket-run/help.md
+msgid "A change applies from your next run."
+msgstr ""
+
+#: games/basket-run/help.md
+msgid "Tutorials always wait."
+msgstr ""
+
+#: games/basket-run/help.md
+msgid "Scores go on the same boards either way."
+msgstr ""
+
+#: games/basket-run/help.md
+msgid ""
 "Pace in Settings sets how fast the meadow runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed. The drops, the patterns, the round's clock "
@@ -4597,10 +4672,6 @@ msgstr ""
 msgid ""
 "A change applies from your next run. A run or a challenge keeps the pace it "
 "started at until it ends."
-msgstr ""
-
-#: games/basket-run/help.md
-msgid "A change applies from your next run."
 msgstr ""
 
 #: games/basket-run/help.md
@@ -26275,6 +26346,22 @@ msgstr ""
 
 #: games/freewheel/help.md
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the street keeps going while a line plays. A change applies from "
+"your next ride. Tutorials always wait. Scores go on the same boards either "
+"way."
+msgstr ""
+
+#: games/freewheel/help.md
+msgid "Turn it off and the street keeps going while a line plays."
+msgstr ""
+
+#: games/freewheel/help.md
+msgid "A change applies from your next ride."
+msgstr ""
+
+#: games/freewheel/help.md
+msgid ""
 "Pace in Settings sets how fast the street runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed. Your bike, the traffic, every hazard's "
@@ -26290,10 +26377,6 @@ msgstr ""
 msgid ""
 "Your bike, the traffic, every hazard's warning and the clock follow the "
 "pace."
-msgstr ""
-
-#: games/freewheel/help.md
-msgid "A change applies from your next ride."
 msgstr ""
 
 #: games/freewheel/help.md
@@ -32305,6 +32388,22 @@ msgstr ""
 
 #: games/harvest-feast/help.md
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the kitchen keeps going while a line plays. A change applies from "
+"your next meal. Tutorials always wait. Scores go on the same boards either "
+"way."
+msgstr ""
+
+#: games/harvest-feast/help.md
+msgid "Turn it off and the kitchen keeps going while a line plays."
+msgstr ""
+
+#: games/harvest-feast/help.md
+msgid "A change applies from your next meal."
+msgstr ""
+
+#: games/harvest-feast/help.md
+msgid ""
 "Pace in Settings sets how fast cooking runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed."
@@ -32319,10 +32418,6 @@ msgstr ""
 msgid ""
 "A change applies from your next meal. Second helpings and a challenge keep "
 "the pace they started at until the run ends."
-msgstr ""
-
-#: games/harvest-feast/help.md
-msgid "A change applies from your next meal."
 msgstr ""
 
 #: games/harvest-feast/help.md
@@ -36394,6 +36489,18 @@ msgstr ""
 msgid ""
 "Time spent while a line is spoken still counts toward your floor time, and "
 "comes off your time bonus."
+msgstr ""
+
+#: games/haunted-hallways/help.md
+msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the house keeps going while a line plays. A change applies from "
+"your next run. Tutorials always wait. Scores go on the same boards either "
+"way."
+msgstr ""
+
+#: games/haunted-hallways/help.md
+msgid "Turn it off and the house keeps going while a line plays."
 msgstr ""
 
 #: games/haunted-hallways/help.md
@@ -59018,6 +59125,17 @@ msgstr ""
 
 #: games/neon-rail/help.md
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the rail keeps going while a line plays. A change applies from your "
+"next run. Tutorials always wait. Scores go on the same boards either way."
+msgstr ""
+
+#: games/neon-rail/help.md
+msgid "Turn it off and the rail keeps going while a line plays."
+msgstr ""
+
+#: games/neon-rail/help.md
+msgid ""
 "Pace in Settings sets how fast the rail runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed."
@@ -65254,6 +65372,17 @@ msgstr ""
 msgid ""
 "An arrow pressed meanwhile moves you at once, and a held arrow steps on "
 "once the line ends."
+msgstr ""
+
+#: games/pantry-mouse/help.md
+msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the cats keep going while a line plays. A change applies from your "
+"next run. Tutorials always wait. Scores go on the same boards either way."
+msgstr ""
+
+#: games/pantry-mouse/help.md
+msgid "Turn it off and the cats keep going while a line plays."
 msgstr ""
 
 #: games/pantry-mouse/help.md
@@ -72969,6 +73098,23 @@ msgstr ""
 
 #: games/safecracker/help.md
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the clock and the guard keep going while a line plays. A change "
+"applies from your next safe. Tutorials always wait. Scores go on the same "
+"boards either way."
+msgstr ""
+
+#: games/safecracker/help.md
+msgid ""
+"Turn it off and the clock and the guard keep going while a line plays."
+msgstr ""
+
+#: games/safecracker/help.md
+msgid "A change applies from your next safe."
+msgstr ""
+
+#: games/safecracker/help.md
+msgid ""
 "Pace in Settings sets how fast the safe runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed. Your time on the safe, the time attack "
@@ -72990,10 +73136,6 @@ msgstr ""
 msgid ""
 "A change applies from your next safe. A challenge job keeps the pace it "
 "started at until it ends."
-msgstr ""
-
-#: games/safecracker/help.md
-msgid "A change applies from your next safe."
 msgstr ""
 
 #: games/safecracker/help.md
@@ -75630,6 +75772,18 @@ msgstr ""
 #: games/signal-box/help.md
 msgid ""
 "The answer window holds while a call or another line is still being spoken."
+msgstr ""
+
+#: games/signal-box/help.md
+msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the answer window keeps going while a line plays. A change applies "
+"from your next run. Tutorials always wait. Scores go on the same boards "
+"either way."
+msgstr ""
+
+#: games/signal-box/help.md
+msgid "Turn it off and the answer window keeps going while a line plays."
 msgstr ""
 
 #: games/signal-box/help.md
@@ -83467,6 +83621,22 @@ msgstr ""
 
 #: games/soft-landing/help.md
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the lander keeps going while a line plays. A change applies from "
+"your next flight. Tutorials always wait. Scores go on the same boards "
+"either way."
+msgstr ""
+
+#: games/soft-landing/help.md
+msgid "Turn it off and the lander keeps going while a line plays."
+msgstr ""
+
+#: games/soft-landing/help.md
+msgid "A change applies from your next flight."
+msgstr ""
+
+#: games/soft-landing/help.md
+msgid ""
 "Pace in Settings sets how fast the descent runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed. Your fall, the engine, the fuel and the "
@@ -83486,10 +83656,6 @@ msgstr ""
 msgid ""
 "A change applies from your next flight. A challenge and the practice pad "
 "keep the pace they started at until you leave them."
-msgstr ""
-
-#: games/soft-landing/help.md
-msgid "A change applies from your next flight."
 msgstr ""
 
 #: games/soft-landing/help.md
@@ -85556,6 +85722,21 @@ msgstr ""
 msgid ""
 "While you hold a turn key, and while a ping's echoes are coming back, the "
 "sea runs on through speech."
+msgstr ""
+
+#: games/sonar-dive/help.md
+msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the sea keeps going while a line plays. A change applies from your "
+"next dive. Tutorials always wait. Scores go on the same boards either way."
+msgstr ""
+
+#: games/sonar-dive/help.md
+msgid "Turn it off and the sea keeps going while a line plays."
+msgstr ""
+
+#: games/sonar-dive/help.md
+msgid "A change applies from your next dive."
 msgstr ""
 
 #: games/sonar-dive/help.md
@@ -92104,6 +92285,22 @@ msgstr ""
 
 #: games/tide-pools/help.md
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the shore keeps going while a line plays. A change applies from "
+"your next trip. Tutorials always wait. Scores go on the same boards either "
+"way."
+msgstr ""
+
+#: games/tide-pools/help.md
+msgid "Turn it off and the shore keeps going while a line plays."
+msgstr ""
+
+#: games/tide-pools/help.md
+msgid "A change applies from your next trip."
+msgstr ""
+
+#: games/tide-pools/help.md
+msgid ""
 "Pace in Settings sets how fast the shore runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed. The creatures, the time to reach in and the "
@@ -92117,10 +92314,6 @@ msgstr ""
 
 #: games/tide-pools/help.md
 msgid "The creatures, the time to reach in and the tide follow the pace."
-msgstr ""
-
-#: games/tide-pools/help.md
-msgid "A change applies from your next trip."
 msgstr ""
 
 #: games/tide-pools/help.md
@@ -95027,6 +95220,17 @@ msgstr ""
 
 #: games/tightrope/help.md
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the wire keeps going while a line plays. A change applies from your "
+"next run. Tutorials always wait. Scores go on the same boards either way."
+msgstr ""
+
+#: games/tightrope/help.md
+msgid "Turn it off and the wire keeps going while a line plays."
+msgstr ""
+
+#: games/tightrope/help.md
+msgid ""
 "Pace in Settings sets how fast the wire runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed. Your balance, the wind, the pigeons and "
@@ -97120,6 +97324,18 @@ msgstr ""
 msgid ""
 "Time spent while a line is spoken still comes off the time left for your "
 "clock bonus."
+msgstr ""
+
+#: games/winter-wonderland/help.md
+msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and Gift Sort keeps going while a line plays. A change applies from "
+"your next run. Tutorials always wait. Scores go on the same boards either "
+"way."
+msgstr ""
+
+#: games/winter-wonderland/help.md
+msgid "Turn it off and Gift Sort keeps going while a line plays."
 msgstr ""
 
 #: games/winter-wonderland/help.md
