@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
-"""Checks that a release publishes an update manifest for its own channel only.
+"""Checks that each copy a release builds publishes its own channel's manifest only.
 
-Alpha players get alpha releases, beta players beta releases and stable
-players stable ones. A package for one channel may leave out games from
-another, so publishing a manifest for the wrong channel can hide content
-from players who install it.
+A release reaches its own channel and the less steady ones, each with a
+copy built for that channel (tools/release_channels.py). A package for one
+channel may leave out games from another, so a manifest that offers one
+channel a package built for another can hide content from players who
+install it.
 
-    python3 tools/check_channel_manifests.py --channel=CHANNEL DIR...
+    python3 tools/check_channel_manifests.py --channel=CHANNEL [--label=LABEL] DIR...
     python3 tools/check_channel_manifests.py --workflow [FILE]
 
-The first checks a release's files (the release workflow's dist/, or a
-published release's downloaded assets): every `update-<channel>-*.json`
-is for CHANNEL, and its signed channel and platform match its name. The
+The first checks one copy's files (a build job's dist/): every
+`update-<channel>-*.json` is for CHANNEL, its signed channel and platform
+match its name, its package was built for CHANNEL, and the package's name
+carries LABEL (a copy for a channel other than the release's own) or no
+label at all. The
 second checks the release workflow itself: it signs manifests only with
 `hearken release --channel="$CHANNEL"` and uploads only that manifest.
 
@@ -36,8 +39,8 @@ MANIFEST = re.compile(
 )
 
 
-def check_dir(folder: Path, channel: str) -> list[str]:
-    """Every manifest in `folder` that is not for `channel`."""
+def check_dir(folder: Path, channel: str, label: str = "") -> list[str]:
+    """Every manifest in `folder` that is not for `channel` and `label`."""
     problems: list[str] = []
     found = 0
     for path in sorted(folder.glob("update-*.json")):
@@ -63,6 +66,12 @@ def check_dir(folder: Path, channel: str) -> list[str]:
         built = signed.get("built")
         if built is not None and built != channel:
             problems.append(f"{path}: its package was built for {built}, not {channel}")
+        archive = str(signed.get("archive", ""))
+        stem = re.sub(r"\.(zip|tar\.gz)$", "", archive)
+        if label and not stem.endswith(f"-{label}"):
+            problems.append(f"{path}: its package {archive!r} does not carry the label {label}")
+        if not label and re.search(r"-for-[a-z0-9-]+$", stem):
+            problems.append(f"{path}: its package {archive!r} carries a label on its own channel")
     if found == 0:
         problems.append(f"{folder}: no update manifest for {channel}")
     return problems
@@ -95,6 +104,7 @@ def check_workflow(text: str) -> list[str]:
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--channel")
+    parser.add_argument("--label", default="")
     parser.add_argument("--workflow", action="store_true")
     parser.add_argument("paths", nargs="*", type=Path)
     args = parser.parse_args(argv)
@@ -102,13 +112,13 @@ def main(argv: list[str]) -> int:
         files = args.paths or [WORKFLOW]
         problems = [f"{f}: {p}" for f in files for p in check_workflow(f.read_text(encoding="utf-8"))]
     elif args.channel and args.paths:
-        problems = [p for d in args.paths for p in check_dir(d, args.channel)]
+        problems = [p for d in args.paths for p in check_dir(d, args.channel, args.label)]
     else:
         parser.error("give --channel and folders, or --workflow")
     for p in problems:
         print(f"::error::{p}" if "GITHUB_ACTIONS" in os.environ else p)
     if not problems:
-        print("Only the release's own channel gets a manifest.")
+        print("Each copy publishes its own channel's manifest only.")
     return 1 if problems else 0
 
 
