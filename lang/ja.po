@@ -86192,6 +86192,11 @@ msgstr "相手の番"
 msgid "{count} new"
 msgstr "新着{count}"
 
+#. Online play: a Pebbles match's line in My games (Hearken rooms.rs), so the name never takes the rest of the line.
+#. placeholders: {names}, {standing}
+msgid "Pebbles with {names}: {standing}"
+msgstr "{names}とPebbles：{standing}"
+
 #. a name: keep it as it is
 msgid "Wicket's"
 msgstr "Wicket's"

@@ -34,3 +34,8 @@ msgstr ""
 #. placeholders: {count}
 msgid "{count} new"
 msgstr ""
+
+#. Online play: a Pebbles match's line in My games (Hearken rooms.rs), so the name never takes the rest of the line.
+#. placeholders: {names}, {standing}
+msgid "Pebbles with {names}: {standing}"
+msgstr ""

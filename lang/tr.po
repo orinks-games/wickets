@@ -94325,6 +94325,11 @@ msgstr "sıra rakipte"
 msgid "{count} new"
 msgstr "{count} yeni"
 
+#. Online play: a Pebbles match's line in My games (Hearken rooms.rs), so the name never takes the rest of the line.
+#. placeholders: {names}, {standing}
+msgid "Pebbles with {names}: {standing}"
+msgstr "Pebbles, rakip {names}: {standing}"
+
 #. a name: keep it as it is
 msgid "Wicket's"
 msgstr "Wicket's"
