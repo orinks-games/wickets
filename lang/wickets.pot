@@ -878,11 +878,19 @@ msgid "No, keep playing"
 msgstr ""
 
 #: crates/parlor-core/src/menus/pause.rs
+msgid "Back to the online game"
+msgstr ""
+
+#: crates/parlor-core/src/menus/pause.rs
 msgid "Stop this run and go back to the title."
 msgstr ""
 
 #: crates/parlor-core/src/menus/pause.rs
 msgid "Stop without counting this challenge, so you can try it again later."
+msgstr ""
+
+#: crates/parlor-core/src/menus/pause.rs
+msgid "Stop here for now. Your seat is kept, and you carry on from here."
 msgstr ""
 
 #: crates/parlor-core/src/menus/pause.rs hearken/crates/hearken-app/src/screens/pause.rs

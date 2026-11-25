@@ -684,11 +684,17 @@ msgstr "Evet, çık"
 msgid "No, keep playing"
 msgstr "Hayır, oynamaya devam et"
 
+msgid "Back to the online game"
+msgstr ""
+
 msgid "Stop this run and go back to the title."
 msgstr "Bu turu bitirir ve başlangıç ekranına döner."
 
 msgid "Stop without counting this challenge, so you can try it again later."
 msgstr "Bu görevi saymadan bitirir, sonra yeniden deneyebilirsiniz."
+
+msgid "Stop here for now. Your seat is kept, and you carry on from here."
+msgstr ""
 
 msgid "Paused"
 msgstr "Duraklatıldı"

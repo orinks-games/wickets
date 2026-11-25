@@ -684,11 +684,17 @@ msgstr "Có, thoát"
 msgid "No, keep playing"
 msgstr "Không, chơi tiếp"
 
+msgid "Back to the online game"
+msgstr ""
+
 msgid "Stop this run and go back to the title."
 msgstr "Dừng lượt này và về màn hình chính."
 
 msgid "Stop without counting this challenge, so you can try it again later."
 msgstr "Dừng mà không tính thử thách này, để lát nữa bạn thử lại."
+
+msgid "Stop here for now. Your seat is kept, and you carry on from here."
+msgstr ""
 
 msgid "Paused"
 msgstr "Tạm dừng"
