@@ -3537,6 +3537,7 @@ dependencies = [
  "parlor-core",
  "serde",
  "wickets-content",
+ "wickets-rules",
 ]
 
 [[package]]
