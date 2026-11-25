@@ -354,6 +354,8 @@ pub fn wait_row(id: &'static str) -> SettingsRow<Parlor> {
         },
         WAIT_HELP,
     )
+    // Left and Right say the change too, as on the Pace row.
+    .value_first(move |ctx| wait_changed(waits(ctx, id)))
 }
 
 /// What the row says once Wait for speech has changed to `on`.
