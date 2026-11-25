@@ -99231,6 +99231,16 @@ msgstr ""
 msgid " No wrong boxes: {bonus} bonus points."
 msgstr ""
 
+#. placeholders: {bonuses}
+#: games/winter-wonderland/src/desk_run.rs
+msgid " No wrong boxes: {bonuses} bonus points."
+msgstr ""
+
+#. placeholders: {bonuses}
+#: games/winter-wonderland/src/desk_run.rs
+msgid " {bonuses} bonus points for stacks with no wrong boxes."
+msgstr ""
+
 #: games/winter-wonderland/src/desk_run.rs
 msgid "letters"
 msgstr ""

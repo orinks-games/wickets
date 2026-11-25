@@ -81415,6 +81415,14 @@ msgstr "{from}のために包みました。{points}点。束{done}に返事完�
 msgid " No wrong boxes: {bonus} bonus points."
 msgstr "間違いなし：ボーナス{bonus}点。"
 
+#. placeholders: {bonuses}
+msgid " No wrong boxes: {bonuses} bonus points."
+msgstr ""
+
+#. placeholders: {bonuses}
+msgid " {bonuses} bonus points for stacks with no wrong boxes."
+msgstr ""
+
 msgid "letters"
 msgstr "通"
 
