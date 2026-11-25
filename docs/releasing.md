@@ -111,8 +111,10 @@ git push origin v1.4.0-alpha.1
 
 The Release workflow builds Windows, macOS and Linux, a copy for each
 channel the release reaches, and publishes them to `orinks-games/wickets`
-as a prerelease named "Wicket's 1.4.0-alpha.1". To
-fix its notes afterwards:
+as a prerelease named "Wicket's 1.4.0-alpha.1". The release stays a draft
+while the builds attach their files and is published once every build has
+finished, so nobody sees it with one platform. If a build fails, the draft
+waits: re-run the failed jobs. To fix its notes afterwards:
 
 ```
 gh release edit v1.4.0-alpha.1 --repo orinks-games/wickets --notes-file docs\release-notes\v1.4.0-alpha.1.md
