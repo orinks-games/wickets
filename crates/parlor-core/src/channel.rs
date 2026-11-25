@@ -19,12 +19,13 @@ pub const CHANNELS: [&str; 3] = ["stable", "beta", "alpha"];
 
 /// The channels whose players install only packages built for them
 /// ([`hearken::UpdateConfig::own_build`]). An alpha copy lists alpha-only
-/// games, and a package built for beta or stable would hide them, so an
-/// alpha player's copy ignores any update that is not an alpha package.
-/// Releases publish only their own channel's manifest anyway
-/// (`tools/check_channel_manifests.py`); this covers manifests already
-/// published another way.
-pub const OWN_BUILD: [&str; 1] = ["alpha"];
+/// games and a beta copy beta ones, and a package built for a steadier
+/// channel would hide them, so these copies ignore any update that is not
+/// a package built for their channel. A release reaches these channels
+/// with copies built for each (`tools/release_channels.py`) and checks
+/// every manifest it publishes (`tools/check_channel_manifests.py`); this
+/// covers a manifest published another way.
+pub const OWN_BUILD: [&str; 2] = ["beta", "alpha"];
 
 /// How ready a game or feature is, and so which copies show it.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
@@ -128,8 +129,8 @@ mod own_build_tests {
     use hearken::Game;
 
     #[test]
-    fn alpha_players_take_only_alpha_packages() {
+    fn beta_and_alpha_players_take_only_their_own_packages() {
         let config = crate::Parlor::updates().expect("released copies update");
-        assert_eq!(config.own_build, ["alpha"]);
+        assert_eq!(config.own_build, ["beta", "alpha"]);
     }
 }

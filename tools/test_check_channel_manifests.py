@@ -11,8 +11,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 import check_channel_manifests as check  # noqa: E402
 
 
-def write(folder: Path, channel: str, signed_channel=None, built=None, platform="windows-x64"):
+def write(folder: Path, channel: str, signed_channel=None, built=None, platform="windows-x64",
+          archive=None):
     manifest = {"format": 1, "channel": signed_channel or channel, "platform": platform}
+    if archive:
+        manifest["archive"] = archive
     if built:
         manifest["built"] = built
     envelope = {"format": 1, "signature": "00", "signed": json.dumps(manifest)}
@@ -55,6 +58,18 @@ class ReleaseFiles(unittest.TestCase):
     def test_a_package_built_for_another_channel_fails(self):
         write(self.dir, "alpha", built="beta")
         self.assertEqual(len(check.check_dir(self.dir, "alpha")), 1)
+
+    def test_a_copy_for_another_channel_carries_its_label(self):
+        write(self.dir, "alpha", built="alpha", archive="wickets-1.9.0-windows-x64-for-alpha.zip")
+        self.assertEqual(check.check_dir(self.dir, "alpha", "for-alpha"), [])
+        self.assertEqual(len(check.check_dir(self.dir, "alpha", "for-beta")), 1)
+        # The release's own copy carries none.
+        self.assertEqual(len(check.check_dir(self.dir, "alpha")), 1)
+
+    def test_the_own_copy_carries_no_label(self):
+        write(self.dir, "stable", built="stable", archive="wickets-1.9.0-linux-x64.tar.gz")
+        self.assertEqual(check.check_dir(self.dir, "stable"), [])
+        self.assertEqual(len(check.check_dir(self.dir, "stable", "for-stable")), 1)
 
     def test_no_manifest_fails(self):
         self.assertEqual(len(check.check_dir(self.dir, "beta")), 1)

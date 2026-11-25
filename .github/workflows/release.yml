@@ -5,7 +5,9 @@ on:
   # tag-release.yml does) builds Windows, macOS and Linux packages and
   # publishes them as that tag's GitHub release. The tag names the update
   # channel: v1.3.0 is stable, v1.3.0-beta.1 is beta, v1.3.0-alpha.1 is
-  # alpha (see docs/releasing.md). Running the workflow by hand builds the
+  # alpha (see docs/releasing.md). A release also reaches the less steady
+  # channels, each with a copy built for it: a stable tag builds stable,
+  # beta and alpha copies, a beta tag beta and alpha. Running the workflow by hand builds the
   # same packages with no release; as a dry run (the default) it only
   # reports their sizes, otherwise it keeps them as run artifacts. Pull requests never
   # build packages.
@@ -18,6 +20,10 @@ on:
         type: choice
         options: [stable, beta, alpha]
         default: stable
+      reach:
+        description: Also build the copies for less steady channels, as a tag on this channel would
+        type: boolean
+        default: false
       dry_run:
         description: Build and sign only, keep no packages (the default)
         type: boolean
@@ -33,18 +39,87 @@ env:
   CMAKE_POLICY_VERSION_MINIMUM: "3.5"
 
 jobs:
+  # The tag names the version and the channel. A stable tag is the
+  # workspace version in Cargo.toml (v1.3.0). A beta or alpha tag is
+  # that version with -beta.N or -alpha.N: the build of the stable
+  # release still to come, so it sorts before it. Cargo.toml keeps the
+  # plain version; the build stamps the tag's in, so About and the update
+  # manifest say 1.3.0 beta 1.
+  #
+  # It also says which channels get a copy (tools/release_channels.py):
+  # the tag's own, and each less steady one that has no release this new
+  # yet. Copies show what is ready for the channel they were built for, so
+  # each channel gets a copy of its own; offering alpha players a stable
+  # package would hide their alpha games (as 1.4.0-beta.3 and 1.3.2 did).
+  plan:
+    name: plan
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    outputs:
+      crate: ${{ steps.version.outputs.crate }}
+      version: ${{ steps.version.outputs.version }}
+      channel: ${{ steps.version.outputs.channel }}
+      channels: ${{ steps.version.outputs.channels }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Name the version and channels
+        id: version
+        shell: bash
+        env:
+          HAND_CHANNEL: ${{ inputs.channel }}
+          HAND_REACH: ${{ inputs.reach }}
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: orinks-games/wickets
+        run: |
+          crate=$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -n1)
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            tag="${GITHUB_REF_NAME#v}"
+            if [ "$tag" = "$crate" ]; then
+              channel=stable
+            elif [[ "$tag" =~ ^"$crate"-(alpha|beta)\.[1-9][0-9]*$ ]]; then
+              channel="${BASH_REMATCH[1]}"
+            else
+              echo "::error::Tag v$tag is not v$crate, v$crate-beta.N or v$crate-alpha.N (the workspace version in Cargo.toml is $crate)."
+              exit 1
+            fi
+            version="$tag"
+            gh api --paginate "repos/$GH_REPO/releases?per_page=100" --jq '.[]' | jq -s . > "$RUNNER_TEMP/releases.json"
+            channels=$(python3 tools/release_channels.py --tag="$GITHUB_REF_NAME" --channel="$channel" "$RUNNER_TEMP/releases.json")
+          else
+            # A hand run builds the one channel it was asked for, or with
+            # reach every channel a tag on it would.
+            channel="${HAND_CHANNEL:-stable}"
+            version="$crate"
+            channels="[\"$channel\"]"
+            if [ "$HAND_REACH" = true ]; then
+              echo '[]' > "$RUNNER_TEMP/releases.json"
+              channels=$(python3 tools/release_channels.py --tag="v$crate" --channel="$channel" "$RUNNER_TEMP/releases.json")
+            fi
+          fi
+          echo "Version $version on $channel; copies for $channels."
+          {
+            echo "crate=$crate"
+            echo "version=$version"
+            echo "channel=$channel"
+            echo "channels=$channels"
+          } >> "$GITHUB_OUTPUT"
+
   build:
-    name: build (${{ matrix.name }})
+    name: build (${{ matrix.platform }}, ${{ matrix.channel }})
+    needs: plan
     strategy:
       fail-fast: false
       matrix:
+        platform: [windows-x64, linux-x64, macos-arm64]
+        channel: ${{ fromJSON(needs.plan.outputs.channels) }}
         include:
-          - name: windows-x64
+          - platform: windows-x64
             os: windows-2025
-          - name: linux-x64
+          - platform: linux-x64
             os: ubuntu-24.04
           # Apple Silicon Macs only (GitHub's macos-15 runners are M1).
-          - name: macos-arm64
+          - platform: macos-arm64
             os: macos-15
     runs-on: ${{ matrix.os }}
     permissions:
@@ -71,42 +146,26 @@ jobs:
           python3 tools/check_spoilers.py --require
           python3 tools/check_drift.py --require
           echo "WICKETS_MODE=full" >> "$GITHUB_ENV"
-      # The tag names the version and the channel. A stable tag is the
-      # workspace version in Cargo.toml (v1.3.0). A beta or alpha tag is
-      # that version with -beta.N or -alpha.N: the build of the stable
-      # release still to come, so it sorts before it. Cargo.toml keeps the
-      # plain version; this step stamps the tag's into the build, so About
-      # and the update manifest say 1.3.0 beta 1.
-      - name: Name the version and channel
+      # This copy's channel, and the label its files carry when that is
+      # not the release's own channel: wickets-1.9.0-windows-x64-for-alpha.zip
+      # beside the plain wickets-1.9.0-windows-x64.zip.
+      - name: Name this copy
         id: version
         shell: bash
         env:
-          HAND_CHANNEL: ${{ inputs.channel }}
+          CRATE: ${{ needs.plan.outputs.crate }}
+          VERSION: ${{ needs.plan.outputs.version }}
+          OWN: ${{ needs.plan.outputs.channel }}
+          CHANNEL: ${{ matrix.channel }}
         run: |
-          crate=$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -n1)
-          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
-            tag="${GITHUB_REF_NAME#v}"
-            if [ "$tag" = "$crate" ]; then
-              channel=stable
-            elif [[ "$tag" =~ ^"$crate"-(alpha|beta)\.[1-9][0-9]*$ ]]; then
-              channel="${BASH_REMATCH[1]}"
-            else
-              echo "::error::Tag v$tag is not v$crate, v$crate-beta.N or v$crate-alpha.N (the workspace version in Cargo.toml is $crate)."
-              exit 1
-            fi
-            version="$tag"
-          else
-            channel="${HAND_CHANNEL:-stable}"
-            version="$crate"
-          fi
-          # Each release publishes the manifest for its own channel only:
-          # alpha players get alpha releases, beta players beta releases.
-          # A beta or stable package leaves out alpha-only games, so
-          # offering it to alpha (as 1.4.0-beta.3 and 1.3.2 did) hides them.
+          label=
+          [ "$CHANNEL" = "$OWN" ] || label="for-$CHANNEL"
           {
-            echo "crate=$crate"
-            echo "version=$version"
-            echo "channel=$channel"
+            echo "crate=$CRATE"
+            echo "version=$VERSION"
+            echo "own=$OWN"
+            echo "channel=$CHANNEL"
+            echo "label=$label"
           } >> "$GITHUB_OUTPUT"
       # Starts from the nightly's compile cache on main, which builds the
       # same release profile with public dependencies only. This build
@@ -209,7 +268,8 @@ jobs:
       # without it, or with a key that does not match update-key. A tag's
       # notes go into the manifest, for the game's What's new. The build is
       # for the tag's channel, so its copies follow that channel and show
-      # what is ready for it (parlor_core::channel).
+      # what is ready for it (parlor_core::channel). A copy for a less steady
+      # channel than the tag's carries its label in its file names.
       - name: Package
         id: package
         shell: bash
@@ -217,13 +277,17 @@ jobs:
           HEARKEN_SEAL_SECRET: ${{ secrets.HEARKEN_SEAL_SECRET }}
           HEARKEN_UPDATE_SECRET: ${{ secrets.HEARKEN_UPDATE_SECRET }}
           CHANNEL: ${{ steps.version.outputs.channel }}
+          LABEL: ${{ steps.version.outputs.label }}
         run: |
+          flags=()
           notes="docs/release-notes/$GITHUB_REF_NAME.md"
           if [[ "$GITHUB_REF" == refs/tags/v* ]] && [ -f "$notes" ]; then
-            hearken release --channel="$CHANNEL" --notes="$notes"
-          else
-            hearken release --channel="$CHANNEL"
+            flags+=(--notes="$notes")
           fi
+          if [ -n "$LABEL" ]; then
+            flags+=(--label="$LABEL")
+          fi
+          hearken release --channel="$CHANNEL" "${flags[@]}"
           # Only one of the two patterns matches on each platform.
           file=
           for f in dist/wickets-*.zip dist/wickets-*.tar.gz; do
@@ -255,14 +319,16 @@ jobs:
             unzip -l "$file" | grep -v '/sounds/' | head -n 40
           fi
       # Fail before anything is published if dist/ holds a manifest for
-      # any channel but this release's own.
-      - name: Check the release's manifests
+      # any channel but this copy's own, or one whose package was built
+      # for another channel.
+      - name: Check the copy's manifest
         shell: bash
         env:
           CHANNEL: ${{ steps.version.outputs.channel }}
+          LABEL: ${{ steps.version.outputs.label }}
         run: |
           if python3 -c '' 2>/dev/null; then py=python3; else py=python; fi
-          "$py" tools/check_channel_manifests.py --channel="$CHANNEL" dist
+          "$py" tools/check_channel_manifests.py --channel="$CHANNEL" --label="$LABEL" dist
       - name: Remove the signing credentials
         if: always() && runner.os == 'macOS'
         shell: bash
@@ -292,7 +358,7 @@ jobs:
           FILE: ${{ steps.package.outputs.file }}
           MANIFEST: ${{ steps.package.outputs.manifest }}
           INDEX: ${{ steps.package.outputs.index }}
-          CHANNEL: ${{ steps.version.outputs.channel }}
+          OWN: ${{ steps.version.outputs.own }}
         run: |
           if [ "$GITHUB_REPOSITORY" != "$GH_REPO" ] && [ "$HAS_RELEASE_TOKEN" != true ]; then
             echo "::error::Run outside $GH_REPO, this needs WICKETS_RELEASE_TOKEN to publish there."; exit 1
@@ -306,7 +372,7 @@ jobs:
           # A beta or alpha release is a prerelease, so the downloads page
           # and GitHub's latest release stay on stable.
           pre=
-          [ "$CHANNEL" = stable ] || pre=--prerelease
+          [ "$OWN" = stable ] || pre=--prerelease
           gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 ||
             gh release create "$GITHUB_REF_NAME" --target "$target" --title "Wicket's ${GITHUB_REF_NAME#v}" --notes-file "$notes" $pre ||
             gh release view "$GITHUB_REF_NAME" >/dev/null
@@ -325,7 +391,7 @@ jobs:
               gh release upload "$GITHUB_REF_NAME" "$RULES" --clobber
             fi
           done
-          # The manifest last, for this release's channel only.
+          # The manifest last, for this copy's channel only.
           gh release upload "$GITHUB_REF_NAME" "$MANIFEST" --clobber
       # A dry run keeps nothing: run artifacts on this public repository
       # can be downloaded by anyone. It reports what it built.
@@ -335,12 +401,19 @@ jobs:
         run: |
           ls -l dist
           du -h dist/*
+          # What each manifest signs (never a key), to check a copy's
+          # channel, build and file names.
+          if python3 -c '' 2>/dev/null; then py=python3; else py=python; fi
+          for f in dist/update-*.json; do
+            echo "$f:"
+            "$py" -c 'import json,sys; m=json.loads(json.load(open(sys.argv[1]))["signed"]); m.pop("notes",None); print(json.dumps(m, indent=1))' "$f"
+          done
       # A hand run that is not a dry run keeps its package as a short-lived
       # run artifact.
       - uses: actions/upload-artifact@v5
         if: github.event_name == 'workflow_dispatch' && !startsWith(github.ref, 'refs/tags/v') && !inputs.dry_run
         with:
-          name: ${{ matrix.name }}
+          name: ${{ matrix.platform }}-${{ matrix.channel }}
           path: |
             ${{ steps.package.outputs.file }}
             ${{ steps.package.outputs.manifest }}
