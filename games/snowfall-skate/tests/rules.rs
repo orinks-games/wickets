@@ -163,3 +163,54 @@ fn a_short_press_is_only_a_stride() {
     s.update(0.2, 0);
     assert_eq!(s.spin_up(), vec![Ev::Spun(Spin::Stride)]);
 }
+
+#[test]
+fn a_snow_step_is_not_spoken_again_at_its_edge() {
+    use snowfall_skate::rules::{Cover, COVER_MARGIN};
+    let mut s = Skate::new(Course::new(level(2), 5, Vec::new()));
+    s.start();
+    let deeper = |evs: &[Ev]| evs.iter().filter(|e| matches!(e, Ev::Deeper(_))).count();
+    s.clear = 59.0;
+    assert!(s.update(DT, 0).contains(&Ev::Deeper(Cover::Settling)));
+    // A lantern lifts it just over the edge, and the snow brings it back.
+    s.clear = 62.0;
+    assert_eq!(deeper(&s.update(DT, 0)), 0);
+    assert_eq!(s.cover(), Cover::Settling);
+    s.clear = 59.0;
+    assert_eq!(deeper(&s.update(DT, 0)), 0);
+    // Well clear again, and the next settling is news.
+    s.clear = 60.0 + COVER_MARGIN + 1.0;
+    s.update(DT, 0);
+    assert_eq!(s.cover(), Cover::Clear);
+    s.clear = 59.0;
+    assert!(s.update(DT, 0).contains(&Ev::Deeper(Cover::Settling)));
+}
+
+#[test]
+fn snow_lines_never_come_round_a_few_seconds_apart() {
+    for p in &PONDS {
+        for seed in 1..6 {
+            let mut s = Skate::new(Course::new(p.level, seed, Vec::new()));
+            s.start();
+            let mut said: Vec<(i64, Ev)> = Vec::new();
+            for _ in 0..(60 * 60 * 50) {
+                if s.ended().is_some() {
+                    break;
+                }
+                for e in s.update(DT, auto_target(&s)) {
+                    if matches!(e, Ev::Deeper(_)) {
+                        if let Some((t, _)) = said.iter().rev().find(|(_, x)| *x == e) {
+                            assert!(
+                                s.now() - t > 10_000,
+                                "pond {} seed {seed}: {e:?} again after {} ms",
+                                p.number,
+                                s.now() - t
+                            );
+                        }
+                        said.push((s.now(), e));
+                    }
+                }
+            }
+        }
+    }
+}
