@@ -146,6 +146,15 @@ shared screen (`results`, `pages`) keeps the shared name. No two screens
 share a name. `python3 tools/check_screen_names.py` enforces this in CI;
 `--list` prints every screen and where it lives.
 
+## Rule: every new game ships with a leaderboard
+
+A new game's daily, weekly and monthly challenges are ranked online from
+the PR that adds them (Orinks, 2026-11-25). Its rules must replay exactly:
+plain structs, a seeded `Rng`, `libm` for maths, and real-time play in
+fixed steps (`FixedStep`), so the same keys give the same score on any
+machine. The ranking itself lives in the overlay; its AGENTS.md has the
+steps.
+
 ## Rule: public text never names private content
 
 This repository is public, and so is everything written about it: PR

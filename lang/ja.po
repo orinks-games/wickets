@@ -66995,229 +66995,6 @@ msgstr "川が凍り、今日は氷の上に市が出ています。"
 msgid "Midnight skate"
 msgstr "真夜中のスケート"
 
-msgid "Snowfall Skate"
-msgstr "Snowfall Skate"
-
-msgid ""
-"A winter special. Skate a frozen pond at night, taking lanterns as they "
-"light, while the snow comes down. Play once, even in practice, to keep it "
-"all year."
-msgstr "冬のスペシャル。雪の降る夜、凍った池を滑り、灯るランタンを手に入れましょう。練習でも一度プレイすれば、一年中残ります。"
-
-msgid ""
-"Skate a frozen pond at night, taking lanterns as they light, while the snow "
-"comes down. The Frost Fair opens in winter."
-msgstr "雪の降る夜、凍った池を滑り、灯るランタンを手に入れましょう。冬にはFrost Fairが開きます。"
-
-msgid ""
-"Snowfall Skate is yours to keep. After the winter, it moves to the Cozy "
-"games."
-msgstr "Snowfall Skateはずっと手元に残ります。冬の後は、ほのぼのゲームに移ります。"
-
-msgid ""
-"A winter special. Skate a frozen pond at night, taking lanterns as they "
-"light, while the snow comes down."
-msgstr "冬のスペシャル。雪の降る夜、凍った池を滑り、灯るランタンを手に入れましょう。"
-
-#. placeholders: {title}
-msgid "{title}: locked."
-msgstr "{title}：ロック中。"
-
-#. placeholders: {points_words}
-msgid "The Frost Fair: best {points_words}."
-msgstr "Frost Fair：ベスト{points_words}。"
-
-msgid "The Frost Fair: not skated yet."
-msgstr "Frost Fair：まだ滑っていません。"
-
-msgid "1 Frost Fair ribbon"
-msgstr "Frost Fairのリボン1本"
-
-#. one sentence of a longer line
-msgid "Frost Fair ribbons"
-msgstr "Frost Fairのリボン"
-
-#. placeholders: {n}
-msgid "{n} Frost Fair ribbons"
-msgstr "Frost Fairのリボン{n}本"
-
-#. placeholders: {b}, {LANTERN_PAIRS}, {whole_tunes}
-msgid ""
-"Lantern skate: best {b} of {LANTERN_PAIRS} in order, the whole tune "
-"{whole_tunes} times."
-msgstr "ランタンスケート：ベストは{LANTERN_PAIRS}中{b}を順番どおり、曲を最後まで{whole_tunes}回。"
-
-msgid "Lantern skate: not skated yet."
-msgstr "ランタンスケート：まだ滑っていません。"
-
-#. placeholders: {stars_words}, {join}, {fair}, {lanterns}
-msgid "Records. {stars_words} in all. {join} {fair} {lanterns}"
-msgstr "記録。合計{stars_words}。{join}{fair}{lanterns}"
-
-#. placeholders: {stars_words}
-#. one sentence of a longer line
-msgid "{stars_words} in all."
-msgstr "合計{stars_words}。"
-
-#. placeholders: {cracks}
-#. one sentence of a longer line
-msgid "Cracks in the ice: {cracks}."
-msgstr "氷のひび：{cracks}。"
-
-#. placeholders: {lanterns}
-#. one sentence of a longer line
-msgid "Lanterns taken: {lanterns}."
-msgstr "手に入れたランタン：{lanterns}。"
-
-#. placeholders: {best_line}
-#. one sentence of a longer line
-msgid "Longest line: {best_line}."
-msgstr "最長の連続：{best_line}。"
-
-#. placeholders: {spins}
-#. one sentence of a longer line
-msgid "Spins landed: {spins}."
-msgstr "着氷したスピン：{spins}。"
-
-#. placeholders: {format}, {lanterns}, {best_line}, {spins}, {drifts}, {cracks}, {sentence_start}
-msgid ""
-"{format}. Lanterns taken: {lanterns}. Longest line: {best_line}. Spins "
-"landed: {spins}. Drifts: {drifts}. Cracks in the ice: {cracks}. "
-"{sentence_start}."
-msgstr ""
-"{format}。手に入れたランタン：{lanterns}。最長の連続：{best_line}。着氷したスピン：{spins}。吹きだまり：{drift"
-"s}。氷のひび：{cracks}。{sentence_start}。"
-
-msgid "1 skate"
-msgstr "スケート1回"
-
-#. placeholders: {n}
-msgid "{n} skates"
-msgstr "スケート{n}回"
-
-#. placeholders: {open}, {stars_words}
-msgid "Choose a pond, {open} of 3 open, {stars_words}"
-msgstr "池を選ぶ、3つ中{open}つ解放済み、{stars_words}"
-
-msgid "Every pond with its stars and best. A star on one opens the next."
-msgstr "すべての池を星とベストと一緒に。一つの池で星を取ると次が解放されます。"
-
-#. placeholders: {LANTERN_ROW}, {n}, {LANTERN_PAIRS}
-msgid "{LANTERN_ROW}, {n} of {LANTERN_PAIRS} tonight"
-msgstr "{LANTERN_ROW}、今夜は{LANTERN_PAIRS}中{n}"
-
-#. placeholders: {LANTERN_ROW}
-msgid "{LANTERN_ROW}, tonight's lanterns"
-msgstr "{LANTERN_ROW}、今夜のランタン"
-
-#. one sentence of a longer line
-msgid "Take the first lit of each pair."
-msgstr "二つのうち、先に灯ったほうを取りましょう。"
-
-#. placeholders: {sentence_start}
-#. one sentence of a longer line
-msgid "{sentence_start} in pairs, the same for everyone tonight."
-msgstr "{sentence_start}が二つずつ。今夜は全員共通です。"
-
-#. placeholders: {sentence_start}
-msgid ""
-"{sentence_start} in pairs, the same for everyone tonight. Take the first "
-"lit of each pair."
-msgstr "{sentence_start}が二つずつ。今夜は全員共通です。二つのうち、先に灯ったほうを取りましょう。"
-
-msgid ""
-"The lantern skate is lit every evening, from 4 in the afternoon to 9 at "
-"night, by your clock."
-msgstr "ランタンスケートは毎晩、時計で午後4時から夜9時まで灯ります。"
-
-msgid "Lanterns in pairs, every evening by your clock."
-msgstr "ランタンが二つずつ。時計で毎晩。"
-
-#. placeholders: {FAIR_ROW}, {points_words}
-msgid "{FAIR_ROW}, best {points_words}"
-msgstr "{FAIR_ROW}、ベスト{points_words}"
-
-#. one sentence of a longer line
-msgid "The long skate down the frozen river, past the stalls."
-msgstr "屋台のそばを通り、凍った川を下る長いスケート。"
-
-#. placeholders: {sentence_start}
-msgid ""
-"The long skate down the frozen river, past the stalls. {sentence_start} on "
-"the day earns this winter's ribbon."
-msgstr "屋台のそばを通り、凍った川を下る長いスケート。当日に{sentence_start}と、この冬のリボンがもらえます。"
-
-#. placeholders: {sentence_start}
-#. one sentence of a longer line
-msgid "{sentence_start} on the day earns this winter's ribbon."
-msgstr "当日に{sentence_start}と、この冬のリボンがもらえます。"
-
-#. placeholders: {fair_date_words}
-msgid "The Frost Fair opens on {fair_date_words}."
-msgstr "Frost Fairは{fair_date_words}に開きます。"
-
-msgid ""
-"The river freezes once a winter for the fair, and you skate it for a ribbon."
-msgstr "川は冬に一度だけ市のために凍り、そこを滑ってリボンを目指します。"
-
-msgid "Skate the village pond to midnight and the fireworks."
-msgstr "村の池を、真夜中の花火まで滑りましょう。"
-
-msgid ""
-"The midnight skate opens at 11 at night on New Year's Eve, by your clock, "
-"until 1 in the morning."
-msgstr "真夜中のスケートは、時計で大みそかの夜11時から朝1時まで開きます。"
-
-msgid "Skate to midnight on New Year's Eve."
-msgstr "大みそか、真夜中まで滑りましょう。"
-
-msgid "Practice skate"
-msgstr "練習スケート"
-
-msgid ""
-"The village pond, slowly, with no snow and nothing scored. Every lantern is "
-"named."
-msgstr "雪もスコアもない、ゆっくりした村の池。ランタンごとにレーンを伝えます。"
-
-msgid ""
-"Your stars and bests on every pond, the Frost Fair and the lantern skate, "
-"your tallies, and your challenge results."
-msgstr "すべての池、Frost Fair、ランタンスケートの星とベスト、集計、チャレンジの結果。"
-
-msgid ""
-"Plays the lanterns, the drifts, the thin ice, your partner and the spin."
-msgstr "ランタン、吹きだまり、薄い氷、パートナー、スピンの音を再生します。"
-
-#. one sentence of a longer line
-msgid ""
-"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
-"every player."
-msgstr "今夜の池、薄氷の週、真冬のスケート：全員が同じ氷を滑ります。"
-
-#. placeholders: {resets}
-msgid ""
-"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
-"every player. {resets}"
-msgstr "今夜の池、薄氷の週、真冬のスケート：全員が同じ氷を滑ります。{resets}"
-
-msgid "Spoken call-outs: on. The game also names each lantern's lane."
-msgstr "音声の案内：オン。ランタンのレーンも伝えます。"
-
-msgid "Spoken call-outs: off. The lanterns play without names."
-msgstr "音声の案内：オフ。ランタンはレーンを伝えずに鳴ります。"
-
-msgid "When on, the game also names each lantern's lane as it lights."
-msgstr "オンにすると、ランタンが灯るたびにレーンも伝えます。"
-
-msgid ""
-"Clear your stars and ribbons, and start Snowfall Skate over? Best scores "
-"and settings are kept."
-msgstr "星とリボンを消して、Snowfall Skateを最初からやり直しますか？ベストスコアと設定は残ります。"
-
-msgid ""
-"Clears your stars, ribbons and tallies. Best scores and challenges are kept."
-msgstr "星、リボン、集計を消します。ベストスコアとチャレンジは残ります。"
-
 msgid "waltz-a"
 msgstr ""
 
@@ -67299,6 +67076,9 @@ msgstr "Snowfall Skateのタイトルに戻ります。"
 
 msgid "midnight"
 msgstr ""
+
+msgid "Practice skate"
+msgstr "練習スケート"
 
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
@@ -67815,6 +67595,11 @@ msgid ""
 "Lanterns taken: {taken} of {passed_count}. Longest line: {best_line}."
 msgstr "手に入れたランタン：{passed_count}個中{taken}個。最長の連続：{best_line}。"
 
+#. placeholders: {best_line}
+#. one sentence of a longer line
+msgid "Longest line: {best_line}."
+msgstr "最長の連続：{best_line}。"
+
 #. placeholders: {wrong}
 msgid "Taken out of order: {wrong}."
 msgstr "順番違いで取ったもの：{wrong}。"
@@ -67957,6 +67742,221 @@ msgstr ""
 
 msgid "lantern skate"
 msgstr ""
+
+msgid "Snowfall Skate"
+msgstr "Snowfall Skate"
+
+msgid ""
+"A winter special. Skate a frozen pond at night, taking lanterns as they "
+"light, while the snow comes down. Play once, even in practice, to keep it "
+"all year."
+msgstr "冬のスペシャル。雪の降る夜、凍った池を滑り、灯るランタンを手に入れましょう。練習でも一度プレイすれば、一年中残ります。"
+
+msgid ""
+"Skate a frozen pond at night, taking lanterns as they light, while the snow "
+"comes down. The Frost Fair opens in winter."
+msgstr "雪の降る夜、凍った池を滑り、灯るランタンを手に入れましょう。冬にはFrost Fairが開きます。"
+
+msgid ""
+"Snowfall Skate is yours to keep. After the winter, it moves to the Cozy "
+"games."
+msgstr "Snowfall Skateはずっと手元に残ります。冬の後は、ほのぼのゲームに移ります。"
+
+msgid ""
+"A winter special. Skate a frozen pond at night, taking lanterns as they "
+"light, while the snow comes down."
+msgstr "冬のスペシャル。雪の降る夜、凍った池を滑り、灯るランタンを手に入れましょう。"
+
+#. placeholders: {title}
+msgid "{title}: locked."
+msgstr "{title}：ロック中。"
+
+#. placeholders: {points_words}
+msgid "The Frost Fair: best {points_words}."
+msgstr "Frost Fair：ベスト{points_words}。"
+
+msgid "The Frost Fair: not skated yet."
+msgstr "Frost Fair：まだ滑っていません。"
+
+msgid "1 Frost Fair ribbon"
+msgstr "Frost Fairのリボン1本"
+
+#. one sentence of a longer line
+msgid "Frost Fair ribbons"
+msgstr "Frost Fairのリボン"
+
+#. placeholders: {n}
+msgid "{n} Frost Fair ribbons"
+msgstr "Frost Fairのリボン{n}本"
+
+#. placeholders: {b}, {LANTERN_PAIRS}, {whole_tunes}
+msgid ""
+"Lantern skate: best {b} of {LANTERN_PAIRS} in order, the whole tune "
+"{whole_tunes} times."
+msgstr "ランタンスケート：ベストは{LANTERN_PAIRS}中{b}を順番どおり、曲を最後まで{whole_tunes}回。"
+
+msgid "Lantern skate: not skated yet."
+msgstr "ランタンスケート：まだ滑っていません。"
+
+#. placeholders: {stars_words}, {join}, {fair}, {lanterns}
+msgid "Records. {stars_words} in all. {join} {fair} {lanterns}"
+msgstr "記録。合計{stars_words}。{join}{fair}{lanterns}"
+
+#. placeholders: {stars_words}
+#. one sentence of a longer line
+msgid "{stars_words} in all."
+msgstr "合計{stars_words}。"
+
+#. placeholders: {cracks}
+#. one sentence of a longer line
+msgid "Cracks in the ice: {cracks}."
+msgstr "氷のひび：{cracks}。"
+
+#. placeholders: {lanterns}
+#. one sentence of a longer line
+msgid "Lanterns taken: {lanterns}."
+msgstr "手に入れたランタン：{lanterns}。"
+
+#. placeholders: {spins}
+#. one sentence of a longer line
+msgid "Spins landed: {spins}."
+msgstr "着氷したスピン：{spins}。"
+
+#. placeholders: {format}, {lanterns}, {best_line}, {spins}, {drifts}, {cracks}, {sentence_start}
+msgid ""
+"{format}. Lanterns taken: {lanterns}. Longest line: {best_line}. Spins "
+"landed: {spins}. Drifts: {drifts}. Cracks in the ice: {cracks}. "
+"{sentence_start}."
+msgstr ""
+"{format}。手に入れたランタン：{lanterns}。最長の連続：{best_line}。着氷したスピン：{spins}。吹きだまり：{drift"
+"s}。氷のひび：{cracks}。{sentence_start}。"
+
+msgid "1 skate"
+msgstr "スケート1回"
+
+#. placeholders: {n}
+msgid "{n} skates"
+msgstr "スケート{n}回"
+
+#. placeholders: {open}, {stars_words}
+msgid "Choose a pond, {open} of 3 open, {stars_words}"
+msgstr "池を選ぶ、3つ中{open}つ解放済み、{stars_words}"
+
+msgid "Every pond with its stars and best. A star on one opens the next."
+msgstr "すべての池を星とベストと一緒に。一つの池で星を取ると次が解放されます。"
+
+#. placeholders: {LANTERN_ROW}, {n}, {LANTERN_PAIRS}
+msgid "{LANTERN_ROW}, {n} of {LANTERN_PAIRS} tonight"
+msgstr "{LANTERN_ROW}、今夜は{LANTERN_PAIRS}中{n}"
+
+#. placeholders: {LANTERN_ROW}
+msgid "{LANTERN_ROW}, tonight's lanterns"
+msgstr "{LANTERN_ROW}、今夜のランタン"
+
+#. one sentence of a longer line
+msgid "Take the first lit of each pair."
+msgstr "二つのうち、先に灯ったほうを取りましょう。"
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid "{sentence_start} in pairs, the same for everyone tonight."
+msgstr "{sentence_start}が二つずつ。今夜は全員共通です。"
+
+#. placeholders: {sentence_start}
+msgid ""
+"{sentence_start} in pairs, the same for everyone tonight. Take the first "
+"lit of each pair."
+msgstr "{sentence_start}が二つずつ。今夜は全員共通です。二つのうち、先に灯ったほうを取りましょう。"
+
+msgid ""
+"The lantern skate is lit every evening, from 4 in the afternoon to 9 at "
+"night, by your clock."
+msgstr "ランタンスケートは毎晩、時計で午後4時から夜9時まで灯ります。"
+
+msgid "Lanterns in pairs, every evening by your clock."
+msgstr "ランタンが二つずつ。時計で毎晩。"
+
+#. placeholders: {FAIR_ROW}, {points_words}
+msgid "{FAIR_ROW}, best {points_words}"
+msgstr "{FAIR_ROW}、ベスト{points_words}"
+
+#. one sentence of a longer line
+msgid "The long skate down the frozen river, past the stalls."
+msgstr "屋台のそばを通り、凍った川を下る長いスケート。"
+
+#. placeholders: {sentence_start}
+msgid ""
+"The long skate down the frozen river, past the stalls. {sentence_start} on "
+"the day earns this winter's ribbon."
+msgstr "屋台のそばを通り、凍った川を下る長いスケート。当日に{sentence_start}と、この冬のリボンがもらえます。"
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid "{sentence_start} on the day earns this winter's ribbon."
+msgstr "当日に{sentence_start}と、この冬のリボンがもらえます。"
+
+#. placeholders: {fair_date_words}
+msgid "The Frost Fair opens on {fair_date_words}."
+msgstr "Frost Fairは{fair_date_words}に開きます。"
+
+msgid ""
+"The river freezes once a winter for the fair, and you skate it for a ribbon."
+msgstr "川は冬に一度だけ市のために凍り、そこを滑ってリボンを目指します。"
+
+msgid "Skate the village pond to midnight and the fireworks."
+msgstr "村の池を、真夜中の花火まで滑りましょう。"
+
+msgid ""
+"The midnight skate opens at 11 at night on New Year's Eve, by your clock, "
+"until 1 in the morning."
+msgstr "真夜中のスケートは、時計で大みそかの夜11時から朝1時まで開きます。"
+
+msgid "Skate to midnight on New Year's Eve."
+msgstr "大みそか、真夜中まで滑りましょう。"
+
+msgid ""
+"The village pond, slowly, with no snow and nothing scored. Every lantern is "
+"named."
+msgstr "雪もスコアもない、ゆっくりした村の池。ランタンごとにレーンを伝えます。"
+
+msgid ""
+"Your stars and bests on every pond, the Frost Fair and the lantern skate, "
+"your tallies, and your challenge results."
+msgstr "すべての池、Frost Fair、ランタンスケートの星とベスト、集計、チャレンジの結果。"
+
+msgid ""
+"Plays the lanterns, the drifts, the thin ice, your partner and the spin."
+msgstr "ランタン、吹きだまり、薄い氷、パートナー、スピンの音を再生します。"
+
+#. one sentence of a longer line
+msgid ""
+"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
+"every player."
+msgstr "今夜の池、薄氷の週、真冬のスケート：全員が同じ氷を滑ります。"
+
+#. placeholders: {resets}
+msgid ""
+"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
+"every player. {resets}"
+msgstr "今夜の池、薄氷の週、真冬のスケート：全員が同じ氷を滑ります。{resets}"
+
+msgid "Spoken call-outs: on. The game also names each lantern's lane."
+msgstr "音声の案内：オン。ランタンのレーンも伝えます。"
+
+msgid "Spoken call-outs: off. The lanterns play without names."
+msgstr "音声の案内：オフ。ランタンはレーンを伝えずに鳴ります。"
+
+msgid "When on, the game also names each lantern's lane as it lights."
+msgstr "オンにすると、ランタンが灯るたびにレーンも伝えます。"
+
+msgid ""
+"Clear your stars and ribbons, and start Snowfall Skate over? Best scores "
+"and settings are kept."
+msgstr "星とリボンを消して、Snowfall Skateを最初からやり直しますか？ベストスコアと設定は残ります。"
+
+msgid ""
+"Clears your stars, ribbons and tallies. Best scores and challenges are kept."
+msgstr "星、リボン、集計を消します。ベストスコアとチャレンジは残ります。"
 
 msgid "the middle"
 msgstr "真ん中"

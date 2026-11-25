@@ -1,9 +1,5 @@
-//! Every integration test of this crate, built as one test binary:
-//! each linked binary carries SDL and Prism, so one link beats several.
-//! Add a new test file here as a module.
+#[cfg(wickets_secrets)]
+include!("../../../secrets/overlay/game-snowfall-skate-tests.rs");
 
-mod music;
-mod rules;
-mod season;
-mod sounds;
-mod walkthrough;
+#[cfg(not(wickets_secrets))]
+include!("public.rs");

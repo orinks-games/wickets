@@ -19,7 +19,13 @@
 //! Time is in milliseconds from the push-off. Everything comes from a
 //! seeded [`Rng`], so a test can skate the same pond twice.
 
-use parlor_core::Rng;
+use wickets_rules::{FixedStep, Rng};
+
+/// Steps a second: the skate moves a millisecond at a time, so it plays
+/// the same at any frame rate and replays step for step.
+pub const STEPS_HZ: f64 = 1000.0;
+/// The longest frame a skate catches up on in one update.
+const MAX_FRAME: f64 = 60.0;
 
 /// The banks: `x` runs from minus this to this.
 pub const BANK: f64 = 100.0;
@@ -589,6 +595,7 @@ pub struct Tally {
 pub struct Skate {
     pub course: Course,
     t: f64,
+    clock: FixedStep,
     pub x: f64,
     /// How much of the ice is clear of snow, out of [`CLEAR_FULL`].
     pub clear: f64,
@@ -618,6 +625,7 @@ impl Skate {
         let mut s = Skate {
             course,
             t: 0.0,
+            clock: FixedStep::hz(STEPS_HZ).with_max_frame(MAX_FRAME),
             x: 0.0,
             clear: CLEAR_FULL,
             score: 0,
@@ -793,7 +801,19 @@ impl Skate {
         if !self.started || self.ended.is_some() {
             return evs;
         }
-        self.t += dt * 1000.0;
+        let mut clock = self.clock;
+        clock.advance(dt, |_| self.tick(lean, &mut evs));
+        self.clock = clock;
+        evs
+    }
+
+    /// One millisecond, leaning as [`Skate::update`] takes it.
+    pub fn tick(&mut self, lean: i32, evs: &mut Vec<Ev>) {
+        if !self.started || self.ended.is_some() {
+            return;
+        }
+        let dt = 1.0 / STEPS_HZ;
+        self.t += 1.0;
         let now = self.now();
         self.course.extend(now + HORIZON_MS);
         self.grow();
@@ -913,11 +933,10 @@ impl Skate {
             self.cover = self.cover.max(Cover::of(self.clear - COVER_MARGIN));
         }
         if snow > 0.0 && self.clear <= 0.0 {
-            self.end(End::SnowedOver, &mut evs);
+            self.end(End::SnowedOver, evs);
         } else if self.course.end.is_some_and(|e| now >= e) {
-            self.end(End::Done, &mut evs);
+            self.end(End::Done, evs);
         }
-        evs
     }
 
     fn end(&mut self, end: End, evs: &mut Vec<Ev>) {

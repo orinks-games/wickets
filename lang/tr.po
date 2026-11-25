@@ -73405,260 +73405,6 @@ msgstr "Nehir dondu ve panayır bugün buzun üstünde."
 msgid "Midnight skate"
 msgstr "Gece yarısı pateni"
 
-msgid "Snowfall Skate"
-msgstr "Snowfall Skate"
-
-msgid ""
-"A winter special. Skate a frozen pond at night, taking lanterns as they "
-"light, while the snow comes down. Play once, even in practice, to keep it "
-"all year."
-msgstr ""
-"Bir kış özeli. Kar yağarken geceleyin donmuş bir gölette kayın, fenerleri "
-"yandıkça alın. Bütün yıl sizde kalması için bir kez, alıştırmada bile olsa "
-"oynayın."
-
-msgid ""
-"Skate a frozen pond at night, taking lanterns as they light, while the snow "
-"comes down. The Frost Fair opens in winter."
-msgstr ""
-"Kar yağarken geceleyin donmuş bir gölette kayın, fenerleri yandıkça alın. "
-"Frost Fair kışın açılır."
-
-msgid ""
-"Snowfall Skate is yours to keep. After the winter, it moves to the Cozy "
-"games."
-msgstr "Snowfall Skate artık sizin. Kıştan sonra Sakin oyunlara geçer."
-
-msgid ""
-"A winter special. Skate a frozen pond at night, taking lanterns as they "
-"light, while the snow comes down."
-msgstr ""
-"Bir kış özeli. Kar yağarken geceleyin donmuş bir gölette kayın, fenerleri "
-"yandıkça alın."
-
-#. placeholders: {title}
-msgid "{title}: locked."
-msgstr "{title}: kilitli."
-
-#. placeholders: {points_words}
-msgid "The Frost Fair: best {points_words}."
-msgstr "Frost Fair: rekor {points_words}."
-
-msgid "The Frost Fair: not skated yet."
-msgstr "Frost Fair: henüz kayılmadı."
-
-msgid "1 Frost Fair ribbon"
-msgstr "1 Frost Fair kurdelesi"
-
-#. one sentence of a longer line
-msgid "Frost Fair ribbons"
-msgstr "Frost Fair kurdelesi"
-
-#. placeholders: {n}
-msgid "{n} Frost Fair ribbons"
-msgstr "{n} Frost Fair kurdelesi"
-
-#. placeholders: {b}, {LANTERN_PAIRS}, {whole_tunes}
-msgid ""
-"Lantern skate: best {b} of {LANTERN_PAIRS} in order, the whole tune "
-"{whole_tunes} times."
-msgstr ""
-"Fener pateni: rekor, {LANTERN_PAIRS} fenerden {b} tanesi sırayla, bütün "
-"ezgi {whole_tunes} kez."
-
-msgid "Lantern skate: not skated yet."
-msgstr "Fener pateni: henüz kayılmadı."
-
-#. placeholders: {stars_words}, {join}, {fair}, {lanterns}
-msgid "Records. {stars_words} in all. {join} {fair} {lanterns}"
-msgstr "Kayıtlar. Toplam {stars_words}. {join} {fair} {lanterns}"
-
-#. placeholders: {stars_words}
-#. one sentence of a longer line
-msgid "{stars_words} in all."
-msgstr "Toplam {stars_words}."
-
-#. placeholders: {cracks}
-#. one sentence of a longer line
-msgid "Cracks in the ice: {cracks}."
-msgstr "Buzdaki çatlaklar: {cracks}."
-
-#. placeholders: {lanterns}
-#. one sentence of a longer line
-msgid "Lanterns taken: {lanterns}."
-msgstr "Alınan fenerler: {lanterns}."
-
-#. placeholders: {best_line}
-#. one sentence of a longer line
-msgid "Longest line: {best_line}."
-msgstr "En uzun zincir: {best_line}."
-
-#. placeholders: {spins}
-#. one sentence of a longer line
-msgid "Spins landed: {spins}."
-msgstr "İndirilen piruetler: {spins}."
-
-#. placeholders: {format}, {lanterns}, {best_line}, {spins}, {drifts}, {cracks}, {sentence_start}
-msgid ""
-"{format}. Lanterns taken: {lanterns}. Longest line: {best_line}. Spins "
-"landed: {spins}. Drifts: {drifts}. Cracks in the ice: {cracks}. "
-"{sentence_start}."
-msgstr ""
-"{format}. Alınan fenerler: {lanterns}. En uzun zincir: {best_line}. "
-"İndirilen piruetler: {spins}. Kar yığınları: {drifts}. Buzdaki çatlaklar: "
-"{cracks}. {sentence_start}."
-
-msgid "1 skate"
-msgstr "1 kayış"
-
-#. placeholders: {n}
-msgid "{n} skates"
-msgstr "{n} kayış"
-
-#. placeholders: {open}, {stars_words}
-msgid "Choose a pond, {open} of 3 open, {stars_words}"
-msgstr "Gölet seç, açık {open}, toplam 3, {stars_words}"
-
-msgid "Every pond with its stars and best. A star on one opens the next."
-msgstr ""
-"Yıldızları ve rekorlarıyla her gölet. Birinde alınan yıldız sıradakini açar."
-
-#. placeholders: {LANTERN_ROW}, {n}, {LANTERN_PAIRS}
-msgid "{LANTERN_ROW}, {n} of {LANTERN_PAIRS} tonight"
-msgstr "{LANTERN_ROW}, bu akşam {n}, toplam {LANTERN_PAIRS}"
-
-#. placeholders: {LANTERN_ROW}
-msgid "{LANTERN_ROW}, tonight's lanterns"
-msgstr "{LANTERN_ROW}, bu akşamın fenerleri"
-
-#. one sentence of a longer line
-msgid "Take the first lit of each pair."
-msgstr "Her çiftin önce yananını alın."
-
-#. placeholders: {sentence_start}
-#. one sentence of a longer line
-msgid "{sentence_start} in pairs, the same for everyone tonight."
-msgstr "{sentence_start} çiftler halinde, bu akşam herkes için aynı."
-
-#. placeholders: {sentence_start}
-msgid ""
-"{sentence_start} in pairs, the same for everyone tonight. Take the first "
-"lit of each pair."
-msgstr ""
-"{sentence_start} çiftler halinde, bu akşam herkes için aynı. Her çiftin "
-"önce yananını alın."
-
-msgid ""
-"The lantern skate is lit every evening, from 4 in the afternoon to 9 at "
-"night, by your clock."
-msgstr ""
-"Fener pateni her akşam, saatinize göre öğleden sonra 4'ten gece 9'a kadar "
-"yanar."
-
-msgid "Lanterns in pairs, every evening by your clock."
-msgstr "Çiftler halinde fenerler, her akşam saatinize göre."
-
-#. placeholders: {FAIR_ROW}, {points_words}
-msgid "{FAIR_ROW}, best {points_words}"
-msgstr "{FAIR_ROW}, rekor {points_words}"
-
-#. one sentence of a longer line
-msgid "The long skate down the frozen river, past the stalls."
-msgstr "Donmuş nehir boyunca, tezgâhların önünden uzun bir kayış."
-
-#. placeholders: {sentence_start}
-msgid ""
-"The long skate down the frozen river, past the stalls. {sentence_start} on "
-"the day earns this winter's ribbon."
-msgstr ""
-"Donmuş nehir boyunca, tezgâhların önünden uzun bir kayış. Kendi gününde "
-"{sentence_start} bu kışın kurdelesini kazandırır."
-
-#. placeholders: {sentence_start}
-#. one sentence of a longer line
-msgid "{sentence_start} on the day earns this winter's ribbon."
-msgstr "Kendi gününde {sentence_start} bu kışın kurdelesini kazandırır."
-
-#. placeholders: {fair_date_words}
-msgid "The Frost Fair opens on {fair_date_words}."
-msgstr "Frost Fair açılış tarihi: {fair_date_words}."
-
-msgid ""
-"The river freezes once a winter for the fair, and you skate it for a ribbon."
-msgstr ""
-"Nehir panayır için kışta bir kez donar ve bir kurdele için orada kayarsınız."
-
-msgid "Skate the village pond to midnight and the fireworks."
-msgstr "Köy göletinde gece yarısına ve havai fişeklere kadar kayın."
-
-msgid ""
-"The midnight skate opens at 11 at night on New Year's Eve, by your clock, "
-"until 1 in the morning."
-msgstr ""
-"Gece yarısı pateni yılbaşı gecesi saatinize göre gece 11'de açılır, sabah "
-"1'e kadar sürer."
-
-msgid "Skate to midnight on New Year's Eve."
-msgstr "Yılbaşı gecesi gece yarısına kadar kayın."
-
-msgid "Practice skate"
-msgstr "Alıştırma pateni"
-
-msgid ""
-"The village pond, slowly, with no snow and nothing scored. Every lantern is "
-"named."
-msgstr "Köy göleti, yavaşça, karsız ve puansız. Her fenerin adı söylenir."
-
-msgid ""
-"Your stars and bests on every pond, the Frost Fair and the lantern skate, "
-"your tallies, and your challenge results."
-msgstr ""
-"Her gölette, Frost Fair'de ve fener pateninde yıldızlarınız ve "
-"rekorlarınız, sayılarınız ve görev sonuçlarınız."
-
-msgid ""
-"Plays the lanterns, the drifts, the thin ice, your partner and the spin."
-msgstr ""
-"Fenerleri, kar yığınlarını, ince buzu, partnerinizi ve piruet sesini çalar."
-
-#. one sentence of a longer line
-msgid ""
-"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
-"every player."
-msgstr ""
-"Bu akşamın göleti, ince buz haftası ve karakış pateni: her oyuncu için aynı "
-"buz."
-
-#. placeholders: {resets}
-msgid ""
-"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
-"every player. {resets}"
-msgstr ""
-"Bu akşamın göleti, ince buz haftası ve karakış pateni: her oyuncu için aynı "
-"buz. {resets}"
-
-msgid "Spoken call-outs: on. The game also names each lantern's lane."
-msgstr "Sesli bildirimler: açık. Oyun her fenerin şeridini de söyler."
-
-msgid "Spoken call-outs: off. The lanterns play without names."
-msgstr "Sesli bildirimler: kapalı. Fenerler adsız çalar."
-
-msgid "When on, the game also names each lantern's lane as it lights."
-msgstr "Açıkken oyun her fenerin şeridini yanarken de söyler."
-
-msgid ""
-"Clear your stars and ribbons, and start Snowfall Skate over? Best scores "
-"and settings are kept."
-msgstr ""
-"Yıldızlarınız ve kurdeleleriniz silinip Snowfall Skate baştan başlasın mı? "
-"Rekorlar ve ayarlar kalır."
-
-msgid ""
-"Clears your stars, ribbons and tallies. Best scores and challenges are kept."
-msgstr ""
-"Yıldızlarınızı, kurdelelerinizi ve sayılarınızı siler. Rekorlar ve görevler "
-"kalır."
-
 msgid "waltz-a"
 msgstr ""
 
@@ -73742,6 +73488,9 @@ msgstr "Snowfall Skate başlangıç ekranına döner."
 
 msgid "midnight"
 msgstr ""
+
+msgid "Practice skate"
+msgstr "Alıştırma pateni"
 
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
@@ -74275,6 +74024,11 @@ msgstr ""
 "Alınan fenerler: {taken}, toplam {passed_count}. En uzun zincir: "
 "{best_line}."
 
+#. placeholders: {best_line}
+#. one sentence of a longer line
+msgid "Longest line: {best_line}."
+msgstr "En uzun zincir: {best_line}."
+
 #. placeholders: {wrong}
 msgid "Taken out of order: {wrong}."
 msgstr "Sırasız alınan: {wrong}."
@@ -74427,6 +74181,252 @@ msgstr ""
 
 msgid "lantern skate"
 msgstr ""
+
+msgid "Snowfall Skate"
+msgstr "Snowfall Skate"
+
+msgid ""
+"A winter special. Skate a frozen pond at night, taking lanterns as they "
+"light, while the snow comes down. Play once, even in practice, to keep it "
+"all year."
+msgstr ""
+"Bir kış özeli. Kar yağarken geceleyin donmuş bir gölette kayın, fenerleri "
+"yandıkça alın. Bütün yıl sizde kalması için bir kez, alıştırmada bile olsa "
+"oynayın."
+
+msgid ""
+"Skate a frozen pond at night, taking lanterns as they light, while the snow "
+"comes down. The Frost Fair opens in winter."
+msgstr ""
+"Kar yağarken geceleyin donmuş bir gölette kayın, fenerleri yandıkça alın. "
+"Frost Fair kışın açılır."
+
+msgid ""
+"Snowfall Skate is yours to keep. After the winter, it moves to the Cozy "
+"games."
+msgstr "Snowfall Skate artık sizin. Kıştan sonra Sakin oyunlara geçer."
+
+msgid ""
+"A winter special. Skate a frozen pond at night, taking lanterns as they "
+"light, while the snow comes down."
+msgstr ""
+"Bir kış özeli. Kar yağarken geceleyin donmuş bir gölette kayın, fenerleri "
+"yandıkça alın."
+
+#. placeholders: {title}
+msgid "{title}: locked."
+msgstr "{title}: kilitli."
+
+#. placeholders: {points_words}
+msgid "The Frost Fair: best {points_words}."
+msgstr "Frost Fair: rekor {points_words}."
+
+msgid "The Frost Fair: not skated yet."
+msgstr "Frost Fair: henüz kayılmadı."
+
+msgid "1 Frost Fair ribbon"
+msgstr "1 Frost Fair kurdelesi"
+
+#. one sentence of a longer line
+msgid "Frost Fair ribbons"
+msgstr "Frost Fair kurdelesi"
+
+#. placeholders: {n}
+msgid "{n} Frost Fair ribbons"
+msgstr "{n} Frost Fair kurdelesi"
+
+#. placeholders: {b}, {LANTERN_PAIRS}, {whole_tunes}
+msgid ""
+"Lantern skate: best {b} of {LANTERN_PAIRS} in order, the whole tune "
+"{whole_tunes} times."
+msgstr ""
+"Fener pateni: rekor, {LANTERN_PAIRS} fenerden {b} tanesi sırayla, bütün "
+"ezgi {whole_tunes} kez."
+
+msgid "Lantern skate: not skated yet."
+msgstr "Fener pateni: henüz kayılmadı."
+
+#. placeholders: {stars_words}, {join}, {fair}, {lanterns}
+msgid "Records. {stars_words} in all. {join} {fair} {lanterns}"
+msgstr "Kayıtlar. Toplam {stars_words}. {join} {fair} {lanterns}"
+
+#. placeholders: {stars_words}
+#. one sentence of a longer line
+msgid "{stars_words} in all."
+msgstr "Toplam {stars_words}."
+
+#. placeholders: {cracks}
+#. one sentence of a longer line
+msgid "Cracks in the ice: {cracks}."
+msgstr "Buzdaki çatlaklar: {cracks}."
+
+#. placeholders: {lanterns}
+#. one sentence of a longer line
+msgid "Lanterns taken: {lanterns}."
+msgstr "Alınan fenerler: {lanterns}."
+
+#. placeholders: {spins}
+#. one sentence of a longer line
+msgid "Spins landed: {spins}."
+msgstr "İndirilen piruetler: {spins}."
+
+#. placeholders: {format}, {lanterns}, {best_line}, {spins}, {drifts}, {cracks}, {sentence_start}
+msgid ""
+"{format}. Lanterns taken: {lanterns}. Longest line: {best_line}. Spins "
+"landed: {spins}. Drifts: {drifts}. Cracks in the ice: {cracks}. "
+"{sentence_start}."
+msgstr ""
+"{format}. Alınan fenerler: {lanterns}. En uzun zincir: {best_line}. "
+"İndirilen piruetler: {spins}. Kar yığınları: {drifts}. Buzdaki çatlaklar: "
+"{cracks}. {sentence_start}."
+
+msgid "1 skate"
+msgstr "1 kayış"
+
+#. placeholders: {n}
+msgid "{n} skates"
+msgstr "{n} kayış"
+
+#. placeholders: {open}, {stars_words}
+msgid "Choose a pond, {open} of 3 open, {stars_words}"
+msgstr "Gölet seç, açık {open}, toplam 3, {stars_words}"
+
+msgid "Every pond with its stars and best. A star on one opens the next."
+msgstr ""
+"Yıldızları ve rekorlarıyla her gölet. Birinde alınan yıldız sıradakini açar."
+
+#. placeholders: {LANTERN_ROW}, {n}, {LANTERN_PAIRS}
+msgid "{LANTERN_ROW}, {n} of {LANTERN_PAIRS} tonight"
+msgstr "{LANTERN_ROW}, bu akşam {n}, toplam {LANTERN_PAIRS}"
+
+#. placeholders: {LANTERN_ROW}
+msgid "{LANTERN_ROW}, tonight's lanterns"
+msgstr "{LANTERN_ROW}, bu akşamın fenerleri"
+
+#. one sentence of a longer line
+msgid "Take the first lit of each pair."
+msgstr "Her çiftin önce yananını alın."
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid "{sentence_start} in pairs, the same for everyone tonight."
+msgstr "{sentence_start} çiftler halinde, bu akşam herkes için aynı."
+
+#. placeholders: {sentence_start}
+msgid ""
+"{sentence_start} in pairs, the same for everyone tonight. Take the first "
+"lit of each pair."
+msgstr ""
+"{sentence_start} çiftler halinde, bu akşam herkes için aynı. Her çiftin "
+"önce yananını alın."
+
+msgid ""
+"The lantern skate is lit every evening, from 4 in the afternoon to 9 at "
+"night, by your clock."
+msgstr ""
+"Fener pateni her akşam, saatinize göre öğleden sonra 4'ten gece 9'a kadar "
+"yanar."
+
+msgid "Lanterns in pairs, every evening by your clock."
+msgstr "Çiftler halinde fenerler, her akşam saatinize göre."
+
+#. placeholders: {FAIR_ROW}, {points_words}
+msgid "{FAIR_ROW}, best {points_words}"
+msgstr "{FAIR_ROW}, rekor {points_words}"
+
+#. one sentence of a longer line
+msgid "The long skate down the frozen river, past the stalls."
+msgstr "Donmuş nehir boyunca, tezgâhların önünden uzun bir kayış."
+
+#. placeholders: {sentence_start}
+msgid ""
+"The long skate down the frozen river, past the stalls. {sentence_start} on "
+"the day earns this winter's ribbon."
+msgstr ""
+"Donmuş nehir boyunca, tezgâhların önünden uzun bir kayış. Kendi gününde "
+"{sentence_start} bu kışın kurdelesini kazandırır."
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid "{sentence_start} on the day earns this winter's ribbon."
+msgstr "Kendi gününde {sentence_start} bu kışın kurdelesini kazandırır."
+
+#. placeholders: {fair_date_words}
+msgid "The Frost Fair opens on {fair_date_words}."
+msgstr "Frost Fair açılış tarihi: {fair_date_words}."
+
+msgid ""
+"The river freezes once a winter for the fair, and you skate it for a ribbon."
+msgstr ""
+"Nehir panayır için kışta bir kez donar ve bir kurdele için orada kayarsınız."
+
+msgid "Skate the village pond to midnight and the fireworks."
+msgstr "Köy göletinde gece yarısına ve havai fişeklere kadar kayın."
+
+msgid ""
+"The midnight skate opens at 11 at night on New Year's Eve, by your clock, "
+"until 1 in the morning."
+msgstr ""
+"Gece yarısı pateni yılbaşı gecesi saatinize göre gece 11'de açılır, sabah "
+"1'e kadar sürer."
+
+msgid "Skate to midnight on New Year's Eve."
+msgstr "Yılbaşı gecesi gece yarısına kadar kayın."
+
+msgid ""
+"The village pond, slowly, with no snow and nothing scored. Every lantern is "
+"named."
+msgstr "Köy göleti, yavaşça, karsız ve puansız. Her fenerin adı söylenir."
+
+msgid ""
+"Your stars and bests on every pond, the Frost Fair and the lantern skate, "
+"your tallies, and your challenge results."
+msgstr ""
+"Her gölette, Frost Fair'de ve fener pateninde yıldızlarınız ve "
+"rekorlarınız, sayılarınız ve görev sonuçlarınız."
+
+msgid ""
+"Plays the lanterns, the drifts, the thin ice, your partner and the spin."
+msgstr ""
+"Fenerleri, kar yığınlarını, ince buzu, partnerinizi ve piruet sesini çalar."
+
+#. one sentence of a longer line
+msgid ""
+"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
+"every player."
+msgstr ""
+"Bu akşamın göleti, ince buz haftası ve karakış pateni: her oyuncu için aynı "
+"buz."
+
+#. placeholders: {resets}
+msgid ""
+"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
+"every player. {resets}"
+msgstr ""
+"Bu akşamın göleti, ince buz haftası ve karakış pateni: her oyuncu için aynı "
+"buz. {resets}"
+
+msgid "Spoken call-outs: on. The game also names each lantern's lane."
+msgstr "Sesli bildirimler: açık. Oyun her fenerin şeridini de söyler."
+
+msgid "Spoken call-outs: off. The lanterns play without names."
+msgstr "Sesli bildirimler: kapalı. Fenerler adsız çalar."
+
+msgid "When on, the game also names each lantern's lane as it lights."
+msgstr "Açıkken oyun her fenerin şeridini yanarken de söyler."
+
+msgid ""
+"Clear your stars and ribbons, and start Snowfall Skate over? Best scores "
+"and settings are kept."
+msgstr ""
+"Yıldızlarınız ve kurdeleleriniz silinip Snowfall Skate baştan başlasın mı? "
+"Rekorlar ve ayarlar kalır."
+
+msgid ""
+"Clears your stars, ribbons and tallies. Best scores and challenges are kept."
+msgstr ""
+"Yıldızlarınızı, kurdelelerinizi ve sayılarınızı siler. Rekorlar ve görevler "
+"kalır."
 
 msgid "the middle"
 msgstr "orta"

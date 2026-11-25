@@ -66114,229 +66114,6 @@ msgstr "河面结冰了，今天集市就摆在冰上。"
 msgid "Midnight skate"
 msgstr "午夜滑冰"
 
-msgid "Snowfall Skate"
-msgstr "Snowfall Skate"
-
-msgid ""
-"A winter special. Skate a frozen pond at night, taking lanterns as they "
-"light, while the snow comes down. Play once, even in practice, to keep it "
-"all year."
-msgstr "一个冬季特别篇。夜里下着雪，在结冰的池塘上滑冰，灯笼一亮就去拿。玩一次，即使是练习，就能全年保留它。"
-
-msgid ""
-"Skate a frozen pond at night, taking lanterns as they light, while the snow "
-"comes down. The Frost Fair opens in winter."
-msgstr "夜里下着雪，在结冰的池塘上滑冰，灯笼一亮就去拿。Frost Fair在冬天开放。"
-
-msgid ""
-"Snowfall Skate is yours to keep. After the winter, it moves to the Cozy "
-"games."
-msgstr "Snowfall Skate永远归你了。冬天过后，它会移到休闲游戏里。"
-
-msgid ""
-"A winter special. Skate a frozen pond at night, taking lanterns as they "
-"light, while the snow comes down."
-msgstr "一个冬季特别篇。夜里下着雪，在结冰的池塘上滑冰，灯笼一亮就去拿。"
-
-#. placeholders: {title}
-msgid "{title}: locked."
-msgstr "{title}：未解锁。"
-
-#. placeholders: {points_words}
-msgid "The Frost Fair: best {points_words}."
-msgstr "Frost Fair：最高分{points_words}。"
-
-msgid "The Frost Fair: not skated yet."
-msgstr "Frost Fair：还没滑过。"
-
-msgid "1 Frost Fair ribbon"
-msgstr "1条Frost Fair绶带"
-
-#. one sentence of a longer line
-msgid "Frost Fair ribbons"
-msgstr "Frost Fair绶带"
-
-#. placeholders: {n}
-msgid "{n} Frost Fair ribbons"
-msgstr "{n}条Frost Fair绶带"
-
-#. placeholders: {b}, {LANTERN_PAIRS}, {whole_tunes}
-msgid ""
-"Lantern skate: best {b} of {LANTERN_PAIRS} in order, the whole tune "
-"{whole_tunes} times."
-msgstr "灯笼滑冰：最好成绩按顺序拿到{b}对，共{LANTERN_PAIRS}对，完整曲子{whole_tunes}次。"
-
-msgid "Lantern skate: not skated yet."
-msgstr "灯笼滑冰：还没滑过。"
-
-#. placeholders: {stars_words}, {join}, {fair}, {lanterns}
-msgid "Records. {stars_words} in all. {join} {fair} {lanterns}"
-msgstr "纪录。总共{stars_words}。{join}{fair}{lanterns}"
-
-#. placeholders: {stars_words}
-#. one sentence of a longer line
-msgid "{stars_words} in all."
-msgstr "总共{stars_words}。"
-
-#. placeholders: {cracks}
-#. one sentence of a longer line
-msgid "Cracks in the ice: {cracks}."
-msgstr "冰面裂开：{cracks}次。"
-
-#. placeholders: {lanterns}
-#. one sentence of a longer line
-msgid "Lanterns taken: {lanterns}."
-msgstr "拿到的灯笼：{lanterns}盏。"
-
-#. placeholders: {best_line}
-#. one sentence of a longer line
-msgid "Longest line: {best_line}."
-msgstr "最长连串：{best_line}。"
-
-#. placeholders: {spins}
-#. one sentence of a longer line
-msgid "Spins landed: {spins}."
-msgstr "成功落地的旋转：{spins}次。"
-
-#. placeholders: {format}, {lanterns}, {best_line}, {spins}, {drifts}, {cracks}, {sentence_start}
-msgid ""
-"{format}. Lanterns taken: {lanterns}. Longest line: {best_line}. Spins "
-"landed: {spins}. Drifts: {drifts}. Cracks in the ice: {cracks}. "
-"{sentence_start}."
-msgstr ""
-"{format}。拿到的灯笼：{lanterns}盏。最长连串：{best_line}。成功落地的旋转：{spins}次。雪堆：{drifts}次。冰面"
-"裂开：{cracks}次。{sentence_start}。"
-
-msgid "1 skate"
-msgstr "1次滑冰"
-
-#. placeholders: {n}
-msgid "{n} skates"
-msgstr "{n}次滑冰"
-
-#. placeholders: {open}, {stars_words}
-msgid "Choose a pond, {open} of 3 open, {stars_words}"
-msgstr "选择池塘，已解锁{open}个，共3个，{stars_words}"
-
-msgid "Every pond with its stars and best. A star on one opens the next."
-msgstr "每个池塘和它的星星与最高分。在一个池塘拿到星星就会解锁下一个。"
-
-#. placeholders: {LANTERN_ROW}, {n}, {LANTERN_PAIRS}
-msgid "{LANTERN_ROW}, {n} of {LANTERN_PAIRS} tonight"
-msgstr "{LANTERN_ROW}，今晚{n}对，共{LANTERN_PAIRS}对"
-
-#. placeholders: {LANTERN_ROW}
-msgid "{LANTERN_ROW}, tonight's lanterns"
-msgstr "{LANTERN_ROW}，今晚的灯笼"
-
-#. one sentence of a longer line
-msgid "Take the first lit of each pair."
-msgstr "拿每对中先亮的那盏。"
-
-#. placeholders: {sentence_start}
-#. one sentence of a longer line
-msgid "{sentence_start} in pairs, the same for everyone tonight."
-msgstr "{sentence_start}成对亮起，今晚每个人都一样。"
-
-#. placeholders: {sentence_start}
-msgid ""
-"{sentence_start} in pairs, the same for everyone tonight. Take the first "
-"lit of each pair."
-msgstr "{sentence_start}成对亮起，今晚每个人都一样。拿每对中先亮的那盏。"
-
-msgid ""
-"The lantern skate is lit every evening, from 4 in the afternoon to 9 at "
-"night, by your clock."
-msgstr "灯笼滑冰每天傍晚亮起，按你的时钟从下午4点到晚上9点。"
-
-msgid "Lanterns in pairs, every evening by your clock."
-msgstr "灯笼成对亮起，按你的时钟每天傍晚。"
-
-#. placeholders: {FAIR_ROW}, {points_words}
-msgid "{FAIR_ROW}, best {points_words}"
-msgstr "{FAIR_ROW}，最高分{points_words}"
-
-#. one sentence of a longer line
-msgid "The long skate down the frozen river, past the stalls."
-msgstr "沿着结冰的河长距离滑冰，经过一个个摊位。"
-
-#. placeholders: {sentence_start}
-msgid ""
-"The long skate down the frozen river, past the stalls. {sentence_start} on "
-"the day earns this winter's ribbon."
-msgstr "沿着结冰的河长距离滑冰，经过一个个摊位。当天{sentence_start}就能得到这个冬天的绶带。"
-
-#. placeholders: {sentence_start}
-#. one sentence of a longer line
-msgid "{sentence_start} on the day earns this winter's ribbon."
-msgstr "当天{sentence_start}就能得到这个冬天的绶带。"
-
-#. placeholders: {fair_date_words}
-msgid "The Frost Fair opens on {fair_date_words}."
-msgstr "Frost Fair在{fair_date_words}开放。"
-
-msgid ""
-"The river freezes once a winter for the fair, and you skate it for a ribbon."
-msgstr "每个冬天河面会为集市结冰一次，你在上面滑冰赢绶带。"
-
-msgid "Skate the village pond to midnight and the fireworks."
-msgstr "在村里的池塘上滑到午夜，看烟花。"
-
-msgid ""
-"The midnight skate opens at 11 at night on New Year's Eve, by your clock, "
-"until 1 in the morning."
-msgstr "午夜滑冰在新年前夜晚上11点开放，按你的时钟，到凌晨1点为止。"
-
-msgid "Skate to midnight on New Year's Eve."
-msgstr "新年前夜滑到午夜。"
-
-msgid "Practice skate"
-msgstr "练习滑冰"
-
-msgid ""
-"The village pond, slowly, with no snow and nothing scored. Every lantern is "
-"named."
-msgstr "慢慢滑村里的池塘，没有雪，什么都不计分。每盏灯笼都会说出名字。"
-
-msgid ""
-"Your stars and bests on every pond, the Frost Fair and the lantern skate, "
-"your tallies, and your challenge results."
-msgstr "你在每个池塘、Frost Fair和灯笼滑冰上的星星和最高分，你的统计，以及你的挑战成绩。"
-
-msgid ""
-"Plays the lanterns, the drifts, the thin ice, your partner and the spin."
-msgstr "播放灯笼、雪堆、薄冰、你的搭档和旋转。"
-
-#. one sentence of a longer line
-msgid ""
-"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
-"every player."
-msgstr "今晚的池塘、薄冰周和仲冬滑冰：每位玩家的冰都一样。"
-
-#. placeholders: {resets}
-msgid ""
-"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
-"every player. {resets}"
-msgstr "今晚的池塘、薄冰周和仲冬滑冰：每位玩家的冰都一样。{resets}"
-
-msgid "Spoken call-outs: on. The game also names each lantern's lane."
-msgstr "语音播报：开。游戏还会说出每盏灯笼的冰道。"
-
-msgid "Spoken call-outs: off. The lanterns play without names."
-msgstr "语音播报：关。灯笼只有声音，不报名字。"
-
-msgid "When on, the game also names each lantern's lane as it lights."
-msgstr "打开时，每盏灯笼亮起时游戏还会说出它的冰道。"
-
-msgid ""
-"Clear your stars and ribbons, and start Snowfall Skate over? Best scores "
-"and settings are kept."
-msgstr "清除你的星星和绶带，让Snowfall Skate重新开始吗？最高分和设置会保留。"
-
-msgid ""
-"Clears your stars, ribbons and tallies. Best scores and challenges are kept."
-msgstr "清除你的星星、绶带和统计。最高分和挑战会保留。"
-
 msgid "waltz-a"
 msgstr ""
 
@@ -66418,6 +66195,9 @@ msgstr "返回Snowfall Skate标题菜单。"
 
 msgid "midnight"
 msgstr ""
+
+msgid "Practice skate"
+msgstr "练习滑冰"
 
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
@@ -66934,6 +66714,11 @@ msgid ""
 "Lanterns taken: {taken} of {passed_count}. Longest line: {best_line}."
 msgstr "拿到的灯笼：{taken}盏，共{passed_count}盏。最长连串：{best_line}。"
 
+#. placeholders: {best_line}
+#. one sentence of a longer line
+msgid "Longest line: {best_line}."
+msgstr "最长连串：{best_line}。"
+
 #. placeholders: {wrong}
 msgid "Taken out of order: {wrong}."
 msgstr "拿错顺序：{wrong}次。"
@@ -67076,6 +66861,221 @@ msgstr ""
 
 msgid "lantern skate"
 msgstr "灯笼滑冰"
+
+msgid "Snowfall Skate"
+msgstr "Snowfall Skate"
+
+msgid ""
+"A winter special. Skate a frozen pond at night, taking lanterns as they "
+"light, while the snow comes down. Play once, even in practice, to keep it "
+"all year."
+msgstr "一个冬季特别篇。夜里下着雪，在结冰的池塘上滑冰，灯笼一亮就去拿。玩一次，即使是练习，就能全年保留它。"
+
+msgid ""
+"Skate a frozen pond at night, taking lanterns as they light, while the snow "
+"comes down. The Frost Fair opens in winter."
+msgstr "夜里下着雪，在结冰的池塘上滑冰，灯笼一亮就去拿。Frost Fair在冬天开放。"
+
+msgid ""
+"Snowfall Skate is yours to keep. After the winter, it moves to the Cozy "
+"games."
+msgstr "Snowfall Skate永远归你了。冬天过后，它会移到休闲游戏里。"
+
+msgid ""
+"A winter special. Skate a frozen pond at night, taking lanterns as they "
+"light, while the snow comes down."
+msgstr "一个冬季特别篇。夜里下着雪，在结冰的池塘上滑冰，灯笼一亮就去拿。"
+
+#. placeholders: {title}
+msgid "{title}: locked."
+msgstr "{title}：未解锁。"
+
+#. placeholders: {points_words}
+msgid "The Frost Fair: best {points_words}."
+msgstr "Frost Fair：最高分{points_words}。"
+
+msgid "The Frost Fair: not skated yet."
+msgstr "Frost Fair：还没滑过。"
+
+msgid "1 Frost Fair ribbon"
+msgstr "1条Frost Fair绶带"
+
+#. one sentence of a longer line
+msgid "Frost Fair ribbons"
+msgstr "Frost Fair绶带"
+
+#. placeholders: {n}
+msgid "{n} Frost Fair ribbons"
+msgstr "{n}条Frost Fair绶带"
+
+#. placeholders: {b}, {LANTERN_PAIRS}, {whole_tunes}
+msgid ""
+"Lantern skate: best {b} of {LANTERN_PAIRS} in order, the whole tune "
+"{whole_tunes} times."
+msgstr "灯笼滑冰：最好成绩按顺序拿到{b}对，共{LANTERN_PAIRS}对，完整曲子{whole_tunes}次。"
+
+msgid "Lantern skate: not skated yet."
+msgstr "灯笼滑冰：还没滑过。"
+
+#. placeholders: {stars_words}, {join}, {fair}, {lanterns}
+msgid "Records. {stars_words} in all. {join} {fair} {lanterns}"
+msgstr "纪录。总共{stars_words}。{join}{fair}{lanterns}"
+
+#. placeholders: {stars_words}
+#. one sentence of a longer line
+msgid "{stars_words} in all."
+msgstr "总共{stars_words}。"
+
+#. placeholders: {cracks}
+#. one sentence of a longer line
+msgid "Cracks in the ice: {cracks}."
+msgstr "冰面裂开：{cracks}次。"
+
+#. placeholders: {lanterns}
+#. one sentence of a longer line
+msgid "Lanterns taken: {lanterns}."
+msgstr "拿到的灯笼：{lanterns}盏。"
+
+#. placeholders: {spins}
+#. one sentence of a longer line
+msgid "Spins landed: {spins}."
+msgstr "成功落地的旋转：{spins}次。"
+
+#. placeholders: {format}, {lanterns}, {best_line}, {spins}, {drifts}, {cracks}, {sentence_start}
+msgid ""
+"{format}. Lanterns taken: {lanterns}. Longest line: {best_line}. Spins "
+"landed: {spins}. Drifts: {drifts}. Cracks in the ice: {cracks}. "
+"{sentence_start}."
+msgstr ""
+"{format}。拿到的灯笼：{lanterns}盏。最长连串：{best_line}。成功落地的旋转：{spins}次。雪堆：{drifts}次。冰面"
+"裂开：{cracks}次。{sentence_start}。"
+
+msgid "1 skate"
+msgstr "1次滑冰"
+
+#. placeholders: {n}
+msgid "{n} skates"
+msgstr "{n}次滑冰"
+
+#. placeholders: {open}, {stars_words}
+msgid "Choose a pond, {open} of 3 open, {stars_words}"
+msgstr "选择池塘，已解锁{open}个，共3个，{stars_words}"
+
+msgid "Every pond with its stars and best. A star on one opens the next."
+msgstr "每个池塘和它的星星与最高分。在一个池塘拿到星星就会解锁下一个。"
+
+#. placeholders: {LANTERN_ROW}, {n}, {LANTERN_PAIRS}
+msgid "{LANTERN_ROW}, {n} of {LANTERN_PAIRS} tonight"
+msgstr "{LANTERN_ROW}，今晚{n}对，共{LANTERN_PAIRS}对"
+
+#. placeholders: {LANTERN_ROW}
+msgid "{LANTERN_ROW}, tonight's lanterns"
+msgstr "{LANTERN_ROW}，今晚的灯笼"
+
+#. one sentence of a longer line
+msgid "Take the first lit of each pair."
+msgstr "拿每对中先亮的那盏。"
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid "{sentence_start} in pairs, the same for everyone tonight."
+msgstr "{sentence_start}成对亮起，今晚每个人都一样。"
+
+#. placeholders: {sentence_start}
+msgid ""
+"{sentence_start} in pairs, the same for everyone tonight. Take the first "
+"lit of each pair."
+msgstr "{sentence_start}成对亮起，今晚每个人都一样。拿每对中先亮的那盏。"
+
+msgid ""
+"The lantern skate is lit every evening, from 4 in the afternoon to 9 at "
+"night, by your clock."
+msgstr "灯笼滑冰每天傍晚亮起，按你的时钟从下午4点到晚上9点。"
+
+msgid "Lanterns in pairs, every evening by your clock."
+msgstr "灯笼成对亮起，按你的时钟每天傍晚。"
+
+#. placeholders: {FAIR_ROW}, {points_words}
+msgid "{FAIR_ROW}, best {points_words}"
+msgstr "{FAIR_ROW}，最高分{points_words}"
+
+#. one sentence of a longer line
+msgid "The long skate down the frozen river, past the stalls."
+msgstr "沿着结冰的河长距离滑冰，经过一个个摊位。"
+
+#. placeholders: {sentence_start}
+msgid ""
+"The long skate down the frozen river, past the stalls. {sentence_start} on "
+"the day earns this winter's ribbon."
+msgstr "沿着结冰的河长距离滑冰，经过一个个摊位。当天{sentence_start}就能得到这个冬天的绶带。"
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid "{sentence_start} on the day earns this winter's ribbon."
+msgstr "当天{sentence_start}就能得到这个冬天的绶带。"
+
+#. placeholders: {fair_date_words}
+msgid "The Frost Fair opens on {fair_date_words}."
+msgstr "Frost Fair在{fair_date_words}开放。"
+
+msgid ""
+"The river freezes once a winter for the fair, and you skate it for a ribbon."
+msgstr "每个冬天河面会为集市结冰一次，你在上面滑冰赢绶带。"
+
+msgid "Skate the village pond to midnight and the fireworks."
+msgstr "在村里的池塘上滑到午夜，看烟花。"
+
+msgid ""
+"The midnight skate opens at 11 at night on New Year's Eve, by your clock, "
+"until 1 in the morning."
+msgstr "午夜滑冰在新年前夜晚上11点开放，按你的时钟，到凌晨1点为止。"
+
+msgid "Skate to midnight on New Year's Eve."
+msgstr "新年前夜滑到午夜。"
+
+msgid ""
+"The village pond, slowly, with no snow and nothing scored. Every lantern is "
+"named."
+msgstr "慢慢滑村里的池塘，没有雪，什么都不计分。每盏灯笼都会说出名字。"
+
+msgid ""
+"Your stars and bests on every pond, the Frost Fair and the lantern skate, "
+"your tallies, and your challenge results."
+msgstr "你在每个池塘、Frost Fair和灯笼滑冰上的星星和最高分，你的统计，以及你的挑战成绩。"
+
+msgid ""
+"Plays the lanterns, the drifts, the thin ice, your partner and the spin."
+msgstr "播放灯笼、雪堆、薄冰、你的搭档和旋转。"
+
+#. one sentence of a longer line
+msgid ""
+"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
+"every player."
+msgstr "今晚的池塘、薄冰周和仲冬滑冰：每位玩家的冰都一样。"
+
+#. placeholders: {resets}
+msgid ""
+"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
+"every player. {resets}"
+msgstr "今晚的池塘、薄冰周和仲冬滑冰：每位玩家的冰都一样。{resets}"
+
+msgid "Spoken call-outs: on. The game also names each lantern's lane."
+msgstr "语音播报：开。游戏还会说出每盏灯笼的冰道。"
+
+msgid "Spoken call-outs: off. The lanterns play without names."
+msgstr "语音播报：关。灯笼只有声音，不报名字。"
+
+msgid "When on, the game also names each lantern's lane as it lights."
+msgstr "打开时，每盏灯笼亮起时游戏还会说出它的冰道。"
+
+msgid ""
+"Clear your stars and ribbons, and start Snowfall Skate over? Best scores "
+"and settings are kept."
+msgstr "清除你的星星和绶带，让Snowfall Skate重新开始吗？最高分和设置会保留。"
+
+msgid ""
+"Clears your stars, ribbons and tallies. Best scores and challenges are kept."
+msgstr "清除你的星星、绶带和统计。最高分和挑战会保留。"
 
 msgid "the middle"
 msgstr "中间"
