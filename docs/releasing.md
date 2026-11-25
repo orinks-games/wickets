@@ -79,9 +79,9 @@ get the fixes in their channel's next release.
 
 Each build job runs `tools/check_channel_manifests.py`, which fails before
 anything is published unless the job's one manifest is for its own
-channel and names a package built for that channel. Beta and alpha copies
-also ignore any manifest whose package was not built for their channel
-(`OWN_BUILD` in `crates/parlor-core/src/channel.rs`).
+channel and names a package built for that channel. Alpha copies also
+ignore any manifest whose package was not built for alpha (`OWN_BUILD` in
+`crates/parlor-core/src/channel.rs`).
 
 The updater only offers versions newer than the installed copy, so bump
 `Cargo.toml` right after each stable release, before the next beta or
