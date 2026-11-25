@@ -105185,6 +105185,12 @@ msgstr ""
 msgid "{count} new"
 msgstr ""
 
+#. Online play: a Pebbles match's line in My games (Hearken rooms.rs), so the name never takes the rest of the line.
+#. placeholders: {names}, {standing}
+#: lang/extra.pot
+msgid "Pebbles with {names}: {standing}"
+msgstr ""
+
 #. a name: keep it as it is
 #: lang/names.txt
 msgid "Wicket's"

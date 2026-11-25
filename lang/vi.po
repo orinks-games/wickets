@@ -93534,6 +93534,11 @@ msgstr "đến lượt đối thủ"
 msgid "{count} new"
 msgstr "{count} mới"
 
+#. Online play: a Pebbles match's line in My games (Hearken rooms.rs), so the name never takes the rest of the line.
+#. placeholders: {names}, {standing}
+msgid "Pebbles with {names}: {standing}"
+msgstr "Pebbles với {names}: {standing}"
+
 #. a name: keep it as it is
 msgid "Wicket's"
 msgstr "Wicket's"
