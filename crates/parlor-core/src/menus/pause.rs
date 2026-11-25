@@ -36,6 +36,9 @@ pub enum Leave {
     /// it, which is the game's challenges menu or what stands in for it
     /// when the launcher opened the challenge.
     Challenge(&'static str),
+    /// A turn of an online game: "Back to the online game", to the game's
+    /// screen for that room. The seat is kept.
+    Online(&'static str),
 }
 
 impl Leave {
@@ -43,6 +46,7 @@ impl Leave {
         match self {
             Leave::Title(_) => labels::BACK_TO_TITLE,
             Leave::Challenge(_) => labels::LEAVE_CHALLENGE,
+            Leave::Online(_) => "Back to the online game",
         }
     }
 
@@ -52,12 +56,13 @@ impl Leave {
             Leave::Challenge(_) => {
                 "Stop without counting this challenge, so you can try it again later."
             }
+            Leave::Online(_) => "Stop here for now. Your seat is kept, and you carry on from here.",
         }
     }
 
     fn target(self) -> &'static str {
         match self {
-            Leave::Title(name) | Leave::Challenge(name) => name,
+            Leave::Title(name) | Leave::Challenge(name) | Leave::Online(name) => name,
         }
     }
 }

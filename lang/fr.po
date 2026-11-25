@@ -685,11 +685,17 @@ msgstr "Oui, quitter"
 msgid "No, keep playing"
 msgstr "Non, continuer"
 
+msgid "Back to the online game"
+msgstr ""
+
 msgid "Stop this run and go back to the title."
 msgstr "Arrêter cette partie et revenir à l'écran titre."
 
 msgid "Stop without counting this challenge, so you can try it again later."
 msgstr "Arrêter sans compter ce défi, pour le retenter plus tard."
+
+msgid "Stop here for now. Your seat is kept, and you carry on from here."
+msgstr ""
 
 msgid "Paused"
 msgstr "En pause"

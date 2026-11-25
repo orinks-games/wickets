@@ -675,11 +675,17 @@ msgstr "是，退出"
 msgid "No, keep playing"
 msgstr "不，继续玩"
 
+msgid "Back to the online game"
+msgstr ""
+
 msgid "Stop this run and go back to the title."
 msgstr "结束这一局，回到标题菜单。"
 
 msgid "Stop without counting this challenge, so you can try it again later."
 msgstr "结束且不计入这次挑战，你以后可以再试。"
+
+msgid "Stop here for now. Your seat is kept, and you carry on from here."
+msgstr ""
 
 msgid "Paused"
 msgstr "已暂停"

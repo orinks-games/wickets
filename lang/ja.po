@@ -676,11 +676,17 @@ msgstr "はい、終了します"
 msgid "No, keep playing"
 msgstr "いいえ、続けます"
 
+msgid "Back to the online game"
+msgstr ""
+
 msgid "Stop this run and go back to the title."
 msgstr "このプレイをやめて、タイトルに戻ります。"
 
 msgid "Stop without counting this challenge, so you can try it again later."
 msgstr "このチャレンジを記録せずにやめて、あとで挑戦し直せるようにします。"
+
+msgid "Stop here for now. Your seat is kept, and you carry on from here."
+msgstr ""
 
 msgid "Paused"
 msgstr "一時停止中"

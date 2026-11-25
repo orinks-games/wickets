@@ -684,11 +684,17 @@ msgstr "Tak, wyjdź"
 msgid "No, keep playing"
 msgstr "Nie, graj dalej"
 
+msgid "Back to the online game"
+msgstr ""
+
 msgid "Stop this run and go back to the title."
 msgstr "Przerwij rozgrywkę i wróć do ekranu tytułowego."
 
 msgid "Stop without counting this challenge, so you can try it again later."
 msgstr "Przerwij bez liczenia tego wyzwania, żeby spróbować później."
+
+msgid "Stop here for now. Your seat is kept, and you carry on from here."
+msgstr ""
 
 msgid "Paused"
 msgstr "Pauza"

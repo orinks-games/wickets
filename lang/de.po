@@ -684,6 +684,9 @@ msgstr "Ja, beenden"
 msgid "No, keep playing"
 msgstr "Nein, weiterspielen"
 
+msgid "Back to the online game"
+msgstr ""
+
 msgid "Stop this run and go back to the title."
 msgstr "Diese Runde abbrechen und zurück zum Titelmenü."
 
@@ -691,6 +694,9 @@ msgid "Stop without counting this challenge, so you can try it again later."
 msgstr ""
 "Abbrechen, ohne dass die Herausforderung zählt, damit du sie später nochmal "
 "versuchen kannst."
+
+msgid "Stop here for now. Your seat is kept, and you carry on from here."
+msgstr ""
 
 msgid "Paused"
 msgstr "Pausiert"
