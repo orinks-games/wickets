@@ -3177,6 +3177,9 @@ dependencies = [
  "wickets-slot-c",
  "wickets-slot-d",
  "wickets-slot-e",
+ "wickets-slot-f",
+ "wickets-slot-g",
+ "wickets-slot-h",
  "winter-wonderland",
 ]
 
@@ -3248,6 +3251,41 @@ name = "wickets-slot-e"
 version = "1.8.1"
 dependencies = [
  "hearken",
+ "parlor-core",
+ "serde",
+ "serde_json",
+ "wickets-content",
+]
+
+[[package]]
+name = "wickets-slot-f"
+version = "1.8.0"
+dependencies = [
+ "hearken",
+ "parlor-core",
+ "serde",
+ "serde_json",
+ "wickets-content",
+ "wickets-rules",
+]
+
+[[package]]
+name = "wickets-slot-g"
+version = "1.8.0"
+dependencies = [
+ "hearken",
+ "parlor-core",
+ "serde",
+ "serde_json",
+ "wickets-content",
+]
+
+[[package]]
+name = "wickets-slot-h"
+version = "1.8.0"
+dependencies = [
+ "hearken",
+ "log",
  "parlor-core",
  "serde",
  "serde_json",
