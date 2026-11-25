@@ -84137,9 +84137,12 @@ msgstr "、退出"
 msgid "No players"
 msgstr "プレイヤーなし"
 
-#. placeholders: {join}
-msgid " with {join}"
-msgstr "、{join}と"
+#. placeholders: {name}
+msgid "Leave the match? {name} wins it."
+msgstr "対戦から抜けますか？{name}の勝ちになります。"
+
+msgid "Leave the match? The other players win it."
+msgstr "対戦から抜けますか？ほかのプレイヤーの勝ちになります。"
 
 #. placeholders: {missing}
 msgid "waiting for {missing} more"
@@ -84155,9 +84158,13 @@ msgstr "プレイ中"
 msgid "over, {s}"
 msgstr "終了、{s}"
 
-#. placeholders: {unread}
-msgid ", {unread} new"
-msgstr "、新着{unread}"
+#. placeholders: {label}, {names}, {standing}
+msgid "{label} with {names}: {standing}"
+msgstr "{label}、{names}と：{standing}"
+
+#. placeholders: {line}, {count}
+msgid "{line}. {count} new"
+msgstr "{line}。新着{count}"
 
 #. placeholders: {label}
 msgid "{label} online"
@@ -84326,9 +84333,6 @@ msgstr "対戦から抜ける"
 
 msgid "Leave the game"
 msgstr "ゲームから抜ける"
-
-msgid "Leave the match? The other players win it."
-msgstr "対戦から抜けますか？ほかのプレイヤーの勝ちになります。"
 
 msgid "Left the match."
 msgstr "対戦から抜けました。"
@@ -86179,6 +86183,15 @@ msgstr "1階"
 msgid "{n} floors"
 msgstr "{n}階"
 
+#. Online play: whose move it is in a match, as a clause of a longer line in My games.
+msgid "their move"
+msgstr "相手の番"
+
+#. Online play: a sentence after a room's line in My games, how many lines are unread (Hearken rooms.rs).
+#. placeholders: {count}
+msgid "{count} new"
+msgstr "新着{count}"
+
 #. a name: keep it as it is
 msgid "Wicket's"
 msgstr "Wicket's"
@@ -86190,6 +86203,24 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{label}: {standing}, {count} new"
+#~ msgstr "{label}：{standing}、新着{count}"
+
+#~ msgid "{label} with {names}: {standing}, {count} new"
+#~ msgstr "{label}、{names}と：{standing}、新着{count}"
+
+#~ msgid "{label}: {standing}, {new} new"
+#~ msgstr "{label}：{standing}、新着{new}"
+
+#~ msgid "{label} with {names}: {standing}, {new} new"
+#~ msgstr "{label}、{names}と：{standing}、新着{new}"
+
+#~ msgid " with {join}"
+#~ msgstr "、{join}と"
+
+#~ msgid ", {unread} new"
+#~ msgstr "、新着{unread}"
 
 #~ msgid "first relaxed score"
 #~ msgstr "ゆったりでの初スコア"
