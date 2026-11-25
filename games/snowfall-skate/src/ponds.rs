@@ -2,7 +2,7 @@
 //! and the courses with an end: practice, the lantern skate and the Frost
 //! Fair.
 
-use crate::rules::Level;
+use super::rules::Level;
 
 /// One of the ponds.
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -25,7 +25,7 @@ impl Pond {
 
     /// "The village pond".
     pub fn subject(&self) -> String {
-        hearken::text::sentence_start(self.name)
+        wickets_rules::text::sentence_start(self.name)
     }
 }
 
