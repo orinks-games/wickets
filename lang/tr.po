@@ -92199,9 +92199,12 @@ msgstr ", ayrıldı"
 msgid "No players"
 msgstr "Oyuncu yok"
 
-#. placeholders: {join}
-msgid " with {join}"
-msgstr " {join} ile"
+#. placeholders: {name}
+msgid "Leave the match? {name} wins it."
+msgstr "Maçtan ayrılınsın mı? {name} kazanır."
+
+msgid "Leave the match? The other players win it."
+msgstr "Maçtan ayrılınsın mı? Öbür oyuncular kazanır."
 
 #. placeholders: {missing}
 msgid "waiting for {missing} more"
@@ -92217,9 +92220,13 @@ msgstr "oyunda"
 msgid "over, {s}"
 msgstr "bitti, {s}"
 
-#. placeholders: {unread}
-msgid ", {unread} new"
-msgstr ", {unread} yeni"
+#. placeholders: {label}, {names}, {standing}
+msgid "{label} with {names}: {standing}"
+msgstr "{label}, {names} ile: {standing}"
+
+#. placeholders: {line}, {count}
+msgid "{line}. {count} new"
+msgstr "{line}. {count} yeni"
 
 #. placeholders: {label}
 msgid "{label} online"
@@ -92396,9 +92403,6 @@ msgstr "Maçtan ayrıl"
 
 msgid "Leave the game"
 msgstr "Oyundan ayrıl"
-
-msgid "Leave the match? The other players win it."
-msgstr "Maçtan ayrılınsın mı? Öbür oyuncular kazanır."
 
 msgid "Left the match."
 msgstr "Maçtan ayrıldınız."
@@ -94312,6 +94316,15 @@ msgstr "1 kat"
 msgid "{n} floors"
 msgstr "{n} kat"
 
+#. Online play: whose move it is in a match, as a clause of a longer line in My games.
+msgid "their move"
+msgstr "sıra rakipte"
+
+#. Online play: a sentence after a room's line in My games, how many lines are unread (Hearken rooms.rs).
+#. placeholders: {count}
+msgid "{count} new"
+msgstr "{count} yeni"
+
 #. a name: keep it as it is
 msgid "Wicket's"
 msgstr "Wicket's"
@@ -94323,6 +94336,24 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{label}: {standing}, {count} new"
+#~ msgstr "{label}: {standing}, {count} yeni"
+
+#~ msgid "{label} with {names}: {standing}, {count} new"
+#~ msgstr "{label}, {names} ile: {standing}, {count} yeni"
+
+#~ msgid "{label}: {standing}, {new} new"
+#~ msgstr "{label}: {standing}, {new} yeni"
+
+#~ msgid "{label} with {names}: {standing}, {new} new"
+#~ msgstr "{label}, {names} ile: {standing}, {new} yeni"
+
+#~ msgid " with {join}"
+#~ msgstr " {join} ile"
+
+#~ msgid ", {unread} new"
+#~ msgstr ", {unread} yeni"
 
 #~ msgid "first relaxed score"
 #~ msgstr "ilk rahat tempo puanı"

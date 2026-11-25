@@ -92590,9 +92590,12 @@ msgstr ", не в игре"
 msgid "No players"
 msgstr "Нет игроков"
 
-#. placeholders: {join}
-msgid " with {join}"
-msgstr " с игроками: {join}"
+#. placeholders: {name}
+msgid "Leave the match? {name} wins it."
+msgstr "Покинуть матч? Победа достанется игроку {name}."
+
+msgid "Leave the match? The other players win it."
+msgstr "Покинуть матч? Победа достанется другим игрокам."
 
 #. placeholders: {missing}
 msgid "waiting for {missing} more"
@@ -92608,9 +92611,13 @@ msgstr "идёт игра"
 msgid "over, {s}"
 msgstr "окончена, {s}"
 
-#. placeholders: {unread}
-msgid ", {unread} new"
-msgstr ", новых: {unread}"
+#. placeholders: {label}, {names}, {standing}
+msgid "{label} with {names}: {standing}"
+msgstr "{label} против {names}: {standing}"
+
+#. placeholders: {line}, {count}
+msgid "{line}. {count} new"
+msgstr "{line}. Новых: {count}"
 
 #. placeholders: {label}
 msgid "{label} online"
@@ -92790,9 +92797,6 @@ msgstr "Покинуть матч"
 
 msgid "Leave the game"
 msgstr "Покинуть игру"
-
-msgid "Leave the match? The other players win it."
-msgstr "Покинуть матч? Победа достанется другим игрокам."
 
 msgid "Left the match."
 msgstr "Вы покинули матч."
@@ -94714,6 +94718,15 @@ msgstr "1 этаж"
 msgid "{n} floors"
 msgstr "{n} {n:этаж|этажа|этажей}"
 
+#. Online play: whose move it is in a match, as a clause of a longer line in My games.
+msgid "their move"
+msgstr "ход соперника"
+
+#. Online play: a sentence after a room's line in My games, how many lines are unread (Hearken rooms.rs).
+#. placeholders: {count}
+msgid "{count} new"
+msgstr "Новых: {count}"
+
 #. a name: keep it as it is
 msgid "Wicket's"
 msgstr "Wicket's"
@@ -94725,6 +94738,24 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{label}: {standing}, {count} new"
+#~ msgstr "{label}: {standing}, новых: {count}"
+
+#~ msgid "{label} with {names}: {standing}, {count} new"
+#~ msgstr "{label} против {names}: {standing}, новых: {count}"
+
+#~ msgid "{label}: {standing}, {new} new"
+#~ msgstr "{label}: {standing}, новых: {new}"
+
+#~ msgid "{label} with {names}: {standing}, {new} new"
+#~ msgstr "{label} против {names}: {standing}, новых: {new}"
+
+#~ msgid " with {join}"
+#~ msgstr " с игроками: {join}"
+
+#~ msgid ", {unread} new"
+#~ msgstr ", новых: {unread}"
 
 #~ msgid "first relaxed score"
 #~ msgstr "первый результат в спокойном темпе"

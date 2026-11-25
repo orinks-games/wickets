@@ -25,3 +25,12 @@ msgstr ""
 #. placeholders: {n}
 msgid "{n} floors"
 msgstr ""
+
+#. Online play: whose move it is in a match, as a clause of a longer line in My games.
+msgid "their move"
+msgstr ""
+
+#. Online play: a sentence after a room's line in My games, how many lines are unread (Hearken rooms.rs).
+#. placeholders: {count}
+msgid "{count} new"
+msgstr ""

@@ -83079,9 +83079,12 @@ msgstr "，已离开"
 msgid "No players"
 msgstr "没有玩家"
 
-#. placeholders: {join}
-msgid " with {join}"
-msgstr "，和{join}一起"
+#. placeholders: {name}
+msgid "Leave the match? {name} wins it."
+msgstr "离开对局吗？{name} 会获胜。"
+
+msgid "Leave the match? The other players win it."
+msgstr "离开对局吗？其他玩家会获胜。"
 
 #. placeholders: {missing}
 msgid "waiting for {missing} more"
@@ -83097,9 +83100,13 @@ msgstr "进行中"
 msgid "over, {s}"
 msgstr "已结束，{s}"
 
-#. placeholders: {unread}
-msgid ", {unread} new"
-msgstr "，{unread}条新消息"
+#. placeholders: {label}, {names}, {standing}
+msgid "{label} with {names}: {standing}"
+msgstr "{label}，和{names}一起：{standing}"
+
+#. placeholders: {line}, {count}
+msgid "{line}. {count} new"
+msgstr "{line}。{count}条新消息"
 
 #. placeholders: {label}
 msgid "{label} online"
@@ -83268,9 +83275,6 @@ msgstr "离开对局"
 
 msgid "Leave the game"
 msgstr "离开游戏"
-
-msgid "Leave the match? The other players win it."
-msgstr "离开对局吗？其他玩家会获胜。"
 
 msgid "Left the match."
 msgstr "已离开对局。"
@@ -85113,6 +85117,15 @@ msgstr "1层"
 msgid "{n} floors"
 msgstr "{n}层"
 
+#. Online play: whose move it is in a match, as a clause of a longer line in My games.
+msgid "their move"
+msgstr "轮到对方"
+
+#. Online play: a sentence after a room's line in My games, how many lines are unread (Hearken rooms.rs).
+#. placeholders: {count}
+msgid "{count} new"
+msgstr "{count}条新消息"
+
 #. a name: keep it as it is
 msgid "Wicket's"
 msgstr "Wicket's"
@@ -85124,6 +85137,24 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{label}: {standing}, {count} new"
+#~ msgstr "{label}：{standing}，{count}条新消息"
+
+#~ msgid "{label} with {names}: {standing}, {count} new"
+#~ msgstr "{label}，和{names}一起：{standing}，{count}条新消息"
+
+#~ msgid "{label}: {standing}, {new} new"
+#~ msgstr "{label}：{standing}，{new}条新消息"
+
+#~ msgid "{label} with {names}: {standing}, {new} new"
+#~ msgstr "{label}，和{names}一起：{standing}，{new}条新消息"
+
+#~ msgid " with {join}"
+#~ msgstr "，和{join}一起"
+
+#~ msgid ", {unread} new"
+#~ msgstr "，{unread}条新消息"
 
 #~ msgid "first relaxed score"
 #~ msgstr "第一个轻松节奏得分"

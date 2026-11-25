@@ -39,6 +39,9 @@ pub const CATCH: f64 = 16.0;
 pub const LINE_TOP: u32 = 5;
 /// How clear the ice is at the push-off.
 pub const CLEAR_FULL: f64 = 100.0;
+/// How far the ice clears past a step before the snow counts as lighter
+/// again, and the next deepening is spoken anew.
+pub const COVER_MARGIN: f64 = 12.0;
 /// How much clear ice a crack costs: water comes up, and snow settles in it.
 pub const CRACK_SNOW: f64 = 12.0;
 /// How long a crack leaves you finding your feet, with no lean.
@@ -923,8 +926,12 @@ impl Skate {
         let cover = Cover::of(self.clear);
         if cover < self.cover {
             evs.push(Ev::Deeper(cover));
+            self.cover = cover;
+        } else {
+            // Back up a step only well clear of it, so a lantern taken at the
+            // edge does not bring the same line round again a moment later.
+            self.cover = self.cover.max(Cover::of(self.clear - COVER_MARGIN));
         }
-        self.cover = cover;
         if snow > 0.0 && self.clear <= 0.0 {
             self.end(End::SnowedOver, evs);
         } else if self.course.end.is_some_and(|e| now >= e) {

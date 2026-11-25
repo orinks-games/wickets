@@ -102602,9 +102602,13 @@ msgstr ""
 msgid "No players"
 msgstr ""
 
-#. placeholders: {join}
+#. placeholders: {name}
 #: hearken/crates/hearken-app/src/screens/rooms.rs
-msgid " with {join}"
+msgid "Leave the match? {name} wins it."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/rooms.rs
+msgid "Leave the match? The other players win it."
 msgstr ""
 
 #. placeholders: {missing}
@@ -102625,9 +102629,14 @@ msgstr ""
 msgid "over, {s}"
 msgstr ""
 
-#. placeholders: {unread}
+#. placeholders: {label}, {names}, {standing}
 #: hearken/crates/hearken-app/src/screens/rooms.rs
-msgid ", {unread} new"
+msgid "{label} with {names}: {standing}"
+msgstr ""
+
+#. placeholders: {line}, {count}
+#: hearken/crates/hearken-app/src/screens/rooms.rs
+msgid "{line}. {count} new"
 msgstr ""
 
 #. placeholders: {label}
@@ -102844,10 +102853,6 @@ msgstr ""
 
 #: hearken/crates/hearken-app/src/screens/rooms.rs
 msgid "Leave the game"
-msgstr ""
-
-#: hearken/crates/hearken-app/src/screens/rooms.rs
-msgid "Leave the match? The other players win it."
 msgstr ""
 
 #: hearken/crates/hearken-app/src/screens/rooms.rs
@@ -105167,6 +105172,17 @@ msgstr ""
 #. placeholders: {n}
 #: lang/extra.pot
 msgid "{n} floors"
+msgstr ""
+
+#. Online play: whose move it is in a match, as a clause of a longer line in My games.
+#: lang/extra.pot
+msgid "their move"
+msgstr ""
+
+#. Online play: a sentence after a room's line in My games, how many lines are unread (Hearken rooms.rs).
+#. placeholders: {count}
+#: lang/extra.pot
+msgid "{count} new"
 msgstr ""
 
 #. a name: keep it as it is

@@ -94080,9 +94080,12 @@ msgstr ", uscito"
 msgid "No players"
 msgstr "Nessun giocatore"
 
-#. placeholders: {join}
-msgid " with {join}"
-msgstr " con {join}"
+#. placeholders: {name}
+msgid "Leave the match? {name} wins it."
+msgstr "Lasciare la partita? Vince {name}."
+
+msgid "Leave the match? The other players win it."
+msgstr "Lasciare la partita? Vincono gli altri giocatori."
 
 #. placeholders: {missing}
 msgid "waiting for {missing} more"
@@ -94098,9 +94101,13 @@ msgstr "in corso"
 msgid "over, {s}"
 msgstr "finita, {s}"
 
-#. placeholders: {unread}
-msgid ", {unread} new"
-msgstr ", {unread} nuovi"
+#. placeholders: {label}, {names}, {standing}
+msgid "{label} with {names}: {standing}"
+msgstr "{label} con {names}: {standing}"
+
+#. placeholders: {line}, {count}
+msgid "{line}. {count} new"
+msgstr "{line}. {count} nuovi"
 
 #. placeholders: {label}
 msgid "{label} online"
@@ -94282,9 +94289,6 @@ msgstr "Lascia la partita"
 
 msgid "Leave the game"
 msgstr "Lascia il gioco"
-
-msgid "Leave the match? The other players win it."
-msgstr "Lasciare la partita? Vincono gli altri giocatori."
 
 msgid "Left the match."
 msgstr "Hai lasciato la partita."
@@ -96213,6 +96217,15 @@ msgstr "1 piano"
 msgid "{n} floors"
 msgstr "{n} piani"
 
+#. Online play: whose move it is in a match, as a clause of a longer line in My games.
+msgid "their move"
+msgstr "tocca all'altro"
+
+#. Online play: a sentence after a room's line in My games, how many lines are unread (Hearken rooms.rs).
+#. placeholders: {count}
+msgid "{count} new"
+msgstr "{count} nuovi"
+
 #. a name: keep it as it is
 msgid "Wicket's"
 msgstr "Wicket's"
@@ -96224,6 +96237,24 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{label}: {standing}, {count} new"
+#~ msgstr "{label}: {standing}, {count} nuovi"
+
+#~ msgid "{label} with {names}: {standing}, {count} new"
+#~ msgstr "{label} con {names}: {standing}, {count} nuovi"
+
+#~ msgid "{label}: {standing}, {new} new"
+#~ msgstr "{label}: {standing}, {new} nuovi"
+
+#~ msgid "{label} with {names}: {standing}, {new} new"
+#~ msgstr "{label} con {names}: {standing}, {new} nuovi"
+
+#~ msgid " with {join}"
+#~ msgstr " con {join}"
+
+#~ msgid ", {unread} new"
+#~ msgstr ", {unread} nuovi"
 
 #~ msgid "first relaxed score"
 #~ msgstr "primo punteggio rilassato"

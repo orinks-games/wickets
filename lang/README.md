@@ -38,7 +38,13 @@ for you.
 
 ## Fix it yourself
 
-Each language is one text file in this folder, in the gettext PO format.
+Every release has a translation kit beside the game's downloads, on
+https://orinks.net/wickets/downloads and on the release's GitHub page:
+`wickets-<version>-translation-kit.zip`. It holds this folder's language
+files, the template, the glossaries and this guide. The files are also in
+this folder on GitHub, where they can be newer than the last release.
+
+Each language is one text file, in the gettext PO format.
 A translation editor such as [Poedit](https://poedit.net) opens it, and so
 does any plain text editor. Each entry is the English line, then its
 translation:
@@ -55,8 +61,11 @@ file to an issue.
 ### Hear your change before sending it
 
 Put your edited file in a folder named `lang` next to the game's program,
-then restart the game. A file there replaces the built-in translation for
-that language. Delete it to go back to the built-in one. The saves folder's
+then restart the game. The lines your file translates replace the built-in
+ones; every line it leaves empty, marks fuzzy or does not have keeps the
+built-in translation, so a file from an older release or one that covers
+only part of the game works too. Delete it to go back to the built-in
+translation. The saves folder's
 `lang` folder works too; when both have a file for the same language, the
 one next to the program wins.
 
