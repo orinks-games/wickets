@@ -50,6 +50,8 @@ Every wheel is worth 100 points. Crack a safe quickly for a time bonus. Each str
 
 The clock and the guard stand still while a line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode. Time spent while a line is spoken still counts toward your time on the safe, and comes off your time attack bonus.
 
+Wait for speech sits next to Pace in Settings and is on by default. Turn it off and the clock and the guard keep going while a line plays. A change applies from your next safe. Tutorials always wait. Scores go on the same boards either way.
+
 Pace in Settings sets how fast the safe runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. Your time on the safe, the time attack clock, the guard and the building noises follow the pace.
 
 A change applies from your next safe. A challenge job keeps the pace it started at until it ends.

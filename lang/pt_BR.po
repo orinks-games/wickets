@@ -937,10 +937,48 @@ msgstr "{label}. {meaning} Vale a partir da próxima partida."
 msgid "{meaning} Applies from the next run."
 msgstr "{meaning} Vale a partir da próxima partida."
 
+msgid "Wait for speech: on"
+msgstr ""
+
+msgid "Wait for speech: off"
+msgstr ""
+
+msgid ""
+"On, timed play waits while speech plays. Off, it keeps going. A change "
+"applies from the next run. Scores share the same boards. Tutorials always "
+"wait."
+msgstr ""
+
+#. one sentence of a longer line
+msgid "Applies from the next run."
+msgstr ""
+
+#. one sentence of a longer line
+msgid "The clock waits while speech plays."
+msgstr ""
+
+#. placeholders: {wait_label}
+msgid ""
+"{wait_label}. The clock waits while speech plays. Applies from the next run."
+msgstr ""
+
+#. one sentence of a longer line
+msgid "The clock keeps going through speech."
+msgstr ""
+
+#. placeholders: {wait_label}
+msgid ""
+"{wait_label}. The clock keeps going through speech. Applies from the next "
+"run."
+msgstr ""
+
 msgid "running"
 msgstr "ligado"
 
 msgid "held"
+msgstr ""
+
+msgid "unheld"
 msgstr ""
 
 msgid "bypassed"
@@ -4027,6 +4065,28 @@ msgid "This holds at every pace and in every mode."
 msgstr "Isso vale em qualquer ritmo e em qualquer modo."
 
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the meadow keeps going while a line plays. A change applies from "
+"your next run. Tutorials always wait. Scores go on the same boards either "
+"way."
+msgstr ""
+
+msgid "Wait for speech sits next to Pace in Settings and is on by default."
+msgstr ""
+
+msgid "Turn it off and the meadow keeps going while a line plays."
+msgstr ""
+
+msgid "A change applies from your next run."
+msgstr "A mudança vale a partir da próxima partida."
+
+msgid "Tutorials always wait."
+msgstr ""
+
+msgid "Scores go on the same boards either way."
+msgstr ""
+
+msgid ""
 "Pace in Settings sets how fast the meadow runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed. The drops, the patterns, the round's clock "
@@ -4060,9 +4120,6 @@ msgid ""
 msgstr ""
 "A mudança vale a partir da próxima partida. Uma partida ou um desafio "
 "mantém o ritmo em que começou até acabar."
-
-msgid "A change applies from your next run."
-msgstr "A mudança vale a partir da próxima partida."
 
 msgid "A run or a challenge keeps the pace it started at until it ends."
 msgstr "Uma partida ou um desafio mantém o ritmo em que começou até acabar."
@@ -23746,6 +23803,19 @@ msgstr ""
 "pontos de corrida."
 
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the street keeps going while a line plays. A change applies from "
+"your next ride. Tutorials always wait. Scores go on the same boards either "
+"way."
+msgstr ""
+
+msgid "Turn it off and the street keeps going while a line plays."
+msgstr ""
+
+msgid "A change applies from your next ride."
+msgstr "A mudança vale a partir da próxima corrida."
+
+msgid ""
 "Pace in Settings sets how fast the street runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed. Your bike, the traffic, every hazard's "
@@ -23768,9 +23838,6 @@ msgid ""
 msgstr ""
 "Sua bicicleta, o trânsito, o aviso de cada perigo e o relógio seguem o "
 "ritmo."
-
-msgid "A change applies from your next ride."
-msgstr "A mudança vale a partir da próxima corrida."
 
 msgid ""
 "Relaxed best times, ride points, distances and drops are saved separately, "
@@ -29123,6 +29190,19 @@ msgid "This holds at every pace and in every meal."
 msgstr "Isso vale em todo ritmo e em toda refeição."
 
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the kitchen keeps going while a line plays. A change applies from "
+"your next meal. Tutorials always wait. Scores go on the same boards either "
+"way."
+msgstr ""
+
+msgid "Turn it off and the kitchen keeps going while a line plays."
+msgstr ""
+
+msgid "A change applies from your next meal."
+msgstr "A mudança vale a partir da próxima refeição."
+
+msgid ""
 "Pace in Settings sets how fast cooking runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed."
@@ -29143,9 +29223,6 @@ msgid ""
 msgstr ""
 "A mudança vale a partir da próxima refeição. O Repeteco e os desafios "
 "mantêm o ritmo em que começaram até a partida acabar."
-
-msgid "A change applies from your next meal."
-msgstr "A mudança vale a partir da próxima refeição."
 
 msgid ""
 "Second helpings and a challenge keep the pace they started at until the run "
@@ -32844,6 +32921,16 @@ msgid ""
 msgstr ""
 "O tempo gasto enquanto uma frase é dita ainda conta no seu tempo do andar, "
 "e sai do seu bônus de tempo."
+
+msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the house keeps going while a line plays. A change applies from "
+"your next run. Tutorials always wait. Scores go on the same boards either "
+"way."
+msgstr ""
+
+msgid "Turn it off and the house keeps going while a line plays."
+msgstr ""
 
 msgid ""
 "Pace in Settings sets how fast the house runs: relaxed, normal or quick. "
@@ -53188,6 +53275,15 @@ msgid "This holds at every pace and in every run."
 msgstr "Isso vale em todo ritmo e em toda partida."
 
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the rail keeps going while a line plays. A change applies from your "
+"next run. Tutorials always wait. Scores go on the same boards either way."
+msgstr ""
+
+msgid "Turn it off and the rail keeps going while a line plays."
+msgstr ""
+
+msgid ""
 "Pace in Settings sets how fast the rail runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed."
@@ -59263,6 +59359,15 @@ msgid ""
 msgstr ""
 "Uma seta apertada nesse meio-tempo move você na hora, e uma seta segurada "
 "anda assim que a fala termina."
+
+msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the cats keep going while a line plays. A change applies from your "
+"next run. Tutorials always wait. Scores go on the same boards either way."
+msgstr ""
+
+msgid "Turn it off and the cats keep going while a line plays."
+msgstr ""
 
 msgid ""
 "Pace in Settings sets how fast the cats move: relaxed, normal or quick. "
@@ -66349,6 +66454,20 @@ msgstr ""
 "seu bônus do contra o relógio."
 
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the clock and the guard keep going while a line plays. A change "
+"applies from your next safe. Tutorials always wait. Scores go on the same "
+"boards either way."
+msgstr ""
+
+msgid ""
+"Turn it off and the clock and the guard keep going while a line plays."
+msgstr ""
+
+msgid "A change applies from your next safe."
+msgstr "Uma mudança vale a partir do próximo cofre."
+
+msgid ""
 "Pace in Settings sets how fast the safe runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed. Your time on the safe, the time attack "
@@ -66378,9 +66497,6 @@ msgid ""
 msgstr ""
 "Uma mudança vale a partir do próximo cofre. Um serviço de desafio mantém o "
 "ritmo em que começou até acabar."
-
-msgid "A change applies from your next safe."
-msgstr "Uma mudança vale a partir do próximo cofre."
 
 msgid "A challenge job keeps the pace it started at until it ends."
 msgstr "Um serviço de desafio mantém o ritmo em que começou até acabar."
@@ -68816,6 +68932,16 @@ msgid ""
 msgstr ""
 "A janela de resposta espera enquanto uma chamada ou outra fala ainda está "
 "sendo dita."
+
+msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the answer window keeps going while a line plays. A change applies "
+"from your next run. Tutorials always wait. Scores go on the same boards "
+"either way."
+msgstr ""
+
+msgid "Turn it off and the answer window keeps going while a line plays."
+msgstr ""
 
 msgid ""
 "Pace in Settings sets how fast the shift runs: relaxed, normal or quick. "
@@ -75978,6 +76104,19 @@ msgstr ""
 "a fala."
 
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the lander keeps going while a line plays. A change applies from "
+"your next flight. Tutorials always wait. Scores go on the same boards "
+"either way."
+msgstr ""
+
+msgid "Turn it off and the lander keeps going while a line plays."
+msgstr ""
+
+msgid "A change applies from your next flight."
+msgstr "Uma mudança vale a partir do próximo voo."
+
+msgid ""
 "Pace in Settings sets how fast the descent runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed. Your fall, the engine, the fuel and the "
@@ -76003,9 +76142,6 @@ msgid ""
 msgstr ""
 "Uma mudança vale a partir do próximo voo. Um desafio e a plataforma de "
 "treino mantêm o ritmo em que começaram até você sair deles."
-
-msgid "A change applies from your next flight."
-msgstr "Uma mudança vale a partir do próximo voo."
 
 msgid ""
 "A challenge and the practice pad keep the pace they started at until you "
@@ -77936,6 +78072,18 @@ msgid ""
 msgstr ""
 "Enquanto você segura uma tecla de virar, e enquanto os ecos de um ping "
 "voltam, o mar continua durante a fala."
+
+msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the sea keeps going while a line plays. A change applies from your "
+"next dive. Tutorials always wait. Scores go on the same boards either way."
+msgstr ""
+
+msgid "Turn it off and the sea keeps going while a line plays."
+msgstr ""
+
+msgid "A change applies from your next dive."
+msgstr ""
 
 msgid ""
 "Pace in Settings sets how fast the sea runs: relaxed, normal or quick. "
@@ -83908,6 +84056,19 @@ msgid "This holds at every pace and on every trip."
 msgstr "Isso vale em qualquer ritmo e em qualquer passeio."
 
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the shore keeps going while a line plays. A change applies from "
+"your next trip. Tutorials always wait. Scores go on the same boards either "
+"way."
+msgstr ""
+
+msgid "Turn it off and the shore keeps going while a line plays."
+msgstr ""
+
+msgid "A change applies from your next trip."
+msgstr "Uma mudança vale a partir do próximo passeio."
+
+msgid ""
 "Pace in Settings sets how fast the shore runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed. The creatures, the time to reach in and the "
@@ -83927,9 +84088,6 @@ msgstr ""
 
 msgid "The creatures, the time to reach in and the tide follow the pace."
 msgstr "As criaturas, o tempo para enfiar a mão e a maré seguem o ritmo."
-
-msgid "A change applies from your next trip."
-msgstr "Uma mudança vale a partir do próximo passeio."
 
 msgid ""
 "Relaxed scores are saved separately, including challenges and calendar "
@@ -86589,6 +86747,15 @@ msgstr ""
 "O tempo de fala ainda conta no tempo da travessia e no bônus de tempo-alvo."
 
 msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and the wire keeps going while a line plays. A change applies from your "
+"next run. Tutorials always wait. Scores go on the same boards either way."
+msgstr ""
+
+msgid "Turn it off and the wire keeps going while a line plays."
+msgstr ""
+
+msgid ""
 "Pace in Settings sets how fast the wire runs: relaxed, normal or quick. "
 "Normal is the default and a little slower than quick. Quick is the fastest, "
 "and relaxed runs at half speed. Your balance, the wind, the pigeons and "
@@ -88515,6 +88682,16 @@ msgid ""
 "clock bonus."
 msgstr ""
 "O tempo de fala ainda sai do tempo que sobra para o bônus do relógio."
+
+msgid ""
+"Wait for speech sits next to Pace in Settings and is on by default. Turn it "
+"off and Gift Sort keeps going while a line plays. A change applies from "
+"your next run. Tutorials always wait. Scores go on the same boards either "
+"way."
+msgstr ""
+
+msgid "Turn it off and Gift Sort keeps going while a line plays."
+msgstr ""
 
 msgid ""
 "Pace in Settings applies to Gift Sort only, and sets how fast it runs: "

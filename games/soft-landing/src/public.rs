@@ -169,7 +169,7 @@ impl TitleGame for SoftLanding {
 
     /// Distances are spoken in the player's units, so Units sits here too.
     fn settings(_ctx: &Ctx<Parlor>) -> Vec<hearken::screens::SettingsRow<Parlor>> {
-        vec![parlor_core::units::row(), pace::row(ID)]
+        vec![parlor_core::units::row(), pace::row(ID), pace::wait_row(ID)]
     }
 
     fn music(&mut self, ctx: &mut Ctx<Parlor>) {

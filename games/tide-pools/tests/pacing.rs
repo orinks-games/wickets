@@ -112,7 +112,7 @@ fn normal_is_the_default_and_settings_has_the_pace_row() {
     );
     assert_eq!(s.borrow().clock.pace(), Pace::Normal);
     let rows = <tide_pools::TidePools as parlor_core::menus::TitleGame>::settings(&h.app.ctx);
-    assert_eq!(rows.len(), 1);
+    assert_eq!(rows.len(), 2);
 }
 
 #[test]

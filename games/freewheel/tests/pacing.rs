@@ -155,7 +155,7 @@ fn normal_is_the_default_and_settings_ends_with_pace() {
     h.frame(0.0);
     assert_eq!(s.borrow().run_clock.pace(), Pace::Normal);
     let rows = <freewheel::Freewheel as parlor_core::menus::TitleGame>::settings(&h.app.ctx);
-    assert_eq!(rows.len(), 3, "call-outs, units, then pace");
+    assert_eq!(rows.len(), 4, "call-outs, units, then pace, then wait for speech");
 }
 
 #[test]

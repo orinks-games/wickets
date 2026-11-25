@@ -333,7 +333,7 @@ impl TitleGame for HauntedHallways {
     }
 
     fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
-        vec![pace::row(ID)]
+        vec![pace::row(ID), pace::wait_row(ID)]
     }
 
     fn lesson(&mut self, ctx: &mut Ctx<Parlor>) -> parlor_core::Lesson {

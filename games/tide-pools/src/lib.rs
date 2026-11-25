@@ -235,7 +235,7 @@ impl TitleGame for TidePools {
     }
 
     fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
-        vec![pace::row(ID)]
+        vec![pace::row(ID), pace::wait_row(ID)]
     }
 
     fn play_rows(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {

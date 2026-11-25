@@ -307,7 +307,14 @@ impl RunScreen {
     }
 
     /// The run going on after an intermission, at the run's `pace`.
-    pub fn continuing(run: Run, launch: Launch, route: Route, pace: Pace) -> RunScreen {
+    /// It waits for speech as the run did from its start (`waits`).
+    pub fn continuing(
+        run: Run,
+        launch: Launch,
+        route: Route,
+        pace: Pace,
+        waits: bool,
+    ) -> RunScreen {
         RunScreen {
             run: Some(run),
             launch,
@@ -318,7 +325,7 @@ impl RunScreen {
             score: Score::new(),
             status_key: Default::default(),
             tutorial_log: Vec::new(),
-            clock: RunClock::new(pace),
+            clock: RunClock::new(pace).waiting(waits),
             fire_waiting: false,
         }
     }
@@ -796,7 +803,11 @@ impl State<Parlor> for RunScreen {
                 self.stop_sounds(ctx);
                 if let Some(run) = self.run.take() {
                     let launch = self.launch;
-                    ctx.replace(UpgradeMenu::new(run, launch).at_pace(self.clock.pace()));
+                    ctx.replace(
+                        UpgradeMenu::new(run, launch)
+                            .at_pace(self.clock.pace())
+                            .waiting(self.clock.waits()),
+                    );
                 }
             }
             Phase::Over { .. } => self.finish(ctx),
@@ -916,12 +927,20 @@ pub struct UpgradeMenu {
     fragment: Option<String>,
     /// The run's pace, carried to the sectors after.
     pace: Pace,
+    /// Whether the run waits for speech, carried the same way.
+    waits: bool,
 }
 
 impl UpgradeMenu {
     /// The menu of a run at `pace`.
     pub fn at_pace(mut self, pace: Pace) -> UpgradeMenu {
         self.pace = pace;
+        self
+    }
+
+    /// The menu of a run that waits for speech, or not.
+    pub fn waiting(mut self, waits: bool) -> UpgradeMenu {
+        self.waits = waits;
         self
     }
 
@@ -938,6 +957,7 @@ impl UpgradeMenu {
             options,
             fragment: None,
             pace: Pace::Normal,
+            waits: true,
         }
     }
 }
@@ -1036,6 +1056,7 @@ impl Menu for UpgradeMenu {
                         let launch = s.launch;
                         let mut menu = RouteMenu::new(run, launch, u.name());
                         menu.pace = s.pace;
+                        menu.waits = s.waits;
                         ctx.replace(menu);
                     },
                 )
@@ -1058,7 +1079,13 @@ impl Menu for UpgradeMenu {
                         };
                         run.end_here();
                         let mut screen =
-                            RunScreen::continuing(run, s.launch, Route::Standard, s.pace);
+                            RunScreen::continuing(
+                            run,
+                            s.launch,
+                            Route::Standard,
+                            s.pace,
+                            s.waits,
+                        );
                         screen.finish(ctx);
                     },
                 )
@@ -1079,6 +1106,8 @@ pub struct RouteMenu {
     options: Vec<Route>,
     /// The run's pace, carried to the sectors after.
     pace: Pace,
+    /// Whether the run waits for speech, carried the same way.
+    waits: bool,
 }
 
 impl RouteMenu {
@@ -1096,6 +1125,7 @@ impl RouteMenu {
             run: Some(run),
             launch,
             pace: Pace::Normal,
+            waits: true,
         }
     }
 }
@@ -1164,7 +1194,7 @@ impl Menu for RouteMenu {
                         };
                         run.choose_route(r);
                         let launch = s.launch;
-                        ctx.replace(RunScreen::continuing(run, launch, r, s.pace));
+                        ctx.replace(RunScreen::continuing(run, launch, r, s.pace, s.waits));
                     },
                 )
                 .help(blurb(r))

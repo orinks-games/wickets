@@ -59,6 +59,8 @@ You score for distance every second, for every clean pass, dodge, smash, pickup 
 
 The rail holds while a call-out or another line is still being spoken: arrivals, their approach, the tools' timers and the sector clock stand still. A line you ask for again and again stops holding after a while. This holds at every pace and in every run.
 
+Wait for speech sits next to Pace in Settings and is on by default. Turn it off and the rail keeps going while a line plays. A change applies from your next run. Tutorials always wait. Scores go on the same boards either way.
+
 Pace in Settings sets how fast the rail runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed.
 
 A change applies from your next run. A run keeps the pace it started at through all its sectors.

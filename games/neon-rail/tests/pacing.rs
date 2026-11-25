@@ -155,7 +155,7 @@ fn normal_is_the_default_and_settings_has_the_pace_row() {
     let screen = RunScreen::start(&mut h.app.ctx, launch);
     assert_eq!(screen.clock.pace(), Pace::Normal);
     let rows = <neon_rail::NeonRail as parlor_core::menus::TitleGame>::settings(&h.app.ctx);
-    assert_eq!(rows.len(), 2, "call-outs, then pace");
+    assert_eq!(rows.len(), 3, "call-outs, then pace, then wait for speech");
 }
 
 #[test]
@@ -252,7 +252,7 @@ fn pace_stays_fixed_for_the_run_and_resume_gives_a_fresh_hold() {
         seed: Some(7),
         day: None,
     };
-    let next = RunScreen::continuing(run, launch, Route::Standard, Pace::Relaxed);
+    let next = RunScreen::continuing(run, launch, Route::Standard, Pace::Relaxed, true);
     assert_eq!(next.clock.pace(), Pace::Relaxed);
     // The next run takes the new pace.
     let (_h, s) = start(Mode::BlackSky, Pace::Quick);

@@ -346,7 +346,7 @@ impl TitleGame for Freewheel {
             "Choose when the game names what is coming on the road: every time, once per session, or off. A session lasts until you close Wicket's. Status and Hint always speak.",
         ),
             parlor_core::units::row(),
-            pace::row(ID),
+            pace::row(ID), pace::wait_row(ID),
         ]
     }
 

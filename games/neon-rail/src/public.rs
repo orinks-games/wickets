@@ -374,7 +374,7 @@ impl TitleGame for NeonRail {
                 |_ctx, _on| None,
                 "When on, approaching traffic, hazards and pickups are named, such as Debris left. Off stops these announcements. Status and Hint still speak.",
             ),
-            pace::row(ID),
+            pace::row(ID), pace::wait_row(ID),
         ]
     }
 

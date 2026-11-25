@@ -446,7 +446,7 @@ fn records_and_the_title_name_both_boards() {
 fn settings_has_units_then_pace() {
     let h = headless();
     let rows = <soft_landing::SoftLanding as parlor_core::menus::TitleGame>::settings(&h.app.ctx);
-    assert_eq!(rows.len(), 2);
+    assert_eq!(rows.len(), 3);
 }
 
 #[test]

@@ -412,7 +412,7 @@ fn records_leave_out_a_board_with_no_score() {
 fn settings_has_the_pace_row() {
     let h = headless();
     let rows = <signal_box::SignalBox as parlor_core::menus::TitleGame>::settings(&h.app.ctx);
-    assert_eq!(rows.len(), 1);
+    assert_eq!(rows.len(), 2);
 }
 
 #[test]

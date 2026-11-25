@@ -400,7 +400,7 @@ fn settings_has_the_pace_row() {
     let h = headless();
     let rows =
         <haunted_hallways::HauntedHallways as parlor_core::menus::TitleGame>::settings(&h.app.ctx);
-    assert_eq!(rows.len(), 1);
+    assert_eq!(rows.len(), 2);
 }
 
 #[test]

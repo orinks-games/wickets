@@ -1267,8 +1267,11 @@ impl Run {
         let (id, kind, lane) = (self.events[i].id, self.events[i].kind, self.events[i].lane);
         self.notes.push(Note::Spawn(id));
         match kind {
-            Kind::Priority => self.cue(cues::PRIORITY_NOTICE),
-            Kind::HeavyBlocker | Kind::Unstable => self.cue(cues::STRESS_WARNING),
+            // In the arrival's lane, so the warning says where it is.
+            Kind::Priority => self.notes.push(Note::LaneCue(cues::PRIORITY_NOTICE, lane)),
+            Kind::HeavyBlocker | Kind::Unstable => {
+                self.notes.push(Note::LaneCue(cues::STRESS_WARNING, lane))
+            }
             _ => {}
         }
         if self.callouts {

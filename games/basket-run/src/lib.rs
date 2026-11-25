@@ -265,7 +265,7 @@ impl TitleGame for BasketRun {
             },
             "When on, a voice names each drop and its lane as it starts to fall. Off for a whole run, you earn a tenth more on everything you bank.",
         ),
-            pace::row(ID),
+            pace::row(ID), pace::wait_row(ID),
         ]
     }
 

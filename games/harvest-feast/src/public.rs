@@ -254,7 +254,7 @@ impl TitleGame for HarvestFeast {
             |_ctx, _on| None,
             "When on, the kitchen says when a dish needs you. Cook a whole course with it off for 10 percent more points.",
         ),
-            parlor_core::pace::row_with(ID, progress::pace),
+            parlor_core::pace::row_with(ID, progress::pace), parlor_core::pace::wait_row(ID),
         ]
     }
 

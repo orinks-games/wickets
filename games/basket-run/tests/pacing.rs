@@ -136,7 +136,7 @@ fn normal_is_the_default_and_pace_follows_call_outs() {
     let s = open_at(&mut fresh, Mode::Meadow, Pace::Normal);
     assert_eq!(s.borrow().run_clock.pace(), Pace::Normal);
     let rows = <basket_run::BasketRun as parlor_core::menus::TitleGame>::settings(&h.app.ctx);
-    assert_eq!(rows.len(), 2, "call-outs, then pace");
+    assert_eq!(rows.len(), 3, "call-outs, pace, then wait for speech");
 }
 
 #[test]
@@ -169,6 +169,24 @@ fn every_mode_holds_for_speech_and_runs_at_its_pace() {
             );
         }
     }
+}
+
+#[test]
+fn with_wait_for_speech_off_the_drops_fall_through_speech() {
+    let mut h = headless();
+    pace::set_waits(&mut h.app.ctx, ID, false);
+    let s = open_at(&mut h, Mode::Meadow, Pace::Quick);
+    h.press(Key::Space);
+    quiet(&mut h);
+    assert!(!s.borrow().run_clock.waits());
+    let before = time_left(&s);
+    h.app.ctx.say("A line still being spoken.");
+    tick(&mut h, &s, 0.4);
+    assert!((before - time_left(&s) - 0.4).abs() < 1e-6, "the clock ran");
+    assert_eq!(s.borrow().run_clock.state(), ClockState::Unheld);
+    // A change waits for the next run.
+    pace::set_waits(&mut h.app.ctx, ID, true);
+    assert!(!s.borrow().run_clock.waits());
 }
 
 #[test]
