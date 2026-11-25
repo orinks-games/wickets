@@ -74850,269 +74850,6 @@ msgstr "Il fiume è gelato, e oggi la fiera è sul ghiaccio."
 msgid "Midnight skate"
 msgstr "Pattinata di mezzanotte"
 
-msgid "Snowfall Skate"
-msgstr "Snowfall Skate"
-
-msgid ""
-"A winter special. Skate a frozen pond at night, taking lanterns as they "
-"light, while the snow comes down. Play once, even in practice, to keep it "
-"all year."
-msgstr ""
-"Uno speciale d'inverno. Pattina su uno stagno ghiacciato di notte, "
-"prendendo i lanternini quando si accendono, mentre scende la neve. Gioca "
-"una volta, anche in allenamento, per tenerlo tutto l'anno."
-
-msgid ""
-"Skate a frozen pond at night, taking lanterns as they light, while the snow "
-"comes down. The Frost Fair opens in winter."
-msgstr ""
-"Pattina su uno stagno ghiacciato di notte, prendendo i lanternini quando si "
-"accendono, mentre scende la neve. La Frost Fair apre d'inverno."
-
-msgid ""
-"Snowfall Skate is yours to keep. After the winter, it moves to the Cozy "
-"games."
-msgstr ""
-"Snowfall Skate resta tuo. Dopo l'inverno passa tra i Giochi tranquilli."
-
-msgid ""
-"A winter special. Skate a frozen pond at night, taking lanterns as they "
-"light, while the snow comes down."
-msgstr ""
-"Uno speciale d'inverno. Pattina su uno stagno ghiacciato di notte, "
-"prendendo i lanternini quando si accendono, mentre scende la neve."
-
-#. placeholders: {title}
-msgid "{title}: locked."
-msgstr "{title}: bloccato."
-
-#. placeholders: {points_words}
-msgid "The Frost Fair: best {points_words}."
-msgstr "La Frost Fair: record {points_words}."
-
-msgid "The Frost Fair: not skated yet."
-msgstr "La Frost Fair: non ancora pattinata."
-
-msgid "1 Frost Fair ribbon"
-msgstr "1 nastro della Frost Fair"
-
-#. one sentence of a longer line
-msgid "Frost Fair ribbons"
-msgstr "nastri della Frost Fair"
-
-#. placeholders: {n}
-msgid "{n} Frost Fair ribbons"
-msgstr "{n} nastri della Frost Fair"
-
-#. placeholders: {b}, {LANTERN_PAIRS}, {whole_tunes}
-msgid ""
-"Lantern skate: best {b} of {LANTERN_PAIRS} in order, the whole tune "
-"{whole_tunes} times."
-msgstr ""
-"Pattinata dei lanternini: record {b} su {LANTERN_PAIRS} in ordine, la "
-"melodia intera {whole_tunes} volte."
-
-msgid "Lantern skate: not skated yet."
-msgstr "Pattinata dei lanternini: non ancora pattinata."
-
-#. placeholders: {stars_words}, {join}, {fair}, {lanterns}
-msgid "Records. {stars_words} in all. {join} {fair} {lanterns}"
-msgstr "Primati. {stars_words} in tutto. {join} {fair} {lanterns}"
-
-#. placeholders: {stars_words}
-#. one sentence of a longer line
-msgid "{stars_words} in all."
-msgstr "{stars_words} in tutto."
-
-#. placeholders: {cracks}
-#. one sentence of a longer line
-msgid "Cracks in the ice: {cracks}."
-msgstr "Crepe nel ghiaccio: {cracks}."
-
-#. placeholders: {lanterns}
-#. one sentence of a longer line
-msgid "Lanterns taken: {lanterns}."
-msgstr "Lanternini presi: {lanterns}."
-
-#. placeholders: {best_line}
-#. one sentence of a longer line
-msgid "Longest line: {best_line}."
-msgstr "Catena più lunga: {best_line}."
-
-#. placeholders: {spins}
-#. one sentence of a longer line
-msgid "Spins landed: {spins}."
-msgstr "Piroette riuscite: {spins}."
-
-#. placeholders: {format}, {lanterns}, {best_line}, {spins}, {drifts}, {cracks}, {sentence_start}
-msgid ""
-"{format}. Lanterns taken: {lanterns}. Longest line: {best_line}. Spins "
-"landed: {spins}. Drifts: {drifts}. Cracks in the ice: {cracks}. "
-"{sentence_start}."
-msgstr ""
-"{format}. Lanternini presi: {lanterns}. Catena più lunga: {best_line}. "
-"Piroette riuscite: {spins}. Cumuli: {drifts}. Crepe nel ghiaccio: {cracks}. "
-"{sentence_start}."
-
-msgid "1 skate"
-msgstr "1 pattinata"
-
-#. placeholders: {n}
-msgid "{n} skates"
-msgstr "{n} pattinate"
-
-#. placeholders: {open}, {stars_words}
-msgid "Choose a pond, {open} of 3 open, {stars_words}"
-msgstr "Scegli uno stagno, {open} di 3 aperti, {stars_words}"
-
-msgid "Every pond with its stars and best. A star on one opens the next."
-msgstr ""
-"Ogni stagno con le sue stelle e il suo record. Una stella su uno sblocca il "
-"successivo."
-
-#. placeholders: {LANTERN_ROW}, {n}, {LANTERN_PAIRS}
-msgid "{LANTERN_ROW}, {n} of {LANTERN_PAIRS} tonight"
-msgstr "{LANTERN_ROW}, {n} di {LANTERN_PAIRS} stanotte"
-
-#. placeholders: {LANTERN_ROW}
-msgid "{LANTERN_ROW}, tonight's lanterns"
-msgstr "{LANTERN_ROW}, i lanternini di stanotte"
-
-#. one sentence of a longer line
-msgid "Take the first lit of each pair."
-msgstr "Prendi il primo acceso di ogni coppia."
-
-#. placeholders: {sentence_start}
-#. one sentence of a longer line
-msgid "{sentence_start} in pairs, the same for everyone tonight."
-msgstr "{sentence_start} a coppie, uguali per tutti stanotte."
-
-#. placeholders: {sentence_start}
-msgid ""
-"{sentence_start} in pairs, the same for everyone tonight. Take the first "
-"lit of each pair."
-msgstr ""
-"{sentence_start} a coppie, uguali per tutti stanotte. Prendi il primo "
-"acceso di ogni coppia."
-
-msgid ""
-"The lantern skate is lit every evening, from 4 in the afternoon to 9 at "
-"night, by your clock."
-msgstr ""
-"La pattinata dei lanternini si accende ogni sera, dalle 4 del pomeriggio "
-"alle 9 di sera, secondo il tuo orologio."
-
-msgid "Lanterns in pairs, every evening by your clock."
-msgstr "Lanternini a coppie, ogni sera secondo il tuo orologio."
-
-#. placeholders: {FAIR_ROW}, {points_words}
-msgid "{FAIR_ROW}, best {points_words}"
-msgstr "{FAIR_ROW}, record {points_words}"
-
-#. one sentence of a longer line
-msgid "The long skate down the frozen river, past the stalls."
-msgstr "La lunga pattinata lungo il fiume gelato, oltre le bancarelle."
-
-#. placeholders: {sentence_start}
-msgid ""
-"The long skate down the frozen river, past the stalls. {sentence_start} on "
-"the day earns this winter's ribbon."
-msgstr ""
-"La lunga pattinata lungo il fiume gelato, oltre le bancarelle. "
-"{sentence_start} nel suo giorno vale il nastro di questo inverno."
-
-#. placeholders: {sentence_start}
-#. one sentence of a longer line
-msgid "{sentence_start} on the day earns this winter's ribbon."
-msgstr "{sentence_start} nel suo giorno vale il nastro di questo inverno."
-
-#. placeholders: {fair_date_words}
-msgid "The Frost Fair opens on {fair_date_words}."
-msgstr "La Frost Fair apre il {fair_date_words}."
-
-msgid ""
-"The river freezes once a winter for the fair, and you skate it for a ribbon."
-msgstr ""
-"Il fiume gela una volta per inverno per la fiera, e lo pattini per un "
-"nastro."
-
-msgid "Skate the village pond to midnight and the fireworks."
-msgstr ""
-"Pattina sullo stagno del villaggio fino a mezzanotte e ai fuochi "
-"d'artificio."
-
-msgid ""
-"The midnight skate opens at 11 at night on New Year's Eve, by your clock, "
-"until 1 in the morning."
-msgstr ""
-"La pattinata di mezzanotte apre alle 11 di sera a Capodanno, secondo il tuo "
-"orologio, fino all'1 di notte."
-
-msgid "Skate to midnight on New Year's Eve."
-msgstr "Pattina fino a mezzanotte a Capodanno."
-
-msgid "Practice skate"
-msgstr "Pattinata di allenamento"
-
-msgid ""
-"The village pond, slowly, with no snow and nothing scored. Every lantern is "
-"named."
-msgstr ""
-"Lo stagno del villaggio, piano, senza neve e senza punteggio. Ogni "
-"lanternino viene nominato."
-
-msgid ""
-"Your stars and bests on every pond, the Frost Fair and the lantern skate, "
-"your tallies, and your challenge results."
-msgstr ""
-"Le tue stelle e i tuoi record su ogni stagno, la Frost Fair e la pattinata "
-"dei lanternini, i tuoi conteggi e i risultati delle sfide."
-
-msgid ""
-"Plays the lanterns, the drifts, the thin ice, your partner and the spin."
-msgstr ""
-"Suona i lanternini, i cumuli, il ghiaccio sottile, il tuo compagno e la "
-"piroetta."
-
-#. one sentence of a longer line
-msgid ""
-"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
-"every player."
-msgstr ""
-"Lo stagno di stasera, la settimana del ghiaccio sottile e la pattinata di "
-"mezzo inverno: lo stesso ghiaccio per tutti."
-
-#. placeholders: {resets}
-msgid ""
-"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
-"every player. {resets}"
-msgstr ""
-"Lo stagno di stasera, la settimana del ghiaccio sottile e la pattinata di "
-"mezzo inverno: lo stesso ghiaccio per tutti. {resets}"
-
-msgid "Spoken call-outs: on. The game also names each lantern's lane."
-msgstr ""
-"Avvisi a voce: sì. Il gioco nomina anche la corsia di ogni lanternino."
-
-msgid "Spoken call-outs: off. The lanterns play without names."
-msgstr "Avvisi a voce: no. I lanternini suonano senza nomi."
-
-msgid "When on, the game also names each lantern's lane as it lights."
-msgstr ""
-"Se attivo, il gioco nomina anche la corsia di ogni lanternino quando si "
-"accende."
-
-msgid ""
-"Clear your stars and ribbons, and start Snowfall Skate over? Best scores "
-"and settings are kept."
-msgstr ""
-"Cancellare stelle e nastri e ricominciare Snowfall Skate? Record e "
-"impostazioni restano."
-
-msgid ""
-"Clears your stars, ribbons and tallies. Best scores and challenges are kept."
-msgstr "Cancella stelle, nastri e conteggi. Record e sfide restano."
-
 msgid "waltz-a"
 msgstr ""
 
@@ -75195,6 +74932,9 @@ msgstr "Torna al menu del titolo di Snowfall Skate."
 
 msgid "midnight"
 msgstr ""
+
+msgid "Practice skate"
+msgstr "Pattinata di allenamento"
 
 #. placeholders: {sentence_start2}
 #. one sentence of a longer line
@@ -75732,6 +75472,11 @@ msgid ""
 msgstr ""
 "Lanternini presi: {taken} su {passed_count}. Catena più lunga: {best_line}."
 
+#. placeholders: {best_line}
+#. one sentence of a longer line
+msgid "Longest line: {best_line}."
+msgstr "Catena più lunga: {best_line}."
+
 #. placeholders: {wrong}
 msgid "Taken out of order: {wrong}."
 msgstr "Presi fuori ordine: {wrong}."
@@ -75888,6 +75633,261 @@ msgstr ""
 
 msgid "lantern skate"
 msgstr ""
+
+msgid "Snowfall Skate"
+msgstr "Snowfall Skate"
+
+msgid ""
+"A winter special. Skate a frozen pond at night, taking lanterns as they "
+"light, while the snow comes down. Play once, even in practice, to keep it "
+"all year."
+msgstr ""
+"Uno speciale d'inverno. Pattina su uno stagno ghiacciato di notte, "
+"prendendo i lanternini quando si accendono, mentre scende la neve. Gioca "
+"una volta, anche in allenamento, per tenerlo tutto l'anno."
+
+msgid ""
+"Skate a frozen pond at night, taking lanterns as they light, while the snow "
+"comes down. The Frost Fair opens in winter."
+msgstr ""
+"Pattina su uno stagno ghiacciato di notte, prendendo i lanternini quando si "
+"accendono, mentre scende la neve. La Frost Fair apre d'inverno."
+
+msgid ""
+"Snowfall Skate is yours to keep. After the winter, it moves to the Cozy "
+"games."
+msgstr ""
+"Snowfall Skate resta tuo. Dopo l'inverno passa tra i Giochi tranquilli."
+
+msgid ""
+"A winter special. Skate a frozen pond at night, taking lanterns as they "
+"light, while the snow comes down."
+msgstr ""
+"Uno speciale d'inverno. Pattina su uno stagno ghiacciato di notte, "
+"prendendo i lanternini quando si accendono, mentre scende la neve."
+
+#. placeholders: {title}
+msgid "{title}: locked."
+msgstr "{title}: bloccato."
+
+#. placeholders: {points_words}
+msgid "The Frost Fair: best {points_words}."
+msgstr "La Frost Fair: record {points_words}."
+
+msgid "The Frost Fair: not skated yet."
+msgstr "La Frost Fair: non ancora pattinata."
+
+msgid "1 Frost Fair ribbon"
+msgstr "1 nastro della Frost Fair"
+
+#. one sentence of a longer line
+msgid "Frost Fair ribbons"
+msgstr "nastri della Frost Fair"
+
+#. placeholders: {n}
+msgid "{n} Frost Fair ribbons"
+msgstr "{n} nastri della Frost Fair"
+
+#. placeholders: {b}, {LANTERN_PAIRS}, {whole_tunes}
+msgid ""
+"Lantern skate: best {b} of {LANTERN_PAIRS} in order, the whole tune "
+"{whole_tunes} times."
+msgstr ""
+"Pattinata dei lanternini: record {b} su {LANTERN_PAIRS} in ordine, la "
+"melodia intera {whole_tunes} volte."
+
+msgid "Lantern skate: not skated yet."
+msgstr "Pattinata dei lanternini: non ancora pattinata."
+
+#. placeholders: {stars_words}, {join}, {fair}, {lanterns}
+msgid "Records. {stars_words} in all. {join} {fair} {lanterns}"
+msgstr "Primati. {stars_words} in tutto. {join} {fair} {lanterns}"
+
+#. placeholders: {stars_words}
+#. one sentence of a longer line
+msgid "{stars_words} in all."
+msgstr "{stars_words} in tutto."
+
+#. placeholders: {cracks}
+#. one sentence of a longer line
+msgid "Cracks in the ice: {cracks}."
+msgstr "Crepe nel ghiaccio: {cracks}."
+
+#. placeholders: {lanterns}
+#. one sentence of a longer line
+msgid "Lanterns taken: {lanterns}."
+msgstr "Lanternini presi: {lanterns}."
+
+#. placeholders: {spins}
+#. one sentence of a longer line
+msgid "Spins landed: {spins}."
+msgstr "Piroette riuscite: {spins}."
+
+#. placeholders: {format}, {lanterns}, {best_line}, {spins}, {drifts}, {cracks}, {sentence_start}
+msgid ""
+"{format}. Lanterns taken: {lanterns}. Longest line: {best_line}. Spins "
+"landed: {spins}. Drifts: {drifts}. Cracks in the ice: {cracks}. "
+"{sentence_start}."
+msgstr ""
+"{format}. Lanternini presi: {lanterns}. Catena più lunga: {best_line}. "
+"Piroette riuscite: {spins}. Cumuli: {drifts}. Crepe nel ghiaccio: {cracks}. "
+"{sentence_start}."
+
+msgid "1 skate"
+msgstr "1 pattinata"
+
+#. placeholders: {n}
+msgid "{n} skates"
+msgstr "{n} pattinate"
+
+#. placeholders: {open}, {stars_words}
+msgid "Choose a pond, {open} of 3 open, {stars_words}"
+msgstr "Scegli uno stagno, {open} di 3 aperti, {stars_words}"
+
+msgid "Every pond with its stars and best. A star on one opens the next."
+msgstr ""
+"Ogni stagno con le sue stelle e il suo record. Una stella su uno sblocca il "
+"successivo."
+
+#. placeholders: {LANTERN_ROW}, {n}, {LANTERN_PAIRS}
+msgid "{LANTERN_ROW}, {n} of {LANTERN_PAIRS} tonight"
+msgstr "{LANTERN_ROW}, {n} di {LANTERN_PAIRS} stanotte"
+
+#. placeholders: {LANTERN_ROW}
+msgid "{LANTERN_ROW}, tonight's lanterns"
+msgstr "{LANTERN_ROW}, i lanternini di stanotte"
+
+#. one sentence of a longer line
+msgid "Take the first lit of each pair."
+msgstr "Prendi il primo acceso di ogni coppia."
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid "{sentence_start} in pairs, the same for everyone tonight."
+msgstr "{sentence_start} a coppie, uguali per tutti stanotte."
+
+#. placeholders: {sentence_start}
+msgid ""
+"{sentence_start} in pairs, the same for everyone tonight. Take the first "
+"lit of each pair."
+msgstr ""
+"{sentence_start} a coppie, uguali per tutti stanotte. Prendi il primo "
+"acceso di ogni coppia."
+
+msgid ""
+"The lantern skate is lit every evening, from 4 in the afternoon to 9 at "
+"night, by your clock."
+msgstr ""
+"La pattinata dei lanternini si accende ogni sera, dalle 4 del pomeriggio "
+"alle 9 di sera, secondo il tuo orologio."
+
+msgid "Lanterns in pairs, every evening by your clock."
+msgstr "Lanternini a coppie, ogni sera secondo il tuo orologio."
+
+#. placeholders: {FAIR_ROW}, {points_words}
+msgid "{FAIR_ROW}, best {points_words}"
+msgstr "{FAIR_ROW}, record {points_words}"
+
+#. one sentence of a longer line
+msgid "The long skate down the frozen river, past the stalls."
+msgstr "La lunga pattinata lungo il fiume gelato, oltre le bancarelle."
+
+#. placeholders: {sentence_start}
+msgid ""
+"The long skate down the frozen river, past the stalls. {sentence_start} on "
+"the day earns this winter's ribbon."
+msgstr ""
+"La lunga pattinata lungo il fiume gelato, oltre le bancarelle. "
+"{sentence_start} nel suo giorno vale il nastro di questo inverno."
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+msgid "{sentence_start} on the day earns this winter's ribbon."
+msgstr "{sentence_start} nel suo giorno vale il nastro di questo inverno."
+
+#. placeholders: {fair_date_words}
+msgid "The Frost Fair opens on {fair_date_words}."
+msgstr "La Frost Fair apre il {fair_date_words}."
+
+msgid ""
+"The river freezes once a winter for the fair, and you skate it for a ribbon."
+msgstr ""
+"Il fiume gela una volta per inverno per la fiera, e lo pattini per un "
+"nastro."
+
+msgid "Skate the village pond to midnight and the fireworks."
+msgstr ""
+"Pattina sullo stagno del villaggio fino a mezzanotte e ai fuochi "
+"d'artificio."
+
+msgid ""
+"The midnight skate opens at 11 at night on New Year's Eve, by your clock, "
+"until 1 in the morning."
+msgstr ""
+"La pattinata di mezzanotte apre alle 11 di sera a Capodanno, secondo il tuo "
+"orologio, fino all'1 di notte."
+
+msgid "Skate to midnight on New Year's Eve."
+msgstr "Pattina fino a mezzanotte a Capodanno."
+
+msgid ""
+"The village pond, slowly, with no snow and nothing scored. Every lantern is "
+"named."
+msgstr ""
+"Lo stagno del villaggio, piano, senza neve e senza punteggio. Ogni "
+"lanternino viene nominato."
+
+msgid ""
+"Your stars and bests on every pond, the Frost Fair and the lantern skate, "
+"your tallies, and your challenge results."
+msgstr ""
+"Le tue stelle e i tuoi record su ogni stagno, la Frost Fair e la pattinata "
+"dei lanternini, i tuoi conteggi e i risultati delle sfide."
+
+msgid ""
+"Plays the lanterns, the drifts, the thin ice, your partner and the spin."
+msgstr ""
+"Suona i lanternini, i cumuli, il ghiaccio sottile, il tuo compagno e la "
+"piroetta."
+
+#. one sentence of a longer line
+msgid ""
+"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
+"every player."
+msgstr ""
+"Lo stagno di stasera, la settimana del ghiaccio sottile e la pattinata di "
+"mezzo inverno: lo stesso ghiaccio per tutti."
+
+#. placeholders: {resets}
+msgid ""
+"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
+"every player. {resets}"
+msgstr ""
+"Lo stagno di stasera, la settimana del ghiaccio sottile e la pattinata di "
+"mezzo inverno: lo stesso ghiaccio per tutti. {resets}"
+
+msgid "Spoken call-outs: on. The game also names each lantern's lane."
+msgstr ""
+"Avvisi a voce: sì. Il gioco nomina anche la corsia di ogni lanternino."
+
+msgid "Spoken call-outs: off. The lanterns play without names."
+msgstr "Avvisi a voce: no. I lanternini suonano senza nomi."
+
+msgid "When on, the game also names each lantern's lane as it lights."
+msgstr ""
+"Se attivo, il gioco nomina anche la corsia di ogni lanternino quando si "
+"accende."
+
+msgid ""
+"Clear your stars and ribbons, and start Snowfall Skate over? Best scores "
+"and settings are kept."
+msgstr ""
+"Cancellare stelle e nastri e ricominciare Snowfall Skate? Record e "
+"impostazioni restano."
+
+msgid ""
+"Clears your stars, ribbons and tallies. Best scores and challenges are kept."
+msgstr "Cancella stelle, nastri e conteggi. Record e sfide restano."
 
 msgid "the middle"
 msgstr "il centro"

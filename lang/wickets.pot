@@ -3913,7 +3913,7 @@ msgstr ""
 msgid "little-rapids"
 msgstr ""
 
-#: crates/wickets/src/soundtrack.rs games/snowfall-skate/src/lib.rs
+#: crates/wickets/src/soundtrack.rs games/snowfall-skate/src/public.rs
 msgid "snowfall-skate"
 msgstr ""
 
@@ -47906,7 +47906,7 @@ msgid ""
 "wherever they are. Off, only the work where you stand."
 msgstr ""
 
-#: games/larkfield/src/lib.rs games/little-rapids/src/lib.rs games/snowfall-skate/src/lib.rs
+#: games/larkfield/src/lib.rs games/little-rapids/src/lib.rs games/snowfall-skate/src/public.rs
 msgid "Start over"
 msgstr ""
 
@@ -47916,7 +47916,7 @@ msgid ""
 "shelf go. Settings and challenge results are kept."
 msgstr ""
 
-#: games/larkfield/src/lib.rs games/little-rapids/src/lib.rs games/snowfall-skate/src/lib.rs
+#: games/larkfield/src/lib.rs games/little-rapids/src/lib.rs games/snowfall-skate/src/public.rs
 msgid "Started over"
 msgstr ""
 
@@ -55466,11 +55466,11 @@ msgid ""
 "over? Best scores and settings are kept."
 msgstr ""
 
-#: games/little-rapids/src/lib.rs games/rooftop-garden/src/public.rs games/snowfall-skate/src/lib.rs
+#: games/little-rapids/src/lib.rs games/rooftop-garden/src/public.rs games/snowfall-skate/src/public.rs
 msgid "Yes, start over"
 msgstr ""
 
-#: games/little-rapids/src/lib.rs games/snowfall-skate/src/lib.rs
+#: games/little-rapids/src/lib.rs games/snowfall-skate/src/public.rs
 msgid "No, keep everything"
 msgstr ""
 
@@ -81643,278 +81643,6 @@ msgstr ""
 msgid "Midnight skate"
 msgstr ""
 
-#: games/snowfall-skate/src/lib.rs lang/names.txt
-msgid "Snowfall Skate"
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"A winter special. Skate a frozen pond at night, taking lanterns as they "
-"light, while the snow comes down. Play once, even in practice, to keep it "
-"all year."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"Skate a frozen pond at night, taking lanterns as they light, while the snow "
-"comes down. The Frost Fair opens in winter."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"Snowfall Skate is yours to keep. After the winter, it moves to the Cozy "
-"games."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"A winter special. Skate a frozen pond at night, taking lanterns as they "
-"light, while the snow comes down."
-msgstr ""
-
-#. placeholders: {title}
-#: games/snowfall-skate/src/lib.rs
-msgid "{title}: locked."
-msgstr ""
-
-#. placeholders: {points_words}
-#: games/snowfall-skate/src/lib.rs
-msgid "The Frost Fair: best {points_words}."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid "The Frost Fair: not skated yet."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid "1 Frost Fair ribbon"
-msgstr ""
-
-#. one sentence of a longer line
-#: games/snowfall-skate/src/lib.rs
-msgid "Frost Fair ribbons"
-msgstr ""
-
-#. placeholders: {n}
-#: games/snowfall-skate/src/lib.rs
-msgid "{n} Frost Fair ribbons"
-msgstr ""
-
-#. placeholders: {b}, {LANTERN_PAIRS}, {whole_tunes}
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"Lantern skate: best {b} of {LANTERN_PAIRS} in order, the whole tune "
-"{whole_tunes} times."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid "Lantern skate: not skated yet."
-msgstr ""
-
-#. placeholders: {stars_words}, {join}, {fair}, {lanterns}
-#: games/snowfall-skate/src/lib.rs
-msgid "Records. {stars_words} in all. {join} {fair} {lanterns}"
-msgstr ""
-
-#. placeholders: {stars_words}
-#. one sentence of a longer line
-#: games/snowfall-skate/src/lib.rs
-msgid "{stars_words} in all."
-msgstr ""
-
-#. placeholders: {cracks}
-#. one sentence of a longer line
-#: games/snowfall-skate/src/lib.rs
-msgid "Cracks in the ice: {cracks}."
-msgstr ""
-
-#. placeholders: {lanterns}
-#. one sentence of a longer line
-#: games/snowfall-skate/src/lib.rs
-msgid "Lanterns taken: {lanterns}."
-msgstr ""
-
-#. placeholders: {best_line}
-#. one sentence of a longer line
-#: games/snowfall-skate/src/lib.rs
-msgid "Longest line: {best_line}."
-msgstr ""
-
-#. placeholders: {spins}
-#. one sentence of a longer line
-#: games/snowfall-skate/src/lib.rs
-msgid "Spins landed: {spins}."
-msgstr ""
-
-#. placeholders: {format}, {lanterns}, {best_line}, {spins}, {drifts}, {cracks}, {sentence_start}
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"{format}. Lanterns taken: {lanterns}. Longest line: {best_line}. Spins "
-"landed: {spins}. Drifts: {drifts}. Cracks in the ice: {cracks}. "
-"{sentence_start}."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid "1 skate"
-msgstr ""
-
-#. placeholders: {n}
-#: games/snowfall-skate/src/lib.rs
-msgid "{n} skates"
-msgstr ""
-
-#. placeholders: {open}, {stars_words}
-#: games/snowfall-skate/src/lib.rs
-msgid "Choose a pond, {open} of 3 open, {stars_words}"
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid "Every pond with its stars and best. A star on one opens the next."
-msgstr ""
-
-#. placeholders: {LANTERN_ROW}, {n}, {LANTERN_PAIRS}
-#: games/snowfall-skate/src/lib.rs
-msgid "{LANTERN_ROW}, {n} of {LANTERN_PAIRS} tonight"
-msgstr ""
-
-#. placeholders: {LANTERN_ROW}
-#: games/snowfall-skate/src/lib.rs
-msgid "{LANTERN_ROW}, tonight's lanterns"
-msgstr ""
-
-#. one sentence of a longer line
-#: games/snowfall-skate/src/lib.rs
-msgid "Take the first lit of each pair."
-msgstr ""
-
-#. placeholders: {sentence_start}
-#. one sentence of a longer line
-#: games/snowfall-skate/src/lib.rs
-msgid "{sentence_start} in pairs, the same for everyone tonight."
-msgstr ""
-
-#. placeholders: {sentence_start}
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"{sentence_start} in pairs, the same for everyone tonight. Take the first "
-"lit of each pair."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"The lantern skate is lit every evening, from 4 in the afternoon to 9 at "
-"night, by your clock."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid "Lanterns in pairs, every evening by your clock."
-msgstr ""
-
-#. placeholders: {FAIR_ROW}, {points_words}
-#: games/snowfall-skate/src/lib.rs
-msgid "{FAIR_ROW}, best {points_words}"
-msgstr ""
-
-#. one sentence of a longer line
-#: games/snowfall-skate/src/lib.rs
-msgid "The long skate down the frozen river, past the stalls."
-msgstr ""
-
-#. placeholders: {sentence_start}
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"The long skate down the frozen river, past the stalls. {sentence_start} on "
-"the day earns this winter's ribbon."
-msgstr ""
-
-#. placeholders: {sentence_start}
-#. one sentence of a longer line
-#: games/snowfall-skate/src/lib.rs
-msgid "{sentence_start} on the day earns this winter's ribbon."
-msgstr ""
-
-#. placeholders: {fair_date_words}
-#: games/snowfall-skate/src/lib.rs
-msgid "The Frost Fair opens on {fair_date_words}."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"The river freezes once a winter for the fair, and you skate it for a ribbon."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid "Skate the village pond to midnight and the fireworks."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"The midnight skate opens at 11 at night on New Year's Eve, by your clock, "
-"until 1 in the morning."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid "Skate to midnight on New Year's Eve."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs games/snowfall-skate/src/play.rs
-msgid "Practice skate"
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"The village pond, slowly, with no snow and nothing scored. Every lantern is "
-"named."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"Your stars and bests on every pond, the Frost Fair and the lantern skate, "
-"your tallies, and your challenge results."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"Plays the lanterns, the drifts, the thin ice, your partner and the spin."
-msgstr ""
-
-#. one sentence of a longer line
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
-"every player."
-msgstr ""
-
-#. placeholders: {resets}
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
-"every player. {resets}"
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid "Spoken call-outs: on. The game also names each lantern's lane."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid "Spoken call-outs: off. The lanterns play without names."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid "When on, the game also names each lantern's lane as it lights."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"Clear your stars and ribbons, and start Snowfall Skate over? Best scores "
-"and settings are kept."
-msgstr ""
-
-#: games/snowfall-skate/src/lib.rs
-msgid ""
-"Clears your stars, ribbons and tallies. Best scores and challenges are kept."
-msgstr ""
-
 #: games/snowfall-skate/src/music.rs
 msgid "waltz-a"
 msgstr ""
@@ -82020,6 +81748,10 @@ msgstr ""
 
 #: games/snowfall-skate/src/play.rs games/winter-wonderland/src/count_run.rs
 msgid "midnight"
+msgstr ""
+
+#: games/snowfall-skate/src/play.rs games/snowfall-skate/src/public.rs
+msgid "Practice skate"
 msgstr ""
 
 #. placeholders: {sentence_start2}
@@ -82673,6 +82405,12 @@ msgid ""
 "Lanterns taken: {taken} of {passed_count}. Longest line: {best_line}."
 msgstr ""
 
+#. placeholders: {best_line}
+#. one sentence of a longer line
+#: games/snowfall-skate/src/play.rs
+msgid "Longest line: {best_line}."
+msgstr ""
+
 #. placeholders: {wrong}
 #: games/snowfall-skate/src/play.rs
 msgid "Taken out of order: {wrong}."
@@ -82852,6 +82590,268 @@ msgstr ""
 
 #: games/snowfall-skate/src/progress.rs
 msgid "lantern skate"
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs lang/names.txt
+msgid "Snowfall Skate"
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"A winter special. Skate a frozen pond at night, taking lanterns as they "
+"light, while the snow comes down. Play once, even in practice, to keep it "
+"all year."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"Skate a frozen pond at night, taking lanterns as they light, while the snow "
+"comes down. The Frost Fair opens in winter."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"Snowfall Skate is yours to keep. After the winter, it moves to the Cozy "
+"games."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"A winter special. Skate a frozen pond at night, taking lanterns as they "
+"light, while the snow comes down."
+msgstr ""
+
+#. placeholders: {title}
+#: games/snowfall-skate/src/public.rs
+msgid "{title}: locked."
+msgstr ""
+
+#. placeholders: {points_words}
+#: games/snowfall-skate/src/public.rs
+msgid "The Frost Fair: best {points_words}."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid "The Frost Fair: not skated yet."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid "1 Frost Fair ribbon"
+msgstr ""
+
+#. one sentence of a longer line
+#: games/snowfall-skate/src/public.rs
+msgid "Frost Fair ribbons"
+msgstr ""
+
+#. placeholders: {n}
+#: games/snowfall-skate/src/public.rs
+msgid "{n} Frost Fair ribbons"
+msgstr ""
+
+#. placeholders: {b}, {LANTERN_PAIRS}, {whole_tunes}
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"Lantern skate: best {b} of {LANTERN_PAIRS} in order, the whole tune "
+"{whole_tunes} times."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid "Lantern skate: not skated yet."
+msgstr ""
+
+#. placeholders: {stars_words}, {join}, {fair}, {lanterns}
+#: games/snowfall-skate/src/public.rs
+msgid "Records. {stars_words} in all. {join} {fair} {lanterns}"
+msgstr ""
+
+#. placeholders: {stars_words}
+#. one sentence of a longer line
+#: games/snowfall-skate/src/public.rs
+msgid "{stars_words} in all."
+msgstr ""
+
+#. placeholders: {cracks}
+#. one sentence of a longer line
+#: games/snowfall-skate/src/public.rs
+msgid "Cracks in the ice: {cracks}."
+msgstr ""
+
+#. placeholders: {lanterns}
+#. one sentence of a longer line
+#: games/snowfall-skate/src/public.rs
+msgid "Lanterns taken: {lanterns}."
+msgstr ""
+
+#. placeholders: {spins}
+#. one sentence of a longer line
+#: games/snowfall-skate/src/public.rs
+msgid "Spins landed: {spins}."
+msgstr ""
+
+#. placeholders: {format}, {lanterns}, {best_line}, {spins}, {drifts}, {cracks}, {sentence_start}
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"{format}. Lanterns taken: {lanterns}. Longest line: {best_line}. Spins "
+"landed: {spins}. Drifts: {drifts}. Cracks in the ice: {cracks}. "
+"{sentence_start}."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid "1 skate"
+msgstr ""
+
+#. placeholders: {n}
+#: games/snowfall-skate/src/public.rs
+msgid "{n} skates"
+msgstr ""
+
+#. placeholders: {open}, {stars_words}
+#: games/snowfall-skate/src/public.rs
+msgid "Choose a pond, {open} of 3 open, {stars_words}"
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid "Every pond with its stars and best. A star on one opens the next."
+msgstr ""
+
+#. placeholders: {LANTERN_ROW}, {n}, {LANTERN_PAIRS}
+#: games/snowfall-skate/src/public.rs
+msgid "{LANTERN_ROW}, {n} of {LANTERN_PAIRS} tonight"
+msgstr ""
+
+#. placeholders: {LANTERN_ROW}
+#: games/snowfall-skate/src/public.rs
+msgid "{LANTERN_ROW}, tonight's lanterns"
+msgstr ""
+
+#. one sentence of a longer line
+#: games/snowfall-skate/src/public.rs
+msgid "Take the first lit of each pair."
+msgstr ""
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+#: games/snowfall-skate/src/public.rs
+msgid "{sentence_start} in pairs, the same for everyone tonight."
+msgstr ""
+
+#. placeholders: {sentence_start}
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"{sentence_start} in pairs, the same for everyone tonight. Take the first "
+"lit of each pair."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"The lantern skate is lit every evening, from 4 in the afternoon to 9 at "
+"night, by your clock."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid "Lanterns in pairs, every evening by your clock."
+msgstr ""
+
+#. placeholders: {FAIR_ROW}, {points_words}
+#: games/snowfall-skate/src/public.rs
+msgid "{FAIR_ROW}, best {points_words}"
+msgstr ""
+
+#. one sentence of a longer line
+#: games/snowfall-skate/src/public.rs
+msgid "The long skate down the frozen river, past the stalls."
+msgstr ""
+
+#. placeholders: {sentence_start}
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"The long skate down the frozen river, past the stalls. {sentence_start} on "
+"the day earns this winter's ribbon."
+msgstr ""
+
+#. placeholders: {sentence_start}
+#. one sentence of a longer line
+#: games/snowfall-skate/src/public.rs
+msgid "{sentence_start} on the day earns this winter's ribbon."
+msgstr ""
+
+#. placeholders: {fair_date_words}
+#: games/snowfall-skate/src/public.rs
+msgid "The Frost Fair opens on {fair_date_words}."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"The river freezes once a winter for the fair, and you skate it for a ribbon."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid "Skate the village pond to midnight and the fireworks."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"The midnight skate opens at 11 at night on New Year's Eve, by your clock, "
+"until 1 in the morning."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid "Skate to midnight on New Year's Eve."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"The village pond, slowly, with no snow and nothing scored. Every lantern is "
+"named."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"Your stars and bests on every pond, the Frost Fair and the lantern skate, "
+"your tallies, and your challenge results."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"Plays the lanterns, the drifts, the thin ice, your partner and the spin."
+msgstr ""
+
+#. one sentence of a longer line
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
+"every player."
+msgstr ""
+
+#. placeholders: {resets}
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"Tonight's pond, thin ice week and the midwinter skate: the same ice for "
+"every player. {resets}"
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid "Spoken call-outs: on. The game also names each lantern's lane."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid "Spoken call-outs: off. The lanterns play without names."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid "When on, the game also names each lantern's lane as it lights."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"Clear your stars and ribbons, and start Snowfall Skate over? Best scores "
+"and settings are kept."
+msgstr ""
+
+#: games/snowfall-skate/src/public.rs
+msgid ""
+"Clears your stars, ribbons and tallies. Best scores and challenges are kept."
 msgstr ""
 
 #: games/snowfall-skate/src/rules.rs
