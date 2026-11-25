@@ -44,6 +44,8 @@ Moon select flies any moon you have opened.
 
 The lander holds still while a call-out or another line is still being spoken. While you hold the engine and it burns, the lander keeps flying through speech. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode.
 
+Wait for speech sits next to Pace in Settings and is on by default. Turn it off and the lander keeps going while a line plays. A change applies from your next flight. Tutorials always wait. Scores go on the same boards either way.
+
 Pace in Settings sets how fast the descent runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. Your fall, the engine, the fuel and the flight time follow the pace.
 
 A change applies from your next flight. A challenge and the practice pad keep the pace they started at until you leave them.

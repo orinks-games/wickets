@@ -1,5 +1,5 @@
 {
- "_about": "Neon Rail: Black Sky Run. Traffic, hazard and pickup loops are mono: the game places each in its lane and walks it toward the player. Alerts, tools and UI are stationary; music is quiet so speech stays on top. Render with python3 tools/render_sounds.py neon-rail.",
+ "_about": "Neon Rail: Black Sky Run. Traffic, hazard and pickup loops are mono: the game places each in its lane and walks it toward the player. The priority notice and the stress warning that comes with a heavy blocker or unstable vehicle play in its lane; other alerts, tools and UI are stationary; music is quiet so speech stays on top. Render with python3 tools/render_sounds.py neon-rail.",
  "sounds": [
   {
    "out": "traffic/flow.wav",
@@ -673,11 +673,13 @@
   },
   {
    "out": "alert/priority_notice.wav",
+   "genny": "oriol",
+   "_about": "A quick rising bell, short and mono so the game can place it in the priority vehicle's lane before its approach sound comes through.",
    "layers": [
     {
      "type": "seq",
      "inst": "bell",
-     "steps": "E5:0.08 G#5:0.08 B5:0.08 E6:0.3",
+     "steps": "E5:0.05 G#5:0.05 B5:0.05 E6:0.15",
      "gain": 0.7,
      "at": 0,
      "vel": 0.8
@@ -686,10 +688,18 @@
    "fx": [
     {
      "type": "reverb",
-     "mix": 0.15,
-     "size": 0.3
+     "mix": 0.1,
+     "size": 0.2
+    },
+    {
+     "type": "mono"
+    },
+    {
+     "type": "fade",
+     "out": 0.15
     }
    ],
+   "duration": 0.5,
    "normalize": -3
   },
   {

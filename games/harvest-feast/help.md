@@ -41,6 +41,8 @@ With spoken call-outs on, the kitchen also says when a dish needs you: "Bubbling
 
 Every dish's clock holds while a recipe call or another line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every meal.
 
+Wait for speech sits next to Pace in Settings and is on by default. Turn it off and the kitchen keeps going while a line plays. A change applies from your next meal. Tutorials always wait. Scores go on the same boards either way.
+
 Pace in Settings sets how fast cooking runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed.
 
 A change applies from your next meal. Second helpings and a challenge keep the pace they started at until the run ends.

@@ -142,7 +142,7 @@ fn normal_is_the_default_and_settings_has_the_pace_row() {
     h.frame(0.0);
     assert_eq!(s.borrow().clock.pace(), Pace::Normal);
     let rows = <winter_wonderland::Winter as parlor_core::menus::TitleGame>::settings(&h.app.ctx);
-    assert_eq!(rows.len(), 1);
+    assert_eq!(rows.len(), 2);
 }
 
 #[test]

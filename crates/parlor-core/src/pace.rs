@@ -8,6 +8,11 @@
 //! - The player picks a [`Pace`] for the game in Settings: relaxed, normal
 //!   or quick. Quick is the original timing, normal a little slower and
 //!   relaxed much slower.
+//! - Beside it, Wait for speech ([`wait_row`]) turns the hold off for a
+//!   player who wants the clock to run through speech, as in a reaction
+//!   game. It is on by default, fixed when a run starts like the pace, and
+//!   marks no score: both settings share the same boards. Tutorials always
+//!   wait, whatever it says.
 //! - Stars, unlocks and progress count at every pace. Normal and quick
 //!   share their best scores; relaxed runs keep their own boards
 //!   ([`Pace::board`], [`crate::Challenges::submit_at`]).
@@ -30,9 +35,10 @@
 //! ```ignore
 //! // Settings: the game's first row.
 //! fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
-//!     vec![pace::row(ID), /* ... */]
+//!     vec![pace::row(ID), pace::wait_row(ID), /* ... */]
 //! }
-//! // The play screen: one clock for the run, made when the run starts.
+//! // The play screen: one clock for the run, made when the run starts,
+//! // with the game's pace and Wait for speech.
 //! self.clock = RunClock::start(ctx, ID);
 //! // Its update: every countdown advances by the clock's time.
 //! let dt = self.clock.game_dt(ctx, dt);
@@ -307,6 +313,58 @@ fn changed(pace: Pace) -> String {
     )
 }
 
+/// The records key game `id`'s Wait for speech is saved under.
+pub fn wait_key(id: &str) -> String {
+    format!("{id}/settings/wait_for_speech")
+}
+
+/// Whether game `id`'s clock waits while speech is playing: the saved
+/// choice, else on.
+pub fn waits(ctx: &Ctx<Parlor>, id: &str) -> bool {
+    Records::peek::<Option<bool>>(ctx, &wait_key(id)).unwrap_or(true)
+}
+
+/// Saves game `id`'s Wait for speech.
+pub fn set_waits(ctx: &mut Ctx<Parlor>, id: &str, on: bool) {
+    Records::store(ctx, &wait_key(id), &Some(on));
+}
+
+/// "Wait for speech: on".
+pub fn wait_label(on: bool) -> String {
+    if on {
+        "Wait for speech: on".to_string()
+    } else {
+        "Wait for speech: off".to_string()
+    }
+}
+
+/// What the Wait for speech row's help says.
+const WAIT_HELP: &str = "On, timed play waits while speech plays. Off, it keeps going. A change applies from the next run. Scores share the same boards. Tutorials always wait.";
+
+/// The game's Wait for speech row in Settings, beside its Pace row: on by
+/// default. Enter, Left and Right turn it over.
+pub fn wait_row(id: &'static str) -> SettingsRow<Parlor> {
+    setting(
+        &format!("{}_wait_for_speech", id.replace('-', "_")),
+        move |ctx| wait_label(waits(ctx, id)),
+        move |ctx, _delta| {
+            let on = !waits(ctx, id);
+            set_waits(ctx, id, on);
+            Some(wait_changed(on))
+        },
+        WAIT_HELP,
+    )
+}
+
+/// What the row says once Wait for speech has changed to `on`.
+fn wait_changed(on: bool) -> String {
+    if on {
+        format!("{}. The clock waits while speech plays. Applies from the next run.", wait_label(on))
+    } else {
+        format!("{}. The clock keeps going through speech. Applies from the next run.", wait_label(on))
+    }
+}
+
 /// Where a [`RunClock`] stood on its last frame.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClockState {
@@ -314,6 +372,9 @@ pub enum ClockState {
     Running,
     /// Speech was playing, so game time stood still.
     Held,
+    /// Speech may have been playing, but the run does not wait for speech
+    /// (Wait for speech is off), so game time ran.
+    Unheld,
     /// The game let time run through speech for this frame, such as under
     /// a held key (see [`RunClock::bypass`]).
     Bypassed,
@@ -330,6 +391,7 @@ impl ClockState {
         match self {
             ClockState::Running => "running",
             ClockState::Held => "held",
+            ClockState::Unheld => "unheld",
             ClockState::Bypassed => "bypassed",
             ClockState::Spent => "spent",
         }
@@ -342,6 +404,10 @@ impl ClockState {
 #[derive(Clone, Debug)]
 pub struct RunClock {
     pace: Pace,
+    /// Whether the run waits for speech (the game's Wait for speech, fixed
+    /// at the run's start). Off, speech never holds the clock, except in a
+    /// tutorial.
+    waits: bool,
     hold: SpeechHold,
     bypass: bool,
     state: ClockState,
@@ -373,6 +439,7 @@ impl RunClock {
     pub fn new(pace: Pace) -> RunClock {
         RunClock {
             pace,
+            waits: true,
             hold: SpeechHold::new(),
             bypass: false,
             state: ClockState::Running,
@@ -383,9 +450,28 @@ impl RunClock {
         }
     }
 
-    /// A clock at game `id`'s saved pace (normal when none is saved).
+    /// A clock at game `id`'s saved pace (normal when none is saved),
+    /// waiting for speech as its Wait for speech says.
     pub fn start(ctx: &Ctx<Parlor>, id: &str) -> RunClock {
-        RunClock::new(get(ctx, id))
+        RunClock::new(get(ctx, id)).waiting_as(ctx, id)
+    }
+
+    /// This clock, waiting for speech as game `id`'s Wait for speech says:
+    /// for a game that picks its pace itself and makes the clock with
+    /// [`RunClock::new`].
+    pub fn waiting_as(self, ctx: &Ctx<Parlor>, id: &str) -> RunClock {
+        self.waiting(waits(ctx, id))
+    }
+
+    /// This clock, waiting for speech or not.
+    pub fn waiting(mut self, on: bool) -> RunClock {
+        self.waits = on;
+        self
+    }
+
+    /// Whether the run waits for speech, as it started.
+    pub fn waits(&self) -> bool {
+        self.waits
     }
 
     /// The run's pace, for its score boards and status.
@@ -398,7 +484,23 @@ impl RunClock {
     /// scale. Call it once a frame, from the screen's `update`.
     pub fn game_dt(&mut self, ctx: &mut Ctx<Parlor>, dt: f64) -> f64 {
         let busy = !self.bypass && ctx.speech_busy();
+        if busy && !self.waits && !crate::songs::in_lesson(ctx) {
+            return self.run_through(dt);
+        }
         self.step(busy, dt)
+    }
+
+    /// A frame of a run that does not wait for speech: time runs at the
+    /// pace's scale, nothing is held and the budget refills as when running.
+    fn run_through(&mut self, dt: f64) -> f64 {
+        let dt = dt.max(0.0);
+        self.bypass = false;
+        self.hold.reset();
+        self.keyed = false;
+        self.spent = false;
+        self.budget = (self.budget + dt / REFILL_RUN_S).min(INFO_HOLD_BUDGET_S);
+        self.state = ClockState::Unheld;
+        dt * self.pace.scale()
     }
 
     /// The same, with the answer to "is speech playing?" given, and with
@@ -593,6 +695,40 @@ mod tests {
         assert!(clock.held(), "a frame of no time still holds");
         assert!(close(clock.step(false, 0.5), 0.425));
         assert!(!clock.held());
+    }
+
+    #[test]
+    fn a_clock_that_does_not_wait_runs_through_speech() {
+        let mut h = Headless::new(Default::default(), Base);
+        let ctx = &mut h.app.ctx;
+        assert!(waits(ctx, "dummy"), "on by default");
+        assert!(RunClock::start(ctx, "dummy").waits());
+        set_waits(ctx, "dummy", false);
+        assert!(!waits(ctx, "dummy"));
+        let mut clock = RunClock::start(ctx, "dummy");
+        assert!(!clock.waits());
+        assert_eq!(clock.pace(), Pace::Normal);
+        ctx.say("A long line the clock does not wait for.");
+        assert!(ctx.speech_busy());
+        assert!(close(clock.game_dt(ctx, 1.0), 0.85));
+        assert_eq!(clock.state(), ClockState::Unheld);
+        assert_eq!(clock.held_time(), 0.0);
+        // In a tutorial it waits anyway.
+        crate::songs::lesson_opened(ctx);
+        assert_eq!(clock.game_dt(ctx, 0.5), 0.0);
+        assert!(clock.held());
+        crate::songs::lesson_closed(ctx);
+        set_waits(ctx, "dummy", true);
+        assert!(RunClock::start(ctx, "dummy").waits());
+    }
+
+    #[test]
+    fn the_wait_row_turns_over_and_says_so() {
+        assert_eq!(wait_label(true), "Wait for speech: on");
+        assert_eq!(
+            wait_changed(false),
+            "Wait for speech: off. The clock keeps going through speech. Applies from the next run."
+        );
     }
 
     #[test]

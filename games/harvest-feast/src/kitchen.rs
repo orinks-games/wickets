@@ -755,7 +755,8 @@ impl State<Parlor> for Kitchen {
         let progress = Progress::load(ctx);
         self.callouts = progress.callouts;
         progress::migrate_pace(ctx);
-        self.clock = RunClock::new(self.carried.unwrap_or_else(|| progress::pace(ctx)));
+        self.clock = RunClock::new(self.carried.unwrap_or_else(|| progress::pace(ctx)))
+            .waiting_as(ctx, crate::ID);
         if self.plan.as_ref().is_some_and(ChallengePlan::quiet) {
             self.callouts = false;
         }

@@ -227,6 +227,12 @@ pub fn lesson_closed(ctx: &mut Ctx<Parlor>) {
     ctx.game.songs.lessons = ctx.game.songs.lessons.saturating_sub(1);
 }
 
+/// Whether a tutorial is open, such as one running the game's own play
+/// screen in a live step.
+pub fn in_lesson(ctx: &Ctx<Parlor>) -> bool {
+    ctx.game.songs.lessons > 0
+}
+
 /// The track id of a game's song `n`.
 pub fn track_id(game: &str, n: u32) -> String {
     format!("{game}/song/{n}")

@@ -191,7 +191,7 @@ fn normal_is_the_default_and_pace_follows_call_outs_and_units() {
     h.frame(0.0);
     assert_eq!(s.borrow().clock.pace(), Pace::Normal);
     let rows = <sonar_dive::SonarDive as parlor_core::menus::TitleGame>::settings(&h.app.ctx);
-    assert_eq!(rows.len(), 3, "call-outs, units, then pace");
+    assert_eq!(rows.len(), 4, "call-outs, units, then pace, then wait for speech");
 }
 
 #[test]

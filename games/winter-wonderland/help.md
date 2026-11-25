@@ -26,6 +26,8 @@ There are 8 shifts. Each one has more gifts, more kinds of sound and a faster be
 
 The belt, each gift's ride and the shift clock hold while the wishes, a change of plans or another line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every Gift Sort run. Time spent while a line is spoken still comes off the time left for your clock bonus.
 
+Wait for speech sits next to Pace in Settings and is on by default. Turn it off and Gift Sort keeps going while a line plays. A change applies from your next run. Tutorials always wait. Scores go on the same boards either way.
+
 Pace in Settings applies to Gift Sort only, and sets how fast it runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. The Wish Desk has no clock, and Midnight Countdown keeps the band's beat at every pace.
 
 A change applies from your next run. A run keeps the pace it started at through all its shifts, and on to the Wish Desk in the story.

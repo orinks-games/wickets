@@ -284,7 +284,7 @@ impl TitleGame for SonarDive {
             "When on, each ping's nearest echoes are also spoken, with distance and clock direction.",
         ),
             parlor_core::units::row(),
-            pace::row(ID),
+            pace::row(ID), pace::wait_row(ID),
         ]
     }
 

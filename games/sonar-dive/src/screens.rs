@@ -683,7 +683,7 @@ impl State<Parlor> for DiveScreen {
     fn enter(&mut self, ctx: &mut Ctx<Parlor>) {
         self.readout = Saved::load(ctx).readout;
         let pace = *self.pace.get_or_insert_with(|| pace::get(ctx, ID));
-        self.clock = RunClock::new(pace);
+        self.clock = RunClock::new(pace).waiting_as(ctx, ID);
         let today = parlor_core::challenges::today(ctx);
         self.whale_road = crate::events::whale_road(self.mode, today);
         ctx.audio.play_music(None, false);
