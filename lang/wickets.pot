@@ -2903,8 +2903,8 @@ msgstr ""
 #: crates/wickets/help.md
 msgid ""
 "Update channel, under Updates in Settings, picks which releases you get. "
-"Stable is for regular play and gets stable releases. Beta gets only beta "
-"releases. Alpha gets only alpha releases, including the earliest work and "
+"Stable is for regular play and gets stable releases. Beta gets beta and "
+"stable releases. Alpha gets all three, plus the earliest work and "
 "alpha-only games."
 msgstr ""
 
@@ -2918,13 +2918,11 @@ msgid "Stable is for regular play and gets stable releases."
 msgstr ""
 
 #: crates/wickets/help.md
-msgid "Beta gets only beta releases."
+msgid "Beta gets beta and stable releases."
 msgstr ""
 
 #: crates/wickets/help.md
-msgid ""
-"Alpha gets only alpha releases, including the earliest work and alpha-only "
-"games."
+msgid "Alpha gets all three, plus the earliest work and alpha-only games."
 msgstr ""
 
 #: crates/wickets/help.md
