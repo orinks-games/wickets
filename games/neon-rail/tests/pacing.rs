@@ -252,7 +252,7 @@ fn pace_stays_fixed_for_the_run_and_resume_gives_a_fresh_hold() {
         seed: Some(7),
         day: None,
     };
-    let next = RunScreen::continuing(run, launch, Route::Standard, Pace::Relaxed);
+    let next = RunScreen::continuing(run, launch, Route::Standard, Pace::Relaxed, true);
     assert_eq!(next.clock.pace(), Pace::Relaxed);
     // The next run takes the new pace.
     let (_h, s) = start(Mode::BlackSky, Pace::Quick);
