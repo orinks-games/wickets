@@ -1,0 +1,78 @@
+name: Tag release
+
+# Tags a release from the cloud, with no one's computer involved. Run it by
+# hand (or through the API) with the tag and the commit to tag. It checks
+# that the tag matches Cargo.toml at that commit and that the commit has
+# its release notes, pushes the tag, then starts the Release workflow on
+# that tag, which builds, publishes and refreshes orinks.net exactly as a
+# pushed tag does. A tag pushed with this workflow's token starts no
+# workflows by itself, so the Release run is started here explicitly.
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Tag to create, like v1.8.2 or v1.9.0-alpha.1
+        required: true
+        type: string
+      commit:
+        description: Full commit SHA to tag
+        required: true
+        type: string
+      dry_run:
+        description: Only check, don't push the tag or start the release
+        type: boolean
+        default: false
+
+concurrency:
+  group: tag-release
+  cancel-in-progress: false
+
+jobs:
+  tag:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.commit }}
+          fetch-depth: 0
+      - name: Check the tag and the commit
+        shell: bash
+        env:
+          TAG: ${{ inputs.tag }}
+          COMMIT: ${{ inputs.commit }}
+        run: |
+          [[ "$COMMIT" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::commit must be a full 40-character SHA."; exit 1; }
+          [ "$(git rev-parse HEAD)" = "$COMMIT" ] || { echo "::error::Checked out $(git rev-parse HEAD), not $COMMIT."; exit 1; }
+          crate=$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -n1)
+          v="${TAG#v}"
+          if [ "$TAG" != "v$v" ] || ! { [ "$v" = "$crate" ] || [[ "$v" =~ ^"$crate"-(alpha|beta)\.[1-9][0-9]*$ ]]; }; then
+            echo "::error::Tag $TAG is not v$crate, v$crate-beta.N or v$crate-alpha.N (Cargo.toml at this commit says $crate)."; exit 1
+          fi
+          if [ "$v" = "$crate" ] && [ ! -f "docs/release-notes/$TAG.md" ]; then
+            echo "::error::A stable release needs docs/release-notes/$TAG.md at this commit."; exit 1
+          fi
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null; then
+            echo "::error::$TAG already exists."; exit 1
+          fi
+          echo "OK: $TAG at $COMMIT (Cargo.toml $crate)."
+      - name: Push the tag
+        if: ${{ !inputs.dry_run }}
+        shell: bash
+        env:
+          TAG: ${{ inputs.tag }}
+          COMMIT: ${{ inputs.commit }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "$TAG" "$COMMIT" -m "Wicket's ${TAG#v}"
+          git push origin "refs/tags/$TAG"
+      - name: Start the Release workflow on the tag
+        if: ${{ !inputs.dry_run }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag }}
+        run: gh workflow run release.yml --repo "$GITHUB_REPOSITORY" --ref "$TAG"
