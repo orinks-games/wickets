@@ -91627,6 +91627,14 @@ msgstr ""
 msgid " No wrong boxes: {bonus} bonus points."
 msgstr " Keine falsche Schachtel: {bonus} Bonuspunkte."
 
+#. placeholders: {bonuses}
+msgid " No wrong boxes: {bonuses} bonus points."
+msgstr ""
+
+#. placeholders: {bonuses}
+msgid " {bonuses} bonus points for stacks with no wrong boxes."
+msgstr ""
+
 msgid "letters"
 msgstr "Briefe"
 

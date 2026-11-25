@@ -58,6 +58,8 @@ pub struct DeskRun {
     opened: bool,
     /// Bonus for the stack just answered.
     bonus: u64,
+    /// Every stack's bonus this run, for the results.
+    bonuses: u64,
     letters: u32,
     wrongs: u32,
     shakes: u32,
@@ -100,6 +102,7 @@ impl DeskRun {
             late: false,
             opened: false,
             bonus: 0,
+            bonuses: 0,
             letters: 0,
             wrongs: 0,
             shakes: 0,
@@ -429,6 +432,7 @@ impl DeskRun {
         }
         self.bonus = self.stack.neat_bonus();
         self.stack.score += self.bonus;
+        self.bonuses += self.bonus;
         cue(ctx, sound::DESK_CLEAR);
         self.banked += self.stack.score;
         self.tally();
@@ -461,6 +465,21 @@ impl DeskRun {
         }
     }
 
+    /// The results' bonus line: the run's bonuses, so a run of several
+    /// stacks never reads as having no wrong boxes when one had them.
+    fn run_bonus_words(&self) -> String {
+        if self.last == self.first || self.bonuses == 0 {
+            self.bonus_words()
+        } else if self.wrongs == 0 {
+            format!(" No wrong boxes: {} bonus points.", self.bonuses)
+        } else {
+            format!(
+                " {} bonus points for stacks with no wrong boxes.",
+                self.bonuses
+            )
+        }
+    }
+
     fn tally(&mut self) {
         self.letters += self.stack.answered() as u32;
         self.wrongs += self.stack.total_wrongs;
@@ -486,7 +505,7 @@ impl DeskRun {
         stinger(ctx, sound::WIN);
         let score = self.banked;
         let level = self.level;
-        let bonus = self.bonus_words();
+        let bonus = self.run_bonus_words();
         match self.mode.clone() {
             Mode::Story { blizzard, gifts } => {
                 let total = gifts + score;

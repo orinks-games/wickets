@@ -80383,6 +80383,14 @@ msgstr "为{from}包好了。加{points}分。第{done}摞回复完了。{bonus}
 msgid " No wrong boxes: {bonus} bonus points."
 msgstr "没有错的盒子：奖励分{bonus}。"
 
+#. placeholders: {bonuses}
+msgid " No wrong boxes: {bonuses} bonus points."
+msgstr ""
+
+#. placeholders: {bonuses}
+msgid " {bonuses} bonus points for stacks with no wrong boxes."
+msgstr ""
+
 msgid "letters"
 msgstr "封信"
 
