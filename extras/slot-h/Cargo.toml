@@ -24,6 +24,7 @@ hearken.workspace = true
 parlor-core.workspace = true
 log.workspace = true
 serde.workspace = true
+wickets-rules.workspace = true
 
 [dev-dependencies]
 serde_json.workspace = true
