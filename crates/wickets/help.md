@@ -158,8 +158,8 @@ game's own voice on. Press it again to go back to automatic.
 ## Update channels
 
 Update channel, under Updates in Settings, picks which releases you get. Stable is for
-regular play and gets stable releases. Beta gets only beta releases. Alpha
-gets only alpha releases, including the earliest work and alpha-only games.
+regular play and gets stable releases. Beta gets beta and stable releases.
+Alpha gets all three, plus the earliest work and alpha-only games.
 
 Changing the channel does not change your games until you install an update.
 Your channel choice is saved for next time. Updates must be newer than your

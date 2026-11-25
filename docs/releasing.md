@@ -53,26 +53,39 @@ Release notes go in `docs/release-notes/<tag>.md`, as for stable:
 
 ## Who gets what
 
-Each release reaches its own channel only:
+A release reaches its own channel and every less steady one:
 
-- A stable release reaches stable players.
-- A beta release reaches beta players.
-- An alpha release reaches alpha players.
+| Release | Stable players | Beta players | Alpha players |
+|---------|----------------|--------------|---------------|
+| stable  | yes            | yes          | yes           |
+| beta    |                | yes          | yes           |
+| alpha   |                |              | yes           |
 
-The release workflow publishes one update manifest per platform, for the
-tag's channel, and nothing else. `tools/check_channel_manifests.py` fails
-the release before anything is published if dist/ holds a manifest for
-another channel, and CI fails if the workflow could publish one. A beta or
-stable package leaves out alpha-only games, so offering it to alpha
-players hides those games (1.4.0-beta.3 and 1.3.2 did this).
+A copy shows what is ready for the channel it was built for, so each
+channel gets a copy built for it. A stable tag builds three copies of the
+same code per platform: the plain one for stable, and
+`wickets-1.9.0-windows-x64-for-beta.zip` and `...-for-alpha.zip`, each with
+its own `update-<channel>-<platform>.json` in the same GitHub release. An
+alpha player who takes the stable release keeps every alpha game.
+(Offering alpha players a stable package once hid their alpha games:
+1.4.0-beta.3 and 1.3.2 did this.)
 
-Alpha copies also ignore an alpha manifest whose package was not built
-for alpha (`OWN_BUILD` in `crates/parlor-core/src/channel.rs`), as if
-nothing were published. Copies from before this have no such check.
+`tools/release_channels.py` decides which channels get a copy. A channel
+is left out when it already has a release as new as this one or newer,
+such as a 1.8.3 patch while 1.9.0 alphas are out. A player's copy looks
+only at the newest release that carries its channel's manifest, so
+publishing an older version there would hide the newer one. Those players
+get the fixes in their channel's next release.
 
-The updater only offers versions newer than the installed copy, so to
-reach alpha players an alpha release must sort after the newest release
-they may have installed.
+Each build job runs `tools/check_channel_manifests.py`, which fails before
+anything is published unless the job's one manifest is for its own
+channel and names a package built for that channel. Alpha copies also
+ignore any manifest whose package was not built for alpha (`OWN_BUILD` in
+`crates/parlor-core/src/channel.rs`).
+
+The updater only offers versions newer than the installed copy, so bump
+`Cargo.toml` right after each stable release, before the next beta or
+alpha tag.
 
 ## Tagging from the cloud
 
@@ -96,8 +109,9 @@ git tag v1.4.0-alpha.1
 git push origin v1.4.0-alpha.1
 ```
 
-The Release workflow builds Windows, macOS and Linux, and publishes them to
-`orinks-games/wickets` as a prerelease named "Wicket's 1.4.0-alpha.1". To
+The Release workflow builds Windows, macOS and Linux, a copy for each
+channel the release reaches, and publishes them to `orinks-games/wickets`
+as a prerelease named "Wicket's 1.4.0-alpha.1". To
 fix its notes afterwards:
 
 ```
@@ -120,17 +134,17 @@ set the workspace version to the patch version, and update Cargo.lock with
 `cargo update --workspace`. Keep the engine dependency pinned unless the
 patch needs an engine fix. Run the normal checks on this release branch.
 
-When branching from an older tag, copy main's `.github/workflows/release.yml`
-over unchanged, and carry over `tools/check_channel_manifests.py`: a
-release publishes only its own channel's manifest. The tag workflow can't
-tag a commit whose workflow files differ from main's, so pin the tested
-overlay commit in `.github/overlay-ref` (one full SHA) instead of editing
-release.yml.
+When branching from an older tag, copy main's `.github/workflows/`
+over unchanged, with `tools/release_channels.py` and
+`tools/check_channel_manifests.py`. The tag workflow can't tag a commit
+whose workflow files differ from main's, so pin the tested overlay commit
+in `.github/overlay-ref` (one full SHA) instead of editing release.yml.
 
 Add notes in `docs/release-notes/v1.3.1.md`, then push the branch and its
 matching tag. The Release workflow uses the tagged branch's workspace
 version, so main can stay on 1.4.0. Keep the same fixes on main for the next
 minor release; do not merge the patch branch's older version number into main.
 
-Players already running a newer alpha or beta do not downgrade to the patch.
-They receive the fixes in a later release of their development version.
+Players already running a newer alpha or beta do not downgrade to the patch,
+and the patch builds no copy for their channel. They receive the fixes in a
+later release of their development version.
