@@ -91418,9 +91418,12 @@ msgstr ", đã rời"
 msgid "No players"
 msgstr "Không có người chơi"
 
-#. placeholders: {join}
-msgid " with {join}"
-msgstr " cùng {join}"
+#. placeholders: {name}
+msgid "Leave the match? {name} wins it."
+msgstr "Rời trận? {name} sẽ thắng."
+
+msgid "Leave the match? The other players win it."
+msgstr "Rời trận? Những người chơi khác sẽ thắng."
 
 #. placeholders: {missing}
 msgid "waiting for {missing} more"
@@ -91436,9 +91439,13 @@ msgstr "đang chơi"
 msgid "over, {s}"
 msgstr "đã xong, {s}"
 
-#. placeholders: {unread}
-msgid ", {unread} new"
-msgstr ", {unread} mới"
+#. placeholders: {label}, {names}, {standing}
+msgid "{label} with {names}: {standing}"
+msgstr "{label} cùng {names}: {standing}"
+
+#. placeholders: {line}, {count}
+msgid "{line}. {count} new"
+msgstr "{line}. {count} mới"
 
 #. placeholders: {label}
 msgid "{label} online"
@@ -91613,9 +91620,6 @@ msgstr "Rời trận"
 
 msgid "Leave the game"
 msgstr "Rời ván"
-
-msgid "Leave the match? The other players win it."
-msgstr "Rời trận? Những người chơi khác sẽ thắng."
 
 msgid "Left the match."
 msgstr "Đã rời trận."
@@ -93521,6 +93525,15 @@ msgstr "1 tầng"
 msgid "{n} floors"
 msgstr "{n} tầng"
 
+#. Online play: whose move it is in a match, as a clause of a longer line in My games.
+msgid "their move"
+msgstr "đến lượt đối thủ"
+
+#. Online play: a sentence after a room's line in My games, how many lines are unread (Hearken rooms.rs).
+#. placeholders: {count}
+msgid "{count} new"
+msgstr "{count} mới"
+
 #. a name: keep it as it is
 msgid "Wicket's"
 msgstr "Wicket's"
@@ -93532,6 +93545,24 @@ msgstr "Wicket"
 #. a name: keep it as it is
 msgid "Theo"
 msgstr "Theo"
+
+#~ msgid "{label}: {standing}, {count} new"
+#~ msgstr "{label}: {standing}, {count} mới"
+
+#~ msgid "{label} with {names}: {standing}, {count} new"
+#~ msgstr "{label} cùng {names}: {standing}, {count} mới"
+
+#~ msgid "{label}: {standing}, {new} new"
+#~ msgstr "{label}: {standing}, {new} mới"
+
+#~ msgid "{label} with {names}: {standing}, {new} new"
+#~ msgstr "{label} cùng {names}: {standing}, {new} mới"
+
+#~ msgid " with {join}"
+#~ msgstr " cùng {join}"
+
+#~ msgid ", {unread} new"
+#~ msgstr ", {unread} mới"
 
 #~ msgid "first relaxed score"
 #~ msgstr "điểm thong thả đầu tiên"
