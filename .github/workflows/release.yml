@@ -55,13 +55,26 @@ jobs:
       # The private content (story, calendar, private games, their sounds)
       # comes from wickets-secrets through a read-only deploy key. A release
       # always builds full: WICKETS_MODE=full fails the build if the overlay
-      # is missing, so a stub build can never ship.
+      # is missing, so a stub build can never ship. A patch release names
+      # the overlay commit it was tested with in .github/overlay-ref; with
+      # no such file the build takes the overlay's main. The ref lives in a
+      # file, not here, so a patch branch keeps this workflow the same as
+      # main's and the cloud tag workflow may tag it.
+      - name: Read the overlay commit
+        id: overlay
+        shell: bash
+        run: |
+          ref=""
+          if [ -f .github/overlay-ref ]; then
+            ref=$(tr -d '[:space:]' < .github/overlay-ref)
+            [[ "$ref" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::.github/overlay-ref must hold one full commit SHA."; exit 1; }
+          fi
+          echo "ref=$ref" >> "$GITHUB_OUTPUT"
       - name: Check out the private overlay
         uses: actions/checkout@v5
         with:
           repository: orinks-games/wickets-secrets
-          # 1.8.x builds the overlay's release commit, not its main.
-          ref: 2723e5781a3c33ca3d02f9c0baf36594f26bfaa8
+          ref: ${{ steps.overlay.outputs.ref }}
           path: secrets
           ssh-key: ${{ secrets.WICKETS_SECRETS_DEPLOY_KEY }}
           persist-credentials: false
@@ -351,6 +364,49 @@ jobs:
           compression-level: 0
           retention-days: 2
 
+  # The translation kit: the public catalogs, the template, the glossaries
+  # and lang/README.md, as its own release asset for translators
+  # (wickets-<version>-translation-kit.zip). It holds only lang/, the
+  # public half; the private overlay's lines are never in it. The game
+  # itself keeps its catalogs built in.
+  translations:
+    name: translation kit
+    needs: build
+    if: ${{ !cancelled() && (startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch') }}
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - name: Pack the kit
+        id: kit
+        shell: bash
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            version="${GITHUB_REF_NAME#v}"
+          else
+            version=$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -n1)
+          fi
+          name="wickets-$version-translation-kit"
+          mkdir -p "dist/$name"
+          cp lang/README.md lang/wickets.pot lang/*.po "dist/$name/"
+          cp -r lang/glossary "dist/$name/glossary"
+          (cd dist && zip -qr "$name.zip" "$name")
+          unzip -l "dist/$name.zip"
+          echo "file=dist/$name.zip" >> "$GITHUB_OUTPUT"
+      - name: Attach to the release
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.WICKETS_RELEASE_TOKEN || github.token }}
+          GH_REPO: orinks-games/wickets
+          FILE: ${{ steps.kit.outputs.file }}
+        run: |
+          # The build jobs made the release; a kit with no release to join
+          # fails here rather than make one without notes.
+          gh release view "$GITHUB_REF_NAME" >/dev/null
+          gh release upload "$GITHUB_REF_NAME" "$FILE" --clobber
+
   # Once the packages and their rules modules are attached, ask orinks.net
   # to redeploy: its deploy fetches every release's rules module, so this
   # release's ranked runs count from then on. ORINKS_NET_DISPATCH_TOKEN is a
@@ -358,7 +414,7 @@ jobs:
   # only. Without it the site picks the module up at its next deploy.
   site:
     name: refresh orinks.net's rules modules
-    needs: build
+    needs: [build, translations]
     if: ${{ !cancelled() && startsWith(github.ref, 'refs/tags/v') }}
     runs-on: ubuntu-24.04
     permissions: {}
