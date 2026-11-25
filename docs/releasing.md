@@ -74,6 +74,17 @@ The updater only offers versions newer than the installed copy, so to
 reach alpha players an alpha release must sort after the newest release
 they may have installed.
 
+## Tagging from the cloud
+
+The Tag release workflow (`.github/workflows/tag-release.yml`) tags and
+releases with no one's computer involved. Run it from the Actions tab or
+the API with `tag` (like `v1.9.0-alpha.1`) and `commit` (the full SHA).
+It checks the tag against Cargo.toml at that commit, and for a stable tag
+that `docs/release-notes/<tag>.md` is there. Then it pushes the tag and
+starts the Release workflow on it. Set `dry_run` to only run the checks.
+It doesn't tag wickets-secrets: the Release workflow builds the overlay
+commit that release.yml names (its main when none is named).
+
 ## Commands (Windows, PowerShell or cmd)
 
 From the Echo-Parlor checkout, on `main`, up to date:
