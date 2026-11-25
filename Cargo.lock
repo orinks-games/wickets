@@ -3180,6 +3180,7 @@ dependencies = [
  "wickets-slot-f",
  "wickets-slot-g",
  "wickets-slot-h",
+ "wickets-slot-i",
  "winter-wonderland",
 ]
 
@@ -3282,6 +3283,18 @@ dependencies = [
 
 [[package]]
 name = "wickets-slot-h"
+version = "1.9.0"
+dependencies = [
+ "hearken",
+ "log",
+ "parlor-core",
+ "serde",
+ "serde_json",
+ "wickets-content",
+]
+
+[[package]]
+name = "wickets-slot-i"
 version = "1.9.0"
 dependencies = [
  "hearken",
