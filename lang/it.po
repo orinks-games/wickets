@@ -93054,6 +93054,10 @@ msgstr ""
 msgid "push {name} over {over}"
 msgstr ""
 
+#. placeholders: {name}, {over}
+msgid "push {name} quietly over {over}"
+msgstr ""
+
 #. placeholders: {top_name}
 msgid "pop {top_name}"
 msgstr ""
@@ -93354,6 +93358,119 @@ msgstr "unknown"
 msgid "an unnamed button"
 msgstr "un pulsante senza nome"
 
+msgid "every line"
+msgstr ""
+
+msgid "a sound"
+msgstr ""
+
+#. placeholders: {spoken}
+msgid "{spoken} says a line to the other players."
+msgstr ""
+
+#. placeholders: {spoken}
+msgid "{spoken} reads the chat back, newest first."
+msgstr ""
+
+#. placeholders: {spoken}
+msgid "{spoken} opens the chat list."
+msgstr ""
+
+msgid "said"
+msgstr ""
+
+msgid "counted"
+msgstr ""
+
+#. placeholders: {name}, {name2}
+msgid "[quiet] {name} -> {name2}"
+msgstr ""
+
+msgid "[chat] out: none -> sending"
+msgstr ""
+
+msgid "[chat] out: sending -> refused"
+msgstr ""
+
+msgid "[chat] out: refused -> none"
+msgstr ""
+
+#. placeholders: {unwrap_or_else}
+msgid "Say to {unwrap_or_else}"
+msgstr ""
+
+#. placeholders: {label}
+msgid "Say in the {label}"
+msgstr ""
+
+#. placeholders: {name}
+msgid "Say in {name}"
+msgstr ""
+
+#. placeholders: {one}
+msgid "Say to {one}"
+msgstr ""
+
+msgid "Say to the other players"
+msgstr ""
+
+#. placeholders: {site}
+msgid "A typed line needs a {site} account."
+msgstr ""
+
+msgid "Type a line. Enter sends it. Escape cancels."
+msgstr ""
+
+msgid ""
+"Type a line. Enter sends it. Up and Down choose a ready line. Escape "
+"cancels."
+msgstr ""
+
+#. placeholders: {site}
+msgid ""
+"Ready lines. A typed line needs a {site} account. Up and Down choose, Enter "
+"sends."
+msgstr ""
+
+#. placeholders: {rules}
+msgid "{rules} Enter agrees."
+msgstr ""
+
+msgid "Agree"
+msgstr ""
+
+msgid "[chat] rules: asked -> agreed"
+msgstr ""
+
+msgid "Nothing said yet."
+msgstr ""
+
+msgid "That is the oldest line."
+msgstr ""
+
+#. placeholders: {id}, {name}, {name2}
+msgid "[chat] line {id}: {name} -> {name2}"
+msgstr ""
+
+msgid "[chat] out: sending -> none"
+msgstr ""
+
+#. placeholders: {id}
+msgid "[chat] line {id}: new -> waiting"
+msgstr ""
+
+#. placeholders: {count}
+msgid "{count} new chat lines."
+msgstr ""
+
+#. placeholders: {name}
+msgid "quiet {name}"
+msgstr ""
+
+#. placeholders: {id}, {name}, {line}
+msgid "chat line {id} {name}: {line}"
+msgstr ""
+
 msgid "hearken-clock-sync"
 msgstr ""
 
@@ -93442,6 +93559,108 @@ msgid ""
 msgstr ""
 "La voce integrata parla solo inglese. Per un'altra lingua, usa uno screen "
 "reader."
+
+msgid "all"
+msgstr ""
+
+msgid "friends and my games"
+msgstr ""
+
+msgid "kept"
+msgstr ""
+
+msgid "invites"
+msgstr ""
+
+msgid "friends"
+msgstr ""
+
+msgid "notices"
+msgstr ""
+
+msgid "notice"
+msgstr ""
+
+msgid "chat"
+msgstr ""
+
+msgid "mutes"
+msgstr ""
+
+msgid "waits"
+msgstr ""
+
+msgid "wait"
+msgstr ""
+
+#. placeholders: {plural}, {verb}
+msgid "{plural} {verb} on you."
+msgstr ""
+
+msgid "player"
+msgstr ""
+
+msgid "players"
+msgstr ""
+
+#. placeholders: {clean}, {label}
+msgid "{clean} sat down. {label}."
+msgstr ""
+
+#. placeholders: {label}, {clean}
+msgid "Your move. {label}, {clean}."
+msgstr ""
+
+#. placeholders: {label}
+msgid "Your move. {label}."
+msgstr ""
+
+#. placeholders: {clean}, {label}
+msgid "{clean} invites you. {label}."
+msgstr ""
+
+#. placeholders: {name}, {game}
+msgid "{name} said yes. {game}."
+msgstr ""
+
+#. placeholders: {name}, {game}
+msgid "{name} said no. {game}."
+msgstr ""
+
+#. placeholders: {name}, {game}
+msgid "No answer from {name}. {game}."
+msgstr ""
+
+#. placeholders: {clean}
+msgid "{clean} is here."
+msgstr ""
+
+#. placeholders: {label}, {clean}
+msgid "Open table. {label}, {clean}."
+msgstr ""
+
+#. placeholders: {label}
+msgid "Open table. {label}."
+msgstr ""
+
+#. placeholders: {clean}, {label}
+msgid "{clean} spoke in the {label}."
+msgstr ""
+
+#. placeholders: {id}, {name}, {name2}, {name3}
+msgid "[notice] {id} {name}: {name2} -> {name3}"
+msgstr ""
+
+msgid "Other players can see you are here. Settings, Online changes it."
+msgstr ""
+
+#. placeholders: {id}, {name}
+msgid "[notice] {id} {name}: new -> waiting"
+msgstr ""
+
+#. placeholders: {id}, {name}, {name2}, {line}
+msgid "notice {id} {name} {name2}: {line}"
+msgstr ""
 
 msgid "info"
 msgstr ""
@@ -93681,6 +93900,91 @@ msgstr "Ripristina tutti i pulsanti del controller"
 msgid "Puts every control on this screen back where it started."
 msgstr "Rimette ogni comando di questa schermata dov'era all'inizio."
 
+msgid "out"
+msgstr ""
+
+msgid "joining"
+msgstr ""
+
+msgid "in"
+msgstr ""
+
+msgid "Chat"
+msgstr ""
+
+#. placeholders: {name}, {name2}
+msgid "[chat] link: {name} -> {name2}"
+msgstr ""
+
+#. placeholders: {site}
+msgid "Asking {site}."
+msgstr "Chiedo a {site}."
+
+msgid "Say something"
+msgstr ""
+
+msgid "Type a line, or choose a ready line with Up and Down."
+msgstr ""
+
+msgid "Enter mutes, blocks or reports this player."
+msgstr ""
+
+msgid "Players"
+msgstr ""
+
+msgid "Mute, block or report a player at this table."
+msgstr ""
+
+msgid ""
+"Say something sends a line. The lines are newest first; Enter on one mutes, "
+"blocks or reports the player."
+msgstr ""
+
+msgid "Blocked and muted players"
+msgstr ""
+
+msgid "Nobody blocked or muted."
+msgstr ""
+
+msgid "A player"
+msgstr "Un giocatore"
+
+#. placeholders: {name}
+msgid "{name}, blocked"
+msgstr ""
+
+#. placeholders: {name}
+msgid "Unblock {name}?"
+msgstr ""
+
+#. placeholders: {name}
+msgid "{name}, muted"
+msgstr ""
+
+#. placeholders: {name}
+msgid "Unmute {name}?"
+msgstr ""
+
+msgid "Still asking."
+msgstr ""
+
+#. placeholders: {handle}
+msgid "free {handle}"
+msgstr ""
+
+#. placeholders: {name}
+msgid "{name} unblocked."
+msgstr ""
+
+#. placeholders: {name}
+msgid "{name} unmuted."
+msgstr ""
+
+msgid ""
+"Players you blocked or muted. Enter lets one reach you again. Blocked "
+"players stay hidden from you, and you from them, until you unblock them."
+msgstr ""
+
 msgid "No"
 msgstr "No"
 
@@ -93693,6 +93997,262 @@ msgstr "conferma"
 
 msgid "Press Enter to hear this topic."
 msgstr "Premi Enter per sentire questo argomento."
+
+#. placeholders: {label}
+msgid "{label}, new lines"
+msgstr ""
+
+#. placeholders: {label}, {n}
+msgid "{label}, new lines, {n} here"
+msgstr ""
+
+#. placeholders: {label}, {n}
+msgid "{label}, {n} here"
+msgstr ""
+
+#. placeholders: {name}
+msgid "Invite sent to {name}."
+msgstr ""
+
+msgid "Invite declined."
+msgstr ""
+
+msgid "Invite taken back."
+msgstr ""
+
+#. placeholders: {name}
+msgid "{name} added to friends."
+msgstr ""
+
+#. placeholders: {name}
+msgid "{name} removed from friends."
+msgstr ""
+
+#. placeholders: {name}
+msgid "{name} reported and muted."
+msgstr ""
+
+msgid "Play online: connect an account or play as a guest"
+msgstr "Gioca online: collega un account o gioca come ospite"
+
+#. placeholders: {article}, {site}
+msgid "Connect {article} {site} account to play online"
+msgstr ""
+
+msgid ""
+"Online play needs an account, so other players know who they are playing."
+msgstr ""
+"Il gioco online richiede un account, così gli altri giocatori sanno con chi "
+"giocano."
+
+#. placeholders: {what}
+msgid "{what}, none"
+msgstr ""
+
+msgid "Play online"
+msgstr ""
+
+msgid "Chat with everyone online. Enter opens it."
+msgstr ""
+
+msgid "Who's here"
+msgstr ""
+
+msgid ""
+"Everyone online now, friends first, and where they are. Enter on a player "
+"invites them or adds a friend."
+msgstr ""
+
+msgid "Invites"
+msgstr ""
+
+msgid "Invites to answer, and yours waiting on others."
+msgstr ""
+
+msgid "Friends"
+msgstr ""
+
+msgid "The players you added, here or away. Add friends from Who's here."
+msgstr ""
+
+msgid "Notices"
+msgstr ""
+
+msgid "What happened online since you looked: Enter opens one."
+msgstr ""
+
+#. placeholders: {label}
+msgid "{label} online"
+msgstr "{label} online"
+
+msgid ""
+"Create a game with a code, join with a code, play with anyone, and your "
+"games."
+msgstr ""
+
+msgid "Nobody else is here."
+msgstr ""
+
+msgid "No friends yet. Add them from Who's here."
+msgstr ""
+
+msgid ", friend"
+msgstr ""
+
+msgid ""
+"Everyone online now, friends first. Enter on a player invites them, adds a "
+"friend, or mutes them."
+msgstr ""
+
+msgid ""
+"The players you added, here or away. Enter on a friend invites them or "
+"removes them. An invite to a friend who is away waits for them."
+msgstr ""
+
+#. placeholders: {site}
+msgid "Still asking {site}."
+msgstr "Sto ancora chiedendo a {site}."
+
+#. placeholders: {label}
+msgid "Invite to {label}"
+msgstr ""
+
+#. placeholders: {name}
+msgid ""
+"{name} hears the invite wherever they are. If they say yes, the game starts."
+msgstr ""
+
+msgid "Remove friend"
+msgstr ""
+
+msgid "Add friend"
+msgstr ""
+
+msgid ""
+"Friends are listed first, and you hear when they come in. They are not "
+"asked."
+msgstr ""
+
+msgid "Unmute"
+msgstr ""
+
+msgid "Their chat lines and invites reach you again."
+msgstr ""
+
+msgid "Mute"
+msgstr ""
+
+msgid "Stops their chat lines and invites reaching you. They are not told."
+msgstr ""
+
+msgid "Unblock"
+msgstr ""
+
+msgid "You and they can reach each other again."
+msgstr ""
+
+msgid "Block"
+msgstr ""
+
+msgid ""
+"You stop seeing each other, and you are never seated together. They are not "
+"told. Settings, Online has the list of blocked players."
+msgstr ""
+
+#. placeholders: {name}
+msgid "Block {name}?"
+msgstr ""
+
+msgid "block"
+msgstr ""
+
+msgid "Report"
+msgstr ""
+
+#. placeholders: {name}, {site}
+msgid "Report {name}'s name to {site}?"
+msgstr ""
+
+msgid "report"
+msgstr ""
+
+#. placeholders: {site_name}
+msgid ""
+"Sends this player's name to {site_name}, for a name that should not be "
+"here, and mutes them for you."
+msgstr ""
+
+msgid "Invite this player, add them as a friend, or mute them."
+msgstr ""
+
+#. placeholders: {clean_text}, {kind_label}
+msgid "{clean_text} invites you. {kind_label}."
+msgstr ""
+
+#. placeholders: {clean_text}, {kind_label}
+msgid "You invited {clean_text}. {kind_label}, waiting."
+msgstr ""
+
+msgid "No invites."
+msgstr ""
+
+msgid ""
+"Enter on an invite to you accepts or declines it. Enter on one of yours "
+"takes it back. An invite nobody answers ends after 3 days."
+msgstr ""
+
+#. placeholders: {clean_text}
+msgid "Invite to {clean_text}"
+msgstr ""
+
+#. placeholders: {clean_text}
+msgid "Invite from {clean_text}"
+msgstr ""
+
+msgid "Take back"
+msgstr ""
+
+msgid "Accept"
+msgstr "Accept"
+
+msgid "The game starts, and you go to the table."
+msgstr ""
+
+msgid "Decline"
+msgstr ""
+
+msgid "Enter chooses. Escape goes back."
+msgstr ""
+
+msgid "No notices."
+msgstr ""
+
+msgid "Enter on a notice goes there, or puts it off."
+msgstr ""
+
+msgid "Notice"
+msgstr ""
+
+msgid "That notice is over."
+msgstr ""
+
+msgid "Declines the invite."
+msgstr ""
+
+msgid "Clears the notice."
+msgstr ""
+
+msgid "Go there"
+msgstr ""
+
+msgid "Later"
+msgstr ""
+
+msgid "Keeps it in Play online, under Notices."
+msgstr ""
+
+msgid "Go there opens it. Later keeps it in Play online. No clears it."
+msgstr ""
 
 msgid "connected"
 msgstr ""
@@ -93803,10 +94363,6 @@ msgid "Stopped playing online on this computer."
 msgstr "Non giochi più online su questo computer."
 
 #. placeholders: {site}
-msgid "Still asking {site}."
-msgstr "Sto ancora chiedendo a {site}."
-
-#. placeholders: {site}
 msgid "Disconnected from {site}."
 msgstr "Scollegato da {site}."
 
@@ -93870,6 +94426,51 @@ msgstr "Lascia il gioco e torna al menu del titolo."
 
 msgid "Close the game."
 msgstr "Chiudi il gioco."
+
+msgid "No other players yet."
+msgstr ""
+
+msgid "Mute, block or report this player."
+msgstr ""
+
+msgid ""
+"The other players in this game. Enter opens one to mute, block or report "
+"them. Escape goes back."
+msgstr ""
+
+#. placeholders: {name}
+msgid "Hear what {name} says again."
+msgstr ""
+
+#. placeholders: {name}
+msgid "Stop hearing what {name} says, in every game. They are not told."
+msgstr ""
+
+#. placeholders: {name}
+msgid "Let {name} and you reach each other again."
+msgstr ""
+
+#. placeholders: {name}
+msgid ""
+"You stop seeing each other, and you are never seated together. {name} is "
+"not told. Settings, Online has the list of blocked players."
+msgstr ""
+
+#. placeholders: {name}, {site}
+msgid "Report {name}? Their lines here go to {site}."
+msgstr ""
+
+#. placeholders: {name}, {site_help}
+msgid "Sends what {name} said here to {site_help} and mutes {name} for you."
+msgstr ""
+
+#. placeholders: {name}
+msgid "{name} blocked. This match goes on."
+msgstr ""
+
+#. placeholders: {name}
+msgid "What to do about {name}. Enter chooses, Escape goes back."
+msgstr ""
 
 msgid "Describe what happened first."
 msgstr "Prima descrivi cosa è successo."
@@ -93955,9 +94556,6 @@ msgstr "Cosa è successo è troppo lungo da inviare. Accorcialo."
 #. placeholders: {other}
 msgid "The report cannot be sent: {other}."
 msgstr "Impossibile inviare la segnalazione: {other}."
-
-msgid "report"
-msgstr ""
 
 #. placeholders: {name}
 msgid ""
@@ -94102,10 +94700,6 @@ msgstr "finita, {s}"
 msgid ", {unread} new"
 msgstr ", {unread} nuovi"
 
-#. placeholders: {label}
-msgid "{label} online"
-msgstr "{label} online"
-
 msgid "Creating a game"
 msgstr "Creazione di una partita"
 
@@ -94114,19 +94708,6 @@ msgstr "Ricerca di una partita"
 
 msgid "Joining"
 msgstr "Ingresso nella partita"
-
-msgid "Play online: connect an account or play as a guest"
-msgstr "Gioca online: collega un account o gioca come ospite"
-
-#. placeholders: {article}, {site}
-msgid "Connect {article} {site} account to play online"
-msgstr ""
-
-msgid ""
-"Online play needs an account, so other players know who they are playing."
-msgstr ""
-"Il gioco online richiede un account, così gli altri giocatori sanno con chi "
-"giocano."
 
 msgid "Create a game"
 msgstr "Crea una partita"
@@ -94180,10 +94761,6 @@ msgstr ""
 "Le partite in cui sei: a chi tocca, e cosa è successo dall'ultima volta che "
 "hai guardato."
 
-#. placeholders: {site}
-msgid "Asking {site}."
-msgstr "Chiedo a {site}."
-
 #. placeholders: {label}
 msgid "{label} game"
 msgstr "Partita di {label}"
@@ -94191,9 +94768,6 @@ msgstr "Partita di {label}"
 #. placeholders: {spell_code}
 msgid "Invite code {spell_code}"
 msgstr "Codice d'invito {spell_code}"
-
-msgid "A player"
-msgstr "Un giocatore"
 
 #. placeholders: {name}
 msgid "{name} joined."
@@ -94260,6 +94834,14 @@ msgstr "Gioca: {standing}"
 msgid "Go to the match."
 msgstr "Vai alla partita."
 
+#. placeholders: {players_line}, {new}
+msgid "Players: {players_line}{new}"
+msgstr ""
+
+#. placeholders: {here}
+msgid ". {here} here now"
+msgstr ""
+
 #. placeholders: {spoken}
 msgid "This game is {spoken}."
 msgstr "Questa partita è {spoken}."
@@ -94267,6 +94849,20 @@ msgstr "Questa partita è {spoken}."
 #. placeholders: {s}
 msgid "Over: {s}."
 msgstr "Finita: {s}."
+
+msgid "Type a line for the other players."
+msgstr ""
+
+#. placeholders: {keys}
+msgid ""
+"Type a line for the other players. From any screen in the game, {keys}"
+msgstr ""
+
+msgid "Mute or report a player"
+msgstr ""
+
+msgid "The other players, each with Mute, Block and Report."
+msgstr ""
 
 msgid "Remove from my games"
 msgstr "Togli dalle mie partite"
@@ -94562,6 +95158,40 @@ msgstr "Gioca come ospite o collegati"
 
 msgid "Connect"
 msgstr "Collega"
+
+#. placeholders: {spoken}
+msgid "Chat: {spoken}"
+msgstr ""
+
+msgid ""
+"How other players' lines reach you in a game: every line as it comes, a "
+"sound for each, or nothing. Reading the chat back works either way. Enter, "
+"Left or Right changes it."
+msgstr ""
+
+#. placeholders: {spoken}
+msgid "Online notices: {spoken}"
+msgstr ""
+
+msgid ""
+"Which online news reaches you in a game: all of it, only your games and "
+"friends, or none. Play online lists everything either way. Enter, Left or "
+"Right changes it."
+msgstr ""
+
+#. placeholders: {spoken}
+msgid "Show me as here: {spoken}"
+msgstr ""
+
+msgid ""
+"Who sees you in Who's here: everyone, only the players you added as "
+"friends, or nobody. Invites still reach you. Enter, Left or Right changes "
+"it."
+msgstr ""
+
+msgid ""
+"The players you blocked or muted. Choose one to unblock or unmute them."
+msgstr ""
 
 msgid "updates"
 msgstr "updates"
@@ -95416,6 +96046,39 @@ msgstr "il relay ha dato una pagina di un altro sito"
 msgid "context"
 msgstr ""
 
+msgid "handle"
+msgstr ""
+
+msgid "mode"
+msgstr ""
+
+msgid "seq"
+msgstr ""
+
+msgid "note"
+msgstr ""
+
+msgid "state"
+msgstr ""
+
+msgid "unknown-invite"
+msgstr ""
+
+msgid "No such invite."
+msgstr ""
+
+msgid "friend"
+msgstr ""
+
+msgid "place"
+msgstr ""
+
+msgid "show"
+msgstr ""
+
+msgid "heard"
+msgstr ""
+
 msgid "rooms"
 msgstr ""
 
@@ -95428,16 +96091,13 @@ msgstr ""
 msgid "Nothing to send."
 msgstr "Niente da inviare."
 
-msgid "chat"
-msgstr ""
-
 msgid "text"
 msgstr "text"
 
-msgid "leave"
+msgid "tag"
 msgstr ""
 
-msgid "seq"
+msgid "leave"
 msgstr ""
 
 msgid "more"
@@ -95448,6 +96108,16 @@ msgstr ""
 
 #. placeholders: {in_flight}
 msgid ", {in_flight} in flight"
+msgstr ""
+
+#. placeholders: {name}, {as_deref}, {name2}, {here}, {friends}, {invites}, {waiting}, {open}
+msgid ""
+"lobby: {name} {as_deref}, show {name2}, {here} here, {friends} friends, "
+"{invites} invites, {waiting} waiting, {open} open"
+msgstr ""
+
+#. placeholders: {name}, {as_deref}
+msgid "lobby: {name} {as_deref}, no pulse answered yet"
 msgstr ""
 
 #. placeholders: {code}, {kind}, {phase}, {seq}, {read_seq}, {else}, {map}
@@ -95485,6 +96155,18 @@ msgstr ""
 msgid "not-a-member"
 msgstr ""
 
+msgid "too-fast"
+msgstr ""
+
+msgid "blocked"
+msgstr ""
+
+msgid "unknown-player"
+msgstr ""
+
+msgid "screened"
+msgstr ""
+
 msgid "That game cannot be played online."
 msgstr "Quel gioco non si può giocare online."
 
@@ -95520,6 +96202,18 @@ msgstr "Hai troppe partite aperte. Finiscine o lasciane una."
 msgid "You are not in that game."
 msgstr "Non sei in quella partita."
 
+msgid "Wait a moment."
+msgstr ""
+
+msgid "You cannot reach that player."
+msgstr ""
+
+msgid "No player by that name."
+msgstr ""
+
+msgid "That line was not sent."
+msgstr ""
+
 #. placeholders: {site}
 msgid "{site} did not accept that."
 msgstr "{site} non l'ha accettato."
@@ -95530,6 +96224,59 @@ msgstr ""
 msgid "phase"
 msgstr ""
 
+msgid "everyone"
+msgstr ""
+
+msgid "nobody"
+msgstr ""
+
+msgid "friends only"
+msgstr ""
+
+msgid "sent"
+msgstr ""
+
+msgid "accepted"
+msgstr ""
+
+msgid "declined"
+msgstr ""
+
+msgid "withdrawn"
+msgstr ""
+
+msgid "lapsed"
+msgstr ""
+
+#. placeholders: {name}
+msgid "{name}, away"
+msgstr ""
+
+#. placeholders: {name}, {clean_text}
+msgid "{name}, in {clean_text}"
+msgstr ""
+
+msgid "arrived"
+msgstr ""
+
+msgid "sat-down"
+msgstr ""
+
+msgid "your-move"
+msgstr ""
+
+msgid "invited"
+msgstr ""
+
+msgid "friend-here"
+msgstr ""
+
+msgid "open-table"
+msgstr ""
+
+msgid "channel-line"
+msgstr ""
+
 msgid "waiting for players"
 msgstr "in attesa di giocatori"
 
@@ -95538,6 +96285,12 @@ msgstr "chiusa"
 
 msgid "abandoned"
 msgstr "abbandonata"
+
+msgid "muted"
+msgstr ""
+
+msgid "Someone"
+msgstr ""
 
 msgid "nothing scripted"
 msgstr ""
@@ -96180,9 +96933,6 @@ msgstr "la fonte dell'aggiornamento non è stata trovata"
 #. placeholders: {why}
 msgid "the update source answered oddly: {why}"
 msgstr "la fonte dell'aggiornamento ha risposto in modo strano: {why}"
-
-msgid "Accept"
-msgstr "Accept"
 
 msgid "the release list is not JSON"
 msgstr "la lista delle versioni non è JSON"

@@ -730,7 +730,7 @@ msgstr ""
 msgid "back"
 msgstr ""
 
-#: crates/parlor-core/src/menu_sounds.rs hearken/crates/hearken-rooms/src/client.rs
+#: crates/parlor-core/src/menu_sounds.rs hearken/crates/hearken-app/src/chat.rs
 msgid "open"
 msgstr ""
 
@@ -1006,7 +1006,7 @@ msgstr ""
 msgid "normal"
 msgstr ""
 
-#: crates/parlor-core/src/pace.rs games/rooftop-garden/src/breeding.rs
+#: crates/parlor-core/src/pace.rs games/rooftop-garden/src/breeding.rs hearken/crates/hearken-rooms/src/client.rs
 msgid "quick"
 msgstr ""
 
@@ -1195,7 +1195,7 @@ msgstr ""
 msgid "running"
 msgstr ""
 
-#: crates/parlor-core/src/pace.rs
+#: crates/parlor-core/src/pace.rs hearken/crates/hearken-app/src/chat.rs
 msgid "held"
 msgstr ""
 
@@ -1323,7 +1323,7 @@ msgid ""
 "in Play."
 msgstr ""
 
-#: crates/parlor-core/src/preferences.rs games/freewheel/src/progress.rs games/haunted-hallways/src/unlocks.rs hearken/crates/hearken-app/src/screens/report.rs
+#: crates/parlor-core/src/preferences.rs games/freewheel/src/progress.rs games/haunted-hallways/src/unlocks.rs hearken/crates/hearken-app/src/chat.rs
 msgid "off"
 msgstr ""
 
@@ -1501,7 +1501,7 @@ msgstr ""
 msgid "relaxing"
 msgstr ""
 
-#: crates/parlor-core/src/public.rs
+#: crates/parlor-core/src/public.rs hearken/crates/hearken-app/src/screens/chat.rs
 msgid "table"
 msgstr ""
 
@@ -3612,11 +3612,11 @@ msgstr ""
 msgid "Return to the lobby."
 msgstr ""
 
-#: crates/wickets/src/lobby.rs games/midnight-lanes/src/progress.rs hearken/crates/hearken-update/src/manifest.rs
+#: crates/wickets/src/lobby.rs games/midnight-lanes/src/progress.rs hearken/crates/hearken-app/src/lobby.rs
 msgid "game"
 msgstr ""
 
-#: crates/wickets/src/lobby.rs
+#: crates/wickets/src/lobby.rs hearken/crates/hearken-app/src/lobby.rs
 msgid "games"
 msgstr ""
 
@@ -19777,7 +19777,7 @@ msgstr ""
 msgid "red envelope"
 msgstr ""
 
-#: games/dragon-dance/src/rules.rs games/lamplighter/src/rules.rs
+#: games/dragon-dance/src/rules.rs games/lamplighter/src/rules.rs hearken/crates/hearken-rooms/src/lobby.rs
 msgid "here"
 msgstr ""
 
@@ -21698,7 +21698,7 @@ msgstr ""
 msgid "{n} more flashes"
 msgstr ""
 
-#: games/firefly-meadow/src/evening.rs
+#: games/firefly-meadow/src/evening.rs hearken/crates/hearken-rooms/src/lobby.rs
 msgid "answered"
 msgstr ""
 
@@ -34884,7 +34884,7 @@ msgstr ""
 msgid "pecan pie"
 msgstr ""
 
-#: games/harvest-feast/src/rules.rs games/haunted-hallways/src/unlocks.rs games/larkfield/src/menus.rs
+#: games/harvest-feast/src/rules.rs games/haunted-hallways/src/unlocks.rs games/larkfield/src/menus.rs hearken/crates/hearken-app/src/chat.rs
 msgid "them"
 msgstr ""
 
@@ -42851,7 +42851,7 @@ msgstr ""
 msgid "ending"
 msgstr ""
 
-#: games/lamplighter/src/play.rs hearken/crates/hearken-app/src/screens/update.rs
+#: games/lamplighter/src/play.rs hearken/crates/hearken-app/src/lobby.rs
 msgid "done"
 msgstr ""
 
@@ -48152,7 +48152,7 @@ msgstr ""
 msgid "{name} moves into a cottage. That makes {mouths} to feed at supper."
 msgstr ""
 
-#: games/larkfield/src/menus.rs hearken/crates/hearken-app/src/ctx.rs
+#: games/larkfield/src/menus.rs hearken/crates/hearken-app/src/chat.rs
 msgid "Not now"
 msgstr ""
 
@@ -67985,7 +67985,7 @@ msgstr ""
 msgid "standing with {b} banked"
 msgstr ""
 
-#: games/riverboat-dice/src/table.rs
+#: games/riverboat-dice/src/table.rs hearken/crates/hearken-rooms/src/lobby.rs
 msgid "standing"
 msgstr ""
 
@@ -78361,7 +78361,7 @@ msgstr ""
 msgid "pleasant"
 msgstr ""
 
-#: games/slow-kettle/src/guests.rs games/tide-pools/src/menus.rs
+#: games/slow-kettle/src/guests.rs games/tide-pools/src/menus.rs hearken/crates/hearken-rooms/src/client.rs
 msgid "kind"
 msgstr ""
 
@@ -82255,7 +82255,7 @@ msgstr ""
 msgid "{sentence_start} and {key} lean."
 msgstr ""
 
-#: games/snowfall-skate/src/play.rs
+#: games/snowfall-skate/src/play.rs hearken/crates/hearken-rooms/src/client.rs
 msgid "away"
 msgstr ""
 
@@ -98551,7 +98551,7 @@ msgstr ""
 msgid "The last call: {call}."
 msgstr ""
 
-#: games/winter-wonderland/src/count_run.rs hearken/crates/hearken-app/src/soundtrack.rs
+#: games/winter-wonderland/src/count_run.rs hearken/crates/hearken-app/src/chat.rs
 msgid "waiting"
 msgstr ""
 
@@ -98559,7 +98559,7 @@ msgstr ""
 msgid "call"
 msgstr ""
 
-#: games/winter-wonderland/src/count_run.rs
+#: games/winter-wonderland/src/count_run.rs hearken/crates/hearken-rooms/src/client.rs
 msgid "answer"
 msgstr ""
 
@@ -101362,6 +101362,11 @@ msgstr ""
 msgid "push {name} over {over}"
 msgstr ""
 
+#. placeholders: {name}, {over}
+#: hearken/crates/hearken-app/src/app.rs
+msgid "push {name} quietly over {over}"
+msgstr ""
+
 #. placeholders: {top_name}
 #: hearken/crates/hearken-app/src/app.rs
 msgid "pop {top_name}"
@@ -101759,6 +101764,150 @@ msgstr ""
 msgid "an unnamed button"
 msgstr ""
 
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "every line"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "a sound"
+msgstr ""
+
+#. placeholders: {spoken}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "{spoken} says a line to the other players."
+msgstr ""
+
+#. placeholders: {spoken}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "{spoken} reads the chat back, newest first."
+msgstr ""
+
+#. placeholders: {spoken}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "{spoken} opens the chat list."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "said"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "counted"
+msgstr ""
+
+#. placeholders: {name}, {name2}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "[quiet] {name} -> {name2}"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "[chat] out: none -> sending"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "[chat] out: sending -> refused"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "[chat] out: refused -> none"
+msgstr ""
+
+#. placeholders: {unwrap_or_else}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "Say to {unwrap_or_else}"
+msgstr ""
+
+#. placeholders: {label}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "Say in the {label}"
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "Say in {name}"
+msgstr ""
+
+#. placeholders: {one}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "Say to {one}"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "Say to the other players"
+msgstr ""
+
+#. placeholders: {site}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "A typed line needs a {site} account."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "Type a line. Enter sends it. Escape cancels."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/chat.rs
+msgid ""
+"Type a line. Enter sends it. Up and Down choose a ready line. Escape "
+"cancels."
+msgstr ""
+
+#. placeholders: {site}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid ""
+"Ready lines. A typed line needs a {site} account. Up and Down choose, Enter "
+"sends."
+msgstr ""
+
+#. placeholders: {rules}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "{rules} Enter agrees."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "Agree"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "[chat] rules: asked -> agreed"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "Nothing said yet."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "That is the oldest line."
+msgstr ""
+
+#. placeholders: {id}, {name}, {name2}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "[chat] line {id}: {name} -> {name2}"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "[chat] out: sending -> none"
+msgstr ""
+
+#. placeholders: {id}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "[chat] line {id}: new -> waiting"
+msgstr ""
+
+#. placeholders: {count}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "{count} new chat lines."
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "quiet {name}"
+msgstr ""
+
+#. placeholders: {id}, {name}, {line}
+#: hearken/crates/hearken-app/src/chat.rs
+msgid "chat line {id} {name}: {line}"
+msgstr ""
+
 #: hearken/crates/hearken-app/src/clock.rs
 msgid "hearken-clock-sync"
 msgstr ""
@@ -101857,6 +102006,137 @@ msgstr ""
 msgid ""
 "The built-in voice speaks English only. For another language, use a screen "
 "reader."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "all"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "friends and my games"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "kept"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "invites"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "friends"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "notices"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "notice"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "chat"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "mutes"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "waits"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "wait"
+msgstr ""
+
+#. placeholders: {plural}, {verb}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "{plural} {verb} on you."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "player"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "players"
+msgstr ""
+
+#. placeholders: {clean}, {label}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "{clean} sat down. {label}."
+msgstr ""
+
+#. placeholders: {label}, {clean}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "Your move. {label}, {clean}."
+msgstr ""
+
+#. placeholders: {label}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "Your move. {label}."
+msgstr ""
+
+#. placeholders: {clean}, {label}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "{clean} invites you. {label}."
+msgstr ""
+
+#. placeholders: {name}, {game}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "{name} said yes. {game}."
+msgstr ""
+
+#. placeholders: {name}, {game}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "{name} said no. {game}."
+msgstr ""
+
+#. placeholders: {name}, {game}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "No answer from {name}. {game}."
+msgstr ""
+
+#. placeholders: {clean}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "{clean} is here."
+msgstr ""
+
+#. placeholders: {label}, {clean}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "Open table. {label}, {clean}."
+msgstr ""
+
+#. placeholders: {label}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "Open table. {label}."
+msgstr ""
+
+#. placeholders: {clean}, {label}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "{clean} spoke in the {label}."
+msgstr ""
+
+#. placeholders: {id}, {name}, {name2}, {name3}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "[notice] {id} {name}: {name2} -> {name3}"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "Other players can see you are here. Settings, Online changes it."
+msgstr ""
+
+#. placeholders: {id}, {name}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "[notice] {id} {name}: new -> waiting"
+msgstr ""
+
+#. placeholders: {id}, {name}, {name2}, {line}
+#: hearken/crates/hearken-app/src/lobby.rs
+msgid "notice {id} {name} {name2}: {line}"
 msgstr ""
 
 #: hearken/crates/hearken-app/src/logging.rs
@@ -102146,6 +102426,115 @@ msgstr ""
 msgid "Puts every control on this screen back where it started."
 msgstr ""
 
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "out"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "joining"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "in"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "Chat"
+msgstr ""
+
+#. placeholders: {name}, {name2}
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "[chat] link: {name} -> {name2}"
+msgstr ""
+
+#. placeholders: {site}
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "Asking {site}."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "Say something"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "Type a line, or choose a ready line with Up and Down."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "Enter mutes, blocks or reports this player."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "Players"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "Mute, block or report a player at this table."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid ""
+"Say something sends a line. The lines are newest first; Enter on one mutes, "
+"blocks or reports the player."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "Blocked and muted players"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "Nobody blocked or muted."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "A player"
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "{name}, blocked"
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "Unblock {name}?"
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "{name}, muted"
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "Unmute {name}?"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "Still asking."
+msgstr ""
+
+#. placeholders: {handle}
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "free {handle}"
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "{name} unblocked."
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid "{name} unmuted."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/chat.rs
+msgid ""
+"Players you blocked or muted. Enter lets one reach you again. Blocked "
+"players stay hidden from you, and you from them, until you unblock them."
+msgstr ""
+
 #: hearken/crates/hearken-app/src/screens/confirm.rs
 msgid "No"
 msgstr ""
@@ -102161,6 +102550,332 @@ msgstr ""
 
 #: hearken/crates/hearken-app/src/screens/help.rs
 msgid "Press Enter to hear this topic."
+msgstr ""
+
+#. placeholders: {label}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "{label}, new lines"
+msgstr ""
+
+#. placeholders: {label}, {n}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "{label}, new lines, {n} here"
+msgstr ""
+
+#. placeholders: {label}, {n}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "{label}, {n} here"
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Invite sent to {name}."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Invite declined."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Invite taken back."
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "{name} added to friends."
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "{name} removed from friends."
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "{name} reported and muted."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Play online: connect an account or play as a guest"
+msgstr ""
+
+#. placeholders: {article}, {site}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Connect {article} {site} account to play online"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid ""
+"Online play needs an account, so other players know who they are playing."
+msgstr ""
+
+#. placeholders: {what}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "{what}, none"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Play online"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Chat with everyone online. Enter opens it."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Who's here"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid ""
+"Everyone online now, friends first, and where they are. Enter on a player "
+"invites them or adds a friend."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Invites"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Invites to answer, and yours waiting on others."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Friends"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "The players you added, here or away. Add friends from Who's here."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Notices"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "What happened online since you looked: Enter opens one."
+msgstr ""
+
+#. placeholders: {label}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "{label} online"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid ""
+"Create a game with a code, join with a code, play with anyone, and your "
+"games."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Nobody else is here."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "No friends yet. Add them from Who's here."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid ", friend"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid ""
+"Everyone online now, friends first. Enter on a player invites them, adds a "
+"friend, or mutes them."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid ""
+"The players you added, here or away. Enter on a friend invites them or "
+"removes them. An invite to a friend who is away waits for them."
+msgstr ""
+
+#. placeholders: {site}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Still asking {site}."
+msgstr ""
+
+#. placeholders: {label}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Invite to {label}"
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid ""
+"{name} hears the invite wherever they are. If they say yes, the game starts."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Remove friend"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Add friend"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid ""
+"Friends are listed first, and you hear when they come in. They are not "
+"asked."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Unmute"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Their chat lines and invites reach you again."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Mute"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Stops their chat lines and invites reaching you. They are not told."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Unblock"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "You and they can reach each other again."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Block"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid ""
+"You stop seeing each other, and you are never seated together. They are not "
+"told. Settings, Online has the list of blocked players."
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Block {name}?"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "block"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Report"
+msgstr ""
+
+#. placeholders: {name}, {site}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Report {name}'s name to {site}?"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "report"
+msgstr ""
+
+#. placeholders: {site_name}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid ""
+"Sends this player's name to {site_name}, for a name that should not be "
+"here, and mutes them for you."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Invite this player, add them as a friend, or mute them."
+msgstr ""
+
+#. placeholders: {clean_text}, {kind_label}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "{clean_text} invites you. {kind_label}."
+msgstr ""
+
+#. placeholders: {clean_text}, {kind_label}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "You invited {clean_text}. {kind_label}, waiting."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "No invites."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid ""
+"Enter on an invite to you accepts or declines it. Enter on one of yours "
+"takes it back. An invite nobody answers ends after 3 days."
+msgstr ""
+
+#. placeholders: {clean_text}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Invite to {clean_text}"
+msgstr ""
+
+#. placeholders: {clean_text}
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Invite from {clean_text}"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Take back"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Accept"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "The game starts, and you go to the table."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Decline"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Enter chooses. Escape goes back."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "No notices."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Enter on a notice goes there, or puts it off."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Notice"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "That notice is over."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Declines the invite."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Clears the notice."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Go there"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Later"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Keeps it in Play online, under Notices."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/lobby.rs
+msgid "Go there opens it. Later keeps it in Play online. No clears it."
 msgstr ""
 
 #: hearken/crates/hearken-app/src/screens/online.rs
@@ -102293,11 +103008,6 @@ msgstr ""
 
 #. placeholders: {site}
 #: hearken/crates/hearken-app/src/screens/online.rs
-msgid "Still asking {site}."
-msgstr ""
-
-#. placeholders: {site}
-#: hearken/crates/hearken-app/src/screens/online.rs
 msgid "Disconnected from {site}."
 msgstr ""
 
@@ -102366,6 +103076,62 @@ msgstr ""
 
 #: hearken/crates/hearken-app/src/screens/pause.rs
 msgid "Close the game."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/players.rs
+msgid "No other players yet."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/players.rs
+msgid "Mute, block or report this player."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/players.rs
+msgid ""
+"The other players in this game. Enter opens one to mute, block or report "
+"them. Escape goes back."
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/players.rs
+msgid "Hear what {name} says again."
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/players.rs
+msgid "Stop hearing what {name} says, in every game. They are not told."
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/players.rs
+msgid "Let {name} and you reach each other again."
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/players.rs
+msgid ""
+"You stop seeing each other, and you are never seated together. {name} is "
+"not told. Settings, Online has the list of blocked players."
+msgstr ""
+
+#. placeholders: {name}, {site}
+#: hearken/crates/hearken-app/src/screens/players.rs
+msgid "Report {name}? Their lines here go to {site}."
+msgstr ""
+
+#. placeholders: {name}, {site_help}
+#: hearken/crates/hearken-app/src/screens/players.rs
+msgid "Sends what {name} said here to {site_help} and mutes {name} for you."
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/players.rs
+msgid "{name} blocked. This match goes on."
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-app/src/screens/players.rs
+msgid "What to do about {name}. Enter chooses, Escape goes back."
 msgstr ""
 
 #: hearken/crates/hearken-app/src/screens/report.rs
@@ -102464,10 +103230,6 @@ msgstr ""
 #. placeholders: {other}
 #: hearken/crates/hearken-app/src/screens/report.rs
 msgid "The report cannot be sent: {other}."
-msgstr ""
-
-#: hearken/crates/hearken-app/src/screens/report.rs
-msgid "report"
 msgstr ""
 
 #. placeholders: {name}
@@ -102630,11 +103392,6 @@ msgstr ""
 msgid ", {unread} new"
 msgstr ""
 
-#. placeholders: {label}
-#: hearken/crates/hearken-app/src/screens/rooms.rs
-msgid "{label} online"
-msgstr ""
-
 #: hearken/crates/hearken-app/src/screens/rooms.rs
 msgid "Creating a game"
 msgstr ""
@@ -102645,20 +103402,6 @@ msgstr ""
 
 #: hearken/crates/hearken-app/src/screens/rooms.rs
 msgid "Joining"
-msgstr ""
-
-#: hearken/crates/hearken-app/src/screens/rooms.rs
-msgid "Play online: connect an account or play as a guest"
-msgstr ""
-
-#. placeholders: {article}, {site}
-#: hearken/crates/hearken-app/src/screens/rooms.rs
-msgid "Connect {article} {site} account to play online"
-msgstr ""
-
-#: hearken/crates/hearken-app/src/screens/rooms.rs
-msgid ""
-"Online play needs an account, so other players know who they are playing."
 msgstr ""
 
 #: hearken/crates/hearken-app/src/screens/rooms.rs
@@ -102717,11 +103460,6 @@ msgid ""
 "looked."
 msgstr ""
 
-#. placeholders: {site}
-#: hearken/crates/hearken-app/src/screens/rooms.rs
-msgid "Asking {site}."
-msgstr ""
-
 #. placeholders: {label}
 #: hearken/crates/hearken-app/src/screens/rooms.rs
 msgid "{label} game"
@@ -102730,10 +103468,6 @@ msgstr ""
 #. placeholders: {spell_code}
 #: hearken/crates/hearken-app/src/screens/rooms.rs
 msgid "Invite code {spell_code}"
-msgstr ""
-
-#: hearken/crates/hearken-app/src/screens/rooms.rs
-msgid "A player"
 msgstr ""
 
 #. placeholders: {name}
@@ -102816,6 +103550,16 @@ msgstr ""
 msgid "Go to the match."
 msgstr ""
 
+#. placeholders: {players_line}, {new}
+#: hearken/crates/hearken-app/src/screens/rooms.rs
+msgid "Players: {players_line}{new}"
+msgstr ""
+
+#. placeholders: {here}
+#: hearken/crates/hearken-app/src/screens/rooms.rs
+msgid ". {here} here now"
+msgstr ""
+
 #. placeholders: {spoken}
 #: hearken/crates/hearken-app/src/screens/rooms.rs
 msgid "This game is {spoken}."
@@ -102824,6 +103568,24 @@ msgstr ""
 #. placeholders: {s}
 #: hearken/crates/hearken-app/src/screens/rooms.rs
 msgid "Over: {s}."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/rooms.rs
+msgid "Type a line for the other players."
+msgstr ""
+
+#. placeholders: {keys}
+#: hearken/crates/hearken-app/src/screens/rooms.rs
+msgid ""
+"Type a line for the other players. From any screen in the game, {keys}"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/rooms.rs
+msgid "Mute or report a player"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/rooms.rs
+msgid "The other players, each with Mute, Block and Report."
 msgstr ""
 
 #: hearken/crates/hearken-app/src/screens/rooms.rs
@@ -103164,6 +103926,47 @@ msgstr ""
 
 #: hearken/crates/hearken-app/src/screens/settings.rs
 msgid "Connect"
+msgstr ""
+
+#. placeholders: {spoken}
+#: hearken/crates/hearken-app/src/screens/settings.rs
+msgid "Chat: {spoken}"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/settings.rs
+msgid ""
+"How other players' lines reach you in a game: every line as it comes, a "
+"sound for each, or nothing. Reading the chat back works either way. Enter, "
+"Left or Right changes it."
+msgstr ""
+
+#. placeholders: {spoken}
+#: hearken/crates/hearken-app/src/screens/settings.rs
+msgid "Online notices: {spoken}"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/settings.rs
+msgid ""
+"Which online news reaches you in a game: all of it, only your games and "
+"friends, or none. Play online lists everything either way. Enter, Left or "
+"Right changes it."
+msgstr ""
+
+#. placeholders: {spoken}
+#: hearken/crates/hearken-app/src/screens/settings.rs
+msgid "Show me as here: {spoken}"
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/settings.rs
+msgid ""
+"Who sees you in Who's here: everyone, only the players you added as "
+"friends, or nobody. Invites still reach you. Enter, Left or Right changes "
+"it."
+msgstr ""
+
+#: hearken/crates/hearken-app/src/screens/settings.rs
+msgid ""
+"The players you blocked or muted. Choose one to unblock or unmute them."
 msgstr ""
 
 #: hearken/crates/hearken-app/src/screens/settings.rs
@@ -104191,6 +104994,50 @@ msgid "context"
 msgstr ""
 
 #: hearken/crates/hearken-rooms/src/client.rs
+msgid "handle"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/client.rs
+msgid "mode"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/client.rs
+msgid "seq"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/client.rs
+msgid "note"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/client.rs
+msgid "state"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/client.rs
+msgid "unknown-invite"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/client.rs
+msgid "No such invite."
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/client.rs
+msgid "friend"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/client.rs
+msgid "place"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/client.rs
+msgid "show"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/client.rs
+msgid "heard"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/client.rs
 msgid "rooms"
 msgstr ""
 
@@ -104207,19 +105054,15 @@ msgid "Nothing to send."
 msgstr ""
 
 #: hearken/crates/hearken-rooms/src/client.rs
-msgid "chat"
-msgstr ""
-
-#: hearken/crates/hearken-rooms/src/client.rs
 msgid "text"
 msgstr ""
 
 #: hearken/crates/hearken-rooms/src/client.rs
-msgid "leave"
+msgid "tag"
 msgstr ""
 
 #: hearken/crates/hearken-rooms/src/client.rs
-msgid "seq"
+msgid "leave"
 msgstr ""
 
 #: hearken/crates/hearken-rooms/src/client.rs
@@ -104233,6 +105076,18 @@ msgstr ""
 #. placeholders: {in_flight}
 #: hearken/crates/hearken-rooms/src/client.rs
 msgid ", {in_flight} in flight"
+msgstr ""
+
+#. placeholders: {name}, {as_deref}, {name2}, {here}, {friends}, {invites}, {waiting}, {open}
+#: hearken/crates/hearken-rooms/src/client.rs
+msgid ""
+"lobby: {name} {as_deref}, show {name2}, {here} here, {friends} friends, "
+"{invites} invites, {waiting} waiting, {open} open"
+msgstr ""
+
+#. placeholders: {name}, {as_deref}
+#: hearken/crates/hearken-rooms/src/client.rs
+msgid "lobby: {name} {as_deref}, no pulse answered yet"
 msgstr ""
 
 #. placeholders: {code}, {kind}, {phase}, {seq}, {read_seq}, {else}, {map}
@@ -104282,6 +105137,22 @@ msgid "not-a-member"
 msgstr ""
 
 #: hearken/crates/hearken-rooms/src/error.rs
+msgid "too-fast"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/error.rs
+msgid "blocked"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/error.rs
+msgid "unknown-player"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/error.rs
+msgid "screened"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/error.rs
 msgid "That game cannot be played online."
 msgstr ""
 
@@ -104327,6 +105198,22 @@ msgstr ""
 msgid "You are not in that game."
 msgstr ""
 
+#: hearken/crates/hearken-rooms/src/error.rs
+msgid "Wait a moment."
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/error.rs
+msgid "You cannot reach that player."
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/error.rs
+msgid "No player by that name."
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/error.rs
+msgid "That line was not sent."
+msgstr ""
+
 #. placeholders: {site}
 #: hearken/crates/hearken-rooms/src/error.rs
 msgid "{site} did not accept that."
@@ -104340,6 +105227,76 @@ msgstr ""
 msgid "phase"
 msgstr ""
 
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "everyone"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "nobody"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "friends only"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "sent"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "accepted"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "declined"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "withdrawn"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "lapsed"
+msgstr ""
+
+#. placeholders: {name}
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "{name}, away"
+msgstr ""
+
+#. placeholders: {name}, {clean_text}
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "{name}, in {clean_text}"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "arrived"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "sat-down"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "your-move"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "invited"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "friend-here"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "open-table"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/lobby.rs
+msgid "channel-line"
+msgstr ""
+
 #: hearken/crates/hearken-rooms/src/protocol.rs
 msgid "waiting for players"
 msgstr ""
@@ -104350,6 +105307,14 @@ msgstr ""
 
 #: hearken/crates/hearken-rooms/src/protocol.rs
 msgid "abandoned"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/protocol.rs
+msgid "muted"
+msgstr ""
+
+#: hearken/crates/hearken-rooms/src/protocol.rs
+msgid "Someone"
 msgstr ""
 
 #: hearken/crates/hearken-rooms/src/transport.rs
@@ -105126,10 +106091,6 @@ msgstr ""
 #. placeholders: {why}
 #: hearken/crates/hearken-update/src/source.rs
 msgid "the update source answered oddly: {why}"
-msgstr ""
-
-#: hearken/crates/hearken-update/src/source.rs
-msgid "Accept"
 msgstr ""
 
 #: hearken/crates/hearken-update/src/source.rs
