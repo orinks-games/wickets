@@ -349,6 +349,49 @@ jobs:
           compression-level: 0
           retention-days: 2
 
+  # The translation kit: the public catalogs, the template, the glossaries
+  # and lang/README.md, as its own release asset for translators
+  # (wickets-<version>-translation-kit.zip). It holds only lang/, the
+  # public half; the private overlay's lines are never in it. The game
+  # itself keeps its catalogs built in.
+  translations:
+    name: translation kit
+    needs: build
+    if: ${{ !cancelled() && (startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch') }}
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - name: Pack the kit
+        id: kit
+        shell: bash
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            version="${GITHUB_REF_NAME#v}"
+          else
+            version=$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -n1)
+          fi
+          name="wickets-$version-translation-kit"
+          mkdir -p "dist/$name"
+          cp lang/README.md lang/wickets.pot lang/*.po "dist/$name/"
+          cp -r lang/glossary "dist/$name/glossary"
+          (cd dist && zip -qr "$name.zip" "$name")
+          unzip -l "dist/$name.zip"
+          echo "file=dist/$name.zip" >> "$GITHUB_OUTPUT"
+      - name: Attach to the release
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.WICKETS_RELEASE_TOKEN || github.token }}
+          GH_REPO: orinks-games/wickets
+          FILE: ${{ steps.kit.outputs.file }}
+        run: |
+          # The build jobs made the release; a kit with no release to join
+          # fails here rather than make one without notes.
+          gh release view "$GITHUB_REF_NAME" >/dev/null
+          gh release upload "$GITHUB_REF_NAME" "$FILE" --clobber
+
   # Once the packages and their rules modules are attached, ask orinks.net
   # to redeploy: its deploy fetches every release's rules module, so this
   # release's ranked runs count from then on. ORINKS_NET_DISPATCH_TOKEN is a
@@ -356,7 +399,7 @@ jobs:
   # only. Without it the site picks the module up at its next deploy.
   site:
     name: refresh orinks.net's rules modules
-    needs: build
+    needs: [build, translations]
     if: ${{ !cancelled() && startsWith(github.ref, 'refs/tags/v') }}
     runs-on: ubuntu-24.04
     permissions: {}
