@@ -1,7 +1,8 @@
 name: Release
 
 on:
-  # Pushing a tag like v0.2.0 builds Windows, macOS and Linux packages and
+  # Pushing a tag like v0.2.0 (or running this workflow on that tag, as
+  # tag-release.yml does) builds Windows, macOS and Linux packages and
   # publishes them as that tag's GitHub release. The tag names the update
   # channel: v1.3.0 is stable, v1.3.0-beta.1 is beta, v1.3.0-alpha.1 is
   # alpha (see docs/releasing.md). Running the workflow by hand builds the
@@ -282,7 +283,7 @@ jobs:
       # player-facing notes in docs/release-notes/<tag>.md (never GitHub's
       # generated list of pull requests, which names hidden content).
       - name: Attach to the release
-        if: startsWith(github.ref, 'refs/tags/v') && github.event_name == 'push'
+        if: startsWith(github.ref, 'refs/tags/v')
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.WICKETS_RELEASE_TOKEN || github.token }}
@@ -329,7 +330,7 @@ jobs:
       # A dry run keeps nothing: run artifacts on this public repository
       # can be downloaded by anyone. It reports what it built.
       - name: Report the dry run's packages
-        if: github.event_name == 'workflow_dispatch' && inputs.dry_run
+        if: github.event_name == 'workflow_dispatch' && !startsWith(github.ref, 'refs/tags/v') && inputs.dry_run
         shell: bash
         run: |
           ls -l dist
@@ -337,7 +338,7 @@ jobs:
       # A hand run that is not a dry run keeps its package as a short-lived
       # run artifact.
       - uses: actions/upload-artifact@v5
-        if: github.event_name == 'workflow_dispatch' && !inputs.dry_run
+        if: github.event_name == 'workflow_dispatch' && !startsWith(github.ref, 'refs/tags/v') && !inputs.dry_run
         with:
           name: ${{ matrix.name }}
           path: |
@@ -356,7 +357,7 @@ jobs:
   site:
     name: refresh orinks.net's rules modules
     needs: build
-    if: ${{ !cancelled() && startsWith(github.ref, 'refs/tags/v') && github.event_name == 'push' }}
+    if: ${{ !cancelled() && startsWith(github.ref, 'refs/tags/v') }}
     runs-on: ubuntu-24.04
     permissions: {}
     steps:
