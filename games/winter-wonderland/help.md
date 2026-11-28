@@ -2,89 +2,107 @@
 
 ## About the game
 
-Winter holidays: shake and sort gifts, then answer children's letters. Gift Sort: clear the shift before the clock runs out. The Wish Desk: find each letter's gift on the shelf and wrap it, with no clock. Midnight Countdown, a rhythm game for New Year's Eve, has its own row on the title.
+Step into a bustling winter workshop for three holiday games in one. In Gift Sort, shake wrapped boxes on a moving conveyor belt and send each gift to the right person before the clock runs out. At the Wish Desk, read children's letters at your own pace, search the shelf for the matching gift, and wrap it up. When you want a musical challenge, jump into Midnight Countdown to trade beats with the band all the way to midnight.
 
 ## The two parts
 
-Winter Wonderland has two parts. Gift Sort happens on the workshop belt, against the clock. The Wish Desk comes after, with no clock: children's letters, and a shelf of gifts with no labels. Story mode plays three Gift Sort shifts and then a stack at the Wish Desk, and scores them together.
+Winter Wonderland pairs two contrasting games in its main story. Gift Sort puts you on the workshop belt racing the clock, while the Wish Desk slows things down with no timer at all, handing you children's letters and a shelf of unlabeled boxes. Story mode runs three Gift Sort shifts followed by a stack at the Wish Desk and combines your scores.
 
-Midnight Countdown is a rhythm game for New Year's Eve: the band plays a short rhythm and you answer it on the beat, all the way to midnight. It is not part of the story or the challenges.
+Midnight Countdown is a New Year's Eve rhythm game where the band plays a short phrase and you answer on the beat all the way to midnight. It lives on its own row on the title menu and is separate from story mode and challenges.
 
 ## Gift Sort: the belt
 
-Before each shift, the briefing covers how many gifts to sort, how long the shift clock runs, and who is waiting. Each person stands on your left, straight ahead or on your right, and wishes for one thing. Space starts the belt. Each gift rides toward the belt's edge. If it falls off, it breaks and the clock loses 4 seconds.
+Before a shift begins, the briefing tells you how many gifts to sort, how long the clock runs, and who is waiting. Each person stands on your left, straight ahead, or on your right with a single wish. Press Space to start the belt. Every gift rides toward the end of the belt, and if it falls off the edge, it breaks and knocks 4 seconds off your clock.
 
 ## Gift Sort: shaking and sending
 
-Space shakes the gift so you can identify it. Gifts include blocks, teddy bears, teacups and bells. Later shifts add sweets, snow globes, clocks, squeaky toys, books and music boxes. Left sends it to the person on your left. Up sends it to the person ahead. Right sends it to the person on your right. A wrong delivery costs time and leaves the gift on the belt for another try. Down returns gifts nobody wants, from shift 3. In the first two shifts, the game also names each gift after you shake it.
+Press Space to shake the gift on the belt so you can tell what is inside. Early shifts feature blocks, teddy bears, teacups, and bells, while later shifts bring in sweets, snow globes, clocks, squeaky toys, books, and music boxes. Press Left, Up, or Right to send the gift to the matching person.
+
+A wrong delivery costs clock time and leaves the gift on the belt so you can try again. Starting on shift 3, press Down to drop unwanted gifts into the return sack. During the first two shifts, the game also names each gift after you shake it.
 
 ## Gift Sort: shifts and scoring
 
-There are 8 shifts. Each one has more gifts, more kinds of sound and a faster belt, and the belt speeds up as you sort. The first three briefings say what each wish sounds like. From shift 4 you must work it out. From shift 5, someone changes their mind half way through: their new wish is announced. A delivery scores more the sooner you make it and the longer your streak, times the shift number. Clearing a shift adds a bonus for the time left on the clock. Shifts you reach stay open: choose a starting shift with Left and Right on the Gift Sort row of the title.
+There are 8 shifts in total, each adding more gifts, more item types, and a faster conveyor that speeds up as you sort. The first three briefings describe how each wish sounds in a box, and from shift 4 onward you figure them out yourself. Starting on shift 5, someone changes their mind partway through and announces their new wish.
+
+Faster deliveries and longer streaks earn higher points, multiplied by the shift number, and clearing a shift awards a bonus for whatever time remains. Every shift you reach stays unlocked, and you can pick your starting shift with Left and Right on the Gift Sort row of the title menu.
 
 ## Gift Sort: pace
 
-The belt, each gift's ride and the shift clock hold while the wishes, a change of plans or another line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every Gift Sort run. Time spent while a line is spoken still comes off the time left for your clock bonus.
+The belt, the gift's ride, and the shift clock all pause while wishes, a change of plans, or any other line is being spoken. Asking for a line over and over stops pausing after a while. This works at every pace and in every Gift Sort run, though time spent listening still comes off your remaining time for the clock bonus.
 
-Pace in Settings applies to Gift Sort only, and sets how fast it runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. The Wish Desk has no clock, and Midnight Countdown keeps the band's beat at every pace.
+Pace in Settings applies only to Gift Sort and sets how fast the belt runs: relaxed, normal, or quick. Normal is the default and sits a little slower than quick. Quick is the fastest, and relaxed runs at half speed. The Wish Desk has no clock, and Midnight Countdown keeps the band's beat at every pace.
 
-A change applies from your next run. A run keeps the pace it started at through all its shifts, and on to the Wish Desk in the story.
+A pace change takes effect on your next run, while a run already under way keeps its starting pace across every shift and into the Wish Desk in story mode.
 
-Shifts open at every pace. Relaxed scores are saved separately, including the story and challenges. Normal and quick share their scores.
+Shifts unlock at every pace. Relaxed scores are saved on their own board, including story mode and challenges, while normal and quick share their scores.
 
 ## The Wish Desk: letters and the shelf
 
-A stack is a pile of letters. Each child asks for one thing, in their own words, and the letter says how old they are. The gifts are on a shelf in front of you, one box in each place. Left and Right arrows move you along the shelf. Up and Down jump to its ends. Space shakes the box in front of you. In the first two stacks, each letter also says how its wish would sound in a box. From stack 3 you must work it out.
+Each stack is a pile of children's letters, and every child asks for one gift in their own words along with their age. The wrapped boxes sit along a shelf right in front of you. Use Left and Right to walk along the shelf, Up and Down to jump straight to either end, and Space to shake the box in front of you.
+
+On the first two stacks, each letter includes a clue about how its wish sounds inside a box. From stack 3 onward, you work it out from the letter alone.
 
 ## The Wish Desk: wrapping
 
-When you find the box that holds the wish, hold Space to wrap it. Keep holding until it is wrapped. Let go early and nothing is wrapped. The right gift answers the letter, and the next letter comes straight away. A wrong box goes back on the shelf and the letter stays. A wrapped gift leaves an empty place on the shelf.
+Once you find the box that matches the letter, hold Space until it finishes wrapping. Letting go early cancels the wrap. The right gift answers the letter and brings up the next one straight away, leaving an empty spot on the shelf. If you wrap the wrong box, it goes back on the shelf and the letter stays open.
 
 ## The Wish Desk: stacks and scoring
 
-There are 5 stacks, each with more letters and more boxes. Each letter is worth up to 750 points, times the stack number. Every wrong box costs 250 of them, and shakes past about half the shelf cost 50 each. A stack with no wrong box earns a bonus. H names the sound of the wish, for half the letter's points. H says which way to walk when pressed again. Answering a stack opens the next: choose a stack with Left and Right on the Wish Desk row of the title.
+There are 5 stacks, each with more letters and a longer shelf. Every letter is worth up to 750 points times the stack number. Wrapping a wrong box deducts 250 points, and shaking boxes past roughly half the shelf costs 50 points per extra shake. Finishing a stack with no wrong wraps earns a clean bonus.
+
+Press H to learn how the wish sounds for half the letter's points, and press H again to hear which way to walk. Finishing a stack unlocks the next one, and you can choose any unlocked stack with Left and Right on the Wish Desk row of the title menu.
 
 ## Late post
 
-Once each evening, by your computer's clock, a small extra sack of post arrives at the Wish Desk. The first stack you finish from the title in the evening gets two more letters, each worth double. The Wish Desk row's help says when late post is still due tonight.
+Once each evening by your computer's clock, a small extra sack of mail arrives at the Wish Desk. The first stack you finish from the title menu that evening adds two bonus letters worth double points. The Wish Desk row's help tells you when late post is still waiting tonight.
 
 ## Muddled post
 
-On the fourth Wednesday of every month, the post is muddled: the letters come from the youngest children, in very few words, and every box is packed in straw. The first shake of a box is only straw, so shake each one twice. Muddled post has its own row on the title, which reads locked on other days and says when it comes next. It plays stack 3, and keeps its own best.
+On the fourth Wednesday of every month, the mail gets muddled: the letters come from the youngest children in very few words, and every box is packed in straw. The first shake of any box only rustles the straw, so you need to shake each box twice. Muddled post has its own row on the title menu, which stays locked on other days and tells you when it arrives next. It runs stack 3 and keeps its own best score.
 
 ## Midnight Countdown: call and answer
 
-The countdown starts at ten minutes to midnight. Each minute, the band plays a call one bar long, then you answer it in the next bar: the same instruments on the same beats. The count marks each beat and the start of each bar. Bells are Space. At seven minutes to midnight the drums join, answered with the Down arrow. At four minutes the horns join, answered with the Up arrow. The music stops while each new instrument is introduced. Space starts it again. You can try the drum and horn while the music is stopped. In the final seconds the full orchestra plays one long call of two bars with every instrument, for double points.
+The party starts at ten minutes to midnight. Each minute, the band plays a one-bar call and you answer in the very next bar with the same instruments on the same beats, guided by a count marking each beat and bar. Bells are on Space. At seven minutes to midnight the drums join on the Down arrow, and at four minutes the horns join on the Up arrow.
+
+The music pauses whenever a new instrument joins so you can try out the drum or horn, and pressing Space gets the band rolling again. In the final seconds, the full orchestra plays a two-bar call with every instrument for double points.
 
 ## Midnight Countdown: scoring and energy
 
-A note answered right on the beat is perfect. A little early or late is good. Each correct answer adds to your combo, and every 8 in a row raise the score multiplier, up to times 4. Missing a note or playing the wrong instrument breaks the combo and drains party energy. If the energy runs out, the party ends before midnight. Reach midnight to open the next night. There are 5 nights, each faster with trickier rhythms. From the third night, some notes fall between beats.
+Hitting a note right on the beat scores perfect, while slightly early or late scores good. Every accurate hit builds your combo, and every 8 in a row bumps your multiplier up to times 4. Missing a note or hitting the wrong instrument breaks your combo and drains party energy, and if energy hits zero, the party ends before midnight.
+
+Make it all the way to midnight to unlock the next night. There are 5 nights in total, each faster with trickier patterns, and starting on night 3 some notes fall between beats.
 
 ## Story mode
 
-Story mode plays shifts 1 to 3 of Gift Sort, a short bridge, then stack 2 at the Wish Desk. Your story score is both parts added together. Finish the story once to open the blizzard story: shifts 4 to 6, then stack 4.
+Story mode runs shifts 1 to 3 of Gift Sort, a short bridge, and then stack 2 at the Wish Desk, adding both parts together for your story score. Finish story mode once to unlock the blizzard story: shifts 4 to 6 followed by stack 4.
 
 ## Challenges
 
-Choose Challenges on the title, or Challenges in the parlor's lobby, for three runs that are the same for every player. Each row says what the challenge is, then whether you have played it, your best and your streak. The briefing states the twist and how long until the next one before you play. Your result counts when the run ends, win or lose. Choosing Leave the challenge on the pause menu does not count. Escape on a briefing goes back without starting. Afterwards the game reads your score, your best on that challenge and your streak, then the results menu offers the same challenge again or Back to the challenges.
+Pick Challenges on the title menu or from the parlor's lobby for three runs that are identical for every player. Each row shows the challenge, whether you have played it, your best score, and your streak. Before you start, the briefing gives the twist and how long until the next challenge arrives.
 
-The daily challenge alternates. On even days of the month it is the rush: one Gift Sort shift at shift 5. On odd days it is the morning post: stack 3 at the Wish Desk. Each day brings one twist. On the belt, the twist is one of these. Rush hour: the belt runs a quarter faster. Short clock: four fifths of the usual time. Big order: three extra gifts, with a little extra time. Picky guests: a wrong guess costs double time. At the desk, the twist is one of these. Packed in straw: every box needs two shakes. A long shelf: two more boxes. Careful hands: a wrong box costs double. Few shakes: only two shakes a letter before shakes cost points. The briefing repeats the twist.
+A challenge run counts once it ends, win or lose, while Leave the challenge on the pause menu does not count, and Escape on the briefing backs out without starting. Afterward you hear your score, your best, and your streak, and the results menu lets you play the same challenge again or go back to the challenges menu.
 
-The weekly challenge is the holiday double: Gift Sort shifts 4 to 6, then stack 4 at the Wish Desk, scored together like the story. The week's twist is on the belt. If the clock beats you in the workshop, the run ends there with the points you have.
+The daily challenge alternates by date. Even days bring the rush, a single Gift Sort shift at shift 5, while odd days bring the morning post, stack 3 at the Wish Desk. Each day adds one twist. Belt twists include Rush hour with a quarter faster belt, Short clock with four fifths of the usual time, Big order with three extra gifts and a bit more time, and Picky guests where a wrong guess costs double time.
 
-The monthly challenge is the midwinter post: stacks 3, 4 and 5 at the Wish Desk, one after another, with every box packed in straw.
+Desk twists include Packed in straw where every box takes two shakes, A long shelf with two extra boxes, Careful hands where a wrong box costs double, and Few shakes with only two free shakes per letter. The briefing always repeats the day's twist.
+
+The weekly challenge is the holiday double: Gift Sort shifts 4 to 6 followed by stack 4 at the Wish Desk, scored together like story mode with a weekly twist on the belt. If time runs out in the workshop, the run ends there with the points you earned.
+
+The monthly challenge is the midwinter post: stacks 3, 4, and 5 at the Wish Desk back to back, with every box packed in straw.
 
 ## Practice, tutorial and sound check
 
-Practice rhythm is a night of Midnight Countdown where the party never fizzles and nothing is saved. Choose any night you have opened with Left and Right on its row of the title. The tutorial sorts two gifts on the belt, then answers a letter at the Wish Desk. Sound check lists and plays the gameplay cues, with each gift's shake. Help is this guide.
+Practice rhythm lets you play any unlocked night of Midnight Countdown with no energy loss and nothing saved, using Left and Right on its title row to pick the night. Tutorial walks you through sorting two gifts on the belt and answering one letter at the Wish Desk. Sound check lists and plays the gameplay cues along with each gift's shake, and Help opens this guide.
 
 ## Records and results
 
-The Gift Sort, Wish Desk and Midnight Countdown rows on the title name your best for the chosen shift, stack or night, and Play, story mode names your best story score. Records reads every best: the story, the blizzard story, Gift Sort, the Wish Desk and each stack, Muddled post, Midnight Countdown and each night, how many are open, and your challenge results. When a run ends the game reads its results, then the results menu. Next stack or Next night plays the next one. Play again or Try again plays the same run. Hear the results again reads them once more, and Back to the title goes back. Escape on the results menu does the same as Back to the title.
+The Gift Sort, Wish Desk, and Midnight Countdown rows on the title menu display your best for the selected shift, stack, or night, while Play, story mode shows your best story score. Records reads every best across story mode, blizzard story, Gift Sort, the Wish Desk and each stack, Muddled post, Midnight Countdown and each night, how many are unlocked, and your challenge results.
+
+When a run finishes, the game reads your results and opens the results menu, offering Next stack or Next night when available, Play again or Try again, Hear the results again, and Back to the title. Escape returns to the title.
 
 ## The title
 
-The title has these rows. Play, story mode. Blizzard story, which says locked until you finish story mode. Gift Sort, the Wish Desk and Midnight Countdown, where Left and Right choose the shift, stack or night. Muddled post. Challenges. Practice rhythm. Tutorial, Help and Sound check. Records, Settings, and Back to the parlor. On your first visit the title starts on Tutorial.
+On the title menu you will find Play, story mode, and Blizzard story, which stays locked until you finish story mode. Below those sit Gift Sort, the Wish Desk, and Midnight Countdown, where Left and Right pick your shift, stack, or night, followed by Muddled post, Challenges, Practice rhythm, Tutorial, Help, Sound check, Records, Settings, and Back to the parlor. On your first visit, the title starts on Tutorial.
 
 ## Controls
 
@@ -104,9 +122,9 @@ Down arrow: drop it in the return sack, from shift 3.
 
 R: repeat the wishes.
 
-S: the gift on the belt and the clock. Press it again straight away for the shift, the gifts sorted and the score.
+S: report the gift on the belt and the clock. Press it again straight away for the shift, gifts sorted, and score.
 
-H: a hint about the gift you just shook, for half its points.
+H: get a hint about the gift you just shook, for half its points.
 
 At the Wish Desk:
 
@@ -114,32 +132,32 @@ Space: open the first letter, then shake the box in front of you.
 
 Hold Space: wrap the box for the letter.
 
-Left and Right arrows: walk the shelf.
+Left and Right arrows: walk along the shelf.
 
 Up and Down arrows: jump to the first or last box.
 
 R: read the letter again.
 
-S: where you stand and the letter. Press it again straight away for the stack and the score.
+S: report where you stand and the current letter. Press it again straight away for the stack and score.
 
-H: a hint, for half the letter's points.
+H: get a hint for half the letter's points.
 
 In Midnight Countdown:
 
-Space: play the bell, and start the music when it is stopped.
+Space: play the bell, and restart the music when it is paused.
 
 Down arrow: play the drum.
 
 Up arrow: play the horn.
 
-R: say the last call, with its beats.
+R: read the last call with its beats.
 
-S: the minutes to midnight, the party energy, the score and the combo.
+S: report the minutes to midnight, party energy, score, and combo.
 
 H: list your instruments.
 
 Everywhere:
 
-F1: help for what you are doing right now. F2 stops speech.
+F1: read help for what you are doing right now. F2 stops speech.
 
-Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge. When you come back from the pause menu in the middle of the music, the band counts you back in with a bar and plays the call again. Notes you already answered stay answered.
+Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title becomes Leave the challenge. Resuming Midnight Countdown mid-song counts you back in with a bar and replays the call, keeping any notes you already answered.

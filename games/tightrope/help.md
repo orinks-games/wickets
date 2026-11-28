@@ -2,111 +2,111 @@
 
 ## About the game
 
-Cross ten rooftop wires. Shift your weight to stay balanced, counter gusts and shoo pigeons out of your path. Each crossing is longer, higher and windier.
+Step out onto ten rooftop wires strung high above the city, from the corner bakery all the way up to the Skyline Spire. Shift your weight to stay centered over the swaying wire, brace against incoming gusts of wind, and shoo bold pigeons out of your path. Every crossing stretches longer, climbs higher, and hits you with stiffer wind than the one before.
 
 ## Your balance
 
-Use the balance cue or press S to check which way you are leaning. Sound check, on the title, lets you hear the balance cue and other gameplay cues.
+Follow the balance cue or press S at any time to check which way you are leaning. Sound check on the title menu lets you hear the balance cue along with the other cues you need on the wire.
 
-A lean grows by itself, the way a real wire tips you. Left and Right shift your weight. Press the opposite way to your lean: leaning left, press Right. Each press shifts your weight once. Holding the key adds no further shift. Release it and wait for your balance to settle before pressing again, or you may swing past the middle.
+Just like on a real wire, a lean builds on its own once you start tipping. Press Left or Right to shift your weight in the opposite direction: if you are leaning left, press Right. Each press gives a single shift, and holding the key adds nothing more. Release it and let your balance settle before pressing again, or you can easily swing past center.
 
-Step once you have returned to balance. The game warns you when you lean hard left or right. Lean all the way and you fall to the safety net.
+Take a step once your balance is back near center. The game warns you if you lean hard left or right, and leaning all the way sends you down into the safety net.
 
-S, the status key, always says your lean.
+Pressing S always tells you your current lean.
 
 ## Walking
 
-Space takes one step. Steps need a moment between them. No foot lands quite square. Every step jolts the wire a little, so settle after each one.
+Press Space to take a step forward, leaving a brief beat between steps. Every step jolts the wire slightly, so give yourself a moment to settle before stepping again.
 
-Step only when balanced. A step while you lean past the safe line is a wobble: the wire throws you further the way you were leaning. A step is refused when it comes too soon after the last one, or while you crouch.
+Only step when you are balanced. Stepping while leaning past the safe line causes a wobble that throws you even further toward that side. The game also refuses a step if you press too soon after the last one or while you are crouched.
 
-The game says when you are halfway, 3 steps out and 1 step out.
+The game calls out when you reach halfway, 3 steps out, and 1 step out from the far roof.
 
 ## Wind
 
-Each gust is announced with its direction at least 2 seconds before it hits. It pushes you away from that side for about a second.
+Every gust is announced with its direction at least 2 seconds before it arrives, then pushes you away from that side for about a second.
 
-You have two choices:
+You have two ways to handle a gust:
 
-- Lean a little into the wind before it arrives: for a gust from the left, a press of Left.
-- Down crouches. Crouching makes the wire much steadier and the wind pushes less than half as hard, but you cannot step. Up stands once it passes.
+- Lean a little into the wind ahead of time, such as pressing Left before a gust from the left hits.
+- Press Down to crouch. Crouching steadies the wire and cuts the wind's push by more than half, though you cannot step until you press Up to stand back up.
 
-The status key says which side a gust comes from and how many seconds are left. The hint key, H, says what to do about it.
+Press S to check which side a gust is coming from and how many seconds remain, or press H for advice on what to do right now.
 
 ## Pigeons
 
-From the second crossing on, pigeons land on the wire ahead and tip it toward their side. The game says how many steps ahead each pigeon sits and on which side.
+Starting on the second crossing, pigeons land on the wire ahead of you and tilt it toward their side. The game tells you how many steps ahead each pigeon sits and which side it is weighing down.
 
-Walk into a pigeon and it bursts up in your face and knocks you hard to the other side. Shoo it with Tab once it is within 2 steps, which dips the wire a little, or wait: a pigeon flies off by itself after several seconds. On the Practice wire it waits until you shoo it.
+Walking straight into a pigeon startles it right in your face and knocks you hard the other way. Once a pigeon is within 2 steps, press Tab to shoo it off, which gives the wire a small dip, or wait a few seconds for it to fly away on its own. On the Practice wire, the pigeon waits until you shoo it.
 
 ## Sway and height
 
-Long wires sway most at the middle, pushing you one way and then the other in a steady rhythm.
+Long wires sway the hardest right in the middle, rocking you one way and then the other in a steady rhythm.
 
-Higher wires have stronger wind.
+Higher crossings bring stronger wind.
 
 ## Falling
 
-Lean all the way over and you fall to the safety net. You lose a life and climb back to the step where you fell, balanced, with a moment of calm before the wire moves again. Lose your last life and the run is over.
+If you lean all the way over, you drop into the safety net below. You lose a life and climb back up to the exact step where you fell, starting balanced with a brief moment of calm before the wire moves again. Losing your last life ends the run.
 
-On the practice wire falling costs nothing.
+On the Practice wire, falling costs nothing.
 
 ## Pace
 
-The wire holds while a line is still being spoken. Your balance, the wind and the pigeons stand still until it ends. Once a gust whoosh starts, the wire runs on through speech until the gust hits. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode. Time spent while a line is spoken still counts toward your crossing time and your par bonus.
+The wire pauses whenever a line is still being spoken, holding your balance, the wind, and any pigeons still until speech finishes. Once a gust starts whooshing in, the wire keeps running through speech until the gust hits. Asking for a line over and over stops pausing after a while. This works at every pace and in every mode, and time spent listening still counts toward your crossing time and par bonus.
 
-Pace in Settings sets how fast the wire runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. Your balance, the wind, the pigeons and each crossing's time follow the pace.
+Pace in Settings controls how fast the wire runs: relaxed, normal, or quick. Normal is the default and sits a little slower than quick. Quick is the fastest, and relaxed runs at half speed. Your balance, wind, pigeons, and crossing clock all scale together.
 
-A change applies from your next run. A run or a challenge keeps the pace it started at until it ends.
+A pace change takes effect on your next run, while any run or challenge already under way keeps its starting pace until it ends.
 
-Relaxed scores and best times are saved separately, including challenges and events. Normal and quick share their scores. Your furthest crossing counts at every pace.
+Relaxed scores and best times are saved on their own board, including challenges and special events, while normal and quick share their scores. Your furthest crossing counts at every pace.
 
 ## Scoring
 
-- Each step scores 10 points times the crossing's number.
-- Reaching the far rooftop scores 100 times the crossing's number.
-- Finish under the par time for 5 points for every second to spare. Par is about 1.3 seconds a step, plus 6 seconds.
-- A crossing with no falls scores a bonus of 50 times its number.
+- Every step earns 10 points times the crossing number.
+- Reaching the far rooftop earns 100 points times the crossing number.
+- Finishing under par time adds 5 points for every second to spare. Par is roughly 1.3 seconds per step, plus 6 seconds.
+- Crossing without a single fall earns a clean bonus of 50 points times the crossing number.
 
-Your best score on each mode, your best time on each crossing and your furthest crossing are saved. Records, on the title, reads them all, with your challenge results.
+Your best score in each mode, your best time on each crossing, and your furthest crossing are all saved. Records on the title menu reads them along with your challenge results.
 
 ## Modes
 
-- Play, skyline run: all 10 crossings with 3 lives, from the bakery to the Skyline Spire.
-- Night skyline: locked until you finish all 10 crossings. The same wires, twitchier, with harder wind and busier pigeons. Gusts are still always warned.
-- Crossing select: walk one crossing alone, for its best time. A crossing opens once you reach it.
-- Practice wire: a short, low wire where the gust and the pigeon are each explained as they arrive. On your first visit the title starts on it.
+- Play, skyline run: walk all 10 crossings across the city with 3 lives, from the bakery to the Skyline Spire.
+- Night skyline: unlocks once you finish all 10 crossings. The same rooftop wires after dark, with a twitchier balance, harder wind, and busier pigeons, though gusts are still announced ahead of time.
+- Crossing select: walk any single crossing you have reached to chase its best time.
+- Practice wire: a short, low wire where the gust and the pigeon are each explained as they arrive. On your first visit, the title menu starts right here.
 
-Before each run a page describes the run. Enter begins. Escape goes back to the title.
+Before each run, a short briefing describes the wire ahead. Press Enter to step out, or Escape to return to the title.
 
 ## After a run
 
-When a run ends the game reads how it went and what records it set. Then the results menu offers Play again, or Try again after a fall ends the run, Hear the results again, and Back to the title. After a single crossing you win, Next crossing comes first. After a challenge, the last row is Back to the challenges. Escape does the same as the last row.
+When a run ends, the game reads how it went and any records you set. The results menu then offers Play again, or Try again if a fall ended the run, Hear the results again, and Back to the title. After winning a single crossing, Next crossing comes first. After a challenge, the last row returns to the challenges menu, and Escape does the same.
 
 ## Challenges
 
-Challenges are the same wires for every player, built from the date.
+Challenges put every player on the exact same wires built from the date.
 
-- Daily: one crossing with a twist, and 3 lives. Twists include Gale day, with gusts twice as often, Pigeon parade, with 3 times the pigeons, Loose wire, with twice the sway, and Slick wire, where every step slips a little to one side.
-- Weekly: 3 high crossings in a row, with a twist, on only 2 lives.
-- Monthly: the Grand Span, one immense wire 60 floors up and 60 steps long, with a single life, and the wind changes side with every gust.
+- Daily: one crossing with a twist and 3 lives. Twists include Gale day with gusts twice as often, Pigeon parade with 3 times the pigeons, Loose wire with twice the sway, and Slick wire where every step slips slightly to one side.
+- Weekly: 3 high crossings in a row with a twist and only 2 lives.
+- Monthly: the Grand Span, one massive wire 60 floors up and 60 steps long with a single life, where the wind switches sides on every gust.
 
-The rule and the time until the next challenge are read before you start, and Escape on that briefing goes back without starting. Any finished run counts toward your streak, even one that ends in the net. Leave the challenge, on the pause menu, does not. Afterwards the game reads your score, your best and your streak.
+Each briefing reads the rule and when the next challenge arrives, and Escape backs out without starting. Every finished run counts toward your streak, even if you land in the net, while Leave the challenge on the pause menu does not. Afterward, the game reads your score, your best, and your streak.
 
 ## Sound check
 
-Sound check, on the title, lists and plays the sounds you need on the wire. Its first row plays the balance tone at the centre, then further left and right.
+Sound check on the title menu lists and plays the sounds you need on the wire, starting with a demonstration of the balance tone centered and then leaning further left and right.
 
 ## Controls
 
-- Left and Right: shift your weight once per press. Release between presses. Do not hold.
+- Left and Right: shift your weight once per press. Release between presses instead of holding.
 - Space: take a step.
-- Down: crouch. Up: stand.
+- Down: crouch. Up: stand back up.
 - Tab: shoo a pigeon within 2 steps.
-- S: your step, lean, and any gust or pigeon. Press it again straight away for lives, score, time on the wire and which wire you are on.
+- S: report your step, lean, and any gust or pigeon. Press it again straight away for your lives, score, time on the wire, and which crossing you are on.
 - R: repeat the last announcement.
-- H: a hint for this moment.
-- Escape: pause. The pause menu can resume, open settings or this help, go back to the title, or go back to the lobby. During a challenge, its leave row is Leave the challenge.
-- F1: help for the current screen.
+- H: get a hint for the current moment.
+- Escape: pause. From the pause menu you can resume, open Settings or this help, go back to the title, or return to the lobby. During a challenge, the leave row is Leave the challenge.
+- F1: read help for the current screen.
 
 These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

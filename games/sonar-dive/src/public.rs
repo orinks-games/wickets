@@ -37,7 +37,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Sonar Dive",
     category: Category::Action,
-    blurb: "Pilot a small submarine by sonar: find wrecks and treasure, and steer clear of mines and currents.",
+    blurb: "Pilot a small salvage submarine by sonar to hunt for sunken wrecks and treasure while steering clear of mines and currents.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -220,7 +220,7 @@ impl TitleGame for SonarDive {
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| start(ctx, Mode::Expedition),
             )
             .help(
-                "Dive from the boat, bank treasure each time you surface, and go deeper each dive.",
+                "Dive from the boat, bank your treasure each time you surface, and push deeper on the next dive.",
             ),
             deep,
         ];
@@ -263,7 +263,7 @@ impl TitleGame for SonarDive {
             MenuItem::new("Practice dive", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 start(ctx, Mode::Practice)
             })
-            .help("Endless air and harmless mines, to learn the sonar. Not scored."),
+            .help("Endless air and harmless mines so you can practice the sonar with nothing on the line. Not scored."),
         )
     }
 
@@ -305,7 +305,7 @@ impl TitleGame for SonarDive {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear the gameplay cues and compare an echo from five positions.".to_string()
+        "Play each sonar cue and hear how one echo sounds from five directions around you.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

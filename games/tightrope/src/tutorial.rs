@@ -41,7 +41,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, wire: Live<RunScreen>) -> Lesson {
 
     let steps = wire.step(
         format!(
-            "The tone is your balance: centred is safe. {} and {r} shift your weight once per press. Holding adds no further shift. Release and wait for your balance to settle; press opposite your lean. {} steps, only when balanced. Take 3 steps.",
+            "The tone tracks your balance, and centered is safe. {} and {r} each shift your weight once per press, so tap and release rather than holding, always pressing opposite your lean. {} takes a step once you are balanced. Try taking 3 steps.",
             sentence_start(&l),
             sentence_start(&p)
         ),
@@ -50,7 +50,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, wire: Live<RunScreen>) -> Lesson {
 
     let across = wire.step(
         format!(
-            "Walk on to the garage roof. A gust comes, then a pigeon; each is explained as it arrives. Falls cost nothing here. {} says your lean, {h} gives advice.",
+            "Keep walking all the way to the garage roof. A gust and then a pigeon will come along, and each is explained as it arrives. Falls cost nothing here. {} reports your lean, and {h} gives advice.",
             sentence_start(&s)
         ),
         // The arrival is already said: nothing to add before the outro.
@@ -60,9 +60,9 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, wire: Live<RunScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Tightrope",
-        "You walk a wire strung between rooftops, one step at a time, high above the city. Start on a low practice wire over the garden",
+        "You are stepping out onto a wire strung between rooftops, high above the city. Start out on a low practice wire over the garden",
     )
     .step(steps)
     .step(across)
-    .outro("Long wires sway most at mid-span. Practice wire on the title walks this wire again.")
+    .outro("Long wires sway the hardest near mid-span. You can walk this practice wire again any time from the title menu.")
 }
