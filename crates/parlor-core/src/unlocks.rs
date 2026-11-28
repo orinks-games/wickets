@@ -195,7 +195,7 @@ impl<G: UnlockGame> UnlocksMenu<G> {
     pub fn new() -> Self {
         UnlocksMenu {
             menu: MenuCore::new(labels::UNLOCKS).with_intro_help(
-                "Up and Down choose a group, Enter lists what is in it, Escape goes back.",
+                "Use Up and Down to pick a group, Enter to see what is inside, and Escape to go back.",
             ),
             _game: PhantomData,
         }

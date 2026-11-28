@@ -63,7 +63,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Dragon Dance",
     category: Category::Seasonal,
-    blurb: "Lead a Lunar New Year dragon dance down the parade, following the pearl to the drum.",
+    blurb: "Lead a paper dragon through a bustling Lunar New Year parade, chasing the pearl to the drum, rearing on the gong, and catching red envelopes.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(event),
@@ -253,29 +253,29 @@ impl TitleGame for DragonDance {
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(StreetSelect::new()),
             )
             .help(format!(
-                "Every street of the parade, with your stars. {opened} of {} open.",
+                "Browse every street of the parade and check your stars. {opened} of {} open.",
                 STREETS.len()
             )),
             festival_row(
                 new_year,
                 NEW_YEAR_ROW,
                 format!(
-                    "{} parade: a long street that ends at midnight firecrackers, and a keepsake for the year: {}.",
+                    "{} parade: a long festive street ending at midnight firecrackers, with a keepsake for the year: {}.",
                     sentence_start(&festival::year_of(animal)),
                     festival::keepsake(animal)
                 ),
                 format!(
                     "{} {}",
                     festival::new_year_locked(today),
-                    "It ends at midnight firecrackers, with a keepsake for the year's animal."
+                    "It ends at midnight firecrackers and awards a keepsake for the year's animal."
                 ),
             ),
             festival_row(
                 lantern,
                 LANTERN_ROW,
-                "A calm walk under the lanterns for the Lantern Festival: no firecrackers, no gongs to miss, and lanterns to collect.".to_string(),
+                "A relaxed evening walk for the Lantern Festival with no firecrackers, no gongs to miss, and lanterns to collect.".to_string(),
                 format!(
-                    "{} A calm walk, with lanterns to collect.",
+                    "{} A relaxed evening walk with lanterns to collect.",
                     festival::lantern_locked(today)
                 ),
             ),
@@ -287,7 +287,7 @@ impl TitleGame for DragonDance {
             MenuItem::new(PRACTICE_ROW, |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 briefing::open(ctx, Mode::Practice)
             })
-            .help("A short, slow street with every call spoken. Nothing is saved, and stumbles cost nothing."),
+            .help("Warm up on a short, slow street with every call spoken aloud. Stumbles cost nothing and no score is saved."),
         )
     }
 
@@ -300,24 +300,23 @@ impl TitleGame for DragonDance {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Stars and best scores on every street, your longest dragon and the festival days, with your challenge results.".to_string()
+        "Check your stars and best scores on every street, your longest dragon, festival days, and challenge results.".to_string()
     }
 
     fn extras(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
         let progress = Progress::load(ctx);
-        vec![MenuItem::new(
-            "Keepsakes",
-            |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
+        vec![
+            MenuItem::new("Keepsakes", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 let pages = Progress::load(ctx).keepsake_pages();
                 ctx.push(Pages::new(pages));
-            },
-        )
-        .help(format!(
-            "The keepsakes of the years' animals, {} of 12, and the lanterns you have found, {} of {}.",
+            })
+            .help(format!(
+            "View your zodiac keepsakes, {} of 12, and the lanterns you have collected, {} of {}.",
             progress.keepsakes.len(),
             progress.lanterns.len(),
             festival::LANTERNS.len()
-        ))]
+        )),
+        ]
     }
 
     fn settings(_ctx: &Ctx<Parlor>) -> Vec<SettingsRow<Parlor>> {
@@ -332,13 +331,13 @@ impl TitleGame for DragonDance {
             },
             |_ctx, on| {
                 Some(if on {
-                    "Spoken call-outs: on. The pearl, envelopes and firecrackers are named with their lanes."
+                    "Spoken call-outs: on. The pearl, envelopes, and firecrackers are announced with their lanes."
                 } else {
-                    "Spoken call-outs: off. You follow the pearl and dodge firecrackers without call-outs."
+                    "Spoken call-outs: off. Follow the pearl and dodge firecrackers without spoken call-outs."
                 }
                 .to_string())
             },
-            "When on, a voice names the pearl's lane as it moves, and each envelope and firecracker string as it comes.",
+            "When on, a voice announces the pearl's lane as it moves, plus every envelope and firecracker string as it approaches.",
         )];
         rows.extend(parlor_core::briefing::rows());
         rows
@@ -355,7 +354,7 @@ impl TitleGame for DragonDance {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily street, a weekly long parade and a monthly grand festival, the same for every player. {}",
+            "Take on a daily street, a weekly long parade, and a monthly grand festival, shared by every player. {}",
             daily.resets()
         )
     }
@@ -366,6 +365,9 @@ impl TitleGame for DragonDance {
     }
 
     fn intro_help(&self) -> Option<String> {
-        Some("Up and Down move, Enter chooses, Escape goes back to the parlor.".to_string())
+        Some(
+            "Up and Down move through the menu, Enter chooses, and Escape returns to the parlor."
+                .to_string(),
+        )
     }
 }

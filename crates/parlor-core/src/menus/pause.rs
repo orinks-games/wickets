@@ -48,9 +48,9 @@ impl Leave {
 
     fn help(self) -> &'static str {
         match self {
-            Leave::Title(_) => "Stop this run and go back to the title.",
+            Leave::Title(_) => "End this run and return to the game's title screen.",
             Leave::Challenge(_) => {
-                "Stop without counting this challenge, so you can try it again later."
+                "Leave without counting this challenge so you can try again later."
             }
         }
     }
@@ -84,7 +84,9 @@ impl Pause {
     pub fn new(help_doc: &'static str, leave: Leave) -> Pause {
         Pause {
             menu: MenuCore::new("Paused")
-                .with_intro_help("Up and Down move, Enter chooses, Escape goes back to the game."),
+                .with_intro_help(
+                    "Use Up and Down to move, Enter to choose, and Escape to return to the game.",
+                ),
             help_doc,
             leave,
             music: None,
@@ -131,15 +133,15 @@ impl Menu for Pause {
             MenuItem::new(labels::RESUME, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.pop()
             })
-            .help("Go back to where you were."),
+            .help("Jump right back into the game."),
             MenuItem::new(labels::SETTINGS, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(SettingsScreen::<Parlor>::new())
             })
-            .help("Speech, volume and controls, shared by every game."),
+            .help("Adjust speech, volume, and the controls shared across every game."),
             MenuItem::new(labels::HELP, |s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(crate::Help::new(s.help_doc))
             })
-            .help("The full guide, by section, with every control."),
+            .help("Read the full guide by topic, including every control."),
             MenuItem::new(
                 leave.label(),
                 move |_s: &mut Self, ctx: &mut Ctx<Parlor>| ctx.pop_to(leave.target()),
@@ -149,7 +151,7 @@ impl Menu for Pause {
                 labels::BACK_TO_LOBBY,
                 |_s: &mut Self, ctx: &mut Ctx<Parlor>| ctx.pop_to(LOBBY_NAME),
             )
-            .help("Stop this run and go back to the lobby, where you can choose another game."),
+            .help("End this run and return to the lobby to pick another game."),
         ]
     }
 }

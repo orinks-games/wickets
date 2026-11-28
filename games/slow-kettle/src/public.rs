@@ -55,7 +55,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Slow Kettle",
     category: Category::Cozy,
-    blurb: "Keep a small tea house at your own pace, brewing each guest's cup.",
+    blurb: "Run a small tea house at your own pace, matching teas, cups, heat, and steep to each guest.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(event),
@@ -249,7 +249,7 @@ impl TitleGame for SlowKettle {
             MenuItem::new("Practice brewing", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 start(ctx, Mode::Practice)
             })
-            .help("Brew any tea on your shelf for yourself, as often as you like, with the exact heat and steep read back. There are no guests and no coins."),
+            .help("Brew any tea on your shelf for yourself, with exact heat and steep feedback. No guests and no coins."),
         )
     }
 
@@ -267,12 +267,12 @@ impl TitleGame for SlowKettle {
                 let house = House::load(ctx);
                 ctx.push(Pages::new(shop::keepsake_pages(&house)))
             })
-            .help("Gifts from holiday guests, one for each special day you open on."),
+            .help("Gifts left behind by holiday guests on each special day you open."),
             MenuItem::new("Guest book", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 let house = House::load(ctx);
                 ctx.push(Pages::new(shop::guest_book_pages(&house)))
             })
-            .help("Your regulars, and their stories so far."),
+            .help("Your regulars and the parts of their stories you have heard so far."),
         ]
     }
 
@@ -304,7 +304,7 @@ impl TitleGame for SlowKettle {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Cups served, perfect cups, teas discovered, your best afternoon, and your challenge results."
+        "Cups served, perfect cups, teas discovered, your best afternoon, and challenge results."
             .to_string()
     }
 
@@ -323,7 +323,7 @@ impl TitleGame for SlowKettle {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily tasting, a busy week and a monthly tasting society, the same guests for every player. {}",
+            "A daily tasting, a busy week, and a monthly tasting society, with the same guests for every player. {}",
             daily.resets()
         )
     }

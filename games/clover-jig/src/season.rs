@@ -68,7 +68,7 @@ pub fn countdown(today: Date) -> String {
 /// F1 on the ceili night row.
 pub fn ceili_help(today: Date) -> String {
     match festival(today) {
-        Festival::Ceili => "The village ceili, open tonight: the full band plays a set dance of four tunes, and a four-leaf clover hides in it once a night.".to_string(),
+        Festival::Ceili => "The village ceili is open tonight: the full band plays a four-tune set dance, and a four-leaf clover hides inside it once a night.".to_string(),
         _ => format!(
             "The village ceili opens on Saint Patrick's Day, March 17. {}",
             countdown(today)

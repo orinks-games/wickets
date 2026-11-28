@@ -46,7 +46,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
 
     let start = room.step(
         format!(
-            "{} starts the dance after four count-in beats. Start it now.",
+            "{} starts the dance after four count-in beats. Press it whenever you are ready.",
             sentence_start(&p)
         ),
         |f: &Floor, _| {
@@ -59,7 +59,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
 
     let dance = room.step(
         format!(
-            "The caller says each step one beat before you dance. {} dances left, {r} dances right, and {p} hops. Here the music holds at each step, and its key is named. Dance {STEPS} steps.",
+            "The caller names each step one beat ahead. {} dances left, {r} dances right, and {p} hops. In the practice room, the music pauses at each step and names the key for you. Try dancing {STEPS} steps.",
             sentence_start(&l)
         ),
         |f: &Floor, _| {
@@ -72,7 +72,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
     // Steps judged before this one began do not count toward it.
     let before = Rc::new(Cell::new(Tally::default()));
     let (live_room, at_start) = (room.clone(), Rc::clone(&before));
-    let live_prompt = "Now the tune goes on, as in a real dance, after three count-in beats. Step on the beat after each call. Spot on is 3 points.";
+    let live_prompt = "Now the tune keeps moving like a real dance, after three count-in beats. Hit each step right on the beat after the call. Spot on earns 3 points.";
     // The tune waits while this is said, then counts in, so its first
     // call is not lost under the words.
     let page = format!("{STEPS} steps danced. {live_prompt}");
@@ -81,7 +81,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
             let (t, b) = (f.run.dance.tally(), before.get());
             let live = (t.good + t.close + t.missed) - (b.good + b.close + b.missed);
             if t.spot_on > b.spot_on {
-                Some("That was spot on: 3 points.".to_string())
+                Some("Spot on: 3 points.".to_string())
             } else if live >= LIVE_STEPS || f.run.finished() {
                 Some("Right on the beat scores 3 points.".to_string())
             } else {
@@ -99,12 +99,12 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
     Lesson::new(
         ID,
         "Clover Jig",
-        "You dance at a village ceili, and a caller calls your steps. Learn in the practice room",
+        "You are on the floor at the village ceili, where the caller shouts each move a beat ahead of the music. You will start in the practice room, where the tune pauses for every step.",
     )
     .step(start)
     .step(dance)
     .step(live)
     .outro(format!(
-        "Before a dance, {h} plays every step with its call. Play starts the first set."
+        "Before any dance starts, press {h} to preview every step with its call. Choose Play on the title when you are ready for the first set."
     ))
 }

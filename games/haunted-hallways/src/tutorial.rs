@@ -199,52 +199,53 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, house: Live<Haunt>) -> Lesson {
 
     let walk = house.step(
         format!(
-            "Every room is a grid of floorboards, and you always face north. {} walks north, {d} south, {l} west and {r} east. Take a few steps.",
+            "Every room is a grid of floorboards, and you always face north. {} walks north, {d} south, {l} west and {r} east. Take a couple of steps to get a feel for it.",
             sentence_start(&u)
         ),
         move |h: &Haunt, _| {
             let moved = (h.run.x - start.0).abs() + (h.run.y - start.1).abs();
-            (moved >= 2).then(|| "You are walking the house.".to_string())
+            (moved >= 2).then(|| "Good, you are moving through the house.".to_string())
         },
     );
 
     let status = house.step(
         format!(
-            "{} gives any danger, the haunt clock, your courage and the way to the exit door. Press {s}, then press it again straight away.",
+            "{} gives a quick status check: nearby dangers, the haunt clock, your courage and how far the exit door is. Press {s}, then press it a second time straight away.",
             sentence_start(&s)
         ),
         |h: &Haunt, _| {
             h.heard_more.then(|| {
-                "The second press gives the room, its puzzle and where you stand.".to_string()
+                "That second press gives the full picture: the room, its puzzle and where you stand."
+                    .to_string()
             })
         },
     );
 
     let find = house.step(
         format!(
-            "Things lie about each room. This room asks for the {}: walk onto it and press {p}. {} repeats the clue.",
+            "Objects lie scattered around each room. This room wants the {}: walk onto it and press {p} to pick it up. {} repeats the clue whenever you need it.",
             first_find(),
             sentence_start(&rep)
         ),
         |h: &Haunt, _| {
             h.run.rooms[0]
                 .solved
-                .then(|| "A solved room unlocks its exit, and a cold draught blows from it.".to_string())
+                .then(|| "Solving a room unlocks its exit, and a cold draught blows from the open door.".to_string())
         },
     );
 
     let door1 = through(
         &house,
         1,
-        "The door slams behind you. There is no going back.",
+        "The door slams shut behind you. There is no going back.",
     );
 
     let ghost = house
         .step(
-            "Ghosts walk the halls. A ghost comes from far off, from its direction. When it is right beside you, freeze, and take no step until it has passed. One is coming now.",
+            "Ghosts roam these halls, approaching from far off. When one is right beside you, freeze and do not take a step until it drifts away. One is coming now.",
             |h: &Haunt, _| {
                 (h.run.ghosts_evaded >= 1).then(|| {
-                    "It drifts away without finding you. Every ghost you let pass scores points."
+                    "It drifts away without spotting you. Every ghost you let pass scores points."
                         .to_string()
                 })
             },
@@ -253,10 +254,10 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, house: Live<Haunt>) -> Lesson {
 
     let charm = house
         .step(
-            "A charm lies on the floor. Walk onto it to take it.",
+            "There is a charm on the floor here. Walk onto it to pick it up.",
             |h: &Haunt, _| {
                 (h.run.stats.charms >= 1).then(|| {
-                    "Salt: it wards off one catch. Charms lie in some rooms from floor 3."
+                    "That is salt, which wards off one catch. You will find charms in some rooms starting on floor 3."
                         .to_string()
                 })
             },
@@ -265,47 +266,46 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, house: Live<Haunt>) -> Lesson {
 
     let matching = house.step(
         format!(
-            "This room's clue is on a phonograph. It plays a sound without naming it. Find the thing that makes the same sound and press {p} on it. {} plays it again. The other thing here is wrong, and touching it costs time.",
-            sentence_start(&rep)
+            "This room's clue plays on a phonograph without naming the object. Find the object that matches it and press {p} on it, or press {rep} to replay the clue. Watch out for the decoy here, because touching the wrong thing costs time.",
         ),
         |h: &Haunt, _| {
             h.run.rooms[1]
                 .solved
-                .then(|| "A riddle room works the same way, with a riddle for a clue.".to_string())
+                .then(|| "Riddle rooms work the same way, giving you a riddle instead of a phonograph clue.".to_string())
         },
     );
 
     let hint = house.step(
         format!(
-            "{} gives a hint pointing the way to what you need, for a few seconds of the haunt clock. Press {h} now.",
+            "{} gives you a hint pointing toward what you need, for a few seconds off the haunt clock. Try pressing {h} now.",
             sentence_start(&h)
         ),
         |h: &Haunt, _| {
-            (h.run.hints >= 1).then(|| "Hints cost more the deeper you go.".to_string())
+            (h.run.hints >= 1).then(|| "Hints cost a little more time the deeper you go.".to_string())
         },
     );
 
     let door2 = through(&house, 2, "");
 
     let board = house.step(
-        "A rotten board is right beside you. Step on it and you fall through. Go around it to the sealed exit door, at column 4 of the north wall, where a spirit whispers.",
+        "A rotten board lies right beside you, and stepping on it drops you through the floor. Walk around it to the sealed exit door at column 4 of the north wall, where a spirit is waiting.",
         |h: &Haunt, _| {
             let room = &h.run.rooms[2];
             (h.run.room == 2 && room.inside(room.exit) == (h.run.x, h.run.y))
-                .then(|| "You stand at the sealed door.".to_string())
+                .then(|| "You are at the sealed door.".to_string())
         },
     );
 
     let offering = house.step(
         format!(
-            "The spirit plays the sound of something you carry. {} chooses what you hold, and plays its sound. When it matches, press {p} here to offer it. {} plays the spirit's sound again.",
+            "The spirit wants something you already picked up. {} cycles through what you carry, and once you have the match, press {p} here to offer it. {} replays what the spirit wants.",
             sentence_start(&t),
             sentence_start(&rep)
         ),
         |h: &Haunt, _| {
             h.run.rooms[2]
                 .solved
-                .then(|| "The spirit takes it, and the door unlocks.".to_string())
+                .then(|| "The spirit accepts your offering, and the door unlocks.".to_string())
         },
     );
 
@@ -313,20 +313,19 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, house: Live<Haunt>) -> Lesson {
 
     let shadow = house.step(
         format!(
-            "A shadow is in this room. It walks the room one cell at a time, toward your footsteps. Stand still and it wanders. Find the candle, and keep the shadow off you. {} says where it is.",
-            sentence_start(&s)
+            "A shadow is stalking this room, moving one cell at a time toward your footsteps. Stand still and it wanders off. Find the candle while keeping the shadow off you, and press {s} to check where it is.",
         ),
         |h: &Haunt, _| {
             h.run.rooms[3]
                 .solved
-                .then(|| "The shadow never leaves its room.".to_string())
+                .then(|| "The shadow never follows you out of its room.".to_string())
         },
     );
 
     Lesson::new(
         ID,
         "Nevermore Manor",
-        "The doors have locked behind you, and each floor is a chain of rooms, each with one puzzle that unlocks its exit. Learn in the practice house",
+        "The doors of Nevermore Manor have locked behind you. Each floor is a chain of rooms, and solving each room's puzzle unlocks the exit. Try the basics in this safe practice house",
     )
     .step(walk)
     .step(status)
@@ -342,6 +341,6 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, house: Live<Haunt>) -> Lesson {
     .step(door3)
     .step(shadow)
     .outro(
-        "Deeper floors bring new dangers. Each is explained the first time you meet it. F1 says what to do at any moment. Play starts the climb.",
+        "Deeper floors bring new dangers, and the house introduces each one the first time you meet it. Press F1 anytime you need a reminder, and choose Play when you are ready to start your climb.",
     )
 }

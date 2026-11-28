@@ -46,7 +46,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, patch: Live<EveningScreen>) -> Lesson {
     // reaching it never comes before it is taught.
     let walk = patch.step(
         format!(
-            "{}, {d}, {l} and {r} walk one step at a time, and {u} is always north. A firefly drifts in the meadow. Walk until it is in reach.",
+            "{}, {d}, {l}, and {r} walk one step at a time, with {u} always north. A firefly is drifting out in the meadow. Walk toward it until it is in reach.",
             sentence_start(&u)
         ),
         move |s: &EveningScreen, _| {
@@ -58,7 +58,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, patch: Live<EveningScreen>) -> Lesson {
 
     let catch = patch.step(
         format!(
-            "{} catches a firefly in reach, but only while it glows. Press as it lights up.",
+            "{} catches a firefly in reach, as long as it is glowing. Press it right as the firefly lights up.",
             sentence_start(&p)
         ),
         // The meadow says what was caught; the lesson goes on without a
@@ -68,7 +68,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, patch: Live<EveningScreen>) -> Lesson {
 
     let release = patch.step(
         format!(
-            "{} releases the fireflies from your jar. Their notes ring together as a chord. Set them free now.",
+            "{} sets the fireflies in your jar free, ringing their notes together as a chord. Release your jar now.",
             sentence_start(&t)
         ),
         |s: &EveningScreen, _| (s.evening.releases >= 1).then(String::new),
@@ -77,10 +77,10 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, patch: Live<EveningScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Firefly Meadow",
-        "It is dusk, nothing here can go wrong, and you catch fireflies in a jar. Learn on the practice patch",
+        "Wander a meadow at dusk and catch blinking fireflies in your jar. Nothing here can go wrong. Try it out on the practice patch.",
     )
     .step(walk)
     .step(catch)
     .step(release)
-    .outro("Some species flash two or three times: press once for every flash. Your jar holds 6, and chords with names go in your journal. Play walks the home meadow.")
+    .outro("Some species flash two or three times in a row, so press once for every flash. Your jar holds 6 fireflies, and named chords are saved in your journal. Pick Play to walk the home meadow.")
 }

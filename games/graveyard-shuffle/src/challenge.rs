@@ -142,7 +142,7 @@ impl ChallengeGame for Haunts {
     }
 
     fn intro_help() -> String {
-        "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. Every player dances the same songs: new ones each day, each Monday and each month.".to_string()
+        "Up and Down choose a challenge, Enter reads its briefing, and Escape goes back. Every player dances the same songs: a new daily each day, a weekly each Monday, and a monthly on the first of the month.".to_string()
     }
 }
 

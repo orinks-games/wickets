@@ -388,14 +388,14 @@ fn the_tutorial_says_shake_it_now_with_a_gift_on_the_belt() {
     h.press(Key::Space);
     assert!(belt.with(|s| s.playing()));
     for _ in 0..2000 {
-        if h.spoken().iter().any(|l| l.contains("Shake it now.")) {
+        if h.spoken().iter().any(|l| l.contains("Try shaking it now.")) {
             break;
         }
         quiet(&mut h);
         h.frame(0.01);
     }
     assert!(
-        h.spoken().iter().any(|l| l.contains("Shake it now.")),
+        h.spoken().iter().any(|l| l.contains("Try shaking it now.")),
         "{:?}",
         h.spoken()
     );

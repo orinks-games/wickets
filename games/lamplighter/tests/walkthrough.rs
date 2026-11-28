@@ -327,7 +327,7 @@ fn the_tutorials_walk_step_waits_for_a_walk() {
     h.app.ctx.push(lesson);
     h.frame(0.0);
     wait(&mut h, 2.0);
-    let beside = "A lamp that is out is right beside you.";
+    let beside = "You are right beside an unlit lamp.";
     assert!(!spoke(&h, beside), "{:?}", h.spoken());
     h.press(Key::Up);
     h.frame(DT);
@@ -351,7 +351,7 @@ fn the_tutorial_walks_and_lights_a_short_hall() {
     let lesson = lamplighter::tutorial::lesson_on(&mut h.app.ctx, hall.clone());
     h.app.ctx.push(lesson);
     h.frame(0.0);
-    assert!(spoke(&h, "The lamps along the Long Hall have gone out, and Mabel has handed you her old taper to light them again"), "{:?}", h.spoken());
+    assert!(spoke(&h, "The lamps along the Long Hall have gone dark, and Mabel has handed you her old taper to light them back up"), "{:?}", h.spoken());
     for _ in 0..40 {
         if h.app.top_name() != "lesson" {
             break;

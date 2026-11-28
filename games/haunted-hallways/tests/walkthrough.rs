@@ -73,7 +73,10 @@ fn the_tutorial_walks_the_practice_house() {
     h.clear();
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), "lesson");
-    assert!(spoke(&h, "The doors have locked behind you, and each floor is a chain of rooms, each with one puzzle that unlocks its exit."));
+    assert!(spoke(
+        &h,
+        "The doors of Nevermore Manor have locked behind you. Each floor is a chain of rooms, and solving each room's puzzle unlocks the exit."
+    ));
     assert!(spoke(&h, "The Up arrow walks north"), "{:?}", h.spoken());
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), "haunted_hallways");
@@ -128,12 +131,12 @@ fn the_tutorial_walks_the_practice_house() {
     // The foyer: walking, status in two presses, a named thing, the door.
     let run = house.with(|x| x.run.clone());
     walk(&mut h, &house, (run.x + 2, run.y));
-    said(&h, "You are walking the house.");
+    said(&h, "Good, you are moving through the house.");
     h.press(Key::S);
     h.press(Key::S);
-    said(&h, "The second press gives the room");
+    said(&h, "That second press gives the full picture");
     // The lesson names the thing, and so does the second S.
-    said(&h, "This room asks for the ticking clock");
+    said(&h, "This room wants the ticking clock");
     said(&h, "Puzzle: find the ticking clock.");
     // R names the thing to find.
     h.clear();
@@ -143,36 +146,36 @@ fn the_tutorial_walks_the_practice_house() {
         "Room 1 of 4: The foyer. Find the ticking clock. The exit is in the north wall, at column 3 of 5.",
     );
     solve(&mut h, &house);
-    said(&h, "A solved room unlocks its exit");
+    said(&h, "Solving a room unlocks its exit");
     out(&mut h, &house);
     said(&h, "There is no going back.");
 
     // The library: a ghost to freeze for, a charm, a phonograph, a hint.
     assert!(spoke(&h, "One is coming now."));
     for _ in 0..30 * 4 {
-        if spoke(&h, "It drifts away without finding you.") {
+        if spoke(&h, "It drifts away without spotting you.") {
             break;
         }
         wait(&mut h, 0.25);
     }
-    said(&h, "It drifts away without finding you.");
+    said(&h, "It drifts away without spotting you.");
     assert_eq!(house.with(|x| x.run.courage), 3);
     walk(&mut h, &house, (4, 1));
-    said(&h, "Salt: it wards off one catch.");
+    said(&h, "That is salt, which wards off one catch.");
     assert!(!spoke(&h, "You carry 1 pinch"), "{:?}", h.spoken());
     assert!(!spoke(&h, "candle stub"), "{:?}", h.spoken());
     assert_eq!(house.with(|x| x.run.salt), 1);
     solve(&mut h, &house);
-    said(&h, "A riddle room works the same way");
+    said(&h, "Riddle rooms work the same way");
     h.press(Key::H);
-    said(&h, "Hints cost more the deeper you go.");
+    said(&h, "Hints cost a little more time the deeper you go.");
     out(&mut h, &house);
 
     // The dining hall: around the rotten board to the spirit, and an
     // offering chosen with Tab.
     let door = house.with(|x| x.run.current().inside(x.run.current().exit));
     walk(&mut h, &house, door);
-    said(&h, "You stand at the sealed door.");
+    said(&h, "You are at the sealed door.");
     for _ in 0..3 {
         if house.with(|x| x.run.held()) == Some(haunted_hallways::rules::Item::Clock) {
             break;
@@ -180,7 +183,10 @@ fn the_tutorial_walks_the_practice_house() {
         h.press(Key::Tab);
     }
     h.press(Key::Space);
-    said(&h, "The spirit takes it, and the door unlocks.");
+    said(
+        &h,
+        "The spirit accepts your offering, and the door unlocks.",
+    );
     // Said once: the game leaves it to the lesson.
     assert!(!spoke(&h, "The spirit takes the"), "{:?}", h.spoken());
     assert!(!spoke(&h, "Through."), "{:?}", h.spoken());
@@ -190,7 +196,7 @@ fn the_tutorial_walks_the_practice_house() {
     // The parlour: the candle, with the shadow about. Finding it ends the
     // lesson; the hound is taught where it is first met.
     solve(&mut h, &house);
-    said(&h, "The shadow never leaves its room");
+    said(&h, "The shadow never follows you out of its room.");
     // The room gives its name, its thing and its door; the lesson does
     // the teaching.
     said(

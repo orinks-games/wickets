@@ -38,7 +38,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Tightrope",
     category: Category::Action,
-    blurb: "Cross ever-longer wires high above the city, keeping your balance as the wind gusts.",
+    blurb: "Walk ten rooftop wires high above the city, keeping your balance through wind gusts and bold pigeons.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: None,
@@ -193,7 +193,7 @@ impl TitleGame for Tightrope {
                     start(ctx, s.game.launch(Mode::Skyline), false)
                 },
             )
-            .help("Ten crossings across the city, each longer, higher and windier than the last, with 3 lives."),
+            .help("Walk ten rooftop crossings across the city, each longer, higher, and windier than the last, with 3 lives."),
             night,
             MenuItem::new(
                 format!(

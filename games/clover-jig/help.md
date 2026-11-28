@@ -1,113 +1,98 @@
+# Clover Jig
+
 ## About the game
 
-Dance at the village ceili. The caller names each step one beat before you dance it. Press that key on the beat. Closer to the beat scores more. Tunes always play to the end.
+Step onto the floor at the village ceili, where a live band plays jigs and reels while the caller shouts each move a beat ahead. Hit the matching key right on the beat to keep your streak going, earn stars across four livelier sets, and dance every tune all the way to the final applause.
 
 ## The steps
 
-Left: dance it with the Left arrow.
+Six steps can appear across the sets, starting simple and building up as you unlock later venues.
 
-Right: dance it with the Right arrow.
+- Left: press the Left arrow.
+- Right: press the Right arrow.
+- Hop: press Space.
+- Turn: press Tab. Turns join the dance in set 2.
+- Forward: press the Up arrow.
+- Back: press the Down arrow. Forward and back join the dance in set 3.
 
-Hop: dance it with Space.
-
-Turn: dance it with Tab. Turns join the calls in set 2.
-
-Forward: dance it with the Up arrow.
-
-Back: dance it with the Down arrow. Forward and back join the calls in set 3.
-
-Before a dance starts, H plays every step with its call. Each step key plays its own call and step.
+Before a dance begins, press H to preview every step used in that run along with its call, or press any step key on its own to try it out.
 
 ## The beat and timing
 
-Each tune starts with four beats, then the music. The caller's word comes one beat before its step, so listen for the call and dance on the next beat.
+Every tune opens with four count-in beats before the band kicks in. The caller names each step one beat ahead, so catch the call and dance on the very next beat.
 
-On the beat is spot on, worth 3 points. A little off is good, worth 2. Further off is close, worth 1. Early and late count the same. A missed or wrong step scores nothing.
+Landing right on the beat is spot on and earns 3 points. Slightly off is good for 2 points, and a little further off is close for 1 point. Early and late are judged the same way, while a missed or wrong step scores nothing.
 
-The first time each of these happens in a dance, a single word names it.
+The first time each judgment happens in a dance, a single spoken word names it for you.
 
 ## Streaks and stars
 
-Every 8 steps in a row danced in time, you earn 4 bonus points. A miss or a wrong step starts the count again.
+Every 8 steps you dance in time in a row earns a 4 point streak bonus. Missing a step or hitting the wrong one resets your streak.
 
-Each tune earns stars from the share of its best points you earned: 1 star from half, 2 stars from three quarters, 3 stars from nine tenths. Streak bonuses do not count toward stars.
+Each tune awards stars based on the share of its maximum step points you score: 1 star at half, 2 stars at three quarters, and 3 stars at nine tenths. Streak bonuses add to your score, though they do not count toward stars.
 
 ## The sets
 
-There are four sets of three tunes. Each set is a little faster than the one before. Each tune plays through twice.
+The main game has four sets of three tunes, each set a little faster than the last, with every tune playing through twice.
 
-Set 1, the kitchen: left, right and hop, one step a bar.
+- Set 1, the kitchen: left, right, and hop, at one step per bar.
+- Set 2, the crossroads: turns join in, and two steps occasionally arrive back to back.
+- Set 3, the market square: forward and back join in, with more steps between the beats.
+- Set 4, the harbour hall: every step in the book, paired with the fastest tunes.
 
-Set 2, the crossroads: turns join in, and now and then two steps come in a row.
-
-Set 3, the market square: forward and back join in, with more steps between the beats.
-
-Set 4, the harbour hall: every step, and the fastest tunes.
-
-A star on every tune of a set opens the next set. Play dances the first set you have not cleared. Set select dances any set you have opened.
+Earning at least 1 star on every tune in a set unlocks the next set. Play jumps straight into the first set you have not cleared yet, while Set select lets you dance any set you have unlocked.
 
 ## The practice room
 
-The practice room plays one tune of any set you have opened. When a step's beat comes, the music holds, and the step and its key are named. Dance the step and the tune goes on. A wrong step names the right key. Nothing is scored.
+The practice room lets you work through any tune from a set you have unlocked at your own pace. Whenever a step arrives on the beat, the music holds and names the step and its key, then continues once you dance it. A wrong key reminds you of the right one, and nothing is scored.
 
 ## Saint Patrick's Day
 
-The village keeps Saint Patrick's Day, March 17, and the game follows the real calendar.
+The village celebrates Saint Patrick's Day on March 17, following the real calendar.
 
-Shamrock week, the 7 days before the day: shamrocks hide in the tunes of every set. The shamrock cue marks a step. Dance that step good or better to earn a luck point. Luck points go in your keepsakes.
+During Shamrock week, the 7 days before March 17, shamrocks hide inside the tunes of every set. When a shamrock marks a step, dance it good or better to collect a luck point for your keepsakes.
 
-Ceili night, on the day itself: the Ceili night row opens on the title, from March 16 to March 18 so the day holds in every time zone. The rest of the year it is locked, and its help counts the days to go. Shamrocks hide in the tunes on the day too.
+From March 16 to March 18, covering every time zone, the Ceili night row opens on the title screen. The rest of the year it stays locked, and pressing F1 or Enter counts down the days until it returns. Shamrocks keep hiding in the tunes on the day itself too.
 
 ## Ceili night
 
-The set dance has four tunes, played one after another. Between the tunes the caller names the next figure. Every step is called.
+Ceili night is a four-tune set dance played back to back by the full band, with the caller naming the next figure between tunes and calling every step.
 
-A four-leaf clover hides in the third or fourth tune, once a night. The clover cue marks its step. Dance that step to find it and earn 25 points.
+Once a night, a four-leaf clover hides on a step in the third or fourth tune. Dance that step to find the clover and earn 25 bonus points.
 
-Every set dance you finish goes in your keepsake for that year: how many times you danced, your best score, the clover, and your luck. Keepsakes, on the title, reads them all.
+Every set dance you finish updates your keepsake for that year, tracking how many times you danced, your best score, whether you found the clover, and your luck points. Open Keepsakes from the title to browse every year.
 
 ## Challenges
 
-Every player gets the same tunes and calls for each period. Shamrocks and clovers do not appear in challenges.
+Challenges give every player the exact same tunes and calls for each period, without shamrocks or clovers.
 
-Today's tune, the daily: one tune, with left, right, hop and turn. A new one comes every day.
+- Daily, Today's tune: a single tune using left, right, hop, and turn. A new one arrives every day.
+- Weekly, The weekly set: three tunes using every step. A new one arrives every Monday.
+- Monthly, The long set: five busy tunes using every step. A new one arrives on the first of each month.
 
-The weekly set: three tunes, with every step. A new one comes every Monday.
-
-The long set, the monthly: five tunes, with every step and more of them. A new one comes on the first of every month.
-
-Your score is every point and bonus you earn. Leave the challenge, on the pause menu, stops without counting the run. You can try again later.
+Your score totals every step and streak bonus you earn. Picking Leave the challenge on the pause menu exits without recording the run, so you can try again later.
 
 ## Spoken call-outs
 
-The caller is a recorded voice that plays with the music. With spoken call-outs on, the game also names each step as it is called. It is off at the start. Switch it in Settings, from the title or the pause menu.
+The caller is a recorded voice woven into the music. If you want the game to speak each step aloud as well, turn on Spoken call-outs in Settings from the title or the pause menu. It starts off by default.
 
 ## Pausing
 
-Escape pauses, and the music holds. When you come back, three beats count you back in. The tune goes on where it stopped.
+Press Escape any time to pause and hold the music. When you resume, three count-in beats bring you right back in where you left off.
 
 ## Controls
 
-Left arrow: dance left.
-
-Right arrow: dance right.
-
-Space: hop. Before a dance, Space starts it.
-
-Tab: turn.
-
-Up arrow: dance forward.
-
-Down arrow: dance back.
-
-S: status: the tune, the bar, your score and your streak, and your luck in Saint Patrick's week.
-
-R: say and play the last call again.
-
-H: before a dance, play every step with its call. In a dance, name the next step, its key and how many beats away it is.
-
-F1: help for what you are doing right now. F2 stops speech.
-
-Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
+- Left arrow: dance left.
+- Right arrow: dance right.
+- Space: hop, or start the dance before the music begins.
+- Tab: turn.
+- Up arrow: dance forward.
+- Down arrow: dance back.
+- S: report the bar, score, streak, and luck during Saint Patrick's week; press again for the tune name and step breakdown.
+- R: repeat and replay the last call.
+- H: before a dance, preview every step with its call; during a dance, name the next step, its key, and how many beats away it is.
+- F1: open help for the current screen.
+- F2: stop speech.
+- Escape: pause the dance, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title becomes Leave the challenge.
 
 These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

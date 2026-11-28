@@ -59,7 +59,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Cozy,
-    blurb: "Walk a trail at dawn, and befriend the birds by answering their songs.",
+    blurb: "Walk a trail at dawn, answer birds' songs note for note, and fill your field guide.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(event),
@@ -244,7 +244,7 @@ impl TitleGame for BirdsongTrail {
             MenuItem::new("Practice glade", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(WalkScreen::practice())
             })
-            .help("A short glade with two birds and two-note songs, and nothing kept: learn to answer."),
+            .help("A short glade with two birds and two-note songs, nothing saved: practice answering songs."),
         )
     }
 
@@ -257,7 +257,7 @@ impl TitleGame for BirdsongTrail {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your field guide, walks and special walks, and your challenge results.".to_string()
+        "Your field guide totals, walks, special walks, and challenge results.".to_string()
     }
 
     fn sound_check(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -275,7 +275,7 @@ impl TitleGame for BirdsongTrail {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily walk, a weekly chorus and a monthly count, the same birds for every player. {}",
+            "A daily walk, a weekly dawn chorus, and a monthly migration count, the same birds for every player. {}",
             daily.resets()
         )
     }

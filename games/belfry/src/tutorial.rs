@@ -111,7 +111,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let pl = Rc::clone(&peal);
     let bells = Step::new(
         format!(
-            "{} moves to the next bell down the scale, {d} back up. Bell 1, the treble, is the highest. Change bells until you reach bell 6, the tenor, the lowest.",
+            "{} steps to the next bell down the scale, and {d} steps back up. Bell 1 is the treble, the highest bell. Step through the bells until you reach bell 6, the tenor.",
             sentence_start(&u)
         ),
         move |ctx, a| {
@@ -132,7 +132,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let pl = Rc::clone(&peal);
     let places = Step::new(
         format!(
-            "{} and {r} move between the places in your guess, called a row. This row has 2 places. Move to place 2.",
+            "{} and {r} move between the places in your guess, called a row. This practice row has 2 places. Move over to place 2.",
             sentence_start(&l)
         ),
         move |ctx, a| {
@@ -156,7 +156,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let rg_tick = Rc::clone(&ringer);
     let first_ring = Step::new(
         format!(
-            "{} rings your row, and the apprentice answers. In place means a bell is right and in its place. Misplaced means a bell is in the peal, but in another place. Ring your row now.",
+            "{} rings your row, and the apprentice answers with two counts. In place means a right bell in its right spot. Misplaced means a right bell in the wrong spot. Ring your row now.",
             sentence_start(&p)
         ),
         move |ctx, a| {
@@ -181,7 +181,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let p_name = p.clone();
     let solve = Step::new(
         format!(
-            "Now find the peal. Change bells, move between places, and ring until both bells are in place. {} reads the rows you have rung so far.",
+            "Now solve the peal. Change bells, move between places, and ring your row until both bells are in place. {} reads back every row you have rung so far.",
             sentence_start(&rep)
         ),
         move |ctx, a| {
@@ -223,15 +223,17 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     Lesson::new(
         ID,
         "Belfry",
-        "The old bell ringer left a secret sequence of bells, called a peal. Work out which bells he chose and their order. Ring a guess, and the apprentice answers with clues. Start with a practice sequence of 2 bells",
+        "The old bell ringer left a secret sequence of bells, called a peal. Your job is to work out which bells belong in it and put them in order. Ring a guess, and the apprentice answers with clues. Start with a quick 2-bell practice peal.",
     )
     .step(bells)
     .step(places)
     .step(first_ring)
     .step(solve)
     .outro(format!(
-        "Try Plain first. The secret sequence contains {} bells chosen from the {} available. You have {} guesses to solve it. Each bell appears at most once. In Village, bells can repeat. Help explains hints and scoring.",
-        PLAIN.places, PLAIN.bells, PLAIN.rows
+        "Plain is a good mode to try first. You have {rows} rows to find {places} bells chosen from {bells}, and no bell repeats. In Village, the same bell can appear more than once. Open Help any time to read about hints and scoring.",
+        rows = PLAIN.rows,
+        places = PLAIN.places,
+        bells = PLAIN.bells
     ))
 }
 

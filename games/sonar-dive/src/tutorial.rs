@@ -58,7 +58,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sea: Live<DiveScreen>) -> Lesson {
 
     let ping = sea.step(
         format!(
-            "{} sends a sonar ping. Everything nearby echoes from its true direction, and far things echo later. Ping now.",
+            "{} sends out a sonar ping. Everything in range echoes back from its true direction, and farther targets echo later. Try a ping now.",
             sentence_start(&p)
         ),
         |s: &DiveScreen, _| {
@@ -70,8 +70,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sea: Live<DiveScreen>) -> Lesson {
 
     let turn = sea.step(
         format!(
-            "{} and {r} turn the sub while you hold them. Let go and your heading is spoken. Turn until the chest is straight ahead, and ping to check.",
-            sentence_start(&l)
+            "Hold {l} or {r} to turn the sub. When you let go, your heading is spoken. Turn until the chest is straight ahead, and ping to check."
         ),
         |s: &DiveScreen, ctx| {
             let turning =
@@ -86,7 +85,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sea: Live<DiveScreen>) -> Lesson {
 
     let mut since = None;
     let mine = sea.step(
-        "Mines warn you when you are near, and touching one costs hull. One lies south of you. Ping to find it.",
+        "Mines warn you when you get close, and hitting one damages your hull. There is one sitting south of you. Ping to locate it.",
         move |s: &DiveScreen, _| {
             let d = dive(s)?;
             // A mine already bumped into is gone and can never answer.
@@ -103,7 +102,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sea: Live<DiveScreen>) -> Lesson {
 
     let bell = sea.step(
         format!(
-            "Treasure is safe once you surface at the boat's bell, and {s} says where it is. Swim back to it."
+            "Your treasure is safe once you surface at the boat's bell, and {s} reports where it is. Head back to the bell."
         ),
         |s: &DiveScreen, _| {
             dive(s)
@@ -117,7 +116,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sea: Live<DiveScreen>) -> Lesson {
 
     let swim = sea.step(
         format!(
-            "{} and {d} move the engine telegraph a step: slow astern, all stop, slow, half and full ahead. Faster uses more air. Go ahead and swim into the chest.",
+            "{} and {d} step the engine telegraph between slow astern, all stop, slow, half, and full ahead. Going faster burns more air. Throttle up and swim into the chest.",
             sentence_start(&u)
         ),
         |s: &DiveScreen, _| {
@@ -130,7 +129,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sea: Live<DiveScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Sonar Dive",
-        "You pilot a small salvage submarine. Learn on a practice dive with one chest",
+        "You are at the helm of a small salvage submarine. This practice dive puts a single chest nearby so you can get a feel for the sonar and controls",
     )
     .step(ping)
     .step(turn)
@@ -138,7 +137,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sea: Live<DiveScreen>) -> Lesson {
     .step(mine)
     .step(bell)
     .outro(format!(
-        "On a real dive, surface before your air runs out. {} names the nearest treasure, {b} drops a marker buoy. Practice dive has endless air.",
+        "On a real dive, make sure you surface before your air runs out. {} points you to the nearest treasure, and {b} drops a marker buoy. Practice dive gives you endless air.",
         sentence_start(&h)
     ))
 }

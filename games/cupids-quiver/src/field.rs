@@ -68,7 +68,7 @@ pub fn controls_line(ctx: &Ctx<Parlor>) -> String {
     let s = ctx.control_name(ParlorAction::Status);
     let h = ctx.control_name(ParlorAction::Hint);
     format!(
-        "{} and {r} aim. Hold {p} to full draw, then let go when your sights are on a heart. {} lists the sky, {s} the status, {h} a hint.",
+        "{} and {r} turn the bow. Hold {p} to full draw, then let go when your sights line up on a heart. {} lists the sky, {s} reports status, and {h} gives a hint.",
         sentence_start(&l),
         sentence_start(&t)
     )
@@ -80,7 +80,7 @@ pub fn controls_full(ctx: &Ctx<Parlor>) -> String {
     let d = ctx.control_name(ParlorAction::Down);
     let rep = ctx.control_name(ParlorAction::Repeat);
     format!(
-        "{} {} faces straight ahead. {} eases the string, or counts your arrows. {} repeats the last announcement. Escape pauses.",
+        "{} {} faces straight ahead. {} eases the string or counts your arrows. {} repeats the last announcement. Escape pauses.",
         controls_line(ctx),
         sentence_start(&u),
         sentence_start(&d),

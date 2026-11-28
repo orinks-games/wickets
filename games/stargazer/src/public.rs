@@ -55,7 +55,7 @@ pub const INFO: GameInfo = GameInfo {
     name: NAME,
     category: Category::Cozy,
     blurb:
-        "Lie on a dark hilltop and trace the constellations under the real season's sky.",
+        "Lie back on a dark hilltop, trace constellations under the real seasonal sky, and fill your star journal at your own pace.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(event),
@@ -231,7 +231,7 @@ impl TitleGame for Stargazer {
             ctx.push(Pages::new(pages))
         })
         .help(format!(
-            "Every constellation you have traced, with its lore, and your wonders, moons and wishes. {}.",
+            "Read every constellation you have traced with its lore, along with your wonders, full moons, and wishes. {}.",
             sentence_start(&tally)
         ))]
     }

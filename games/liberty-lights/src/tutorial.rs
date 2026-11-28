@@ -48,25 +48,25 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sky: Live<Show>) -> Lesson {
 
     let listen = sky.step(
         format!(
-            "{} plays the show: three wooden ticks, then a brighter go. The go is time zero. Listen for the boom and its timing.",
+            "{} plays the show, starting with three count-in beats and a go cue that marks time zero. Pay attention to when the boom goes up.",
             sentence_start(&p)
         ),
         |show: &Show, _| {
             (show.round.phase == Phase::YourTurn)
-                .then(|| "The show is over: your turn.".to_string())
+                .then(|| "The show is over, and now it is your turn.".to_string())
         },
     );
 
     let launch = sky.step(
         format!(
-            "Press {p} for your own count-in. After the go, press 1 to launch a boom at the same delay as in the show. {} replays the show.",
+            "Press {p} for your own count-in, then after the go cue press 1 to launch a boom at the same moment. {} replays the show if you want another try.",
             sentence_start(&t)
         ),
         |show: &Show, _| {
             let l = show.round.launches.first()?;
             let word = timing_word(l.ms - BOOM_MS);
             Some(format!(
-                "Boom launched, {word} timing. Each firework scores for the right kind, the right place and the timing."
+                "Boom launched, {word} timing. Each firework scores for the right kind, the right spot and accurate timing."
             ))
         },
     );
@@ -74,12 +74,12 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, sky: Live<Show>) -> Lesson {
     Lesson::new(
         ID,
         "Liberty Lights",
-        "You are the fireworks director: each show is played to you, and you launch it back. Learn on a show of one boom",
+        "You are the director of the Fourth of July fireworks show. Each level plays a pattern, and you launch it back on beat. Try it out on a single boom",
     )
     .step(listen)
     .step(launch)
     .outro(format!(
-        "There are four fireworks, on keys 1 to 4. {} From level 11 they also go up left or right. 60 percent clears a level, and Enter finishes a show. Try every firework without scoring in the Practice room.",
+        "There are four fireworks on keys 1 to 4. {} Starting at level 11, fireworks also launch on the left or right. Score 60 percent or higher to clear a level, press Enter when you are done launching, and visit the Practice room anytime to try every firework without scoring.",
         kinds.join(" ")
     ))
 }

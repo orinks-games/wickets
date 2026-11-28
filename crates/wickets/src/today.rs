@@ -30,7 +30,7 @@ pub fn lobby_row<S: Menu<Game = Parlor>>(ctx: &mut Ctx<Parlor>) -> MenuItem<S, P
     MenuItem::new(label, |_s: &mut S, ctx: &mut Ctx<Parlor>| {
         ctx.push(TodayList::new())
     })
-    .help("Today's game events, the story's Happening and the challenges. Enter opens your selection.")
+    .help("Everything on today: game events, the story's Happening, and your challenges.")
 }
 
 /// The next game event after a quiet `today`, with how many days off. A
@@ -73,7 +73,7 @@ impl TodayList {
     pub fn new() -> Self {
         TodayList {
             menu: MenuCore::new(LABEL).with_intro_help(
-                "Up and Down choose what's on, Enter goes to it, Escape goes back to the lobby.",
+                "Use Up and Down to browse what is on today, Enter to open it, and Escape to return to the lobby.",
             ),
         }
     }

@@ -19,14 +19,14 @@ pub fn text(mode: Mode) -> String {
         "No bell comes twice."
     };
     let mut line = format!(
-        "{}. Find the secret peal of {} bells from {} in {} rows. {twice}",
+        "{}. Work out the secret peal of {} bells from {} within {} rows. {twice}",
         mode.name(),
         r.places,
         r.bells,
         r.rows
     );
     if mode == Mode::PracticeNight {
-        line.push_str(" The captain calls one place.");
+        line.push_str(" The tower captain calls one place for you.");
     }
     line
 }

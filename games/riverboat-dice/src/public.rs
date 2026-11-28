@@ -43,7 +43,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Riverboat Dice",
     category: Category::Table,
-    blurb: "Stay at the dice table or bank your winnings, before a 1 comes up.",
+    blurb: "Push your luck at a paddle steamer dice table: stay in to grow the pot, or bank before a 1 turns up.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -133,7 +133,7 @@ impl TitleGame for RiverboatDice {
             |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(TableScreen::new()),
         )
         .help(format!(
-            "{LANDINGS} landings against {}.{best}",
+            "Play {LANDINGS} landings in the saloon against {}.{best}",
             rules::and_list(&field)
         ))];
         let today = parlor_core::challenges::today(ctx);
@@ -173,7 +173,7 @@ impl TitleGame for RiverboatDice {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your best night, nights won and the longest stay, with your challenge results.".to_string()
+        "Check your best night, nights won, longest stay, and challenge results.".to_string()
     }
 
     fn sound_check(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -187,7 +187,7 @@ impl TitleGame for RiverboatDice {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily table, a weekly snag week and a monthly Captain's table, the same dice for every player. {}",
+            "Play a daily saloon night, a weekly snag week, or the monthly Captain's table with the same dice for every player. {}",
             daily.resets()
         )
     }

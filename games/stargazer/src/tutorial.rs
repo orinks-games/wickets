@@ -40,7 +40,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hill: Live<NightScreen>) -> Lesson {
 
     let sweep = hill.step(
         format!(
-            "{} and {r} sweep a listening point round the sky, 5 degrees a step, and {u} and {d} raise and lower it. {} names the next star and how many steps away it is. Rest the point on a star.",
+            "{} and {r} sweep your listening point around the sky 5 degrees at a time, and {u} and {d} raise and lower it. {} tells you the next star and how many steps away it is. Move until your point rests on a star.",
             sentence_start(&l),
             sentence_start(&h)
         ),
@@ -63,7 +63,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hill: Live<NightScreen>) -> Lesson {
 
     let guide = hill.step(
         format!(
-            "{} turns on the guide tone. It guides you toward the next star. Turn it on.",
+            "{} toggles the guide tone, which leads you straight toward the next star. Try turning it on now.",
             sentence_start(&t)
         ),
         // The game has just said "Guide tone on, toward …", so the step
@@ -73,7 +73,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hill: Live<NightScreen>) -> Lesson {
 
     let trace = hill.step(
         format!(
-            "Each constellation has its stars in an order, and the star to trace next is called next. Rest on it and press {p} to trace it. Trace one star."
+            "Every constellation has its stars in order, and the one you need is announced as next. Land on it and press {p} to trace it. Try tracing one star now."
         ),
         |s: &NightScreen, _| {
             (s.night.traced.values().sum::<usize>() >= 1).then(|| {
@@ -85,13 +85,13 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hill: Live<NightScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Stargazer",
-        "You lie on a dark hilltop under the night sky, and nothing here is timed. Learn under tonight's sky",
+        "You are lying back on a dark hilltop under the night sky with no clock to worry about. Try out the basics under tonight's sky",
     )
     .step(sweep)
     .step(guide)
     .step(trace)
     .outro(format!(
-        "The sky follows the real calendar, and more constellations rise as your journal grows. {} says where the point is, and Enter twice heads home.",
+        "The sky follows the real calendar, and more constellations rise as your journal grows. {} reports where your point is, and pressing Enter twice heads home.",
         sentence_start(&s)
     ))
 }

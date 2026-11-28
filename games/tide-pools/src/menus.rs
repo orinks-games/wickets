@@ -320,7 +320,7 @@ impl AquariumScreen {
 
     fn controls(ctx: &Ctx<Parlor>) -> String {
         format!(
-            "{} and {} move along the tanks, {} plays one again, {} plays the whole tank, {} sums it up, {} says what is still missing, Escape goes back.",
+            "{} and {} walk along the tanks, {} plays a creature again, {} tours the whole tank, {} sums up your collection, {} names a species you are still missing, and Escape goes back.",
             sentence_start(&ctx.control_name(ParlorAction::Left)),
             ctx.control_name(ParlorAction::Right),
             ctx.control_name(ParlorAction::Primary),

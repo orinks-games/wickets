@@ -65,9 +65,9 @@ fn period_of(level: &Level) -> Period {
 /// What a challenge asks, from its course.
 pub fn rule(course: &Course) -> String {
     match period_of(&course.level) {
-        Period::Daily => "The mill pond, with drifts and thin ice, the same for everyone tonight. Skate until the snow covers the ice.".to_string(),
-        Period::Weekly => "The long lake, with thin ice all the way, the same for everyone this week. Skate until the snow covers the ice.".to_string(),
-        Period::Monthly => "The long lake in a heavy snowfall, the same for everyone this month. Each lantern keeps less of the ice clear.".to_string(),
+        Period::Daily => "Skate the mill pond with drifts and thin ice, identical for everyone tonight, until the snow covers the ice.".to_string(),
+        Period::Weekly => "Take on the long lake with thin ice all the way, identical for everyone this week, until the snow covers the ice.".to_string(),
+        Period::Monthly => "Skate the long lake in heavy snow, identical for everyone this month, where each lantern clears less of the ice.".to_string(),
     }
 }
 

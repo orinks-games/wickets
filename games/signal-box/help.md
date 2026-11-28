@@ -1,66 +1,66 @@
 ## About the game
 
-Work a night shift at the junction. Answer each dispatcher call before the train reaches the points. Correct answers score. A late or wrong answer derails the train and ends your shift. Calls speed up through the night.
+You are on the night shift in a country junction signal box, keeping the line clear as trains roll through in the dark. The dispatcher calls out an order for every approaching train, and you throw the points, set the signal, or ring the bell back before it reaches the junction. Every train you pass scores, and the calls come faster as the night wears on. One wrong lever or late answer derails the train and ends your shift.
 
 ## The five calls
 
-Points left: answer with the Left arrow.
+Points left: press Left arrow.
 
-Points right: answer with the Right arrow.
+Points right: press Right arrow.
 
-Signal up: answer with the Up arrow.
+Signal up: press Up arrow.
 
-Signal down: answer with the Down arrow.
+Signal down: press Down arrow.
 
-Ring back: answer with Space.
+Ring back: press Space.
 
-The dispatcher always says the call. Before the line opens, H plays every call with its key. Each answer key plays its own call, so you can learn them with nothing at stake.
+The dispatcher always calls the order out loud. Before you open the line, H plays through every call along with its key. Pressing any of the five keys before the line opens also plays its call, so you can try them out with nothing on the line.
 
 ## The answer window
 
-The answer window is the time you have to respond to a call. It shrinks every 5 trains. The timing cue marks four beats per window and speeds up as the window shrinks. S says how long the answer window lasts.
+The answer window is how much time you have to respond to a call before the train reaches the points. Every 5 trains, the window gets shorter. The timing cue marks four beats across each window and speeds up as the window tightens. S tells you how long your current window is.
 
 ## Pace
 
-The answer window holds while a call or another line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode.
+The answer window pauses while a call or spoken line finishes, so speech never eats into your reaction time. Asking for the same line over and over stops pausing the window after a while. This works the same way at every pace and in every mode.
 
-Pace in Settings sets how fast the shift runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. The window, the gaps between trains and the timing cue all follow the pace.
+Pace in Settings controls how fast the shift runs: relaxed, normal, or quick. Normal is the default and sits slightly slower than quick. Quick is the fastest, while relaxed runs at half speed. The answer window, the gaps between trains, and the timing cue all follow your chosen pace.
 
-A change applies from your next run. A shift or a timetable keeps the pace it started at until it ends.
+Changing pace takes effect on your next run. A shift or timetable keeps the pace it started on until it finishes.
 
-Relaxed scores and records are saved separately, including challenges and events. Normal and quick share their scores.
+Relaxed scores and records are saved separately, including for challenges and events. Normal and quick share their scores.
 
 ## Scoring and records
 
-Each train that passes is 1 point. Every 10 trains in a row add a bonus of 5 points. The train-passing cue confirms a correct answer. The derailment cue means the shift is over.
+Every train you guide through earns 1 point, and every 10 trains in a row add a 5-point bonus. The train-passing cue confirms a right move, while the derailment cue means your shift is over.
 
-Records keeps your best score, your longest run of trains, the shortest window you reached, and your challenge results.
+Records tracks your best score, your longest run of trains, the shortest window you survived, and your challenge results.
 
 ## Events
 
-The steam gala is on the last weekend of every month, Saturday and Sunday. The title then has a Steam gala row: a night shift of its own, with the same calls, window and tick. Every fifth train is the steam special. It scores 3 points instead of 1. On other days the row stays in its place, locked, and says when it opens. The steam gala keeps its own best score, and it never changes your night shift records.
+The steam gala runs on the last weekend of every month, Saturday and Sunday. While it is open, the title adds a Steam gala row for a special night shift with the same calls, window, and beat. Every fifth train is the steam special, worth 3 points instead of 1. On other days the row stays locked and tells you when the next gala opens. It keeps its own best score without touching your regular night shift records.
 
-The thirteenth train appears in ordinary night shifts on Friday the 13th. Answer its call as usual. Scoring is unchanged. The results say the thirteenth train went by, and Records keeps count of how many you have seen. The game announces the event before the line opens. S, H and F1 say when either event is on.
+The thirteenth train rolls through ordinary night shifts on Friday the 13th. Handle its call like any other train for the same score. The results confirm when the thirteenth train passed, and Records counts how many you have seen. The box announces either event before the line opens, and S, H, and F1 report when one is active.
 
 ## The practice room
 
-The practice room sends calls with no clock and nothing to lose. A wrong answer names the correct key. The call stays active until you answer it. H names the key for the call that is out.
+The practice room sends calls with no clock and no derailments. If you press the wrong key, it tells you the right one and keeps the call active until you clear it. H names the key for the active call whenever you need a reminder.
 
 ## Challenges
 
-Every player gets the same timetable, a fixed list of calls, for each period. One wrong or late answer ends a timetable. The trains you passed still count.
+Every player gets the same seeded timetable, a fixed run of calls, for each period. One wrong or late move ends the timetable, though every train you already passed still counts toward your score.
 
-Today's timetable, the daily: 40 trains. The window starts at about 2.5 seconds and shrinks every 4 trains, down to about 1.2 seconds. A new one comes every day.
+Today's timetable is the daily challenge: 40 trains. The window starts at about 2.5 seconds and shrinks every 4 trains, down to about 1.2 seconds. A new timetable arrives every day.
 
-The express week, the weekly: 60 trains. The window starts at about 2.2 seconds and shrinks every 5 trains, down to about 0.9 seconds. A new one comes every Monday.
+The express week is the weekly challenge: 60 trains. The window starts at about 2.2 seconds and shrinks every 5 trains, down to about 0.9 seconds. A new timetable arrives every Monday.
 
-The night mail, the monthly: 100 trains. The window starts at about 2.5 seconds and shrinks every 5 trains, down to about 0.7 seconds. A new one comes on the first of every month.
+The night mail is the monthly challenge: 100 trains. The window starts at about 2.5 seconds and shrinks every 5 trains, down to about 0.7 seconds. A new timetable begins on the first of every month.
 
-Leave the challenge, on the pause menu, stops without counting the run. You can try again later.
+Choosing Leave the challenge from the pause menu stops the run without counting it, so you can come back and try again later.
 
 ## Pausing
 
-Escape pauses. When you come back, the call that was out plays again with a fresh window.
+Escape pauses the shift. When you resume, the active call plays again with a fresh answer window.
 
 ## Controls
 
@@ -76,14 +76,14 @@ Space: ring the bell back. Before the line opens, Space opens it.
 
 Tab: not used.
 
-S: status: the shift, trains passed, the window and your score.
+S: status, reporting the shift, trains passed, current window, and score.
 
-R: say and play the call again.
+R: repeat the active call.
 
-H: before the line opens, play every call with its key. In the practice room, name the key for the call that is out.
+H: before the line opens, play every call with its key. In the practice room, name the key for the active call.
 
 F1: help for what you are doing right now. F2 stops speech.
 
-Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
+Escape: pause menu, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title becomes Leave the challenge.
 
 These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

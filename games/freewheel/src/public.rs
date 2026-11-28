@@ -55,7 +55,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Freewheel",
     category: Category::Action,
-    blurb: "Ride a bike through city traffic, as fast as you dare.",
+    blurb: "Weave a bike through busy city traffic, dodge hazards and race the clock.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -289,7 +289,7 @@ impl TitleGame for Freewheel {
             },
         )
         .help(format!(
-            "Ride until your third crash. Dodge oncoming cars and grab parcels.{best}"
+            "Ride as far as you can until your third crash, dodging oncoming cars and grabbing parcels for cash.{best}"
         ))];
         // The job board joins the title after a first finished ride.
         if job_board_open(&Progress::load(ctx)) {
@@ -297,7 +297,7 @@ impl TitleGame for Freewheel {
                 MenuItem::new("Job board", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                     ctx.push(jobs::JobBoard::new())
                 })
-                .help("Courier deliveries for cash. Full pay on time, half pay late."),
+                .help("Take timed courier deliveries for cash, with full pay on time and half pay late."),
             );
         }
         let today = parlor_core::challenges::today(ctx);
@@ -332,8 +332,7 @@ impl TitleGame for Freewheel {
                 ctx.push(pages)
             })
             .help(format!(
-                "Training: {} short rides on pedalling, braking, steering, the door zone and hopping. {passed} passed.",
-                training::LESSONS
+                "Five short training rides covering pedalling, braking, steering, the door zone and hopping. {passed} passed."
             )),
         )
     }
@@ -343,7 +342,7 @@ impl TitleGame for Freewheel {
             "freewheel_call_outs",
             |ctx| format!("Spoken call-outs: {}", Choices::peek(ctx).call_outs.word()),
             cycle_call_outs,
-            "Choose when the game names what is coming on the road: every time, once per session, or off. A session lasts until you close Wicket's. Status and Hint always speak.",
+            "Choose how often the game names upcoming hazards: every time, once per session, or off. A session lasts until you close Wicket's, and Status and Hint always speak.",
         ),
             parlor_core::units::row(),
             pace::row(ID),
@@ -359,7 +358,7 @@ impl TitleGame for Freewheel {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your best times and ride points for each course and bike, totals, and your challenge results."
+        "Your best times and ride points for every course and bike, plus your totals and challenge results."
             .to_string()
     }
 
@@ -374,7 +373,7 @@ impl TitleGame for Freewheel {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily morning run, a weekly rush hour and a monthly cross-town ride, the same for every player. {}",
+            "A daily morning run, a weekly rush hour and a monthly cross-town ride, shared by every player. {}",
             daily.resets()
         )
     }

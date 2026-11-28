@@ -435,7 +435,7 @@ fn every_challenge_has_a_name_tag_and_rule() {
     }
     let monthly = Challenge::on(DAY, basket_run::ID, Period::Monthly);
     let rule = challenge_rule(&monthly);
-    for word in ["patterns", "100 points"] {
+    for word in ["patterns", "100 bonus points"] {
         assert!(rule.contains(word), "{rule}");
     }
 }

@@ -113,7 +113,7 @@ impl Tuning {
     pub fn controls(&self, ctx: &Ctx<Parlor>) -> String {
         let k = |a| Self::key(ctx, a);
         format!(
-            "{} and {} raise and lower the pipe. {} sets it once the wobble is still. {} and {} move down and up the rank. {} plays the true note alone, {} speaks the status, {} names the pipe again, {} says which way it is out, and Escape pauses.",
+            "{} and {} raise and lower the pipe, and {} sets it once the wobble is still. {} and {} step down and up the rank. {} plays the true note alone, {} checks your status, {} repeats the pipe, {} tells you which way it is out, and Escape pauses.",
             sentence_start(&k(ParlorAction::Up)),
             k(ParlorAction::Down),
             sentence_start(&k(ParlorAction::Primary)),

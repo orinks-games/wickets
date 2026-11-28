@@ -102,17 +102,17 @@ pub trait TitleGame: Sized + 'static {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, Self::ID, Period::Daily);
         format!(
-            "A daily, a weekly and a monthly challenge, the same for every player. {}",
+            "Daily, weekly, and monthly challenges with the same setup for every player. {}",
             daily.resets()
         )
     }
     /// F1 on the Records row.
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your bests and progress, with your challenge results.".to_string()
+        "Your personal bests, progress, and challenge results.".to_string()
     }
     /// F1 on the Sound check row.
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Choose and play the sounds you need to recognise during the game.".to_string()
+        "Browse and play the gameplay sounds you need to recognize.".to_string()
     }
 
     /// Whether this is the player's first visit, which starts the cursor on
@@ -311,7 +311,7 @@ impl<G: TitleGame> Menu for Title<G> {
         self.tutorial_at = items.len();
         items.push(Self::row(
             labels::TUTORIAL,
-            "Learn to play by playing, a step at a time, with your own controls.",
+            "Learn the game step by step with your own controls.",
             |s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 s.teaching = !tutorial::tutorial_done(ctx, G::ID);
                 let lesson = s.game.lesson(ctx);
@@ -320,7 +320,7 @@ impl<G: TitleGame> Menu for Title<G> {
         ));
         items.push(Self::row(
             labels::HELP,
-            "The full guide, by section, with every control.",
+            "Read the full guide by topic, including every control.",
             |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 let help = crate::seasonal::help(ctx, G::HELP);
                 ctx.push(crate::Help::new(help))
@@ -349,7 +349,7 @@ impl<G: TitleGame> Menu for Title<G> {
         items.extend(self.game.extras(ctx));
         items.push(Self::row(
             labels::SETTINGS,
-            "Speech, volume and controls, shared by every game.",
+            "Adjust speech, volume, and the controls shared across every game.",
             |_s: &mut Self, ctx: &mut Ctx<Parlor>| ctx.push(SettingsScreen::<Parlor>::new()),
         ));
         items.extend(self.game.destructive(ctx));

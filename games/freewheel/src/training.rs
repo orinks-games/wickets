@@ -61,23 +61,23 @@ pub fn page(ctx: &Ctx<Parlor>, n: u32) -> String {
     let p = k(ParlorAction::Primary);
     match n {
         1 => format!(
-            "Lesson 1 of {LESSONS}: pedal and coast. Hold {up} to pedal. Let go to coast. Pedal up to {}, then coast for 2 seconds.",
+            "Lesson 1 of {LESSONS}: pedal and coast. Hold {up} to pedal, and let go to coast. Pedal up to {}, then coast for 2 seconds.",
             parlor_core::units::per_hour(20.0)
         ),
         2 => format!(
-            "Lesson 2 of {LESSONS}: brake. Hold {down} to brake. The brakes build over a moment, so start early. Pedal up to {}, then brake to a stop.",
+            "Lesson 2 of {LESSONS}: brake. Hold {down} to brake. Your brakes build up over a moment, so start early. Pedal up to {}, then brake to a full stop.",
             parlor_core::units::per_hour(BRAKE_FROM * 3.6)
         ),
         3 => format!(
-            "Lesson 3 of {LESSONS}: steer. {} and {right} slide you across the road while you hold them. A line divides the bike lane from the traffic lane. Get moving, steer out into the traffic lane, then back into the bike lane.",
+            "Lesson 3 of {LESSONS}: steer. {} and {right} slide you across the road while you hold them, with a painted line separating the bike lane from the traffic lane. Get moving, steer out into the traffic lane, then back into the bike lane.",
             sentence_start(&left)
         ),
         4 => format!(
-            "Lesson 4 of {LESSONS}: the door zone. Now and then a parked car's door is about to open. {} steers left: move out before it does. Pass both doors.",
+            "Lesson 4 of {LESSONS}: the door zone. Parked car doors can swing open into your path. {} steers left, so move out of the door zone before they open and make it past both doors.",
             sentence_start(&left)
         ),
         _ => format!(
-            "Lesson 5 of {LESSONS}: hop. {} hops while you are moving. Two potholes lie in the bike lane: hop one of them as you reach it.",
+            "Lesson 5 of {LESSONS}: hop. {} hops while you are moving. Two potholes sit ahead in the bike lane, so hop over one of them as you reach it.",
             sentence_start(&p)
         ),
     }
@@ -110,7 +110,7 @@ pub fn start(ctx: &Ctx<Parlor>, bike: Bike) -> Pages {
 /// The pages after the last lesson.
 pub fn done_pages(_ctx: &Ctx<Parlor>) -> Vec<String> {
     vec![
-        "Training complete: all five lessons passed. You can pedal, coast, brake, steer, keep out of the door zone and hop.".to_string(),
-        "Next, try a time trial. Downtown adds cars from behind, curbs, ramps and junction turns. Hint says what to do about whatever comes next.".to_string(),
+        "Training complete: you passed all five lessons. You have got pedalling, coasting, braking, steering, the door zone and hopping down.".to_string(),
+        "Try a time trial next. Downtown adds cars from behind, curbs, ramps and junction turns, and Hint names how to handle whatever is coming up.".to_string(),
     ]
 }

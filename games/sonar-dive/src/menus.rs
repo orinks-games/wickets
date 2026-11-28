@@ -38,7 +38,7 @@ impl ChallengeGame for Dives {
     }
 
     fn intro_help() -> String {
-        "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. A new daily each day, a weekly each Monday, a monthly each month.".to_string()
+        "Up and Down choose a challenge, Enter opens its briefing, Escape goes back. A fresh daily arrives each day, a weekly each Monday, and a monthly each month.".to_string()
     }
 }
 
@@ -145,7 +145,7 @@ impl Menu for SoundCheck {
         )
         .select_sound(None)
         .help(
-            "A wreck echo from five places around you, to learn how direction and distance sound.",
+            "Plays a wreck echo from five spots around you so you can feel out direction and distance.",
         )];
         for cue in CUES {
             items.push(

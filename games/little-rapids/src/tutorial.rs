@@ -34,30 +34,30 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, water: Live<RunScreen>) -> Lesson {
     );
     let catch = water.step(
         format!(
-            "{} sets the boat off. Hold {l} or {r} to paddle that way. A petal is floating toward you. Steer so it is straight ahead as it reaches you.",
+            "{} launches your boat. Hold {l} or {r} to paddle across the stream. A petal is floating toward you, so steer until it is straight ahead as it reaches you.",
             sentence_start(&go)
         ),
         |s: &RunScreen, _| (s.run.caught >= 1).then(|| "Caught.".to_string()),
     );
     let current = water.step(
-        "Ahead of you is the current, the fastest water. Steer into it and stay there for a few beats. Riding it scores points every beat.",
+        "Ahead of you is the current, the fastest water in the stream. Steer into it and ride along for a few beats to score points on every beat.",
         |s: &RunScreen, _| (s.run.flow_beats >= 6).then(|| "Riding the current.".to_string()),
     );
     let clean = water.step(
-        "A catch dead centre is a clean catch, worth double points. Catch one clean.",
+        "Catching something right at the middle of your boat is a clean catch and scores double. Line one up dead centre.",
         |s: &RunScreen, _| (s.run.clean >= 1).then(|| "Clean.".to_string()),
     );
     let quiet = water.clone();
     Lesson::new(
         ID,
         "Little Rapids",
-        "You sail a little boat down a stream, catching what floats along with the music. Learn in slow water, where nothing can go wrong",
+        "Sail a paper boat down a winding stream, catching petals and scraps on the beat. Practice here in slow water where nothing can go wrong",
     )
     .step(catch)
     .step(current)
     .step(clean)
     .outro(format!(
-        "On a real stream, steer clear of stones and the banks: a bump costs your combo. {} gives your combo and multiplier. Press it again straight away for your score and progress. {h} says where the current is and what is coming.",
+        "On a real stream, steer clear of stones and the banks, because a bump resets your combo. {} checks your combo and multiplier, and pressing it again right away gives your score and progress. {h} tells you where the current is and what is coming next.",
         sentence_start(&s)
     ))
     .on_exit(move |ctx| {

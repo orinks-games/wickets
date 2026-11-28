@@ -2,66 +2,68 @@
 
 ## About the game
 
-Play five landings of dice against three passengers. During each landing, the dealer rolls two dice for everyone still seated. Each roll adds to the table total. Tab banks what the table holds. Space stays in for another roll. A 1 on either die ends the landing, and everyone still seated gets nothing. Highest banked total wins. Nothing is timed.
+Pull up a chair in the saloon of a riverboat paddle steamer for five landings of push-your-luck dice against three fellow passengers. Each roll adds two dice to the table pot for everyone still seated. Press Space to ride for another roll, or Tab to bank the pot and step out safe.
+
+Roll a 1 on either die and the landing busts, leaving everyone still seated with nothing. Whoever banks the highest total after five landings wins, with no clock to rush you.
 
 ## A landing
 
-Each landing starts with everyone seated and the table empty. Space calls a roll. The dealer calls the two dice and their sum, such as "4 and 3, 7. The table holds 19." The sum of every roll in the landing adds up on the table. Everyone still seated stands to win what the table holds.
+Every landing begins with all four players seated and the table empty. Press Space to call a roll. The dealer calls both dice and their sum, such as "4 and 3, 7. The table holds 19." Every roll adds to the pot on the table, and everyone still seated stands to collect that full amount if they bank in time.
 
 ## Staying in and banking
 
-After each roll, you choose. Space stays in for another roll. Tab banks the table total into your night total and leaves your seat for the rest of the landing. Once you have banked, the table rolls on without you until the landing ends. Space or Tab while the dealer talks hurries him along. In your very first night, press Tab again to confirm your first bank.
+After each roll, it is your call. Press Space to stay seated for another roll, or press Tab to bank the table total into your night total and stand up for the rest of the landing. Once you bank, the table keeps rolling for anyone still seated until the landing ends. Press Space or Tab while the dealer is talking to hurry him along. On your very first night, press Tab a second time to confirm your first bank.
 
 ## The 1
 
-A 1 on either die ends the landing. The dealer says "A one. The landing is over." Everyone still seated gets nothing for the landing, but keeps what they banked in earlier landings. If everyone has banked before a 1 comes, the landing ends too. 11 of 36 rolls have a 1. Up gives the odds at any time.
+A 1 on either die ends the landing right away. The dealer calls "A one. The landing is over." Anyone still seated gets nothing for that landing, though everything banked on earlier landings stays safe. A landing also ends if every player banks before a 1 appears. 11 of the 36 possible rolls have a 1, and pressing Up gives you the current odds at any time.
 
 ## The other passengers
 
-Three passengers play against you, and each plays by one plain rule. The Widow sits on your left. She banks once the table holds 15. The Gambler sits across the table. He rides until it holds 40. The Captain sits on your right. He banks when he leads by 20, counting what everyone would have if they banked now, or after 4 rolls in a landing. The dealer names each passenger who banks. None of them ever knows the next roll: they draw on the same dice you do.
+You play against three passengers, each following one steady rule. The Widow sits on your left and banks as soon as the table holds 15. The Gambler sits across from you and rides until it reaches 40. The Captain sits on your right and banks when he leads by 20, counting what everyone would have if they banked now, or after 4 rolls in a landing. The dealer announces each passenger as they bank. None of them can see the next roll: they face the exact same dice you do.
 
-Left and Right name each passenger in turn, with their night total, whether they are seated, and their rule. Down reads every night total, highest first.
+Press Left or Right to step through the passengers and hear their night total, whether they are still seated, and their rule. Press Down for all night totals from highest to lowest.
 
 ## Hints
 
-H says what a careful player would do now, and why. The careful player stays in while one more roll is worth more on average than what a 1 would take. The careful player banks once the table holds 19 or more. With the snag rule on, your night total counts as at risk too. On the last landing, the careful player stays in while banking would not put them in the lead.
+Press H to ask what a careful player would do right now and why. A careful player stays seated while another roll is worth more on average than what a 1 would cost, banking once the table holds 19 or more. With the snag rule on, your whole night total counts as at risk too. On the final landing, a careful player keeps rolling whenever banking would leave them behind the leader.
 
 ## Status and the last roll
 
-S gives the landing, what the table holds and whether you are seated, always in that order. Press S again straight away for your night total and who is still in. R repeats the last roll and what it did: who stood, or who lost what when a 1 came.
+Press S for the current landing, what the table holds, and whether you are seated, always in that order. Press S a second time right away for your night total and who is still in. Press R to hear the last roll again along with who stood or who lost out when a 1 landed.
 
 ## Scoring and records
 
-Your score is your night total. Records keep your best night, how many nights you have won, and the longest stay: the most rolls anyone stayed seated through in one landing. Players tied for the highest night total share the win.
+Your score is your banked night total, and players tied for first share the win. Records tracks your best night, how many nights you have won, and the longest stay, meaning the most rolls anyone stayed seated through in a single landing.
 
 ## Challenges
 
-Every player gets the same dice in the same order. The daily is one saloon night, new each day. The weekly is snag week: three saloon nights with the snag rule on, your three night totals added, new each Monday. With the snag rule, a double 1 is the snag. It wipes the whole night total of everyone still seated. The monthly is the Captain's table: you and the Captain alone, for 10 landings. Your result counts when the last night ends. Leave the challenge, on the pause menu, does not count, so you can try again later.
+Challenges deal every player the exact same dice in the same order. The daily challenge is one saloon night, refreshed every day. The weekly challenge is snag week: three saloon nights in a row with the snag rule active, combining your three night totals, refreshed every Monday. Under the snag rule, rolling a double 1 is a snag that wipes the entire night total of everyone still seated. The monthly challenge is the Captain's table: just you and the Captain head to head for 10 landings. Your score counts once the last night finishes, and choosing Leave the challenge from the pause menu quits without counting so you can try again later.
 
 ## Calendar events
 
-Showboat Saturday: on the second Saturday of every month, the Showboat Saturday row after Play opens. On other days it stays in its place, locked, and says when it opens. It is a saloon night of 5 landings against the same three passengers, with one change: doubles with no 1, from 2 and 2 up to 6 and 6, double what the table holds. The dealer announces the doubles, such as "Showboat doubles. The table doubles to 24." The passengers keep their rules. Up gives the odds with the doubles in, and the careful player's hint stays in until the table holds 40. It is scored on a board of its own, and Records show your best. Once the day is over, Play again on the results says Showboat Saturday is over and takes you back to the title.
+Showboat Saturday opens on the second Saturday of every month as its own row right below Play. On other days it stays locked and tells you when it returns. It is a five-landing saloon night against the same three passengers with one twist: rolling doubles without a 1, from 2 and 2 up to 6 and 6, doubles what the table holds. The dealer calls it out, such as "Showboat doubles. The table doubles to 24." The passengers stick to their usual rules, Up factors doubles into the odds, and the careful player's hint rides until the table holds 40. It keeps its own score board in Records. Once the day ends, Play again on the results screen lets you know Showboat Saturday is over and returns you to the title.
 
 ## Controls
 
-Space: stay in, and call the next roll.
+Space: stay in and call the next roll.
 
 Tab: bank what the table holds and stand for the rest of the landing.
 
-Left and Right: name each passenger, their night total and their rule.
+Left and Right: check each passenger, their night total, and their rule.
 
-Up: the odds.
+Up: check the odds.
 
-Down: every night total, highest first.
+Down: hear every night total, highest first.
 
-S: status: the landing, the table and your seat. Press it again for your night total and who is still in.
+S: check status, giving the landing, the table total, and your seat. Press it again right away for your night total and who is still in.
 
-R: the last roll and what it did.
+R: repeat the last roll and what happened.
 
-H: what a careful player would do now, and why.
+H: ask what a careful player would do now and why.
 
 F1: help for what you are doing right now. F2 stops speech.
 
-Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
+Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title becomes Leave the challenge.
 
 These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

@@ -912,7 +912,7 @@ fn the_tutorial_launches_one_boom() {
     h.clear();
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), "lesson");
-    assert!(h.spoken()[0].starts_with("You are the fireworks director"));
+    assert!(h.spoken()[0].starts_with("You are the director of the Fourth of July fireworks show"));
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), "liberty_lights");
 

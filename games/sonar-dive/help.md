@@ -2,103 +2,105 @@
 
 ## About the game
 
-You pilot a salvage sub from a boat. Ping for treasure, collect it, and return to the boat's bell to bank it before air runs out. Each dive after the first goes deeper: the water is darker, the mines thicker, the currents stronger and the air shorter, but the treasure is worth more.
+You are at the helm of a salvage submarine, dropping from your boat into dark water to hunt for sunken treasure. Send out a sonar ping to locate chests and shipwrecks, weave past mines and strong currents, and make it back to the boat's bell before your air tank runs dry. Each dive takes you deeper, where the water grows harsher and the air shorter, but every haul is worth far more.
 
-This help gives distances and depths in metres. Set Units to US in Settings and the game says feet instead.
+This guide gives distances and depths in metres. If you switch Units to US in Settings, the game reports feet instead.
 
-Your score is the treasure you bank. An expedition ends when you choose to stop at the boat, when your air runs out, or when mines breach your hull. If you are lost at sea, the treasure aboard is lost with you, but everything you banked is kept.
+Your score is the total treasure you bank. An expedition ends when you decide to stop at the boat, when your air runs out, or when mines breach your hull. If you are lost at sea, anything still aboard goes down with you, though every coin you already banked stays yours.
 
 ## Directions
 
-Everything is placed around the sub, facing where the sub faces. When you turn, the world turns around you.
+Everything on the seabed sits around your sub relative to where you are pointing. When you turn, the world turns around you.
 
-Ping: everything in range echoes from where it is. The later the echo, the farther away it is.
+Send a ping and everything within range echoes back from its true direction. The later an echo returns, the farther away it is.
 
-Directions in speech use a clock face: 12 o'clock is straight ahead, 3 o'clock to your right, 6 o'clock behind you and 9 o'clock to your left.
+Spoken directions use a clock face: 12 o'clock is straight ahead, 3 o'clock is to your right, 6 o'clock is behind you, and 9 o'clock is to your left.
 
-Turn on Spoken call-outs in Settings, from the title or the pause menu, to have each ping's four nearest echoes named, with distance and clock direction. The hint key always names the nearest treasure.
+If you want each ping's four nearest echoes named with their distance and clock direction, turn on Spoken call-outs in Settings from the title or pause menu. The hint key always points you to the nearest treasure.
 
 ## What sonar finds
 
-A wreck is a sunken ship with treasure in its hold. An empty wreck has already been salvaged.
+A wreck is a sunken ship with treasure waiting in its hold. Once you have emptied it, it becomes an empty wreck.
 
-You can collect treasure chests without stopping.
+Treasure chests sit out on the seabed and can be picked up without stopping.
 
-Mines damage your hull on contact.
+Mines damage your hull if you run into them, while rocks and the cliff wall around the dive site stop you cold.
 
-Rocks and the wall at the edge of the dive site block your path.
+Friendly whales share extra air when you swim close, and currents push your sub off course.
 
-Whales offer extra air. Currents push the sub.
+The galleon shows up in the monthly challenge, and glow pearls appear during the glow dive.
 
-The galleon appears in the monthly challenge. Glow pearls appear in the glow dive.
-
-Sound check, on the title, plays each of these with its name, and a demonstration of the same echo from five places around you.
+Sound check on the title menu lets you play each of these cues and hear a demonstration of one echo from five spots around you.
 
 ## Treasure
 
-Swim into a treasure chest to take it. Its coins are aboard at once.
+Swim straight into a treasure chest to grab it. Its coins go straight into your hold.
 
-A wreck holds more, but takes work. Stop within a few metres of it, at all stop, and hold still while the grab arm salvages it. Salvage takes 3 seconds. Moving off or being pushed by a current interrupts salvage, and you start again.
+A wreck pays out much more, though it takes a steady hand. Pull up within a few metres of it, set your throttle to all stop, and hold still for 3 seconds while the grab arm works. If you move off or get pushed by a current, salvage breaks off and you have to start over.
 
-Treasure is worth more the deeper you go: a quarter more for every dive past the first.
+The deeper you dive, the richer the haul: every dive past the first adds a quarter more to what treasure is worth.
 
 ## Dangers
 
-Mines warn you when you come within about 16 metres. Touching one costs a hull point. You start with 3, and losing them all ends the expedition. Surfacing repairs one.
+Mines start warning you once you come within about 16 metres. Touching one costs a hull point. You start with 3 hull points, and losing the last one ends the expedition, though surfacing repairs one.
 
-Rocks and the wall around the site scrape you and cost 3 seconds of air. Driving into them stops your engine. Turn away and throttle up again. If a current pins you against rock, point away from it and throttle up. The engine keeps running while you pull clear.
+Rocks and the cliff wall around the site scrape your sub, cut your engine to all stop, and cost 3 seconds of air. Turn away and throttle back up to get moving again. If a current pins you against rock, point away from it and throttle up, and the engine keeps running while you pull clear.
 
-Currents push you while you are inside them. Fight them at full ahead, or let them carry you. You cannot salvage inside a current.
+Currents push you along whenever you enter them. You can fight them at full ahead or ride them out, though you cannot salvage a wreck while a current is pushing you.
 
 ## Air
 
-Your tank holds 150 seconds on the first dive and less on each deeper dive. Full ahead uses air faster than slow ahead, and all stop uses the least. You are warned at half, at a quarter, and at 15 seconds. H works at any time. When your air is short of what the trip home needs, H says so.
+Your tank holds 150 seconds of air on the first dive, and less on every deeper dive. Running at full ahead burns through air faster than slow ahead, while all stop uses the least. You get warnings at half air, a quarter air, and 15 seconds left.
 
-A friendly whale circles somewhere on most sites. Pass within a few metres of it and it shares a breath of air: 25 seconds more, once a dive. It keeps its gift while your tank is still nearly full, so you can come back to it later.
+You can press H at any time for a hint. When your remaining air is getting tight for the trip home, H warns you to head back to the bell.
+
+A friendly whale circles somewhere on most dive sites. Swim within a few metres of it and it shares a breath of 25 extra seconds of air, once per dive. If your tank is still nearly full, it holds onto its gift so you can swing back later.
 
 ## Buoys and the bell
 
-The boat's bell is where you began. Come back within a few metres of it to surface.
+The boat's bell hangs right where you started the dive. Swim back within a few metres of it to surface and bank your treasure.
 
-Tab drops a marker buoy where you are. Up to 3 can be out at once, and a fourth takes the place of the oldest. Use them to mark a wreck you mean to come back to, or a safe path home past the mines.
+Tab drops a marker buoy right where you are. You can keep up to 3 out at once, and dropping a fourth replaces the oldest. Use them to mark a rich wreck for later or lay a safe path home past the mines.
 
 ## At the boat
 
-When you surface, what you carry is banked and your air is refilled. You choose to dive again, deeper, or end the expedition and keep your haul. Escape there opens the pause menu.
+Surfacing banks everything you carried up and refills your air tank. From the boat, you can dive again into deeper water or end the expedition and walk away with your haul. Escape opens the pause menu here too.
 
 ## After an expedition
 
-When an expedition ends, the game reads how it went, your haul and your best. Then the results menu offers Play again, or Try again after a loss, Hear the results again, and Back to the title. After a challenge, the last row is Back to the challenges. Escape does the same as the last row.
+When an expedition wraps up, the game reads how it ended, your haul, and how it compares to your best. The results menu then offers Play again, or Try again after a loss, Hear the results again, and Back to the title. After a challenge, the last row returns to the challenges menu, and Escape does the same.
 
 ## Pace
 
-The sea holds while a line is still being spoken. Your air, the sub, the mines, the currents, the bell, the buoys and the grab arm stand still until it ends. While you hold a turn key, and while a ping's echoes are coming back, the sea runs on through speech. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode.
+The sea pauses whenever a line is still being spoken, so your air, sub, mines, currents, bell, buoys, and grab arm wait until speech finishes. While you hold a turn key or wait for a ping's echoes to return, the sea keeps running through speech. Asking for a line over and over stops pausing after a while. This works at every pace and in every mode.
 
-Pace in Settings sets how fast the sea runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. Your air, the sub's speed and turns, the echoes, the mine ticks, the bell, the buoys and salvage all follow the pace, so a later echo still means a farther one.
+Pace in Settings sets how fast the sea runs: relaxed, normal, or quick. Normal is the default and sits a little slower than quick. Quick is the fastest, and relaxed runs at half speed. Everything scales together, including your air, speed, echoes, mine ticks, bell, buoys, and salvage, so a later echo still means a farther target.
 
-A change applies from your next expedition. An expedition keeps the pace it started at until it ends.
+A pace change takes effect on your next expedition. Once an expedition starts, it keeps that pace until it ends.
 
-Relaxed hauls are saved separately, including challenges and special dives. Normal and quick share their hauls. Your deepest dive, your expeditions and Deep start count at every pace.
+Relaxed hauls are saved on their own board, including challenges and special dives, while normal and quick share their hauls. Your deepest dive, total expeditions, and Deep start unlock count at every pace.
 
 ## Modes
 
-- Play, expedition: from dive 1, as deep as you dare. Your best haul is on the row and in Records.
-- Deep start: locked until an expedition reaches dive 4. Then it begins at dive 4, with its own best haul.
-- Practice dive: endless air and harmless mines, to learn the sonar. Not scored.
+- Play, expedition: start from dive 1 and push as deep as you dare. Your best haul is shown on the row and in Records.
+- Deep start: unlocks once an expedition reaches dive 4, letting you start future expeditions right at dive 4 with its own best haul.
+- Practice dive: endless air and harmless mines so you can practice the sonar with nothing on the line. Not scored.
 
-Records, on the title, reads both best hauls, your deepest dive and your challenge results.
+Records on the title menu reads both best hauls, your deepest dive, and your challenge results.
 
 ## Challenges
 
-The challenges are the same sea for every player, and a new one comes each day, week and month. The Challenges menu shows each one's best result and your streak. Before each run the briefing reads its rule and when the next one arrives. Afterwards the game reads your result, your best and your streak. A run counts when it ends at the boat or at sea. Leave the challenge, on the pause menu, does not count. Neither does Escape on the briefing, which goes back without starting.
+Challenges put every player on the exact same sea, with a fresh one arriving each day, week, and month. The Challenges menu lists each challenge's best result and your streak. Before you dive in, a briefing lays out the rule and when the next one arrives, and afterward you get your result, your best, and your streak.
 
-- Daily, Sprint dive: one dive, from dive 1 to 3, with a twist announced up front: murky water that halves your sonar, rich wrecks with more mines, rip currents, or thin air.
-- Weekly, Long haul: up to 3 dives from dive 3, with no hull repairs between them, and a twist of its own.
-- Monthly, The sunken galleon: on each dive, a galleon holding 1000 coins lies near the edge of the site, ringed by 6 mines. 2 dives from dive 4, and a single hull point. Salvaging the galleon takes 6 seconds of stillness.
+A challenge run counts once it ends at the boat or at sea. Picking Leave the challenge from the pause menu does not count, and pressing Escape on the briefing backs out without starting.
+
+- Daily, Sprint dive: a single dive from dive 1 to 3 with a twist announced up front, such as murky water that halves your sonar, rich wrecks with extra mines, rip currents, or thin air.
+- Weekly, Long haul: up to 3 dives starting from dive 3, with no hull repairs between dives and a weekly twist.
+- Monthly, The sunken galleon: 2 dives from dive 4 with only a single hull point. Each dive hides a 1000-coin galleon near the edge of the site, ringed by 6 mines, and salvaging it takes 6 seconds of stillness.
 
 ## Special nights
 
-- Moon pearl dive, on every full moon night. The title has a row for it. It is an expedition from dive 1 on a sea made from that full moon's date, so every player dives the same sea that night. Each dive also hides one moon pearl, worth 150 coins on the first dive and more the deeper you go. Swim into a moon pearl to collect it, like a chest. The moon pearl dive keeps its own best haul. Once the full moon has set, Play again says so and takes you back to the title.
+- Glow dive, on every new moon night, the darkest of the month. You will find a row for it on the title menu, and on other nights that row stays locked and tells you when it opens next. Everyone dives the same sea made from that new moon's date, starting from dive 1. Each dive also hides a glow pearl worth 150 coins on the first dive and more the deeper you go, collected by swimming into it like a chest. It keeps its own best haul, and once the new moon has passed, Play again says so and takes you back to the title.
 
 Sound check includes the pearl cues.
 
@@ -106,12 +108,12 @@ Sound check includes the pearl cues.
 
 These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
-- Left and Right arrows: turn while held. Letting go names your heading.
-- Up and Down arrows: move the engine telegraph one step: slow astern, all stop, slow ahead, half ahead, full ahead.
+- Left and Right arrows: turn while held. Letting go announces your heading.
+- Up and Down arrows: move the engine telegraph one step between slow astern, all stop, slow ahead, half ahead, and full ahead.
 - Space: send a sonar ping.
 - Tab: drop a marker buoy where you are.
-- S: air, hull, any current, and where the bell is. Press it again straight away for heading, throttle, coins aboard and banked, and the dive and its depth.
+- S: report your air, hull, any current, and where the bell is. Press it again straight away for your heading, throttle, coins aboard and banked, and the dive number and depth.
 - R: repeat the last message.
-- H: a hint, naming the nearest treasure and how to take it, any mine close by, and a warning when it is time to head home.
-- Escape: pause. The pause menu can resume, open settings or this help, go back to the title, or go back to the lobby. During a challenge, its leave row is Leave the challenge.
-- F1: help for the current screen. F2 stops speech.
+- H: give a hint with the nearest treasure and how to take it, any nearby mine, and a warning when it is time to head home.
+- Escape: pause. From the pause menu you can resume, open Settings or this help, go back to the title, or return to the lobby. During a challenge, the leave row is Leave the challenge.
+- F1: read help for the current screen. F2 stops speech.

@@ -146,25 +146,25 @@ pub fn launch(ctx: &mut Ctx<Parlor>, launch: Launch, replace: bool) {
             ));
         }
         Mode::Tutorial => pages.push(
-            "Guided run: each new kind of traffic is explained as it comes, and the run pauses while you read."
+            "Guided run: the rail pauses to explain each new kind of traffic as it arrives, so you can take it at your own pace."
                 .to_string(),
         ),
         _ => {
             match launch.mode {
                 Mode::BlackSky => pages.push(
-                    "A Black Sky Run is five sectors. After each sector you fit one upgrade and choose the route ahead. The fifth sector is the extraction sprint.".to_string(),
+                    "A Black Sky Run spans five sectors. Between sectors you fit one upgrade and pick the next route, leading up to the fifth-sector extraction sprint.".to_string(),
                 ),
                 Mode::Endless => pages.push(
-                    "The endless rail never ends. Every sector is harder than the last. Choose an upgrade and a route after each one, and go as deep as you can.".to_string(),
+                    "The endless rail keeps going until your hull or the network gives out. Each sector ramps up the pressure, with an upgrade and route choice after every clear.".to_string(),
                 ),
                 Mode::ColdStart => pages.push(
-                    "Cold start: a bare skimmer with no rank bonuses or workshop parts, nine sectors with an upgrade and a route choice between them, and one life. It keeps its own board and pays no credits, parts or intel.".to_string(),
+                    "Cold start puts you in a bare skimmer with no rank bonuses or workshop parts across nine sectors and one life, with upgrades and routes between sectors. It keeps its own board and pays no credits, parts or intel.".to_string(),
                 ),
                 Mode::FridayNight => pages.push(
-                    "A Friday night run is three sectors made from tonight's date, the same for every pilot, on a standard skimmer. Salvage comes as cargo crates, worth double.".to_string(),
+                    "Friday night run is three sectors built from tonight's date, the same rail for every pilot on a standard skimmer. Salvage appears as cargo crates worth double.".to_string(),
                 ),
                 _ => pages.push(
-                    "The challenge corridor: six fixed sectors in two minutes, the same every time. Learn it, then chase the best score.".to_string(),
+                    "The challenge corridor is six fixed sectors in two minutes, identical every time. Learn the route and chase a top score.".to_string(),
                 ),
             }
             // The keys are taught by the tutorial and the guided run; a

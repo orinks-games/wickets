@@ -36,7 +36,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
 
     let start = room.step(
         format!(
-            "{} starts the dance after four count-in beats. Start it now.",
+            "{} starts the song after four count-in beats. Press it whenever you are ready.",
             sentence_start(&p)
         ),
         |f: &Floor, _| {
@@ -49,7 +49,8 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
 
     let dance = room.step(
         format!(
-            "Each monster comes up one beat before its move. The zombie: {d} drags. The skeleton: {u} rattles. The mummy: {p} unwraps. Here the music holds for each move, and its key is named. Dance {STEPS} moves."
+            "Each monster steps up one beat before its move. {} dances the zombie's drag, {u} dances the skeleton's rattle, and {p} dances the mummy's unwrap. In the practice room, the music pauses for each move and names its key. Try dancing {STEPS} moves.",
+            sentence_start(&d)
         ),
         |f: &Floor, _| {
             (f.run.dance.tally().hits() >= STEPS || f.run.finished()).then(|| {
@@ -60,7 +61,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
 
     let mut before = None;
     let in_time = room.step(
-        "Now one in time: dance the next move on its beat, before the song stops for it.",
+        "Now try one in time: hit the next move right on its beat before the music pauses for it.",
         move |f: &Floor, _| {
             let t = f.run.dance.tally();
             let on_beat = t.hits() - t.waited;
@@ -78,12 +79,12 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Floor>) -> Lesson {
     Lesson::new(
         ID,
         "Graveyard Shuffle",
-        "Doctor Volt's monster has started a dance craze, and you lead it. Learn in the practice room",
+        "Doctor Volt's monster has sparked a midnight dance craze, and you are leading the graveyard floor. You will warm up in the practice room first, where the music pauses for every move.",
     )
     .step(start)
     .step(dance)
     .step(in_time)
     .outro(format!(
-        "In a real dance the music does not stop. Before a dance, {h} plays every monster with its move. Play starts the first night."
+        "In a real night, the music never stops. Before any song starts, press {h} to preview every monster and its move. Choose Play on the title when you are ready for the first night."
     ))
 }

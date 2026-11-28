@@ -55,7 +55,7 @@ pub const INFO: GameInfo = GameInfo {
     name: NAME,
     category: Category::Seasonal,
     blurb:
-        "Archery over a rooftop sky: shoot drifting paper hearts, in pairs, for Valentine's Day.",
+        "Stand on the rooftops at dusk with Cupid's bow, shooting drifting paper hearts in sweetheart pairs for Valentine's Day.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(event),
@@ -317,7 +317,7 @@ impl TitleGame for Cupid {
             Gate::Off { .. } => "",
         };
         let rooftops = format!(
-            "Six rooftops at dusk, each round busier. Hit enough hearts to go on. {}, furthest {} of {}.{season}",
+            "Climb six rooftops at dusk, each busier than the last, hitting enough hearts to advance. {}, furthest {} of {}.{season}",
             sentence_start(&best_words(ctx, Mode::Rooftops)),
             progress.best_roofs,
             ROOFTOPS.len()
@@ -325,11 +325,11 @@ impl TitleGame for Cupid {
         let moon_open = progress.moonlight_open();
         let moon_help = if moon_open {
             format!(
-                "Endless rounds under the moon, faster each time. {}.",
+                "Endless rounds under the moon, growing faster each time. {}.",
                 sentence_start(&best_words(ctx, Mode::Moonlight))
             )
         } else {
-            "Clear all six rooftops in one evening to open moonlight, endless rounds under the moon.".to_string()
+            "Clear all six rooftops in one evening to unlock Moonlight, endless rounds under the moon.".to_string()
         };
         let moon_said = moon_help.clone();
         vec![
@@ -365,7 +365,7 @@ impl TitleGame for Cupid {
                 Mode::Practice.name(),
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(Field::mode(Mode::Practice)),
             )
-            .help("One slow heart at a time and endless arrows. Nothing is saved. Escape pauses."),
+            .help("Practise with one slow heart at a time and endless arrows. Nothing is saved, and Escape pauses."),
         )
     }
 
@@ -381,12 +381,12 @@ impl TitleGame for Cupid {
                 let pages = notes_pages(ctx);
                 ctx.push(Pages::new(pages));
             })
-            .help("The love notes your arrows have brought down, read a page at a time."),
+            .help("Read the love notes your arrows have brought down, one page at a time."),
             MenuItem::new("Keepsake box", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 let pages = keepsake_pages(ctx);
                 ctx.push(Pages::new(pages));
             })
-            .help("One keepsake for each Valentine's Day you played Valentine's night."),
+            .help("Browse the keepsakes saved from each Valentine's Day you played Valentine's night."),
         ]
     }
 
@@ -416,7 +416,7 @@ impl TitleGame for Cupid {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Best scores, the furthest rooftop, totals and love notes, with your challenge results."
+        "Check your best scores, furthest rooftop, lifetime totals, love notes, and challenge results."
             .to_string()
     }
 
@@ -431,7 +431,7 @@ impl TitleGame for Cupid {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily sky with a twist, three rooftops each week, and a monthly full moon, the same for every player. {}",
+            "Take on a daily sky with a twist, three rooftops each week, and a monthly full moon, shared by every player. {}",
             daily.resets()
         )
     }

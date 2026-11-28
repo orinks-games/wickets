@@ -2,162 +2,158 @@
 
 ## About the game
 
-Tend a garden in rooftop planters. Water plants, remove aphids, prune stems and harvest crops.
+Turn a sunny city rooftop into a living garden that plays music as it grows. Plant seeds in your planters, water thirsty soil, pick off aphids, prune leggy stems, and harvest ripe crops. Every species you raise to bloom adds its own musical part to the garden's song, weaving fresh tunes together as you play.
 
-As plants grow and bloom, they join the garden's song. Each species contributes a different part.
-
-The song changes as you play. The garden's own tune comes round about once a minute, and in between the garden makes up new tunes, playing each one twice. Every plant keeps its own instrument in every tune.
-
-In your own garden, neglected plants wilt and fall silent, but watering brings them back. Overwatering slows growth for a while. You can recover from either mistake and keep tending the garden.
+Nothing is ever lost in your own garden. Wilted plants perk back up with water, waterlogged soil drains on its own, and the garden's main tune returns about once a minute between new melodies it improvises twice each.
 
 ## Moving around
 
-Each step names the planter and what grows in it, for example "Row 1, planter 2: tomato, in bloom, thirsty."
+Each step names the planter and what is growing there, such as "Row 1, planter 2: tomato, in bloom, thirsty."
 
-Every plant grows in its own planter, and S, H and L always say where things are.
+Every plant has its own planter, and S, H, and L can always remind you where everything is.
 
 ## Planting
 
-Space opens the seed packet on an empty planter. Up and Down choose a seed. Enter plants it. Escape plants nothing. A new seed is already a little damp. Keep it watered and it sprouts after part of a day.
+Press Space on an empty planter to open your seed packet, use Up and Down to pick a seed, and press Enter to plant it. Escape closes the packet without planting. A fresh seed starts out a little damp, and keeping it watered helps it sprout after part of a day.
 
-You start with 3 seeds: tomato, squash and bean. Your own garden unlocks 7 more. Seed shed, on the title menu, lists every seed, its part in the song, and what unlocks it.
+You start with 3 seeds: tomato, squash, and bean, and you can unlock 7 more in your own garden. Seed shed on the title menu lists every seed, its musical part, and how to unlock it.
 
 - Tomato: thirsty, and ripens again and again.
 - Squash: a slow grower.
 - Bean: the quickest grower.
 - Sunflower: unlocked by your first harvest.
-- Lavender: happy in dry soil. Unlocked at 3 harvests.
-- Mint: the thirstiest of all. Unlocked at 6 harvests.
-- Strawberry: in bloom, it now and then roots a runner, a sprout of the same variety, in an empty planter beside it. Unlocked at 12 harvests.
-- Chilli: thirsty, quick on sunny days and slow under cloud or rain. A neighbour leaves chilli seeds when you have filled 5 requests.
-- Rose: slow, and aphids land on it half as often, but it gets leggy more often. Comes with the trellis keepsake.
-- Jasmine: its flowers open late in the afternoon and close at dawn, and it sings and counts in the harmony only while they are open. Unlocked by your first chorus of six voices.
+- Lavender: happy in dry soil, unlocked at 3 harvests.
+- Mint: the thirstiest of all, unlocked at 6 harvests.
+- Strawberry: while in bloom, it occasionally roots a runner of the same variety in an empty neighbouring planter. Unlocked at 12 harvests.
+- Chilli: thirsty, quick in sunshine and slow under cloud or rain. A neighbour leaves you chilli seeds after you fill 5 requests.
+- Rose: slow, gets aphids half as often, and gets leggy more often. Arrives with the trellis keepsake.
+- Jasmine: opens its flowers late in the afternoon and closes at dawn, singing and counting toward harmony only while open. Unlocked by your first chorus of six voices.
 
-Once you have found varieties of a seed, its row in the packet says how many kinds you have. Enter on it lists the plain seed and each variety, and Enter plants one.
+Once you discover varieties of a seed, its row in the packet tells you how many kinds you have. Press Enter on it to pick between the plain seed and any variety you have found.
 
 ## How plants grow
 
-A plant goes from seed, to sprout, to growing, to in bloom, to ripe.
+Each plant grows from seed to sprout, then growing, in bloom, and finally ripe.
 
-Tab harvests a ripe plant. It goes back to blooming and ripens again later.
+Press Tab to harvest a ripe plant. It returns to bloom and ripens again later.
 
-Plants only grow while their soil is damp but not waterlogged, and they are free of aphids. A thirsty plant grows at half speed, and so does a leggy one. A seed counts as a plant here: keep it moist, and the game names it when it gets thirsty.
+Plants only grow when their soil is damp without being waterlogged, and free of aphids. A thirsty or leggy plant grows at half speed. Seeds need moisture too, and the game alerts you when one gets thirsty.
 
 ## What plants need
 
-- Thirst. The game names a thirsty plant and its planter. Space waters it.
-- Watering moist soil waterlogs it. The plant stops growing and drops out of the garden song. Each extra watering keeps it soggy for longer. The soil drains by itself, faster on a sunny day, and the game names the plant when it grows again. Water a plant when it is thirsty, not every time you pass it.
-- Reviving. A plant left in bone-dry soil for a while wilts and stops playing. Nothing is lost: water it and it lifts its leaves again.
-- Aphids stop a plant growing. Tab picks them off at its planter.
-- Pruning. A plant in bloom sometimes gets leggy and grows slowly. Tab prunes it.
+- Thirst: when a plant gets thirsty, the game names it and its planter. Press Space to water it.
+- Overwatering: watering soil that is already moist waterlogs it, pausing growth and silencing that plant's part in the song. Extra watering keeps it soggy longer. The soil drains on its own, faster in sunshine, and the game announces when the plant resumes growing. Wait until a plant is thirsty before watering it.
+- Reviving: a plant left in bone-dry soil eventually wilts and falls silent. Nothing is lost: water it and its leaves lift again.
+- Aphids: pests stop a plant from growing. Step to its planter and press Tab to pick them off.
+- Pruning: blooming plants sometimes grow leggy and slow down. Press Tab to prune them.
 
-When something needs you, the game names it and its planter. H points you straight to it.
+Whenever a plant needs your attention, the game names it and its planter, and pressing H points straight to it.
 
 ## Harmony
 
-Different kinds of plant that are in bloom and well watered at the same time make a harmony: two kinds make a two-part harmony, three kinds a three-part harmony, and so on. A thirsty, waterlogged or wilted plant leaves the harmony. Water thirsty or wilted plants, but let waterlogged soil drain. S, for status, says which parts are singing. Six kinds in tune at once make a chorus, and each bigger chorus after that is announced with its number of voices. When every seed in your packet is in tune, it is the full chorus. With all 10 seeds, a ten-voice chorus can only happen toward evening, while the jasmine is open.
+Different species blooming and well watered at the same time create a harmony: two kinds make a two-part harmony, three make a three-part harmony, and so on. A thirsty, waterlogged, or wilted plant drops out of the harmony. Water thirsty or wilted plants, and let waterlogged soil drain. Press S for status to hear which parts are currently singing. Six species in tune at once make a chorus, and each larger chorus is announced by its voice count. When every seed in your packet is in tune together, you reach a full chorus. With all 10 seeds unlocked, a ten-voice chorus can only happen toward evening while the jasmine is open.
 
 ## Varieties and crosses
 
-In your own garden, two different plants side by side can cross. When you harvest a ripe plant beside a different plant that is in bloom or ripe, the two may cross and leave a packet of new seeds. The neighbouring planter can be ahead, behind, left or right. A different plant can be another species or another variety of the same one. A plant with no different neighbour now and then throws new seeds by itself.
+In your own garden, two different plants sitting side by side can cross. When you harvest a ripe plant next to a different plant that is blooming or ripe, they may cross and leave a packet of new seeds. Neighbours count ahead, behind, left, or right, and can be another species or another variety of the same species. Even a plant with no different neighbour occasionally throws new seeds on its own.
 
-The new seeds are the harvested plant's species, with traits from both parents and sometimes a new one. There are four traits.
+The new seeds belong to the harvested plant's species, inheriting traits from both parents and sometimes gaining a new one. Four traits can vary:
 
-- Instrument: each species can play its part on three instruments. Tomato: kalimba, marimba or music box. Squash: upright bass, finger bass or tuba. Bean: plucked strings, harp or banjo. Sunflower: flute, clarinet or ocarina. Lavender: glockenspiel, celesta or vibraphone. Mint: glass pad, string pad or choir. Strawberry: mandolin, guitar or harpsichord. Chilli: handpan, xylophone or koto. Rose: cello, French horn or oboe. Jasmine: glass harmonica, theremin or singing bowl.
-- Thirst: thirsty plants dry out faster than plain ones, and hardy plants slower.
-- Pace: quick plants grow faster. Slow plants grow slower, but aphids land on them less often.
-- Double harvests: half the harvests of these plants count twice.
+- Instrument: every species can play on three instruments. Tomato: kalimba, marimba, or music box. Squash: upright bass, finger bass, or tuba. Bean: plucked strings, harp, or banjo. Sunflower: flute, clarinet, or ocarina. Lavender: glockenspiel, celesta, or vibraphone. Mint: glass pad, string pad, or choir. Strawberry: mandolin, guitar, or harpsichord. Chilli: handpan, xylophone, or koto. Rose: cello, French horn, or oboe. Jasmine: glass harmonica, theremin, or singing bowl.
+- Thirst: thirsty plants dry out faster than plain ones, while hardy plants hold moisture longer.
+- Pace: quick plants grow faster. Slow plants take longer, but aphids bother them less often.
+- Double harvests: half of the harvests from these plants count twice.
 
-Each mix of traits has its own name, such as Copper Moon tomato. The name's first word comes from thirst and pace, and its second from the instrument and double harvests. A plain seed has neither. Every species has 54 varieties, 540 in all, and a cross of two of your varieties can turn up ones you have not found.
+Each trait mix has its own name, such as Copper Moon tomato. The first word comes from thirst and pace, and the second from instrument and double harvests, while plain seeds have neither. Every species has 54 varieties, making 540 in total, and crossing two varieties can turn up new ones.
 
-When you find a new variety, the game names it and its traits. It goes into your seed packet straight away. Harvest one variety 5 times and it becomes an heirloom.
+Whenever you discover a new variety, the game announces its name and traits and adds it straight to your seed packet. Harvest the same variety 5 times to turn it into an heirloom.
 
-The seed shed, on the title menu, lists every variety you have found under Varieties found. Enter on one plays its part. Varieties are kept even if you start your garden over. Challenge gardens grow plain seeds only, and nothing crosses there.
+Seed shed on the title menu lists every variety you have found under Varieties found, and pressing Enter on any variety plays its musical part. Your varieties stay even if you start your garden over. Challenge gardens use plain seeds only and never cross.
 
 ## Stars and keepsakes
 
-You earn a star for each new variety, each heirloom and each neighbour's request you fill. Stars unlock keepsakes for your own rooftop. Each new keepsake is named when it arrives.
+You earn a star for every new variety you discover, every heirloom you raise, and every neighbour's request you fill. Stars unlock keepsakes for your rooftop, each announced as it arrives:
 
 - Bird bath, at 3 stars: sparrows visit and eat some aphids before they settle.
-- Rain barrel, at 8 stars: each rain shower fills it, and it then waters the next 3 plants that get thirsty.
+- Rain barrel, at 8 stars: every rain shower fills it so it can water the next 3 thirsty plants for you.
 - Beehive, at 15 stars: plants cross more often.
-- Trellis, at 25 stars: plants in bloom get leggy half as often, and rose seeds come with it.
+- Trellis, at 25 stars: blooming plants get leggy half as often, and rose seeds arrive with it.
 - Compost bin, at 40 stars: new seeds sprout twice as fast.
-- Wind chimes, at 60 stars: on breezy days, pollen blows further, so a plant can cross with one at a corner or two planters away.
-- String lights, at 85 stars: each evening the lights come on, and plants grow faster under them until morning.
-- Cold frame, at 110 stars: C sets it over the planter you stand at. The soil under it never dries out. C on another planter moves it.
-- Swap board, at 140 stars: neighbours can ask for up to 3 things at once, and every request you fill brings gift seeds.
-- Potting bench, at 180 stars: once a garden day, press P on a plant in bloom or ripe to select it. Press P on a different variety in bloom or ripe to cross the two by hand and try for seeds you have not found.
+- Wind chimes, at 60 stars: on breezy days pollen carries farther, letting plants cross diagonally or two planters away.
+- String lights, at 85 stars: the lights switch on each evening, helping plants grow faster until morning.
+- Cold frame, at 110 stars: press C to place it over your current planter so its soil never dries out, or press C on another planter to move it.
+- Swap board, at 140 stars: neighbours can post up to 3 requests at once, and every request you fill brings gift seeds.
+- Potting bench, at 180 stars: once per garden day, press P on a blooming or ripe plant to select it, then press P on a different blooming or ripe variety to cross them by hand for new seeds.
 
-Keepsakes, in the seed shed, lists them all and the stars still needed. Keepsakes are kept if you start your garden over.
+Keepsakes in the seed shed lists every keepsake and how many stars you still need. Keepsakes stay even if you start your garden over.
 
 ## Neighbours' requests
 
-People in your building ask for things from your garden, for example "Rosa wants beans from a hardy plant." New requests come with new garden days, up to 2 at a time, or 3 with the swap board. Harvest a plant that fits and the neighbour thanks you: you earn a star, and now and then they leave you seeds of a variety you have not found.
+Neighbours in your building send up requests for your crops, such as "Rosa wants beans from a hardy plant." Fresh requests arrive on new garden days, up to 2 at once, or 3 with the swap board. Harvest a matching plant and your neighbour thanks you with a star, and sometimes leaves seeds of a variety you have not found yet.
 
-N, in the garden, reads the open requests. S, pressed twice, says how many there are. Requests, in the seed shed, reads them too.
+Press N in the garden to hear open requests, press S twice for the count, or check Requests in the seed shed.
 
 ## Days and weather
 
-A garden day lasts about a minute and a half of play. Days only pass while you are in the garden. The garden is saved when you leave and stays as you left it.
+One garden day lasts about a minute and a half of play. Time passes only while you are in the garden, and your rooftop saves automatically whenever you leave.
 
-Each morning brings new weather.
+Each morning brings fresh weather:
 
-- Sunny: the soil dries quickly.
-- Cloudy: the soil stays damp longer, and a shower may come.
+- Sunny: soil dries quickly.
+- Cloudy: soil stays damp longer, and a shower may pass through.
 - Breezy: the wind keeps aphids away.
 - Showery: a rain shower is on its way.
 
-Rain waters every planter while it lasts and revives wilted plants.
+Rain waters every planter while it falls and revives wilted plants.
 
 ## Growing your garden
 
-Your garden starts with two rows of three planters, a squash already growing and a tomato seed just sown. At 4 harvests a neighbour lends you a third row, nearest you. At 9 harvests a fourth planter joins the right of every row. New seeds unlock along the way.
+Your rooftop starts with two rows of three planters, a squash already growing, and a tomato seed freshly sown. At 4 harvests a neighbour lends you a third row nearest you, and at 9 harvests a fourth planter joins the right of every row. New seeds unlock as you go.
 
-Play on the title menu opens your garden and reads its day, plants and harvests, and your fullest harmony. Records, on the title menu, reads your bests, your seeds, your collection and your challenge results.
+Play on the title menu opens your garden and reads its current day, plant count, harvests, and fullest harmony. Records on the title menu gives your bests, unlocked seeds, collection totals, and challenge results.
 
-Start the garden over, near the end of the title menu, clears your garden after asking first. Your best records, varieties, keepsakes and requests stay. Before you have a garden, the row says there is nothing to clear.
+Start the garden over near the bottom of the title menu clears your planters after asking to confirm. Your best records, varieties, keepsakes, and filled requests stay safe. Before you have started a garden, the row says there is nothing to clear.
 
 ## Calendar events
 
-Two touches of the real calendar visit your own garden. Neither changes how anything grows, thirsts or scores, and challenge gardens never see them.
+Two real-world calendar touches visit your own garden. Neither alters growth, thirst, or scoring, and challenge gardens never see them.
 
-- Pumpkin seeds: from 22 September to Thanksgiving, the seed packet has a pumpkin, after your other seeds. A pumpkin grows exactly like a squash and takes the squash's part in the song, but sings it as a low bassoon. It counts as the squash part in a harmony. A pumpkin you plant stays a pumpkin after the season ends, but once it ends the packet has no more pumpkin seeds, even if your garden was open when it closed. S says when pumpkin seeds are in the packet.
-- Sunday bells: on the first Sunday of every month, each garden evening the church down the street rings its bells for evensong, in place of the evening tune. The first time they are named, and S mentions them.
+- Pumpkin seeds: from 22 September through Thanksgiving, pumpkin seeds appear at the end of your seed packet. A pumpkin grows just like a squash and takes the squash part in the song on a low bassoon, counting as squash in a harmony. Any pumpkin you plant stays a pumpkin after the season ends, though pumpkin seeds leave the packet once the season closes, even if your garden was open. S mentions when pumpkin seeds are in your packet.
+- Sunday bells: on the first Sunday of every month, the church down the street rings evensong bells each garden evening instead of the evening tune. They are named the first time, and S mentions them.
 
-Sound check plays the pumpkin's part and the Sunday bells.
+Sound check plays both the pumpkin's part and the Sunday bells.
 
 ## Challenges
 
-Challenges are separate small gardens, the same for every player, grown from the first 6 seeds only, each with a gentle goal and a twist announced before you start. Days pass the same way. If you choose Leave the challenge on the pause menu, your challenge garden is kept until the challenge changes.
+Challenges give every player the same small garden grown from the first 6 seeds only, paired with a gentle goal and a twist announced before you start. Days pass the same way, and choosing Leave the challenge from the pause menu keeps your challenge garden until the next challenge rotates in.
 
-- Daily: 6 planters, 4 kinds of seed and 4 days to grow a three-part harmony. Each day has its own twist.
-- Weekly: 9 planters and 8 days to harvest 5 tomatoes, with a twist for the week.
-- Monthly: the rooftop festival. 12 planters, the first 6 seeds, 4 sprouts already up, and 10 days to bring all 6 voices into one full chorus.
+- Daily: 6 planters, 4 kinds of seed, and 4 days to reach a three-part harmony, with a daily twist.
+- Weekly: 9 planters and 8 days to harvest 5 tomatoes, with a weekly twist.
+- Monthly: the rooftop festival, with 12 planters, the first 6 seeds, 4 sprouts already up, and 10 days to bring all 6 voices into a full chorus.
 
-There are four twists. Heat wave: the soil dries much faster and no rain comes. Drizzly days: a shower every day, but slower growing. Aphid season: far more aphids. Green thumb: faster growing, and a little more thirst.
+Four twists rotate through challenges. Heat wave dries soil much faster with no rain. Drizzly days brings a shower every day alongside slower growth. Aphid season brings far more aphids. Green thumb speeds up growth with a bit more thirst.
 
-When the goal is met, the garden celebrates and the challenge ends. If the days run out first, the garden closes for the season and your score still counts. Score: 5 for each harvest, 2 for each pest picked, 5 for each part of your fullest harmony, and 100 for meeting the goal, plus 10 for every day left over. Your best and your streak come at the end, and in the challenges menu. After the results, a short menu offers Play this challenge again, Hear the results again, and Back to the challenges. Escape does the same as Back to the challenges.
+Reach the goal and the garden celebrates as the challenge finishes. If the days run out first, the garden closes for the season and your score still counts. Scoring gives 5 points per harvest, 2 per pest picked, 5 per part of your fullest harmony, and 100 for meeting the goal, plus 10 for each day to spare. Your best and streak appear at the end and in the challenges menu. On the results screen you can choose Play this challenge again, Hear the results again, or Back to the challenges, and Escape also returns to the challenges.
 
 ## Sound check
 
-Sound check, on the title menu, plays the gameplay cues and each plant's part in the song.
+Sound check on the title menu plays the gameplay cues and every plant's part in the song.
 
 ## Controls
 
 These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
-- Arrow keys: step between planters. Up and Down change row. Left and Right change planter. Row 1 is the far row, ahead of you, and planter 1 is on the left.
-- Space: water the plant under you. Watering soil that is already moist waterlogs it. On empty soil, Space opens your seed packet so you can plant something.
-- Tab: tend the plant under you. It picks off aphids first, then harvests a ripe plant, then prunes leggy stems.
-- Delete or Backspace: pull the plant up and add it to the compost, to make room for something else. You are asked first.
-- Enter: sit on the bench, or get up again. While you sit, time passes 6 times faster, and you stand up as soon as a plant needs you.
+- Arrow keys: step between planters. Up and Down switch rows, and Left and Right move along the row. Row 1 is the far row ahead of you, and planter 1 is on the left.
+- Space: water the plant at your planter, or open your seed packet on empty soil. Watering soil that is already moist waterlogs it.
+- Tab: tend the plant at your planter, picking off aphids first, then harvesting a ripe crop, then pruning leggy stems.
+- Delete or Backspace: pull up a plant and compost it to make room for another, after asking to confirm.
+- Enter: sit on the bench or stand back up. Sitting speeds time up 6 times, and you stand automatically as soon as a plant needs you.
 - L: list every planter, row by row.
-- N: read the neighbours' requests.
-- C: set the cold frame over this planter, once you have it.
-- P: select a plant for the potting bench, once you have it.
-- S: status. What needs you, any rain, and the planter under you. Press it again straight away for the day, the time of day, the weather, the harmony and your harvests.
-- R: repeat the last thing said.
-- H: hint. Where the nearest job is and which key does it.
-- Escape: pause, with Resume, Settings, Help, Back to the title and Back to the lobby. During a challenge, Back to the title is Leave the challenge. Your garden is saved when you leave.
-- F1: what the keys do on the current screen.
+- N: read open neighbours' requests.
+- C: set or move the cold frame onto your current planter, once unlocked.
+- P: select a plant for the potting bench, once unlocked.
+- S: check status, giving what needs you, any rain, and your current planter. Press it again right away for the day, time of day, weather, harmony, and harvests.
+- R: repeat the last line spoken.
+- H: get a hint pointing to the nearest job and the key to do it.
+- Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title becomes Leave the challenge. Your garden saves when you leave.
+- F1: hear what the keys do on the current screen.

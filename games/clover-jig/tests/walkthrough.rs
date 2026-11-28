@@ -60,7 +60,7 @@ fn a_first_visit_starts_on_the_tutorial() {
     h.press(Key::Return);
     assert!(spoke(
         &h,
-        "You dance at a village ceili, and a caller calls your steps."
+        "You are on the floor at the village ceili, where the caller shouts each move a beat ahead of the music."
     ));
     assert_eq!(h.app.top_name(), "lesson");
 }
@@ -107,12 +107,12 @@ fn the_tutorial_teaches_in_the_practice_room() {
     assert!(spoke(&h, "4 steps danced."));
     assert!(spoke(
         &h,
-        "Now the tune goes on, as in a real dance, after three count-in beats."
+        "Now the tune keeps moving like a real dance, after three count-in beats."
     ));
-    assert!(spoke(&h, "That was spot on: 3 points."));
+    assert!(spoke(&h, "Spot on: 3 points."));
     assert!(!spoke(&h, "Missed."), "no call is lost under the line");
     assert!(
-        spoke(&h, "Tutorial done. Before a dance, H plays every step with its call. Play starts the first set."),
+        spoke(&h, "Tutorial done. Before any dance starts, press H to preview every step with its call. Choose Play on the title when you are ready for the first set."),
         "{:?}",
         &h.spoken()[h.spoken().len().saturating_sub(8)..]
     );
@@ -558,7 +558,7 @@ fn ceili_night_opens_on_the_day_with_the_band_and_the_clover() {
     goto(&mut h, "Ceili night");
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), "pages");
-    assert!(spoke(&h, "Ceili night. The village hall is full"));
+    assert!(spoke(&h, "Ceili night. The village hall is packed"));
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), TITLE_NAME, "the briefing backs out");
 

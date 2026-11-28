@@ -48,9 +48,8 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, glade: Live<WalkScreen>) -> Lesson {
 
     let approach = glade.step(
         format!(
-            "{} steps forward and {d} steps back; {l} and {r} turn you. Birds sing from their true place. Walk toward the chickadee until it sings to you.",
+            "{} steps forward and {d} steps back, while {l} and {r} turn you. Every bird sings from its true spot around you. Walk toward the chickadee until it sings to you.",
             sentence_start(&u),
-            l = sentence_start(&l),
         ),
         |s: &WalkScreen, _| {
             matches!(s.walk.phase, Phase::Listening(_) | Phase::Answering(..))
@@ -59,7 +58,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, glade: Live<WalkScreen>) -> Lesson {
     );
 
     let answer_prompt = format!(
-        "When the song ends, whistle it back note for note. {} is low, {p} is middle, {u} is high. {} makes the bird sing once more.",
+        "Once the chickadee finishes, whistle its song back note for note. {} is low, {p} is middle, and {u} is high. {} makes the bird sing again.",
         sentence_start(&d),
         sentence_start(&rep)
     );
@@ -77,11 +76,11 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, glade: Live<WalkScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Birdsong Trail",
-        "You walk a trail at dawn, and answer birds' songs to befriend them. You cannot fail, and there is no clock. Learn in the practice glade",
+        "Walk a trail at dawn and answer birds' songs to befriend them and fill your field guide. There is no clock, and you cannot fail. Try it out in the practice glade.",
     )
     .step(approach)
     .step(answer)
     .outro(format!(
-        "On a trail, {p} names the birds nearest you, and {h} says which way the nearest new bird is. Each trail ends at a landmark you can walk toward, or press {tab} twice to head home. The birds follow the real seasons."
+        "Out on a trail, {p} names the nearest birds around you, and {h} points you toward the nearest new bird. Walk to the landmark at the end of the trail to finish, or press {tab} twice to head home. The birds change with the real seasons."
     ))
 }

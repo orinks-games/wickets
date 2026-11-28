@@ -45,7 +45,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Action,
-    blurb: "Bowl ten frames on lane nine after the alley closes.",
+    blurb: "Bowl ten frames on lane nine after the alley closes, chasing strikes, spares and a 300.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(pumpkin::event),
@@ -182,7 +182,7 @@ impl TitleGame for MidnightLanes {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Plays each sound you need on the lane.".to_string()
+        "Preview every sound you need on the lane.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -192,7 +192,7 @@ impl TitleGame for MidnightLanes {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily game, a weekly set of spares and a monthly series, the same lane for every player. {}",
+            "A daily game, a weekly set of spares and a monthly series, on a shared lane identical for every player. {}",
             daily.resets()
         )
     }

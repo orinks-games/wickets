@@ -46,7 +46,7 @@ pub const INFO: GameInfo = GameInfo {
     name: "Tide Pools",
     category: Category::Cozy,
     blurb:
-        "Wander the beach at low tide, gather shells and creatures, and stock your own aquarium.",
+        "Wander rocky tide pools at low tide, coax out shy creatures, and stock your own home aquarium.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -281,7 +281,7 @@ impl TitleGame for TidePools {
             MenuItem::new("Practice pools", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 outing::start(ctx, Mode::Practice)
             })
-            .help("Three sheltered pools with no tide, to learn leaning in and gathering."),
+            .help("Three sheltered pools with no tide, ideal for practicing leaning in and gathering."),
         )
     }
 
@@ -291,7 +291,7 @@ impl TitleGame for TidePools {
             format!("Your aquarium, {kinds} of {} kinds", Species::ALL.len()),
             |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(AquariumScreen::new()),
         )
-        .help("Visit everything you have gathered.")]
+        .help("Walk along your home aquarium and visit every creature you have gathered.")]
     }
 
     fn lesson(&mut self, ctx: &mut Ctx<Parlor>) -> parlor_core::Lesson {
@@ -303,7 +303,7 @@ impl TitleGame for TidePools {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your aquarium's tally, your best score at each shore, and your challenge results."
+        "Review your aquarium tally, your best score at each shore, and your challenge results."
             .to_string()
     }
 

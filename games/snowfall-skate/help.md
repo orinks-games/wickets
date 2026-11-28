@@ -2,94 +2,96 @@
 
 ## About the game
 
-You skate across a frozen pond at night while the snow comes down. Lanterns light ahead of you one at a time, each in one of five lanes across the ice. You take a lantern by being in its lane as it reaches you.
+Glide across a frozen pond at night as lanterns light up ahead in five lanes across the ice. Lean from lane to lane to catch each lantern as it arrives, stringing them into a line and landing spins in the open stretches between them.
 
-Snow settles on the ice as you skate, and the night ends when it covers the ice. Each lantern you take keeps the ice clear a little longer. Nothing knocks you down: drifts slow you and thin ice makes you stumble, but the skate goes on.
+Snow settles across the ice as you go, and every lantern sweeps a patch clear to keep the night going. Drifts slow you and thin ice makes you stumble, but nothing knocks you down.
 
 ## Leaning and lanes
 
-Space pushes off. Hold Left or Right to lean that way, and you glide across the ice while you hold. Let go and you skate straight on. The ice has five lanes: far left, left, the middle, right and far right. You can be anywhere between the banks, and a lantern counts as taken if you are close to its lane.
+Press Space to push off. Hold Left or Right to lean that way and glide across the ice, and let go to skate straight on. The ice is laid out in five lanes: far left, left, the middle, right, and far right. You can skate anywhere between the banks, and you take a lantern as long as you are close to its lane.
 
 ## Lanterns and your line
 
-A lantern lights a little way ahead of you and comes closer until it passes. Be in its lane as it passes to take it. A lantern you miss goes by, and your line starts again.
+Each lantern lights ahead of you and draws closer until it reaches you. Be in its lane as it passes to take it. If a lantern slips by, your line resets to 0.
 
-Lanterns taken one after another make a line. The first in a line is worth 1 point, the second 2, and so on up to 5 points for every lantern after the fourth.
+Taking lanterns one after another builds a line. The first lantern in a line scores 1 point, the second scores 2, and the value climbs up to 5 points for every lantern from the fifth onward.
 
 ## The snow
 
-The snow starts light and settles faster than you can stop it. Each lantern you take sweeps some of the ice clear again. When the snow covers the ice, the night is over, and the results follow.
+The snow begins lightly and settles faster than you can hold it off forever. Every lantern you take sweeps part of the ice clear again. Once snow covers the whole pond, the skate ends and your results follow.
 
-The practice skate, the lantern skate, the Frost Fair and the midnight skate have no settling snow. Each has its own end instead.
+The practice skate, the lantern skate, the Frost Fair, and the midnight skate have no settling snow. Each of those runs ends in its own way instead.
 
 ## Drifts and thin ice
 
-Drifts of snow lie on the ice between some lanterns. Skate into one and you slow down for a moment, lean more slowly, and your line starts again.
+Drifts of snow sit on the ice between some lanterns. Skating into a drift slows you down briefly, makes leaning sluggish, and breaks your line.
 
-On the mill pond and the long lake, some patches of ice are thin. Skate onto thin ice and you stumble for a moment. You cannot lean while stumbling. Your line starts again, and more snow settles on the ice. A drift or thin patch always comes up in time to lean round it. H says which way to lean.
+On the mill pond and the long lake, patches of thin ice appear as well. Skating onto thin ice makes you stumble for a moment so you cannot lean, resets your line, and lets extra snow settle on the ice. Every drift and thin patch gives you time to lean around it, and H tells you which way to go.
 
 ## Your partner
 
-On the ponds and at the Frost Fair, your partner skates with you, a little ahead. They skate toward each lantern and round every drift and patch of thin ice. If you are unsure where to go, follow your partner.
+On the ponds and at the Frost Fair, your partner skates a little ahead of you. They curve toward each lantern and steer clear of every drift and patch of thin ice. Whenever you are unsure where to lean, follow your partner.
 
 ## Spins
 
-Between lanterns, you can spin. Hold Space and the spin starts to wind. Once it is ready, let go of Space to land it. A landed spin is worth points: 3 on clear ice, and more as the snow lies deeper, up to 5.
+You can spin in the open ice between lanterns. Hold Space to wind up a spin, and let go of Space as soon as it is ready to land it. A clean spin scores 3 points on clear ice and climbs up to 5 points as the snow gets deeper.
 
-Let go too soon and it is only a stride, worth nothing. Hold it too long and you wobble, which breaks your line. You cannot lean while you spin, so spin when the next lantern is still far off. You can land one spin for each lantern that passes.
+If you let go too early, you take an ordinary stride worth nothing. If you hold too long, you wobble and break your line. You cannot lean while spinning, so save your spins for when the next lantern is still well ahead. You can land one spin for each lantern that passes.
 
 ## The ponds and stars
 
-Play, on the title, skates the newest pond without a star. Choose a pond lists all three with their stars and bests. A star on one pond opens the next.
+Play on the title launches the newest pond where you have not earned a star yet. Choose a pond lists all three ponds with your stars, best scores, and score targets, and earning a star on one pond opens the next.
 
-- The village pond: drifts here and there, and no thin ice. Open from the start.
+- The village pond: occasional snow drifts and no thin ice. Open from the start.
 - The mill pond: thin ice joins the drifts.
-- The long lake: lanterns come faster, and the patches are wider.
+- The long lake: lanterns arrive faster and hazard patches are wider.
 
-Each pond has three score targets, one for each star. Choose a pond reads its targets.
+Each pond has three score targets, one for each star.
 
 ## The lantern skate
 
-Every evening, from 4 in the afternoon to 9 at night by your clock, the lantern skate is lit. Its lanterns light in pairs, one just after the other, and you take the one that lit first. Taking the second breaks your line. The lanterns are the same for every player that day. Taken in order, the lanterns that lit first play the day's tune. The skate ends after its last pair.
+Every evening from 4 in the afternoon to 9 at night by your clock, the lantern skate is lit. Lanterns light in pairs one right after the other, and your job is to take the lantern that lit first. Taking the second lantern breaks your line.
+
+Every player skates the exact same pairs each day. Taking the first lantern of every pair in order plays the day's tune, and the skate ends after the final pair.
 
 ## The Frost Fair
 
-On the winter solstice, the river freezes and the fair sets up on the ice. The Frost Fair is a long skate down the river, past the stalls along the banks, with your partner beside you. It ends at the far bridge.
+On the winter solstice, the river freezes solid and the Frost Fair sets up on the ice. You skate a long course down the river past the stalls along both banks with your partner beside you, finishing under the far bridge.
 
-A star at the Frost Fair on its day earns that winter's ribbon. Once you have skated it on its day, the fair stays open for the rest of that winter.
+Earning a star at the Frost Fair on its day awards that winter's ribbon. Once you skate it on the solstice, the fair stays open for the rest of that winter.
 
 ## The midnight skate
 
-On New Year's Eve, from 11 at night to 1 in the morning by your clock, the midnight skate opens. Skate the village pond until midnight, when the skate stops for the fireworks.
+On New Year's Eve, from 11 at night to 1 in the morning by your clock, the midnight skate opens. Skate the village pond until midnight, when the skate pauses for the fireworks.
 
 ## Keeping the game all year
 
-Snowfall Skate is listed in Seasonal games from 27 November through the winter, until the end of February, and stays two more weeks, through March 14. Start a skate or a practice in that time and the game is yours to keep, even if you leave early: after the winter it stays in the Cozy games. Earlier play counts too, and stars still open later ponds. The Frost Fair returns the next winter.
+Snowfall Skate appears in Seasonal games from 27 November through the end of February, and stays for two more weeks through March 14. Start any skate or practice during that season and the game is yours to keep, even if you leave early. After winter ends, it moves to Cozy games, earlier progress carries over, and stars still unlock later ponds. The Frost Fair returns next winter.
 
 ## Practice and the tutorial
 
-The tutorial teaches leaning, lanterns, drifts and spins on a slow pond. The practice skate is the village pond with no snow and no score, and every lantern's lane is named as it lights. Use it to learn the lanes.
+The tutorial walks you through leaning, lanterns, drifts, and spins on a slow pond. The practice skate lets you glide across the village pond with no settling snow and no score, naming every lantern's lane as it lights so you can get comfortable with the five lanes.
 
 ## Challenges
 
-Challenges are the same ice for every player in the period. Tonight's pond is the mill pond, with drifts and thin ice, and changes every day. Thin ice week is the long lake, with thin ice all the way, and changes every week. The midwinter skate is the long lake in heavy snow, where each lantern keeps less of the ice clear, and changes every month.
+Challenges put every player on the exact same ice for the period. Tonight's pond is a daily run on the mill pond with drifts and thin ice. Thin ice week is a weekly run on the long lake with thin ice throughout. Midwinter skate is a monthly run on the long lake in heavy snow, where each lantern clears less ice.
 
 ## The status key
 
-S gives nearby hazards, the next lantern's lane, whether a spin is ready, and where you are. Press S again straight away for your score, your line and how deep the snow lies.
+Press S during a skate to check nearby hazards, the next lantern's lane, whether a spin is ready, and where you are on the ice. Press S again right away for your score, your current line, and how deep the snow lies.
 
 ## Sound check
 
-Sound check, on the title, plays the lanterns, obstacles, partner and spin cues. Each row explains the cue and plays it as you would hear it on the ice.
+Open Sound check from the title to preview the lanterns, obstacles, your partner, and spin cues. Select any row to play the cue in its place on the ice.
 
 ## Controls
 
 These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
-- Space: push off. Once away, hold it to spin, and let go once the spin is ready.
-- Left and Right: hold to lean that way.
-- S: the status. Press it again straight away for more.
-- H: a hint on where to lean. Before you push off, it plays what you will meet on the ice.
-- R: repeat the last thing said.
-- F1: help.
-- Escape: pause.
+- Space: push off. Once you are moving, hold Space to wind a spin and let go when it is ready.
+- Left and Right arrows: hold to lean across the ice.
+- S: check your status. Press S again right away for your score, line, and snow depth.
+- H: get a hint on which way to lean. Before pushing off, H previews what you will meet on the ice.
+- R: repeat the last spoken line.
+- F1: check what the keys do on the current screen.
+- Escape: pause the skate.

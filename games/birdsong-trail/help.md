@@ -2,120 +2,121 @@
 
 ## About the game
 
-Walk toward a bird until it sings to you. Whistle its song back note for note to add it to your field guide.
+Step onto a trail at dawn and follow the birdsong around you. Walk up to a bird until it sings to you, then whistle its song back note for note to befriend it and add it to your field guide.
 
-You cannot fail, and there is no clock. A walk ends when you reach the trail's end or head home. The songs are made for the game from three notes. They are not recordings of real birds.
+There is no clock, and you cannot fail. A walk ends whenever you reach the landmark at the trail's end or choose to head home. Each song is made for the game from three notes, rather than recordings of real birds.
 
 ## Finding your way
 
-Left and Right turn you one eighth of a circle, and each turn names the way you face: north, north-east, east and so on. The trail runs north from where you start.
+Left and Right turn you one eighth of a circle, naming the compass direction you face: north, north-east, east, and so on. Every trail runs north from your starting point.
 
 Every bird sings from its true place around you.
 
-Each trail ends at a landmark: a brook in the woodland, wind chimes on the meadow gate, frogs by the marsh's bird hide, and the weir on the river. Walk toward it to finish.
+Each trail finishes at a landmark: a brook in the woodland, wind chimes on the meadow gate, frogs by the marsh's bird hide, and the weir on the river. Walk toward the landmark to end your walk.
 
 ## Walking
 
-Up takes a step forward. Down takes a step back. Hold the key to keep walking. Your footsteps do not disturb the birds.
+Up steps forward and Down steps back. Hold either key to keep walking. Your footsteps never scare the birds away.
 
-The game says when you leave the path and when you come back to it. Brambles, a hedge, deep reeds or the river's edge stop you at the sides of the trail, and the game says which way the path is.
+You are told whenever you step off the path or return to it. Brambles, a hedge, deep reeds, or the river's edge block the sides of the trail and tell you which way the path lies.
 
 ## Meeting a bird
 
-Walk toward a song. When you are within a few steps, the bird notices you and sings its song to you alone. The other birds go quiet while it sings.
+Walk toward a song. Once you are within a few steps, the bird notices you and sings its song to you alone while the other birds fall silent.
 
-Space, when no bird is singing to you, names the three birds nearest you, where they are and how far, and the trail's end. H names the nearest bird you have not befriended, where it is, and how to turn to face it.
+When no bird is singing to you, Space names the three birds closest to you with their directions and distances, plus the trail's end. H points you to the nearest bird you have not befriended yet and tells you how to turn toward it.
 
 ## Answering a song
 
-Your turn: Down is low, Space middle, Up high. Songs are 2 to 5 notes.
+When it is your turn, Down whistles low, Space whistles middle, and Up whistles high. Songs are 2 to 5 notes long.
 
-If your answer matches, you befriend the bird. Otherwise, the bird sings again. You can try as often as you like. After two misses, the game names its notes.
+Match the notes to befriend the bird. If you miss, the bird sings again and you can try as many times as you like. After two misses, its notes are named for you.
 
-While a bird waits for your answer, R makes it sing again, and H names its notes, such as low, high, middle. Turning away or stepping off leaves the bird. Walk a little way off and come back, and it sings to you again.
+While a bird waits for your answer, R asks it to sing again, and H names its notes, such as low, high, middle. Turning away or stepping off leaves the bird. Walk a little way off and return, and it sings to you again.
 
-Turn on Spoken call-outs in Settings, from the title or the pause menu, to have the notes of every song named after it.
+Turn on Spoken call-outs in Settings, from the title or the pause menu, to have every song's notes named right after the bird sings.
 
 ## Seasons
 
-The birds follow the real calendar, by the seasons of the northern hemisphere.
+The birds follow the real calendar, matching the seasons of the northern hemisphere.
 
-In spring the migrants arrive: swallows, warblers, the chiffchaff and the cuckoo. They sing through the summer and leave in autumn. Winter brings visitors from the north, such as juncos, waxwings, redwings and snow buntings. In winter the trails have fewer birds, longer gaps between songs, and snow underfoot.
+In spring the migrants arrive: swallows, warblers, the chiffchaff, and the cuckoo. They sing through the summer and head south in autumn. Winter brings northern visitors such as juncos, waxwings, redwings, and snow buntings, with fewer birds, longer gaps between songs, and snow underfoot.
 
-At the start of a walk, the game says which bird is new for the season, or which has gone.
+At the start of a walk, you are told which bird is new for the season or which has left.
 
 ## The trails
 
-There are four trails. Each is a habitat with its own birds.
+There are four trails, each a distinct habitat with its own birds.
 
 - Woodland trail: open from the start.
-- Meadow trail: opens when your field guide holds 4 kinds of bird.
+- Meadow trail: opens once your field guide holds 4 kinds of bird.
 - Marsh trail: opens at 9 kinds of bird.
 - Riverside trail: opens at 15 kinds of bird.
 
-A walk holds 6 birds in spring and summer, 5 in autumn and 4 in winter. Birds with a song you have not learned yet come first.
+A walk has 6 birds in spring and summer, 5 in autumn, and 4 in winter. Birds with a song you have not learned yet show up first.
 
 ## The field guide
 
-Every bird you befriend goes into your field guide. Each singing bird has 3 songs to learn: its signature song first, then two variations, one each time you meet it again.
+Every bird you befriend goes into your field guide. Each singing bird has 3 songs to learn: its signature song first, followed by two variations, one each time you meet it again.
 
-Read the guide from the Field guide row on the title. Each bird's page plays its song and reads how its song sounds, a line about the bird, how many songs you have learned, and where you first met it. The last row says how many birds are still to meet, and where to look.
+Open Field guide from the title to browse your birds. Each entry plays the bird's song, describes it, shares a line about the bird, and notes how many songs you have learned and where you first met it. The last row tells you how many birds remain and where to look.
 
 ## Special walks
 
-Some days of the bird year open a special walk, on the Special walk row of the title. On other days the row is locked, and its help says which walk is next and how many days away it is. Each day counts from the day before to the day after, so it opens in every time zone.
+Special days of the bird year open a special walk on the Special walk row of the title. On other days that row is locked, and its help says which walk is next and how many days away it is. Each window runs from the day before to the day after, so it opens in every time zone.
 
 - Dawn chorus, on International Dawn Chorus Day, the first Sunday in May: every bird of the season sings at once, and you pick them out one by one.
-- Spring migration and autumn migration, on the spring and autumn equinoxes: flocks of geese, cranes and swans fly over, and you count each flock.
+- Spring migration and autumn migration, on the spring and autumn equinoxes: flocks of geese, cranes, and swans fly overhead, and you count each flock.
+
 The migrating flocks can only be met on these walks.
 
 ## The dawn chorus
 
-Up to 8 birds sing at once, each from its own place around you. You are asked to find one, and its song is described and played alone first. Left and Right turn you to face it. Space picks it.
+Up to 8 birds sing at once, each from its own spot around you. You are asked to find one bird, and its song is described and played alone first. Left and Right turn you to face it, and Space picks it.
 
-The right bird flies off, and another bird takes its place. A wrong pick names the bird you chose. R plays the song to find alone again. H says where it is. Each bird you pick out goes into your field guide.
+Picking the right bird sends it flying off so another can take its place. A wrong pick names the bird you chose instead. R plays the target song alone again, and H says where that bird is. Every bird you pick out goes into your field guide.
 
 ## The migration count
 
-You stand on a hill as flocks fly over, from behind you to ahead in spring, and the other way in autumn. A rush of wings means a flock is coming. Each bird calls once as it passes. Count the calls.
+You stand on a hill as flocks fly over, from behind you to ahead in spring, and the reverse in autumn. A rush of wings warns that a flock is coming. Each bird calls once as it passes, so count every call.
 
-When the flock has passed, Up and Down set your count. Space gives it. R plays the flock again before you answer. An exact count is 3 points. One off is 1 point. An exact count puts the flock's bird in your field guide.
+Once the flock has passed, Up and Down set your count, and Space submits it. R flies the flock over again before you answer. An exact count scores 3 points and adds the flock's bird to your field guide. Being one off scores 1 point.
 
 ## The practice glade
 
-The practice glade is a short path with two birds: a chickadee just ahead, and a wagtail to your right. Their songs have two notes each. Nothing you do there goes into your field guide.
+The practice glade is a short path with two birds: a chickadee just ahead and a wagtail to your right, each with a two-note song. Nothing you do in the glade is saved to your field guide.
 
 ## Challenges
 
-The Challenges menu holds 3 challenges, the same for every player.
+The Challenges menu offers 3 challenges, the same for every player.
 
-- Daily, Morning walk: a trail and 5 of its birds, each singing its signature song. 3 points for a bird answered first time, 2 after one miss, 1 after more.
-- Weekly, Chorus week: 8 birds of the season sing at once. Pick out each one: 2 points first time, 1 after a miss.
-- Monthly, The great count: 8 flocks of up to 12 birds. 3 points for an exact count, 1 for one off.
+- Daily, Morning walk: a trail with 5 of its birds, each singing its signature song. Score 3 points for a first-try answer, 2 after one miss, and 1 after more.
+- Weekly, Chorus week: 8 birds of the season sing at once. Pick out each one for 2 points on the first try, or 1 after a miss.
+- Monthly, The great count: 8 flocks of up to 12 birds. Score 3 points for an exact count, or 1 for being one off.
 
-Before you start, each reads its rule and when the next one comes. Escape on that briefing goes back without starting. Reaching the end, or heading home, counts toward your streak. Leave the challenge, on the pause menu, does not.
+Each challenge reads its rule and reset time before you start, and Escape backs out without starting. Reaching the trail's end or heading home counts toward your streak, while Leave the challenge on the pause menu does not.
 
 ## Records and results
 
-When a walk ends, the results name the birds you befriended, the new songs, and your field guide's total. Then the results menu offers Play again, Hear the results again, the Field guide, and Back to the title. Escape does the same as the last row.
+When a walk finishes, the results list the birds you befriended, any new songs learned, and your field guide total. From the results menu you can Play again, Hear the results again, open the Field guide, or go Back to the title. Escape goes back to the title.
 
-Records, on the title, reads your field guide's totals, your walks and steps, your best dawn chorus and migration count, and your challenge results.
+Records, on the title, reads your field guide totals, walks and steps, best dawn chorus and migration count, and challenge results.
 
 ## Sound check and tutorial
 
-Sound check, on the title, plays each sound you need on the trail: your whistle, each bird voice with its low, middle and high notes, the flock calls, the cues and the sounds at each trail's end. Tutorial explains the game a page at a time.
+Sound check, on the title, plays the sounds you need on the trail: your whistle, each bird voice with its low, middle, and high notes, the flock calls, the cues, and the trail-end landmarks. Tutorial walks you through the basics a step at a time.
 
 ## Controls
 
 These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
 - Left and Right arrows: turn. In the migration count, change your count.
-- Up arrow: step forward. When a bird waits for your answer, the high note. In the migration count, count up.
-- Down arrow: step back. When a bird waits for your answer, the low note. In the migration count, count down.
-- Space: name the birds around you. When a bird waits for your answer, the middle note. In the dawn chorus, pick the bird you face. In the migration count, give your count.
-- Tab: head home. Press it twice. Any other key cancels.
-- S: status. The bird you are with, which way you face, and where the trail's end is. Press it again straight away for the trail and season and the birds befriended.
-- R: repeat. The bird sings again, or the last thing said is repeated. In the chorus, the song to find plays alone. In the count, the flock flies over again.
-- H: hint. Where the nearest new bird is and how to turn to it, or the notes of the song.
-- Escape: pause. The pause menu can resume, open settings or this help, go back to the title, or go back to the lobby. During a challenge, its leave row is Leave the challenge.
+- Up arrow: step forward. When a bird waits for your answer, whistle the high note. In the migration count, count up.
+- Down arrow: step back. When a bird waits for your answer, whistle the low note. In the migration count, count down.
+- Space: name the birds around you. When a bird waits for your answer, whistle the middle note. In the dawn chorus, pick the bird you face. In the migration count, give your count.
+- Tab: head home. Press it twice to confirm; any other key cancels.
+- S: status, including the bird you are with, which way you face, and where the trail's end is. Press S again right away for the trail, season, and birds befriended.
+- R: repeat the bird's song or the last spoken line. In the chorus, play the target song alone. In the count, fly the flock over again.
+- H: hint, pointing to the nearest new bird or naming the notes of the current song.
+- Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. During a challenge, Back to the title becomes Leave the challenge.
 - F1: what the keys do on the current screen.

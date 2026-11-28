@@ -2,133 +2,129 @@
 
 ## About the game
 
-Walk between rock pools, lean in, and gather creatures for your aquarium. Each trip ends when the tide returns, and you keep everything you gathered.
+Wander a rocky shoreline at low tide, leaning close to rock pools to gather shells, crabs, starfish, and rare sea life for your home aquarium. Some creatures are shy and duck into hiding when you approach, so keeping still pays off.
+
+Every trip brings fresh weather, tides, and rare visitors before the rising water sends you home, and everything you gather stays in your aquarium to visit anytime.
 
 ## Walking the shore
 
-Left and Right arrows walk along the rocks from one pool to the next. You cannot move beyond the pools at either end.
+Use the Left and Right arrows to walk along the rocks from one pool to the next. You cannot walk past the pools at either end of the shore.
 
-You always face the sea, so the pools run from your left to your right.
+You always face out toward the sea, so the pools stretch across the shore from your left to your right.
 
 ## Leaning in and stepping back
 
-Up brings you closer to the water. Down steps back. There are three places to stand:
+Press Up to lean closer to the water, and Down to step back. You can take three positions at any pool:
 
-- Standing back on the rocks: you take in the pool in front of you and two pools either side, all a little far off. Good for finding where things are.
-- At the water's edge: you take in the pool in front of you and the next pool either side. Walking always brings you to the edge.
-- Leaning in close: you take in only the pool in front of you, and you can reach in.
+- Standing back on the rocks: lets you survey the pool in front of you along with two pools on either side, which is handy for spotting active pools.
+- At the water's edge: lets you survey the pool in front of you and one pool on either side. Walking to a new pool always puts you at the water's edge.
+- Leaning in close: focuses on only the pool directly in front of you so you can reach in and gather.
 
-When you lean in over an empty pool, there is only clear water and weed.
+If you lean in over an empty pool, you will find only clear water and weed.
 
 ## Gathering
 
-Lean in close and press Space just after a creature calls. You have about three seconds after it calls to reach for it.
+Lean in close and press Space right after a creature calls. You have about three seconds after its call to scoop it up.
 
-Space gathers nothing without a recent creature cue. If you are not leaning in, press Up to lean in first.
-
-The first time on a trip that a creature calls in your pool, the game names it. Tab names the last creature to call in your pool at any time.
+Pressing Space without a recent call gathers nothing, and if you are not leaning in close yet, press Up first. The first time a creature calls in your pool during a trip, the game names it for you, and you can press Tab at any time to check the last creature that called in your pool.
 
 ## Shy creatures
 
-The shore crab, goby, hermit crab, rock shrimp, seahorse and baby octopus are shy. They hide when you lean in.
+The shore crab, little goby fish, hermit crab, rock shrimp, seahorse, and baby octopus are all shy and dart into hiding the moment you lean in.
 
-Keep still and wait for a shy creature to come back out before gathering it. Reaching in too soon makes it hide again for longer. Stepping back and leaning in again startles it again.
-
-Shy creatures come out quickly at Sandy Cove and take longer on the Far Reef.
+Keep still and wait for a shy creature to creep back out before you reach for it. Reaching in too early sends it back into hiding for longer, and stepping back then leaning in again startles it all over again. Shy creatures come out quickly at Sandy Cove and take more patience on the Far Reef.
 
 ## The creatures
 
-Common creatures:
+Common creatures you can gather along the shore:
 
-- Shore crab: Shy. 15 points.
+- Shore crab: shy, 15 points.
 - Periwinkle shell: 5 points.
 - Starfish: 10 points.
 - Sea anemone: 5 points.
-- Little goby fish: Shy. 20 points.
-- Hermit crab: Shy. 15 points.
-- Rock shrimp: Shy. 15 points.
+- Little goby fish: shy, 20 points.
+- Hermit crab: shy, 15 points.
+- Rock shrimp: shy, 15 points.
 - Mussel: 5 points.
 
-Rare creatures, 50 points each, only turn up under the right conditions:
+Rare creatures are worth 50 points each and appear only under matching conditions:
 
-- Cowrie shell, on a spring tide.
-- Seahorse, on a sunny day. Shy.
-- Baby octopus, at dusk. Shy.
-- Moon jellyfish, when it is breezy.
-- Sand dollar, in fog.
-- Sea slug, in drizzle.
+- Cowrie shell: on a spring tide.
+- Seahorse: on a sunny day. Shy.
+- Baby octopus: at dusk. Shy.
+- Moon jellyfish: when it is breezy.
+- Sand dollar: in fog.
+- Sea slug: in drizzle.
 
-Sound check, on the title menu, plays every one with its name.
+Open Sound check from the title menu to preview every creature with its name.
 
 ## Weather, tides and time of day
 
-Every trip has its own weather, tide and time of day, told to you before you set off, with any rare creature the day might bring. The weather is sunny, breezy, foggy or drizzly. A neap tide is small and the trip is shorter. A spring tide is the lowest of the month and the trip is longer.
+Each trip rolls its own weather, tide, and time of day, announced before you head out along with any rare creature those conditions might bring. Weather can be sunny, breezy, foggy, or drizzly. A neap tide stays small for a shorter trip, while a spring tide drops lowest for a longer outing.
 
 ## The tide
 
-The tide turns halfway through the trip. You receive warnings then, with about a minute left, and at 20 seconds. When the tide covers the rocks, the trip ends and you head home. A trip also ends early if you gather everything on the shore.
+The tide turns halfway through your trip, and you get reminders then, with about a minute left, and again at 20 seconds. Once the water covers the rocks, the trip ends and you head home. A trip also wraps up early if you clear every creature on the shore.
 
 ## Pace
 
-The pools and the tide hold while a line is still being spoken. Creatures wait to call, shy ones wait to creep out, and the time you have to reach for a sound stands still until it ends. A line you ask for again and again stops holding after a while. This holds at every pace and on every trip.
+The shore and the tide pause while a spoken line is still playing. Creatures wait to call, shy ones wait to creep out, and your window to gather holds steady until the line finishes. Repeating a line over and over eventually stops holding the clock, and this works the same at every pace on every trip.
 
-Pace in Settings sets how fast the shore runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. The creatures, the time to reach in and the tide follow the pace. A change applies from your next trip.
+Pace in Settings adjusts how fast the shore runs between relaxed, normal, and quick. Normal is the default and sits slightly slower than quick, while relaxed runs at half speed. Creature timing, gather windows, and the tide all follow your pace, taking effect on your next trip.
 
-Relaxed scores are saved separately, including challenges and calendar events. Normal and quick share their scores. Your aquarium and the shores it opens count at every pace.
+Relaxed scores are tracked separately, including challenges and calendar events, while normal and quick share their scoreboards. Your aquarium and shore unlocks count at every pace.
 
 ## After a trip
 
-When a trip ends, the game reads what you gathered, your score and what is new in your aquarium, all on one page. Then a short menu offers Play again, Hear the results again, Your aquarium, and Back to the title. After a challenge, Play again becomes Play this challenge again, and the last row is Back to the challenges. Escape does the same as the last row.
+When a trip wraps up, a single summary page lists what you gathered, your score, and anything new for your aquarium. A short menu then offers Play again, Hear the results again, Your aquarium, and Back to the title. After a challenge, Play again becomes Play this challenge again, and the last row returns to the challenges menu, just like pressing Escape.
 
 ## Your aquarium
 
-Everything you gather goes home to your aquarium, which keeps growing. Leaving a trip early from the pause menu still brings home what you gathered, though the shore's best score counts only a finished trip. Visit it from Your aquarium on the title menu: each kind lives in its own spot from left to right, and they call now and then, more often as the tank fills.
+Everything you gather comes home to your growing aquarium. Even if you leave a trip early from the pause menu, you still keep what you found, though only finished trips count toward a shore's best score. Visit Your aquarium from the title menu, where each species lives in its own spot from left to right and calls out now and then, more often as your tank fills up.
 
-In the aquarium, Left and Right move along the tanks and say each kind's name, how many you have and where you first found one. Space plays one again. Tab plays the whole tank from left to right. S sums it up. H names a kind you are still missing and where to look.
+Inside the aquarium, Left and Right walk along the tanks to check each species, how many you have, and where you first found it. Space plays that creature again, Tab plays a tour across the whole tank from left to right, S sums up your collection, and H names a species you are still missing and where to look for it.
 
 ## Stretches of shore
 
-- Sandy Cove: 6 pools and about 3 minutes, gentle creatures, quick to come out.
-- Rocky Point: 9 pools and about 4 minutes, with gobies and hermit crabs and better odds of a rare find. Opens when your aquarium holds 4 kinds.
-- The Far Reef: 12 pools and about 5 minutes, every common creature, the shyest ones, and the best odds of a rare find. Opens at 7 kinds.
+- Sandy Cove: 6 pools and about 3 minutes, with easygoing creatures that come out quickly.
+- Rocky Point: 9 pools and about 4 minutes, adding gobies, hermit crabs, and better odds of rare finds. Opens when your aquarium holds 4 kinds.
+- The Far Reef: 12 pools and about 5 minutes, home to every common creature, the shyest visitors, and the highest odds of rare finds. Opens at 7 kinds.
 
-Each find scores its points, and each place keeps your best score.
-
-The Play row on the title menu starts a trip. Left and Right on it choose the shore, and it reads the shore's best score. A shore you have not opened yet reads as locked, and Enter on it says how many kinds open it. Records, on the title menu, reads every best score and your challenge results.
+Each find adds to your score, and every shore tracks your personal best. On the title menu, use Left and Right on the Play row to pick a shore and check its best score, or press Enter on a locked shore to see how many kinds unlock it. Records on the title menu lists all your best scores and challenge results.
 
 ## Practice pools
 
-Three sheltered pools close to home, with no tide: an anemone, a shy shore crab, and a periwinkle shell with a starfish. Gather all four to finish. A good place to learn leaning in, waiting and gathering.
+Three sheltered pools close to home with no tide to rush you: an anemone, a shy shore crab, and a periwinkle shell alongside a starfish. Gather all four to finish. It is an easy place to get comfortable leaning in, waiting out shy creatures, and gathering.
 
 ## Challenges
 
-Challenges give every player the same shore for a day, a week or a month, with a gentle goal. Each finished trip counts toward your streak. Leave the challenge, on the pause menu, does not count, so you can come back and try again.
+Challenges give every player the exact same shore for a day, a week, or a month, each with a clear goal. Every finished trip adds to your streak, and choosing Leave the challenge from the pause menu stops without counting so you can try again later.
 
-- Daily: tonight's three species. A short dusk trip on Rocky Point with three species to find, each worth 100 points more, and one twist. The twist is still water, a busy shore, a quick tide, or hushed. In still water, shy creatures come out twice as fast. On a busy shore, every pool holds something. A quick tide is a shorter trip where every find is worth double. In hushed, only the pool in front of you plays.
-- Weekly: this week's rare find. A long trip on the Far Reef, where one rare creature is waiting somewhere. Finding it is worth 300 points.
-- Monthly: the Great Low Tide. 15 pools on a spring tide, when every rare creature can turn up whatever the weather, and every different kind you gather is worth 40 points more. Gathering 8 different kinds meets the goal.
+- Daily, tonight's three species: a short dusk trip on Rocky Point with three target species worth 100 bonus points each and one twist. In still water, shy creatures emerge twice as fast. On a busy shore, every pool holds something. A quick tide shortens the trip while doubling every find. In hushed, only the pool directly ahead of you calls.
+- Weekly, this week's rare find: a long trip on the Far Reef where one rare creature is waiting somewhere along the rocks for 300 bonus points.
+- Monthly, the Great Low Tide: 15 pools on a spring tide where every rare creature can appear regardless of weather, and each distinct kind you gather adds 40 bonus points. Gathering 8 different kinds meets the goal.
 
-The challenge list says your best and streak for each, and how long until the next one.
+The Challenges menu shows your best score, your streak, and how long remains until the next reset.
 
 ## Calendar events
 
-Some days the shore is different. Each event has a row of its own on the title menu, just below Play. While it is closed, the row says locked and when it opens. It takes you to the furthest shore you have opened, and keeps its own best score. If the event has ended by the time you choose Play again, the game says it has ended and you go back to the title. The ordinary shores and the challenges never change.
+On special days, the shore opens an extra event row right below Play on the title menu. While an event is closed, its row shows as locked and tells you when it opens next. Event trips take you to the farthest shore you have unlocked and keep their own best score, without changing ordinary shores or challenges. If an event ends before you select Play again, the game lets you know and returns you to the title.
 
-- King tide: within a day of a new or full moon, from November to February. The sea goes far out, so two extra pools open at each end of the shore, on a spring tide with a longer trip. This is the game's take on the big winter tides, not a real tide table.
-- Moonlit pools: on every full moon night, all year. A night trip under the full moon. Moon jellyfish and baby octopuses can come out whatever the weather.
+- King tide: within a day of a new or full moon from November to February. The sea pulls far back, opening two extra pools at each end of the shore on a longer spring tide. This is the game's own take on winter tides, not a real tide table.
+- Moonlit pools: every full moon night all year. A nighttime trip where moon jellyfish and baby octopuses can appear regardless of the weather.
 
-S says which calendar event you are playing.
+Press S during a trip to check which calendar event is active.
 
 ## Controls
 
-- Left and Right: walk between pools.
-- Up: lean closer. Down: step back.
-- Space: reach in and gather after a creature calls.
-- Tab: name the last creature to call in your pool.
-- S: which pool you are at and how long until the tide returns. Press it again straight away for what you have gathered and your score, and a third time for the shore and its weather.
-- H: a hint: what to do at this pool, or which way the nearest creature is.
-- R: repeat the last message.
-- F1: help for where you are right now.
-- Escape: pause, with Resume, Settings, Help, Back to the title and Back to the lobby. During a challenge, Back to the title is Leave the challenge.
-
 These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
+
+- Left and Right arrows: walk along the rocks from pool to pool.
+- Up arrow: lean closer to the water. Down arrow: step back.
+- Space: reach in and gather right after a creature calls.
+- Tab: check the last creature that called in your pool.
+- S: check which pool you are at and how long until the tide returns. Press S again right away for what you have gathered and your score, and a third time for the shore and weather.
+- H: get a hint on what to do at this pool or which way the nearest creature lies.
+- R: repeat the last spoken line.
+- F1: check what the keys do on the current screen.
+- Escape: pause for Resume, Settings, Help, Back to the title, or Back to the lobby. During a challenge, Back to the title becomes Leave the challenge.

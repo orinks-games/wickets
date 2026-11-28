@@ -202,7 +202,7 @@ pub fn row() -> SettingsRow<Parlor> {
         enabled,
         |ctx, on| Records::store(ctx, OFF_KEY, &!on),
         |_ctx, _on| None,
-        "Before each run, a short briefing says what the run is. Number keys play the sounds it needs. Off starts the run at once.",
+        "Hear a short briefing before each run, with number keys to preview its sounds. Turn this off to start runs right away.",
     )
 }
 
@@ -816,6 +816,10 @@ mod tests {
         );
         assert!(!enabled(&h.app.ctx));
         h.press(Key::F1);
-        assert!(h.spoken().last().unwrap().starts_with("Before each run"));
+        assert!(h
+            .spoken()
+            .last()
+            .unwrap()
+            .starts_with("Hear a short briefing"));
     }
 }

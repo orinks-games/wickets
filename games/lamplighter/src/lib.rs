@@ -46,7 +46,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Cozy,
-    blurb: "Walk the Long Hall and light its lamps.",
+    blurb: "Walk the Long Hall with Mabel's taper, lighting every dark lamp along the walls before it burns down.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: None,
@@ -131,7 +131,7 @@ impl TitleGame for Lamplighter {
                 ctx.push(Round::new(Mode::Round))
             })
             .help(format!(
-                "A hall of {} steps with {} out, and a taper that burns for {}.",
+                "Walk a hall of {} steps with {} out, using a taper that burns for {}.",
                 ROUND.length,
                 lamps_words(ROUND.out),
                 time_words(ROUND.taper.unwrap_or(0.0) as u32)
@@ -144,7 +144,7 @@ impl TitleGame for Lamplighter {
             MenuItem::new("Practice hall", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(Round::new(Mode::Practice))
             })
-            .help("A short hall with no taper and no score: learn the lamps."),
+            .help("A short hall with no taper and no score so you can learn the ropes."),
         )
     }
 

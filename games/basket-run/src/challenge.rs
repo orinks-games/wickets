@@ -53,18 +53,18 @@ pub fn challenge_rule(ch: &Challenge) -> String {
         Period::Daily => {
             let twist = Twist::for_seed(ch.seed);
             format!(
-                "One {}-second round, no egg target. Every fifth cracked egg breaks a basket. Twist, {}: {}",
+                "One {}-second round with no egg target, where every fifth cracked egg breaks a basket. Today's twist is {}: {}",
                 DAILY_SECS as u32,
                 twist.name(),
                 twist.describe()
             )
         }
         Period::Weekly => format!(
-            "Rounds {WEEKLY_FROM} to {} back to back, each faster, each with an egg target. Your 3 baskets must last all {WEEKLY_ROUNDS} rounds.",
+            "Play rounds {WEEKLY_FROM} through {} back to back, each faster and each with its own egg target. Your 3 baskets have to last all {WEEKLY_ROUNDS} rounds.",
             WEEKLY_FROM + WEEKLY_ROUNDS - 1
         ),
         Period::Monthly => format!(
-            "{FESTIVAL_ROUNDS} rounds of patterns, each called as it starts. Each one caught cleanly earns {PATTERN_BONUS} points."
+            "{FESTIVAL_ROUNDS} rounds of drop patterns, each announced as it begins. Catch a pattern cleanly to earn {PATTERN_BONUS} bonus points."
         ),
     }
 }

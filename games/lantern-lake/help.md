@@ -2,93 +2,91 @@
 
 ## About the game
 
-Paddle across the lake to gather drifting lanterns. Each lantern adds a voice to the night's song.
-
-There is no timer or way to lose. Only challenges keep a score.
+Push off in a canoe under the night sky and paddle across the water to gather drifting lanterns. Every lantern you collect adds a new voice to the night's song, while frogs, crickets and shoreline landmarks guide you toward small places and islands to record in your journal. There is no timer and no way to lose, with scores kept only in challenges.
 
 ## Finding lanterns
 
-Everything on the lake is in its true direction around you. Turn until a lantern is straight ahead, then paddle toward it.
+Everything on the lake sits in its true direction around your canoe. Turn until a lantern is straight ahead, then paddle toward it.
 
-A lantern's chime rings faster as you get near: slow when it is far across the water, quick when it is close. You gather a lantern when you reach it.
+Each lantern's chime speeds up as you close in, ringing slowly across the water and quickening when you are right beside it. Reach a lantern to gather it.
 
-The canoe glides on after each stroke and slowly comes to a stop. When reeds brush the canoe, you have reached the shore. Turn back toward open water.
+Your canoe glides forward after every stroke before slowly coming to a rest. When reeds brush against the hull, you have reached the shore, so turn back out toward open water.
 
 ## Finding your way
 
-Frogs, crickets and the wind in the reeds each sing from one place on the shore all night. They are your landmarks: if the frogs are on your left, you know which way you face.
+Frogs, crickets and the wind in the reeds each stay in one spot along the shore all night. Use them as landmarks: when the frogs sit off to your left, you know which way you are facing.
 
-Space describes the lake around you. S and H say where the next lantern is, also as a clock position. 12 o'clock is straight ahead, 3 o'clock to your right, 6 o'clock behind you.
+Press Space to look around the lake. S and H give the direction to the next lantern as a clock position, with 12 o'clock straight ahead, 3 o'clock to your right and 6 o'clock behind you.
 
 ## The song
 
-Each lantern you gather adds a voice to the song at the start of the next phrase.
+Every lantern you gather adds another voice to the song at the start of the next phrase.
 
-When you gather the last lantern, the whole song rings out and the night ends.
+Once you collect the final lantern, the complete song rings out and the night comes to a close.
 
 ## Each night is different
 
-The lake changes every night: its size, where the lanterns float, the weather and which creatures are out.
+No two nights on the lake are the same: the water's size, lantern paths, weather and wildlife shift each outing.
 
-- Clear nights are still and quiet.
-- Light rain falls on the lake.
-- In mist, lanterns across the lake are hard to make out until you get close.
-- A breeze makes the lanterns drift faster.
+- Clear nights leave the water still.
+- Light rain falls across the lake.
+- Mist softens distant lanterns until you paddle closer.
+- A breeze sends the lanterns drifting faster.
 
-Night 1 is small, with 4 lanterns. Each later night is a little wider, with one more lantern, drifting a little faster, up to 10.
+Night 1 starts on a small lake with 4 lanterns. Each new night opens up a slightly wider lake with one more lantern drifting a bit faster, up to 10.
 
 ## Discoveries and your journal
 
-Some nights hide small places to find: an old dock, an island where an owl lives, a firefly meadow, a little stream, lily pads, a bell buoy, a beaver lodge and a weeping willow. Paddle toward anything you don't recognise.
+Some nights tuck away small places to discover: an old dock, an island where an owl lives, a firefly meadow, a little stream, lily pads, a bell buoy, a beaver lodge and a weeping willow. Whenever you notice something unfamiliar, paddle over to investigate.
 
-Everything you find goes into your journal at once, even if you leave the night early. Read it from the Journal row on the title. It lists the places you have found and how often. Blank pages mark the ones still to find.
+Every place you find goes straight into your journal, even if you head home early. Open Journal from the title to review the places you have found and how many times you have visited them, with blank pages marking the ones still out there.
 
 ## Modes
 
-- Play: the next night. Finishing a night opens the one after it.
-- Free paddle: locked until you finish your first night. A wide lake where a new lantern appears whenever you gather one. Stay as long as you like. Tab heads home.
-- Practice pond: a tiny, still pond with 2 lanterns, one straight ahead and one to your right. On your first visit the title starts on the tutorial, which plays on the practice pond.
+- Play: head out on the next night. Finishing a night opens the one after it.
+- Free paddle: opens once you finish your first night. A wide lake where a fresh lantern appears every time you gather one, so you can stay out as long as you like and press Tab when you are ready to head home.
+- Practice pond: a small, still pond with 2 lanterns, one straight ahead and one to your right. On your first visit, the title opens on the tutorial, which runs on the practice pond.
 
-Before each outing a page says what the lake is. Enter pushes off. Escape goes back to the title.
+Before every outing, a short page introduces the lake. Press Enter to push off, or Escape to return to the title.
 
-Records, on the title, reads the most lanterns you have gathered in a night, your journal's tallies and your challenge results.
+Open Records on the title to check the most lanterns you have gathered in a night, your journal tallies and your challenge results.
 
 ## After an outing
 
-When you head home, the results say how the night went and what went into your journal. Then the results menu offers Play again, Hear the results again, and Back to the title. After a night whose song is whole, Next night comes first. After a challenge, the last row is Back to the challenges. Escape does the same as the last row.
+When you head home, the results summarize how the night went and anything added to your journal. From there, the results menu offers Play again, Hear the results again, and Back to the title, with Next night at the top whenever you complete a night's song. After a challenge, the last row is Back to the challenges, and Escape does the same.
 
 ## Challenges
 
-The Challenges menu holds 3 lakes that are the same for every player. Before you push off, each reads its rule and score. Escape on that briefing goes back without starting.
+The Challenges menu offers 3 shared lakes that are identical for every player. Before you push off, a briefing gives the lake's rule and scoring, and Escape returns without starting.
 
-- Daily: a small lake with 5 lanterns and a twist that changes every day: mist, rain, still water, a breeze, or a starry night with extra places to find.
-- Weekly: a lantern constellation. Only one lantern is lit at a time, with its own cue. Gather it to light the next. Unlit lanterns are asleep and can't be gathered yet.
-- Monthly: the lantern festival. A great lake with 10 lanterns, every creature out, and a slow current that carries you and the lanterns around the lake.
+- Daily: a small lake with 5 lanterns and a daily twist, such as mist, rain, still water, a breeze, or a starry night with extra places to find.
+- Weekly: a lantern constellation where only one lantern is lit at a time with its own cue. Gather it to light the next; unlit lanterns stay asleep until their turn.
+- Monthly: the lantern festival, a wide lake with 10 lanterns, every creature out, and a slow current carrying both you and the lanterns around the water.
 
-Your challenge score is 1 for each lantern and 2 for each place you discover. Heading home with Tab counts toward your streak, however many lanterns you have. Leave the challenge, on the pause menu, does not.
+Your challenge score is 1 point per lantern and 2 points for each place you discover. Heading home with Tab counts toward your streak no matter how many lanterns you gathered, while Leave the challenge on the pause menu does not.
 
 ## Calendar events
 
-Some nights the lake is different.
+Certain nights bring something special to the lake.
 
-- Lantern Festival night: on the Lantern Festival, the fifteenth day of the Lunar New Year, a day either side. In 2027 that is 20 February. A row of its own appears on the title, after Free paddle, only while it is open. 20 lanterns drift on a wide, clear lake with every creature out. A new voice joins the song with every second lantern. It keeps its own record of the most lanterns gathered. If the festival has ended by the time you choose Play again, you hear that it has ended and go back to the title. It is not the same as the monthly lantern festival challenge.
-- Full moon: on every full moon night, on an ordinary night or a free paddle, S says the moon is full. Nothing else changes, and the challenges and the practice pond stay as they are.
+- Lantern Festival night: opens on the Lantern Festival, the fifteenth day of the Lunar New Year, plus a day on either side, which is 20 February in 2027. It has its own row on the title after Free paddle. 20 lanterns drift across a wide, clear lake with every creature out, and a new voice joins the song with every second lantern. It saves its own record for most lanterns gathered, separate from the monthly lantern festival challenge. If the festival closes before you pick Play again, it returns you to the title.
+- Full moon: on every full moon night, during an ordinary night or free paddle, S reports that the moon is full. Everything else stays the same, including challenges and the practice pond.
 
 ## Sound check and tutorial
 
-Sound check, on the title, plays each sound you need on the lake. Tutorial explains the game a page at a time.
+Sound check on the title previews every sound you need out on the lake, and Tutorial walks you through paddling step by step.
 
 ## Controls
 
 These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
-- Left and Right arrows: turn the canoe. A short press turns a little. Hold to keep turning.
-- Up arrow: paddle one stroke. Hold it to keep paddling.
-- Down arrow: back-paddle, to slow down or back away.
-- Space: look around. It says which way you face, where the nearest shore is and what is around you. Every lantern rings once, nearest first.
-- Tab: head home and end the night. You are asked first.
-- S: status. How many lanterns you have and roughly where the nearest one is. Press it again straight away for which way you face, the weather and tonight's discoveries.
-- R: repeat the last thing said.
-- H: hint. Which way to turn for the next lantern, and it rings again.
-- Escape: pause. The pause menu can resume, open settings or this help, go back to the title, or go back to the lobby. During a challenge, its leave row is Leave the challenge.
-- F1: what the keys do on the current screen.
+- Left and Right arrows: turn the canoe. Tap to turn a little, or hold to keep turning.
+- Up arrow: paddle one stroke, or hold to keep paddling.
+- Down arrow: back-paddle to slow down or back away.
+- Space: look around, naming which way you face, where the nearest shore is and what sits around you, with every lantern ringing once from nearest to farthest.
+- Tab: head home and end the night, with a confirmation first.
+- S: status, giving your lantern count and roughly where the nearest lantern is. Press S again right away for your facing, the weather and tonight's discoveries.
+- R: repeat the last line.
+- H: hint, telling you which way to turn for the next lantern and ringing it again.
+- Escape: pause to resume, open Settings or Help, return to the title or return to the lobby. During a challenge, the leave row is Leave the challenge.
+- F1: help for the current screen.

@@ -51,7 +51,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Action,
-    blurb: "Set a small lander down on the moons of the outer planets.",
+    blurb: "Pilot a survey lander down to distant moons, saving fuel for a smooth touchdown.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -267,7 +267,7 @@ impl TitleGame for SoftLanding {
                 ctx.push(Descent::new(Mode::Practice))
             })
             .help(format!(
-                "Endless fuel, call-outs every {} when slow, and nothing to lose.",
+                "Endless fuel and call-outs every {} when slow, so you can practise landings with nothing at stake.",
                 parlor_core::units::count(
                     rules::shown_call_every(rules::PRACTICE_CALL_EVERY, parlor_core::units::us())
                         .into()
@@ -285,7 +285,7 @@ impl TitleGame for SoftLanding {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your best score on each moon, your softest touchdown, and your challenge results."
+        "Your best score on each moon, softest touchdown, and challenge results."
             .to_string()
     }
 
@@ -300,7 +300,7 @@ impl TitleGame for SoftLanding {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily, a weekly and a monthly landing, the same moons for every player. {}",
+            "Daily, weekly, and monthly landings on the same seeded moons for every player. {}",
             daily.resets()
         )
     }

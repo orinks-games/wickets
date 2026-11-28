@@ -67,17 +67,17 @@ pub fn rule(ch: &Challenge) -> String {
         Period::Daily => {
             let plan = Plan::new(Mode::Daily, 1, false, twist(ch));
             let twist = twist(ch)
-                .map(|t| format!(" Twist: {}.", t.describe()))
+                .map(|t| format!(" Today's twist: {}.", t.describe()))
                 .unwrap_or_default();
             format!(
-                "One round with {}, as many hearts as you can.{twist}",
+                "One round with {}, scoring as many hearts as you can.{twist}",
                 arrows_words(plan.arrows)
             )
         }
         Period::Weekly => {
-            "Three rooftops in a row, each busier than the last. Every round is played, and the points are added.".to_string()
+            "Three rooftops back to back, each busier than the last. Every round plays out and your points add up.".to_string()
         }
-        Period::Monthly => "Five rounds under the full moon, faster each time, with roses in the sky worth 25 more. Every round is played.".to_string(),
+        Period::Monthly => "Five rounds under the full moon, growing faster each time, with roses worth 25 extra points. Every round plays out.".to_string(),
     }
 }
 

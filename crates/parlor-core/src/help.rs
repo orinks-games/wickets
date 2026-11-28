@@ -196,7 +196,7 @@ impl Help {
     pub fn new(doc: &str) -> Help {
         Help {
             menu: MenuCore::new("Help").with_intro_help(
-                "Up and Down move between help topics, Enter reads one, Escape goes back.",
+                "Use Up and Down to browse help topics, Enter to read one, and Escape to go back.",
             ),
             topics: Rc::new(topics(doc)),
             reading: Rc::new(Cell::new(None)),
@@ -229,7 +229,7 @@ impl Menu for Help {
                         ctx.push(reader);
                     },
                 )
-                .help("Enter reads this topic a page at a time.")
+                .help("Press Enter to read this topic one page at a time.")
             })
             .collect()
     }
@@ -397,7 +397,7 @@ impl State<Parlor> for Reader {
 
     fn help(&self, _ctx: &Ctx<Parlor>) -> String {
         format!(
-            "Page {} of {}. Up and Down read a page at a time. Left and Right change topic. Enter reads the rest. Escape goes back.",
+            "Page {} of {}. Use Up and Down to move a page at a time, Left and Right to switch topics, Enter to read the rest, and Escape to go back.",
             self.page + 1,
             self.current().pages.len().max(1)
         )

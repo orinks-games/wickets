@@ -36,7 +36,7 @@ pub trait ChallengeGame: 'static {
     fn leave(_ctx: &mut Ctx<Parlor>) {}
     /// F1 on the menu itself.
     fn intro_help() -> String {
-        "Up and Down choose a challenge, Enter reads its briefing, Escape goes back. Every player gets the same challenges.".to_string()
+        "Use Up and Down to pick a challenge, Enter to read its briefing, and Escape to go back. Every player gets the same challenges.".to_string()
     }
 }
 

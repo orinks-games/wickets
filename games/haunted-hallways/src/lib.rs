@@ -59,7 +59,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Seasonal,
-    blurb: "Halloween: find your way down a haunted house of a hundred floors, and freeze when the ghost comes near.",
+    blurb: "Descend a hundred haunted floors of Nevermore Manor, solving each room's puzzle while freezing when ghosts drift past.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(allhallows::event),

@@ -50,7 +50,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
     // opening line and this prompt.
     let wishes = belt.with(|s| s.wishes(ctx));
     let brief_prompt = format!(
-        "Gift Sort. Here is who is waiting, and how each wish sounds in a box. {wishes} {} starts the belt.",
+        "First up is Gift Sort. Here is who is waiting and how each wish sounds inside a box. {wishes} Press {} to start the belt.",
         sentence_start(&p)
     );
     let held = belt.clone();
@@ -69,7 +69,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
     let shake = belt
         .step(
             format!(
-                "{} shakes the gift, and you hear what is inside. Shake it now.",
+                "{} shakes the box so you can tell what is inside. Try shaking it now.",
                 sentence_start(&p)
             ),
             |s: &SortRun, _| {
@@ -84,7 +84,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
 
     const MATCHED: &str = "Now match that gift to a wish.";
     let sort_prompt = format!(
-        "{} sends the gift to the person on your left, and {r} to the person on your right. A wrong delivery costs clock time. {} says the wishes again. Sort {GIFTS} gifts.",
+        "{} sends the gift to the person on your left, and {r} sends it to the person on your right. A wrong delivery costs clock time. {} repeats the wishes. Sort {GIFTS} gifts to move on.",
         sentence_start(&l),
         sentence_start(&rep)
     );
@@ -101,14 +101,14 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
 
     let open = desk.step(
         format!(
-            "The Wish Desk, with no clock. Children write in for one thing each, and the gifts sit on a shelf in front of you. {} opens the first letter.",
+            "Next is the Wish Desk, where there is no clock. Children write in for one gift each, and the boxes wait on a shelf in front of you. {} opens the first letter.",
             sentence_start(&p)
         ),
         |s: &DeskRun, _| s.playing().then(|| "The first letter is open.".to_string()),
     );
     let find = desk.step(
         format!(
-            "{} and {r} walk the shelf. {} shakes the box in front of you. Find the box that holds the wish. {} reads the letter again.",
+            "{} and {r} walk along the shelf, and {} shakes the box in front of you. Find the box that matches the wish, or press {} to read the letter again.",
             sentence_start(&l),
             sentence_start(&p),
             sentence_start(&rep)
@@ -132,7 +132,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
     Lesson::new(
         ID,
         "Winter Wonderland",
-        "Two parts, and the story plays both in order. Learn each in turn",
+        "Winter Wonderland pairs Gift Sort on the workshop belt with the Wish Desk, and story mode plays both in order. Try out each part in turn",
     )
     .step(brief)
     .step(shake)
@@ -141,7 +141,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, belt: Live<SortRun>, desk: Live<DeskRun>
     .step(find)
     .step(wrap)
     .outro(format!(
-        "From shift 3, {d} sends unwanted gifts to the sack. {} gives the current status. In Gift Sort it reads the gift and clock, then the shift, gifts sorted and score on a second press. {} gives a hint. Midnight Countdown, the New Year's Eve rhythm game, teaches itself on its first night.",
+        "From shift 3, {d} drops unwanted gifts in the return sack. {} reports your status, reading the gift and clock first in Gift Sort and the shift, gifts sorted, and score on a second press. {} gives a hint. Midnight Countdown, the New Year's Eve rhythm game, teaches itself on its first night.",
         sentence_start(&s),
         sentence_start(&h)
     ))

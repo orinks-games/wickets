@@ -171,7 +171,7 @@ pub fn row() -> SettingsRow<Parlor> {
             },
         )
         .help(
-            "Choose which games Story and events may offer. Every game remains available in Play.",
+            "Choose which games can appear in Story mode and daily events. Every game stays available in Play.",
         ),
     )
 }
@@ -200,7 +200,7 @@ impl PreferencesMenu {
     pub fn new() -> Self {
         PreferencesMenu {
             menu: MenuCore::new(LABEL).with_intro_help(
-                "Up and Down choose a category, Enter lists its games, Left and Right turn it on or off.",
+                "Use Up and Down to pick a category, Enter to browse its games, and Left or Right to toggle the whole category.",
             ),
         }
     }
@@ -274,7 +274,7 @@ impl CategoryMenu {
         CategoryMenu {
             category,
             menu: MenuCore::new(category.label()).with_intro_help(
-                "Up and Down choose a game, Enter turns it on or off, Escape goes back.",
+                "Use Up and Down to pick a game, Enter to turn it on or off, and Escape to go back.",
             ),
         }
     }

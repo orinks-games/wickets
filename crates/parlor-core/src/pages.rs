@@ -270,10 +270,10 @@ impl State<Parlor> for Pages {
         let repeat = ctx.control_name(ParlorAction::Repeat);
         // One page has no pages to page through.
         if self.pages.len() == 1 {
-            return format!("Enter goes on, and {repeat} repeats this page. {escape}.");
+            return format!("Press Enter to continue, or {repeat} to repeat this page. {escape}.");
         }
         format!(
-            "Page {} of {}. Enter goes on. Up and Down go back and forward a page, and {repeat} repeats this one. {escape}.",
+            "Page {} of {}. Press Enter to continue, Up and Down to step through pages, or {repeat} to repeat this page. {escape}.",
             self.at + 1,
             self.pages.len(),
         )
@@ -357,7 +357,7 @@ mod tests {
         h.clear();
         h.press(Key::F1);
         let said = h.spoken().join(" ");
-        assert!(said.starts_with("Enter goes on, and "), "{said}");
+        assert!(said.starts_with("Press Enter to continue, or "), "{said}");
         assert!(!said.contains("Page 1 of 1"), "{said}");
         assert!(!said.contains("Up and Down"), "{said}");
         let (mut h, _) = open(|r| Pages::briefing(["One.", "Two."]).then(flag(r)));

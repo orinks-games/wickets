@@ -37,7 +37,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, lanes: Live<RunScreen>) -> Lesson {
 
     let catch = lanes.step(
         format!(
-            "{} and {r} step one lane at a time; each step says your lane. Each falling object sounds from its lane: lower and louder means it will land sooner. An egg is a soft whistle: stand in its lane as it lands to catch it.",
+            "{} and {r} move you one lane at a time, announcing your lane as you go. Every drop comes down in its own lane until it lands. Step into an egg's lane and stay there as it lands to catch it.",
             sentence_start(&l)
         ),
         |s: &RunScreen, _| {
@@ -47,7 +47,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, lanes: Live<RunScreen>) -> Lesson {
 
     let banked = lanes.step(
         format!(
-            "Eggs count once banked. The cart stands in an edge lane, and {} rings its bell now. Go to that lane and press {bank} to bank.",
+            "Caught eggs only count once you bank them. The cart sits in an edge lane, and {} rings its bell so you can find it. Head over to that lane and press {bank} to bank your basket.",
             sentence_start(&cart)
         ),
         |s: &RunScreen, _| {
@@ -58,12 +58,12 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, lanes: Live<RunScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Basket Run",
-        "It is Easter morning, and eggs tumble from the trees over the meadow. Catch them in your basket and carry them to the cart. Learn in the practice lanes, where nothing costs a basket",
+        "It is Easter morning, and eggs are tumbling down from the trees over the meadow. Catch them in your basket and carry them back to the cart. You will try it out in the practice lanes first, where nothing costs a basket.",
     )
     .step(catch)
     .step(banked)
     .outro(format!(
-        "In a run, step out of the lane of a mud clod or a bee. A golden egg is worth five. Bank before the bell ends the round. {} says your lane and what lands next, again for the clock, and {h} says what to do right now.",
+        "In a real run, step out of the way of mud clods and diving bees. Golden eggs are worth five regular eggs, and you need to bank before the bell ends the round. Press {} for your lane and what lands next, press it again for the clock, and press {h} whenever you want a hint.",
         sentence_start(&s)
     ))
 }
