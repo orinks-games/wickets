@@ -45,8 +45,14 @@ stamps the tag's version in, so About says "1.3.0-beta.1" and Cargo.toml
 needs no edit. Numbers count up from 1 for each version. A tag that is
 none of these fails the build.
 
-Since 1.3.0-beta.1 sorts before 1.3.0, bump `Cargo.toml` to the next
-version right after a stable release, before the next beta or alpha tag.
+Since 1.9.1-alpha.1 sorts before 1.9.1 and after 1.9.0, bump `Cargo.toml`
+to the next **patch** version (for example `1.9.1`) right after a stable
+release, before the next beta or alpha tag. Only bump the minor version
+(for example `1.10.0`) when you are ready to ship a new stable game or
+major player feature. That way patch releases (`v1.9.1`) and alphas
+(`v1.9.1-alpha.1`) both cut straight off `main` with no backport branch,
+and promoting to a minor version later (`v1.10.0`) still sorts ahead of
+any `1.9.1` prereleases.
 
 Release notes go in `docs/release-notes/<tag>.md`, as for stable:
 `docs/release-notes/v1.4.0-alpha.1.md`.
@@ -123,30 +129,29 @@ gh release edit v1.4.0-alpha.1 --repo orinks-games/wickets --notes-file docs\rel
 To build packages for a channel without a release, run the Release workflow
 by hand from the Actions tab and pick the channel.
 
-## Patch releases while the next version is in development
+## Patch releases
 
-Use a patch version, such as 1.3.1, for corrections to text, instructions,
-settings or existing behavior. Use a minor version, such as 1.4.0, for new
-player features. Hearken accepts patch versions and offers them as updates
-when they are newer than the installed copy.
+Use a patch version, such as `1.9.1`, for corrections to text,
+instructions, settings, or existing behavior. Use a minor version, such
+as `1.10.0`, when promoting a new game or major player feature to stable.
+Hearken accepts patch versions and offers them as updates when they are
+newer than the installed copy.
 
-If main already contains work for the next minor version, create a patch
-branch from the latest stable tag. Cherry-pick only the relevant fixes,
-set the workspace version to the patch version, and update Cargo.lock with
-`cargo update --workspace`. Keep the engine dependency pinned unless the
-patch needs an engine fix. Run the normal checks on this release branch.
+Because `Cargo.toml` on `main` stays on the next patch version after each
+stable release and unfinished work is gated in `channel.rs`, normal patch
+releases cut straight from `main`: add `docs/release-notes/v1.9.1.md`,
+run Tag release for `v1.9.1`, and then bump `Cargo.toml` to `1.9.2`.
+Because `1.9.1` sorts after `1.9.1-alpha.N`, the Release workflow builds
+stable, beta, and alpha copies so alpha players get the fixes too while
+keeping their alpha games.
 
-When branching from an older tag, copy main's `.github/workflows/`
-over unchanged, with `tools/release_channels.py` and
-`tools/check_channel_manifests.py`. The tag workflow can't tag a commit
-whose workflow files differ from main's, so pin the tested overlay commit
-in `.github/overlay-ref` (one full SHA) instead of editing release.yml.
-
-Add notes in `docs/release-notes/v1.3.1.md`, then push the branch and its
-matching tag. The Release workflow uses the tagged branch's workspace
-version, so main can stay on 1.4.0. Keep the same fixes on main for the next
-minor release; do not merge the patch branch's older version number into main.
-
-Players already running a newer alpha or beta do not downgrade to the patch,
-and the patch builds no copy for their channel. They receive the fixes in a
-later release of their development version.
+Only create a separate patch branch from an older stable tag if `main`
+already bumped its minor version ahead of the patch you need. When
+branching from an older tag, cherry-pick only the relevant fixes, set the
+workspace version to the patch version, update `Cargo.lock` with
+`cargo update --workspace`, copy `main`'s `.github/workflows/`,
+`tools/release_channels.py`, and `tools/check_channel_manifests.py` over
+unchanged, and pin the tested overlay commit in `.github/overlay-ref`
+(one full SHA). Players already running a newer minor alpha or beta do
+not downgrade to an older patch; they receive the fixes in their next
+release.
