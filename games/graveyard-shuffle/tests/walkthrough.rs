@@ -61,7 +61,7 @@ fn a_first_visit_starts_on_the_tutorial() {
     h.press(Key::Return);
     assert!(spoke(
         &h,
-        "Doctor Volt's monster has started a dance craze, and you lead it."
+        "Doctor Volt's monster has sparked a midnight dance craze, and you are leading the graveyard floor."
     ));
     assert_eq!(h.app.top_name(), "lesson");
 }
@@ -74,7 +74,7 @@ fn the_tutorial_teaches_in_the_practice_room() {
     let lesson = tutorial::lesson_on(&mut h.app.ctx, room.clone());
     h.app.ctx.push(lesson);
     h.frame(0.0);
-    assert!(spoke(&h, "Space starts the dance"));
+    assert!(spoke(&h, "Space starts the song"));
     h.press(Key::Space);
     let mut waited = Vec::new();
     for _ in 0..40_000 {
@@ -109,7 +109,7 @@ fn the_tutorial_teaches_in_the_practice_room() {
     );
     assert!(spoke(&h, "Here comes the band."));
     assert!(spoke(&h, "spot on, for 3 points."));
-    assert!(spoke(&h, "Now one in time"));
+    assert!(spoke(&h, "Now try one in time"));
     assert!(spoke(&h, "In time. Tutorial done."));
     assert!(
         !spoke(&h, "Zombie, the Down arrow."),

@@ -52,13 +52,16 @@ fn a_first_visit_starts_on_the_tutorial() {
     h.press(Key::Return);
     assert!(spoke(
         &h,
-        "You stand on a rooftop at dusk with a bow, and paper hearts drift across the sky."
+        "You are standing on a rooftop at dusk with a bow in hand, while paper hearts drift across the evening sky."
     ));
-    assert!(spoke(&h, "The Left arrow and the Right arrow turn the bow"));
+    assert!(spoke(
+        &h,
+        "The Left arrow and the Right arrow turn your bow"
+    ));
     press_action(&mut h, ParlorAction::Right);
     h.clear();
     press_action(&mut h, ParlorAction::Up);
-    assert!(spoke(&h, "Hold Space to draw the string."));
+    assert!(spoke(&h, "Hold Space to draw the bowstring"));
     shoot(&mut h);
     assert!(spoke(&h, "That is a shot."));
     for _ in 0..30 {
@@ -209,7 +212,7 @@ fn play_opens_the_sky_and_says_where_you_are() {
     ));
     assert!(spoke(
         &h,
-        "Hold Space to full draw, then let go when your sights are on a heart."
+        "Hold Space to full draw, then let go when your sights line up on a heart."
     ));
     assert!(played(&h, sound::ROOFTOP));
     assert!(played(&h, sound::ROUND_START));

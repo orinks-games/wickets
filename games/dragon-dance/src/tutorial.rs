@@ -60,14 +60,14 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, street: Live<DanceScreen>) -> Lesson {
 
     let follow = street.step(
         format!(
-            "{} and {r} move your head one lane. The pearl moves from lane to lane, and {} names its lane. Follow it for {FOLLOW} beats in a row.",
+            "{} and {r} move your head one lane at a time. The pearl shifts from lane to lane, and {} names its lane whenever you need it. Stay with the pearl for {FOLLOW} beats in a row.",
             sentence_start(&l),
             sentence_start(&t)
         ),
         |s: &DanceScreen, _| {
             (s.steps > 0 && s.dance.combo >= FOLLOW).then(|| {
                 format!(
-                    "{FOLLOW} beats in a row. Each beat in the pearl's lane scores, and every {COMBO_EVERY} bring a cheer."
+                    "{FOLLOW} beats in a row. Every beat in the pearl's lane scores, and every {COMBO_EVERY} earn a cheer."
                 )
             })
         },
@@ -80,7 +80,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, street: Live<DanceScreen>) -> Lesson {
     let gong = street
         .step(
             format!(
-                "Now and then a gong strikes. {} right as the gong strikes rears the dragon up. Keep following, and rear on the next gong.",
+                "Every so often a gong strikes. Press {} right on the gong to rear the dragon up. Keep following the pearl, and rear up on the next gong.",
                 sentence_start(&p)
             ),
             move |s: &DanceScreen, _| {
@@ -95,12 +95,12 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, street: Live<DanceScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Dragon Dance",
-        "You are the head of a long paper dragon in a street parade, and the dragon follows where you lead. Learn on the practice street",
+        "You are at the head of a long paper dragon in a street parade, and the rest of the dragon follows wherever you lead. You will warm up on the practice street first.",
     )
     .step(follow)
     .step(gong)
     .outro(format!(
-        "Be in a red envelope's lane to catch it. Keep out of the firecrackers' lane. {} names what is coming. Play starts the first street.",
+        "Step into a red envelope's lane to catch it and grow longer, and stay out of firecrackers' lanes. {} lists what is coming down the street. Choose Play on the title when you are ready for the first street.",
         sentence_start(&u)
     ))
 }

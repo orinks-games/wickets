@@ -67,7 +67,7 @@ pub fn controls_text(ctx: &Ctx<Parlor>) -> String {
     let repeat = ctx.control_name(ParlorAction::Repeat);
     let hint = ctx.control_name(ParlorAction::Hint);
     format!(
-        "{} and {right} step one lane. {} empties your basket into the cart, standing in the cart's lane. {} rings the cart's bell and says where it is. {} speaks your lane, basket and what lands next; press it again for the clock and baskets left, and again for your score. {} repeats the last announcement. {} says what to do right now. Escape pauses.",
+        "{} and {right} move you one lane at a time. {} banks your basket when you are in the cart's lane. {} rings the cart's bell and reports where it is. {} reads your lane, basket, and next drops; press it again for the clock and baskets left, and a third time for your score. {} repeats the last announcement. {} gives a hint for right now. Escape pauses.",
         sentence_start(&left),
         sentence_start(&bank),
         sentence_start(&cart),
@@ -80,10 +80,20 @@ pub fn controls_text(ctx: &Ctx<Parlor>) -> String {
 /// The page explaining a kind the first time it falls.
 pub fn introduction(kind: Kind) -> String {
     match kind {
-        Kind::Egg => "Your first egg. Step into its lane and stay until it lands.".to_string(),
-        Kind::Golden => "A golden egg. Worth five eggs. Catch it.".to_string(),
-        Kind::Mud => "A mud clod. It spoils your basket. Step out of its lane.".to_string(),
-        Kind::Bee => "A bee. Its sting breaks a basket. Step out of its lane.".to_string(),
+        Kind::Egg => {
+            "Your first egg is coming down. Step into its lane and stay there until it lands."
+                .to_string()
+        }
+        Kind::Golden => {
+            "A golden egg is on the way. It is worth five regular eggs, so catch it.".to_string()
+        }
+        Kind::Mud => {
+            "A mud clod is falling. It spoils every egg in your basket, so step out of its lane."
+                .to_string()
+        }
+        Kind::Bee => {
+            "A bee is diving in. A sting breaks a basket, so step out of its lane.".to_string()
+        }
     }
 }
 
@@ -1096,7 +1106,7 @@ impl State<Parlor> for PlayPage {
             self.inner.handle_input(ctx, event);
         } else if event.pressed().is_some() {
             ctx.say(format!(
-                "The meadow waits while you read. Enter goes on, {} hears it again.",
+                "Play is paused while you read. Press Enter to continue, or {} to repeat.",
                 ctx.control_name(ParlorAction::Repeat)
             ));
         }

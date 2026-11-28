@@ -56,7 +56,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Seasonal,
-    blurb: "Dance a jig or reel on the beat after each call, and join the village ceili.",
+    blurb: "Step onto the floor at the village ceili and dance jigs and reels on the beat as the caller shouts each move.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(event),
@@ -211,9 +211,9 @@ pub fn ceili_briefing(ctx: &mut Ctx<Parlor>) -> Pages {
     };
     let year = season::keepsake_year(date);
     let pages = vec![
-        "Ceili night. The village hall is full for Saint Patrick's Day, and the full band is on the stage: fiddle, whistle, harp, accordion, bass and bodhran.".to_string(),
-        "The band plays the set dance: four tunes in a row, and the caller names each figure between them. Every step is called, and shamrocks hide in every tune.".to_string(),
-        format!("{clover} Each set dance you finish goes in your keepsake for {year}. Escape on this page goes back without dancing."),
+        "Ceili night. The village hall is packed for Saint Patrick's Day, and the full band is on stage: fiddle, whistle, harp, accordion, bass, and bodhran.".to_string(),
+        "The band plays a four-tune set dance back to back, with the caller naming each figure between tunes. Every step is called, and shamrocks hide in every tune.".to_string(),
+        format!("{clover} Every set dance you finish updates your keepsake for {year}. Press Escape here to go back without dancing."),
     ];
     Pages::briefing(pages).then(|ctx| {
         let f = Floor::open(ctx, Mode::Ceili);
@@ -271,7 +271,7 @@ impl TitleGame for CloverJig {
             MenuItem::new("Set select", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(picker::SetSelect::new())
             })
-            .help("Dance any set you have opened, with the stars on each."),
+            .help("Pick any set you have unlocked and check your stars on each."),
             MenuItem::new(ceili_label, |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 let date = today(ctx);
                 if season::ceili_open(date) {
@@ -291,7 +291,7 @@ impl TitleGame for CloverJig {
             MenuItem::new("Practice room", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(picker::TuneSelect::new())
             })
-            .help("Any tune you have opened. The music holds at each step until you dance it."),
+            .help("Practise any unlocked tune at your own pace. The music holds at each step until you dance it."),
         )
     }
 
@@ -304,7 +304,7 @@ impl TitleGame for CloverJig {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your stars, your best score on each set, your steps danced, and your challenge results."
+        "Check your stars, best scores for every set, total steps danced, and challenge results."
             .to_string()
     }
 
@@ -314,7 +314,7 @@ impl TitleGame for CloverJig {
                 let pages = keepsake_pages(ctx);
                 ctx.push(Pages::new(pages))
             })
-            .help("Your luck points, four-leaf clovers, and a keepsake for each Saint Patrick's ceili."),
+            .help("View your luck points, four-leaf clovers, and keepsakes from each Saint Patrick's Day ceili."),
         ]
     }
 
@@ -327,14 +327,14 @@ impl TitleGame for CloverJig {
             |_ctx, on| {
                 Some(
                     if on {
-                        "Spoken call-outs: on. Each call is also spoken."
+                        "Spoken call-outs: on. Each call is also spoken aloud."
                     } else {
-                        "Spoken call-outs: off. Only the caller calls the steps."
+                        "Spoken call-outs: off. Only the caller announces the steps."
                     }
                     .to_string(),
                 )
             },
-            "When on, the game also speaks each step as the caller calls it.",
+            "When on, the game also speaks each step aloud as the caller calls it.",
         )]
     }
 
@@ -343,7 +343,7 @@ impl TitleGame for CloverJig {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Every call, step and cue in the game, with its name and the key that dances it."
+        "Preview every call, step, and cue in the game by name, along with the key for each step."
             .to_string()
     }
 
@@ -354,7 +354,7 @@ impl TitleGame for CloverJig {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily tune, a weekly set and a monthly long set, the same calls for every player. {}",
+            "Take on a daily tune, a weekly set, and a monthly long set, with the same calls for every player. {}",
             daily.resets()
         )
     }
@@ -365,6 +365,9 @@ impl TitleGame for CloverJig {
     }
 
     fn intro_help(&self) -> Option<String> {
-        Some("Up and Down move, Enter chooses, Escape goes back to the parlor.".to_string())
+        Some(
+            "Up and Down move through the menu, Enter chooses, and Escape returns to the parlor."
+                .to_string(),
+        )
     }
 }

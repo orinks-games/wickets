@@ -29,7 +29,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let mut turned = false;
     let turn = field.step(
         format!(
-            "{} and {r} turn the bow, 5 degrees a press. The sky turns with you. Turn the bow, then {u} faces straight ahead again.",
+            "{} and {r} turn your bow 5 degrees at a time, turning the sky with you. Turn to one side, then press {u} to face straight ahead again.",
             sentence_start(&l)
         ),
         move |f: &Field, _| {
@@ -44,7 +44,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
 
     let draw = field.step(
         format!(
-            "Hold {p} to draw the string. Let go once the bow is at full draw to shoot one arrow. {} eases the string without shooting.",
+            "Hold {p} to draw the bowstring, and let go once it reaches full draw to loose an arrow. {} eases the string without shooting. Go ahead and fire one arrow.",
             sentence_start(&d)
         ),
         |f: &Field, _| (f.run.tally.shots >= 1).then(|| "That is a shot.".to_string()),
@@ -52,7 +52,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
 
     let hit = field.step(
         format!(
-            "A paper heart is drifting across the sky. Turn toward it, aim a little ahead of its drift, and shoot when your sights are on it. {} says how far to turn to meet it. Hit one heart.",
+            "A paper heart is drifting across the sky now. Turn toward it, aim a little ahead of its drift, and shoot when your sights line up. {} names how far to turn to meet it. Try hitting one heart.",
             sentence_start(&h)
         ),
         |f: &Field, _| (f.run.tally.hits >= 1).then(|| "A hit.".to_string()),
@@ -61,13 +61,13 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     Lesson::new(
         ID,
         "Cupid's Quiver",
-        "You stand on a rooftop at dusk with a bow, and paper hearts drift across the sky. Learn on the practice field, with endless arrows",
+        "You are standing on a rooftop at dusk with a bow in hand, while paper hearts drift across the evening sky. You will start on the practice field, with endless arrows.",
     )
     .step(turn)
     .step(draw)
     .step(hit)
     .outro(format!(
-        "Hearts come in pairs of one colour: hit both in a row for a sweetheart pair. {} lists the sky. Play climbs six rooftops, and Help has the scoring.",
+        "Hearts arrive in pairs of the same colour, so hit both in a row for a sweetheart pair bonus. {} lists everything in the sky. Choose Play on the title to climb six rooftops, and check Help for the full scoring rules.",
         sentence_start(&t)
     ))
 }

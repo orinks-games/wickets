@@ -241,7 +241,7 @@ impl TitleGame for GraveyardShuffle {
             MenuItem::new("Night select", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(picker::SetSelect::new())
             })
-            .help("Dance any night you have opened, with the stars on each."),
+            .help("Pick any night you have unlocked and check your stars on each."),
         ]
     }
 
@@ -250,7 +250,7 @@ impl TitleGame for GraveyardShuffle {
             MenuItem::new("Practice room", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(picker::TuneSelect::new())
             })
-            .help("Any song you have opened. The music holds for each monster until you dance its move."),
+            .help("Practise any unlocked song at your own pace. The music holds for each monster until you dance its move."),
         )
     }
 
@@ -263,7 +263,7 @@ impl TitleGame for GraveyardShuffle {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your stars, your best score on each night, your moves danced, and your challenge results."
+        "Check your stars, best scores for every night, total moves danced, and challenge results."
             .to_string()
     }
 
@@ -276,14 +276,14 @@ impl TitleGame for GraveyardShuffle {
             |_ctx, on| {
                 Some(
                     if on {
-                        "Spoken call-outs: on. Each monster is also named."
+                        "Spoken call-outs: on. Each monster is also named aloud."
                     } else {
-                        "Spoken call-outs: off. The monsters are not named."
+                        "Spoken call-outs: off. Monsters are not named aloud."
                     }
                     .to_string(),
                 )
             },
-            "When on, the game also names each monster as it comes up.",
+            "When on, the game also announces each monster's name as it steps up.",
         )]
     }
 
@@ -292,7 +292,7 @@ impl TitleGame for GraveyardShuffle {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Every monster, move and cue in the game, with its name and the key that dances it."
+        "Preview every monster, move, and cue in the game by name, along with the key for each move."
             .to_string()
     }
 
@@ -303,7 +303,7 @@ impl TitleGame for GraveyardShuffle {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily song, a weekly night and a monthly long night, the same monsters for every player. {}",
+            "Take on a daily song, a weekly haunt, and a monthly long night, with the same monsters for every player. {}",
             daily.resets()
         )
     }
@@ -314,6 +314,9 @@ impl TitleGame for GraveyardShuffle {
     }
 
     fn intro_help(&self) -> Option<String> {
-        Some("Up and Down move, Enter chooses, Escape goes back to the parlor.".to_string())
+        Some(
+            "Up and Down move through the menu, Enter chooses, and Escape returns to the parlor."
+                .to_string(),
+        )
     }
 }

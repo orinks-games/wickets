@@ -84,7 +84,7 @@ fn the_locked_row_counts_down_across_the_new_year() {
         "Saint Patrick's Day is tomorrow."
     );
     assert!(ceili_help(d(2026, 10, 22)).ends_with("Saint Patrick's Day is in 146 days."));
-    assert!(ceili_help(d(2027, 3, 17)).starts_with("The village ceili, open tonight"));
+    assert!(ceili_help(d(2027, 3, 17)).starts_with("The village ceili is open tonight"));
 }
 
 #[test]

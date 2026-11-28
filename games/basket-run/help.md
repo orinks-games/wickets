@@ -2,115 +2,124 @@
 
 ## About the game
 
-Easter morning: eggs tumble over the meadow. Catch them in your basket, bank them at the cart before the bell, and dodge mud clods and bees. A voice can call out every drop.
+It is Easter morning, and eggs are tumbling down over the meadow. You run across the lanes catching eggs in your basket, darting back to the cart to bank them before the bell rings, and dodging mud clods and diving bees along the way. Eight rounds grow wider and busier as you go, and you can turn on spoken call-outs if you want every drop announced.
 
 ## The meadow and your lanes
 
-The meadow is a row of lanes, numbered from 1 on the far left. The first rounds have three lanes, then four, then five. Left and Right arrows move you one lane at a time. Each step says your lane. At either edge you bump the fence.
+The meadow is laid out as a row of lanes, numbered from 1 on the far left. You start with three lanes, then open up to four, and finally five. Left and Right arrows move you one lane at a time, announcing each lane as you step, and you bump the fence at either edge.
 
-You hear the meadow from your own lane: a drop straight ahead is in your lane, one a little to the left is one lane left, and one far to the left is further.
+Drops come down relative to where you stand: straight ahead means your lane, a little to the left is one lane over, and further to the left is further across the meadow.
 
 ## The cart
 
-The cart sits at one edge: left on odd rounds, right on even, in the weekly marathon too. Endless, daily, festival, and practice keep it on the left. Tab locates the cart and says how far away it is.
+The cart sits at one edge of the meadow. In the main meadow and the weekly marathon, it is on the left for odd rounds and on the right for even rounds. In endless, daily, festival, and practice modes, it always stays on the left. Press Tab any time to locate the cart and find out how far away it is.
 
-Space banks your basket when you stand in the cart's lane. The eggs roll into the cart and become points. Banking anywhere else says where the cart is.
+Stand in the cart's lane and press Space to bank your basket. Your eggs roll into the cart and turn into points. If you press Space in another lane, the game lets you know which way the cart is.
 
 ## What falls
 
-Each falling object is heard from its lane. Its cue changes as it approaches the ground. Every drop gives you at least 1.6 seconds of warning, enough to cross the whole meadow.
+Every drop arrives in its own lane and builds as it gets closer to the ground. You always get at least 1.6 seconds of warning, which is enough time to cross the whole meadow.
 
-- Be in an egg's lane when it lands to catch it. Miss it and it breaks.
-- A golden egg is worth five eggs.
-- A mud clod spoils every egg in your basket if you catch it. Move out of its lane.
-- A bee breaks a basket if it hits you. Move out of its lane.
+- Stand in an egg's lane when it lands to catch it. If you miss, it breaks on the grass.
+- Catch golden eggs whenever you can: each one counts as five regular eggs.
+- Step out of a mud clod's lane. Catching mud spoils every egg currently in your basket.
+- Step out of a bee's lane. A sting breaks one of your baskets.
 
-The first time you meet each of them, the game stops and explains it before it falls.
+The first time you meet each kind of drop, play pauses to introduce it before it lands.
 
 ## The basket
 
-The basket holds four eggs in the first rounds, five from round 3, and six in the last two. The game signals when the basket is full. An egg that lands in a full basket bounces out and cracks, so bank before it fills up again.
+Your basket holds four eggs in the early rounds, five starting in round 3, and six in the last two rounds. When it fills up, head for the cart. Any egg that lands in a full basket bounces out and cracks, so bank before you run out of room.
 
 ## Points and streaks
 
-An egg is worth 10 points and a golden egg 50. Every egg caught in a row adds a tenth to the next one's value, up to double after a streak of ten. A cracked egg, mud in the basket or a sting breaks the streak. Banking a full basket earns 25 more. Clearing a round earns 50 times the round number, and 100 more if no egg cracked.
+A regular egg is worth 10 points, and a golden egg is worth 50. Every egg you catch in a row adds a tenth to the next egg's value, climbing up to double points at a streak of ten. A cracked egg, mud in the basket, or a bee sting resets your streak.
 
-Spoken call-outs is a row in Settings, from the title or from the pause menu during a run. Play a whole run with it off, and everything you bank is worth a tenth more. Switching it on during a run ends the bonus for that run.
+Banking a full basket adds a 25 point bonus. Clearing a round earns 50 points times the round number, plus 100 more if not a single egg cracked.
+
+You can toggle Spoken call-outs in Settings, either from the title or from the pause menu during a run. If you play an entire run with call-outs off, everything you bank is worth a tenth more. Turning them back on mid-run ends that bonus for the rest of the run.
 
 ## Rounds and the clock
 
-Each round opens with its announcement, then "Go". Nothing falls until the announcement has had time to be read. Space starts the round sooner. Play pauses while a page is open, such as a first-time explanation or a round's summary. Only Enter continues play, so a late Space press cannot skip it. Each round has a clock. Warnings mark ten seconds left and each of the last five seconds. When time runs out, eggs still in your basket are lost.
+Each round opens with its details, followed by "Go". Nothing falls until the announcement has had time to finish, or you can press Space to start right away. Play pauses whenever a message page opens, such as a first-time introduction or a round summary, and only Enter closes it so a late Space press cannot skip past it.
 
-In the meadow, you must bank a share of each round's eggs. The round's opening announcement says how many. Bank too few and the run ends. You have 3 baskets: lose them all to bee stings and the run ends too.
+Each round runs on a clock, with warnings at ten seconds left and on each of the final five seconds. When the bell rings, any eggs still sitting in your basket are lost, so bank in time.
 
-The meadow has eight rounds. Round 2 brings mud clods and moves the cart to the right. Round 3 adds a fourth lane, golden eggs and bees. Round 4 sends some eggs in pairs, one close behind the other in a nearby lane. Round 5 adds a fifth lane, and bees that dive right behind an egg in the same lane: catch the egg, then step aside. Each round after is faster.
+In the meadow, you must bank a target share of each round's eggs, named in the round's opening. Fall short and the run ends. You also start with 3 baskets; lose all three to bee stings and the run ends too.
+
+The meadow runs for eight rounds. Round 2 introduces mud clods and moves the cart to the right edge. Round 3 opens a fourth lane, brings in golden eggs and bees, and upgrades your basket to hold five.
+
+Round 4 starts sending eggs in pairs, one right behind the other in a nearby lane. Round 5 adds a fifth lane and bees that dive straight behind an egg in the same lane, so catch the egg and step aside fast. Each round after that picks up speed.
 
 ## Pace
 
-The meadow holds while a line is still being spoken. The drops, the round's clock and the patterns stand still until it ends, so a call never eats into a drop's warning. A step or a bank pressed meanwhile happens at once. The wait before "Go" keeps its own time, so it is the same at every pace. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode.
+Play holds still while a spoken line finishes, so the clock, drops, and patterns never eat into your warning time. You can still step or bank while speech is playing and it happens right away. The wait before "Go" always keeps real time at every pace. If you ask for a line repeatedly, it stops holding after a while. This works the same at every pace and in every mode.
 
-Pace in Settings sets how fast the meadow runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. The drops, the patterns, the round's clock and its warnings follow the pace.
+Pace in Settings controls how fast the meadow runs: relaxed, normal, or quick. Normal is the default and sits just below quick. Quick is the fastest, while relaxed runs at half speed, slowing down drops, patterns, the clock, and warnings together.
 
-A change applies from your next run. A run or a challenge keeps the pace it started at until it ends.
+Changing pace takes effect on your next run, while any run already underway keeps the pace it started with.
 
-Relaxed scores and Easter keepsakes are saved separately, including challenges. Normal and quick share their scores. Rounds cleared and the endless meadow count at every pace, and so does the bonus for playing with Spoken call-outs off.
+Relaxed scores and Easter keepsakes are tracked separately, including in challenges, while normal and quick share their boards. Cleared rounds, unlocking the endless meadow, and the bonus for turning Spoken call-outs off count at every pace.
 
 ## Endless meadow
 
-Clear all eight rounds to open the endless meadow: rounds without end, faster each time, with no egg target. Instead, every fifth cracked egg wears out a basket. Play until your baskets are gone.
+Clear all eight rounds of the meadow to unlock the endless meadow. Rounds keep coming without end and get faster each time, with no egg target to hit. Instead, every fifth cracked egg wears out a basket, and you play until your baskets are gone.
 
 ## Easter morning
 
-On Easter Sunday, and the day either side of it, the Easter morning row on the title opens a golden-egg hunt. It has three rounds: sunrise in the garden on three lanes, then the orchard on four, then the big hunt on five. Golden eggs fall often and are worth double. There are no bees and no egg target, so the hunt always runs to the end. The results name how many golden eggs you found, and each Easter you play keeps a keepsake: your best hunt that year and the most golden eggs in one hunt. Records reads them all.
+On Easter Sunday, plus the day before and the day after, the Easter morning row on the title opens a three-round golden-egg hunt. You start at sunrise in the garden across three lanes, move into the orchard on four lanes, and finish with the big hunt on five.
 
-Easter moves from year to year, between the 22nd of March and the 25th of April. The rest of the year the row says locked, and F1 or Enter on it says how many days are left. In the ten days before Easter, Enter says how the Easter bunny is getting on.
+Golden eggs fall often and score double. There are no bees and no egg target, so every hunt plays all the way to the finish. Your results count how many golden eggs you found, and each Easter saves a keepsake with your best hunt and highest golden-egg haul for that year. You can browse all of them in Records.
+
+Easter shifts each year between the 22nd of March and the 25th of April. The rest of the year the row is locked, and F1 or Enter tells you how many days remain. During the ten days leading up to Easter, pressing Enter checks in on what the Easter bunny is up to.
 
 ## Challenges
 
-Challenges on the title holds three runs that are the same for every player: a new daily each day, a new weekly each Monday and a new festival each month. All three turn over at midnight UTC. Each row says what the challenge is, then your best and your streak. F1 on a row reads its whole rule and when the next one comes. Choosing one reads its rule first. Enter starts the run. Escape goes back without starting.
+Challenges on the title gives you three shared runs where every player gets the exact same drops: a new daily each day, a new weekly each Monday, and a new festival each month, all turning over at midnight UTC. Each row names the challenge along with your best score and streak. Press F1 for the full rule and reset time, or choose a challenge to read its briefing before pressing Enter to start or Escape to back out.
 
-- Daily, Twist of the day: one round of 60 seconds across five lanes, with no egg target, but every fifth cracked egg breaks a basket. Each day brings one twist, named in the round's opening. Golden rush: golden eggs three times as often. Bee swarm: no mud, twice the bees, more of them right behind an egg. Fast fall: everything falls as fast as the meadow ever allows. Mud slide: no bees, three times the mud. Small basket: the basket holds only 3.
-- Weekly, The long meadow: a marathon of the meadow's rounds 4 to 8 back to back, each with its egg target, and the cart swapping sides every round. Your 3 baskets have to last all five rounds.
-- Monthly, The Easter festival: three rounds across five lanes where the drops come in patterns. A voice names each pattern as it starts:
-  - An egg sweep drops an egg in every lane in turn, from one edge to the other. Get to the edge it starts from and run along with it.
-  - A bee fence drops a bee in every lane but one, all at once, and the gap holds a golden egg. Find the gap.
-  - A nest drops three eggs in one lane, then a mud clod right behind them. Catch the eggs, then step aside.
+- Daily, Twist of the day: one 60-second round across five lanes with no egg target, where every fifth cracked egg breaks a basket. Each day draws a twist named at the start: Golden rush triples golden eggs; Bee swarm removes mud, doubles bees, and sends more right behind eggs; Fast fall drops everything at top meadow speed; Mud slide removes bees and triples mud; Small basket shrinks your basket to hold only 3 eggs.
+- Weekly, The long meadow: a five-round marathon playing meadow rounds 4 through 8 back to back, each with its egg target and the cart swapping sides every round. Your 3 baskets have to carry you through all five rounds.
+- Monthly, The Easter festival: three rounds across five lanes built around drop patterns, with each pattern announced as it starts. Every fifth cracked egg breaks a basket. With Spoken call-outs off, the game names the pattern without calling its lane.
 
-  Catching every egg in a pattern and dodging its hazards earns 100 bonus points. Every fifth cracked egg breaks a basket. With Spoken call-outs off, the call names the pattern but not its lane.
+In the Easter festival, three patterns can appear, and catching every egg in a pattern while dodging its hazards earns 100 bonus points.
 
-Your result counts when a challenge run ends, however it ends: the results say your score, whether it is your best, your streak and when the next one comes. Choosing Leave the challenge on the pause menu does not count. You can replay a challenge as often as you like: the drops are the same, and only your best is kept. Finishing a challenge in each period in a row builds that challenge's streak.
+- Egg sweep: drops an egg in every lane in turn from one edge to the other. Head to the starting edge and run along with it.
+- Bee fence: drops a bee in every lane except one all at once, with a golden egg waiting in the gap. Find the gap.
+- Nest: drops three eggs in one lane, followed right behind by a mud clod. Catch the eggs, then step aside.
+
+Your score counts as soon as a challenge run finishes, win or lose, showing your score, whether you set a new best, your streak, and when the next challenge arrives. Picking Leave the challenge from the pause menu does not count. You can replay a challenge as many times as you want with the same drops, and only your best score is saved. Finishing a challenge in consecutive periods builds your streak.
 
 ## Practice lanes
 
-Three slow lanes with every kind of drop, each explained the first time it falls and every drop called out. Nothing costs a basket and no score is saved. Pause and choose Back to the title to stop.
+Practice lanes gives you three slow lanes with every kind of drop, introduced the first time it falls and called out as it drops. Nothing costs a basket and no score is saved. Pause and pick Back to the title whenever you are ready to stop.
 
 ## The title
 
-- Play, the meadow: the eight rounds, with your best score. The very first time, the tutorial opens first.
-- Endless meadow: opens once the meadow is cleared. Until then the row says locked.
-- Easter morning: the golden-egg hunt, open around Easter Sunday. The rest of the year the row says locked and counts down the days.
-- Challenges: the daily twist, the weekly marathon and the monthly Easter festival, each with your best and streak.
-- Practice lanes: every kind of drop, with no score saved.
-- Tutorial: how to play, a page at a time. On your first visit the title starts here.
+- Play, the meadow: start the eight-round run, showing your best score. On your very first visit, the tutorial opens first.
+- Endless meadow: unlocks once you clear all eight rounds of the meadow.
+- Easter morning: the three-round golden-egg hunt around Easter Sunday, or a countdown the rest of the year.
+- Challenges: the daily twist, weekly marathon, and monthly Easter festival, with your best scores and streaks.
+- Practice lanes: slow practice with every drop and no score saved.
+- Tutorial: an interactive walkthrough in the practice lanes. On your first visit, the title starts here.
 - Help: this guide.
-- Sound check: each sound you need in play, by name. Falling sounds fall and land just as they do in play.
-- Records: your best scores, the rounds you have cleared, your Easter keepsakes and your challenge results.
-- Settings: speech, volume and controls, then this game's Spoken call-outs, on or off, and its Pace.
-- Back to the parlor.
+- Sound check: preview every gameplay sound in the meadow by name. Falling sounds drop and land just as they do in play.
+- Records: your best scores, cleared rounds, Easter keepsakes, and challenge results.
+- Settings: speech, volume, controls, Spoken call-outs, and Pace.
+- Back to the parlor: return to the game list.
 
 ## Results
 
-When a run ends, the results give your score, whether it is your best, and for a challenge your streak. Then the results menu offers Play again or Try again, Hear the results again, and Back to the title. After a challenge, the first row plays the same challenge again and the last row is Back to the challenges. Escape does the same as the last row.
+When a run wraps up, results announce your score, whether you set a new best, and your streak for challenges. From there you can pick Play again or Try again, Hear the results again, or go Back to the title. After a challenge, the first option replays the same challenge and the last returns to the challenges list, just like pressing Escape.
 
 ## Controls
 
 - Left and Right arrows: step one lane.
-- Space: bank your basket at the cart. Before a round begins, Space starts it at once.
-- Tab: ring the cart's bell and say where the cart is.
-- S: your lane, how full your basket is, and the next two things to land. Press it again straight away for the clock, eggs banked and needed, and baskets left, and a third time for your score and streak.
+- Space: bank your basket when you are in the cart's lane, or start a round right away during the opening announcement.
+- Tab: ring the cart's bell and report where the cart is.
+- S: report your lane, how full your basket is, and the next two drops to land. Press it again right away for the clock, eggs banked and needed, and baskets left, and a third time for your score and streak.
 - R: repeat the last announcement.
-- H: a hint for right now: which way to move, when to bank.
-- F1: help for the current screen.
-- Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
+- H: get a hint for what to do right now.
+- F1: open help for the current screen.
+- Escape: pause the run, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title becomes Leave the challenge.
 
 These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

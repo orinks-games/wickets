@@ -245,7 +245,7 @@ fn the_tutorial_catches_and_banks_an_egg() {
     assert_eq!(h.app.top_name(), "lesson");
     assert!(spoke(
         &h,
-        "It is Easter morning, and eggs tumble from the trees over the meadow."
+        "It is Easter morning, and eggs are tumbling down from the trees over the meadow."
     ));
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), "basket_run");
@@ -302,7 +302,11 @@ fn the_first_egg_is_explained_before_it_falls_and_the_meadow_waits() {
         }
     }
     assert_eq!(h.app.top_name(), "pages");
-    assert!(spoke(&h, "Your first egg."), "{:?}", h.spoken());
+    assert!(
+        spoke(&h, "Your first egg is coming down."),
+        "{:?}",
+        h.spoken()
+    );
     let loops = falling_loops(&h);
     assert_eq!(loops.len(), 1);
     assert!(loops[0].paused, "the egg waits while the page is read");
@@ -367,8 +371,8 @@ fn status_repeat_hint_cart_and_help_all_answer() {
     h.clear();
     h.press(Key::F1);
     let help = h.spoken().join(" ");
-    assert!(help.contains("step one lane"), "{help}");
-    assert!(help.contains("Space empties your basket"), "{help}");
+    assert!(help.contains("move you one lane"), "{help}");
+    assert!(help.contains("Space banks your basket"), "{help}");
 }
 
 #[test]
@@ -550,7 +554,7 @@ fn drop_calls_can_be_turned_off() {
     assert!(
         spoke(
             &h,
-            "Spoken call-outs: off. From your next run, a tenth more points"
+            "Spoken call-outs: off. From your next run, everything you bank scores a tenth more."
         ),
         "{:?}",
         h.spoken()
@@ -629,7 +633,7 @@ fn the_endless_meadow_is_locked_at_first() {
     h.press(Key::Return);
     assert_eq!(
         h.spoken(),
-        ["The endless meadow opens once you clear all 8 rounds of the meadow."]
+        ["Clear all 8 rounds of the meadow to open the endless meadow."]
     );
     assert_eq!(h.app.top_name(), "basket_run");
 }
@@ -647,9 +651,14 @@ fn practice_explains_every_kind_and_costs_nothing() {
     for _ in 0..2400 {
         if h.app.top_name() == "pages" {
             if h.spoken().iter().any(|l| {
-                ["Your first egg.", "A golden egg.", "A mud clod.", "A bee."]
-                    .iter()
-                    .any(|m| l.starts_with(m))
+                [
+                    "Your first egg is coming down.",
+                    "A golden egg is on the way.",
+                    "A mud clod is falling.",
+                    "A bee is diving in.",
+                ]
+                .iter()
+                .any(|m| l.starts_with(m))
             }) {
                 intros += 1;
             }
@@ -820,16 +829,16 @@ fn a_page_in_the_middle_of_play_is_not_skipped_by_space_or_the_arrows() {
     while h.app.top_name() != "pages" {
         step(&mut h, DT);
     }
-    assert!(spoke(&h, "Your first egg."));
+    assert!(spoke(&h, "Your first egg is coming down."));
     for key in [Key::Space, Key::Right, Key::Tab, Key::S] {
         h.clear();
         h.press(key);
         assert_eq!(h.app.top_name(), "pages", "{key:?} kept the page");
-        assert!(spoke(&h, "The meadow waits while you read."), "{key:?}");
+        assert!(spoke(&h, "Play is paused while you read."), "{key:?}");
     }
     h.clear();
     h.press(Key::R);
-    assert!(spoke(&h, "Your first egg."), "R repeats it");
+    assert!(spoke(&h, "Your first egg is coming down."), "R repeats it");
     h.clear();
     h.press(Key::F1);
     assert!(spoke(&h, "the clock is stopped"), "{:?}", h.spoken());
@@ -954,7 +963,7 @@ fn the_title_offers_the_challenges_with_todays_state() {
     assert_eq!(h.spoken(), ["Challenges, daily not played yet. 4 of 11."]);
     h.clear();
     h.press(Key::F1);
-    assert!(spoke(&h, "the weekly marathon"), "{:?}", h.spoken());
+    assert!(spoke(&h, "weekly marathon"), "{:?}", h.spoken());
     h.press(Key::Return);
     assert_eq!(h.app.top_name(), CHALLENGES_NAME);
     assert_eq!(h.app.ctx.audio.music(), Some(sound::TITLE_MUSIC));
@@ -1026,7 +1035,7 @@ fn the_daily_briefing_states_the_twist_on_one_page_then_the_run_names_it() {
     h.clear();
     h.press(Key::Return);
     assert!(
-        spoke(&h, &format!("Twist, {}:", twist.name())),
+        spoke(&h, &format!("Today's twist is {}:", twist.name())),
         "{:?}",
         h.spoken()
     );
@@ -1094,7 +1103,7 @@ fn the_weekly_marathon_records_a_failed_run_and_its_streak() {
     h.clear();
     h.press(Key::Return);
     assert!(
-        spoke(&h, "The long meadow: Rounds 4 to 8"),
+        spoke(&h, "The long meadow: Play rounds 4 through 8"),
         "{:?}",
         h.spoken()
     );

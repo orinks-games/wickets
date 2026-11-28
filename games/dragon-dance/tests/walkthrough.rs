@@ -47,7 +47,7 @@ fn a_first_visit_starts_on_the_tutorial() {
         ]
     );
     h.press(Key::Return);
-    assert!(spoke(&h, "You are the head of a long paper dragon in a street parade, and the dragon follows where you lead."));
+    assert!(spoke(&h, "You are at the head of a long paper dragon in a street parade, and the rest of the dragon follows wherever you lead."));
     assert_eq!(h.app.top_name(), "lesson");
     h.clear();
     h.press(Key::Escape);
@@ -66,7 +66,7 @@ fn the_tutorial_teaches_on_the_practice_street() {
     h.frame(0.0);
     assert!(spoke(
         &h,
-        "The Left arrow and the Right arrow move your head one lane."
+        "The Left arrow and the Right arrow move your head one lane at a time."
     ));
     let dt = 1.0 / 60.0;
     for _ in 0..(60 * 200) {

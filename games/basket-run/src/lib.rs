@@ -45,7 +45,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Basket Run",
     category: Category::Seasonal,
-    blurb: "Easter: run the meadow lanes catching falling eggs in your basket, and dodge the mud.",
+    blurb: "Run the Easter meadow lanes to catch falling eggs, bank them at the cart, and dodge mud clods and bees.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(easter::event),
@@ -173,19 +173,19 @@ impl TitleGame for BasketRun {
                     start(ctx, s.game.launch(Mode::Endless), false)
                 },
             )
-            .help("Rounds without end, faster each time, with no egg target: play until your baskets are gone. Every fifth cracked egg breaks a basket.")
+            .help("Endless rounds that get faster each time, with no egg target. Every fifth cracked egg breaks a basket, so play until your baskets run out.")
         } else {
             MenuItem::new(
                 labels::locked("Endless meadow"),
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                     ctx.say(format!(
-                        "The endless meadow opens once you clear all {ROUNDS} rounds of the meadow."
+                        "Clear all {ROUNDS} rounds of the meadow to open the endless meadow."
                     ))
                 },
             )
             .select_sound(None)
             .help(format!(
-                "Clear all {ROUNDS} rounds of the meadow to open rounds without end."
+                "Clear all {ROUNDS} rounds of the meadow to unlock endless play."
             ))
         };
         vec![
@@ -196,7 +196,7 @@ impl TitleGame for BasketRun {
                 },
             )
             .help(format!(
-                "{ROUNDS} rounds, from three lanes to five, with 3 baskets. Each round needs a share of its eggs banked before the bell. {} of {ROUNDS} cleared so far.",
+                "Play {ROUNDS} rounds across three to five lanes with 3 baskets, banking enough eggs before the bell. You have cleared {} of {ROUNDS} rounds so far.",
                 progress.cleared.min(ROUNDS)
             )),
             endless,
@@ -209,7 +209,7 @@ impl TitleGame for BasketRun {
             MenuItem::new("Practice lanes", |s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 start(ctx, s.game.launch(Mode::Practice), false)
             })
-            .help("Three slow lanes with every kind of drop, each explained the first time it falls. Nothing costs a basket and no score is saved."),
+            .help("Practice across three slow lanes with every kind of drop introduced as it first falls. Nothing costs a basket and no score is saved."),
         )
     }
 
@@ -222,7 +222,7 @@ impl TitleGame for BasketRun {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your best scores, the rounds you have cleared, your Easter keepsakes and your challenge results. Enter turns the page.".to_string()
+        "Check your best scores, cleared rounds, Easter keepsakes, and challenge results. Enter turns the page.".to_string()
     }
 
     fn sound_check(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -230,7 +230,7 @@ impl TitleGame for BasketRun {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Each sound you need in the meadow, with its name.".to_string()
+        "Preview every gameplay sound in the meadow by name.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -240,7 +240,7 @@ impl TitleGame for BasketRun {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "The daily twist, the weekly marathon and the monthly Easter festival: the same drops for every player. {}",
+            "Take on the daily twist, weekly marathon, and monthly Easter festival, with the same drops for every player. {}",
             daily.resets()
         )
     }
@@ -260,10 +260,10 @@ impl TitleGame for BasketRun {
                 Some(if on {
                     "Spoken call-outs: on. Each drop is called with its lane.".to_string()
                 } else {
-                    "Spoken call-outs: off. From your next run, a tenth more points on everything you bank.".to_string()
+                    "Spoken call-outs: off. From your next run, everything you bank scores a tenth more.".to_string()
                 })
             },
-            "When on, a voice names each drop and its lane as it starts to fall. Off for a whole run, you earn a tenth more on everything you bank.",
+            "When on, a voice announces each drop and its lane as it starts to fall. Leave it off for a whole run to earn a tenth more on everything you bank.",
         ),
             pace::row(ID),
         ]
@@ -276,6 +276,9 @@ impl TitleGame for BasketRun {
     }
 
     fn intro_help(&self) -> Option<String> {
-        Some("Up and Down move, Enter chooses, Escape goes back to the parlor.".to_string())
+        Some(
+            "Up and Down move through the menu, Enter chooses, and Escape returns to the parlor."
+                .to_string(),
+        )
     }
 }
