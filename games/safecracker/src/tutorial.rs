@@ -65,7 +65,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let dl = Rc::clone(&dial);
     let clicks = Step::new(
         format!(
-            "The dial runs from 0 to 99. {} turns it one number down and {r} one number up. Turn up to 5.",
+            "The dial runs from 0 to 99. {} turns it one number down, and {r} turns it one number up. Turn up to 5.",
             sentence_start(&l)
         ),
         move |ctx, a| {
@@ -85,7 +85,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let dl = Rc::clone(&dial);
     let read = Step::press(
         format!(
-            "{} speaks the number under the mark, without turning. Press it now.",
+            "{} reads the number under the mark without moving the dial. Press it now.",
             sentence_start(&t)
         ),
         ParlorAction::Secondary,
@@ -95,7 +95,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let dl = Rc::clone(&dial);
     let spins = Step::new(
         format!(
-            "{} spins the dial ten numbers up and {d} ten down. At a wheel's number, the tumbler falls into place. Spin up until it does.",
+            "{} spins the dial ten numbers up, and {d} spins it ten down. Whenever you pass the wheel's secret number, the tumbler drops into place. Spin up until it drops.",
             sentence_start(&u)
         ),
         move |ctx, a| {
@@ -121,7 +121,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
 
     let dl = Rc::clone(&dial);
     let back = Step::new(
-        format!("Now step back one number at a time with {l} until the tumbler falls again."),
+        format!("Now step back one number at a time with {l} until the tumbler drops again."),
         move |ctx, a| {
             let n = match a {
                 ParlorAction::Left => turn(ctx, &dl, -1),
@@ -148,7 +148,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let dl = Rc::clone(&dial);
     let set = Step::new(
         format!(
-            "{} sets the wheel on the number under the mark. Set it now.",
+            "{} locks the wheel on the number under the mark. Set it now.",
             sentence_start(&p)
         ),
         move |ctx, a| match a {
@@ -173,12 +173,12 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     Lesson::new(
         ID,
         "Safecracker",
-        "Turn the dial and listen for the tumbler to find each wheel's number. Learn on a practice dial with one wheel and no time limit",
+        "You are about to crack a practice safe with one wheel and no clock, so you can get a feel for the dial and how the tumbler drops",
     )
     .step(clicks)
     .step(read)
     .step(spins)
     .step(back)
     .step(set)
-    .outro(format!("In a real safe, turning the dial does not speak each number. Press {t} to hear the current number. Real safes have two to five wheels, and later ones add false gates and a night guard. Play starts with the office lockbox, and Practice dial gives endless single wheels."))
+    .outro(format!("In a real safe, turning the dial does not read every number out loud, so press {t} whenever you want to check where you are. Real safes have two to five wheels, and later ones bring in false gates and a night guard. Play starts you on the office lockbox, and Practice dial gives you endless single wheels to warm up on."))
 }

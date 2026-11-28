@@ -48,7 +48,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Safecracker",
     category: Category::Puzzle,
-    blurb: "Turn the dial to find each tumbler and open safe after safe.",
+    blurb: "Turn the combination dial, find each tumbler, and crack ten safes up to the Crown vault.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -249,7 +249,7 @@ impl TitleGame for Safecracker {
             MenuItem::new("Time attack", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(SafeSelect::new(true))
             })
-            .help("Any safe you have cracked, against the clock, for its best time attack time.")
+            .help("Race the clock on any safe you have already cracked.")
         } else {
             MenuItem::new(
                 labels::locked("Time attack"),
@@ -318,7 +318,7 @@ impl TitleGame for Safecracker {
             MenuItem::new("Practice dial", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(Crack::new(Mode::Practice))
             })
-            .help("Endless single wheels with nothing to lose."),
+            .help("Endless single wheels with no strikes and no clock, for practising the tumbler."),
         )
     }
 
@@ -331,7 +331,7 @@ impl TitleGame for Safecracker {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your best times and scores for every safe, and your challenge results.".to_string()
+        "Your best times and scores for every safe, plus your challenge results.".to_string()
     }
 
     fn sound_check(&mut self, ctx: &mut Ctx<Parlor>) {

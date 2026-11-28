@@ -49,7 +49,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let b = Rc::clone(&brew);
     let shelf = Step::new(
         format!(
-            "{} and {d} move along your shelf; each tea is named. Find Sencha, then press {p} to put it in the pot.",
+            "{} and {d} move along your tea shelf. Find Sencha, then press {p} to measure it into the pot.",
             sentence_start(&u)
         ),
         move |ctx, a| {
@@ -80,7 +80,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let b2 = Rc::clone(&brew);
     let kettle = Step::new(
         format!(
-            "{} puts the kettle on, and it heats toward the boil. Sencha wants water at 75 degrees, well before the boil: press {p} again then. {} says the heat.",
+            "{} puts the kettle on to heat. Sencha wants water around 75 degrees, well before a full boil, so press {p} again to pour when it gets there. {} checks the current temperature.",
             sentence_start(&p),
             sentence_start(&s)
         ),
@@ -144,7 +144,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let b2 = Rc::clone(&brew);
     let steep = Step::new(
         format!(
-            "Sencha wants a 6 second steep. {} breathes in the steam to check how strong it is, and {p} lifts the leaves out.",
+            "Sencha likes a 6-second steep. {} checks the steam to tell how strong it is getting, and {p} lifts the leaves out when it is ready.",
             sentence_start(&t)
         ),
         move |ctx, a| {
@@ -196,7 +196,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
 
     let hint = Step::press(
         format!(
-            "{} gives a hint at any time, such as where a guest's tea is on your shelf. Press it now.",
+            "{} gives you a free hint whenever you want one, like which teas on your shelf fit a guest's taste. Try it now.",
             sentence_start(&h)
         ),
         ParlorAction::Hint,
@@ -210,12 +210,12 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     Lesson::new(
         ID,
         "Slow Kettle",
-        "You keep a small tea house, at your own pace, and nothing here can go wrong. Make a cup of Sencha now",
+        "You run a small tea house at your own pace, where every cup is welcome. Brew a cup of Sencha to get the feel of the counter",
     )
     .step(shelf)
     .step(kettle)
     .step(steep)
     .step(hint)
-    .outro("Guests come in and say what they would like. Play opens the tea house, and Practice brewing is a quiet place to learn the kettle.")
+    .outro("In the tea house, guests come in and tell you what they are in the mood for. Play opens the doors for an afternoon, and Practice brewing gives you a calm counter to try out any tea on your shelf.")
     .on_exit(move |ctx| b.borrow_mut().song.stop(ctx))
 }

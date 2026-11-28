@@ -66,7 +66,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pad: Live<Descent>) -> Lesson {
 
     let fall = pad.step(
         format!(
-            "Lesson 1 of 4, the fall. You wait {} above the pad. {} starts the descent. Let go and fall freely.",
+            "Lesson 1 of 4, the fall. You are hovering {} above the pad. {} starts the descent, then let go and fall freely.",
             parlor_core::units::length(moon.height),
             sentence_start(&p)
         ),
@@ -80,7 +80,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pad: Live<Descent>) -> Lesson {
 
     let engine = pad.step(
         format!(
-            "Lesson 2 of 4, the engine. Hold {p} to slow down. Let go at Safe speed."
+            "Lesson 2 of 4, the engine. Hold {p} to fire the thrusters and slow down, then let go as soon as you reach Safe speed."
         ),
         |d: &Descent, _| {
             let f = &d.flight;
@@ -95,7 +95,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pad: Live<Descent>) -> Lesson {
     let hint = pad
         .step(
             format!(
-                "Lesson 3 of 4, the hint. {} says when to burn. Press it now.",
+                "Lesson 3 of 4, the hint. {} calculates when to burn. Press it now.",
                 sentence_start(&h)
             ),
             move |d: &Descent, ctx| {
@@ -117,7 +117,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pad: Live<Descent>) -> Lesson {
     let late = format!("Hold {p} as soon as the game says Burn now.");
     let tap = format!("Each time the game says Too fast, hold {p} until Safe speed.");
     let land = pad.step(
-        "Lesson 4 of 4, the landing. Fall freely until the game says Burn now.",
+        "Lesson 4 of 4, the landing. Fall freely until you get the Burn now call.",
         move |d: &Descent, ctx| {
             let f = &d.flight;
             match f.outcome {
@@ -163,7 +163,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pad: Live<Descent>) -> Lesson {
         ID,
         "Soft Landing",
         format!(
-            "Touch the pad slower than {safe} to land. Four short lessons on the practice pad, with endless fuel"
+            "To land safely, touch down slower than {safe}. These four quick lessons on the practice pad give you endless fuel to get the feel of the lander"
         ),
     )
     .step(fall)
@@ -171,7 +171,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pad: Live<Descent>) -> Lesson {
     .step(hint)
     .step(land)
     .outro(format!(
-        "On a moon the tank is small: fall freely, then burn once. {} reads height, speed and fuel. {} asks for a call-out.",
+        "On a real moon your fuel tank is tight, so fall freely first and save your burn for the approach. {} reports your height, speed, and fuel, and {} requests an immediate call-out.",
         sentence_start(&s),
         sentence_start(&t)
     ))

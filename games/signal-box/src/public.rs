@@ -49,7 +49,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Action,
-    blurb: "Answer the dispatcher's calls before each train reaches the points.",
+    blurb: "Work the night shift at a country junction, throwing points and signals before each train arrives.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -179,7 +179,7 @@ impl TitleGame for SignalBox {
             ctx.push(Signal::new(Mode::Shift))
         })
         .help(format!(
-            "Calls until a train derails, the window shrinking every {SHRINK_EVERY} trains.{best}{thirteenth}"
+            "Keep passing trains as the window shrinks every {SHRINK_EVERY} trains, until a derailment ends the shift.{best}{thirteenth}"
         ))];
         if events::GALA.is_open(today) {
             let best = match pace::scored_bests(ctx, ID, events::GALA_BOARD, "steam gala best") {
@@ -219,7 +219,7 @@ impl TitleGame for SignalBox {
             MenuItem::new("Practice room", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(Signal::new(Mode::Practice))
             })
-            .help("Calls with no clock and nothing to lose: learn each call and its key."),
+            .help("Calls with no clock and no derailments, so you can learn each call and its key."),
         )
     }
 
@@ -232,7 +232,7 @@ impl TitleGame for SignalBox {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your best score, longest run and shortest window, and your challenge results.".to_string()
+        "Your best score, longest run, shortest window, and challenge results.".to_string()
     }
 
     fn sound_check(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -251,7 +251,7 @@ impl TitleGame for SignalBox {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily, a weekly and a monthly timetable, the same calls for every player. {}",
+            "Daily, weekly, and monthly timetables with the same calls for every player. {}",
             daily.resets()
         )
     }

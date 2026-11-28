@@ -2,85 +2,95 @@
 
 ## About the game
 
-Crack ten safes, from the office lockbox to the Crown vault. Turn the dial, listen for the tumbler and set each wheel. Choose time attack for timed safes.
+You have ten safes to crack, starting with a simple office lockbox and working your way up to the Crown vault. Turn the combination dial, catch the moment each tumbler drops into place, and set every wheel before three wrong guesses jam the lock. Later safes add false gates, real combination-dial directions, and a night guard patrolling the hall. Once you open safe 3, you can also take any cracked safe into time attack and race the clock.
 
 ## The dial
 
-The dial runs from 0 to 99 and wraps round. Left turns it one number down and Right one number up. Hold either to keep turning. Up spins the dial ten numbers up and Down spins it ten numbers down.
+The dial runs from 0 to 99 and wraps all the way around. Left turns it one number down and Right turns it one number up, and you can hold either key to keep turning. Up spins the dial ten numbers up, and Down spins it ten numbers down.
 
-Use the dial-click cue to count individual numbers, the ten-detent cue to count tens, and the zero-notch cue to find zero. Tab says the number under the mark, and S gives the full status.
+Use the dial-click cue to count single numbers, the ten-detent cue to count by tens, and the zero-notch cue to find zero. Tab reads the number under the mark without moving the dial, and S gives you the full status.
 
 ## Finding a wheel's number
 
-Every safe has between two and five wheels, and each wheel has its own secret number. Turn the dial and listen. The tumbler-clunk cue marks the correct number, just after the dial click. Space sets the wheel and moves to the next.
+Every safe has between two and five wheels, and each wheel has its own secret number. Turn the dial and pay attention to the tumbler-clunk cue, which marks the right number right after the dial click. When you land on it, Space sets the wheel and moves you to the next one.
 
-If the tumbler falls during a spin of ten, the number is somewhere in the ten you just passed. Step back one number at a time until it falls again, then set it. Under the direction rule, from the jeweller's safe on, spin back instead and step forward the right way.
+If the tumbler drops during a spin of ten, the secret number is somewhere in the ten numbers you just passed. Step back one number at a time until it drops again, then set it. Under the direction rule, from the jeweller's safe on, spin back ten instead and step forward in the required direction.
 
 ## Wrong sets and strikes
 
-Setting the wrong number gives you a strike. Three strikes jam the safe and end the attempt. You can always try the safe again, with new numbers.
+Setting a wheel on the wrong number costs you a strike. Three strikes jam the safe and end your attempt. You can always try the safe again right away, with a fresh set of numbers.
 
 ## Hints
 
-H says how far to turn and which way: "very close" is 1 or 2 numbers away, "close" within 6, "a little way off" within 20, and "far off" more than 20. Each safe allows only a few hints. Each costs points. In time attack a hint also costs time.
+H tells you how far to turn and which way to go. "Very close" means 1 or 2 numbers away, "close" is within 6, "a little way off" is within 20, and "far off" is more than 20 away. Each safe only gives you a few hints, and every hint costs points. In time attack, a hint also costs five seconds on the clock.
 
 ## Building noises
 
-From the hotel strongbox on, ignore building noises to either side. The dial and tumbler cues come from straight ahead.
+From the hotel strongbox on, pipes knock and floors creak off to your left and right. Ignore those building noises and focus straight ahead, where the dial and tumbler cues come from.
 
 ## False gates
 
-From the pawnbroker's safe on, false-gate cues mark wrong numbers. Ignore them and set the wheel only at the tumbler-clunk cue. In Sound check, you practise telling the two cues apart.
+From the pawnbroker's safe on, wheels include false gates at wrong numbers. Ignore the false-gate cue and only set the wheel on the real tumbler-clunk cue. If you want to get used to telling them apart, Sound check plays both cues.
 
 ## The direction rule
 
-From the jeweller's safe on, the safes behave like real combination dials. Wheel 1 is found turning right, wheel 2 turning left, wheel 3 right again, and so on. The tumbler only falls when you are turning the right way. You must reach the number turning that way before you set it. If you overshoot, turn back past the number and come forward again the right way. The same goes for a spin where the tumbler falls. Stepping back one number at a time never finds it, because that is the wrong way, so spin back the ten you just passed. Then step forward the right way one number at a time until it falls. Setting the right number reached the wrong way is a strike. Status says which way to turn for the current wheel and which way you last turned.
+From the jeweller's safe on, safes work like real combination dials. Wheel 1 must be reached turning right, wheel 2 turning left, wheel 3 right again, and so on. The tumbler only drops when you approach its number in the required direction, and you must reach it that way before you set it.
+
+If you overshoot, turn back past the number and come forward again the right way. The same applies if the tumbler drops during a spin of ten. Stepping back one number at a time is the wrong direction and will not trigger the tumbler, so spin back the ten you just passed and step forward one number at a time.
+
+Setting the right number after approaching from the wrong direction counts as a strike. S reports which direction the current wheel needs and which way you last turned.
 
 ## The night guard
 
-From the bank manager's safe on, a night guard walks the corridor. The footsteps warn you he is approaching. When they stop, he is at the door listening. Keep still: do not turn the dial or set a wheel until you hear his footsteps walk away. Status, repeat, Tab and hints make no noise, so you can use them while he listens.
+From the bank manager's safe on, a night guard patrols the corridor outside. Footsteps warn you that he is coming. When the footsteps stop, he is standing at the door listening, so keep still and do not turn the dial or set a wheel until his footsteps walk away. S, R, Tab, and H are silent, so you can still check status or ask for a hint while he is there.
 
-The first noise he hears makes him suspicious: "He heard something!" He stays suspicious until the safe opens, and each time he comes back the game says so. Make a second noise while the guard listens and you are caught. A key held down as he stops counts only once: let go, and only a fresh press can make that second noise. On the bank manager's safe the game also says when he comes and goes. After that, listen for him, and press S if you are unsure where he is.
+The first noise he catches makes him suspicious, and he stays suspicious until the safe opens. Each time he returns after that, the game warns you. Make a second noise while he is listening and you are caught.
+
+A key you were already holding when he stops only counts once, so let go and stay still. On the bank manager's safe, the game calls out when he comes and goes. On later safes, he walks unannounced, and S tells you where he is if you are unsure.
 
 ## Scoring and best times
 
-Every wheel is worth 100 points. Crack a safe quickly for a time bonus. Each strike costs 30 points and each hint 20. Each safe keeps your best time and best score, and Records on the title reads them all, with your challenge results.
+Every wheel you set earns 100 points, and cracking a safe quickly adds a time bonus. Each strike takes off 30 points, and each hint takes off 20. Every safe tracks your best time and best score, and Records on the title reads them all along with your challenge results.
 
 ## Pace
 
-The clock and the guard stand still while a line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every mode. Time spent while a line is spoken still counts toward your time on the safe, and comes off your time attack bonus.
+The clock and the guard pause while a spoken line finishes, so speech never costs you a turn. Asking for the same line over and over stops pausing the clock after a while. This works the same way at every pace and in every mode. Time spent during speech still counts toward your total time on the safe and comes off your time attack bonus.
 
-Pace in Settings sets how fast the safe runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed. Your time on the safe, the time attack clock, the guard and the building noises follow the pace.
+Pace in Settings controls how fast the safe runs: relaxed, normal, or quick. Normal is the default and sits slightly slower than quick. Quick is the fastest, while relaxed runs at half speed. Your safe timer, the time attack clock, the guard, and the building noises all follow your chosen pace.
 
-A change applies from your next safe. A challenge job keeps the pace it started at until it ends.
+Changing pace takes effect on your next safe. A challenge job keeps the pace it started on until it finishes.
 
-Relaxed scores and best times are saved separately, including challenges and bonus safes. Normal and quick share their scores. Safes you crack count at every pace.
+Relaxed scores and best times are saved separately, including for challenges and bonus safes. Normal and quick share their leaderboards. Every safe you crack counts toward your progress at any pace.
 
 ## Modes
 
-Play, the first row of the title, opens the first safe you have not yet cracked. Safe select replays any safe you have reached. Crack safe 3 to open time attack, where any safe you have cracked comes with a clock. The clock warning plays at 1 minute, 30 seconds and 10 seconds left. The clock stops while the guard listens at the door. Practice dial gives you endless single wheels with nothing to lose, so you can practise finding the tumbler. Sound check plays each sound you need at the safe, with its name. Challenges holds the daily, weekly and monthly jobs.
+Play, the first row on the title, takes you straight to the next safe you have not cracked yet. Safe select replays any safe you have already reached. Cracking safe 3 opens time attack, where you race a clock on any safe you have opened. Clock warnings play at 1 minute, 30 seconds, and 10 seconds left, and the clock pauses while the guard is at the door.
 
-After a safe, the results menu offers the next safe when you opened one, Play again or Try again, Hear the results again, and Back to the title. Escape does the same as Back to the title.
+Practice dial gives you endless single wheels with no strikes and no clock, so you can warm up on the tumbler at your own speed. Sound check plays the gameplay sounds you need at the safe. Challenges holds the daily, weekly, and monthly jobs.
+
+After a safe ends, the results menu offers the next safe when you win, Play again or Try again, Hear the results again, and Back to the title. Escape also takes you back to the title.
 
 ## Bonus safes
 
-Two bonus safes open on the title on their nights only, after Safe select. On other nights their rows say locked and give their opening dates. Anyone can open them, however far you have got. Each keeps its own best score, apart from the ten safes, and Records reads them once you have cracked them.
+Two bonus safes appear on the title on their special nights, right after Safe select. On other nights their rows show as locked and tell you when they open next. Anyone can play them no matter how many regular safes you have cracked. Each keeps its own best score, and Records lists them once you have opened them.
 
-The unlucky safe is on every Friday the 13th. It has four wheels, each with a false gate, and building noises. One of the wheels is always 13. The cat cue confirms the wheel at 13. Turning or spinning the dial stops the cat cue.
+The unlucky safe opens on every Friday the 13th. It has four wheels, each with a false gate, plus building noises. One of the wheels is always 13, and the cat cue confirms when you are on it. Turning or spinning the dial stops the cat cue.
 
-The blackout safe is on every new moon night, and the night either side, about once a month. It has three wheels, each with a false gate. There is no separate cue for every tenth number. The zero notch still sounds, so count from zero, or press Tab for the number. S reminds you of either safe's rule.
+The blackout safe opens on every new moon night and the night on either side, about once a month. It has three wheels, each with a false gate, and no separate cue for every tenth number. The zero notch still works, so count from zero or press Tab to check the number. S reminds you of either safe's rule.
 
 ## Challenges
 
-Challenges on the title holds three jobs that are the same for every player, built from the date. Each row names the period and the job, says what it is this time, then gives your record: not played yet, or your best and your streak. Enter reads the briefing first: the rule, the twist, your record and when the next one comes. Enter on the last page starts the job. Escape on any page goes back without starting. Your result counts when the job ends, by opening every safe or losing one. Leave the challenge, on the pause menu, does not count, so you can come back and try again. After the job, the results menu offers the same job again, Hear the results again, and Back to the challenges.
+Challenges on the title gives you three seeded jobs that are the same for every player, built from the date. Each row names the period and the job, summarizes what it involves, and reads your record: either not played yet, or your best score and streak.
 
-Tonight's job, the daily: one safe of three or four wheels, with one twist. The Quiet tumblers twist lowers the tumbler-cue volume to match the Crown vault. A nervous guard comes often and listens long. The direction rule puts the real dial's rule on. Crowded gates give every wheel three false gates. No hints means only your ears. A busy building adds distractions every few seconds. A new job comes every day.
+Enter opens the briefing first, covering the rules, the twist, your record, and when the next challenge arrives. Enter on the last page starts the job, while Escape on any page goes back without starting. Your result counts once the job ends by opening every safe or losing one. Leaving from the pause menu does not count, so you can come back and try again.
 
-The vault of three, the weekly: three safes in a row, the outer safe, the inner safe under the direction rule, and the strongroom safe with a guard who comes unannounced, all with the week's twist. One relocker guards the whole vault: three strikes across all three safes jam it, and three hints are shared. When the twist is no hints, there are none. Each safe you open banks its points, even if a later one beats you. A new vault comes every Monday.
+Tonight's job is the daily challenge: one safe with three or four wheels and a single twist. Quiet tumblers lowers the tumbler-cue volume to match the Crown vault. A nervous guard visits often and lingers at the door. The direction rule turns on real combination-dial directions. Crowded gates puts three false gates on every wheel. No hints leaves you on your own. A busy building adds frequent distractions on both sides. A new daily job arrives every day.
 
-The Crown heist, the monthly: a story event. Through the curator's safe for the key card, then the five wheels of the Crown vault, with a guard on the corridor between. One clock of 5 minutes runs for the whole heist. It stops while the guard listens, and a hint costs five seconds. Open both for 3 points for every second left. A new heist comes on the first of every month.
+The vault of three is the weekly challenge: three safes in a row, all sharing the week's twist. You start with the outer safe, move to the inner safe under the direction rule, and finish with the strongroom safe and an unannounced guard. One relocker guards all three safes, so three strikes across the whole vault jam it, and three hints are shared across the run, or none if the twist is no hints. Every safe you open banks its points even if a later safe stops you. A new vault arrives every Monday.
 
-Challenge scores are 100 a wheel, less 30 a strike and 20 a hint. The daily and weekly add a bonus for a quick crack. The onward cue means a safe is open and the next is waiting. S gives the current safe, your banked points and the twist. After the job you hear your score, your best and your streak.
+The Crown heist is the monthly story challenge. First you crack the curator's safe for the key card, then you tackle the five wheels of the Crown vault with a guard patrolling the hall between them. One 5-minute clock covers the whole heist, pausing while the guard listens, and hints cost five seconds each. Open both safes to earn 3 bonus points for every second left. A new heist begins on the first of every month.
+
+Challenge safes score 100 points per wheel, minus 30 per strike and 20 per hint. Daily and weekly jobs also add a speed bonus. The onward cue confirms a safe is open and the next one is ready. S reports the current safe, your banked points, and the twist, and the finish reads your score, best, and streak.
 
 ## Controls
 
@@ -90,16 +100,16 @@ Up and Down: spin the dial ten numbers up or down.
 
 Space: set the wheel.
 
-Tab: say the number under the mark.
+Tab: read the number under the mark.
 
-S: status. The guard if he is coming, at the door or leaving, then the number, the wheel and which way it was found. If S does not name the guard, the corridor is quiet. Press S again straight away for strikes, hints, time and the job.
+S: status. Reports the guard if he is coming, at the door, or leaving, followed by the number, the wheel, and which way it was approached. If S does not mention the guard, the corridor is clear. Press S again right away for strikes, hints, time, and the current job.
 
 R: repeat the last instruction.
 
-H: a hint.
+H: ask for a hint.
 
 F1: help for what you are doing right now. F2 stops speech.
 
-Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
+Escape: pause menu, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title becomes Leave the challenge.
 
 These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

@@ -40,7 +40,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Signal>) -> Lesson {
 
     let calls = Step::each(
         format!(
-            "Five calls, five keys. {}. Press each to play its call.",
+            "There are five dispatcher calls, and each one has its own key. {}. Press each key to try out its call.",
             keys.join(". ")
         ),
         Call::ALL
@@ -58,7 +58,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Signal>) -> Lesson {
 
     let trains = room.step(
         format!(
-            "Now the practice room, with no clock. {} opens the line. Listen for each call and answer with its matching key. Take as long as you need in practice. {} says the call again. Send {TRAINS} trains through.",
+            "Now you are in the practice room, where there is no clock. {} opens the line. Match each dispatcher call with its key. {} repeats the call whenever you need it. Send {TRAINS} trains through.",
             sentence_start(&p),
             sentence_start(&rep)
         ),
@@ -70,12 +70,12 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, room: Live<Signal>) -> Lesson {
     Lesson::new(
         ID,
         "Signal Box",
-        "You work the signal box on a country junction at night, answering the dispatcher's calls before each train arrives",
+        "You are working the night shift in a country junction signal box, throwing levers and ringing back before each train reaches the points",
     )
     .step(calls)
     .step(trains)
     .outro(format!(
-        "On a shift each call has a time window, {} at first and shrinking as you go. A wrong or late answer derails the train and ends the shift. {} speaks the shift and your score.",
+        "On a real shift, each call has a time window, starting at {} and shrinking as more trains pass. One wrong or late move derails the train and ends the shift. {} reads your shift status and score.",
         window_words(START_WINDOW),
         sentence_start(&s)
     ))
