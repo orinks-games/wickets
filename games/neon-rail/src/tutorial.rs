@@ -55,7 +55,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let mut been_left = false;
     let lanes = Step::new(
         format!(
-            "Three lanes; you start in the center. {} shifts left and {r} shifts right. Shift left, then all the way right.",
+            "The rail has three lanes, and you start in the center. {} shifts left, and {r} shifts right. Try shifting left, then all the way to the right.",
             sentence_start(&l)
         ),
         move |ctx, a| {
@@ -73,8 +73,8 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
 
     let tools = Step::each(
         format!(
-            "{} boosts. {} fires the rail gun. {} uses a slowdown pulse. {} uses priority override. Try each tool.",
-            sentence_start(&boost), sentence_start(&fire), sentence_start(&slow), sentence_start(&prio)
+            "You carry four emergency tools. {} fires boost, {fire} fires the rail gun, {slow} triggers a slowdown pulse, and {prio} uses priority override. Try each tool.",
+            sentence_start(&boost)
         ),
         vec![
             (
@@ -114,7 +114,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let ln = Rc::clone(&lane);
     let ln2 = Rc::clone(&lane);
     let flow = Step::new(
-        "A flow vehicle is coming on your left. Flow traffic is safe to meet: be in its lane when it arrives. Shift into its lane.",
+        "A flow vehicle is approaching on your left. Flow traffic is friendly, so you want to meet it in its lane. Shift left into its lane.",
         move |ctx, a| {
             let Some(line) = shift(ctx, &ln, a) else {
                 return Reply::Nudge;
@@ -135,7 +135,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let ln2 = Rc::clone(&lane);
     let fast = Step::new(
         format!(
-            "A fast passer on your right: a short warning, then it tears past. Get into its lane, or fire the slowdown pulse with {slow}. Do either now."
+            "A fast passer is coming on your right. You get a short warning before it tears past, so jump into its lane or hit the slowdown pulse with {slow}. Try either one now."
         ),
         move |ctx, a| {
             const CLEARED: &str = "Cleared. Meet a fast passer in its lane or use a slowdown pulse.";
@@ -163,7 +163,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let hit = Rc::new(Cell::new(0));
     let hit2 = Rc::clone(&hit);
     let debris = Step::new(
-        "Debris is coming straight ahead in your lane. Shift to another lane to avoid it.",
+        "Debris is coming straight ahead in your lane. Shift into another lane to steer clear.",
         move |ctx, a| {
             let Some(line) = shift(ctx, &ln, a) else {
                 return Reply::Nudge;
@@ -183,7 +183,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
 
     let blockade = Step::new(
         format!(
-            "Last, a full blockade. It fills all three lanes, so you cannot dodge it. In a run, boost just before it hits. Boost now with {boost}."
+            "Last up is a full blockade. It stretches across all three lanes, so there is no way around it. During a run, boost just before impact. Hit boost now with {boost}."
         ),
         |ctx, a| match a {
             ParlorAction::Primary => {
@@ -205,7 +205,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     Lesson::new(
         ID,
         "Neon Rail",
-        "You fly a stolen combat skimmer through the dead transit lines of Black Sky City. Learn the skimmer here, at a standstill",
+        "You are piloting a stolen combat skimmer through the dead transit lines of Black Sky City. Try out the controls here before the rail starts moving",
     )
     .step(lanes)
     .step(tools)
@@ -213,5 +213,5 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     .step(fast)
     .step(debris)
     .step(blockade)
-    .outro("Too many misses raise stress, and at 100 the network collapses. Practice run flies the guided route, where each new kind of traffic is explained as it arrives, and your first Play flies it too.")
+    .outro("Miss too much traffic and network stress climbs, and at 100 the network collapses. Practice run takes you through a guided route that pauses to explain each new kind of traffic, and your first Play run starts there too.")
 }

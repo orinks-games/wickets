@@ -42,7 +42,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Rooftop Garden",
     category: Category::Cozy,
-    blurb: "Tend a rooftop garden, where each plant grows into a layer of music.",
+    blurb: "Grow a rooftop garden of plants that bloom into layers of music, cross new varieties, and collect keepsakes.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -195,7 +195,7 @@ impl TitleGame for RooftopGarden {
             garden_line(ctx, &saved),
             |s: &mut Title, ctx: &mut Ctx<Parlor>| start_home(ctx, s.game.launch()),
         )
-        .help("Tend your own rooftop. Days pass only while you play; your garden is saved when you leave.")]
+        .help("Tend your own rooftop garden. Days pass only while you play, and your garden saves automatically when you leave.")]
     }
 
     fn extras(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
@@ -216,7 +216,7 @@ impl TitleGame for RooftopGarden {
             },
             |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(menus::SeedShed::new()),
         )
-        .help("Every seed and variety, your keepsakes, and the neighbours' requests.")]
+        .help("Browse every seed and variety you have found, check your keepsakes, and read your neighbours' requests.")]
     }
 
     fn destructive(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
@@ -259,7 +259,7 @@ impl TitleGame for RooftopGarden {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your garden, its most harvests and fullest harmony, your seeds, and your challenge results."
+        "Check your garden's progress, most harvests, fullest harmony, unlocked seeds, and challenge results."
             .to_string()
     }
 
@@ -274,7 +274,7 @@ impl TitleGame for RooftopGarden {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "Daily, weekly and monthly gardens with goals, the same for every player. {}",
+            "Tend daily, weekly, and monthly challenge gardens with shared goals and twists for every player. {}",
             daily.resets()
         )
     }

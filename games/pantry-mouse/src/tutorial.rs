@@ -4,7 +4,6 @@
 use std::cell::Cell;
 use std::rc::Rc;
 
-use hearken::text::sentence_start;
 use hearken::Ctx;
 use parlor_core::{Lesson, Live, Parlor, ParlorAction};
 
@@ -47,22 +46,18 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pantry: Live<Play>) -> Lesson {
 
     let crumbs = pantry.step(
         format!(
-            "{}, {r}, {u} and {d} move one cell. {} sniffs out the nearest crumbs. {} names the way to a safe crumb. Eat {CRUMBS} crumbs.",
-            sentence_start(&l),
-            sentence_start(&p),
-            sentence_start(&h)
+            "Move one cell at a time with {l}, {r}, {u}, and {d}. Press {p} to sniff out the nearest crumbs, or {h} to point toward a safe crumb. Go eat {CRUMBS} crumbs."
         ),
         |p: &Play, _| {
             (p.run.eaten >= CRUMBS).then(|| {
-                format!("{CRUMBS} crumbs, {CRUMB_POINTS} points each. Eat them all to clear a pantry.")
+                format!("{CRUMBS} crumbs eaten, worth {CRUMB_POINTS} points each. Clear every crumb to finish a pantry.")
             })
         },
     );
 
     let freeze = pantry.step(
         format!(
-            "The cat's sound marks its position. A short meow means it is within 2 steps. In a real run, a catch costs a whisker. {} freezes: you keep still for 3 seconds and the nearest cat loses track of you. Freeze now.",
-            sentence_start(&t)
+            "Track the cat as it prowls nearby; a short warning means it is within 2 steps. In a real run, getting caught costs a whisker. Press {t} to freeze in place for 3 seconds so the nearest cat loses your scent. Try freezing now."
         ),
         move |p: &Play, _| {
             // The game keeps quiet on this step, so the line is said once.
@@ -92,12 +87,11 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pantry: Live<Play>) -> Lesson {
     Lesson::new(
         ID,
         "Pantry Mouse",
-        "You are a mouse in a farmhouse pantry at night, eating crumbs and keeping away from the cats. Learn in the practice pantry, where a catch costs nothing",
+        "You are a mouse sneaking through a farmhouse pantry at night, hunting for crumbs while keeping out of the cats' reach. Try the practice pantry first, where getting caught costs nothing",
     )
     .step(crumbs)
     .step(freeze)
     .outro(format!(
-        "The ginger cat heads straight for you. The tabby wanders until you are near. {} reads where every cat is.",
-        sentence_start(&s)
+        "The ginger cat chases straight after you, while the tabby wanders until you get close. Press {s} whenever you want to check where every cat is."
     ))
 }

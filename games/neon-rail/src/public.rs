@@ -45,7 +45,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Neon Rail: Black Sky Run",
     category: Category::Action,
-    blurb: "A three-lane sci-fi rail run: weave through traffic, clear jams and survive the stress meter.",
+    blurb: "Weave a stolen combat skimmer across three lanes of traffic, blast drones, and outrun the stress meter.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -180,7 +180,7 @@ impl TitleGame for NeonRail {
         let (play, play_help) = if guided {
             (
                 format!("{}, guided run", labels::PLAY),
-                "Your first run is the guided training route, because this save has not finished training.".to_string(),
+                "Your first run takes you through the guided training route so you can learn the rail.".to_string(),
             )
         } else {
             (
@@ -204,7 +204,7 @@ impl TitleGame for NeonRail {
                     launch(ctx, s.game.launch(Mode::Endless), false)
                 },
             )
-            .help("Sectors without end, each harder than the last, until the hull or the network gives out.")
+            .help("Fly sector after sector, each harder than the last, until your hull or the network gives out.")
         } else {
             MenuItem::new(
                 labels::locked("Endless rail"),
@@ -225,7 +225,7 @@ impl TitleGame for NeonRail {
                     launch(ctx, s.game.launch(Mode::ColdStart), false)
                 },
             )
-            .help("A bare skimmer, nine sectors, one life. It keeps its own board and pays no credits, parts or intel.")
+            .help("Fly nine sectors in a bare skimmer with one life. Keeps its own board and pays no credits, parts or intel.")
         } else {
             MenuItem::new(
                 labels::locked("Cold start"),
@@ -287,7 +287,7 @@ impl TitleGame for NeonRail {
                     launch(ctx, s.game.launch(Mode::Challenge), false)
                 },
             )
-            .help("The original route: six sectors in two minutes, the same every time."),
+            .help("The original two-minute route of six fixed sectors, the same every time."),
             endless_row,
             cold_row,
         ];
@@ -300,7 +300,7 @@ impl TitleGame for NeonRail {
             MenuItem::new("Practice run", |s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 launch(ctx, s.game.launch(Mode::Tutorial), false)
             })
-            .help("The guided one-minute route, with a tutorial page as each new kind of traffic arrives."),
+            .help("Fly the guided one-minute route, pausing to explain each new kind of traffic."),
         )
     }
 
@@ -351,7 +351,7 @@ impl TitleGame for NeonRail {
                 ),
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(menus::Workshop::new()),
             )
-            .help("Spend credits and parts on permanent parts for the skimmer."),
+            .help("Spend credits and parts on permanent upgrades for your skimmer."),
             MenuItem::new(
                 format!(
                     "Story archive, {} of {} logs",
@@ -360,7 +360,7 @@ impl TitleGame for NeonRail {
                 ),
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(menus::Archive::new()),
             )
-            .help("The Black Sky City logs you have recovered."),
+            .help("Read the Black Sky City logs you have recovered."),
         ]
     }
 

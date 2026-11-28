@@ -131,8 +131,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, table: Live<TableScreen>) -> Lesson {
     let mut heard = Heard::default();
     let roll = table.step(
         format!(
-            "{} calls a roll. The dealer shakes two dice, calls the faces and the sum, and the sum goes on the table. Call a roll.",
-            sentence_start(&p)
+            "Press {p} to call a roll. The dealer shakes two dice, calls the faces and their sum, and puts that sum on the table. Go ahead and call a roll."
         ),
         move |s: &TableScreen, ctx| {
             let rolled = !s.table.night.history.is_empty();
@@ -143,9 +142,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, table: Live<TableScreen>) -> Lesson {
     let mut heard = Heard::default();
     let bank = table.step(
         format!(
-            "{} rolls again and the table grows. {} banks what the table holds, and you stand until the next landing. On your first night, press {t} twice to confirm your first bank. Roll once more, then bank.",
-            sentence_start(&p),
-            sentence_start(&t)
+            "Press {p} to stay in for another roll and grow the pot, or press {t} to bank what the table holds and stand until the next landing. On your first night, press {t} twice to confirm your first bank. Roll once more, then bank."
         ),
         move |s: &TableScreen, ctx| {
             let banked = s.table.night.you().banked.is_some();
@@ -161,7 +158,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, table: Live<TableScreen>) -> Lesson {
     .start(move |_ctx| first.set(false));
 
     let one_prompt = format!(
-        "A 1 on either die ends the landing. Everyone still seated loses what the table holds. {ONE_ROLLS} of 36 rolls have a 1, and {u} says the odds. You have banked, so wait for the 1."
+        "A 1 on either die ends the landing, and everyone still seated loses what the table holds. {ONE_ROLLS} of 36 rolls show a 1, and {u} gives the odds anytime. You already banked, so wait for the 1."
     );
     let wait = speech_secs(&one_prompt);
     let held = table.clone();
@@ -185,15 +182,13 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, table: Live<TableScreen>) -> Lesson {
         ID,
         "Riverboat Dice",
         format!(
-            "You sit at a dice table on a paddle steamer with three passengers, and whoever banks the most over {LANDINGS} landings wins. Learn on one landing"
+            "Pull up a chair at a paddle steamer dice table with three fellow passengers. Whoever banks the most over {LANDINGS} landings wins. Try one landing here to get the feel of it"
         ),
     )
     .step(roll)
     .step(bank)
     .step(one)
     .outro(format!(
-        "{} names each passenger and their total. {} says what a careful player would do. Play starts a full night.",
-        sentence_start(&l),
-        sentence_start(&h)
+        "Press {l} to check each passenger and their total, or {h} to ask what a careful player would do. Play starts a full night."
     ))
 }

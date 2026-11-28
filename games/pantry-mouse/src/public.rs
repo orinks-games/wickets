@@ -50,7 +50,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Action,
-    blurb: "Eat every crumb in the pantry while the cats prowl.",
+    blurb: "Sneak through a midnight farmhouse pantry, hunt down every crumb, and stay out of the cats' reach.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -164,7 +164,7 @@ impl TitleGame for PantryMouse {
                 ctx.push(Play::new(Mode::Pantry))
             })
             .help(format!(
-                "One cat in the first pantry, then 2, quicker each time, until your {WHISKERS} whiskers are gone.{deepest}"
+                "Start with one cat in pantry 1, then face 2 quicker cats each pantry until your {WHISKERS} whiskers are gone.{deepest}"
             )),
         ];
         let today = parlor_core::challenges::today(ctx);
@@ -226,7 +226,7 @@ impl TitleGame for PantryMouse {
                 "Practice pantry",
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(Play::new(Mode::Practice)),
             )
-            .help("One slow cat, and a catch costs nothing: learn the maze and the cats."),
+            .help("Practise the maze with one slow cat, where getting caught costs no whiskers."),
         )
     }
 
@@ -257,7 +257,7 @@ impl TitleGame for PantryMouse {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily, a weekly and a monthly maze, the same for every player. {}",
+            "Tackle a daily, weekly, or monthly pantry maze, the same layout for every player. {}",
             daily.resets()
         )
     }
