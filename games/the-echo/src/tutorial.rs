@@ -82,7 +82,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, rank: Live<Tuning>) -> Lesson {
 
     let first = rank.step(
         format!(
-            "The pipe is out of tune with the note it should hold, so it wobbles. {} raises the pipe and {down} lowers it. Find the way that slows the wobble, keep going until it is still, then {p} sets the pipe.",
+            "This pipe is out of tune with its target note, so it wobbles. {} raises the pipe and {down} lowers it. Find the direction that slows the wobble, keep going until it settles still, then press {p} to set the pipe.",
             sentence_start(&up)
         ),
         {
@@ -92,7 +92,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, rank: Live<Tuning>) -> Lesson {
     );
     let second = rank.step(
         format!(
-            "The next pipe is higher. Tune it the same way. {} says which way it is out, and {tab} plays the true note alone.",
+            "The next pipe is higher, and you tune it the same way. {} tells you which way it is out, and {tab} plays the true note on its own.",
             sentence_start(&h)
         ),
         {
@@ -108,12 +108,12 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, rank: Live<Tuning>) -> Lesson {
     Lesson::new(
         ID,
         "The Echo",
-        "Theo's notes are open on the cellar bench: tune the Echo's pipes low to high, until each wobble goes still",
+        "Theo's notes lie open on the cellar bench: tune the Echo's pipes from low to high until every wobble settles still",
     )
     .step(first)
     .step(second)
     .outro(format!(
-        "A rank has several pipes, low to high, and {} moves up it by hand. In a scored rank, a hint or {p} too soon costs a little, but nothing fails.",
+        "A full rank runs through several pipes from low to high, and {} steps up the rank by hand. In a scored rank, using a hint or pressing {p} too early costs a few points, though every tuned pipe still scores at least 2.",
         right
     ))
 }

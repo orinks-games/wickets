@@ -289,7 +289,8 @@ impl SkateScreen {
                 }
             }
             Mode::Practice => {
-                "The village pond, slowly, everything named. Nothing is scored.".to_string()
+                "Skate the village pond at a slower pace with every lantern named and no score."
+                    .to_string()
             }
             Mode::Challenge(_) => challenge::rule(&self.skate.course),
         };
@@ -300,27 +301,29 @@ impl SkateScreen {
     pub fn controls(&self, ctx: &Ctx<Parlor>) -> String {
         let k = |a| Self::key(ctx, a);
         let mut parts = vec![format!(
-            "Hold {} or {} to lean across the ice. Be in a lantern's lane as it passes to take it.",
+            "Hold {} or {} to lean across the ice, and line up in each lantern's lane as it passes to take it.",
             k(ParlorAction::Left),
             k(ParlorAction::Right)
         )];
         if self.pairs() {
-            parts.push("Lanterns come in pairs: take the one that lit first.".to_string());
+            parts.push("Lanterns light in pairs, so take the one that lit first.".to_string());
         } else {
-            parts.push("Lanterns in a row make a line, worth more each time.".to_string());
+            parts.push(
+                "Lanterns taken in a row build a line worth more points each time.".to_string(),
+            );
         }
         if self.skate.course.has_drifts() || self.skate.course.has_ice() {
-            parts.push("Keep out of drifts and thin ice.".to_string());
+            parts.push("Lean around drifts and thin ice.".to_string());
         }
         if self.skate.course.level.partner {
-            parts.push("Your partner skates the easy way a little ahead.".to_string());
+            parts.push("Your partner skates a safe line just ahead of you.".to_string());
         }
         parts.push(format!(
-            "Hold {} for a spin, and let go once it is ready.",
+            "Hold {} to wind a spin, and let go once it is ready.",
             k(ParlorAction::Primary)
         ));
         parts.push(format!(
-            "{} speaks the status, twice for more. {} repeats, {} hints, and Escape pauses.",
+            "{} checks your status, or press it twice for more. {} repeats, {} gives a hint, and Escape pauses.",
             sentence_start(&k(ParlorAction::Status)),
             sentence_start(&k(ParlorAction::Repeat)),
             k(ParlorAction::Hint)

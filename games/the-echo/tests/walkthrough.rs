@@ -196,7 +196,7 @@ fn a_challenge_rank_is_briefed_tuned_and_submitted() {
     h.clear();
     h.press(Key::Return);
     assert!(
-        spoke(&h, "Tonight's rank: A rank of 6 pipes"),
+        spoke(&h, "Tonight's rank: Tune a rank of 6 pipes"),
         "{:?}",
         h.spoken()
     );
@@ -221,7 +221,7 @@ fn the_tutorial_tunes_two_pipes() {
     h.app.ctx.push(lesson);
     h.frame(0.0);
     assert!(
-        spoke(&h, "Theo's notes are open on the cellar bench"),
+        spoke(&h, "Theo's notes lie open on the cellar bench"),
         "{:?}",
         h.spoken()
     );
@@ -251,7 +251,7 @@ fn the_tutorial_tunes_two_pipes() {
             second = h
                 .spoken()
                 .iter()
-                .position(|l| l.contains("The next pipe is higher."));
+                .position(|l| l.contains("The next pipe is higher,"));
             assert!(second.is_some(), "{:?}", h.spoken());
         }
     }
@@ -295,13 +295,13 @@ fn keys_after_a_pipe_is_set_never_hold_the_next_step_back() {
     }
     h.press(Key::Space);
     h.frame(DT);
-    assert!(!spoke(&h, "The next pipe is higher."), "{:?}", h.spoken());
+    assert!(!spoke(&h, "The next pipe is higher,"), "{:?}", h.spoken());
     h.press(Key::F1);
     h.frame(DT);
     assert!(
         h.spoken()
             .last()
-            .is_some_and(|l| l.contains("The next pipe is higher.")),
+            .is_some_and(|l| l.contains("The next pipe is higher,")),
         "{:?}",
         h.spoken()
     );

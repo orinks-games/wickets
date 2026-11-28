@@ -45,7 +45,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Puzzle,
-    blurb: "Tune the Echo's pipes until the wobble is still.",
+    blurb: "Tune the pipes of the cellar's Echo one by one until every wobble settles still.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: None,
@@ -127,7 +127,7 @@ impl TitleGame for TheEcho {
                 ctx.push(Tuning::new(Mode::Rank))
             })
             .help(format!(
-                "A rank of {}, each between {} and {} out of tune.",
+                "Tune a rank of {}, each starting between {} and {} out of tune.",
                 pipes_words(RANK.pipes),
                 steps_words(RANK.near),
                 steps_words(RANK.far)
@@ -140,7 +140,7 @@ impl TitleGame for TheEcho {
             MenuItem::new("Practice rank", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(Tuning::new(Mode::Practice))
             })
-            .help("Four pipes with free hints and no score: learn the wobble."),
+            .help("Tune four pipes with free hints and no score to get a feel for the wobble."),
         )
     }
 
@@ -153,7 +153,8 @@ impl TitleGame for TheEcho {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your best score, the pipes you have tuned, and your challenge results.".to_string()
+        "Review your best score, the ranks and pipes you have tuned, and your challenge results."
+            .to_string()
     }
 
     fn sound_check(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -161,7 +162,7 @@ impl TitleGame for TheEcho {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Play the sounds you need in the cellar.".to_string()
+        "Preview the cellar tuning cues one by one.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

@@ -113,7 +113,7 @@ fn the_tutorial_gathers_an_anemone_and_a_shy_crab() {
     assert_eq!(h.app.top_name(), "lesson");
     assert!(spoke(
         &h,
-        "The tide is out, and rock pools line the shore with the sea ahead of you."
+        "The tide is out and rock pools stretch along the shore in front of you."
     ));
     h.press(Key::Escape);
     assert_eq!(h.app.top_name(), "tide_pools");
@@ -132,7 +132,11 @@ fn the_tutorial_gathers_an_anemone_and_a_shy_crab() {
         t.h.spoken()
     );
     t.gather(Species::Anemone);
-    assert!(spoke(&t.h, "The anemone is yours."), "{:?}", t.h.spoken());
+    assert!(
+        spoke(&t.h, "You gathered the anemone."),
+        "{:?}",
+        t.h.spoken()
+    );
     let said = t.h.spoken().join(" ");
     assert!(!said.contains("Plus"), "{said}");
     assert!(!said.contains("New for your aquarium"), "{said}");
@@ -146,12 +150,12 @@ fn the_tutorial_gathers_an_anemone_and_a_shy_crab() {
     }
     t.gather(Species::Crab);
     assert!(
-        spoke(&t.h, "The crab is yours. Tutorial done."),
+        spoke(&t.h, "You gathered the crab. Tutorial done."),
         "{:?}",
         t.h.spoken()
     );
     assert!(
-        spoke(&t.h, "These practice creatures go back in the water."),
+        spoke(&t.h, "These practice creatures stay in their pools."),
         "{:?}",
         t.h.spoken()
     );

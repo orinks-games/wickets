@@ -46,7 +46,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Little Rapids",
     category: Category::Cozy,
-    blurb: "Steer a little boat down a stream, catching what floats along with the music.",
+    blurb: "Steer a paper boat down a musical stream, catching petals, scraps, and lost trinkets on the beat.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -150,7 +150,7 @@ impl TitleGame for LittleRapids {
                     start(ctx, Launch { mode: Mode::Endless, seed: s.game.seed }, false)
                 },
             )
-            .help("A river with no end, made of every stream you have opened, busier as it goes. Each bump makes the boat soggier. It sinks at 5 sogginess.")
+            .help("An endless river stitched from every stream you have opened, growing busier as you go. Five bumps sink the boat.")
         } else {
             MenuItem::new(
                 labels::locked("The endless river"),
@@ -159,7 +159,7 @@ impl TitleGame for LittleRapids {
                 },
             )
             .select_sound(None)
-            .help("Reach the mouth of Garden brook to open a river with no end.")
+            .help("Reach the river mouth on Garden brook to unlock the endless river.")
         };
         let next = p.stream_to_sail();
         vec![
@@ -183,12 +183,12 @@ impl TitleGame for LittleRapids {
                 ),
                 |s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(menus_streams(s.game.seed)),
             )
-            .help("Choose a stream and hear its stars and best score. Earn stars to open more streams."),
+            .help("Pick any open stream to sail and check its stars and best score. Earn stars to unlock more streams."),
             endless,
             MenuItem::new("Drift", |s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 start(ctx, Launch { mode: Mode::Drift, seed: s.game.seed }, false)
             })
-            .help("Slow water and the whole band from the start. No score, and the banks only nudge you."),
+            .help("Slow water with the whole band playing from the start. No score, and the banks only nudge you."),
         ]
     }
 
@@ -201,7 +201,7 @@ impl TitleGame for LittleRapids {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your stars and bests on every stream, your boats, scraps, trinkets and ribbons, and your challenge results.".to_string()
+        "Your stars and best scores on every stream, plus your boats, scraps, trinkets, ribbons, and challenge results.".to_string()
     }
 
     fn sound_check(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -236,7 +236,7 @@ impl TitleGame for LittleRapids {
                 ),
                 |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(crate::shelf::Shelf::new()),
             )
-            .help("Every trinket you have fished out of the streams, with a line about each."),
+            .help("Browse every trinket you have fished out of the streams, with a short note about each."),
         ]
     }
 

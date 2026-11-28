@@ -68,21 +68,21 @@ pub fn boat_for(mode: Mode, progress: &Progress, seed: u64) -> Boat {
 pub fn introduction(kind: Kind) -> &'static str {
     match kind {
         Kind::Petal => {
-            "A petal, floating toward you. Steer so it is straight ahead as it reaches you."
+            "A petal is floating toward you. Steer until it is straight ahead as it reaches your boat."
         }
-        Kind::Leaf => "A leaf. Catch it like a petal.",
-        Kind::Scrap => "A paper scrap. Scraps fold into new boats.",
-        Kind::Trinket => "A trinket. They are rare. Catch it for your shelf.",
-        Kind::Lantern => "A floating lantern. Worth five petals.",
-        Kind::Stone => "A stone. Steer clear, or the bump costs your combo.",
+        Kind::Leaf => "A leaf is floating down. Catch it just like a petal.",
+        Kind::Scrap => "A paper scrap is floating toward you. Collect scraps to fold new boats in the Boatyard.",
+        Kind::Trinket => "A rare trinket is floating down. Catch it to add it to your keepsake shelf.",
+        Kind::Lantern => "A floating lantern is coming down the stream. It is worth five petals.",
+        Kind::Stone => "A stone sits ahead in the stream. Steer clear so you do not bump it and lose your combo.",
         Kind::Gate => {
-            "A gate between two stones. Go through the middle for points. Going round is fine."
+            "A gate lies between two stones ahead. Thread the middle for bonus points, or go round safely."
         }
         Kind::Falls => {
-            "A waterfall through a gap in the rocks. Steer into the gap, or you bump the rocks."
+            "A waterfall pours through a gap in the rocks. Steer into the gap, or you will bump the stone."
         }
-        Kind::Mill => "A mill wheel on one side. Be on the other side of the stream as it passes.",
-        Kind::Duck => "A duck, paddling across. Steer clear of it.",
+        Kind::Mill => "A turning mill wheel blocks one side of the stream. Tuck onto the clear side as it passes.",
+        Kind::Duck => "A duck is paddling across the stream. Steer around it.",
     }
 }
 
@@ -854,7 +854,7 @@ pub fn controls_text(ctx: &Ctx<Parlor>) -> String {
     let hint = ctx.control_name(ParlorAction::Hint);
     let repeat = ctx.control_name(ParlorAction::Repeat);
     format!(
-        "Hold {left} or {right} to paddle that way, and Left Shift or Right Shift for one hard stroke. Catch things as they reach you, steer clear of stones and ducks, and ride the current for points. {} gives your combo, and again for your score. {} says where the current is and what comes next. {} repeats the last line. Escape pauses.",
+        "Hold {left} or {right} to paddle across the stream, and press Left Shift or Right Shift for one hard stroke. Catch items as they reach you, steer clear of stones and ducks, and ride the current for extra points. {} checks your combo, and pressing it again gives your score. {} tells you where the current is and what comes next. {} repeats the last line. Escape pauses.",
         sentence_start(&status),
         sentence_start(&hint),
         sentence_start(&repeat),
@@ -919,11 +919,11 @@ pub fn results(launch: Launch, title: String, lines: Vec<String>) -> Results {
     let (again, help) = match launch.mode.period() {
         Some(period) => (
             labels::challenge_again(period),
-            "The same stream again. Only your best result is kept.",
+            "Sail the exact same stream again. Only your best score is kept.",
         ),
         None => (
             "Sail again".to_string(),
-            "The same stream again, with new things floating down.",
+            "Sail this stream again with a fresh mix of items floating down.",
         ),
     };
     Results::new(title, lines, back).again(again, help, move |ctx| {

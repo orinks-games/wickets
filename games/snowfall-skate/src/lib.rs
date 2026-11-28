@@ -58,10 +58,10 @@ pub const HOLIDAY: Holiday = events::FAIR_DAY;
 pub const HOME: Category = Category::Cozy;
 
 /// The blurb in winter, until the game is kept.
-pub const KEEP_BLURB: &str = "A winter special. Skate a frozen pond at night, taking lanterns as they light, while the snow comes down. Play once, even in practice, to keep it all year.";
+pub const KEEP_BLURB: &str = "A winter special. Glide across a frozen pond at night, catching lanterns and landing spins as snow settles on the ice. Play once, even in practice, to keep it all year.";
 
 /// The blurb out of winter, once the game is kept.
-pub const YEAR_ROUND_BLURB: &str = "Skate a frozen pond at night, taking lanterns as they light, while the snow comes down. The Frost Fair opens in winter.";
+pub const YEAR_ROUND_BLURB: &str = "Glide across a frozen pond at night, catching lanterns and landing spins as snow settles on the ice. The Frost Fair returns each winter.";
 
 /// Said in the results when a skate first keeps the game.
 pub const KEPT_LINE: &str =
@@ -88,7 +88,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Seasonal,
-    blurb: "A winter special. Skate a frozen pond at night, taking lanterns as they light, while the snow comes down.",
+    blurb: "A winter special. Glide across a frozen pond at night, catching lanterns and landing spins as snow settles on the ice.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -250,7 +250,7 @@ impl TitleGame for SnowfallSkate {
                 ),
                 |s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(picker::Ponds::new(s.game.seed)),
             )
-            .help("Every pond with its stars and best. A star on one opens the next."),
+            .help("Pick any open pond and check its stars, best score, and targets. A star on one pond opens the next."),
         ];
         // The lantern skate, every evening.
         let today_best = p.lantern_today(today);
@@ -318,7 +318,7 @@ impl TitleGame for SnowfallSkate {
             MenuItem::new("Practice skate", |s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 skate(ctx, Mode::Practice, s.game.seed)
             })
-            .help("The village pond, slowly, with no snow and nothing scored. Every lantern is named."),
+            .help("Skate the village pond at a slower pace with no snow, no score, and every lantern named."),
         );
         rows
     }
@@ -332,7 +332,7 @@ impl TitleGame for SnowfallSkate {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Your stars and bests on every pond, the Frost Fair and the lantern skate, your tallies, and your challenge results.".to_string()
+        "Your stars and best scores on every pond, the Frost Fair, the lantern skate, your tallies, and your challenge results.".to_string()
     }
 
     fn sound_check(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -340,7 +340,7 @@ impl TitleGame for SnowfallSkate {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Plays the lanterns, the drifts, the thin ice, your partner and the spin.".to_string()
+        "Preview the lanterns, drifts, thin ice, your partner, and the spin cues.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

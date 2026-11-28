@@ -30,24 +30,24 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pond: Live<SkateScreen>) -> Lesson {
     );
     let lantern = pond.step(
         format!(
-            "{} pushes off. Hold {l} or {r} to lean that way across the ice. A lantern lights ahead of you in one of five lanes. Be in its lane as it reaches you to take it.",
+            "{} pushes off onto the ice. Hold {l} or {r} to lean across the five lanes. A lantern lights ahead of you, so line up in its lane as it reaches you to take it.",
             sentence_start(&go)
         ),
         |s: &SkateScreen, _| (s.skate.tally.taken >= 1).then(|| "Taken.".to_string()),
     );
     let line = pond.step(
-        "Take lanterns one after another to build a line. Each lantern in a line is worth 1 more point, up to 5 points. Take 3 in a row.",
+        "Taking lanterns one after another builds a line, adding 1 more point each time up to 5 points. Take 3 lanterns in a row.",
         |s: &SkateScreen, _| (s.skate.line >= 3).then(|| "A line of 3.".to_string()),
     );
     let drift = pond.step(
-        "Drifts of snow lie on the ice between lanterns. Skating into one slows you and breaks your line. Lean round the next drift you meet.",
+        "Snow drifts sit on the ice between some lanterns, slowing you down and breaking your line if you hit them. Lean around the next drift you meet.",
         |s: &SkateScreen, _| {
             (s.skate.tally.patches_cleared >= 1).then(|| "Clear of the drift.".to_string())
         },
     );
     let spin = pond.step(
         format!(
-            "Between lanterns you can spin. Hold {go} until the spin is ready, then let go. Hold it too long and you wobble. Land a spin."
+            "Between lanterns you can spin for bonus points. Hold {go} until the spin is ready, then let go before you wobble. Land a spin."
         ),
         |s: &SkateScreen, _| (s.skate.tally.spins >= 1).then(|| "Landed.".to_string()),
     );
@@ -55,14 +55,14 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pond: Live<SkateScreen>) -> Lesson {
     Lesson::new(
         ID,
         crate::NAME,
-        "You skate across a pond at night, taking lanterns as they light. Learn on the practice pond, where nothing is scored",
+        "Glide across a frozen pond at night, catching lanterns as they light ahead of you. Practice here with no snow and no score",
     )
     .step(lantern)
     .step(line)
     .step(drift)
     .step(spin)
     .outro(format!(
-        "On a real pond, snow settles as you skate, and the night ends when it covers the ice. Each lantern taken keeps it clear a little longer. Lean round thin ice on the later ponds too. {} gives nearby hazards, the next lantern and your position. Press it again straight away for your score, your line and the snow. {h} tells you what to do next.",
+        "On a real pond, snow settles as you skate and ends the night once it covers the ice, while each lantern sweeps part of the ice clear. Watch for thin ice on later ponds too. {} checks nearby hazards, the next lantern, and your spot on the ice, and pressing it again gives your score, line, and snow depth. {h} tells you which way to lean.",
         sentence_start(&s)
     ))
     .on_exit(move |ctx| {

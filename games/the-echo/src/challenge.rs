@@ -84,7 +84,7 @@ pub fn tag(plan: &Plan) -> String {
 pub fn rule(plan: &Plan) -> String {
     let l = plan.layout;
     format!(
-        "A rank of {}. Each starts between {} and {} out, at {STEP_CENTS} cents a step.",
+        "Tune a rank of {}, each starting between {} and {} out at {STEP_CENTS} cents a step.",
         pipes_words(l.pipes),
         steps_words(l.near),
         steps_words(l.far)

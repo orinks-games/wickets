@@ -31,7 +31,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pools: Live<OutingScreen>) -> Lesson {
 
     let lean = pools.step(
         format!(
-            "{} leans toward the water; {d} steps back. Stand back to take in this pool and its neighbours; lean in for only this one. Lean in close.",
+            "{} leans closer to the water, and {d} steps back. Standing back surveys this pool and its neighbours, while leaning in focuses on just this pool so you can reach in. Lean in close now.",
             sentence_start(&u)
         ),
         |s: &OutingScreen, _| {
@@ -41,38 +41,38 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pools: Live<OutingScreen>) -> Lesson {
 
     let gather = pools.step(
         format!(
-            "This pool holds an anemone. Press {p} just after it calls."
+            "An anemone lives in this pool. Press {p} right after it calls to gather it."
         ),
         |s: &OutingScreen, _| {
             s.outing
                 .gathered
                 .contains(&Species::Anemone)
-                .then(|| "The anemone is yours. Reach in when nothing has called, and your hands come up with only water.".to_string())
+                .then(|| "You gathered the anemone. If you reach in when nothing has called, your hands come up empty.".to_string())
         },
     );
 
     let shy = pools.step(
         format!(
-            "{} and {r} walk from pool to pool. The pool on your right holds a shy shore crab. It darts away when you lean in, so keep still until it creeps back out, then gather it.",
+            "{} and {r} walk from pool to pool. The pool to your right holds a shy shore crab that hides when you lean in. Keep still until it creeps back out, then gather it.",
             sentence_start(&l)
         ),
         |s: &OutingScreen, _| {
             s.outing
                 .gathered
                 .contains(&Species::Crab)
-                .then(|| "The crab is yours.".to_string())
+                .then(|| "You gathered the crab.".to_string())
         },
     );
 
     Lesson::new(
         ID,
         "Tide Pools",
-        "The tide is out, and rock pools line the shore with the sea ahead of you. There is no way to fail: gather what you find. Learn in the practice pools",
+        "The tide is out and rock pools stretch along the shore in front of you. Practice leaning in and gathering creatures here with no tide to rush you",
     )
     .step(lean)
     .step(gather)
     .step(shy)
     .outro(
-        "A trip lasts until the tide comes back. On a trip, what you gather goes home to your aquarium. These practice creatures go back in the water. F1 lists the rest.",
+        "On a real trip, you gather until the tide comes back in, and everything you find comes home to your aquarium. These practice creatures stay in their pools. Press F1 anytime for the rest of the controls.",
     )
 }

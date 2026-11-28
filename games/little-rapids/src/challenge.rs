@@ -47,16 +47,16 @@ pub fn challenge_tag(ch: &Challenge) -> String {
 /// What the challenge asks.
 pub fn challenge_rule(ch: &Challenge) -> String {
     match ch.period {
-        Period::Daily => "One stream with waterfalls, mill wheels and ducks, the same for everyone today. Score as much as you can on the paper boat.".to_string(),
+        Period::Daily => "Sail one stream with waterfalls, mill wheels, and ducks, identical for everyone today. Score as high as you can in the paper boat.".to_string(),
         Period::Weekly => {
             let boat = boat_for(Mode::Weekly, &Progress::default(), ch.seed);
             format!(
-                "A longer stream of mill wheels and ducks, on the {}: {}.",
+                "Sail a longer stream of mill wheels and ducks in the {}: {}.",
                 boat.name().to_lowercase(),
                 boat.handling()
             )
         }
-        Period::Monthly => "The longest stream, every twist, and it gets busier all the way to the mouth.".to_string(),
+        Period::Monthly => "Take on the longest stream with every hazard, growing busier all the way to the river mouth.".to_string(),
     }
 }
 
