@@ -61,7 +61,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Seasonal,
-    blurb: "Walk a meadow at dusk and catch fireflies in time with their blink.",
+    blurb: "Wander a meadow at dusk, catch fireflies as they blink, and set jars free in chords.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(event),
@@ -279,7 +279,7 @@ impl TitleGame for Meadow {
             MenuItem::new("Practice catch", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 evening::start(ctx, Mode::Practice, false)
             })
-            .help("A small summer patch with one easy firefly just ahead. Nothing counts, in any season."),
+            .help("A small summer patch with one easy firefly right ahead. Nothing caught here counts."),
         )
     }
 
@@ -292,7 +292,7 @@ impl TitleGame for Meadow {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Fireflies caught, species found, your longest evening and midsummer nights, with your challenge results.".to_string()
+        "Your fireflies caught, species found, longest evening, midsummer nights, and challenge results.".to_string()
     }
 
     fn extras(&mut self, ctx: &mut Ctx<Parlor>) -> Vec<TitleRow<Self>> {
@@ -323,7 +323,7 @@ impl TitleGame for Meadow {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A summer evening on the clock each day, each week and each month, the same for every player. {}",
+            "Timed summer evening challenges each day, week, and month, the same for every player. {}",
             daily.resets()
         )
     }

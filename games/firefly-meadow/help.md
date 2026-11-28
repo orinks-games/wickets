@@ -2,80 +2,98 @@
 
 ## About the game
 
-Walk toward a firefly, then press Space as it glows to catch it in your jar. Setting a full jar free lights the meadow and rings a chord. Nothing can go wrong, and outside challenges nothing is timed. Enter heads home.
+Wander a dusk meadow as fireflies blink all around you. Walk up to a firefly and press Space while it glows to catch it in your jar. When you set your jar free, the fireflies light up the meadow and ring their notes together as a chord.
 
-This help gives distances in metres. Set Units to US in Settings for distances in feet instead.
+Nothing can go wrong, and outside challenges there is no clock. Press Enter whenever you are ready to head home. Distances here are in metres; set Units to US in Settings for feet instead.
 
 ## Walking the meadow
 
-Up, Down, Left and Right walk one step at a time. Up is always north. Hold a key to keep walking. The game names the edge of the meadow when you reach it, such as "the north edge". Frogs, the creek and the trees each sound from one place all evening, so you can find your way by them.
+Up, Down, Left, and Right walk one step at a time, with Up always north. Hold any arrow key to keep walking.
+
+When you reach an edge of the meadow, you are told which edge it is, such as "the north edge". Frogs, the creek, and the trees stay in fixed spots all evening to help you keep your bearings.
 
 ## Finding fireflies
 
-Each firefly's cue marks its blink. A tone in your left ear is to your left, a tone in both ears is ahead or behind, and a quiet one is far away. The in-reach cue means a firefly is close enough to catch. H names the way to the nearest glow, such as "5 metres ahead and to the left", and plays its tone from where it is.
+Every firefly signals each blink from its spot in the meadow, getting closer as you walk toward it. The in-reach cue tells you when a firefly is close enough to catch.
+
+H gives the direction and distance to the nearest firefly, such as "5 metres ahead and to the left", and marks its spot.
 
 ## Catching a firefly
 
-Space catches a firefly in reach, but only while it glows. Press as you hear its tone. If it is dark, wait for its next glow and try again. Some species flash two or three times in a row. For those, press Space once for every flash of one blink. The game confirms each flash you answer. If the blink ends first, try the next blink. Nothing is lost.
+Space catches a firefly within reach, as long as it is glowing. If it has gone dark, wait for its next blink and try again.
+
+Some species flash two or three times in a row. For those, press Space once for each flash in the blink, and each match is confirmed as you go. If the blink finishes early, catch it on the next one. Nothing is lost.
 
 ## The jar and chords
 
-The jar holds 6 fireflies. Tab sets them free. For a few seconds after a release, every firefly blinks more often. Each species rings one note of a five note scale: C, D, E, G or A. The notes of the jar ring together as a chord. Six chords have names, such as the Summer Triad, which is C, E and G. The first time you ring one, it goes in your journal.
+Your jar holds 6 fireflies, and Tab sets them free. For a few seconds after a release, fireflies across the meadow blink more often.
+
+Each species rings one note on a five-note scale: C, D, E, G, or A. Releasing a jar rings all of its notes together as a chord. Six chords have names, such as the Summer Triad for C, E, and G, and the first time you ring one it is saved in your journal.
 
 ## Species and the journal
 
-There are 10 species. Each blinks its own pattern and rings its own note. The Dipper flashes once. The Twin Spark flashes twice. The Triple Twinkle flashes three times. Others live only in one meadow or one season. The first time you catch a species, it goes in your journal. Journal, on the title, plays each species' blink and reads about it, and lists your chords and keepsakes. An unknown firefly's row says where to look for it.
+There are 10 species, each with its own blink pattern and note. The Dipper flashes once, the Twin Spark flashes twice, and the Triple Twinkle flashes three times, while other species appear only in a certain meadow or season.
+
+The first time you catch a species, it goes into your journal. Open Journal from the title to replay each species' blink, read about it, and check your chords and keepsakes. Unknown species tell you where to look for them.
 
 ## Meadows
 
-The home meadow is open from the start. Catching fireflies opens the orchard, at 8 caught in all, the creek bank at 20, and the hayfield at 35. Each has its own species, landmarks and size. On the title, the Meadow row chooses which one the Play row walks. Practice catch is a small patch with one easy Dipper just ahead. It is summer whatever the date. Nothing there counts.
+The home meadow is open from the start. Catching fireflies unlocks the orchard at 8 caught in all, the creek bank at 20, and the hayfield at 35. Each meadow has its own species, landmarks, and size.
+
+On the title, the Meadow row picks which meadow Play walks. Practice catch is a small summer patch with one easy Dipper right ahead, and nothing caught there counts.
 
 ## The seasons
 
-The meadow follows the real season. Summer, from June to August, is full of fireflies. Spring, from March to May, has only the first few. In September, the last two fireflies of the year are out. In October and November, one rare late firefly comes out if you wait.
+The meadow follows the real calendar. Summer, from June to August, is packed with fireflies, while spring, from March to May, brings out the first few. In September, the final two fireflies of the year are out, and in October and November one rare late firefly appears if you wait.
 
 ## Midsummer night
 
-Midsummer night opens on midsummer, the June solstice, from the day before to the day after. Until then its row on the title is locked and says how many days are left. On the night, the whole meadow flashes together, 6 flashes in a row, then a rest. Some fireflies drift out of step and flash a moment late. Press Space with each chorus flash to bring one straggler back into step. Left and Right say how many are out of step on each side. After 12 rounds, you take home the year's keepsake, a different one each year, with how in step the meadow was.
+Midsummer night opens around the June solstice, from the day before to the day after. On other days its title row is locked and counts down the days left.
+
+During the show, the whole meadow flashes together in sets of 6 flashes followed by a rest, while a few stragglers drift late. Press Space on each chorus flash to pull a straggler back into step. Left and Right report how many are out of step on each side. After 12 rounds, you earn that year's keepsake along with how in step the meadow was.
 
 ## Fireworks
 
-On the Fourth of July weekend, fireworks appear on summer evenings. That is July 3 to 5, and any Saturday or Sunday from July 1 to July 7.
+On the Fourth of July weekend, fireworks light up summer evenings. That covers July 3 to 5, plus any Saturday or Sunday from July 1 to July 7.
 
 ## Status and hints
 
-S gives the status, always in this order: in a challenge the time left, then your jar, and the nearest glow or "a firefly in reach". On a winter walk it gives the memories found instead of the jar. Press S again straight away for the fireflies caught tonight, their species, the time so far and the meadow. R repeats the last thing said. H names the way to the nearest glow.
+S reads your status in a fixed order: time left in a challenge, your jar, and the nearest glow or "a firefly in reach". On a winter walk it reads memories found instead of your jar.
+
+Press S again right away for tonight's catch count, species, time elapsed, and current meadow. R repeats the last spoken line, and H points to the nearest glow.
 
 ## Records
 
-Records keep the fireflies you have caught in all, species and chords found, your longest evening, evenings walked, jars set free, and your best midsummer night. Records, on the title, reads them with your challenge results.
+Records track your total fireflies caught, species and chords found, longest evening, evenings walked, jars released, and best midsummer night. Open Records on the title to read them alongside your challenge results.
 
 ## Challenges
 
-Every player gets the same challenges. They are always summer evenings, whatever the season outside. The daily is 4 minutes in one of the meadows. The weekly is 6 minutes with a small jar of 4, so chords come quickly. The monthly is 8 minutes in the hayfield. Each scores 10 points a firefly, 25 a species, and 40 for each named chord you set free. A voice warns you 30 seconds before the light fades. Enter heads home and also ends the challenge. Leave the challenge, on the pause menu, does not count, so you can try again.
+Every player gets the same challenges, and they are always summer evenings regardless of the season outside. The daily is 4 minutes in one of the meadows. The weekly is 6 minutes with a smaller jar of 4 so chords come faster. The monthly is 8 minutes in the hayfield.
+
+Challenges score 10 points per firefly, 25 per species, and 40 for each named chord you release. You get a warning 30 seconds before the light fades. Enter heads home and finishes the challenge, while Leave the challenge on the pause menu cancels without counting.
 
 ## Sound check
 
-Sound check on the title plays the cues you need during play.
+Sound check on the title plays every firefly tone and cue you need in the meadow.
 
 ## Controls
 
-Up, Down, Left and Right: walk one step. Up is north.
+Up, Down, Left, and Right: walk one step. Up is north.
 
-Space: catch a firefly as it glows, or remember a summer memory in winter.
+Space: catch a firefly while it glows, or remember a summer memory in winter.
 
-Tab: set the jar free. In winter, look up at the stars.
+Tab: set your jar free. In winter, look up at the stars.
 
-S: status. Press it twice for the rest.
+S: status. Press S twice for the full breakdown.
 
-R: repeat the last thing said.
+R: repeat the last spoken line.
 
-H: the way to the nearest glow.
+H: direction and distance to the nearest glow.
 
 Enter: head home and end the evening. Press Enter again to confirm.
 
 F1: help for what you are doing right now. F2 stops speech.
 
-Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title is Leave the challenge.
+Escape: pause, with Resume, Settings, Help, Back to the title, and Back to the lobby. In a challenge, Back to the title becomes Leave the challenge.
 
 These are the default keys. If you change them in Settings, the game's instructions follow your bindings.

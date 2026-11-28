@@ -43,7 +43,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Belfry",
     category: Category::Puzzle,
-    blurb: "Ring rows of bells to find the old ringer's secret peal.",
+    blurb: "Ring rows of bells and use clues to crack the old ringer's secret peal.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -210,8 +210,7 @@ impl TitleGame for Belfry {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Peals solved, fewest rows, best scores and streaks, with your challenge results."
-            .to_string()
+        "Your solved peals, fewest rows, best scores, streaks, and challenge results.".to_string()
     }
 
     fn sound_check(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -225,7 +224,7 @@ impl TitleGame for Belfry {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily peal, five peals each week and a monthly cathedral peal, the same for every player. {}",
+            "A fresh daily peal, 5 peals every week, and a monthly cathedral peal, the same for every player. {}",
             daily.resets()
         )
     }

@@ -114,7 +114,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, screen: Live<PlayScreen>) -> Lesson {
 
     let find = screen.step(
         format!(
-            "Seven piles, stock, then four foundations. {} and {r} move along the row; each place says its top card. Find the ace of hearts.",
+            "The table has 7 piles, the stock, and 4 foundations in one row. {} and {r} move along it, naming each place's top card. Find the ace of hearts.",
             sentence_start(&l)
         ),
         |s: &PlayScreen, _| (s.cursor == 4).then(|| "There it is.".to_string()),
@@ -122,7 +122,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, screen: Live<PlayScreen>) -> Lesson {
 
     let ace = screen.step(
         format!(
-            "{} picks up the card under you. Move to where it goes, and {p} again places it. A foundation takes one suit, ace first. Put the ace on the hearts foundation, past the stock.",
+            "{} picks up the card under you, and pressing {p} again places it. Foundations build one suit from ace up to king. Put the ace on the hearts foundation, past the stock.",
             sentence_start(&p)
         ),
         move |s: &PlayScreen, _| {
@@ -132,7 +132,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, screen: Live<PlayScreen>) -> Lesson {
     );
 
     let seven = screen.step(
-        "A pile builds down in alternating colours: a black 7 goes on a red 8. Move the 7 of spades from pile 3 onto the 8 of diamonds on pile 2.",
+        "Piles build down in alternating colours, so a black 7 goes on a red 8. Move the 7 of spades from pile 3 onto the 8 of diamonds on pile 2.",
         |s: &PlayScreen, _| {
             (s.game.table.piles[1].top() == Some(card(7, Suit::Spades))).then(|| {
                 "A face-down card turns up when you move the cards off it.".to_string()
@@ -142,7 +142,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, screen: Live<PlayScreen>) -> Lesson {
 
     let stock = screen.step(
         format!(
-            "{} turns a card up from the stock. At the stock's place, {p} picks it up. Turn up the 2 of hearts and put it on its foundation.",
+            "{} flips a card up from the stock, and {p} picks it up when you are on the stock. Turn up the 2 of hearts and move it onto its foundation.",
             sentence_start(&t)
         ),
         {
@@ -159,7 +159,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, screen: Live<PlayScreen>) -> Lesson {
     let clubs = Suit::Clubs.index();
     let aces = screen.step(
         format!(
-            "The other aces are face down in the piles or deeper in the stock. Press {t} until the ace of clubs turns up. Put it on its foundation."
+            "The other aces hide face down in the piles or deeper in the stock. Press {t} until the ace of clubs appears, then move it to its foundation."
         ),
         {
             let mut heard = Heard::default();
@@ -173,7 +173,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, screen: Live<PlayScreen>) -> Lesson {
 
     let refill = screen.step(
         format!(
-            "{} turns the stock back over when it is empty, as often as you like. Turn it over now.",
+            "{} flips the stock back over whenever it runs out, as often as you like. Turn it over now.",
             sentence_start(&t)
         ),
         {
@@ -204,7 +204,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, screen: Live<PlayScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Fireside Patience",
-        "A game of patience by the fire: put all 52 cards on the four foundations, by suit, from ace to king. There is no clock and no way to lose. Learn on a small table",
+        "Settle in by the fire for solitaire: sort all 52 cards onto the four suit foundations, ace to king. There is no clock and you cannot lose. Try the basics on a small table.",
     )
     .step(find)
     .step(ace)
@@ -214,7 +214,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, screen: Live<PlayScreen>) -> Lesson {
     .step(refill)
     .step(undo)
     .outro(format!(
-        "To win, build all 4 foundations from ace to king. Only a king goes on an empty pile. {} gives a useful move. Play deals a full game.",
+        "Build all 4 foundations from ace to king to win. Only a king can move onto an empty pile, and {} suggests a useful move any time. Pick Play to deal a full game.",
         sentence_start(&h)
     ))
 }

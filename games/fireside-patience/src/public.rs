@@ -47,7 +47,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: NAME,
     category: Category::Table,
-    blurb: "A game of patience by the fire, with deals that can always be won.",
+    blurb: "Classic solitaire by the fire, with winnable deals and unlimited undo.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -190,7 +190,7 @@ impl TitleGame for FiresidePatience {
     }
 
     fn records_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Deals won, fewest moves and best score, with your challenge results.".to_string()
+        "Your deals won, fewest moves, best score, and challenge results.".to_string()
     }
 
     fn sound_check(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -208,7 +208,7 @@ impl TitleGame for FiresidePatience {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "A daily deal, a weekly draw three deal and five deals a month, the same for every player. {}",
+            "A daily deal, a weekly draw three deal, and 5 deals each month, the same for every player. {}",
             daily.resets()
         )
     }
