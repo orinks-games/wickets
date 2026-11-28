@@ -298,8 +298,8 @@ impl Albums {
     pub fn new() -> Self {
         Albums {
             menu: MenuCore::new(ROW).with_intro_help(
-                "Up and Down choose an album, Enter opens it, Escape goes back. \
-                 Music unlocks as it plays in a game.",
+                "Use Up and Down to pick an album, Enter to open it, and Escape to go back. \
+                 Tracks unlock as they play in each game.",
             ),
         }
     }
@@ -346,7 +346,7 @@ impl Menu for Albums {
                 MenuItem::new("Every album", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                     ctx.push(SoundtrackScreen::<Parlor>::new().title("Every album"))
                 })
-                .help("Every track you have unlocked, from every game, with Play all."),
+                .help("All the tracks you have unlocked across every game, including Play all."),
             );
         }
         for (name, unlocked, listed) in albums {

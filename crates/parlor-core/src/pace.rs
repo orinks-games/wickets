@@ -264,7 +264,7 @@ pub fn row_for(id: &'static str, part: &str) -> SettingsRow<Parlor> {
 }
 
 /// What the Pace row's help says.
-const HELP: &str = "How fast timed play runs. Relaxed is the slowest and quick the fastest. A change applies from the next run. Stars and unlocks count at every pace. Relaxed scores are saved separately.";
+const HELP: &str = "Controls how fast timed play runs, from relaxed to quick. Changes take effect on your next run. Stars and unlocks count at every pace, and relaxed scores are saved separately.";
 
 /// The game's Pace row, reading the current pace with `current`: for a
 /// game with its own default or an older setting to carry over.
@@ -1029,7 +1029,7 @@ mod tests {
         h.clear();
         h.press(Key::F1);
         let help = h.spoken().last().cloned().unwrap_or_default();
-        assert!(help.starts_with("How fast timed play runs."), "{help}");
+        assert!(help.starts_with("Controls how fast timed play runs"), "{help}");
         assert!(help.ends_with("Pace applies to Gift Sort only."), "{help}");
     }
 }

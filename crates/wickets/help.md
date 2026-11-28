@@ -2,201 +2,211 @@
 
 ## About the parlor
 
-A parlor of games. Games speak through your screen reader, or their own
-voice. Nothing in any game is shown only on screen.
+Wicket's is a cozy parlor packed with arcade runs, puzzles, tabletop games,
+and seasonal specials. You can drop in for a quick daily challenge, unwind
+with a calm round, or follow Story mode as the parlor wakes up through the
+day. Every game plays with a keyboard or controller.
 
 ## Moving around
 
-Up and Down move through a menu. Home and End jump to its ends. Enter
-chooses. Escape goes back one screen. Escape in the lobby asks whether to
-quit, and the cursor starts on No. A game's pause menu ends with Back to
-the lobby, so nothing quits the parlor without asking. F1 reads help for wherever you are.
-F2 stops speech.
+Use Up and Down to move through any menu, or Home and End to jump straight
+to the first or last item. Press Enter to pick an item, and Escape to go back
+a screen. F1 reads help for wherever you are, and F2 stops speech right away.
+
+Pressing Escape in the lobby asks whether to quit, with the cursor starting
+on No so you never leave by accident. Every game's pause menu ends with Back
+to the lobby, keeping you inside the parlor.
 
 ## Continue
 
-Once you have played a game, the lobby starts with a Continue row that
-names it. Enter on Continue opens that game's title, so you skip the lists
-of kinds and games.
+Once you have played a game, the lobby puts a Continue row right at the top
+with that game's name. Press Enter on Continue to jump straight back to its
+title screen without browsing through the categories again.
 
 ## Story mode
 
-Story in the lobby opens tonight's list: a few games picked for the time of
-day, the season and what is on, with the parlor's keeper between them.
-Each part of the day brings a new list.
+Story in the lobby opens the current sitting: a short lineup of games chosen
+for the time of day, the season, and any events happening now, hosted by the
+parlor's keeper. A fresh lineup arrives with each part of the day.
 
-Select a game and press F1 to hear the activity: a particular event, a
-challenge, or any mode. Enter opens the game. Complete the listed activity,
-then return to the story list to light its lamp in the Long Hall. Leaving
-an activity early keeps it on the list.
+Highlight a game and press F1 to hear what the sitting asks for, whether it
+is an event, a challenge, or any mode you like. Press Enter to play it,
+finish the run, and return to the story list to light that game's lamp in the
+Long Hall. If you leave early, the game stays on your list for later.
 
-Each list also has a Happening: an errand to play one of its games, or a
-riddle from the Echo. Doing it earns a stamp.
+Each sitting also brings a Happening, either an errand to play one of its
+games or a riddle from the Echo. Finishing it earns a stamp for the parlor's
+book.
 
-After the games, the list has a Swap row and a Skip row for the next game
-on it. Swap trades that game for another that suits the time of day. A
-game swapped in cannot be swapped again, so play it or skip it. Skip takes
-the game off the list, and nothing is lost.
+Below the games, Swap and Skip act on the next unplayed game on the list.
+Swap trades it for another game that fits the time of day, though a swapped-in
+game cannot be swapped a second time. Skip takes the game off the current
+list with no penalty.
 
 ## Story games
 
-Some games open only in story mode, as the story goes on. Once one opens,
-Play has a From the story row after the kinds of game, and the game is
-there to play at any time. Lamplighter opens on opening night, and The
-Echo opens in act 4, when every lamp is lit. Story games
-have no lamp of their own in the Long Hall.
+Some games unlock only as you progress through Story mode. Once a story game
+opens, a From the story row appears under Play right after the regular
+categories, so you can launch it whenever you like. Lamplighter opens on
+opening night, and The Echo opens in act 4 once every lamp is lit. Story
+games do not have lamps of their own in the Long Hall.
 
 ## Challenges
 
-Every game has a daily, a weekly and a monthly challenge, the same for every
-player. Challenges in the lobby lists them all, with what you have done and
-your streaks. Each game's row reads the same record as that game's own
-Challenges menu, and Enter on the streak row reads your streak again. Dailies change at midnight UTC, weeklies on Monday and
-monthlies on the first of the month.
+Every game offers a daily, weekly, and monthly challenge with the same setup
+for every player. Open Challenges in the lobby to see them all in one place,
+along with what you have finished and your current streak. Each game's row
+matches its own Challenges menu, and Enter on the streak row repeats your
+streak. Dailies reset at midnight UTC, weeklies on Monday, and monthlies on
+the first of the month.
 
-A challenge counts when the run ends. Leaving from the pause menu does not
-count, so you can try again. Challenges never change a game's own best
-scores.
+A challenge counts once the run ends. If you leave from the pause menu, the
+run does not count and you can try again. Challenge runs never overwrite your
+regular best scores.
 
 ## Soundtrack
 
-Soundtrack in the lobby holds every game's music, one album per game. A
-track unlocks the first time you hear it in play: open a game for its
-title theme, or play on to hear the rest.
+Soundtrack in the lobby collects the music from Wicket's and every game,
+organized into one album each. Tracks unlock the first time they play during
+a game, so opening a game unlocks its title theme and playing further unlocks
+the rest.
 
-Enter on an album lists its tracks. Enter plays one, and Enter again
-stops it. Play all plays every unlocked track in a random order. A
-locked track reads how to hear it.
+Press Enter on an album to browse its tracks, Enter to start a track, and
+Enter again to stop it. Play all shuffles every unlocked track, and a locked
+track says how to unlock it.
 
-The lobby's time-of-day tracks, such as Small hours after midnight, are
-available from the start and marked as not heard yet. Enter plays the
-selected track and marks it as heard.
+The lobby's time-of-day pieces, such as Small hours after midnight, are
+available right from the start and marked as not heard yet. Playing one here
+marks it as heard.
 
-Each track sounds as it does in the game. Songs built a voice at a time,
-like Lantern Lake's, come together in a new order each play, and Rooftop
-Garden's makes up new tunes as it goes. The Sound check never unlocks a
-track.
+Every track plays the same way it does in the game. Songs built a voice at a
+time, like Lantern Lake's, come together in a fresh order each time, and
+Rooftop Garden's writes new tunes on the fly. The Sound check never unlocks
+soundtrack tracks.
 
-Your own songs are kept too. In a game whose music is made as you play,
-such as Rooftop Garden, Lantern Lake or Tightrope, each run's music goes
-into an album of its own, such as Your Rooftop Garden songs, named for
-the time of day and the date. It plays back as you heard it: the same
-voices joining and leaving at the same moments, the same fades, with
-nothing from a pause or a menu. The last 30 of each game are kept. A
-run's results offer Make a sound file of this run's song. Keep your
-songs, under Sound in Settings, turns the keeping off.
+Games that compose music as you play, such as Rooftop Garden, Lantern Lake,
+or Tightrope, also save each run's song in a personal album named for the
+time of day and date. It replays the exact voices, timing, and fades from
+your run, with menus and pauses left out. Up to 30 songs are kept per game,
+and a run's results screen offers Make a sound file of this run's song. Keep
+your songs, under Sound in Settings, turns this off.
 
-Once you have heard every track in an album, its Export album row saves
-the whole album as sound files, each track as you hear it in the game.
-Shift and Enter on one track saves that track alone. They go in the
-Music folder inside the Wicket's folder, in a folder named for the
-album. Escape stops an export partway.
+Once you have unlocked every track in an album, Export album saves the whole
+set as sound files. Shift and Enter on a single track exports that track
+alone. Files go into the Music folder inside your Wicket's folder, sorted by
+album name, and Escape cancels an export partway.
 
 ## Holidays and events
 
-Every game follows the real calendar. Seasonal games add something new in
-the days before their holiday and hold a special event on the day. The
-other games hold events on full moons, meteor nights, Friday the 13th and
-other days, such as king tides in Tide Pools. When the lobby opens, it
-says what is on today, and Happening today lists it all. F1 on a game says
-what is special.
+Wicket's follows the real calendar. Seasonal games build up in the days
+leading to their holiday and run a special event on the day itself. Other
+games hold events for full moons, meteor showers, Friday the 13th, and
+occasions like king tides in Tide Pools. When the lobby opens, it announces
+what is on today, Happening today lists everything in one place, and F1 on
+any game describes its event.
 
-A holiday counts from the day before to the day after, so it is on
-wherever you live. Wicket's checks the date with an internet time
-server, so changing your computer's clock does not open an event early.
-Offline, it uses your computer's clock.
+Holidays run from the day before through the day after so players in every
+time zone get the full window. Wicket's checks an internet time server for
+the date, so changing your system clock does not unlock events early. When
+you are offline, it falls back to your computer's clock.
 
 ## Holiday specials
 
-Holiday specials appear in Seasonal games around their holiday and stay
-there for two more weeks, so you can catch up. Start playing one, even in
-practice, to keep its ordinary game all year. You do not need a star or a
-high score. Earlier play counts too.
+Holiday specials appear in Seasonal games around their holiday and stay for
+two extra weeks so you have time to catch up. Start playing one, even in
+practice mode, and its regular game stays in your collection all year. You do
+not need a star or a high score, and earlier play counts too.
 
-Finding a special you have not played needs the date from the internet.
-Offline, Seasonal games has a Check for holiday specials row to try again.
-Games you have played open offline.
+Discovering a new holiday special requires checking the date online. If you
+are offline, Seasonal games shows a Check for holiday specials row so you can
+try again later. Specials you have already played still open offline.
 
-After its season, a game you have kept moves to its usual category. Its
-holiday finale still follows the calendar. Games you have not played stay
-hidden outside their season and catch-up weeks. F1 on a listed game says
+Once its season wraps up, any special you kept moves to its usual category,
+while its holiday finale still follows the calendar. Specials you have not
+played stay hidden until their next season. Press F1 on a listed game to see
 what you can keep.
 
 ## Happening today
 
-Happening today comes right after Play in the lobby, and its row says
-how many game events are on. It lists everything on today in one place:
-each game's event, the story's Happening, and the daily, weekly and
-monthly challenges with how many you have done. Enter on a game's event
-opens that game, and on its title you choose the event. Enter on the
-story's row opens Story with the cursor on the Happening. Enter on a
-challenge row lists that period's challenges. On a day with no events,
-the first row says which game holds the next one and when. In the
-lobby, H moves between Happening today and Help.
+Happening today sits right below Play in the lobby and shows how many game
+events are live. Inside, you find every game event on today, the story's
+Happening, and your daily, weekly, and monthly challenge progress in one
+list.
+
+Press Enter on a game event to open that game's title screen, Enter on the
+story row to jump straight to the Happening in Story mode, or Enter on a
+challenge row to open that period's list. On a quiet day with no events, the
+top row names which game has the next one and when. In the lobby, H moves
+between Happening today and Help.
 
 ## Story and event games
 
-Story and event games, under Games in the lobby's Settings, choose which categories and
-games story mode and the events offer. Left and Right on a category turn
-the whole category on or off. Enter lists its games. Enter on a game
-turns only that game on or off. Anything turned off leaves story sittings,
-the Long Hall's lamps, Happening today and the lobby's event line. It
-remains in Play, including its event modes. Everything starts on, and at
+Story and event games, under Games in the lobby's Settings, choose which
+categories and games appear in Story mode and daily events. Use Left and
+Right on a category to toggle the whole group, or press Enter to open it and
+toggle individual games.
+
+Turning a game off removes it from story sittings, the Long Hall's lamps,
+Happening today, and the lobby's event announcement. You can still play it
+and its event modes anytime from Play. Everything starts turned on, and at
 least one game stays on.
 
 ## Speech voice
 
-Speech voice, under Speech in Settings, picks who speaks. Automatic uses your screen
-reader, and the game's own voice when there is no screen reader or speech
-engine, as on a handheld. Left and Right choose one of the game's voices
-instead: US female, US male, British female, British male, US child or
-Robot. Speech rate and Speech volume change it.
+Speech voice, under Speech in Settings, chooses how Wicket's speaks.
+Automatic uses your screen reader, and falls back to the built-in voice when
+no screen reader or speech engine is running, such as on a handheld. Use Left
+and Right to pick a built-in voice directly: US female, US male, British
+female, British male, US child, or Robot. Speech rate and Speech volume
+adjust the built-in voice.
 
-If you hear nothing at all, press Control Shift V on any screen to turn the
-game's own voice on. Press it again to go back to automatic.
+If you hear nothing at all, press Control Shift V on any screen to switch on
+the built-in voice. Press it again to return to Automatic.
 
 ## Update channels
 
-Update channel, under Updates in Settings, picks which releases you get. Stable is for
-regular play and gets stable releases. Beta gets beta and stable releases.
-Alpha gets all three, plus the earliest work and alpha-only games.
+Update channel, under Updates in Settings, controls which releases Wicket's
+checks for. Stable is for everyday play and sticks to stable releases. Beta
+includes beta and stable releases. Alpha includes all three, along with early
+work and alpha-only games.
 
-Changing the channel does not change your games until you install an update.
-Your channel choice is saved for next time. Updates must be newer than your
-installed copy.
+Switching channels takes effect the next time you install an update, and your
+choice is saved automatically. Updates only install when they are newer than
+your current copy.
 
-To switch from a beta to an older alpha, download the alpha manually.
-Installing a beta or stable copy hides alpha-only games, but keeps their
-saved records.
+To move from a beta to an older alpha, download the alpha copy manually.
+Installing a beta or stable build hides alpha-only games, though your saved
+records stay safe.
 
 ## Reporting a problem
 
-Report a problem, in Settings, sends the game log to orinks.net and opens
-the report form in your web browser with the log already attached. Settings
-is on every game's pause menu too, and a report sent from inside a game
-names that game. Write what happened, add your email address if you want a
-reply, and send it. If the form cannot open, the game's own report screen
-opens instead and says why.
+Report a problem, in Settings, uploads the game log to orinks.net and opens
+the report form in your web browser with the log attached. Settings is also
+on every game's pause menu, and reports sent from inside a game include that
+game's name. Describe what happened, add your email if you would like a
+reply, and submit it. If the browser form cannot open, Wicket's opens its own
+built-in report screen instead.
 
-If Wicket's closed without quitting the last time it ran, the next start asks
-once whether to report it. Yes opens the same form with that run's log. Don't
-ask again turns the question off, and a row in Settings turns it back on.
+If Wicket's closed unexpectedly on your last run, it asks once at the next
+launch whether to send a report. Yes opens the form with that run's log.
+Don't ask again turns the prompt off, and you can turn it back on anytime in
+Settings.
 
 ## Stories, tutorials and results
 
-Stories, tutorials and results come one page at a time. Enter goes on. Up
-and Down go back and forward a page. R repeats the page. Escape skips to
-the end. A game's clock stops while you read. On a results menu, S repeats
-the summary.
+Stories, tutorials, and results read one page at a time, and the game's clock
+pauses while you read. Press Enter to move on, Up and Down to step back or
+forward a page, R to repeat the current page, and Escape to skip to the end.
+On a results menu, S repeats the summary.
 
-Help comes in pages too. Enter opens a topic. Up and Down read it a page
-at a time. Left and Right change topic. Enter reads the rest. Escape
-goes back to the topics.
+Help works in pages too. Press Enter to open a topic, Up and Down to move
+through its pages, Left and Right to switch topics, Enter to read the rest of
+the topic, and Escape to return to the topic list.
 
 ## Sounds
 
-The sounds are made with genny. Any of them can be
-replaced by putting a recording of the same name in the sounds folder.
+The game's sounds are made with genny. You can replace any sound by placing
+your own recording with the same filename in the sounds folder.
 
 ## Credits
 
@@ -209,17 +219,17 @@ That licence is the Apache License 2.0 with an attribution requirement.
 
 ## Controls
 
-Every game uses the same controls. In Settings, you can move any of them
-to another key or controller button.
+Every game in Wicket's shares the same core controls, and you can rebind any
+of them to another key or controller button in Settings.
 
-The arrow keys move, aim or choose.
-Space is the main action.
-Tab is the second action.
-S gives your status, such as score and lives.
-R repeats the last prompt or pattern.
-H gives a hint, where the game has one.
+Arrow keys: move, aim, or choose.
+Space: main action.
+Tab: second action.
+S: report your status, such as score and lives.
+R: repeat the last prompt or pattern.
+H: ask for a hint, when the game offers one.
 
-Some games add keys of their own, and each game's help names them.
+Some games add a few extra keys of their own, listed in each game's help.
 
 These are the default keys. If you change them in Settings, the game's
 instructions follow your bindings.

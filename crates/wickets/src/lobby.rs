@@ -361,7 +361,7 @@ impl Menu for Lobby {
             MenuItem::new("Play", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(CategoryList::new())
             })
-            .help("Choose a kind of game, then a game."),
+            .help("Browse games by category and pick something to play."),
             crate::today::lobby_row(ctx),
         ]);
         items.extend(crate::extra::lobby_row(ctx));
@@ -374,23 +374,23 @@ impl Menu for Lobby {
             MenuItem::new("Challenges", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(ChallengeBoard::new())
             })
-            .help("Every game's daily, weekly and monthly challenge, the same for every player."),
+            .help("Daily, weekly, and monthly challenges for every game, with the same setup for everyone."),
             MenuItem::new(crate::soundtrack::ROW, |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(crate::soundtrack::Albums::new())
             })
-            .help("Every game's music. A track unlocks the first time it plays in a game."),
+            .help("Browse music from every game. Tracks unlock the first time they play."),
             MenuItem::new("Settings", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(SettingsScreen::<Parlor>::new())
             })
-            .help("Volume, speech, and the controls every game shares."),
+            .help("Adjust volume, speech, and the controls shared across all games."),
             MenuItem::new("Help", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(parlor_core::Help::new(crate::help(ctx)))
             })
-            .help("How the parlor and its controls work."),
+            .help("Learn how the parlor, its modes, and its controls work."),
             MenuItem::new("About", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(Pages::new(ABOUT))
             })
-            .help("What Wicket's is, its version and who made it."),
+            .help("Version details and credits for Wicket's."),
             MenuItem::new("Quit", |_s: &mut Self, ctx: &mut Ctx<Parlor>| {
                 ctx.push(parlor_core::menus::quit_confirm())
             })
@@ -471,11 +471,21 @@ impl Menu for CategoryList {
                         },
                     )
                     .help(match category {
-                        Category::Seasonal => "Holiday games, one for each celebration.",
-                        Category::Action => "Fast games that chase a high score.",
-                        Category::Puzzle => "Puzzles with no clock to beat.",
-                        Category::Cozy => "Calm games to unwind with and no way to fail.",
-                        Category::Table => "Card and dice games, played at your own pace.",
+                        Category::Seasonal => {
+                            "Holiday games celebrating seasons and special days through the year."
+                        }
+                        Category::Action => {
+                            "Fast-paced games built around quick reflexes and high scores."
+                        }
+                        Category::Puzzle => {
+                            "Thoughtful puzzles you can work through without a timer."
+                        }
+                        Category::Cozy => {
+                            "Relaxing, low-stakes games made for unwinding at your own pace."
+                        }
+                        Category::Table => {
+                            "Classic card and dice games you can play at your own pace."
+                        }
                     }),
                 )
             })
@@ -498,7 +508,7 @@ fn story_row(ctx: &mut Ctx<Parlor>) -> Option<MenuItem<CategoryList, Parlor>> {
             format!("{STORY_LABEL}, {count} {noun}"),
             |_s: &mut CategoryList, ctx: &mut Ctx<Parlor>| ctx.push(StoryGameList::new()),
         )
-        .help("Games that story mode has opened for you, played here at any time."),
+        .help("Games you have unlocked in Story mode, ready to play anytime."),
     )
 }
 
@@ -739,9 +749,11 @@ pub(crate) fn period_label(ctx: &mut Ctx<Parlor>, period: Period) -> String {
 /// What one period's challenges are.
 pub(crate) fn period_help(period: Period) -> &'static str {
     match period {
-        Period::Daily => "A short run in each game, new every day.",
-        Period::Weekly => "A longer or harder run in each game, new every Monday.",
-        Period::Monthly => "A special event in each game, new on the first of the month.",
+        Period::Daily => "A quick challenge in each game, refreshed every day.",
+        Period::Weekly => "A longer or tougher challenge in each game, refreshed every Monday.",
+        Period::Monthly => {
+            "A special challenge in each game, refreshed on the first of each month."
+        }
     }
 }
 

@@ -106,7 +106,7 @@ impl Results {
     ) -> Results {
         Results {
             menu: MenuCore::new(summary).with_intro_help(format!(
-                "Up and Down choose, Enter goes, Escape goes {}.",
+                "Use Up and Down to choose, Enter to select, and Escape to go {}.",
                 back.label().trim_start_matches("Back ")
             )),
             pages: pages.into_iter().map(Into::into).collect(),
@@ -211,7 +211,7 @@ impl Menu for Results {
                     ctx.push(Pages::new(pages))
                 },
             )
-            .help("The full results again, a page at a time."),
+            .help("Read the full results again, one page at a time."),
         );
         items.extend(self.extras.iter().map(Row::item));
         if let Some(kept) = crate::songs::fresh_for(ctx, self.back.target()) {
@@ -220,7 +220,7 @@ impl Menu for Results {
                     crate::songs::SAVE_ROW,
                     move |_s: &mut Self, ctx: &mut Ctx<Parlor>| crate::songs::save(ctx, &kept),
                 )
-                .help("Writes this run's music to a sound file. It is kept in the Soundtrack either way."),
+                .help("Save this run's music as a sound file. It stays in your Soundtrack either way."),
             );
         }
         let back = self.back;
