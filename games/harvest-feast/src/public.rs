@@ -45,7 +45,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Harvest Feast",
     category: Category::Seasonal,
-    blurb: "Thanksgiving: run a busy kitchen and tend each dish at the right moment.",
+    blurb: "Run a busy Thanksgiving kitchen and tend each dish right on cue before anything burns.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(thanksgiving::event),
@@ -240,7 +240,7 @@ impl TitleGame for HarvestFeast {
                 "Course select",
                 move |_s: &mut Title, ctx: &mut Ctx<Parlor>| ctx.push(CourseSelect::new(next)),
             )
-            .help("Cook any course you have opened."),
+            .help("Cook any course you have unlocked."),
             thanksgiving_row(ctx),
         ]
     }
@@ -252,7 +252,7 @@ impl TitleGame for HarvestFeast {
             |ctx| Progress::peek(ctx).callouts,
             set_callouts,
             |_ctx, _on| None,
-            "When on, the kitchen says when a dish needs you. Cook a whole course with it off for 10 percent more points.",
+            "When on, the kitchen calls out whenever a dish needs you. Cook a full course with it off for 10 percent more points.",
         ),
             parlor_core::pace::row_with(ID, progress::pace),
         ]
@@ -276,7 +276,7 @@ impl TitleGame for HarvestFeast {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Every station, cue and stinger of the kitchen, by name.".to_string()
+        "Preview every station, cue and stinger in the kitchen by name.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -286,7 +286,7 @@ impl TitleGame for HarvestFeast {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "The daily dinner, the weekly three-course Sunday dinner and the monthly harvest banquet, the same menus for every player. {}",
+            "A daily dinner, a weekly three-course Sunday dinner and a monthly harvest banquet, shared by every player. {}",
             daily.resets()
         )
     }

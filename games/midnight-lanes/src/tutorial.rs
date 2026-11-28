@@ -49,7 +49,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let b = Rc::clone(&ball);
     let stand = Step::new(
         format!(
-            "You start on board 20, in line with the head pin. A ball aimed straight at the head pin often leaves a split. Aim from off centre for a better chance of a strike. {} and {r} step one board. Step left to board {POCKET_STAND}.",
+            "You are starting on board 20, straight in line with the head pin. Rolling dead centre often leaves a split, so angling in from off centre gives you a much better shot at a strike. Use {} and {r} to step left to board {POCKET_STAND}.",
             sentence_start(&l)
         ),
         move |ctx, a| {
@@ -72,7 +72,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let b = Rc::clone(&ball);
     let aim = Step::new(
         format!(
-            "{} turns your aim one step right, {d} one step left. Aim right until the ball would cross board {POCKET_AT}, the pocket beside the head pin.",
+            "{} turns your aim one step right, and {d} turns it one step left. Aim right until your line crosses board {POCKET_AT}, the pocket right beside the head pin.",
             sentence_start(&u)
         ),
         move |ctx, a| {
@@ -97,7 +97,7 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     let b2 = Rc::clone(&ball);
     let swing = Step::new(
         format!(
-            "{} starts the swing. The swing climbs to the top, then falls. Press {p} again right at the top to let go.",
+            "{} starts your swing as it climbs to the top and falls back down. Press {p} again right at the top to release the ball cleanly.",
             sentence_start(&p)
         ),
         move |ctx, a| {
@@ -180,14 +180,14 @@ pub fn lesson(ctx: &mut Ctx<Parlor>) -> Lesson {
     Lesson::new(
         ID,
         NAME,
-        "Ten frames, two balls a frame. First, stand and aim",
+        "Lane nine is all yours for ten frames of bowling, two balls a frame. Start by picking your stance and aim",
     )
     .step(stand)
     .step(aim)
     .step(swing)
     .step(status)
     .step(hint)
-    .outro("All ten with the first ball is a strike, and with two balls a spare. Play bowls a full game, and Help explains scoring.")
+    .outro("Knock down all ten pins on the first ball for a strike, or across both balls for a spare. Choose Play for a full game, and check Help anytime for scoring details.")
 }
 
 /// The ball rolls, and the pins fall by the game's own pin model.

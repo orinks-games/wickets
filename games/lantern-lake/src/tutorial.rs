@@ -38,9 +38,8 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pond: Live<RunScreen>) -> Lesson {
 
     let paddle = pond.step(
         format!(
-            "{} paddles toward the first lantern, directly ahead. Hold it to keep paddling. {d} slows the canoe.",
+            "{} paddles straight ahead toward the first lantern. Hold it to keep moving, and use {d} to slow the canoe down.",
             sentence_start(&u),
-            d = sentence_start(&d),
         ),
         |s: &RunScreen, _| {
             (s.lake().gathered >= 1).then(String::new)
@@ -49,7 +48,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pond: Live<RunScreen>) -> Lesson {
 
     let turn = pond.step(
         format!(
-            "{} and {r} turn the canoe: a short press turns a little, and holding keeps turning. The second lantern is off to your right. Turn until it is straight ahead, then paddle to it.",
+            "{} and {r} turn the canoe: tap to turn a little, or hold to keep turning. The second lantern sits off to your right, so turn until it is straight ahead and paddle over to gather it.",
             sentence_start(&l)
         ),
         |s: &RunScreen, _| {
@@ -60,11 +59,11 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, pond: Live<RunScreen>) -> Lesson {
     Lesson::new(
         ID,
         "Lantern Lake",
-        "You sit in a canoe on a quiet lake at night, gathering lanterns. There is no timer and no way to fail. Learn on the practice pond",
+        "You are out in a canoe on a night lake, gathering drifting lanterns to build the night's song. There is no timer here, and you can start on the practice pond to get the feel of paddling",
     )
     .step(paddle)
     .step(turn)
     .outro(
-        "Frogs and other creatures are your landmarks on the lake. They stay in the same places all night. Reeds brushing the canoe mean you have reached the shore. F1 explains your controls.",
+        "Frogs and other creatures stay in the same spots all night to serve as your landmarks, and reeds brushing the canoe mean you have reached the shore. Press F1 anytime to review your controls.",
     )
 }

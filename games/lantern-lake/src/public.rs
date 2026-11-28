@@ -250,7 +250,7 @@ impl TitleGame for LanternLake {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Play the sounds you need on the lake.".to_string()
+        "Preview every sound you need out on the lake.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {
@@ -260,7 +260,7 @@ impl TitleGame for LanternLake {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "Daily, weekly and monthly lakes, the same for every player. {}",
+            "Daily, weekly and monthly shared lakes, identical for every player. {}",
             daily.resets()
         )
     }

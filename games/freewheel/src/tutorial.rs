@@ -30,7 +30,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, rides: Vec<Live<Ride>>) -> Lesson {
     let mut lesson = Lesson::new(
         ID,
         "Freewheel",
-        "You are a new bike courier in Courier City. Parked cars line your right, then comes the bike lane, then the traffic lane. Learn on a quiet training street, one skill at a time",
+        "You are a new bike courier hitting the streets of Courier City. Parked cars line your right, with the bike lane beside them and the traffic lane beyond that. Start on a quiet training street and build up your skills one ride at a time",
     );
     for (i, live) in rides.iter().enumerate() {
         let n = i as u32 + 1;
@@ -43,7 +43,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, rides: Vec<Live<Ride>>) -> Lesson {
         lesson = lesson.step(step);
     }
     lesson.outro(format!(
-        "In Downtown, cars come up behind you, and junctions name your turn. {} names the next danger, then your speed and lane, and {h} says how to deal with the next hazard. Ride them again from Practice lessons.",
+        "You are ready for Downtown, where cars roll up from behind and junctions call out your turns. Press {} anytime for the nearest danger, your speed and your lane, or {h} for advice on the next hazard. You can revisit these rides anytime under Practice lessons.",
         sentence_start(&s)
     ))
 }

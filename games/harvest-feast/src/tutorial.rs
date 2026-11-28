@@ -50,8 +50,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, kitchen: Live<Kitchen>) -> Lesson {
     );
 
     let start_text = format!(
-        "The recipe calls out each dish as you cook. {} and {r} move to its station; {p} starts the dish. Starting before its call is a fumble. Start the cranberries on the left burner.",
-        sentence_start(&l)
+        "The recipe calls out each dish as you cook. Move to its station with {l} and {r}, then press {p} to get it going. Starting before its call is a fumble. Start the cranberries on the left burner."
     );
     let start_hold = hold_for(&kitchen, &start_text);
     let start = kitchen
@@ -63,7 +62,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, kitchen: Live<Kitchen>) -> Lesson {
         .start(start_hold);
 
     let tend_text = format!(
-        "When the sauce bubbles up, press {p} to stir. Stir at once for a perfect. Stir twice, then take it off the heat."
+        "When the sauce bubbles up, press {p} to stir right away for a perfect score. Stir it twice, then take it off the heat."
     );
     let tend_hold = hold_for(&kitchen, &tend_text);
     let tend = kitchen
@@ -82,13 +81,13 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, kitchen: Live<Kitchen>) -> Lesson {
     Lesson::new(
         ID,
         "Harvest Feast",
-        "Thanksgiving dinner: you run the kitchen, up to five stations in an arc in front of you. Learn on one saucepan",
+        "It is Thanksgiving, and you are running a kitchen with up to five cooking stations in an arc in front of you. Start with a single saucepan to get the hang of it",
     )
     .step(begin)
     .step(start)
     .step(tend)
     .outro(format!(
-        "Later courses use more stations: {l} and {r} move between them. {} says what needs you most. Play starts course 1.",
+        "Later courses bring in more stations, and you move between them with {l} and {r}. Press {} anytime to find out what needs you most. Choose Play to start course 1.",
         sentence_start(&h)
     ))
 }

@@ -2,115 +2,113 @@
 
 ## About the game
 
-Cook a Thanksgiving meal at up to five stations. Each station signals when it needs you. Follow the recipe call, move to the station, and act on time. There are eight courses. Earn one star to serve a course and open the next. A meal earns up to three stars.
+Step into a busy Thanksgiving kitchen and juggle up to five cooking stations at once. Follow each recipe call, move to the right station, and stir, baste, flip or chop right on cue before anything burns. Eight courses build from a single pot of cranberry sauce all the way to the full feast, with one star unlocking the next course and up to three stars up for grabs on every meal.
 
 ## The kitchen
 
-The stations sit in an arc in front of you, always in the same places. From far left to far right:
+Your five stations sit in an arc right in front of you, always in the same order from far left to far right:
 
-1. The left burner, far left: a saucepan, for cranberry sauce, gravy and caramel.
-2. The cutting board, front left: chopping and whisking.
-3. The oven, straight ahead: rolls, stuffing, the turkey and pie.
-4. The griddle, front right: corn cakes, sprouts and fritters.
-5. The right burner, far right: a stockpot, for green beans, potatoes and cider.
+1. Left burner, far left: a saucepan for cranberry sauce, gravy and caramel.
+2. Cutting board, front left: chopping and whisking.
+3. Oven, straight ahead: rolls, stuffing, turkey and pie.
+4. Griddle, front right: corn cakes, sprouts and fritters.
+5. Right burner, far right: a stockpot for green beans, potatoes and cider.
 
-A course uses only some of them.
+Earlier courses only use a few stations, adding more as the feast grows.
 
 ## The recipe
 
-The recipe calls each dish in order, such as "Recipe: put the cranberries on the left burner." The station signals that it is ready to start. Go to the station. Space starts the dish.
+The recipe calls out each dish in turn, such as "Recipe: put the cranberries on the left burner." Move to that station once it is ready and press Space to get the dish going.
 
-- Start a dish before the recipe calls it, and it is a fumble.
-- Wait too long and the station gives an urgent reminder. Wait longer still and someone starts the dish for you, for no points on that step.
-- In the full feast, a station can hold a second dish once its first is served: the kitchen says when the station is free.
-- No more than two dishes need you at once. Any other dish that is nearly ready keeps cooking until you have seen to one of them.
+- Starting a dish before the recipe calls it counts as a fumble.
+- Wait too long and the station gives an urgent reminder. Wait even longer and someone starts the dish for you, costing you the points for that step.
+- In the full feast, a station can take a second dish once its first is served, and the kitchen announces when the station is free.
+- At most two dishes ever need you at the same time. Any other dish that is nearly ready holds off until you handle one of them.
 
 ## Dish states
 
-Each dish has three states: cooking, ready for action, and burning. Wait while it cooks, then act when it needs you.
+Every dish moves through three stages: cooking, ready for action, and burning. Give it time while it cooks, then step in as soon as it needs you.
 
 - Left burner: stir or whisk the saucepan when it needs you.
 - Right burner: stir or drain the stockpot when it needs you.
-- Oven: baste the dish, turn the tray, or pull it out when ready.
-- Griddle: flip or plate the dish when ready.
-- Cutting board: chop or whisk when called, with one press per stroke.
+- Oven: baste the dish, turn the tray, or pull it out when it is ready.
+- Griddle: flip or plate the dish when it is ready.
+- Cutting board: chop or whisk when called, pressing once per stroke.
 
-With spoken call-outs on, the kitchen also says when a dish needs you: "Bubbling up on the left burner: the gravy. Whisk it." Sound check on the title plays every one of these by name.
+With spoken call-outs turned on, the kitchen also calls out when a dish needs you, such as "Bubbling up on the left burner: the gravy. Whisk it." You can preview every kitchen cue in Sound check from the title.
 
 ## Pace
 
-Every dish's clock holds while a recipe call or another line is still being spoken. A line you ask for again and again stops holding after a while. This holds at every pace and in every meal.
+Every dish pauses its timer while a recipe call or another spoken line is playing, though repeating the same line over and over stops holding the clock after a while. This works at every pace and in every meal.
 
-Pace in Settings sets how fast cooking runs: relaxed, normal or quick. Normal is the default and a little slower than quick. Quick is the fastest, and relaxed runs at half speed.
+Pace in Settings controls how fast the kitchen runs: relaxed, normal or quick. Normal is the default and sits just a little slower than quick. Quick is full speed, while relaxed runs at half speed and counts each chopping or whisking stroke for you.
 
-A change applies from your next meal. Second helpings and a challenge keep the pace they started at until the run ends.
+Pace changes take effect on your next meal, and Second helpings or a challenge stays at the pace it started on until the run finishes.
 
-On relaxed, the kitchen counts each chopping or whisking stroke.
-
-Stars and unlocks count at every pace. Relaxed scores are saved separately, including challenges and Thanksgiving dinner. Normal and quick share their scores.
+Stars and unlocks count at every pace. Relaxed scores are saved on their own boards, including challenges and Thanksgiving dinner, while normal and quick share boards.
 
 ## Timing and quality
 
-Act as soon as a dish needs you for a perfect score. A little later earns a good score. You can still save a burning dish for fewer points. Leave it longer and someone rescues it, for no points.
+Jump in as soon as a dish needs you for a perfect score, or a moment later for a good score. You can still rescue a burning dish for fewer points, though leaving it too long means someone rescues it for no points.
 
-Pressing Space at a dish that isn't ready yet is a fumble: 5 points off that dish.
+Pressing Space on a dish that is not ready yet is a fumble and takes 5 points off that dish.
 
-Each dish's quality, out of 100, is the average of its steps' scores, less its fumbles. When a dish's last step is done, it is served and the game gives its quality.
+Each dish's quality, out of 100, is the average of its step scores minus any fumbles. Once you finish a dish's final step, it is served and you get its quality score.
 
 ## Stars and points
 
-The meal is scored when every dish is served.
+Your meal is scored as soon as every dish is served.
 
 - Three stars: an average quality of 90 or more.
-- Two stars: 75 or more.
-- One star: 55 or more. One star serves the course and opens the next.
+- Two stars: an average quality of 75 or more.
+- One star: an average quality of 55 or more, which serves the course and opens the next one.
 
-Points are the dishes' quality times ten. Set Spoken call-outs to off in Settings, from the title or the pause menu, and cook a whole course without them for 10 percent more. Switching it back on during a course ends the bonus for that course. Every course keeps its best points and best stars. Course select and Records on the title read them back.
+Your points are the dishes' quality multiplied by ten. Turn Spoken call-outs off in Settings from the title or pause menu and cook an entire course that way for 10 percent more points. Turning it back on mid-course ends the bonus for that run. Every course saves its best points and stars, which you can review in Course select and Records.
 
 ## Courses
 
-1. Cranberry sauce: one saucepan, to learn the kitchen.
+1. Cranberry sauce: a single saucepan to get comfortable in the kitchen.
 2. Rolls and cranberries: the saucepan and the oven.
 3. The side dishes: chopping, the stockpot and the saucepan.
-4. Stuffing and gravy: four stations.
-5. Off the griddle: the griddle joins in.
+4. Stuffing and gravy: four stations working together.
+5. Off the griddle: the griddle joins the lineup.
 6. The turkey: all five stations, with the turkey to baste three times.
 7. Dessert: pie, apples, caramel, cider and fritters.
-8. The full feast: eight dishes on five stations, as fast as it gets.
+8. The full feast: eight dishes across all five stations, as fast as it gets.
 
-Each course gives you a little less time to react than the one before.
+Each course tightens the reaction window a little more than the one before.
 
 ## Second helpings
 
-Serve the full feast to open Second helpings: an endless run of random meals on three, then four, then all five stations, faster every round. It goes on until a meal earns no stars, and keeps your best run's points and your most rounds. Until then the title reads Second helpings, locked.
+Serve course 8, the full feast, to unlock Second helpings: an endless run of random meals starting on three stations, then four, then all five, speeding up every round. The run goes until a meal earns no stars, saving your best points and highest round count. Until you unlock it, it stays locked on the title.
 
 ## Results
 
-When a meal is scored, the results menu reads how it went. Next course comes first when you served a course with a star, or Next round in Second helpings. Then Play again, or Try again after a meal with no stars, cooks the same course from the top. Hear the results again reads the result, then each dish's quality. Back to the title is last, and Escape does the same. After a challenge, the menu offers the challenge again and ends with Back to the challenges.
+After a meal is scored, the results menu walks through how you did. Next course sits at the top whenever you earn at least one star, or Next round in Second helpings. Play again, or Try again after a no-star meal, restarts the same course from the top. Hear the results again replays the summary and each dish's quality, and Back to the title or Escape returns to the menu. After a challenge, you can replay the challenge or head back to the challenges list.
 
 ## Challenges
 
-Challenges, on the title, are menus every player cooks the same way: a new daily each day, a new weekly each Monday, and a new monthly each month, all on UTC dates. Each row names the challenge and what it is, then whether you have played it, your best and your streak. F1 on a row reads its full rule and when the next one comes. Before a challenge starts, a briefing reads its rule and twist and how long until the next one. Enter on its last page starts the meal. Escape goes back without starting. When it ends, the results give your score, your best and your streak. Leave the challenge, on the pause menu, does not count it.
+Challenges, on the title, give every player the exact same menus: a new daily each day, a new weekly every Monday, and a new monthly each month, all on UTC dates. Each row shows the challenge name, whether you have played it, your best score and your streak, and F1 reads its full rule and reset time. Every challenge starts with a short briefing covering its rule, twist and time left; press Enter on the last page to start cooking, or Escape to go back. Choosing Leave the challenge from the pause menu does not count the run.
 
-- Daily, Tonight's dinner: one seeded meal on four stations, with a twist for the day.
-- Weekly, Sunday dinner: three courses in a row, a starter on three stations, the main course on four and dessert on all five, each faster than the last, with the week's twist. Each course needs a star for the next one to come out. Your points add up across them.
-- Monthly, the harvest banquet: ten dishes, two on every station, the second waiting for the first to be served. Its rule is golden plates: every dish served at quality 90 or better earns 200 bonus points.
+- Daily, Tonight's dinner: one seeded meal on four stations with a daily twist.
+- Weekly, Sunday dinner: three courses back to back, a starter on three stations, a main course on four and dessert on all five, speeding up each course with the week's twist. Each course needs at least one star to bring out the next, and your points add up across all three.
+- Monthly, the harvest banquet: ten dishes, two on every station, with each second dish waiting for the first to be served. Its golden plates rule awards 200 bonus points for every dish served at quality 90 or better.
 
 The twists:
 
-- Rush hour: the guests are early, and everything cooks a fifth faster.
-- A picky guest: Uncle Walt only eats one dish, named before you start. It scores double. If served below 75, he sends it back and it scores nothing. When it is served the kitchen says whether he loved it.
-- A hot burner: the left or right burner, named before you start, runs hot. Its dishes come due much sooner and burn faster.
-- A quiet kitchen: no spoken call-outs, whatever your setting. The recipe still calls each dish, but no voice says when a dish needs you, and the bonus for cooking without call-outs applies.
-- Butterfingers: every fumble costs 20 instead of 5.
+- Rush hour: the guests arrived early, so everything cooks a fifth faster.
+- A picky guest: Uncle Walt only eats one dish, named before you start. It scores double, but serving it below 75 makes him send it back for zero points. The kitchen announces how he liked it when it is served.
+- A hot burner: either the left or right burner, named before you start, runs hot, so its dishes come due much sooner and burn faster.
+- A quiet kitchen: spoken call-outs are off regardless of your setting. The recipe still calls each dish, no voice warns when a dish needs you, and the no-call-outs bonus applies.
+- Butterfingers: every fumble costs 20 points instead of 5.
 
-S, F1 and the kitchen's intro all remind you of the twist.
+S, F1 and the kitchen's intro all remind you of the active twist.
 
 ## Thanksgiving dinner
 
-On Thanksgiving Day, the fourth Thursday of November, the Thanksgiving dinner row on the title opens the family's own dinner. It counts as the day from the Wednesday to the Friday, so it is open on Thanksgiving wherever you are. The rest of the year the row reads Thanksgiving dinner, locked, and F1 on it says how many days are left.
+On Thanksgiving Day, the fourth Thursday of November, the Thanksgiving dinner row on the title opens the family's big dinner. It stays open from Wednesday through Friday so you can play on Thanksgiving wherever you are. The rest of the year it stays locked on the title, and F1 gives the countdown to next year.
 
-The dinner is the biggest meal in the game: twelve dishes in three waves on all five stations. Five dishes are cooked only on this day:
+This is the biggest meal in the game: twelve dishes in three waves across all five stations, including five dishes made only for Thanksgiving:
 
 - Sweet potato casserole, in the oven: turn the tray, then pull it out.
 - Maple carrots, on the right burner: stir twice, then drain.
@@ -118,31 +116,31 @@ The dinner is the biggest meal in the game: twelve dishes in three waves on all 
 - The carved turkey, on the cutting board: eight strokes, once the celery is chopped.
 - Pecan pie, in the oven: turn the tray, then pull it out.
 
-Each year a different relative comes to dinner and asks for one of those five dishes. The intro names them. That dish scores double: its quality counts twice in your points.
+Each year a different relative visits and asks for one of those five dishes, named in the intro. That favourite dish scores double, counting its quality twice in your points.
 
-In the ten days before, Enter on the row reads the countdown, who is coming this year, and the whole menu.
+During the ten days leading up to Thanksgiving, pressing Enter on the row reads the countdown, who is visiting this year, and the full menu.
 
-When the dinner is served, it is kept as that year's keepsake: your best points, your most stars, and how well you cooked the favourite. Records reads every year's keepsake.
+Once you serve the dinner, it is saved as that year's keepsake with your best points, most stars and how well you cooked the favourite. You can browse every year's keepsake in Records.
 
 ## Tips
 
-- Start dishes as soon as they are called: a late start costs as much as a late stir.
-- Keep track of the whole kitchen. When something changes, the number keys get you there fastest.
-- Up says how long until the dish in front of you is ready. Press it before acting if you are unsure.
-- H names what needs you most.
+- Start each dish as soon as the recipe calls it, because a late start costs just as much as a late stir.
+- Stay aware of the whole kitchen, and use the number keys 1 to 5 to jump straight to a station when things get busy.
+- Press Up arrow to check how long until the dish in front of you is ready if you are unsure before acting.
+- Press H anytime to find out which station needs you most.
 
 ## Controls
 
 These are the default keys. If you change them in Settings, the game's instructions follow your bindings.
 
-- Left and Right arrows: move between the stations in use. Each move names the station and its dish. You cannot move beyond either end.
-- Number keys 1 to 5: jump straight to a station. These keys belong to this game alone, and Settings cannot change them.
-- Space: the main action at the station in front of you. It starts a dish, stirs, whisks, flips, bastes, turns the tray, pulls out, drains or plates, whatever the dish needs next. On the cutting board, press it once per stroke.
-- Up arrow: describe the dish in front of you: its step, what comes next and when.
-- Down arrow: read the recipe card: every dish on the menu and how it stands.
-- Tab: describe what is happening at the station in front of you.
-- S: any station that needs you now, where you stand and how many dishes are served. Press it again straight away for every other station and the time, and a third time for the course and its rule.
+- Left and Right arrows: move between the stations in use, naming each station and its dish. You cannot move past either end.
+- Number keys 1 to 5: jump straight to a station. These keys belong to Harvest Feast alone and cannot be changed in Settings.
+- Space: the main action at the station in front of you. Start a dish, stir, whisk, flip, baste, turn the tray, pull out, drain or plate, whatever the dish needs next. On the cutting board, press Space once per stroke.
+- Up arrow: check the dish in front of you, including its current step, what comes next and when.
+- Down arrow: read the recipe card with every dish on the menu and its current state.
+- Tab: check what is happening at the station in front of you.
+- S: status, starting with any station that needs you now, where you stand and how many dishes are served. Press S again right away for every other station and the time, and a third time for the course and its rule.
 - R: repeat the last call.
-- H: a hint, naming what needs you most and how to get there.
-- Escape: pause, with help and a way back to the title, or out of a challenge.
+- H: hint, naming what needs you most and how to get there.
+- Escape: pause, with help and a way back to the title or out of a challenge.
 - F1: help for the current screen.
