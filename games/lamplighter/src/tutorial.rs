@@ -55,21 +55,21 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hall: Live<Round>) -> Lesson {
 
     let walk = hall.step(
         format!(
-            "You stand at the lobby end of the Long Hall, with a wall on each side. {} walks toward the far wall and {down} walks back. A lamp is out on one of the walls ahead. Walk until it is right beside you.",
+            "You are standing at the lobby end of the Long Hall, with a wall on either side. {} walks toward the far wall and {down} walks back. There is an unlit lamp ahead of you, so walk down the hall until it is right beside you.",
             sentence_start(&up)
         ),
-        |r: &Round, _| beside_out(r).then(|| "A lamp that is out is right beside you.".to_string()),
+        |r: &Round, _| beside_out(r).then(|| "You are right beside an unlit lamp.".to_string()),
     );
     let light = hall.step(
         format!(
-            "{} reaches to the left wall and {right} to the right. Reach toward its wall to light the lamp.",
+            "{} reaches to the left wall and {right} reaches to the right. Reach toward the lamp's wall to light it.",
             sentence_start(&left)
         ),
         |r: &Round, _| (r.hall.lit >= 1).then(String::new),
     );
     let rest = hall.step(
         format!(
-            "Now light the rest. {} finds the nearest lamp out, and {r} says what is at your step.",
+            "Now light the rest of the hall. {} points to the nearest unlit lamp, and {r} tells you what is at your current step.",
             sentence_start(&h)
         ),
         |r: &Round, _| (r.hall.out() == 0).then(String::new),
@@ -78,13 +78,13 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hall: Live<Round>) -> Lesson {
     Lesson::new(
         ID,
         "Lamplighter",
-        "The lamps along the Long Hall have gone out, and Mabel has handed you her old taper to light them again",
+        "The lamps along the Long Hall have gone dark, and Mabel has handed you her old taper to light them back up",
     )
     .step(walk)
     .step(light)
     .step(rest)
     .outro(format!(
-        "In the evening round a taper burns as you go, and {p} lights it to start. Light every lamp before it burns down, and the seconds left are a bonus. If it runs out, Mabel lights you a fresh one, so the hall always gets lit. {} reads the lamps still out, your step and the taper time left.",
+        "In the evening round, your taper burns while you work, and {p} lights it to start. Light every lamp before it burns down and every second left becomes a bonus point. If the taper runs out, Mabel lights you a fresh one so you can always finish. {} checks how many lamps are left, your step and your taper time.",
         sentence_start(&s)
     ))
 }

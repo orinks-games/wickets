@@ -51,7 +51,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Liberty Lights",
     category: Category::Seasonal,
-    blurb: "Fourth of July fireworks: hear a show, then launch it back in time.",
+    blurb: "Direct a Fourth of July fireworks show, matching each pattern of booms, crackles, whistles and sparkles across the sky.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(independence::event),
@@ -239,7 +239,7 @@ impl TitleGame for LibertyLights {
             MenuItem::new("Freestyle show", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(FreestyleMenu::new())
             })
-            .help("Launch your own fireworks without scoring, save your show, then match it, scored like a level."),
+            .help("Compose your own fireworks show without scoring, save it, then try matching it back like a level."),
             MenuItem::new("Level select", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 let next = Progress::load(ctx).next_level();
                 ctx.push(LevelSelect::new(next))
@@ -254,7 +254,7 @@ impl TitleGame for LibertyLights {
             MenuItem::new("Practice room", |_s: &mut Title, ctx: &mut Ctx<Parlor>| {
                 ctx.push(Range::new())
             })
-            .help("A launch range with nothing to score: fire freely, and each firework is named after it goes up."),
+            .help("An unscored launch range where you can fire freely and learn each firework by name."),
         )
     }
 
@@ -275,7 +275,7 @@ impl TitleGame for LibertyLights {
     }
 
     fn sound_check_help(&mut self, _ctx: &mut Ctx<Parlor>) -> String {
-        "Hear every firework, place and sound of the game by name.".to_string()
+        "Play every firework, direction and cue in the game by name.".to_string()
     }
 
     fn challenges(&mut self, ctx: &mut Ctx<Parlor>) {

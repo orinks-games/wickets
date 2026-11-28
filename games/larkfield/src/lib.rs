@@ -52,7 +52,7 @@ pub const INFO: GameInfo = GameInfo {
     id: ID,
     name: "Larkfield",
     category: Category::Cozy,
-    blurb: "Farm an empty river hamlet, and make a home for the people who come to stay.",
+    blurb: "Turn an empty river hamlet into a lively home, farming the fields, raising buildings and helping every settler achieve their dream.",
     open: |ctx| ctx.push(title()),
     challenge: Some(open_challenge),
     event: Some(events::event),
@@ -197,7 +197,7 @@ impl TitleGame for Larkfield {
             ),
             None => (
                 format!("{}, a new hamlet", pm::labels::PLAY),
-                "Starts your hamlet with one settler, four dug plots and a few seeds. It is kept between visits.".to_string(),
+                "Start a brand new hamlet with one settler, four dug plots and a few seeds. Your hamlet is saved between visits.".to_string(),
             ),
         };
         vec![
@@ -231,7 +231,7 @@ impl TitleGame for Larkfield {
     fn challenges_help(&mut self, ctx: &mut Ctx<Parlor>) -> String {
         let daily = Challenge::current(ctx, ID, Period::Daily);
         format!(
-            "Market day, good spirits and founders: a small hamlet with a goal, the same for every player. {}",
+            "Take on Market day, Good spirits and Founders in a shared hamlet with a clear goal. {}",
             daily.resets()
         )
     }

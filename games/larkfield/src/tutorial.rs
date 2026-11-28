@@ -38,7 +38,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hamlet: Live<HamletScreen>) -> Lesson {
     });
     let walk = hamlet.step(
         format!(
-            "You are on the lane, by the cottages. {} and {right} walk it, from the gate to the woods. Walk to the fields, past the green toward the woods.",
+            "You are standing on the lane by the cottages. {} and {right} walk from the gate all the way to the woods. Head past the green to the fields.",
             sentence_start(&left)
         ),
         |s: &HamletScreen, _| {
@@ -48,7 +48,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hamlet: Live<HamletScreen>) -> Lesson {
     );
     let sow = hamlet.step(
         format!(
-            "{} goes into the fields, a row of plots at a time. Find a plot that is dug and ready to sow, and press {main} on it to sow a seed.",
+            "{} steps into the fields, one row of plots at a time. Walk onto a dug plot and press {main} to sow a seed.",
             sentence_start(&up)
         ),
         |s: &HamletScreen, _| {
@@ -61,7 +61,7 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hamlet: Live<HamletScreen>) -> Lesson {
     );
     let water = hamlet.step(
         format!(
-            "A new seed needs water. {} on the same plot waters it.",
+            "Freshly sown seeds need water. {} on that same plot waters it.",
             sentence_start(&main)
         ),
         |s: &HamletScreen, _| {
@@ -69,12 +69,12 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hamlet: Live<HamletScreen>) -> Lesson {
             h.plots
                 .iter()
                 .any(|p| matches!(p, Plot::Sown { watered: true, .. }))
-                .then(|| "A watered crop grows overnight.".to_string())
+                .then(|| "Nice, a watered crop grows overnight.".to_string())
         },
     );
     let talk = hamlet.step(
         format!(
-            "{name} lives here too. {} tells you what needs attention and how much food you have. Press it again straight away for the day and stores, and once more for everyone's mood and work. Find {name} along the lane and press Enter to talk.",
+            "{name} lives here too. {} checks what needs attention and how much food is in the larder; press it again for the day and stores, and a third time for everyone's mood and work. Find {name} along the lane and press Enter to say hello.",
             sentence_start(&status)
         ),
         |s: &HamletScreen, _| {
@@ -82,21 +82,21 @@ pub fn lesson_on(ctx: &mut Ctx<Parlor>, hamlet: Live<HamletScreen>) -> Lesson {
             h.settlers
                 .iter()
                 .any(|st| st.talked_today)
-                .then(|| "A word with a settler cheers them up, and they say what they want.".to_string())
+                .then(|| "A quick chat cheers a settler up, and they will tell you what they want.".to_string())
         },
     );
     let quiet = hamlet.clone();
     Lesson::new(
         ID,
         "Larkfield",
-        "Larkfield is an empty river hamlet, and you are its first farmer. Settlers come to stay, and each has a story to finish. Learn in a practice hamlet that is never kept",
+        "Larkfield starts as a quiet river hamlet, and you are its first farmer. Settlers arrive to build a life here, each with a dream to finish. Try the basics in a practice hamlet that is not saved",
     )
     .step(walk)
     .step(sow)
     .step(water)
     .step(talk)
     .outro(format!(
-        "Settlers work on their own, at what they are best at. At the end of the day, everyone eats supper from the larder. {} says what to do next whenever you are unsure.",
+        "Settlers pick their own work based on what they are best at, and everyone gathers for supper from the larder at dusk. {} suggests what to do next whenever you are not sure.",
         sentence_start(&hint)
     ))
     .on_exit(move |ctx| {
